@@ -19,9 +19,14 @@ export const importWallet = async (t: any, passphrase = "passphrase", alias = "T
 		.ok();
 	await t.click('[data-testid="SelectNetworkInput__input"]');
 	await t.click(Selector('[data-testid="NetworkIcon-ARK-ark.devnet"]'));
+
 	await t.click(Selector("button").withExactText(translations.COMMON.CONTINUE));
 	await t.typeText(Selector("[data-testid=ImportWallet__mnemonic-input]"), passphrase);
 	await t.click(Selector("button").withExactText(translations.COMMON.CONTINUE));
+
+	await t.expect(Selector("[data-testid=EncryptPassword]").exists).ok();
+	await t.click(Selector("[data-testid=ImportWallet__skip-button]"));
+
 	await t.typeText(Selector("[data-testid=ImportWallet__name-input]"), alias);
 
 	await t.click(Selector("button").withExactText(translations.COMMON.SAVE_FINISH));

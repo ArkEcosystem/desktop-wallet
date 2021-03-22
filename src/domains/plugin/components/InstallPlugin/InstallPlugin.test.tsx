@@ -24,7 +24,7 @@ describe("InstallPlugin", () => {
 
 	it("should render 1st step", async () => {
 		const { getByTestId, asFragment } = render(
-			<FirstStep plugin={{ permissions: ["PROFILE", "EVENTS", "HTTP"] }} />,
+			<FirstStep plugin={{ permissions: ["PROFILE", "EVENTS", "HTTP", "CUSTOM_PERMISSION"] }} />,
 		);
 
 		expect(getByTestId("InstallPlugin__step--first")).toBeTruthy();

@@ -1,0 +1,177 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`WalletOverviewStep Render step should render 1`] = `
+<DocumentFragment>
+  <section
+    class="space-y-8"
+    data-testid="CreateWallet__WalletOverviewStep"
+  >
+    <div
+      class="flex justify-between items-end bg-theme-background"
+    >
+      <div
+        class="space-y-4"
+      >
+        <h1
+          class="mb-0 text-4xl"
+          data-testid="header__title"
+        >
+          Your Passphrase
+        </h1>
+      </div>
+    </div>
+    <div
+      class="flex overflow-hidden flex-col space-y-4 rounded-lg p-4 bg-theme-warning-50 dark:bg-theme-secondary-800 sm:space-y-0 sm:space-x-4 sm:flex-row sm:items-center"
+    >
+      <div
+        class="h-11 w-11 flex flex-shrink-0 items-center justify-center rounded-lg text-white bg-theme-warning-600"
+      >
+        <div
+          class="sc-bdfBwQ hteSKx"
+          height="1.25em"
+          width="1.25em"
+        >
+          <svg>
+            alert-warning.svg
+          </svg>
+        </div>
+      </div>
+      <div
+        class="flex flex-col"
+      >
+        <p
+          class="text-sm leading-relaxed break-words dark:text-theme-secondary-500"
+        >
+          This is your 12 word Mnemonic. Your mnemonic serves as your password and allows you to send any funds associated with your address. If lost, this mnemonic cannot be restored by anyone, including the ARK.io team. Please store this mnemonic in a safe location and do not share it with anyone.
+        </p>
+      </div>
+    </div>
+    <ul
+      class="grid grid-cols-2 gap-x-3 gap-y-5 md:grid-cols-3 lg:grid-cols-4"
+    >
+      <li
+        class="relative py-3 px-3 rounded border border-theme-secondary-300 dark:border-theme-secondary-800"
+        data-testid="MnemonicList__item"
+      >
+        <span
+          class="absolute top-0 left-0 px-1 text-xs font-semibold transform translate-x-2 -translate-y-2 bg-theme-background text-theme-secondary-800"
+        >
+          1
+        </span>
+        <span
+          class="font-medium"
+        >
+          test
+        </span>
+      </li>
+      <li
+        class="relative py-3 px-3 rounded border border-theme-secondary-300 dark:border-theme-secondary-800"
+        data-testid="MnemonicList__item"
+      >
+        <span
+          class="absolute top-0 left-0 px-1 text-xs font-semibold transform translate-x-2 -translate-y-2 bg-theme-background text-theme-secondary-800"
+        >
+          2
+        </span>
+        <span
+          class="font-medium"
+        >
+          mnemonic
+        </span>
+      </li>
+    </ul>
+    <div
+      class="flex justify-end w-full"
+    >
+      <div
+        class="inline-block cursor-pointer"
+        data-testid="clipboard__wrapper"
+      >
+        <button
+          class="Button__StyledButton-mdtvtf-0 iUSBMV"
+          data-testid="CreateWallet__copy"
+          type="button"
+        >
+          <div
+            class="flex relative items-center space-x-2"
+          >
+            <div
+              class="sc-bdfBwQ fPrsah"
+              height="1em"
+              width="1em"
+            >
+              <svg>
+                copy.svg
+              </svg>
+            </div>
+            <span>
+              Copy
+            </span>
+          </div>
+        </button>
+      </div>
+    </div>
+    <div
+      class="Divider-sc-19q4mlo-0 bKsVMa border-theme-secondary-300 dark:border-theme-secondary-800"
+      type="horizontal"
+    />
+    <div
+      class="flex justify-between items-center"
+    >
+      <div
+        class="space-y-2"
+      >
+        <span
+          class="text-lg font-semibold"
+        >
+          Download Your Passphrase
+        </span>
+        <p
+          class="text-sm text-theme-secondary-text"
+        >
+          You can also download and safely store your passphrase.
+        </p>
+      </div>
+      <div
+        class="sc-bdfBwQ fTnhmh text-black dark:text-theme-secondary-600"
+        height="40"
+        width="40"
+      >
+        <svg>
+          file-password.svg
+        </svg>
+      </div>
+    </div>
+    <div
+      class="flex justify-end w-full"
+    >
+      <button
+        class="Button__StyledButton-mdtvtf-0 iUSBMV flex items-center space-x-2"
+        data-testid="CreateWallet__download"
+        type="button"
+      >
+        <div
+          class="flex relative items-center space-x-2"
+        >
+          <div
+            class="sc-bdfBwQ fPrsah"
+            height="1em"
+            width="1em"
+          >
+            <svg>
+              download.svg
+            </svg>
+          </div>
+          <span>
+            Download
+          </span>
+        </div>
+      </button>
+    </div>
+    <div
+      class="Divider-sc-19q4mlo-0 bKsVMa border-theme-secondary-300 dark:border-theme-secondary-800"
+      type="horizontal"
+    />
+  </section>
+</DocumentFragment>
+`;

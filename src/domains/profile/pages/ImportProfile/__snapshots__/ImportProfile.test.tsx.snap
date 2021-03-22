@@ -1,0 +1,168 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ImportProfile should render first step 1`] = `
+<div>
+  <div
+    class="flex relative flex-col min-h-screen"
+  >
+    <nav
+      aria-labelledby="main menu"
+      class="NavigationBar__NavWrapper-sc-1qsoskw-0 noNGK"
+    >
+      <div
+        class="flex relative h-21"
+      >
+        <div
+          class="flex flex-1 px-8 ml-12"
+        >
+          <div
+            class="flex items-center my-auto"
+          >
+            <div
+              class="NavigationBar__LogoContainer-sc-1qsoskw-2 tulfg"
+            >
+              <svg
+                width="44"
+              >
+                ark-logo.svg
+              </svg>
+            </div>
+            <span
+              class="text-2xl font-bold"
+            >
+              Desktop Wallet
+            </span>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <div
+      class="flex flex-col flex-1"
+    >
+      <div
+        class="Section__SectionWrapper-sc-8cjvre-0 kJTPww flex flex-col"
+      >
+        <div
+          class="container px-10 mx-auto"
+        >
+          <div
+            class="mx-auto max-w-xl"
+          >
+            <ul
+              class="StepIndicator__StepWrapper-sc-15t41is-1 iToWWb"
+            >
+              <li
+                class="StepIndicator__StepStyled-sc-15t41is-0 dATCfl"
+              />
+              <li
+                class="StepIndicator__StepStyled-sc-15t41is-0 khoCaB"
+              />
+              <li
+                class="StepIndicator__StepStyled-sc-15t41is-0 khoCaB"
+              />
+            </ul>
+            <div
+              class="mt-8"
+            >
+              <div
+                data-testid="tab-pabel__active-panel"
+              >
+                <div
+                  class="mx-auto max-w-xl"
+                >
+                  <div
+                    class="flex justify-between items-end bg-theme-background"
+                  >
+                    <div
+                      class="space-y-4"
+                    >
+                      <h1
+                        class="mb-0 text-4xl"
+                        data-testid="header__title"
+                      >
+                        Import Profile
+                      </h1>
+                      <div
+                        class="text-theme-secondary-text"
+                        data-testid="header__subtitle"
+                      >
+                        Select a .dwe file with your Profile and related properties to start the import process.
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="h-52 border-2 border-dashed rounded-lg mt-8 border-theme-secondary-300 dark:border-theme-secondary-800 flex flex-col items-center justify-center"
+                    data-testid="SelectFile"
+                  >
+                    <div
+                      class="sc-bdfBwQ fTnhmh"
+                      height="40"
+                      width="40"
+                    >
+                      <svg>
+                        dwe-file.svg
+                      </svg>
+                    </div>
+                    <div
+                      class="mt-8"
+                    >
+                      <span
+                        class="font-semibold"
+                      >
+                        Drag & Drop or
+                         
+                      </span>
+                      <span
+                        class="font-semibold cursor-pointer link"
+                        data-testid="SelectFile__browse-files"
+                        title="Click here to upload"
+                      >
+                        Browse Files
+                      </span>
+                    </div>
+                    <div
+                      class="font-semibold text-theme-secondary-500 text-sm mt-2"
+                    >
+                      Supported format is .dwe
+                    </div>
+                  </div>
+                  <p
+                    class="text-sm text-theme-secondary-text md:text-base mt-6 text-center"
+                  >
+                    <span>
+                      Importing from Desktop Wallet v2?
+                       
+                    </span>
+                    <span
+                      class="font-semibold cursor-pointer link"
+                      data-testid="SelectFileStep__change-file"
+                      title="Click here."
+                    >
+                      Click here.
+                    </span>
+                  </p>
+                  <div
+                    class="flex justify-end mt-8 space-x-3"
+                  >
+                    <button
+                      class="Button__StyledButton-mdtvtf-0 iUSBMV"
+                      data-testid="SelectFileStep__back"
+                      type="button"
+                    >
+                      <div
+                        class="flex relative items-center space-x-2"
+                      >
+                        Back
+                      </div>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

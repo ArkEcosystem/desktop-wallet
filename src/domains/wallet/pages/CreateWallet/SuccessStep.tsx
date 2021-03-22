@@ -10,7 +10,7 @@ import React, { useState } from "react";
 import { useFormContext } from "react-hook-form";
 import { useTranslation } from "react-i18next";
 
-export const FourthStep = ({ nameMaxLength, profile }: { nameMaxLength: number; profile: Profile }) => {
+export const SuccessStep = ({ nameMaxLength, profile }: { nameMaxLength: number; profile: Profile }) => {
 	const { getValues, register, watch } = useFormContext();
 
 	// getValues does not get the value of `defaultValues` on first render
@@ -23,7 +23,7 @@ export const FourthStep = ({ nameMaxLength, profile }: { nameMaxLength: number; 
 	const { t } = useTranslation();
 
 	return (
-		<section data-testid="CreateWallet__fourth-step" className="space-y-8">
+		<section data-testid="CreateWallet__SuccessStep" className="space-y-8">
 			<Header
 				title={t("WALLETS.PAGE_CREATE_WALLET.PROCESS_COMPLETED_STEP.TITLE")}
 				subtitle={t("WALLETS.PAGE_CREATE_WALLET.PROCESS_COMPLETED_STEP.SUBTITLE")}

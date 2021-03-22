@@ -105,183 +105,188 @@ exports[`CreatePeer should render create peer modal 1`] = `
                   </div>
                 </div>
                 <div
-                  class="mt-6"
+                  class=""
+                  data-testid="SelectNetwork__options"
                 >
                   <div
-                    class="font-bold text-sm text-theme-secondary-400 dark:text-theme-secondary-700 mb-3"
+                    class="mt-6"
                   >
-                    PUBLIC NETWORKS
+                    <div
+                      class="font-bold text-sm text-theme-secondary-400 dark:text-theme-secondary-700 mb-3"
+                    >
+                      PUBLIC NETWORKS
+                    </div>
+                    <ul
+                      aria-labelledby="CustomPeers__network-label"
+                      class="grid grid-cols-6 gap-3"
+                      id="CustomPeers__network-menu"
+                      role="listbox"
+                    >
+                      <li
+                        class="inline-block cursor-pointer h-21"
+                        data-testid="SelectNetwork__NetworkIcon--container"
+                      >
+                        <div
+                          aria-label="ARK"
+                          class="w-full h-full flex justify-center items-center border-2 rounded-xl border-theme-primary-100 dark:border-theme-secondary-800 text-theme-secondary-700"
+                          data-testid="NetworkIcon-ARK-ark.mainnet"
+                        >
+                          <div
+                            class="sc-bdfBwQ caqoGN"
+                            data-testid="NetworkIcon__icon"
+                            height="30"
+                            width="30"
+                          >
+                            <svg>
+                              ark.svg
+                            </svg>
+                          </div>
+                        </div>
+                      </li>
+                      <li
+                        class="inline-block cursor-pointer h-21"
+                        data-testid="SelectNetwork__NetworkIcon--container"
+                      >
+                        <div
+                          aria-label="Compendia"
+                          class="w-full h-full flex justify-center items-center border-2 rounded-xl border-theme-primary-100 dark:border-theme-secondary-800 text-theme-secondary-700"
+                          data-testid="NetworkIcon-ARK-compendia.mainnet"
+                        >
+                          <div
+                            class="sc-bdfBwQ caqoGN"
+                            data-testid="NetworkIcon__icon"
+                            height="30"
+                            width="30"
+                          >
+                            <svg>
+                              bind.svg
+                            </svg>
+                          </div>
+                        </div>
+                      </li>
+                      <li
+                        class="inline-block cursor-pointer h-21"
+                        data-testid="SelectNetwork__NetworkIcon--container"
+                      >
+                        <div
+                          aria-label="Bitcoin"
+                          class="w-full h-full flex justify-center items-center border-2 rounded-xl border-theme-primary-100 dark:border-theme-secondary-800 text-theme-secondary-700"
+                          data-testid="NetworkIcon-BTC-btc.livenet"
+                        >
+                          <div
+                            class="sc-bdfBwQ caqoGN"
+                            data-testid="NetworkIcon__icon"
+                            height="30"
+                            width="30"
+                          >
+                            <svg>
+                              btc.svg
+                            </svg>
+                          </div>
+                        </div>
+                      </li>
+                      <li
+                        class="inline-block cursor-pointer h-21"
+                        data-testid="SelectNetwork__NetworkIcon--container"
+                      >
+                        <div
+                          aria-label="Ethereum"
+                          class="w-full h-full flex justify-center items-center border-2 rounded-xl border-theme-primary-100 dark:border-theme-secondary-800 text-theme-secondary-700"
+                          data-testid="NetworkIcon-ETH-eth.mainnet"
+                        >
+                          <div
+                            class="sc-bdfBwQ caqoGN"
+                            data-testid="NetworkIcon__icon"
+                            height="30"
+                            width="30"
+                          >
+                            <svg>
+                              eth.svg
+                            </svg>
+                          </div>
+                        </div>
+                      </li>
+                      <li
+                        class="inline-block cursor-pointer h-21"
+                        data-testid="SelectNetwork__NetworkIcon--container"
+                      >
+                        <div
+                          aria-label="Lisk"
+                          class="w-full h-full flex justify-center items-center border-2 rounded-xl border-theme-primary-100 dark:border-theme-secondary-800 text-theme-secondary-700"
+                          data-testid="NetworkIcon-LSK-lsk.mainnet"
+                        >
+                          <div
+                            class="sc-bdfBwQ caqoGN"
+                            data-testid="NetworkIcon__icon"
+                            height="30"
+                            width="30"
+                          >
+                            <svg>
+                              lsk.svg
+                            </svg>
+                          </div>
+                        </div>
+                      </li>
+                    </ul>
                   </div>
-                  <ul
-                    aria-labelledby="CustomPeers__network-label"
-                    class="grid grid-cols-6 gap-3"
-                    id="CustomPeers__network-menu"
-                    role="listbox"
-                  >
-                    <li
-                      class="inline-block cursor-pointer h-21"
-                      data-testid="SelectNetwork__NetworkIcon--container"
-                    >
-                      <div
-                        aria-label="ARK"
-                        class="w-full h-full flex justify-center items-center border-2 rounded-xl border-theme-primary-100 dark:border-theme-secondary-800 text-theme-secondary-700"
-                        data-testid="NetworkIcon-ARK-ark.mainnet"
-                      >
-                        <div
-                          class="sc-bdfBwQ caqoGN"
-                          data-testid="NetworkIcon__icon"
-                          height="30"
-                          width="30"
-                        >
-                          <svg>
-                            ark.svg
-                          </svg>
-                        </div>
-                      </div>
-                    </li>
-                    <li
-                      class="inline-block cursor-pointer h-21"
-                      data-testid="SelectNetwork__NetworkIcon--container"
-                    >
-                      <div
-                        aria-label="Compendia"
-                        class="w-full h-full flex justify-center items-center border-2 rounded-xl border-theme-primary-100 dark:border-theme-secondary-800 text-theme-secondary-700"
-                        data-testid="NetworkIcon-ARK-compendia.mainnet"
-                      >
-                        <div
-                          class="sc-bdfBwQ caqoGN"
-                          data-testid="NetworkIcon__icon"
-                          height="30"
-                          width="30"
-                        >
-                          <svg>
-                            bind.svg
-                          </svg>
-                        </div>
-                      </div>
-                    </li>
-                    <li
-                      class="inline-block cursor-pointer h-21"
-                      data-testid="SelectNetwork__NetworkIcon--container"
-                    >
-                      <div
-                        aria-label="Bitcoin"
-                        class="w-full h-full flex justify-center items-center border-2 rounded-xl border-theme-primary-100 dark:border-theme-secondary-800 text-theme-secondary-700"
-                        data-testid="NetworkIcon-BTC-btc.livenet"
-                      >
-                        <div
-                          class="sc-bdfBwQ caqoGN"
-                          data-testid="NetworkIcon__icon"
-                          height="30"
-                          width="30"
-                        >
-                          <svg>
-                            btc.svg
-                          </svg>
-                        </div>
-                      </div>
-                    </li>
-                    <li
-                      class="inline-block cursor-pointer h-21"
-                      data-testid="SelectNetwork__NetworkIcon--container"
-                    >
-                      <div
-                        aria-label="Ethereum"
-                        class="w-full h-full flex justify-center items-center border-2 rounded-xl border-theme-primary-100 dark:border-theme-secondary-800 text-theme-secondary-700"
-                        data-testid="NetworkIcon-ETH-eth.mainnet"
-                      >
-                        <div
-                          class="sc-bdfBwQ caqoGN"
-                          data-testid="NetworkIcon__icon"
-                          height="30"
-                          width="30"
-                        >
-                          <svg>
-                            eth.svg
-                          </svg>
-                        </div>
-                      </div>
-                    </li>
-                    <li
-                      class="inline-block cursor-pointer h-21"
-                      data-testid="SelectNetwork__NetworkIcon--container"
-                    >
-                      <div
-                        aria-label="Lisk"
-                        class="w-full h-full flex justify-center items-center border-2 rounded-xl border-theme-primary-100 dark:border-theme-secondary-800 text-theme-secondary-700"
-                        data-testid="NetworkIcon-LSK-lsk.mainnet"
-                      >
-                        <div
-                          class="sc-bdfBwQ caqoGN"
-                          data-testid="NetworkIcon__icon"
-                          height="30"
-                          width="30"
-                        >
-                          <svg>
-                            lsk.svg
-                          </svg>
-                        </div>
-                      </div>
-                    </li>
-                  </ul>
-                </div>
-                <div
-                  class="mt-6"
-                >
                   <div
-                    class="font-bold text-sm text-theme-secondary-400 dark:text-theme-secondary-700 mb-3"
+                    class="mt-6"
                   >
-                    DEVELOPMENT NETWORKS
+                    <div
+                      class="font-bold text-sm text-theme-secondary-400 dark:text-theme-secondary-700 mb-3"
+                    >
+                      DEVELOPMENT NETWORKS
+                    </div>
+                    <ul
+                      aria-labelledby="CustomPeers__network-label"
+                      class="grid grid-cols-6 gap-3"
+                      id="CustomPeers__network-menu"
+                      role="listbox"
+                    >
+                      <li
+                        class="inline-block cursor-pointer h-21"
+                        data-testid="SelectNetwork__NetworkIcon--container"
+                      >
+                        <div
+                          aria-label="ARK Devnet"
+                          class="w-full h-full flex justify-center items-center border-2 rounded-xl border-theme-primary-100 dark:border-theme-secondary-800 text-theme-primary-300"
+                          data-testid="NetworkIcon-ARK-ark.devnet"
+                        >
+                          <div
+                            class="sc-bdfBwQ caqoGN"
+                            data-testid="NetworkIcon__icon"
+                            height="30"
+                            width="30"
+                          >
+                            <svg>
+                              ark.svg
+                            </svg>
+                          </div>
+                        </div>
+                      </li>
+                      <li
+                        class="inline-block cursor-pointer h-21"
+                        data-testid="SelectNetwork__NetworkIcon--container"
+                      >
+                        <div
+                          aria-label="Lisk Testnet"
+                          class="w-full h-full flex justify-center items-center border-2 rounded-xl border-theme-primary-100 dark:border-theme-secondary-800 text-theme-primary-300"
+                          data-testid="NetworkIcon-LSK-lsk.testnet"
+                        >
+                          <div
+                            class="sc-bdfBwQ caqoGN"
+                            data-testid="NetworkIcon__icon"
+                            height="30"
+                            width="30"
+                          >
+                            <svg>
+                              lsk.svg
+                            </svg>
+                          </div>
+                        </div>
+                      </li>
+                    </ul>
                   </div>
-                  <ul
-                    aria-labelledby="CustomPeers__network-label"
-                    class="grid grid-cols-6 gap-3"
-                    id="CustomPeers__network-menu"
-                    role="listbox"
-                  >
-                    <li
-                      class="inline-block cursor-pointer h-21"
-                      data-testid="SelectNetwork__NetworkIcon--container"
-                    >
-                      <div
-                        aria-label="ARK Devnet"
-                        class="w-full h-full flex justify-center items-center border-2 rounded-xl border-theme-primary-100 dark:border-theme-secondary-800 text-theme-primary-300"
-                        data-testid="NetworkIcon-ARK-ark.devnet"
-                      >
-                        <div
-                          class="sc-bdfBwQ caqoGN"
-                          data-testid="NetworkIcon__icon"
-                          height="30"
-                          width="30"
-                        >
-                          <svg>
-                            ark.svg
-                          </svg>
-                        </div>
-                      </div>
-                    </li>
-                    <li
-                      class="inline-block cursor-pointer h-21"
-                      data-testid="SelectNetwork__NetworkIcon--container"
-                    >
-                      <div
-                        aria-label="Lisk Testnet"
-                        class="w-full h-full flex justify-center items-center border-2 rounded-xl border-theme-primary-100 dark:border-theme-secondary-800 text-theme-primary-300"
-                        data-testid="NetworkIcon-LSK-lsk.testnet"
-                      >
-                        <div
-                          class="sc-bdfBwQ caqoGN"
-                          data-testid="NetworkIcon__icon"
-                          height="30"
-                          width="30"
-                        >
-                          <svg>
-                            lsk.svg
-                          </svg>
-                        </div>
-                      </div>
-                    </li>
-                  </ul>
                 </div>
               </div>
             </fieldset>

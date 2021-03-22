@@ -1,6 +1,7 @@
 import { Checkbox } from "app/components/Checkbox";
 import { Dropdown } from "app/components/Dropdown";
 import { Icon } from "app/components/Icon";
+import { ControlButton } from "app/components/LayoutControls";
 import { Tooltip } from "app/components/Tooltip";
 import React from "react";
 import { useTranslation } from "react-i18next";
@@ -15,8 +16,10 @@ export const VotesFilter = ({ onChange, selectedOption = "all", totalCurrentVote
 			<Dropdown
 				position="right"
 				toggleContent={
-					<div className="cursor-pointer">
-						<Icon name="Filters" width={20} height={20} />
+					<div className="group">
+						<ControlButton isChanged={selectedOption !== "all"} isActive={selectedOption !== "all"}>
+							<Icon name="Filters" width={17} height={19} />
+						</ControlButton>
 					</div>
 				}
 			>

@@ -9,6 +9,7 @@ import { InputAddonEnd } from "./InputGroup";
 
 type InputProps = {
 	as?: React.ElementType;
+	ignoreContext?: boolean;
 	isInvalid?: boolean;
 	isFocused?: boolean;
 	errorMessage?: string;
@@ -40,8 +41,12 @@ const InputStyled = styled.input`
 type InputElement = HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement;
 
 export const Input = React.forwardRef<InputElement, InputProps>(
-	({ isInvalid, className, isFocused, errorClassName, errorMessage, ...props }: InputProps, ref) => {
-		const fieldContext = useFormField();
+	({ ignoreContext, isInvalid, className, isFocused, errorClassName, errorMessage, ...props }: InputProps, ref) => {
+		let fieldContext = useFormField();
+
+		if (ignoreContext) {
+			fieldContext = undefined;
+		}
 
 		const isInvalidValue = fieldContext?.isInvalid || isInvalid;
 		const errorMessageValue = fieldContext?.errorMessage || errorMessage;

@@ -57,46 +57,51 @@ exports[`SendTransactionForm should render 1`] = `
           </div>
         </div>
         <div
-          class=""
+          class="hidden"
+          data-testid="SelectNetwork__options"
         >
-          <ul
-            aria-labelledby="SendTransactionForm__network-label"
-            class="grid grid-cols-6 gap-3"
-            id="SendTransactionForm__network-menu"
-            role="listbox"
-          />
-        </div>
-        <div
-          class="mt-6"
-        >
-          <ul
-            aria-labelledby="SendTransactionForm__network-label"
-            class="grid grid-cols-6 gap-3"
-            id="SendTransactionForm__network-menu"
-            role="listbox"
+          <div
+            class=""
           >
-            <li
-              class="inline-block cursor-pointer h-21"
-              data-testid="SelectNetwork__NetworkIcon--container"
+            <ul
+              aria-labelledby="SendTransactionForm__network-label"
+              class="grid grid-cols-6 gap-3"
+              id="SendTransactionForm__network-menu"
+              role="listbox"
+            />
+          </div>
+          <div
+            class="mt-6"
+          >
+            <ul
+              aria-labelledby="SendTransactionForm__network-label"
+              class="grid grid-cols-6 gap-3"
+              id="SendTransactionForm__network-menu"
+              role="listbox"
             >
-              <div
-                aria-label="ARK Devnet"
-                class="w-full h-full flex justify-center items-center border-2 rounded-xl border-theme-primary-100 dark:border-theme-secondary-800 text-theme-primary-300"
-                data-testid="NetworkIcon-ARK-ark.devnet"
+              <li
+                class="inline-block cursor-pointer h-21"
+                data-testid="SelectNetwork__NetworkIcon--container"
               >
                 <div
-                  class="sc-bdfBwQ caqoGN"
-                  data-testid="NetworkIcon__icon"
-                  height="30"
-                  width="30"
+                  aria-label="ARK Devnet"
+                  class="w-full h-full flex justify-center items-center border-2 rounded-xl border-theme-primary-100 dark:border-theme-secondary-800 text-theme-primary-300"
+                  data-testid="NetworkIcon-ARK-ark.devnet"
                 >
-                  <svg>
-                    ark.svg
-                  </svg>
+                  <div
+                    class="sc-bdfBwQ caqoGN"
+                    data-testid="NetworkIcon__icon"
+                    height="30"
+                    width="30"
+                  >
+                    <svg>
+                      ark.svg
+                    </svg>
+                  </div>
                 </div>
-              </div>
-            </li>
-          </ul>
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
     </fieldset>
@@ -262,46 +267,51 @@ exports[`SendTransactionForm should select a network & update fees 1`] = `
           </div>
         </div>
         <div
-          class=""
+          class="hidden"
+          data-testid="SelectNetwork__options"
         >
-          <ul
-            aria-labelledby="SendTransactionForm__network-label"
-            class="grid grid-cols-6 gap-3"
-            id="SendTransactionForm__network-menu"
-            role="listbox"
-          />
-        </div>
-        <div
-          class="mt-6"
-        >
-          <ul
-            aria-labelledby="SendTransactionForm__network-label"
-            class="grid grid-cols-6 gap-3"
-            id="SendTransactionForm__network-menu"
-            role="listbox"
+          <div
+            class=""
           >
-            <li
-              class="inline-block cursor-pointer h-21"
-              data-testid="SelectNetwork__NetworkIcon--container"
+            <ul
+              aria-labelledby="SendTransactionForm__network-label"
+              class="grid grid-cols-6 gap-3"
+              id="SendTransactionForm__network-menu"
+              role="listbox"
+            />
+          </div>
+          <div
+            class="mt-6"
+          >
+            <ul
+              aria-labelledby="SendTransactionForm__network-label"
+              class="grid grid-cols-6 gap-3"
+              id="SendTransactionForm__network-menu"
+              role="listbox"
             >
-              <div
-                aria-label="ARK Devnet"
-                class="w-full h-full flex justify-center items-center border-2 rounded-xl border-theme-primary-100 dark:border-theme-secondary-800 text-theme-primary-300"
-                data-testid="NetworkIcon-ARK-ark.devnet"
+              <li
+                class="inline-block cursor-pointer h-21"
+                data-testid="SelectNetwork__NetworkIcon--container"
               >
                 <div
-                  class="sc-bdfBwQ caqoGN"
-                  data-testid="NetworkIcon__icon"
-                  height="30"
-                  width="30"
+                  aria-label="ARK Devnet"
+                  class="w-full h-full flex justify-center items-center border-2 rounded-xl border-theme-primary-100 dark:border-theme-secondary-800 text-theme-primary-300"
+                  data-testid="NetworkIcon-ARK-ark.devnet"
                 >
-                  <svg>
-                    ark.svg
-                  </svg>
+                  <div
+                    class="sc-bdfBwQ caqoGN"
+                    data-testid="NetworkIcon__icon"
+                    height="30"
+                    width="30"
+                  >
+                    <svg>
+                      ark.svg
+                    </svg>
+                  </div>
                 </div>
-              </div>
-            </li>
-          </ul>
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
     </fieldset>
@@ -520,46 +530,51 @@ exports[`SendTransactionForm should use static fees if avg is not available 1`] 
           </div>
         </div>
         <div
-          class=""
+          class="hidden"
+          data-testid="SelectNetwork__options"
         >
-          <ul
-            aria-labelledby="SendTransactionForm__network-label"
-            class="grid grid-cols-6 gap-3"
-            id="SendTransactionForm__network-menu"
-            role="listbox"
-          />
-        </div>
-        <div
-          class="mt-6"
-        >
-          <ul
-            aria-labelledby="SendTransactionForm__network-label"
-            class="grid grid-cols-6 gap-3"
-            id="SendTransactionForm__network-menu"
-            role="listbox"
+          <div
+            class=""
           >
-            <li
-              class="inline-block cursor-pointer h-21"
-              data-testid="SelectNetwork__NetworkIcon--container"
+            <ul
+              aria-labelledby="SendTransactionForm__network-label"
+              class="grid grid-cols-6 gap-3"
+              id="SendTransactionForm__network-menu"
+              role="listbox"
+            />
+          </div>
+          <div
+            class="mt-6"
+          >
+            <ul
+              aria-labelledby="SendTransactionForm__network-label"
+              class="grid grid-cols-6 gap-3"
+              id="SendTransactionForm__network-menu"
+              role="listbox"
             >
-              <div
-                aria-label="ARK Devnet"
-                class="w-full h-full flex justify-center items-center border-2 rounded-xl border-theme-primary-100 dark:border-theme-secondary-800 text-theme-primary-300"
-                data-testid="NetworkIcon-ARK-ark.devnet"
+              <li
+                class="inline-block cursor-pointer h-21"
+                data-testid="SelectNetwork__NetworkIcon--container"
               >
                 <div
-                  class="sc-bdfBwQ caqoGN"
-                  data-testid="NetworkIcon__icon"
-                  height="30"
-                  width="30"
+                  aria-label="ARK Devnet"
+                  class="w-full h-full flex justify-center items-center border-2 rounded-xl border-theme-primary-100 dark:border-theme-secondary-800 text-theme-primary-300"
+                  data-testid="NetworkIcon-ARK-ark.devnet"
                 >
-                  <svg>
-                    ark.svg
-                  </svg>
+                  <div
+                    class="sc-bdfBwQ caqoGN"
+                    data-testid="NetworkIcon__icon"
+                    height="30"
+                    width="30"
+                  >
+                    <svg>
+                      ark.svg
+                    </svg>
+                  </div>
                 </div>
-              </div>
-            </li>
-          </ul>
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
     </fieldset>

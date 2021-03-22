@@ -14,7 +14,7 @@ export const VerifyMessageStatus = ({ title, description, type, isOpen, onClose 
 	const image = type === "success" ? "SuccessBanner" : "ErrorBanner";
 
 	return (
-		<Modal title={title} description={description} isOpen={isOpen} onClose={onClose}>
+		<Modal size="md" title={title} description={description} isOpen={isOpen} onClose={onClose}>
 			<Image name={image} className="mt-8 w-full" />
 		</Modal>
 	);

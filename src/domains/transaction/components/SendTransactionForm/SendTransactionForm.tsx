@@ -97,6 +97,7 @@ export const SendTransactionForm = ({
 					selected={network}
 					disabled={disableNetworkField || (hasWalletId && !!senderAddress)}
 					onSelect={handleSelectNetwork}
+					hideOptions
 				/>
 			</FormField>
 

@@ -47,5 +47,38 @@ export const translations: { [key: string]: any } = {
 	PAGE_WELCOME: {
 		HAS_NO_PROFILES: "Create a new Profile to get started.",
 		HAS_PROFILES: "Choose from an existing Profile below or create a new Profile to get started.",
+		HAS_EXPORTED_PROFILES: "Exported a Profile before?",
+		IMPORT_PROFILE_TITLE: "Import Profile",
+		IMPORT_PROFILE: "Import it here.",
+	},
+	IMPORT: {
+		PASSWORD_TITLE: "Profile Password",
+		PASSWORD_DESCRIPTION:
+			"The profile you are importing contains a password that has been set for security purposes. Enter the password to confirm.",
+
+		TITLE: "Import Profile",
+		SELECT_FILE_STEP: {
+			DESCRIPTION:
+				"Select a {{fileFormat}} file with your Profile and related properties to start the import process.",
+			DRAG_AND_DROP: "Drag & Drop or",
+			BROWSE_FILES: "Browse Files",
+			SUPPORTED_FORMAT: "Supported format is {{fileFormat}}",
+			LEGACY_IMPORT: "Importing from Desktop Wallet v2?",
+			CLICK_HERE: "Click here.",
+			UPLOAD_TITLE: "Click here to upload",
+			DEPRECATION_WARNING:
+				"Please note that importing a Profile from Desktop Wallet v2 in .json format is provided temporarily and will soon be disabled. We recommend that you re-save your Profile in the new .dwe format.",
+		},
+		PROCESSING_IMPORT_STEP: {
+			DESCRIPTION: "The file with name {{name}} is being imported.",
+			PLEASE_WAIT: "Please wait...",
+		},
+		ERROR_STEP: {
+			DESCRIPTION:
+				"An error occurred while importing the profile, try importing again. Select Retry to re-import the profile. If the error occurs again, you can contact our support team.",
+		},
+		FORM_STEP: {
+			DESCRIPTION: "Your profile addresses have been imported.",
+		},
 	},
 };
