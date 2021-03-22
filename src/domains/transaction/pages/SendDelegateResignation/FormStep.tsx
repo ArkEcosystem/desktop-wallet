@@ -51,11 +51,11 @@ export const FormStep = ({ senderWallet }: { senderWallet: ReadWriteWallet }) =>
 	return (
 		<section data-testid="SendDelegateResignation__form-step" className="space-y-8">
 			<Header
-				title={t("TRANSACTION.PAGE_RESIGN_REGISTRATION.FORM_STEP.DELEGATE.TITLE")}
-				subtitle={t("TRANSACTION.PAGE_RESIGN_REGISTRATION.FORM_STEP.DELEGATE.DESCRIPTION")}
+				title={t("TRANSACTION.PAGE_DELEGATE_REGISTRATION.FORM_STEP.TITLE")}
+				subtitle={t("TRANSACTION.PAGE_DELEGATE_REGISTRATION.FORM_STEP.DESCRIPTION")}
 			/>
 
-			<Alert>{t("TRANSACTION.PAGE_RESIGN_REGISTRATION.FORM_STEP.DELEGATE.WARNING")}</Alert>
+			<Alert>{t("TRANSACTION.PAGE_DELEGATE_REGISTRATION.FORM_STEP.WARNING")}</Alert>
 
 			<div>
 				<TransactionSender

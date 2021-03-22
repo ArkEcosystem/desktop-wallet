@@ -362,9 +362,9 @@ export const AddRecipient = ({
 					<RecipientList
 						network={network}
 						recipients={addedRecipients}
-						isEditable={true}
 						onRemove={handleRemoveRecipient}
 						assetSymbol={assetSymbol}
+						isEditable
 					/>
 				</div>
 			)}

@@ -28,7 +28,7 @@ export const goToDelegateRegistrationPage = async (t: any) => {
 	);
 
 	await t
-		.expect(Selector("div").withText(translations.TRANSACTION.PAGE_DELEGATE_REGISTRATION.SECOND_STEP.TITLE).exists)
+		.expect(Selector("div").withText(translations.TRANSACTION.PAGE_DELEGATE_REGISTRATION.FORM_STEP.TITLE).exists)
 		.ok();
 };
 
@@ -41,8 +41,6 @@ export const goToDelegateResignationPage = async (t: any) => {
 	);
 
 	await t
-		.expect(
-			Selector("div").withText(translations.TRANSACTION.PAGE_RESIGN_REGISTRATION.FORM_STEP.DELEGATE.TITLE).exists,
-		)
+		.expect(Selector("div").withText(translations.TRANSACTION.PAGE_DELEGATE_RESIGNATION.FORM_STEP.TITLE).exists)
 		.ok();
 };
