@@ -1,7 +1,8 @@
 import "./styles/app.css";
 
 import { App } from "app";
-import React from "react";
+import { ConfirmationModal } from "app/components/ConfirmationModal";
+import React, { useCallback, useRef, useState } from "react";
 import ReactDOM from "react-dom";
 import { BrowserRouter } from "react-router-dom";
 
@@ -22,9 +23,32 @@ if (process.env.NODE_ENV && ["development", "production"].includes(process.env.N
 	}
 }
 
-ReactDOM.render(
-	<BrowserRouter>
-		<App />
-	</BrowserRouter>,
-	document.getElementById("root"),
-);
+const AppRouter = () => {
+	const [isOpen, setIsOpen] = useState(false);
+
+	const confirmationFnRef = useRef<(allowNavigate: boolean) => void>();
+
+	const onCancel = () => {
+		confirmationFnRef.current?.(false);
+		setIsOpen(false);
+	};
+
+	const onConfirm = () => {
+		confirmationFnRef.current?.(true);
+		setIsOpen(false);
+	};
+
+	const getUserConfirmation = useCallback((_, callback) => {
+		confirmationFnRef.current = callback;
+		setIsOpen(true);
+	}, []);
+
+	return (
+		<BrowserRouter getUserConfirmation={getUserConfirmation}>
+			<App />
+			<ConfirmationModal isOpen={isOpen} onCancel={onCancel} onConfirm={onConfirm} />
+		</BrowserRouter>
+	);
+};
+
+ReactDOM.render(<AppRouter />, document.getElementById("root"));

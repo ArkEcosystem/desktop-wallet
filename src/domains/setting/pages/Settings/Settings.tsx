@@ -2,9 +2,11 @@ import { Page, Section } from "app/components/Layout";
 import { SideBar } from "app/components/SideBar";
 import { useActiveProfile, useReloadPath } from "app/hooks";
 import { toasts } from "app/services";
+import { Location } from "history";
 import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import { useTranslation } from "react-i18next";
+import { matchPath, Prompt } from "react-router-dom";
 
 import { availableSettings } from "./available-settings";
 
@@ -14,7 +16,8 @@ export const Settings = () => {
 	const reloadPath = useReloadPath();
 
 	const form = useForm({ mode: "onChange" });
-	const { register, errors } = form;
+	const { register, errors, formState, reset } = form;
+	const { isDirty } = formState;
 
 	const activeProfile = useActiveProfile();
 
@@ -50,12 +53,31 @@ export const Settings = () => {
 
 	const handleSuccess = (message?: string) => {
 		reloadPath();
+		reset();
 
 		toasts.success(message || t("SETTINGS.GENERAL.SUCCESS"));
 	};
 
 	const handleError = (errorMessage: string, message?: string) => {
 		toasts.error(`${message || t("COMMON.ERROR")}: ${errorMessage}`);
+	};
+
+	const getPromptMessage = (location: Location) => {
+		const matchCurrent = matchPath(location.pathname, {
+			path: "/profiles/:profileId/settings",
+		});
+
+		const isReload = matchCurrent !== null;
+
+		if (isReload) {
+			return true;
+		}
+
+		if (isDirty) {
+			return "block";
+		}
+
+		return true;
 	};
 
 	const renderSettings = () => {
@@ -76,6 +98,7 @@ export const Settings = () => {
 			sidebar={<SideBar items={settingsItems} activeItem={activeSettings} handleActiveItem={setActiveSettings} />}
 		>
 			<Section>{renderSettings()}</Section>
+			<Prompt message={getPromptMessage} />
 		</Page>
 	);
 };

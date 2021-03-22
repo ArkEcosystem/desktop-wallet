@@ -17,6 +17,7 @@ import { AdvancedMode } from "domains/setting/components/AdvancedMode";
 import { DevelopmentNetwork } from "domains/setting/components/DevelopmentNetwork";
 import React, { useEffect, useMemo, useState } from "react";
 import { useTranslation } from "react-i18next";
+import { useHistory } from "react-router-dom";
 import { setScreenshotProtection } from "utils/electron-utils";
 
 import { SettingsProps } from "../Settings.models";
@@ -26,6 +27,7 @@ export const General = ({ formConfig, onSuccess }: SettingsProps) => {
 	const activeProfile = useActiveProfile();
 	const { persist } = useEnvironmentContext();
 
+	const history = useHistory();
 	const { t } = useTranslation();
 
 	const { context, register } = formConfig;
@@ -381,7 +383,9 @@ export const General = ({ formConfig, onSuccess }: SettingsProps) => {
 					</Button>
 
 					<div className="space-x-3">
-						<Button variant="secondary">{t("COMMON.CANCEL")}</Button>
+						<Button variant="secondary" onClick={() => history.go(-1)}>
+							{t("COMMON.CANCEL")}
+						</Button>
 						<Button
 							disabled={!isValid || isSubmitting}
 							type="submit"
