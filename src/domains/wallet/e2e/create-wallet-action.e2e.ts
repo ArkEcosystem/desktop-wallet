@@ -91,6 +91,10 @@ test("should create a wallet", async (t) => {
 	}
 
 	await t.click(Selector("button").withExactText(translations().COMMON.CONTINUE));
+
+	await t.expect(Selector("[data-testid=EncryptPassword]").exists).ok();
+	await t.click(Selector("[data-testid=CreateWallet__skip-button]"));
+
 	await t.expect(Selector("h1").withExactText(translations().COMMON.COMPLETED).exists).ok();
 
 	// Save and finish
