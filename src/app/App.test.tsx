@@ -34,6 +34,25 @@ describe("App", () => {
 			.query({ limit: 20 })
 			.reply(200, require("tests/fixtures/coins/ark/devnet/notification-transactions.json"))
 			.persist();
+
+		nock("https://registry.npmjs.com")
+			.get("/-/v1/search")
+			.query((params) => params.from === "0")
+			.once()
+			.reply(200, require("tests/fixtures/plugins/registry-response.json"))
+			.get("/-/v1/search")
+			.query((params) => params.from === "250")
+			.once()
+			.reply(200, {})
+			.persist();
+
+		nock("https://raw.github.com")
+			.get("/dated/transaction-export-plugin/master/package.json")
+			.reply(200, require("tests/fixtures/plugins/registry/@dated/transaction-export-plugin.json"))
+			.get("/dated/delegate-calculator-plugin/master/package.json")
+			.reply(200, require("tests/fixtures/plugins/registry/@dated/delegate-calculator-plugin.json"))
+			.persist();
+
 		jest.spyOn(electron.ipcRenderer, "invoke").mockImplementation((event: string, data) => {
 			let isUpdateCalled = false;
 			if (event === "updater:check-for-updates") {

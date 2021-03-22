@@ -59,8 +59,8 @@ export const FormStep = ({
 	}, [env, setFees, wallet, setValue, findByType]);
 
 	useEffect(() => {
-		setValue("fee", fees.avg, { shouldValidate: true, shouldDirty: true });
-	}, [setValue, fees]);
+		setValue("fee", defaultFee ?? fees.avg, { shouldValidate: true, shouldDirty: true });
+	}, [setValue, fees, defaultFee]);
 
 	return (
 		<section data-testid="SendVote__form-step">

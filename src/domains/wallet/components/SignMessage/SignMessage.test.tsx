@@ -366,9 +366,9 @@ describe("SignMessage", () => {
 			fireEvent.click(getByTestId("SignMessage__submit-button"));
 		});
 
-		// await waitFor(() =>
-		//  expect(toastSpy).toHaveBeenCalledWith(walletTranslations.MODAL_LEDGER_WALLET.NO_DEVICE_FOUND),
-		// );
+		await waitFor(() => {
+			expect(toastSpy).toHaveBeenCalledWith(walletTranslations.MODAL_LEDGER_WALLET.NO_DEVICE_FOUND);
+		});
 
 		toastSpy.mockRestore();
 		transportSpy.mockRestore();

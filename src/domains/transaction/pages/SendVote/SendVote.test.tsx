@@ -413,12 +413,20 @@ describe("SendVote", () => {
 		expect(getByTestId("SendVote__form-step")).toBeTruthy();
 		await waitFor(() => expect(getByTestId("SendVote__form-step")).toHaveTextContent(delegateData[1].username));
 
-		await waitFor(() => expect(getByTestId("InputCurrency")).not.toHaveValue("0"));
+		fireEvent.input(getByTestId("InputCurrency"), { target: { value: "0.02" } });
 
 		await waitFor(() => expect(getByTestId("SendVote__button--continue")).not.toBeDisabled());
 		fireEvent.click(getByTestId("SendVote__button--continue"));
 
 		// Review Step
+		expect(getByTestId("SendVote__review-step")).toBeTruthy();
+
+		// Back to form
+		fireEvent.click(getByTestId("SendVote__button--back"));
+		await waitFor(() => expect(getByTestId("InputCurrency")).toHaveValue("0.02"));
+
+		// Back to review step
+		fireEvent.click(getByTestId("SendVote__button--continue"));
 		expect(getByTestId("SendVote__review-step")).toBeTruthy();
 		fireEvent.click(getByTestId("SendVote__button--continue"));
 

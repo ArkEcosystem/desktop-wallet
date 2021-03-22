@@ -39,7 +39,7 @@ const randomAddress = "D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib";
 
 const route = `/profiles/${fixtureProfileId}/wallets/import`;
 
-jest.setTimeout(20000);
+jest.setTimeout(30000);
 
 describe("ImportWallet", () => {
 	beforeAll(() => {
@@ -654,8 +654,6 @@ describe("ImportWallet", () => {
 		});
 
 		const { getByTestId, queryByTestId, asFragment } = rendered;
-
-		expect(asFragment()).toMatchSnapshot();
 
 		await actAsync(async () => {
 			const selectNetworkInput = getByTestId("SelectNetworkInput__input");

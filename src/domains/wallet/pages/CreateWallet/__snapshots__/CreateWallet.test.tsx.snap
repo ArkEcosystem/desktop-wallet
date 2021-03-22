@@ -384,99 +384,104 @@ exports[`CreateWallet should create a wallet with alias 1`] = `
                           </div>
                         </div>
                         <div
-                          class="mt-6"
+                          class=""
+                          data-testid="SelectNetwork__options"
                         >
                           <div
-                            class="font-bold text-sm text-theme-secondary-400 dark:text-theme-secondary-700 mb-3"
+                            class="mt-6"
                           >
-                            PUBLIC NETWORKS
+                            <div
+                              class="font-bold text-sm text-theme-secondary-400 dark:text-theme-secondary-700 mb-3"
+                            >
+                              PUBLIC NETWORKS
+                            </div>
+                            <ul
+                              aria-labelledby="CreateWallet__network-label"
+                              class="grid grid-cols-6 gap-3"
+                              id="CreateWallet__network-menu"
+                              role="listbox"
+                            >
+                              <li
+                                class="inline-block cursor-pointer h-21"
+                                data-testid="SelectNetwork__NetworkIcon--container"
+                              >
+                                <div
+                                  aria-label="ARK"
+                                  class="w-full h-full flex justify-center items-center border-2 rounded-xl border-theme-primary-100 dark:border-theme-secondary-800 text-theme-secondary-700"
+                                  data-testid="NetworkIcon-ARK-ark.mainnet"
+                                >
+                                  <div
+                                    class="sc-bdfBwQ caqoGN"
+                                    data-testid="NetworkIcon__icon"
+                                    height="30"
+                                    width="30"
+                                  >
+                                    <svg>
+                                      ark.svg
+                                    </svg>
+                                  </div>
+                                </div>
+                              </li>
+                              <li
+                                class="inline-block cursor-pointer h-21"
+                                data-testid="SelectNetwork__NetworkIcon--container"
+                              >
+                                <div
+                                  aria-label="Compendia"
+                                  class="w-full h-full flex justify-center items-center border-2 rounded-xl border-theme-primary-100 dark:border-theme-secondary-800 text-theme-secondary-700"
+                                  data-testid="NetworkIcon-ARK-compendia.mainnet"
+                                >
+                                  <div
+                                    class="sc-bdfBwQ caqoGN"
+                                    data-testid="NetworkIcon__icon"
+                                    height="30"
+                                    width="30"
+                                  >
+                                    <svg>
+                                      bind.svg
+                                    </svg>
+                                  </div>
+                                </div>
+                              </li>
+                            </ul>
                           </div>
-                          <ul
-                            aria-labelledby="CreateWallet__network-label"
-                            class="grid grid-cols-6 gap-3"
-                            id="CreateWallet__network-menu"
-                            role="listbox"
-                          >
-                            <li
-                              class="inline-block cursor-pointer h-21"
-                              data-testid="SelectNetwork__NetworkIcon--container"
-                            >
-                              <div
-                                aria-label="ARK"
-                                class="w-full h-full flex justify-center items-center border-2 rounded-xl border-theme-primary-100 dark:border-theme-secondary-800 text-theme-secondary-700"
-                                data-testid="NetworkIcon-ARK-ark.mainnet"
-                              >
-                                <div
-                                  class="sc-bdfBwQ caqoGN"
-                                  data-testid="NetworkIcon__icon"
-                                  height="30"
-                                  width="30"
-                                >
-                                  <svg>
-                                    ark.svg
-                                  </svg>
-                                </div>
-                              </div>
-                            </li>
-                            <li
-                              class="inline-block cursor-pointer h-21"
-                              data-testid="SelectNetwork__NetworkIcon--container"
-                            >
-                              <div
-                                aria-label="Compendia"
-                                class="w-full h-full flex justify-center items-center border-2 rounded-xl border-theme-primary-100 dark:border-theme-secondary-800 text-theme-secondary-700"
-                                data-testid="NetworkIcon-ARK-compendia.mainnet"
-                              >
-                                <div
-                                  class="sc-bdfBwQ caqoGN"
-                                  data-testid="NetworkIcon__icon"
-                                  height="30"
-                                  width="30"
-                                >
-                                  <svg>
-                                    bind.svg
-                                  </svg>
-                                </div>
-                              </div>
-                            </li>
-                          </ul>
-                        </div>
-                        <div
-                          class="mt-6"
-                        >
                           <div
-                            class="font-bold text-sm text-theme-secondary-400 dark:text-theme-secondary-700 mb-3"
+                            class="mt-6"
                           >
-                            DEVELOPMENT NETWORKS
-                          </div>
-                          <ul
-                            aria-labelledby="CreateWallet__network-label"
-                            class="grid grid-cols-6 gap-3"
-                            id="CreateWallet__network-menu"
-                            role="listbox"
-                          >
-                            <li
-                              class="inline-block cursor-pointer h-21"
-                              data-testid="SelectNetwork__NetworkIcon--container"
+                            <div
+                              class="font-bold text-sm text-theme-secondary-400 dark:text-theme-secondary-700 mb-3"
                             >
-                              <div
-                                aria-label="ARK Devnet"
-                                class="w-full h-full flex justify-center items-center border-2 rounded-xl border-theme-primary-100 dark:border-theme-secondary-800 text-theme-primary-300"
-                                data-testid="NetworkIcon-ARK-ark.devnet"
+                              DEVELOPMENT NETWORKS
+                            </div>
+                            <ul
+                              aria-labelledby="CreateWallet__network-label"
+                              class="grid grid-cols-6 gap-3"
+                              id="CreateWallet__network-menu"
+                              role="listbox"
+                            >
+                              <li
+                                class="inline-block cursor-pointer h-21"
+                                data-testid="SelectNetwork__NetworkIcon--container"
                               >
                                 <div
-                                  class="sc-bdfBwQ caqoGN"
-                                  data-testid="NetworkIcon__icon"
-                                  height="30"
-                                  width="30"
+                                  aria-label="ARK Devnet"
+                                  class="w-full h-full flex justify-center items-center border-2 rounded-xl border-theme-primary-100 dark:border-theme-secondary-800 text-theme-primary-300"
+                                  data-testid="NetworkIcon-ARK-ark.devnet"
                                 >
-                                  <svg>
-                                    ark.svg
-                                  </svg>
+                                  <div
+                                    class="sc-bdfBwQ caqoGN"
+                                    data-testid="NetworkIcon__icon"
+                                    height="30"
+                                    width="30"
+                                  >
+                                    <svg>
+                                      ark.svg
+                                    </svg>
+                                  </div>
                                 </div>
-                              </div>
-                            </li>
-                          </ul>
+                              </li>
+                            </ul>
+                          </div>
                         </div>
                       </div>
                     </fieldset>
@@ -1387,99 +1392,104 @@ exports[`CreateWallet should create a wallet without alias 1`] = `
                           </div>
                         </div>
                         <div
-                          class="mt-6"
+                          class=""
+                          data-testid="SelectNetwork__options"
                         >
                           <div
-                            class="font-bold text-sm text-theme-secondary-400 dark:text-theme-secondary-700 mb-3"
+                            class="mt-6"
                           >
-                            PUBLIC NETWORKS
+                            <div
+                              class="font-bold text-sm text-theme-secondary-400 dark:text-theme-secondary-700 mb-3"
+                            >
+                              PUBLIC NETWORKS
+                            </div>
+                            <ul
+                              aria-labelledby="CreateWallet__network-label"
+                              class="grid grid-cols-6 gap-3"
+                              id="CreateWallet__network-menu"
+                              role="listbox"
+                            >
+                              <li
+                                class="inline-block cursor-pointer h-21"
+                                data-testid="SelectNetwork__NetworkIcon--container"
+                              >
+                                <div
+                                  aria-label="ARK"
+                                  class="w-full h-full flex justify-center items-center border-2 rounded-xl border-theme-primary-100 dark:border-theme-secondary-800 text-theme-secondary-700"
+                                  data-testid="NetworkIcon-ARK-ark.mainnet"
+                                >
+                                  <div
+                                    class="sc-bdfBwQ caqoGN"
+                                    data-testid="NetworkIcon__icon"
+                                    height="30"
+                                    width="30"
+                                  >
+                                    <svg>
+                                      ark.svg
+                                    </svg>
+                                  </div>
+                                </div>
+                              </li>
+                              <li
+                                class="inline-block cursor-pointer h-21"
+                                data-testid="SelectNetwork__NetworkIcon--container"
+                              >
+                                <div
+                                  aria-label="Compendia"
+                                  class="w-full h-full flex justify-center items-center border-2 rounded-xl border-theme-primary-100 dark:border-theme-secondary-800 text-theme-secondary-700"
+                                  data-testid="NetworkIcon-ARK-compendia.mainnet"
+                                >
+                                  <div
+                                    class="sc-bdfBwQ caqoGN"
+                                    data-testid="NetworkIcon__icon"
+                                    height="30"
+                                    width="30"
+                                  >
+                                    <svg>
+                                      bind.svg
+                                    </svg>
+                                  </div>
+                                </div>
+                              </li>
+                            </ul>
                           </div>
-                          <ul
-                            aria-labelledby="CreateWallet__network-label"
-                            class="grid grid-cols-6 gap-3"
-                            id="CreateWallet__network-menu"
-                            role="listbox"
-                          >
-                            <li
-                              class="inline-block cursor-pointer h-21"
-                              data-testid="SelectNetwork__NetworkIcon--container"
-                            >
-                              <div
-                                aria-label="ARK"
-                                class="w-full h-full flex justify-center items-center border-2 rounded-xl border-theme-primary-100 dark:border-theme-secondary-800 text-theme-secondary-700"
-                                data-testid="NetworkIcon-ARK-ark.mainnet"
-                              >
-                                <div
-                                  class="sc-bdfBwQ caqoGN"
-                                  data-testid="NetworkIcon__icon"
-                                  height="30"
-                                  width="30"
-                                >
-                                  <svg>
-                                    ark.svg
-                                  </svg>
-                                </div>
-                              </div>
-                            </li>
-                            <li
-                              class="inline-block cursor-pointer h-21"
-                              data-testid="SelectNetwork__NetworkIcon--container"
-                            >
-                              <div
-                                aria-label="Compendia"
-                                class="w-full h-full flex justify-center items-center border-2 rounded-xl border-theme-primary-100 dark:border-theme-secondary-800 text-theme-secondary-700"
-                                data-testid="NetworkIcon-ARK-compendia.mainnet"
-                              >
-                                <div
-                                  class="sc-bdfBwQ caqoGN"
-                                  data-testid="NetworkIcon__icon"
-                                  height="30"
-                                  width="30"
-                                >
-                                  <svg>
-                                    bind.svg
-                                  </svg>
-                                </div>
-                              </div>
-                            </li>
-                          </ul>
-                        </div>
-                        <div
-                          class="mt-6"
-                        >
                           <div
-                            class="font-bold text-sm text-theme-secondary-400 dark:text-theme-secondary-700 mb-3"
+                            class="mt-6"
                           >
-                            DEVELOPMENT NETWORKS
-                          </div>
-                          <ul
-                            aria-labelledby="CreateWallet__network-label"
-                            class="grid grid-cols-6 gap-3"
-                            id="CreateWallet__network-menu"
-                            role="listbox"
-                          >
-                            <li
-                              class="inline-block cursor-pointer h-21"
-                              data-testid="SelectNetwork__NetworkIcon--container"
+                            <div
+                              class="font-bold text-sm text-theme-secondary-400 dark:text-theme-secondary-700 mb-3"
                             >
-                              <div
-                                aria-label="ARK Devnet"
-                                class="w-full h-full flex justify-center items-center border-2 rounded-xl border-theme-primary-100 dark:border-theme-secondary-800 text-theme-primary-300"
-                                data-testid="NetworkIcon-ARK-ark.devnet"
+                              DEVELOPMENT NETWORKS
+                            </div>
+                            <ul
+                              aria-labelledby="CreateWallet__network-label"
+                              class="grid grid-cols-6 gap-3"
+                              id="CreateWallet__network-menu"
+                              role="listbox"
+                            >
+                              <li
+                                class="inline-block cursor-pointer h-21"
+                                data-testid="SelectNetwork__NetworkIcon--container"
                               >
                                 <div
-                                  class="sc-bdfBwQ caqoGN"
-                                  data-testid="NetworkIcon__icon"
-                                  height="30"
-                                  width="30"
+                                  aria-label="ARK Devnet"
+                                  class="w-full h-full flex justify-center items-center border-2 rounded-xl border-theme-primary-100 dark:border-theme-secondary-800 text-theme-primary-300"
+                                  data-testid="NetworkIcon-ARK-ark.devnet"
                                 >
-                                  <svg>
-                                    ark.svg
-                                  </svg>
+                                  <div
+                                    class="sc-bdfBwQ caqoGN"
+                                    data-testid="NetworkIcon__icon"
+                                    height="30"
+                                    width="30"
+                                  >
+                                    <svg>
+                                      ark.svg
+                                    </svg>
+                                  </div>
                                 </div>
-                              </div>
-                            </li>
-                          </ul>
+                              </li>
+                            </ul>
+                          </div>
                         </div>
                       </div>
                     </fieldset>
@@ -2392,99 +2402,104 @@ exports[`CreateWallet should remove pending wallet if not submitted 1`] = `
                           </div>
                         </div>
                         <div
-                          class="mt-6"
+                          class=""
+                          data-testid="SelectNetwork__options"
                         >
                           <div
-                            class="font-bold text-sm text-theme-secondary-400 dark:text-theme-secondary-700 mb-3"
+                            class="mt-6"
                           >
-                            PUBLIC NETWORKS
+                            <div
+                              class="font-bold text-sm text-theme-secondary-400 dark:text-theme-secondary-700 mb-3"
+                            >
+                              PUBLIC NETWORKS
+                            </div>
+                            <ul
+                              aria-labelledby="CreateWallet__network-label"
+                              class="grid grid-cols-6 gap-3"
+                              id="CreateWallet__network-menu"
+                              role="listbox"
+                            >
+                              <li
+                                class="inline-block cursor-pointer h-21"
+                                data-testid="SelectNetwork__NetworkIcon--container"
+                              >
+                                <div
+                                  aria-label="ARK"
+                                  class="w-full h-full flex justify-center items-center border-2 rounded-xl border-theme-primary-100 dark:border-theme-secondary-800 text-theme-secondary-700"
+                                  data-testid="NetworkIcon-ARK-ark.mainnet"
+                                >
+                                  <div
+                                    class="sc-bdfBwQ caqoGN"
+                                    data-testid="NetworkIcon__icon"
+                                    height="30"
+                                    width="30"
+                                  >
+                                    <svg>
+                                      ark.svg
+                                    </svg>
+                                  </div>
+                                </div>
+                              </li>
+                              <li
+                                class="inline-block cursor-pointer h-21"
+                                data-testid="SelectNetwork__NetworkIcon--container"
+                              >
+                                <div
+                                  aria-label="Compendia"
+                                  class="w-full h-full flex justify-center items-center border-2 rounded-xl border-theme-primary-100 dark:border-theme-secondary-800 text-theme-secondary-700"
+                                  data-testid="NetworkIcon-ARK-compendia.mainnet"
+                                >
+                                  <div
+                                    class="sc-bdfBwQ caqoGN"
+                                    data-testid="NetworkIcon__icon"
+                                    height="30"
+                                    width="30"
+                                  >
+                                    <svg>
+                                      bind.svg
+                                    </svg>
+                                  </div>
+                                </div>
+                              </li>
+                            </ul>
                           </div>
-                          <ul
-                            aria-labelledby="CreateWallet__network-label"
-                            class="grid grid-cols-6 gap-3"
-                            id="CreateWallet__network-menu"
-                            role="listbox"
-                          >
-                            <li
-                              class="inline-block cursor-pointer h-21"
-                              data-testid="SelectNetwork__NetworkIcon--container"
-                            >
-                              <div
-                                aria-label="ARK"
-                                class="w-full h-full flex justify-center items-center border-2 rounded-xl border-theme-primary-100 dark:border-theme-secondary-800 text-theme-secondary-700"
-                                data-testid="NetworkIcon-ARK-ark.mainnet"
-                              >
-                                <div
-                                  class="sc-bdfBwQ caqoGN"
-                                  data-testid="NetworkIcon__icon"
-                                  height="30"
-                                  width="30"
-                                >
-                                  <svg>
-                                    ark.svg
-                                  </svg>
-                                </div>
-                              </div>
-                            </li>
-                            <li
-                              class="inline-block cursor-pointer h-21"
-                              data-testid="SelectNetwork__NetworkIcon--container"
-                            >
-                              <div
-                                aria-label="Compendia"
-                                class="w-full h-full flex justify-center items-center border-2 rounded-xl border-theme-primary-100 dark:border-theme-secondary-800 text-theme-secondary-700"
-                                data-testid="NetworkIcon-ARK-compendia.mainnet"
-                              >
-                                <div
-                                  class="sc-bdfBwQ caqoGN"
-                                  data-testid="NetworkIcon__icon"
-                                  height="30"
-                                  width="30"
-                                >
-                                  <svg>
-                                    bind.svg
-                                  </svg>
-                                </div>
-                              </div>
-                            </li>
-                          </ul>
-                        </div>
-                        <div
-                          class="mt-6"
-                        >
                           <div
-                            class="font-bold text-sm text-theme-secondary-400 dark:text-theme-secondary-700 mb-3"
+                            class="mt-6"
                           >
-                            DEVELOPMENT NETWORKS
-                          </div>
-                          <ul
-                            aria-labelledby="CreateWallet__network-label"
-                            class="grid grid-cols-6 gap-3"
-                            id="CreateWallet__network-menu"
-                            role="listbox"
-                          >
-                            <li
-                              class="inline-block cursor-pointer h-21"
-                              data-testid="SelectNetwork__NetworkIcon--container"
+                            <div
+                              class="font-bold text-sm text-theme-secondary-400 dark:text-theme-secondary-700 mb-3"
                             >
-                              <div
-                                aria-label="ARK Devnet"
-                                class="w-full h-full flex justify-center items-center border-2 rounded-xl border-theme-primary-100 dark:border-theme-secondary-800 text-theme-primary-300"
-                                data-testid="NetworkIcon-ARK-ark.devnet"
+                              DEVELOPMENT NETWORKS
+                            </div>
+                            <ul
+                              aria-labelledby="CreateWallet__network-label"
+                              class="grid grid-cols-6 gap-3"
+                              id="CreateWallet__network-menu"
+                              role="listbox"
+                            >
+                              <li
+                                class="inline-block cursor-pointer h-21"
+                                data-testid="SelectNetwork__NetworkIcon--container"
                               >
                                 <div
-                                  class="sc-bdfBwQ caqoGN"
-                                  data-testid="NetworkIcon__icon"
-                                  height="30"
-                                  width="30"
+                                  aria-label="ARK Devnet"
+                                  class="w-full h-full flex justify-center items-center border-2 rounded-xl border-theme-primary-100 dark:border-theme-secondary-800 text-theme-primary-300"
+                                  data-testid="NetworkIcon-ARK-ark.devnet"
                                 >
-                                  <svg>
-                                    ark.svg
-                                  </svg>
+                                  <div
+                                    class="sc-bdfBwQ caqoGN"
+                                    data-testid="NetworkIcon__icon"
+                                    height="30"
+                                    width="30"
+                                  >
+                                    <svg>
+                                      ark.svg
+                                    </svg>
+                                  </div>
                                 </div>
-                              </div>
-                            </li>
-                          </ul>
+                              </li>
+                            </ul>
+                          </div>
                         </div>
                       </div>
                     </fieldset>
@@ -2916,99 +2931,104 @@ exports[`CreateWallet should show an error message for duplicate name 1`] = `
                           </div>
                         </div>
                         <div
-                          class="mt-6"
+                          class=""
+                          data-testid="SelectNetwork__options"
                         >
                           <div
-                            class="font-bold text-sm text-theme-secondary-400 dark:text-theme-secondary-700 mb-3"
+                            class="mt-6"
                           >
-                            PUBLIC NETWORKS
+                            <div
+                              class="font-bold text-sm text-theme-secondary-400 dark:text-theme-secondary-700 mb-3"
+                            >
+                              PUBLIC NETWORKS
+                            </div>
+                            <ul
+                              aria-labelledby="CreateWallet__network-label"
+                              class="grid grid-cols-6 gap-3"
+                              id="CreateWallet__network-menu"
+                              role="listbox"
+                            >
+                              <li
+                                class="inline-block cursor-pointer h-21"
+                                data-testid="SelectNetwork__NetworkIcon--container"
+                              >
+                                <div
+                                  aria-label="ARK"
+                                  class="w-full h-full flex justify-center items-center border-2 rounded-xl border-theme-primary-100 dark:border-theme-secondary-800 text-theme-secondary-700"
+                                  data-testid="NetworkIcon-ARK-ark.mainnet"
+                                >
+                                  <div
+                                    class="sc-bdfBwQ caqoGN"
+                                    data-testid="NetworkIcon__icon"
+                                    height="30"
+                                    width="30"
+                                  >
+                                    <svg>
+                                      ark.svg
+                                    </svg>
+                                  </div>
+                                </div>
+                              </li>
+                              <li
+                                class="inline-block cursor-pointer h-21"
+                                data-testid="SelectNetwork__NetworkIcon--container"
+                              >
+                                <div
+                                  aria-label="Compendia"
+                                  class="w-full h-full flex justify-center items-center border-2 rounded-xl border-theme-primary-100 dark:border-theme-secondary-800 text-theme-secondary-700"
+                                  data-testid="NetworkIcon-ARK-compendia.mainnet"
+                                >
+                                  <div
+                                    class="sc-bdfBwQ caqoGN"
+                                    data-testid="NetworkIcon__icon"
+                                    height="30"
+                                    width="30"
+                                  >
+                                    <svg>
+                                      bind.svg
+                                    </svg>
+                                  </div>
+                                </div>
+                              </li>
+                            </ul>
                           </div>
-                          <ul
-                            aria-labelledby="CreateWallet__network-label"
-                            class="grid grid-cols-6 gap-3"
-                            id="CreateWallet__network-menu"
-                            role="listbox"
-                          >
-                            <li
-                              class="inline-block cursor-pointer h-21"
-                              data-testid="SelectNetwork__NetworkIcon--container"
-                            >
-                              <div
-                                aria-label="ARK"
-                                class="w-full h-full flex justify-center items-center border-2 rounded-xl border-theme-primary-100 dark:border-theme-secondary-800 text-theme-secondary-700"
-                                data-testid="NetworkIcon-ARK-ark.mainnet"
-                              >
-                                <div
-                                  class="sc-bdfBwQ caqoGN"
-                                  data-testid="NetworkIcon__icon"
-                                  height="30"
-                                  width="30"
-                                >
-                                  <svg>
-                                    ark.svg
-                                  </svg>
-                                </div>
-                              </div>
-                            </li>
-                            <li
-                              class="inline-block cursor-pointer h-21"
-                              data-testid="SelectNetwork__NetworkIcon--container"
-                            >
-                              <div
-                                aria-label="Compendia"
-                                class="w-full h-full flex justify-center items-center border-2 rounded-xl border-theme-primary-100 dark:border-theme-secondary-800 text-theme-secondary-700"
-                                data-testid="NetworkIcon-ARK-compendia.mainnet"
-                              >
-                                <div
-                                  class="sc-bdfBwQ caqoGN"
-                                  data-testid="NetworkIcon__icon"
-                                  height="30"
-                                  width="30"
-                                >
-                                  <svg>
-                                    bind.svg
-                                  </svg>
-                                </div>
-                              </div>
-                            </li>
-                          </ul>
-                        </div>
-                        <div
-                          class="mt-6"
-                        >
                           <div
-                            class="font-bold text-sm text-theme-secondary-400 dark:text-theme-secondary-700 mb-3"
+                            class="mt-6"
                           >
-                            DEVELOPMENT NETWORKS
-                          </div>
-                          <ul
-                            aria-labelledby="CreateWallet__network-label"
-                            class="grid grid-cols-6 gap-3"
-                            id="CreateWallet__network-menu"
-                            role="listbox"
-                          >
-                            <li
-                              class="inline-block cursor-pointer h-21"
-                              data-testid="SelectNetwork__NetworkIcon--container"
+                            <div
+                              class="font-bold text-sm text-theme-secondary-400 dark:text-theme-secondary-700 mb-3"
                             >
-                              <div
-                                aria-label="ARK Devnet"
-                                class="w-full h-full flex justify-center items-center border-2 rounded-xl border-theme-primary-100 dark:border-theme-secondary-800 text-theme-primary-300"
-                                data-testid="NetworkIcon-ARK-ark.devnet"
+                              DEVELOPMENT NETWORKS
+                            </div>
+                            <ul
+                              aria-labelledby="CreateWallet__network-label"
+                              class="grid grid-cols-6 gap-3"
+                              id="CreateWallet__network-menu"
+                              role="listbox"
+                            >
+                              <li
+                                class="inline-block cursor-pointer h-21"
+                                data-testid="SelectNetwork__NetworkIcon--container"
                               >
                                 <div
-                                  class="sc-bdfBwQ caqoGN"
-                                  data-testid="NetworkIcon__icon"
-                                  height="30"
-                                  width="30"
+                                  aria-label="ARK Devnet"
+                                  class="w-full h-full flex justify-center items-center border-2 rounded-xl border-theme-primary-100 dark:border-theme-secondary-800 text-theme-primary-300"
+                                  data-testid="NetworkIcon-ARK-ark.devnet"
                                 >
-                                  <svg>
-                                    ark.svg
-                                  </svg>
+                                  <div
+                                    class="sc-bdfBwQ caqoGN"
+                                    data-testid="NetworkIcon__icon"
+                                    height="30"
+                                    width="30"
+                                  >
+                                    <svg>
+                                      ark.svg
+                                    </svg>
+                                  </div>
                                 </div>
-                              </div>
-                            </li>
-                          </ul>
+                              </li>
+                            </ul>
+                          </div>
                         </div>
                       </div>
                     </fieldset>
@@ -3488,99 +3508,104 @@ exports[`CreateWallet should show an error message if wallet generation failed 1
                           </div>
                         </div>
                         <div
-                          class="mt-6"
+                          class=""
+                          data-testid="SelectNetwork__options"
                         >
                           <div
-                            class="font-bold text-sm text-theme-secondary-400 dark:text-theme-secondary-700 mb-3"
+                            class="mt-6"
                           >
-                            PUBLIC NETWORKS
+                            <div
+                              class="font-bold text-sm text-theme-secondary-400 dark:text-theme-secondary-700 mb-3"
+                            >
+                              PUBLIC NETWORKS
+                            </div>
+                            <ul
+                              aria-labelledby="CreateWallet__network-label"
+                              class="grid grid-cols-6 gap-3"
+                              id="CreateWallet__network-menu"
+                              role="listbox"
+                            >
+                              <li
+                                class="inline-block cursor-pointer h-21"
+                                data-testid="SelectNetwork__NetworkIcon--container"
+                              >
+                                <div
+                                  aria-label="ARK"
+                                  class="w-full h-full flex justify-center items-center border-2 rounded-xl border-theme-primary-100 dark:border-theme-secondary-800 text-theme-secondary-700"
+                                  data-testid="NetworkIcon-ARK-ark.mainnet"
+                                >
+                                  <div
+                                    class="sc-bdfBwQ caqoGN"
+                                    data-testid="NetworkIcon__icon"
+                                    height="30"
+                                    width="30"
+                                  >
+                                    <svg>
+                                      ark.svg
+                                    </svg>
+                                  </div>
+                                </div>
+                              </li>
+                              <li
+                                class="inline-block cursor-pointer h-21"
+                                data-testid="SelectNetwork__NetworkIcon--container"
+                              >
+                                <div
+                                  aria-label="Compendia"
+                                  class="w-full h-full flex justify-center items-center border-2 rounded-xl border-theme-primary-100 dark:border-theme-secondary-800 text-theme-secondary-700"
+                                  data-testid="NetworkIcon-ARK-compendia.mainnet"
+                                >
+                                  <div
+                                    class="sc-bdfBwQ caqoGN"
+                                    data-testid="NetworkIcon__icon"
+                                    height="30"
+                                    width="30"
+                                  >
+                                    <svg>
+                                      bind.svg
+                                    </svg>
+                                  </div>
+                                </div>
+                              </li>
+                            </ul>
                           </div>
-                          <ul
-                            aria-labelledby="CreateWallet__network-label"
-                            class="grid grid-cols-6 gap-3"
-                            id="CreateWallet__network-menu"
-                            role="listbox"
-                          >
-                            <li
-                              class="inline-block cursor-pointer h-21"
-                              data-testid="SelectNetwork__NetworkIcon--container"
-                            >
-                              <div
-                                aria-label="ARK"
-                                class="w-full h-full flex justify-center items-center border-2 rounded-xl border-theme-primary-100 dark:border-theme-secondary-800 text-theme-secondary-700"
-                                data-testid="NetworkIcon-ARK-ark.mainnet"
-                              >
-                                <div
-                                  class="sc-bdfBwQ caqoGN"
-                                  data-testid="NetworkIcon__icon"
-                                  height="30"
-                                  width="30"
-                                >
-                                  <svg>
-                                    ark.svg
-                                  </svg>
-                                </div>
-                              </div>
-                            </li>
-                            <li
-                              class="inline-block cursor-pointer h-21"
-                              data-testid="SelectNetwork__NetworkIcon--container"
-                            >
-                              <div
-                                aria-label="Compendia"
-                                class="w-full h-full flex justify-center items-center border-2 rounded-xl border-theme-primary-100 dark:border-theme-secondary-800 text-theme-secondary-700"
-                                data-testid="NetworkIcon-ARK-compendia.mainnet"
-                              >
-                                <div
-                                  class="sc-bdfBwQ caqoGN"
-                                  data-testid="NetworkIcon__icon"
-                                  height="30"
-                                  width="30"
-                                >
-                                  <svg>
-                                    bind.svg
-                                  </svg>
-                                </div>
-                              </div>
-                            </li>
-                          </ul>
-                        </div>
-                        <div
-                          class="mt-6"
-                        >
                           <div
-                            class="font-bold text-sm text-theme-secondary-400 dark:text-theme-secondary-700 mb-3"
+                            class="mt-6"
                           >
-                            DEVELOPMENT NETWORKS
-                          </div>
-                          <ul
-                            aria-labelledby="CreateWallet__network-label"
-                            class="grid grid-cols-6 gap-3"
-                            id="CreateWallet__network-menu"
-                            role="listbox"
-                          >
-                            <li
-                              class="inline-block cursor-pointer h-21"
-                              data-testid="SelectNetwork__NetworkIcon--container"
+                            <div
+                              class="font-bold text-sm text-theme-secondary-400 dark:text-theme-secondary-700 mb-3"
                             >
-                              <div
-                                aria-label="ARK Devnet"
-                                class="w-full h-full flex justify-center items-center border-2 rounded-xl border-theme-success-500 dark:border-theme-success-600 bg-theme-success-100 dark:bg-theme-success-900 text-theme-secondary-600 dark:text-theme-secondary-200"
-                                data-testid="NetworkIcon-ARK-ark.devnet"
+                              DEVELOPMENT NETWORKS
+                            </div>
+                            <ul
+                              aria-labelledby="CreateWallet__network-label"
+                              class="grid grid-cols-6 gap-3"
+                              id="CreateWallet__network-menu"
+                              role="listbox"
+                            >
+                              <li
+                                class="inline-block cursor-pointer h-21"
+                                data-testid="SelectNetwork__NetworkIcon--container"
                               >
                                 <div
-                                  class="sc-bdfBwQ caqoGN"
-                                  data-testid="NetworkIcon__icon"
-                                  height="30"
-                                  width="30"
+                                  aria-label="ARK Devnet"
+                                  class="w-full h-full flex justify-center items-center border-2 rounded-xl border-theme-success-500 dark:border-theme-success-600 bg-theme-success-100 dark:bg-theme-success-900 text-theme-secondary-600 dark:text-theme-secondary-200"
+                                  data-testid="NetworkIcon-ARK-ark.devnet"
                                 >
-                                  <svg>
-                                    ark.svg
-                                  </svg>
+                                  <div
+                                    class="sc-bdfBwQ caqoGN"
+                                    data-testid="NetworkIcon__icon"
+                                    height="30"
+                                    width="30"
+                                  >
+                                    <svg>
+                                      ark.svg
+                                    </svg>
+                                  </div>
                                 </div>
-                              </div>
-                            </li>
-                          </ul>
+                              </li>
+                            </ul>
+                          </div>
                         </div>
                       </div>
                     </fieldset>
