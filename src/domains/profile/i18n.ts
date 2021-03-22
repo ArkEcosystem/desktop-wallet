@@ -39,7 +39,6 @@ export const translations: { [key: string]: any } = {
 	PAGE_CREATE_PROFILE: {
 		TITLE: "Create Profile",
 		DESCRIPTION: "Create a new Profile below.",
-		NEW_PROFILE: "New Profile",
 		VALIDATION: {
 			NAME_EXISTS: "A profile with this name already exists",
 		},
