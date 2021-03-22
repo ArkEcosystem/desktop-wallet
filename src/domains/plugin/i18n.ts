@@ -79,7 +79,7 @@ export const translations: { [key: string]: any } = {
 
 	PAGE_PLUGIN_MANAGER: {
 		TITLE: "Plugin Manager",
-		DESCRIPTION: "Easy way to find, manage and install plugins",
+		DESCRIPTION: "An easy way to find, install, and manage Plugins.",
 
 		NO_PLUGINS_AVAILABLE: "This category has no available plugins yet.",
 
