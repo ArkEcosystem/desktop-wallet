@@ -1,12 +1,12 @@
 export const translations: { [key: string]: any } = {
 	FILTER_WALLETS: {
 		CRYPTOASSET: {
-			TITLE: "Filter Cryptoasset",
-			DESCRIPTION: "Select the types of cryptoassets",
+			TITLE: "Filter Networks",
+			DESCRIPTION: "Select the networks to show.",
 		},
 		WALLETS: {
 			TITLE: "Your Wallets",
-			DESCRIPTION: "Select the display of your wallets",
+			DESCRIPTION: "Select which wallets to view.",
 		},
 	},
 

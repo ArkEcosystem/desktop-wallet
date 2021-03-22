@@ -308,7 +308,7 @@ export const translations: { [key: string]: any } = {
 		},
 		PLUGINS_TITLE: "Plugins",
 		TRANSACTIONS_TITLE: "Transactions",
-		EMPTY: "You have no notifications at this time",
+		EMPTY: "You have no notifications at this time.",
 	},
 	PAGINATION: {
 		ENTER_NUMBER: "Enter the page number",

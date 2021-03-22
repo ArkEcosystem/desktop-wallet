@@ -31,9 +31,8 @@ export const translations: { [key: string]: any } = {
 
 	MODAL_WALLET_UPDATE: {
 		TITLE: "Wallet Update {{version}}",
-		DESCRIPTION_1:
-			"We are pleased to announce that a new update has been released for your wallet. You can update now or postpone the update.",
-		DESCRIPTION_2: "Update downloaded and ready to install",
+		DESCRIPTION_1: "A new update has been released for your wallet. You can download or postpone the update.",
+		DESCRIPTION_2: "The update has been succesfully downloaded and is ready to be installed.",
 	},
 
 	MODAL_SELECT_ACCOUNT: {

@@ -8,7 +8,7 @@ export const translations: { [key: string]: any } = {
 		PERSONAL: {
 			TITLE: "Personal Details",
 			PROFILE_IMAGE: "Select Profile Image",
-			DELETE_AVATAR: "Delete Avatar",
+			REMOVE_AVATAR: "Remove Avatar",
 			UPLOAD_AVATAR: "Upload Avatar",
 			NAME: "Profile Name",
 			PASSWORD: "Password",
