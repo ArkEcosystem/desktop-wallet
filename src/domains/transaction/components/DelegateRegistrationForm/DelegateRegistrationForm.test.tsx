@@ -146,7 +146,7 @@ describe("DelegateRegistrationForm", () => {
 		});
 
 		expect(getByTestId("Input__username")).toHaveAttribute("aria-invalid");
-		expect(getByTestId("Input-error")).toBeVisible();
+		expect(getByTestId("Input__error")).toBeVisible();
 
 		expect(asFragment()).toMatchSnapshot();
 	});
@@ -171,7 +171,7 @@ describe("DelegateRegistrationForm", () => {
 		});
 
 		expect(getByTestId("Input__username")).toHaveAttribute("aria-invalid");
-		expect(getByTestId("Input-error")).toBeVisible();
+		expect(getByTestId("Input__error")).toBeVisible();
 
 		expect(asFragment()).toMatchSnapshot();
 	});
@@ -194,7 +194,7 @@ describe("DelegateRegistrationForm", () => {
 		});
 
 		expect(getByTestId("Input__username")).toHaveAttribute("aria-invalid");
-		expect(getByTestId("Input-error")).toBeVisible();
+		expect(getByTestId("Input__error")).toBeVisible();
 
 		expect(asFragment()).toMatchSnapshot();
 	});

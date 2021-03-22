@@ -453,7 +453,7 @@ describe("SendIpfs", () => {
 
 		await waitFor(() => expect(passwordInput).toHaveValue(""));
 		await waitFor(() => {
-			expect(getByTestId("Input-error")).toBeVisible();
+			expect(getByTestId("Input__error")).toBeVisible();
 		});
 
 		signMock.mockRestore();
@@ -610,7 +610,7 @@ describe("SendIpfs", () => {
 		await waitFor(() => expect(getByTestId("Input__hash")).toHaveValue("invalid-ipfs-hash"));
 
 		await waitFor(() => {
-			expect(getByTestId("Input-error")).toBeVisible();
+			expect(getByTestId("Input__error")).toBeVisible();
 		});
 
 		await waitFor(() => expect(container).toMatchSnapshot());

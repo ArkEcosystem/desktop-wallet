@@ -149,7 +149,7 @@ describe("CreateProfile", () => {
 
 		await waitFor(() => expect(getByTestId("CreateProfile__submit-button")).toHaveAttribute("disabled"));
 
-		expect(getByTestId("Input-error")).toBeVisible();
+		expect(getByTestId("Input__error")).toBeVisible();
 
 		expect(asFragment()).toMatchSnapshot();
 
@@ -171,7 +171,7 @@ describe("CreateProfile", () => {
 
 		await waitFor(() => expect(getByTestId("CreateProfile__submit-button")).toHaveAttribute("disabled"));
 
-		expect(getByTestId("Input-error")).toBeVisible();
+		expect(getByTestId("Input__error")).toBeVisible();
 
 		expect(asFragment()).toMatchSnapshot();
 	});

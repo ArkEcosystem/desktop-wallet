@@ -653,7 +653,7 @@ describe("SendVote", () => {
 
 		await waitFor(() => expect(getByTestId("SendVote__button--submit")).toBeDisabled());
 
-		expect(getByTestId("Input-error")).toBeTruthy();
+		expect(getByTestId("Input__error")).toBeTruthy();
 
 		await waitFor(() => expect(container).toMatchSnapshot());
 	});

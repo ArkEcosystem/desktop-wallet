@@ -953,7 +953,7 @@ describe("SendTransfer", () => {
 		await waitFor(() => expect(getByTestId("InputCurrency")).toHaveValue(""));
 
 		await waitFor(() => {
-			expect(getByTestId("Input-error")).toBeVisible();
+			expect(getByTestId("Input__error")).toBeVisible();
 		});
 
 		act(() => {
@@ -961,7 +961,7 @@ describe("SendTransfer", () => {
 		});
 		await waitFor(() => expect(getByTestId("InputCurrency")).toHaveValue("1"));
 
-		await waitFor(() => expect(() => getByTestId("Input-error")).toThrow());
+		await waitFor(() => expect(() => getByTestId("Input__error")).toThrow());
 
 		await waitFor(() => expect(getByTestId("SendTransfer__button--continue")).not.toBeDisabled());
 		await act(async () => {
@@ -1278,7 +1278,7 @@ describe("SendTransfer", () => {
 
 		await waitFor(() => expect(passwordInput).toHaveValue(""));
 		await waitFor(() => {
-			expect(getByTestId("Input-error")).toBeVisible();
+			expect(getByTestId("Input__error")).toBeVisible();
 		});
 
 		signMock.mockRestore();

@@ -94,7 +94,7 @@ export const SelectNetwork = ({
 	const publicNetworks = items.filter((network) => network.isLive());
 	const developmentNetworks = items.filter((network) => !network.isLive());
 
-	const inputTypeAhead = React.useMemo(() => {
+	const suggestion = React.useMemo(() => {
 		const matches = items.filter((network: Network) => isMatch(inputValue, network));
 		if (inputValue && matches.length > 0) {
 			return [inputValue, matches[0].extra?.displayName?.slice(inputValue.length)].join("");
@@ -126,7 +126,7 @@ export const SelectNetwork = ({
 				<label {...getLabelProps()} />
 				<SelectNetworkInput
 					network={selectedItem}
-					suggestion={inputTypeAhead}
+					suggestion={suggestion}
 					disabled={disabled}
 					{...getInputProps({
 						name,

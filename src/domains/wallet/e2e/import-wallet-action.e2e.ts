@@ -115,7 +115,7 @@ test("should show an error message for invalid address", async (t) => {
 
 	await t.click(Selector("button").withExactText(translations.COMMON.CONTINUE));
 
-	await t.expect(Selector('[data-testid="Input-error"]').exists).ok({ timeout: 5000 });
+	await t.expect(Selector('[data-testid="Input__error"]').exists).ok({ timeout: 5000 });
 });
 
 test("should show an error message for duplicate address", async (t) => {
@@ -172,5 +172,5 @@ test("should show an error message for duplicate address", async (t) => {
 	await t.typeText(passphraseInput, "imaginary passphrase", { replace: true, paste: true });
 	await t.click(Selector("button").withExactText(translations.COMMON.CONTINUE));
 
-	await t.expect(Selector('[data-testid="Input-error"]').exists).ok();
+	await t.expect(Selector('[data-testid="Input__error"]').exists).ok();
 });

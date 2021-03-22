@@ -2,7 +2,7 @@ import { Coins, Contracts } from "@arkecosystem/platform-sdk";
 import { Profile, ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
 import { FormField, FormLabel } from "app/components/Form";
 import { Header } from "app/components/Header";
-import { Input, InputAddonEnd, InputGroup } from "app/components/Input";
+import { Input } from "app/components/Input";
 import { useValidation } from "app/hooks";
 import React, { ChangeEvent, useCallback, useEffect } from "react";
 import { useFormContext } from "react-hook-form";
@@ -67,20 +67,21 @@ export const FormStep = ({
 
 			<FormField name="minParticipants">
 				<FormLabel>{t("TRANSACTION.MULTISIGNATURE.MIN_SIGNATURES")}</FormLabel>
-				<InputGroup>
-					<Input
-						data-testid="MultiSignatureRegistrationForm__min-participants"
-						type="number"
-						value={minParticipants ?? 0}
-						onChange={handleInput}
-						errorClassName="mr-20"
-					/>
-					<InputAddonEnd className="pr-4 pointer-events-none text-theme-secondary-400">
-						{t("TRANSACTION.MULTISIGNATURE.OUT_OF_LENGTH", {
-							length: Math.max(2, participants?.length || 0),
-						})}
-					</InputAddonEnd>
-				</InputGroup>
+				<Input
+					data-testid="MultiSignatureRegistrationForm__min-participants"
+					type="number"
+					value={minParticipants ?? 0}
+					onChange={handleInput}
+					addons={{
+						end: (
+							<span className="pointer-events-none">
+								{t("TRANSACTION.MULTISIGNATURE.OUT_OF_LENGTH", {
+									length: Math.max(2, participants?.length || 0),
+								})}
+							</span>
+						),
+					}}
+				/>
 			</FormField>
 
 			<FormField name="fee">

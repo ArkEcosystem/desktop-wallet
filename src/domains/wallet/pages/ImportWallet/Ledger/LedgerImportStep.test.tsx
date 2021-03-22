@@ -127,7 +127,7 @@ describe("LedgerImportStep", () => {
 			});
 		});
 
-		expect(getByTestId("Input-error")).toBeVisible();
+		expect(getByTestId("Input__error")).toBeVisible();
 	});
 
 	it("should show an error message for duplicate name in the form", async () => {
@@ -168,7 +168,7 @@ describe("LedgerImportStep", () => {
 		});
 
 		// Invalid
-		await waitFor(() => expect(screen.getByTestId("Input-error")).toBeInTheDocument());
+		await waitFor(() => expect(screen.getByTestId("Input__error")).toBeInTheDocument());
 
 		await act(async () => {
 			fireEvent.click(screen.getByTestId("UpdateWalletName__cancel"));

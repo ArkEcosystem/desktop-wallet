@@ -332,7 +332,7 @@ exports[`SendIpfs should error if wrong mnemonic 1`] = `
                       class="FormField__FormFieldStyled-yeauwd-0 qzrKg flex flex-col space-y-2"
                     >
                       <label
-                        class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-700"
+                        class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
                         data-testid="FormLabel"
                         for="mnemonic"
                       >
@@ -343,22 +343,25 @@ exports[`SendIpfs should error if wrong mnemonic 1`] = `
                         />
                       </label>
                       <div
-                        class="InputGroup__InputGroupStyle-sc-1obbdqe-3 iqafwD max-w-20"
-                        data-testid="InputPassword"
+                        class="Input__InputWrapperStyled-wu99qs-0 kAqrUx"
                       >
-                        <input
-                          aria-invalid="true"
-                          class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures pr-18"
-                          data-testid="AuthenticationStep__mnemonic"
-                          name="mnemonic"
-                          type="password"
-                        />
                         <div
-                          class="InputGroup__InputAddonStyle-sc-1obbdqe-0 InputGroup__InputAddonEndStyle-sc-1obbdqe-2 epSJiV bWrKSO my-px mr-4 mr-12"
+                          class="relative flex flex-1"
+                        >
+                          <input
+                            aria-invalid="true"
+                            class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
+                            data-testid="AuthenticationStep__mnemonic"
+                            name="mnemonic"
+                            type="password"
+                          />
+                        </div>
+                        <div
+                          class="flex items-center space-x-3 divide-x divide-theme-secondary-300 dark:divide-theme-secondary-800 text-theme-danger-500"
                         >
                           <span
                             data-errortext="Invalid Mnemonic"
-                            data-testid="Input-error"
+                            data-testid="Input__error"
                           >
                             <div
                               class="sc-bdfBwQ iyevwF text-theme-danger-500"
@@ -370,25 +373,25 @@ exports[`SendIpfs should error if wrong mnemonic 1`] = `
                               </svg>
                             </div>
                           </span>
-                        </div>
-                        <div
-                          class="InputGroup__InputAddonStyle-sc-1obbdqe-0 InputGroup__InputAddonEndStyle-sc-1obbdqe-2 epSJiV bWrKSO my-px mr-4"
-                        >
-                          <button
-                            class="flex justify-center items-center w-full h-full text-2xl focus:outline-none text-theme-primary-300 dark:text-theme-secondary-600"
-                            data-testid="InputPassword__toggle"
-                            type="button"
+                          <div
+                            class="pl-3"
                           >
-                            <div
-                              class="sc-bdfBwQ fPrsah"
-                              height="1em"
-                              width="1em"
+                            <button
+                              class="flex justify-center items-center w-full h-full text-2xl focus:outline-none"
+                              data-testid="InputPassword__toggle"
+                              type="button"
                             >
-                              <svg>
-                                eye.svg
-                              </svg>
-                            </div>
-                          </button>
+                              <div
+                                class="sc-bdfBwQ fPrsah"
+                                height="1em"
+                                width="1em"
+                              >
+                                <svg>
+                                  eye.svg
+                                </svg>
+                              </div>
+                            </button>
+                          </div>
                         </div>
                       </div>
                     </fieldset>
@@ -475,7 +478,7 @@ exports[`SendIpfs should render form step 1`] = `
         class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
       >
         <label
-          class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-700"
+          class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
           data-testid="FormLabel"
           for="network"
         >
@@ -498,28 +501,27 @@ exports[`SendIpfs should render form step 1`] = `
               id="SendTransactionForm__network-label"
             />
             <div
-              class="InputGroup__InputGroupStyle-sc-1obbdqe-3 iqafwD"
-              data-testid="SelectNetworkInput"
+              class="Input__InputWrapperStyled-wu99qs-0 hlKLIE"
             >
               <div
-                class="InputGroup__InputAddonStyle-sc-1obbdqe-0 InputGroup__InputAddonStartStyle-sc-1obbdqe-1 epSJiV gnQfLB px-4"
+                class="Circle-uw7h4j-0 blBpcG border-theme-secondary-200 dark:border-theme-secondary-700 text-theme-secondary-500"
+                data-testid="SelectNetworkInput__network"
+              />
+              <div
+                class="relative flex flex-1"
               >
-                <div
-                  class="Circle-uw7h4j-0 blBpcG border-theme-secondary-200 dark:border-theme-secondary-700 text-theme-secondary-500"
-                  data-testid="SelectNetworkInput__network"
+                <input
+                  aria-autocomplete="list"
+                  aria-controls="SendTransactionForm__network-menu"
+                  aria-labelledby="SendTransactionForm__network-label"
+                  autocomplete="off"
+                  class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
+                  data-testid="SelectNetworkInput__input"
+                  id="SendTransactionForm__network-input"
+                  placeholder="Enter a cryptoasset name"
+                  value=""
                 />
               </div>
-              <input
-                aria-autocomplete="list"
-                aria-controls="SendTransactionForm__network-menu"
-                aria-labelledby="SendTransactionForm__network-label"
-                autocomplete="off"
-                class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures pl-15"
-                data-testid="SelectNetworkInput__input"
-                id="SendTransactionForm__network-input"
-                placeholder="Enter a cryptoasset name"
-                value=""
-              />
             </div>
           </div>
           <div
@@ -543,7 +545,7 @@ exports[`SendIpfs should render form step 1`] = `
         class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
       >
         <label
-          class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-700"
+          class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
           data-testid="FormLabel"
           for="senderAddress"
         >
@@ -556,47 +558,65 @@ exports[`SendIpfs should render form step 1`] = `
         <div
           data-testid="sender-address"
         >
-          <div>
-            <button
-              class="SelectAddressstyles__SelectAddressWrapper-vvcyzs-0 ksbSWA SelectAddress  "
-              data-testid="SelectAddress__wrapper"
-              type="button"
+          <button
+            class="relative w-full"
+            data-testid="SelectAddress__wrapper"
+            type="button"
+          >
+            <span
+              class="absolute inset-0 flex items-center border border-transparent px-14 w-full"
             >
-              <div
-                class="Circle-uw7h4j-0 blBpcG mr-3 ml-4 bg-theme-secondary-200 dark:bg-theme-secondary-700 border-theme-secondary-200 dark:border-theme-secondary-700"
-              />
               <div
                 class="inline-flex items-center no-ligatures"
               />
+            </span>
+            <div
+              class="Input__InputWrapperStyled-wu99qs-0 hlKLIE"
+            >
               <div
-                class="flex absolute right-4 items-center space-x-3 text-theme-primary-300 dark:text-theme-secondary-600"
+                class="Circle-uw7h4j-0 blBpcG bg-theme-secondary-200 dark:bg-theme-secondary-700 border-theme-secondary-200 dark:border-theme-secondary-700"
+              />
+              <div
+                class="relative flex flex-1 invisible"
+              >
+                <input
+                  class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
+                  data-testid="SelectAddress__input"
+                  name="senderAddress"
+                  readonly=""
+                  value=""
+                />
+              </div>
+              <div
+                class="flex items-center space-x-3 divide-x divide-theme-secondary-300 dark:divide-theme-secondary-800 text-theme-primary-300 dark:text-theme-secondary-600"
               >
                 <div
-                  class="sc-bdfBwQ iyevwF"
-                  height="20"
-                  width="20"
+                  class=""
                 >
-                  <svg>
-                    user.svg
-                  </svg>
+                  <div
+                    class="flex items-center space-x-3 text-theme-primary-300 dark:text-theme-secondary-600"
+                  >
+                    <div
+                      class="sc-bdfBwQ iyevwF"
+                      height="20"
+                      width="20"
+                    >
+                      <svg>
+                        user.svg
+                      </svg>
+                    </div>
+                  </div>
                 </div>
               </div>
-            </button>
-            <input
-              class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures hidden"
-              data-testid="SelectAddress__input"
-              name="senderAddress"
-              readonly=""
-              value=""
-            />
-          </div>
+            </div>
+          </button>
         </div>
       </fieldset>
       <fieldset
         class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
       >
         <label
-          class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-700"
+          class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
           data-testid="FormLabel"
           for="hash"
         >
@@ -607,23 +627,27 @@ exports[`SendIpfs should render form step 1`] = `
           />
         </label>
         <div
-          class="InputGroup__InputGroupStyle-sc-1obbdqe-3 iqafwD"
+          class="Input__InputWrapperStyled-wu99qs-0 hlKLIE pr-20"
         >
-          <input
-            class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures pr-20"
-            data-testid="Input__hash"
-            name="hash"
-            placeholder=" "
-            type="text"
-            value=""
-          />
+          <div
+            class="relative flex flex-1"
+          >
+            <input
+              class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
+              data-testid="Input__hash"
+              name="hash"
+              placeholder=" "
+              type="text"
+              value=""
+            />
+          </div>
         </div>
       </fieldset>
       <fieldset
         class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
       >
         <label
-          class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-700"
+          class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
           data-testid="FormLabel"
           for="fee"
         >
@@ -641,16 +665,25 @@ exports[`SendIpfs should render form step 1`] = `
             class="flex-1"
           >
             <div
-              class="InputGroup__InputGroupStyle-sc-1obbdqe-3 iqafwD"
+              class="relative"
             >
-              <input
-                class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures"
-                data-testid="InputCurrency"
+              <div
+                class="Input__InputWrapperStyled-wu99qs-0 dRorJE"
                 disabled=""
-                name="fee"
-                type="text"
-                value=""
-              />
+              >
+                <div
+                  class="relative flex flex-1"
+                >
+                  <input
+                    class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full text-theme-secondary-text"
+                    data-testid="InputCurrency"
+                    disabled=""
+                    name="fee"
+                    type="text"
+                    value=""
+                  />
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -1876,7 +1909,7 @@ exports[`SendIpfs should show an error if an invalid IPFS hash is entered 1`] = 
                         class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
                       >
                         <label
-                          class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-700"
+                          class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
                           data-testid="FormLabel"
                           for="network"
                         >
@@ -1899,47 +1932,47 @@ exports[`SendIpfs should show an error if an invalid IPFS hash is entered 1`] = 
                               id="SendTransactionForm__network-label"
                             />
                             <div
-                              class="InputGroup__InputGroupStyle-sc-1obbdqe-3 iqafwD"
-                              data-testid="SelectNetworkInput"
+                              class="Input__InputWrapperStyled-wu99qs-0 dRorJE"
+                              disabled=""
                             >
                               <div
-                                class="InputGroup__InputAddonStyle-sc-1obbdqe-0 InputGroup__InputAddonStartStyle-sc-1obbdqe-1 epSJiV gnQfLB px-4"
+                                aria-label="ARK Devnet"
+                                class="Circle-uw7h4j-0 blBpcG border-theme-primary-100 text-theme-primary-400"
+                                data-testid="SelectNetworkInput__network"
                               >
                                 <div
-                                  aria-label="ARK Devnet"
-                                  class="Circle-uw7h4j-0 blBpcG border-theme-primary-100 text-theme-primary-400"
-                                  data-testid="SelectNetworkInput__network"
+                                  class="sc-bdfBwQ iyevwF"
+                                  data-testid="NetworkIcon__icon"
+                                  height="20"
+                                  width="20"
                                 >
-                                  <div
-                                    class="sc-bdfBwQ iyevwF"
-                                    data-testid="NetworkIcon__icon"
-                                    height="20"
-                                    width="20"
-                                  >
-                                    <svg>
-                                      ark.svg
-                                    </svg>
-                                  </div>
+                                  <svg>
+                                    ark.svg
+                                  </svg>
                                 </div>
                               </div>
-                              <span
-                                class="InputGroup__InputAddonStyle-sc-1obbdqe-0 epSJiV py-3 font-normal border border-transparent opacity-50 pointer-events-none pl-15"
-                                data-testid="SelectNetworkInput__typeahead"
+                              <div
+                                class="relative flex flex-1"
                               >
-                                ARK Devnet
-                              </span>
-                              <input
-                                aria-autocomplete="list"
-                                aria-controls="SendTransactionForm__network-menu"
-                                aria-labelledby="SendTransactionForm__network-label"
-                                autocomplete="off"
-                                class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures pl-15"
-                                data-testid="SelectNetworkInput__input"
-                                disabled=""
-                                id="SendTransactionForm__network-input"
-                                placeholder="Enter a cryptoasset name"
-                                value="ARK Devnet"
-                              />
+                                <input
+                                  aria-autocomplete="list"
+                                  aria-controls="SendTransactionForm__network-menu"
+                                  aria-labelledby="SendTransactionForm__network-label"
+                                  autocomplete="off"
+                                  class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full text-theme-secondary-text"
+                                  data-testid="SelectNetworkInput__input"
+                                  disabled=""
+                                  id="SendTransactionForm__network-input"
+                                  placeholder="Enter a cryptoasset name"
+                                  value="ARK Devnet"
+                                />
+                                <span
+                                  class="absolute top-0 flex items-center font-normal opacity-50 pointer-events-none"
+                                  data-testid="Input__suggestion"
+                                >
+                                  ARK Devnet
+                                </span>
+                              </div>
                             </div>
                           </div>
                           <div
@@ -1995,7 +2028,7 @@ exports[`SendIpfs should show an error if an invalid IPFS hash is entered 1`] = 
                         class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
                       >
                         <label
-                          class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-700"
+                          class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
                           data-testid="FormLabel"
                           for="senderAddress"
                         >
@@ -2008,14 +2041,30 @@ exports[`SendIpfs should show an error if an invalid IPFS hash is entered 1`] = 
                         <div
                           data-testid="sender-address"
                         >
-                          <div>
-                            <button
-                              class="SelectAddressstyles__SelectAddressWrapper-vvcyzs-0 ksbSWA SelectAddress  "
-                              data-testid="SelectAddress__wrapper"
-                              type="button"
+                          <button
+                            class="relative w-full"
+                            data-testid="SelectAddress__wrapper"
+                            type="button"
+                          >
+                            <span
+                              class="absolute inset-0 flex items-center border border-transparent px-14 w-full"
                             >
                               <div
-                                class="Avatar__AvatarWrapper-sc-1vsy2s2-0 kvvaRs mx-4"
+                                class="inline-flex items-center no-ligatures"
+                              >
+                                <span
+                                  class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-text truncate font-semibold text-base"
+                                  data-testid="address__wallet-address"
+                                >
+                                  D8rr7B1d6TL6p…sKp1VBMs6YUYD
+                                </span>
+                              </div>
+                            </span>
+                            <div
+                              class="Input__InputWrapperStyled-wu99qs-0 hlKLIE"
+                            >
+                              <div
+                                class="Avatar__AvatarWrapper-sc-1vsy2s2-0 kvvaRs"
                                 data-testid="Avatar"
                               >
                                 <div
@@ -2029,44 +2078,46 @@ exports[`SendIpfs should show an error if an invalid IPFS hash is entered 1`] = 
                                 </div>
                               </div>
                               <div
-                                class="inline-flex items-center no-ligatures"
+                                class="relative flex flex-1 invisible"
                               >
-                                <span
-                                  class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-text truncate font-semibold text-base"
-                                  data-testid="address__wallet-address"
-                                >
-                                  D8rr7B1d6TL6p…sKp1VBMs6YUYD
-                                </span>
+                                <input
+                                  class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
+                                  data-testid="SelectAddress__input"
+                                  name="senderAddress"
+                                  readonly=""
+                                  value="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
+                                />
                               </div>
                               <div
-                                class="flex absolute right-4 items-center space-x-3 text-theme-primary-300 dark:text-theme-secondary-600"
+                                class="flex items-center space-x-3 divide-x divide-theme-secondary-300 dark:divide-theme-secondary-800 text-theme-primary-300 dark:text-theme-secondary-600"
                               >
                                 <div
-                                  class="sc-bdfBwQ iyevwF"
-                                  height="20"
-                                  width="20"
+                                  class=""
                                 >
-                                  <svg>
-                                    user.svg
-                                  </svg>
+                                  <div
+                                    class="flex items-center space-x-3 text-theme-primary-300 dark:text-theme-secondary-600"
+                                  >
+                                    <div
+                                      class="sc-bdfBwQ iyevwF"
+                                      height="20"
+                                      width="20"
+                                    >
+                                      <svg>
+                                        user.svg
+                                      </svg>
+                                    </div>
+                                  </div>
                                 </div>
                               </div>
-                            </button>
-                            <input
-                              class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures hidden"
-                              data-testid="SelectAddress__input"
-                              name="senderAddress"
-                              readonly=""
-                              value="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
-                            />
-                          </div>
+                            </div>
+                          </button>
                         </div>
                       </fieldset>
                       <fieldset
                         class="FormField__FormFieldStyled-yeauwd-0 qzrKg flex flex-col space-y-2"
                       >
                         <label
-                          class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-700"
+                          class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
                           data-testid="FormLabel"
                           for="hash"
                         >
@@ -2077,23 +2128,27 @@ exports[`SendIpfs should show an error if an invalid IPFS hash is entered 1`] = 
                           />
                         </label>
                         <div
-                          class="InputGroup__InputGroupStyle-sc-1obbdqe-3 iqafwD"
+                          class="Input__InputWrapperStyled-wu99qs-0 kAqrUx pr-20"
                         >
-                          <input
-                            aria-invalid="true"
-                            class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures pr-20 pr-12"
-                            data-testid="Input__hash"
-                            name="hash"
-                            placeholder=" "
-                            type="text"
-                            value="invalid-ipfs-hash"
-                          />
                           <div
-                            class="InputGroup__InputAddonStyle-sc-1obbdqe-0 InputGroup__InputAddonEndStyle-sc-1obbdqe-2 epSJiV bWrKSO my-px mr-4"
+                            class="relative flex flex-1"
+                          >
+                            <input
+                              aria-invalid="true"
+                              class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
+                              data-testid="Input__hash"
+                              name="hash"
+                              placeholder=" "
+                              type="text"
+                              value="invalid-ipfs-hash"
+                            />
+                          </div>
+                          <div
+                            class="flex items-center space-x-3 divide-x divide-theme-secondary-300 dark:divide-theme-secondary-800 text-theme-danger-500"
                           >
                             <span
                               data-errortext="'IPFS Hash' is invalid"
-                              data-testid="Input-error"
+                              data-testid="Input__error"
                             >
                               <div
                                 class="sc-bdfBwQ iyevwF text-theme-danger-500"
@@ -2112,7 +2167,7 @@ exports[`SendIpfs should show an error if an invalid IPFS hash is entered 1`] = 
                         class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
                       >
                         <label
-                          class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-700"
+                          class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
                           data-testid="FormLabel"
                           for="fee"
                         >
@@ -2130,15 +2185,23 @@ exports[`SendIpfs should show an error if an invalid IPFS hash is entered 1`] = 
                             class="flex-1"
                           >
                             <div
-                              class="InputGroup__InputGroupStyle-sc-1obbdqe-3 iqafwD"
+                              class="relative"
                             >
-                              <input
-                                class="Input__InputStyled-wu99qs-0 eVdxgh overflow-hidden w-full bg-theme-background appearance-none rounded border border-theme-secondary-400 dark:border-theme-secondary-700 text-theme-text transition-colors duration-200 px-4 py-3 no-ligatures"
-                                data-testid="InputCurrency"
-                                name="fee"
-                                type="text"
-                                value="5"
-                              />
+                              <div
+                                class="Input__InputWrapperStyled-wu99qs-0 hlKLIE"
+                              >
+                                <div
+                                  class="relative flex flex-1"
+                                >
+                                  <input
+                                    class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
+                                    data-testid="InputCurrency"
+                                    name="fee"
+                                    type="text"
+                                    value="5"
+                                  />
+                                </div>
+                              </div>
                             </div>
                           </div>
                           <div
