@@ -15,16 +15,20 @@ exports[`VotesFilter should render 1`] = `
           class="group"
         >
           <div
-            class="LayoutControls__ControlButton-j2iwgi-0 dcGsYY"
+            class="ControlButton__ControlButtonStyled-sc-1xp1l1a-0 cVIgzv"
           >
             <div
-              class="sc-bdfBwQ eBdiJn"
-              height="19"
-              width="17"
+              class="flex items-center justify-center h-5 w-5"
             >
-              <svg>
-                filters.svg
-              </svg>
+              <div
+                class="sc-bdfBwQ eBdiJn"
+                height="19"
+                width="17"
+              >
+                <svg>
+                  filters.svg
+                </svg>
+              </div>
             </div>
           </div>
         </div>
@@ -49,16 +53,20 @@ exports[`VotesFilter should render default 1`] = `
           class="group"
         >
           <div
-            class="LayoutControls__ControlButton-j2iwgi-0 dcGsYY"
+            class="ControlButton__ControlButtonStyled-sc-1xp1l1a-0 cVIgzv"
           >
             <div
-              class="sc-bdfBwQ eBdiJn"
-              height="19"
-              width="17"
+              class="flex items-center justify-center h-5 w-5"
             >
-              <svg>
-                filters.svg
-              </svg>
+              <div
+                class="sc-bdfBwQ eBdiJn"
+                height="19"
+                width="17"
+              >
+                <svg>
+                  filters.svg
+                </svg>
+              </div>
             </div>
           </div>
         </div>
@@ -73,7 +81,7 @@ exports[`VotesFilter should render default 1`] = `
             class="py-4 px-6 w-64"
           >
             <label
-              class="block flex items-center px-2 pb-1 space-x-3 rounded-md cursor-pointer text-theme-secondary-text hover:bg-theme-secondary-100"
+              class="flex items-center px-2 pb-1 space-x-3 rounded-md cursor-pointer text-theme-secondary-text hover:bg-theme-secondary-100"
               data-testid="VotesFilter__option--all"
             >
               <span>
@@ -90,7 +98,7 @@ exports[`VotesFilter should render default 1`] = `
               </span>
             </label>
             <label
-              class="flex items-center block px-2 pb-1 space-x-3 rounded-md cursor-pointer text-theme-secondary-text hover:bg-theme-secondary-100"
+              class="flex items-center px-2 pb-1 space-x-3 rounded-md cursor-pointer text-theme-secondary-text hover:bg-theme-secondary-100"
               data-testid="VotesFilter__option--current"
             >
               <span>
@@ -130,16 +138,27 @@ exports[`VotesFilter should render with current option selected 1`] = `
           class="group"
         >
           <div
-            class="LayoutControls__ControlButton-j2iwgi-0 gTlvTK"
+            class="ControlButton__ControlButtonStyled-sc-1xp1l1a-0 cVIgzv"
           >
             <div
-              class="sc-bdfBwQ eBdiJn"
-              height="19"
-              width="17"
+              class="flex absolute right-0 justify-center items-center mr-2 -mt-3 w-3 h-3 rounded-full transition-all duration-100 ease-linear bg-theme-background"
             >
-              <svg>
-                filters.svg
-              </svg>
+              <div
+                class="w-2 h-2 rounded-full bg-theme-danger-500"
+              />
+            </div>
+            <div
+              class="flex items-center justify-center h-5 w-5"
+            >
+              <div
+                class="sc-bdfBwQ eBdiJn"
+                height="19"
+                width="17"
+              >
+                <svg>
+                  filters.svg
+                </svg>
+              </div>
             </div>
           </div>
         </div>
@@ -154,7 +173,7 @@ exports[`VotesFilter should render with current option selected 1`] = `
             class="py-4 px-6 w-64"
           >
             <label
-              class="block flex items-center px-2 pb-1 space-x-3 rounded-md cursor-pointer text-theme-secondary-text hover:bg-theme-secondary-100"
+              class="flex items-center px-2 pb-1 space-x-3 rounded-md cursor-pointer text-theme-secondary-text hover:bg-theme-secondary-100"
               data-testid="VotesFilter__option--all"
             >
               <span>
@@ -170,7 +189,7 @@ exports[`VotesFilter should render with current option selected 1`] = `
               </span>
             </label>
             <label
-              class="flex items-center block px-2 pb-1 space-x-3 rounded-md cursor-pointer text-theme-secondary-text hover:bg-theme-secondary-100"
+              class="flex items-center px-2 pb-1 space-x-3 rounded-md cursor-pointer text-theme-secondary-text hover:bg-theme-secondary-100"
               data-testid="VotesFilter__option--current"
             >
               <span>
@@ -211,16 +230,20 @@ exports[`VotesFilter should render with disabled current option 1`] = `
           class="group"
         >
           <div
-            class="LayoutControls__ControlButton-j2iwgi-0 dcGsYY"
+            class="ControlButton__ControlButtonStyled-sc-1xp1l1a-0 cVIgzv"
           >
             <div
-              class="sc-bdfBwQ eBdiJn"
-              height="19"
-              width="17"
+              class="flex items-center justify-center h-5 w-5"
             >
-              <svg>
-                filters.svg
-              </svg>
+              <div
+                class="sc-bdfBwQ eBdiJn"
+                height="19"
+                width="17"
+              >
+                <svg>
+                  filters.svg
+                </svg>
+              </div>
             </div>
           </div>
         </div>
@@ -235,7 +258,7 @@ exports[`VotesFilter should render with disabled current option 1`] = `
             class="py-4 px-6 w-64"
           >
             <label
-              class="block flex items-center px-2 pb-1 space-x-3 rounded-md cursor-pointer text-theme-secondary-text hover:bg-theme-secondary-100"
+              class="flex items-center px-2 pb-1 space-x-3 rounded-md cursor-pointer text-theme-secondary-text hover:bg-theme-secondary-100"
               data-testid="VotesFilter__option--all"
             >
               <span>
@@ -252,7 +275,7 @@ exports[`VotesFilter should render with disabled current option 1`] = `
               </span>
             </label>
             <label
-              class="flex items-center block px-2 pb-1 space-x-3 rounded-md text-theme-secondary-400"
+              class="flex items-center px-2 pb-1 space-x-3 rounded-md text-theme-secondary-400"
               data-testid="VotesFilter__option--current"
             >
               <span>

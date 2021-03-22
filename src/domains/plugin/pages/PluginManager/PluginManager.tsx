@@ -169,7 +169,7 @@ export const PluginManager = () => {
 
 	const plugins = allPlugins.map(mapConfigToPluginData.bind(null, activeProfile));
 
-	const isAdvancedMode = activeProfile.settings().get(ProfileSetting.AdvancedMode);
+	const isAdvancedMode = activeProfile.settings().get<boolean>(ProfileSetting.AdvancedMode, false)!;
 	const hasUpdateAvailableCount = plugins.filter((item) => item.hasUpdateAvailable).length;
 
 	const pluginsByCategory = useMemo(() => {
@@ -284,7 +284,7 @@ export const PluginManager = () => {
 						title={t("PLUGINS.PAGE_PLUGIN_MANAGER.TITLE")}
 						subtitle={t("PLUGINS.PAGE_PLUGIN_MANAGER.DESCRIPTION")}
 						extra={
-							<div className="flex justify-end items-top">
+							<div className="flex justify-end items-top text-theme-primary-200">
 								<HeaderSearchBar
 									defaultQuery={filters.query}
 									label={t("COMMON.SEARCH")}
@@ -292,9 +292,10 @@ export const PluginManager = () => {
 										filterBy({ query });
 									}}
 								/>
-								{isAdvancedMode ? (
+
+								{isAdvancedMode && (
 									<>
-										<div className="pl-8 my-auto ml-8 h-8 border-l border-theme-secondary-300 dark:border-theme-secondary-800" />
+										<div className="pl-8 my-auto ml-5 h-10 border-l border-theme-secondary-300 dark:border-theme-secondary-800" />
 										<Button
 											data-testid="PluginManager_header--install"
 											onClick={() => setIsManualInstallModalOpen(true)}
@@ -305,7 +306,7 @@ export const PluginManager = () => {
 											</div>
 										</Button>
 									</>
-								) : null}
+								)}
 							</div>
 						}
 					/>
