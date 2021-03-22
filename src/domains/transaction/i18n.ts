@@ -335,6 +335,7 @@ export const translations: { [key: string]: any } = {
 	AUTHENTICATION_STEP: {
 		TITLE: "Authenticate",
 		DESCRIPTION: "Enter your twelve word mnemonic to authenticate the transaction.",
+		DESCRIPTION_ENCRYPTION_PASSWORD: "Enter your encryption password to authenticate the transaction.",
 	},
 
 	REPOSITORIES: {
