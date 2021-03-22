@@ -94,7 +94,7 @@ export const CreateProfile = () => {
 					/>
 
 					<Form
-						className="p-10 mt-10 space-y-4 border rounded-lg bg-theme-background border-theme-secondary-300 dark:border-theme-secondary-800"
+						className="p-10 mt-10 border rounded-lg bg-theme-background border-theme-secondary-300 dark:border-theme-secondary-800"
 						context={form}
 						onSubmit={handleSubmit}
 						data-testid="CreateProfile__form"

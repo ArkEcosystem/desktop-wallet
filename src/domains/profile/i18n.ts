@@ -44,8 +44,14 @@ export const translations: { [key: string]: any } = {
 		},
 	},
 	PAGE_WELCOME: {
-		HAS_NO_PROFILES: "Create a new Profile to get started.",
-		HAS_PROFILES: "Choose from an existing Profile below or create a new Profile to get started.",
+		WITH_PROFILES: {
+			TITLE: "Select Profile",
+			DESCRIPTION: "Choose from an existing Profile below or create a new Profile to get started.",
+		},
+		WITHOUT_PROFILES: {
+			TITLE: "Create Profile",
+			DESCRIPTION: "Create a new Profile to get started.",
+		},
 		HAS_EXPORTED_PROFILES: "Exported a Profile before?",
 		IMPORT_PROFILE_TITLE: "Import Profile",
 		IMPORT_PROFILE: "Import it here.",
