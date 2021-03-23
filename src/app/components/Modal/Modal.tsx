@@ -1,4 +1,4 @@
-import { Button } from "app/components/Button";
+import { OriginalButton } from "app/components/Button/OriginalButton";
 import { Icon } from "app/components/Icon";
 import cs from "classnames";
 import React, { useEffect, useRef, useState } from "react";
@@ -78,7 +78,7 @@ const ModalContent = (props: ModalContentProps) => {
 			data-testid="modal__inner"
 		>
 			<div className="absolute top-0 right-0 z-50 mt-5 mr-5 rounded transition-all duration-100 ease-linear bg-theme-primary-100 hover:bg-theme-primary-300 dark:bg-theme-secondary-800 dark:text-theme-secondary-600 dark:hover:bg-theme-secondary-700 dark:hover:text-theme-secondary-400">
-				<Button
+				<OriginalButton
 					data-testid="modal__close-btn"
 					variant="transparent"
 					size="icon"
@@ -86,7 +86,7 @@ const ModalContent = (props: ModalContentProps) => {
 					className="w-11 h-11"
 				>
 					<Icon name="CrossSlim" width={14} height={14} />
-				</Button>
+				</OriginalButton>
 			</div>
 
 			<div className="relative">
