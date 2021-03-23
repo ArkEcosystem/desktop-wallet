@@ -241,7 +241,7 @@ export const translations: { [key: string]: any } = {
 		},
 	},
 
-	PAGE_RESIGN_REGISTRATION: {
+	PAGE_DELEGATE_RESIGNATION: {
 		FORM_STEP: {
 			TITLE: "Resign Delegate",
 			DESCRIPTION: "This transaction type permanently retires a Delegate address.",

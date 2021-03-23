@@ -4,7 +4,6 @@ import { Address } from "app/components/Address";
 import { Amount } from "app/components/Amount";
 import { Avatar } from "app/components/Avatar";
 import { Button } from "app/components/Button";
-import { Divider } from "app/components/Divider";
 import { FormField, FormLabel } from "app/components/Form";
 import { Header } from "app/components/Header";
 import { Icon } from "app/components/Icon";
@@ -164,8 +163,6 @@ const SingleImport = ({
 							data-testid="ImportWallet__name-input"
 						/>
 					</FormField>
-
-					{index !== wallets.length - 1 && <Divider />}
 				</li>
 			))}
 		</ul>
