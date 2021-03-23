@@ -27,10 +27,9 @@ export const FormStep = ({
 	const { t } = useTranslation();
 	const { getValues, setValue, watch } = useFormContext();
 	const { recipients, smartbridge } = getValues();
-	const { fee, network, senderAddress } = watch();
+	const { network, senderAddress } = watch();
 
 	const senderWallet = profile.wallets().findByAddress(senderAddress);
-	const maxAmount = senderWallet ? BigNumber.make(senderWallet.balance()).minus(fee) : BigNumber.ZERO;
 
 	const getRecipients = () => {
 		if (deeplinkProps?.recipient && deeplinkProps?.amount) {
@@ -67,7 +66,6 @@ export const FormStep = ({
 					<div data-testid="recipient-address">
 						<AddRecipient
 							assetSymbol={senderWallet?.currency()}
-							maxAvailableAmount={maxAmount}
 							profile={profile}
 							recipients={getRecipients()}
 							showMultiPaymentOption={

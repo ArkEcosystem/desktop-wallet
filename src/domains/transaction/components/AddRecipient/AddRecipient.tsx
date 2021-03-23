@@ -237,7 +237,7 @@ export const AddRecipient = ({
 	};
 
 	const addons =
-		!errors.amount && isSingle && isSenderFilled
+		!errors.amount && !errors.fee && isSingle && isSenderFilled
 			? {
 					end: (
 						<span className="whitespace-no-break font-semibold text-sm text-theme-secondary-500 dark:text-theme-secondary-700">
