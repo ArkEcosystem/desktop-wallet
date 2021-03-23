@@ -17,8 +17,10 @@ export const translations: { [key: string]: any } = {
 
 	MODAL_RECEIVE_FUNDS: {
 		TITLE: "Receive Funds",
+		DESCRIPTION: "Specify the amount to request.",
 		WARNING:
 			"Please note that you have exceeded the number of characters allowed, anything over {{maxLength}} characters will not appear in smartbridges.",
+		SPECIFY_AMOUNT: "Specify Amount",
 	},
 
 	MODAL_LEDGER_WALLET: {
@@ -38,7 +40,7 @@ export const translations: { [key: string]: any } = {
 
 	MODAL_SELECT_ACCOUNT: {
 		TITLE: "Select Account",
-		DESCRIPTION: "Find and select the account you want to receive funds to",
+		DESCRIPTION: "Locate and select the address for receiving funds.",
 		SEARCH_PLACEHOLDER: "Enter the name or address for your wallet",
 	},
 
