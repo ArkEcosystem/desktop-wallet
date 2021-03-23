@@ -1,4 +1,5 @@
 import { Contracts } from "@arkecosystem/platform-sdk";
+import { SignedMessage } from "@arkecosystem/platform-sdk/dist/contracts";
 import { DataRepository } from "@arkecosystem/platform-sdk-profiles";
 import { HttpClient } from "app/services/HttpClient";
 
@@ -41,6 +42,16 @@ export interface PluginAPI {
 		setInterval: (handler: Function, timeout: number) => number;
 		setTimeout: (handler: Function, timeout: number) => number;
 	};
+	message(): {
+		useSignMessageModal: (params: {
+			message: string;
+			walletId: string;
+		}) => [
+			React.FunctionComponent,
+			SignedMessage | undefined,
+			{ isOpen: boolean; open: () => void; close: () => void },
+		];
+	};
 }
 
 export interface PluginRawInstance {
@@ -59,6 +70,7 @@ export enum PluginServiceIdentifier {
 	Store = "STORE",
 	Theme = "THEME",
 	Timers = "TIMERS",
+	Message = "MESSAGE",
 }
 
 export interface PluginServiceConfig {

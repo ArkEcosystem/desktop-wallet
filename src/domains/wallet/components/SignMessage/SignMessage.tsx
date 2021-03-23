@@ -1,5 +1,5 @@
 import { SignedMessage } from "@arkecosystem/platform-sdk/dist/contracts";
-import { Button } from "app/components/Button";
+import { OriginalButton as Button } from "app/components/Button/OriginalButton";
 import { Clipboard } from "app/components/Clipboard";
 import { Form } from "app/components/Form";
 import { Icon } from "app/components/Icon";
@@ -133,7 +133,7 @@ export const SignMessage = ({ walletId, messageText, isOpen, onClose, onCancel, 
 
 	return (
 		<Modal isOpen={isOpen} title="" onClose={handleClose}>
-			<Form context={form} onSubmit={handleSubmit}>
+			<Form data-testid="SignMessage" context={form} onSubmit={handleSubmit}>
 				<Tabs activeId={activeTab}>
 					<TabPanel tabId="form">
 						<FormStep disableMessageInput={!!messageText} wallet={wallet} />

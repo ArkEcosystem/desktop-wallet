@@ -1,7 +1,7 @@
 import { Address } from "app/components/Address";
 import { Amount } from "app/components/Amount";
 import { Avatar } from "app/components/Avatar";
-import { Button } from "app/components/Button";
+import { OriginalButton as Button } from "app/components/Button/OriginalButton";
 import { Icon } from "app/components/Icon";
 import { Label } from "app/components/Label";
 import { Table } from "app/components/Table";
