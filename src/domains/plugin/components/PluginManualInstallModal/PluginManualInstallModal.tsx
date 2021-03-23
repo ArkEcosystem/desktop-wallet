@@ -1,44 +1,46 @@
 import { Alert } from "app/components/Alert";
 import { Button } from "app/components/Button";
-import { FormField, FormLabel } from "app/components/Form";
+import { Form, FormField, FormLabel } from "app/components/Form";
 import { Input } from "app/components/Input";
 import { Modal } from "app/components/Modal";
 import { toasts } from "app/services";
-import { githubProvider } from "domains/transaction/entity/providers";
 import { usePluginManagerContext } from "plugins";
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
+import { useForm } from "react-hook-form";
 import { useTranslation } from "react-i18next";
 
 type Props = {
 	isOpen: boolean;
 	onClose?: () => void;
-	onSuccess?: (result: { pluginId: string; repositoryURL: string }) => void;
+	onSuccess: (result: { pluginId: string; repositoryURL: string }) => void;
 };
 
 export const PluginManualInstallModal = ({ isOpen, onClose, onSuccess }: Props) => {
 	const { t } = useTranslation();
 
-	const { fetchLatestPackageConfiguration } = usePluginManagerContext();
-	const [url, setUrl] = useState("");
 	const [isLoading, setIsLoading] = useState(false);
-	const [isInvalid, setIsInvalid] = useState(false);
+
+	const form = useForm({ mode: "onChange" });
+
+	const { getValues, register, formState } = form;
+	const { isValid, isSubmitting } = formState;
+
+	const { fetchLatestPackageConfiguration } = usePluginManagerContext();
 
 	const handleInstall = async () => {
 		setIsLoading(true);
+
+		const url = getValues("url");
+
 		try {
 			const pluginId = await fetchLatestPackageConfiguration(url);
-			onSuccess?.({ pluginId, repositoryURL: url });
+			onSuccess({ pluginId, repositoryURL: url });
 		} catch {
 			toasts.error("Failed to find a valid plugin repository. Please verify the URL and try again.");
 		}
+
 		setIsLoading(false);
 	};
-
-	useEffect(() => {
-		if (url) {
-			setIsInvalid(!githubProvider.validate(url));
-		}
-	}, [url]);
 
 	return (
 		<Modal
@@ -55,31 +57,49 @@ export const PluginManualInstallModal = ({ isOpen, onClose, onSuccess }: Props) 
 					</Alert>
 				</div>
 
-				<FormField name="url" className="mt-8">
-					<FormLabel>{t("PLUGINS.MODAL_MANUAL_INSTALL_PLUGIN.PLACEHOLDER")}</FormLabel>
-					<Input
-						data-testid="PluginManualInstallModal__input"
-						value={url}
-						onChange={(e: React.ChangeEvent<HTMLInputElement>) => setUrl(e.target.value)}
-						isInvalid={isInvalid}
-					/>
-				</FormField>
+				<Form context={form} onSubmit={handleInstall}>
+					<FormField name="url" className="flex flex-col space-y-2 mt-6">
+						<FormLabel>{t("PLUGINS.MODAL_MANUAL_INSTALL_PLUGIN.REPOSITORY_URL")}</FormLabel>
+						<Input
+							data-testid="PluginManualInstallModal__input"
+							ref={register({
+								required: t("COMMON.VALIDATION.FIELD_REQUIRED", {
+									field: t("PLUGINS.MODAL_MANUAL_INSTALL_PLUGIN.REPOSITORY_URL"),
+								}).toString(),
+								validate: (value) => {
+									const regex = /https?:\/\/(?:www\.)?(?:github\.com)\/([A-Za-z0-9-_.]+)(?:\/[A-z0-9_-]+)?\/?/;
 
-				<div className="flex space-x-3 justify-end mt-8">
-					<Button variant="secondary" onClick={onClose} data-testid="PluginManualInstallModal__cancel-button">
-						{t("COMMON.CANCEL")}
-					</Button>
+									if (!regex.test(value)) {
+										return t("COMMON.VALIDATION.FIELD_INVALID", {
+											field: t("PLUGINS.MODAL_MANUAL_INSTALL_PLUGIN.REPOSITORY_URL"),
+										}).toString();
+									}
 
-					<Button
-						type="submit"
-						onClick={handleInstall}
-						data-testid="PluginManualInstallModal__submit-button"
-						disabled={!url || isInvalid}
-						isLoading={isLoading}
-					>
-						<span>{t("COMMON.CONFIRM")}</span>
-					</Button>
-				</div>
+									return true;
+								},
+							})}
+						/>
+					</FormField>
+
+					<div className="flex space-x-3 justify-end mt-8">
+						<Button
+							variant="secondary"
+							onClick={onClose}
+							data-testid="PluginManualInstallModal__cancel-button"
+						>
+							{t("COMMON.CANCEL")}
+						</Button>
+
+						<Button
+							type="submit"
+							data-testid="PluginManualInstallModal__submit-button"
+							disabled={!isValid || isSubmitting}
+							isLoading={isLoading}
+						>
+							<span>{t("COMMON.CONFIRM")}</span>
+						</Button>
+					</div>
+				</Form>
 			</div>
 		</Modal>
 	);

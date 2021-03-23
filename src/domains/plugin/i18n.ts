@@ -74,7 +74,7 @@ export const translations: { [key: string]: any } = {
 		TITLE: "Install from URL",
 		DESCRIPTION:
 			"Fetch the plugin directly from GitHub by using the URL of the plugin repository in the input field below.",
-		PLACEHOLDER: "Github Repository URL",
+		REPOSITORY_URL: "GitHub Repository URL",
 	},
 
 	PAGE_PLUGIN_MANAGER: {

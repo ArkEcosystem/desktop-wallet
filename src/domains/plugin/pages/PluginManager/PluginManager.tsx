@@ -302,7 +302,7 @@ export const PluginManager = () => {
 										>
 											<div className="flex items-center space-x-2 whitespace-nowrap">
 												<Icon name="File" width={15} height={15} />
-												<span>Install from URL</span>
+												<span>{t("PLUGINS.MODAL_MANUAL_INSTALL_PLUGIN.TITLE")}</span>
 											</div>
 										</Button>
 									</>
