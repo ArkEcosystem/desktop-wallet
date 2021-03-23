@@ -28,6 +28,7 @@ jest.mock("react-router-dom", () => ({
 	...jest.requireActual("react-router-dom"),
 	useHistory: () => ({
 		replace: jest.fn(),
+		go: jest.fn(),
 	}),
 }));
 
@@ -70,13 +71,17 @@ describe("Settings", () => {
 
 		fireEvent.input(screen.getByTestId("General-settings__input--name"), { target: { value: "My Profile" } });
 
+		await waitFor(() => expect(screen.getByTestId("General-settings__submit-button")).toBeEnabled());
+
 		// Dirty
 		history.replace(`/profiles/${profile.id()}/dashboard`);
 
-		await waitFor(() => expect(screen.getByTestId("General-settings__submit-button")).toBeEnabled());
-
 		// Reload
 		history.replace(`/profiles/${profile.id()}/settings`);
+
+		await waitFor(() => expect(screen.getByTestId("General-settings__cancel-button")).toBeEnabled());
+
+		fireEvent.click(screen.getByTestId("General-settings__cancel-button"));
 	});
 
 	it("should render", () => {

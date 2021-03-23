@@ -383,7 +383,11 @@ export const General = ({ formConfig, onSuccess }: SettingsProps) => {
 					</Button>
 
 					<div className="space-x-3">
-						<Button variant="secondary" onClick={() => history.go(-1)}>
+						<Button
+							data-testid="General-settings__cancel-button"
+							variant="secondary"
+							onClick={() => history.go(-1)}
+						>
 							{t("COMMON.CANCEL")}
 						</Button>
 						<Button
