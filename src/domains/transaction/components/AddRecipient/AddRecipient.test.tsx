@@ -42,18 +42,14 @@ describe("AddRecipient", () => {
 	});
 
 	it("should render", async () => {
-		const { container } = await renderWithFormProvider(
-			<AddRecipient profile={profile} assetSymbol="ARK" maxAvailableAmount={BigNumber.make(80)} />,
-		);
+		const { container } = await renderWithFormProvider(<AddRecipient profile={profile} assetSymbol="ARK" />);
 
 		// await waitFor(() => expect(getByTestId("SelectDropdownInput__input")).toHaveValue(""));
 		expect(container).toMatchSnapshot();
 	});
 
 	it("should render without recipients", async () => {
-		const { container } = await renderWithFormProvider(
-			<AddRecipient maxAvailableAmount={BigNumber.ZERO} profile={profile} recipients={undefined} />,
-		);
+		const { container } = await renderWithFormProvider(<AddRecipient profile={profile} recipients={undefined} />);
 		expect(container).toMatchSnapshot();
 	});
 
@@ -64,10 +60,7 @@ describe("AddRecipient", () => {
 			recipientAddress: "D6Z26L69gdk9qYmTv5uzk3uGepigtHY4ax",
 		};
 
-		const { getByTestId, container } = await renderWithFormProvider(
-			<AddRecipient maxAvailableAmount={BigNumber.ZERO} profile={profile} />,
-			values,
-		);
+		const { getByTestId, container } = await renderWithFormProvider(<AddRecipient profile={profile} />, values);
 
 		await waitFor(() => {
 			expect(getByTestId("AddRecipient__amount")).toHaveValue("1");
@@ -79,12 +72,7 @@ describe("AddRecipient", () => {
 
 	it("should render with multiple recipients tab", async () => {
 		const { getByTestId, container } = await renderWithFormProvider(
-			<AddRecipient
-				profile={profile}
-				assetSymbol="ARK"
-				maxAvailableAmount={BigNumber.make(80)}
-				isSingleRecipient={false}
-			/>,
+			<AddRecipient profile={profile} assetSymbol="ARK" isSingleRecipient={false} />,
 		);
 
 		await waitFor(() => expect(getByTestId("SelectDropdownInput__input")).toHaveValue(""));
@@ -96,7 +84,6 @@ describe("AddRecipient", () => {
 			<AddRecipient
 				profile={profile}
 				assetSymbol="ARK"
-				maxAvailableAmount={BigNumber.make(80)}
 				isSingleRecipient={true}
 				showMultiPaymentOption={false}
 			/>,
@@ -109,12 +96,7 @@ describe("AddRecipient", () => {
 		const onChange = jest.fn();
 
 		const { getByTestId, form } = await renderWithFormProvider(
-			<AddRecipient
-				profile={profile}
-				assetSymbol="ARK"
-				maxAvailableAmount={BigNumber.make(80)}
-				onChange={onChange}
-			/>,
+			<AddRecipient profile={profile} assetSymbol="ARK" onChange={onChange} />,
 		);
 
 		await act(async () => {
@@ -142,7 +124,7 @@ describe("AddRecipient", () => {
 
 	it("should select recipient", async () => {
 		const { getByTestId, getAllByTestId } = await renderWithFormProvider(
-			<AddRecipient profile={profile} assetSymbol="ARK" maxAvailableAmount={BigNumber.make(80)} />,
+			<AddRecipient profile={profile} assetSymbol="ARK" />,
 		);
 
 		expect(() => getByTestId("modal__inner")).toThrow(/Unable to find an element by/);
@@ -166,7 +148,7 @@ describe("AddRecipient", () => {
 
 	it("should set available amount", async () => {
 		const { getByTestId, container, form } = await renderWithFormProvider(
-			<AddRecipient profile={profile} assetSymbol="ARK" maxAvailableAmount={BigNumber.make(8 * 1e8)} />,
+			<AddRecipient profile={profile} assetSymbol="ARK" />,
 		);
 
 		const sendAll = getByTestId("AddRecipient__send-all");
@@ -182,7 +164,7 @@ describe("AddRecipient", () => {
 		const emptyProfile = env.profiles().create("Empty");
 		emptyProfile.wallets().importByMnemonic("test test", "ARK", "ark.devnet");
 		const { getByTestId, container, form } = await renderWithFormProvider(
-			<AddRecipient profile={emptyProfile} assetSymbol="ARK" maxAvailableAmount={BigNumber.ZERO} />,
+			<AddRecipient profile={emptyProfile} assetSymbol="ARK" />,
 		);
 
 		const sendAll = getByTestId("AddRecipient__send-all");
@@ -196,7 +178,7 @@ describe("AddRecipient", () => {
 
 	it("should toggle between single and multiple recipients", async () => {
 		const { getByTestId, queryByText } = await renderWithFormProvider(
-			<AddRecipient profile={profile} assetSymbol="ARK" maxAvailableAmount={BigNumber.make(80)} />,
+			<AddRecipient profile={profile} assetSymbol="ARK" />,
 		);
 
 		const singleButton = getByTestId("AddRecipient__single");
@@ -244,7 +226,6 @@ describe("AddRecipient", () => {
 					<AddRecipient
 						profile={profile}
 						assetSymbol="ARK"
-						maxAvailableAmount={BigNumber.make(80)}
 						recipients={[
 							{
 								address: "D6Z26L69gdk9qYmTv5uzk3uGepigtHY4ax",
@@ -303,7 +284,7 @@ describe("AddRecipient", () => {
 		};
 
 		const { getByTestId } = await renderWithFormProvider(
-			<AddRecipient profile={profile} assetSymbol="ARK" maxAvailableAmount={BigNumber.make(80)} />,
+			<AddRecipient profile={profile} assetSymbol="ARK" />,
 			values,
 		);
 
@@ -320,7 +301,7 @@ describe("AddRecipient", () => {
 		};
 
 		const { getByTestId } = await renderWithFormProvider(
-			<AddRecipient profile={profile} assetSymbol="ARK" maxAvailableAmount={BigNumber.make(80)} />,
+			<AddRecipient profile={profile} assetSymbol="ARK" />,
 			values,
 		);
 
@@ -332,7 +313,7 @@ describe("AddRecipient", () => {
 
 	it("should show error for low balance", async () => {
 		const { getByTestId, getAllByTestId, form } = await renderWithFormProvider(
-			<AddRecipient profile={profile} assetSymbol="ARK" maxAvailableAmount={BigNumber.make(80)} />,
+			<AddRecipient profile={profile} assetSymbol="ARK" />,
 		);
 
 		expect(() => getByTestId("modal__inner")).toThrow(/Unable to find an element by/);
@@ -366,12 +347,7 @@ describe("AddRecipient", () => {
 		const mockWalletBalance = jest.spyOn(wallet, "balance").mockReturnValue(BigNumber.ZERO);
 
 		const { getByTestId, getAllByTestId, form } = await renderWithFormProvider(
-			<AddRecipient
-				profile={profile}
-				assetSymbol="ARK"
-				maxAvailableAmount={BigNumber.make(80)}
-				isSingleRecipient={false}
-			/>,
+			<AddRecipient profile={profile} assetSymbol="ARK" isSingleRecipient={false} />,
 		);
 
 		expect(() => getByTestId("modal__inner")).toThrow(/Unable to find an element by/);
@@ -405,12 +381,7 @@ describe("AddRecipient", () => {
 
 	it("should show error for invalid address", async () => {
 		const { getByTestId, getAllByTestId, form } = await renderWithFormProvider(
-			<AddRecipient
-				profile={profile}
-				assetSymbol="ARK"
-				maxAvailableAmount={BigNumber.make(80)}
-				isSingleRecipient={false}
-			/>,
+			<AddRecipient profile={profile} assetSymbol="ARK" isSingleRecipient={false} />,
 		);
 
 		expect(() => getByTestId("modal__inner")).toThrow(/Unable to find an element by/);
@@ -464,7 +435,6 @@ describe("AddRecipient", () => {
 					<AddRecipient
 						profile={profile}
 						assetSymbol="ARK"
-						maxAvailableAmount={BigNumber.make(80)}
 						recipients={[
 							{
 								address: "D6Z26L69gdk9qYmTv5uzk3uGepigtHY4ax",
@@ -521,12 +491,7 @@ describe("AddRecipient", () => {
 
 			return (
 				<FormProvider {...form}>
-					<AddRecipient
-						profile={profile}
-						assetSymbol="ARK"
-						maxAvailableAmount={BigNumber.make(80)}
-						recipients={[]}
-					/>
+					<AddRecipient profile={profile} assetSymbol="ARK" recipients={[]} />
 				</FormProvider>
 			);
 		};
@@ -557,12 +522,7 @@ describe("AddRecipient", () => {
 
 			return (
 				<FormProvider {...form}>
-					<AddRecipient
-						profile={profile}
-						assetSymbol="ARK"
-						maxAvailableAmount={BigNumber.make(80)}
-						recipients={[]}
-					/>
+					<AddRecipient profile={profile} assetSymbol="ARK" recipients={[]} />
 				</FormProvider>
 			);
 		};
