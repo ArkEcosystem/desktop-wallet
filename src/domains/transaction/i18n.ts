@@ -301,7 +301,7 @@ export const translations: { [key: string]: any } = {
 		},
 
 		FORM_STEP: {
-			TITLE: "Send {{coinId}}",
+			TITLE: "Send {{ticker}}",
 			DESCRIPTION: "Enter details below to send your transaction.",
 		},
 	},
