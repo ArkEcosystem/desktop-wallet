@@ -22,10 +22,7 @@ export const ReviewStep = ({ senderWallet }: { senderWallet: ReadWriteWallet }) 
 
 	return (
 		<section data-testid="SendDelegateResignation__review-step">
-			<Header
-				title={t("TRANSACTION.PAGE_DELEGATE_RESIGNATION.REVIEW_STEP.TITLE")}
-				subtitle={t("TRANSACTION.PAGE_DELEGATE_RESIGNATION.REVIEW_STEP.DESCRIPTION")}
-			/>
+			<Header title={t("TRANSACTION.REVIEW_STEP.TITLE")} subtitle={t("TRANSACTION.REVIEW_STEP.DESCRIPTION")} />
 
 			<TransactionNetwork
 				network={senderWallet.network()}

@@ -235,10 +235,6 @@ export const translations: { [key: string]: any } = {
 			DESCRIPTION: "Register a new Delegate address on the network below.",
 			WARNING: "The Delegate name is permanent and cannot be modified later. It is registered on the network.",
 		},
-		REVIEW_STEP: {
-			TITLE: "Register Delegate",
-			DESCRIPTION: "Verify the Delegate Registration details below.",
-		},
 	},
 
 	PAGE_DELEGATE_RESIGNATION: {
@@ -246,10 +242,6 @@ export const translations: { [key: string]: any } = {
 			TITLE: "Resign Delegate",
 			DESCRIPTION: "This transaction type permanently retires a Delegate address.",
 			WARNING: "This action is permanent and cannot be undone. It is registered on the network.",
-		},
-		REVIEW_STEP: {
-			TITLE: "Resign Delegate",
-			DESCRIPTION: "Verify the Delegate Resignation details below.",
 		},
 	},
 
@@ -275,24 +267,12 @@ export const translations: { [key: string]: any } = {
 			TITLE: "Confirm Your Passphrase",
 			SUBTITLE: "Confirm your mnemonic passphrase to continue.",
 		},
-
-		REVIEW_STEP: {
-			TITLE: "Register Second Signature",
-			DESCRIPTION: "Verify Second Signature details below.",
-			TYPE: "Second Signature",
-		},
 	},
 
 	PAGE_MULTISIGNATURE: {
 		FORM_STEP: {
 			TITLE: "Multisignature Registration",
 			DESCRIPTION: "Register Multisignature details below.",
-		},
-		REVIEW_STEP: {
-			TITLE: "Transaction Review",
-			DESCRIPTION: "Review your Multisignature registration details below.",
-			GENERATED_ADDRESS: "Generated Address",
-			TYPE: "Multisignature Registration",
 		},
 	},
 
@@ -312,10 +292,6 @@ export const translations: { [key: string]: any } = {
 			TITLE: "Vote Transaction",
 			DESCRIPTION: "Select a fee to continue.",
 		},
-		REVIEW_STEP: {
-			TITLE: "Transaction Review",
-			DESCRIPTION: "Review the transaction details below.",
-		},
 	},
 
 	PAGE_TRANSACTION_SEND: {
@@ -323,14 +299,16 @@ export const translations: { [key: string]: any } = {
 			TITLE: "Select a Cryptoasset",
 			SUBTITLE: "Select a cryptoasset to create your new wallet address",
 		},
+
 		FORM_STEP: {
-			TITLE: "Send",
+			TITLE: "Send {{coinId}}",
 			DESCRIPTION: "Enter details below to send your transaction.",
 		},
-		REVIEW_STEP: {
-			TITLE: "Transaction Review",
-			DESCRIPTION: "Review details below to send your transaction.",
-		},
+	},
+
+	REVIEW_STEP: {
+		TITLE: "Transaction Review",
+		DESCRIPTION: "Review the transaction details below.",
 	},
 
 	AUTHENTICATION_STEP: {

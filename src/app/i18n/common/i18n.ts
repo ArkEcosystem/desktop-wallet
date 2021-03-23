@@ -299,6 +299,7 @@ export const translations: { [key: string]: any } = {
 		SUCCESS: "<bold>{{filePath}}</bold> was saved successfully",
 		ERROR: "Could not save file: {{error}}",
 	},
+
 	NOTIFICATIONS: {
 		ACTIONS: {
 			READ_CHANGELOG: "Read Changelog",
@@ -308,6 +309,7 @@ export const translations: { [key: string]: any } = {
 		TRANSACTIONS_TITLE: "Transactions",
 		EMPTY: "You have no notifications at this time.",
 	},
+
 	PAGINATION: {
 		ENTER_NUMBER: "Enter the page number",
 	},
