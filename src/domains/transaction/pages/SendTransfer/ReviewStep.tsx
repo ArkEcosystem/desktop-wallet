@@ -32,8 +32,8 @@ export const ReviewStep = ({ wallet }: { wallet: ReadWriteWallet }) => {
 	return (
 		<section data-testid="SendTransfer__review-step">
 			<Header
-				title={t("TRANSACTION.PAGE_TRANSACTION_SEND.SECOND_STEP.TITLE")}
-				subtitle={t("TRANSACTION.PAGE_TRANSACTION_SEND.SECOND_STEP.DESCRIPTION")}
+				title={t("TRANSACTION.PAGE_TRANSACTION_SEND.REVIEW_STEP.TITLE")}
+				subtitle={t("TRANSACTION.PAGE_TRANSACTION_SEND.REVIEW_STEP.DESCRIPTION")}
 			/>
 
 			<TransactionNetwork network={wallet.network()} border={false} paddingPosition="bottom" className="mt-8" />

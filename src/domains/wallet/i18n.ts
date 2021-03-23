@@ -25,9 +25,9 @@ export const translations: { [key: string]: any } = {
 
 	MODAL_LEDGER_WALLET: {
 		TITLE: "Ledger Wallet",
-		CONNECT_DEVICE: "Connect your Ledger to PC and confirm the input.",
-		WAITING_DEVICE: "Waiting for Ledger device...",
-		OPEN_APP: "Open the {{coin}} app on your device...",
+		CONNECT_DEVICE: "Connect your Ledger and confirm input.",
+		WAITING_DEVICE: "Waiting for Ledger ...",
+		OPEN_APP: "Open the {{coin}} app on your device ...",
 		CONNECT_SUCCESS: "Successfully connected",
 		NO_DEVICE_FOUND: "Ledger device was not found in time",
 	},
@@ -137,8 +137,8 @@ export const translations: { [key: string]: any } = {
 		},
 
 		LEDGER_CONNECTION_STEP: {
-			TITLE: "Opening of the app",
-			SUBTITLE: "Information from your device is expected",
+			TITLE: "Open App on Ledger",
+			SUBTITLE: "Open the app on your Ledger and check for details.",
 		},
 
 		LEDGER_SCAN_STEP: {

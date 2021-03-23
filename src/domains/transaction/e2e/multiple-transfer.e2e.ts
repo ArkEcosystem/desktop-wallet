@@ -53,7 +53,7 @@ test("should send multiple transfer successfully", async (t) => {
 	await t.expect(Selector("button").withText(translations.COMMON.CONTINUE).hasAttribute("disabled")).notOk();
 	await t.click(Selector("button").withText(translations.COMMON.CONTINUE));
 	await t
-		.expect(Selector("h1").withText(translations.TRANSACTION.PAGE_TRANSACTION_SEND.SECOND_STEP.TITLE).exists)
+		.expect(Selector("h1").withText(translations.TRANSACTION.PAGE_TRANSACTION_SEND.REVIEW_STEP.TITLE).exists)
 		.ok();
 	await t.click(Selector("button").withText(translations.COMMON.CONTINUE));
 
@@ -97,7 +97,7 @@ test("should show an error if wrong mnemonic", async (t: any) => {
 	// Go to step 2
 	await t.click(Selector("button").withText(translations.COMMON.CONTINUE));
 	await t
-		.expect(Selector("h1").withText(translations.TRANSACTION.PAGE_TRANSACTION_SEND.SECOND_STEP.TITLE).exists)
+		.expect(Selector("h1").withText(translations.TRANSACTION.PAGE_TRANSACTION_SEND.REVIEW_STEP.TITLE).exists)
 		.ok();
 	await t.click(Selector("button").withText(translations.COMMON.CONTINUE));
 
@@ -139,7 +139,7 @@ test("should not clear values when returning a step", async (t: any) => {
 	// Go to step 2
 	await t.click(Selector("button").withText(translations.COMMON.CONTINUE));
 	await t
-		.expect(Selector("h1").withText(translations.TRANSACTION.PAGE_TRANSACTION_SEND.SECOND_STEP.TITLE).exists)
+		.expect(Selector("h1").withText(translations.TRANSACTION.PAGE_TRANSACTION_SEND.REVIEW_STEP.TITLE).exists)
 		.ok();
 	await t.click(Selector("button").withText(translations.COMMON.BACK));
 

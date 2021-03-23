@@ -273,6 +273,7 @@ export const AddRecipient = ({
 							disabled={!isSenderFilled}
 							address={recipientAddress}
 							profile={profile}
+							placeholder={t("COMMON.ADDRESS")}
 							onChange={(address: any) => {
 								setValue("recipientAddress", address, { shouldValidate: true, shouldDirty: true });
 								singleRecipientOnChange(getValues("amount"), address);

@@ -308,13 +308,13 @@ export const translations: { [key: string]: any } = {
 	},
 
 	PAGE_VOTE: {
-		FIRST_STEP: {
+		FORM_STEP: {
 			TITLE: "Vote Transaction",
-			DESCRIPTION: "Select a fee to continue",
+			DESCRIPTION: "Select a fee to continue.",
 		},
-		SECOND_STEP: {
+		REVIEW_STEP: {
 			TITLE: "Transaction Review",
-			DESCRIPTION: "Check the information again before voting",
+			DESCRIPTION: "Review the transaction details below.",
 		},
 	},
 
@@ -323,19 +323,19 @@ export const translations: { [key: string]: any } = {
 			TITLE: "Select a Cryptoasset",
 			SUBTITLE: "Select a cryptoasset to create your new wallet address",
 		},
-		FIRST_STEP: {
+		FORM_STEP: {
 			TITLE: "Send",
-			DESCRIPTION: "Enter details to send your money",
+			DESCRIPTION: "Enter details below to send your transaction.",
 		},
-		SECOND_STEP: {
+		REVIEW_STEP: {
 			TITLE: "Transaction Review",
-			DESCRIPTION: "Review the transaction details before sending",
+			DESCRIPTION: "Review details below to send your transaction.",
 		},
 	},
 
 	AUTHENTICATION_STEP: {
 		TITLE: "Authenticate",
-		DESCRIPTION: "Enter your twelve word mnemonic to authenticate the transaction.",
+		DESCRIPTION: "Enter your mnemonic passphrase to authenticate the transaction.",
 	},
 
 	REPOSITORIES: {

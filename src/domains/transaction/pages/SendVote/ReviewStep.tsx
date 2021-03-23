@@ -35,8 +35,8 @@ export const ReviewStep = ({
 	return (
 		<section data-testid="SendVote__review-step">
 			<Header
-				title={t("TRANSACTION.PAGE_VOTE.SECOND_STEP.TITLE")}
-				subtitle={t("TRANSACTION.PAGE_VOTE.SECOND_STEP.DESCRIPTION")}
+				title={t("TRANSACTION.PAGE_VOTE.REVIEW_STEP.TITLE")}
+				subtitle={t("TRANSACTION.PAGE_VOTE.REVIEW_STEP.DESCRIPTION")}
 			/>
 
 			<TransactionNetwork network={wallet.network()} border={false} paddingPosition="bottom" className="mt-8" />

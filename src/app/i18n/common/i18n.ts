@@ -292,7 +292,7 @@ export const translations: { [key: string]: any } = {
 
 	EMPTY_RESULTS: {
 		TITLE: "No Results",
-		SUBTITLE: "No results found. Refine your search and try again",
+		SUBTITLE: "No results found. Refine your search and try again.",
 	},
 
 	SAVE_FILE: {

@@ -58,7 +58,7 @@ export const AuthenticationStep = ({
 				>
 					<Header
 						title={t("TRANSACTION.LEDGER_CONFIRMATION.TITLE")}
-						subtitle={t("TRANSACTION.AUTHENTICATION_STEP.DESCRIPTION")}
+						subtitle={isLedger ? undefined : t("TRANSACTION.AUTHENTICATION_STEP.DESCRIPTION")}
 					/>
 
 					<LedgerConfirmation>{ledgerDetails}</LedgerConfirmation>

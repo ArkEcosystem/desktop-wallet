@@ -17,7 +17,7 @@ export const LedgerWaitingDeviceContent = () => {
 
 			<Image name="WaitingLedgerDevice" domain="wallet" className="mx-auto" />
 
-			<div className="inline-flex items-center space-x-3 w-full">
+			<div className="inline-flex items-center justify-center space-x-3 w-full">
 				<Spinner />
 				<span
 					className="font-semibold animate-pulse text-theme-secondary-text"
@@ -32,12 +32,10 @@ export const LedgerWaitingDeviceContent = () => {
 
 export const LedgerWaitingDevice = ({
 	isOpen,
-	coinName,
 	onClose,
 	onDeviceAvailable,
 }: {
 	isOpen: boolean;
-	coinName?: string;
 	onClose?: () => void;
 	onDeviceAvailable?: (hasDeviceAvailable: boolean) => void;
 }) => {
