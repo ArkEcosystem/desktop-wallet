@@ -46,7 +46,7 @@ exports[`LedgerTabs should render connection step 1`] = `
                 class="text-theme-secondary-text"
                 data-testid="header__subtitle"
               >
-                Select a cryptoasset to import your existing wallet address
+                Select a cryptoasset to import your existing wallet address.
               </div>
             </div>
           </div>
@@ -287,7 +287,7 @@ exports[`LedgerTabs should render scan step with failing fetch 1`] = `
                 class="text-theme-secondary-text"
                 data-testid="header__subtitle"
               >
-                Select the addresses that you want to import
+                Select the addresses that you want to import.
               </div>
             </div>
           </div>
@@ -397,7 +397,7 @@ exports[`LedgerTabs should render scan step with failing fetch 1`] = `
                       class="flex flex-inline align-top"
                     >
                       <div>
-                        Wallet
+                        Address
                       </div>
                       <div
                         class="flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity opacity-0 group-hover:opacity-100 ml-2"

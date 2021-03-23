@@ -327,7 +327,7 @@ exports[`SendTransfer should display disabled address selection input if selecte
                           class="text-theme-secondary-text"
                           data-testid="header__subtitle"
                         >
-                          Enter details to send your money
+                          Enter details below to send your transaction.
                         </div>
                       </div>
                     </div>
@@ -661,7 +661,7 @@ exports[`SendTransfer should display disabled address selection input if selecte
                                                 disabled=""
                                                 id="downshift-76-input"
                                                 name="recipientAddress"
-                                                placeholder="Select option"
+                                                placeholder="Address"
                                                 value=""
                                               />
                                             </div>
@@ -1273,7 +1273,7 @@ exports[`SendTransfer should error if wrong mnemonic 1`] = `
                           class="text-theme-secondary-text"
                           data-testid="header__subtitle"
                         >
-                          Enter your twelve word mnemonic to authenticate the transaction.
+                          Enter your mnemonic passphrase to authenticate the transaction.
                         </div>
                       </div>
                     </div>
@@ -1432,7 +1432,7 @@ exports[`SendTransfer should render 1st step with custom deeplink values and use
           class="text-theme-secondary-text"
           data-testid="header__subtitle"
         >
-          Enter details to send your money
+          Enter details below to send your transaction.
         </div>
       </div>
     </div>
@@ -1714,7 +1714,7 @@ exports[`SendTransfer should render 1st step with custom deeplink values and use
                                 disabled=""
                                 id="downshift-14-input"
                                 name="recipientAddress"
-                                placeholder="Select option"
+                                placeholder="Address"
                                 value=""
                               />
                             </div>
@@ -2409,7 +2409,7 @@ exports[`SendTransfer should render form and use location state 1`] = `
                           class="text-theme-secondary-text"
                           data-testid="header__subtitle"
                         >
-                          Enter details to send your money
+                          Enter details below to send your transaction.
                         </div>
                       </div>
                     </div>
@@ -2759,7 +2759,7 @@ exports[`SendTransfer should render form and use location state 1`] = `
                                                 data-testid="SelectDropdownInput__input"
                                                 id="downshift-20-input"
                                                 name="recipientAddress"
-                                                placeholder="Select option"
+                                                placeholder="Address"
                                                 value=""
                                               />
                                             </div>
@@ -3381,7 +3381,7 @@ exports[`SendTransfer should render form and use location state without memo 1`]
                           class="text-theme-secondary-text"
                           data-testid="header__subtitle"
                         >
-                          Enter details to send your money
+                          Enter details below to send your transaction.
                         </div>
                       </div>
                     </div>
@@ -3731,7 +3731,7 @@ exports[`SendTransfer should render form and use location state without memo 1`]
                                                 data-testid="SelectDropdownInput__input"
                                                 id="downshift-44-input"
                                                 name="recipientAddress"
-                                                placeholder="Select option"
+                                                placeholder="Address"
                                                 value=""
                                               />
                                             </div>
@@ -4051,7 +4051,7 @@ exports[`SendTransfer should render form step 1`] = `
           class="text-theme-secondary-text"
           data-testid="header__subtitle"
         >
-          Enter details to send your money
+          Enter details below to send your transaction.
         </div>
       </div>
     </div>
@@ -4333,7 +4333,7 @@ exports[`SendTransfer should render form step 1`] = `
                                 disabled=""
                                 id="downshift-0-input"
                                 name="recipientAddress"
-                                placeholder="Select option"
+                                placeholder="Address"
                                 value=""
                               />
                             </div>
@@ -4546,7 +4546,7 @@ exports[`SendTransfer should render form step with deeplink values and use them 
           class="text-theme-secondary-text"
           data-testid="header__subtitle"
         >
-          Enter details to send your money
+          Enter details below to send your transaction.
         </div>
       </div>
     </div>
@@ -4828,7 +4828,7 @@ exports[`SendTransfer should render form step with deeplink values and use them 
                                 disabled=""
                                 id="downshift-8-input"
                                 name="recipientAddress"
-                                placeholder="Select option"
+                                placeholder="Address"
                                 value=""
                               />
                             </div>
@@ -5221,7 +5221,7 @@ exports[`SendTransfer should render form step without test networks 1`] = `
           class="text-theme-secondary-text"
           data-testid="header__subtitle"
         >
-          Enter details to send your money
+          Enter details below to send your transaction.
         </div>
       </div>
     </div>
@@ -5503,7 +5503,7 @@ exports[`SendTransfer should render form step without test networks 1`] = `
                                 disabled=""
                                 id="downshift-4-input"
                                 name="recipientAddress"
-                                placeholder="Select option"
+                                placeholder="Address"
                                 value=""
                               />
                             </div>
@@ -6324,7 +6324,7 @@ exports[`SendTransfer should render review step 1`] = `
           class="text-theme-secondary-text"
           data-testid="header__subtitle"
         >
-          Review the transaction details before sending
+          Review details below to send your transaction.
         </div>
       </div>
     </div>
@@ -7208,7 +7208,7 @@ exports[`SendTransfer should select a cryptoasset and select sender without wall
                           class="text-theme-secondary-text"
                           data-testid="header__subtitle"
                         >
-                          Enter details to send your money
+                          Enter details below to send your transaction.
                         </div>
                       </div>
                     </div>
@@ -7558,7 +7558,7 @@ exports[`SendTransfer should select a cryptoasset and select sender without wall
                                                 data-testid="SelectDropdownInput__input"
                                                 id="downshift-92-input"
                                                 name="recipientAddress"
-                                                placeholder="Select option"
+                                                placeholder="Address"
                                                 value=""
                                               />
                                             </div>
