@@ -23,7 +23,7 @@ if (process.env.NODE_ENV && ["development", "production"].includes(process.env.N
 	}
 }
 
-const AppRouter = () => {
+export const AppRouter = ({ children }: { children: React.ReactNode }) => {
 	const [isOpen, setIsOpen] = useState(false);
 
 	const confirmationFnRef = useRef<(allowNavigate: boolean) => void>();
@@ -45,10 +45,15 @@ const AppRouter = () => {
 
 	return (
 		<BrowserRouter getUserConfirmation={getUserConfirmation}>
-			<App />
+			{children}
 			<ConfirmationModal isOpen={isOpen} onCancel={onCancel} onConfirm={onConfirm} />
 		</BrowserRouter>
 	);
 };
 
-ReactDOM.render(<AppRouter />, document.getElementById("root"));
+ReactDOM.render(
+	<AppRouter>
+		<App />
+	</AppRouter>,
+	document.getElementById("root"),
+);
