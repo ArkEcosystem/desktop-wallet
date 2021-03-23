@@ -6,11 +6,11 @@ import { Icon } from "app/components/Icon";
 import { Modal } from "app/components/Modal";
 import { TabPanel, Tabs } from "app/components/Tabs";
 import { useLedgerContext } from "app/contexts";
-import { useActiveWallet } from "app/hooks";
+import { useActiveProfile } from "app/hooks";
 import { toasts } from "app/services";
 import { isNoDeviceError, isRejectionError } from "domains/transaction/utils";
 import { LedgerWaitingApp, LedgerWaitingDevice } from "domains/wallet/components/Ledger";
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useMemo, useRef, useState } from "react";
 import { useForm } from "react-hook-form";
 import { useTranslation } from "react-i18next";
 
@@ -20,9 +20,12 @@ import { LedgerConfirmationStep } from "./LedgerConfirmationStep";
 import { SignedStep } from "./SignedStep";
 
 type SignMessageProps = {
+	walletId: string;
 	isOpen: boolean;
+	messageText?: string;
 	onClose?: () => void;
 	onCancel?: () => void;
+	onSign?: (result: SignedMessage) => void;
 };
 
 const initialState: SignedMessage = {
@@ -31,7 +34,7 @@ const initialState: SignedMessage = {
 	signature: "",
 };
 
-export const SignMessage = ({ isOpen, onClose, onCancel }: SignMessageProps) => {
+export const SignMessage = ({ walletId, messageText, isOpen, onClose, onCancel, onSign }: SignMessageProps) => {
 	const [activeTab, setActiveTab] = useState("form");
 
 	const [message, setMessage] = useState<string>();
@@ -41,10 +44,16 @@ export const SignMessage = ({ isOpen, onClose, onCancel }: SignMessageProps) => 
 
 	const { t } = useTranslation();
 
-	const form = useForm({ mode: "onChange" });
+	const form = useForm({
+		mode: "onChange",
+		defaultValues: {
+			message: messageText,
+		},
+	});
 	const { formState } = form;
 
-	const wallet = useActiveWallet();
+	const profile = useActiveProfile();
+	const wallet = useMemo(() => profile.wallets().findById(walletId), [profile, walletId]);
 
 	const { abortConnectionRetry, connect, isConnected, hasDeviceAvailable } = useLedgerContext();
 
@@ -88,6 +97,7 @@ export const SignMessage = ({ isOpen, onClose, onCancel }: SignMessageProps) => 
 			});
 
 			setSignedMessage(signedMessageResult);
+			onSign?.(signedMessageResult);
 
 			setActiveTab("signed");
 		} catch (error) {
@@ -126,7 +136,7 @@ export const SignMessage = ({ isOpen, onClose, onCancel }: SignMessageProps) => 
 			<Form context={form} onSubmit={handleSubmit}>
 				<Tabs activeId={activeTab}>
 					<TabPanel tabId="form">
-						<FormStep wallet={wallet} />
+						<FormStep disableMessageInput={!!messageText} wallet={wallet} />
 					</TabPanel>
 
 					<TabPanel tabId="ledger">
@@ -183,4 +193,5 @@ export const SignMessage = ({ isOpen, onClose, onCancel }: SignMessageProps) => 
 
 SignMessage.defaultProps = {
 	isOpen: false,
+	messageText: "",
 };

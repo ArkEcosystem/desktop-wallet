@@ -353,7 +353,12 @@ export const WalletHeader = ({ profile, wallet, currencyDelta, onSend }: WalletH
 			</header>
 
 			{modal === "sign-message" && (
-				<SignMessage isOpen={true} onClose={() => setModal(undefined)} onCancel={() => setModal(undefined)} />
+				<SignMessage
+					walletId={wallet.id()}
+					isOpen={true}
+					onClose={() => setModal(undefined)}
+					onCancel={() => setModal(undefined)}
+				/>
 			)}
 
 			<VerifyMessage
