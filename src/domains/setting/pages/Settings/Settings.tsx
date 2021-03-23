@@ -2,7 +2,6 @@ import { Page, Section } from "app/components/Layout";
 import { SideBar } from "app/components/SideBar";
 import { useActiveProfile, useReloadPath } from "app/hooks";
 import { toasts } from "app/services";
-import { Location } from "history";
 import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import { useTranslation } from "react-i18next";
@@ -62,8 +61,11 @@ export const Settings = () => {
 		toasts.error(`${message || t("COMMON.ERROR")}: ${errorMessage}`);
 	};
 
-	const getPromptMessage = (location: Location) => {
-		const matchCurrent = matchPath(location.pathname, {
+	const getPromptMessage = (location: any) => {
+		/* istanbul ignore next */
+		const pathname = location.pathname || location.location?.pathname;
+
+		const matchCurrent = matchPath(pathname, {
 			path: "/profiles/:profileId/settings",
 		});
 
