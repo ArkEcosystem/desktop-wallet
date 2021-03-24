@@ -69,11 +69,10 @@ describe("LedgerImportStep", () => {
 	it("should render with single import", async () => {
 		const { container, formRef } = renderComponent(walletsData.slice(1));
 
-		await waitFor(() => expect(screen.getAllByRole("listitem")).toHaveLength(1));
 		expect(container).toMatchSnapshot();
 
 		await act(async () => {
-			fireEvent.input(screen.getAllByTestId("ImportWallet__name-input")[0], {
+			fireEvent.input(screen.getByTestId("ImportWallet__name-input"), {
 				target: {
 					value: "Custom Name",
 				},
@@ -116,18 +115,17 @@ describe("LedgerImportStep", () => {
 	it("should show an error message for duplicate name", async () => {
 		const { container, getByTestId } = renderComponent(walletsData.slice(1));
 
-		expect(screen.getAllByRole("listitem")).toHaveLength(1);
 		expect(container).toMatchSnapshot();
 
 		await act(async () => {
-			fireEvent.input(screen.getAllByTestId("ImportWallet__name-input")[0], {
+			fireEvent.input(screen.getByTestId("ImportWallet__name-input"), {
 				target: {
 					value: "ARK Wallet 1",
 				},
 			});
 		});
 
-		expect(getByTestId("Input__error")).toBeVisible();
+		expect(screen.getByTestId("ImportWallet__name-input")).toHaveAttribute("aria-invalid");
 	});
 
 	it("should show an error message for duplicate name in the form", async () => {
@@ -172,9 +170,8 @@ describe("LedgerImportStep", () => {
 
 		await act(async () => {
 			fireEvent.click(screen.getByTestId("UpdateWalletName__cancel"));
+			await waitFor(() => expect(screen.queryByTestId("UpdateWalletName__input")).not.toBeInTheDocument());
 		});
-
-		await waitFor(() => expect(screen.queryByTestId("UpdateWalletName__input")).not.toBeInTheDocument());
 
 		expect(container).toMatchSnapshot();
 	});
