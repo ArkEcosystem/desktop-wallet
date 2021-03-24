@@ -47,6 +47,7 @@ export class HttpClient extends Http.Request {
 		return this.cache.remember(cacheKey, async () => {
 			let response;
 
+			console.time(url);
 			if (method === "GET") {
 				response = await fetch(url, this._options);
 			}
@@ -58,6 +59,7 @@ export class HttpClient extends Http.Request {
 					body: JSON.stringify(data?.data),
 				});
 			}
+			console.timeEnd(url);
 
 			if (!response) {
 				throw new Error("Received no response. This looks like a bug.");
