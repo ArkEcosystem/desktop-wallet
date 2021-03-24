@@ -38,12 +38,13 @@ export const SendIpfs = () => {
 	const { clearErrors, formState, getValues, handleSubmit, register, setError, setValue, watch } = form;
 	const { isValid, isSubmitting } = formState;
 
-	const { fee, fees } = watch();
+	const { fee, fees, encryptionPassword } = watch();
 
 	const abortRef = useRef(new AbortController());
 	const transactionBuilder = useTransactionBuilder(activeProfile);
 
 	useEffect(() => {
+		register("encryptionPassword");
 		register("network", sendIpfs.network());
 		register("senderAddress", sendIpfs.senderAddress());
 		register("hash", sendIpfs.hash());
@@ -72,12 +73,14 @@ export const SendIpfs = () => {
 	const submitForm = async () => {
 		clearErrors("mnemonic");
 
-		const { fee, mnemonic, secondMnemonic, senderAddress, hash } = getValues();
+		const { fee, mnemonic, secondMnemonic, senderAddress, hash, encryptionPassword } = getValues();
+		const wif = activeWallet?.usesWIF() ? await activeWallet.wif(encryptionPassword) : undefined;
 
 		const transactionInput: Contracts.IpfsInput = {
 			fee,
 			from: senderAddress,
 			sign: {
+				wif,
 				mnemonic,
 				secondMnemonic,
 			},

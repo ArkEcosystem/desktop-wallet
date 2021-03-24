@@ -787,4 +787,97 @@ describe("SendIpfs", () => {
 		isLedgerSpy.mockRestore();
 		signTransactionSpy.mockRestore();
 	});
+
+	it("should send an IPFS transaction using encryption password", async () => {
+		const encryptedWallet = profile.wallets().first();
+		const walletUsesWIFMock = jest.spyOn(encryptedWallet, "usesWIF").mockReturnValue(true);
+		const walletWifMock = jest.spyOn(encryptedWallet, "wif").mockImplementation((password) => {
+			const wif = "S9rDfiJ2ar4DpWAQuaXECPTJHfTZ3XjCPv15gjxu4cHJZKzABPyV";
+			return Promise.resolve(wif);
+			console.log("wif");
+		});
+
+		const history = createMemoryHistory();
+		const ipfsURL = `/profiles/${fixtureProfileId}/wallets/${encryptedWallet.id()}/send-ipfs`;
+
+		history.push(ipfsURL);
+
+		const { getByTestId, container } = renderWithRouter(
+			<Route path="/profiles/:profileId/wallets/:walletId/send-ipfs">
+				<LedgerProvider transport={transport}>
+					<SendIpfs />
+				</LedgerProvider>
+			</Route>,
+			{
+				routes: [ipfsURL],
+				history,
+			},
+		);
+
+		await waitFor(() => expect(getByTestId("SendIpfs__form-step")).toBeTruthy());
+
+		await waitFor(() =>
+			expect(getByTestId("SelectNetworkInput__input")).toHaveValue(encryptedWallet.network().name()),
+		);
+		await waitFor(() => expect(getByTestId("SelectAddress__input")).toHaveValue(encryptedWallet.address()));
+
+		// Hash
+		act(() => {
+			fireEvent.input(getByTestId("Input__hash"), {
+				target: { value: "QmXoypizjW3WknFiJnKLwHCnL72vedxjQkDDP1mXWo6uco" },
+			});
+		});
+		expect(getByTestId("Input__hash")).toHaveValue("QmXoypizjW3WknFiJnKLwHCnL72vedxjQkDDP1mXWo6uco");
+
+		// Fee
+		const fees = within(getByTestId("InputFee")).getAllByTestId("ButtonGroupOption");
+		act(() => {
+			fireEvent.click(fees[1]);
+		});
+		await waitFor(() => expect(getByTestId("InputCurrency")).not.toHaveValue("0"));
+
+		// Step 2
+		act(() => {
+			fireEvent.click(getByTestId("SendIpfs__button--continue"));
+		});
+		await waitFor(() => expect(getByTestId("SendIpfs__review-step")).toBeTruthy());
+
+		// Step 3
+		act(() => {
+			fireEvent.click(getByTestId("SendIpfs__button--continue"));
+		});
+		await waitFor(() => expect(getByTestId("AuthenticationStep")).toBeTruthy());
+
+		// Step 3
+		const passwordInput = getByTestId("AuthenticationStep__encryption-password");
+
+		await act(async () => {
+			fireEvent.input(passwordInput, { target: { value: "password" } });
+		});
+
+		await waitFor(() => expect(passwordInput).toHaveValue("password"));
+
+		// Step 4
+		const signMock = jest
+			.spyOn(encryptedWallet.transaction(), "signIpfs")
+			.mockReturnValue(Promise.resolve(ipfsFixture.data.id));
+		const broadcastMock = jest.spyOn(encryptedWallet.transaction(), "broadcast").mockImplementation();
+		const transactionMock = createTransactionMock(encryptedWallet);
+
+		await waitFor(() => expect(getByTestId("SendIpfs__button--submit")).not.toBeDisabled());
+		act(() => {
+			fireEvent.click(getByTestId("SendIpfs__button--submit"));
+		});
+
+		await waitFor(() => expect(getByTestId("TransactionSuccessful")).toBeTruthy());
+
+		signMock.mockRestore();
+		broadcastMock.mockRestore();
+		transactionMock.mockRestore();
+
+		walletUsesWIFMock.mockRestore();
+		walletWifMock.mockRestore();
+
+		await waitFor(() => expect(container).toMatchSnapshot());
+	});
 });
