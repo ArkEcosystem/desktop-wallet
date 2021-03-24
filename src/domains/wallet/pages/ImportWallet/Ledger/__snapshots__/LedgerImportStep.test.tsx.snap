@@ -321,21 +321,31 @@ exports[`LedgerImportStep should render with single import 1`] = `
         <div
           class="w-full h-full"
         >
-          <label
-            class="flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
-            data-testid="FormLabel"
-            for="names.DRgF3PvzeGWndQjET7dZsSmnrc6uAy23ES"
-          >
-            Wallet name
-            <span
-              class="ml-1 text-theme-secondary-500 dark:text-theme-secondary-700"
-              data-testid="FormLabel__optional"
-            >
-              optional
-            </span>
-          </label>
-          <div
-            class="Input__InputWrapperStyled-wu99qs-0 vKSQU"
+          <img
+            alt="DRgF3PvzeGWndQjET7dZsSmnrc6uAy23ES"
+            src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(63, 81, 181)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"40\\" cx=\\"100\\" cy=\\"40\\" fill=\\"rgb(0, 150, 136)\\"/><circle r=\\"55\\" cx=\\"60\\" cy=\\"60\\" fill=\\"rgb(205, 220, 57)\\"/><circle r=\\"50\\" cx=\\"50\\" cy=\\"30\\" fill=\\"rgb(33, 150, 243)\\"/></svg>"
+            title="DRgF3PvzeGWndQjET7dZsSmnrc6uAy23ES"
+          />
+        </div>
+      </div>
+    </div>
+    <div
+      class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 kPECcj undefined no-ligatures"
+      data-testid="TransactionDetail"
+    >
+      <div
+        class="flex-1 space-y-2"
+      >
+        <div
+          class="text-sm font-semibold text-theme-secondary-700 no-ligatures"
+        >
+          Balance
+        </div>
+        <div
+          class="font-semibold"
+        >
+          <span
+            data-testid="Amount"
           >
             0 DARK
           </span>
@@ -346,7 +356,7 @@ exports[`LedgerImportStep should render with single import 1`] = `
       class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
     >
       <label
-        class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
+        class="flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
         data-testid="FormLabel"
         for="names.DRgF3PvzeGWndQjET7dZsSmnrc6uAy23ES"
       >
@@ -471,21 +481,31 @@ exports[`LedgerImportStep should show an error message for duplicate name 1`] = 
         <div
           class="w-full h-full"
         >
-          <label
-            class="flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
-            data-testid="FormLabel"
-            for="names.DRgF3PvzeGWndQjET7dZsSmnrc6uAy23ES"
-          >
-            Wallet name
-            <span
-              class="ml-1 text-theme-secondary-500 dark:text-theme-secondary-700"
-              data-testid="FormLabel__optional"
-            >
-              optional
-            </span>
-          </label>
-          <div
-            class="Input__InputWrapperStyled-wu99qs-0 vKSQU"
+          <img
+            alt="DRgF3PvzeGWndQjET7dZsSmnrc6uAy23ES"
+            src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(63, 81, 181)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"40\\" cx=\\"100\\" cy=\\"40\\" fill=\\"rgb(0, 150, 136)\\"/><circle r=\\"55\\" cx=\\"60\\" cy=\\"60\\" fill=\\"rgb(205, 220, 57)\\"/><circle r=\\"50\\" cx=\\"50\\" cy=\\"30\\" fill=\\"rgb(33, 150, 243)\\"/></svg>"
+            title="DRgF3PvzeGWndQjET7dZsSmnrc6uAy23ES"
+          />
+        </div>
+      </div>
+    </div>
+    <div
+      class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 kPECcj undefined no-ligatures"
+      data-testid="TransactionDetail"
+    >
+      <div
+        class="flex-1 space-y-2"
+      >
+        <div
+          class="text-sm font-semibold text-theme-secondary-700 no-ligatures"
+        >
+          Balance
+        </div>
+        <div
+          class="font-semibold"
+        >
+          <span
+            data-testid="Amount"
           >
             0 DARK
           </span>
@@ -496,7 +516,7 @@ exports[`LedgerImportStep should show an error message for duplicate name 1`] = 
       class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
     >
       <label
-        class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
+        class="flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
         data-testid="FormLabel"
         for="names.DRgF3PvzeGWndQjET7dZsSmnrc6uAy23ES"
       >
