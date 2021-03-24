@@ -49,7 +49,7 @@ const RouteWrappers = ({ children }: { children: React.ReactNode }) => (
 const Main = () => {
 	ipcRenderer.on('response/import/wallet', console.log)
 
-	ipcRenderer.send('request/import/wallet', 'a');
+	ipcRenderer.send('request/import/wallet', { mnemonic: 'a' });
 
 	const [showSplash, setShowSplash] = useState(true);
 	const { env } = useEnvironmentContext();

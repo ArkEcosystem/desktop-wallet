@@ -45,7 +45,7 @@ function broadcastURL(url: string | null) {
 }
 
 let env: Environment | undefined = undefined;
-ipcMain.on('request/import/wallet', async (event, mnemonic) => {
+ipcMain.on('request/import/wallet', async (event, { mnemonic }) => {
 	if (! env) {
 		env = new Environment({
 			coins: {
