@@ -43,7 +43,7 @@ export const SendVote = () => {
 	const { clearErrors, formState, getValues, handleSubmit, register, setValue, watch } = form;
 	const { isValid, isSubmitting } = formState;
 
-	const { fee, fees, encryptionPassword } = watch();
+	const { fee, fees } = watch();
 	const { sendVote, common } = useValidation();
 
 	const abortRef = useRef(new AbortController());

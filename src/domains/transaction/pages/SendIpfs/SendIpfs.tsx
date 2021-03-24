@@ -38,13 +38,12 @@ export const SendIpfs = () => {
 	const { clearErrors, formState, getValues, handleSubmit, register, setError, setValue, watch } = form;
 	const { isValid, isSubmitting } = formState;
 
-	const { fee, fees, encryptionPassword } = watch();
+	const { fee, fees } = watch();
 
 	const abortRef = useRef(new AbortController());
 	const transactionBuilder = useTransactionBuilder(activeProfile);
 
 	useEffect(() => {
-		register("encryptionPassword");
 		register("network", sendIpfs.network());
 		register("senderAddress", sendIpfs.senderAddress());
 		register("hash", sendIpfs.hash());
