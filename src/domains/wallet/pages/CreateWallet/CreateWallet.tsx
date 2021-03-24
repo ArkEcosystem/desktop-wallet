@@ -6,7 +6,7 @@ import { StepIndicator } from "app/components/StepIndicator";
 import { TabPanel, Tabs } from "app/components/Tabs";
 import { useEnvironmentContext } from "app/contexts";
 import { useActiveProfile } from "app/hooks";
-import { useDashboardConfig } from "domains/dashboard/pages";
+import { useWalletConfig } from "domains/dashboard/hooks";
 import { EncryptPasswordStep } from "domains/wallet/components/EncryptPasswordStep";
 import React, { useCallback, useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
@@ -28,7 +28,7 @@ export const CreateWallet = () => {
 	const activeProfile = useActiveProfile();
 	const nameMaxLength = 42;
 
-	const { selectedNetworkIds, setValue: setConfiguration } = useDashboardConfig({ profile: activeProfile });
+	const { selectedNetworkIds, setValue: setConfiguration } = useWalletConfig({ profile: activeProfile });
 
 	const form = useForm({ mode: "onChange" });
 	const { getValues, formState, register, setValue } = form;

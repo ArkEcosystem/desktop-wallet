@@ -11,7 +11,7 @@ import { useEnvironmentContext } from "app/contexts";
 import { useQueryParams } from "app/hooks";
 import { useActiveProfile } from "app/hooks/env";
 import { toasts } from "app/services";
-import { useDashboardConfig } from "domains/dashboard/pages";
+import { useWalletConfig } from "domains/dashboard/hooks";
 import { EncryptPasswordStep } from "domains/wallet/components/EncryptPasswordStep";
 import { useWalletImport, WalletGenerationInput } from "domains/wallet/hooks/use-wallet-import";
 import { useWalletSync } from "domains/wallet/hooks/use-wallet-sync";
@@ -37,7 +37,7 @@ export const ImportWallet = () => {
 	const { env, persist } = useEnvironmentContext();
 
 	const activeProfile = useActiveProfile();
-	const { selectedNetworkIds, setValue } = useDashboardConfig({ profile: activeProfile });
+	const { selectedNetworkIds, setValue } = useWalletConfig({ profile: activeProfile });
 
 	const { t } = useTranslation();
 	const { importWalletByType } = useWalletImport({ profile: activeProfile });
