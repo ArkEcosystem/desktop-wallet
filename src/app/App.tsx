@@ -17,6 +17,7 @@ import LedgerTransportNodeHID from "@ledgerhq/hw-transport-node-hid-singleton";
 // import { XRP } from "@arkecosystem/platform-sdk-xrp";
 import { Offline } from "domains/error/pages";
 import { Splash } from "domains/splash/pages";
+import { ipcRenderer } from "electron";
 import { migrateProfileFixtures } from "migrations";
 import { usePluginManagerContext } from "plugins";
 import { PluginRouterWrapper } from "plugins/components/PluginRouterWrapper";
@@ -46,6 +47,10 @@ const RouteWrappers = ({ children }: { children: React.ReactNode }) => (
 );
 
 const Main = () => {
+	ipcRenderer.on('response/import/wallet', console.log)
+
+	ipcRenderer.send('request/import/wallet', 'a');
+
 	const [showSplash, setShowSplash] = useState(true);
 	const { env } = useEnvironmentContext();
 	const { loadPlugins } = usePluginManagerContext();

@@ -1,3 +1,6 @@
+import { ARK } from "@arkecosystem/platform-sdk-ark";
+import { Request } from "@arkecosystem/platform-sdk-http-got";
+import { Environment } from "@arkecosystem/platform-sdk-profiles";
 import { app, BrowserWindow, ipcMain, screen, shell } from "electron";
 import isDev from "electron-is-dev";
 import winState from "electron-window-state";
@@ -40,6 +43,29 @@ function broadcastURL(url: string | null) {
 		deeplinkingUrl = null;
 	}
 }
+
+let env: Environment | undefined = undefined;
+ipcMain.on('request/import/wallet', async (event, mnemonic) => {
+	if (! env) {
+		env = new Environment({
+			coins: {
+				ARK,
+			},
+			httpClient: new Request(),
+			storage: "indexeddb",
+		});
+
+		await env.verify();
+		await env.boot();
+	}
+
+	const profile = env.profiles().create("John Doe");
+
+	const wallet = await profile.wallets().importByMnemonic(mnemonic, "ARK", "ark.devnet");
+	await wallet.syncIdentity();
+
+	event.reply('response/import/wallet', wallet.toObject())
+});
 
 ipcMain.on("disable-iframe-protection", function (_event, urls) {
 	const filter = { urls };
