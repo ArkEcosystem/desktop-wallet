@@ -1,12 +1,12 @@
 import { Profile, ProfileSetting } from "@arkecosystem/platform-sdk-profiles";
 import { uniqBy } from "@arkecosystem/utils";
-import { useDashboardConfig } from "domains/dashboard/pages/Dashboard/hooks";
+import { useWalletConfig } from "domains/dashboard/hooks";
 import { useMemo } from "react";
 
 import { FilterWalletsHookProps } from "./";
 
 export const useWalletFilters = ({ profile }: { profile: Profile }) => {
-	const { defaultConfiguration, setValue, walletsDisplayType, selectedNetworkIds, viewType } = useDashboardConfig({
+	const { defaultConfiguration, setValue, walletsDisplayType, selectedNetworkIds, viewType } = useWalletConfig({
 		profile,
 	});
 
