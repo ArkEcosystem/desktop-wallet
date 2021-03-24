@@ -5,11 +5,11 @@ import { ConfigurationProvider, EnvironmentProvider } from "app/contexts";
 import React from "react";
 import { env, getDefaultProfileId, waitFor } from "utils/testing-library";
 
-import { useDashboardConfig } from "./use-dashboard-config.ts";
+import { useWalletConfig } from "./use-wallet-config";
 
 let profile: Profile;
 
-describe("useWalletFilters", () => {
+describe("useWalletConfig", () => {
 	beforeAll(() => {
 		profile = env.profiles().findById(getDefaultProfileId());
 	});
@@ -23,7 +23,7 @@ describe("useWalletFilters", () => {
 
 		const {
 			result: { current },
-		} = renderHook(() => useDashboardConfig({ profile }), { wrapper });
+		} = renderHook(() => useWalletConfig({ profile }), { wrapper });
 
 		expect(current.selectedWallets).toHaveLength(2);
 
@@ -48,10 +48,9 @@ describe("useWalletFilters", () => {
 			</EnvironmentProvider>
 		);
 
-		const { result } = renderHook(
-			() => useDashboardConfig({ profile, defaults: { walletsDisplayType: "ledger" } }),
-			{ wrapper },
-		);
+		const { result } = renderHook(() => useWalletConfig({ profile, defaults: { walletsDisplayType: "ledger" } }), {
+			wrapper,
+		});
 
 		await waitFor(() => {
 			expect(result.current.walletsDisplayType).toEqual("ledger");
@@ -68,7 +67,7 @@ describe("useWalletFilters", () => {
 		);
 
 		const { result } = renderHook(
-			() => useDashboardConfig({ profile, defaults: { walletsDisplayType: "favorites" } }),
+			() => useWalletConfig({ profile, defaults: { walletsDisplayType: "favorites" } }),
 			{ wrapper },
 		);
 
@@ -86,7 +85,7 @@ describe("useWalletFilters", () => {
 			</EnvironmentProvider>
 		);
 
-		const { result } = renderHook(() => useDashboardConfig({ profile, defaults: { selectedNetworkIds: [] } }), {
+		const { result } = renderHook(() => useWalletConfig({ profile, defaults: { selectedNetworkIds: [] } }), {
 			wrapper,
 		});
 
@@ -104,7 +103,7 @@ describe("useWalletFilters", () => {
 			</EnvironmentProvider>
 		);
 
-		const { result } = renderHook(() => useDashboardConfig({ profile, defaults: { selectedNetworkIds: [] } }), {
+		const { result } = renderHook(() => useWalletConfig({ profile, defaults: { selectedNetworkIds: [] } }), {
 			wrapper,
 		});
 
