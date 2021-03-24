@@ -53,7 +53,11 @@ export const Address = ({
 						walletNameClass || "text-theme-text"
 					}`}
 				>
-					<TruncateEnd text={walletName} maxChars={maxNameChars} />
+					<TruncateEnd
+						text={walletName}
+						maxChars={maxNameChars}
+						showTooltip={!!maxNameChars && walletName.length > maxNameChars}
+					/>
 				</span>
 			)}
 			{address && (
