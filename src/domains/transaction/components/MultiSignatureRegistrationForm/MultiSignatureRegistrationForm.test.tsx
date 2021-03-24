@@ -263,4 +263,58 @@ describe("MultiSignature Registration Form", () => {
 		signMock.mockRestore();
 		transactionMock.mockRestore();
 	});
+
+	it("should sign transaction using encryption password", async () => {
+		const walletUsesWIFMock = jest.spyOn(wallet, "usesWIF").mockReturnValue(true);
+		const walletWifMock = jest.spyOn(wallet, "wif").mockImplementation((password) => {
+			const wif = "S9rDfiJ2ar4DpWAQuaXECPTJHfTZ3XjCPv15gjxu4cHJZKzABPyV";
+			return Promise.resolve(wif);
+		});
+
+		const form = {
+			clearErrors: jest.fn(),
+			getValues: () => ({
+				fee: "1",
+				mnemonic: "sample passphrase",
+				senderAddress: wallet.address(),
+				minParticipants: 2,
+				participants: [
+					{
+						address: wallet.address(),
+						publicKey: wallet.publicKey()!,
+					},
+					{
+						address: wallet2.address(),
+						publicKey: wallet2.publicKey()!,
+					},
+				],
+				encryptionPassword: "password",
+			}),
+			setError: jest.fn(),
+			setValue: jest.fn(),
+		};
+		const signMock = jest
+			.spyOn(wallet.transaction(), "signMultiSignature")
+			.mockReturnValue(Promise.resolve(multiSignatureFixture.data.id));
+		const addSignatureMock = jest.spyOn(wallet.transaction(), "addSignature").mockImplementation();
+		const broadcastMock = jest.spyOn(wallet.transaction(), "broadcast").mockImplementation();
+		const transactionMock = createTransactionMock(wallet);
+
+		await MultiSignatureRegistrationForm.signTransaction({
+			env,
+			form,
+			profile,
+		});
+
+		expect(signMock).toHaveBeenCalled();
+		expect(addSignatureMock).toHaveBeenCalled();
+		expect(broadcastMock).toHaveBeenCalled();
+		expect(transactionMock).toHaveBeenCalled();
+
+		signMock.mockRestore();
+		broadcastMock.mockRestore();
+		transactionMock.mockRestore();
+		walletUsesWIFMock.mockRestore();
+		walletWifMock.mockRestore();
+	});
 });
