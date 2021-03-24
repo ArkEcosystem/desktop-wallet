@@ -4,6 +4,7 @@ import {
 	HttpPluginProvider,
 	HttpPluginService,
 	LaunchPluginService,
+	MessagePluginService,
 	PluginManager,
 	PluginManagerProvider,
 	ProfilePluginService,
@@ -29,6 +30,7 @@ export const services = [
 	new StorePluginService(),
 	new ThemePluginService(),
 	new TimersPluginService(),
+	new MessagePluginService(),
 ];
 
 export const PluginProviders = ({ children }: Props) => {
