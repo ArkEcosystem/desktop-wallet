@@ -51,8 +51,11 @@ const NavWrapper = styled.nav<{ noBorder?: boolean; noShadow?: boolean; scroll?:
 
 	${tw`sticky border-b border-theme-background inset-x-0 top-0 bg-theme-background transition-all duration-200`}
 
-	${({ noBorder }) =>
-		noBorder ? tw`border-transparent` : tw`border-theme-secondary-300 dark:border-theme-secondary-800`};
+	${({ noBorder, scroll }) => {
+		if (!noBorder && !scroll) {
+			return tw`border-theme-secondary-300 dark:border-theme-secondary-800`;
+		}
+	}}
 
 	${({ noShadow, scroll }) => {
 		if (!noShadow && scroll) {
