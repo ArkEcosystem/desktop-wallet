@@ -139,7 +139,7 @@ export const WalletDetails = ({ transactionLimit }: WalletDetailsProps) => {
 								onChange={(id) => setActiveTransactionModeTab(id as string)}
 							>
 								<TabList className="w-full">
-									<Tab tabId="all">{t("TRANSACTION.ALL_HISTORY")}</Tab>
+									<Tab tabId="all">{t("TRANSACTION.ALL")}</Tab>
 									<Tab tabId="received">{t("TRANSACTION.INCOMING")}</Tab>
 									<Tab tabId="sent">{t("TRANSACTION.OUTGOING")}</Tab>
 								</TabList>

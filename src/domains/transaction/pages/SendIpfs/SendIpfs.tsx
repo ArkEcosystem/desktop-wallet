@@ -72,12 +72,14 @@ export const SendIpfs = () => {
 	const submitForm = async () => {
 		clearErrors("mnemonic");
 
-		const { fee, mnemonic, secondMnemonic, senderAddress, hash } = getValues();
+		const { fee, mnemonic, secondMnemonic, senderAddress, hash, encryptionPassword } = getValues();
+		const wif = activeWallet?.usesWIF() ? await activeWallet.wif(encryptionPassword) : undefined;
 
 		const transactionInput: Contracts.IpfsInput = {
 			fee,
 			from: senderAddress,
 			sign: {
+				wif,
 				mnemonic,
 				secondMnemonic,
 			},

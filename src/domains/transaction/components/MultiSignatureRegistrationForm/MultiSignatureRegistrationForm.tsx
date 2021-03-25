@@ -35,10 +35,10 @@ const transactionDetails = ({ transaction, translations, wallet }: SendRegistrat
 				</Circle>
 			}
 		>
-			{translations("TRANSACTION.PAGE_MULTISIGNATURE.REVIEW_STEP.TYPE")}
+			{translations("TRANSACTION.TRANSACTION_TYPES.MULTI_SIGNATURE")}
 		</TransactionDetail>
 
-		<TransactionDetail label={translations("TRANSACTION.PAGE_MULTISIGNATURE.REVIEW_STEP.GENERATED_ADDRESS")}>
+		<TransactionDetail label={translations("TRANSACTION.MULTISIGNATURE.GENERATED_ADDRESS")}>
 			{transaction.generatedAddress}
 		</TransactionDetail>
 
@@ -53,16 +53,18 @@ const signTransaction = async ({ env, form, profile }: SendRegistrationSignOptio
 	const { clearErrors, getValues } = form;
 
 	clearErrors("mnemonic");
-	const { fee, minParticipants, participants, mnemonic, senderAddress } = getValues();
+	const { fee, minParticipants, participants, mnemonic, senderAddress, encryptionPassword } = getValues();
 	const senderWallet = profile.wallets().findByAddress(senderAddress);
 
 	const publicKeys = (participants as Participant[]).map((item) => item.publicKey);
+	const wif = senderWallet?.usesWIF() ? await senderWallet.wif(encryptionPassword) : undefined;
 
 	const transactionId = await senderWallet!.transaction().signMultiSignature({
 		nonce: senderWallet!.nonce().plus(1).toString(),
 		fee,
 		from: senderAddress,
 		sign: {
+			wif,
 			multiSignature: {
 				publicKeys: [...publicKeys],
 				min: +minParticipants,

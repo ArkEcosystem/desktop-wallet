@@ -177,15 +177,17 @@ export const SendVote = () => {
 
 	const submitForm = async () => {
 		clearErrors("mnemonic");
-		const { fee, mnemonic, secondMnemonic, senderAddress } = getValues();
-
+		const { fee, mnemonic, secondMnemonic, senderAddress, encryptionPassword } = getValues();
 		const abortSignal = abortRef.current?.signal;
+
+		const wif = activeWallet?.usesWIF() ? await activeWallet.wif(encryptionPassword) : undefined;
 
 		try {
 			const voteTransactionInput: Contracts.TransactionInput = {
 				fee,
 				from: senderAddress,
 				sign: {
+					wif,
 					mnemonic,
 					secondMnemonic,
 				},

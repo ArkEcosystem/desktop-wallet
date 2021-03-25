@@ -293,4 +293,46 @@ describe("DelegateRegistrationForm", () => {
 		expect(getByText("TRANSACTION.DELEGATE_NAME")).toBeTruthy();
 		expect(getByText("test_delegate")).toBeTruthy();
 	});
+
+	it("should sign transaction using password encryption", async () => {
+		const walletUsesWIFMock = jest.spyOn(wallet, "usesWIF").mockReturnValue(true);
+		const walletWifMock = jest.spyOn(wallet, "wif").mockImplementation((password) => {
+			const wif = "S9rDfiJ2ar4DpWAQuaXECPTJHfTZ3XjCPv15gjxu4cHJZKzABPyV";
+			return Promise.resolve(wif);
+		});
+
+		const form = {
+			clearErrors: jest.fn(),
+			getValues: () => ({
+				fee: "1",
+				mnemonic: "sample passphrase",
+				senderAddress: wallet.address(),
+				username: "test_delegate",
+				encryptionPassword: "password",
+			}),
+			setError: jest.fn(),
+			setValue: jest.fn(),
+		};
+		const signMock = jest
+			.spyOn(wallet.transaction(), "signDelegateRegistration")
+			.mockReturnValue(Promise.resolve(delegateRegistrationFixture.data.id));
+		const broadcastMock = jest.spyOn(wallet.transaction(), "broadcast").mockImplementation();
+		const transactionMock = createTransactionMock(wallet);
+
+		await DelegateRegistrationForm.signTransaction({
+			env,
+			form,
+			profile,
+		});
+
+		expect(signMock).toHaveBeenCalled();
+		expect(broadcastMock).toHaveBeenCalled();
+		expect(transactionMock).toHaveBeenCalled();
+
+		signMock.mockRestore();
+		broadcastMock.mockRestore();
+		transactionMock.mockRestore();
+		walletUsesWIFMock.mockRestore();
+		walletWifMock.mockRestore();
+	});
 });
