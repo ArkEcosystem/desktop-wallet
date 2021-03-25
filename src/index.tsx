@@ -44,16 +44,16 @@ export const AppRouter = ({ children }: { children: React.ReactNode }) => {
 	}, []);
 
 	return (
-		<BrowserRouter getUserConfirmation={getUserConfirmation}>
+		<HashRouter getUserConfirmation={getUserConfirmation}>
 			{children}
 			<ConfirmationModal isOpen={isOpen} onCancel={onCancel} onConfirm={onConfirm} />
-		</BrowserRouter>
+		</HashRouter>
 	);
 };
 
 ReactDOM.render(
-	<HashRouter>
+	<AppRouter>
 		<App />
-	</HashRouter>,
+	</AppRouter>,
 	document.getElementById("root"),
 );
