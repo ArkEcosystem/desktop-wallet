@@ -20,7 +20,7 @@ export const LedgerConfirmation = ({ children, detailsHeading }: LedgerConfirmat
 				{t("TRANSACTION.LEDGER_CONFIRMATION.DESCRIPTION")}
 			</div>
 
-			<div className="inline-flex items-center mt-8 space-x-3 w-full">
+			<div className="inline-flex items-center justify-center mt-8 space-x-3 w-full">
 				<Spinner />
 				<span
 					className="font-semibold text-theme-secondary-900 dark:text-theme-secondary-600"

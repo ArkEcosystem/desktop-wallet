@@ -56,10 +56,7 @@ export const AuthenticationStep = ({
 					ledgerIsAwaitingDevice={ledgerIsAwaitingDevice}
 					coinName={wallet.network().coin()}
 				>
-					<Header
-						title={t("TRANSACTION.LEDGER_CONFIRMATION.TITLE")}
-						subtitle={t("TRANSACTION.AUTHENTICATION_STEP.DESCRIPTION")}
-					/>
+					<Header title={t("TRANSACTION.LEDGER_CONFIRMATION.TITLE")} />
 
 					<LedgerConfirmation>{ledgerDetails}</LedgerConfirmation>
 				</LedgerStateWrapper>

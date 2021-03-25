@@ -104,7 +104,7 @@ export const SelectProfileImage = ({ className, value, name, showLabel, onSelect
 							</ProfileImageStyled>
 						</Tooltip>
 						{!isSvg && (
-							<Tooltip content={t("SETTINGS.GENERAL.PERSONAL.DELETE_AVATAR")}>
+							<Tooltip content={t("SETTINGS.GENERAL.PERSONAL.REMOVE_AVATAR")}>
 								<Button
 									size="icon"
 									variant="danger"

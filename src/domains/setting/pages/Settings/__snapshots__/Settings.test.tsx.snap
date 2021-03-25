@@ -455,7 +455,7 @@ exports[`Settings should change a password 1`] = `
                         class="text-theme-secondary-text"
                         data-testid="header__subtitle"
                       >
-                        Change the password used to access your profile below.
+                        Change the password used to secure your Profile below.
                       </div>
                     </div>
                   </div>
@@ -1120,7 +1120,7 @@ exports[`Settings should not update the uploaded avatar when removing focus from
                       <span
                         class="text-sm font-semibold transition-colors duration-100 cursor-default group-hover:text-theme-primary-600 text-theme-secondary-text"
                       >
-                        Profile Image
+                        Select Profile Image
                       </span>
                       <div
                         class="flex flex-row"
@@ -1192,7 +1192,7 @@ exports[`Settings should not update the uploaded avatar when removing focus from
                             data-testid="FormLabel"
                             for="name"
                           >
-                            Name
+                            Profile Name
                             <div
                               class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
                               data-testid="FormLabel__required"
@@ -1531,7 +1531,7 @@ exports[`Settings should not update the uploaded avatar when removing focus from
                             data-testid="FormLabel"
                             for="marketProvider"
                           >
-                            Market Provider
+                            Price Source
                             <div
                               class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
                               data-testid="FormLabel__required"
@@ -1583,7 +1583,7 @@ exports[`Settings should not update the uploaded avatar when removing focus from
                                       data-testid="SelectDropdownInput__input"
                                       id="downshift-222-input"
                                       name="marketProvider"
-                                      placeholder="Select Market Provider"
+                                      placeholder="Select Price Source"
                                       value="CryptoCompare"
                                     />
                                     <span
@@ -1786,7 +1786,7 @@ exports[`Settings should not update the uploaded avatar when removing focus from
                               class="text-sm font-medium text-theme-secondary-500 dark:text-theme-secondary-700"
                               data-testid="list-divided-item__label--description"
                             >
-                              This protection will protect your money from unwanted Screenshot you PC.
+                              When enabled, wallet application is hidden from screen-capturing software.
                             </span>
                           </div>
                         </div>
@@ -1835,7 +1835,7 @@ exports[`Settings should not update the uploaded avatar when removing focus from
                               class="text-sm font-medium text-theme-secondary-500 dark:text-theme-secondary-700"
                               data-testid="list-divided-item__label--description"
                             >
-                              Allows for installing files from direct URLs. You assume any associated risk by enabling this feature.
+                              Allows installations from direct URLs. Enable at your own risk.
                             </span>
                           </div>
                         </div>
@@ -1873,7 +1873,7 @@ exports[`Settings should not update the uploaded avatar when removing focus from
                               data-testid="FormLabel"
                               for="automaticSignOutPeriod"
                             >
-                              Automatic Sign Out Period
+                              Auto Log-Off
                               <div
                                 class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
                                 data-testid="FormLabel__required"
@@ -1925,7 +1925,7 @@ exports[`Settings should not update the uploaded avatar when removing focus from
                                         data-testid="SelectDropdownInput__input"
                                         id="downshift-226-input"
                                         name="automaticSignOutPeriod"
-                                        placeholder="Select Automatic Sign Out Period"
+                                        placeholder="Select Auto Log-Off"
                                         value="1 minute"
                                       />
                                       <span
@@ -2001,7 +2001,7 @@ exports[`Settings should not update the uploaded avatar when removing focus from
                                 class="text-lg font-semibold text-theme-secondary-700 dark:text-theme-secondary-200"
                                 data-testid="list-divided-item__label"
                               >
-                                Development Networks
+                                Development and Test Networks
                               </span>
                               <span>
                                 <label
@@ -2028,7 +2028,7 @@ exports[`Settings should not update the uploaded avatar when removing focus from
                               class="text-sm font-medium text-theme-secondary-500 dark:text-theme-secondary-700"
                               data-testid="list-divided-item__label--description"
                             >
-                              When enabled, allows application to add development and test networks.
+                              To create or import wallets from development and test networks, you must first enable this feature.
                             </span>
                           </div>
                         </div>
@@ -2176,7 +2176,7 @@ exports[`Settings should not update the uploaded avatar when removing focus from
                               class="text-sm font-medium text-theme-secondary-500 dark:text-theme-secondary-700"
                               data-testid="list-divided-item__label--description"
                             >
-                              When enabled, changes to a dark, high contrast theme.
+                              Enables a dark, high contrast scheme.
                             </span>
                           </div>
                         </div>
@@ -2717,7 +2717,7 @@ exports[`Settings should render 1`] = `
                       <span
                         class="text-sm font-semibold transition-colors duration-100 cursor-default group-hover:text-theme-primary-600 text-theme-secondary-text"
                       >
-                        Profile Image
+                        Select Profile Image
                       </span>
                       <div
                         class="flex flex-row"
@@ -2775,7 +2775,7 @@ exports[`Settings should render 1`] = `
                             data-testid="FormLabel"
                             for="name"
                           >
-                            Name
+                            Profile Name
                             <div
                               class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
                               data-testid="FormLabel__required"
@@ -3114,7 +3114,7 @@ exports[`Settings should render 1`] = `
                             data-testid="FormLabel"
                             for="marketProvider"
                           >
-                            Market Provider
+                            Price Source
                             <div
                               class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
                               data-testid="FormLabel__required"
@@ -3166,7 +3166,7 @@ exports[`Settings should render 1`] = `
                                       data-testid="SelectDropdownInput__input"
                                       id="downshift-58-input"
                                       name="marketProvider"
-                                      placeholder="Select Market Provider"
+                                      placeholder="Select Price Source"
                                       value="CryptoCompare"
                                     />
                                     <span
@@ -3369,7 +3369,7 @@ exports[`Settings should render 1`] = `
                               class="text-sm font-medium text-theme-secondary-500 dark:text-theme-secondary-700"
                               data-testid="list-divided-item__label--description"
                             >
-                              This protection will protect your money from unwanted Screenshot you PC.
+                              When enabled, wallet application is hidden from screen-capturing software.
                             </span>
                           </div>
                         </div>
@@ -3418,7 +3418,7 @@ exports[`Settings should render 1`] = `
                               class="text-sm font-medium text-theme-secondary-500 dark:text-theme-secondary-700"
                               data-testid="list-divided-item__label--description"
                             >
-                              Allows for installing files from direct URLs. You assume any associated risk by enabling this feature.
+                              Allows installations from direct URLs. Enable at your own risk.
                             </span>
                           </div>
                         </div>
@@ -3456,7 +3456,7 @@ exports[`Settings should render 1`] = `
                               data-testid="FormLabel"
                               for="automaticSignOutPeriod"
                             >
-                              Automatic Sign Out Period
+                              Auto Log-Off
                               <div
                                 class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
                                 data-testid="FormLabel__required"
@@ -3508,7 +3508,7 @@ exports[`Settings should render 1`] = `
                                         data-testid="SelectDropdownInput__input"
                                         id="downshift-62-input"
                                         name="automaticSignOutPeriod"
-                                        placeholder="Select Automatic Sign Out Period"
+                                        placeholder="Select Auto Log-Off"
                                         value="1 minute"
                                       />
                                       <span
@@ -3584,7 +3584,7 @@ exports[`Settings should render 1`] = `
                                 class="text-lg font-semibold text-theme-secondary-700 dark:text-theme-secondary-200"
                                 data-testid="list-divided-item__label"
                               >
-                                Development Networks
+                                Development and Test Networks
                               </span>
                               <span>
                                 <label
@@ -3611,7 +3611,7 @@ exports[`Settings should render 1`] = `
                               class="text-sm font-medium text-theme-secondary-500 dark:text-theme-secondary-700"
                               data-testid="list-divided-item__label--description"
                             >
-                              When enabled, allows application to add development and test networks.
+                              To create or import wallets from development and test networks, you must first enable this feature.
                             </span>
                           </div>
                         </div>
@@ -3759,7 +3759,7 @@ exports[`Settings should render 1`] = `
                               class="text-sm font-medium text-theme-secondary-500 dark:text-theme-secondary-700"
                               data-testid="list-divided-item__label--description"
                             >
-                              When enabled, changes to a dark, high contrast theme.
+                              Enables a dark, high contrast scheme.
                             </span>
                           </div>
                         </div>
@@ -4878,7 +4878,7 @@ exports[`Settings should render password settings 1`] = `
                         class="text-theme-secondary-text"
                         data-testid="header__subtitle"
                       >
-                        Provide a password below to secure your user profile.
+                        Set your password below to secure your Profile.
                       </div>
                     </div>
                   </div>
@@ -5471,7 +5471,7 @@ exports[`Settings should render peer settings 1`] = `
                       class="text-theme-secondary-text"
                       data-testid="header__subtitle"
                     >
-                      Customize your network peer settings.
+                      Manage your peer settings for your wallet.
                     </div>
                   </div>
                 </div>
@@ -5530,7 +5530,7 @@ exports[`Settings should render peer settings 1`] = `
                             class="text-sm font-medium text-theme-secondary-500 dark:text-theme-secondary-700"
                             data-testid="list-divided-item__label--description"
                           >
-                            Toggle to send transactions to multiple network peers. (Recommended)
+                            Broadcasts your transactions to mulitple peers for additional reliability.
                           </span>
                         </div>
                       </div>
@@ -5579,9 +5579,7 @@ exports[`Settings should render peer settings 1`] = `
                             class="text-sm font-medium text-theme-secondary-500 dark:text-theme-secondary-700"
                             data-testid="list-divided-item__label--description"
                           >
-                            Customize your individual peers by network. 
-                            <br />
-                             Note: Only use trusted peers. Using an unknown peer may put your funds at risk.
+                            Manages your list of custom peers for Blockchain networks.
                           </span>
                         </div>
                       </div>
@@ -6073,7 +6071,7 @@ exports[`Settings should render plugin settings 1`] = `
                       class="text-theme-secondary-text"
                       data-testid="header__subtitle"
                     >
-                      Customize your wallet to suit your needs.
+                      Manage your Plugin settings below.
                     </div>
                   </div>
                 </div>
@@ -6128,7 +6126,7 @@ exports[`Settings should render plugin settings 1`] = `
                             class="text-sm font-medium text-theme-secondary-500 dark:text-theme-secondary-700"
                             data-testid="list-divided-item__label--description"
                           >
-                            Turn this feature on, you can upload plugins to your wallet from third-party sources.
+                            Allows Plugins to be installed from third-party sources.
                           </span>
                         </div>
                       </div>
@@ -6147,7 +6145,7 @@ exports[`Settings should render plugin settings 1`] = `
                               data-testid="FormLabel"
                               for="load-plugins"
                             >
-                              Load from
+                              Load plugins from
                               <div
                                 class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
                                 data-testid="FormLabel__required"
@@ -6720,7 +6718,7 @@ exports[`Settings should set a password 1`] = `
                         class="text-theme-secondary-text"
                         data-testid="header__subtitle"
                       >
-                        Change the password used to access your profile below.
+                        Change the password used to secure your Profile below.
                       </div>
                     </div>
                   </div>
@@ -7368,7 +7366,7 @@ exports[`Settings should show an error toast if the current password does not ma
                         class="text-theme-secondary-text"
                         data-testid="header__subtitle"
                       >
-                        Change the password used to access your profile below.
+                        Change the password used to secure your Profile below.
                       </div>
                     </div>
                   </div>
@@ -8015,7 +8013,7 @@ exports[`Settings should trigger password confirmation mismatch error 1`] = `
                         class="text-theme-secondary-text"
                         data-testid="header__subtitle"
                       >
-                        Change the password used to access your profile below.
+                        Change the password used to secure your Profile below.
                       </div>
                     </div>
                   </div>
@@ -8695,7 +8693,7 @@ exports[`Settings should update profile 1`] = `
                       <span
                         class="text-sm font-semibold transition-colors duration-100 cursor-default group-hover:text-theme-primary-600 text-theme-secondary-text"
                       >
-                        Profile Image
+                        Select Profile Image
                       </span>
                       <div
                         class="flex flex-row"
@@ -8747,7 +8745,7 @@ exports[`Settings should update profile 1`] = `
                             data-testid="FormLabel"
                             for="name"
                           >
-                            Name
+                            Profile Name
                             <div
                               class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
                               data-testid="FormLabel__required"
@@ -9086,7 +9084,7 @@ exports[`Settings should update profile 1`] = `
                             data-testid="FormLabel"
                             for="marketProvider"
                           >
-                            Market Provider
+                            Price Source
                             <div
                               class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
                               data-testid="FormLabel__required"
@@ -9138,7 +9136,7 @@ exports[`Settings should update profile 1`] = `
                                       data-testid="SelectDropdownInput__input"
                                       id="downshift-338-input"
                                       name="marketProvider"
-                                      placeholder="Select Market Provider"
+                                      placeholder="Select Price Source"
                                       value="CryptoCompare"
                                     />
                                     <span
@@ -9342,7 +9340,7 @@ exports[`Settings should update profile 1`] = `
                               class="text-sm font-medium text-theme-secondary-500 dark:text-theme-secondary-700"
                               data-testid="list-divided-item__label--description"
                             >
-                              This protection will protect your money from unwanted Screenshot you PC.
+                              When enabled, wallet application is hidden from screen-capturing software.
                             </span>
                           </div>
                         </div>
@@ -9391,7 +9389,7 @@ exports[`Settings should update profile 1`] = `
                               class="text-sm font-medium text-theme-secondary-500 dark:text-theme-secondary-700"
                               data-testid="list-divided-item__label--description"
                             >
-                              Allows for installing files from direct URLs. You assume any associated risk by enabling this feature.
+                              Allows installations from direct URLs. Enable at your own risk.
                             </span>
                           </div>
                         </div>
@@ -9429,7 +9427,7 @@ exports[`Settings should update profile 1`] = `
                               data-testid="FormLabel"
                               for="automaticSignOutPeriod"
                             >
-                              Automatic Sign Out Period
+                              Auto Log-Off
                               <div
                                 class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
                                 data-testid="FormLabel__required"
@@ -9481,7 +9479,7 @@ exports[`Settings should update profile 1`] = `
                                         data-testid="SelectDropdownInput__input"
                                         id="downshift-342-input"
                                         name="automaticSignOutPeriod"
-                                        placeholder="Select Automatic Sign Out Period"
+                                        placeholder="Select Auto Log-Off"
                                         value="1 minute"
                                       />
                                       <span
@@ -9557,7 +9555,7 @@ exports[`Settings should update profile 1`] = `
                                 class="text-lg font-semibold text-theme-secondary-700 dark:text-theme-secondary-200"
                                 data-testid="list-divided-item__label"
                               >
-                                Development Networks
+                                Development and Test Networks
                               </span>
                               <span>
                                 <label
@@ -9584,7 +9582,7 @@ exports[`Settings should update profile 1`] = `
                               class="text-sm font-medium text-theme-secondary-500 dark:text-theme-secondary-700"
                               data-testid="list-divided-item__label--description"
                             >
-                              When enabled, allows application to add development and test networks.
+                              To create or import wallets from development and test networks, you must first enable this feature.
                             </span>
                           </div>
                         </div>
@@ -9732,7 +9730,7 @@ exports[`Settings should update profile 1`] = `
                               class="text-sm font-medium text-theme-secondary-500 dark:text-theme-secondary-700"
                               data-testid="list-divided-item__label--description"
                             >
-                              When enabled, changes to a dark, high contrast theme.
+                              Enables a dark, high contrast scheme.
                             </span>
                           </div>
                         </div>
@@ -10273,7 +10271,7 @@ exports[`Settings should update the avatar when removing focus from name input 1
                       <span
                         class="text-sm font-semibold transition-colors duration-100 cursor-default group-hover:text-theme-primary-600 text-theme-secondary-text"
                       >
-                        Profile Image
+                        Select Profile Image
                       </span>
                       <div
                         class="flex flex-row"
@@ -10331,7 +10329,7 @@ exports[`Settings should update the avatar when removing focus from name input 1
                             data-testid="FormLabel"
                             for="name"
                           >
-                            Name
+                            Profile Name
                             <div
                               class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
                               data-testid="FormLabel__required"
@@ -10670,7 +10668,7 @@ exports[`Settings should update the avatar when removing focus from name input 1
                             data-testid="FormLabel"
                             for="marketProvider"
                           >
-                            Market Provider
+                            Price Source
                             <div
                               class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
                               data-testid="FormLabel__required"
@@ -10722,7 +10720,7 @@ exports[`Settings should update the avatar when removing focus from name input 1
                                       data-testid="SelectDropdownInput__input"
                                       id="downshift-94-input"
                                       name="marketProvider"
-                                      placeholder="Select Market Provider"
+                                      placeholder="Select Price Source"
                                       value="CryptoCompare"
                                     />
                                     <span
@@ -10925,7 +10923,7 @@ exports[`Settings should update the avatar when removing focus from name input 1
                               class="text-sm font-medium text-theme-secondary-500 dark:text-theme-secondary-700"
                               data-testid="list-divided-item__label--description"
                             >
-                              This protection will protect your money from unwanted Screenshot you PC.
+                              When enabled, wallet application is hidden from screen-capturing software.
                             </span>
                           </div>
                         </div>
@@ -10974,7 +10972,7 @@ exports[`Settings should update the avatar when removing focus from name input 1
                               class="text-sm font-medium text-theme-secondary-500 dark:text-theme-secondary-700"
                               data-testid="list-divided-item__label--description"
                             >
-                              Allows for installing files from direct URLs. You assume any associated risk by enabling this feature.
+                              Allows installations from direct URLs. Enable at your own risk.
                             </span>
                           </div>
                         </div>
@@ -11012,7 +11010,7 @@ exports[`Settings should update the avatar when removing focus from name input 1
                               data-testid="FormLabel"
                               for="automaticSignOutPeriod"
                             >
-                              Automatic Sign Out Period
+                              Auto Log-Off
                               <div
                                 class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
                                 data-testid="FormLabel__required"
@@ -11064,7 +11062,7 @@ exports[`Settings should update the avatar when removing focus from name input 1
                                         data-testid="SelectDropdownInput__input"
                                         id="downshift-98-input"
                                         name="automaticSignOutPeriod"
-                                        placeholder="Select Automatic Sign Out Period"
+                                        placeholder="Select Auto Log-Off"
                                         value="1 minute"
                                       />
                                       <span
@@ -11140,7 +11138,7 @@ exports[`Settings should update the avatar when removing focus from name input 1
                                 class="text-lg font-semibold text-theme-secondary-700 dark:text-theme-secondary-200"
                                 data-testid="list-divided-item__label"
                               >
-                                Development Networks
+                                Development and Test Networks
                               </span>
                               <span>
                                 <label
@@ -11167,7 +11165,7 @@ exports[`Settings should update the avatar when removing focus from name input 1
                               class="text-sm font-medium text-theme-secondary-500 dark:text-theme-secondary-700"
                               data-testid="list-divided-item__label--description"
                             >
-                              When enabled, allows application to add development and test networks.
+                              To create or import wallets from development and test networks, you must first enable this feature.
                             </span>
                           </div>
                         </div>
@@ -11315,7 +11313,7 @@ exports[`Settings should update the avatar when removing focus from name input 1
                               class="text-sm font-medium text-theme-secondary-500 dark:text-theme-secondary-700"
                               data-testid="list-divided-item__label--description"
                             >
-                              When enabled, changes to a dark, high contrast theme.
+                              Enables a dark, high contrast scheme.
                             </span>
                           </div>
                         </div>
@@ -11856,7 +11854,7 @@ exports[`Settings should update the avatar when removing focus from name input 2
                       <span
                         class="text-sm font-semibold transition-colors duration-100 cursor-default group-hover:text-theme-primary-600 text-theme-secondary-text"
                       >
-                        Profile Image
+                        Select Profile Image
                       </span>
                       <div
                         class="flex flex-row"
@@ -11908,7 +11906,7 @@ exports[`Settings should update the avatar when removing focus from name input 2
                             data-testid="FormLabel"
                             for="name"
                           >
-                            Name
+                            Profile Name
                             <div
                               class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
                               data-testid="FormLabel__required"
@@ -11932,7 +11930,7 @@ exports[`Settings should update the avatar when removing focus from name input 2
                               class="flex items-center space-x-3 divide-x divide-theme-secondary-300 dark:divide-theme-secondary-800 text-theme-danger-500"
                             >
                               <span
-                                data-errortext="'Name' is required"
+                                data-errortext="'Profile Name' is required"
                                 data-testid="Input__error"
                               >
                                 <div
@@ -12266,7 +12264,7 @@ exports[`Settings should update the avatar when removing focus from name input 2
                             data-testid="FormLabel"
                             for="marketProvider"
                           >
-                            Market Provider
+                            Price Source
                             <div
                               class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
                               data-testid="FormLabel__required"
@@ -12318,7 +12316,7 @@ exports[`Settings should update the avatar when removing focus from name input 2
                                       data-testid="SelectDropdownInput__input"
                                       id="downshift-94-input"
                                       name="marketProvider"
-                                      placeholder="Select Market Provider"
+                                      placeholder="Select Price Source"
                                       value="CryptoCompare"
                                     />
                                     <span
@@ -12521,7 +12519,7 @@ exports[`Settings should update the avatar when removing focus from name input 2
                               class="text-sm font-medium text-theme-secondary-500 dark:text-theme-secondary-700"
                               data-testid="list-divided-item__label--description"
                             >
-                              This protection will protect your money from unwanted Screenshot you PC.
+                              When enabled, wallet application is hidden from screen-capturing software.
                             </span>
                           </div>
                         </div>
@@ -12570,7 +12568,7 @@ exports[`Settings should update the avatar when removing focus from name input 2
                               class="text-sm font-medium text-theme-secondary-500 dark:text-theme-secondary-700"
                               data-testid="list-divided-item__label--description"
                             >
-                              Allows for installing files from direct URLs. You assume any associated risk by enabling this feature.
+                              Allows installations from direct URLs. Enable at your own risk.
                             </span>
                           </div>
                         </div>
@@ -12608,7 +12606,7 @@ exports[`Settings should update the avatar when removing focus from name input 2
                               data-testid="FormLabel"
                               for="automaticSignOutPeriod"
                             >
-                              Automatic Sign Out Period
+                              Auto Log-Off
                               <div
                                 class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
                                 data-testid="FormLabel__required"
@@ -12660,7 +12658,7 @@ exports[`Settings should update the avatar when removing focus from name input 2
                                         data-testid="SelectDropdownInput__input"
                                         id="downshift-98-input"
                                         name="automaticSignOutPeriod"
-                                        placeholder="Select Automatic Sign Out Period"
+                                        placeholder="Select Auto Log-Off"
                                         value="1 minute"
                                       />
                                       <span
@@ -12736,7 +12734,7 @@ exports[`Settings should update the avatar when removing focus from name input 2
                                 class="text-lg font-semibold text-theme-secondary-700 dark:text-theme-secondary-200"
                                 data-testid="list-divided-item__label"
                               >
-                                Development Networks
+                                Development and Test Networks
                               </span>
                               <span>
                                 <label
@@ -12763,7 +12761,7 @@ exports[`Settings should update the avatar when removing focus from name input 2
                               class="text-sm font-medium text-theme-secondary-500 dark:text-theme-secondary-700"
                               data-testid="list-divided-item__label--description"
                             >
-                              When enabled, allows application to add development and test networks.
+                              To create or import wallets from development and test networks, you must first enable this feature.
                             </span>
                           </div>
                         </div>
@@ -12911,7 +12909,7 @@ exports[`Settings should update the avatar when removing focus from name input 2
                               class="text-sm font-medium text-theme-secondary-500 dark:text-theme-secondary-700"
                               data-testid="list-divided-item__label--description"
                             >
-                              When enabled, changes to a dark, high contrast theme.
+                              Enables a dark, high contrast scheme.
                             </span>
                           </div>
                         </div>
