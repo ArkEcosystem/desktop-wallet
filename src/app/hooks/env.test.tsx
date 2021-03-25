@@ -1,4 +1,4 @@
-import { ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
+import { Contracts } from "@arkecosystem/platform-sdk-profiles";
 import React from "react";
 import { Route } from "react-router-dom";
 import { env, getDefaultProfileId, renderWithRouter } from "utils/testing-library";
@@ -6,7 +6,7 @@ import { env, getDefaultProfileId, renderWithRouter } from "utils/testing-librar
 import { useActiveProfile, useActiveWallet } from "./env";
 
 let profile: Contracts.IProfile;
-let wallet: ReadWriteWallet;
+let wallet: Contracts.IReadWriteWallet;
 
 describe("useActiveProfile", () => {
 	beforeAll(() => {

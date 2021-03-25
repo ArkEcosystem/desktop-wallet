@@ -1,4 +1,5 @@
-import { ReadOnlyWallet } from "@arkecosystem/platform-sdk-profiles";
+import { Contracts } from "@arkecosystem/platform-sdk-profiles";
+import { ReadOnlyWallet } from "@arkecosystem/platform-sdk-profiles/dist/drivers/memory/wallets/read-only-wallet";
 import { translations } from "app/i18n/common/i18n";
 import React from "react";
 import { act, fireEvent, render } from "testing-library";
@@ -8,8 +9,8 @@ import { DelegateTable } from "./DelegateTable";
 
 const selectedWallet = "DC8ghUdhS8w8d11K8cFQ37YsLBFhL3Dq2P";
 
-let delegates: ReadOnlyWallet[];
-let votes: ReadOnlyWallet[];
+let delegates: Contracts.IReadOnlyWallet[];
+let votes: Contracts.IReadOnlyWallet[];
 
 describe("DelegateTable", () => {
 	beforeAll(() => {
