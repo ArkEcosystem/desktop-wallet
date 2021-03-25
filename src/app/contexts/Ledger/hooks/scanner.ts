@@ -1,4 +1,4 @@
-import { Profile } from "@arkecosystem/platform-sdk-profiles";
+import { Contracts } from "@arkecosystem/platform-sdk-profiles";
 import { useCallback, useMemo, useReducer, useRef, useState } from "react";
 
 import { useEnvironmentContext } from "../../Environment";
@@ -7,7 +7,7 @@ import { customDerivationModes } from "../utils";
 import { scannerReducer } from "./scanner.state";
 import { createRange, searchAddresses, searchWallets } from "./scanner.utils";
 
-export const useLedgerScanner = (coin: string, network: string, profile: Profile) => {
+export const useLedgerScanner = (coin: string, network: string, profile: Contracts.IProfile) => {
 	const { env } = useEnvironmentContext();
 	const { setBusy, setIdle } = useLedgerContext();
 

@@ -1,9 +1,13 @@
-import { Environment, Profile } from "@arkecosystem/platform-sdk-profiles";
+import { Contracts,Environment } from "@arkecosystem/platform-sdk-profiles";
 import { useProfileUtils } from "app/hooks/use-profile-synchronizer";
 import React from "react";
 import { useHistory } from "react-router-dom";
 
-type Context = { env: Environment; state?: Record<string, unknown>; persist: (profile?: Profile) => Promise<void> };
+type Context = {
+	env: Environment;
+	state?: Record<string, unknown>;
+	persist: (profile?: Contracts.IProfile) => Promise<void>;
+};
 
 type Props = {
 	children: React.ReactNode;
@@ -20,7 +24,7 @@ export const EnvironmentProvider = ({ children, env }: Props) => {
 	const { getProfileFromUrl } = useProfileUtils(env);
 
 	const persist = React.useCallback(
-		async (profile?: Profile) => {
+		async (profile?: Contracts.IProfile) => {
 			if (__E2E__) {
 				// prevent from persisting when in e2e mode. Tests failing
 				setState({});
