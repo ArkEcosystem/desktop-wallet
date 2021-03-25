@@ -4,7 +4,7 @@ export const translations: { [key: string]: any } = {
 		EMPTY_MESSAGE:
 			"It looks like you don't have any Contacts yet. After adding new Contacts, they can be viewed here.",
 		TITLE: "My Contacts",
-		SUBTITLE: "Manage your frequent contacts",
+		SUBTITLE: "Manage your frequent Contacts",
 	},
 
 	CONTACT_FORM: {
@@ -18,16 +18,17 @@ export const translations: { [key: string]: any } = {
 
 	MODAL_CREATE_CONTACT: {
 		TITLE: "Add Contact",
-		DESCRIPTION: "Enter your contacts name and addresses and add them to your list.",
+		DESCRIPTION: "Specify details for the new Contact below.",
 	},
 
 	MODAL_DELETE_CONTACT: {
 		TITLE: "Delete Contact",
-		DESCRIPTION: "Do you really want to delete this contact? Once deleted, you will not be able to restore it.",
+		DESCRIPTION: "Are you sure you want to delete this Contact? This action cannot be undone.",
 	},
 
 	MODAL_UPDATE_CONTACT: {
 		TITLE: "Edit Contact",
+		DESCRIPTION: "Enter the information below to update or delete the Contact.",
 	},
 
 	VALIDATION: {

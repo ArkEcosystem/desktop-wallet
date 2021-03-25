@@ -50,7 +50,7 @@ exports[`PluginManualInstallModal should render properly 1`] = `
           <div
             class="mt-1 text-theme-secondary-text whitespace-pre-line"
           >
-            Fetch the plugin directly from GitHub by using the URL of the plugin repository in the input field below.
+            Fetch the Plugin directly from GitHub by providing the repository URL below.
           </div>
           <div
             data-testid="PluginManualInstallModal"
@@ -83,7 +83,7 @@ exports[`PluginManualInstallModal should render properly 1`] = `
                     <span
                       class="text-sm"
                     >
-                      Please make sure to check the documentation of the plugin before installing it. By installing it on your wallet, you assume every responsibility.
+                      Please make sure to check the documentation of the Plugin before installing it. By installing the Plugin, you assume any associated risks.
                     </span>
                   </p>
                 </div>
@@ -101,7 +101,7 @@ exports[`PluginManualInstallModal should render properly 1`] = `
                   data-testid="FormLabel"
                   for="url"
                 >
-                  GitHub Repository URL
+                  PLUGINS.MODAL_MANUAL_INSTALL_PLUGIN.REPOSITORY_URL
                   <div
                     class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
                     data-testid="FormLabel__required"

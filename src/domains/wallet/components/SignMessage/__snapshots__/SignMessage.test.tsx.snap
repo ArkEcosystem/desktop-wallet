@@ -72,7 +72,7 @@ exports[`SignMessage should render 1`] = `
                         class="text-theme-secondary-text"
                         data-testid="header__subtitle"
                       >
-                        Insert a message below to sign using your private key
+                        Provide a message below and sign with your mnemonic passphrase.
                       </div>
                     </div>
                   </div>
@@ -157,7 +157,7 @@ exports[`SignMessage should render 1`] = `
                       data-testid="FormLabel"
                       for="mnemonic"
                     >
-                      Your Passphrase
+                      Mnemonic
                       <div
                         class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
                         data-testid="FormLabel__required"
@@ -311,7 +311,7 @@ exports[`SignMessage should render for ledger wallets 1`] = `
                         class="text-theme-secondary-text"
                         data-testid="header__subtitle"
                       >
-                        Insert a message below to sign using your private key
+                        Provide a message below and sign with your mnemonic passphrase.
                       </div>
                     </div>
                   </div>

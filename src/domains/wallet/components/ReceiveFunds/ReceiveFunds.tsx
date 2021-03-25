@@ -42,7 +42,7 @@ export const ReceiveFunds = ({ address, icon, name, network, isOpen, onClose }: 
 		<Modal
 			size="lg"
 			title={t("WALLETS.MODAL_RECEIVE_FUNDS.TITLE")}
-			description={t("COMMON.RECEIVE_FUNDS_SUBTITLE")}
+			description={isFormOpen ? t("WALLETS.MODAL_RECEIVE_FUNDS.DESCRIPTION") : undefined}
 			isOpen={isOpen}
 			onClose={onClose}
 		>
@@ -88,7 +88,7 @@ export const ReceiveFunds = ({ address, icon, name, network, isOpen, onClose }: 
 						onClick={() => setIsFormOpen(true)}
 						data-testid="ReceiveFunds__toggle"
 					>
-						{t("COMMON.SPECIFY_AMOUNT")}
+						{t("WALLETS.MODAL_RECEIVE_FUNDS.SPECIFY_AMOUNT")}
 					</Button>
 				)}
 

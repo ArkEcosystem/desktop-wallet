@@ -13,7 +13,7 @@ describe("EmptyResults", () => {
 
 	it("should render with custom title and subtitle", () => {
 		const { container, asFragment } = render(
-			<EmptyResults title="No results" subtitle="No results found. Refine your search and try again" />,
+			<EmptyResults title="No results" subtitle="No results found. Refine your search and try again." />,
 		);
 
 		expect(container).toBeTruthy();

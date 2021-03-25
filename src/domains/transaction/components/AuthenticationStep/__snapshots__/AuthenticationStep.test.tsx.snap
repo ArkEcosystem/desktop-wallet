@@ -26,7 +26,7 @@ exports[`AuthenticationStep should request mnemonic 1`] = `
             class="text-theme-secondary-text"
             data-testid="header__subtitle"
           >
-            Enter your twelve word mnemonic to authenticate the transaction.
+            Enter your mnemonic passphrase to authenticate the transaction.
           </div>
         </div>
       </div>
@@ -113,7 +113,7 @@ exports[`AuthenticationStep should request mnemonic and second mnemonic 1`] = `
             class="text-theme-secondary-text"
             data-testid="header__subtitle"
           >
-            Enter your twelve word mnemonic to authenticate the transaction.
+            Enter your mnemonic passphrase to authenticate the transaction.
           </div>
         </div>
       </div>
@@ -257,7 +257,7 @@ exports[`AuthenticationStep should show ledger waiting app screen 1`] = `
               class="text-theme-secondary-text"
               data-testid="header__subtitle"
             >
-              Connect your Ledger to PC and confirm the input.
+              Connect your Ledger and confirm input.
             </div>
           </div>
         </div>
@@ -267,7 +267,7 @@ exports[`AuthenticationStep should show ledger waiting app screen 1`] = `
           waiting-ledger-device.svg
         </svg>
         <div
-          class="inline-flex items-center space-x-3 w-full"
+          class="inline-flex items-center justify-center space-x-3 w-full"
         >
           <div
             class="Spinner-sc-1tybciv-0 gzGczR"
@@ -277,7 +277,7 @@ exports[`AuthenticationStep should show ledger waiting app screen 1`] = `
             class="font-semibold animate-pulse text-theme-secondary-text"
             data-testid="LedgerWaitingApp-loading_message"
           >
-            Open the ARK app on your device...
+            Open the ARK app on your device ...
           </span>
         </div>
       </div>
@@ -315,7 +315,7 @@ exports[`AuthenticationStep should show ledger waiting device screen 1`] = `
               class="text-theme-secondary-text"
               data-testid="header__subtitle"
             >
-              Connect your Ledger to PC and confirm the input.
+              Connect your Ledger and confirm input.
             </div>
           </div>
         </div>
@@ -325,7 +325,7 @@ exports[`AuthenticationStep should show ledger waiting device screen 1`] = `
           waiting-ledger-device.svg
         </svg>
         <div
-          class="inline-flex items-center space-x-3 w-full"
+          class="inline-flex items-center justify-center space-x-3 w-full"
         >
           <div
             class="Spinner-sc-1tybciv-0 gzGczR"
@@ -335,7 +335,7 @@ exports[`AuthenticationStep should show ledger waiting device screen 1`] = `
             class="font-semibold animate-pulse text-theme-secondary-text"
             data-testid="LedgerWaitingDevice-loading_message"
           >
-            Waiting for Ledger device...
+            Waiting for Ledger ...
           </span>
         </div>
       </div>
@@ -366,12 +366,6 @@ exports[`AuthenticationStep should show only ledger confirmation 1`] = `
           >
             Confirm Your Transaction
           </h1>
-          <div
-            class="text-theme-secondary-text"
-            data-testid="header__subtitle"
-          >
-            Enter your twelve word mnemonic to authenticate the transaction.
-          </div>
         </div>
       </div>
       <svg
@@ -386,7 +380,7 @@ exports[`AuthenticationStep should show only ledger confirmation 1`] = `
         Please review and verify the information on your Ledger device. Choose Accept to complete your transaction.
       </div>
       <div
-        class="inline-flex items-center mt-8 space-x-3 w-full"
+        class="inline-flex items-center justify-center mt-8 space-x-3 w-full"
       >
         <div
           class="Spinner-sc-1tybciv-0 gzGczR"

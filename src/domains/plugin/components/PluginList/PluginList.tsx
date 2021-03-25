@@ -8,34 +8,36 @@ import { useTranslation } from "react-i18next";
 
 type PluginListProps = {
 	className?: string;
+	emptyMessage?: string;
 	itemsPerPage?: number;
-	onDelete: any;
-	onClick?: (plugin: any) => void;
-	onLaunch?: (plugin: any) => void;
-	onEnable?: (plugin: any) => void;
-	onDisable?: (plugin: any) => void;
-	onUpdate?: (plugin: any) => void;
-	onInstall: any;
 	plugins: any[];
-	updatingStats?: any;
 	showCategory?: boolean;
 	showPagination?: boolean;
+	updatingStats?: any;
+	onClick?: (plugin: any) => void;
+	onDelete: any;
+	onDisable?: (plugin: any) => void;
+	onEnable?: (plugin: any) => void;
+	onInstall: any;
+	onLaunch?: (plugin: any) => void;
+	onUpdate?: (plugin: any) => void;
 };
 
 export const PluginList = ({
 	className,
+	emptyMessage,
 	itemsPerPage,
-	onClick,
-	onEnable,
-	onDisable,
-	onDelete,
-	onLaunch,
-	onInstall,
-	onUpdate,
 	plugins,
-	updatingStats,
 	showCategory,
 	showPagination,
+	updatingStats,
+	onClick,
+	onDelete,
+	onDisable,
+	onEnable,
+	onInstall,
+	onLaunch,
+	onUpdate,
 }: PluginListProps) => {
 	const { t } = useTranslation();
 
@@ -87,7 +89,7 @@ export const PluginList = ({
 	}
 
 	if (!plugins.length) {
-		return <EmptyBlock>{t("PLUGINS.PAGE_PLUGIN_MANAGER.NO_PLUGINS_AVAILABLE")}</EmptyBlock>;
+		return <EmptyBlock>{emptyMessage || t("PLUGINS.PAGE_PLUGIN_MANAGER.NO_PLUGINS_AVAILABLE")}</EmptyBlock>;
 	}
 
 	const pagePlugins = chunk(plugins, itemsPerPage!)[currentPage - 1];

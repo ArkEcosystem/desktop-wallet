@@ -61,13 +61,16 @@ export const DelegateRegistrationForm: SendRegistrationForm = {
 		const { clearErrors, getValues } = form;
 
 		clearErrors("mnemonic");
-		const { fee, mnemonic, secondMnemonic, senderAddress, username } = getValues();
+		const { fee, mnemonic, secondMnemonic, senderAddress, username, encryptionPassword } = getValues();
 		const senderWallet = profile.wallets().findByAddress(senderAddress);
+
+		const wif = senderWallet?.usesWIF() ? await senderWallet.wif(encryptionPassword) : undefined;
 
 		const transactionId = await senderWallet.transaction().signDelegateRegistration({
 			fee,
 			from: senderAddress,
 			sign: {
+				wif,
 				mnemonic,
 				secondMnemonic,
 			},

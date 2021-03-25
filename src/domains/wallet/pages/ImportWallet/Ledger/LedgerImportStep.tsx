@@ -78,7 +78,7 @@ const MultipleImport = ({
 								paddingPosition="none"
 								borderPosition="bottom"
 								extra={
-									<Tooltip content={t("WALLETS.PAGE_IMPORT_WALLET.WALLET_NAME")}>
+									<Tooltip content={t("WALLETS.WALLET_NAME")}>
 										<Button
 											data-testid="LedgerImportStep__edit-alias"
 											type="button"
@@ -145,7 +145,7 @@ const SingleImport = ({ wallets, profile, network }: { wallets: LedgerData[]; pr
 			</TransactionDetail>
 
 			<FormField name={`names.${wallet.address}`}>
-				<FormLabel label={t("WALLETS.PAGE_IMPORT_WALLET.WALLET_NAME")} required={false} optional />
+				<FormLabel label={t("WALLETS.WALLET_NAME")} required={false} optional />
 				<InputDefault
 					onChange={() => {
 						for (const address of Object.keys(watch("names"))) {
@@ -185,8 +185,8 @@ export const LedgerImportStep = ({ wallets, profile }: { wallets: LedgerData[]; 
 	return (
 		<section data-testid="LedgerImportStep" className="space-y-6">
 			<Header
-				title={t("WALLETS.PAGE_IMPORT_WALLET.PROCESS_COMPLETED_STEP.TITLE")}
-				subtitle={t("WALLETS.PAGE_IMPORT_WALLET.PROCESS_COMPLETED_STEP.SUBTITLE")}
+				title={t("WALLETS.PAGE_IMPORT_WALLET.LEDGER_IMPORT_STEP.TITLE")}
+				subtitle={t("WALLETS.PAGE_IMPORT_WALLET.LEDGER_IMPORT_STEP.SUBTITLE")}
 			/>
 
 			<TransactionNetwork network={network} borderPosition="bottom" paddingPosition="bottom" />

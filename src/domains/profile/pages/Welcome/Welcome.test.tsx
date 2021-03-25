@@ -19,7 +19,7 @@ describe("Welcome", () => {
 		const { container, getByText, asFragment, history } = renderWithRouter(<Welcome />);
 		const profile = env.profiles().findById(fixtureProfileId);
 
-		expect(getByText(translations.PAGE_WELCOME.HAS_PROFILES)).toBeInTheDocument();
+		expect(getByText(translations.PAGE_WELCOME.WITH_PROFILES.TITLE)).toBeInTheDocument();
 
 		expect(container).toBeTruthy();
 		fireEvent.click(getByText(profile.name()));
@@ -32,7 +32,7 @@ describe("Welcome", () => {
 
 		const profile = env.profiles().findById(fixtureProfileId);
 
-		expect(getByText(translations.PAGE_WELCOME.HAS_PROFILES)).toBeInTheDocument();
+		expect(getByText(translations.PAGE_WELCOME.WITH_PROFILES.TITLE)).toBeInTheDocument();
 
 		expect(container).toBeTruthy();
 		act(() => {
@@ -53,7 +53,7 @@ describe("Welcome", () => {
 
 		const profile = env.profiles().findById("cba050f1-880f-45f0-9af9-cfe48f406052");
 
-		expect(getByText(translations.PAGE_WELCOME.HAS_PROFILES)).toBeInTheDocument();
+		expect(getByText(translations.PAGE_WELCOME.WITH_PROFILES.TITLE)).toBeInTheDocument();
 
 		expect(() => getByTestId("modal__inner")).toThrow(/Unable to find an element by/);
 
@@ -79,7 +79,7 @@ describe("Welcome", () => {
 
 		const profile = env.profiles().findById("cba050f1-880f-45f0-9af9-cfe48f406052");
 
-		expect(getByText(translations.PAGE_WELCOME.HAS_PROFILES)).toBeInTheDocument();
+		expect(getByText(translations.PAGE_WELCOME.WITH_PROFILES.TITLE)).toBeInTheDocument();
 
 		expect(() => getByTestId("modal__inner")).toThrow(/Unable to find an element by/);
 
@@ -118,7 +118,7 @@ describe("Welcome", () => {
 
 		const profile = env.profiles().findById("cba050f1-880f-45f0-9af9-cfe48f406052");
 
-		expect(getByText(translations.PAGE_WELCOME.HAS_PROFILES)).toBeInTheDocument();
+		expect(getByText(translations.PAGE_WELCOME.WITH_PROFILES.TITLE)).toBeInTheDocument();
 
 		expect(() => getByTestId("modal__inner")).toThrow(/Unable to find an element by/);
 
@@ -162,7 +162,7 @@ describe("Welcome", () => {
 
 		const profile = env.profiles().findById(fixtureProfileId);
 
-		expect(getByText(translations.PAGE_WELCOME.HAS_PROFILES)).toBeInTheDocument();
+		expect(getByText(translations.PAGE_WELCOME.WITH_PROFILES.TITLE)).toBeInTheDocument();
 
 		const profileCardMenu = getAllByTestId("dropdown__toggle")[0];
 
@@ -185,7 +185,7 @@ describe("Welcome", () => {
 	it("should delete profile from profile card menu", async () => {
 		const { getByText, queryByTestId, getAllByTestId, getByTestId } = renderWithRouter(<Welcome />);
 
-		expect(getByText(translations.PAGE_WELCOME.HAS_PROFILES)).toBeInTheDocument();
+		expect(getByText(translations.PAGE_WELCOME.WITH_PROFILES.TITLE)).toBeInTheDocument();
 
 		await waitFor(() => expect(getAllByTestId("Card").length).toBe(3));
 
@@ -215,7 +215,7 @@ describe("Welcome", () => {
 
 		expect(container).toBeTruthy();
 
-		expect(getByText(translations.PAGE_WELCOME.HAS_PROFILES)).toBeInTheDocument();
+		expect(getByText(translations.PAGE_WELCOME.WITH_PROFILES.TITLE)).toBeInTheDocument();
 
 		fireEvent.click(getByText(translations.CREATE_PROFILE));
 
@@ -234,7 +234,7 @@ describe("Welcome", () => {
 
 		expect(container).toBeTruthy();
 
-		expect(getByText(translations.PAGE_WELCOME.HAS_NO_PROFILES)).toBeInTheDocument();
+		expect(getByText(translations.PAGE_WELCOME.WITHOUT_PROFILES.TITLE)).toBeInTheDocument();
 
 		expect(asFragment()).toMatchSnapshot();
 	});
