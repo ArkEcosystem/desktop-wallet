@@ -6,6 +6,7 @@ import path from "path";
 import assignMenu from "./menu";
 import { setupPlugins } from "./plugins";
 import { setupUpdater } from "./updater";
+import { handleSingleInstance } from "./utils/single-instance";
 
 const windows = {};
 let mainWindow: BrowserWindow | null;
@@ -125,6 +126,7 @@ assignMenu();
 app.on("ready", () => {
 	createWindow();
 	setupUpdater({ ipcMain, isDev, mainWindow });
+	handleSingleInstance({ mainWindow, broadcastURL });
 });
 
 app.on("window-all-closed", () => {

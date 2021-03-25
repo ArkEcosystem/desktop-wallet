@@ -119,6 +119,7 @@ export const translations: { [key: string]: any } = {
 	PUBLIC_NETWORKS: "Public Networks",
 	DEVELOPMENT_NETWORKS: "Development Networks",
 	NEXT: "Next",
+	NO: "No",
 	NOT: "not",
 	NOT_AVAILABLE: "N/A",
 	OF: "of",
@@ -141,9 +142,7 @@ export const translations: { [key: string]: any } = {
 	PRIVATE_KEY: "Private Key",
 	QR_SHORT: "QR",
 	QR_CODE: "QR Code",
-	RECEIVE_FUNDS_SUBTITLE: "Enter the amount you wish to transfer to this address and confirm",
 	QR_CODE_HELP_TEXT: "The QR-code is updated automatically, you do not need to press anything.",
-	SPECIFY_AMOUNT: "Specify amount",
 	QUANTITY: "Quantity",
 	RANK: "Rank",
 	RATING: "Rating",
@@ -221,6 +220,7 @@ export const translations: { [key: string]: any } = {
 	ENCRYPTED_WIF: "Encrypted WIF",
 	WORD: "Word",
 	X_OF_Y: "{{0}} of {{1}}",
+	YES: "Yes",
 	YOU: "You",
 	YOUR_BALANCE: "Your balance",
 	YOUR_PASSPHRASE: "Your Passphrase",
@@ -295,13 +295,14 @@ export const translations: { [key: string]: any } = {
 
 	EMPTY_RESULTS: {
 		TITLE: "No Results",
-		SUBTITLE: "No results found. Refine your search and try again",
+		SUBTITLE: "No results found. Refine your search and try again.",
 	},
 
 	SAVE_FILE: {
 		SUCCESS: "<bold>{{filePath}}</bold> was saved successfully",
 		ERROR: "Could not save file: {{error}}",
 	},
+
 	NOTIFICATIONS: {
 		ACTIONS: {
 			READ_CHANGELOG: "Read Changelog",
@@ -309,9 +310,15 @@ export const translations: { [key: string]: any } = {
 		},
 		PLUGINS_TITLE: "Plugins",
 		TRANSACTIONS_TITLE: "Transactions",
-		EMPTY: "You have no notifications at this time",
+		EMPTY: "You have no notifications at this time.",
 	},
+
 	PAGINATION: {
 		ENTER_NUMBER: "Enter the page number",
+	},
+
+	CONFIRMATION_MODAL: {
+		TITLE: "Confirmation",
+		DESCRIPTION: "Are you sure you wish to navigate away from this page without saving?",
 	},
 };

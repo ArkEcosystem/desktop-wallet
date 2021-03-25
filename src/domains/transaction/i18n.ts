@@ -4,7 +4,7 @@ export const translations: { [key: string]: any } = {
 	ADD_LINK: "Add Link",
 	ADD_RECIPIENT: "Add Recipient",
 	ADDRESS: "Address",
-	ALL_HISTORY: "All History",
+	ALL: "All",
 	AMOUNT: "Amount",
 	BLOCK_ID: "Block ID",
 	CONFIRMATIONS: "Confirmations",
@@ -74,6 +74,7 @@ export const translations: { [key: string]: any } = {
 		READY: "Ready to broadcast",
 		MIN_SIGNATURES: "Minimum Required Signatures",
 		PARTICIPANT: "Multisignature Participant",
+		"PARTICIPANT_#": "Participant #{{count}}",
 		PARTICIPANTS: "Multisignature Participants",
 		ADD_PARTICIPANT: "Add Participant",
 		OUT_OF_LENGTH: "out of {{ length }}",
@@ -229,69 +230,49 @@ export const translations: { [key: string]: any } = {
 	},
 
 	PAGE_DELEGATE_REGISTRATION: {
-		SECOND_STEP: {
+		FORM_STEP: {
 			TITLE: "Register Delegate",
-			DESCRIPTION: "Make up a name and register your delegate online.",
-			WARNING:
-				"Keep in mind that you cannot change the name of your delegate after the registration has been registered on the blockchain.",
+			DESCRIPTION: "Register a new Delegate address on the network below.",
+			WARNING: "The Delegate name is permanent and cannot be modified later. It is registered on the network.",
+		},
+	},
+
+	PAGE_DELEGATE_RESIGNATION: {
+		FORM_STEP: {
+			TITLE: "Resign Delegate",
+			DESCRIPTION: "This transaction type permanently retires a Delegate address.",
+			WARNING: "This action is permanent and cannot be undone. It is registered on the network.",
 		},
 	},
 
 	PAGE_SECOND_SIGNATURE: {
 		GENERATION_STEP: {
 			TITLE: "Register Second Signature",
-			DESCRIPTION: "Registration of your second signature.",
+			DESCRIPTION: "You can additionaly secure your address with a second mnemonic passphrase.",
 			WARNING:
-				"Before creating the second signature, we strongly recommend that you save it, as if lost you will not have access to your funds.",
+				"Before creating the second mnemonic, we strongly recommend that you save it, as its loss will lead to a loss of access to your money.",
 		},
 
 		PASSPHRASE_STEP: {
 			TITLE: "Your Second Signature",
 			WARNING:
-				"This is your 12 word Mnemonic. Your mnemonic serves as your password and allows you to send any funds associated with your address. If lost, this mnemonic cannot be restored by anyone, including the ARK.io team. Please store this mnemonic in a safe location and do not share it with anyone.",
-			DOWNLOAD: {
-				TITLE: "Download Your Passphrase",
-				DESCRIPTION: "You can also download and safely store your passphrase.",
+				"You are responsible for storing and protecting this mnemonic passphrase offline. The ARK Desktop Wallet cannot reveal this to you at a later time. If you lose this mnemonic passphrase, you will lose your funds.",
+			COPY_OR_DOWNLOAD: {
+				TITLE: "Copy or Download Mnemonic Passphrase",
+				DESCRIPTION: "You can copy or download your mnemonic, but store it safely.",
 			},
 		},
 
 		PASSPHRASE_CONFIRMATION_STEP: {
 			TITLE: "Confirm Your Passphrase",
-			SUBTITLE: "Confirm your password to continue",
-		},
-
-		REVIEW_STEP: {
-			TITLE: "Register Second Signature",
-			DESCRIPTION: "Check your information",
-			TYPE: "Second Signature",
+			SUBTITLE: "Confirm your mnemonic passphrase to continue.",
 		},
 	},
 
 	PAGE_MULTISIGNATURE: {
 		FORM_STEP: {
 			TITLE: "Multisignature Registration",
-			DESCRIPTION: "Register a new multisignature address by adding participants.",
-		},
-		REVIEW_STEP: {
-			TITLE: "Transaction Review",
-			DESCRIPTION: "Review your multisignature registration details",
-			GENERATED_ADDRESS: "Generated Address",
-			TYPE: "Multisignature Registration",
-		},
-	},
-
-	PAGE_RESIGN_REGISTRATION: {
-		FORM_STEP: {
-			DELEGATE: {
-				TITLE: "Delegate Resignation",
-				DESCRIPTION: "Resign your delegate for always.",
-				WARNING:
-					"Keep in mind that you cannot restore your delegate after the resignation has been registered on the blockchain.",
-			},
-		},
-		REVIEW_STEP: {
-			TITLE: "Transaction Review",
-			DESCRIPTION: "Check the information again before Resignation",
+			DESCRIPTION: "Register Multisignature details below.",
 		},
 	},
 
@@ -307,13 +288,9 @@ export const translations: { [key: string]: any } = {
 	},
 
 	PAGE_VOTE: {
-		FIRST_STEP: {
+		FORM_STEP: {
 			TITLE: "Vote Transaction",
-			DESCRIPTION: "Select a fee to continue",
-		},
-		SECOND_STEP: {
-			TITLE: "Transaction Review",
-			DESCRIPTION: "Check the information again before voting",
+			DESCRIPTION: "Select a fee to continue.",
 		},
 	},
 
@@ -322,19 +299,21 @@ export const translations: { [key: string]: any } = {
 			TITLE: "Select a Cryptoasset",
 			SUBTITLE: "Select a cryptoasset to create your new wallet address",
 		},
-		FIRST_STEP: {
-			TITLE: "Send",
-			DESCRIPTION: "Enter details to send your money",
+
+		FORM_STEP: {
+			TITLE: "Send {{ticker}}",
+			DESCRIPTION: "Enter details below to send your transaction.",
 		},
-		SECOND_STEP: {
-			TITLE: "Transaction Review",
-			DESCRIPTION: "Review the transaction details before sending",
-		},
+	},
+
+	REVIEW_STEP: {
+		TITLE: "Transaction Review",
+		DESCRIPTION: "Review the transaction details below.",
 	},
 
 	AUTHENTICATION_STEP: {
 		TITLE: "Authenticate",
-		DESCRIPTION: "Enter your twelve word mnemonic to authenticate the transaction.",
+		DESCRIPTION: "Enter your mnemonic passphrase to authenticate the transaction.",
 		DESCRIPTION_ENCRYPTION_PASSWORD: "Enter your encryption password to authenticate the transaction.",
 	},
 

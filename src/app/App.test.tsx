@@ -108,7 +108,7 @@ describe("App", () => {
 		const { getByTestId, getByText } = renderWithRouter(<App />, { withProviders: false });
 
 		await waitFor(() => {
-			expect(getByText(profileTranslations.PAGE_WELCOME.HAS_PROFILES)).toBeInTheDocument();
+			expect(getByText(profileTranslations.PAGE_WELCOME.WITH_PROFILES.TITLE)).toBeInTheDocument();
 		});
 
 		expect(document.body).toHaveClass(`theme-${shouldUseDarkColors ? "dark" : "light"}`);
@@ -120,7 +120,7 @@ describe("App", () => {
 		const { getAllByTestId, getByTestId, getByText, history } = renderWithRouter(<App />, { withProviders: false });
 
 		await waitFor(() => {
-			expect(getByText(profileTranslations.PAGE_WELCOME.HAS_PROFILES)).toBeInTheDocument();
+			expect(getByText(profileTranslations.PAGE_WELCOME.WITH_PROFILES.TITLE)).toBeInTheDocument();
 		});
 
 		const passwordProtectedProfile = env.profiles().findById("cba050f1-880f-45f0-9af9-cfe48f406052");
@@ -160,7 +160,7 @@ describe("App", () => {
 		const { getAllByTestId, getByTestId, getByText, history } = renderWithRouter(<App />, { withProviders: false });
 
 		await waitFor(() => {
-			expect(getByText(profileTranslations.PAGE_WELCOME.HAS_PROFILES)).toBeInTheDocument();
+			expect(getByText(profileTranslations.PAGE_WELCOME.WITH_PROFILES.TITLE)).toBeInTheDocument();
 		});
 
 		expect(history.location.pathname).toMatch("/");
@@ -219,7 +219,7 @@ describe("App", () => {
 			await new Promise((resolve) => setTimeout(resolve, 2000));
 		});
 		await waitFor(() => {
-			expect(getByText(profileTranslations.PAGE_WELCOME.HAS_PROFILES)).toBeInTheDocument();
+			expect(getByText(profileTranslations.PAGE_WELCOME.WITH_PROFILES.TITLE)).toBeInTheDocument();
 
 			expect(container).toBeTruthy();
 			expect(asFragment()).toMatchSnapshot();
@@ -291,7 +291,7 @@ describe("App", () => {
 		});
 
 		await waitFor(() => {
-			expect(getByText(profileTranslations.PAGE_WELCOME.HAS_PROFILES)).toBeInTheDocument();
+			expect(getByText(profileTranslations.PAGE_WELCOME.WITH_PROFILES.TITLE)).toBeInTheDocument();
 
 			expect(container).toBeTruthy();
 
@@ -313,7 +313,7 @@ describe("App", () => {
 		});
 
 		await waitFor(() => {
-			expect(getByText(profileTranslations.PAGE_WELCOME.HAS_NO_PROFILES)).toBeInTheDocument();
+			expect(getByText(profileTranslations.PAGE_WELCOME.WITHOUT_PROFILES.TITLE)).toBeInTheDocument();
 			expect(asFragment()).toMatchSnapshot();
 		});
 	});

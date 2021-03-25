@@ -13,7 +13,7 @@ export const translations: { [key: string]: any } = {
 		"In order to update this plugin please update Desktop Wallet to v{{minimumVersion}}+",
 
 	WARNING_DISCLAIMER:
-		"Please make sure to check the documentation of the plugin before installing it. By installing it on your wallet, you assume every responsibility.",
+		"Please make sure to check the documentation of the Plugin before installing it. By installing the Plugin, you assume any associated risks.",
 
 	DEVELOPER_RESPONSE: "Developer response",
 
@@ -72,16 +72,16 @@ export const translations: { [key: string]: any } = {
 
 	MODAL_MANUAL_INSTALL_PLUGIN: {
 		TITLE: "Install from URL",
-		DESCRIPTION:
-			"Fetch the plugin directly from GitHub by using the URL of the plugin repository in the input field below.",
+		DESCRIPTION: "Fetch the Plugin directly from GitHub by providing the repository URL below.",
 		PLACEHOLDER: "Github Repository URL",
 	},
 
 	PAGE_PLUGIN_MANAGER: {
 		TITLE: "Plugin Manager",
-		DESCRIPTION: "Easy way to find, manage and install plugins",
+		DESCRIPTION: "An easy way to find, install, and manage Plugins.",
 
-		NO_PLUGINS_AVAILABLE: "This category has no available plugins yet.",
+		NO_PLUGINS_AVAILABLE: "This category has no available Plugins yet.",
+		NO_PLUGINS_INSTALLED: "You haven't installed any Plugins yet. Once you install them, they will show up here.",
 
 		VIEW: {
 			LATEST: "Latest",
@@ -95,11 +95,13 @@ export const translations: { [key: string]: any } = {
 	},
 
 	PLUGIN_INFO: {
-		ABOUT: "About the plugin",
+		ABOUT: "About",
 		PERMISSIONS: "Permissions",
 		SCREENSHOTS: "Screenshots",
 		REQUIREMENTS: "Requirements",
 		DESKTOP_WALLET_VERSION: "Desktop Wallet Version",
+		DISCLAIMER:
+			"The availability of this Plugin in the ARK Desktop Wallet does not mean that either ARK.io or ARK SCIC is directly involved in its development or developers. By installing it, you assume any associated risks.",
 	},
 
 	CATEGORIES: {

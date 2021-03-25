@@ -35,10 +35,10 @@ const transactionDetails = ({ transaction, translations, wallet }: SendRegistrat
 				</Circle>
 			}
 		>
-			{translations("TRANSACTION.PAGE_MULTISIGNATURE.REVIEW_STEP.TYPE")}
+			{translations("TRANSACTION.TRANSACTION_TYPES.MULTI_SIGNATURE")}
 		</TransactionDetail>
 
-		<TransactionDetail label={translations("TRANSACTION.PAGE_MULTISIGNATURE.REVIEW_STEP.GENERATED_ADDRESS")}>
+		<TransactionDetail label={translations("TRANSACTION.MULTISIGNATURE.GENERATED_ADDRESS")}>
 			{transaction.generatedAddress}
 		</TransactionDetail>
 

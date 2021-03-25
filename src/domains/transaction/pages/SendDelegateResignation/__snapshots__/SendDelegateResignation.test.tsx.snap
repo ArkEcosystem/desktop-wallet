@@ -318,13 +318,13 @@ exports[`SendDelegateResignation Delegate Resignation should change fee 1`] = `
                           class="mb-0 text-4xl"
                           data-testid="header__title"
                         >
-                          Delegate Resignation
+                          Resign Delegate
                         </h1>
                         <div
                           class="text-theme-secondary-text"
                           data-testid="header__subtitle"
                         >
-                          Resign your delegate for always.
+                          This transaction type permanently retires a Delegate address.
                         </div>
                       </div>
                     </div>
@@ -350,7 +350,7 @@ exports[`SendDelegateResignation Delegate Resignation should change fee 1`] = `
                         <p
                           class="text-sm leading-relaxed break-words dark:text-theme-secondary-500"
                         >
-                          Keep in mind that you cannot restore your delegate after the resignation has been registered on the blockchain.
+                          This action is permanent and cannot be undone. It is registered on the network.
                         </p>
                       </div>
                     </div>
@@ -867,13 +867,13 @@ exports[`SendDelegateResignation Delegate Resignation should render 1st step 1`]
                           class="mb-0 text-4xl"
                           data-testid="header__title"
                         >
-                          Delegate Resignation
+                          Resign Delegate
                         </h1>
                         <div
                           class="text-theme-secondary-text"
                           data-testid="header__subtitle"
                         >
-                          Resign your delegate for always.
+                          This transaction type permanently retires a Delegate address.
                         </div>
                       </div>
                     </div>
@@ -899,7 +899,7 @@ exports[`SendDelegateResignation Delegate Resignation should render 1st step 1`]
                         <p
                           class="text-sm leading-relaxed break-words dark:text-theme-secondary-500"
                         >
-                          Keep in mind that you cannot restore your delegate after the resignation has been registered on the blockchain.
+                          This action is permanent and cannot be undone. It is registered on the network.
                         </p>
                       </div>
                     </div>
@@ -1421,7 +1421,7 @@ exports[`SendDelegateResignation Delegate Resignation should render 2nd step 1`]
                           class="text-theme-secondary-text"
                           data-testid="header__subtitle"
                         >
-                          Check the information again before Resignation
+                          Review the transaction details below.
                         </div>
                       </div>
                     </div>
@@ -1976,7 +1976,7 @@ exports[`SendDelegateResignation Delegate Resignation should render 3rd step 1`]
                           class="text-theme-secondary-text"
                           data-testid="header__subtitle"
                         >
-                          Enter your twelve word mnemonic to authenticate the transaction.
+                          Enter your mnemonic passphrase to authenticate the transaction.
                         </div>
                       </div>
                     </div>
@@ -3206,7 +3206,7 @@ exports[`SendDelegateResignation Delegate Resignation should show mnemonic authe
                           class="text-theme-secondary-text"
                           data-testid="header__subtitle"
                         >
-                          Enter your twelve word mnemonic to authenticate the transaction.
+                          Enter your mnemonic passphrase to authenticate the transaction.
                         </div>
                       </div>
                     </div>

@@ -64,7 +64,12 @@ export const UpdateContact = ({
 	};
 
 	return (
-		<Modal title={t("CONTACTS.MODAL_UPDATE_CONTACT.TITLE")} isOpen={isOpen} onClose={onClose}>
+		<Modal
+			title={t("CONTACTS.MODAL_UPDATE_CONTACT.TITLE")}
+			description={t("CONTACTS.MODAL_UPDATE_CONTACT.DESCRIPTION")}
+			isOpen={isOpen}
+			onClose={onClose}
+		>
 			<div className="mt-8">
 				<ContactForm
 					errors={errors}

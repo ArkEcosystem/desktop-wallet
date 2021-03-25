@@ -77,7 +77,7 @@ export const LedgerTable = ({
 
 	const columns = [
 		{
-			Header: t("COMMON.WALLET"),
+			Header: t("COMMON.ADDRESS"),
 			accessor: "address",
 		},
 		{

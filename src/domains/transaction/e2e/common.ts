@@ -7,7 +7,11 @@ const translations = buildTranslations();
 export const goToTransferPage = async (t: any) => {
 	await t.click(Selector("[data-testid=WalletHeader__send-button]"));
 	await t
-		.expect(Selector("h1").withText(translations.TRANSACTION.PAGE_TRANSACTION_SEND.FIRST_STEP.TITLE).exists)
+		.expect(
+			Selector("h1").withText(
+				translations.TRANSACTION.PAGE_TRANSACTION_SEND.FORM_STEP.TITLE.replace("{{ticker}}", "DARK"),
+			).exists,
+		)
 		.ok();
 };
 
@@ -28,7 +32,7 @@ export const goToDelegateRegistrationPage = async (t: any) => {
 	);
 
 	await t
-		.expect(Selector("div").withText(translations.TRANSACTION.PAGE_DELEGATE_REGISTRATION.SECOND_STEP.TITLE).exists)
+		.expect(Selector("div").withText(translations.TRANSACTION.PAGE_DELEGATE_REGISTRATION.FORM_STEP.TITLE).exists)
 		.ok();
 };
 
@@ -41,8 +45,6 @@ export const goToDelegateResignationPage = async (t: any) => {
 	);
 
 	await t
-		.expect(
-			Selector("div").withText(translations.TRANSACTION.PAGE_RESIGN_REGISTRATION.FORM_STEP.DELEGATE.TITLE).exists,
-		)
+		.expect(Selector("div").withText(translations.TRANSACTION.PAGE_DELEGATE_RESIGNATION.FORM_STEP.TITLE).exists)
 		.ok();
 };
