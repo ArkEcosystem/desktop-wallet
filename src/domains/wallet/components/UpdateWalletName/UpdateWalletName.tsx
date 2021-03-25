@@ -55,7 +55,7 @@ export const UpdateWalletName = ({
 		>
 			<div className="mt-8">
 				<FormField name="name">
-					<FormLabel required={false}>{t("COMMON.NAME")}</FormLabel>
+					<FormLabel required={false}>{t("WALLETS.WALLET_NAME")}</FormLabel>
 					<div className="relative">
 						<Input
 							errorMessage={errors["name"]?.message}
@@ -68,7 +68,7 @@ export const UpdateWalletName = ({
 											return (
 												!!alias.trim().length ||
 												t("COMMON.VALIDATION.FIELD_INVALID", {
-													field: t("COMMON.NAME"),
+													field: t("WALLETS.WALLET_NAME"),
 												}).toString()
 											);
 										}

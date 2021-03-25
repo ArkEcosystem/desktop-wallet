@@ -273,6 +273,7 @@ export const AddRecipient = ({
 							disabled={!isSenderFilled}
 							address={recipientAddress}
 							profile={profile}
+							placeholder={t("COMMON.ADDRESS")}
 							onChange={(address: any) => {
 								setValue("recipientAddress", address, { shouldValidate: true, shouldDirty: true });
 								singleRecipientOnChange(getValues("amount"), address);
@@ -362,9 +363,9 @@ export const AddRecipient = ({
 					<RecipientList
 						network={network}
 						recipients={addedRecipients}
-						isEditable={true}
 						onRemove={handleRemoveRecipient}
 						assetSymbol={assetSymbol}
+						isEditable
 					/>
 				</div>
 			)}

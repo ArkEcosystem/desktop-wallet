@@ -17,7 +17,7 @@ type SelectRecipientProps = {
 	isInvalid?: boolean;
 	contactSearchTitle?: string;
 	contactSearchDescription?: string;
-	selectActionLabel?: string;
+	placeholder?: string;
 	onChange?: (address: string) => void;
 } & Omit<React.InputHTMLAttributes<any>, "onChange">;
 
@@ -35,7 +35,7 @@ const ProfileAvatar = ({ address }: any) => {
 };
 
 export const SelectRecipient = React.forwardRef<HTMLInputElement, SelectRecipientProps>(
-	({ address, profile, disabled, isInvalid, network, onChange }: SelectRecipientProps, ref) => {
+	({ address, profile, disabled, isInvalid, network, placeholder, onChange }: SelectRecipientProps, ref) => {
 		const [isRecipientSearchOpen, setIsRecipientSearchOpen] = useState(false);
 		const [selectedAddress, setSelectedAddress] = useState(address);
 		const fieldContext = useFormField();
@@ -91,6 +91,7 @@ export const SelectRecipient = React.forwardRef<HTMLInputElement, SelectRecipien
 						isInvalid={isInvalidValue}
 						disabled={disabled}
 						defaultValue={selectedAddress}
+						placeholder={placeholder}
 						ref={ref}
 						options={recipientAddresses}
 						allowFreeInput={true}

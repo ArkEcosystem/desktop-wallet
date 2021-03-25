@@ -1,5 +1,6 @@
 import { OriginalButton } from "app/components/Button/OriginalButton";
 import { Icon } from "app/components/Icon";
+import cs from "classnames";
 import React, { useEffect, useRef, useState } from "react";
 import tw, { styled } from "twin.macro";
 import { Size } from "types";
@@ -104,7 +105,7 @@ const ModalContent = (props: ModalContentProps) => {
 						</div>
 					</div>
 				) : (
-					<h2 className="mb-0 text-3xl font-bold">{props.title}</h2>
+					<h2 className={cs("mb-0 text-3xl font-bold", props.titleClass)}>{props.title}</h2>
 				)}
 
 				<div className="flex-1">

@@ -58,37 +58,30 @@ export const BackupStep = () => {
 			<Alert>{t("TRANSACTION.PAGE_SECOND_SIGNATURE.PASSPHRASE_STEP.WARNING")}</Alert>
 			<MnemonicList mnemonic={mnemonic} />
 
-			<div className="flex justify-end w-full">
-				<Clipboard data={mnemonic}>
-					<Button data-testid="SecondSignature__copy" variant="secondary">
-						<Icon name="Copy" />
-						<span>{t("COMMON.COPY")}</span>
-					</Button>
-				</Clipboard>
-			</div>
-
 			<Divider dashed />
 
 			<div className="flex justify-between items-center">
 				<div className="space-y-2">
 					<span className="text-lg font-semibold text-theme-secondary-text">
-						{t("TRANSACTION.PAGE_SECOND_SIGNATURE.PASSPHRASE_STEP.DOWNLOAD.TITLE")}
+						{t("TRANSACTION.PAGE_SECOND_SIGNATURE.PASSPHRASE_STEP.COPY_OR_DOWNLOAD.TITLE")}
 					</span>
 					<p className="text-sm text-theme-secondary-500">
-						{t("TRANSACTION.PAGE_SECOND_SIGNATURE.PASSPHRASE_STEP.DOWNLOAD.DESCRIPTION")}
+						{t("TRANSACTION.PAGE_SECOND_SIGNATURE.PASSPHRASE_STEP.COPY_OR_DOWNLOAD.DESCRIPTION")}
 					</p>
 				</div>
 
 				<Icon name="FilePassword" width={40} height={40} />
 			</div>
 
-			<div className="flex justify-end w-full">
-				<Button
-					data-testid="SecondSignature__download"
-					variant="secondary"
-					className="flex items-center space-x-2"
-					onClick={handleDownload}
-				>
+			<div className="flex justify-end w-full space-x-3">
+				<Clipboard data={mnemonic}>
+					<Button data-testid="SecondSignature__copy" variant="secondary">
+						<Icon name="Copy" />
+						<span>{t("COMMON.COPY")}</span>
+					</Button>
+				</Clipboard>
+
+				<Button data-testid="SecondSignature__download" variant="secondary" onClick={handleDownload}>
 					<Icon name="Download" />
 					<span>{t("COMMON.DOWNLOAD")}</span>
 				</Button>

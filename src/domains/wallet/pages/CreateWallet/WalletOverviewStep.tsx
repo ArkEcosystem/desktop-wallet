@@ -58,31 +58,29 @@ export const WalletOverviewStep = () => {
 			<Alert>{t("WALLETS.PAGE_CREATE_WALLET.PASSPHRASE_STEP.WARNING")}</Alert>
 			<MnemonicList mnemonic={mnemonic} />
 
-			<div className="flex justify-end w-full">
-				<Clipboard data={mnemonic}>
-					<Button data-testid="CreateWallet__copy" variant="secondary">
-						<Icon name="Copy" />
-						<span>{t("COMMON.COPY")}</span>
-					</Button>
-				</Clipboard>
-			</div>
-
 			<Divider dashed />
 
 			<div className="flex justify-between items-center">
 				<div className="space-y-2">
 					<span className="text-lg font-semibold">
-						{t("WALLETS.PAGE_CREATE_WALLET.PASSPHRASE_STEP.DOWNLOAD.TITLE")}
+						{t("WALLETS.PAGE_CREATE_WALLET.PASSPHRASE_STEP.COPY_OR_DOWNLOAD.TITLE")}
 					</span>
 					<p className="text-sm text-theme-secondary-text">
-						{t("WALLETS.PAGE_CREATE_WALLET.PASSPHRASE_STEP.DOWNLOAD.DESCRIPTION")}
+						{t("WALLETS.PAGE_CREATE_WALLET.PASSPHRASE_STEP.COPY_OR_DOWNLOAD.DESCRIPTION")}
 					</p>
 				</div>
 
 				<Icon name="FilePassword" className="text-black dark:text-theme-secondary-600" width={40} height={40} />
 			</div>
 
-			<div className="flex justify-end w-full">
+			<div className="flex justify-end w-full space-x-3">
+				<Clipboard data={mnemonic}>
+					<Button data-testid="CreateWallet__copy" variant="secondary">
+						<Icon name="Copy" />
+						<span>{t("COMMON.COPY")}</span>
+					</Button>
+				</Clipboard>
+
 				<Button
 					data-testid="CreateWallet__download"
 					variant="secondary"
