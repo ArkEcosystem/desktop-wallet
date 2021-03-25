@@ -890,4 +890,89 @@ describe("SendVote", () => {
 		signTransactionSpy.mockRestore();
 		isLedgerSpy.mockRestore();
 	});
+
+	it("should send a vote transaction using encryption password", async () => {
+		const walletUsesWIFMock = jest.spyOn(wallet, "usesWIF").mockReturnValue(true);
+		const walletWifMock = jest.spyOn(wallet, "wif").mockImplementation((password) => {
+			const wif = "S9rDfiJ2ar4DpWAQuaXECPTJHfTZ3XjCPv15gjxu4cHJZKzABPyV";
+			return Promise.resolve(wif);
+		});
+		const history = createMemoryHistory();
+		const voteURL = `/profiles/${fixtureProfileId}/wallets/${wallet.id()}/send-vote`;
+
+		const params = new URLSearchParams({
+			votes: delegateData[0].address,
+		});
+
+		history.push({
+			pathname: voteURL,
+			search: `?${params}`,
+		});
+
+		const { result: form } = renderHook(() =>
+			useForm({
+				defaultValues: {
+					fee: (0.1 * 1e8).toFixed(0),
+				},
+			}),
+		);
+
+		const { container, getByTestId } = renderWithRouter(
+			<Route path="/profiles/:profileId/wallets/:walletId/send-vote">
+				<FormProvider {...form.current}>
+					<LedgerProvider transport={transport}>
+						<SendVote />
+					</LedgerProvider>
+				</FormProvider>
+			</Route>,
+			{
+				routes: [voteURL],
+				history,
+			},
+		);
+
+		expect(getByTestId("SendVote__form-step")).toBeTruthy();
+		await waitFor(() => expect(getByTestId("SendVote__form-step")).toHaveTextContent(delegateData[0].username));
+
+		await waitFor(() => expect(getByTestId("InputCurrency")).not.toHaveValue("0"));
+
+		await waitFor(() => expect(getByTestId("SendVote__button--continue")).not.toBeDisabled());
+		fireEvent.click(getByTestId("SendVote__button--continue"));
+
+		// Review Step
+		expect(getByTestId("SendVote__review-step")).toBeTruthy();
+		fireEvent.click(getByTestId("SendVote__button--continue"));
+
+		// AuthenticationStep
+		expect(getByTestId("AuthenticationStep")).toBeTruthy();
+
+		const signMock = jest
+			.spyOn(wallet.transaction(), "signVote")
+			.mockReturnValue(Promise.resolve(voteFixture.data.id));
+		const broadcastMock = jest.spyOn(wallet.transaction(), "broadcast").mockImplementation();
+		const transactionMock = createVoteTransactionMock(wallet);
+
+		const passwordInput = getByTestId("AuthenticationStep__encryption-password");
+		act(() => {
+			fireEvent.input(passwordInput, { target: { value: "password" } });
+		});
+
+		await waitFor(() => expect(passwordInput).toHaveValue("password"));
+
+		await waitFor(() => expect(getByTestId("SendVote__button--submit")).not.toBeDisabled());
+
+		await act(async () => {
+			fireEvent.click(getByTestId("SendVote__button--submit"));
+		});
+
+		act(() => jest.advanceTimersByTime(1000));
+
+		await waitFor(() => expect(getByTestId("TransactionSuccessful")).toBeTruthy());
+
+		signMock.mockRestore();
+		broadcastMock.mockRestore();
+		transactionMock.mockRestore();
+		walletUsesWIFMock.mockRestore();
+		walletWifMock.mockRestore();
+	});
 });

@@ -235,4 +235,22 @@ describe("AuthenticationStep", () => {
 
 		expect(container).toMatchSnapshot();
 	});
+
+	it("should render with encryption password input", async () => {
+		wallet = profile.wallets().first();
+
+		jest.spyOn(wallet, "usesWIF").mockReturnValue(true);
+
+		const { result } = renderHook(() => useForm({ mode: "onChange" }));
+		const { getByTestId } = renderWithRouter(
+			<Form context={result.current} onSubmit={() => void 0}>
+				<AuthenticationStep wallet={wallet} />
+			</Form>,
+		);
+
+		await waitFor(() => expect(getByTestId("AuthenticationStep__encryption-password")).toBeInTheDocument());
+
+		profile.wallets().forget(wallet.id());
+		jest.clearAllMocks();
+	});
 });
