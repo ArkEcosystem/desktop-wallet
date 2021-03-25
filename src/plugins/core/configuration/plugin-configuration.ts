@@ -1,4 +1,5 @@
-import { DataRepository } from "@arkecosystem/platform-sdk-profiles";
+import { Contracts } from "@arkecosystem/platform-sdk-profiles";
+import { DataRepository } from "@arkecosystem/platform-sdk-profiles/dist/drivers/memory/repositories/data-repository";
 import { intersection, prettyBytes, startCase, uniq } from "@arkecosystem/utils";
 import { githubImageProvider } from "domains/transaction/entity/providers";
 import du from "du";
@@ -9,11 +10,11 @@ import { allPermissions } from "./permissions";
 import { schema } from "./schema";
 
 export class PluginConfigurationData {
-	#config: DataRepository;
-	#manifest: DataRepository;
+	#config: Contracts.IDataRepository;
+	#manifest: Contracts.IDataRepository;
 	#size = 0;
 
-	constructor(config: DataRepository, manifest: DataRepository) {
+	constructor(config: Contracts.IDataRepository, manifest: Contracts.IDataRepository) {
 		this.#config = config;
 		this.#manifest = manifest;
 	}

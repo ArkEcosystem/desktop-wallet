@@ -1,3 +1,4 @@
+import { Contracts } from "@arkecosystem/platform-sdk-profiles";
 import { Checkbox } from "app/components/Checkbox";
 import { Clipboard } from "app/components/Clipboard";
 import { Input, InputCurrency } from "app/components/Input";
@@ -19,7 +20,7 @@ export class PluginControllerRepository {
 		return this.#plugins;
 	}
 
-	enabled(profile: Profile) {
+	enabled(profile: Contracts.IProfile) {
 		return profile
 			.plugins()
 			.values()
@@ -27,7 +28,7 @@ export class PluginControllerRepository {
 			.map((item) => this.findById(item.name));
 	}
 
-	removeById(id: string, profile: Profile) {
+	removeById(id: string, profile: Contracts.IProfile) {
 		const plugin = this.findById(id);
 
 		if (plugin) {

@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/require-await */
-import { ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
+import { Contracts } from "@arkecosystem/platform-sdk-profiles";
 import { BigNumber } from "@arkecosystem/platform-sdk-support";
 import Transport, { Observer } from "@ledgerhq/hw-transport";
 import { createTransportReplayer, RecordStore } from "@ledgerhq/hw-transport-mocker";
@@ -16,7 +16,7 @@ let observer: Observer<any>;
 
 describe("LedgerImportStep", () => {
 	let profile: Contracts.IProfile;
-	let wallet: ReadWriteWallet;
+	let wallet: Contracts.IReadWriteWallet;
 
 	const walletsData: LedgerData[] = [
 		{ address: "DJpFwW39QnQvQRQJF2MCfAoKvsX4DJ28jq", balance: BigNumber.make(0), index: 0, path: "" },

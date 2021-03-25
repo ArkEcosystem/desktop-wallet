@@ -1,5 +1,5 @@
 import { Coins, Contracts } from "@arkecosystem/platform-sdk";
-import { ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
+import { Contracts as ProfilesContracts } from "@arkecosystem/platform-sdk-profiles";
 import { Alert } from "app/components/Alert";
 import { FormField, FormLabel } from "app/components/Form";
 import { Header } from "app/components/Header";
@@ -10,7 +10,7 @@ import React, { useEffect, useState } from "react";
 import { useFormContext } from "react-hook-form";
 import { useTranslation } from "react-i18next";
 
-export const FormStep = ({ senderWallet }: { senderWallet: ReadWriteWallet }) => {
+export const FormStep = ({ senderWallet }: { senderWallet: ProfilesContracts.IReadWriteWallet }) => {
 	const { t } = useTranslation();
 
 	const { getValues, register, setValue, watch } = useFormContext();
@@ -32,7 +32,7 @@ export const FormStep = ({ senderWallet }: { senderWallet: ReadWriteWallet }) =>
 	const { findByType } = useFees();
 
 	useEffect(() => {
-		const setTransactionFees = async (senderWallet: ReadWriteWallet) => {
+		const setTransactionFees = async (senderWallet: ProfilesContracts.IReadWriteWallet) => {
 			const fees = await findByType(senderWallet.coinId(), senderWallet.networkId(), "delegateResignation");
 
 			setFees(fees);

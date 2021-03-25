@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/require-await */
-import { ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
+import { Contracts } from "@arkecosystem/platform-sdk-profiles";
 import { renderHook } from "@testing-library/react-hooks";
 import { EnvironmentProvider } from "app/contexts";
 import nock from "nock";
@@ -9,7 +9,7 @@ import { env, getDefaultProfileId, syncDelegates } from "utils/testing-library";
 import { useWalletDisplay } from "./";
 
 let profile: Contracts.IProfile;
-let wallets: ReadWriteWallet[];
+let wallets: Contracts.IReadWriteWallet[];
 
 describe("useWalletDisplay hook", () => {
 	beforeAll(async () => {

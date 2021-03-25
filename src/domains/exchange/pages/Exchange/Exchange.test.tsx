@@ -1,4 +1,5 @@
 /* eslint-disable @typescript-eslint/require-await */
+import { Contracts } from "@arkecosystem/platform-sdk-profiles";
 import { translations as commonTranslations } from "app/i18n/common/i18n";
 import { pluginManager, PluginProviders } from "app/PluginProviders";
 import { translations as pluginTranslations } from "domains/plugin/i18n";

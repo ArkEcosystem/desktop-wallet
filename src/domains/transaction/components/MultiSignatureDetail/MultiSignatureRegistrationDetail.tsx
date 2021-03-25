@@ -1,4 +1,4 @@
-import { ExtendedTransactionData, MultiSignatureData } from "@arkecosystem/platform-sdk-profiles";
+import { DTO } from "@arkecosystem/platform-sdk-profiles";
 import { Address } from "app/components/Address";
 import { Modal } from "app/components/Modal";
 import {
@@ -14,7 +14,7 @@ import { useTranslation } from "react-i18next";
 
 type MultisignatureRegistrationDetailProps = {
 	isOpen: boolean;
-	transaction: ExtendedTransactionData;
+	transaction: DTO.ExtendedTransactionData;
 	onClose?: () => void;
 };
 
@@ -32,7 +32,7 @@ export const MultiSignatureRegistrationDetail = ({
 	useEffect(() => {
 		const fetchData = async () => {
 			const addresses: string[] = [];
-			for (const publicKey of (transaction as MultiSignatureData).publicKeys()) {
+			for (const publicKey of (transaction as DTO.MultiSignatureData).publicKeys()) {
 				addresses.push(await wallet.coin().identity().address().fromPublicKey(publicKey));
 			}
 
@@ -41,8 +41,8 @@ export const MultiSignatureRegistrationDetail = ({
 				.identity()
 				.address()
 				.fromMultiSignature(
-					(transaction as MultiSignatureData).min(),
-					(transaction as MultiSignatureData).publicKeys(),
+					(transaction as DTO.MultiSignatureData).min(),
+					(transaction as DTO.MultiSignatureData).publicKeys(),
 				);
 
 			setGeneratedAddress(address);
@@ -74,7 +74,8 @@ export const MultiSignatureRegistrationDetail = ({
 			</TransactionDetail>
 
 			<TransactionDetail label={t("TRANSACTION.MULTISIGNATURE.MIN_SIGNATURES")}>
-				{(transaction as MultiSignatureData).min()} / {(transaction as MultiSignatureData).publicKeys().length}
+				{(transaction as DTO.MultiSignatureData).min()} /{" "}
+				{(transaction as DTO.MultiSignatureData).publicKeys().length}
 			</TransactionDetail>
 
 			<TransactionDetail label={t("TRANSACTION.MULTISIGNATURE.GENERATED_ADDRESS")}>

@@ -1,5 +1,5 @@
-import { Profile, RegistryPlugin } from "@arkecosystem/platform-sdk-profiles";
-import { PluginRegistry } from "@arkecosystem/platform-sdk-profiles";
+import { Contracts } from "@arkecosystem/platform-sdk-profiles";
+import { PluginRegistry } from "@arkecosystem/platform-sdk-profiles/dist/drivers/memory/plugins";
 import { semver, uniqBy } from "@arkecosystem/utils";
 import { httpClient, toasts } from "app/services";
 import { ipcRenderer } from "electron";
@@ -19,7 +19,7 @@ const useManager = (services: PluginService[], manager: PluginManager) => {
 	const [state, setState] = useState<{
 		packages: PluginConfigurationData[];
 		configurations: PluginConfigurationData[];
-		registryPlugins: RegistryPlugin[];
+		registryPlugins: Contracts.IRegistryPlugin[];
 	}>({
 		packages: [],
 		configurations: [],
@@ -84,7 +84,7 @@ const useManager = (services: PluginService[], manager: PluginManager) => {
 	}, []);
 
 	const deletePlugin = useCallback(
-		async (plugin: PluginController, profile: Profile) => {
+		async (plugin: PluginController, profile: Contracts.IProfile) => {
 			try {
 				await PluginLoaderFileSystem.ipc().remove(plugin.dir()!);
 				pluginManager.plugins().removeById(plugin.config().id(), profile);
@@ -100,7 +100,7 @@ const useManager = (services: PluginService[], manager: PluginManager) => {
 	);
 
 	const fetchPluginPackages = useCallback(async () => {
-		let registryPlugins: RegistryPlugin[] = [];
+		let registryPlugins: Contracts.IRegistryPlugin[] = [];
 		try {
 			setIsFetchingPackages(true);
 			registryPlugins = await pluginRegistry.all();
@@ -257,7 +257,7 @@ const useManager = (services: PluginService[], manager: PluginManager) => {
 	}, []);
 
 	const mapConfigToPluginData = useCallback(
-		(profile: Profile, config: PluginConfigurationData) => {
+		(profile: Contracts.IProfile, config: PluginConfigurationData) => {
 			const localPlugin = pluginManager.plugins().findById(config.id());
 			return {
 				...config.toObject(),

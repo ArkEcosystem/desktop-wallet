@@ -1,4 +1,4 @@
-import { ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
+import { Contracts } from "@arkecosystem/platform-sdk-profiles";
 import Transport, { Observer } from "@ledgerhq/hw-transport";
 import { createTransportReplayer, RecordStore } from "@ledgerhq/hw-transport-mocker";
 import { LedgerProvider } from "app/contexts/Ledger/Ledger";
@@ -13,7 +13,7 @@ let observer: Observer<any>;
 
 describe("LedgerConnectionStep", () => {
 	let profile: Contracts.IProfile;
-	let wallet: ReadWriteWallet;
+	let wallet: Contracts.IReadWriteWallet;
 
 	beforeEach(() => {
 		profile = env.profiles().findById(getDefaultProfileId());
