@@ -302,7 +302,7 @@ export const PluginManager = () => {
 										>
 											<div className="flex items-center space-x-2 whitespace-nowrap">
 												<Icon name="File" width={15} height={15} />
-												<span>Install from URL</span>
+												<span>{t("PLUGINS.MODAL_MANUAL_INSTALL_PLUGIN.TITLE")}</span>
 											</div>
 										</Button>
 									</>
@@ -357,30 +357,40 @@ export const PluginManager = () => {
 								{viewType === "grid" && (
 									<PluginGrid
 										plugins={viewPlugins}
-										onSelect={handleSelectPlugin}
+										updatingStats={updatingStats}
+										emptyMessage={
+											currentView === "my-plugins"
+												? t("PLUGINS.PAGE_PLUGIN_MANAGER.NO_PLUGINS_INSTALLED")
+												: undefined
+										}
+										isLoading={isFetchingPackages}
 										onDelete={handleDeletePlugin}
-										onEnable={handleEnablePlugin}
 										onDisable={handleDisablePlugin}
+										onEnable={handleEnablePlugin}
 										onInstall={openInstallModalPlugin}
 										onLaunch={handleLaunchPlugin}
+										onSelect={handleSelectPlugin}
 										onUpdate={handleUpdate}
-										updatingStats={updatingStats}
-										isLoading={isFetchingPackages}
 									/>
 								)}
 
 								{viewType === "list" && (
 									<PluginList
-										plugins={viewPlugins}
-										onClick={handleSelectPlugin}
-										onInstall={openInstallModalPlugin}
-										onDelete={handleDeletePlugin}
-										onEnable={handleEnablePlugin}
-										onDisable={handleDisablePlugin}
-										onLaunch={handleLaunchPlugin}
+										emptyMessage={
+											currentView === "my-plugins"
+												? t("PLUGINS.PAGE_PLUGIN_MANAGER.NO_PLUGINS_INSTALLED")
+												: undefined
+										}
 										onUpdate={handleUpdate}
-										updatingStats={updatingStats}
+										plugins={viewPlugins}
 										showCategory={currentView === "my-plugins" || currentView === "all"}
+										updatingStats={updatingStats}
+										onClick={handleSelectPlugin}
+										onDelete={handleDeletePlugin}
+										onDisable={handleDisablePlugin}
+										onEnable={handleEnablePlugin}
+										onInstall={openInstallModalPlugin}
+										onLaunch={handleLaunchPlugin}
 									/>
 								)}
 							</div>

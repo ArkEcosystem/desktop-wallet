@@ -1273,7 +1273,7 @@ exports[`Wallets should open and close ledger import modal 1`] = `
                       class="text-theme-secondary-text"
                       data-testid="header__subtitle"
                     >
-                      Connect your Ledger to PC and confirm the input.
+                      Connect your Ledger and confirm input.
                     </div>
                   </div>
                 </div>
@@ -1283,7 +1283,7 @@ exports[`Wallets should open and close ledger import modal 1`] = `
                   waiting-ledger-device.svg
                 </svg>
                 <div
-                  class="inline-flex items-center space-x-3 w-full"
+                  class="inline-flex items-center justify-center space-x-3 w-full"
                 >
                   <div
                     class="Spinner-sc-1tybciv-0 gzGczR"
@@ -1293,7 +1293,7 @@ exports[`Wallets should open and close ledger import modal 1`] = `
                     class="font-semibold animate-pulse text-theme-secondary-text"
                     data-testid="LedgerWaitingDevice-loading_message"
                   >
-                    Waiting for Ledger device...
+                    Waiting for Ledger ...
                   </span>
                 </div>
               </div>

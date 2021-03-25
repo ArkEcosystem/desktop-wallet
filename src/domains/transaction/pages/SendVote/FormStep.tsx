@@ -65,8 +65,8 @@ export const FormStep = ({
 	return (
 		<section data-testid="SendVote__form-step">
 			<Header
-				title={t("TRANSACTION.PAGE_VOTE.FIRST_STEP.TITLE")}
-				subtitle={t("TRANSACTION.PAGE_VOTE.FIRST_STEP.DESCRIPTION")}
+				title={t("TRANSACTION.PAGE_VOTE.FORM_STEP.TITLE")}
+				subtitle={t("TRANSACTION.PAGE_VOTE.FORM_STEP.DESCRIPTION")}
 			/>
 
 			<TransactionNetwork network={wallet.network()} border={false} paddingPosition="bottom" className="mt-8" />

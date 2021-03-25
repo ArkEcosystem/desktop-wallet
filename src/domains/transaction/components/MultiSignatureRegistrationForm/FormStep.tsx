@@ -74,7 +74,7 @@ export const FormStep = ({
 					onChange={handleInput}
 					addons={{
 						end: (
-							<span className="pointer-events-none">
+							<span className="pointer-events-none font-semibold text-sm text-theme-secondary-500 dark:text-theme-secondary-700">
 								{t("TRANSACTION.MULTISIGNATURE.OUT_OF_LENGTH", {
 									length: Math.max(2, participants?.length || 0),
 								})}

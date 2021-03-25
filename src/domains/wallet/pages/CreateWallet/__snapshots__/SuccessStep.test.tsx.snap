@@ -22,7 +22,7 @@ exports[`SuccessStep should render 4th step 1`] = `
           class="text-theme-secondary-text"
           data-testid="header__subtitle"
         >
-          Wallet creation is complete. Now you can use it.
+          The wallet address has been successfully created.
         </div>
       </div>
     </div>
@@ -109,11 +109,11 @@ exports[`SuccessStep should render 4th step 1`] = `
       class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
     >
       <label
-        class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
+        class="flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
         data-testid="FormLabel"
         for="name"
       >
-        Wallet name
+        Wallet Name
         <span
           class="ml-1 text-theme-secondary-500 dark:text-theme-secondary-700"
           data-testid="FormLabel__optional"

@@ -85,6 +85,8 @@ export const Welcome = () => {
 		}
 	};
 
+	const hasProfiles = profiles.length > 0;
+
 	return (
 		<>
 			<Page navbarVariant="logo-only" title={t("COMMON.DESKTOP_WALLET")}>
@@ -95,12 +97,15 @@ export const Welcome = () => {
 
 					<div className="mx-auto mt-8 max-w-lg md:max-w-xl">
 						<h2 className="mx-4 text-xl font-bold md:text-2xl">
-							{t("COMMON.SELECT_OPTION", { option: t("COMMON.PROFILE") })}
+							{hasProfiles
+								? t("PROFILE.PAGE_WELCOME.WITH_PROFILES.TITLE")
+								: t("PROFILE.PAGE_WELCOME.WITHOUT_PROFILES.TITLE")}
 						</h2>
 
 						<p className="text-sm text-theme-secondary-text md:text-base">
-							{profiles.length > 0 && t("PROFILE.PAGE_WELCOME.HAS_PROFILES")}
-							{profiles.length === 0 && t("PROFILE.PAGE_WELCOME.HAS_NO_PROFILES")}
+							{hasProfiles
+								? t("PROFILE.PAGE_WELCOME.WITH_PROFILES.DESCRIPTION")
+								: t("PROFILE.PAGE_WELCOME.WITHOUT_PROFILES.DESCRIPTION")}
 						</p>
 
 						<div className="mt-8">
@@ -130,7 +135,7 @@ export const Welcome = () => {
 											</Circle>
 										</div>
 										<span className="mt-3 font-semibold text-theme-primary-600 dark:text-white max-w-32 truncate dark:group-hover:text-white group-hover:text-theme-primary-700">
-											{t("PROFILE.CREATE_PROFILE")}
+											{hasProfiles ? t("PROFILE.CREATE_PROFILE") : t("COMMON.CREATE")}
 										</span>
 									</div>
 								</Card>

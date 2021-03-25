@@ -153,7 +153,7 @@ export const AddParticipant = ({ profile, wallet, onChange, defaultParticipants 
 					recipients={participants}
 					assetSymbol={wallet.network().ticker()}
 					onRemove={removeParticipant}
-					label={t("COMMON.PARTICIPANT")}
+					label="TRANSACTION.MULTISIGNATURE.PARTICIPANT_#"
 					showAmount={false}
 					isEditable
 				/>

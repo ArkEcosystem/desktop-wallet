@@ -56,10 +56,7 @@ export const AuthenticationStep = ({
 					ledgerIsAwaitingDevice={ledgerIsAwaitingDevice}
 					coinName={wallet.network().coin()}
 				>
-					<Header
-						title={t("TRANSACTION.LEDGER_CONFIRMATION.TITLE")}
-						subtitle={t("TRANSACTION.AUTHENTICATION_STEP.DESCRIPTION")}
-					/>
+					<Header title={t("TRANSACTION.LEDGER_CONFIRMATION.TITLE")} />
 
 					<LedgerConfirmation>{ledgerDetails}</LedgerConfirmation>
 				</LedgerStateWrapper>
@@ -69,20 +66,33 @@ export const AuthenticationStep = ({
 
 	const mnemonicIsValid = !!getValues("mnemonic") && !errors.mnemonic;
 
+	const subtitle = wallet.usesWIF()
+		? t("TRANSACTION.AUTHENTICATION_STEP.DESCRIPTION_ENCRYPTION_PASSWORD")
+		: t("TRANSACTION.AUTHENTICATION_STEP.DESCRIPTION");
+
 	return (
 		<div data-testid="AuthenticationStep" className="space-y-8">
-			<Header
-				title={t("TRANSACTION.AUTHENTICATION_STEP.TITLE")}
-				subtitle={t("TRANSACTION.AUTHENTICATION_STEP.DESCRIPTION")}
-			/>
+			<Header title={t("TRANSACTION.AUTHENTICATION_STEP.TITLE")} subtitle={subtitle} />
 
-			<FormField name="mnemonic">
-				<FormLabel>{t("TRANSACTION.MNEMONIC")}</FormLabel>
-				<InputPassword
-					data-testid="AuthenticationStep__mnemonic"
-					ref={register(authentication.mnemonic(wallet.coin(), wallet.address()))}
-				/>
-			</FormField>
+			{!wallet.usesWIF() && (
+				<FormField name="mnemonic">
+					<FormLabel>{t("TRANSACTION.MNEMONIC")}</FormLabel>
+					<InputPassword
+						data-testid="AuthenticationStep__mnemonic"
+						ref={register(authentication.mnemonic(wallet.coin(), wallet.address()))}
+					/>
+				</FormField>
+			)}
+
+			{wallet.usesWIF() && (
+				<FormField name="encryptionPassword">
+					<FormLabel>{t("TRANSACTION.ENCRYPTION_PASSWORD")}</FormLabel>
+					<InputPassword
+						data-testid="AuthenticationStep__encryption-password"
+						ref={register(authentication.encryptionPassword(wallet))}
+					/>
+				</FormField>
+			)}
 
 			{wallet.isSecondSignature() && !skipSecondSignature && (
 				<FormField name="secondMnemonic">
