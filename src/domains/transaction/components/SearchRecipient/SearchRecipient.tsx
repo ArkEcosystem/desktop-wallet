@@ -1,4 +1,5 @@
 import { Network } from "@arkecosystem/platform-sdk/dist/coins";
+import { Contracts } from "@arkecosystem/platform-sdk-profiles";
 import { Address } from "app/components/Address";
 import { AvatarWrapper } from "app/components/Avatar";
 import { Button } from "app/components/Button";
@@ -72,7 +73,7 @@ type SearchRecipientProps = {
 	description?: string;
 	network?: Network;
 	isOpen: boolean;
-	profile: Profile;
+	profile: Contracts.IProfile;
 	onClose?: () => void;
 	onAction: (address: string) => void;
 };

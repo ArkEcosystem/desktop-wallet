@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/require-await */
-import { ReadWriteWallet, WalletSetting } from "@arkecosystem/platform-sdk-profiles";
+import { Contracts } from "@arkecosystem/platform-sdk-profiles";
 import { createMemoryHistory } from "history";
 import React from "react";
 import { Route } from "react-router-dom";
@@ -10,7 +10,7 @@ import { SearchWallet } from "./SearchWallet";
 
 const history = createMemoryHistory();
 const dashboardURL = `/profiles/${getDefaultProfileId()}/dashboard`;
-let wallets: ReadWriteWallet[];
+let wallets: Contracts.IReadWriteWallet[];
 let profile: Contracts.IProfile;
 
 describe.each([true, false])("SearchWallet uses fiat value = %s", (showFiatValue) => {
@@ -22,7 +22,7 @@ describe.each([true, false])("SearchWallet uses fiat value = %s", (showFiatValue
 		profile = env.profiles().findById(getDefaultProfileId());
 
 		wallets = profile.wallets().values();
-		wallets[0].settings().set(WalletSetting.Alias, "Sample Wallet");
+		wallets[0].settings().set(Contracts.WalletSetting.Alias, "Sample Wallet");
 	});
 
 	it("should render", async () => {

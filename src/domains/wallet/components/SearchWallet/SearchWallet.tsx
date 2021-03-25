@@ -1,4 +1,4 @@
-import { Profile, ProfileSetting, ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
+import { Contracts } from "@arkecosystem/platform-sdk-profiles";
 import { BigNumber } from "@arkecosystem/platform-sdk-support";
 import { Address } from "app/components/Address";
 import { Amount } from "app/components/Amount";
@@ -82,14 +82,14 @@ type SearchWalletProps = {
 	isOpen: boolean;
 	title: string;
 	description?: string;
-	wallets: ReadWriteWallet[];
+	wallets: Contracts.IReadWriteWallet[];
 	searchPlaceholder?: string;
 	size?: Size;
 	showFiatValue?: boolean;
 	showNetwork?: boolean;
 	onClose?: any;
 	onSelectWallet?: any;
-	profile?: Profile;
+	profile?: Contracts.IProfile;
 };
 
 export const SearchWallet = ({
@@ -113,11 +113,11 @@ export const SearchWallet = ({
 		const commonColumns = [
 			{
 				Header: t("COMMON.WALLET_ADDRESS"),
-				accessor: (wallet: ReadWriteWallet) => wallet.alias() || wallet.address(),
+				accessor: (wallet: Contracts.IReadWriteWallet) => wallet.alias() || wallet.address(),
 			},
 			{
 				Header: t("COMMON.BALANCE"),
-				accessor: (wallet: ReadWriteWallet) => wallet.balance?.().toFixed(),
+				accessor: (wallet: Contracts.IReadWriteWallet) => wallet.balance?.().toFixed(),
 				className: "justify-end",
 			},
 		];
@@ -127,7 +127,7 @@ export const SearchWallet = ({
 				...commonColumns,
 				{
 					Header: t("COMMON.VALUE"),
-					accessor: (wallet: ReadWriteWallet) => wallet.convertedBalance?.().toFixed(),
+					accessor: (wallet: Contracts.IReadWriteWallet) => wallet.convertedBalance?.().toFixed(),
 					className: "justify-end",
 				},
 				{
@@ -184,7 +184,7 @@ export const SearchWallet = ({
 		<Modal title={title} description={description} isOpen={isOpen} size={size} onClose={onClose}>
 			<div className="mt-8">
 				<Table columns={columns} data={filteredWallets}>
-					{(wallet: ReadWriteWallet, index: number) => (
+					{(wallet: Contracts.IReadWriteWallet, index: number) => (
 						<SearchWalletListItem
 							index={index}
 							address={wallet.address()}
@@ -195,7 +195,7 @@ export const SearchWallet = ({
 							currency={wallet.currency()}
 							exchangeCurrency={
 								wallet.exchangeCurrency() ||
-								(profile?.settings().get(ProfileSetting.ExchangeCurrency) as string)
+								(profile?.settings().get(Contracts.ProfileSetting.ExchangeCurrency) as string)
 							}
 							name={wallet.alias()}
 							showFiatValue={showFiatValue}

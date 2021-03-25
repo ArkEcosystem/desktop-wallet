@@ -1,4 +1,4 @@
-import { ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
+import { Contracts } from "@arkecosystem/platform-sdk-profiles";
 import Transport from "@ledgerhq/hw-transport";
 import { createTransportReplayer, RecordStore } from "@ledgerhq/hw-transport-mocker";
 import nock from "nock";
@@ -10,7 +10,7 @@ import { useLedgerScanner } from "./scanner";
 
 describe("Use Ledger Scanner", () => {
 	let profile: Contracts.IProfile;
-	let wallet: ReadWriteWallet;
+	let wallet: Contracts.IReadWriteWallet;
 	let transport: typeof Transport;
 	let publicKeyPaths = new Map();
 

@@ -1,4 +1,4 @@
-import { ProfileSetting } from "@arkecosystem/platform-sdk-profiles";
+import { Contracts } from "@arkecosystem/platform-sdk-profiles";
 import React from "react";
 import { env, getDefaultProfileId, render } from "utils/testing-library";
 
@@ -16,7 +16,7 @@ describe("Avatar", () => {
 	});
 
 	it("should render with profile image", () => {
-		profile.settings().set(ProfileSetting.Avatar, "avatarImage");
+		profile.settings().set(Contracts.ProfileSetting.Avatar, "avatarImage");
 
 		const { getByTestId, asFragment } = render(<ProfileAvatar profile={profile} />);
 		expect(getByTestId("ProfileAvatar__image")).toBeTruthy();

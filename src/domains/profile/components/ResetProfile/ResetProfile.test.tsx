@@ -1,4 +1,4 @@
-import { ProfileSetting } from "@arkecosystem/platform-sdk-profiles";
+import { Contracts } from "@arkecosystem/platform-sdk-profiles";
 import React from "react";
 import { act, env, fireEvent, getDefaultProfileId, render, waitFor } from "utils/testing-library";
 
@@ -9,7 +9,7 @@ let profile: Contracts.IProfile;
 describe("ResetProfile", () => {
 	beforeAll(() => {
 		profile = env.profiles().findById(getDefaultProfileId());
-		profile.settings().set(ProfileSetting.Theme, "dark");
+		profile.settings().set(Contracts.ProfileSetting.Theme, "dark");
 		env.persist();
 	});
 
@@ -26,7 +26,7 @@ describe("ResetProfile", () => {
 
 		const { getByTestId } = render(<ResetProfile isOpen profile={profile} onReset={onReset} />);
 
-		const theme = profile.settings().get(ProfileSetting.Theme);
+		const theme = profile.settings().get(Contracts.ProfileSetting.Theme);
 
 		await waitFor(() => expect(getByTestId("modal__inner")).toBeTruthy());
 
@@ -34,7 +34,7 @@ describe("ResetProfile", () => {
 			fireEvent.click(getByTestId("ResetProfile__submit-button"));
 		});
 
-		await waitFor(() => expect(profile.settings().get(ProfileSetting.Theme)).not.toBe(theme));
+		await waitFor(() => expect(profile.settings().get(Contracts.ProfileSetting.Theme)).not.toBe(theme));
 
 		expect(onReset).toHaveBeenCalled();
 	});
