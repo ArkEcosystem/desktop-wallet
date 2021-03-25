@@ -1,4 +1,4 @@
-import { Profile } from "@arkecosystem/platform-sdk-profiles";
+import { Contracts } from "@arkecosystem/platform-sdk-profiles";
 import { Section } from "app/components/Layout";
 import { LineChart } from "app/components/LineChart";
 import { PercentageBar } from "app/components/PercentageBar";
@@ -8,7 +8,7 @@ import { useTranslation } from "react-i18next";
 import { usePortfolioData } from "./hooks";
 
 type PortfolioChartProps = {
-	profile: Profile;
+	profile: Contracts.IProfile;
 	isVisible?: boolean;
 	showChartAnimation?: boolean;
 };

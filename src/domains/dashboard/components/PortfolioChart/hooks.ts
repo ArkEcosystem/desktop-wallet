@@ -1,4 +1,4 @@
-import { Profile } from "@arkecosystem/platform-sdk-profiles";
+import { Contracts } from "@arkecosystem/platform-sdk-profiles";
 import { sortByDesc } from "@arkecosystem/utils";
 import { BarItem } from "app/components/PercentageBar";
 import { useEnvironmentContext } from "app/contexts";
@@ -7,7 +7,7 @@ import { useMemo } from "react";
 
 import { balances } from "../../data";
 
-export const usePortfolioData = ({ profile }: { profile: Profile }) => {
+export const usePortfolioData = ({ profile }: { profile: Contracts.IProfile }) => {
 	const { env } = useEnvironmentContext();
 
 	const chartLines = [
