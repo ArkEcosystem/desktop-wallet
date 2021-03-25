@@ -52,6 +52,8 @@ export const SendIpfs = () => {
 
 		setValue("senderAddress", activeWallet.address(), { shouldValidate: true, shouldDirty: true });
 
+		register("suppressWarning");
+
 		for (const network of networks) {
 			if (network.coin() === activeWallet.coinId() && network.id() === activeWallet.networkId()) {
 				setValue("network", network, { shouldValidate: true, shouldDirty: true });
