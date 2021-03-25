@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/require-await */
-import { Contact } from "@arkecosystem/platform-sdk-profiles";
+import { Contracts } from "@arkecosystem/platform-sdk-profiles";
 import { availableNetworksMock } from "domains/network/data";
 import React from "react";
 import { act, env, fireEvent, getDefaultProfileId, render, waitFor } from "testing-library";
@@ -9,7 +9,7 @@ import { CreateContact } from "./CreateContact";
 
 const onSave = jest.fn();
 let profile: Contracts.IProfile;
-let existingContact: Contact;
+let existingContact: Contracts.IContact;
 
 describe("CreateContact", () => {
 	beforeAll(() => {

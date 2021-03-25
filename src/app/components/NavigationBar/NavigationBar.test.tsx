@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/require-await */
-import { ProfileSetting } from "@arkecosystem/platform-sdk-profiles";
+import { Contracts } from "@arkecosystem/platform-sdk-profiles";
 import * as useScrollHook from "app/hooks/use-scroll";
 import electron from "electron";
 import { createMemoryHistory } from "history";
@@ -119,13 +119,13 @@ describe("NavigationBar", () => {
 	});
 
 	it("should render the navbar with exchange currency", () => {
-		profile.settings().set(ProfileSetting.ExchangeCurrency, "BRL");
+		profile.settings().set(Contracts.ProfileSetting.ExchangeCurrency, "BRL");
 
 		const { getByText } = renderWithRouter(<NavigationBar profile={profile} />);
 
 		expect(getByText("R$")).toBeTruthy();
 
-		profile.settings().set(ProfileSetting.ExchangeCurrency, "BTC");
+		profile.settings().set(Contracts.ProfileSetting.ExchangeCurrency, "BTC");
 	});
 
 	it.each(["Contacts", "Votes", "Settings", "Support"])(

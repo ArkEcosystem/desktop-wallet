@@ -1,4 +1,4 @@
-import { ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
+import { Contracts } from "@arkecosystem/platform-sdk-profiles";
 import { translations as transactionTranslations } from "domains/transaction/i18n";
 import nock from "nock";
 import React from "react";
@@ -10,8 +10,8 @@ import { AddParticipant } from "./AddParticipant";
 
 describe("Add Participant", () => {
 	let profile: Contracts.IProfile;
-	let wallet: ReadWriteWallet;
-	let wallet2: ReadWriteWallet;
+	let wallet: Contracts.IReadWriteWallet;
+	let wallet2: Contracts.IReadWriteWallet;
 
 	beforeEach(() => {
 		profile = env.profiles().findById(getDefaultProfileId());

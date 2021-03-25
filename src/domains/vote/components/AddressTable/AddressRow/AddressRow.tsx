@@ -1,4 +1,4 @@
-import { ReadOnlyWallet, ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
+import { Contracts } from "@arkecosystem/platform-sdk-profiles";
 import { Address } from "app/components/Address";
 import { Amount } from "app/components/Amount";
 import { Avatar } from "app/components/Avatar";
@@ -15,7 +15,7 @@ import { shouldUseDarkColors } from "utils/electron-utils";
 type AddressRowProps = {
 	index: number;
 	maxVotes: number;
-	wallet: ReadWriteWallet;
+	wallet: Contracts.IReadWriteWallet;
 	onSelect?: (walletAddress: string) => void;
 };
 
@@ -24,7 +24,7 @@ export const AddressRow = ({ index, maxVotes, wallet, onSelect }: AddressRowProp
 	const { env } = useEnvironmentContext();
 
 	const [shadowColor, setShadowColor] = useState("--theme-background-color");
-	const [votes, setVotes] = useState<ReadOnlyWallet[]>([]);
+	const [votes, setVotes] = useState<Contracts.IReadOnlyWallet[]>([]);
 
 	const getIconName = (type: string) => {
 		switch (type) {
@@ -41,7 +41,7 @@ export const AddressRow = ({ index, maxVotes, wallet, onSelect }: AddressRowProp
 
 	useEffect(() => {
 		const loadVotes = () => {
-			let votes: ReadOnlyWallet[] = [];
+			let votes: Contracts.IReadOnlyWallet[] = [];
 
 			try {
 				votes = wallet.votes();

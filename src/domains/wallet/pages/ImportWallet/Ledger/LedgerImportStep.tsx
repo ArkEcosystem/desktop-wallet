@@ -1,4 +1,5 @@
 import { Network } from "@arkecosystem/platform-sdk/dist/coins";
+import { Contracts } from "@arkecosystem/platform-sdk-profiles";
 import { Address } from "app/components/Address";
 import { Amount } from "app/components/Amount";
 import { Avatar } from "app/components/Avatar";
@@ -21,7 +22,7 @@ const MultipleImport = ({
 	network,
 }: {
 	wallets: LedgerData[];
-	profile: Profile;
+	profile: Contracts.IProfile;
 	network: Network;
 }) => {
 	const { t } = useTranslation();
@@ -122,7 +123,15 @@ const MultipleImport = ({
 	);
 };
 
-const SingleImport = ({ wallets, profile, network }: { wallets: LedgerData[]; profile: Profile; network: Network }) => {
+const SingleImport = ({
+	wallets,
+	profile,
+	network,
+}: {
+	wallets: LedgerData[];
+	profile: Contracts.IProfile;
+	network: Network;
+}) => {
 	const { t } = useTranslation();
 	const { register, watch, trigger } = useFormContext();
 
@@ -174,7 +183,7 @@ const SingleImport = ({ wallets, profile, network }: { wallets: LedgerData[]; pr
 	);
 };
 
-export const LedgerImportStep = ({ wallets, profile }: { wallets: LedgerData[]; profile: Profile }) => {
+export const LedgerImportStep = ({ wallets, profile }: { wallets: LedgerData[]; profile: Contracts.IProfile }) => {
 	const { t } = useTranslation();
 
 	const { watch } = useFormContext();
