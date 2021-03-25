@@ -271,6 +271,10 @@ describe("PluginManager", () => {
 
 		const historySpy = jest.spyOn(history, "push").mockImplementation();
 
+		await waitFor(async () => {
+			expect(getByTestId("PluginManualInstallModal__submit-button")).not.toBeDisabled();
+		});
+
 		act(() => {
 			fireEvent.click(getByTestId("PluginManualInstallModal__submit-button"));
 		});
