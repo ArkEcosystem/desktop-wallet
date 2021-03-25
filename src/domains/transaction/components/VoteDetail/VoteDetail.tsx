@@ -1,4 +1,5 @@
-import { DelegateMapper, ReadOnlyWallet, VoteData } from "@arkecosystem/platform-sdk-profiles";
+import { Contracts, DTO } from "@arkecosystem/platform-sdk-profiles";
+import { DelegateMapper } from "@arkecosystem/platform-sdk-profiles/dist/drivers/memory/mappers/delegate-mapper";
 import { Modal } from "app/components/Modal";
 import { useEnvironmentContext } from "app/contexts";
 import {
@@ -25,7 +26,10 @@ export const VoteDetail = ({ transaction, isOpen, onClose }: VoteDetailProps) =>
 	const wallet = useMemo(() => transaction.wallet(), [transaction]);
 
 	const [isLoadingDelegates, setIsLoadingDelegates] = useState(true);
-	const [delegates, setDelegates] = useState<{ votes: ReadOnlyWallet[]; unvotes: ReadOnlyWallet[] }>({
+	const [delegates, setDelegates] = useState<{
+		votes: Contracts.IReadOnlyWallet[];
+		unvotes: Contracts.IReadOnlyWallet[];
+	}>({
 		votes: [],
 		unvotes: [],
 	});
@@ -35,8 +39,8 @@ export const VoteDetail = ({ transaction, isOpen, onClose }: VoteDetailProps) =>
 			setIsLoadingDelegates(true);
 
 			setDelegates({
-				votes: DelegateMapper.execute(wallet, (transaction as VoteData).votes()),
-				unvotes: DelegateMapper.execute(wallet, (transaction as VoteData).unvotes()),
+				votes: DelegateMapper.execute(wallet, (transaction as DTO.VoteData).votes()),
+				unvotes: DelegateMapper.execute(wallet, (transaction as DTO.VoteData).unvotes()),
 			});
 
 			setIsLoadingDelegates(false);

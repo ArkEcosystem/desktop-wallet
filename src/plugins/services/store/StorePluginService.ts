@@ -1,11 +1,12 @@
-import { DataRepository, Profile } from "@arkecosystem/platform-sdk-profiles";
+import { Contracts } from "@arkecosystem/platform-sdk-profiles";
+import { DataRepository } from "@arkecosystem/platform-sdk-profiles/dist/drivers/memory/repositories/data-repository";
 import { PluginController } from "plugins/core";
 import { PluginHooks } from "plugins/core/internals/plugin-hooks";
 import { PluginService, PluginServiceIdentifier } from "plugins/types";
 
 export class StorePluginService implements PluginService {
-	#profile: Profile | undefined;
-	#stores: Map<string, DataRepository> = new Map();
+	#profile: Contracts.IProfile | undefined;
+	#stores: Map<string, Contracts.IDataRepository> = new Map();
 
 	config() {
 		return {
@@ -28,7 +29,7 @@ export class StorePluginService implements PluginService {
 
 		return {
 			data: () => store,
-			persist: this.persist.bind(this, id, store!),
+			persist: this.persist.bind(this, id, store),
 		};
 	}
 

@@ -1,4 +1,4 @@
-import { DelegateMapper, ReadOnlyWallet } from "@arkecosystem/platform-sdk-profiles";
+import { ReadOnlyWallet } from "@arkecosystem/platform-sdk-profiles/dist/drivers/memory/wallets/read-only-wallet";
 import { createMemoryHistory } from "history";
 import nock from "nock";
 import React from "react";
@@ -34,7 +34,7 @@ describe("VoteDetail", () => {
 		dashboardURL = `/profiles/${fixtureProfileId}/dashboard`;
 		history.push(dashboardURL);
 
-		jest.spyOn(DelegateMapper, "execute").mockImplementation((wallet, votes) =>
+		jest.spyOn(IDelegateMapper, "execute").mockImplementation((wallet, votes) =>
 			votes.map(
 				(vote: string, index: number) =>
 					new ReadOnlyWallet({
