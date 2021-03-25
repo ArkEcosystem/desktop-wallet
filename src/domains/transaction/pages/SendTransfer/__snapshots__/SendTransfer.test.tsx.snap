@@ -865,7 +865,7 @@ exports[`SendTransfer should display disabled address selection input if selecte
                                         data-testid="Range__thumb"
                                         draggable="false"
                                         role="slider"
-                                        style="position: absolute; cursor: grab; user-select: none; transform: translate(0px, 0px);"
+                                        style="position: absolute; z-index: 0; cursor: grab; user-select: none; transform: translate(0px, 0px);"
                                         tabindex="0"
                                       />
                                     </div>
@@ -2973,7 +2973,7 @@ exports[`SendTransfer should render form and use location state 1`] = `
                                         data-testid="Range__thumb"
                                         draggable="false"
                                         role="slider"
-                                        style="position: absolute; cursor: grab; user-select: none; transform: translate(0px, 0px);"
+                                        style="position: absolute; z-index: 0; cursor: grab; user-select: none; transform: translate(0px, 0px);"
                                         tabindex="0"
                                       />
                                     </div>
@@ -3945,7 +3945,7 @@ exports[`SendTransfer should render form and use location state without memo 1`]
                                         data-testid="Range__thumb"
                                         draggable="false"
                                         role="slider"
-                                        style="position: absolute; cursor: grab; user-select: none; transform: translate(0px, 0px);"
+                                        style="position: absolute; z-index: 0; cursor: grab; user-select: none; transform: translate(0px, 0px);"
                                         tabindex="0"
                                       />
                                     </div>
@@ -7776,7 +7776,7 @@ exports[`SendTransfer should select a cryptoasset and select sender without wall
                                         data-testid="Range__thumb"
                                         draggable="false"
                                         role="slider"
-                                        style="position: absolute; cursor: grab; user-select: none; transform: translate(0px, 0px);"
+                                        style="position: absolute; z-index: 0; cursor: grab; user-select: none; transform: translate(0px, 0px);"
                                         tabindex="0"
                                       />
                                     </div>
