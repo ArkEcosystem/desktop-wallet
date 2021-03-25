@@ -85,7 +85,7 @@ describe("SignMessage", () => {
 	});
 
 	it("should render signed step with wallet alias", () => {
-		jest.spyOn(wallet, "alias").mockReturnValue("my-alias");
+		const aliasMock = jest.spyOn(wallet, "alias").mockReturnValue("my-alias");
 		const signedMessage = {
 			message: "Hello World",
 			signatory: "0360e26c8ab14e1bebf4d5f36ab16dcefc9e7b9d9e000ae2470397eccdf1280f6f",
@@ -96,6 +96,7 @@ describe("SignMessage", () => {
 		const { container, getByText } = render(<SignedStep wallet={wallet} signedMessage={signedMessage} />);
 		expect(getByText("my-alias")).toBeInTheDocument();
 		expect(container).toMatchSnapshot();
+		aliasMock.mockRestore();
 	});
 
 	it("should sign message", async () => {

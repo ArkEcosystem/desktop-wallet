@@ -61,7 +61,7 @@ export const FormStep = ({
 
 			{!wallet.isLedger() && (
 				<FormField name="mnemonic">
-					<FormLabel label={t("COMMON.YOUR_PASSPHRASE")} />
+					<FormLabel label={t("COMMON.MNEMONIC")} />
 					<InputPassword
 						ref={register(authentication.mnemonic(wallet.coin(), wallet.address()))}
 						data-testid="SignMessage__mnemonic-input"

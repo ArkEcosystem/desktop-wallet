@@ -157,15 +157,27 @@ export const SendTransfer = () => {
 	const submitForm = async () => {
 		clearErrors("mnemonic");
 
-		const { fee, mnemonic, secondMnemonic, recipients, senderAddress, smartbridge } = getValues();
+		const {
+			fee,
+			mnemonic,
+			secondMnemonic,
+			recipients,
+			senderAddress,
+			smartbridge,
+			encryptionPassword,
+		} = getValues();
 
 		const isMultiPayment = recipients.length > 1;
 
 		const transactionType = isMultiPayment ? "multiPayment" : "transfer";
+
+		const wif = wallet?.usesWIF() ? await wallet.wif(encryptionPassword) : undefined;
+
 		const transactionInput: Contracts.TransactionInputs = {
 			fee,
 			from: senderAddress,
 			sign: {
+				wif,
 				mnemonic,
 				secondMnemonic,
 			},

@@ -26,7 +26,7 @@ export const Plugins = ({ formConfig, onSuccess }: SettingsProps) => {
 							placeholder={t("COMMON.SELECT_OPTION", {
 								option: t("SETTINGS.PLUGINS.PLUGIN_SOURCE.TITLE").toString(),
 							})}
-							options={[{ label: "Github", value: "github" }]}
+							options={[{ label: "GitHub", value: "github" }]}
 						/>
 					</FormField>
 				</div>

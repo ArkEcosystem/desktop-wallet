@@ -104,9 +104,7 @@ export const PluginInfo = ({ description, permissions, images, minimumVersion }:
 
 			<div className="mt-8">
 				<Alert variant="warning" title={t("COMMON.DISCLAIMER")}>
-					The availability of this plugin in the ARK Desktop Wallet does not mean that either ARK.io or ARK
-					SCIC is directly involved in the development or affiliated with the developer providing this plugin.
-					By installing it on your wallet, you assume every responsibility
+					{t("PLUGINS.PLUGIN_INFO.DISCLAIMER")}
 				</Alert>
 			</div>
 

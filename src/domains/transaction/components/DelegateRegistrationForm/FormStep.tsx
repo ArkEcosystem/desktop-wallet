@@ -48,11 +48,11 @@ export const FormStep = ({ fees, wallet, step = 0.001 }: any) => {
 	return (
 		<section data-testid="DelegateRegistrationForm__form-step" className="space-y-8">
 			<Header
-				title={t("TRANSACTION.PAGE_DELEGATE_REGISTRATION.SECOND_STEP.TITLE")}
-				subtitle={t("TRANSACTION.PAGE_DELEGATE_REGISTRATION.SECOND_STEP.DESCRIPTION")}
+				title={t("TRANSACTION.PAGE_DELEGATE_REGISTRATION.FORM_STEP.TITLE")}
+				subtitle={t("TRANSACTION.PAGE_DELEGATE_REGISTRATION.FORM_STEP.DESCRIPTION")}
 			/>
 
-			<Alert>{t("TRANSACTION.PAGE_DELEGATE_REGISTRATION.SECOND_STEP.WARNING")}</Alert>
+			<Alert>{t("TRANSACTION.PAGE_DELEGATE_REGISTRATION.FORM_STEP.WARNING")}</Alert>
 
 			<TransactionSender
 				address={wallet.address()}

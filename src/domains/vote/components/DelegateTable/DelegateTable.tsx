@@ -208,9 +208,7 @@ export const DelegateTable = ({
 								<div className="inline-flex">
 									<Avatar className="mr-2" size="lg" address={selectedWallet} noShadow />
 									<div className="flex flex-col">
-										<div className="text-theme-secondary-500">
-											{t("VOTE.DELEGATE_TABLE.MY_ADDRESS")}
-										</div>
+										<div className="text-theme-secondary-500">{t("COMMON.ADDRESS")}</div>
 										<div className="text-theme-text" data-testid="DelegateTable__footer--address">
 											<Address address={selectedWallet} maxChars={24} />
 										</div>

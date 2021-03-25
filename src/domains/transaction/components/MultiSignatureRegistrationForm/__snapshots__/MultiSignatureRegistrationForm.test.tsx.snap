@@ -30,7 +30,7 @@ exports[`MultiSignature Registration Form should render form step 1`] = `
                 class="text-theme-secondary-text"
                 data-testid="header__subtitle"
               >
-                Register a new multisignature address by adding participants.
+                Register Multisignature details below.
               </div>
             </div>
           </div>
@@ -42,7 +42,7 @@ exports[`MultiSignature Registration Form should render form step 1`] = `
                 class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
               >
                 <label
-                  class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
+                  class="flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
                   data-testid="FormLabel"
                   for="address"
                 >
@@ -253,7 +253,7 @@ exports[`MultiSignature Registration Form should render form step 1`] = `
                             class="mb-1 text-sm font-semibold text-theme-secondary-500 dark:text-theme-secondary-700"
                           >
                             <span>
-                              Participant
+                              Participant #1
                             </span>
                           </div>
                           <div
@@ -309,7 +309,7 @@ exports[`MultiSignature Registration Form should render form step 1`] = `
             class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
           >
             <label
-              class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
+              class="flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
               data-testid="FormLabel"
               for="minParticipants"
             >
@@ -340,7 +340,7 @@ exports[`MultiSignature Registration Form should render form step 1`] = `
                   class=""
                 >
                   <span
-                    class="pointer-events-none"
+                    class="pointer-events-none font-semibold text-sm text-theme-secondary-500 dark:text-theme-secondary-700"
                   >
                     out of 2
                   </span>
@@ -352,7 +352,7 @@ exports[`MultiSignature Registration Form should render form step 1`] = `
             class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
           >
             <label
-              class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
+              class="flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
               data-testid="FormLabel"
               for="fee"
             >
@@ -480,7 +480,7 @@ exports[`MultiSignature Registration Form should render review step 1`] = `
                 class="text-theme-secondary-text"
                 data-testid="header__subtitle"
               >
-                Review your multisignature registration details
+                Review the transaction details below.
               </div>
             </div>
           </div>
@@ -774,7 +774,7 @@ exports[`MultiSignature Registration Form should render review step 1`] = `
               <div
                 class="font-semibold"
               >
-                Multisignature Registration
+                Multisignature
               </div>
             </div>
             <div>
@@ -895,7 +895,7 @@ exports[`MultiSignature Registration Form should render transaction details 1`] 
       <div
         class="font-semibold"
       >
-        Multisignature Registration
+        Multisignature
       </div>
     </div>
     <div

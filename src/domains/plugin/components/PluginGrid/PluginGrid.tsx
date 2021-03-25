@@ -11,37 +11,39 @@ import { PluginCardSkeleton } from "../PluginCard/PluginCardSkeleton";
 type PluginGridProps = {
 	category?: string;
 	className?: string;
+	emptyMessage?: string;
+	isLoading?: boolean;
 	itemsPerPage?: number;
 	onDelete: any;
-	onEnable?: (plugin: any) => void;
+	plugins: any[];
+	showPagination?: boolean;
+	skeletonsLimit?: number;
+	updatingStats?: any;
 	onDisable?: (plugin: any) => void;
+	onEnable?: (plugin: any) => void;
 	onInstall?: (plugin: any) => void;
 	onLaunch?: (plugin: any) => void;
-	onUpdate?: (plugin: any) => void;
 	onSelect: any;
-	plugins: any[];
-	updatingStats?: any;
-	isLoading?: boolean;
-	skeletonsLimit?: number;
-	showPagination?: boolean;
+	onUpdate?: (plugin: any) => void;
 };
 
 export const PluginGrid = ({
 	category,
 	className,
-	itemsPerPage,
-	onDelete,
-	onSelect,
-	onEnable,
-	onDisable,
-	onLaunch,
-	onInstall,
-	onUpdate,
-	plugins,
-	updatingStats,
-	showPagination,
+	emptyMessage,
 	isLoading,
+	itemsPerPage,
+	plugins,
+	showPagination,
 	skeletonsLimit = 3,
+	updatingStats,
+	onDelete,
+	onDisable,
+	onEnable,
+	onInstall,
+	onLaunch,
+	onSelect,
+	onUpdate,
 }: PluginGridProps) => {
 	const { t } = useTranslation();
 
@@ -131,7 +133,7 @@ export const PluginGrid = ({
 	}
 
 	if (!plugins.length) {
-		return <EmptyBlock>{t("PLUGINS.PAGE_PLUGIN_MANAGER.NO_PLUGINS_AVAILABLE")}</EmptyBlock>;
+		return <EmptyBlock>{emptyMessage || t("PLUGINS.PAGE_PLUGIN_MANAGER.NO_PLUGINS_AVAILABLE")}</EmptyBlock>;
 	}
 
 	const pagePlugins = chunk(plugins, itemsPerPage!)[currentPage - 1];

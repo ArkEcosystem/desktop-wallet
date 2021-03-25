@@ -42,7 +42,7 @@ exports[`WalletOverviewStep Render step should render 1`] = `
         <p
           class="text-sm leading-relaxed break-words dark:text-theme-secondary-500"
         >
-          This is your 12 word Mnemonic. Your mnemonic serves as your password and allows you to send any funds associated with your address. If lost, this mnemonic cannot be restored by anyone, including the ARK.io team. Please store this mnemonic in a safe location and do not share it with anyone.
+          You are responsible for storing and protecting this mnemonic passphrase offline. The ARK Desktop Wallet cannot reveal this to you at a later time. If you lose this mnemonic passphrase, you will lose your funds.
         </p>
       </div>
     </div>
@@ -50,11 +50,11 @@ exports[`WalletOverviewStep Render step should render 1`] = `
       class="grid grid-cols-2 gap-x-3 gap-y-5 md:grid-cols-3 lg:grid-cols-4"
     >
       <li
-        class="relative py-3 px-3 rounded border border-theme-secondary-300 dark:border-theme-secondary-800"
+        class="relative p-4 rounded border border-theme-secondary-400 dark:border-theme-secondary-700"
         data-testid="MnemonicList__item"
       >
         <span
-          class="absolute top-0 left-0 px-1 text-xs font-semibold transform translate-x-2 -translate-y-2 bg-theme-background text-theme-secondary-800"
+          class="absolute top-0 left-0 px-1 text-xs font-medium transform translate-x-2 -translate-y-2 bg-theme-background text-theme-secondary-700"
         >
           1
         </span>
@@ -65,11 +65,11 @@ exports[`WalletOverviewStep Render step should render 1`] = `
         </span>
       </li>
       <li
-        class="relative py-3 px-3 rounded border border-theme-secondary-300 dark:border-theme-secondary-800"
+        class="relative p-4 rounded border border-theme-secondary-400 dark:border-theme-secondary-700"
         data-testid="MnemonicList__item"
       >
         <span
-          class="absolute top-0 left-0 px-1 text-xs font-semibold transform translate-x-2 -translate-y-2 bg-theme-background text-theme-secondary-800"
+          class="absolute top-0 left-0 px-1 text-xs font-medium transform translate-x-2 -translate-y-2 bg-theme-background text-theme-secondary-700"
         >
           2
         </span>
@@ -81,7 +81,38 @@ exports[`WalletOverviewStep Render step should render 1`] = `
       </li>
     </ul>
     <div
-      class="flex justify-end w-full"
+      class="Divider-sc-19q4mlo-0 bKsVMa border-theme-secondary-300 dark:border-theme-secondary-800"
+      type="horizontal"
+    />
+    <div
+      class="flex justify-between items-center"
+    >
+      <div
+        class="space-y-2"
+      >
+        <span
+          class="text-lg font-semibold"
+        >
+          Copy or Download Mnemonic Passphrase
+        </span>
+        <p
+          class="text-sm text-theme-secondary-text"
+        >
+          You can copy or download your mnemonic, but store it safely.
+        </p>
+      </div>
+      <div
+        class="sc-bdfBwQ fTnhmh text-black dark:text-theme-secondary-600"
+        height="40"
+        width="40"
+      >
+        <svg>
+          file-password.svg
+        </svg>
+      </div>
+    </div>
+    <div
+      class="flex justify-end w-full space-x-3"
     >
       <div
         class="inline-block cursor-pointer"
@@ -110,41 +141,6 @@ exports[`WalletOverviewStep Render step should render 1`] = `
           </div>
         </button>
       </div>
-    </div>
-    <div
-      class="Divider-sc-19q4mlo-0 bKsVMa border-theme-secondary-300 dark:border-theme-secondary-800"
-      type="horizontal"
-    />
-    <div
-      class="flex justify-between items-center"
-    >
-      <div
-        class="space-y-2"
-      >
-        <span
-          class="text-lg font-semibold"
-        >
-          Download Your Passphrase
-        </span>
-        <p
-          class="text-sm text-theme-secondary-text"
-        >
-          You can also download and safely store your passphrase.
-        </p>
-      </div>
-      <div
-        class="sc-bdfBwQ fTnhmh text-black dark:text-theme-secondary-600"
-        height="40"
-        width="40"
-      >
-        <svg>
-          file-password.svg
-        </svg>
-      </div>
-    </div>
-    <div
-      class="flex justify-end w-full"
-    >
       <button
         class="OriginalButton__StyledButton-sc-1y2wptt-0 hsoUax flex items-center space-x-2"
         data-testid="CreateWallet__download"
