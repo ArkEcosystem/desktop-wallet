@@ -1,6 +1,4 @@
 import { Coins } from "@arkecosystem/platform-sdk";
-import { Profile } from "@arkecosystem/platform-sdk-profiles";
-// @ts-ignore
 import { FormField, FormLabel } from "app/components/Form";
 import { Header } from "app/components/Header";
 import { Input, InputAddress, InputPassword } from "app/components/Input";

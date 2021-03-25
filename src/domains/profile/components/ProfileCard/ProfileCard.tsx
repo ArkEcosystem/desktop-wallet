@@ -1,4 +1,4 @@
-import { Profile } from "@arkecosystem/platform-sdk-profiles";
+import { Contracts } from "@arkecosystem/platform-sdk-profiles";
 import { Badge } from "app/components/Badge";
 import { Card } from "app/components/Card";
 import { DropdownOption } from "app/components/Dropdown";
@@ -6,7 +6,7 @@ import { ProfileAvatar } from "domains/profile/components/ProfileAvatar";
 import React from "react";
 
 type ProfileCardProps = {
-	profile: Profile;
+	profile: Contracts.IProfile;
 	actions?: DropdownOption[];
 	onSelect?: any;
 	onClick?: any;

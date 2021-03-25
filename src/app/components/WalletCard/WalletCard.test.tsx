@@ -1,4 +1,4 @@
-import { Profile, ReadWriteWallet, WalletData, WalletFlag, WalletSetting } from "@arkecosystem/platform-sdk-profiles";
+import { ReadWriteWallet, WalletData, WalletFlag, WalletSetting } from "@arkecosystem/platform-sdk-profiles";
 import * as useRandomNumberHook from "app/hooks/use-random-number";
 import { createMemoryHistory } from "history";
 import React from "react";
@@ -10,7 +10,7 @@ import { WalletCard } from "./WalletCard";
 const dashboardURL = `/profiles/${getDefaultProfileId()}/dashboard`;
 const history = createMemoryHistory();
 
-let profile: Profile;
+let profile: Contracts.IProfile;
 let wallet: ReadWriteWallet;
 
 describe("Wallet Card", () => {

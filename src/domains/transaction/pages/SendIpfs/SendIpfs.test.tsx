@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/require-await */
-import { Profile, ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
+import { ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
 import { BigNumber } from "@arkecosystem/platform-sdk-support";
 import { act as hookAct, renderHook } from "@testing-library/react-hooks";
 import { LedgerProvider } from "app/contexts";
@@ -39,7 +39,7 @@ const createTransactionMock = (wallet: ReadWriteWallet) =>
 		data: () => ipfsFixture.data,
 	});
 
-let profile: Profile;
+let profile: Contracts.IProfile;
 let wallet: ReadWriteWallet;
 const transport = getDefaultLedgerTransport();
 
@@ -117,7 +117,7 @@ describe("SendIpfs", () => {
 			const { getByTestId, asFragment } = render(
 				<FormProvider {...form.current}>
 					<LedgerProvider transport={transport}>
-						<SummaryStep transaction={transaction!} />
+						<SummaryStep transaction={transaction} />
 					</LedgerProvider>
 				</FormProvider>,
 			);

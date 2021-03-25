@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/require-await */
-import { Profile, ProfileSetting } from "@arkecosystem/platform-sdk-profiles";
+import { ProfileSetting } from "@arkecosystem/platform-sdk-profiles";
 import * as useScrollHook from "app/hooks/use-scroll";
 import electron from "electron";
 import { createMemoryHistory } from "history";
@@ -10,7 +10,7 @@ import { env, fireEvent, getDefaultProfileId, renderWithRouter, waitFor } from "
 
 import { NavigationBar } from "./NavigationBar";
 
-let profile: Profile;
+let profile: Contracts.IProfile;
 
 const dashboardURL = `/profiles/${getDefaultProfileId()}/dashboard`;
 const history = createMemoryHistory();

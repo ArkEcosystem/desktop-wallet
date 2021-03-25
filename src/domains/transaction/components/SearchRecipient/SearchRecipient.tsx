@@ -1,5 +1,4 @@
 import { Network } from "@arkecosystem/platform-sdk/dist/coins";
-import { Profile } from "@arkecosystem/platform-sdk-profiles";
 import { Address } from "app/components/Address";
 import { AvatarWrapper } from "app/components/Avatar";
 import { Button } from "app/components/Button";

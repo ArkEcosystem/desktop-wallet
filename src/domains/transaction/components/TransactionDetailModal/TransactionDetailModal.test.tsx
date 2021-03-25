@@ -1,4 +1,4 @@
-import { DelegateMapper, Profile, ReadOnlyWallet, ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
+import { DelegateMapper, ReadOnlyWallet, ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
 import { createMemoryHistory } from "history";
 import nock from "nock";
 import React from "react";
@@ -15,7 +15,7 @@ const fixtureProfileId = getDefaultProfileId();
 let dashboardURL: string;
 
 describe("TransactionDetailModal", () => {
-	let profile: Profile;
+	let profile: Contracts.IProfile;
 	let wallet: ReadWriteWallet;
 
 	beforeAll(async () => {

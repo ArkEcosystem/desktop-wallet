@@ -29,7 +29,7 @@ jest.setTimeout(10000);
 const history = createMemoryHistory();
 let walletUrl: string;
 
-let profile: Profile;
+let profile: Contracts.IProfile;
 let wallet: ReadWriteWallet;
 let blankWallet: ReadWriteWallet;
 let unvotedWallet: ReadWriteWallet;

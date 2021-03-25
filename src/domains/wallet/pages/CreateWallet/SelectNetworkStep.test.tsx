@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/require-await */
-import { Profile, ProfileSetting } from "@arkecosystem/platform-sdk-profiles";
+import { ProfileSetting } from "@arkecosystem/platform-sdk-profiles";
 import { act, renderHook } from "@testing-library/react-hooks";
 import React from "react";
 import { FormProvider, useForm } from "react-hook-form";
@@ -7,7 +7,7 @@ import { env, fireEvent, getDefaultProfileId, render } from "utils/testing-libra
 
 import { SelectNetworkStep } from "./SelectNetworkStep";
 
-let profile: Profile;
+let profile: Contracts.IProfile;
 
 const fixtureProfileId = getDefaultProfileId();
 

@@ -1,4 +1,4 @@
-import { Profile } from "@arkecosystem/platform-sdk-profiles";
+import { Contracts } from "@arkecosystem/platform-sdk-profiles";
 import { fireEvent, render, screen, waitFor } from "@testing-library/react";
 import electron, { ipcRenderer } from "electron";
 import nock from "nock";
@@ -11,7 +11,7 @@ import { PluginManagerProvider, usePluginManagerContext } from "./PluginManagerP
 
 describe("PluginManagerProvider", () => {
 	let manager: PluginManager;
-	let profile: Profile;
+	let profile: Contracts.IProfile;
 
 	beforeAll(() => {
 		nock("https://registry.npmjs.com")

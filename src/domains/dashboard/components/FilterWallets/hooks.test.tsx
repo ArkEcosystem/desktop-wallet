@@ -1,4 +1,4 @@
-import { Profile } from "@arkecosystem/platform-sdk-profiles";
+import { Contracts } from "@arkecosystem/platform-sdk-profiles";
 import { act, renderHook } from "@testing-library/react-hooks";
 import { ConfigurationProvider, EnvironmentProvider } from "app/contexts";
 import React from "react";
@@ -6,7 +6,7 @@ import { env, getDefaultProfileId, waitFor } from "utils/testing-library";
 
 import { useWalletFilters } from "./hooks";
 
-let profile: Profile;
+let profile: Contracts.IProfile;
 
 describe("useWalletFilters", () => {
 	beforeAll(() => {

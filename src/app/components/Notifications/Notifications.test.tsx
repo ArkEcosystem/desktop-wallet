@@ -1,4 +1,4 @@
-import { Profile } from "@arkecosystem/platform-sdk-profiles";
+import { Contracts } from "@arkecosystem/platform-sdk-profiles";
 import { waitFor } from "@testing-library/react";
 import nock from "nock";
 import React from "react";
@@ -8,7 +8,7 @@ const NotificationTransactionsFixtures = require("tests/fixtures/coins/ark/devne
 
 import { markAsRead, Notifications } from "./";
 
-let profile: Profile;
+let profile: Contracts.IProfile;
 
 describe("Notifications", () => {
 	beforeEach(() => {

@@ -1,5 +1,5 @@
 import { FeatureFlag } from "@arkecosystem/platform-sdk/dist/coins";
-import { ReadOnlyWallet } from "@arkecosystem/platform-sdk-profiles";
+import { Contracts } from "@arkecosystem/platform-sdk-profiles";
 import { Alert } from "app/components/Alert";
 import { FormField, FormLabel } from "app/components/Form";
 import { Header } from "app/components/Header";
@@ -35,7 +35,7 @@ export const FormStep = ({ fees, wallet, step = 0.001 }: any) => {
 			env
 				.delegates()
 				.all(wallet.coinId(), wallet.networkId())
-				.map((delegate: ReadOnlyWallet) => delegate.username()!),
+				.map((delegate: Contracts.IReadOnlyWallet) => delegate.username()!),
 		);
 	}, [env, wallet]);
 

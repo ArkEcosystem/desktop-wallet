@@ -1,4 +1,4 @@
-import { Profile } from "@arkecosystem/platform-sdk-profiles";
+import { Contracts } from "@arkecosystem/platform-sdk-profiles";
 import React from "react";
 import { act, env, fireEvent, getDefaultProfileId, renderWithRouter, waitFor } from "testing-library";
 
@@ -10,7 +10,7 @@ const peer = {
 	network: "ark.devnet",
 	host: "http://167.114.29.48:4003/api",
 };
-let profile: Profile;
+let profile: Contracts.IProfile;
 
 const onDelete = jest.fn();
 

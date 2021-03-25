@@ -1,5 +1,4 @@
 import { Network } from "@arkecosystem/platform-sdk/dist/coins";
-import { Profile } from "@arkecosystem/platform-sdk-profiles";
 import Tippy from "@tippyjs/react";
 import { Address } from "app/components/Address";
 import { Amount } from "app/components/Amount";

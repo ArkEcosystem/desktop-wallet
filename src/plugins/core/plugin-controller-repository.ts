@@ -1,4 +1,3 @@
-import { Profile } from "@arkecosystem/platform-sdk-profiles";
 import { Checkbox } from "app/components/Checkbox";
 import { Clipboard } from "app/components/Clipboard";
 import { Input, InputCurrency } from "app/components/Input";

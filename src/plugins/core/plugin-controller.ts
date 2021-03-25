@@ -1,4 +1,3 @@
-import { Profile } from "@arkecosystem/platform-sdk-profiles";
 
 import { PluginAPI } from "../types";
 import { PluginConfigurationData } from "./configuration";

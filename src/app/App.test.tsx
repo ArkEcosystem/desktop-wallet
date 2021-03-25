@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/require-await */
-import { Environment, MemoryPassword, Profile } from "@arkecosystem/platform-sdk-profiles";
+import { Environment, MemoryPassword } from "@arkecosystem/platform-sdk-profiles";
 import { translations as errorTranslations } from "domains/error/i18n";
 import { translations as profileTranslations } from "domains/profile/i18n";
 import electron from "electron";
@@ -21,7 +21,7 @@ import { App } from "./App";
 
 const dashboardUrl = `/profiles/${getDefaultProfileId()}/dashboard`;
 
-let profile: Profile;
+let profile: Contracts.IProfile;
 
 describe("App", () => {
 	beforeAll(async () => {

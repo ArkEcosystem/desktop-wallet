@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/require-await */
-import { Profile, ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
+import { ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
 import { BigNumber } from "@arkecosystem/platform-sdk-support";
 import { createMemoryHistory } from "history";
 import React from "react";
@@ -20,7 +20,7 @@ import {
 import { SendDelegateResignation } from "../SendDelegateResignation";
 
 let wallet: ReadWriteWallet;
-let profile: Profile;
+let profile: Contracts.IProfile;
 
 let resignationUrl: string;
 const dashboardUrl = `/profiles/${getDefaultProfileId()}/dashboard`;

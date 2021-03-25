@@ -1,4 +1,4 @@
-import { Avatar as AvatarSDK, Environment, Profile, ProfileSetting } from "@arkecosystem/platform-sdk-profiles";
+import { Contracts,Environment, Helpers } from "@arkecosystem/platform-sdk-profiles";
 import { Button } from "app/components/Button";
 import { Divider } from "app/components/Divider";
 import { Form, FormField, FormLabel } from "app/components/Form";
@@ -19,13 +19,13 @@ import { setThemeSource } from "utils/electron-utils";
 
 type CreateProfileFormProps = {
 	file?: ImportFile;
-	profile: Profile;
+	profile: Contracts.IProfile;
 	password?: string;
 	env: Environment;
 	showThemeToggleField?: boolean;
 	showCurrencyField?: boolean;
 	shouldValidate?: boolean;
-	onSubmit?: (profile: Profile) => void;
+	onSubmit?: (profile: Contracts.IProfile) => void;
 	onBack?: () => void;
 };
 
@@ -45,8 +45,8 @@ const CreateProfileForm = ({
 		mode: "onChange",
 		defaultValues: {
 			name: profile?.name() || "",
-			currency: profile?.settings().get(ProfileSetting.ExchangeCurrency),
-			isDarkMode: profile?.settings().get(ProfileSetting.Theme) === "dark",
+			currency: profile?.settings().get(Contracts.ProfileSetting.ExchangeCurrency),
+			isDarkMode: profile?.settings().get(Contracts.ProfileSetting.Theme) === "dark",
 			password,
 			confirmPassword: password,
 		},
@@ -114,10 +114,10 @@ const CreateProfileForm = ({
 	const handleSubmit = ({ name, password: enteredPassword, currency, isDarkMode }: any) => {
 		profile = profile || env.profiles().create(name.trim());
 
-		profile.settings().set(ProfileSetting.Name, name);
-		profile.settings().set(ProfileSetting.Theme, isDarkMode ? "dark" : "light");
-		profile.settings().set(ProfileSetting.Avatar, avatarImage);
-		profile.settings().set(ProfileSetting.ExchangeCurrency, currency);
+		profile.settings().set(Contracts.ProfileSetting.Name, name);
+		profile.settings().set(Contracts.ProfileSetting.Theme, isDarkMode ? "dark" : "light");
+		profile.settings().set(Contracts.ProfileSetting.Avatar, avatarImage);
+		profile.settings().set(Contracts.ProfileSetting.ExchangeCurrency, currency);
 
 		if (enteredPassword) {
 			profile.auth().setPassword(enteredPassword);
@@ -139,7 +139,7 @@ const CreateProfileForm = ({
 										ref={register(createProfile.name())}
 										onBlur={() => {
 											if (!avatarImage?.length || isSvg) {
-												setAvatarImage(AvatarSDK.make(formattedName));
+												setAvatarImage(Helpers.Avatar.make(formattedName));
 											}
 										}}
 									/>

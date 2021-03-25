@@ -1,5 +1,5 @@
 import { Network } from "@arkecosystem/platform-sdk/dist/coins";
-import { Profile } from "@arkecosystem/platform-sdk-profiles";
+import { Contracts } from "@arkecosystem/platform-sdk-profiles";
 import { Avatar } from "app/components/Avatar";
 import { Circle } from "app/components/Circle";
 import { useFormField } from "app/components/Form/useFormField";
@@ -12,7 +12,7 @@ import React, { useEffect, useState } from "react";
 type SelectRecipientProps = {
 	network?: Network;
 	address?: string;
-	profile: Profile;
+	profile: Contracts.IProfile;
 	disabled?: boolean;
 	isInvalid?: boolean;
 	contactSearchTitle?: string;

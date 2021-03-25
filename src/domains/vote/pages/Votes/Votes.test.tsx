@@ -20,7 +20,7 @@ import { Votes } from "./Votes";
 const history = createMemoryHistory();
 
 let emptyProfile: Profile;
-let profile: Profile;
+let profile: Contracts.IProfile;
 let wallet: ReadWriteWallet;
 let blankWallet: ReadWriteWallet;
 

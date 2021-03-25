@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/require-await */
-import { Profile, ProfileSetting } from "@arkecosystem/platform-sdk-profiles";
+import { ProfileSetting } from "@arkecosystem/platform-sdk-profiles";
 import { translations as commonTranslations } from "app/i18n/common/i18n";
 import { pluginManager, PluginProviders } from "app/PluginProviders";
 import { toasts } from "app/services";
@@ -16,7 +16,7 @@ import { translations } from "../../i18n";
 import { PluginManager } from "./PluginManager";
 
 let rendered: RenderResult;
-let profile: Profile;
+let profile: Contracts.IProfile;
 const history = createMemoryHistory();
 
 const fixtureProfileId = getDefaultProfileId();

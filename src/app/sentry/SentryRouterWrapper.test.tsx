@@ -1,4 +1,4 @@
-import { Profile, ProfileSetting, ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
+import { ProfileSetting, ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
 import Transport from "@ledgerhq/hw-transport";
 import { createTransportReplayer, RecordStore } from "@ledgerhq/hw-transport-mocker";
 import * as Sentry from "@sentry/react";
@@ -11,7 +11,7 @@ import { SentryProvider } from "./SentryProvider";
 import { SentryRouterWrapper } from "./SentryRouterWrapper";
 
 describe("Sentry Router Wrapper", () => {
-	let profile: Profile;
+	let profile: Contracts.IProfile;
 	let wallet: ReadWriteWallet;
 	let transport: typeof Transport;
 

@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/require-await */
 import { Contracts } from "@arkecosystem/platform-sdk";
-import { Profile, ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
+import { ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
 import { BigNumber } from "@arkecosystem/platform-sdk-support";
 import { act, renderHook } from "@testing-library/react-hooks";
 import React from "react";
@@ -19,7 +19,7 @@ import {
 
 import { DelegateRegistrationForm } from "./DelegateRegistrationForm";
 
-let profile: Profile;
+let profile: Contracts.IProfile;
 let wallet: ReadWriteWallet;
 let fees: Record<string, string>;
 

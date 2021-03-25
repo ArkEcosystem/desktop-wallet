@@ -32,7 +32,7 @@ jest.mock("react-router-dom", () => ({
 	}),
 }));
 
-let profile: Profile;
+let profile: Contracts.IProfile;
 let showOpenDialogMock: jest.SpyInstance;
 
 const showOpenDialogParams = {

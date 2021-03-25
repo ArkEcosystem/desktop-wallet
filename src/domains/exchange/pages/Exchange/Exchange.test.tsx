@@ -11,7 +11,7 @@ import { act, env, fireEvent, getDefaultProfileId, renderWithRouter, waitFor, wi
 import { translations } from "../../i18n";
 import { Exchange } from "./Exchange";
 
-let profile: Profile;
+let profile: Contracts.IProfile;
 const history = createMemoryHistory();
 
 const exchangeURL = `/profiles/${getDefaultProfileId()}/exchange`;

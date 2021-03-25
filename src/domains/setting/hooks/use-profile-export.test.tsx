@@ -1,10 +1,10 @@
-import { MemoryPassword, Profile } from "@arkecosystem/platform-sdk-profiles";
+import { MemoryPassword } from "@arkecosystem/platform-sdk-profiles";
 import { renderHook } from "@testing-library/react-hooks";
 import { useProfileExport } from "domains/setting/hooks/use-profile-export";
 import { env, getDefaultProfileId } from "utils/testing-library";
 
 describe("useProfileExport", () => {
-	let profile: Profile;
+	let profile: Contracts.IProfile;
 
 	beforeAll(() => {
 		profile = env.profiles().findById(getDefaultProfileId());

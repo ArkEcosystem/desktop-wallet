@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/require-await */
-import { Profile, ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
+import { ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
 import { BigNumber } from "@arkecosystem/platform-sdk-support";
 import { createMemoryHistory } from "history";
 import nock from "nock";
@@ -23,7 +23,7 @@ import {
 
 import { SendRegistration } from "./";
 
-let profile: Profile;
+let profile: Contracts.IProfile;
 let wallet: ReadWriteWallet;
 let secondWallet: ReadWriteWallet;
 const history = createMemoryHistory();

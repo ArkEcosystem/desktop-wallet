@@ -1,4 +1,4 @@
-import { Profile, ReadOnlyWallet, ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
+import { ReadOnlyWallet, ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
 import { renderHook } from "@testing-library/react-hooks";
 import React from "react";
 import { FormProvider, useForm } from "react-hook-form";
@@ -7,7 +7,7 @@ import { env, getDefaultProfileId, render, screen } from "utils/testing-library"
 import { VoteLedgerReview } from "./LedgerReview";
 
 describe("LedgerReview", () => {
-	let profile: Profile;
+	let profile: Contracts.IProfile;
 	let wallet: ReadWriteWallet;
 
 	beforeEach(() => {

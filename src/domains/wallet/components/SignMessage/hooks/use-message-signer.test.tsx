@@ -1,11 +1,11 @@
-import { Profile, ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
+import { ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
 import { renderHook } from "@testing-library/react-hooks";
 import { env, getDefaultProfileId, getDefaultWalletMnemonic } from "utils/testing-library";
 
 import { useMessageSigner } from "./use-message-signer";
 
 describe("Use Message Signer Hook", () => {
-	let profile: Profile;
+	let profile: Contracts.IProfile;
 	let wallet: ReadWriteWallet;
 
 	beforeEach(() => {

@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/require-await */
-import { Profile } from "@arkecosystem/platform-sdk-profiles";
+import { Contracts } from "@arkecosystem/platform-sdk-profiles";
 import { EnvironmentProvider } from "app/contexts";
 import { ImportProfileForm } from "domains/profile/pages/ImportProfile/ProfileFormStep";
 import electron from "electron";
@@ -8,7 +8,7 @@ import os from "os";
 import React from "react";
 import * as utils from "utils/electron-utils";
 import { act, env, fireEvent, renderWithRouter, waitFor } from "utils/testing-library";
-let profile: Profile;
+let profile: Contracts.IProfile;
 
 let showOpenDialogMock: jest.SpyInstance;
 const showOpenDialogParams = {

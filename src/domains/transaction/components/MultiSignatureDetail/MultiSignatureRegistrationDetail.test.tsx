@@ -1,4 +1,4 @@
-import { Profile, ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
+import { ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
 import React from "react";
 import { TransactionFixture } from "tests/fixtures/transactions";
 import { env, getDefaultProfileId, render, screen, waitFor } from "utils/testing-library";
@@ -7,7 +7,7 @@ import { translations } from "../../i18n";
 import { MultiSignatureRegistrationDetail } from "./MultiSignatureRegistrationDetail";
 
 describe("MultiSignatureRegistrationDetail", () => {
-	let profile: Profile;
+	let profile: Contracts.IProfile;
 	let wallet: ReadWriteWallet;
 
 	beforeEach(() => {

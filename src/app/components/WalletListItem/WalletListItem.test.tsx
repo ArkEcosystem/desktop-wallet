@@ -1,4 +1,4 @@
-import { Profile, ReadWriteWallet, WalletData, WalletFlag } from "@arkecosystem/platform-sdk-profiles";
+import { ReadWriteWallet, WalletData, WalletFlag } from "@arkecosystem/platform-sdk-profiles";
 import { createMemoryHistory } from "history";
 import React from "react";
 import { Route } from "react-router-dom";
@@ -10,7 +10,7 @@ import { WalletListItem } from "./WalletListItem";
 const dashboardURL = `/profiles/${getDefaultProfileId()}/dashboard`;
 const history = createMemoryHistory();
 
-let profile: Profile;
+let profile: Contracts.IProfile;
 let wallet: ReadWriteWallet;
 
 describe("WalletListItem", () => {

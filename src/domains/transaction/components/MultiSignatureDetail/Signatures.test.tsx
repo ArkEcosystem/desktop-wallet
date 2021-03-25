@@ -1,11 +1,11 @@
-import { Profile, ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
+import { ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
 import React from "react";
 import { env, getDefaultProfileId, render, screen, waitFor } from "utils/testing-library";
 
 import { Signatures } from "./Signatures";
 
 describe("Signatures", () => {
-	let profile: Profile;
+	let profile: Contracts.IProfile;
 	let wallet: ReadWriteWallet;
 
 	beforeEach(() => {

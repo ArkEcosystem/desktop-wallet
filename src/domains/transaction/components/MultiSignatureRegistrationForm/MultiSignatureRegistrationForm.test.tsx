@@ -1,5 +1,5 @@
 import { Contracts } from "@arkecosystem/platform-sdk";
-import { Profile, ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
+import { ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
 import { BigNumber } from "@arkecosystem/platform-sdk-support";
 import { renderHook } from "@testing-library/react-hooks";
 import { Form } from "app/components/Form";
@@ -13,7 +13,7 @@ import { translations as transactionTranslations } from "../../i18n";
 import { MultiSignatureRegistrationForm } from "./MultiSignatureRegistrationForm";
 
 describe("MultiSignature Registration Form", () => {
-	let profile: Profile;
+	let profile: Contracts.IProfile;
 	let wallet: ReadWriteWallet;
 	let wallet2: ReadWriteWallet;
 	let fees: Contracts.TransactionFee;

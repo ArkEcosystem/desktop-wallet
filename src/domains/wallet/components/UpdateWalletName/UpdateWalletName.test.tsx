@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/require-await */
-import { Profile, ReadWriteWallet, WalletSetting } from "@arkecosystem/platform-sdk-profiles";
+import { ReadWriteWallet, WalletSetting } from "@arkecosystem/platform-sdk-profiles";
 import { translations as commonTranslations } from "app/i18n/common/i18n";
 import React from "react";
 import { act, env, fireEvent, getDefaultProfileId, render, waitFor } from "testing-library";
@@ -7,7 +7,7 @@ import { act, env, fireEvent, getDefaultProfileId, render, waitFor } from "testi
 import { translations } from "../../i18n";
 import { UpdateWalletName } from "./UpdateWalletName";
 
-let profile: Profile;
+let profile: Contracts.IProfile;
 let wallet: ReadWriteWallet;
 
 describe("UpdateWalletName", () => {

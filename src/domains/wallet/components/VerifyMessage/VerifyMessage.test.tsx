@@ -1,13 +1,13 @@
 /* eslint-disable @typescript-eslint/require-await */
 
-import { Profile, ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
+import { ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
 import React from "react";
 import { act, env, fireEvent, getDefaultProfileId, render, screen, waitFor } from "testing-library";
 
 import { VerifyMessage } from "./VerifyMessage";
 
 let wallet: ReadWriteWallet;
-let profile: Profile;
+let profile: Contracts.IProfile;
 let signedMessage: any;
 let signedMessageText: string;
 let signedMessageMnemonic: string;

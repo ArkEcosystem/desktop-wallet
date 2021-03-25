@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/require-await */
 import { Contracts } from "@arkecosystem/platform-sdk";
 import { BIP39 } from "@arkecosystem/platform-sdk-crypto";
-import { Profile, ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
+import { ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
 import { BigNumber } from "@arkecosystem/platform-sdk-support";
 import { renderHook } from "@testing-library/react-hooks";
 import { Form } from "app/components/Form";
@@ -19,7 +19,7 @@ import { SecondSignatureRegistrationForm } from "./SecondSignatureRegistrationFo
 
 describe("SecondSignatureRegistrationForm", () => {
 	const passphrase = "power return attend drink piece found tragic fire liar page disease combine";
-	let profile: Profile;
+	let profile: Contracts.IProfile;
 	let wallet: ReadWriteWallet;
 	let fees: Contracts.TransactionFee;
 

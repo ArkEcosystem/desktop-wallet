@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/require-await */
 import { Coins } from "@arkecosystem/platform-sdk";
-import { Profile, ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
+import { ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
 import { BigNumber } from "@arkecosystem/platform-sdk-support";
 import { act, renderHook } from "@testing-library/react-hooks";
 import React, { useEffect } from "react";
@@ -9,7 +9,7 @@ import { env, fireEvent, getDefaultProfileId, render, screen, waitFor, within } 
 
 import { AddRecipient } from "./AddRecipient";
 
-let profile: Profile;
+let profile: Contracts.IProfile;
 let wallet: ReadWriteWallet;
 let network: Coins.Network;
 
@@ -37,7 +37,7 @@ const renderWithFormProvider = async (children: any, defaultValues?: any) => {
 describe("AddRecipient", () => {
 	beforeAll(async () => {
 		profile = env.profiles().findById(getDefaultProfileId());
-		wallet = profile.wallets().findByAddress("D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD") as ReadWriteWallet;
+		wallet = profile.wallets().findByAddress("D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD") ;
 		network = wallet.network();
 	});
 

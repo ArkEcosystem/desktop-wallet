@@ -25,7 +25,7 @@ import { Wallets } from "./Wallets";
 const history = createMemoryHistory();
 const dashboardURL = `/profiles/${getDefaultProfileId()}/dashboard`;
 
-let profile: Profile;
+let profile: Contracts.IProfile;
 let emptyProfile: Profile;
 let wallets: ReadWriteWallet[];
 

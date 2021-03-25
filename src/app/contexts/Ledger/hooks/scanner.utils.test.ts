@@ -1,4 +1,4 @@
-import { Profile, ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
+import { ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
 import Transport from "@ledgerhq/hw-transport";
 import { createTransportReplayer, RecordStore } from "@ledgerhq/hw-transport-mocker";
 import { env, getDefaultProfileId } from "utils/testing-library";
@@ -6,7 +6,7 @@ import { env, getDefaultProfileId } from "utils/testing-library";
 import { searchAddresses } from "./scanner.utils";
 
 describe("Scanner Utils", () => {
-	let profile: Profile;
+	let profile: Contracts.IProfile;
 	let wallet: ReadWriteWallet;
 	let transport: typeof Transport;
 

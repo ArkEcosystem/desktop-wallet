@@ -1,10 +1,10 @@
-import { Profile, ProfileSetting } from "@arkecosystem/platform-sdk-profiles";
+import { ProfileSetting } from "@arkecosystem/platform-sdk-profiles";
 import React from "react";
 import { env, getDefaultProfileId, render } from "utils/testing-library";
 
 import { ProfileAvatar } from "./ProfileAvatar";
 
-let profile: Profile;
+let profile: Contracts.IProfile;
 
 describe("Avatar", () => {
 	beforeAll(() => (profile = env.profiles().findById(getDefaultProfileId())));

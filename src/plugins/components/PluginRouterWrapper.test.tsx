@@ -1,4 +1,4 @@
-import { Profile } from "@arkecosystem/platform-sdk-profiles";
+import { Contracts } from "@arkecosystem/platform-sdk-profiles";
 import { createMemoryHistory } from "history";
 import { PluginManagerProvider } from "plugins/context";
 import { PluginManager } from "plugins/core";
@@ -9,7 +9,7 @@ import { env, getDefaultProfileId, renderWithRouter, waitFor } from "utils/testi
 import { PluginRouterWrapper } from "./PluginRouterWrapper";
 
 describe("PluginRouterWrapper", () => {
-	let profile: Profile;
+	let profile: Contracts.IProfile;
 
 	beforeEach(() => {
 		profile = env.profiles().findById(getDefaultProfileId());

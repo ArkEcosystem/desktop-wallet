@@ -1,4 +1,3 @@
-import { Profile } from "@arkecosystem/platform-sdk-profiles";
 import { Button } from "app/components/Button";
 import { Image } from "app/components/Image";
 import { Modal } from "app/components/Modal";

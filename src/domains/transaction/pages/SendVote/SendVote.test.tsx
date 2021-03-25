@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/require-await */
-import { Profile, ReadOnlyWallet, ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
+import { ReadOnlyWallet, ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
 import { BigNumber } from "@arkecosystem/platform-sdk-support";
 import { renderHook } from "@testing-library/react-hooks";
 import { LedgerProvider } from "app/contexts";
@@ -52,7 +52,7 @@ const createUnvoteTransactionMock = (wallet: ReadWriteWallet) =>
 	});
 
 const passphrase = getDefaultWalletMnemonic();
-let profile: Profile;
+let profile: Contracts.IProfile;
 let wallet: ReadWriteWallet;
 let votes: ReadOnlyWallet[];
 const transport = getDefaultLedgerTransport();

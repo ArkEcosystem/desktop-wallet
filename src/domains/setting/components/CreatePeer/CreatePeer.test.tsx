@@ -1,12 +1,12 @@
 /* eslint-disable @typescript-eslint/require-await */
-import { Profile } from "@arkecosystem/platform-sdk-profiles";
+import { Contracts } from "@arkecosystem/platform-sdk-profiles";
 import { availableNetworksMock } from "domains/network/data";
 import React from "react";
 import { act, env, fireEvent, getDefaultProfileId, render, RenderResult, waitFor } from "testing-library";
 
 import { CreatePeer } from "./CreatePeer";
 
-let profile: Profile;
+let profile: Contracts.IProfile;
 const onClose = jest.fn();
 
 describe("CreatePeer", () => {

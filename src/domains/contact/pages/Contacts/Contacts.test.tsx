@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/require-await */
-import { Profile } from "@arkecosystem/platform-sdk-profiles";
+import { Contracts } from "@arkecosystem/platform-sdk-profiles";
 import { translations as commonTranslations } from "app/i18n/common/i18n";
 import { createMemoryHistory } from "history";
 import React from "react";
@@ -18,7 +18,7 @@ import {
 import { translations } from "../../i18n";
 import { Contacts } from "./Contacts";
 
-let profile: Profile;
+let profile: Contracts.IProfile;
 
 let rendered: RenderResult;
 const history = createMemoryHistory();

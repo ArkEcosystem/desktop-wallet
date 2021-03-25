@@ -1,5 +1,5 @@
 import { TransferInput } from "@arkecosystem/platform-sdk/dist/contracts";
-import { Profile, ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
+import { ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
 import { act as actHook, renderHook } from "@testing-library/react-hooks";
 import { LedgerProvider } from "app/contexts";
 import React from "react";
@@ -15,7 +15,7 @@ import {
 import { useTransactionBuilder } from "./use-transaction-builder";
 
 describe("Use Transaction Builder Hook", () => {
-	let profile: Profile;
+	let profile: Contracts.IProfile;
 	let wallet: ReadWriteWallet;
 	const transport = getDefaultLedgerTransport();
 

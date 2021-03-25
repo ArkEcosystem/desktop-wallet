@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/await-thenable */
 /* eslint-disable @typescript-eslint/require-await */
 import { Coins } from "@arkecosystem/platform-sdk";
-import { Profile, ProfileSetting } from "@arkecosystem/platform-sdk-profiles";
+import { ProfileSetting } from "@arkecosystem/platform-sdk-profiles";
 import { BigNumber } from "@arkecosystem/platform-sdk-support";
 import Transport, { Observer } from "@ledgerhq/hw-transport";
 import { createTransportReplayer, RecordStore } from "@ledgerhq/hw-transport-mocker";
@@ -30,7 +30,7 @@ import { FirstStep } from "./Step1";
 import { SecondStep } from "./Step2";
 import { ThirdStep } from "./Step3";
 
-let profile: Profile;
+let profile: Contracts.IProfile;
 const fixtureProfileId = getDefaultProfileId();
 
 const identityAddress = "DC8ghUdhS8w8d11K8cFQ37YsLBFhL3Dq2P";

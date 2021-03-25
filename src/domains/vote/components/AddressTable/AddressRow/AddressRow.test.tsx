@@ -9,7 +9,7 @@ import * as utils from "utils/electron-utils";
 
 import { AddressRow } from "./AddressRow";
 
-let profile: Profile;
+let profile: Contracts.IProfile;
 let wallet: ReadWriteWallet;
 let blankWallet: ReadWriteWallet;
 let unvotedWallet: ReadWriteWallet;

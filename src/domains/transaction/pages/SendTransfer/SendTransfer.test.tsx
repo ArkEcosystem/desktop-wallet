@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/require-await */
 import { DateTime } from "@arkecosystem/platform-sdk-intl";
-import { Profile, ProfileSetting, ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
+import { ProfileSetting, ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
 import { BigNumber } from "@arkecosystem/platform-sdk-support";
 import { act as hookAct, renderHook } from "@testing-library/react-hooks";
 import { LedgerProvider } from "app/contexts";
@@ -57,7 +57,7 @@ const createTransactionMock = (wallet: ReadWriteWallet) =>
 		data: () => transactionFixture.data,
 	});
 
-let profile: Profile;
+let profile: Contracts.IProfile;
 let wallet: ReadWriteWallet;
 
 describe("SendTransfer", () => {
@@ -228,7 +228,7 @@ describe("SendTransfer", () => {
 
 		const { getByTestId, asFragment } = render(
 			<FormProvider {...form.current}>
-				<SummaryStep transaction={transaction!} senderWallet={wallet} />
+				<SummaryStep transaction={transaction} senderWallet={wallet} />
 			</FormProvider>,
 		);
 
