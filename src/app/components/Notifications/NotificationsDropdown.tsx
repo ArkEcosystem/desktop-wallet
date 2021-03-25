@@ -1,4 +1,4 @@
-import { ExtendedTransactionData, Profile } from "@arkecosystem/platform-sdk-profiles";
+import { Contracts, DTO } from "@arkecosystem/platform-sdk-profiles";
 import { Button } from "app/components/Button";
 import { Dropdown } from "app/components/Dropdown";
 import { Icon } from "app/components/Icon";
@@ -8,8 +8,8 @@ import { TransactionDetailModal } from "domains/transaction/components/Transacti
 import { WalletUpdate } from "domains/wallet/components/WalletUpdate";
 import React, { useState } from "react";
 
-export const NotificationsDropdown = ({ profile }: { profile: Profile }) => {
-	const [transactionModalItem, setTransactionModalItem] = useState<ExtendedTransactionData>();
+export const NotificationsDropdown = ({ profile }: { profile: Contracts.IProfile }) => {
+	const [transactionModalItem, setTransactionModalItem] = useState<DTO.ExtendedTransactionData>();
 	const [isWalletUpdateOpen, setIsWalletUpdateOpen] = useState<boolean>();
 	const [walletUpdateVersion, setWalletUpdateVersion] = useState<string>();
 

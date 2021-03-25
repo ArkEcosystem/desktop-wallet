@@ -1,5 +1,5 @@
 import { Data } from "@arkecosystem/platform-sdk";
-import { MemoryPassword, Profile, ProfileSetting } from "@arkecosystem/platform-sdk-profiles";
+import { Contracts, Helpers } from "@arkecosystem/platform-sdk-profiles";
 import { BigNumber } from "@arkecosystem/platform-sdk-support";
 import { images } from "app/assets/images";
 import { Amount } from "app/components/Amount";
@@ -36,7 +36,7 @@ type NavigationBarProps = {
 	title?: string;
 	backToUrl?: string;
 	isBackDisabled?: boolean;
-	profile?: Profile;
+	profile?: Contracts.IProfile;
 	variant?: NavbarVariant;
 	menu?: MenuItem[];
 	userActions?: Action[];
@@ -178,11 +178,11 @@ export const NavigationBar = ({
 	};
 
 	const getUserInitials = () => {
-		const name = profile?.settings().get(ProfileSetting.Name);
+		const name = profile?.settings().get(Contracts.ProfileSetting.Name);
 		return name ? (name as string).slice(0, 2).toUpperCase() : undefined;
 	};
 
-	const getExchangeCurrency = () => profile?.settings().get<string>(ProfileSetting.ExchangeCurrency);
+	const getExchangeCurrency = () => profile?.settings().get<string>(Contracts.ProfileSetting.ExchangeCurrency);
 
 	const profileWalletsCount = profile?.wallets().count();
 	const wallets = useMemo(() => {
@@ -190,7 +190,7 @@ export const NavigationBar = ({
 			return [];
 		}
 
-		if (profile?.settings().get(ProfileSetting.UseTestNetworks)) {
+		if (profile?.settings().get(Contracts.ProfileSetting.UseTestNetworks)) {
 			return profile?.wallets().values();
 		}
 
@@ -276,7 +276,9 @@ export const NavigationBar = ({
 										<Amount
 											value={profile?.convertedBalance() || BigNumber.ZERO}
 											ticker={
-												profile?.settings().get<string>(ProfileSetting.ExchangeCurrency) || ""
+												profile
+													?.settings()
+													.get<string>(Contracts.ProfileSetting.ExchangeCurrency) || ""
 											}
 											normalize={false}
 										/>
@@ -294,7 +296,7 @@ export const NavigationBar = ({
 										}
 
 										if (action.value === "sign-out" && profile) {
-											MemoryPassword.forget(profile);
+											Helpers.MemoryPassword.forget(profile);
 										}
 
 										return history.push(action.mountPath(profile?.id()));

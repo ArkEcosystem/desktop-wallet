@@ -1,4 +1,4 @@
-import { ExtendedTransactionData, Profile } from "@arkecosystem/platform-sdk-profiles";
+import { Contracts,DTO } from "@arkecosystem/platform-sdk-profiles";
 
 export type NotificationsSkeletonProps = {
 	title?: string;
@@ -24,14 +24,14 @@ export type NotificationItemProps = {
 
 export type NotificationTransactionItemProps = {
 	notification: NotificationItemProps;
-	profile: Profile;
+	profile: Contracts.IProfile;
 	containmentRef?: any;
 	onVisibilityChange?: (isVisible: boolean) => void;
-	onTransactionClick?: (item?: ExtendedTransactionData) => void;
+	onTransactionClick?: (item?: DTO.ExtendedTransactionData) => void;
 };
 
 export type NotificationsProps = {
-	profile: Profile;
+	profile: Contracts.IProfile;
 	onNotificationAction?: (id: string) => void;
-	onTransactionClick?: (item?: ExtendedTransactionData) => void;
+	onTransactionClick?: (item?: DTO.ExtendedTransactionData) => void;
 };
