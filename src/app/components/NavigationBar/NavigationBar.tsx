@@ -1,4 +1,4 @@
-import { CURRENCIES } from "@arkecosystem/platform-sdk/dist/data";
+import { Data } from "@arkecosystem/platform-sdk";
 import { MemoryPassword, Profile, ProfileSetting } from "@arkecosystem/platform-sdk-profiles";
 import { BigNumber } from "@arkecosystem/platform-sdk-support";
 import { images } from "app/assets/images";
@@ -73,7 +73,8 @@ type UserInfoProps = {
 };
 
 const UserInfo = ({ exchangeCurrency, onUserAction, avatarImage, userActions, userInitials }: UserInfoProps) => {
-	const tickerConfig: typeof CURRENCIES["BTC"] | undefined = CURRENCIES[exchangeCurrency as keyof typeof CURRENCIES];
+	const tickerConfig: typeof Data.CURRENCIES["BTC"] | undefined =
+		Data.CURRENCIES[exchangeCurrency as keyof typeof Data.CURRENCIES];
 
 	return (
 		<div className="flex my-0.5 ml-4 -space-x-2">
