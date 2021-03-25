@@ -119,6 +119,7 @@ export const translations: { [key: string]: any } = {
 	PUBLIC_NETWORKS: "Public Networks",
 	DEVELOPMENT_NETWORKS: "Development Networks",
 	NEXT: "Next",
+	NO: "No",
 	NOT: "not",
 	NOT_AVAILABLE: "N/A",
 	OF: "of",
@@ -221,6 +222,7 @@ export const translations: { [key: string]: any } = {
 	ENCRYPTED_WIF: "Encrypted WIF",
 	WORD: "Word",
 	X_OF_Y: "{{0}} of {{1}}",
+	YES: "Yes",
 	YOU: "You",
 	YOUR_BALANCE: "Your balance",
 	YOUR_PASSPHRASE: "Your Passphrase",
@@ -312,5 +314,10 @@ export const translations: { [key: string]: any } = {
 	},
 	PAGINATION: {
 		ENTER_NUMBER: "Enter the page number",
+	},
+
+	CONFIRMATION_MODAL: {
+		TITLE: "Confirmation",
+		DESCRIPTION: "Are you sure you wish to navigate away from this page without saving?",
 	},
 };
