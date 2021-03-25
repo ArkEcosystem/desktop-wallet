@@ -1,5 +1,4 @@
-import { MemoryPassword } from "@arkecosystem/platform-sdk-profiles";
-import { Environment, Profile } from "@arkecosystem/platform-sdk-profiles";
+import { Contracts, Environment, Helpers } from "@arkecosystem/platform-sdk-profiles";
 import { useConfiguration, useEnvironmentContext } from "app/contexts";
 import { useCallback, useEffect, useMemo, useRef } from "react";
 import { matchPath, useLocation } from "react-router-dom";
@@ -20,7 +19,7 @@ export const useProfileUtils = (env: Environment) => {
 				return;
 			}
 
-			let response: Profile | undefined;
+			let response: Contracts.IProfile | undefined;
 
 			try {
 				response = env.profiles().findById(id);
@@ -59,7 +58,7 @@ const useProfileWatcher = () => {
 	return useMemo(() => getProfileById(profileId), [profileId, env, allProfilesCount, getProfileById]); // eslint-disable-line react-hooks/exhaustive-deps
 };
 
-const useProfileJobs = (profile?: Profile) => {
+const useProfileJobs = (profile?: Contracts.IProfile) => {
 	const { env } = useEnvironmentContext();
 	const { notifications } = useNotifications();
 
@@ -120,13 +119,13 @@ export const useProfileSyncStatus = () => {
 
 	const isIdle = () => current.status === "idle";
 	const isRestoring = () => profileIsRestoring || current.status === "restoring";
-	const isRestored = (profile: Profile) =>
+	const isRestored = (profile: Contracts.IProfile) =>
 		[...current.restored, ...restoredProfiles].includes(profile.id()) || current.status === "restored";
 	const isSyncing = () => current.status === "syncing";
 	const isSynced = () => current.status === "synced";
 	const isCompleted = () => current.status === "completed";
 
-	const shouldRestore = (profile: Profile) => {
+	const shouldRestore = (profile: Contracts.IProfile) => {
 		// For unit tests only. This flag prevents from running restore multiple times
 		// as the profiles are all restored before all (see jest.setup)
 		const isRestoredInTests = process.env.TEST_PROFILES_RESTORE_STATUS === "restored";
@@ -164,7 +163,7 @@ export const useProfileRestore = () => {
 	const { shouldRestore, markAsRestored, setStatus } = useProfileSyncStatus();
 	const { persist } = useEnvironmentContext();
 
-	const restoreProfile = async (profile: Profile, password?: string) => {
+	const restoreProfile = async (profile: Contracts.IProfile, password?: string) => {
 		if (!shouldRestore(profile)) {
 			return false;
 		}
@@ -234,14 +233,14 @@ export const useProfileSynchronizer = ({ onProfileRestoreError }: ProfileSynchro
 			setConfiguration({ profileIsSyncing: true });
 		};
 
-		const syncProfile = async (profile?: Profile) => {
+		const syncProfile = async (profile?: Contracts.IProfile) => {
 			if (!profile) {
 				return clearProfileSyncStatus();
 			}
 
 			if (profile.usesPassword()) {
 				try {
-					MemoryPassword.get(profile);
+					Helpers.MemoryPassword.get(profile);
 				} catch (error) {
 					onProfileRestoreError?.(error);
 					return;
