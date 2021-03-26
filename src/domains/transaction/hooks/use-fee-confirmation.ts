@@ -41,7 +41,10 @@ export const useFeeConfirmation = (fee: number | string, fees: Contracts.Transac
 
 			if (suppressWarning) {
 				activeProfile.settings().set(ProfileContracts.ProfileSetting.DoNotShowFeeWarning, true);
-				await persist(activeProfile);
+
+				activeProfile.save();
+
+				await persist();
 			}
 
 			const result: any = callback();
