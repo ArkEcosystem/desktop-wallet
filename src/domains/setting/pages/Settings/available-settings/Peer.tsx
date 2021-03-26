@@ -93,7 +93,10 @@ export const Peer = ({ formConfig, onSuccess }: SettingsProps) => {
 				activeProfile.settings().set(Contracts.ProfileSetting.UseCustomPeer, isCustomPeer);
 
 				await syncWallets();
-				await persist(activeProfile);
+
+				activeProfile.save();
+
+				await persist();
 			};
 
 			savePeerSettings();
@@ -206,7 +209,10 @@ export const Peer = ({ formConfig, onSuccess }: SettingsProps) => {
 		activeProfile.settings().set(Contracts.ProfileSetting.UseCustomPeer, isCustomPeer);
 
 		await syncWallets();
-		await persist(activeProfile);
+
+		activeProfile.save();
+
+		await persist();
 
 		onSuccess(t("SETTINGS.PEERS.SUCCESS"));
 	};

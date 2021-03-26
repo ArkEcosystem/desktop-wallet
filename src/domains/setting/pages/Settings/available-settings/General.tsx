@@ -254,7 +254,9 @@ export const General = ({ formConfig, onSuccess }: SettingsProps) => {
 
 		setScreenshotProtection(isScreenshotProtection);
 
-		await persist(activeProfile);
+		activeProfile.save();
+
+		await persist();
 
 		onSuccess();
 	};
