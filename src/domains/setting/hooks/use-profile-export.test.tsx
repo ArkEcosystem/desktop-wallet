@@ -45,7 +45,9 @@ describe("useProfileExport", () => {
 			excludeLedgerWallets: false,
 		});
 
-		const importedProfile = await env.profiles().import(exportedData, Helpers.MemoryPassword.get(passwordProtectedProfile));
+		const importedProfile = await env
+			.profiles()
+			.import(exportedData, Helpers.MemoryPassword.get(passwordProtectedProfile));
 
 		expect(importedProfile.settings().all()).toEqual(passwordProtectedProfile.settings().all());
 	});
