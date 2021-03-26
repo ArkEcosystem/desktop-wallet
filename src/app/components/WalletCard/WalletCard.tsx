@@ -23,7 +23,14 @@ type WalletCardProps = {
 	onSelect?: any;
 };
 
-export const WalletCard = ({ isLoading, className, wallet, actions, displayType, onSelect }: WalletCardProps) => {
+export const WalletCard = ({
+	isLoading,
+	className,
+	wallet,
+	actions,
+	displayType = "all",
+	onSelect,
+}: WalletCardProps) => {
 	const activeProfile = useActiveProfile();
 
 	const history = useHistory();
