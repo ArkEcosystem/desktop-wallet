@@ -1,4 +1,4 @@
-import { ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
+import { Contracts } from "@arkecosystem/platform-sdk-profiles";
 import { Avatar } from "app/components/Avatar";
 import { FormField, FormLabel } from "app/components/Form";
 import { Header } from "app/components/Header";
@@ -8,7 +8,13 @@ import React, { ChangeEvent } from "react";
 import { useFormContext } from "react-hook-form";
 import { useTranslation } from "react-i18next";
 
-export const FormStep = ({ wallet }: { wallet: ReadWriteWallet }) => {
+export const FormStep = ({
+	wallet,
+	disableMessageInput,
+}: {
+	wallet: Contracts.IReadWriteWallet;
+	disableMessageInput?: boolean;
+}) => {
 	const { t } = useTranslation();
 
 	const { authentication } = useValidation();
@@ -49,6 +55,7 @@ export const FormStep = ({ wallet }: { wallet: ReadWriteWallet }) => {
 						})
 					}
 					data-testid="SignMessage__message-input"
+					readOnly={disableMessageInput}
 				/>
 			</FormField>
 
@@ -73,4 +80,8 @@ export const FormStep = ({ wallet }: { wallet: ReadWriteWallet }) => {
 			)}
 		</section>
 	);
+};
+
+FormStep.defaultProps = {
+	disableMessageInput: false,
 };

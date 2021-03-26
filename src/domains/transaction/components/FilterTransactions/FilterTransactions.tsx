@@ -1,4 +1,4 @@
-import { ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
+import { Contracts } from "@arkecosystem/platform-sdk-profiles";
 import { CollapseToggleButton } from "app/components/Collapse";
 import { Dropdown, DropdownOption, DropdownOptionGroup } from "app/components/Dropdown";
 import { useTransactionTypes } from "domains/transaction/hooks/use-transaction-types";
@@ -8,7 +8,7 @@ import { useTranslation } from "react-i18next";
 type FilterTransactionsProps = {
 	className?: string;
 	defaultSelected?: DropdownOption;
-	wallets?: ReadWriteWallet[];
+	wallets?: Contracts.IReadWriteWallet[];
 	onSelect?: (selectedOption: DropdownOption, types: any) => void;
 };
 

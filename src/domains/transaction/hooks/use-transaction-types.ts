@@ -1,4 +1,4 @@
-import { Enums, ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
+import { Contracts, Enums } from "@arkecosystem/platform-sdk-profiles";
 import { uniq } from "@arkecosystem/utils";
 import { useMemo } from "react";
 import { useTranslation } from "react-i18next";
@@ -36,7 +36,7 @@ export enum MagistrateTransactionType {
 }
 
 type TransactionTypeProps = {
-	wallets?: ReadWriteWallet[];
+	wallets?: Contracts.IReadWriteWallet[];
 };
 
 export const useTransactionTypes = ({ wallets = [] }: TransactionTypeProps = {}) => {
@@ -223,7 +223,7 @@ export const useTransactionTypes = ({ wallets = [] }: TransactionTypeProps = {})
 
 	const availableTypes = useMemo(() => {
 		const allSupportedTypes = wallets.reduce(
-			(all: string[], wallet: ReadWriteWallet) => [...all, ...wallet.transactionTypes()],
+			(all: string[], wallet: Contracts.IReadWriteWallet) => [...all, ...wallet.transactionTypes()],
 			[],
 		);
 

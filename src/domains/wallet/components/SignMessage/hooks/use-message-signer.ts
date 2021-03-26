@@ -1,10 +1,10 @@
 import { Contracts } from "@arkecosystem/platform-sdk";
-import { ReadWriteWallet, WalletData } from "@arkecosystem/platform-sdk-profiles";
+import { Contracts as ProfileContracts } from "@arkecosystem/platform-sdk-profiles";
 
 type SignFn = (input: any, options?: Contracts.TransactionOptions) => Promise<string>;
 
-const signWithLedger = async (message: string, wallet: ReadWriteWallet) => {
-	const path = wallet.data().get<string>(WalletData.LedgerPath);
+const signWithLedger = async (message: string, wallet: ProfileContracts.IReadWriteWallet) => {
+	const path = wallet.data().get<string>(ProfileContracts.WalletData.LedgerPath);
 
 	let signatory = wallet.publicKey();
 
@@ -32,7 +32,7 @@ const withAbortPromise = (signal?: AbortSignal) => <T>(promise: Promise<T>) =>
 
 export const useMessageSigner = () => {
 	const sign = async (
-		wallet: ReadWriteWallet,
+		wallet: ProfileContracts.IReadWriteWallet,
 		message: string,
 		mnemonic?: string,
 		wif?: string,

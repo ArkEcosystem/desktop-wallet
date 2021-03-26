@@ -1,5 +1,5 @@
 import { Coins } from "@arkecosystem/platform-sdk";
-import { Environment, Profile, ProfileSetting } from "@arkecosystem/platform-sdk-profiles";
+import { Contracts, Environment } from "@arkecosystem/platform-sdk-profiles";
 import { Alert } from "app/components/Alert";
 import { FormField, FormLabel } from "app/components/Form";
 import { Header } from "app/components/Header";
@@ -15,14 +15,14 @@ export const SelectNetworkStep = ({
 	showError,
 }: {
 	env: Environment;
-	profile: Profile;
+	profile: Contracts.IProfile;
 	isLoading: boolean;
 	showError: boolean;
 }) => {
 	const { getValues, setValue } = useFormContext();
 
 	const networks = useMemo(() => {
-		const usesTestNetworks = profile.settings().get(ProfileSetting.UseTestNetworks);
+		const usesTestNetworks = profile.settings().get(Contracts.ProfileSetting.UseTestNetworks);
 		const availableNetworks = env.availableNetworks();
 
 		if (!usesTestNetworks) {

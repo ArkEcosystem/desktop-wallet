@@ -1,11 +1,11 @@
 /* eslint-disable @typescript-eslint/require-await */
-import { Profile } from "@arkecosystem/platform-sdk-profiles";
+import { Contracts } from "@arkecosystem/platform-sdk-profiles";
 import React from "react";
 import { act, env, fireEvent, getDefaultProfileId, render, waitFor } from "testing-library";
 
 import { SelectRecipient } from "./SelectRecipient";
 
-let profile: Profile;
+let profile: Contracts.IProfile;
 
 describe("SelectRecipient", () => {
 	beforeAll(() => {

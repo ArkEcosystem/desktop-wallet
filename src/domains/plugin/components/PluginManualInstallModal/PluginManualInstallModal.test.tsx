@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/require-await */
-import { Profile } from "@arkecosystem/platform-sdk-profiles";
+import { Contracts } from "@arkecosystem/platform-sdk-profiles";
 import { toasts } from "app/services";
 import nock from "nock";
 import { PluginManager, PluginManagerProvider } from "plugins";
@@ -9,7 +9,7 @@ import { env, fireEvent, getDefaultProfileId, render, screen, waitFor } from "ut
 import { PluginManualInstallModal } from "./PluginManualInstallModal";
 
 describe("PluginManualInstallModal", () => {
-	let profile: Profile;
+	let profile: Contracts.IProfile;
 	let manager: PluginManager;
 
 	beforeAll(() => {

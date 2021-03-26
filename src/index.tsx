@@ -4,7 +4,7 @@ import { App } from "app";
 import { ConfirmationModal } from "app/components/ConfirmationModal";
 import React, { useCallback, useRef, useState } from "react";
 import ReactDOM from "react-dom";
-import { BrowserRouter } from "react-router-dom";
+import { HashRouter } from "react-router-dom";
 
 // Based on https://github.com/fvilers/disable-react-devtools.
 if (process.env.NODE_ENV && ["development", "production"].includes(process.env.NODE_ENV)) {
@@ -44,10 +44,10 @@ export const AppRouter = ({ children }: { children: React.ReactNode }) => {
 	}, []);
 
 	return (
-		<BrowserRouter getUserConfirmation={getUserConfirmation}>
+		<HashRouter getUserConfirmation={getUserConfirmation}>
 			{children}
 			<ConfirmationModal isOpen={isOpen} onCancel={onCancel} onConfirm={onConfirm} />
-		</BrowserRouter>
+		</HashRouter>
 	);
 };
 

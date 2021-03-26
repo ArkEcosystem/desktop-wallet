@@ -1,4 +1,4 @@
-import { Contact, Profile } from "@arkecosystem/platform-sdk-profiles";
+import { Contracts } from "@arkecosystem/platform-sdk-profiles";
 import { DeleteResource } from "app/components/DeleteResource";
 import { useEnvironmentContext } from "app/contexts";
 import React from "react";
@@ -6,8 +6,8 @@ import { useTranslation } from "react-i18next";
 
 type DeleteContactProps = {
 	isOpen: boolean;
-	contact: Contact;
-	profile: Profile;
+	contact: Contracts.IContact;
+	profile: Contracts.IProfile;
 	onCancel?: any;
 	onClose?: any;
 	onDelete?: any;

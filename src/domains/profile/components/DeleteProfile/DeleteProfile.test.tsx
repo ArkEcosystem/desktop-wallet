@@ -1,10 +1,10 @@
-import { Profile } from "@arkecosystem/platform-sdk-profiles";
+import { Contracts } from "@arkecosystem/platform-sdk-profiles";
 import React from "react";
 import { act, env, fireEvent, getDefaultProfileId, render, waitFor } from "utils/testing-library";
 
 import { DeleteProfile } from "./DeleteProfile";
 
-let profile: Profile;
+let profile: Contracts.IProfile;
 
 describe("DeleteProfile", () => {
 	beforeAll(() => {

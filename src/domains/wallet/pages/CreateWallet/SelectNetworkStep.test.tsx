@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/require-await */
-import { Profile, ProfileSetting } from "@arkecosystem/platform-sdk-profiles";
+import { Contracts } from "@arkecosystem/platform-sdk-profiles";
 import { act, renderHook } from "@testing-library/react-hooks";
 import React from "react";
 import { FormProvider, useForm } from "react-hook-form";
@@ -7,7 +7,7 @@ import { env, fireEvent, getDefaultProfileId, render } from "utils/testing-libra
 
 import { SelectNetworkStep } from "./SelectNetworkStep";
 
-let profile: Profile;
+let profile: Contracts.IProfile;
 
 const fixtureProfileId = getDefaultProfileId();
 
@@ -37,7 +37,7 @@ describe("SelectNetworkStep", () => {
 		});
 
 		it("should render without test networks", async () => {
-			profile.settings().set(ProfileSetting.UseTestNetworks, false);
+			profile.settings().set(Contracts.ProfileSetting.UseTestNetworks, false);
 
 			const { result: form } = renderHook(() => useForm());
 			const { getByTestId, asFragment, queryByTestId } = render(
@@ -60,7 +60,7 @@ describe("SelectNetworkStep", () => {
 
 			expect(asFragment()).toMatchSnapshot();
 
-			profile.settings().set(ProfileSetting.UseTestNetworks, true);
+			profile.settings().set(Contracts.ProfileSetting.UseTestNetworks, true);
 		});
 	});
 });

@@ -1,4 +1,4 @@
-import { Avatar as AvatarSDK } from "@arkecosystem/platform-sdk-profiles";
+import { Helpers } from "@arkecosystem/platform-sdk-profiles";
 import React from "react";
 import tw, { css, styled } from "twin.macro";
 import { Size } from "types";
@@ -51,7 +51,7 @@ export const AvatarWrapper = styled.div<{
 `;
 
 export const Avatar = ({ address, className, highlight, noShadow, shadowColor, size, children }: Props) => {
-	const svg = React.useMemo(() => AvatarSDK.make(address), [address]);
+	const svg = React.useMemo(() => Helpers.Avatar.make(address), [address]);
 
 	return (
 		<AvatarWrapper

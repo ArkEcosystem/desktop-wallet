@@ -1,4 +1,4 @@
-import { Profile } from "@arkecosystem/platform-sdk-profiles";
+import { Contracts } from "@arkecosystem/platform-sdk-profiles";
 import { Card } from "app/components/Card";
 import { Circle } from "app/components/Circle";
 import { Icon } from "app/components/Icon";
@@ -25,7 +25,7 @@ export const Welcome = () => {
 	const profiles = useMemo(() => context.env.profiles().values(), [context]);
 
 	const [deletingProfileId, setDeletingProfileId] = useState<string | undefined>();
-	const [selectedProfile, setSelectedProfile] = useState<Profile | undefined>();
+	const [selectedProfile, setSelectedProfile] = useState<Contracts.IProfile | undefined>();
 	const [requestedAction, setRequestedAction] = useState<any>();
 
 	const profileCardActions = [
@@ -35,7 +35,7 @@ export const Welcome = () => {
 
 	useEffect(() => setScreenshotProtection(true));
 
-	const navigateToProfile = (profile: Profile, subPath = "dashboard") => {
+	const navigateToProfile = (profile: Contracts.IProfile, subPath = "dashboard") => {
 		history.push(`/profiles/${profile.id()}/${subPath}`);
 	};
 
@@ -48,7 +48,7 @@ export const Welcome = () => {
 		setRequestedAction(undefined);
 	};
 
-	const handleClick = (profile: Profile) => {
+	const handleClick = (profile: Contracts.IProfile) => {
 		if (profile.usesPassword()) {
 			setSelectedProfile(profile);
 			setRequestedAction({ label: "Homepage", value: "home" });
@@ -58,7 +58,7 @@ export const Welcome = () => {
 		}
 	};
 
-	const handleProfileAction = (profile: Profile, action: any) => {
+	const handleProfileAction = (profile: Contracts.IProfile, action: any) => {
 		if (profile.usesPassword()) {
 			setRequestedAction(action);
 			setSelectedProfile(profile);
@@ -67,7 +67,7 @@ export const Welcome = () => {
 		}
 	};
 
-	const handleRequestedAction = (profile: Profile, action: any, password?: string) => {
+	const handleRequestedAction = (profile: Contracts.IProfile, action: any, password?: string) => {
 		closeSignInModal();
 
 		switch (action?.value) {
@@ -110,7 +110,7 @@ export const Welcome = () => {
 
 						<div className="mt-8">
 							<div className="-my-2.5 flex flex-wrap justify-center">
-								{profiles.map((profile: Profile, index: number) => (
+								{profiles.map((profile: Contracts.IProfile, index: number) => (
 									<ProfileCard
 										onClick={() => handleClick(profile)}
 										key={index}

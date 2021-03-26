@@ -1,4 +1,4 @@
-import { ExtendedTransactionData, Profile, ProfileSetting, ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
+import { Contracts, DTO } from "@arkecosystem/platform-sdk-profiles";
 import { Button } from "app/components/Button";
 import { EmptyBlock } from "app/components/EmptyBlock";
 import { EmptyResults } from "app/components/EmptyResults";
@@ -12,13 +12,13 @@ import { useTranslation } from "react-i18next";
 
 type TransactionsProps = {
 	fetchMoreAction?: Function;
-	onRowClick?: (row: ExtendedTransactionData) => void;
+	onRowClick?: (row: DTO.ExtendedTransactionData) => void;
 	emptyText?: string;
 	hideHeader?: boolean;
 	isCompact?: boolean;
-	profile: Profile;
+	profile: Contracts.IProfile;
 	isVisible?: boolean;
-	wallets: ReadWriteWallet[];
+	wallets: Contracts.IReadWriteWallet[];
 	isLoading?: boolean;
 };
 
@@ -28,14 +28,15 @@ export const Transactions = memo(
 
 		const [selectedTransactionType, setSelectedTransactionType] = useState<any>();
 		const [activeTransactionModeTab, setActiveTransactionModeTab] = useState("all");
-		const [transactions, setTransactions] = useState<ExtendedTransactionData[]>([]);
-		const [transactionModalItem, setTransactionModalItem] = useState<ExtendedTransactionData | undefined>(
+		const [transactions, setTransactions] = useState<DTO.ExtendedTransactionData[]>([]);
+		const [transactionModalItem, setTransactionModalItem] = useState<DTO.ExtendedTransactionData | undefined>(
 			undefined,
 		);
 		const [isLoadingTransactions, setIsLoading] = useState(isLoading);
-		const exchangeCurrency = useMemo(() => profile.settings().get<string>(ProfileSetting.ExchangeCurrency), [
-			profile,
-		]);
+		const exchangeCurrency = useMemo(
+			() => profile.settings().get<string>(Contracts.ProfileSetting.ExchangeCurrency),
+			[profile],
+		);
 
 		const abortRef = useRef<() => void>();
 

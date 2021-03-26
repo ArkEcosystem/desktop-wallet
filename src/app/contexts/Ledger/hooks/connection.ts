@@ -1,5 +1,5 @@
 import { Coins } from "@arkecosystem/platform-sdk";
-import { Profile, WalletData } from "@arkecosystem/platform-sdk-profiles";
+import { Contracts } from "@arkecosystem/platform-sdk-profiles";
 import Transport from "@ledgerhq/hw-transport";
 import retry from "async-retry";
 import { useCallback, useEffect, useMemo, useReducer, useRef } from "react";
@@ -33,12 +33,12 @@ export const useLedgerConnection = (transport: typeof Transport) => {
 	);
 
 	const importLedgerWallets = useCallback(
-		async (wallets: LedgerData[], coin: Coins.Coin, profile: Profile) => {
+		async (wallets: LedgerData[], coin: Coins.Coin, profile: Contracts.IProfile) => {
 			for (const { address, path } of wallets) {
 				const wallet = await profile
 					.wallets()
 					.importByAddress(address, coin.network().coin(), coin.network().id());
-				wallet.data().set(WalletData.LedgerPath, path);
+				wallet.data().set(Contracts.WalletData.LedgerPath, path);
 			}
 			await persist();
 		},

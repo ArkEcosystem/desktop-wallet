@@ -1,4 +1,4 @@
-import { Profile, ProfileSetting, ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
+import { Contracts } from "@arkecosystem/platform-sdk-profiles";
 import { uniq } from "@arkecosystem/utils";
 import * as Sentry from "@sentry/react";
 import { Integrations } from "@sentry/tracing";
@@ -9,9 +9,9 @@ import { SentryErrorBoundary } from "./SentryErrorBoundary";
 const SentryContext = React.createContext<any>(undefined);
 
 const useSentry = () => {
-	const initializedProfileRef = useRef<Profile>();
+	const initializedProfileRef = useRef<Contracts.IProfile>();
 
-	const setProfileContext = (profile?: Profile) => {
+	const setProfileContext = (profile?: Contracts.IProfile) => {
 		if (!profile) {
 			Sentry.setContext("profile", null);
 			return;
@@ -26,16 +26,16 @@ const useSentry = () => {
 					.map((wallet) => wallet.networkId()),
 			),
 			settings: {
-				screenshotProtection: profile.settings().get(ProfileSetting.ScreenshotProtection),
-				advancedMode: profile.settings().get(ProfileSetting.AdvancedMode),
-				signOutPeriod: profile.settings().get(ProfileSetting.AutomaticSignOutPeriod),
-				useTestNetworks: profile.settings().get(ProfileSetting.UseTestNetworks),
+				screenshotProtection: profile.settings().get(Contracts.ProfileSetting.ScreenshotProtection),
+				advancedMode: profile.settings().get(Contracts.ProfileSetting.AdvancedMode),
+				signOutPeriod: profile.settings().get(Contracts.ProfileSetting.AutomaticSignOutPeriod),
+				useTestNetworks: profile.settings().get(Contracts.ProfileSetting.UseTestNetworks),
 			},
 			walletsCount: profile.wallets().count(),
 		});
 	};
 
-	const setWalletContext = (wallet?: ReadWriteWallet) => {
+	const setWalletContext = (wallet?: Contracts.IReadWriteWallet) => {
 		if (!wallet) {
 			Sentry.setContext("wallet", null);
 			return;
@@ -60,7 +60,7 @@ const useSentry = () => {
 		});
 	};
 
-	const initSentry = (profile: Profile) => {
+	const initSentry = (profile: Contracts.IProfile) => {
 		if (initializedProfileRef.current?.id() === profile.id()) {
 			return;
 		}

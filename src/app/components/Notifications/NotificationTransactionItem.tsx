@@ -1,4 +1,4 @@
-import { ExtendedTransactionData } from "@arkecosystem/platform-sdk-profiles";
+import { DTO } from "@arkecosystem/platform-sdk-profiles";
 import { TransactionCompactRow } from "domains/transaction/components/TransactionTable/TransactionRow/TransactionCompactRow";
 import React, { useEffect, useState } from "react";
 import VisibilitySensor from "react-visibility-sensor";
@@ -12,7 +12,7 @@ export const NotificationTransactionItem = ({
 	containmentRef,
 	onTransactionClick,
 }: NotificationTransactionItemProps) => {
-	const [transaction, setTransaction] = useState<ExtendedTransactionData>();
+	const [transaction, setTransaction] = useState<DTO.ExtendedTransactionData>();
 	const [walletName, setWalletName] = useState<string>();
 
 	useEffect(() => {

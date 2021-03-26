@@ -1,5 +1,5 @@
 import { Coins } from "@arkecosystem/platform-sdk";
-import { Profile } from "@arkecosystem/platform-sdk-profiles";
+import { Contracts } from "@arkecosystem/platform-sdk-profiles";
 import { Modal } from "app/components/Modal";
 import { useEnvironmentContext } from "app/contexts";
 import { ContactForm } from "domains/contact/components/ContactForm";
@@ -8,7 +8,7 @@ import { useTranslation } from "react-i18next";
 
 type CreateContactProps = {
 	isOpen: boolean;
-	profile: Profile;
+	profile: Contracts.IProfile;
 	networks: Coins.Network[];
 	onClose?: any;
 	onCancel?: any;

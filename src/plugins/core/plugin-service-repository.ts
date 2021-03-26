@@ -1,4 +1,4 @@
-import { Profile } from "@arkecosystem/platform-sdk-profiles";
+import { Contracts } from "@arkecosystem/platform-sdk-profiles";
 
 import { PluginAPI, PluginService, PluginServiceIdentifier } from "../types";
 import { PluginHooks } from "./internals/plugin-hooks";
@@ -22,7 +22,7 @@ export class PluginServiceRepository {
 		return this.#hooks;
 	}
 
-	api(plugin: PluginController, profile: Profile) {
+	api(plugin: PluginController, profile: Contracts.IProfile) {
 		const result = {};
 
 		for (const service of this.#services.values()) {

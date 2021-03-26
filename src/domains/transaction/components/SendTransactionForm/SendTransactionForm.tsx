@@ -1,5 +1,5 @@
 import { Coins } from "@arkecosystem/platform-sdk";
-import { Profile, ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
+import { Contracts } from "@arkecosystem/platform-sdk-profiles";
 import { FormField, FormLabel } from "app/components/Form";
 import { useFees } from "app/hooks";
 import { SelectNetwork } from "domains/network/components/SelectNetwork";
@@ -12,7 +12,7 @@ import { useTranslation } from "react-i18next";
 type SendTransactionFormProps = {
 	children?: React.ReactNode;
 	networks: Coins.Network[];
-	profile: Profile;
+	profile: Contracts.IProfile;
 	transactionType: string;
 	hasWalletId: boolean;
 	disableNetworkField?: boolean;
@@ -27,7 +27,7 @@ export const SendTransactionForm = ({
 	disableNetworkField,
 }: SendTransactionFormProps) => {
 	const { t } = useTranslation();
-	const [wallets, setWallets] = useState<ReadWriteWallet[]>([]);
+	const [wallets, setWallets] = useState<Contracts.IReadWriteWallet[]>([]);
 	const [availableNetworks, setAvailableNetworks] = useState<Coins.Network[]>([]);
 	const [dynamicFees, setDynamicFees] = useState(false);
 
@@ -78,7 +78,7 @@ export const SendTransactionForm = ({
 
 	useEffect(() => {
 		const userNetworks: string[] = [];
-		const wallets: ReadWriteWallet[] = profile.wallets().values();
+		const wallets: Contracts.IReadWriteWallet[] = profile.wallets().values();
 
 		for (const wallet of wallets) {
 			userNetworks.push(wallet.networkId());

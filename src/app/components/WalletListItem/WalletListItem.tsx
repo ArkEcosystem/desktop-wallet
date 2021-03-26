@@ -1,4 +1,4 @@
-import { ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
+import { Contracts } from "@arkecosystem/platform-sdk-profiles";
 import { Address } from "app/components/Address";
 import { Amount } from "app/components/Amount";
 import { Avatar } from "app/components/Avatar";
@@ -9,7 +9,7 @@ import React, { useMemo } from "react";
 import { shouldUseDarkColors } from "utils/electron-utils";
 
 export type WalletListItemProps = {
-	wallet: ReadWriteWallet;
+	wallet: Contracts.IReadWriteWallet;
 	activeWalletId?: string;
 	variant?: "condensed";
 	onClick?: (walletId: string) => void;

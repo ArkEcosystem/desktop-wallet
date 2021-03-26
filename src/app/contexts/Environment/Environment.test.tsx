@@ -1,5 +1,5 @@
 import { ARK } from "@arkecosystem/platform-sdk-ark";
-import { ProfileSetting } from "@arkecosystem/platform-sdk-profiles";
+import { Contracts } from "@arkecosystem/platform-sdk-profiles";
 import { httpClient } from "app/services";
 import { createMemoryHistory } from "history";
 import React from "react";
@@ -91,7 +91,7 @@ describe("Environment Context", () => {
 			const { persist } = useEnvironmentContext();
 
 			const handleClick = async () => {
-				profile.settings().set(ProfileSetting.Name, "bar");
+				profile.settings().set(Contracts.ProfileSetting.Name, "bar");
 				await persist();
 			};
 
@@ -110,7 +110,7 @@ describe("Environment Context", () => {
 			fireEvent.click(getByRole("button"));
 		});
 
-		await waitFor(() => expect(profile.settings().get(ProfileSetting.Name)).toEqual("bar"));
+		await waitFor(() => expect(profile.settings().get(Contracts.ProfileSetting.Name)).toEqual("bar"));
 	});
 
 	it("should not persist on e2e", async () => {

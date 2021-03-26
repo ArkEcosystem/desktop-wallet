@@ -1,11 +1,11 @@
 /* eslint-disable @typescript-eslint/require-await */
-import { Network } from "@arkecosystem/platform-sdk/dist/coins";
+import { Coins } from "@arkecosystem/platform-sdk";
 import React from "react";
 import { act, env, fireEvent, getDefaultProfileId, getDefaultWalletId, render, waitFor } from "utils/testing-library";
 
 import { ReceiveFunds } from "./ReceiveFunds";
 
-let network: Network;
+let network: Coins.Network;
 
 describe("ReceiveFunds", () => {
 	beforeEach(() => {

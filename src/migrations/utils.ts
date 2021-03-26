@@ -1,4 +1,4 @@
-import { Environment, Profile } from "@arkecosystem/platform-sdk-profiles";
+import { Contracts, Environment } from "@arkecosystem/platform-sdk-profiles";
 import { migrations } from "migrations";
 import fixtureData from "tests/fixtures/env/storage.json";
 import TestingPasswords from "tests/fixtures/env/testing-passwords.json";
@@ -15,7 +15,7 @@ export const migrateProfiles = async (env: Environment, profiles: any, versionTo
 	}
 };
 
-export const restoreProfileTestPassword = (profile: Profile) => {
+export const restoreProfileTestPassword = (profile: Contracts.IProfile) => {
 	const passwords = TestingPasswords as any;
 	const password = passwords?.profiles[profile.id()]?.password;
 

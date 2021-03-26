@@ -1,5 +1,5 @@
-import { Network } from "@arkecosystem/platform-sdk/dist/coins";
-import { Profile } from "@arkecosystem/platform-sdk-profiles";
+import { Coins } from "@arkecosystem/platform-sdk";
+import { Contracts } from "@arkecosystem/platform-sdk-profiles";
 import { useMemo } from "react";
 
 type Address = {
@@ -11,7 +11,7 @@ type Address = {
 	type: string;
 };
 
-export const useProfileAddresses = ({ profile, network }: { profile: Profile; network?: Network }) => {
+export const useProfileAddresses = ({ profile, network }: { profile: Contracts.IProfile; network?: Coins.Network }) => {
 	const contacts = profile.contacts().values();
 	const profileWallets = profile.wallets().values();
 

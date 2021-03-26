@@ -1,6 +1,5 @@
 import { Contracts } from "@arkecosystem/platform-sdk";
-import { TransactionData } from "@arkecosystem/platform-sdk/dist/contracts";
-import { ExtendedTransactionData } from "@arkecosystem/platform-sdk-profiles";
+import { DTO } from "@arkecosystem/platform-sdk-profiles";
 import { Circle } from "app/components/Circle";
 import { Icon } from "app/components/Icon";
 import { Tooltip } from "app/components/Tooltip";
@@ -60,7 +59,7 @@ export const TransactionRowMode = ({
 	circleShadowColor,
 }: {
 	iconSize?: Size;
-	transaction: ExtendedTransactionData | TransactionData;
+	transaction: DTO.ExtendedTransactionData | Contracts.TransactionData;
 	circleShadowColor?: string;
 }) => (
 	<BaseTransactionRowMode

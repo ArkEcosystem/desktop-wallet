@@ -1,4 +1,4 @@
-import { ExtendedTransactionData } from "@arkecosystem/platform-sdk-profiles";
+import { DTO } from "@arkecosystem/platform-sdk-profiles";
 import { Table } from "app/components/Table";
 import React, { memo, useMemo } from "react";
 import { useTranslation } from "react-i18next";
@@ -7,13 +7,13 @@ import { TransactionCompactRow } from "./TransactionRow/TransactionCompactRow";
 import { TransactionRow } from "./TransactionRow/TransactionRow";
 
 type Props = {
-	transactions: ExtendedTransactionData[];
+	transactions: DTO.ExtendedTransactionData[];
 	exchangeCurrency?: string;
 	showSignColumn?: boolean;
 	showExplorerLinkColumn?: boolean;
 	hideHeader?: boolean;
 	isCompact?: boolean;
-	onRowClick?: (row: ExtendedTransactionData) => void;
+	onRowClick?: (row: DTO.ExtendedTransactionData) => void;
 	isLoading?: boolean;
 	skeletonRowsLimit?: number;
 };
@@ -44,7 +44,7 @@ export const TransactionTable = memo(
 			{
 				Header: t("COMMON.DATE"),
 				id: "date",
-				accessor: (transaction: ExtendedTransactionData) => transaction.timestamp?.()?.toUNIX(),
+				accessor: (transaction: DTO.ExtendedTransactionData) => transaction.timestamp?.()?.toUNIX(),
 				sortDescFirst: true,
 				cellWidth: "w-50",
 			},
@@ -64,7 +64,7 @@ export const TransactionTable = memo(
 			{
 				Header: t("COMMON.AMOUNT"),
 				id: "amount",
-				accessor: (transaction: ExtendedTransactionData) => transaction.total?.().toHuman(),
+				accessor: (transaction: DTO.ExtendedTransactionData) => transaction.total?.().toHuman(),
 				sortDescFirst: true,
 				className: "justify-end",
 			},
@@ -79,7 +79,7 @@ export const TransactionTable = memo(
 					{
 						Header: t("COMMON.AMOUNT"),
 						id: "amount",
-						accessor: (transaction: ExtendedTransactionData) => transaction.total?.().toHuman(),
+						accessor: (transaction: DTO.ExtendedTransactionData) => transaction.total?.().toHuman(),
 						className: "justify-end",
 					},
 				];
@@ -114,7 +114,7 @@ export const TransactionTable = memo(
 		return (
 			<div data-testid="TransactionTable" className="relative">
 				<Table hideHeader={hideHeader} columns={columns} data={data} initialState={initialState}>
-					{(row: ExtendedTransactionData) =>
+					{(row: DTO.ExtendedTransactionData) =>
 						isCompact ? (
 							<TransactionCompactRow onClick={() => onRowClick?.(row)} transaction={row} />
 						) : (

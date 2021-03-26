@@ -1,5 +1,5 @@
 import { Coins } from "@arkecosystem/platform-sdk";
-import { Contact, ContactAddress } from "@arkecosystem/platform-sdk-profiles";
+import { Contracts } from "@arkecosystem/platform-sdk-profiles";
 import { Address } from "app/components/Address";
 import { Avatar } from "app/components/Avatar";
 import { Button } from "app/components/Button";
@@ -70,7 +70,7 @@ const AddressList = ({ addresses, onRemove }: AddressListProps) => {
 };
 
 type ContactFormProps = {
-	contact?: Contact;
+	contact?: Contracts.IContact;
 	networks: Coins.Network[];
 	onCancel?: any;
 	onChange?: any;
@@ -87,7 +87,7 @@ export const ContactForm = ({ contact, networks, onChange, onCancel, onDelete, o
 			? contact
 					.addresses()
 					.values()
-					.map((address: ContactAddress) => ({
+					.map((address: Contracts.IContactAddress) => ({
 						network: address.network(),
 						address: address.address(),
 						name: address.name(),

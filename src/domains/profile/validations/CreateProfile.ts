@@ -1,4 +1,4 @@
-import { Environment, Profile } from "@arkecosystem/platform-sdk-profiles";
+import { Contracts, Environment } from "@arkecosystem/platform-sdk-profiles";
 
 export const createProfile = (t: any, env: Environment) => ({
 	name: () => ({
@@ -18,7 +18,9 @@ export const createProfile = (t: any, env: Environment) => ({
 					env
 						.profiles()
 						.values()
-						.some((profile: Profile) => profile.name().toLowerCase() === name.trim().toLowerCase())
+						.some(
+							(profile: Contracts.IProfile) => profile.name().toLowerCase() === name.trim().toLowerCase(),
+						)
 				) {
 					return t("PROFILE.PAGE_CREATE_PROFILE.VALIDATION.NAME_EXISTS");
 				}

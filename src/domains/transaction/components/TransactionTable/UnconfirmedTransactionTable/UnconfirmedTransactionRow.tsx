@@ -1,4 +1,4 @@
-import { ExtendedTransactionData } from "@arkecosystem/platform-sdk-profiles";
+import { DTO } from "@arkecosystem/platform-sdk-profiles";
 import { TableCell, TableRow } from "app/components/Table";
 import { TimeAgo } from "app/components/TimeAgo";
 import React from "react";
@@ -10,7 +10,7 @@ import { TransactionRowRecipientIcon } from "../TransactionRow/TransactionRowRec
 import { TransactionRowRecipientLabel } from "../TransactionRow/TransactionRowRecipientLabel";
 
 type Props = {
-	transaction: ExtendedTransactionData;
+	transaction: DTO.ExtendedTransactionData;
 	walletName?: string;
 	iconSize?: Size;
 } & React.HTMLProps<any>;

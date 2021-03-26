@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/require-await */
 import { BIP39 } from "@arkecosystem/platform-sdk-crypto";
-import { Profile } from "@arkecosystem/platform-sdk-profiles";
+import { Contracts } from "@arkecosystem/platform-sdk-profiles";
 import { act } from "@testing-library/react-hooks";
 import { createMemoryHistory } from "history";
 import React from "react";
@@ -9,7 +9,7 @@ import { act as actAsync, env, fireEvent, getDefaultProfileId, renderWithRouter,
 
 import { CreateWallet } from "./CreateWallet";
 
-let profile: Profile;
+let profile: Contracts.IProfile;
 let bip39GenerateMock: any;
 
 const passphrase = "power return attend drink piece found tragic fire liar page disease combine";

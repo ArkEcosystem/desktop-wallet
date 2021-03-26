@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/require-await */
 import { BIP39 } from "@arkecosystem/platform-sdk-crypto";
-import { Profile } from "@arkecosystem/platform-sdk-profiles";
+import { Contracts } from "@arkecosystem/platform-sdk-profiles";
 import { act } from "@testing-library/react-hooks";
 import { translations as walletTranslations } from "domains/wallet/i18n";
 import { createMemoryHistory } from "history";
@@ -20,7 +20,7 @@ import { CreateWallet } from "./CreateWallet";
 
 jest.setTimeout(8000);
 
-let profile: Profile;
+let profile: Contracts.IProfile;
 let bip39GenerateMock: any;
 
 const fixtureProfileId = getDefaultProfileId();

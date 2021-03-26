@@ -1,4 +1,4 @@
-import { ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
+import { Contracts } from "@arkecosystem/platform-sdk-profiles";
 import { Button } from "app/components/Button";
 import { EmptyBlock } from "app/components/EmptyBlock";
 import { Table } from "app/components/Table";
@@ -16,7 +16,7 @@ export const WalletsList = memo(
 		const columns = [
 			{
 				Header: t("COMMON.WALLET_ADDRESS"),
-				accessor: ({ wallet }: { wallet: ReadWriteWallet }) => wallet?.alias() || wallet?.address(),
+				accessor: ({ wallet }: { wallet: Contracts.IReadWriteWallet }) => wallet?.alias() || wallet?.address(),
 			},
 			{
 				Header: t("COMMON.WALLET_TYPE"),
@@ -24,12 +24,13 @@ export const WalletsList = memo(
 			},
 			{
 				Header: t("COMMON.BALANCE"),
-				accessor: ({ wallet }: { wallet: ReadWriteWallet }) => wallet?.balance?.().toFixed(),
+				accessor: ({ wallet }: { wallet: Contracts.IReadWriteWallet }) => wallet?.balance?.().toFixed(),
 				className: "flex-row-reverse justify-end",
 			},
 			{
 				Header: t("COMMON.FIAT_VALUE"),
-				accessor: ({ wallet }: { wallet: ReadWriteWallet }) => wallet?.convertedBalance?.().toFixed(),
+				accessor: ({ wallet }: { wallet: Contracts.IReadWriteWallet }) =>
+					wallet?.convertedBalance?.().toFixed(),
 				className: "flex-row-reverse justify-end",
 			},
 		];

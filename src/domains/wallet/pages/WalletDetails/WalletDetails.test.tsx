@@ -1,6 +1,8 @@
 /* eslint-disable @typescript-eslint/require-await */
 import { Coins } from "@arkecosystem/platform-sdk";
-import { Profile, ReadOnlyWallet, ReadWriteWallet, WalletSetting } from "@arkecosystem/platform-sdk-profiles";
+import { Contracts } from "@arkecosystem/platform-sdk-profiles";
+// @README: This import is fine in tests but should be avoided in production code.
+import { ReadOnlyWallet } from "@arkecosystem/platform-sdk-profiles/dist/drivers/memory/wallets/read-only-wallet";
 import { useConfiguration } from "app/contexts";
 import { translations as commonTranslations } from "app/i18n/common/i18n";
 import { translations as walletTranslations } from "domains/wallet/i18n";
@@ -29,13 +31,13 @@ jest.setTimeout(10000);
 const history = createMemoryHistory();
 let walletUrl: string;
 
-let profile: Profile;
-let wallet: ReadWriteWallet;
-let blankWallet: ReadWriteWallet;
-let unvotedWallet: ReadWriteWallet;
+let profile: Contracts.IProfile;
+let wallet: Contracts.IReadWriteWallet;
+let blankWallet: Contracts.IReadWriteWallet;
+let unvotedWallet: Contracts.IReadWriteWallet;
 
-let emptyProfile: Profile;
-let wallet2: ReadWriteWallet;
+let emptyProfile: Contracts.IProfile;
+let wallet2: Contracts.IReadWriteWallet;
 
 const passphrase2 = "power return attend drink piece found tragic fire liar page disease combine";
 
@@ -231,7 +233,7 @@ describe("WalletDetails", () => {
 			fireEvent.click(getByTestId("UpdateWalletName__submit"));
 		});
 
-		await waitFor(() => expect(wallet.settings().get(WalletSetting.Alias)).toEqual(name));
+		await waitFor(() => expect(wallet.settings().get(Contracts.WalletSetting.Alias)).toEqual(name));
 
 		expect(asFragment()).toMatchSnapshot();
 	});
@@ -259,7 +261,7 @@ describe("WalletDetails", () => {
 			fireEvent.click(getByTestId("UpdateWalletName__submit"));
 		});
 
-		await waitFor(() => expect(wallet.settings().get(WalletSetting.Alias)).toBe(undefined));
+		await waitFor(() => expect(wallet.settings().get(Contracts.WalletSetting.Alias)).toBe(undefined));
 
 		expect(asFragment()).toMatchSnapshot();
 	});

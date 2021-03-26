@@ -137,6 +137,48 @@ Overwrite global options. Useful to implement a proxy.
 
 </details>
 
+### Message
+
+Ask user to sign a custom message with their wallet.
+
+<details><summary>Methods</summary>
+
+**`useSignMessageModal({ message: string, walletId: string }): [JSX.Component, SignedMessage, { isOpen, open, close }]`**
+
+React Hook that returns the Modal component, the signed object and methods to interact with.
+
+</details>
+
+<details><summary>Usage</summary>
+
+```tsx
+module.exports = (api) => {
+	const App = () => {
+		const wallets = api.profile().wallets();
+		const [SignModal, signResult, { isOpen, open }] = api
+			.message()
+			.useSignMessageModal({ message: "My Message", walletId: wallets[0].id });
+
+		React.useEffect(() => {
+			if (signResult) {
+				console.log(signResult.signature);
+			}
+		}, [signResult]);
+
+		return (
+			<div>
+				<SignModal />
+				<button onClick={open}>Open Modal</button>
+			</div>
+		);
+	};
+
+	api.launch().render(App);
+};
+```
+
+</details>
+
 ## File System Loader
 
 Simple as it looks, the loader will search for this structure to check for valid plugins.

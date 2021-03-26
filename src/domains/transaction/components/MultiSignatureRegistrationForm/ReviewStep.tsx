@@ -1,4 +1,4 @@
-import { ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
+import { Contracts } from "@arkecosystem/platform-sdk-profiles";
 import { BigNumber } from "@arkecosystem/platform-sdk-support";
 import { Circle } from "app/components/Circle";
 import { Header } from "app/components/Header";
@@ -15,7 +15,7 @@ import { useTranslation } from "react-i18next";
 import { RecipientList } from "../RecipientList";
 import { TotalAmountBox } from "../TotalAmountBox";
 
-export const ReviewStep = ({ wallet }: { wallet: ReadWriteWallet }) => {
+export const ReviewStep = ({ wallet }: { wallet: Contracts.IReadWriteWallet }) => {
 	const { t } = useTranslation();
 	const { unregister, watch } = useFormContext();
 	const { fee, participants, minParticipants } = watch();

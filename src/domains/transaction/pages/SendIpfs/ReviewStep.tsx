@@ -1,4 +1,4 @@
-import { ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
+import { Contracts } from "@arkecosystem/platform-sdk-profiles";
 import { Circle } from "app/components/Circle";
 import { Header } from "app/components/Header";
 import { Icon } from "app/components/Icon";
@@ -13,7 +13,7 @@ import React, { useEffect, useState } from "react";
 import { useFormContext } from "react-hook-form";
 import { useTranslation } from "react-i18next";
 
-export const ReviewStep = ({ wallet }: { wallet: ReadWriteWallet }) => {
+export const ReviewStep = ({ wallet }: { wallet: Contracts.IReadWriteWallet }) => {
 	const { t } = useTranslation();
 	const { getValues, unregister, watch } = useFormContext();
 

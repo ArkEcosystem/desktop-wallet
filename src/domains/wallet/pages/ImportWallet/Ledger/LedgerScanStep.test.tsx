@@ -1,4 +1,4 @@
-import { Profile, ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
+import { Contracts } from "@arkecosystem/platform-sdk-profiles";
 import Transport, { Observer } from "@ledgerhq/hw-transport";
 import { createTransportReplayer, RecordStore } from "@ledgerhq/hw-transport-mocker";
 import { LedgerProvider } from "app/contexts/Ledger/Ledger";
@@ -12,8 +12,8 @@ import { LedgerScanStep } from "./LedgerScanStep";
 jest.setTimeout(10000);
 
 describe("LedgerScanStep", () => {
-	let profile: Profile;
-	let wallet: ReadWriteWallet;
+	let profile: Contracts.IProfile;
+	let wallet: Contracts.IReadWriteWallet;
 	let transport: typeof Transport;
 	let observer: Observer<any>;
 	let publicKeyPaths = new Map();

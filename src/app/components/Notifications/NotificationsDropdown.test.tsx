@@ -1,4 +1,4 @@
-import { Profile } from "@arkecosystem/platform-sdk-profiles";
+import { Contracts } from "@arkecosystem/platform-sdk-profiles";
 import { createMemoryHistory } from "history";
 import nock from "nock";
 import React from "react";
@@ -9,7 +9,7 @@ const NotificationTransactionsFixtures = require("tests/fixtures/coins/ark/devne
 import { NotificationsDropdown } from "./";
 
 const history = createMemoryHistory();
-let profile: Profile;
+let profile: Contracts.IProfile;
 
 describe("Notifications", () => {
 	beforeEach(() => {

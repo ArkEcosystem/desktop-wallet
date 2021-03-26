@@ -1,4 +1,4 @@
-import { ProfileSetting } from "@arkecosystem/platform-sdk-profiles";
+import { Contracts } from "@arkecosystem/platform-sdk-profiles";
 import { Page } from "app/components/Layout";
 import { useConfiguration } from "app/contexts";
 import { useActiveProfile } from "app/hooks";
@@ -21,7 +21,7 @@ export const Dashboard = () => {
 
 	const profileWalletsCount = activeProfile.wallets().count();
 	const showTransactions = useMemo(
-		() => activeProfile.settings().get<boolean>(ProfileSetting.DashboardTransactionHistory, true),
+		() => activeProfile.settings().get<boolean>(Contracts.ProfileSetting.DashboardTransactionHistory, true),
 		[activeProfile],
 	);
 

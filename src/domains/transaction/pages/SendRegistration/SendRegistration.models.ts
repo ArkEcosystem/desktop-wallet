@@ -1,5 +1,5 @@
 import { Contracts } from "@arkecosystem/platform-sdk";
-import { Environment, Profile, ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
+import { Contracts as ProfileContracts, Environment } from "@arkecosystem/platform-sdk-profiles";
 import { TFunction } from "i18next";
 import { useForm } from "react-hook-form";
 
@@ -10,20 +10,20 @@ export type ExtendedSignedTransactionData = Contracts.SignedTransactionData & {
 export type SendRegistrationDetailsOptions = {
 	transaction: ExtendedSignedTransactionData;
 	translations: TFunction;
-	wallet: ReadWriteWallet;
+	wallet: ProfileContracts.IReadWriteWallet;
 };
 
 export type SendRegistrationComponent = {
 	activeTab: number;
 	fees: Contracts.TransactionFee;
-	wallet: ReadWriteWallet;
-	profile: Profile;
+	wallet: ProfileContracts.IReadWriteWallet;
+	profile: ProfileContracts.IProfile;
 };
 
 export type SendRegistrationSignOptions = {
 	env: Environment;
 	form: ReturnType<typeof useForm>;
-	profile: Profile;
+	profile: ProfileContracts.IProfile;
 };
 
 export type SendRegistrationForm = {

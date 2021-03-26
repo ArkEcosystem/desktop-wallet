@@ -1,4 +1,4 @@
-import { ReadOnlyWallet } from "@arkecosystem/platform-sdk-profiles";
+import { ReadOnlyWallet } from "@arkecosystem/platform-sdk-profiles/dist/drivers/memory/wallets/read-only-wallet";
 import React from "react";
 import { render } from "testing-library";
 import { data } from "tests/fixtures/coins/ark/devnet/delegates.json";

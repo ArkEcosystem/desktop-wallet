@@ -1,4 +1,4 @@
-import { ExtendedTransactionData } from "@arkecosystem/platform-sdk-profiles";
+import { DTO } from "@arkecosystem/platform-sdk-profiles";
 import { Icon } from "app/components/Icon";
 import { Tooltip } from "app/components/Tooltip";
 import React from "react";
@@ -7,7 +7,7 @@ import { TransactionStatus } from "../TransactionTable.models";
 
 type Props = {
 	isSignaturePending?: boolean;
-	transaction: ExtendedTransactionData;
+	transaction: DTO.ExtendedTransactionData;
 };
 
 const getStatus = (isConfirmed: boolean, isSignaturePending?: boolean): TransactionStatus => {
