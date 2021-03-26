@@ -102,6 +102,9 @@ export const ImportWallet = () => {
 			setWalletData(wallet);
 
 			await syncAll(wallet);
+
+			activeProfile.save();
+
 			await persist();
 
 			setActiveTab(4);
