@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/require-await */
-import { ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
+import { Contracts } from "@arkecosystem/platform-sdk-profiles";
 import { BigNumber } from "@arkecosystem/platform-sdk-support";
 import { act as hookAct, renderHook } from "@testing-library/react-hooks";
 import { LedgerProvider } from "app/contexts";
@@ -28,7 +28,7 @@ import { FormStep, ReviewStep, SendIpfs, SummaryStep } from "./";
 const passphrase = getDefaultWalletMnemonic();
 const fixtureProfileId = getDefaultProfileId();
 
-const createTransactionMock = (wallet: ReadWriteWallet) =>
+const createTransactionMock = (wallet: Contracts.IReadWriteWallet) =>
 	// @ts-ignore
 	jest.spyOn(wallet.transaction(), "transaction").mockReturnValue({
 		id: () => ipfsFixture.data.id,
@@ -40,7 +40,7 @@ const createTransactionMock = (wallet: ReadWriteWallet) =>
 	});
 
 let profile: Contracts.IProfile;
-let wallet: ReadWriteWallet;
+let wallet: Contracts.IReadWriteWallet;
 const transport = getDefaultLedgerTransport();
 
 describe("SendIpfs", () => {

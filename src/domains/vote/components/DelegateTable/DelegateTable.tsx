@@ -1,4 +1,4 @@
-import { ReadOnlyWallet } from "@arkecosystem/platform-sdk-profiles";
+import { Contracts } from "@arkecosystem/platform-sdk-profiles";
 import { Address } from "app/components/Address";
 import { Avatar } from "app/components/Avatar";
 import { Button } from "app/components/Button";
@@ -14,7 +14,7 @@ import { useTranslation } from "react-i18next";
 import { DelegateRow } from "./DelegateRow";
 
 type DelegateTableProps = {
-	delegates: ReadOnlyWallet[];
+	delegates: Contracts.IReadOnlyWallet[];
 	emptyText?: string;
 	isLoading?: boolean;
 	itemsPerPage?: number;
@@ -22,7 +22,7 @@ type DelegateTableProps = {
 	selectedUnvoteAddresses?: string[];
 	selectedVoteAddresses?: string[];
 	selectedWallet: string;
-	votes?: ReadOnlyWallet[];
+	votes?: Contracts.IReadOnlyWallet[];
 	onContinue?: (unvotes: string[], votes: string[]) => void;
 };
 
@@ -47,12 +47,12 @@ export const DelegateTable = ({
 	const columns = [
 		{
 			Header: t("COMMON.RANK"),
-			accessor: (delegate: ReadOnlyWallet) => isLoading || delegate.rank(),
+			accessor: (delegate: Contracts.IReadOnlyWallet) => isLoading || delegate.rank(),
 			className: "justify-start",
 		},
 		{
 			Header: t("VOTE.DELEGATE_TABLE.NAME"),
-			accessor: (delegate: ReadOnlyWallet) => isLoading || delegate.username(),
+			accessor: (delegate: Contracts.IReadOnlyWallet) => isLoading || delegate.username(),
 		},
 		{
 			Header: t("COMMON.STATUS"),
@@ -138,7 +138,7 @@ export const DelegateTable = ({
 		setCurrentPage(page);
 	};
 
-	const paginator = (items: ReadOnlyWallet[], currentPage: number, itemsPerPage: number) => {
+	const paginator = (items: Contracts.IReadOnlyWallet[], currentPage: number, itemsPerPage: number) => {
 		const offset = (currentPage - 1) * itemsPerPage;
 		const paginatedItems = items.slice(offset).slice(0, itemsPerPage);
 
@@ -163,7 +163,7 @@ export const DelegateTable = ({
 		<div data-testid="DelegateTable">
 			<h2 className="py-5 text-2xl font-bold">{t("VOTE.DELEGATE_TABLE.TITLE")}</h2>
 			<Table columns={columns} data={data}>
-				{(delegate: ReadOnlyWallet, index: number) => {
+				{(delegate: Contracts.IReadOnlyWallet, index: number) => {
 					let isVoted = false;
 
 					if (hasVotes) {
@@ -186,7 +186,7 @@ export const DelegateTable = ({
 				}}
 			</Table>
 
-			<div className="flex justify-center mt-10 mb-24 w-full">
+			<div className="flex justify-center w-full mt-10 mb-24">
 				{totalDelegates > itemsPerPage! && (
 					<Pagination
 						totalCount={totalDelegates}
@@ -198,7 +198,7 @@ export const DelegateTable = ({
 			</div>
 
 			<div
-				className="fixed right-0 bottom-0 left-0 pt-8 pr-12 pb-10 pl-4 shadow-2xl bg-theme-background"
+				className="fixed bottom-0 left-0 right-0 pt-8 pb-10 pl-4 pr-12 shadow-2xl bg-theme-background"
 				data-testid="DelegateTable__footer"
 			>
 				<div className="container flex-1 px-8 mx-auto">

@@ -1,5 +1,5 @@
-import { SignedMessage } from "@arkecosystem/platform-sdk/dist/contracts";
-import { ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
+import { Contracts } from "@arkecosystem/platform-sdk";
+import { Contracts as ProfileContracts } from "@arkecosystem/platform-sdk-profiles";
 import { Address } from "app/components/Address";
 import { Avatar } from "app/components/Avatar";
 import { Header } from "app/components/Header";
@@ -8,7 +8,13 @@ import { TransactionDetail } from "domains/transaction/components/TransactionDet
 import React, { useRef } from "react";
 import { useTranslation } from "react-i18next";
 
-export const SignedStep = ({ signedMessage, wallet }: { signedMessage: SignedMessage; wallet: ReadWriteWallet }) => {
+export const SignedStep = ({
+	signedMessage,
+	wallet,
+}: {
+	signedMessage: Contracts.SignedMessage;
+	wallet: ProfileContracts.IReadWriteWallet;
+}) => {
 	const { t } = useTranslation();
 
 	const messageRef = useRef();

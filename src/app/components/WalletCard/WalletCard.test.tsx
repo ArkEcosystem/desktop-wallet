@@ -1,4 +1,4 @@
-import { ReadWriteWallet, WalletData, WalletFlag, WalletSetting } from "@arkecosystem/platform-sdk-profiles";
+import { Contracts } from "@arkecosystem/platform-sdk-profiles";
 import * as useRandomNumberHook from "app/hooks/use-random-number";
 import { createMemoryHistory } from "history";
 import React from "react";
@@ -11,7 +11,7 @@ const dashboardURL = `/profiles/${getDefaultProfileId()}/dashboard`;
 const history = createMemoryHistory();
 
 let profile: Contracts.IProfile;
-let wallet: ReadWriteWallet;
+let wallet: Contracts.IReadWriteWallet;
 
 describe("Wallet Card", () => {
 	beforeAll(() => {
@@ -23,8 +23,8 @@ describe("Wallet Card", () => {
 	beforeEach(() => {
 		profile = env.profiles().findById(getDefaultProfileId());
 		wallet = profile.wallets().findById("ac38fe6d-4b67-4ef1-85be-17c5f6841129");
-		wallet.data().set(WalletFlag.Starred, true);
-		wallet.data().set(WalletData.LedgerPath, "0");
+		wallet.data().set(Contracts.WalletFlag.Starred, true);
+		wallet.data().set(Contracts.WalletData.LedgerPath, "0");
 
 		jest.spyOn(wallet, "isMultiSignature").mockReturnValue(true);
 	});
@@ -93,7 +93,7 @@ describe("Wallet Card", () => {
 	});
 
 	it("should render with wallet data", () => {
-		wallet.settings().set(WalletSetting.Alias, "My wallet");
+		wallet.settings().set(Contracts.WalletSetting.Alias, "My wallet");
 
 		const { container } = renderWithRouter(
 			<Route path="/profiles/:profileId/dashboard">
@@ -109,7 +109,7 @@ describe("Wallet Card", () => {
 	});
 
 	it("should render with wallet data and optional icon", () => {
-		wallet.settings().set(WalletSetting.Alias, "My wallet");
+		wallet.settings().set(Contracts.WalletSetting.Alias, "My wallet");
 
 		const { container } = renderWithRouter(
 			<Route path="/profiles/:profileId/dashboard">

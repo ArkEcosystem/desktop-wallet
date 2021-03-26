@@ -1,4 +1,4 @@
-import { ProfileSetting, ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
+import { Contracts } from "@arkecosystem/platform-sdk-profiles";
 import Transport from "@ledgerhq/hw-transport";
 import { createTransportReplayer, RecordStore } from "@ledgerhq/hw-transport-mocker";
 import * as Sentry from "@sentry/react";
@@ -12,7 +12,7 @@ import { SentryRouterWrapper } from "./SentryRouterWrapper";
 
 describe("Sentry Router Wrapper", () => {
 	let profile: Contracts.IProfile;
-	let wallet: ReadWriteWallet;
+	let wallet: Contracts.IReadWriteWallet;
 	let transport: typeof Transport;
 
 	beforeEach(() => {
@@ -75,7 +75,7 @@ describe("Sentry Router Wrapper", () => {
 		let calledOptions: any;
 		jest.spyOn(Sentry, "init").mockImplementation((value) => (calledOptions = value));
 
-		profile.settings().set(ProfileSetting.ErrorReporting, true);
+		profile.settings().set(Contracts.ProfileSetting.ErrorReporting, true);
 
 		renderWithRouter(
 			<Route path="/profile/:profileId/dashboard">
@@ -100,12 +100,12 @@ describe("Sentry Router Wrapper", () => {
 			}),
 		);
 
-		profile.settings().set(ProfileSetting.ErrorReporting, false);
+		profile.settings().set(Contracts.ProfileSetting.ErrorReporting, false);
 	});
 
 	it("should init sentry only once", () => {
 		const sentryInitSpy = jest.spyOn(Sentry, "init").mockImplementation();
-		profile.settings().set(ProfileSetting.ErrorReporting, true);
+		profile.settings().set(Contracts.ProfileSetting.ErrorReporting, true);
 
 		const Component = () => (
 			<>
@@ -129,7 +129,7 @@ describe("Sentry Router Wrapper", () => {
 
 		expect(sentryInitSpy).toHaveBeenCalledTimes(1);
 
-		profile.settings().set(ProfileSetting.ErrorReporting, false);
+		profile.settings().set(Contracts.ProfileSetting.ErrorReporting, false);
 	});
 
 	it("should register current wallet context", async () => {

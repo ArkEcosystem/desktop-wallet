@@ -1,4 +1,4 @@
-import { Network } from "@arkecosystem/platform-sdk/dist/coins";
+import { Coins } from "@arkecosystem/platform-sdk";
 import { Contracts } from "@arkecosystem/platform-sdk-profiles";
 import { Avatar } from "app/components/Avatar";
 import { Circle } from "app/components/Circle";
@@ -10,7 +10,7 @@ import { SearchRecipient } from "domains/transaction/components/SearchRecipient"
 import React, { useEffect, useState } from "react";
 
 type SelectRecipientProps = {
-	network?: Network;
+	network?: Coins.Network;
 	address?: string;
 	profile: Contracts.IProfile;
 	disabled?: boolean;

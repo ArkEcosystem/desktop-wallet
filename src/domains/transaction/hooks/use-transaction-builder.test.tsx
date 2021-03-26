@@ -1,5 +1,5 @@
-import { TransferInput } from "@arkecosystem/platform-sdk/dist/contracts";
-import { ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
+import { Contracts } from "@arkecosystem/platform-sdk";
+import { Contracts as ProfileContracts } from "@arkecosystem/platform-sdk-profiles";
 import { act as actHook, renderHook } from "@testing-library/react-hooks";
 import { LedgerProvider } from "app/contexts";
 import React from "react";
@@ -15,8 +15,8 @@ import {
 import { useTransactionBuilder } from "./use-transaction-builder";
 
 describe("Use Transaction Builder Hook", () => {
-	let profile: Contracts.IProfile;
-	let wallet: ReadWriteWallet;
+	let profile: ProfileContracts.IProfile;
+	let wallet: ProfileContracts.IReadWriteWallet;
 	const transport = getDefaultLedgerTransport();
 
 	const wrapper = ({ children }: any) => (
@@ -33,7 +33,7 @@ describe("Use Transaction Builder Hook", () => {
 	it("should sign transfer", async () => {
 		const { result } = renderHook(() => useTransactionBuilder(profile), { wrapper });
 
-		const input: TransferInput = {
+		const input: Contracts.TransferInput = {
 			from: wallet.address(),
 			fee: "1",
 			nonce: "1",
@@ -64,7 +64,7 @@ describe("Use Transaction Builder Hook", () => {
 			publicKeys: [wallet.publicKey()!, profile.wallets().last().publicKey()!],
 		});
 
-		const input: TransferInput = {
+		const input: Contracts.TransferInput = {
 			from: wallet.address(),
 			fee: "1",
 			nonce: "1",
@@ -97,7 +97,7 @@ describe("Use Transaction Builder Hook", () => {
 			"dd3f96466bc50077b01e441cd35eb3c5aabd83670d371c2be8cc772ed189a7315dd66e88bde275d89a3beb7ef85ef84a52ec4213f540481cd09ecf6d21e452bf",
 		);
 
-		const input: TransferInput = {
+		const input: Contracts.TransferInput = {
 			from: wallet.address(),
 			fee: "1",
 			nonce: "1",
@@ -133,7 +133,7 @@ describe("Use Transaction Builder Hook", () => {
 			"dd3f96466bc50077b01e441cd35eb3c5aabd83670d371c2be8cc772ed189a7315dd66e88bde275d89a3beb7ef85ef84a52ec4213f540481cd09ecf6d21e452bf",
 		);
 
-		const input: TransferInput = {
+		const input: Contracts.TransferInput = {
 			from: wallet.address(),
 			fee: "1",
 			nonce: "1",
@@ -175,7 +175,7 @@ describe("Use Transaction Builder Hook", () => {
 				),
 		);
 
-		const input: TransferInput = {
+		const input: Contracts.TransferInput = {
 			from: wallet.address(),
 			fee: "1",
 			nonce: "1",

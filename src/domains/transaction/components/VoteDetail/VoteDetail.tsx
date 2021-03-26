@@ -1,5 +1,4 @@
 import { Contracts, DTO } from "@arkecosystem/platform-sdk-profiles";
-import { DelegateMapper } from "@arkecosystem/platform-sdk-profiles/dist/drivers/memory/mappers/delegate-mapper";
 import { Modal } from "app/components/Modal";
 import { useEnvironmentContext } from "app/contexts";
 import {
@@ -39,8 +38,8 @@ export const VoteDetail = ({ transaction, isOpen, onClose }: VoteDetailProps) =>
 			setIsLoadingDelegates(true);
 
 			setDelegates({
-				votes: DelegateMapper.execute(wallet, (transaction as DTO.VoteData).votes()),
-				unvotes: DelegateMapper.execute(wallet, (transaction as DTO.VoteData).unvotes()),
+				votes: env.delegates().map(wallet, (transaction as DTO.VoteData).votes()),
+				unvotes: env.delegates().map(wallet, (transaction as DTO.VoteData).unvotes()),
 			});
 
 			setIsLoadingDelegates(false);

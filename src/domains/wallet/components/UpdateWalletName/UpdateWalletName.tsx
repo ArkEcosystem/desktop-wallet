@@ -1,4 +1,4 @@
-import { Profile, ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
+import { Contracts } from "@arkecosystem/platform-sdk-profiles";
 import { Button } from "app/components/Button";
 import { FormField, FormLabel } from "app/components/Form";
 import { Input } from "app/components/Input";
@@ -10,7 +10,7 @@ import { useTranslation } from "react-i18next";
 type UpdateWalletNameProps = {
 	currentAlias?: string;
 	walletId?: string;
-	profile: Profile;
+	profile: Contracts.IProfile;
 	isOpen: boolean;
 	onClose?: any;
 	onCancel?: any;
@@ -81,7 +81,7 @@ export const UpdateWalletName = ({
 											.wallets()
 											.values()
 											.filter(
-												(item: ReadWriteWallet) =>
+												(item: Contracts.IReadWriteWallet) =>
 													item.id() !== walletId &&
 													item.alias() &&
 													item.alias()!.trim().toLowerCase() === alias.trim().toLowerCase(),

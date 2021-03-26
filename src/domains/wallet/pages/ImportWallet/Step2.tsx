@@ -1,4 +1,5 @@
 import { Coins } from "@arkecosystem/platform-sdk";
+import { Contracts } from "@arkecosystem/platform-sdk-profiles";
 import { FormField, FormLabel } from "app/components/Form";
 import { Header } from "app/components/Header";
 import { Input, InputAddress, InputPassword } from "app/components/Input";
@@ -14,10 +15,12 @@ const MnemonicField = ({
 	label,
 	findAddress,
 	...props
-}: { profile: Profile; network: Coins.Network; label: string; findAddress: (value: string) => Promise<string> } & Omit<
-	React.HTMLProps<any>,
-	"ref"
->) => {
+}: {
+	profile: Contracts.IProfile;
+	network: Coins.Network;
+	label: string;
+	findAddress: (value: string) => Promise<string>;
+} & Omit<React.HTMLProps<any>, "ref">) => {
 	const { t } = useTranslation();
 	const { register } = useFormContext();
 
@@ -50,7 +53,7 @@ const MnemonicField = ({
 	);
 };
 
-const AddressField = ({ network, profile }: { profile: Profile; network: Coins.Network }) => {
+const AddressField = ({ network, profile }: { profile: Contracts.IProfile; network: Coins.Network }) => {
 	const { t } = useTranslation();
 	const { register } = useFormContext();
 
@@ -77,7 +80,15 @@ const AddressField = ({ network, profile }: { profile: Profile; network: Coins.N
 	);
 };
 
-const ImportInputField = ({ type, network, profile }: { type: string; network: Coins.Network; profile: Profile }) => {
+const ImportInputField = ({
+	type,
+	network,
+	profile,
+}: {
+	type: string;
+	network: Coins.Network;
+	profile: Contracts.IProfile;
+}) => {
 	const { t } = useTranslation();
 	const { env } = useEnvironmentContext();
 	const [coin] = useState(() => env.coin(network.coin(), network.id()));
@@ -171,7 +182,7 @@ const ImportInputField = ({ type, network, profile }: { type: string; network: C
 	return null;
 };
 
-export const SecondStep = ({ profile }: { profile: Profile }) => {
+export const SecondStep = ({ profile }: { profile: Contracts.IProfile }) => {
 	const { t } = useTranslation();
 	const { getValues, watch, setValue, clearErrors } = useFormContext();
 

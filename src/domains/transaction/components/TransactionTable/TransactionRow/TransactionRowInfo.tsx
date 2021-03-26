@@ -1,4 +1,4 @@
-import { ExtendedTransactionData } from "@arkecosystem/platform-sdk-profiles";
+import { DTO } from "@arkecosystem/platform-sdk-profiles";
 import { Icon } from "app/components/Icon";
 import { Tooltip } from "app/components/Tooltip";
 import React from "react";
@@ -42,7 +42,7 @@ export const BaseTransactionRowInfo = ({ memo, isMultiSignature, isLedger }: Pro
 	);
 };
 
-export const TransactionRowInfo = ({ transaction }: { transaction: ExtendedTransactionData }) => (
+export const TransactionRowInfo = ({ transaction }: { transaction: DTO.ExtendedTransactionData }) => (
 	<BaseTransactionRowInfo
 		memo={transaction.memo()}
 		isMultiSignature={transaction.isMultiSignature()}

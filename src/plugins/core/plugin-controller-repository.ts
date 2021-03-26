@@ -14,7 +14,7 @@ import { PluginController } from "./plugin-controller";
 
 export class PluginControllerRepository {
 	#plugins: PluginController[] = [];
-	#currentProfile: Profile | undefined;
+	#currentProfile: Contracts.IProfile | undefined;
 
 	all() {
 		return this.#plugins;
@@ -49,7 +49,7 @@ export class PluginControllerRepository {
 		return this.#currentProfile;
 	}
 
-	runAllEnabled(profile: Profile) {
+	runAllEnabled(profile: Contracts.IProfile) {
 		if (this.#currentProfile) {
 			throw new Error(
 				`Profile ${this.#currentProfile.id()} has the plugins running, call #dispose to close them first.`,

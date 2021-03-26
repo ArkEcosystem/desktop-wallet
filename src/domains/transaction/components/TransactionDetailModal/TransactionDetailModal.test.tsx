@@ -1,4 +1,6 @@
-import { DelegateMapper, ReadOnlyWallet, ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
+import { Contracts } from "@arkecosystem/platform-sdk-profiles";
+// @README: This import is fine in tests but should be avoided in production code.
+import { ReadOnlyWallet } from "@arkecosystem/platform-sdk-profiles/dist/drivers/memory/wallets/read-only-wallet";
 import { createMemoryHistory } from "history";
 import nock from "nock";
 import React from "react";
@@ -16,7 +18,7 @@ let dashboardURL: string;
 
 describe("TransactionDetailModal", () => {
 	let profile: Contracts.IProfile;
-	let wallet: ReadWriteWallet;
+	let wallet: Contracts.IReadWriteWallet;
 
 	beforeAll(async () => {
 		nock.disableNetConnect();
@@ -168,9 +170,10 @@ describe("TransactionDetailModal", () => {
 	});
 
 	it("should render a vote modal", () => {
-		jest.spyOn(DelegateMapper, "execute").mockImplementation((wallet, votes) =>
+		jest.spyOn(env.delegates(), "map").mockImplementation((wallet, votes) =>
 			votes.map(
 				(vote: string, index: number) =>
+					// @ts-ignore
 					new ReadOnlyWallet({
 						address: vote,
 						username: `delegate-${index}`,
@@ -201,9 +204,10 @@ describe("TransactionDetailModal", () => {
 	});
 
 	it("should render a unvote modal", () => {
-		jest.spyOn(DelegateMapper, "execute").mockImplementation((wallet, votes) =>
+		jest.spyOn(env.delegates(), "map").mockImplementation((wallet, votes) =>
 			votes.map(
 				(vote: string, index: number) =>
+					// @ts-ignore
 					new ReadOnlyWallet({
 						address: vote,
 						username: `delegate-${index}`,

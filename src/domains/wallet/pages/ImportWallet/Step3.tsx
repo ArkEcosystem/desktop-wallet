@@ -1,4 +1,5 @@
 import { Coins } from "@arkecosystem/platform-sdk";
+import { Contracts } from "@arkecosystem/platform-sdk-profiles";
 import { BigNumber } from "@arkecosystem/platform-sdk-support";
 import { Address } from "app/components/Address";
 import { Amount } from "app/components/Amount";
@@ -20,7 +21,7 @@ export const ThirdStep = ({
 	address: string;
 	balance: BigNumber;
 	nameMaxLength: number;
-	profile: Profile;
+	profile: Contracts.IProfile;
 }) => {
 	const { getValues, register, watch } = useFormContext();
 

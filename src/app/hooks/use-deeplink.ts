@@ -1,4 +1,4 @@
-import { URI } from "@arkecosystem/platform-sdk-support/dist/uri";
+import { URI } from "@arkecosystem/platform-sdk-support";
 import { useEnvironmentContext } from "app/contexts";
 import { toasts } from "app/services";
 import { ipcRenderer } from "electron";

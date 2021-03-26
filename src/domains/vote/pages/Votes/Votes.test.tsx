@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/require-await */
-import { Profile, ReadWriteWallet, WalletSetting } from "@arkecosystem/platform-sdk-profiles";
+import { Contracts } from "@arkecosystem/platform-sdk-profiles";
 import { createMemoryHistory } from "history";
 import nock from "nock";
 import React from "react";
@@ -19,10 +19,10 @@ import { Votes } from "./Votes";
 
 const history = createMemoryHistory();
 
-let emptyProfile: Profile;
+let emptyProfile: Contracts.IProfile;
 let profile: Contracts.IProfile;
-let wallet: ReadWriteWallet;
-let blankWallet: ReadWriteWallet;
+let wallet: Contracts.IReadWriteWallet;
+let blankWallet: Contracts.IReadWriteWallet;
 
 const blankWalletPassphrase = "power return attend drink piece found tragic fire liar page disease combine";
 
@@ -59,7 +59,7 @@ describe("Votes", () => {
 		wallet = profile.wallets().findById("ac38fe6d-4b67-4ef1-85be-17c5f6841129");
 		blankWallet = await profile.wallets().importByMnemonic(blankWalletPassphrase, "ARK", "ark.devnet");
 
-		wallet.settings().set(WalletSetting.Alias, "Sample Wallet");
+		wallet.settings().set(Contracts.WalletSetting.Alias, "Sample Wallet");
 
 		nock.disableNetConnect();
 

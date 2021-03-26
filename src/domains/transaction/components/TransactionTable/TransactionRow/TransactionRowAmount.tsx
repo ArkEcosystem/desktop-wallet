@@ -1,4 +1,4 @@
-import { ExtendedTransactionData, ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
+import { Contracts, DTO } from "@arkecosystem/platform-sdk-profiles";
 import { BigNumber } from "@arkecosystem/platform-sdk-support";
 import { Amount } from "app/components/Amount";
 import { Label } from "app/components/Label";
@@ -6,7 +6,7 @@ import React from "react";
 
 type Props = {
 	isSent: boolean;
-	wallet?: ReadWriteWallet;
+	wallet?: Contracts.IReadWriteWallet;
 	total: BigNumber;
 	convertedTotal?: BigNumber;
 	exchangeCurrency?: string;
@@ -39,7 +39,7 @@ export const TransactionRowAmount = ({
 	transaction,
 	exchangeCurrency,
 }: {
-	transaction: ExtendedTransactionData;
+	transaction: DTO.ExtendedTransactionData;
 	exchangeCurrency?: string;
 }) => (
 	<BaseTransactionRowAmount

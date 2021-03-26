@@ -1,4 +1,4 @@
-import { SignedMessage } from "@arkecosystem/platform-sdk/dist/contracts";
+import { Contracts } from "@arkecosystem/platform-sdk";
 import { Button } from "app/components/Button";
 import { Clipboard } from "app/components/Clipboard";
 import { Form } from "app/components/Form";
@@ -25,7 +25,7 @@ type SignMessageProps = {
 	onCancel?: () => void;
 };
 
-const initialState: SignedMessage = {
+const initialState: Contracts.SignedMessage = {
 	message: "",
 	signatory: "",
 	signature: "",
@@ -37,7 +37,7 @@ export const SignMessage = ({ isOpen, onClose, onCancel }: SignMessageProps) => 
 	const [message, setMessage] = useState<string>();
 	const [ledgerState, setLedgerState] = useState("awaitingDevice");
 
-	const [signedMessage, setSignedMessage] = useState<SignedMessage>(initialState);
+	const [signedMessage, setSignedMessage] = useState<Contracts.SignedMessage>(initialState);
 
 	const { t } = useTranslation();
 

@@ -82,7 +82,7 @@ export const SelectNetwork = ({
 		selectItem(selected || null);
 	}, [selectItem, selected, disabled]);
 
-	const toggleSelection = (item: Network) => {
+	const toggleSelection = (item: Coins.Network) => {
 		if (item.id() === selectedItem?.id()) {
 			reset();
 			openMenu();
@@ -95,7 +95,7 @@ export const SelectNetwork = ({
 	const developmentNetworks = items.filter((network) => !network.isLive());
 
 	const suggestion = React.useMemo(() => {
-		const matches = items.filter((network: Network) => isMatch(inputValue, network));
+		const matches = items.filter((network: Coins.Network) => isMatch(inputValue, network));
 		if (inputValue && matches.length > 0) {
 			return [inputValue, matches[0].extra?.displayName?.slice(inputValue.length)].join("");
 		}
@@ -134,7 +134,7 @@ export const SelectNetwork = ({
 						onFocus: openMenu,
 						onKeyDown: (event: any) => {
 							if (event.key === "Tab" || event.key === "Enter") {
-								const firstMatch = items.find((network: Network) => isMatch(inputValue, network));
+								const firstMatch = items.find((network: Coins.Network) => isMatch(inputValue, network));
 								if (inputValue && firstMatch) {
 									selectItem(firstMatch);
 								}
@@ -150,13 +150,13 @@ export const SelectNetwork = ({
 			<div data-testid="SelectNetwork__options" className={cn({ hidden: hideOptions })}>
 				<div className={publicNetworks.length > 0 ? "mt-6" : ""}>
 					{publicNetworks.length > 0 && developmentNetworks.length > 0 && (
-						<div className="font-bold text-sm text-theme-secondary-400 dark:text-theme-secondary-700 mb-3">
+						<div className="mb-3 text-sm font-bold text-theme-secondary-400 dark:text-theme-secondary-700">
 							{t("COMMON.PUBLIC_NETWORKS").toUpperCase()}
 						</div>
 					)}
 
 					<ul {...getMenuProps()} className="grid grid-cols-6 gap-3">
-						{publicNetworks.map((network: Network, index: number) => (
+						{publicNetworks.map((network: Coins.Network, index: number) => (
 							<NetworkOption
 								key={index}
 								disabled={disabled}
@@ -171,13 +171,13 @@ export const SelectNetwork = ({
 				{developmentNetworks.length > 0 && (
 					<div className="mt-6">
 						{publicNetworks.length > 0 && (
-							<div className="font-bold text-sm text-theme-secondary-400 dark:text-theme-secondary-700 mb-3">
+							<div className="mb-3 text-sm font-bold text-theme-secondary-400 dark:text-theme-secondary-700">
 								{t("COMMON.DEVELOPMENT_NETWORKS").toUpperCase()}
 							</div>
 						)}
 
 						<ul {...getMenuProps()} className="grid grid-cols-6 gap-3">
-							{developmentNetworks.map((network: Network, index: number) => (
+							{developmentNetworks.map((network: Coins.Network, index: number) => (
 								<NetworkOption
 									key={index}
 									disabled={disabled}

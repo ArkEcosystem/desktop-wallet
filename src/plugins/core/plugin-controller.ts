@@ -1,3 +1,4 @@
+import { Contracts } from "@arkecosystem/platform-sdk-profiles";
 
 import { PluginAPI } from "../types";
 import { PluginConfigurationData } from "./configuration";
@@ -32,12 +33,12 @@ export class PluginController {
 		return this.#config;
 	}
 
-	isEnabled(profile: Profile) {
+	isEnabled(profile: Contracts.IProfile) {
 		return !!this.pluginData(profile);
 	}
 
 	// TODO: Better integration with SDK
-	enable(profile: Profile, options?: { autoRun?: true }) {
+	enable(profile: Contracts.IProfile, options?: { autoRun?: true }) {
 		// @ts-ignore
 		const { id } = profile.plugins().push({ name: this.config().name(), isEnabled: true });
 
@@ -49,14 +50,14 @@ export class PluginController {
 		return id;
 	}
 
-	disable(profile: Profile) {
+	disable(profile: Contracts.IProfile) {
 		if (this.isEnabled(profile)) {
 			profile.plugins().forget(this.pluginData(profile)!.id);
 			this.dispose();
 		}
 	}
 
-	run(profile: Profile) {
+	run(profile: Contracts.IProfile) {
 		const pluginAPI = container.services().api(this, profile);
 		const guard = applyPluginMiddlewares({ profile, plugin: this }, [isPluginEnabled]);
 
@@ -75,7 +76,7 @@ export class PluginController {
 		this.#hooks.emit("deactivated");
 	}
 
-	private pluginData(profile: Profile) {
+	private pluginData(profile: Contracts.IProfile) {
 		return profile
 			.plugins()
 			.values()

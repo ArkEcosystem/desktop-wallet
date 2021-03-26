@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/require-await */
-import { ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
+import { Contracts } from "@arkecosystem/platform-sdk-profiles";
 import { act, renderHook } from "@testing-library/react-hooks";
 import { httpClient } from "app/services";
 import React from "react";
@@ -18,7 +18,7 @@ import {
 import { SendTransactionForm } from "./";
 
 let profile: Contracts.IProfile;
-let wallet: ReadWriteWallet;
+let wallet: Contracts.IReadWriteWallet;
 const defaultFee = "7320598";
 
 describe("SendTransactionForm", () => {

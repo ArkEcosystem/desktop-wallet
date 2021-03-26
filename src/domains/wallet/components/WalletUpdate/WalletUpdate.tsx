@@ -1,3 +1,4 @@
+import { Contracts } from "@arkecosystem/platform-sdk-profiles";
 import { Button } from "app/components/Button";
 import { Image } from "app/components/Image";
 import { Modal } from "app/components/Modal";
@@ -12,7 +13,7 @@ import { ThirdStep } from "./Step3";
 
 type WalletUpdateProps = {
 	version?: string;
-	profile?: Profile;
+	profile?: Contracts.IProfile;
 	isOpen: boolean;
 	onClose?: any;
 	onCancel?: any;

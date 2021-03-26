@@ -1,10 +1,11 @@
+// @README: This import is fine in tests but should be avoided in production code.
 import { ReadOnlyWallet } from "@arkecosystem/platform-sdk-profiles/dist/drivers/memory/wallets/read-only-wallet";
 import { createMemoryHistory } from "history";
 import nock from "nock";
 import React from "react";
 import { Route } from "react-router-dom";
 import { TransactionFixture } from "tests/fixtures/transactions";
-import { getDefaultProfileId, renderWithRouter, syncDelegates, waitFor } from "utils/testing-library";
+import { env, getDefaultProfileId, renderWithRouter, syncDelegates, waitFor } from "utils/testing-library";
 
 import { translations } from "../../i18n";
 import { VoteDetail } from "./VoteDetail";
@@ -34,9 +35,10 @@ describe("VoteDetail", () => {
 		dashboardURL = `/profiles/${fixtureProfileId}/dashboard`;
 		history.push(dashboardURL);
 
-		jest.spyOn(IDelegateMapper, "execute").mockImplementation((wallet, votes) =>
+		jest.spyOn(env.delegates(), "map").mockImplementation((wallet, votes) =>
 			votes.map(
 				(vote: string, index: number) =>
+					// @ts-ignore
 					new ReadOnlyWallet({
 						address: vote,
 						username: `delegate-${index}`,

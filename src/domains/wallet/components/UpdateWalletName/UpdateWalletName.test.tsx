@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/require-await */
-import { ReadWriteWallet, WalletSetting } from "@arkecosystem/platform-sdk-profiles";
+import { Contracts } from "@arkecosystem/platform-sdk-profiles";
 import { translations as commonTranslations } from "app/i18n/common/i18n";
 import React from "react";
 import { act, env, fireEvent, getDefaultProfileId, render, waitFor } from "testing-library";
@@ -8,7 +8,7 @@ import { translations } from "../../i18n";
 import { UpdateWalletName } from "./UpdateWalletName";
 
 let profile: Contracts.IProfile;
-let wallet: ReadWriteWallet;
+let wallet: Contracts.IReadWriteWallet;
 
 describe("UpdateWalletName", () => {
 	beforeAll(() => {
@@ -82,8 +82,8 @@ describe("UpdateWalletName", () => {
 
 		waitFor(() => {
 			expect(onSave).toHaveBeenCalledWith({ name }, expect.anything());
-			wallet.settings().set(WalletSetting.Alias, name);
-			expect(wallet.settings().get(WalletSetting.Alias)).toEqual(name);
+			wallet.settings().set(Contracts.WalletSetting.Alias, name);
+			expect(wallet.settings().get(Contracts.WalletSetting.Alias)).toEqual(name);
 		});
 	});
 

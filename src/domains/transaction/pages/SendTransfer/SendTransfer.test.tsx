@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/require-await */
 import { DateTime } from "@arkecosystem/platform-sdk-intl";
-import { ProfileSetting, ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
+import { Contracts } from "@arkecosystem/platform-sdk-profiles";
 import { BigNumber } from "@arkecosystem/platform-sdk-support";
 import { act as hookAct, renderHook } from "@testing-library/react-hooks";
 import { LedgerProvider } from "app/contexts";
@@ -35,7 +35,7 @@ const passphrase = getDefaultWalletMnemonic();
 const fixtureProfileId = getDefaultProfileId();
 const fixtureWalletId = getDefaultWalletId();
 
-const createTransactionMultipleMock = (wallet: ReadWriteWallet) =>
+const createTransactionMultipleMock = (wallet: Contracts.IReadWriteWallet) =>
 	// @ts-ignore
 	jest.spyOn(wallet.transaction(), "transaction").mockReturnValue({
 		id: () => transactionMultipleFixture.data.id,
@@ -46,7 +46,7 @@ const createTransactionMultipleMock = (wallet: ReadWriteWallet) =>
 		data: () => transactionMultipleFixture.data,
 	});
 
-const createTransactionMock = (wallet: ReadWriteWallet) =>
+const createTransactionMock = (wallet: Contracts.IReadWriteWallet) =>
 	// @ts-ignore
 	jest.spyOn(wallet.transaction(), "transaction").mockReturnValue({
 		id: () => transactionFixture.data.id,
@@ -58,7 +58,7 @@ const createTransactionMock = (wallet: ReadWriteWallet) =>
 	});
 
 let profile: Contracts.IProfile;
-let wallet: ReadWriteWallet;
+let wallet: Contracts.IReadWriteWallet;
 
 describe("SendTransfer", () => {
 	beforeAll(async () => {

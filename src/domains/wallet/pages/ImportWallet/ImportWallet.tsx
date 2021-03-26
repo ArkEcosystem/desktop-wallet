@@ -90,7 +90,7 @@ export const ImportWallet = () => {
 		password?: string;
 	}) => {
 		try {
-			const wallet = await importWalletByType({
+			const wallet: any = await importWalletByType({
 				network,
 				type,
 				value: walletGenerationInput!,
@@ -138,7 +138,7 @@ export const ImportWallet = () => {
 		<Page profile={activeProfile}>
 			<Section className="flex-1">
 				<Form
-					className="mx-auto max-w-xl"
+					className="max-w-xl mx-auto"
 					context={form}
 					onSubmit={walletData ? handleFinish : (importAndSaveWallet as any)}
 					data-testid="ImportWallet__form"

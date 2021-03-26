@@ -1,5 +1,5 @@
 import { BIP39 } from "@arkecosystem/platform-sdk-crypto";
-import { ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
+import { Contracts } from "@arkecosystem/platform-sdk-profiles";
 import { createMemoryHistory } from "history";
 import React from "react";
 import { Route } from "react-router-dom";
@@ -10,7 +10,7 @@ import { WalletBottomSheetMenu } from "./WalletBottomSheetMenu";
 const history = createMemoryHistory();
 
 let profile: Contracts.IProfile;
-let wallets: ReadWriteWallet[];
+let wallets: Contracts.IReadWriteWallet[];
 
 let walletURL: string;
 
