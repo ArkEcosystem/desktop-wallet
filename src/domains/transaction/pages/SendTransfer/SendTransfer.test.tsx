@@ -1064,7 +1064,7 @@ describe("SendTransfer", () => {
 				fireEvent.click(getByTestId(`FeeWarning__${action}-button`));
 			});
 
-			expect(profileSpy).toHaveBeenCalledWith(ProfileSetting.DoNotShowFeeWarning, true);
+			expect(profileSpy).toHaveBeenCalledWith(Contracts.ProfileSetting.DoNotShowFeeWarning, true);
 
 			await waitFor(() =>
 				expect(

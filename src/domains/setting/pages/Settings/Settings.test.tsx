@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/require-await */
-import { Profile, ProfileSetting } from "@arkecosystem/platform-sdk-profiles";
+import { Contracts } from "@arkecosystem/platform-sdk-profiles";
 import { buildTranslations } from "app/i18n/helpers";
 import { toasts } from "app/services";
 import electron from "electron";
@@ -287,7 +287,7 @@ describe("Settings", () => {
 
 		act(() => {
 			fireEvent.input(getByTestId("General-settings__input--name"), {
-				target: { value: otherProfile.settings().get(ProfileSetting.Name) },
+				target: { value: otherProfile.settings().get(Contracts.ProfileSetting.Name) },
 			});
 		});
 
@@ -317,7 +317,7 @@ describe("Settings", () => {
 
 		act(() => {
 			fireEvent.input(getByTestId("General-settings__input--name"), {
-				target: { value: otherProfile.settings().get(ProfileSetting.Name).toUpperCase() },
+				target: { value: otherProfile.settings().get(Contracts.ProfileSetting.Name).toUpperCase() },
 			});
 		});
 
@@ -372,7 +372,7 @@ describe("Settings", () => {
 
 		act(() => {
 			fireEvent.input(getByTestId("General-settings__input--name"), {
-				target: { value: `  ${otherProfile.settings().get(ProfileSetting.Name)}  ` },
+				target: { value: `  ${otherProfile.settings().get(Contracts.ProfileSetting.Name)}  ` },
 			});
 		});
 
@@ -571,7 +571,7 @@ describe("Settings", () => {
 			await waitFor(() => expect(getByTestId("General-settings__toggle--isAdvancedMode").checked).toEqual(true));
 
 			// reset setting
-			profile.settings().set(ProfileSetting.DoNotShowAdvancedModeDisclaimer, false);
+			profile.settings().set(Contracts.ProfileSetting.DoNotShowAdvancedModeDisclaimer, false);
 		});
 
 		it.each([
