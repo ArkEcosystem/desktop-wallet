@@ -2,6 +2,23 @@ const React = require("react");
 const { Box, Modal } = globalThis.ark.Components;
 
 module.exports = (api) => {
+	const SignModal = () => {
+		const wallets = api.profile().wallets();
+		const [Modal, signResult, { isOpen, open }] = api
+			.message()
+			.useSignMessageModal({ message: "My Plugin", walletId: wallets[0].id });
+
+		console.log({ wallets, Modal, signResult });
+
+		return React.createElement(
+			"div",
+			{ className: "block mt-2" },
+			React.createElement("button", { onClick: open }, "Sign Message"),
+			React.createElement(Modal),
+			signResult && React.createElement("div", { className: "block mt-2" }, `Signature ${signResult.signature}`),
+		);
+	};
+
 	const App = () => {
 		const [isOpen, setIsOpen] = React.useState(false);
 
@@ -14,6 +31,7 @@ module.exports = (api) => {
 				{ isOpen, onClose: () => setIsOpen(false) },
 				React.createElement("h2", {}, "Hello"),
 			),
+			React.createElement(SignModal),
 		);
 	};
 
