@@ -13,7 +13,7 @@ import { MultiSignatureDetail } from "domains/transaction/components/MultiSignat
 import { TransactionDetailModal } from "domains/transaction/components/TransactionDetailModal";
 import { TransactionTable } from "domains/transaction/components/TransactionTable";
 import { SignedTransactionTable } from "domains/transaction/components/TransactionTable/SignedTransactionTable/SignedTransactionTable";
-import React, { useEffect, useLayoutEffect, useState } from "react";
+import React, { useEffect, useLayoutEffect, useRef, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { useHistory } from "react-router-dom";
 
@@ -43,6 +43,7 @@ export const WalletDetails = ({ transactionLimit }: WalletDetailsProps) => {
 	const [selectedTransactionType, setSelectedTransactionType] = useState<any>();
 
 	const { profileIsSyncing } = useConfiguration();
+	const isMounted = useRef(true);
 
 	const {
 		pendingMultiSignatureTransactions,
@@ -68,9 +69,20 @@ export const WalletDetails = ({ transactionLimit }: WalletDetailsProps) => {
 	useEffect(() => {
 		const fetchAllData = async () => {
 			await fetchInit();
+
+			/* istanbul ignore next */
+			if (!isMounted.current) {
+				return;
+			}
+
 			setIsLoading(false);
 		};
+
 		fetchAllData();
+
+		return () => {
+			isMounted.current = false;
+		};
 	}, [fetchInit]);
 
 	const handleVoteButton = (filter?: string) => {

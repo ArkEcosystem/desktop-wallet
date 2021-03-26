@@ -8,7 +8,13 @@ import React, { ChangeEvent } from "react";
 import { useFormContext } from "react-hook-form";
 import { useTranslation } from "react-i18next";
 
-export const FormStep = ({ wallet }: { wallet: Contracts.IReadWriteWallet }) => {
+export const FormStep = ({
+	wallet,
+	disableMessageInput,
+}: {
+	wallet: Contracts.IReadWriteWallet;
+	disableMessageInput?: boolean;
+}) => {
 	const { t } = useTranslation();
 
 	const { authentication } = useValidation();
@@ -49,6 +55,7 @@ export const FormStep = ({ wallet }: { wallet: Contracts.IReadWriteWallet }) => 
 						})
 					}
 					data-testid="SignMessage__message-input"
+					readOnly={disableMessageInput}
 				/>
 			</FormField>
 
@@ -63,4 +70,8 @@ export const FormStep = ({ wallet }: { wallet: Contracts.IReadWriteWallet }) => 
 			)}
 		</section>
 	);
+};
+
+FormStep.defaultProps = {
+	disableMessageInput: false,
 };

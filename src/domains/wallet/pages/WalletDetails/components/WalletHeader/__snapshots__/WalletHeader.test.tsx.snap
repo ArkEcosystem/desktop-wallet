@@ -114,12 +114,6 @@ exports[`WalletHeader should render 1`] = `
           <span>
             Balance:
           </span>
-          <span
-            class="ml-1"
-            data-testid="WalletHeader__currency-balance"
-          >
-            0 BTC
-          </span>
         </div>
         <span
           class="text-lg font-semibold text-white"
@@ -315,12 +309,6 @@ exports[`WalletHeader should show currency delta (-5%) 1`] = `
         >
           <span>
             Balance:
-          </span>
-          <span
-            class="ml-1"
-            data-testid="WalletHeader__currency-balance"
-          >
-            0 BTC
           </span>
           <span
             class="inline-flex items-center ml-2 text-theme-danger-500"
@@ -535,12 +523,6 @@ exports[`WalletHeader should show currency delta (5%) 1`] = `
         >
           <span>
             Balance:
-          </span>
-          <span
-            class="ml-1"
-            data-testid="WalletHeader__currency-balance"
-          >
-            0 BTC
           </span>
           <span
             class="inline-flex items-center ml-2 text-theme-success-600"
@@ -782,12 +764,6 @@ exports[`WalletHeader should show modifiers 1`] = `
         >
           <span>
             Balance:
-          </span>
-          <span
-            class="ml-1"
-            data-testid="WalletHeader__currency-balance"
-          >
-            0 BTC
           </span>
         </div>
         <span

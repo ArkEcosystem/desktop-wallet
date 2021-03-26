@@ -78,6 +78,16 @@ describe("WalletHeader", () => {
 		multisigSpy.mockRestore();
 	});
 
+	it("should hide converted balance if wallet belongs to test network", () => {
+		const networkSpy = jest.spyOn(wallet.network(), "isTest").mockReturnValue(true);
+
+		const { getByTestId, asFragment } = render(<WalletHeader profile={profile} wallet={wallet} />);
+
+		expect(() => getByTestId("WalletHeader__currency-balance")).toThrowError(/Unable to find/);
+
+		networkSpy.mockRestore();
+	});
+
 	it.each([-5, 5])("should show currency delta (%s%)", (delta) => {
 		const { getByTestId, getByText, asFragment } = render(
 			<WalletHeader profile={profile} wallet={wallet} currencyDelta={delta} />,

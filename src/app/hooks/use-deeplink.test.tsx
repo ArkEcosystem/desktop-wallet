@@ -1,14 +1,14 @@
 import { translations } from "app/i18n/common/i18n";
 import { toasts } from "app/services";
 import { ipcRenderer } from "electron";
-import { createMemoryHistory } from "history";
+import { createHashHistory } from "history";
 import React from "react";
 import { Route } from "react-router-dom";
 import { getDefaultProfileId, getDefaultWalletId, renderWithRouter } from "testing-library";
 
 import { useDeeplink } from "./use-deeplink";
 
-const history = createMemoryHistory();
+const history = createHashHistory();
 const walletURL = `/profiles/${getDefaultProfileId()}/wallets/${getDefaultWalletId()}`;
 
 describe("useDeeplink hook", () => {
@@ -192,19 +192,17 @@ describe("useDeeplink hook", () => {
 		expect(ipcRenderer.on).toBeCalledWith("process-url", expect.any(Function));
 	});
 
-	it("should use create", () => {
+	it("should not use create", () => {
 		ipcRenderer.on.mockImplementationOnce((event, callback) =>
 			callback(event, "ark:vote?coin=ark&network=ark.devnet&delegate=alessio"),
 		);
 
-		window.history.pushState({}, "Deeplink Test", `/profiles/create/wallets/${getDefaultWalletId()}`);
-
 		const { getByText, history } = renderWithRouter(
-			<Route pathname="/profiles/:profileId/wallets/:walletId">
+			<Route pathname="/profiles/create">
 				<TestComponent />
 			</Route>,
 			{
-				routes: [walletURL],
+				routes: ["/profiles/create"],
 			},
 		);
 

@@ -41,6 +41,16 @@ export interface PluginAPI {
 		setInterval: (handler: Function, timeout: number) => number;
 		setTimeout: (handler: Function, timeout: number) => number;
 	};
+	message(): {
+		useSignMessageModal: (params: {
+			message: string;
+			walletId: string;
+		}) => [
+			React.FunctionComponent,
+			Contracts.SignedMessage | undefined,
+			{ isOpen: boolean; open: () => void; close: () => void },
+		];
+	};
 }
 
 export interface PluginRawInstance {
@@ -59,6 +69,7 @@ export enum PluginServiceIdentifier {
 	Store = "STORE",
 	Theme = "THEME",
 	Timers = "TIMERS",
+	Message = "MESSAGE",
 }
 
 export interface PluginServiceConfig {

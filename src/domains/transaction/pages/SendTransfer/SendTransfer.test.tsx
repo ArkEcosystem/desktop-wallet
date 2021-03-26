@@ -261,8 +261,8 @@ describe("SendTransfer", () => {
 
 	it("should render form and use location state", async () => {
 		const history = createMemoryHistory();
-		const transferURL = `/profiles/${fixtureProfileId}/wallets/${fixtureWalletId}/send-transfer`;
-		history.push(transferURL, { memo: "ARK", coin: "ark", network: "ark.devnet" });
+		const transferURL = `/profiles/${fixtureProfileId}/wallets/${fixtureWalletId}/send-transfer?memo=ARK&coin=ark&network=ark.devnet`;
+		history.push(transferURL);
 
 		let rendered: RenderResult;
 
@@ -288,8 +288,8 @@ describe("SendTransfer", () => {
 	it("should render form and use location state without memo", async () => {
 		const history = createMemoryHistory();
 
-		const transferURL = `/profiles/${fixtureProfileId}/wallets/${fixtureWalletId}/send-transfer`;
-		history.push(transferURL, { coin: "ark", network: "ark.devnet" });
+		const transferURL = `/profiles/${fixtureProfileId}/wallets/${fixtureWalletId}/send-transfer?coin=ark&network=ark.devnet`;
+		history.push(transferURL);
 
 		const { getByTestId, asFragment } = renderWithRouter(
 			<Route path="/profiles/:profileId/wallets/:walletId/send-transfer">

@@ -9,7 +9,7 @@ import { translations as walletTranslations } from "domains/wallet/i18n";
 import { createMemoryHistory } from "history";
 import React from "react";
 import { Route } from "react-router-dom";
-import { act, env, fireEvent, getDefaultProfileId, renderWithRouter, waitFor } from "testing-library";
+import { act, env, fireEvent, getDefaultProfileId, renderWithRouter, screen, waitFor } from "utils/testing-library";
 import { render } from "utils/testing-library";
 
 import { SignedStep } from "./SignedStep";
@@ -48,7 +48,7 @@ describe("SignMessage", () => {
 		const { asFragment, getByText } = renderWithRouter(
 			<Route path="/profiles/:profileId/wallets/:walletId">
 				<LedgerProvider transport={transport}>
-					<SignMessage isOpen={true} />
+					<SignMessage walletId={wallet.id()} isOpen={true} />
 				</LedgerProvider>
 			</Route>,
 			{
@@ -68,7 +68,7 @@ describe("SignMessage", () => {
 		const { asFragment, getByText } = renderWithRouter(
 			<Route path="/profiles/:profileId/wallets/:walletId">
 				<LedgerProvider transport={transport}>
-					<SignMessage isOpen={true} />
+					<SignMessage walletId={wallet.id()} isOpen={true} />
 				</LedgerProvider>
 			</Route>,
 			{
@@ -107,10 +107,12 @@ describe("SignMessage", () => {
 				"b9791983a2b2b529dad23e0798cf4df30b3880f4fda5f4587f1c3171f02d0c9f4491f8c6d3e76b5cd2e2fd11c9fdcc7958e77d1f19c1b57a55e9c99ed1e6a2b1",
 		};
 
+		const onSign = jest.fn();
+
 		const { getByTestId, getByText } = renderWithRouter(
 			<Route path="/profiles/:profileId/wallets/:walletId">
 				<LedgerProvider transport={transport}>
-					<SignMessage isOpen={true} />
+					<SignMessage onSign={onSign} walletId={wallet.id()} isOpen={true} />
 				</LedgerProvider>
 			</Route>,
 			{
@@ -153,6 +155,8 @@ describe("SignMessage", () => {
 
 		await waitFor(() => expect(writeTextMock).toHaveBeenCalledWith(JSON.stringify(signedMessage)));
 
+		expect(onSign).toHaveBeenCalledWith(signedMessage);
+
 		// @ts-ignore
 		navigator.clipboard = clipboardOriginal;
 	});
@@ -161,7 +165,7 @@ describe("SignMessage", () => {
 		const { getByTestId, getByText } = renderWithRouter(
 			<Route path="/profiles/:profileId/wallets/:walletId">
 				<LedgerProvider transport={transport}>
-					<SignMessage isOpen={true} />
+					<SignMessage walletId={wallet.id()} isOpen={true} />
 				</LedgerProvider>
 			</Route>,
 			{
@@ -224,7 +228,7 @@ describe("SignMessage", () => {
 		const { getByTestId, getByText } = renderWithRouter(
 			<Route path="/profiles/:profileId/wallets/:walletId">
 				<LedgerProvider transport={transport}>
-					<SignMessage isOpen={true} />
+					<SignMessage walletId={wallet.id()} isOpen={true} />
 				</LedgerProvider>
 			</Route>,
 			{
@@ -292,7 +296,7 @@ describe("SignMessage", () => {
 		const { getByTestId, getByText } = renderWithRouter(
 			<Route path="/profiles/:profileId/wallets/:walletId">
 				<LedgerProvider transport={transport}>
-					<SignMessage isOpen={true} />
+					<SignMessage walletId={wallet.id()} isOpen={true} />
 				</LedgerProvider>
 			</Route>,
 			{
@@ -354,7 +358,7 @@ describe("SignMessage", () => {
 		const { getByTestId, getByText } = renderWithRouter(
 			<Route path="/profiles/:profileId/wallets/:walletId">
 				<LedgerProvider transport={transport}>
-					<SignMessage isOpen={true} />
+					<SignMessage walletId={wallet.id()} isOpen={true} />
 				</LedgerProvider>
 			</Route>,
 			{
@@ -391,5 +395,21 @@ describe("SignMessage", () => {
 		transportSpy.mockRestore();
 		isLedgerMock.mockRestore();
 		listenSpy.mockRestore();
+	});
+
+	it("should render with a custom message", async () => {
+		renderWithRouter(
+			<Route path="/profiles/:profileId/wallets/:walletId">
+				<LedgerProvider transport={transport}>
+					<SignMessage messageText="My Custom Message" walletId={wallet.id()} isOpen={true} />
+				</LedgerProvider>
+			</Route>,
+			{
+				routes: [walletUrl],
+				history,
+			},
+		);
+
+		await waitFor(() => expect(screen.getByTestId("SignMessage__message-input")).toHaveValue("My Custom Message"));
 	});
 });
