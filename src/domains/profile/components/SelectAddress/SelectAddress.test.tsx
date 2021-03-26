@@ -1,10 +1,10 @@
-import { ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
+import { Contracts } from "@arkecosystem/platform-sdk-profiles";
 import React from "react";
 import { act, env, fireEvent, getDefaultProfileId, render, waitFor } from "testing-library";
 
 import { SelectAddress } from "./SelectAddress";
 
-let wallets: ReadWriteWallet[];
+let wallets: Contracts.IReadWriteWallet[];
 
 beforeAll(async () => {
 	const profile = env.profiles().findById(getDefaultProfileId());

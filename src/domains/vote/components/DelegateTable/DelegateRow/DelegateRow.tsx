@@ -1,4 +1,4 @@
-import { ReadOnlyWallet } from "@arkecosystem/platform-sdk-profiles";
+import { Contracts } from "@arkecosystem/platform-sdk-profiles";
 import { Avatar } from "app/components/Avatar";
 import { Button } from "app/components/Button";
 import { Icon } from "app/components/Icon";
@@ -11,7 +11,7 @@ import { DelegateRowSkeleton } from "./DelegateRowSkeleton";
 
 type DelegateRowProps = {
 	index: number;
-	delegate: ReadOnlyWallet;
+	delegate: Contracts.IReadOnlyWallet;
 	selectedUnvotes?: string[];
 	selectedVotes?: string[];
 	isVoted?: boolean;

@@ -52,7 +52,7 @@ exports[`SignIn should render a modal 1`] = `
           <div
             class="mt-1 text-theme-secondary-text whitespace-pre-line"
           >
-            Sign in to access your profile.
+            Sign in to access your Profile.
           </div>
           <div
             class="mt-8"
@@ -79,7 +79,7 @@ exports[`SignIn should render a modal 1`] = `
                 class="flex flex-col"
               >
                 <p
-                  class="text-sm font-semibold text-theme-secondary-700"
+                  class="text-sm font-semibold text-theme-secondary-500 dark:text-theme-secondary-700"
                 >
                   Name
                 </p>
@@ -106,7 +106,7 @@ exports[`SignIn should render a modal 1`] = `
               class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
             >
               <label
-                class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
+                class="flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
                 data-testid="FormLabel"
                 for="password"
               >

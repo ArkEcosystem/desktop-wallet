@@ -1,5 +1,5 @@
 import { Coins } from "@arkecosystem/platform-sdk";
-import { Profile } from "@arkecosystem/platform-sdk-profiles";
+import { Contracts } from "@arkecosystem/platform-sdk-profiles";
 import { FormField, FormLabel } from "app/components/Form";
 import { Header } from "app/components/Header";
 import { InputDefault } from "app/components/Input";
@@ -8,7 +8,7 @@ import React from "react";
 import { useFormContext } from "react-hook-form";
 import { useTranslation } from "react-i18next";
 
-export const FormStep = ({ networks, profile }: { networks: Coins.Network[]; profile: Profile }) => {
+export const FormStep = ({ networks, profile }: { networks: Coins.Network[]; profile: Contracts.IProfile }) => {
 	const { t } = useTranslation();
 	const { getValues, setValue } = useFormContext();
 	const { hash } = getValues();

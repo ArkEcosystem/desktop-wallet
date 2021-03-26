@@ -1,4 +1,4 @@
-import { ContactAddress } from "@arkecosystem/platform-sdk-profiles";
+import { Contracts } from "@arkecosystem/platform-sdk-profiles";
 import { Address } from "app/components/Address";
 import { Avatar } from "app/components/Avatar";
 import { AvatarWrapper } from "app/components/Avatar";
@@ -27,7 +27,7 @@ export const ContactListItem = ({ item, variant, onAction, options }: ContactLis
 			{item
 				.addresses()
 				.values()
-				.map((address: ContactAddress, index: number) => {
+				.map((address: Contracts.IContactAddress, index: number) => {
 					const borderClasses = () =>
 						index !== item.addresses().count() - 1
 							? "border-b border-dashed border-theme-secondary-300 dark:border-theme-secondary-800"

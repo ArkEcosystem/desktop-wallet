@@ -45,7 +45,7 @@ export const PasswordSettings = ({ formConfig, onSuccess, onError }: SettingsPro
 			<Header
 				title={t("SETTINGS.PASSWORD.TITLE")}
 				subtitle={
-					usesPassword ? t("SETTINGS.PASSWORD.SUBTITLE_UPDATE") : t("SETTINGS.PASSWORD.SUBTITLE_CREATE")
+					usesPassword ? t("SETTINGS.PASSWORD.SUBTITLE.UPDATE") : t("SETTINGS.PASSWORD.SUBTITLE.CREATE")
 				}
 			/>
 

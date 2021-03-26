@@ -1,5 +1,5 @@
 import { Coins } from "@arkecosystem/platform-sdk";
-import { Profile, ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
+import { Contracts } from "@arkecosystem/platform-sdk-profiles";
 import { Address } from "app/components/Address";
 import { Avatar } from "app/components/Avatar";
 import { FormField, FormLabel } from "app/components/Form";
@@ -10,7 +10,7 @@ import React, { useState } from "react";
 import { useFormContext } from "react-hook-form";
 import { useTranslation } from "react-i18next";
 
-export const SuccessStep = ({ nameMaxLength, profile }: { nameMaxLength: number; profile: Profile }) => {
+export const SuccessStep = ({ nameMaxLength, profile }: { nameMaxLength: number; profile: Contracts.IProfile }) => {
 	const { getValues, register, watch } = useFormContext();
 
 	// getValues does not get the value of `defaultValues` on first render
@@ -18,7 +18,7 @@ export const SuccessStep = ({ nameMaxLength, profile }: { nameMaxLength: number;
 	const network: Coins.Network = getValues("network") || defaultNetwork;
 
 	const [defaultWallet] = useState(() => watch("wallet"));
-	const wallet: ReadWriteWallet = getValues("wallet") || defaultWallet;
+	const wallet: Contracts.IReadWriteWallet = getValues("wallet") || defaultWallet;
 
 	const { t } = useTranslation();
 
@@ -42,7 +42,7 @@ export const SuccessStep = ({ nameMaxLength, profile }: { nameMaxLength: number;
 			</div>
 
 			<FormField name="name">
-				<FormLabel label={t("WALLETS.PAGE_CREATE_WALLET.WALLET_NAME")} required={false} optional />
+				<FormLabel label={t("WALLETS.WALLET_NAME")} required={false} optional />
 				<InputDefault
 					data-testid="CreateWallet__wallet-name"
 					ref={register({

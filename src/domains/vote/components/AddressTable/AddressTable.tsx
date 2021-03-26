@@ -1,4 +1,4 @@
-import { ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
+import { Contracts } from "@arkecosystem/platform-sdk-profiles";
 import { Table } from "app/components/Table";
 import { NetworkIcon } from "domains/network/components/NetworkIcon";
 import { getNetworkExtendedData } from "domains/network/helpers";
@@ -8,7 +8,7 @@ import { useTranslation } from "react-i18next";
 import { AddressRow } from "./AddressRow";
 
 type AddressTableProps = {
-	wallets: ReadWriteWallet[];
+	wallets: Contracts.IReadWriteWallet[];
 	onSelect?: (address: string) => void;
 };
 
@@ -22,7 +22,7 @@ export const AddressTable = ({ wallets, onSelect }: AddressTableProps) => {
 	const commonColumns = [
 		{
 			Header: t("COMMON.MY_ADDRESS"),
-			accessor: (wallet: ReadWriteWallet) => wallet.alias() || wallet.address(),
+			accessor: (wallet: Contracts.IReadWriteWallet) => wallet.alias() || wallet.address(),
 		},
 		{
 			Header: t("COMMON.WALLET_TYPE"),
@@ -32,7 +32,7 @@ export const AddressTable = ({ wallets, onSelect }: AddressTableProps) => {
 		},
 		{
 			Header: t("COMMON.BALANCE"),
-			accessor: (wallet: ReadWriteWallet) => wallet.balance?.().toFixed(),
+			accessor: (wallet: Contracts.IReadWriteWallet) => wallet.balance?.().toFixed(),
 			className: "justify-end",
 		},
 		{
@@ -94,7 +94,7 @@ export const AddressTable = ({ wallets, onSelect }: AddressTableProps) => {
 			</div>
 
 			<Table columns={columns} data={wallets}>
-				{(wallet: ReadWriteWallet, index: number) => (
+				{(wallet: Contracts.IReadWriteWallet, index: number) => (
 					<AddressRow index={index} maxVotes={maxVotes} wallet={wallet} onSelect={onSelect} />
 				)}
 			</Table>

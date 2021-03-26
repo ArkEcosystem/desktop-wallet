@@ -14,7 +14,6 @@ export const translations: { [key: string]: any } = {
 		COMMISSION_BY_PERIOD: "Commission ({{period}})",
 		DELEGATES_NOT_FOUND: "Delegates not found",
 		MIN: "Min.",
-		MY_ADDRESS: "My Address",
 		NAME: "Delegate Name",
 		PAYOUT_INTERVAL: "Payout",
 		UNVOTES: "Unvotes",

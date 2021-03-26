@@ -1,5 +1,5 @@
 import { Contracts } from "@arkecosystem/platform-sdk";
-import { ReadOnlyWallet } from "@arkecosystem/platform-sdk-profiles";
+import { Contracts as ProfileContracts } from "@arkecosystem/platform-sdk-profiles";
 import { Button } from "app/components/Button";
 import { Form } from "app/components/Form";
 import { Page, Section } from "app/components/Layout";
@@ -33,8 +33,8 @@ export const SendVote = () => {
 	const voteAddresses = queryParams.get("votes")?.split(",");
 
 	const [activeTab, setActiveTab] = useState(1);
-	const [unvotes, setUnvotes] = useState<ReadOnlyWallet[]>([]);
-	const [votes, setVotes] = useState<ReadOnlyWallet[]>([]);
+	const [unvotes, setUnvotes] = useState<ProfileContracts.IReadOnlyWallet[]>([]);
+	const [votes, setVotes] = useState<ProfileContracts.IReadOnlyWallet[]>([]);
 	const [transaction, setTransaction] = useState((null as unknown) as Contracts.SignedTransactionData);
 
 	const form = useForm({ mode: "onChange" });
@@ -56,6 +56,8 @@ export const SendVote = () => {
 		register("fee", common.fee(activeWallet?.balance?.(), activeWallet?.network?.()));
 
 		setValue("senderAddress", activeWallet.address(), { shouldValidate: true, shouldDirty: true });
+
+		register("suppressWarning");
 
 		for (const network of networks) {
 			if (network.coin() === activeWallet.coinId() && network.id() === activeWallet.networkId()) {
@@ -177,15 +179,17 @@ export const SendVote = () => {
 
 	const submitForm = async () => {
 		clearErrors("mnemonic");
-		const { fee, mnemonic, secondMnemonic, senderAddress } = getValues();
-
+		const { fee, mnemonic, secondMnemonic, senderAddress, encryptionPassword } = getValues();
 		const abortSignal = abortRef.current?.signal;
+
+		const wif = activeWallet?.usesWIF() ? await activeWallet.wif(encryptionPassword) : undefined;
 
 		try {
 			const voteTransactionInput: Contracts.TransactionInput = {
 				fee,
 				from: senderAddress,
 				sign: {
+					wif,
 					mnemonic,
 					secondMnemonic,
 				},
@@ -204,7 +208,7 @@ export const SendVote = () => {
 						{
 							...voteTransactionInput,
 							data: {
-								unvotes: unvotes.map((wallet: ReadOnlyWallet) => wallet.publicKey()),
+								unvotes: unvotes.map((wallet: ProfileContracts.IReadOnlyWallet) => wallet.publicKey()),
 							},
 						},
 						{ abortSignal },
@@ -221,7 +225,7 @@ export const SendVote = () => {
 						{
 							...voteTransactionInput,
 							data: {
-								votes: votes.map((wallet: ReadOnlyWallet) => wallet.publicKey()),
+								votes: votes.map((wallet: ProfileContracts.IReadOnlyWallet) => wallet.publicKey()),
 							},
 						},
 						{ abortSignal },
@@ -244,8 +248,8 @@ export const SendVote = () => {
 						{
 							...voteTransactionInput,
 							data: {
-								votes: votes.map((wallet: ReadOnlyWallet) => wallet.publicKey()),
-								unvotes: unvotes.map((wallet: ReadOnlyWallet) => wallet.publicKey()),
+								votes: votes.map((wallet: ProfileContracts.IReadOnlyWallet) => wallet.publicKey()),
+								unvotes: unvotes.map((wallet: ProfileContracts.IReadOnlyWallet) => wallet.publicKey()),
 							},
 						},
 						{ abortSignal },
@@ -269,10 +273,12 @@ export const SendVote = () => {
 						...voteTransactionInput,
 						data: isUnvote
 							? {
-									unvotes: unvotes.map((wallet: ReadOnlyWallet) => wallet.publicKey()),
+									unvotes: unvotes.map((wallet: ProfileContracts.IReadOnlyWallet) =>
+										wallet.publicKey(),
+									),
 							  }
 							: {
-									votes: votes.map((wallet: ReadOnlyWallet) => wallet.publicKey()),
+									votes: votes.map((wallet: ProfileContracts.IReadOnlyWallet) => wallet.publicKey()),
 							  },
 					},
 					{ abortSignal },
@@ -296,7 +302,7 @@ export const SendVote = () => {
 	return (
 		<Page profile={activeProfile}>
 			<Section className="flex-1">
-				<Form className="mx-auto max-w-xl" context={form} onSubmit={submitForm}>
+				<Form className="max-w-xl mx-auto" context={form} onSubmit={submitForm}>
 					<Tabs activeId={activeTab}>
 						<StepIndicator size={4} activeIndex={activeTab} />
 

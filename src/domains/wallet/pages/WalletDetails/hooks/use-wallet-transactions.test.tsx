@@ -1,4 +1,4 @@
-import { Profile, ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
+import { Contracts } from "@arkecosystem/platform-sdk-profiles";
 import nock from "nock";
 import React, { useState } from "react";
 import { act, env, fireEvent, getDefaultProfileId, render, screen, waitFor } from "utils/testing-library";
@@ -6,8 +6,8 @@ import { act, env, fireEvent, getDefaultProfileId, render, screen, waitFor } fro
 import { useWalletTransactions } from "./use-wallet-transactions";
 
 describe("Wallet Transactions Hook", () => {
-	let wallet: ReadWriteWallet;
-	let profile: Profile;
+	let wallet: Contracts.IReadWriteWallet;
+	let profile: Contracts.IProfile;
 
 	beforeAll(() => {
 		nock("https://dwallets.ark.io")

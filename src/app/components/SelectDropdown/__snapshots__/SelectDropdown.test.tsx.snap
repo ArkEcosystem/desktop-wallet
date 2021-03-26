@@ -56,8 +56,9 @@ exports[`SelectDropdown should render 1`] = `
             <div
               class=""
             >
-              <span
-                class="w-10 pointer-events-none text-theme-secondary-500"
+              <div
+                class="py-2 px-1 text-theme-secondary-500 flex items-center justify-center"
+                data-testid="SelectDropdown__caret"
               >
                 <div
                   class="sc-bdfBwQ gLRWTb transition-transform "
@@ -68,7 +69,7 @@ exports[`SelectDropdown should render 1`] = `
                     caret-down.svg
                   </svg>
                 </div>
-              </span>
+              </div>
             </div>
           </div>
         </div>
@@ -142,8 +143,9 @@ exports[`SelectDropdown should render disabled 1`] = `
             <div
               class=""
             >
-              <span
-                class="w-10 pointer-events-none text-theme-secondary-500"
+              <div
+                class="py-2 px-1 text-theme-secondary-500 flex items-center justify-center"
+                data-testid="SelectDropdown__caret"
               >
                 <div
                   class="sc-bdfBwQ gLRWTb transition-transform "
@@ -154,7 +156,7 @@ exports[`SelectDropdown should render disabled 1`] = `
                     caret-down.svg
                   </svg>
                 </div>
-              </span>
+              </div>
             </div>
           </div>
         </div>
@@ -244,8 +246,9 @@ exports[`SelectDropdown should render invalid 1`] = `
             <div
               class=""
             >
-              <span
-                class="w-10 pointer-events-none text-theme-secondary-500"
+              <div
+                class="py-2 px-1 text-theme-secondary-500 flex items-center justify-center"
+                data-testid="SelectDropdown__caret"
               >
                 <div
                   class="sc-bdfBwQ gLRWTb transition-transform "
@@ -256,7 +259,7 @@ exports[`SelectDropdown should render invalid 1`] = `
                     caret-down.svg
                   </svg>
                 </div>
-              </span>
+              </div>
             </div>
           </div>
         </div>
@@ -297,12 +300,12 @@ exports[`SelectDropdown should render with default value when free text is allow
       <div
         aria-expanded="false"
         aria-haspopup="listbox"
-        aria-owns="downshift-217-menu"
+        aria-owns="downshift-225-menu"
         role="combobox"
       >
         <label
-          for="downshift-216-input"
-          id="downshift-217-label"
+          for="downshift-224-input"
+          id="downshift-225-label"
         />
         <div
           class="Input__InputWrapperStyled-wu99qs-0 vKSQU"
@@ -312,12 +315,12 @@ exports[`SelectDropdown should render with default value when free text is allow
           >
             <input
               aria-autocomplete="list"
-              aria-controls="downshift-217-menu"
-              aria-labelledby="downshift-217-label"
+              aria-controls="downshift-225-menu"
+              aria-labelledby="downshift-225-label"
               autocomplete="off"
               class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full cursor-default"
               data-testid="SelectDropdownInput__input"
-              id="downshift-216-input"
+              id="downshift-224-input"
               placeholder="Select option"
               value="3"
             />
@@ -328,8 +331,9 @@ exports[`SelectDropdown should render with default value when free text is allow
             <div
               class=""
             >
-              <span
-                class="w-10 pointer-events-none text-theme-secondary-500"
+              <div
+                class="py-2 px-1 text-theme-secondary-500 flex items-center justify-center"
+                data-testid="SelectDropdown__caret"
               >
                 <div
                   class="sc-bdfBwQ gLRWTb transition-transform "
@@ -340,14 +344,14 @@ exports[`SelectDropdown should render with default value when free text is allow
                     caret-down.svg
                   </svg>
                 </div>
-              </span>
+              </div>
             </div>
           </div>
         </div>
         <ul
-          aria-labelledby="downshift-217-label"
+          aria-labelledby="downshift-225-label"
           class="styles__SelectOptionsList-b2falt-0 heJAAA"
-          id="downshift-217-menu"
+          id="downshift-225-menu"
           role="listbox"
         />
       </div>
@@ -381,12 +385,12 @@ exports[`SelectDropdown should render with empty options 1`] = `
       <div
         aria-expanded="false"
         aria-haspopup="listbox"
-        aria-owns="downshift-27-menu"
+        aria-owns="downshift-35-menu"
         role="combobox"
       >
         <label
-          for="downshift-26-input"
-          id="downshift-27-label"
+          for="downshift-34-input"
+          id="downshift-35-label"
         />
         <div
           class="Input__InputWrapperStyled-wu99qs-0 vKSQU"
@@ -396,12 +400,12 @@ exports[`SelectDropdown should render with empty options 1`] = `
           >
             <input
               aria-autocomplete="list"
-              aria-controls="downshift-27-menu"
-              aria-labelledby="downshift-27-label"
+              aria-controls="downshift-35-menu"
+              aria-labelledby="downshift-35-label"
               autocomplete="off"
               class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full cursor-default"
               data-testid="SelectDropdownInput__input"
-              id="downshift-26-input"
+              id="downshift-34-input"
               placeholder="Select option"
               value=""
             />
@@ -412,8 +416,9 @@ exports[`SelectDropdown should render with empty options 1`] = `
             <div
               class=""
             >
-              <span
-                class="w-10 pointer-events-none text-theme-secondary-500"
+              <div
+                class="py-2 px-1 text-theme-secondary-500 flex items-center justify-center"
+                data-testid="SelectDropdown__caret"
               >
                 <div
                   class="sc-bdfBwQ gLRWTb transition-transform "
@@ -424,14 +429,14 @@ exports[`SelectDropdown should render with empty options 1`] = `
                     caret-down.svg
                   </svg>
                 </div>
-              </span>
+              </div>
             </div>
           </div>
         </div>
         <ul
-          aria-labelledby="downshift-27-label"
+          aria-labelledby="downshift-35-label"
           class="styles__SelectOptionsList-b2falt-0 heJAAA"
-          id="downshift-27-menu"
+          id="downshift-35-menu"
           role="listbox"
         />
       </div>
@@ -465,12 +470,12 @@ exports[`SelectDropdown should render with initial default value 1`] = `
       <div
         aria-expanded="false"
         aria-haspopup="listbox"
-        aria-owns="downshift-17-menu"
+        aria-owns="downshift-25-menu"
         role="combobox"
       >
         <label
-          for="downshift-16-input"
-          id="downshift-17-label"
+          for="downshift-24-input"
+          id="downshift-25-label"
         />
         <div
           class="Input__InputWrapperStyled-wu99qs-0 vKSQU"
@@ -480,12 +485,12 @@ exports[`SelectDropdown should render with initial default value 1`] = `
           >
             <input
               aria-autocomplete="list"
-              aria-controls="downshift-17-menu"
-              aria-labelledby="downshift-17-label"
+              aria-controls="downshift-25-menu"
+              aria-labelledby="downshift-25-label"
               autocomplete="off"
               class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full cursor-default"
               data-testid="SelectDropdownInput__input"
-              id="downshift-16-input"
+              id="downshift-24-input"
               placeholder="Select option"
               value="Option 3"
             />
@@ -502,8 +507,9 @@ exports[`SelectDropdown should render with initial default value 1`] = `
             <div
               class=""
             >
-              <span
-                class="w-10 pointer-events-none text-theme-secondary-500"
+              <div
+                class="py-2 px-1 text-theme-secondary-500 flex items-center justify-center"
+                data-testid="SelectDropdown__caret"
               >
                 <div
                   class="sc-bdfBwQ gLRWTb transition-transform "
@@ -514,14 +520,14 @@ exports[`SelectDropdown should render with initial default value 1`] = `
                     caret-down.svg
                   </svg>
                 </div>
-              </span>
+              </div>
             </div>
           </div>
         </div>
         <ul
-          aria-labelledby="downshift-17-label"
+          aria-labelledby="downshift-25-label"
           class="styles__SelectOptionsList-b2falt-0 heJAAA"
-          id="downshift-17-menu"
+          id="downshift-25-menu"
           role="listbox"
         />
       </div>
@@ -531,6 +537,91 @@ exports[`SelectDropdown should render with initial default value 1`] = `
 `;
 
 exports[`SelectDropdown should render with options values as numbers 1`] = `
+<div>
+  <div
+    class="relative w-full"
+  >
+    <div
+      class="Input__InputWrapperStyled-wu99qs-0 vKSQU sr-only"
+    >
+      <div
+        class="relative flex flex-1"
+      >
+        <input
+          class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
+          data-testid="select-list__input"
+          readonly=""
+          value=""
+        />
+      </div>
+    </div>
+    <div
+      class="relative w-full"
+    >
+      <div
+        aria-expanded="false"
+        aria-haspopup="listbox"
+        aria-owns="downshift-39-menu"
+        role="combobox"
+      >
+        <label
+          for="downshift-38-input"
+          id="downshift-39-label"
+        />
+        <div
+          class="Input__InputWrapperStyled-wu99qs-0 vKSQU"
+        >
+          <div
+            class="relative flex flex-1"
+          >
+            <input
+              aria-autocomplete="list"
+              aria-controls="downshift-39-menu"
+              aria-labelledby="downshift-39-label"
+              autocomplete="off"
+              class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full cursor-default"
+              data-testid="SelectDropdownInput__input"
+              id="downshift-38-input"
+              placeholder="Select option"
+              value=""
+            />
+          </div>
+          <div
+            class="flex items-center space-x-3 divide-x divide-theme-secondary-300 dark:divide-theme-secondary-800 text-theme-primary-300 dark:text-theme-secondary-600"
+          >
+            <div
+              class=""
+            >
+              <div
+                class="py-2 px-1 text-theme-secondary-500 flex items-center justify-center"
+                data-testid="SelectDropdown__caret"
+              >
+                <div
+                  class="sc-bdfBwQ gLRWTb transition-transform "
+                  height="5"
+                  width="7"
+                >
+                  <svg>
+                    caret-down.svg
+                  </svg>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <ul
+          aria-labelledby="downshift-39-label"
+          class="styles__SelectOptionsList-b2falt-0 heJAAA"
+          id="downshift-39-menu"
+          role="listbox"
+        />
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`SelectDropdown should render with wrong default value 1`] = `
 <div>
   <div
     class="relative w-full"
@@ -586,8 +677,9 @@ exports[`SelectDropdown should render with options values as numbers 1`] = `
             <div
               class=""
             >
-              <span
-                class="w-10 pointer-events-none text-theme-secondary-500"
+              <div
+                class="py-2 px-1 text-theme-secondary-500 flex items-center justify-center"
+                data-testid="SelectDropdown__caret"
               >
                 <div
                   class="sc-bdfBwQ gLRWTb transition-transform "
@@ -598,7 +690,7 @@ exports[`SelectDropdown should render with options values as numbers 1`] = `
                     caret-down.svg
                   </svg>
                 </div>
-              </span>
+              </div>
             </div>
           </div>
         </div>
@@ -606,90 +698,6 @@ exports[`SelectDropdown should render with options values as numbers 1`] = `
           aria-labelledby="downshift-31-label"
           class="styles__SelectOptionsList-b2falt-0 heJAAA"
           id="downshift-31-menu"
-          role="listbox"
-        />
-      </div>
-    </div>
-  </div>
-</div>
-`;
-
-exports[`SelectDropdown should render with wrong default value 1`] = `
-<div>
-  <div
-    class="relative w-full"
-  >
-    <div
-      class="Input__InputWrapperStyled-wu99qs-0 vKSQU sr-only"
-    >
-      <div
-        class="relative flex flex-1"
-      >
-        <input
-          class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
-          data-testid="select-list__input"
-          readonly=""
-          value=""
-        />
-      </div>
-    </div>
-    <div
-      class="relative w-full"
-    >
-      <div
-        aria-expanded="false"
-        aria-haspopup="listbox"
-        aria-owns="downshift-23-menu"
-        role="combobox"
-      >
-        <label
-          for="downshift-22-input"
-          id="downshift-23-label"
-        />
-        <div
-          class="Input__InputWrapperStyled-wu99qs-0 vKSQU"
-        >
-          <div
-            class="relative flex flex-1"
-          >
-            <input
-              aria-autocomplete="list"
-              aria-controls="downshift-23-menu"
-              aria-labelledby="downshift-23-label"
-              autocomplete="off"
-              class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full cursor-default"
-              data-testid="SelectDropdownInput__input"
-              id="downshift-22-input"
-              placeholder="Select option"
-              value=""
-            />
-          </div>
-          <div
-            class="flex items-center space-x-3 divide-x divide-theme-secondary-300 dark:divide-theme-secondary-800 text-theme-primary-300 dark:text-theme-secondary-600"
-          >
-            <div
-              class=""
-            >
-              <span
-                class="w-10 pointer-events-none text-theme-secondary-500"
-              >
-                <div
-                  class="sc-bdfBwQ gLRWTb transition-transform "
-                  height="5"
-                  width="7"
-                >
-                  <svg>
-                    caret-down.svg
-                  </svg>
-                </div>
-              </span>
-            </div>
-          </div>
-        </div>
-        <ul
-          aria-labelledby="downshift-23-label"
-          class="styles__SelectOptionsList-b2falt-0 heJAAA"
-          id="downshift-23-menu"
           role="listbox"
         />
       </div>

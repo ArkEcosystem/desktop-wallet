@@ -1,5 +1,5 @@
-import { Network } from "@arkecosystem/platform-sdk/dist/coins";
-import { Profile } from "@arkecosystem/platform-sdk-profiles";
+import { Coins } from "@arkecosystem/platform-sdk";
+import { Contracts } from "@arkecosystem/platform-sdk-profiles";
 import { Address } from "app/components/Address";
 import { Amount } from "app/components/Amount";
 import { Avatar } from "app/components/Avatar";
@@ -22,8 +22,8 @@ const MultipleImport = ({
 	network,
 }: {
 	wallets: LedgerData[];
-	profile: Profile;
-	network: Network;
+	profile: Contracts.IProfile;
+	network: Coins.Network;
 }) => {
 	const { t } = useTranslation();
 
@@ -78,7 +78,7 @@ const MultipleImport = ({
 								paddingPosition="none"
 								borderPosition="bottom"
 								extra={
-									<Tooltip content={t("WALLETS.PAGE_IMPORT_WALLET.WALLET_NAME")}>
+									<Tooltip content={t("WALLETS.WALLET_NAME")}>
 										<Button
 											data-testid="LedgerImportStep__edit-alias"
 											type="button"
@@ -99,7 +99,7 @@ const MultipleImport = ({
 											maxNameChars={8}
 											maxChars={walletName ? 22 : 0}
 										/>
-										<p className="text-theme-secondary-500 text-sm mt-1 font-medium">
+										<p className="mt-1 text-sm font-medium text-theme-secondary-500">
 											<Amount value={wallet.balance!} ticker={network.ticker()} />
 										</p>
 									</div>
@@ -123,7 +123,15 @@ const MultipleImport = ({
 	);
 };
 
-const SingleImport = ({ wallets, profile, network }: { wallets: LedgerData[]; profile: Profile; network: Network }) => {
+const SingleImport = ({
+	wallets,
+	profile,
+	network,
+}: {
+	wallets: LedgerData[];
+	profile: Contracts.IProfile;
+	network: Coins.Network;
+}) => {
 	const { t } = useTranslation();
 	const { register, watch, trigger } = useFormContext();
 
@@ -145,7 +153,7 @@ const SingleImport = ({ wallets, profile, network }: { wallets: LedgerData[]; pr
 			</TransactionDetail>
 
 			<FormField name={`names.${wallet.address}`}>
-				<FormLabel label={t("WALLETS.PAGE_IMPORT_WALLET.WALLET_NAME")} required={false} optional />
+				<FormLabel label={t("WALLETS.WALLET_NAME")} required={false} optional />
 				<InputDefault
 					onChange={() => {
 						for (const address of Object.keys(watch("names"))) {
@@ -175,18 +183,18 @@ const SingleImport = ({ wallets, profile, network }: { wallets: LedgerData[]; pr
 	);
 };
 
-export const LedgerImportStep = ({ wallets, profile }: { wallets: LedgerData[]; profile: Profile }) => {
+export const LedgerImportStep = ({ wallets, profile }: { wallets: LedgerData[]; profile: Contracts.IProfile }) => {
 	const { t } = useTranslation();
 
 	const { watch } = useFormContext();
 
-	const [network] = useState<Network>(() => watch("network"));
+	const [network] = useState<Coins.Network>(() => watch("network"));
 
 	return (
 		<section data-testid="LedgerImportStep" className="space-y-6">
 			<Header
-				title={t("WALLETS.PAGE_IMPORT_WALLET.PROCESS_COMPLETED_STEP.TITLE")}
-				subtitle={t("WALLETS.PAGE_IMPORT_WALLET.PROCESS_COMPLETED_STEP.SUBTITLE")}
+				title={t("WALLETS.PAGE_IMPORT_WALLET.LEDGER_IMPORT_STEP.TITLE")}
+				subtitle={t("WALLETS.PAGE_IMPORT_WALLET.LEDGER_IMPORT_STEP.SUBTITLE")}
 			/>
 
 			<TransactionNetwork network={network} borderPosition="bottom" paddingPosition="bottom" />

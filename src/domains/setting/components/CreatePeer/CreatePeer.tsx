@@ -1,5 +1,5 @@
 import { Coins } from "@arkecosystem/platform-sdk";
-import { Profile } from "@arkecosystem/platform-sdk-profiles";
+import { Contracts } from "@arkecosystem/platform-sdk-profiles";
 import { Modal } from "app/components/Modal";
 import { useEnvironmentContext } from "app/contexts";
 import { PeerForm } from "domains/setting/components/PeerForm";
@@ -9,7 +9,7 @@ import { useTranslation } from "react-i18next";
 type CreatePeerProps = {
 	isOpen: boolean;
 	networks: Coins.Network[];
-	profile: Profile;
+	profile: Contracts.IProfile;
 	onClose?: () => void;
 	onValidateHost?: any;
 };

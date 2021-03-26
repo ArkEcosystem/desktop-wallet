@@ -1,4 +1,4 @@
-import { Profile, ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
+import { Contracts } from "@arkecosystem/platform-sdk-profiles";
 import Transport, { Observer } from "@ledgerhq/hw-transport";
 import { createTransportReplayer, RecordStore } from "@ledgerhq/hw-transport-mocker";
 import React from "react";
@@ -8,8 +8,8 @@ import { useLedgerConnection } from "./connection";
 
 describe("Use Ledger Connection", () => {
 	let transport: typeof Transport;
-	let profile: Profile;
-	let wallet: ReadWriteWallet;
+	let profile: Contracts.IProfile;
+	let wallet: Contracts.IReadWriteWallet;
 	let publicKeyPaths = new Map();
 
 	beforeEach(() => {

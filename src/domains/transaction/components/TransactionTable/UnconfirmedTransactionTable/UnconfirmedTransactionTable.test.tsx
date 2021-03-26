@@ -1,5 +1,5 @@
 import { DateTime } from "@arkecosystem/platform-sdk-intl";
-import { ExtendedTransactionData, Profile, ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
+import { Contracts, DTO } from "@arkecosystem/platform-sdk-profiles";
 import { BigNumber } from "@arkecosystem/platform-sdk-support";
 import React from "react";
 import { TransactionFixture } from "tests/fixtures/transactions";
@@ -9,9 +9,9 @@ import { env, fireEvent, getDefaultProfileId, render, renderWithRouter } from "u
 import { UnconfirmedTransactionRow } from "./UnconfirmedTransactionRow";
 import { UnconfirmedTransactionTable } from "./UnconfirmedTransactionTable";
 
-let transactions: ExtendedTransactionData[];
-let profile: Profile;
-let wallet: ReadWriteWallet;
+let transactions: DTO.ExtendedTransactionData[];
+let profile: Contracts.IProfile;
+let wallet: Contracts.IReadWriteWallet;
 
 const TransactionRowFixture = {
 	...TransactionFixture,

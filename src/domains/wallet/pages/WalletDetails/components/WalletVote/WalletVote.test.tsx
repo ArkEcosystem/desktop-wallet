@@ -1,4 +1,6 @@
-import { ReadOnlyWallet, ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
+import { Contracts } from "@arkecosystem/platform-sdk-profiles";
+// @README: This import is fine in tests but should be avoided in production code.
+import { ReadOnlyWallet } from "@arkecosystem/platform-sdk-profiles/dist/drivers/memory/wallets/read-only-wallet";
 import { translations as commonTranslations } from "app/i18n/common/i18n";
 import { translations as walletTranslations } from "domains/wallet/i18n";
 import React from "react";
@@ -6,7 +8,7 @@ import { act, env, fireEvent, getDefaultProfileId, render, syncDelegates } from 
 
 import { WalletVote } from "./WalletVote";
 
-let wallet: ReadWriteWallet;
+let wallet: Contracts.IReadWriteWallet;
 
 describe("WalletVote", () => {
 	beforeEach(async () => {

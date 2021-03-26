@@ -1,5 +1,5 @@
-import { TransactionFee } from "@arkecosystem/platform-sdk/dist/contracts";
-import { ProfileSetting } from "@arkecosystem/platform-sdk-profiles";
+import { Contracts } from "@arkecosystem/platform-sdk";
+import { Contracts as ProfileContracts } from "@arkecosystem/platform-sdk-profiles";
 import { BigNumber } from "@arkecosystem/platform-sdk-support";
 import { useEnvironmentContext } from "app/contexts";
 import { useActiveProfile } from "app/hooks";
@@ -8,7 +8,7 @@ import { useCallback, useEffect, useMemo, useState } from "react";
 
 type CallbackFunction = () => void;
 
-export const useFeeConfirmation = (fee: number | string, fees: TransactionFee) => {
+export const useFeeConfirmation = (fee: number | string, fees: Contracts.TransactionFee) => {
 	const [showFeeWarning, setShowFeeWarning] = useState(false);
 	const [feeWarningVariant, setFeeWarningVariant] = useState<FeeWarningVariant | undefined>();
 
@@ -40,7 +40,7 @@ export const useFeeConfirmation = (fee: number | string, fees: TransactionFee) =
 			setShowFeeWarning(false);
 
 			if (suppressWarning) {
-				activeProfile.settings().set(ProfileSetting.DoNotShowFeeWarning, true);
+				activeProfile.settings().set(ProfileContracts.ProfileSetting.DoNotShowFeeWarning, true);
 				await persist(activeProfile);
 			}
 
@@ -54,7 +54,9 @@ export const useFeeConfirmation = (fee: number | string, fees: TransactionFee) =
 	);
 
 	const requireFeeConfirmation = useMemo(
-		() => feeWarningVariant !== undefined && !activeProfile.settings().get(ProfileSetting.DoNotShowFeeWarning),
+		() =>
+			feeWarningVariant !== undefined &&
+			!activeProfile.settings().get(ProfileContracts.ProfileSetting.DoNotShowFeeWarning),
 		[activeProfile, feeWarningVariant],
 	);
 

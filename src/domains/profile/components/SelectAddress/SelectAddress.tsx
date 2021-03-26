@@ -1,4 +1,4 @@
-import { ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
+import { Contracts } from "@arkecosystem/platform-sdk-profiles";
 import { Address } from "app/components/Address";
 import { Avatar } from "app/components/Avatar";
 import { Circle } from "app/components/Circle";
@@ -12,7 +12,7 @@ import { useTranslation } from "react-i18next";
 
 type SelectAddressProps = {
 	address?: string;
-	wallets: ReadWriteWallet[];
+	wallets: Contracts.IReadWriteWallet[];
 	disabled?: boolean;
 	isInvalid?: boolean;
 	isVerified?: boolean;

@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/require-await */
 import { Contracts } from "@arkecosystem/platform-sdk";
-import { Profile, ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
+import { Contracts as ProfilesContracts } from "@arkecosystem/platform-sdk-profiles";
 import { BigNumber } from "@arkecosystem/platform-sdk-support";
 import { act, renderHook } from "@testing-library/react-hooks";
 import React from "react";
@@ -19,8 +19,8 @@ import {
 
 import { DelegateRegistrationForm } from "./DelegateRegistrationForm";
 
-let profile: Profile;
-let wallet: ReadWriteWallet;
+let profile: ProfilesContracts.IProfile;
+let wallet: ProfilesContracts.IReadWriteWallet;
 let fees: Record<string, string>;
 
 const renderComponent = async (defaultValues = { fee: (2 * 1e8).toFixed(0) }) => {
@@ -47,7 +47,7 @@ const renderComponent = async (defaultValues = { fee: (2 * 1e8).toFixed(0) }) =>
 	};
 };
 
-const createTransactionMock = (wallet: ReadWriteWallet) =>
+const createTransactionMock = (wallet: ProfilesContracts.IReadWriteWallet) =>
 	// @ts-ignore
 	jest.spyOn(wallet.transaction(), "transaction").mockReturnValue({
 		id: () => delegateRegistrationFixture.data.id,
@@ -292,5 +292,47 @@ describe("DelegateRegistrationForm", () => {
 
 		expect(getByText("TRANSACTION.DELEGATE_NAME")).toBeTruthy();
 		expect(getByText("test_delegate")).toBeTruthy();
+	});
+
+	it("should sign transaction using password encryption", async () => {
+		const walletUsesWIFMock = jest.spyOn(wallet, "usesWIF").mockReturnValue(true);
+		const walletWifMock = jest.spyOn(wallet, "wif").mockImplementation((password) => {
+			const wif = "S9rDfiJ2ar4DpWAQuaXECPTJHfTZ3XjCPv15gjxu4cHJZKzABPyV";
+			return Promise.resolve(wif);
+		});
+
+		const form = {
+			clearErrors: jest.fn(),
+			getValues: () => ({
+				fee: "1",
+				mnemonic: "sample passphrase",
+				senderAddress: wallet.address(),
+				username: "test_delegate",
+				encryptionPassword: "password",
+			}),
+			setError: jest.fn(),
+			setValue: jest.fn(),
+		};
+		const signMock = jest
+			.spyOn(wallet.transaction(), "signDelegateRegistration")
+			.mockReturnValue(Promise.resolve(delegateRegistrationFixture.data.id));
+		const broadcastMock = jest.spyOn(wallet.transaction(), "broadcast").mockImplementation();
+		const transactionMock = createTransactionMock(wallet);
+
+		await DelegateRegistrationForm.signTransaction({
+			env,
+			form,
+			profile,
+		});
+
+		expect(signMock).toHaveBeenCalled();
+		expect(broadcastMock).toHaveBeenCalled();
+		expect(transactionMock).toHaveBeenCalled();
+
+		signMock.mockRestore();
+		broadcastMock.mockRestore();
+		transactionMock.mockRestore();
+		walletUsesWIFMock.mockRestore();
+		walletWifMock.mockRestore();
 	});
 });

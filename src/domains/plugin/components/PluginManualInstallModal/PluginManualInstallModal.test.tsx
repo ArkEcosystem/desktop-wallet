@@ -1,4 +1,5 @@
-import { Profile } from "@arkecosystem/platform-sdk-profiles";
+/* eslint-disable @typescript-eslint/require-await */
+import { Contracts } from "@arkecosystem/platform-sdk-profiles";
 import { toasts } from "app/services";
 import nock from "nock";
 import { PluginManager, PluginManagerProvider } from "plugins";
@@ -8,7 +9,7 @@ import { env, fireEvent, getDefaultProfileId, render, screen, waitFor } from "ut
 import { PluginManualInstallModal } from "./PluginManualInstallModal";
 
 describe("PluginManualInstallModal", () => {
-	let profile: Profile;
+	let profile: Contracts.IProfile;
 	let manager: PluginManager;
 
 	beforeAll(() => {
@@ -26,28 +27,45 @@ describe("PluginManualInstallModal", () => {
 		const toastSpy = jest.spyOn(toasts, "error").mockImplementation();
 
 		const onSuccess = jest.fn();
+
 		const { container } = render(
 			<PluginManagerProvider manager={manager} services={[]}>
 				<PluginManualInstallModal onSuccess={onSuccess} isOpen />
 			</PluginManagerProvider>,
 		);
 
-		expect(screen.queryByTestId("PluginManualInstallModal__submit-button")).toBeDisabled();
+		await waitFor(async () => {
+			expect(screen.getByTestId("PluginManualInstallModal__submit-button")).toBeDisabled();
+		});
 
 		fireEvent.input(screen.getByRole("textbox"), { target: { value: "https://" } });
 
-		expect(screen.getByRole("textbox")).toHaveAttribute("aria-invalid", "true");
+		await waitFor(async () => {
+			expect(screen.getByRole("textbox")).toHaveAttribute("aria-invalid", "true");
+		});
 
 		fireEvent.input(screen.getByRole("textbox"), {
 			target: { value: "https://github.com/arkecosystem/fail-plugin" },
 		});
+
+		await waitFor(async () => {
+			expect(screen.getByRole("textbox")).not.toHaveAttribute("aria-invalid", "true");
+		});
+
+		await waitFor(async () => {
+			expect(screen.getByTestId("PluginManualInstallModal__submit-button")).not.toBeDisabled();
+		});
+
 		fireEvent.click(screen.getByTestId("PluginManualInstallModal__submit-button"));
+
 		await waitFor(() => expect(toastSpy).toHaveBeenCalled());
 
 		fireEvent.input(screen.getByRole("textbox"), {
 			target: { value: "https://github.com/arkecosystem/test-plugin" },
 		});
+
 		fireEvent.click(screen.getByTestId("PluginManualInstallModal__submit-button"));
+
 		await waitFor(() =>
 			expect(onSuccess).toHaveBeenCalledWith({
 				pluginId: "test-plugin",

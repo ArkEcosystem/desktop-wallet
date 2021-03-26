@@ -1,5 +1,5 @@
 import { Coins, Contracts } from "@arkecosystem/platform-sdk";
-import { Profile, ReadOnlyWallet, ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
+import { Contracts as ProfilesContracts } from "@arkecosystem/platform-sdk-profiles";
 import { FormField, FormLabel } from "app/components/Form";
 import { Header } from "app/components/Header";
 import { useEnvironmentContext } from "app/contexts";
@@ -20,10 +20,10 @@ export const FormStep = ({
 	votes,
 	wallet,
 }: {
-	profile: Profile;
-	unvotes: ReadOnlyWallet[];
-	votes: ReadOnlyWallet[];
-	wallet: ReadWriteWallet;
+	profile: ProfilesContracts.IProfile;
+	unvotes: ProfilesContracts.IReadOnlyWallet[];
+	votes: ProfilesContracts.IReadOnlyWallet[];
+	wallet: ProfilesContracts.IReadWriteWallet;
 }) => {
 	const { env } = useEnvironmentContext();
 	const { t } = useTranslation();
@@ -48,7 +48,7 @@ export const FormStep = ({
 	const fee = getValues("fee") || defaultFee;
 
 	useEffect(() => {
-		const setVoteFees = async (senderWallet: ReadWriteWallet) => {
+		const setVoteFees = async (senderWallet: ProfilesContracts.IReadWriteWallet) => {
 			const voteFees = await findByType(senderWallet.coinId(), senderWallet.networkId(), "vote");
 
 			setFees(voteFees);
@@ -65,8 +65,8 @@ export const FormStep = ({
 	return (
 		<section data-testid="SendVote__form-step">
 			<Header
-				title={t("TRANSACTION.PAGE_VOTE.FIRST_STEP.TITLE")}
-				subtitle={t("TRANSACTION.PAGE_VOTE.FIRST_STEP.DESCRIPTION")}
+				title={t("TRANSACTION.PAGE_VOTE.FORM_STEP.TITLE")}
+				subtitle={t("TRANSACTION.PAGE_VOTE.FORM_STEP.DESCRIPTION")}
 			/>
 
 			<TransactionNetwork network={wallet.network()} border={false} paddingPosition="bottom" className="mt-8" />

@@ -1,4 +1,4 @@
-import { Profile } from "@arkecosystem/platform-sdk-profiles";
+import { Contracts } from "@arkecosystem/platform-sdk-profiles";
 import { PluginController, PluginManager } from "plugins/core";
 import { PluginAPI } from "plugins/types";
 import { env, waitFor } from "utils/testing-library";
@@ -8,7 +8,7 @@ import { TimersPluginService } from "./TimersPluginService";
 const config = { name: "test", version: "1.1", "desktop-wallet": { permissions: ["TIMERS"] } };
 
 describe("TimersPluginService", () => {
-	let profile: Profile;
+	let profile: Contracts.IProfile;
 	let manager: PluginManager;
 	let ctrl: PluginController;
 

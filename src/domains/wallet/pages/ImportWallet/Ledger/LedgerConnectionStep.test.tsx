@@ -1,4 +1,4 @@
-import { Profile, ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
+import { Contracts } from "@arkecosystem/platform-sdk-profiles";
 import Transport, { Observer } from "@ledgerhq/hw-transport";
 import { createTransportReplayer, RecordStore } from "@ledgerhq/hw-transport-mocker";
 import { LedgerProvider } from "app/contexts/Ledger/Ledger";
@@ -12,8 +12,8 @@ let transport: typeof Transport;
 let observer: Observer<any>;
 
 describe("LedgerConnectionStep", () => {
-	let profile: Profile;
-	let wallet: ReadWriteWallet;
+	let profile: Contracts.IProfile;
+	let wallet: Contracts.IReadWriteWallet;
 
 	beforeEach(() => {
 		profile = env.profiles().findById(getDefaultProfileId());
@@ -59,7 +59,7 @@ describe("LedgerConnectionStep", () => {
 
 		const { container } = render(<Component />);
 
-		await waitFor(() => expect(screen.queryByText("Open the ARK app on your device...")).toBeInTheDocument());
+		await waitFor(() => expect(screen.queryByText("Open the ARK app on your device ...")).toBeInTheDocument());
 
 		await waitFor(() => expect(onFailed).toHaveBeenCalled(), { timeout: 10000 });
 		await waitFor(() => expect(screen.queryByText("Failed")).toBeInTheDocument());

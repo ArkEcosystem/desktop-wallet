@@ -1,4 +1,4 @@
-import { ExtendedTransactionData } from "@arkecosystem/platform-sdk-profiles";
+import { DTO } from "@arkecosystem/platform-sdk-profiles";
 import { Button } from "app/components/Button";
 import { Icon } from "app/components/Icon";
 import { Link } from "app/components/Link";
@@ -14,7 +14,7 @@ import { TransactionRowRecipientLabel } from "./TransactionRowRecipientLabel";
 import { TransactionRowSkeleton } from "./TransactionRowSkeleton";
 
 type Props = {
-	transaction: ExtendedTransactionData;
+	transaction: DTO.ExtendedTransactionData;
 	exchangeCurrency?: string;
 	isSignaturePending?: boolean;
 	onSign?: () => void;

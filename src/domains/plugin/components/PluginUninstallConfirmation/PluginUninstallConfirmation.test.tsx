@@ -1,4 +1,4 @@
-import { Profile } from "@arkecosystem/platform-sdk-profiles";
+import { Contracts } from "@arkecosystem/platform-sdk-profiles";
 import { ipcRenderer } from "electron";
 import { PluginController, PluginManager, PluginManagerProvider } from "plugins";
 import React from "react";
@@ -7,7 +7,7 @@ import { env, fireEvent, getDefaultProfileId, render, screen, waitFor } from "ut
 import { PluginUninstallConfirmation } from "./PluginUninstallConfirmation";
 
 describe("Plugin Uninstall Confirmation", () => {
-	let profile: Profile;
+	let profile: Contracts.IProfile;
 	let manager: PluginManager;
 
 	beforeAll(() => {

@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/require-await */
-import { Profile, ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
+import { Contracts } from "@arkecosystem/platform-sdk-profiles";
 import { BigNumber } from "@arkecosystem/platform-sdk-support";
 import { createMemoryHistory } from "history";
 import React from "react";
@@ -19,8 +19,8 @@ import {
 
 import { SendDelegateResignation } from "../SendDelegateResignation";
 
-let wallet: ReadWriteWallet;
-let profile: Profile;
+let wallet: Contracts.IReadWriteWallet;
+let profile: Contracts.IProfile;
 
 let resignationUrl: string;
 const dashboardUrl = `/profiles/${getDefaultProfileId()}/dashboard`;
@@ -53,7 +53,7 @@ const transactionResponse = {
 	data: () => transactionFixture.data,
 };
 
-const createTransactionMock = (wallet: ReadWriteWallet) =>
+const createTransactionMock = (wallet: Contracts.IReadWriteWallet) =>
 	// @ts-ignore
 	jest.spyOn(wallet.transaction(), "transaction").mockReturnValue(transactionResponse);
 
@@ -489,6 +489,74 @@ describe("SendDelegateResignation", () => {
 			signMock.mockRestore();
 			broadcastMock.mockRestore();
 			transactionMock.mockRestore();
+		});
+
+		it("should successfully sign and submit resignation transaction using encryption password", async () => {
+			const encryptedWallet = profile.wallets().first();
+			const walletUsesWIFMock = jest.spyOn(encryptedWallet, "usesWIF").mockReturnValue(true);
+			const walletWifMock = jest.spyOn(encryptedWallet, "wif").mockImplementation((password) => {
+				const wif = "S9rDfiJ2ar4DpWAQuaXECPTJHfTZ3XjCPv15gjxu4cHJZKzABPyV";
+				return Promise.resolve(wif);
+			});
+
+			const secondPublicKeyMock = jest
+				.spyOn(encryptedWallet, "secondPublicKey")
+				.mockReturnValue(await encryptedWallet.coin().identity().publicKey().fromMnemonic("second mnemonic"));
+			const signMock = jest
+				.spyOn(encryptedWallet.transaction(), "signDelegateResignation")
+				.mockReturnValue(Promise.resolve(transactionFixture.data.id));
+			const broadcastMock = jest.spyOn(encryptedWallet.transaction(), "broadcast").mockImplementation();
+			const transactionMock = createTransactionMock(encryptedWallet);
+
+			const resignationEncryptedUrl = `/profiles/${getDefaultProfileId()}/wallets/${encryptedWallet.id()}/send-delegate-resignation`;
+			history.push(resignationEncryptedUrl);
+
+			const { asFragment, getByTestId } = renderWithRouter(
+				<Route path="/profiles/:profileId/wallets/:walletId/send-delegate-resignation">
+					<SendDelegateResignation />
+				</Route>,
+				{
+					routes: [resignationEncryptedUrl],
+					history,
+				},
+			);
+
+			await waitFor(() => expect(getByTestId("SendDelegateResignation__form-step")).toBeTruthy());
+
+			await act(async () => {
+				fireEvent.click(getByTestId("SendDelegateResignation__continue-button"));
+			});
+			await act(async () => {
+				fireEvent.click(getByTestId("SendDelegateResignation__continue-button"));
+			});
+
+			await waitFor(() => expect(getByTestId("AuthenticationStep__encryption-password")).toBeTruthy());
+
+			act(() => {
+				fireEvent.input(getByTestId("AuthenticationStep__encryption-password"), {
+					target: {
+						value: "password",
+					},
+				});
+			});
+			await waitFor(() => expect(getByTestId("AuthenticationStep__encryption-password")).toHaveValue("password"));
+
+			await waitFor(() => expect(getByTestId("SendDelegateResignation__send-button")).not.toBeDisabled());
+
+			act(() => {
+				fireEvent.click(getByTestId("SendDelegateResignation__send-button"));
+			});
+
+			await waitFor(() => expect(getByTestId("SendDelegateResignation__summary-step")).toBeTruthy());
+			expect(asFragment()).toMatchSnapshot();
+
+			secondPublicKeyMock.mockRestore();
+			signMock.mockRestore();
+			broadcastMock.mockRestore();
+			transactionMock.mockRestore();
+
+			walletUsesWIFMock.mockRestore();
+			walletWifMock.mockRestore();
 		});
 	});
 });

@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/require-await */
-import { Profile, ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
+import { Contracts } from "@arkecosystem/platform-sdk-profiles";
 import { BigNumber } from "@arkecosystem/platform-sdk-support";
 import { createMemoryHistory } from "history";
 import nock from "nock";
@@ -23,15 +23,15 @@ import {
 
 import { SendRegistration } from "./";
 
-let profile: Profile;
-let wallet: ReadWriteWallet;
-let secondWallet: ReadWriteWallet;
+let profile: Contracts.IProfile;
+let wallet: Contracts.IReadWriteWallet;
+let secondWallet: Contracts.IReadWriteWallet;
 const history = createMemoryHistory();
 const passphrase = getDefaultWalletMnemonic();
 
 const path = "/profiles/:profileId/wallets/:walletId/send-registration/:registrationType";
 
-const renderPage = async (wallet: ReadWriteWallet, type = "delegateRegistration") => {
+const renderPage = async (wallet: Contracts.IReadWriteWallet, type = "delegateRegistration") => {
 	const registrationURL = `/profiles/${profile.id()}/wallets/${wallet.id()}/send-registration/${type}`;
 
 	history.push(registrationURL);
@@ -57,7 +57,7 @@ const renderPage = async (wallet: ReadWriteWallet, type = "delegateRegistration"
 	};
 };
 
-const createTransactionMock = (wallet: ReadWriteWallet) =>
+const createTransactionMock = (wallet: Contracts.IReadWriteWallet) =>
 	// @ts-ignore
 	jest.spyOn(wallet.transaction(), "transaction").mockReturnValue({
 		id: () => DelegateRegistrationFixture.data.id,

@@ -1,4 +1,4 @@
-import { Profile } from "@arkecosystem/platform-sdk-profiles";
+import { Contracts } from "@arkecosystem/platform-sdk-profiles";
 import { Button } from "app/components/Button";
 import { Icon } from "app/components/Icon";
 import { Image } from "app/components/Image";
@@ -10,7 +10,7 @@ import { useTranslation } from "react-i18next";
 
 type ResetProfileProps = {
 	isOpen: boolean;
-	profile: Profile;
+	profile: Contracts.IProfile;
 	onClose?: () => void;
 	onCancel?: () => void;
 	onReset?: () => void;

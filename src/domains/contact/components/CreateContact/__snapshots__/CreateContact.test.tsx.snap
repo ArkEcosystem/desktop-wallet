@@ -52,7 +52,7 @@ exports[`CreateContact should render create contact modal 1`] = `
           <div
             class="mt-1 text-theme-secondary-text whitespace-pre-line"
           >
-            Enter your contacts name and addresses and add them to your list.
+            Specify details for the new Contact below.
           </div>
           <div
             class="mt-8"
@@ -65,7 +65,7 @@ exports[`CreateContact should render create contact modal 1`] = `
                 class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
               >
                 <label
-                  class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
+                  class="flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
                   data-testid="FormLabel"
                   for="name"
                 >
@@ -97,7 +97,7 @@ exports[`CreateContact should render create contact modal 1`] = `
                   class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
                 >
                   <label
-                    class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
+                    class="flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
                     data-testid="FormLabel"
                     for="network"
                   >
@@ -151,7 +151,7 @@ exports[`CreateContact should render create contact modal 1`] = `
                         class="mt-6"
                       >
                         <div
-                          class="font-bold text-sm text-theme-secondary-400 dark:text-theme-secondary-700 mb-3"
+                          class="mb-3 text-sm font-bold text-theme-secondary-400 dark:text-theme-secondary-700"
                         >
                           PUBLIC NETWORKS
                         </div>
@@ -272,7 +272,7 @@ exports[`CreateContact should render create contact modal 1`] = `
                         class="mt-6"
                       >
                         <div
-                          class="font-bold text-sm text-theme-secondary-400 dark:text-theme-secondary-700 mb-3"
+                          class="mb-3 text-sm font-bold text-theme-secondary-400 dark:text-theme-secondary-700"
                         >
                           DEVELOPMENT NETWORKS
                         </div>
@@ -334,7 +334,7 @@ exports[`CreateContact should render create contact modal 1`] = `
                   data-testid="ContactForm__address"
                 >
                   <label
-                    class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
+                    class="flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
                     data-testid="FormLabel"
                     for="address"
                   >

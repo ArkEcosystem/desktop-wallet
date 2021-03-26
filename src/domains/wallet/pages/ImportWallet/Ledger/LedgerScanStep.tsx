@@ -1,5 +1,5 @@
-import { Network } from "@arkecosystem/platform-sdk/dist/coins";
-import { Profile } from "@arkecosystem/platform-sdk-profiles";
+import { Coins } from "@arkecosystem/platform-sdk";
+import { Contracts } from "@arkecosystem/platform-sdk-profiles";
 import Tippy from "@tippyjs/react";
 import { Address } from "app/components/Address";
 import { Amount } from "app/components/Amount";
@@ -70,14 +70,14 @@ export const LedgerTable = ({
 	toggleSelectAll,
 	isScanning,
 }: {
-	network: Network;
+	network: Coins.Network;
 } & ReturnType<typeof useLedgerScanner>) => {
 	const { t } = useTranslation();
 	const isAllSelected = !isScanning && wallets.length > 0 && selectedWallets.length === wallets.length;
 
 	const columns = [
 		{
-			Header: t("COMMON.WALLET"),
+			Header: t("COMMON.ADDRESS"),
 			accessor: "address",
 		},
 		{
@@ -163,12 +163,12 @@ export const LedgerScanStep = ({
 	profile,
 	setRetryFn,
 }: {
-	profile: Profile;
+	profile: Contracts.IProfile;
 	setRetryFn?: (fn?: () => void) => void;
 }) => {
 	const { t } = useTranslation();
 	const { watch, register, unregister, setValue } = useFormContext();
-	const [network] = useState<Network>(() => watch("network"));
+	const [network] = useState<Coins.Network>(() => watch("network"));
 
 	const { isBusy, isConnected } = useLedgerContext();
 

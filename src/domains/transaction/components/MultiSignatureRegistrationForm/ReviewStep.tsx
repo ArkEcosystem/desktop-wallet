@@ -1,4 +1,4 @@
-import { ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
+import { Contracts } from "@arkecosystem/platform-sdk-profiles";
 import { BigNumber } from "@arkecosystem/platform-sdk-support";
 import { Circle } from "app/components/Circle";
 import { Header } from "app/components/Header";
@@ -15,7 +15,7 @@ import { useTranslation } from "react-i18next";
 import { RecipientList } from "../RecipientList";
 import { TotalAmountBox } from "../TotalAmountBox";
 
-export const ReviewStep = ({ wallet }: { wallet: ReadWriteWallet }) => {
+export const ReviewStep = ({ wallet }: { wallet: Contracts.IReadWriteWallet }) => {
 	const { t } = useTranslation();
 	const { unregister, watch } = useFormContext();
 	const { fee, participants, minParticipants } = watch();
@@ -26,10 +26,7 @@ export const ReviewStep = ({ wallet }: { wallet: ReadWriteWallet }) => {
 
 	return (
 		<section data-testid="MultiSignature__review-step">
-			<Header
-				title={t("TRANSACTION.PAGE_MULTISIGNATURE.REVIEW_STEP.TITLE")}
-				subtitle={t("TRANSACTION.PAGE_MULTISIGNATURE.REVIEW_STEP.DESCRIPTION")}
-			/>
+			<Header title={t("TRANSACTION.REVIEW_STEP.TITLE")} subtitle={t("TRANSACTION.REVIEW_STEP.DESCRIPTION")} />
 
 			<TransactionNetwork network={wallet.network()} border={false} paddingPosition="bottom" className="mt-8" />
 
@@ -58,7 +55,7 @@ export const ReviewStep = ({ wallet }: { wallet: ReadWriteWallet }) => {
 					</div>
 				}
 			>
-				{t("TRANSACTION.PAGE_MULTISIGNATURE.REVIEW_STEP.TYPE")}
+				{t("TRANSACTION.TRANSACTION_TYPES.MULTI_SIGNATURE")}
 			</TransactionDetail>
 
 			<div className="mt-2">

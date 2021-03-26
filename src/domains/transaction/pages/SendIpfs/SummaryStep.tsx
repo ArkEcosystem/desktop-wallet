@@ -1,5 +1,5 @@
 import { Contracts } from "@arkecosystem/platform-sdk";
-import { ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
+import { Contracts as ProfileContracts } from "@arkecosystem/platform-sdk-profiles";
 import { Circle } from "app/components/Circle";
 import { Icon } from "app/components/Icon";
 import { TransactionDetail } from "domains/transaction/components/TransactionDetail";
@@ -12,7 +12,7 @@ export const SummaryStep = ({
 	senderWallet,
 }: {
 	transaction: Contracts.SignedTransactionData;
-	senderWallet: ReadWriteWallet;
+	senderWallet: ProfileContracts.IReadWriteWallet;
 }) => {
 	const { t } = useTranslation();
 

@@ -1,5 +1,5 @@
 import { Coins } from "@arkecosystem/platform-sdk";
-import { Profile, ProfileSetting } from "@arkecosystem/platform-sdk-profiles";
+import { Contracts } from "@arkecosystem/platform-sdk-profiles";
 import { FormField, FormLabel } from "app/components/Form";
 import { Header } from "app/components/Header";
 import { SelectNetwork } from "domains/network/components/SelectNetwork";
@@ -7,11 +7,11 @@ import React, { useMemo } from "react";
 import { useFormContext } from "react-hook-form";
 import { useTranslation } from "react-i18next";
 
-export const NetworkStep = ({ profile, networks }: { profile: Profile; networks: Coins.Network[] }) => {
+export const NetworkStep = ({ profile, networks }: { profile: Contracts.IProfile; networks: Coins.Network[] }) => {
 	const { getValues, setValue } = useFormContext();
 
 	const availableNetworks = useMemo(() => {
-		const usesTestNetworks = profile.settings().get(ProfileSetting.UseTestNetworks);
+		const usesTestNetworks = profile.settings().get(Contracts.ProfileSetting.UseTestNetworks);
 		return usesTestNetworks ? networks : networks.filter((network) => network.isLive());
 	}, [profile, networks]);
 

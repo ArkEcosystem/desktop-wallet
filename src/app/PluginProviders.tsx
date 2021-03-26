@@ -11,6 +11,7 @@ import {
 	ThemePluginService,
 	TimersPluginService,
 } from "plugins";
+import { MessagePluginService } from "plugins/services/message/MessagePluginService";
 import React from "react";
 
 type Props = {
@@ -29,6 +30,7 @@ export const services = [
 	new StorePluginService(),
 	new ThemePluginService(),
 	new TimersPluginService(),
+	new MessagePluginService(),
 ];
 
 export const PluginProviders = ({ children }: Props) => {

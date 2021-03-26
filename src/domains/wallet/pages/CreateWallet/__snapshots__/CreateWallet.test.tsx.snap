@@ -328,7 +328,7 @@ exports[`CreateWallet should create a wallet with alias 1`] = `
                           class="text-theme-secondary-text"
                           data-testid="header__subtitle"
                         >
-                          Select a cryptoasset to create your new wallet address
+                          Select a cryptoasset to create your new wallet address.
                         </div>
                       </div>
                     </div>
@@ -336,7 +336,7 @@ exports[`CreateWallet should create a wallet with alias 1`] = `
                       class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2 mt-8"
                     >
                       <label
-                        class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
+                        class="flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
                         data-testid="FormLabel"
                         for="network"
                       >
@@ -390,7 +390,7 @@ exports[`CreateWallet should create a wallet with alias 1`] = `
                             class="mt-6"
                           >
                             <div
-                              class="font-bold text-sm text-theme-secondary-400 dark:text-theme-secondary-700 mb-3"
+                              class="mb-3 text-sm font-bold text-theme-secondary-400 dark:text-theme-secondary-700"
                             >
                               PUBLIC NETWORKS
                             </div>
@@ -448,7 +448,7 @@ exports[`CreateWallet should create a wallet with alias 1`] = `
                             class="mt-6"
                           >
                             <div
-                              class="font-bold text-sm text-theme-secondary-400 dark:text-theme-secondary-700 mb-3"
+                              class="mb-3 text-sm font-bold text-theme-secondary-400 dark:text-theme-secondary-700"
                             >
                               DEVELOPMENT NETWORKS
                             </div>
@@ -855,7 +855,7 @@ exports[`CreateWallet should create a wallet with alias 2`] = `
                           class="text-theme-secondary-text"
                           data-testid="header__subtitle"
                         >
-                          Wallet creation is complete. Now you can use it.
+                          The wallet address has been successfully created.
                         </div>
                       </div>
                     </div>
@@ -942,11 +942,11 @@ exports[`CreateWallet should create a wallet with alias 2`] = `
                       class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
                     >
                       <label
-                        class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
+                        class="flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
                         data-testid="FormLabel"
                         for="name"
                       >
-                        Wallet name
+                        Wallet Name
                         <span
                           class="ml-1 text-theme-secondary-500 dark:text-theme-secondary-700"
                           data-testid="FormLabel__optional"
@@ -1339,7 +1339,7 @@ exports[`CreateWallet should create a wallet without alias 1`] = `
                           class="text-theme-secondary-text"
                           data-testid="header__subtitle"
                         >
-                          Select a cryptoasset to create your new wallet address
+                          Select a cryptoasset to create your new wallet address.
                         </div>
                       </div>
                     </div>
@@ -1347,7 +1347,7 @@ exports[`CreateWallet should create a wallet without alias 1`] = `
                       class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2 mt-8"
                     >
                       <label
-                        class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
+                        class="flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
                         data-testid="FormLabel"
                         for="network"
                       >
@@ -1401,7 +1401,7 @@ exports[`CreateWallet should create a wallet without alias 1`] = `
                             class="mt-6"
                           >
                             <div
-                              class="font-bold text-sm text-theme-secondary-400 dark:text-theme-secondary-700 mb-3"
+                              class="mb-3 text-sm font-bold text-theme-secondary-400 dark:text-theme-secondary-700"
                             >
                               PUBLIC NETWORKS
                             </div>
@@ -1459,7 +1459,7 @@ exports[`CreateWallet should create a wallet without alias 1`] = `
                             class="mt-6"
                           >
                             <div
-                              class="font-bold text-sm text-theme-secondary-400 dark:text-theme-secondary-700 mb-3"
+                              class="mb-3 text-sm font-bold text-theme-secondary-400 dark:text-theme-secondary-700"
                             >
                               DEVELOPMENT NETWORKS
                             </div>
@@ -1866,7 +1866,7 @@ exports[`CreateWallet should create a wallet without alias 2`] = `
                           class="text-theme-secondary-text"
                           data-testid="header__subtitle"
                         >
-                          Wallet creation is complete. Now you can use it.
+                          The wallet address has been successfully created.
                         </div>
                       </div>
                     </div>
@@ -1953,11 +1953,11 @@ exports[`CreateWallet should create a wallet without alias 2`] = `
                       class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
                     >
                       <label
-                        class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
+                        class="flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
                         data-testid="FormLabel"
                         for="name"
                       >
-                        Wallet name
+                        Wallet Name
                         <span
                           class="ml-1 text-theme-secondary-500 dark:text-theme-secondary-700"
                           data-testid="FormLabel__optional"
@@ -2352,7 +2352,7 @@ exports[`CreateWallet should remove pending wallet if not submitted 1`] = `
                           class="text-theme-secondary-text"
                           data-testid="header__subtitle"
                         >
-                          Select a cryptoasset to create your new wallet address
+                          Select a cryptoasset to create your new wallet address.
                         </div>
                       </div>
                     </div>
@@ -2360,7 +2360,7 @@ exports[`CreateWallet should remove pending wallet if not submitted 1`] = `
                       class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2 mt-8"
                     >
                       <label
-                        class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
+                        class="flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
                         data-testid="FormLabel"
                         for="network"
                       >
@@ -2414,7 +2414,7 @@ exports[`CreateWallet should remove pending wallet if not submitted 1`] = `
                             class="mt-6"
                           >
                             <div
-                              class="font-bold text-sm text-theme-secondary-400 dark:text-theme-secondary-700 mb-3"
+                              class="mb-3 text-sm font-bold text-theme-secondary-400 dark:text-theme-secondary-700"
                             >
                               PUBLIC NETWORKS
                             </div>
@@ -2472,7 +2472,7 @@ exports[`CreateWallet should remove pending wallet if not submitted 1`] = `
                             class="mt-6"
                           >
                             <div
-                              class="font-bold text-sm text-theme-secondary-400 dark:text-theme-secondary-700 mb-3"
+                              class="mb-3 text-sm font-bold text-theme-secondary-400 dark:text-theme-secondary-700"
                             >
                               DEVELOPMENT NETWORKS
                             </div>
@@ -2880,7 +2880,7 @@ exports[`CreateWallet should show an error message for duplicate name 1`] = `
                           class="text-theme-secondary-text"
                           data-testid="header__subtitle"
                         >
-                          Select a cryptoasset to create your new wallet address
+                          Select a cryptoasset to create your new wallet address.
                         </div>
                       </div>
                     </div>
@@ -2888,7 +2888,7 @@ exports[`CreateWallet should show an error message for duplicate name 1`] = `
                       class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2 mt-8"
                     >
                       <label
-                        class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
+                        class="flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
                         data-testid="FormLabel"
                         for="network"
                       >
@@ -2942,7 +2942,7 @@ exports[`CreateWallet should show an error message for duplicate name 1`] = `
                             class="mt-6"
                           >
                             <div
-                              class="font-bold text-sm text-theme-secondary-400 dark:text-theme-secondary-700 mb-3"
+                              class="mb-3 text-sm font-bold text-theme-secondary-400 dark:text-theme-secondary-700"
                             >
                               PUBLIC NETWORKS
                             </div>
@@ -3000,7 +3000,7 @@ exports[`CreateWallet should show an error message for duplicate name 1`] = `
                             class="mt-6"
                           >
                             <div
-                              class="font-bold text-sm text-theme-secondary-400 dark:text-theme-secondary-700 mb-3"
+                              class="mb-3 text-sm font-bold text-theme-secondary-400 dark:text-theme-secondary-700"
                             >
                               DEVELOPMENT NETWORKS
                             </div>
@@ -3408,7 +3408,7 @@ exports[`CreateWallet should show an error message if wallet generation failed 1
                           class="text-theme-secondary-text"
                           data-testid="header__subtitle"
                         >
-                          Select a cryptoasset to create your new wallet address
+                          Select a cryptoasset to create your new wallet address.
                         </div>
                       </div>
                     </div>
@@ -3446,7 +3446,7 @@ exports[`CreateWallet should show an error message if wallet generation failed 1
                       class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2 mt-8"
                     >
                       <label
-                        class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
+                        class="flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
                         data-testid="FormLabel"
                         for="network"
                       >
@@ -3518,7 +3518,7 @@ exports[`CreateWallet should show an error message if wallet generation failed 1
                             class="mt-6"
                           >
                             <div
-                              class="font-bold text-sm text-theme-secondary-400 dark:text-theme-secondary-700 mb-3"
+                              class="mb-3 text-sm font-bold text-theme-secondary-400 dark:text-theme-secondary-700"
                             >
                               PUBLIC NETWORKS
                             </div>
@@ -3576,7 +3576,7 @@ exports[`CreateWallet should show an error message if wallet generation failed 1
                             class="mt-6"
                           >
                             <div
-                              class="font-bold text-sm text-theme-secondary-400 dark:text-theme-secondary-700 mb-3"
+                              class="mb-3 text-sm font-bold text-theme-secondary-400 dark:text-theme-secondary-700"
                             >
                               DEVELOPMENT NETWORKS
                             </div>

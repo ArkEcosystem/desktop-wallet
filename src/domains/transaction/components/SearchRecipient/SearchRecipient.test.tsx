@@ -1,4 +1,4 @@
-import { Profile } from "@arkecosystem/platform-sdk-profiles";
+import { Contracts } from "@arkecosystem/platform-sdk-profiles";
 import { fireEvent } from "@testing-library/react";
 import React from "react";
 import { act, env, getDefaultProfileId, render, waitFor } from "testing-library";
@@ -6,7 +6,7 @@ import { act, env, getDefaultProfileId, render, waitFor } from "testing-library"
 import { translations } from "../../i18n";
 import { SearchRecipient } from "./SearchRecipient";
 
-let profile: Profile;
+let profile: Contracts.IProfile;
 
 describe("SearchRecipient", () => {
 	beforeAll(() => {

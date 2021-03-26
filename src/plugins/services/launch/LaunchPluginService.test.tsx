@@ -1,4 +1,4 @@
-import { Profile } from "@arkecosystem/platform-sdk-profiles";
+import { Contracts } from "@arkecosystem/platform-sdk-profiles";
 import { PluginController, PluginManager } from "plugins/core";
 import { PluginAPI } from "plugins/types";
 import React from "react";
@@ -15,7 +15,7 @@ const config = {
 const fixture = (api: PluginAPI) => api.launch().render(<h1>My Plugin</h1>);
 
 describe("LaunchPluginService", () => {
-	let profile: Profile;
+	let profile: Contracts.IProfile;
 	let manager: PluginManager;
 	let ctrl: PluginController;
 

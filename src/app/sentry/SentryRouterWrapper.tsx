@@ -1,4 +1,4 @@
-import { ProfileSetting } from "@arkecosystem/platform-sdk-profiles";
+import { Contracts } from "@arkecosystem/platform-sdk-profiles";
 import { useEnvironmentContext, useLedgerContext } from "app/contexts";
 import { useEffect, useMemo } from "react";
 import React from "react";
@@ -41,7 +41,7 @@ export const SentryRouterWrapper = ({ children }: { children: React.ReactNode })
 			return;
 		}
 
-		const isErrorReportingEnabled = profile.settings().get<boolean>(ProfileSetting.ErrorReporting, false);
+		const isErrorReportingEnabled = profile.settings().get<boolean>(Contracts.ProfileSetting.ErrorReporting, false);
 
 		if (isErrorReportingEnabled) {
 			initSentry(profile);

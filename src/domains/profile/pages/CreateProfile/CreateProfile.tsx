@@ -1,4 +1,4 @@
-import { Avatar as AvatarSDK, ProfileSetting } from "@arkecosystem/platform-sdk-profiles";
+import { Contracts, Helpers } from "@arkecosystem/platform-sdk-profiles";
 import { Button } from "app/components/Button";
 import { Divider } from "app/components/Divider";
 import { Form, FormField, FormLabel } from "app/components/Form";
@@ -70,10 +70,10 @@ export const CreateProfile = () => {
 	const handleSubmit = async ({ name, password, currency, isDarkMode }: any) => {
 		const profile = env.profiles().create(name.trim());
 
-		profile.settings().set(ProfileSetting.ExchangeCurrency, currency);
-		profile.settings().set(ProfileSetting.Theme, isDarkMode ? "dark" : "light");
+		profile.settings().set(Contracts.ProfileSetting.ExchangeCurrency, currency);
+		profile.settings().set(Contracts.ProfileSetting.Theme, isDarkMode ? "dark" : "light");
 
-		profile.settings().set(ProfileSetting.Avatar, avatarImage);
+		profile.settings().set(Contracts.ProfileSetting.Avatar, avatarImage);
 
 		if (password) {
 			profile.auth().setPassword(password);
@@ -94,89 +94,81 @@ export const CreateProfile = () => {
 					/>
 
 					<Form
-						className="px-10 pt-8 pb-10 mt-10 space-y-4 border rounded-lg bg-theme-background border-theme-secondary-300 dark:border-theme-secondary-800"
+						className="p-10 mt-10 border rounded-lg bg-theme-background border-theme-secondary-300 dark:border-theme-secondary-800"
 						context={form}
 						onSubmit={handleSubmit}
 						data-testid="CreateProfile__form"
 					>
-						<div className="mt-2">
-							<h3>{t("PROFILE.PAGE_CREATE_PROFILE.NEW_PROFILE")}</h3>
-
-							<div className="relative mt-8 space-y-8">
-								<div className="flex items-end justify-between -mt-4">
-									<div className="w-full mr-6">
-										<FormField name="name">
-											<FormLabel label={t("SETTINGS.GENERAL.PERSONAL.NAME")} />
-											<InputDefault
-												ref={register(createProfile.name())}
-												onBlur={() => {
-													if (!avatarImage || isSvg) {
-														setAvatarImage(
-															formattedName ? AvatarSDK.make(formattedName) : "",
-														);
-													}
-												}}
-											/>
-										</FormField>
-									</div>
-
-									<SelectProfileImage
-										value={avatarImage}
-										name={formattedName}
-										showLabel={false}
-										onSelect={setAvatarImage}
-									/>
+						<div className="relative space-y-8">
+							<div className="flex items-end justify-between">
+								<div className="w-full mr-6">
+									<FormField name="name">
+										<FormLabel label={t("SETTINGS.GENERAL.PERSONAL.NAME")} />
+										<InputDefault
+											ref={register(createProfile.name())}
+											onBlur={() => {
+												if (!avatarImage || isSvg) {
+													setAvatarImage(
+														formattedName ? Helpers.Avatar.make(formattedName) : "",
+													);
+												}
+											}}
+										/>
+									</FormField>
 								</div>
 
-								<FormField name="password">
-									<FormLabel
-										label={t("SETTINGS.GENERAL.PERSONAL.PASSWORD")}
-										required={false}
-										optional
-									/>
-									<InputPassword
-										ref={register(createProfile.password())}
-										onChange={() => {
-											if (confirmPassword) {
-												trigger("confirmPassword");
-											}
-										}}
-									/>
-								</FormField>
+								<SelectProfileImage
+									value={avatarImage}
+									name={formattedName}
+									showLabel={false}
+									onSelect={setAvatarImage}
+								/>
+							</div>
 
-								<FormField name="confirmPassword">
-									<FormLabel
-										label={t("SETTINGS.GENERAL.PERSONAL.CONFIRM_PASSWORD")}
-										required={!!watch("password")}
-										optional={!watch("password")}
-									/>
-									<InputPassword ref={register(createProfile.confirmPassword(watch("password")))} />
-								</FormField>
-
-								<FormField name="currency">
-									<FormLabel label={t("SETTINGS.GENERAL.PERSONAL.CURRENCY")} />
-									<Select
-										placeholder={t("COMMON.SELECT_OPTION", {
-											option: t("SETTINGS.GENERAL.PERSONAL.CURRENCY"),
-										})}
-										ref={register(createProfile.currency())}
-										options={PlatformSdkChoices.currencies}
-										onChange={(currency: any) =>
-											setValue("currency", currency.value, {
-												shouldDirty: true,
-												shouldValidate: true,
-											})
+							<FormField name="password">
+								<FormLabel label={t("SETTINGS.GENERAL.PERSONAL.PASSWORD")} required={false} optional />
+								<InputPassword
+									ref={register(createProfile.password())}
+									onChange={() => {
+										if (confirmPassword) {
+											trigger("confirmPassword");
 										}
-									/>
-								</FormField>
-							</div>
+									}}
+								/>
+							</FormField>
 
-							<div className="pb-4 mt-8">
-								<ListDivided items={otherItems} />
-							</div>
+							<FormField name="confirmPassword">
+								<FormLabel
+									label={t("SETTINGS.GENERAL.PERSONAL.CONFIRM_PASSWORD")}
+									required={!!watch("password")}
+									optional={!watch("password")}
+								/>
+								<InputPassword ref={register(createProfile.confirmPassword(watch("password")))} />
+							</FormField>
 
-							<Divider />
+							<FormField name="currency">
+								<FormLabel label={t("SETTINGS.GENERAL.PERSONAL.CURRENCY")} />
+								<Select
+									placeholder={t("COMMON.SELECT_OPTION", {
+										option: t("SETTINGS.GENERAL.PERSONAL.CURRENCY"),
+									})}
+									ref={register(createProfile.currency())}
+									options={PlatformSdkChoices.currencies}
+									onChange={(currency: any) =>
+										setValue("currency", currency.value, {
+											shouldDirty: true,
+											shouldValidate: true,
+										})
+									}
+								/>
+							</FormField>
 						</div>
+
+						<div className="pb-4 mt-8">
+							<ListDivided items={otherItems} />
+						</div>
+
+						<Divider />
 
 						<div className="flex justify-end pt-4 space-x-3">
 							<Button variant="secondary" onClick={() => history.push("/")}>

@@ -44,7 +44,7 @@ exports[`WalletHeader should render 1`] = `
         </div>
       </div>
       <div
-        class="flex overflow-hidden flex-col"
+        class="flex flex-col overflow-hidden"
       >
         <div
           class="flex items-center space-x-5 text-theme-secondary-text"
@@ -113,12 +113,6 @@ exports[`WalletHeader should render 1`] = `
         >
           <span>
             Balance:
-          </span>
-          <span
-            class="ml-1"
-            data-testid="WalletHeader__currency-balance"
-          >
-            0 BTC
           </span>
         </div>
         <span
@@ -246,7 +240,7 @@ exports[`WalletHeader should show currency delta (-5%) 1`] = `
         </div>
       </div>
       <div
-        class="flex overflow-hidden flex-col"
+        class="flex flex-col overflow-hidden"
       >
         <div
           class="flex items-center space-x-5 text-theme-secondary-text"
@@ -315,12 +309,6 @@ exports[`WalletHeader should show currency delta (-5%) 1`] = `
         >
           <span>
             Balance:
-          </span>
-          <span
-            class="ml-1"
-            data-testid="WalletHeader__currency-balance"
-          >
-            0 BTC
           </span>
           <span
             class="inline-flex items-center ml-2 text-theme-danger-500"
@@ -466,7 +454,7 @@ exports[`WalletHeader should show currency delta (5%) 1`] = `
         </div>
       </div>
       <div
-        class="flex overflow-hidden flex-col"
+        class="flex flex-col overflow-hidden"
       >
         <div
           class="flex items-center space-x-5 text-theme-secondary-text"
@@ -535,12 +523,6 @@ exports[`WalletHeader should show currency delta (5%) 1`] = `
         >
           <span>
             Balance:
-          </span>
-          <span
-            class="ml-1"
-            data-testid="WalletHeader__currency-balance"
-          >
-            0 BTC
           </span>
           <span
             class="inline-flex items-center ml-2 text-theme-success-600"
@@ -686,7 +668,7 @@ exports[`WalletHeader should show modifiers 1`] = `
         </div>
       </div>
       <div
-        class="flex overflow-hidden flex-col"
+        class="flex flex-col overflow-hidden"
       >
         <div
           class="flex items-center space-x-5 text-theme-secondary-text"
@@ -782,12 +764,6 @@ exports[`WalletHeader should show modifiers 1`] = `
         >
           <span>
             Balance:
-          </span>
-          <span
-            class="ml-1"
-            data-testid="WalletHeader__currency-balance"
-          >
-            0 BTC
           </span>
         </div>
         <span

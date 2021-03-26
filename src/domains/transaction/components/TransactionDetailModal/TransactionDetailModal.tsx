@@ -1,4 +1,4 @@
-import { ExtendedTransactionData, ProfileSetting } from "@arkecosystem/platform-sdk-profiles";
+import { Contracts, DTO } from "@arkecosystem/platform-sdk-profiles";
 import { useActiveProfile } from "app/hooks";
 import { DelegateRegistrationDetail } from "domains/transaction/components/DelegateRegistrationDetail";
 import { DelegateResignationDetail } from "domains/transaction/components/DelegateResignationDetail";
@@ -14,14 +14,14 @@ import React from "react";
 
 type TransactionDetailModalProps = {
 	isOpen: boolean;
-	transactionItem: ExtendedTransactionData;
+	transactionItem: DTO.ExtendedTransactionData;
 	onClose?: any;
 };
 
 export const TransactionDetailModal = ({ isOpen, transactionItem, onClose }: TransactionDetailModalProps) => {
 	const activeProfile = useActiveProfile();
 
-	const ticker = activeProfile.settings().get<string>(ProfileSetting.ExchangeCurrency, "")!;
+	const ticker = activeProfile.settings().get<string>(Contracts.ProfileSetting.ExchangeCurrency, "")!;
 	const walletAlias = activeProfile.wallets().findByAddress(transactionItem.sender())?.alias();
 	const recipientWalletAlias = activeProfile.wallets().findByAddress(transactionItem.recipient())?.alias();
 

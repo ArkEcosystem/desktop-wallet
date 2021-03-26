@@ -1,7 +1,9 @@
 import { waitFor } from "@testing-library/react";
 import { act as actHook, renderHook } from "@testing-library/react-hooks";
+import { EnvironmentProvider } from "app/contexts";
 import { PluginManager, PluginManagerProvider } from "plugins";
 import React from "react";
+import { env } from "utils/testing-library";
 
 import { usePluginUpdateQueue } from "./use-plugin-update-queue";
 
@@ -17,9 +19,11 @@ describe("Plugin Update Queue", () => {
 	it("should work properly", async () => {
 		const ids = ["plugin-1", "plugin-2", "plugin-3"];
 		const wrapper = ({ children }: any) => (
-			<PluginManagerProvider services={[]} manager={new PluginManager()}>
-				{children}
-			</PluginManagerProvider>
+			<EnvironmentProvider env={env}>
+				<PluginManagerProvider services={[]} manager={new PluginManager()}>
+					{children}
+				</PluginManagerProvider>
+			</EnvironmentProvider>
 		);
 
 		const { result } = renderHook(() => usePluginUpdateQueue(), { wrapper });

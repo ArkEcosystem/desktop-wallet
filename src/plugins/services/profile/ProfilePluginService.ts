@@ -1,9 +1,9 @@
-import { Profile } from "@arkecosystem/platform-sdk-profiles";
+import { Contracts } from "@arkecosystem/platform-sdk-profiles";
 import { PluginHooks } from "plugins/core/internals/plugin-hooks";
 import { PluginService, PluginServiceIdentifier } from "plugins/types";
 
 export class ProfilePluginService implements PluginService {
-	#profile: Profile | undefined;
+	#profile: Contracts.IProfile | undefined;
 
 	config() {
 		return {

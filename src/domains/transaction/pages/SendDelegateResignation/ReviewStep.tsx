@@ -1,4 +1,4 @@
-import { ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
+import { Contracts } from "@arkecosystem/platform-sdk-profiles";
 import { Header } from "app/components/Header";
 import { TotalAmountBox } from "domains/transaction/components/TotalAmountBox";
 import {
@@ -11,7 +11,7 @@ import React, { useEffect } from "react";
 import { useFormContext } from "react-hook-form";
 import { useTranslation } from "react-i18next";
 
-export const ReviewStep = ({ senderWallet }: { senderWallet: ReadWriteWallet }) => {
+export const ReviewStep = ({ senderWallet }: { senderWallet: Contracts.IReadWriteWallet }) => {
 	const { t } = useTranslation();
 
 	const { getValues, unregister } = useFormContext();
@@ -22,10 +22,7 @@ export const ReviewStep = ({ senderWallet }: { senderWallet: ReadWriteWallet }) 
 
 	return (
 		<section data-testid="SendDelegateResignation__review-step">
-			<Header
-				title={t("TRANSACTION.PAGE_RESIGN_REGISTRATION.REVIEW_STEP.TITLE")}
-				subtitle={t("TRANSACTION.PAGE_RESIGN_REGISTRATION.REVIEW_STEP.DESCRIPTION")}
-			/>
+			<Header title={t("TRANSACTION.REVIEW_STEP.TITLE")} subtitle={t("TRANSACTION.REVIEW_STEP.DESCRIPTION")} />
 
 			<TransactionNetwork
 				network={senderWallet.network()}

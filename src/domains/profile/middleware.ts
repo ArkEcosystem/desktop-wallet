@@ -1,4 +1,4 @@
-import { ProfileSetting } from "@arkecosystem/platform-sdk-profiles";
+import { Contracts } from "@arkecosystem/platform-sdk-profiles";
 import { matchPath } from "react-router-dom";
 import { Middleware, MiddlewareParams } from "router/interfaces";
 import { Theme } from "types";
@@ -44,7 +44,7 @@ export class ProfileMiddleware implements Middleware {
 			try {
 				const profile = env.profiles().findById(profileId);
 
-				const profileTheme = profile.settings().get<Theme>(ProfileSetting.Theme)!;
+				const profileTheme = profile.settings().get<Theme>(Contracts.ProfileSetting.Theme)!;
 
 				/* istanbul ignore else */
 				if (
@@ -54,7 +54,8 @@ export class ProfileMiddleware implements Middleware {
 					setTheme(profileTheme);
 				}
 
-				const idleThreshold = (profile.settings().get(ProfileSetting.AutomaticSignOutPeriod) as number) * 60;
+				const idleThreshold =
+					(profile.settings().get(Contracts.ProfileSetting.AutomaticSignOutPeriod) as number) * 60;
 
 				if (this.state.intervalId === undefined || this.state.threshold !== idleThreshold) {
 					this.setActivityState(
@@ -68,7 +69,7 @@ export class ProfileMiddleware implements Middleware {
 					);
 				}
 
-				setScreenshotProtection(profile.settings().get(ProfileSetting.ScreenshotProtection) === true);
+				setScreenshotProtection(profile.settings().get(Contracts.ProfileSetting.ScreenshotProtection) === true);
 			} catch {
 				return false;
 			}

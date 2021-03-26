@@ -9,6 +9,7 @@ import path from "path";
 import assignMenu from "./menu";
 import { setupPlugins } from "./plugins";
 import { setupUpdater } from "./updater";
+import { handleSingleInstance } from "./utils/single-instance";
 
 const windows = {};
 let mainWindow: BrowserWindow | null;
@@ -45,8 +46,8 @@ function broadcastURL(url: string | null) {
 }
 
 let env: Environment | undefined = undefined;
-ipcMain.on('request/import/wallet', async (event, { mnemonic }) => {
-	if (! env) {
+ipcMain.on("request/import/wallet", async (event, { mnemonic }) => {
+	if (!env) {
 		env = new Environment({
 			coins: {
 				ARK,
@@ -64,7 +65,7 @@ ipcMain.on('request/import/wallet', async (event, { mnemonic }) => {
 	const wallet = await profile.wallets().importByMnemonic(mnemonic, "ARK", "ark.devnet");
 	await wallet.syncIdentity();
 
-	event.reply('response/import/wallet', wallet.toObject())
+	event.reply("response/import/wallet", wallet.toObject());
 });
 
 ipcMain.on("disable-iframe-protection", function (_event, urls) {
@@ -151,6 +152,7 @@ assignMenu();
 app.on("ready", () => {
 	createWindow();
 	setupUpdater({ ipcMain, isDev, mainWindow });
+	handleSingleInstance({ mainWindow, broadcastURL });
 });
 
 app.on("window-all-closed", () => {

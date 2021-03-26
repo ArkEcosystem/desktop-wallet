@@ -1,5 +1,5 @@
 import { Coins } from "@arkecosystem/platform-sdk";
-import { Profile } from "@arkecosystem/platform-sdk-profiles";
+import { Contracts } from "@arkecosystem/platform-sdk-profiles";
 import { get } from "@arkecosystem/utils";
 
 import { customDerivationModes, formatLedgerDerivationPath, LedgerData } from "../utils";
@@ -9,7 +9,7 @@ export const createRange = (start: number, size: number) => Array.from({ length:
 export const searchAddresses = async (
 	indexes: number[],
 	coin: Coins.Coin,
-	profile: Profile,
+	profile: Contracts.IProfile,
 	derivationMode?: string,
 ) => {
 	const addressMap: Record<string, any> = {};

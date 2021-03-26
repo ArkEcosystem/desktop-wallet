@@ -1,6 +1,6 @@
-import { Profile } from "@arkecosystem/platform-sdk-profiles";
+import { Contracts } from "@arkecosystem/platform-sdk-profiles";
 
-export const markAsRead = async (isVisible: boolean, id: string, profile: Profile, env: any) => {
+export const markAsRead = async (isVisible: boolean, id: string, profile: Contracts.IProfile, env: any) => {
 	if (!isVisible) {
 		return;
 	}
