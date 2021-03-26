@@ -4095,8 +4095,9 @@ exports[`ImportWallet should render 2st step 1`] = `
                   <div
                     class=""
                   >
-                    <span
-                      class="w-10 pointer-events-none text-theme-secondary-500"
+                    <div
+                      class="py-2 px-1 text-theme-secondary-500 flex items-center justify-center"
+                      data-testid="SelectDropdown__caret"
                     >
                       <div
                         class="sc-bdfBwQ gLRWTb transition-transform "
@@ -4107,7 +4108,7 @@ exports[`ImportWallet should render 2st step 1`] = `
                           caret-down.svg
                         </svg>
                       </div>
-                    </span>
+                    </div>
                   </div>
                 </div>
               </div>

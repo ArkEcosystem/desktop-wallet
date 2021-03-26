@@ -363,8 +363,9 @@ exports[`CreateProfile should fail password confirmation 1`] = `
                             <div
                               class=""
                             >
-                              <span
-                                class="w-10 pointer-events-none text-theme-secondary-500"
+                              <div
+                                class="py-2 px-1 text-theme-secondary-500 flex items-center justify-center"
+                                data-testid="SelectDropdown__caret"
                               >
                                 <div
                                   class="sc-bdfBwQ gLRWTb transition-transform transform rotate-180"
@@ -375,7 +376,7 @@ exports[`CreateProfile should fail password confirmation 1`] = `
                                     caret-down.svg
                                   </svg>
                                 </div>
-                              </span>
+                              </div>
                             </div>
                           </div>
                         </div>
@@ -1075,8 +1076,9 @@ exports[`CreateProfile should not be able to create new profile if name already 
                             <div
                               class=""
                             >
-                              <span
-                                class="w-10 pointer-events-none text-theme-secondary-500"
+                              <div
+                                class="py-2 px-1 text-theme-secondary-500 flex items-center justify-center"
+                                data-testid="SelectDropdown__caret"
                               >
                                 <div
                                   class="sc-bdfBwQ gLRWTb transition-transform transform rotate-180"
@@ -1087,7 +1089,7 @@ exports[`CreateProfile should not be able to create new profile if name already 
                                     caret-down.svg
                                   </svg>
                                 </div>
-                              </span>
+                              </div>
                             </div>
                           </div>
                         </div>
@@ -1787,8 +1789,9 @@ exports[`CreateProfile should not be able to create new profile if name is too l
                             <div
                               class=""
                             >
-                              <span
-                                class="w-10 pointer-events-none text-theme-secondary-500"
+                              <div
+                                class="py-2 px-1 text-theme-secondary-500 flex items-center justify-center"
+                                data-testid="SelectDropdown__caret"
                               >
                                 <div
                                   class="sc-bdfBwQ gLRWTb transition-transform transform rotate-180"
@@ -1799,7 +1802,7 @@ exports[`CreateProfile should not be able to create new profile if name is too l
                                     caret-down.svg
                                   </svg>
                                 </div>
-                              </span>
+                              </div>
                             </div>
                           </div>
                         </div>
@@ -2512,8 +2515,9 @@ exports[`CreateProfile should not update the uploaded avatar when removing focus
                             <div
                               class=""
                             >
-                              <span
-                                class="w-10 pointer-events-none text-theme-secondary-500"
+                              <div
+                                class="py-2 px-1 text-theme-secondary-500 flex items-center justify-center"
+                                data-testid="SelectDropdown__caret"
                               >
                                 <div
                                   class="sc-bdfBwQ gLRWTb transition-transform "
@@ -2524,7 +2528,7 @@ exports[`CreateProfile should not update the uploaded avatar when removing focus
                                     caret-down.svg
                                   </svg>
                                 </div>
-                              </span>
+                              </div>
                             </div>
                           </div>
                         </div>
@@ -2970,8 +2974,9 @@ exports[`CreateProfile should not upload avatar image 1`] = `
                             <div
                               class=""
                             >
-                              <span
-                                class="w-10 pointer-events-none text-theme-secondary-500"
+                              <div
+                                class="py-2 px-1 text-theme-secondary-500 flex items-center justify-center"
+                                data-testid="SelectDropdown__caret"
                               >
                                 <div
                                   class="sc-bdfBwQ gLRWTb transition-transform transform rotate-180"
@@ -2982,7 +2987,7 @@ exports[`CreateProfile should not upload avatar image 1`] = `
                                     caret-down.svg
                                   </svg>
                                 </div>
-                              </span>
+                              </div>
                             </div>
                           </div>
                         </div>
@@ -3655,8 +3660,9 @@ exports[`CreateProfile should render 1`] = `
                             <div
                               class=""
                             >
-                              <span
-                                class="w-10 pointer-events-none text-theme-secondary-500"
+                              <div
+                                class="py-2 px-1 text-theme-secondary-500 flex items-center justify-center"
+                                data-testid="SelectDropdown__caret"
                               >
                                 <div
                                   class="sc-bdfBwQ gLRWTb transition-transform "
@@ -3667,7 +3673,7 @@ exports[`CreateProfile should render 1`] = `
                                     caret-down.svg
                                   </svg>
                                 </div>
-                              </span>
+                              </div>
                             </div>
                           </div>
                         </div>
@@ -4133,8 +4139,9 @@ exports[`CreateProfile should store profile 1`] = `
                             <div
                               class=""
                             >
-                              <span
-                                class="w-10 pointer-events-none text-theme-secondary-500"
+                              <div
+                                class="py-2 px-1 text-theme-secondary-500 flex items-center justify-center"
+                                data-testid="SelectDropdown__caret"
                               >
                                 <div
                                   class="sc-bdfBwQ gLRWTb transition-transform transform rotate-180"
@@ -4145,7 +4152,7 @@ exports[`CreateProfile should store profile 1`] = `
                                     caret-down.svg
                                   </svg>
                                 </div>
-                              </span>
+                              </div>
                             </div>
                           </div>
                         </div>
@@ -4823,8 +4830,9 @@ exports[`CreateProfile should store profile with password 1`] = `
                             <div
                               class=""
                             >
-                              <span
-                                class="w-10 pointer-events-none text-theme-secondary-500"
+                              <div
+                                class="py-2 px-1 text-theme-secondary-500 flex items-center justify-center"
+                                data-testid="SelectDropdown__caret"
                               >
                                 <div
                                   class="sc-bdfBwQ gLRWTb transition-transform transform rotate-180"
@@ -4835,7 +4843,7 @@ exports[`CreateProfile should store profile with password 1`] = `
                                     caret-down.svg
                                   </svg>
                                 </div>
-                              </span>
+                              </div>
                             </div>
                           </div>
                         </div>
@@ -5514,8 +5522,9 @@ exports[`CreateProfile should update the avatar when removing focus from name in
                             <div
                               class=""
                             >
-                              <span
-                                class="w-10 pointer-events-none text-theme-secondary-500"
+                              <div
+                                class="py-2 px-1 text-theme-secondary-500 flex items-center justify-center"
+                                data-testid="SelectDropdown__caret"
                               >
                                 <div
                                   class="sc-bdfBwQ gLRWTb transition-transform "
@@ -5526,7 +5535,7 @@ exports[`CreateProfile should update the avatar when removing focus from name in
                                     caret-down.svg
                                   </svg>
                                 </div>
-                              </span>
+                              </div>
                             </div>
                           </div>
                         </div>
@@ -5984,8 +5993,9 @@ exports[`CreateProfile should update the avatar when removing focus from name in
                             <div
                               class=""
                             >
-                              <span
-                                class="w-10 pointer-events-none text-theme-secondary-500"
+                              <div
+                                class="py-2 px-1 text-theme-secondary-500 flex items-center justify-center"
+                                data-testid="SelectDropdown__caret"
                               >
                                 <div
                                   class="sc-bdfBwQ gLRWTb transition-transform "
@@ -5996,7 +6006,7 @@ exports[`CreateProfile should update the avatar when removing focus from name in
                                     caret-down.svg
                                   </svg>
                                 </div>
-                              </span>
+                              </div>
                             </div>
                           </div>
                         </div>
@@ -6442,8 +6452,9 @@ exports[`CreateProfile should upload and remove avatar image 1`] = `
                             <div
                               class=""
                             >
-                              <span
-                                class="w-10 pointer-events-none text-theme-secondary-500"
+                              <div
+                                class="py-2 px-1 text-theme-secondary-500 flex items-center justify-center"
+                                data-testid="SelectDropdown__caret"
                               >
                                 <div
                                   class="sc-bdfBwQ gLRWTb transition-transform transform rotate-180"
@@ -6454,7 +6465,7 @@ exports[`CreateProfile should upload and remove avatar image 1`] = `
                                     caret-down.svg
                                   </svg>
                                 </div>
-                              </span>
+                              </div>
                             </div>
                           </div>
                         </div>
