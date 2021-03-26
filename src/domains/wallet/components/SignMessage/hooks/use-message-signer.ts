@@ -35,6 +35,7 @@ export const useMessageSigner = () => {
 		wallet: ReadWriteWallet,
 		message: string,
 		mnemonic?: string,
+		wif?: string,
 		options?: {
 			abortSignal?: AbortSignal;
 		},
@@ -43,7 +44,7 @@ export const useMessageSigner = () => {
 			return withAbortPromise(options?.abortSignal)(signWithLedger(message, wallet));
 		}
 
-		return wallet.message().sign({ message, mnemonic: mnemonic! });
+		return wallet.message().sign({ message, mnemonic, wif });
 	};
 
 	return { sign };

@@ -60,7 +60,7 @@ export const SignMessage = ({ isOpen, onClose, onCancel }: SignMessageProps) => 
 		[abortConnectionRetry],
 	);
 
-	const handleSubmit = async ({ message, mnemonic }: Record<string, any>) => {
+	const handleSubmit = async ({ message, mnemonic, encryptionPassword }: Record<string, any>) => {
 		setMessage(message);
 
 		const abortSignal = abortRef.current?.signal;
@@ -83,7 +83,9 @@ export const SignMessage = ({ isOpen, onClose, onCancel }: SignMessageProps) => 
 		}
 
 		try {
-			const signedMessageResult = await sign(wallet, message, mnemonic, {
+			const wif = wallet?.usesWIF() ? await wallet.wif(encryptionPassword) : undefined;
+
+			const signedMessageResult = await sign(wallet, message, mnemonic, wif, {
 				abortSignal,
 			});
 
