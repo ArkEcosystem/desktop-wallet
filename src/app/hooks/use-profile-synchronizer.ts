@@ -1,7 +1,7 @@
 import { Contracts, Environment, Helpers } from "@arkecosystem/platform-sdk-profiles";
 import { useConfiguration, useEnvironmentContext } from "app/contexts";
 import { useCallback, useEffect, useMemo, useRef } from "react";
-import { matchPath, useLocation } from "react-router-dom";
+import { matchPath, useHistory,useLocation } from "react-router-dom";
 
 import { useNotifications } from "./use-notifications";
 import { useSynchronizer } from "./use-synchronizer";
@@ -161,7 +161,9 @@ export const useProfileSyncStatus = () => {
 
 export const useProfileRestore = () => {
 	const { shouldRestore, markAsRestored, setStatus } = useProfileSyncStatus();
-	const { persist } = useEnvironmentContext();
+	const { persist, env } = useEnvironmentContext();
+	const { getProfileFromUrl } = useProfileUtils(env);
+	const history = useHistory();
 
 	const restoreProfile = async (profile: Contracts.IProfile, password?: string) => {
 		if (!shouldRestore(profile)) {
@@ -173,9 +175,10 @@ export const useProfileRestore = () => {
 		// When in e2e mode, profiles are migrated passwordless and
 		// password needs to be set again. The restore should happen
 		// without password and then reset the password.
-		const __E2E__ = process.env.REACT_APP_IS_E2E;
-		if (__E2E__ !== "undefined") {
+		const __E2E__ = ["true", "1"].includes(process.env.REACT_APP_IS_E2E?.toLowerCase() || "");
+		if (__E2E__) {
 			await profile.restore(password);
+			profile.save(password);
 
 			await persist();
 
@@ -185,12 +188,20 @@ export const useProfileRestore = () => {
 
 		// Reset profile normally (passwordless or not)
 		await profile.restore(password);
+		markAsRestored(profile.id());
+
+		// Profile restore finished but url changed in the meanwhile.
+		// Prevent from unecessary save of old profile.
+		const activeProfile = getProfileFromUrl(history?.location?.pathname);
+		if (activeProfile?.id() !== profile.id()) {
+			markAsRestored(profile.id());
+			return;
+		}
 
 		// Make sure the latest profile state is encoded (and optionally encrypted) before persisting
 		profile.save(password);
 
 		await persist();
-		markAsRestored(profile.id());
 		return true;
 	};
 
@@ -248,6 +259,7 @@ export const useProfileSynchronizer = ({ onProfileRestoreError }: ProfileSynchro
 			}
 
 			if (shouldRestore(profile)) {
+				// TODO: provide password if available
 				await restoreProfile(profile);
 			}
 
