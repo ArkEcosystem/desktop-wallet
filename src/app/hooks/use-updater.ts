@@ -81,7 +81,7 @@ export const useUpdater = () => {
 		ipcRenderer.on(IpcEvent.DOWNLOAD_PROGRESS, updateDownloadProgress);
 
 		return () => {
-			ipcRenderer.removeListener(IpcEvent.DOWNLOAD_PROGRESS, updateDownloaded);
+			ipcRenderer.removeListener(IpcEvent.UPDATE_DOWNLOADED, updateDownloaded);
 			ipcRenderer.removeListener(IpcEvent.DOWNLOAD_PROGRESS, updateDownloadProgress);
 		};
 	}, []);
