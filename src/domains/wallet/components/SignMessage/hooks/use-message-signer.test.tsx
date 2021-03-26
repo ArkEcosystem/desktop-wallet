@@ -4,8 +4,6 @@ import { env, getDefaultProfileId, getDefaultWalletMnemonic } from "utils/testin
 
 import { useMessageSigner } from "./use-message-signer";
 
-jest.setTimeout(10000);
-
 describe("Use Message Signer Hook", () => {
 	let profile: Contracts.IProfile;
 	let wallet: Contracts.IReadWriteWallet;
@@ -16,7 +14,7 @@ describe("Use Message Signer Hook", () => {
 	});
 
 	it("should sign message", async () => {
-		const { result } = renderHook(() => useMessageSigner(profile));
+		const { result } = renderHook(() => useMessageSigner());
 
 		const signedMessage = await result.current.sign(wallet, "message", getDefaultWalletMnemonic());
 		expect(signedMessage).toEqual({
@@ -25,6 +23,27 @@ describe("Use Message Signer Hook", () => {
 			signature:
 				"1b507279e46a1c4d6c97abca5a8f9ec03abd59164693dd2d81462bb9c2b4d23c6921c5ce940824bc3a1075ff87a6f2bffcd47c3b803dac6520e043b2dc21f0c7",
 		});
+	});
+
+	it("should sign message with wif", async () => {
+		const { result } = renderHook(() => useMessageSigner());
+
+		const walletUsesWIFMock = jest.spyOn(wallet, "usesWIF").mockReturnValue(true);
+		const walletWifMock = jest.spyOn(wallet, "wif").mockImplementation((password) => {
+			const wif = "S9rDfiJ2ar4DpWAQuaXECPTJHfTZ3XjCPv15gjxu4cHJZKzABPyV";
+			return Promise.resolve(wif);
+		});
+
+		const signedMessage = await result.current.sign(wallet, "message", undefined, await wallet.wif("password"));
+		expect(signedMessage).toEqual({
+			message: "message",
+			signatory: "03df6cd794a7d404db4f1b25816d8976d0e72c5177d17ac9b19a92703b62cdbbbc",
+			signature:
+				"1b507279e46a1c4d6c97abca5a8f9ec03abd59164693dd2d81462bb9c2b4d23c6921c5ce940824bc3a1075ff87a6f2bffcd47c3b803dac6520e043b2dc21f0c7",
+		});
+
+		walletUsesWIFMock.mockRestore();
+		walletWifMock.mockRestore();
 	});
 
 	it("should sign message with ledger", async () => {
@@ -76,7 +95,9 @@ describe("Use Message Signer Hook", () => {
 
 		setTimeout(() => abortCtrl.abort(), 100);
 
-		await expect(result.current.sign(wallet, "message", undefined, { abortSignal })).rejects.toEqual("ERR_ABORT");
+		await expect(result.current.sign(wallet, "message", undefined, undefined, { abortSignal })).rejects.toEqual(
+			"ERR_ABORT",
+		);
 
 		jest.clearAllMocks();
 	});
