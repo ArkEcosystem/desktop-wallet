@@ -1,11 +1,11 @@
-import { Profile, ProfileSetting } from "@arkecosystem/platform-sdk-profiles";
+import { Contracts } from "@arkecosystem/platform-sdk-profiles";
 import { uniqBy } from "@arkecosystem/utils";
 import { useDashboardConfig } from "domains/dashboard/pages/Dashboard/hooks";
 import { useMemo } from "react";
 
 import { FilterWalletsHookProps } from "./";
 
-export const useWalletFilters = ({ profile }: { profile: Profile }) => {
+export const useWalletFilters = ({ profile }: { profile: Contracts.IProfile }) => {
 	const { defaultConfiguration, setValue, walletsDisplayType, selectedNetworkIds, viewType } = useDashboardConfig({
 		profile,
 	});
@@ -41,7 +41,7 @@ export const useWalletFilters = ({ profile }: { profile: Profile }) => {
 	return useMemo<FilterWalletsHookProps & { update: (key: string, value: any) => void }>(
 		() => ({
 			networks,
-			useTestNetworks: profile.settings().get(ProfileSetting.UseTestNetworks),
+			useTestNetworks: profile.settings().get(Contracts.ProfileSetting.UseTestNetworks),
 			walletsDisplayType,
 			selectedNetworkIds,
 			isFilterChanged,

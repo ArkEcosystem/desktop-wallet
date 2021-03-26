@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/require-await */
-import { Profile } from "@arkecosystem/platform-sdk-profiles";
+import { Contracts } from "@arkecosystem/platform-sdk-profiles";
 import { renderHook } from "@testing-library/react-hooks";
 import React from "react";
 import { FormProvider, useForm } from "react-hook-form";
@@ -7,7 +7,7 @@ import { env, getDefaultProfileId, render } from "utils/testing-library";
 
 import { ConfirmPassphraseStep } from "./ConfirmPassphraseStep";
 
-let profile: Profile;
+let profile: Contracts.IProfile;
 
 describe("ConfirmPassphraseStep", () => {
 	beforeEach(() => {

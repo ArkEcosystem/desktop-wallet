@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/require-await */
 import { Contracts } from "@arkecosystem/platform-sdk";
 import { BIP39 } from "@arkecosystem/platform-sdk-crypto";
-import { Profile, ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
+import { Contracts as ProfilesContracts } from "@arkecosystem/platform-sdk-profiles";
 import { BigNumber } from "@arkecosystem/platform-sdk-support";
 import { renderHook } from "@testing-library/react-hooks";
 import { Form } from "app/components/Form";
@@ -19,8 +19,8 @@ import { SecondSignatureRegistrationForm } from "./SecondSignatureRegistrationFo
 
 describe("SecondSignatureRegistrationForm", () => {
 	const passphrase = "power return attend drink piece found tragic fire liar page disease combine";
-	let profile: Profile;
-	let wallet: ReadWriteWallet;
+	let profile: ProfilesContracts.IProfile;
+	let wallet: ProfilesContracts.IReadWriteWallet;
 	let fees: Contracts.TransactionFee;
 
 	beforeEach(() => {
@@ -33,7 +33,7 @@ describe("SecondSignatureRegistrationForm", () => {
 		};
 	});
 
-	const createTransactionMock = (wallet: ReadWriteWallet) =>
+	const createTransactionMock = (wallet: ProfilesContracts.IReadWriteWallet) =>
 		// @ts-ignore
 		jest.spyOn(wallet.transaction(), "transaction").mockReturnValue({
 			id: () => secondSignatureFixture.data.id,

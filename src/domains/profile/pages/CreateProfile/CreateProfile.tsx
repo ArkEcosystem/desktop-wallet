@@ -1,4 +1,4 @@
-import { Avatar as AvatarSDK, ProfileSetting } from "@arkecosystem/platform-sdk-profiles";
+import { Contracts, Helpers } from "@arkecosystem/platform-sdk-profiles";
 import { Button } from "app/components/Button";
 import { Divider } from "app/components/Divider";
 import { Form, FormField, FormLabel } from "app/components/Form";
@@ -70,10 +70,10 @@ export const CreateProfile = () => {
 	const handleSubmit = async ({ name, password, currency, isDarkMode }: any) => {
 		const profile = env.profiles().create(name.trim());
 
-		profile.settings().set(ProfileSetting.ExchangeCurrency, currency);
-		profile.settings().set(ProfileSetting.Theme, isDarkMode ? "dark" : "light");
+		profile.settings().set(Contracts.ProfileSetting.ExchangeCurrency, currency);
+		profile.settings().set(Contracts.ProfileSetting.Theme, isDarkMode ? "dark" : "light");
 
-		profile.settings().set(ProfileSetting.Avatar, avatarImage);
+		profile.settings().set(Contracts.ProfileSetting.Avatar, avatarImage);
 
 		if (password) {
 			profile.auth().setPassword(password);
@@ -108,7 +108,9 @@ export const CreateProfile = () => {
 											ref={register(createProfile.name())}
 											onBlur={() => {
 												if (!avatarImage || isSvg) {
-													setAvatarImage(formattedName ? AvatarSDK.make(formattedName) : "");
+													setAvatarImage(
+														formattedName ? Helpers.Avatar.make(formattedName) : "",
+													);
 												}
 											}}
 										/>

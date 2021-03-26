@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/require-await */
-import { ProfileSetting } from "@arkecosystem/platform-sdk-profiles";
+import { Contracts } from "@arkecosystem/platform-sdk-profiles";
 import { EnvironmentProvider } from "app/contexts";
 import { translations as commonTranslations } from "app/i18n/common/i18n";
 import { httpClient } from "app/services";
@@ -36,7 +36,7 @@ describe("Welcome", () => {
 
 		expect(container).toBeTruthy();
 		act(() => {
-			fireEvent.click(getByText(profile.settings().get(ProfileSetting.Name)));
+			fireEvent.click(getByText(profile.settings().get(Contracts.ProfileSetting.Name)));
 		});
 
 		expect(history.location.pathname).toEqual(`/profiles/${profile.id()}/dashboard`);
@@ -58,7 +58,7 @@ describe("Welcome", () => {
 		expect(() => getByTestId("modal__inner")).toThrow(/Unable to find an element by/);
 
 		act(() => {
-			fireEvent.click(getByText(profile.settings().get(ProfileSetting.Name)));
+			fireEvent.click(getByText(profile.settings().get(Contracts.ProfileSetting.Name)));
 		});
 
 		expect(getByTestId("modal__inner")).toBeInTheDocument();
@@ -84,7 +84,7 @@ describe("Welcome", () => {
 		expect(() => getByTestId("modal__inner")).toThrow(/Unable to find an element by/);
 
 		act(() => {
-			fireEvent.click(getByText(profile.settings().get(ProfileSetting.Name)));
+			fireEvent.click(getByText(profile.settings().get(Contracts.ProfileSetting.Name)));
 		});
 
 		expect(getByTestId("modal__inner")).toBeInTheDocument();

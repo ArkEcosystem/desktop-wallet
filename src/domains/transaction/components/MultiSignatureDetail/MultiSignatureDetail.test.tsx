@@ -1,4 +1,4 @@
-import { Profile, ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
+import { Contracts } from "@arkecosystem/platform-sdk-profiles";
 import { toasts } from "app/services";
 import React from "react";
 import {
@@ -19,8 +19,8 @@ import { MultiSignatureDetail } from "./MultiSignatureDetail";
 const passphrase = getDefaultWalletMnemonic();
 
 describe("MultiSignatureDetail", () => {
-	let profile: Profile;
-	let wallet: ReadWriteWallet;
+	let profile: Contracts.IProfile;
+	let wallet: Contracts.IReadWriteWallet;
 
 	const fixtures: Record<string, any> = {
 		transfer: undefined,

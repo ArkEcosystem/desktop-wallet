@@ -1,8 +1,8 @@
-import { ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
+import { Contracts } from "@arkecosystem/platform-sdk-profiles";
 
 export type GridWallet = {
 	isBlank?: boolean;
-	wallet?: ReadWriteWallet;
+	wallet?: Contracts.IReadWriteWallet;
 };
 
 export type WalletGridProps = {
@@ -23,7 +23,7 @@ export type WalletListProps = {
 };
 
 export type UseWalletDisplayProps = {
-	wallets?: ReadWriteWallet[];
+	wallets?: Contracts.IReadWriteWallet[];
 	selectedNetworkIds?: string[];
 	displayType?: string;
 	viewMore?: boolean;

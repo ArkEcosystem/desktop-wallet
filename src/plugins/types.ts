@@ -1,6 +1,5 @@
 import { Contracts } from "@arkecosystem/platform-sdk";
-import { SignedMessage } from "@arkecosystem/platform-sdk/dist/contracts";
-import { DataRepository } from "@arkecosystem/platform-sdk-profiles";
+import { Repositories } from "@arkecosystem/platform-sdk-profiles";
 import { HttpClient } from "app/services/HttpClient";
 
 import { PluginManager } from "./core";
@@ -30,7 +29,7 @@ export interface PluginAPI {
 		wallets: () => Record<string, any>[];
 	};
 	store(): {
-		data: () => DataRepository;
+		data: () => Repositories.DataRepository;
 		persist: () => void;
 	};
 	theme(): {
@@ -48,7 +47,7 @@ export interface PluginAPI {
 			walletId: string;
 		}) => [
 			React.FunctionComponent,
-			SignedMessage | undefined,
+			Contracts.SignedMessage | undefined,
 			{ isOpen: boolean; open: () => void; close: () => void },
 		];
 	};

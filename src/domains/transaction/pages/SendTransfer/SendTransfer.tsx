@@ -1,5 +1,5 @@
 import { Coins, Contracts } from "@arkecosystem/platform-sdk";
-import { ExtendedTransactionData, ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
+import { Contracts as ProfileContracts, DTO } from "@arkecosystem/platform-sdk-profiles";
 import { BigNumber } from "@arkecosystem/platform-sdk-support";
 import { Button } from "app/components/Button";
 import { Form } from "app/components/Form";
@@ -45,7 +45,7 @@ export const SendTransfer = () => {
 	const firstTabIndex = showNetworkStep ? 0 : 1;
 
 	const [activeTab, setActiveTab] = useState(showNetworkStep ? 0 : 1);
-	const [unconfirmedTransactions, setUnconfirmedTransactions] = useState([] as ExtendedTransactionData[]);
+	const [unconfirmedTransactions, setUnconfirmedTransactions] = useState([] as DTO.ExtendedTransactionData[]);
 	const [isConfirming, setIsConfirming] = useState(false);
 	const [transaction, setTransaction] = useState((null as unknown) as Contracts.SignedTransactionData);
 
@@ -53,7 +53,9 @@ export const SendTransfer = () => {
 	const activeProfile = useActiveProfile();
 	const activeWallet = useActiveWallet();
 
-	const [wallet, setWallet] = useState<ReadWriteWallet | undefined>(hasWalletId ? activeWallet : undefined);
+	const [wallet, setWallet] = useState<ProfileContracts.IReadWriteWallet | undefined>(
+		hasWalletId ? activeWallet : undefined,
+	);
 
 	const networks = useMemo(() => {
 		const results: Record<string, Coins.Network> = {};
@@ -274,7 +276,7 @@ export const SendTransfer = () => {
 	return (
 		<Page profile={activeProfile}>
 			<Section className="flex-1">
-				<Form className="mx-auto max-w-xl" context={form} onSubmit={submitForm}>
+				<Form className="max-w-xl mx-auto" context={form} onSubmit={submitForm}>
 					<Tabs activeId={activeTab}>
 						<StepIndicator
 							size={showNetworkStep ? 5 : 4}

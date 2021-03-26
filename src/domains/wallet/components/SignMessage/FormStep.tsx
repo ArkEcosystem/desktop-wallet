@@ -1,4 +1,4 @@
-import { ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
+import { Contracts } from "@arkecosystem/platform-sdk-profiles";
 import { Avatar } from "app/components/Avatar";
 import { FormField, FormLabel } from "app/components/Form";
 import { Header } from "app/components/Header";
@@ -12,7 +12,7 @@ export const FormStep = ({
 	wallet,
 	disableMessageInput,
 }: {
-	wallet: ReadWriteWallet;
+	wallet: Contracts.IReadWriteWallet;
 	disableMessageInput?: boolean;
 }) => {
 	const { t } = useTranslation();

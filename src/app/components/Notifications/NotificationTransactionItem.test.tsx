@@ -1,4 +1,4 @@
-import { Profile } from "@arkecosystem/platform-sdk-profiles";
+import { Contracts } from "@arkecosystem/platform-sdk-profiles";
 import { httpClient } from "app/services";
 import nock from "nock";
 import React from "react";
@@ -7,7 +7,7 @@ import { act, env, fireEvent, getDefaultProfileId, render, waitFor } from "utils
 import { NotificationTransactionItem } from "./NotificationTransactionItem";
 const NotificationTransactionsFixtures = require("tests/fixtures/coins/ark/devnet/notification-transactions.json");
 
-let profile: Profile;
+let profile: Contracts.IProfile;
 let notification: any;
 
 describe("Notifications", () => {

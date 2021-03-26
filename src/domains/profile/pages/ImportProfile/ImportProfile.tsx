@@ -1,4 +1,4 @@
-import { Profile } from "@arkecosystem/platform-sdk-profiles";
+import { Contracts } from "@arkecosystem/platform-sdk-profiles";
 import { Page, Section } from "app/components/Layout";
 import { StepIndicator } from "app/components/StepIndicator";
 import { TabPanel, Tabs } from "app/components/Tabs";
@@ -22,7 +22,7 @@ export const ImportProfile = () => {
 	const [fileFormat, setFileFormat] = useState(".dwe");
 	const [selectedFile, setSelectedFile] = useState<ImportFile>();
 	const [password, setPassword] = useState<string>();
-	const [profile, setProfile] = useState<Profile>();
+	const [profile, setProfile] = useState<Contracts.IProfile>();
 
 	const handleSelectedFile = (file: ImportFile) => {
 		setSelectedFile(file);
@@ -33,7 +33,7 @@ export const ImportProfile = () => {
 		setActiveTab(10);
 	};
 
-	const handleProfileSave = (updatedProfile: Profile) => {
+	const handleProfileSave = (updatedProfile: Contracts.IProfile) => {
 		updatedProfile.save(password);
 		env.profiles().fill({ [updatedProfile.id()]: updatedProfile.dump() });
 

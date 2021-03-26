@@ -1,4 +1,4 @@
-import { Profile } from "@arkecosystem/platform-sdk-profiles";
+import { Contracts } from "@arkecosystem/platform-sdk-profiles";
 import { RecipientListItem } from "domains/transaction/components/RecipientList/RecipientList.models";
 
 export type AddRecipientProps = {
@@ -6,7 +6,7 @@ export type AddRecipientProps = {
 	singleLabel?: string;
 	multipleLabel?: string;
 	recipients?: RecipientListItem[];
-	profile: Profile;
+	profile: Contracts.IProfile;
 	labelText?: string;
 	helpText?: string;
 	showMultiPaymentOption?: boolean;

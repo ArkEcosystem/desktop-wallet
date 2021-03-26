@@ -1,9 +1,9 @@
-import { Network } from "@arkecosystem/platform-sdk/dist/coins";
+import { Coins } from "@arkecosystem/platform-sdk";
 
 export type SelectedWallet = {
 	address: string;
 	coinId: string;
 	coinName: string;
-	network: Network;
+	network: Coins.Network;
 	name?: string;
 };

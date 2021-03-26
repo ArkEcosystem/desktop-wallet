@@ -1,10 +1,10 @@
-import { Profile } from "@arkecosystem/platform-sdk-profiles";
+import { Contracts } from "@arkecosystem/platform-sdk-profiles";
 import React from "react";
 import { act, env, fireEvent, getDefaultProfileId, render, waitFor } from "testing-library";
 
 import { NotificationItem } from "./NotificationItem";
 
-let profile: Profile;
+let profile: Contracts.IProfile;
 let notification: any;
 
 describe("Notifications", () => {

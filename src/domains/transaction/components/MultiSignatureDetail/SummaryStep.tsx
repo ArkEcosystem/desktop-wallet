@@ -1,11 +1,12 @@
 import { Contracts } from "@arkecosystem/platform-sdk";
-import { DelegateMapper, ReadOnlyWallet, ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
+import { Contracts as ProfileContracts } from "@arkecosystem/platform-sdk-profiles";
 import { BigNumber } from "@arkecosystem/platform-sdk-support";
 import { Circle } from "app/components/Circle";
 import { Clipboard } from "app/components/Clipboard";
 import { Header } from "app/components/Header";
 import { Icon } from "app/components/Icon";
 import { TruncateMiddle } from "app/components/TruncateMiddle";
+import { useEnvironmentContext } from "app/contexts";
 import {
 	TransactionAmount,
 	TransactionDetail,
@@ -51,9 +52,10 @@ export const SummaryStep = ({
 	wallet,
 	transaction,
 }: {
-	wallet: ReadWriteWallet;
+	wallet: ProfileContracts.IReadWriteWallet;
 	transaction: Contracts.SignedTransactionData;
 }) => {
+	const { env } = useEnvironmentContext();
 	const { t } = useTranslation();
 	const [senderAddress, setSenderAddress] = useState("");
 
@@ -82,7 +84,10 @@ export const SummaryStep = ({
 		);
 	}
 
-	const [delegates, setDelegates] = useState<{ votes: ReadOnlyWallet[]; unvotes: ReadOnlyWallet[] }>({
+	const [delegates, setDelegates] = useState<{
+		votes: ProfileContracts.IReadOnlyWallet[];
+		unvotes: ProfileContracts.IReadOnlyWallet[];
+	}>({
 		votes: [],
 		unvotes: [],
 	});
@@ -109,15 +114,15 @@ export const SummaryStep = ({
 				const unvotes = asset.votes.filter((vote) => vote.startsWith("-")).map((s) => s.substring(1));
 
 				setDelegates({
-					votes: DelegateMapper.execute(wallet, votes),
-					unvotes: DelegateMapper.execute(wallet, unvotes),
+					votes: env.delegates().map(wallet, votes),
+					unvotes: env.delegates().map(wallet, unvotes),
 				});
 			}
 		};
 
 		setAddress();
 		findVoteDelegates();
-	}, [wallet, transaction, type]);
+	}, [env, wallet, transaction, type]);
 
 	return (
 		<section>
@@ -173,7 +178,7 @@ export const SummaryStep = ({
 				</div>
 			</TransactionDetail>
 
-			<div className="px-10 pt-6 -mx-10 mt-4 border-t border-theme-secondary-300 dark:border-theme-secondary-800">
+			<div className="px-10 pt-6 mt-4 -mx-10 border-t border-theme-secondary-300 dark:border-theme-secondary-800">
 				<Signatures transactionId={transaction.id()} publicKeys={participants} wallet={wallet} />
 			</div>
 		</section>

@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/require-await */
-import { Profile } from "@arkecosystem/platform-sdk-profiles";
+import { Contracts } from "@arkecosystem/platform-sdk-profiles";
 import { translations as commonTranslations } from "app/i18n/common/i18n";
 import { createMemoryHistory } from "history";
 import nock from "nock";
@@ -20,7 +20,7 @@ import {
 import { Transactions } from "./Transactions";
 
 const history = createMemoryHistory();
-let profile: Profile;
+let profile: Contracts.IProfile;
 
 const fixtureProfileId = getDefaultProfileId();
 let dashboardURL: string;

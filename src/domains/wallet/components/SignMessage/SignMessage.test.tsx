@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/require-await */
-import { Profile, ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
+import { Contracts } from "@arkecosystem/platform-sdk-profiles";
 import Transport, { Observer } from "@ledgerhq/hw-transport";
 import { createTransportReplayer, RecordStore } from "@ledgerhq/hw-transport-mocker";
 import { LedgerProvider } from "app/contexts/Ledger/Ledger";
@@ -18,8 +18,8 @@ import { SignMessage } from "./SignMessage";
 const history = createMemoryHistory();
 let walletUrl: string;
 
-let profile: Profile;
-let wallet: ReadWriteWallet;
+let profile: Contracts.IProfile;
+let wallet: Contracts.IReadWriteWallet;
 
 const mnemonic = "this is a top secret password";
 

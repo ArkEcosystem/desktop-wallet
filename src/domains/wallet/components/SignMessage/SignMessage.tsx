@@ -1,3 +1,4 @@
+import { Contracts } from "@arkecosystem/platform-sdk";
 import { SignedMessage } from "@arkecosystem/platform-sdk/dist/contracts";
 import { OriginalButton as Button } from "app/components/Button/OriginalButton";
 import { Clipboard } from "app/components/Clipboard";
@@ -28,7 +29,7 @@ type SignMessageProps = {
 	onSign?: (result: SignedMessage) => void;
 };
 
-const initialState: SignedMessage = {
+const initialState: Contracts.SignedMessage = {
 	message: "",
 	signatory: "",
 	signature: "",
@@ -40,7 +41,7 @@ export const SignMessage = ({ walletId, messageText, isOpen, onClose, onCancel, 
 	const [message, setMessage] = useState<string>();
 	const [ledgerState, setLedgerState] = useState("awaitingDevice");
 
-	const [signedMessage, setSignedMessage] = useState<SignedMessage>(initialState);
+	const [signedMessage, setSignedMessage] = useState<Contracts.SignedMessage>(initialState);
 
 	const { t } = useTranslation();
 
@@ -133,6 +134,7 @@ export const SignMessage = ({ walletId, messageText, isOpen, onClose, onCancel, 
 
 	return (
 		<Modal isOpen={isOpen} title="" onClose={handleClose}>
+			{/* @ts-ignore */}
 			<Form data-testid="SignMessage" context={form} onSubmit={handleSubmit}>
 				<Tabs activeId={activeTab}>
 					<TabPanel tabId="form">

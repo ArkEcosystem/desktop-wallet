@@ -1,4 +1,4 @@
-import { ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
+import { Contracts } from "@arkecosystem/platform-sdk-profiles";
 import { Circle } from "app/components/Circle";
 import { Icon } from "app/components/Icon";
 import { TotalAmountBox } from "domains/transaction/components/TotalAmountBox";
@@ -8,7 +8,7 @@ import React from "react";
 import { useFormContext } from "react-hook-form";
 import { useTranslation } from "react-i18next";
 
-export const IpfsLedgerReview = ({ wallet }: { wallet: ReadWriteWallet }) => {
+export const IpfsLedgerReview = ({ wallet }: { wallet: Contracts.IReadWriteWallet }) => {
 	const { getValues } = useFormContext();
 	const { t } = useTranslation();
 

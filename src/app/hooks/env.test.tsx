@@ -1,12 +1,12 @@
-import { Profile, ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
+import { Contracts } from "@arkecosystem/platform-sdk-profiles";
 import React from "react";
 import { Route } from "react-router-dom";
 import { env, getDefaultProfileId, renderWithRouter } from "utils/testing-library";
 
 import { useActiveProfile, useActiveWallet } from "./env";
 
-let profile: Profile;
-let wallet: ReadWriteWallet;
+let profile: Contracts.IProfile;
+let wallet: Contracts.IReadWriteWallet;
 
 describe("useActiveProfile", () => {
 	beforeAll(() => {

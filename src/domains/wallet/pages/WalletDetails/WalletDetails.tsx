@@ -1,7 +1,6 @@
 /* eslint-disable @typescript-eslint/require-await */
-import { Coins } from "@arkecosystem/platform-sdk";
-import { SignedTransactionData } from "@arkecosystem/platform-sdk/dist/contracts";
-import { ExtendedTransactionData, ProfileSetting } from "@arkecosystem/platform-sdk-profiles";
+import { Coins, Contracts } from "@arkecosystem/platform-sdk";
+import { Contracts as ProfileContracts, DTO } from "@arkecosystem/platform-sdk-profiles";
 import { Button } from "app/components/Button";
 import { EmptyBlock } from "app/components/EmptyBlock";
 import { EmptyResults } from "app/components/EmptyResults";
@@ -28,10 +27,12 @@ type WalletDetailsProps = {
 export const WalletDetails = ({ transactionLimit }: WalletDetailsProps) => {
 	const [isLoading, setIsLoading] = useState(true);
 
-	const [signedTransactionModalItem, setSignedTransactionModalItem] = useState<SignedTransactionData | undefined>(
+	const [signedTransactionModalItem, setSignedTransactionModalItem] = useState<
+		Contracts.SignedTransactionData | undefined
+	>(undefined);
+	const [transactionModalItem, setTransactionModalItem] = useState<DTO.ExtendedTransactionData | undefined>(
 		undefined,
 	);
-	const [transactionModalItem, setTransactionModalItem] = useState<ExtendedTransactionData | undefined>(undefined);
 
 	const { t } = useTranslation();
 
@@ -63,7 +64,7 @@ export const WalletDetails = ({ transactionLimit }: WalletDetailsProps) => {
 		setShowWalletVote(activeWallet.network().can(Coins.FeatureFlag.TransactionVote));
 	}, [activeWallet]);
 
-	const exchangeCurrency = activeProfile.settings().get<string>(ProfileSetting.ExchangeCurrency);
+	const exchangeCurrency = activeProfile.settings().get<string>(ProfileContracts.ProfileSetting.ExchangeCurrency);
 
 	useEffect(() => {
 		const fetchAllData = async () => {
@@ -135,7 +136,7 @@ export const WalletDetails = ({ transactionLimit }: WalletDetailsProps) => {
 
 					<div>
 						<>
-							<div className="flex relative justify-between">
+							<div className="relative flex justify-between">
 								<h2 className="mb-8 font-bold">
 									{t("WALLETS.PAGE_WALLET_DETAILS.TRANSACTION_HISTORY.TITLE")}
 								</h2>
@@ -169,7 +170,7 @@ export const WalletDetails = ({ transactionLimit }: WalletDetailsProps) => {
 								<Button
 									data-testid="transactions__fetch-more-button"
 									variant="secondary"
-									className="mt-10 mb-5 w-full"
+									className="w-full mt-10 mb-5"
 									isLoading={isLoadingTransactions}
 									onClick={() => fetchMore()}
 								>

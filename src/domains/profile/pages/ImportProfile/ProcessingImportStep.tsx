@@ -1,4 +1,4 @@
-import { Environment, Profile } from "@arkecosystem/platform-sdk-profiles";
+import { Contracts, Environment } from "@arkecosystem/platform-sdk-profiles";
 import { Header } from "app/components/Header";
 import { FilePreview } from "domains/profile/components/FilePreview";
 import { PasswordModal } from "domains/profile/components/PasswordModal";
@@ -36,7 +36,7 @@ export const ProcessingImport = ({
 
 	useEffect(() => {
 		const runImport = async () => {
-			let profile: Profile | undefined;
+			let profile: Contracts.IProfile | undefined;
 
 			try {
 				if (isPasswordModalOpen) {

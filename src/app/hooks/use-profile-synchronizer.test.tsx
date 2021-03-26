@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/require-await */
-import { MemoryPassword } from "@arkecosystem/platform-sdk-profiles";
+import { Helpers } from "@arkecosystem/platform-sdk-profiles";
 import { act, renderHook } from "@testing-library/react-hooks";
 import { ConfigurationProvider, EnvironmentProvider } from "app/contexts";
 import { createMemoryHistory } from "history";
@@ -239,7 +239,7 @@ describe("useProfileSynchronizer", () => {
 		const profile = env.profiles().findById("cba050f1-880f-45f0-9af9-cfe48f406052");
 		profile.wallets().flush();
 
-		const memoryPasswordMock = jest.spyOn(MemoryPassword, "get").mockImplementation(() => {
+		const memoryPasswordMock = jest.spyOn(Helpers.MemoryPassword, "get").mockImplementation(() => {
 			throw new Error("password not found");
 		});
 

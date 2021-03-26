@@ -1,10 +1,10 @@
-import { MemoryPassword, Profile } from "@arkecosystem/platform-sdk-profiles";
+import { Contracts, Helpers } from "@arkecosystem/platform-sdk-profiles";
 import { renderHook } from "@testing-library/react-hooks";
 import { useProfileExport } from "domains/setting/hooks/use-profile-export";
 import { env, getDefaultProfileId } from "utils/testing-library";
 
 describe("useProfileExport", () => {
-	let profile: Profile;
+	let profile: Contracts.IProfile;
 
 	beforeAll(() => {
 		profile = env.profiles().findById(getDefaultProfileId());
@@ -45,7 +45,9 @@ describe("useProfileExport", () => {
 			excludeLedgerWallets: false,
 		});
 
-		const importedProfile = await env.profiles().import(exportedData, MemoryPassword.get(passwordProtectedProfile));
+		const importedProfile = await env
+			.profiles()
+			.import(exportedData, Helpers.MemoryPassword.get(passwordProtectedProfile));
 
 		expect(importedProfile.settings().all()).toEqual(passwordProtectedProfile.settings().all());
 	});

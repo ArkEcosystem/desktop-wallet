@@ -1,4 +1,4 @@
-import { Profile, ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
+import { Contracts } from "@arkecosystem/platform-sdk-profiles";
 import React from "react";
 import * as utils from "utils/electron-utils";
 import { act, env, fireEvent, getDefaultProfileId, render, screen, waitFor } from "utils/testing-library";
@@ -6,8 +6,8 @@ import { act, env, fireEvent, getDefaultProfileId, render, screen, waitFor } fro
 import { SignedTransactionTable } from "./SignedTransactionTable";
 
 describe("Signed Transaction Table", () => {
-	let profile: Profile;
-	let wallet: ReadWriteWallet;
+	let profile: Contracts.IProfile;
+	let wallet: Contracts.IReadWriteWallet;
 
 	const fixtures: Record<string, any> = {
 		transfer: undefined,

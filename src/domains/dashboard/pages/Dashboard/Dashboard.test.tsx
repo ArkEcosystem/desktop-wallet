@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/require-await */
-import { Profile } from "@arkecosystem/platform-sdk-profiles";
+import { Contracts } from "@arkecosystem/platform-sdk-profiles";
 import Transport, { Observer } from "@ledgerhq/hw-transport";
 import { createTransportReplayer, RecordStore } from "@ledgerhq/hw-transport-mocker";
 import { LedgerProvider } from "app/contexts/Ledger/Ledger";
@@ -25,7 +25,7 @@ import {
 import { Dashboard } from "./Dashboard";
 
 const history = createMemoryHistory();
-let profile: Profile;
+let profile: Contracts.IProfile;
 
 const fixtureProfileId = getDefaultProfileId();
 let dashboardURL: string;

@@ -1,12 +1,12 @@
 /* eslint-disable @typescript-eslint/require-await */
-import { Contact, Profile } from "@arkecosystem/platform-sdk-profiles";
+import { Contact } from "@arkecosystem/platform-sdk-profiles";
 import { availableNetworksMock } from "domains/network/data";
 import React from "react";
 import { act, env, fireEvent, getDefaultProfileId, renderWithRouter, waitFor } from "testing-library";
 
 import { UpdateContact } from "./UpdateContact";
 
-let profile: Profile;
+let profile: Contracts.IProfile;
 let updatingContact: Contact;
 
 describe("UpdateContact", () => {

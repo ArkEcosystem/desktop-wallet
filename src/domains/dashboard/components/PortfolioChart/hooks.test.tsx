@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/require-await */
-import { Profile } from "@arkecosystem/platform-sdk-profiles";
+import { Contracts } from "@arkecosystem/platform-sdk-profiles";
 import { renderHook } from "@testing-library/react-hooks";
 import { EnvironmentProvider } from "app/contexts";
 import React from "react";
@@ -7,7 +7,7 @@ import { env, getDefaultProfileId } from "utils/testing-library";
 
 import { usePortfolioData } from "./";
 
-let profile: Profile;
+let profile: Contracts.IProfile;
 describe("usePortfolioData hook", () => {
 	beforeAll(() => {
 		profile = env.profiles().findById(getDefaultProfileId());

@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/require-await */
 import { Contracts } from "@arkecosystem/platform-sdk";
-import { Profile, ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
+import { Contracts as ProfilesContracts } from "@arkecosystem/platform-sdk-profiles";
 import { BigNumber } from "@arkecosystem/platform-sdk-support";
 import { act, renderHook } from "@testing-library/react-hooks";
 import React from "react";
@@ -19,8 +19,8 @@ import {
 
 import { DelegateRegistrationForm } from "./DelegateRegistrationForm";
 
-let profile: Profile;
-let wallet: ReadWriteWallet;
+let profile: ProfilesContracts.IProfile;
+let wallet: ProfilesContracts.IReadWriteWallet;
 let fees: Record<string, string>;
 
 const renderComponent = async (defaultValues = { fee: (2 * 1e8).toFixed(0) }) => {
@@ -47,7 +47,7 @@ const renderComponent = async (defaultValues = { fee: (2 * 1e8).toFixed(0) }) =>
 	};
 };
 
-const createTransactionMock = (wallet: ReadWriteWallet) =>
+const createTransactionMock = (wallet: ProfilesContracts.IReadWriteWallet) =>
 	// @ts-ignore
 	jest.spyOn(wallet.transaction(), "transaction").mockReturnValue({
 		id: () => delegateRegistrationFixture.data.id,

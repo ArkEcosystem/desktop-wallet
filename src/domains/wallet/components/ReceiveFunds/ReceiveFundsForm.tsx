@@ -1,4 +1,4 @@
-import { FeatureFlag, Network } from "@arkecosystem/platform-sdk/dist/coins";
+import { Coins } from "@arkecosystem/platform-sdk";
 import { FormField, FormHelperText, FormLabel } from "app/components/Form";
 import { InputCounter, InputCurrency } from "app/components/Input";
 import { useValidation } from "app/hooks";
@@ -6,7 +6,7 @@ import React, { useEffect, useMemo } from "react";
 import { useFormContext } from "react-hook-form";
 import { useTranslation } from "react-i18next";
 
-export const ReceiveFundsForm = ({ network }: { network?: Network }) => {
+export const ReceiveFundsForm = ({ network }: { network?: Coins.Network }) => {
 	const { t } = useTranslation();
 
 	const form = useFormContext();
@@ -19,7 +19,7 @@ export const ReceiveFundsForm = ({ network }: { network?: Network }) => {
 		register("amount");
 	}, [register]);
 
-	const isSmartbridgeUsedInNetwork = useMemo(() => network?.can(FeatureFlag.MiscellaneousMemo), [network]);
+	const isSmartbridgeUsedInNetwork = useMemo(() => network?.can(Coins.FeatureFlag.MiscellaneousMemo), [network]);
 
 	return (
 		<div data-testid="ReceiveFundsForm">

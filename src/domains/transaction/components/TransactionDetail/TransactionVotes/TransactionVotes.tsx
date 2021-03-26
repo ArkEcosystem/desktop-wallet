@@ -1,4 +1,4 @@
-import { ReadOnlyWallet } from "@arkecosystem/platform-sdk-profiles";
+import { Contracts } from "@arkecosystem/platform-sdk-profiles";
 import { Circle } from "app/components/Circle";
 import { Icon } from "app/components/Icon";
 import { TransactionDetail } from "domains/transaction/components/TransactionDetail";
@@ -9,8 +9,8 @@ import Skeleton from "react-loading-skeleton";
 
 type TransactionVotesProps = {
 	isLoading: boolean;
-	votes: ReadOnlyWallet[];
-	unvotes: ReadOnlyWallet[];
+	votes: Contracts.IReadOnlyWallet[];
+	unvotes: Contracts.IReadOnlyWallet[];
 };
 
 export const TransactionVotes = ({ isLoading, votes, unvotes }: TransactionVotesProps) => {
@@ -20,7 +20,7 @@ export const TransactionVotes = ({ isLoading, votes, unvotes }: TransactionVotes
 		return (
 			<div
 				data-testid="TransactionVotes__skeleton"
-				className="flex justify-between items-center py-6 border-t border-dashed border-theme-secondary-300 dark:border-theme-secondary-800"
+				className="flex items-center justify-between py-6 border-t border-dashed border-theme-secondary-300 dark:border-theme-secondary-800"
 			>
 				<div className="flex flex-col space-y-2">
 					<Skeleton height={14} width="25%" />

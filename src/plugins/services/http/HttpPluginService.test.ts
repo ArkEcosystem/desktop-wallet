@@ -1,4 +1,4 @@
-import { Profile } from "@arkecosystem/platform-sdk-profiles";
+import { Contracts } from "@arkecosystem/platform-sdk-profiles";
 import { PluginController, PluginManager } from "plugins/core";
 import { PluginAPI } from "plugins/types";
 import { defaultNetMocks, env, waitFor } from "utils/testing-library";
@@ -12,7 +12,7 @@ const config = {
 };
 
 describe("HttpPluginService", () => {
-	let profile: Profile;
+	let profile: Contracts.IProfile;
 	let manager: PluginManager;
 	let ctrl: PluginController;
 	let subject: HttpPluginService;

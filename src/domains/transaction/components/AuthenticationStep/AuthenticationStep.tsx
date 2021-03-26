@@ -1,4 +1,4 @@
-import { ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
+import { Contracts } from "@arkecosystem/platform-sdk-profiles";
 import { FormField, FormLabel } from "app/components/Form";
 import { Header } from "app/components/Header";
 import { InputPassword } from "app/components/Input";
@@ -38,7 +38,7 @@ export const AuthenticationStep = ({
 	ledgerIsAwaitingDevice,
 	ledgerIsAwaitingApp,
 }: {
-	wallet: ReadWriteWallet;
+	wallet: Contracts.IReadWriteWallet;
 	skipSecondSignature?: boolean;
 	ledgerDetails?: React.ReactNode;
 } & LedgerStates) => {

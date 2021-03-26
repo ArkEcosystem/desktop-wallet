@@ -1,5 +1,5 @@
 import { Coins } from "@arkecosystem/platform-sdk";
-import { Profile, ProfileSetting } from "@arkecosystem/platform-sdk-profiles";
+import { Contracts } from "@arkecosystem/platform-sdk-profiles";
 import { BigNumber } from "@arkecosystem/platform-sdk-support";
 import { FormField, FormLabel } from "app/components/Form";
 import { Header } from "app/components/Header";
@@ -19,7 +19,7 @@ export const FormStep = ({
 	disableNetworkField,
 }: {
 	networks: Coins.Network[];
-	profile: Profile;
+	profile: Contracts.IProfile;
 	deeplinkProps: any;
 	hasWalletId: boolean;
 	disableNetworkField: boolean;
@@ -45,7 +45,7 @@ export const FormStep = ({
 	};
 
 	const availableNetworks = useMemo(() => {
-		const usesTestNetworks = profile.settings().get(ProfileSetting.UseTestNetworks);
+		const usesTestNetworks = profile.settings().get(Contracts.ProfileSetting.UseTestNetworks);
 		return usesTestNetworks ? networks : networks.filter((network) => network.isLive());
 	}, [profile, networks]);
 
