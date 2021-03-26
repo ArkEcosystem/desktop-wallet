@@ -272,7 +272,7 @@ export const WalletHeader = ({ profile, wallet, currencyDelta, onSend }: WalletH
 						<div className="flex items-center text-sm font-semibold text-theme-secondary-text">
 							<span>{t("COMMON.BALANCE")}:</span>
 
-							{wallet.convertedBalance() && (
+							{!wallet.network().isTest() && (
 								<Amount
 									value={wallet.convertedBalance()}
 									ticker={profile.settings().get<string>(ProfileSetting.ExchangeCurrency)!}
