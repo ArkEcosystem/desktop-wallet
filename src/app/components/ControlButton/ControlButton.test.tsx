@@ -9,6 +9,11 @@ describe("ControlButton", () => {
 		expect(asFragment()).toMatchSnapshot();
 	});
 
+	it("should render disabled", () => {
+		const { asFragment } = render(<ControlButton disabled />);
+		expect(asFragment()).toMatchSnapshot();
+	});
+
 	it("should render active", () => {
 		const { asFragment } = render(<ControlButton isActive />);
 		expect(asFragment()).toMatchSnapshot();

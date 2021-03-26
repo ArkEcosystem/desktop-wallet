@@ -3,12 +3,13 @@ import { Button } from "app/components/Button";
 import { ControlButton } from "app/components/ControlButton";
 import { Dropdown } from "app/components/Dropdown";
 import { LayoutControls } from "app/components/LayoutControls";
-import { FilterWallets, FilterWalletsProps } from "domains/dashboard/components/FilterWallets";
+import { Tooltip } from "app/components/Tooltip";
+import { FilterWallets, FilterWalletsHookProps } from "domains/dashboard/components/FilterWallets";
 import React, { memo, useState } from "react";
 import { useTranslation } from "react-i18next";
 
 type WalletsControlsProps = {
-	filterProperties: FilterWalletsProps;
+	filterProperties: FilterWalletsHookProps;
 	onCreateWallet?: any;
 	onImportWallet?: any;
 	onImportLedgerWallet?: () => void;
@@ -63,12 +64,20 @@ export const WalletsControls = memo(
 					<Dropdown
 						dropdownClass="transform"
 						toggleContent={
-							<ControlButton isChanged={filterProperties.isFilterChanged}>
-								<div className="flex items-center justify-center w-5 h-5">
-									<Icon name="Filters" width={17} height={19} />
-								</div>
-							</ControlButton>
+							<Tooltip content={filterProperties.disabled ? t("COMMON.NOTICE_NO_WALLETS") : undefined}>
+								<span>
+									<ControlButton
+										isChanged={filterProperties.isFilterChanged}
+										disabled={filterProperties.disabled}
+									>
+										<div className="flex items-center justify-center w-5 h-5">
+											<Icon name="Filters" width={17} height={19} />
+										</div>
+									</ControlButton>
+								</span>
+							</Tooltip>
 						}
+						disableToggle={filterProperties.disabled}
 					>
 						<div className="py-7 px-10 w-128">
 							<FilterWallets {...filterProperties} onChange={onFilterChange} />

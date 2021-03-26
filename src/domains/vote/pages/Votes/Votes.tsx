@@ -262,41 +262,43 @@ export const Votes = () => {
 					title={t("VOTE.VOTES_PAGE.TITLE")}
 					subtitle={t("VOTE.VOTES_PAGE.SUBTITLE")}
 					extra={
-						<div className="flex items-center space-x-5 text-theme-primary-200">
-							<HeaderSearchBar
-								placeholder={t("VOTE.VOTES_PAGE.SEARCH_PLACEHOLDER")}
-								onSearch={setSearchQuery}
-								onReset={() => setSearchQuery("")}
-								debounceTimeout={100}
-							/>
-
-							<div className="h-10 border-l border-theme-secondary-300 dark:border-theme-secondary-800" />
-
-							{!selectedAddress ? (
-								<div data-testid="Votes__FilterWallets">
-									<Dropdown
-										position="right"
-										toggleContent={
-											<ControlButton isChanged={isFilterChanged}>
-												<div className="flex items-center justify-center w-5 h-5">
-													<Icon name="Filters" width={17} height={19} />
-												</div>
-											</ControlButton>
-										}
-									>
-										<div className="px-10 py-7 w-128">
-											<FilterWallets {...filterProperties} />
-										</div>
-									</Dropdown>
-								</div>
-							) : (
-								<VotesFilter
-									totalCurrentVotes={currentVotes?.length || 0}
-									selectedOption={selectedFilter}
-									onChange={setSelectedFilter}
+						activeProfile.wallets().count() ? (
+							<div className="flex items-center space-x-5 text-theme-primary-200">
+								<HeaderSearchBar
+									placeholder={t("VOTE.VOTES_PAGE.SEARCH_PLACEHOLDER")}
+									onSearch={setSearchQuery}
+									onReset={() => setSearchQuery("")}
+									debounceTimeout={100}
 								/>
-							)}
-						</div>
+
+								<div className="h-10 border-l border-theme-secondary-300 dark:border-theme-secondary-800" />
+
+								{!selectedAddress ? (
+									<div data-testid="Votes__FilterWallets">
+										<Dropdown
+											position="right"
+											toggleContent={
+												<ControlButton isChanged={isFilterChanged}>
+													<div className="flex items-center justify-center w-5 h-5">
+														<Icon name="Filters" width={17} height={19} />
+													</div>
+												</ControlButton>
+											}
+										>
+											<div className="px-10 py-7 w-128">
+												<FilterWallets {...filterProperties} />
+											</div>
+										</Dropdown>
+									</div>
+								) : (
+									<VotesFilter
+										totalCurrentVotes={currentVotes?.length || 0}
+										selectedOption={selectedFilter}
+										onChange={setSelectedFilter}
+									/>
+								)}
+							</div>
+						) : null
 					}
 				/>
 			</Section>

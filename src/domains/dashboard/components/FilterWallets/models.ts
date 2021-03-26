@@ -1,4 +1,4 @@
-export type FilterWalletsHookProps = {
+type BaseProps = {
 	networks?: any;
 	viewType?: "list" | "grid";
 	useTestNetworks?: boolean;
@@ -7,6 +7,11 @@ export type FilterWalletsHookProps = {
 	isFilterChanged?: boolean;
 };
 
+export type FilterWalletsHookProps = {
+	update: (key: string, value: any) => void;
+	disabled: boolean;
+} & BaseProps;
+
 export type FilterWalletsProps = {
 	onChange?: (key: string, value: any) => void;
-} & FilterWalletsHookProps;
+} & BaseProps;
