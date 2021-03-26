@@ -134,6 +134,7 @@ export const SignMessage = ({ walletId, messageText, isOpen, onClose, onCancel, 
 
 	return (
 		<Modal isOpen={isOpen} title="" onClose={handleClose}>
+			{/* @ts-ignore */}
 			<Form data-testid="SignMessage" context={form} onSubmit={handleSubmit}>
 				<Tabs activeId={activeTab}>
 					<TabPanel tabId="form">
