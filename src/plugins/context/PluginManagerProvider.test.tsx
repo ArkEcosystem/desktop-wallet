@@ -1,5 +1,6 @@
 import { Contracts } from "@arkecosystem/platform-sdk-profiles";
 import { fireEvent, render, screen, waitFor } from "@testing-library/react";
+import { EnvironmentProvider } from "app/contexts";
 import electron, { ipcRenderer } from "electron";
 import nock from "nock";
 import { PluginController, PluginManager } from "plugins/core";
@@ -52,9 +53,11 @@ describe("PluginManagerProvider", () => {
 		};
 
 		render(
-			<PluginManagerProvider manager={manager} services={[]}>
-				<Component />
-			</PluginManagerProvider>,
+			<EnvironmentProvider env={env}>
+				<PluginManagerProvider manager={manager} services={[]}>
+					<Component />
+				</PluginManagerProvider>
+			</EnvironmentProvider>,
 		);
 
 		fireEvent.click(screen.getByRole("button"));
@@ -74,9 +77,11 @@ describe("PluginManagerProvider", () => {
 		};
 
 		render(
-			<PluginManagerProvider manager={manager} services={[]}>
-				<Component />
-			</PluginManagerProvider>,
+			<EnvironmentProvider env={env}>
+				<PluginManagerProvider manager={manager} services={[]}>
+					<Component />
+				</PluginManagerProvider>
+			</EnvironmentProvider>,
 		);
 
 		fireEvent.click(screen.getByRole("button"));
@@ -100,9 +105,11 @@ describe("PluginManagerProvider", () => {
 		};
 
 		render(
-			<PluginManagerProvider manager={manager} services={[]}>
-				<Component />
-			</PluginManagerProvider>,
+			<EnvironmentProvider env={env}>
+				<PluginManagerProvider manager={manager} services={[]}>
+					<Component />
+				</PluginManagerProvider>
+			</EnvironmentProvider>,
 		);
 
 		fireEvent.click(screen.getByRole("button"));
@@ -134,9 +141,11 @@ describe("PluginManagerProvider", () => {
 		};
 
 		render(
-			<PluginManagerProvider manager={manager} services={[]}>
-				<Component />
-			</PluginManagerProvider>,
+			<EnvironmentProvider env={env}>
+				<PluginManagerProvider manager={manager} services={[]}>
+					<Component />
+				</PluginManagerProvider>
+			</EnvironmentProvider>,
 		);
 
 		fireEvent.click(screen.getByRole("button"));
@@ -183,9 +192,11 @@ describe("PluginManagerProvider", () => {
 		};
 
 		render(
-			<PluginManagerProvider manager={manager} services={[]}>
-				<Component />
-			</PluginManagerProvider>,
+			<EnvironmentProvider env={env}>
+				<PluginManagerProvider manager={manager} services={[]}>
+					<Component />
+				</PluginManagerProvider>
+			</EnvironmentProvider>,
 		);
 
 		fireEvent.click(screen.getByText("Fetch"));
@@ -236,9 +247,11 @@ describe("PluginManagerProvider", () => {
 		};
 
 		render(
-			<PluginManagerProvider manager={manager} services={[]}>
-				<Component />
-			</PluginManagerProvider>,
+			<EnvironmentProvider env={env}>
+				<PluginManagerProvider manager={manager} services={[]}>
+					<Component />
+				</PluginManagerProvider>
+			</EnvironmentProvider>,
 		);
 
 		fireEvent.click(screen.getByText("Fetch"));
@@ -277,9 +290,11 @@ describe("PluginManagerProvider", () => {
 		};
 
 		render(
-			<PluginManagerProvider manager={manager} services={[]}>
-				<Component />
-			</PluginManagerProvider>,
+			<EnvironmentProvider env={env}>
+				<PluginManagerProvider manager={manager} services={[]}>
+					<Component />
+				</PluginManagerProvider>
+			</EnvironmentProvider>,
 		);
 
 		fireEvent.click(screen.getByText("Fetch Package"));
@@ -298,9 +313,11 @@ describe("PluginManagerProvider", () => {
 		};
 
 		render(
-			<PluginManagerProvider manager={manager} services={[]}>
-				<Component />
-			</PluginManagerProvider>,
+			<EnvironmentProvider env={env}>
+				<PluginManagerProvider manager={manager} services={[]}>
+					<Component />
+				</PluginManagerProvider>
+			</EnvironmentProvider>,
 		);
 
 		expect(screen.getByText("my-plugin")).toBeInTheDocument();
@@ -335,9 +352,11 @@ describe("PluginManagerProvider", () => {
 		};
 
 		render(
-			<PluginManagerProvider manager={manager} services={[]}>
-				<Component />
-			</PluginManagerProvider>,
+			<EnvironmentProvider env={env}>
+				<PluginManagerProvider manager={manager} services={[]}>
+					<Component />
+				</PluginManagerProvider>
+			</EnvironmentProvider>,
 		);
 
 		fireEvent.click(screen.getByText("Click"));
@@ -412,9 +431,11 @@ describe("PluginManagerProvider", () => {
 		};
 
 		render(
-			<PluginManagerProvider manager={manager} services={[]}>
-				<Component />
-			</PluginManagerProvider>,
+			<EnvironmentProvider env={env}>
+				<PluginManagerProvider manager={manager} services={[]}>
+					<Component />
+				</PluginManagerProvider>
+			</EnvironmentProvider>,
 		);
 
 		fireEvent.click(screen.getByText("Fetch"));
@@ -475,9 +496,11 @@ describe("PluginManagerProvider", () => {
 		};
 
 		render(
-			<PluginManagerProvider manager={manager} services={[]}>
-				<Component />
-			</PluginManagerProvider>,
+			<EnvironmentProvider env={env}>
+				<PluginManagerProvider manager={manager} services={[]}>
+					<Component />
+				</PluginManagerProvider>
+			</EnvironmentProvider>,
 		);
 
 		fireEvent.click(screen.getByRole("button"));
@@ -527,9 +550,11 @@ describe("PluginManagerProvider", () => {
 		};
 
 		render(
-			<PluginManagerProvider manager={manager} services={[]}>
-				<Component />
-			</PluginManagerProvider>,
+			<EnvironmentProvider env={env}>
+				<PluginManagerProvider manager={manager} services={[]}>
+					<Component />
+				</PluginManagerProvider>
+			</EnvironmentProvider>,
 		);
 
 		fireEvent.click(screen.getByRole("button"));
@@ -561,9 +586,11 @@ describe("PluginManagerProvider", () => {
 		};
 
 		render(
-			<PluginManagerProvider manager={manager} services={[]}>
-				<Component />
-			</PluginManagerProvider>,
+			<EnvironmentProvider env={env}>
+				<PluginManagerProvider manager={manager} services={[]}>
+					<Component />
+				</PluginManagerProvider>
+			</EnvironmentProvider>,
 		);
 
 		fireEvent.click(screen.getByText("Fetch Size"));
