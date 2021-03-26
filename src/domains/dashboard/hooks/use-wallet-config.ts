@@ -4,7 +4,7 @@ import { useConfiguration } from "app/contexts";
 import { DashboardConfiguration } from "domains/dashboard/pages/Dashboard";
 import { useMemo } from "react";
 
-export const useDashboardConfig = ({
+export const useWalletConfig = ({
 	profile,
 	defaults,
 }: {
