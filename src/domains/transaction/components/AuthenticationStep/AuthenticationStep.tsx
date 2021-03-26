@@ -46,6 +46,7 @@ export const AuthenticationStep = ({
 	const { errors, getValues, register } = useFormContext();
 
 	const isLedger = wallet.isLedger();
+	const usesWIF = wallet.usesWIF();
 	const { authentication } = useValidation();
 
 	if (isLedger) {
@@ -64,9 +65,10 @@ export const AuthenticationStep = ({
 		);
 	}
 
-	const mnemonicIsValid = !!getValues("mnemonic") && !errors.mnemonic;
+	const mnemonicFieldName = usesWIF ? "encryptionPassword" : "mnemonic";
+	const mnemonicIsValid = !!getValues(mnemonicFieldName) && !errors[mnemonicFieldName];
 
-	const subtitle = wallet.usesWIF()
+	const subtitle = usesWIF
 		? t("TRANSACTION.AUTHENTICATION_STEP.DESCRIPTION_ENCRYPTION_PASSWORD")
 		: t("TRANSACTION.AUTHENTICATION_STEP.DESCRIPTION");
 
@@ -74,7 +76,7 @@ export const AuthenticationStep = ({
 		<div data-testid="AuthenticationStep" className="space-y-8">
 			<Header title={t("TRANSACTION.AUTHENTICATION_STEP.TITLE")} subtitle={subtitle} />
 
-			{!wallet.usesWIF() && (
+			{!usesWIF && (
 				<FormField name="mnemonic">
 					<FormLabel>{t("TRANSACTION.MNEMONIC")}</FormLabel>
 					<InputPassword
@@ -84,7 +86,7 @@ export const AuthenticationStep = ({
 				</FormField>
 			)}
 
-			{wallet.usesWIF() && (
+			{usesWIF && (
 				<FormField name="encryptionPassword">
 					<FormLabel>{t("TRANSACTION.ENCRYPTION_PASSWORD")}</FormLabel>
 					<InputPassword
