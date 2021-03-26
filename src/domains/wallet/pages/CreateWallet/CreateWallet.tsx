@@ -69,6 +69,8 @@ export const CreateWallet = () => {
 
 		setConfiguration("selectedNetworkIds", uniq([...selectedNetworkIds, wallet.network().id()]));
 
+		activeProfile.save();
+
 		await persist();
 
 		setValue("wallet", null);
