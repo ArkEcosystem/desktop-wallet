@@ -41,7 +41,7 @@ const CreateProfileForm = ({
 }: CreateProfileFormProps) => {
 	const { t } = useTranslation();
 
-	const form = useForm({
+	const form = useForm<any>({
 		mode: "onChange",
 		defaultValues: {
 			name: profile?.name() || "",
@@ -172,7 +172,7 @@ const CreateProfileForm = ({
 								required={!!watch("password")}
 								optional={!watch("password")}
 							/>
-							<InputPassword ref={register(createProfile.confirmPassword(watch("password")))} />
+							<InputPassword ref={register(createProfile.confirmPassword(watch("password")!))} />
 						</FormField>
 
 						{showCurrencyField && (

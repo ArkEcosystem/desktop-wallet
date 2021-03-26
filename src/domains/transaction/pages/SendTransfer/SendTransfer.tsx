@@ -63,7 +63,7 @@ export const SendTransfer = () => {
 		return Object.values(results);
 	}, [profile]);
 
-	const form = useForm({
+	const form = useForm<any>({
 		mode: "onChange",
 		defaultValues: {
 			fee: 0,
