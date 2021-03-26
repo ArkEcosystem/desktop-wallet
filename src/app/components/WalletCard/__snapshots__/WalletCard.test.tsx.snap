@@ -155,7 +155,121 @@ exports[`Wallet Card should render blank 1`] = `
       </div>
       <div
         class="flex absolute -top-1 -right-1 items-center m-4 space-x-1"
-      />
+      >
+        <div
+          class="sc-bdfBwQ dHWxPT text-theme-primary-100 dark:text-theme-secondary-800"
+          height="16"
+          width="1em"
+        >
+          <svg>
+            ledger.svg
+          </svg>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Wallet Card should render blank with favorites display type 1`] = `
+<div>
+  <div
+    class="w-64 inline-block undefined"
+    data-testid="WalletCard__blank"
+  >
+    <div
+      class="Cardstyles__Wrapper-sc-1uddqgb-0 eJQzer h-48"
+      data-testid="Card"
+    >
+      <div
+        class="flex flex-col justify-between p-4 h-full"
+      >
+        <div
+          class="flex -space-x-2"
+        >
+          <div
+            class="Circle-uw7h4j-0 JkqUV bg-theme-background border-theme-primary-100 dark:border-theme-secondary-800"
+          />
+          <div
+            class="Circle-uw7h4j-0 JkqUV bg-theme-background border-theme-primary-100 dark:border-theme-secondary-800"
+          />
+        </div>
+        <div
+          class="mt-auto text-lg font-bold text-theme-primary-100 dark:text-theme-secondary-800"
+        >
+          Balance
+        </div>
+        <span
+          class="mt-1 text-xs font-semibold truncate text-theme-primary-100 dark:text-theme-secondary-800"
+        >
+          Address
+        </span>
+      </div>
+      <div
+        class="flex absolute -top-1 -right-1 items-center m-4 space-x-1"
+      >
+        <div
+          class="sc-bdfBwQ dHWxPT text-theme-primary-100 dark:text-theme-secondary-800"
+          height="16"
+          width="1em"
+        >
+          <svg>
+            star.svg
+          </svg>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Wallet Card should render blank with ledger display type 1`] = `
+<div>
+  <div
+    class="w-64 inline-block undefined"
+    data-testid="WalletCard__blank"
+  >
+    <div
+      class="Cardstyles__Wrapper-sc-1uddqgb-0 eJQzer h-48"
+      data-testid="Card"
+    >
+      <div
+        class="flex flex-col justify-between p-4 h-full"
+      >
+        <div
+          class="flex -space-x-2"
+        >
+          <div
+            class="Circle-uw7h4j-0 JkqUV bg-theme-background border-theme-primary-100 dark:border-theme-secondary-800"
+          />
+          <div
+            class="Circle-uw7h4j-0 JkqUV bg-theme-background border-theme-primary-100 dark:border-theme-secondary-800"
+          />
+        </div>
+        <div
+          class="mt-auto text-lg font-bold text-theme-primary-100 dark:text-theme-secondary-800"
+        >
+          Balance
+        </div>
+        <span
+          class="mt-1 text-xs font-semibold truncate text-theme-primary-100 dark:text-theme-secondary-800"
+        >
+          Address
+        </span>
+      </div>
+      <div
+        class="flex absolute -top-1 -right-1 items-center m-4 space-x-1"
+      >
+        <div
+          class="sc-bdfBwQ dHWxPT text-theme-primary-100 dark:text-theme-secondary-800"
+          height="16"
+          width="1em"
+        >
+          <svg>
+            ledger.svg
+          </svg>
+        </div>
+      </div>
     </div>
   </div>
 </div>

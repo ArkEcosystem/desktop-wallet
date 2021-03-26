@@ -3,6 +3,7 @@ import { Avatar } from "app/components/Avatar";
 import { Card } from "app/components/Card";
 import { Circle } from "app/components/Circle";
 import { DropdownOption } from "app/components/Dropdown";
+import { Icon } from "app/components/Icon";
 import { WalletIcons } from "app/components/WalletIcons";
 import { useActiveProfile } from "app/hooks";
 import { NetworkIcon } from "domains/network/components/NetworkIcon";
@@ -18,10 +19,11 @@ type WalletCardProps = {
 	className?: string;
 	wallet?: Contracts.IReadWriteWallet;
 	actions?: DropdownOption[];
+	displayType?: string;
 	onSelect?: any;
 };
 
-export const WalletCard = ({ isLoading, className, wallet, actions, onSelect }: WalletCardProps) => {
+export const WalletCard = ({ isLoading, className, wallet, actions, displayType, onSelect }: WalletCardProps) => {
 	const activeProfile = useActiveProfile();
 
 	const history = useHistory();
@@ -32,9 +34,23 @@ export const WalletCard = ({ isLoading, className, wallet, actions, onSelect }: 
 	}
 
 	if (wallet === undefined) {
+		const walletIcon = () => {
+			if (displayType === "all") {
+				return;
+			}
+
+			return (
+				<Icon
+					name={displayType === "favorites" ? "Star" : "Ledger"}
+					className="text-theme-primary-100 dark:text-theme-secondary-800"
+					height={16}
+				/>
+			);
+		};
+
 		return (
 			<div data-testid="WalletCard__blank" className={`w-64 inline-block ${className}`}>
-				<Card className="h-48">
+				<Card addonIcons={walletIcon()} className="h-48">
 					<div className="flex flex-col justify-between p-4 h-full">
 						<div className="flex -space-x-2">
 							<Circle
