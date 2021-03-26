@@ -41,7 +41,21 @@ export const useProfileUtils = (env: Environment) => {
 		[getProfileById],
 	);
 
-	return useMemo(() => ({ getProfileById, getProfileFromUrl }), [getProfileFromUrl, getProfileById]);
+	const getProfileStoredPassword = (profile: Contracts.IProfile) => {
+		if (profile.usesPassword()) {
+			try {
+				const password = Helpers.MemoryPassword.get(profile);
+				return password;
+			} catch (error) {
+				return;
+			}
+		}
+	};
+
+	return useMemo(() => ({ getProfileById, getProfileFromUrl, getProfileStoredPassword }), [
+		getProfileFromUrl,
+		getProfileById,
+	]);
 };
 
 const useProfileWatcher = () => {
@@ -162,13 +176,15 @@ export const useProfileSyncStatus = () => {
 export const useProfileRestore = () => {
 	const { shouldRestore, markAsRestored, setStatus } = useProfileSyncStatus();
 	const { persist, env } = useEnvironmentContext();
-	const { getProfileFromUrl } = useProfileUtils(env);
+	const { getProfileFromUrl, getProfileStoredPassword } = useProfileUtils(env);
 	const history = useHistory();
 
-	const restoreProfile = async (profile: Contracts.IProfile, password?: string) => {
+	const restoreProfile = async (profile: Contracts.IProfile, passwordInput?: string) => {
 		if (!shouldRestore(profile)) {
 			return false;
 		}
+
+		const password = passwordInput || getProfileStoredPassword(profile);
 
 		setStatus("restoring");
 
@@ -216,7 +232,7 @@ type ProfileSynchronizerProps = {
 
 export const useProfileSynchronizer = ({ onProfileRestoreError }: ProfileSynchronizerProps = {}) => {
 	const __E2E__ = process.env.REACT_APP_IS_E2E;
-	const { persist } = useEnvironmentContext();
+	const { persist, env } = useEnvironmentContext();
 	const { setConfiguration, profileIsSyncing } = useConfiguration();
 	const { restoreProfile } = useProfileRestore();
 	const profile = useProfileWatcher();
@@ -259,7 +275,6 @@ export const useProfileSynchronizer = ({ onProfileRestoreError }: ProfileSynchro
 			}
 
 			if (shouldRestore(profile)) {
-				// TODO: provide password if available
 				await restoreProfile(profile);
 			}
 
