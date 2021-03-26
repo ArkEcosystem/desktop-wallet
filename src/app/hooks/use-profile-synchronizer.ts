@@ -1,7 +1,7 @@
 import { Contracts, Environment, Helpers } from "@arkecosystem/platform-sdk-profiles";
 import { useConfiguration, useEnvironmentContext } from "app/contexts";
 import { useCallback, useEffect, useMemo, useRef } from "react";
-import { matchPath, useHistory,useLocation } from "react-router-dom";
+import { matchPath, useHistory, useLocation } from "react-router-dom";
 
 import { useNotifications } from "./use-notifications";
 import { useSynchronizer } from "./use-synchronizer";
