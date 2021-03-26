@@ -1,12 +1,19 @@
 import React from "react";
 import tw, { css, styled } from "twin.macro";
 
-const ControlButtonStyled = styled.div<{ isActive?: boolean; noBorder?: boolean }>`
+const ControlButtonStyled = styled.div<{ isActive?: boolean; noBorder?: boolean; disabled?: boolean }>`
 	${tw`flex items-center justify-center transition-colors duration-200 relative cursor-pointer py-2`}
 
-	${({ noBorder }) => {
+	${({ isActive, noBorder, disabled }) => {
+		if (disabled) {
+			return tw`cursor-not-allowed text-theme-secondary-400 dark:text-theme-secondary-700`;
+		}
+
+		let styles: any[] = [];
+
 		if (!noBorder) {
-			return [
+			styles = [
+				...styles,
 				tw`px-3`,
 				css`
 					&:after {
@@ -18,25 +25,30 @@ const ControlButtonStyled = styled.div<{ isActive?: boolean; noBorder?: boolean 
 				`,
 			];
 		}
-	}}
 
-	${({ isActive }) =>
-		isActive
-			? [
-					tw`text-theme-danger-400`,
-					css`
-						&:after {
-							opacity: 100;
-						}
-					`,
-			  ]
-			: tw`text-theme-primary-300 dark:text-theme-secondary-600 hover:text-theme-danger-400`};
+		if (isActive) {
+			styles = [
+				...styles,
+				tw`text-theme-danger-400`,
+				css`
+					&:after {
+						opacity: 100;
+					}
+				`,
+			];
+		} else {
+			styles = [...styles, tw`text-theme-primary-300 dark:text-theme-secondary-600 hover:text-theme-danger-400`];
+		}
+
+		return styles;
+	}}
 `;
 
 type ControlButtonProps = {
 	isActive?: boolean;
 	isChanged?: boolean;
 	noBorder?: boolean;
+	disabled?: boolean;
 	children?: React.ReactNode;
 	onClick?: any;
 };
