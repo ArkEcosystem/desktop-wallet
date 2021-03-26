@@ -15,7 +15,7 @@ export const useCurrencyDisplay = () => {
 			: BigNumber.make(inputValue);
 
 		if (isNaN(sanitized.toNumber())) {
-			return [Number(maxNumber)];
+			return [];
 		}
 
 		return [Math.min(sanitized.toNumber(), Number(maxNumber))];
