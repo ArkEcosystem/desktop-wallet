@@ -1,4 +1,4 @@
-import { Profile } from "@arkecosystem/platform-sdk-profiles";
+import { Contracts } from "@arkecosystem/platform-sdk-profiles";
 import { createMemoryHistory } from "history";
 import React from "react";
 import { Route } from "react-router-dom";
@@ -6,7 +6,7 @@ import { env, getDefaultProfileId, render, renderWithRouter, waitFor } from "uti
 
 import { GridWallet, WalletsGrid } from "./";
 
-let profile: Profile;
+let profile: Contracts.IProfile;
 let wallets: GridWallet[];
 
 const history = createMemoryHistory();

@@ -1,12 +1,12 @@
-import { Profile, ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
+import { Contracts } from "@arkecosystem/platform-sdk-profiles";
 import nock from "nock";
 import React from "react";
 import { env, getDefaultProfileId, render, syncDelegates, waitFor } from "testing-library";
 
 import { AddressTable } from "./AddressTable";
 
-let profile: Profile;
-let wallet: ReadWriteWallet;
+let profile: Contracts.IProfile;
+let wallet: Contracts.IReadWriteWallet;
 
 describe("AddressTable", () => {
 	beforeAll(async () => {

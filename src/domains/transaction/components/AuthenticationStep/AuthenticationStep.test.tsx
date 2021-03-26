@@ -1,4 +1,4 @@
-import { Profile, ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
+import { Contracts } from "@arkecosystem/platform-sdk-profiles";
 import { act, renderHook } from "@testing-library/react-hooks";
 import { Form } from "app/components/Form";
 import React from "react";
@@ -8,8 +8,8 @@ import { env, fireEvent, getDefaultProfileId, renderWithRouter, screen, waitFor 
 import { AuthenticationStep } from "./AuthenticationStep";
 
 describe("AuthenticationStep", () => {
-	let wallet: ReadWriteWallet;
-	let profile: Profile;
+	let wallet: Contracts.IReadWriteWallet;
+	let profile: Contracts.IProfile;
 
 	beforeEach(() => {
 		profile = env.profiles().findById(getDefaultProfileId());

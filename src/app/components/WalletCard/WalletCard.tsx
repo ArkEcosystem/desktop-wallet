@@ -1,4 +1,4 @@
-import { ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
+import { Contracts } from "@arkecosystem/platform-sdk-profiles";
 import { Avatar } from "app/components/Avatar";
 import { Card } from "app/components/Card";
 import { Circle } from "app/components/Circle";
@@ -16,7 +16,7 @@ import { WalletCardSkeleton } from "./WalletCardSkeleton";
 type WalletCardProps = {
 	isLoading: boolean;
 	className?: string;
-	wallet?: ReadWriteWallet;
+	wallet?: Contracts.IReadWriteWallet;
 	actions?: DropdownOption[];
 	onSelect?: any;
 };

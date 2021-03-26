@@ -1,4 +1,4 @@
-import { ProfileSetting } from "@arkecosystem/platform-sdk-profiles";
+import { Contracts } from "@arkecosystem/platform-sdk-profiles";
 import { groupBy } from "@arkecosystem/utils";
 import { Button } from "app/components/Button";
 import { Divider } from "app/components/Divider";
@@ -26,10 +26,10 @@ export const Peer = ({ formConfig, onSuccess }: SettingsProps) => {
 	const { env, state, persist } = useEnvironmentContext();
 
 	const [isMultiPeerBroadcast, setIsMultiPeerBroadcast] = useState(
-		activeProfile.settings().get(ProfileSetting.UseMultiPeerBroadcast) || false,
+		activeProfile.settings().get(Contracts.ProfileSetting.UseMultiPeerBroadcast) || false,
 	);
 	const [isCustomPeer, setIsCustomPeer] = useState(
-		activeProfile.settings().get(ProfileSetting.UseCustomPeer) || false,
+		activeProfile.settings().get(Contracts.ProfileSetting.UseCustomPeer) || false,
 	);
 
 	const loadPeers = useCallback(() => {
@@ -89,8 +89,8 @@ export const Peer = ({ formConfig, onSuccess }: SettingsProps) => {
 			setIsMultiPeerBroadcast(false);
 
 			const savePeerSettings = async () => {
-				activeProfile.settings().set(ProfileSetting.UseMultiPeerBroadcast, isMultiPeerBroadcast);
-				activeProfile.settings().set(ProfileSetting.UseCustomPeer, isCustomPeer);
+				activeProfile.settings().set(Contracts.ProfileSetting.UseMultiPeerBroadcast, isMultiPeerBroadcast);
+				activeProfile.settings().set(Contracts.ProfileSetting.UseCustomPeer, isCustomPeer);
 
 				await syncWallets();
 				await persist(activeProfile);
@@ -202,8 +202,8 @@ export const Peer = ({ formConfig, onSuccess }: SettingsProps) => {
 	};
 
 	const handleSubmit = async ({ isMultiPeerBroadcast, isCustomPeer }: any) => {
-		activeProfile.settings().set(ProfileSetting.UseMultiPeerBroadcast, isMultiPeerBroadcast);
-		activeProfile.settings().set(ProfileSetting.UseCustomPeer, isCustomPeer);
+		activeProfile.settings().set(Contracts.ProfileSetting.UseMultiPeerBroadcast, isMultiPeerBroadcast);
+		activeProfile.settings().set(Contracts.ProfileSetting.UseCustomPeer, isCustomPeer);
 
 		await syncWallets();
 		await persist(activeProfile);

@@ -1,10 +1,16 @@
-import { Profile, ProfileSetting } from "@arkecosystem/platform-sdk-profiles";
+import { Contracts } from "@arkecosystem/platform-sdk-profiles";
 import { uniq } from "@arkecosystem/utils";
 import { useConfiguration } from "app/contexts";
 import { DashboardConfiguration } from "domains/dashboard/pages/Dashboard";
 import { useMemo } from "react";
 
-export const useDashboardConfig = ({ profile, defaults }: { profile: Profile; defaults?: DashboardConfiguration }) => {
+export const useWalletConfig = ({
+	profile,
+	defaults,
+}: {
+	profile: Contracts.IProfile;
+	defaults?: DashboardConfiguration;
+}) => {
 	const defaultConfiguration: DashboardConfiguration = {
 		walletsDisplayType: "all",
 		viewType: "grid",
@@ -22,7 +28,7 @@ export const useDashboardConfig = ({ profile, defaults }: { profile: Profile; de
 		() =>
 			profile
 				.settings()
-				.get(ProfileSetting.DashboardConfiguration, defaultConfiguration) as DashboardConfiguration,
+				.get(Contracts.ProfileSetting.DashboardConfiguration, defaultConfiguration) as DashboardConfiguration,
 		[profile, defaultConfiguration],
 	);
 
@@ -32,7 +38,7 @@ export const useDashboardConfig = ({ profile, defaults }: { profile: Profile; de
 		dashboardConfiguration[key] = value;
 
 		setConfiguration({ dashboard: dashboardConfiguration });
-		profile.settings().set(ProfileSetting.DashboardConfiguration, dashboardConfiguration);
+		profile.settings().set(Contracts.ProfileSetting.DashboardConfiguration, dashboardConfiguration);
 	};
 
 	const { selectedNetworkIds, walletsDisplayType } = dashboardConfiguration;

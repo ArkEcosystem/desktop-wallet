@@ -1,14 +1,14 @@
-import { SignedTransactionData } from "@arkecosystem/platform-sdk/dist/contracts";
-import { ExtendedTransactionData, ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
+import { Contracts } from "@arkecosystem/platform-sdk";
+import { Contracts as ProfileContracts, DTO } from "@arkecosystem/platform-sdk-profiles";
 import { uniqBy } from "@arkecosystem/utils";
 import { useSynchronizer } from "app/hooks";
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 
 export const useWalletTransactions = (
-	wallet: ReadWriteWallet,
+	wallet: ProfileContracts.IReadWriteWallet,
 	{ limit, mode = "all", transactionType }: { limit: number; mode?: string; transactionType?: any },
 ) => {
-	const pendingMultiSignatureTransactions: SignedTransactionData[] = Object.values({
+	const pendingMultiSignatureTransactions: Contracts.SignedTransactionData[] = Object.values({
 		...wallet.transaction().waitingForOtherSignatures(),
 		...wallet.transaction().waitingForOurSignature(),
 		...wallet.transaction().signed(),
@@ -16,7 +16,7 @@ export const useWalletTransactions = (
 		// TODO: Use the `isMultiSignature()` method from interface when ready on the platform-sdk
 		.filter((item) => !!item.get("multiSignature"));
 
-	const [transactions, setTransactions] = useState<ExtendedTransactionData[]>([]);
+	const [transactions, setTransactions] = useState<DTO.ExtendedTransactionData[]>([]);
 	const [itemCount, setItemCount] = useState<number>(0);
 	const [nextPage, setNextPage] = useState<string | number | undefined>();
 	const [isLoading, setIsLoading] = useState(false);

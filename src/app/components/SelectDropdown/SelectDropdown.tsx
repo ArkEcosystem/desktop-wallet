@@ -82,6 +82,7 @@ const SelectDropdown = ({
 		inputValue,
 		highlightedIndex,
 		reset,
+		toggleMenu,
 	} = useCombobox<Option | null>({
 		id,
 		items: options,
@@ -146,14 +147,18 @@ const SelectDropdown = ({
 		addons = {
 			...addons,
 			end: (
-				<span className="w-10 pointer-events-none text-theme-secondary-500">
+				<div
+					data-testid="SelectDropdown__caret"
+					className="py-2 px-1 text-theme-secondary-500 flex items-center justify-center"
+					onClick={toggleMenu}
+				>
 					<Icon
 						name="CaretDown"
 						className={`transition-transform ${isOpen ? "transform rotate-180" : ""}`}
 						width={7}
 						height={5}
 					/>
-				</span>
+				</div>
 			),
 		};
 	}

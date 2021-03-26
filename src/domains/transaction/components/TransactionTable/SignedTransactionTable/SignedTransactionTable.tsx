@@ -1,6 +1,6 @@
 import { Contracts } from "@arkecosystem/platform-sdk";
 import { DateTime } from "@arkecosystem/platform-sdk-intl";
-import { ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
+import { Contracts as ProfileContracts } from "@arkecosystem/platform-sdk-profiles";
 import { Button } from "app/components/Button";
 import { Icon } from "app/components/Icon";
 import { Table, TableCell, TableRow } from "app/components/Table";
@@ -18,7 +18,7 @@ type SignedTransactionData = Contracts.SignedTransactionData;
 
 type Props = {
 	transactions: SignedTransactionData[];
-	wallet: ReadWriteWallet;
+	wallet: ProfileContracts.IReadWriteWallet;
 	onClick?: (transaction: SignedTransactionData) => void;
 };
 
@@ -50,7 +50,13 @@ const getType = (transaction: SignedTransactionData): string => {
 	return "transfer";
 };
 
-const StatusLabel = ({ wallet, transaction }: { wallet: ReadWriteWallet; transaction: SignedTransactionData }) => {
+const StatusLabel = ({
+	wallet,
+	transaction,
+}: {
+	wallet: ProfileContracts.IReadWriteWallet;
+	transaction: SignedTransactionData;
+}) => {
 	const { t } = useTranslation();
 
 	const isMultiSignatureReady = useMemo(() => {
@@ -123,7 +129,7 @@ const Row = ({
 	transaction: SignedTransactionData;
 	onSign?: (transaction: SignedTransactionData) => void;
 	onRowClick?: (transaction: SignedTransactionData) => void;
-	wallet: ReadWriteWallet;
+	wallet: ProfileContracts.IReadWriteWallet;
 }) => {
 	const { t } = useTranslation();
 	const [shadowColor, setShadowColor] = useState("--theme-background-color");

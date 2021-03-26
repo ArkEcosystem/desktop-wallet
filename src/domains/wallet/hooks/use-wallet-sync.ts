@@ -1,12 +1,12 @@
-import { Environment, Profile, ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
+import { Contracts, Environment } from "@arkecosystem/platform-sdk-profiles";
 
 type WalletImportTypes = {
-	profile: Profile;
+	profile: Contracts.IProfile;
 	env: Environment;
 };
 
 export const useWalletSync = ({ profile, env }: WalletImportTypes) => {
-	const syncFees = async (wallet: ReadWriteWallet) => {
+	const syncFees = async (wallet: Contracts.IReadWriteWallet) => {
 		const network = wallet.network();
 		try {
 			env.fees().all(network.coin(), network.id());
@@ -16,10 +16,10 @@ export const useWalletSync = ({ profile, env }: WalletImportTypes) => {
 		}
 	};
 
-	const syncRates = (profile: Profile, wallet: ReadWriteWallet) =>
+	const syncRates = (profile: Contracts.IProfile, wallet: Contracts.IReadWriteWallet) =>
 		env.exchangeRates().syncAll(profile, wallet.currency());
 
-	const syncVotes = async (wallet: ReadWriteWallet) => {
+	const syncVotes = async (wallet: Contracts.IReadWriteWallet) => {
 		const network = wallet.network();
 
 		if (network.allowsVoting()) {
@@ -33,7 +33,7 @@ export const useWalletSync = ({ profile, env }: WalletImportTypes) => {
 		}
 	};
 
-	const syncAll = async (wallet: ReadWriteWallet) =>
+	const syncAll = async (wallet: Contracts.IReadWriteWallet) =>
 		Promise.allSettled([syncVotes(wallet), syncRates(profile, wallet), syncFees(wallet)]);
 
 	return { syncAll };

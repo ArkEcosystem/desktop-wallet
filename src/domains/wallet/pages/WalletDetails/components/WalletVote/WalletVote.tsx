@@ -1,4 +1,4 @@
-import { ReadOnlyWallet, ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
+import { Contracts } from "@arkecosystem/platform-sdk-profiles";
 import { Button } from "app/components/Button";
 import { Circle } from "app/components/Circle";
 import { Icon } from "app/components/Icon";
@@ -12,7 +12,7 @@ import { WalletVoteSkeleton } from "./WalletVoteSkeleton";
 type WalletVoteProps = {
 	isLoading?: boolean;
 	isLoadingDelegates?: boolean;
-	wallet: ReadWriteWallet;
+	wallet: Contracts.IReadWriteWallet;
 	onButtonClick: (address?: string) => void;
 };
 
@@ -41,7 +41,7 @@ export const WalletVote = ({ isLoading, isLoadingDelegates, wallet, onButtonClic
 
 	const votesHelpLink = "https://ark.dev/docs/desktop-wallet/user-guides/how-to-vote-unvote";
 
-	let votes: ReadOnlyWallet[];
+	let votes: Contracts.IReadOnlyWallet[];
 
 	try {
 		votes = wallet.votes();
@@ -50,7 +50,7 @@ export const WalletVote = ({ isLoading, isLoadingDelegates, wallet, onButtonClic
 	}
 
 	const activeCount = votes.filter(
-		(delegate: ReadOnlyWallet) => delegate.rank() && delegate.rank()! <= activeDelegates,
+		(delegate: Contracts.IReadOnlyWallet) => delegate.rank() && delegate.rank()! <= activeDelegates,
 	).length;
 
 	const renderStatuses = () => {
@@ -146,11 +146,11 @@ export const WalletVote = ({ isLoading, isLoadingDelegates, wallet, onButtonClic
 					)}
 				</div>
 
-				<div className="flex flex-col justify-between items-end pr-6 mr-6 font-semibold border-r border-theme-secondary-300 dark:border-theme-secondary-800">
+				<div className="flex flex-col items-end justify-between pr-6 mr-6 font-semibold border-r border-theme-secondary-300 dark:border-theme-secondary-800">
 					<span className="text-sm text-theme-secondary-500 dark:text-theme-secondary-700 ">
 						{t("WALLETS.PAGE_WALLET_DETAILS.VOTES.DELEGATE_STATUS")}
 					</span>
-					<div className="flex justify-end items-center space-x-2">{renderStatuses()}</div>
+					<div className="flex items-center justify-end space-x-2">{renderStatuses()}</div>
 				</div>
 			</>
 		);

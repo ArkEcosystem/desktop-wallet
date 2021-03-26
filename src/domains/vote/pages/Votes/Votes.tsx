@@ -1,4 +1,4 @@
-import { ProfileSetting, ReadOnlyWallet, ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
+import { Contracts } from "@arkecosystem/platform-sdk-profiles";
 import { isEmptyObject, uniq, uniqBy } from "@arkecosystem/utils";
 import { Icon } from "app/components//Icon";
 import { Button } from "app/components/Button";
@@ -52,15 +52,15 @@ export const Votes = () => {
 
 	const [selectedAddress, setSelectedAddress] = useState(walletAddress);
 	const [maxVotes, setMaxVotes] = useState(walletMaxVotes);
-	const [delegates, setDelegates] = useState<ReadOnlyWallet[]>([]);
-	const [votes, setVotes] = useState<ReadOnlyWallet[] | undefined>();
+	const [delegates, setDelegates] = useState<Contracts.IReadOnlyWallet[]>([]);
+	const [votes, setVotes] = useState<Contracts.IReadOnlyWallet[] | undefined>();
 	const [isLoadingDelegates, setIsLoadingDelegates] = useState(false);
 	const [selectedFilter, setSelectedFilter] = useState<FilterOption>(filter);
 
 	const walletsByCoin = useMemo(() => {
 		const wallets = activeProfile.wallets().allByCoin();
 
-		const usesTestNetworks = activeProfile.settings().get(ProfileSetting.UseTestNetworks);
+		const usesTestNetworks = activeProfile.settings().get(Contracts.ProfileSetting.UseTestNetworks);
 		const usedWallets = usesTestNetworks
 			? activeProfile.wallets().values()
 			: activeProfile
@@ -73,7 +73,7 @@ export const Votes = () => {
 		return usedCoins.reduce(
 			(coins, coin) => ({
 				...coins,
-				[coin]: Object.values(wallets[coin]).filter((wallet: ReadWriteWallet) => {
+				[coin]: Object.values(wallets[coin]).filter((wallet: Contracts.IReadWriteWallet) => {
 					if (!selectedNetworkIds.includes(wallet.network().id())) {
 						return false;
 					}
@@ -89,7 +89,7 @@ export const Votes = () => {
 					return wallet;
 				}),
 			}),
-			{} as Record<string, ReadWriteWallet[]>,
+			{} as Record<string, Contracts.IReadWriteWallet[]>,
 		);
 	}, [activeProfile, selectedNetworkIds, walletsDisplayType]);
 
@@ -121,7 +121,7 @@ export const Votes = () => {
 
 	const filterProperties = {
 		networks,
-		useTestNetworks: activeProfile.settings().get(ProfileSetting.UseTestNetworks) as boolean,
+		useTestNetworks: activeProfile.settings().get(Contracts.ProfileSetting.UseTestNetworks) as boolean,
 		selectedNetworkIds,
 		walletsDisplayType,
 		onChange: (key: string, value: any) => {
@@ -149,7 +149,7 @@ export const Votes = () => {
 	const loadVotes = useCallback(
 		(address) => {
 			const wallet = activeProfile.wallets().findByAddress(address);
-			let votes: ReadOnlyWallet[] = [];
+			let votes: Contracts.IReadOnlyWallet[] = [];
 
 			try {
 				votes = wallet!.votes();
@@ -229,12 +229,12 @@ export const Votes = () => {
 			(coins, coin) => ({
 				...coins,
 				[coin]: Object.values(walletsByCoin[coin]).filter(
-					(wallet: ReadWriteWallet) =>
+					(wallet: Contracts.IReadWriteWallet) =>
 						wallet.address().toLowerCase().includes(searchQuery.toLowerCase()) ||
 						wallet.alias()?.toLowerCase()?.includes(searchQuery.toLowerCase()),
 				),
 			}),
-			{} as Record<string, ReadWriteWallet[]>,
+			{} as Record<string, Contracts.IReadWriteWallet[]>,
 		);
 	}, [searchQuery, walletsByCoin]);
 
@@ -278,13 +278,13 @@ export const Votes = () => {
 										position="right"
 										toggleContent={
 											<ControlButton isChanged={isFilterChanged}>
-												<div className="flex items-center justify-center h-5 w-5">
+												<div className="flex items-center justify-center w-5 h-5">
 													<Icon name="Filters" width={17} height={19} />
 												</div>
 											</ControlButton>
 										}
 									>
-										<div className="py-7 px-10 w-128">
+										<div className="px-10 py-7 w-128">
 											<FilterWallets {...filterProperties} />
 										</div>
 									</Dropdown>
@@ -304,7 +304,7 @@ export const Votes = () => {
 			{isEmptyObject(walletsByCoin) ? (
 				<Section>
 					<EmptyBlock>
-						<div className="flex justify-between items-center">
+						<div className="flex items-center justify-between">
 							<Trans
 								i18nKey="VOTE.VOTES_PAGE.EMPTY_MESSAGE"
 								defaults="Your must first <bold>{{create}}</bold> or <bold>{{import}}</bold> an address to view your current voting status"

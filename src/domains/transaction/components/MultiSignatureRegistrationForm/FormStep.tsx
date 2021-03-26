@@ -1,5 +1,5 @@
 import { Coins, Contracts } from "@arkecosystem/platform-sdk";
-import { Profile, ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
+import { Contracts as ProfilesContracts } from "@arkecosystem/platform-sdk-profiles";
 import { FormField, FormLabel } from "app/components/Form";
 import { Header } from "app/components/Header";
 import { Input } from "app/components/Input";
@@ -17,9 +17,9 @@ export const FormStep = ({
 	wallet,
 	step = 0.001,
 }: {
-	profile: Profile;
+	profile: ProfilesContracts.IProfile;
 	fees: Contracts.TransactionFee;
-	wallet: ReadWriteWallet;
+	wallet: ProfilesContracts.IReadWriteWallet;
 	step?: number;
 }) => {
 	const { t } = useTranslation();

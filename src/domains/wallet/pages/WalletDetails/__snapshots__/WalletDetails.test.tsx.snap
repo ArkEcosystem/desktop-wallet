@@ -319,7 +319,7 @@ exports[`WalletDetails should not fail if the votes have not yet been synchroniz
                 </div>
               </div>
               <div
-                class="flex overflow-hidden flex-col"
+                class="flex flex-col overflow-hidden"
               >
                 <div
                   class="flex items-center space-x-5 text-theme-secondary-text"
@@ -382,12 +382,6 @@ exports[`WalletDetails should not fail if the votes have not yet been synchroniz
                 >
                   <span>
                     Balance:
-                  </span>
-                  <span
-                    class="ml-1"
-                    data-testid="WalletHeader__currency-balance"
-                  >
-                    0 BTC
                   </span>
                 </div>
                 <span
@@ -579,7 +573,7 @@ exports[`WalletDetails should not fail if the votes have not yet been synchroniz
         >
           <div>
             <div
-              class="flex relative justify-between"
+              class="relative flex justify-between"
             >
               <h2
                 class="mb-8 font-bold"
@@ -975,7 +969,7 @@ exports[`WalletDetails should not fail if the votes have not yet been synchroniz
               </div>
             </div>
             <button
-              class="OriginalButton__StyledButton-sc-1y2wptt-0 hsoUax mt-10 mb-5 w-full"
+              class="OriginalButton__StyledButton-sc-1y2wptt-0 hsoUax w-full mt-10 mb-5"
               data-testid="transactions__fetch-more-button"
               type="button"
             >
@@ -1312,7 +1306,7 @@ exports[`WalletDetails should open detail modal on transaction row click 1`] = `
                 </div>
               </div>
               <div
-                class="flex overflow-hidden flex-col"
+                class="flex flex-col overflow-hidden"
               >
                 <div
                   class="flex items-center space-x-5 text-theme-secondary-text"
@@ -1375,12 +1369,6 @@ exports[`WalletDetails should open detail modal on transaction row click 1`] = `
                 >
                   <span>
                     Balance:
-                  </span>
-                  <span
-                    class="ml-1"
-                    data-testid="WalletHeader__currency-balance"
-                  >
-                    0 BTC
                   </span>
                 </div>
                 <span
@@ -1515,7 +1503,7 @@ exports[`WalletDetails should open detail modal on transaction row click 1`] = `
               </div>
             </div>
             <div
-              class="flex flex-col justify-between items-end pr-6 mr-6 font-semibold border-r border-theme-secondary-300 dark:border-theme-secondary-800"
+              class="flex flex-col items-end justify-between pr-6 mr-6 font-semibold border-r border-theme-secondary-300 dark:border-theme-secondary-800"
             >
               <span
                 class="text-sm text-theme-secondary-500 dark:text-theme-secondary-700 "
@@ -1523,7 +1511,7 @@ exports[`WalletDetails should open detail modal on transaction row click 1`] = `
                 Delegate Status
               </span>
               <div
-                class="flex justify-end items-center space-x-2"
+                class="flex items-center justify-end space-x-2"
               >
                 <span>
                   <div
@@ -1576,7 +1564,7 @@ exports[`WalletDetails should open detail modal on transaction row click 1`] = `
         >
           <div>
             <div
-              class="flex relative justify-between"
+              class="relative flex justify-between"
             >
               <h2
                 class="mb-8 font-bold"
@@ -1972,7 +1960,7 @@ exports[`WalletDetails should open detail modal on transaction row click 1`] = `
               </div>
             </div>
             <button
-              class="OriginalButton__StyledButton-sc-1y2wptt-0 hsoUax mt-10 mb-5 w-full"
+              class="OriginalButton__StyledButton-sc-1y2wptt-0 hsoUax w-full mt-10 mb-5"
               data-testid="transactions__fetch-more-button"
               type="button"
             >
@@ -2309,7 +2297,7 @@ exports[`WalletDetails should remove wallet name 1`] = `
                 </div>
               </div>
               <div
-                class="flex overflow-hidden flex-col"
+                class="flex flex-col overflow-hidden"
               >
                 <div
                   class="flex items-center space-x-5 text-theme-secondary-text"
@@ -2372,12 +2360,6 @@ exports[`WalletDetails should remove wallet name 1`] = `
                 >
                   <span>
                     Balance:
-                  </span>
-                  <span
-                    class="ml-1"
-                    data-testid="WalletHeader__currency-balance"
-                  >
-                    0 BTC
                   </span>
                 </div>
                 <span
@@ -2512,7 +2494,7 @@ exports[`WalletDetails should remove wallet name 1`] = `
               </div>
             </div>
             <div
-              class="flex flex-col justify-between items-end pr-6 mr-6 font-semibold border-r border-theme-secondary-300 dark:border-theme-secondary-800"
+              class="flex flex-col items-end justify-between pr-6 mr-6 font-semibold border-r border-theme-secondary-300 dark:border-theme-secondary-800"
             >
               <span
                 class="text-sm text-theme-secondary-500 dark:text-theme-secondary-700 "
@@ -2520,7 +2502,7 @@ exports[`WalletDetails should remove wallet name 1`] = `
                 Delegate Status
               </span>
               <div
-                class="flex justify-end items-center space-x-2"
+                class="flex items-center justify-end space-x-2"
               >
                 <span>
                   <div
@@ -2573,7 +2555,7 @@ exports[`WalletDetails should remove wallet name 1`] = `
         >
           <div>
             <div
-              class="flex relative justify-between"
+              class="relative flex justify-between"
             >
               <h2
                 class="mb-8 font-bold"
@@ -2969,7 +2951,7 @@ exports[`WalletDetails should remove wallet name 1`] = `
               </div>
             </div>
             <button
-              class="OriginalButton__StyledButton-sc-1y2wptt-0 hsoUax mt-10 mb-5 w-full"
+              class="OriginalButton__StyledButton-sc-1y2wptt-0 hsoUax w-full mt-10 mb-5"
               data-testid="transactions__fetch-more-button"
               type="button"
             >
@@ -3306,7 +3288,7 @@ exports[`WalletDetails should render when wallet not found for votes 1`] = `
                 </div>
               </div>
               <div
-                class="flex overflow-hidden flex-col"
+                class="flex flex-col overflow-hidden"
               >
                 <div
                   class="flex items-center space-x-5 text-theme-secondary-text"
@@ -3369,12 +3351,6 @@ exports[`WalletDetails should render when wallet not found for votes 1`] = `
                 >
                   <span>
                     Balance:
-                  </span>
-                  <span
-                    class="ml-1"
-                    data-testid="WalletHeader__currency-balance"
-                  >
-                    0 BTC
                   </span>
                 </div>
                 <span
@@ -3567,7 +3543,7 @@ exports[`WalletDetails should render when wallet not found for votes 1`] = `
         >
           <div>
             <div
-              class="flex relative justify-between"
+              class="relative flex justify-between"
             >
               <h2
                 class="mb-8 font-bold"
@@ -3963,7 +3939,7 @@ exports[`WalletDetails should render when wallet not found for votes 1`] = `
               </div>
             </div>
             <button
-              class="OriginalButton__StyledButton-sc-1y2wptt-0 hsoUax mt-10 mb-5 w-full"
+              class="OriginalButton__StyledButton-sc-1y2wptt-0 hsoUax w-full mt-10 mb-5"
               data-testid="transactions__fetch-more-button"
               type="button"
             >
@@ -4300,7 +4276,7 @@ exports[`WalletDetails should star and unstar a wallet 1`] = `
                 </div>
               </div>
               <div
-                class="flex overflow-hidden flex-col"
+                class="flex flex-col overflow-hidden"
               >
                 <div
                   class="flex items-center space-x-5 text-theme-secondary-text"
@@ -4363,12 +4339,6 @@ exports[`WalletDetails should star and unstar a wallet 1`] = `
                 >
                   <span>
                     Balance:
-                  </span>
-                  <span
-                    class="ml-1"
-                    data-testid="WalletHeader__currency-balance"
-                  >
-                    0 BTC
                   </span>
                 </div>
                 <span
@@ -4503,7 +4473,7 @@ exports[`WalletDetails should star and unstar a wallet 1`] = `
               </div>
             </div>
             <div
-              class="flex flex-col justify-between items-end pr-6 mr-6 font-semibold border-r border-theme-secondary-300 dark:border-theme-secondary-800"
+              class="flex flex-col items-end justify-between pr-6 mr-6 font-semibold border-r border-theme-secondary-300 dark:border-theme-secondary-800"
             >
               <span
                 class="text-sm text-theme-secondary-500 dark:text-theme-secondary-700 "
@@ -4511,7 +4481,7 @@ exports[`WalletDetails should star and unstar a wallet 1`] = `
                 Delegate Status
               </span>
               <div
-                class="flex justify-end items-center space-x-2"
+                class="flex items-center justify-end space-x-2"
               >
                 <span>
                   <div
@@ -4564,7 +4534,7 @@ exports[`WalletDetails should star and unstar a wallet 1`] = `
         >
           <div>
             <div
-              class="flex relative justify-between"
+              class="relative flex justify-between"
             >
               <h2
                 class="mb-8 font-bold"
@@ -4960,7 +4930,7 @@ exports[`WalletDetails should star and unstar a wallet 1`] = `
               </div>
             </div>
             <button
-              class="OriginalButton__StyledButton-sc-1y2wptt-0 hsoUax mt-10 mb-5 w-full"
+              class="OriginalButton__StyledButton-sc-1y2wptt-0 hsoUax w-full mt-10 mb-5"
               data-testid="transactions__fetch-more-button"
               type="button"
             >
@@ -5297,7 +5267,7 @@ exports[`WalletDetails should update wallet name 1`] = `
                 </div>
               </div>
               <div
-                class="flex overflow-hidden flex-col"
+                class="flex flex-col overflow-hidden"
               >
                 <div
                   class="flex items-center space-x-5 text-theme-secondary-text"
@@ -5366,12 +5336,6 @@ exports[`WalletDetails should update wallet name 1`] = `
                 >
                   <span>
                     Balance:
-                  </span>
-                  <span
-                    class="ml-1"
-                    data-testid="WalletHeader__currency-balance"
-                  >
-                    0 BTC
                   </span>
                 </div>
                 <span
@@ -5506,7 +5470,7 @@ exports[`WalletDetails should update wallet name 1`] = `
               </div>
             </div>
             <div
-              class="flex flex-col justify-between items-end pr-6 mr-6 font-semibold border-r border-theme-secondary-300 dark:border-theme-secondary-800"
+              class="flex flex-col items-end justify-between pr-6 mr-6 font-semibold border-r border-theme-secondary-300 dark:border-theme-secondary-800"
             >
               <span
                 class="text-sm text-theme-secondary-500 dark:text-theme-secondary-700 "
@@ -5514,7 +5478,7 @@ exports[`WalletDetails should update wallet name 1`] = `
                 Delegate Status
               </span>
               <div
-                class="flex justify-end items-center space-x-2"
+                class="flex items-center justify-end space-x-2"
               >
                 <span>
                   <div
@@ -5567,7 +5531,7 @@ exports[`WalletDetails should update wallet name 1`] = `
         >
           <div>
             <div
-              class="flex relative justify-between"
+              class="relative flex justify-between"
             >
               <h2
                 class="mb-8 font-bold"
@@ -5963,7 +5927,7 @@ exports[`WalletDetails should update wallet name 1`] = `
               </div>
             </div>
             <button
-              class="OriginalButton__StyledButton-sc-1y2wptt-0 hsoUax mt-10 mb-5 w-full"
+              class="OriginalButton__StyledButton-sc-1y2wptt-0 hsoUax w-full mt-10 mb-5"
               data-testid="transactions__fetch-more-button"
               type="button"
             >

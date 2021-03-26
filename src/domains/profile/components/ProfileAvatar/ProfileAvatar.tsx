@@ -1,10 +1,10 @@
-import { Profile } from "@arkecosystem/platform-sdk-profiles";
+import { Contracts } from "@arkecosystem/platform-sdk-profiles";
 import { AvatarWrapper } from "app/components/Avatar";
 import React from "react";
 import { Size } from "types";
 
 type ProfileAvatarProps = {
-	profile: Profile;
+	profile: Contracts.IProfile;
 	size: Size;
 };
 

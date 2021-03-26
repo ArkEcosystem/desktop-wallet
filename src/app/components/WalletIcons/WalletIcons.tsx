@@ -1,4 +1,4 @@
-import { ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
+import { Contracts } from "@arkecosystem/platform-sdk-profiles";
 import { Icon } from "app/components/Icon";
 import { Tooltip } from "app/components/Tooltip";
 import React from "react";
@@ -29,7 +29,7 @@ const WalletIcon = ({ type, value }: { type: string; value?: string }) => {
 	);
 };
 
-export const WalletIcons = ({ wallet }: { wallet: ReadWriteWallet }) => (
+export const WalletIcons = ({ wallet }: { wallet: Contracts.IReadWriteWallet }) => (
 	<>
 		{wallet.isKnown() && <WalletIcon type="Verified" value={wallet.knownName()} />}
 		{wallet.isLedger() && <WalletIcon type="Ledger" />}

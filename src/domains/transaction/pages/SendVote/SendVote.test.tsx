@@ -1,5 +1,7 @@
 /* eslint-disable @typescript-eslint/require-await */
-import { Profile, ReadOnlyWallet, ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
+import { Contracts } from "@arkecosystem/platform-sdk-profiles";
+// @README: This import is fine in tests but should be avoided in production code.
+import { ReadOnlyWallet } from "@arkecosystem/platform-sdk-profiles/dist/drivers/memory/wallets/read-only-wallet";
 import { BigNumber } from "@arkecosystem/platform-sdk-support";
 import { renderHook } from "@testing-library/react-hooks";
 import { LedgerProvider } from "app/contexts";
@@ -29,7 +31,7 @@ import { SendVote } from "../SendVote";
 
 const fixtureProfileId = getDefaultProfileId();
 
-const createVoteTransactionMock = (wallet: ReadWriteWallet) =>
+const createVoteTransactionMock = (wallet: Contracts.IReadWriteWallet) =>
 	// @ts-ignore
 	jest.spyOn(wallet.transaction(), "transaction").mockReturnValue({
 		id: () => voteFixture.data.id,
@@ -40,7 +42,7 @@ const createVoteTransactionMock = (wallet: ReadWriteWallet) =>
 		data: () => voteFixture.data,
 	});
 
-const createUnvoteTransactionMock = (wallet: ReadWriteWallet) =>
+const createUnvoteTransactionMock = (wallet: Contracts.IReadWriteWallet) =>
 	// @ts-ignore
 	jest.spyOn(wallet.transaction(), "transaction").mockReturnValue({
 		id: () => unvoteFixture.data.id,
@@ -52,8 +54,8 @@ const createUnvoteTransactionMock = (wallet: ReadWriteWallet) =>
 	});
 
 const passphrase = getDefaultWalletMnemonic();
-let profile: Profile;
-let wallet: ReadWriteWallet;
+let profile: Contracts.IProfile;
+let wallet: Contracts.IReadWriteWallet;
 let votes: ReadOnlyWallet[];
 const transport = getDefaultLedgerTransport();
 

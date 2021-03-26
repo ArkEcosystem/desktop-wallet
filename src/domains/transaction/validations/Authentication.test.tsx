@@ -1,12 +1,12 @@
 /* eslint-disable @typescript-eslint/require-await */
-import { ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
+import { Contracts } from "@arkecosystem/platform-sdk-profiles";
 import { env } from "utils/testing-library";
 
 import { authentication } from "./Authentication";
 
 let translationMock: any;
-let wallet: ReadWriteWallet;
-let walletWithPassword: ReadWriteWallet;
+let wallet: Contracts.IReadWriteWallet;
+let walletWithPassword: Contracts.IReadWriteWallet;
 
 describe("Authentication", () => {
 	beforeAll(async () => {

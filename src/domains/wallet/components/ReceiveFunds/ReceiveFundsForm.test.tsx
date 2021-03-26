@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/require-await */
-import { Network } from "@arkecosystem/platform-sdk/dist/coins";
+import { Coins } from "@arkecosystem/platform-sdk";
 import { act, renderHook } from "@testing-library/react-hooks";
 import { Form } from "app/components/Form";
 import React from "react";
@@ -8,7 +8,7 @@ import { env, fireEvent, getDefaultProfileId, getDefaultWalletId, render, waitFo
 
 import { ReceiveFundsForm } from "./";
 
-let network: Network;
+let network: Coins.Network;
 
 describe("ReceiveFundsForm", () => {
 	beforeEach(() => {

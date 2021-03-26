@@ -1,5 +1,5 @@
 import { Coins } from "@arkecosystem/platform-sdk";
-import { Contact } from "@arkecosystem/platform-sdk-profiles";
+import { Contracts } from "@arkecosystem/platform-sdk-profiles";
 import { Button } from "app/components/Button";
 import { EmptyBlock } from "app/components/EmptyBlock";
 import { Header } from "app/components/Header";
@@ -47,12 +47,12 @@ export const Contacts = ({ onSearch }: ContactsProps) => {
 
 	const activeProfile = useActiveProfile();
 
-	const [contacts, setContacts] = useState<Contact[]>([]);
+	const [contacts, setContacts] = useState<Contracts.IContact[]>([]);
 
 	const [createIsOpen, setCreateIsOpen] = useState(false);
 
 	const [contactAction, setContactAction] = useState<string | null>(null);
-	const [selectedContact, setSelectedContact] = useState<Contact | null>(null);
+	const [selectedContact, setSelectedContact] = useState<Contracts.IContact | null>(null);
 
 	const [availableNetworks] = useState<Coins.Network[]>(env.availableNetworks());
 
@@ -102,7 +102,7 @@ export const Contacts = ({ onSearch }: ContactsProps) => {
 		},
 	];
 
-	const handleContactAction = (action: string, contact: Contact) => {
+	const handleContactAction = (action: string, contact: Contracts.IContact) => {
 		setContactAction(action);
 		setSelectedContact(contact);
 	};
@@ -134,7 +134,7 @@ export const Contacts = ({ onSearch }: ContactsProps) => {
 					{!!contacts.length && (
 						<div className="w-full" data-testid="ContactList">
 							<Table columns={listColumns} data={contacts}>
-								{(contact: Contact) => (
+								{(contact: Contracts.IContact) => (
 									<ContactListItem
 										item={contact}
 										options={contactOptions}

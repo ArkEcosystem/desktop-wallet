@@ -1,4 +1,4 @@
-import { ProfileSetting } from "@arkecosystem/platform-sdk-profiles";
+import { Contracts } from "@arkecosystem/platform-sdk-profiles";
 import { sortByDesc } from "@arkecosystem/utils";
 import { snakeCase } from "@arkecosystem/utils";
 import { Button } from "app/components/Button";
@@ -169,7 +169,7 @@ export const PluginManager = () => {
 
 	const plugins = allPlugins.map(mapConfigToPluginData.bind(null, activeProfile));
 
-	const isAdvancedMode = activeProfile.settings().get<boolean>(ProfileSetting.AdvancedMode, false)!;
+	const isAdvancedMode = activeProfile.settings().get<boolean>(Contracts.ProfileSetting.AdvancedMode, false)!;
 	const hasUpdateAvailableCount = plugins.filter((item) => item.hasUpdateAvailable).length;
 
 	const pluginsByCategory = useMemo(() => {

@@ -1,15 +1,15 @@
-import { ReadOnlyWallet } from "@arkecosystem/platform-sdk-profiles";
+import { Contracts } from "@arkecosystem/platform-sdk-profiles";
 import { Address } from "app/components/Address";
 import { Avatar } from "app/components/Avatar";
 import React from "react";
 
 type VoteListProps = {
-	votes?: ReadOnlyWallet[];
+	votes?: Contracts.IReadOnlyWallet[];
 };
 
 export const VoteList = ({ votes }: VoteListProps) => (
 	<div className="-my-2">
-		{votes?.map((vote: ReadOnlyWallet, index: number) => (
+		{votes?.map((vote: Contracts.IReadOnlyWallet, index: number) => (
 			<div
 				key={index}
 				className="border-b border-dashed last:border-b-0 border-theme-secondary-300 dark:border-theme-secondary-800"

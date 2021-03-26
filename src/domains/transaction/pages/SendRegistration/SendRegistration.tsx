@@ -70,6 +70,8 @@ export const SendRegistration = () => {
 
 		register("network", { required: true });
 		register("senderAddress", { required: true });
+
+		register("suppressWarning");
 	}, [register]);
 
 	const {

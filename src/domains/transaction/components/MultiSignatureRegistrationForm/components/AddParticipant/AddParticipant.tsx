@@ -1,4 +1,4 @@
-import { Profile, ReadOnlyWallet, ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
+import { Contracts } from "@arkecosystem/platform-sdk-profiles";
 import { Button } from "app/components/Button";
 import { FormField, FormLabel, SubForm } from "app/components/Form";
 import { toasts } from "app/services";
@@ -14,8 +14,8 @@ export type Participant = {
 };
 
 type Props = {
-	profile: Profile;
-	wallet: ReadWriteWallet;
+	profile: Contracts.IProfile;
+	wallet: Contracts.IReadWriteWallet;
 	onChange?: (wallets: Participant[]) => void;
 	defaultParticipants?: Participant[];
 };
@@ -43,7 +43,7 @@ export const AddParticipant = ({ profile, wallet, onChange, defaultParticipants 
 	}, [wallet, defaultParticipants]);
 
 	const addParticipant = () => {
-		const ref = lastValidationRef.current as ReadWriteWallet;
+		const ref = lastValidationRef.current as Contracts.IReadWriteWallet;
 		const participant = {
 			address: ref.address(),
 			publicKey: ref.publicKey()!,
@@ -100,7 +100,7 @@ export const AddParticipant = ({ profile, wallet, onChange, defaultParticipants 
 					participantWallet = remote;
 				}
 
-				if (!(participantWallet as ReadOnlyWallet)?.publicKey()) {
+				if (!(participantWallet as Contracts.IReadOnlyWallet)?.publicKey()) {
 					return t("TRANSACTION.MULTISIGNATURE.ERROR.PUBLIC_KEY_NOT_FOUND");
 				}
 

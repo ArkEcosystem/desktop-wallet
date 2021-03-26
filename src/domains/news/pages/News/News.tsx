@@ -1,5 +1,5 @@
 import { Blockfolio, BlockfolioResponse, BlockfolioSignal } from "@arkecosystem/platform-sdk-news";
-import { ProfileSetting } from "@arkecosystem/platform-sdk-profiles";
+import { Contracts } from "@arkecosystem/platform-sdk-profiles";
 import { SvgCollection } from "app/assets/svg";
 import { EmptyResults } from "app/components/EmptyResults";
 import { Header } from "app/components/Header";
@@ -37,7 +37,7 @@ export const News = ({ itemsPerPage }: Props) => {
 	const [currentPage, setCurrentPage] = useState(1);
 
 	const [{ categories, coins, searchQuery }, setFilters] = useState<NewsFilters>(
-		activeProfile.settings().get(ProfileSetting.NewsFilters) || { categories: [], coins: ["ARK"] },
+		activeProfile.settings().get(Contracts.ProfileSetting.NewsFilters) || { categories: [], coins: ["ARK"] },
 	);
 
 	const [news, setNews] = useState<BlockfolioSignal[]>([]);
@@ -72,7 +72,7 @@ export const News = ({ itemsPerPage }: Props) => {
 
 	useEffect(() => {
 		const updateSettings = async () => {
-			activeProfile.settings().set(ProfileSetting.NewsFilters, { categories, coins });
+			activeProfile.settings().set(Contracts.ProfileSetting.NewsFilters, { categories, coins });
 			await persist();
 		};
 

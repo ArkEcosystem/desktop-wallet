@@ -1,4 +1,4 @@
-import { Contact } from "@arkecosystem/platform-sdk-profiles";
+import { Contracts } from "@arkecosystem/platform-sdk-profiles";
 import React from "react";
 import { act } from "react-dom/test-utils";
 import { env, fireEvent, getDefaultProfileId, render } from "testing-library";
@@ -9,7 +9,7 @@ const singleOption = [{ label: "Option 1", value: "option_1" }];
 
 const multiOptions = [...singleOption, { label: "Option 2", value: "option_2" }];
 
-let contact: Contact;
+let contact: Contracts.IContact;
 ``;
 
 describe("ContactListItem", () => {

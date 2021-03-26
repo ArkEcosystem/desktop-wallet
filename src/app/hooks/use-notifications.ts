@@ -1,5 +1,5 @@
-import { TransactionDataType } from "@arkecosystem/platform-sdk/dist/contracts";
-import { Environment, Profile, ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
+import { Contracts } from "@arkecosystem/platform-sdk";
+import { Contracts as ProfileContracts, Environment } from "@arkecosystem/platform-sdk-profiles";
 import { sortByDesc } from "@arkecosystem/utils";
 import { useEnvironmentContext } from "app/contexts";
 import { useMemo } from "react";
@@ -10,28 +10,31 @@ type SyncReceivedTransactionsParams = {
 	allowedTransactionTypes?: string[];
 };
 
-type NotifyReceivedTransactionsParams = SyncReceivedTransactionsParams & { profile: Profile };
+type NotifyReceivedTransactionsParams = SyncReceivedTransactionsParams & { profile: ProfileContracts.IProfile };
 
-const fetchRecentProfileTransactions = async (profile: Profile, limit: number) => {
-	const fetchWalletRecentTransactions = async (wallet: ReadWriteWallet) =>
+const fetchRecentProfileTransactions = async (profile: ProfileContracts.IProfile, limit: number) => {
+	const fetchWalletRecentTransactions = async (wallet: ProfileContracts.IReadWriteWallet) =>
 		(await wallet.client().transactions({ limit })).items();
 
 	const allWalletTransactions = await Promise.all(profile.wallets().values().map(fetchWalletRecentTransactions));
 	return allWalletTransactions.flat();
 };
 
-const isRecipient = (profile: Profile, transaction: TransactionDataType) => {
+const isRecipient = (profile: ProfileContracts.IProfile, transaction: Contracts.TransactionDataType) => {
 	const allRecipients = [transaction.recipient(), ...transaction.recipients().map((r) => r.address)];
 	return allRecipients.some((address: string) => profile.wallets().findByAddress(address));
 };
 
-const transactionNotificationExists = (profile: Profile, transaction: TransactionDataType) =>
+const transactionNotificationExists = (
+	profile: ProfileContracts.IProfile,
+	transaction: Contracts.TransactionDataType,
+) =>
 	profile
 		.notifications()
 		.values()
 		.some((n) => n.type === "transaction" && n?.meta?.transactionId === transaction.id());
 
-const formatTransactionNotification = (transaction: TransactionDataType) => ({
+const formatTransactionNotification = (transaction: Contracts.TransactionDataType) => ({
 	icon: "",
 	body: "",
 	name: "",
@@ -58,21 +61,24 @@ const formatNotification = (input: any) =>
 	);
 
 const filterUnseenTransactions = (
-	profile: Profile,
-	transactions: TransactionDataType[],
+	profile: ProfileContracts.IProfile,
+	transactions: Contracts.TransactionDataType[],
 	allowedTransactionTypes: string[],
 ) =>
-	transactions.reduce((addedTransactions: TransactionDataType[], transaction: TransactionDataType) => {
-		if (
-			allowedTransactionTypes.includes(transaction.type()) &&
-			isRecipient(profile, transaction) &&
-			!transactionNotificationExists(profile, transaction) &&
-			!addedTransactions.find((t) => t.id() === transaction.id())
-		) {
-			addedTransactions.push(transaction);
-		}
-		return addedTransactions;
-	}, []);
+	transactions.reduce(
+		(addedTransactions: Contracts.TransactionDataType[], transaction: Contracts.TransactionDataType) => {
+			if (
+				allowedTransactionTypes.includes(transaction.type()) &&
+				isRecipient(profile, transaction) &&
+				!transactionNotificationExists(profile, transaction) &&
+				!addedTransactions.find((t) => t.id() === transaction.id())
+			) {
+				addedTransactions.push(transaction);
+			}
+			return addedTransactions;
+		},
+		[],
+	);
 
 const notifyReceivedTransactions: any = async ({
 	profile,
@@ -82,12 +88,12 @@ const notifyReceivedTransactions: any = async ({
 	const allRecentTransactions = await fetchRecentProfileTransactions(profile, lookupLimit);
 	const newUnseenTransactions = filterUnseenTransactions(profile, allRecentTransactions, allowedTransactionTypes);
 
-	return newUnseenTransactions.map((transaction: TransactionDataType) =>
+	return newUnseenTransactions.map((transaction: Contracts.TransactionDataType) =>
 		profile.notifications().push(formatTransactionNotification(transaction)),
 	);
 };
 
-const findNotificationByVersion = (profile: Profile, version?: string) =>
+const findNotificationByVersion = (profile: ProfileContracts.IProfile, version?: string) =>
 	profile
 		.notifications()
 		.values()
@@ -96,7 +102,7 @@ const findNotificationByVersion = (profile: Profile, version?: string) =>
 const notifyWalletUpdate = (env: Environment, t: any) => ({ version }: { version: string }) => {
 	env.profiles()
 		.values()
-		.forEach((profile: Profile) => {
+		.forEach((profile: ProfileContracts.IProfile) => {
 			if (findNotificationByVersion(profile, version)) {
 				return;
 			}
@@ -116,7 +122,7 @@ const notifyWalletUpdate = (env: Environment, t: any) => ({ version }: { version
 const deleteNotificationsByVersion = (env: Environment) => ({ version }: { version?: string }) => {
 	env.profiles()
 		.values()
-		.forEach((profile: Profile) => {
+		.forEach((profile: ProfileContracts.IProfile) => {
 			const notification = findNotificationByVersion(profile, version);
 			if (notification) {
 				profile.notifications().forget(notification.id);
@@ -136,7 +142,9 @@ export const useNotifications = () => {
 	return useMemo(() => {
 		const syncReceivedTransactions = async (params?: SyncReceivedTransactionsParams) => {
 			const savedNotifications = await Promise.all(
-				profiles.values().map((profile: Profile) => notifyReceivedTransactions({ ...params, profile })),
+				profiles
+					.values()
+					.map((profile: ProfileContracts.IProfile) => notifyReceivedTransactions({ ...params, profile })),
 			);
 
 			await env.persist();

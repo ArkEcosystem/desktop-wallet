@@ -1,5 +1,5 @@
 import { Contracts } from "@arkecosystem/platform-sdk";
-import { ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
+import { Contracts as ProfilesContracts } from "@arkecosystem/platform-sdk-profiles";
 import { Circle } from "app/components/Circle";
 import { Icon } from "app/components/Icon";
 import { TabPanel, Tabs } from "app/components/Tabs";
@@ -16,7 +16,7 @@ const component = ({
 }: {
 	activeTab: number;
 	fees: Contracts.TransactionFee;
-	wallet: ReadWriteWallet;
+	wallet: ProfilesContracts.IReadWriteWallet;
 }) => (
 	<Tabs activeId={activeTab}>
 		<TabPanel tabId={1}>
@@ -41,7 +41,7 @@ const transactionDetails = ({
 }: {
 	transaction: Contracts.SignedTransactionData;
 	translations: any;
-	wallet: ReadWriteWallet;
+	wallet: ProfilesContracts.IReadWriteWallet;
 }) => (
 	<>
 		<TransactionDetail

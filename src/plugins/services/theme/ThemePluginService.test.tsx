@@ -1,4 +1,4 @@
-import { Profile } from "@arkecosystem/platform-sdk-profiles";
+import { Contracts } from "@arkecosystem/platform-sdk-profiles";
 import { PluginController, PluginManager } from "plugins/core";
 import { PluginAPI } from "plugins/types";
 import React from "react";
@@ -10,7 +10,7 @@ import { withThemeDecorator } from "./withThemeDecorator";
 const config = { name: "test", version: "1.1", "desktop-wallet": { permissions: ["THEME"] } };
 
 describe("ThemePluginService", () => {
-	let profile: Profile;
+	let profile: Contracts.IProfile;
 	let manager: PluginManager;
 
 	beforeEach(() => {

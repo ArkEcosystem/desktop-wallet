@@ -1,5 +1,5 @@
 import { Contracts } from "@arkecosystem/platform-sdk";
-import { ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
+import { Contracts as ProfileContracts } from "@arkecosystem/platform-sdk-profiles";
 import { BigNumber } from "@arkecosystem/platform-sdk-support";
 import {
 	TransactionAmount,
@@ -14,7 +14,7 @@ export const SummaryStep = ({
 	senderWallet,
 }: {
 	transaction: Contracts.SignedTransactionData;
-	senderWallet: ReadWriteWallet;
+	senderWallet: ProfileContracts.IReadWriteWallet;
 }) => {
 	const recipients = transaction.data().asset?.payments?.map((payment: { recipientId: string; amount: string }) => ({
 		address: payment.recipientId,

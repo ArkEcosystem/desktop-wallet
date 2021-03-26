@@ -1,4 +1,4 @@
-import { ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
+import { Contracts } from "@arkecosystem/platform-sdk-profiles";
 import { Avatar } from "app/components/Avatar";
 import { Badge } from "app/components/Badge";
 import { Tooltip } from "app/components/Tooltip";
@@ -40,7 +40,7 @@ const ParticipantStatus = ({
 }: {
 	transactionId: string;
 	publicKey: string;
-	wallet: ReadWriteWallet;
+	wallet: Contracts.IReadWriteWallet;
 }) => {
 	const isAwaitingSignature = useMemo(() => {
 		try {
@@ -79,7 +79,7 @@ export const Signatures = ({
 	publicKeys,
 }: {
 	transactionId: string;
-	wallet: ReadWriteWallet;
+	wallet: Contracts.IReadWriteWallet;
 	publicKeys: string[];
 }) => {
 	const { t } = useTranslation();

@@ -1,4 +1,4 @@
-import { ExtendedTransactionData } from "@arkecosystem/platform-sdk-profiles";
+import { DTO } from "@arkecosystem/platform-sdk-profiles";
 import { Button } from "app/components/Button";
 import { Modal } from "app/components/Modal";
 import React from "react";
@@ -10,7 +10,7 @@ type ConfirmSendTransactionProps = {
 	isOpen: boolean;
 	onClose?: any;
 	onConfirm?: any;
-	unconfirmedTransactions: ExtendedTransactionData[];
+	unconfirmedTransactions: DTO.ExtendedTransactionData[];
 };
 
 export const ConfirmSendTransaction = ({

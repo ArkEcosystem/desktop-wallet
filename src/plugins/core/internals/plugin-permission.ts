@@ -1,10 +1,10 @@
-import { Profile } from "@arkecosystem/platform-sdk-profiles";
+import { Contracts } from "@arkecosystem/platform-sdk-profiles";
 
 import { PluginController } from "../plugin-controller";
 import { PluginServiceData } from "../plugin-service";
 
 type MiddlewareContext = {
-	profile: Profile;
+	profile: Contracts.IProfile;
 	plugin: PluginController;
 	service?: PluginServiceData;
 };

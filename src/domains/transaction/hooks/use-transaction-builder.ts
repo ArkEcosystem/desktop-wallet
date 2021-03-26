@@ -1,5 +1,5 @@
 import { Contracts } from "@arkecosystem/platform-sdk";
-import { Profile, ReadWriteWallet, WalletData } from "@arkecosystem/platform-sdk-profiles";
+import { Contracts as ProfileContracts } from "@arkecosystem/platform-sdk-profiles";
 import { upperFirst } from "@arkecosystem/utils";
 import { useLedgerContext } from "app/contexts";
 
@@ -8,7 +8,7 @@ type ConnectFn = (coin: string, network: string) => Promise<void>;
 
 const prepareMultiSignature = (
 	input: Contracts.TransactionInputs,
-	wallet: ReadWriteWallet,
+	wallet: ProfileContracts.IReadWriteWallet,
 ): Contracts.TransactionInputs => ({
 	...input,
 	nonce: wallet.nonce().plus(1).toFixed(),
@@ -19,13 +19,13 @@ const prepareMultiSignature = (
 
 const prepareLedger = async (
 	input: Contracts.TransactionInputs,
-	wallet: ReadWriteWallet,
+	wallet: ProfileContracts.IReadWriteWallet,
 	signFn: SignFn,
 	connectFn: ConnectFn,
 ) => {
 	await connectFn(wallet.coinId(), wallet.networkId());
 
-	const path = wallet.data().get<string>(WalletData.LedgerPath);
+	const path = wallet.data().get<string>(ProfileContracts.WalletData.LedgerPath);
 	let senderPublicKey = wallet.publicKey();
 
 	if (!senderPublicKey) {
@@ -61,7 +61,7 @@ const withAbortPromise = (signal?: AbortSignal, callback?: () => void) => <T>(pr
 		return promise.then(resolve).catch(reject);
 	});
 
-export const useTransactionBuilder = (profile: Profile) => {
+export const useTransactionBuilder = (profile: ProfileContracts.IProfile) => {
 	const { connect, abortConnectionRetry } = useLedgerContext();
 
 	const build = async (

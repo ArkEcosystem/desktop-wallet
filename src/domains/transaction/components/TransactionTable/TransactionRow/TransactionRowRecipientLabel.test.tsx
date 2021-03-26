@@ -1,7 +1,9 @@
-import { DelegateMapper, ReadOnlyWallet } from "@arkecosystem/platform-sdk-profiles";
+// @README: This import is fine in tests but should be avoided in production code.
+import { ReadOnlyWallet } from "@arkecosystem/platform-sdk-profiles/dist/drivers/memory/wallets/read-only-wallet";
 import React from "react";
 import { render } from "testing-library";
 import { TransactionFixture } from "tests/fixtures/transactions";
+import { env } from "utils/testing-library";
 
 import { translations } from "../../../i18n";
 import { TransactionRowRecipientLabel } from "./TransactionRowRecipientLabel";
@@ -178,9 +180,10 @@ describe("TransactionRowRecipientLabel", () => {
 	});
 
 	describe("Votes", () => {
-		jest.spyOn(DelegateMapper, "execute").mockImplementation((wallet, votes) =>
+		jest.spyOn(env.delegates(), "map").mockImplementation((wallet, votes) =>
 			votes.map(
 				(vote: string, index: number) =>
+					// @ts-ignore
 					new ReadOnlyWallet({
 						address: vote,
 						username: `delegate-${index}`,

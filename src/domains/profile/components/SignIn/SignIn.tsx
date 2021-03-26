@@ -1,4 +1,4 @@
-import { MemoryPassword, Profile } from "@arkecosystem/platform-sdk-profiles";
+import { Contracts, Helpers } from "@arkecosystem/platform-sdk-profiles";
 import { Button } from "app/components/Button";
 import { Divider } from "app/components/Divider";
 import { Form, FormField, FormLabel } from "app/components/Form";
@@ -11,7 +11,7 @@ import { useTranslation } from "react-i18next";
 
 type SignInProps = {
 	isOpen: boolean;
-	profile: Profile;
+	profile: Contracts.IProfile;
 	onCancel?: any;
 	onClose?: any;
 	onSuccess: (password: string) => void;
@@ -69,7 +69,7 @@ export const SignIn = ({ isOpen, profile, onCancel, onClose, onSuccess }: SignIn
 
 	const handleSubmit = ({ password }: any) => {
 		if (profile.auth().verifyPassword(password)) {
-			MemoryPassword.set(profile, password);
+			Helpers.MemoryPassword.set(profile, password);
 			onSuccess(password);
 		} else {
 			setCount(count + 1);
@@ -96,7 +96,9 @@ export const SignIn = ({ isOpen, profile, onCancel, onClose, onSuccess }: SignIn
 					<ProfileAvatar profile={profile} />
 
 					<div className="flex flex-col">
-						<p className="text-sm font-semibold text-theme-secondary-700">{t("COMMON.NAME")}</p>
+						<p className="text-sm font-semibold text-theme-secondary-500 dark:text-theme-secondary-700">
+							{t("COMMON.NAME")}
+						</p>
 						<p className="font-semibold text-theme-text" data-testid="profile-card__user--name">
 							<span>{profile.name()}</span>
 						</p>

@@ -1,11 +1,11 @@
-import { Profile, ProfileSetting } from "@arkecosystem/platform-sdk-profiles";
+import { Contracts } from "@arkecosystem/platform-sdk-profiles";
 import { act } from "@testing-library/react-hooks";
 import React from "react";
 import { env, fireEvent, getDefaultProfileId, render } from "testing-library";
 
 import { ProfileCard } from "./ProfileCard";
 
-let profile: Profile;
+let profile: Contracts.IProfile;
 
 const options = [
 	{ label: "Option 1", value: "1" },
@@ -27,7 +27,7 @@ describe("ProfileCard", () => {
 	});
 
 	it("should render the profile with avatar image", () => {
-		profile.settings().set(ProfileSetting.Avatar, "avatarImage");
+		profile.settings().set(Contracts.ProfileSetting.Avatar, "avatarImage");
 
 		const { container, asFragment, getByTestId, getByText } = render(<ProfileCard profile={profile} />);
 

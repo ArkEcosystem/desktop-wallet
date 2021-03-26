@@ -1,6 +1,6 @@
 import { Coins, Contracts } from "@arkecosystem/platform-sdk";
 import { BIP39 } from "@arkecosystem/platform-sdk-crypto";
-import { ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
+import { Contracts as ProfileContracts } from "@arkecosystem/platform-sdk-profiles";
 import { Alert } from "app/components/Alert";
 import { FormField, FormLabel } from "app/components/Form";
 import { Header } from "app/components/Header";
@@ -18,7 +18,7 @@ export const GenerationStep = ({
 	step = 0.001,
 }: {
 	fees: Contracts.TransactionFee;
-	wallet: ReadWriteWallet;
+	wallet: ProfileContracts.IReadWriteWallet;
 	step?: number;
 }) => {
 	const { t } = useTranslation();

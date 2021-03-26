@@ -1,9 +1,9 @@
 import { Coins } from "@arkecosystem/platform-sdk";
-import { ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
+import { Contracts } from "@arkecosystem/platform-sdk-profiles";
 import { debounceAsync } from "utils/debounce";
 
 export const authentication = (t: any) => {
-	const addressFromEncryptedPassword = async (wallet: ReadWriteWallet, password: string) =>
+	const addressFromEncryptedPassword = async (wallet: Contracts.IReadWriteWallet, password: string) =>
 		wallet
 			.wif(password)
 			.then((wif) => wallet.coin().identity().address().fromWIF(wif))
@@ -44,7 +44,7 @@ export const authentication = (t: any) => {
 				},
 			},
 		}),
-		encryptionPassword: (wallet: ReadWriteWallet) => ({
+		encryptionPassword: (wallet: Contracts.IReadWriteWallet) => ({
 			required: t("COMMON.VALIDATION.FIELD_REQUIRED", {
 				field: t("COMMON.ENCRYPTION_PASSWORD"),
 			}),

@@ -1,4 +1,4 @@
-import { Environment, Profile } from "@arkecosystem/platform-sdk-profiles";
+import { Contracts, Environment } from "@arkecosystem/platform-sdk-profiles";
 
 export const settings = (t: any, env: Environment) => ({
 	name: (id: string) => ({
@@ -19,7 +19,7 @@ export const settings = (t: any, env: Environment) => ({
 						.profiles()
 						.values()
 						.some(
-							(profile: Profile) =>
+							(profile: Contracts.IProfile) =>
 								profile.id() !== id && profile.name().toLowerCase() === name.trim().toLowerCase(),
 						)
 				) {
