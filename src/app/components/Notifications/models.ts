@@ -1,4 +1,4 @@
-import { Contracts,DTO } from "@arkecosystem/platform-sdk-profiles";
+import { Contracts, DTO } from "@arkecosystem/platform-sdk-profiles";
 
 export type NotificationsSkeletonProps = {
 	title?: string;

@@ -1,4 +1,4 @@
-import { Contracts,Environment } from "@arkecosystem/platform-sdk-profiles";
+import { Contracts, Environment } from "@arkecosystem/platform-sdk-profiles";
 import { useProfileUtils } from "app/hooks/use-profile-synchronizer";
 import React from "react";
 import { useHistory } from "react-router-dom";

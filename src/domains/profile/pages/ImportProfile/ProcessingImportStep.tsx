@@ -1,4 +1,4 @@
-import { Contracts,Environment } from "@arkecosystem/platform-sdk-profiles";
+import { Contracts, Environment } from "@arkecosystem/platform-sdk-profiles";
 import { Header } from "app/components/Header";
 import { FilePreview } from "domains/profile/components/FilePreview";
 import { PasswordModal } from "domains/profile/components/PasswordModal";

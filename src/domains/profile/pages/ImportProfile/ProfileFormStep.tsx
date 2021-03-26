@@ -1,4 +1,4 @@
-import { Contracts,Environment, Helpers } from "@arkecosystem/platform-sdk-profiles";
+import { Contracts, Environment, Helpers } from "@arkecosystem/platform-sdk-profiles";
 import { Button } from "app/components/Button";
 import { Divider } from "app/components/Divider";
 import { Form, FormField, FormLabel } from "app/components/Form";
