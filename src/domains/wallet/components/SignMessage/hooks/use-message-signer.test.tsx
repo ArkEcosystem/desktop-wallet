@@ -4,6 +4,8 @@ import { env, getDefaultProfileId, getDefaultWalletMnemonic } from "utils/testin
 
 import { useMessageSigner } from "./use-message-signer";
 
+jest.setTimeout(10000);
+
 describe("Use Message Signer Hook", () => {
 	let profile: Contracts.IProfile;
 	let wallet: Contracts.IReadWriteWallet;
