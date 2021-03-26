@@ -1,4 +1,4 @@
-import { Environment, Profile, ProfileSetting } from "@arkecosystem/platform-sdk-profiles";
+import { Contracts, Environment } from "@arkecosystem/platform-sdk-profiles";
 import { ReadableFile } from "app/hooks/use-files";
 
 type ImportFileProps = {
@@ -8,7 +8,7 @@ type ImportFileProps = {
 
 export const useProfileImport = ({ env }: { env: Environment }) => {
 	const importProfileFromDwe = async (profileData: string, password?: string) => {
-		let profile: Profile;
+		let profile: Contracts.IProfile;
 
 		try {
 			profile = await env.profiles().import(profileData, password);
@@ -49,7 +49,7 @@ export const useProfileImport = ({ env }: { env: Environment }) => {
 				}
 
 				if (wallet?.address && wallet?.balance.DARK) {
-					profile.settings().set(ProfileSetting.UseTestNetworks, true);
+					profile.settings().set(Contracts.ProfileSetting.UseTestNetworks, true);
 					return profile.wallets().importByAddress(wallet.address, "ARK", "ark.devnet");
 				}
 

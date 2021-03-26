@@ -1,5 +1,5 @@
 import { Coins } from "@arkecosystem/platform-sdk";
-import { Profile, ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
+import { Contracts } from "@arkecosystem/platform-sdk-profiles";
 import { useTranslation } from "react-i18next";
 
 type PrivateKey = string;
@@ -9,7 +9,7 @@ type Address = string;
 
 export type WalletGenerationInput = PrivateKey | Mnemonic | WIF | Address;
 
-export const useWalletImport = ({ profile }: { profile: Profile }) => {
+export const useWalletImport = ({ profile }: { profile: Contracts.IProfile }) => {
 	const { t } = useTranslation();
 
 	const importWalletByType = async ({
@@ -24,7 +24,7 @@ export const useWalletImport = ({ profile }: { profile: Profile }) => {
 		value: WalletGenerationInput;
 		encryptedWif: string;
 		password?: string;
-	}): Promise<ReadWriteWallet | undefined> => {
+	}): Promise<Contracts.IReadWriteWallet | undefined> => {
 		switch (type) {
 			case "mnemonic":
 				if (password) {

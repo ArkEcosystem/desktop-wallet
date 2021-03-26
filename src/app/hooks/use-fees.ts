@@ -1,4 +1,4 @@
-import { TransactionFee } from "@arkecosystem/platform-sdk/dist/contracts";
+import { Contracts } from "@arkecosystem/platform-sdk";
 import { BigNumber } from "@arkecosystem/platform-sdk-support";
 import { useEnvironmentContext } from "app/contexts";
 import { useCallback } from "react";
@@ -10,7 +10,7 @@ export const useFees = () => {
 
 	const findByType = useCallback(
 		async (coin: string, network: string, type: string) => {
-			let transactionFees: TransactionFee;
+			let transactionFees: Contracts.TransactionFee;
 
 			try {
 				transactionFees = env.fees().findByType(coin, network, type);

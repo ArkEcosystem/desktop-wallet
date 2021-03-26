@@ -1,6 +1,6 @@
-import { Profile, RegistryPlugin } from "@arkecosystem/platform-sdk-profiles";
-import { PluginRegistry } from "@arkecosystem/platform-sdk-profiles";
+import { Contracts } from "@arkecosystem/platform-sdk-profiles";
 import { semver, uniqBy } from "@arkecosystem/utils";
+import { useEnvironmentContext } from "app/contexts";
 import { httpClient, toasts } from "app/services";
 import { ipcRenderer } from "electron";
 import { PluginConfigurationData } from "plugins/core/configuration";
@@ -16,10 +16,12 @@ import { PluginController, PluginManager } from "../core";
 const PluginManagerContext = React.createContext<any>(undefined);
 
 const useManager = (services: PluginService[], manager: PluginManager) => {
+	const { env } = useEnvironmentContext();
+
 	const [state, setState] = useState<{
 		packages: PluginConfigurationData[];
 		configurations: PluginConfigurationData[];
-		registryPlugins: RegistryPlugin[];
+		registryPlugins: Contracts.IRegistryPlugin[];
 	}>({
 		packages: [],
 		configurations: [],
@@ -27,7 +29,7 @@ const useManager = (services: PluginService[], manager: PluginManager) => {
 	});
 	const [isFetchingPackages, setIsFetchingPackages] = useState(false);
 	const [updatingStats, setUpdatingStats] = useState<Record<string, any>>({});
-	const [pluginRegistry] = useState(() => new PluginRegistry());
+	const [pluginRegistry] = useState(() => env.plugins());
 
 	const defaultFilters: { query?: string } = { query: "" };
 	const [filters, setFilters] = useState(defaultFilters);
@@ -84,7 +86,7 @@ const useManager = (services: PluginService[], manager: PluginManager) => {
 	}, []);
 
 	const deletePlugin = useCallback(
-		async (plugin: PluginController, profile: Profile) => {
+		async (plugin: PluginController, profile: Contracts.IProfile) => {
 			try {
 				await PluginLoaderFileSystem.ipc().remove(plugin.dir()!);
 				pluginManager.plugins().removeById(plugin.config().id(), profile);
@@ -100,10 +102,10 @@ const useManager = (services: PluginService[], manager: PluginManager) => {
 	);
 
 	const fetchPluginPackages = useCallback(async () => {
-		let registryPlugins: RegistryPlugin[] = [];
+		let registryPlugins: Contracts.IRegistryPlugin[] = [];
 		try {
 			setIsFetchingPackages(true);
-			registryPlugins = await pluginRegistry.all();
+			registryPlugins = await env.plugins().all();
 		} catch {
 			/* istanbul ignore next */
 			toasts.error(`Failed to fetch packages`);
@@ -133,7 +135,7 @@ const useManager = (services: PluginService[], manager: PluginManager) => {
 
 		setIsFetchingPackages(false);
 		setState((prev: any) => ({ ...prev, packages: configurations, registryPlugins }));
-	}, [pluginRegistry]);
+	}, [env]);
 
 	const filterPackages = useCallback(
 		(allPackages: PluginConfigurationData[]) => {
@@ -257,7 +259,7 @@ const useManager = (services: PluginService[], manager: PluginManager) => {
 	}, []);
 
 	const mapConfigToPluginData = useCallback(
-		(profile: Profile, config: PluginConfigurationData) => {
+		(profile: Contracts.IProfile, config: PluginConfigurationData) => {
 			const localPlugin = pluginManager.plugins().findById(config.id());
 			return {
 				...config.toObject(),

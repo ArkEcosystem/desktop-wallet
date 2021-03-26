@@ -1,10 +1,11 @@
-import { DelegateMapper, ExtendedTransactionData, ReadOnlyWallet, VoteData } from "@arkecosystem/platform-sdk-profiles";
+import { Contracts, DTO } from "@arkecosystem/platform-sdk-profiles";
 import { Address } from "app/components/Address";
+import { useEnvironmentContext } from "app/contexts";
 import { useTransactionTypes } from "domains/transaction/hooks/use-transaction-types";
 import React, { useEffect, useState } from "react";
 
 type Props = {
-	transaction?: ExtendedTransactionData;
+	transaction?: DTO.ExtendedTransactionData;
 	type: string;
 	recipient: string;
 	walletName?: string;
@@ -43,10 +44,10 @@ const VoteCombinationLabel = ({ votes, unvotes }: { votes: string[]; unvotes: st
 	</span>
 );
 
-const VoteLabel = ({ delegates, isUnvote }: { delegates: ReadOnlyWallet[]; isUnvote?: boolean }) => (
+const VoteLabel = ({ delegates, isUnvote }: { delegates: Contracts.IReadOnlyWallet[]; isUnvote?: boolean }) => (
 	<span data-testid="TransactionRowVoteLabel">
 		<RecipientLabel type={isUnvote ? "unvote" : "vote"} />
-		<span className="pl-2 ml-2 font-semibold border-l truncate text-theme-primary-600 border-theme-secondary-300 dark:border-theme-secondary-800">
+		<span className="pl-2 ml-2 font-semibold truncate border-l text-theme-primary-600 border-theme-secondary-300 dark:border-theme-secondary-800">
 			{delegates[0]?.username()}
 		</span>
 		{delegates.length > 1 && (
@@ -58,7 +59,12 @@ const VoteLabel = ({ delegates, isUnvote }: { delegates: ReadOnlyWallet[]; isUnv
 );
 
 export const BaseTransactionRowRecipientLabel = ({ transaction, type, recipient, walletName }: Props) => {
-	const [delegates, setDelegates] = useState<{ votes: ReadOnlyWallet[]; unvotes: ReadOnlyWallet[] }>({
+	const { env } = useEnvironmentContext();
+
+	const [delegates, setDelegates] = useState<{
+		votes: Contracts.IReadOnlyWallet[];
+		unvotes: Contracts.IReadOnlyWallet[];
+	}>({
 		votes: [],
 		unvotes: [],
 	});
@@ -66,11 +72,11 @@ export const BaseTransactionRowRecipientLabel = ({ transaction, type, recipient,
 	useEffect(() => {
 		if (transaction?.isVote() || transaction?.isUnvote()) {
 			setDelegates({
-				votes: DelegateMapper.execute(transaction.wallet(), (transaction as VoteData).votes()),
-				unvotes: DelegateMapper.execute(transaction.wallet(), (transaction as VoteData).unvotes()),
+				votes: env.delegates().map(transaction.wallet(), (transaction as DTO.VoteData).votes()),
+				unvotes: env.delegates().map(transaction.wallet(), (transaction as DTO.VoteData).unvotes()),
 			});
 		}
-	}, [transaction]);
+	}, [env, transaction]);
 
 	if (type === "transfer") {
 		return <Address walletName={walletName} address={recipient} />;
@@ -90,8 +96,8 @@ export const BaseTransactionRowRecipientLabel = ({ transaction, type, recipient,
 	if (transaction?.isVoteCombination()) {
 		return (
 			<VoteCombinationLabel
-				votes={(transaction as VoteData)?.votes()}
-				unvotes={(transaction as VoteData)?.unvotes()}
+				votes={(transaction as DTO.VoteData)?.votes()}
+				unvotes={(transaction as DTO.VoteData)?.unvotes()}
 			/>
 		);
 	}
@@ -112,7 +118,7 @@ export const TransactionRowRecipientLabel = ({
 	transaction,
 	walletName,
 }: {
-	transaction: ExtendedTransactionData;
+	transaction: DTO.ExtendedTransactionData;
 	walletName?: string;
 }) => (
 	<BaseTransactionRowRecipientLabel

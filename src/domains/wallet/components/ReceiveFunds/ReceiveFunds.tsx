@@ -1,4 +1,4 @@
-import { Network } from "@arkecosystem/platform-sdk/dist/coins";
+import { Coins } from "@arkecosystem/platform-sdk";
 import { Address } from "app/components/Address";
 import { Avatar } from "app/components/Avatar";
 import { Button } from "app/components/Button";
@@ -18,7 +18,7 @@ type ReceiveFundsProps = {
 	address: string;
 	icon: string;
 	name?: string;
-	network?: Network;
+	network?: Coins.Network;
 	isOpen: boolean;
 	onClose?: () => void;
 };
@@ -42,7 +42,7 @@ export const ReceiveFunds = ({ address, icon, name, network, isOpen, onClose }: 
 		<Modal
 			size="lg"
 			title={t("WALLETS.MODAL_RECEIVE_FUNDS.TITLE")}
-			description={t("COMMON.RECEIVE_FUNDS_SUBTITLE")}
+			description={isFormOpen ? t("WALLETS.MODAL_RECEIVE_FUNDS.DESCRIPTION") : undefined}
 			isOpen={isOpen}
 			onClose={onClose}
 		>
@@ -84,11 +84,11 @@ export const ReceiveFunds = ({ address, icon, name, network, isOpen, onClose }: 
 				{!isFormOpen && (
 					<Button
 						variant="secondary"
-						className="mt-8 w-full"
+						className="w-full mt-8"
 						onClick={() => setIsFormOpen(true)}
 						data-testid="ReceiveFunds__toggle"
 					>
-						{t("COMMON.SPECIFY_AMOUNT")}
+						{t("WALLETS.MODAL_RECEIVE_FUNDS.SPECIFY_AMOUNT")}
 					</Button>
 				)}
 
@@ -99,11 +99,11 @@ export const ReceiveFunds = ({ address, icon, name, network, isOpen, onClose }: 
 				)}
 			</div>
 
-			<div className="mx-auto mt-8 w-64 h-64">
+			<div className="w-64 h-64 mx-auto mt-8">
 				{image && (
 					<img
 						src={image}
-						className="p-3 w-64 h-64 rounded-lg border border-theme-secondary-300 dark:border-theme-secondary-800"
+						className="w-64 h-64 p-3 border rounded-lg border-theme-secondary-300 dark:border-theme-secondary-800"
 						alt={t("COMMON.QR_CODE")}
 						data-testid="ReceiveFunds__qrcode"
 					/>
@@ -112,19 +112,19 @@ export const ReceiveFunds = ({ address, icon, name, network, isOpen, onClose }: 
 
 			{isFormOpen && (
 				<>
-					<div className="mx-auto mt-6 max-w-sm text-center text-theme-secondary-600">
+					<div className="max-w-sm mx-auto mt-6 text-center text-theme-secondary-600">
 						{t("COMMON.QR_CODE_HELP_TEXT")}
 					</div>
 
 					<div
-						className="flex overflow-hidden mt-8 font-medium rounded-lg border border-theme-secondary-300 dark:border-theme-secondary-800"
+						className="flex mt-8 overflow-hidden font-medium border rounded-lg border-theme-secondary-300 dark:border-theme-secondary-800"
 						data-testid="ReceiveFundsForm__uri"
 					>
 						<div className="p-6 bg-theme-secondary-200 dark:bg-theme-secondary-800">
 							<span className="text-theme-secondary-text">{t("COMMON.QR_SHORT")}</span>
 						</div>
 
-						<div className="flex overflow-hidden justify-between items-center pr-5 pl-6 space-x-4 w-full bg-theme-secondary-100 dark:bg-theme-background">
+						<div className="flex items-center justify-between w-full pl-6 pr-5 space-x-4 overflow-hidden bg-theme-secondary-100 dark:bg-theme-background">
 							<span className="truncate">{uri}</span>
 							<span className="flex text-theme-primary-300 dark:text-theme-secondary-600 hover:text-theme-primary-700">
 								<Clipboard data={uri}>

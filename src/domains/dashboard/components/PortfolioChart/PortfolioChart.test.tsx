@@ -1,10 +1,10 @@
-import { Profile } from "@arkecosystem/platform-sdk-profiles";
+import { Contracts } from "@arkecosystem/platform-sdk-profiles";
 import React from "react";
 import { env, getDefaultProfileId, render } from "testing-library";
 
 import { PortfolioChart } from "./PortfolioChart";
 
-let profile: Profile;
+let profile: Contracts.IProfile;
 
 describe("PortfolioChart", () => {
 	beforeAll(() => {

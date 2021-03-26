@@ -1,4 +1,4 @@
-import { Profile, ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
+import { Contracts } from "@arkecosystem/platform-sdk-profiles";
 import { renderHook } from "@testing-library/react-hooks";
 import nock from "nock";
 import { env, getDefaultProfileId } from "utils/testing-library";
@@ -6,8 +6,8 @@ import { env, getDefaultProfileId } from "utils/testing-library";
 import { useTransaction } from "./use-transaction";
 
 describe("useTransaction", () => {
-	let profile: Profile;
-	let wallet: ReadWriteWallet;
+	let profile: Contracts.IProfile;
+	let wallet: Contracts.IReadWriteWallet;
 
 	beforeAll(() => {
 		nock.disableNetConnect();

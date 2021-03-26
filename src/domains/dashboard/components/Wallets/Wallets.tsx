@@ -1,5 +1,4 @@
-import { ProfileSetting } from "@arkecosystem/platform-sdk-profiles";
-import { ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
+import { Contracts } from "@arkecosystem/platform-sdk-profiles";
 import { Section } from "app/components/Layout";
 import { useActiveProfile } from "app/hooks";
 import { useWalletFilters } from "domains/dashboard/components/FilterWallets";
@@ -13,7 +12,7 @@ import { useWalletDisplay, WalletsGrid, WalletsList } from "./";
 type WalletsProps = {
 	title?: string;
 	viewType?: "grid" | "list";
-	wallets?: ReadWriteWallet[];
+	wallets?: Contracts.IReadWriteWallet[];
 	onCreateWallet?: any;
 	onImportWallet?: any;
 	onImportLedgerWallet?: () => void;
@@ -44,7 +43,7 @@ export const Wallets = ({
 	const { viewType, walletsDisplayType, selectedNetworkIds, update } = filterProperties;
 
 	const wallets = useMemo(() => {
-		if (activeProfile.settings().get(ProfileSetting.UseTestNetworks)) {
+		if (activeProfile.settings().get(Contracts.ProfileSetting.UseTestNetworks)) {
 			return activeProfile.wallets().values();
 		}
 

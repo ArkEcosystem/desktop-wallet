@@ -1,4 +1,4 @@
-import { Profile } from "@arkecosystem/platform-sdk-profiles";
+import { Contracts } from "@arkecosystem/platform-sdk-profiles";
 import { env, getDefaultProfileId } from "utils/testing-library";
 
 import { container } from "./plugin-container";
@@ -7,7 +7,7 @@ import { PluginControllerRepository } from "./plugin-controller-repository";
 import { PluginServiceRepository } from "./plugin-service-repository";
 
 describe("Plugin Controller subject", () => {
-	let profile: Profile;
+	let profile: Contracts.IProfile;
 	let subject: PluginControllerRepository;
 
 	beforeEach(() => {

@@ -1,5 +1,5 @@
 import { Coins } from "@arkecosystem/platform-sdk";
-import { Profile, ProfileSetting, ReadWriteWallet, WalletSetting } from "@arkecosystem/platform-sdk-profiles";
+import { Contracts } from "@arkecosystem/platform-sdk-profiles";
 import { Amount } from "app/components/Amount";
 import { Avatar } from "app/components/Avatar";
 import { Button } from "app/components/Button";
@@ -19,8 +19,8 @@ import { useTranslation } from "react-i18next";
 import { useHistory } from "react-router-dom";
 
 type WalletHeaderProps = {
-	profile: Profile;
-	wallet: ReadWriteWallet;
+	profile: Contracts.IProfile;
+	wallet: Contracts.IReadWriteWallet;
 	currencyDelta?: number;
 	onSend?: () => void;
 };
@@ -40,9 +40,9 @@ export const WalletHeader = ({ profile, wallet, currencyDelta, onSend }: WalletH
 
 	const handleUpdateName = async (name: string) => {
 		if (name) {
-			wallet.settings().set(WalletSetting.Alias, name);
+			wallet.settings().set(Contracts.WalletSetting.Alias, name);
 		} else {
-			wallet.settings().forget(WalletSetting.Alias);
+			wallet.settings().forget(Contracts.WalletSetting.Alias);
 		}
 
 		await persist();
@@ -198,7 +198,7 @@ export const WalletHeader = ({ profile, wallet, currencyDelta, onSend }: WalletH
 						<Avatar size="lg" address={wallet.address()} shadowColor="--theme-color-secondary-900" />
 					</div>
 
-					<div className="flex overflow-hidden flex-col">
+					<div className="flex flex-col overflow-hidden">
 						<div className="flex items-center space-x-5 text-theme-secondary-text">
 							{wallet.alias() && (
 								<span data-testid="WalletHeader__name" className="text-sm font-semibold">
@@ -272,10 +272,10 @@ export const WalletHeader = ({ profile, wallet, currencyDelta, onSend }: WalletH
 						<div className="flex items-center text-sm font-semibold text-theme-secondary-text">
 							<span>{t("COMMON.BALANCE")}:</span>
 
-							{wallet.convertedBalance() && (
+							{!wallet.network().isTest() && (
 								<Amount
 									value={wallet.convertedBalance()}
-									ticker={profile.settings().get<string>(ProfileSetting.ExchangeCurrency)!}
+									ticker={profile.settings().get<string>(Contracts.ProfileSetting.ExchangeCurrency)!}
 									data-testid="WalletHeader__currency-balance"
 									className="ml-1"
 									normalize={false}
@@ -353,7 +353,12 @@ export const WalletHeader = ({ profile, wallet, currencyDelta, onSend }: WalletH
 			</header>
 
 			{modal === "sign-message" && (
-				<SignMessage isOpen={true} onClose={() => setModal(undefined)} onCancel={() => setModal(undefined)} />
+				<SignMessage
+					walletId={wallet.id()}
+					isOpen={true}
+					onClose={() => setModal(undefined)}
+					onCancel={() => setModal(undefined)}
+				/>
 			)}
 
 			<VerifyMessage

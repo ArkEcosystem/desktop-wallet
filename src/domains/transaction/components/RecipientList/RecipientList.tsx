@@ -1,7 +1,7 @@
 import { Address } from "app/components/Address";
 import { Amount } from "app/components/Amount";
 import { Avatar } from "app/components/Avatar";
-import { Button } from "app/components/Button";
+import { OriginalButton as Button } from "app/components/Button/OriginalButton";
 import { Icon } from "app/components/Icon";
 import { Label } from "app/components/Label";
 import { Table } from "app/components/Table";
@@ -74,7 +74,7 @@ const RecipientListItem = ({
 
 			<td className="py-6">
 				<div className="mb-1 text-sm font-semibold text-theme-secondary-500 dark:text-theme-secondary-700">
-					<span>{label || t("COMMON.RECIPIENT_#", { count: listIndex! + 1 })}</span>
+					<span>{t(label || "COMMON.RECIPIENT_#", { count: listIndex! + 1 })}</span>
 				</div>
 				<div className="max-w-sm">
 					<Address

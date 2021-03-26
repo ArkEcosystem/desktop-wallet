@@ -52,6 +52,8 @@ export const SendIpfs = () => {
 
 		setValue("senderAddress", activeWallet.address(), { shouldValidate: true, shouldDirty: true });
 
+		register("suppressWarning");
+
 		for (const network of networks) {
 			if (network.coin() === activeWallet.coinId() && network.id() === activeWallet.networkId()) {
 				setValue("network", network, { shouldValidate: true, shouldDirty: true });
@@ -72,12 +74,14 @@ export const SendIpfs = () => {
 	const submitForm = async () => {
 		clearErrors("mnemonic");
 
-		const { fee, mnemonic, secondMnemonic, senderAddress, hash } = getValues();
+		const { fee, mnemonic, secondMnemonic, senderAddress, hash, encryptionPassword } = getValues();
+		const wif = activeWallet?.usesWIF() ? await activeWallet.wif(encryptionPassword) : undefined;
 
 		const transactionInput: Contracts.IpfsInput = {
 			fee,
 			from: senderAddress,
 			sign: {
+				wif,
 				mnemonic,
 				secondMnemonic,
 			},

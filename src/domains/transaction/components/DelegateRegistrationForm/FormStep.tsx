@@ -1,5 +1,5 @@
-import { FeatureFlag } from "@arkecosystem/platform-sdk/dist/coins";
-import { ReadOnlyWallet } from "@arkecosystem/platform-sdk-profiles";
+import { Coins } from "@arkecosystem/platform-sdk";
+import { Contracts } from "@arkecosystem/platform-sdk-profiles";
 import { Alert } from "app/components/Alert";
 import { FormField, FormLabel } from "app/components/Form";
 import { Header } from "app/components/Header";
@@ -35,7 +35,7 @@ export const FormStep = ({ fees, wallet, step = 0.001 }: any) => {
 			env
 				.delegates()
 				.all(wallet.coinId(), wallet.networkId())
-				.map((delegate: ReadOnlyWallet) => delegate.username()!),
+				.map((delegate: Contracts.IReadOnlyWallet) => delegate.username()!),
 		);
 	}, [env, wallet]);
 
@@ -48,11 +48,11 @@ export const FormStep = ({ fees, wallet, step = 0.001 }: any) => {
 	return (
 		<section data-testid="DelegateRegistrationForm__form-step" className="space-y-8">
 			<Header
-				title={t("TRANSACTION.PAGE_DELEGATE_REGISTRATION.SECOND_STEP.TITLE")}
-				subtitle={t("TRANSACTION.PAGE_DELEGATE_REGISTRATION.SECOND_STEP.DESCRIPTION")}
+				title={t("TRANSACTION.PAGE_DELEGATE_REGISTRATION.FORM_STEP.TITLE")}
+				subtitle={t("TRANSACTION.PAGE_DELEGATE_REGISTRATION.FORM_STEP.DESCRIPTION")}
 			/>
 
-			<Alert>{t("TRANSACTION.PAGE_DELEGATE_REGISTRATION.SECOND_STEP.WARNING")}</Alert>
+			<Alert>{t("TRANSACTION.PAGE_DELEGATE_REGISTRATION.FORM_STEP.WARNING")}</Alert>
 
 			<TransactionSender
 				address={wallet.address()}
@@ -82,7 +82,7 @@ export const FormStep = ({ fees, wallet, step = 0.001 }: any) => {
 						defaultValue={fee}
 						value={fee}
 						step={step}
-						showFeeOptions={wallet.network().can(FeatureFlag.MiscellaneousDynamicFees)}
+						showFeeOptions={wallet.network().can(Coins.FeatureFlag.MiscellaneousDynamicFees)}
 						onChange={(currency) => {
 							setValue("fee", currency.value, { shouldValidate: true, shouldDirty: true });
 						}}

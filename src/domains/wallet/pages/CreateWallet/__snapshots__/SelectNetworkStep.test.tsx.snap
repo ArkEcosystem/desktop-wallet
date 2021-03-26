@@ -21,7 +21,7 @@ exports[`SelectNetworkStep Render 1st step should render 1`] = `
           class="text-theme-secondary-text"
           data-testid="header__subtitle"
         >
-          Select a cryptoasset to create your new wallet address
+          Select a cryptoasset to create your new wallet address.
         </div>
       </div>
     </div>
@@ -29,7 +29,7 @@ exports[`SelectNetworkStep Render 1st step should render 1`] = `
       class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2 mt-8"
     >
       <label
-        class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
+        class="flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
         data-testid="FormLabel"
         for="network"
       >
@@ -83,7 +83,7 @@ exports[`SelectNetworkStep Render 1st step should render 1`] = `
             class="mt-6"
           >
             <div
-              class="font-bold text-sm text-theme-secondary-400 dark:text-theme-secondary-700 mb-3"
+              class="mb-3 text-sm font-bold text-theme-secondary-400 dark:text-theme-secondary-700"
             >
               PUBLIC NETWORKS
             </div>
@@ -141,7 +141,7 @@ exports[`SelectNetworkStep Render 1st step should render 1`] = `
             class="mt-6"
           >
             <div
-              class="font-bold text-sm text-theme-secondary-400 dark:text-theme-secondary-700 mb-3"
+              class="mb-3 text-sm font-bold text-theme-secondary-400 dark:text-theme-secondary-700"
             >
               DEVELOPMENT NETWORKS
             </div>
@@ -202,7 +202,7 @@ exports[`SelectNetworkStep Render 1st step should render without test networks 1
           class="text-theme-secondary-text"
           data-testid="header__subtitle"
         >
-          Select a cryptoasset to create your new wallet address
+          Select a cryptoasset to create your new wallet address.
         </div>
       </div>
     </div>
@@ -210,7 +210,7 @@ exports[`SelectNetworkStep Render 1st step should render without test networks 1
       class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2 mt-8"
     >
       <label
-        class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
+        class="flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
         data-testid="FormLabel"
         for="network"
       >

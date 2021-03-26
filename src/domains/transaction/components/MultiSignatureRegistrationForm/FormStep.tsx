@@ -1,5 +1,5 @@
 import { Coins, Contracts } from "@arkecosystem/platform-sdk";
-import { Profile, ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
+import { Contracts as ProfilesContracts } from "@arkecosystem/platform-sdk-profiles";
 import { FormField, FormLabel } from "app/components/Form";
 import { Header } from "app/components/Header";
 import { Input } from "app/components/Input";
@@ -17,9 +17,9 @@ export const FormStep = ({
 	wallet,
 	step = 0.001,
 }: {
-	profile: Profile;
+	profile: ProfilesContracts.IProfile;
 	fees: Contracts.TransactionFee;
-	wallet: ReadWriteWallet;
+	wallet: ProfilesContracts.IReadWriteWallet;
 	step?: number;
 }) => {
 	const { t } = useTranslation();
@@ -74,7 +74,7 @@ export const FormStep = ({
 					onChange={handleInput}
 					addons={{
 						end: (
-							<span className="pointer-events-none">
+							<span className="pointer-events-none font-semibold text-sm text-theme-secondary-500 dark:text-theme-secondary-700">
 								{t("TRANSACTION.MULTISIGNATURE.OUT_OF_LENGTH", {
 									length: Math.max(2, participants?.length || 0),
 								})}

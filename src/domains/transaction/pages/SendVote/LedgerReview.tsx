@@ -1,4 +1,4 @@
-import { ReadOnlyWallet, ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
+import { Contracts } from "@arkecosystem/platform-sdk-profiles";
 import { TotalAmountBox } from "domains/transaction/components/TotalAmountBox";
 import { TransactionDetail } from "domains/transaction/components/TransactionDetail";
 import { evaluateFee } from "domains/transaction/utils";
@@ -12,9 +12,9 @@ export const VoteLedgerReview = ({
 	votes,
 	unvotes,
 }: {
-	wallet: ReadWriteWallet;
-	votes: ReadOnlyWallet[];
-	unvotes: ReadOnlyWallet[];
+	wallet: Contracts.IReadWriteWallet;
+	votes: Contracts.IReadOnlyWallet[];
+	unvotes: Contracts.IReadOnlyWallet[];
 }) => {
 	const { getValues } = useFormContext();
 	const { t } = useTranslation();

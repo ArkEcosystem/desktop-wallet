@@ -1,5 +1,5 @@
 import { Coins } from "@arkecosystem/platform-sdk";
-import { Profile, ProfileSetting } from "@arkecosystem/platform-sdk-profiles";
+import { Contracts } from "@arkecosystem/platform-sdk-profiles";
 import { BigNumber } from "@arkecosystem/platform-sdk-support";
 import { FormField, FormLabel } from "app/components/Form";
 import { Header } from "app/components/Header";
@@ -19,7 +19,7 @@ export const FormStep = ({
 	disableNetworkField,
 }: {
 	networks: Coins.Network[];
-	profile: Profile;
+	profile: Contracts.IProfile;
 	deeplinkProps: any;
 	hasWalletId: boolean;
 	disableNetworkField: boolean;
@@ -45,15 +45,15 @@ export const FormStep = ({
 	};
 
 	const availableNetworks = useMemo(() => {
-		const usesTestNetworks = profile.settings().get(ProfileSetting.UseTestNetworks);
+		const usesTestNetworks = profile.settings().get(Contracts.ProfileSetting.UseTestNetworks);
 		return usesTestNetworks ? networks : networks.filter((network) => network.isLive());
 	}, [profile, networks]);
 
 	return (
 		<section data-testid="SendTransfer__form-step" className="space-y-8">
 			<Header
-				title={t("TRANSACTION.PAGE_TRANSACTION_SEND.FIRST_STEP.TITLE")}
-				subtitle={t("TRANSACTION.PAGE_TRANSACTION_SEND.FIRST_STEP.DESCRIPTION")}
+				title={t("TRANSACTION.PAGE_TRANSACTION_SEND.FORM_STEP.TITLE", { ticker: senderWallet?.currency() })}
+				subtitle={t("TRANSACTION.PAGE_TRANSACTION_SEND.FORM_STEP.DESCRIPTION")}
 			/>
 
 			<SendTransactionForm

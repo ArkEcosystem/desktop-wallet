@@ -1,4 +1,4 @@
-import { ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
+import { Contracts } from "@arkecosystem/platform-sdk-profiles";
 import { BigNumber } from "@arkecosystem/platform-sdk-support";
 import { TotalAmountBox } from "domains/transaction/components/TotalAmountBox";
 import { TransactionMemo, TransactionRecipients } from "domains/transaction/components/TransactionDetail";
@@ -6,7 +6,7 @@ import { evaluateFee } from "domains/transaction/utils";
 import React from "react";
 import { useFormContext } from "react-hook-form";
 
-export const TransferLedgerReview = ({ wallet }: { wallet: ReadWriteWallet }) => {
+export const TransferLedgerReview = ({ wallet }: { wallet: Contracts.IReadWriteWallet }) => {
 	const { getValues } = useFormContext();
 
 	const { fee, recipients, smartbridge } = getValues();

@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/require-await */
 import { Contracts } from "@arkecosystem/platform-sdk";
 import { BIP39 } from "@arkecosystem/platform-sdk-crypto";
-import { Profile, ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
+import { Contracts as ProfilesContracts } from "@arkecosystem/platform-sdk-profiles";
 import { BigNumber } from "@arkecosystem/platform-sdk-support";
 import { renderHook } from "@testing-library/react-hooks";
 import { Form } from "app/components/Form";
@@ -19,8 +19,8 @@ import { SecondSignatureRegistrationForm } from "./SecondSignatureRegistrationFo
 
 describe("SecondSignatureRegistrationForm", () => {
 	const passphrase = "power return attend drink piece found tragic fire liar page disease combine";
-	let profile: Profile;
-	let wallet: ReadWriteWallet;
+	let profile: ProfilesContracts.IProfile;
+	let wallet: ProfilesContracts.IReadWriteWallet;
 	let fees: Contracts.TransactionFee;
 
 	beforeEach(() => {
@@ -33,7 +33,7 @@ describe("SecondSignatureRegistrationForm", () => {
 		};
 	});
 
-	const createTransactionMock = (wallet: ReadWriteWallet) =>
+	const createTransactionMock = (wallet: ProfilesContracts.IReadWriteWallet) =>
 		// @ts-ignore
 		jest.spyOn(wallet.transaction(), "transaction").mockReturnValue({
 			id: () => secondSignatureFixture.data.id,
@@ -358,5 +358,45 @@ describe("SecondSignatureRegistrationForm", () => {
 		consoleSpy.mockRestore();
 		signMock.mockRestore();
 		broadcastMock.mockRestore();
+	});
+
+	it("should sign transaction using encryption password", async () => {
+		const walletUsesWIFMock = jest.spyOn(wallet, "usesWIF").mockReturnValue(true);
+		const walletWifMock = jest.spyOn(wallet, "wif").mockImplementation((password) => {
+			const wif = "S9rDfiJ2ar4DpWAQuaXECPTJHfTZ3XjCPv15gjxu4cHJZKzABPyV";
+			return Promise.resolve(wif);
+		});
+
+		const form = {
+			clearErrors: jest.fn(),
+			getValues: () => ({
+				fee: { display: "1", value: "100000000" },
+				senderAddress: wallet.address(),
+				encryptionPassword: "password",
+			}),
+			setError: jest.fn(),
+			setValue: jest.fn(),
+		};
+		const signMock = jest
+			.spyOn(wallet.transaction(), "signSecondSignature")
+			.mockReturnValue(Promise.resolve(secondSignatureFixture.data.id));
+		const broadcastMock = jest.spyOn(wallet.transaction(), "broadcast").mockImplementation();
+		const transactionMock = createTransactionMock(wallet);
+
+		await SecondSignatureRegistrationForm.signTransaction({
+			env,
+			form,
+			profile,
+		});
+
+		expect(signMock).toHaveBeenCalled();
+		expect(broadcastMock).toHaveBeenCalled();
+		expect(transactionMock).toHaveBeenCalled();
+
+		signMock.mockRestore();
+		broadcastMock.mockRestore();
+		transactionMock.mockRestore();
+		walletUsesWIFMock.mockRestore();
+		walletWifMock.mockRestore();
 	});
 });

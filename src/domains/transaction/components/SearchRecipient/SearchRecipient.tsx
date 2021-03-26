@@ -1,5 +1,5 @@
-import { Network } from "@arkecosystem/platform-sdk/dist/coins";
-import { Profile } from "@arkecosystem/platform-sdk-profiles";
+import { Coins } from "@arkecosystem/platform-sdk";
+import { Contracts } from "@arkecosystem/platform-sdk-profiles";
 import { Address } from "app/components/Address";
 import { AvatarWrapper } from "app/components/Avatar";
 import { Button } from "app/components/Button";
@@ -71,9 +71,9 @@ const RecipientListItem = ({ recipient, onAction }: RecipientListItemProps) => {
 type SearchRecipientProps = {
 	title?: string;
 	description?: string;
-	network?: Network;
+	network?: Coins.Network;
 	isOpen: boolean;
-	profile: Profile;
+	profile: Contracts.IProfile;
 	onClose?: () => void;
 	onAction: (address: string) => void;
 };

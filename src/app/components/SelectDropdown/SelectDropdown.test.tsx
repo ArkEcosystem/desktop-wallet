@@ -1,6 +1,6 @@
 import { act } from "@testing-library/react-hooks";
 import React from "react";
-import { fireEvent, render, waitFor } from "testing-library";
+import { fireEvent, render, screen, waitFor } from "testing-library";
 
 import { Select } from "./SelectDropdown";
 
@@ -38,6 +38,18 @@ describe("SelectDropdown", () => {
 	it("should render without caret", () => {
 		const { container } = render(<Select options={options} showCaret={false} />);
 		expect(container).toMatchSnapshot();
+	});
+
+	it("should trigger menu when clicking on caret", async () => {
+		render(<Select options={options} showCaret />);
+
+		fireEvent.click(screen.getByTestId("SelectDropdown__caret"));
+
+		await waitFor(() => expect(screen.getByTestId("select-list__toggle-option-0")).toBeInTheDocument());
+
+		fireEvent.click(screen.getByTestId("SelectDropdown__caret"));
+
+		await waitFor(() => expect(screen.queryByTestId("select-list__toggle-option-0")).not.toBeInTheDocument());
 	});
 
 	it("should render with initial default value", () => {

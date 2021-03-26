@@ -1,12 +1,22 @@
 /* eslint-disable @typescript-eslint/require-await */
-import { Profile, ProfileSetting } from "@arkecosystem/platform-sdk-profiles";
+import { Contracts } from "@arkecosystem/platform-sdk-profiles";
 import { buildTranslations } from "app/i18n/helpers";
 import { toasts } from "app/services";
 import electron from "electron";
+import { createHashHistory } from "history";
 import os from "os";
 import React from "react";
 import { Route } from "react-router-dom";
-import { act, env, fireEvent, getDefaultProfileId, renderWithRouter, waitFor, within } from "testing-library";
+import {
+	act,
+	env,
+	fireEvent,
+	getDefaultProfileId,
+	renderWithRouter,
+	screen,
+	waitFor,
+	within,
+} from "utils/testing-library";
 
 import { Settings } from "./Settings";
 
@@ -18,10 +28,11 @@ jest.mock("react-router-dom", () => ({
 	...jest.requireActual("react-router-dom"),
 	useHistory: () => ({
 		replace: jest.fn(),
+		go: jest.fn(),
 	}),
 }));
 
-let profile: Profile;
+let profile: Contracts.IProfile;
 let showOpenDialogMock: jest.SpyInstance;
 
 const showOpenDialogParams = {
@@ -38,6 +49,39 @@ jest.mock("fs", () => ({
 describe("Settings", () => {
 	beforeAll(() => {
 		profile = env.profiles().findById(getDefaultProfileId());
+	});
+
+	it("should render with prompt paths", async () => {
+		const history = createHashHistory();
+
+		history.push(`/profiles/${profile.id()}/settings`);
+
+		renderWithRouter(
+			<Route path="/profiles/:profileId/settings">
+				<Settings />
+			</Route>,
+			{
+				// @ts-ignore
+				history,
+			},
+		);
+
+		// Idle
+		history.push(`/profiles/${profile.id()}/dashboard`);
+
+		fireEvent.input(screen.getByTestId("General-settings__input--name"), { target: { value: "My Profile" } });
+
+		await waitFor(() => expect(screen.getByTestId("General-settings__submit-button")).toBeEnabled());
+
+		// Dirty
+		history.replace(`/profiles/${profile.id()}/dashboard`);
+
+		// Reload
+		history.replace(`/profiles/${profile.id()}/settings`);
+
+		await waitFor(() => expect(screen.getByTestId("General-settings__cancel-button")).toBeEnabled());
+
+		fireEvent.click(screen.getByTestId("General-settings__cancel-button"));
 	});
 
 	it("should render", () => {
@@ -243,7 +287,7 @@ describe("Settings", () => {
 
 		act(() => {
 			fireEvent.input(getByTestId("General-settings__input--name"), {
-				target: { value: otherProfile.settings().get(ProfileSetting.Name) },
+				target: { value: otherProfile.settings().get(Contracts.ProfileSetting.Name) },
 			});
 		});
 
@@ -273,7 +317,7 @@ describe("Settings", () => {
 
 		act(() => {
 			fireEvent.input(getByTestId("General-settings__input--name"), {
-				target: { value: otherProfile.settings().get(ProfileSetting.Name).toUpperCase() },
+				target: { value: otherProfile.settings().get(Contracts.ProfileSetting.Name).toUpperCase() },
 			});
 		});
 
@@ -328,7 +372,7 @@ describe("Settings", () => {
 
 		act(() => {
 			fireEvent.input(getByTestId("General-settings__input--name"), {
-				target: { value: `  ${otherProfile.settings().get(ProfileSetting.Name)}  ` },
+				target: { value: `  ${otherProfile.settings().get(Contracts.ProfileSetting.Name)}  ` },
 			});
 		});
 
@@ -445,7 +489,7 @@ describe("Settings", () => {
 	});
 
 	describe("advanced mode", () => {
-		it("should open and accept disclaimer", () => {
+		it("should open and accept disclaimer", async () => {
 			const { getByTestId } = renderWithRouter(
 				<Route path="/profiles/:profileId/settings">
 					<Settings />
@@ -476,10 +520,10 @@ describe("Settings", () => {
 				fireEvent.click(getByTestId("General-settings__toggle--isAdvancedMode"));
 			});
 
-			expect(getByTestId("General-settings__toggle--isAdvancedMode").checked).toEqual(false);
+			await waitFor(() => expect(getByTestId("General-settings__toggle--isAdvancedMode").checked).toEqual(false));
 		});
 
-		it("should open, accept disclaimer and remember choice", () => {
+		it("should open, accept disclaimer and remember choice", async () => {
 			const { getByTestId } = renderWithRouter(
 				<Route path="/profiles/:profileId/settings">
 					<Settings />
@@ -524,10 +568,10 @@ describe("Settings", () => {
 
 			expect(() => getByTestId("modal__inner")).toThrow(/Unable to find an element by/);
 
-			expect(getByTestId("General-settings__toggle--isAdvancedMode").checked).toEqual(true);
+			await waitFor(() => expect(getByTestId("General-settings__toggle--isAdvancedMode").checked).toEqual(true));
 
 			// reset setting
-			profile.settings().set(ProfileSetting.DoNotShowAdvancedModeDisclaimer, false);
+			profile.settings().set(Contracts.ProfileSetting.DoNotShowAdvancedModeDisclaimer, false);
 		});
 
 		it.each([

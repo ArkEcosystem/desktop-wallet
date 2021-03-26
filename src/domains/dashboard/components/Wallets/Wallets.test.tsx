@@ -1,4 +1,4 @@
-import { Profile, ProfileSetting, ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
+import { Contracts } from "@arkecosystem/platform-sdk-profiles";
 import Transport, { Observer } from "@ledgerhq/hw-transport";
 import { createTransportReplayer, RecordStore } from "@ledgerhq/hw-transport-mocker";
 import { LedgerProvider } from "app/contexts/Ledger/Ledger";
@@ -25,9 +25,9 @@ import { Wallets } from "./Wallets";
 const history = createMemoryHistory();
 const dashboardURL = `/profiles/${getDefaultProfileId()}/dashboard`;
 
-let profile: Profile;
-let emptyProfile: Profile;
-let wallets: ReadWriteWallet[];
+let profile: Contracts.IProfile;
+let emptyProfile: Contracts.IProfile;
+let wallets: Contracts.IReadWriteWallet[];
 
 const transport: typeof Transport = createTransportReplayer(RecordStore.fromString(""));
 
@@ -134,7 +134,7 @@ describe("Wallets", () => {
 	});
 
 	it("should render without testnet wallets", () => {
-		profile.settings().set(ProfileSetting.UseTestNetworks, false);
+		profile.settings().set(Contracts.ProfileSetting.UseTestNetworks, false);
 
 		const { asFragment } = renderWithRouter(
 			<Route path="/profiles/:profileId/dashboard">
@@ -147,7 +147,7 @@ describe("Wallets", () => {
 		);
 
 		expect(asFragment()).toMatchSnapshot();
-		profile.settings().set(ProfileSetting.UseTestNetworks, true);
+		profile.settings().set(Contracts.ProfileSetting.UseTestNetworks, true);
 	});
 
 	it("should load more wallets", async () => {

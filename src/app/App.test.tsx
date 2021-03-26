@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/require-await */
-import { Environment, MemoryPassword, Profile } from "@arkecosystem/platform-sdk-profiles";
+import { Environment, Helpers } from "@arkecosystem/platform-sdk-profiles";
 import { translations as errorTranslations } from "domains/error/i18n";
 import { translations as profileTranslations } from "domains/profile/i18n";
 import electron from "electron";
@@ -21,7 +21,7 @@ import { App } from "./App";
 
 const dashboardUrl = `/profiles/${getDefaultProfileId()}/dashboard`;
 
-let profile: Profile;
+let profile: Contracts.IProfile;
 
 describe("App", () => {
 	beforeAll(async () => {
@@ -108,7 +108,7 @@ describe("App", () => {
 		const { getByTestId, getByText } = renderWithRouter(<App />, { withProviders: false });
 
 		await waitFor(() => {
-			expect(getByText(profileTranslations.PAGE_WELCOME.HAS_PROFILES)).toBeInTheDocument();
+			expect(getByText(profileTranslations.PAGE_WELCOME.WITH_PROFILES.TITLE)).toBeInTheDocument();
 		});
 
 		expect(document.body).toHaveClass(`theme-${shouldUseDarkColors ? "dark" : "light"}`);
@@ -120,7 +120,7 @@ describe("App", () => {
 		const { getAllByTestId, getByTestId, getByText, history } = renderWithRouter(<App />, { withProviders: false });
 
 		await waitFor(() => {
-			expect(getByText(profileTranslations.PAGE_WELCOME.HAS_PROFILES)).toBeInTheDocument();
+			expect(getByText(profileTranslations.PAGE_WELCOME.WITH_PROFILES.TITLE)).toBeInTheDocument();
 		});
 
 		const passwordProtectedProfile = env.profiles().findById("cba050f1-880f-45f0-9af9-cfe48f406052");
@@ -160,7 +160,7 @@ describe("App", () => {
 		const { getAllByTestId, getByTestId, getByText, history } = renderWithRouter(<App />, { withProviders: false });
 
 		await waitFor(() => {
-			expect(getByText(profileTranslations.PAGE_WELCOME.HAS_PROFILES)).toBeInTheDocument();
+			expect(getByText(profileTranslations.PAGE_WELCOME.WITH_PROFILES.TITLE)).toBeInTheDocument();
 		});
 
 		expect(history.location.pathname).toMatch("/");
@@ -181,7 +181,7 @@ describe("App", () => {
 			expect(getByTestId("SignIn__input--password")).toHaveValue("password");
 		});
 
-		const memoryPasswordMock = jest.spyOn(MemoryPassword, "get").mockImplementation(() => {
+		const memoryPasswordMock = jest.spyOn(Helpers.MemoryPassword, "get").mockImplementation(() => {
 			throw new Error("password not found");
 		});
 
@@ -219,7 +219,7 @@ describe("App", () => {
 			await new Promise((resolve) => setTimeout(resolve, 2000));
 		});
 		await waitFor(() => {
-			expect(getByText(profileTranslations.PAGE_WELCOME.HAS_PROFILES)).toBeInTheDocument();
+			expect(getByText(profileTranslations.PAGE_WELCOME.WITH_PROFILES.TITLE)).toBeInTheDocument();
 
 			expect(container).toBeTruthy();
 			expect(asFragment()).toMatchSnapshot();
@@ -291,7 +291,7 @@ describe("App", () => {
 		});
 
 		await waitFor(() => {
-			expect(getByText(profileTranslations.PAGE_WELCOME.HAS_PROFILES)).toBeInTheDocument();
+			expect(getByText(profileTranslations.PAGE_WELCOME.WITH_PROFILES.TITLE)).toBeInTheDocument();
 
 			expect(container).toBeTruthy();
 
@@ -313,7 +313,7 @@ describe("App", () => {
 		});
 
 		await waitFor(() => {
-			expect(getByText(profileTranslations.PAGE_WELCOME.HAS_NO_PROFILES)).toBeInTheDocument();
+			expect(getByText(profileTranslations.PAGE_WELCOME.WITHOUT_PROFILES.TITLE)).toBeInTheDocument();
 			expect(asFragment()).toMatchSnapshot();
 		});
 	});

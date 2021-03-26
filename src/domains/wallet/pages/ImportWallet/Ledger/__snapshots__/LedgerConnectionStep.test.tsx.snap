@@ -16,13 +16,13 @@ exports[`LedgerConnectionStep should emit event on connect 1`] = `
           class="mb-0 text-4xl"
           data-testid="header__title"
         >
-          Opening of the app
+          Open App on Ledger
         </h1>
         <div
           class="text-theme-secondary-text"
           data-testid="header__subtitle"
         >
-          Information from your device is expected
+          Open the app on your Ledger and check for details.
         </div>
       </div>
     </div>
@@ -30,7 +30,7 @@ exports[`LedgerConnectionStep should emit event on connect 1`] = `
       class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
     >
       <label
-        class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
+        class="flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
         data-testid="FormLabel"
         for="network"
       >
@@ -153,13 +153,13 @@ exports[`LedgerConnectionStep should emit event on fail 1`] = `
           class="mb-0 text-4xl"
           data-testid="header__title"
         >
-          Opening of the app
+          Open App on Ledger
         </h1>
         <div
           class="text-theme-secondary-text"
           data-testid="header__subtitle"
         >
-          Information from your device is expected
+          Open the app on your Ledger and check for details.
         </div>
       </div>
     </div>
@@ -167,7 +167,7 @@ exports[`LedgerConnectionStep should emit event on fail 1`] = `
       class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
     >
       <label
-        class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
+        class="flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
         data-testid="FormLabel"
         for="network"
       >

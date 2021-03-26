@@ -1,4 +1,4 @@
-import { Profile } from "@arkecosystem/platform-sdk-profiles";
+import { Contracts } from "@arkecosystem/platform-sdk-profiles";
 import { NavigationBar } from "app/components/NavigationBar";
 import React from "react";
 import { NavbarVariant } from "types";
@@ -8,7 +8,7 @@ type PageProps = {
 	title?: string;
 	backToUrl?: string;
 	isBackDisabled?: boolean;
-	profile?: Profile;
+	profile?: Contracts.IProfile;
 	sidebar?: React.ReactNode;
 	children: React.ReactNode;
 };

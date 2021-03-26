@@ -1,4 +1,4 @@
-import { ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
+import { Contracts } from "@arkecosystem/platform-sdk-profiles";
 import { chunk } from "@arkecosystem/utils";
 import { useMemo } from "react";
 
@@ -34,7 +34,7 @@ export const useWalletDisplay = ({
 
 		const loadGridWallets = () => {
 			const walletObjects = wallets
-				.filter((wallet: ReadWriteWallet) => {
+				.filter((wallet: Contracts.IReadWriteWallet) => {
 					if (!selectedNetworkIds?.includes(wallet.network().id())) {
 						return false;
 					}
@@ -49,7 +49,7 @@ export const useWalletDisplay = ({
 
 					return wallet;
 				})
-				.map((wallet: ReadWriteWallet) => ({ wallet }));
+				.map((wallet: Contracts.IReadWriteWallet) => ({ wallet }));
 
 			if (walletObjects.length <= sliderOptions.slidesPerView) {
 				return walletObjects.concat(

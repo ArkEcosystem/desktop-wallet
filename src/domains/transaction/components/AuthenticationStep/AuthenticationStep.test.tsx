@@ -1,4 +1,4 @@
-import { Profile, ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
+import { Contracts } from "@arkecosystem/platform-sdk-profiles";
 import { act, renderHook } from "@testing-library/react-hooks";
 import { Form } from "app/components/Form";
 import React from "react";
@@ -8,8 +8,8 @@ import { env, fireEvent, getDefaultProfileId, renderWithRouter, screen, waitFor 
 import { AuthenticationStep } from "./AuthenticationStep";
 
 describe("AuthenticationStep", () => {
-	let wallet: ReadWriteWallet;
-	let profile: Profile;
+	let wallet: Contracts.IReadWriteWallet;
+	let profile: Contracts.IProfile;
 
 	beforeEach(() => {
 		profile = env.profiles().findById(getDefaultProfileId());
@@ -234,5 +234,23 @@ describe("AuthenticationStep", () => {
 		expect(queryByTestId("LedgerWaitingApp-loading_message")).toBeInTheDocument();
 
 		expect(container).toMatchSnapshot();
+	});
+
+	it("should render with encryption password input", async () => {
+		wallet = profile.wallets().first();
+
+		jest.spyOn(wallet, "usesWIF").mockReturnValue(true);
+
+		const { result } = renderHook(() => useForm({ mode: "onChange" }));
+		const { getByTestId } = renderWithRouter(
+			<Form context={result.current} onSubmit={() => void 0}>
+				<AuthenticationStep wallet={wallet} />
+			</Form>,
+		);
+
+		await waitFor(() => expect(getByTestId("AuthenticationStep__encryption-password")).toBeInTheDocument());
+
+		profile.wallets().forget(wallet.id());
+		jest.clearAllMocks();
 	});
 });

@@ -1,4 +1,4 @@
-import { DataRepository } from "@arkecosystem/platform-sdk-profiles";
+import { Contracts, Repositories } from "@arkecosystem/platform-sdk-profiles";
 import { intersection, prettyBytes, startCase, uniq } from "@arkecosystem/utils";
 import { githubImageProvider } from "domains/transaction/entity/providers";
 import du from "du";
@@ -9,20 +9,20 @@ import { allPermissions } from "./permissions";
 import { schema } from "./schema";
 
 export class PluginConfigurationData {
-	#config: DataRepository;
-	#manifest: DataRepository;
+	#config: Contracts.IDataRepository;
+	#manifest: Contracts.IDataRepository;
 	#size = 0;
 
-	constructor(config: DataRepository, manifest: DataRepository) {
+	constructor(config: Contracts.IDataRepository, manifest: Contracts.IDataRepository) {
 		this.#config = config;
 		this.#manifest = manifest;
 	}
 
 	static make(config: Record<string, any>, dir?: string) {
-		const data = new DataRepository();
+		const data = new Repositories.DataRepository();
 		data.fill(config);
 
-		const manifest = new DataRepository();
+		const manifest = new Repositories.DataRepository();
 		const values = data.get<Record<string, any>>("desktop-wallet");
 
 		if (values) {

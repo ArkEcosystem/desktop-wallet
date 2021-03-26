@@ -22,10 +22,6 @@ import { useHistory, useParams } from "react-router-dom";
 import { SummaryStep } from "./";
 import { SendRegistrationForm } from "./SendRegistration.models";
 
-type SendRegistrationProps = {
-	formDefaultValues?: any;
-};
-
 export const SendRegistration = () => {
 	const { t } = useTranslation();
 	const history = useHistory();
@@ -74,6 +70,8 @@ export const SendRegistration = () => {
 
 		register("network", { required: true });
 		register("senderAddress", { required: true });
+
+		register("suppressWarning");
 	}, [register]);
 
 	const {

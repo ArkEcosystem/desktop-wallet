@@ -1,5 +1,5 @@
 import { Coins } from "@arkecosystem/platform-sdk";
-import { ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
+import { Contracts } from "@arkecosystem/platform-sdk-profiles";
 import { BigNumber } from "@arkecosystem/platform-sdk-support";
 import { uniq } from "@arkecosystem/utils";
 import { Button } from "app/components/Button";
@@ -27,7 +27,7 @@ import { ThirdStep } from "./Step3";
 
 export const ImportWallet = () => {
 	const [activeTab, setActiveTab] = useState(1);
-	const [walletData, setWalletData] = useState<ReadWriteWallet | null>(null);
+	const [walletData, setWalletData] = useState<Contracts.IReadWriteWallet | null>(null);
 	const [walletGenerationInput, setWalletGenerationInput] = useState<WalletGenerationInput>();
 
 	const queryParams = useQueryParams();
@@ -43,7 +43,7 @@ export const ImportWallet = () => {
 	const { importWalletByType } = useWalletImport({ profile: activeProfile });
 	const { syncAll } = useWalletSync({ profile: activeProfile, env });
 
-	const form = useForm({ mode: "onChange", defaultValues: { type: "mnemonic" } });
+	const form = useForm<any>({ mode: "onChange", defaultValues: { type: "mnemonic" } });
 	const { formState, register, watch, handleSubmit, unregister } = form;
 	const { isSubmitting, isValid } = formState;
 	const { value, encryptionPassword, confirmEncryptionPassword } = watch();
@@ -90,7 +90,7 @@ export const ImportWallet = () => {
 		password?: string;
 	}) => {
 		try {
-			const wallet = await importWalletByType({
+			const wallet: any = await importWalletByType({
 				network,
 				type,
 				value: walletGenerationInput!,
@@ -98,10 +98,10 @@ export const ImportWallet = () => {
 				password,
 			});
 
-			setValue("selectedNetworkIds", uniq([...selectedNetworkIds, wallet!.network().id()]));
-			setWalletData(wallet!);
+			setValue("selectedNetworkIds", uniq([...selectedNetworkIds, wallet.network().id()]));
+			setWalletData(wallet);
 
-			await syncAll(wallet!);
+			await syncAll(wallet);
 			await persist();
 
 			setActiveTab(4);
@@ -138,7 +138,7 @@ export const ImportWallet = () => {
 		<Page profile={activeProfile}>
 			<Section className="flex-1">
 				<Form
-					className="mx-auto max-w-xl"
+					className="max-w-xl mx-auto"
 					context={form}
 					onSubmit={walletData ? handleFinish : (importAndSaveWallet as any)}
 					data-testid="ImportWallet__form"

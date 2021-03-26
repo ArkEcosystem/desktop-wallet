@@ -1,5 +1,5 @@
 import { Coins } from "@arkecosystem/platform-sdk";
-import { Contact, Profile } from "@arkecosystem/platform-sdk-profiles";
+import { Contracts } from "@arkecosystem/platform-sdk-profiles";
 import { Modal } from "app/components/Modal";
 import { useEnvironmentContext } from "app/contexts";
 import { ContactForm } from "domains/contact/components/ContactForm";
@@ -8,8 +8,8 @@ import { useTranslation } from "react-i18next";
 
 type UpdateContactProps = {
 	isOpen: boolean;
-	contact: Contact;
-	profile: Profile;
+	contact: Contracts.IContact;
+	profile: Contracts.IProfile;
 	networks: Coins.Network[];
 	onCancel?: any;
 	onClose?: any;
@@ -64,7 +64,12 @@ export const UpdateContact = ({
 	};
 
 	return (
-		<Modal title={t("CONTACTS.MODAL_UPDATE_CONTACT.TITLE")} isOpen={isOpen} onClose={onClose}>
+		<Modal
+			title={t("CONTACTS.MODAL_UPDATE_CONTACT.TITLE")}
+			description={t("CONTACTS.MODAL_UPDATE_CONTACT.DESCRIPTION")}
+			isOpen={isOpen}
+			onClose={onClose}
+		>
 			<div className="mt-8">
 				<ContactForm
 					errors={errors}

@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/require-await */
-import { Profile, ProfileSetting } from "@arkecosystem/platform-sdk-profiles";
+import { Contracts } from "@arkecosystem/platform-sdk-profiles";
 import { translations as commonTranslations } from "app/i18n/common/i18n";
 import { pluginManager, PluginProviders } from "app/PluginProviders";
 import { toasts } from "app/services";
@@ -16,7 +16,7 @@ import { translations } from "../../i18n";
 import { PluginManager } from "./PluginManager";
 
 let rendered: RenderResult;
-let profile: Profile;
+let profile: Contracts.IProfile;
 const history = createMemoryHistory();
 
 const fixtureProfileId = getDefaultProfileId();
@@ -232,7 +232,7 @@ describe("PluginManager", () => {
 			.get("/arkecosystem/test-plugin/raw/master/package.json")
 			.reply(200, { name: "test-plugin", keywords: ["@arkecosystem", "desktop-wallet"] });
 
-		profile.settings().set(ProfileSetting.AdvancedMode, true);
+		profile.settings().set(Contracts.ProfileSetting.AdvancedMode, true);
 
 		const { getByTestId, queryByTestId } = renderWithRouter(
 			<Route path="/profiles/:profileId/plugins">
@@ -271,6 +271,10 @@ describe("PluginManager", () => {
 
 		const historySpy = jest.spyOn(history, "push").mockImplementation();
 
+		await waitFor(async () => {
+			expect(getByTestId("PluginManualInstallModal__submit-button")).not.toBeDisabled();
+		});
+
 		act(() => {
 			fireEvent.click(getByTestId("PluginManualInstallModal__submit-button"));
 		});
@@ -279,7 +283,7 @@ describe("PluginManager", () => {
 		await waitFor(() => expect(historySpy).toHaveBeenCalledWith(redirectUrl));
 
 		historySpy.mockRestore();
-		profile.settings().set(ProfileSetting.AdvancedMode, false);
+		profile.settings().set(Contracts.ProfileSetting.AdvancedMode, false);
 	});
 
 	it.skip("should install a plugin from other category", async () => {

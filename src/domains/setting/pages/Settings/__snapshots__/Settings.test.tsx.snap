@@ -455,7 +455,7 @@ exports[`Settings should change a password 1`] = `
                         class="text-theme-secondary-text"
                         data-testid="header__subtitle"
                       >
-                        Change the password used to access your profile below.
+                        Change the password used to secure your Profile below.
                       </div>
                     </div>
                   </div>
@@ -468,7 +468,7 @@ exports[`Settings should change a password 1`] = `
                       class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
                     >
                       <label
-                        class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
+                        class="flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
                         data-testid="FormLabel"
                         for="currentPassword"
                       >
@@ -520,7 +520,7 @@ exports[`Settings should change a password 1`] = `
                       class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
                     >
                       <label
-                        class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
+                        class="flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
                         data-testid="FormLabel"
                         for="password"
                       >
@@ -572,7 +572,7 @@ exports[`Settings should change a password 1`] = `
                       class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
                     >
                       <label
-                        class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
+                        class="flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
                         data-testid="FormLabel"
                         for="confirmPassword"
                       >
@@ -1120,7 +1120,7 @@ exports[`Settings should not update the uploaded avatar when removing focus from
                       <span
                         class="text-sm font-semibold transition-colors duration-100 cursor-default group-hover:text-theme-primary-600 text-theme-secondary-text"
                       >
-                        Profile Image
+                        Select Profile Image
                       </span>
                       <div
                         class="flex flex-row"
@@ -1188,11 +1188,11 @@ exports[`Settings should not update the uploaded avatar when removing focus from
                           class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
                         >
                           <label
-                            class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
+                            class="flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
                             data-testid="FormLabel"
                             for="name"
                           >
-                            Name
+                            Profile Name
                             <div
                               class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
                               data-testid="FormLabel__required"
@@ -1217,7 +1217,7 @@ exports[`Settings should not update the uploaded avatar when removing focus from
                           class="FormField__FormFieldStyled-yeauwd-0 cnlnjc mt-8"
                         >
                           <label
-                            class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
+                            class="flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
                             data-testid="FormLabel"
                             for="passphraseLanguage"
                           >
@@ -1251,12 +1251,12 @@ exports[`Settings should not update the uploaded avatar when removing focus from
                               <div
                                 aria-expanded="false"
                                 aria-haspopup="listbox"
-                                aria-owns="downshift-165-menu"
+                                aria-owns="downshift-201-menu"
                                 role="combobox"
                               >
                                 <label
-                                  for="downshift-164-input"
-                                  id="downshift-165-label"
+                                  for="downshift-200-input"
+                                  id="downshift-201-label"
                                 />
                                 <div
                                   class="Input__InputWrapperStyled-wu99qs-0 vKSQU"
@@ -1266,12 +1266,12 @@ exports[`Settings should not update the uploaded avatar when removing focus from
                                   >
                                     <input
                                       aria-autocomplete="list"
-                                      aria-controls="downshift-165-menu"
-                                      aria-labelledby="downshift-165-label"
+                                      aria-controls="downshift-201-menu"
+                                      aria-labelledby="downshift-201-label"
                                       autocomplete="off"
                                       class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full cursor-default"
                                       data-testid="SelectDropdownInput__input"
-                                      id="downshift-164-input"
+                                      id="downshift-200-input"
                                       name="passphraseLanguage"
                                       placeholder="Select Passphrase Language"
                                       value="English"
@@ -1289,8 +1289,9 @@ exports[`Settings should not update the uploaded avatar when removing focus from
                                     <div
                                       class=""
                                     >
-                                      <span
-                                        class="w-10 pointer-events-none text-theme-secondary-500"
+                                      <div
+                                        class="py-2 px-1 text-theme-secondary-500 flex items-center justify-center"
+                                        data-testid="SelectDropdown__caret"
                                       >
                                         <div
                                           class="sc-bdfBwQ gLRWTb transition-transform "
@@ -1301,14 +1302,14 @@ exports[`Settings should not update the uploaded avatar when removing focus from
                                             caret-down.svg
                                           </svg>
                                         </div>
-                                      </span>
+                                      </div>
                                     </div>
                                   </div>
                                 </div>
                                 <ul
-                                  aria-labelledby="downshift-165-label"
+                                  aria-labelledby="downshift-201-label"
                                   class="styles__SelectOptionsList-b2falt-0 heJAAA"
-                                  id="downshift-165-menu"
+                                  id="downshift-201-menu"
                                   role="listbox"
                                 />
                               </div>
@@ -1319,7 +1320,7 @@ exports[`Settings should not update the uploaded avatar when removing focus from
                           class="FormField__FormFieldStyled-yeauwd-0 cnlnjc mt-8"
                         >
                           <label
-                            class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
+                            class="flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
                             data-testid="FormLabel"
                             for="currency"
                           >
@@ -1353,12 +1354,12 @@ exports[`Settings should not update the uploaded avatar when removing focus from
                               <div
                                 aria-expanded="false"
                                 aria-haspopup="listbox"
-                                aria-owns="downshift-167-menu"
+                                aria-owns="downshift-203-menu"
                                 role="combobox"
                               >
                                 <label
-                                  for="downshift-166-input"
-                                  id="downshift-167-label"
+                                  for="downshift-202-input"
+                                  id="downshift-203-label"
                                 />
                                 <div
                                   class="Input__InputWrapperStyled-wu99qs-0 vKSQU"
@@ -1368,12 +1369,12 @@ exports[`Settings should not update the uploaded avatar when removing focus from
                                   >
                                     <input
                                       aria-autocomplete="list"
-                                      aria-controls="downshift-167-menu"
-                                      aria-labelledby="downshift-167-label"
+                                      aria-controls="downshift-203-menu"
+                                      aria-labelledby="downshift-203-label"
                                       autocomplete="off"
                                       class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full cursor-default"
                                       data-testid="SelectDropdownInput__input"
-                                      id="downshift-166-input"
+                                      id="downshift-202-input"
                                       name="currency"
                                       placeholder="Select Currency"
                                       value="BTC (Ƀ)"
@@ -1391,8 +1392,9 @@ exports[`Settings should not update the uploaded avatar when removing focus from
                                     <div
                                       class=""
                                     >
-                                      <span
-                                        class="w-10 pointer-events-none text-theme-secondary-500"
+                                      <div
+                                        class="py-2 px-1 text-theme-secondary-500 flex items-center justify-center"
+                                        data-testid="SelectDropdown__caret"
                                       >
                                         <div
                                           class="sc-bdfBwQ gLRWTb transition-transform "
@@ -1403,14 +1405,14 @@ exports[`Settings should not update the uploaded avatar when removing focus from
                                             caret-down.svg
                                           </svg>
                                         </div>
-                                      </span>
+                                      </div>
                                     </div>
                                   </div>
                                 </div>
                                 <ul
-                                  aria-labelledby="downshift-167-label"
+                                  aria-labelledby="downshift-203-label"
                                   class="styles__SelectOptionsList-b2falt-0 heJAAA"
-                                  id="downshift-167-menu"
+                                  id="downshift-203-menu"
                                   role="listbox"
                                 />
                               </div>
@@ -1425,7 +1427,7 @@ exports[`Settings should not update the uploaded avatar when removing focus from
                           class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
                         >
                           <label
-                            class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
+                            class="flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
                             data-testid="FormLabel"
                             for="language"
                           >
@@ -1459,12 +1461,12 @@ exports[`Settings should not update the uploaded avatar when removing focus from
                               <div
                                 aria-expanded="false"
                                 aria-haspopup="listbox"
-                                aria-owns="downshift-169-menu"
+                                aria-owns="downshift-205-menu"
                                 role="combobox"
                               >
                                 <label
-                                  for="downshift-168-input"
-                                  id="downshift-169-label"
+                                  for="downshift-204-input"
+                                  id="downshift-205-label"
                                 />
                                 <div
                                   class="Input__InputWrapperStyled-wu99qs-0 vKSQU"
@@ -1474,12 +1476,12 @@ exports[`Settings should not update the uploaded avatar when removing focus from
                                   >
                                     <input
                                       aria-autocomplete="list"
-                                      aria-controls="downshift-169-menu"
-                                      aria-labelledby="downshift-169-label"
+                                      aria-controls="downshift-205-menu"
+                                      aria-labelledby="downshift-205-label"
                                       autocomplete="off"
                                       class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full cursor-default"
                                       data-testid="SelectDropdownInput__input"
-                                      id="downshift-168-input"
+                                      id="downshift-204-input"
                                       name="language"
                                       placeholder="Select Language"
                                       value="English"
@@ -1497,8 +1499,9 @@ exports[`Settings should not update the uploaded avatar when removing focus from
                                     <div
                                       class=""
                                     >
-                                      <span
-                                        class="w-10 pointer-events-none text-theme-secondary-500"
+                                      <div
+                                        class="py-2 px-1 text-theme-secondary-500 flex items-center justify-center"
+                                        data-testid="SelectDropdown__caret"
                                       >
                                         <div
                                           class="sc-bdfBwQ gLRWTb transition-transform "
@@ -1509,14 +1512,14 @@ exports[`Settings should not update the uploaded avatar when removing focus from
                                             caret-down.svg
                                           </svg>
                                         </div>
-                                      </span>
+                                      </div>
                                     </div>
                                   </div>
                                 </div>
                                 <ul
-                                  aria-labelledby="downshift-169-label"
+                                  aria-labelledby="downshift-205-label"
                                   class="styles__SelectOptionsList-b2falt-0 heJAAA"
-                                  id="downshift-169-menu"
+                                  id="downshift-205-menu"
                                   role="listbox"
                                 />
                               </div>
@@ -1527,11 +1530,11 @@ exports[`Settings should not update the uploaded avatar when removing focus from
                           class="FormField__FormFieldStyled-yeauwd-0 cnlnjc mt-8"
                         >
                           <label
-                            class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
+                            class="flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
                             data-testid="FormLabel"
                             for="marketProvider"
                           >
-                            Market Provider
+                            Price Source
                             <div
                               class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
                               data-testid="FormLabel__required"
@@ -1561,12 +1564,12 @@ exports[`Settings should not update the uploaded avatar when removing focus from
                               <div
                                 aria-expanded="false"
                                 aria-haspopup="listbox"
-                                aria-owns="downshift-171-menu"
+                                aria-owns="downshift-207-menu"
                                 role="combobox"
                               >
                                 <label
-                                  for="downshift-170-input"
-                                  id="downshift-171-label"
+                                  for="downshift-206-input"
+                                  id="downshift-207-label"
                                 />
                                 <div
                                   class="Input__InputWrapperStyled-wu99qs-0 vKSQU"
@@ -1576,14 +1579,14 @@ exports[`Settings should not update the uploaded avatar when removing focus from
                                   >
                                     <input
                                       aria-autocomplete="list"
-                                      aria-controls="downshift-171-menu"
-                                      aria-labelledby="downshift-171-label"
+                                      aria-controls="downshift-207-menu"
+                                      aria-labelledby="downshift-207-label"
                                       autocomplete="off"
                                       class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full cursor-default"
                                       data-testid="SelectDropdownInput__input"
-                                      id="downshift-170-input"
+                                      id="downshift-206-input"
                                       name="marketProvider"
-                                      placeholder="Select Market Provider"
+                                      placeholder="Select Price Source"
                                       value="CryptoCompare"
                                     />
                                     <span
@@ -1599,8 +1602,9 @@ exports[`Settings should not update the uploaded avatar when removing focus from
                                     <div
                                       class=""
                                     >
-                                      <span
-                                        class="w-10 pointer-events-none text-theme-secondary-500"
+                                      <div
+                                        class="py-2 px-1 text-theme-secondary-500 flex items-center justify-center"
+                                        data-testid="SelectDropdown__caret"
                                       >
                                         <div
                                           class="sc-bdfBwQ gLRWTb transition-transform "
@@ -1611,14 +1615,14 @@ exports[`Settings should not update the uploaded avatar when removing focus from
                                             caret-down.svg
                                           </svg>
                                         </div>
-                                      </span>
+                                      </div>
                                     </div>
                                   </div>
                                 </div>
                                 <ul
-                                  aria-labelledby="downshift-171-label"
+                                  aria-labelledby="downshift-207-label"
                                   class="styles__SelectOptionsList-b2falt-0 heJAAA"
-                                  id="downshift-171-menu"
+                                  id="downshift-207-menu"
                                   role="listbox"
                                 />
                               </div>
@@ -1629,7 +1633,7 @@ exports[`Settings should not update the uploaded avatar when removing focus from
                           class="FormField__FormFieldStyled-yeauwd-0 cnlnjc mt-8"
                         >
                           <label
-                            class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
+                            class="flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
                             data-testid="FormLabel"
                             for="timeFormat"
                           >
@@ -1663,12 +1667,12 @@ exports[`Settings should not update the uploaded avatar when removing focus from
                               <div
                                 aria-expanded="false"
                                 aria-haspopup="listbox"
-                                aria-owns="downshift-173-menu"
+                                aria-owns="downshift-209-menu"
                                 role="combobox"
                               >
                                 <label
-                                  for="downshift-172-input"
-                                  id="downshift-173-label"
+                                  for="downshift-208-input"
+                                  id="downshift-209-label"
                                 />
                                 <div
                                   class="Input__InputWrapperStyled-wu99qs-0 vKSQU"
@@ -1678,12 +1682,12 @@ exports[`Settings should not update the uploaded avatar when removing focus from
                                   >
                                     <input
                                       aria-autocomplete="list"
-                                      aria-controls="downshift-173-menu"
-                                      aria-labelledby="downshift-173-label"
+                                      aria-controls="downshift-209-menu"
+                                      aria-labelledby="downshift-209-label"
                                       autocomplete="off"
                                       class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full cursor-default"
                                       data-testid="SelectDropdownInput__input"
-                                      id="downshift-172-input"
+                                      id="downshift-208-input"
                                       name="timeFormat"
                                       placeholder="Select Time Format"
                                       value="12h"
@@ -1701,8 +1705,9 @@ exports[`Settings should not update the uploaded avatar when removing focus from
                                     <div
                                       class=""
                                     >
-                                      <span
-                                        class="w-10 pointer-events-none text-theme-secondary-500"
+                                      <div
+                                        class="py-2 px-1 text-theme-secondary-500 flex items-center justify-center"
+                                        data-testid="SelectDropdown__caret"
                                       >
                                         <div
                                           class="sc-bdfBwQ gLRWTb transition-transform "
@@ -1713,14 +1718,14 @@ exports[`Settings should not update the uploaded avatar when removing focus from
                                             caret-down.svg
                                           </svg>
                                         </div>
-                                      </span>
+                                      </div>
                                     </div>
                                   </div>
                                 </div>
                                 <ul
-                                  aria-labelledby="downshift-173-label"
+                                  aria-labelledby="downshift-209-label"
                                   class="styles__SelectOptionsList-b2falt-0 heJAAA"
-                                  id="downshift-173-menu"
+                                  id="downshift-209-menu"
                                   role="listbox"
                                 />
                               </div>
@@ -1786,7 +1791,7 @@ exports[`Settings should not update the uploaded avatar when removing focus from
                               class="text-sm font-medium text-theme-secondary-500 dark:text-theme-secondary-700"
                               data-testid="list-divided-item__label--description"
                             >
-                              This protection will protect your money from unwanted Screenshot you PC.
+                              When enabled, wallet application is hidden from screen-capturing software.
                             </span>
                           </div>
                         </div>
@@ -1835,7 +1840,7 @@ exports[`Settings should not update the uploaded avatar when removing focus from
                               class="text-sm font-medium text-theme-secondary-500 dark:text-theme-secondary-700"
                               data-testid="list-divided-item__label--description"
                             >
-                              Allows for installing files from direct URLs. You assume any associated risk by enabling this feature.
+                              Allows installations from direct URLs. Enable at your own risk.
                             </span>
                           </div>
                         </div>
@@ -1869,11 +1874,11 @@ exports[`Settings should not update the uploaded avatar when removing focus from
                             class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
                           >
                             <label
-                              class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
+                              class="flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
                               data-testid="FormLabel"
                               for="automaticSignOutPeriod"
                             >
-                              Automatic Sign Out Period
+                              Auto Log-Off
                               <div
                                 class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
                                 data-testid="FormLabel__required"
@@ -1903,12 +1908,12 @@ exports[`Settings should not update the uploaded avatar when removing focus from
                                 <div
                                   aria-expanded="false"
                                   aria-haspopup="listbox"
-                                  aria-owns="downshift-175-menu"
+                                  aria-owns="downshift-211-menu"
                                   role="combobox"
                                 >
                                   <label
-                                    for="downshift-174-input"
-                                    id="downshift-175-label"
+                                    for="downshift-210-input"
+                                    id="downshift-211-label"
                                   />
                                   <div
                                     class="Input__InputWrapperStyled-wu99qs-0 vKSQU"
@@ -1918,14 +1923,14 @@ exports[`Settings should not update the uploaded avatar when removing focus from
                                     >
                                       <input
                                         aria-autocomplete="list"
-                                        aria-controls="downshift-175-menu"
-                                        aria-labelledby="downshift-175-label"
+                                        aria-controls="downshift-211-menu"
+                                        aria-labelledby="downshift-211-label"
                                         autocomplete="off"
                                         class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full cursor-default"
                                         data-testid="SelectDropdownInput__input"
-                                        id="downshift-174-input"
+                                        id="downshift-210-input"
                                         name="automaticSignOutPeriod"
-                                        placeholder="Select Automatic Sign Out Period"
+                                        placeholder="Select Auto Log-Off"
                                         value="1 minute"
                                       />
                                       <span
@@ -1941,8 +1946,9 @@ exports[`Settings should not update the uploaded avatar when removing focus from
                                       <div
                                         class=""
                                       >
-                                        <span
-                                          class="w-10 pointer-events-none text-theme-secondary-500"
+                                        <div
+                                          class="py-2 px-1 text-theme-secondary-500 flex items-center justify-center"
+                                          data-testid="SelectDropdown__caret"
                                         >
                                           <div
                                             class="sc-bdfBwQ gLRWTb transition-transform "
@@ -1953,14 +1959,14 @@ exports[`Settings should not update the uploaded avatar when removing focus from
                                               caret-down.svg
                                             </svg>
                                           </div>
-                                        </span>
+                                        </div>
                                       </div>
                                     </div>
                                   </div>
                                   <ul
-                                    aria-labelledby="downshift-175-label"
+                                    aria-labelledby="downshift-211-label"
                                     class="styles__SelectOptionsList-b2falt-0 heJAAA"
-                                    id="downshift-175-menu"
+                                    id="downshift-211-menu"
                                     role="listbox"
                                   />
                                 </div>
@@ -2001,7 +2007,7 @@ exports[`Settings should not update the uploaded avatar when removing focus from
                                 class="text-lg font-semibold text-theme-secondary-700 dark:text-theme-secondary-200"
                                 data-testid="list-divided-item__label"
                               >
-                                Development Networks
+                                Development and Test Networks
                               </span>
                               <span>
                                 <label
@@ -2028,7 +2034,7 @@ exports[`Settings should not update the uploaded avatar when removing focus from
                               class="text-sm font-medium text-theme-secondary-500 dark:text-theme-secondary-700"
                               data-testid="list-divided-item__label--description"
                             >
-                              When enabled, allows application to add development and test networks.
+                              To create or import wallets from development and test networks, you must first enable this feature.
                             </span>
                           </div>
                         </div>
@@ -2176,7 +2182,7 @@ exports[`Settings should not update the uploaded avatar when removing focus from
                               class="text-sm font-medium text-theme-secondary-500 dark:text-theme-secondary-700"
                               data-testid="list-divided-item__label--description"
                             >
-                              When enabled, changes to a dark, high contrast theme.
+                              Enables a dark, high contrast scheme.
                             </span>
                           </div>
                         </div>
@@ -2212,6 +2218,7 @@ exports[`Settings should not update the uploaded avatar when removing focus from
                     >
                       <button
                         class="OriginalButton__StyledButton-sc-1y2wptt-0 hsoUax"
+                        data-testid="General-settings__cancel-button"
                         type="button"
                       >
                         <div
@@ -2716,7 +2723,7 @@ exports[`Settings should render 1`] = `
                       <span
                         class="text-sm font-semibold transition-colors duration-100 cursor-default group-hover:text-theme-primary-600 text-theme-secondary-text"
                       >
-                        Profile Image
+                        Select Profile Image
                       </span>
                       <div
                         class="flex flex-row"
@@ -2770,11 +2777,11 @@ exports[`Settings should render 1`] = `
                           class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
                         >
                           <label
-                            class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
+                            class="flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
                             data-testid="FormLabel"
                             for="name"
                           >
-                            Name
+                            Profile Name
                             <div
                               class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
                               data-testid="FormLabel__required"
@@ -2799,7 +2806,7 @@ exports[`Settings should render 1`] = `
                           class="FormField__FormFieldStyled-yeauwd-0 cnlnjc mt-8"
                         >
                           <label
-                            class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
+                            class="flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
                             data-testid="FormLabel"
                             for="passphraseLanguage"
                           >
@@ -2833,12 +2840,12 @@ exports[`Settings should render 1`] = `
                               <div
                                 aria-expanded="false"
                                 aria-haspopup="listbox"
-                                aria-owns="downshift-1-menu"
+                                aria-owns="downshift-53-menu"
                                 role="combobox"
                               >
                                 <label
-                                  for="downshift-0-input"
-                                  id="downshift-1-label"
+                                  for="downshift-52-input"
+                                  id="downshift-53-label"
                                 />
                                 <div
                                   class="Input__InputWrapperStyled-wu99qs-0 vKSQU"
@@ -2848,12 +2855,12 @@ exports[`Settings should render 1`] = `
                                   >
                                     <input
                                       aria-autocomplete="list"
-                                      aria-controls="downshift-1-menu"
-                                      aria-labelledby="downshift-1-label"
+                                      aria-controls="downshift-53-menu"
+                                      aria-labelledby="downshift-53-label"
                                       autocomplete="off"
                                       class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full cursor-default"
                                       data-testid="SelectDropdownInput__input"
-                                      id="downshift-0-input"
+                                      id="downshift-52-input"
                                       name="passphraseLanguage"
                                       placeholder="Select Passphrase Language"
                                       value="English"
@@ -2871,8 +2878,9 @@ exports[`Settings should render 1`] = `
                                     <div
                                       class=""
                                     >
-                                      <span
-                                        class="w-10 pointer-events-none text-theme-secondary-500"
+                                      <div
+                                        class="py-2 px-1 text-theme-secondary-500 flex items-center justify-center"
+                                        data-testid="SelectDropdown__caret"
                                       >
                                         <div
                                           class="sc-bdfBwQ gLRWTb transition-transform "
@@ -2883,14 +2891,14 @@ exports[`Settings should render 1`] = `
                                             caret-down.svg
                                           </svg>
                                         </div>
-                                      </span>
+                                      </div>
                                     </div>
                                   </div>
                                 </div>
                                 <ul
-                                  aria-labelledby="downshift-1-label"
+                                  aria-labelledby="downshift-53-label"
                                   class="styles__SelectOptionsList-b2falt-0 heJAAA"
-                                  id="downshift-1-menu"
+                                  id="downshift-53-menu"
                                   role="listbox"
                                 />
                               </div>
@@ -2901,7 +2909,7 @@ exports[`Settings should render 1`] = `
                           class="FormField__FormFieldStyled-yeauwd-0 cnlnjc mt-8"
                         >
                           <label
-                            class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
+                            class="flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
                             data-testid="FormLabel"
                             for="currency"
                           >
@@ -2935,12 +2943,12 @@ exports[`Settings should render 1`] = `
                               <div
                                 aria-expanded="false"
                                 aria-haspopup="listbox"
-                                aria-owns="downshift-3-menu"
+                                aria-owns="downshift-55-menu"
                                 role="combobox"
                               >
                                 <label
-                                  for="downshift-2-input"
-                                  id="downshift-3-label"
+                                  for="downshift-54-input"
+                                  id="downshift-55-label"
                                 />
                                 <div
                                   class="Input__InputWrapperStyled-wu99qs-0 vKSQU"
@@ -2950,12 +2958,12 @@ exports[`Settings should render 1`] = `
                                   >
                                     <input
                                       aria-autocomplete="list"
-                                      aria-controls="downshift-3-menu"
-                                      aria-labelledby="downshift-3-label"
+                                      aria-controls="downshift-55-menu"
+                                      aria-labelledby="downshift-55-label"
                                       autocomplete="off"
                                       class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full cursor-default"
                                       data-testid="SelectDropdownInput__input"
-                                      id="downshift-2-input"
+                                      id="downshift-54-input"
                                       name="currency"
                                       placeholder="Select Currency"
                                       value="BTC (Ƀ)"
@@ -2973,8 +2981,9 @@ exports[`Settings should render 1`] = `
                                     <div
                                       class=""
                                     >
-                                      <span
-                                        class="w-10 pointer-events-none text-theme-secondary-500"
+                                      <div
+                                        class="py-2 px-1 text-theme-secondary-500 flex items-center justify-center"
+                                        data-testid="SelectDropdown__caret"
                                       >
                                         <div
                                           class="sc-bdfBwQ gLRWTb transition-transform "
@@ -2985,14 +2994,14 @@ exports[`Settings should render 1`] = `
                                             caret-down.svg
                                           </svg>
                                         </div>
-                                      </span>
+                                      </div>
                                     </div>
                                   </div>
                                 </div>
                                 <ul
-                                  aria-labelledby="downshift-3-label"
+                                  aria-labelledby="downshift-55-label"
                                   class="styles__SelectOptionsList-b2falt-0 heJAAA"
-                                  id="downshift-3-menu"
+                                  id="downshift-55-menu"
                                   role="listbox"
                                 />
                               </div>
@@ -3007,7 +3016,7 @@ exports[`Settings should render 1`] = `
                           class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
                         >
                           <label
-                            class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
+                            class="flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
                             data-testid="FormLabel"
                             for="language"
                           >
@@ -3041,12 +3050,12 @@ exports[`Settings should render 1`] = `
                               <div
                                 aria-expanded="false"
                                 aria-haspopup="listbox"
-                                aria-owns="downshift-5-menu"
+                                aria-owns="downshift-57-menu"
                                 role="combobox"
                               >
                                 <label
-                                  for="downshift-4-input"
-                                  id="downshift-5-label"
+                                  for="downshift-56-input"
+                                  id="downshift-57-label"
                                 />
                                 <div
                                   class="Input__InputWrapperStyled-wu99qs-0 vKSQU"
@@ -3056,12 +3065,12 @@ exports[`Settings should render 1`] = `
                                   >
                                     <input
                                       aria-autocomplete="list"
-                                      aria-controls="downshift-5-menu"
-                                      aria-labelledby="downshift-5-label"
+                                      aria-controls="downshift-57-menu"
+                                      aria-labelledby="downshift-57-label"
                                       autocomplete="off"
                                       class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full cursor-default"
                                       data-testid="SelectDropdownInput__input"
-                                      id="downshift-4-input"
+                                      id="downshift-56-input"
                                       name="language"
                                       placeholder="Select Language"
                                       value="English"
@@ -3079,8 +3088,9 @@ exports[`Settings should render 1`] = `
                                     <div
                                       class=""
                                     >
-                                      <span
-                                        class="w-10 pointer-events-none text-theme-secondary-500"
+                                      <div
+                                        class="py-2 px-1 text-theme-secondary-500 flex items-center justify-center"
+                                        data-testid="SelectDropdown__caret"
                                       >
                                         <div
                                           class="sc-bdfBwQ gLRWTb transition-transform "
@@ -3091,14 +3101,14 @@ exports[`Settings should render 1`] = `
                                             caret-down.svg
                                           </svg>
                                         </div>
-                                      </span>
+                                      </div>
                                     </div>
                                   </div>
                                 </div>
                                 <ul
-                                  aria-labelledby="downshift-5-label"
+                                  aria-labelledby="downshift-57-label"
                                   class="styles__SelectOptionsList-b2falt-0 heJAAA"
-                                  id="downshift-5-menu"
+                                  id="downshift-57-menu"
                                   role="listbox"
                                 />
                               </div>
@@ -3109,11 +3119,11 @@ exports[`Settings should render 1`] = `
                           class="FormField__FormFieldStyled-yeauwd-0 cnlnjc mt-8"
                         >
                           <label
-                            class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
+                            class="flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
                             data-testid="FormLabel"
                             for="marketProvider"
                           >
-                            Market Provider
+                            Price Source
                             <div
                               class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
                               data-testid="FormLabel__required"
@@ -3143,12 +3153,12 @@ exports[`Settings should render 1`] = `
                               <div
                                 aria-expanded="false"
                                 aria-haspopup="listbox"
-                                aria-owns="downshift-7-menu"
+                                aria-owns="downshift-59-menu"
                                 role="combobox"
                               >
                                 <label
-                                  for="downshift-6-input"
-                                  id="downshift-7-label"
+                                  for="downshift-58-input"
+                                  id="downshift-59-label"
                                 />
                                 <div
                                   class="Input__InputWrapperStyled-wu99qs-0 vKSQU"
@@ -3158,14 +3168,14 @@ exports[`Settings should render 1`] = `
                                   >
                                     <input
                                       aria-autocomplete="list"
-                                      aria-controls="downshift-7-menu"
-                                      aria-labelledby="downshift-7-label"
+                                      aria-controls="downshift-59-menu"
+                                      aria-labelledby="downshift-59-label"
                                       autocomplete="off"
                                       class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full cursor-default"
                                       data-testid="SelectDropdownInput__input"
-                                      id="downshift-6-input"
+                                      id="downshift-58-input"
                                       name="marketProvider"
-                                      placeholder="Select Market Provider"
+                                      placeholder="Select Price Source"
                                       value="CryptoCompare"
                                     />
                                     <span
@@ -3181,8 +3191,9 @@ exports[`Settings should render 1`] = `
                                     <div
                                       class=""
                                     >
-                                      <span
-                                        class="w-10 pointer-events-none text-theme-secondary-500"
+                                      <div
+                                        class="py-2 px-1 text-theme-secondary-500 flex items-center justify-center"
+                                        data-testid="SelectDropdown__caret"
                                       >
                                         <div
                                           class="sc-bdfBwQ gLRWTb transition-transform "
@@ -3193,14 +3204,14 @@ exports[`Settings should render 1`] = `
                                             caret-down.svg
                                           </svg>
                                         </div>
-                                      </span>
+                                      </div>
                                     </div>
                                   </div>
                                 </div>
                                 <ul
-                                  aria-labelledby="downshift-7-label"
+                                  aria-labelledby="downshift-59-label"
                                   class="styles__SelectOptionsList-b2falt-0 heJAAA"
-                                  id="downshift-7-menu"
+                                  id="downshift-59-menu"
                                   role="listbox"
                                 />
                               </div>
@@ -3211,7 +3222,7 @@ exports[`Settings should render 1`] = `
                           class="FormField__FormFieldStyled-yeauwd-0 cnlnjc mt-8"
                         >
                           <label
-                            class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
+                            class="flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
                             data-testid="FormLabel"
                             for="timeFormat"
                           >
@@ -3245,12 +3256,12 @@ exports[`Settings should render 1`] = `
                               <div
                                 aria-expanded="false"
                                 aria-haspopup="listbox"
-                                aria-owns="downshift-9-menu"
+                                aria-owns="downshift-61-menu"
                                 role="combobox"
                               >
                                 <label
-                                  for="downshift-8-input"
-                                  id="downshift-9-label"
+                                  for="downshift-60-input"
+                                  id="downshift-61-label"
                                 />
                                 <div
                                   class="Input__InputWrapperStyled-wu99qs-0 vKSQU"
@@ -3260,12 +3271,12 @@ exports[`Settings should render 1`] = `
                                   >
                                     <input
                                       aria-autocomplete="list"
-                                      aria-controls="downshift-9-menu"
-                                      aria-labelledby="downshift-9-label"
+                                      aria-controls="downshift-61-menu"
+                                      aria-labelledby="downshift-61-label"
                                       autocomplete="off"
                                       class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full cursor-default"
                                       data-testid="SelectDropdownInput__input"
-                                      id="downshift-8-input"
+                                      id="downshift-60-input"
                                       name="timeFormat"
                                       placeholder="Select Time Format"
                                       value="12h"
@@ -3283,8 +3294,9 @@ exports[`Settings should render 1`] = `
                                     <div
                                       class=""
                                     >
-                                      <span
-                                        class="w-10 pointer-events-none text-theme-secondary-500"
+                                      <div
+                                        class="py-2 px-1 text-theme-secondary-500 flex items-center justify-center"
+                                        data-testid="SelectDropdown__caret"
                                       >
                                         <div
                                           class="sc-bdfBwQ gLRWTb transition-transform "
@@ -3295,14 +3307,14 @@ exports[`Settings should render 1`] = `
                                             caret-down.svg
                                           </svg>
                                         </div>
-                                      </span>
+                                      </div>
                                     </div>
                                   </div>
                                 </div>
                                 <ul
-                                  aria-labelledby="downshift-9-label"
+                                  aria-labelledby="downshift-61-label"
                                   class="styles__SelectOptionsList-b2falt-0 heJAAA"
-                                  id="downshift-9-menu"
+                                  id="downshift-61-menu"
                                   role="listbox"
                                 />
                               </div>
@@ -3368,7 +3380,7 @@ exports[`Settings should render 1`] = `
                               class="text-sm font-medium text-theme-secondary-500 dark:text-theme-secondary-700"
                               data-testid="list-divided-item__label--description"
                             >
-                              This protection will protect your money from unwanted Screenshot you PC.
+                              When enabled, wallet application is hidden from screen-capturing software.
                             </span>
                           </div>
                         </div>
@@ -3417,7 +3429,7 @@ exports[`Settings should render 1`] = `
                               class="text-sm font-medium text-theme-secondary-500 dark:text-theme-secondary-700"
                               data-testid="list-divided-item__label--description"
                             >
-                              Allows for installing files from direct URLs. You assume any associated risk by enabling this feature.
+                              Allows installations from direct URLs. Enable at your own risk.
                             </span>
                           </div>
                         </div>
@@ -3451,11 +3463,11 @@ exports[`Settings should render 1`] = `
                             class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
                           >
                             <label
-                              class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
+                              class="flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
                               data-testid="FormLabel"
                               for="automaticSignOutPeriod"
                             >
-                              Automatic Sign Out Period
+                              Auto Log-Off
                               <div
                                 class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
                                 data-testid="FormLabel__required"
@@ -3485,12 +3497,12 @@ exports[`Settings should render 1`] = `
                                 <div
                                   aria-expanded="false"
                                   aria-haspopup="listbox"
-                                  aria-owns="downshift-11-menu"
+                                  aria-owns="downshift-63-menu"
                                   role="combobox"
                                 >
                                   <label
-                                    for="downshift-10-input"
-                                    id="downshift-11-label"
+                                    for="downshift-62-input"
+                                    id="downshift-63-label"
                                   />
                                   <div
                                     class="Input__InputWrapperStyled-wu99qs-0 vKSQU"
@@ -3500,14 +3512,14 @@ exports[`Settings should render 1`] = `
                                     >
                                       <input
                                         aria-autocomplete="list"
-                                        aria-controls="downshift-11-menu"
-                                        aria-labelledby="downshift-11-label"
+                                        aria-controls="downshift-63-menu"
+                                        aria-labelledby="downshift-63-label"
                                         autocomplete="off"
                                         class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full cursor-default"
                                         data-testid="SelectDropdownInput__input"
-                                        id="downshift-10-input"
+                                        id="downshift-62-input"
                                         name="automaticSignOutPeriod"
-                                        placeholder="Select Automatic Sign Out Period"
+                                        placeholder="Select Auto Log-Off"
                                         value="1 minute"
                                       />
                                       <span
@@ -3523,8 +3535,9 @@ exports[`Settings should render 1`] = `
                                       <div
                                         class=""
                                       >
-                                        <span
-                                          class="w-10 pointer-events-none text-theme-secondary-500"
+                                        <div
+                                          class="py-2 px-1 text-theme-secondary-500 flex items-center justify-center"
+                                          data-testid="SelectDropdown__caret"
                                         >
                                           <div
                                             class="sc-bdfBwQ gLRWTb transition-transform "
@@ -3535,14 +3548,14 @@ exports[`Settings should render 1`] = `
                                               caret-down.svg
                                             </svg>
                                           </div>
-                                        </span>
+                                        </div>
                                       </div>
                                     </div>
                                   </div>
                                   <ul
-                                    aria-labelledby="downshift-11-label"
+                                    aria-labelledby="downshift-63-label"
                                     class="styles__SelectOptionsList-b2falt-0 heJAAA"
-                                    id="downshift-11-menu"
+                                    id="downshift-63-menu"
                                     role="listbox"
                                   />
                                 </div>
@@ -3583,7 +3596,7 @@ exports[`Settings should render 1`] = `
                                 class="text-lg font-semibold text-theme-secondary-700 dark:text-theme-secondary-200"
                                 data-testid="list-divided-item__label"
                               >
-                                Development Networks
+                                Development and Test Networks
                               </span>
                               <span>
                                 <label
@@ -3610,7 +3623,7 @@ exports[`Settings should render 1`] = `
                               class="text-sm font-medium text-theme-secondary-500 dark:text-theme-secondary-700"
                               data-testid="list-divided-item__label--description"
                             >
-                              When enabled, allows application to add development and test networks.
+                              To create or import wallets from development and test networks, you must first enable this feature.
                             </span>
                           </div>
                         </div>
@@ -3758,7 +3771,7 @@ exports[`Settings should render 1`] = `
                               class="text-sm font-medium text-theme-secondary-500 dark:text-theme-secondary-700"
                               data-testid="list-divided-item__label--description"
                             >
-                              When enabled, changes to a dark, high contrast theme.
+                              Enables a dark, high contrast scheme.
                             </span>
                           </div>
                         </div>
@@ -3794,6 +3807,7 @@ exports[`Settings should render 1`] = `
                     >
                       <button
                         class="OriginalButton__StyledButton-sc-1y2wptt-0 hsoUax"
+                        data-testid="General-settings__cancel-button"
                         type="button"
                       >
                         <div
@@ -4876,7 +4890,7 @@ exports[`Settings should render password settings 1`] = `
                         class="text-theme-secondary-text"
                         data-testid="header__subtitle"
                       >
-                        Provide a password below to secure your user profile.
+                        Set your password below to secure your Profile.
                       </div>
                     </div>
                   </div>
@@ -4889,7 +4903,7 @@ exports[`Settings should render password settings 1`] = `
                       class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
                     >
                       <label
-                        class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
+                        class="flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
                         data-testid="FormLabel"
                         for="password"
                       >
@@ -4941,7 +4955,7 @@ exports[`Settings should render password settings 1`] = `
                       class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
                     >
                       <label
-                        class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
+                        class="flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
                         data-testid="FormLabel"
                         for="confirmPassword"
                       >
@@ -5469,7 +5483,7 @@ exports[`Settings should render peer settings 1`] = `
                       class="text-theme-secondary-text"
                       data-testid="header__subtitle"
                     >
-                      Customize your network peer settings.
+                      Manage your peer settings for your wallet.
                     </div>
                   </div>
                 </div>
@@ -5528,7 +5542,7 @@ exports[`Settings should render peer settings 1`] = `
                             class="text-sm font-medium text-theme-secondary-500 dark:text-theme-secondary-700"
                             data-testid="list-divided-item__label--description"
                           >
-                            Toggle to send transactions to multiple network peers. (Recommended)
+                            Broadcasts your transactions to mulitple peers for additional reliability.
                           </span>
                         </div>
                       </div>
@@ -5577,9 +5591,7 @@ exports[`Settings should render peer settings 1`] = `
                             class="text-sm font-medium text-theme-secondary-500 dark:text-theme-secondary-700"
                             data-testid="list-divided-item__label--description"
                           >
-                            Customize your individual peers by network. 
-                            <br />
-                             Note: Only use trusted peers. Using an unknown peer may put your funds at risk.
+                            Manages your list of custom peers for Blockchain networks.
                           </span>
                         </div>
                       </div>
@@ -6071,7 +6083,7 @@ exports[`Settings should render plugin settings 1`] = `
                       class="text-theme-secondary-text"
                       data-testid="header__subtitle"
                     >
-                      Customize your wallet to suit your needs.
+                      Manage your Plugin settings below.
                     </div>
                   </div>
                 </div>
@@ -6126,7 +6138,7 @@ exports[`Settings should render plugin settings 1`] = `
                             class="text-sm font-medium text-theme-secondary-500 dark:text-theme-secondary-700"
                             data-testid="list-divided-item__label--description"
                           >
-                            Turn this feature on, you can upload plugins to your wallet from third-party sources.
+                            Allows Plugins to be installed from third-party sources.
                           </span>
                         </div>
                       </div>
@@ -6141,11 +6153,11 @@ exports[`Settings should render plugin settings 1`] = `
                             class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
                           >
                             <label
-                              class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
+                              class="flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
                               data-testid="FormLabel"
                               for="load-plugins"
                             >
-                              Load from
+                              Load plugins from
                               <div
                                 class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
                                 data-testid="FormLabel__required"
@@ -6175,12 +6187,12 @@ exports[`Settings should render plugin settings 1`] = `
                                 <div
                                   aria-expanded="false"
                                   aria-haspopup="listbox"
-                                  aria-owns="downshift-2023-menu"
+                                  aria-owns="downshift-2399-menu"
                                   role="combobox"
                                 >
                                   <label
-                                    for="downshift-2022-input"
-                                    id="downshift-2023-label"
+                                    for="downshift-2398-input"
+                                    id="downshift-2399-label"
                                   />
                                   <div
                                     class="Input__InputWrapperStyled-wu99qs-0 vKSQU"
@@ -6190,12 +6202,12 @@ exports[`Settings should render plugin settings 1`] = `
                                     >
                                       <input
                                         aria-autocomplete="list"
-                                        aria-controls="downshift-2023-menu"
-                                        aria-labelledby="downshift-2023-label"
+                                        aria-controls="downshift-2399-menu"
+                                        aria-labelledby="downshift-2399-label"
                                         autocomplete="off"
                                         class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full cursor-default"
                                         data-testid="SelectDropdownInput__input"
-                                        id="downshift-2022-input"
+                                        id="downshift-2398-input"
                                         name="load-plugins"
                                         placeholder="Select Plugin Source"
                                         value=""
@@ -6207,8 +6219,9 @@ exports[`Settings should render plugin settings 1`] = `
                                       <div
                                         class=""
                                       >
-                                        <span
-                                          class="w-10 pointer-events-none text-theme-secondary-500"
+                                        <div
+                                          class="py-2 px-1 text-theme-secondary-500 flex items-center justify-center"
+                                          data-testid="SelectDropdown__caret"
                                         >
                                           <div
                                             class="sc-bdfBwQ gLRWTb transition-transform "
@@ -6219,14 +6232,14 @@ exports[`Settings should render plugin settings 1`] = `
                                               caret-down.svg
                                             </svg>
                                           </div>
-                                        </span>
+                                        </div>
                                       </div>
                                     </div>
                                   </div>
                                   <ul
-                                    aria-labelledby="downshift-2023-label"
+                                    aria-labelledby="downshift-2399-label"
                                     class="styles__SelectOptionsList-b2falt-0 heJAAA"
-                                    id="downshift-2023-menu"
+                                    id="downshift-2399-menu"
                                     role="listbox"
                                   />
                                 </div>
@@ -6718,7 +6731,7 @@ exports[`Settings should set a password 1`] = `
                         class="text-theme-secondary-text"
                         data-testid="header__subtitle"
                       >
-                        Change the password used to access your profile below.
+                        Change the password used to secure your Profile below.
                       </div>
                     </div>
                   </div>
@@ -6731,7 +6744,7 @@ exports[`Settings should set a password 1`] = `
                       class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
                     >
                       <label
-                        class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
+                        class="flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
                         data-testid="FormLabel"
                         for="currentPassword"
                       >
@@ -6783,7 +6796,7 @@ exports[`Settings should set a password 1`] = `
                       class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
                     >
                       <label
-                        class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
+                        class="flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
                         data-testid="FormLabel"
                         for="password"
                       >
@@ -6835,7 +6848,7 @@ exports[`Settings should set a password 1`] = `
                       class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
                     >
                       <label
-                        class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
+                        class="flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
                         data-testid="FormLabel"
                         for="confirmPassword"
                       >
@@ -7366,7 +7379,7 @@ exports[`Settings should show an error toast if the current password does not ma
                         class="text-theme-secondary-text"
                         data-testid="header__subtitle"
                       >
-                        Change the password used to access your profile below.
+                        Change the password used to secure your Profile below.
                       </div>
                     </div>
                   </div>
@@ -7379,7 +7392,7 @@ exports[`Settings should show an error toast if the current password does not ma
                       class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
                     >
                       <label
-                        class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
+                        class="flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
                         data-testid="FormLabel"
                         for="currentPassword"
                       >
@@ -7431,7 +7444,7 @@ exports[`Settings should show an error toast if the current password does not ma
                       class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
                     >
                       <label
-                        class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
+                        class="flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
                         data-testid="FormLabel"
                         for="password"
                       >
@@ -7483,7 +7496,7 @@ exports[`Settings should show an error toast if the current password does not ma
                       class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
                     >
                       <label
-                        class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
+                        class="flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
                         data-testid="FormLabel"
                         for="confirmPassword"
                       >
@@ -8013,7 +8026,7 @@ exports[`Settings should trigger password confirmation mismatch error 1`] = `
                         class="text-theme-secondary-text"
                         data-testid="header__subtitle"
                       >
-                        Change the password used to access your profile below.
+                        Change the password used to secure your Profile below.
                       </div>
                     </div>
                   </div>
@@ -8026,7 +8039,7 @@ exports[`Settings should trigger password confirmation mismatch error 1`] = `
                       class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
                     >
                       <label
-                        class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
+                        class="flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
                         data-testid="FormLabel"
                         for="currentPassword"
                       >
@@ -8078,7 +8091,7 @@ exports[`Settings should trigger password confirmation mismatch error 1`] = `
                       class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
                     >
                       <label
-                        class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
+                        class="flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
                         data-testid="FormLabel"
                         for="password"
                       >
@@ -8130,7 +8143,7 @@ exports[`Settings should trigger password confirmation mismatch error 1`] = `
                       class="FormField__FormFieldStyled-yeauwd-0 qzrKg flex flex-col space-y-2"
                     >
                       <label
-                        class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
+                        class="flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
                         data-testid="FormLabel"
                         for="confirmPassword"
                       >
@@ -8693,7 +8706,7 @@ exports[`Settings should update profile 1`] = `
                       <span
                         class="text-sm font-semibold transition-colors duration-100 cursor-default group-hover:text-theme-primary-600 text-theme-secondary-text"
                       >
-                        Profile Image
+                        Select Profile Image
                       </span>
                       <div
                         class="flex flex-row"
@@ -8741,11 +8754,11 @@ exports[`Settings should update profile 1`] = `
                           class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
                         >
                           <label
-                            class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
+                            class="flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
                             data-testid="FormLabel"
                             for="name"
                           >
-                            Name
+                            Profile Name
                             <div
                               class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
                               data-testid="FormLabel__required"
@@ -8770,7 +8783,7 @@ exports[`Settings should update profile 1`] = `
                           class="FormField__FormFieldStyled-yeauwd-0 cnlnjc mt-8"
                         >
                           <label
-                            class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
+                            class="flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
                             data-testid="FormLabel"
                             for="passphraseLanguage"
                           >
@@ -8804,12 +8817,12 @@ exports[`Settings should update profile 1`] = `
                               <div
                                 aria-expanded="false"
                                 aria-haspopup="listbox"
-                                aria-owns="downshift-281-menu"
+                                aria-owns="downshift-285-menu"
                                 role="combobox"
                               >
                                 <label
-                                  for="downshift-280-input"
-                                  id="downshift-281-label"
+                                  for="downshift-284-input"
+                                  id="downshift-285-label"
                                 />
                                 <div
                                   class="Input__InputWrapperStyled-wu99qs-0 vKSQU"
@@ -8819,12 +8832,12 @@ exports[`Settings should update profile 1`] = `
                                   >
                                     <input
                                       aria-autocomplete="list"
-                                      aria-controls="downshift-281-menu"
-                                      aria-labelledby="downshift-281-label"
+                                      aria-controls="downshift-285-menu"
+                                      aria-labelledby="downshift-285-label"
                                       autocomplete="off"
                                       class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full cursor-default"
                                       data-testid="SelectDropdownInput__input"
-                                      id="downshift-280-input"
+                                      id="downshift-284-input"
                                       name="passphraseLanguage"
                                       placeholder="Select Passphrase Language"
                                       value="English"
@@ -8842,8 +8855,9 @@ exports[`Settings should update profile 1`] = `
                                     <div
                                       class=""
                                     >
-                                      <span
-                                        class="w-10 pointer-events-none text-theme-secondary-500"
+                                      <div
+                                        class="py-2 px-1 text-theme-secondary-500 flex items-center justify-center"
+                                        data-testid="SelectDropdown__caret"
                                       >
                                         <div
                                           class="sc-bdfBwQ gLRWTb transition-transform "
@@ -8854,14 +8868,14 @@ exports[`Settings should update profile 1`] = `
                                             caret-down.svg
                                           </svg>
                                         </div>
-                                      </span>
+                                      </div>
                                     </div>
                                   </div>
                                 </div>
                                 <ul
-                                  aria-labelledby="downshift-281-label"
+                                  aria-labelledby="downshift-285-label"
                                   class="styles__SelectOptionsList-b2falt-0 heJAAA"
-                                  id="downshift-281-menu"
+                                  id="downshift-285-menu"
                                   role="listbox"
                                 />
                               </div>
@@ -8872,7 +8886,7 @@ exports[`Settings should update profile 1`] = `
                           class="FormField__FormFieldStyled-yeauwd-0 cnlnjc mt-8"
                         >
                           <label
-                            class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
+                            class="flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
                             data-testid="FormLabel"
                             for="currency"
                           >
@@ -8906,12 +8920,12 @@ exports[`Settings should update profile 1`] = `
                               <div
                                 aria-expanded="false"
                                 aria-haspopup="listbox"
-                                aria-owns="downshift-283-menu"
+                                aria-owns="downshift-287-menu"
                                 role="combobox"
                               >
                                 <label
-                                  for="downshift-282-input"
-                                  id="downshift-283-label"
+                                  for="downshift-286-input"
+                                  id="downshift-287-label"
                                 />
                                 <div
                                   class="Input__InputWrapperStyled-wu99qs-0 vKSQU"
@@ -8921,12 +8935,12 @@ exports[`Settings should update profile 1`] = `
                                   >
                                     <input
                                       aria-autocomplete="list"
-                                      aria-controls="downshift-283-menu"
-                                      aria-labelledby="downshift-283-label"
+                                      aria-controls="downshift-287-menu"
+                                      aria-labelledby="downshift-287-label"
                                       autocomplete="off"
                                       class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full cursor-default"
                                       data-testid="SelectDropdownInput__input"
-                                      id="downshift-282-input"
+                                      id="downshift-286-input"
                                       name="currency"
                                       placeholder="Select Currency"
                                       value="BTC (Ƀ)"
@@ -8944,8 +8958,9 @@ exports[`Settings should update profile 1`] = `
                                     <div
                                       class=""
                                     >
-                                      <span
-                                        class="w-10 pointer-events-none text-theme-secondary-500"
+                                      <div
+                                        class="py-2 px-1 text-theme-secondary-500 flex items-center justify-center"
+                                        data-testid="SelectDropdown__caret"
                                       >
                                         <div
                                           class="sc-bdfBwQ gLRWTb transition-transform "
@@ -8956,14 +8971,14 @@ exports[`Settings should update profile 1`] = `
                                             caret-down.svg
                                           </svg>
                                         </div>
-                                      </span>
+                                      </div>
                                     </div>
                                   </div>
                                 </div>
                                 <ul
-                                  aria-labelledby="downshift-283-label"
+                                  aria-labelledby="downshift-287-label"
                                   class="styles__SelectOptionsList-b2falt-0 heJAAA"
-                                  id="downshift-283-menu"
+                                  id="downshift-287-menu"
                                   role="listbox"
                                 />
                               </div>
@@ -8978,7 +8993,7 @@ exports[`Settings should update profile 1`] = `
                           class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
                         >
                           <label
-                            class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
+                            class="flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
                             data-testid="FormLabel"
                             for="language"
                           >
@@ -9012,12 +9027,12 @@ exports[`Settings should update profile 1`] = `
                               <div
                                 aria-expanded="false"
                                 aria-haspopup="listbox"
-                                aria-owns="downshift-285-menu"
+                                aria-owns="downshift-289-menu"
                                 role="combobox"
                               >
                                 <label
-                                  for="downshift-284-input"
-                                  id="downshift-285-label"
+                                  for="downshift-288-input"
+                                  id="downshift-289-label"
                                 />
                                 <div
                                   class="Input__InputWrapperStyled-wu99qs-0 vKSQU"
@@ -9027,12 +9042,12 @@ exports[`Settings should update profile 1`] = `
                                   >
                                     <input
                                       aria-autocomplete="list"
-                                      aria-controls="downshift-285-menu"
-                                      aria-labelledby="downshift-285-label"
+                                      aria-controls="downshift-289-menu"
+                                      aria-labelledby="downshift-289-label"
                                       autocomplete="off"
                                       class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full cursor-default"
                                       data-testid="SelectDropdownInput__input"
-                                      id="downshift-284-input"
+                                      id="downshift-288-input"
                                       name="language"
                                       placeholder="Select Language"
                                       value="English"
@@ -9050,8 +9065,9 @@ exports[`Settings should update profile 1`] = `
                                     <div
                                       class=""
                                     >
-                                      <span
-                                        class="w-10 pointer-events-none text-theme-secondary-500"
+                                      <div
+                                        class="py-2 px-1 text-theme-secondary-500 flex items-center justify-center"
+                                        data-testid="SelectDropdown__caret"
                                       >
                                         <div
                                           class="sc-bdfBwQ gLRWTb transition-transform "
@@ -9062,14 +9078,14 @@ exports[`Settings should update profile 1`] = `
                                             caret-down.svg
                                           </svg>
                                         </div>
-                                      </span>
+                                      </div>
                                     </div>
                                   </div>
                                 </div>
                                 <ul
-                                  aria-labelledby="downshift-285-label"
+                                  aria-labelledby="downshift-289-label"
                                   class="styles__SelectOptionsList-b2falt-0 heJAAA"
-                                  id="downshift-285-menu"
+                                  id="downshift-289-menu"
                                   role="listbox"
                                 />
                               </div>
@@ -9080,11 +9096,11 @@ exports[`Settings should update profile 1`] = `
                           class="FormField__FormFieldStyled-yeauwd-0 cnlnjc mt-8"
                         >
                           <label
-                            class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
+                            class="flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
                             data-testid="FormLabel"
                             for="marketProvider"
                           >
-                            Market Provider
+                            Price Source
                             <div
                               class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
                               data-testid="FormLabel__required"
@@ -9114,12 +9130,12 @@ exports[`Settings should update profile 1`] = `
                               <div
                                 aria-expanded="false"
                                 aria-haspopup="listbox"
-                                aria-owns="downshift-287-menu"
+                                aria-owns="downshift-291-menu"
                                 role="combobox"
                               >
                                 <label
-                                  for="downshift-286-input"
-                                  id="downshift-287-label"
+                                  for="downshift-290-input"
+                                  id="downshift-291-label"
                                 />
                                 <div
                                   class="Input__InputWrapperStyled-wu99qs-0 vKSQU"
@@ -9129,14 +9145,14 @@ exports[`Settings should update profile 1`] = `
                                   >
                                     <input
                                       aria-autocomplete="list"
-                                      aria-controls="downshift-287-menu"
-                                      aria-labelledby="downshift-287-label"
+                                      aria-controls="downshift-291-menu"
+                                      aria-labelledby="downshift-291-label"
                                       autocomplete="off"
                                       class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full cursor-default"
                                       data-testid="SelectDropdownInput__input"
-                                      id="downshift-286-input"
+                                      id="downshift-290-input"
                                       name="marketProvider"
-                                      placeholder="Select Market Provider"
+                                      placeholder="Select Price Source"
                                       value="CryptoCompare"
                                     />
                                     <span
@@ -9152,8 +9168,9 @@ exports[`Settings should update profile 1`] = `
                                     <div
                                       class=""
                                     >
-                                      <span
-                                        class="w-10 pointer-events-none text-theme-secondary-500"
+                                      <div
+                                        class="py-2 px-1 text-theme-secondary-500 flex items-center justify-center"
+                                        data-testid="SelectDropdown__caret"
                                       >
                                         <div
                                           class="sc-bdfBwQ gLRWTb transition-transform "
@@ -9164,14 +9181,14 @@ exports[`Settings should update profile 1`] = `
                                             caret-down.svg
                                           </svg>
                                         </div>
-                                      </span>
+                                      </div>
                                     </div>
                                   </div>
                                 </div>
                                 <ul
-                                  aria-labelledby="downshift-287-label"
+                                  aria-labelledby="downshift-291-label"
                                   class="styles__SelectOptionsList-b2falt-0 heJAAA"
-                                  id="downshift-287-menu"
+                                  id="downshift-291-menu"
                                   role="listbox"
                                 />
                               </div>
@@ -9182,7 +9199,7 @@ exports[`Settings should update profile 1`] = `
                           class="FormField__FormFieldStyled-yeauwd-0 cnlnjc mt-8"
                         >
                           <label
-                            class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
+                            class="flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
                             data-testid="FormLabel"
                             for="timeFormat"
                           >
@@ -9216,12 +9233,12 @@ exports[`Settings should update profile 1`] = `
                               <div
                                 aria-expanded="false"
                                 aria-haspopup="listbox"
-                                aria-owns="downshift-289-menu"
+                                aria-owns="downshift-293-menu"
                                 role="combobox"
                               >
                                 <label
-                                  for="downshift-288-input"
-                                  id="downshift-289-label"
+                                  for="downshift-292-input"
+                                  id="downshift-293-label"
                                 />
                                 <div
                                   class="Input__InputWrapperStyled-wu99qs-0 vKSQU"
@@ -9231,12 +9248,12 @@ exports[`Settings should update profile 1`] = `
                                   >
                                     <input
                                       aria-autocomplete="list"
-                                      aria-controls="downshift-289-menu"
-                                      aria-labelledby="downshift-289-label"
+                                      aria-controls="downshift-293-menu"
+                                      aria-labelledby="downshift-293-label"
                                       autocomplete="off"
                                       class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full cursor-default"
                                       data-testid="SelectDropdownInput__input"
-                                      id="downshift-288-input"
+                                      id="downshift-292-input"
                                       name="timeFormat"
                                       placeholder="Select Time Format"
                                       value="12h"
@@ -9254,8 +9271,9 @@ exports[`Settings should update profile 1`] = `
                                     <div
                                       class=""
                                     >
-                                      <span
-                                        class="w-10 pointer-events-none text-theme-secondary-500"
+                                      <div
+                                        class="py-2 px-1 text-theme-secondary-500 flex items-center justify-center"
+                                        data-testid="SelectDropdown__caret"
                                       >
                                         <div
                                           class="sc-bdfBwQ gLRWTb transition-transform "
@@ -9266,14 +9284,14 @@ exports[`Settings should update profile 1`] = `
                                             caret-down.svg
                                           </svg>
                                         </div>
-                                      </span>
+                                      </div>
                                     </div>
                                   </div>
                                 </div>
                                 <ul
-                                  aria-labelledby="downshift-289-label"
+                                  aria-labelledby="downshift-293-label"
                                   class="styles__SelectOptionsList-b2falt-0 heJAAA"
-                                  id="downshift-289-menu"
+                                  id="downshift-293-menu"
                                   role="listbox"
                                 />
                               </div>
@@ -9340,7 +9358,7 @@ exports[`Settings should update profile 1`] = `
                               class="text-sm font-medium text-theme-secondary-500 dark:text-theme-secondary-700"
                               data-testid="list-divided-item__label--description"
                             >
-                              This protection will protect your money from unwanted Screenshot you PC.
+                              When enabled, wallet application is hidden from screen-capturing software.
                             </span>
                           </div>
                         </div>
@@ -9389,7 +9407,7 @@ exports[`Settings should update profile 1`] = `
                               class="text-sm font-medium text-theme-secondary-500 dark:text-theme-secondary-700"
                               data-testid="list-divided-item__label--description"
                             >
-                              Allows for installing files from direct URLs. You assume any associated risk by enabling this feature.
+                              Allows installations from direct URLs. Enable at your own risk.
                             </span>
                           </div>
                         </div>
@@ -9423,11 +9441,11 @@ exports[`Settings should update profile 1`] = `
                             class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
                           >
                             <label
-                              class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
+                              class="flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
                               data-testid="FormLabel"
                               for="automaticSignOutPeriod"
                             >
-                              Automatic Sign Out Period
+                              Auto Log-Off
                               <div
                                 class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
                                 data-testid="FormLabel__required"
@@ -9457,12 +9475,12 @@ exports[`Settings should update profile 1`] = `
                                 <div
                                   aria-expanded="false"
                                   aria-haspopup="listbox"
-                                  aria-owns="downshift-291-menu"
+                                  aria-owns="downshift-295-menu"
                                   role="combobox"
                                 >
                                   <label
-                                    for="downshift-290-input"
-                                    id="downshift-291-label"
+                                    for="downshift-294-input"
+                                    id="downshift-295-label"
                                   />
                                   <div
                                     class="Input__InputWrapperStyled-wu99qs-0 vKSQU"
@@ -9472,14 +9490,14 @@ exports[`Settings should update profile 1`] = `
                                     >
                                       <input
                                         aria-autocomplete="list"
-                                        aria-controls="downshift-291-menu"
-                                        aria-labelledby="downshift-291-label"
+                                        aria-controls="downshift-295-menu"
+                                        aria-labelledby="downshift-295-label"
                                         autocomplete="off"
                                         class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full cursor-default"
                                         data-testid="SelectDropdownInput__input"
-                                        id="downshift-290-input"
+                                        id="downshift-294-input"
                                         name="automaticSignOutPeriod"
-                                        placeholder="Select Automatic Sign Out Period"
+                                        placeholder="Select Auto Log-Off"
                                         value="1 minute"
                                       />
                                       <span
@@ -9495,8 +9513,9 @@ exports[`Settings should update profile 1`] = `
                                       <div
                                         class=""
                                       >
-                                        <span
-                                          class="w-10 pointer-events-none text-theme-secondary-500"
+                                        <div
+                                          class="py-2 px-1 text-theme-secondary-500 flex items-center justify-center"
+                                          data-testid="SelectDropdown__caret"
                                         >
                                           <div
                                             class="sc-bdfBwQ gLRWTb transition-transform "
@@ -9507,14 +9526,14 @@ exports[`Settings should update profile 1`] = `
                                               caret-down.svg
                                             </svg>
                                           </div>
-                                        </span>
+                                        </div>
                                       </div>
                                     </div>
                                   </div>
                                   <ul
-                                    aria-labelledby="downshift-291-label"
+                                    aria-labelledby="downshift-295-label"
                                     class="styles__SelectOptionsList-b2falt-0 heJAAA"
-                                    id="downshift-291-menu"
+                                    id="downshift-295-menu"
                                     role="listbox"
                                   />
                                 </div>
@@ -9555,7 +9574,7 @@ exports[`Settings should update profile 1`] = `
                                 class="text-lg font-semibold text-theme-secondary-700 dark:text-theme-secondary-200"
                                 data-testid="list-divided-item__label"
                               >
-                                Development Networks
+                                Development and Test Networks
                               </span>
                               <span>
                                 <label
@@ -9582,7 +9601,7 @@ exports[`Settings should update profile 1`] = `
                               class="text-sm font-medium text-theme-secondary-500 dark:text-theme-secondary-700"
                               data-testid="list-divided-item__label--description"
                             >
-                              When enabled, allows application to add development and test networks.
+                              To create or import wallets from development and test networks, you must first enable this feature.
                             </span>
                           </div>
                         </div>
@@ -9730,7 +9749,7 @@ exports[`Settings should update profile 1`] = `
                               class="text-sm font-medium text-theme-secondary-500 dark:text-theme-secondary-700"
                               data-testid="list-divided-item__label--description"
                             >
-                              When enabled, changes to a dark, high contrast theme.
+                              Enables a dark, high contrast scheme.
                             </span>
                           </div>
                         </div>
@@ -9766,6 +9785,7 @@ exports[`Settings should update profile 1`] = `
                     >
                       <button
                         class="OriginalButton__StyledButton-sc-1y2wptt-0 hsoUax"
+                        data-testid="General-settings__cancel-button"
                         type="button"
                       >
                         <div
@@ -10270,7 +10290,7 @@ exports[`Settings should update the avatar when removing focus from name input 1
                       <span
                         class="text-sm font-semibold transition-colors duration-100 cursor-default group-hover:text-theme-primary-600 text-theme-secondary-text"
                       >
-                        Profile Image
+                        Select Profile Image
                       </span>
                       <div
                         class="flex flex-row"
@@ -10324,11 +10344,11 @@ exports[`Settings should update the avatar when removing focus from name input 1
                           class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
                         >
                           <label
-                            class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
+                            class="flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
                             data-testid="FormLabel"
                             for="name"
                           >
-                            Name
+                            Profile Name
                             <div
                               class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
                               data-testid="FormLabel__required"
@@ -10353,7 +10373,7 @@ exports[`Settings should update the avatar when removing focus from name input 1
                           class="FormField__FormFieldStyled-yeauwd-0 cnlnjc mt-8"
                         >
                           <label
-                            class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
+                            class="flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
                             data-testid="FormLabel"
                             for="passphraseLanguage"
                           >
@@ -10387,12 +10407,12 @@ exports[`Settings should update the avatar when removing focus from name input 1
                               <div
                                 aria-expanded="false"
                                 aria-haspopup="listbox"
-                                aria-owns="downshift-37-menu"
+                                aria-owns="downshift-89-menu"
                                 role="combobox"
                               >
                                 <label
-                                  for="downshift-36-input"
-                                  id="downshift-37-label"
+                                  for="downshift-88-input"
+                                  id="downshift-89-label"
                                 />
                                 <div
                                   class="Input__InputWrapperStyled-wu99qs-0 vKSQU"
@@ -10402,12 +10422,12 @@ exports[`Settings should update the avatar when removing focus from name input 1
                                   >
                                     <input
                                       aria-autocomplete="list"
-                                      aria-controls="downshift-37-menu"
-                                      aria-labelledby="downshift-37-label"
+                                      aria-controls="downshift-89-menu"
+                                      aria-labelledby="downshift-89-label"
                                       autocomplete="off"
                                       class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full cursor-default"
                                       data-testid="SelectDropdownInput__input"
-                                      id="downshift-36-input"
+                                      id="downshift-88-input"
                                       name="passphraseLanguage"
                                       placeholder="Select Passphrase Language"
                                       value="English"
@@ -10425,8 +10445,9 @@ exports[`Settings should update the avatar when removing focus from name input 1
                                     <div
                                       class=""
                                     >
-                                      <span
-                                        class="w-10 pointer-events-none text-theme-secondary-500"
+                                      <div
+                                        class="py-2 px-1 text-theme-secondary-500 flex items-center justify-center"
+                                        data-testid="SelectDropdown__caret"
                                       >
                                         <div
                                           class="sc-bdfBwQ gLRWTb transition-transform "
@@ -10437,14 +10458,14 @@ exports[`Settings should update the avatar when removing focus from name input 1
                                             caret-down.svg
                                           </svg>
                                         </div>
-                                      </span>
+                                      </div>
                                     </div>
                                   </div>
                                 </div>
                                 <ul
-                                  aria-labelledby="downshift-37-label"
+                                  aria-labelledby="downshift-89-label"
                                   class="styles__SelectOptionsList-b2falt-0 heJAAA"
-                                  id="downshift-37-menu"
+                                  id="downshift-89-menu"
                                   role="listbox"
                                 />
                               </div>
@@ -10455,7 +10476,7 @@ exports[`Settings should update the avatar when removing focus from name input 1
                           class="FormField__FormFieldStyled-yeauwd-0 cnlnjc mt-8"
                         >
                           <label
-                            class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
+                            class="flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
                             data-testid="FormLabel"
                             for="currency"
                           >
@@ -10489,12 +10510,12 @@ exports[`Settings should update the avatar when removing focus from name input 1
                               <div
                                 aria-expanded="false"
                                 aria-haspopup="listbox"
-                                aria-owns="downshift-39-menu"
+                                aria-owns="downshift-91-menu"
                                 role="combobox"
                               >
                                 <label
-                                  for="downshift-38-input"
-                                  id="downshift-39-label"
+                                  for="downshift-90-input"
+                                  id="downshift-91-label"
                                 />
                                 <div
                                   class="Input__InputWrapperStyled-wu99qs-0 vKSQU"
@@ -10504,12 +10525,12 @@ exports[`Settings should update the avatar when removing focus from name input 1
                                   >
                                     <input
                                       aria-autocomplete="list"
-                                      aria-controls="downshift-39-menu"
-                                      aria-labelledby="downshift-39-label"
+                                      aria-controls="downshift-91-menu"
+                                      aria-labelledby="downshift-91-label"
                                       autocomplete="off"
                                       class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full cursor-default"
                                       data-testid="SelectDropdownInput__input"
-                                      id="downshift-38-input"
+                                      id="downshift-90-input"
                                       name="currency"
                                       placeholder="Select Currency"
                                       value="BTC (Ƀ)"
@@ -10527,8 +10548,9 @@ exports[`Settings should update the avatar when removing focus from name input 1
                                     <div
                                       class=""
                                     >
-                                      <span
-                                        class="w-10 pointer-events-none text-theme-secondary-500"
+                                      <div
+                                        class="py-2 px-1 text-theme-secondary-500 flex items-center justify-center"
+                                        data-testid="SelectDropdown__caret"
                                       >
                                         <div
                                           class="sc-bdfBwQ gLRWTb transition-transform "
@@ -10539,14 +10561,14 @@ exports[`Settings should update the avatar when removing focus from name input 1
                                             caret-down.svg
                                           </svg>
                                         </div>
-                                      </span>
+                                      </div>
                                     </div>
                                   </div>
                                 </div>
                                 <ul
-                                  aria-labelledby="downshift-39-label"
+                                  aria-labelledby="downshift-91-label"
                                   class="styles__SelectOptionsList-b2falt-0 heJAAA"
-                                  id="downshift-39-menu"
+                                  id="downshift-91-menu"
                                   role="listbox"
                                 />
                               </div>
@@ -10561,7 +10583,7 @@ exports[`Settings should update the avatar when removing focus from name input 1
                           class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
                         >
                           <label
-                            class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
+                            class="flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
                             data-testid="FormLabel"
                             for="language"
                           >
@@ -10595,12 +10617,12 @@ exports[`Settings should update the avatar when removing focus from name input 1
                               <div
                                 aria-expanded="false"
                                 aria-haspopup="listbox"
-                                aria-owns="downshift-41-menu"
+                                aria-owns="downshift-93-menu"
                                 role="combobox"
                               >
                                 <label
-                                  for="downshift-40-input"
-                                  id="downshift-41-label"
+                                  for="downshift-92-input"
+                                  id="downshift-93-label"
                                 />
                                 <div
                                   class="Input__InputWrapperStyled-wu99qs-0 vKSQU"
@@ -10610,12 +10632,12 @@ exports[`Settings should update the avatar when removing focus from name input 1
                                   >
                                     <input
                                       aria-autocomplete="list"
-                                      aria-controls="downshift-41-menu"
-                                      aria-labelledby="downshift-41-label"
+                                      aria-controls="downshift-93-menu"
+                                      aria-labelledby="downshift-93-label"
                                       autocomplete="off"
                                       class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full cursor-default"
                                       data-testid="SelectDropdownInput__input"
-                                      id="downshift-40-input"
+                                      id="downshift-92-input"
                                       name="language"
                                       placeholder="Select Language"
                                       value="English"
@@ -10633,8 +10655,9 @@ exports[`Settings should update the avatar when removing focus from name input 1
                                     <div
                                       class=""
                                     >
-                                      <span
-                                        class="w-10 pointer-events-none text-theme-secondary-500"
+                                      <div
+                                        class="py-2 px-1 text-theme-secondary-500 flex items-center justify-center"
+                                        data-testid="SelectDropdown__caret"
                                       >
                                         <div
                                           class="sc-bdfBwQ gLRWTb transition-transform "
@@ -10645,14 +10668,14 @@ exports[`Settings should update the avatar when removing focus from name input 1
                                             caret-down.svg
                                           </svg>
                                         </div>
-                                      </span>
+                                      </div>
                                     </div>
                                   </div>
                                 </div>
                                 <ul
-                                  aria-labelledby="downshift-41-label"
+                                  aria-labelledby="downshift-93-label"
                                   class="styles__SelectOptionsList-b2falt-0 heJAAA"
-                                  id="downshift-41-menu"
+                                  id="downshift-93-menu"
                                   role="listbox"
                                 />
                               </div>
@@ -10663,11 +10686,11 @@ exports[`Settings should update the avatar when removing focus from name input 1
                           class="FormField__FormFieldStyled-yeauwd-0 cnlnjc mt-8"
                         >
                           <label
-                            class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
+                            class="flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
                             data-testid="FormLabel"
                             for="marketProvider"
                           >
-                            Market Provider
+                            Price Source
                             <div
                               class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
                               data-testid="FormLabel__required"
@@ -10697,12 +10720,12 @@ exports[`Settings should update the avatar when removing focus from name input 1
                               <div
                                 aria-expanded="false"
                                 aria-haspopup="listbox"
-                                aria-owns="downshift-43-menu"
+                                aria-owns="downshift-95-menu"
                                 role="combobox"
                               >
                                 <label
-                                  for="downshift-42-input"
-                                  id="downshift-43-label"
+                                  for="downshift-94-input"
+                                  id="downshift-95-label"
                                 />
                                 <div
                                   class="Input__InputWrapperStyled-wu99qs-0 vKSQU"
@@ -10712,14 +10735,14 @@ exports[`Settings should update the avatar when removing focus from name input 1
                                   >
                                     <input
                                       aria-autocomplete="list"
-                                      aria-controls="downshift-43-menu"
-                                      aria-labelledby="downshift-43-label"
+                                      aria-controls="downshift-95-menu"
+                                      aria-labelledby="downshift-95-label"
                                       autocomplete="off"
                                       class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full cursor-default"
                                       data-testid="SelectDropdownInput__input"
-                                      id="downshift-42-input"
+                                      id="downshift-94-input"
                                       name="marketProvider"
-                                      placeholder="Select Market Provider"
+                                      placeholder="Select Price Source"
                                       value="CryptoCompare"
                                     />
                                     <span
@@ -10735,8 +10758,9 @@ exports[`Settings should update the avatar when removing focus from name input 1
                                     <div
                                       class=""
                                     >
-                                      <span
-                                        class="w-10 pointer-events-none text-theme-secondary-500"
+                                      <div
+                                        class="py-2 px-1 text-theme-secondary-500 flex items-center justify-center"
+                                        data-testid="SelectDropdown__caret"
                                       >
                                         <div
                                           class="sc-bdfBwQ gLRWTb transition-transform "
@@ -10747,14 +10771,14 @@ exports[`Settings should update the avatar when removing focus from name input 1
                                             caret-down.svg
                                           </svg>
                                         </div>
-                                      </span>
+                                      </div>
                                     </div>
                                   </div>
                                 </div>
                                 <ul
-                                  aria-labelledby="downshift-43-label"
+                                  aria-labelledby="downshift-95-label"
                                   class="styles__SelectOptionsList-b2falt-0 heJAAA"
-                                  id="downshift-43-menu"
+                                  id="downshift-95-menu"
                                   role="listbox"
                                 />
                               </div>
@@ -10765,7 +10789,7 @@ exports[`Settings should update the avatar when removing focus from name input 1
                           class="FormField__FormFieldStyled-yeauwd-0 cnlnjc mt-8"
                         >
                           <label
-                            class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
+                            class="flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
                             data-testid="FormLabel"
                             for="timeFormat"
                           >
@@ -10799,12 +10823,12 @@ exports[`Settings should update the avatar when removing focus from name input 1
                               <div
                                 aria-expanded="false"
                                 aria-haspopup="listbox"
-                                aria-owns="downshift-45-menu"
+                                aria-owns="downshift-97-menu"
                                 role="combobox"
                               >
                                 <label
-                                  for="downshift-44-input"
-                                  id="downshift-45-label"
+                                  for="downshift-96-input"
+                                  id="downshift-97-label"
                                 />
                                 <div
                                   class="Input__InputWrapperStyled-wu99qs-0 vKSQU"
@@ -10814,12 +10838,12 @@ exports[`Settings should update the avatar when removing focus from name input 1
                                   >
                                     <input
                                       aria-autocomplete="list"
-                                      aria-controls="downshift-45-menu"
-                                      aria-labelledby="downshift-45-label"
+                                      aria-controls="downshift-97-menu"
+                                      aria-labelledby="downshift-97-label"
                                       autocomplete="off"
                                       class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full cursor-default"
                                       data-testid="SelectDropdownInput__input"
-                                      id="downshift-44-input"
+                                      id="downshift-96-input"
                                       name="timeFormat"
                                       placeholder="Select Time Format"
                                       value="12h"
@@ -10837,8 +10861,9 @@ exports[`Settings should update the avatar when removing focus from name input 1
                                     <div
                                       class=""
                                     >
-                                      <span
-                                        class="w-10 pointer-events-none text-theme-secondary-500"
+                                      <div
+                                        class="py-2 px-1 text-theme-secondary-500 flex items-center justify-center"
+                                        data-testid="SelectDropdown__caret"
                                       >
                                         <div
                                           class="sc-bdfBwQ gLRWTb transition-transform "
@@ -10849,14 +10874,14 @@ exports[`Settings should update the avatar when removing focus from name input 1
                                             caret-down.svg
                                           </svg>
                                         </div>
-                                      </span>
+                                      </div>
                                     </div>
                                   </div>
                                 </div>
                                 <ul
-                                  aria-labelledby="downshift-45-label"
+                                  aria-labelledby="downshift-97-label"
                                   class="styles__SelectOptionsList-b2falt-0 heJAAA"
-                                  id="downshift-45-menu"
+                                  id="downshift-97-menu"
                                   role="listbox"
                                 />
                               </div>
@@ -10922,7 +10947,7 @@ exports[`Settings should update the avatar when removing focus from name input 1
                               class="text-sm font-medium text-theme-secondary-500 dark:text-theme-secondary-700"
                               data-testid="list-divided-item__label--description"
                             >
-                              This protection will protect your money from unwanted Screenshot you PC.
+                              When enabled, wallet application is hidden from screen-capturing software.
                             </span>
                           </div>
                         </div>
@@ -10971,7 +10996,7 @@ exports[`Settings should update the avatar when removing focus from name input 1
                               class="text-sm font-medium text-theme-secondary-500 dark:text-theme-secondary-700"
                               data-testid="list-divided-item__label--description"
                             >
-                              Allows for installing files from direct URLs. You assume any associated risk by enabling this feature.
+                              Allows installations from direct URLs. Enable at your own risk.
                             </span>
                           </div>
                         </div>
@@ -11005,11 +11030,11 @@ exports[`Settings should update the avatar when removing focus from name input 1
                             class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
                           >
                             <label
-                              class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
+                              class="flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
                               data-testid="FormLabel"
                               for="automaticSignOutPeriod"
                             >
-                              Automatic Sign Out Period
+                              Auto Log-Off
                               <div
                                 class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
                                 data-testid="FormLabel__required"
@@ -11039,12 +11064,12 @@ exports[`Settings should update the avatar when removing focus from name input 1
                                 <div
                                   aria-expanded="false"
                                   aria-haspopup="listbox"
-                                  aria-owns="downshift-47-menu"
+                                  aria-owns="downshift-99-menu"
                                   role="combobox"
                                 >
                                   <label
-                                    for="downshift-46-input"
-                                    id="downshift-47-label"
+                                    for="downshift-98-input"
+                                    id="downshift-99-label"
                                   />
                                   <div
                                     class="Input__InputWrapperStyled-wu99qs-0 vKSQU"
@@ -11054,14 +11079,14 @@ exports[`Settings should update the avatar when removing focus from name input 1
                                     >
                                       <input
                                         aria-autocomplete="list"
-                                        aria-controls="downshift-47-menu"
-                                        aria-labelledby="downshift-47-label"
+                                        aria-controls="downshift-99-menu"
+                                        aria-labelledby="downshift-99-label"
                                         autocomplete="off"
                                         class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full cursor-default"
                                         data-testid="SelectDropdownInput__input"
-                                        id="downshift-46-input"
+                                        id="downshift-98-input"
                                         name="automaticSignOutPeriod"
-                                        placeholder="Select Automatic Sign Out Period"
+                                        placeholder="Select Auto Log-Off"
                                         value="1 minute"
                                       />
                                       <span
@@ -11077,8 +11102,9 @@ exports[`Settings should update the avatar when removing focus from name input 1
                                       <div
                                         class=""
                                       >
-                                        <span
-                                          class="w-10 pointer-events-none text-theme-secondary-500"
+                                        <div
+                                          class="py-2 px-1 text-theme-secondary-500 flex items-center justify-center"
+                                          data-testid="SelectDropdown__caret"
                                         >
                                           <div
                                             class="sc-bdfBwQ gLRWTb transition-transform "
@@ -11089,14 +11115,14 @@ exports[`Settings should update the avatar when removing focus from name input 1
                                               caret-down.svg
                                             </svg>
                                           </div>
-                                        </span>
+                                        </div>
                                       </div>
                                     </div>
                                   </div>
                                   <ul
-                                    aria-labelledby="downshift-47-label"
+                                    aria-labelledby="downshift-99-label"
                                     class="styles__SelectOptionsList-b2falt-0 heJAAA"
-                                    id="downshift-47-menu"
+                                    id="downshift-99-menu"
                                     role="listbox"
                                   />
                                 </div>
@@ -11137,7 +11163,7 @@ exports[`Settings should update the avatar when removing focus from name input 1
                                 class="text-lg font-semibold text-theme-secondary-700 dark:text-theme-secondary-200"
                                 data-testid="list-divided-item__label"
                               >
-                                Development Networks
+                                Development and Test Networks
                               </span>
                               <span>
                                 <label
@@ -11164,7 +11190,7 @@ exports[`Settings should update the avatar when removing focus from name input 1
                               class="text-sm font-medium text-theme-secondary-500 dark:text-theme-secondary-700"
                               data-testid="list-divided-item__label--description"
                             >
-                              When enabled, allows application to add development and test networks.
+                              To create or import wallets from development and test networks, you must first enable this feature.
                             </span>
                           </div>
                         </div>
@@ -11312,7 +11338,7 @@ exports[`Settings should update the avatar when removing focus from name input 1
                               class="text-sm font-medium text-theme-secondary-500 dark:text-theme-secondary-700"
                               data-testid="list-divided-item__label--description"
                             >
-                              When enabled, changes to a dark, high contrast theme.
+                              Enables a dark, high contrast scheme.
                             </span>
                           </div>
                         </div>
@@ -11348,6 +11374,7 @@ exports[`Settings should update the avatar when removing focus from name input 1
                     >
                       <button
                         class="OriginalButton__StyledButton-sc-1y2wptt-0 hsoUax"
+                        data-testid="General-settings__cancel-button"
                         type="button"
                       >
                         <div
@@ -11852,7 +11879,7 @@ exports[`Settings should update the avatar when removing focus from name input 2
                       <span
                         class="text-sm font-semibold transition-colors duration-100 cursor-default group-hover:text-theme-primary-600 text-theme-secondary-text"
                       >
-                        Profile Image
+                        Select Profile Image
                       </span>
                       <div
                         class="flex flex-row"
@@ -11900,11 +11927,11 @@ exports[`Settings should update the avatar when removing focus from name input 2
                           class="FormField__FormFieldStyled-yeauwd-0 qzrKg flex flex-col space-y-2"
                         >
                           <label
-                            class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
+                            class="flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
                             data-testid="FormLabel"
                             for="name"
                           >
-                            Name
+                            Profile Name
                             <div
                               class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
                               data-testid="FormLabel__required"
@@ -11928,7 +11955,7 @@ exports[`Settings should update the avatar when removing focus from name input 2
                               class="flex items-center space-x-3 divide-x divide-theme-secondary-300 dark:divide-theme-secondary-800 text-theme-danger-500"
                             >
                               <span
-                                data-errortext="'Name' is required"
+                                data-errortext="'Profile Name' is required"
                                 data-testid="Input__error"
                               >
                                 <div
@@ -11948,7 +11975,7 @@ exports[`Settings should update the avatar when removing focus from name input 2
                           class="FormField__FormFieldStyled-yeauwd-0 cnlnjc mt-8"
                         >
                           <label
-                            class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
+                            class="flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
                             data-testid="FormLabel"
                             for="passphraseLanguage"
                           >
@@ -11982,12 +12009,12 @@ exports[`Settings should update the avatar when removing focus from name input 2
                               <div
                                 aria-expanded="false"
                                 aria-haspopup="listbox"
-                                aria-owns="downshift-37-menu"
+                                aria-owns="downshift-89-menu"
                                 role="combobox"
                               >
                                 <label
-                                  for="downshift-36-input"
-                                  id="downshift-37-label"
+                                  for="downshift-88-input"
+                                  id="downshift-89-label"
                                 />
                                 <div
                                   class="Input__InputWrapperStyled-wu99qs-0 vKSQU"
@@ -11997,12 +12024,12 @@ exports[`Settings should update the avatar when removing focus from name input 2
                                   >
                                     <input
                                       aria-autocomplete="list"
-                                      aria-controls="downshift-37-menu"
-                                      aria-labelledby="downshift-37-label"
+                                      aria-controls="downshift-89-menu"
+                                      aria-labelledby="downshift-89-label"
                                       autocomplete="off"
                                       class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full cursor-default"
                                       data-testid="SelectDropdownInput__input"
-                                      id="downshift-36-input"
+                                      id="downshift-88-input"
                                       name="passphraseLanguage"
                                       placeholder="Select Passphrase Language"
                                       value="English"
@@ -12020,8 +12047,9 @@ exports[`Settings should update the avatar when removing focus from name input 2
                                     <div
                                       class=""
                                     >
-                                      <span
-                                        class="w-10 pointer-events-none text-theme-secondary-500"
+                                      <div
+                                        class="py-2 px-1 text-theme-secondary-500 flex items-center justify-center"
+                                        data-testid="SelectDropdown__caret"
                                       >
                                         <div
                                           class="sc-bdfBwQ gLRWTb transition-transform "
@@ -12032,14 +12060,14 @@ exports[`Settings should update the avatar when removing focus from name input 2
                                             caret-down.svg
                                           </svg>
                                         </div>
-                                      </span>
+                                      </div>
                                     </div>
                                   </div>
                                 </div>
                                 <ul
-                                  aria-labelledby="downshift-37-label"
+                                  aria-labelledby="downshift-89-label"
                                   class="styles__SelectOptionsList-b2falt-0 heJAAA"
-                                  id="downshift-37-menu"
+                                  id="downshift-89-menu"
                                   role="listbox"
                                 />
                               </div>
@@ -12050,7 +12078,7 @@ exports[`Settings should update the avatar when removing focus from name input 2
                           class="FormField__FormFieldStyled-yeauwd-0 cnlnjc mt-8"
                         >
                           <label
-                            class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
+                            class="flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
                             data-testid="FormLabel"
                             for="currency"
                           >
@@ -12084,12 +12112,12 @@ exports[`Settings should update the avatar when removing focus from name input 2
                               <div
                                 aria-expanded="false"
                                 aria-haspopup="listbox"
-                                aria-owns="downshift-39-menu"
+                                aria-owns="downshift-91-menu"
                                 role="combobox"
                               >
                                 <label
-                                  for="downshift-38-input"
-                                  id="downshift-39-label"
+                                  for="downshift-90-input"
+                                  id="downshift-91-label"
                                 />
                                 <div
                                   class="Input__InputWrapperStyled-wu99qs-0 vKSQU"
@@ -12099,12 +12127,12 @@ exports[`Settings should update the avatar when removing focus from name input 2
                                   >
                                     <input
                                       aria-autocomplete="list"
-                                      aria-controls="downshift-39-menu"
-                                      aria-labelledby="downshift-39-label"
+                                      aria-controls="downshift-91-menu"
+                                      aria-labelledby="downshift-91-label"
                                       autocomplete="off"
                                       class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full cursor-default"
                                       data-testid="SelectDropdownInput__input"
-                                      id="downshift-38-input"
+                                      id="downshift-90-input"
                                       name="currency"
                                       placeholder="Select Currency"
                                       value="BTC (Ƀ)"
@@ -12122,8 +12150,9 @@ exports[`Settings should update the avatar when removing focus from name input 2
                                     <div
                                       class=""
                                     >
-                                      <span
-                                        class="w-10 pointer-events-none text-theme-secondary-500"
+                                      <div
+                                        class="py-2 px-1 text-theme-secondary-500 flex items-center justify-center"
+                                        data-testid="SelectDropdown__caret"
                                       >
                                         <div
                                           class="sc-bdfBwQ gLRWTb transition-transform "
@@ -12134,14 +12163,14 @@ exports[`Settings should update the avatar when removing focus from name input 2
                                             caret-down.svg
                                           </svg>
                                         </div>
-                                      </span>
+                                      </div>
                                     </div>
                                   </div>
                                 </div>
                                 <ul
-                                  aria-labelledby="downshift-39-label"
+                                  aria-labelledby="downshift-91-label"
                                   class="styles__SelectOptionsList-b2falt-0 heJAAA"
-                                  id="downshift-39-menu"
+                                  id="downshift-91-menu"
                                   role="listbox"
                                 />
                               </div>
@@ -12156,7 +12185,7 @@ exports[`Settings should update the avatar when removing focus from name input 2
                           class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
                         >
                           <label
-                            class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
+                            class="flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
                             data-testid="FormLabel"
                             for="language"
                           >
@@ -12190,12 +12219,12 @@ exports[`Settings should update the avatar when removing focus from name input 2
                               <div
                                 aria-expanded="false"
                                 aria-haspopup="listbox"
-                                aria-owns="downshift-41-menu"
+                                aria-owns="downshift-93-menu"
                                 role="combobox"
                               >
                                 <label
-                                  for="downshift-40-input"
-                                  id="downshift-41-label"
+                                  for="downshift-92-input"
+                                  id="downshift-93-label"
                                 />
                                 <div
                                   class="Input__InputWrapperStyled-wu99qs-0 vKSQU"
@@ -12205,12 +12234,12 @@ exports[`Settings should update the avatar when removing focus from name input 2
                                   >
                                     <input
                                       aria-autocomplete="list"
-                                      aria-controls="downshift-41-menu"
-                                      aria-labelledby="downshift-41-label"
+                                      aria-controls="downshift-93-menu"
+                                      aria-labelledby="downshift-93-label"
                                       autocomplete="off"
                                       class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full cursor-default"
                                       data-testid="SelectDropdownInput__input"
-                                      id="downshift-40-input"
+                                      id="downshift-92-input"
                                       name="language"
                                       placeholder="Select Language"
                                       value="English"
@@ -12228,8 +12257,9 @@ exports[`Settings should update the avatar when removing focus from name input 2
                                     <div
                                       class=""
                                     >
-                                      <span
-                                        class="w-10 pointer-events-none text-theme-secondary-500"
+                                      <div
+                                        class="py-2 px-1 text-theme-secondary-500 flex items-center justify-center"
+                                        data-testid="SelectDropdown__caret"
                                       >
                                         <div
                                           class="sc-bdfBwQ gLRWTb transition-transform "
@@ -12240,14 +12270,14 @@ exports[`Settings should update the avatar when removing focus from name input 2
                                             caret-down.svg
                                           </svg>
                                         </div>
-                                      </span>
+                                      </div>
                                     </div>
                                   </div>
                                 </div>
                                 <ul
-                                  aria-labelledby="downshift-41-label"
+                                  aria-labelledby="downshift-93-label"
                                   class="styles__SelectOptionsList-b2falt-0 heJAAA"
-                                  id="downshift-41-menu"
+                                  id="downshift-93-menu"
                                   role="listbox"
                                 />
                               </div>
@@ -12258,11 +12288,11 @@ exports[`Settings should update the avatar when removing focus from name input 2
                           class="FormField__FormFieldStyled-yeauwd-0 cnlnjc mt-8"
                         >
                           <label
-                            class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
+                            class="flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
                             data-testid="FormLabel"
                             for="marketProvider"
                           >
-                            Market Provider
+                            Price Source
                             <div
                               class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
                               data-testid="FormLabel__required"
@@ -12292,12 +12322,12 @@ exports[`Settings should update the avatar when removing focus from name input 2
                               <div
                                 aria-expanded="false"
                                 aria-haspopup="listbox"
-                                aria-owns="downshift-43-menu"
+                                aria-owns="downshift-95-menu"
                                 role="combobox"
                               >
                                 <label
-                                  for="downshift-42-input"
-                                  id="downshift-43-label"
+                                  for="downshift-94-input"
+                                  id="downshift-95-label"
                                 />
                                 <div
                                   class="Input__InputWrapperStyled-wu99qs-0 vKSQU"
@@ -12307,14 +12337,14 @@ exports[`Settings should update the avatar when removing focus from name input 2
                                   >
                                     <input
                                       aria-autocomplete="list"
-                                      aria-controls="downshift-43-menu"
-                                      aria-labelledby="downshift-43-label"
+                                      aria-controls="downshift-95-menu"
+                                      aria-labelledby="downshift-95-label"
                                       autocomplete="off"
                                       class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full cursor-default"
                                       data-testid="SelectDropdownInput__input"
-                                      id="downshift-42-input"
+                                      id="downshift-94-input"
                                       name="marketProvider"
-                                      placeholder="Select Market Provider"
+                                      placeholder="Select Price Source"
                                       value="CryptoCompare"
                                     />
                                     <span
@@ -12330,8 +12360,9 @@ exports[`Settings should update the avatar when removing focus from name input 2
                                     <div
                                       class=""
                                     >
-                                      <span
-                                        class="w-10 pointer-events-none text-theme-secondary-500"
+                                      <div
+                                        class="py-2 px-1 text-theme-secondary-500 flex items-center justify-center"
+                                        data-testid="SelectDropdown__caret"
                                       >
                                         <div
                                           class="sc-bdfBwQ gLRWTb transition-transform "
@@ -12342,14 +12373,14 @@ exports[`Settings should update the avatar when removing focus from name input 2
                                             caret-down.svg
                                           </svg>
                                         </div>
-                                      </span>
+                                      </div>
                                     </div>
                                   </div>
                                 </div>
                                 <ul
-                                  aria-labelledby="downshift-43-label"
+                                  aria-labelledby="downshift-95-label"
                                   class="styles__SelectOptionsList-b2falt-0 heJAAA"
-                                  id="downshift-43-menu"
+                                  id="downshift-95-menu"
                                   role="listbox"
                                 />
                               </div>
@@ -12360,7 +12391,7 @@ exports[`Settings should update the avatar when removing focus from name input 2
                           class="FormField__FormFieldStyled-yeauwd-0 cnlnjc mt-8"
                         >
                           <label
-                            class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
+                            class="flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
                             data-testid="FormLabel"
                             for="timeFormat"
                           >
@@ -12394,12 +12425,12 @@ exports[`Settings should update the avatar when removing focus from name input 2
                               <div
                                 aria-expanded="false"
                                 aria-haspopup="listbox"
-                                aria-owns="downshift-45-menu"
+                                aria-owns="downshift-97-menu"
                                 role="combobox"
                               >
                                 <label
-                                  for="downshift-44-input"
-                                  id="downshift-45-label"
+                                  for="downshift-96-input"
+                                  id="downshift-97-label"
                                 />
                                 <div
                                   class="Input__InputWrapperStyled-wu99qs-0 vKSQU"
@@ -12409,12 +12440,12 @@ exports[`Settings should update the avatar when removing focus from name input 2
                                   >
                                     <input
                                       aria-autocomplete="list"
-                                      aria-controls="downshift-45-menu"
-                                      aria-labelledby="downshift-45-label"
+                                      aria-controls="downshift-97-menu"
+                                      aria-labelledby="downshift-97-label"
                                       autocomplete="off"
                                       class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full cursor-default"
                                       data-testid="SelectDropdownInput__input"
-                                      id="downshift-44-input"
+                                      id="downshift-96-input"
                                       name="timeFormat"
                                       placeholder="Select Time Format"
                                       value="12h"
@@ -12432,8 +12463,9 @@ exports[`Settings should update the avatar when removing focus from name input 2
                                     <div
                                       class=""
                                     >
-                                      <span
-                                        class="w-10 pointer-events-none text-theme-secondary-500"
+                                      <div
+                                        class="py-2 px-1 text-theme-secondary-500 flex items-center justify-center"
+                                        data-testid="SelectDropdown__caret"
                                       >
                                         <div
                                           class="sc-bdfBwQ gLRWTb transition-transform "
@@ -12444,14 +12476,14 @@ exports[`Settings should update the avatar when removing focus from name input 2
                                             caret-down.svg
                                           </svg>
                                         </div>
-                                      </span>
+                                      </div>
                                     </div>
                                   </div>
                                 </div>
                                 <ul
-                                  aria-labelledby="downshift-45-label"
+                                  aria-labelledby="downshift-97-label"
                                   class="styles__SelectOptionsList-b2falt-0 heJAAA"
-                                  id="downshift-45-menu"
+                                  id="downshift-97-menu"
                                   role="listbox"
                                 />
                               </div>
@@ -12517,7 +12549,7 @@ exports[`Settings should update the avatar when removing focus from name input 2
                               class="text-sm font-medium text-theme-secondary-500 dark:text-theme-secondary-700"
                               data-testid="list-divided-item__label--description"
                             >
-                              This protection will protect your money from unwanted Screenshot you PC.
+                              When enabled, wallet application is hidden from screen-capturing software.
                             </span>
                           </div>
                         </div>
@@ -12566,7 +12598,7 @@ exports[`Settings should update the avatar when removing focus from name input 2
                               class="text-sm font-medium text-theme-secondary-500 dark:text-theme-secondary-700"
                               data-testid="list-divided-item__label--description"
                             >
-                              Allows for installing files from direct URLs. You assume any associated risk by enabling this feature.
+                              Allows installations from direct URLs. Enable at your own risk.
                             </span>
                           </div>
                         </div>
@@ -12600,11 +12632,11 @@ exports[`Settings should update the avatar when removing focus from name input 2
                             class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
                           >
                             <label
-                              class="inline-block flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
+                              class="flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
                               data-testid="FormLabel"
                               for="automaticSignOutPeriod"
                             >
-                              Automatic Sign Out Period
+                              Auto Log-Off
                               <div
                                 class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
                                 data-testid="FormLabel__required"
@@ -12634,12 +12666,12 @@ exports[`Settings should update the avatar when removing focus from name input 2
                                 <div
                                   aria-expanded="false"
                                   aria-haspopup="listbox"
-                                  aria-owns="downshift-47-menu"
+                                  aria-owns="downshift-99-menu"
                                   role="combobox"
                                 >
                                   <label
-                                    for="downshift-46-input"
-                                    id="downshift-47-label"
+                                    for="downshift-98-input"
+                                    id="downshift-99-label"
                                   />
                                   <div
                                     class="Input__InputWrapperStyled-wu99qs-0 vKSQU"
@@ -12649,14 +12681,14 @@ exports[`Settings should update the avatar when removing focus from name input 2
                                     >
                                       <input
                                         aria-autocomplete="list"
-                                        aria-controls="downshift-47-menu"
-                                        aria-labelledby="downshift-47-label"
+                                        aria-controls="downshift-99-menu"
+                                        aria-labelledby="downshift-99-label"
                                         autocomplete="off"
                                         class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full cursor-default"
                                         data-testid="SelectDropdownInput__input"
-                                        id="downshift-46-input"
+                                        id="downshift-98-input"
                                         name="automaticSignOutPeriod"
-                                        placeholder="Select Automatic Sign Out Period"
+                                        placeholder="Select Auto Log-Off"
                                         value="1 minute"
                                       />
                                       <span
@@ -12672,8 +12704,9 @@ exports[`Settings should update the avatar when removing focus from name input 2
                                       <div
                                         class=""
                                       >
-                                        <span
-                                          class="w-10 pointer-events-none text-theme-secondary-500"
+                                        <div
+                                          class="py-2 px-1 text-theme-secondary-500 flex items-center justify-center"
+                                          data-testid="SelectDropdown__caret"
                                         >
                                           <div
                                             class="sc-bdfBwQ gLRWTb transition-transform "
@@ -12684,14 +12717,14 @@ exports[`Settings should update the avatar when removing focus from name input 2
                                               caret-down.svg
                                             </svg>
                                           </div>
-                                        </span>
+                                        </div>
                                       </div>
                                     </div>
                                   </div>
                                   <ul
-                                    aria-labelledby="downshift-47-label"
+                                    aria-labelledby="downshift-99-label"
                                     class="styles__SelectOptionsList-b2falt-0 heJAAA"
-                                    id="downshift-47-menu"
+                                    id="downshift-99-menu"
                                     role="listbox"
                                   />
                                 </div>
@@ -12732,7 +12765,7 @@ exports[`Settings should update the avatar when removing focus from name input 2
                                 class="text-lg font-semibold text-theme-secondary-700 dark:text-theme-secondary-200"
                                 data-testid="list-divided-item__label"
                               >
-                                Development Networks
+                                Development and Test Networks
                               </span>
                               <span>
                                 <label
@@ -12759,7 +12792,7 @@ exports[`Settings should update the avatar when removing focus from name input 2
                               class="text-sm font-medium text-theme-secondary-500 dark:text-theme-secondary-700"
                               data-testid="list-divided-item__label--description"
                             >
-                              When enabled, allows application to add development and test networks.
+                              To create or import wallets from development and test networks, you must first enable this feature.
                             </span>
                           </div>
                         </div>
@@ -12907,7 +12940,7 @@ exports[`Settings should update the avatar when removing focus from name input 2
                               class="text-sm font-medium text-theme-secondary-500 dark:text-theme-secondary-700"
                               data-testid="list-divided-item__label--description"
                             >
-                              When enabled, changes to a dark, high contrast theme.
+                              Enables a dark, high contrast scheme.
                             </span>
                           </div>
                         </div>
@@ -12943,6 +12976,7 @@ exports[`Settings should update the avatar when removing focus from name input 2
                     >
                       <button
                         class="OriginalButton__StyledButton-sc-1y2wptt-0 hsoUax"
+                        data-testid="General-settings__cancel-button"
                         type="button"
                       >
                         <div

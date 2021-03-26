@@ -1,4 +1,6 @@
-import { ReadOnlyWallet } from "@arkecosystem/platform-sdk-profiles";
+import { Contracts } from "@arkecosystem/platform-sdk-profiles";
+// @README: This import is fine in tests but should be avoided in production code.
+import { ReadOnlyWallet } from "@arkecosystem/platform-sdk-profiles/dist/drivers/memory/wallets/read-only-wallet";
 import { translations } from "app/i18n/common/i18n";
 import React from "react";
 import { act, fireEvent, render } from "testing-library";
@@ -6,7 +8,7 @@ import { data } from "tests/fixtures/coins/ark/devnet/delegates.json";
 
 import { DelegateRow } from "./DelegateRow";
 
-let delegate: ReadOnlyWallet;
+let delegate: Contracts.IReadOnlyWallet;
 
 describe("DelegateRow", () => {
 	beforeAll(() => {

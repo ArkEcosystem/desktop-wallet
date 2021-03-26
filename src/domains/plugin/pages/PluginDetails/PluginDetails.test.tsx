@@ -1,4 +1,4 @@
-import { Profile } from "@arkecosystem/platform-sdk-profiles";
+import { Contracts } from "@arkecosystem/platform-sdk-profiles";
 import { translations as commonTranslations } from "app/i18n/common/i18n";
 import { ipcRenderer } from "electron";
 import nock from "nock";
@@ -19,7 +19,7 @@ import { PluginDetails } from "./PluginDetails";
 
 describe("PluginDetails", () => {
 	let manager: PluginManager;
-	let profile: Profile;
+	let profile: Contracts.IProfile;
 
 	beforeEach(() => {
 		profile = env.profiles().findById(getDefaultProfileId());

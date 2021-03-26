@@ -1,4 +1,4 @@
-import { Profile, ReadOnlyWallet, ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
+import { Contracts } from "@arkecosystem/platform-sdk-profiles";
 import { Header } from "app/components/Header";
 import { TotalAmountBox } from "domains/transaction/components/TotalAmountBox";
 import {
@@ -18,10 +18,10 @@ export const ReviewStep = ({
 	votes,
 	wallet,
 }: {
-	profile: Profile;
-	unvotes: ReadOnlyWallet[];
-	votes: ReadOnlyWallet[];
-	wallet: ReadWriteWallet;
+	profile: Contracts.IProfile;
+	unvotes: Contracts.IReadOnlyWallet[];
+	votes: Contracts.IReadOnlyWallet[];
+	wallet: Contracts.IReadWriteWallet;
 }) => {
 	const { t } = useTranslation();
 	const { getValues, unregister } = useFormContext();
@@ -34,10 +34,7 @@ export const ReviewStep = ({
 
 	return (
 		<section data-testid="SendVote__review-step">
-			<Header
-				title={t("TRANSACTION.PAGE_VOTE.SECOND_STEP.TITLE")}
-				subtitle={t("TRANSACTION.PAGE_VOTE.SECOND_STEP.DESCRIPTION")}
-			/>
+			<Header title={t("TRANSACTION.REVIEW_STEP.TITLE")} subtitle={t("TRANSACTION.REVIEW_STEP.DESCRIPTION")} />
 
 			<TransactionNetwork network={wallet.network()} border={false} paddingPosition="bottom" className="mt-8" />
 

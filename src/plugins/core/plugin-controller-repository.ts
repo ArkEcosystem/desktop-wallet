@@ -1,4 +1,4 @@
-import { Profile } from "@arkecosystem/platform-sdk-profiles";
+import { Contracts } from "@arkecosystem/platform-sdk-profiles";
 import { Checkbox } from "app/components/Checkbox";
 import { Clipboard } from "app/components/Clipboard";
 import { Input, InputCurrency } from "app/components/Input";
@@ -14,13 +14,13 @@ import { PluginController } from "./plugin-controller";
 
 export class PluginControllerRepository {
 	#plugins: PluginController[] = [];
-	#currentProfile: Profile | undefined;
+	#currentProfile: Contracts.IProfile | undefined;
 
 	all() {
 		return this.#plugins;
 	}
 
-	enabled(profile: Profile) {
+	enabled(profile: Contracts.IProfile) {
 		return profile
 			.plugins()
 			.values()
@@ -28,7 +28,7 @@ export class PluginControllerRepository {
 			.map((item) => this.findById(item.name));
 	}
 
-	removeById(id: string, profile: Profile) {
+	removeById(id: string, profile: Contracts.IProfile) {
 		const plugin = this.findById(id);
 
 		if (plugin) {
@@ -49,7 +49,7 @@ export class PluginControllerRepository {
 		return this.#currentProfile;
 	}
 
-	runAllEnabled(profile: Profile) {
+	runAllEnabled(profile: Contracts.IProfile) {
 		if (this.#currentProfile) {
 			throw new Error(
 				`Profile ${this.#currentProfile.id()} has the plugins running, call #dispose to close them first.`,

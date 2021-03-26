@@ -673,10 +673,10 @@ exports[`Votes should filter current delegates 1`] = `
               </table>
             </div>
             <div
-              class="flex justify-center mt-10 mb-24 w-full"
+              class="flex justify-center w-full mt-10 mb-24"
             />
             <div
-              class="fixed right-0 bottom-0 left-0 pt-8 pr-12 pb-10 pl-4 shadow-2xl bg-theme-background"
+              class="fixed bottom-0 left-0 right-0 pt-8 pb-10 pl-4 pr-12 shadow-2xl bg-theme-background"
               data-testid="DelegateTable__footer"
             >
               <div
@@ -714,7 +714,7 @@ exports[`Votes should filter current delegates 1`] = `
                           <div
                             class="text-theme-secondary-500"
                           >
-                            My Address
+                            Address
                           </div>
                           <div
                             class="text-theme-text"
@@ -1779,10 +1779,10 @@ exports[`Votes should hide testnet wallet if disabled from profile setting 1`] =
               </table>
             </div>
             <div
-              class="flex justify-center mt-10 mb-24 w-full"
+              class="flex justify-center w-full mt-10 mb-24"
             />
             <div
-              class="fixed right-0 bottom-0 left-0 pt-8 pr-12 pb-10 pl-4 shadow-2xl bg-theme-background"
+              class="fixed bottom-0 left-0 right-0 pt-8 pb-10 pl-4 pr-12 shadow-2xl bg-theme-background"
               data-testid="DelegateTable__footer"
             >
               <div
@@ -1820,7 +1820,7 @@ exports[`Votes should hide testnet wallet if disabled from profile setting 1`] =
                           <div
                             class="text-theme-secondary-500"
                           >
-                            My Address
+                            Address
                           </div>
                           <div
                             class="text-theme-text"
@@ -2901,10 +2901,10 @@ exports[`Votes should render 1`] = `
               </table>
             </div>
             <div
-              class="flex justify-center mt-10 mb-24 w-full"
+              class="flex justify-center w-full mt-10 mb-24"
             />
             <div
-              class="fixed right-0 bottom-0 left-0 pt-8 pr-12 pb-10 pl-4 shadow-2xl bg-theme-background"
+              class="fixed bottom-0 left-0 right-0 pt-8 pb-10 pl-4 pr-12 shadow-2xl bg-theme-background"
               data-testid="DelegateTable__footer"
             >
               <div
@@ -2942,7 +2942,7 @@ exports[`Votes should render 1`] = `
                           <div
                             class="text-theme-secondary-500"
                           >
-                            My Address
+                            Address
                           </div>
                           <div
                             class="text-theme-text"
@@ -3443,7 +3443,7 @@ exports[`Votes should render with no wallets 1`] = `
                           class="ControlButton__ControlButtonStyled-sc-1xp1l1a-0 cVIgzv"
                         >
                           <div
-                            class="flex items-center justify-center h-5 w-5"
+                            class="flex items-center justify-center w-5 h-5"
                           >
                             <div
                               class="sc-bdfBwQ eBdiJn"
@@ -3477,7 +3477,7 @@ exports[`Votes should render with no wallets 1`] = `
           >
             <div>
               <div
-                class="flex justify-between items-center"
+                class="flex items-center justify-between"
               >
                 Your must first Create or Import an address to view your current voting status
                 <div
@@ -4467,10 +4467,10 @@ exports[`Votes should select a delegate 1`] = `
               </table>
             </div>
             <div
-              class="flex justify-center mt-10 mb-24 w-full"
+              class="flex justify-center w-full mt-10 mb-24"
             />
             <div
-              class="fixed right-0 bottom-0 left-0 pt-8 pr-12 pb-10 pl-4 shadow-2xl bg-theme-background"
+              class="fixed bottom-0 left-0 right-0 pt-8 pb-10 pl-4 pr-12 shadow-2xl bg-theme-background"
               data-testid="DelegateTable__footer"
             >
               <div
@@ -4508,7 +4508,7 @@ exports[`Votes should select a delegate 1`] = `
                           <div
                             class="text-theme-secondary-500"
                           >
-                            My Address
+                            Address
                           </div>
                           <div
                             class="text-theme-text"
@@ -5576,10 +5576,10 @@ exports[`Votes should select an address without vote 1`] = `
               </table>
             </div>
             <div
-              class="flex justify-center mt-10 mb-24 w-full"
+              class="flex justify-center w-full mt-10 mb-24"
             />
             <div
-              class="fixed right-0 bottom-0 left-0 pt-8 pr-12 pb-10 pl-4 shadow-2xl bg-theme-background"
+              class="fixed bottom-0 left-0 right-0 pt-8 pb-10 pl-4 pr-12 shadow-2xl bg-theme-background"
               data-testid="DelegateTable__footer"
             >
               <div
@@ -5617,7 +5617,7 @@ exports[`Votes should select an address without vote 1`] = `
                           <div
                             class="text-theme-secondary-500"
                           >
-                            My Address
+                            Address
                           </div>
                           <div
                             class="text-theme-text"
@@ -6130,7 +6130,7 @@ exports[`Votes should select favorites option in the wallets display type 1`] = 
                             />
                           </div>
                           <div
-                            class="flex items-center justify-center h-5 w-5"
+                            class="flex items-center justify-center w-5 h-5"
                           >
                             <div
                               class="sc-bdfBwQ eBdiJn"
@@ -6152,7 +6152,7 @@ exports[`Votes should select favorites option in the wallets display type 1`] = 
                     >
                       <div>
                         <div
-                          class="py-7 px-10 w-128"
+                          class="px-10 py-7 w-128"
                         >
                           <div
                             class="flex flex-col text-left"
@@ -6164,12 +6164,12 @@ exports[`Votes should select favorites option in the wallets display type 1`] = 
                               <div
                                 class="font-semibold text-theme-secondary-text"
                               >
-                                Filter Cryptoasset
+                                Filter Networks
                               </div>
                               <div
                                 class="mt-1 text-sm text-theme-secondary-500"
                               >
-                                Select the types of cryptoassets
+                                Select the networks to show.
                               </div>
                             </div>
                             <div
@@ -6267,7 +6267,7 @@ exports[`Votes should select favorites option in the wallets display type 1`] = 
                               <div
                                 class="pr-12 mt-1 text-sm text-theme-secondary-500"
                               >
-                                Select the display of your wallets
+                                Select which wallets to view.
                               </div>
                             </div>
                           </div>
@@ -6645,7 +6645,7 @@ exports[`Votes should select ledger option in the wallets display type 1`] = `
                             />
                           </div>
                           <div
-                            class="flex items-center justify-center h-5 w-5"
+                            class="flex items-center justify-center w-5 h-5"
                           >
                             <div
                               class="sc-bdfBwQ eBdiJn"
@@ -6667,7 +6667,7 @@ exports[`Votes should select ledger option in the wallets display type 1`] = `
                     >
                       <div>
                         <div
-                          class="py-7 px-10 w-128"
+                          class="px-10 py-7 w-128"
                         >
                           <div
                             class="flex flex-col text-left"
@@ -6679,12 +6679,12 @@ exports[`Votes should select ledger option in the wallets display type 1`] = `
                               <div
                                 class="font-semibold text-theme-secondary-text"
                               >
-                                Filter Cryptoasset
+                                Filter Networks
                               </div>
                               <div
                                 class="mt-1 text-sm text-theme-secondary-500"
                               >
-                                Select the types of cryptoassets
+                                Select the networks to show.
                               </div>
                             </div>
                             <div
@@ -6782,7 +6782,7 @@ exports[`Votes should select ledger option in the wallets display type 1`] = `
                               <div
                                 class="pr-12 mt-1 text-sm text-theme-secondary-500"
                               >
-                                Select the display of your wallets
+                                Select which wallets to view.
                               </div>
                             </div>
                           </div>
@@ -7153,7 +7153,7 @@ exports[`Votes should toggle network selection from network filters 1`] = `
                           class="ControlButton__ControlButtonStyled-sc-1xp1l1a-0 cVIgzv"
                         >
                           <div
-                            class="flex items-center justify-center h-5 w-5"
+                            class="flex items-center justify-center w-5 h-5"
                           >
                             <div
                               class="sc-bdfBwQ eBdiJn"
@@ -7175,7 +7175,7 @@ exports[`Votes should toggle network selection from network filters 1`] = `
                     >
                       <div>
                         <div
-                          class="py-7 px-10 w-128"
+                          class="px-10 py-7 w-128"
                         >
                           <div
                             class="flex flex-col text-left"
@@ -7187,12 +7187,12 @@ exports[`Votes should toggle network selection from network filters 1`] = `
                               <div
                                 class="font-semibold text-theme-secondary-text"
                               >
-                                Filter Cryptoasset
+                                Filter Networks
                               </div>
                               <div
                                 class="mt-1 text-sm text-theme-secondary-500"
                               >
-                                Select the types of cryptoassets
+                                Select the networks to show.
                               </div>
                             </div>
                             <div
@@ -7290,7 +7290,7 @@ exports[`Votes should toggle network selection from network filters 1`] = `
                               <div
                                 class="pr-12 mt-1 text-sm text-theme-secondary-500"
                               >
-                                Select the display of your wallets
+                                Select which wallets to view.
                               </div>
                             </div>
                           </div>

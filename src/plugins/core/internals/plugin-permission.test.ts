@@ -1,4 +1,4 @@
-import { Profile } from "@arkecosystem/platform-sdk-profiles";
+import { Contracts } from "@arkecosystem/platform-sdk-profiles";
 import { EventsPluginService } from "plugins/services";
 import { env, getDefaultProfileId } from "utils/testing-library";
 
@@ -7,7 +7,7 @@ import { PluginServiceData } from "../plugin-service";
 import { isPluginEnabled, isServiceDefinedInConfig } from "./plugin-permission";
 
 describe("Plugin Permissions", () => {
-	let profile: Profile;
+	let profile: Contracts.IProfile;
 	beforeEach(() => {
 		profile = env.profiles().findById(getDefaultProfileId());
 	});

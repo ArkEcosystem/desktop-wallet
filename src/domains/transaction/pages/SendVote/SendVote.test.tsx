@@ -1,5 +1,7 @@
 /* eslint-disable @typescript-eslint/require-await */
-import { Profile, ReadOnlyWallet, ReadWriteWallet } from "@arkecosystem/platform-sdk-profiles";
+import { Contracts } from "@arkecosystem/platform-sdk-profiles";
+// @README: This import is fine in tests but should be avoided in production code.
+import { ReadOnlyWallet } from "@arkecosystem/platform-sdk-profiles/dist/drivers/memory/wallets/read-only-wallet";
 import { BigNumber } from "@arkecosystem/platform-sdk-support";
 import { renderHook } from "@testing-library/react-hooks";
 import { LedgerProvider } from "app/contexts";
@@ -29,7 +31,7 @@ import { SendVote } from "../SendVote";
 
 const fixtureProfileId = getDefaultProfileId();
 
-const createVoteTransactionMock = (wallet: ReadWriteWallet) =>
+const createVoteTransactionMock = (wallet: Contracts.IReadWriteWallet) =>
 	// @ts-ignore
 	jest.spyOn(wallet.transaction(), "transaction").mockReturnValue({
 		id: () => voteFixture.data.id,
@@ -40,7 +42,7 @@ const createVoteTransactionMock = (wallet: ReadWriteWallet) =>
 		data: () => voteFixture.data,
 	});
 
-const createUnvoteTransactionMock = (wallet: ReadWriteWallet) =>
+const createUnvoteTransactionMock = (wallet: Contracts.IReadWriteWallet) =>
 	// @ts-ignore
 	jest.spyOn(wallet.transaction(), "transaction").mockReturnValue({
 		id: () => unvoteFixture.data.id,
@@ -52,8 +54,8 @@ const createUnvoteTransactionMock = (wallet: ReadWriteWallet) =>
 	});
 
 const passphrase = getDefaultWalletMnemonic();
-let profile: Profile;
-let wallet: ReadWriteWallet;
+let profile: Contracts.IProfile;
+let wallet: Contracts.IReadWriteWallet;
 let votes: ReadOnlyWallet[];
 const transport = getDefaultLedgerTransport();
 
@@ -889,5 +891,90 @@ describe("SendVote", () => {
 		getPublicKeySpy.mockRestore();
 		signTransactionSpy.mockRestore();
 		isLedgerSpy.mockRestore();
+	});
+
+	it("should send a vote transaction using encryption password", async () => {
+		const walletUsesWIFMock = jest.spyOn(wallet, "usesWIF").mockReturnValue(true);
+		const walletWifMock = jest.spyOn(wallet, "wif").mockImplementation((password) => {
+			const wif = "S9rDfiJ2ar4DpWAQuaXECPTJHfTZ3XjCPv15gjxu4cHJZKzABPyV";
+			return Promise.resolve(wif);
+		});
+		const history = createMemoryHistory();
+		const voteURL = `/profiles/${fixtureProfileId}/wallets/${wallet.id()}/send-vote`;
+
+		const params = new URLSearchParams({
+			votes: delegateData[0].address,
+		});
+
+		history.push({
+			pathname: voteURL,
+			search: `?${params}`,
+		});
+
+		const { result: form } = renderHook(() =>
+			useForm({
+				defaultValues: {
+					fee: (0.1 * 1e8).toFixed(0),
+				},
+			}),
+		);
+
+		const { container, getByTestId } = renderWithRouter(
+			<Route path="/profiles/:profileId/wallets/:walletId/send-vote">
+				<FormProvider {...form.current}>
+					<LedgerProvider transport={transport}>
+						<SendVote />
+					</LedgerProvider>
+				</FormProvider>
+			</Route>,
+			{
+				routes: [voteURL],
+				history,
+			},
+		);
+
+		expect(getByTestId("SendVote__form-step")).toBeTruthy();
+		await waitFor(() => expect(getByTestId("SendVote__form-step")).toHaveTextContent(delegateData[0].username));
+
+		await waitFor(() => expect(getByTestId("InputCurrency")).not.toHaveValue("0"));
+
+		await waitFor(() => expect(getByTestId("SendVote__button--continue")).not.toBeDisabled());
+		fireEvent.click(getByTestId("SendVote__button--continue"));
+
+		// Review Step
+		expect(getByTestId("SendVote__review-step")).toBeTruthy();
+		fireEvent.click(getByTestId("SendVote__button--continue"));
+
+		// AuthenticationStep
+		expect(getByTestId("AuthenticationStep")).toBeTruthy();
+
+		const signMock = jest
+			.spyOn(wallet.transaction(), "signVote")
+			.mockReturnValue(Promise.resolve(voteFixture.data.id));
+		const broadcastMock = jest.spyOn(wallet.transaction(), "broadcast").mockImplementation();
+		const transactionMock = createVoteTransactionMock(wallet);
+
+		const passwordInput = getByTestId("AuthenticationStep__encryption-password");
+		act(() => {
+			fireEvent.input(passwordInput, { target: { value: "password" } });
+		});
+
+		await waitFor(() => expect(passwordInput).toHaveValue("password"));
+
+		await waitFor(() => expect(getByTestId("SendVote__button--submit")).not.toBeDisabled());
+
+		await act(async () => {
+			fireEvent.click(getByTestId("SendVote__button--submit"));
+		});
+
+		act(() => jest.advanceTimersByTime(1000));
+
+		await waitFor(() => expect(getByTestId("TransactionSuccessful")).toBeTruthy());
+
+		signMock.mockRestore();
+		broadcastMock.mockRestore();
+		transactionMock.mockRestore();
+		walletUsesWIFMock.mockRestore();
+		walletWifMock.mockRestore();
 	});
 });

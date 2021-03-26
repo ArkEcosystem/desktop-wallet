@@ -1,4 +1,4 @@
-import { Profile } from "@arkecosystem/platform-sdk-profiles";
+import { Contracts } from "@arkecosystem/platform-sdk-profiles";
 import { Card } from "app/components/Card";
 import { Circle } from "app/components/Circle";
 import { Icon } from "app/components/Icon";
@@ -25,7 +25,7 @@ export const Welcome = () => {
 	const profiles = useMemo(() => context.env.profiles().values(), [context]);
 
 	const [deletingProfileId, setDeletingProfileId] = useState<string | undefined>();
-	const [selectedProfile, setSelectedProfile] = useState<Profile | undefined>();
+	const [selectedProfile, setSelectedProfile] = useState<Contracts.IProfile | undefined>();
 	const [requestedAction, setRequestedAction] = useState<any>();
 
 	const profileCardActions = [
@@ -35,7 +35,7 @@ export const Welcome = () => {
 
 	useEffect(() => setScreenshotProtection(true));
 
-	const navigateToProfile = (profile: Profile, subPath = "dashboard") => {
+	const navigateToProfile = (profile: Contracts.IProfile, subPath = "dashboard") => {
 		history.push(`/profiles/${profile.id()}/${subPath}`);
 	};
 
@@ -48,7 +48,7 @@ export const Welcome = () => {
 		setRequestedAction(undefined);
 	};
 
-	const handleClick = (profile: Profile) => {
+	const handleClick = (profile: Contracts.IProfile) => {
 		if (profile.usesPassword()) {
 			setSelectedProfile(profile);
 			setRequestedAction({ label: "Homepage", value: "home" });
@@ -58,7 +58,7 @@ export const Welcome = () => {
 		}
 	};
 
-	const handleProfileAction = (profile: Profile, action: any) => {
+	const handleProfileAction = (profile: Contracts.IProfile, action: any) => {
 		if (profile.usesPassword()) {
 			setRequestedAction(action);
 			setSelectedProfile(profile);
@@ -67,7 +67,7 @@ export const Welcome = () => {
 		}
 	};
 
-	const handleRequestedAction = (profile: Profile, action: any, password?: string) => {
+	const handleRequestedAction = (profile: Contracts.IProfile, action: any, password?: string) => {
 		closeSignInModal();
 
 		switch (action?.value) {
@@ -85,6 +85,8 @@ export const Welcome = () => {
 		}
 	};
 
+	const hasProfiles = profiles.length > 0;
+
 	return (
 		<>
 			<Page navbarVariant="logo-only" title={t("COMMON.DESKTOP_WALLET")}>
@@ -95,17 +97,20 @@ export const Welcome = () => {
 
 					<div className="mx-auto mt-8 max-w-lg md:max-w-xl">
 						<h2 className="mx-4 text-xl font-bold md:text-2xl">
-							{t("COMMON.SELECT_OPTION", { option: t("COMMON.PROFILE") })}
+							{hasProfiles
+								? t("PROFILE.PAGE_WELCOME.WITH_PROFILES.TITLE")
+								: t("PROFILE.PAGE_WELCOME.WITHOUT_PROFILES.TITLE")}
 						</h2>
 
 						<p className="text-sm text-theme-secondary-text md:text-base">
-							{profiles.length > 0 && t("PROFILE.PAGE_WELCOME.HAS_PROFILES")}
-							{profiles.length === 0 && t("PROFILE.PAGE_WELCOME.HAS_NO_PROFILES")}
+							{hasProfiles
+								? t("PROFILE.PAGE_WELCOME.WITH_PROFILES.DESCRIPTION")
+								: t("PROFILE.PAGE_WELCOME.WITHOUT_PROFILES.DESCRIPTION")}
 						</p>
 
 						<div className="mt-8">
 							<div className="-my-2.5 flex flex-wrap justify-center">
-								{profiles.map((profile: Profile, index: number) => (
+								{profiles.map((profile: Contracts.IProfile, index: number) => (
 									<ProfileCard
 										onClick={() => handleClick(profile)}
 										key={index}
@@ -130,7 +135,7 @@ export const Welcome = () => {
 											</Circle>
 										</div>
 										<span className="mt-3 font-semibold text-theme-primary-600 dark:text-white max-w-32 truncate dark:group-hover:text-white group-hover:text-theme-primary-700">
-											{t("PROFILE.CREATE_PROFILE")}
+											{hasProfiles ? t("PROFILE.CREATE_PROFILE") : t("COMMON.CREATE")}
 										</span>
 									</div>
 								</Card>

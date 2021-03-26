@@ -46,6 +46,8 @@ export const SendDelegateResignation = ({ formDefaultData }: SendResignationProp
 	useEffect(() => {
 		register("fees");
 		register("fee", common.fee(activeWallet?.balance?.(), activeWallet?.network?.()));
+
+		register("suppressWarning");
 	}, [activeWallet, common, register]);
 
 	const {
@@ -75,14 +77,17 @@ export const SendDelegateResignation = ({ formDefaultData }: SendResignationProp
 	};
 
 	const handleSubmit = async () => {
-		const { fee, mnemonic, secondMnemonic } = getValues();
+		const { fee, mnemonic, secondMnemonic, encryptionPassword } = getValues();
 		const from = activeWallet.address();
+
+		const wif = activeWallet?.usesWIF() ? await activeWallet.wif(encryptionPassword) : undefined;
 
 		try {
 			const signedTransactionId = await activeWallet.transaction().signDelegateResignation({
 				from,
 				fee,
 				sign: {
+					wif,
 					mnemonic,
 					secondMnemonic,
 				},

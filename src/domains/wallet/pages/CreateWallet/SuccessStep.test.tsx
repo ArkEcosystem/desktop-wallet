@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/require-await */
-import { Profile } from "@arkecosystem/platform-sdk-profiles";
+import { Contracts } from "@arkecosystem/platform-sdk-profiles";
 import { act, renderHook } from "@testing-library/react-hooks";
 import { availableNetworksMock } from "domains/network/data";
 import React from "react";
@@ -8,7 +8,7 @@ import { env, fireEvent, getDefaultProfileId, render } from "utils/testing-libra
 
 import { SuccessStep } from "./SuccessStep";
 
-let profile: Profile;
+let profile: Contracts.IProfile;
 
 describe("SuccessStep", () => {
 	beforeEach(() => {

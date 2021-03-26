@@ -14,7 +14,7 @@ export const translations: { [key: string]: any } = {
 	MODAL_RESET_PROFILE: {
 		TITLE: "Reset Profile Settings",
 		DESCRIPTION:
-			"By performing this action, all of your Profile settings will be restored to default. This action won't delete your wallets or plugins. Do you want to reset settings? This action cannot be undone.",
+			"By performing this action, all of your Profile settings will be restored to default. This won't delete your wallets or plugins. This action cannot be undone. Do you want to reset your settings?",
 		SUCCESS: "Your profile was reset successfully",
 	},
 	MODAL_HISTORY: {
@@ -32,21 +32,26 @@ export const translations: { [key: string]: any } = {
 	},
 	MODAL_SIGN_IN: {
 		TITLE: "Sign In",
-		DESCRIPTION: "Sign in to access your profile.",
+		DESCRIPTION: "Sign in to access your Profile.",
 		MAX_ATTEMPTS_ERROR:
 			"Maximum sign in attempts reached - please wait {{remainingTime}} seconds before trying again.",
 	},
 	PAGE_CREATE_PROFILE: {
 		TITLE: "Create Profile",
 		DESCRIPTION: "Create a new Profile below.",
-		NEW_PROFILE: "New Profile",
 		VALIDATION: {
 			NAME_EXISTS: "A profile with this name already exists",
 		},
 	},
 	PAGE_WELCOME: {
-		HAS_NO_PROFILES: "Create a new Profile to get started.",
-		HAS_PROFILES: "Choose from an existing Profile below or create a new Profile to get started.",
+		WITH_PROFILES: {
+			TITLE: "Select Profile",
+			DESCRIPTION: "Choose from an existing Profile below or create a new Profile to get started.",
+		},
+		WITHOUT_PROFILES: {
+			TITLE: "Create Profile",
+			DESCRIPTION: "Create a new Profile to get started.",
+		},
 		HAS_EXPORTED_PROFILES: "Exported a Profile before?",
 		IMPORT_PROFILE_TITLE: "Import Profile",
 		IMPORT_PROFILE: "Import it here.",
