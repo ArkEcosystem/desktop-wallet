@@ -41,7 +41,7 @@ export const useProfileUtils = (env: Environment) => {
 		[getProfileById],
 	);
 
-	const getProfileStoredPassword = (profile: Contracts.IProfile) => {
+	const getProfileStoredPassword = useCallback((profile: Contracts.IProfile) => {
 		if (profile.usesPassword()) {
 			try {
 				const password = Helpers.MemoryPassword.get(profile);
@@ -50,11 +50,21 @@ export const useProfileUtils = (env: Environment) => {
 				return;
 			}
 		}
-	};
+	}, []);
 
-	return useMemo(() => ({ getProfileById, getProfileFromUrl, getProfileStoredPassword }), [
+	const saveProfile = useCallback(
+		(profile: Contracts.IProfile) => {
+			const password = (profile.usesPassword() && getProfileStoredPassword(profile)) || undefined;
+			profile.save(password);
+		},
+		[getProfileStoredPassword],
+	);
+
+	return useMemo(() => ({ getProfileById, getProfileFromUrl, getProfileStoredPassword, saveProfile }), [
 		getProfileFromUrl,
 		getProfileById,
+		saveProfile,
+		getProfileStoredPassword,
 	]);
 };
 
@@ -232,7 +242,7 @@ type ProfileSynchronizerProps = {
 
 export const useProfileSynchronizer = ({ onProfileRestoreError }: ProfileSynchronizerProps = {}) => {
 	const __E2E__ = process.env.REACT_APP_IS_E2E;
-	const { persist, env } = useEnvironmentContext();
+	const { persist } = useEnvironmentContext();
 	const { setConfiguration, profileIsSyncing } = useConfiguration();
 	const { restoreProfile } = useProfileRestore();
 	const profile = useProfileWatcher();
