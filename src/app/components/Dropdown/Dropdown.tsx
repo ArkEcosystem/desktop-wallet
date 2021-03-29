@@ -36,6 +36,7 @@ type DropdownProps = {
 	toggleIcon: string;
 	toggleSize?: Size;
 	toggleContent?: any;
+	disableToggle?: boolean;
 };
 
 export const Wrapper = styled.div<{ position?: string; variant: string }>(getStyles);
@@ -160,6 +161,7 @@ export const Dropdown = ({
 	toggleIcon,
 	toggleSize,
 	toggleContent,
+	disableToggle,
 }: DropdownProps) => {
 	const [isOpen, setIsOpen] = useState(false);
 
@@ -254,7 +256,7 @@ export const Dropdown = ({
 
 	return (
 		<div ref={ref} className="relative">
-			<span data-testid="dropdown__toggle" onClick={toggle}>
+			<span data-testid="dropdown__toggle" onClick={(event: any) => !disableToggle && toggle(event)}>
 				{renderToggle(isOpen, toggleContent, toggleIcon, toggleSize)}
 			</span>
 

@@ -19,7 +19,7 @@ exports[`WalletsControls should render 1`] = `
             class="group"
           >
             <div
-              class="ControlButton__ControlButtonStyled-sc-1xp1l1a-0 cVIgzv"
+              class="ControlButton__ControlButtonStyled-sc-1xp1l1a-0 dLCfwp"
               data-testid="LayoutControls__grid--icon"
             >
               <div
@@ -41,7 +41,7 @@ exports[`WalletsControls should render 1`] = `
             class="group"
           >
             <div
-              class="ControlButton__ControlButtonStyled-sc-1xp1l1a-0 hkVZRt"
+              class="ControlButton__ControlButtonStyled-sc-1xp1l1a-0 jxlhJv"
               data-testid="LayoutControls__list--icon"
             >
               <div
@@ -67,27 +67,29 @@ exports[`WalletsControls should render 1`] = `
         <span
           data-testid="dropdown__toggle"
         >
-          <div
-            class="group"
-          >
+          <span>
             <div
-              class="ControlButton__ControlButtonStyled-sc-1xp1l1a-0 cVIgzv"
+              class="group"
             >
               <div
-                class="flex items-center justify-center w-5 h-5"
+                class="ControlButton__ControlButtonStyled-sc-1xp1l1a-0 dLCfwp"
               >
                 <div
-                  class="sc-bdfBwQ eBdiJn"
-                  height="19"
-                  width="17"
+                  class="flex items-center justify-center w-5 h-5"
                 >
-                  <svg>
-                    filters.svg
-                  </svg>
+                  <div
+                    class="sc-bdfBwQ eBdiJn"
+                    height="19"
+                    width="17"
+                  >
+                    <svg>
+                      filters.svg
+                    </svg>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
+          </span>
         </span>
       </div>
     </div>
@@ -196,7 +198,7 @@ exports[`WalletsControls should render with networks selection 1`] = `
             class="group"
           >
             <div
-              class="ControlButton__ControlButtonStyled-sc-1xp1l1a-0 cVIgzv"
+              class="ControlButton__ControlButtonStyled-sc-1xp1l1a-0 dLCfwp"
               data-testid="LayoutControls__grid--icon"
             >
               <div
@@ -218,7 +220,7 @@ exports[`WalletsControls should render with networks selection 1`] = `
             class="group"
           >
             <div
-              class="ControlButton__ControlButtonStyled-sc-1xp1l1a-0 hkVZRt"
+              class="ControlButton__ControlButtonStyled-sc-1xp1l1a-0 jxlhJv"
               data-testid="LayoutControls__list--icon"
             >
               <div
@@ -244,27 +246,29 @@ exports[`WalletsControls should render with networks selection 1`] = `
         <span
           data-testid="dropdown__toggle"
         >
-          <div
-            class="group"
-          >
+          <span>
             <div
-              class="ControlButton__ControlButtonStyled-sc-1xp1l1a-0 cVIgzv"
+              class="group"
             >
               <div
-                class="flex items-center justify-center w-5 h-5"
+                class="ControlButton__ControlButtonStyled-sc-1xp1l1a-0 dLCfwp"
               >
                 <div
-                  class="sc-bdfBwQ eBdiJn"
-                  height="19"
-                  width="17"
+                  class="flex items-center justify-center w-5 h-5"
                 >
-                  <svg>
-                    filters.svg
-                  </svg>
+                  <div
+                    class="sc-bdfBwQ eBdiJn"
+                    height="19"
+                    width="17"
+                  >
+                    <svg>
+                      filters.svg
+                    </svg>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
+          </span>
         </span>
       </div>
     </div>

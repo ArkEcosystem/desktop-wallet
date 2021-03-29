@@ -46,7 +46,7 @@ export const authentication = (t: any) => {
 		}),
 		encryptionPassword: (wallet: Contracts.IReadWriteWallet) => ({
 			required: t("COMMON.VALIDATION.FIELD_REQUIRED", {
-				field: t("COMMON.ENCRYPTION_PASSWORD"),
+				field: t("TRANSACTION.ENCRYPTION_PASSWORD"),
 			}),
 			validate: async (password: string) => {
 				const address = await addressFromPassword(wallet, password);

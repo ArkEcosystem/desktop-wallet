@@ -29,7 +29,6 @@ describe("SignMessage", () => {
 	beforeAll(async () => {
 		profile = env.profiles().findById(getDefaultProfileId());
 		wallet = await profile.wallets().importByMnemonic(mnemonic, "ARK", "ark.devnet");
-
 		walletUrl = `/profiles/${profile.id()}/wallets/${wallet.id()}`;
 		history.push(walletUrl);
 	});
@@ -203,15 +202,64 @@ describe("SignMessage", () => {
 		await waitFor(() => expect(getByText(walletTranslations.MODAL_SIGN_MESSAGE.FORM_STEP.TITLE)).toBeTruthy());
 	});
 
-	it("should sign message with ledger wallet", async () => {
-		const isLedgerMock = jest.spyOn(wallet, "isLedger").mockReturnValue(true);
-
+	it("should sign message with encryption password", async () => {
 		const signedMessage = {
 			message: "Hello World",
 			signatory: "0360e26c8ab14e1bebf4d5f36ab16dcefc9e7b9d9e000ae2470397eccdf1280f6f",
 			signature:
 				"b9791983a2b2b529dad23e0798cf4df30b3880f4fda5f4587f1c3171f02d0c9f4491f8c6d3e76b5cd2e2fd11c9fdcc7958e77d1f19c1b57a55e9c99ed1e6a2b1",
 		};
+
+		const walletUsesWIFMock = jest.spyOn(wallet, "usesWIF").mockReturnValue(true);
+		const walletWifMock = jest.spyOn(wallet, "wif").mockImplementation((password) => {
+			const wif = "SEyV1EJpyHxAfiRrVXo1SuAFqUP4yJkH2UBg4NZ96jMVUHe4DBpg";
+			return Promise.resolve(wif);
+		});
+
+		const onSign = jest.fn();
+
+		const { getByTestId, getByText } = renderWithRouter(
+			<Route path="/profiles/:profileId/wallets/:walletId">
+				<LedgerProvider transport={transport}>
+					<SignMessage onSign={onSign} walletId={wallet.id()} isOpen={true} />
+				</LedgerProvider>
+			</Route>,
+			{
+				routes: [walletUrl],
+				history,
+			},
+		);
+
+		await waitFor(() => expect(getByText(walletTranslations.MODAL_SIGN_MESSAGE.FORM_STEP.TITLE)).toBeTruthy());
+
+		const messageInput = getByTestId("SignMessage__message-input");
+
+		act(() => {
+			fireEvent.input(messageInput, { target: { value: "Hello World" } });
+		});
+
+		const passwordInput = getByTestId("SignMessage__encryption-password");
+
+		act(() => {
+			fireEvent.input(passwordInput, { target: { value: "password" } });
+		});
+
+		await waitFor(() => expect(getByTestId("SignMessage__submit-button")).toBeEnabled());
+
+		act(() => {
+			fireEvent.click(getByTestId("SignMessage__submit-button"));
+		});
+
+		await waitFor(() => expect(getByText(walletTranslations.MODAL_SIGN_MESSAGE.SIGNED_STEP.TITLE)).toBeTruthy());
+
+		expect(onSign).toHaveBeenCalledWith(signedMessage);
+
+		walletUsesWIFMock.mockRestore();
+		walletWifMock.mockRestore();
+	});
+
+	it("should sign message with ledger wallet", async () => {
+		const isLedgerMock = jest.spyOn(wallet, "isLedger").mockReturnValue(true);
 
 		const unsubscribe = jest.fn();
 		let observer: Observer<any>;

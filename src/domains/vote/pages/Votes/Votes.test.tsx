@@ -13,7 +13,7 @@ import {
 	syncDelegates,
 	waitFor,
 	within,
-} from "testing-library";
+} from "utils/testing-library";
 
 import { Votes } from "./Votes";
 
@@ -96,6 +96,8 @@ describe("Votes", () => {
 
 		expect(container).toBeTruthy();
 		expect(getByTestId("EmptyBlock")).toBeTruthy();
+		expect(() => getByTestId("header-search-bar__button")).toThrow(/Unable to find an element by/);
+
 		expect(asFragment()).toMatchSnapshot();
 	});
 

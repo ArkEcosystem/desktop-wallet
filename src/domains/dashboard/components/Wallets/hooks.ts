@@ -53,14 +53,14 @@ export const useWalletDisplay = ({
 
 			if (walletObjects.length <= sliderOptions.slidesPerView) {
 				return walletObjects.concat(
-					new Array(sliderOptions.slidesPerView - walletObjects.length).fill({ isBlank: true }),
+					new Array(sliderOptions.slidesPerView - walletObjects.length).fill({ isBlank: true, displayType }),
 				);
 			}
 
 			const walletsPerPage = sliderOptions.slidesPerView * 2;
 			const desiredLength = Math.ceil(walletObjects.length / walletsPerPage) * walletsPerPage;
 
-			walletObjects.push(...new Array(desiredLength - walletObjects.length).fill({ isBlank: true }));
+			walletObjects.push(...new Array(desiredLength - walletObjects.length).fill({ isBlank: true, displayType }));
 
 			const result: GridWallet[] = [];
 

@@ -32,7 +32,7 @@ export const NotificationsDropdown = ({ profile }: { profile: Contracts.IProfile
 			<Dropdown
 				dropdownClass="mt-8"
 				toggleContent={
-					<NavigationButtonWrapper>
+					<NavigationButtonWrapper className="group">
 						<Button variant="transparent" size="icon" data-testid="navbar__buttons--notifications">
 							<Icon name="Notification" width={15} height={18} className="p-1" />
 							{hasUnread && (
