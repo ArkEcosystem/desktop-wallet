@@ -20,7 +20,8 @@ export const translations: { [key: string]: any } = {
 		CREATE: "Create",
 		IMPORT: "Import",
 		IMPORT_LEDGER: "Import Ledger",
-		EMPTY_MESSAGE: "You have no available wallets at the time",
+		EMPTY_MESSAGE: "You don't have any wallets yet.",
+		EMPTY_MESSAGE_TYPE: "You don't have any <bold>{{type}}</bold> wallets.",
 	},
 
 	DASHBOARD_PAGE: {
