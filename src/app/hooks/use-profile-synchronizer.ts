@@ -54,8 +54,16 @@ export const useProfileUtils = (env: Environment) => {
 
 	const saveProfile = useCallback(
 		(profile: Contracts.IProfile) => {
-			const password = (profile.usesPassword() && getProfileStoredPassword(profile)) || undefined;
-			profile.save(password);
+			if (!profile.usesPassword()) {
+				return profile.save();
+			}
+
+			const password = getProfileStoredPassword(profile);
+			if (!password) {
+				return;
+			}
+
+			return profile.save(password);
 		},
 		[getProfileStoredPassword],
 	);
