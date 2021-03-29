@@ -9,6 +9,7 @@ import { ReactComponent as ARKLogo } from "./ark-logo.svg";
 import { ReactComponent as ChangeNowLogo } from "./changenow-logo.svg";
 import { ImagesDark } from "./dark";
 import { ReactComponent as DeleteBanner } from "./delete-banner.svg";
+import { ReactComponent as EmptyNotifications } from "./empty-notifications.svg";
 import { ReactComponent as ErrorBanner } from "./error-banner.svg";
 import { ReactComponent as GenericWarning } from "./generic-warning.svg";
 import { ReactComponent as NoResultsBanner } from "./no-results-banner.svg";
@@ -21,6 +22,7 @@ export const images = {
 		ARKLogo,
 		ChangeNowLogo,
 		DeleteBanner,
+		EmptyNotifications,
 		ErrorBanner,
 		GenericWarning,
 		NoResultsBanner,

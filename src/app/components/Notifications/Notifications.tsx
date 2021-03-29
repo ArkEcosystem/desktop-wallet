@@ -1,3 +1,5 @@
+import { EmptyBlock } from "app/components/EmptyBlock";
+import { Image } from "app/components/Image";
 import { Table } from "app/components/Table";
 import { useEnvironmentContext } from "app/contexts";
 import { useNotifications } from "app/hooks";
@@ -9,7 +11,6 @@ import {
 	NotificationItem,
 	NotificationItemProps,
 	NotificationsProps,
-	NotificationsSkeleton,
 	NotificationsWrapper,
 	NotificationTransactionItem,
 } from "./";
@@ -35,7 +36,14 @@ export const Notifications = ({ profile, onNotificationAction, onTransactionClic
 	const transactions = sortTransactionNotificationsDesc(byType(["transaction"]));
 
 	if (!transactions.length && !notifications.length) {
-		return <NotificationsSkeleton title={t("COMMON.NOTIFICATIONS.EMPTY")} />;
+		return (
+			<NotificationsWrapper>
+				<EmptyBlock>
+					<span className="whitespace-nowrap">{t("COMMON.NOTIFICATIONS.EMPTY")}</span>
+				</EmptyBlock>
+				<Image name="EmptyNotifications" className="mt-8 mb-2 mx-auto w-64" />
+			</NotificationsWrapper>
+		);
 	}
 
 	return (
