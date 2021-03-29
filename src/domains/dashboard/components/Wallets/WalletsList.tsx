@@ -5,12 +5,20 @@ import { Table } from "app/components/Table";
 import { WalletListItem } from "app/components/WalletListItem";
 import { WalletListItemSkeleton } from "app/components/WalletListItem/WalletListItemSkeleton";
 import React, { memo } from "react";
-import { useTranslation } from "react-i18next";
+import { Trans, useTranslation } from "react-i18next";
 
 import { WalletListProps } from "./";
 
 export const WalletsList = memo(
-	({ isVisible = true, wallets, hasMore, onRowClick, onViewMore, isLoading = false }: WalletListProps) => {
+	({
+		isVisible = true,
+		wallets,
+		hasMore,
+		walletsDisplayType = "all",
+		onRowClick,
+		onViewMore,
+		isLoading = false,
+	}: WalletListProps) => {
 		const { t } = useTranslation();
 
 		const columns = [
@@ -45,14 +53,18 @@ export const WalletsList = memo(
 
 		return (
 			<div data-testid="WalletsList">
-				<Table columns={columns} data={tableRows}>
-					{(rowData: any) =>
-						isLoading ? <WalletListItemSkeleton /> : <WalletListItem {...rowData} onClick={onRowClick} />
-					}
-				</Table>
-
-				{wallets.length > 0 && (
+				{(wallets.length > 0 || isLoading) && (
 					<div data-testid="WalletTable">
+						<Table columns={columns} data={tableRows}>
+							{(rowData: any) =>
+								isLoading ? (
+									<WalletListItemSkeleton />
+								) : (
+									<WalletListItem {...rowData} onClick={onRowClick} />
+								)
+							}
+						</Table>
+
 						{hasMore && (
 							<Button
 								variant="secondary"
@@ -67,7 +79,19 @@ export const WalletsList = memo(
 				)}
 
 				{!isLoading && !hasMore && wallets.length === 0 && (
-					<EmptyBlock>{t("DASHBOARD.WALLET_CONTROLS.EMPTY_MESSAGE")}</EmptyBlock>
+					<EmptyBlock>
+						{walletsDisplayType !== "all" ? (
+							<Trans
+								i18nKey="DASHBOARD.WALLET_CONTROLS.EMPTY_MESSAGE_TYPE"
+								values={{
+									type: walletsDisplayType === "favorites" ? t("COMMON.STARRED") : t("COMMON.LEDGER"),
+								}}
+								components={{ bold: <strong /> }}
+							/>
+						) : (
+							t("DASHBOARD.WALLET_CONTROLS.EMPTY_MESSAGE")
+						)}
+					</EmptyBlock>
 				)}
 			</div>
 		);

@@ -83,22 +83,6 @@ export const Input = React.forwardRef<InputElement, InputProps>(
 			}
 		}, [focusRef, isFocused]);
 
-		const addonsEnd: any = [];
-
-		if (isInvalidValue) {
-			addonsEnd.push(
-				<Tooltip content={errorMessageValue} variant="sm">
-					<span data-errortext={errorMessageValue} data-testid="Input__error">
-						<Icon name={"AlertWarning"} className="text-theme-danger-500" width={20} height={20} />
-					</span>
-				</Tooltip>,
-			);
-		}
-
-		if (addons?.end) {
-			addonsEnd.push(addons.end);
-		}
-
 		return (
 			<>
 				<InputWrapperStyled style={style} className={className} disabled={disabled} invalid={isInvalidValue}>

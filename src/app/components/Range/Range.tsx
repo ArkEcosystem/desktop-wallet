@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useLayoutEffect, useState } from "react";
 import { getTrackBackground, Range as ReactRange } from "react-range";
 import tw, { styled } from "twin.macro";
 
@@ -30,10 +30,20 @@ type Props = {
 export const Range = ({ values, min, max, step, onChange, isInvalid }: Props) => {
 	const color = !isInvalid ? "var(--theme-color-primary-600)" : "var(--theme-color-danger-700)";
 
+	/*
+	 * Ensure at least one value on mount to properly render the thumb
+	 * as the `react-range` package does not watch changes in `values` to recalculate offsets
+	 */
+	const [rangeValues, setRangeValues] = useState([min!]);
+
+	useLayoutEffect(() => {
+		setRangeValues(values);
+	}, [values]);
+
 	return (
 		<div data-testid="Range" className="flex flex-wrap justify-center">
 			<ReactRange
-				values={values}
+				values={rangeValues}
 				step={step}
 				min={min}
 				max={max}
