@@ -2,6 +2,7 @@ import { Contracts, Http } from "@arkecosystem/platform-sdk";
 import crossFetch from "cross-fetch";
 import { SocksProxyAgent } from "socks-proxy-agent";
 import hash from "string-hash";
+import { spawn, Thread, Worker } from "threads"
 import { Primitive } from "type-fest";
 
 import { Cache } from "./Cache";
@@ -45,30 +46,21 @@ export class HttpClient extends Http.Request {
 		const cacheKey: string = hash(`${method}.${url}.${JSON.stringify(data)}`).toString();
 
 		return this.cache.remember(cacheKey, async () => {
+			const client = await spawn(new Worker("./HttpClient.worker"))
+
 			let response;
 
 			if (method === "GET") {
-				response = await fetch(url, this._options);
+				response = await client.get(url, this._options);
 			}
 
 			if (method === "POST") {
-				response = await fetch(url, {
-					...this._options,
-					method: "POST",
-					body: JSON.stringify(data?.data),
-				});
+				response = await client.post(url, this._options, data);
 			}
 
-			if (!response) {
-				throw new Error("Received no response. This looks like a bug.");
-			}
-			//console.log({ url, status: response.status })
+			await Thread.terminate(client);
 
-			return new Http.Response({
-				body: await response.text(),
-				headers: (response.headers as unknown) as Record<string, Primitive>,
-				statusCode: response.status,
-			});
+			return new Http.Response(response);
 		});
 	}
 
