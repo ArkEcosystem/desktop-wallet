@@ -4,17 +4,21 @@ import tw, { css, styled } from "twin.macro";
 const ControlButtonStyled = styled.div<{ isActive?: boolean; noBorder?: boolean; disabled?: boolean }>`
 	${tw`flex items-center justify-center transition-colors duration-200 relative cursor-pointer py-2`}
 
+	${({ noBorder }) => {
+		if (!noBorder) {
+			return tw`px-3`;
+		}
+	}}
+
 	${({ isActive, noBorder, disabled }) => {
 		if (disabled) {
-			return tw`cursor-not-allowed text-theme-secondary-400 dark:text-theme-secondary-700`;
+			return tw`px-3 cursor-not-allowed text-theme-secondary-400 dark:text-theme-secondary-700`;
 		}
 
-		let styles: any[] = [];
+		const styles: any[] = [];
 
 		if (!noBorder) {
-			styles = [
-				...styles,
-				tw`px-3`,
+			styles.push(
 				css`
 					&:after {
 						${tw`transition-opacity duration-200 absolute inset-x-0 bg-theme-danger-100 dark:bg-theme-danger-700 rounded opacity-0 group-hover:opacity-100`}
@@ -23,21 +27,20 @@ const ControlButtonStyled = styled.div<{ isActive?: boolean; noBorder?: boolean;
 						bottom: -3px;
 					}
 				`,
-			];
+			);
 		}
 
 		if (isActive) {
-			styles = [
-				...styles,
+			styles.push(
 				tw`text-theme-danger-400`,
 				css`
 					&:after {
 						opacity: 100;
 					}
 				`,
-			];
+			);
 		} else {
-			styles = [...styles, tw`text-theme-primary-300 dark:text-theme-secondary-600 hover:text-theme-danger-400`];
+			styles.push(tw`text-theme-primary-300 dark:text-theme-secondary-600 hover:text-theme-danger-400`);
 		}
 
 		return styles;

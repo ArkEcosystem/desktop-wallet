@@ -92,6 +92,36 @@ describe("Wallet Card", () => {
 		expect(container).toMatchSnapshot();
 	});
 
+	it("should render blank with favorites display type", () => {
+		const { container } = renderWithRouter(
+			<Route path="/profiles/:profileId/dashboard">
+				<WalletCard displayType="favorites" />
+			</Route>,
+			{
+				routes: [dashboardURL],
+				history,
+			},
+		);
+
+		expect(container).toHaveTextContent("star.svg");
+		expect(container).toMatchSnapshot();
+	});
+
+	it("should render blank with ledger display type", () => {
+		const { container } = renderWithRouter(
+			<Route path="/profiles/:profileId/dashboard">
+				<WalletCard displayType="ledger" />
+			</Route>,
+			{
+				routes: [dashboardURL],
+				history,
+			},
+		);
+
+		expect(container).toHaveTextContent("ledger.svg");
+		expect(container).toMatchSnapshot();
+	});
+
 	it("should render with wallet data", () => {
 		wallet.settings().set(Contracts.WalletSetting.Alias, "My wallet");
 
