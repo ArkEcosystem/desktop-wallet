@@ -4,6 +4,7 @@ import { FormField, FormLabel } from "app/components/Form";
 import { Header } from "app/components/Header";
 import { Input } from "app/components/Input";
 import { useValidation } from "app/hooks";
+import cn from "classnames";
 import React, { ChangeEvent, useCallback, useEffect } from "react";
 import { useFormContext } from "react-hook-form";
 import { useTranslation } from "react-i18next";
@@ -23,7 +24,7 @@ export const FormStep = ({
 	step?: number;
 }) => {
 	const { t } = useTranslation();
-	const { setValue, getValues, register } = useFormContext();
+	const { errors, setValue, getValues, register } = useFormContext();
 	const { participants, fee, minParticipants } = getValues();
 
 	const { common, multiSignatureRegistration } = useValidation();
@@ -51,6 +52,8 @@ export const FormStep = ({
 		setValue(evt.target.name, evt.target.value, { shouldValidate: true, shouldDirty: true });
 	};
 
+	const minParticipantsLimit = Math.max(2, participants?.length || 0);
+
 	return (
 		<section data-testid="MultiSignatureRegistrationForm--form-step" className="space-y-8">
 			<Header
@@ -70,13 +73,19 @@ export const FormStep = ({
 				<Input
 					data-testid="MultiSignatureRegistrationForm__min-participants"
 					type="number"
+					min={2}
+					max={minParticipantsLimit}
 					value={minParticipants ?? 0}
 					onChange={handleInput}
 					addons={{
 						end: (
-							<span className="pointer-events-none font-semibold text-sm text-theme-secondary-500 dark:text-theme-secondary-700">
+							<span
+								className={cn("pointer-events-none font-semibold text-sm", {
+									"text-theme-secondary-500 dark:text-theme-secondary-700": !errors?.minParticipants,
+								})}
+							>
 								{t("TRANSACTION.MULTISIGNATURE.OUT_OF_LENGTH", {
-									length: Math.max(2, participants?.length || 0),
+									length: minParticipantsLimit,
 								})}
 							</span>
 						),
