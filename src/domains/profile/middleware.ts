@@ -5,7 +5,7 @@ import { Theme } from "types";
 import { isIdle, setScreenshotProtection, setThemeSource, shouldUseDarkColors } from "utils/electron-utils";
 
 type ActivityState = {
-	intervalId?: ReturnType<typeof setInterval>;
+	intervalId?: number;
 	threshold?: number;
 };
 
@@ -85,7 +85,7 @@ export class ProfileMiddleware implements Middleware {
 	}
 
 	setActivityState(callback: CallbackFunction, interval: number, threshold: number) {
-		const intervalId = setInterval(callback, interval);
+		const intervalId = +setInterval(callback, interval);
 
 		this.state = {
 			intervalId,
