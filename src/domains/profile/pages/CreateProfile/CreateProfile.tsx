@@ -79,7 +79,7 @@ export const CreateProfile = () => {
 			profile.auth().setPassword(password);
 		}
 
-		profile.save();
+		profile.save(password);
 
 		await persist();
 
