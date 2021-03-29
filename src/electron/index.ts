@@ -1,3 +1,4 @@
+import { ElectronServerDriver } from "@arkecosystem/platform-sdk-profiles/dist/drivers/electron";
 import { app, BrowserWindow, ipcMain, screen, shell } from "electron";
 import isDev from "electron-is-dev";
 import winState from "electron-window-state";
@@ -12,6 +13,8 @@ const windows = {};
 let mainWindow: BrowserWindow | null;
 let windowState = null;
 let deeplinkingUrl: string | null;
+
+ElectronServerDriver.registerSelf();
 
 const winURL = isDev
 	? "http://localhost:3000"
