@@ -293,6 +293,13 @@ export const translations: { [key: string]: any } = {
 		},
 	},
 
+	INPUT_NETWORK: {
+		PLACEHOLDER: "Enter a cryptoasset name",
+		VALIDATION: {
+			NETWORK_NOT_FOUND: "No cryptoasset with this name found",
+		},
+	},
+
 	EMPTY_RESULTS: {
 		TITLE: "No Results",
 		SUBTITLE: "No results found. Refine your search and try again.",

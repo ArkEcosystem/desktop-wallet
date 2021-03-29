@@ -5,6 +5,7 @@ import { CoinNetworkExtended } from "domains/network/data";
 import { getNetworkExtendedData } from "domains/network/helpers";
 import { useCombobox } from "downshift";
 import React, { useEffect, useMemo, useState } from "react";
+import { useFormContext } from "react-hook-form";
 import { useTranslation } from "react-i18next";
 
 import { SelectNetworkInput } from "./SelectNetworkInput";
@@ -36,7 +37,11 @@ export const SelectNetwork = ({
 	hideOptions,
 }: SelectNetworkProps) => {
 	const { t } = useTranslation();
+
 	const [items, setItems] = useState<Network[]>([]);
+	const [suggestion, setSuggestion] = useState("");
+
+	const { setError, clearErrors } = useFormContext();
 
 	const extendedItems = useMemo(
 		() =>
@@ -75,6 +80,36 @@ export const SelectNetwork = ({
 			if (selectedItem && selectedItem.extra?.displayName !== inputValue) {
 				reset();
 			}
+
+			if (!inputValue) {
+				setSuggestion("");
+
+				return setError("network", {
+					type: "manual",
+					message: t("COMMON.VALIDATION.FIELD_REQUIRED", {
+						field: t("COMMON.CRYPTOASSET"),
+					}),
+				});
+			}
+
+			let newSuggestion: string | undefined = undefined;
+
+			const matches = items.filter((network: Coins.Network) => isMatch(inputValue, network));
+			if (inputValue && matches.length > 0) {
+				newSuggestion = [inputValue, matches[0].extra?.displayName?.slice(inputValue.length)].join("");
+				setSuggestion(newSuggestion);
+			}
+
+			if (newSuggestion) {
+				clearErrors("network");
+			} else {
+				setSuggestion("");
+
+				setError("network", {
+					type: "manual",
+					message: t("COMMON.INPUT_NETWORK.VALIDATION.NETWORK_NOT_FOUND"),
+				});
+			}
 		},
 	});
 
@@ -84,6 +119,7 @@ export const SelectNetwork = ({
 
 	const toggleSelection = (item: Coins.Network) => {
 		if (item.id() === selectedItem?.id()) {
+			setSuggestion("");
 			reset();
 			openMenu();
 			return;
@@ -93,13 +129,6 @@ export const SelectNetwork = ({
 
 	const publicNetworks = items.filter((network) => network.isLive());
 	const developmentNetworks = items.filter((network) => !network.isLive());
-
-	const suggestion = React.useMemo(() => {
-		const matches = items.filter((network: Coins.Network) => isMatch(inputValue, network));
-		if (inputValue && matches.length > 0) {
-			return [inputValue, matches[0].extra?.displayName?.slice(inputValue.length)].join("");
-		}
-	}, [items, inputValue]);
 
 	const optionClassName = (network: Network) => {
 		if (selectedItem) {
@@ -130,7 +159,7 @@ export const SelectNetwork = ({
 					disabled={disabled}
 					{...getInputProps({
 						name,
-						placeholder,
+						placeholder: placeholder || t("COMMON.INPUT_NETWORK.PLACEHOLDER"),
 						onFocus: openMenu,
 						onKeyDown: (event: any) => {
 							if (event.key === "Tab" || event.key === "Enter") {
@@ -196,6 +225,5 @@ export const SelectNetwork = ({
 
 SelectNetwork.defaultProps = {
 	networks: [],
-	placeholder: "Enter a cryptoasset name",
 	disabled: false,
 };
