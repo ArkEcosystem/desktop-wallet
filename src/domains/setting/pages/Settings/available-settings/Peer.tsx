@@ -8,7 +8,7 @@ import { ListDivided } from "app/components/ListDivided";
 import { Table } from "app/components/Table";
 import { Toggle } from "app/components/Toggle";
 import { useEnvironmentContext } from "app/contexts";
-import { useActiveProfile } from "app/hooks";
+import { useActiveProfile, useProfileUtils } from "app/hooks";
 import { CreatePeer } from "domains/setting/components/CreatePeer";
 import { DeletePeer } from "domains/setting/components/DeletePeer";
 import { PeerListItem } from "domains/setting/components/PeerListItem";
@@ -22,8 +22,9 @@ import { SettingsProps } from "../Settings.models";
 export const Peer = ({ formConfig, onSuccess }: SettingsProps) => {
 	const { t } = useTranslation();
 
-	const activeProfile = useActiveProfile();
 	const { env, state, persist } = useEnvironmentContext();
+	const activeProfile = useActiveProfile();
+	const { saveProfile } = useProfileUtils(env);
 
 	const [isMultiPeerBroadcast, setIsMultiPeerBroadcast] = useState(
 		activeProfile.settings().get(Contracts.ProfileSetting.UseMultiPeerBroadcast) || false,
@@ -94,14 +95,23 @@ export const Peer = ({ formConfig, onSuccess }: SettingsProps) => {
 
 				await syncWallets();
 
-				activeProfile.save();
+				saveProfile(activeProfile);
 
 				await persist();
 			};
 
 			savePeerSettings();
 		}
-	}, [activeProfile, isCustomPeer, isMultiPeerBroadcast, peerGroupByNetwork, peers, persist, syncWallets]);
+	}, [
+		activeProfile,
+		isCustomPeer,
+		isMultiPeerBroadcast,
+		peerGroupByNetwork,
+		peers,
+		persist,
+		syncWallets,
+		saveProfile,
+	]);
 
 	const availableNetworks = useMemo(() => env.availableNetworks(), [env]);
 
@@ -210,7 +220,7 @@ export const Peer = ({ formConfig, onSuccess }: SettingsProps) => {
 
 		await syncWallets();
 
-		activeProfile.save();
+		saveProfile(activeProfile);
 
 		await persist();
 
