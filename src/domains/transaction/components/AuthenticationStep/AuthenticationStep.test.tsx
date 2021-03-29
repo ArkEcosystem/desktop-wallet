@@ -3,7 +3,15 @@ import { act, renderHook } from "@testing-library/react-hooks";
 import { Form } from "app/components/Form";
 import React from "react";
 import { useForm } from "react-hook-form";
-import { env, fireEvent, getDefaultProfileId, renderWithRouter, screen, waitFor } from "utils/testing-library";
+import {
+	env,
+	fireEvent,
+	getDefaultProfileId,
+	getDefaultWalletId,
+	renderWithRouter,
+	screen,
+	waitFor,
+} from "utils/testing-library";
 
 import { AuthenticationStep } from "./AuthenticationStep";
 
@@ -237,8 +245,6 @@ describe("AuthenticationStep", () => {
 	});
 
 	it("should render with encryption password input", async () => {
-		wallet = profile.wallets().first();
-
 		jest.spyOn(wallet, "usesWIF").mockReturnValue(true);
 
 		const { result } = renderHook(() => useForm({ mode: "onChange" }));
@@ -250,7 +256,40 @@ describe("AuthenticationStep", () => {
 
 		await waitFor(() => expect(getByTestId("AuthenticationStep__encryption-password")).toBeInTheDocument());
 
-		profile.wallets().forget(wallet.id());
+		jest.clearAllMocks();
+	});
+
+	it("should render with encryption password input and second mnemonic", async () => {
+		wallet = profile.wallets().findById(getDefaultWalletId());
+
+		jest.spyOn(wallet, "usesWIF").mockReturnValue(true);
+		jest.spyOn(wallet, "wif").mockImplementation((password) => {
+			const wif = "S9rDfiJ2ar4DpWAQuaXECPTJHfTZ3XjCPv15gjxu4cHJZKzABPyV";
+			return Promise.resolve(wif);
+		});
+		jest.spyOn(wallet, "isSecondSignature").mockReturnValue(true);
+
+		const { result } = renderHook(() => useForm({ mode: "onChange" }));
+
+		const Wrapper = () => (
+			<Form context={result.current} onSubmit={() => void 0}>
+				<AuthenticationStep wallet={wallet} />
+			</Form>
+		);
+
+		const { rerender } = renderWithRouter(<Wrapper />);
+
+		await waitFor(() => expect(screen.getByTestId("AuthenticationStep__encryption-password")).toBeInTheDocument());
+		await waitFor(() => expect(screen.getByTestId("AuthenticationStep__second-mnemonic")).toBeDisabled());
+
+		fireEvent.input(screen.getByTestId("AuthenticationStep__encryption-password"), {
+			target: { value: "password" },
+		});
+
+		rerender(<Wrapper />);
+
+		await waitFor(() => expect(screen.getByTestId("AuthenticationStep__second-mnemonic")).toBeEnabled());
+
 		jest.clearAllMocks();
 	});
 });
