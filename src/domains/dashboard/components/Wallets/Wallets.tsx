@@ -97,9 +97,10 @@ export const Wallets = ({
 			/>
 
 			<WalletsList
-				isLoading={isLoading && walletsCount === 0}
 				isVisible={viewType === "list"}
+				isLoading={isLoading && walletsCount === 0}
 				wallets={listWallets}
+				walletsDisplayType={walletsDisplayType}
 				hasMore={listHasMore}
 				onRowClick={handleClick}
 				onViewMore={() => setViewMore(true)}

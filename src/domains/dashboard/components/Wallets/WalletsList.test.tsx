@@ -2,6 +2,7 @@ import { Contracts } from "@arkecosystem/platform-sdk-profiles";
 import React from "react";
 import { env, getDefaultProfileId, render } from "utils/testing-library";
 
+import { translations } from "../../i18n";
 import { GridWallet, WalletsList } from "./";
 
 let profile: Contracts.IProfile;
@@ -27,14 +28,7 @@ describe("WalletsList", () => {
 	it("should not render if isVisible is false", () => {
 		const { asFragment, getByTestId } = render(<WalletsList wallets={wallets} isVisible={false} />);
 
-		expect(() => getByTestId("WalletsList")).toThrow();
-		expect(asFragment()).toMatchSnapshot();
-	});
-
-	it("should render hidden", () => {
-		const { asFragment, getByTestId } = render(<WalletsList wallets={wallets} isVisible={false} />);
-
-		expect(() => getByTestId("WalletsList")).toThrowError(/Unable to find/);
+		expect(() => getByTestId("WalletsList")).toThrow(/Unable to find an element by/);
 		expect(asFragment()).toMatchSnapshot();
 	});
 
@@ -49,6 +43,30 @@ describe("WalletsList", () => {
 		const { asFragment, getByTestId } = render(<WalletsList wallets={[]} />);
 
 		expect(getByTestId("EmptyBlock")).toBeTruthy();
+		expect(getByTestId("EmptyBlock")).toHaveTextContent(translations.WALLET_CONTROLS.EMPTY_MESSAGE);
+
+		expect(asFragment()).toMatchSnapshot();
+	});
+
+	it("should render empty block for favorites display type", () => {
+		const { asFragment, getByTestId } = render(<WalletsList wallets={[]} walletsDisplayType="favorites" />);
+
+		expect(getByTestId("EmptyBlock")).toBeTruthy();
+		expect(getByTestId("EmptyBlock")).toHaveTextContent(
+			translations.WALLET_CONTROLS.EMPTY_MESSAGE_TYPE.replace("<bold>{{type}}</bold>", "Starred"),
+		);
+
+		expect(asFragment()).toMatchSnapshot();
+	});
+
+	it("should render empty block for ledger display type", () => {
+		const { asFragment, getByTestId } = render(<WalletsList wallets={[]} walletsDisplayType="ledger" />);
+
+		expect(getByTestId("EmptyBlock")).toBeTruthy();
+		expect(getByTestId("EmptyBlock")).toHaveTextContent(
+			translations.WALLET_CONTROLS.EMPTY_MESSAGE_TYPE.replace("<bold>{{type}}</bold>", "Ledger"),
+		);
+
 		expect(asFragment()).toMatchSnapshot();
 	});
 
