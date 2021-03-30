@@ -198,7 +198,7 @@ export const translations: { [key: string]: any } = {
 	MODAL_SEARCH_RECIPIENT: {
 		TITLE: "Select Recipient",
 		DESCRIPTION: "Find and select a recipient from your contacts and wallets",
-		SEARCH_PLACEHOLDER: "Enter the name or address",
+		SEARCH_PLACEHOLDER: "Enter name or address",
 	},
 
 	LEDGER_CONFIRMATION: {

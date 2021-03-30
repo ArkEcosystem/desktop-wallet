@@ -111,7 +111,6 @@ export const NewsOptions = ({ selectedCategories, selectedCoins, onSearch, onSub
 				<div className="flex justify-between items-center py-4 px-2 rounded-md shadow-xl">
 					<Input
 						data-testid="NewsOptions__search"
-						className="border-none shadow-none NewsOptions__search"
 						maxLength={32}
 						placeholder={t("NEWS.NEWS_OPTIONS.PLACEHOLDER")}
 						onChange={(event) => handleSearchInput?.((event.target as HTMLInputElement).value)}
@@ -120,6 +119,8 @@ export const NewsOptions = ({ selectedCategories, selectedCoins, onSearch, onSub
 								handleSubmit();
 							}
 						}}
+						noBorder
+						noShadow
 					/>
 					<Icon
 						className="mr-4 text-theme-primary-300 dark:text-theme-secondary-600"

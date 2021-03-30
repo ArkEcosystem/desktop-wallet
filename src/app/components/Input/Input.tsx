@@ -15,11 +15,30 @@ type InputProps = {
 	suggestion?: string;
 	errorMessage?: string;
 	innerClassName?: string;
+	noBorder?: boolean;
+	noShadow?: boolean;
 	addons?: any;
 } & React.HTMLProps<any>;
 
-export const InputWrapperStyled = styled.div<{ disabled?: boolean; invalid?: boolean }>`
-	${tw`flex items-center w-full px-4 py-3 space-x-2 overflow-hidden transition-colors duration-200 border rounded appearance-none h-14 text-theme-text focus-within:ring-1`}
+export const InputWrapperStyled = styled.div<{
+	disabled?: boolean;
+	invalid?: boolean;
+	noBorder?: boolean;
+	noShadow?: boolean;
+}>`
+	${tw`flex items-center w-full px-4 space-x-2 overflow-hidden transition-colors duration-200 rounded appearance-none h-14 text-theme-text`}
+
+	${({ noBorder }) => {
+		if (!noBorder) {
+			return tw`border`;
+		}
+	}}
+
+	${({ noShadow }) => {
+		if (!noShadow) {
+			return tw`focus-within:ring-1`;
+		}
+	}}
 
 	${({ disabled, invalid }) => {
 		if (disabled) {
@@ -59,6 +78,8 @@ export const Input = React.forwardRef<InputElement, InputProps>(
 			errorMessage,
 			addons,
 			disabled,
+			noBorder,
+			noShadow,
 			suggestion,
 			hideInputValue,
 			style,
@@ -85,10 +106,17 @@ export const Input = React.forwardRef<InputElement, InputProps>(
 
 		return (
 			<>
-				<InputWrapperStyled style={style} className={className} disabled={disabled} invalid={isInvalidValue}>
+				<InputWrapperStyled
+					style={style}
+					className={className}
+					disabled={disabled}
+					invalid={isInvalidValue}
+					noBorder={noBorder}
+					noShadow={noShadow}
+				>
 					{addons?.start !== undefined && addons.start}
 
-					<div className={cn("relative flex flex-1", { invisible: hideInputValue })}>
+					<div className={cn("relative flex flex-1 h-full", { invisible: hideInputValue })}>
 						<InputStyled
 							data-testid="Input"
 							className={cn(
@@ -107,7 +135,7 @@ export const Input = React.forwardRef<InputElement, InputProps>(
 							<span
 								data-testid="Input__suggestion"
 								className={cn(
-									"absolute top-0 flex items-center font-normal opacity-50 pointer-events-none",
+									"absolute inset-y-0 flex items-center font-normal opacity-50 pointer-events-none",
 									innerClassName,
 								)}
 							>
