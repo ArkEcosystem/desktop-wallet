@@ -83,6 +83,7 @@ export const SendTransfer = () => {
 
 	const { hasDeviceAvailable, isConnected } = useLedgerContext();
 
+	const [lastEstimatedExpiration, setLastEstimatedExpiration] = useState<number | undefined>();
 	const abortRef = useRef(new AbortController());
 	const transactionBuilder = useTransactionBuilder(activeProfile);
 	const { fetchWalletUnconfirmedTransactions } = useTransaction();
@@ -216,6 +217,7 @@ export const SendTransfer = () => {
 
 			const expiration = await wallet?.coin()?.transaction().estimateExpiration();
 			transactionInput.data.expiration = parseInt(expiration!);
+			setLastEstimatedExpiration(transactionInput.data.expiration);
 
 			const abortSignal = abortRef.current?.signal;
 			const { uuid, transaction } = await transactionBuilder.build(transactionType, transactionInput, {
@@ -305,7 +307,12 @@ export const SendTransfer = () => {
 							<TabPanel tabId={3}>
 								<AuthenticationStep
 									wallet={wallet!}
-									ledgerDetails={<TransferLedgerReview wallet={wallet!} />}
+									ledgerDetails={
+										<TransferLedgerReview
+											wallet={wallet!}
+											estimatedExpiration={lastEstimatedExpiration}
+										/>
+									}
 									ledgerIsAwaitingDevice={!hasDeviceAvailable}
 									ledgerIsAwaitingApp={!isConnected}
 								/>

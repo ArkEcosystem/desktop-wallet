@@ -69,6 +69,7 @@ export const translations: { [key: string]: any } = {
 	},
 	EXCHANGE: "Exchange",
 	EXPLORER: "Explorer",
+	EXPIRATION: "Expiration",
 	FAILED_FETCH: "Failed to fetch {{name}}. Reason {{msg}}",
 	FAILED_UPDATE: "Failed to update {{name}}. Reason: {{reason}}",
 	FAVORITES: "Favorites",
