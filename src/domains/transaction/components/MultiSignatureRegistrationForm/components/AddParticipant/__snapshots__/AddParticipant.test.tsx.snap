@@ -285,29 +285,34 @@ exports[`Add Participant should fail if cannot find the address remotely 1`] = `
                 <td
                   class="py-6 w-20 text-right"
                 >
-                  <button
-                    class="OriginalButton__StyledButton-sc-1y2wptt-0 hLYMjm"
-                    data-testid="recipient-list__remove-recipient"
-                    type="button"
+                  <span
+                    class="inline-block"
                   >
-                    <div
-                      class="flex relative items-center space-x-2"
+                    <button
+                      class="OriginalButton__StyledButton-sc-1y2wptt-0 blpaPr"
+                      data-testid="recipient-list__remove-recipient"
+                      disabled=""
+                      type="button"
                     >
                       <div
-                        class="py-1"
+                        class="flex relative items-center space-x-2"
                       >
                         <div
-                          class="sc-bdfBwQ fPrsah"
-                          height="1em"
-                          width="1em"
+                          class="py-1"
                         >
-                          <svg>
-                            trash.svg
-                          </svg>
+                          <div
+                            class="sc-bdfBwQ fPrsah"
+                            height="1em"
+                            width="1em"
+                          >
+                            <svg>
+                              trash.svg
+                            </svg>
+                          </div>
                         </div>
                       </div>
-                    </div>
-                  </button>
+                    </button>
+                  </span>
                 </td>
               </tr>
             </tbody>
@@ -604,29 +609,34 @@ exports[`Add Participant should fail to find 1`] = `
                 <td
                   class="py-6 w-20 text-right"
                 >
-                  <button
-                    class="OriginalButton__StyledButton-sc-1y2wptt-0 hLYMjm"
-                    data-testid="recipient-list__remove-recipient"
-                    type="button"
+                  <span
+                    class="inline-block"
                   >
-                    <div
-                      class="flex relative items-center space-x-2"
+                    <button
+                      class="OriginalButton__StyledButton-sc-1y2wptt-0 blpaPr"
+                      data-testid="recipient-list__remove-recipient"
+                      disabled=""
+                      type="button"
                     >
                       <div
-                        class="py-1"
+                        class="flex relative items-center space-x-2"
                       >
                         <div
-                          class="sc-bdfBwQ fPrsah"
-                          height="1em"
-                          width="1em"
+                          class="py-1"
                         >
-                          <svg>
-                            trash.svg
-                          </svg>
+                          <div
+                            class="sc-bdfBwQ fPrsah"
+                            height="1em"
+                            width="1em"
+                          >
+                            <svg>
+                              trash.svg
+                            </svg>
+                          </div>
                         </div>
                       </div>
-                    </div>
-                  </button>
+                    </button>
+                  </span>
                 </td>
               </tr>
             </tbody>
@@ -923,29 +933,34 @@ exports[`Add Participant should fail with cold wallet 1`] = `
                 <td
                   class="py-6 w-20 text-right"
                 >
-                  <button
-                    class="OriginalButton__StyledButton-sc-1y2wptt-0 hLYMjm"
-                    data-testid="recipient-list__remove-recipient"
-                    type="button"
+                  <span
+                    class="inline-block"
                   >
-                    <div
-                      class="flex relative items-center space-x-2"
+                    <button
+                      class="OriginalButton__StyledButton-sc-1y2wptt-0 blpaPr"
+                      data-testid="recipient-list__remove-recipient"
+                      disabled=""
+                      type="button"
                     >
                       <div
-                        class="py-1"
+                        class="flex relative items-center space-x-2"
                       >
                         <div
-                          class="sc-bdfBwQ fPrsah"
-                          height="1em"
-                          width="1em"
+                          class="py-1"
                         >
-                          <svg>
-                            trash.svg
-                          </svg>
+                          <div
+                            class="sc-bdfBwQ fPrsah"
+                            height="1em"
+                            width="1em"
+                          >
+                            <svg>
+                              trash.svg
+                            </svg>
+                          </div>
                         </div>
                       </div>
-                    </div>
-                  </button>
+                    </button>
+                  </span>
                 </td>
               </tr>
             </tbody>
@@ -1199,29 +1214,33 @@ exports[`Add Participant should render custom participants 1`] = `
                 <td
                   class="py-6 w-20 text-right"
                 >
-                  <button
-                    class="OriginalButton__StyledButton-sc-1y2wptt-0 hLYMjm"
-                    data-testid="recipient-list__remove-recipient"
-                    type="button"
+                  <span
+                    class="inline-block"
                   >
-                    <div
-                      class="flex relative items-center space-x-2"
+                    <button
+                      class="OriginalButton__StyledButton-sc-1y2wptt-0 hLYMjm"
+                      data-testid="recipient-list__remove-recipient"
+                      type="button"
                     >
                       <div
-                        class="py-1"
+                        class="flex relative items-center space-x-2"
                       >
                         <div
-                          class="sc-bdfBwQ fPrsah"
-                          height="1em"
-                          width="1em"
+                          class="py-1"
                         >
-                          <svg>
-                            trash.svg
-                          </svg>
+                          <div
+                            class="sc-bdfBwQ fPrsah"
+                            height="1em"
+                            width="1em"
+                          >
+                            <svg>
+                              trash.svg
+                            </svg>
+                          </div>
                         </div>
                       </div>
-                    </div>
-                  </button>
+                    </button>
+                  </span>
                 </td>
               </tr>
             </tbody>
@@ -1570,29 +1589,34 @@ exports[`Add Participant should work with a remote wallet 1`] = `
                 <td
                   class="py-6 w-20 text-right"
                 >
-                  <button
-                    class="OriginalButton__StyledButton-sc-1y2wptt-0 hLYMjm"
-                    data-testid="recipient-list__remove-recipient"
-                    type="button"
+                  <span
+                    class="inline-block"
                   >
-                    <div
-                      class="flex relative items-center space-x-2"
+                    <button
+                      class="OriginalButton__StyledButton-sc-1y2wptt-0 blpaPr"
+                      data-testid="recipient-list__remove-recipient"
+                      disabled=""
+                      type="button"
                     >
                       <div
-                        class="py-1"
+                        class="flex relative items-center space-x-2"
                       >
                         <div
-                          class="sc-bdfBwQ fPrsah"
-                          height="1em"
-                          width="1em"
+                          class="py-1"
                         >
-                          <svg>
-                            trash.svg
-                          </svg>
+                          <div
+                            class="sc-bdfBwQ fPrsah"
+                            height="1em"
+                            width="1em"
+                          >
+                            <svg>
+                              trash.svg
+                            </svg>
+                          </div>
                         </div>
                       </div>
-                    </div>
-                  </button>
+                    </button>
+                  </span>
                 </td>
               </tr>
               <tr
@@ -1645,29 +1669,33 @@ exports[`Add Participant should work with a remote wallet 1`] = `
                 <td
                   class="py-6 w-20 text-right"
                 >
-                  <button
-                    class="OriginalButton__StyledButton-sc-1y2wptt-0 hLYMjm"
-                    data-testid="recipient-list__remove-recipient"
-                    type="button"
+                  <span
+                    class="inline-block"
                   >
-                    <div
-                      class="flex relative items-center space-x-2"
+                    <button
+                      class="OriginalButton__StyledButton-sc-1y2wptt-0 hLYMjm"
+                      data-testid="recipient-list__remove-recipient"
+                      type="button"
                     >
                       <div
-                        class="py-1"
+                        class="flex relative items-center space-x-2"
                       >
                         <div
-                          class="sc-bdfBwQ fPrsah"
-                          height="1em"
-                          width="1em"
+                          class="py-1"
                         >
-                          <svg>
-                            trash.svg
-                          </svg>
+                          <div
+                            class="sc-bdfBwQ fPrsah"
+                            height="1em"
+                            width="1em"
+                          >
+                            <svg>
+                              trash.svg
+                            </svg>
+                          </div>
                         </div>
                       </div>
-                    </div>
-                  </button>
+                    </button>
+                  </span>
                 </td>
               </tr>
             </tbody>
@@ -2016,29 +2044,34 @@ exports[`Add Participant should work with an imported wallet 1`] = `
                 <td
                   class="py-6 w-20 text-right"
                 >
-                  <button
-                    class="OriginalButton__StyledButton-sc-1y2wptt-0 hLYMjm"
-                    data-testid="recipient-list__remove-recipient"
-                    type="button"
+                  <span
+                    class="inline-block"
                   >
-                    <div
-                      class="flex relative items-center space-x-2"
+                    <button
+                      class="OriginalButton__StyledButton-sc-1y2wptt-0 blpaPr"
+                      data-testid="recipient-list__remove-recipient"
+                      disabled=""
+                      type="button"
                     >
                       <div
-                        class="py-1"
+                        class="flex relative items-center space-x-2"
                       >
                         <div
-                          class="sc-bdfBwQ fPrsah"
-                          height="1em"
-                          width="1em"
+                          class="py-1"
                         >
-                          <svg>
-                            trash.svg
-                          </svg>
+                          <div
+                            class="sc-bdfBwQ fPrsah"
+                            height="1em"
+                            width="1em"
+                          >
+                            <svg>
+                              trash.svg
+                            </svg>
+                          </div>
                         </div>
                       </div>
-                    </div>
-                  </button>
+                    </button>
+                  </span>
                 </td>
               </tr>
               <tr
@@ -2091,29 +2124,33 @@ exports[`Add Participant should work with an imported wallet 1`] = `
                 <td
                   class="py-6 w-20 text-right"
                 >
-                  <button
-                    class="OriginalButton__StyledButton-sc-1y2wptt-0 hLYMjm"
-                    data-testid="recipient-list__remove-recipient"
-                    type="button"
+                  <span
+                    class="inline-block"
                   >
-                    <div
-                      class="flex relative items-center space-x-2"
+                    <button
+                      class="OriginalButton__StyledButton-sc-1y2wptt-0 hLYMjm"
+                      data-testid="recipient-list__remove-recipient"
+                      type="button"
                     >
                       <div
-                        class="py-1"
+                        class="flex relative items-center space-x-2"
                       >
                         <div
-                          class="sc-bdfBwQ fPrsah"
-                          height="1em"
-                          width="1em"
+                          class="py-1"
                         >
-                          <svg>
-                            trash.svg
-                          </svg>
+                          <div
+                            class="sc-bdfBwQ fPrsah"
+                            height="1em"
+                            width="1em"
+                          >
+                            <svg>
+                              trash.svg
+                            </svg>
+                          </div>
                         </div>
                       </div>
-                    </div>
-                  </button>
+                    </button>
+                  </span>
                 </td>
               </tr>
             </tbody>

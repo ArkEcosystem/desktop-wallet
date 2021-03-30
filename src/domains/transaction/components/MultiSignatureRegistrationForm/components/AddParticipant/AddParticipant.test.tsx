@@ -255,6 +255,8 @@ describe("Add Participant", () => {
 
 		await waitFor(() => expect(screen.getAllByRole("row")).toHaveLength(1));
 
+		expect(screen.getByTestId("recipient-list__remove-recipient")).toBeDisabled();
+
 		act(() => {
 			fireEvent.click(screen.getByTestId("recipient-list__remove-recipient"));
 		});
