@@ -3,7 +3,7 @@
 exports[`Notifications should emit transactionClick event 1`] = `
 <div>
   <div
-    class="styles__NotificationsWrapper-fnayqc-0 dHZvWm"
+    class="styles__NotificationsWrapper-fnayqc-0 jSaVQn"
     data-testid="NotificationsWrapper"
   >
     <div
@@ -265,38 +265,25 @@ exports[`Notifications should emit transactionClick event 1`] = `
 exports[`Notifications should render with empty notifications 1`] = `
 <div>
   <div
-    class="styles__NotificationsWrapper-fnayqc-0 dHZvWm"
+    class="styles__NotificationsWrapper-fnayqc-0 jSaVQn"
   >
     <div
-      class="p-6 mb-5 rounded-2xl border-2 border-theme-secondary-300 dark:border-theme-secondary-800 text-md text-theme-secondary-text"
+      class="border border-solid border-theme-secondary-300 dark:border-theme-secondary-800 rounded-lg text-theme-secondary-text p-6"
+      data-testid="EmptyBlock"
     >
-      You have no notifications at this time.
-    </div>
-    <div>
-      <div
-        class="sc-bdfBwQ bbVQnz"
-        height="80"
-        width="200"
-      >
-        <svg>
-          placeholder.svg
-        </svg>
+      <div>
+        <span
+          class="whitespace-nowrap"
+        >
+          You have no notifications at this time.
+        </span>
       </div>
     </div>
-    <div
-      class="my-3 border-2 border-b border-theme-secondary-100"
-    />
-    <div>
-      <div
-        class="sc-bdfBwQ bbVQnz"
-        height="80"
-        width="200"
-      >
-        <svg>
-          placeholder.svg
-        </svg>
-      </div>
-    </div>
+    <svg
+      class="mt-8 mb-2 mx-auto w-64"
+    >
+      empty-notifications.svg
+    </svg>
   </div>
 </div>
 `;
@@ -304,7 +291,7 @@ exports[`Notifications should render with empty notifications 1`] = `
 exports[`Notifications should render with plugins 1`] = `
 <div>
   <div
-    class="styles__NotificationsWrapper-fnayqc-0 dHZvWm"
+    class="styles__NotificationsWrapper-fnayqc-0 jSaVQn"
     data-testid="NotificationsWrapper"
   >
     <div
@@ -566,7 +553,7 @@ exports[`Notifications should render with plugins 1`] = `
 exports[`Notifications should render with transactions and plugins 1`] = `
 <div>
   <div
-    class="styles__NotificationsWrapper-fnayqc-0 dHZvWm"
+    class="styles__NotificationsWrapper-fnayqc-0 jSaVQn"
     data-testid="NotificationsWrapper"
   >
     <div
