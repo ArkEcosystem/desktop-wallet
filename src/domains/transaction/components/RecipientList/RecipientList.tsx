@@ -5,6 +5,7 @@ import { OriginalButton as Button } from "app/components/Button/OriginalButton";
 import { Icon } from "app/components/Icon";
 import { Label } from "app/components/Label";
 import { Table } from "app/components/Table";
+import { Tooltip } from "app/components/Tooltip";
 import React from "react";
 import { useTranslation } from "react-i18next";
 import { styled } from "twin.macro";
@@ -28,6 +29,8 @@ const RecipientListItem = ({
 	variant,
 	walletName,
 	onRemove,
+	buttonTooltip,
+	disableButton,
 	showAmount,
 }: RecipientListItemProps) => {
 	const { t } = useTranslation();
@@ -62,6 +65,8 @@ const RecipientListItem = ({
 			</tr>
 		);
 	}
+
+	const isButtonDisabled = disableButton?.(address) || false;
 
 	return (
 		<tr
@@ -98,15 +103,20 @@ const RecipientListItem = ({
 
 			{isEditable && (
 				<td className="py-6 w-20 text-right">
-					<Button
-						variant="danger"
-						onClick={() => onRemove?.(listIndex!)}
-						data-testid="recipient-list__remove-recipient"
-					>
-						<div className="py-1">
-							<Icon name="Trash" />
-						</div>
-					</Button>
+					<Tooltip content={buttonTooltip}>
+						<span className="inline-block">
+							<Button
+								disabled={isButtonDisabled}
+								variant="danger"
+								onClick={() => !isButtonDisabled && onRemove?.(listIndex!)}
+								data-testid="recipient-list__remove-recipient"
+							>
+								<div className="py-1">
+									<Icon name="Trash" />
+								</div>
+							</Button>
+						</span>
+					</Tooltip>
 				</td>
 			)}
 		</tr>
@@ -120,6 +130,8 @@ export const RecipientList = ({
 	variant,
 	label,
 	showAmount,
+	buttonTooltip,
+	disableButton,
 	onRemove,
 }: RecipientListProps) => {
 	const columns = [
@@ -148,6 +160,8 @@ export const RecipientList = ({
 						listIndex={index}
 						variant={variant}
 						walletName={recipient.walletName}
+						buttonTooltip={buttonTooltip}
+						disableButton={disableButton}
 						onRemove={onRemove}
 					/>
 				)}

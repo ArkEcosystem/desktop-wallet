@@ -1,7 +1,6 @@
 import { Contracts } from "@arkecosystem/platform-sdk-profiles";
 import { Button } from "app/components/Button";
 import { FormField, FormLabel, SubForm } from "app/components/Form";
-import { toasts } from "app/services";
 import { SelectRecipient } from "domains/profile/components/SelectRecipient";
 import { RecipientList } from "domains/transaction/components/RecipientList";
 import React, { useCallback, useEffect, useRef, useState } from "react";
@@ -57,13 +56,6 @@ export const AddParticipant = ({ profile, wallet, onChange, defaultParticipants 
 	};
 
 	const removeParticipant = (index: number) => {
-		const { address } = participants[index];
-
-		if (address === wallet.address()) {
-			toasts.error(t("TRANSACTION.MULTISIGNATURE.ERROR.REMOVE_OWN_ADDRESS"));
-			return;
-		}
-
 		const remainingParticipants = [...participants];
 		remainingParticipants.splice(index, 1);
 
@@ -152,6 +144,8 @@ export const AddParticipant = ({ profile, wallet, onChange, defaultParticipants 
 				<RecipientList
 					recipients={participants}
 					assetSymbol={wallet.network().ticker()}
+					buttonTooltip={t("TRANSACTION.MULTISIGNATURE.REMOVE_NOT_ALLOWED")}
+					disableButton={(address: string) => address === wallet.address()}
 					onRemove={removeParticipant}
 					label="TRANSACTION.MULTISIGNATURE.PARTICIPANT_#"
 					showAmount={false}

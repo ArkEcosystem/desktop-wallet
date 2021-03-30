@@ -2,7 +2,7 @@
 import { BigNumber } from "@arkecosystem/platform-sdk-support";
 import React from "react";
 import { act } from "react-dom/test-utils";
-import { fireEvent, render } from "testing-library";
+import { fireEvent, render, screen } from "utils/testing-library";
 
 import { RecipientList } from "./";
 
@@ -55,6 +55,29 @@ describe("RecipientList", () => {
 		const { container } = render(
 			<RecipientList recipients={recipients} isEditable={true} assetSymbol="ARK" showAmount={false} />,
 		);
+		expect(container).toMatchSnapshot();
+	});
+
+	it("should conditionally disable remove button", () => {
+		const { container } = render(
+			<RecipientList
+				recipients={recipients}
+				disableButton={(address: string) => address === recipients[0].address}
+				isEditable={true}
+				assetSymbol="ARK"
+			/>,
+		);
+
+		const removeButtons = screen.getAllByTestId("recipient-list__remove-recipient");
+
+		for (let i = 0; i < removeButtons.length; i++) {
+			if (!i) {
+				expect(removeButtons[i]).toBeDisabled();
+			} else {
+				expect(removeButtons[i]).not.toBeDisabled();
+			}
+		}
+
 		expect(container).toMatchSnapshot();
 	});
 

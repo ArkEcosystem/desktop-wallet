@@ -1956,29 +1956,33 @@ exports[`SendTransfer should render 1st step with custom deeplink values and use
                       <td
                         class="py-6 w-20 text-right"
                       >
-                        <button
-                          class="OriginalButton__StyledButton-sc-1y2wptt-0 hLYMjm"
-                          data-testid="recipient-list__remove-recipient"
-                          type="button"
+                        <span
+                          class="inline-block"
                         >
-                          <div
-                            class="flex relative items-center space-x-2"
+                          <button
+                            class="OriginalButton__StyledButton-sc-1y2wptt-0 hLYMjm"
+                            data-testid="recipient-list__remove-recipient"
+                            type="button"
                           >
                             <div
-                              class="py-1"
+                              class="flex relative items-center space-x-2"
                             >
                               <div
-                                class="sc-bdfBwQ fPrsah"
-                                height="1em"
-                                width="1em"
+                                class="py-1"
                               >
-                                <svg>
-                                  trash.svg
-                                </svg>
+                                <div
+                                  class="sc-bdfBwQ fPrsah"
+                                  height="1em"
+                                  width="1em"
+                                >
+                                  <svg>
+                                    trash.svg
+                                  </svg>
+                                </div>
                               </div>
                             </div>
-                          </div>
-                        </button>
+                          </button>
+                        </span>
                       </td>
                     </tr>
                   </tbody>
@@ -5058,29 +5062,33 @@ exports[`SendTransfer should render form step with deeplink values and use them 
                       <td
                         class="py-6 w-20 text-right"
                       >
-                        <button
-                          class="OriginalButton__StyledButton-sc-1y2wptt-0 hLYMjm"
-                          data-testid="recipient-list__remove-recipient"
-                          type="button"
+                        <span
+                          class="inline-block"
                         >
-                          <div
-                            class="flex relative items-center space-x-2"
+                          <button
+                            class="OriginalButton__StyledButton-sc-1y2wptt-0 hLYMjm"
+                            data-testid="recipient-list__remove-recipient"
+                            type="button"
                           >
                             <div
-                              class="py-1"
+                              class="flex relative items-center space-x-2"
                             >
                               <div
-                                class="sc-bdfBwQ fPrsah"
-                                height="1em"
-                                width="1em"
+                                class="py-1"
                               >
-                                <svg>
-                                  trash.svg
-                                </svg>
+                                <div
+                                  class="sc-bdfBwQ fPrsah"
+                                  height="1em"
+                                  width="1em"
+                                >
+                                  <svg>
+                                    trash.svg
+                                  </svg>
+                                </div>
                               </div>
                             </div>
-                          </div>
-                        </button>
+                          </button>
+                        </span>
                       </td>
                     </tr>
                   </tbody>
