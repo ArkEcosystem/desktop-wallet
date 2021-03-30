@@ -312,9 +312,9 @@ describe("useProfileRestore", () => {
 		profile.wallets().flush();
 
 		const mockProfileFromUrl = jest.spyOn(profileUtilsHook, "useProfileUtils").mockImplementation(() => ({
-				getProfileStoredPassword: () => undefined,
-				getProfileFromUrl: () => profile,
-			}));
+			getProfileStoredPassword: () => undefined,
+			getProfileFromUrl: () => profile,
+		}));
 
 		const wrapper = ({ children }: any) => (
 			<EnvironmentProvider env={env}>
@@ -344,9 +344,9 @@ describe("useProfileRestore", () => {
 		const profile = env.profiles().findById("cba050f1-880f-45f0-9af9-cfe48f406052");
 
 		const mockProfileFromUrl = jest.spyOn(profileUtilsHook, "useProfileUtils").mockImplementation(() => ({
-				getProfileStoredPassword: () => "password",
-				getProfileFromUrl: () => profile,
-			}));
+			getProfileStoredPassword: () => "password",
+			getProfileFromUrl: () => profile,
+		}));
 
 		const wrapper = ({ children }: any) => (
 			<EnvironmentProvider env={env}>
@@ -377,9 +377,9 @@ describe("useProfileRestore", () => {
 		profile.wallets().flush();
 
 		const mockProfileFromUrl = jest.spyOn(profileUtilsHook, "useProfileUtils").mockImplementation(() => ({
-				getProfileStoredPassword: () => undefined,
-				getProfileFromUrl: () => undefined,
-			}));
+			getProfileStoredPassword: () => undefined,
+			getProfileFromUrl: () => undefined,
+		}));
 
 		const wrapper = ({ children }: any) => (
 			<EnvironmentProvider env={env}>
