@@ -5,7 +5,6 @@ import { CoinNetworkExtended } from "domains/network/data";
 import { getNetworkExtendedData } from "domains/network/helpers";
 import { useCombobox } from "downshift";
 import React, { useEffect, useMemo, useState } from "react";
-import { useFormContext } from "react-hook-form";
 import { useTranslation } from "react-i18next";
 
 import { SelectNetworkInput } from "./SelectNetworkInput";
@@ -21,6 +20,7 @@ type SelectNetworkProps = {
 	id?: string;
 	disabled?: boolean;
 	hideOptions?: boolean;
+	onInputChange?: (value?: string, suggestion?: string) => void;
 	onSelect?: (network?: Coins.Network | null) => void;
 };
 
@@ -30,6 +30,7 @@ export const SelectNetwork = ({
 	selected,
 	networks,
 	placeholder,
+	onInputChange,
 	onSelect,
 	name,
 	id,
@@ -40,8 +41,6 @@ export const SelectNetwork = ({
 
 	const [items, setItems] = useState<Network[]>([]);
 	const [suggestion, setSuggestion] = useState("");
-
-	const { setError, clearErrors } = useFormContext();
 
 	const extendedItems = useMemo(
 		() =>
@@ -83,13 +82,7 @@ export const SelectNetwork = ({
 
 			if (!inputValue) {
 				setSuggestion("");
-
-				return setError("network", {
-					type: "manual",
-					message: t("COMMON.VALIDATION.FIELD_REQUIRED", {
-						field: t("COMMON.CRYPTOASSET"),
-					}),
-				});
+				return onInputChange?.();
 			}
 
 			let newSuggestion: string | undefined = undefined;
@@ -100,16 +93,7 @@ export const SelectNetwork = ({
 				setSuggestion(newSuggestion);
 			}
 
-			if (newSuggestion) {
-				clearErrors("network");
-			} else {
-				setSuggestion("");
-
-				setError("network", {
-					type: "manual",
-					message: t("COMMON.INPUT_NETWORK.VALIDATION.NETWORK_NOT_FOUND"),
-				});
-			}
+			onInputChange?.(inputValue, newSuggestion);
 		},
 	});
 
