@@ -10,6 +10,7 @@ import { env, getDefaultProfileId, renderWithRouter, waitFor } from "utils/testi
 const history = createMemoryHistory();
 const dashboardURL = `/profiles/${getDefaultProfileId()}/dashboard`;
 import { useProfileRestore, useProfileSyncStatus } from "./use-profile-synchronizer";
+import * as profileUtilsHook from "./use-profile-utils";
 
 describe("useProfileSyncStatus", () => {
 	it("should restore", async () => {
@@ -304,11 +305,16 @@ describe("useProfileRestore", () => {
 		process.env.TEST_PROFILES_RESTORE_STATUS = undefined;
 	});
 
-	it("should restore", async () => {
+	it("should restore and save profile", async () => {
 		process.env.TEST_PROFILES_RESTORE_STATUS = undefined;
 		process.env.REACT_APP_IS_E2E = undefined;
 		const profile = env.profiles().findById(getDefaultProfileId());
 		profile.wallets().flush();
+
+		const mockProfileFromUrl = jest.spyOn(profileUtilsHook, "useProfileUtils").mockImplementation(() => ({
+				getProfileStoredPassword: () => undefined,
+				getProfileFromUrl: () => profile,
+			}));
 
 		const wrapper = ({ children }: any) => (
 			<EnvironmentProvider env={env}>
@@ -329,12 +335,18 @@ describe("useProfileRestore", () => {
 		expect(isRestored).toEqual(true);
 
 		process.env.TEST_PROFILES_RESTORE_STATUS = "restored";
+		mockProfileFromUrl.mockRestore();
 	});
 
 	it("should restore a profile that uses password", async () => {
 		process.env.TEST_PROFILES_RESTORE_STATUS = undefined;
 		process.env.REACT_APP_IS_E2E = undefined;
 		const profile = env.profiles().findById("cba050f1-880f-45f0-9af9-cfe48f406052");
+
+		const mockProfileFromUrl = jest.spyOn(profileUtilsHook, "useProfileUtils").mockImplementation(() => ({
+				getProfileStoredPassword: () => "password",
+				getProfileFromUrl: () => profile,
+			}));
 
 		const wrapper = ({ children }: any) => (
 			<EnvironmentProvider env={env}>
@@ -355,6 +367,40 @@ describe("useProfileRestore", () => {
 		expect(isRestored).toEqual(true);
 
 		process.env.TEST_PROFILES_RESTORE_STATUS = "restored";
+		mockProfileFromUrl.mockRestore();
+	});
+
+	it("should not restore if url doesn't match active profile", async () => {
+		process.env.TEST_PROFILES_RESTORE_STATUS = undefined;
+		process.env.REACT_APP_IS_E2E = undefined;
+		const profile = env.profiles().findById(getDefaultProfileId());
+		profile.wallets().flush();
+
+		const mockProfileFromUrl = jest.spyOn(profileUtilsHook, "useProfileUtils").mockImplementation(() => ({
+				getProfileStoredPassword: () => undefined,
+				getProfileFromUrl: () => undefined,
+			}));
+
+		const wrapper = ({ children }: any) => (
+			<EnvironmentProvider env={env}>
+				<ConfigurationProvider>{children}</ConfigurationProvider>
+			</EnvironmentProvider>
+		);
+
+		const {
+			result: { current },
+		} = renderHook(() => useProfileRestore(), { wrapper });
+
+		let isRestored;
+
+		await act(async () => {
+			isRestored = await current.restoreProfile(profile);
+		});
+
+		expect(isRestored).toBeFalsy();
+
+		process.env.TEST_PROFILES_RESTORE_STATUS = "restored";
+		mockProfileFromUrl.mockRestore();
 	});
 
 	it("should restore in e2e", async () => {
