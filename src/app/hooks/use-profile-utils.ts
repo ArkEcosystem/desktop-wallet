@@ -32,13 +32,15 @@ export const useProfileUtils = (env: Environment) => {
 	);
 
 	const getProfileStoredPassword = useCallback((profile: Contracts.IProfile) => {
-		if (profile.usesPassword()) {
-			try {
-				const password = Helpers.MemoryPassword.get(profile);
-				return password;
-			} catch (error) {
-				return;
-			}
+		if (!profile.usesPassword()) {
+			return;
+		}
+
+		try {
+			const password = Helpers.MemoryPassword.get(profile);
+			return password;
+		} catch {
+			return;
 		}
 	}, []);
 
