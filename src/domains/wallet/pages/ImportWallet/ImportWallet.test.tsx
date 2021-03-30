@@ -421,7 +421,7 @@ describe("ImportWallet", () => {
 			fireEvent.input(passphraseInput, { target: { value: "some mnemonic" } });
 
 			await waitFor(() => {
-				expect(getByTestId("ImportWallet__continue-button")).not.toHaveAttribute("disabled");
+				expect(getByTestId("ImportWallet__continue-button")).not.toBeDisabled();
 			});
 
 			fireEvent.click(getByTestId("ImportWallet__continue-button"));
@@ -438,6 +438,10 @@ describe("ImportWallet", () => {
 
 			await waitFor(() => {
 				expect(confirmPassword).toHaveValue("password");
+			});
+
+			await waitFor(() => {
+				expect(getByTestId("ImportWallet__continue-button")).not.toBeDisabled();
 			});
 
 			fireEvent.click(getByTestId("ImportWallet__continue-button"));
