@@ -146,7 +146,7 @@ export const useProfileRestore = () => {
 		// When in e2e mode, profiles are migrated passwordless and
 		// password needs to be set again. The restore should happen
 		// without password and then reset the password.
-		const __E2E__ = ["true", "1"].includes(process.env.REACT_APP_IS_E2E?.toLowerCase());
+		const __E2E__ = ["true", "1"].includes(process.env.REACT_APP_IS_E2E?.toLowerCase() as string);
 		if (__E2E__) {
 			await profile.restore(password);
 			profile.save(password);
