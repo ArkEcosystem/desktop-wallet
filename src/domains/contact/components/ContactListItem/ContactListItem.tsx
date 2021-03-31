@@ -93,7 +93,11 @@ export const ContactListItem = ({ item, variant, onAction, onSend, options }: Co
 
 							<TableCell variant="end" className={borderClasses()} innerClassName="justify-end">
 								<div className="flex items-center space-x-2">
-									<Button variant="secondary" onClick={() => onSend?.(address)}>
+									<Button
+										data-testid="ContactListItem__send-button"
+										variant="secondary"
+										onClick={() => onSend?.(address)}
+									>
 										{t("COMMON.SEND")}
 									</Button>
 
