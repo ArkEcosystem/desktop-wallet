@@ -87,7 +87,7 @@ const filterUnseenTransactions = (
 
 const notifyReceivedTransactions: any = async ({
 	profile,
-	lookupLimit = 20,
+	lookupLimit = 10,
 	allowedTransactionTypes = ["transfer", "multiPayment"],
 }: NotifyReceivedTransactionsParams) => {
 	const allRecentTransactions = await fetchRecentProfileTransactions(profile, lookupLimit);
