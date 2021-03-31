@@ -159,7 +159,6 @@ export const PluginManager = () => {
 		filters,
 		filterBy,
 		fetchPluginPackages,
-		loadPlugins,
 	} = usePluginManagerContext();
 
 	const activeProfile = useActiveProfile();
@@ -197,9 +196,8 @@ export const PluginManager = () => {
 	}, [plugins]);
 
 	useEffect(() => {
-		loadPlugins();
 		fetchPluginPackages();
-	}, [fetchPluginPackages, loadPlugins]);
+	}, [fetchPluginPackages]);
 
 	// eslint-disable-next-line react-hooks/exhaustive-deps
 	const filteredPackages = useMemo(() => pluginsByCategory[currentView] || [], [

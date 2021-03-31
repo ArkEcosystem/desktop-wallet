@@ -18,6 +18,7 @@ import LedgerTransportNodeHID from "@ledgerhq/hw-transport-node-hid-singleton";
 import { Offline } from "domains/error/pages";
 import { Splash } from "domains/splash/pages";
 import { migrateProfileFixtures } from "migrations";
+import { usePluginManagerContext } from "plugins";
 import { PluginRouterWrapper } from "plugins/components/PluginRouterWrapper";
 import React, { useEffect, useLayoutEffect, useState } from "react";
 import { useErrorHandler } from "react-error-boundary";
@@ -47,8 +48,9 @@ const RouteWrappers = ({ children }: { children: React.ReactNode }) => (
 const Main = () => {
 	const [showSplash, setShowSplash] = useState(true);
 	const { env } = useEnvironmentContext();
+	const { loadPlugins } = usePluginManagerContext();
 	const isOnline = useNetworkStatus();
-	const { start, runAll } = useEnvSynchronizer();
+	const { start } = useEnvSynchronizer();
 	const history = useHistory();
 
 	useProfileSynchronizer({
@@ -85,7 +87,8 @@ const Main = () => {
 
 				await env.verify();
 				await env.boot();
-				runAll();
+
+				await loadPlugins();
 			} catch (error) {
 				console.error(error);
 				handleError(error);
@@ -95,7 +98,7 @@ const Main = () => {
 		};
 
 		boot();
-	}, [env, handleError, runAll]);
+	}, [env, handleError, loadPlugins]);
 
 	const renderContent = () => {
 		if (showSplash) {
