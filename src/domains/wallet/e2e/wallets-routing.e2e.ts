@@ -20,7 +20,7 @@ test("should navigate to create wallet page", async (t) => {
 	// Go to create wallet page
 	await t.click(Selector("button").withText(translations().COMMON.CREATE));
 	await t
-		.expect(Selector("div").withText(translations().WALLETS.PAGE_CREATE_WALLET.CRYPTOASSET_STEP.SUBTITLE).exists)
+		.expect(Selector("div").withText(translations().WALLETS.PAGE_CREATE_WALLET.NETWORK_STEP.SUBTITLE).exists)
 		.ok();
 });
 
@@ -31,6 +31,6 @@ test("should navigate to import wallet page", async (t) => {
 	// Go to create wallet page
 	await t.click(Selector("button").withText(translations().COMMON.IMPORT));
 	await t
-		.expect(Selector("div").withText(translations().WALLETS.PAGE_IMPORT_WALLET.CRYPTOASSET_STEP.SUBTITLE).exists)
+		.expect(Selector("div").withText(translations().WALLETS.PAGE_IMPORT_WALLET.NETWORK_STEP.SUBTITLE).exists)
 		.ok();
 });

@@ -24,7 +24,7 @@ test("should import a wallet by mnemonic", async (t) => {
 	// Navigate to import page
 	await t.click(Selector("button").withExactText(translations.COMMON.IMPORT));
 	await t
-		.expect(Selector("div").withText(translations.WALLETS.PAGE_IMPORT_WALLET.CRYPTOASSET_STEP.SUBTITLE).exists)
+		.expect(Selector("div").withText(translations.WALLETS.PAGE_IMPORT_WALLET.NETWORK_STEP.SUBTITLE).exists)
 		.ok();
 
 	// Select a cryptoasset and advance to second step
@@ -59,7 +59,7 @@ test("should import a wallet by address", async (t) => {
 	// Navigate to import page
 	await t.click(Selector("button").withExactText(translations.COMMON.IMPORT));
 	await t
-		.expect(Selector("div").withText(translations.WALLETS.PAGE_IMPORT_WALLET.CRYPTOASSET_STEP.SUBTITLE).exists)
+		.expect(Selector("div").withText(translations.WALLETS.PAGE_IMPORT_WALLET.NETWORK_STEP.SUBTITLE).exists)
 		.ok();
 
 	// Select a cryptoasset and advance to the step two
@@ -94,7 +94,7 @@ test("should show an error message for invalid address", async (t) => {
 	// Navigate to import page
 	await t.click(Selector("button").withExactText("Import"));
 	await t
-		.expect(Selector("div").withText(translations.WALLETS.PAGE_IMPORT_WALLET.CRYPTOASSET_STEP.SUBTITLE).exists)
+		.expect(Selector("div").withText(translations.WALLETS.PAGE_IMPORT_WALLET.NETWORK_STEP.SUBTITLE).exists)
 		.ok();
 
 	// Select a cryptoasset and advance to step two
@@ -127,7 +127,7 @@ test("should show an error message for duplicate address", async (t) => {
 	// Navigate to import page
 	await t.click(Selector("button").withExactText("Import"));
 	await t
-		.expect(Selector("div").withText(translations.WALLETS.PAGE_IMPORT_WALLET.CRYPTOASSET_STEP.SUBTITLE).exists)
+		.expect(Selector("div").withText(translations.WALLETS.PAGE_IMPORT_WALLET.NETWORK_STEP.SUBTITLE).exists)
 		.ok();
 
 	// Select a cryptoasset and advance to step two
@@ -154,7 +154,7 @@ test("should show an error message for duplicate address", async (t) => {
 	// Navigate to import page
 	await t.click(Selector("button").withExactText("Import"));
 	await t
-		.expect(Selector("div").withText(translations.WALLETS.PAGE_IMPORT_WALLET.CRYPTOASSET_STEP.SUBTITLE).exists)
+		.expect(Selector("div").withText(translations.WALLETS.PAGE_IMPORT_WALLET.NETWORK_STEP.SUBTITLE).exists)
 		.ok();
 
 	// Select a cryptoasset and advance to step two

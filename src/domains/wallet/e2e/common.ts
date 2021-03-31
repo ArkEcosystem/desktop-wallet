@@ -15,7 +15,7 @@ export const importWallet = async (t: any, passphrase = "passphrase", alias = "T
 	await t.click(Selector("a").withText(translations.COMMON.PORTFOLIO));
 	await t.click(Selector("button").withExactText(translations.COMMON.IMPORT));
 	await t
-		.expect(Selector("div").withText(translations.WALLETS.PAGE_IMPORT_WALLET.CRYPTOASSET_STEP.SUBTITLE).exists)
+		.expect(Selector("div").withText(translations.WALLETS.PAGE_IMPORT_WALLET.NETWORK_STEP.SUBTITLE).exists)
 		.ok();
 	await t.click('[data-testid="SelectNetworkInput__input"]');
 	await t.click(Selector('[data-testid="NetworkIcon-ARK-ark.devnet"]'));
@@ -43,7 +43,7 @@ export const importWalletByAddress = async (t: any, address: string, alias = "Te
 	await t.click(Selector("a").withText(translations.COMMON.PORTFOLIO));
 	await t.click(Selector("button").withExactText(translations.COMMON.IMPORT));
 	await t
-		.expect(Selector("div").withText(translations.WALLETS.PAGE_IMPORT_WALLET.CRYPTOASSET_STEP.SUBTITLE).exists)
+		.expect(Selector("div").withText(translations.WALLETS.PAGE_IMPORT_WALLET.NETWORK_STEP.SUBTITLE).exists)
 		.ok();
 	await t.click('[data-testid="SelectNetworkInput__input"]');
 	await t.click(Selector('[data-testid="NetworkIcon-ARK-ark.devnet"]'));
