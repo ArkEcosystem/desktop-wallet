@@ -261,7 +261,7 @@ describe("SendTransfer", () => {
 
 	it("should render form and use location state", async () => {
 		const history = createMemoryHistory();
-		const transferURL = `/profiles/${fixtureProfileId}/wallets/${fixtureWalletId}/send-transfer?memo=ARK&coin=ark&network=ark.devnet`;
+		const transferURL = `/profiles/${fixtureProfileId}/wallets/${fixtureWalletId}/send-transfer?recipient=DNjuJEDQkhrJ7cA9FZ2iVXt5anYiM8Jtc9&memo=ARK&coin=ark&network=ark.devnet`;
 		history.push(transferURL);
 
 		let rendered: RenderResult;

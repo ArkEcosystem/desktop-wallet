@@ -634,12 +634,12 @@ exports[`SendTransfer should display disabled address selection input if selecte
                                         <div
                                           aria-expanded="false"
                                           aria-haspopup="listbox"
-                                          aria-owns="downshift-81-menu"
+                                          aria-owns="downshift-85-menu"
                                           role="combobox"
                                         >
                                           <label
-                                            for="downshift-80-input"
-                                            id="downshift-81-label"
+                                            for="downshift-84-input"
+                                            id="downshift-85-label"
                                           />
                                           <div
                                             class="Input__InputWrapperStyled-wu99qs-0 cQSAQc"
@@ -653,13 +653,13 @@ exports[`SendTransfer should display disabled address selection input if selecte
                                             >
                                               <input
                                                 aria-autocomplete="list"
-                                                aria-controls="downshift-81-menu"
-                                                aria-labelledby="downshift-81-label"
+                                                aria-controls="downshift-85-menu"
+                                                aria-labelledby="downshift-85-label"
                                                 autocomplete="off"
                                                 class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full cursor-default text-theme-secondary-text"
                                                 data-testid="SelectDropdownInput__input"
                                                 disabled=""
-                                                id="downshift-80-input"
+                                                id="downshift-84-input"
                                                 name="recipientAddress"
                                                 placeholder="Address"
                                                 value=""
@@ -689,9 +689,9 @@ exports[`SendTransfer should display disabled address selection input if selecte
                                             </div>
                                           </div>
                                           <ul
-                                            aria-labelledby="downshift-81-label"
+                                            aria-labelledby="downshift-85-label"
                                             class="styles__SelectOptionsList-b2falt-0 heJAAA"
-                                            id="downshift-81-menu"
+                                            id="downshift-85-menu"
                                             role="listbox"
                                           />
                                         </div>
@@ -2728,7 +2728,7 @@ exports[`SendTransfer should render form and use location state 1`] = `
                                             data-testid="select-list__input"
                                             name="recipientAddress"
                                             readonly=""
-                                            value=""
+                                            value="DNjuJEDQkhrJ7cA9FZ2iVXt5anYiM8Jtc9"
                                           />
                                         </div>
                                       </div>
@@ -2749,8 +2749,19 @@ exports[`SendTransfer should render form and use location state 1`] = `
                                             class="Input__InputWrapperStyled-wu99qs-0 vKSQU"
                                           >
                                             <div
-                                              class="Circle-uw7h4j-0 blBpcG bg-theme-secondary-200 dark:bg-theme-secondary-700 border-theme-secondary-200 dark:border-theme-secondary-700"
-                                            />
+                                              class="Avatar__AvatarWrapper-sc-1vsy2s2-0 kvvaRs"
+                                              data-testid="Avatar"
+                                            >
+                                              <div
+                                                class="w-full h-full"
+                                              >
+                                                <img
+                                                  alt="DNjuJEDQkhrJ7cA9FZ2iVXt5anYiM8Jtc9"
+                                                  src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(139, 195, 74)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"20\\" cy=\\"70\\" fill=\\"rgb(233, 30, 99)\\"/><circle r=\\"35\\" cx=\\"50\\" cy=\\"50\\" fill=\\"rgb(103, 58, 183)\\"/><circle r=\\"60\\" cx=\\"30\\" cy=\\"60\\" fill=\\"rgb(244, 67, 54)\\"/></svg>"
+                                                  title="DNjuJEDQkhrJ7cA9FZ2iVXt5anYiM8Jtc9"
+                                                />
+                                              </div>
+                                            </div>
                                             <div
                                               class="relative flex flex-1"
                                             >
@@ -2764,7 +2775,7 @@ exports[`SendTransfer should render form and use location state 1`] = `
                                                 id="downshift-20-input"
                                                 name="recipientAddress"
                                                 placeholder="Address"
-                                                value=""
+                                                value="DNjuJEDQkhrJ7cA9FZ2iVXt5anYiM8Jtc9"
                                               />
                                             </div>
                                             <div
@@ -2837,7 +2848,7 @@ exports[`SendTransfer should render form and use location state 1`] = `
                                             name="amount"
                                             placeholder="Amount"
                                             type="text"
-                                            value=""
+                                            value="0"
                                           />
                                         </div>
                                         <div
@@ -3710,12 +3721,12 @@ exports[`SendTransfer should render form and use location state without memo 1`]
                                         <div
                                           aria-expanded="false"
                                           aria-haspopup="listbox"
-                                          aria-owns="downshift-47-menu"
+                                          aria-owns="downshift-51-menu"
                                           role="combobox"
                                         >
                                           <label
-                                            for="downshift-46-input"
-                                            id="downshift-47-label"
+                                            for="downshift-50-input"
+                                            id="downshift-51-label"
                                           />
                                           <div
                                             class="Input__InputWrapperStyled-wu99qs-0 vKSQU"
@@ -3728,12 +3739,12 @@ exports[`SendTransfer should render form and use location state without memo 1`]
                                             >
                                               <input
                                                 aria-autocomplete="list"
-                                                aria-controls="downshift-47-menu"
-                                                aria-labelledby="downshift-47-label"
+                                                aria-controls="downshift-51-menu"
+                                                aria-labelledby="downshift-51-label"
                                                 autocomplete="off"
                                                 class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full cursor-default"
                                                 data-testid="SelectDropdownInput__input"
-                                                id="downshift-46-input"
+                                                id="downshift-50-input"
                                                 name="recipientAddress"
                                                 placeholder="Address"
                                                 value=""
@@ -3763,9 +3774,9 @@ exports[`SendTransfer should render form and use location state without memo 1`]
                                             </div>
                                           </div>
                                           <ul
-                                            aria-labelledby="downshift-47-label"
+                                            aria-labelledby="downshift-51-label"
                                             class="styles__SelectOptionsList-b2falt-0 heJAAA"
-                                            id="downshift-47-menu"
+                                            id="downshift-51-menu"
                                             role="listbox"
                                           />
                                         </div>
@@ -7541,12 +7552,12 @@ exports[`SendTransfer should select a cryptoasset and select sender without wall
                                         <div
                                           aria-expanded="false"
                                           aria-haspopup="listbox"
-                                          aria-owns="downshift-99-menu"
+                                          aria-owns="downshift-103-menu"
                                           role="combobox"
                                         >
                                           <label
-                                            for="downshift-98-input"
-                                            id="downshift-99-label"
+                                            for="downshift-102-input"
+                                            id="downshift-103-label"
                                           />
                                           <div
                                             class="Input__InputWrapperStyled-wu99qs-0 vKSQU"
@@ -7559,12 +7570,12 @@ exports[`SendTransfer should select a cryptoasset and select sender without wall
                                             >
                                               <input
                                                 aria-autocomplete="list"
-                                                aria-controls="downshift-99-menu"
-                                                aria-labelledby="downshift-99-label"
+                                                aria-controls="downshift-103-menu"
+                                                aria-labelledby="downshift-103-label"
                                                 autocomplete="off"
                                                 class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full cursor-default"
                                                 data-testid="SelectDropdownInput__input"
-                                                id="downshift-98-input"
+                                                id="downshift-102-input"
                                                 name="recipientAddress"
                                                 placeholder="Address"
                                                 value=""
@@ -7594,9 +7605,9 @@ exports[`SendTransfer should select a cryptoasset and select sender without wall
                                             </div>
                                           </div>
                                           <ul
-                                            aria-labelledby="downshift-99-label"
+                                            aria-labelledby="downshift-103-label"
                                             class="styles__SelectOptionsList-b2falt-0 heJAAA"
-                                            id="downshift-99-menu"
+                                            id="downshift-103-menu"
                                             role="listbox"
                                           />
                                         </div>
