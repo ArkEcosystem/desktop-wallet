@@ -246,7 +246,6 @@ export const useProfileSynchronizer = ({ onProfileRestoreError }: ProfileSynchro
 			if (shouldSync()) {
 				setStatus("syncing");
 
-				console.log("runAll");
 				runAll();
 
 				setStatus("synced");
