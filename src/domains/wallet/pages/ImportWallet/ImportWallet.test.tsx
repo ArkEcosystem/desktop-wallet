@@ -8,6 +8,7 @@ import { createTransportReplayer, RecordStore } from "@ledgerhq/hw-transport-moc
 import { act, renderHook } from "@testing-library/react-hooks";
 import { LedgerProvider } from "app/contexts";
 import { toasts } from "app/services";
+import { NetworkStep } from "domains/wallet/components/NetworkStep";
 import { createMemoryHistory } from "history";
 import nock from "nock";
 import React from "react";
@@ -26,7 +27,6 @@ import {
 } from "utils/testing-library";
 
 import { ImportWallet } from "./ImportWallet";
-import { FirstStep } from "./Step1";
 import { SecondStep } from "./Step2";
 import { ThirdStep } from "./Step3";
 
@@ -61,15 +61,15 @@ describe("ImportWallet", () => {
 		}
 	});
 
-	it("should render 1st step", async () => {
+	it("should render network step", async () => {
 		const { result: form } = renderHook(() => useForm());
 		const { getByTestId, asFragment } = render(
 			<FormProvider {...form.current}>
-				<FirstStep profile={profile} />
+				<NetworkStep profile={profile} title="title" subtitle="subtitle" />
 			</FormProvider>,
 		);
 
-		expect(getByTestId("ImportWallet__first-step")).toBeTruthy();
+		expect(getByTestId("NetworkStep")).toBeTruthy();
 		expect(asFragment()).toMatchSnapshot();
 
 		const selectNetworkInput = getByTestId("SelectNetworkInput__input");
@@ -86,17 +86,17 @@ describe("ImportWallet", () => {
 		expect(selectNetworkInput).toHaveValue("ARK Devnet");
 	});
 
-	it("should render 1st step without test networks", async () => {
+	it("should render network step without test networks", async () => {
 		profile.settings().set(Contracts.ProfileSetting.UseTestNetworks, false);
 
 		const { result: form } = renderHook(() => useForm());
 		const { getByTestId, asFragment, queryByTestId } = render(
 			<FormProvider {...form.current}>
-				<FirstStep profile={profile} />
+				<NetworkStep profile={profile} title="title" subtitle="subtitle" />
 			</FormProvider>,
 		);
 
-		expect(getByTestId("ImportWallet__first-step")).toBeTruthy();
+		expect(getByTestId("NetworkStep")).toBeTruthy();
 
 		const selectNetworkInput = getByTestId("SelectNetworkInput__input");
 		expect(selectNetworkInput).toBeTruthy();
@@ -226,7 +226,7 @@ describe("ImportWallet", () => {
 					history,
 				},
 			);
-			await waitFor(() => expect(rendered.getByTestId("ImportWallet__first-step")).toBeTruthy());
+			await waitFor(() => expect(rendered.getByTestId("NetworkStep")).toBeTruthy());
 		});
 
 		const { getByTestId } = rendered;
@@ -258,7 +258,7 @@ describe("ImportWallet", () => {
 					history,
 				},
 			);
-			await waitFor(() => expect(rendered.getByTestId("ImportWallet__first-step")).toBeTruthy());
+			await waitFor(() => expect(rendered.getByTestId("NetworkStep")).toBeTruthy());
 		});
 
 		const { getByTestId, asFragment } = rendered;
@@ -287,7 +287,7 @@ describe("ImportWallet", () => {
 			await fireEvent.click(getByTestId("ImportWallet__back-button"));
 
 			await waitFor(() => {
-				expect(getByTestId("ImportWallet__first-step")).toBeTruthy();
+				expect(getByTestId("NetworkStep")).toBeTruthy();
 			});
 		});
 	});
@@ -308,7 +308,7 @@ describe("ImportWallet", () => {
 					history,
 				},
 			);
-			await waitFor(() => expect(rendered.getByTestId("ImportWallet__first-step")).toBeTruthy());
+			await waitFor(() => expect(rendered.getByTestId("NetworkStep")).toBeTruthy());
 		});
 
 		const { getByTestId, asFragment } = rendered;
@@ -389,7 +389,7 @@ describe("ImportWallet", () => {
 					history,
 				},
 			);
-			await waitFor(() => expect(rendered.getByTestId("ImportWallet__first-step")).toBeTruthy());
+			await waitFor(() => expect(rendered.getByTestId("NetworkStep")).toBeTruthy());
 		});
 
 		const { getByTestId, asFragment, getAllByTestId } = rendered;
@@ -470,7 +470,7 @@ describe("ImportWallet", () => {
 					history,
 				},
 			);
-			await waitFor(() => expect(rendered.getByTestId("ImportWallet__first-step")).toBeTruthy());
+			await waitFor(() => expect(rendered.getByTestId("NetworkStep")).toBeTruthy());
 		});
 
 		const { getByTestId, queryByTestId, asFragment } = rendered;
@@ -558,7 +558,7 @@ describe("ImportWallet", () => {
 					history,
 				},
 			);
-			await waitFor(() => expect(rendered.getByTestId("ImportWallet__first-step")).toBeTruthy());
+			await waitFor(() => expect(rendered.getByTestId("NetworkStep")).toBeTruthy());
 		});
 
 		const { getByTestId, queryByTestId, asFragment } = rendered;
@@ -654,7 +654,7 @@ describe("ImportWallet", () => {
 					history,
 				},
 			);
-			await waitFor(() => expect(rendered.getByTestId("ImportWallet__first-step")).toBeTruthy());
+			await waitFor(() => expect(rendered.getByTestId("NetworkStep")).toBeTruthy());
 		});
 
 		const { getByTestId, queryByTestId, asFragment } = rendered;
@@ -748,7 +748,7 @@ describe("ImportWallet", () => {
 					history,
 				},
 			);
-			await waitFor(() => expect(rendered.getByTestId("ImportWallet__first-step")).toBeTruthy());
+			await waitFor(() => expect(rendered.getByTestId("NetworkStep")).toBeTruthy());
 		});
 
 		const { getByTestId, queryByTestId, asFragment } = rendered;
@@ -842,7 +842,7 @@ describe("ImportWallet", () => {
 					history,
 				},
 			);
-			await waitFor(() => expect(rendered.getByTestId("ImportWallet__first-step")).toBeTruthy());
+			await waitFor(() => expect(rendered.getByTestId("NetworkStep")).toBeTruthy());
 		});
 
 		const { getByTestId, queryByTestId, asFragment } = rendered;
@@ -936,7 +936,7 @@ describe("ImportWallet", () => {
 			},
 		);
 
-		await waitFor(() => expect(getByTestId("ImportWallet__first-step")).toBeTruthy());
+		await waitFor(() => expect(getByTestId("NetworkStep")).toBeTruthy());
 
 		const selectNetworkInput = getByTestId("SelectNetworkInput__input");
 
@@ -1010,7 +1010,7 @@ describe("ImportWallet", () => {
 					history,
 				},
 			);
-			await waitFor(() => expect(rendered.getByTestId("ImportWallet__first-step")).toBeTruthy());
+			await waitFor(() => expect(rendered.getByTestId("NetworkStep")).toBeTruthy());
 		});
 
 		const { getByTestId, asFragment, queryByTestId } = rendered;
@@ -1084,7 +1084,7 @@ describe("ImportWallet", () => {
 					history,
 				},
 			);
-			await waitFor(() => expect(rendered.getByTestId("ImportWallet__first-step")).toBeTruthy());
+			await waitFor(() => expect(rendered.getByTestId("NetworkStep")).toBeTruthy());
 		});
 
 		const { getByTestId, asFragment, queryByTestId } = rendered;
@@ -1167,7 +1167,7 @@ describe("ImportWallet", () => {
 					history,
 				},
 			);
-			await waitFor(() => expect(rendered.getByTestId("ImportWallet__first-step")).toBeTruthy());
+			await waitFor(() => expect(rendered.getByTestId("NetworkStep")).toBeTruthy());
 		});
 
 		const { getByTestId, asFragment, getByText } = rendered;
