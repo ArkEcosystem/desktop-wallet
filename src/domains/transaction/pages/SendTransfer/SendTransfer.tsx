@@ -76,7 +76,7 @@ export const SendTransfer = () => {
 	});
 
 	const { clearErrors, formState, getValues, register, setError, setValue, handleSubmit, watch } = form;
-	const { isValid, isSubmitting, errors } = formState;
+	const { isValid, isSubmitting } = formState;
 
 	const { senderAddress, fees, fee, remainingBalance, amount, isSendAllSelected, network } = watch();
 	const { sendTransfer, common } = useValidation();
