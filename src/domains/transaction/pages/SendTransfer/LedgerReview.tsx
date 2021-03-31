@@ -30,9 +30,7 @@ export const TransferLedgerReview = ({
 		amount = amount.plus(recipient.amount);
 	}
 
-	// TODO:
-	// const expirationType = wallet.network().expirationType();
-	const expirationType = "height";
+	const expirationType = wallet.network().expirationType();
 
 	const expirationTypeTranslations = {
 		height: t("TRANSACTION.EXPIRATION.HEIGHT"),
