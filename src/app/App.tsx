@@ -9,7 +9,7 @@ import { ARK } from "@arkecosystem/platform-sdk-ark";
 import { LSK } from "@arkecosystem/platform-sdk-lsk";
 // import { NEO } from "@arkecosystem/platform-sdk-neo";
 import { Environment } from "@arkecosystem/platform-sdk-profiles";
-import { ElectronClientDriver } from "@arkecosystem/platform-sdk-profiles/dist/drivers/electron";
+import { ElectronIpcDriver } from "@arkecosystem/platform-sdk-profiles/dist/drivers/electron";
 // @ts-ignore
 import LedgerTransportNodeHID from "@ledgerhq/hw-transport-node-hid-singleton";
 // import { TRX } from "@arkecosystem/platform-sdk-trx";
@@ -46,7 +46,7 @@ const RouteWrappers = ({ children }: { children: React.ReactNode }) => (
 	</>
 );
 
-ElectronClientDriver.registerSelf();
+ElectronIpcDriver.registerSelf();
 
 const Main = () => {
 	const [showSplash, setShowSplash] = useState(true);

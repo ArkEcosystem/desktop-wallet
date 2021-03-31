@@ -1,11 +1,14 @@
-import { ElectronServerDriver } from "@arkecosystem/platform-sdk-profiles/dist/drivers/electron";
+import { ARK } from "@arkecosystem/platform-sdk-ark";
+import { Environment } from "@arkecosystem/platform-sdk-profiles";
 import { app, BrowserWindow, ipcMain, screen, shell } from "electron";
 import isDev from "electron-is-dev";
 import winState from "electron-window-state";
 import path from "path";
 
+import { HttpClient } from "../app/services/HttpClient";
 import assignMenu from "./menu";
 import { setupPlugins } from "./plugins";
+import { setupIpc } from "./setupIpc";
 import { setupUpdater } from "./updater";
 import { handleSingleInstance } from "./utils/single-instance";
 
@@ -14,7 +17,15 @@ let mainWindow: BrowserWindow | null;
 let windowState = null;
 let deeplinkingUrl: string | null;
 
-ElectronServerDriver.registerSelf();
+const env = new Environment({
+	coins: {
+		ARK,
+	},
+	httpClient: new HttpClient(500),
+	storage: "indexeddb",
+});
+await env.verify();
+await env.boot();
 
 const winURL = isDev
 	? "http://localhost:3000"
@@ -155,3 +166,5 @@ app.setAsDefaultProtocolClient("ark", process.execPath, ["--"]);
 app.allowRendererProcessReuse = false;
 
 setupPlugins();
+
+setupIpc(env);
