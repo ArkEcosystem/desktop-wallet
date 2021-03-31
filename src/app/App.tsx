@@ -18,6 +18,7 @@ import LedgerTransportNodeHID from "@ledgerhq/hw-transport-node-hid-singleton";
 // import { XRP } from "@arkecosystem/platform-sdk-xrp";
 import { Offline } from "domains/error/pages";
 import { Splash } from "domains/splash/pages";
+import { ipcRenderer } from "electron";
 import { migrateProfileFixtures } from "migrations";
 import { usePluginManagerContext } from "plugins";
 import { PluginRouterWrapper } from "plugins/components/PluginRouterWrapper";
@@ -155,6 +156,10 @@ export const App = () => {
 				},
 				httpClient,
 				storage,
+				driver: "electron-ipc-driver",
+				driverArguments: {
+					ipcRenderer: ipcRenderer,
+				},
 			}),
 	);
 
