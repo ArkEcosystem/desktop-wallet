@@ -30,7 +30,7 @@ export const InputWrapperStyled = styled.div<{ disabled?: boolean; invalid?: boo
 			return tw`border-theme-danger-500 focus-within:ring-theme-danger-500`;
 		}
 
-		return tw`border-theme-secondary-400 dark:border-theme-secondary-700 focus-within:ring-theme-primary-600`;
+		return tw`border-theme-secondary-400 dark:border-theme-secondary-700 focus-within:(border-theme-primary-600 ring-theme-primary-600)`;
 	}}
 `;
 
