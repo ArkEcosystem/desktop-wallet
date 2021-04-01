@@ -13,7 +13,7 @@ test("should open and close contact update modal", async (t) => {
 		Selector('[data-testid="ContactList"] tbody > tr:first-child [data-testid="dropdown__toggle"]').child(0),
 	);
 	await t.click(
-		Selector('[data-testid="ContactList"] tbody > tr:first-child [data-testid="dropdown__option--1"]').withText(
+		Selector('[data-testid="ContactList"] tbody > tr:first-child [data-testid="dropdown__option--0"]').withText(
 			translations.COMMON.EDIT,
 		),
 	);
@@ -35,7 +35,7 @@ test("should open and cancel contact update modal", async (t) => {
 		Selector('[data-testid="ContactList"] tbody > tr:first-child [data-testid="dropdown__toggle"]').child(0),
 	);
 	await t.click(
-		Selector('[data-testid="ContactList"] tbody > tr:first-child [data-testid="dropdown__option--1"]').withText(
+		Selector('[data-testid="ContactList"] tbody > tr:first-child [data-testid="dropdown__option--0"]').withText(
 			translations.COMMON.EDIT,
 		),
 	);
@@ -63,7 +63,7 @@ test("should successfully update contact", async (t) => {
 		Selector('[data-testid="ContactList"] tbody > tr:first-child [data-testid="dropdown__toggle"]').child(0),
 	);
 	await t.click(
-		Selector('[data-testid="ContactList"] tbody > tr:first-child [data-testid="dropdown__option--1"]').withText(
+		Selector('[data-testid="ContactList"] tbody > tr:first-child [data-testid="dropdown__option--0"]').withText(
 			translations.COMMON.EDIT,
 		),
 	);
@@ -101,7 +101,7 @@ test("should error for invalid address", async (t) => {
 		Selector('[data-testid="ContactList"] tbody > tr:first-child [data-testid="dropdown__toggle"]').child(0),
 	);
 	await t.click(
-		Selector('[data-testid="ContactList"] tbody > tr:first-child [data-testid="dropdown__option--1"]').withText(
+		Selector('[data-testid="ContactList"] tbody > tr:first-child [data-testid="dropdown__option--0"]').withText(
 			translations.COMMON.EDIT,
 		),
 	);
@@ -140,7 +140,7 @@ test("should error on duplicate address addition", async (t) => {
 		Selector('[data-testid="ContactList"] tbody > tr:first-child [data-testid="dropdown__toggle"]').child(0),
 	);
 	await t.click(
-		Selector('[data-testid="ContactList"] tbody > tr:first-child [data-testid="dropdown__option--1"]').withText(
+		Selector('[data-testid="ContactList"] tbody > tr:first-child [data-testid="dropdown__option--0"]').withText(
 			translations.COMMON.EDIT,
 		),
 	);
@@ -219,7 +219,7 @@ test("should error if contact name is already taken", async (t) => {
 		Selector('[data-testid="ContactList"] tbody > tr:first-child [data-testid="dropdown__toggle"]').child(0),
 	);
 	await t.click(
-		Selector('[data-testid="ContactList"] tbody > tr:first-child [data-testid="dropdown__option--1"]').withText(
+		Selector('[data-testid="ContactList"] tbody > tr:first-child [data-testid="dropdown__option--0"]').withText(
 			translations.COMMON.EDIT,
 		),
 	);
@@ -255,7 +255,7 @@ test("should disable save button if name consists of empty spaces", async (t) =>
 		Selector('[data-testid="ContactList"] tbody > tr:first-child [data-testid="dropdown__toggle"]').child(0),
 	);
 	await t.click(
-		Selector('[data-testid="ContactList"] tbody > tr:first-child [data-testid="dropdown__option--1"]').withText(
+		Selector('[data-testid="ContactList"] tbody > tr:first-child [data-testid="dropdown__option--0"]').withText(
 			translations.COMMON.EDIT,
 		),
 	);

@@ -64,6 +64,11 @@ export const translations: { [key: string]: any } = {
 	CORE: "CORE",
 	MAGISTRATE: "Magistrate",
 
+	EXPIRATION: {
+		HEIGHT: "Block Height Expiration",
+		TIMESTAMP: "Timestamp Expiration",
+	},
+
 	MULTISIGNATURE: {
 		GENERATED_ADDRESS: "Generated Address",
 		AWAITING_CONFIRMATIONS: "Awaiting confirmations",

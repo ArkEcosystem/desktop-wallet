@@ -1,9 +1,9 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`SelectNetworkStep Render 1st step should render 1`] = `
+exports[`SelectNetworkStep should render 1`] = `
 <DocumentFragment>
   <section
-    data-testid="CreateWallet__SelectNetworkStep"
+    data-testid="NetworkStep"
   >
     <div
       class="flex justify-between items-end bg-theme-background"
@@ -15,13 +15,13 @@ exports[`SelectNetworkStep Render 1st step should render 1`] = `
           class="mb-0 text-4xl"
           data-testid="header__title"
         >
-          Select a Cryptoasset
+          title
         </h1>
         <div
           class="text-theme-secondary-text"
           data-testid="header__subtitle"
         >
-          Select a cryptoasset to create your new wallet address.
+          subtitle
         </div>
       </div>
     </div>
@@ -43,13 +43,13 @@ exports[`SelectNetworkStep Render 1st step should render 1`] = `
         <div
           aria-expanded="false"
           aria-haspopup="listbox"
-          aria-owns="CreateWallet__network-menu"
+          aria-owns="NetworkStep__network-menu"
           data-testid="SelectNetwork"
           role="combobox"
         >
           <label
-            for="CreateWallet__network-input"
-            id="CreateWallet__network-label"
+            for="NetworkStep__network-input"
+            id="NetworkStep__network-label"
           />
           <div
             class="Input__InputWrapperStyled-wu99qs-0 fPMWxM"
@@ -63,12 +63,12 @@ exports[`SelectNetworkStep Render 1st step should render 1`] = `
             >
               <input
                 aria-autocomplete="list"
-                aria-controls="CreateWallet__network-menu"
-                aria-labelledby="CreateWallet__network-label"
+                aria-controls="NetworkStep__network-menu"
+                aria-labelledby="NetworkStep__network-label"
                 autocomplete="off"
                 class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
                 data-testid="SelectNetworkInput__input"
-                id="CreateWallet__network-input"
+                id="NetworkStep__network-input"
                 placeholder="Enter a cryptoasset name"
                 value=""
               />
@@ -88,9 +88,9 @@ exports[`SelectNetworkStep Render 1st step should render 1`] = `
               PUBLIC NETWORKS
             </div>
             <ul
-              aria-labelledby="CreateWallet__network-label"
+              aria-labelledby="NetworkStep__network-label"
               class="grid grid-cols-6 gap-3"
-              id="CreateWallet__network-menu"
+              id="NetworkStep__network-menu"
               role="listbox"
             >
               <li
@@ -146,9 +146,9 @@ exports[`SelectNetworkStep Render 1st step should render 1`] = `
               DEVELOPMENT NETWORKS
             </div>
             <ul
-              aria-labelledby="CreateWallet__network-label"
+              aria-labelledby="NetworkStep__network-label"
               class="grid grid-cols-6 gap-3"
-              id="CreateWallet__network-menu"
+              id="NetworkStep__network-menu"
               role="listbox"
             >
               <li
@@ -181,10 +181,10 @@ exports[`SelectNetworkStep Render 1st step should render 1`] = `
 </DocumentFragment>
 `;
 
-exports[`SelectNetworkStep Render 1st step should render without test networks 1`] = `
+exports[`SelectNetworkStep should render without test networks 1`] = `
 <DocumentFragment>
   <section
-    data-testid="CreateWallet__SelectNetworkStep"
+    data-testid="NetworkStep"
   >
     <div
       class="flex justify-between items-end bg-theme-background"
@@ -196,13 +196,13 @@ exports[`SelectNetworkStep Render 1st step should render without test networks 1
           class="mb-0 text-4xl"
           data-testid="header__title"
         >
-          Select a Cryptoasset
+          title
         </h1>
         <div
           class="text-theme-secondary-text"
           data-testid="header__subtitle"
         >
-          Select a cryptoasset to create your new wallet address.
+          subtitle
         </div>
       </div>
     </div>
@@ -224,13 +224,13 @@ exports[`SelectNetworkStep Render 1st step should render without test networks 1
         <div
           aria-expanded="true"
           aria-haspopup="listbox"
-          aria-owns="CreateWallet__network-menu"
+          aria-owns="NetworkStep__network-menu"
           data-testid="SelectNetwork"
           role="combobox"
         >
           <label
-            for="CreateWallet__network-input"
-            id="CreateWallet__network-label"
+            for="NetworkStep__network-input"
+            id="NetworkStep__network-label"
           />
           <div
             class="Input__InputWrapperStyled-wu99qs-0 fPMWxM"
@@ -244,12 +244,12 @@ exports[`SelectNetworkStep Render 1st step should render without test networks 1
             >
               <input
                 aria-autocomplete="list"
-                aria-controls="CreateWallet__network-menu"
-                aria-labelledby="CreateWallet__network-label"
+                aria-controls="NetworkStep__network-menu"
+                aria-labelledby="NetworkStep__network-label"
                 autocomplete="off"
                 class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
                 data-testid="SelectNetworkInput__input"
-                id="CreateWallet__network-input"
+                id="NetworkStep__network-input"
                 placeholder="Enter a cryptoasset name"
                 value=""
               />
@@ -264,9 +264,9 @@ exports[`SelectNetworkStep Render 1st step should render without test networks 1
             class="mt-6"
           >
             <ul
-              aria-labelledby="CreateWallet__network-label"
+              aria-labelledby="NetworkStep__network-label"
               class="grid grid-cols-6 gap-3"
-              id="CreateWallet__network-menu"
+              id="NetworkStep__network-menu"
               role="listbox"
             >
               <li

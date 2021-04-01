@@ -67,7 +67,7 @@ describe("CreateWallet", () => {
 			},
 		);
 
-		await waitFor(() => expect(getByTestId("CreateWallet__SelectNetworkStep")).toBeTruthy());
+		await waitFor(() => expect(getByTestId("NetworkStep")).toBeTruthy());
 		expect(asFragment()).toMatchSnapshot();
 
 		const selectNetworkInput = getByTestId("SelectNetworkInput__input");
@@ -113,7 +113,7 @@ describe("CreateWallet", () => {
 			fireEvent.click(backButton);
 		});
 
-		await waitFor(() => expect(getByTestId("CreateWallet__SelectNetworkStep")).toBeTruthy());
+		await waitFor(() => expect(getByTestId("NetworkStep")).toBeTruthy());
 
 		act(() => {
 			fireEvent.click(continueButton);
@@ -211,7 +211,7 @@ describe("CreateWallet", () => {
 				history,
 			},
 		);
-		await waitFor(() => expect(getByTestId("CreateWallet__SelectNetworkStep")).toBeTruthy());
+		await waitFor(() => expect(getByTestId("NetworkStep")).toBeTruthy());
 
 		history.push("/");
 		await waitFor(() => expect(profile.wallets().values().length).toBe(0));
@@ -233,7 +233,7 @@ describe("CreateWallet", () => {
 				history,
 			},
 		);
-		await waitFor(() => expect(getByTestId("CreateWallet__SelectNetworkStep")).toBeTruthy());
+		await waitFor(() => expect(getByTestId("NetworkStep")).toBeTruthy());
 
 		const selectNetworkInput = getByTestId("SelectNetworkInput__input");
 		const continueButton = getByTestId("CreateWallet__continue-button");
@@ -255,7 +255,7 @@ describe("CreateWallet", () => {
 			fireEvent.click(getByTestId("CreateWallet__back-button"));
 		});
 
-		await waitFor(() => expect(getByTestId("CreateWallet__SelectNetworkStep")).toBeTruthy());
+		await waitFor(() => expect(getByTestId("NetworkStep")).toBeTruthy());
 
 		act(() => {
 			fireEvent.click(continueButton);
@@ -287,27 +287,33 @@ describe("CreateWallet", () => {
 				history,
 			},
 		);
-		await waitFor(() => expect(screen.getByTestId("CreateWallet__SelectNetworkStep")).toBeTruthy());
+
+		await waitFor(() => expect(screen.getByTestId("NetworkStep")).toBeTruthy());
 
 		const selectNetworkInput = screen.getByTestId("SelectNetworkInput__input");
 
-		act(() => {
-			fireEvent.change(selectNetworkInput, { target: { value: "Ark Dev" } });
+		await actAsync(async () => {
+			fireEvent.change(selectNetworkInput, { target: { value: "ARK D" } });
+		});
+
+		await actAsync(async () => {
 			fireEvent.keyDown(selectNetworkInput, { key: "Enter", code: 13 });
 		});
 
+		expect(selectNetworkInput).toHaveValue("ARK Devnet");
+
 		const continueButton = screen.getByTestId("CreateWallet__continue-button");
 
-		await waitFor(() => expect(continueButton).not.toHaveAttribute("disabled"));
+		await waitFor(() => {
+			expect(continueButton).not.toBeDisabled();
+		});
 
-		act(() => {
+		actAsync(() => {
 			fireEvent.click(continueButton);
 		});
 
 		await waitFor(() =>
-			expect(
-				screen.getByText(walletTranslations.PAGE_CREATE_WALLET.CRYPTOASSET_STEP.GENERATION_ERROR),
-			).toBeTruthy(),
+			expect(screen.getByText(walletTranslations.PAGE_CREATE_WALLET.NETWORK_STEP.GENERATION_ERROR)).toBeTruthy(),
 		);
 
 		expect(asFragment()).toMatchSnapshot();
@@ -335,7 +341,7 @@ describe("CreateWallet", () => {
 			},
 		);
 
-		await waitFor(() => expect(getByTestId("CreateWallet__SelectNetworkStep")).toBeTruthy());
+		await waitFor(() => expect(getByTestId("NetworkStep")).toBeTruthy());
 		expect(asFragment()).toMatchSnapshot();
 
 		const selectNetworkInput = getByTestId("SelectNetworkInput__input");

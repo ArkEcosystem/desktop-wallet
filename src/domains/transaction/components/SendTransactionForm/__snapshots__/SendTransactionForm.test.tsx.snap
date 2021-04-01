@@ -52,6 +52,7 @@ exports[`SendTransactionForm should render 1`] = `
                 placeholder="Enter a cryptoasset name"
                 value=""
               />
+              
             </div>
           </div>
         </div>
@@ -260,7 +261,7 @@ exports[`SendTransactionForm should select a network & update fees 1`] = `
           >
             <div
               aria-label="ARK Devnet"
-              class="Circle-uw7h4j-0 blBpcG border-theme-primary-100 text-theme-primary-400"
+              class="Circle-uw7h4j-0 blBpcG border-theme-secondary-200 dark:border-theme-secondary-700 text-theme-secondary-500"
               data-testid="SelectNetworkInput__network"
             >
               <div
@@ -288,6 +289,7 @@ exports[`SendTransactionForm should select a network & update fees 1`] = `
                 placeholder="Enter a cryptoasset name"
                 value=""
               />
+              
             </div>
           </div>
         </div>
@@ -548,7 +550,7 @@ exports[`SendTransactionForm should use static fees if avg is not available 1`] 
           >
             <div
               aria-label="ARK Devnet"
-              class="Circle-uw7h4j-0 blBpcG border-theme-primary-100 text-theme-primary-400"
+              class="Circle-uw7h4j-0 blBpcG border-theme-secondary-200 dark:border-theme-secondary-700 text-theme-secondary-500"
               data-testid="SelectNetworkInput__network"
             >
               <div
@@ -576,6 +578,7 @@ exports[`SendTransactionForm should use static fees if avg is not available 1`] 
                 placeholder="Enter a cryptoasset name"
                 value=""
               />
+              
             </div>
           </div>
         </div>
