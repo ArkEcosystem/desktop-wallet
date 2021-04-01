@@ -327,7 +327,7 @@ describe("ImportWallet", () => {
 			let continueButton = getByTestId("ImportWallet__continue-button");
 
 			expect(continueButton).toBeTruthy();
-			expect(continueButton).not.toHaveAttribute("disabled");
+			expect(continueButton).not.toBeDisabled();
 
 			await fireEvent.click(continueButton);
 
@@ -344,13 +344,17 @@ describe("ImportWallet", () => {
 
 			expect(continueButton).toBeTruthy();
 			await waitFor(() => {
-				expect(continueButton).not.toHaveAttribute("disabled");
+				expect(continueButton).not.toBeDisabled();
 			});
 
 			await fireEvent.click(continueButton);
 
 			await waitFor(() => {
 				expect(getByTestId("EncryptPassword")).toBeTruthy();
+			});
+
+			await waitFor(() => {
+				expect(getByTestId("ImportWallet__skip-button")).not.toBeDisabled();
 			});
 
 			await fireEvent.click(getByTestId("ImportWallet__skip-button"));
