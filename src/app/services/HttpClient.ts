@@ -43,7 +43,7 @@ export class HttpClient extends Http.Request {
 		}
 
 		const cacheKey: string = hash(`${method}.${url}.${JSON.stringify(data)}`).toString();
-		console.time(url);
+		// console.time(url);
 
 		return this.cache.remember(cacheKey, async () => {
 			let response;
@@ -64,7 +64,7 @@ export class HttpClient extends Http.Request {
 				throw new Error("Received no response. This looks like a bug.");
 			}
 
-			console.timeEnd(url);
+			// console.timeEnd(url);
 
 			return new Http.Response({
 				body: await response.text(),
