@@ -15,9 +15,8 @@ import { useTranslation } from "react-i18next";
 
 import { ContactListItemProps, Option } from "./ContactListItem.models";
 
-export const ContactListItem = ({ item, variant, onAction, options }: ContactListItemProps) => {
+export const ContactListItem = ({ item, variant, onAction, onSend, options }: ContactListItemProps) => {
 	const { t } = useTranslation();
-	// TODO: add "Business", "Bridgechain"
 	const contactTypes: string[] = ["Delegate"];
 
 	const isCondensed = () => variant === "condensed";
@@ -93,27 +92,37 @@ export const ContactListItem = ({ item, variant, onAction, options }: ContactLis
 							)}
 
 							<TableCell variant="end" className={borderClasses()} innerClassName="justify-end">
-								{index === 0 && options?.length > 1 && (
-									<Dropdown
-										toggleContent={
-											<Button variant="secondary" size="icon">
-												<Icon name="Settings" width={20} height={20} />
-											</Button>
-										}
-										options={options}
-										onSelect={(action: Option) => onAction?.(action, address.address())}
-									/>
-								)}
-
-								{index === 0 && options?.length === 1 && (
+								<div className="flex items-center space-x-2">
 									<Button
-										data-testid={`ContactListItem__one-option-button-${index}`}
+										data-testid="ContactListItem__send-button"
 										variant="secondary"
-										onClick={() => onAction?.(options[0], address.address())}
+										onClick={() => onSend?.(address)}
 									>
-										{options[0]?.label}
+										{t("COMMON.SEND")}
 									</Button>
-								)}
+
+									<div className={index === 0 ? "visible" : "invisible"}>
+										{options?.length > 1 ? (
+											<Dropdown
+												toggleContent={
+													<Button variant="secondary" size="icon">
+														<Icon name="Settings" width={20} height={20} />
+													</Button>
+												}
+												options={options}
+												onSelect={(action: Option) => onAction?.(action, address.address())}
+											/>
+										) : (
+											<Button
+												data-testid={`ContactListItem__one-option-button-${index}`}
+												variant="secondary"
+												onClick={() => onAction?.(options[0], address.address())}
+											>
+												{options?.[0]?.label}
+											</Button>
+										)}
+									</div>
+								</div>
 							</TableCell>
 						</TableRow>
 					);
@@ -124,7 +133,6 @@ export const ContactListItem = ({ item, variant, onAction, options }: ContactLis
 
 ContactListItem.defaultProps = {
 	options: [
-		{ label: "Send", value: "send" },
 		{ label: "Edit", value: "edit" },
 		{ label: "Delete", value: "send" },
 	],

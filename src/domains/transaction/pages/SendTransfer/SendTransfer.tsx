@@ -125,12 +125,25 @@ export const SendTransfer = () => {
 		setValue(
 			"network",
 			networks.find(
-				(item) => item.coin().toLowerCase() === deepLinkParams.coin && item.id() === deepLinkParams.network,
+				(item) =>
+					item.coin().toLowerCase() === deepLinkParams.coin?.toLowerCase() &&
+					item.id().toLowerCase() === deepLinkParams.network?.toLowerCase(),
 			),
 		);
 
 		if (deepLinkParams.memo) {
 			setValue("smartbridge", deepLinkParams.memo);
+		}
+
+		if (deepLinkParams.recipient) {
+			setTimeout(
+				() =>
+					setValue("recipientAddress", deepLinkParams.recipient, {
+						shouldDirty: true,
+						shouldValidate: false,
+					}),
+				0,
+			);
 		}
 	}, [deepLinkParams, setValue, networks]);
 
