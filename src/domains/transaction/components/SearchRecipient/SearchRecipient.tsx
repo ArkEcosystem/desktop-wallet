@@ -109,7 +109,6 @@ export const SearchRecipient = ({
 			Header: (
 				<HeaderSearchBar
 					placeholder={t("TRANSACTION.MODAL_SEARCH_RECIPIENT.SEARCH_PLACEHOLDER")}
-					noToggleBorder
 				/>
 			),
 			accessor: "search",
