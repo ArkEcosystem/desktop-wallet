@@ -1,3 +1,4 @@
+import cn from "classnames";
 import React from "react";
 import tw, { css, styled } from "twin.macro";
 
@@ -60,7 +61,12 @@ export const ControlButton = ({ isChanged, children, ...props }: ControlButtonPr
 	<div className="group">
 		<ControlButtonStyled {...props}>
 			{isChanged && (
-				<div className="flex absolute right-0 justify-center items-center mr-2 -mt-3 w-3 h-3 rounded-full transition-all duration-100 ease-linear bg-theme-background">
+				<div
+					className={cn(
+						"flex absolute right-0 justify-center items-center -mt-3 w-3 h-3 rounded-full transition-all duration-100 ease-linear bg-theme-background",
+						props.noBorder ? "-mr-1" : "mr-2",
+					)}
+				>
 					<div className="w-2 h-2 rounded-full bg-theme-danger-500" />
 				</div>
 			)}
