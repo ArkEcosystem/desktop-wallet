@@ -577,7 +577,7 @@ describe("Settings", () => {
 		it.each([
 			["close", "modal__close-btn"],
 			["decline", "AdvancedMode__decline-button"],
-		])("should open and %s disclaimer", (_, buttonId) => {
+		])("should open and %s disclaimer", async (_, buttonId) => {
 			const { getByTestId } = renderWithRouter(
 				<Route path="/profiles/:profileId/settings">
 					<Settings />
@@ -591,7 +591,7 @@ describe("Settings", () => {
 				fireEvent.click(getByTestId("General-settings__toggle--isAdvancedMode"));
 			});
 
-			expect(getByTestId("modal__inner")).toHaveTextContent(translations.SETTINGS.MODAL_ADVANCED_MODE.TITLE);
+			await waitFor(() => expect(getByTestId("modal__inner")).toHaveTextContent(translations.SETTINGS.MODAL_ADVANCED_MODE.TITLE));
 			expect(getByTestId("modal__inner")).toHaveTextContent(
 				translations.SETTINGS.MODAL_ADVANCED_MODE.DISCLAIMER.replace(/\n\n/g, " "),
 			);
@@ -1235,9 +1235,9 @@ describe("Settings", () => {
 
 		await act(async () => {
 			fireEvent.click(await findByTestId("Export-settings__submit-button"));
+			await waitFor(() => expect(dialogMock).toHaveBeenCalled());
 		});
 
-		expect(dialogMock).toHaveBeenCalled();
 		dialogMock.mockRestore();
 	});
 });
