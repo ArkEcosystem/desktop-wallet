@@ -24,7 +24,20 @@ exports[`ControlButton should render active 1`] = `
 </DocumentFragment>
 `;
 
-exports[`ControlButton should render changed with dot 1`] = `
+exports[`ControlButton should render disabled 1`] = `
+<DocumentFragment>
+  <div
+    class="group"
+  >
+    <div
+      class="ControlButton__ControlButtonStyled-sc-1xp1l1a-0 gWfCmN"
+      disabled=""
+    />
+  </div>
+</DocumentFragment>
+`;
+
+exports[`ControlButton should render with dot 1`] = `
 <DocumentFragment>
   <div
     class="group"
@@ -44,19 +57,6 @@ exports[`ControlButton should render changed with dot 1`] = `
 </DocumentFragment>
 `;
 
-exports[`ControlButton should render disabled 1`] = `
-<DocumentFragment>
-  <div
-    class="group"
-  >
-    <div
-      class="ControlButton__ControlButtonStyled-sc-1xp1l1a-0 gWfCmN"
-      disabled=""
-    />
-  </div>
-</DocumentFragment>
-`;
-
 exports[`ControlButton should render without border 1`] = `
 <DocumentFragment>
   <div
@@ -65,6 +65,26 @@ exports[`ControlButton should render without border 1`] = `
     <div
       class="ControlButton__ControlButtonStyled-sc-1xp1l1a-0 frEHVe"
     />
+  </div>
+</DocumentFragment>
+`;
+
+exports[`ControlButton should render without border and with dot 1`] = `
+<DocumentFragment>
+  <div
+    class="group"
+  >
+    <div
+      class="ControlButton__ControlButtonStyled-sc-1xp1l1a-0 frEHVe"
+    >
+      <div
+        class="flex absolute right-0 justify-center items-center -mt-3 w-3 h-3 rounded-full transition-all duration-100 ease-linear bg-theme-background -mr-1"
+      >
+        <div
+          class="w-2 h-2 rounded-full bg-theme-danger-500"
+        />
+      </div>
+    </div>
   </div>
 </DocumentFragment>
 `;
