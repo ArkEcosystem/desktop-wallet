@@ -591,7 +591,9 @@ describe("Settings", () => {
 				fireEvent.click(getByTestId("General-settings__toggle--isAdvancedMode"));
 			});
 
-			await waitFor(() => expect(getByTestId("modal__inner")).toHaveTextContent(translations.SETTINGS.MODAL_ADVANCED_MODE.TITLE));
+			await waitFor(() =>
+				expect(getByTestId("modal__inner")).toHaveTextContent(translations.SETTINGS.MODAL_ADVANCED_MODE.TITLE),
+			);
 			expect(getByTestId("modal__inner")).toHaveTextContent(
 				translations.SETTINGS.MODAL_ADVANCED_MODE.DISCLAIMER.replace(/\n\n/g, " "),
 			);
