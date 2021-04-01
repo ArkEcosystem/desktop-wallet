@@ -17,16 +17,6 @@ let mainWindow: BrowserWindow | null;
 let windowState = null;
 let deeplinkingUrl: string | null;
 
-const env = new Environment({
-	coins: {
-		ARK,
-	},
-	httpClient: new HttpClient(500),
-	storage: "indexeddb",
-});
-await env.verify();
-await env.boot();
-
 const winURL = isDev
 	? "http://localhost:3000"
 	: process.env.ELECTRON_IS_E2E
@@ -166,5 +156,17 @@ app.setAsDefaultProtocolClient("ark", process.execPath, ["--"]);
 app.allowRendererProcessReuse = false;
 
 setupPlugins();
+
+const env = new Environment({
+	coins: {
+		ARK,
+	},
+	httpClient: new HttpClient(500),
+	storage: "indexeddb",
+	driver: "memory",
+});
+env.verify()
+	.then(() => env.boot())
+	.finally(() => "a");
 
 setupIpc(env);
