@@ -312,15 +312,16 @@ export const Votes = () => {
 				<Section>
 					<EmptyBlock>
 						<div className="flex items-center justify-between">
-							<Trans
-								i18nKey="VOTE.VOTES_PAGE.EMPTY_MESSAGE"
-								defaults="Your must first <bold>{{create}}</bold> or <bold>{{import}}</bold> an address to view your current voting status"
-								values={{
-									create: t("DASHBOARD.WALLET_CONTROLS.CREATE"),
-									import: t("DASHBOARD.WALLET_CONTROLS.IMPORT"),
-								}}
-								components={{ bold: <strong /> }}
-							/>
+							<span>
+								<Trans
+									i18nKey="VOTE.VOTES_PAGE.EMPTY_MESSAGE"
+									values={{
+										create: t("DASHBOARD.WALLET_CONTROLS.CREATE"),
+										import: t("DASHBOARD.WALLET_CONTROLS.IMPORT"),
+									}}
+									components={{ bold: <strong /> }}
+								/>
+							</span>
 
 							<div className="flex -m-3 space-x-3">
 								<Button
