@@ -167,7 +167,7 @@ export const DelegateTable = ({
 					let isVoted = false;
 
 					if (hasVotes) {
-						isVoted = !!votes?.find((vote) => vote.address() === delegate.address());
+						isVoted = !!votes?.find((vote) => vote.address() === delegate?.address?.());
 					}
 
 					return (

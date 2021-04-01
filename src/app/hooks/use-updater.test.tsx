@@ -126,4 +126,24 @@ describe("useUpdater hook", () => {
 			expect(result.current.downloadProgress).toStrictEqual({ percent: 30, total: 10, transferred: 3 }),
 		);
 	});
+
+	it("should set update version", async () => {
+		const wrapper = ({ children }: any) => <EnvironmentProvider env={env}>{children} </EnvironmentProvider>;
+
+		jest.spyOn(electron.ipcRenderer, "invoke").mockImplementation(() => {
+			const response = {
+				cancellationToken: "1",
+				updateInfo: { version: "3.0.0" },
+			};
+			return Promise.resolve(response);
+		});
+
+		const { result } = renderHook(() => useUpdater(), { wrapper });
+
+		await act(async () => {
+			result.current.notifyForUpdates();
+
+			await waitFor(() => expect(result.current.downloadStatus).toBe("idle"));
+		});
+	});
 });

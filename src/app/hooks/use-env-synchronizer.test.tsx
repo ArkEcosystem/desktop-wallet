@@ -1,4 +1,4 @@
-import { renderHook } from "@testing-library/react-hooks";
+import { act, renderHook } from "@testing-library/react-hooks";
 import { EnvironmentProvider } from "app/contexts";
 import { PluginManager, PluginManagerProvider } from "plugins";
 import React from "react";
@@ -20,5 +20,12 @@ describe("useEnvSynchronizer", () => {
 		await waitFor(() => expect(result.current.start).toBeDefined());
 		await waitFor(() => expect(result.current.stop).toBeDefined());
 		await waitFor(() => expect(result.current.runAll).toBeDefined());
+
+		const consoleSpy = jest.spyOn(console, "log").mockReturnValue(undefined);
+		await act(async () => {
+			await waitFor(() => expect(result.current.runAll()).resolves);
+		});
+
+		consoleSpy.mockRestore();
 	});
 });
