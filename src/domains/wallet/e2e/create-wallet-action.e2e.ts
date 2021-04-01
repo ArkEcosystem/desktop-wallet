@@ -54,7 +54,7 @@ test("should create a wallet", async (t) => {
 	// Navigate to create page
 	await t.click(Selector("button").withExactText(translations().COMMON.CREATE));
 	await t
-		.expect(Selector("div").withText(translations().WALLETS.PAGE_CREATE_WALLET.CRYPTOASSET_STEP.SUBTITLE).exists)
+		.expect(Selector("div").withText(translations().WALLETS.PAGE_CREATE_WALLET.NETWORK_STEP.SUBTITLE).exists)
 		.ok();
 
 	// Select a cryptoasset and advance to step two

@@ -310,7 +310,7 @@ exports[`CreateWallet should create a wallet with alias 1`] = `
                   data-testid="tab-pabel__active-panel"
                 >
                   <section
-                    data-testid="CreateWallet__SelectNetworkStep"
+                    data-testid="NetworkStep"
                   >
                     <div
                       class="flex justify-between items-end bg-theme-background"
@@ -350,13 +350,13 @@ exports[`CreateWallet should create a wallet with alias 1`] = `
                         <div
                           aria-expanded="false"
                           aria-haspopup="listbox"
-                          aria-owns="CreateWallet__network-menu"
+                          aria-owns="NetworkStep__network-menu"
                           data-testid="SelectNetwork"
                           role="combobox"
                         >
                           <label
-                            for="CreateWallet__network-input"
-                            id="CreateWallet__network-label"
+                            for="NetworkStep__network-input"
+                            id="NetworkStep__network-label"
                           />
                           <div
                             class="Input__InputWrapperStyled-wu99qs-0 dInRZi"
@@ -370,12 +370,12 @@ exports[`CreateWallet should create a wallet with alias 1`] = `
                             >
                               <input
                                 aria-autocomplete="list"
-                                aria-controls="CreateWallet__network-menu"
-                                aria-labelledby="CreateWallet__network-label"
+                                aria-controls="NetworkStep__network-menu"
+                                aria-labelledby="NetworkStep__network-label"
                                 autocomplete="off"
                                 class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
                                 data-testid="SelectNetworkInput__input"
-                                id="CreateWallet__network-input"
+                                id="NetworkStep__network-input"
                                 placeholder="Enter a cryptoasset name"
                                 value=""
                               />
@@ -395,9 +395,9 @@ exports[`CreateWallet should create a wallet with alias 1`] = `
                               PUBLIC NETWORKS
                             </div>
                             <ul
-                              aria-labelledby="CreateWallet__network-label"
+                              aria-labelledby="NetworkStep__network-label"
                               class="grid grid-cols-6 gap-3"
-                              id="CreateWallet__network-menu"
+                              id="NetworkStep__network-menu"
                               role="listbox"
                             >
                               <li
@@ -453,9 +453,9 @@ exports[`CreateWallet should create a wallet with alias 1`] = `
                               DEVELOPMENT NETWORKS
                             </div>
                             <ul
-                              aria-labelledby="CreateWallet__network-label"
+                              aria-labelledby="NetworkStep__network-label"
                               class="grid grid-cols-6 gap-3"
-                              id="CreateWallet__network-menu"
+                              id="NetworkStep__network-menu"
                               role="listbox"
                             >
                               <li
@@ -1321,7 +1321,7 @@ exports[`CreateWallet should create a wallet without alias 1`] = `
                   data-testid="tab-pabel__active-panel"
                 >
                   <section
-                    data-testid="CreateWallet__SelectNetworkStep"
+                    data-testid="NetworkStep"
                   >
                     <div
                       class="flex justify-between items-end bg-theme-background"
@@ -1361,13 +1361,13 @@ exports[`CreateWallet should create a wallet without alias 1`] = `
                         <div
                           aria-expanded="false"
                           aria-haspopup="listbox"
-                          aria-owns="CreateWallet__network-menu"
+                          aria-owns="NetworkStep__network-menu"
                           data-testid="SelectNetwork"
                           role="combobox"
                         >
                           <label
-                            for="CreateWallet__network-input"
-                            id="CreateWallet__network-label"
+                            for="NetworkStep__network-input"
+                            id="NetworkStep__network-label"
                           />
                           <div
                             class="Input__InputWrapperStyled-wu99qs-0 dInRZi"
@@ -1381,12 +1381,12 @@ exports[`CreateWallet should create a wallet without alias 1`] = `
                             >
                               <input
                                 aria-autocomplete="list"
-                                aria-controls="CreateWallet__network-menu"
-                                aria-labelledby="CreateWallet__network-label"
+                                aria-controls="NetworkStep__network-menu"
+                                aria-labelledby="NetworkStep__network-label"
                                 autocomplete="off"
                                 class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
                                 data-testid="SelectNetworkInput__input"
-                                id="CreateWallet__network-input"
+                                id="NetworkStep__network-input"
                                 placeholder="Enter a cryptoasset name"
                                 value=""
                               />
@@ -1406,9 +1406,9 @@ exports[`CreateWallet should create a wallet without alias 1`] = `
                               PUBLIC NETWORKS
                             </div>
                             <ul
-                              aria-labelledby="CreateWallet__network-label"
+                              aria-labelledby="NetworkStep__network-label"
                               class="grid grid-cols-6 gap-3"
-                              id="CreateWallet__network-menu"
+                              id="NetworkStep__network-menu"
                               role="listbox"
                             >
                               <li
@@ -1464,9 +1464,9 @@ exports[`CreateWallet should create a wallet without alias 1`] = `
                               DEVELOPMENT NETWORKS
                             </div>
                             <ul
-                              aria-labelledby="CreateWallet__network-label"
+                              aria-labelledby="NetworkStep__network-label"
                               class="grid grid-cols-6 gap-3"
-                              id="CreateWallet__network-menu"
+                              id="NetworkStep__network-menu"
                               role="listbox"
                             >
                               <li
@@ -2334,7 +2334,7 @@ exports[`CreateWallet should remove pending wallet if not submitted 1`] = `
                   data-testid="tab-pabel__active-panel"
                 >
                   <section
-                    data-testid="CreateWallet__SelectNetworkStep"
+                    data-testid="NetworkStep"
                   >
                     <div
                       class="flex justify-between items-end bg-theme-background"
@@ -2374,13 +2374,13 @@ exports[`CreateWallet should remove pending wallet if not submitted 1`] = `
                         <div
                           aria-expanded="false"
                           aria-haspopup="listbox"
-                          aria-owns="CreateWallet__network-menu"
+                          aria-owns="NetworkStep__network-menu"
                           data-testid="SelectNetwork"
                           role="combobox"
                         >
                           <label
-                            for="CreateWallet__network-input"
-                            id="CreateWallet__network-label"
+                            for="NetworkStep__network-input"
+                            id="NetworkStep__network-label"
                           />
                           <div
                             class="Input__InputWrapperStyled-wu99qs-0 dInRZi"
@@ -2394,12 +2394,12 @@ exports[`CreateWallet should remove pending wallet if not submitted 1`] = `
                             >
                               <input
                                 aria-autocomplete="list"
-                                aria-controls="CreateWallet__network-menu"
-                                aria-labelledby="CreateWallet__network-label"
+                                aria-controls="NetworkStep__network-menu"
+                                aria-labelledby="NetworkStep__network-label"
                                 autocomplete="off"
                                 class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
                                 data-testid="SelectNetworkInput__input"
-                                id="CreateWallet__network-input"
+                                id="NetworkStep__network-input"
                                 placeholder="Enter a cryptoasset name"
                                 value=""
                               />
@@ -2419,9 +2419,9 @@ exports[`CreateWallet should remove pending wallet if not submitted 1`] = `
                               PUBLIC NETWORKS
                             </div>
                             <ul
-                              aria-labelledby="CreateWallet__network-label"
+                              aria-labelledby="NetworkStep__network-label"
                               class="grid grid-cols-6 gap-3"
-                              id="CreateWallet__network-menu"
+                              id="NetworkStep__network-menu"
                               role="listbox"
                             >
                               <li
@@ -2477,9 +2477,9 @@ exports[`CreateWallet should remove pending wallet if not submitted 1`] = `
                               DEVELOPMENT NETWORKS
                             </div>
                             <ul
-                              aria-labelledby="CreateWallet__network-label"
+                              aria-labelledby="NetworkStep__network-label"
                               class="grid grid-cols-6 gap-3"
-                              id="CreateWallet__network-menu"
+                              id="NetworkStep__network-menu"
                               role="listbox"
                             >
                               <li
@@ -2862,7 +2862,7 @@ exports[`CreateWallet should show an error message for duplicate name 1`] = `
                   data-testid="tab-pabel__active-panel"
                 >
                   <section
-                    data-testid="CreateWallet__SelectNetworkStep"
+                    data-testid="NetworkStep"
                   >
                     <div
                       class="flex justify-between items-end bg-theme-background"
@@ -2902,13 +2902,13 @@ exports[`CreateWallet should show an error message for duplicate name 1`] = `
                         <div
                           aria-expanded="false"
                           aria-haspopup="listbox"
-                          aria-owns="CreateWallet__network-menu"
+                          aria-owns="NetworkStep__network-menu"
                           data-testid="SelectNetwork"
                           role="combobox"
                         >
                           <label
-                            for="CreateWallet__network-input"
-                            id="CreateWallet__network-label"
+                            for="NetworkStep__network-input"
+                            id="NetworkStep__network-label"
                           />
                           <div
                             class="Input__InputWrapperStyled-wu99qs-0 dInRZi"
@@ -2922,12 +2922,12 @@ exports[`CreateWallet should show an error message for duplicate name 1`] = `
                             >
                               <input
                                 aria-autocomplete="list"
-                                aria-controls="CreateWallet__network-menu"
-                                aria-labelledby="CreateWallet__network-label"
+                                aria-controls="NetworkStep__network-menu"
+                                aria-labelledby="NetworkStep__network-label"
                                 autocomplete="off"
                                 class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
                                 data-testid="SelectNetworkInput__input"
-                                id="CreateWallet__network-input"
+                                id="NetworkStep__network-input"
                                 placeholder="Enter a cryptoasset name"
                                 value=""
                               />
@@ -2947,9 +2947,9 @@ exports[`CreateWallet should show an error message for duplicate name 1`] = `
                               PUBLIC NETWORKS
                             </div>
                             <ul
-                              aria-labelledby="CreateWallet__network-label"
+                              aria-labelledby="NetworkStep__network-label"
                               class="grid grid-cols-6 gap-3"
-                              id="CreateWallet__network-menu"
+                              id="NetworkStep__network-menu"
                               role="listbox"
                             >
                               <li
@@ -3005,9 +3005,9 @@ exports[`CreateWallet should show an error message for duplicate name 1`] = `
                               DEVELOPMENT NETWORKS
                             </div>
                             <ul
-                              aria-labelledby="CreateWallet__network-label"
+                              aria-labelledby="NetworkStep__network-label"
                               class="grid grid-cols-6 gap-3"
-                              id="CreateWallet__network-menu"
+                              id="NetworkStep__network-menu"
                               role="listbox"
                             >
                               <li
@@ -3390,7 +3390,7 @@ exports[`CreateWallet should show an error message if wallet generation failed 1
                   data-testid="tab-pabel__active-panel"
                 >
                   <section
-                    data-testid="CreateWallet__SelectNetworkStep"
+                    data-testid="NetworkStep"
                   >
                     <div
                       class="flex justify-between items-end bg-theme-background"
@@ -3460,20 +3460,20 @@ exports[`CreateWallet should show an error message if wallet generation failed 1
                         <div
                           aria-expanded="true"
                           aria-haspopup="listbox"
-                          aria-owns="CreateWallet__network-menu"
+                          aria-owns="NetworkStep__network-menu"
                           data-testid="SelectNetwork"
                           role="combobox"
                         >
                           <label
-                            for="CreateWallet__network-input"
-                            id="CreateWallet__network-label"
+                            for="NetworkStep__network-input"
+                            id="NetworkStep__network-label"
                           />
                           <div
                             class="Input__InputWrapperStyled-wu99qs-0 dInRZi"
                           >
                             <div
                               aria-label="ARK Devnet"
-                              class="Circle-uw7h4j-0 blBpcG border-theme-primary-100 text-theme-primary-400"
+                              class="Circle-uw7h4j-0 blBpcG border-theme-secondary-200 dark:border-theme-secondary-700 text-theme-secondary-500"
                               data-testid="SelectNetworkInput__network"
                             >
                               <div
@@ -3492,12 +3492,12 @@ exports[`CreateWallet should show an error message if wallet generation failed 1
                             >
                               <input
                                 aria-autocomplete="list"
-                                aria-controls="CreateWallet__network-menu"
-                                aria-labelledby="CreateWallet__network-label"
+                                aria-controls="NetworkStep__network-menu"
+                                aria-labelledby="NetworkStep__network-label"
                                 autocomplete="off"
                                 class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
                                 data-testid="SelectNetworkInput__input"
-                                id="CreateWallet__network-input"
+                                id="NetworkStep__network-input"
                                 placeholder="Enter a cryptoasset name"
                                 value="ARK Devnet"
                               />
@@ -3523,9 +3523,9 @@ exports[`CreateWallet should show an error message if wallet generation failed 1
                               PUBLIC NETWORKS
                             </div>
                             <ul
-                              aria-labelledby="CreateWallet__network-label"
+                              aria-labelledby="NetworkStep__network-label"
                               class="grid grid-cols-6 gap-3"
-                              id="CreateWallet__network-menu"
+                              id="NetworkStep__network-menu"
                               role="listbox"
                             >
                               <li
@@ -3581,9 +3581,9 @@ exports[`CreateWallet should show an error message if wallet generation failed 1
                               DEVELOPMENT NETWORKS
                             </div>
                             <ul
-                              aria-labelledby="CreateWallet__network-label"
+                              aria-labelledby="NetworkStep__network-label"
                               class="grid grid-cols-6 gap-3"
-                              id="CreateWallet__network-menu"
+                              id="NetworkStep__network-menu"
                               role="listbox"
                             >
                               <li

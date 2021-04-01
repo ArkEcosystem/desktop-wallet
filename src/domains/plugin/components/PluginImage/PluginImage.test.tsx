@@ -1,6 +1,6 @@
 import React from "react";
 import * as utils from "utils/electron-utils";
-import { render, screen } from "utils/testing-library";
+import { fireEvent, render, screen } from "utils/testing-library";
 
 import { PluginImage } from "./PluginImage";
 
@@ -35,6 +35,15 @@ describe("PluginImage", () => {
 
 	it.each(["xs", "sm", "md", "lg"])("should render with size '%s'", (size) => {
 		const { container } = render(<PluginImage />);
+		expect(screen.getByTestId("PluginImage__placeholder")).toBeInTheDocument();
+		expect(container).toMatchSnapshot();
+	});
+
+	it("should show placeholder as fallback", () => {
+		const { container } = render(<PluginImage logoURL="https://ark.io/logo.png" />);
+
+		fireEvent.error(screen.getByRole("img"));
+
 		expect(screen.getByTestId("PluginImage__placeholder")).toBeInTheDocument();
 		expect(container).toMatchSnapshot();
 	});

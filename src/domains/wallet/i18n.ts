@@ -86,7 +86,7 @@ export const translations: { [key: string]: any } = {
 	PAGE_CREATE_WALLET: {
 		TITLE: "Create Wallet",
 
-		CRYPTOASSET_STEP: {
+		NETWORK_STEP: {
 			TITLE: "Select a Cryptoasset",
 			SUBTITLE: "Select a cryptoasset to create your new wallet address.",
 			GENERATION_ERROR:
@@ -131,7 +131,7 @@ export const translations: { [key: string]: any } = {
 			CONFIRM_PASSWORD_LABEL: "Confirm Encryption Password",
 		},
 
-		CRYPTOASSET_STEP: {
+		NETWORK_STEP: {
 			TITLE: "Select a Cryptoasset",
 			SUBTITLE: "Select a cryptoasset to import your existing wallet address.",
 		},

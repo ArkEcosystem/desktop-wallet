@@ -305,8 +305,7 @@ exports[`ImportWallet should fail to import by encrypted WIF 1`] = `
                   data-testid="tab-pabel__active-panel"
                 >
                   <section
-                    class="space-y-8"
-                    data-testid="ImportWallet__first-step"
+                    data-testid="NetworkStep"
                   >
                     <div
                       class="flex justify-between items-end bg-theme-background"
@@ -329,7 +328,7 @@ exports[`ImportWallet should fail to import by encrypted WIF 1`] = `
                       </div>
                     </div>
                     <fieldset
-                      class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
+                      class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2 mt-8"
                     >
                       <label
                         class="flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
@@ -346,13 +345,13 @@ exports[`ImportWallet should fail to import by encrypted WIF 1`] = `
                         <div
                           aria-expanded="false"
                           aria-haspopup="listbox"
-                          aria-owns="ImportWallet__network-menu"
+                          aria-owns="NetworkStep__network-menu"
                           data-testid="SelectNetwork"
                           role="combobox"
                         >
                           <label
-                            for="ImportWallet__network-input"
-                            id="ImportWallet__network-label"
+                            for="NetworkStep__network-input"
+                            id="NetworkStep__network-label"
                           />
                           <div
                             class="Input__InputWrapperStyled-wu99qs-0 dInRZi"
@@ -366,12 +365,12 @@ exports[`ImportWallet should fail to import by encrypted WIF 1`] = `
                             >
                               <input
                                 aria-autocomplete="list"
-                                aria-controls="ImportWallet__network-menu"
-                                aria-labelledby="ImportWallet__network-label"
+                                aria-controls="NetworkStep__network-menu"
+                                aria-labelledby="NetworkStep__network-label"
                                 autocomplete="off"
                                 class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
                                 data-testid="SelectNetworkInput__input"
-                                id="ImportWallet__network-input"
+                                id="NetworkStep__network-input"
                                 placeholder="Enter a cryptoasset name"
                                 value=""
                               />
@@ -391,9 +390,9 @@ exports[`ImportWallet should fail to import by encrypted WIF 1`] = `
                               PUBLIC NETWORKS
                             </div>
                             <ul
-                              aria-labelledby="ImportWallet__network-label"
+                              aria-labelledby="NetworkStep__network-label"
                               class="grid grid-cols-6 gap-3"
-                              id="ImportWallet__network-menu"
+                              id="NetworkStep__network-menu"
                               role="listbox"
                             >
                               <li
@@ -449,9 +448,9 @@ exports[`ImportWallet should fail to import by encrypted WIF 1`] = `
                               DEVELOPMENT NETWORKS
                             </div>
                             <ul
-                              aria-labelledby="ImportWallet__network-label"
+                              aria-labelledby="NetworkStep__network-label"
                               class="grid grid-cols-6 gap-3"
-                              id="ImportWallet__network-menu"
+                              id="NetworkStep__network-menu"
                               role="listbox"
                             >
                               <li
@@ -829,8 +828,7 @@ exports[`ImportWallet should go to previous step 1`] = `
                   data-testid="tab-pabel__active-panel"
                 >
                   <section
-                    class="space-y-8"
-                    data-testid="ImportWallet__first-step"
+                    data-testid="NetworkStep"
                   >
                     <div
                       class="flex justify-between items-end bg-theme-background"
@@ -853,7 +851,7 @@ exports[`ImportWallet should go to previous step 1`] = `
                       </div>
                     </div>
                     <fieldset
-                      class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
+                      class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2 mt-8"
                     >
                       <label
                         class="flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
@@ -870,13 +868,13 @@ exports[`ImportWallet should go to previous step 1`] = `
                         <div
                           aria-expanded="false"
                           aria-haspopup="listbox"
-                          aria-owns="ImportWallet__network-menu"
+                          aria-owns="NetworkStep__network-menu"
                           data-testid="SelectNetwork"
                           role="combobox"
                         >
                           <label
-                            for="ImportWallet__network-input"
-                            id="ImportWallet__network-label"
+                            for="NetworkStep__network-input"
+                            id="NetworkStep__network-label"
                           />
                           <div
                             class="Input__InputWrapperStyled-wu99qs-0 dInRZi"
@@ -890,12 +888,12 @@ exports[`ImportWallet should go to previous step 1`] = `
                             >
                               <input
                                 aria-autocomplete="list"
-                                aria-controls="ImportWallet__network-menu"
-                                aria-labelledby="ImportWallet__network-label"
+                                aria-controls="NetworkStep__network-menu"
+                                aria-labelledby="NetworkStep__network-label"
                                 autocomplete="off"
                                 class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
                                 data-testid="SelectNetworkInput__input"
-                                id="ImportWallet__network-input"
+                                id="NetworkStep__network-input"
                                 placeholder="Enter a cryptoasset name"
                                 value=""
                               />
@@ -915,9 +913,9 @@ exports[`ImportWallet should go to previous step 1`] = `
                               PUBLIC NETWORKS
                             </div>
                             <ul
-                              aria-labelledby="ImportWallet__network-label"
+                              aria-labelledby="NetworkStep__network-label"
                               class="grid grid-cols-6 gap-3"
-                              id="ImportWallet__network-menu"
+                              id="NetworkStep__network-menu"
                               role="listbox"
                             >
                               <li
@@ -973,9 +971,9 @@ exports[`ImportWallet should go to previous step 1`] = `
                               DEVELOPMENT NETWORKS
                             </div>
                             <ul
-                              aria-labelledby="ImportWallet__network-label"
+                              aria-labelledby="NetworkStep__network-label"
                               class="grid grid-cols-6 gap-3"
-                              id="ImportWallet__network-menu"
+                              id="NetworkStep__network-menu"
                               role="listbox"
                             >
                               <li
@@ -1353,8 +1351,7 @@ exports[`ImportWallet should import by address 1`] = `
                   data-testid="tab-pabel__active-panel"
                 >
                   <section
-                    class="space-y-8"
-                    data-testid="ImportWallet__first-step"
+                    data-testid="NetworkStep"
                   >
                     <div
                       class="flex justify-between items-end bg-theme-background"
@@ -1377,7 +1374,7 @@ exports[`ImportWallet should import by address 1`] = `
                       </div>
                     </div>
                     <fieldset
-                      class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
+                      class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2 mt-8"
                     >
                       <label
                         class="flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
@@ -1394,13 +1391,13 @@ exports[`ImportWallet should import by address 1`] = `
                         <div
                           aria-expanded="false"
                           aria-haspopup="listbox"
-                          aria-owns="ImportWallet__network-menu"
+                          aria-owns="NetworkStep__network-menu"
                           data-testid="SelectNetwork"
                           role="combobox"
                         >
                           <label
-                            for="ImportWallet__network-input"
-                            id="ImportWallet__network-label"
+                            for="NetworkStep__network-input"
+                            id="NetworkStep__network-label"
                           />
                           <div
                             class="Input__InputWrapperStyled-wu99qs-0 dInRZi"
@@ -1414,12 +1411,12 @@ exports[`ImportWallet should import by address 1`] = `
                             >
                               <input
                                 aria-autocomplete="list"
-                                aria-controls="ImportWallet__network-menu"
-                                aria-labelledby="ImportWallet__network-label"
+                                aria-controls="NetworkStep__network-menu"
+                                aria-labelledby="NetworkStep__network-label"
                                 autocomplete="off"
                                 class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
                                 data-testid="SelectNetworkInput__input"
-                                id="ImportWallet__network-input"
+                                id="NetworkStep__network-input"
                                 placeholder="Enter a cryptoasset name"
                                 value=""
                               />
@@ -1439,9 +1436,9 @@ exports[`ImportWallet should import by address 1`] = `
                               PUBLIC NETWORKS
                             </div>
                             <ul
-                              aria-labelledby="ImportWallet__network-label"
+                              aria-labelledby="NetworkStep__network-label"
                               class="grid grid-cols-6 gap-3"
-                              id="ImportWallet__network-menu"
+                              id="NetworkStep__network-menu"
                               role="listbox"
                             >
                               <li
@@ -1497,9 +1494,9 @@ exports[`ImportWallet should import by address 1`] = `
                               DEVELOPMENT NETWORKS
                             </div>
                             <ul
-                              aria-labelledby="ImportWallet__network-label"
+                              aria-labelledby="NetworkStep__network-label"
                               class="grid grid-cols-6 gap-3"
-                              id="ImportWallet__network-menu"
+                              id="NetworkStep__network-menu"
                               role="listbox"
                             >
                               <li
@@ -1877,8 +1874,7 @@ exports[`ImportWallet should import by encrypted WIF 1`] = `
                   data-testid="tab-pabel__active-panel"
                 >
                   <section
-                    class="space-y-8"
-                    data-testid="ImportWallet__first-step"
+                    data-testid="NetworkStep"
                   >
                     <div
                       class="flex justify-between items-end bg-theme-background"
@@ -1901,7 +1897,7 @@ exports[`ImportWallet should import by encrypted WIF 1`] = `
                       </div>
                     </div>
                     <fieldset
-                      class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
+                      class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2 mt-8"
                     >
                       <label
                         class="flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
@@ -1918,13 +1914,13 @@ exports[`ImportWallet should import by encrypted WIF 1`] = `
                         <div
                           aria-expanded="false"
                           aria-haspopup="listbox"
-                          aria-owns="ImportWallet__network-menu"
+                          aria-owns="NetworkStep__network-menu"
                           data-testid="SelectNetwork"
                           role="combobox"
                         >
                           <label
-                            for="ImportWallet__network-input"
-                            id="ImportWallet__network-label"
+                            for="NetworkStep__network-input"
+                            id="NetworkStep__network-label"
                           />
                           <div
                             class="Input__InputWrapperStyled-wu99qs-0 dInRZi"
@@ -1938,12 +1934,12 @@ exports[`ImportWallet should import by encrypted WIF 1`] = `
                             >
                               <input
                                 aria-autocomplete="list"
-                                aria-controls="ImportWallet__network-menu"
-                                aria-labelledby="ImportWallet__network-label"
+                                aria-controls="NetworkStep__network-menu"
+                                aria-labelledby="NetworkStep__network-label"
                                 autocomplete="off"
                                 class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
                                 data-testid="SelectNetworkInput__input"
-                                id="ImportWallet__network-input"
+                                id="NetworkStep__network-input"
                                 placeholder="Enter a cryptoasset name"
                                 value=""
                               />
@@ -1963,9 +1959,9 @@ exports[`ImportWallet should import by encrypted WIF 1`] = `
                               PUBLIC NETWORKS
                             </div>
                             <ul
-                              aria-labelledby="ImportWallet__network-label"
+                              aria-labelledby="NetworkStep__network-label"
                               class="grid grid-cols-6 gap-3"
-                              id="ImportWallet__network-menu"
+                              id="NetworkStep__network-menu"
                               role="listbox"
                             >
                               <li
@@ -2021,9 +2017,9 @@ exports[`ImportWallet should import by encrypted WIF 1`] = `
                               DEVELOPMENT NETWORKS
                             </div>
                             <ul
-                              aria-labelledby="ImportWallet__network-label"
+                              aria-labelledby="NetworkStep__network-label"
                               class="grid grid-cols-6 gap-3"
-                              id="ImportWallet__network-menu"
+                              id="NetworkStep__network-menu"
                               role="listbox"
                             >
                               <li
@@ -2401,8 +2397,7 @@ exports[`ImportWallet should import by mnemonic 1`] = `
                   data-testid="tab-pabel__active-panel"
                 >
                   <section
-                    class="space-y-8"
-                    data-testid="ImportWallet__first-step"
+                    data-testid="NetworkStep"
                   >
                     <div
                       class="flex justify-between items-end bg-theme-background"
@@ -2425,7 +2420,7 @@ exports[`ImportWallet should import by mnemonic 1`] = `
                       </div>
                     </div>
                     <fieldset
-                      class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
+                      class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2 mt-8"
                     >
                       <label
                         class="flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
@@ -2442,13 +2437,13 @@ exports[`ImportWallet should import by mnemonic 1`] = `
                         <div
                           aria-expanded="false"
                           aria-haspopup="listbox"
-                          aria-owns="ImportWallet__network-menu"
+                          aria-owns="NetworkStep__network-menu"
                           data-testid="SelectNetwork"
                           role="combobox"
                         >
                           <label
-                            for="ImportWallet__network-input"
-                            id="ImportWallet__network-label"
+                            for="NetworkStep__network-input"
+                            id="NetworkStep__network-label"
                           />
                           <div
                             class="Input__InputWrapperStyled-wu99qs-0 dInRZi"
@@ -2462,12 +2457,12 @@ exports[`ImportWallet should import by mnemonic 1`] = `
                             >
                               <input
                                 aria-autocomplete="list"
-                                aria-controls="ImportWallet__network-menu"
-                                aria-labelledby="ImportWallet__network-label"
+                                aria-controls="NetworkStep__network-menu"
+                                aria-labelledby="NetworkStep__network-label"
                                 autocomplete="off"
                                 class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
                                 data-testid="SelectNetworkInput__input"
-                                id="ImportWallet__network-input"
+                                id="NetworkStep__network-input"
                                 placeholder="Enter a cryptoasset name"
                                 value=""
                               />
@@ -2487,9 +2482,9 @@ exports[`ImportWallet should import by mnemonic 1`] = `
                               PUBLIC NETWORKS
                             </div>
                             <ul
-                              aria-labelledby="ImportWallet__network-label"
+                              aria-labelledby="NetworkStep__network-label"
                               class="grid grid-cols-6 gap-3"
-                              id="ImportWallet__network-menu"
+                              id="NetworkStep__network-menu"
                               role="listbox"
                             >
                               <li
@@ -2545,9 +2540,9 @@ exports[`ImportWallet should import by mnemonic 1`] = `
                               DEVELOPMENT NETWORKS
                             </div>
                             <ul
-                              aria-labelledby="ImportWallet__network-label"
+                              aria-labelledby="NetworkStep__network-label"
                               class="grid grid-cols-6 gap-3"
-                              id="ImportWallet__network-menu"
+                              id="NetworkStep__network-menu"
                               role="listbox"
                             >
                               <li
@@ -2925,8 +2920,7 @@ exports[`ImportWallet should import by mnemonic and use encryption password 1`] 
                   data-testid="tab-pabel__active-panel"
                 >
                   <section
-                    class="space-y-8"
-                    data-testid="ImportWallet__first-step"
+                    data-testid="NetworkStep"
                   >
                     <div
                       class="flex justify-between items-end bg-theme-background"
@@ -2949,7 +2943,7 @@ exports[`ImportWallet should import by mnemonic and use encryption password 1`] 
                       </div>
                     </div>
                     <fieldset
-                      class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
+                      class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2 mt-8"
                     >
                       <label
                         class="flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
@@ -2966,13 +2960,13 @@ exports[`ImportWallet should import by mnemonic and use encryption password 1`] 
                         <div
                           aria-expanded="false"
                           aria-haspopup="listbox"
-                          aria-owns="ImportWallet__network-menu"
+                          aria-owns="NetworkStep__network-menu"
                           data-testid="SelectNetwork"
                           role="combobox"
                         >
                           <label
-                            for="ImportWallet__network-input"
-                            id="ImportWallet__network-label"
+                            for="NetworkStep__network-input"
+                            id="NetworkStep__network-label"
                           />
                           <div
                             class="Input__InputWrapperStyled-wu99qs-0 dInRZi"
@@ -2986,12 +2980,12 @@ exports[`ImportWallet should import by mnemonic and use encryption password 1`] 
                             >
                               <input
                                 aria-autocomplete="list"
-                                aria-controls="ImportWallet__network-menu"
-                                aria-labelledby="ImportWallet__network-label"
+                                aria-controls="NetworkStep__network-menu"
+                                aria-labelledby="NetworkStep__network-label"
                                 autocomplete="off"
                                 class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
                                 data-testid="SelectNetworkInput__input"
-                                id="ImportWallet__network-input"
+                                id="NetworkStep__network-input"
                                 placeholder="Enter a cryptoasset name"
                                 value=""
                               />
@@ -3011,9 +3005,9 @@ exports[`ImportWallet should import by mnemonic and use encryption password 1`] 
                               PUBLIC NETWORKS
                             </div>
                             <ul
-                              aria-labelledby="ImportWallet__network-label"
+                              aria-labelledby="NetworkStep__network-label"
                               class="grid grid-cols-6 gap-3"
-                              id="ImportWallet__network-menu"
+                              id="NetworkStep__network-menu"
                               role="listbox"
                             >
                               <li
@@ -3069,9 +3063,9 @@ exports[`ImportWallet should import by mnemonic and use encryption password 1`] 
                               DEVELOPMENT NETWORKS
                             </div>
                             <ul
-                              aria-labelledby="ImportWallet__network-label"
+                              aria-labelledby="NetworkStep__network-label"
                               class="grid grid-cols-6 gap-3"
-                              id="ImportWallet__network-menu"
+                              id="NetworkStep__network-menu"
                               role="listbox"
                             >
                               <li
@@ -3449,8 +3443,7 @@ exports[`ImportWallet should import by private key 1`] = `
                   data-testid="tab-pabel__active-panel"
                 >
                   <section
-                    class="space-y-8"
-                    data-testid="ImportWallet__first-step"
+                    data-testid="NetworkStep"
                   >
                     <div
                       class="flex justify-between items-end bg-theme-background"
@@ -3473,7 +3466,7 @@ exports[`ImportWallet should import by private key 1`] = `
                       </div>
                     </div>
                     <fieldset
-                      class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
+                      class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2 mt-8"
                     >
                       <label
                         class="flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
@@ -3490,13 +3483,13 @@ exports[`ImportWallet should import by private key 1`] = `
                         <div
                           aria-expanded="false"
                           aria-haspopup="listbox"
-                          aria-owns="ImportWallet__network-menu"
+                          aria-owns="NetworkStep__network-menu"
                           data-testid="SelectNetwork"
                           role="combobox"
                         >
                           <label
-                            for="ImportWallet__network-input"
-                            id="ImportWallet__network-label"
+                            for="NetworkStep__network-input"
+                            id="NetworkStep__network-label"
                           />
                           <div
                             class="Input__InputWrapperStyled-wu99qs-0 dInRZi"
@@ -3510,12 +3503,12 @@ exports[`ImportWallet should import by private key 1`] = `
                             >
                               <input
                                 aria-autocomplete="list"
-                                aria-controls="ImportWallet__network-menu"
-                                aria-labelledby="ImportWallet__network-label"
+                                aria-controls="NetworkStep__network-menu"
+                                aria-labelledby="NetworkStep__network-label"
                                 autocomplete="off"
                                 class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
                                 data-testid="SelectNetworkInput__input"
-                                id="ImportWallet__network-input"
+                                id="NetworkStep__network-input"
                                 placeholder="Enter a cryptoasset name"
                                 value=""
                               />
@@ -3535,9 +3528,9 @@ exports[`ImportWallet should import by private key 1`] = `
                               PUBLIC NETWORKS
                             </div>
                             <ul
-                              aria-labelledby="ImportWallet__network-label"
+                              aria-labelledby="NetworkStep__network-label"
                               class="grid grid-cols-6 gap-3"
-                              id="ImportWallet__network-menu"
+                              id="NetworkStep__network-menu"
                               role="listbox"
                             >
                               <li
@@ -3593,9 +3586,9 @@ exports[`ImportWallet should import by private key 1`] = `
                               DEVELOPMENT NETWORKS
                             </div>
                             <ul
-                              aria-labelledby="ImportWallet__network-label"
+                              aria-labelledby="NetworkStep__network-label"
                               class="grid grid-cols-6 gap-3"
-                              id="ImportWallet__network-menu"
+                              id="NetworkStep__network-menu"
                               role="listbox"
                             >
                               <li
@@ -3665,328 +3658,6 @@ exports[`ImportWallet should import by private key 1`] = `
       </div>
     </div>
   </div>
-</DocumentFragment>
-`;
-
-exports[`ImportWallet should render 1st step 1`] = `
-<DocumentFragment>
-  <section
-    class="space-y-8"
-    data-testid="ImportWallet__first-step"
-  >
-    <div
-      class="flex justify-between items-end bg-theme-background"
-    >
-      <div
-        class="space-y-4"
-      >
-        <h1
-          class="mb-0 text-4xl"
-          data-testid="header__title"
-        >
-          Select a Cryptoasset
-        </h1>
-        <div
-          class="text-theme-secondary-text"
-          data-testid="header__subtitle"
-        >
-          Select a cryptoasset to import your existing wallet address.
-        </div>
-      </div>
-    </div>
-    <fieldset
-      class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
-    >
-      <label
-        class="flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
-        data-testid="FormLabel"
-        for="network"
-      >
-        Cryptoasset
-        <div
-          class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
-          data-testid="FormLabel__required"
-        />
-      </label>
-      <div>
-        <div
-          aria-expanded="false"
-          aria-haspopup="listbox"
-          aria-owns="ImportWallet__network-menu"
-          data-testid="SelectNetwork"
-          role="combobox"
-        >
-          <label
-            for="ImportWallet__network-input"
-            id="ImportWallet__network-label"
-          />
-          <div
-            class="Input__InputWrapperStyled-wu99qs-0 dInRZi"
-          >
-            <div
-              class="Circle-uw7h4j-0 blBpcG border-theme-secondary-200 dark:border-theme-secondary-700 text-theme-secondary-500"
-              data-testid="SelectNetworkInput__network"
-            />
-            <div
-              class="relative flex flex-1"
-            >
-              <input
-                aria-autocomplete="list"
-                aria-controls="ImportWallet__network-menu"
-                aria-labelledby="ImportWallet__network-label"
-                autocomplete="off"
-                class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
-                data-testid="SelectNetworkInput__input"
-                id="ImportWallet__network-input"
-                placeholder="Enter a cryptoasset name"
-                value=""
-              />
-            </div>
-          </div>
-        </div>
-        <div
-          class=""
-          data-testid="SelectNetwork__options"
-        >
-          <div
-            class="mt-6"
-          >
-            <div
-              class="mb-3 text-sm font-bold text-theme-secondary-400 dark:text-theme-secondary-700"
-            >
-              PUBLIC NETWORKS
-            </div>
-            <ul
-              aria-labelledby="ImportWallet__network-label"
-              class="grid grid-cols-6 gap-3"
-              id="ImportWallet__network-menu"
-              role="listbox"
-            >
-              <li
-                class="inline-block cursor-pointer h-21"
-                data-testid="SelectNetwork__NetworkIcon--container"
-              >
-                <div
-                  aria-label="ARK"
-                  class="w-full h-full flex justify-center items-center border-2 rounded-xl border-theme-primary-100 dark:border-theme-secondary-800 text-theme-secondary-700"
-                  data-testid="NetworkIcon-ARK-ark.mainnet"
-                >
-                  <div
-                    class="sc-bdfBwQ caqoGN"
-                    data-testid="NetworkIcon__icon"
-                    height="30"
-                    width="30"
-                  >
-                    <svg>
-                      ark.svg
-                    </svg>
-                  </div>
-                </div>
-              </li>
-              <li
-                class="inline-block cursor-pointer h-21"
-                data-testid="SelectNetwork__NetworkIcon--container"
-              >
-                <div
-                  aria-label="Compendia"
-                  class="w-full h-full flex justify-center items-center border-2 rounded-xl border-theme-primary-100 dark:border-theme-secondary-800 text-theme-secondary-700"
-                  data-testid="NetworkIcon-ARK-compendia.mainnet"
-                >
-                  <div
-                    class="sc-bdfBwQ caqoGN"
-                    data-testid="NetworkIcon__icon"
-                    height="30"
-                    width="30"
-                  >
-                    <svg>
-                      bind.svg
-                    </svg>
-                  </div>
-                </div>
-              </li>
-            </ul>
-          </div>
-          <div
-            class="mt-6"
-          >
-            <div
-              class="mb-3 text-sm font-bold text-theme-secondary-400 dark:text-theme-secondary-700"
-            >
-              DEVELOPMENT NETWORKS
-            </div>
-            <ul
-              aria-labelledby="ImportWallet__network-label"
-              class="grid grid-cols-6 gap-3"
-              id="ImportWallet__network-menu"
-              role="listbox"
-            >
-              <li
-                class="inline-block cursor-pointer h-21"
-                data-testid="SelectNetwork__NetworkIcon--container"
-              >
-                <div
-                  aria-label="ARK Devnet"
-                  class="w-full h-full flex justify-center items-center border-2 rounded-xl border-theme-primary-100 dark:border-theme-secondary-800 text-theme-primary-300"
-                  data-testid="NetworkIcon-ARK-ark.devnet"
-                >
-                  <div
-                    class="sc-bdfBwQ caqoGN"
-                    data-testid="NetworkIcon__icon"
-                    height="30"
-                    width="30"
-                  >
-                    <svg>
-                      ark.svg
-                    </svg>
-                  </div>
-                </div>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </fieldset>
-  </section>
-</DocumentFragment>
-`;
-
-exports[`ImportWallet should render 1st step without test networks 1`] = `
-<DocumentFragment>
-  <section
-    class="space-y-8"
-    data-testid="ImportWallet__first-step"
-  >
-    <div
-      class="flex justify-between items-end bg-theme-background"
-    >
-      <div
-        class="space-y-4"
-      >
-        <h1
-          class="mb-0 text-4xl"
-          data-testid="header__title"
-        >
-          Select a Cryptoasset
-        </h1>
-        <div
-          class="text-theme-secondary-text"
-          data-testid="header__subtitle"
-        >
-          Select a cryptoasset to import your existing wallet address.
-        </div>
-      </div>
-    </div>
-    <fieldset
-      class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
-    >
-      <label
-        class="flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
-        data-testid="FormLabel"
-        for="network"
-      >
-        Cryptoasset
-        <div
-          class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
-          data-testid="FormLabel__required"
-        />
-      </label>
-      <div>
-        <div
-          aria-expanded="true"
-          aria-haspopup="listbox"
-          aria-owns="ImportWallet__network-menu"
-          data-testid="SelectNetwork"
-          role="combobox"
-        >
-          <label
-            for="ImportWallet__network-input"
-            id="ImportWallet__network-label"
-          />
-          <div
-            class="Input__InputWrapperStyled-wu99qs-0 dInRZi"
-          >
-            <div
-              class="Circle-uw7h4j-0 blBpcG border-theme-secondary-200 dark:border-theme-secondary-700 text-theme-secondary-500"
-              data-testid="SelectNetworkInput__network"
-            />
-            <div
-              class="relative flex flex-1"
-            >
-              <input
-                aria-autocomplete="list"
-                aria-controls="ImportWallet__network-menu"
-                aria-labelledby="ImportWallet__network-label"
-                autocomplete="off"
-                class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
-                data-testid="SelectNetworkInput__input"
-                id="ImportWallet__network-input"
-                placeholder="Enter a cryptoasset name"
-                value=""
-              />
-            </div>
-          </div>
-        </div>
-        <div
-          class=""
-          data-testid="SelectNetwork__options"
-        >
-          <div
-            class="mt-6"
-          >
-            <ul
-              aria-labelledby="ImportWallet__network-label"
-              class="grid grid-cols-6 gap-3"
-              id="ImportWallet__network-menu"
-              role="listbox"
-            >
-              <li
-                class="inline-block cursor-pointer h-21"
-                data-testid="SelectNetwork__NetworkIcon--container"
-              >
-                <div
-                  aria-label="ARK"
-                  class="w-full h-full flex justify-center items-center border-2 rounded-xl border-theme-primary-100 dark:border-theme-secondary-800 text-theme-secondary-700"
-                  data-testid="NetworkIcon-ARK-ark.mainnet"
-                >
-                  <div
-                    class="sc-bdfBwQ caqoGN"
-                    data-testid="NetworkIcon__icon"
-                    height="30"
-                    width="30"
-                  >
-                    <svg>
-                      ark.svg
-                    </svg>
-                  </div>
-                </div>
-              </li>
-              <li
-                class="inline-block cursor-pointer h-21"
-                data-testid="SelectNetwork__NetworkIcon--container"
-              >
-                <div
-                  aria-label="Compendia"
-                  class="w-full h-full flex justify-center items-center border-2 rounded-xl border-theme-primary-100 dark:border-theme-secondary-800 text-theme-secondary-700"
-                  data-testid="NetworkIcon-ARK-compendia.mainnet"
-                >
-                  <div
-                    class="sc-bdfBwQ caqoGN"
-                    data-testid="NetworkIcon__icon"
-                    height="30"
-                    width="30"
-                  >
-                    <svg>
-                      bind.svg
-                    </svg>
-                  </div>
-                </div>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </fieldset>
-  </section>
 </DocumentFragment>
 `;
 
@@ -4624,8 +4295,7 @@ exports[`ImportWallet should render as ledger import 1`] = `
                   data-testid="tab-pabel__active-panel"
                 >
                   <section
-                    class="space-y-8"
-                    data-testid="ImportWallet__first-step"
+                    data-testid="NetworkStep"
                   >
                     <div
                       class="flex justify-between items-end bg-theme-background"
@@ -4648,7 +4318,7 @@ exports[`ImportWallet should render as ledger import 1`] = `
                       </div>
                     </div>
                     <fieldset
-                      class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
+                      class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2 mt-8"
                     >
                       <label
                         class="flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
@@ -4665,13 +4335,13 @@ exports[`ImportWallet should render as ledger import 1`] = `
                         <div
                           aria-expanded="false"
                           aria-haspopup="listbox"
-                          aria-owns="ImportWallet__network-menu"
+                          aria-owns="NetworkStep__network-menu"
                           data-testid="SelectNetwork"
                           role="combobox"
                         >
                           <label
-                            for="ImportWallet__network-input"
-                            id="ImportWallet__network-label"
+                            for="NetworkStep__network-input"
+                            id="NetworkStep__network-label"
                           />
                           <div
                             class="Input__InputWrapperStyled-wu99qs-0 dInRZi"
@@ -4685,15 +4355,16 @@ exports[`ImportWallet should render as ledger import 1`] = `
                             >
                               <input
                                 aria-autocomplete="list"
-                                aria-controls="ImportWallet__network-menu"
-                                aria-labelledby="ImportWallet__network-label"
+                                aria-controls="NetworkStep__network-menu"
+                                aria-labelledby="NetworkStep__network-label"
                                 autocomplete="off"
                                 class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
                                 data-testid="SelectNetworkInput__input"
-                                id="ImportWallet__network-input"
+                                id="NetworkStep__network-input"
                                 placeholder="Enter a cryptoasset name"
                                 value=""
                               />
+                              
                             </div>
                           </div>
                         </div>
@@ -4710,9 +4381,9 @@ exports[`ImportWallet should render as ledger import 1`] = `
                               PUBLIC NETWORKS
                             </div>
                             <ul
-                              aria-labelledby="ImportWallet__network-label"
+                              aria-labelledby="NetworkStep__network-label"
                               class="grid grid-cols-6 gap-3"
-                              id="ImportWallet__network-menu"
+                              id="NetworkStep__network-menu"
                               role="listbox"
                             >
                               <li
@@ -4768,9 +4439,9 @@ exports[`ImportWallet should render as ledger import 1`] = `
                               DEVELOPMENT NETWORKS
                             </div>
                             <ul
-                              aria-labelledby="ImportWallet__network-label"
+                              aria-labelledby="NetworkStep__network-label"
                               class="grid grid-cols-6 gap-3"
-                              id="ImportWallet__network-menu"
+                              id="NetworkStep__network-menu"
                               role="listbox"
                             >
                               <li
@@ -4840,6 +4511,326 @@ exports[`ImportWallet should render as ledger import 1`] = `
     </div>
   </div>
 </div>
+`;
+
+exports[`ImportWallet should render network step 1`] = `
+<DocumentFragment>
+  <section
+    data-testid="NetworkStep"
+  >
+    <div
+      class="flex justify-between items-end bg-theme-background"
+    >
+      <div
+        class="space-y-4"
+      >
+        <h1
+          class="mb-0 text-4xl"
+          data-testid="header__title"
+        >
+          title
+        </h1>
+        <div
+          class="text-theme-secondary-text"
+          data-testid="header__subtitle"
+        >
+          subtitle
+        </div>
+      </div>
+    </div>
+    <fieldset
+      class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2 mt-8"
+    >
+      <label
+        class="flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
+        data-testid="FormLabel"
+        for="network"
+      >
+        Cryptoasset
+        <div
+          class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
+          data-testid="FormLabel__required"
+        />
+      </label>
+      <div>
+        <div
+          aria-expanded="false"
+          aria-haspopup="listbox"
+          aria-owns="NetworkStep__network-menu"
+          data-testid="SelectNetwork"
+          role="combobox"
+        >
+          <label
+            for="NetworkStep__network-input"
+            id="NetworkStep__network-label"
+          />
+          <div
+            class="Input__InputWrapperStyled-wu99qs-0 dInRZi"
+          >
+            <div
+              class="Circle-uw7h4j-0 blBpcG border-theme-secondary-200 dark:border-theme-secondary-700 text-theme-secondary-500"
+              data-testid="SelectNetworkInput__network"
+            />
+            <div
+              class="relative flex flex-1"
+            >
+              <input
+                aria-autocomplete="list"
+                aria-controls="NetworkStep__network-menu"
+                aria-labelledby="NetworkStep__network-label"
+                autocomplete="off"
+                class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
+                data-testid="SelectNetworkInput__input"
+                id="NetworkStep__network-input"
+                placeholder="Enter a cryptoasset name"
+                value=""
+              />
+            </div>
+          </div>
+        </div>
+        <div
+          class=""
+          data-testid="SelectNetwork__options"
+        >
+          <div
+            class="mt-6"
+          >
+            <div
+              class="mb-3 text-sm font-bold text-theme-secondary-400 dark:text-theme-secondary-700"
+            >
+              PUBLIC NETWORKS
+            </div>
+            <ul
+              aria-labelledby="NetworkStep__network-label"
+              class="grid grid-cols-6 gap-3"
+              id="NetworkStep__network-menu"
+              role="listbox"
+            >
+              <li
+                class="inline-block cursor-pointer h-21"
+                data-testid="SelectNetwork__NetworkIcon--container"
+              >
+                <div
+                  aria-label="ARK"
+                  class="w-full h-full flex justify-center items-center border-2 rounded-xl border-theme-primary-100 dark:border-theme-secondary-800 text-theme-secondary-700"
+                  data-testid="NetworkIcon-ARK-ark.mainnet"
+                >
+                  <div
+                    class="sc-bdfBwQ caqoGN"
+                    data-testid="NetworkIcon__icon"
+                    height="30"
+                    width="30"
+                  >
+                    <svg>
+                      ark.svg
+                    </svg>
+                  </div>
+                </div>
+              </li>
+              <li
+                class="inline-block cursor-pointer h-21"
+                data-testid="SelectNetwork__NetworkIcon--container"
+              >
+                <div
+                  aria-label="Compendia"
+                  class="w-full h-full flex justify-center items-center border-2 rounded-xl border-theme-primary-100 dark:border-theme-secondary-800 text-theme-secondary-700"
+                  data-testid="NetworkIcon-ARK-compendia.mainnet"
+                >
+                  <div
+                    class="sc-bdfBwQ caqoGN"
+                    data-testid="NetworkIcon__icon"
+                    height="30"
+                    width="30"
+                  >
+                    <svg>
+                      bind.svg
+                    </svg>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </div>
+          <div
+            class="mt-6"
+          >
+            <div
+              class="mb-3 text-sm font-bold text-theme-secondary-400 dark:text-theme-secondary-700"
+            >
+              DEVELOPMENT NETWORKS
+            </div>
+            <ul
+              aria-labelledby="NetworkStep__network-label"
+              class="grid grid-cols-6 gap-3"
+              id="NetworkStep__network-menu"
+              role="listbox"
+            >
+              <li
+                class="inline-block cursor-pointer h-21"
+                data-testid="SelectNetwork__NetworkIcon--container"
+              >
+                <div
+                  aria-label="ARK Devnet"
+                  class="w-full h-full flex justify-center items-center border-2 rounded-xl border-theme-primary-100 dark:border-theme-secondary-800 text-theme-primary-300"
+                  data-testid="NetworkIcon-ARK-ark.devnet"
+                >
+                  <div
+                    class="sc-bdfBwQ caqoGN"
+                    data-testid="NetworkIcon__icon"
+                    height="30"
+                    width="30"
+                  >
+                    <svg>
+                      ark.svg
+                    </svg>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </fieldset>
+  </section>
+</DocumentFragment>
+`;
+
+exports[`ImportWallet should render network step without test networks 1`] = `
+<DocumentFragment>
+  <section
+    data-testid="NetworkStep"
+  >
+    <div
+      class="flex justify-between items-end bg-theme-background"
+    >
+      <div
+        class="space-y-4"
+      >
+        <h1
+          class="mb-0 text-4xl"
+          data-testid="header__title"
+        >
+          title
+        </h1>
+        <div
+          class="text-theme-secondary-text"
+          data-testid="header__subtitle"
+        >
+          subtitle
+        </div>
+      </div>
+    </div>
+    <fieldset
+      class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2 mt-8"
+    >
+      <label
+        class="flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
+        data-testid="FormLabel"
+        for="network"
+      >
+        Cryptoasset
+        <div
+          class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
+          data-testid="FormLabel__required"
+        />
+      </label>
+      <div>
+        <div
+          aria-expanded="true"
+          aria-haspopup="listbox"
+          aria-owns="NetworkStep__network-menu"
+          data-testid="SelectNetwork"
+          role="combobox"
+        >
+          <label
+            for="NetworkStep__network-input"
+            id="NetworkStep__network-label"
+          />
+          <div
+            class="Input__InputWrapperStyled-wu99qs-0 dInRZi"
+          >
+            <div
+              class="Circle-uw7h4j-0 blBpcG border-theme-secondary-200 dark:border-theme-secondary-700 text-theme-secondary-500"
+              data-testid="SelectNetworkInput__network"
+            />
+            <div
+              class="relative flex flex-1"
+            >
+              <input
+                aria-autocomplete="list"
+                aria-controls="NetworkStep__network-menu"
+                aria-labelledby="NetworkStep__network-label"
+                autocomplete="off"
+                class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
+                data-testid="SelectNetworkInput__input"
+                id="NetworkStep__network-input"
+                placeholder="Enter a cryptoasset name"
+                value=""
+              />
+            </div>
+          </div>
+        </div>
+        <div
+          class=""
+          data-testid="SelectNetwork__options"
+        >
+          <div
+            class="mt-6"
+          >
+            <ul
+              aria-labelledby="NetworkStep__network-label"
+              class="grid grid-cols-6 gap-3"
+              id="NetworkStep__network-menu"
+              role="listbox"
+            >
+              <li
+                class="inline-block cursor-pointer h-21"
+                data-testid="SelectNetwork__NetworkIcon--container"
+              >
+                <div
+                  aria-label="ARK"
+                  class="w-full h-full flex justify-center items-center border-2 rounded-xl border-theme-primary-100 dark:border-theme-secondary-800 text-theme-secondary-700"
+                  data-testid="NetworkIcon-ARK-ark.mainnet"
+                >
+                  <div
+                    class="sc-bdfBwQ caqoGN"
+                    data-testid="NetworkIcon__icon"
+                    height="30"
+                    width="30"
+                  >
+                    <svg>
+                      ark.svg
+                    </svg>
+                  </div>
+                </div>
+              </li>
+              <li
+                class="inline-block cursor-pointer h-21"
+                data-testid="SelectNetwork__NetworkIcon--container"
+              >
+                <div
+                  aria-label="Compendia"
+                  class="w-full h-full flex justify-center items-center border-2 rounded-xl border-theme-primary-100 dark:border-theme-secondary-800 text-theme-secondary-700"
+                  data-testid="NetworkIcon-ARK-compendia.mainnet"
+                >
+                  <div
+                    class="sc-bdfBwQ caqoGN"
+                    data-testid="NetworkIcon__icon"
+                    height="30"
+                    width="30"
+                  >
+                    <svg>
+                      bind.svg
+                    </svg>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </fieldset>
+  </section>
+</DocumentFragment>
 `;
 
 exports[`ImportWallet should show an error message for duplicate address 1`] = `
@@ -5147,8 +5138,7 @@ exports[`ImportWallet should show an error message for duplicate address 1`] = `
                   data-testid="tab-pabel__active-panel"
                 >
                   <section
-                    class="space-y-8"
-                    data-testid="ImportWallet__first-step"
+                    data-testid="NetworkStep"
                   >
                     <div
                       class="flex justify-between items-end bg-theme-background"
@@ -5171,7 +5161,7 @@ exports[`ImportWallet should show an error message for duplicate address 1`] = `
                       </div>
                     </div>
                     <fieldset
-                      class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
+                      class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2 mt-8"
                     >
                       <label
                         class="flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
@@ -5188,13 +5178,13 @@ exports[`ImportWallet should show an error message for duplicate address 1`] = `
                         <div
                           aria-expanded="false"
                           aria-haspopup="listbox"
-                          aria-owns="ImportWallet__network-menu"
+                          aria-owns="NetworkStep__network-menu"
                           data-testid="SelectNetwork"
                           role="combobox"
                         >
                           <label
-                            for="ImportWallet__network-input"
-                            id="ImportWallet__network-label"
+                            for="NetworkStep__network-input"
+                            id="NetworkStep__network-label"
                           />
                           <div
                             class="Input__InputWrapperStyled-wu99qs-0 dInRZi"
@@ -5208,12 +5198,12 @@ exports[`ImportWallet should show an error message for duplicate address 1`] = `
                             >
                               <input
                                 aria-autocomplete="list"
-                                aria-controls="ImportWallet__network-menu"
-                                aria-labelledby="ImportWallet__network-label"
+                                aria-controls="NetworkStep__network-menu"
+                                aria-labelledby="NetworkStep__network-label"
                                 autocomplete="off"
                                 class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
                                 data-testid="SelectNetworkInput__input"
-                                id="ImportWallet__network-input"
+                                id="NetworkStep__network-input"
                                 placeholder="Enter a cryptoasset name"
                                 value=""
                               />
@@ -5233,9 +5223,9 @@ exports[`ImportWallet should show an error message for duplicate address 1`] = `
                               PUBLIC NETWORKS
                             </div>
                             <ul
-                              aria-labelledby="ImportWallet__network-label"
+                              aria-labelledby="NetworkStep__network-label"
                               class="grid grid-cols-6 gap-3"
-                              id="ImportWallet__network-menu"
+                              id="NetworkStep__network-menu"
                               role="listbox"
                             >
                               <li
@@ -5291,9 +5281,9 @@ exports[`ImportWallet should show an error message for duplicate address 1`] = `
                               DEVELOPMENT NETWORKS
                             </div>
                             <ul
-                              aria-labelledby="ImportWallet__network-label"
+                              aria-labelledby="NetworkStep__network-label"
                               class="grid grid-cols-6 gap-3"
-                              id="ImportWallet__network-menu"
+                              id="NetworkStep__network-menu"
                               role="listbox"
                             >
                               <li
@@ -5671,8 +5661,7 @@ exports[`ImportWallet should show an error message for duplicate name 1`] = `
                   data-testid="tab-pabel__active-panel"
                 >
                   <section
-                    class="space-y-8"
-                    data-testid="ImportWallet__first-step"
+                    data-testid="NetworkStep"
                   >
                     <div
                       class="flex justify-between items-end bg-theme-background"
@@ -5695,7 +5684,7 @@ exports[`ImportWallet should show an error message for duplicate name 1`] = `
                       </div>
                     </div>
                     <fieldset
-                      class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
+                      class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2 mt-8"
                     >
                       <label
                         class="flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
@@ -5712,13 +5701,13 @@ exports[`ImportWallet should show an error message for duplicate name 1`] = `
                         <div
                           aria-expanded="false"
                           aria-haspopup="listbox"
-                          aria-owns="ImportWallet__network-menu"
+                          aria-owns="NetworkStep__network-menu"
                           data-testid="SelectNetwork"
                           role="combobox"
                         >
                           <label
-                            for="ImportWallet__network-input"
-                            id="ImportWallet__network-label"
+                            for="NetworkStep__network-input"
+                            id="NetworkStep__network-label"
                           />
                           <div
                             class="Input__InputWrapperStyled-wu99qs-0 dInRZi"
@@ -5732,12 +5721,12 @@ exports[`ImportWallet should show an error message for duplicate name 1`] = `
                             >
                               <input
                                 aria-autocomplete="list"
-                                aria-controls="ImportWallet__network-menu"
-                                aria-labelledby="ImportWallet__network-label"
+                                aria-controls="NetworkStep__network-menu"
+                                aria-labelledby="NetworkStep__network-label"
                                 autocomplete="off"
                                 class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
                                 data-testid="SelectNetworkInput__input"
-                                id="ImportWallet__network-input"
+                                id="NetworkStep__network-input"
                                 placeholder="Enter a cryptoasset name"
                                 value=""
                               />
@@ -5757,9 +5746,9 @@ exports[`ImportWallet should show an error message for duplicate name 1`] = `
                               PUBLIC NETWORKS
                             </div>
                             <ul
-                              aria-labelledby="ImportWallet__network-label"
+                              aria-labelledby="NetworkStep__network-label"
                               class="grid grid-cols-6 gap-3"
-                              id="ImportWallet__network-menu"
+                              id="NetworkStep__network-menu"
                               role="listbox"
                             >
                               <li
@@ -5815,9 +5804,9 @@ exports[`ImportWallet should show an error message for duplicate name 1`] = `
                               DEVELOPMENT NETWORKS
                             </div>
                             <ul
-                              aria-labelledby="ImportWallet__network-label"
+                              aria-labelledby="NetworkStep__network-label"
                               class="grid grid-cols-6 gap-3"
-                              id="ImportWallet__network-menu"
+                              id="NetworkStep__network-menu"
                               role="listbox"
                             >
                               <li
@@ -6195,8 +6184,7 @@ exports[`ImportWallet should show an error message for invalid address 1`] = `
                   data-testid="tab-pabel__active-panel"
                 >
                   <section
-                    class="space-y-8"
-                    data-testid="ImportWallet__first-step"
+                    data-testid="NetworkStep"
                   >
                     <div
                       class="flex justify-between items-end bg-theme-background"
@@ -6219,7 +6207,7 @@ exports[`ImportWallet should show an error message for invalid address 1`] = `
                       </div>
                     </div>
                     <fieldset
-                      class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
+                      class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2 mt-8"
                     >
                       <label
                         class="flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
@@ -6236,13 +6224,13 @@ exports[`ImportWallet should show an error message for invalid address 1`] = `
                         <div
                           aria-expanded="false"
                           aria-haspopup="listbox"
-                          aria-owns="ImportWallet__network-menu"
+                          aria-owns="NetworkStep__network-menu"
                           data-testid="SelectNetwork"
                           role="combobox"
                         >
                           <label
-                            for="ImportWallet__network-input"
-                            id="ImportWallet__network-label"
+                            for="NetworkStep__network-input"
+                            id="NetworkStep__network-label"
                           />
                           <div
                             class="Input__InputWrapperStyled-wu99qs-0 dInRZi"
@@ -6256,12 +6244,12 @@ exports[`ImportWallet should show an error message for invalid address 1`] = `
                             >
                               <input
                                 aria-autocomplete="list"
-                                aria-controls="ImportWallet__network-menu"
-                                aria-labelledby="ImportWallet__network-label"
+                                aria-controls="NetworkStep__network-menu"
+                                aria-labelledby="NetworkStep__network-label"
                                 autocomplete="off"
                                 class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
                                 data-testid="SelectNetworkInput__input"
-                                id="ImportWallet__network-input"
+                                id="NetworkStep__network-input"
                                 placeholder="Enter a cryptoasset name"
                                 value=""
                               />
@@ -6281,9 +6269,9 @@ exports[`ImportWallet should show an error message for invalid address 1`] = `
                               PUBLIC NETWORKS
                             </div>
                             <ul
-                              aria-labelledby="ImportWallet__network-label"
+                              aria-labelledby="NetworkStep__network-label"
                               class="grid grid-cols-6 gap-3"
-                              id="ImportWallet__network-menu"
+                              id="NetworkStep__network-menu"
                               role="listbox"
                             >
                               <li
@@ -6339,9 +6327,9 @@ exports[`ImportWallet should show an error message for invalid address 1`] = `
                               DEVELOPMENT NETWORKS
                             </div>
                             <ul
-                              aria-labelledby="ImportWallet__network-label"
+                              aria-labelledby="NetworkStep__network-label"
                               class="grid grid-cols-6 gap-3"
-                              id="ImportWallet__network-menu"
+                              id="NetworkStep__network-menu"
                               role="listbox"
                             >
                               <li

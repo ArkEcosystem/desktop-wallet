@@ -52,6 +52,7 @@ export const HeaderSearchBar = ({
 			<button
 				data-testid="header-search-bar__button"
 				className="my-auto h-full font-semibold cursor-pointer focus:outline-none"
+				type="button"
 				onClick={() => setSearchbarVisible(true)}
 			>
 				<ControlButton isChanged={!!query} noBorder={noToggleBorder}>

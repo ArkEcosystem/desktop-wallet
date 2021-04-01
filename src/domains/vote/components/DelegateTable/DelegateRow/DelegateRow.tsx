@@ -35,12 +35,12 @@ export const DelegateRow = ({
 	const { t } = useTranslation();
 
 	const isSelectedUnvote = useMemo(
-		() => !!selectedUnvotes?.find((delegateAddress) => delegateAddress === delegate.address()),
+		() => !!selectedUnvotes?.find((delegateAddress) => delegateAddress === delegate?.address?.()),
 		[delegate, selectedUnvotes],
 	);
 
 	const isSelectedVote = useMemo(
-		() => isVoted || !!selectedVotes?.find((delegateAddress) => delegateAddress === delegate.address()),
+		() => isVoted || !!selectedVotes?.find((delegateAddress) => delegateAddress === delegate?.address?.()),
 		[delegate, isVoted, selectedVotes],
 	);
 

@@ -35,15 +35,18 @@ export const Votes = () => {
 	const walletAddress = hasWalletId ? activeWallet.address() : "";
 	const walletMaxVotes = hasWalletId ? activeWallet.network().maximumVotesPerWallet() : undefined;
 
-	const defaultConfiguration = {
-		walletsDisplayType: "all",
-		selectedNetworkIds: uniq(
-			activeProfile
-				.wallets()
-				.values()
-				.map((wallet) => wallet.network().id()),
-		),
-	};
+	const defaultConfiguration = useMemo(
+		() => ({
+			walletsDisplayType: "all",
+			selectedNetworkIds: uniq(
+				activeProfile
+					.wallets()
+					.values()
+					.map((wallet) => wallet.network().id()),
+			),
+		}),
+		[activeProfile],
+	);
 
 	const [searchQuery, setSearchQuery] = useState("");
 
@@ -169,8 +172,10 @@ export const Votes = () => {
 	}, [loadVotes, selectedAddress]);
 
 	const loadDelegates = useCallback(
-		(wallet) => {
+		async (wallet) => {
 			setIsLoadingDelegates(true);
+			// eslint-disable-next-line @typescript-eslint/no-non-null-asserted-optional-chain
+			await env.delegates().sync(wallet?.coinId()!, wallet?.networkId()!);
 			// eslint-disable-next-line @typescript-eslint/no-non-null-asserted-optional-chain
 			const delegates = env.delegates().all(wallet?.coinId()!, wallet?.networkId()!);
 			setDelegates(delegates);

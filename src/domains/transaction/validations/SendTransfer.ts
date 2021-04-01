@@ -21,7 +21,7 @@ export const sendTransfer = (t: any, env: Environment) => ({
 	}),
 	network: () => ({
 		required: t("COMMON.VALIDATION.FIELD_REQUIRED", {
-			field: t("COMMON.NETWORK"),
+			field: t("COMMON.CRYPTOASSET"),
 		}),
 	}),
 	recipientAddress: (network: Coins.Network, recipients: RecipientListItem[], isSingleRecipient: boolean) => ({

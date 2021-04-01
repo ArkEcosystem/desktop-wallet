@@ -10,8 +10,10 @@ import { useEnvironmentContext } from "app/contexts";
 import { useActiveProfile } from "app/hooks";
 import { CreateContact, DeleteContact, UpdateContact } from "domains/contact/components";
 import { ContactListItem } from "domains/contact/components/ContactListItem";
+import querystring from "querystring";
 import React, { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
+import { useHistory } from "react-router-dom";
 
 type ContactsHeaderExtraProps = {
 	showSearchBar: boolean;
@@ -45,6 +47,8 @@ type ContactsProps = {
 export const Contacts = ({ onSearch }: ContactsProps) => {
 	const { env, state } = useEnvironmentContext();
 
+	const history = useHistory();
+
 	const activeProfile = useActiveProfile();
 
 	const [contacts, setContacts] = useState<Contracts.IContact[]>([]);
@@ -69,7 +73,6 @@ export const Contacts = ({ onSearch }: ContactsProps) => {
 	}, [activeProfile, state]);
 
 	const contactOptions = [
-		{ label: t("COMMON.SEND"), value: "send" },
 		{ label: t("COMMON.EDIT"), value: "edit" },
 		{ label: t("COMMON.DELETE"), value: "delete" },
 	];
@@ -107,6 +110,14 @@ export const Contacts = ({ onSearch }: ContactsProps) => {
 		setSelectedContact(contact);
 	};
 
+	const handleSend = (address: Contracts.IContactAddress) => {
+		const schema = { coin: address.coin(), network: address.network(), recipient: address.address() };
+		const queryParams = querystring.encode(schema);
+		const url = `/profiles/${activeProfile.id()}/send-transfer?${queryParams}`;
+
+		history.push(url);
+	};
+
 	const resetContactAction = () => {
 		setContactAction(null);
 	};
@@ -138,6 +149,7 @@ export const Contacts = ({ onSearch }: ContactsProps) => {
 									<ContactListItem
 										item={contact}
 										options={contactOptions}
+										onSend={handleSend}
 										onAction={(action: { value: any }) =>
 											handleContactAction(action.value, contact)
 										}

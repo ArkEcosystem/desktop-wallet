@@ -2502,7 +2502,7 @@ exports[`SendIpfs should show an error if an invalid IPFS hash is entered 1`] = 
                             >
                               <div
                                 aria-label="ARK Devnet"
-                                class="Circle-uw7h4j-0 blBpcG border-theme-primary-100 text-theme-primary-400"
+                                class="Circle-uw7h4j-0 blBpcG border-theme-secondary-200 dark:border-theme-secondary-700 text-theme-secondary-500"
                                 data-testid="SelectNetworkInput__network"
                               >
                                 <div
@@ -2531,12 +2531,7 @@ exports[`SendIpfs should show an error if an invalid IPFS hash is entered 1`] = 
                                   placeholder="Enter a cryptoasset name"
                                   value="ARK Devnet"
                                 />
-                                <span
-                                  class="absolute top-0 flex items-center font-normal opacity-50 pointer-events-none"
-                                  data-testid="Input__suggestion"
-                                >
-                                  ARK Devnet
-                                </span>
+                                
                               </div>
                             </div>
                           </div>

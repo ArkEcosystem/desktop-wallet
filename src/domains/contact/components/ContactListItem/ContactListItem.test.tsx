@@ -287,4 +287,20 @@ describe("ContactListItem", () => {
 			"D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib",
 		);
 	});
+
+	it("should call send", () => {
+		const onSend = jest.fn();
+
+		const { getAllByTestId } = render(
+			<table>
+				<tbody>
+					<ContactListItem item={contact} onSend={onSend} options={singleOption} />
+				</tbody>
+			</table>,
+		);
+
+		fireEvent.click(getAllByTestId("ContactListItem__send-button")[0]);
+
+		expect(onSend).toHaveBeenCalled();
+	});
 });
