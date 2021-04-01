@@ -366,7 +366,7 @@ exports[`SendTransfer should display disabled address selection input if selecte
                             >
                               <div
                                 aria-label="ARK Devnet"
-                                class="Circle-uw7h4j-0 blBpcG border-theme-primary-100 text-theme-primary-400"
+                                class="Circle-uw7h4j-0 blBpcG border-theme-secondary-200 dark:border-theme-secondary-700 text-theme-secondary-500"
                                 data-testid="SelectNetworkInput__network"
                               >
                                 <div
@@ -395,12 +395,6 @@ exports[`SendTransfer should display disabled address selection input if selecte
                                   placeholder="Enter a cryptoasset name"
                                   value="ARK Devnet"
                                 />
-                                <span
-                                  class="absolute top-0 flex items-center font-normal opacity-50 pointer-events-none"
-                                  data-testid="Input__suggestion"
-                                >
-                                  ARK Devnet
-                                </span>
                               </div>
                             </div>
                           </div>
@@ -2268,7 +2262,7 @@ exports[`SendTransfer should render form and use location state 1`] = `
                             >
                               <div
                                 aria-label="ARK Devnet"
-                                class="Circle-uw7h4j-0 blBpcG border-theme-primary-100 text-theme-primary-400"
+                                class="Circle-uw7h4j-0 blBpcG border-theme-secondary-200 dark:border-theme-secondary-700 text-theme-secondary-500"
                                 data-testid="SelectNetworkInput__network"
                               >
                                 <div
@@ -2297,12 +2291,6 @@ exports[`SendTransfer should render form and use location state 1`] = `
                                   placeholder="Enter a cryptoasset name"
                                   value="ARK Devnet"
                                 />
-                                <span
-                                  class="absolute top-0 flex items-center font-normal opacity-50 pointer-events-none"
-                                  data-testid="Input__suggestion"
-                                >
-                                  ARK Devnet
-                                </span>
                               </div>
                             </div>
                           </div>
@@ -3251,7 +3239,7 @@ exports[`SendTransfer should render form and use location state without memo 1`]
                             >
                               <div
                                 aria-label="ARK Devnet"
-                                class="Circle-uw7h4j-0 blBpcG border-theme-primary-100 text-theme-primary-400"
+                                class="Circle-uw7h4j-0 blBpcG border-theme-secondary-200 dark:border-theme-secondary-700 text-theme-secondary-500"
                                 data-testid="SelectNetworkInput__network"
                               >
                                 <div
@@ -3280,12 +3268,6 @@ exports[`SendTransfer should render form and use location state without memo 1`]
                                   placeholder="Enter a cryptoasset name"
                                   value="ARK Devnet"
                                 />
-                                <span
-                                  class="absolute top-0 flex items-center font-normal opacity-50 pointer-events-none"
-                                  data-testid="Input__suggestion"
-                                >
-                                  ARK Devnet
-                                </span>
                               </div>
                             </div>
                           </div>
@@ -6898,7 +6880,7 @@ exports[`SendTransfer should select a cryptoasset and select sender without wall
                             >
                               <div
                                 aria-label="ARK Devnet"
-                                class="Circle-uw7h4j-0 blBpcG border-theme-primary-100 text-theme-primary-400"
+                                class="Circle-uw7h4j-0 blBpcG border-theme-secondary-200 dark:border-theme-secondary-700 text-theme-secondary-500"
                                 data-testid="SelectNetworkInput__network"
                               >
                                 <div
@@ -6927,12 +6909,7 @@ exports[`SendTransfer should select a cryptoasset and select sender without wall
                                   placeholder="Enter a cryptoasset name"
                                   value="ARK Devnet"
                                 />
-                                <span
-                                  class="absolute top-0 flex items-center font-normal opacity-50 pointer-events-none"
-                                  data-testid="Input__suggestion"
-                                >
-                                  ARK Devnet
-                                </span>
+                                
                               </div>
                             </div>
                           </div>
@@ -7511,7 +7488,7 @@ exports[`SendTransfer should select a cryptoasset and select sender without wall
 </div>
 `;
 
-exports[`SendTransfer should select cryptoasset first and see select address input clickable 1`] = `
+exports[`SendTransfer should select cryptoasset 1`] = `
 <DocumentFragment>
   <div
     class="flex relative flex-col min-h-screen"
@@ -7873,7 +7850,7 @@ exports[`SendTransfer should select cryptoasset first and see select address inp
                           >
                             <div
                               aria-label="ARK Devnet"
-                              class="Circle-uw7h4j-0 blBpcG border-theme-primary-100 text-theme-primary-400"
+                              class="Circle-uw7h4j-0 blBpcG border-theme-secondary-200 dark:border-theme-secondary-700 text-theme-secondary-500"
                               data-testid="SelectNetworkInput__network"
                             >
                               <div
