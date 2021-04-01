@@ -48,7 +48,7 @@ export const useProfileTransactions = ({ profile }: { profile: Contracts.IProfil
 
 			return transactionsAggregate;
 		},
-		[],
+		[profile],
 	);
 
 	return { fetchTransactions };
