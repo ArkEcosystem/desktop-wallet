@@ -12,6 +12,7 @@ import { useActiveProfile } from "app/hooks/env";
 import { toasts } from "app/services";
 import { useWalletConfig } from "domains/dashboard/hooks";
 import { EncryptPasswordStep } from "domains/wallet/components/EncryptPasswordStep";
+import { NetworkStep } from "domains/wallet/components/NetworkStep";
 import { useWalletImport, WalletGenerationInput } from "domains/wallet/hooks/use-wallet-import";
 import { useWalletSync } from "domains/wallet/hooks/use-wallet-sync";
 import React, { useEffect, useState } from "react";
@@ -20,7 +21,6 @@ import { useTranslation } from "react-i18next";
 import { useHistory } from "react-router-dom";
 
 import { LedgerTabs } from "./Ledger/LedgerTabs";
-import { FirstStep } from "./Step1";
 import { SecondStep } from "./Step2";
 import { ThirdStep } from "./Step3";
 
@@ -145,7 +145,11 @@ export const ImportWallet = () => {
 
 							<div className="mt-8">
 								<TabPanel tabId={1}>
-									<FirstStep profile={activeProfile} />
+									<NetworkStep
+										profile={activeProfile}
+										title={t("WALLETS.PAGE_IMPORT_WALLET.NETWORK_STEP.TITLE")}
+										subtitle={t("WALLETS.PAGE_IMPORT_WALLET.NETWORK_STEP.SUBTITLE")}
+									/>
 								</TabPanel>
 								<TabPanel tabId={2}>
 									<SecondStep profile={activeProfile} />
