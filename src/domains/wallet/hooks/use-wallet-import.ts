@@ -17,22 +17,14 @@ export const useWalletImport = ({ profile }: { profile: Contracts.IProfile }) =>
 		type,
 		value,
 		encryptedWif,
-		password,
 	}: {
 		network: Coins.Network;
 		type: string;
 		value: WalletGenerationInput;
 		encryptedWif: string;
-		password?: string;
 	}): Promise<Contracts.IReadWriteWallet | undefined> => {
 		switch (type) {
 			case "mnemonic":
-				if (password) {
-					return profile
-						.wallets()
-						.importByMnemonicWithEncryption(value, network.coin(), network.id(), password);
-				}
-
 				return profile.wallets().importByMnemonic(value, network.coin(), network.id());
 
 			case "address":

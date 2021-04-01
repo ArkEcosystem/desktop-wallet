@@ -261,7 +261,7 @@ describe("SendTransfer", () => {
 
 	it("should render form and use location state", async () => {
 		const history = createMemoryHistory();
-		const transferURL = `/profiles/${fixtureProfileId}/wallets/${fixtureWalletId}/send-transfer?memo=ARK&coin=ark&network=ark.devnet`;
+		const transferURL = `/profiles/${fixtureProfileId}/wallets/${fixtureWalletId}/send-transfer?recipient=DNjuJEDQkhrJ7cA9FZ2iVXt5anYiM8Jtc9&memo=ARK&coin=ark&network=ark.devnet`;
 		history.push(transferURL);
 
 		let rendered: RenderResult;
@@ -308,7 +308,7 @@ describe("SendTransfer", () => {
 		expect(asFragment()).toMatchSnapshot();
 	});
 
-	it("should select cryptoasset first and see select address input clickable", async () => {
+	it("should select cryptoasset", async () => {
 		const transferURL = `/profiles/${fixtureProfileId}/send-transfer`;
 
 		const history = createMemoryHistory();
@@ -328,8 +328,30 @@ describe("SendTransfer", () => {
 
 		await waitFor(() => expect(getByTestId("SendTransfer__network-step")).toBeTruthy());
 
+		const input = getByTestId("SelectNetworkInput__input");
+
 		act(() => {
-			fireEvent.focus(getByTestId("SelectNetworkInput__input"));
+			fireEvent.change(input, { target: { value: "no match" } });
+		});
+
+		await waitFor(async () => {
+			expect(input).toHaveAttribute("aria-invalid", "true");
+		});
+
+		act(() => {
+			fireEvent.change(input, { target: { value: "ARK Dev" } });
+		});
+
+		await waitFor(async () => {
+			expect(input).not.toHaveAttribute("aria-invalid");
+		});
+
+		act(() => {
+			fireEvent.change(input, { target: { value: "" } });
+		});
+
+		await waitFor(async () => {
+			expect(input).toHaveAttribute("aria-invalid");
 		});
 
 		await waitFor(() => expect(getByTestId("NetworkIcon-ARK-ark.devnet")).toBeTruthy());
@@ -341,6 +363,7 @@ describe("SendTransfer", () => {
 		await waitFor(() =>
 			expect(getByTestId("SelectNetworkInput__network")).toHaveAttribute("aria-label", "ARK Devnet"),
 		);
+
 		expect(asFragment()).toMatchSnapshot();
 	});
 

@@ -54,7 +54,7 @@ const Main = () => {
 	const { env } = useEnvironmentContext();
 	const { loadPlugins } = usePluginManagerContext();
 	const isOnline = useNetworkStatus();
-	const { start, runAll } = useEnvSynchronizer();
+	const { start } = useEnvSynchronizer();
 	const history = useHistory();
 
 	useProfileSynchronizer({
@@ -91,7 +91,7 @@ const Main = () => {
 
 				await env.verify();
 				await env.boot();
-				runAll();
+
 				await loadPlugins();
 			} catch (error) {
 				console.error(error);
@@ -102,7 +102,7 @@ const Main = () => {
 		};
 
 		boot();
-	}, [env, handleError, runAll, loadPlugins]);
+	}, [env, handleError, loadPlugins]);
 
 	const renderContent = () => {
 		if (showSplash) {

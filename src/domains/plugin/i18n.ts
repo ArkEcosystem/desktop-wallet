@@ -73,7 +73,7 @@ export const translations: { [key: string]: any } = {
 	MODAL_MANUAL_INSTALL_PLUGIN: {
 		TITLE: "Install from URL",
 		DESCRIPTION: "Fetch the Plugin directly from GitHub by providing the repository URL below.",
-		PLACEHOLDER: "GitHub Repository URL",
+		REPOSITORY_URL: "GitHub Repository URL",
 	},
 
 	PAGE_PLUGIN_MANAGER: {

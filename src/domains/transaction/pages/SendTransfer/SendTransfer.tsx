@@ -83,6 +83,7 @@ export const SendTransfer = () => {
 
 	const { hasDeviceAvailable, isConnected } = useLedgerContext();
 
+	const [lastEstimatedExpiration, setLastEstimatedExpiration] = useState<number | undefined>();
 	const abortRef = useRef(new AbortController());
 	const transactionBuilder = useTransactionBuilder(activeProfile);
 	const { fetchWalletUnconfirmedTransactions } = useTransaction();
@@ -125,12 +126,25 @@ export const SendTransfer = () => {
 		setValue(
 			"network",
 			networks.find(
-				(item) => item.coin().toLowerCase() === deepLinkParams.coin && item.id() === deepLinkParams.network,
+				(item) =>
+					item.coin().toLowerCase() === deepLinkParams.coin?.toLowerCase() &&
+					item.id().toLowerCase() === deepLinkParams.network?.toLowerCase(),
 			),
 		);
 
 		if (deepLinkParams.memo) {
 			setValue("smartbridge", deepLinkParams.memo);
+		}
+
+		if (deepLinkParams.recipient) {
+			setTimeout(
+				() =>
+					setValue("recipientAddress", deepLinkParams.recipient, {
+						shouldDirty: true,
+						shouldValidate: false,
+					}),
+				0,
+			);
 		}
 	}, [deepLinkParams, setValue, networks]);
 
@@ -216,6 +230,7 @@ export const SendTransfer = () => {
 
 			const expiration = await wallet?.coin()?.transaction().estimateExpiration();
 			transactionInput.data.expiration = parseInt(expiration!);
+			setLastEstimatedExpiration(transactionInput.data.expiration);
 
 			const abortSignal = abortRef.current?.signal;
 			const { uuid, transaction } = await transactionBuilder.build(transactionType, transactionInput, {
@@ -305,7 +320,12 @@ export const SendTransfer = () => {
 							<TabPanel tabId={3}>
 								<AuthenticationStep
 									wallet={wallet!}
-									ledgerDetails={<TransferLedgerReview wallet={wallet!} />}
+									ledgerDetails={
+										<TransferLedgerReview
+											wallet={wallet!}
+											estimatedExpiration={lastEstimatedExpiration}
+										/>
+									}
 									ledgerIsAwaitingDevice={!hasDeviceAvailable}
 									ledgerIsAwaitingApp={!isConnected}
 								/>

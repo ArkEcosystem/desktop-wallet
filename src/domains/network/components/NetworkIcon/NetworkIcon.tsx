@@ -29,7 +29,7 @@ export const NetworkIcon = ({ coin, network, iconSize, className, showTooltip, .
 	const networkExtendedData = coin && network ? getNetworkExtendedData({ coin, network }) : undefined;
 
 	if (!networkExtendedData) {
-		return <Placeholder {...props} />;
+		return <Placeholder className={className} {...props} />;
 	}
 
 	const { iconName, borderClass, textClass } = networkExtendedData;

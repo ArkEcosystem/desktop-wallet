@@ -310,6 +310,7 @@ exports[`Votes should filter current delegates 1`] = `
                   <button
                     class="my-auto h-full font-semibold cursor-pointer focus:outline-none"
                     data-testid="header-search-bar__button"
+                    type="button"
                   >
                     <div
                       class="group"
@@ -1162,6 +1163,7 @@ exports[`Votes should hide testnet wallet if disabled from profile setting 1`] =
                   <button
                     class="my-auto h-full font-semibold cursor-pointer focus:outline-none"
                     data-testid="header-search-bar__button"
+                    type="button"
                   >
                     <div
                       class="group"
@@ -2284,6 +2286,7 @@ exports[`Votes should render 1`] = `
                   <button
                     class="my-auto h-full font-semibold cursor-pointer focus:outline-none"
                     data-testid="header-search-bar__button"
+                    type="button"
                   >
                     <div
                       class="group"
@@ -3775,6 +3778,7 @@ exports[`Votes should select a delegate 1`] = `
                   <button
                     class="my-auto h-full font-semibold cursor-pointer focus:outline-none"
                     data-testid="header-search-bar__button"
+                    type="button"
                   >
                     <div
                       class="group"
@@ -4894,6 +4898,7 @@ exports[`Votes should select an address without vote 1`] = `
                   <button
                     class="my-auto h-full font-semibold cursor-pointer focus:outline-none"
                     data-testid="header-search-bar__button"
+                    type="button"
                   >
                     <div
                       class="group"
@@ -5113,387 +5118,1026 @@ exports[`Votes should select an address without vote 1`] = `
                   role="rowgroup"
                 >
                   <tr
-                    class="TableRow__TableRowStyled-sc-1br46dw-0 fzBhIQ"
-                    data-testid="TableRow"
+                    class="border-b border-dotted last:border-b-0 border-theme-secondary-300 dark:border-theme-secondary-800"
+                    data-testid="DelegateRowSkeleton"
                   >
                     <td
-                      class="w-20"
+                      class="py-5"
                     >
                       <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 DpDcR justify-start font-bold text-theme-secondary-text "
-                      >
-                        <span>
-                          #
-                        </span>
-                      </div>
-                    </td>
-                    <td>
-                      <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT space-x-4 font-bold "
-                      >
-                        <div
-                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 cjwvlc"
-                          data-testid="Avatar"
-                        >
-                          <div
-                            class="w-full h-full"
-                          >
-                            <img
-                              alt="D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib"
-                              src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"60\\" cy=\\"40\\" fill=\\"rgb(139, 195, 74)\\"/><circle r=\\"45\\" cx=\\"0\\" cy=\\"30\\" fill=\\"rgb(0, 188, 212)\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"50\\" fill=\\"rgb(255, 193, 7)\\"/></svg>"
-                              title="D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib"
-                            />
-                          </div>
-                        </div>
-                        <span>
-                          arkx
-                        </span>
-                      </div>
-                    </td>
-                    <td
-                      class="w-20"
-                    >
-                      <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT justify-center "
+                        class="Circle-uw7h4j-0 kiSYWh bg-theme-secondary-200 border-theme-secondary-300 dark:border-theme-secondary-800"
                       />
                     </td>
                     <td
-                      class="w-20"
+                      class="py-5"
+                    >
+                      <span>
+                        <span
+                          class="react-loading-skeleton mt-4 css-1vmnjpn-skeletonStyles-Skeleton"
+                          style="width: 80%; height: 6px;"
+                        >
+                          ‌
+                        </span>
+                      </span>
+                    </td>
+                    <td
+                      class="py-5"
+                    >
+                      <span>
+                        <span
+                          class="react-loading-skeleton mt-4 css-1vmnjpn-skeletonStyles-Skeleton"
+                          style="width: 30%; height: 6px;"
+                        >
+                          ‌
+                        </span>
+                      </span>
+                    </td>
+                    <td
+                      class="py-5"
+                    >
+                      <span>
+                        <span
+                          class="react-loading-skeleton mt-4 css-1vmnjpn-skeletonStyles-Skeleton"
+                          style="width: 40%; height: 6px;"
+                        >
+                          ‌
+                        </span>
+                      </span>
+                    </td>
+                    <td
+                      class="py-5"
                     >
                       <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT justify-center font-bold text-theme-secondary-text "
+                        class="flex justify-center h-full"
                       >
                         <span>
-                          %
+                          <span
+                            class="react-loading-skeleton css-1vmnjpn-skeletonStyles-Skeleton"
+                            style="width: 24px; height: 24px;"
+                          >
+                            ‌
+                          </span>
                         </span>
                       </div>
                     </td>
                     <td
-                      class="w-40"
+                      class="py-5"
+                    >
+                      <span>
+                        <span
+                          class="react-loading-skeleton mt-4 css-1vmnjpn-skeletonStyles-Skeleton"
+                          style="width: 40%; height: 6px;"
+                        >
+                          ‌
+                        </span>
+                      </span>
+                    </td>
+                    <td
+                      class="py-5"
+                    >
+                      <span>
+                        <span
+                          class="react-loading-skeleton mt-4 css-1vmnjpn-skeletonStyles-Skeleton"
+                          style="width: 40%; height: 6px;"
+                        >
+                          ‌
+                        </span>
+                      </span>
+                    </td>
+                    <td
+                      class="py-5"
+                    >
+                      <span>
+                        <span
+                          class="react-loading-skeleton mt-4 css-1vmnjpn-skeletonStyles-Skeleton"
+                          style="width: 40%; height: 6px;"
+                        >
+                          ‌
+                        </span>
+                      </span>
+                    </td>
+                    <td
+                      class="py-5"
+                    >
+                      <span>
+                        <span
+                          class="react-loading-skeleton mt-4 css-1vmnjpn-skeletonStyles-Skeleton"
+                          style="width: 60%; height: 6px;"
+                        >
+                          ‌
+                        </span>
+                      </span>
+                    </td>
+                    <td
+                      class="py-5"
                     >
                       <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 kjTmcB justify-end "
+                        class="text-right"
                       >
-                        <button
-                          class="OriginalButton__StyledButton-sc-1y2wptt-0 hsoUax"
-                          color="primary"
-                          data-testid="DelegateRow__toggle-0"
-                          type="button"
-                        >
-                          <div
-                            class="flex relative items-center space-x-2"
+                        <span>
+                          <span
+                            class="react-loading-skeleton css-1vmnjpn-skeletonStyles-Skeleton"
+                            style="width: 100px; height: 40px;"
                           >
-                            Select
-                          </div>
-                        </button>
+                            ‌
+                          </span>
+                        </span>
                       </div>
                     </td>
                   </tr>
                   <tr
-                    class="TableRow__TableRowStyled-sc-1br46dw-0 fzBhIQ"
-                    data-testid="TableRow"
+                    class="border-b border-dotted last:border-b-0 border-theme-secondary-300 dark:border-theme-secondary-800"
+                    data-testid="DelegateRowSkeleton"
                   >
                     <td
-                      class="w-20"
+                      class="py-5"
                     >
                       <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 DpDcR justify-start font-bold text-theme-secondary-text "
-                      >
-                        <span>
-                          #2
-                        </span>
-                      </div>
-                    </td>
-                    <td>
-                      <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT space-x-4 font-bold "
-                      >
-                        <div
-                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 cjwvlc"
-                          data-testid="Avatar"
-                        >
-                          <div
-                            class="w-full h-full"
-                          >
-                            <img
-                              alt="D5L5zXgvqtg7qoGimt5vYhFuf5Ued6iWVr"
-                              src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(0, 188, 212)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"20\\" cy=\\"30\\" fill=\\"rgb(3, 169, 244)\\"/><circle r=\\"60\\" cx=\\"0\\" cy=\\"70\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"60\\" fill=\\"rgb(255, 152, 0)\\"/></svg>"
-                              title="D5L5zXgvqtg7qoGimt5vYhFuf5Ued6iWVr"
-                            />
-                          </div>
-                        </div>
-                        <span>
-                          genesis_42
-                        </span>
-                      </div>
-                    </td>
-                    <td
-                      class="w-20"
-                    >
-                      <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT justify-center "
+                        class="Circle-uw7h4j-0 kiSYWh bg-theme-secondary-200 border-theme-secondary-300 dark:border-theme-secondary-800"
                       />
                     </td>
                     <td
-                      class="w-20"
+                      class="py-5"
+                    >
+                      <span>
+                        <span
+                          class="react-loading-skeleton mt-4 css-1vmnjpn-skeletonStyles-Skeleton"
+                          style="width: 80%; height: 6px;"
+                        >
+                          ‌
+                        </span>
+                      </span>
+                    </td>
+                    <td
+                      class="py-5"
+                    >
+                      <span>
+                        <span
+                          class="react-loading-skeleton mt-4 css-1vmnjpn-skeletonStyles-Skeleton"
+                          style="width: 30%; height: 6px;"
+                        >
+                          ‌
+                        </span>
+                      </span>
+                    </td>
+                    <td
+                      class="py-5"
+                    >
+                      <span>
+                        <span
+                          class="react-loading-skeleton mt-4 css-1vmnjpn-skeletonStyles-Skeleton"
+                          style="width: 40%; height: 6px;"
+                        >
+                          ‌
+                        </span>
+                      </span>
+                    </td>
+                    <td
+                      class="py-5"
                     >
                       <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT justify-center font-bold text-theme-secondary-text "
+                        class="flex justify-center h-full"
                       >
                         <span>
-                          %
+                          <span
+                            class="react-loading-skeleton css-1vmnjpn-skeletonStyles-Skeleton"
+                            style="width: 24px; height: 24px;"
+                          >
+                            ‌
+                          </span>
                         </span>
                       </div>
                     </td>
                     <td
-                      class="w-40"
+                      class="py-5"
+                    >
+                      <span>
+                        <span
+                          class="react-loading-skeleton mt-4 css-1vmnjpn-skeletonStyles-Skeleton"
+                          style="width: 40%; height: 6px;"
+                        >
+                          ‌
+                        </span>
+                      </span>
+                    </td>
+                    <td
+                      class="py-5"
+                    >
+                      <span>
+                        <span
+                          class="react-loading-skeleton mt-4 css-1vmnjpn-skeletonStyles-Skeleton"
+                          style="width: 40%; height: 6px;"
+                        >
+                          ‌
+                        </span>
+                      </span>
+                    </td>
+                    <td
+                      class="py-5"
+                    >
+                      <span>
+                        <span
+                          class="react-loading-skeleton mt-4 css-1vmnjpn-skeletonStyles-Skeleton"
+                          style="width: 40%; height: 6px;"
+                        >
+                          ‌
+                        </span>
+                      </span>
+                    </td>
+                    <td
+                      class="py-5"
+                    >
+                      <span>
+                        <span
+                          class="react-loading-skeleton mt-4 css-1vmnjpn-skeletonStyles-Skeleton"
+                          style="width: 60%; height: 6px;"
+                        >
+                          ‌
+                        </span>
+                      </span>
+                    </td>
+                    <td
+                      class="py-5"
                     >
                       <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 kjTmcB justify-end "
+                        class="text-right"
                       >
-                        <button
-                          class="OriginalButton__StyledButton-sc-1y2wptt-0 hsoUax"
-                          color="primary"
-                          data-testid="DelegateRow__toggle-1"
-                          type="button"
-                        >
-                          <div
-                            class="flex relative items-center space-x-2"
+                        <span>
+                          <span
+                            class="react-loading-skeleton css-1vmnjpn-skeletonStyles-Skeleton"
+                            style="width: 100px; height: 40px;"
                           >
-                            Select
-                          </div>
-                        </button>
+                            ‌
+                          </span>
+                        </span>
                       </div>
                     </td>
                   </tr>
                   <tr
-                    class="TableRow__TableRowStyled-sc-1br46dw-0 fzBhIQ"
-                    data-testid="TableRow"
+                    class="border-b border-dotted last:border-b-0 border-theme-secondary-300 dark:border-theme-secondary-800"
+                    data-testid="DelegateRowSkeleton"
                   >
                     <td
-                      class="w-20"
+                      class="py-5"
                     >
                       <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 DpDcR justify-start font-bold text-theme-secondary-text "
-                      >
-                        <span>
-                          #3
-                        </span>
-                      </div>
-                    </td>
-                    <td>
-                      <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT space-x-4 font-bold "
-                      >
-                        <div
-                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 cjwvlc"
-                          data-testid="Avatar"
-                        >
-                          <div
-                            class="w-full h-full"
-                          >
-                            <img
-                              alt="DRgF3PvzeGWndQjET7dZsSmnrc6uAy23ES"
-                              src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(63, 81, 181)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"40\\" cx=\\"100\\" cy=\\"40\\" fill=\\"rgb(0, 150, 136)\\"/><circle r=\\"55\\" cx=\\"60\\" cy=\\"60\\" fill=\\"rgb(205, 220, 57)\\"/><circle r=\\"50\\" cx=\\"50\\" cy=\\"30\\" fill=\\"rgb(33, 150, 243)\\"/></svg>"
-                              title="DRgF3PvzeGWndQjET7dZsSmnrc6uAy23ES"
-                            />
-                          </div>
-                        </div>
-                        <span>
-                          genesis_17
-                        </span>
-                      </div>
-                    </td>
-                    <td
-                      class="w-20"
-                    >
-                      <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT justify-center "
+                        class="Circle-uw7h4j-0 kiSYWh bg-theme-secondary-200 border-theme-secondary-300 dark:border-theme-secondary-800"
                       />
                     </td>
                     <td
-                      class="w-20"
+                      class="py-5"
+                    >
+                      <span>
+                        <span
+                          class="react-loading-skeleton mt-4 css-1vmnjpn-skeletonStyles-Skeleton"
+                          style="width: 80%; height: 6px;"
+                        >
+                          ‌
+                        </span>
+                      </span>
+                    </td>
+                    <td
+                      class="py-5"
+                    >
+                      <span>
+                        <span
+                          class="react-loading-skeleton mt-4 css-1vmnjpn-skeletonStyles-Skeleton"
+                          style="width: 30%; height: 6px;"
+                        >
+                          ‌
+                        </span>
+                      </span>
+                    </td>
+                    <td
+                      class="py-5"
+                    >
+                      <span>
+                        <span
+                          class="react-loading-skeleton mt-4 css-1vmnjpn-skeletonStyles-Skeleton"
+                          style="width: 40%; height: 6px;"
+                        >
+                          ‌
+                        </span>
+                      </span>
+                    </td>
+                    <td
+                      class="py-5"
                     >
                       <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT justify-center font-bold text-theme-secondary-text "
+                        class="flex justify-center h-full"
                       >
                         <span>
-                          %
+                          <span
+                            class="react-loading-skeleton css-1vmnjpn-skeletonStyles-Skeleton"
+                            style="width: 24px; height: 24px;"
+                          >
+                            ‌
+                          </span>
                         </span>
                       </div>
                     </td>
                     <td
-                      class="w-40"
+                      class="py-5"
+                    >
+                      <span>
+                        <span
+                          class="react-loading-skeleton mt-4 css-1vmnjpn-skeletonStyles-Skeleton"
+                          style="width: 40%; height: 6px;"
+                        >
+                          ‌
+                        </span>
+                      </span>
+                    </td>
+                    <td
+                      class="py-5"
+                    >
+                      <span>
+                        <span
+                          class="react-loading-skeleton mt-4 css-1vmnjpn-skeletonStyles-Skeleton"
+                          style="width: 40%; height: 6px;"
+                        >
+                          ‌
+                        </span>
+                      </span>
+                    </td>
+                    <td
+                      class="py-5"
+                    >
+                      <span>
+                        <span
+                          class="react-loading-skeleton mt-4 css-1vmnjpn-skeletonStyles-Skeleton"
+                          style="width: 40%; height: 6px;"
+                        >
+                          ‌
+                        </span>
+                      </span>
+                    </td>
+                    <td
+                      class="py-5"
+                    >
+                      <span>
+                        <span
+                          class="react-loading-skeleton mt-4 css-1vmnjpn-skeletonStyles-Skeleton"
+                          style="width: 60%; height: 6px;"
+                        >
+                          ‌
+                        </span>
+                      </span>
+                    </td>
+                    <td
+                      class="py-5"
                     >
                       <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 kjTmcB justify-end "
+                        class="text-right"
                       >
-                        <button
-                          class="OriginalButton__StyledButton-sc-1y2wptt-0 hsoUax"
-                          color="primary"
-                          data-testid="DelegateRow__toggle-2"
-                          type="button"
-                        >
-                          <div
-                            class="flex relative items-center space-x-2"
+                        <span>
+                          <span
+                            class="react-loading-skeleton css-1vmnjpn-skeletonStyles-Skeleton"
+                            style="width: 100px; height: 40px;"
                           >
-                            Select
-                          </div>
-                        </button>
+                            ‌
+                          </span>
+                        </span>
                       </div>
                     </td>
                   </tr>
                   <tr
-                    class="TableRow__TableRowStyled-sc-1br46dw-0 fzBhIQ"
-                    data-testid="TableRow"
+                    class="border-b border-dotted last:border-b-0 border-theme-secondary-300 dark:border-theme-secondary-800"
+                    data-testid="DelegateRowSkeleton"
                   >
                     <td
-                      class="w-20"
+                      class="py-5"
                     >
                       <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 DpDcR justify-start font-bold text-theme-secondary-text "
-                      >
-                        <span>
-                          #
-                        </span>
-                      </div>
-                    </td>
-                    <td>
-                      <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT space-x-4 font-bold "
-                      >
-                        <div
-                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 cjwvlc"
-                          data-testid="Avatar"
-                        >
-                          <div
-                            class="w-full h-full"
-                          >
-                            <img
-                              alt="D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb"
-                              src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(244, 67, 54)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"20\\" cy=\\"50\\" fill=\\"rgb(205, 220, 57)\\"/><circle r=\\"60\\" cx=\\"0\\" cy=\\"70\\" fill=\\"rgb(0, 188, 212)\\"/><circle r=\\"55\\" cx=\\"80\\" cy=\\"30\\" fill=\\"rgb(76, 175, 80)\\"/></svg>"
-                              title="D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb"
-                            />
-                          </div>
-                        </div>
-                        <span>
-                          testwallet2
-                        </span>
-                      </div>
-                    </td>
-                    <td
-                      class="w-20"
-                    >
-                      <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT justify-center "
+                        class="Circle-uw7h4j-0 kiSYWh bg-theme-secondary-200 border-theme-secondary-300 dark:border-theme-secondary-800"
                       />
                     </td>
                     <td
-                      class="w-20"
+                      class="py-5"
+                    >
+                      <span>
+                        <span
+                          class="react-loading-skeleton mt-4 css-1vmnjpn-skeletonStyles-Skeleton"
+                          style="width: 80%; height: 6px;"
+                        >
+                          ‌
+                        </span>
+                      </span>
+                    </td>
+                    <td
+                      class="py-5"
+                    >
+                      <span>
+                        <span
+                          class="react-loading-skeleton mt-4 css-1vmnjpn-skeletonStyles-Skeleton"
+                          style="width: 30%; height: 6px;"
+                        >
+                          ‌
+                        </span>
+                      </span>
+                    </td>
+                    <td
+                      class="py-5"
+                    >
+                      <span>
+                        <span
+                          class="react-loading-skeleton mt-4 css-1vmnjpn-skeletonStyles-Skeleton"
+                          style="width: 40%; height: 6px;"
+                        >
+                          ‌
+                        </span>
+                      </span>
+                    </td>
+                    <td
+                      class="py-5"
                     >
                       <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT justify-center font-bold text-theme-secondary-text "
+                        class="flex justify-center h-full"
                       >
                         <span>
-                          %
+                          <span
+                            class="react-loading-skeleton css-1vmnjpn-skeletonStyles-Skeleton"
+                            style="width: 24px; height: 24px;"
+                          >
+                            ‌
+                          </span>
                         </span>
                       </div>
                     </td>
                     <td
-                      class="w-40"
+                      class="py-5"
+                    >
+                      <span>
+                        <span
+                          class="react-loading-skeleton mt-4 css-1vmnjpn-skeletonStyles-Skeleton"
+                          style="width: 40%; height: 6px;"
+                        >
+                          ‌
+                        </span>
+                      </span>
+                    </td>
+                    <td
+                      class="py-5"
+                    >
+                      <span>
+                        <span
+                          class="react-loading-skeleton mt-4 css-1vmnjpn-skeletonStyles-Skeleton"
+                          style="width: 40%; height: 6px;"
+                        >
+                          ‌
+                        </span>
+                      </span>
+                    </td>
+                    <td
+                      class="py-5"
+                    >
+                      <span>
+                        <span
+                          class="react-loading-skeleton mt-4 css-1vmnjpn-skeletonStyles-Skeleton"
+                          style="width: 40%; height: 6px;"
+                        >
+                          ‌
+                        </span>
+                      </span>
+                    </td>
+                    <td
+                      class="py-5"
+                    >
+                      <span>
+                        <span
+                          class="react-loading-skeleton mt-4 css-1vmnjpn-skeletonStyles-Skeleton"
+                          style="width: 60%; height: 6px;"
+                        >
+                          ‌
+                        </span>
+                      </span>
+                    </td>
+                    <td
+                      class="py-5"
                     >
                       <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 kjTmcB justify-end "
+                        class="text-right"
                       >
-                        <button
-                          class="OriginalButton__StyledButton-sc-1y2wptt-0 hsoUax"
-                          color="primary"
-                          data-testid="DelegateRow__toggle-3"
-                          type="button"
-                        >
-                          <div
-                            class="flex relative items-center space-x-2"
+                        <span>
+                          <span
+                            class="react-loading-skeleton css-1vmnjpn-skeletonStyles-Skeleton"
+                            style="width: 100px; height: 40px;"
                           >
-                            Select
-                          </div>
-                        </button>
+                            ‌
+                          </span>
+                        </span>
                       </div>
                     </td>
                   </tr>
                   <tr
-                    class="TableRow__TableRowStyled-sc-1br46dw-0 fzBhIQ"
-                    data-testid="TableRow"
+                    class="border-b border-dotted last:border-b-0 border-theme-secondary-300 dark:border-theme-secondary-800"
+                    data-testid="DelegateRowSkeleton"
                   >
                     <td
-                      class="w-20"
+                      class="py-5"
                     >
                       <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 DpDcR justify-start font-bold text-theme-secondary-text "
-                      >
-                        <span>
-                          #12
-                        </span>
-                      </div>
-                    </td>
-                    <td>
-                      <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT space-x-4 font-bold "
-                      >
-                        <div
-                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 cjwvlc"
-                          data-testid="Avatar"
-                        >
-                          <div
-                            class="w-full h-full"
-                          >
-                            <img
-                              alt="DBk4cPYpqp7EBcvkstVDpyX7RQJNHxpMg8"
-                              src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(244, 67, 54)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"40\\" cy=\\"60\\" fill=\\"rgb(33, 150, 243)\\"/><circle r=\\"40\\" cx=\\"100\\" cy=\\"30\\" fill=\\"rgb(205, 220, 57)\\"/><circle r=\\"45\\" cx=\\"20\\" cy=\\"50\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
-                              title="DBk4cPYpqp7EBcvkstVDpyX7RQJNHxpMg8"
-                            />
-                          </div>
-                        </div>
-                        <span>
-                          itsanametoo
-                        </span>
-                      </div>
-                    </td>
-                    <td
-                      class="w-20"
-                    >
-                      <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT justify-center "
+                        class="Circle-uw7h4j-0 kiSYWh bg-theme-secondary-200 border-theme-secondary-300 dark:border-theme-secondary-800"
                       />
                     </td>
                     <td
-                      class="w-20"
+                      class="py-5"
+                    >
+                      <span>
+                        <span
+                          class="react-loading-skeleton mt-4 css-1vmnjpn-skeletonStyles-Skeleton"
+                          style="width: 80%; height: 6px;"
+                        >
+                          ‌
+                        </span>
+                      </span>
+                    </td>
+                    <td
+                      class="py-5"
+                    >
+                      <span>
+                        <span
+                          class="react-loading-skeleton mt-4 css-1vmnjpn-skeletonStyles-Skeleton"
+                          style="width: 30%; height: 6px;"
+                        >
+                          ‌
+                        </span>
+                      </span>
+                    </td>
+                    <td
+                      class="py-5"
+                    >
+                      <span>
+                        <span
+                          class="react-loading-skeleton mt-4 css-1vmnjpn-skeletonStyles-Skeleton"
+                          style="width: 40%; height: 6px;"
+                        >
+                          ‌
+                        </span>
+                      </span>
+                    </td>
+                    <td
+                      class="py-5"
                     >
                       <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT justify-center font-bold text-theme-secondary-text "
+                        class="flex justify-center h-full"
                       >
                         <span>
-                          %
+                          <span
+                            class="react-loading-skeleton css-1vmnjpn-skeletonStyles-Skeleton"
+                            style="width: 24px; height: 24px;"
+                          >
+                            ‌
+                          </span>
                         </span>
                       </div>
                     </td>
                     <td
-                      class="w-40"
+                      class="py-5"
+                    >
+                      <span>
+                        <span
+                          class="react-loading-skeleton mt-4 css-1vmnjpn-skeletonStyles-Skeleton"
+                          style="width: 40%; height: 6px;"
+                        >
+                          ‌
+                        </span>
+                      </span>
+                    </td>
+                    <td
+                      class="py-5"
+                    >
+                      <span>
+                        <span
+                          class="react-loading-skeleton mt-4 css-1vmnjpn-skeletonStyles-Skeleton"
+                          style="width: 40%; height: 6px;"
+                        >
+                          ‌
+                        </span>
+                      </span>
+                    </td>
+                    <td
+                      class="py-5"
+                    >
+                      <span>
+                        <span
+                          class="react-loading-skeleton mt-4 css-1vmnjpn-skeletonStyles-Skeleton"
+                          style="width: 40%; height: 6px;"
+                        >
+                          ‌
+                        </span>
+                      </span>
+                    </td>
+                    <td
+                      class="py-5"
+                    >
+                      <span>
+                        <span
+                          class="react-loading-skeleton mt-4 css-1vmnjpn-skeletonStyles-Skeleton"
+                          style="width: 60%; height: 6px;"
+                        >
+                          ‌
+                        </span>
+                      </span>
+                    </td>
+                    <td
+                      class="py-5"
                     >
                       <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 kjTmcB justify-end "
+                        class="text-right"
                       >
-                        <button
-                          class="OriginalButton__StyledButton-sc-1y2wptt-0 hsoUax"
-                          color="primary"
-                          data-testid="DelegateRow__toggle-4"
-                          type="button"
-                        >
-                          <div
-                            class="flex relative items-center space-x-2"
+                        <span>
+                          <span
+                            class="react-loading-skeleton css-1vmnjpn-skeletonStyles-Skeleton"
+                            style="width: 100px; height: 40px;"
                           >
-                            Select
-                          </div>
-                        </button>
+                            ‌
+                          </span>
+                        </span>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr
+                    class="border-b border-dotted last:border-b-0 border-theme-secondary-300 dark:border-theme-secondary-800"
+                    data-testid="DelegateRowSkeleton"
+                  >
+                    <td
+                      class="py-5"
+                    >
+                      <div
+                        class="Circle-uw7h4j-0 kiSYWh bg-theme-secondary-200 border-theme-secondary-300 dark:border-theme-secondary-800"
+                      />
+                    </td>
+                    <td
+                      class="py-5"
+                    >
+                      <span>
+                        <span
+                          class="react-loading-skeleton mt-4 css-1vmnjpn-skeletonStyles-Skeleton"
+                          style="width: 80%; height: 6px;"
+                        >
+                          ‌
+                        </span>
+                      </span>
+                    </td>
+                    <td
+                      class="py-5"
+                    >
+                      <span>
+                        <span
+                          class="react-loading-skeleton mt-4 css-1vmnjpn-skeletonStyles-Skeleton"
+                          style="width: 30%; height: 6px;"
+                        >
+                          ‌
+                        </span>
+                      </span>
+                    </td>
+                    <td
+                      class="py-5"
+                    >
+                      <span>
+                        <span
+                          class="react-loading-skeleton mt-4 css-1vmnjpn-skeletonStyles-Skeleton"
+                          style="width: 40%; height: 6px;"
+                        >
+                          ‌
+                        </span>
+                      </span>
+                    </td>
+                    <td
+                      class="py-5"
+                    >
+                      <div
+                        class="flex justify-center h-full"
+                      >
+                        <span>
+                          <span
+                            class="react-loading-skeleton css-1vmnjpn-skeletonStyles-Skeleton"
+                            style="width: 24px; height: 24px;"
+                          >
+                            ‌
+                          </span>
+                        </span>
+                      </div>
+                    </td>
+                    <td
+                      class="py-5"
+                    >
+                      <span>
+                        <span
+                          class="react-loading-skeleton mt-4 css-1vmnjpn-skeletonStyles-Skeleton"
+                          style="width: 40%; height: 6px;"
+                        >
+                          ‌
+                        </span>
+                      </span>
+                    </td>
+                    <td
+                      class="py-5"
+                    >
+                      <span>
+                        <span
+                          class="react-loading-skeleton mt-4 css-1vmnjpn-skeletonStyles-Skeleton"
+                          style="width: 40%; height: 6px;"
+                        >
+                          ‌
+                        </span>
+                      </span>
+                    </td>
+                    <td
+                      class="py-5"
+                    >
+                      <span>
+                        <span
+                          class="react-loading-skeleton mt-4 css-1vmnjpn-skeletonStyles-Skeleton"
+                          style="width: 40%; height: 6px;"
+                        >
+                          ‌
+                        </span>
+                      </span>
+                    </td>
+                    <td
+                      class="py-5"
+                    >
+                      <span>
+                        <span
+                          class="react-loading-skeleton mt-4 css-1vmnjpn-skeletonStyles-Skeleton"
+                          style="width: 60%; height: 6px;"
+                        >
+                          ‌
+                        </span>
+                      </span>
+                    </td>
+                    <td
+                      class="py-5"
+                    >
+                      <div
+                        class="text-right"
+                      >
+                        <span>
+                          <span
+                            class="react-loading-skeleton css-1vmnjpn-skeletonStyles-Skeleton"
+                            style="width: 100px; height: 40px;"
+                          >
+                            ‌
+                          </span>
+                        </span>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr
+                    class="border-b border-dotted last:border-b-0 border-theme-secondary-300 dark:border-theme-secondary-800"
+                    data-testid="DelegateRowSkeleton"
+                  >
+                    <td
+                      class="py-5"
+                    >
+                      <div
+                        class="Circle-uw7h4j-0 kiSYWh bg-theme-secondary-200 border-theme-secondary-300 dark:border-theme-secondary-800"
+                      />
+                    </td>
+                    <td
+                      class="py-5"
+                    >
+                      <span>
+                        <span
+                          class="react-loading-skeleton mt-4 css-1vmnjpn-skeletonStyles-Skeleton"
+                          style="width: 80%; height: 6px;"
+                        >
+                          ‌
+                        </span>
+                      </span>
+                    </td>
+                    <td
+                      class="py-5"
+                    >
+                      <span>
+                        <span
+                          class="react-loading-skeleton mt-4 css-1vmnjpn-skeletonStyles-Skeleton"
+                          style="width: 30%; height: 6px;"
+                        >
+                          ‌
+                        </span>
+                      </span>
+                    </td>
+                    <td
+                      class="py-5"
+                    >
+                      <span>
+                        <span
+                          class="react-loading-skeleton mt-4 css-1vmnjpn-skeletonStyles-Skeleton"
+                          style="width: 40%; height: 6px;"
+                        >
+                          ‌
+                        </span>
+                      </span>
+                    </td>
+                    <td
+                      class="py-5"
+                    >
+                      <div
+                        class="flex justify-center h-full"
+                      >
+                        <span>
+                          <span
+                            class="react-loading-skeleton css-1vmnjpn-skeletonStyles-Skeleton"
+                            style="width: 24px; height: 24px;"
+                          >
+                            ‌
+                          </span>
+                        </span>
+                      </div>
+                    </td>
+                    <td
+                      class="py-5"
+                    >
+                      <span>
+                        <span
+                          class="react-loading-skeleton mt-4 css-1vmnjpn-skeletonStyles-Skeleton"
+                          style="width: 40%; height: 6px;"
+                        >
+                          ‌
+                        </span>
+                      </span>
+                    </td>
+                    <td
+                      class="py-5"
+                    >
+                      <span>
+                        <span
+                          class="react-loading-skeleton mt-4 css-1vmnjpn-skeletonStyles-Skeleton"
+                          style="width: 40%; height: 6px;"
+                        >
+                          ‌
+                        </span>
+                      </span>
+                    </td>
+                    <td
+                      class="py-5"
+                    >
+                      <span>
+                        <span
+                          class="react-loading-skeleton mt-4 css-1vmnjpn-skeletonStyles-Skeleton"
+                          style="width: 40%; height: 6px;"
+                        >
+                          ‌
+                        </span>
+                      </span>
+                    </td>
+                    <td
+                      class="py-5"
+                    >
+                      <span>
+                        <span
+                          class="react-loading-skeleton mt-4 css-1vmnjpn-skeletonStyles-Skeleton"
+                          style="width: 60%; height: 6px;"
+                        >
+                          ‌
+                        </span>
+                      </span>
+                    </td>
+                    <td
+                      class="py-5"
+                    >
+                      <div
+                        class="text-right"
+                      >
+                        <span>
+                          <span
+                            class="react-loading-skeleton css-1vmnjpn-skeletonStyles-Skeleton"
+                            style="width: 100px; height: 40px;"
+                          >
+                            ‌
+                          </span>
+                        </span>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr
+                    class="border-b border-dotted last:border-b-0 border-theme-secondary-300 dark:border-theme-secondary-800"
+                    data-testid="DelegateRowSkeleton"
+                  >
+                    <td
+                      class="py-5"
+                    >
+                      <div
+                        class="Circle-uw7h4j-0 kiSYWh bg-theme-secondary-200 border-theme-secondary-300 dark:border-theme-secondary-800"
+                      />
+                    </td>
+                    <td
+                      class="py-5"
+                    >
+                      <span>
+                        <span
+                          class="react-loading-skeleton mt-4 css-1vmnjpn-skeletonStyles-Skeleton"
+                          style="width: 80%; height: 6px;"
+                        >
+                          ‌
+                        </span>
+                      </span>
+                    </td>
+                    <td
+                      class="py-5"
+                    >
+                      <span>
+                        <span
+                          class="react-loading-skeleton mt-4 css-1vmnjpn-skeletonStyles-Skeleton"
+                          style="width: 30%; height: 6px;"
+                        >
+                          ‌
+                        </span>
+                      </span>
+                    </td>
+                    <td
+                      class="py-5"
+                    >
+                      <span>
+                        <span
+                          class="react-loading-skeleton mt-4 css-1vmnjpn-skeletonStyles-Skeleton"
+                          style="width: 40%; height: 6px;"
+                        >
+                          ‌
+                        </span>
+                      </span>
+                    </td>
+                    <td
+                      class="py-5"
+                    >
+                      <div
+                        class="flex justify-center h-full"
+                      >
+                        <span>
+                          <span
+                            class="react-loading-skeleton css-1vmnjpn-skeletonStyles-Skeleton"
+                            style="width: 24px; height: 24px;"
+                          >
+                            ‌
+                          </span>
+                        </span>
+                      </div>
+                    </td>
+                    <td
+                      class="py-5"
+                    >
+                      <span>
+                        <span
+                          class="react-loading-skeleton mt-4 css-1vmnjpn-skeletonStyles-Skeleton"
+                          style="width: 40%; height: 6px;"
+                        >
+                          ‌
+                        </span>
+                      </span>
+                    </td>
+                    <td
+                      class="py-5"
+                    >
+                      <span>
+                        <span
+                          class="react-loading-skeleton mt-4 css-1vmnjpn-skeletonStyles-Skeleton"
+                          style="width: 40%; height: 6px;"
+                        >
+                          ‌
+                        </span>
+                      </span>
+                    </td>
+                    <td
+                      class="py-5"
+                    >
+                      <span>
+                        <span
+                          class="react-loading-skeleton mt-4 css-1vmnjpn-skeletonStyles-Skeleton"
+                          style="width: 40%; height: 6px;"
+                        >
+                          ‌
+                        </span>
+                      </span>
+                    </td>
+                    <td
+                      class="py-5"
+                    >
+                      <span>
+                        <span
+                          class="react-loading-skeleton mt-4 css-1vmnjpn-skeletonStyles-Skeleton"
+                          style="width: 60%; height: 6px;"
+                        >
+                          ‌
+                        </span>
+                      </span>
+                    </td>
+                    <td
+                      class="py-5"
+                    >
+                      <div
+                        class="text-right"
+                      >
+                        <span>
+                          <span
+                            class="react-loading-skeleton css-1vmnjpn-skeletonStyles-Skeleton"
+                            style="width: 100px; height: 40px;"
+                          >
+                            ‌
+                          </span>
+                        </span>
                       </div>
                     </td>
                   </tr>
@@ -6002,6 +6646,7 @@ exports[`Votes should select favorites option in the wallets display type 1`] = 
                   <button
                     class="my-auto h-full font-semibold cursor-pointer focus:outline-none"
                     data-testid="header-search-bar__button"
+                    type="button"
                   >
                     <div
                       class="group"
@@ -6517,6 +7162,7 @@ exports[`Votes should select ledger option in the wallets display type 1`] = `
                   <button
                     class="my-auto h-full font-semibold cursor-pointer focus:outline-none"
                     data-testid="header-search-bar__button"
+                    type="button"
                   >
                     <div
                       class="group"
@@ -7032,6 +7678,7 @@ exports[`Votes should toggle network selection from network filters 1`] = `
                   <button
                     class="my-auto h-full font-semibold cursor-pointer focus:outline-none"
                     data-testid="header-search-bar__button"
+                    type="button"
                   >
                     <div
                       class="group"

@@ -297,13 +297,13 @@ exports[`PluginDetails should render properly 1`] = `
                 </svg>
               </div>
               <div
-                class="flex flex-col justify-between pl-8 w-full"
+                class="flex flex-col justify-between pl-8 min-w-0"
               >
                 <div
                   class="flex justify-between items-end"
                 >
                   <div
-                    class="flex flex-col space-y-2 mr-2 leading-tight"
+                    class="flex flex-col space-y-2 mr-8 leading-tight overflow-hidden"
                   >
                     <span
                       class="text-2xl font-bold"
@@ -311,7 +311,7 @@ exports[`PluginDetails should render properly 1`] = `
                       Test Plugin
                     </span>
                     <span
-                      class="text-medium text-theme-secondary-500"
+                      class="text-medium text-theme-secondary-500 truncate"
                     />
                   </div>
                   <div
@@ -838,13 +838,13 @@ exports[`PluginDetails should render properly for remote package 1`] = `
                 </svg>
               </div>
               <div
-                class="flex flex-col justify-between pl-8 w-full"
+                class="flex flex-col justify-between pl-8 min-w-0"
               >
                 <div
                   class="flex justify-between items-end"
                 >
                   <div
-                    class="flex flex-col space-y-2 mr-2 leading-tight"
+                    class="flex flex-col space-y-2 mr-8 leading-tight overflow-hidden"
                   >
                     <span
                       class="text-2xl font-bold"
@@ -852,7 +852,7 @@ exports[`PluginDetails should render properly for remote package 1`] = `
                       Remote Plugin
                     </span>
                     <span
-                      class="text-medium text-theme-secondary-500"
+                      class="text-medium text-theme-secondary-500 truncate"
                     />
                   </div>
                   <div
@@ -1359,13 +1359,13 @@ exports[`PluginDetails should report plugin 1`] = `
                 </svg>
               </div>
               <div
-                class="flex flex-col justify-between pl-8 w-full"
+                class="flex flex-col justify-between pl-8 min-w-0"
               >
                 <div
                   class="flex justify-between items-end"
                 >
                   <div
-                    class="flex flex-col space-y-2 mr-2 leading-tight"
+                    class="flex flex-col space-y-2 mr-8 leading-tight overflow-hidden"
                   >
                     <span
                       class="text-2xl font-bold"
@@ -1373,7 +1373,7 @@ exports[`PluginDetails should report plugin 1`] = `
                       Test Plugin
                     </span>
                     <span
-                      class="text-medium text-theme-secondary-500"
+                      class="text-medium text-theme-secondary-500 truncate"
                     />
                   </div>
                   <div
@@ -1900,13 +1900,13 @@ exports[`PluginDetails should show configuration for plugins from npm 1`] = `
                 </svg>
               </div>
               <div
-                class="flex flex-col justify-between pl-8 w-full"
+                class="flex flex-col justify-between pl-8 min-w-0"
               >
                 <div
                   class="flex justify-between items-end"
                 >
                   <div
-                    class="flex flex-col space-y-2 mr-2 leading-tight"
+                    class="flex flex-col space-y-2 mr-8 leading-tight overflow-hidden"
                   >
                     <span
                       class="text-2xl font-bold"
@@ -1914,7 +1914,7 @@ exports[`PluginDetails should show configuration for plugins from npm 1`] = `
                       My Export Transaction
                     </span>
                     <span
-                      class="text-medium text-theme-secondary-500"
+                      class="text-medium text-theme-secondary-500 truncate"
                     >
                       Export your wallet transaction history
                     </span>
@@ -2457,13 +2457,13 @@ exports[`PluginDetails should update package 1`] = `
                 </svg>
               </div>
               <div
-                class="flex flex-col justify-between pl-8 w-full"
+                class="flex flex-col justify-between pl-8 min-w-0"
               >
                 <div
                   class="flex justify-between items-end"
                 >
                   <div
-                    class="flex flex-col space-y-2 mr-2 leading-tight"
+                    class="flex flex-col space-y-2 mr-8 leading-tight overflow-hidden"
                   >
                     <span
                       class="text-2xl font-bold"
@@ -2471,7 +2471,7 @@ exports[`PluginDetails should update package 1`] = `
                       Transaction Export Plugin
                     </span>
                     <span
-                      class="text-medium text-theme-secondary-500"
+                      class="text-medium text-theme-secondary-500 truncate"
                     />
                   </div>
                   <div
