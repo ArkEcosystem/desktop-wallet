@@ -17,8 +17,6 @@ export const useProfileTransactions = ({ profile }: { profile: Contracts.IProfil
 			transactionType?: any;
 			wallets: IReadWriteWallet[];
 		}) => {
-			console.log("fetchTransactions");
-
 			if (abortRef.current) {
 				abortRef.current();
 			}
