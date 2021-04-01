@@ -316,4 +316,37 @@ describe("Contacts", () => {
 
 		contactsSpy.mockRestore();
 	});
+
+	it("should redirect contact address to send transfer page", async () => {
+		const newContact = profile.contacts().create("New Contact");
+		await profile.contacts().update(newContact.id(), {
+			addresses: [
+				{
+					network: "ark.devnet",
+					address: "D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD",
+					name: "D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD",
+					coin: "ARK",
+				},
+			],
+		});
+
+		const contactsSpy = jest
+			.spyOn(profile.contacts(), "values")
+			.mockReturnValue([profile.contacts().findById(newContact.id())]);
+
+		const { getByTestId, getAllByTestId } = renderComponent();
+
+		await waitFor(() => {
+			expect(getByTestId("ContactList")).toBeTruthy();
+		});
+
+		fireEvent.click(getAllByTestId("ContactListItem__send-button")[0]);
+
+		expect(history.location.pathname).toEqual("/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/send-transfer");
+		expect(history.location.search).toEqual(
+			"?coin=ARK&network=ark.devnet&recipient=D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD",
+		);
+
+		contactsSpy.mockRestore();
+	});
 });

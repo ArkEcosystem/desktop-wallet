@@ -1,4 +1,3 @@
-import { Coins } from "@arkecosystem/platform-sdk";
 import { Contracts } from "@arkecosystem/platform-sdk-profiles";
 import { BigNumber } from "@arkecosystem/platform-sdk-support";
 import { uniq } from "@arkecosystem/utils";
@@ -13,6 +12,7 @@ import { useActiveProfile } from "app/hooks/env";
 import { toasts } from "app/services";
 import { useWalletConfig } from "domains/dashboard/hooks";
 import { EncryptPasswordStep } from "domains/wallet/components/EncryptPasswordStep";
+import { NetworkStep } from "domains/wallet/components/NetworkStep";
 import { useWalletImport, WalletGenerationInput } from "domains/wallet/hooks/use-wallet-import";
 import { useWalletSync } from "domains/wallet/hooks/use-wallet-sync";
 import React, { useEffect, useState } from "react";
@@ -21,7 +21,6 @@ import { useTranslation } from "react-i18next";
 import { useHistory } from "react-router-dom";
 
 import { LedgerTabs } from "./Ledger/LedgerTabs";
-import { FirstStep } from "./Step1";
 import { SecondStep } from "./Step2";
 import { ThirdStep } from "./Step3";
 
@@ -29,6 +28,9 @@ export const ImportWallet = () => {
 	const [activeTab, setActiveTab] = useState(1);
 	const [walletData, setWalletData] = useState<Contracts.IReadWriteWallet | null>(null);
 	const [walletGenerationInput, setWalletGenerationInput] = useState<WalletGenerationInput>();
+
+	const [isImporting, setIsImporting] = useState(false);
+	const [isEncrypting, setIsEncrypting] = useState(false);
 
 	const queryParams = useQueryParams();
 	const isLedgerImport = !!queryParams.get("ledger");
@@ -44,7 +46,7 @@ export const ImportWallet = () => {
 	const { syncAll } = useWalletSync({ profile: activeProfile, env });
 
 	const form = useForm<any>({ mode: "onChange", defaultValues: { type: "mnemonic" } });
-	const { formState, register, watch, handleSubmit, unregister } = form;
+	const { getValues, formState, register, watch } = form;
 	const { isSubmitting, isValid } = formState;
 	const { value, encryptionPassword, confirmEncryptionPassword } = watch();
 
@@ -60,14 +62,28 @@ export const ImportWallet = () => {
 		}
 	}, [value, setWalletGenerationInput]);
 
-	const handleNext = () => {
-		const type = form.getValues("type");
+	const handleNext = async () => {
+		if (activeTab === 2) {
+			setIsImporting(true);
 
-		if (activeTab === 2 && type !== "mnemonic") {
-			return handleSkipAndSubmit();
+			try {
+				await importWallet();
+				setActiveTab(activeTab + (getValues("type") === "mnemonic" ? 1 : 2));
+			} catch (e) {
+				toasts.error(e.message);
+			} finally {
+				setIsImporting(false);
+			}
+		} else if (activeTab === 3) {
+			setIsEncrypting(true);
+
+			await encryptMnemonic();
+			setActiveTab(activeTab + 1);
+
+			setIsEncrypting(false);
+		} else {
+			setActiveTab(activeTab + 1);
 		}
-
-		setActiveTab(activeTab + 1);
 	};
 
 	const handleBack = () => {
@@ -78,52 +94,30 @@ export const ImportWallet = () => {
 		setActiveTab(activeTab - 1);
 	};
 
-	const importAndSaveWallet = async ({
-		network,
-		type,
-		encryptedWif,
-		password,
-	}: {
-		network: Coins.Network;
-		type: string;
-		encryptedWif: string;
-		password?: string;
-	}) => {
-		try {
-			const wallet: any = await importWalletByType({
-				network,
-				type,
-				value: walletGenerationInput!,
-				encryptedWif,
-				password,
-			});
+	const importWallet = async () => {
+		const { network, type, encryptedWif } = getValues();
 
-			setValue("selectedNetworkIds", uniq([...selectedNetworkIds, wallet.network().id()]));
-			setWalletData(wallet);
+		const wallet: any = await importWalletByType({
+			network,
+			type,
+			value: walletGenerationInput!,
+			encryptedWif,
+		});
 
-			await syncAll(wallet);
-			await persist();
+		setValue("selectedNetworkIds", uniq([...selectedNetworkIds, wallet.network().id()]));
+		setWalletData(wallet);
 
-			setActiveTab(4);
-		} catch (e) {
-			toasts.error(e.message);
-		}
+		await syncAll(wallet);
+		await persist();
 	};
 
-	const handleSkipAndSubmit = () => {
-		unregister(["encryptionPassword", "confirmEncryptionPassword"]);
-
-		const { network, type, encryptedWif } = form.getValues();
-		handleSubmit(() => importAndSaveWallet({ network, type, encryptedWif }))();
-	};
-
-	const handlePasswordSubmit = () => {
-		const { network, type, encryptedWif } = form.getValues();
-		handleSubmit(() => importAndSaveWallet({ network, type, encryptedWif, password: encryptionPassword }))();
+	const encryptMnemonic = async () => {
+		await walletData!.setWif(walletGenerationInput!, getValues("encryptionPassword"));
+		await persist();
 	};
 
 	const handleFinish = async () => {
-		const name = form.getValues("name");
+		const name = getValues("name");
 
 		if (name) {
 			const formattedName = name.trim().substring(0, nameMaxLength);
@@ -140,7 +134,7 @@ export const ImportWallet = () => {
 				<Form
 					className="max-w-xl mx-auto"
 					context={form}
-					onSubmit={walletData ? handleFinish : (importAndSaveWallet as any)}
+					onSubmit={handleFinish}
 					data-testid="ImportWallet__form"
 				>
 					{isLedgerImport ? (
@@ -151,7 +145,11 @@ export const ImportWallet = () => {
 
 							<div className="mt-8">
 								<TabPanel tabId={1}>
-									<FirstStep profile={activeProfile} />
+									<NetworkStep
+										profile={activeProfile}
+										title={t("WALLETS.PAGE_IMPORT_WALLET.NETWORK_STEP.TITLE")}
+										subtitle={t("WALLETS.PAGE_IMPORT_WALLET.NETWORK_STEP.SUBTITLE")}
+									/>
 								</TabPanel>
 								<TabPanel tabId={2}>
 									<SecondStep profile={activeProfile} />
@@ -174,8 +172,7 @@ export const ImportWallet = () => {
 									<div>
 										{activeTab === 3 && (
 											<Button
-												disabled={isSubmitting}
-												onClick={handleSkipAndSubmit}
+												onClick={() => setActiveTab(4)}
 												data-testid="ImportWallet__skip-button"
 											>
 												{t("COMMON.SKIP")}
@@ -184,7 +181,7 @@ export const ImportWallet = () => {
 									</div>
 
 									<div className="flex justify-end space-x-3">
-										{activeTab < 4 && (
+										{activeTab < 3 && (
 											<Button
 												disabled={isSubmitting}
 												variant="secondary"
@@ -197,8 +194,8 @@ export const ImportWallet = () => {
 
 										{activeTab < 3 && (
 											<Button
-												disabled={!isValid || isSubmitting}
-												isLoading={isSubmitting}
+												disabled={!isValid || isImporting}
+												isLoading={isImporting}
 												onClick={handleNext}
 												data-testid="ImportWallet__continue-button"
 											>
@@ -209,13 +206,13 @@ export const ImportWallet = () => {
 										{activeTab === 3 && (
 											<Button
 												disabled={
-													isSubmitting ||
+													isEncrypting ||
 													!isValid ||
 													!encryptionPassword ||
 													!confirmEncryptionPassword
 												}
-												isLoading={isSubmitting}
-												onClick={handlePasswordSubmit}
+												isLoading={isEncrypting}
+												onClick={handleNext}
 												data-testid="ImportWallet__continue-button"
 											>
 												{t("COMMON.CONTINUE")}
@@ -225,8 +222,8 @@ export const ImportWallet = () => {
 										{activeTab === 4 && (
 											<Button
 												disabled={!isValid || isSubmitting}
+												type="submit"
 												data-testid="ImportWallet__save-button"
-												onClick={handleFinish}
 											>
 												{t("COMMON.SAVE_FINISH")}
 											</Button>

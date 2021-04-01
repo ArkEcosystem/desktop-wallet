@@ -4,12 +4,12 @@ import { StepIndicator } from "app/components/StepIndicator";
 import { TabPanel, Tabs } from "app/components/Tabs";
 import { useEnvironmentContext, useLedgerContext } from "app/contexts";
 import { useActiveProfile } from "app/hooks";
+import { NetworkStep } from "domains/wallet/components/NetworkStep";
 import React, { useCallback, useRef, useState } from "react";
 import { useFormContext } from "react-hook-form";
 import { useTranslation } from "react-i18next";
 import { useHistory } from "react-router-dom";
 
-import { FirstStep } from "../Step1";
 import { LedgerConnectionStep } from "./LedgerConnectionStep";
 import { LedgerImportStep } from "./LedgerImportStep";
 import { LedgerScanStep } from "./LedgerScanStep";
@@ -83,6 +83,8 @@ export const LedgerTabs = ({ activeIndex }: { activeIndex?: number }) => {
 	const { env, persist } = useEnvironmentContext();
 	const { importLedgerWallets, isBusy } = useLedgerContext();
 
+	const { t } = useTranslation();
+
 	const { formState, handleSubmit } = useFormContext();
 	const { isValid, isSubmitting } = formState;
 
@@ -142,7 +144,11 @@ export const LedgerTabs = ({ activeIndex }: { activeIndex?: number }) => {
 
 			<div data-testid="LedgerTabs" className="mt-8">
 				<TabPanel tabId={1}>
-					<FirstStep profile={activeProfile} />
+					<NetworkStep
+						profile={activeProfile}
+						title={t("WALLETS.PAGE_IMPORT_WALLET.NETWORK_STEP.TITLE")}
+						subtitle={t("WALLETS.PAGE_IMPORT_WALLET.NETWORK_STEP.SUBTITLE")}
+					/>
 				</TabPanel>
 				<TabPanel tabId={2}>
 					<LedgerConnectionStep onConnect={() => setActiveTab(3)} />

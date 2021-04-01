@@ -52,11 +52,39 @@ describe("SelectNetwork", () => {
 	it("should show suggestion when typing has found at least one match", () => {
 		const { getByTestId } = render(<SelectNetwork networks={availableNetworksMock} />);
 		const input = getByTestId("SelectNetworkInput__input");
+
 		act(() => {
 			fireEvent.change(input, { target: { value: "Bitco" } });
 		});
 
 		expect(getByTestId("Input__suggestion")).toHaveTextContent("Bitcoin");
+	});
+
+	it("should show call onInputChange callback when input value changed", () => {
+		const onInputChange = jest.fn();
+
+		const { getByTestId } = render(
+			<SelectNetwork networks={availableNetworksMock} onInputChange={onInputChange} />,
+		);
+		const input = getByTestId("SelectNetworkInput__input");
+
+		act(() => {
+			fireEvent.change(input, { target: { value: "Bitco" } });
+		});
+
+		expect(onInputChange).toHaveBeenCalledWith("Bitco", "Bitcoin");
+
+		act(() => {
+			fireEvent.change(input, { target: { value: "no-match" } });
+		});
+
+		expect(onInputChange).toHaveBeenCalledWith("no-match", undefined);
+
+		act(() => {
+			fireEvent.change(input, { target: { value: "" } });
+		});
+
+		expect(onInputChange).toHaveBeenCalledWith();
 	});
 
 	it("should select first matching asset with enter", () => {

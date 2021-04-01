@@ -8,7 +8,7 @@ import { useFormContext } from "react-hook-form";
 import { useTranslation } from "react-i18next";
 
 export const NetworkStep = ({ profile, networks }: { profile: Contracts.IProfile; networks: Coins.Network[] }) => {
-	const { getValues, setValue } = useFormContext();
+	const { getValues, setValue, setError, clearErrors } = useFormContext();
 
 	const availableNetworks = useMemo(() => {
 		const usesTestNetworks = profile.settings().get(Contracts.ProfileSetting.UseTestNetworks);
@@ -21,6 +21,28 @@ export const NetworkStep = ({ profile, networks }: { profile: Contracts.IProfile
 
 	const handleSelect = (network?: Coins.Network | null) => {
 		setValue("network", network, { shouldValidate: true, shouldDirty: true });
+	};
+
+	const handleInputChange = (value?: string, suggestion?: string) => {
+		if (suggestion) {
+			clearErrors("network");
+		}
+
+		if (!value) {
+			return setError("network", {
+				type: "manual",
+				message: t("COMMON.VALIDATION.FIELD_REQUIRED", {
+					field: t("COMMON.CRYPTOASSET"),
+				}),
+			});
+		}
+
+		if (!suggestion) {
+			return setError("network", {
+				type: "manual",
+				message: t("COMMON.INPUT_NETWORK.VALIDATION.NETWORK_NOT_FOUND"),
+			});
+		}
 	};
 
 	return (
@@ -36,6 +58,7 @@ export const NetworkStep = ({ profile, networks }: { profile: Contracts.IProfile
 					id="SendTransfer__network-step__select"
 					networks={availableNetworks}
 					selected={selectedNetwork}
+					onInputChange={handleInputChange}
 					onSelect={handleSelect}
 				/>
 			</FormField>
