@@ -175,6 +175,11 @@ export const requestMocks = {
 		),
 
 		mockRequest(
+			"https://dwallets.ark.io/api/transactions?page=1&limit=10&orderBy=timestamp&address=D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD",
+			"coins/ark/devnet/transactions",
+		),
+
+		mockRequest(
 			"https://dwallets.ark.io/api/transactions?page=1&limit=10&orderBy=timestamp&address=D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD%2CD5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb",
 			{ meta: {}, data: [] },
 		),
