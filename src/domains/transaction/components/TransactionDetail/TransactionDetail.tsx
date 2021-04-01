@@ -5,7 +5,7 @@ import { getStyles } from "./TransactionDetail.styles";
 
 export type TransactionDetailProps = {
 	children?: React.ReactNode;
-	label?: string;
+	label?: string | React.ReactNode;
 	extra?: React.ReactNode;
 	border?: boolean;
 	borderPosition?: "top" | "bottom" | "both";

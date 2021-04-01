@@ -54,7 +54,7 @@ describe("EncryptionPasswordStep", () => {
 			},
 		);
 
-		await waitFor(() => expect(getByTestId("CreateWallet__SelectNetworkStep")).toBeTruthy());
+		await waitFor(() => expect(getByTestId("NetworkStep")).toBeTruthy());
 
 		const selectNetworkInput = getByTestId("SelectNetworkInput__input");
 		const continueButton = getByTestId("CreateWallet__continue-button");
@@ -99,7 +99,7 @@ describe("EncryptionPasswordStep", () => {
 			fireEvent.click(backButton);
 		});
 
-		await waitFor(() => expect(getByTestId("CreateWallet__SelectNetworkStep")).toBeTruthy());
+		await waitFor(() => expect(getByTestId("NetworkStep")).toBeTruthy());
 
 		act(() => {
 			fireEvent.click(continueButton);
@@ -190,7 +190,7 @@ describe("EncryptionPasswordStep", () => {
 			},
 		);
 
-		await waitFor(() => expect(getByTestId("CreateWallet__SelectNetworkStep")).toBeTruthy());
+		await waitFor(() => expect(getByTestId("NetworkStep")).toBeTruthy());
 
 		const selectNetworkInput = getByTestId("SelectNetworkInput__input");
 		const continueButton = getByTestId("CreateWallet__continue-button");
@@ -235,7 +235,7 @@ describe("EncryptionPasswordStep", () => {
 			fireEvent.click(backButton);
 		});
 
-		await waitFor(() => expect(getByTestId("CreateWallet__SelectNetworkStep")).toBeTruthy());
+		await waitFor(() => expect(getByTestId("NetworkStep")).toBeTruthy());
 
 		act(() => {
 			fireEvent.click(continueButton);
