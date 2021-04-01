@@ -39,12 +39,8 @@
 		"test": "react-app-rewired --expose-gc test --logHeapUsage",
 		"test:coverage": "react-app-rewired --expose-gc test --logHeapUsage --coverage --watchAll=false",
 		"test:e2e": "cross-env ELECTRON_IS_E2E=1 ELECTRON_IS_DEV=0 testcafe",
-		"preversion": "cross-env ./scripts/version-artifacts.sh"
-	},
-	"husky": {
-		"hooks": {
-			"pre-commit": "lint-staged"
-		}
+		"preversion": "cross-env ./scripts/version-artifacts.sh",
+		"prepare": "husky install"
 	},
 	"lint-staged": {
 		"*.{css,html,json,md}": [
@@ -238,7 +234,7 @@
 		"eslint-plugin-testing-library": "^3.10.2",
 		"eslint-plugin-unused-imports": "^1.1.0",
 		"history": "^5.0.0",
-		"husky": "^4.3.6",
+		"husky": "^6.0.0",
 		"jest-circus": "^26.6.3",
 		"jest-fetch-mock": "^3.0.3",
 		"jest-when": "^3.2.1",
