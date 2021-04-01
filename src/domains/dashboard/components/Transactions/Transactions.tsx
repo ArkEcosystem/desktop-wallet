@@ -4,10 +4,11 @@ import { EmptyBlock } from "app/components/EmptyBlock";
 import { EmptyResults } from "app/components/EmptyResults";
 import { Section } from "app/components/Layout";
 import { Tab, TabList, Tabs } from "app/components/Tabs";
+import { useProfileTransactions } from "app/hooks/use-profile-transactions";
 import { FilterTransactions } from "domains/transaction/components/FilterTransactions";
 import { TransactionDetailModal } from "domains/transaction/components/TransactionDetailModal";
 import { TransactionTable } from "domains/transaction/components/TransactionTable";
-import React, { memo, useCallback, useEffect, useMemo, useRef, useState } from "react";
+import React, { memo, useEffect, useMemo, useState } from "react";
 import { useTranslation } from "react-i18next";
 
 type TransactionsProps = {
@@ -38,56 +39,26 @@ export const Transactions = memo(
 			[profile],
 		);
 
-		const abortRef = useRef<() => void>();
-
-		const fetchTransactions = useCallback(
-			async ({ flush, mode }: { flush: boolean; mode: string }) => {
-				if (abortRef.current) {
-					abortRef.current();
-				}
-
-				let aborted = false;
-				abortRef.current = () => (aborted = true);
-
-				const methodMap = {
-					all: "transactions",
-					sent: "sentTransactions",
-					received: "receivedTransactions",
-				};
-				const method = methodMap[mode as keyof typeof methodMap];
-
-				let currentTransactions = [...transactions];
-				setIsLoading(true);
-
-				if (flush) {
-					profile.transactionAggregate().flush(method);
-					currentTransactions = [];
-					setTransactions([]);
-				}
-
-				const defaultQuery = { limit: 30, addresses: wallets.map((wallet) => wallet.address()) };
-				const queryParams = selectedTransactionType
-					? { ...defaultQuery, ...selectedTransactionType }
-					: defaultQuery;
-
-				// @ts-ignore
-				const response = await profile.transactionAggregate()[method](queryParams);
-				const transactionsAggregate = response.items();
-
-				if (aborted) {
-					return;
-				}
-
-				setIsLoading(false);
-				setTransactions(currentTransactions.concat(transactionsAggregate));
-			},
-			[transactions, profile, selectedTransactionType, wallets],
-		);
+		const { fetchTransactions } = useProfileTransactions({ profile });
 
 		useEffect(() => {
-			if (isVisible && !isLoading) {
-				fetchTransactions({ flush: true, mode: activeTransactionModeTab });
-			}
+			const loadTransactions = async () => {
+				if (isVisible && !isLoading) {
+					setIsLoading(true);
+
+					const fetchedTransactions = await fetchTransactions({
+						wallets,
+						flush: true,
+						mode: activeTransactionModeTab,
+						transactionType: selectedTransactionType,
+					});
+
+					setIsLoading(false);
+					setTransactions(fetchedTransactions);
+				}
+			};
+
+			loadTransactions();
 			// eslint-disable-next-line
 		}, [activeTransactionModeTab, selectedTransactionType, wallets.length, isLoading]);
 
@@ -135,7 +106,16 @@ export const Transactions = memo(
 						variant="secondary"
 						className="mt-10 mb-5 w-full"
 						disabled={isLoadingTransactions}
-						onClick={() => fetchTransactions({ flush: false, mode: activeTransactionModeTab })}
+						onClick={async () => {
+							const moreTransactions = await fetchTransactions({
+								flush: false,
+								mode: activeTransactionModeTab,
+								transactionType: selectedTransactionType,
+								wallets,
+							});
+
+							setTransactions(transactions.concat(moreTransactions));
+						}}
 					>
 						{isLoadingTransactions ? t("COMMON.LOADING") : t("COMMON.VIEW_MORE")}
 					</Button>
