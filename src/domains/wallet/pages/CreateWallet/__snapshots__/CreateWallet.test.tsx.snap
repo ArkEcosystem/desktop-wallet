@@ -359,14 +359,14 @@ exports[`CreateWallet should create a wallet with alias 1`] = `
                             id="NetworkStep__network-label"
                           />
                           <div
-                            class="Input__InputWrapperStyled-wu99qs-0 dInRZi"
+                            class="Input__InputWrapperStyled-wu99qs-0 jba-du"
                           >
                             <div
                               class="Circle-uw7h4j-0 blBpcG border-theme-secondary-200 dark:border-theme-secondary-700 text-theme-secondary-500"
                               data-testid="SelectNetworkInput__network"
                             />
                             <div
-                              class="relative flex flex-1"
+                              class="relative flex flex-1 h-full"
                             >
                               <input
                                 aria-autocomplete="list"
@@ -955,10 +955,10 @@ exports[`CreateWallet should create a wallet with alias 2`] = `
                         </span>
                       </label>
                       <div
-                        class="Input__InputWrapperStyled-wu99qs-0 dInRZi"
+                        class="Input__InputWrapperStyled-wu99qs-0 jba-du"
                       >
                         <div
-                          class="relative flex flex-1"
+                          class="relative flex flex-1 h-full"
                         >
                           <input
                             class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
@@ -1370,14 +1370,14 @@ exports[`CreateWallet should create a wallet without alias 1`] = `
                             id="NetworkStep__network-label"
                           />
                           <div
-                            class="Input__InputWrapperStyled-wu99qs-0 dInRZi"
+                            class="Input__InputWrapperStyled-wu99qs-0 jba-du"
                           >
                             <div
                               class="Circle-uw7h4j-0 blBpcG border-theme-secondary-200 dark:border-theme-secondary-700 text-theme-secondary-500"
                               data-testid="SelectNetworkInput__network"
                             />
                             <div
-                              class="relative flex flex-1"
+                              class="relative flex flex-1 h-full"
                             >
                               <input
                                 aria-autocomplete="list"
@@ -1966,10 +1966,10 @@ exports[`CreateWallet should create a wallet without alias 2`] = `
                         </span>
                       </label>
                       <div
-                        class="Input__InputWrapperStyled-wu99qs-0 dInRZi"
+                        class="Input__InputWrapperStyled-wu99qs-0 jba-du"
                       >
                         <div
-                          class="relative flex flex-1"
+                          class="relative flex flex-1 h-full"
                         >
                           <input
                             class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
@@ -2383,14 +2383,14 @@ exports[`CreateWallet should remove pending wallet if not submitted 1`] = `
                             id="NetworkStep__network-label"
                           />
                           <div
-                            class="Input__InputWrapperStyled-wu99qs-0 dInRZi"
+                            class="Input__InputWrapperStyled-wu99qs-0 jba-du"
                           >
                             <div
                               class="Circle-uw7h4j-0 blBpcG border-theme-secondary-200 dark:border-theme-secondary-700 text-theme-secondary-500"
                               data-testid="SelectNetworkInput__network"
                             />
                             <div
-                              class="relative flex flex-1"
+                              class="relative flex flex-1 h-full"
                             >
                               <input
                                 aria-autocomplete="list"
@@ -2911,14 +2911,14 @@ exports[`CreateWallet should show an error message for duplicate name 1`] = `
                             id="NetworkStep__network-label"
                           />
                           <div
-                            class="Input__InputWrapperStyled-wu99qs-0 dInRZi"
+                            class="Input__InputWrapperStyled-wu99qs-0 jba-du"
                           >
                             <div
                               class="Circle-uw7h4j-0 blBpcG border-theme-secondary-200 dark:border-theme-secondary-700 text-theme-secondary-500"
                               data-testid="SelectNetworkInput__network"
                             />
                             <div
-                              class="relative flex flex-1"
+                              class="relative flex flex-1 h-full"
                             >
                               <input
                                 aria-autocomplete="list"
@@ -3469,7 +3469,7 @@ exports[`CreateWallet should show an error message if wallet generation failed 1
                             id="NetworkStep__network-label"
                           />
                           <div
-                            class="Input__InputWrapperStyled-wu99qs-0 dInRZi"
+                            class="Input__InputWrapperStyled-wu99qs-0 jba-du"
                           >
                             <div
                               aria-label="ARK Devnet"
@@ -3488,7 +3488,7 @@ exports[`CreateWallet should show an error message if wallet generation failed 1
                               </div>
                             </div>
                             <div
-                              class="relative flex flex-1"
+                              class="relative flex flex-1 h-full"
                             >
                               <input
                                 aria-autocomplete="list"
@@ -3502,7 +3502,7 @@ exports[`CreateWallet should show an error message if wallet generation failed 1
                                 value="ARK Devnet"
                               />
                               <span
-                                class="absolute top-0 flex items-center font-normal opacity-50 pointer-events-none"
+                                class="absolute inset-y-0 flex items-center font-normal opacity-50 pointer-events-none"
                                 data-testid="Input__suggestion"
                               >
                                 ARK Devnet

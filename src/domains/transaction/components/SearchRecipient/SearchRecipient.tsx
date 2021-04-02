@@ -109,6 +109,7 @@ export const SearchRecipient = ({
 			Header: (
 				<HeaderSearchBar
 					placeholder={t("TRANSACTION.MODAL_SEARCH_RECIPIENT.SEARCH_PLACEHOLDER")}
+					offsetClassName="top-1/3 -translate-y-16 -translate-x-6"
 					noToggleBorder
 				/>
 			),

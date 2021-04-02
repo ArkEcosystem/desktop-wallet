@@ -9,6 +9,11 @@ describe("ControlButton", () => {
 		expect(asFragment()).toMatchSnapshot();
 	});
 
+	it("should render without border", () => {
+		const { asFragment } = render(<ControlButton noBorder />);
+		expect(asFragment()).toMatchSnapshot();
+	});
+
 	it("should render disabled", () => {
 		const { asFragment } = render(<ControlButton disabled />);
 		expect(asFragment()).toMatchSnapshot();
@@ -19,8 +24,13 @@ describe("ControlButton", () => {
 		expect(asFragment()).toMatchSnapshot();
 	});
 
-	it("should render changed with dot", () => {
+	it("should render with dot", () => {
 		const { asFragment } = render(<ControlButton isChanged />);
+		expect(asFragment()).toMatchSnapshot();
+	});
+
+	it("should render without border and with dot", () => {
+		const { asFragment } = render(<ControlButton isChanged noBorder />);
 		expect(asFragment()).toMatchSnapshot();
 	});
 });

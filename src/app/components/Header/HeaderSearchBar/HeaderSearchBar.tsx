@@ -4,6 +4,7 @@ import { Input } from "app/components/Input";
 import { clickOutsideHandler, useDebounce } from "app/hooks";
 import cn from "classnames";
 import React, { ChangeEvent, useEffect, useRef, useState } from "react";
+import { useTranslation } from "react-i18next";
 import { styled } from "twin.macro";
 
 type HeaderSearchBarProps = {
@@ -33,6 +34,8 @@ export const HeaderSearchBar = ({
 	defaultQuery = "",
 	debounceTimeout = 500,
 }: HeaderSearchBarProps) => {
+	const { t } = useTranslation();
+
 	const [searchbarVisible, setSearchbarVisible] = useState(false);
 	const [query, setQuery] = useState(defaultQuery);
 
@@ -68,10 +71,12 @@ export const HeaderSearchBar = ({
 					data-testid="header-search-bar__input"
 					ref={ref}
 					className={cn(
-						"absolute z-20 flex items-center text-base px-10 -mx-10 py-6 rounded-md shadow-xl bg-theme-background",
-						offsetClassName,
-						{ "top-1/2 transform -translate-y-1/2": !offsetClassName },
-						{ "right-3": !noToggleBorder },
+						"absolute z-20 flex items-center text-base px-10 -mx-10 py-4 rounded-md shadow-xl bg-theme-background transform",
+						offsetClassName || "top-1/2 -translate-y-1/2",
+						{
+							"right-0": noToggleBorder,
+							"right-3": !noToggleBorder,
+						},
 					)}
 				>
 					{extra && (
@@ -97,17 +102,19 @@ export const HeaderSearchBar = ({
 
 					<div className="flex-1">
 						<Input
-							className="pl-3 border-none shadow-none HeaderSearchBar__input"
-							placeholder={placeholder}
+							className="pl-3"
+							placeholder={placeholder || `${t("COMMON.SEARCH")}...`}
 							value={query}
 							isFocused
 							ignoreContext
 							onChange={(event: ChangeEvent<HTMLInputElement>) => setQuery(event.target.value)}
+							noBorder
+							noShadow
 						/>
 					</div>
 
 					<Icon
-						className="text-color-primary-300 dark:text-theme-secondary-600 "
+						className="text-color-primary-300 dark:text-theme-secondary-600"
 						name="Search"
 						width={18}
 						height={18}
@@ -119,6 +126,5 @@ export const HeaderSearchBar = ({
 };
 
 HeaderSearchBar.defaultProps = {
-	placeholder: "Search...",
 	label: "Search",
 };

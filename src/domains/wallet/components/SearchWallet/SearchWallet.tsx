@@ -134,6 +134,7 @@ export const SearchWallet = ({
 					Header: (
 						<HeaderSearchBar
 							placeholder={searchPlaceholder}
+							offsetClassName="top-1/3 -translate-y-16 -translate-x-6"
 							onSearch={setQuery}
 							onReset={() => setQuery("")}
 							debounceTimeout={100}
@@ -153,6 +154,7 @@ export const SearchWallet = ({
 				Header: (
 					<HeaderSearchBar
 						placeholder={searchPlaceholder}
+						offsetClassName="top-1/3 -translate-y-16 -translate-x-6"
 						onSearch={setQuery}
 						onReset={() => setQuery("")}
 						debounceTimeout={100}
@@ -219,7 +221,6 @@ export const SearchWallet = ({
 
 SearchWallet.defaultProps = {
 	isOpen: false,
-	searchPlaceholder: "Enter the name or address for your wallet",
 	size: "5xl",
 	showFiatValue: true,
 	showNetwork: true,

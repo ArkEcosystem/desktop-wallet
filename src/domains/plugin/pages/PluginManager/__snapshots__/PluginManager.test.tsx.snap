@@ -4601,7 +4601,7 @@ exports[`PluginManager should search for plugin 1`] = `
                           class="ControlButton__ControlButtonStyled-sc-1xp1l1a-0 dLCfwp"
                         >
                           <div
-                            class="flex absolute right-0 justify-center items-center mr-2 -mt-3 w-3 h-3 rounded-full transition-all duration-100 ease-linear bg-theme-background"
+                            class="flex absolute right-0 justify-center items-center -mt-3 w-3 h-3 rounded-full transition-all duration-100 ease-linear bg-theme-background mr-2"
                           >
                             <div
                               class="w-2 h-2 rounded-full bg-theme-danger-500"
@@ -4627,7 +4627,7 @@ exports[`PluginManager should search for plugin 1`] = `
                       </div>
                     </button>
                     <div
-                      class="HeaderSearchBar__SearchBarInputWrapper-sc-124mt80-0 foBMUQ absolute z-20 flex items-center text-base px-10 -mx-10 py-6 rounded-md shadow-xl bg-theme-background top-1/2 transform -translate-y-1/2 right-3"
+                      class="HeaderSearchBar__SearchBarInputWrapper-sc-124mt80-0 foBMUQ absolute z-20 flex items-center text-base px-10 -mx-10 py-4 rounded-md shadow-xl bg-theme-background transform top-1/2 -translate-y-1/2 right-3"
                       data-testid="header-search-bar__input"
                     >
                       <button
@@ -4649,10 +4649,10 @@ exports[`PluginManager should search for plugin 1`] = `
                         class="flex-1"
                       >
                         <div
-                          class="Input__InputWrapperStyled-wu99qs-0 dInRZi pl-3 border-none shadow-none HeaderSearchBar__input"
+                          class="Input__InputWrapperStyled-wu99qs-0 jPgKbH pl-3"
                         >
                           <div
-                            class="relative flex flex-1"
+                            class="relative flex flex-1 h-full"
                           >
                             <input
                               class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
@@ -4664,7 +4664,7 @@ exports[`PluginManager should search for plugin 1`] = `
                         </div>
                       </div>
                       <div
-                        class="sc-bdfBwQ iNulIV text-color-primary-300 dark:text-theme-secondary-600 "
+                        class="sc-bdfBwQ iNulIV text-color-primary-300 dark:text-theme-secondary-600"
                         height="18"
                         width="18"
                       >
@@ -5999,7 +5999,7 @@ exports[`PluginManager should search for plugin 2`] = `
                           class="ControlButton__ControlButtonStyled-sc-1xp1l1a-0 dLCfwp"
                         >
                           <div
-                            class="flex absolute right-0 justify-center items-center mr-2 -mt-3 w-3 h-3 rounded-full transition-all duration-100 ease-linear bg-theme-background"
+                            class="flex absolute right-0 justify-center items-center -mt-3 w-3 h-3 rounded-full transition-all duration-100 ease-linear bg-theme-background mr-2"
                           >
                             <div
                               class="w-2 h-2 rounded-full bg-theme-danger-500"
@@ -6025,7 +6025,7 @@ exports[`PluginManager should search for plugin 2`] = `
                       </div>
                     </button>
                     <div
-                      class="HeaderSearchBar__SearchBarInputWrapper-sc-124mt80-0 foBMUQ absolute z-20 flex items-center text-base px-10 -mx-10 py-6 rounded-md shadow-xl bg-theme-background top-1/2 transform -translate-y-1/2 right-3"
+                      class="HeaderSearchBar__SearchBarInputWrapper-sc-124mt80-0 foBMUQ absolute z-20 flex items-center text-base px-10 -mx-10 py-4 rounded-md shadow-xl bg-theme-background transform top-1/2 -translate-y-1/2 right-3"
                       data-testid="header-search-bar__input"
                     >
                       <button
@@ -6047,10 +6047,10 @@ exports[`PluginManager should search for plugin 2`] = `
                         class="flex-1"
                       >
                         <div
-                          class="Input__InputWrapperStyled-wu99qs-0 dInRZi pl-3 border-none shadow-none HeaderSearchBar__input"
+                          class="Input__InputWrapperStyled-wu99qs-0 jPgKbH pl-3"
                         >
                           <div
-                            class="relative flex flex-1"
+                            class="relative flex flex-1 h-full"
                           >
                             <input
                               class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
@@ -6062,7 +6062,7 @@ exports[`PluginManager should search for plugin 2`] = `
                         </div>
                       </div>
                       <div
-                        class="sc-bdfBwQ iNulIV text-color-primary-300 dark:text-theme-secondary-600 "
+                        class="sc-bdfBwQ iNulIV text-color-primary-300 dark:text-theme-secondary-600"
                         height="18"
                         width="18"
                       >
