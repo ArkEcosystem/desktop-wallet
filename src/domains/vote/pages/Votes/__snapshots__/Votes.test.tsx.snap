@@ -3407,7 +3407,17 @@ exports[`Votes should render with no wallets 1`] = `
               <div
                 class="flex items-center justify-between"
               >
-                Your must first Create or Import an address to view your current voting status
+                <span>
+                  Your must first 
+                  <strong>
+                    Create
+                  </strong>
+                   or 
+                  <strong>
+                    Import
+                  </strong>
+                   an address to view your current voting status.
+                </span>
                 <div
                   class="flex -m-3 space-x-3"
                 >
