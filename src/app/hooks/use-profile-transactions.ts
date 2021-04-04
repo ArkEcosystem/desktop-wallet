@@ -1,34 +1,100 @@
-import { Contracts } from "@arkecosystem/platform-sdk-profiles";
+import { Contracts, DTO } from "@arkecosystem/platform-sdk-profiles";
 import { IReadWriteWallet } from "@arkecosystem/platform-sdk-profiles/dist/contracts";
-import { useCallback, useRef } from "react";
+import { useCallback, useEffect, useRef,useState } from "react";
 
-export const useProfileTransactions = ({ profile }: { profile: Contracts.IProfile }) => {
-	const abortRef = useRef<() => void>();
+type TransactionsState = {
+	transactions: DTO.ExtendedTransactionData[];
+	isLoadingTransactions: boolean;
+	isLoadingMore: boolean;
+	activeMode?: string;
+	activeTransactionType?: any;
+};
 
-	const fetchTransactions = useCallback(
-		async ({
-			flush = false,
-			mode = "transactions",
-			transactionType,
-			wallets,
-		}: {
-			flush?: boolean;
-			mode: string;
-			transactionType?: any;
-			wallets: IReadWriteWallet[];
-		}) => {
-			if (abortRef.current) {
-				abortRef.current();
+type TransactionFilters = {
+	activeMode?: string;
+	activeTransactionType?: any;
+};
+
+type FetchTransactionProps = {
+	flush?: boolean;
+	mode?: string;
+	transactionType?: any;
+	wallets: IReadWriteWallet[];
+};
+
+export const useProfileTransactions = ({
+	profile,
+	wallets,
+}: {
+	profile: Contracts.IProfile;
+	wallets: Contracts.IReadWriteWallet[];
+}) => {
+	const lastActiveMode = useRef<string>();
+
+	const [
+		{ transactions, activeMode, activeTransactionType, isLoadingTransactions, isLoadingMore },
+		setState,
+	] = useState<TransactionsState>({
+		isLoadingMore: false,
+		isLoadingTransactions: true,
+		transactions: [],
+		activeMode: undefined,
+		activeTransactionType: undefined,
+	});
+
+	useEffect(() => {
+		const loadTransactions = async () => {
+			const fetchedTransactions = await fetchTransactions({
+				wallets,
+				flush: true,
+				mode: activeMode! ,
+				transactionType: activeTransactionType,
+			});
+
+			const isAborted = () => {
+				const activeQuery = JSON.stringify({ activeMode, activeTransactionType });
+				return activeQuery !== lastActiveMode.current;
+			};
+
+			if (isAborted()) {
+				return;
 			}
 
-			let aborted = false;
-			abortRef.current = () => (aborted = true);
+			setState((state) => ({ ...state, transactions: fetchedTransactions, isLoadingTransactions: false }));
+		};
 
+		if (!lastActiveMode.current) {
+			return;
+		}
+
+		setTimeout(() => loadTransactions(), 0);
+
+		// eslint-disable-next-line
+	}, [wallets.length, activeMode, activeTransactionType]);
+
+	const updateFilters = useCallback(
+		({ activeMode, activeTransactionType }: TransactionFilters) => {
+			lastActiveMode.current = JSON.stringify({ activeMode, activeTransactionType });
+
+			setState({
+				transactions: [],
+				isLoadingTransactions: true,
+				activeMode,
+				activeTransactionType,
+				isLoadingMore: false,
+			});
+		},
+		[wallets.length],
+	);
+
+	const fetchTransactions = useCallback(
+		async ({ flush = false, mode = "all", transactionType, wallets }: FetchTransactionProps) => {
 			const methodMap = {
 				all: "transactions",
 				sent: "sentTransactions",
 				received: "receivedTransactions",
 			};
+
 			const method = methodMap[mode as keyof typeof methodMap];
 
 			if (flush) {
@@ -42,14 +108,36 @@ export const useProfileTransactions = ({ profile }: { profile: Contracts.IProfil
 			const response = await profile.transactionAggregate()[method](queryParams);
 			const transactionsAggregate = response.items();
 
-			if (aborted) {
-				return [];
-			}
-
 			return transactionsAggregate;
 		},
 		[profile],
 	);
 
-	return { fetchTransactions };
+	const fetchMore = useCallback(async () => {
+		setState((state) => ({ ...state, isLoadingMore: true }));
+
+		const nextPage = await fetchTransactions({
+			flush: false,
+			mode: activeMode,
+			transactionType: activeTransactionType,
+			wallets,
+		});
+
+		setState((state) => ({
+			...state,
+			isLoadingMore: false,
+			transactions: [...state.transactions, ...nextPage],
+		}));
+	}, [activeMode, activeTransactionType, wallets.length]);
+
+	return {
+		fetchTransactions,
+		fetchMore,
+		updateFilters,
+		transactions,
+		activeMode,
+		activeTransactionType,
+		isLoadingTransactions,
+		isLoadingMore,
+	};
 };
