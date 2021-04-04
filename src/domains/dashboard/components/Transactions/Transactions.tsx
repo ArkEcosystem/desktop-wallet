@@ -27,40 +27,35 @@ export const Transactions = memo(
 	({ emptyText, isCompact, profile, isVisible = true, wallets, isLoading = false }: TransactionsProps) => {
 		const { t } = useTranslation();
 
-		const [selectedTransactionType, setSelectedTransactionType] = useState<any>();
-		const [activeTransactionModeTab, setActiveTransactionModeTab] = useState("all");
-		const [transactions, setTransactions] = useState<DTO.ExtendedTransactionData[]>([]);
 		const [transactionModalItem, setTransactionModalItem] = useState<DTO.ExtendedTransactionData | undefined>(
 			undefined,
 		);
-		const [isLoadingTransactions, setIsLoading] = useState(isLoading);
+
 		const exchangeCurrency = useMemo(
 			() => profile.settings().get<string>(Contracts.ProfileSetting.ExchangeCurrency),
 			[profile],
 		);
 
-		const { fetchTransactions } = useProfileTransactions({ profile });
+		const {
+			updateFilters,
+			isLoadingTransactions,
+			isLoadingMore,
+			transactions,
+			activeMode,
+			activeTransactionType,
+			fetchMore,
+		} = useProfileTransactions({ profile, wallets });
 
 		useEffect(() => {
-			const loadTransactions = async () => {
-				if (isVisible && !isLoading) {
-					setIsLoading(true);
+			if (isLoading) {
+				return;
+			}
 
-					const fetchedTransactions = await fetchTransactions({
-						wallets,
-						flush: true,
-						mode: activeTransactionModeTab,
-						transactionType: selectedTransactionType,
-					});
-
-					setIsLoading(false);
-					setTransactions(fetchedTransactions);
-				}
-			};
-
-			loadTransactions();
-			// eslint-disable-next-line
-		}, [activeTransactionModeTab, selectedTransactionType, wallets.length, isLoading]);
+			updateFilters({
+				activeMode: "all",
+				activeTransactionType: undefined,
+			});
+		}, [isLoading, wallets.length]);
 
 		if (!isVisible) {
 			return <></>;
@@ -71,17 +66,33 @@ export const Transactions = memo(
 				<div className="flex relative justify-between">
 					<div className="mb-8 text-4xl font-bold">{t("DASHBOARD.TRANSACTION_HISTORY.TITLE")}</div>
 					<FilterTransactions
-						wallets={profile.wallets().values()}
+						wallets={wallets}
 						onSelect={(_, type) => {
-							setSelectedTransactionType(type);
+							updateFilters({
+								activeMode,
+								activeTransactionType: type,
+							});
 						}}
 						className="mt-6"
 					/>
 				</div>
 				<Tabs
 					className="mb-8"
-					activeId={activeTransactionModeTab}
-					onChange={(id) => setActiveTransactionModeTab(id as string)}
+					activeId={activeMode}
+					onChange={(activeTab) => {
+						if (activeTab === activeMode) {
+							return;
+						}
+
+						if (isLoading) {
+							return;
+						}
+
+						updateFilters({
+							activeMode: activeTab as string,
+							activeTransactionType,
+						});
+					}}
 				>
 					<TabList className="w-full">
 						<Tab tabId="all">{t("TRANSACTION.ALL")}</Tab>
@@ -105,29 +116,20 @@ export const Transactions = memo(
 						data-testid="transactions__fetch-more-button"
 						variant="secondary"
 						className="mt-10 mb-5 w-full"
-						disabled={isLoadingTransactions}
-						onClick={async () => {
-							const moreTransactions = await fetchTransactions({
-								flush: false,
-								mode: activeTransactionModeTab,
-								transactionType: selectedTransactionType,
-								wallets,
-							});
-
-							setTransactions(transactions.concat(moreTransactions));
-						}}
+						disabled={isLoadingMore}
+						onClick={() => fetchMore()}
 					>
-						{isLoadingTransactions ? t("COMMON.LOADING") : t("COMMON.VIEW_MORE")}
+						{isLoadingMore ? t("COMMON.LOADING") : t("COMMON.VIEW_MORE")}
 					</Button>
 				)}
 
-				{transactions.length === 0 && !selectedTransactionType && !isLoadingTransactions && (
+				{transactions.length === 0 && !activeTransactionType && !isLoadingTransactions && (
 					<EmptyBlock className="-mt-5">
 						{emptyText || t("DASHBOARD.TRANSACTION_HISTORY.EMPTY_MESSAGE")}
 					</EmptyBlock>
 				)}
 
-				{transactions.length === 0 && !!selectedTransactionType && !isLoadingTransactions && (
+				{transactions.length === 0 && !!activeTransactionType && !isLoadingTransactions && (
 					<EmptyResults
 						className="flex-1"
 						title={t("COMMON.EMPTY_RESULTS.TITLE")}
