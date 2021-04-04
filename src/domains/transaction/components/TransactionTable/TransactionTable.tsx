@@ -1,6 +1,6 @@
 import { DTO } from "@arkecosystem/platform-sdk-profiles";
 import { Table } from "app/components/Table";
-import React, { memo, Profiler,useMemo } from "react";
+import React, { memo, Profiler, useMemo } from "react";
 import { useTranslation } from "react-i18next";
 
 import { TransactionCompactRow } from "./TransactionRow/TransactionCompactRow";
@@ -40,37 +40,38 @@ export const TransactionTable = memo(
 				},
 			],
 		};
-		const commonColumns: any = [
-			{
-				Header: t("COMMON.DATE"),
-				id: "date",
-				accessor: (transaction: DTO.ExtendedTransactionData) => transaction.timestamp?.()?.toUNIX(),
-				sortDescFirst: true,
-				cellWidth: "w-50",
-			},
-			{
-				Header: t("COMMON.RECIPIENT"),
-				cellWidth: "w-96",
-			},
-			{
-				Header: t("COMMON.INFO"),
-				className: "justify-center",
-			},
-			{
-				Header: t("COMMON.STATUS"),
-				className: "justify-center",
-				minimumWidth: true,
-			},
-			{
-				Header: t("COMMON.AMOUNT"),
-				id: "amount",
-				accessor: (transaction: DTO.ExtendedTransactionData) => transaction.total?.().toHuman(),
-				sortDescFirst: true,
-				className: "justify-end",
-			},
-		];
 
 		const columns = useMemo(() => {
+			const commonColumns: any = [
+				{
+					Header: t("COMMON.DATE"),
+					id: "date",
+					accessor: (transaction: DTO.ExtendedTransactionData) => transaction.timestamp?.()?.toUNIX(),
+					sortDescFirst: true,
+					cellWidth: "w-50",
+				},
+				{
+					Header: t("COMMON.RECIPIENT"),
+					cellWidth: "w-96",
+				},
+				{
+					Header: t("COMMON.INFO"),
+					className: "justify-center",
+				},
+				{
+					Header: t("COMMON.STATUS"),
+					className: "justify-center",
+					minimumWidth: true,
+				},
+				{
+					Header: t("COMMON.AMOUNT"),
+					id: "amount",
+					accessor: (transaction: DTO.ExtendedTransactionData) => transaction.total?.().toHuman(),
+					sortDescFirst: true,
+					className: "justify-end",
+				},
+			];
+
 			if (isCompact) {
 				return [
 					{
@@ -104,12 +105,14 @@ export const TransactionTable = memo(
 			}
 
 			return commonColumns;
-		}, [commonColumns, exchangeCurrency, showExplorerLinkColumn, showSignColumn, isCompact, t]);
+		}, [exchangeCurrency, showExplorerLinkColumn, showSignColumn, isCompact, t]);
 
 		const showSkeleton = useMemo(() => isLoading && transactions.length === 0, [transactions, isLoading]);
 
-		const skeletonRows = new Array(skeletonRowsLimit).fill({});
-		const data = showSkeleton ? skeletonRows : transactions;
+		const data = useMemo(() => {
+			const skeletonRows = new Array(skeletonRowsLimit).fill({});
+			return showSkeleton ? skeletonRows : transactions;
+		}, [showSkeleton, transactions]);
 
 		return (
 			<Profiler id="TransactionTable" onRender={console.log}>
@@ -119,15 +122,25 @@ export const TransactionTable = memo(
 							isCompact ? (
 								<TransactionCompactRow onClick={() => onRowClick?.(row)} transaction={row} />
 							) : (
-								<TransactionRow
-									isLoading={showSkeleton}
-									onClick={() => onRowClick?.(row)}
-									transaction={row}
-									exchangeCurrency={exchangeCurrency}
-									showExplorerLink={showExplorerLinkColumn}
-									showSignColumn={showSignColumn}
-									isSignaturePending={row.isMultiSignature && showSignColumn}
-								/>
+								<Profiler
+									id="TransactionRow"
+									onRender={(id, phase, actualDuration) => {
+										if (phase === "update") {
+											return;
+										}
+										// console.log(id, row?.id?.(), row?.type?.(), phase, actualDuration);
+									}}
+								>
+									<TransactionRow
+										isLoading={showSkeleton}
+										onClick={() => onRowClick?.(row)}
+										transaction={row}
+										exchangeCurrency={exchangeCurrency}
+										showExplorerLink={showExplorerLinkColumn}
+										showSignColumn={showSignColumn}
+										isSignaturePending={row.isMultiSignature && showSignColumn}
+									/>
+								</Profiler>
 							)
 						}
 					</Table>
