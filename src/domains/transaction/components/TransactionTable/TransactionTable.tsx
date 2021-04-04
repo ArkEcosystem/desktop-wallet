@@ -1,6 +1,6 @@
 import { DTO } from "@arkecosystem/platform-sdk-profiles";
 import { Table } from "app/components/Table";
-import React, { memo, Profiler, useMemo } from "react";
+import React, { memo, useMemo } from "react";
 import { useTranslation } from "react-i18next";
 
 import { TransactionCompactRow } from "./TransactionRow/TransactionCompactRow";
@@ -115,27 +115,25 @@ export const TransactionTable = memo(
 		}, [showSkeleton, transactions, skeletonRowsLimit]);
 
 		return (
-			<Profiler id="TransactionTable" onRender={console.log}>
-				<div data-testid="TransactionTable" className="relative">
-					<Table hideHeader={hideHeader} columns={columns} data={data} initialState={initialState}>
-						{(row: DTO.ExtendedTransactionData) =>
-							isCompact ? (
-								<TransactionCompactRow onClick={() => onRowClick?.(row)} transaction={row} />
-							) : (
-								<TransactionRow
-									isLoading={showSkeleton}
-									onClick={() => onRowClick?.(row)}
-									transaction={row}
-									exchangeCurrency={exchangeCurrency}
-									showExplorerLink={showExplorerLinkColumn}
-									showSignColumn={showSignColumn}
-									isSignaturePending={row.isMultiSignature && showSignColumn}
-								/>
-							)
-						}
-					</Table>
-				</div>
-			</Profiler>
+			<div data-testid="TransactionTable" className="relative">
+				<Table hideHeader={hideHeader} columns={columns} data={data} initialState={initialState}>
+					{(row: DTO.ExtendedTransactionData) =>
+						isCompact ? (
+							<TransactionCompactRow onClick={() => onRowClick?.(row)} transaction={row} />
+						) : (
+							<TransactionRow
+								isLoading={showSkeleton}
+								onClick={() => onRowClick?.(row)}
+								transaction={row}
+								exchangeCurrency={exchangeCurrency}
+								showExplorerLink={showExplorerLinkColumn}
+								showSignColumn={showSignColumn}
+								isSignaturePending={row.isMultiSignature && showSignColumn}
+							/>
+						)
+					}
+				</Table>
+			</div>
 		);
 	},
 );
