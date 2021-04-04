@@ -1,6 +1,6 @@
 import { Contracts, DTO } from "@arkecosystem/platform-sdk-profiles";
 import { IReadWriteWallet } from "@arkecosystem/platform-sdk-profiles/dist/contracts";
-import { useCallback, useEffect, useRef,useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 
 type TransactionsState = {
 	transactions: DTO.ExtendedTransactionData[];
@@ -47,7 +47,7 @@ export const useProfileTransactions = ({
 			const fetchedTransactions = await fetchTransactions({
 				wallets,
 				flush: true,
-				mode: activeMode! ,
+				mode: activeMode!,
 				transactionType: activeTransactionType,
 			});
 
@@ -76,9 +76,11 @@ export const useProfileTransactions = ({
 		({ activeMode, activeTransactionType }: TransactionFilters) => {
 			lastActiveMode.current = JSON.stringify({ activeMode, activeTransactionType });
 
+			const hasWallets = wallets.length !== 0;
+
 			setState({
 				transactions: [],
-				isLoadingTransactions: true,
+				isLoadingTransactions: hasWallets, // Don't set isLoading when profile has no wallets
 				activeMode,
 				activeTransactionType,
 				isLoadingMore: false,
@@ -89,6 +91,10 @@ export const useProfileTransactions = ({
 
 	const fetchTransactions = useCallback(
 		async ({ flush = false, mode = "all", transactionType, wallets }: FetchTransactionProps) => {
+			if (wallets.length === 0) {
+				return [];
+			}
+
 			const methodMap = {
 				all: "transactions",
 				sent: "sentTransactions",
@@ -110,7 +116,7 @@ export const useProfileTransactions = ({
 
 			return transactionsAggregate;
 		},
-		[profile],
+		[profile, wallets.length],
 	);
 
 	const fetchMore = useCallback(async () => {
