@@ -23,9 +23,10 @@ export const SearchBar = ({ placeholder, className, children, onSearch }: Search
 
 				<div className="flex-1 pl-4 mr-4 border-l border-theme-secondary-300 dark:border-theme-secondary-800">
 					<Input
-						className="border-none shadow-none"
 						placeholder={placeholder || t("COMMON.SEARCH_BAR.PLACEHOLDER")}
 						onChange={(event) => setQuery((event.target as HTMLInputElement).value)}
+						noBorder
+						noShadow
 					/>
 				</div>
 
