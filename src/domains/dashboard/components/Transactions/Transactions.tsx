@@ -55,7 +55,7 @@ export const Transactions = memo(
 				activeMode: "all",
 				activeTransactionType: undefined,
 			});
-		}, [isLoading, wallets.length]);
+		}, [isLoading, wallets.length, updateFilters]);
 
 		if (!isVisible) {
 			return <></>;

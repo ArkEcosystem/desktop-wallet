@@ -46,6 +46,9 @@ describe("useProfileTransactions", () => {
 		await waitFor(() =>
 			expect(current.fetchTransactions({ wallets: profile.wallets().values() })).resolves.toHaveLength(4),
 		);
+
+		//@ts-ignore
+		await waitFor(() => expect(current.fetchTransactions({})).resolves.toHaveLength(0));
 	});
 
 	it("#updateFilters", async () => {

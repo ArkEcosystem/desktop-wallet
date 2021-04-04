@@ -80,7 +80,7 @@ export const useProfileTransactions = ({
 
 			setState({
 				transactions: [],
-				isLoadingTransactions: hasWallets, // Don't set isLoading when profile has no wallets
+				isLoadingTransactions: hasWallets, // Don't set isLoading when there are no wallets
 				activeMode,
 				activeTransactionType,
 				isLoadingMore: false,
@@ -90,7 +90,7 @@ export const useProfileTransactions = ({
 	);
 
 	const fetchTransactions = useCallback(
-		async ({ flush = false, mode = "all", transactionType, wallets }: FetchTransactionProps) => {
+		async ({ flush = false, mode = "all", transactionType, wallets = [] }: FetchTransactionProps) => {
 			if (wallets.length === 0) {
 				return [];
 			}
@@ -116,7 +116,7 @@ export const useProfileTransactions = ({
 
 			return transactionsAggregate;
 		},
-		[profile, wallets.length],
+		[profile],
 	);
 
 	const fetchMore = useCallback(async () => {
@@ -134,7 +134,7 @@ export const useProfileTransactions = ({
 			isLoadingMore: false,
 			transactions: [...state.transactions, ...nextPage],
 		}));
-	}, [activeMode, activeTransactionType, wallets.length]);
+	}, [activeMode, activeTransactionType, wallets.length]); // eslint-disable-line react-hooks/exhaustive-deps
 
 	return {
 		fetchTransactions,

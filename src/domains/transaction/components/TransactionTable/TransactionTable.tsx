@@ -112,7 +112,7 @@ export const TransactionTable = memo(
 		const data = useMemo(() => {
 			const skeletonRows = new Array(skeletonRowsLimit).fill({});
 			return showSkeleton ? skeletonRows : transactions;
-		}, [showSkeleton, transactions]);
+		}, [showSkeleton, transactions, skeletonRowsLimit]);
 
 		return (
 			<Profiler id="TransactionTable" onRender={console.log}>
