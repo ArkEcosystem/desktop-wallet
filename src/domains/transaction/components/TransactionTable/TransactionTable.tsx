@@ -122,25 +122,15 @@ export const TransactionTable = memo(
 							isCompact ? (
 								<TransactionCompactRow onClick={() => onRowClick?.(row)} transaction={row} />
 							) : (
-								<Profiler
-									id="TransactionRow"
-									onRender={(id, phase, actualDuration) => {
-										if (phase === "update") {
-											return;
-										}
-										// console.log(id, row?.id?.(), row?.type?.(), phase, actualDuration);
-									}}
-								>
-									<TransactionRow
-										isLoading={showSkeleton}
-										onClick={() => onRowClick?.(row)}
-										transaction={row}
-										exchangeCurrency={exchangeCurrency}
-										showExplorerLink={showExplorerLinkColumn}
-										showSignColumn={showSignColumn}
-										isSignaturePending={row.isMultiSignature && showSignColumn}
-									/>
-								</Profiler>
+								<TransactionRow
+									isLoading={showSkeleton}
+									onClick={() => onRowClick?.(row)}
+									transaction={row}
+									exchangeCurrency={exchangeCurrency}
+									showExplorerLink={showExplorerLinkColumn}
+									showSignColumn={showSignColumn}
+									isSignaturePending={row.isMultiSignature && showSignColumn}
+								/>
 							)
 						}
 					</Table>

@@ -5,7 +5,7 @@ import { ConfigurationProvider, EnvironmentProvider } from "app/contexts";
 import { createMemoryHistory } from "history";
 import React from "react";
 import { Route } from "react-router-dom";
-import { env, getDefaultProfileId, renderWithRouter, waitFor } from "utils/testing-library";
+import { env, getDefaultProfileId, renderWithRouter, waitFor, syncDelegates } from "utils/testing-library";
 
 const history = createMemoryHistory();
 const dashboardURL = `/profiles/${getDefaultProfileId()}/dashboard`;
@@ -136,22 +136,33 @@ describe("useProfileSyncStatus", () => {
 		expect(current.shouldMarkCompleted()).toEqual(false);
 	});
 });
-
+//
 describe("useProfileSynchronizer", () => {
+	beforeEach(async () => {
+		jest.useFakeTimers();
+		await syncDelegates();
+	});
+
+	afterEach(() => {
+		jest.clearAllTimers();
+	});
+
 	it("should sync profile", async () => {
 		history.push(dashboardURL);
-		const { getByTestId } = renderWithRouter(
-			<Route path="/profiles/:profileId/dashboard">
-				<div data-testid="ProfileSynced">test</div>
-			</Route>,
-			{
-				routes: [dashboardURL],
-				history,
-				withProfileSynchronizer: true,
-			},
-		);
+		await act(async () => {
+			const { getByTestId } = renderWithRouter(
+				<Route path="/profiles/:profileId/dashboard">
+					<div data-testid="ProfileSynced">test</div>
+				</Route>,
+				{
+					routes: [dashboardURL],
+					history,
+					withProfileSynchronizer: true,
+				},
+			);
 
-		await waitFor(() => expect(getByTestId("ProfileSynced")).toBeInTheDocument(), { timeout: 4000 });
+			await waitFor(() => expect(getByTestId("ProfileSynced")).toBeInTheDocument(), { timeout: 4000 });
+		});
 	});
 
 	it("should clear last profile sync jobs", async () => {
