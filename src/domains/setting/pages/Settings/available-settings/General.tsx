@@ -141,6 +141,7 @@ export const General = ({ formConfig, onSuccess }: SettingsProps) => {
 				<FormField name="automaticSignOutPeriod">
 					<FormLabel label={t("SETTINGS.GENERAL.SECURITY.AUTOMATIC_SIGN_OUT_PERIOD.TITLE")} />
 					<Select
+						id="select-auto-signout"
 						placeholder={t("COMMON.SELECT_OPTION", {
 							option: t("SETTINGS.GENERAL.SECURITY.AUTOMATIC_SIGN_OUT_PERIOD.TITLE"),
 						})}
@@ -288,6 +289,7 @@ export const General = ({ formConfig, onSuccess }: SettingsProps) => {
 							<FormField className="mt-8" name="passphraseLanguage">
 								<FormLabel label={t("SETTINGS.GENERAL.PERSONAL.PASSPHRASE_LANGUAGE")} />
 								<Select
+									id="select-passphrase-language"
 									placeholder={t("COMMON.SELECT_OPTION", {
 										option: t("SETTINGS.GENERAL.PERSONAL.PASSPHRASE_LANGUAGE"),
 									})}
@@ -304,6 +306,7 @@ export const General = ({ formConfig, onSuccess }: SettingsProps) => {
 							<FormField className="mt-8" name="currency">
 								<FormLabel label={t("SETTINGS.GENERAL.PERSONAL.CURRENCY")} />
 								<Select
+									id="select-currency"
 									placeholder={t("COMMON.SELECT_OPTION", {
 										option: t("SETTINGS.GENERAL.PERSONAL.CURRENCY"),
 									})}
@@ -324,6 +327,7 @@ export const General = ({ formConfig, onSuccess }: SettingsProps) => {
 							<FormField name="language">
 								<FormLabel label={t("SETTINGS.GENERAL.PERSONAL.LANGUAGE")} />
 								<Select
+									id="select-language"
 									placeholder={t("COMMON.SELECT_OPTION", {
 										option: t("SETTINGS.GENERAL.PERSONAL.LANGUAGE"),
 									})}
@@ -340,6 +344,7 @@ export const General = ({ formConfig, onSuccess }: SettingsProps) => {
 							<FormField className="mt-8" name="marketProvider">
 								<FormLabel label={t("SETTINGS.GENERAL.PERSONAL.MARKET_PROVIDER")} />
 								<Select
+									id="select-market-provider"
 									placeholder={t("COMMON.SELECT_OPTION", {
 										option: t("SETTINGS.GENERAL.PERSONAL.MARKET_PROVIDER"),
 									})}
@@ -356,6 +361,7 @@ export const General = ({ formConfig, onSuccess }: SettingsProps) => {
 							<FormField className="mt-8" name="timeFormat">
 								<FormLabel label={t("SETTINGS.GENERAL.PERSONAL.TIME_FORMAT")} />
 								<Select
+									id="select-time-format"
 									placeholder={t("COMMON.SELECT_OPTION", {
 										option: t("SETTINGS.GENERAL.PERSONAL.TIME_FORMAT"),
 									})}

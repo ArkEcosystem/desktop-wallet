@@ -212,12 +212,12 @@ describe("Votes", () => {
 	it("should navigate to create create page", () => {
 		const route = `/profiles/${emptyProfile.id()}/votes`;
 		const routePath = "/profiles/:profileId/votes";
-		const { asFragment, getByTestId, getByText } = renderPage(route, routePath, true);
+		const { asFragment, getByTestId, getByRole } = renderPage(route, routePath, true);
 
 		expect(getByTestId("EmptyBlock")).toBeTruthy();
 
 		act(() => {
-			fireEvent.click(getByText("Create"));
+			fireEvent.click(getByRole("button", { name: /Create/ }));
 		});
 
 		expect(history.location.pathname).toEqual(`/profiles/${emptyProfile.id()}/wallets/create`);
@@ -227,12 +227,12 @@ describe("Votes", () => {
 	it("should navigate to import wallet page", () => {
 		const route = `/profiles/${emptyProfile.id()}/votes`;
 		const routePath = "/profiles/:profileId/votes";
-		const { asFragment, getByTestId, getByText } = renderPage(route, routePath, true);
+		const { asFragment, getByTestId, getByRole } = renderPage(route, routePath, true);
 
 		expect(getByTestId("EmptyBlock")).toBeTruthy();
 
 		act(() => {
-			fireEvent.click(getByText("Import"));
+			fireEvent.click(getByRole("button", { name: /Import/ }));
 		});
 
 		expect(history.location.pathname).toEqual(`/profiles/${emptyProfile.id()}/wallets/import`);

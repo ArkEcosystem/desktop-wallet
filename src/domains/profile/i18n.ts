@@ -28,7 +28,7 @@ export const translations: { [key: string]: any } = {
 	MODAL_SELECT_SENDER: {
 		TITLE: "Select Sender",
 		DESCRIPTION: "Find and select the sender from your wallets",
-		SEARCH_PLACEHOLDER: "Enter the name or address for your wallet",
+		SEARCH_PLACEHOLDER: "Enter name or address",
 	},
 	MODAL_SIGN_IN: {
 		TITLE: "Sign In",
