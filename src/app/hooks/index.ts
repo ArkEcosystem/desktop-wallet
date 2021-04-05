@@ -10,7 +10,6 @@ export * from "./use-fees";
 export * from "./use-notifications";
 export * from "./use-previous";
 export * from "./use-profile-synchronizer";
-export * from "./use-profile-transactions";
 export * from "./use-query-params";
 export * from "./use-random-number";
 export * from "./use-reload-path";

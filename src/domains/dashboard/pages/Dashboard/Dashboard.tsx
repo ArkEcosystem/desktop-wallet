@@ -2,7 +2,7 @@ import { Contracts } from "@arkecosystem/platform-sdk-profiles";
 import { Page } from "app/components/Layout";
 import { useConfiguration } from "app/contexts";
 import { useActiveProfile } from "app/hooks";
-import { Transactions } from "domains/dashboard/components/Transactions";
+import { Transactions } from "domains/transaction/components/Transactions";
 import { Wallets } from "domains/dashboard/components/Wallets";
 import { useWalletConfig } from "domains/dashboard/hooks";
 import React, { useMemo } from "react";

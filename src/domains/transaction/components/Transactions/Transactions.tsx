@@ -4,7 +4,7 @@ import { EmptyBlock } from "app/components/EmptyBlock";
 import { EmptyResults } from "app/components/EmptyResults";
 import { Section } from "app/components/Layout";
 import { Tab, TabList, Tabs } from "app/components/Tabs";
-import { useProfileTransactions } from "app/hooks/use-profile-transactions";
+import { useProfileTransactions } from "domains/transaction/hooks/use-profile-transactions";
 import { FilterTransactions } from "domains/transaction/components/FilterTransactions";
 import { TransactionDetailModal } from "domains/transaction/components/TransactionDetailModal";
 import { TransactionTable } from "domains/transaction/components/TransactionTable";
