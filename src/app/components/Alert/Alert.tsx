@@ -1,3 +1,4 @@
+import cls from "classnames";
 import React from "react";
 import { Size } from "types";
 
@@ -37,11 +38,14 @@ const getColorVariant = (variant: string) => {
 	return colorVariant[variant];
 };
 
-export const Alert = ({ variant, title, size, children }: AlertProps) => (
+export const Alert = ({ variant, title, size, children, className }: AlertProps) => (
 	<div
-		className={`flex overflow-hidden flex-col space-y-4 rounded-lg p-4 bg-theme-${
-			variant === "info" ? "primary" : variant
-		}-50 dark:bg-theme-secondary-800 sm:space-y-0 sm:space-x-4 sm:flex-row sm:items-center`}
+		className={cls(
+			`flex overflow-hidden flex-col space-y-4 rounded-lg p-4 bg-theme-${
+				variant === "info" ? "primary" : variant
+			}-50 dark:bg-theme-secondary-800 sm:space-y-0 sm:space-x-4 sm:flex-row sm:items-center`,
+			className,
+		)}
 	>
 		<div
 			className={`h-11 w-11 flex flex-shrink-0 items-center justify-center rounded-lg text-white bg-theme-${getColorVariant(
@@ -50,14 +54,14 @@ export const Alert = ({ variant, title, size, children }: AlertProps) => (
 		>
 			<AlertIcon variant={variant} />
 		</div>
-		<div className="flex flex-col">
+		<div className="flex flex-col w-full">
 			{title && (
 				<p className="font-semibold dark:text-theme-secondary-500" data-testid="Alert__title">
 					{title}
 				</p>
 			)}
 			{children && (
-				<p className="text-sm leading-relaxed break-words dark:text-theme-secondary-500">{children}</p>
+				<div className="text-sm leading-relaxed break-words dark:text-theme-secondary-500">{children}</div>
 			)}
 		</div>
 	</div>

@@ -25,7 +25,7 @@ const getVariant = (variant: ButtonVariant, disabled: boolean): any => {
 		case "danger":
 			return tw`bg-theme-danger-100 dark:bg-theme-danger-400 hover:bg-theme-danger-400 hover:dark:bg-theme-danger-500 text-theme-danger-400 dark:text-white hover:text-white`;
 		default:
-			return tw`bg-transparent border-none`;
+			return tw`border-none`;
 	}
 };
 
