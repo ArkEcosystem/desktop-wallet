@@ -40,7 +40,7 @@ export const useProfileImport = ({ env }: { env: Environment }) => {
 			throw new Error("MissingWallets");
 		}
 
-		const profile = env.profiles().create("");
+		const profile: Contracts.IProfile = await env.profiles().create("");
 
 		await Promise.all(
 			data.wallets.map((wallet: Record<string, any>) => {
