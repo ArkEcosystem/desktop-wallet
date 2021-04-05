@@ -5,7 +5,7 @@ import { ConfigurationProvider, EnvironmentProvider } from "app/contexts";
 import { createMemoryHistory } from "history";
 import React from "react";
 import { Route } from "react-router-dom";
-import { env, getDefaultProfileId, renderWithRouter, waitFor, syncDelegates } from "utils/testing-library";
+import { env, getDefaultProfileId, renderWithRouter, syncDelegates, waitFor } from "utils/testing-library";
 
 const history = createMemoryHistory();
 const dashboardURL = `/profiles/${getDefaultProfileId()}/dashboard`;
