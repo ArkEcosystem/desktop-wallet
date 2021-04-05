@@ -69,6 +69,7 @@ export const CreateProfile = () => {
 
 	const handleSubmit = async ({ name, password, currency, isDarkMode }: any) => {
 		const profile = await env.profiles().create(name.trim());
+		console.log("handleSubmit", JSON.stringify(profile, null, 4));
 
 		profile.settings().set(Contracts.ProfileSetting.ExchangeCurrency, currency);
 		profile.settings().set(Contracts.ProfileSetting.Theme, isDarkMode ? "dark" : "light");
