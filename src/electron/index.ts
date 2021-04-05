@@ -127,10 +127,23 @@ function createWindow() {
 
 assignMenu();
 
-app.on("ready", () => {
+app.on("ready", async () => {
 	createWindow();
 	setupUpdater({ ipcMain, isDev, mainWindow });
 	handleSingleInstance({ mainWindow, broadcastURL });
+
+	console.log("Registering environment");
+	const env = new Environment({
+		coins: {
+			ARK,
+		},
+		httpClient: new HttpClient(500),
+		storage: "indexeddb",
+		driver: "memory",
+	});
+	await env.verify();
+	await env.boot();
+	setupIpc(env);
 });
 
 app.on("window-all-closed", () => {
@@ -156,17 +169,3 @@ app.setAsDefaultProtocolClient("ark", process.execPath, ["--"]);
 app.allowRendererProcessReuse = false;
 
 setupPlugins();
-
-const env = new Environment({
-	coins: {
-		ARK,
-	},
-	httpClient: new HttpClient(500),
-	storage: "indexeddb",
-	driver: "memory",
-});
-env.verify()
-	.then(() => env.boot())
-	.finally(() => "a");
-
-setupIpc(env);
