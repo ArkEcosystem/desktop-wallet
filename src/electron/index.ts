@@ -138,7 +138,7 @@ app.on("ready", async () => {
 			ARK,
 		},
 		httpClient: new HttpClient(500),
-		storage: "indexeddb",
+		storage: "memory",
 		driver: "memory",
 	});
 	await env.verify();
