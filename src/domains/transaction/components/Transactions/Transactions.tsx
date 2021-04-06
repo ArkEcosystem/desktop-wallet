@@ -7,7 +7,8 @@ import { Tab, TabList, Tabs } from "app/components/Tabs";
 import { FilterTransactions } from "domains/transaction/components/FilterTransactions";
 import { TransactionDetailModal } from "domains/transaction/components/TransactionDetailModal";
 import { TransactionTable } from "domains/transaction/components/TransactionTable";
-import React, { memo, useCallback, useEffect, useMemo, useRef, useState } from "react";
+import { useProfileTransactions } from "domains/transaction/hooks/use-profile-transactions";
+import React, { memo, useEffect, useMemo, useState } from "react";
 import { useTranslation } from "react-i18next";
 
 type TransactionsProps = {
@@ -26,70 +27,35 @@ export const Transactions = memo(
 	({ emptyText, isCompact, profile, isVisible = true, wallets, isLoading = false }: TransactionsProps) => {
 		const { t } = useTranslation();
 
-		const [selectedTransactionType, setSelectedTransactionType] = useState<any>();
-		const [activeTransactionModeTab, setActiveTransactionModeTab] = useState("all");
-		const [transactions, setTransactions] = useState<DTO.ExtendedTransactionData[]>([]);
 		const [transactionModalItem, setTransactionModalItem] = useState<DTO.ExtendedTransactionData | undefined>(
 			undefined,
 		);
-		const [isLoadingTransactions, setIsLoading] = useState(isLoading);
+
 		const exchangeCurrency = useMemo(
 			() => profile.settings().get<string>(Contracts.ProfileSetting.ExchangeCurrency),
 			[profile],
 		);
 
-		const abortRef = useRef<() => void>();
-
-		const fetchTransactions = useCallback(
-			async ({ flush, mode }: { flush: boolean; mode: string }) => {
-				if (abortRef.current) {
-					abortRef.current();
-				}
-
-				let aborted = false;
-				abortRef.current = () => (aborted = true);
-
-				const methodMap = {
-					all: "transactions",
-					sent: "sentTransactions",
-					received: "receivedTransactions",
-				};
-				const method = methodMap[mode as keyof typeof methodMap];
-
-				let currentTransactions = [...transactions];
-				setIsLoading(true);
-
-				if (flush) {
-					profile.transactionAggregate().flush(method);
-					currentTransactions = [];
-					setTransactions([]);
-				}
-
-				const defaultQuery = { limit: 30, addresses: wallets.map((wallet) => wallet.address()) };
-				const queryParams = selectedTransactionType
-					? { ...defaultQuery, ...selectedTransactionType }
-					: defaultQuery;
-
-				// @ts-ignore
-				const response = await profile.transactionAggregate()[method](queryParams);
-				const transactionsAggregate = response.items();
-
-				if (aborted) {
-					return;
-				}
-
-				setIsLoading(false);
-				setTransactions(currentTransactions.concat(transactionsAggregate));
-			},
-			[transactions, profile, selectedTransactionType, wallets],
-		);
+		const {
+			updateFilters,
+			isLoadingTransactions,
+			isLoadingMore,
+			transactions,
+			activeMode,
+			activeTransactionType,
+			fetchMore,
+		} = useProfileTransactions({ profile, wallets });
 
 		useEffect(() => {
-			if (isVisible && !isLoading) {
-				fetchTransactions({ flush: true, mode: activeTransactionModeTab });
+			if (isLoading) {
+				return;
 			}
-			// eslint-disable-next-line
-		}, [activeTransactionModeTab, selectedTransactionType, wallets.length, isLoading]);
+
+			updateFilters({
+				activeMode: "all",
+				activeTransactionType: undefined,
+			});
+		}, [isLoading, wallets.length, updateFilters]);
 
 		if (!isVisible) {
 			return <></>;
@@ -100,17 +66,33 @@ export const Transactions = memo(
 				<div className="flex relative justify-between">
 					<div className="mb-8 text-4xl font-bold">{t("DASHBOARD.TRANSACTION_HISTORY.TITLE")}</div>
 					<FilterTransactions
-						wallets={profile.wallets().values()}
+						wallets={wallets}
 						onSelect={(_, type) => {
-							setSelectedTransactionType(type);
+							updateFilters({
+								activeMode,
+								activeTransactionType: type,
+							});
 						}}
 						className="mt-6"
 					/>
 				</div>
 				<Tabs
 					className="mb-8"
-					activeId={activeTransactionModeTab}
-					onChange={(id) => setActiveTransactionModeTab(id as string)}
+					activeId={activeMode}
+					onChange={(activeTab) => {
+						if (activeTab === activeMode) {
+							return;
+						}
+
+						if (isLoading) {
+							return;
+						}
+
+						updateFilters({
+							activeMode: activeTab as string,
+							activeTransactionType,
+						});
+					}}
 				>
 					<TabList className="w-full">
 						<Tab tabId="all">{t("TRANSACTION.ALL")}</Tab>
@@ -134,20 +116,20 @@ export const Transactions = memo(
 						data-testid="transactions__fetch-more-button"
 						variant="secondary"
 						className="mt-10 mb-5 w-full"
-						disabled={isLoadingTransactions}
-						onClick={() => fetchTransactions({ flush: false, mode: activeTransactionModeTab })}
+						disabled={isLoadingMore}
+						onClick={() => fetchMore()}
 					>
-						{isLoadingTransactions ? t("COMMON.LOADING") : t("COMMON.VIEW_MORE")}
+						{isLoadingMore ? t("COMMON.LOADING") : t("COMMON.VIEW_MORE")}
 					</Button>
 				)}
 
-				{transactions.length === 0 && !selectedTransactionType && !isLoadingTransactions && (
+				{transactions.length === 0 && !activeTransactionType && !isLoadingTransactions && (
 					<EmptyBlock className="-mt-5">
 						{emptyText || t("DASHBOARD.TRANSACTION_HISTORY.EMPTY_MESSAGE")}
 					</EmptyBlock>
 				)}
 
-				{transactions.length === 0 && !!selectedTransactionType && !isLoadingTransactions && (
+				{transactions.length === 0 && !!activeTransactionType && !isLoadingTransactions && (
 					<EmptyResults
 						className="flex-1"
 						title={t("COMMON.EMPTY_RESULTS.TITLE")}
