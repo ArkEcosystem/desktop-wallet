@@ -259,3 +259,16 @@ exports[`PluginImage should render with size 'xs' 1`] = `
   </div>
 </div>
 `;
+
+exports[`PluginImage should show placeholder as fallback 1`] = `
+<div>
+  <div
+    class="PluginImage__PluginImageWrapper-iwox49-0 cNxevm"
+    data-testid="PluginImage__placeholder"
+  >
+    <svg>
+      plugin-logo-placeholder.svg
+    </svg>
+  </div>
+</div>
+`;

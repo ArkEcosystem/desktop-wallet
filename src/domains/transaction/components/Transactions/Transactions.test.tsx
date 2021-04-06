@@ -25,36 +25,60 @@ let profile: Contracts.IProfile;
 const fixtureProfileId = getDefaultProfileId();
 let dashboardURL: string;
 
-beforeAll(async () => {
-	useDefaultNetMocks();
-
-	nock("https://neoscan.io/api/main_net/v1/")
-		.get("/get_last_transactions_by_address/AdVSe37niA3uFUPgCgMUH2tMsHF4LpLoiX/1")
-		.reply(200, []);
-
-	nock("https://dwallets.ark.io")
-		.get("/api/transactions")
-		.query(true)
-		.reply(200, () => {
-			const { meta, data } = require("tests/fixtures/coins/ark/devnet/transactions.json");
-			return {
-				meta,
-				data: data.slice(0, 2),
-			};
-		})
-		.persist();
-
-	profile = env.profiles().findById(fixtureProfileId);
-
-	await syncDelegates();
-});
-
-beforeEach(() => {
-	dashboardURL = `/profiles/${fixtureProfileId}/dashboard`;
-	history.push(dashboardURL);
-});
-
 describe("Transactions", () => {
+	beforeAll(async () => {
+		useDefaultNetMocks();
+
+		nock("https://neoscan.io/api/main_net/v1/")
+			.get("/get_last_transactions_by_address/AdVSe37niA3uFUPgCgMUH2tMsHF4LpLoiX/1")
+			.reply(200, []);
+
+		const emptyResponse = {
+			meta: {},
+			data: [],
+		};
+
+		nock("https://dwallets.ark.io")
+			.get("/api/transactions?limit=30&address=D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD&type=5&typeGroup=2")
+			.reply(200, () => emptyResponse)
+			.get("/api/transactions?limit=30&address=D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb&type=5&typeGroup=2")
+			.reply(200, () => emptyResponse)
+			.persist();
+
+		nock("https://dwallets.ark.io")
+			.get("/api/transactions?page=2&limit=30&address=D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD")
+			.reply(200, () => emptyResponse)
+			.get("/api/transactions?page=2&limit=30&address=D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb")
+			.reply(200, () => emptyResponse)
+			.persist();
+
+		nock("https://dwallets.ark.io")
+			.get("/api/transactions")
+			.query(true)
+			.reply(200, () => {
+				const { meta, data } = require("tests/fixtures/coins/ark/devnet/transactions.json");
+				return {
+					meta,
+					data: data.slice(0, 2),
+				};
+			})
+			.persist();
+
+		profile = env.profiles().findById(fixtureProfileId);
+
+		await syncDelegates();
+	});
+
+	beforeEach(() => {
+		dashboardURL = `/profiles/${fixtureProfileId}/dashboard`;
+		history.push(dashboardURL);
+		jest.useFakeTimers();
+	});
+
+	afterEach(() => {
+		jest.clearAllTimers();
+	});
+
 	it("should render", async () => {
 		const { asFragment, getByTestId } = renderWithRouter(
 			<Route path="/profiles/:profileId/dashboard">
@@ -121,14 +145,13 @@ describe("Transactions", () => {
 	it("should filter by type and see empty screen", async () => {
 		const emptyProfile = env.profiles().create("test");
 		await emptyProfile.wallets().importByMnemonic("test", "ARK", "ark.devnet");
-		const emptyProfileURL = `/profiles/${emptyProfile.id()}/dashboard`;
 
 		const { getByRole, getByTestId } = renderWithRouter(
 			<Route path="/profiles/:profileId/dashboard">
-				<Transactions profile={emptyProfile} wallets={[]} />
+				<Transactions profile={profile} wallets={profile.wallets().values()} />
 			</Route>,
 			{
-				routes: [emptyProfileURL],
+				routes: [dashboardURL],
 				history,
 			},
 		);
@@ -139,10 +162,10 @@ describe("Transactions", () => {
 			fireEvent.click(getByRole("button", { name: /Type/ }));
 		});
 
-		await waitFor(() => expect(getByTestId("dropdown__option--core-0")).toBeInTheDocument());
+		await waitFor(() => expect(getByTestId("dropdown__option--core-2")).toBeInTheDocument());
 
 		act(() => {
-			fireEvent.click(getByTestId("dropdown__option--core-0"));
+			fireEvent.click(getByTestId("dropdown__option--core-2"));
 		});
 
 		await waitFor(() => expect(getByTestId("EmptyResults")).toBeInTheDocument());
@@ -190,13 +213,10 @@ describe("Transactions", () => {
 			},
 		);
 
-		await waitFor(
-			() => {
-				expect(getByTestId("transactions__fetch-more-button")).toHaveTextContent(commonTranslations.VIEW_MORE);
-				expect(within(getByTestId("TransactionTable")).getAllByTestId("TableRow")).toHaveLength(4);
-			},
-			{ timeout: 4000 },
-		);
+		await waitFor(() => {
+			expect(getByTestId("transactions__fetch-more-button")).toHaveTextContent(commonTranslations.VIEW_MORE);
+			expect(within(getByTestId("TransactionTable")).getAllByTestId("TableRow")).toHaveLength(4);
+		});
 
 		act(() => {
 			fireEvent.click(getByTestId("transactions__fetch-more-button"));
@@ -206,7 +226,7 @@ describe("Transactions", () => {
 
 		await waitFor(() => {
 			expect(getByTestId("transactions__fetch-more-button")).toHaveTextContent(commonTranslations.VIEW_MORE);
-			expect(within(getByTestId("TransactionTable")).getAllByTestId("TableRow")).toHaveLength(8);
+			expect(within(getByTestId("TransactionTable")).getAllByTestId("TableRow")).toHaveLength(4);
 		});
 
 		expect(asFragment()).toMatchSnapshot();
@@ -253,7 +273,7 @@ describe("Transactions", () => {
 				data: data.slice(0, 3),
 			}));
 
-		const { getAllByTestId, getByTestId, container } = renderWithRouter(
+		const { getAllByTestId, getByTestId } = renderWithRouter(
 			<Route path="/profiles/:profileId/dashboard">
 				<Transactions profile={profile} isLoading={false} wallets={profile.wallets().values()} />
 			</Route>,
@@ -269,5 +289,63 @@ describe("Transactions", () => {
 		fireEvent.click(getByTestId("tabs__tab-button-sent"));
 
 		await waitFor(() => expect(getAllByTestId("TableRow")).toHaveLength(1), { timeout: 1000 });
+	});
+
+	it("should filter by mode", async () => {
+		const { getByTestId } = renderWithRouter(
+			<Route path="/profiles/:profileId/dashboard">
+				<Transactions profile={profile} wallets={profile.wallets().values()} />
+			</Route>,
+			{
+				routes: [dashboardURL],
+				history,
+			},
+		);
+
+		await waitFor(() => expect(within(getByTestId("TransactionTable")).getAllByTestId("TableRow")).toHaveLength(4));
+
+		act(() => {
+			fireEvent.click(getByTestId("tabs__tab-button-sent"));
+		});
+
+		await waitFor(() => expect(within(getByTestId("TransactionTable")).getAllByTestId("TableRow")).toHaveLength(1));
+	});
+
+	it("should ignore tab change on loading state", async () => {
+		const { getByTestId } = renderWithRouter(
+			<Route path="/profiles/:profileId/dashboard">
+				<Transactions profile={profile} wallets={profile.wallets().values()} isLoading={true} />
+			</Route>,
+			{
+				routes: [dashboardURL],
+				history,
+			},
+		);
+
+		await waitFor(() => expect(within(getByTestId("TransactionTable")).getAllByTestId("TableRow")).toHaveLength(8));
+
+		act(() => {
+			fireEvent.click(getByTestId("tabs__tab-button-sent"));
+		});
+
+		await waitFor(() => expect(within(getByTestId("TransactionTable")).getAllByTestId("TableRow")).toHaveLength(8));
+	});
+
+	it("should show empty message", async () => {
+		const emptyProfile = env.profiles().create("test-empty");
+		const emptyProfileURL = `/profiles/${emptyProfile.id()}/dashboard`;
+
+		history.push(emptyProfileURL);
+		const { getByTestId } = renderWithRouter(
+			<Route path="/profiles/:profileId/dashboard">
+				<Transactions profile={emptyProfile} wallets={[]} />
+			</Route>,
+			{
+				routes: [emptyProfileURL],
+				history,
+			},
+		);
+
+		await waitFor(() => expect(getByTestId("EmptyBlock")).toBeInTheDocument());
 	});
 });

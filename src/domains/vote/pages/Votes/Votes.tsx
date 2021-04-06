@@ -35,15 +35,18 @@ export const Votes = () => {
 	const walletAddress = hasWalletId ? activeWallet.address() : "";
 	const walletMaxVotes = hasWalletId ? activeWallet.network().maximumVotesPerWallet() : undefined;
 
-	const defaultConfiguration = {
-		walletsDisplayType: "all",
-		selectedNetworkIds: uniq(
-			activeProfile
-				.wallets()
-				.values()
-				.map((wallet) => wallet.network().id()),
-		),
-	};
+	const defaultConfiguration = useMemo(
+		() => ({
+			walletsDisplayType: "all",
+			selectedNetworkIds: uniq(
+				activeProfile
+					.wallets()
+					.values()
+					.map((wallet) => wallet.network().id()),
+			),
+		}),
+		[activeProfile],
+	);
 
 	const [searchQuery, setSearchQuery] = useState("");
 
@@ -169,8 +172,10 @@ export const Votes = () => {
 	}, [loadVotes, selectedAddress]);
 
 	const loadDelegates = useCallback(
-		(wallet) => {
+		async (wallet) => {
 			setIsLoadingDelegates(true);
+			// eslint-disable-next-line @typescript-eslint/no-non-null-asserted-optional-chain
+			await env.delegates().sync(wallet?.coinId()!, wallet?.networkId()!);
 			// eslint-disable-next-line @typescript-eslint/no-non-null-asserted-optional-chain
 			const delegates = env.delegates().all(wallet?.coinId()!, wallet?.networkId()!);
 			setDelegates(delegates);
@@ -307,15 +312,16 @@ export const Votes = () => {
 				<Section>
 					<EmptyBlock>
 						<div className="flex items-center justify-between">
-							<Trans
-								i18nKey="VOTE.VOTES_PAGE.EMPTY_MESSAGE"
-								defaults="Your must first <bold>{{create}}</bold> or <bold>{{import}}</bold> an address to view your current voting status"
-								values={{
-									create: t("DASHBOARD.WALLET_CONTROLS.CREATE"),
-									import: t("DASHBOARD.WALLET_CONTROLS.IMPORT"),
-								}}
-								components={{ bold: <strong /> }}
-							/>
+							<span>
+								<Trans
+									i18nKey="VOTE.VOTES_PAGE.EMPTY_MESSAGE"
+									values={{
+										create: t("DASHBOARD.WALLET_CONTROLS.CREATE"),
+										import: t("DASHBOARD.WALLET_CONTROLS.IMPORT"),
+									}}
+									components={{ bold: <strong /> }}
+								/>
+							</span>
 
 							<div className="flex -m-3 space-x-3">
 								<Button

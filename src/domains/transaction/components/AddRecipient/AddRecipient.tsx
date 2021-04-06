@@ -28,8 +28,8 @@ const ToggleButtons = ({ isSingle, onChange }: ToggleButtonProps) => {
 				</div>
 				<div>
 					<Tooltip content={t("TRANSACTION.RECIPIENTS_HELPTEXT", { count: 64 })}>
-						<div className="rounded-full cursor-pointer text-theme-primary-600 hover:text-theme-primary-100 questionmark">
-							<Icon name="QuestionMark" width={20} height={20} />
+						<div className="rounded-full cursor-pointer bg-theme-primary-100 hover:bg-theme-primary-200 dark:bg-theme-secondary-800 text-theme-primary-600 dark:text-theme-secondary-200 flex items-center justify-center w-5 h-5 questionmark">
+							<Icon width={10} height={10} name="QuestionMark" />
 						</div>
 					</Tooltip>
 				</div>
@@ -81,7 +81,7 @@ export const AddRecipient = ({
 }: AddRecipientProps) => {
 	const { t } = useTranslation();
 	const [addedRecipients, setAddedRecipients] = useState<RecipientListItem[]>([]);
-	const [isSingle, setIsSingle] = useState(recipients!.length === 0);
+	const [isSingle, setIsSingle] = useState(recipients!.length <= 1);
 	const [recipientsAmount, setRecipientsAmount] = useState<any>();
 	const isMountedRef = useRef(false);
 

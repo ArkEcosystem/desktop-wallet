@@ -2,7 +2,7 @@ import { CircularProgressBar } from "app/components/CircularProgressBar";
 import { Image } from "app/components/Image";
 import { useTheme } from "app/hooks";
 import cn from "classnames";
-import React, { useMemo } from "react";
+import React, { useMemo, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { styled } from "twin.macro";
 import { Size } from "types";
@@ -44,6 +44,8 @@ export const PluginImage = ({
 		[isDarkMode],
 	);
 
+	const [hasError, setHasError] = useState(false);
+
 	if (isUpdating) {
 		return (
 			<PluginImageWrapper
@@ -71,7 +73,7 @@ export const PluginImage = ({
 		);
 	}
 
-	if (!logoURL) {
+	if (hasError || !logoURL) {
 		return (
 			<PluginImageWrapper
 				size={size}
@@ -89,7 +91,7 @@ export const PluginImage = ({
 			className={cn({ "filter-grayscale": !isEnabled }, className)}
 			data-testid="PluginImage__logo"
 		>
-			<img src={logoURL} alt="Logo" className="object-cover w-full h-full" />
+			<img src={logoURL} alt="Logo" className="object-cover w-full h-full" onError={() => setHasError(true)} />
 		</PluginImageWrapper>
 	);
 };

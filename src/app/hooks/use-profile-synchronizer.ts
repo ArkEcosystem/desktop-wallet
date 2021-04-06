@@ -37,14 +37,11 @@ const useProfileJobs = (profile?: Contracts.IProfile) => {
 			return [];
 		}
 
+		// Syncing delegates is necessary for every domain not only votes,
+		// Because it's used in wallet and transaction lists
 		const syncDelegates = {
 			callback: () => env.delegates().syncAll(),
 			interval: Intervals.Long,
-		};
-
-		const syncFees = {
-			callback: () => env.fees().syncAll(),
-			interval: Intervals.Medium,
 		};
 
 		const syncExchangeRates = {
@@ -55,14 +52,9 @@ const useProfileJobs = (profile?: Contracts.IProfile) => {
 			interval: Intervals.Long,
 		};
 
-		const syncWallets = {
-			callback: () => env.wallets().syncByProfile(profile),
-			interval: Intervals.Short,
-		};
-
 		const syncNotifications = {
 			callback: () => notifications.notifyReceivedTransactions({ profile }),
-			interval: Intervals.Short,
+			interval: Intervals.Long,
 		};
 
 		const syncKnownWallets = {
@@ -70,7 +62,7 @@ const useProfileJobs = (profile?: Contracts.IProfile) => {
 			interval: Intervals.Long,
 		};
 
-		return [syncWallets, syncFees, syncDelegates, syncExchangeRates, syncNotifications, syncKnownWallets];
+		return [syncExchangeRates, syncNotifications, syncKnownWallets, syncDelegates];
 	}, [env, profile, walletsCount, notifications]); // eslint-disable-line react-hooks/exhaustive-deps
 };
 
@@ -236,7 +228,7 @@ export const useProfileSynchronizer = ({ onProfileRestoreError }: ProfileSynchro
 			if (shouldSync()) {
 				setStatus("syncing");
 
-				await runAll();
+				runAll();
 
 				setStatus("synced");
 			}

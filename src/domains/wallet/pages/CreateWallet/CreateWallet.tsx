@@ -8,18 +8,18 @@ import { useEnvironmentContext } from "app/contexts";
 import { useActiveProfile, useProfileUtils } from "app/hooks";
 import { useWalletConfig } from "domains/dashboard/hooks";
 import { EncryptPasswordStep } from "domains/wallet/components/EncryptPasswordStep";
+import { NetworkStep } from "domains/wallet/components/NetworkStep";
 import React, { useCallback, useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import { useTranslation } from "react-i18next";
 import { useHistory } from "react-router-dom";
 
 import { ConfirmPassphraseStep } from "./ConfirmPassphraseStep";
-import { SelectNetworkStep } from "./SelectNetworkStep";
 import { SuccessStep } from "./SuccessStep";
 import { WalletOverviewStep } from "./WalletOverviewStep";
 
 export const CreateWallet = () => {
-	const { env, persist } = useEnvironmentContext();
+	const { persist } = useEnvironmentContext();
 	const history = useHistory();
 	const { t } = useTranslation();
 
@@ -37,7 +37,7 @@ export const CreateWallet = () => {
 	const { isSubmitting, isValid } = formState;
 
 	const [isGeneratingWallet, setIsGeneratingWallet] = useState(false);
-	const [showError, setShowError] = useState(false);
+	const [generationError, setGenerationError] = useState("");
 
 	useEffect(() => {
 		register("network", { required: true });
@@ -60,7 +60,7 @@ export const CreateWallet = () => {
 					.wallets()
 					.importByMnemonicWithEncryption(mnemonic, coin, network, encryptionPassword);
 			} catch (error) {
-				setShowError(true);
+				setGenerationError(t("WALLETS.PAGE_CREATE_WALLET.NETWORK_STEP.GENERATION_ERROR"));
 			}
 		}
 
@@ -119,14 +119,14 @@ export const CreateWallet = () => {
 		const newIndex = activeTab + 1;
 
 		if (newIndex === 2) {
-			setShowError(false);
+			setGenerationError("");
 			setIsGeneratingWallet(true);
 
 			try {
 				await generateWallet();
 				setActiveTab(newIndex);
 			} catch {
-				setShowError(true);
+				setGenerationError(t("WALLETS.PAGE_CREATE_WALLET.NETWORK_STEP.GENERATION_ERROR"));
 			} finally {
 				setIsGeneratingWallet(false);
 			}
@@ -149,11 +149,12 @@ export const CreateWallet = () => {
 
 						<div className="mt-8">
 							<TabPanel tabId={1}>
-								<SelectNetworkStep
-									env={env}
+								<NetworkStep
 									profile={activeProfile}
-									isLoading={isGeneratingWallet}
-									showError={showError}
+									title={t("WALLETS.PAGE_CREATE_WALLET.NETWORK_STEP.TITLE")}
+									subtitle={t("WALLETS.PAGE_CREATE_WALLET.NETWORK_STEP.SUBTITLE")}
+									disabled={isGeneratingWallet}
+									error={generationError}
 								/>
 							</TabPanel>
 							<TabPanel tabId={2}>

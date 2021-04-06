@@ -64,6 +64,11 @@ export const translations: { [key: string]: any } = {
 	CORE: "CORE",
 	MAGISTRATE: "Magistrate",
 
+	EXPIRATION: {
+		HEIGHT: "Block Height Expiration",
+		TIMESTAMP: "Timestamp Expiration",
+	},
+
 	MULTISIGNATURE: {
 		GENERATED_ADDRESS: "Generated Address",
 		AWAITING_CONFIRMATIONS: "Awaiting confirmations",
@@ -198,7 +203,7 @@ export const translations: { [key: string]: any } = {
 	MODAL_SEARCH_RECIPIENT: {
 		TITLE: "Select Recipient",
 		DESCRIPTION: "Find and select a recipient from your contacts and wallets",
-		SEARCH_PLACEHOLDER: "Enter the name or address",
+		SEARCH_PLACEHOLDER: "Enter name or address",
 	},
 
 	LEDGER_CONFIRMATION: {

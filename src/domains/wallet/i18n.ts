@@ -41,7 +41,7 @@ export const translations: { [key: string]: any } = {
 	MODAL_SELECT_ACCOUNT: {
 		TITLE: "Select Account",
 		DESCRIPTION: "Locate and select the address for receiving funds.",
-		SEARCH_PLACEHOLDER: "Enter the name or address for your wallet",
+		SEARCH_PLACEHOLDER: "Enter name or address",
 	},
 
 	MODAL_SIGN_MESSAGE: {
@@ -86,7 +86,7 @@ export const translations: { [key: string]: any } = {
 	PAGE_CREATE_WALLET: {
 		TITLE: "Create Wallet",
 
-		CRYPTOASSET_STEP: {
+		NETWORK_STEP: {
 			TITLE: "Select a Cryptoasset",
 			SUBTITLE: "Select a cryptoasset to create your new wallet address.",
 			GENERATION_ERROR:
@@ -131,7 +131,7 @@ export const translations: { [key: string]: any } = {
 			CONFIRM_PASSWORD_LABEL: "Confirm Encryption Password",
 		},
 
-		CRYPTOASSET_STEP: {
+		NETWORK_STEP: {
 			TITLE: "Select a Cryptoasset",
 			SUBTITLE: "Select a cryptoasset to import your existing wallet address.",
 		},

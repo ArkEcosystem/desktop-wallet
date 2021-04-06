@@ -69,6 +69,7 @@ export const translations: { [key: string]: any } = {
 	},
 	EXCHANGE: "Exchange",
 	EXPLORER: "Explorer",
+	EXPIRATION: "Expiration",
 	FAILED_FETCH: "Failed to fetch {{name}}. Reason {{msg}}",
 	FAILED_UPDATE: "Failed to update {{name}}. Reason: {{reason}}",
 	FAVORITES: "Favorites",
@@ -290,6 +291,13 @@ export const translations: { [key: string]: any } = {
 		VALIDATION: {
 			NOT_VALID: "The address is not valid",
 			ADDRESS_ALREADY_EXISTS: "Address {{address}} already exists",
+		},
+	},
+
+	INPUT_NETWORK: {
+		PLACEHOLDER: "Enter a cryptoasset name",
+		VALIDATION: {
+			NETWORK_NOT_FOUND: "No cryptoasset with this name found",
 		},
 	},
 

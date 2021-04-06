@@ -13,11 +13,18 @@ type SyncReceivedTransactionsParams = {
 type NotifyReceivedTransactionsParams = SyncReceivedTransactionsParams & { profile: ProfileContracts.IProfile };
 
 const fetchRecentProfileTransactions = async (profile: ProfileContracts.IProfile, limit: number) => {
-	const fetchWalletRecentTransactions = async (wallet: ProfileContracts.IReadWriteWallet) =>
-		(await wallet.client().transactions({ limit })).items();
+	const query = {
+		cursor: 1,
+		orderBy: "timestamp",
+		limit,
+		addresses: profile
+			.wallets()
+			.values()
+			.map((wallet) => wallet.address()),
+	};
 
-	const allWalletTransactions = await Promise.all(profile.wallets().values().map(fetchWalletRecentTransactions));
-	return allWalletTransactions.flat();
+	const recentTransactions = await profile.transactionAggregate().transactions(query);
+	return recentTransactions.items();
 };
 
 const isRecipient = (profile: ProfileContracts.IProfile, transaction: Contracts.TransactionDataType) => {
@@ -82,7 +89,7 @@ const filterUnseenTransactions = (
 
 const notifyReceivedTransactions: any = async ({
 	profile,
-	lookupLimit = 20,
+	lookupLimit = 10,
 	allowedTransactionTypes = ["transfer", "multiPayment"],
 }: NotifyReceivedTransactionsParams) => {
 	const allRecentTransactions = await fetchRecentProfileTransactions(profile, lookupLimit);

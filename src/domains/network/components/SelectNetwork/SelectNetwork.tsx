@@ -20,6 +20,7 @@ type SelectNetworkProps = {
 	id?: string;
 	disabled?: boolean;
 	hideOptions?: boolean;
+	onInputChange?: (value?: string, suggestion?: string) => void;
 	onSelect?: (network?: Coins.Network | null) => void;
 };
 
@@ -29,6 +30,7 @@ export const SelectNetwork = ({
 	selected,
 	networks,
 	placeholder,
+	onInputChange,
 	onSelect,
 	name,
 	id,
@@ -36,7 +38,9 @@ export const SelectNetwork = ({
 	hideOptions,
 }: SelectNetworkProps) => {
 	const { t } = useTranslation();
+
 	const [items, setItems] = useState<Network[]>([]);
+	const [suggestion, setSuggestion] = useState("");
 
 	const extendedItems = useMemo(
 		() =>
@@ -75,6 +79,21 @@ export const SelectNetwork = ({
 			if (selectedItem && selectedItem.extra?.displayName !== inputValue) {
 				reset();
 			}
+
+			if (!inputValue) {
+				setSuggestion("");
+				return onInputChange?.();
+			}
+
+			let newSuggestion: string | undefined = undefined;
+
+			const matches = items.filter((network: Coins.Network) => isMatch(inputValue, network));
+			if (inputValue && matches.length > 0) {
+				newSuggestion = [inputValue, matches[0].extra?.displayName?.slice(inputValue.length)].join("");
+				setSuggestion(newSuggestion);
+			}
+
+			onInputChange?.(inputValue, newSuggestion);
 		},
 	});
 
@@ -84,6 +103,7 @@ export const SelectNetwork = ({
 
 	const toggleSelection = (item: Coins.Network) => {
 		if (item.id() === selectedItem?.id()) {
+			setSuggestion("");
 			reset();
 			openMenu();
 			return;
@@ -93,13 +113,6 @@ export const SelectNetwork = ({
 
 	const publicNetworks = items.filter((network) => network.isLive());
 	const developmentNetworks = items.filter((network) => !network.isLive());
-
-	const suggestion = React.useMemo(() => {
-		const matches = items.filter((network: Coins.Network) => isMatch(inputValue, network));
-		if (inputValue && matches.length > 0) {
-			return [inputValue, matches[0].extra?.displayName?.slice(inputValue.length)].join("");
-		}
-	}, [items, inputValue]);
 
 	const optionClassName = (network: Network) => {
 		if (selectedItem) {
@@ -130,7 +143,7 @@ export const SelectNetwork = ({
 					disabled={disabled}
 					{...getInputProps({
 						name,
-						placeholder,
+						placeholder: placeholder || t("COMMON.INPUT_NETWORK.PLACEHOLDER"),
 						onFocus: openMenu,
 						onKeyDown: (event: any) => {
 							if (event.key === "Tab" || event.key === "Enter") {
@@ -196,6 +209,5 @@ export const SelectNetwork = ({
 
 SelectNetwork.defaultProps = {
 	networks: [],
-	placeholder: "Enter a cryptoasset name",
 	disabled: false,
 };

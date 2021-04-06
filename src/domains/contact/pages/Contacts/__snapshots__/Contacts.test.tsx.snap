@@ -309,6 +309,7 @@ exports[`Contacts should render with contacts 1`] = `
                     <button
                       class="my-auto h-full font-semibold cursor-pointer focus:outline-none"
                       data-testid="header-search-bar__button"
+                      type="button"
                     >
                       <div
                         class="group"
@@ -623,30 +624,49 @@ exports[`Contacts should render with contacts 1`] = `
                         class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 kjTmcB justify-end"
                       >
                         <div
-                          class="relative"
+                          class="flex items-center space-x-2"
                         >
-                          <span
-                            data-testid="dropdown__toggle"
+                          <button
+                            class="OriginalButton__StyledButton-sc-1y2wptt-0 hsoUax"
+                            data-testid="ContactListItem__send-button"
+                            type="button"
                           >
-                            <button
-                              class="OriginalButton__StyledButton-sc-1y2wptt-0 koEywu"
-                              type="button"
+                            <div
+                              class="flex relative items-center space-x-2"
                             >
-                              <div
-                                class="flex relative items-center space-x-2"
+                              Send
+                            </div>
+                          </button>
+                          <div
+                            class="visible"
+                          >
+                            <div
+                              class="relative"
+                            >
+                              <span
+                                data-testid="dropdown__toggle"
                               >
-                                <div
-                                  class="sc-bdfBwQ iyevwF"
-                                  height="20"
-                                  width="20"
+                                <button
+                                  class="OriginalButton__StyledButton-sc-1y2wptt-0 koEywu"
+                                  type="button"
                                 >
-                                  <svg>
-                                    settings.svg
-                                  </svg>
-                                </div>
-                              </div>
-                            </button>
-                          </span>
+                                  <div
+                                    class="flex relative items-center space-x-2"
+                                  >
+                                    <div
+                                      class="sc-bdfBwQ iyevwF"
+                                      height="20"
+                                      width="20"
+                                    >
+                                      <svg>
+                                        settings.svg
+                                      </svg>
+                                    </div>
+                                  </div>
+                                </button>
+                              </span>
+                            </div>
+                          </div>
                         </div>
                       </div>
                     </td>
@@ -776,30 +796,49 @@ exports[`Contacts should render with contacts 1`] = `
                         class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 kjTmcB justify-end"
                       >
                         <div
-                          class="relative"
+                          class="flex items-center space-x-2"
                         >
-                          <span
-                            data-testid="dropdown__toggle"
+                          <button
+                            class="OriginalButton__StyledButton-sc-1y2wptt-0 hsoUax"
+                            data-testid="ContactListItem__send-button"
+                            type="button"
                           >
-                            <button
-                              class="OriginalButton__StyledButton-sc-1y2wptt-0 koEywu"
-                              type="button"
+                            <div
+                              class="flex relative items-center space-x-2"
                             >
-                              <div
-                                class="flex relative items-center space-x-2"
+                              Send
+                            </div>
+                          </button>
+                          <div
+                            class="visible"
+                          >
+                            <div
+                              class="relative"
+                            >
+                              <span
+                                data-testid="dropdown__toggle"
                               >
-                                <div
-                                  class="sc-bdfBwQ iyevwF"
-                                  height="20"
-                                  width="20"
+                                <button
+                                  class="OriginalButton__StyledButton-sc-1y2wptt-0 koEywu"
+                                  type="button"
                                 >
-                                  <svg>
-                                    settings.svg
-                                  </svg>
-                                </div>
-                              </div>
-                            </button>
-                          </span>
+                                  <div
+                                    class="flex relative items-center space-x-2"
+                                  >
+                                    <div
+                                      class="sc-bdfBwQ iyevwF"
+                                      height="20"
+                                      width="20"
+                                    >
+                                      <svg>
+                                        settings.svg
+                                      </svg>
+                                    </div>
+                                  </div>
+                                </button>
+                              </span>
+                            </div>
+                          </div>
                         </div>
                       </div>
                     </td>
@@ -905,7 +944,53 @@ exports[`Contacts should render with contacts 1`] = `
                     >
                       <div
                         class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 kjTmcB justify-end"
-                      />
+                      >
+                        <div
+                          class="flex items-center space-x-2"
+                        >
+                          <button
+                            class="OriginalButton__StyledButton-sc-1y2wptt-0 hsoUax"
+                            data-testid="ContactListItem__send-button"
+                            type="button"
+                          >
+                            <div
+                              class="flex relative items-center space-x-2"
+                            >
+                              Send
+                            </div>
+                          </button>
+                          <div
+                            class="invisible"
+                          >
+                            <div
+                              class="relative"
+                            >
+                              <span
+                                data-testid="dropdown__toggle"
+                              >
+                                <button
+                                  class="OriginalButton__StyledButton-sc-1y2wptt-0 koEywu"
+                                  type="button"
+                                >
+                                  <div
+                                    class="flex relative items-center space-x-2"
+                                  >
+                                    <div
+                                      class="sc-bdfBwQ iyevwF"
+                                      height="20"
+                                      width="20"
+                                    >
+                                      <svg>
+                                        settings.svg
+                                      </svg>
+                                    </div>
+                                  </div>
+                                </button>
+                              </span>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
                     </td>
                   </tr>
                   <tr
@@ -1009,7 +1094,53 @@ exports[`Contacts should render with contacts 1`] = `
                     >
                       <div
                         class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 kjTmcB justify-end"
-                      />
+                      >
+                        <div
+                          class="flex items-center space-x-2"
+                        >
+                          <button
+                            class="OriginalButton__StyledButton-sc-1y2wptt-0 hsoUax"
+                            data-testid="ContactListItem__send-button"
+                            type="button"
+                          >
+                            <div
+                              class="flex relative items-center space-x-2"
+                            >
+                              Send
+                            </div>
+                          </button>
+                          <div
+                            class="invisible"
+                          >
+                            <div
+                              class="relative"
+                            >
+                              <span
+                                data-testid="dropdown__toggle"
+                              >
+                                <button
+                                  class="OriginalButton__StyledButton-sc-1y2wptt-0 koEywu"
+                                  type="button"
+                                >
+                                  <div
+                                    class="flex relative items-center space-x-2"
+                                  >
+                                    <div
+                                      class="sc-bdfBwQ iyevwF"
+                                      height="20"
+                                      width="20"
+                                    >
+                                      <svg>
+                                        settings.svg
+                                      </svg>
+                                    </div>
+                                  </div>
+                                </button>
+                              </span>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
                     </td>
                   </tr>
                 </tbody>
