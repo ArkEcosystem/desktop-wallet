@@ -37,13 +37,13 @@ exports[`WalletOverviewStep Render step should render 1`] = `
         </div>
       </div>
       <div
-        class="flex flex-col"
+        class="flex flex-col w-full"
       >
-        <p
+        <div
           class="text-sm leading-relaxed break-words dark:text-theme-secondary-500"
         >
           You are responsible for storing and protecting this mnemonic passphrase offline. The ARK Desktop Wallet cannot reveal this to you at a later time. If you lose this mnemonic passphrase, you will lose your funds.
-        </p>
+        </div>
       </div>
     </div>
     <ul

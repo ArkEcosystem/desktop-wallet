@@ -1,0 +1,325 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ToastService should call toast error method 1`] = `
+<div>
+  <div
+    class="Toastify"
+  >
+    <div
+      class="Toastify__toast-container Toastify__toast-container--bottom-right"
+    >
+      <div
+        class="Toastify__toast Toastify__toast--default"
+        id="snoyxv3d22"
+        style="animation-fill-mode: forwards; animation-duration: 750ms;"
+      >
+        <div
+          class="Toastify__toast-body"
+          role="alert"
+        >
+          <div
+            class="flex overflow-hidden flex-col space-y-4 rounded-lg p-4 bg-theme-danger-50 dark:bg-theme-secondary-800 sm:space-y-0 sm:space-x-4 sm:flex-row sm:items-center border border-transparent shadow-sm dark:shadow-none dark:border-theme-danger-200"
+          >
+            <div
+              class="h-11 w-11 flex flex-shrink-0 items-center justify-center rounded-lg text-white bg-theme-danger-400"
+            >
+              <div
+                class="sc-bdfBwQ hteSKx"
+                height="1.25em"
+                width="1.25em"
+              >
+                <svg>
+                  alert-danger.svg
+                </svg>
+              </div>
+            </div>
+            <div
+              class="flex flex-col w-full"
+            >
+              <div
+                class="text-sm leading-relaxed break-words dark:text-theme-secondary-500"
+              >
+                <div
+                  class="flex items-center space-x-4"
+                >
+                  <div
+                    class="flex-1 text-theme-text"
+                  >
+                    error
+                  </div>
+                  <button
+                    class="OriginalButton__StyledButton-sc-1y2wptt-0 lpqSIM w-11 h-11 text-theme-secondary-900 bg-theme-danger-100 dark:bg-theme-secondary-700 dark:text-theme-secondary-200"
+                    data-testid="ToastMessage__close-button"
+                    type="button"
+                  >
+                    <div
+                      class="flex relative items-center space-x-2"
+                    >
+                      <div
+                        class="sc-bdfBwQ bfBhNR"
+                        height="14"
+                        width="14"
+                      >
+                        <svg>
+                          cross-slim.svg
+                        </svg>
+                      </div>
+                    </div>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="Toastify__progress-bar Toastify__progress-bar--animated Toastify__progress-bar--default"
+          style="animation-duration: 5000ms; animation-play-state: running; opacity: 0;"
+        />
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`ToastService should call toast info method 1`] = `
+<div>
+  <div
+    class="Toastify"
+  >
+    <div
+      class="Toastify__toast-container Toastify__toast-container--bottom-right"
+    >
+      <div
+        class="Toastify__toast Toastify__toast--default"
+        id="55hqbo7uk3"
+        style="animation-fill-mode: forwards; animation-duration: 750ms;"
+      >
+        <div
+          class="Toastify__toast-body"
+          role="alert"
+        >
+          <div
+            class="flex overflow-hidden flex-col space-y-4 rounded-lg p-4 bg-theme-primary-50 dark:bg-theme-secondary-800 sm:space-y-0 sm:space-x-4 sm:flex-row sm:items-center border border-transparent shadow-sm dark:shadow-none dark:border-theme-primary-200"
+          >
+            <div
+              class="h-11 w-11 flex flex-shrink-0 items-center justify-center rounded-lg text-white bg-theme-primary-600"
+            >
+              <div
+                class="sc-bdfBwQ hteSKx"
+                height="1.25em"
+                width="1.25em"
+              >
+                <svg>
+                  alert-info.svg
+                </svg>
+              </div>
+            </div>
+            <div
+              class="flex flex-col w-full"
+            >
+              <div
+                class="text-sm leading-relaxed break-words dark:text-theme-secondary-500"
+              >
+                <div
+                  class="flex items-center space-x-4"
+                >
+                  <div
+                    class="flex-1 text-theme-text"
+                  >
+                    info
+                  </div>
+                  <button
+                    class="OriginalButton__StyledButton-sc-1y2wptt-0 lpqSIM w-11 h-11 text-theme-secondary-900 bg-theme-primary-100 dark:bg-theme-secondary-700 dark:text-theme-secondary-200"
+                    data-testid="ToastMessage__close-button"
+                    type="button"
+                  >
+                    <div
+                      class="flex relative items-center space-x-2"
+                    >
+                      <div
+                        class="sc-bdfBwQ bfBhNR"
+                        height="14"
+                        width="14"
+                      >
+                        <svg>
+                          cross-slim.svg
+                        </svg>
+                      </div>
+                    </div>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="Toastify__progress-bar Toastify__progress-bar--animated Toastify__progress-bar--default"
+          style="animation-duration: 5000ms; animation-play-state: running; opacity: 0;"
+        />
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`ToastService should call toast success method 1`] = `
+<div>
+  <div
+    class="Toastify"
+  >
+    <div
+      class="Toastify__toast-container Toastify__toast-container--bottom-right"
+    >
+      <div
+        class="Toastify__toast Toastify__toast--default"
+        id="u3kbd79oto"
+        style="animation-fill-mode: forwards; animation-duration: 750ms;"
+      >
+        <div
+          class="Toastify__toast-body"
+          role="alert"
+        >
+          <div
+            class="flex overflow-hidden flex-col space-y-4 rounded-lg p-4 bg-theme-success-50 dark:bg-theme-secondary-800 sm:space-y-0 sm:space-x-4 sm:flex-row sm:items-center border border-transparent shadow-sm dark:shadow-none dark:border-theme-success-200"
+          >
+            <div
+              class="h-11 w-11 flex flex-shrink-0 items-center justify-center rounded-lg text-white bg-theme-success-600"
+            >
+              <div
+                class="sc-bdfBwQ hteSKx"
+                height="1.25em"
+                width="1.25em"
+              >
+                <svg>
+                  alert-success.svg
+                </svg>
+              </div>
+            </div>
+            <div
+              class="flex flex-col w-full"
+            >
+              <div
+                class="text-sm leading-relaxed break-words dark:text-theme-secondary-500"
+              >
+                <div
+                  class="flex items-center space-x-4"
+                >
+                  <div
+                    class="flex-1 text-theme-text"
+                  >
+                    success
+                  </div>
+                  <button
+                    class="OriginalButton__StyledButton-sc-1y2wptt-0 lpqSIM w-11 h-11 text-theme-secondary-900 bg-theme-success-200 dark:bg-theme-secondary-700 dark:text-theme-secondary-200"
+                    data-testid="ToastMessage__close-button"
+                    type="button"
+                  >
+                    <div
+                      class="flex relative items-center space-x-2"
+                    >
+                      <div
+                        class="sc-bdfBwQ bfBhNR"
+                        height="14"
+                        width="14"
+                      >
+                        <svg>
+                          cross-slim.svg
+                        </svg>
+                      </div>
+                    </div>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="Toastify__progress-bar Toastify__progress-bar--animated Toastify__progress-bar--default"
+          style="animation-duration: 5000ms; animation-play-state: running; opacity: 0;"
+        />
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`ToastService should call toast warning method 1`] = `
+<div>
+  <div
+    class="Toastify"
+  >
+    <div
+      class="Toastify__toast-container Toastify__toast-container--bottom-right"
+    >
+      <div
+        class="Toastify__toast Toastify__toast--default"
+        id="fxf8hpq85j"
+        style="animation-fill-mode: forwards; animation-duration: 750ms;"
+      >
+        <div
+          class="Toastify__toast-body"
+          role="alert"
+        >
+          <div
+            class="flex overflow-hidden flex-col space-y-4 rounded-lg p-4 bg-theme-warning-50 dark:bg-theme-secondary-800 sm:space-y-0 sm:space-x-4 sm:flex-row sm:items-center border border-transparent shadow-sm dark:shadow-none dark:border-theme-warning-200"
+          >
+            <div
+              class="h-11 w-11 flex flex-shrink-0 items-center justify-center rounded-lg text-white bg-theme-warning-600"
+            >
+              <div
+                class="sc-bdfBwQ hteSKx"
+                height="1.25em"
+                width="1.25em"
+              >
+                <svg>
+                  alert-warning.svg
+                </svg>
+              </div>
+            </div>
+            <div
+              class="flex flex-col w-full"
+            >
+              <div
+                class="text-sm leading-relaxed break-words dark:text-theme-secondary-500"
+              >
+                <div
+                  class="flex items-center space-x-4"
+                >
+                  <div
+                    class="flex-1 text-theme-text"
+                  >
+                    warning
+                  </div>
+                  <button
+                    class="OriginalButton__StyledButton-sc-1y2wptt-0 lpqSIM w-11 h-11 text-theme-secondary-900 bg-theme-warning-100 dark:bg-theme-secondary-700 dark:text-theme-secondary-200"
+                    data-testid="ToastMessage__close-button"
+                    type="button"
+                  >
+                    <div
+                      class="flex relative items-center space-x-2"
+                    >
+                      <div
+                        class="sc-bdfBwQ bfBhNR"
+                        height="14"
+                        width="14"
+                      >
+                        <svg>
+                          cross-slim.svg
+                        </svg>
+                      </div>
+                    </div>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="Toastify__progress-bar Toastify__progress-bar--animated Toastify__progress-bar--default"
+          style="animation-duration: 5000ms; animation-play-state: running; opacity: 0;"
+        />
+      </div>
+    </div>
+  </div>
+</div>
+`;

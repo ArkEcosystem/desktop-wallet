@@ -107,7 +107,7 @@ exports[`PluginDetails should render properly 1`] = `
                     class="NavigationBar__NavigationButtonWrapper-sc-1qsoskw-1 eUPnft group"
                   >
                     <button
-                      class="OriginalButton__StyledButton-sc-1y2wptt-0 fmvKKh"
+                      class="OriginalButton__StyledButton-sc-1y2wptt-0 lpqSIM"
                       data-testid="navbar__buttons--notifications"
                       type="button"
                     >
@@ -146,7 +146,7 @@ exports[`PluginDetails should render properly 1`] = `
                 class="NavigationBar__NavigationButtonWrapper-sc-1qsoskw-1 eUPnft"
               >
                 <button
-                  class="OriginalButton__StyledButton-sc-1y2wptt-0 fmvKKh"
+                  class="OriginalButton__StyledButton-sc-1y2wptt-0 lpqSIM"
                   data-testid="navbar__buttons--send"
                   type="button"
                 >
@@ -176,7 +176,7 @@ exports[`PluginDetails should render properly 1`] = `
                 class="NavigationBar__NavigationButtonWrapper-sc-1qsoskw-1 eUPnft"
               >
                 <button
-                  class="OriginalButton__StyledButton-sc-1y2wptt-0 fmvKKh"
+                  class="OriginalButton__StyledButton-sc-1y2wptt-0 lpqSIM"
                   data-testid="navbar__buttons--receive"
                   type="button"
                 >
@@ -518,7 +518,7 @@ exports[`PluginDetails should render properly 1`] = `
                 </div>
               </div>
               <div
-                class="flex flex-col"
+                class="flex flex-col w-full"
               >
                 <p
                   class="font-semibold dark:text-theme-secondary-500"
@@ -526,11 +526,11 @@ exports[`PluginDetails should render properly 1`] = `
                 >
                   Disclaimer
                 </p>
-                <p
+                <div
                   class="text-sm leading-relaxed break-words dark:text-theme-secondary-500"
                 >
                   The availability of this Plugin in the ARK Desktop Wallet does not mean that either ARK.io or ARK SCIC is directly involved in its development or developers. By installing it, you assume any associated risks.
-                </p>
+                </div>
               </div>
             </div>
           </div>
@@ -648,7 +648,7 @@ exports[`PluginDetails should render properly for remote package 1`] = `
                     class="NavigationBar__NavigationButtonWrapper-sc-1qsoskw-1 eUPnft group"
                   >
                     <button
-                      class="OriginalButton__StyledButton-sc-1y2wptt-0 fmvKKh"
+                      class="OriginalButton__StyledButton-sc-1y2wptt-0 lpqSIM"
                       data-testid="navbar__buttons--notifications"
                       type="button"
                     >
@@ -687,7 +687,7 @@ exports[`PluginDetails should render properly for remote package 1`] = `
                 class="NavigationBar__NavigationButtonWrapper-sc-1qsoskw-1 eUPnft"
               >
                 <button
-                  class="OriginalButton__StyledButton-sc-1y2wptt-0 fmvKKh"
+                  class="OriginalButton__StyledButton-sc-1y2wptt-0 lpqSIM"
                   data-testid="navbar__buttons--send"
                   type="button"
                 >
@@ -717,7 +717,7 @@ exports[`PluginDetails should render properly for remote package 1`] = `
                 class="NavigationBar__NavigationButtonWrapper-sc-1qsoskw-1 eUPnft"
               >
                 <button
-                  class="OriginalButton__StyledButton-sc-1y2wptt-0 fmvKKh"
+                  class="OriginalButton__StyledButton-sc-1y2wptt-0 lpqSIM"
                   data-testid="navbar__buttons--receive"
                   type="button"
                 >
@@ -1039,7 +1039,7 @@ exports[`PluginDetails should render properly for remote package 1`] = `
                 </div>
               </div>
               <div
-                class="flex flex-col"
+                class="flex flex-col w-full"
               >
                 <p
                   class="font-semibold dark:text-theme-secondary-500"
@@ -1047,11 +1047,11 @@ exports[`PluginDetails should render properly for remote package 1`] = `
                 >
                   Disclaimer
                 </p>
-                <p
+                <div
                   class="text-sm leading-relaxed break-words dark:text-theme-secondary-500"
                 >
                   The availability of this Plugin in the ARK Desktop Wallet does not mean that either ARK.io or ARK SCIC is directly involved in its development or developers. By installing it, you assume any associated risks.
-                </p>
+                </div>
               </div>
             </div>
           </div>
@@ -1169,7 +1169,7 @@ exports[`PluginDetails should report plugin 1`] = `
                     class="NavigationBar__NavigationButtonWrapper-sc-1qsoskw-1 eUPnft group"
                   >
                     <button
-                      class="OriginalButton__StyledButton-sc-1y2wptt-0 fmvKKh"
+                      class="OriginalButton__StyledButton-sc-1y2wptt-0 lpqSIM"
                       data-testid="navbar__buttons--notifications"
                       type="button"
                     >
@@ -1208,7 +1208,7 @@ exports[`PluginDetails should report plugin 1`] = `
                 class="NavigationBar__NavigationButtonWrapper-sc-1qsoskw-1 eUPnft"
               >
                 <button
-                  class="OriginalButton__StyledButton-sc-1y2wptt-0 fmvKKh"
+                  class="OriginalButton__StyledButton-sc-1y2wptt-0 lpqSIM"
                   data-testid="navbar__buttons--send"
                   type="button"
                 >
@@ -1238,7 +1238,7 @@ exports[`PluginDetails should report plugin 1`] = `
                 class="NavigationBar__NavigationButtonWrapper-sc-1qsoskw-1 eUPnft"
               >
                 <button
-                  class="OriginalButton__StyledButton-sc-1y2wptt-0 fmvKKh"
+                  class="OriginalButton__StyledButton-sc-1y2wptt-0 lpqSIM"
                   data-testid="navbar__buttons--receive"
                   type="button"
                 >
@@ -1580,7 +1580,7 @@ exports[`PluginDetails should report plugin 1`] = `
                 </div>
               </div>
               <div
-                class="flex flex-col"
+                class="flex flex-col w-full"
               >
                 <p
                   class="font-semibold dark:text-theme-secondary-500"
@@ -1588,11 +1588,11 @@ exports[`PluginDetails should report plugin 1`] = `
                 >
                   Disclaimer
                 </p>
-                <p
+                <div
                   class="text-sm leading-relaxed break-words dark:text-theme-secondary-500"
                 >
                   The availability of this Plugin in the ARK Desktop Wallet does not mean that either ARK.io or ARK SCIC is directly involved in its development or developers. By installing it, you assume any associated risks.
-                </p>
+                </div>
               </div>
             </div>
           </div>
@@ -1710,7 +1710,7 @@ exports[`PluginDetails should show configuration for plugins from npm 1`] = `
                     class="NavigationBar__NavigationButtonWrapper-sc-1qsoskw-1 eUPnft group"
                   >
                     <button
-                      class="OriginalButton__StyledButton-sc-1y2wptt-0 fmvKKh"
+                      class="OriginalButton__StyledButton-sc-1y2wptt-0 lpqSIM"
                       data-testid="navbar__buttons--notifications"
                       type="button"
                     >
@@ -1749,7 +1749,7 @@ exports[`PluginDetails should show configuration for plugins from npm 1`] = `
                 class="NavigationBar__NavigationButtonWrapper-sc-1qsoskw-1 eUPnft"
               >
                 <button
-                  class="OriginalButton__StyledButton-sc-1y2wptt-0 fmvKKh"
+                  class="OriginalButton__StyledButton-sc-1y2wptt-0 lpqSIM"
                   data-testid="navbar__buttons--send"
                   type="button"
                 >
@@ -1779,7 +1779,7 @@ exports[`PluginDetails should show configuration for plugins from npm 1`] = `
                 class="NavigationBar__NavigationButtonWrapper-sc-1qsoskw-1 eUPnft"
               >
                 <button
-                  class="OriginalButton__StyledButton-sc-1y2wptt-0 fmvKKh"
+                  class="OriginalButton__StyledButton-sc-1y2wptt-0 lpqSIM"
                   data-testid="navbar__buttons--receive"
                   type="button"
                 >
@@ -2137,7 +2137,7 @@ exports[`PluginDetails should show configuration for plugins from npm 1`] = `
                 </div>
               </div>
               <div
-                class="flex flex-col"
+                class="flex flex-col w-full"
               >
                 <p
                   class="font-semibold dark:text-theme-secondary-500"
@@ -2145,11 +2145,11 @@ exports[`PluginDetails should show configuration for plugins from npm 1`] = `
                 >
                   Disclaimer
                 </p>
-                <p
+                <div
                   class="text-sm leading-relaxed break-words dark:text-theme-secondary-500"
                 >
                   The availability of this Plugin in the ARK Desktop Wallet does not mean that either ARK.io or ARK SCIC is directly involved in its development or developers. By installing it, you assume any associated risks.
-                </p>
+                </div>
               </div>
             </div>
           </div>
@@ -2267,7 +2267,7 @@ exports[`PluginDetails should update package 1`] = `
                     class="NavigationBar__NavigationButtonWrapper-sc-1qsoskw-1 eUPnft group"
                   >
                     <button
-                      class="OriginalButton__StyledButton-sc-1y2wptt-0 fmvKKh"
+                      class="OriginalButton__StyledButton-sc-1y2wptt-0 lpqSIM"
                       data-testid="navbar__buttons--notifications"
                       type="button"
                     >
@@ -2306,7 +2306,7 @@ exports[`PluginDetails should update package 1`] = `
                 class="NavigationBar__NavigationButtonWrapper-sc-1qsoskw-1 eUPnft"
               >
                 <button
-                  class="OriginalButton__StyledButton-sc-1y2wptt-0 fmvKKh"
+                  class="OriginalButton__StyledButton-sc-1y2wptt-0 lpqSIM"
                   data-testid="navbar__buttons--send"
                   type="button"
                 >
@@ -2336,7 +2336,7 @@ exports[`PluginDetails should update package 1`] = `
                 class="NavigationBar__NavigationButtonWrapper-sc-1qsoskw-1 eUPnft"
               >
                 <button
-                  class="OriginalButton__StyledButton-sc-1y2wptt-0 fmvKKh"
+                  class="OriginalButton__StyledButton-sc-1y2wptt-0 lpqSIM"
                   data-testid="navbar__buttons--receive"
                   type="button"
                 >
@@ -2678,7 +2678,7 @@ exports[`PluginDetails should update package 1`] = `
                 </div>
               </div>
               <div
-                class="flex flex-col"
+                class="flex flex-col w-full"
               >
                 <p
                   class="font-semibold dark:text-theme-secondary-500"
@@ -2686,11 +2686,11 @@ exports[`PluginDetails should update package 1`] = `
                 >
                   Disclaimer
                 </p>
-                <p
+                <div
                   class="text-sm leading-relaxed break-words dark:text-theme-secondary-500"
                 >
                   The availability of this Plugin in the ARK Desktop Wallet does not mean that either ARK.io or ARK SCIC is directly involved in its development or developers. By installing it, you assume any associated risks.
-                </p>
+                </div>
               </div>
             </div>
           </div>

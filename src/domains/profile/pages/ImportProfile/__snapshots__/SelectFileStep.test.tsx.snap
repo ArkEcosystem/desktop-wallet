@@ -81,13 +81,13 @@ exports[`Import Profile Select File Step should change back from json to dwe 1`]
           </div>
         </div>
         <div
-          class="flex flex-col"
+          class="flex flex-col w-full"
         >
-          <p
+          <div
             class="text-sm leading-relaxed break-words dark:text-theme-secondary-500"
           >
             Please note that importing a Profile from Desktop Wallet v2 in .json format is provided temporarily and will soon be disabled. We recommend that you re-save your Profile in the new .dwe format.
-          </p>
+          </div>
         </div>
       </div>
     </div>
@@ -476,13 +476,13 @@ exports[`Import Profile Select File Step should render with json fileFormat sele
           </div>
         </div>
         <div
-          class="flex flex-col"
+          class="flex flex-col w-full"
         >
-          <p
+          <div
             class="text-sm leading-relaxed break-words dark:text-theme-secondary-500"
           >
             Please note that importing a Profile from Desktop Wallet v2 in .json format is provided temporarily and will soon be disabled. We recommend that you re-save your Profile in the new .dwe format.
-          </p>
+          </div>
         </div>
       </div>
     </div>
