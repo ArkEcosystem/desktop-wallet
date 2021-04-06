@@ -2,7 +2,6 @@ import { Contracts, DTO } from "@arkecosystem/platform-sdk-profiles";
 import { Button } from "app/components/Button";
 import { EmptyBlock } from "app/components/EmptyBlock";
 import { EmptyResults } from "app/components/EmptyResults";
-import { Section } from "app/components/Layout";
 import { Tab, TabList, Tabs } from "app/components/Tabs";
 import { FilterTransactions } from "domains/transaction/components/FilterTransactions";
 import { TransactionDetailModal } from "domains/transaction/components/TransactionDetailModal";
@@ -21,10 +20,11 @@ type TransactionsProps = {
 	isVisible?: boolean;
 	wallets: Contracts.IReadWriteWallet[];
 	isLoading?: boolean;
+	title?: React.ReactNode;
 };
 
 export const Transactions = memo(
-	({ emptyText, isCompact, profile, isVisible = true, wallets, isLoading = false }: TransactionsProps) => {
+	({ emptyText, isCompact, profile, isVisible = true, wallets, isLoading = false, title }: TransactionsProps) => {
 		const { t } = useTranslation();
 
 		const [transactionModalItem, setTransactionModalItem] = useState<DTO.ExtendedTransactionData | undefined>(
@@ -62,17 +62,22 @@ export const Transactions = memo(
 		}
 
 		return (
-			<Section data-testid="dashboard__transactions-view">
+			<>
 				<div className="flex relative justify-between">
-					<div className="mb-8 text-4xl font-bold">{t("DASHBOARD.TRANSACTION_HISTORY.TITLE")}</div>
+					{title && title}
+
+					{!title && (
+						<div className="mb-8 text-4xl font-bold">{t("DASHBOARD.TRANSACTION_HISTORY.TITLE")}</div>
+					)}
+
 					<FilterTransactions
 						wallets={wallets}
-						onSelect={(_, type) => {
+						onSelect={(_, type) =>
 							updateFilters({
 								activeMode,
 								activeTransactionType: type,
-							});
-						}}
+							})
+						}
 						className="mt-6"
 					/>
 				</div>
@@ -144,7 +149,7 @@ export const Transactions = memo(
 						onClose={() => setTransactionModalItem(undefined)}
 					/>
 				)}
-			</Section>
+			</>
 		);
 	},
 );
