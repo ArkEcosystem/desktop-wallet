@@ -7,7 +7,7 @@ import { FilterTransactions } from "domains/transaction/components/FilterTransac
 import { TransactionDetailModal } from "domains/transaction/components/TransactionDetailModal";
 import { TransactionTable } from "domains/transaction/components/TransactionTable";
 import { useProfileTransactions } from "domains/transaction/hooks/use-profile-transactions";
-import React, { memo, useEffect, useMemo, useRef, useState } from "react";
+import React, { memo, useEffect, useMemo, useState } from "react";
 import { useTranslation } from "react-i18next";
 
 type TransactionsProps = {
@@ -36,8 +36,6 @@ export const Transactions = memo(
 			[profile],
 		);
 
-		const isMounted = useRef(true);
-
 		const {
 			updateFilters,
 			isLoadingTransactions,
@@ -53,19 +51,10 @@ export const Transactions = memo(
 				return;
 			}
 
-			/* istanbul ignore next */
-			if (!isMounted.current) {
-				return;
-			}
-
 			updateFilters({
 				activeMode: "all",
 				activeTransactionType: undefined,
 			});
-
-			return () => {
-				isMounted.current = false;
-			};
 		}, [isLoading, wallets.length, updateFilters]);
 
 		if (!isVisible) {

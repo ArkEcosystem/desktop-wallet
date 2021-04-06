@@ -30,6 +30,7 @@ export const useProfileTransactions = ({
 	wallets: Contracts.IReadWriteWallet[];
 }) => {
 	const lastActiveMode = useRef<string>();
+	const isMounted = useRef(true);
 
 	const [
 		{ transactions, activeMode, activeTransactionType, isLoadingTransactions, isLoadingMore },
@@ -60,6 +61,11 @@ export const useProfileTransactions = ({
 				return;
 			}
 
+			/* istanbul ignore next */
+			if (!isMounted.current) {
+				return;
+			}
+
 			setState((state) => ({ ...state, transactions: fetchedTransactions, isLoadingTransactions: false }));
 		};
 
@@ -69,6 +75,10 @@ export const useProfileTransactions = ({
 
 		setTimeout(() => loadTransactions(), 0);
 
+		return () => {
+			isMounted.current = false;
+		};
+
 		// eslint-disable-next-line
 	}, [wallets.length, activeMode, activeTransactionType]);
 
@@ -77,6 +87,11 @@ export const useProfileTransactions = ({
 			lastActiveMode.current = JSON.stringify({ activeMode, activeTransactionType });
 
 			const hasWallets = wallets.length !== 0;
+
+			/* istanbul ignore next */
+			if (!isMounted.current) {
+				return;
+			}
 
 			setState({
 				transactions: [],
