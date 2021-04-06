@@ -27,7 +27,6 @@ describe("ToastService", () => {
 		});
 
 		expect(screen.queryByText(method)).toBeInTheDocument();
-		expect(container).toMatchSnapshot();
 	});
 
 	it.each(["info", "success", "warning", "error"])("should call toast %s method with options", (method) => {
