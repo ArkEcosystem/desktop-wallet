@@ -5,7 +5,6 @@ import { useEnvironmentContext } from "../../Environment";
 import { useLedgerContext } from "../Ledger";
 import { customDerivationModes } from "../utils";
 import { scannerReducer } from "./scanner.state";
-import { createRange, searchAddresses, searchWallets } from "./scanner.utils";
 
 export const useLedgerScanner = (coin: string, network: string, profile: Contracts.IProfile) => {
 	const { env } = useEnvironmentContext();
@@ -41,39 +40,40 @@ export const useLedgerScanner = (coin: string, network: string, profile: Contrac
 	const [isScanning, setIsScanning] = useState(false);
 	const abortRetryRef = useRef<boolean>(false);
 
-	const scan = useCallback(
-		async (indexes: number[]) => {
-			setBusy();
-			abortRetryRef.current = false;
+	const scan = useCallback(async () => {
+		setBusy();
+		abortRetryRef.current = false;
 
-			try {
-				const instance = await env.coin(coin, network);
-				const derivationMode = derivationModes[currentDerivationModeIndex];
+		try {
+			const instance = await env.coin(coin, network);
+			const result = await instance.ledger().scan();
+			console.log({ result });
 
-				const addressMap = await searchAddresses(indexes, instance, profile, derivationMode);
-				const lazyWallets = Object.values(addressMap);
+			// const derivationMode = derivationModes[currentDerivationModeIndex];
 
-				if (!lazyWallets.length) {
-					return dispatch({ type: "next" });
-				}
+			// const addressMap = await searchAddresses(indexes, instance, profile, derivationMode);
+			// const lazyWallets = Object.values(addressMap);
 
-				dispatch({ type: "load", payload: lazyWallets, derivationModes });
+			// if (!lazyWallets.length) {
+			// return dispatch({ type: "next" });
+			// }
 
-				const wallets = await searchWallets(addressMap, instance);
+			// dispatch({ type: "load", payload: lazyWallets, derivationModes });
 
-				if (abortRetryRef.current) {
-					return;
-				}
+			// const wallets = await searchWallets(addressMap, instance);
 
-				dispatch({ type: "success", payload: wallets });
-			} catch {
-				dispatch({ type: "failed" });
-			}
+			// if (abortRetryRef.current) {
+			// return;
+			// }
 
-			setIdle();
-		},
-		[coin, network, env, profile, setBusy, setIdle, derivationModes, currentDerivationModeIndex],
-	);
+			dispatch({ type: "success", payload: wallets });
+		} catch (e) {
+			console.error(e);
+			dispatch({ type: "failed" });
+		}
+
+		setIdle();
+	}, [coin, network, env, profile, setBusy, setIdle]);
 
 	const abortScanner = useCallback(() => {
 		abortRetryRef.current = true;
@@ -82,30 +82,16 @@ export const useLedgerScanner = (coin: string, network: string, profile: Contrac
 
 	// Actions - Scan
 
-	const scanMore = useCallback(() => scan(createRange(page, limitPerPage)), [scan, page]);
+	const scanMore = scan;
 	const scanRetry = useCallback(async () => {
-		/* istanbul ignore next */
-		if (!failed.length) {
-			return;
-		}
-		/* istanbul ignore next */
-		const failedIndexes = wallets.filter((wallet) => failed.includes(wallet.path)).map((wallet) => wallet.index);
-		/* istanbul ignore next */
-		await scan(failedIndexes);
-	}, [scan, failed, wallets]);
+		//
+	}, []);
 
 	// Recursive callback that will increase the page
 	// and run on each re-rendering until it finds a new wallet or fail
 	const scanUntilNewOrFail = useCallback(async () => {
-		if (hasNewWallet || canRetry) {
-			setIsScanning(false);
-			return;
-		}
-
-		setIsScanning(true);
-
-		await scanMore();
-	}, [scanMore, hasNewWallet, canRetry]);
+		//
+	}, []);
 
 	// Actions - Selection
 
