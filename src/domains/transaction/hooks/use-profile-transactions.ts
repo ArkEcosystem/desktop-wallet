@@ -136,6 +136,9 @@ export const useProfileTransactions = ({
 		}));
 	}, [activeMode, activeTransactionType, wallets.length]); // eslint-disable-line react-hooks/exhaustive-deps
 
+	// TODO: Run periodic checks for new transactions every 30 seconds
+	// TODO: provide `hasMore` from sdk
+
 	return {
 		fetchTransactions,
 		fetchMore,

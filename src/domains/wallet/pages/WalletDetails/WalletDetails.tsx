@@ -1,89 +1,37 @@
 /* eslint-disable @typescript-eslint/require-await */
 import { Coins, Contracts } from "@arkecosystem/platform-sdk";
-import { Contracts as ProfileContracts, DTO } from "@arkecosystem/platform-sdk-profiles";
-import { Button } from "app/components/Button";
-import { EmptyBlock } from "app/components/EmptyBlock";
-import { EmptyResults } from "app/components/EmptyResults";
+import { DTO } from "@arkecosystem/platform-sdk-profiles";
 import { Page, Section } from "app/components/Layout";
-import { Tab, TabList, Tabs } from "app/components/Tabs";
-import { useConfiguration } from "app/contexts";
+import { useConfiguration, useEnvironmentContext } from "app/contexts";
 import { useActiveProfile, useActiveWallet } from "app/hooks/env";
-import { FilterTransactions } from "domains/transaction/components/FilterTransactions";
 import { MultiSignatureDetail } from "domains/transaction/components/MultiSignatureDetail";
 import { TransactionDetailModal } from "domains/transaction/components/TransactionDetailModal";
-import { TransactionTable } from "domains/transaction/components/TransactionTable";
+import { Transactions } from "domains/transaction/components/Transactions";
 import { SignedTransactionTable } from "domains/transaction/components/TransactionTable/SignedTransactionTable/SignedTransactionTable";
-import React, { useEffect, useLayoutEffect, useRef, useState } from "react";
+import React, { useEffect,useMemo, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { useHistory } from "react-router-dom";
 
 import { WalletHeader, WalletVote } from "./components";
 import { useWalletTransactions } from "./hooks/use-wallet-transactions";
 
-type WalletDetailsProps = {
-	transactionLimit?: number;
-};
-
-export const WalletDetails = ({ transactionLimit }: WalletDetailsProps) => {
-	const [isLoading, setIsLoading] = useState(true);
-
-	const [signedTransactionModalItem, setSignedTransactionModalItem] = useState<
-		Contracts.SignedTransactionData | undefined
-	>(undefined);
-	const [transactionModalItem, setTransactionModalItem] = useState<DTO.ExtendedTransactionData | undefined>(
-		undefined,
-	);
-
-	const { t } = useTranslation();
+export const WalletDetails = () => {
+	const [signedTransactionModalItem, setSignedTransactionModalItem] = useState<Contracts.SignedTransactionData>();
+	const [transactionModalItem, setTransactionModalItem] = useState<DTO.ExtendedTransactionData>();
 
 	const history = useHistory();
+	const { t } = useTranslation();
+	const { env } = useEnvironmentContext();
 	const activeProfile = useActiveProfile();
 	const activeWallet = useActiveWallet();
-	const [activeTransactionModeTab, setActiveTransactionModeTab] = useState("all");
-	const [selectedTransactionType, setSelectedTransactionType] = useState<any>();
-
 	const { profileIsSyncing } = useConfiguration();
-	const isMounted = useRef(true);
 
-	const {
-		pendingMultiSignatureTransactions,
-		transactions,
-		fetchInit,
-		fetchMore,
-		isLoading: isLoadingTransactions,
-		hasMore,
-	} = useWalletTransactions(activeWallet, {
-		limit: transactionLimit!,
-		mode: activeTransactionModeTab,
-		transactionType: selectedTransactionType,
-	});
-
-	const [showWalletVote, setShowWalletVote] = useState(false);
-
-	useLayoutEffect(() => {
-		setShowWalletVote(activeWallet.network().can(Coins.FeatureFlag.TransactionVote));
-	}, [activeWallet]);
-
-	const exchangeCurrency = activeProfile.settings().get<string>(ProfileContracts.ProfileSetting.ExchangeCurrency);
+	const shouldVote = useMemo(() => activeWallet.network().can(Coins.FeatureFlag.TransactionVote), [activeWallet]);
+	const { syncMultiSignatures, pendingMultiSignatureTransactions } = useWalletTransactions(activeWallet);
 
 	useEffect(() => {
-		const fetchAllData = async () => {
-			await fetchInit();
-
-			/* istanbul ignore next */
-			if (!isMounted.current) {
-				return;
-			}
-
-			setIsLoading(false);
-		};
-
-		fetchAllData();
-
-		return () => {
-			isMounted.current = false;
-		};
-	}, [fetchInit]);
+		syncMultiSignatures();
+	}, [syncMultiSignatures]);
 
 	const handleVoteButton = (filter?: string) => {
 		/* istanbul ignore else */
@@ -111,14 +59,9 @@ export const WalletDetails = ({ transactionLimit }: WalletDetailsProps) => {
 					/>
 				</Section>
 
-				{showWalletVote && (
+				{shouldVote && (
 					<Section backgroundColor="--theme-secondary-background-color" innerClassName="-my-2">
-						<WalletVote
-							wallet={activeWallet}
-							onButtonClick={handleVoteButton}
-							isLoadingDelegates={profileIsSyncing}
-							isLoading={isLoading}
-						/>
+						<WalletVote env={env} wallet={activeWallet} onButtonClick={handleVoteButton} />
 					</Section>
 				)}
 
@@ -134,65 +77,16 @@ export const WalletDetails = ({ transactionLimit }: WalletDetailsProps) => {
 						</div>
 					)}
 
-					<div>
-						<>
-							<div className="relative flex justify-between">
-								<h2 className="mb-8 font-bold">
-									{t("WALLETS.PAGE_WALLET_DETAILS.TRANSACTION_HISTORY.TITLE")}
-								</h2>
-								<FilterTransactions
-									wallets={[activeWallet]}
-									onSelect={(_, type) => setSelectedTransactionType(type)}
-									className="mt-2"
-								/>
-							</div>
-							<Tabs
-								className="mb-6"
-								activeId={activeTransactionModeTab}
-								onChange={(id) => setActiveTransactionModeTab(id as string)}
-							>
-								<TabList className="w-full">
-									<Tab tabId="all">{t("TRANSACTION.ALL")}</Tab>
-									<Tab tabId="received">{t("TRANSACTION.INCOMING")}</Tab>
-									<Tab tabId="sent">{t("TRANSACTION.OUTGOING")}</Tab>
-								</TabList>
-							</Tabs>
-
-							<TransactionTable
-								transactions={transactions}
-								exchangeCurrency={exchangeCurrency}
-								hideHeader={!isLoadingTransactions && transactions.length === 0}
-								isLoading={isLoadingTransactions}
-								onRowClick={(row) => setTransactionModalItem(row)}
-							/>
-
-							{transactions.length > 0 && hasMore && (
-								<Button
-									data-testid="transactions__fetch-more-button"
-									variant="secondary"
-									className="w-full mt-10 mb-5"
-									isLoading={isLoadingTransactions}
-									onClick={() => fetchMore()}
-								>
-									{t("COMMON.VIEW_MORE")}
-								</Button>
-							)}
-
-							{!isLoading && transactions.length === 0 && !selectedTransactionType && (
-								<EmptyBlock className="-mt-2">
-									{t("WALLETS.PAGE_WALLET_DETAILS.TRANSACTION_HISTORY.EMPTY_MESSAGE")}
-								</EmptyBlock>
-							)}
-
-							{!isLoading && transactions.length === 0 && !!selectedTransactionType && (
-								<EmptyResults
-									className="flex-1"
-									title={t("COMMON.EMPTY_RESULTS.TITLE")}
-									subtitle={t("COMMON.EMPTY_RESULTS.SUBTITLE")}
-								/>
-							)}
-						</>
-					</div>
+					<Transactions
+						title={
+							<h2 className="mb-8 font-bold">
+								{t("WALLETS.PAGE_WALLET_DETAILS.TRANSACTION_HISTORY.TITLE")}
+							</h2>
+						}
+						profile={activeProfile}
+						wallets={[activeWallet]}
+						isLoading={profileIsSyncing}
+					/>
 				</Section>
 			</Page>
 
@@ -214,9 +108,4 @@ export const WalletDetails = ({ transactionLimit }: WalletDetailsProps) => {
 			)}
 		</>
 	);
-};
-
-WalletDetails.defaultProps = {
-	txSkeletonRowsLimit: 8,
-	transactionLimit: 15,
 };
