@@ -13,15 +13,20 @@ exports[`ProfileCard should hide the settings icon 1`] = `
         class="relative"
       >
         <div
-          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 cPTwWa"
+          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 iowXEI"
           data-testid="ProfileAvatar__image"
+          value=""
         >
-          <img
-            alt="John Doe"
-            class="object-cover w-20 h-20 bg-center bg-no-repeat bg-cover rounded-full"
-            src="avatarImage"
-            title="John Doe"
-          />
+          <div
+            class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
+          >
+            <img
+              alt="John Doe"
+              class="object-cover w-20 h-20 bg-center bg-no-repeat bg-cover rounded-full"
+              src="avatarImage"
+              title="John Doe"
+            />
+          </div>
         </div>
       </div>
       <span
@@ -50,19 +55,24 @@ exports[`ProfileCard should render 1`] = `
         class="relative"
       >
         <div
-          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 cPTwWa"
+          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 iowXEI"
           data-testid="ProfileAvatar__svg"
+          value=""
         >
-          <img
-            alt="John Doe"
-            src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"30\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"55\\" cx=\\"0\\" cy=\\"60\\" fill=\\"rgb(255, 152, 0)\\"/><circle r=\\"40\\" cx=\\"50\\" cy=\\"50\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
-            title="John Doe"
-          />
-          <span
-            class="absolute font-semibold text-white"
+          <div
+            class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
           >
-            JO
-          </span>
+            <img
+              alt="John Doe"
+              src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"30\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"55\\" cx=\\"0\\" cy=\\"60\\" fill=\\"rgb(255, 152, 0)\\"/><circle r=\\"40\\" cx=\\"50\\" cy=\\"50\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
+              title="John Doe"
+            />
+            <span
+              class="absolute font-semibold text-white"
+            >
+              JO
+            </span>
+          </div>
         </div>
       </div>
       <span
@@ -91,15 +101,20 @@ exports[`ProfileCard should render the profile with avatar image 1`] = `
         class="relative"
       >
         <div
-          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 cPTwWa"
+          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 iowXEI"
           data-testid="ProfileAvatar__image"
+          value=""
         >
-          <img
-            alt="John Doe"
-            class="object-cover w-20 h-20 bg-center bg-no-repeat bg-cover rounded-full"
-            src="avatarImage"
-            title="John Doe"
-          />
+          <div
+            class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
+          >
+            <img
+              alt="John Doe"
+              class="object-cover w-20 h-20 bg-center bg-no-repeat bg-cover rounded-full"
+              src="avatarImage"
+              title="John Doe"
+            />
+          </div>
         </div>
       </div>
       <span
@@ -128,15 +143,20 @@ exports[`ProfileCard should render the settings icon 1`] = `
         class="relative"
       >
         <div
-          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 cPTwWa"
+          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 iowXEI"
           data-testid="ProfileAvatar__image"
+          value=""
         >
-          <img
-            alt="John Doe"
-            class="object-cover w-20 h-20 bg-center bg-no-repeat bg-cover rounded-full"
-            src="avatarImage"
-            title="John Doe"
-          />
+          <div
+            class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
+          >
+            <img
+              alt="John Doe"
+              class="object-cover w-20 h-20 bg-center bg-no-repeat bg-cover rounded-full"
+              src="avatarImage"
+              title="John Doe"
+            />
+          </div>
         </div>
       </div>
       <span

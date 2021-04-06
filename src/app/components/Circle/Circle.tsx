@@ -1,5 +1,5 @@
 import cn from "classnames";
-import React from "react";
+import React, { forwardRef } from "react";
 import { styled } from "twin.macro";
 import { Size } from "types";
 
@@ -17,15 +17,21 @@ export type CircleProps = {
 
 const CircleWrapper = styled.div<CircleProps>(getStyles);
 
-export const Circle = ({ className, noShadow, shadowClassName, size, children }: CircleProps) => (
-	<CircleWrapper
-		size={size}
-		noShadow={!!noShadow}
-		className={cn(className, shadowClassName || "ring-theme-background")}
-	>
-		{children}
-	</CircleWrapper>
+export const Circle = forwardRef<HTMLDivElement, CircleProps>(
+	({ className, noShadow, shadowClassName, size, children, ...props }: CircleProps, ref) => (
+		<CircleWrapper
+			ref={ref}
+			size={size}
+			noShadow={!!noShadow}
+			className={cn(className, shadowClassName || "ring-theme-background")}
+			{...props}
+		>
+			{children}
+		</CircleWrapper>
+	),
 );
+
+Circle.displayName = "Circle";
 
 Circle.defaultProps = {
 	noShadow: false,

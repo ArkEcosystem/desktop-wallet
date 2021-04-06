@@ -229,7 +229,7 @@ exports[`Dashboard should render 1`] = `
               class="flex my-0.5 ml-4 -space-x-2"
             >
               <div
-                class="Circle-uw7h4j-0 JkqUV border-theme-primary-100 dark:border-theme-secondary-800"
+                class="Circle__CircleWrapper-uw7h4j-0 bNDQMV border-theme-primary-100 dark:border-theme-secondary-800 ring-theme-background"
               >
                 <span
                   class="text-theme-secondary-text dark:text-theme-secondary-800"
@@ -256,17 +256,23 @@ exports[`Dashboard should render 1`] = `
                     data-testid="navbar__useractions"
                   >
                     <div
-                      class="Avatar__AvatarWrapper-sc-1vsy2s2-0 gyYbkb"
+                      class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB"
+                      data-testid="Avatar"
+                      value=""
                     >
-                      <img
-                        alt="Profile Avatar"
-                        src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"30\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"55\\" cx=\\"0\\" cy=\\"60\\" fill=\\"rgb(255, 152, 0)\\"/><circle r=\\"40\\" cx=\\"50\\" cy=\\"50\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
-                      />
-                      <span
-                        class="absolute text-sm font-semibold text-theme-background dark:text-theme-text"
+                      <div
+                        class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
                       >
-                        JO
-                      </span>
+                        <img
+                          alt="Profile Avatar"
+                          src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"30\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"55\\" cx=\\"0\\" cy=\\"60\\" fill=\\"rgb(255, 152, 0)\\"/><circle r=\\"40\\" cx=\\"50\\" cy=\\"50\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
+                        />
+                        <span
+                          class="absolute text-sm font-semibold text-theme-background dark:text-theme-text"
+                        >
+                          JO
+                        </span>
+                      </div>
                     </div>
                   </div>
                 </span>
@@ -510,7 +516,7 @@ exports[`Dashboard should render 1`] = `
                             >
                               <div
                                 aria-label="ARK Devnet"
-                                class="Circle-uw7h4j-0 JkqUV border-theme-primary-100 text-theme-primary-400"
+                                class="Circle__CircleWrapper-uw7h4j-0 bNDQMV border-theme-primary-100 text-theme-primary-400 ring-theme-background"
                                 data-testid="NetworkIcon-ARK-ark.devnet"
                               >
                                 <div
@@ -525,11 +531,12 @@ exports[`Dashboard should render 1`] = `
                                 </div>
                               </div>
                               <div
-                                class="Avatar__AvatarWrapper-sc-1vsy2s2-0 gyYbkb"
+                                class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB"
                                 data-testid="Avatar"
+                                value=""
                               >
                                 <div
-                                  class="w-full h-full"
+                                  class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
                                 >
                                   <img
                                     alt="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
@@ -586,7 +593,7 @@ exports[`Dashboard should render 1`] = `
                             >
                               <div
                                 aria-label="ARK Devnet"
-                                class="Circle-uw7h4j-0 JkqUV border-theme-primary-100 text-theme-primary-400"
+                                class="Circle__CircleWrapper-uw7h4j-0 bNDQMV border-theme-primary-100 text-theme-primary-400 ring-theme-background"
                                 data-testid="NetworkIcon-ARK-ark.devnet"
                               >
                                 <div
@@ -601,11 +608,12 @@ exports[`Dashboard should render 1`] = `
                                 </div>
                               </div>
                               <div
-                                class="Avatar__AvatarWrapper-sc-1vsy2s2-0 gyYbkb"
+                                class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB"
                                 data-testid="Avatar"
+                                value=""
                               >
                                 <div
-                                  class="w-full h-full"
+                                  class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
                                 >
                                   <img
                                     alt="D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb"
@@ -662,7 +670,7 @@ exports[`Dashboard should render 1`] = `
                             >
                               <div
                                 aria-label="ARK"
-                                class="Circle-uw7h4j-0 JkqUV border-theme-danger-200 text-theme-danger-400"
+                                class="Circle__CircleWrapper-uw7h4j-0 bNDQMV border-theme-danger-200 text-theme-danger-400 ring-theme-background"
                                 data-testid="NetworkIcon-ARK-ark.mainnet"
                               >
                                 <div
@@ -677,11 +685,12 @@ exports[`Dashboard should render 1`] = `
                                 </div>
                               </div>
                               <div
-                                class="Avatar__AvatarWrapper-sc-1vsy2s2-0 gyYbkb"
+                                class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB"
                                 data-testid="Avatar"
+                                value=""
                               >
                                 <div
-                                  class="w-full h-full"
+                                  class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
                                 >
                                   <img
                                     alt="AdVSe37niA3uFUPgCgMUH2tMsHF4LpLoiX"
@@ -959,7 +968,7 @@ exports[`Dashboard should render 1`] = `
                   role="rowgroup"
                 >
                   <tr
-                    class="TableRow__TableRowStyled-sc-1br46dw-0 fTgXGQ"
+                    class="TableRow__TableRowStyled-sc-1br46dw-0 fTgXGQ group"
                     data-testid="TableRow"
                   >
                     <td>
@@ -1009,7 +1018,7 @@ exports[`Dashboard should render 1`] = `
                           data-testid="TransactionRowMode"
                         >
                           <div
-                            class="Circle-uw7h4j-0 JkqUV border-theme-success-200 text-theme-success-600 dark:border-theme-success-600"
+                            class="Circle__CircleWrapper-uw7h4j-0 bNDQMV ring-theme-background group-hover:ring-theme-secondary-100 group-hover:bg-secondary-100 dark:group-hover:ring-black dark:group-hover:bg-black border-theme-success-200 text-theme-success-600 dark:border-theme-success-600 ring-theme-background"
                           >
                             <div
                               class="sc-bdfBwQ fPrsah"
@@ -1023,11 +1032,12 @@ exports[`Dashboard should render 1`] = `
                             </div>
                           </div>
                           <div
-                            class="Avatar__AvatarWrapper-sc-1vsy2s2-0 gyYbkb"
+                            class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB ring-theme-background bg-theme-background group-hover:ring-theme-secondary-100 group-hover:bg-secondary-100 dark:group-hover:ring-black dark:group-hover:bg-black"
                             data-testid="Avatar"
+                            value=""
                           >
                             <div
-                              class="w-full h-full"
+                              class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
                             >
                               <img
                                 alt="D5pVkhZbSb4UNXvfmF6j7zdau8yGxfKwSv"
@@ -1118,7 +1128,7 @@ exports[`Dashboard should render 1`] = `
                     </td>
                   </tr>
                   <tr
-                    class="TableRow__TableRowStyled-sc-1br46dw-0 fTgXGQ"
+                    class="TableRow__TableRowStyled-sc-1br46dw-0 fTgXGQ group"
                     data-testid="TableRow"
                   >
                     <td>
@@ -1168,7 +1178,7 @@ exports[`Dashboard should render 1`] = `
                           data-testid="TransactionRowMode"
                         >
                           <div
-                            class="Circle-uw7h4j-0 JkqUV border-theme-success-200 text-theme-success-600 dark:border-theme-success-600"
+                            class="Circle__CircleWrapper-uw7h4j-0 bNDQMV ring-theme-background group-hover:ring-theme-secondary-100 group-hover:bg-secondary-100 dark:group-hover:ring-black dark:group-hover:bg-black border-theme-success-200 text-theme-success-600 dark:border-theme-success-600 ring-theme-background"
                           >
                             <div
                               class="sc-bdfBwQ fPrsah"
@@ -1182,11 +1192,12 @@ exports[`Dashboard should render 1`] = `
                             </div>
                           </div>
                           <div
-                            class="Avatar__AvatarWrapper-sc-1vsy2s2-0 gyYbkb"
+                            class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB ring-theme-background bg-theme-background group-hover:ring-theme-secondary-100 group-hover:bg-secondary-100 dark:group-hover:ring-black dark:group-hover:bg-black"
                             data-testid="Avatar"
+                            value=""
                           >
                             <div
-                              class="w-full h-full"
+                              class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
                             >
                               <img
                                 alt="D5pVkhZbSb4UNXvfmF6j7zdau8yGxfKwSv"
@@ -1277,7 +1288,7 @@ exports[`Dashboard should render 1`] = `
                     </td>
                   </tr>
                   <tr
-                    class="TableRow__TableRowStyled-sc-1br46dw-0 fTgXGQ"
+                    class="TableRow__TableRowStyled-sc-1br46dw-0 fTgXGQ group"
                     data-testid="TableRow"
                   >
                     <td>
@@ -1327,7 +1338,7 @@ exports[`Dashboard should render 1`] = `
                           data-testid="TransactionRowMode"
                         >
                           <div
-                            class="Circle-uw7h4j-0 JkqUV border-theme-success-200 text-theme-success-600 dark:border-theme-success-600"
+                            class="Circle__CircleWrapper-uw7h4j-0 bNDQMV ring-theme-background group-hover:ring-theme-secondary-100 group-hover:bg-secondary-100 dark:group-hover:ring-black dark:group-hover:bg-black border-theme-success-200 text-theme-success-600 dark:border-theme-success-600 ring-theme-background"
                           >
                             <div
                               class="sc-bdfBwQ fPrsah"
@@ -1341,11 +1352,12 @@ exports[`Dashboard should render 1`] = `
                             </div>
                           </div>
                           <div
-                            class="Avatar__AvatarWrapper-sc-1vsy2s2-0 gyYbkb"
+                            class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB ring-theme-background bg-theme-background group-hover:ring-theme-secondary-100 group-hover:bg-secondary-100 dark:group-hover:ring-black dark:group-hover:bg-black"
                             data-testid="Avatar"
+                            value=""
                           >
                             <div
-                              class="w-full h-full"
+                              class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
                             >
                               <img
                                 alt="DKY5eyQUKKYyaCfPp6MUv3Y4FW6EbNF53A"
@@ -1436,7 +1448,7 @@ exports[`Dashboard should render 1`] = `
                     </td>
                   </tr>
                   <tr
-                    class="TableRow__TableRowStyled-sc-1br46dw-0 fTgXGQ"
+                    class="TableRow__TableRowStyled-sc-1br46dw-0 fTgXGQ group"
                     data-testid="TableRow"
                   >
                     <td>
@@ -1486,7 +1498,7 @@ exports[`Dashboard should render 1`] = `
                           data-testid="TransactionRowMode"
                         >
                           <div
-                            class="Circle-uw7h4j-0 JkqUV border-theme-success-200 text-theme-success-600 dark:border-theme-success-600"
+                            class="Circle__CircleWrapper-uw7h4j-0 bNDQMV ring-theme-background group-hover:ring-theme-secondary-100 group-hover:bg-secondary-100 dark:group-hover:ring-black dark:group-hover:bg-black border-theme-success-200 text-theme-success-600 dark:border-theme-success-600 ring-theme-background"
                           >
                             <div
                               class="sc-bdfBwQ fPrsah"
@@ -1500,11 +1512,12 @@ exports[`Dashboard should render 1`] = `
                             </div>
                           </div>
                           <div
-                            class="Avatar__AvatarWrapper-sc-1vsy2s2-0 gyYbkb"
+                            class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB ring-theme-background bg-theme-background group-hover:ring-theme-secondary-100 group-hover:bg-secondary-100 dark:group-hover:ring-black dark:group-hover:bg-black"
                             data-testid="Avatar"
+                            value=""
                           >
                             <div
-                              class="w-full h-full"
+                              class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
                             >
                               <img
                                 alt="DKY5eyQUKKYyaCfPp6MUv3Y4FW6EbNF53A"

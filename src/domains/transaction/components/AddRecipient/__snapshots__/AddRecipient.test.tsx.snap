@@ -120,7 +120,7 @@ exports[`AddRecipient should render 1`] = `
                       class="Input__InputWrapperStyled-wu99qs-0 jba-du"
                     >
                       <div
-                        class="Circle-uw7h4j-0 blBpcG bg-theme-secondary-200 dark:bg-theme-secondary-700 border-theme-secondary-200 dark:border-theme-secondary-700"
+                        class="Circle__CircleWrapper-uw7h4j-0 grnDUY bg-theme-secondary-200 dark:bg-theme-secondary-700 border-theme-secondary-200 dark:border-theme-secondary-700 ring-theme-background"
                       />
                       <div
                         class="relative flex flex-1 h-full"
@@ -368,7 +368,7 @@ exports[`AddRecipient should render with multiple recipients tab 1`] = `
                       class="Input__InputWrapperStyled-wu99qs-0 jba-du"
                     >
                       <div
-                        class="Circle-uw7h4j-0 blBpcG bg-theme-secondary-200 dark:bg-theme-secondary-700 border-theme-secondary-200 dark:border-theme-secondary-700"
+                        class="Circle__CircleWrapper-uw7h4j-0 grnDUY bg-theme-secondary-200 dark:bg-theme-secondary-700 border-theme-secondary-200 dark:border-theme-secondary-700 ring-theme-background"
                       />
                       <div
                         class="relative flex flex-1 h-full"
@@ -616,11 +616,12 @@ exports[`AddRecipient should render with single recipient data 1`] = `
                       class="Input__InputWrapperStyled-wu99qs-0 jba-du"
                     >
                       <div
-                        class="Avatar__AvatarWrapper-sc-1vsy2s2-0 kvvaRs"
+                        class="Avatar__AvatarWrapper-sc-1vsy2s2-0 khDjUE"
                         data-testid="Avatar"
+                        value=""
                       >
                         <div
-                          class="w-full h-full"
+                          class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
                         >
                           <img
                             alt="D6Z26L69gdk9qYmTv5uzk3uGepigtHY4ax"
@@ -875,7 +876,7 @@ exports[`AddRecipient should render without recipients 1`] = `
                       class="Input__InputWrapperStyled-wu99qs-0 jba-du"
                     >
                       <div
-                        class="Circle-uw7h4j-0 blBpcG bg-theme-secondary-200 dark:bg-theme-secondary-700 border-theme-secondary-200 dark:border-theme-secondary-700"
+                        class="Circle__CircleWrapper-uw7h4j-0 grnDUY bg-theme-secondary-200 dark:bg-theme-secondary-700 border-theme-secondary-200 dark:border-theme-secondary-700 ring-theme-background"
                       />
                       <div
                         class="relative flex flex-1 h-full"
@@ -1069,7 +1070,7 @@ exports[`AddRecipient should render without the single & multiple tabs 1`] = `
                       class="Input__InputWrapperStyled-wu99qs-0 jba-du"
                     >
                       <div
-                        class="Circle-uw7h4j-0 blBpcG bg-theme-secondary-200 dark:bg-theme-secondary-700 border-theme-secondary-200 dark:border-theme-secondary-700"
+                        class="Circle__CircleWrapper-uw7h4j-0 grnDUY bg-theme-secondary-200 dark:bg-theme-secondary-700 border-theme-secondary-200 dark:border-theme-secondary-700 ring-theme-background"
                       />
                       <div
                         class="relative flex flex-1 h-full"
@@ -1317,7 +1318,7 @@ exports[`AddRecipient should set available amount 1`] = `
                       class="Input__InputWrapperStyled-wu99qs-0 jba-du"
                     >
                       <div
-                        class="Circle-uw7h4j-0 blBpcG bg-theme-secondary-200 dark:bg-theme-secondary-700 border-theme-secondary-200 dark:border-theme-secondary-700"
+                        class="Circle__CircleWrapper-uw7h4j-0 grnDUY bg-theme-secondary-200 dark:bg-theme-secondary-700 border-theme-secondary-200 dark:border-theme-secondary-700 ring-theme-background"
                       />
                       <div
                         class="relative flex flex-1 h-full"
@@ -1565,7 +1566,7 @@ exports[`AddRecipient should show zero amount if wallet has zero or insufficient
                       class="Input__InputWrapperStyled-wu99qs-0 jba-du"
                     >
                       <div
-                        class="Circle-uw7h4j-0 blBpcG bg-theme-secondary-200 dark:bg-theme-secondary-700 border-theme-secondary-200 dark:border-theme-secondary-700"
+                        class="Circle__CircleWrapper-uw7h4j-0 grnDUY bg-theme-secondary-200 dark:bg-theme-secondary-700 border-theme-secondary-200 dark:border-theme-secondary-700 ring-theme-background"
                       />
                       <div
                         class="relative flex flex-1 h-full"

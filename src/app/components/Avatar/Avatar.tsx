@@ -5,22 +5,21 @@ import tw, { styled } from "twin.macro";
 import { Size } from "types";
 
 type Props = {
-	address: string;
+	address?: string;
 	className?: string;
 	shadowClassName?: string;
 	highlight?: boolean;
 	noShadow?: boolean;
 	size?: Size;
 	children?: React.ReactNode;
-};
+} & React.HTMLProps<any>;
 
-export const AvatarWrapper = styled.div<{
-	highlight?: boolean;
+const AvatarWrapper = styled.div<{
 	noShadow?: boolean;
 	shadowClassName?: string;
 	size?: string;
 }>`
-	${tw`transition-all duration-100 relative inline-flex items-center justify-center overflow-hidden align-middle rounded-full`}
+	${tw`transition-all duration-100 relative inline-flex items-center justify-center align-middle rounded-full`}
 
 	${({ size }) => {
 		switch (size) {
@@ -39,26 +38,40 @@ export const AvatarWrapper = styled.div<{
 		noShadow ? tw`ring-0` : shadowClassName ? tw`ring-6` : tw`ring-6 ring-theme-background`}
 `;
 
-export const Avatar = ({ address, className, highlight, noShadow, shadowClassName, size, children }: Props) => {
-	const svg = React.useMemo(() => Helpers.Avatar.make(address), [address]);
+export const Avatar = ({
+	address,
+	className,
+	highlight,
+	noShadow,
+	shadowClassName,
+	size,
+	children,
+	...props
+}: Props) => {
+	const svg = React.useMemo(() => (address ? Helpers.Avatar.make(address) : undefined), [address]);
 
 	return (
 		<AvatarWrapper
 			data-testid="Avatar"
 			size={size}
 			noShadow={!!noShadow}
-			highlight={highlight}
 			className={cn(className, shadowClassName)}
 			shadowClassName={shadowClassName}
+			{...props}
 		>
-			<div className={cn("w-full h-full", { "ring-2 ring-theme-primary-600": highlight })}>
-				<img alt={address} title={address} src={`data:image/svg+xml;utf8,${svg}`} />
+			<div
+				className={cn(
+					"w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full",
+					{ "ring-2 ring-theme-primary-600": highlight },
+				)}
+			>
+				{svg && <img alt={address} title={address} src={`data:image/svg+xml;utf8,${svg}`} />}
+				{children}
 			</div>
-			{children}
 		</AvatarWrapper>
 	);
 };
 
 Avatar.defaultProps = {
-	address: "",
+	value: "",
 };
