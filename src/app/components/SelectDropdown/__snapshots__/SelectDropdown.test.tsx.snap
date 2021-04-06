@@ -25,12 +25,12 @@ exports[`SelectDropdown should render 1`] = `
       <div
         aria-expanded="false"
         aria-haspopup="listbox"
-        aria-owns="downshift-1-menu"
+        aria-owns="downshift-0-menu"
         role="combobox"
       >
         <label
           for="downshift-0-input"
-          id="downshift-1-label"
+          id="downshift-0-label"
         />
         <div
           class="Input__InputWrapperStyled-wu99qs-0 jba-du"
@@ -40,8 +40,8 @@ exports[`SelectDropdown should render 1`] = `
           >
             <input
               aria-autocomplete="list"
-              aria-controls="downshift-1-menu"
-              aria-labelledby="downshift-1-label"
+              aria-controls="downshift-0-menu"
+              aria-labelledby="downshift-0-label"
               autocomplete="off"
               class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full cursor-default"
               data-testid="SelectDropdownInput__input"
@@ -74,9 +74,9 @@ exports[`SelectDropdown should render 1`] = `
           </div>
         </div>
         <ul
-          aria-labelledby="downshift-1-label"
-          class="styles__SelectOptionsList-b2falt-0 heJAAA"
-          id="downshift-1-menu"
+          aria-labelledby="downshift-0-label"
+          class="styles__SelectOptionsList-b2falt-0 cUNLQk"
+          id="downshift-0-menu"
           role="listbox"
         />
       </div>
@@ -110,12 +110,12 @@ exports[`SelectDropdown should render disabled 1`] = `
       <div
         aria-expanded="false"
         aria-haspopup="listbox"
-        aria-owns="downshift-9-menu"
+        aria-owns="downshift-4-menu"
         role="combobox"
       >
         <label
-          for="downshift-8-input"
-          id="downshift-9-label"
+          for="downshift-4-input"
+          id="downshift-4-label"
         />
         <div
           class="Input__InputWrapperStyled-wu99qs-0 Fupog"
@@ -126,13 +126,13 @@ exports[`SelectDropdown should render disabled 1`] = `
           >
             <input
               aria-autocomplete="list"
-              aria-controls="downshift-9-menu"
-              aria-labelledby="downshift-9-label"
+              aria-controls="downshift-4-menu"
+              aria-labelledby="downshift-4-label"
               autocomplete="off"
               class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full cursor-default text-theme-secondary-text"
               data-testid="SelectDropdownInput__input"
               disabled=""
-              id="downshift-8-input"
+              id="downshift-4-input"
               placeholder="Select option"
               value=""
             />
@@ -161,9 +161,9 @@ exports[`SelectDropdown should render disabled 1`] = `
           </div>
         </div>
         <ul
-          aria-labelledby="downshift-9-label"
-          class="styles__SelectOptionsList-b2falt-0 heJAAA"
-          id="downshift-9-menu"
+          aria-labelledby="downshift-4-label"
+          class="styles__SelectOptionsList-b2falt-0 cUNLQk"
+          id="downshift-4-menu"
           role="listbox"
         />
       </div>
@@ -215,12 +215,12 @@ exports[`SelectDropdown should render invalid 1`] = `
       <div
         aria-expanded="false"
         aria-haspopup="listbox"
-        aria-owns="downshift-5-menu"
+        aria-owns="downshift-2-menu"
         role="combobox"
       >
         <label
-          for="downshift-4-input"
-          id="downshift-5-label"
+          for="downshift-2-input"
+          id="downshift-2-label"
         />
         <div
           class="Input__InputWrapperStyled-wu99qs-0 jba-du"
@@ -230,12 +230,12 @@ exports[`SelectDropdown should render invalid 1`] = `
           >
             <input
               aria-autocomplete="list"
-              aria-controls="downshift-5-menu"
-              aria-labelledby="downshift-5-label"
+              aria-controls="downshift-2-menu"
+              aria-labelledby="downshift-2-label"
               autocomplete="off"
               class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full cursor-default"
               data-testid="SelectDropdownInput__input"
-              id="downshift-4-input"
+              id="downshift-2-input"
               placeholder="Select option"
               value=""
             />
@@ -264,9 +264,9 @@ exports[`SelectDropdown should render invalid 1`] = `
           </div>
         </div>
         <ul
-          aria-labelledby="downshift-5-label"
-          class="styles__SelectOptionsList-b2falt-0 heJAAA"
-          id="downshift-5-menu"
+          aria-labelledby="downshift-2-label"
+          class="styles__SelectOptionsList-b2falt-0 cUNLQk"
+          id="downshift-2-menu"
           role="listbox"
         />
       </div>
@@ -300,12 +300,12 @@ exports[`SelectDropdown should render with default value when free text is allow
       <div
         aria-expanded="false"
         aria-haspopup="listbox"
-        aria-owns="downshift-225-menu"
+        aria-owns="downshift-112-menu"
         role="combobox"
       >
         <label
-          for="downshift-224-input"
-          id="downshift-225-label"
+          for="downshift-112-input"
+          id="downshift-112-label"
         />
         <div
           class="Input__InputWrapperStyled-wu99qs-0 jba-du"
@@ -315,12 +315,12 @@ exports[`SelectDropdown should render with default value when free text is allow
           >
             <input
               aria-autocomplete="list"
-              aria-controls="downshift-225-menu"
-              aria-labelledby="downshift-225-label"
+              aria-controls="downshift-112-menu"
+              aria-labelledby="downshift-112-label"
               autocomplete="off"
               class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full cursor-default"
               data-testid="SelectDropdownInput__input"
-              id="downshift-224-input"
+              id="downshift-112-input"
               placeholder="Select option"
               value="3"
             />
@@ -349,9 +349,9 @@ exports[`SelectDropdown should render with default value when free text is allow
           </div>
         </div>
         <ul
-          aria-labelledby="downshift-225-label"
-          class="styles__SelectOptionsList-b2falt-0 heJAAA"
-          id="downshift-225-menu"
+          aria-labelledby="downshift-112-label"
+          class="styles__SelectOptionsList-b2falt-0 cUNLQk"
+          id="downshift-112-menu"
           role="listbox"
         />
       </div>
@@ -385,12 +385,12 @@ exports[`SelectDropdown should render with empty options 1`] = `
       <div
         aria-expanded="false"
         aria-haspopup="listbox"
-        aria-owns="downshift-35-menu"
+        aria-owns="downshift-17-menu"
         role="combobox"
       >
         <label
-          for="downshift-34-input"
-          id="downshift-35-label"
+          for="downshift-17-input"
+          id="downshift-17-label"
         />
         <div
           class="Input__InputWrapperStyled-wu99qs-0 jba-du"
@@ -400,12 +400,12 @@ exports[`SelectDropdown should render with empty options 1`] = `
           >
             <input
               aria-autocomplete="list"
-              aria-controls="downshift-35-menu"
-              aria-labelledby="downshift-35-label"
+              aria-controls="downshift-17-menu"
+              aria-labelledby="downshift-17-label"
               autocomplete="off"
               class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full cursor-default"
               data-testid="SelectDropdownInput__input"
-              id="downshift-34-input"
+              id="downshift-17-input"
               placeholder="Select option"
               value=""
             />
@@ -434,9 +434,9 @@ exports[`SelectDropdown should render with empty options 1`] = `
           </div>
         </div>
         <ul
-          aria-labelledby="downshift-35-label"
-          class="styles__SelectOptionsList-b2falt-0 heJAAA"
-          id="downshift-35-menu"
+          aria-labelledby="downshift-17-label"
+          class="styles__SelectOptionsList-b2falt-0 cUNLQk"
+          id="downshift-17-menu"
           role="listbox"
         />
       </div>
@@ -470,12 +470,12 @@ exports[`SelectDropdown should render with initial default value 1`] = `
       <div
         aria-expanded="false"
         aria-haspopup="listbox"
-        aria-owns="downshift-25-menu"
+        aria-owns="downshift-12-menu"
         role="combobox"
       >
         <label
-          for="downshift-24-input"
-          id="downshift-25-label"
+          for="downshift-12-input"
+          id="downshift-12-label"
         />
         <div
           class="Input__InputWrapperStyled-wu99qs-0 jba-du"
@@ -485,12 +485,12 @@ exports[`SelectDropdown should render with initial default value 1`] = `
           >
             <input
               aria-autocomplete="list"
-              aria-controls="downshift-25-menu"
-              aria-labelledby="downshift-25-label"
+              aria-controls="downshift-12-menu"
+              aria-labelledby="downshift-12-label"
               autocomplete="off"
               class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full cursor-default"
               data-testid="SelectDropdownInput__input"
-              id="downshift-24-input"
+              id="downshift-12-input"
               placeholder="Select option"
               value="Option 3"
             />
@@ -525,9 +525,9 @@ exports[`SelectDropdown should render with initial default value 1`] = `
           </div>
         </div>
         <ul
-          aria-labelledby="downshift-25-label"
-          class="styles__SelectOptionsList-b2falt-0 heJAAA"
-          id="downshift-25-menu"
+          aria-labelledby="downshift-12-label"
+          class="styles__SelectOptionsList-b2falt-0 cUNLQk"
+          id="downshift-12-menu"
           role="listbox"
         />
       </div>
@@ -561,12 +561,12 @@ exports[`SelectDropdown should render with options values as numbers 1`] = `
       <div
         aria-expanded="false"
         aria-haspopup="listbox"
-        aria-owns="downshift-39-menu"
+        aria-owns="downshift-19-menu"
         role="combobox"
       >
         <label
-          for="downshift-38-input"
-          id="downshift-39-label"
+          for="downshift-19-input"
+          id="downshift-19-label"
         />
         <div
           class="Input__InputWrapperStyled-wu99qs-0 jba-du"
@@ -576,12 +576,12 @@ exports[`SelectDropdown should render with options values as numbers 1`] = `
           >
             <input
               aria-autocomplete="list"
-              aria-controls="downshift-39-menu"
-              aria-labelledby="downshift-39-label"
+              aria-controls="downshift-19-menu"
+              aria-labelledby="downshift-19-label"
               autocomplete="off"
               class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full cursor-default"
               data-testid="SelectDropdownInput__input"
-              id="downshift-38-input"
+              id="downshift-19-input"
               placeholder="Select option"
               value=""
             />
@@ -610,9 +610,9 @@ exports[`SelectDropdown should render with options values as numbers 1`] = `
           </div>
         </div>
         <ul
-          aria-labelledby="downshift-39-label"
-          class="styles__SelectOptionsList-b2falt-0 heJAAA"
-          id="downshift-39-menu"
+          aria-labelledby="downshift-19-label"
+          class="styles__SelectOptionsList-b2falt-0 cUNLQk"
+          id="downshift-19-menu"
           role="listbox"
         />
       </div>
@@ -646,12 +646,12 @@ exports[`SelectDropdown should render with wrong default value 1`] = `
       <div
         aria-expanded="false"
         aria-haspopup="listbox"
-        aria-owns="downshift-31-menu"
+        aria-owns="downshift-15-menu"
         role="combobox"
       >
         <label
-          for="downshift-30-input"
-          id="downshift-31-label"
+          for="downshift-15-input"
+          id="downshift-15-label"
         />
         <div
           class="Input__InputWrapperStyled-wu99qs-0 jba-du"
@@ -661,12 +661,12 @@ exports[`SelectDropdown should render with wrong default value 1`] = `
           >
             <input
               aria-autocomplete="list"
-              aria-controls="downshift-31-menu"
-              aria-labelledby="downshift-31-label"
+              aria-controls="downshift-15-menu"
+              aria-labelledby="downshift-15-label"
               autocomplete="off"
               class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full cursor-default"
               data-testid="SelectDropdownInput__input"
-              id="downshift-30-input"
+              id="downshift-15-input"
               placeholder="Select option"
               value=""
             />
@@ -695,9 +695,9 @@ exports[`SelectDropdown should render with wrong default value 1`] = `
           </div>
         </div>
         <ul
-          aria-labelledby="downshift-31-label"
-          class="styles__SelectOptionsList-b2falt-0 heJAAA"
-          id="downshift-31-menu"
+          aria-labelledby="downshift-15-label"
+          class="styles__SelectOptionsList-b2falt-0 cUNLQk"
+          id="downshift-15-menu"
           role="listbox"
         />
       </div>
@@ -731,12 +731,12 @@ exports[`SelectDropdown should render without caret 1`] = `
       <div
         aria-expanded="false"
         aria-haspopup="listbox"
-        aria-owns="downshift-13-menu"
+        aria-owns="downshift-6-menu"
         role="combobox"
       >
         <label
-          for="downshift-12-input"
-          id="downshift-13-label"
+          for="downshift-6-input"
+          id="downshift-6-label"
         />
         <div
           class="Input__InputWrapperStyled-wu99qs-0 jba-du"
@@ -746,21 +746,21 @@ exports[`SelectDropdown should render without caret 1`] = `
           >
             <input
               aria-autocomplete="list"
-              aria-controls="downshift-13-menu"
-              aria-labelledby="downshift-13-label"
+              aria-controls="downshift-6-menu"
+              aria-labelledby="downshift-6-label"
               autocomplete="off"
               class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full cursor-default"
               data-testid="SelectDropdownInput__input"
-              id="downshift-12-input"
+              id="downshift-6-input"
               placeholder="Select option"
               value=""
             />
           </div>
         </div>
         <ul
-          aria-labelledby="downshift-13-label"
-          class="styles__SelectOptionsList-b2falt-0 heJAAA"
-          id="downshift-13-menu"
+          aria-labelledby="downshift-6-label"
+          class="styles__SelectOptionsList-b2falt-0 cUNLQk"
+          id="downshift-6-menu"
           role="listbox"
         />
       </div>

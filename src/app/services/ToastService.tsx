@@ -1,5 +1,5 @@
 import { Alert, AlertVariant } from "app/components/Alert";
-import { OriginalButton } from "app/components/Button";
+import { OriginalButton } from "app/components/Button/OriginalButton";
 import { Icon } from "app/components/Icon";
 import cls from "classnames";
 import React from "react";
