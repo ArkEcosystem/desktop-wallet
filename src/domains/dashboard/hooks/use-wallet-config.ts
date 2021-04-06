@@ -49,6 +49,11 @@ export const useWalletConfig = ({
 				.wallets()
 				.values()
 				.filter((wallet) => {
+					const usesTestNetworks = profile.settings().get(Contracts.ProfileSetting.UseTestNetworks);
+					if (!usesTestNetworks && wallet.network().isTest()) {
+						return false;
+					}
+
 					if (!selectedNetworkIds?.includes(wallet.network().id())) {
 						return false;
 					}

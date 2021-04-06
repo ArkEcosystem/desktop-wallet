@@ -40,37 +40,38 @@ export const TransactionTable = memo(
 				},
 			],
 		};
-		const commonColumns: any = [
-			{
-				Header: t("COMMON.DATE"),
-				id: "date",
-				accessor: (transaction: DTO.ExtendedTransactionData) => transaction.timestamp?.()?.toUNIX(),
-				sortDescFirst: true,
-				cellWidth: "w-50",
-			},
-			{
-				Header: t("COMMON.RECIPIENT"),
-				cellWidth: "w-96",
-			},
-			{
-				Header: t("COMMON.INFO"),
-				className: "justify-center",
-			},
-			{
-				Header: t("COMMON.STATUS"),
-				className: "justify-center",
-				minimumWidth: true,
-			},
-			{
-				Header: t("COMMON.AMOUNT"),
-				id: "amount",
-				accessor: (transaction: DTO.ExtendedTransactionData) => transaction.total?.().toHuman(),
-				sortDescFirst: true,
-				className: "justify-end",
-			},
-		];
 
 		const columns = useMemo(() => {
+			const commonColumns: any = [
+				{
+					Header: t("COMMON.DATE"),
+					id: "date",
+					accessor: (transaction: DTO.ExtendedTransactionData) => transaction.timestamp?.()?.toUNIX(),
+					sortDescFirst: true,
+					cellWidth: "w-50",
+				},
+				{
+					Header: t("COMMON.RECIPIENT"),
+					cellWidth: "w-96",
+				},
+				{
+					Header: t("COMMON.INFO"),
+					className: "justify-center",
+				},
+				{
+					Header: t("COMMON.STATUS"),
+					className: "justify-center",
+					minimumWidth: true,
+				},
+				{
+					Header: t("COMMON.AMOUNT"),
+					id: "amount",
+					accessor: (transaction: DTO.ExtendedTransactionData) => transaction.total?.().toHuman(),
+					sortDescFirst: true,
+					className: "justify-end",
+				},
+			];
+
 			if (isCompact) {
 				return [
 					{
@@ -104,12 +105,14 @@ export const TransactionTable = memo(
 			}
 
 			return commonColumns;
-		}, [commonColumns, exchangeCurrency, showExplorerLinkColumn, showSignColumn, isCompact, t]);
+		}, [exchangeCurrency, showExplorerLinkColumn, showSignColumn, isCompact, t]);
 
 		const showSkeleton = useMemo(() => isLoading && transactions.length === 0, [transactions, isLoading]);
 
-		const skeletonRows = new Array(skeletonRowsLimit).fill({});
-		const data = showSkeleton ? skeletonRows : transactions;
+		const data = useMemo(() => {
+			const skeletonRows = new Array(skeletonRowsLimit).fill({});
+			return showSkeleton ? skeletonRows : transactions;
+		}, [showSkeleton, transactions, skeletonRowsLimit]);
 
 		return (
 			<div data-testid="TransactionTable" className="relative">
