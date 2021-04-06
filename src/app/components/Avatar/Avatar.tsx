@@ -1,14 +1,15 @@
 import { Helpers } from "@arkecosystem/platform-sdk-profiles";
+import cn from "classnames";
 import React from "react";
-import tw, { css, styled } from "twin.macro";
+import tw, { styled } from "twin.macro";
 import { Size } from "types";
 
 type Props = {
 	address: string;
 	className?: string;
+	shadowClassName?: string;
 	highlight?: boolean;
 	noShadow?: boolean;
-	shadowColor?: string;
 	size?: Size;
 	children?: React.ReactNode;
 };
@@ -16,10 +17,11 @@ type Props = {
 export const AvatarWrapper = styled.div<{
 	highlight?: boolean;
 	noShadow?: boolean;
-	shadowColor?: string;
+	shadowClassName?: string;
 	size?: string;
 }>`
 	${tw`transition-all duration-100 relative inline-flex items-center justify-center overflow-hidden align-middle rounded-full`}
+
 	${({ size }) => {
 		switch (size) {
 			case "sm":
@@ -32,25 +34,12 @@ export const AvatarWrapper = styled.div<{
 				return tw`w-10 h-10`;
 		}
 	}}
-	${({ noShadow, shadowColor, highlight }) => {
-		if (!noShadow) {
-			return highlight
-				? css`
-						& {
-							box-shadow: 0 0 0 2px var(--theme-color-primary-600),
-								0 0 0 6px var(${shadowColor ? shadowColor : "--theme-background-color"});
-						}
-				  `
-				: css`
-						& {
-							box-shadow: 0 0 0 6px var(${shadowColor ? shadowColor : "--theme-background-color"});
-						}
-				  `;
-		}
-	}};
+
+	${({ noShadow, shadowClassName }) =>
+		noShadow ? tw`ring-0` : shadowClassName ? tw`ring-6` : tw`ring-6 ring-theme-background`}
 `;
 
-export const Avatar = ({ address, className, highlight, noShadow, shadowColor, size, children }: Props) => {
+export const Avatar = ({ address, className, highlight, noShadow, shadowClassName, size, children }: Props) => {
 	const svg = React.useMemo(() => Helpers.Avatar.make(address), [address]);
 
 	return (
@@ -59,10 +48,10 @@ export const Avatar = ({ address, className, highlight, noShadow, shadowColor, s
 			size={size}
 			noShadow={!!noShadow}
 			highlight={highlight}
-			className={className}
-			shadowColor={shadowColor}
+			className={cn(className, shadowClassName)}
+			shadowClassName={shadowClassName}
 		>
-			<div className="w-full h-full">
+			<div className={cn("w-full h-full", { "ring-2 ring-theme-primary-600": highlight })}>
 				<img alt={address} title={address} src={`data:image/svg+xml;utf8,${svg}`} />
 			</div>
 			{children}
