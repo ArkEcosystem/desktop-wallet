@@ -110,11 +110,17 @@ export const ImportWallet = () => {
 		setWalletData(wallet);
 
 		await syncAll(wallet);
+
+		saveProfile(activeProfile);
+
 		await persist();
 	};
 
 	const encryptMnemonic = async () => {
 		await walletData!.setWif(walletGenerationInput!, getValues("encryptionPassword"));
+
+		saveProfile(activeProfile);
+
 		await persist();
 	};
 
