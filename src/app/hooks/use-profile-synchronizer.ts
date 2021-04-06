@@ -157,7 +157,6 @@ export const useProfileRestore = () => {
 		// Prevent from unecessary save of old profile.
 		const activeProfile = getProfileFromUrl(history?.location?.pathname);
 		if (activeProfile?.id() !== profile.id()) {
-			// markAsRestored(profile.id());
 			return;
 		}
 
