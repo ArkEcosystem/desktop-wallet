@@ -75,6 +75,7 @@ export const useProfileTransactions = ({
 
 		setTimeout(() => loadTransactions(), 0);
 
+		isMounted.current = true;
 		return () => {
 			isMounted.current = false;
 		};
