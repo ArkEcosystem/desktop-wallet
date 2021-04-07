@@ -167,7 +167,7 @@ const useManager = (services: PluginService[], manager: PluginManager) => {
 				.plugins()
 				.all()
 				.map((item) => item.config()),
-		[pluginManager],
+		[pluginManager, state], // eslint-disable-line react-hooks/exhaustive-deps
 	);
 
 	const allPlugins: PluginConfigurationData[] = useMemo(

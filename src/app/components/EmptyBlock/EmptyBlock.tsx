@@ -6,7 +6,7 @@ type EmptyBlockProps = {
 	className?: string;
 	children?: React.ReactNode;
 	size?: Size;
-} & React.HTMLProps<any>;
+} & Omit<React.HTMLProps<any>, "size">;
 
 export const EmptyBlock = ({ className, children, size, ...props }: EmptyBlockProps) => {
 	const padding = size === "sm" ? "py-3 px-4" : "p-6";
