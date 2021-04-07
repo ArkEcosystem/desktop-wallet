@@ -8,6 +8,7 @@ type TransactionsState = {
 	isLoadingMore: boolean;
 	activeMode?: string;
 	activeTransactionType?: any;
+	hasMore?: boolean;
 };
 
 type TransactionFilters = {
@@ -20,6 +21,7 @@ type FetchTransactionProps = {
 	mode?: string;
 	transactionType?: any;
 	wallets: IReadWriteWallet[];
+	cursor?: number;
 };
 
 export const useProfileTransactions = ({
@@ -31,11 +33,13 @@ export const useProfileTransactions = ({
 }) => {
 	const lastActiveMode = useRef<string>();
 	const isMounted = useRef(true);
+	const cursor = useRef(1);
 
 	const [
-		{ transactions, activeMode, activeTransactionType, isLoadingTransactions, isLoadingMore },
+		{ transactions, activeMode, activeTransactionType, isLoadingTransactions, isLoadingMore, hasMore },
 		setState,
 	] = useState<TransactionsState>({
+		hasMore: true,
 		isLoadingMore: false,
 		isLoadingTransactions: true,
 		transactions: [],
@@ -45,7 +49,7 @@ export const useProfileTransactions = ({
 
 	useEffect(() => {
 		const loadTransactions = async () => {
-			const fetchedTransactions = await fetchTransactions({
+			const response = await fetchTransactions({
 				wallets,
 				flush: true,
 				mode: activeMode!,
@@ -66,7 +70,12 @@ export const useProfileTransactions = ({
 				return;
 			}
 
-			setState((state) => ({ ...state, transactions: fetchedTransactions, isLoadingTransactions: false }));
+			setState((state) => ({
+				...state,
+				transactions: response.items(),
+				isLoadingTransactions: false,
+				hasMore: response.items().length > 0 && response.hasMorePages(),
+			}));
 		};
 
 		if (!lastActiveMode.current) {
@@ -88,6 +97,7 @@ export const useProfileTransactions = ({
 			lastActiveMode.current = JSON.stringify({ activeMode, activeTransactionType });
 
 			const hasWallets = wallets.length !== 0;
+			cursor.current = 1;
 
 			/* istanbul ignore next */
 			if (!isMounted.current) {
@@ -106,9 +116,9 @@ export const useProfileTransactions = ({
 	);
 
 	const fetchTransactions = useCallback(
-		async ({ flush = false, mode = "all", transactionType, wallets = [] }: FetchTransactionProps) => {
+		({ flush = false, mode = "all", transactionType, wallets = [], cursor = 1 }: FetchTransactionProps) => {
 			if (wallets.length === 0) {
-				return [];
+				return { items: () => [], hasMorePages: () => false };
 			}
 
 			const methodMap = {
@@ -123,37 +133,36 @@ export const useProfileTransactions = ({
 				profile.transactionAggregate().flush(method);
 			}
 
-			const defaultQuery = { limit: 30, addresses: wallets.map((wallet) => wallet.address()) };
+			const defaultQuery = { limit: 30, addresses: wallets.map((wallet) => wallet.address(), cursor) };
 			const queryParams = transactionType ? { ...defaultQuery, ...transactionType } : defaultQuery;
 
 			// @ts-ignore
-			const response = await profile.transactionAggregate()[method](queryParams);
-			const transactionsAggregate = response.items();
-
-			return transactionsAggregate;
+			return profile.transactionAggregate()[method](queryParams);
 		},
 		[profile],
 	);
 
 	const fetchMore = useCallback(async () => {
+		cursor.current = cursor.current + 1;
 		setState((state) => ({ ...state, isLoadingMore: true }));
 
-		const nextPage = await fetchTransactions({
+		const response = await fetchTransactions({
 			flush: false,
 			mode: activeMode,
 			transactionType: activeTransactionType,
 			wallets,
+			cursor: cursor.current,
 		});
 
 		setState((state) => ({
 			...state,
 			isLoadingMore: false,
-			transactions: [...state.transactions, ...nextPage],
+			hasMore: response.items().length > 0 && response.hasMorePages(),
+			transactions: [...state.transactions, ...response.items()],
 		}));
 	}, [activeMode, activeTransactionType, wallets.length]); // eslint-disable-line react-hooks/exhaustive-deps
 
 	// TODO: Run periodic checks for new transactions every 30 seconds
-	// TODO: provide `hasMore` from sdk
 
 	return {
 		fetchTransactions,
@@ -164,5 +173,6 @@ export const useProfileTransactions = ({
 		activeTransactionType,
 		isLoadingTransactions,
 		isLoadingMore,
+		hasMore,
 	};
 };

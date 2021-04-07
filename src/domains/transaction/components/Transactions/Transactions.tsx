@@ -44,6 +44,7 @@ export const Transactions = memo(
 			activeMode,
 			activeTransactionType,
 			fetchMore,
+			hasMore,
 		} = useProfileTransactions({ profile, wallets });
 
 		useEffect(() => {
@@ -116,7 +117,7 @@ export const Transactions = memo(
 					isCompact={isCompact}
 				/>
 
-				{transactions.length > 0 && (
+				{transactions.length > 0 && hasMore && (
 					<Button
 						data-testid="transactions__fetch-more-button"
 						variant="secondary"
