@@ -99,8 +99,8 @@ export const WalletVote = ({ isLoading, isLoadingDelegates, wallet, onButtonClic
 			<>
 				<Circle
 					size="lg"
-					shadowColor="--theme-secondary-background-color"
 					className="border-theme-secondary-900 dark:border-theme-secondary-700 text-theme-secondary-900 dark:text-theme-secondary-700"
+					shadowClassName="ring-theme-secondary-background"
 				>
 					<Icon name="Vote" width={17} height={17} />
 				</Circle>
@@ -162,8 +162,8 @@ export const WalletVote = ({ isLoading, isLoadingDelegates, wallet, onButtonClic
 				<>
 					<Circle
 						size="lg"
-						shadowColor="--theme-secondary-background-color"
 						className="border-theme-secondary-500 dark:border-theme-secondary-700 text-theme-secondary-500 dark:text-theme-secondary-700"
+						shadowClassName="ring-theme-secondary-background"
 					>
 						<Icon name="Vote" width={17} height={17} />
 					</Circle>

@@ -2,24 +2,13 @@ import { DateTime } from "@arkecosystem/platform-sdk-intl";
 import { Contracts, DTO } from "@arkecosystem/platform-sdk-profiles";
 import { BigNumber } from "@arkecosystem/platform-sdk-support";
 import React from "react";
-import { TransactionFixture } from "tests/fixtures/transactions";
-import * as utils from "utils/electron-utils";
-import { env, fireEvent, getDefaultProfileId, render, renderWithRouter } from "utils/testing-library";
+import { env, getDefaultProfileId, render } from "utils/testing-library";
 
-import { UnconfirmedTransactionRow } from "./UnconfirmedTransactionRow";
 import { UnconfirmedTransactionTable } from "./UnconfirmedTransactionTable";
 
 let transactions: DTO.ExtendedTransactionData[];
 let profile: Contracts.IProfile;
 let wallet: Contracts.IReadWriteWallet;
-
-const TransactionRowFixture = {
-	...TransactionFixture,
-	wallet: () => ({
-		...TransactionFixture.wallet(),
-		currency: () => "DARK",
-	}),
-};
 
 describe("Unconfirmed transaction table", () => {
 	beforeEach(() => {
@@ -64,30 +53,5 @@ describe("Unconfirmed transaction table", () => {
 	it("should render", () => {
 		const { asFragment } = render(<UnconfirmedTransactionTable transactions={transactions} />);
 		expect(asFragment()).toMatchSnapshot();
-	});
-
-	it.each(["light", "dark"])("should set %s shadow color on mouse events", (theme) => {
-		const mockDarkTheme = jest.spyOn(utils, "shouldUseDarkColors").mockImplementation(() => theme === "dark");
-
-		const setState = jest.fn();
-		const useStateSpy = jest.spyOn(React, "useState");
-
-		useStateSpy.mockImplementation((state) => [state, setState]);
-
-		const { getByTestId } = renderWithRouter(
-			<table>
-				<tbody>
-					{/* @ts-ignore */}
-					<UnconfirmedTransactionRow transaction={TransactionRowFixture} />
-				</tbody>
-			</table>,
-		);
-
-		fireEvent.mouseEnter(getByTestId("TableRow"));
-		fireEvent.mouseLeave(getByTestId("TableRow"));
-
-		expect(setState).toHaveBeenCalledWith(theme === "dark" ? "--theme-black" : "--theme-color-secondary-100");
-		expect(setState).toHaveBeenCalledWith("");
-		mockDarkTheme.mockRestore();
 	});
 });
