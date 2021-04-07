@@ -43,12 +43,17 @@ describe("useProfileTransactions", () => {
 			result: { current },
 		} = renderHook(() => useProfileTransactions({ profile, wallets: profile.wallets().values() }), { wrapper });
 
-		await waitFor(() =>
-			expect(current.fetchTransactions({ wallets: profile.wallets().values() })).resolves.toHaveLength(4),
-		);
+		const response = await current.fetchTransactions({
+			wallets: profile.wallets().values(),
+			cursor: 1,
+			mode: "all",
+			flush: true,
+		});
+		await waitFor(() => expect(response.items()).toHaveLength(4));
 
 		//@ts-ignore
-		await waitFor(() => expect(current.fetchTransactions({})).resolves.toHaveLength(0));
+		const responseEmpty = await current.fetchTransactions({});
+		await waitFor(() => expect(responseEmpty.items()).toHaveLength(0));
 	});
 
 	it("#updateFilters", async () => {
@@ -78,14 +83,27 @@ describe("useProfileTransactions", () => {
 			);
 
 			await waitFor(() =>
-				expect(result.current.fetchTransactions({ wallets: profile.wallets().values() })).resolves.toHaveLength(
-					4,
-				),
+				expect(result.current.fetchTransactions({ wallets: profile.wallets().values() })).resolves.toBeTruthy(),
 			);
 
 			await result.current.fetchMore();
 
 			await waitFor(() => expect(result.current.transactions.length).toEqual(4), { timeout: 4000 });
+
+			const mockTransactionsAggregate = jest
+				.spyOn(profile.transactionAggregate(), "transactions")
+				.mockImplementation(() => {
+					const response = {
+						hasMorePages: () => false,
+						items: () => [],
+					};
+					return Promise.resolve(response);
+				});
+
+			await result.current.fetchMore();
+
+			await waitFor(() => expect(result.current.transactions.length).toEqual(4), { timeout: 4000 });
+			mockTransactionsAggregate.mockRestore();
 		});
 	});
 });
