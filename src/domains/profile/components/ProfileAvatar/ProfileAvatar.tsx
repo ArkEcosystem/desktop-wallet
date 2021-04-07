@@ -10,13 +10,19 @@ type ProfileAvatarProps = {
 
 export const ProfileAvatar = ({ profile, size }: ProfileAvatarProps) =>
 	profile.avatar().endsWith("</svg>") ? (
-		<Avatar size={size} data-testid="ProfileAvatar__svg">
-			<img src={`data:image/svg+xml;utf8,${profile.avatar()}`} title={profile.name()} alt={profile.name()} />
+		<Avatar size={size}>
+			<img
+				data-testid="ProfileAvatar__svg"
+				src={`data:image/svg+xml;utf8,${profile.avatar()}`}
+				title={profile.name()}
+				alt={profile.name()}
+			/>
 			<span className="absolute font-semibold text-white">{profile.name().slice(0, 2).toUpperCase()}</span>
 		</Avatar>
 	) : (
-		<Avatar size={size} data-testid="ProfileAvatar__image">
+		<Avatar size={size}>
 			<img
+				data-testid="ProfileAvatar__image"
 				src={profile.avatar()}
 				className="object-cover w-20 h-20 bg-center bg-no-repeat bg-cover rounded-full"
 				title={profile.name()}

@@ -12,13 +12,9 @@ type Props = {
 	noShadow?: boolean;
 	size?: Size;
 	children?: React.ReactNode;
-} & React.HTMLProps<any>;
+};
 
-const AvatarWrapper = styled.div<{
-	noShadow?: boolean;
-	shadowClassName?: string;
-	size?: string;
-}>`
+const AvatarWrapper = styled.div<Props>`
 	${tw`transition-all duration-100 relative inline-flex items-center justify-center align-middle rounded-full`}
 
 	${({ size }) => {
@@ -38,16 +34,7 @@ const AvatarWrapper = styled.div<{
 		noShadow ? tw`ring-0` : shadowClassName ? tw`ring-6` : tw`ring-6 ring-theme-background`}
 `;
 
-export const Avatar = ({
-	address,
-	className,
-	highlight,
-	noShadow,
-	shadowClassName,
-	size,
-	children,
-	...props
-}: Props) => {
+export const Avatar = ({ address, className, highlight, noShadow, shadowClassName, size, children }: Props) => {
 	const svg = React.useMemo(() => (address ? Helpers.Avatar.make(address) : undefined), [address]);
 
 	return (
@@ -57,7 +44,6 @@ export const Avatar = ({
 			noShadow={!!noShadow}
 			className={cn(className, shadowClassName)}
 			shadowClassName={shadowClassName}
-			{...props}
 		>
 			<div
 				className={cn(
@@ -73,5 +59,5 @@ export const Avatar = ({
 };
 
 Avatar.defaultProps = {
-	value: "",
+	address: "",
 };
