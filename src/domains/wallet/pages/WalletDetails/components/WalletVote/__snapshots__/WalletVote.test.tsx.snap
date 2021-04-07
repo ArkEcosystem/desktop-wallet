@@ -321,6 +321,202 @@ exports[`WalletVote multi vote networks should render a vote for multiple active
 </DocumentFragment>
 `;
 
+exports[`WalletVote should handle delegate sync error 1`] = `
+<DocumentFragment>
+  <div
+    class="flex items-center w-full"
+    data-testid="WalletVote"
+  >
+    <div
+      class="Circle-uw7h4j-0 kUEiXZ border-theme-secondary-500 dark:border-theme-secondary-700 text-theme-secondary-500 dark:text-theme-secondary-700"
+    >
+      <div
+        class="sc-bdfBwQ fdjKgV"
+        height="17"
+        width="17"
+      >
+        <svg>
+          vote.svg
+        </svg>
+      </div>
+    </div>
+    <div
+      class="flex flex-1 ml-4"
+    >
+      <div
+        class="flex flex-col justify-between"
+      >
+        <span
+          class="font-semibold"
+        >
+          My Vote
+          <span
+            class="ml-1 text-theme-secondary-500 dark:text-theme-secondary-700"
+          >
+            0/1
+          </span>
+        </span>
+        <span
+          class="leading-none"
+        >
+          <span
+            class="mr-1 text-sm text-theme-secondary-500 dark:text-theme-secondary-700"
+          >
+            You have not voted for a Delegate yet.
+          </span>
+          <a
+            class="Link__AnchorStyled-sc-1q7sbxr-0 cIuuRE inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary-600 hover:text-theme-primary-700 hover:underline active:text-theme-primary-500"
+            data-testid="Link"
+            rel="noopener noreferrer"
+            to="https://ark.dev/docs/desktop-wallet/user-guides/how-to-vote-unvote"
+          >
+            <span
+              class="underline-dotted"
+            >
+              <span
+                class="text-sm"
+              >
+                Learn more
+              </span>
+            </span>
+            <div
+              class="sc-bdfBwQ fPrsah flex-shrink-0 ml-2 text-sm"
+              data-testid="Link__external"
+              height="1em"
+              width="1em"
+            >
+              <svg>
+                redirect.svg
+              </svg>
+            </div>
+          </a>
+        </span>
+      </div>
+    </div>
+    <button
+      class="OriginalButton__StyledButton-sc-1y2wptt-0 hsoUax space-x-2"
+      data-testid="WalletVote__button"
+      type="button"
+    >
+      <div
+        class="flex relative items-center space-x-2"
+      >
+        <div
+          class="sc-bdfBwQ fdjKgV"
+          height="17"
+          width="17"
+        >
+          <svg>
+            vote.svg
+          </svg>
+        </div>
+        <span>
+          Vote
+        </span>
+      </div>
+    </button>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`WalletVote should handle wallet votes error 1`] = `
+<DocumentFragment>
+  <div
+    class="flex items-center w-full"
+    data-testid="WalletVote"
+  >
+    <div
+      class="Circle-uw7h4j-0 kUEiXZ border-theme-secondary-500 dark:border-theme-secondary-700 text-theme-secondary-500 dark:text-theme-secondary-700"
+    >
+      <div
+        class="sc-bdfBwQ fdjKgV"
+        height="17"
+        width="17"
+      >
+        <svg>
+          vote.svg
+        </svg>
+      </div>
+    </div>
+    <div
+      class="flex flex-1 ml-4"
+    >
+      <div
+        class="flex flex-col justify-between"
+      >
+        <span
+          class="font-semibold"
+        >
+          My Vote
+          <span
+            class="ml-1 text-theme-secondary-500 dark:text-theme-secondary-700"
+          >
+            0/1
+          </span>
+        </span>
+        <span
+          class="leading-none"
+        >
+          <span
+            class="mr-1 text-sm text-theme-secondary-500 dark:text-theme-secondary-700"
+          >
+            You have not voted for a Delegate yet.
+          </span>
+          <a
+            class="Link__AnchorStyled-sc-1q7sbxr-0 cIuuRE inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary-600 hover:text-theme-primary-700 hover:underline active:text-theme-primary-500"
+            data-testid="Link"
+            rel="noopener noreferrer"
+            to="https://ark.dev/docs/desktop-wallet/user-guides/how-to-vote-unvote"
+          >
+            <span
+              class="underline-dotted"
+            >
+              <span
+                class="text-sm"
+              >
+                Learn more
+              </span>
+            </span>
+            <div
+              class="sc-bdfBwQ fPrsah flex-shrink-0 ml-2 text-sm"
+              data-testid="Link__external"
+              height="1em"
+              width="1em"
+            >
+              <svg>
+                redirect.svg
+              </svg>
+            </div>
+          </a>
+        </span>
+      </div>
+    </div>
+    <button
+      class="OriginalButton__StyledButton-sc-1y2wptt-0 hsoUax space-x-2"
+      data-testid="WalletVote__button"
+      type="button"
+    >
+      <div
+        class="flex relative items-center space-x-2"
+      >
+        <div
+          class="sc-bdfBwQ fdjKgV"
+          height="17"
+          width="17"
+        >
+          <svg>
+            vote.svg
+          </svg>
+        </div>
+        <span>
+          Vote
+        </span>
+      </div>
+    </button>
+  </div>
+</DocumentFragment>
+`;
+
 exports[`WalletVote should render 1`] = `
 <DocumentFragment>
   <div
@@ -419,80 +615,6 @@ exports[`WalletVote should render 1`] = `
         </span>
       </div>
     </button>
-  </div>
-</DocumentFragment>
-`;
-
-exports[`WalletVote should render loading state 1`] = `
-<DocumentFragment>
-  <div
-    class="flex items-center w-full"
-    data-testid="WalletVote__skeleton"
-  >
-    <div
-      class="Circle-uw7h4j-0 kUEiXZ mr-4 border-transparent"
-    >
-      <span>
-        <span
-          class="flex items-center leading-none"
-        >
-          <span
-            class="react-loading-skeleton css-1vmnjpn-skeletonStyles-Skeleton"
-            style="width: 44px; height: 44px; border-radius: 50%;"
-          >
-            ‌
-          </span>
-          ‌
-        </span>
-      </span>
-    </div>
-    <div
-      class="flex flex-col justify-between h-10"
-    >
-      <span>
-        <span
-          class="flex items-center leading-none"
-        >
-          <span
-            class="react-loading-skeleton css-1vmnjpn-skeletonStyles-Skeleton"
-            style="width: 100px; height: 14px;"
-          >
-            ‌
-          </span>
-          ‌
-        </span>
-      </span>
-      <span>
-        <span
-          class="flex items-center leading-none"
-        >
-          <span
-            class="react-loading-skeleton css-1vmnjpn-skeletonStyles-Skeleton"
-            style="width: 150px; height: 16px;"
-          >
-            ‌
-          </span>
-          ‌
-        </span>
-      </span>
-    </div>
-    <div
-      class="ml-auto"
-    >
-      <span>
-        <span
-          class="flex items-center leading-none"
-        >
-          <span
-            class="react-loading-skeleton css-1vmnjpn-skeletonStyles-Skeleton"
-            style="width: 100px; height: 44px;"
-          >
-            ‌
-          </span>
-          ‌
-        </span>
-      </span>
-    </div>
   </div>
 </DocumentFragment>
 `;
