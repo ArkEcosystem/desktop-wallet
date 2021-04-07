@@ -1,7 +1,6 @@
 import { Contracts } from "@arkecosystem/platform-sdk-profiles";
 import { Address } from "app/components/Address";
 import { Avatar } from "app/components/Avatar";
-import { AvatarWrapper } from "app/components/Avatar";
 import { Button } from "app/components/Button";
 import { Circle } from "app/components/Circle";
 import { Clipboard } from "app/components/Clipboard";
@@ -37,7 +36,7 @@ export const ContactListItem = ({ item, variant, onAction, onSend, options }: Co
 							<TableCell variant="start" innerClassName="space-x-4">
 								{index === 0 && (
 									<>
-										<AvatarWrapper data-testid="ContactListItem__user--avatar" size="lg" noShadow>
+										<Avatar data-testid="ContactListItem__user--avatar" size="lg" noShadow>
 											<img
 												src={`data:image/svg+xml;utf8,${item.avatar()}`}
 												title={item.name()}
@@ -46,7 +45,7 @@ export const ContactListItem = ({ item, variant, onAction, onSend, options }: Co
 											<span className="absolute text-sm font-semibold text-theme-background">
 												{item.name().slice(0, 2).toUpperCase()}
 											</span>
-										</AvatarWrapper>
+										</Avatar>
 
 										<span className="font-semibold" data-testid="ContactListItem__name">
 											{item.name()}

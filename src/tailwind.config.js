@@ -207,6 +207,9 @@ module.exports = {
 			transitionProperty: {
 				background: "background-color",
 			},
+			ringWidth: {
+				6: "6px",
+			},
 		},
 	},
 	variants: {
@@ -215,6 +218,7 @@ module.exports = {
 		margin: [...defaultConfig.variants.margin, "first"],
 		opacity: [...defaultConfig.variants.opacity, "group-hover"],
 		padding: [...defaultConfig.variants.padding, "first", "last"],
+		ringColor: [...defaultConfig.variants.ringWidth, "dark", "group-hover"],
 	},
 	plugins: [require("@tailwindcss/forms")],
 };

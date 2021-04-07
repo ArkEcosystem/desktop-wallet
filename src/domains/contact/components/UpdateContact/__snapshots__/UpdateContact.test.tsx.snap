@@ -123,7 +123,7 @@ exports[`UpdateContact should render a modal 1`] = `
                         class="Input__InputWrapperStyled-wu99qs-0 jba-du"
                       >
                         <div
-                          class="Circle-uw7h4j-0 blBpcG border-theme-secondary-200 dark:border-theme-secondary-700 text-theme-secondary-500"
+                          class="Circle__CircleWrapper-uw7h4j-0 grnDUY border-theme-secondary-200 dark:border-theme-secondary-700 text-theme-secondary-500 ring-theme-background"
                           data-testid="SelectNetworkInput__network"
                         />
                         <div
@@ -230,7 +230,7 @@ exports[`UpdateContact should render a modal 1`] = `
                       >
                         <div
                           aria-label="ARK Devnet"
-                          class="Circle-uw7h4j-0 JkqUV border-theme-primary-100 text-theme-primary-400"
+                          class="Circle__CircleWrapper-uw7h4j-0 bNDQMV border-theme-primary-100 text-theme-primary-400 ring-theme-background"
                           data-testid="NetworkIcon-ARK-ark.devnet"
                         >
                           <div
@@ -245,11 +245,11 @@ exports[`UpdateContact should render a modal 1`] = `
                           </div>
                         </div>
                         <div
-                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 gyYbkb"
+                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB"
                           data-testid="Avatar"
                         >
                           <div
-                            class="w-full h-full"
+                            class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
                           >
                             <img
                               alt="D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib"

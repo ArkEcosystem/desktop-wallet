@@ -7,7 +7,7 @@ exports[`WalletListItemSkeleton should render wallet list skeleton 1`] = `
       data-testid="WalletListSkeleton"
     >
       <tr
-        class="TableRow__TableRowStyled-sc-1br46dw-0 fzBhIQ"
+        class="TableRow__TableRowStyled-sc-1br46dw-0 fzBhIQ group"
         data-testid="TableRow"
       >
         <td>
@@ -21,7 +21,7 @@ exports[`WalletListItemSkeleton should render wallet list skeleton 1`] = `
                 class="flex items-center mr-2 -space-x-1"
               >
                 <div
-                  class="Circle-uw7h4j-0 JkqUV border-transparent"
+                  class="Circle__CircleWrapper-uw7h4j-0 bNDQMV border-transparent ring-theme-background"
                 >
                   <span>
                     <span
@@ -33,7 +33,7 @@ exports[`WalletListItemSkeleton should render wallet list skeleton 1`] = `
                   </span>
                 </div>
                 <div
-                  class="Circle-uw7h4j-0 JkqUV border-transparent"
+                  class="Circle__CircleWrapper-uw7h4j-0 bNDQMV border-transparent ring-theme-background"
                 >
                   <span>
                     <span

@@ -221,7 +221,7 @@ exports[`SendTransfer should display disabled address selection input if selecte
               class="flex my-0.5 ml-4 -space-x-2"
             >
               <div
-                class="Circle-uw7h4j-0 JkqUV border-theme-primary-100 dark:border-theme-secondary-800"
+                class="Circle__CircleWrapper-uw7h4j-0 bNDQMV border-theme-primary-100 dark:border-theme-secondary-800 ring-theme-background"
               >
                 <span
                   class="text-theme-secondary-text dark:text-theme-secondary-800"
@@ -248,17 +248,22 @@ exports[`SendTransfer should display disabled address selection input if selecte
                     data-testid="navbar__useractions"
                   >
                     <div
-                      class="Avatar__AvatarWrapper-sc-1vsy2s2-0 gyYbkb"
+                      class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB"
+                      data-testid="Avatar"
                     >
-                      <img
-                        alt="Profile Avatar"
-                        src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"30\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"55\\" cx=\\"0\\" cy=\\"60\\" fill=\\"rgb(255, 152, 0)\\"/><circle r=\\"40\\" cx=\\"50\\" cy=\\"50\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
-                      />
-                      <span
-                        class="absolute text-sm font-semibold text-theme-background dark:text-theme-text"
+                      <div
+                        class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
                       >
-                        JO
-                      </span>
+                        <img
+                          alt="Profile Avatar"
+                          src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"30\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"55\\" cx=\\"0\\" cy=\\"60\\" fill=\\"rgb(255, 152, 0)\\"/><circle r=\\"40\\" cx=\\"50\\" cy=\\"50\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
+                        />
+                        <span
+                          class="absolute text-sm font-semibold text-theme-background dark:text-theme-text"
+                        >
+                          JO
+                        </span>
+                      </div>
                     </div>
                   </div>
                 </span>
@@ -366,7 +371,7 @@ exports[`SendTransfer should display disabled address selection input if selecte
                             >
                               <div
                                 aria-label="ARK Devnet"
-                                class="Circle-uw7h4j-0 blBpcG border-theme-secondary-200 dark:border-theme-secondary-700 text-theme-secondary-500"
+                                class="Circle__CircleWrapper-uw7h4j-0 grnDUY border-theme-secondary-200 dark:border-theme-secondary-700 text-theme-secondary-500 ring-theme-background"
                                 data-testid="SelectNetworkInput__network"
                               >
                                 <div
@@ -480,7 +485,7 @@ exports[`SendTransfer should display disabled address selection input if selecte
                               class="Input__InputWrapperStyled-wu99qs-0 jba-du"
                             >
                               <div
-                                class="Circle-uw7h4j-0 blBpcG bg-theme-secondary-200 dark:bg-theme-secondary-700 border-theme-secondary-200 dark:border-theme-secondary-700"
+                                class="Circle__CircleWrapper-uw7h4j-0 grnDUY bg-theme-secondary-200 dark:bg-theme-secondary-700 border-theme-secondary-200 dark:border-theme-secondary-700 ring-theme-background"
                               />
                               <div
                                 class="relative flex flex-1 h-full invisible"
@@ -640,7 +645,7 @@ exports[`SendTransfer should display disabled address selection input if selecte
                                             disabled=""
                                           >
                                             <div
-                                              class="Circle-uw7h4j-0 blBpcG bg-theme-secondary-200 dark:bg-theme-secondary-700 border-theme-secondary-200 dark:border-theme-secondary-700"
+                                              class="Circle__CircleWrapper-uw7h4j-0 grnDUY bg-theme-secondary-200 dark:bg-theme-secondary-700 border-theme-secondary-200 dark:border-theme-secondary-700 ring-theme-background"
                                             />
                                             <div
                                               class="relative flex flex-1 h-full"
@@ -1164,7 +1169,7 @@ exports[`SendTransfer should error if wrong mnemonic 1`] = `
               class="flex my-0.5 ml-4 -space-x-2"
             >
               <div
-                class="Circle-uw7h4j-0 JkqUV border-theme-primary-100 dark:border-theme-secondary-800"
+                class="Circle__CircleWrapper-uw7h4j-0 bNDQMV border-theme-primary-100 dark:border-theme-secondary-800 ring-theme-background"
               >
                 <span
                   class="text-theme-secondary-text dark:text-theme-secondary-800"
@@ -1191,17 +1196,22 @@ exports[`SendTransfer should error if wrong mnemonic 1`] = `
                     data-testid="navbar__useractions"
                   >
                     <div
-                      class="Avatar__AvatarWrapper-sc-1vsy2s2-0 gyYbkb"
+                      class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB"
+                      data-testid="Avatar"
                     >
-                      <img
-                        alt="Profile Avatar"
-                        src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"30\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"55\\" cx=\\"0\\" cy=\\"60\\" fill=\\"rgb(255, 152, 0)\\"/><circle r=\\"40\\" cx=\\"50\\" cy=\\"50\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
-                      />
-                      <span
-                        class="absolute text-sm font-semibold text-theme-background dark:text-theme-text"
+                      <div
+                        class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
                       >
-                        JO
-                      </span>
+                        <img
+                          alt="Profile Avatar"
+                          src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"30\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"55\\" cx=\\"0\\" cy=\\"60\\" fill=\\"rgb(255, 152, 0)\\"/><circle r=\\"40\\" cx=\\"50\\" cy=\\"50\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
+                        />
+                        <span
+                          class="absolute text-sm font-semibold text-theme-background dark:text-theme-text"
+                        >
+                          JO
+                        </span>
+                      </div>
                     </div>
                   </div>
                 </span>
@@ -1463,7 +1473,7 @@ exports[`SendTransfer should render 1st step with custom deeplink values and use
               class="Input__InputWrapperStyled-wu99qs-0 jba-du"
             >
               <div
-                class="Circle-uw7h4j-0 blBpcG border-theme-secondary-200 dark:border-theme-secondary-700 text-theme-secondary-500"
+                class="Circle__CircleWrapper-uw7h4j-0 grnDUY border-theme-secondary-200 dark:border-theme-secondary-700 text-theme-secondary-500 ring-theme-background"
                 data-testid="SelectNetworkInput__network"
               />
               <div
@@ -1533,7 +1543,7 @@ exports[`SendTransfer should render 1st step with custom deeplink values and use
               class="Input__InputWrapperStyled-wu99qs-0 jba-du"
             >
               <div
-                class="Circle-uw7h4j-0 blBpcG bg-theme-secondary-200 dark:bg-theme-secondary-700 border-theme-secondary-200 dark:border-theme-secondary-700"
+                class="Circle__CircleWrapper-uw7h4j-0 grnDUY bg-theme-secondary-200 dark:bg-theme-secondary-700 border-theme-secondary-200 dark:border-theme-secondary-700 ring-theme-background"
               />
               <div
                 class="relative flex flex-1 h-full invisible"
@@ -1693,7 +1703,7 @@ exports[`SendTransfer should render 1st step with custom deeplink values and use
                             disabled=""
                           >
                             <div
-                              class="Circle-uw7h4j-0 blBpcG bg-theme-secondary-200 dark:bg-theme-secondary-700 border-theme-secondary-200 dark:border-theme-secondary-700"
+                              class="Circle__CircleWrapper-uw7h4j-0 grnDUY bg-theme-secondary-200 dark:bg-theme-secondary-700 border-theme-secondary-200 dark:border-theme-secondary-700 ring-theme-background"
                             />
                             <div
                               class="relative flex flex-1 h-full"
@@ -2120,7 +2130,7 @@ exports[`SendTransfer should render form and use location state 1`] = `
               class="flex my-0.5 ml-4 -space-x-2"
             >
               <div
-                class="Circle-uw7h4j-0 JkqUV border-theme-primary-100 dark:border-theme-secondary-800"
+                class="Circle__CircleWrapper-uw7h4j-0 bNDQMV border-theme-primary-100 dark:border-theme-secondary-800 ring-theme-background"
               >
                 <span
                   class="text-theme-secondary-text dark:text-theme-secondary-800"
@@ -2147,17 +2157,22 @@ exports[`SendTransfer should render form and use location state 1`] = `
                     data-testid="navbar__useractions"
                   >
                     <div
-                      class="Avatar__AvatarWrapper-sc-1vsy2s2-0 gyYbkb"
+                      class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB"
+                      data-testid="Avatar"
                     >
-                      <img
-                        alt="Profile Avatar"
-                        src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"30\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"55\\" cx=\\"0\\" cy=\\"60\\" fill=\\"rgb(255, 152, 0)\\"/><circle r=\\"40\\" cx=\\"50\\" cy=\\"50\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
-                      />
-                      <span
-                        class="absolute text-sm font-semibold text-theme-background dark:text-theme-text"
+                      <div
+                        class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
                       >
-                        JO
-                      </span>
+                        <img
+                          alt="Profile Avatar"
+                          src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"30\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"55\\" cx=\\"0\\" cy=\\"60\\" fill=\\"rgb(255, 152, 0)\\"/><circle r=\\"40\\" cx=\\"50\\" cy=\\"50\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
+                        />
+                        <span
+                          class="absolute text-sm font-semibold text-theme-background dark:text-theme-text"
+                        >
+                          JO
+                        </span>
+                      </div>
                     </div>
                   </div>
                 </span>
@@ -2262,7 +2277,7 @@ exports[`SendTransfer should render form and use location state 1`] = `
                             >
                               <div
                                 aria-label="ARK Devnet"
-                                class="Circle-uw7h4j-0 blBpcG border-theme-secondary-200 dark:border-theme-secondary-700 text-theme-secondary-500"
+                                class="Circle__CircleWrapper-uw7h4j-0 grnDUY border-theme-secondary-200 dark:border-theme-secondary-700 text-theme-secondary-500 ring-theme-background"
                                 data-testid="SelectNetworkInput__network"
                               >
                                 <div
@@ -2383,11 +2398,11 @@ exports[`SendTransfer should render form and use location state 1`] = `
                               class="Input__InputWrapperStyled-wu99qs-0 jba-du"
                             >
                               <div
-                                class="Avatar__AvatarWrapper-sc-1vsy2s2-0 kvvaRs"
+                                class="Avatar__AvatarWrapper-sc-1vsy2s2-0 khDjUE"
                                 data-testid="Avatar"
                               >
                                 <div
-                                  class="w-full h-full"
+                                  class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
                                 >
                                   <img
                                     alt="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
@@ -2553,11 +2568,11 @@ exports[`SendTransfer should render form and use location state 1`] = `
                                             class="Input__InputWrapperStyled-wu99qs-0 jba-du"
                                           >
                                             <div
-                                              class="Avatar__AvatarWrapper-sc-1vsy2s2-0 kvvaRs"
+                                              class="Avatar__AvatarWrapper-sc-1vsy2s2-0 khDjUE"
                                               data-testid="Avatar"
                                             >
                                               <div
-                                                class="w-full h-full"
+                                                class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
                                               >
                                                 <img
                                                   alt="DNjuJEDQkhrJ7cA9FZ2iVXt5anYiM8Jtc9"
@@ -3097,7 +3112,7 @@ exports[`SendTransfer should render form and use location state without memo 1`]
               class="flex my-0.5 ml-4 -space-x-2"
             >
               <div
-                class="Circle-uw7h4j-0 JkqUV border-theme-primary-100 dark:border-theme-secondary-800"
+                class="Circle__CircleWrapper-uw7h4j-0 bNDQMV border-theme-primary-100 dark:border-theme-secondary-800 ring-theme-background"
               >
                 <span
                   class="text-theme-secondary-text dark:text-theme-secondary-800"
@@ -3124,17 +3139,22 @@ exports[`SendTransfer should render form and use location state without memo 1`]
                     data-testid="navbar__useractions"
                   >
                     <div
-                      class="Avatar__AvatarWrapper-sc-1vsy2s2-0 gyYbkb"
+                      class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB"
+                      data-testid="Avatar"
                     >
-                      <img
-                        alt="Profile Avatar"
-                        src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"30\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"55\\" cx=\\"0\\" cy=\\"60\\" fill=\\"rgb(255, 152, 0)\\"/><circle r=\\"40\\" cx=\\"50\\" cy=\\"50\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
-                      />
-                      <span
-                        class="absolute text-sm font-semibold text-theme-background dark:text-theme-text"
+                      <div
+                        class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
                       >
-                        JO
-                      </span>
+                        <img
+                          alt="Profile Avatar"
+                          src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"30\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"55\\" cx=\\"0\\" cy=\\"60\\" fill=\\"rgb(255, 152, 0)\\"/><circle r=\\"40\\" cx=\\"50\\" cy=\\"50\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
+                        />
+                        <span
+                          class="absolute text-sm font-semibold text-theme-background dark:text-theme-text"
+                        >
+                          JO
+                        </span>
+                      </div>
                     </div>
                   </div>
                 </span>
@@ -3239,7 +3259,7 @@ exports[`SendTransfer should render form and use location state without memo 1`]
                             >
                               <div
                                 aria-label="ARK Devnet"
-                                class="Circle-uw7h4j-0 blBpcG border-theme-secondary-200 dark:border-theme-secondary-700 text-theme-secondary-500"
+                                class="Circle__CircleWrapper-uw7h4j-0 grnDUY border-theme-secondary-200 dark:border-theme-secondary-700 text-theme-secondary-500 ring-theme-background"
                                 data-testid="SelectNetworkInput__network"
                               >
                                 <div
@@ -3360,11 +3380,11 @@ exports[`SendTransfer should render form and use location state without memo 1`]
                               class="Input__InputWrapperStyled-wu99qs-0 jba-du"
                             >
                               <div
-                                class="Avatar__AvatarWrapper-sc-1vsy2s2-0 kvvaRs"
+                                class="Avatar__AvatarWrapper-sc-1vsy2s2-0 khDjUE"
                                 data-testid="Avatar"
                               >
                                 <div
-                                  class="w-full h-full"
+                                  class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
                                 >
                                   <img
                                     alt="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
@@ -3530,7 +3550,7 @@ exports[`SendTransfer should render form and use location state without memo 1`]
                                             class="Input__InputWrapperStyled-wu99qs-0 jba-du"
                                           >
                                             <div
-                                              class="Circle-uw7h4j-0 blBpcG bg-theme-secondary-200 dark:bg-theme-secondary-700 border-theme-secondary-200 dark:border-theme-secondary-700"
+                                              class="Circle__CircleWrapper-uw7h4j-0 grnDUY bg-theme-secondary-200 dark:bg-theme-secondary-700 border-theme-secondary-200 dark:border-theme-secondary-700 ring-theme-background"
                                             />
                                             <div
                                               class="relative flex flex-1 h-full"
@@ -3901,7 +3921,7 @@ exports[`SendTransfer should render form step 1`] = `
               class="Input__InputWrapperStyled-wu99qs-0 jba-du"
             >
               <div
-                class="Circle-uw7h4j-0 blBpcG border-theme-secondary-200 dark:border-theme-secondary-700 text-theme-secondary-500"
+                class="Circle__CircleWrapper-uw7h4j-0 grnDUY border-theme-secondary-200 dark:border-theme-secondary-700 text-theme-secondary-500 ring-theme-background"
                 data-testid="SelectNetworkInput__network"
               />
               <div
@@ -3971,7 +3991,7 @@ exports[`SendTransfer should render form step 1`] = `
               class="Input__InputWrapperStyled-wu99qs-0 jba-du"
             >
               <div
-                class="Circle-uw7h4j-0 blBpcG bg-theme-secondary-200 dark:bg-theme-secondary-700 border-theme-secondary-200 dark:border-theme-secondary-700"
+                class="Circle__CircleWrapper-uw7h4j-0 grnDUY bg-theme-secondary-200 dark:bg-theme-secondary-700 border-theme-secondary-200 dark:border-theme-secondary-700 ring-theme-background"
               />
               <div
                 class="relative flex flex-1 h-full invisible"
@@ -4131,7 +4151,7 @@ exports[`SendTransfer should render form step 1`] = `
                             disabled=""
                           >
                             <div
-                              class="Circle-uw7h4j-0 blBpcG bg-theme-secondary-200 dark:bg-theme-secondary-700 border-theme-secondary-200 dark:border-theme-secondary-700"
+                              class="Circle__CircleWrapper-uw7h4j-0 grnDUY bg-theme-secondary-200 dark:bg-theme-secondary-700 border-theme-secondary-200 dark:border-theme-secondary-700 ring-theme-background"
                             />
                             <div
                               class="relative flex flex-1 h-full"
@@ -4396,7 +4416,7 @@ exports[`SendTransfer should render form step with deeplink values and use them 
               class="Input__InputWrapperStyled-wu99qs-0 jba-du"
             >
               <div
-                class="Circle-uw7h4j-0 blBpcG border-theme-secondary-200 dark:border-theme-secondary-700 text-theme-secondary-500"
+                class="Circle__CircleWrapper-uw7h4j-0 grnDUY border-theme-secondary-200 dark:border-theme-secondary-700 text-theme-secondary-500 ring-theme-background"
                 data-testid="SelectNetworkInput__network"
               />
               <div
@@ -4466,7 +4486,7 @@ exports[`SendTransfer should render form step with deeplink values and use them 
               class="Input__InputWrapperStyled-wu99qs-0 jba-du"
             >
               <div
-                class="Circle-uw7h4j-0 blBpcG bg-theme-secondary-200 dark:bg-theme-secondary-700 border-theme-secondary-200 dark:border-theme-secondary-700"
+                class="Circle__CircleWrapper-uw7h4j-0 grnDUY bg-theme-secondary-200 dark:bg-theme-secondary-700 border-theme-secondary-200 dark:border-theme-secondary-700 ring-theme-background"
               />
               <div
                 class="relative flex flex-1 h-full invisible"
@@ -4626,7 +4646,7 @@ exports[`SendTransfer should render form step with deeplink values and use them 
                             disabled=""
                           >
                             <div
-                              class="Circle-uw7h4j-0 blBpcG bg-theme-secondary-200 dark:bg-theme-secondary-700 border-theme-secondary-200 dark:border-theme-secondary-700"
+                              class="Circle__CircleWrapper-uw7h4j-0 grnDUY bg-theme-secondary-200 dark:bg-theme-secondary-700 border-theme-secondary-200 dark:border-theme-secondary-700 ring-theme-background"
                             />
                             <div
                               class="relative flex flex-1 h-full"
@@ -4891,7 +4911,7 @@ exports[`SendTransfer should render form step without test networks 1`] = `
               class="Input__InputWrapperStyled-wu99qs-0 jba-du"
             >
               <div
-                class="Circle-uw7h4j-0 blBpcG border-theme-secondary-200 dark:border-theme-secondary-700 text-theme-secondary-500"
+                class="Circle__CircleWrapper-uw7h4j-0 grnDUY border-theme-secondary-200 dark:border-theme-secondary-700 text-theme-secondary-500 ring-theme-background"
                 data-testid="SelectNetworkInput__network"
               />
               <div
@@ -4961,7 +4981,7 @@ exports[`SendTransfer should render form step without test networks 1`] = `
               class="Input__InputWrapperStyled-wu99qs-0 jba-du"
             >
               <div
-                class="Circle-uw7h4j-0 blBpcG bg-theme-secondary-200 dark:bg-theme-secondary-700 border-theme-secondary-200 dark:border-theme-secondary-700"
+                class="Circle__CircleWrapper-uw7h4j-0 grnDUY bg-theme-secondary-200 dark:bg-theme-secondary-700 border-theme-secondary-200 dark:border-theme-secondary-700 ring-theme-background"
               />
               <div
                 class="relative flex flex-1 h-full invisible"
@@ -5121,7 +5141,7 @@ exports[`SendTransfer should render form step without test networks 1`] = `
                             disabled=""
                           >
                             <div
-                              class="Circle-uw7h4j-0 blBpcG bg-theme-secondary-200 dark:bg-theme-secondary-700 border-theme-secondary-200 dark:border-theme-secondary-700"
+                              class="Circle__CircleWrapper-uw7h4j-0 grnDUY bg-theme-secondary-200 dark:bg-theme-secondary-700 border-theme-secondary-200 dark:border-theme-secondary-700 ring-theme-background"
                             />
                             <div
                               class="relative flex flex-1 h-full"
@@ -5548,7 +5568,7 @@ exports[`SendTransfer should render network selection without selected wallet 1`
               class="flex my-0.5 ml-4 -space-x-2"
             >
               <div
-                class="Circle-uw7h4j-0 JkqUV border-theme-primary-100 dark:border-theme-secondary-800"
+                class="Circle__CircleWrapper-uw7h4j-0 bNDQMV border-theme-primary-100 dark:border-theme-secondary-800 ring-theme-background"
               >
                 <span
                   class="text-theme-secondary-text dark:text-theme-secondary-800"
@@ -5575,17 +5595,22 @@ exports[`SendTransfer should render network selection without selected wallet 1`
                     data-testid="navbar__useractions"
                   >
                     <div
-                      class="Avatar__AvatarWrapper-sc-1vsy2s2-0 gyYbkb"
+                      class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB"
+                      data-testid="Avatar"
                     >
-                      <img
-                        alt="Profile Avatar"
-                        src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"30\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"55\\" cx=\\"0\\" cy=\\"60\\" fill=\\"rgb(255, 152, 0)\\"/><circle r=\\"40\\" cx=\\"50\\" cy=\\"50\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
-                      />
-                      <span
-                        class="absolute text-sm font-semibold text-theme-background dark:text-theme-text"
+                      <div
+                        class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
                       >
-                        JO
-                      </span>
+                        <img
+                          alt="Profile Avatar"
+                          src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"30\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"55\\" cx=\\"0\\" cy=\\"60\\" fill=\\"rgb(255, 152, 0)\\"/><circle r=\\"40\\" cx=\\"50\\" cy=\\"50\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
+                        />
+                        <span
+                          class="absolute text-sm font-semibold text-theme-background dark:text-theme-text"
+                        >
+                          JO
+                        </span>
+                      </div>
                     </div>
                   </div>
                 </span>
@@ -5688,7 +5713,7 @@ exports[`SendTransfer should render network selection without selected wallet 1`
                             class="Input__InputWrapperStyled-wu99qs-0 jba-du"
                           >
                             <div
-                              class="Circle-uw7h4j-0 blBpcG border-theme-secondary-200 dark:border-theme-secondary-700 text-theme-secondary-500"
+                              class="Circle__CircleWrapper-uw7h4j-0 grnDUY border-theme-secondary-200 dark:border-theme-secondary-700 text-theme-secondary-500 ring-theme-background"
                               data-testid="SelectNetworkInput__network"
                             />
                             <div
@@ -5852,7 +5877,7 @@ exports[`SendTransfer should render network step without test networks 1`] = `
             class="Input__InputWrapperStyled-wu99qs-0 jba-du"
           >
             <div
-              class="Circle-uw7h4j-0 blBpcG border-theme-secondary-200 dark:border-theme-secondary-700 text-theme-secondary-500"
+              class="Circle__CircleWrapper-uw7h4j-0 grnDUY border-theme-secondary-200 dark:border-theme-secondary-700 text-theme-secondary-500 ring-theme-background"
               data-testid="SelectNetworkInput__network"
             />
             <div
@@ -5981,7 +6006,7 @@ exports[`SendTransfer should render review step 1`] = `
       </div>
       <div
         aria-label="ARK Devnet"
-        class="Circle-uw7h4j-0 JkqUV border-theme-primary-100 text-theme-primary-400"
+        class="Circle__CircleWrapper-uw7h4j-0 bNDQMV border-theme-primary-100 text-theme-primary-400 ring-theme-background"
         data-testid="NetworkIcon-ARK-ark.devnet"
       >
         <div
@@ -6038,11 +6063,11 @@ exports[`SendTransfer should render review step 1`] = `
         class="flex items-center -space-x-2"
       >
         <div
-          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 gyYbkb"
+          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB"
           data-testid="Avatar"
         >
           <div
-            class="w-full h-full"
+            class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
           >
             <img
               alt="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
@@ -6081,11 +6106,11 @@ exports[`SendTransfer should render review step 1`] = `
         </div>
       </div>
       <div
-        class="Avatar__AvatarWrapper-sc-1vsy2s2-0 gyYbkb"
+        class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB"
         data-testid="Avatar"
       >
         <div
-          class="w-full h-full"
+          class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
         >
           <img
             alt="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
@@ -6331,7 +6356,7 @@ exports[`SendTransfer should render summary step 1`] = `
         </div>
         <div
           aria-label="ARK Devnet"
-          class="Circle-uw7h4j-0 JkqUV border-theme-primary-100 text-theme-primary-400"
+          class="Circle__CircleWrapper-uw7h4j-0 bNDQMV border-theme-primary-100 text-theme-primary-400 ring-theme-background"
           data-testid="NetworkIcon-ARK-ark.devnet"
         >
           <div
@@ -6388,11 +6413,11 @@ exports[`SendTransfer should render summary step 1`] = `
           class="flex items-center -space-x-2"
         >
           <div
-            class="Avatar__AvatarWrapper-sc-1vsy2s2-0 gyYbkb"
+            class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB"
             data-testid="Avatar"
           >
             <div
-              class="w-full h-full"
+              class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
             >
               <img
                 alt="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
@@ -6431,11 +6456,11 @@ exports[`SendTransfer should render summary step 1`] = `
           </div>
         </div>
         <div
-          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 gyYbkb"
+          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB"
           data-testid="Avatar"
         >
           <div
-            class="w-full h-full"
+            class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
           >
             <img
               alt="D5pVkhZbSb4UNXvfmF6j7zdau8yGxfKwSv"
@@ -6473,7 +6498,7 @@ exports[`SendTransfer should render summary step 1`] = `
           </div>
         </div>
         <div
-          class="Circle-uw7h4j-0 JkqUV border-theme-danger-100 text-theme-danger-500 dark:border-theme-danger-400 dark:text-theme-danger-400"
+          class="Circle__CircleWrapper-uw7h4j-0 bNDQMV border-theme-danger-100 text-theme-danger-500 dark:border-theme-danger-400 dark:text-theme-danger-400 ring-theme-background"
         >
           <div
             class="sc-bdfBwQ fPrsah"
@@ -6735,7 +6760,7 @@ exports[`SendTransfer should select a cryptoasset and select sender without wall
               class="flex my-0.5 ml-4 -space-x-2"
             >
               <div
-                class="Circle-uw7h4j-0 JkqUV border-theme-primary-100 dark:border-theme-secondary-800"
+                class="Circle__CircleWrapper-uw7h4j-0 bNDQMV border-theme-primary-100 dark:border-theme-secondary-800 ring-theme-background"
               >
                 <span
                   class="text-theme-secondary-text dark:text-theme-secondary-800"
@@ -6762,17 +6787,22 @@ exports[`SendTransfer should select a cryptoasset and select sender without wall
                     data-testid="navbar__useractions"
                   >
                     <div
-                      class="Avatar__AvatarWrapper-sc-1vsy2s2-0 gyYbkb"
+                      class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB"
+                      data-testid="Avatar"
                     >
-                      <img
-                        alt="Profile Avatar"
-                        src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"30\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"55\\" cx=\\"0\\" cy=\\"60\\" fill=\\"rgb(255, 152, 0)\\"/><circle r=\\"40\\" cx=\\"50\\" cy=\\"50\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
-                      />
-                      <span
-                        class="absolute text-sm font-semibold text-theme-background dark:text-theme-text"
+                      <div
+                        class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
                       >
-                        JO
-                      </span>
+                        <img
+                          alt="Profile Avatar"
+                          src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"30\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"55\\" cx=\\"0\\" cy=\\"60\\" fill=\\"rgb(255, 152, 0)\\"/><circle r=\\"40\\" cx=\\"50\\" cy=\\"50\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
+                        />
+                        <span
+                          class="absolute text-sm font-semibold text-theme-background dark:text-theme-text"
+                        >
+                          JO
+                        </span>
+                      </div>
                     </div>
                   </div>
                 </span>
@@ -6880,7 +6910,7 @@ exports[`SendTransfer should select a cryptoasset and select sender without wall
                             >
                               <div
                                 aria-label="ARK Devnet"
-                                class="Circle-uw7h4j-0 blBpcG border-theme-secondary-200 dark:border-theme-secondary-700 text-theme-secondary-500"
+                                class="Circle__CircleWrapper-uw7h4j-0 grnDUY border-theme-secondary-200 dark:border-theme-secondary-700 text-theme-secondary-500 ring-theme-background"
                                 data-testid="SelectNetworkInput__network"
                               >
                                 <div
@@ -7002,11 +7032,11 @@ exports[`SendTransfer should select a cryptoasset and select sender without wall
                               class="Input__InputWrapperStyled-wu99qs-0 jba-du"
                             >
                               <div
-                                class="Avatar__AvatarWrapper-sc-1vsy2s2-0 kvvaRs"
+                                class="Avatar__AvatarWrapper-sc-1vsy2s2-0 khDjUE"
                                 data-testid="Avatar"
                               >
                                 <div
-                                  class="w-full h-full"
+                                  class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
                                 >
                                   <img
                                     alt="D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb"
@@ -7172,7 +7202,7 @@ exports[`SendTransfer should select a cryptoasset and select sender without wall
                                             class="Input__InputWrapperStyled-wu99qs-0 jba-du"
                                           >
                                             <div
-                                              class="Circle-uw7h4j-0 blBpcG bg-theme-secondary-200 dark:bg-theme-secondary-700 border-theme-secondary-200 dark:border-theme-secondary-700"
+                                              class="Circle__CircleWrapper-uw7h4j-0 grnDUY bg-theme-secondary-200 dark:bg-theme-secondary-700 border-theme-secondary-200 dark:border-theme-secondary-700 ring-theme-background"
                                             />
                                             <div
                                               class="relative flex flex-1 h-full"
@@ -7709,7 +7739,7 @@ exports[`SendTransfer should select cryptoasset 1`] = `
               class="flex my-0.5 ml-4 -space-x-2"
             >
               <div
-                class="Circle-uw7h4j-0 JkqUV border-theme-primary-100 dark:border-theme-secondary-800"
+                class="Circle__CircleWrapper-uw7h4j-0 bNDQMV border-theme-primary-100 dark:border-theme-secondary-800 ring-theme-background"
               >
                 <span
                   class="text-theme-secondary-text dark:text-theme-secondary-800"
@@ -7736,17 +7766,22 @@ exports[`SendTransfer should select cryptoasset 1`] = `
                     data-testid="navbar__useractions"
                   >
                     <div
-                      class="Avatar__AvatarWrapper-sc-1vsy2s2-0 gyYbkb"
+                      class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB"
+                      data-testid="Avatar"
                     >
-                      <img
-                        alt="Profile Avatar"
-                        src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"30\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"55\\" cx=\\"0\\" cy=\\"60\\" fill=\\"rgb(255, 152, 0)\\"/><circle r=\\"40\\" cx=\\"50\\" cy=\\"50\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
-                      />
-                      <span
-                        class="absolute text-sm font-semibold text-theme-background dark:text-theme-text"
+                      <div
+                        class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
                       >
-                        JO
-                      </span>
+                        <img
+                          alt="Profile Avatar"
+                          src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"30\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"55\\" cx=\\"0\\" cy=\\"60\\" fill=\\"rgb(255, 152, 0)\\"/><circle r=\\"40\\" cx=\\"50\\" cy=\\"50\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
+                        />
+                        <span
+                          class="absolute text-sm font-semibold text-theme-background dark:text-theme-text"
+                        >
+                          JO
+                        </span>
+                      </div>
                     </div>
                   </div>
                 </span>
@@ -7850,7 +7885,7 @@ exports[`SendTransfer should select cryptoasset 1`] = `
                           >
                             <div
                               aria-label="ARK Devnet"
-                              class="Circle-uw7h4j-0 blBpcG border-theme-secondary-200 dark:border-theme-secondary-700 text-theme-secondary-500"
+                              class="Circle__CircleWrapper-uw7h4j-0 grnDUY border-theme-secondary-200 dark:border-theme-secondary-700 text-theme-secondary-500 ring-theme-background"
                               data-testid="SelectNetworkInput__network"
                             >
                               <div
@@ -8195,7 +8230,7 @@ exports[`SendTransfer should send a single transfer 1`] = `
               class="flex my-0.5 ml-4 -space-x-2"
             >
               <div
-                class="Circle-uw7h4j-0 JkqUV border-theme-primary-100 dark:border-theme-secondary-800"
+                class="Circle__CircleWrapper-uw7h4j-0 bNDQMV border-theme-primary-100 dark:border-theme-secondary-800 ring-theme-background"
               >
                 <span
                   class="text-theme-secondary-text dark:text-theme-secondary-800"
@@ -8222,17 +8257,22 @@ exports[`SendTransfer should send a single transfer 1`] = `
                     data-testid="navbar__useractions"
                   >
                     <div
-                      class="Avatar__AvatarWrapper-sc-1vsy2s2-0 gyYbkb"
+                      class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB"
+                      data-testid="Avatar"
                     >
-                      <img
-                        alt="Profile Avatar"
-                        src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"30\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"55\\" cx=\\"0\\" cy=\\"60\\" fill=\\"rgb(255, 152, 0)\\"/><circle r=\\"40\\" cx=\\"50\\" cy=\\"50\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
-                      />
-                      <span
-                        class="absolute text-sm font-semibold text-theme-background dark:text-theme-text"
+                      <div
+                        class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
                       >
-                        JO
-                      </span>
+                        <img
+                          alt="Profile Avatar"
+                          src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"30\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"55\\" cx=\\"0\\" cy=\\"60\\" fill=\\"rgb(255, 152, 0)\\"/><circle r=\\"40\\" cx=\\"50\\" cy=\\"50\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
+                        />
+                        <span
+                          class="absolute text-sm font-semibold text-theme-background dark:text-theme-text"
+                        >
+                          JO
+                        </span>
+                      </div>
                     </div>
                   </div>
                 </span>
@@ -8394,7 +8434,7 @@ exports[`SendTransfer should send a single transfer 1`] = `
                         </div>
                         <div
                           aria-label="ARK Devnet"
-                          class="Circle-uw7h4j-0 JkqUV border-theme-primary-100 text-theme-primary-400"
+                          class="Circle__CircleWrapper-uw7h4j-0 bNDQMV border-theme-primary-100 text-theme-primary-400 ring-theme-background"
                           data-testid="NetworkIcon-ARK-ark.devnet"
                         >
                           <div
@@ -8451,11 +8491,11 @@ exports[`SendTransfer should send a single transfer 1`] = `
                           class="flex items-center -space-x-2"
                         >
                           <div
-                            class="Avatar__AvatarWrapper-sc-1vsy2s2-0 gyYbkb"
+                            class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB"
                             data-testid="Avatar"
                           >
                             <div
-                              class="w-full h-full"
+                              class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
                             >
                               <img
                                 alt="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
@@ -8494,11 +8534,11 @@ exports[`SendTransfer should send a single transfer 1`] = `
                           </div>
                         </div>
                         <div
-                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 gyYbkb"
+                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB"
                           data-testid="Avatar"
                         >
                           <div
-                            class="w-full h-full"
+                            class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
                           >
                             <img
                               alt="D5pVkhZbSb4UNXvfmF6j7zdau8yGxfKwSv"
@@ -8536,7 +8576,7 @@ exports[`SendTransfer should send a single transfer 1`] = `
                           </div>
                         </div>
                         <div
-                          class="Circle-uw7h4j-0 JkqUV border-theme-danger-100 text-theme-danger-500 dark:border-theme-danger-400 dark:text-theme-danger-400"
+                          class="Circle__CircleWrapper-uw7h4j-0 bNDQMV border-theme-danger-100 text-theme-danger-500 dark:border-theme-danger-400 dark:text-theme-danger-400 ring-theme-background"
                         >
                           <div
                             class="sc-bdfBwQ fPrsah"
@@ -8823,7 +8863,7 @@ exports[`SendTransfer should send a single transfer and show unconfirmed transac
               class="flex my-0.5 ml-4 -space-x-2"
             >
               <div
-                class="Circle-uw7h4j-0 JkqUV border-theme-primary-100 dark:border-theme-secondary-800"
+                class="Circle__CircleWrapper-uw7h4j-0 bNDQMV border-theme-primary-100 dark:border-theme-secondary-800 ring-theme-background"
               >
                 <span
                   class="text-theme-secondary-text dark:text-theme-secondary-800"
@@ -8850,17 +8890,22 @@ exports[`SendTransfer should send a single transfer and show unconfirmed transac
                     data-testid="navbar__useractions"
                   >
                     <div
-                      class="Avatar__AvatarWrapper-sc-1vsy2s2-0 gyYbkb"
+                      class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB"
+                      data-testid="Avatar"
                     >
-                      <img
-                        alt="Profile Avatar"
-                        src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"30\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"55\\" cx=\\"0\\" cy=\\"60\\" fill=\\"rgb(255, 152, 0)\\"/><circle r=\\"40\\" cx=\\"50\\" cy=\\"50\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
-                      />
-                      <span
-                        class="absolute text-sm font-semibold text-theme-background dark:text-theme-text"
+                      <div
+                        class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
                       >
-                        JO
-                      </span>
+                        <img
+                          alt="Profile Avatar"
+                          src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"30\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"55\\" cx=\\"0\\" cy=\\"60\\" fill=\\"rgb(255, 152, 0)\\"/><circle r=\\"40\\" cx=\\"50\\" cy=\\"50\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
+                        />
+                        <span
+                          class="absolute text-sm font-semibold text-theme-background dark:text-theme-text"
+                        >
+                          JO
+                        </span>
+                      </div>
                     </div>
                   </div>
                 </span>
@@ -9022,7 +9067,7 @@ exports[`SendTransfer should send a single transfer and show unconfirmed transac
                         </div>
                         <div
                           aria-label="ARK Devnet"
-                          class="Circle-uw7h4j-0 JkqUV border-theme-primary-100 text-theme-primary-400"
+                          class="Circle__CircleWrapper-uw7h4j-0 bNDQMV border-theme-primary-100 text-theme-primary-400 ring-theme-background"
                           data-testid="NetworkIcon-ARK-ark.devnet"
                         >
                           <div
@@ -9079,11 +9124,11 @@ exports[`SendTransfer should send a single transfer and show unconfirmed transac
                           class="flex items-center -space-x-2"
                         >
                           <div
-                            class="Avatar__AvatarWrapper-sc-1vsy2s2-0 gyYbkb"
+                            class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB"
                             data-testid="Avatar"
                           >
                             <div
-                              class="w-full h-full"
+                              class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
                             >
                               <img
                                 alt="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
@@ -9122,11 +9167,11 @@ exports[`SendTransfer should send a single transfer and show unconfirmed transac
                           </div>
                         </div>
                         <div
-                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 gyYbkb"
+                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB"
                           data-testid="Avatar"
                         >
                           <div
-                            class="w-full h-full"
+                            class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
                           >
                             <img
                               alt="D5pVkhZbSb4UNXvfmF6j7zdau8yGxfKwSv"
@@ -9164,7 +9209,7 @@ exports[`SendTransfer should send a single transfer and show unconfirmed transac
                           </div>
                         </div>
                         <div
-                          class="Circle-uw7h4j-0 JkqUV border-theme-danger-100 text-theme-danger-500 dark:border-theme-danger-400 dark:text-theme-danger-400"
+                          class="Circle__CircleWrapper-uw7h4j-0 bNDQMV border-theme-danger-100 text-theme-danger-500 dark:border-theme-danger-400 dark:text-theme-danger-400 ring-theme-background"
                         >
                           <div
                             class="sc-bdfBwQ fPrsah"
@@ -9451,7 +9496,7 @@ exports[`SendTransfer should send a single transfer using wallet with encryption
               class="flex my-0.5 ml-4 -space-x-2"
             >
               <div
-                class="Circle-uw7h4j-0 JkqUV border-theme-primary-100 dark:border-theme-secondary-800"
+                class="Circle__CircleWrapper-uw7h4j-0 bNDQMV border-theme-primary-100 dark:border-theme-secondary-800 ring-theme-background"
               >
                 <span
                   class="text-theme-secondary-text dark:text-theme-secondary-800"
@@ -9478,17 +9523,22 @@ exports[`SendTransfer should send a single transfer using wallet with encryption
                     data-testid="navbar__useractions"
                   >
                     <div
-                      class="Avatar__AvatarWrapper-sc-1vsy2s2-0 gyYbkb"
+                      class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB"
+                      data-testid="Avatar"
                     >
-                      <img
-                        alt="Profile Avatar"
-                        src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"30\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"55\\" cx=\\"0\\" cy=\\"60\\" fill=\\"rgb(255, 152, 0)\\"/><circle r=\\"40\\" cx=\\"50\\" cy=\\"50\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
-                      />
-                      <span
-                        class="absolute text-sm font-semibold text-theme-background dark:text-theme-text"
+                      <div
+                        class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
                       >
-                        JO
-                      </span>
+                        <img
+                          alt="Profile Avatar"
+                          src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"30\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"55\\" cx=\\"0\\" cy=\\"60\\" fill=\\"rgb(255, 152, 0)\\"/><circle r=\\"40\\" cx=\\"50\\" cy=\\"50\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
+                        />
+                        <span
+                          class="absolute text-sm font-semibold text-theme-background dark:text-theme-text"
+                        >
+                          JO
+                        </span>
+                      </div>
                     </div>
                   </div>
                 </span>
@@ -9650,7 +9700,7 @@ exports[`SendTransfer should send a single transfer using wallet with encryption
                         </div>
                         <div
                           aria-label="ARK Devnet"
-                          class="Circle-uw7h4j-0 JkqUV border-theme-primary-100 text-theme-primary-400"
+                          class="Circle__CircleWrapper-uw7h4j-0 bNDQMV border-theme-primary-100 text-theme-primary-400 ring-theme-background"
                           data-testid="NetworkIcon-ARK-ark.devnet"
                         >
                           <div
@@ -9707,11 +9757,11 @@ exports[`SendTransfer should send a single transfer using wallet with encryption
                           class="flex items-center -space-x-2"
                         >
                           <div
-                            class="Avatar__AvatarWrapper-sc-1vsy2s2-0 gyYbkb"
+                            class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB"
                             data-testid="Avatar"
                           >
                             <div
-                              class="w-full h-full"
+                              class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
                             >
                               <img
                                 alt="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
@@ -9750,11 +9800,11 @@ exports[`SendTransfer should send a single transfer using wallet with encryption
                           </div>
                         </div>
                         <div
-                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 gyYbkb"
+                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB"
                           data-testid="Avatar"
                         >
                           <div
-                            class="w-full h-full"
+                            class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
                           >
                             <img
                               alt="D5pVkhZbSb4UNXvfmF6j7zdau8yGxfKwSv"
@@ -9792,7 +9842,7 @@ exports[`SendTransfer should send a single transfer using wallet with encryption
                           </div>
                         </div>
                         <div
-                          class="Circle-uw7h4j-0 JkqUV border-theme-danger-100 text-theme-danger-500 dark:border-theme-danger-400 dark:text-theme-danger-400"
+                          class="Circle__CircleWrapper-uw7h4j-0 bNDQMV border-theme-danger-100 text-theme-danger-500 dark:border-theme-danger-400 dark:text-theme-danger-400 ring-theme-background"
                         >
                           <div
                             class="sc-bdfBwQ fPrsah"
@@ -10079,7 +10129,7 @@ exports[`SendTransfer should send a single transfer with a high fee by confirmin
               class="flex my-0.5 ml-4 -space-x-2"
             >
               <div
-                class="Circle-uw7h4j-0 JkqUV border-theme-primary-100 dark:border-theme-secondary-800"
+                class="Circle__CircleWrapper-uw7h4j-0 bNDQMV border-theme-primary-100 dark:border-theme-secondary-800 ring-theme-background"
               >
                 <span
                   class="text-theme-secondary-text dark:text-theme-secondary-800"
@@ -10106,17 +10156,22 @@ exports[`SendTransfer should send a single transfer with a high fee by confirmin
                     data-testid="navbar__useractions"
                   >
                     <div
-                      class="Avatar__AvatarWrapper-sc-1vsy2s2-0 gyYbkb"
+                      class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB"
+                      data-testid="Avatar"
                     >
-                      <img
-                        alt="Profile Avatar"
-                        src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"30\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"55\\" cx=\\"0\\" cy=\\"60\\" fill=\\"rgb(255, 152, 0)\\"/><circle r=\\"40\\" cx=\\"50\\" cy=\\"50\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
-                      />
-                      <span
-                        class="absolute text-sm font-semibold text-theme-background dark:text-theme-text"
+                      <div
+                        class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
                       >
-                        JO
-                      </span>
+                        <img
+                          alt="Profile Avatar"
+                          src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"30\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"55\\" cx=\\"0\\" cy=\\"60\\" fill=\\"rgb(255, 152, 0)\\"/><circle r=\\"40\\" cx=\\"50\\" cy=\\"50\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
+                        />
+                        <span
+                          class="absolute text-sm font-semibold text-theme-background dark:text-theme-text"
+                        >
+                          JO
+                        </span>
+                      </div>
                     </div>
                   </div>
                 </span>
@@ -10278,7 +10333,7 @@ exports[`SendTransfer should send a single transfer with a high fee by confirmin
                         </div>
                         <div
                           aria-label="ARK Devnet"
-                          class="Circle-uw7h4j-0 JkqUV border-theme-primary-100 text-theme-primary-400"
+                          class="Circle__CircleWrapper-uw7h4j-0 bNDQMV border-theme-primary-100 text-theme-primary-400 ring-theme-background"
                           data-testid="NetworkIcon-ARK-ark.devnet"
                         >
                           <div
@@ -10335,11 +10390,11 @@ exports[`SendTransfer should send a single transfer with a high fee by confirmin
                           class="flex items-center -space-x-2"
                         >
                           <div
-                            class="Avatar__AvatarWrapper-sc-1vsy2s2-0 gyYbkb"
+                            class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB"
                             data-testid="Avatar"
                           >
                             <div
-                              class="w-full h-full"
+                              class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
                             >
                               <img
                                 alt="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
@@ -10378,11 +10433,11 @@ exports[`SendTransfer should send a single transfer with a high fee by confirmin
                           </div>
                         </div>
                         <div
-                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 gyYbkb"
+                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB"
                           data-testid="Avatar"
                         >
                           <div
-                            class="w-full h-full"
+                            class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
                           >
                             <img
                               alt="D5pVkhZbSb4UNXvfmF6j7zdau8yGxfKwSv"
@@ -10420,7 +10475,7 @@ exports[`SendTransfer should send a single transfer with a high fee by confirmin
                           </div>
                         </div>
                         <div
-                          class="Circle-uw7h4j-0 JkqUV border-theme-danger-100 text-theme-danger-500 dark:border-theme-danger-400 dark:text-theme-danger-400"
+                          class="Circle__CircleWrapper-uw7h4j-0 bNDQMV border-theme-danger-100 text-theme-danger-500 dark:border-theme-danger-400 dark:text-theme-danger-400 ring-theme-background"
                         >
                           <div
                             class="sc-bdfBwQ fPrsah"
@@ -10707,7 +10762,7 @@ exports[`SendTransfer should send a single transfer with a low fee by confirming
               class="flex my-0.5 ml-4 -space-x-2"
             >
               <div
-                class="Circle-uw7h4j-0 JkqUV border-theme-primary-100 dark:border-theme-secondary-800"
+                class="Circle__CircleWrapper-uw7h4j-0 bNDQMV border-theme-primary-100 dark:border-theme-secondary-800 ring-theme-background"
               >
                 <span
                   class="text-theme-secondary-text dark:text-theme-secondary-800"
@@ -10734,17 +10789,22 @@ exports[`SendTransfer should send a single transfer with a low fee by confirming
                     data-testid="navbar__useractions"
                   >
                     <div
-                      class="Avatar__AvatarWrapper-sc-1vsy2s2-0 gyYbkb"
+                      class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB"
+                      data-testid="Avatar"
                     >
-                      <img
-                        alt="Profile Avatar"
-                        src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"30\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"55\\" cx=\\"0\\" cy=\\"60\\" fill=\\"rgb(255, 152, 0)\\"/><circle r=\\"40\\" cx=\\"50\\" cy=\\"50\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
-                      />
-                      <span
-                        class="absolute text-sm font-semibold text-theme-background dark:text-theme-text"
+                      <div
+                        class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
                       >
-                        JO
-                      </span>
+                        <img
+                          alt="Profile Avatar"
+                          src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"30\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"55\\" cx=\\"0\\" cy=\\"60\\" fill=\\"rgb(255, 152, 0)\\"/><circle r=\\"40\\" cx=\\"50\\" cy=\\"50\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
+                        />
+                        <span
+                          class="absolute text-sm font-semibold text-theme-background dark:text-theme-text"
+                        >
+                          JO
+                        </span>
+                      </div>
                     </div>
                   </div>
                 </span>
@@ -10906,7 +10966,7 @@ exports[`SendTransfer should send a single transfer with a low fee by confirming
                         </div>
                         <div
                           aria-label="ARK Devnet"
-                          class="Circle-uw7h4j-0 JkqUV border-theme-primary-100 text-theme-primary-400"
+                          class="Circle__CircleWrapper-uw7h4j-0 bNDQMV border-theme-primary-100 text-theme-primary-400 ring-theme-background"
                           data-testid="NetworkIcon-ARK-ark.devnet"
                         >
                           <div
@@ -10963,11 +11023,11 @@ exports[`SendTransfer should send a single transfer with a low fee by confirming
                           class="flex items-center -space-x-2"
                         >
                           <div
-                            class="Avatar__AvatarWrapper-sc-1vsy2s2-0 gyYbkb"
+                            class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB"
                             data-testid="Avatar"
                           >
                             <div
-                              class="w-full h-full"
+                              class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
                             >
                               <img
                                 alt="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
@@ -11006,11 +11066,11 @@ exports[`SendTransfer should send a single transfer with a low fee by confirming
                           </div>
                         </div>
                         <div
-                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 gyYbkb"
+                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB"
                           data-testid="Avatar"
                         >
                           <div
-                            class="w-full h-full"
+                            class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
                           >
                             <img
                               alt="D5pVkhZbSb4UNXvfmF6j7zdau8yGxfKwSv"
@@ -11048,7 +11108,7 @@ exports[`SendTransfer should send a single transfer with a low fee by confirming
                           </div>
                         </div>
                         <div
-                          class="Circle-uw7h4j-0 JkqUV border-theme-danger-100 text-theme-danger-500 dark:border-theme-danger-400 dark:text-theme-danger-400"
+                          class="Circle__CircleWrapper-uw7h4j-0 bNDQMV border-theme-danger-100 text-theme-danger-500 dark:border-theme-danger-400 dark:text-theme-danger-400 ring-theme-background"
                         >
                           <div
                             class="sc-bdfBwQ fPrsah"
@@ -11335,7 +11395,7 @@ exports[`SendTransfer should show error step and go back 1`] = `
               class="flex my-0.5 ml-4 -space-x-2"
             >
               <div
-                class="Circle-uw7h4j-0 JkqUV border-theme-primary-100 dark:border-theme-secondary-800"
+                class="Circle__CircleWrapper-uw7h4j-0 bNDQMV border-theme-primary-100 dark:border-theme-secondary-800 ring-theme-background"
               >
                 <span
                   class="text-theme-secondary-text dark:text-theme-secondary-800"
@@ -11362,17 +11422,22 @@ exports[`SendTransfer should show error step and go back 1`] = `
                     data-testid="navbar__useractions"
                   >
                     <div
-                      class="Avatar__AvatarWrapper-sc-1vsy2s2-0 gyYbkb"
+                      class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB"
+                      data-testid="Avatar"
                     >
-                      <img
-                        alt="Profile Avatar"
-                        src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"30\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"55\\" cx=\\"0\\" cy=\\"60\\" fill=\\"rgb(255, 152, 0)\\"/><circle r=\\"40\\" cx=\\"50\\" cy=\\"50\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
-                      />
-                      <span
-                        class="absolute text-sm font-semibold text-theme-background dark:text-theme-text"
+                      <div
+                        class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
                       >
-                        JO
-                      </span>
+                        <img
+                          alt="Profile Avatar"
+                          src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"30\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"55\\" cx=\\"0\\" cy=\\"60\\" fill=\\"rgb(255, 152, 0)\\"/><circle r=\\"40\\" cx=\\"50\\" cy=\\"50\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
+                        />
+                        <span
+                          class="absolute text-sm font-semibold text-theme-background dark:text-theme-text"
+                        >
+                          JO
+                        </span>
+                      </div>
                     </div>
                   </div>
                 </span>

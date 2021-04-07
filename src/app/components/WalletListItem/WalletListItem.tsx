@@ -4,6 +4,7 @@ import { Amount } from "app/components/Amount";
 import { Avatar } from "app/components/Avatar";
 import { TableCell, TableRow } from "app/components/Table";
 import { WalletIcons } from "app/components/WalletIcons";
+import cn from "classnames";
 import { NetworkIcon } from "domains/network/components/NetworkIcon";
 import React, { useMemo } from "react";
 import { shouldUseDarkColors } from "utils/electron-utils";
@@ -18,34 +19,30 @@ export type WalletListItemProps = {
 export const WalletListItem = ({ wallet, activeWalletId, variant, onClick }: WalletListItemProps) => {
 	const isSelected = useMemo(() => activeWalletId === wallet.id(), [activeWalletId, wallet]);
 
-	const defaultShadowColor = useMemo(
+	const shadowClasses = useMemo(
 		() =>
-			isSelected
-				? shouldUseDarkColors()
-					? "--theme-color-success-900"
-					: "--theme-color-success-100"
-				: "--theme-background-color",
+			cn(
+				"group-hover:ring-theme-secondary-100 group-hover:bg-secondary-100 dark:group-hover:ring-black dark:group-hover:bg-black",
+				{
+					"ring-theme-success-900": isSelected && shouldUseDarkColors(),
+					"ring-theme-success-100": isSelected && !shouldUseDarkColors(),
+					"ring-theme-background": !isSelected,
+				},
+			),
 		[isSelected],
 	);
 
-	const [shadowColor, setShadowColor] = React.useState<string>(defaultShadowColor);
-
 	return (
-		<TableRow
-			isSelected={isSelected}
-			onClick={() => onClick?.(wallet.id())}
-			onMouseEnter={() => setShadowColor(shouldUseDarkColors() ? "--theme-black" : "--theme-color-secondary-100")}
-			onMouseLeave={() => setShadowColor(defaultShadowColor)}
-		>
+		<TableRow isSelected={isSelected} onClick={() => onClick?.(wallet.id())}>
 			<TableCell variant="start" innerClassName="space-x-4">
 				<div className="-space-x-2">
 					<NetworkIcon
 						size="lg"
 						coin={wallet.coinId()}
 						network={wallet.networkId()}
-						shadowColor={shadowColor}
+						shadowClassName={shadowClasses}
 					/>
-					<Avatar size="lg" address={wallet.address()} shadowColor={shadowColor} />
+					<Avatar size="lg" address={wallet.address()} shadowClassName={shadowClasses} />
 				</div>
 				<Address walletName={wallet.alias()} address={wallet.address()} maxChars={22} />
 			</TableCell>

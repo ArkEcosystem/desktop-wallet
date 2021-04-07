@@ -221,7 +221,7 @@ exports[`WalletDetails should not fail if the votes have not yet been synchroniz
               class="flex my-0.5 ml-4 -space-x-2"
             >
               <div
-                class="Circle-uw7h4j-0 JkqUV border-theme-primary-100 dark:border-theme-secondary-800"
+                class="Circle__CircleWrapper-uw7h4j-0 bNDQMV border-theme-primary-100 dark:border-theme-secondary-800 ring-theme-background"
               >
                 <span
                   class="text-theme-secondary-text dark:text-theme-secondary-800"
@@ -248,17 +248,22 @@ exports[`WalletDetails should not fail if the votes have not yet been synchroniz
                     data-testid="navbar__useractions"
                   >
                     <div
-                      class="Avatar__AvatarWrapper-sc-1vsy2s2-0 gyYbkb"
+                      class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB"
+                      data-testid="Avatar"
                     >
-                      <img
-                        alt="Profile Avatar"
-                        src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"30\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"55\\" cx=\\"0\\" cy=\\"60\\" fill=\\"rgb(255, 152, 0)\\"/><circle r=\\"40\\" cx=\\"50\\" cy=\\"50\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
-                      />
-                      <span
-                        class="absolute text-sm font-semibold text-theme-background dark:text-theme-text"
+                      <div
+                        class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
                       >
-                        JO
-                      </span>
+                        <img
+                          alt="Profile Avatar"
+                          src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"30\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"55\\" cx=\\"0\\" cy=\\"60\\" fill=\\"rgb(255, 152, 0)\\"/><circle r=\\"40\\" cx=\\"50\\" cy=\\"50\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
+                        />
+                        <span
+                          class="absolute text-sm font-semibold text-theme-background dark:text-theme-text"
+                        >
+                          JO
+                        </span>
+                      </div>
                     </div>
                   </div>
                 </span>
@@ -289,7 +294,7 @@ exports[`WalletDetails should not fail if the votes have not yet been synchroniz
               >
                 <div
                   aria-label="ARK Devnet"
-                  class="Circle-uw7h4j-0 hvqrfp border-theme-secondary-700 text-theme-secondary-text"
+                  class="Circle__CircleWrapper-uw7h4j-0 kOlXCb border-theme-secondary-700 text-theme-secondary-text ring-theme-background"
                   data-testid="NetworkIcon-ARK-ark.devnet"
                 >
                   <div
@@ -304,11 +309,11 @@ exports[`WalletDetails should not fail if the votes have not yet been synchroniz
                   </div>
                 </div>
                 <div
-                  class="Avatar__AvatarWrapper-sc-1vsy2s2-0 leXlgX"
+                  class="Avatar__AvatarWrapper-sc-1vsy2s2-0 ksomUO ring-theme-secondary-900"
                   data-testid="Avatar"
                 >
                   <div
-                    class="w-full h-full"
+                    class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
                   >
                     <img
                       alt="D6SXKChbJsM8QPPmMi28ZwDinvfUjRM3EY"
@@ -475,7 +480,7 @@ exports[`WalletDetails should not fail if the votes have not yet been synchroniz
             data-testid="WalletVote"
           >
             <div
-              class="Circle-uw7h4j-0 kUEiXZ border-theme-secondary-500 dark:border-theme-secondary-700 text-theme-secondary-500 dark:text-theme-secondary-700"
+              class="Circle__CircleWrapper-uw7h4j-0 bNDQMV border-theme-secondary-500 dark:border-theme-secondary-700 text-theme-secondary-500 dark:text-theme-secondary-700 ring-theme-secondary-background"
             >
               <div
                 class="sc-bdfBwQ fdjKgV"
@@ -806,7 +811,7 @@ exports[`WalletDetails should not fail if the votes have not yet been synchroniz
                     role="rowgroup"
                   >
                     <tr
-                      class="TableRow__TableRowStyled-sc-1br46dw-0 fTgXGQ"
+                      class="TableRow__TableRowStyled-sc-1br46dw-0 fTgXGQ group"
                       data-testid="TableRow"
                     >
                       <td>
@@ -856,7 +861,7 @@ exports[`WalletDetails should not fail if the votes have not yet been synchroniz
                             data-testid="TransactionRowMode"
                           >
                             <div
-                              class="Circle-uw7h4j-0 JkqUV border-theme-success-200 text-theme-success-600 dark:border-theme-success-600"
+                              class="Circle__CircleWrapper-uw7h4j-0 bNDQMV ring-theme-background group-hover:ring-theme-secondary-100 group-hover:bg-secondary-100 dark:group-hover:ring-black dark:group-hover:bg-black border-theme-success-200 text-theme-success-600 dark:border-theme-success-600 ring-theme-background"
                             >
                               <div
                                 class="sc-bdfBwQ fPrsah"
@@ -870,11 +875,11 @@ exports[`WalletDetails should not fail if the votes have not yet been synchroniz
                               </div>
                             </div>
                             <div
-                              class="Avatar__AvatarWrapper-sc-1vsy2s2-0 gyYbkb"
+                              class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB ring-theme-background bg-theme-background group-hover:ring-theme-secondary-100 group-hover:bg-secondary-100 dark:group-hover:ring-black dark:group-hover:bg-black"
                               data-testid="Avatar"
                             >
                               <div
-                                class="w-full h-full"
+                                class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
                               >
                                 <img
                                   alt="D5pVkhZbSb4UNXvfmF6j7zdau8yGxfKwSv"
@@ -1208,7 +1213,7 @@ exports[`WalletDetails should open detail modal on transaction row click 1`] = `
               class="flex my-0.5 ml-4 -space-x-2"
             >
               <div
-                class="Circle-uw7h4j-0 JkqUV border-theme-primary-100 dark:border-theme-secondary-800"
+                class="Circle__CircleWrapper-uw7h4j-0 bNDQMV border-theme-primary-100 dark:border-theme-secondary-800 ring-theme-background"
               >
                 <span
                   class="text-theme-secondary-text dark:text-theme-secondary-800"
@@ -1235,17 +1240,22 @@ exports[`WalletDetails should open detail modal on transaction row click 1`] = `
                     data-testid="navbar__useractions"
                   >
                     <div
-                      class="Avatar__AvatarWrapper-sc-1vsy2s2-0 gyYbkb"
+                      class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB"
+                      data-testid="Avatar"
                     >
-                      <img
-                        alt="Profile Avatar"
-                        src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"30\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"55\\" cx=\\"0\\" cy=\\"60\\" fill=\\"rgb(255, 152, 0)\\"/><circle r=\\"40\\" cx=\\"50\\" cy=\\"50\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
-                      />
-                      <span
-                        class="absolute text-sm font-semibold text-theme-background dark:text-theme-text"
+                      <div
+                        class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
                       >
-                        JO
-                      </span>
+                        <img
+                          alt="Profile Avatar"
+                          src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"30\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"55\\" cx=\\"0\\" cy=\\"60\\" fill=\\"rgb(255, 152, 0)\\"/><circle r=\\"40\\" cx=\\"50\\" cy=\\"50\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
+                        />
+                        <span
+                          class="absolute text-sm font-semibold text-theme-background dark:text-theme-text"
+                        >
+                          JO
+                        </span>
+                      </div>
                     </div>
                   </div>
                 </span>
@@ -1276,7 +1286,7 @@ exports[`WalletDetails should open detail modal on transaction row click 1`] = `
               >
                 <div
                   aria-label="ARK Devnet"
-                  class="Circle-uw7h4j-0 hvqrfp border-theme-secondary-700 text-theme-secondary-text"
+                  class="Circle__CircleWrapper-uw7h4j-0 kOlXCb border-theme-secondary-700 text-theme-secondary-text ring-theme-background"
                   data-testid="NetworkIcon-ARK-ark.devnet"
                 >
                   <div
@@ -1291,11 +1301,11 @@ exports[`WalletDetails should open detail modal on transaction row click 1`] = `
                   </div>
                 </div>
                 <div
-                  class="Avatar__AvatarWrapper-sc-1vsy2s2-0 leXlgX"
+                  class="Avatar__AvatarWrapper-sc-1vsy2s2-0 ksomUO ring-theme-secondary-900"
                   data-testid="Avatar"
                 >
                   <div
-                    class="w-full h-full"
+                    class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
                   >
                     <img
                       alt="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
@@ -1462,7 +1472,7 @@ exports[`WalletDetails should open detail modal on transaction row click 1`] = `
             data-testid="WalletVote"
           >
             <div
-              class="Circle-uw7h4j-0 kUEiXZ border-theme-secondary-900 dark:border-theme-secondary-700 text-theme-secondary-900 dark:text-theme-secondary-700"
+              class="Circle__CircleWrapper-uw7h4j-0 bNDQMV border-theme-secondary-900 dark:border-theme-secondary-700 text-theme-secondary-900 dark:text-theme-secondary-700 ring-theme-secondary-background"
             >
               <div
                 class="sc-bdfBwQ fdjKgV"
@@ -1797,7 +1807,7 @@ exports[`WalletDetails should open detail modal on transaction row click 1`] = `
                     role="rowgroup"
                   >
                     <tr
-                      class="TableRow__TableRowStyled-sc-1br46dw-0 fTgXGQ"
+                      class="TableRow__TableRowStyled-sc-1br46dw-0 fTgXGQ group"
                       data-testid="TableRow"
                     >
                       <td>
@@ -1847,7 +1857,7 @@ exports[`WalletDetails should open detail modal on transaction row click 1`] = `
                             data-testid="TransactionRowMode"
                           >
                             <div
-                              class="Circle-uw7h4j-0 JkqUV border-theme-success-200 text-theme-success-600 dark:border-theme-success-600"
+                              class="Circle__CircleWrapper-uw7h4j-0 bNDQMV ring-theme-background group-hover:ring-theme-secondary-100 group-hover:bg-secondary-100 dark:group-hover:ring-black dark:group-hover:bg-black border-theme-success-200 text-theme-success-600 dark:border-theme-success-600 ring-theme-background"
                             >
                               <div
                                 class="sc-bdfBwQ fPrsah"
@@ -1861,11 +1871,11 @@ exports[`WalletDetails should open detail modal on transaction row click 1`] = `
                               </div>
                             </div>
                             <div
-                              class="Avatar__AvatarWrapper-sc-1vsy2s2-0 gyYbkb"
+                              class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB ring-theme-background bg-theme-background group-hover:ring-theme-secondary-100 group-hover:bg-secondary-100 dark:group-hover:ring-black dark:group-hover:bg-black"
                               data-testid="Avatar"
                             >
                               <div
-                                class="w-full h-full"
+                                class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
                               >
                                 <img
                                   alt="D5pVkhZbSb4UNXvfmF6j7zdau8yGxfKwSv"
@@ -2199,7 +2209,7 @@ exports[`WalletDetails should remove wallet name 1`] = `
               class="flex my-0.5 ml-4 -space-x-2"
             >
               <div
-                class="Circle-uw7h4j-0 JkqUV border-theme-primary-100 dark:border-theme-secondary-800"
+                class="Circle__CircleWrapper-uw7h4j-0 bNDQMV border-theme-primary-100 dark:border-theme-secondary-800 ring-theme-background"
               >
                 <span
                   class="text-theme-secondary-text dark:text-theme-secondary-800"
@@ -2226,17 +2236,22 @@ exports[`WalletDetails should remove wallet name 1`] = `
                     data-testid="navbar__useractions"
                   >
                     <div
-                      class="Avatar__AvatarWrapper-sc-1vsy2s2-0 gyYbkb"
+                      class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB"
+                      data-testid="Avatar"
                     >
-                      <img
-                        alt="Profile Avatar"
-                        src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"30\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"55\\" cx=\\"0\\" cy=\\"60\\" fill=\\"rgb(255, 152, 0)\\"/><circle r=\\"40\\" cx=\\"50\\" cy=\\"50\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
-                      />
-                      <span
-                        class="absolute text-sm font-semibold text-theme-background dark:text-theme-text"
+                      <div
+                        class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
                       >
-                        JO
-                      </span>
+                        <img
+                          alt="Profile Avatar"
+                          src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"30\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"55\\" cx=\\"0\\" cy=\\"60\\" fill=\\"rgb(255, 152, 0)\\"/><circle r=\\"40\\" cx=\\"50\\" cy=\\"50\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
+                        />
+                        <span
+                          class="absolute text-sm font-semibold text-theme-background dark:text-theme-text"
+                        >
+                          JO
+                        </span>
+                      </div>
                     </div>
                   </div>
                 </span>
@@ -2267,7 +2282,7 @@ exports[`WalletDetails should remove wallet name 1`] = `
               >
                 <div
                   aria-label="ARK Devnet"
-                  class="Circle-uw7h4j-0 hvqrfp border-theme-secondary-700 text-theme-secondary-text"
+                  class="Circle__CircleWrapper-uw7h4j-0 kOlXCb border-theme-secondary-700 text-theme-secondary-text ring-theme-background"
                   data-testid="NetworkIcon-ARK-ark.devnet"
                 >
                   <div
@@ -2282,11 +2297,11 @@ exports[`WalletDetails should remove wallet name 1`] = `
                   </div>
                 </div>
                 <div
-                  class="Avatar__AvatarWrapper-sc-1vsy2s2-0 leXlgX"
+                  class="Avatar__AvatarWrapper-sc-1vsy2s2-0 ksomUO ring-theme-secondary-900"
                   data-testid="Avatar"
                 >
                   <div
-                    class="w-full h-full"
+                    class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
                   >
                     <img
                       alt="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
@@ -2453,7 +2468,7 @@ exports[`WalletDetails should remove wallet name 1`] = `
             data-testid="WalletVote"
           >
             <div
-              class="Circle-uw7h4j-0 kUEiXZ border-theme-secondary-900 dark:border-theme-secondary-700 text-theme-secondary-900 dark:text-theme-secondary-700"
+              class="Circle__CircleWrapper-uw7h4j-0 bNDQMV border-theme-secondary-900 dark:border-theme-secondary-700 text-theme-secondary-900 dark:text-theme-secondary-700 ring-theme-secondary-background"
             >
               <div
                 class="sc-bdfBwQ fdjKgV"
@@ -2788,7 +2803,7 @@ exports[`WalletDetails should remove wallet name 1`] = `
                     role="rowgroup"
                   >
                     <tr
-                      class="TableRow__TableRowStyled-sc-1br46dw-0 fTgXGQ"
+                      class="TableRow__TableRowStyled-sc-1br46dw-0 fTgXGQ group"
                       data-testid="TableRow"
                     >
                       <td>
@@ -2838,7 +2853,7 @@ exports[`WalletDetails should remove wallet name 1`] = `
                             data-testid="TransactionRowMode"
                           >
                             <div
-                              class="Circle-uw7h4j-0 JkqUV border-theme-success-200 text-theme-success-600 dark:border-theme-success-600"
+                              class="Circle__CircleWrapper-uw7h4j-0 bNDQMV ring-theme-background group-hover:ring-theme-secondary-100 group-hover:bg-secondary-100 dark:group-hover:ring-black dark:group-hover:bg-black border-theme-success-200 text-theme-success-600 dark:border-theme-success-600 ring-theme-background"
                             >
                               <div
                                 class="sc-bdfBwQ fPrsah"
@@ -2852,11 +2867,11 @@ exports[`WalletDetails should remove wallet name 1`] = `
                               </div>
                             </div>
                             <div
-                              class="Avatar__AvatarWrapper-sc-1vsy2s2-0 gyYbkb"
+                              class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB ring-theme-background bg-theme-background group-hover:ring-theme-secondary-100 group-hover:bg-secondary-100 dark:group-hover:ring-black dark:group-hover:bg-black"
                               data-testid="Avatar"
                             >
                               <div
-                                class="w-full h-full"
+                                class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
                               >
                                 <img
                                   alt="D5pVkhZbSb4UNXvfmF6j7zdau8yGxfKwSv"
@@ -3190,7 +3205,7 @@ exports[`WalletDetails should render when wallet not found for votes 1`] = `
               class="flex my-0.5 ml-4 -space-x-2"
             >
               <div
-                class="Circle-uw7h4j-0 JkqUV border-theme-primary-100 dark:border-theme-secondary-800"
+                class="Circle__CircleWrapper-uw7h4j-0 bNDQMV border-theme-primary-100 dark:border-theme-secondary-800 ring-theme-background"
               >
                 <span
                   class="text-theme-secondary-text dark:text-theme-secondary-800"
@@ -3217,17 +3232,22 @@ exports[`WalletDetails should render when wallet not found for votes 1`] = `
                     data-testid="navbar__useractions"
                   >
                     <div
-                      class="Avatar__AvatarWrapper-sc-1vsy2s2-0 gyYbkb"
+                      class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB"
+                      data-testid="Avatar"
                     >
-                      <img
-                        alt="Profile Avatar"
-                        src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"30\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"55\\" cx=\\"0\\" cy=\\"60\\" fill=\\"rgb(255, 152, 0)\\"/><circle r=\\"40\\" cx=\\"50\\" cy=\\"50\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
-                      />
-                      <span
-                        class="absolute text-sm font-semibold text-theme-background dark:text-theme-text"
+                      <div
+                        class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
                       >
-                        JO
-                      </span>
+                        <img
+                          alt="Profile Avatar"
+                          src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"30\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"55\\" cx=\\"0\\" cy=\\"60\\" fill=\\"rgb(255, 152, 0)\\"/><circle r=\\"40\\" cx=\\"50\\" cy=\\"50\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
+                        />
+                        <span
+                          class="absolute text-sm font-semibold text-theme-background dark:text-theme-text"
+                        >
+                          JO
+                        </span>
+                      </div>
                     </div>
                   </div>
                 </span>
@@ -3258,7 +3278,7 @@ exports[`WalletDetails should render when wallet not found for votes 1`] = `
               >
                 <div
                   aria-label="ARK Devnet"
-                  class="Circle-uw7h4j-0 hvqrfp border-theme-secondary-700 text-theme-secondary-text"
+                  class="Circle__CircleWrapper-uw7h4j-0 kOlXCb border-theme-secondary-700 text-theme-secondary-text ring-theme-background"
                   data-testid="NetworkIcon-ARK-ark.devnet"
                 >
                   <div
@@ -3273,11 +3293,11 @@ exports[`WalletDetails should render when wallet not found for votes 1`] = `
                   </div>
                 </div>
                 <div
-                  class="Avatar__AvatarWrapper-sc-1vsy2s2-0 leXlgX"
+                  class="Avatar__AvatarWrapper-sc-1vsy2s2-0 ksomUO ring-theme-secondary-900"
                   data-testid="Avatar"
                 >
                   <div
-                    class="w-full h-full"
+                    class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
                   >
                     <img
                       alt="DTLomV8hpJheFDPnBGB5EtrDCfDZJnG23z"
@@ -3445,7 +3465,7 @@ exports[`WalletDetails should render when wallet not found for votes 1`] = `
             data-testid="WalletVote"
           >
             <div
-              class="Circle-uw7h4j-0 kUEiXZ border-theme-secondary-500 dark:border-theme-secondary-700 text-theme-secondary-500 dark:text-theme-secondary-700"
+              class="Circle__CircleWrapper-uw7h4j-0 bNDQMV border-theme-secondary-500 dark:border-theme-secondary-700 text-theme-secondary-500 dark:text-theme-secondary-700 ring-theme-secondary-background"
             >
               <div
                 class="sc-bdfBwQ fdjKgV"
@@ -3776,7 +3796,7 @@ exports[`WalletDetails should render when wallet not found for votes 1`] = `
                     role="rowgroup"
                   >
                     <tr
-                      class="TableRow__TableRowStyled-sc-1br46dw-0 fTgXGQ"
+                      class="TableRow__TableRowStyled-sc-1br46dw-0 fTgXGQ group"
                       data-testid="TableRow"
                     >
                       <td>
@@ -3826,7 +3846,7 @@ exports[`WalletDetails should render when wallet not found for votes 1`] = `
                             data-testid="TransactionRowMode"
                           >
                             <div
-                              class="Circle-uw7h4j-0 JkqUV border-theme-success-200 text-theme-success-600 dark:border-theme-success-600"
+                              class="Circle__CircleWrapper-uw7h4j-0 bNDQMV ring-theme-background group-hover:ring-theme-secondary-100 group-hover:bg-secondary-100 dark:group-hover:ring-black dark:group-hover:bg-black border-theme-success-200 text-theme-success-600 dark:border-theme-success-600 ring-theme-background"
                             >
                               <div
                                 class="sc-bdfBwQ fPrsah"
@@ -3840,11 +3860,11 @@ exports[`WalletDetails should render when wallet not found for votes 1`] = `
                               </div>
                             </div>
                             <div
-                              class="Avatar__AvatarWrapper-sc-1vsy2s2-0 gyYbkb"
+                              class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB ring-theme-background bg-theme-background group-hover:ring-theme-secondary-100 group-hover:bg-secondary-100 dark:group-hover:ring-black dark:group-hover:bg-black"
                               data-testid="Avatar"
                             >
                               <div
-                                class="w-full h-full"
+                                class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
                               >
                                 <img
                                   alt="D5pVkhZbSb4UNXvfmF6j7zdau8yGxfKwSv"
@@ -4178,7 +4198,7 @@ exports[`WalletDetails should star and unstar a wallet 1`] = `
               class="flex my-0.5 ml-4 -space-x-2"
             >
               <div
-                class="Circle-uw7h4j-0 JkqUV border-theme-primary-100 dark:border-theme-secondary-800"
+                class="Circle__CircleWrapper-uw7h4j-0 bNDQMV border-theme-primary-100 dark:border-theme-secondary-800 ring-theme-background"
               >
                 <span
                   class="text-theme-secondary-text dark:text-theme-secondary-800"
@@ -4205,17 +4225,22 @@ exports[`WalletDetails should star and unstar a wallet 1`] = `
                     data-testid="navbar__useractions"
                   >
                     <div
-                      class="Avatar__AvatarWrapper-sc-1vsy2s2-0 gyYbkb"
+                      class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB"
+                      data-testid="Avatar"
                     >
-                      <img
-                        alt="Profile Avatar"
-                        src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"30\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"55\\" cx=\\"0\\" cy=\\"60\\" fill=\\"rgb(255, 152, 0)\\"/><circle r=\\"40\\" cx=\\"50\\" cy=\\"50\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
-                      />
-                      <span
-                        class="absolute text-sm font-semibold text-theme-background dark:text-theme-text"
+                      <div
+                        class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
                       >
-                        JO
-                      </span>
+                        <img
+                          alt="Profile Avatar"
+                          src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"30\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"55\\" cx=\\"0\\" cy=\\"60\\" fill=\\"rgb(255, 152, 0)\\"/><circle r=\\"40\\" cx=\\"50\\" cy=\\"50\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
+                        />
+                        <span
+                          class="absolute text-sm font-semibold text-theme-background dark:text-theme-text"
+                        >
+                          JO
+                        </span>
+                      </div>
                     </div>
                   </div>
                 </span>
@@ -4246,7 +4271,7 @@ exports[`WalletDetails should star and unstar a wallet 1`] = `
               >
                 <div
                   aria-label="ARK Devnet"
-                  class="Circle-uw7h4j-0 hvqrfp border-theme-secondary-700 text-theme-secondary-text"
+                  class="Circle__CircleWrapper-uw7h4j-0 kOlXCb border-theme-secondary-700 text-theme-secondary-text ring-theme-background"
                   data-testid="NetworkIcon-ARK-ark.devnet"
                 >
                   <div
@@ -4261,11 +4286,11 @@ exports[`WalletDetails should star and unstar a wallet 1`] = `
                   </div>
                 </div>
                 <div
-                  class="Avatar__AvatarWrapper-sc-1vsy2s2-0 leXlgX"
+                  class="Avatar__AvatarWrapper-sc-1vsy2s2-0 ksomUO ring-theme-secondary-900"
                   data-testid="Avatar"
                 >
                   <div
-                    class="w-full h-full"
+                    class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
                   >
                     <img
                       alt="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
@@ -4432,7 +4457,7 @@ exports[`WalletDetails should star and unstar a wallet 1`] = `
             data-testid="WalletVote"
           >
             <div
-              class="Circle-uw7h4j-0 kUEiXZ border-theme-secondary-900 dark:border-theme-secondary-700 text-theme-secondary-900 dark:text-theme-secondary-700"
+              class="Circle__CircleWrapper-uw7h4j-0 bNDQMV border-theme-secondary-900 dark:border-theme-secondary-700 text-theme-secondary-900 dark:text-theme-secondary-700 ring-theme-secondary-background"
             >
               <div
                 class="sc-bdfBwQ fdjKgV"
@@ -4767,7 +4792,7 @@ exports[`WalletDetails should star and unstar a wallet 1`] = `
                     role="rowgroup"
                   >
                     <tr
-                      class="TableRow__TableRowStyled-sc-1br46dw-0 fTgXGQ"
+                      class="TableRow__TableRowStyled-sc-1br46dw-0 fTgXGQ group"
                       data-testid="TableRow"
                     >
                       <td>
@@ -4817,7 +4842,7 @@ exports[`WalletDetails should star and unstar a wallet 1`] = `
                             data-testid="TransactionRowMode"
                           >
                             <div
-                              class="Circle-uw7h4j-0 JkqUV border-theme-success-200 text-theme-success-600 dark:border-theme-success-600"
+                              class="Circle__CircleWrapper-uw7h4j-0 bNDQMV ring-theme-background group-hover:ring-theme-secondary-100 group-hover:bg-secondary-100 dark:group-hover:ring-black dark:group-hover:bg-black border-theme-success-200 text-theme-success-600 dark:border-theme-success-600 ring-theme-background"
                             >
                               <div
                                 class="sc-bdfBwQ fPrsah"
@@ -4831,11 +4856,11 @@ exports[`WalletDetails should star and unstar a wallet 1`] = `
                               </div>
                             </div>
                             <div
-                              class="Avatar__AvatarWrapper-sc-1vsy2s2-0 gyYbkb"
+                              class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB ring-theme-background bg-theme-background group-hover:ring-theme-secondary-100 group-hover:bg-secondary-100 dark:group-hover:ring-black dark:group-hover:bg-black"
                               data-testid="Avatar"
                             >
                               <div
-                                class="w-full h-full"
+                                class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
                               >
                                 <img
                                   alt="D5pVkhZbSb4UNXvfmF6j7zdau8yGxfKwSv"
@@ -5169,7 +5194,7 @@ exports[`WalletDetails should update wallet name 1`] = `
               class="flex my-0.5 ml-4 -space-x-2"
             >
               <div
-                class="Circle-uw7h4j-0 JkqUV border-theme-primary-100 dark:border-theme-secondary-800"
+                class="Circle__CircleWrapper-uw7h4j-0 bNDQMV border-theme-primary-100 dark:border-theme-secondary-800 ring-theme-background"
               >
                 <span
                   class="text-theme-secondary-text dark:text-theme-secondary-800"
@@ -5196,17 +5221,22 @@ exports[`WalletDetails should update wallet name 1`] = `
                     data-testid="navbar__useractions"
                   >
                     <div
-                      class="Avatar__AvatarWrapper-sc-1vsy2s2-0 gyYbkb"
+                      class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB"
+                      data-testid="Avatar"
                     >
-                      <img
-                        alt="Profile Avatar"
-                        src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"30\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"55\\" cx=\\"0\\" cy=\\"60\\" fill=\\"rgb(255, 152, 0)\\"/><circle r=\\"40\\" cx=\\"50\\" cy=\\"50\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
-                      />
-                      <span
-                        class="absolute text-sm font-semibold text-theme-background dark:text-theme-text"
+                      <div
+                        class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
                       >
-                        JO
-                      </span>
+                        <img
+                          alt="Profile Avatar"
+                          src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"30\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"55\\" cx=\\"0\\" cy=\\"60\\" fill=\\"rgb(255, 152, 0)\\"/><circle r=\\"40\\" cx=\\"50\\" cy=\\"50\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
+                        />
+                        <span
+                          class="absolute text-sm font-semibold text-theme-background dark:text-theme-text"
+                        >
+                          JO
+                        </span>
+                      </div>
                     </div>
                   </div>
                 </span>
@@ -5237,7 +5267,7 @@ exports[`WalletDetails should update wallet name 1`] = `
               >
                 <div
                   aria-label="ARK Devnet"
-                  class="Circle-uw7h4j-0 hvqrfp border-theme-secondary-700 text-theme-secondary-text"
+                  class="Circle__CircleWrapper-uw7h4j-0 kOlXCb border-theme-secondary-700 text-theme-secondary-text ring-theme-background"
                   data-testid="NetworkIcon-ARK-ark.devnet"
                 >
                   <div
@@ -5252,11 +5282,11 @@ exports[`WalletDetails should update wallet name 1`] = `
                   </div>
                 </div>
                 <div
-                  class="Avatar__AvatarWrapper-sc-1vsy2s2-0 leXlgX"
+                  class="Avatar__AvatarWrapper-sc-1vsy2s2-0 ksomUO ring-theme-secondary-900"
                   data-testid="Avatar"
                 >
                   <div
-                    class="w-full h-full"
+                    class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
                   >
                     <img
                       alt="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
@@ -5429,7 +5459,7 @@ exports[`WalletDetails should update wallet name 1`] = `
             data-testid="WalletVote"
           >
             <div
-              class="Circle-uw7h4j-0 kUEiXZ border-theme-secondary-900 dark:border-theme-secondary-700 text-theme-secondary-900 dark:text-theme-secondary-700"
+              class="Circle__CircleWrapper-uw7h4j-0 bNDQMV border-theme-secondary-900 dark:border-theme-secondary-700 text-theme-secondary-900 dark:text-theme-secondary-700 ring-theme-secondary-background"
             >
               <div
                 class="sc-bdfBwQ fdjKgV"
@@ -5764,7 +5794,7 @@ exports[`WalletDetails should update wallet name 1`] = `
                     role="rowgroup"
                   >
                     <tr
-                      class="TableRow__TableRowStyled-sc-1br46dw-0 fTgXGQ"
+                      class="TableRow__TableRowStyled-sc-1br46dw-0 fTgXGQ group"
                       data-testid="TableRow"
                     >
                       <td>
@@ -5814,7 +5844,7 @@ exports[`WalletDetails should update wallet name 1`] = `
                             data-testid="TransactionRowMode"
                           >
                             <div
-                              class="Circle-uw7h4j-0 JkqUV border-theme-success-200 text-theme-success-600 dark:border-theme-success-600"
+                              class="Circle__CircleWrapper-uw7h4j-0 bNDQMV ring-theme-background group-hover:ring-theme-secondary-100 group-hover:bg-secondary-100 dark:group-hover:ring-black dark:group-hover:bg-black border-theme-success-200 text-theme-success-600 dark:border-theme-success-600 ring-theme-background"
                             >
                               <div
                                 class="sc-bdfBwQ fPrsah"
@@ -5828,11 +5858,11 @@ exports[`WalletDetails should update wallet name 1`] = `
                               </div>
                             </div>
                             <div
-                              class="Avatar__AvatarWrapper-sc-1vsy2s2-0 gyYbkb"
+                              class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB ring-theme-background bg-theme-background group-hover:ring-theme-secondary-100 group-hover:bg-secondary-100 dark:group-hover:ring-black dark:group-hover:bg-black"
                               data-testid="Avatar"
                             >
                               <div
-                                class="w-full h-full"
+                                class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
                               >
                                 <img
                                   alt="D5pVkhZbSb4UNXvfmF6j7zdau8yGxfKwSv"
