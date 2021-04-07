@@ -33,6 +33,7 @@ const useManager = (services: PluginService[], manager: PluginManager) => {
 
 	const defaultFilters: { query?: string } = { query: "" };
 	const [filters, setFilters] = useState(defaultFilters);
+	const hasFilters = filters.query && filters.query !== defaultFilters.query;
 
 	const [pluginManager] = useState(() => {
 		manager.services().register(services);
@@ -142,8 +143,8 @@ const useManager = (services: PluginService[], manager: PluginManager) => {
 			const filteredPackages = allPackages.filter((pluginPackage) => {
 				let matchesQuery = true;
 
-				if (filters.query && filters.query !== defaultFilters.query) {
-					matchesQuery = !!pluginPackage.title()?.toLowerCase().includes(filters.query.toLowerCase());
+				if (hasFilters) {
+					matchesQuery = !!pluginPackage.title()?.toLowerCase().includes(filters.query!.toLowerCase());
 				}
 
 				return matchesQuery;
@@ -151,33 +152,30 @@ const useManager = (services: PluginService[], manager: PluginManager) => {
 
 			return filteredPackages;
 		},
-		[filters, defaultFilters],
+		[filters, hasFilters],
 	);
 
 	// Plugin configurations loaded from PSDK Plugin's Registry
-	const pluginPackages: PluginConfigurationData[] = useMemo(() => filterPackages(state.packages), [
-		state,
-		filterPackages,
-	]);
+	const pluginPackages: PluginConfigurationData[] = useMemo(() => state.packages, [state]);
 
 	// Plugin configurations loaded manually from URL
 	const pluginConfigurations: PluginConfigurationData[] = useMemo(() => state.configurations, [state]);
 
 	const localConfigurations: PluginConfigurationData[] = useMemo(
 		() =>
-			filterPackages(
-				pluginManager
-					.plugins()
-					.all()
-					.map((item) => item.config()),
-			),
-		[filterPackages, pluginManager],
+			pluginManager
+				.plugins()
+				.all()
+				.map((item) => item.config()),
+		[pluginManager],
 	);
 
 	const allPlugins: PluginConfigurationData[] = useMemo(
 		() => uniqBy([...localConfigurations, ...pluginPackages], (item) => item.id()),
 		[localConfigurations, pluginPackages],
 	);
+
+	const searchResults = useMemo(() => filterPackages(pluginPackages), [filterPackages, pluginPackages]);
 
 	const hasUpdateAvailable = useCallback(
 		(pluginId: string) => {
@@ -344,7 +342,9 @@ const useManager = (services: PluginService[], manager: PluginManager) => {
 		filterBy: (appliedFilters: any) => {
 			setFilters({ ...filters, ...appliedFilters });
 		},
+		searchResults,
 		resetFilters: () => setFilters(defaultFilters),
+		hasFilters,
 	};
 };
 

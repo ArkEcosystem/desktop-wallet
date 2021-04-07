@@ -3,7 +3,7 @@ import { Icon } from "app/components/Icon";
 import { Input } from "app/components/Input";
 import { clickOutsideHandler, useDebounce } from "app/hooks";
 import cn from "classnames";
-import React, { ChangeEvent, useEffect, useRef, useState } from "react";
+import React, { ChangeEvent, useCallback, useEffect, useRef, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { styled } from "twin.macro";
 
@@ -45,10 +45,16 @@ export const HeaderSearchBar = ({
 	const debouncedQuery = useDebounce(query, debounceTimeout);
 	useEffect(() => onSearch?.(debouncedQuery), [debouncedQuery]); // eslint-disable-line react-hooks/exhaustive-deps
 
-	const handleQueryReset = () => {
+	const handleQueryReset = useCallback(() => {
 		setQuery("");
 		onReset?.();
-	};
+	}, [onReset]);
+
+	useEffect(() => {
+		if (!defaultQuery) {
+			handleQueryReset();
+		}
+	}, [defaultQuery, handleQueryReset]);
 
 	return (
 		<div className="relative">
