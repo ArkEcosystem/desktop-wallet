@@ -6,9 +6,9 @@ type EmptyBlockProps = {
 	className?: string;
 	children?: React.ReactNode;
 	size?: Size;
-};
+} & React.HTMLProps<any>;
 
-export const EmptyBlock = ({ className, children, size }: EmptyBlockProps) => {
+export const EmptyBlock = ({ className, children, size, ...props }: EmptyBlockProps) => {
 	const padding = size === "sm" ? "py-3 px-4" : "p-6";
 
 	return (
@@ -19,6 +19,7 @@ export const EmptyBlock = ({ className, children, size }: EmptyBlockProps) => {
 				padding,
 				className,
 			)}
+			{...props}
 		>
 			{children && <div>{children}</div>}
 		</div>

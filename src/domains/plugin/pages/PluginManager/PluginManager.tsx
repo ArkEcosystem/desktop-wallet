@@ -421,7 +421,7 @@ export const PluginManager = () => {
 										}
 										onUpdate={handleUpdate}
 										plugins={viewPlugins}
-										showCategory={currentView === "my-plugins" || currentView === "all"}
+										showCategory={["my-plugins", "search", "all"].includes(currentView)}
 										updatingStats={updatingStats}
 										onClick={handleSelectPlugin}
 										onDelete={handleDeletePlugin}

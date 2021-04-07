@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/require-await */
 import React from "react";
-import { act, fireEvent, render } from "testing-library";
+import { act, fireEvent, render } from "utils/testing-library";
 
 import { HeaderSearchBar } from "./HeaderSearchBar";
 
@@ -18,6 +18,17 @@ describe("HeaderSearchBar", () => {
 		fireEvent.click(getByTestId("header-search-bar__button"));
 
 		expect(getByTestId("header-search-bar__input")).toBeTruthy();
+	});
+
+	it("should reset with empty query", () => {
+		const onReset = jest.fn();
+		const { rerender } = render(<HeaderSearchBar defaultQuery="my-query" onReset={onReset} />);
+
+		expect(onReset).not.toHaveBeenCalled();
+
+		rerender(<HeaderSearchBar defaultQuery="" onReset={onReset} />);
+
+		expect(onReset).toHaveBeenCalled();
 	});
 
 	it("should show extra slot", () => {

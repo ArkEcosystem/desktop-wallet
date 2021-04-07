@@ -382,7 +382,7 @@ describe("PluginManager", () => {
 	});
 
 	it("should search for plugin", async () => {
-		const { asFragment, getByTestId, getAllByTestId, getAllByText } = rendered;
+		const { asFragment, getByText, getByTestId, getAllByTestId, getAllByText, debug } = rendered;
 
 		await waitFor(() =>
 			expect(within(getByTestId("PluginManager__latest__gaming")).getByTestId("PluginGrid")).toBeTruthy(),
@@ -400,9 +400,8 @@ describe("PluginManager", () => {
 			});
 		});
 
-		await waitFor(() => expect(getAllByText(commonTranslations.AUTHOR)).toHaveLength(11));
-
-		expect(asFragment()).toMatchSnapshot();
+		await waitFor(() => expect(getByText(translations.PAGE_PLUGIN_MANAGER.VIEW.SEARCH)).toBeInTheDocument());
+		await waitFor(() => expect(getAllByTestId("PluginImage__logo")).toHaveLength(1));
 
 		act(() => {
 			fireEvent.input(within(getByTestId("header-search-bar__input")).getByTestId("Input"), {
@@ -410,7 +409,7 @@ describe("PluginManager", () => {
 			});
 		});
 
-		await waitFor(() => expect(getAllByText(commonTranslations.AUTHOR)).toHaveLength(12));
+		await waitFor(() => expect(getByTestId("PluginGrid__empty-message")).toBeInTheDocument());
 
 		expect(asFragment()).toMatchSnapshot();
 	});

@@ -175,7 +175,7 @@ const useManager = (services: PluginService[], manager: PluginManager) => {
 		[localConfigurations, pluginPackages],
 	);
 
-	const searchResults = useMemo(() => filterPackages(pluginPackages), [filterPackages, pluginPackages]);
+	const searchResults = useMemo(() => filterPackages(allPlugins), [filterPackages, allPlugins]);
 
 	const hasUpdateAvailable = useCallback(
 		(pluginId: string) => {
