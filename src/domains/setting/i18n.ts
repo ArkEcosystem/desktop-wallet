@@ -16,7 +16,7 @@ export const translations: { [key: string]: any } = {
 			PASSPHRASE_LANGUAGE: "Passphrase Language",
 			CURRENCY: "Currency",
 			LANGUAGE: "Language",
-			MARKET_PROVIDER: "Price Source",
+			MARKET_PROVIDER: "Price Oracle",
 			TIME_FORMAT: "Time Format",
 			VALIDATION: {
 				NAME_EXISTS: "Profile name already exists",

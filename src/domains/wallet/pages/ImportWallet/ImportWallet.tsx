@@ -55,6 +55,7 @@ export const ImportWallet = () => {
 	const nameMaxLength = 42;
 
 	useEffect(() => {
+		register("network", { required: true });
 		register({ name: "type", type: "custom" });
 	}, [register]);
 
