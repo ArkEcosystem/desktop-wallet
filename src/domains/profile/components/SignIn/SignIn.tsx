@@ -83,6 +83,10 @@ export const SignIn = ({ isOpen, profile, onCancel, onClose, onSuccess }: SignIn
 		}
 	};
 
+	if (!isOpen) {
+		return null;
+	}
+
 	return (
 		<Modal
 			title={t("PROFILE.MODAL_SIGN_IN.TITLE")}

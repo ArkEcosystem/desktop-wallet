@@ -3,8 +3,8 @@ import { Button } from "app/components/Button";
 import { Icon } from "app/components/Icon";
 import { Link } from "app/components/Link";
 import { TableCell, TableRow } from "app/components/Table";
+import cn from "classnames";
 import React, { memo } from "react";
-import { shouldUseDarkColors } from "utils/electron-utils";
 
 import { TransactionRowAmount } from "./TransactionRowAmount";
 import { TransactionRowConfirmation } from "./TransactionRowConfirmation";
@@ -27,6 +27,7 @@ type Props = {
 
 export const TransactionRow = memo(
 	({
+		className,
 		exchangeCurrency,
 		transaction,
 		onSign,
@@ -38,8 +39,6 @@ export const TransactionRow = memo(
 		showSignColumn = false,
 		...props
 	}: Props) => {
-		const [shadowColor, setShadowColor] = React.useState<string>("--theme-background-color");
-
 		if (isLoading) {
 			return (
 				<TransactionRowSkeleton
@@ -51,14 +50,7 @@ export const TransactionRow = memo(
 		}
 
 		return (
-			<TableRow
-				onClick={onClick}
-				onMouseEnter={() =>
-					setShadowColor(shouldUseDarkColors() ? "--theme-black" : "--theme-color-secondary-100")
-				}
-				onMouseLeave={() => setShadowColor("")}
-				{...props}
-			>
+			<TableRow onClick={onClick} className={cn("group", className)} {...props}>
 				{showExplorerLink && (
 					<TableCell variant="start">
 						<Link
@@ -80,7 +72,7 @@ export const TransactionRow = memo(
 				</TableCell>
 
 				<TableCell innerClassName="space-x-4">
-					<TransactionRowMode transaction={transaction} circleShadowColor={shadowColor} />
+					<TransactionRowMode transaction={transaction} />
 					<TransactionRowRecipientLabel transaction={transaction} walletName={walletName} />
 				</TableCell>
 

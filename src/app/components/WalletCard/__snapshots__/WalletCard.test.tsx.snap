@@ -21,7 +21,7 @@ exports[`Wallet Card should render 1`] = `
           >
             <div
               aria-label="ARK Devnet"
-              class="Circle-uw7h4j-0 JkqUV border-theme-primary-100 text-theme-primary-400"
+              class="Circle__CircleWrapper-uw7h4j-0 bNDQMV border-theme-primary-100 text-theme-primary-400 ring-theme-background"
               data-testid="NetworkIcon-ARK-ark.devnet"
             >
               <div
@@ -36,11 +36,11 @@ exports[`Wallet Card should render 1`] = `
               </div>
             </div>
             <div
-              class="Avatar__AvatarWrapper-sc-1vsy2s2-0 gyYbkb"
+              class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB"
               data-testid="Avatar"
             >
               <div
-                class="w-full h-full"
+                class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
               >
                 <img
                   alt="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
@@ -136,10 +136,10 @@ exports[`Wallet Card should render blank 1`] = `
           class="flex -space-x-2"
         >
           <div
-            class="Circle-uw7h4j-0 JkqUV bg-theme-background border-theme-primary-100 dark:border-theme-secondary-800"
+            class="Circle__CircleWrapper-uw7h4j-0 bNDQMV bg-theme-background border-theme-primary-100 dark:border-theme-secondary-800 ring-theme-background"
           />
           <div
-            class="Circle-uw7h4j-0 JkqUV bg-theme-background border-theme-primary-100 dark:border-theme-secondary-800"
+            class="Circle__CircleWrapper-uw7h4j-0 bNDQMV bg-theme-background border-theme-primary-100 dark:border-theme-secondary-800 ring-theme-background"
           />
         </div>
         <div
@@ -178,10 +178,10 @@ exports[`Wallet Card should render blank with favorites display type 1`] = `
           class="flex -space-x-2"
         >
           <div
-            class="Circle-uw7h4j-0 JkqUV bg-theme-background border-theme-primary-100 dark:border-theme-secondary-800"
+            class="Circle__CircleWrapper-uw7h4j-0 bNDQMV bg-theme-background border-theme-primary-100 dark:border-theme-secondary-800 ring-theme-background"
           />
           <div
-            class="Circle-uw7h4j-0 JkqUV bg-theme-background border-theme-primary-100 dark:border-theme-secondary-800"
+            class="Circle__CircleWrapper-uw7h4j-0 bNDQMV bg-theme-background border-theme-primary-100 dark:border-theme-secondary-800 ring-theme-background"
           />
         </div>
         <div
@@ -230,10 +230,10 @@ exports[`Wallet Card should render blank with ledger display type 1`] = `
           class="flex -space-x-2"
         >
           <div
-            class="Circle-uw7h4j-0 JkqUV bg-theme-background border-theme-primary-100 dark:border-theme-secondary-800"
+            class="Circle__CircleWrapper-uw7h4j-0 bNDQMV bg-theme-background border-theme-primary-100 dark:border-theme-secondary-800 ring-theme-background"
           />
           <div
-            class="Circle-uw7h4j-0 JkqUV bg-theme-background border-theme-primary-100 dark:border-theme-secondary-800"
+            class="Circle__CircleWrapper-uw7h4j-0 bNDQMV bg-theme-background border-theme-primary-100 dark:border-theme-secondary-800 ring-theme-background"
           />
         </div>
         <div
@@ -282,7 +282,7 @@ exports[`Wallet Card should render loading state 1`] = `
           class="flex items-center mr-4 -space-x-1"
         >
           <div
-            class="Circle-uw7h4j-0 JkqUV border-transparent"
+            class="Circle__CircleWrapper-uw7h4j-0 bNDQMV border-transparent ring-theme-background"
           >
             <span>
               <span
@@ -299,7 +299,7 @@ exports[`Wallet Card should render loading state 1`] = `
             </span>
           </div>
           <div
-            class="Circle-uw7h4j-0 JkqUV border-transparent"
+            class="Circle__CircleWrapper-uw7h4j-0 bNDQMV border-transparent ring-theme-background"
           >
             <span>
               <span
@@ -406,7 +406,7 @@ exports[`Wallet Card should render with actions 1`] = `
           >
             <div
               aria-label="ARK Devnet"
-              class="Circle-uw7h4j-0 JkqUV border-theme-primary-100 text-theme-primary-400"
+              class="Circle__CircleWrapper-uw7h4j-0 bNDQMV border-theme-primary-100 text-theme-primary-400 ring-theme-background"
               data-testid="NetworkIcon-ARK-ark.devnet"
             >
               <div
@@ -421,11 +421,11 @@ exports[`Wallet Card should render with actions 1`] = `
               </div>
             </div>
             <div
-              class="Avatar__AvatarWrapper-sc-1vsy2s2-0 gyYbkb"
+              class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB"
               data-testid="Avatar"
             >
               <div
-                class="w-full h-full"
+                class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
               >
                 <img
                   alt="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
@@ -546,7 +546,7 @@ exports[`Wallet Card should render with wallet data 1`] = `
           >
             <div
               aria-label="ARK Devnet"
-              class="Circle-uw7h4j-0 JkqUV border-theme-primary-100 text-theme-primary-400"
+              class="Circle__CircleWrapper-uw7h4j-0 bNDQMV border-theme-primary-100 text-theme-primary-400 ring-theme-background"
               data-testid="NetworkIcon-ARK-ark.devnet"
             >
               <div
@@ -561,11 +561,11 @@ exports[`Wallet Card should render with wallet data 1`] = `
               </div>
             </div>
             <div
-              class="Avatar__AvatarWrapper-sc-1vsy2s2-0 gyYbkb"
+              class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB"
               data-testid="Avatar"
             >
               <div
-                class="w-full h-full"
+                class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
               >
                 <img
                   alt="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
@@ -666,7 +666,7 @@ exports[`Wallet Card should render with wallet data and optional icon 1`] = `
           >
             <div
               aria-label="ARK Devnet"
-              class="Circle-uw7h4j-0 JkqUV border-theme-primary-100 text-theme-primary-400"
+              class="Circle__CircleWrapper-uw7h4j-0 bNDQMV border-theme-primary-100 text-theme-primary-400 ring-theme-background"
               data-testid="NetworkIcon-ARK-ark.devnet"
             >
               <div
@@ -681,11 +681,11 @@ exports[`Wallet Card should render with wallet data and optional icon 1`] = `
               </div>
             </div>
             <div
-              class="Avatar__AvatarWrapper-sc-1vsy2s2-0 gyYbkb"
+              class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB"
               data-testid="Avatar"
             >
               <div
-                class="w-full h-full"
+                class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
               >
                 <img
                   alt="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"

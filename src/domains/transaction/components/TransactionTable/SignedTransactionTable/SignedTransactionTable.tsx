@@ -5,9 +5,8 @@ import { Button } from "app/components/Button";
 import { Icon } from "app/components/Icon";
 import { Table, TableCell, TableRow } from "app/components/Table";
 import { Tooltip } from "app/components/Tooltip";
-import React, { useMemo, useState } from "react";
+import React, { useMemo } from "react";
 import { useTranslation } from "react-i18next";
-import { shouldUseDarkColors } from "utils/electron-utils";
 
 import { BaseTransactionRowAmount } from "../TransactionRow/TransactionRowAmount";
 import { BaseTransactionRowInfo } from "../TransactionRow/TransactionRowInfo";
@@ -132,19 +131,13 @@ const Row = ({
 	wallet: ProfileContracts.IReadWriteWallet;
 }) => {
 	const { t } = useTranslation();
-	const [shadowColor, setShadowColor] = useState("--theme-background-color");
 
 	const recipient = transaction.get<string>("recipientId");
-	const recipients = transaction.get<{ payments?: any }>("asset")?.payments;
 	const canBeSigned = wallet.transaction().canBeSigned(transaction.id());
 	const type = getType(transaction);
 
 	return (
-		<TableRow
-			onMouseEnter={() => setShadowColor(shouldUseDarkColors() ? "--theme-black" : "--theme-color-secondary-100")}
-			onMouseLeave={() => setShadowColor("")}
-			onClick={() => onRowClick?.(transaction)}
-		>
+		<TableRow onClick={() => onRowClick?.(transaction)}>
 			<TableCell variant="start">
 				<Tooltip content={transaction.id()}>
 					<span className="text-theme-secondary-300 dark:text-theme-secondary-800">
@@ -161,13 +154,7 @@ const Row = ({
 			</TableCell>
 
 			<TableCell innerClassName="space-x-4">
-				<BaseTransactionRowMode
-					isSent={true}
-					type={type}
-					recipient={recipient}
-					circleShadowColor={shadowColor}
-					recipients={recipients}
-				/>
+				<BaseTransactionRowMode isSent={true} type={type} recipient={recipient} />
 
 				<BaseTransactionRowRecipientLabel type={type} recipient={recipient} />
 			</TableCell>

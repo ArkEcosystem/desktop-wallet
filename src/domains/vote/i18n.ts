@@ -1,7 +1,7 @@
 export const translations: { [key: string]: any } = {
 	VOTES_PAGE: {
 		TITLE: "My Votes",
-		SUBTITLE: "Manage your cryptoasset staking",
+		SUBTITLE: "Manage your cryptoasset staking.",
 		EMPTY_MESSAGE:
 			"Your must first <bold>{{create}}</bold> or <bold>{{import}}</bold> an address to view your current voting status.",
 		SEARCH_PLACEHOLDER: "Enter the delegate’s name or address for a quick search",

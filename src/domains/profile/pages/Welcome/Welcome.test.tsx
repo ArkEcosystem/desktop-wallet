@@ -210,6 +210,75 @@ describe("Welcome", () => {
 		await waitFor(() => expect(getAllByTestId("Card").length).toBe(2));
 	});
 
+	it("should not restart the timeout when closing the modal to retry the profile password", async () => {
+		jest.useFakeTimers();
+
+		const { container, getByText, findByTestId, getByTestId } = renderWithRouter(<Welcome />);
+
+		expect(container).toBeTruthy();
+
+		const profile = env.profiles().findById("cba050f1-880f-45f0-9af9-cfe48f406052");
+
+		expect(getByText(translations.PAGE_WELCOME.WITH_PROFILES.TITLE)).toBeInTheDocument();
+
+		expect(() => getByTestId("modal__inner")).toThrow(/Unable to find an element by/);
+
+		act(() => {
+			fireEvent.click(getByText(profile.settings().get(Contracts.ProfileSetting.Name)));
+		});
+
+		for (const i of [1, 2, 3]) {
+			await act(async () => {
+				fireEvent.input(getByTestId("SignIn__input--password"), { target: { value: `wrong password ${i}` } });
+			});
+
+			// wait for form to be updated
+			await findByTestId("SignIn__submit-button");
+
+			act(() => {
+				fireEvent.click(getByTestId("SignIn__submit-button"));
+			});
+
+			// wait for form to be updated
+			await findByTestId("SignIn__submit-button");
+		}
+
+		expect(getByTestId("SignIn__submit-button")).toBeDisabled();
+		expect(getByTestId("SignIn__input--password")).toBeDisabled();
+
+		act(() => {
+			jest.advanceTimersByTime(15000);
+		});
+
+		// Close
+		act(() => {
+			fireEvent.click(getByTestId("SignIn__cancel-button"));
+		});
+
+		// Reopen
+		act(() => {
+			fireEvent.click(getByText(profile.settings().get(Contracts.ProfileSetting.Name)));
+		});
+
+		// Still disabled
+		expect(getByTestId("SignIn__submit-button")).toBeDisabled();
+
+		act(() => {
+			jest.advanceTimersByTime(50000);
+			jest.clearAllTimers();
+		});
+
+		// wait for form to be updated
+		await findByTestId("SignIn__submit-button");
+
+		await waitFor(
+			() => expect(getByTestId("Input__error")).toHaveAttribute("data-errortext", "The Password is invalid"),
+			{ timeout: 10000 },
+		);
+
+		jest.useRealTimers();
+	});
+
 	it("should change route to create profile", () => {
 		const { container, getByText, asFragment, history } = renderWithRouter(<Welcome />);
 

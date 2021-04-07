@@ -47,7 +47,7 @@ exports[`SuccessStep should render 4th step 1`] = `
         </div>
         <div
           aria-label="ARK Devnet"
-          class="Circle-uw7h4j-0 JkqUV border-theme-primary-100 text-theme-primary-400"
+          class="Circle__CircleWrapper-uw7h4j-0 bNDQMV border-theme-primary-100 text-theme-primary-400 ring-theme-background"
           data-testid="NetworkIcon-ARK-ark.devnet"
         >
           <div
@@ -90,11 +90,11 @@ exports[`SuccessStep should render 4th step 1`] = `
           </div>
         </div>
         <div
-          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 gyYbkb"
+          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB"
           data-testid="Avatar"
         >
           <div
-            class="w-full h-full"
+            class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
           >
             <img
               alt="TEST-WALLET-ADDRESS"
