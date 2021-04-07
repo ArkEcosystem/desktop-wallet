@@ -41,7 +41,7 @@ let wallet2: Contracts.IReadWriteWallet;
 
 const passphrase2 = "power return attend drink piece found tragic fire liar page disease combine";
 
-const renderPage = async (waitForTopSection = true) => {
+const renderPage = async (waitForTopSection = true, waitForTransactions = true) => {
 	let rendered: RenderResult;
 
 	const Page = () => {
@@ -49,7 +49,7 @@ const renderPage = async (waitForTopSection = true) => {
 
 		useEffect(() => {
 			setConfiguration({ profileIsSyncing: false });
-		}, []);
+		}, [setConfiguration]);
 
 		return <WalletDetails txSkeletonRowsLimit={1} transactionLimit={1} />;
 	};
@@ -72,7 +72,11 @@ const renderPage = async (waitForTopSection = true) => {
 		await waitFor(() => expect(getByTestId("WalletVote")).toBeTruthy());
 	}
 
-	await waitFor(() => expect(within(getByTestId("TransactionTable")).queryAllByTestId("TableRow")).toHaveLength(1));
+	if (waitForTransactions) {
+		await waitFor(() =>
+			expect(within(getByTestId("TransactionTable")).queryAllByTestId("TableRow")).toHaveLength(1),
+		);
+	}
 
 	return rendered;
 };
@@ -149,7 +153,7 @@ describe("WalletDetails", () => {
 		walletUrl = `/profiles/${profile.id()}/wallets/${blankWallet.id()}`;
 		history.push(walletUrl);
 
-		const { asFragment, getByText } = await renderPage();
+		const { asFragment, getByText } = await renderPage(true, false);
 
 		await waitFor(() => expect(getByText(commonTranslations.LEARN_MORE)).toBeTruthy());
 
