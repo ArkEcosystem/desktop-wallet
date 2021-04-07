@@ -88,10 +88,12 @@ export const SelectNetwork = ({
 			let newSuggestion: string | undefined = undefined;
 
 			const matches = items.filter((network: Coins.Network) => isMatch(inputValue, network));
-			if (inputValue && matches.length > 0) {
+
+			if (matches.length > 0) {
 				newSuggestion = [inputValue, matches[0].extra?.displayName?.slice(inputValue.length)].join("");
-				setSuggestion(newSuggestion);
 			}
+
+			setSuggestion(newSuggestion || "");
 
 			onInputChange?.(inputValue, newSuggestion);
 		},

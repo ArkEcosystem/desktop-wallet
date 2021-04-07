@@ -160,15 +160,13 @@ export const Welcome = () => {
 				onDelete={closeDeleteProfileModal}
 			/>
 
-			{selectedProfile && requestedAction && (
-				<SignIn
-					isOpen={!!selectedProfile}
-					profile={selectedProfile}
-					onCancel={closeSignInModal}
-					onClose={closeSignInModal}
-					onSuccess={(password) => handleRequestedAction(selectedProfile, requestedAction, password)}
-				/>
-			)}
+			<SignIn
+				isOpen={!!selectedProfile && requestedAction}
+				profile={selectedProfile!}
+				onCancel={closeSignInModal}
+				onClose={closeSignInModal}
+				onSuccess={(password) => handleRequestedAction(selectedProfile!, requestedAction, password)}
+			/>
 		</>
 	);
 };
