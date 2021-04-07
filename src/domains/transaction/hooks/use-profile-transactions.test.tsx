@@ -61,13 +61,37 @@ describe("useProfileTransactions", () => {
 
 		const wrapper = ({ children }: any) => <ConfigurationProvider>{children}</ConfigurationProvider>;
 
-		const {
-			result: { current },
-		} = renderHook(() => useProfileTransactions({ profile, wallets: profile.wallets().values() }), { wrapper });
+		const { result } = renderHook(() => useProfileTransactions({ profile, wallets: profile.wallets().values() }), {
+			wrapper,
+		});
 
 		await act(async () => {
-			current.updateFilters({ activeMode: "sent" });
-			await waitFor(() => expect(current.transactions).toHaveLength(0));
+			result.current.updateFilters({ activeMode: "sent" });
+			jest.runAllTimers();
+
+			await waitFor(() => expect(result.current.transactions).toHaveLength(0));
+
+			result.current.updateFilters({ activeMode: "all" });
+			jest.runAllTimers();
+
+			await waitFor(() => expect(result.current.transactions).toHaveLength(0));
+
+			const mockTransactionsAggregate = jest
+				.spyOn(profile.transactionAggregate(), "sentTransactions")
+				.mockImplementation(() => {
+					const response = {
+						hasMorePages: () => true,
+						items: () => [],
+					};
+					return Promise.resolve(response);
+				});
+
+			result.current.updateFilters({ activeMode: "sent" });
+			jest.runAllTimers();
+
+			await waitFor(() => expect(result.current.transactions).toHaveLength(0));
+
+			mockTransactionsAggregate.mockRestore();
 		});
 	});
 

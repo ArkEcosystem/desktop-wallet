@@ -31,7 +31,7 @@ export const useProfileTransactions = ({
 	profile: Contracts.IProfile;
 	wallets: Contracts.IReadWriteWallet[];
 }) => {
-	const lastActiveMode = useRef<string>();
+	const lastQuery = useRef<string>();
 	const isMounted = useRef(true);
 	const cursor = useRef(1);
 
@@ -58,7 +58,7 @@ export const useProfileTransactions = ({
 
 			const isAborted = () => {
 				const activeQuery = JSON.stringify({ activeMode, activeTransactionType });
-				return activeQuery !== lastActiveMode.current;
+				return activeQuery !== lastQuery.current;
 			};
 
 			if (isAborted()) {
@@ -78,7 +78,7 @@ export const useProfileTransactions = ({
 			}));
 		};
 
-		if (!lastActiveMode.current) {
+		if (!lastQuery.current) {
 			return;
 		}
 
@@ -94,7 +94,7 @@ export const useProfileTransactions = ({
 
 	const updateFilters = useCallback(
 		({ activeMode, activeTransactionType }: TransactionFilters) => {
-			lastActiveMode.current = JSON.stringify({ activeMode, activeTransactionType });
+			lastQuery.current = JSON.stringify({ activeMode, activeTransactionType });
 
 			const hasWallets = wallets.length !== 0;
 			cursor.current = 1;
