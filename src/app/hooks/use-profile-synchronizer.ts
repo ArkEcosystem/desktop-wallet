@@ -1,9 +1,10 @@
-import { Contracts, Environment, Helpers } from "@arkecosystem/platform-sdk-profiles";
+import { Contracts, Helpers } from "@arkecosystem/platform-sdk-profiles";
 import { useConfiguration, useEnvironmentContext } from "app/contexts";
-import { useCallback, useEffect, useMemo, useRef } from "react";
-import { matchPath, useLocation } from "react-router-dom";
+import { useEffect, useMemo, useRef } from "react";
+import { matchPath, useHistory, useLocation } from "react-router-dom";
 
 import { useNotifications } from "./use-notifications";
+import { useProfileUtils } from "./use-profile-utils";
 import { useSynchronizer } from "./use-synchronizer";
 
 enum Intervals {
@@ -11,38 +12,6 @@ enum Intervals {
 	Medium = 60000,
 	Long = 120000,
 }
-
-export const useProfileUtils = (env: Environment) => {
-	const getProfileById = useCallback(
-		(id: string) => {
-			if (!id) {
-				return;
-			}
-
-			let response: Contracts.IProfile | undefined;
-
-			try {
-				response = env.profiles().findById(id);
-			} catch (e) {
-				// Not a valid profile id. Ignore.
-			}
-
-			return response;
-		},
-		[env],
-	);
-
-	const getProfileFromUrl = useCallback(
-		(url: string) => {
-			const urlMatch = matchPath(url, { path: "/profiles/:profileId" });
-			const urlProfileId = (urlMatch?.params as any)?.profileId;
-			return getProfileById(urlProfileId);
-		},
-		[getProfileById],
-	);
-
-	return useMemo(() => ({ getProfileById, getProfileFromUrl }), [getProfileFromUrl, getProfileById]);
-};
 
 const useProfileWatcher = () => {
 	const location = useLocation();
@@ -153,21 +122,26 @@ export const useProfileSyncStatus = () => {
 
 export const useProfileRestore = () => {
 	const { shouldRestore, markAsRestored, setStatus } = useProfileSyncStatus();
-	const { persist } = useEnvironmentContext();
+	const { persist, env } = useEnvironmentContext();
+	const { getProfileFromUrl, getProfileStoredPassword } = useProfileUtils(env);
+	const history = useHistory();
 
-	const restoreProfile = async (profile: Contracts.IProfile, password?: string) => {
+	const restoreProfile = async (profile: Contracts.IProfile, passwordInput?: string) => {
 		if (!shouldRestore(profile)) {
 			return false;
 		}
+
+		const password = passwordInput || getProfileStoredPassword(profile);
 
 		setStatus("restoring");
 
 		// When in e2e mode, profiles are migrated passwordless and
 		// password needs to be set again. The restore should happen
 		// without password and then reset the password.
-		const __E2E__ = process.env.REACT_APP_IS_E2E;
-		if (__E2E__ !== "undefined") {
+		const __E2E__ = ["true", "1"].includes(process.env.REACT_APP_IS_E2E?.toLowerCase() as string);
+		if (__E2E__) {
 			await profile.restore(password);
+			profile.save(password);
 
 			await persist();
 
@@ -177,12 +151,19 @@ export const useProfileRestore = () => {
 
 		// Reset profile normally (passwordless or not)
 		await profile.restore(password);
+		markAsRestored(profile.id());
+
+		// Profile restore finished but url changed in the meanwhile.
+		// Prevent from unecessary save of old profile.
+		const activeProfile = getProfileFromUrl(history?.location?.pathname);
+		if (activeProfile?.id() !== profile.id()) {
+			return;
+		}
 
 		// Make sure the latest profile state is encoded (and optionally encrypted) before persisting
 		profile.save(password);
 
 		await persist();
-		markAsRestored(profile.id());
 		return true;
 	};
 
