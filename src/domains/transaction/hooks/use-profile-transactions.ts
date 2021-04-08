@@ -1,5 +1,6 @@
 import { Contracts, DTO } from "@arkecosystem/platform-sdk-profiles";
 import { IReadWriteWallet } from "@arkecosystem/platform-sdk-profiles/dist/contracts";
+import { useSynchronizer } from "app/hooks";
 import { useCallback, useEffect, useRef, useState } from "react";
 
 type TransactionsState = {
@@ -162,7 +163,45 @@ export const useProfileTransactions = ({
 		}));
 	}, [activeMode, activeTransactionType, wallets.length]); // eslint-disable-line react-hooks/exhaustive-deps
 
-	// TODO: Run periodic checks for new transactions every 30 seconds
+	/**
+	 * Run periodically every 30 seconds to check for new transactions
+	 */
+	const checkNewTransactions = async () => {
+		const response = await fetchTransactions({
+			flush: true,
+			mode: activeMode,
+			transactionType: activeTransactionType,
+			wallets,
+			cursor: 1,
+		});
+
+		const firstTransaction = response.items()[0];
+		const foundNew =
+			firstTransaction && !transactions.some((transaction) => firstTransaction.id() === transaction.id());
+
+		if (!foundNew) {
+			return;
+		}
+
+		setState((state) => ({
+			...state,
+			isLoadingMore: false,
+			hasMore: response.items().length > 0 && response.hasMorePages(),
+			transactions: response.items(),
+		}));
+	};
+
+	const { start, stop } = useSynchronizer([
+		{
+			callback: checkNewTransactions,
+			interval: 30000,
+		},
+	]);
+
+	useEffect(() => {
+		start();
+		return () => stop();
+	}, [start, stop]);
 
 	return {
 		fetchTransactions,
