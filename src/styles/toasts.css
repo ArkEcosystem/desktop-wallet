@@ -1,31 +1,16 @@
 @import "react-toastify/dist/ReactToastify.css";
 
 .Toastify__toast-container {
-	@apply max-w-128 p-0 mr-10 mb-10;
+	@apply max-w-128 w-auto p-0 mr-10 mb-10;
+	min-width: 20rem;
 }
 
 .Toastify__toast {
-	@apply p-0 rounded-lg shadow-md text-sm text-theme-secondary-900;
-	min-height: 3.5rem;
+	@apply shadow-none;
+	background: unset;
+	color: unset;
 }
 
 .Toastify__toast:last-child {
 	@apply mb-0;
-}
-
-.Toastify__toast-body {
-	@apply p-5;
-}
-
-.Toastify__toast--info {
-	@apply bg-theme-primary-100;
-}
-.Toastify__toast--success {
-	@apply bg-theme-success-100;
-}
-.Toastify__toast--warning {
-	@apply bg-theme-warning-100;
-}
-.Toastify__toast--error {
-	@apply bg-theme-danger-100;
 }
