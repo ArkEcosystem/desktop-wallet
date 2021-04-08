@@ -172,6 +172,9 @@ module.exports = {
 				18: "4.5rem",
 				25: "6.25rem",
 			},
+			gap: {
+				4.5: "1.125rem",
+			},
 			fontSize: {
 				0: "0",
 				"8xl": "6rem",
