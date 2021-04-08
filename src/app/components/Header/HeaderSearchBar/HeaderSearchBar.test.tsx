@@ -20,17 +20,6 @@ describe("HeaderSearchBar", () => {
 		expect(getByTestId("header-search-bar__input")).toBeTruthy();
 	});
 
-	it("should reset with empty query", () => {
-		const onReset = jest.fn();
-		const { rerender } = render(<HeaderSearchBar defaultQuery="my-query" onReset={onReset} />);
-
-		expect(onReset).not.toHaveBeenCalled();
-
-		rerender(<HeaderSearchBar defaultQuery="" onReset={onReset} />);
-
-		expect(onReset).toHaveBeenCalled();
-	});
-
 	it("should show extra slot", () => {
 		const { getByTestId } = render(<HeaderSearchBar extra={<div data-testid="extra-slot" />} />);
 
