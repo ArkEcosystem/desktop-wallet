@@ -3,7 +3,7 @@ import { Contracts, Helpers } from "@arkecosystem/platform-sdk-profiles";
 import { BigNumber } from "@arkecosystem/platform-sdk-support";
 import { images } from "app/assets/images";
 import { Amount } from "app/components/Amount";
-import { AvatarWrapper } from "app/components/Avatar";
+import { Avatar } from "app/components/Avatar";
 import { Button } from "app/components/Button";
 import { Circle } from "app/components/Circle";
 import { Dropdown } from "app/components/Dropdown";
@@ -98,7 +98,7 @@ const UserInfo = ({ exchangeCurrency, onUserAction, avatarImage, userActions, us
 						className="cursor-pointer relative justify-center items-center align-middle rounded-full"
 						data-testid="navbar__useractions"
 					>
-						<AvatarWrapper size="lg" highlight={isOpen}>
+						<Avatar size="lg" highlight={isOpen}>
 							{avatarImage?.endsWith("</svg>") ? (
 								<>
 									<img alt="Profile Avatar" src={`data:image/svg+xml;utf8,${avatarImage}`} />
@@ -113,7 +113,7 @@ const UserInfo = ({ exchangeCurrency, onUserAction, avatarImage, userActions, us
 									src={avatarImage}
 								/>
 							)}
-						</AvatarWrapper>
+						</Avatar>
 					</div>
 				)}
 			/>

@@ -10,7 +10,7 @@ exports[`AddressTable should render 1`] = `
     >
       <div
         aria-label="ARK Devnet"
-        class="Circle-uw7h4j-0 JkqUV border-theme-primary-100 text-theme-primary-400"
+        class="Circle__CircleWrapper-uw7h4j-0 bNDQMV border-theme-primary-100 text-theme-primary-400 ring-theme-background"
         data-testid="NetworkIcon-ARK-ark.devnet"
       >
         <div
@@ -188,7 +188,7 @@ exports[`AddressTable should render 1`] = `
           role="rowgroup"
         >
           <tr
-            class="TableRow__TableRowStyled-sc-1br46dw-0 fzBhIQ"
+            class="TableRow__TableRowStyled-sc-1br46dw-0 fzBhIQ group"
             data-testid="TableRow"
           >
             <td>
@@ -196,11 +196,11 @@ exports[`AddressTable should render 1`] = `
                 class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 DpDcR space-x-4"
               >
                 <div
-                  class="Avatar__AvatarWrapper-sc-1vsy2s2-0 cjwvlc"
+                  class="Avatar__AvatarWrapper-sc-1vsy2s2-0 ktCSBk"
                   data-testid="Avatar"
                 >
                   <div
-                    class="w-full h-full"
+                    class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
                   >
                     <img
                       alt="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
@@ -257,11 +257,11 @@ exports[`AddressTable should render 1`] = `
                 class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT space-x-4 font-bold"
               >
                 <div
-                  class="Avatar__AvatarWrapper-sc-1vsy2s2-0 cjwvlc"
+                  class="Avatar__AvatarWrapper-sc-1vsy2s2-0 ktCSBk"
                   data-testid="Avatar"
                 >
                   <div
-                    class="w-full h-full"
+                    class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
                   >
                     <img
                       alt="D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib"
@@ -335,7 +335,7 @@ exports[`AddressTable should render when the maximum votes is greater than 1 1`]
     >
       <div
         aria-label="ARK Devnet"
-        class="Circle-uw7h4j-0 JkqUV border-theme-primary-100 text-theme-primary-400"
+        class="Circle__CircleWrapper-uw7h4j-0 bNDQMV border-theme-primary-100 text-theme-primary-400 ring-theme-background"
         data-testid="NetworkIcon-ARK-ark.devnet"
       >
         <div
@@ -499,7 +499,7 @@ exports[`AddressTable should render when the maximum votes is greater than 1 1`]
           role="rowgroup"
         >
           <tr
-            class="TableRow__TableRowStyled-sc-1br46dw-0 fzBhIQ"
+            class="TableRow__TableRowStyled-sc-1br46dw-0 fzBhIQ group"
             data-testid="TableRow"
           >
             <td>
@@ -507,11 +507,11 @@ exports[`AddressTable should render when the maximum votes is greater than 1 1`]
                 class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 DpDcR space-x-4"
               >
                 <div
-                  class="Avatar__AvatarWrapper-sc-1vsy2s2-0 cjwvlc"
+                  class="Avatar__AvatarWrapper-sc-1vsy2s2-0 ktCSBk"
                   data-testid="Avatar"
                 >
                   <div
-                    class="w-full h-full"
+                    class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
                   >
                     <img
                       alt="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
@@ -577,11 +577,11 @@ exports[`AddressTable should render when the maximum votes is greater than 1 1`]
                       class="inline-block"
                     >
                       <div
-                        class="Avatar__AvatarWrapper-sc-1vsy2s2-0 gyYbkb"
+                        class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB"
                         data-testid="Avatar"
                       >
                         <div
-                          class="w-full h-full"
+                          class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
                         >
                           <img
                             alt="D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib"

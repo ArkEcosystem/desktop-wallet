@@ -103,7 +103,7 @@ exports[`Contacts should render with contacts 1`] = `
                     class="NavigationBar__NavigationButtonWrapper-sc-1qsoskw-1 eUPnft group"
                   >
                     <button
-                      class="OriginalButton__StyledButton-sc-1y2wptt-0 fmvKKh"
+                      class="OriginalButton__StyledButton-sc-1y2wptt-0 lpqSIM"
                       data-testid="navbar__buttons--notifications"
                       type="button"
                     >
@@ -142,7 +142,7 @@ exports[`Contacts should render with contacts 1`] = `
                 class="NavigationBar__NavigationButtonWrapper-sc-1qsoskw-1 eUPnft"
               >
                 <button
-                  class="OriginalButton__StyledButton-sc-1y2wptt-0 fmvKKh"
+                  class="OriginalButton__StyledButton-sc-1y2wptt-0 lpqSIM"
                   data-testid="navbar__buttons--send"
                   type="button"
                 >
@@ -172,7 +172,7 @@ exports[`Contacts should render with contacts 1`] = `
                 class="NavigationBar__NavigationButtonWrapper-sc-1qsoskw-1 eUPnft"
               >
                 <button
-                  class="OriginalButton__StyledButton-sc-1y2wptt-0 fmvKKh"
+                  class="OriginalButton__StyledButton-sc-1y2wptt-0 lpqSIM"
                   data-testid="navbar__buttons--receive"
                   type="button"
                 >
@@ -221,7 +221,7 @@ exports[`Contacts should render with contacts 1`] = `
               class="flex my-0.5 ml-4 -space-x-2"
             >
               <div
-                class="Circle-uw7h4j-0 JkqUV border-theme-primary-100 dark:border-theme-secondary-800"
+                class="Circle__CircleWrapper-uw7h4j-0 bNDQMV border-theme-primary-100 dark:border-theme-secondary-800 ring-theme-background"
               >
                 <span
                   class="text-theme-secondary-text dark:text-theme-secondary-800"
@@ -248,17 +248,22 @@ exports[`Contacts should render with contacts 1`] = `
                     data-testid="navbar__useractions"
                   >
                     <div
-                      class="Avatar__AvatarWrapper-sc-1vsy2s2-0 gyYbkb"
+                      class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB"
+                      data-testid="Avatar"
                     >
-                      <img
-                        alt="Profile Avatar"
-                        src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"30\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"55\\" cx=\\"0\\" cy=\\"60\\" fill=\\"rgb(255, 152, 0)\\"/><circle r=\\"40\\" cx=\\"50\\" cy=\\"50\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
-                      />
-                      <span
-                        class="absolute text-sm font-semibold text-theme-background dark:text-theme-text"
+                      <div
+                        class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
                       >
-                        JO
-                      </span>
+                        <img
+                          alt="Profile Avatar"
+                          src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"30\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"55\\" cx=\\"0\\" cy=\\"60\\" fill=\\"rgb(255, 152, 0)\\"/><circle r=\\"40\\" cx=\\"50\\" cy=\\"50\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
+                        />
+                        <span
+                          class="absolute text-sm font-semibold text-theme-background dark:text-theme-text"
+                        >
+                          JO
+                        </span>
+                      </div>
                     </div>
                   </div>
                 </span>
@@ -486,7 +491,7 @@ exports[`Contacts should render with contacts 1`] = `
                   role="rowgroup"
                 >
                   <tr
-                    class="TableRow__TableRowStyled-sc-1br46dw-0 fzBhIQ"
+                    class="TableRow__TableRowStyled-sc-1br46dw-0 fzBhIQ group"
                     data-testid="TableRow"
                   >
                     <td>
@@ -494,19 +499,23 @@ exports[`Contacts should render with contacts 1`] = `
                         class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 DpDcR space-x-4"
                       >
                         <div
-                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 cjwvlc"
-                          data-testid="ContactListItem__user--avatar"
+                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 ktCSBk"
+                          data-testid="Avatar"
                         >
-                          <img
-                            alt="Brian"
-                            src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(0, 188, 212)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"60\\" cx=\\"0\\" cy=\\"50\\" fill=\\"rgb(139, 195, 74)\\"/><circle r=\\"45\\" cx=\\"30\\" cy=\\"70\\" fill=\\"rgb(255, 193, 7)\\"/><circle r=\\"40\\" cx=\\"60\\" cy=\\"30\\" fill=\\"rgb(233, 30, 99)\\"/></svg>"
-                            title="Brian"
-                          />
-                          <span
-                            class="absolute text-sm font-semibold text-theme-background"
+                          <div
+                            class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
                           >
-                            BR
-                          </span>
+                            <img
+                              alt="Brian"
+                              src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(0, 188, 212)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"60\\" cx=\\"0\\" cy=\\"50\\" fill=\\"rgb(139, 195, 74)\\"/><circle r=\\"45\\" cx=\\"30\\" cy=\\"70\\" fill=\\"rgb(255, 193, 7)\\"/><circle r=\\"40\\" cx=\\"60\\" cy=\\"30\\" fill=\\"rgb(233, 30, 99)\\"/></svg>"
+                              title="Brian"
+                            />
+                            <span
+                              class="absolute text-sm font-semibold text-theme-background"
+                            >
+                              BR
+                            </span>
+                          </div>
                         </div>
                         <span
                           class="font-semibold"
@@ -522,7 +531,7 @@ exports[`Contacts should render with contacts 1`] = `
                       >
                         <div
                           aria-label="ARK Devnet"
-                          class="Circle-uw7h4j-0 hvqrfp border-theme-primary-100 text-theme-primary-400"
+                          class="Circle__CircleWrapper-uw7h4j-0 kOlXCb border-theme-primary-100 text-theme-primary-400 ring-theme-background"
                           data-testid="NetworkIcon-ARK-ark.devnet"
                         >
                           <div
@@ -545,11 +554,11 @@ exports[`Contacts should render with contacts 1`] = `
                         class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT space-x-4"
                       >
                         <div
-                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 cjwvlc"
+                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 ktCSBk"
                           data-testid="Avatar"
                         >
                           <div
-                            class="w-full h-full"
+                            class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
                           >
                             <img
                               alt="D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib"
@@ -603,7 +612,7 @@ exports[`Contacts should render with contacts 1`] = `
                         class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT space-x-2 text-sm font-bold justify-center"
                       >
                         <div
-                          class="Circle-uw7h4j-0 cLIJTV border-black"
+                          class="Circle__CircleWrapper-uw7h4j-0 jECrxL border-black ring-theme-background"
                         >
                           <div
                             class="sc-bdfBwQ catSEV"
@@ -672,7 +681,7 @@ exports[`Contacts should render with contacts 1`] = `
                     </td>
                   </tr>
                   <tr
-                    class="TableRow__TableRowStyled-sc-1br46dw-0 dLjWKP"
+                    class="TableRow__TableRowStyled-sc-1br46dw-0 dLjWKP group"
                     data-testid="TableRow"
                   >
                     <td>
@@ -680,19 +689,23 @@ exports[`Contacts should render with contacts 1`] = `
                         class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 DpDcR space-x-4"
                       >
                         <div
-                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 cjwvlc"
-                          data-testid="ContactListItem__user--avatar"
+                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 ktCSBk"
+                          data-testid="Avatar"
                         >
-                          <img
-                            alt="Rok"
-                            src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(3, 169, 244)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"60\\" cx=\\"100\\" cy=\\"60\\" fill=\\"rgb(0, 188, 212)\\"/><circle r=\\"50\\" cx=\\"60\\" cy=\\"30\\" fill=\\"rgb(33, 150, 243)\\"/><circle r=\\"45\\" cx=\\"10\\" cy=\\"70\\" fill=\\"rgb(255, 87, 34)\\"/></svg>"
-                            title="Rok"
-                          />
-                          <span
-                            class="absolute text-sm font-semibold text-theme-background"
+                          <div
+                            class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
                           >
-                            RO
-                          </span>
+                            <img
+                              alt="Rok"
+                              src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(3, 169, 244)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"60\\" cx=\\"100\\" cy=\\"60\\" fill=\\"rgb(0, 188, 212)\\"/><circle r=\\"50\\" cx=\\"60\\" cy=\\"30\\" fill=\\"rgb(33, 150, 243)\\"/><circle r=\\"45\\" cx=\\"10\\" cy=\\"70\\" fill=\\"rgb(255, 87, 34)\\"/></svg>"
+                              title="Rok"
+                            />
+                            <span
+                              class="absolute text-sm font-semibold text-theme-background"
+                            >
+                              RO
+                            </span>
+                          </div>
                         </div>
                         <span
                           class="font-semibold"
@@ -708,7 +721,7 @@ exports[`Contacts should render with contacts 1`] = `
                       >
                         <div
                           aria-label="ARK Devnet"
-                          class="Circle-uw7h4j-0 hvqrfp border-theme-primary-100 text-theme-primary-400"
+                          class="Circle__CircleWrapper-uw7h4j-0 kOlXCb border-theme-primary-100 text-theme-primary-400 ring-theme-background"
                           data-testid="NetworkIcon-ARK-ark.devnet"
                         >
                           <div
@@ -731,11 +744,11 @@ exports[`Contacts should render with contacts 1`] = `
                         class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT space-x-4"
                       >
                         <div
-                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 cjwvlc"
+                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 ktCSBk"
                           data-testid="Avatar"
                         >
                           <div
-                            class="w-full h-full"
+                            class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
                           >
                             <img
                               alt="DFJ5Z51F1euNNdRUQJKQVdG4h495LZkc6T"
@@ -844,7 +857,7 @@ exports[`Contacts should render with contacts 1`] = `
                     </td>
                   </tr>
                   <tr
-                    class="TableRow__TableRowStyled-sc-1br46dw-0 dLjWKP"
+                    class="TableRow__TableRowStyled-sc-1br46dw-0 dLjWKP group"
                     data-testid="TableRow"
                   >
                     <td>
@@ -858,7 +871,7 @@ exports[`Contacts should render with contacts 1`] = `
                       >
                         <div
                           aria-label="ARK Devnet"
-                          class="Circle-uw7h4j-0 hvqrfp border-theme-primary-100 text-theme-primary-400"
+                          class="Circle__CircleWrapper-uw7h4j-0 kOlXCb border-theme-primary-100 text-theme-primary-400 ring-theme-background"
                           data-testid="NetworkIcon-ARK-ark.devnet"
                         >
                           <div
@@ -881,11 +894,11 @@ exports[`Contacts should render with contacts 1`] = `
                         class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT space-x-4"
                       >
                         <div
-                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 cjwvlc"
+                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 ktCSBk"
                           data-testid="Avatar"
                         >
                           <div
-                            class="w-full h-full"
+                            class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
                           >
                             <img
                               alt="D9YiyRYMBS2ofzqkufjrkB9nHofWgJLM7f"
@@ -994,7 +1007,7 @@ exports[`Contacts should render with contacts 1`] = `
                     </td>
                   </tr>
                   <tr
-                    class="TableRow__TableRowStyled-sc-1br46dw-0 fzBhIQ"
+                    class="TableRow__TableRowStyled-sc-1br46dw-0 fzBhIQ group"
                     data-testid="TableRow"
                   >
                     <td>
@@ -1008,7 +1021,7 @@ exports[`Contacts should render with contacts 1`] = `
                       >
                         <div
                           aria-label="ARK Devnet"
-                          class="Circle-uw7h4j-0 hvqrfp border-theme-primary-100 text-theme-primary-400"
+                          class="Circle__CircleWrapper-uw7h4j-0 kOlXCb border-theme-primary-100 text-theme-primary-400 ring-theme-background"
                           data-testid="NetworkIcon-ARK-ark.devnet"
                         >
                           <div
@@ -1031,11 +1044,11 @@ exports[`Contacts should render with contacts 1`] = `
                         class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT space-x-4"
                       >
                         <div
-                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 cjwvlc"
+                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 ktCSBk"
                           data-testid="Avatar"
                         >
                           <div
-                            class="w-full h-full"
+                            class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
                           >
                             <img
                               alt="DKrACQw7ytoU2gjppy3qKeE2dQhZjfXYqu"
@@ -1257,7 +1270,7 @@ exports[`Contacts should render without contacts 1`] = `
                     class="NavigationBar__NavigationButtonWrapper-sc-1qsoskw-1 eUPnft group"
                   >
                     <button
-                      class="OriginalButton__StyledButton-sc-1y2wptt-0 fmvKKh"
+                      class="OriginalButton__StyledButton-sc-1y2wptt-0 lpqSIM"
                       data-testid="navbar__buttons--notifications"
                       type="button"
                     >
@@ -1296,7 +1309,7 @@ exports[`Contacts should render without contacts 1`] = `
                 class="NavigationBar__NavigationButtonWrapper-sc-1qsoskw-1 eUPnft"
               >
                 <button
-                  class="OriginalButton__StyledButton-sc-1y2wptt-0 fmvKKh"
+                  class="OriginalButton__StyledButton-sc-1y2wptt-0 lpqSIM"
                   data-testid="navbar__buttons--send"
                   type="button"
                 >
@@ -1326,7 +1339,7 @@ exports[`Contacts should render without contacts 1`] = `
                 class="NavigationBar__NavigationButtonWrapper-sc-1qsoskw-1 eUPnft"
               >
                 <button
-                  class="OriginalButton__StyledButton-sc-1y2wptt-0 fmvKKh"
+                  class="OriginalButton__StyledButton-sc-1y2wptt-0 lpqSIM"
                   data-testid="navbar__buttons--receive"
                   type="button"
                 >
@@ -1375,7 +1388,7 @@ exports[`Contacts should render without contacts 1`] = `
               class="flex my-0.5 ml-4 -space-x-2"
             >
               <div
-                class="Circle-uw7h4j-0 JkqUV border-theme-primary-100 dark:border-theme-secondary-800"
+                class="Circle__CircleWrapper-uw7h4j-0 bNDQMV border-theme-primary-100 dark:border-theme-secondary-800 ring-theme-background"
               >
                 <span
                   class="text-theme-secondary-text dark:text-theme-secondary-800"
@@ -1402,17 +1415,22 @@ exports[`Contacts should render without contacts 1`] = `
                     data-testid="navbar__useractions"
                   >
                     <div
-                      class="Avatar__AvatarWrapper-sc-1vsy2s2-0 gyYbkb"
+                      class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB"
+                      data-testid="Avatar"
                     >
-                      <img
-                        alt="Profile Avatar"
-                        src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"30\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"55\\" cx=\\"0\\" cy=\\"60\\" fill=\\"rgb(255, 152, 0)\\"/><circle r=\\"40\\" cx=\\"50\\" cy=\\"50\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
-                      />
-                      <span
-                        class="absolute text-sm font-semibold text-theme-background dark:text-theme-text"
+                      <div
+                        class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
                       >
-                        JO
-                      </span>
+                        <img
+                          alt="Profile Avatar"
+                          src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"30\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"55\\" cx=\\"0\\" cy=\\"60\\" fill=\\"rgb(255, 152, 0)\\"/><circle r=\\"40\\" cx=\\"50\\" cy=\\"50\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
+                        />
+                        <span
+                          class="absolute text-sm font-semibold text-theme-background dark:text-theme-text"
+                        >
+                          JO
+                        </span>
+                      </div>
                     </div>
                   </div>
                 </span>

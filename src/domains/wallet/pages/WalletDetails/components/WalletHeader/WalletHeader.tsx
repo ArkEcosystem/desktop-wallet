@@ -195,7 +195,7 @@ export const WalletHeader = ({ profile, wallet, currencyDelta, onSend }: WalletH
 							className="border-theme-secondary-700 text-theme-secondary-text"
 							noShadow
 						/>
-						<Avatar size="lg" address={wallet.address()} shadowColor="--theme-color-secondary-900" />
+						<Avatar size="lg" address={wallet.address()} shadowClassName="ring-theme-secondary-900" />
 					</div>
 
 					<div className="flex flex-col overflow-hidden">

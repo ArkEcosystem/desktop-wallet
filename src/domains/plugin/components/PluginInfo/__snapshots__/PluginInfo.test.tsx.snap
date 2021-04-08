@@ -46,7 +46,7 @@ exports[`PluginInfo should not show the view permissions button with text less t
         </div>
       </div>
       <div
-        class="flex flex-col"
+        class="flex flex-col w-full"
       >
         <p
           class="font-semibold dark:text-theme-secondary-500"
@@ -54,11 +54,11 @@ exports[`PluginInfo should not show the view permissions button with text less t
         >
           Disclaimer
         </p>
-        <p
+        <div
           class="text-sm leading-relaxed break-words dark:text-theme-secondary-500"
         >
           The availability of this Plugin in the ARK Desktop Wallet does not mean that either ARK.io or ARK SCIC is directly involved in its development or developers. By installing it, you assume any associated risks.
-        </p>
+        </div>
       </div>
     </div>
   </div>
@@ -117,7 +117,7 @@ exports[`PluginInfo should open and close the plugin permissions modal 1`] = `
         </div>
       </div>
       <div
-        class="flex flex-col"
+        class="flex flex-col w-full"
       >
         <p
           class="font-semibold dark:text-theme-secondary-500"
@@ -125,11 +125,11 @@ exports[`PluginInfo should open and close the plugin permissions modal 1`] = `
         >
           Disclaimer
         </p>
-        <p
+        <div
           class="text-sm leading-relaxed break-words dark:text-theme-secondary-500"
         >
           The availability of this Plugin in the ARK Desktop Wallet does not mean that either ARK.io or ARK SCIC is directly involved in its development or developers. By installing it, you assume any associated risks.
-        </p>
+        </div>
       </div>
     </div>
   </div>
@@ -243,7 +243,7 @@ exports[`PluginInfo should render properly 1`] = `
         </div>
       </div>
       <div
-        class="flex flex-col"
+        class="flex flex-col w-full"
       >
         <p
           class="font-semibold dark:text-theme-secondary-500"
@@ -251,11 +251,11 @@ exports[`PluginInfo should render properly 1`] = `
         >
           Disclaimer
         </p>
-        <p
+        <div
           class="text-sm leading-relaxed break-words dark:text-theme-secondary-500"
         >
           The availability of this Plugin in the ARK Desktop Wallet does not mean that either ARK.io or ARK SCIC is directly involved in its development or developers. By installing it, you assume any associated risks.
-        </p>
+        </div>
       </div>
     </div>
   </div>
@@ -304,7 +304,7 @@ exports[`PluginInfo should render with minimum version 1`] = `
         </div>
       </div>
       <div
-        class="flex flex-col"
+        class="flex flex-col w-full"
       >
         <p
           class="font-semibold dark:text-theme-secondary-500"
@@ -312,11 +312,11 @@ exports[`PluginInfo should render with minimum version 1`] = `
         >
           Disclaimer
         </p>
-        <p
+        <div
           class="text-sm leading-relaxed break-words dark:text-theme-secondary-500"
         >
           The availability of this Plugin in the ARK Desktop Wallet does not mean that either ARK.io or ARK SCIC is directly involved in its development or developers. By installing it, you assume any associated risks.
-        </p>
+        </div>
       </div>
     </div>
   </div>
@@ -358,7 +358,7 @@ exports[`PluginInfo should render without permissions 1`] = `
         </div>
       </div>
       <div
-        class="flex flex-col"
+        class="flex flex-col w-full"
       >
         <p
           class="font-semibold dark:text-theme-secondary-500"
@@ -366,11 +366,11 @@ exports[`PluginInfo should render without permissions 1`] = `
         >
           Disclaimer
         </p>
-        <p
+        <div
           class="text-sm leading-relaxed break-words dark:text-theme-secondary-500"
         >
           The availability of this Plugin in the ARK Desktop Wallet does not mean that either ARK.io or ARK SCIC is directly involved in its development or developers. By installing it, you assume any associated risks.
-        </p>
+        </div>
       </div>
     </div>
   </div>

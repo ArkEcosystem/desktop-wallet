@@ -88,6 +88,12 @@ describe("LedgerTabs", () => {
 		let formRef: ReturnType<typeof useForm>;
 		const Component = () => {
 			const form = useForm({ mode: "onChange" });
+			const { register } = form;
+
+			useEffect(() => {
+				register("network", { required: true });
+			}, [register]);
+
 			formRef = form;
 
 			return (

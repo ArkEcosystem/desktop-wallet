@@ -3,7 +3,6 @@ import { createMemoryHistory } from "history";
 import React from "react";
 import { Route } from "react-router-dom";
 import { act, env, fireEvent, getDefaultProfileId, render, renderWithRouter } from "testing-library";
-import * as utils from "utils/electron-utils";
 
 import { WalletListItem } from "./WalletListItem";
 
@@ -43,6 +42,20 @@ describe("WalletListItem", () => {
 		expect(getByText(wallet.alias())).toBeTruthy();
 
 		expect(container).toMatchSnapshot();
+	});
+
+	it("should render for selected wallet", () => {
+		const walletId = "ac38fe6d-4b67-4ef1-85be-17c5f6841129";
+
+		const { asFragment } = render(
+			<table>
+				<tbody>
+					<WalletListItem wallet={wallet} activeWalletId={walletId} />
+				</tbody>
+			</table>,
+		);
+
+		expect(asFragment()).toMatchSnapshot();
 	});
 
 	it("should render with default BTC as default exchangeCurrency", () => {
@@ -92,57 +105,5 @@ describe("WalletListItem", () => {
 		});
 
 		expect(history.location.pathname).toBe(`/profiles/${profile.id()}/wallets/${wallet.id()}`);
-	});
-
-	it.each(["light", "dark"])("should set %s shadow color on mouse events", (theme) => {
-		jest.spyOn(utils, "shouldUseDarkColors").mockImplementation(() => theme === "dark");
-
-		const walletId = "fake-id";
-
-		const setState = jest.fn();
-		const useStateSpy = jest.spyOn(React, "useState");
-
-		useStateSpy.mockImplementation((state) => [state, setState]);
-
-		const { asFragment, getByText } = render(
-			<table>
-				<tbody>
-					<WalletListItem wallet={wallet} activeWalletId={walletId} />
-				</tbody>
-			</table>,
-		);
-
-		expect(asFragment()).toMatchSnapshot();
-
-		fireEvent.mouseEnter(getByText(wallet.alias()));
-		fireEvent.mouseLeave(getByText(wallet.alias()));
-
-		expect(setState).toHaveBeenCalledWith("--theme-background-color");
-	});
-
-	it.each(["light", "dark"])("should set %s shadow color on mouse events for selected wallet", (theme) => {
-		jest.spyOn(utils, "shouldUseDarkColors").mockImplementation(() => theme === "dark");
-
-		const walletId = "ac38fe6d-4b67-4ef1-85be-17c5f6841129";
-
-		const setState = jest.fn();
-		const useStateSpy = jest.spyOn(React, "useState");
-
-		useStateSpy.mockImplementation((state) => [state, setState]);
-
-		const { asFragment, getByText } = render(
-			<table>
-				<tbody>
-					<WalletListItem wallet={wallet} activeWalletId={walletId} />
-				</tbody>
-			</table>,
-		);
-
-		expect(asFragment()).toMatchSnapshot();
-
-		fireEvent.mouseEnter(getByText(wallet.alias()));
-		fireEvent.mouseLeave(getByText(wallet.alias()));
-
-		expect(setState).toHaveBeenCalledWith(theme === "dark" ? "--theme-black" : "--theme-color-secondary-100");
 	});
 });

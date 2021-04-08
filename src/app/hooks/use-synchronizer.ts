@@ -46,7 +46,7 @@ export const useSynchronizer = (jobs: Job[]) => {
 	const start = useCallback(() => {
 		stop(); // Stop previous jobs in progress
 		for (const job of jobs) {
-			timers.current.push(setInterval(() => run(job.callback), job.interval));
+			timers.current.push(+setInterval(() => run(job.callback), job.interval));
 		}
 	}, [run, jobs, stop]);
 

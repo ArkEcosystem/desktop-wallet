@@ -1,7 +1,7 @@
 import { Coins } from "@arkecosystem/platform-sdk";
 import { Contracts } from "@arkecosystem/platform-sdk-profiles";
 import { Address } from "app/components/Address";
-import { AvatarWrapper } from "app/components/Avatar";
+import { Avatar } from "app/components/Avatar";
 import { Button } from "app/components/Button";
 import { HeaderSearchBar } from "app/components/Header/HeaderSearchBar";
 import { Modal } from "app/components/Modal";
@@ -30,7 +30,7 @@ const RecipientListItem = ({ recipient, onAction }: RecipientListItemProps) => {
 	return (
 		<TableRow key={recipient.id} border>
 			<TableCell variant="start" innerClassName="space-x-4">
-				<AvatarWrapper size="lg" noShadow>
+				<Avatar size="lg" noShadow>
 					<img
 						src={`data:image/svg+xml;utf8,${recipient.avatar}`}
 						title={recipient.alias}
@@ -41,7 +41,7 @@ const RecipientListItem = ({ recipient, onAction }: RecipientListItemProps) => {
 							{recipient.alias.slice(0, 2)?.toUpperCase()}
 						</span>
 					)}
-				</AvatarWrapper>
+				</Avatar>
 				<Address address={recipient.address} maxChars={24} />
 			</TableCell>
 
