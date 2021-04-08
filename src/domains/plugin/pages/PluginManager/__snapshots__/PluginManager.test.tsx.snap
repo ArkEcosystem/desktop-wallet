@@ -580,7 +580,7 @@ exports[`PluginManager should cancel install plugin 1`] = `
               </div>
               <div
                 class="border border-solid border-theme-secondary-300 dark:border-theme-secondary-800 rounded-lg text-theme-secondary-text p-6"
-                data-testid="EmptyBlock"
+                data-testid="PluginList__empty-message"
               >
                 <div>
                   This category has no available Plugins yet.
@@ -1031,7 +1031,7 @@ exports[`PluginManager should cancel install plugin 1`] = `
               </div>
               <div
                 class="border border-solid border-theme-secondary-300 dark:border-theme-secondary-800 rounded-lg text-theme-secondary-text p-6"
-                data-testid="EmptyBlock"
+                data-testid="PluginList__empty-message"
               >
                 <div>
                   This category has no available Plugins yet.
@@ -1077,7 +1077,7 @@ exports[`PluginManager should cancel install plugin 1`] = `
               </div>
               <div
                 class="border border-solid border-theme-secondary-300 dark:border-theme-secondary-800 rounded-lg text-theme-secondary-text p-6"
-                data-testid="EmptyBlock"
+                data-testid="PluginList__empty-message"
               >
                 <div>
                   This category has no available Plugins yet.
@@ -4859,7 +4859,7 @@ exports[`PluginManager should search for plugin 1`] = `
                     class="group"
                   >
                     <div
-                      class="ControlButton__ControlButtonStyled-sc-1xp1l1a-0 jxlhJv"
+                      class="ControlButton__ControlButtonStyled-sc-1xp1l1a-0 dLCfwp"
                       data-testid="LayoutControls__grid--icon"
                     >
                       <div
@@ -4881,7 +4881,7 @@ exports[`PluginManager should search for plugin 1`] = `
                     class="group"
                   >
                     <div
-                      class="ControlButton__ControlButtonStyled-sc-1xp1l1a-0 dLCfwp"
+                      class="ControlButton__ControlButtonStyled-sc-1xp1l1a-0 jxlhJv"
                       data-testid="LayoutControls__list--icon"
                     >
                       <div
@@ -4916,7 +4916,7 @@ exports[`PluginManager should search for plugin 1`] = `
             >
               <div
                 class="border border-solid border-theme-secondary-300 dark:border-theme-secondary-800 rounded-lg text-theme-secondary-text p-6"
-                data-testid="PluginGrid__empty-message"
+                data-testid="PluginList__empty-message"
               >
                 <div>
                   Your search query "unknown search query" does not match any Plugins in the manager.

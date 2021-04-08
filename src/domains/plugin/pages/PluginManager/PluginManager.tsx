@@ -321,6 +321,7 @@ export const PluginManager = () => {
 									onSearch={(query) => {
 										filterBy({ query });
 									}}
+									resetFields={filters.query === ""}
 								/>
 
 								{isAdvancedMode && (

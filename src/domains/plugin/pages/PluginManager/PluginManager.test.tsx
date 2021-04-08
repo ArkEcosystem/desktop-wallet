@@ -411,6 +411,13 @@ describe("PluginManager", () => {
 
 		await waitFor(() => expect(getByTestId("PluginGrid__empty-message")).toBeInTheDocument());
 
+		// Switch to list view
+		act(() => {
+			fireEvent.click(getByTestId("LayoutControls__list--icon"));
+		});
+
+		await waitFor(() => expect(getByTestId("PluginList__empty-message")).toBeInTheDocument());
+
 		expect(asFragment()).toMatchSnapshot();
 	});
 

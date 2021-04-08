@@ -17,6 +17,7 @@ type HeaderSearchBarProps = {
 	extra?: React.ReactNode;
 	debounceTimeout?: number;
 	defaultQuery?: string;
+	resetFields?: boolean;
 };
 
 const SearchBarInputWrapper = styled.div`
@@ -33,6 +34,7 @@ export const HeaderSearchBar = ({
 	onReset,
 	defaultQuery = "",
 	debounceTimeout = 500,
+	resetFields = false,
 }: HeaderSearchBarProps) => {
 	const { t } = useTranslation();
 
@@ -51,10 +53,10 @@ export const HeaderSearchBar = ({
 	}, [onReset]);
 
 	useEffect(() => {
-		if (!defaultQuery) {
+		if (resetFields) {
 			handleQueryReset();
 		}
-	}, [defaultQuery, handleQueryReset]);
+	}, [resetFields, handleQueryReset]);
 
 	return (
 		<div className="relative">
