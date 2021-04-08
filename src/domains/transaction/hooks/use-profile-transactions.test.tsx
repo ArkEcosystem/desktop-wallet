@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/require-await */
 import { act, renderHook } from "@testing-library/react-hooks";
-import { ConfigurationProvider } from "app/contexts";
+import { ConfigurationProvider, EnvironmentProvider } from "app/contexts";
 import nock from "nock";
 import React from "react";
 import { env, getDefaultProfileId, syncDelegates, useDefaultNetMocks, waitFor } from "utils/testing-library";
@@ -34,10 +34,88 @@ describe("useProfileTransactions", () => {
 		jest.clearAllTimers();
 	});
 
+	it("should run updates periodically", async () => {
+		const profile = env.profiles().findById(getDefaultProfileId());
+
+		const wrapper = ({ children }: any) => (
+			<EnvironmentProvider env={env}>
+				<ConfigurationProvider>{children}</ConfigurationProvider>
+			</EnvironmentProvider>
+		);
+
+		await act(async () => {
+			const { result } = renderHook(
+				() => useProfileTransactions({ profile, wallets: profile.wallets().values() }),
+				{
+					wrapper,
+				},
+			);
+
+			jest.advanceTimersByTime(30000);
+			await waitFor(() => expect(result.current.transactions).toHaveLength(4));
+		});
+
+		const mockTransactionsAggregate = jest
+			.spyOn(profile.transactionAggregate(), "transactions")
+			.mockImplementation(() => {
+				const { data } = require("tests/fixtures/coins/ark/devnet/transactions.json");
+				const response = {
+					hasMorePages: () => false,
+					items: () => data,
+				};
+				return Promise.resolve(response);
+			});
+
+		await act(async () => {
+			const { result } = renderHook(
+				() => useProfileTransactions({ profile, wallets: profile.wallets().values() }),
+				{
+					wrapper,
+				},
+			);
+
+			jest.advanceTimersByTime(30000);
+
+			await waitFor(() => expect(result.current.transactions.length).toEqual(0));
+		});
+
+		mockTransactionsAggregate.mockRestore();
+
+		const mockEmptyTransactions = jest
+			.spyOn(profile.transactionAggregate(), "transactions")
+			.mockImplementation(() => {
+				const response = {
+					hasMorePages: () => false,
+					items: () => [],
+				};
+				return Promise.resolve(response);
+			});
+
+		await act(async () => {
+			const { result } = renderHook(
+				() => useProfileTransactions({ profile, wallets: profile.wallets().values() }),
+				{
+					wrapper,
+				},
+			);
+
+			jest.advanceTimersByTime(30000);
+
+			await waitFor(() => expect(result.current.transactions.length).toEqual(0));
+		});
+
+		mockEmptyTransactions.mockRestore();
+		jest.clearAllTimers();
+	});
+
 	it("#fetchTransactions", async () => {
 		const profile = env.profiles().findById(getDefaultProfileId());
 
-		const wrapper = ({ children }: any) => <ConfigurationProvider>{children}</ConfigurationProvider>;
+		const wrapper = ({ children }: any) => (
+			<EnvironmentProvider env={env}>
+				<ConfigurationProvider>{children}</ConfigurationProvider>
+			</EnvironmentProvider>
+		);
 
 		const {
 			result: { current },
@@ -60,22 +138,30 @@ describe("useProfileTransactions", () => {
 	it("#updateFilters", async () => {
 		const profile = env.profiles().findById(getDefaultProfileId());
 
-		const wrapper = ({ children }: any) => <ConfigurationProvider>{children}</ConfigurationProvider>;
+		const wrapper = ({ children }: any) => (
+			<EnvironmentProvider env={env}>
+				<ConfigurationProvider>{children}</ConfigurationProvider>
+			</EnvironmentProvider>
+		);
 
-		const { result } = renderHook(() => useProfileTransactions({ profile, wallets: profile.wallets().values() }), {
-			wrapper,
-		});
+		const {
+			result: { current },
+		} = renderHook(() => useProfileTransactions({ profile, wallets: profile.wallets().values() }), { wrapper });
 
 		await act(async () => {
-			result.current.updateFilters({ activeMode: "sent" });
-			jest.runAllTimers();
+			current.updateFilters({ activeMode: "sent" });
+			jest.runOnlyPendingTimers();
 
-			await waitFor(() => expect(result.current.transactions).toHaveLength(0));
+			await waitFor(() => expect(current.isLoadingMore).toBe(false));
 
-			result.current.updateFilters({ activeMode: "all" });
-			jest.runAllTimers();
+			act(() => {
+				jest.clearAllTimers();
+				current.updateFilters({ activeMode: "all" });
+				jest.runOnlyPendingTimers();
+			});
 
-			await waitFor(() => expect(result.current.transactions).toHaveLength(0));
+			await waitFor(() => expect(current.isLoadingMore).toBe(false));
+			await waitFor(() => expect(current.transactions).toHaveLength(0));
 
 			const mockTransactionsAggregate = jest
 				.spyOn(profile.transactionAggregate(), "sentTransactions")
@@ -87,10 +173,11 @@ describe("useProfileTransactions", () => {
 					return Promise.resolve(response);
 				});
 
-			result.current.updateFilters({ activeMode: "sent" });
-			jest.runAllTimers();
+			current.updateFilters({ activeMode: "sent" });
+			jest.runOnlyPendingTimers();
 
-			await waitFor(() => expect(result.current.transactions).toHaveLength(0));
+			await waitFor(() => expect(current.transactions).toHaveLength(0));
+			await waitFor(() => expect(current.isLoadingMore).toBe(false));
 
 			mockTransactionsAggregate.mockRestore();
 		});
@@ -99,7 +186,11 @@ describe("useProfileTransactions", () => {
 	it("#fetchMore", async () => {
 		const profile = env.profiles().findById(getDefaultProfileId());
 
-		const wrapper = ({ children }: any) => <ConfigurationProvider>{children}</ConfigurationProvider>;
+		const wrapper = ({ children }: any) => (
+			<EnvironmentProvider env={env}>
+				<ConfigurationProvider>{children}</ConfigurationProvider>
+			</EnvironmentProvider>
+		);
 
 		await act(async () => {
 			const { result } = renderHook(
