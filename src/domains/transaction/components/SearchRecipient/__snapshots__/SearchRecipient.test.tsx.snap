@@ -19,7 +19,7 @@ exports[`SearchRecipient should not render recipient if not in same network 1`] 
         class="absolute top-0 right-0 z-50 mt-5 mr-5 rounded transition-all duration-100 ease-linear bg-theme-primary-100 hover:bg-theme-primary-300 dark:bg-theme-secondary-800 dark:text-theme-secondary-600 dark:hover:bg-theme-secondary-700 dark:hover:text-theme-secondary-400"
       >
         <button
-          class="OriginalButton__StyledButton-sc-1y2wptt-0 fmvKKh w-11 h-11"
+          class="OriginalButton__StyledButton-sc-1y2wptt-0 lpqSIM w-11 h-11"
           data-testid="modal__close-btn"
           type="button"
         >
@@ -239,7 +239,7 @@ exports[`SearchRecipient should not render recipient if not in same network 2`] 
         class="absolute top-0 right-0 z-50 mt-5 mr-5 rounded transition-all duration-100 ease-linear bg-theme-primary-100 hover:bg-theme-primary-300 dark:bg-theme-secondary-800 dark:text-theme-secondary-600 dark:hover:bg-theme-secondary-700 dark:hover:text-theme-secondary-400"
       >
         <button
-          class="OriginalButton__StyledButton-sc-1y2wptt-0 fmvKKh w-11 h-11"
+          class="OriginalButton__StyledButton-sc-1y2wptt-0 lpqSIM w-11 h-11"
           data-testid="modal__close-btn"
           type="button"
         >
@@ -433,7 +433,7 @@ exports[`SearchRecipient should not render recipient if not in same network 2`] 
                   role="rowgroup"
                 >
                   <tr
-                    class="TableRow__TableRowStyled-sc-1br46dw-0 fzBhIQ"
+                    class="TableRow__TableRowStyled-sc-1br46dw-0 fzBhIQ group"
                     data-testid="TableRow"
                   >
                     <td>
@@ -441,18 +441,23 @@ exports[`SearchRecipient should not render recipient if not in same network 2`] 
                         class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 DpDcR space-x-4"
                       >
                         <div
-                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 cjwvlc"
+                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 ktCSBk"
+                          data-testid="Avatar"
                         >
-                          <img
-                            alt="ARK Wallet 1"
-                            src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(0, 150, 136)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"80\\" cy=\\"50\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"35\\" cx=\\"100\\" cy=\\"40\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"70\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
-                            title="ARK Wallet 1"
-                          />
-                          <span
-                            class="absolute text-sm font-semibold text-theme-background"
+                          <div
+                            class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
                           >
-                            AR
-                          </span>
+                            <img
+                              alt="ARK Wallet 1"
+                              src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(0, 150, 136)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"80\\" cy=\\"50\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"35\\" cx=\\"100\\" cy=\\"40\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"70\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
+                              title="ARK Wallet 1"
+                            />
+                            <span
+                              class="absolute text-sm font-semibold text-theme-background"
+                            >
+                              AR
+                            </span>
+                          </div>
                         </div>
                         <div
                           class="inline-flex items-center no-ligatures"
@@ -507,7 +512,7 @@ exports[`SearchRecipient should not render recipient if not in same network 2`] 
                     </td>
                   </tr>
                   <tr
-                    class="TableRow__TableRowStyled-sc-1br46dw-0 fzBhIQ"
+                    class="TableRow__TableRowStyled-sc-1br46dw-0 fzBhIQ group"
                     data-testid="TableRow"
                   >
                     <td>
@@ -515,18 +520,23 @@ exports[`SearchRecipient should not render recipient if not in same network 2`] 
                         class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 DpDcR space-x-4"
                       >
                         <div
-                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 cjwvlc"
+                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 ktCSBk"
+                          data-testid="Avatar"
                         >
-                          <img
-                            alt="ARK Wallet 2"
-                            src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(244, 67, 54)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"20\\" cy=\\"50\\" fill=\\"rgb(205, 220, 57)\\"/><circle r=\\"60\\" cx=\\"0\\" cy=\\"70\\" fill=\\"rgb(0, 188, 212)\\"/><circle r=\\"55\\" cx=\\"80\\" cy=\\"30\\" fill=\\"rgb(76, 175, 80)\\"/></svg>"
-                            title="ARK Wallet 2"
-                          />
-                          <span
-                            class="absolute text-sm font-semibold text-theme-background"
+                          <div
+                            class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
                           >
-                            AR
-                          </span>
+                            <img
+                              alt="ARK Wallet 2"
+                              src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(244, 67, 54)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"20\\" cy=\\"50\\" fill=\\"rgb(205, 220, 57)\\"/><circle r=\\"60\\" cx=\\"0\\" cy=\\"70\\" fill=\\"rgb(0, 188, 212)\\"/><circle r=\\"55\\" cx=\\"80\\" cy=\\"30\\" fill=\\"rgb(76, 175, 80)\\"/></svg>"
+                              title="ARK Wallet 2"
+                            />
+                            <span
+                              class="absolute text-sm font-semibold text-theme-background"
+                            >
+                              AR
+                            </span>
+                          </div>
                         </div>
                         <div
                           class="inline-flex items-center no-ligatures"
@@ -581,7 +591,7 @@ exports[`SearchRecipient should not render recipient if not in same network 2`] 
                     </td>
                   </tr>
                   <tr
-                    class="TableRow__TableRowStyled-sc-1br46dw-0 fzBhIQ"
+                    class="TableRow__TableRowStyled-sc-1br46dw-0 fzBhIQ group"
                     data-testid="TableRow"
                   >
                     <td>
@@ -589,18 +599,23 @@ exports[`SearchRecipient should not render recipient if not in same network 2`] 
                         class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 DpDcR space-x-4"
                       >
                         <div
-                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 cjwvlc"
+                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 ktCSBk"
+                          data-testid="Avatar"
                         >
-                          <img
-                            alt="Brian"
-                            src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"60\\" cy=\\"40\\" fill=\\"rgb(139, 195, 74)\\"/><circle r=\\"45\\" cx=\\"0\\" cy=\\"30\\" fill=\\"rgb(0, 188, 212)\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"50\\" fill=\\"rgb(255, 193, 7)\\"/></svg>"
-                            title="Brian"
-                          />
-                          <span
-                            class="absolute text-sm font-semibold text-theme-background"
+                          <div
+                            class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
                           >
-                            BR
-                          </span>
+                            <img
+                              alt="Brian"
+                              src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"60\\" cy=\\"40\\" fill=\\"rgb(139, 195, 74)\\"/><circle r=\\"45\\" cx=\\"0\\" cy=\\"30\\" fill=\\"rgb(0, 188, 212)\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"50\\" fill=\\"rgb(255, 193, 7)\\"/></svg>"
+                              title="Brian"
+                            />
+                            <span
+                              class="absolute text-sm font-semibold text-theme-background"
+                            >
+                              BR
+                            </span>
+                          </div>
                         </div>
                         <div
                           class="inline-flex items-center no-ligatures"
@@ -655,7 +670,7 @@ exports[`SearchRecipient should not render recipient if not in same network 2`] 
                     </td>
                   </tr>
                   <tr
-                    class="TableRow__TableRowStyled-sc-1br46dw-0 fzBhIQ"
+                    class="TableRow__TableRowStyled-sc-1br46dw-0 fzBhIQ group"
                     data-testid="TableRow"
                   >
                     <td>
@@ -663,18 +678,23 @@ exports[`SearchRecipient should not render recipient if not in same network 2`] 
                         class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 DpDcR space-x-4"
                       >
                         <div
-                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 cjwvlc"
+                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 ktCSBk"
+                          data-testid="Avatar"
                         >
-                          <img
-                            alt="Rok"
-                            src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(244, 67, 54)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"40\\" cy=\\"40\\" fill=\\"rgb(255, 152, 0)\\"/><circle r=\\"40\\" cx=\\"0\\" cy=\\"50\\" fill=\\"rgb(255, 87, 34)\\"/><circle r=\\"35\\" cx=\\"100\\" cy=\\"70\\" fill=\\"rgb(76, 175, 80)\\"/></svg>"
-                            title="Rok"
-                          />
-                          <span
-                            class="absolute text-sm font-semibold text-theme-background"
+                          <div
+                            class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
                           >
-                            RO
-                          </span>
+                            <img
+                              alt="Rok"
+                              src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(244, 67, 54)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"40\\" cy=\\"40\\" fill=\\"rgb(255, 152, 0)\\"/><circle r=\\"40\\" cx=\\"0\\" cy=\\"50\\" fill=\\"rgb(255, 87, 34)\\"/><circle r=\\"35\\" cx=\\"100\\" cy=\\"70\\" fill=\\"rgb(76, 175, 80)\\"/></svg>"
+                              title="Rok"
+                            />
+                            <span
+                              class="absolute text-sm font-semibold text-theme-background"
+                            >
+                              RO
+                            </span>
+                          </div>
                         </div>
                         <div
                           class="inline-flex items-center no-ligatures"
@@ -729,7 +749,7 @@ exports[`SearchRecipient should not render recipient if not in same network 2`] 
                     </td>
                   </tr>
                   <tr
-                    class="TableRow__TableRowStyled-sc-1br46dw-0 fzBhIQ"
+                    class="TableRow__TableRowStyled-sc-1br46dw-0 fzBhIQ group"
                     data-testid="TableRow"
                   >
                     <td>
@@ -737,18 +757,23 @@ exports[`SearchRecipient should not render recipient if not in same network 2`] 
                         class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 DpDcR space-x-4"
                       >
                         <div
-                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 cjwvlc"
+                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 ktCSBk"
+                          data-testid="Avatar"
                         >
-                          <img
-                            alt="Rok"
-                            src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(255, 193, 7)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"30\\" cy=\\"50\\" fill=\\"rgb(244, 67, 54)\\"/><circle r=\\"35\\" cx=\\"90\\" cy=\\"60\\" fill=\\"rgb(3, 169, 244)\\"/><circle r=\\"40\\" cx=\\"100\\" cy=\\"30\\" fill=\\"rgb(156, 39, 176)\\"/></svg>"
-                            title="Rok"
-                          />
-                          <span
-                            class="absolute text-sm font-semibold text-theme-background"
+                          <div
+                            class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
                           >
-                            RO
-                          </span>
+                            <img
+                              alt="Rok"
+                              src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(255, 193, 7)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"30\\" cy=\\"50\\" fill=\\"rgb(244, 67, 54)\\"/><circle r=\\"35\\" cx=\\"90\\" cy=\\"60\\" fill=\\"rgb(3, 169, 244)\\"/><circle r=\\"40\\" cx=\\"100\\" cy=\\"30\\" fill=\\"rgb(156, 39, 176)\\"/></svg>"
+                              title="Rok"
+                            />
+                            <span
+                              class="absolute text-sm font-semibold text-theme-background"
+                            >
+                              RO
+                            </span>
+                          </div>
                         </div>
                         <div
                           class="inline-flex items-center no-ligatures"
@@ -803,7 +828,7 @@ exports[`SearchRecipient should not render recipient if not in same network 2`] 
                     </td>
                   </tr>
                   <tr
-                    class="TableRow__TableRowStyled-sc-1br46dw-0 fzBhIQ"
+                    class="TableRow__TableRowStyled-sc-1br46dw-0 fzBhIQ group"
                     data-testid="TableRow"
                   >
                     <td>
@@ -811,18 +836,23 @@ exports[`SearchRecipient should not render recipient if not in same network 2`] 
                         class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 DpDcR space-x-4"
                       >
                         <div
-                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 cjwvlc"
+                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 ktCSBk"
+                          data-testid="Avatar"
                         >
-                          <img
-                            alt="Rok"
-                            src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(3, 169, 244)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"60\\" cx=\\"50\\" cy=\\"30\\" fill=\\"rgb(139, 195, 74)\\"/><circle r=\\"40\\" cx=\\"20\\" cy=\\"70\\" fill=\\"rgb(244, 67, 54)\\"/><circle r=\\"50\\" cx=\\"0\\" cy=\\"40\\" fill=\\"rgb(255, 152, 0)\\"/></svg>"
-                            title="Rok"
-                          />
-                          <span
-                            class="absolute text-sm font-semibold text-theme-background"
+                          <div
+                            class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
                           >
-                            RO
-                          </span>
+                            <img
+                              alt="Rok"
+                              src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(3, 169, 244)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"60\\" cx=\\"50\\" cy=\\"30\\" fill=\\"rgb(139, 195, 74)\\"/><circle r=\\"40\\" cx=\\"20\\" cy=\\"70\\" fill=\\"rgb(244, 67, 54)\\"/><circle r=\\"50\\" cx=\\"0\\" cy=\\"40\\" fill=\\"rgb(255, 152, 0)\\"/></svg>"
+                              title="Rok"
+                            />
+                            <span
+                              class="absolute text-sm font-semibold text-theme-background"
+                            >
+                              RO
+                            </span>
+                          </div>
                         </div>
                         <div
                           class="inline-flex items-center no-ligatures"
@@ -904,7 +934,7 @@ exports[`SearchRecipient should render a modal 1`] = `
         class="absolute top-0 right-0 z-50 mt-5 mr-5 rounded transition-all duration-100 ease-linear bg-theme-primary-100 hover:bg-theme-primary-300 dark:bg-theme-secondary-800 dark:text-theme-secondary-600 dark:hover:bg-theme-secondary-700 dark:hover:text-theme-secondary-400"
       >
         <button
-          class="OriginalButton__StyledButton-sc-1y2wptt-0 fmvKKh w-11 h-11"
+          class="OriginalButton__StyledButton-sc-1y2wptt-0 lpqSIM w-11 h-11"
           data-testid="modal__close-btn"
           type="button"
         >
@@ -1098,7 +1128,7 @@ exports[`SearchRecipient should render a modal 1`] = `
                   role="rowgroup"
                 >
                   <tr
-                    class="TableRow__TableRowStyled-sc-1br46dw-0 fzBhIQ"
+                    class="TableRow__TableRowStyled-sc-1br46dw-0 fzBhIQ group"
                     data-testid="TableRow"
                   >
                     <td>
@@ -1106,18 +1136,23 @@ exports[`SearchRecipient should render a modal 1`] = `
                         class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 DpDcR space-x-4"
                       >
                         <div
-                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 cjwvlc"
+                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 ktCSBk"
+                          data-testid="Avatar"
                         >
-                          <img
-                            alt="ARK Wallet 1"
-                            src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(0, 150, 136)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"80\\" cy=\\"50\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"35\\" cx=\\"100\\" cy=\\"40\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"70\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
-                            title="ARK Wallet 1"
-                          />
-                          <span
-                            class="absolute text-sm font-semibold text-theme-background"
+                          <div
+                            class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
                           >
-                            AR
-                          </span>
+                            <img
+                              alt="ARK Wallet 1"
+                              src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(0, 150, 136)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"80\\" cy=\\"50\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"35\\" cx=\\"100\\" cy=\\"40\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"70\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
+                              title="ARK Wallet 1"
+                            />
+                            <span
+                              class="absolute text-sm font-semibold text-theme-background"
+                            >
+                              AR
+                            </span>
+                          </div>
                         </div>
                         <div
                           class="inline-flex items-center no-ligatures"
@@ -1172,7 +1207,7 @@ exports[`SearchRecipient should render a modal 1`] = `
                     </td>
                   </tr>
                   <tr
-                    class="TableRow__TableRowStyled-sc-1br46dw-0 fzBhIQ"
+                    class="TableRow__TableRowStyled-sc-1br46dw-0 fzBhIQ group"
                     data-testid="TableRow"
                   >
                     <td>
@@ -1180,18 +1215,23 @@ exports[`SearchRecipient should render a modal 1`] = `
                         class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 DpDcR space-x-4"
                       >
                         <div
-                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 cjwvlc"
+                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 ktCSBk"
+                          data-testid="Avatar"
                         >
-                          <img
-                            alt="ARK Wallet 2"
-                            src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(244, 67, 54)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"20\\" cy=\\"50\\" fill=\\"rgb(205, 220, 57)\\"/><circle r=\\"60\\" cx=\\"0\\" cy=\\"70\\" fill=\\"rgb(0, 188, 212)\\"/><circle r=\\"55\\" cx=\\"80\\" cy=\\"30\\" fill=\\"rgb(76, 175, 80)\\"/></svg>"
-                            title="ARK Wallet 2"
-                          />
-                          <span
-                            class="absolute text-sm font-semibold text-theme-background"
+                          <div
+                            class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
                           >
-                            AR
-                          </span>
+                            <img
+                              alt="ARK Wallet 2"
+                              src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(244, 67, 54)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"20\\" cy=\\"50\\" fill=\\"rgb(205, 220, 57)\\"/><circle r=\\"60\\" cx=\\"0\\" cy=\\"70\\" fill=\\"rgb(0, 188, 212)\\"/><circle r=\\"55\\" cx=\\"80\\" cy=\\"30\\" fill=\\"rgb(76, 175, 80)\\"/></svg>"
+                              title="ARK Wallet 2"
+                            />
+                            <span
+                              class="absolute text-sm font-semibold text-theme-background"
+                            >
+                              AR
+                            </span>
+                          </div>
                         </div>
                         <div
                           class="inline-flex items-center no-ligatures"
@@ -1246,7 +1286,7 @@ exports[`SearchRecipient should render a modal 1`] = `
                     </td>
                   </tr>
                   <tr
-                    class="TableRow__TableRowStyled-sc-1br46dw-0 fzBhIQ"
+                    class="TableRow__TableRowStyled-sc-1br46dw-0 fzBhIQ group"
                     data-testid="TableRow"
                   >
                     <td>
@@ -1254,18 +1294,23 @@ exports[`SearchRecipient should render a modal 1`] = `
                         class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 DpDcR space-x-4"
                       >
                         <div
-                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 cjwvlc"
+                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 ktCSBk"
+                          data-testid="Avatar"
                         >
-                          <img
-                            alt="Brian"
-                            src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"60\\" cy=\\"40\\" fill=\\"rgb(139, 195, 74)\\"/><circle r=\\"45\\" cx=\\"0\\" cy=\\"30\\" fill=\\"rgb(0, 188, 212)\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"50\\" fill=\\"rgb(255, 193, 7)\\"/></svg>"
-                            title="Brian"
-                          />
-                          <span
-                            class="absolute text-sm font-semibold text-theme-background"
+                          <div
+                            class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
                           >
-                            BR
-                          </span>
+                            <img
+                              alt="Brian"
+                              src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"60\\" cy=\\"40\\" fill=\\"rgb(139, 195, 74)\\"/><circle r=\\"45\\" cx=\\"0\\" cy=\\"30\\" fill=\\"rgb(0, 188, 212)\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"50\\" fill=\\"rgb(255, 193, 7)\\"/></svg>"
+                              title="Brian"
+                            />
+                            <span
+                              class="absolute text-sm font-semibold text-theme-background"
+                            >
+                              BR
+                            </span>
+                          </div>
                         </div>
                         <div
                           class="inline-flex items-center no-ligatures"
@@ -1320,7 +1365,7 @@ exports[`SearchRecipient should render a modal 1`] = `
                     </td>
                   </tr>
                   <tr
-                    class="TableRow__TableRowStyled-sc-1br46dw-0 fzBhIQ"
+                    class="TableRow__TableRowStyled-sc-1br46dw-0 fzBhIQ group"
                     data-testid="TableRow"
                   >
                     <td>
@@ -1328,18 +1373,23 @@ exports[`SearchRecipient should render a modal 1`] = `
                         class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 DpDcR space-x-4"
                       >
                         <div
-                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 cjwvlc"
+                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 ktCSBk"
+                          data-testid="Avatar"
                         >
-                          <img
-                            alt="Rok"
-                            src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(244, 67, 54)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"40\\" cy=\\"40\\" fill=\\"rgb(255, 152, 0)\\"/><circle r=\\"40\\" cx=\\"0\\" cy=\\"50\\" fill=\\"rgb(255, 87, 34)\\"/><circle r=\\"35\\" cx=\\"100\\" cy=\\"70\\" fill=\\"rgb(76, 175, 80)\\"/></svg>"
-                            title="Rok"
-                          />
-                          <span
-                            class="absolute text-sm font-semibold text-theme-background"
+                          <div
+                            class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
                           >
-                            RO
-                          </span>
+                            <img
+                              alt="Rok"
+                              src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(244, 67, 54)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"40\\" cy=\\"40\\" fill=\\"rgb(255, 152, 0)\\"/><circle r=\\"40\\" cx=\\"0\\" cy=\\"50\\" fill=\\"rgb(255, 87, 34)\\"/><circle r=\\"35\\" cx=\\"100\\" cy=\\"70\\" fill=\\"rgb(76, 175, 80)\\"/></svg>"
+                              title="Rok"
+                            />
+                            <span
+                              class="absolute text-sm font-semibold text-theme-background"
+                            >
+                              RO
+                            </span>
+                          </div>
                         </div>
                         <div
                           class="inline-flex items-center no-ligatures"
@@ -1394,7 +1444,7 @@ exports[`SearchRecipient should render a modal 1`] = `
                     </td>
                   </tr>
                   <tr
-                    class="TableRow__TableRowStyled-sc-1br46dw-0 fzBhIQ"
+                    class="TableRow__TableRowStyled-sc-1br46dw-0 fzBhIQ group"
                     data-testid="TableRow"
                   >
                     <td>
@@ -1402,18 +1452,23 @@ exports[`SearchRecipient should render a modal 1`] = `
                         class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 DpDcR space-x-4"
                       >
                         <div
-                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 cjwvlc"
+                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 ktCSBk"
+                          data-testid="Avatar"
                         >
-                          <img
-                            alt="Rok"
-                            src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(255, 193, 7)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"30\\" cy=\\"50\\" fill=\\"rgb(244, 67, 54)\\"/><circle r=\\"35\\" cx=\\"90\\" cy=\\"60\\" fill=\\"rgb(3, 169, 244)\\"/><circle r=\\"40\\" cx=\\"100\\" cy=\\"30\\" fill=\\"rgb(156, 39, 176)\\"/></svg>"
-                            title="Rok"
-                          />
-                          <span
-                            class="absolute text-sm font-semibold text-theme-background"
+                          <div
+                            class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
                           >
-                            RO
-                          </span>
+                            <img
+                              alt="Rok"
+                              src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(255, 193, 7)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"30\\" cy=\\"50\\" fill=\\"rgb(244, 67, 54)\\"/><circle r=\\"35\\" cx=\\"90\\" cy=\\"60\\" fill=\\"rgb(3, 169, 244)\\"/><circle r=\\"40\\" cx=\\"100\\" cy=\\"30\\" fill=\\"rgb(156, 39, 176)\\"/></svg>"
+                              title="Rok"
+                            />
+                            <span
+                              class="absolute text-sm font-semibold text-theme-background"
+                            >
+                              RO
+                            </span>
+                          </div>
                         </div>
                         <div
                           class="inline-flex items-center no-ligatures"
@@ -1468,7 +1523,7 @@ exports[`SearchRecipient should render a modal 1`] = `
                     </td>
                   </tr>
                   <tr
-                    class="TableRow__TableRowStyled-sc-1br46dw-0 fzBhIQ"
+                    class="TableRow__TableRowStyled-sc-1br46dw-0 fzBhIQ group"
                     data-testid="TableRow"
                   >
                     <td>
@@ -1476,18 +1531,23 @@ exports[`SearchRecipient should render a modal 1`] = `
                         class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 DpDcR space-x-4"
                       >
                         <div
-                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 cjwvlc"
+                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 ktCSBk"
+                          data-testid="Avatar"
                         >
-                          <img
-                            alt="Rok"
-                            src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(3, 169, 244)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"60\\" cx=\\"50\\" cy=\\"30\\" fill=\\"rgb(139, 195, 74)\\"/><circle r=\\"40\\" cx=\\"20\\" cy=\\"70\\" fill=\\"rgb(244, 67, 54)\\"/><circle r=\\"50\\" cx=\\"0\\" cy=\\"40\\" fill=\\"rgb(255, 152, 0)\\"/></svg>"
-                            title="Rok"
-                          />
-                          <span
-                            class="absolute text-sm font-semibold text-theme-background"
+                          <div
+                            class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
                           >
-                            RO
-                          </span>
+                            <img
+                              alt="Rok"
+                              src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(3, 169, 244)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"60\\" cx=\\"50\\" cy=\\"30\\" fill=\\"rgb(139, 195, 74)\\"/><circle r=\\"40\\" cx=\\"20\\" cy=\\"70\\" fill=\\"rgb(244, 67, 54)\\"/><circle r=\\"50\\" cx=\\"0\\" cy=\\"40\\" fill=\\"rgb(255, 152, 0)\\"/></svg>"
+                              title="Rok"
+                            />
+                            <span
+                              class="absolute text-sm font-semibold text-theme-background"
+                            >
+                              RO
+                            </span>
+                          </div>
                         </div>
                         <div
                           class="inline-flex items-center no-ligatures"
@@ -1569,7 +1629,7 @@ exports[`SearchRecipient should render a modal with custom title and description
         class="absolute top-0 right-0 z-50 mt-5 mr-5 rounded transition-all duration-100 ease-linear bg-theme-primary-100 hover:bg-theme-primary-300 dark:bg-theme-secondary-800 dark:text-theme-secondary-600 dark:hover:bg-theme-secondary-700 dark:hover:text-theme-secondary-400"
       >
         <button
-          class="OriginalButton__StyledButton-sc-1y2wptt-0 fmvKKh w-11 h-11"
+          class="OriginalButton__StyledButton-sc-1y2wptt-0 lpqSIM w-11 h-11"
           data-testid="modal__close-btn"
           type="button"
         >
@@ -1763,7 +1823,7 @@ exports[`SearchRecipient should render a modal with custom title and description
                   role="rowgroup"
                 >
                   <tr
-                    class="TableRow__TableRowStyled-sc-1br46dw-0 fzBhIQ"
+                    class="TableRow__TableRowStyled-sc-1br46dw-0 fzBhIQ group"
                     data-testid="TableRow"
                   >
                     <td>
@@ -1771,18 +1831,23 @@ exports[`SearchRecipient should render a modal with custom title and description
                         class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 DpDcR space-x-4"
                       >
                         <div
-                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 cjwvlc"
+                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 ktCSBk"
+                          data-testid="Avatar"
                         >
-                          <img
-                            alt="ARK Wallet 1"
-                            src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(0, 150, 136)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"80\\" cy=\\"50\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"35\\" cx=\\"100\\" cy=\\"40\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"70\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
-                            title="ARK Wallet 1"
-                          />
-                          <span
-                            class="absolute text-sm font-semibold text-theme-background"
+                          <div
+                            class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
                           >
-                            AR
-                          </span>
+                            <img
+                              alt="ARK Wallet 1"
+                              src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(0, 150, 136)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"80\\" cy=\\"50\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"35\\" cx=\\"100\\" cy=\\"40\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"70\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
+                              title="ARK Wallet 1"
+                            />
+                            <span
+                              class="absolute text-sm font-semibold text-theme-background"
+                            >
+                              AR
+                            </span>
+                          </div>
                         </div>
                         <div
                           class="inline-flex items-center no-ligatures"
@@ -1837,7 +1902,7 @@ exports[`SearchRecipient should render a modal with custom title and description
                     </td>
                   </tr>
                   <tr
-                    class="TableRow__TableRowStyled-sc-1br46dw-0 fzBhIQ"
+                    class="TableRow__TableRowStyled-sc-1br46dw-0 fzBhIQ group"
                     data-testid="TableRow"
                   >
                     <td>
@@ -1845,18 +1910,23 @@ exports[`SearchRecipient should render a modal with custom title and description
                         class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 DpDcR space-x-4"
                       >
                         <div
-                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 cjwvlc"
+                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 ktCSBk"
+                          data-testid="Avatar"
                         >
-                          <img
-                            alt="ARK Wallet 2"
-                            src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(244, 67, 54)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"20\\" cy=\\"50\\" fill=\\"rgb(205, 220, 57)\\"/><circle r=\\"60\\" cx=\\"0\\" cy=\\"70\\" fill=\\"rgb(0, 188, 212)\\"/><circle r=\\"55\\" cx=\\"80\\" cy=\\"30\\" fill=\\"rgb(76, 175, 80)\\"/></svg>"
-                            title="ARK Wallet 2"
-                          />
-                          <span
-                            class="absolute text-sm font-semibold text-theme-background"
+                          <div
+                            class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
                           >
-                            AR
-                          </span>
+                            <img
+                              alt="ARK Wallet 2"
+                              src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(244, 67, 54)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"20\\" cy=\\"50\\" fill=\\"rgb(205, 220, 57)\\"/><circle r=\\"60\\" cx=\\"0\\" cy=\\"70\\" fill=\\"rgb(0, 188, 212)\\"/><circle r=\\"55\\" cx=\\"80\\" cy=\\"30\\" fill=\\"rgb(76, 175, 80)\\"/></svg>"
+                              title="ARK Wallet 2"
+                            />
+                            <span
+                              class="absolute text-sm font-semibold text-theme-background"
+                            >
+                              AR
+                            </span>
+                          </div>
                         </div>
                         <div
                           class="inline-flex items-center no-ligatures"
@@ -1911,7 +1981,7 @@ exports[`SearchRecipient should render a modal with custom title and description
                     </td>
                   </tr>
                   <tr
-                    class="TableRow__TableRowStyled-sc-1br46dw-0 fzBhIQ"
+                    class="TableRow__TableRowStyled-sc-1br46dw-0 fzBhIQ group"
                     data-testid="TableRow"
                   >
                     <td>
@@ -1919,18 +1989,23 @@ exports[`SearchRecipient should render a modal with custom title and description
                         class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 DpDcR space-x-4"
                       >
                         <div
-                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 cjwvlc"
+                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 ktCSBk"
+                          data-testid="Avatar"
                         >
-                          <img
-                            alt="Brian"
-                            src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"60\\" cy=\\"40\\" fill=\\"rgb(139, 195, 74)\\"/><circle r=\\"45\\" cx=\\"0\\" cy=\\"30\\" fill=\\"rgb(0, 188, 212)\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"50\\" fill=\\"rgb(255, 193, 7)\\"/></svg>"
-                            title="Brian"
-                          />
-                          <span
-                            class="absolute text-sm font-semibold text-theme-background"
+                          <div
+                            class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
                           >
-                            BR
-                          </span>
+                            <img
+                              alt="Brian"
+                              src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"60\\" cy=\\"40\\" fill=\\"rgb(139, 195, 74)\\"/><circle r=\\"45\\" cx=\\"0\\" cy=\\"30\\" fill=\\"rgb(0, 188, 212)\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"50\\" fill=\\"rgb(255, 193, 7)\\"/></svg>"
+                              title="Brian"
+                            />
+                            <span
+                              class="absolute text-sm font-semibold text-theme-background"
+                            >
+                              BR
+                            </span>
+                          </div>
                         </div>
                         <div
                           class="inline-flex items-center no-ligatures"
@@ -1985,7 +2060,7 @@ exports[`SearchRecipient should render a modal with custom title and description
                     </td>
                   </tr>
                   <tr
-                    class="TableRow__TableRowStyled-sc-1br46dw-0 fzBhIQ"
+                    class="TableRow__TableRowStyled-sc-1br46dw-0 fzBhIQ group"
                     data-testid="TableRow"
                   >
                     <td>
@@ -1993,18 +2068,23 @@ exports[`SearchRecipient should render a modal with custom title and description
                         class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 DpDcR space-x-4"
                       >
                         <div
-                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 cjwvlc"
+                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 ktCSBk"
+                          data-testid="Avatar"
                         >
-                          <img
-                            alt="Rok"
-                            src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(244, 67, 54)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"40\\" cy=\\"40\\" fill=\\"rgb(255, 152, 0)\\"/><circle r=\\"40\\" cx=\\"0\\" cy=\\"50\\" fill=\\"rgb(255, 87, 34)\\"/><circle r=\\"35\\" cx=\\"100\\" cy=\\"70\\" fill=\\"rgb(76, 175, 80)\\"/></svg>"
-                            title="Rok"
-                          />
-                          <span
-                            class="absolute text-sm font-semibold text-theme-background"
+                          <div
+                            class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
                           >
-                            RO
-                          </span>
+                            <img
+                              alt="Rok"
+                              src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(244, 67, 54)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"40\\" cy=\\"40\\" fill=\\"rgb(255, 152, 0)\\"/><circle r=\\"40\\" cx=\\"0\\" cy=\\"50\\" fill=\\"rgb(255, 87, 34)\\"/><circle r=\\"35\\" cx=\\"100\\" cy=\\"70\\" fill=\\"rgb(76, 175, 80)\\"/></svg>"
+                              title="Rok"
+                            />
+                            <span
+                              class="absolute text-sm font-semibold text-theme-background"
+                            >
+                              RO
+                            </span>
+                          </div>
                         </div>
                         <div
                           class="inline-flex items-center no-ligatures"
@@ -2059,7 +2139,7 @@ exports[`SearchRecipient should render a modal with custom title and description
                     </td>
                   </tr>
                   <tr
-                    class="TableRow__TableRowStyled-sc-1br46dw-0 fzBhIQ"
+                    class="TableRow__TableRowStyled-sc-1br46dw-0 fzBhIQ group"
                     data-testid="TableRow"
                   >
                     <td>
@@ -2067,18 +2147,23 @@ exports[`SearchRecipient should render a modal with custom title and description
                         class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 DpDcR space-x-4"
                       >
                         <div
-                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 cjwvlc"
+                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 ktCSBk"
+                          data-testid="Avatar"
                         >
-                          <img
-                            alt="Rok"
-                            src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(255, 193, 7)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"30\\" cy=\\"50\\" fill=\\"rgb(244, 67, 54)\\"/><circle r=\\"35\\" cx=\\"90\\" cy=\\"60\\" fill=\\"rgb(3, 169, 244)\\"/><circle r=\\"40\\" cx=\\"100\\" cy=\\"30\\" fill=\\"rgb(156, 39, 176)\\"/></svg>"
-                            title="Rok"
-                          />
-                          <span
-                            class="absolute text-sm font-semibold text-theme-background"
+                          <div
+                            class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
                           >
-                            RO
-                          </span>
+                            <img
+                              alt="Rok"
+                              src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(255, 193, 7)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"30\\" cy=\\"50\\" fill=\\"rgb(244, 67, 54)\\"/><circle r=\\"35\\" cx=\\"90\\" cy=\\"60\\" fill=\\"rgb(3, 169, 244)\\"/><circle r=\\"40\\" cx=\\"100\\" cy=\\"30\\" fill=\\"rgb(156, 39, 176)\\"/></svg>"
+                              title="Rok"
+                            />
+                            <span
+                              class="absolute text-sm font-semibold text-theme-background"
+                            >
+                              RO
+                            </span>
+                          </div>
                         </div>
                         <div
                           class="inline-flex items-center no-ligatures"
@@ -2133,7 +2218,7 @@ exports[`SearchRecipient should render a modal with custom title and description
                     </td>
                   </tr>
                   <tr
-                    class="TableRow__TableRowStyled-sc-1br46dw-0 fzBhIQ"
+                    class="TableRow__TableRowStyled-sc-1br46dw-0 fzBhIQ group"
                     data-testid="TableRow"
                   >
                     <td>
@@ -2141,18 +2226,23 @@ exports[`SearchRecipient should render a modal with custom title and description
                         class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 DpDcR space-x-4"
                       >
                         <div
-                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 cjwvlc"
+                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 ktCSBk"
+                          data-testid="Avatar"
                         >
-                          <img
-                            alt="Rok"
-                            src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(3, 169, 244)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"60\\" cx=\\"50\\" cy=\\"30\\" fill=\\"rgb(139, 195, 74)\\"/><circle r=\\"40\\" cx=\\"20\\" cy=\\"70\\" fill=\\"rgb(244, 67, 54)\\"/><circle r=\\"50\\" cx=\\"0\\" cy=\\"40\\" fill=\\"rgb(255, 152, 0)\\"/></svg>"
-                            title="Rok"
-                          />
-                          <span
-                            class="absolute text-sm font-semibold text-theme-background"
+                          <div
+                            class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
                           >
-                            RO
-                          </span>
+                            <img
+                              alt="Rok"
+                              src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(3, 169, 244)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"60\\" cx=\\"50\\" cy=\\"30\\" fill=\\"rgb(139, 195, 74)\\"/><circle r=\\"40\\" cx=\\"20\\" cy=\\"70\\" fill=\\"rgb(244, 67, 54)\\"/><circle r=\\"50\\" cx=\\"0\\" cy=\\"40\\" fill=\\"rgb(255, 152, 0)\\"/></svg>"
+                              title="Rok"
+                            />
+                            <span
+                              class="absolute text-sm font-semibold text-theme-background"
+                            >
+                              RO
+                            </span>
+                          </div>
                         </div>
                         <div
                           class="inline-flex items-center no-ligatures"

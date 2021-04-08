@@ -5,7 +5,7 @@ import { FormField, FormLabel } from "app/components/Form";
 import { Header } from "app/components/Header";
 import { useEnvironmentContext } from "app/contexts";
 import { SelectNetwork } from "domains/network/components/SelectNetwork";
-import React, { useEffect, useMemo } from "react";
+import React, { useMemo } from "react";
 import { useFormContext } from "react-hook-form";
 import { useTranslation } from "react-i18next";
 
@@ -18,7 +18,7 @@ type NetworkStepProps = {
 };
 
 export const NetworkStep = ({ profile, title, subtitle, disabled, error }: NetworkStepProps) => {
-	const { getValues, register, setValue } = useFormContext();
+	const { getValues, setValue, setError, clearErrors } = useFormContext();
 	const { env } = useEnvironmentContext();
 
 	const networks = useMemo(() => {
@@ -36,12 +36,30 @@ export const NetworkStep = ({ profile, title, subtitle, disabled, error }: Netwo
 
 	const { t } = useTranslation();
 
-	useEffect(() => {
-		register("network", { required: true });
-	}, [register]);
-
 	const handleSelect = (network?: Coins.Network | null) => {
 		setValue("network", network, { shouldValidate: true, shouldDirty: true });
+	};
+
+	const handleInputChange = (value?: string, suggestion?: string) => {
+		if (suggestion) {
+			clearErrors("network");
+		}
+
+		if (!value) {
+			return setError("network", {
+				type: "manual",
+				message: t("COMMON.VALIDATION.FIELD_REQUIRED", {
+					field: t("COMMON.CRYPTOASSET"),
+				}),
+			});
+		}
+
+		if (!suggestion) {
+			return setError("network", {
+				type: "manual",
+				message: t("COMMON.INPUT_NETWORK.VALIDATION.NETWORK_NOT_FOUND"),
+			});
+		}
 	};
 
 	return (
@@ -61,6 +79,7 @@ export const NetworkStep = ({ profile, title, subtitle, disabled, error }: Netwo
 					disabled={disabled}
 					networks={networks}
 					selected={selectedNetwork}
+					onInputChange={handleInputChange}
 					onSelect={handleSelect}
 				/>
 			</FormField>

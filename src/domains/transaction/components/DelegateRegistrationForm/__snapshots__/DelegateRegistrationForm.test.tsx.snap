@@ -47,13 +47,13 @@ exports[`DelegateRegistrationForm should error if username is too long 1`] = `
             </div>
           </div>
           <div
-            class="flex flex-col"
+            class="flex flex-col w-full"
           >
-            <p
+            <div
               class="text-sm leading-relaxed break-words dark:text-theme-secondary-500"
             >
               The Delegate name is permanent and cannot be modified later. It is registered on the network.
-            </p>
+            </div>
           </div>
         </div>
         <div
@@ -98,11 +98,11 @@ exports[`DelegateRegistrationForm should error if username is too long 1`] = `
             class="flex items-center -space-x-2"
           >
             <div
-              class="Avatar__AvatarWrapper-sc-1vsy2s2-0 gyYbkb"
+              class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB"
               data-testid="Avatar"
             >
               <div
-                class="w-full h-full"
+                class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
               >
                 <img
                   alt="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
@@ -326,13 +326,13 @@ exports[`DelegateRegistrationForm should render form step 1`] = `
             </div>
           </div>
           <div
-            class="flex flex-col"
+            class="flex flex-col w-full"
           >
-            <p
+            <div
               class="text-sm leading-relaxed break-words dark:text-theme-secondary-500"
             >
               The Delegate name is permanent and cannot be modified later. It is registered on the network.
-            </p>
+            </div>
           </div>
         </div>
         <div
@@ -377,11 +377,11 @@ exports[`DelegateRegistrationForm should render form step 1`] = `
             class="flex items-center -space-x-2"
           >
             <div
-              class="Avatar__AvatarWrapper-sc-1vsy2s2-0 gyYbkb"
+              class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB"
               data-testid="Avatar"
             >
               <div
-                class="w-full h-full"
+                class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
               >
                 <img
                   alt="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
@@ -588,7 +588,7 @@ exports[`DelegateRegistrationForm should render review step 1`] = `
           </div>
           <div
             aria-label="ARK Devnet"
-            class="Circle-uw7h4j-0 JkqUV border-theme-primary-100 text-theme-primary-400"
+            class="Circle__CircleWrapper-uw7h4j-0 bNDQMV border-theme-primary-100 text-theme-primary-400 ring-theme-background"
             data-testid="NetworkIcon-ARK-ark.devnet"
           >
             <div
@@ -645,11 +645,11 @@ exports[`DelegateRegistrationForm should render review step 1`] = `
             class="flex items-center -space-x-2"
           >
             <div
-              class="Avatar__AvatarWrapper-sc-1vsy2s2-0 gyYbkb"
+              class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB"
               data-testid="Avatar"
             >
               <div
-                class="w-full h-full"
+                class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
               >
                 <img
                   alt="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
@@ -808,13 +808,13 @@ exports[`DelegateRegistrationForm should set fee 1`] = `
             </div>
           </div>
           <div
-            class="flex flex-col"
+            class="flex flex-col w-full"
           >
-            <p
+            <div
               class="text-sm leading-relaxed break-words dark:text-theme-secondary-500"
             >
               The Delegate name is permanent and cannot be modified later. It is registered on the network.
-            </p>
+            </div>
           </div>
         </div>
         <div
@@ -859,11 +859,11 @@ exports[`DelegateRegistrationForm should set fee 1`] = `
             class="flex items-center -space-x-2"
           >
             <div
-              class="Avatar__AvatarWrapper-sc-1vsy2s2-0 gyYbkb"
+              class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB"
               data-testid="Avatar"
             >
               <div
-                class="w-full h-full"
+                class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
               >
                 <img
                   alt="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
@@ -1068,13 +1068,13 @@ exports[`DelegateRegistrationForm should set username 1`] = `
             </div>
           </div>
           <div
-            class="flex flex-col"
+            class="flex flex-col w-full"
           >
-            <p
+            <div
               class="text-sm leading-relaxed break-words dark:text-theme-secondary-500"
             >
               The Delegate name is permanent and cannot be modified later. It is registered on the network.
-            </p>
+            </div>
           </div>
         </div>
         <div
@@ -1119,11 +1119,11 @@ exports[`DelegateRegistrationForm should set username 1`] = `
             class="flex items-center -space-x-2"
           >
             <div
-              class="Avatar__AvatarWrapper-sc-1vsy2s2-0 gyYbkb"
+              class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB"
               data-testid="Avatar"
             >
               <div
-                class="w-full h-full"
+                class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
               >
                 <img
                   alt="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
@@ -1328,13 +1328,13 @@ exports[`DelegateRegistrationForm should show error if username already exists 1
             </div>
           </div>
           <div
-            class="flex flex-col"
+            class="flex flex-col w-full"
           >
-            <p
+            <div
               class="text-sm leading-relaxed break-words dark:text-theme-secondary-500"
             >
               The Delegate name is permanent and cannot be modified later. It is registered on the network.
-            </p>
+            </div>
           </div>
         </div>
         <div
@@ -1379,11 +1379,11 @@ exports[`DelegateRegistrationForm should show error if username already exists 1
             class="flex items-center -space-x-2"
           >
             <div
-              class="Avatar__AvatarWrapper-sc-1vsy2s2-0 gyYbkb"
+              class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB"
               data-testid="Avatar"
             >
               <div
-                class="w-full h-full"
+                class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
               >
                 <img
                   alt="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
@@ -1607,13 +1607,13 @@ exports[`DelegateRegistrationForm should show error if username contains illegal
             </div>
           </div>
           <div
-            class="flex flex-col"
+            class="flex flex-col w-full"
           >
-            <p
+            <div
               class="text-sm leading-relaxed break-words dark:text-theme-secondary-500"
             >
               The Delegate name is permanent and cannot be modified later. It is registered on the network.
-            </p>
+            </div>
           </div>
         </div>
         <div
@@ -1658,11 +1658,11 @@ exports[`DelegateRegistrationForm should show error if username contains illegal
             class="flex items-center -space-x-2"
           >
             <div
-              class="Avatar__AvatarWrapper-sc-1vsy2s2-0 gyYbkb"
+              class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB"
               data-testid="Avatar"
             >
               <div
-                class="w-full h-full"
+                class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
               >
                 <img
                   alt="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"

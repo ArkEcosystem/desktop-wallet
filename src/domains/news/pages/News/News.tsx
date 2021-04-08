@@ -104,7 +104,7 @@ export const News = ({ itemsPerPage }: Props) => {
 				/>
 			</Section>
 
-			<Section backgroundColor="--theme-secondary-background-color">
+			<Section className="flex-1" backgroundColor="--theme-secondary-background-color">
 				<div className="container flex space-x-8">
 					<div className="flex-none w-4/6">
 						{!isLoading && news.length === 0 && (

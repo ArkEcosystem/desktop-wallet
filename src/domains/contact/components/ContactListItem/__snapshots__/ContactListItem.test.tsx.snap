@@ -5,7 +5,7 @@ exports[`ContactListItem should render 1`] = `
   <table>
     <tbody>
       <tr
-        class="TableRow__TableRowStyled-sc-1br46dw-0 fzBhIQ"
+        class="TableRow__TableRowStyled-sc-1br46dw-0 fzBhIQ group"
         data-testid="TableRow"
       >
         <td>
@@ -13,19 +13,23 @@ exports[`ContactListItem should render 1`] = `
             class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 DpDcR space-x-4"
           >
             <div
-              class="Avatar__AvatarWrapper-sc-1vsy2s2-0 cjwvlc"
-              data-testid="ContactListItem__user--avatar"
+              class="Avatar__AvatarWrapper-sc-1vsy2s2-0 ktCSBk"
+              data-testid="Avatar"
             >
-              <img
-                alt="Brian"
-                src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(0, 188, 212)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"60\\" cx=\\"0\\" cy=\\"50\\" fill=\\"rgb(139, 195, 74)\\"/><circle r=\\"45\\" cx=\\"30\\" cy=\\"70\\" fill=\\"rgb(255, 193, 7)\\"/><circle r=\\"40\\" cx=\\"60\\" cy=\\"30\\" fill=\\"rgb(233, 30, 99)\\"/></svg>"
-                title="Brian"
-              />
-              <span
-                class="absolute text-sm font-semibold text-theme-background"
+              <div
+                class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
               >
-                BR
-              </span>
+                <img
+                  alt="Brian"
+                  src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(0, 188, 212)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"60\\" cx=\\"0\\" cy=\\"50\\" fill=\\"rgb(139, 195, 74)\\"/><circle r=\\"45\\" cx=\\"30\\" cy=\\"70\\" fill=\\"rgb(255, 193, 7)\\"/><circle r=\\"40\\" cx=\\"60\\" cy=\\"30\\" fill=\\"rgb(233, 30, 99)\\"/></svg>"
+                  title="Brian"
+                />
+                <span
+                  class="absolute text-sm font-semibold text-theme-background"
+                >
+                  BR
+                </span>
+              </div>
             </div>
             <span
               class="font-semibold"
@@ -41,7 +45,7 @@ exports[`ContactListItem should render 1`] = `
           >
             <div
               aria-label="ARK Devnet"
-              class="Circle-uw7h4j-0 hvqrfp border-theme-primary-100 text-theme-primary-400"
+              class="Circle__CircleWrapper-uw7h4j-0 kOlXCb border-theme-primary-100 text-theme-primary-400 ring-theme-background"
               data-testid="NetworkIcon-ARK-ark.devnet"
             >
               <div
@@ -64,11 +68,11 @@ exports[`ContactListItem should render 1`] = `
             class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT space-x-4"
           >
             <div
-              class="Avatar__AvatarWrapper-sc-1vsy2s2-0 cjwvlc"
+              class="Avatar__AvatarWrapper-sc-1vsy2s2-0 ktCSBk"
               data-testid="Avatar"
             >
               <div
-                class="w-full h-full"
+                class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
               >
                 <img
                   alt="D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib"
@@ -122,7 +126,7 @@ exports[`ContactListItem should render 1`] = `
             class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT space-x-2 text-sm font-bold justify-center"
           >
             <div
-              class="Circle-uw7h4j-0 cLIJTV border-black"
+              class="Circle__CircleWrapper-uw7h4j-0 jECrxL border-black ring-theme-background"
             >
               <div
                 class="sc-bdfBwQ catSEV"
@@ -200,7 +204,7 @@ exports[`ContactListItem should render as delegate 1`] = `
   <table>
     <tbody>
       <tr
-        class="TableRow__TableRowStyled-sc-1br46dw-0 fzBhIQ"
+        class="TableRow__TableRowStyled-sc-1br46dw-0 fzBhIQ group"
         data-testid="TableRow"
       >
         <td>
@@ -208,19 +212,23 @@ exports[`ContactListItem should render as delegate 1`] = `
             class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 DpDcR space-x-4"
           >
             <div
-              class="Avatar__AvatarWrapper-sc-1vsy2s2-0 cjwvlc"
-              data-testid="ContactListItem__user--avatar"
+              class="Avatar__AvatarWrapper-sc-1vsy2s2-0 ktCSBk"
+              data-testid="Avatar"
             >
-              <img
-                alt="Caio"
-                src="data:image/svg+xml;utf8,data:image/png;base64,avatarImage"
-                title="Caio"
-              />
-              <span
-                class="absolute text-sm font-semibold text-theme-background"
+              <div
+                class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
               >
-                CA
-              </span>
+                <img
+                  alt="Caio"
+                  src="data:image/svg+xml;utf8,data:image/png;base64,avatarImage"
+                  title="Caio"
+                />
+                <span
+                  class="absolute text-sm font-semibold text-theme-background"
+                >
+                  CA
+                </span>
+              </div>
             </div>
             <span
               class="font-semibold"
@@ -236,7 +244,7 @@ exports[`ContactListItem should render as delegate 1`] = `
           >
             <div
               aria-label="ARK Devnet"
-              class="Circle-uw7h4j-0 hvqrfp border-theme-primary-100 text-theme-primary-400"
+              class="Circle__CircleWrapper-uw7h4j-0 kOlXCb border-theme-primary-100 text-theme-primary-400 ring-theme-background"
               data-testid="NetworkIcon-ARK-ark.devnet"
             >
               <div
@@ -259,11 +267,11 @@ exports[`ContactListItem should render as delegate 1`] = `
             class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT space-x-4"
           >
             <div
-              class="Avatar__AvatarWrapper-sc-1vsy2s2-0 cjwvlc"
+              class="Avatar__AvatarWrapper-sc-1vsy2s2-0 ktCSBk"
               data-testid="Avatar"
             >
               <div
-                class="w-full h-full"
+                class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
               >
                 <img
                   alt="id5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb"
@@ -317,7 +325,7 @@ exports[`ContactListItem should render as delegate 1`] = `
             class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT space-x-2 text-sm font-bold justify-center"
           >
             <div
-              class="Circle-uw7h4j-0 cLIJTV border-black"
+              class="Circle__CircleWrapper-uw7h4j-0 jECrxL border-black ring-theme-background"
             >
               <div
                 class="sc-bdfBwQ catSEV"
@@ -395,7 +403,7 @@ exports[`ContactListItem should render using variant 1`] = `
   <table>
     <tbody>
       <tr
-        class="TableRow__TableRowStyled-sc-1br46dw-0 fzBhIQ"
+        class="TableRow__TableRowStyled-sc-1br46dw-0 fzBhIQ group"
         data-testid="TableRow"
       >
         <td>
@@ -403,19 +411,23 @@ exports[`ContactListItem should render using variant 1`] = `
             class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 DpDcR space-x-4"
           >
             <div
-              class="Avatar__AvatarWrapper-sc-1vsy2s2-0 cjwvlc"
-              data-testid="ContactListItem__user--avatar"
+              class="Avatar__AvatarWrapper-sc-1vsy2s2-0 ktCSBk"
+              data-testid="Avatar"
             >
-              <img
-                alt="Brian"
-                src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(0, 188, 212)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"60\\" cx=\\"0\\" cy=\\"50\\" fill=\\"rgb(139, 195, 74)\\"/><circle r=\\"45\\" cx=\\"30\\" cy=\\"70\\" fill=\\"rgb(255, 193, 7)\\"/><circle r=\\"40\\" cx=\\"60\\" cy=\\"30\\" fill=\\"rgb(233, 30, 99)\\"/></svg>"
-                title="Brian"
-              />
-              <span
-                class="absolute text-sm font-semibold text-theme-background"
+              <div
+                class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
               >
-                BR
-              </span>
+                <img
+                  alt="Brian"
+                  src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(0, 188, 212)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"60\\" cx=\\"0\\" cy=\\"50\\" fill=\\"rgb(139, 195, 74)\\"/><circle r=\\"45\\" cx=\\"30\\" cy=\\"70\\" fill=\\"rgb(255, 193, 7)\\"/><circle r=\\"40\\" cx=\\"60\\" cy=\\"30\\" fill=\\"rgb(233, 30, 99)\\"/></svg>"
+                  title="Brian"
+                />
+                <span
+                  class="absolute text-sm font-semibold text-theme-background"
+                >
+                  BR
+                </span>
+              </div>
             </div>
             <span
               class="font-semibold"
@@ -431,7 +443,7 @@ exports[`ContactListItem should render using variant 1`] = `
           >
             <div
               aria-label="ARK Devnet"
-              class="Circle-uw7h4j-0 hvqrfp border-theme-primary-100 text-theme-primary-400"
+              class="Circle__CircleWrapper-uw7h4j-0 kOlXCb border-theme-primary-100 text-theme-primary-400 ring-theme-background"
               data-testid="NetworkIcon-ARK-ark.devnet"
             >
               <div
@@ -454,11 +466,11 @@ exports[`ContactListItem should render using variant 1`] = `
             class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT space-x-4"
           >
             <div
-              class="Avatar__AvatarWrapper-sc-1vsy2s2-0 cjwvlc"
+              class="Avatar__AvatarWrapper-sc-1vsy2s2-0 ktCSBk"
               data-testid="Avatar"
             >
               <div
-                class="w-full h-full"
+                class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
               >
                 <img
                   alt="D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib"
@@ -569,7 +581,7 @@ exports[`ContactListItem should render with multiple addresses 1`] = `
   <table>
     <tbody>
       <tr
-        class="TableRow__TableRowStyled-sc-1br46dw-0 dLjWKP"
+        class="TableRow__TableRowStyled-sc-1br46dw-0 dLjWKP group"
         data-testid="TableRow"
       >
         <td>
@@ -577,19 +589,23 @@ exports[`ContactListItem should render with multiple addresses 1`] = `
             class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 DpDcR space-x-4"
           >
             <div
-              class="Avatar__AvatarWrapper-sc-1vsy2s2-0 cjwvlc"
-              data-testid="ContactListItem__user--avatar"
+              class="Avatar__AvatarWrapper-sc-1vsy2s2-0 ktCSBk"
+              data-testid="Avatar"
             >
-              <img
-                alt="Brian"
-                src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(0, 188, 212)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"60\\" cx=\\"0\\" cy=\\"50\\" fill=\\"rgb(139, 195, 74)\\"/><circle r=\\"45\\" cx=\\"30\\" cy=\\"70\\" fill=\\"rgb(255, 193, 7)\\"/><circle r=\\"40\\" cx=\\"60\\" cy=\\"30\\" fill=\\"rgb(233, 30, 99)\\"/></svg>"
-                title="Brian"
-              />
-              <span
-                class="absolute text-sm font-semibold text-theme-background"
+              <div
+                class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
               >
-                BR
-              </span>
+                <img
+                  alt="Brian"
+                  src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(0, 188, 212)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"60\\" cx=\\"0\\" cy=\\"50\\" fill=\\"rgb(139, 195, 74)\\"/><circle r=\\"45\\" cx=\\"30\\" cy=\\"70\\" fill=\\"rgb(255, 193, 7)\\"/><circle r=\\"40\\" cx=\\"60\\" cy=\\"30\\" fill=\\"rgb(233, 30, 99)\\"/></svg>"
+                  title="Brian"
+                />
+                <span
+                  class="absolute text-sm font-semibold text-theme-background"
+                >
+                  BR
+                </span>
+              </div>
             </div>
             <span
               class="font-semibold"
@@ -605,7 +621,7 @@ exports[`ContactListItem should render with multiple addresses 1`] = `
           >
             <div
               aria-label="ARK Devnet"
-              class="Circle-uw7h4j-0 hvqrfp border-theme-primary-100 text-theme-primary-400"
+              class="Circle__CircleWrapper-uw7h4j-0 kOlXCb border-theme-primary-100 text-theme-primary-400 ring-theme-background"
               data-testid="NetworkIcon-ARK-ark.devnet"
             >
               <div
@@ -628,11 +644,11 @@ exports[`ContactListItem should render with multiple addresses 1`] = `
             class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT space-x-4"
           >
             <div
-              class="Avatar__AvatarWrapper-sc-1vsy2s2-0 cjwvlc"
+              class="Avatar__AvatarWrapper-sc-1vsy2s2-0 ktCSBk"
               data-testid="Avatar"
             >
               <div
-                class="w-full h-full"
+                class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
               >
                 <img
                   alt="D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib"
@@ -686,7 +702,7 @@ exports[`ContactListItem should render with multiple addresses 1`] = `
             class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT space-x-2 text-sm font-bold justify-center"
           >
             <div
-              class="Circle-uw7h4j-0 cLIJTV border-black"
+              class="Circle__CircleWrapper-uw7h4j-0 jECrxL border-black ring-theme-background"
             >
               <div
                 class="sc-bdfBwQ catSEV"
@@ -755,7 +771,7 @@ exports[`ContactListItem should render with multiple addresses 1`] = `
         </td>
       </tr>
       <tr
-        class="TableRow__TableRowStyled-sc-1br46dw-0 dLjWKP"
+        class="TableRow__TableRowStyled-sc-1br46dw-0 dLjWKP group"
         data-testid="TableRow"
       >
         <td>
@@ -769,7 +785,7 @@ exports[`ContactListItem should render with multiple addresses 1`] = `
           >
             <div
               aria-label="ARK Devnet"
-              class="Circle-uw7h4j-0 hvqrfp border-theme-primary-100 text-theme-primary-400"
+              class="Circle__CircleWrapper-uw7h4j-0 kOlXCb border-theme-primary-100 text-theme-primary-400 ring-theme-background"
               data-testid="NetworkIcon-ARK-ark.devnet"
             >
               <div
@@ -792,11 +808,11 @@ exports[`ContactListItem should render with multiple addresses 1`] = `
             class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT space-x-4"
           >
             <div
-              class="Avatar__AvatarWrapper-sc-1vsy2s2-0 cjwvlc"
+              class="Avatar__AvatarWrapper-sc-1vsy2s2-0 ktCSBk"
               data-testid="Avatar"
             >
               <div
-                class="w-full h-full"
+                class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
               >
                 <img
                   alt="D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib"
@@ -850,7 +866,7 @@ exports[`ContactListItem should render with multiple addresses 1`] = `
             class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT space-x-2 text-sm font-bold justify-center"
           >
             <div
-              class="Circle-uw7h4j-0 cLIJTV border-black"
+              class="Circle__CircleWrapper-uw7h4j-0 jECrxL border-black ring-theme-background"
             >
               <div
                 class="sc-bdfBwQ catSEV"
@@ -919,7 +935,7 @@ exports[`ContactListItem should render with multiple addresses 1`] = `
         </td>
       </tr>
       <tr
-        class="TableRow__TableRowStyled-sc-1br46dw-0 fzBhIQ"
+        class="TableRow__TableRowStyled-sc-1br46dw-0 fzBhIQ group"
         data-testid="TableRow"
       >
         <td>
@@ -933,7 +949,7 @@ exports[`ContactListItem should render with multiple addresses 1`] = `
           >
             <div
               aria-label="ARK Devnet"
-              class="Circle-uw7h4j-0 hvqrfp border-theme-primary-100 text-theme-primary-400"
+              class="Circle__CircleWrapper-uw7h4j-0 kOlXCb border-theme-primary-100 text-theme-primary-400 ring-theme-background"
               data-testid="NetworkIcon-ARK-ark.devnet"
             >
               <div
@@ -956,11 +972,11 @@ exports[`ContactListItem should render with multiple addresses 1`] = `
             class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT space-x-4"
           >
             <div
-              class="Avatar__AvatarWrapper-sc-1vsy2s2-0 cjwvlc"
+              class="Avatar__AvatarWrapper-sc-1vsy2s2-0 ktCSBk"
               data-testid="Avatar"
             >
               <div
-                class="w-full h-full"
+                class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
               >
                 <img
                   alt="DKrACQw7ytoU2gjppy3qKeE2dQhZjfXYqu"
@@ -1078,7 +1094,7 @@ exports[`ContactListItem should render with multiple options 1`] = `
   <table>
     <tbody>
       <tr
-        class="TableRow__TableRowStyled-sc-1br46dw-0 dLjWKP"
+        class="TableRow__TableRowStyled-sc-1br46dw-0 dLjWKP group"
         data-testid="TableRow"
       >
         <td>
@@ -1086,19 +1102,23 @@ exports[`ContactListItem should render with multiple options 1`] = `
             class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 DpDcR space-x-4"
           >
             <div
-              class="Avatar__AvatarWrapper-sc-1vsy2s2-0 cjwvlc"
-              data-testid="ContactListItem__user--avatar"
+              class="Avatar__AvatarWrapper-sc-1vsy2s2-0 ktCSBk"
+              data-testid="Avatar"
             >
-              <img
-                alt="Brian"
-                src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(0, 188, 212)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"60\\" cx=\\"0\\" cy=\\"50\\" fill=\\"rgb(139, 195, 74)\\"/><circle r=\\"45\\" cx=\\"30\\" cy=\\"70\\" fill=\\"rgb(255, 193, 7)\\"/><circle r=\\"40\\" cx=\\"60\\" cy=\\"30\\" fill=\\"rgb(233, 30, 99)\\"/></svg>"
-                title="Brian"
-              />
-              <span
-                class="absolute text-sm font-semibold text-theme-background"
+              <div
+                class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
               >
-                BR
-              </span>
+                <img
+                  alt="Brian"
+                  src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(0, 188, 212)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"60\\" cx=\\"0\\" cy=\\"50\\" fill=\\"rgb(139, 195, 74)\\"/><circle r=\\"45\\" cx=\\"30\\" cy=\\"70\\" fill=\\"rgb(255, 193, 7)\\"/><circle r=\\"40\\" cx=\\"60\\" cy=\\"30\\" fill=\\"rgb(233, 30, 99)\\"/></svg>"
+                  title="Brian"
+                />
+                <span
+                  class="absolute text-sm font-semibold text-theme-background"
+                >
+                  BR
+                </span>
+              </div>
             </div>
             <span
               class="font-semibold"
@@ -1114,7 +1134,7 @@ exports[`ContactListItem should render with multiple options 1`] = `
           >
             <div
               aria-label="ARK Devnet"
-              class="Circle-uw7h4j-0 hvqrfp border-theme-primary-100 text-theme-primary-400"
+              class="Circle__CircleWrapper-uw7h4j-0 kOlXCb border-theme-primary-100 text-theme-primary-400 ring-theme-background"
               data-testid="NetworkIcon-ARK-ark.devnet"
             >
               <div
@@ -1137,11 +1157,11 @@ exports[`ContactListItem should render with multiple options 1`] = `
             class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT space-x-4"
           >
             <div
-              class="Avatar__AvatarWrapper-sc-1vsy2s2-0 cjwvlc"
+              class="Avatar__AvatarWrapper-sc-1vsy2s2-0 ktCSBk"
               data-testid="Avatar"
             >
               <div
-                class="w-full h-full"
+                class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
               >
                 <img
                   alt="D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib"
@@ -1195,7 +1215,7 @@ exports[`ContactListItem should render with multiple options 1`] = `
             class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT space-x-2 text-sm font-bold justify-center"
           >
             <div
-              class="Circle-uw7h4j-0 cLIJTV border-black"
+              class="Circle__CircleWrapper-uw7h4j-0 jECrxL border-black ring-theme-background"
             >
               <div
                 class="sc-bdfBwQ catSEV"
@@ -1264,7 +1284,7 @@ exports[`ContactListItem should render with multiple options 1`] = `
         </td>
       </tr>
       <tr
-        class="TableRow__TableRowStyled-sc-1br46dw-0 dLjWKP"
+        class="TableRow__TableRowStyled-sc-1br46dw-0 dLjWKP group"
         data-testid="TableRow"
       >
         <td>
@@ -1278,7 +1298,7 @@ exports[`ContactListItem should render with multiple options 1`] = `
           >
             <div
               aria-label="ARK Devnet"
-              class="Circle-uw7h4j-0 hvqrfp border-theme-primary-100 text-theme-primary-400"
+              class="Circle__CircleWrapper-uw7h4j-0 kOlXCb border-theme-primary-100 text-theme-primary-400 ring-theme-background"
               data-testid="NetworkIcon-ARK-ark.devnet"
             >
               <div
@@ -1301,11 +1321,11 @@ exports[`ContactListItem should render with multiple options 1`] = `
             class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT space-x-4"
           >
             <div
-              class="Avatar__AvatarWrapper-sc-1vsy2s2-0 cjwvlc"
+              class="Avatar__AvatarWrapper-sc-1vsy2s2-0 ktCSBk"
               data-testid="Avatar"
             >
               <div
-                class="w-full h-full"
+                class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
               >
                 <img
                   alt="D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib"
@@ -1359,7 +1379,7 @@ exports[`ContactListItem should render with multiple options 1`] = `
             class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT space-x-2 text-sm font-bold justify-center"
           >
             <div
-              class="Circle-uw7h4j-0 cLIJTV border-black"
+              class="Circle__CircleWrapper-uw7h4j-0 jECrxL border-black ring-theme-background"
             >
               <div
                 class="sc-bdfBwQ catSEV"
@@ -1428,7 +1448,7 @@ exports[`ContactListItem should render with multiple options 1`] = `
         </td>
       </tr>
       <tr
-        class="TableRow__TableRowStyled-sc-1br46dw-0 fzBhIQ"
+        class="TableRow__TableRowStyled-sc-1br46dw-0 fzBhIQ group"
         data-testid="TableRow"
       >
         <td>
@@ -1442,7 +1462,7 @@ exports[`ContactListItem should render with multiple options 1`] = `
           >
             <div
               aria-label="ARK Devnet"
-              class="Circle-uw7h4j-0 hvqrfp border-theme-primary-100 text-theme-primary-400"
+              class="Circle__CircleWrapper-uw7h4j-0 kOlXCb border-theme-primary-100 text-theme-primary-400 ring-theme-background"
               data-testid="NetworkIcon-ARK-ark.devnet"
             >
               <div
@@ -1465,11 +1485,11 @@ exports[`ContactListItem should render with multiple options 1`] = `
             class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT space-x-4"
           >
             <div
-              class="Avatar__AvatarWrapper-sc-1vsy2s2-0 cjwvlc"
+              class="Avatar__AvatarWrapper-sc-1vsy2s2-0 ktCSBk"
               data-testid="Avatar"
             >
               <div
-                class="w-full h-full"
+                class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
               >
                 <img
                   alt="DKrACQw7ytoU2gjppy3qKeE2dQhZjfXYqu"
@@ -1587,7 +1607,7 @@ exports[`ContactListItem should render with one option 1`] = `
   <table>
     <tbody>
       <tr
-        class="TableRow__TableRowStyled-sc-1br46dw-0 dLjWKP"
+        class="TableRow__TableRowStyled-sc-1br46dw-0 dLjWKP group"
         data-testid="TableRow"
       >
         <td>
@@ -1595,19 +1615,23 @@ exports[`ContactListItem should render with one option 1`] = `
             class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 DpDcR space-x-4"
           >
             <div
-              class="Avatar__AvatarWrapper-sc-1vsy2s2-0 cjwvlc"
-              data-testid="ContactListItem__user--avatar"
+              class="Avatar__AvatarWrapper-sc-1vsy2s2-0 ktCSBk"
+              data-testid="Avatar"
             >
-              <img
-                alt="Brian"
-                src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(0, 188, 212)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"60\\" cx=\\"0\\" cy=\\"50\\" fill=\\"rgb(139, 195, 74)\\"/><circle r=\\"45\\" cx=\\"30\\" cy=\\"70\\" fill=\\"rgb(255, 193, 7)\\"/><circle r=\\"40\\" cx=\\"60\\" cy=\\"30\\" fill=\\"rgb(233, 30, 99)\\"/></svg>"
-                title="Brian"
-              />
-              <span
-                class="absolute text-sm font-semibold text-theme-background"
+              <div
+                class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
               >
-                BR
-              </span>
+                <img
+                  alt="Brian"
+                  src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(0, 188, 212)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"60\\" cx=\\"0\\" cy=\\"50\\" fill=\\"rgb(139, 195, 74)\\"/><circle r=\\"45\\" cx=\\"30\\" cy=\\"70\\" fill=\\"rgb(255, 193, 7)\\"/><circle r=\\"40\\" cx=\\"60\\" cy=\\"30\\" fill=\\"rgb(233, 30, 99)\\"/></svg>"
+                  title="Brian"
+                />
+                <span
+                  class="absolute text-sm font-semibold text-theme-background"
+                >
+                  BR
+                </span>
+              </div>
             </div>
             <span
               class="font-semibold"
@@ -1623,7 +1647,7 @@ exports[`ContactListItem should render with one option 1`] = `
           >
             <div
               aria-label="ARK Devnet"
-              class="Circle-uw7h4j-0 hvqrfp border-theme-primary-100 text-theme-primary-400"
+              class="Circle__CircleWrapper-uw7h4j-0 kOlXCb border-theme-primary-100 text-theme-primary-400 ring-theme-background"
               data-testid="NetworkIcon-ARK-ark.devnet"
             >
               <div
@@ -1646,11 +1670,11 @@ exports[`ContactListItem should render with one option 1`] = `
             class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT space-x-4"
           >
             <div
-              class="Avatar__AvatarWrapper-sc-1vsy2s2-0 cjwvlc"
+              class="Avatar__AvatarWrapper-sc-1vsy2s2-0 ktCSBk"
               data-testid="Avatar"
             >
               <div
-                class="w-full h-full"
+                class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
               >
                 <img
                   alt="D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib"
@@ -1704,7 +1728,7 @@ exports[`ContactListItem should render with one option 1`] = `
             class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT space-x-2 text-sm font-bold justify-center"
           >
             <div
-              class="Circle-uw7h4j-0 cLIJTV border-black"
+              class="Circle__CircleWrapper-uw7h4j-0 jECrxL border-black ring-theme-background"
             >
               <div
                 class="sc-bdfBwQ catSEV"
@@ -1758,7 +1782,7 @@ exports[`ContactListItem should render with one option 1`] = `
         </td>
       </tr>
       <tr
-        class="TableRow__TableRowStyled-sc-1br46dw-0 dLjWKP"
+        class="TableRow__TableRowStyled-sc-1br46dw-0 dLjWKP group"
         data-testid="TableRow"
       >
         <td>
@@ -1772,7 +1796,7 @@ exports[`ContactListItem should render with one option 1`] = `
           >
             <div
               aria-label="ARK Devnet"
-              class="Circle-uw7h4j-0 hvqrfp border-theme-primary-100 text-theme-primary-400"
+              class="Circle__CircleWrapper-uw7h4j-0 kOlXCb border-theme-primary-100 text-theme-primary-400 ring-theme-background"
               data-testid="NetworkIcon-ARK-ark.devnet"
             >
               <div
@@ -1795,11 +1819,11 @@ exports[`ContactListItem should render with one option 1`] = `
             class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT space-x-4"
           >
             <div
-              class="Avatar__AvatarWrapper-sc-1vsy2s2-0 cjwvlc"
+              class="Avatar__AvatarWrapper-sc-1vsy2s2-0 ktCSBk"
               data-testid="Avatar"
             >
               <div
-                class="w-full h-full"
+                class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
               >
                 <img
                   alt="D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib"
@@ -1853,7 +1877,7 @@ exports[`ContactListItem should render with one option 1`] = `
             class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT space-x-2 text-sm font-bold justify-center"
           >
             <div
-              class="Circle-uw7h4j-0 cLIJTV border-black"
+              class="Circle__CircleWrapper-uw7h4j-0 jECrxL border-black ring-theme-background"
             >
               <div
                 class="sc-bdfBwQ catSEV"
@@ -1907,7 +1931,7 @@ exports[`ContactListItem should render with one option 1`] = `
         </td>
       </tr>
       <tr
-        class="TableRow__TableRowStyled-sc-1br46dw-0 fzBhIQ"
+        class="TableRow__TableRowStyled-sc-1br46dw-0 fzBhIQ group"
         data-testid="TableRow"
       >
         <td>
@@ -1921,7 +1945,7 @@ exports[`ContactListItem should render with one option 1`] = `
           >
             <div
               aria-label="ARK Devnet"
-              class="Circle-uw7h4j-0 hvqrfp border-theme-primary-100 text-theme-primary-400"
+              class="Circle__CircleWrapper-uw7h4j-0 kOlXCb border-theme-primary-100 text-theme-primary-400 ring-theme-background"
               data-testid="NetworkIcon-ARK-ark.devnet"
             >
               <div
@@ -1944,11 +1968,11 @@ exports[`ContactListItem should render with one option 1`] = `
             class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT space-x-4"
           >
             <div
-              class="Avatar__AvatarWrapper-sc-1vsy2s2-0 cjwvlc"
+              class="Avatar__AvatarWrapper-sc-1vsy2s2-0 ktCSBk"
               data-testid="Avatar"
             >
               <div
-                class="w-full h-full"
+                class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
               >
                 <img
                   alt="DKrACQw7ytoU2gjppy3qKeE2dQhZjfXYqu"

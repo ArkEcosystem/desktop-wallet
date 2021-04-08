@@ -5,7 +5,7 @@ import { Page, Section } from "app/components/Layout";
 import { StepIndicator } from "app/components/StepIndicator";
 import { TabPanel, Tabs } from "app/components/Tabs";
 import { useEnvironmentContext } from "app/contexts";
-import { useActiveProfile } from "app/hooks";
+import { useActiveProfile, useProfileUtils } from "app/hooks";
 import { useWalletConfig } from "domains/dashboard/hooks";
 import { EncryptPasswordStep } from "domains/wallet/components/EncryptPasswordStep";
 import { NetworkStep } from "domains/wallet/components/NetworkStep";
@@ -19,13 +19,15 @@ import { SuccessStep } from "./SuccessStep";
 import { WalletOverviewStep } from "./WalletOverviewStep";
 
 export const CreateWallet = () => {
-	const { persist } = useEnvironmentContext();
+	const { env, persist } = useEnvironmentContext();
 	const history = useHistory();
 	const { t } = useTranslation();
 
 	const [activeTab, setActiveTab] = useState(1);
 	const [encryptionPassword, setEncryptionPassword] = useState<string>();
 	const activeProfile = useActiveProfile();
+	const { saveProfile } = useProfileUtils(env);
+
 	const nameMaxLength = 42;
 
 	const { selectedNetworkIds, setValue: setConfiguration } = useWalletConfig({ profile: activeProfile });
@@ -68,6 +70,8 @@ export const CreateWallet = () => {
 		}
 
 		setConfiguration("selectedNetworkIds", uniq([...selectedNetworkIds, wallet.network().id()]));
+
+		saveProfile(activeProfile);
 
 		await persist();
 

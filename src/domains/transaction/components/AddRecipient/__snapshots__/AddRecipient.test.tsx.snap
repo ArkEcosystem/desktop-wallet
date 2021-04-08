@@ -109,26 +109,26 @@ exports[`AddRecipient should render 1`] = `
                   <div
                     aria-expanded="false"
                     aria-haspopup="listbox"
-                    aria-owns="downshift-1-menu"
+                    aria-owns="downshift-0-menu"
                     role="combobox"
                   >
                     <label
                       for="downshift-0-input"
-                      id="downshift-1-label"
+                      id="downshift-0-label"
                     />
                     <div
                       class="Input__InputWrapperStyled-wu99qs-0 jba-du"
                     >
                       <div
-                        class="Circle-uw7h4j-0 blBpcG bg-theme-secondary-200 dark:bg-theme-secondary-700 border-theme-secondary-200 dark:border-theme-secondary-700"
+                        class="Circle__CircleWrapper-uw7h4j-0 grnDUY bg-theme-secondary-200 dark:bg-theme-secondary-700 border-theme-secondary-200 dark:border-theme-secondary-700 ring-theme-background"
                       />
                       <div
                         class="relative flex flex-1 h-full"
                       >
                         <input
                           aria-autocomplete="list"
-                          aria-controls="downshift-1-menu"
-                          aria-labelledby="downshift-1-label"
+                          aria-controls="downshift-0-menu"
+                          aria-labelledby="downshift-0-label"
                           autocomplete="off"
                           class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full cursor-default"
                           data-testid="SelectDropdownInput__input"
@@ -162,9 +162,9 @@ exports[`AddRecipient should render 1`] = `
                       </div>
                     </div>
                     <ul
-                      aria-labelledby="downshift-1-label"
-                      class="styles__SelectOptionsList-b2falt-0 heJAAA"
-                      id="downshift-1-menu"
+                      aria-labelledby="downshift-0-label"
+                      class="styles__SelectOptionsList-b2falt-0 cUNLQk"
+                      id="downshift-0-menu"
                       role="listbox"
                     />
                   </div>
@@ -357,30 +357,30 @@ exports[`AddRecipient should render with multiple recipients tab 1`] = `
                   <div
                     aria-expanded="false"
                     aria-haspopup="listbox"
-                    aria-owns="downshift-15-menu"
+                    aria-owns="downshift-7-menu"
                     role="combobox"
                   >
                     <label
-                      for="downshift-14-input"
-                      id="downshift-15-label"
+                      for="downshift-7-input"
+                      id="downshift-7-label"
                     />
                     <div
                       class="Input__InputWrapperStyled-wu99qs-0 jba-du"
                     >
                       <div
-                        class="Circle-uw7h4j-0 blBpcG bg-theme-secondary-200 dark:bg-theme-secondary-700 border-theme-secondary-200 dark:border-theme-secondary-700"
+                        class="Circle__CircleWrapper-uw7h4j-0 grnDUY bg-theme-secondary-200 dark:bg-theme-secondary-700 border-theme-secondary-200 dark:border-theme-secondary-700 ring-theme-background"
                       />
                       <div
                         class="relative flex flex-1 h-full"
                       >
                         <input
                           aria-autocomplete="list"
-                          aria-controls="downshift-15-menu"
-                          aria-labelledby="downshift-15-label"
+                          aria-controls="downshift-7-menu"
+                          aria-labelledby="downshift-7-label"
                           autocomplete="off"
                           class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full cursor-default"
                           data-testid="SelectDropdownInput__input"
-                          id="downshift-14-input"
+                          id="downshift-7-input"
                           name="recipientAddress"
                           placeholder="Address"
                           value=""
@@ -410,9 +410,9 @@ exports[`AddRecipient should render with multiple recipients tab 1`] = `
                       </div>
                     </div>
                     <ul
-                      aria-labelledby="downshift-15-label"
-                      class="styles__SelectOptionsList-b2falt-0 heJAAA"
-                      id="downshift-15-menu"
+                      aria-labelledby="downshift-7-label"
+                      class="styles__SelectOptionsList-b2falt-0 cUNLQk"
+                      id="downshift-7-menu"
                       role="listbox"
                     />
                   </div>
@@ -605,22 +605,22 @@ exports[`AddRecipient should render with single recipient data 1`] = `
                   <div
                     aria-expanded="false"
                     aria-haspopup="listbox"
-                    aria-owns="downshift-9-menu"
+                    aria-owns="downshift-4-menu"
                     role="combobox"
                   >
                     <label
-                      for="downshift-8-input"
-                      id="downshift-9-label"
+                      for="downshift-4-input"
+                      id="downshift-4-label"
                     />
                     <div
                       class="Input__InputWrapperStyled-wu99qs-0 jba-du"
                     >
                       <div
-                        class="Avatar__AvatarWrapper-sc-1vsy2s2-0 kvvaRs"
+                        class="Avatar__AvatarWrapper-sc-1vsy2s2-0 khDjUE"
                         data-testid="Avatar"
                       >
                         <div
-                          class="w-full h-full"
+                          class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
                         >
                           <img
                             alt="D6Z26L69gdk9qYmTv5uzk3uGepigtHY4ax"
@@ -634,12 +634,12 @@ exports[`AddRecipient should render with single recipient data 1`] = `
                       >
                         <input
                           aria-autocomplete="list"
-                          aria-controls="downshift-9-menu"
-                          aria-labelledby="downshift-9-label"
+                          aria-controls="downshift-4-menu"
+                          aria-labelledby="downshift-4-label"
                           autocomplete="off"
                           class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full cursor-default"
                           data-testid="SelectDropdownInput__input"
-                          id="downshift-8-input"
+                          id="downshift-4-input"
                           name="recipientAddress"
                           placeholder="Address"
                           value="D6Z26L69gdk9qYmTv5uzk3uGepigtHY4ax"
@@ -669,9 +669,9 @@ exports[`AddRecipient should render with single recipient data 1`] = `
                       </div>
                     </div>
                     <ul
-                      aria-labelledby="downshift-9-label"
-                      class="styles__SelectOptionsList-b2falt-0 heJAAA"
-                      id="downshift-9-menu"
+                      aria-labelledby="downshift-4-label"
+                      class="styles__SelectOptionsList-b2falt-0 cUNLQk"
+                      id="downshift-4-menu"
                       role="listbox"
                     />
                   </div>
@@ -864,30 +864,30 @@ exports[`AddRecipient should render without recipients 1`] = `
                   <div
                     aria-expanded="false"
                     aria-haspopup="listbox"
-                    aria-owns="downshift-5-menu"
+                    aria-owns="downshift-2-menu"
                     role="combobox"
                   >
                     <label
-                      for="downshift-4-input"
-                      id="downshift-5-label"
+                      for="downshift-2-input"
+                      id="downshift-2-label"
                     />
                     <div
                       class="Input__InputWrapperStyled-wu99qs-0 jba-du"
                     >
                       <div
-                        class="Circle-uw7h4j-0 blBpcG bg-theme-secondary-200 dark:bg-theme-secondary-700 border-theme-secondary-200 dark:border-theme-secondary-700"
+                        class="Circle__CircleWrapper-uw7h4j-0 grnDUY bg-theme-secondary-200 dark:bg-theme-secondary-700 border-theme-secondary-200 dark:border-theme-secondary-700 ring-theme-background"
                       />
                       <div
                         class="relative flex flex-1 h-full"
                       >
                         <input
                           aria-autocomplete="list"
-                          aria-controls="downshift-5-menu"
-                          aria-labelledby="downshift-5-label"
+                          aria-controls="downshift-2-menu"
+                          aria-labelledby="downshift-2-label"
                           autocomplete="off"
                           class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full cursor-default"
                           data-testid="SelectDropdownInput__input"
-                          id="downshift-4-input"
+                          id="downshift-2-input"
                           name="recipientAddress"
                           placeholder="Address"
                           value=""
@@ -917,9 +917,9 @@ exports[`AddRecipient should render without recipients 1`] = `
                       </div>
                     </div>
                     <ul
-                      aria-labelledby="downshift-5-label"
-                      class="styles__SelectOptionsList-b2falt-0 heJAAA"
-                      id="downshift-5-menu"
+                      aria-labelledby="downshift-2-label"
+                      class="styles__SelectOptionsList-b2falt-0 cUNLQk"
+                      id="downshift-2-menu"
                       role="listbox"
                     />
                   </div>
@@ -1058,30 +1058,30 @@ exports[`AddRecipient should render without the single & multiple tabs 1`] = `
                   <div
                     aria-expanded="false"
                     aria-haspopup="listbox"
-                    aria-owns="downshift-19-menu"
+                    aria-owns="downshift-9-menu"
                     role="combobox"
                   >
                     <label
-                      for="downshift-18-input"
-                      id="downshift-19-label"
+                      for="downshift-9-input"
+                      id="downshift-9-label"
                     />
                     <div
                       class="Input__InputWrapperStyled-wu99qs-0 jba-du"
                     >
                       <div
-                        class="Circle-uw7h4j-0 blBpcG bg-theme-secondary-200 dark:bg-theme-secondary-700 border-theme-secondary-200 dark:border-theme-secondary-700"
+                        class="Circle__CircleWrapper-uw7h4j-0 grnDUY bg-theme-secondary-200 dark:bg-theme-secondary-700 border-theme-secondary-200 dark:border-theme-secondary-700 ring-theme-background"
                       />
                       <div
                         class="relative flex flex-1 h-full"
                       >
                         <input
                           aria-autocomplete="list"
-                          aria-controls="downshift-19-menu"
-                          aria-labelledby="downshift-19-label"
+                          aria-controls="downshift-9-menu"
+                          aria-labelledby="downshift-9-label"
                           autocomplete="off"
                           class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full cursor-default"
                           data-testid="SelectDropdownInput__input"
-                          id="downshift-18-input"
+                          id="downshift-9-input"
                           name="recipientAddress"
                           placeholder="Address"
                           value=""
@@ -1111,9 +1111,9 @@ exports[`AddRecipient should render without the single & multiple tabs 1`] = `
                       </div>
                     </div>
                     <ul
-                      aria-labelledby="downshift-19-label"
-                      class="styles__SelectOptionsList-b2falt-0 heJAAA"
-                      id="downshift-19-menu"
+                      aria-labelledby="downshift-9-label"
+                      class="styles__SelectOptionsList-b2falt-0 cUNLQk"
+                      id="downshift-9-menu"
                       role="listbox"
                     />
                   </div>
@@ -1306,30 +1306,30 @@ exports[`AddRecipient should set available amount 1`] = `
                   <div
                     aria-expanded="false"
                     aria-haspopup="listbox"
-                    aria-owns="downshift-47-menu"
+                    aria-owns="downshift-23-menu"
                     role="combobox"
                   >
                     <label
-                      for="downshift-46-input"
-                      id="downshift-47-label"
+                      for="downshift-23-input"
+                      id="downshift-23-label"
                     />
                     <div
                       class="Input__InputWrapperStyled-wu99qs-0 jba-du"
                     >
                       <div
-                        class="Circle-uw7h4j-0 blBpcG bg-theme-secondary-200 dark:bg-theme-secondary-700 border-theme-secondary-200 dark:border-theme-secondary-700"
+                        class="Circle__CircleWrapper-uw7h4j-0 grnDUY bg-theme-secondary-200 dark:bg-theme-secondary-700 border-theme-secondary-200 dark:border-theme-secondary-700 ring-theme-background"
                       />
                       <div
                         class="relative flex flex-1 h-full"
                       >
                         <input
                           aria-autocomplete="list"
-                          aria-controls="downshift-47-menu"
-                          aria-labelledby="downshift-47-label"
+                          aria-controls="downshift-23-menu"
+                          aria-labelledby="downshift-23-label"
                           autocomplete="off"
                           class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full cursor-default"
                           data-testid="SelectDropdownInput__input"
-                          id="downshift-46-input"
+                          id="downshift-23-input"
                           name="recipientAddress"
                           placeholder="Address"
                           value=""
@@ -1359,9 +1359,9 @@ exports[`AddRecipient should set available amount 1`] = `
                       </div>
                     </div>
                     <ul
-                      aria-labelledby="downshift-47-label"
-                      class="styles__SelectOptionsList-b2falt-0 heJAAA"
-                      id="downshift-47-menu"
+                      aria-labelledby="downshift-23-label"
+                      class="styles__SelectOptionsList-b2falt-0 cUNLQk"
+                      id="downshift-23-menu"
                       role="listbox"
                     />
                   </div>
@@ -1554,30 +1554,30 @@ exports[`AddRecipient should show zero amount if wallet has zero or insufficient
                   <div
                     aria-expanded="false"
                     aria-haspopup="listbox"
-                    aria-owns="downshift-51-menu"
+                    aria-owns="downshift-25-menu"
                     role="combobox"
                   >
                     <label
-                      for="downshift-50-input"
-                      id="downshift-51-label"
+                      for="downshift-25-input"
+                      id="downshift-25-label"
                     />
                     <div
                       class="Input__InputWrapperStyled-wu99qs-0 jba-du"
                     >
                       <div
-                        class="Circle-uw7h4j-0 blBpcG bg-theme-secondary-200 dark:bg-theme-secondary-700 border-theme-secondary-200 dark:border-theme-secondary-700"
+                        class="Circle__CircleWrapper-uw7h4j-0 grnDUY bg-theme-secondary-200 dark:bg-theme-secondary-700 border-theme-secondary-200 dark:border-theme-secondary-700 ring-theme-background"
                       />
                       <div
                         class="relative flex flex-1 h-full"
                       >
                         <input
                           aria-autocomplete="list"
-                          aria-controls="downshift-51-menu"
-                          aria-labelledby="downshift-51-label"
+                          aria-controls="downshift-25-menu"
+                          aria-labelledby="downshift-25-label"
                           autocomplete="off"
                           class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full cursor-default"
                           data-testid="SelectDropdownInput__input"
-                          id="downshift-50-input"
+                          id="downshift-25-input"
                           name="recipientAddress"
                           placeholder="Address"
                           value=""
@@ -1607,9 +1607,9 @@ exports[`AddRecipient should show zero amount if wallet has zero or insufficient
                       </div>
                     </div>
                     <ul
-                      aria-labelledby="downshift-51-label"
-                      class="styles__SelectOptionsList-b2falt-0 heJAAA"
-                      id="downshift-51-menu"
+                      aria-labelledby="downshift-25-label"
+                      class="styles__SelectOptionsList-b2falt-0 cUNLQk"
+                      id="downshift-25-menu"
                       role="listbox"
                     />
                   </div>

@@ -19,7 +19,7 @@ exports[`SignIn should render a modal 1`] = `
         class="absolute top-0 right-0 z-50 mt-5 mr-5 rounded transition-all duration-100 ease-linear bg-theme-primary-100 hover:bg-theme-primary-300 dark:bg-theme-secondary-800 dark:text-theme-secondary-600 dark:hover:bg-theme-secondary-700 dark:hover:text-theme-secondary-400"
       >
         <button
-          class="OriginalButton__StyledButton-sc-1y2wptt-0 fmvKKh w-11 h-11"
+          class="OriginalButton__StyledButton-sc-1y2wptt-0 lpqSIM w-11 h-11"
           data-testid="modal__close-btn"
           type="button"
         >
@@ -61,19 +61,24 @@ exports[`SignIn should render a modal 1`] = `
               class="flex items-center space-x-3"
             >
               <div
-                class="Avatar__AvatarWrapper-sc-1vsy2s2-0 gyYbkb"
-                data-testid="ProfileAvatar__svg"
+                class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB"
+                data-testid="Avatar"
               >
-                <img
-                  alt="Jane Doe"
-                  src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(0, 150, 136)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"55\\" cx=\\"20\\" cy=\\"60\\" fill=\\"rgb(233, 30, 99)\\"/><circle r=\\"60\\" cx=\\"50\\" cy=\\"70\\" fill=\\"rgb(255, 193, 7)\\"/><circle r=\\"45\\" cx=\\"30\\" cy=\\"30\\" fill=\\"rgb(63, 81, 181)\\"/></svg>"
-                  title="Jane Doe"
-                />
-                <span
-                  class="absolute font-semibold text-white"
+                <div
+                  class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
                 >
-                  JA
-                </span>
+                  <img
+                    alt="Jane Doe"
+                    data-testid="ProfileAvatar__svg"
+                    src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(0, 150, 136)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"55\\" cx=\\"20\\" cy=\\"60\\" fill=\\"rgb(233, 30, 99)\\"/><circle r=\\"60\\" cx=\\"50\\" cy=\\"70\\" fill=\\"rgb(255, 193, 7)\\"/><circle r=\\"45\\" cx=\\"30\\" cy=\\"30\\" fill=\\"rgb(63, 81, 181)\\"/></svg>"
+                    title="Jane Doe"
+                  />
+                  <span
+                    class="absolute font-semibold text-white"
+                  >
+                    JA
+                  </span>
+                </div>
               </div>
               <div
                 class="flex flex-col"

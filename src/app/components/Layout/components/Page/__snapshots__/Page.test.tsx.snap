@@ -143,7 +143,7 @@ exports[`Page should render 1`] = `
               class="flex my-0.5 ml-4 -space-x-2"
             >
               <div
-                class="Circle-uw7h4j-0 JkqUV border-theme-primary-100 dark:border-theme-secondary-800"
+                class="Circle__CircleWrapper-uw7h4j-0 bNDQMV border-theme-primary-100 dark:border-theme-secondary-800 ring-theme-background"
               >
                 <span
                   class="text-theme-secondary-text dark:text-theme-secondary-800"
@@ -160,12 +160,17 @@ exports[`Page should render 1`] = `
                     data-testid="navbar__useractions"
                   >
                     <div
-                      class="Avatar__AvatarWrapper-sc-1vsy2s2-0 gyYbkb"
+                      class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB"
+                      data-testid="Avatar"
                     >
-                      <img
-                        alt="Profile Avatar"
-                        class="object-cover w-11 h-11 bg-center bg-no-repeat bg-cover rounded-full"
-                      />
+                      <div
+                        class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
+                      >
+                        <img
+                          alt="Profile Avatar"
+                          class="object-cover w-11 h-11 bg-center bg-no-repeat bg-cover rounded-full"
+                        />
+                      </div>
                     </div>
                   </div>
                 </span>
@@ -340,7 +345,7 @@ exports[`Page should render without sidebar 1`] = `
               class="flex my-0.5 ml-4 -space-x-2"
             >
               <div
-                class="Circle-uw7h4j-0 JkqUV border-theme-primary-100 dark:border-theme-secondary-800"
+                class="Circle__CircleWrapper-uw7h4j-0 bNDQMV border-theme-primary-100 dark:border-theme-secondary-800 ring-theme-background"
               >
                 <span
                   class="text-theme-secondary-text dark:text-theme-secondary-800"
@@ -357,12 +362,17 @@ exports[`Page should render without sidebar 1`] = `
                     data-testid="navbar__useractions"
                   >
                     <div
-                      class="Avatar__AvatarWrapper-sc-1vsy2s2-0 gyYbkb"
+                      class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB"
+                      data-testid="Avatar"
                     >
-                      <img
-                        alt="Profile Avatar"
-                        class="object-cover w-11 h-11 bg-center bg-no-repeat bg-cover rounded-full"
-                      />
+                      <div
+                        class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
+                      >
+                        <img
+                          alt="Profile Avatar"
+                          class="object-cover w-11 h-11 bg-center bg-no-repeat bg-cover rounded-full"
+                        />
+                      </div>
                     </div>
                   </div>
                 </span>

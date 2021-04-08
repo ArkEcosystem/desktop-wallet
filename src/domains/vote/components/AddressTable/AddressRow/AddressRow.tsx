@@ -10,7 +10,6 @@ import { Tooltip } from "app/components/Tooltip";
 import { useEnvironmentContext } from "app/contexts";
 import React, { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
-import { shouldUseDarkColors } from "utils/electron-utils";
 
 type AddressRowProps = {
 	index: number;
@@ -23,7 +22,6 @@ export const AddressRow = ({ index, maxVotes, wallet, onSelect }: AddressRowProp
 	const { t } = useTranslation();
 	const { env } = useEnvironmentContext();
 
-	const [shadowColor, setShadowColor] = useState("--theme-background-color");
 	const [votes, setVotes] = useState<Contracts.IReadOnlyWallet[]>([]);
 
 	const getIconName = (type: string) => {
@@ -61,7 +59,7 @@ export const AddressRow = ({ index, maxVotes, wallet, onSelect }: AddressRowProp
 	const renderAvatar = (address: string, username?: string) => (
 		<Tooltip content={username}>
 			<span className="inline-block">
-				<Avatar size="lg" address={address} shadowColor={shadowColor} />
+				<Avatar size="lg" address={address} />
 			</span>
 		</Tooltip>
 	);
@@ -75,10 +73,7 @@ export const AddressRow = ({ index, maxVotes, wallet, onSelect }: AddressRowProp
 	);
 
 	return (
-		<TableRow
-			onMouseEnter={() => setShadowColor(shouldUseDarkColors() ? "--theme-black" : "--theme-color-secondary-100")}
-			onMouseLeave={() => setShadowColor("")}
-		>
+		<TableRow>
 			<TableCell variant="start" innerClassName="space-x-4">
 				<Avatar size="lg" address={wallet.address()} noShadow />
 				<Address address={wallet.address()} walletName={wallet.alias()} />
@@ -119,11 +114,7 @@ export const AddressRow = ({ index, maxVotes, wallet, onSelect }: AddressRowProp
 								{rest && rest.length === 1 && renderAvatar(rest[0].address(), rest[0].username())}
 
 								{rest && rest.length > 1 && (
-									<Circle
-										size="lg"
-										className="relative border-theme-text text-theme-text"
-										shadowColor={shadowColor}
-									>
+									<Circle size="lg" className="relative border-theme-text text-theme-text">
 										<span className="font-semibold">+{rest.length}</span>
 									</Circle>
 								)}

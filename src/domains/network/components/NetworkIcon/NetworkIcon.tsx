@@ -11,10 +11,10 @@ type Props = {
 	as?: React.ElementType;
 	size?: Size;
 	className?: string;
+	shadowClassName?: string;
 	iconSize?: number;
 	showTooltip?: boolean;
 	noShadow?: boolean;
-	shadowColor?: string;
 };
 
 const Placeholder = (props: CircleProps) => (

@@ -17,7 +17,7 @@ exports[`SearchWallet uses fiat value = false should render 1`] = `
         class="absolute top-0 right-0 z-50 mt-5 mr-5 rounded transition-all duration-100 ease-linear bg-theme-primary-100 hover:bg-theme-primary-300 dark:bg-theme-secondary-800 dark:text-theme-secondary-600 dark:hover:bg-theme-secondary-700 dark:hover:text-theme-secondary-400"
       >
         <button
-          class="OriginalButton__StyledButton-sc-1y2wptt-0 fmvKKh w-11 h-11"
+          class="OriginalButton__StyledButton-sc-1y2wptt-0 lpqSIM w-11 h-11"
           data-testid="modal__close-btn"
           type="button"
         >
@@ -181,7 +181,7 @@ exports[`SearchWallet uses fiat value = false should render 1`] = `
                   role="rowgroup"
                 >
                   <tr
-                    class="TableRow__TableRowStyled-sc-1br46dw-0 fzBhIQ"
+                    class="TableRow__TableRowStyled-sc-1br46dw-0 fzBhIQ group"
                     data-testid="TableRow"
                   >
                     <td>
@@ -193,7 +193,7 @@ exports[`SearchWallet uses fiat value = false should render 1`] = `
                         >
                           <div
                             aria-label="ARK Devnet"
-                            class="Circle-uw7h4j-0 JkqUV border-theme-primary-100 text-theme-primary-400"
+                            class="Circle__CircleWrapper-uw7h4j-0 bNDQMV border-theme-primary-100 text-theme-primary-400 ring-theme-background"
                             data-testid="NetworkIcon-ARK-ark.devnet"
                           >
                             <div
@@ -208,11 +208,11 @@ exports[`SearchWallet uses fiat value = false should render 1`] = `
                             </div>
                           </div>
                           <div
-                            class="Avatar__AvatarWrapper-sc-1vsy2s2-0 gyYbkb"
+                            class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB"
                             data-testid="Avatar"
                           >
                             <div
-                              class="w-full h-full"
+                              class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
                             >
                               <img
                                 alt="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
@@ -275,7 +275,7 @@ exports[`SearchWallet uses fiat value = false should render 1`] = `
                     </td>
                   </tr>
                   <tr
-                    class="TableRow__TableRowStyled-sc-1br46dw-0 fzBhIQ"
+                    class="TableRow__TableRowStyled-sc-1br46dw-0 fzBhIQ group"
                     data-testid="TableRow"
                   >
                     <td>
@@ -287,7 +287,7 @@ exports[`SearchWallet uses fiat value = false should render 1`] = `
                         >
                           <div
                             aria-label="ARK Devnet"
-                            class="Circle-uw7h4j-0 JkqUV border-theme-primary-100 text-theme-primary-400"
+                            class="Circle__CircleWrapper-uw7h4j-0 bNDQMV border-theme-primary-100 text-theme-primary-400 ring-theme-background"
                             data-testid="NetworkIcon-ARK-ark.devnet"
                           >
                             <div
@@ -302,11 +302,11 @@ exports[`SearchWallet uses fiat value = false should render 1`] = `
                             </div>
                           </div>
                           <div
-                            class="Avatar__AvatarWrapper-sc-1vsy2s2-0 gyYbkb"
+                            class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB"
                             data-testid="Avatar"
                           >
                             <div
-                              class="w-full h-full"
+                              class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
                             >
                               <img
                                 alt="D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb"
@@ -396,7 +396,7 @@ exports[`SearchWallet uses fiat value = false should render with the default exc
         class="absolute top-0 right-0 z-50 mt-5 mr-5 rounded transition-all duration-100 ease-linear bg-theme-primary-100 hover:bg-theme-primary-300 dark:bg-theme-secondary-800 dark:text-theme-secondary-600 dark:hover:bg-theme-secondary-700 dark:hover:text-theme-secondary-400"
       >
         <button
-          class="OriginalButton__StyledButton-sc-1y2wptt-0 fmvKKh w-11 h-11"
+          class="OriginalButton__StyledButton-sc-1y2wptt-0 lpqSIM w-11 h-11"
           data-testid="modal__close-btn"
           type="button"
         >
@@ -560,7 +560,7 @@ exports[`SearchWallet uses fiat value = false should render with the default exc
                   role="rowgroup"
                 >
                   <tr
-                    class="TableRow__TableRowStyled-sc-1br46dw-0 fzBhIQ"
+                    class="TableRow__TableRowStyled-sc-1br46dw-0 fzBhIQ group"
                     data-testid="TableRow"
                   >
                     <td>
@@ -572,7 +572,7 @@ exports[`SearchWallet uses fiat value = false should render with the default exc
                         >
                           <div
                             aria-label="ARK Devnet"
-                            class="Circle-uw7h4j-0 JkqUV border-theme-primary-100 text-theme-primary-400"
+                            class="Circle__CircleWrapper-uw7h4j-0 bNDQMV border-theme-primary-100 text-theme-primary-400 ring-theme-background"
                             data-testid="NetworkIcon-ARK-ark.devnet"
                           >
                             <div
@@ -587,11 +587,11 @@ exports[`SearchWallet uses fiat value = false should render with the default exc
                             </div>
                           </div>
                           <div
-                            class="Avatar__AvatarWrapper-sc-1vsy2s2-0 gyYbkb"
+                            class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB"
                             data-testid="Avatar"
                           >
                             <div
-                              class="w-full h-full"
+                              class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
                             >
                               <img
                                 alt="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
@@ -654,7 +654,7 @@ exports[`SearchWallet uses fiat value = false should render with the default exc
                     </td>
                   </tr>
                   <tr
-                    class="TableRow__TableRowStyled-sc-1br46dw-0 fzBhIQ"
+                    class="TableRow__TableRowStyled-sc-1br46dw-0 fzBhIQ group"
                     data-testid="TableRow"
                   >
                     <td>
@@ -666,7 +666,7 @@ exports[`SearchWallet uses fiat value = false should render with the default exc
                         >
                           <div
                             aria-label="ARK Devnet"
-                            class="Circle-uw7h4j-0 JkqUV border-theme-primary-100 text-theme-primary-400"
+                            class="Circle__CircleWrapper-uw7h4j-0 bNDQMV border-theme-primary-100 text-theme-primary-400 ring-theme-background"
                             data-testid="NetworkIcon-ARK-ark.devnet"
                           >
                             <div
@@ -681,11 +681,11 @@ exports[`SearchWallet uses fiat value = false should render with the default exc
                             </div>
                           </div>
                           <div
-                            class="Avatar__AvatarWrapper-sc-1vsy2s2-0 gyYbkb"
+                            class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB"
                             data-testid="Avatar"
                           >
                             <div
-                              class="w-full h-full"
+                              class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
                             >
                               <img
                                 alt="D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb"
@@ -775,7 +775,7 @@ exports[`SearchWallet uses fiat value = true should render 1`] = `
         class="absolute top-0 right-0 z-50 mt-5 mr-5 rounded transition-all duration-100 ease-linear bg-theme-primary-100 hover:bg-theme-primary-300 dark:bg-theme-secondary-800 dark:text-theme-secondary-600 dark:hover:bg-theme-secondary-700 dark:hover:text-theme-secondary-400"
       >
         <button
-          class="OriginalButton__StyledButton-sc-1y2wptt-0 fmvKKh w-11 h-11"
+          class="OriginalButton__StyledButton-sc-1y2wptt-0 lpqSIM w-11 h-11"
           data-testid="modal__close-btn"
           type="button"
         >
@@ -969,7 +969,7 @@ exports[`SearchWallet uses fiat value = true should render 1`] = `
                   role="rowgroup"
                 >
                   <tr
-                    class="TableRow__TableRowStyled-sc-1br46dw-0 fzBhIQ"
+                    class="TableRow__TableRowStyled-sc-1br46dw-0 fzBhIQ group"
                     data-testid="TableRow"
                   >
                     <td>
@@ -981,7 +981,7 @@ exports[`SearchWallet uses fiat value = true should render 1`] = `
                         >
                           <div
                             aria-label="ARK Devnet"
-                            class="Circle-uw7h4j-0 JkqUV border-theme-primary-100 text-theme-primary-400"
+                            class="Circle__CircleWrapper-uw7h4j-0 bNDQMV border-theme-primary-100 text-theme-primary-400 ring-theme-background"
                             data-testid="NetworkIcon-ARK-ark.devnet"
                           >
                             <div
@@ -996,11 +996,11 @@ exports[`SearchWallet uses fiat value = true should render 1`] = `
                             </div>
                           </div>
                           <div
-                            class="Avatar__AvatarWrapper-sc-1vsy2s2-0 gyYbkb"
+                            class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB"
                             data-testid="Avatar"
                           >
                             <div
-                              class="w-full h-full"
+                              class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
                             >
                               <img
                                 alt="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
@@ -1074,7 +1074,7 @@ exports[`SearchWallet uses fiat value = true should render 1`] = `
                     </td>
                   </tr>
                   <tr
-                    class="TableRow__TableRowStyled-sc-1br46dw-0 fzBhIQ"
+                    class="TableRow__TableRowStyled-sc-1br46dw-0 fzBhIQ group"
                     data-testid="TableRow"
                   >
                     <td>
@@ -1086,7 +1086,7 @@ exports[`SearchWallet uses fiat value = true should render 1`] = `
                         >
                           <div
                             aria-label="ARK Devnet"
-                            class="Circle-uw7h4j-0 JkqUV border-theme-primary-100 text-theme-primary-400"
+                            class="Circle__CircleWrapper-uw7h4j-0 bNDQMV border-theme-primary-100 text-theme-primary-400 ring-theme-background"
                             data-testid="NetworkIcon-ARK-ark.devnet"
                           >
                             <div
@@ -1101,11 +1101,11 @@ exports[`SearchWallet uses fiat value = true should render 1`] = `
                             </div>
                           </div>
                           <div
-                            class="Avatar__AvatarWrapper-sc-1vsy2s2-0 gyYbkb"
+                            class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB"
                             data-testid="Avatar"
                           >
                             <div
-                              class="w-full h-full"
+                              class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
                             >
                               <img
                                 alt="D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb"
@@ -1206,7 +1206,7 @@ exports[`SearchWallet uses fiat value = true should render with the default exch
         class="absolute top-0 right-0 z-50 mt-5 mr-5 rounded transition-all duration-100 ease-linear bg-theme-primary-100 hover:bg-theme-primary-300 dark:bg-theme-secondary-800 dark:text-theme-secondary-600 dark:hover:bg-theme-secondary-700 dark:hover:text-theme-secondary-400"
       >
         <button
-          class="OriginalButton__StyledButton-sc-1y2wptt-0 fmvKKh w-11 h-11"
+          class="OriginalButton__StyledButton-sc-1y2wptt-0 lpqSIM w-11 h-11"
           data-testid="modal__close-btn"
           type="button"
         >
@@ -1400,7 +1400,7 @@ exports[`SearchWallet uses fiat value = true should render with the default exch
                   role="rowgroup"
                 >
                   <tr
-                    class="TableRow__TableRowStyled-sc-1br46dw-0 fzBhIQ"
+                    class="TableRow__TableRowStyled-sc-1br46dw-0 fzBhIQ group"
                     data-testid="TableRow"
                   >
                     <td>
@@ -1412,7 +1412,7 @@ exports[`SearchWallet uses fiat value = true should render with the default exch
                         >
                           <div
                             aria-label="ARK Devnet"
-                            class="Circle-uw7h4j-0 JkqUV border-theme-primary-100 text-theme-primary-400"
+                            class="Circle__CircleWrapper-uw7h4j-0 bNDQMV border-theme-primary-100 text-theme-primary-400 ring-theme-background"
                             data-testid="NetworkIcon-ARK-ark.devnet"
                           >
                             <div
@@ -1427,11 +1427,11 @@ exports[`SearchWallet uses fiat value = true should render with the default exch
                             </div>
                           </div>
                           <div
-                            class="Avatar__AvatarWrapper-sc-1vsy2s2-0 gyYbkb"
+                            class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB"
                             data-testid="Avatar"
                           >
                             <div
-                              class="w-full h-full"
+                              class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
                             >
                               <img
                                 alt="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
@@ -1505,7 +1505,7 @@ exports[`SearchWallet uses fiat value = true should render with the default exch
                     </td>
                   </tr>
                   <tr
-                    class="TableRow__TableRowStyled-sc-1br46dw-0 fzBhIQ"
+                    class="TableRow__TableRowStyled-sc-1br46dw-0 fzBhIQ group"
                     data-testid="TableRow"
                   >
                     <td>
@@ -1517,7 +1517,7 @@ exports[`SearchWallet uses fiat value = true should render with the default exch
                         >
                           <div
                             aria-label="ARK Devnet"
-                            class="Circle-uw7h4j-0 JkqUV border-theme-primary-100 text-theme-primary-400"
+                            class="Circle__CircleWrapper-uw7h4j-0 bNDQMV border-theme-primary-100 text-theme-primary-400 ring-theme-background"
                             data-testid="NetworkIcon-ARK-ark.devnet"
                           >
                             <div
@@ -1532,11 +1532,11 @@ exports[`SearchWallet uses fiat value = true should render with the default exch
                             </div>
                           </div>
                           <div
-                            class="Avatar__AvatarWrapper-sc-1vsy2s2-0 gyYbkb"
+                            class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB"
                             data-testid="Avatar"
                           >
                             <div
-                              class="w-full h-full"
+                              class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
                             >
                               <img
                                 alt="D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb"

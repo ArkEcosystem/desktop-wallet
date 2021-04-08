@@ -19,7 +19,7 @@ exports[`AddAssets should render a modal 1`] = `
         class="absolute top-0 right-0 z-50 mt-5 mr-5 rounded transition-all duration-100 ease-linear bg-theme-primary-100 hover:bg-theme-primary-300 dark:bg-theme-secondary-800 dark:text-theme-secondary-600 dark:hover:bg-theme-secondary-700 dark:hover:text-theme-secondary-400"
       >
         <button
-          class="OriginalButton__StyledButton-sc-1y2wptt-0 fmvKKh w-11 h-11"
+          class="OriginalButton__StyledButton-sc-1y2wptt-0 lpqSIM w-11 h-11"
           data-testid="modal__close-btn"
           type="button"
         >
@@ -88,7 +88,7 @@ exports[`AddAssets should render a modal 1`] = `
                     class="Input__InputWrapperStyled-wu99qs-0 jba-du"
                   >
                     <div
-                      class="Circle-uw7h4j-0 blBpcG border-theme-secondary-200 dark:border-theme-secondary-700 text-theme-secondary-500"
+                      class="Circle__CircleWrapper-uw7h4j-0 grnDUY border-theme-secondary-200 dark:border-theme-secondary-700 text-theme-secondary-500 ring-theme-background"
                       data-testid="SelectNetworkInput__network"
                     />
                     <div
@@ -149,7 +149,7 @@ exports[`AddAssets should render a modal 1`] = `
                         data-testid="NetworkOption__ARK"
                       >
                         <div
-                          class="Circle-uw7h4j-0 JkqUV relative border-theme-success-500 text-theme-success-500"
+                          class="Circle__CircleWrapper-uw7h4j-0 bNDQMV relative border-theme-success-500 text-theme-success-500 ring-theme-background"
                         >
                           <div
                             class="sc-bdfBwQ iyevwF"
@@ -161,7 +161,7 @@ exports[`AddAssets should render a modal 1`] = `
                             </svg>
                           </div>
                           <span
-                            class="Badge__Wrapper-sc-1d7juq8-0 kWIvIj flex border-2 rounded-full justify-center items-center align-middle bg-theme-background border-transparent bg-theme-success-500 text-theme-success-100"
+                            class="Badge__Wrapper-sc-1d7juq8-0 iSpNvn flex border-2 rounded-full justify-center items-center align-middle bg-theme-background border-transparent bg-theme-success-500 text-theme-success-100"
                           >
                             <div
                               class="sc-bdfBwQ fdfkzt"
@@ -181,7 +181,7 @@ exports[`AddAssets should render a modal 1`] = `
                         data-testid="NetworkOption__ETH"
                       >
                         <div
-                          class="Circle-uw7h4j-0 JkqUV relative border-theme-secondary-300 dark:border-theme-secondary-800 text-theme-secondary-300"
+                          class="Circle__CircleWrapper-uw7h4j-0 bNDQMV relative border-theme-secondary-300 dark:border-theme-secondary-800 text-theme-secondary-300 ring-theme-background"
                         >
                           <div
                             class="sc-bdfBwQ iyevwF"
@@ -193,7 +193,7 @@ exports[`AddAssets should render a modal 1`] = `
                             </svg>
                           </div>
                           <span
-                            class="Badge__Wrapper-sc-1d7juq8-0 kWIvIj flex border-2 rounded-full justify-center items-center align-middle bg-theme-background border-transparent border-theme-secondary-300 dark:border-theme-secondary-800"
+                            class="Badge__Wrapper-sc-1d7juq8-0 iSpNvn flex border-2 rounded-full justify-center items-center align-middle bg-theme-background border-transparent border-theme-secondary-300 dark:border-theme-secondary-800"
                           >
                             <span />
                           </span>
@@ -204,7 +204,7 @@ exports[`AddAssets should render a modal 1`] = `
                         data-testid="NetworkOption__BTC"
                       >
                         <div
-                          class="Circle-uw7h4j-0 JkqUV relative border-theme-secondary-300 dark:border-theme-secondary-800 text-theme-secondary-300"
+                          class="Circle__CircleWrapper-uw7h4j-0 bNDQMV relative border-theme-secondary-300 dark:border-theme-secondary-800 text-theme-secondary-300 ring-theme-background"
                         >
                           <div
                             class="sc-bdfBwQ iyevwF"
@@ -216,7 +216,7 @@ exports[`AddAssets should render a modal 1`] = `
                             </svg>
                           </div>
                           <span
-                            class="Badge__Wrapper-sc-1d7juq8-0 kWIvIj flex border-2 rounded-full justify-center items-center align-middle bg-theme-background border-transparent border-theme-secondary-300 dark:border-theme-secondary-800"
+                            class="Badge__Wrapper-sc-1d7juq8-0 iSpNvn flex border-2 rounded-full justify-center items-center align-middle bg-theme-background border-transparent border-theme-secondary-300 dark:border-theme-secondary-800"
                           >
                             <span />
                           </span>
@@ -227,7 +227,7 @@ exports[`AddAssets should render a modal 1`] = `
                         data-testid="NetworkOption__LSK"
                       >
                         <div
-                          class="Circle-uw7h4j-0 JkqUV relative border-theme-secondary-300 dark:border-theme-secondary-800 text-theme-secondary-300"
+                          class="Circle__CircleWrapper-uw7h4j-0 bNDQMV relative border-theme-secondary-300 dark:border-theme-secondary-800 text-theme-secondary-300 ring-theme-background"
                         >
                           <div
                             class="sc-bdfBwQ iyevwF"
@@ -239,7 +239,7 @@ exports[`AddAssets should render a modal 1`] = `
                             </svg>
                           </div>
                           <span
-                            class="Badge__Wrapper-sc-1d7juq8-0 kWIvIj flex border-2 rounded-full justify-center items-center align-middle bg-theme-background border-transparent border-theme-secondary-300 dark:border-theme-secondary-800"
+                            class="Badge__Wrapper-sc-1d7juq8-0 iSpNvn flex border-2 rounded-full justify-center items-center align-middle bg-theme-background border-transparent border-theme-secondary-300 dark:border-theme-secondary-800"
                           >
                             <span />
                           </span>
@@ -259,7 +259,7 @@ exports[`AddAssets should render a modal 1`] = `
                   class="flex flex-wrap -mx-3 mt-3"
                 >
                   <div
-                    class="Circle-uw7h4j-0 JkqUV relative m-3 border-theme-secondary-300 dark:border-theme-secondary-800 text-theme-secondary-300"
+                    class="Circle__CircleWrapper-uw7h4j-0 bNDQMV relative m-3 border-theme-secondary-300 dark:border-theme-secondary-800 text-theme-secondary-300 ring-theme-background"
                   >
                     <div
                       class="sc-bdfBwQ iyevwF"
@@ -271,13 +271,13 @@ exports[`AddAssets should render a modal 1`] = `
                       </svg>
                     </div>
                     <span
-                      class="Badge__Wrapper-sc-1d7juq8-0 kWIvIj flex border-2 rounded-full justify-center items-center align-middle bg-theme-background border-transparent border-theme-secondary-300 dark:border-theme-secondary-800"
+                      class="Badge__Wrapper-sc-1d7juq8-0 iSpNvn flex border-2 rounded-full justify-center items-center align-middle bg-theme-background border-transparent border-theme-secondary-300 dark:border-theme-secondary-800"
                     >
                       <span />
                     </span>
                   </div>
                   <div
-                    class="Circle-uw7h4j-0 JkqUV relative m-3 border-theme-secondary-300 dark:border-theme-secondary-800 text-theme-secondary-300"
+                    class="Circle__CircleWrapper-uw7h4j-0 bNDQMV relative m-3 border-theme-secondary-300 dark:border-theme-secondary-800 text-theme-secondary-300 ring-theme-background"
                   >
                     <div
                       class="sc-bdfBwQ iyevwF"
@@ -289,13 +289,13 @@ exports[`AddAssets should render a modal 1`] = `
                       </svg>
                     </div>
                     <span
-                      class="Badge__Wrapper-sc-1d7juq8-0 kWIvIj flex border-2 rounded-full justify-center items-center align-middle bg-theme-background border-transparent border-theme-secondary-300 dark:border-theme-secondary-800"
+                      class="Badge__Wrapper-sc-1d7juq8-0 iSpNvn flex border-2 rounded-full justify-center items-center align-middle bg-theme-background border-transparent border-theme-secondary-300 dark:border-theme-secondary-800"
                     >
                       <span />
                     </span>
                   </div>
                   <div
-                    class="Circle-uw7h4j-0 JkqUV relative m-3 border-theme-secondary-300 dark:border-theme-secondary-800 text-theme-secondary-300"
+                    class="Circle__CircleWrapper-uw7h4j-0 bNDQMV relative m-3 border-theme-secondary-300 dark:border-theme-secondary-800 text-theme-secondary-300 ring-theme-background"
                   >
                     <div
                       class="sc-bdfBwQ iyevwF"
@@ -307,13 +307,13 @@ exports[`AddAssets should render a modal 1`] = `
                       </svg>
                     </div>
                     <span
-                      class="Badge__Wrapper-sc-1d7juq8-0 kWIvIj flex border-2 rounded-full justify-center items-center align-middle bg-theme-background border-transparent border-theme-secondary-300 dark:border-theme-secondary-800"
+                      class="Badge__Wrapper-sc-1d7juq8-0 iSpNvn flex border-2 rounded-full justify-center items-center align-middle bg-theme-background border-transparent border-theme-secondary-300 dark:border-theme-secondary-800"
                     >
                       <span />
                     </span>
                   </div>
                   <div
-                    class="Circle-uw7h4j-0 JkqUV relative m-3 border-theme-secondary-300 dark:border-theme-secondary-800 text-theme-secondary-300"
+                    class="Circle__CircleWrapper-uw7h4j-0 bNDQMV relative m-3 border-theme-secondary-300 dark:border-theme-secondary-800 text-theme-secondary-300 ring-theme-background"
                   >
                     <div
                       class="sc-bdfBwQ iyevwF"
@@ -325,13 +325,13 @@ exports[`AddAssets should render a modal 1`] = `
                       </svg>
                     </div>
                     <span
-                      class="Badge__Wrapper-sc-1d7juq8-0 kWIvIj flex border-2 rounded-full justify-center items-center align-middle bg-theme-background border-transparent border-theme-secondary-300 dark:border-theme-secondary-800"
+                      class="Badge__Wrapper-sc-1d7juq8-0 iSpNvn flex border-2 rounded-full justify-center items-center align-middle bg-theme-background border-transparent border-theme-secondary-300 dark:border-theme-secondary-800"
                     >
                       <span />
                     </span>
                   </div>
                   <div
-                    class="Circle-uw7h4j-0 JkqUV relative m-3 border-theme-secondary-300 dark:border-theme-secondary-800 text-theme-secondary-300"
+                    class="Circle__CircleWrapper-uw7h4j-0 bNDQMV relative m-3 border-theme-secondary-300 dark:border-theme-secondary-800 text-theme-secondary-300 ring-theme-background"
                   >
                     <div
                       class="sc-bdfBwQ iyevwF"
@@ -343,13 +343,13 @@ exports[`AddAssets should render a modal 1`] = `
                       </svg>
                     </div>
                     <span
-                      class="Badge__Wrapper-sc-1d7juq8-0 kWIvIj flex border-2 rounded-full justify-center items-center align-middle bg-theme-background border-transparent border-theme-secondary-300 dark:border-theme-secondary-800"
+                      class="Badge__Wrapper-sc-1d7juq8-0 iSpNvn flex border-2 rounded-full justify-center items-center align-middle bg-theme-background border-transparent border-theme-secondary-300 dark:border-theme-secondary-800"
                     >
                       <span />
                     </span>
                   </div>
                   <div
-                    class="Circle-uw7h4j-0 JkqUV relative m-3 border-theme-secondary-300 dark:border-theme-secondary-800 text-theme-secondary-300"
+                    class="Circle__CircleWrapper-uw7h4j-0 bNDQMV relative m-3 border-theme-secondary-300 dark:border-theme-secondary-800 text-theme-secondary-300 ring-theme-background"
                   >
                     <div
                       class="sc-bdfBwQ iyevwF"
@@ -361,13 +361,13 @@ exports[`AddAssets should render a modal 1`] = `
                       </svg>
                     </div>
                     <span
-                      class="Badge__Wrapper-sc-1d7juq8-0 kWIvIj flex border-2 rounded-full justify-center items-center align-middle bg-theme-background border-transparent border-theme-secondary-300 dark:border-theme-secondary-800"
+                      class="Badge__Wrapper-sc-1d7juq8-0 iSpNvn flex border-2 rounded-full justify-center items-center align-middle bg-theme-background border-transparent border-theme-secondary-300 dark:border-theme-secondary-800"
                     >
                       <span />
                     </span>
                   </div>
                   <div
-                    class="Circle-uw7h4j-0 JkqUV relative m-3 border-theme-secondary-300 dark:border-theme-secondary-800 text-theme-secondary-300"
+                    class="Circle__CircleWrapper-uw7h4j-0 bNDQMV relative m-3 border-theme-secondary-300 dark:border-theme-secondary-800 text-theme-secondary-300 ring-theme-background"
                   >
                     <div
                       class="sc-bdfBwQ iyevwF"
@@ -379,13 +379,13 @@ exports[`AddAssets should render a modal 1`] = `
                       </svg>
                     </div>
                     <span
-                      class="Badge__Wrapper-sc-1d7juq8-0 kWIvIj flex border-2 rounded-full justify-center items-center align-middle bg-theme-background border-transparent border-theme-secondary-300 dark:border-theme-secondary-800"
+                      class="Badge__Wrapper-sc-1d7juq8-0 iSpNvn flex border-2 rounded-full justify-center items-center align-middle bg-theme-background border-transparent border-theme-secondary-300 dark:border-theme-secondary-800"
                     >
                       <span />
                     </span>
                   </div>
                   <div
-                    class="Circle-uw7h4j-0 JkqUV relative m-3 border-theme-secondary-300 dark:border-theme-secondary-800 text-theme-secondary-300"
+                    class="Circle__CircleWrapper-uw7h4j-0 bNDQMV relative m-3 border-theme-secondary-300 dark:border-theme-secondary-800 text-theme-secondary-300 ring-theme-background"
                   >
                     <div
                       class="sc-bdfBwQ iyevwF"
@@ -397,13 +397,13 @@ exports[`AddAssets should render a modal 1`] = `
                       </svg>
                     </div>
                     <span
-                      class="Badge__Wrapper-sc-1d7juq8-0 kWIvIj flex border-2 rounded-full justify-center items-center align-middle bg-theme-background border-transparent border-theme-secondary-300 dark:border-theme-secondary-800"
+                      class="Badge__Wrapper-sc-1d7juq8-0 iSpNvn flex border-2 rounded-full justify-center items-center align-middle bg-theme-background border-transparent border-theme-secondary-300 dark:border-theme-secondary-800"
                     >
                       <span />
                     </span>
                   </div>
                   <div
-                    class="Circle-uw7h4j-0 JkqUV relative m-3 border-theme-secondary-300 dark:border-theme-secondary-800 text-theme-secondary-300"
+                    class="Circle__CircleWrapper-uw7h4j-0 bNDQMV relative m-3 border-theme-secondary-300 dark:border-theme-secondary-800 text-theme-secondary-300 ring-theme-background"
                   >
                     <div
                       class="sc-bdfBwQ iyevwF"
@@ -415,13 +415,13 @@ exports[`AddAssets should render a modal 1`] = `
                       </svg>
                     </div>
                     <span
-                      class="Badge__Wrapper-sc-1d7juq8-0 kWIvIj flex border-2 rounded-full justify-center items-center align-middle bg-theme-background border-transparent border-theme-secondary-300 dark:border-theme-secondary-800"
+                      class="Badge__Wrapper-sc-1d7juq8-0 iSpNvn flex border-2 rounded-full justify-center items-center align-middle bg-theme-background border-transparent border-theme-secondary-300 dark:border-theme-secondary-800"
                     >
                       <span />
                     </span>
                   </div>
                   <div
-                    class="Circle-uw7h4j-0 JkqUV relative m-3 border-theme-secondary-300 dark:border-theme-secondary-800 text-theme-secondary-300"
+                    class="Circle__CircleWrapper-uw7h4j-0 bNDQMV relative m-3 border-theme-secondary-300 dark:border-theme-secondary-800 text-theme-secondary-300 ring-theme-background"
                   >
                     <div
                       class="sc-bdfBwQ iyevwF"
@@ -433,13 +433,13 @@ exports[`AddAssets should render a modal 1`] = `
                       </svg>
                     </div>
                     <span
-                      class="Badge__Wrapper-sc-1d7juq8-0 kWIvIj flex border-2 rounded-full justify-center items-center align-middle bg-theme-background border-transparent border-theme-secondary-300 dark:border-theme-secondary-800"
+                      class="Badge__Wrapper-sc-1d7juq8-0 iSpNvn flex border-2 rounded-full justify-center items-center align-middle bg-theme-background border-transparent border-theme-secondary-300 dark:border-theme-secondary-800"
                     >
                       <span />
                     </span>
                   </div>
                   <div
-                    class="Circle-uw7h4j-0 JkqUV relative m-3 border-theme-secondary-300 dark:border-theme-secondary-800 text-theme-secondary-300"
+                    class="Circle__CircleWrapper-uw7h4j-0 bNDQMV relative m-3 border-theme-secondary-300 dark:border-theme-secondary-800 text-theme-secondary-300 ring-theme-background"
                   >
                     <div
                       class="sc-bdfBwQ iyevwF"
@@ -451,13 +451,13 @@ exports[`AddAssets should render a modal 1`] = `
                       </svg>
                     </div>
                     <span
-                      class="Badge__Wrapper-sc-1d7juq8-0 kWIvIj flex border-2 rounded-full justify-center items-center align-middle bg-theme-background border-transparent border-theme-secondary-300 dark:border-theme-secondary-800"
+                      class="Badge__Wrapper-sc-1d7juq8-0 iSpNvn flex border-2 rounded-full justify-center items-center align-middle bg-theme-background border-transparent border-theme-secondary-300 dark:border-theme-secondary-800"
                     >
                       <span />
                     </span>
                   </div>
                   <div
-                    class="Circle-uw7h4j-0 JkqUV relative m-3 border-theme-secondary-300 dark:border-theme-secondary-800 text-theme-secondary-300"
+                    class="Circle__CircleWrapper-uw7h4j-0 bNDQMV relative m-3 border-theme-secondary-300 dark:border-theme-secondary-800 text-theme-secondary-300 ring-theme-background"
                   >
                     <div
                       class="sc-bdfBwQ iyevwF"
@@ -469,13 +469,13 @@ exports[`AddAssets should render a modal 1`] = `
                       </svg>
                     </div>
                     <span
-                      class="Badge__Wrapper-sc-1d7juq8-0 kWIvIj flex border-2 rounded-full justify-center items-center align-middle bg-theme-background border-transparent border-theme-secondary-300 dark:border-theme-secondary-800"
+                      class="Badge__Wrapper-sc-1d7juq8-0 iSpNvn flex border-2 rounded-full justify-center items-center align-middle bg-theme-background border-transparent border-theme-secondary-300 dark:border-theme-secondary-800"
                     >
                       <span />
                     </span>
                   </div>
                   <div
-                    class="Circle-uw7h4j-0 JkqUV relative m-3 border-theme-secondary-300 dark:border-theme-secondary-800 text-theme-secondary-300"
+                    class="Circle__CircleWrapper-uw7h4j-0 bNDQMV relative m-3 border-theme-secondary-300 dark:border-theme-secondary-800 text-theme-secondary-300 ring-theme-background"
                   >
                     <div
                       class="sc-bdfBwQ iyevwF"
@@ -487,13 +487,13 @@ exports[`AddAssets should render a modal 1`] = `
                       </svg>
                     </div>
                     <span
-                      class="Badge__Wrapper-sc-1d7juq8-0 kWIvIj flex border-2 rounded-full justify-center items-center align-middle bg-theme-background border-transparent border-theme-secondary-300 dark:border-theme-secondary-800"
+                      class="Badge__Wrapper-sc-1d7juq8-0 iSpNvn flex border-2 rounded-full justify-center items-center align-middle bg-theme-background border-transparent border-theme-secondary-300 dark:border-theme-secondary-800"
                     >
                       <span />
                     </span>
                   </div>
                   <div
-                    class="Circle-uw7h4j-0 JkqUV relative m-3 border-theme-secondary-300 dark:border-theme-secondary-800 text-theme-secondary-300"
+                    class="Circle__CircleWrapper-uw7h4j-0 bNDQMV relative m-3 border-theme-secondary-300 dark:border-theme-secondary-800 text-theme-secondary-300 ring-theme-background"
                   >
                     <div
                       class="sc-bdfBwQ iyevwF"
@@ -505,13 +505,13 @@ exports[`AddAssets should render a modal 1`] = `
                       </svg>
                     </div>
                     <span
-                      class="Badge__Wrapper-sc-1d7juq8-0 kWIvIj flex border-2 rounded-full justify-center items-center align-middle bg-theme-background border-transparent border-theme-secondary-300 dark:border-theme-secondary-800"
+                      class="Badge__Wrapper-sc-1d7juq8-0 iSpNvn flex border-2 rounded-full justify-center items-center align-middle bg-theme-background border-transparent border-theme-secondary-300 dark:border-theme-secondary-800"
                     >
                       <span />
                     </span>
                   </div>
                   <div
-                    class="Circle-uw7h4j-0 JkqUV relative m-3 border-theme-secondary-300 dark:border-theme-secondary-800 text-theme-secondary-300"
+                    class="Circle__CircleWrapper-uw7h4j-0 bNDQMV relative m-3 border-theme-secondary-300 dark:border-theme-secondary-800 text-theme-secondary-300 ring-theme-background"
                   >
                     <div
                       class="sc-bdfBwQ iyevwF"
@@ -523,13 +523,13 @@ exports[`AddAssets should render a modal 1`] = `
                       </svg>
                     </div>
                     <span
-                      class="Badge__Wrapper-sc-1d7juq8-0 kWIvIj flex border-2 rounded-full justify-center items-center align-middle bg-theme-background border-transparent border-theme-secondary-300 dark:border-theme-secondary-800"
+                      class="Badge__Wrapper-sc-1d7juq8-0 iSpNvn flex border-2 rounded-full justify-center items-center align-middle bg-theme-background border-transparent border-theme-secondary-300 dark:border-theme-secondary-800"
                     >
                       <span />
                     </span>
                   </div>
                   <div
-                    class="Circle-uw7h4j-0 JkqUV relative m-3 border-theme-secondary-300 dark:border-theme-secondary-800 text-theme-secondary-300"
+                    class="Circle__CircleWrapper-uw7h4j-0 bNDQMV relative m-3 border-theme-secondary-300 dark:border-theme-secondary-800 text-theme-secondary-300 ring-theme-background"
                   >
                     <div
                       class="sc-bdfBwQ iyevwF"
@@ -541,13 +541,13 @@ exports[`AddAssets should render a modal 1`] = `
                       </svg>
                     </div>
                     <span
-                      class="Badge__Wrapper-sc-1d7juq8-0 kWIvIj flex border-2 rounded-full justify-center items-center align-middle bg-theme-background border-transparent border-theme-secondary-300 dark:border-theme-secondary-800"
+                      class="Badge__Wrapper-sc-1d7juq8-0 iSpNvn flex border-2 rounded-full justify-center items-center align-middle bg-theme-background border-transparent border-theme-secondary-300 dark:border-theme-secondary-800"
                     >
                       <span />
                     </span>
                   </div>
                   <div
-                    class="Circle-uw7h4j-0 JkqUV relative m-3 border-theme-secondary-300 dark:border-theme-secondary-800 text-theme-secondary-300"
+                    class="Circle__CircleWrapper-uw7h4j-0 bNDQMV relative m-3 border-theme-secondary-300 dark:border-theme-secondary-800 text-theme-secondary-300 ring-theme-background"
                   >
                     <div
                       class="sc-bdfBwQ iyevwF"
@@ -559,13 +559,13 @@ exports[`AddAssets should render a modal 1`] = `
                       </svg>
                     </div>
                     <span
-                      class="Badge__Wrapper-sc-1d7juq8-0 kWIvIj flex border-2 rounded-full justify-center items-center align-middle bg-theme-background border-transparent border-theme-secondary-300 dark:border-theme-secondary-800"
+                      class="Badge__Wrapper-sc-1d7juq8-0 iSpNvn flex border-2 rounded-full justify-center items-center align-middle bg-theme-background border-transparent border-theme-secondary-300 dark:border-theme-secondary-800"
                     >
                       <span />
                     </span>
                   </div>
                   <div
-                    class="Circle-uw7h4j-0 JkqUV relative m-3 border-theme-secondary-300 dark:border-theme-secondary-800 text-theme-secondary-300"
+                    class="Circle__CircleWrapper-uw7h4j-0 bNDQMV relative m-3 border-theme-secondary-300 dark:border-theme-secondary-800 text-theme-secondary-300 ring-theme-background"
                   >
                     <div
                       class="sc-bdfBwQ iyevwF"
@@ -577,13 +577,13 @@ exports[`AddAssets should render a modal 1`] = `
                       </svg>
                     </div>
                     <span
-                      class="Badge__Wrapper-sc-1d7juq8-0 kWIvIj flex border-2 rounded-full justify-center items-center align-middle bg-theme-background border-transparent border-theme-secondary-300 dark:border-theme-secondary-800"
+                      class="Badge__Wrapper-sc-1d7juq8-0 iSpNvn flex border-2 rounded-full justify-center items-center align-middle bg-theme-background border-transparent border-theme-secondary-300 dark:border-theme-secondary-800"
                     >
                       <span />
                     </span>
                   </div>
                   <div
-                    class="Circle-uw7h4j-0 JkqUV relative m-3 border-theme-secondary-300 dark:border-theme-secondary-800 text-theme-secondary-300"
+                    class="Circle__CircleWrapper-uw7h4j-0 bNDQMV relative m-3 border-theme-secondary-300 dark:border-theme-secondary-800 text-theme-secondary-300 ring-theme-background"
                   >
                     <div
                       class="sc-bdfBwQ iyevwF"
@@ -595,13 +595,13 @@ exports[`AddAssets should render a modal 1`] = `
                       </svg>
                     </div>
                     <span
-                      class="Badge__Wrapper-sc-1d7juq8-0 kWIvIj flex border-2 rounded-full justify-center items-center align-middle bg-theme-background border-transparent border-theme-secondary-300 dark:border-theme-secondary-800"
+                      class="Badge__Wrapper-sc-1d7juq8-0 iSpNvn flex border-2 rounded-full justify-center items-center align-middle bg-theme-background border-transparent border-theme-secondary-300 dark:border-theme-secondary-800"
                     >
                       <span />
                     </span>
                   </div>
                   <div
-                    class="Circle-uw7h4j-0 JkqUV relative m-3 border-theme-secondary-300 dark:border-theme-secondary-800 text-theme-secondary-300"
+                    class="Circle__CircleWrapper-uw7h4j-0 bNDQMV relative m-3 border-theme-secondary-300 dark:border-theme-secondary-800 text-theme-secondary-300 ring-theme-background"
                   >
                     <div
                       class="sc-bdfBwQ iyevwF"
@@ -613,13 +613,13 @@ exports[`AddAssets should render a modal 1`] = `
                       </svg>
                     </div>
                     <span
-                      class="Badge__Wrapper-sc-1d7juq8-0 kWIvIj flex border-2 rounded-full justify-center items-center align-middle bg-theme-background border-transparent border-theme-secondary-300 dark:border-theme-secondary-800"
+                      class="Badge__Wrapper-sc-1d7juq8-0 iSpNvn flex border-2 rounded-full justify-center items-center align-middle bg-theme-background border-transparent border-theme-secondary-300 dark:border-theme-secondary-800"
                     >
                       <span />
                     </span>
                   </div>
                   <div
-                    class="Circle-uw7h4j-0 JkqUV relative m-3 border-theme-secondary-300 dark:border-theme-secondary-800 text-theme-secondary-300"
+                    class="Circle__CircleWrapper-uw7h4j-0 bNDQMV relative m-3 border-theme-secondary-300 dark:border-theme-secondary-800 text-theme-secondary-300 ring-theme-background"
                   >
                     <div
                       class="sc-bdfBwQ iyevwF"
@@ -631,13 +631,13 @@ exports[`AddAssets should render a modal 1`] = `
                       </svg>
                     </div>
                     <span
-                      class="Badge__Wrapper-sc-1d7juq8-0 kWIvIj flex border-2 rounded-full justify-center items-center align-middle bg-theme-background border-transparent border-theme-secondary-300 dark:border-theme-secondary-800"
+                      class="Badge__Wrapper-sc-1d7juq8-0 iSpNvn flex border-2 rounded-full justify-center items-center align-middle bg-theme-background border-transparent border-theme-secondary-300 dark:border-theme-secondary-800"
                     >
                       <span />
                     </span>
                   </div>
                   <div
-                    class="Circle-uw7h4j-0 JkqUV relative m-3 border-theme-secondary-300 dark:border-theme-secondary-800 text-theme-secondary-300"
+                    class="Circle__CircleWrapper-uw7h4j-0 bNDQMV relative m-3 border-theme-secondary-300 dark:border-theme-secondary-800 text-theme-secondary-300 ring-theme-background"
                   >
                     <div
                       class="sc-bdfBwQ iyevwF"
@@ -649,13 +649,13 @@ exports[`AddAssets should render a modal 1`] = `
                       </svg>
                     </div>
                     <span
-                      class="Badge__Wrapper-sc-1d7juq8-0 kWIvIj flex border-2 rounded-full justify-center items-center align-middle bg-theme-background border-transparent border-theme-secondary-300 dark:border-theme-secondary-800"
+                      class="Badge__Wrapper-sc-1d7juq8-0 iSpNvn flex border-2 rounded-full justify-center items-center align-middle bg-theme-background border-transparent border-theme-secondary-300 dark:border-theme-secondary-800"
                     >
                       <span />
                     </span>
                   </div>
                   <div
-                    class="Circle-uw7h4j-0 JkqUV relative m-3 border-theme-secondary-300 dark:border-theme-secondary-800 text-theme-secondary-300"
+                    class="Circle__CircleWrapper-uw7h4j-0 bNDQMV relative m-3 border-theme-secondary-300 dark:border-theme-secondary-800 text-theme-secondary-300 ring-theme-background"
                   >
                     <div
                       class="sc-bdfBwQ iyevwF"
@@ -667,13 +667,13 @@ exports[`AddAssets should render a modal 1`] = `
                       </svg>
                     </div>
                     <span
-                      class="Badge__Wrapper-sc-1d7juq8-0 kWIvIj flex border-2 rounded-full justify-center items-center align-middle bg-theme-background border-transparent border-theme-secondary-300 dark:border-theme-secondary-800"
+                      class="Badge__Wrapper-sc-1d7juq8-0 iSpNvn flex border-2 rounded-full justify-center items-center align-middle bg-theme-background border-transparent border-theme-secondary-300 dark:border-theme-secondary-800"
                     >
                       <span />
                     </span>
                   </div>
                   <div
-                    class="Circle-uw7h4j-0 JkqUV relative m-3 border-theme-secondary-300 dark:border-theme-secondary-800 text-theme-secondary-300"
+                    class="Circle__CircleWrapper-uw7h4j-0 bNDQMV relative m-3 border-theme-secondary-300 dark:border-theme-secondary-800 text-theme-secondary-300 ring-theme-background"
                   >
                     <div
                       class="sc-bdfBwQ iyevwF"
@@ -685,13 +685,13 @@ exports[`AddAssets should render a modal 1`] = `
                       </svg>
                     </div>
                     <span
-                      class="Badge__Wrapper-sc-1d7juq8-0 kWIvIj flex border-2 rounded-full justify-center items-center align-middle bg-theme-background border-transparent border-theme-secondary-300 dark:border-theme-secondary-800"
+                      class="Badge__Wrapper-sc-1d7juq8-0 iSpNvn flex border-2 rounded-full justify-center items-center align-middle bg-theme-background border-transparent border-theme-secondary-300 dark:border-theme-secondary-800"
                     >
                       <span />
                     </span>
                   </div>
                   <div
-                    class="Circle-uw7h4j-0 JkqUV relative m-3 border-theme-secondary-300 dark:border-theme-secondary-800 text-theme-secondary-300"
+                    class="Circle__CircleWrapper-uw7h4j-0 bNDQMV relative m-3 border-theme-secondary-300 dark:border-theme-secondary-800 text-theme-secondary-300 ring-theme-background"
                   >
                     <div
                       class="sc-bdfBwQ iyevwF"
@@ -703,13 +703,13 @@ exports[`AddAssets should render a modal 1`] = `
                       </svg>
                     </div>
                     <span
-                      class="Badge__Wrapper-sc-1d7juq8-0 kWIvIj flex border-2 rounded-full justify-center items-center align-middle bg-theme-background border-transparent border-theme-secondary-300 dark:border-theme-secondary-800"
+                      class="Badge__Wrapper-sc-1d7juq8-0 iSpNvn flex border-2 rounded-full justify-center items-center align-middle bg-theme-background border-transparent border-theme-secondary-300 dark:border-theme-secondary-800"
                     >
                       <span />
                     </span>
                   </div>
                   <div
-                    class="Circle-uw7h4j-0 JkqUV relative m-3 border-theme-secondary-300 dark:border-theme-secondary-800 text-theme-secondary-300"
+                    class="Circle__CircleWrapper-uw7h4j-0 bNDQMV relative m-3 border-theme-secondary-300 dark:border-theme-secondary-800 text-theme-secondary-300 ring-theme-background"
                   >
                     <div
                       class="sc-bdfBwQ iyevwF"
@@ -721,13 +721,13 @@ exports[`AddAssets should render a modal 1`] = `
                       </svg>
                     </div>
                     <span
-                      class="Badge__Wrapper-sc-1d7juq8-0 kWIvIj flex border-2 rounded-full justify-center items-center align-middle bg-theme-background border-transparent border-theme-secondary-300 dark:border-theme-secondary-800"
+                      class="Badge__Wrapper-sc-1d7juq8-0 iSpNvn flex border-2 rounded-full justify-center items-center align-middle bg-theme-background border-transparent border-theme-secondary-300 dark:border-theme-secondary-800"
                     >
                       <span />
                     </span>
                   </div>
                   <div
-                    class="Circle-uw7h4j-0 JkqUV relative m-3 border-theme-secondary-300 dark:border-theme-secondary-800 text-theme-secondary-300"
+                    class="Circle__CircleWrapper-uw7h4j-0 bNDQMV relative m-3 border-theme-secondary-300 dark:border-theme-secondary-800 text-theme-secondary-300 ring-theme-background"
                   >
                     <div
                       class="sc-bdfBwQ iyevwF"
@@ -739,13 +739,13 @@ exports[`AddAssets should render a modal 1`] = `
                       </svg>
                     </div>
                     <span
-                      class="Badge__Wrapper-sc-1d7juq8-0 kWIvIj flex border-2 rounded-full justify-center items-center align-middle bg-theme-background border-transparent border-theme-secondary-300 dark:border-theme-secondary-800"
+                      class="Badge__Wrapper-sc-1d7juq8-0 iSpNvn flex border-2 rounded-full justify-center items-center align-middle bg-theme-background border-transparent border-theme-secondary-300 dark:border-theme-secondary-800"
                     >
                       <span />
                     </span>
                   </div>
                   <div
-                    class="Circle-uw7h4j-0 JkqUV relative m-3 border-theme-secondary-300 dark:border-theme-secondary-800 text-theme-secondary-300"
+                    class="Circle__CircleWrapper-uw7h4j-0 bNDQMV relative m-3 border-theme-secondary-300 dark:border-theme-secondary-800 text-theme-secondary-300 ring-theme-background"
                   >
                     <div
                       class="text-xs text-theme-primary-500"
