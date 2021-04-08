@@ -1,42 +1,28 @@
-import { Contracts } from "@arkecosystem/platform-sdk-profiles";
 import { useCallback, useMemo, useReducer, useRef, useState } from "react";
 
 import { useEnvironmentContext } from "../../Environment";
 import { useLedgerContext } from "../Ledger";
-import { customDerivationModes } from "../utils";
+import { LedgerData } from "../utils";
 import { scannerReducer } from "./scanner.state";
 
-export const useLedgerScanner = (coin: string, network: string, profile: Contracts.IProfile) => {
+export const useLedgerScanner = (coin: string, network: string) => {
 	const { env } = useEnvironmentContext();
 	const { setBusy, setIdle } = useLedgerContext();
 
 	const [state, dispatch] = useReducer(scannerReducer, {
-		derivationModes: [],
-		currentDerivationModeIndex: 0,
-		page: 0,
 		selected: [],
-		loading: [],
 		wallets: [],
-		failed: [],
 	});
 
-	const limitPerPage = 5;
-	const derivationModes = useMemo(
-		/* istanbul ignore next */
-		() => Object.keys(customDerivationModes[coin as keyof typeof customDerivationModes] || {}),
-		[coin],
-	);
-	const { loading, failed, selected, page, wallets, currentDerivationModeIndex } = state;
+	const { selected, wallets, error } = state;
 
 	// Getters
 
-	const isLoading = useCallback((path: string) => loading.some((item) => path === item), [loading]);
 	const isSelected = useCallback((path: string) => selected.some((item) => path === item), [selected]);
-	/* istanbul ignore next */
-	const isFailed = useCallback((path: string) => failed.some((item) => path === item), [failed]);
-	const hasNewWallet = useMemo(() => wallets.some((item) => item.isNew), [wallets]);
+
 	const selectedWallets = useMemo(() => wallets.filter((item) => selected.includes(item.path)), [selected, wallets]);
-	const canRetry = useMemo(() => failed.length > 0, [failed]);
+	const canRetry = !!error;
+
 	const [isScanning, setIsScanning] = useState(false);
 	const abortRetryRef = useRef<boolean>(false);
 
@@ -46,52 +32,43 @@ export const useLedgerScanner = (coin: string, network: string, profile: Contrac
 
 		try {
 			const instance = await env.coin(coin, network);
-			const result = await instance.ledger().scan();
-			console.log({ result });
 
-			// const derivationMode = derivationModes[currentDerivationModeIndex];
+			const wallets = await instance.ledger().scan();
+			const legacyWallets = await instance.ledger().scan({ useLegacy: true });
 
-			// const addressMap = await searchAddresses(indexes, instance, profile, derivationMode);
-			// const lazyWallets = Object.values(addressMap);
+			const allWallets = { ...legacyWallets, ...wallets };
+			const ledgerData: LedgerData[] = [];
 
-			// if (!lazyWallets.length) {
-			// return dispatch({ type: "next" });
-			// }
+			for (const [path, data] of Object.entries(allWallets)) {
+				ledgerData.push({
+					path,
+					address: data.address(),
+					balance: data.balance(),
+				});
+			}
 
-			// dispatch({ type: "load", payload: lazyWallets, derivationModes });
+			if (abortRetryRef.current) {
+				return;
+			}
 
-			// const wallets = await searchWallets(addressMap, instance);
-
-			// if (abortRetryRef.current) {
-			// return;
-			// }
-
-			dispatch({ type: "success", payload: wallets });
+			dispatch({ type: "success", payload: ledgerData });
 		} catch (e) {
-			console.error(e);
-			dispatch({ type: "failed" });
+			dispatch({ type: "failed", error: e.message });
 		}
 
 		setIdle();
-	}, [coin, network, env, profile, setBusy, setIdle]);
+	}, [coin, network, env, setBusy, setIdle]);
 
 	const abortScanner = useCallback(() => {
 		abortRetryRef.current = true;
 		setIdle();
 	}, [setIdle]);
 
-	// Actions - Scan
-
-	const scanMore = scan;
-	const scanRetry = useCallback(async () => {
-		//
-	}, []);
-
-	// Recursive callback that will increase the page
-	// and run on each re-rendering until it finds a new wallet or fail
 	const scanUntilNewOrFail = useCallback(async () => {
-		//
-	}, []);
+		setIsScanning(true);
+		await scan();
+		setIsScanning(false);
+	}, [scan]);
 
 	// Actions - Selection
 
@@ -100,13 +77,8 @@ export const useLedgerScanner = (coin: string, network: string, profile: Contrac
 
 	return {
 		isScanning,
-		canRetry,
-		hasNewWallet,
-		isFailed,
-		isLoading,
 		isSelected,
-		scanMore,
-		scanRetry,
+		canRetry,
 		scanUntilNewOrFail,
 		toggleSelectAll,
 		toggleSelect,

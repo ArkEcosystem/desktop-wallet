@@ -37,7 +37,7 @@ export const useLedgerConnection = (transport: typeof Transport) => {
 			for (const { address, path } of wallets) {
 				const wallet = await profile
 					.wallets()
-					.importByAddress(address, coin.network().coin(), coin.network().id());
+					.importByAddressWithLedgerPath(address, coin.network().coin(), coin.network().id(), path);
 				wallet.data().set(Contracts.WalletData.LedgerPath, path);
 			}
 			await persist();
@@ -118,5 +118,6 @@ export const useLedgerConnection = (transport: typeof Transport) => {
 		isAwaitingDeviceConfirmation,
 		isBusy,
 		isConnected,
+		transport,
 	};
 };

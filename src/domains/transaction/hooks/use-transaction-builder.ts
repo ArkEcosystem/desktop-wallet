@@ -1,6 +1,7 @@
 import { Contracts } from "@arkecosystem/platform-sdk";
 import { Contracts as ProfileContracts } from "@arkecosystem/platform-sdk-profiles";
 import { upperFirst } from "@arkecosystem/utils";
+import Transport from "@ledgerhq/hw-transport";
 import { useLedgerContext } from "app/contexts";
 
 type SignFn = (input: any, options?: Contracts.TransactionOptions) => Promise<string>;
@@ -22,13 +23,24 @@ const prepareLedger = async (
 	wallet: ProfileContracts.IReadWriteWallet,
 	signFn: SignFn,
 	connectFn: ConnectFn,
+	transport: typeof Transport,
 ) => {
 	await connectFn(wallet.coinId(), wallet.networkId());
+
+	/*
+	 * NOTE:
+	 * Verify why BIP44 derived wallets requires to "reconnect"
+	 * it seems that `wallet.ledger()` and `coin.ledger()` does not share the same instance
+	 * but for legacy wallets it works
+	 */
+
+	await wallet.ledger().connect(transport);
 
 	const path = wallet.data().get<string>(ProfileContracts.WalletData.LedgerPath);
 	let senderPublicKey = wallet.publicKey();
 
 	if (!senderPublicKey) {
+		// TODO: Get public key from derived wallets
 		senderPublicKey = await wallet.coin().ledger().getPublicKey(path!);
 	}
 
@@ -62,7 +74,7 @@ const withAbortPromise = (signal?: AbortSignal, callback?: () => void) => <T>(pr
 	});
 
 export const useTransactionBuilder = (profile: ProfileContracts.IProfile) => {
-	const { connect, abortConnectionRetry } = useLedgerContext();
+	const { connect, abortConnectionRetry, transport } = useLedgerContext();
 
 	const build = async (
 		type: string,
@@ -86,7 +98,7 @@ export const useTransactionBuilder = (profile: ProfileContracts.IProfile) => {
 			data = await withAbortPromise(
 				options?.abortSignal,
 				abortConnectionRetry,
-			)(prepareLedger(data, wallet, signFn, connect));
+			)(prepareLedger(data, wallet, signFn, connect, transport));
 		}
 
 		const uuid = await signFn(data);
