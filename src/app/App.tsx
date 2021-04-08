@@ -26,6 +26,7 @@ import { I18nextProvider } from "react-i18next";
 import { useHistory } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
 import { StubStorage } from "tests/mocks";
+import { spawn, Worker } from "threads";
 import { setThemeSource, shouldUseDarkColors } from "utils/electron-utils";
 
 import { middlewares, RouterView, routes } from "../router";
@@ -52,6 +53,12 @@ const Main = () => {
 	const isOnline = useNetworkStatus();
 	const { start } = useEnvSynchronizer();
 	const history = useHistory();
+
+	const runWorker = async () => {
+		const worker = await spawn(new Worker("./app.worker"));
+		console.log("calling worker");
+		worker.runTest();
+	};
 
 	useProfileSynchronizer({
 		onProfileRestoreError: () => history.push("/"),
@@ -89,6 +96,8 @@ const Main = () => {
 				await env.boot();
 
 				await loadPlugins();
+
+				await runWorker();
 			} catch (error) {
 				console.error(error);
 				handleError(error);
