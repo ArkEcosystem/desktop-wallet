@@ -53,6 +53,7 @@ describe("useProfileTransactions", () => {
 
 		//@ts-ignore
 		const responseEmpty = await current.fetchTransactions({});
+		await waitFor(() => expect(responseEmpty.hasMorePages()).toBe(false));
 		await waitFor(() => expect(responseEmpty.items()).toHaveLength(0));
 	});
 
