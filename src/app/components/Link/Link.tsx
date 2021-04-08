@@ -34,7 +34,7 @@ type AnchorProps = {
 	showExternalIcon?: boolean;
 } & React.AnchorHTMLAttributes<any>;
 
-const Anchor = React.forwardRef<HTMLAnchorElement, Props>(
+const Anchor = React.forwardRef<HTMLAnchorElement, AnchorProps>(
 	({ isExternal, showExternalIcon, children, rel, ...props }: AnchorProps, ref) => (
 		<AnchorStyled
 			data-testid="Link"
@@ -68,7 +68,7 @@ type Props = {
 	children?: React.ReactNode;
 	tooltip?: string;
 	showExternalIcon?: boolean;
-} & LinkProps;
+} & Omit<LinkProps, "referrerPolicy">;
 
 export const Link = ({ tooltip, ...props }: Props) => {
 	const { t } = useTranslation();
