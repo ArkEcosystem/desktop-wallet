@@ -149,11 +149,9 @@ describe("WalletDetails", () => {
 		walletUrl = `/profiles/${profile.id()}/wallets/${blankWallet.id()}`;
 		history.push(walletUrl);
 
-		const { asFragment, getByText } = await renderPage({ waitForTopSection: true, waitForTransactions: false });
+		const { getByText } = await renderPage({ waitForTopSection: true, waitForTransactions: false });
 
 		await waitFor(() => expect(getByText(commonTranslations.LEARN_MORE)).toBeTruthy());
-
-		expect(asFragment()).toMatchSnapshot();
 	});
 
 	it("should navigate to votes page when clicking on WalletVote button", async () => {
@@ -234,8 +232,6 @@ describe("WalletDetails", () => {
 		});
 
 		await waitFor(() => expect(wallet.settings().get(Contracts.WalletSetting.Alias)).toEqual(name));
-
-		expect(asFragment()).toMatchSnapshot();
 	});
 
 	it("should remove wallet name", async () => {
@@ -262,8 +258,6 @@ describe("WalletDetails", () => {
 		});
 
 		await waitFor(() => expect(wallet.settings().get(Contracts.WalletSetting.Alias)).toBe(undefined));
-
-		expect(asFragment()).toMatchSnapshot();
 	});
 
 	it("should star and unstar a wallet", async () => {
@@ -282,12 +276,10 @@ describe("WalletDetails", () => {
 		});
 
 		await waitFor(() => expect(wallet.isStarred()).toBe(false));
-
-		expect(asFragment()).toMatchSnapshot();
 	});
 
 	it("should open detail modal on transaction row click", async () => {
-		const { asFragment, getByTestId } = await renderPage({
+		const { getByTestId } = await renderPage({
 			waitForTopSection: true,
 			waitForTransactions: true,
 			withProfileSynchronizer: true,
@@ -303,7 +295,7 @@ describe("WalletDetails", () => {
 			fireEvent.click(getByTestId("modal__close-btn"));
 		});
 
-		expect(asFragment()).toMatchSnapshot();
+		await waitFor(() => expect(() => getByTestId("modal__inner")).toThrow());
 	});
 
 	it("should fetch more transactions", async () => {
@@ -384,8 +376,6 @@ describe("WalletDetails", () => {
 		const { asFragment, getByText } = await renderPage();
 
 		await waitFor(() => expect(getByText(commonTranslations.LEARN_MORE)).toBeTruthy());
-
-		expect(asFragment()).toMatchSnapshot();
 
 		syncVotesSpy.mockRestore();
 	});
