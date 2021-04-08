@@ -3,13 +3,12 @@ import { Coins } from "@arkecosystem/platform-sdk";
 import { Contracts } from "@arkecosystem/platform-sdk-profiles";
 // @README: This import is fine in tests but should be avoided in production code.
 import { ReadOnlyWallet } from "@arkecosystem/platform-sdk-profiles/dist/drivers/memory/wallets/read-only-wallet";
-import { useConfiguration } from "app/contexts";
 import { translations as commonTranslations } from "app/i18n/common/i18n";
 import { translations as walletTranslations } from "domains/wallet/i18n";
 import { createMemoryHistory } from "history";
 import { when } from "jest-when";
 import nock from "nock";
-import React, { useEffect } from "react";
+import React from "react";
 import { Route } from "react-router-dom";
 import walletMock from "tests/fixtures/coins/ark/devnet/wallets/D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD.json";
 import {
@@ -41,41 +40,38 @@ let wallet2: Contracts.IReadWriteWallet;
 
 const passphrase2 = "power return attend drink piece found tragic fire liar page disease combine";
 
-const renderPage = async (waitForTopSection = true, waitForTransactions = true) => {
-	let rendered: RenderResult;
+const renderPage = async ({
+	waitForTopSection = true,
+	waitForTransactions = true,
+	withProfileSynchronizer = false,
+} = {}) => {
+	const rendered: RenderResult = renderWithRouter(
+		<Route path="/profiles/:profileId/wallets/:walletId">
+			<WalletDetails />
+		</Route>,
+		{
+			routes: [walletUrl],
+			history,
+			withProfileSynchronizer,
+		},
+	);
 
-	const Page = () => {
-		const { setConfiguration } = useConfiguration();
-
-		useEffect(() => {
-			setConfiguration({ profileIsSyncing: false });
-		}, [setConfiguration]);
-
-		return <WalletDetails txSkeletonRowsLimit={1} transactionLimit={1} />;
-	};
-
-	await act(async () => {
-		rendered = renderWithRouter(
-			<Route path="/profiles/:profileId/wallets/:walletId">
-				<Page />
-			</Route>,
-			{
-				routes: [walletUrl],
-				history,
-			},
-		);
-	});
-
-	const { getByTestId, queryAllByTestId } = rendered;
+	const { getByTestId } = rendered;
 
 	if (waitForTopSection) {
 		await waitFor(() => expect(getByTestId("WalletVote")).toBeTruthy());
 	}
 
 	if (waitForTransactions) {
-		await waitFor(() =>
-			expect(within(getByTestId("TransactionTable")).queryAllByTestId("TableRow")).toHaveLength(1),
-		);
+		if (withProfileSynchronizer) {
+			await waitFor(() =>
+				expect(within(getByTestId("TransactionTable")).queryAllByTestId("TableRow")).toHaveLength(1),
+			);
+		} else {
+			await waitFor(() =>
+				expect(within(getByTestId("TransactionTable")).queryAllByTestId("TableRow")).not.toHaveLength(0),
+			);
+		}
 	}
 
 	return rendered;
@@ -140,7 +136,7 @@ describe("WalletDetails", () => {
 
 		when(networkFeatureSpy).calledWith(Coins.FeatureFlag.TransactionVote).mockReturnValue(false);
 
-		const { getByTestId } = await renderPage(false);
+		const { getByTestId } = await renderPage({ waitForTopSection: false });
 
 		await waitFor(() => {
 			expect(() => getByTestId("WalletVote")).toThrow(/Unable to find an element by/);
@@ -153,7 +149,7 @@ describe("WalletDetails", () => {
 		walletUrl = `/profiles/${profile.id()}/wallets/${blankWallet.id()}`;
 		history.push(walletUrl);
 
-		const { asFragment, getByText } = await renderPage(true, false);
+		const { asFragment, getByText } = await renderPage({ waitForTopSection: true, waitForTransactions: false });
 
 		await waitFor(() => expect(getByText(commonTranslations.LEARN_MORE)).toBeTruthy());
 
@@ -164,7 +160,7 @@ describe("WalletDetails", () => {
 		const walletSpy = jest.spyOn(wallet, "votes").mockReturnValue([]);
 		const historySpy = jest.spyOn(history, "push");
 
-		const { getByTestId, getByText, queryAllByTestId } = await renderPage();
+		const { getByTestId, getByText } = await renderPage();
 
 		await waitFor(() => expect(getByText(commonTranslations.LEARN_MORE)).toBeTruthy());
 
@@ -198,7 +194,7 @@ describe("WalletDetails", () => {
 		const maxVotesSpy = jest.spyOn(wallet.network(), "maximumVotesPerWallet").mockReturnValue(101);
 		const historySpy = jest.spyOn(history, "push");
 
-		const { getByText, queryAllByTestId } = await renderPage();
+		const { getByText } = await renderPage();
 
 		act(() => {
 			fireEvent.click(getByText(walletTranslations.PAGE_WALLET_DETAILS.VOTES.MULTIVOTE));
@@ -291,7 +287,11 @@ describe("WalletDetails", () => {
 	});
 
 	it("should open detail modal on transaction row click", async () => {
-		const { asFragment, getByTestId } = await renderPage();
+		const { asFragment, getByTestId } = await renderPage({
+			waitForTopSection: true,
+			waitForTransactions: true,
+			withProfileSynchronizer: true,
+		});
 
 		act(() => {
 			fireEvent.click(within(getByTestId("TransactionTable")).getAllByTestId("TableRow")[0]);
@@ -307,7 +307,11 @@ describe("WalletDetails", () => {
 	});
 
 	it("should fetch more transactions", async () => {
-		const { getByTestId, getAllByTestId } = await renderPage();
+		const { getByTestId, getAllByTestId } = await renderPage({
+			waitForTopSection: true,
+			waitForTransactions: true,
+			withProfileSynchronizer: true,
+		});
 
 		const fetchMoreTransactionsBtn = getByTestId("transactions__fetch-more-button");
 
