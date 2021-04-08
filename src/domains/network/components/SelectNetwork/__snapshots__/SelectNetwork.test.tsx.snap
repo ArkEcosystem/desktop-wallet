@@ -6,13 +6,13 @@ exports[`SelectNetwork should render 1`] = `
     <div
       aria-expanded="false"
       aria-haspopup="listbox"
-      aria-owns="downshift-1-menu"
+      aria-owns="downshift-0-menu"
       data-testid="SelectNetwork"
       role="combobox"
     >
       <label
         for="downshift-0-input"
-        id="downshift-1-label"
+        id="downshift-0-label"
       />
       <div
         class="Input__InputWrapperStyled-wu99qs-0 jba-du"
@@ -26,8 +26,8 @@ exports[`SelectNetwork should render 1`] = `
         >
           <input
             aria-autocomplete="list"
-            aria-controls="downshift-1-menu"
-            aria-labelledby="downshift-1-label"
+            aria-controls="downshift-0-menu"
+            aria-labelledby="downshift-0-label"
             autocomplete="off"
             class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
             data-testid="SelectNetworkInput__input"
@@ -47,9 +47,9 @@ exports[`SelectNetwork should render 1`] = `
         class=""
       >
         <ul
-          aria-labelledby="downshift-1-label"
+          aria-labelledby="downshift-0-label"
           class="grid grid-cols-6 gap-3"
-          id="downshift-1-menu"
+          id="downshift-0-menu"
           role="listbox"
         />
       </div>
@@ -64,13 +64,13 @@ exports[`SelectNetwork should render with hidden options 1`] = `
     <div
       aria-expanded="false"
       aria-haspopup="listbox"
-      aria-owns="downshift-9-menu"
+      aria-owns="downshift-4-menu"
       data-testid="SelectNetwork"
       role="combobox"
     >
       <label
-        for="downshift-8-input"
-        id="downshift-9-label"
+        for="downshift-4-input"
+        id="downshift-4-label"
       />
       <div
         class="Input__InputWrapperStyled-wu99qs-0 jba-du"
@@ -84,12 +84,12 @@ exports[`SelectNetwork should render with hidden options 1`] = `
         >
           <input
             aria-autocomplete="list"
-            aria-controls="downshift-9-menu"
-            aria-labelledby="downshift-9-label"
+            aria-controls="downshift-4-menu"
+            aria-labelledby="downshift-4-label"
             autocomplete="off"
             class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
             data-testid="SelectNetworkInput__input"
-            id="downshift-8-input"
+            id="downshift-4-input"
             placeholder="Enter a cryptoasset name"
             value=""
           />
@@ -110,9 +110,9 @@ exports[`SelectNetwork should render with hidden options 1`] = `
           PUBLIC NETWORKS
         </div>
         <ul
-          aria-labelledby="downshift-9-label"
+          aria-labelledby="downshift-4-label"
           class="grid grid-cols-6 gap-3"
-          id="downshift-9-menu"
+          id="downshift-4-menu"
           role="listbox"
         >
           <li
@@ -231,9 +231,9 @@ exports[`SelectNetwork should render with hidden options 1`] = `
           DEVELOPMENT NETWORKS
         </div>
         <ul
-          aria-labelledby="downshift-9-label"
+          aria-labelledby="downshift-4-label"
           class="grid grid-cols-6 gap-3"
-          id="downshift-9-menu"
+          id="downshift-4-menu"
           role="listbox"
         >
           <li
@@ -291,13 +291,13 @@ exports[`SelectNetwork should render with networks 1`] = `
     <div
       aria-expanded="false"
       aria-haspopup="listbox"
-      aria-owns="downshift-5-menu"
+      aria-owns="downshift-2-menu"
       data-testid="SelectNetwork"
       role="combobox"
     >
       <label
-        for="downshift-4-input"
-        id="downshift-5-label"
+        for="downshift-2-input"
+        id="downshift-2-label"
       />
       <div
         class="Input__InputWrapperStyled-wu99qs-0 jba-du"
@@ -311,12 +311,12 @@ exports[`SelectNetwork should render with networks 1`] = `
         >
           <input
             aria-autocomplete="list"
-            aria-controls="downshift-5-menu"
-            aria-labelledby="downshift-5-label"
+            aria-controls="downshift-2-menu"
+            aria-labelledby="downshift-2-label"
             autocomplete="off"
             class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
             data-testid="SelectNetworkInput__input"
-            id="downshift-4-input"
+            id="downshift-2-input"
             placeholder="Enter a cryptoasset name"
             value=""
           />
@@ -337,9 +337,9 @@ exports[`SelectNetwork should render with networks 1`] = `
           PUBLIC NETWORKS
         </div>
         <ul
-          aria-labelledby="downshift-5-label"
+          aria-labelledby="downshift-2-label"
           class="grid grid-cols-6 gap-3"
-          id="downshift-5-menu"
+          id="downshift-2-menu"
           role="listbox"
         >
           <li
@@ -458,9 +458,9 @@ exports[`SelectNetwork should render with networks 1`] = `
           DEVELOPMENT NETWORKS
         </div>
         <ul
-          aria-labelledby="downshift-5-label"
+          aria-labelledby="downshift-2-label"
           class="grid grid-cols-6 gap-3"
-          id="downshift-5-menu"
+          id="downshift-2-menu"
           role="listbox"
         >
           <li

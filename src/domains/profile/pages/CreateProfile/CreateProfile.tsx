@@ -79,7 +79,9 @@ export const CreateProfile = () => {
 			profile.auth().setPassword(password);
 		}
 
-		await persist(profile);
+		profile.save(password);
+
+		await persist();
 
 		history.push("/");
 	};

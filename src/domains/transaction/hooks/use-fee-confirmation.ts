@@ -2,7 +2,7 @@ import { Contracts } from "@arkecosystem/platform-sdk";
 import { Contracts as ProfileContracts } from "@arkecosystem/platform-sdk-profiles";
 import { BigNumber } from "@arkecosystem/platform-sdk-support";
 import { useEnvironmentContext } from "app/contexts";
-import { useActiveProfile } from "app/hooks";
+import { useActiveProfile, useProfileUtils } from "app/hooks";
 import { FeeWarningVariant } from "domains/transaction/components/FeeWarning";
 import { useCallback, useEffect, useMemo, useState } from "react";
 
@@ -13,7 +13,8 @@ export const useFeeConfirmation = (fee: number | string, fees: Contracts.Transac
 	const [feeWarningVariant, setFeeWarningVariant] = useState<FeeWarningVariant | undefined>();
 
 	const activeProfile = useActiveProfile();
-	const { persist } = useEnvironmentContext();
+	const { persist, env } = useEnvironmentContext();
+	const { saveProfile } = useProfileUtils(env);
 
 	useEffect(() => {
 		if (!fee) {
@@ -41,7 +42,9 @@ export const useFeeConfirmation = (fee: number | string, fees: Contracts.Transac
 
 			if (suppressWarning) {
 				activeProfile.settings().set(ProfileContracts.ProfileSetting.DoNotShowFeeWarning, true);
-				await persist(activeProfile);
+
+				saveProfile(activeProfile);
+				await persist();
 			}
 
 			const result: any = callback();
@@ -50,7 +53,7 @@ export const useFeeConfirmation = (fee: number | string, fees: Contracts.Transac
 				await result;
 			}
 		},
-		[activeProfile, persist],
+		[activeProfile, persist, saveProfile],
 	);
 
 	const requireFeeConfirmation = useMemo(

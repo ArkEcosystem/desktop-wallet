@@ -125,13 +125,13 @@ exports[`LedgerConnectionStep should emit event on connect 1`] = `
         </div>
       </div>
       <div
-        class="flex flex-col"
+        class="flex flex-col w-full"
       >
-        <p
+        <div
           class="text-sm leading-relaxed break-words dark:text-theme-secondary-500"
         >
           Successfully connected
-        </p>
+        </div>
       </div>
     </div>
   </section>
@@ -263,13 +263,13 @@ exports[`LedgerConnectionStep should emit event on fail 1`] = `
         </div>
       </div>
       <div
-        class="flex flex-col"
+        class="flex flex-col w-full"
       >
-        <p
+        <div
           class="text-sm leading-relaxed break-words dark:text-theme-secondary-500"
         >
           Failed
-        </p>
+        </div>
       </div>
     </div>
   </section>
