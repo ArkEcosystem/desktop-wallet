@@ -95,6 +95,7 @@ function createWindow() {
 		webPreferences: {
 			nodeIntegration: true,
 			webviewTag: true,
+			nodeIntegrationInWorker: true,
 		},
 	});
 
