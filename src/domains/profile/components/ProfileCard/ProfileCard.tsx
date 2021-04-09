@@ -2,20 +2,22 @@ import { Contracts } from "@arkecosystem/platform-sdk-profiles";
 import { Badge } from "app/components/Badge";
 import { Card } from "app/components/Card";
 import { DropdownOption } from "app/components/Dropdown";
+import cn from "classnames";
 import { ProfileAvatar } from "domains/profile/components/ProfileAvatar";
 import React from "react";
 
 type ProfileCardProps = {
-	profile: Contracts.IProfile;
 	actions?: DropdownOption[];
-	onSelect?: any;
-	onClick?: any;
+	className?: string;
+	profile: Contracts.IProfile;
 	showSettings?: boolean;
+	onClick?: any;
+	onSelect?: any;
 };
 
-export const ProfileCard = ({ profile, actions, onClick, onSelect, showSettings }: ProfileCardProps) => (
+export const ProfileCard = ({ actions, className, profile, showSettings, onClick, onSelect }: ProfileCardProps) => (
 	<Card
-		className="w-40 h-40 leading-tight m-2.5"
+		className={cn("w-40 h-40 leading-tight", className)}
 		onClick={onClick}
 		actions={showSettings ? actions : undefined}
 		onSelect={onSelect}
