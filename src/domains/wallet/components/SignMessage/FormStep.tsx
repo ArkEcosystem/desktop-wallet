@@ -21,12 +21,15 @@ export const FormStep = ({
 
 	const { register, setValue } = useFormContext();
 
+	const subtitle = wallet.isLedger()
+		? t("WALLETS.MODAL_SIGN_MESSAGE.FORM_STEP.DESCRIPTION_LEDGER")
+		: wallet.usesWIF()
+		? t("WALLETS.MODAL_SIGN_MESSAGE.FORM_STEP.DESCRIPTION_ENCRYPTION_PASSWORD")
+		: t("WALLETS.MODAL_SIGN_MESSAGE.FORM_STEP.DESCRIPTION_MNEMONIC");
+
 	return (
 		<section className="space-y-8">
-			<Header
-				title={t("WALLETS.MODAL_SIGN_MESSAGE.FORM_STEP.TITLE")}
-				subtitle={t("WALLETS.MODAL_SIGN_MESSAGE.FORM_STEP.DESCRIPTION")}
-			/>
+			<Header title={t("WALLETS.MODAL_SIGN_MESSAGE.FORM_STEP.TITLE")} subtitle={subtitle} />
 
 			<FormField name="signatory-address">
 				<FormLabel label={t("WALLETS.SIGNATORY")} />
