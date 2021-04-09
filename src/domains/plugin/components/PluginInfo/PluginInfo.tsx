@@ -86,7 +86,7 @@ export const PluginInfo = ({ description, permissions, images, minimumVersion }:
 								slidesPerView: 3,
 								slidesPerColumn: 1,
 								slidesPerGroup: 3,
-								spaceBetween: 20,
+								spaceBetween: 18,
 							}}
 						>
 							{(screenshot: any) => (

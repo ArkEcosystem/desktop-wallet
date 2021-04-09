@@ -1,5 +1,6 @@
 import { Contracts, DTO } from "@arkecosystem/platform-sdk-profiles";
 import { IReadWriteWallet } from "@arkecosystem/platform-sdk-profiles/dist/contracts";
+import { useSynchronizer } from "app/hooks";
 import { useCallback, useEffect, useRef, useState } from "react";
 
 type TransactionsState = {
@@ -8,6 +9,7 @@ type TransactionsState = {
 	isLoadingMore: boolean;
 	activeMode?: string;
 	activeTransactionType?: any;
+	hasMore?: boolean;
 };
 
 type TransactionFilters = {
@@ -20,6 +22,7 @@ type FetchTransactionProps = {
 	mode?: string;
 	transactionType?: any;
 	wallets: IReadWriteWallet[];
+	cursor?: number;
 };
 
 export const useProfileTransactions = ({
@@ -29,12 +32,15 @@ export const useProfileTransactions = ({
 	profile: Contracts.IProfile;
 	wallets: Contracts.IReadWriteWallet[];
 }) => {
-	const lastActiveMode = useRef<string>();
+	const lastQuery = useRef<string>();
+	const isMounted = useRef(true);
+	const cursor = useRef(1);
 
 	const [
-		{ transactions, activeMode, activeTransactionType, isLoadingTransactions, isLoadingMore },
+		{ transactions, activeMode, activeTransactionType, isLoadingTransactions, isLoadingMore, hasMore },
 		setState,
 	] = useState<TransactionsState>({
+		hasMore: true,
 		isLoadingMore: false,
 		isLoadingTransactions: true,
 		transactions: [],
@@ -44,7 +50,7 @@ export const useProfileTransactions = ({
 
 	useEffect(() => {
 		const loadTransactions = async () => {
-			const fetchedTransactions = await fetchTransactions({
+			const response = await fetchTransactions({
 				wallets,
 				flush: true,
 				mode: activeMode!,
@@ -53,30 +59,51 @@ export const useProfileTransactions = ({
 
 			const isAborted = () => {
 				const activeQuery = JSON.stringify({ activeMode, activeTransactionType });
-				return activeQuery !== lastActiveMode.current;
+				return activeQuery !== lastQuery.current;
 			};
 
 			if (isAborted()) {
 				return;
 			}
 
-			setState((state) => ({ ...state, transactions: fetchedTransactions, isLoadingTransactions: false }));
+			/* istanbul ignore next */
+			if (!isMounted.current) {
+				return;
+			}
+
+			setState((state) => ({
+				...state,
+				transactions: response.items(),
+				isLoadingTransactions: false,
+				hasMore: response.items().length > 0 && response.hasMorePages(),
+			}));
 		};
 
-		if (!lastActiveMode.current) {
+		if (!lastQuery.current) {
 			return;
 		}
 
 		setTimeout(() => loadTransactions(), 0);
+
+		isMounted.current = true;
+		return () => {
+			isMounted.current = false;
+		};
 
 		// eslint-disable-next-line
 	}, [wallets.length, activeMode, activeTransactionType]);
 
 	const updateFilters = useCallback(
 		({ activeMode, activeTransactionType }: TransactionFilters) => {
-			lastActiveMode.current = JSON.stringify({ activeMode, activeTransactionType });
+			lastQuery.current = JSON.stringify({ activeMode, activeTransactionType });
 
 			const hasWallets = wallets.length !== 0;
+			cursor.current = 1;
+
+			/* istanbul ignore next */
+			if (!isMounted.current) {
+				return;
+			}
 
 			setState({
 				transactions: [],
@@ -90,9 +117,9 @@ export const useProfileTransactions = ({
 	);
 
 	const fetchTransactions = useCallback(
-		async ({ flush = false, mode = "all", transactionType, wallets = [] }: FetchTransactionProps) => {
+		({ flush = false, mode = "all", transactionType, wallets = [], cursor = 1 }: FetchTransactionProps) => {
 			if (wallets.length === 0) {
-				return [];
+				return { items: () => [], hasMorePages: () => false };
 			}
 
 			const methodMap = {
@@ -107,34 +134,74 @@ export const useProfileTransactions = ({
 				profile.transactionAggregate().flush(method);
 			}
 
-			const defaultQuery = { limit: 30, addresses: wallets.map((wallet) => wallet.address()) };
+			const defaultQuery = { limit: 30, addresses: wallets.map((wallet) => wallet.address(), cursor) };
 			const queryParams = transactionType ? { ...defaultQuery, ...transactionType } : defaultQuery;
 
 			// @ts-ignore
-			const response = await profile.transactionAggregate()[method](queryParams);
-			const transactionsAggregate = response.items();
-
-			return transactionsAggregate;
+			return profile.transactionAggregate()[method](queryParams);
 		},
 		[profile],
 	);
 
 	const fetchMore = useCallback(async () => {
+		cursor.current = cursor.current + 1;
 		setState((state) => ({ ...state, isLoadingMore: true }));
 
-		const nextPage = await fetchTransactions({
+		const response = await fetchTransactions({
 			flush: false,
 			mode: activeMode,
 			transactionType: activeTransactionType,
 			wallets,
+			cursor: cursor.current,
 		});
 
 		setState((state) => ({
 			...state,
 			isLoadingMore: false,
-			transactions: [...state.transactions, ...nextPage],
+			hasMore: response.items().length > 0 && response.hasMorePages(),
+			transactions: [...state.transactions, ...response.items()],
 		}));
 	}, [activeMode, activeTransactionType, wallets.length]); // eslint-disable-line react-hooks/exhaustive-deps
+
+	/**
+	 * Run periodically every 30 seconds to check for new transactions
+	 */
+	const checkNewTransactions = async () => {
+		const response = await fetchTransactions({
+			flush: true,
+			mode: activeMode,
+			transactionType: activeTransactionType,
+			wallets,
+			cursor: 1,
+		});
+
+		const firstTransaction = response.items()[0];
+		const foundNew =
+			firstTransaction && !transactions.some((transaction) => firstTransaction.id() === transaction.id());
+
+		if (!foundNew) {
+			return;
+		}
+
+		setState((state) => ({
+			...state,
+			isLoadingMore: false,
+			hasMore: response.items().length > 0 && response.hasMorePages(),
+			transactions: response.items(),
+		}));
+	};
+
+	const { start, stop } = useSynchronizer([
+		{
+			callback: checkNewTransactions,
+			interval: 30000,
+		},
+	]);
+
+	useEffect(() => {
+		start();
+		return () => stop();
+	}, [start, stop]);
 
 	return {
 		fetchTransactions,
@@ -145,5 +212,6 @@ export const useProfileTransactions = ({
 		activeTransactionType,
 		isLoadingTransactions,
 		isLoadingMore,
+		hasMore,
 	};
 };

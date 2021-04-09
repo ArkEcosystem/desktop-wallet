@@ -30,7 +30,7 @@ export const ExchangeGrid = ({ exchanges, onClick, onDelete, onOpenDetails }: Ex
 	};
 
 	return (
-		<div data-testid="ExchangeGrid" className="w-full grid grid-cols-3 gap-5">
+		<div data-testid="ExchangeGrid" className="w-full grid grid-cols-3 gap-4.5">
 			{exchanges.map((exchange: any, index: number) => (
 				<ExchangeCard
 					key={exchange?.id || `blank_${index}`}
