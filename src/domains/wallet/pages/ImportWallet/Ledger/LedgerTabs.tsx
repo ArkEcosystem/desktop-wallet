@@ -154,7 +154,7 @@ export const LedgerTabs = ({ activeIndex }: { activeIndex?: number }) => {
 					<LedgerConnectionStep onConnect={() => setActiveTab(3)} />
 				</TabPanel>
 				<TabPanel tabId={3}>
-					<LedgerScanStep profile={activeProfile} setRetryFn={handleRetry} />
+					<LedgerScanStep setRetryFn={handleRetry} />
 				</TabPanel>
 				<TabPanel tabId={4}>
 					<LedgerImportStep wallets={importedWallets} profile={activeProfile} />

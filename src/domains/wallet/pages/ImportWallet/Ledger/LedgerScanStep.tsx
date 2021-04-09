@@ -1,5 +1,4 @@
 import { Coins } from "@arkecosystem/platform-sdk";
-import { Contracts } from "@arkecosystem/platform-sdk-profiles";
 import Tippy from "@tippyjs/react";
 import { Address } from "app/components/Address";
 import { Amount } from "app/components/Amount";
@@ -127,20 +126,14 @@ export const LedgerTable = ({
 	);
 };
 
-export const LedgerScanStep = ({
-	profile,
-	setRetryFn,
-}: {
-	profile: Contracts.IProfile;
-	setRetryFn?: (fn?: () => void) => void;
-}) => {
+export const LedgerScanStep = ({ setRetryFn }: { setRetryFn?: (fn?: () => void) => void }) => {
 	const { t } = useTranslation();
 	const { watch, register, unregister, setValue } = useFormContext();
 	const [network] = useState<Coins.Network>(() => watch("network"));
 
 	const ledgerScanner = useLedgerScanner(network.coin(), network.id());
 
-	const { scanUntilNewOrFail, selectedWallets, canRetry, isScanning, abortScanner } = ledgerScanner;
+	const { scan, selectedWallets, canRetry, isScanning, abortScanner } = ledgerScanner;
 
 	// eslint-disable-next-line arrow-body-style
 	useEffect(() => {
@@ -155,16 +148,16 @@ export const LedgerScanStep = ({
 
 	useEffect(() => {
 		if (canRetry) {
-			setRetryFn?.(() => scanUntilNewOrFail());
+			setRetryFn?.(() => scan());
 		} else {
 			setRetryFn?.(undefined);
 		}
 		return () => setRetryFn?.(undefined);
-	}, [setRetryFn, scanUntilNewOrFail, canRetry]);
+	}, [setRetryFn, scan, canRetry]);
 
 	useEffect(() => {
-		scanUntilNewOrFail();
-	}, [scanUntilNewOrFail]);
+		scan();
+	}, [scan]);
 
 	useEffect(() => {
 		register("wallets", { required: true, validate: (value) => Array.isArray(value) && value.length > 0 });
