@@ -40,7 +40,6 @@ const prepareLedger = async (
 	let senderPublicKey = wallet.publicKey();
 
 	if (!senderPublicKey) {
-		// TODO: Get public key from derived wallets
 		senderPublicKey = await wallet.coin().ledger().getPublicKey(path!);
 	}
 

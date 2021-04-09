@@ -24,10 +24,11 @@ exports[`Use Ledger Scanner should dispatch failed 1`] = `
 <div>
   <div>
     <ul />
-    <button
-      data-testid="scan"
-    >
+    <button>
       Scan
+    </button>
+    <button>
+      Retry
     </button>
   </div>
 </div>
@@ -45,13 +46,18 @@ exports[`Use Ledger Scanner should render 1`] = `
           Address: DJpFwW39QnQvQRQJF2MCfAoKvsX4DJ28jq
         </p>
         <p>
-          Failed: false
+          Selected: true
+        </p>
+      </li>
+      <li>
+        <p>
+          Path: 44'/1'/1'/0/0
+        </p>
+        <p>
+          Address: D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD
         </p>
         <p>
           Selected: true
-        </p>
-        <p>
-          Balance: 2
         </p>
       </li>
       <li>
@@ -62,13 +68,7 @@ exports[`Use Ledger Scanner should render 1`] = `
           Address: DRgF3PvzeGWndQjET7dZsSmnrc6uAy23ES
         </p>
         <p>
-          Failed: false
-        </p>
-        <p>
           Selected: true
-        </p>
-        <p>
-          Balance: 1
         </p>
       </li>
       <li>
@@ -79,27 +79,131 @@ exports[`Use Ledger Scanner should render 1`] = `
           Address: DSyG9hK9CE8eyfddUoEvsga4kNVQLdw2ve
         </p>
         <p>
-          Failed: false
+          Selected: true
+        </p>
+      </li>
+      <li>
+        <p>
+          Path: 44'/1'/4'/0/0
+        </p>
+        <p>
+          Address: DFJ5Z51F1euNNdRUQJKQVdG4h495LZkc6T
         </p>
         <p>
           Selected: true
         </p>
+      </li>
+      <li>
         <p>
-          Balance: 3
+          Path: m/44'/1'/0'/0/0
+        </p>
+        <p>
+          Address: DQseW3VJ1db5xN5xZi4Qhn6AFWtcwSwzpG
+        </p>
+        <p>
+          Selected: true
+        </p>
+      </li>
+      <li>
+        <p>
+          Path: m/44'/1'/0'/0/1
+        </p>
+        <p>
+          Address: DAjARgWghxBay8kKbvwBpyCeZCzGkk4fTJ
+        </p>
+        <p>
+          Selected: true
+        </p>
+      </li>
+      <li>
+        <p>
+          Path: m/44'/1'/0'/0/2
+        </p>
+        <p>
+          Address: DCE8ThPRhjNs3po4gew6cHdjSU1UDKJipL
+        </p>
+        <p>
+          Selected: true
+        </p>
+      </li>
+      <li>
+        <p>
+          Path: m/44'/1'/0'/0/3
+        </p>
+        <p>
+          Address: DRBdTRcMZhRi7NngPjiacZmLGaixozs2Fj
+        </p>
+        <p>
+          Selected: true
+        </p>
+      </li>
+      <li>
+        <p>
+          Path: m/44'/1'/0'/0/4
+        </p>
+        <p>
+          Address: DS9ZkqvigLJEzKNrENYMpAvpdXTdzRGabC
+        </p>
+        <p>
+          Selected: true
+        </p>
+      </li>
+      <li>
+        <p>
+          Path: m/44'/1'/0'/0/5
+        </p>
+        <p>
+          Address: DNQTowjHMVonh7Ssg4x5CsTfoxtqBob1wv
+        </p>
+        <p>
+          Selected: true
+        </p>
+      </li>
+      <li>
+        <p>
+          Path: m/44'/1'/0'/0/6
+        </p>
+        <p>
+          Address: DPUZf54koDV3W65gk2FYUMQouWTfB9WCCe
+        </p>
+        <p>
+          Selected: true
+        </p>
+      </li>
+      <li>
+        <p>
+          Path: m/44'/1'/0'/0/7
+        </p>
+        <p>
+          Address: DLMYdhXK2G6NCRfq9QNQxYTToCUwjAeBSH
+        </p>
+        <p>
+          Selected: true
+        </p>
+      </li>
+      <li>
+        <p>
+          Path: m/44'/1'/0'/0/8
+        </p>
+        <p>
+          Address: DJriBkLTAuMrzGCufvGm72HBhr2oCgdrUq
+        </p>
+        <p>
+          Selected: true
+        </p>
+      </li>
+      <li>
+        <p>
+          Path: m/44'/1'/0'/0/9
+        </p>
+        <p>
+          Address: DJz3y4veAP3eETCjgm3c7D1uGKpdZi5LWN
+        </p>
+        <p>
+          Selected: true
         </p>
       </li>
     </ul>
-    <button>
-      Scan
-    </button>
-  </div>
-</div>
-`;
-
-exports[`Use Ledger Scanner should render with scanRetry 1`] = `
-<div>
-  <div>
-    <ul />
     <button>
       Scan
     </button>
@@ -119,9 +223,6 @@ exports[`Use Ledger Scanner should render with toggleSelect 1`] = `
           Address: DJpFwW39QnQvQRQJF2MCfAoKvsX4DJ28jq
         </p>
         <p>
-          Failed: false
-        </p>
-        <p>
           Selected: false
         </p>
         <input
@@ -131,13 +232,10 @@ exports[`Use Ledger Scanner should render with toggleSelect 1`] = `
       </li>
       <li>
         <p>
-          Path: 44'/1'/2'/0/0
+          Path: 44'/1'/1'/0/0
         </p>
         <p>
-          Address: DRgF3PvzeGWndQjET7dZsSmnrc6uAy23ES
-        </p>
-        <p>
-          Failed: false
+          Address: D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD
         </p>
         <p>
           Selected: true
@@ -149,19 +247,196 @@ exports[`Use Ledger Scanner should render with toggleSelect 1`] = `
       </li>
       <li>
         <p>
-          Path: 44'/1'/3'/0/0
+          Path: 44'/1'/2'/0/0
         </p>
         <p>
-          Address: DSyG9hK9CE8eyfddUoEvsga4kNVQLdw2ve
-        </p>
-        <p>
-          Failed: false
+          Address: DRgF3PvzeGWndQjET7dZsSmnrc6uAy23ES
         </p>
         <p>
           Selected: true
         </p>
         <input
           data-testid="input--2"
+          type="checkbox"
+        />
+      </li>
+      <li>
+        <p>
+          Path: 44'/1'/3'/0/0
+        </p>
+        <p>
+          Address: DSyG9hK9CE8eyfddUoEvsga4kNVQLdw2ve
+        </p>
+        <p>
+          Selected: true
+        </p>
+        <input
+          data-testid="input--3"
+          type="checkbox"
+        />
+      </li>
+      <li>
+        <p>
+          Path: 44'/1'/4'/0/0
+        </p>
+        <p>
+          Address: DFJ5Z51F1euNNdRUQJKQVdG4h495LZkc6T
+        </p>
+        <p>
+          Selected: true
+        </p>
+        <input
+          data-testid="input--4"
+          type="checkbox"
+        />
+      </li>
+      <li>
+        <p>
+          Path: m/44'/1'/0'/0/0
+        </p>
+        <p>
+          Address: DQseW3VJ1db5xN5xZi4Qhn6AFWtcwSwzpG
+        </p>
+        <p>
+          Selected: true
+        </p>
+        <input
+          data-testid="input--5"
+          type="checkbox"
+        />
+      </li>
+      <li>
+        <p>
+          Path: m/44'/1'/0'/0/1
+        </p>
+        <p>
+          Address: DAjARgWghxBay8kKbvwBpyCeZCzGkk4fTJ
+        </p>
+        <p>
+          Selected: true
+        </p>
+        <input
+          data-testid="input--6"
+          type="checkbox"
+        />
+      </li>
+      <li>
+        <p>
+          Path: m/44'/1'/0'/0/2
+        </p>
+        <p>
+          Address: DCE8ThPRhjNs3po4gew6cHdjSU1UDKJipL
+        </p>
+        <p>
+          Selected: true
+        </p>
+        <input
+          data-testid="input--7"
+          type="checkbox"
+        />
+      </li>
+      <li>
+        <p>
+          Path: m/44'/1'/0'/0/3
+        </p>
+        <p>
+          Address: DRBdTRcMZhRi7NngPjiacZmLGaixozs2Fj
+        </p>
+        <p>
+          Selected: true
+        </p>
+        <input
+          data-testid="input--8"
+          type="checkbox"
+        />
+      </li>
+      <li>
+        <p>
+          Path: m/44'/1'/0'/0/4
+        </p>
+        <p>
+          Address: DS9ZkqvigLJEzKNrENYMpAvpdXTdzRGabC
+        </p>
+        <p>
+          Selected: true
+        </p>
+        <input
+          data-testid="input--9"
+          type="checkbox"
+        />
+      </li>
+      <li>
+        <p>
+          Path: m/44'/1'/0'/0/5
+        </p>
+        <p>
+          Address: DNQTowjHMVonh7Ssg4x5CsTfoxtqBob1wv
+        </p>
+        <p>
+          Selected: true
+        </p>
+        <input
+          data-testid="input--10"
+          type="checkbox"
+        />
+      </li>
+      <li>
+        <p>
+          Path: m/44'/1'/0'/0/6
+        </p>
+        <p>
+          Address: DPUZf54koDV3W65gk2FYUMQouWTfB9WCCe
+        </p>
+        <p>
+          Selected: true
+        </p>
+        <input
+          data-testid="input--11"
+          type="checkbox"
+        />
+      </li>
+      <li>
+        <p>
+          Path: m/44'/1'/0'/0/7
+        </p>
+        <p>
+          Address: DLMYdhXK2G6NCRfq9QNQxYTToCUwjAeBSH
+        </p>
+        <p>
+          Selected: true
+        </p>
+        <input
+          data-testid="input--12"
+          type="checkbox"
+        />
+      </li>
+      <li>
+        <p>
+          Path: m/44'/1'/0'/0/8
+        </p>
+        <p>
+          Address: DJriBkLTAuMrzGCufvGm72HBhr2oCgdrUq
+        </p>
+        <p>
+          Selected: true
+        </p>
+        <input
+          data-testid="input--13"
+          type="checkbox"
+        />
+      </li>
+      <li>
+        <p>
+          Path: m/44'/1'/0'/0/9
+        </p>
+        <p>
+          Address: DJz3y4veAP3eETCjgm3c7D1uGKpdZi5LWN
+        </p>
+        <p>
+          Selected: true
+        </p>
+        <input
+          data-testid="input--14"
           type="checkbox"
         />
       </li>
@@ -178,9 +453,178 @@ exports[`Use Ledger Scanner should render with toggleSelect 1`] = `
 exports[`Use Ledger Scanner should render with toggleSelectAll 1`] = `
 <div>
   <div>
-    <ul />
+    <ul>
+      <li>
+        <p>
+          Path: 44'/1'/0'/0/0
+        </p>
+        <p>
+          Address: DJpFwW39QnQvQRQJF2MCfAoKvsX4DJ28jq
+        </p>
+        <p>
+          Selected: false
+        </p>
+      </li>
+      <li>
+        <p>
+          Path: 44'/1'/1'/0/0
+        </p>
+        <p>
+          Address: D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD
+        </p>
+        <p>
+          Selected: false
+        </p>
+      </li>
+      <li>
+        <p>
+          Path: 44'/1'/2'/0/0
+        </p>
+        <p>
+          Address: DRgF3PvzeGWndQjET7dZsSmnrc6uAy23ES
+        </p>
+        <p>
+          Selected: false
+        </p>
+      </li>
+      <li>
+        <p>
+          Path: 44'/1'/3'/0/0
+        </p>
+        <p>
+          Address: DSyG9hK9CE8eyfddUoEvsga4kNVQLdw2ve
+        </p>
+        <p>
+          Selected: false
+        </p>
+      </li>
+      <li>
+        <p>
+          Path: 44'/1'/4'/0/0
+        </p>
+        <p>
+          Address: DFJ5Z51F1euNNdRUQJKQVdG4h495LZkc6T
+        </p>
+        <p>
+          Selected: false
+        </p>
+      </li>
+      <li>
+        <p>
+          Path: m/44'/1'/0'/0/0
+        </p>
+        <p>
+          Address: DQseW3VJ1db5xN5xZi4Qhn6AFWtcwSwzpG
+        </p>
+        <p>
+          Selected: false
+        </p>
+      </li>
+      <li>
+        <p>
+          Path: m/44'/1'/0'/0/1
+        </p>
+        <p>
+          Address: DAjARgWghxBay8kKbvwBpyCeZCzGkk4fTJ
+        </p>
+        <p>
+          Selected: false
+        </p>
+      </li>
+      <li>
+        <p>
+          Path: m/44'/1'/0'/0/2
+        </p>
+        <p>
+          Address: DCE8ThPRhjNs3po4gew6cHdjSU1UDKJipL
+        </p>
+        <p>
+          Selected: false
+        </p>
+      </li>
+      <li>
+        <p>
+          Path: m/44'/1'/0'/0/3
+        </p>
+        <p>
+          Address: DRBdTRcMZhRi7NngPjiacZmLGaixozs2Fj
+        </p>
+        <p>
+          Selected: false
+        </p>
+      </li>
+      <li>
+        <p>
+          Path: m/44'/1'/0'/0/4
+        </p>
+        <p>
+          Address: DS9ZkqvigLJEzKNrENYMpAvpdXTdzRGabC
+        </p>
+        <p>
+          Selected: false
+        </p>
+      </li>
+      <li>
+        <p>
+          Path: m/44'/1'/0'/0/5
+        </p>
+        <p>
+          Address: DNQTowjHMVonh7Ssg4x5CsTfoxtqBob1wv
+        </p>
+        <p>
+          Selected: false
+        </p>
+      </li>
+      <li>
+        <p>
+          Path: m/44'/1'/0'/0/6
+        </p>
+        <p>
+          Address: DPUZf54koDV3W65gk2FYUMQouWTfB9WCCe
+        </p>
+        <p>
+          Selected: false
+        </p>
+      </li>
+      <li>
+        <p>
+          Path: m/44'/1'/0'/0/7
+        </p>
+        <p>
+          Address: DLMYdhXK2G6NCRfq9QNQxYTToCUwjAeBSH
+        </p>
+        <p>
+          Selected: false
+        </p>
+      </li>
+      <li>
+        <p>
+          Path: m/44'/1'/0'/0/8
+        </p>
+        <p>
+          Address: DJriBkLTAuMrzGCufvGm72HBhr2oCgdrUq
+        </p>
+        <p>
+          Selected: false
+        </p>
+      </li>
+      <li>
+        <p>
+          Path: m/44'/1'/0'/0/9
+        </p>
+        <p>
+          Address: DJz3y4veAP3eETCjgm3c7D1uGKpdZi5LWN
+        </p>
+        <p>
+          Selected: false
+        </p>
+      </li>
+    </ul>
     <button>
       Scan
+    </button>
+    <button>
+      Toggle All
     </button>
   </div>
 </div>

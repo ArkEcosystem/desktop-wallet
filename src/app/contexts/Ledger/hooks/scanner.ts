@@ -16,8 +16,6 @@ export const useLedgerScanner = (coin: string, network: string) => {
 
 	const { selected, wallets, error } = state;
 
-	// Getters
-
 	const isSelected = useCallback((path: string) => selected.some((item) => path === item), [selected]);
 
 	const selectedWallets = useMemo(() => wallets.filter((item) => selected.includes(item.path)), [selected, wallets]);
@@ -27,6 +25,7 @@ export const useLedgerScanner = (coin: string, network: string) => {
 	const abortRetryRef = useRef<boolean>(false);
 
 	const scan = useCallback(async () => {
+		setIsScanning(true);
 		setBusy();
 		abortRetryRef.current = false;
 
@@ -57,20 +56,13 @@ export const useLedgerScanner = (coin: string, network: string) => {
 		}
 
 		setIdle();
+		setIsScanning(false);
 	}, [coin, network, env, setBusy, setIdle]);
 
 	const abortScanner = useCallback(() => {
 		abortRetryRef.current = true;
 		setIdle();
 	}, [setIdle]);
-
-	const scanUntilNewOrFail = useCallback(async () => {
-		setIsScanning(true);
-		await scan();
-		setIsScanning(false);
-	}, [scan]);
-
-	// Actions - Selection
 
 	const toggleSelect = (path: string) => dispatch({ type: "toggleSelect", path });
 	const toggleSelectAll = () => dispatch({ type: "toggleSelectAll" });
@@ -79,7 +71,7 @@ export const useLedgerScanner = (coin: string, network: string) => {
 		isScanning,
 		isSelected,
 		canRetry,
-		scanUntilNewOrFail,
+		scan,
 		toggleSelectAll,
 		toggleSelect,
 		wallets,
