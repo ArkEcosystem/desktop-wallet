@@ -10,7 +10,7 @@ import { Header } from "app/components/Header";
 import { HeaderSearchBar } from "app/components/Header/HeaderSearchBar";
 import { Page, Section } from "app/components/Layout";
 import { useEnvironmentContext } from "app/contexts";
-import { useActiveProfile, useActiveWallet, useProfileUtils,useQueryParams } from "app/hooks";
+import { useActiveProfile, useActiveWallet, useProfileUtils, useQueryParams } from "app/hooks";
 import { toasts } from "app/services";
 import { FilterWallets } from "domains/dashboard/components/FilterWallets";
 import { AddressTable } from "domains/vote/components/AddressTable";
