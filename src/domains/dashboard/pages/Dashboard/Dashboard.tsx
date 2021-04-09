@@ -6,7 +6,7 @@ import { toasts } from "app/services";
 import { Wallets } from "domains/dashboard/components/Wallets";
 import { useWalletConfig } from "domains/dashboard/hooks";
 import { Transactions } from "domains/transaction/components/Transactions";
-import React, { useEffect,useMemo } from "react";
+import React, { useEffect, useMemo } from "react";
 import { useTranslation } from "react-i18next";
 import { useHistory } from "react-router-dom";
 
