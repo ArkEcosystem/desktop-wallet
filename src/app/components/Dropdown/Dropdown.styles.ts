@@ -1,13 +1,13 @@
 import tw from "twin.macro";
 
-export const defaultClasses = "mt-3 py-3 absolute z-10 rounded-lg shadow-xl";
+export const defaultClasses = "mt-3 py-3 absolute z-10 bg-theme-background rounded-lg shadow-xl";
 
 const getVariant = (variant: string): any => {
 	if (variant === "options") {
-		return tw`bg-white dark:bg-theme-secondary-800`;
+		return tw`dark:bg-theme-secondary-800`;
 	}
 
-	return tw`bg-theme-background border-2 border-theme-primary-100 dark:border-theme-secondary-800`;
+	return tw`border-2 border-theme-primary-100 dark:border-theme-secondary-800`;
 };
 
 const getPosition = (position: string): any => {
