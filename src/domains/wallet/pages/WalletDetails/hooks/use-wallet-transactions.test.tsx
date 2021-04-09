@@ -1,6 +1,6 @@
 import { Contracts } from "@arkecosystem/platform-sdk-profiles";
 import nock from "nock";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { act, env, fireEvent, getDefaultProfileId, render, screen, waitFor } from "utils/testing-library";
 
 import { useWalletTransactions } from "./use-wallet-transactions";
@@ -63,7 +63,7 @@ describe("Wallet Transactions Hook", () => {
 		const confirm = jest.spyOn(wallet.transaction(), "confirm").mockResolvedValue(true);
 
 		const Component = () => {
-			const { syncMultiSignatures } = useWalletTransactions(wallet, { limit: 10 });
+			const { syncMultiSignatures } = useWalletTransactions(wallet);
 			const [loading, setLoading] = useState(false);
 
 			const run = async () => {
@@ -87,127 +87,24 @@ describe("Wallet Transactions Hook", () => {
 		jest.clearAllMocks();
 	});
 
-	it("should fetch more", async () => {
-		const Component = () => {
-			const { fetchMore, transactions } = useWalletTransactions(wallet, { limit: 10 });
-			return (
-				<div>
-					<ul>
-						{transactions.map((item) => (
-							<li key={item.id()}>{item.id()}</li>
-						))}
-					</ul>
-					<button onClick={fetchMore}>More</button>
-				</div>
-			);
-		};
-
-		render(<Component />);
-
-		act(() => {
-			fireEvent.click(screen.getByRole("button"));
-		});
-
-		await waitFor(() => expect(screen.getAllByRole("listitem")).toHaveLength(1));
-
-		act(() => {
-			fireEvent.click(screen.getByRole("button"));
-		});
-
-		await act(async () => {
-			await waitFor(() => expect(screen.getAllByRole("listitem")).toHaveLength(3));
-		});
-	});
-
-	it("should abort previous sync", async () => {
-		const Component = () => {
-			const { fetchMore, transactions } = useWalletTransactions(wallet, { limit: 10 });
-			return (
-				<div>
-					<ul>
-						{transactions.map((item) => (
-							<li key={item.id()}>{item.id()}</li>
-						))}
-					</ul>
-					<button onClick={fetchMore}>More</button>
-				</div>
-			);
-		};
-
-		render(<Component />);
-
-		act(() => {
-			fireEvent.click(screen.getByRole("button"));
-		});
-
-		await waitFor(() => expect(screen.getAllByRole("listitem")).toHaveLength(1));
-
-		act(() => {
-			fireEvent.click(screen.getByRole("button"));
-		});
-
-		act(() => {
-			fireEvent.click(screen.getByRole("button"));
-		});
-
-		await act(async () => {
-			await waitFor(() => expect(screen.getAllByRole("listitem")).toHaveLength(3));
-		});
-	});
-
 	it("should run periodically", async () => {
 		jest.useFakeTimers();
-		const spyTransactions = jest.spyOn(wallet, "transactions");
 		const spySync = jest.spyOn(wallet.transaction(), "sync");
 
 		const Component = () => {
-			const { transactions } = useWalletTransactions(wallet, { limit: 10 });
-			return <h1>{transactions.length}</h1>;
+			const { pendingMultiSignatureTransactions } = useWalletTransactions(wallet);
+
+			return <h1>{pendingMultiSignatureTransactions.length}</h1>;
 		};
 
 		render(<Component />);
 
 		jest.advanceTimersByTime(50000);
 
-		await waitFor(() => expect(spyTransactions).toHaveBeenCalledTimes(2), { timeout: 4000 });
 		await waitFor(() => expect(spySync).toHaveBeenCalledTimes(2));
 
-		spyTransactions.mockRestore();
 		spySync.mockRestore();
 		jest.useRealTimers();
-	});
-
-	it("should run periodically given a transaction type", async () => {
-		jest.useFakeTimers();
-		const spyTransactions = jest.spyOn(wallet, "transactions");
-		const spySync = jest.spyOn(wallet.transaction(), "sync");
-
-		const Component = () => {
-			const { transactions } = useWalletTransactions(wallet, { limit: 10, transactionType: "transfer" });
-			return <h1>{transactions.length}</h1>;
-		};
-
-		render(<Component />);
-
-		jest.advanceTimersByTime(50000);
-
-		await waitFor(() => expect(spyTransactions).toHaveBeenCalledTimes(2), { timeout: 4000 });
-		await waitFor(() => expect(spySync).toHaveBeenCalledTimes(2));
-
-		spyTransactions.mockRestore();
-		spySync.mockRestore();
-		jest.useRealTimers();
-	});
-	it("should be no more on initial render", () => {
-		const Component = () => {
-			const { hasMore } = useWalletTransactions(wallet, { limit: 10 });
-
-			return <span>{hasMore ? "More" : "Empty"}</span>;
-		};
-
-		render(<Component />);
-
-		expect(screen.getByText("Empty")).toBeInTheDocument();
 	});
 
 	it("should show only pending multisignature transactions", async () => {
@@ -252,8 +149,11 @@ describe("Wallet Transactions Hook", () => {
 		});
 
 		const Component = () => {
-			const { pendingMultiSignatureTransactions } = useWalletTransactions(wallet, { limit: 10 });
+			const { pendingMultiSignatureTransactions, syncMultiSignatures } = useWalletTransactions(wallet);
 
+			useEffect(() => {
+				syncMultiSignatures();
+			}, [syncMultiSignatures]);
 			return <span>{pendingMultiSignatureTransactions.length}</span>;
 		};
 

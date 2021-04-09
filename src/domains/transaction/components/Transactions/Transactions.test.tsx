@@ -97,6 +97,24 @@ describe("Transactions", () => {
 		expect(asFragment()).toMatchSnapshot();
 	});
 
+	it("should render with custom title", async () => {
+		const { asFragment, getByTestId } = renderWithRouter(
+			<Route path="/profiles/:profileId/dashboard">
+				<Transactions profile={profile} wallets={profile.wallets().values()} title={<h1>Test</h1>} />
+			</Route>,
+			{
+				routes: [dashboardURL],
+				history,
+			},
+		);
+
+		await waitFor(
+			() => expect(within(getByTestId("TransactionTable")).getAllByTestId("TableRow")).toHaveLength(4),
+			{ timeout: 4000 },
+		);
+		expect(asFragment()).toMatchSnapshot();
+	});
+
 	it("should render hidden", async () => {
 		const { asFragment } = renderWithRouter(
 			<Route path="/profiles/:profileId/dashboard" isVisible={false}>
@@ -225,7 +243,7 @@ describe("Transactions", () => {
 		expect(getByTestId("transactions__fetch-more-button")).toHaveTextContent(commonTranslations.LOADING);
 
 		await waitFor(() => {
-			expect(getByTestId("transactions__fetch-more-button")).toHaveTextContent(commonTranslations.VIEW_MORE);
+			expect(() => getByTestId("transactions__fetch-more-button")).toThrow();
 			expect(within(getByTestId("TransactionTable")).getAllByTestId("TableRow")).toHaveLength(4);
 		});
 

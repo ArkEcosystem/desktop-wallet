@@ -1,19 +1,18 @@
-import { Contracts } from "@arkecosystem/platform-sdk-profiles";
+import { Contracts, Environment } from "@arkecosystem/platform-sdk-profiles";
 import { Button } from "app/components/Button";
 import { Circle } from "app/components/Circle";
 import { Icon } from "app/components/Icon";
 import { Link } from "app/components/Link";
 import { Tooltip } from "app/components/Tooltip";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 
 import { WalletVoteSkeleton } from "./WalletVoteSkeleton";
 
 type WalletVoteProps = {
-	isLoading?: boolean;
-	isLoadingDelegates?: boolean;
 	wallet: Contracts.IReadWriteWallet;
 	onButtonClick: (address?: string) => void;
+	env: Environment;
 };
 
 const HintIcon = ({ tooltipContent }: { tooltipContent: string }) => (
@@ -29,8 +28,24 @@ const HintIcon = ({ tooltipContent }: { tooltipContent: string }) => (
 	</Tooltip>
 );
 
-export const WalletVote = ({ isLoading, isLoadingDelegates, wallet, onButtonClick }: WalletVoteProps) => {
+export const WalletVote = ({ wallet, onButtonClick, env }: WalletVoteProps) => {
 	const { t } = useTranslation();
+	const [isLoading, setIsLoading] = useState(true);
+
+	useEffect(() => {
+		const syncVotes = async () => {
+			try {
+				await env.delegates().sync(wallet?.coinId(), wallet?.networkId());
+				await wallet.syncVotes();
+			} catch {
+				// TODO: Retry sync if error code is greater than 499. Needs status code number from sdk.
+			}
+
+			setIsLoading(false);
+		};
+
+		syncVotes();
+	}, [wallet, env]);
 
 	if (isLoading) {
 		return <WalletVoteSkeleton />;
@@ -197,8 +212,8 @@ export const WalletVote = ({ isLoading, isLoadingDelegates, wallet, onButtonClic
 				variant="secondary"
 				className="space-x-2"
 				onClick={() => onButtonClick()}
-				isLoading={isLoadingDelegates}
-				disabled={isLoadingDelegates}
+				isLoading={isLoading}
+				disabled={isLoading}
 			>
 				<Icon name="Vote" width={17} height={17} />
 				<span>{t("COMMON.VOTE")}</span>
