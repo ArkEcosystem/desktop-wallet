@@ -2,6 +2,7 @@ import { Coins } from "@arkecosystem/platform-sdk";
 import { Contracts } from "@arkecosystem/platform-sdk-profiles";
 import { FormField, FormLabel } from "app/components/Form";
 import { useFees } from "app/hooks";
+import { toasts } from "app/services";
 import { SelectNetwork } from "domains/network/components/SelectNetwork";
 import { SelectAddress } from "domains/profile/components/SelectAddress";
 import { InputFee } from "domains/transaction/components/InputFee";
@@ -54,6 +55,16 @@ export const SendTransactionForm = ({
 		};
 
 		if (network) {
+			const selectedNetworkWallets = profile.wallets().findByCoinWithNetwork(network.coin(), network.id());
+			const isFullyRestoredAndSynced = selectedNetworkWallets.every(
+				(wallet) => wallet.hasBeenFullyRestored() && wallet.hasSyncedWithNetwork(),
+			);
+
+			if (!isFullyRestoredAndSynced) {
+				toasts.warning(t("COMMON.ERRORS.NETWORK_ERROR", { network: `${network.coin()} ${network.name()}` }));
+				return;
+			}
+
 			setTransactionFees(network);
 			setDynamicFees(network.can(Coins.FeatureFlag.MiscellaneousDynamicFees));
 
