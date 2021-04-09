@@ -16,7 +16,7 @@ export const useWalletDisplay = ({
 		slidesPerView: 3,
 		slidesPerColumn: 2,
 		slidesPerGroup: 3,
-		spaceBetween: 20,
+		spaceBetween: 18,
 	};
 
 	const { listWallets, gridWallets, listHasMore } = useMemo(() => {

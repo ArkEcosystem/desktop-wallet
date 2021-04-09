@@ -114,7 +114,7 @@ export const translations: { [key: string]: any } = {
 		PLUGIN_SOURCE: {
 			TITLE: "Plugin Source",
 			DESCRIPTION: "Allows Plugins to be installed from third-party sources.",
-			LOAD_FROM: "Load plugins from",
+			LOAD_FROM: "Load from",
 		},
 		ADD_PLUGIN: "Add Plugin",
 		SUCCESS: "Your plugin settings have been updated",
