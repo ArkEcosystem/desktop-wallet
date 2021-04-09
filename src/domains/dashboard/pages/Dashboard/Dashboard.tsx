@@ -1,5 +1,5 @@
 import { Contracts } from "@arkecosystem/platform-sdk-profiles";
-import { Page } from "app/components/Layout";
+import { Page, Section } from "app/components/Layout";
 import { useConfiguration } from "app/contexts";
 import { useActiveProfile } from "app/hooks";
 import { Wallets } from "domains/dashboard/components/Wallets";
@@ -38,12 +38,14 @@ export const Dashboard = () => {
 					}
 				/>
 
-				<Transactions
-					profile={activeProfile}
-					isVisible={showTransactions}
-					wallets={selectedWallets}
-					isLoading={profileIsSyncing}
-				/>
+				<Section data-testid="dashboard__transactions-view">
+					<Transactions
+						profile={activeProfile}
+						isVisible={showTransactions}
+						wallets={selectedWallets}
+						isLoading={profileIsSyncing}
+					/>
+				</Section>
 			</Page>
 		</>
 	);
