@@ -38,7 +38,7 @@ export const WalletDetails = () => {
 		if (activeWallet.hasBeenPartiallyRestored()) {
 			toasts.warning(t("COMMON.ERRORS.NETWORK_ERROR", { network: `${activeWallet.network().name()} ` }));
 		}
-	}, [activeWallet]);
+	}, [activeWallet, t]);
 
 	const handleVoteButton = (filter?: string) => {
 		/* istanbul ignore else */

@@ -72,7 +72,7 @@ export const SendTransactionForm = ({
 		}
 
 		setWallets(profile.wallets().values());
-	}, [findByType, getValues, network, profile, setValue, transactionType]);
+	}, [findByType, getValues, network, profile, setValue, transactionType, t]);
 
 	const handleSelectNetwork = (selectedNetwork: Coins.Network | null | undefined) => {
 		/* istanbul ignore next */

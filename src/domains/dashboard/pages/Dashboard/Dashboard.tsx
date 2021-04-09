@@ -38,7 +38,7 @@ export const Dashboard = () => {
 		}
 
 		toasts.warning(t("COMMON.ERRORS.NETWORK_ERROR", { network: erroredNetworks.join(", ") }));
-	}, [profileIsSyncing]);
+	}, [profileIsSyncing, activeProfile, t, getErroredNetworks]);
 
 	return (
 		<>

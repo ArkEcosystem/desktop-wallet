@@ -182,7 +182,7 @@ export const Votes = () => {
 		}
 
 		toasts.warning(t("COMMON.ERRORS.NETWORK_ERROR", { network: erroredNetworks.join(", ") }));
-	}, [getErroredNetworks]);
+	}, [getErroredNetworks, activeProfile, t]);
 
 	const loadDelegates = useCallback(
 		async (wallet) => {
