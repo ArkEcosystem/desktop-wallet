@@ -162,7 +162,7 @@ export const AddressRow = ({ index, maxVotes, wallet, onSelect }: AddressRowProp
 
 			<TableCell variant="end" innerClassName="justify-end">
 				<Button
-					disabled={!wallet.hasBeenFullyRestored()}
+					disabled={!wallet.hasBeenFullyRestored() || !wallet.hasSyncedWithNetwork()}
 					variant="secondary"
 					onClick={() => onSelect?.(wallet.address())}
 					data-testid={`AddressRow__select-${index}`}

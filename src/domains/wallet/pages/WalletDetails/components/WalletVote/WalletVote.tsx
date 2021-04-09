@@ -213,7 +213,7 @@ export const WalletVote = ({ wallet, onButtonClick, env }: WalletVoteProps) => {
 				className="space-x-2"
 				onClick={() => onButtonClick()}
 				isLoading={isLoading}
-				disabled={isLoading || !wallet.hasBeenFullyRestored()}
+				disabled={isLoading || !wallet.hasBeenFullyRestored() || !wallet.hasSyncedWithNetwork()}
 			>
 				<Icon name="Vote" width={17} height={17} />
 				<span>{t("COMMON.VOTE")}</span>
