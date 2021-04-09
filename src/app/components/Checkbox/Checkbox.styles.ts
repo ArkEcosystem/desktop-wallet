@@ -2,7 +2,7 @@ import tw, { css } from "twin.macro";
 import { Color } from "types";
 
 const baseStyle = [
-	tw`w-4 h-4 transition duration-150 ease-in-out rounded focus:ring-offset-0 border-theme-secondary-300`,
+	tw`w-4 h-4 transition duration-150 ease-in-out rounded focus:ring-offset-0 border-theme-secondary-300 dark:bg-theme-secondary-800 dark:border-2 dark:border-theme-secondary-700`,
 ];
 
 const getColor = (color: Color) => {

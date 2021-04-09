@@ -15,6 +15,7 @@ export const VotesFilter = ({ onChange, selectedOption = "all", totalCurrentVote
 	return (
 		<div data-testid="VotesFilter">
 			<Dropdown
+				dropdownClass="dark:bg-theme-secondary-800"
 				position="right"
 				toggleContent={
 					<ControlButton isChanged={selectedOption !== "all"} isActive={selectedOption !== "all"}>
