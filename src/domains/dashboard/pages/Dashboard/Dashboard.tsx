@@ -1,11 +1,12 @@
 import { Contracts } from "@arkecosystem/platform-sdk-profiles";
 import { Page, Section } from "app/components/Layout";
-import { useConfiguration } from "app/contexts";
-import { useActiveProfile } from "app/hooks";
+import { useConfiguration, useEnvironmentContext } from "app/contexts";
+import { useActiveProfile, useProfileUtils } from "app/hooks";
+import { toasts } from "app/services";
 import { Wallets } from "domains/dashboard/components/Wallets";
 import { useWalletConfig } from "domains/dashboard/hooks";
 import { Transactions } from "domains/transaction/components/Transactions";
-import React, { useMemo } from "react";
+import React, { useEffect,useMemo } from "react";
 import { useTranslation } from "react-i18next";
 import { useHistory } from "react-router-dom";
 
@@ -15,6 +16,8 @@ export const Dashboard = () => {
 	const activeProfile = useActiveProfile();
 
 	const { profileIsSyncing } = useConfiguration();
+	const { env } = useEnvironmentContext();
+	const { getErroredNetworks } = useProfileUtils(env);
 
 	const { selectedWallets } = useWalletConfig({ profile: activeProfile });
 
@@ -23,6 +26,19 @@ export const Dashboard = () => {
 		() => activeProfile.settings().get<boolean>(Contracts.ProfileSetting.DashboardTransactionHistory, true),
 		[activeProfile],
 	);
+
+	useEffect(() => {
+		if (profileIsSyncing) {
+			return;
+		}
+
+		const { hasErroredNetworks, erroredNetworks } = getErroredNetworks(activeProfile);
+		if (!hasErroredNetworks) {
+			return;
+		}
+
+		toasts.warning(t("COMMON.ERRORS.NETWORK_ERROR", { network: erroredNetworks.join(", ") }));
+	}, [profileIsSyncing]);
 
 	return (
 		<>
