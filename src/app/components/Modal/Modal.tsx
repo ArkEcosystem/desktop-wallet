@@ -108,11 +108,11 @@ const ModalContent = (props: ModalContentProps) => {
 					<h2 className={cs("mb-0 text-3xl font-bold", props.titleClass)}>{props.title}</h2>
 				)}
 
-				<div className="flex-1">
+				<div className="flex-1 mt-4">
 					{props.image}
 
 					{props.description && (
-						<div className="mt-1 text-theme-secondary-text whitespace-pre-line">{props.description}</div>
+						<div className="text-theme-secondary-text whitespace-pre-line">{props.description}</div>
 					)}
 
 					{props.children}
