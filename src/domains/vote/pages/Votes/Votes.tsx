@@ -381,6 +381,7 @@ export const Votes = () => {
 						selectedVoteAddresses={voteAddresses}
 						selectedWallet={selectedAddress}
 						onContinue={handleContinue}
+						isPaginationDisabled={searchQuery.length > 0}
 					/>
 				</Section>
 			)}

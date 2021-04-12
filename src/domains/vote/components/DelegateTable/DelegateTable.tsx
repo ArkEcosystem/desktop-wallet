@@ -24,6 +24,7 @@ type DelegateTableProps = {
 	selectedWallet: string;
 	votes?: Contracts.IReadOnlyWallet[];
 	onContinue?: (unvotes: string[], votes: string[]) => void;
+	isPaginationDisabled?: boolean;
 };
 
 export const DelegateTable = ({
@@ -37,6 +38,7 @@ export const DelegateTable = ({
 	selectedWallet,
 	votes,
 	onContinue,
+	isPaginationDisabled,
 }: DelegateTableProps) => {
 	const { t } = useTranslation();
 	const [currentPage, setCurrentPage] = useState(1);
@@ -139,6 +141,10 @@ export const DelegateTable = ({
 	};
 
 	const paginator = (items: Contracts.IReadOnlyWallet[], currentPage: number, itemsPerPage: number) => {
+		if (isPaginationDisabled) {
+			return items;
+		}
+
 		const offset = (currentPage - 1) * itemsPerPage;
 		const paginatedItems = items.slice(offset).slice(0, itemsPerPage);
 
@@ -187,7 +193,7 @@ export const DelegateTable = ({
 			</Table>
 
 			<div className="flex justify-center w-full mt-10 mb-24">
-				{totalDelegates > itemsPerPage! && (
+				{totalDelegates > itemsPerPage! && !isPaginationDisabled && (
 					<Pagination
 						totalCount={totalDelegates}
 						itemsPerPage={itemsPerPage}
