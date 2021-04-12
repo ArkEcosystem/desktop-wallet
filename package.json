@@ -1,361 +1,361 @@
 {
-    "name": "ark-desktop-wallet",
-    "version": "3.0.0",
-    "private": true,
-    "description": "Ark Ecosystem Desktop Wallet",
-    "homepage": "./",
-    "bugs": {
-        "url": "https://github.com/ArkEcosystem/desktop-wallet/issues"
-    },
-    "repository": {
-        "type": "git",
-        "url": "git+https://github.com/ArkEcosystem/desktop-wallet.git"
-    },
-    "license": "MIT",
-    "author": "ArkEcosystem <info@ark.io>",
-    "contributors": [
-        "Alex Barnsley <alex@ark.io>",
-        "Brian Faust <brian@ark.io>",
-        "ItsANameToo <itsanametoo@protonmail.com>",
-        "Lúcio Rubens <lucio@ark.io>"
-    ],
-    "main": "build/electron/index.js",
-    "scripts": {
-        "build": "yarn compile && react-app-rewired build",
-        "build:ci": "cross-env GENERATE_SOURCEMAP=false yarn build",
-        "build:e2e": "cross-env REACT_APP_IS_E2E=1 GENERATE_SOURCEMAP=false yarn build",
-        "build:linux": "yarn build:ci && electron-builder --linux --publish never",
-        "build:mac": "yarn build:ci && electron-builder --mac --publish never",
-        "build:win": "yarn build:ci && electron-builder --win --x64 --ia32 --publish never",
-        "compile": "electron-webpack",
-        "dev": "cross-env concurrently --kill-others \"yarn start\" \"wait-on http://localhost:3000 && electron-webpack dev\"",
-        "eject": "react-app-rewired eject",
-        "electron-rebuild": "electron-builder install-app-deps",
-        "format": "yarn lint && yarn prettier",
-        "postinstall": "yarn electron-rebuild",
-        "lint": "eslint '*/**/*.{js,ts,tsx}' --quiet --fix",
-        "prettier": "prettier --write \"./*.{ts,tsx,js,json,md}\" \"./**/*.{ts,tsx,js,json,md}\"",
-        "start": "cross-env BROWSER=none react-app-rewired start",
-        "test": "react-app-rewired --expose-gc test --logHeapUsage",
-        "test:coverage": "react-app-rewired --expose-gc test --logHeapUsage --coverage --watchAll=false",
-        "test:e2e": "cross-env ELECTRON_IS_E2E=1 ELECTRON_IS_DEV=0 testcafe",
-        "preversion": "cross-env ./scripts/version-artifacts.sh",
-        "prepare": "husky install"
-    },
-    "lint-staged": {
-        "*.{css,html,json,md}": [
-            "prettier --write"
-        ],
-        "*.{js,ts,tsx}": [
-            "prettier --write",
-            "eslint --fix"
-        ]
-    },
-    "browserslist": {
-        "production": [
-            ">0.2%",
-            "not dead",
-            "not op_mini all"
-        ],
-        "development": [
-            "last 1 chrome version",
-            "last 1 firefox version",
-            "last 1 safari version"
-        ]
-    },
-    "eslintConfig": {
-        "extends": "react-app"
-    },
-    "jest": {
-        "automock": false,
-        "coveragePathIgnorePatterns": [
-            "index.ts",
-            "index.tsx",
-            "data.ts"
-        ],
-        "coverageReporters": [
-            "json",
-            "lcov",
-            "text",
-            "clover",
-            "html"
-        ],
-        "moduleDirectories": [
-            "node_modules",
-            "utils"
-        ],
-        "resetModules": true,
-        "setupFilesAfterEnv": [
-            "<rootDir>/jest.setup.js"
-        ],
-        "testRunner": "jest-circus/runner"
-    },
-    "dependencies": {
-        "@arkecosystem/platform-sdk": "^4.2.8",
-        "@arkecosystem/platform-sdk-ada": "^4.2.8",
-        "@arkecosystem/platform-sdk-ark": "^4.2.8",
-        "@arkecosystem/platform-sdk-atom": "^4.2.8",
-        "@arkecosystem/platform-sdk-btc": "^4.2.8",
-        "@arkecosystem/platform-sdk-crypto": "^4.2.8",
-        "@arkecosystem/platform-sdk-egld": "^4.2.8",
-        "@arkecosystem/platform-sdk-eos": "^4.2.8",
-        "@arkecosystem/platform-sdk-eth": "^4.2.8",
-        "@arkecosystem/platform-sdk-intl": "^4.2.8",
-        "@arkecosystem/platform-sdk-lsk": "^4.2.8",
-        "@arkecosystem/platform-sdk-neo": "^4.2.8",
-        "@arkecosystem/platform-sdk-news": "^4.2.8",
-        "@arkecosystem/platform-sdk-profiles": "^4.2.8",
-        "@arkecosystem/platform-sdk-support": "^4.2.8",
-        "@arkecosystem/platform-sdk-trx": "^4.2.8",
-        "@arkecosystem/platform-sdk-xrp": "^4.2.8",
-        "@arkecosystem/utils": "^1.3.0",
-        "@ledgerhq/hw-transport-node-hid-singleton": "^5.46.0",
-        "@sentry/react": "^6.2.3",
-        "@sentry/tracing": "^6.2.3",
-        "@tailwindcss/forms": "^0.2.1",
-        "@tailwindcss/postcss7-compat": "^2.0.4",
-        "@tippyjs/react": "^4.2.5",
-        "@types/react-linkify": "^1.0.0",
-        "about-window": "^1.14.0",
-        "async-retry": "^1.3.1",
-        "cross-fetch": "^3.1.2",
-        "decompress": "^4.2.1",
-        "downshift": "^6.1.1",
-        "du": "^1.0.0",
-        "electron-dl": "^3.2.1",
-        "electron-is-dev": "^1.2.0",
-        "electron-log": "^4.3.2",
-        "electron-updater": "^4.3.8",
-        "electron-window-state": "^5.0.3",
-        "enhanced-resolve": "^5.7.0",
-        "extract-domain": "^2.2.1",
-        "focus-visible": "^5.2.0",
-        "framer-motion": "^4.0.3",
-        "fs-extra": "^9.1.0",
-        "glob": "^7.1.6",
-        "i18next": "^20.1.0",
-        "node-hid": "^2.1.1",
-        "parse-author": "^2.0.0",
-        "pretty-bytes": "^5.6.0",
-        "querystring": "^0.2.1",
-        "react": "^16.13.1",
-        "react-dom": "^16.13.1",
-        "react-error-boundary": "^3.1.1",
-        "react-hook-form": "^6.15.5",
-        "react-i18next": "^11.8.12",
-        "react-linkify": "^1.0.0-alpha",
-        "react-loading-skeleton": "^2.2.0",
-        "react-range": "^1.8.7",
-        "react-router-config": "^5.1.1",
-        "react-router-dom": "^5.2.0",
-        "react-scripts": "^3.4.3",
-        "react-table": "^7.6.3",
-        "react-toastify": "^6.2.0",
-        "react-visibility-sensor": "^5.1.1",
-        "recharts": "^2.0.9",
-        "semver": "^7.3.5",
-        "socks-proxy-agent": "^5.0.0",
-        "string-hash": "^1.1.3",
-        "styled-components": "^5.2.1",
-        "swiper": "^6.5.1",
-        "tailwindcss": "npm:@tailwindcss/postcss7-compat",
-        "trash": "^7.1.1",
-        "twin.macro": "^2.3.1",
-        "type-fest": "^1.0.1",
-        "vm2": "^3.9.2",
-        "yup": "^0.32.9"
-    },
-    "devDependencies": {
-        "@babel/preset-env": "^7.13.12",
-        "@babel/preset-react": "^7.13.13",
-        "@babel/preset-typescript": "^7.13.0",
-        "@ledgerhq/hw-transport": "^5.46.0",
-        "@ledgerhq/hw-transport-mocker": "^5.46.0",
-        "@sindresorhus/slugify": "^1.1.0",
-        "@testing-library/jest-dom": "^5.11.10",
-        "@testing-library/react": "^11.2.5",
-        "@testing-library/react-hooks": "^5.1.1",
-        "@testing-library/user-event": "^13.0.16",
-        "@types/async-retry": "^1.4.2",
-        "@types/autoprefixer": "^9.7.2",
-        "@types/classnames": "^2.2.11",
-        "@types/concurrently": "^6.0.1",
-        "@types/copy-webpack-plugin": "^6.4.1",
-        "@types/decompress": "^4.2.3",
-        "@types/du": "^1.0.0",
-        "@types/electron-devtools-installer": "^2.2.0",
-        "@types/electron-window-state": "^2.0.34",
-        "@types/eslint-plugin-prettier": "^3.1.0",
-        "@types/jest": "^26.0.22",
-        "@types/ledgerhq__hw-transport": "^4.21.3",
-        "@types/node": "^14.14.37",
-        "@types/parse-author": "^2.0.0",
-        "@types/postcss-import": "^12.0.0",
-        "@types/prettier": "^2.2.3",
-        "@types/react": "^17.0.3",
-        "@types/react-dom": "^17.0.3",
-        "@types/react-router-config": "^5.0.2",
-        "@types/react-router-dom": "^5.1.7",
-        "@types/react-table": "^7.0.29",
-        "@types/react-test-renderer": "^17.0.1",
-        "@types/string-hash": "^1.1.1",
-        "@types/styled-components": "^5.1.9",
-        "@types/swiper": "^5.4.2",
-        "@types/testing-library__jest-dom": "^5.9.5",
-        "@types/testing-library__react-hooks": "^4.0.0",
-        "@types/wait-on": "^5.2.0",
-        "@types/yup": "^0.29.11",
-        "@typescript-eslint/eslint-plugin": "^4.20.0",
-        "@typescript-eslint/parser": "^4.20.0",
-        "autoprefixer": "^9.8.0",
-        "babel-loader": "^8.2.2",
-        "bcrypto": "^5.4.0",
-        "classnames": "^2.2.6",
-        "codecov": "^3.8.1",
-        "concurrently": "^6.0.0",
-        "copy-webpack-plugin": "^6.0.4",
-        "cross-env": "^7.0.3",
-        "customize-cra": "^1.0.0",
-        "electron": "^9.4.1",
-        "electron-builder": "^22.10.5",
-        "electron-devtools-installer": "^3.1.1",
-        "electron-notarize": "^1.0.0",
-        "electron-root-path": "^1.0.16",
-        "electron-webpack": "^2.8.2",
-        "eslint-config-prettier": "^8.1.0",
-        "eslint-config-react-app": "^6.0.0",
-        "eslint-plugin-import": "^2.22.1",
-        "eslint-plugin-jsx-a11y": "^6.4.1",
-        "eslint-plugin-prettier": "^3.3.1",
-        "eslint-plugin-react": "^7.23.1",
-        "eslint-plugin-react-hooks": "^4.2.0",
-        "eslint-plugin-simple-import-sort": "^7.0.0",
-        "eslint-plugin-testcafe": "^0.2.1",
-        "eslint-plugin-testing-library": "^3.10.2",
-        "eslint-plugin-unused-imports": "^1.1.0",
-        "history": "^5.0.0",
-        "husky": "^6.0.0",
-        "jest-circus": "^26.6.3",
-        "jest-fetch-mock": "^3.0.3",
-        "jest-when": "^3.2.1",
-        "lint-staged": "^10.5.4",
-        "mockdate": "^3.0.5",
-        "mutationobserver-shim": "^0.3.7",
-        "nock": "^13.0.11",
-        "node-loader": "^1.0.2",
-        "postcss": "^7.0.32",
-        "postcss-cli": "^7.1.1",
-        "postcss-import": "^12.0.1",
-        "prettier": "^2.2.1",
-        "react-app-rewired": "^2.1.8",
-        "react-docgen-typescript-loader": "^3.7.2",
-        "react-test-renderer": "^17.0.2",
-        "testcafe": "^1.13.0",
-        "testcafe-browser-provider-electron": "^0.0.16",
-        "typescript": "^3.9.5",
-        "wait-on": "^5.3.0",
-        "webpack-node-externals": "^2.5.2",
-        "yaml": "^1.10.2"
-    },
-    "optionalDependencies": {
-        "fsevents": "*"
-    },
-    "resolutions": {
-        "**/fsevents": "^2.1.3",
-        "**/**/bcrypto": "^5.3.0"
-    },
-    "babelMacros": {
-        "twin": {
-            "preset": "styled-components",
-            "css": {
-                "from": "styled-components",
-                "import": "css"
-            },
-            "config": "src/tailwind.config.js",
-            "autoCssProp": true
-        }
-    },
-    "electronWebpack": {
-        "main": {
-            "sourceDirectory": "src/electron",
-            "webpackConfig": "webpack.main.config.js"
-        },
-        "renderer": {
-            "sourceDirectory": null
-        }
-    },
-    "build": {
-        "productName": "ARK Desktop Wallet",
-        "appId": "io.ark.desktop-wallet",
-        "artifactName": "${name}-${os}-${arch}-${version}.${ext}",
-        "afterSign": "scripts/notarize.js",
-        "npmRebuild": true,
-        "extraMetadata": {
-            "main": "build/electron/index.js"
-        },
-        "publish": {
-            "provider": "github",
-            "vPrefixedTagName": false
-        },
-        "extraResources": [
-            "app-update.yml"
-        ],
-        "protocols": {
-            "name": "ARK URI scheme",
-            "schemes": [
-                "ark"
-            ],
-            "role": "Viewer"
-        },
-        "directories": {
-            "output": "dist/target"
-        },
-        "mac": {
-            "category": "public.app-category.finance",
-            "icon": "src/app/assets/icons/icon.icns",
-            "hardenedRuntime": true,
-            "gatekeeperAssess": false,
-            "asarUnpack": [
-                "**/*.node"
-            ],
-            "entitlements": "./entitlements.mac.plist",
-            "entitlementsInherit": "./entitlements.mac.plist"
-        },
-        "win": {
-            "target": "nsis",
-            "icon": "src/app/assets/icons/icon.ico"
-        },
-        "linux": {
-            "category": "Utility",
-            "icon": "src/app/assets/icons",
-            "target": [
-                "AppImage",
-                "deb",
-                "tar.gz",
-                "snap"
-            ],
-            "desktop": {
-                "MimeType": "x-scheme-handler/ark;"
-            }
-        },
-        "deb": {
-            "depends": [
-                "gconf2",
-                "gconf-service",
-                "libnotify4",
-                "libappindicator1",
-                "libxtst6",
-                "libnss3",
-                "libudev-dev"
-            ]
-        },
-        "dmg": {
-            "icon": "src/app/assets/icons/icon.icns"
-        },
-        "nsis": {
-            "perMachine": true,
-            "oneClick": false,
-            "allowToChangeInstallationDirectory": true
-        }
-    }
+	"name": "ark-desktop-wallet",
+	"version": "3.0.0",
+	"private": true,
+	"description": "Ark Ecosystem Desktop Wallet",
+	"homepage": "./",
+	"bugs": {
+		"url": "https://github.com/ArkEcosystem/desktop-wallet/issues"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/ArkEcosystem/desktop-wallet.git"
+	},
+	"license": "MIT",
+	"author": "ArkEcosystem <info@ark.io>",
+	"contributors": [
+		"Alex Barnsley <alex@ark.io>",
+		"Brian Faust <brian@ark.io>",
+		"ItsANameToo <itsanametoo@protonmail.com>",
+		"Lúcio Rubens <lucio@ark.io>"
+	],
+	"main": "build/electron/index.js",
+	"scripts": {
+		"build": "yarn compile && react-app-rewired build",
+		"build:ci": "cross-env GENERATE_SOURCEMAP=false yarn build",
+		"build:e2e": "cross-env REACT_APP_IS_E2E=1 GENERATE_SOURCEMAP=false yarn build",
+		"build:linux": "yarn build:ci && electron-builder --linux --publish never",
+		"build:mac": "yarn build:ci && electron-builder --mac --publish never",
+		"build:win": "yarn build:ci && electron-builder --win --x64 --ia32 --publish never",
+		"compile": "electron-webpack",
+		"dev": "cross-env concurrently --kill-others \"yarn start\" \"wait-on http://localhost:3000 && electron-webpack dev\"",
+		"eject": "react-app-rewired eject",
+		"electron-rebuild": "electron-builder install-app-deps",
+		"format": "yarn lint && yarn prettier",
+		"postinstall": "yarn electron-rebuild",
+		"lint": "eslint '*/**/*.{js,ts,tsx}' --quiet --fix",
+		"prettier": "prettier --write \"./*.{ts,tsx,js,json,md}\" \"./**/*.{ts,tsx,js,json,md}\"",
+		"start": "cross-env BROWSER=none react-app-rewired start",
+		"test": "react-app-rewired --expose-gc test --logHeapUsage",
+		"test:coverage": "react-app-rewired --expose-gc test --logHeapUsage --coverage --watchAll=false",
+		"test:e2e": "cross-env ELECTRON_IS_E2E=1 ELECTRON_IS_DEV=0 testcafe",
+		"preversion": "cross-env ./scripts/version-artifacts.sh",
+		"prepare": "husky install"
+	},
+	"lint-staged": {
+		"*.{css,html,json,md}": [
+			"prettier --write"
+		],
+		"*.{js,ts,tsx}": [
+			"prettier --write",
+			"eslint --fix"
+		]
+	},
+	"browserslist": {
+		"production": [
+			">0.2%",
+			"not dead",
+			"not op_mini all"
+		],
+		"development": [
+			"last 1 chrome version",
+			"last 1 firefox version",
+			"last 1 safari version"
+		]
+	},
+	"eslintConfig": {
+		"extends": "react-app"
+	},
+	"jest": {
+		"automock": false,
+		"coveragePathIgnorePatterns": [
+			"index.ts",
+			"index.tsx",
+			"data.ts"
+		],
+		"coverageReporters": [
+			"json",
+			"lcov",
+			"text",
+			"clover",
+			"html"
+		],
+		"moduleDirectories": [
+			"node_modules",
+			"utils"
+		],
+		"resetModules": true,
+		"setupFilesAfterEnv": [
+			"<rootDir>/jest.setup.js"
+		],
+		"testRunner": "jest-circus/runner"
+	},
+	"dependencies": {
+		"@arkecosystem/platform-sdk": "^4.2.8",
+		"@arkecosystem/platform-sdk-ada": "^4.2.8",
+		"@arkecosystem/platform-sdk-ark": "^4.2.8",
+		"@arkecosystem/platform-sdk-atom": "^4.2.8",
+		"@arkecosystem/platform-sdk-btc": "^4.2.8",
+		"@arkecosystem/platform-sdk-crypto": "^4.2.8",
+		"@arkecosystem/platform-sdk-egld": "^4.2.8",
+		"@arkecosystem/platform-sdk-eos": "^4.2.8",
+		"@arkecosystem/platform-sdk-eth": "^4.2.8",
+		"@arkecosystem/platform-sdk-intl": "^4.2.8",
+		"@arkecosystem/platform-sdk-lsk": "^4.2.8",
+		"@arkecosystem/platform-sdk-neo": "^4.2.8",
+		"@arkecosystem/platform-sdk-news": "^4.2.8",
+		"@arkecosystem/platform-sdk-profiles": "^4.2.8",
+		"@arkecosystem/platform-sdk-support": "^4.2.8",
+		"@arkecosystem/platform-sdk-trx": "^4.2.8",
+		"@arkecosystem/platform-sdk-xrp": "^4.2.8",
+		"@arkecosystem/utils": "^1.3.0",
+		"@ledgerhq/hw-transport-node-hid-singleton": "^5.46.0",
+		"@sentry/react": "^6.2.3",
+		"@sentry/tracing": "^6.2.3",
+		"@tailwindcss/forms": "^0.2.1",
+		"@tailwindcss/postcss7-compat": "^2.0.4",
+		"@tippyjs/react": "^4.2.5",
+		"@types/react-linkify": "^1.0.0",
+		"about-window": "^1.14.0",
+		"async-retry": "^1.3.1",
+		"cross-fetch": "^3.1.2",
+		"decompress": "^4.2.1",
+		"downshift": "^6.1.1",
+		"du": "^1.0.0",
+		"electron-dl": "^3.2.1",
+		"electron-is-dev": "^1.2.0",
+		"electron-log": "^4.3.2",
+		"electron-updater": "^4.3.8",
+		"electron-window-state": "^5.0.3",
+		"enhanced-resolve": "^5.7.0",
+		"extract-domain": "^2.2.1",
+		"focus-visible": "^5.2.0",
+		"framer-motion": "^4.0.3",
+		"fs-extra": "^9.1.0",
+		"glob": "^7.1.6",
+		"i18next": "^20.1.0",
+		"node-hid": "^2.1.1",
+		"parse-author": "^2.0.0",
+		"pretty-bytes": "^5.6.0",
+		"querystring": "^0.2.1",
+		"react": "^16.13.1",
+		"react-dom": "^16.13.1",
+		"react-error-boundary": "^3.1.1",
+		"react-hook-form": "^6.15.5",
+		"react-i18next": "^11.8.12",
+		"react-linkify": "^1.0.0-alpha",
+		"react-loading-skeleton": "^2.2.0",
+		"react-range": "^1.8.7",
+		"react-router-config": "^5.1.1",
+		"react-router-dom": "^5.2.0",
+		"react-scripts": "^3.4.3",
+		"react-table": "^7.6.3",
+		"react-toastify": "^6.2.0",
+		"react-visibility-sensor": "^5.1.1",
+		"recharts": "^2.0.9",
+		"semver": "^7.3.5",
+		"socks-proxy-agent": "^5.0.0",
+		"string-hash": "^1.1.3",
+		"styled-components": "^5.2.1",
+		"swiper": "^6.5.1",
+		"tailwindcss": "npm:@tailwindcss/postcss7-compat",
+		"trash": "^7.1.1",
+		"twin.macro": "^2.3.1",
+		"type-fest": "^1.0.1",
+		"vm2": "^3.9.2",
+		"yup": "^0.32.9"
+	},
+	"devDependencies": {
+		"@babel/preset-env": "^7.13.12",
+		"@babel/preset-react": "^7.13.13",
+		"@babel/preset-typescript": "^7.13.0",
+		"@ledgerhq/hw-transport": "^5.46.0",
+		"@ledgerhq/hw-transport-mocker": "^5.46.0",
+		"@sindresorhus/slugify": "^1.1.0",
+		"@testing-library/jest-dom": "^5.11.10",
+		"@testing-library/react": "^11.2.5",
+		"@testing-library/react-hooks": "^5.1.1",
+		"@testing-library/user-event": "^13.0.16",
+		"@types/async-retry": "^1.4.2",
+		"@types/autoprefixer": "^9.7.2",
+		"@types/classnames": "^2.2.11",
+		"@types/concurrently": "^6.0.1",
+		"@types/copy-webpack-plugin": "^6.4.1",
+		"@types/decompress": "^4.2.3",
+		"@types/du": "^1.0.0",
+		"@types/electron-devtools-installer": "^2.2.0",
+		"@types/electron-window-state": "^2.0.34",
+		"@types/eslint-plugin-prettier": "^3.1.0",
+		"@types/jest": "^26.0.22",
+		"@types/ledgerhq__hw-transport": "^4.21.3",
+		"@types/node": "^14.14.37",
+		"@types/parse-author": "^2.0.0",
+		"@types/postcss-import": "^12.0.0",
+		"@types/prettier": "^2.2.3",
+		"@types/react": "^17.0.3",
+		"@types/react-dom": "^17.0.3",
+		"@types/react-router-config": "^5.0.2",
+		"@types/react-router-dom": "^5.1.7",
+		"@types/react-table": "^7.0.29",
+		"@types/react-test-renderer": "^17.0.1",
+		"@types/string-hash": "^1.1.1",
+		"@types/styled-components": "^5.1.9",
+		"@types/swiper": "^5.4.2",
+		"@types/testing-library__jest-dom": "^5.9.5",
+		"@types/testing-library__react-hooks": "^4.0.0",
+		"@types/wait-on": "^5.2.0",
+		"@types/yup": "^0.29.11",
+		"@typescript-eslint/eslint-plugin": "^4.20.0",
+		"@typescript-eslint/parser": "^4.20.0",
+		"autoprefixer": "^9.8.0",
+		"babel-loader": "^8.2.2",
+		"bcrypto": "^5.4.0",
+		"classnames": "^2.2.6",
+		"codecov": "^3.8.1",
+		"concurrently": "^6.0.0",
+		"copy-webpack-plugin": "^6.0.4",
+		"cross-env": "^7.0.3",
+		"customize-cra": "^1.0.0",
+		"electron": "^9.4.1",
+		"electron-builder": "^22.10.5",
+		"electron-devtools-installer": "^3.1.1",
+		"electron-notarize": "^1.0.0",
+		"electron-root-path": "^1.0.16",
+		"electron-webpack": "^2.8.2",
+		"eslint-config-prettier": "^8.1.0",
+		"eslint-config-react-app": "^6.0.0",
+		"eslint-plugin-import": "^2.22.1",
+		"eslint-plugin-jsx-a11y": "^6.4.1",
+		"eslint-plugin-prettier": "^3.3.1",
+		"eslint-plugin-react": "^7.23.1",
+		"eslint-plugin-react-hooks": "^4.2.0",
+		"eslint-plugin-simple-import-sort": "^7.0.0",
+		"eslint-plugin-testcafe": "^0.2.1",
+		"eslint-plugin-testing-library": "^3.10.2",
+		"eslint-plugin-unused-imports": "^1.1.0",
+		"history": "^5.0.0",
+		"husky": "^6.0.0",
+		"jest-circus": "^26.6.3",
+		"jest-fetch-mock": "^3.0.3",
+		"jest-when": "^3.2.1",
+		"lint-staged": "^10.5.4",
+		"mockdate": "^3.0.5",
+		"mutationobserver-shim": "^0.3.7",
+		"nock": "^13.0.11",
+		"node-loader": "^1.0.2",
+		"postcss": "^7.0.32",
+		"postcss-cli": "^7.1.1",
+		"postcss-import": "^12.0.1",
+		"prettier": "^2.2.1",
+		"react-app-rewired": "^2.1.8",
+		"react-docgen-typescript-loader": "^3.7.2",
+		"react-test-renderer": "^17.0.2",
+		"testcafe": "^1.13.0",
+		"testcafe-browser-provider-electron": "^0.0.16",
+		"typescript": "^3.9.5",
+		"wait-on": "^5.3.0",
+		"webpack-node-externals": "^2.5.2",
+		"yaml": "^1.10.2"
+	},
+	"optionalDependencies": {
+		"fsevents": "*"
+	},
+	"resolutions": {
+		"**/fsevents": "^2.1.3",
+		"**/**/bcrypto": "^5.3.0"
+	},
+	"babelMacros": {
+		"twin": {
+			"preset": "styled-components",
+			"css": {
+				"from": "styled-components",
+				"import": "css"
+			},
+			"config": "src/tailwind.config.js",
+			"autoCssProp": true
+		}
+	},
+	"electronWebpack": {
+		"main": {
+			"sourceDirectory": "src/electron",
+			"webpackConfig": "webpack.main.config.js"
+		},
+		"renderer": {
+			"sourceDirectory": null
+		}
+	},
+	"build": {
+		"productName": "ARK Desktop Wallet",
+		"appId": "io.ark.desktop-wallet",
+		"artifactName": "${name}-${os}-${arch}-${version}.${ext}",
+		"afterSign": "scripts/notarize.js",
+		"npmRebuild": true,
+		"extraMetadata": {
+			"main": "build/electron/index.js"
+		},
+		"publish": {
+			"provider": "github",
+			"vPrefixedTagName": false
+		},
+		"extraResources": [
+			"app-update.yml"
+		],
+		"protocols": {
+			"name": "ARK URI scheme",
+			"schemes": [
+				"ark"
+			],
+			"role": "Viewer"
+		},
+		"directories": {
+			"output": "dist/target"
+		},
+		"mac": {
+			"category": "public.app-category.finance",
+			"icon": "src/app/assets/icons/icon.icns",
+			"hardenedRuntime": true,
+			"gatekeeperAssess": false,
+			"asarUnpack": [
+				"**/*.node"
+			],
+			"entitlements": "./entitlements.mac.plist",
+			"entitlementsInherit": "./entitlements.mac.plist"
+		},
+		"win": {
+			"target": "nsis",
+			"icon": "src/app/assets/icons/icon.ico"
+		},
+		"linux": {
+			"category": "Utility",
+			"icon": "src/app/assets/icons",
+			"target": [
+				"AppImage",
+				"deb",
+				"tar.gz",
+				"snap"
+			],
+			"desktop": {
+				"MimeType": "x-scheme-handler/ark;"
+			}
+		},
+		"deb": {
+			"depends": [
+				"gconf2",
+				"gconf-service",
+				"libnotify4",
+				"libappindicator1",
+				"libxtst6",
+				"libnss3",
+				"libudev-dev"
+			]
+		},
+		"dmg": {
+			"icon": "src/app/assets/icons/icon.icns"
+		},
+		"nsis": {
+			"perMachine": true,
+			"oneClick": false,
+			"allowToChangeInstallationDirectory": true
+		}
+	}
 }
