@@ -1,6 +1,8 @@
 import tw, { css } from "twin.macro";
 import { Color } from "types";
 
+import { CheckboxVariantType } from "./Checkbox";
+
 const baseStyle = [
 	tw`w-4 h-4 transition duration-150 ease-in-out rounded focus:ring-offset-0 border-theme-secondary-300 dark:bg-theme-secondary-800 dark:border-2 dark:border-theme-secondary-700`,
 ];
@@ -19,17 +21,19 @@ const getColor = (color: Color) => {
 	`;
 };
 
-const getVariant = (variant?: any) => {
+const getVariant = (variant?: CheckboxVariantType) => {
 	switch (variant) {
 		case "thick":
 			return [tw`border-2`];
+		case "votesFilter":
+			return [tw`w-5 h-5`];
 		default:
 			return [];
 	}
 };
 
-export const getStyles = ({ color, variant }: { color?: Color; variant?: string }) => [
+export const getStyles = ({ color, variant }: { color?: Color; variant?: CheckboxVariantType }) => [
 	...baseStyle,
 	...getColor(color!),
-	...getVariant(variant!),
+	...getVariant(variant),
 ];

@@ -4,9 +4,10 @@ import { Color } from "types";
 
 import { getStyles } from "./Checkbox.styles";
 
+export type CheckboxVariantType = "thick" | "votesFilter";
 type CheckboxProps = {
 	color?: Color;
-	variant?: "thick";
+	variant?: CheckboxVariantType;
 } & React.InputHTMLAttributes<any>;
 
 export const Checkbox = styled.input<CheckboxProps>(getStyles);

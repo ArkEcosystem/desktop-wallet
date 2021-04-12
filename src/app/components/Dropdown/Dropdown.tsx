@@ -26,10 +26,12 @@ export type DropdownOptionGroup = {
 	onSelect?: any;
 };
 
+export type DropdownVariantType = "options" | "custom" | "votesFilter";
 type DropdownProps = {
 	as?: React.ElementType;
 	children?: React.ReactNode;
 	onSelect?: any;
+	variant?: DropdownVariantType;
 	options?: any;
 	position?: Position;
 	dropdownClass?: string;
@@ -39,7 +41,7 @@ type DropdownProps = {
 	disableToggle?: boolean;
 };
 
-export const Wrapper = styled.div<{ position?: string; variant: string }>(getStyles);
+export const Wrapper = styled.div<{ position?: string; variant: DropdownVariantType }>(getStyles);
 
 const isOptionGroup = (options: DropdownOption | DropdownOptionGroup) =>
 	(options as DropdownOptionGroup).key !== undefined;
@@ -155,6 +157,7 @@ const renderToggle = (isOpen: boolean, children: any, toggleIcon: string, toggle
 export const Dropdown = ({
 	children,
 	dropdownClass,
+	variant,
 	options,
 	onSelect,
 	position,
@@ -264,7 +267,7 @@ export const Dropdown = ({
 				<Wrapper
 					data-testid="dropdown__content"
 					position={position}
-					variant={options ? "options" : "custom"}
+					variant={variant || options ? "options" : "custom"}
 					className={`opacity-0 ${defaultClasses} ${dropdownClass || ""}`}
 				>
 					{options?.length && renderOptions(options, select)}

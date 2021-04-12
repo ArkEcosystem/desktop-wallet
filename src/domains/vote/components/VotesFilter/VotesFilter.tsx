@@ -15,7 +15,8 @@ export const VotesFilter = ({ onChange, selectedOption = "all", totalCurrentVote
 	return (
 		<div data-testid="VotesFilter">
 			<Dropdown
-				dropdownClass="dark:bg-theme-secondary-800"
+				variant="votesFilter"
+				dropdownClass="shadow-votes-filter"
 				position="right"
 				toggleContent={
 					<ControlButton isChanged={selectedOption !== "all"} isActive={selectedOption !== "all"}>
@@ -25,20 +26,19 @@ export const VotesFilter = ({ onChange, selectedOption = "all", totalCurrentVote
 					</ControlButton>
 				}
 			>
-				<div className="w-64 px-6 py-4">
+				<div className="w-64 flex flex-col space-y-5 px-10 py-7 text-theme-secondary-700 dark:text-theme-secondary-200">
 					<label
-						className="flex items-center px-2 pb-1 space-x-3 rounded-md cursor-pointer text-theme-secondary-text hover:bg-theme-secondary-100"
+						className="h-5 flex items-center space-x-3 rounded-md cursor-pointer"
 						data-testid="VotesFilter__option--all"
 					>
-						<span>
-							<Checkbox
-								name="all"
-								className="rounded-lg"
-								checked={selectedOption === "all"}
-								onChange={() => onChange?.("all")}
-							/>
-						</span>
-						<span>{t("VOTE.FILTERS.ALL")}</span>
+						<Checkbox
+							name="all"
+							variant="votesFilter"
+							className="rounded-lg"
+							checked={selectedOption === "all"}
+							onChange={() => onChange?.("all")}
+						/>
+						<span className="text-base font-medium">{t("VOTE.FILTERS.ALL")}</span>
 					</label>
 
 					<Tooltip
@@ -46,22 +46,21 @@ export const VotesFilter = ({ onChange, selectedOption = "all", totalCurrentVote
 						content={totalCurrentVotes === 0 && "You have not yet voted for delegates"}
 					>
 						<label
-							className={cn("flex items-center px-2 pb-1 space-x-3 rounded-md", {
-								"cursor-pointer text-theme-secondary-text hover:bg-theme-secondary-100": totalCurrentVotes,
-								"text-theme-secondary-400": !totalCurrentVotes,
+							className={cn("h-5 flex items-center space-x-3 rounded-md", {
+								"cursor-pointer": totalCurrentVotes,
+								"text-theme-secondary-500 dark:text-theme-secondary-600": !totalCurrentVotes,
 							})}
 							data-testid="VotesFilter__option--current"
 						>
-							<span>
-								<Checkbox
-									disabled={totalCurrentVotes === 0}
-									name="current"
-									className="rounded-lg"
-									checked={selectedOption === "current"}
-									onChange={() => onChange?.("current")}
-								/>
-							</span>
-							<span className="pt-px">{t("VOTE.FILTERS.CURRENT_VOTES")}</span>
+							<Checkbox
+								variant="votesFilter"
+								disabled={totalCurrentVotes === 0}
+								name="current"
+								className="rounded-lg"
+								checked={selectedOption === "current"}
+								onChange={() => onChange?.("current")}
+							/>
+							<span className="text-base font-medium">{t("VOTE.FILTERS.CURRENT_VOTES")}</span>
 						</label>
 					</Tooltip>
 				</div>
