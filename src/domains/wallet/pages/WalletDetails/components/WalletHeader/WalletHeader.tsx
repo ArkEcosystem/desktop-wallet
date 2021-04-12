@@ -81,7 +81,7 @@ export const WalletHeader = ({ profile, wallet, currencyDelta, onSend }: WalletH
 		options: [],
 	};
 
-	if (!wallet.isLedger() && wallet.hasBeenFullyRestored() && wallet.hasSyncedWithNetwork()) {
+	if (!wallet.isLedger() && wallet.hasBeenFullyRestored()) {
 		if (wallet.hasSyncedWithNetwork()) {
 			if (wallet.network().can(Coins.FeatureFlag.TransactionDelegateRegistration) && !wallet.isDelegate()) {
 				registrationOptions.options.push({
