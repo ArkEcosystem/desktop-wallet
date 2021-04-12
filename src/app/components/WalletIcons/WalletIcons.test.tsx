@@ -39,7 +39,7 @@ describe("WalletIcons", () => {
 
 		const { getByTestId } = render(<WalletIcons wallet={wallet} />);
 
-		expect(getByTestId("WalletIcon__SecondSignature")).toBeTruthy();
+		expect(getByTestId("WalletIcon__Key")).toBeTruthy();
 
 		walletSpy.mockRestore();
 		hasSyncedWithNetworkSpy.mockRestore();

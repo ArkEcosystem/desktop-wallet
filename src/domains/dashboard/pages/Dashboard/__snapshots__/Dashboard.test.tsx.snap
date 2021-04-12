@@ -640,7 +640,22 @@ exports[`Dashboard should render 1`] = `
                         </div>
                         <div
                           class="flex absolute -top-1 -right-1 items-center m-4 space-x-1"
-                        />
+                        >
+                          <div
+                            class="inline-block p-1 text-theme-text"
+                            data-testid="WalletIcon__Key"
+                          >
+                            <div
+                              class="sc-bdfBwQ dHWxPT"
+                              height="16"
+                              width="1em"
+                            >
+                              <svg>
+                                key.svg
+                              </svg>
+                            </div>
+                          </div>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -714,7 +729,22 @@ exports[`Dashboard should render 1`] = `
                         </div>
                         <div
                           class="flex absolute -top-1 -right-1 items-center m-4 space-x-1"
-                        />
+                        >
+                          <div
+                            class="inline-block p-1 text-theme-text"
+                            data-testid="WalletIcon__Key"
+                          >
+                            <div
+                              class="sc-bdfBwQ dHWxPT"
+                              height="16"
+                              width="1em"
+                            >
+                              <svg>
+                                key.svg
+                              </svg>
+                            </div>
+                          </div>
+                        </div>
                       </div>
                     </div>
                   </div>
