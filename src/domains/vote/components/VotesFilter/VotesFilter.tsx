@@ -26,7 +26,7 @@ export const VotesFilter = ({ onChange, selectedOption = "all", totalCurrentVote
 					</ControlButton>
 				}
 			>
-				<div className="w-64 flex flex-col space-y-5 px-10 py-7 text-theme-secondary-700 dark:text-theme-secondary-200">
+				<div className="w-56 flex flex-col space-y-5 px-10 py-7 text-theme-secondary-700 dark:text-theme-secondary-200">
 					<label
 						className="h-5 flex items-center space-x-3 rounded-md cursor-pointer"
 						data-testid="VotesFilter__option--all"
@@ -48,7 +48,7 @@ export const VotesFilter = ({ onChange, selectedOption = "all", totalCurrentVote
 						<label
 							className={cn("h-5 flex items-center space-x-3 rounded-md", {
 								"cursor-pointer": totalCurrentVotes,
-								"text-theme-secondary-500 dark:text-theme-secondary-600": !totalCurrentVotes,
+								"text-theme-secondary-500 dark:text-theme-secondary-700": !totalCurrentVotes,
 							})}
 							data-testid="VotesFilter__option--current"
 						>
