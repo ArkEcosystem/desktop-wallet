@@ -39,7 +39,9 @@ export const WalletIcons = ({ wallet }: { wallet: Contracts.IReadWriteWallet }) 
 			{wallet.isKnown() && (
 				<WalletIcon type="Verified" label={t(`COMMON.VERIFIED`, { value: wallet.knownName() })} />
 			)}
-			{wallet.isSecondSignature() && <WalletIcon type="SecondSignature" label={t("COMMON.SECOND_SIGNATURE")} />}
+			{wallet.hasSyncedWithNetwork() && wallet.isSecondSignature() && (
+				<WalletIcon type="SecondSignature" label={t("COMMON.SECOND_SIGNATURE")} />
+			)}
 			{wallet.isLedger() && <WalletIcon type="Ledger" />}
 			{wallet.isStarred() && <WalletIcon type="Starred" />}
 			{wallet.hasSyncedWithNetwork() && wallet.isMultiSignature() && <WalletIcon type="MultiSignature" />}

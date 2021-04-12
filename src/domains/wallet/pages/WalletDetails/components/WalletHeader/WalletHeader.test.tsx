@@ -70,8 +70,8 @@ describe("WalletHeader", () => {
 		const multisigSpy = jest.spyOn(wallet, "isMultiSignature").mockReturnValue(true);
 
 		const { getByTestId, asFragment } = render(<WalletHeader profile={profile} wallet={wallet} />);
-		expect(getByTestId("WalletHeader__ledger")).toBeTruthy();
-		expect(getByTestId("WalletHeader__multisig")).toBeTruthy();
+		expect(getByTestId("WalletIcon__Ledger")).toBeTruthy();
+		expect(getByTestId("WalletIcon__Multisig")).toBeTruthy();
 		expect(asFragment()).toMatchSnapshot();
 
 		ledgerSpy.mockRestore();

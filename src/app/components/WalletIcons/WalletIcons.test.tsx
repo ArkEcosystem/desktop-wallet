@@ -33,6 +33,18 @@ describe("WalletIcons", () => {
 		walletSpy.mockRestore();
 	});
 
+	it("should render the second signature icon", () => {
+		const hasSyncedWithNetworkSpy = jest.spyOn(wallet, "hasSyncedWithNetwork").mockReturnValue(true);
+		const walletSpy = jest.spyOn(wallet, "isSecondSignature").mockReturnValue(true);
+
+		const { getByTestId } = render(<WalletIcons wallet={wallet} />);
+
+		expect(getByTestId("WalletIcon__SecondSignature")).toBeTruthy();
+
+		walletSpy.mockRestore();
+		hasSyncedWithNetworkSpy.mockRestore();
+	});
+
 	it("should render the star icon", () => {
 		const walletSpy = jest.spyOn(wallet, "isStarred").mockReturnValue(true);
 
