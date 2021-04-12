@@ -4,7 +4,7 @@ import { Color } from "types";
 import { CheckboxVariantType } from "./Checkbox";
 
 const baseStyle = [
-	tw`w-4 h-4 transition duration-150 ease-in-out rounded focus:ring-offset-0 border-theme-secondary-300 dark:bg-theme-secondary-800 dark:border-2 dark:border-theme-secondary-700`,
+	tw`w-4 h-4 transition duration-150 ease-in-out rounded focus:ring-offset-0 border-theme-secondary-300 dark:(bg-theme-secondary-800 border-2 border-theme-secondary-700)`,
 ];
 
 const getColor = (color: Color) => {
