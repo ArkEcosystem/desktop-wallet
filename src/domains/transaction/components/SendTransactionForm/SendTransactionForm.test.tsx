@@ -2,6 +2,7 @@
 import { Contracts } from "@arkecosystem/platform-sdk-profiles";
 import { act, renderHook } from "@testing-library/react-hooks";
 import { httpClient } from "app/services";
+import { toasts } from "app/services";
 import React from "react";
 import { FormProvider, useForm } from "react-hook-form";
 import {
@@ -50,6 +51,43 @@ describe("SendTransactionForm", () => {
 		});
 
 		expect(rendered.container).toMatchSnapshot();
+	});
+
+	it("should show network connection warning", async () => {
+		const { result: form } = renderHook(() => useForm());
+
+		const walletRestoreMock = jest.spyOn(profile.wallets().first(), "hasSyncedWithNetwork").mockReturnValue(false);
+
+		const warningMock = jest.fn();
+		const toastSpy = jest.spyOn(toasts, "warning").mockImplementation(warningMock);
+
+		form.current.register("fee");
+		form.current.register("network");
+
+		for (const network of env.availableNetworks()) {
+			if (network.id() === wallet.networkId() && network.coin() === wallet.coinId()) {
+				form.current.setValue("network", network, { shouldValidate: true, shouldDirty: true });
+
+				break;
+			}
+		}
+
+		let rendered: any;
+
+		await act(async () => {
+			rendered = render(
+				<FormProvider {...form.current}>
+					<SendTransactionForm profile={profile} networks={env.availableNetworks()} />
+				</FormProvider>,
+			);
+
+			await waitFor(() => expect(rendered.getByTestId("SelectAddress__wrapper")).toBeTruthy());
+		});
+
+		expect(toastSpy).toHaveBeenCalled();
+
+		walletRestoreMock.mockRestore();
+		toastSpy.mockRestore();
 	});
 
 	it("should select a network & update fees", async () => {
