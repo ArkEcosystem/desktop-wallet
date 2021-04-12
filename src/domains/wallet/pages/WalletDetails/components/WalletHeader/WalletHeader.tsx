@@ -267,7 +267,7 @@ export const WalletHeader = ({ profile, wallet, currencyDelta, onSend }: WalletH
 					</div>
 				</div>
 
-				<div className="flex items-center w-1/2 pl-12 space-x-2 h-13">
+				<div className="flex items-center w-1/2 pl-12 h-13">
 					<div className="flex flex-col mr-auto">
 						<div className="flex items-center text-sm font-semibold text-theme-secondary-text">
 							<span>{t("COMMON.BALANCE")}:</span>
@@ -331,13 +331,13 @@ export const WalletHeader = ({ profile, wallet, currencyDelta, onSend }: WalletH
 					<Button
 						data-testid="WalletHeader__send-button"
 						disabled={wallet.balance().isZero()}
-						className="my-auto"
+						className="my-auto ml-1"
 						onClick={onSend}
 					>
 						{t("COMMON.SEND")}
 					</Button>
 
-					<div data-testid="WalletHeader__more-button" className="my-auto">
+					<div data-testid="WalletHeader__more-button" className="my-auto ml-3">
 						<Dropdown
 							toggleContent={
 								<Button variant="secondary" size="icon" className="text-left">
@@ -346,7 +346,6 @@ export const WalletHeader = ({ profile, wallet, currencyDelta, onSend }: WalletH
 							}
 							onSelect={handleSelect}
 							options={[primaryOptions, registrationOptions, additionalOptions, secondaryOptions]}
-							dropdownClass="top-5 right-3 text-left"
 						/>
 					</div>
 				</div>
