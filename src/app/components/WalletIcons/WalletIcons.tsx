@@ -10,6 +10,8 @@ const getIconName = (type: string) => {
 			return "Star";
 		case "MultiSignature":
 			return "Multisig";
+		case "SecondSignature":
+			return "Key";
 		default:
 			return type;
 	}
@@ -17,11 +19,11 @@ const getIconName = (type: string) => {
 
 const getIconColor = (type: string) => (type === "Starred" ? "text-theme-warning-400" : "text-theme-text");
 
-const WalletIcon = ({ type, value }: { type: string; value?: string }) => {
+const WalletIcon = ({ type, label }: { type: string; label?: string }) => {
 	const { t } = useTranslation();
 
 	return (
-		<Tooltip content={t(`COMMON.${type.toUpperCase()}`, { value })}>
+		<Tooltip content={label || t(`COMMON.${type.toUpperCase()}`)}>
 			<div data-testid={`WalletIcon__${getIconName(type)}`} className={`inline-block p-1 ${getIconColor(type)}`}>
 				<Icon name={getIconName(type)} height={16} />
 			</div>
@@ -29,11 +31,20 @@ const WalletIcon = ({ type, value }: { type: string; value?: string }) => {
 	);
 };
 
-export const WalletIcons = ({ wallet }: { wallet: Contracts.IReadWriteWallet }) => (
-	<>
-		{wallet.isKnown() && <WalletIcon type="Verified" value={wallet.knownName()} />}
-		{wallet.isLedger() && <WalletIcon type="Ledger" />}
-		{wallet.isStarred() && <WalletIcon type="Starred" />}
-		{wallet.hasSyncedWithNetwork() && wallet.isMultiSignature() && <WalletIcon type="MultiSignature" />}
-	</>
-);
+export const WalletIcons = ({ wallet }: { wallet: Contracts.IReadWriteWallet }) => {
+	const { t } = useTranslation();
+
+	return (
+		<>
+			{wallet.isKnown() && (
+				<WalletIcon type="Verified" label={t(`COMMON.VERIFIED`, { value: wallet.knownName() })} />
+			)}
+			{wallet.hasSyncedWithNetwork() && wallet.isSecondSignature() && (
+				<WalletIcon type="SecondSignature" label={t("COMMON.SECOND_SIGNATURE")} />
+			)}
+			{wallet.isLedger() && <WalletIcon type="Ledger" />}
+			{wallet.isStarred() && <WalletIcon type="Starred" />}
+			{wallet.hasSyncedWithNetwork() && wallet.isMultiSignature() && <WalletIcon type="MultiSignature" />}
+		</>
+	);
+};

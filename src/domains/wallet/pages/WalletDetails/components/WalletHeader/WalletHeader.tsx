@@ -7,6 +7,7 @@ import { Clipboard } from "app/components/Clipboard";
 import { Dropdown, DropdownOption, DropdownOptionGroup } from "app/components/Dropdown";
 import { Icon } from "app/components/Icon";
 import { Tooltip } from "app/components/Tooltip";
+import { WalletIcons } from "app/components/WalletIcons";
 import { useEnvironmentContext } from "app/contexts";
 import { NetworkIcon } from "domains/network/components/NetworkIcon";
 import { DeleteWallet } from "domains/wallet/components/DeleteWallet";
@@ -211,31 +212,7 @@ export const WalletHeader = ({ profile, wallet, currencyDelta, onSend }: WalletH
 							)}
 
 							<div className="flex items-center space-x-3">
-								{wallet.isLedger() && (
-									<Tooltip content={t("COMMON.LEDGER")}>
-										<span data-testid="WalletHeader__ledger">
-											<Icon
-												name="Ledger"
-												className="hover:text-theme-secondary-500"
-												width={16}
-												height={16}
-											/>
-										</span>
-									</Tooltip>
-								)}
-
-								{wallet.hasSyncedWithNetwork() && wallet.isMultiSignature() && (
-									<Tooltip content={t("COMMON.MULTISIGNATURE")}>
-										<span data-testid="WalletHeader__multisig">
-											<Icon
-												name="Multisig"
-												className="hover:text-theme-secondary-500"
-												width={20}
-												height={20}
-											/>
-										</span>
-									</Tooltip>
-								)}
+								<WalletIcons wallet={wallet} />
 							</div>
 						</div>
 

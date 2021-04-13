@@ -884,32 +884,34 @@ exports[`WalletHeader should show modifiers 1`] = `
           <div
             class="flex items-center space-x-3"
           >
-            <span
-              data-testid="WalletHeader__ledger"
+            <div
+              class="inline-block p-1 text-theme-text"
+              data-testid="WalletIcon__Ledger"
             >
               <div
-                class="sc-bdfBwQ fpbFeh hover:text-theme-secondary-500"
+                class="sc-bdfBwQ dHWxPT"
                 height="16"
-                width="16"
+                width="1em"
               >
                 <svg>
                   ledger.svg
                 </svg>
               </div>
-            </span>
-            <span
-              data-testid="WalletHeader__multisig"
+            </div>
+            <div
+              class="inline-block p-1 text-theme-text"
+              data-testid="WalletIcon__Multisig"
             >
               <div
-                class="sc-bdfBwQ iyevwF hover:text-theme-secondary-500"
-                height="20"
-                width="20"
+                class="sc-bdfBwQ dHWxPT"
+                height="16"
+                width="1em"
               >
                 <svg>
                   multisig.svg
                 </svg>
               </div>
-            </span>
+            </div>
           </div>
         </div>
         <div
