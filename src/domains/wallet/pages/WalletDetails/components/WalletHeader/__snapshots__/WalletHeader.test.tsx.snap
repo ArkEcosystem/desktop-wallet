@@ -299,7 +299,7 @@ exports[`WalletHeader should render converted balance for mainnet wallet 1`] = `
       </div>
     </div>
     <div
-      class="flex items-center w-1/2 pl-12 space-x-2 h-13"
+      class="flex items-center w-1/2 pl-12 h-13"
     >
       <div
         class="flex flex-col mr-auto"
@@ -352,7 +352,7 @@ exports[`WalletHeader should render converted balance for mainnet wallet 1`] = `
         </button>
       </div>
       <button
-        class="OriginalButton__StyledButton-sc-1y2wptt-0 cEUmKc my-auto"
+        class="OriginalButton__StyledButton-sc-1y2wptt-0 cEUmKc my-auto ml-1"
         data-testid="WalletHeader__send-button"
         type="button"
       >
@@ -363,7 +363,7 @@ exports[`WalletHeader should render converted balance for mainnet wallet 1`] = `
         </div>
       </button>
       <div
-        class="my-auto"
+        class="my-auto ml-3"
         data-testid="WalletHeader__more-button"
       >
         <div

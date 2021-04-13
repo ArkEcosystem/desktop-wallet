@@ -159,6 +159,9 @@ export const PluginManager = () => {
 		filters,
 		filterBy,
 		fetchPluginPackages,
+		hasFilters,
+		searchResults,
+		resetFilters,
 	} = usePluginManagerContext();
 
 	const activeProfile = useActiveProfile();
@@ -167,8 +170,15 @@ export const PluginManager = () => {
 	const { persist } = useEnvironmentContext();
 	const { startUpdate, isUpdating: isUpdatingAll } = usePluginUpdateQueue();
 
-	const [currentView, setCurrentView] = useState("latest");
+	const [currentViewValue, setCurrentViewValue] = useState("latest");
 	const [viewType, setViewType] = useState("grid");
+
+	const currentView = useMemo(() => {
+		if (hasFilters) {
+			return "search";
+		}
+		return currentViewValue;
+	}, [currentViewValue, hasFilters]);
 
 	const [updatesConfirmationPlugins, setUpdatesConfirmationPlugins] = useState<any[] | undefined>(undefined);
 	const [isManualInstallModalOpen, setIsManualInstallModalOpen] = useState(false);
@@ -176,6 +186,7 @@ export const PluginManager = () => {
 	const [installSelectedPlugin, setInstallSelectedPlugin] = useState<PluginController | undefined>(undefined);
 
 	const plugins = allPlugins.map(mapConfigToPluginData.bind(null, activeProfile));
+	const searchResultsData = searchResults.map(mapConfigToPluginData.bind(null, activeProfile));
 
 	const isAdvancedMode = activeProfile.settings().get<boolean>(Contracts.ProfileSetting.AdvancedMode, false)!;
 	const hasUpdateAvailableCount = plugins.filter((item) => item.hasUpdateAvailable).length;
@@ -211,6 +222,11 @@ export const PluginManager = () => {
 		.all()
 		.map((item) => item.config())
 		.map(mapConfigToPluginData.bind(null, activeProfile));
+
+	const setCurrentView = (value: string) => {
+		resetFilters();
+		setCurrentViewValue(value);
+	};
 
 	const handleSelectPlugin = (pluginData: any) =>
 		history.push(`/profiles/${activeProfile.id()}/plugins/details?pluginId=${pluginData.id}`);
@@ -262,10 +278,12 @@ export const PluginManager = () => {
 				return installedPlugins;
 			case "all":
 				return plugins;
+			case "search":
+				return searchResultsData;
 			default:
 				return filteredPackages;
 		}
-	}, [currentView, installedPlugins, plugins, filteredPackages]);
+	}, [currentView, installedPlugins, plugins, filteredPackages, searchResultsData]);
 
 	const onUpdateAll = () => {
 		const notSatisfiedPlugins = plugins.filter(
@@ -303,6 +321,7 @@ export const PluginManager = () => {
 									onSearch={(query) => {
 										filterBy({ query });
 									}}
+									resetFields={filters.query === ""}
 								/>
 
 								{isAdvancedMode && (
@@ -373,6 +392,10 @@ export const PluginManager = () => {
 										emptyMessage={
 											currentView === "my-plugins"
 												? t("PLUGINS.PAGE_PLUGIN_MANAGER.NO_PLUGINS_INSTALLED")
+												: currentView === "search"
+												? t("PLUGINS.PAGE_PLUGIN_MANAGER.NO_PLUGINS_FOUND", {
+														query: filters.query,
+												  })
 												: undefined
 										}
 										isLoading={isFetchingPackages}
@@ -391,11 +414,15 @@ export const PluginManager = () => {
 										emptyMessage={
 											currentView === "my-plugins"
 												? t("PLUGINS.PAGE_PLUGIN_MANAGER.NO_PLUGINS_INSTALLED")
+												: currentView === "search"
+												? t("PLUGINS.PAGE_PLUGIN_MANAGER.NO_PLUGINS_FOUND", {
+														query: filters.query,
+												  })
 												: undefined
 										}
 										onUpdate={handleUpdate}
 										plugins={viewPlugins}
-										showCategory={currentView === "my-plugins" || currentView === "all"}
+										showCategory={["my-plugins", "search", "all"].includes(currentView)}
 										updatingStats={updatingStats}
 										onClick={handleSelectPlugin}
 										onDelete={handleDeletePlugin}
