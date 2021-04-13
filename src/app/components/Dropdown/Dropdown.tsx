@@ -1,6 +1,7 @@
 import { Divider } from "app/components/Divider";
 import { Icon } from "app/components/Icon";
 import { clickOutsideHandler } from "app/hooks";
+import cn from "classnames";
 import React, { useEffect, useRef, useState } from "react";
 import { styled } from "twin.macro";
 import { Position, Size } from "types";
@@ -139,7 +140,7 @@ const renderToggle = (isOpen: boolean, children: any, toggleIcon: string, toggle
 		const size = getSize(toggleSize);
 
 		return (
-			<div className="cursor-pointer outline-none focus:outline-none">
+			<div className="outline-none cursor-pointer focus:outline-none">
 				<Icon name={toggleIcon} width={size} height={size} />
 			</div>
 		);
@@ -268,7 +269,7 @@ export const Dropdown = ({
 					data-testid="dropdown__content"
 					position={position}
 					variant={variant || options ? "options" : "custom"}
-					className={`opacity-0 ${defaultClasses} ${dropdownClass || ""}`}
+					className={cn("opacity-0", defaultClasses, dropdownClass)}
 				>
 					{options?.length && renderOptions(options, select)}
 					{children && <div>{children}</div>}

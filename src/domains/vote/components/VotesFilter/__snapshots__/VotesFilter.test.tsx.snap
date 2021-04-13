@@ -78,7 +78,7 @@ exports[`VotesFilter should render default 1`] = `
       >
         <div>
           <div
-            class="w-64 flex flex-col space-y-5 px-10 py-7 text-theme-secondary-700 dark:text-theme-secondary-200"
+            class="w-56 flex flex-col space-y-5 px-10 py-7 text-theme-secondary-700 dark:text-theme-secondary-200"
           >
             <label
               class="h-5 flex items-center space-x-3 rounded-md cursor-pointer"
@@ -168,7 +168,7 @@ exports[`VotesFilter should render with current option selected 1`] = `
       >
         <div>
           <div
-            class="w-64 flex flex-col space-y-5 px-10 py-7 text-theme-secondary-700 dark:text-theme-secondary-200"
+            class="w-56 flex flex-col space-y-5 px-10 py-7 text-theme-secondary-700 dark:text-theme-secondary-200"
           >
             <label
               class="h-5 flex items-center space-x-3 rounded-md cursor-pointer"
@@ -251,7 +251,7 @@ exports[`VotesFilter should render with disabled current option 1`] = `
       >
         <div>
           <div
-            class="w-64 flex flex-col space-y-5 px-10 py-7 text-theme-secondary-700 dark:text-theme-secondary-200"
+            class="w-56 flex flex-col space-y-5 px-10 py-7 text-theme-secondary-700 dark:text-theme-secondary-200"
           >
             <label
               class="h-5 flex items-center space-x-3 rounded-md cursor-pointer"
@@ -271,7 +271,7 @@ exports[`VotesFilter should render with disabled current option 1`] = `
               </span>
             </label>
             <label
-              class="h-5 flex items-center space-x-3 rounded-md text-theme-secondary-500 dark:text-theme-secondary-600"
+              class="h-5 flex items-center space-x-3 rounded-md text-theme-secondary-500 dark:text-theme-secondary-700"
               data-testid="VotesFilter__option--current"
             >
               <input

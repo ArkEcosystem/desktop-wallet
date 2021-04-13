@@ -164,8 +164,11 @@ export const VerifyMessage = ({ profileId, walletId, onSubmit, onCancel, isOpen,
 			description={t("WALLETS.MODAL_VERIFY_MESSAGE.DESCRIPTION")}
 			onClose={() => onClose?.()}
 		>
-			<div className="mt-8">
-				<h3>{t("WALLETS.MODAL_VERIFY_MESSAGE.VERIFICATION_METHOD.TITLE")}</h3>
+			<div className="flex flex-col mt-8">
+				<span className="block mb-1 text-lg font-semibold">
+					{t("WALLETS.MODAL_VERIFY_MESSAGE.VERIFICATION_METHOD.TITLE")}
+				</span>
+
 				<span className="text-sm font-medium text-theme-secondary-500 dark:text-theme-secondary-700">
 					{t("WALLETS.MODAL_VERIFY_MESSAGE.VERIFICATION_METHOD.DESCRIPTION")}
 				</span>

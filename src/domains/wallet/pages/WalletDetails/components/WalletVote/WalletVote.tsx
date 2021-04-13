@@ -209,11 +209,16 @@ export const WalletVote = ({ wallet, onButtonClick, env }: WalletVoteProps) => {
 
 			<Button
 				data-testid="WalletVote__button"
+				disabled={
+					isLoading ||
+					wallet.balance().isZero() ||
+					!wallet.hasBeenFullyRestored() ||
+					!wallet.hasSyncedWithNetwork()
+				}
 				variant="secondary"
 				className="space-x-2"
-				onClick={() => onButtonClick()}
 				isLoading={isLoading}
-				disabled={isLoading}
+				onClick={() => onButtonClick()}
 			>
 				<Icon name="Vote" width={17} height={17} />
 				<span>{t("COMMON.VOTE")}</span>

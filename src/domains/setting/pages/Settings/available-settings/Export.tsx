@@ -53,7 +53,7 @@ export const Export = ({ formConfig, onSuccess }: SettingsProps) => {
 
 	const exportDataToFile = async () => {
 		const exportData = formatExportData({
-			...context.getValues("excludeEmptyWallets", "excludeLedgerWallets"),
+			...context.getValues(["excludeEmptyWallets", "excludeLedgerWallets"]),
 		});
 
 		const defaultPath = `profile-${profile.id()}.dwe`;

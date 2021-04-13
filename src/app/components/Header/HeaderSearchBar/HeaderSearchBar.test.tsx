@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/require-await */
 import React from "react";
-import { act, fireEvent, render } from "testing-library";
+import { act, fireEvent, render, waitFor } from "utils/testing-library";
 
 import { HeaderSearchBar } from "./HeaderSearchBar";
 
@@ -18,6 +18,30 @@ describe("HeaderSearchBar", () => {
 		fireEvent.click(getByTestId("header-search-bar__button"));
 
 		expect(getByTestId("header-search-bar__input")).toBeTruthy();
+	});
+
+	it("should reset fields by prop", async () => {
+		const onReset = jest.fn();
+		const { getByTestId, rerender } = render(<HeaderSearchBar onReset={onReset} />);
+
+		fireEvent.click(getByTestId("header-search-bar__button"));
+
+		const input = getByTestId("Input") as HTMLInputElement;
+
+		act(() => {
+			fireEvent.change(input, {
+				target: {
+					value: "test",
+				},
+			});
+		});
+
+		expect(input.value).toBe("test");
+
+		rerender(<HeaderSearchBar onReset={onReset} resetFields={true} />);
+
+		await waitFor(() => expect(input.value).not.toBe("test"));
+		expect(onReset).toHaveBeenCalled();
 	});
 
 	it("should show extra slot", () => {

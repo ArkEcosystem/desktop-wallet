@@ -3,7 +3,7 @@ import { Icon } from "app/components/Icon";
 import { Input } from "app/components/Input";
 import { clickOutsideHandler, useDebounce } from "app/hooks";
 import cn from "classnames";
-import React, { ChangeEvent, useEffect, useRef, useState } from "react";
+import React, { ChangeEvent, useCallback, useEffect, useRef, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { styled } from "twin.macro";
 
@@ -17,6 +17,7 @@ type HeaderSearchBarProps = {
 	extra?: React.ReactNode;
 	debounceTimeout?: number;
 	defaultQuery?: string;
+	resetFields?: boolean;
 };
 
 const SearchBarInputWrapper = styled.div`
@@ -33,6 +34,7 @@ export const HeaderSearchBar = ({
 	onReset,
 	defaultQuery = "",
 	debounceTimeout = 500,
+	resetFields = false,
 }: HeaderSearchBarProps) => {
 	const { t } = useTranslation();
 
@@ -45,10 +47,16 @@ export const HeaderSearchBar = ({
 	const debouncedQuery = useDebounce(query, debounceTimeout);
 	useEffect(() => onSearch?.(debouncedQuery), [debouncedQuery]); // eslint-disable-line react-hooks/exhaustive-deps
 
-	const handleQueryReset = () => {
+	const handleQueryReset = useCallback(() => {
 		setQuery("");
 		onReset?.();
-	};
+	}, [onReset]);
+
+	useEffect(() => {
+		if (resetFields) {
+			handleQueryReset();
+		}
+	}, [resetFields, handleQueryReset]);
 
 	return (
 		<div className="relative">
