@@ -206,6 +206,8 @@ module.exports = {
 				outline: "0 0 0 3px rgba(var(--theme-color-primary-rgb), 0.4)",
 				"header-smooth": "0px 2px 10px 0px rgba(192, 200, 207, 0.22)",
 				"header-smooth-dark": "0px 2px 10px 0px rgba(18, 18, 19, .6)",
+				"footer-smooth": "0px -2px 10px 0px rgba(192, 200, 207, 0.22)",
+				"footer-smooth-dark": "0px -2px 10px 0px rgba(18, 18, 19, .6)",
 			},
 			listStyleType: {
 				circle: "circle",
