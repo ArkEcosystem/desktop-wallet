@@ -133,7 +133,11 @@ export const PluginGrid = ({
 	}
 
 	if (!plugins.length) {
-		return <EmptyBlock>{emptyMessage || t("PLUGINS.PAGE_PLUGIN_MANAGER.NO_PLUGINS_AVAILABLE")}</EmptyBlock>;
+		return (
+			<EmptyBlock data-testid="PluginGrid__empty-message">
+				{emptyMessage || t("PLUGINS.PAGE_PLUGIN_MANAGER.NO_PLUGINS_AVAILABLE")}
+			</EmptyBlock>
+		);
 	}
 
 	const pagePlugins = chunk(plugins, itemsPerPage!)[currentPage - 1];

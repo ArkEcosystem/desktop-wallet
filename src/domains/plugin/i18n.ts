@@ -82,6 +82,7 @@ export const translations: { [key: string]: any } = {
 
 		NO_PLUGINS_AVAILABLE: "This category has no available Plugins yet.",
 		NO_PLUGINS_INSTALLED: "You haven't installed any Plugins yet. Once you install them, they will show up here.",
+		NO_PLUGINS_FOUND: `Your search query "{{query}}" does not match any Plugins in the manager.`,
 
 		VIEW: {
 			LATEST: "Latest",
@@ -91,6 +92,7 @@ export const translations: { [key: string]: any } = {
 			MY_PLUGINS: "My Plugins",
 			OTHER: "Other",
 			UTILITY: "Utility",
+			SEARCH: "Search Results",
 		},
 	},
 
