@@ -4,6 +4,7 @@ import { Contracts } from "@arkecosystem/platform-sdk-profiles";
 // @README: This import is fine in tests but should be avoided in production code.
 import { ReadOnlyWallet } from "@arkecosystem/platform-sdk-profiles/dist/drivers/memory/wallets/read-only-wallet";
 import { translations as commonTranslations } from "app/i18n/common/i18n";
+import { toasts } from "app/services";
 import { translations as walletTranslations } from "domains/wallet/i18n";
 import { createMemoryHistory } from "history";
 import { when } from "jest-when";
@@ -129,6 +130,19 @@ describe("WalletDetails", () => {
 	beforeEach(() => {
 		walletUrl = `/profiles/${profile.id()}/wallets/${wallet.id()}`;
 		history.push(walletUrl);
+	});
+
+	it("should show network connection warning", async () => {
+		const walletRestoreMock = jest.spyOn(wallet, "hasBeenPartiallyRestored").mockReturnValue(true);
+
+		const warningMock = jest.fn();
+		const toastSpy = jest.spyOn(toasts, "warning").mockImplementation(warningMock);
+
+		await renderPage({ waitForTopSection: false });
+
+		await waitFor(() => expect(toastSpy).toHaveBeenCalled());
+		walletRestoreMock.mockRestore();
+		toastSpy.mockRestore();
 	});
 
 	it("should not render wallet vote when the network does not support votes", async () => {

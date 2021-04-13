@@ -10,7 +10,8 @@ import { Header } from "app/components/Header";
 import { HeaderSearchBar } from "app/components/Header/HeaderSearchBar";
 import { Page, Section } from "app/components/Layout";
 import { useEnvironmentContext } from "app/contexts";
-import { useActiveProfile, useActiveWallet, useQueryParams } from "app/hooks";
+import { useActiveProfile, useActiveWallet, useProfileUtils, useQueryParams } from "app/hooks";
+import { toasts } from "app/services";
 import { FilterWallets } from "domains/dashboard/components/FilterWallets";
 import { AddressTable } from "domains/vote/components/AddressTable";
 import { DelegateTable } from "domains/vote/components/DelegateTable";
@@ -24,7 +25,10 @@ export const Votes = () => {
 	const history = useHistory();
 	const { walletId: hasWalletId } = useParams();
 	const { env } = useEnvironmentContext();
+
 	const activeProfile = useActiveProfile();
+	const { getErroredNetworks } = useProfileUtils(env);
+
 	const activeWallet = useActiveWallet();
 
 	const queryParams = useQueryParams();
@@ -170,6 +174,15 @@ export const Votes = () => {
 			loadVotes(selectedAddress);
 		}
 	}, [loadVotes, selectedAddress]);
+
+	useEffect(() => {
+		const { hasErroredNetworks, erroredNetworks } = getErroredNetworks(activeProfile);
+		if (!hasErroredNetworks) {
+			return;
+		}
+
+		toasts.warning(t("COMMON.ERRORS.NETWORK_ERROR", { network: erroredNetworks.join(", ") }));
+	}, [getErroredNetworks, activeProfile, t]);
 
 	const loadDelegates = useCallback(
 		async (wallet) => {

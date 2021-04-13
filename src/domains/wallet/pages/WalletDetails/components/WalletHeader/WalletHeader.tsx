@@ -81,7 +81,7 @@ export const WalletHeader = ({ profile, wallet, currencyDelta, onSend }: WalletH
 		options: [],
 	};
 
-	if (!wallet.isLedger()) {
+	if (!wallet.isLedger() && wallet.hasBeenFullyRestored()) {
 		if (wallet.hasSyncedWithNetwork()) {
 			if (wallet.network().can(Coins.FeatureFlag.TransactionDelegateRegistration) && !wallet.isDelegate()) {
 				registrationOptions.options.push({
@@ -137,7 +137,11 @@ export const WalletHeader = ({ profile, wallet, currencyDelta, onSend }: WalletH
 		});
 	}
 
-	if (wallet.network().can(Coins.FeatureFlag.TransactionIpfs)) {
+	if (
+		wallet.network().can(Coins.FeatureFlag.TransactionIpfs) &&
+		wallet.hasBeenFullyRestored() &&
+		wallet.hasSyncedWithNetwork()
+	) {
 		additionalOptions.options.push({
 			label: t("WALLETS.PAGE_WALLET_DETAILS.OPTIONS.STORE_HASH"),
 			value: "store-hash",
@@ -330,7 +334,11 @@ export const WalletHeader = ({ profile, wallet, currencyDelta, onSend }: WalletH
 
 					<Button
 						data-testid="WalletHeader__send-button"
-						disabled={wallet.balance().isZero()}
+						disabled={
+							wallet.balance().isZero() ||
+							!wallet.hasBeenFullyRestored() ||
+							!wallet.hasSyncedWithNetwork()
+						}
 						className="my-auto"
 						onClick={onSend}
 					>

@@ -43,6 +43,16 @@ describe("WalletHeader", () => {
 		expect(asFragment()).toMatchSnapshot();
 	});
 
+	it("should render converted balance for mainnet wallet", () => {
+		const mockWalletNetwork = jest.spyOn(wallet.network(), "isTest").mockReturnValue(false);
+		const { asFragment, getByText } = render(<WalletHeader profile={profile} wallet={wallet} />);
+
+		waitFor(() => expect(getByText(wallet.address())).toBeTruthy());
+
+		expect(asFragment()).toMatchSnapshot();
+		mockWalletNetwork.mockRestore();
+	});
+
 	it("should trigger onSend callback if provided", () => {
 		const onSend = jest.fn();
 
