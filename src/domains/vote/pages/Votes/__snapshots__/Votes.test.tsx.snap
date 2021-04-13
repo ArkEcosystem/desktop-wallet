@@ -466,7 +466,7 @@ exports[`Votes should filter current delegates 1`] = `
                     role="row"
                   >
                     <th
-                      class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
+                      class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder w-1"
                       colspan="1"
                       data-testid="table__th--0"
                       role="columnheader"
@@ -496,7 +496,7 @@ exports[`Votes should filter current delegates 1`] = `
                       </div>
                     </th>
                     <th
-                      class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
+                      class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold"
                       colspan="1"
                       data-testid="table__th--1"
                       role="columnheader"
@@ -504,7 +504,7 @@ exports[`Votes should filter current delegates 1`] = `
                       title="Toggle SortBy"
                     >
                       <div
-                        class="flex flex-inline align-top"
+                        class="flex flex-inline align-top no-border"
                       >
                         <div>
                           Delegate Name
@@ -532,54 +532,10 @@ exports[`Votes should filter current delegates 1`] = `
                       role="columnheader"
                     >
                       <div
-                        class="flex flex-inline align-top justify-center"
+                        class="flex flex-inline align-top hidden"
                       >
                         <div>
-                          Status
-                        </div>
-                      </div>
-                    </th>
-                    <th
-                      class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
-                      colspan="1"
-                      data-testid="table__th--3"
-                      role="columnheader"
-                    >
-                      <div
-                        class="flex flex-inline align-top justify-center"
-                      >
-                        <div>
-                          Votes
-                        </div>
-                      </div>
-                    </th>
-                    <th
-                      class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
-                      colspan="1"
-                      data-testid="table__th--4"
-                      role="columnheader"
-                      style="cursor: pointer;"
-                      title="Toggle SortBy"
-                    >
-                      <div
-                        class="flex flex-inline align-top justify-end flex-row-reverse"
-                      >
-                        <div>
-                          Vote
-                        </div>
-                        <div
-                          class="flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity opacity-0 group-hover:opacity-100 ml-auto mr-2"
-                        >
-                          <div
-                            class="sc-bdfBwQ kJrqvM transition-transform transform rotate-180"
-                            height="5"
-                            role="img"
-                            width="8"
-                          >
-                            <svg>
-                              chevron-down.svg
-                            </svg>
-                          </div>
+                          Actions
                         </div>
                       </div>
                     </th>
@@ -623,34 +579,6 @@ exports[`Votes should filter current delegates 1`] = `
                         </div>
                         <span>
                           arkx
-                        </span>
-                      </div>
-                    </td>
-                    <td
-                      class="w-20"
-                    >
-                      <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT justify-center bg-theme-primary-50 dark:bg-theme-primary-900"
-                      >
-                        <div
-                          class="sc-bdfBwQ iSzUah text-xs text-theme-primary-600"
-                          height="22"
-                          width="22"
-                        >
-                          <svg>
-                            status-ok.svg
-                          </svg>
-                        </div>
-                      </div>
-                    </td>
-                    <td
-                      class="w-20"
-                    >
-                      <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT justify-center font-bold text-theme-secondary-text bg-theme-primary-50 dark:bg-theme-primary-900"
-                      >
-                        <span>
-                          %
                         </span>
                       </div>
                     </td>
@@ -1257,7 +1185,7 @@ exports[`Votes should handle wallet vote error and show empty delegates 1`] = `
                     role="row"
                   >
                     <th
-                      class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
+                      class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder w-1"
                       colspan="1"
                       data-testid="table__th--0"
                       role="columnheader"
@@ -1287,7 +1215,7 @@ exports[`Votes should handle wallet vote error and show empty delegates 1`] = `
                       </div>
                     </th>
                     <th
-                      class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
+                      class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold"
                       colspan="1"
                       data-testid="table__th--1"
                       role="columnheader"
@@ -1295,7 +1223,7 @@ exports[`Votes should handle wallet vote error and show empty delegates 1`] = `
                       title="Toggle SortBy"
                     >
                       <div
-                        class="flex flex-inline align-top"
+                        class="flex flex-inline align-top no-border"
                       >
                         <div>
                           Delegate Name
@@ -1323,54 +1251,10 @@ exports[`Votes should handle wallet vote error and show empty delegates 1`] = `
                       role="columnheader"
                     >
                       <div
-                        class="flex flex-inline align-top justify-center"
+                        class="flex flex-inline align-top hidden"
                       >
                         <div>
-                          Status
-                        </div>
-                      </div>
-                    </th>
-                    <th
-                      class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
-                      colspan="1"
-                      data-testid="table__th--3"
-                      role="columnheader"
-                    >
-                      <div
-                        class="flex flex-inline align-top justify-center"
-                      >
-                        <div>
-                          Votes
-                        </div>
-                      </div>
-                    </th>
-                    <th
-                      class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
-                      colspan="1"
-                      data-testid="table__th--4"
-                      role="columnheader"
-                      style="cursor: pointer;"
-                      title="Toggle SortBy"
-                    >
-                      <div
-                        class="flex flex-inline align-top justify-end flex-row-reverse"
-                      >
-                        <div>
-                          Vote
-                        </div>
-                        <div
-                          class="flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity opacity-0 group-hover:opacity-100 ml-auto mr-2"
-                        >
-                          <div
-                            class="sc-bdfBwQ kJrqvM transition-transform transform rotate-180"
-                            height="5"
-                            role="img"
-                            width="8"
-                          >
-                            <svg>
-                              chevron-down.svg
-                            </svg>
-                          </div>
+                          Actions
                         </div>
                       </div>
                     </th>
@@ -1414,24 +1298,6 @@ exports[`Votes should handle wallet vote error and show empty delegates 1`] = `
                         </div>
                         <span>
                           arkx
-                        </span>
-                      </div>
-                    </td>
-                    <td
-                      class="w-20"
-                    >
-                      <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT justify-center bg-theme-success-50 dark:bg-theme-success-900"
-                      />
-                    </td>
-                    <td
-                      class="w-20"
-                    >
-                      <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT justify-center font-bold text-theme-secondary-text bg-theme-success-50 dark:bg-theme-success-900"
-                      >
-                        <span>
-                          %
                         </span>
                       </div>
                     </td>
@@ -1495,24 +1361,6 @@ exports[`Votes should handle wallet vote error and show empty delegates 1`] = `
                       </div>
                     </td>
                     <td
-                      class="w-20"
-                    >
-                      <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT justify-center "
-                      />
-                    </td>
-                    <td
-                      class="w-20"
-                    >
-                      <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT justify-center font-bold text-theme-secondary-text "
-                      >
-                        <span>
-                          %
-                        </span>
-                      </div>
-                    </td>
-                    <td
                       class="w-40"
                     >
                       <div
@@ -1568,24 +1416,6 @@ exports[`Votes should handle wallet vote error and show empty delegates 1`] = `
                         </div>
                         <span>
                           genesis_17
-                        </span>
-                      </div>
-                    </td>
-                    <td
-                      class="w-20"
-                    >
-                      <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT justify-center "
-                      />
-                    </td>
-                    <td
-                      class="w-20"
-                    >
-                      <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT justify-center font-bold text-theme-secondary-text "
-                      >
-                        <span>
-                          %
                         </span>
                       </div>
                     </td>
@@ -1649,24 +1479,6 @@ exports[`Votes should handle wallet vote error and show empty delegates 1`] = `
                       </div>
                     </td>
                     <td
-                      class="w-20"
-                    >
-                      <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT justify-center "
-                      />
-                    </td>
-                    <td
-                      class="w-20"
-                    >
-                      <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT justify-center font-bold text-theme-secondary-text "
-                      >
-                        <span>
-                          %
-                        </span>
-                      </div>
-                    </td>
-                    <td
                       class="w-40"
                     >
                       <div
@@ -1722,24 +1534,6 @@ exports[`Votes should handle wallet vote error and show empty delegates 1`] = `
                         </div>
                         <span>
                           itsanametoo
-                        </span>
-                      </div>
-                    </td>
-                    <td
-                      class="w-20"
-                    >
-                      <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT justify-center "
-                      />
-                    </td>
-                    <td
-                      class="w-20"
-                    >
-                      <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT justify-center font-bold text-theme-secondary-text "
-                      >
-                        <span>
-                          %
                         </span>
                       </div>
                     </td>
@@ -2333,7 +2127,7 @@ exports[`Votes should hide testnet wallet if disabled from profile setting 1`] =
                     role="row"
                   >
                     <th
-                      class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
+                      class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder w-1"
                       colspan="1"
                       data-testid="table__th--0"
                       role="columnheader"
@@ -2363,7 +2157,7 @@ exports[`Votes should hide testnet wallet if disabled from profile setting 1`] =
                       </div>
                     </th>
                     <th
-                      class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
+                      class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold"
                       colspan="1"
                       data-testid="table__th--1"
                       role="columnheader"
@@ -2371,7 +2165,7 @@ exports[`Votes should hide testnet wallet if disabled from profile setting 1`] =
                       title="Toggle SortBy"
                     >
                       <div
-                        class="flex flex-inline align-top"
+                        class="flex flex-inline align-top no-border"
                       >
                         <div>
                           Delegate Name
@@ -2399,54 +2193,10 @@ exports[`Votes should hide testnet wallet if disabled from profile setting 1`] =
                       role="columnheader"
                     >
                       <div
-                        class="flex flex-inline align-top justify-center"
+                        class="flex flex-inline align-top hidden"
                       >
                         <div>
-                          Status
-                        </div>
-                      </div>
-                    </th>
-                    <th
-                      class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
-                      colspan="1"
-                      data-testid="table__th--3"
-                      role="columnheader"
-                    >
-                      <div
-                        class="flex flex-inline align-top justify-center"
-                      >
-                        <div>
-                          Votes
-                        </div>
-                      </div>
-                    </th>
-                    <th
-                      class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
-                      colspan="1"
-                      data-testid="table__th--4"
-                      role="columnheader"
-                      style="cursor: pointer;"
-                      title="Toggle SortBy"
-                    >
-                      <div
-                        class="flex flex-inline align-top justify-end flex-row-reverse"
-                      >
-                        <div>
-                          Vote
-                        </div>
-                        <div
-                          class="flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity opacity-0 group-hover:opacity-100 ml-auto mr-2"
-                        >
-                          <div
-                            class="sc-bdfBwQ kJrqvM transition-transform transform rotate-180"
-                            height="5"
-                            role="img"
-                            width="8"
-                          >
-                            <svg>
-                              chevron-down.svg
-                            </svg>
-                          </div>
+                          Actions
                         </div>
                       </div>
                     </th>
@@ -2490,34 +2240,6 @@ exports[`Votes should hide testnet wallet if disabled from profile setting 1`] =
                         </div>
                         <span>
                           arkx
-                        </span>
-                      </div>
-                    </td>
-                    <td
-                      class="w-20"
-                    >
-                      <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT justify-center bg-theme-primary-50 dark:bg-theme-primary-900"
-                      >
-                        <div
-                          class="sc-bdfBwQ iSzUah text-xs text-theme-primary-600"
-                          height="22"
-                          width="22"
-                        >
-                          <svg>
-                            status-ok.svg
-                          </svg>
-                        </div>
-                      </div>
-                    </td>
-                    <td
-                      class="w-20"
-                    >
-                      <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT justify-center font-bold text-theme-secondary-text bg-theme-primary-50 dark:bg-theme-primary-900"
-                      >
-                        <span>
-                          %
                         </span>
                       </div>
                     </td>
@@ -2581,24 +2303,6 @@ exports[`Votes should hide testnet wallet if disabled from profile setting 1`] =
                       </div>
                     </td>
                     <td
-                      class="w-20"
-                    >
-                      <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT justify-center "
-                      />
-                    </td>
-                    <td
-                      class="w-20"
-                    >
-                      <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT justify-center font-bold text-theme-secondary-text "
-                      >
-                        <span>
-                          %
-                        </span>
-                      </div>
-                    </td>
-                    <td
                       class="w-40"
                     >
                       <div
@@ -2654,24 +2358,6 @@ exports[`Votes should hide testnet wallet if disabled from profile setting 1`] =
                         </div>
                         <span>
                           genesis_17
-                        </span>
-                      </div>
-                    </td>
-                    <td
-                      class="w-20"
-                    >
-                      <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT justify-center "
-                      />
-                    </td>
-                    <td
-                      class="w-20"
-                    >
-                      <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT justify-center font-bold text-theme-secondary-text "
-                      >
-                        <span>
-                          %
                         </span>
                       </div>
                     </td>
@@ -2735,24 +2421,6 @@ exports[`Votes should hide testnet wallet if disabled from profile setting 1`] =
                       </div>
                     </td>
                     <td
-                      class="w-20"
-                    >
-                      <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT justify-center "
-                      />
-                    </td>
-                    <td
-                      class="w-20"
-                    >
-                      <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT justify-center font-bold text-theme-secondary-text "
-                      >
-                        <span>
-                          %
-                        </span>
-                      </div>
-                    </td>
-                    <td
                       class="w-40"
                     >
                       <div
@@ -2808,24 +2476,6 @@ exports[`Votes should hide testnet wallet if disabled from profile setting 1`] =
                         </div>
                         <span>
                           itsanametoo
-                        </span>
-                      </div>
-                    </td>
-                    <td
-                      class="w-20"
-                    >
-                      <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT justify-center "
-                      />
-                    </td>
-                    <td
-                      class="w-20"
-                    >
-                      <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT justify-center font-bold text-theme-secondary-text "
-                      >
-                        <span>
-                          %
                         </span>
                       </div>
                     </td>
@@ -3436,7 +3086,7 @@ exports[`Votes should render 1`] = `
                     role="row"
                   >
                     <th
-                      class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
+                      class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder w-1"
                       colspan="1"
                       data-testid="table__th--0"
                       role="columnheader"
@@ -3466,7 +3116,7 @@ exports[`Votes should render 1`] = `
                       </div>
                     </th>
                     <th
-                      class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
+                      class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold"
                       colspan="1"
                       data-testid="table__th--1"
                       role="columnheader"
@@ -3474,7 +3124,7 @@ exports[`Votes should render 1`] = `
                       title="Toggle SortBy"
                     >
                       <div
-                        class="flex flex-inline align-top"
+                        class="flex flex-inline align-top no-border"
                       >
                         <div>
                           Delegate Name
@@ -3502,54 +3152,10 @@ exports[`Votes should render 1`] = `
                       role="columnheader"
                     >
                       <div
-                        class="flex flex-inline align-top justify-center"
+                        class="flex flex-inline align-top hidden"
                       >
                         <div>
-                          Status
-                        </div>
-                      </div>
-                    </th>
-                    <th
-                      class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
-                      colspan="1"
-                      data-testid="table__th--3"
-                      role="columnheader"
-                    >
-                      <div
-                        class="flex flex-inline align-top justify-center"
-                      >
-                        <div>
-                          Votes
-                        </div>
-                      </div>
-                    </th>
-                    <th
-                      class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
-                      colspan="1"
-                      data-testid="table__th--4"
-                      role="columnheader"
-                      style="cursor: pointer;"
-                      title="Toggle SortBy"
-                    >
-                      <div
-                        class="flex flex-inline align-top justify-end flex-row-reverse"
-                      >
-                        <div>
-                          Vote
-                        </div>
-                        <div
-                          class="flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity opacity-0 group-hover:opacity-100 ml-auto mr-2"
-                        >
-                          <div
-                            class="sc-bdfBwQ kJrqvM transition-transform transform rotate-180"
-                            height="5"
-                            role="img"
-                            width="8"
-                          >
-                            <svg>
-                              chevron-down.svg
-                            </svg>
-                          </div>
+                          Actions
                         </div>
                       </div>
                     </th>
@@ -3593,34 +3199,6 @@ exports[`Votes should render 1`] = `
                         </div>
                         <span>
                           arkx
-                        </span>
-                      </div>
-                    </td>
-                    <td
-                      class="w-20"
-                    >
-                      <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT justify-center bg-theme-primary-50 dark:bg-theme-primary-900"
-                      >
-                        <div
-                          class="sc-bdfBwQ iSzUah text-xs text-theme-primary-600"
-                          height="22"
-                          width="22"
-                        >
-                          <svg>
-                            status-ok.svg
-                          </svg>
-                        </div>
-                      </div>
-                    </td>
-                    <td
-                      class="w-20"
-                    >
-                      <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT justify-center font-bold text-theme-secondary-text bg-theme-primary-50 dark:bg-theme-primary-900"
-                      >
-                        <span>
-                          %
                         </span>
                       </div>
                     </td>
@@ -3684,24 +3262,6 @@ exports[`Votes should render 1`] = `
                       </div>
                     </td>
                     <td
-                      class="w-20"
-                    >
-                      <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT justify-center "
-                      />
-                    </td>
-                    <td
-                      class="w-20"
-                    >
-                      <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT justify-center font-bold text-theme-secondary-text "
-                      >
-                        <span>
-                          %
-                        </span>
-                      </div>
-                    </td>
-                    <td
                       class="w-40"
                     >
                       <div
@@ -3757,24 +3317,6 @@ exports[`Votes should render 1`] = `
                         </div>
                         <span>
                           genesis_17
-                        </span>
-                      </div>
-                    </td>
-                    <td
-                      class="w-20"
-                    >
-                      <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT justify-center "
-                      />
-                    </td>
-                    <td
-                      class="w-20"
-                    >
-                      <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT justify-center font-bold text-theme-secondary-text "
-                      >
-                        <span>
-                          %
                         </span>
                       </div>
                     </td>
@@ -3838,24 +3380,6 @@ exports[`Votes should render 1`] = `
                       </div>
                     </td>
                     <td
-                      class="w-20"
-                    >
-                      <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT justify-center "
-                      />
-                    </td>
-                    <td
-                      class="w-20"
-                    >
-                      <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT justify-center font-bold text-theme-secondary-text "
-                      >
-                        <span>
-                          %
-                        </span>
-                      </div>
-                    </td>
-                    <td
                       class="w-40"
                     >
                       <div
@@ -3911,24 +3435,6 @@ exports[`Votes should render 1`] = `
                         </div>
                         <span>
                           itsanametoo
-                        </span>
-                      </div>
-                    </td>
-                    <td
-                      class="w-20"
-                    >
-                      <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT justify-center "
-                      />
-                    </td>
-                    <td
-                      class="w-20"
-                    >
-                      <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT justify-center font-bold text-theme-secondary-text "
-                      >
-                        <span>
-                          %
                         </span>
                       </div>
                     </td>
@@ -4923,7 +4429,7 @@ exports[`Votes should select a delegate 1`] = `
                     role="row"
                   >
                     <th
-                      class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
+                      class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder w-1"
                       colspan="1"
                       data-testid="table__th--0"
                       role="columnheader"
@@ -4953,7 +4459,7 @@ exports[`Votes should select a delegate 1`] = `
                       </div>
                     </th>
                     <th
-                      class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
+                      class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold"
                       colspan="1"
                       data-testid="table__th--1"
                       role="columnheader"
@@ -4961,7 +4467,7 @@ exports[`Votes should select a delegate 1`] = `
                       title="Toggle SortBy"
                     >
                       <div
-                        class="flex flex-inline align-top"
+                        class="flex flex-inline align-top no-border"
                       >
                         <div>
                           Delegate Name
@@ -4989,54 +4495,10 @@ exports[`Votes should select a delegate 1`] = `
                       role="columnheader"
                     >
                       <div
-                        class="flex flex-inline align-top justify-center"
+                        class="flex flex-inline align-top hidden"
                       >
                         <div>
-                          Status
-                        </div>
-                      </div>
-                    </th>
-                    <th
-                      class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
-                      colspan="1"
-                      data-testid="table__th--3"
-                      role="columnheader"
-                    >
-                      <div
-                        class="flex flex-inline align-top justify-center"
-                      >
-                        <div>
-                          Votes
-                        </div>
-                      </div>
-                    </th>
-                    <th
-                      class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
-                      colspan="1"
-                      data-testid="table__th--4"
-                      role="columnheader"
-                      style="cursor: pointer;"
-                      title="Toggle SortBy"
-                    >
-                      <div
-                        class="flex flex-inline align-top justify-end flex-row-reverse"
-                      >
-                        <div>
-                          Vote
-                        </div>
-                        <div
-                          class="flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity opacity-0 group-hover:opacity-100 ml-auto mr-2"
-                        >
-                          <div
-                            class="sc-bdfBwQ kJrqvM transition-transform transform rotate-180"
-                            height="5"
-                            role="img"
-                            width="8"
-                          >
-                            <svg>
-                              chevron-down.svg
-                            </svg>
-                          </div>
+                          Actions
                         </div>
                       </div>
                     </th>
@@ -5080,34 +4542,6 @@ exports[`Votes should select a delegate 1`] = `
                         </div>
                         <span>
                           arkx
-                        </span>
-                      </div>
-                    </td>
-                    <td
-                      class="w-20"
-                    >
-                      <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT justify-center bg-theme-danger-50 dark:bg-theme-danger-900"
-                      >
-                        <div
-                          class="sc-bdfBwQ iSzUah text-xs text-theme-danger-500"
-                          height="22"
-                          width="22"
-                        >
-                          <svg>
-                            status-ok.svg
-                          </svg>
-                        </div>
-                      </div>
-                    </td>
-                    <td
-                      class="w-20"
-                    >
-                      <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT justify-center font-bold text-theme-secondary-text bg-theme-danger-50 dark:bg-theme-danger-900"
-                      >
-                        <span>
-                          %
                         </span>
                       </div>
                     </td>
@@ -5171,24 +4605,6 @@ exports[`Votes should select a delegate 1`] = `
                       </div>
                     </td>
                     <td
-                      class="w-20"
-                    >
-                      <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT justify-center "
-                      />
-                    </td>
-                    <td
-                      class="w-20"
-                    >
-                      <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT justify-center font-bold text-theme-secondary-text "
-                      >
-                        <span>
-                          %
-                        </span>
-                      </div>
-                    </td>
-                    <td
                       class="w-40"
                     >
                       <div
@@ -5244,24 +4660,6 @@ exports[`Votes should select a delegate 1`] = `
                         </div>
                         <span>
                           genesis_17
-                        </span>
-                      </div>
-                    </td>
-                    <td
-                      class="w-20"
-                    >
-                      <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT justify-center "
-                      />
-                    </td>
-                    <td
-                      class="w-20"
-                    >
-                      <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT justify-center font-bold text-theme-secondary-text "
-                      >
-                        <span>
-                          %
                         </span>
                       </div>
                     </td>
@@ -5325,24 +4723,6 @@ exports[`Votes should select a delegate 1`] = `
                       </div>
                     </td>
                     <td
-                      class="w-20"
-                    >
-                      <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT justify-center "
-                      />
-                    </td>
-                    <td
-                      class="w-20"
-                    >
-                      <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT justify-center font-bold text-theme-secondary-text "
-                      >
-                        <span>
-                          %
-                        </span>
-                      </div>
-                    </td>
-                    <td
                       class="w-40"
                     >
                       <div
@@ -5398,24 +4778,6 @@ exports[`Votes should select a delegate 1`] = `
                         </div>
                         <span>
                           itsanametoo
-                        </span>
-                      </div>
-                    </td>
-                    <td
-                      class="w-20"
-                    >
-                      <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT justify-center "
-                      />
-                    </td>
-                    <td
-                      class="w-20"
-                    >
-                      <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT justify-center font-bold text-theme-secondary-text "
-                      >
-                        <span>
-                          %
                         </span>
                       </div>
                     </td>
@@ -6023,7 +5385,7 @@ exports[`Votes should select an address without vote 1`] = `
                     role="row"
                   >
                     <th
-                      class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
+                      class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder w-1"
                       colspan="1"
                       data-testid="table__th--0"
                       role="columnheader"
@@ -6053,7 +5415,7 @@ exports[`Votes should select an address without vote 1`] = `
                       </div>
                     </th>
                     <th
-                      class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
+                      class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold"
                       colspan="1"
                       data-testid="table__th--1"
                       role="columnheader"
@@ -6061,7 +5423,7 @@ exports[`Votes should select an address without vote 1`] = `
                       title="Toggle SortBy"
                     >
                       <div
-                        class="flex flex-inline align-top"
+                        class="flex flex-inline align-top no-border"
                       >
                         <div>
                           Delegate Name
@@ -6089,54 +5451,10 @@ exports[`Votes should select an address without vote 1`] = `
                       role="columnheader"
                     >
                       <div
-                        class="flex flex-inline align-top justify-center"
+                        class="flex flex-inline align-top hidden"
                       >
                         <div>
-                          Status
-                        </div>
-                      </div>
-                    </th>
-                    <th
-                      class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
-                      colspan="1"
-                      data-testid="table__th--3"
-                      role="columnheader"
-                    >
-                      <div
-                        class="flex flex-inline align-top justify-center"
-                      >
-                        <div>
-                          Votes
-                        </div>
-                      </div>
-                    </th>
-                    <th
-                      class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
-                      colspan="1"
-                      data-testid="table__th--4"
-                      role="columnheader"
-                      style="cursor: pointer;"
-                      title="Toggle SortBy"
-                    >
-                      <div
-                        class="flex flex-inline align-top justify-end flex-row-reverse"
-                      >
-                        <div>
-                          Vote
-                        </div>
-                        <div
-                          class="flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity opacity-0 group-hover:opacity-100 ml-auto mr-2"
-                        >
-                          <div
-                            class="sc-bdfBwQ kJrqvM transition-transform transform rotate-180"
-                            height="5"
-                            role="img"
-                            width="8"
-                          >
-                            <svg>
-                              chevron-down.svg
-                            </svg>
-                          </div>
+                          Actions
                         </div>
                       </div>
                     </th>
@@ -6180,24 +5498,6 @@ exports[`Votes should select an address without vote 1`] = `
                         </div>
                         <span>
                           arkx
-                        </span>
-                      </div>
-                    </td>
-                    <td
-                      class="w-20"
-                    >
-                      <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT justify-center "
-                      />
-                    </td>
-                    <td
-                      class="w-20"
-                    >
-                      <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT justify-center font-bold text-theme-secondary-text "
-                      >
-                        <span>
-                          %
                         </span>
                       </div>
                     </td>
@@ -6261,24 +5561,6 @@ exports[`Votes should select an address without vote 1`] = `
                       </div>
                     </td>
                     <td
-                      class="w-20"
-                    >
-                      <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT justify-center "
-                      />
-                    </td>
-                    <td
-                      class="w-20"
-                    >
-                      <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT justify-center font-bold text-theme-secondary-text "
-                      >
-                        <span>
-                          %
-                        </span>
-                      </div>
-                    </td>
-                    <td
                       class="w-40"
                     >
                       <div
@@ -6334,24 +5616,6 @@ exports[`Votes should select an address without vote 1`] = `
                         </div>
                         <span>
                           genesis_17
-                        </span>
-                      </div>
-                    </td>
-                    <td
-                      class="w-20"
-                    >
-                      <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT justify-center "
-                      />
-                    </td>
-                    <td
-                      class="w-20"
-                    >
-                      <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT justify-center font-bold text-theme-secondary-text "
-                      >
-                        <span>
-                          %
                         </span>
                       </div>
                     </td>
@@ -6415,24 +5679,6 @@ exports[`Votes should select an address without vote 1`] = `
                       </div>
                     </td>
                     <td
-                      class="w-20"
-                    >
-                      <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT justify-center "
-                      />
-                    </td>
-                    <td
-                      class="w-20"
-                    >
-                      <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT justify-center font-bold text-theme-secondary-text "
-                      >
-                        <span>
-                          %
-                        </span>
-                      </div>
-                    </td>
-                    <td
                       class="w-40"
                     >
                       <div
@@ -6488,24 +5734,6 @@ exports[`Votes should select an address without vote 1`] = `
                         </div>
                         <span>
                           itsanametoo
-                        </span>
-                      </div>
-                    </td>
-                    <td
-                      class="w-20"
-                    >
-                      <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT justify-center "
-                      />
-                    </td>
-                    <td
-                      class="w-20"
-                    >
-                      <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT justify-center font-bold text-theme-secondary-text "
-                      >
-                        <span>
-                          %
                         </span>
                       </div>
                     </td>
@@ -8154,7 +7382,7 @@ exports[`Votes should show network warning 1`] = `
                     role="row"
                   >
                     <th
-                      class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
+                      class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder w-1"
                       colspan="1"
                       data-testid="table__th--0"
                       role="columnheader"
@@ -8184,7 +7412,7 @@ exports[`Votes should show network warning 1`] = `
                       </div>
                     </th>
                     <th
-                      class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
+                      class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold"
                       colspan="1"
                       data-testid="table__th--1"
                       role="columnheader"
@@ -8192,7 +7420,7 @@ exports[`Votes should show network warning 1`] = `
                       title="Toggle SortBy"
                     >
                       <div
-                        class="flex flex-inline align-top"
+                        class="flex flex-inline align-top no-border"
                       >
                         <div>
                           Delegate Name
@@ -8220,54 +7448,10 @@ exports[`Votes should show network warning 1`] = `
                       role="columnheader"
                     >
                       <div
-                        class="flex flex-inline align-top justify-center"
+                        class="flex flex-inline align-top hidden"
                       >
                         <div>
-                          Status
-                        </div>
-                      </div>
-                    </th>
-                    <th
-                      class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
-                      colspan="1"
-                      data-testid="table__th--3"
-                      role="columnheader"
-                    >
-                      <div
-                        class="flex flex-inline align-top justify-center"
-                      >
-                        <div>
-                          Votes
-                        </div>
-                      </div>
-                    </th>
-                    <th
-                      class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
-                      colspan="1"
-                      data-testid="table__th--4"
-                      role="columnheader"
-                      style="cursor: pointer;"
-                      title="Toggle SortBy"
-                    >
-                      <div
-                        class="flex flex-inline align-top justify-end flex-row-reverse"
-                      >
-                        <div>
-                          Vote
-                        </div>
-                        <div
-                          class="flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity opacity-0 group-hover:opacity-100 ml-auto mr-2"
-                        >
-                          <div
-                            class="sc-bdfBwQ kJrqvM transition-transform transform rotate-180"
-                            height="5"
-                            role="img"
-                            width="8"
-                          >
-                            <svg>
-                              chevron-down.svg
-                            </svg>
-                          </div>
+                          Actions
                         </div>
                       </div>
                     </th>
@@ -8311,34 +7495,6 @@ exports[`Votes should show network warning 1`] = `
                         </div>
                         <span>
                           arkx
-                        </span>
-                      </div>
-                    </td>
-                    <td
-                      class="w-20"
-                    >
-                      <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT justify-center bg-theme-danger-50 dark:bg-theme-danger-900"
-                      >
-                        <div
-                          class="sc-bdfBwQ iSzUah text-xs text-theme-danger-500"
-                          height="22"
-                          width="22"
-                        >
-                          <svg>
-                            status-ok.svg
-                          </svg>
-                        </div>
-                      </div>
-                    </td>
-                    <td
-                      class="w-20"
-                    >
-                      <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT justify-center font-bold text-theme-secondary-text bg-theme-danger-50 dark:bg-theme-danger-900"
-                      >
-                        <span>
-                          %
                         </span>
                       </div>
                     </td>
@@ -8402,24 +7558,6 @@ exports[`Votes should show network warning 1`] = `
                       </div>
                     </td>
                     <td
-                      class="w-20"
-                    >
-                      <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT justify-center "
-                      />
-                    </td>
-                    <td
-                      class="w-20"
-                    >
-                      <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT justify-center font-bold text-theme-secondary-text "
-                      >
-                        <span>
-                          %
-                        </span>
-                      </div>
-                    </td>
-                    <td
                       class="w-40"
                     >
                       <div
@@ -8475,24 +7613,6 @@ exports[`Votes should show network warning 1`] = `
                         </div>
                         <span>
                           genesis_17
-                        </span>
-                      </div>
-                    </td>
-                    <td
-                      class="w-20"
-                    >
-                      <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT justify-center "
-                      />
-                    </td>
-                    <td
-                      class="w-20"
-                    >
-                      <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT justify-center font-bold text-theme-secondary-text "
-                      >
-                        <span>
-                          %
                         </span>
                       </div>
                     </td>
@@ -8556,24 +7676,6 @@ exports[`Votes should show network warning 1`] = `
                       </div>
                     </td>
                     <td
-                      class="w-20"
-                    >
-                      <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT justify-center "
-                      />
-                    </td>
-                    <td
-                      class="w-20"
-                    >
-                      <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT justify-center font-bold text-theme-secondary-text "
-                      >
-                        <span>
-                          %
-                        </span>
-                      </div>
-                    </td>
-                    <td
                       class="w-40"
                     >
                       <div
@@ -8629,24 +7731,6 @@ exports[`Votes should show network warning 1`] = `
                         </div>
                         <span>
                           itsanametoo
-                        </span>
-                      </div>
-                    </td>
-                    <td
-                      class="w-20"
-                    >
-                      <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT justify-center "
-                      />
-                    </td>
-                    <td
-                      class="w-20"
-                    >
-                      <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT justify-center font-bold text-theme-secondary-text "
-                      >
-                        <span>
-                          %
                         </span>
                       </div>
                     </td>

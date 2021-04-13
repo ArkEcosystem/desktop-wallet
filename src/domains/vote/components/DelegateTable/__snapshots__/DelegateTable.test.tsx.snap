@@ -24,7 +24,7 @@ exports[`DelegateTable should emit action on continue button to unvote 1`] = `
             role="row"
           >
             <th
-              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
+              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder w-1"
               colspan="1"
               data-testid="table__th--0"
               role="columnheader"
@@ -54,7 +54,7 @@ exports[`DelegateTable should emit action on continue button to unvote 1`] = `
               </div>
             </th>
             <th
-              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
+              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold"
               colspan="1"
               data-testid="table__th--1"
               role="columnheader"
@@ -62,7 +62,7 @@ exports[`DelegateTable should emit action on continue button to unvote 1`] = `
               title="Toggle SortBy"
             >
               <div
-                class="flex flex-inline align-top"
+                class="flex flex-inline align-top no-border"
               >
                 <div>
                   Delegate Name
@@ -90,54 +90,10 @@ exports[`DelegateTable should emit action on continue button to unvote 1`] = `
               role="columnheader"
             >
               <div
-                class="flex flex-inline align-top justify-center"
+                class="flex flex-inline align-top hidden"
               >
                 <div>
-                  Status
-                </div>
-              </div>
-            </th>
-            <th
-              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
-              colspan="1"
-              data-testid="table__th--3"
-              role="columnheader"
-            >
-              <div
-                class="flex flex-inline align-top justify-center"
-              >
-                <div>
-                  Votes
-                </div>
-              </div>
-            </th>
-            <th
-              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
-              colspan="1"
-              data-testid="table__th--4"
-              role="columnheader"
-              style="cursor: pointer;"
-              title="Toggle SortBy"
-            >
-              <div
-                class="flex flex-inline align-top justify-end flex-row-reverse"
-              >
-                <div>
-                  Vote
-                </div>
-                <div
-                  class="flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity opacity-0 group-hover:opacity-100 ml-auto mr-2"
-                >
-                  <div
-                    class="sc-bdfBwQ kJrqvM transition-transform transform rotate-180"
-                    height="5"
-                    role="img"
-                    width="8"
-                  >
-                    <svg>
-                      chevron-down.svg
-                    </svg>
-                  </div>
+                  Actions
                 </div>
               </div>
             </th>
@@ -181,34 +137,6 @@ exports[`DelegateTable should emit action on continue button to unvote 1`] = `
                 </div>
                 <span>
                   arkx
-                </span>
-              </div>
-            </td>
-            <td
-              class="w-20"
-            >
-              <div
-                class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT justify-center bg-theme-danger-50 dark:bg-theme-danger-900"
-              >
-                <div
-                  class="sc-bdfBwQ iSzUah text-xs text-theme-danger-500"
-                  height="22"
-                  width="22"
-                >
-                  <svg>
-                    status-ok.svg
-                  </svg>
-                </div>
-              </div>
-            </td>
-            <td
-              class="w-20"
-            >
-              <div
-                class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT justify-center font-bold text-theme-secondary-text bg-theme-danger-50 dark:bg-theme-danger-900"
-              >
-                <span>
-                  %
                 </span>
               </div>
             </td>
@@ -272,24 +200,6 @@ exports[`DelegateTable should emit action on continue button to unvote 1`] = `
               </div>
             </td>
             <td
-              class="w-20"
-            >
-              <div
-                class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT justify-center "
-              />
-            </td>
-            <td
-              class="w-20"
-            >
-              <div
-                class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT justify-center font-bold text-theme-secondary-text "
-              >
-                <span>
-                  %
-                </span>
-              </div>
-            </td>
-            <td
               class="w-40"
             >
               <div
@@ -345,24 +255,6 @@ exports[`DelegateTable should emit action on continue button to unvote 1`] = `
                 </div>
                 <span>
                   genesis_17
-                </span>
-              </div>
-            </td>
-            <td
-              class="w-20"
-            >
-              <div
-                class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT justify-center "
-              />
-            </td>
-            <td
-              class="w-20"
-            >
-              <div
-                class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT justify-center font-bold text-theme-secondary-text "
-              >
-                <span>
-                  %
                 </span>
               </div>
             </td>
@@ -580,7 +472,7 @@ exports[`DelegateTable should emit action on continue button to vote 1`] = `
             role="row"
           >
             <th
-              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
+              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder w-1"
               colspan="1"
               data-testid="table__th--0"
               role="columnheader"
@@ -610,7 +502,7 @@ exports[`DelegateTable should emit action on continue button to vote 1`] = `
               </div>
             </th>
             <th
-              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
+              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold"
               colspan="1"
               data-testid="table__th--1"
               role="columnheader"
@@ -618,7 +510,7 @@ exports[`DelegateTable should emit action on continue button to vote 1`] = `
               title="Toggle SortBy"
             >
               <div
-                class="flex flex-inline align-top"
+                class="flex flex-inline align-top no-border"
               >
                 <div>
                   Delegate Name
@@ -646,54 +538,10 @@ exports[`DelegateTable should emit action on continue button to vote 1`] = `
               role="columnheader"
             >
               <div
-                class="flex flex-inline align-top justify-center"
+                class="flex flex-inline align-top hidden"
               >
                 <div>
-                  Status
-                </div>
-              </div>
-            </th>
-            <th
-              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
-              colspan="1"
-              data-testid="table__th--3"
-              role="columnheader"
-            >
-              <div
-                class="flex flex-inline align-top justify-center"
-              >
-                <div>
-                  Votes
-                </div>
-              </div>
-            </th>
-            <th
-              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
-              colspan="1"
-              data-testid="table__th--4"
-              role="columnheader"
-              style="cursor: pointer;"
-              title="Toggle SortBy"
-            >
-              <div
-                class="flex flex-inline align-top justify-end flex-row-reverse"
-              >
-                <div>
-                  Vote
-                </div>
-                <div
-                  class="flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity opacity-0 group-hover:opacity-100 ml-auto mr-2"
-                >
-                  <div
-                    class="sc-bdfBwQ kJrqvM transition-transform transform rotate-180"
-                    height="5"
-                    role="img"
-                    width="8"
-                  >
-                    <svg>
-                      chevron-down.svg
-                    </svg>
-                  </div>
+                  Actions
                 </div>
               </div>
             </th>
@@ -737,24 +585,6 @@ exports[`DelegateTable should emit action on continue button to vote 1`] = `
                 </div>
                 <span>
                   arkx
-                </span>
-              </div>
-            </td>
-            <td
-              class="w-20"
-            >
-              <div
-                class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT justify-center bg-theme-success-50 dark:bg-theme-success-900"
-              />
-            </td>
-            <td
-              class="w-20"
-            >
-              <div
-                class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT justify-center font-bold text-theme-secondary-text bg-theme-success-50 dark:bg-theme-success-900"
-              >
-                <span>
-                  %
                 </span>
               </div>
             </td>
@@ -818,24 +648,6 @@ exports[`DelegateTable should emit action on continue button to vote 1`] = `
               </div>
             </td>
             <td
-              class="w-20"
-            >
-              <div
-                class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT justify-center "
-              />
-            </td>
-            <td
-              class="w-20"
-            >
-              <div
-                class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT justify-center font-bold text-theme-secondary-text "
-              >
-                <span>
-                  %
-                </span>
-              </div>
-            </td>
-            <td
               class="w-40"
             >
               <div
@@ -891,24 +703,6 @@ exports[`DelegateTable should emit action on continue button to vote 1`] = `
                 </div>
                 <span>
                   genesis_17
-                </span>
-              </div>
-            </td>
-            <td
-              class="w-20"
-            >
-              <div
-                class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT justify-center "
-              />
-            </td>
-            <td
-              class="w-20"
-            >
-              <div
-                class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT justify-center font-bold text-theme-secondary-text "
-              >
-                <span>
-                  %
                 </span>
               </div>
             </td>
@@ -1126,7 +920,7 @@ exports[`DelegateTable should render 1`] = `
             role="row"
           >
             <th
-              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
+              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder w-1"
               colspan="1"
               data-testid="table__th--0"
               role="columnheader"
@@ -1156,7 +950,7 @@ exports[`DelegateTable should render 1`] = `
               </div>
             </th>
             <th
-              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
+              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold"
               colspan="1"
               data-testid="table__th--1"
               role="columnheader"
@@ -1164,7 +958,7 @@ exports[`DelegateTable should render 1`] = `
               title="Toggle SortBy"
             >
               <div
-                class="flex flex-inline align-top"
+                class="flex flex-inline align-top no-border"
               >
                 <div>
                   Delegate Name
@@ -1192,54 +986,10 @@ exports[`DelegateTable should render 1`] = `
               role="columnheader"
             >
               <div
-                class="flex flex-inline align-top justify-center"
+                class="flex flex-inline align-top hidden"
               >
                 <div>
-                  Status
-                </div>
-              </div>
-            </th>
-            <th
-              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
-              colspan="1"
-              data-testid="table__th--3"
-              role="columnheader"
-            >
-              <div
-                class="flex flex-inline align-top justify-center"
-              >
-                <div>
-                  Votes
-                </div>
-              </div>
-            </th>
-            <th
-              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
-              colspan="1"
-              data-testid="table__th--4"
-              role="columnheader"
-              style="cursor: pointer;"
-              title="Toggle SortBy"
-            >
-              <div
-                class="flex flex-inline align-top justify-end flex-row-reverse"
-              >
-                <div>
-                  Vote
-                </div>
-                <div
-                  class="flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity opacity-0 group-hover:opacity-100 ml-auto mr-2"
-                >
-                  <div
-                    class="sc-bdfBwQ kJrqvM transition-transform transform rotate-180"
-                    height="5"
-                    role="img"
-                    width="8"
-                  >
-                    <svg>
-                      chevron-down.svg
-                    </svg>
-                  </div>
+                  Actions
                 </div>
               </div>
             </th>
@@ -1283,24 +1033,6 @@ exports[`DelegateTable should render 1`] = `
                 </div>
                 <span>
                   arkx
-                </span>
-              </div>
-            </td>
-            <td
-              class="w-20"
-            >
-              <div
-                class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT justify-center "
-              />
-            </td>
-            <td
-              class="w-20"
-            >
-              <div
-                class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT justify-center font-bold text-theme-secondary-text "
-              >
-                <span>
-                  %
                 </span>
               </div>
             </td>
@@ -1364,24 +1096,6 @@ exports[`DelegateTable should render 1`] = `
               </div>
             </td>
             <td
-              class="w-20"
-            >
-              <div
-                class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT justify-center "
-              />
-            </td>
-            <td
-              class="w-20"
-            >
-              <div
-                class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT justify-center font-bold text-theme-secondary-text "
-              >
-                <span>
-                  %
-                </span>
-              </div>
-            </td>
-            <td
               class="w-40"
             >
               <div
@@ -1437,24 +1151,6 @@ exports[`DelegateTable should render 1`] = `
                 </div>
                 <span>
                   genesis_17
-                </span>
-              </div>
-            </td>
-            <td
-              class="w-20"
-            >
-              <div
-                class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT justify-center "
-              />
-            </td>
-            <td
-              class="w-20"
-            >
-              <div
-                class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT justify-center font-bold text-theme-secondary-text "
-              >
-                <span>
-                  %
                 </span>
               </div>
             </td>
@@ -1673,7 +1369,7 @@ exports[`DelegateTable should render loading state 1`] = `
             role="row"
           >
             <th
-              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
+              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder w-1"
               colspan="1"
               data-testid="table__th--0"
               role="columnheader"
@@ -1703,7 +1399,7 @@ exports[`DelegateTable should render loading state 1`] = `
               </div>
             </th>
             <th
-              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
+              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold"
               colspan="1"
               data-testid="table__th--1"
               role="columnheader"
@@ -1711,7 +1407,7 @@ exports[`DelegateTable should render loading state 1`] = `
               title="Toggle SortBy"
             >
               <div
-                class="flex flex-inline align-top"
+                class="flex flex-inline align-top no-border"
               >
                 <div>
                   Delegate Name
@@ -1739,54 +1435,10 @@ exports[`DelegateTable should render loading state 1`] = `
               role="columnheader"
             >
               <div
-                class="flex flex-inline align-top justify-center"
+                class="flex flex-inline align-top hidden"
               >
                 <div>
-                  Status
-                </div>
-              </div>
-            </th>
-            <th
-              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
-              colspan="1"
-              data-testid="table__th--3"
-              role="columnheader"
-            >
-              <div
-                class="flex flex-inline align-top justify-center"
-              >
-                <div>
-                  Votes
-                </div>
-              </div>
-            </th>
-            <th
-              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
-              colspan="1"
-              data-testid="table__th--4"
-              role="columnheader"
-              style="cursor: pointer;"
-              title="Toggle SortBy"
-            >
-              <div
-                class="flex flex-inline align-top justify-end flex-row-reverse"
-              >
-                <div>
-                  Vote
-                </div>
-                <div
-                  class="flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity opacity-0 group-hover:opacity-100 ml-auto mr-2"
-                >
-                  <div
-                    class="sc-bdfBwQ kJrqvM transition-transform transform rotate-180"
-                    height="5"
-                    role="img"
-                    width="8"
-                  >
-                    <svg>
-                      chevron-down.svg
-                    </svg>
-                  </div>
+                  Actions
                 </div>
               </div>
             </th>
@@ -1796,121 +1448,52 @@ exports[`DelegateTable should render loading state 1`] = `
           role="rowgroup"
         >
           <tr
-            class="border-b border-dotted last:border-b-0 border-theme-secondary-300 dark:border-theme-secondary-800"
-            data-testid="DelegateRowSkeleton"
+            class="TableRow__TableRowStyled-sc-1br46dw-0 fzBhIQ group"
+            data-testid="TableRow"
           >
-            <td
-              class="py-5"
-            >
+            <td>
               <div
-                class="Circle__CircleWrapper-uw7h4j-0 QLprd bg-theme-secondary-200 border-theme-secondary-300 dark:border-theme-secondary-800 ring-theme-background"
-              />
-            </td>
-            <td
-              class="py-5"
-            >
-              <span>
-                <span
-                  class="react-loading-skeleton mt-4 css-1eg0sfo-skeletonStyles-Skeleton"
-                  style="width: 80%; height: 6px;"
-                >
-                  ‌
-                </span>
-              </span>
-            </td>
-            <td
-              class="py-5"
-            >
-              <span>
-                <span
-                  class="react-loading-skeleton mt-4 css-1eg0sfo-skeletonStyles-Skeleton"
-                  style="width: 30%; height: 6px;"
-                >
-                  ‌
-                </span>
-              </span>
-            </td>
-            <td
-              class="py-5"
-            >
-              <span>
-                <span
-                  class="react-loading-skeleton mt-4 css-1eg0sfo-skeletonStyles-Skeleton"
-                  style="width: 40%; height: 6px;"
-                >
-                  ‌
-                </span>
-              </span>
-            </td>
-            <td
-              class="py-5"
-            >
-              <div
-                class="flex justify-center h-full"
+                class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 DpDcR"
               >
                 <span>
                   <span
                     class="react-loading-skeleton css-1eg0sfo-skeletonStyles-Skeleton"
-                    style="width: 24px; height: 24px;"
+                    style="width: 22px; height: 16px;"
                   >
                     ‌
                   </span>
                 </span>
               </div>
             </td>
-            <td
-              class="py-5"
-            >
-              <span>
-                <span
-                  class="react-loading-skeleton mt-4 css-1eg0sfo-skeletonStyles-Skeleton"
-                  style="width: 40%; height: 6px;"
-                >
-                  ‌
-                </span>
-              </span>
-            </td>
-            <td
-              class="py-5"
-            >
-              <span>
-                <span
-                  class="react-loading-skeleton mt-4 css-1eg0sfo-skeletonStyles-Skeleton"
-                  style="width: 40%; height: 6px;"
-                >
-                  ‌
-                </span>
-              </span>
-            </td>
-            <td
-              class="py-5"
-            >
-              <span>
-                <span
-                  class="react-loading-skeleton mt-4 css-1eg0sfo-skeletonStyles-Skeleton"
-                  style="width: 40%; height: 6px;"
-                >
-                  ‌
-                </span>
-              </span>
-            </td>
-            <td
-              class="py-5"
-            >
-              <span>
-                <span
-                  class="react-loading-skeleton mt-4 css-1eg0sfo-skeletonStyles-Skeleton"
-                  style="width: 60%; height: 6px;"
-                >
-                  ‌
-                </span>
-              </span>
-            </td>
-            <td
-              class="py-5"
-            >
+            <td>
               <div
-                class="text-right"
+                class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT space-x-4"
+              >
+                <div
+                  class="Circle__CircleWrapper-uw7h4j-0 bNDQMV border-transparent ring-theme-background"
+                >
+                  <span>
+                    <span
+                      class="react-loading-skeleton align-top css-1eg0sfo-skeletonStyles-Skeleton"
+                      style="width: 44px; height: 44px; border-radius: 50%;"
+                    >
+                      ‌
+                    </span>
+                  </span>
+                </div>
+                <span>
+                  <span
+                    class="react-loading-skeleton css-1eg0sfo-skeletonStyles-Skeleton"
+                    style="width: 144px; height: 16px;"
+                  >
+                    ‌
+                  </span>
+                </span>
+              </div>
+            </td>
+            <td>
+              <div
+                class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 kjTmcB justify-end"
               >
                 <span>
                   <span
@@ -1924,121 +1507,52 @@ exports[`DelegateTable should render loading state 1`] = `
             </td>
           </tr>
           <tr
-            class="border-b border-dotted last:border-b-0 border-theme-secondary-300 dark:border-theme-secondary-800"
-            data-testid="DelegateRowSkeleton"
+            class="TableRow__TableRowStyled-sc-1br46dw-0 fzBhIQ group"
+            data-testid="TableRow"
           >
-            <td
-              class="py-5"
-            >
+            <td>
               <div
-                class="Circle__CircleWrapper-uw7h4j-0 QLprd bg-theme-secondary-200 border-theme-secondary-300 dark:border-theme-secondary-800 ring-theme-background"
-              />
-            </td>
-            <td
-              class="py-5"
-            >
-              <span>
-                <span
-                  class="react-loading-skeleton mt-4 css-1eg0sfo-skeletonStyles-Skeleton"
-                  style="width: 80%; height: 6px;"
-                >
-                  ‌
-                </span>
-              </span>
-            </td>
-            <td
-              class="py-5"
-            >
-              <span>
-                <span
-                  class="react-loading-skeleton mt-4 css-1eg0sfo-skeletonStyles-Skeleton"
-                  style="width: 30%; height: 6px;"
-                >
-                  ‌
-                </span>
-              </span>
-            </td>
-            <td
-              class="py-5"
-            >
-              <span>
-                <span
-                  class="react-loading-skeleton mt-4 css-1eg0sfo-skeletonStyles-Skeleton"
-                  style="width: 40%; height: 6px;"
-                >
-                  ‌
-                </span>
-              </span>
-            </td>
-            <td
-              class="py-5"
-            >
-              <div
-                class="flex justify-center h-full"
+                class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 DpDcR"
               >
                 <span>
                   <span
                     class="react-loading-skeleton css-1eg0sfo-skeletonStyles-Skeleton"
-                    style="width: 24px; height: 24px;"
+                    style="width: 22px; height: 16px;"
                   >
                     ‌
                   </span>
                 </span>
               </div>
             </td>
-            <td
-              class="py-5"
-            >
-              <span>
-                <span
-                  class="react-loading-skeleton mt-4 css-1eg0sfo-skeletonStyles-Skeleton"
-                  style="width: 40%; height: 6px;"
-                >
-                  ‌
-                </span>
-              </span>
-            </td>
-            <td
-              class="py-5"
-            >
-              <span>
-                <span
-                  class="react-loading-skeleton mt-4 css-1eg0sfo-skeletonStyles-Skeleton"
-                  style="width: 40%; height: 6px;"
-                >
-                  ‌
-                </span>
-              </span>
-            </td>
-            <td
-              class="py-5"
-            >
-              <span>
-                <span
-                  class="react-loading-skeleton mt-4 css-1eg0sfo-skeletonStyles-Skeleton"
-                  style="width: 40%; height: 6px;"
-                >
-                  ‌
-                </span>
-              </span>
-            </td>
-            <td
-              class="py-5"
-            >
-              <span>
-                <span
-                  class="react-loading-skeleton mt-4 css-1eg0sfo-skeletonStyles-Skeleton"
-                  style="width: 60%; height: 6px;"
-                >
-                  ‌
-                </span>
-              </span>
-            </td>
-            <td
-              class="py-5"
-            >
+            <td>
               <div
-                class="text-right"
+                class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT space-x-4"
+              >
+                <div
+                  class="Circle__CircleWrapper-uw7h4j-0 bNDQMV border-transparent ring-theme-background"
+                >
+                  <span>
+                    <span
+                      class="react-loading-skeleton align-top css-1eg0sfo-skeletonStyles-Skeleton"
+                      style="width: 44px; height: 44px; border-radius: 50%;"
+                    >
+                      ‌
+                    </span>
+                  </span>
+                </div>
+                <span>
+                  <span
+                    class="react-loading-skeleton css-1eg0sfo-skeletonStyles-Skeleton"
+                    style="width: 132px; height: 16px;"
+                  >
+                    ‌
+                  </span>
+                </span>
+              </div>
+            </td>
+            <td>
+              <div
+                class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 kjTmcB justify-end"
               >
                 <span>
                   <span
@@ -2052,121 +1566,52 @@ exports[`DelegateTable should render loading state 1`] = `
             </td>
           </tr>
           <tr
-            class="border-b border-dotted last:border-b-0 border-theme-secondary-300 dark:border-theme-secondary-800"
-            data-testid="DelegateRowSkeleton"
+            class="TableRow__TableRowStyled-sc-1br46dw-0 fzBhIQ group"
+            data-testid="TableRow"
           >
-            <td
-              class="py-5"
-            >
+            <td>
               <div
-                class="Circle__CircleWrapper-uw7h4j-0 QLprd bg-theme-secondary-200 border-theme-secondary-300 dark:border-theme-secondary-800 ring-theme-background"
-              />
-            </td>
-            <td
-              class="py-5"
-            >
-              <span>
-                <span
-                  class="react-loading-skeleton mt-4 css-1eg0sfo-skeletonStyles-Skeleton"
-                  style="width: 80%; height: 6px;"
-                >
-                  ‌
-                </span>
-              </span>
-            </td>
-            <td
-              class="py-5"
-            >
-              <span>
-                <span
-                  class="react-loading-skeleton mt-4 css-1eg0sfo-skeletonStyles-Skeleton"
-                  style="width: 30%; height: 6px;"
-                >
-                  ‌
-                </span>
-              </span>
-            </td>
-            <td
-              class="py-5"
-            >
-              <span>
-                <span
-                  class="react-loading-skeleton mt-4 css-1eg0sfo-skeletonStyles-Skeleton"
-                  style="width: 40%; height: 6px;"
-                >
-                  ‌
-                </span>
-              </span>
-            </td>
-            <td
-              class="py-5"
-            >
-              <div
-                class="flex justify-center h-full"
+                class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 DpDcR"
               >
                 <span>
                   <span
                     class="react-loading-skeleton css-1eg0sfo-skeletonStyles-Skeleton"
-                    style="width: 24px; height: 24px;"
+                    style="width: 22px; height: 16px;"
                   >
                     ‌
                   </span>
                 </span>
               </div>
             </td>
-            <td
-              class="py-5"
-            >
-              <span>
-                <span
-                  class="react-loading-skeleton mt-4 css-1eg0sfo-skeletonStyles-Skeleton"
-                  style="width: 40%; height: 6px;"
-                >
-                  ‌
-                </span>
-              </span>
-            </td>
-            <td
-              class="py-5"
-            >
-              <span>
-                <span
-                  class="react-loading-skeleton mt-4 css-1eg0sfo-skeletonStyles-Skeleton"
-                  style="width: 40%; height: 6px;"
-                >
-                  ‌
-                </span>
-              </span>
-            </td>
-            <td
-              class="py-5"
-            >
-              <span>
-                <span
-                  class="react-loading-skeleton mt-4 css-1eg0sfo-skeletonStyles-Skeleton"
-                  style="width: 40%; height: 6px;"
-                >
-                  ‌
-                </span>
-              </span>
-            </td>
-            <td
-              class="py-5"
-            >
-              <span>
-                <span
-                  class="react-loading-skeleton mt-4 css-1eg0sfo-skeletonStyles-Skeleton"
-                  style="width: 60%; height: 6px;"
-                >
-                  ‌
-                </span>
-              </span>
-            </td>
-            <td
-              class="py-5"
-            >
+            <td>
               <div
-                class="text-right"
+                class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT space-x-4"
+              >
+                <div
+                  class="Circle__CircleWrapper-uw7h4j-0 bNDQMV border-transparent ring-theme-background"
+                >
+                  <span>
+                    <span
+                      class="react-loading-skeleton align-top css-1eg0sfo-skeletonStyles-Skeleton"
+                      style="width: 44px; height: 44px; border-radius: 50%;"
+                    >
+                      ‌
+                    </span>
+                  </span>
+                </div>
+                <span>
+                  <span
+                    class="react-loading-skeleton css-1eg0sfo-skeletonStyles-Skeleton"
+                    style="width: 141px; height: 16px;"
+                  >
+                    ‌
+                  </span>
+                </span>
+              </div>
+            </td>
+            <td>
+              <div
+                class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 kjTmcB justify-end"
               >
                 <span>
                   <span
@@ -2180,121 +1625,52 @@ exports[`DelegateTable should render loading state 1`] = `
             </td>
           </tr>
           <tr
-            class="border-b border-dotted last:border-b-0 border-theme-secondary-300 dark:border-theme-secondary-800"
-            data-testid="DelegateRowSkeleton"
+            class="TableRow__TableRowStyled-sc-1br46dw-0 fzBhIQ group"
+            data-testid="TableRow"
           >
-            <td
-              class="py-5"
-            >
+            <td>
               <div
-                class="Circle__CircleWrapper-uw7h4j-0 QLprd bg-theme-secondary-200 border-theme-secondary-300 dark:border-theme-secondary-800 ring-theme-background"
-              />
-            </td>
-            <td
-              class="py-5"
-            >
-              <span>
-                <span
-                  class="react-loading-skeleton mt-4 css-1eg0sfo-skeletonStyles-Skeleton"
-                  style="width: 80%; height: 6px;"
-                >
-                  ‌
-                </span>
-              </span>
-            </td>
-            <td
-              class="py-5"
-            >
-              <span>
-                <span
-                  class="react-loading-skeleton mt-4 css-1eg0sfo-skeletonStyles-Skeleton"
-                  style="width: 30%; height: 6px;"
-                >
-                  ‌
-                </span>
-              </span>
-            </td>
-            <td
-              class="py-5"
-            >
-              <span>
-                <span
-                  class="react-loading-skeleton mt-4 css-1eg0sfo-skeletonStyles-Skeleton"
-                  style="width: 40%; height: 6px;"
-                >
-                  ‌
-                </span>
-              </span>
-            </td>
-            <td
-              class="py-5"
-            >
-              <div
-                class="flex justify-center h-full"
+                class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 DpDcR"
               >
                 <span>
                   <span
                     class="react-loading-skeleton css-1eg0sfo-skeletonStyles-Skeleton"
-                    style="width: 24px; height: 24px;"
+                    style="width: 22px; height: 16px;"
                   >
                     ‌
                   </span>
                 </span>
               </div>
             </td>
-            <td
-              class="py-5"
-            >
-              <span>
-                <span
-                  class="react-loading-skeleton mt-4 css-1eg0sfo-skeletonStyles-Skeleton"
-                  style="width: 40%; height: 6px;"
-                >
-                  ‌
-                </span>
-              </span>
-            </td>
-            <td
-              class="py-5"
-            >
-              <span>
-                <span
-                  class="react-loading-skeleton mt-4 css-1eg0sfo-skeletonStyles-Skeleton"
-                  style="width: 40%; height: 6px;"
-                >
-                  ‌
-                </span>
-              </span>
-            </td>
-            <td
-              class="py-5"
-            >
-              <span>
-                <span
-                  class="react-loading-skeleton mt-4 css-1eg0sfo-skeletonStyles-Skeleton"
-                  style="width: 40%; height: 6px;"
-                >
-                  ‌
-                </span>
-              </span>
-            </td>
-            <td
-              class="py-5"
-            >
-              <span>
-                <span
-                  class="react-loading-skeleton mt-4 css-1eg0sfo-skeletonStyles-Skeleton"
-                  style="width: 60%; height: 6px;"
-                >
-                  ‌
-                </span>
-              </span>
-            </td>
-            <td
-              class="py-5"
-            >
+            <td>
               <div
-                class="text-right"
+                class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT space-x-4"
+              >
+                <div
+                  class="Circle__CircleWrapper-uw7h4j-0 bNDQMV border-transparent ring-theme-background"
+                >
+                  <span>
+                    <span
+                      class="react-loading-skeleton align-top css-1eg0sfo-skeletonStyles-Skeleton"
+                      style="width: 44px; height: 44px; border-radius: 50%;"
+                    >
+                      ‌
+                    </span>
+                  </span>
+                </div>
+                <span>
+                  <span
+                    class="react-loading-skeleton css-1eg0sfo-skeletonStyles-Skeleton"
+                    style="width: 136px; height: 16px;"
+                  >
+                    ‌
+                  </span>
+                </span>
+              </div>
+            </td>
+            <td>
+              <div
+                class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 kjTmcB justify-end"
               >
                 <span>
                   <span
@@ -2308,121 +1684,52 @@ exports[`DelegateTable should render loading state 1`] = `
             </td>
           </tr>
           <tr
-            class="border-b border-dotted last:border-b-0 border-theme-secondary-300 dark:border-theme-secondary-800"
-            data-testid="DelegateRowSkeleton"
+            class="TableRow__TableRowStyled-sc-1br46dw-0 fzBhIQ group"
+            data-testid="TableRow"
           >
-            <td
-              class="py-5"
-            >
+            <td>
               <div
-                class="Circle__CircleWrapper-uw7h4j-0 QLprd bg-theme-secondary-200 border-theme-secondary-300 dark:border-theme-secondary-800 ring-theme-background"
-              />
-            </td>
-            <td
-              class="py-5"
-            >
-              <span>
-                <span
-                  class="react-loading-skeleton mt-4 css-1eg0sfo-skeletonStyles-Skeleton"
-                  style="width: 80%; height: 6px;"
-                >
-                  ‌
-                </span>
-              </span>
-            </td>
-            <td
-              class="py-5"
-            >
-              <span>
-                <span
-                  class="react-loading-skeleton mt-4 css-1eg0sfo-skeletonStyles-Skeleton"
-                  style="width: 30%; height: 6px;"
-                >
-                  ‌
-                </span>
-              </span>
-            </td>
-            <td
-              class="py-5"
-            >
-              <span>
-                <span
-                  class="react-loading-skeleton mt-4 css-1eg0sfo-skeletonStyles-Skeleton"
-                  style="width: 40%; height: 6px;"
-                >
-                  ‌
-                </span>
-              </span>
-            </td>
-            <td
-              class="py-5"
-            >
-              <div
-                class="flex justify-center h-full"
+                class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 DpDcR"
               >
                 <span>
                   <span
                     class="react-loading-skeleton css-1eg0sfo-skeletonStyles-Skeleton"
-                    style="width: 24px; height: 24px;"
+                    style="width: 22px; height: 16px;"
                   >
                     ‌
                   </span>
                 </span>
               </div>
             </td>
-            <td
-              class="py-5"
-            >
-              <span>
-                <span
-                  class="react-loading-skeleton mt-4 css-1eg0sfo-skeletonStyles-Skeleton"
-                  style="width: 40%; height: 6px;"
-                >
-                  ‌
-                </span>
-              </span>
-            </td>
-            <td
-              class="py-5"
-            >
-              <span>
-                <span
-                  class="react-loading-skeleton mt-4 css-1eg0sfo-skeletonStyles-Skeleton"
-                  style="width: 40%; height: 6px;"
-                >
-                  ‌
-                </span>
-              </span>
-            </td>
-            <td
-              class="py-5"
-            >
-              <span>
-                <span
-                  class="react-loading-skeleton mt-4 css-1eg0sfo-skeletonStyles-Skeleton"
-                  style="width: 40%; height: 6px;"
-                >
-                  ‌
-                </span>
-              </span>
-            </td>
-            <td
-              class="py-5"
-            >
-              <span>
-                <span
-                  class="react-loading-skeleton mt-4 css-1eg0sfo-skeletonStyles-Skeleton"
-                  style="width: 60%; height: 6px;"
-                >
-                  ‌
-                </span>
-              </span>
-            </td>
-            <td
-              class="py-5"
-            >
+            <td>
               <div
-                class="text-right"
+                class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT space-x-4"
+              >
+                <div
+                  class="Circle__CircleWrapper-uw7h4j-0 bNDQMV border-transparent ring-theme-background"
+                >
+                  <span>
+                    <span
+                      class="react-loading-skeleton align-top css-1eg0sfo-skeletonStyles-Skeleton"
+                      style="width: 44px; height: 44px; border-radius: 50%;"
+                    >
+                      ‌
+                    </span>
+                  </span>
+                </div>
+                <span>
+                  <span
+                    class="react-loading-skeleton css-1eg0sfo-skeletonStyles-Skeleton"
+                    style="width: 138px; height: 16px;"
+                  >
+                    ‌
+                  </span>
+                </span>
+              </div>
+            </td>
+            <td>
+              <div
+                class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 kjTmcB justify-end"
               >
                 <span>
                   <span
@@ -2436,121 +1743,52 @@ exports[`DelegateTable should render loading state 1`] = `
             </td>
           </tr>
           <tr
-            class="border-b border-dotted last:border-b-0 border-theme-secondary-300 dark:border-theme-secondary-800"
-            data-testid="DelegateRowSkeleton"
+            class="TableRow__TableRowStyled-sc-1br46dw-0 fzBhIQ group"
+            data-testid="TableRow"
           >
-            <td
-              class="py-5"
-            >
+            <td>
               <div
-                class="Circle__CircleWrapper-uw7h4j-0 QLprd bg-theme-secondary-200 border-theme-secondary-300 dark:border-theme-secondary-800 ring-theme-background"
-              />
-            </td>
-            <td
-              class="py-5"
-            >
-              <span>
-                <span
-                  class="react-loading-skeleton mt-4 css-1eg0sfo-skeletonStyles-Skeleton"
-                  style="width: 80%; height: 6px;"
-                >
-                  ‌
-                </span>
-              </span>
-            </td>
-            <td
-              class="py-5"
-            >
-              <span>
-                <span
-                  class="react-loading-skeleton mt-4 css-1eg0sfo-skeletonStyles-Skeleton"
-                  style="width: 30%; height: 6px;"
-                >
-                  ‌
-                </span>
-              </span>
-            </td>
-            <td
-              class="py-5"
-            >
-              <span>
-                <span
-                  class="react-loading-skeleton mt-4 css-1eg0sfo-skeletonStyles-Skeleton"
-                  style="width: 40%; height: 6px;"
-                >
-                  ‌
-                </span>
-              </span>
-            </td>
-            <td
-              class="py-5"
-            >
-              <div
-                class="flex justify-center h-full"
+                class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 DpDcR"
               >
                 <span>
                   <span
                     class="react-loading-skeleton css-1eg0sfo-skeletonStyles-Skeleton"
-                    style="width: 24px; height: 24px;"
+                    style="width: 22px; height: 16px;"
                   >
                     ‌
                   </span>
                 </span>
               </div>
             </td>
-            <td
-              class="py-5"
-            >
-              <span>
-                <span
-                  class="react-loading-skeleton mt-4 css-1eg0sfo-skeletonStyles-Skeleton"
-                  style="width: 40%; height: 6px;"
-                >
-                  ‌
-                </span>
-              </span>
-            </td>
-            <td
-              class="py-5"
-            >
-              <span>
-                <span
-                  class="react-loading-skeleton mt-4 css-1eg0sfo-skeletonStyles-Skeleton"
-                  style="width: 40%; height: 6px;"
-                >
-                  ‌
-                </span>
-              </span>
-            </td>
-            <td
-              class="py-5"
-            >
-              <span>
-                <span
-                  class="react-loading-skeleton mt-4 css-1eg0sfo-skeletonStyles-Skeleton"
-                  style="width: 40%; height: 6px;"
-                >
-                  ‌
-                </span>
-              </span>
-            </td>
-            <td
-              class="py-5"
-            >
-              <span>
-                <span
-                  class="react-loading-skeleton mt-4 css-1eg0sfo-skeletonStyles-Skeleton"
-                  style="width: 60%; height: 6px;"
-                >
-                  ‌
-                </span>
-              </span>
-            </td>
-            <td
-              class="py-5"
-            >
+            <td>
               <div
-                class="text-right"
+                class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT space-x-4"
+              >
+                <div
+                  class="Circle__CircleWrapper-uw7h4j-0 bNDQMV border-transparent ring-theme-background"
+                >
+                  <span>
+                    <span
+                      class="react-loading-skeleton align-top css-1eg0sfo-skeletonStyles-Skeleton"
+                      style="width: 44px; height: 44px; border-radius: 50%;"
+                    >
+                      ‌
+                    </span>
+                  </span>
+                </div>
+                <span>
+                  <span
+                    class="react-loading-skeleton css-1eg0sfo-skeletonStyles-Skeleton"
+                    style="width: 120px; height: 16px;"
+                  >
+                    ‌
+                  </span>
+                </span>
+              </div>
+            </td>
+            <td>
+              <div
+                class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 kjTmcB justify-end"
               >
                 <span>
                   <span
@@ -2564,121 +1802,52 @@ exports[`DelegateTable should render loading state 1`] = `
             </td>
           </tr>
           <tr
-            class="border-b border-dotted last:border-b-0 border-theme-secondary-300 dark:border-theme-secondary-800"
-            data-testid="DelegateRowSkeleton"
+            class="TableRow__TableRowStyled-sc-1br46dw-0 fzBhIQ group"
+            data-testid="TableRow"
           >
-            <td
-              class="py-5"
-            >
+            <td>
               <div
-                class="Circle__CircleWrapper-uw7h4j-0 QLprd bg-theme-secondary-200 border-theme-secondary-300 dark:border-theme-secondary-800 ring-theme-background"
-              />
-            </td>
-            <td
-              class="py-5"
-            >
-              <span>
-                <span
-                  class="react-loading-skeleton mt-4 css-1eg0sfo-skeletonStyles-Skeleton"
-                  style="width: 80%; height: 6px;"
-                >
-                  ‌
-                </span>
-              </span>
-            </td>
-            <td
-              class="py-5"
-            >
-              <span>
-                <span
-                  class="react-loading-skeleton mt-4 css-1eg0sfo-skeletonStyles-Skeleton"
-                  style="width: 30%; height: 6px;"
-                >
-                  ‌
-                </span>
-              </span>
-            </td>
-            <td
-              class="py-5"
-            >
-              <span>
-                <span
-                  class="react-loading-skeleton mt-4 css-1eg0sfo-skeletonStyles-Skeleton"
-                  style="width: 40%; height: 6px;"
-                >
-                  ‌
-                </span>
-              </span>
-            </td>
-            <td
-              class="py-5"
-            >
-              <div
-                class="flex justify-center h-full"
+                class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 DpDcR"
               >
                 <span>
                   <span
                     class="react-loading-skeleton css-1eg0sfo-skeletonStyles-Skeleton"
-                    style="width: 24px; height: 24px;"
+                    style="width: 22px; height: 16px;"
                   >
                     ‌
                   </span>
                 </span>
               </div>
             </td>
-            <td
-              class="py-5"
-            >
-              <span>
-                <span
-                  class="react-loading-skeleton mt-4 css-1eg0sfo-skeletonStyles-Skeleton"
-                  style="width: 40%; height: 6px;"
-                >
-                  ‌
-                </span>
-              </span>
-            </td>
-            <td
-              class="py-5"
-            >
-              <span>
-                <span
-                  class="react-loading-skeleton mt-4 css-1eg0sfo-skeletonStyles-Skeleton"
-                  style="width: 40%; height: 6px;"
-                >
-                  ‌
-                </span>
-              </span>
-            </td>
-            <td
-              class="py-5"
-            >
-              <span>
-                <span
-                  class="react-loading-skeleton mt-4 css-1eg0sfo-skeletonStyles-Skeleton"
-                  style="width: 40%; height: 6px;"
-                >
-                  ‌
-                </span>
-              </span>
-            </td>
-            <td
-              class="py-5"
-            >
-              <span>
-                <span
-                  class="react-loading-skeleton mt-4 css-1eg0sfo-skeletonStyles-Skeleton"
-                  style="width: 60%; height: 6px;"
-                >
-                  ‌
-                </span>
-              </span>
-            </td>
-            <td
-              class="py-5"
-            >
+            <td>
               <div
-                class="text-right"
+                class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT space-x-4"
+              >
+                <div
+                  class="Circle__CircleWrapper-uw7h4j-0 bNDQMV border-transparent ring-theme-background"
+                >
+                  <span>
+                    <span
+                      class="react-loading-skeleton align-top css-1eg0sfo-skeletonStyles-Skeleton"
+                      style="width: 44px; height: 44px; border-radius: 50%;"
+                    >
+                      ‌
+                    </span>
+                  </span>
+                </div>
+                <span>
+                  <span
+                    class="react-loading-skeleton css-1eg0sfo-skeletonStyles-Skeleton"
+                    style="width: 120px; height: 16px;"
+                  >
+                    ‌
+                  </span>
+                </span>
+              </div>
+            </td>
+            <td>
+              <div
+                class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 kjTmcB justify-end"
               >
                 <span>
                   <span
@@ -2692,121 +1861,52 @@ exports[`DelegateTable should render loading state 1`] = `
             </td>
           </tr>
           <tr
-            class="border-b border-dotted last:border-b-0 border-theme-secondary-300 dark:border-theme-secondary-800"
-            data-testid="DelegateRowSkeleton"
+            class="TableRow__TableRowStyled-sc-1br46dw-0 fzBhIQ group"
+            data-testid="TableRow"
           >
-            <td
-              class="py-5"
-            >
+            <td>
               <div
-                class="Circle__CircleWrapper-uw7h4j-0 QLprd bg-theme-secondary-200 border-theme-secondary-300 dark:border-theme-secondary-800 ring-theme-background"
-              />
-            </td>
-            <td
-              class="py-5"
-            >
-              <span>
-                <span
-                  class="react-loading-skeleton mt-4 css-1eg0sfo-skeletonStyles-Skeleton"
-                  style="width: 80%; height: 6px;"
-                >
-                  ‌
-                </span>
-              </span>
-            </td>
-            <td
-              class="py-5"
-            >
-              <span>
-                <span
-                  class="react-loading-skeleton mt-4 css-1eg0sfo-skeletonStyles-Skeleton"
-                  style="width: 30%; height: 6px;"
-                >
-                  ‌
-                </span>
-              </span>
-            </td>
-            <td
-              class="py-5"
-            >
-              <span>
-                <span
-                  class="react-loading-skeleton mt-4 css-1eg0sfo-skeletonStyles-Skeleton"
-                  style="width: 40%; height: 6px;"
-                >
-                  ‌
-                </span>
-              </span>
-            </td>
-            <td
-              class="py-5"
-            >
-              <div
-                class="flex justify-center h-full"
+                class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 DpDcR"
               >
                 <span>
                   <span
                     class="react-loading-skeleton css-1eg0sfo-skeletonStyles-Skeleton"
-                    style="width: 24px; height: 24px;"
+                    style="width: 22px; height: 16px;"
                   >
                     ‌
                   </span>
                 </span>
               </div>
             </td>
-            <td
-              class="py-5"
-            >
-              <span>
-                <span
-                  class="react-loading-skeleton mt-4 css-1eg0sfo-skeletonStyles-Skeleton"
-                  style="width: 40%; height: 6px;"
-                >
-                  ‌
-                </span>
-              </span>
-            </td>
-            <td
-              class="py-5"
-            >
-              <span>
-                <span
-                  class="react-loading-skeleton mt-4 css-1eg0sfo-skeletonStyles-Skeleton"
-                  style="width: 40%; height: 6px;"
-                >
-                  ‌
-                </span>
-              </span>
-            </td>
-            <td
-              class="py-5"
-            >
-              <span>
-                <span
-                  class="react-loading-skeleton mt-4 css-1eg0sfo-skeletonStyles-Skeleton"
-                  style="width: 40%; height: 6px;"
-                >
-                  ‌
-                </span>
-              </span>
-            </td>
-            <td
-              class="py-5"
-            >
-              <span>
-                <span
-                  class="react-loading-skeleton mt-4 css-1eg0sfo-skeletonStyles-Skeleton"
-                  style="width: 60%; height: 6px;"
-                >
-                  ‌
-                </span>
-              </span>
-            </td>
-            <td
-              class="py-5"
-            >
+            <td>
               <div
-                class="text-right"
+                class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT space-x-4"
+              >
+                <div
+                  class="Circle__CircleWrapper-uw7h4j-0 bNDQMV border-transparent ring-theme-background"
+                >
+                  <span>
+                    <span
+                      class="react-loading-skeleton align-top css-1eg0sfo-skeletonStyles-Skeleton"
+                      style="width: 44px; height: 44px; border-radius: 50%;"
+                    >
+                      ‌
+                    </span>
+                  </span>
+                </div>
+                <span>
+                  <span
+                    class="react-loading-skeleton css-1eg0sfo-skeletonStyles-Skeleton"
+                    style="width: 129px; height: 16px;"
+                  >
+                    ‌
+                  </span>
+                </span>
+              </div>
+            </td>
+            <td>
+              <div
+                class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 kjTmcB justify-end"
               >
                 <span>
                   <span
@@ -3013,7 +2113,7 @@ exports[`DelegateTable should render pagination 1`] = `
             role="row"
           >
             <th
-              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
+              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder w-1"
               colspan="1"
               data-testid="table__th--0"
               role="columnheader"
@@ -3043,7 +2143,7 @@ exports[`DelegateTable should render pagination 1`] = `
               </div>
             </th>
             <th
-              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
+              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold"
               colspan="1"
               data-testid="table__th--1"
               role="columnheader"
@@ -3051,7 +2151,7 @@ exports[`DelegateTable should render pagination 1`] = `
               title="Toggle SortBy"
             >
               <div
-                class="flex flex-inline align-top"
+                class="flex flex-inline align-top no-border"
               >
                 <div>
                   Delegate Name
@@ -3079,54 +2179,10 @@ exports[`DelegateTable should render pagination 1`] = `
               role="columnheader"
             >
               <div
-                class="flex flex-inline align-top justify-center"
+                class="flex flex-inline align-top hidden"
               >
                 <div>
-                  Status
-                </div>
-              </div>
-            </th>
-            <th
-              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
-              colspan="1"
-              data-testid="table__th--3"
-              role="columnheader"
-            >
-              <div
-                class="flex flex-inline align-top justify-center"
-              >
-                <div>
-                  Votes
-                </div>
-              </div>
-            </th>
-            <th
-              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
-              colspan="1"
-              data-testid="table__th--4"
-              role="columnheader"
-              style="cursor: pointer;"
-              title="Toggle SortBy"
-            >
-              <div
-                class="flex flex-inline align-top justify-end flex-row-reverse"
-              >
-                <div>
-                  Vote
-                </div>
-                <div
-                  class="flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity opacity-0 group-hover:opacity-100 ml-auto mr-2"
-                >
-                  <div
-                    class="sc-bdfBwQ kJrqvM transition-transform transform rotate-180"
-                    height="5"
-                    role="img"
-                    width="8"
-                  >
-                    <svg>
-                      chevron-down.svg
-                    </svg>
-                  </div>
+                  Actions
                 </div>
               </div>
             </th>
@@ -3170,24 +2226,6 @@ exports[`DelegateTable should render pagination 1`] = `
                 </div>
                 <span>
                   arkx
-                </span>
-              </div>
-            </td>
-            <td
-              class="w-20"
-            >
-              <div
-                class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT justify-center "
-              />
-            </td>
-            <td
-              class="w-20"
-            >
-              <div
-                class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT justify-center font-bold text-theme-secondary-text "
-              >
-                <span>
-                  %
                 </span>
               </div>
             </td>
@@ -3451,7 +2489,7 @@ exports[`DelegateTable should render with a delegate to unvote 1`] = `
             role="row"
           >
             <th
-              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
+              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder w-1"
               colspan="1"
               data-testid="table__th--0"
               role="columnheader"
@@ -3481,7 +2519,7 @@ exports[`DelegateTable should render with a delegate to unvote 1`] = `
               </div>
             </th>
             <th
-              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
+              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold"
               colspan="1"
               data-testid="table__th--1"
               role="columnheader"
@@ -3489,7 +2527,7 @@ exports[`DelegateTable should render with a delegate to unvote 1`] = `
               title="Toggle SortBy"
             >
               <div
-                class="flex flex-inline align-top"
+                class="flex flex-inline align-top no-border"
               >
                 <div>
                   Delegate Name
@@ -3517,54 +2555,10 @@ exports[`DelegateTable should render with a delegate to unvote 1`] = `
               role="columnheader"
             >
               <div
-                class="flex flex-inline align-top justify-center"
+                class="flex flex-inline align-top hidden"
               >
                 <div>
-                  Status
-                </div>
-              </div>
-            </th>
-            <th
-              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
-              colspan="1"
-              data-testid="table__th--3"
-              role="columnheader"
-            >
-              <div
-                class="flex flex-inline align-top justify-center"
-              >
-                <div>
-                  Votes
-                </div>
-              </div>
-            </th>
-            <th
-              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
-              colspan="1"
-              data-testid="table__th--4"
-              role="columnheader"
-              style="cursor: pointer;"
-              title="Toggle SortBy"
-            >
-              <div
-                class="flex flex-inline align-top justify-end flex-row-reverse"
-              >
-                <div>
-                  Vote
-                </div>
-                <div
-                  class="flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity opacity-0 group-hover:opacity-100 ml-auto mr-2"
-                >
-                  <div
-                    class="sc-bdfBwQ kJrqvM transition-transform transform rotate-180"
-                    height="5"
-                    role="img"
-                    width="8"
-                  >
-                    <svg>
-                      chevron-down.svg
-                    </svg>
-                  </div>
+                  Actions
                 </div>
               </div>
             </th>
@@ -3608,24 +2602,6 @@ exports[`DelegateTable should render with a delegate to unvote 1`] = `
                 </div>
                 <span>
                   arkx
-                </span>
-              </div>
-            </td>
-            <td
-              class="w-20"
-            >
-              <div
-                class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT justify-center "
-              />
-            </td>
-            <td
-              class="w-20"
-            >
-              <div
-                class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT justify-center font-bold text-theme-secondary-text "
-              >
-                <span>
-                  %
                 </span>
               </div>
             </td>
@@ -3689,24 +2665,6 @@ exports[`DelegateTable should render with a delegate to unvote 1`] = `
               </div>
             </td>
             <td
-              class="w-20"
-            >
-              <div
-                class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT justify-center "
-              />
-            </td>
-            <td
-              class="w-20"
-            >
-              <div
-                class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT justify-center font-bold text-theme-secondary-text "
-              >
-                <span>
-                  %
-                </span>
-              </div>
-            </td>
-            <td
               class="w-40"
             >
               <div
@@ -3762,24 +2720,6 @@ exports[`DelegateTable should render with a delegate to unvote 1`] = `
                 </div>
                 <span>
                   genesis_17
-                </span>
-              </div>
-            </td>
-            <td
-              class="w-20"
-            >
-              <div
-                class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT justify-center "
-              />
-            </td>
-            <td
-              class="w-20"
-            >
-              <div
-                class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT justify-center font-bold text-theme-secondary-text "
-              >
-                <span>
-                  %
                 </span>
               </div>
             </td>
@@ -3997,7 +2937,7 @@ exports[`DelegateTable should render with a delegate to unvote/vote 1`] = `
             role="row"
           >
             <th
-              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
+              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder w-1"
               colspan="1"
               data-testid="table__th--0"
               role="columnheader"
@@ -4027,7 +2967,7 @@ exports[`DelegateTable should render with a delegate to unvote/vote 1`] = `
               </div>
             </th>
             <th
-              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
+              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold"
               colspan="1"
               data-testid="table__th--1"
               role="columnheader"
@@ -4035,7 +2975,7 @@ exports[`DelegateTable should render with a delegate to unvote/vote 1`] = `
               title="Toggle SortBy"
             >
               <div
-                class="flex flex-inline align-top"
+                class="flex flex-inline align-top no-border"
               >
                 <div>
                   Delegate Name
@@ -4063,54 +3003,10 @@ exports[`DelegateTable should render with a delegate to unvote/vote 1`] = `
               role="columnheader"
             >
               <div
-                class="flex flex-inline align-top justify-center"
+                class="flex flex-inline align-top hidden"
               >
                 <div>
-                  Status
-                </div>
-              </div>
-            </th>
-            <th
-              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
-              colspan="1"
-              data-testid="table__th--3"
-              role="columnheader"
-            >
-              <div
-                class="flex flex-inline align-top justify-center"
-              >
-                <div>
-                  Votes
-                </div>
-              </div>
-            </th>
-            <th
-              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
-              colspan="1"
-              data-testid="table__th--4"
-              role="columnheader"
-              style="cursor: pointer;"
-              title="Toggle SortBy"
-            >
-              <div
-                class="flex flex-inline align-top justify-end flex-row-reverse"
-              >
-                <div>
-                  Vote
-                </div>
-                <div
-                  class="flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity opacity-0 group-hover:opacity-100 ml-auto mr-2"
-                >
-                  <div
-                    class="sc-bdfBwQ kJrqvM transition-transform transform rotate-180"
-                    height="5"
-                    role="img"
-                    width="8"
-                  >
-                    <svg>
-                      chevron-down.svg
-                    </svg>
-                  </div>
+                  Actions
                 </div>
               </div>
             </th>
@@ -4154,34 +3050,6 @@ exports[`DelegateTable should render with a delegate to unvote/vote 1`] = `
                 </div>
                 <span>
                   arkx
-                </span>
-              </div>
-            </td>
-            <td
-              class="w-20"
-            >
-              <div
-                class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT justify-center bg-theme-danger-50 dark:bg-theme-danger-900"
-              >
-                <div
-                  class="sc-bdfBwQ iSzUah text-xs text-theme-danger-500"
-                  height="22"
-                  width="22"
-                >
-                  <svg>
-                    status-ok.svg
-                  </svg>
-                </div>
-              </div>
-            </td>
-            <td
-              class="w-20"
-            >
-              <div
-                class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT justify-center font-bold text-theme-secondary-text bg-theme-danger-50 dark:bg-theme-danger-900"
-              >
-                <span>
-                  %
                 </span>
               </div>
             </td>
@@ -4245,24 +3113,6 @@ exports[`DelegateTable should render with a delegate to unvote/vote 1`] = `
               </div>
             </td>
             <td
-              class="w-20"
-            >
-              <div
-                class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT justify-center bg-theme-success-50 dark:bg-theme-success-900"
-              />
-            </td>
-            <td
-              class="w-20"
-            >
-              <div
-                class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT justify-center font-bold text-theme-secondary-text bg-theme-success-50 dark:bg-theme-success-900"
-              >
-                <span>
-                  %
-                </span>
-              </div>
-            </td>
-            <td
               class="w-40"
             >
               <div
@@ -4318,24 +3168,6 @@ exports[`DelegateTable should render with a delegate to unvote/vote 1`] = `
                 </div>
                 <span>
                   genesis_17
-                </span>
-              </div>
-            </td>
-            <td
-              class="w-20"
-            >
-              <div
-                class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT justify-center "
-              />
-            </td>
-            <td
-              class="w-20"
-            >
-              <div
-                class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT justify-center font-bold text-theme-secondary-text "
-              >
-                <span>
-                  %
                 </span>
               </div>
             </td>
@@ -4556,7 +3388,7 @@ exports[`DelegateTable should render with a delegate to vote 1`] = `
             role="row"
           >
             <th
-              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
+              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder w-1"
               colspan="1"
               data-testid="table__th--0"
               role="columnheader"
@@ -4586,7 +3418,7 @@ exports[`DelegateTable should render with a delegate to vote 1`] = `
               </div>
             </th>
             <th
-              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
+              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold"
               colspan="1"
               data-testid="table__th--1"
               role="columnheader"
@@ -4594,7 +3426,7 @@ exports[`DelegateTable should render with a delegate to vote 1`] = `
               title="Toggle SortBy"
             >
               <div
-                class="flex flex-inline align-top"
+                class="flex flex-inline align-top no-border"
               >
                 <div>
                   Delegate Name
@@ -4622,54 +3454,10 @@ exports[`DelegateTable should render with a delegate to vote 1`] = `
               role="columnheader"
             >
               <div
-                class="flex flex-inline align-top justify-center"
+                class="flex flex-inline align-top hidden"
               >
                 <div>
-                  Status
-                </div>
-              </div>
-            </th>
-            <th
-              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
-              colspan="1"
-              data-testid="table__th--3"
-              role="columnheader"
-            >
-              <div
-                class="flex flex-inline align-top justify-center"
-              >
-                <div>
-                  Votes
-                </div>
-              </div>
-            </th>
-            <th
-              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
-              colspan="1"
-              data-testid="table__th--4"
-              role="columnheader"
-              style="cursor: pointer;"
-              title="Toggle SortBy"
-            >
-              <div
-                class="flex flex-inline align-top justify-end flex-row-reverse"
-              >
-                <div>
-                  Vote
-                </div>
-                <div
-                  class="flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity opacity-0 group-hover:opacity-100 ml-auto mr-2"
-                >
-                  <div
-                    class="sc-bdfBwQ kJrqvM transition-transform transform rotate-180"
-                    height="5"
-                    role="img"
-                    width="8"
-                  >
-                    <svg>
-                      chevron-down.svg
-                    </svg>
-                  </div>
+                  Actions
                 </div>
               </div>
             </th>
@@ -4713,24 +3501,6 @@ exports[`DelegateTable should render with a delegate to vote 1`] = `
                 </div>
                 <span>
                   arkx
-                </span>
-              </div>
-            </td>
-            <td
-              class="w-20"
-            >
-              <div
-                class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT justify-center bg-theme-success-50 dark:bg-theme-success-900"
-              />
-            </td>
-            <td
-              class="w-20"
-            >
-              <div
-                class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT justify-center font-bold text-theme-secondary-text bg-theme-success-50 dark:bg-theme-success-900"
-              >
-                <span>
-                  %
                 </span>
               </div>
             </td>
@@ -4794,24 +3564,6 @@ exports[`DelegateTable should render with a delegate to vote 1`] = `
               </div>
             </td>
             <td
-              class="w-20"
-            >
-              <div
-                class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT justify-center "
-              />
-            </td>
-            <td
-              class="w-20"
-            >
-              <div
-                class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT justify-center font-bold text-theme-secondary-text "
-              >
-                <span>
-                  %
-                </span>
-              </div>
-            </td>
-            <td
               class="w-40"
             >
               <div
@@ -4867,24 +3619,6 @@ exports[`DelegateTable should render with a delegate to vote 1`] = `
                 </div>
                 <span>
                   genesis_17
-                </span>
-              </div>
-            </td>
-            <td
-              class="w-20"
-            >
-              <div
-                class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT justify-center "
-              />
-            </td>
-            <td
-              class="w-20"
-            >
-              <div
-                class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT justify-center font-bold text-theme-secondary-text "
-              >
-                <span>
-                  %
                 </span>
               </div>
             </td>
@@ -5131,7 +3865,7 @@ exports[`DelegateTable should select a delegate to unvote 1`] = `
             role="row"
           >
             <th
-              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
+              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder w-1"
               colspan="1"
               data-testid="table__th--0"
               role="columnheader"
@@ -5161,7 +3895,7 @@ exports[`DelegateTable should select a delegate to unvote 1`] = `
               </div>
             </th>
             <th
-              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
+              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold"
               colspan="1"
               data-testid="table__th--1"
               role="columnheader"
@@ -5169,7 +3903,7 @@ exports[`DelegateTable should select a delegate to unvote 1`] = `
               title="Toggle SortBy"
             >
               <div
-                class="flex flex-inline align-top"
+                class="flex flex-inline align-top no-border"
               >
                 <div>
                   Delegate Name
@@ -5197,54 +3931,10 @@ exports[`DelegateTable should select a delegate to unvote 1`] = `
               role="columnheader"
             >
               <div
-                class="flex flex-inline align-top justify-center"
+                class="flex flex-inline align-top hidden"
               >
                 <div>
-                  Status
-                </div>
-              </div>
-            </th>
-            <th
-              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
-              colspan="1"
-              data-testid="table__th--3"
-              role="columnheader"
-            >
-              <div
-                class="flex flex-inline align-top justify-center"
-              >
-                <div>
-                  Votes
-                </div>
-              </div>
-            </th>
-            <th
-              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
-              colspan="1"
-              data-testid="table__th--4"
-              role="columnheader"
-              style="cursor: pointer;"
-              title="Toggle SortBy"
-            >
-              <div
-                class="flex flex-inline align-top justify-end flex-row-reverse"
-              >
-                <div>
-                  Vote
-                </div>
-                <div
-                  class="flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity opacity-0 group-hover:opacity-100 ml-auto mr-2"
-                >
-                  <div
-                    class="sc-bdfBwQ kJrqvM transition-transform transform rotate-180"
-                    height="5"
-                    role="img"
-                    width="8"
-                  >
-                    <svg>
-                      chevron-down.svg
-                    </svg>
-                  </div>
+                  Actions
                 </div>
               </div>
             </th>
@@ -5288,34 +3978,6 @@ exports[`DelegateTable should select a delegate to unvote 1`] = `
                 </div>
                 <span>
                   arkx
-                </span>
-              </div>
-            </td>
-            <td
-              class="w-20"
-            >
-              <div
-                class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT justify-center bg-theme-primary-50 dark:bg-theme-primary-900"
-              >
-                <div
-                  class="sc-bdfBwQ iSzUah text-xs text-theme-primary-600"
-                  height="22"
-                  width="22"
-                >
-                  <svg>
-                    status-ok.svg
-                  </svg>
-                </div>
-              </div>
-            </td>
-            <td
-              class="w-20"
-            >
-              <div
-                class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT justify-center font-bold text-theme-secondary-text bg-theme-primary-50 dark:bg-theme-primary-900"
-              >
-                <span>
-                  %
                 </span>
               </div>
             </td>
@@ -5379,24 +4041,6 @@ exports[`DelegateTable should select a delegate to unvote 1`] = `
               </div>
             </td>
             <td
-              class="w-20"
-            >
-              <div
-                class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT justify-center "
-              />
-            </td>
-            <td
-              class="w-20"
-            >
-              <div
-                class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT justify-center font-bold text-theme-secondary-text "
-              >
-                <span>
-                  %
-                </span>
-              </div>
-            </td>
-            <td
               class="w-40"
             >
               <div
@@ -5452,24 +4096,6 @@ exports[`DelegateTable should select a delegate to unvote 1`] = `
                 </div>
                 <span>
                   genesis_17
-                </span>
-              </div>
-            </td>
-            <td
-              class="w-20"
-            >
-              <div
-                class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT justify-center "
-              />
-            </td>
-            <td
-              class="w-20"
-            >
-              <div
-                class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT justify-center font-bold text-theme-secondary-text "
-              >
-                <span>
-                  %
                 </span>
               </div>
             </td>
@@ -5688,7 +4314,7 @@ exports[`DelegateTable should select a delegate to unvote/vote 1`] = `
             role="row"
           >
             <th
-              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
+              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder w-1"
               colspan="1"
               data-testid="table__th--0"
               role="columnheader"
@@ -5718,7 +4344,7 @@ exports[`DelegateTable should select a delegate to unvote/vote 1`] = `
               </div>
             </th>
             <th
-              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
+              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold"
               colspan="1"
               data-testid="table__th--1"
               role="columnheader"
@@ -5726,7 +4352,7 @@ exports[`DelegateTable should select a delegate to unvote/vote 1`] = `
               title="Toggle SortBy"
             >
               <div
-                class="flex flex-inline align-top"
+                class="flex flex-inline align-top no-border"
               >
                 <div>
                   Delegate Name
@@ -5754,54 +4380,10 @@ exports[`DelegateTable should select a delegate to unvote/vote 1`] = `
               role="columnheader"
             >
               <div
-                class="flex flex-inline align-top justify-center"
+                class="flex flex-inline align-top hidden"
               >
                 <div>
-                  Status
-                </div>
-              </div>
-            </th>
-            <th
-              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
-              colspan="1"
-              data-testid="table__th--3"
-              role="columnheader"
-            >
-              <div
-                class="flex flex-inline align-top justify-center"
-              >
-                <div>
-                  Votes
-                </div>
-              </div>
-            </th>
-            <th
-              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
-              colspan="1"
-              data-testid="table__th--4"
-              role="columnheader"
-              style="cursor: pointer;"
-              title="Toggle SortBy"
-            >
-              <div
-                class="flex flex-inline align-top justify-end flex-row-reverse"
-              >
-                <div>
-                  Vote
-                </div>
-                <div
-                  class="flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity opacity-0 group-hover:opacity-100 ml-auto mr-2"
-                >
-                  <div
-                    class="sc-bdfBwQ kJrqvM transition-transform transform rotate-180"
-                    height="5"
-                    role="img"
-                    width="8"
-                  >
-                    <svg>
-                      chevron-down.svg
-                    </svg>
-                  </div>
+                  Actions
                 </div>
               </div>
             </th>
@@ -5845,34 +4427,6 @@ exports[`DelegateTable should select a delegate to unvote/vote 1`] = `
                 </div>
                 <span>
                   arkx
-                </span>
-              </div>
-            </td>
-            <td
-              class="w-20"
-            >
-              <div
-                class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT justify-center bg-theme-danger-50 dark:bg-theme-danger-900"
-              >
-                <div
-                  class="sc-bdfBwQ iSzUah text-xs text-theme-danger-500"
-                  height="22"
-                  width="22"
-                >
-                  <svg>
-                    status-ok.svg
-                  </svg>
-                </div>
-              </div>
-            </td>
-            <td
-              class="w-20"
-            >
-              <div
-                class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT justify-center font-bold text-theme-secondary-text bg-theme-danger-50 dark:bg-theme-danger-900"
-              >
-                <span>
-                  %
                 </span>
               </div>
             </td>
@@ -5936,24 +4490,6 @@ exports[`DelegateTable should select a delegate to unvote/vote 1`] = `
               </div>
             </td>
             <td
-              class="w-20"
-            >
-              <div
-                class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT justify-center bg-theme-success-50 dark:bg-theme-success-900"
-              />
-            </td>
-            <td
-              class="w-20"
-            >
-              <div
-                class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT justify-center font-bold text-theme-secondary-text bg-theme-success-50 dark:bg-theme-success-900"
-              >
-                <span>
-                  %
-                </span>
-              </div>
-            </td>
-            <td
               class="w-40"
             >
               <div
@@ -6009,24 +4545,6 @@ exports[`DelegateTable should select a delegate to unvote/vote 1`] = `
                 </div>
                 <span>
                   genesis_17
-                </span>
-              </div>
-            </td>
-            <td
-              class="w-20"
-            >
-              <div
-                class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT justify-center "
-              />
-            </td>
-            <td
-              class="w-20"
-            >
-              <div
-                class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT justify-center font-bold text-theme-secondary-text "
-              >
-                <span>
-                  %
                 </span>
               </div>
             </td>
@@ -6247,7 +4765,7 @@ exports[`DelegateTable should select a delegate to vote 1`] = `
             role="row"
           >
             <th
-              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
+              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder w-1"
               colspan="1"
               data-testid="table__th--0"
               role="columnheader"
@@ -6277,7 +4795,7 @@ exports[`DelegateTable should select a delegate to vote 1`] = `
               </div>
             </th>
             <th
-              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
+              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold"
               colspan="1"
               data-testid="table__th--1"
               role="columnheader"
@@ -6285,7 +4803,7 @@ exports[`DelegateTable should select a delegate to vote 1`] = `
               title="Toggle SortBy"
             >
               <div
-                class="flex flex-inline align-top"
+                class="flex flex-inline align-top no-border"
               >
                 <div>
                   Delegate Name
@@ -6313,54 +4831,10 @@ exports[`DelegateTable should select a delegate to vote 1`] = `
               role="columnheader"
             >
               <div
-                class="flex flex-inline align-top justify-center"
+                class="flex flex-inline align-top hidden"
               >
                 <div>
-                  Status
-                </div>
-              </div>
-            </th>
-            <th
-              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
-              colspan="1"
-              data-testid="table__th--3"
-              role="columnheader"
-            >
-              <div
-                class="flex flex-inline align-top justify-center"
-              >
-                <div>
-                  Votes
-                </div>
-              </div>
-            </th>
-            <th
-              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
-              colspan="1"
-              data-testid="table__th--4"
-              role="columnheader"
-              style="cursor: pointer;"
-              title="Toggle SortBy"
-            >
-              <div
-                class="flex flex-inline align-top justify-end flex-row-reverse"
-              >
-                <div>
-                  Vote
-                </div>
-                <div
-                  class="flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity opacity-0 group-hover:opacity-100 ml-auto mr-2"
-                >
-                  <div
-                    class="sc-bdfBwQ kJrqvM transition-transform transform rotate-180"
-                    height="5"
-                    role="img"
-                    width="8"
-                  >
-                    <svg>
-                      chevron-down.svg
-                    </svg>
-                  </div>
+                  Actions
                 </div>
               </div>
             </th>
@@ -6404,24 +4878,6 @@ exports[`DelegateTable should select a delegate to vote 1`] = `
                 </div>
                 <span>
                   arkx
-                </span>
-              </div>
-            </td>
-            <td
-              class="w-20"
-            >
-              <div
-                class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT justify-center "
-              />
-            </td>
-            <td
-              class="w-20"
-            >
-              <div
-                class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT justify-center font-bold text-theme-secondary-text "
-              >
-                <span>
-                  %
                 </span>
               </div>
             </td>
@@ -6485,24 +4941,6 @@ exports[`DelegateTable should select a delegate to vote 1`] = `
               </div>
             </td>
             <td
-              class="w-20"
-            >
-              <div
-                class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT justify-center "
-              />
-            </td>
-            <td
-              class="w-20"
-            >
-              <div
-                class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT justify-center font-bold text-theme-secondary-text "
-              >
-                <span>
-                  %
-                </span>
-              </div>
-            </td>
-            <td
               class="w-40"
             >
               <div
@@ -6558,24 +4996,6 @@ exports[`DelegateTable should select a delegate to vote 1`] = `
                 </div>
                 <span>
                   genesis_17
-                </span>
-              </div>
-            </td>
-            <td
-              class="w-20"
-            >
-              <div
-                class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT justify-center "
-              />
-            </td>
-            <td
-              class="w-20"
-            >
-              <div
-                class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT justify-center font-bold text-theme-secondary-text "
-              >
-                <span>
-                  %
                 </span>
               </div>
             </td>
@@ -6794,7 +5214,7 @@ exports[`DelegateTable should select multiple delegates to unvote/vote 1`] = `
             role="row"
           >
             <th
-              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
+              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder w-1"
               colspan="1"
               data-testid="table__th--0"
               role="columnheader"
@@ -6824,7 +5244,7 @@ exports[`DelegateTable should select multiple delegates to unvote/vote 1`] = `
               </div>
             </th>
             <th
-              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
+              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold"
               colspan="1"
               data-testid="table__th--1"
               role="columnheader"
@@ -6832,7 +5252,7 @@ exports[`DelegateTable should select multiple delegates to unvote/vote 1`] = `
               title="Toggle SortBy"
             >
               <div
-                class="flex flex-inline align-top"
+                class="flex flex-inline align-top no-border"
               >
                 <div>
                   Delegate Name
@@ -6860,54 +5280,10 @@ exports[`DelegateTable should select multiple delegates to unvote/vote 1`] = `
               role="columnheader"
             >
               <div
-                class="flex flex-inline align-top justify-center"
+                class="flex flex-inline align-top hidden"
               >
                 <div>
-                  Status
-                </div>
-              </div>
-            </th>
-            <th
-              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
-              colspan="1"
-              data-testid="table__th--3"
-              role="columnheader"
-            >
-              <div
-                class="flex flex-inline align-top justify-center"
-              >
-                <div>
-                  Votes
-                </div>
-              </div>
-            </th>
-            <th
-              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
-              colspan="1"
-              data-testid="table__th--4"
-              role="columnheader"
-              style="cursor: pointer;"
-              title="Toggle SortBy"
-            >
-              <div
-                class="flex flex-inline align-top justify-end flex-row-reverse"
-              >
-                <div>
-                  Vote
-                </div>
-                <div
-                  class="flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity opacity-0 group-hover:opacity-100 ml-auto mr-2"
-                >
-                  <div
-                    class="sc-bdfBwQ kJrqvM transition-transform transform rotate-180"
-                    height="5"
-                    role="img"
-                    width="8"
-                  >
-                    <svg>
-                      chevron-down.svg
-                    </svg>
-                  </div>
+                  Actions
                 </div>
               </div>
             </th>
@@ -6951,34 +5327,6 @@ exports[`DelegateTable should select multiple delegates to unvote/vote 1`] = `
                 </div>
                 <span>
                   arkx
-                </span>
-              </div>
-            </td>
-            <td
-              class="w-20"
-            >
-              <div
-                class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT justify-center bg-theme-danger-50 dark:bg-theme-danger-900"
-              >
-                <div
-                  class="sc-bdfBwQ iSzUah text-xs text-theme-danger-500"
-                  height="22"
-                  width="22"
-                >
-                  <svg>
-                    status-ok.svg
-                  </svg>
-                </div>
-              </div>
-            </td>
-            <td
-              class="w-20"
-            >
-              <div
-                class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT justify-center font-bold text-theme-secondary-text bg-theme-danger-50 dark:bg-theme-danger-900"
-              >
-                <span>
-                  %
                 </span>
               </div>
             </td>
@@ -7042,24 +5390,6 @@ exports[`DelegateTable should select multiple delegates to unvote/vote 1`] = `
               </div>
             </td>
             <td
-              class="w-20"
-            >
-              <div
-                class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT justify-center bg-theme-success-50 dark:bg-theme-success-900"
-              />
-            </td>
-            <td
-              class="w-20"
-            >
-              <div
-                class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT justify-center font-bold text-theme-secondary-text bg-theme-success-50 dark:bg-theme-success-900"
-              >
-                <span>
-                  %
-                </span>
-              </div>
-            </td>
-            <td
               class="w-40"
             >
               <div
@@ -7115,24 +5445,6 @@ exports[`DelegateTable should select multiple delegates to unvote/vote 1`] = `
                 </div>
                 <span>
                   genesis_17
-                </span>
-              </div>
-            </td>
-            <td
-              class="w-20"
-            >
-              <div
-                class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT justify-center bg-theme-success-50 dark:bg-theme-success-900"
-              />
-            </td>
-            <td
-              class="w-20"
-            >
-              <div
-                class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT justify-center font-bold text-theme-secondary-text bg-theme-success-50 dark:bg-theme-success-900"
-              >
-                <span>
-                  %
                 </span>
               </div>
             </td>
@@ -7350,7 +5662,7 @@ exports[`DelegateTable should unselect a delegate to unvote 1`] = `
             role="row"
           >
             <th
-              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
+              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder w-1"
               colspan="1"
               data-testid="table__th--0"
               role="columnheader"
@@ -7380,7 +5692,7 @@ exports[`DelegateTable should unselect a delegate to unvote 1`] = `
               </div>
             </th>
             <th
-              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
+              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold"
               colspan="1"
               data-testid="table__th--1"
               role="columnheader"
@@ -7388,7 +5700,7 @@ exports[`DelegateTable should unselect a delegate to unvote 1`] = `
               title="Toggle SortBy"
             >
               <div
-                class="flex flex-inline align-top"
+                class="flex flex-inline align-top no-border"
               >
                 <div>
                   Delegate Name
@@ -7416,54 +5728,10 @@ exports[`DelegateTable should unselect a delegate to unvote 1`] = `
               role="columnheader"
             >
               <div
-                class="flex flex-inline align-top justify-center"
+                class="flex flex-inline align-top hidden"
               >
                 <div>
-                  Status
-                </div>
-              </div>
-            </th>
-            <th
-              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
-              colspan="1"
-              data-testid="table__th--3"
-              role="columnheader"
-            >
-              <div
-                class="flex flex-inline align-top justify-center"
-              >
-                <div>
-                  Votes
-                </div>
-              </div>
-            </th>
-            <th
-              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
-              colspan="1"
-              data-testid="table__th--4"
-              role="columnheader"
-              style="cursor: pointer;"
-              title="Toggle SortBy"
-            >
-              <div
-                class="flex flex-inline align-top justify-end flex-row-reverse"
-              >
-                <div>
-                  Vote
-                </div>
-                <div
-                  class="flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity opacity-0 group-hover:opacity-100 ml-auto mr-2"
-                >
-                  <div
-                    class="sc-bdfBwQ kJrqvM transition-transform transform rotate-180"
-                    height="5"
-                    role="img"
-                    width="8"
-                  >
-                    <svg>
-                      chevron-down.svg
-                    </svg>
-                  </div>
+                  Actions
                 </div>
               </div>
             </th>
@@ -7507,34 +5775,6 @@ exports[`DelegateTable should unselect a delegate to unvote 1`] = `
                 </div>
                 <span>
                   arkx
-                </span>
-              </div>
-            </td>
-            <td
-              class="w-20"
-            >
-              <div
-                class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT justify-center bg-theme-primary-50 dark:bg-theme-primary-900"
-              >
-                <div
-                  class="sc-bdfBwQ iSzUah text-xs text-theme-primary-600"
-                  height="22"
-                  width="22"
-                >
-                  <svg>
-                    status-ok.svg
-                  </svg>
-                </div>
-              </div>
-            </td>
-            <td
-              class="w-20"
-            >
-              <div
-                class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT justify-center font-bold text-theme-secondary-text bg-theme-primary-50 dark:bg-theme-primary-900"
-              >
-                <span>
-                  %
                 </span>
               </div>
             </td>
@@ -7598,24 +5838,6 @@ exports[`DelegateTable should unselect a delegate to unvote 1`] = `
               </div>
             </td>
             <td
-              class="w-20"
-            >
-              <div
-                class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT justify-center "
-              />
-            </td>
-            <td
-              class="w-20"
-            >
-              <div
-                class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT justify-center font-bold text-theme-secondary-text "
-              >
-                <span>
-                  %
-                </span>
-              </div>
-            </td>
-            <td
               class="w-40"
             >
               <div
@@ -7671,24 +5893,6 @@ exports[`DelegateTable should unselect a delegate to unvote 1`] = `
                 </div>
                 <span>
                   genesis_17
-                </span>
-              </div>
-            </td>
-            <td
-              class="w-20"
-            >
-              <div
-                class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT justify-center "
-              />
-            </td>
-            <td
-              class="w-20"
-            >
-              <div
-                class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT justify-center font-bold text-theme-secondary-text "
-              >
-                <span>
-                  %
                 </span>
               </div>
             </td>
@@ -7907,7 +6111,7 @@ exports[`DelegateTable should unselect a delegate to vote 1`] = `
             role="row"
           >
             <th
-              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
+              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder w-1"
               colspan="1"
               data-testid="table__th--0"
               role="columnheader"
@@ -7937,7 +6141,7 @@ exports[`DelegateTable should unselect a delegate to vote 1`] = `
               </div>
             </th>
             <th
-              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
+              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold"
               colspan="1"
               data-testid="table__th--1"
               role="columnheader"
@@ -7945,7 +6149,7 @@ exports[`DelegateTable should unselect a delegate to vote 1`] = `
               title="Toggle SortBy"
             >
               <div
-                class="flex flex-inline align-top"
+                class="flex flex-inline align-top no-border"
               >
                 <div>
                   Delegate Name
@@ -7973,54 +6177,10 @@ exports[`DelegateTable should unselect a delegate to vote 1`] = `
               role="columnheader"
             >
               <div
-                class="flex flex-inline align-top justify-center"
+                class="flex flex-inline align-top hidden"
               >
                 <div>
-                  Status
-                </div>
-              </div>
-            </th>
-            <th
-              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
-              colspan="1"
-              data-testid="table__th--3"
-              role="columnheader"
-            >
-              <div
-                class="flex flex-inline align-top justify-center"
-              >
-                <div>
-                  Votes
-                </div>
-              </div>
-            </th>
-            <th
-              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
-              colspan="1"
-              data-testid="table__th--4"
-              role="columnheader"
-              style="cursor: pointer;"
-              title="Toggle SortBy"
-            >
-              <div
-                class="flex flex-inline align-top justify-end flex-row-reverse"
-              >
-                <div>
-                  Vote
-                </div>
-                <div
-                  class="flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity opacity-0 group-hover:opacity-100 ml-auto mr-2"
-                >
-                  <div
-                    class="sc-bdfBwQ kJrqvM transition-transform transform rotate-180"
-                    height="5"
-                    role="img"
-                    width="8"
-                  >
-                    <svg>
-                      chevron-down.svg
-                    </svg>
-                  </div>
+                  Actions
                 </div>
               </div>
             </th>
@@ -8064,34 +6224,6 @@ exports[`DelegateTable should unselect a delegate to vote 1`] = `
                 </div>
                 <span>
                   arkx
-                </span>
-              </div>
-            </td>
-            <td
-              class="w-20"
-            >
-              <div
-                class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT justify-center bg-theme-primary-50 dark:bg-theme-primary-900"
-              >
-                <div
-                  class="sc-bdfBwQ iSzUah text-xs text-theme-primary-600"
-                  height="22"
-                  width="22"
-                >
-                  <svg>
-                    status-ok.svg
-                  </svg>
-                </div>
-              </div>
-            </td>
-            <td
-              class="w-20"
-            >
-              <div
-                class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT justify-center font-bold text-theme-secondary-text bg-theme-primary-50 dark:bg-theme-primary-900"
-              >
-                <span>
-                  %
                 </span>
               </div>
             </td>
@@ -8155,24 +6287,6 @@ exports[`DelegateTable should unselect a delegate to vote 1`] = `
               </div>
             </td>
             <td
-              class="w-20"
-            >
-              <div
-                class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT justify-center "
-              />
-            </td>
-            <td
-              class="w-20"
-            >
-              <div
-                class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT justify-center font-bold text-theme-secondary-text "
-              >
-                <span>
-                  %
-                </span>
-              </div>
-            </td>
-            <td
               class="w-40"
             >
               <div
@@ -8228,24 +6342,6 @@ exports[`DelegateTable should unselect a delegate to vote 1`] = `
                 </div>
                 <span>
                   genesis_17
-                </span>
-              </div>
-            </td>
-            <td
-              class="w-20"
-            >
-              <div
-                class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT justify-center "
-              />
-            </td>
-            <td
-              class="w-20"
-            >
-              <div
-                class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT justify-center font-bold text-theme-secondary-text "
-              >
-                <span>
-                  %
                 </span>
               </div>
             </td>

@@ -49,27 +49,18 @@ export const DelegateTable = ({
 			Header: t("COMMON.RANK"),
 			accessor: (delegate: Contracts.IReadOnlyWallet) => isLoading || delegate.rank(),
 			className: "justify-start",
+			minimumWidth: true,
 		},
 		{
 			Header: t("VOTE.DELEGATE_TABLE.NAME"),
 			accessor: (delegate: Contracts.IReadOnlyWallet) => isLoading || delegate.username(),
+			className: "no-border",
 		},
 		{
-			Header: t("COMMON.STATUS"),
-			accessor: "status",
-			className: "justify-center",
-			disableSortBy: true,
-		},
-		{
-			Header: t("VOTE.DELEGATE_TABLE.VOTES"),
-			accessor: "votes",
-			className: "justify-center",
-			disableSortBy: true,
-		},
-		{
-			Header: t("VOTE.DELEGATE_TABLE.VOTE"),
+			Header: "Actions",
 			accessor: "onSelect",
-			className: "justify-end",
+			className: "hidden",
+			disableSortBy: true,
 		},
 	];
 
