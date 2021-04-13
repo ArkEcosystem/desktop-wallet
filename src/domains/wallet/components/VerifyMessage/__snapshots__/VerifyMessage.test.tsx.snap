@@ -53,11 +53,13 @@ exports[`VerifyMessage should render 1`] = `
             Authenticate a message from an address below.
           </div>
           <div
-            class="mt-8"
+            class="flex flex-col mt-8"
           >
-            <h3>
+            <span
+              class="block mb-1 text-lg font-semibold"
+            >
               Verification Method
-            </h3>
+            </span>
             <span
               class="text-sm font-medium text-theme-secondary-500 dark:text-theme-secondary-700"
             >
@@ -118,7 +120,7 @@ exports[`VerifyMessage should render 1`] = `
                     />
                   </label>
                   <div
-                    class="Input__InputWrapperStyled-wu99qs-0 jba-du"
+                    class="Input__InputWrapperStyled-wu99qs-0 fWHFgH"
                   >
                     <div
                       class="relative flex flex-1 h-full"
@@ -146,7 +148,7 @@ exports[`VerifyMessage should render 1`] = `
                     />
                   </label>
                   <div
-                    class="Input__InputWrapperStyled-wu99qs-0 jba-du"
+                    class="Input__InputWrapperStyled-wu99qs-0 fWHFgH"
                   >
                     <div
                       class="relative flex flex-1 h-full"
@@ -174,7 +176,7 @@ exports[`VerifyMessage should render 1`] = `
                     />
                   </label>
                   <div
-                    class="Input__InputWrapperStyled-wu99qs-0 jba-du"
+                    class="Input__InputWrapperStyled-wu99qs-0 fWHFgH"
                   >
                     <div
                       class="relative flex flex-1 h-full"

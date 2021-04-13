@@ -2,6 +2,7 @@ import { Card } from "app/components/Card";
 import { DropdownOption } from "app/components/Dropdown";
 import { Icon } from "app/components/Icon";
 import { Tooltip } from "app/components/Tooltip";
+import cls from "classnames";
 import React from "react";
 import { useTranslation } from "react-i18next";
 
@@ -72,17 +73,42 @@ export const PluginCard = ({
 				actions={actions}
 				onSelect={onSelect}
 				addonIcons={
-					<div className="flex items-center">
-						{plugin.hasUpdateAvailable && plugin.isMinimumVersionSatisfied === false && (
-							<Tooltip
-								content={t("PLUGINS.MINIMUM_VERSION_NOT_SATISFIED", {
-									minimumVersion: plugin.minimumVersion,
-								})}
-							>
-								<span data-testid="PluginCard__minimum-version-warning" className="ml-3 text-xl">
-									<Icon name="AlertWarning" className="text-theme-warning-500" />
-								</span>
-							</Tooltip>
+					<div className="flex items-center space-x-2">
+						{plugin.hasUpdateAvailable && (
+							<>
+								{plugin.isMinimumVersionSatisfied === false ? (
+									<Tooltip
+										content={t("PLUGINS.MINIMUM_VERSION_NOT_SATISFIED", {
+											minimumVersion: plugin.minimumVersion,
+										})}
+									>
+										<span
+											data-testid="PluginCard__minimum-version-warning"
+											className="ml-3 text-xl"
+										>
+											<Icon name="AlertWarning" className="text-theme-warning-500" />
+										</span>
+									</Tooltip>
+								) : (
+									<Tooltip content={t("PLUGINS.NEW_VERSION_AVAILABLE")}>
+										<button
+											data-testid="PluginCard__update-available"
+											disabled={isUpdating}
+											onClick={(evt) => {
+												evt.stopPropagation();
+												onSelect?.({ value: "update" });
+											}}
+										>
+											<Icon
+												className={cls({ "animate-spin": isUpdating })}
+												name="Update"
+												width={20}
+												height={20}
+											/>
+										</button>
+									</Tooltip>
+								)}
+							</>
 						)}
 					</div>
 				}

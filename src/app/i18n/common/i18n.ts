@@ -66,6 +66,7 @@ export const translations: { [key: string]: any } = {
 	ERROR: "Error",
 	ERRORS: {
 		INVALID_URL: "The link could not be opened: '{{url}}' is not a valid URL",
+		NETWORK_ERROR: "Failed to connect to {{network}}. Please check your peer settings",
 	},
 	EXCHANGE: "Exchange",
 	EXPLORER: "Explorer",

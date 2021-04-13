@@ -2,6 +2,7 @@ import { Button } from "app/components/Button";
 import { Divider } from "app/components/Divider";
 import { Dropdown, DropdownOption } from "app/components/Dropdown";
 import { Icon } from "app/components/Icon";
+import { Tooltip } from "app/components/Tooltip";
 import React, { useMemo } from "react";
 import { useTranslation } from "react-i18next";
 
@@ -78,9 +79,12 @@ export const PluginHeader = ({
 							{t("COMMON.LAUNCH")}
 						</Button>
 					)}
-					<Button data-testid="PluginHeader__button--report" variant="secondary" onClick={onReport}>
-						<Icon name="Report" width={20} height={20} />
-					</Button>
+
+					<Tooltip content={t("PLUGINS.PLUGIN_INFO.REPORT")}>
+						<Button data-testid="PluginHeader__button--report" variant="secondary" onClick={onReport}>
+							<Icon name="Report" width={20} height={20} />
+						</Button>
+					</Tooltip>
 
 					<Dropdown
 						toggleContent={
@@ -122,14 +126,17 @@ export const PluginHeader = ({
 				<Button data-testid="PluginHeader__button--install" onClick={onInstall}>
 					{t("COMMON.INSTALL")}
 				</Button>
-				<Button
-					className="ml-3"
-					onClick={onReport}
-					data-testid="PluginHeader__button--report"
-					variant="secondary"
-				>
-					<Icon name="Report" width={20} height={20} />
-				</Button>
+
+				<Tooltip content={t("PLUGINS.PLUGIN_INFO.REPORT")}>
+					<Button
+						className="ml-3"
+						onClick={onReport}
+						data-testid="PluginHeader__button--report"
+						variant="secondary"
+					>
+						<Icon name="Report" width={20} height={20} />
+					</Button>
+				</Tooltip>
 			</>
 		);
 	};

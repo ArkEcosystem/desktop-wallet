@@ -35,7 +35,7 @@ export const MnemonicVerificationOptions = ({ handleChange, options, limit, answ
 			return {
 				x: [-3, 3, 0],
 				transition: {
-					loop: 2,
+					repeat: 2,
 					duration: 0.1,
 				},
 			};
