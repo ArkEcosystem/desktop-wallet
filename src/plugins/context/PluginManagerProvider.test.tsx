@@ -468,26 +468,26 @@ describe("PluginManagerProvider", () => {
 	});
 
 	it("should filter packages", async () => {
-		const plugin = new PluginController({ name: "test-plugin" }, () => void 0);
+		const plugin = new PluginController({ name: "my-custom-plugin" }, () => void 0);
 		manager.plugins().push(plugin);
 
 		const Component = () => {
-			const { fetchPluginPackages, allPlugins, filterBy } = usePluginManagerContext();
+			const { fetchPluginPackages, searchResults, filterBy } = usePluginManagerContext();
 			const onClick = () => fetchPluginPackages();
 			return (
 				<div>
 					<button onClick={onClick}>Click</button>
-					{allPlugins.length > 0 && (
+					{searchResults.length > 0 && (
 						<div
 							onClick={() => {
-								filterBy({ query: "test" });
+								filterBy({ query: "custom" });
 							}}
 							data-testid="QueryByText"
 						/>
 					)}
 
 					<ul>
-						{allPlugins.map((pkg) => (
+						{searchResults.map((pkg) => (
 							<li key={pkg.name()}>{pkg.name()}</li>
 						))}
 					</ul>
@@ -518,12 +518,12 @@ describe("PluginManagerProvider", () => {
 		manager.plugins().push(plugin);
 
 		const Component = () => {
-			const { fetchPluginPackages, pluginPackages, filterBy, resetFilters } = usePluginManagerContext();
+			const { fetchPluginPackages, searchResults, filterBy, resetFilters } = usePluginManagerContext();
 			const onClick = () => fetchPluginPackages();
 			return (
 				<div>
 					<button onClick={onClick}>Click</button>
-					{pluginPackages.length > 0 && (
+					{searchResults.length > 0 && (
 						<div
 							onClick={() => {
 								filterBy({ query: "Transaction export" });
@@ -532,7 +532,7 @@ describe("PluginManagerProvider", () => {
 						/>
 					)}
 
-					{pluginPackages.length > 0 && (
+					{searchResults.length > 0 && (
 						<div
 							onClick={() => {
 								resetFilters();
@@ -541,7 +541,7 @@ describe("PluginManagerProvider", () => {
 						/>
 					)}
 					<ul>
-						{pluginPackages.map((pkg) => (
+						{searchResults.map((pkg) => (
 							<li key={pkg.name()}>{pkg.name()}</li>
 						))}
 					</ul>
@@ -559,13 +559,13 @@ describe("PluginManagerProvider", () => {
 
 		fireEvent.click(screen.getByRole("button"));
 
-		await waitFor(() => expect(screen.getAllByRole("listitem").length).toBe(2));
+		await waitFor(() => expect(screen.getAllByRole("listitem").length).toBe(3));
 
 		fireEvent.click(screen.getByTestId("QueryByText"));
 		await waitFor(() => expect(screen.getAllByRole("listitem").length).toBe(1));
 
 		fireEvent.click(screen.getByTestId("ResetFilters"));
-		await waitFor(() => expect(screen.getAllByRole("listitem").length).toBe(2));
+		await waitFor(() => expect(screen.getAllByRole("listitem").length).toBe(3));
 
 		manager.plugins().removeById(plugin.config().id(), profile);
 	});
