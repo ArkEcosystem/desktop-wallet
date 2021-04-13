@@ -1,5 +1,6 @@
 /* eslint-disable @typescript-eslint/require-await */
 import { Contracts } from "@arkecosystem/platform-sdk-profiles";
+import { toasts } from "app/services";
 import { createMemoryHistory } from "history";
 import nock from "nock";
 import React from "react";
@@ -283,13 +284,13 @@ describe("Votes", () => {
 
 		await waitFor(() => expect(getByTestId("AddressRow__status")).toBeTruthy());
 
-		const selectAddressButton = getByTestId("AddressRow__select-2");
+		const selectAddressButton = getByTestId("AddressRow__select-1");
 
 		act(() => {
 			fireEvent.click(selectAddressButton);
 		});
 
-		expect(getByTestId("DelegateTable")).toBeTruthy();
+		await waitFor(() => expect(getByTestId("DelegateTable")).toBeTruthy());
 		expect(asFragment()).toMatchSnapshot();
 	});
 
@@ -311,6 +312,61 @@ describe("Votes", () => {
 		expect(getByTestId("DelegateTable__footer")).toBeTruthy();
 		expect(getByTestId("DelegateTable__footer--total")).toHaveTextContent("1/1");
 		expect(asFragment()).toMatchSnapshot();
+	});
+
+	it("should handle wallet vote error and show empty delegates", async () => {
+		const route = `/profiles/${profile.id()}/wallets/${wallet.id()}/votes`;
+
+		const walletVoteMock = jest.spyOn(wallet, "votes").mockImplementation(() => {
+			throw new Error("delegate error");
+		});
+
+		const { asFragment, getByTestId } = renderPage(route);
+
+		expect(getByTestId("DelegateTable")).toBeTruthy();
+		await waitFor(() => {
+			expect(getByTestId("DelegateRow__toggle-0")).toBeTruthy();
+		});
+
+		const selectDelegateButton = getByTestId("DelegateRow__toggle-0");
+
+		act(() => {
+			fireEvent.click(selectDelegateButton);
+		});
+
+		expect(getByTestId("DelegateTable__footer")).toBeTruthy();
+		expect(getByTestId("DelegateTable__footer--total")).toHaveTextContent("1/1");
+		expect(asFragment()).toMatchSnapshot();
+		walletVoteMock.mockRestore();
+	});
+
+	it("should show network warning", async () => {
+		const route = `/profiles/${profile.id()}/wallets/${wallet.id()}/votes`;
+
+		const walletRestoreMock = jest.spyOn(wallet, "hasBeenPartiallyRestored").mockReturnValue(true);
+		const warningMock = jest.fn();
+		const toastSpy = jest.spyOn(toasts, "warning").mockImplementation(warningMock);
+
+		const { asFragment, getByTestId } = renderPage(route);
+
+		expect(getByTestId("DelegateTable")).toBeTruthy();
+		await waitFor(() => {
+			expect(getByTestId("DelegateRow__toggle-0")).toBeTruthy();
+		});
+
+		const selectDelegateButton = getByTestId("DelegateRow__toggle-0");
+
+		act(() => {
+			fireEvent.click(selectDelegateButton);
+		});
+
+		expect(getByTestId("DelegateTable__footer")).toBeTruthy();
+		expect(getByTestId("DelegateTable__footer--total")).toHaveTextContent("1/1");
+		expect(asFragment()).toMatchSnapshot();
+		walletRestoreMock.mockRestore();
+
+		expect(toastSpy).toHaveBeenCalled();
+		toastSpy.mockRestore();
 	});
 
 	it("should emit action on continue button", async () => {

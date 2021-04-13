@@ -533,11 +533,8 @@ describe("SendTransfer", () => {
 		expect(getByTestId("InputCurrency")).toHaveValue("0.1");
 	});
 
-	it("should handle fee change when send all is selected with zero balance", async () => {
-		const emptyProfile = env.profiles().findById("cba050f1-880f-45f0-9af9-cfe48f406052");
-		const emptyWallet = await emptyProfile.wallets().importByMnemonic("test", "ARK", "ark.devnet");
-
-		const transferURL = `/profiles/${emptyProfile.id()}/wallets/${emptyWallet.id()}/send-transfer`;
+	it("should handle fee change", async () => {
+		const transferURL = `/profiles/${fixtureProfileId}/wallets/${fixtureWalletId}/send-transfer?coin=ark&network=ark.devnet`;
 
 		const history = createMemoryHistory();
 		history.push(transferURL);
@@ -555,8 +552,6 @@ describe("SendTransfer", () => {
 		);
 
 		await waitFor(() => expect(getByTestId("SendTransfer__form-step")).toBeTruthy());
-
-		await waitFor(() => expect(getByTestId("SelectAddress__input")).toHaveValue(emptyWallet.address()));
 
 		// Select recipient
 		act(() => {
@@ -587,7 +582,11 @@ describe("SendTransfer", () => {
 		await act(async () => {
 			fireEvent.click(within(getByTestId("InputFee")).getByText(transactionTranslations.FEES.FAST));
 		});
-		expect(getByTestId("InputCurrency")).toHaveValue("0.1");
+		// Fee
+		await act(async () => {
+			fireEvent.change(getByTestId("InputCurrency"), { target: { value: "1000000000" } });
+		});
+		expect(getByTestId("InputCurrency")).toHaveValue("1000000000");
 	});
 
 	it("should send a single transfer", async () => {

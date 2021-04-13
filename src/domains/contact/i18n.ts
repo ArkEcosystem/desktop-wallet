@@ -5,6 +5,7 @@ export const translations: { [key: string]: any } = {
 			"It looks like you don't have any Contacts yet. After adding new Contacts, they can be viewed here.",
 		TITLE: "My Contacts",
 		SUBTITLE: "Manage your frequent Contacts",
+		NO_CONTACTS_FOUND: `Your search query "{{query}}" does not match any Contacts.`,
 	},
 
 	CONTACT_FORM: {

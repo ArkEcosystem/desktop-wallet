@@ -1,3 +1,4 @@
+import { Contracts } from "@arkecosystem/platform-sdk-profiles";
 import { uniq } from "@arkecosystem/utils";
 import { Button } from "app/components/Button";
 import { Form } from "app/components/Form";
@@ -91,7 +92,8 @@ export const CreateWallet = () => {
 	const generateWallet = async () => {
 		const network = getValues("network");
 
-		const { mnemonic, wallet } = await activeProfile.wallets().generate(network.coin(), network.id());
+		const locale = activeProfile.settings().get<string>(Contracts.ProfileSetting.Bip39Locale, "english");
+		const { mnemonic, wallet } = await activeProfile.wallets().generate(network.coin(), network.id(), locale);
 
 		setValue("wallet", wallet, { shouldValidate: true, shouldDirty: true });
 		setValue("mnemonic", mnemonic, { shouldValidate: true, shouldDirty: true });
