@@ -186,7 +186,6 @@ module.exports = {
 				20: "20px",
 			},
 			borderRadius: {
-				"10px": "0.625rem",
 				"3xl": "1.25rem",
 			},
 			fontFamily: {
