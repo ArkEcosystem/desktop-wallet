@@ -173,6 +173,24 @@ describe("PluginGrid", () => {
 		expect(onUpdate).toHaveBeenCalledTimes(1);
 	});
 
+	it("should trigger update by addon button", () => {
+		const onUpdate = jest.fn();
+
+		const { container } = render(
+			<PluginGrid
+				plugins={[{ ...plugins[0], isInstalled: true, hasUpdateAvailable: true }]}
+				onSelect={jest.fn()}
+				onUpdate={onUpdate}
+			/>,
+		);
+
+		fireEvent.click(screen.getByTestId("PluginCard__update-available"));
+
+		expect(onUpdate).toHaveBeenCalledTimes(1);
+
+		expect(container).toMatchSnapshot();
+	});
+
 	it("should trigger delete", () => {
 		const onDelete = jest.fn();
 

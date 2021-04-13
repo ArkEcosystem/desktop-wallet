@@ -109,19 +109,20 @@ export const Welcome = () => {
 						</p>
 
 						<div className="mt-8">
-							<div className="-my-2.5 flex flex-wrap justify-center">
+							<div className="ml-4.5 -mb-4.5 flex flex-wrap justify-center">
 								{profiles.map((profile: Contracts.IProfile, index: number) => (
 									<ProfileCard
-										onClick={() => handleClick(profile)}
 										key={index}
-										profile={profile}
 										actions={profileCardActions}
+										className="mr-4.5 mb-4.5"
+										profile={profile}
+										onClick={() => handleClick(profile)}
 										onSelect={(action: any) => handleProfileAction(profile, action)}
 									/>
 								))}
 
 								<Card
-									className="w-40 h-40 leading-tight m-2.5 group"
+									className="w-40 h-40 leading-tight mr-4.5 mb-4.5 group"
 									onClick={() => history.push("/profiles/create")}
 								>
 									<div className="flex flex-col justify-center items-center mx-auto h-full">

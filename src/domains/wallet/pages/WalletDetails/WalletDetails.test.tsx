@@ -3,13 +3,13 @@ import { Coins } from "@arkecosystem/platform-sdk";
 import { Contracts } from "@arkecosystem/platform-sdk-profiles";
 // @README: This import is fine in tests but should be avoided in production code.
 import { ReadOnlyWallet } from "@arkecosystem/platform-sdk-profiles/dist/drivers/memory/wallets/read-only-wallet";
-import { useConfiguration } from "app/contexts";
 import { translations as commonTranslations } from "app/i18n/common/i18n";
+import { toasts } from "app/services";
 import { translations as walletTranslations } from "domains/wallet/i18n";
 import { createMemoryHistory } from "history";
 import { when } from "jest-when";
 import nock from "nock";
-import React, { useEffect } from "react";
+import React from "react";
 import { Route } from "react-router-dom";
 import walletMock from "tests/fixtures/coins/ark/devnet/wallets/D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD.json";
 import {
@@ -41,38 +41,39 @@ let wallet2: Contracts.IReadWriteWallet;
 
 const passphrase2 = "power return attend drink piece found tragic fire liar page disease combine";
 
-const renderPage = async (waitForTopSection = true) => {
-	let rendered: RenderResult;
+const renderPage = async ({
+	waitForTopSection = true,
+	waitForTransactions = true,
+	withProfileSynchronizer = false,
+} = {}) => {
+	const rendered: RenderResult = renderWithRouter(
+		<Route path="/profiles/:profileId/wallets/:walletId">
+			<WalletDetails />
+		</Route>,
+		{
+			routes: [walletUrl],
+			history,
+			withProfileSynchronizer,
+		},
+	);
 
-	const Page = () => {
-		const { setConfiguration } = useConfiguration();
-
-		useEffect(() => {
-			setConfiguration({ profileIsSyncing: false });
-		}, []);
-
-		return <WalletDetails txSkeletonRowsLimit={1} transactionLimit={1} />;
-	};
-
-	await act(async () => {
-		rendered = renderWithRouter(
-			<Route path="/profiles/:profileId/wallets/:walletId">
-				<Page />
-			</Route>,
-			{
-				routes: [walletUrl],
-				history,
-			},
-		);
-	});
-
-	const { getByTestId, queryAllByTestId } = rendered;
+	const { getByTestId } = rendered;
 
 	if (waitForTopSection) {
 		await waitFor(() => expect(getByTestId("WalletVote")).toBeTruthy());
 	}
 
-	await waitFor(() => expect(within(getByTestId("TransactionTable")).queryAllByTestId("TableRow")).toHaveLength(1));
+	if (waitForTransactions) {
+		if (withProfileSynchronizer) {
+			await waitFor(() =>
+				expect(within(getByTestId("TransactionTable")).queryAllByTestId("TableRow")).toHaveLength(1),
+			);
+		} else {
+			await waitFor(() =>
+				expect(within(getByTestId("TransactionTable")).queryAllByTestId("TableRow")).not.toHaveLength(0),
+			);
+		}
+	}
 
 	return rendered;
 };
@@ -131,12 +132,25 @@ describe("WalletDetails", () => {
 		history.push(walletUrl);
 	});
 
+	it("should show network connection warning", async () => {
+		const walletRestoreMock = jest.spyOn(wallet, "hasBeenPartiallyRestored").mockReturnValue(true);
+
+		const warningMock = jest.fn();
+		const toastSpy = jest.spyOn(toasts, "warning").mockImplementation(warningMock);
+
+		await renderPage({ waitForTopSection: false });
+
+		await waitFor(() => expect(toastSpy).toHaveBeenCalled());
+		walletRestoreMock.mockRestore();
+		toastSpy.mockRestore();
+	});
+
 	it("should not render wallet vote when the network does not support votes", async () => {
 		const networkFeatureSpy = jest.spyOn(wallet.network(), "can");
 
 		when(networkFeatureSpy).calledWith(Coins.FeatureFlag.TransactionVote).mockReturnValue(false);
 
-		const { getByTestId } = await renderPage(false);
+		const { getByTestId } = await renderPage({ waitForTopSection: false });
 
 		await waitFor(() => {
 			expect(() => getByTestId("WalletVote")).toThrow(/Unable to find an element by/);
@@ -149,18 +163,16 @@ describe("WalletDetails", () => {
 		walletUrl = `/profiles/${profile.id()}/wallets/${blankWallet.id()}`;
 		history.push(walletUrl);
 
-		const { asFragment, getByText } = await renderPage();
+		const { getByText } = await renderPage({ waitForTopSection: true, waitForTransactions: false });
 
 		await waitFor(() => expect(getByText(commonTranslations.LEARN_MORE)).toBeTruthy());
-
-		expect(asFragment()).toMatchSnapshot();
 	});
 
 	it("should navigate to votes page when clicking on WalletVote button", async () => {
 		const walletSpy = jest.spyOn(wallet, "votes").mockReturnValue([]);
 		const historySpy = jest.spyOn(history, "push");
 
-		const { getByTestId, getByText, queryAllByTestId } = await renderPage();
+		const { getByTestId, getByText } = await renderPage();
 
 		await waitFor(() => expect(getByText(commonTranslations.LEARN_MORE)).toBeTruthy());
 
@@ -194,7 +206,7 @@ describe("WalletDetails", () => {
 		const maxVotesSpy = jest.spyOn(wallet.network(), "maximumVotesPerWallet").mockReturnValue(101);
 		const historySpy = jest.spyOn(history, "push");
 
-		const { getByText, queryAllByTestId } = await renderPage();
+		const { getByText } = await renderPage();
 
 		act(() => {
 			fireEvent.click(getByText(walletTranslations.PAGE_WALLET_DETAILS.VOTES.MULTIVOTE));
@@ -234,8 +246,6 @@ describe("WalletDetails", () => {
 		});
 
 		await waitFor(() => expect(wallet.settings().get(Contracts.WalletSetting.Alias)).toEqual(name));
-
-		expect(asFragment()).toMatchSnapshot();
 	});
 
 	it("should remove wallet name", async () => {
@@ -262,8 +272,6 @@ describe("WalletDetails", () => {
 		});
 
 		await waitFor(() => expect(wallet.settings().get(Contracts.WalletSetting.Alias)).toBe(undefined));
-
-		expect(asFragment()).toMatchSnapshot();
 	});
 
 	it("should star and unstar a wallet", async () => {
@@ -282,12 +290,14 @@ describe("WalletDetails", () => {
 		});
 
 		await waitFor(() => expect(wallet.isStarred()).toBe(false));
-
-		expect(asFragment()).toMatchSnapshot();
 	});
 
 	it("should open detail modal on transaction row click", async () => {
-		const { asFragment, getByTestId } = await renderPage();
+		const { getByTestId } = await renderPage({
+			waitForTopSection: true,
+			waitForTransactions: true,
+			withProfileSynchronizer: true,
+		});
 
 		act(() => {
 			fireEvent.click(within(getByTestId("TransactionTable")).getAllByTestId("TableRow")[0]);
@@ -299,11 +309,15 @@ describe("WalletDetails", () => {
 			fireEvent.click(getByTestId("modal__close-btn"));
 		});
 
-		expect(asFragment()).toMatchSnapshot();
+		await waitFor(() => expect(() => getByTestId("modal__inner")).toThrow());
 	});
 
 	it("should fetch more transactions", async () => {
-		const { getByTestId, getAllByTestId } = await renderPage();
+		const { getByTestId, getAllByTestId } = await renderPage({
+			waitForTopSection: true,
+			waitForTransactions: true,
+			withProfileSynchronizer: true,
+		});
 
 		const fetchMoreTransactionsBtn = getByTestId("transactions__fetch-more-button");
 
@@ -376,8 +390,6 @@ describe("WalletDetails", () => {
 		const { asFragment, getByText } = await renderPage();
 
 		await waitFor(() => expect(getByText(commonTranslations.LEARN_MORE)).toBeTruthy());
-
-		expect(asFragment()).toMatchSnapshot();
 
 		syncVotesSpy.mockRestore();
 	});

@@ -4,7 +4,7 @@ import { ReadOnlyWallet } from "@arkecosystem/platform-sdk-profiles/dist/drivers
 import { translations as commonTranslations } from "app/i18n/common/i18n";
 import { translations as walletTranslations } from "domains/wallet/i18n";
 import React from "react";
-import { act, env, fireEvent, getDefaultProfileId, render, syncDelegates } from "utils/testing-library";
+import { act, env, fireEvent, getDefaultProfileId, render, syncDelegates, waitFor } from "utils/testing-library";
 
 import { WalletVote } from "./WalletVote";
 
@@ -19,38 +19,71 @@ describe("WalletVote", () => {
 		await wallet.syncVotes();
 	});
 
-	it("should render", () => {
-		const { asFragment, getByTestId } = render(<WalletVote wallet={wallet} onButtonClick={jest.fn()} />);
+	it("should render", async () => {
+		const { asFragment, getByTestId } = render(<WalletVote wallet={wallet} onButtonClick={jest.fn()} env={env} />);
 
-		expect(getByTestId("WalletVote")).toBeTruthy();
+		await waitFor(() => expect(getByTestId("WalletVote")).toBeTruthy());
 		expect(asFragment()).toMatchSnapshot();
 	});
 
-	it("should render loading state", () => {
-		const { asFragment, getByTestId } = render(<WalletVote wallet={wallet} onButtonClick={jest.fn()} isLoading />);
-
-		expect(getByTestId("WalletVote__skeleton")).toBeTruthy();
-		expect(asFragment()).toMatchSnapshot();
-	});
-
-	it("should render without votes", () => {
+	it("should render without votes", async () => {
 		const walletSpy = jest.spyOn(wallet, "votes").mockReturnValue([]);
 
-		const { asFragment, getByText } = render(<WalletVote wallet={wallet} onButtonClick={jest.fn()} />);
+		const { asFragment, getByText, getByTestId } = render(
+			<WalletVote wallet={wallet} onButtonClick={jest.fn()} env={env} />,
+		);
 
+		await waitFor(() => expect(getByTestId("WalletVote")).toBeTruthy());
 		expect(getByText(commonTranslations.LEARN_MORE)).toBeTruthy();
 		expect(asFragment()).toMatchSnapshot();
 
 		walletSpy.mockRestore();
 	});
 
-	it("should render the maximum votes", () => {
+	it("should handle wallet votes error", async () => {
+		const walletSpy = jest.spyOn(wallet, "votes").mockImplementation(() => {
+			throw new Error("delegate error");
+		});
+
+		const { asFragment, getByText, getByTestId } = render(
+			<WalletVote wallet={wallet} onButtonClick={jest.fn()} env={env} />,
+		);
+
+		await waitFor(() => expect(getByTestId("WalletVote")).toBeTruthy());
+		expect(getByText(commonTranslations.LEARN_MORE)).toBeTruthy();
+		expect(asFragment()).toMatchSnapshot();
+
+		walletSpy.mockRestore();
+	});
+
+	it("should handle delegate sync error", async () => {
+		const delegateSyncSpy = jest.spyOn(env.delegates(), "sync").mockImplementation(() => {
+			throw new Error("delegate error");
+		});
+		const walletSpy = jest.spyOn(wallet, "votes").mockReturnValue([]);
+
+		const { asFragment, getByText, getByTestId } = render(
+			<WalletVote wallet={wallet} onButtonClick={jest.fn()} env={env} />,
+		);
+
+		await waitFor(() => expect(getByTestId("WalletVote")).toBeTruthy());
+		expect(getByText(commonTranslations.LEARN_MORE)).toBeTruthy();
+		expect(asFragment()).toMatchSnapshot();
+
+		delegateSyncSpy.mockRestore();
+		walletSpy.mockRestore();
+	});
+
+	it("should render the maximum votes", async () => {
 		const walletSpy = jest.spyOn(wallet, "votes").mockReturnValue([]);
 		const maxVotesSpy = jest.spyOn(wallet.network(), "maximumVotesPerWallet").mockReturnValue(101);
 
-		const { asFragment, getByText } = render(<WalletVote wallet={wallet} onButtonClick={jest.fn()} />);
+		const { asFragment, getByText, getByTestId } = render(
+			<WalletVote wallet={wallet} onButtonClick={jest.fn()} env={env} />,
+		);
 
-		expect(getByText("0/101")).toBeTruthy();
+		await waitFor(() => expect(getByTestId("WalletVote")).toBeTruthy());
+		await waitFor(() => expect(getByText("0/101")).toBeTruthy());
 		expect(asFragment()).toMatchSnapshot();
 
 		walletSpy.mockRestore();
@@ -58,7 +91,7 @@ describe("WalletVote", () => {
 	});
 
 	describe("single vote networks", () => {
-		it("should render a vote for an active delegate", () => {
+		it("should render a vote for an active delegate", async () => {
 			const walletSpy = jest.spyOn(wallet, "votes").mockReturnValue([
 				new ReadOnlyWallet({
 					address: wallet.address(),
@@ -69,10 +102,13 @@ describe("WalletVote", () => {
 				}),
 			]);
 
-			const { asFragment, getByText } = render(<WalletVote wallet={wallet} onButtonClick={jest.fn()} />);
+			const { asFragment, getByText, getByTestId } = render(
+				<WalletVote wallet={wallet} onButtonClick={jest.fn()} env={env} />,
+			);
 
 			const delegate = wallet.votes()[0];
 
+			await waitFor(() => expect(getByTestId("WalletVote")).toBeTruthy());
 			expect(getByText(delegate.username())).toBeTruthy();
 			expect(getByText(`#${delegate.rank()}`)).toBeTruthy();
 			expect(getByText(walletTranslations.PAGE_WALLET_DETAILS.VOTES.ACTIVE)).toBeTruthy();
@@ -82,7 +118,7 @@ describe("WalletVote", () => {
 			walletSpy.mockRestore();
 		});
 
-		it("should render a vote for a standby delegate", () => {
+		it("should render a vote for a standby delegate", async () => {
 			const walletSpy = jest.spyOn(wallet, "votes").mockReturnValue([
 				new ReadOnlyWallet({
 					address: wallet.address(),
@@ -93,10 +129,13 @@ describe("WalletVote", () => {
 				}),
 			]);
 
-			const { asFragment, getByText } = render(<WalletVote wallet={wallet} onButtonClick={jest.fn()} />);
+			const { asFragment, getByText, getByTestId } = render(
+				<WalletVote wallet={wallet} onButtonClick={jest.fn()} env={env} />,
+			);
 
 			const delegate = wallet.votes()[0];
 
+			await waitFor(() => expect(getByTestId("WalletVote")).toBeTruthy());
 			expect(getByText(delegate.username())).toBeTruthy();
 			expect(getByText(`#${delegate.rank()}`)).toBeTruthy();
 			expect(getByText(walletTranslations.PAGE_WALLET_DETAILS.VOTES.STANDBY)).toBeTruthy();
@@ -106,7 +145,7 @@ describe("WalletVote", () => {
 			walletSpy.mockRestore();
 		});
 
-		it("should render a vote for a delegate without rank", () => {
+		it("should render a vote for a delegate without rank", async () => {
 			const walletSpy = jest.spyOn(wallet, "votes").mockReturnValue([
 				new ReadOnlyWallet({
 					address: wallet.address(),
@@ -116,10 +155,13 @@ describe("WalletVote", () => {
 				}),
 			]);
 
-			const { asFragment, getByText } = render(<WalletVote wallet={wallet} onButtonClick={jest.fn()} />);
+			const { asFragment, getByText, getByTestId } = render(
+				<WalletVote wallet={wallet} onButtonClick={jest.fn()} env={env} />,
+			);
 
 			const delegate = wallet.votes()[0];
 
+			await waitFor(() => expect(getByTestId("WalletVote")).toBeTruthy());
 			expect(getByText(delegate.username())).toBeTruthy();
 			expect(getByText(commonTranslations.NOT_AVAILABLE)).toBeTruthy();
 			expect(getByText(walletTranslations.PAGE_WALLET_DETAILS.VOTES.STANDBY)).toBeTruthy();
@@ -138,7 +180,7 @@ describe("WalletVote", () => {
 
 		afterEach(() => maxVotesSpy.mockRestore());
 
-		it("should render a vote for multiple active delegates", () => {
+		it("should render a vote for multiple active delegates", async () => {
 			const walletSpy = jest.spyOn(wallet, "votes").mockReturnValue([
 				new ReadOnlyWallet({
 					address: wallet.address(),
@@ -156,8 +198,11 @@ describe("WalletVote", () => {
 				}),
 			]);
 
-			const { asFragment, getByText } = render(<WalletVote wallet={wallet} onButtonClick={jest.fn()} />);
+			const { asFragment, getByText, getByTestId } = render(
+				<WalletVote wallet={wallet} onButtonClick={jest.fn()} env={env} />,
+			);
 
+			await waitFor(() => expect(getByTestId("WalletVote")).toBeTruthy());
 			expect(getByText(walletTranslations.PAGE_WALLET_DETAILS.VOTES.MULTIVOTE)).toBeTruthy();
 			expect(getByText(walletTranslations.PAGE_WALLET_DETAILS.VOTES.ACTIVE_plural)).toBeTruthy();
 
@@ -166,7 +211,7 @@ describe("WalletVote", () => {
 			walletSpy.mockRestore();
 		});
 
-		it("should render a vote for multiple active delegates", () => {
+		it("should render a vote for multiple active delegates", async () => {
 			const walletSpy = jest.spyOn(wallet, "votes").mockReturnValue([
 				new ReadOnlyWallet({
 					address: wallet.address(),
@@ -182,8 +227,11 @@ describe("WalletVote", () => {
 				}),
 			]);
 
-			const { asFragment, getByText } = render(<WalletVote wallet={wallet} onButtonClick={jest.fn()} />);
+			const { asFragment, getByText, getByTestId } = render(
+				<WalletVote wallet={wallet} onButtonClick={jest.fn()} env={env} />,
+			);
 
+			await waitFor(() => expect(getByTestId("WalletVote")).toBeTruthy());
 			expect(getByText(walletTranslations.PAGE_WALLET_DETAILS.VOTES.MULTIVOTE)).toBeTruthy();
 			expect(getByText(walletTranslations.PAGE_WALLET_DETAILS.VOTES.STANDBY_plural)).toBeTruthy();
 
@@ -192,7 +240,7 @@ describe("WalletVote", () => {
 			walletSpy.mockRestore();
 		});
 
-		it("should render a vote for multiple active and standby delegates", () => {
+		it("should render a vote for multiple active and standby delegates", async () => {
 			const walletSpy = jest.spyOn(wallet, "votes").mockReturnValue([
 				new ReadOnlyWallet({
 					address: wallet.address(),
@@ -209,8 +257,11 @@ describe("WalletVote", () => {
 				}),
 			]);
 
-			const { asFragment, getByText } = render(<WalletVote wallet={wallet} onButtonClick={jest.fn()} />);
+			const { asFragment, getByText, getByTestId } = render(
+				<WalletVote wallet={wallet} onButtonClick={jest.fn()} env={env} />,
+			);
 
+			await waitFor(() => expect(getByTestId("WalletVote")).toBeTruthy());
 			expect(getByText(walletTranslations.PAGE_WALLET_DETAILS.VOTES.MULTIVOTE)).toBeTruthy();
 			expect(getByText("Active 1")).toBeTruthy();
 			expect(getByText("/ Standby 1")).toBeTruthy();
@@ -222,7 +273,7 @@ describe("WalletVote", () => {
 		});
 	});
 
-	it("should emit action on multivote click", () => {
+	it("should emit action on multivote click", async () => {
 		const walletSpy = jest.spyOn(wallet, "votes").mockReturnValue([
 			new ReadOnlyWallet({
 				address: wallet.address(),
@@ -242,8 +293,11 @@ describe("WalletVote", () => {
 
 		const onButtonClick = jest.fn();
 
-		const { getByText } = render(<WalletVote wallet={wallet} onButtonClick={onButtonClick} />);
+		const { getByText, getByTestId } = render(
+			<WalletVote wallet={wallet} onButtonClick={onButtonClick} env={env} />,
+		);
 
+		await waitFor(() => expect(getByTestId("WalletVote")).toBeTruthy());
 		act(() => {
 			fireEvent.click(getByText(walletTranslations.PAGE_WALLET_DETAILS.VOTES.MULTIVOTE));
 		});
@@ -253,12 +307,16 @@ describe("WalletVote", () => {
 		walletSpy.mockRestore();
 	});
 
-	it("should emit action on button click", () => {
+	it("should emit action on button click", async () => {
 		const walletSpy = jest.spyOn(wallet, "votes").mockReturnValue([]);
 
 		const onButtonClick = jest.fn();
 
-		const { getByText } = render(<WalletVote wallet={wallet} onButtonClick={onButtonClick} />);
+		const { getByText, getByTestId } = render(
+			<WalletVote wallet={wallet} onButtonClick={onButtonClick} env={env} />,
+		);
+
+		await waitFor(() => expect(getByTestId("WalletVote")).toBeTruthy());
 
 		act(() => {
 			fireEvent.click(getByText(commonTranslations.VOTE));

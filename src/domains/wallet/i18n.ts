@@ -50,7 +50,9 @@ export const translations: { [key: string]: any } = {
 
 		FORM_STEP: {
 			TITLE: "Sign Message",
-			DESCRIPTION: "Provide a message below and sign with your mnemonic passphrase.",
+			DESCRIPTION_MNEMONIC: "Provide a message below and sign with your mnemonic passphrase.",
+			DESCRIPTION_ENCRYPTION_PASSWORD: "Provide a message below and sign with your encryption password.",
+			DESCRIPTION_LEDGER: "Provide a message below and sign with your ledger.",
 		},
 
 		LEDGER_CONFIRMATION_STEP: {

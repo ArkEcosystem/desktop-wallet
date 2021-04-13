@@ -6,12 +6,12 @@ import { BigNumber } from "@arkecosystem/platform-sdk-support";
 import { renderHook } from "@testing-library/react-hooks";
 import { Form } from "app/components/Form";
 import { toasts } from "app/services";
-import electron from "electron";
 import React from "react";
 import { useForm } from "react-hook-form";
 import { useTranslation } from "react-i18next";
 import { act } from "react-test-renderer";
 import secondSignatureFixture from "tests/fixtures/coins/ark/devnet/transactions/second-signature-registration.json";
+import * as utils from "utils/electron-utils";
 import { env, fireEvent, getDefaultProfileId, render, screen, waitFor } from "utils/testing-library";
 
 import { translations as transactionTranslations } from "../../i18n";
@@ -113,17 +113,13 @@ describe("SecondSignatureRegistrationForm", () => {
 			navigator.clipboard = { writeText: writeTextMock };
 
 			act(() => {
-				fireEvent.click(screen.getByTestId(`SecondSignature__copy`));
+				fireEvent.click(screen.getByTestId("SecondSignature__copy"));
 			});
 
 			await waitFor(() => expect(writeTextMock).toHaveBeenCalledWith("test mnemonic"));
 
 			// @ts-ignore
 			navigator.clipboard = clipboardOriginal;
-
-			act(() => {
-				fireEvent.click(screen.getByTestId(`SecondSignature__download`));
-			});
 
 			expect(asFragment()).toMatchSnapshot();
 		});
@@ -142,14 +138,12 @@ describe("SecondSignatureRegistrationForm", () => {
 
 			render(<Component form={result.current} onSubmit={() => void 0} activeTab={2} />);
 
-			jest.spyOn(electron.remote.dialog, "showSaveDialog").mockImplementation(() => ({
-				filePath: "filePath",
-			}));
+			jest.spyOn(utils, "saveFile").mockResolvedValueOnce("filePath");
 
 			const toastSpy = jest.spyOn(toasts, "success");
 
 			await act(async () => {
-				fireEvent.click(screen.getByTestId(`SecondSignature__download`));
+				fireEvent.click(screen.getByTestId("SecondSignature__download"));
 			});
 
 			expect(toastSpy).toHaveBeenCalled();
@@ -170,14 +164,12 @@ describe("SecondSignatureRegistrationForm", () => {
 
 			render(<Component form={result.current} onSubmit={() => void 0} activeTab={2} />);
 
-			jest.spyOn(electron.remote.dialog, "showSaveDialog").mockImplementation(() => ({
-				filePath: undefined,
-			}));
+			jest.spyOn(utils, "saveFile").mockResolvedValueOnce(undefined);
 
 			const toastSpy = jest.spyOn(toasts, "success");
 
 			await act(async () => {
-				fireEvent.click(screen.getByTestId(`SecondSignature__download`));
+				fireEvent.click(screen.getByTestId("SecondSignature__download"));
 			});
 
 			expect(toastSpy).not.toHaveBeenCalled();
@@ -198,14 +190,12 @@ describe("SecondSignatureRegistrationForm", () => {
 
 			render(<Component form={result.current} onSubmit={() => void 0} activeTab={2} />);
 
-			jest.spyOn(electron.remote.dialog, "showSaveDialog").mockImplementation(() => {
-				throw new Error("Error");
-			});
+			jest.spyOn(utils, "saveFile").mockRejectedValueOnce(new Error("Error"));
 
 			const toastSpy = jest.spyOn(toasts, "error");
 
 			await act(async () => {
-				fireEvent.click(screen.getByTestId(`SecondSignature__download`));
+				fireEvent.click(screen.getByTestId("SecondSignature__download"));
 			});
 
 			expect(toastSpy).toHaveBeenCalled();
