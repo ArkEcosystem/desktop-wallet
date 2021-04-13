@@ -27,7 +27,7 @@ const useProfileWatcher = () => {
 	return useMemo(() => getProfileById(profileId), [profileId, env, allProfilesCount, getProfileById]); // eslint-disable-line react-hooks/exhaustive-deps
 };
 
-const useProfileJobs = (profile?: Contracts.IProfile) => {
+const useProfileJobs = (profile?: Contracts.IProfile): Record<string, any> => {
 	const { env } = useEnvironmentContext();
 	const { notifications } = useNotifications();
 
@@ -62,7 +62,10 @@ const useProfileJobs = (profile?: Contracts.IProfile) => {
 			interval: Intervals.Long,
 		};
 
-		return [syncExchangeRates, syncNotifications, syncKnownWallets, syncDelegates];
+		return {
+			allJobs: [syncExchangeRates, syncNotifications, syncKnownWallets, syncDelegates],
+			syncExchangeRates: syncExchangeRates.callback,
+		};
 	}, [env, profile, walletsCount, notifications]); // eslint-disable-line react-hooks/exhaustive-deps
 };
 
@@ -192,8 +195,8 @@ export const useProfileSynchronizer = ({ onProfileRestoreError }: ProfileSynchro
 		markAsRestored,
 	} = useProfileSyncStatus();
 
-	const jobs = useProfileJobs(profile);
-	const { start, stop, runAll } = useSynchronizer(jobs);
+	const { allJobs, syncExchangeRates } = useProfileJobs(profile);
+	const { start, stop, runAll } = useSynchronizer(allJobs);
 
 	useEffect(() => {
 		const clearProfileSyncStatus = () => {
@@ -227,7 +230,7 @@ export const useProfileSynchronizer = ({ onProfileRestoreError }: ProfileSynchro
 			if (shouldSync()) {
 				setStatus("syncing");
 
-				runAll();
+				await syncExchangeRates();
 
 				setStatus("synced");
 			}
@@ -243,7 +246,8 @@ export const useProfileSynchronizer = ({ onProfileRestoreError }: ProfileSynchro
 
 		syncProfile(profile);
 	}, [
-		jobs,
+		allJobs,
+		syncExchangeRates,
 		profile,
 		runAll,
 		start,
