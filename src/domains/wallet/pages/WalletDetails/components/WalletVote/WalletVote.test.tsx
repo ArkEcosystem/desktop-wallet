@@ -1,6 +1,7 @@
 import { Contracts } from "@arkecosystem/platform-sdk-profiles";
 // @README: This import is fine in tests but should be avoided in production code.
 import { ReadOnlyWallet } from "@arkecosystem/platform-sdk-profiles/dist/drivers/memory/wallets/read-only-wallet";
+import { BigNumber } from "@arkecosystem/platform-sdk-support";
 import { translations as commonTranslations } from "app/i18n/common/i18n";
 import { translations as walletTranslations } from "domains/wallet/i18n";
 import React from "react";
@@ -38,6 +39,20 @@ describe("WalletVote", () => {
 		expect(asFragment()).toMatchSnapshot();
 
 		walletSpy.mockRestore();
+	});
+
+	it("should render disabled vote button", async () => {
+		const balanceSpy = jest.spyOn(wallet, "balance").mockReturnValue(BigNumber.ZERO);
+
+		const { asFragment, getByRole, getByTestId } = render(
+			<WalletVote wallet={wallet} onButtonClick={jest.fn()} env={env} />,
+		);
+
+		await waitFor(() => expect(getByTestId("WalletVote")).toBeTruthy());
+		expect(getByRole("button")).toBeDisabled();
+		expect(asFragment()).toMatchSnapshot();
+
+		balanceSpy.mockRestore();
 	});
 
 	it("should handle wallet votes error", async () => {
