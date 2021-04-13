@@ -1,8 +1,6 @@
 import { Data } from "@arkecosystem/platform-sdk";
 import { Contracts, Helpers } from "@arkecosystem/platform-sdk-profiles";
-import { BigNumber } from "@arkecosystem/platform-sdk-support";
 import { images } from "app/assets/images";
-import { Amount } from "app/components/Amount";
 import { Avatar } from "app/components/Avatar";
 import { Button } from "app/components/Button";
 import { Circle } from "app/components/Circle";
@@ -11,6 +9,7 @@ import { Icon } from "app/components/Icon";
 import { NotificationsDropdown } from "app/components/Notifications";
 import { Action } from "app/components/Notifications/models";
 import { Tooltip } from "app/components/Tooltip";
+import { useConfiguration } from "app/contexts";
 import { useScroll } from "app/hooks";
 import { ReceiveFunds } from "domains/wallet/components/ReceiveFunds";
 import { SearchWallet } from "domains/wallet/components/SearchWallet";
@@ -23,6 +22,7 @@ import { NavbarVariant } from "types";
 import { openExternal } from "utils/electron-utils";
 
 import { BackButton } from "./components/BackButton";
+import { Balance } from "./components/Balance";
 import { defaultStyle } from "./NavigationBar.styles";
 
 const { ARKLogo } = images.common;
@@ -156,6 +156,8 @@ export const NavigationBar = ({
 		setSelectedWallet(wallet);
 	};
 
+	const { profileIsSyncing } = useConfiguration();
+
 	const renderMenu = () => {
 		if (!profile?.id()) {
 			return null;
@@ -268,22 +270,7 @@ export const NavigationBar = ({
 							</div>
 
 							<div className="flex items-center my-auto ml-8">
-								<div className="text-right">
-									<div className="text-xs font-semibold text-theme-secondary-700">
-										{t("COMMON.YOUR_BALANCE")}
-									</div>
-									<div className="text-sm font-bold text-theme-secondary-text dark:text-theme-text">
-										<Amount
-											value={profile?.convertedBalance() || BigNumber.ZERO}
-											ticker={
-												profile
-													?.settings()
-													.get<string>(Contracts.ProfileSetting.ExchangeCurrency) || ""
-											}
-											normalize={false}
-										/>
-									</div>
-								</div>
+								<Balance profile={profile} isLoading={profileIsSyncing} />
 
 								<UserInfo
 									userInitials={getUserInitials()}
