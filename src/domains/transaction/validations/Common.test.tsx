@@ -14,4 +14,15 @@ describe("Common", () => {
 		const comm = common(t).fee(BigNumber.make(1), network);
 		expect(comm.validate.valid("1234")).toBeTruthy();
 	});
+
+	it("should validate zero balance", () => {
+		const { result } = renderHook(() => useTranslation());
+		const { t } = result.current;
+		const network = env.profiles().first().wallets().first().network();
+		const comm = common(t).fee(BigNumber.make(0), network);
+		expect(comm.validate.valid("1234")).toBeTruthy();
+
+		const commonValidation = common(t).fee(BigNumber.make(-1), network);
+		expect(commonValidation.validate.valid("1234")).toBeTruthy();
+	});
 });

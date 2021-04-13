@@ -4,6 +4,7 @@ import { DTO } from "@arkecosystem/platform-sdk-profiles";
 import { Page, Section } from "app/components/Layout";
 import { useConfiguration, useEnvironmentContext } from "app/contexts";
 import { useActiveProfile, useActiveWallet } from "app/hooks/env";
+import { toasts } from "app/services";
 import { MultiSignatureDetail } from "domains/transaction/components/MultiSignatureDetail";
 import { TransactionDetailModal } from "domains/transaction/components/TransactionDetailModal";
 import { Transactions } from "domains/transaction/components/Transactions";
@@ -32,6 +33,12 @@ export const WalletDetails = () => {
 	useEffect(() => {
 		syncMultiSignatures();
 	}, [syncMultiSignatures]);
+
+	useEffect(() => {
+		if (activeWallet.hasBeenPartiallyRestored()) {
+			toasts.warning(t("COMMON.ERRORS.NETWORK_ERROR", { network: `${activeWallet.network().name()} ` }));
+		}
+	}, [activeWallet, t]);
 
 	const handleVoteButton = (filter?: string) => {
 		/* istanbul ignore else */

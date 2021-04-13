@@ -1,6 +1,7 @@
 import { Divider } from "app/components/Divider";
 import { Icon } from "app/components/Icon";
 import { clickOutsideHandler } from "app/hooks";
+import cn from "classnames";
 import React, { useEffect, useRef, useState } from "react";
 import { styled } from "twin.macro";
 import { Position, Size } from "types";
@@ -265,7 +266,7 @@ export const Dropdown = ({
 					data-testid="dropdown__content"
 					position={position}
 					variant={options ? "options" : "custom"}
-					className={`opacity-0 ${defaultClasses} ${dropdownClass || ""}`}
+					className={cn("opacity-0", defaultClasses, dropdownClass)}
 				>
 					{options?.length && renderOptions(options, select)}
 					{children && <div>{children}</div>}

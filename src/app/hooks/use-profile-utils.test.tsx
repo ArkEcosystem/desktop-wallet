@@ -77,4 +77,34 @@ describe("useProfileUtils", () => {
 		expect(current.saveProfile(passwordProtectedProfile)).toEqual(undefined);
 		passwordInMemoryMock.mockRestore();
 	});
+
+	it("#getErroredNetworks", async () => {
+		const profile = env.profiles().findById(getDefaultProfileId());
+
+		const wrapper = ({ children }: any) => <ConfigurationProvider>{children}</ConfigurationProvider>;
+
+		const {
+			result: { current },
+		} = renderHook(() => useProfileUtils(env), { wrapper });
+
+		expect(current.getErroredNetworks(profile).hasErroredNetworks).toEqual(false);
+		expect(current.getErroredNetworks(profile).erroredNetworks).toHaveLength(0);
+	});
+
+	it("should have errored networks", async () => {
+		const profile = env.profiles().findById(getDefaultProfileId());
+		const walletRestoreMock = jest
+			.spyOn(profile.wallets().first(), "hasBeenPartiallyRestored")
+			.mockReturnValue(true);
+
+		const wrapper = ({ children }: any) => <ConfigurationProvider>{children}</ConfigurationProvider>;
+
+		const {
+			result: { current },
+		} = renderHook(() => useProfileUtils(env), { wrapper });
+
+		expect(current.getErroredNetworks(profile).hasErroredNetworks).toEqual(true);
+		expect(current.getErroredNetworks(profile).erroredNetworks).toHaveLength(1);
+		walletRestoreMock.mockRestore();
+	});
 });
