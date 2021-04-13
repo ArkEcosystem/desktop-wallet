@@ -1,3 +1,5 @@
+import { Contracts } from "@arkecosystem/platform-sdk-profiles";
+import { uniqBy } from "@arkecosystem/utils";
 import { useCallback, useMemo, useReducer, useRef, useState } from "react";
 
 import { useEnvironmentContext } from "../../Environment";
@@ -24,40 +26,51 @@ export const useLedgerScanner = (coin: string, network: string) => {
 	const [isScanning, setIsScanning] = useState(false);
 	const abortRetryRef = useRef<boolean>(false);
 
-	const scan = useCallback(async () => {
-		setIsScanning(true);
-		setBusy();
-		abortRetryRef.current = false;
+	const scan = useCallback(
+		async (profile: Contracts.IProfile) => {
+			setIsScanning(true);
+			setBusy();
+			abortRetryRef.current = false;
 
-		try {
-			const instance = await env.coin(coin, network);
+			try {
+				const instance = await env.coin(coin, network);
 
-			const wallets = await instance.ledger().scan();
-			const legacyWallets = await instance.ledger().scan({ useLegacy: true });
+				const wallets = await instance.ledger().scan();
+				const legacyWallets = await instance.ledger().scan({ useLegacy: true });
 
-			const allWallets = { ...legacyWallets, ...wallets };
-			const ledgerData: LedgerData[] = [];
+				const allWallets = { ...legacyWallets, ...wallets };
 
-			for (const [path, data] of Object.entries(allWallets)) {
-				ledgerData.push({
-					path,
-					address: data.address(),
-					balance: data.balance(),
-				});
+				let ledgerData: LedgerData[] = [];
+
+				for (const [path, data] of Object.entries(allWallets)) {
+					const address = data.address();
+
+					// Already imported
+					if (!profile.wallets().findByAddress(address)) {
+						ledgerData.push({
+							path,
+							address,
+							balance: data.balance(),
+						});
+					}
+				}
+
+				ledgerData = uniqBy(ledgerData, (wallet) => wallet.address);
+
+				if (abortRetryRef.current) {
+					return;
+				}
+
+				dispatch({ type: "success", payload: ledgerData });
+			} catch (error) {
+				dispatch({ type: "failed", error: error.message });
 			}
 
-			if (abortRetryRef.current) {
-				return;
-			}
-
-			dispatch({ type: "success", payload: ledgerData });
-		} catch (e) {
-			dispatch({ type: "failed", error: e.message });
-		}
-
-		setIdle();
-		setIsScanning(false);
-	}, [coin, network, env, setBusy, setIdle]);
+			setIdle();
+			setIsScanning(false);
+		},
+		[coin, network, env, setBusy, setIdle],
+	);
 
 	const abortScanner = useCallback(() => {
 		abortRetryRef.current = true;
@@ -77,5 +90,6 @@ export const useLedgerScanner = (coin: string, network: string) => {
 		wallets,
 		selectedWallets,
 		abortScanner,
+		error,
 	};
 };

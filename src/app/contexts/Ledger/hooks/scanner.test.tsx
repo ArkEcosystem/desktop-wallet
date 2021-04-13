@@ -96,7 +96,7 @@ describe("Use Ledger Scanner", () => {
 							</li>
 						))}
 					</ul>
-					<button onClick={scan}>Scan</button>
+					<button onClick={() => scan(profile)}>Scan</button>
 				</div>
 			);
 		};
@@ -111,7 +111,7 @@ describe("Use Ledger Scanner", () => {
 			fireEvent.click(screen.getByRole("button"));
 		});
 
-		await waitFor(() => expect(screen.queryAllByRole("listitem")).toHaveLength(15));
+		await waitFor(() => expect(screen.queryAllByRole("listitem")).toHaveLength(2));
 		await waitFor(() => expect(screen.queryAllByText("Balance: Loading")).toHaveLength(0));
 
 		expect(container).toMatchSnapshot();
@@ -142,7 +142,7 @@ describe("Use Ledger Scanner", () => {
 							</li>
 						))}
 					</ul>
-					<button data-testid="scan" onClick={scan}>
+					<button data-testid="scan" onClick={() => scan(profile)}>
 						Scan
 					</button>
 				</div>
@@ -159,7 +159,7 @@ describe("Use Ledger Scanner", () => {
 			fireEvent.click(getByTestId("scan"));
 		});
 
-		await waitFor(() => expect(screen.queryAllByRole("listitem")).toHaveLength(15));
+		await waitFor(() => expect(screen.queryAllByRole("listitem")).toHaveLength(2));
 		await waitFor(() => expect(screen.queryAllByText("Balance: Loading")).toHaveLength(0));
 
 		act(() => {
@@ -194,7 +194,7 @@ describe("Use Ledger Scanner", () => {
 							</li>
 						))}
 					</ul>
-					<button onClick={scan}>Scan</button>
+					<button onClick={() => scan(profile)}>Scan</button>
 					<button onClick={toggleSelectAll}>Toggle All</button>
 				</div>
 			);
@@ -210,13 +210,13 @@ describe("Use Ledger Scanner", () => {
 			fireEvent.click(screen.getByText("Scan"));
 		});
 
-		await waitFor(() => expect(screen.queryAllByText("Selected: true")).toHaveLength(15));
+		await waitFor(() => expect(screen.queryAllByText("Selected: true")).toHaveLength(2));
 
 		act(() => {
 			fireEvent.click(screen.getByText("Toggle All"));
 		});
 
-		await waitFor(() => expect(screen.queryAllByText("Selected: false")).toHaveLength(15));
+		await waitFor(() => expect(screen.queryAllByText("Selected: false")).toHaveLength(2));
 
 		expect(container).toMatchSnapshot();
 	});
@@ -241,7 +241,7 @@ describe("Use Ledger Scanner", () => {
 							</li>
 						))}
 					</ul>
-					<button onClick={scan}>Scan</button>
+					<button onClick={() => scan(profile)}>Scan</button>
 					{canRetry && <button>Retry</button>}
 				</div>
 			);
@@ -270,12 +270,12 @@ describe("Use Ledger Scanner", () => {
 
 		const Component = () => {
 			const { isBusy } = useLedgerContext();
-			const { scan, abortScanner } = useLedgerScanner(wallet.coinId(), wallet.networkId(), profile);
+			const { scan, abortScanner } = useLedgerScanner(wallet.coinId(), wallet.networkId());
 
 			return (
 				<div>
 					<p>{isBusy ? "Busy" : "Idle"}</p>
-					<button data-testid="scan" onClick={scan}>
+					<button data-testid="scan" onClick={() => scan(profile)}>
 						Scan
 					</button>
 					<button data-testid="abort" onClick={abortScanner}>

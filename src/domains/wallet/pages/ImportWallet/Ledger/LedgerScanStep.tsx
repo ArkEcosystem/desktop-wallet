@@ -1,6 +1,8 @@
 import { Coins } from "@arkecosystem/platform-sdk";
+import { Contracts } from "@arkecosystem/platform-sdk-profiles";
 import Tippy from "@tippyjs/react";
 import { Address } from "app/components/Address";
+import { Alert } from "app/components/Alert";
 import { Amount } from "app/components/Amount";
 import { Avatar } from "app/components/Avatar";
 import { Checkbox } from "app/components/Checkbox";
@@ -126,14 +128,20 @@ export const LedgerTable = ({
 	);
 };
 
-export const LedgerScanStep = ({ setRetryFn }: { setRetryFn?: (fn?: () => void) => void }) => {
+export const LedgerScanStep = ({
+	setRetryFn,
+	profile,
+}: {
+	profile: Contracts.IProfile;
+	setRetryFn?: (fn?: () => void) => void;
+}) => {
 	const { t } = useTranslation();
 	const { watch, register, unregister, setValue } = useFormContext();
 	const [network] = useState<Coins.Network>(() => watch("network"));
 
 	const ledgerScanner = useLedgerScanner(network.coin(), network.id());
 
-	const { scan, selectedWallets, canRetry, isScanning, abortScanner } = ledgerScanner;
+	const { scan, selectedWallets, canRetry, isScanning, abortScanner, error } = ledgerScanner;
 
 	// eslint-disable-next-line arrow-body-style
 	useEffect(() => {
@@ -148,16 +156,16 @@ export const LedgerScanStep = ({ setRetryFn }: { setRetryFn?: (fn?: () => void) 
 
 	useEffect(() => {
 		if (canRetry) {
-			setRetryFn?.(() => scan());
+			setRetryFn?.(() => scan(profile));
 		} else {
 			setRetryFn?.(undefined);
 		}
 		return () => setRetryFn?.(undefined);
-	}, [setRetryFn, scan, canRetry]);
+	}, [setRetryFn, scan, canRetry, profile]);
 
 	useEffect(() => {
-		scan();
-	}, [scan]);
+		scan(profile);
+	}, [scan, profile]);
 
 	useEffect(() => {
 		register("wallets", { required: true, validate: (value) => Array.isArray(value) && value.length > 0 });
@@ -185,7 +193,13 @@ export const LedgerScanStep = ({ setRetryFn }: { setRetryFn?: (fn?: () => void) 
 				<SelectNetwork id="ImportWallet__network" networks={[]} selected={network} disabled />
 			</FormField>
 
-			<LedgerTable network={network} {...ledgerScanner} />
+			{error ? (
+				<Alert variant="danger">
+					<span data-testid="LedgerScanStep__error">{error}</span>
+				</Alert>
+			) : (
+				<LedgerTable network={network} {...ledgerScanner} />
+			)}
 		</section>
 	);
 };
