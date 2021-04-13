@@ -34,7 +34,6 @@ export const VotesFilter = ({ onChange, selectedOption = "all", totalCurrentVote
 						<Checkbox
 							name="all"
 							variant="votesFilter"
-							className="rounded-lg"
 							checked={selectedOption === "all"}
 							onChange={() => onChange?.("all")}
 						/>
@@ -56,7 +55,6 @@ export const VotesFilter = ({ onChange, selectedOption = "all", totalCurrentVote
 								variant="votesFilter"
 								disabled={totalCurrentVotes === 0}
 								name="current"
-								className="rounded-lg"
 								checked={selectedOption === "current"}
 								onChange={() => onChange?.("current")}
 							/>
