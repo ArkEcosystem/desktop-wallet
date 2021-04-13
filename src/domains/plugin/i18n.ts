@@ -100,6 +100,7 @@ export const translations: { [key: string]: any } = {
 		SCREENSHOTS: "Screenshots",
 		REQUIREMENTS: "Requirements",
 		DESKTOP_WALLET_VERSION: "Desktop Wallet Version",
+		REPORT: "Report Plugin",
 		DISCLAIMER:
 			"The availability of this Plugin in the ARK Desktop Wallet does not mean that either ARK.io or ARK SCIC is directly involved in its development or developers. By installing it, you assume any associated risks.",
 	},

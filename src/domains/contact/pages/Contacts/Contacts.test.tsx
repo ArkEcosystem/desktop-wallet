@@ -11,6 +11,7 @@ import {
 	getDefaultProfileId,
 	RenderResult,
 	renderWithRouter,
+	screen,
 	waitFor,
 	within,
 } from "utils/testing-library";
@@ -348,5 +349,41 @@ describe("Contacts", () => {
 		);
 
 		contactsSpy.mockRestore();
+	});
+
+	it("should search for contact", async () => {
+		const [contact1, contact2] = profile.contacts().values();
+
+		renderComponent();
+
+		expect(screen.getAllByTestId("ContactListItem__name")).toHaveLength(4);
+		expect(screen.getByText(contact1.name())).toBeInTheDocument();
+		expect(screen.getByText(contact2.name())).toBeInTheDocument();
+
+		act(() => {
+			fireEvent.click(screen.getByTestId("header-search-bar__button"));
+		});
+
+		await waitFor(() =>
+			expect(within(screen.getByTestId("header-search-bar__input")).getByTestId("Input")).toBeTruthy(),
+		);
+
+		act(() => {
+			fireEvent.input(within(screen.getByTestId("header-search-bar__input")).getByTestId("Input"), {
+				target: { value: contact1.name() },
+			});
+		});
+
+		await waitFor(() => expect(screen.getAllByTestId("ContactListItem__name")).toHaveLength(1));
+
+		expect(screen.queryByText(contact2.name())).not.toBeInTheDocument();
+
+		act(() => {
+			fireEvent.input(within(screen.getByTestId("header-search-bar__input")).getByTestId("Input"), {
+				target: { value: "Unknown Name" },
+			});
+		});
+
+		await waitFor(() => expect(screen.queryByTestId("Contacts--empty-results")).toBeInTheDocument());
 	});
 });
