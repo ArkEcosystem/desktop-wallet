@@ -361,9 +361,12 @@ describe("ImportWallet", () => {
 		await waitFor(() => expect(getByTestId("ImportWallet__continue-button")).not.toBeDisabled());
 		fireEvent.click(getByTestId("ImportWallet__continue-button"));
 
-		await waitFor(() => {
-			expect(getByTestId("ImportWallet__third-step")).toBeTruthy();
-		});
+		await waitFor(
+			() => {
+				expect(getByTestId("ImportWallet__third-step")).toBeTruthy();
+			},
+			{ timeout: 15000 },
+		);
 	});
 
 	it("should import by address", async () => {
