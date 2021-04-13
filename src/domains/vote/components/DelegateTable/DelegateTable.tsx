@@ -177,7 +177,7 @@ export const DelegateTable = ({
 				}}
 			</Table>
 
-			<div className="flex justify-center w-full mt-10 mb-24">
+			<div className="flex justify-center w-full mt-8">
 				{totalDelegates > itemsPerPage! && (
 					<Pagination
 						totalCount={totalDelegates}

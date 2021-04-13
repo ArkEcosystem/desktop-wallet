@@ -283,7 +283,7 @@ exports[`DelegateTable should emit action on continue button to unvote 1`] = `
       </table>
     </div>
     <div
-      class="flex justify-center w-full mt-10 mb-24"
+      class="flex justify-center w-full mt-8"
     />
     <div
       class="fixed bottom-0 inset-x-0 py-8 shadow-footer-smooth dark:shadow-footer-smooth-dark bg-theme-background"
@@ -731,7 +731,7 @@ exports[`DelegateTable should emit action on continue button to vote 1`] = `
       </table>
     </div>
     <div
-      class="flex justify-center w-full mt-10 mb-24"
+      class="flex justify-center w-full mt-8"
     />
     <div
       class="fixed bottom-0 inset-x-0 py-8 shadow-footer-smooth dark:shadow-footer-smooth-dark bg-theme-background"
@@ -1179,7 +1179,7 @@ exports[`DelegateTable should render 1`] = `
       </table>
     </div>
     <div
-      class="flex justify-center w-full mt-10 mb-24"
+      class="flex justify-center w-full mt-8"
     />
     <div
       class="fixed bottom-0 inset-x-0 py-8 shadow-footer-smooth dark:shadow-footer-smooth-dark bg-theme-background"
@@ -1484,125 +1484,66 @@ exports[`DelegateTable should render loading state 1`] = `
                 <span>
                   <span
                     class="react-loading-skeleton css-1eg0sfo-skeletonStyles-Skeleton"
+                    style="width: 127px; height: 16px;"
+                  >
+                    ‌
+                  </span>
+                </span>
+              </div>
+            </td>
+            <td>
+              <div
+                class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 kjTmcB justify-end"
+              >
+                <span>
+                  <span
+                    class="react-loading-skeleton css-1eg0sfo-skeletonStyles-Skeleton"
+                    style="width: 100px; height: 40px;"
+                  >
+                    ‌
+                  </span>
+                </span>
+              </div>
+            </td>
+          </tr>
+          <tr
+            class="TableRow__TableRowStyled-sc-1br46dw-0 fzBhIQ group"
+            data-testid="TableRow"
+          >
+            <td>
+              <div
+                class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 DpDcR"
+              >
+                <span>
+                  <span
+                    class="react-loading-skeleton css-1eg0sfo-skeletonStyles-Skeleton"
+                    style="width: 22px; height: 16px;"
+                  >
+                    ‌
+                  </span>
+                </span>
+              </div>
+            </td>
+            <td>
+              <div
+                class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT space-x-4"
+              >
+                <div
+                  class="Circle__CircleWrapper-uw7h4j-0 bNDQMV border-transparent ring-theme-background"
+                >
+                  <span>
+                    <span
+                      class="react-loading-skeleton align-top css-1eg0sfo-skeletonStyles-Skeleton"
+                      style="width: 44px; height: 44px; border-radius: 50%;"
+                    >
+                      ‌
+                    </span>
+                  </span>
+                </div>
+                <span>
+                  <span
+                    class="react-loading-skeleton css-1eg0sfo-skeletonStyles-Skeleton"
                     style="width: 144px; height: 16px;"
-                  >
-                    ‌
-                  </span>
-                </span>
-              </div>
-            </td>
-            <td>
-              <div
-                class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 kjTmcB justify-end"
-              >
-                <span>
-                  <span
-                    class="react-loading-skeleton css-1eg0sfo-skeletonStyles-Skeleton"
-                    style="width: 100px; height: 40px;"
-                  >
-                    ‌
-                  </span>
-                </span>
-              </div>
-            </td>
-          </tr>
-          <tr
-            class="TableRow__TableRowStyled-sc-1br46dw-0 fzBhIQ group"
-            data-testid="TableRow"
-          >
-            <td>
-              <div
-                class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 DpDcR"
-              >
-                <span>
-                  <span
-                    class="react-loading-skeleton css-1eg0sfo-skeletonStyles-Skeleton"
-                    style="width: 22px; height: 16px;"
-                  >
-                    ‌
-                  </span>
-                </span>
-              </div>
-            </td>
-            <td>
-              <div
-                class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT space-x-4"
-              >
-                <div
-                  class="Circle__CircleWrapper-uw7h4j-0 bNDQMV border-transparent ring-theme-background"
-                >
-                  <span>
-                    <span
-                      class="react-loading-skeleton align-top css-1eg0sfo-skeletonStyles-Skeleton"
-                      style="width: 44px; height: 44px; border-radius: 50%;"
-                    >
-                      ‌
-                    </span>
-                  </span>
-                </div>
-                <span>
-                  <span
-                    class="react-loading-skeleton css-1eg0sfo-skeletonStyles-Skeleton"
-                    style="width: 132px; height: 16px;"
-                  >
-                    ‌
-                  </span>
-                </span>
-              </div>
-            </td>
-            <td>
-              <div
-                class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 kjTmcB justify-end"
-              >
-                <span>
-                  <span
-                    class="react-loading-skeleton css-1eg0sfo-skeletonStyles-Skeleton"
-                    style="width: 100px; height: 40px;"
-                  >
-                    ‌
-                  </span>
-                </span>
-              </div>
-            </td>
-          </tr>
-          <tr
-            class="TableRow__TableRowStyled-sc-1br46dw-0 fzBhIQ group"
-            data-testid="TableRow"
-          >
-            <td>
-              <div
-                class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 DpDcR"
-              >
-                <span>
-                  <span
-                    class="react-loading-skeleton css-1eg0sfo-skeletonStyles-Skeleton"
-                    style="width: 22px; height: 16px;"
-                  >
-                    ‌
-                  </span>
-                </span>
-              </div>
-            </td>
-            <td>
-              <div
-                class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT space-x-4"
-              >
-                <div
-                  class="Circle__CircleWrapper-uw7h4j-0 bNDQMV border-transparent ring-theme-background"
-                >
-                  <span>
-                    <span
-                      class="react-loading-skeleton align-top css-1eg0sfo-skeletonStyles-Skeleton"
-                      style="width: 44px; height: 44px; border-radius: 50%;"
-                    >
-                      ‌
-                    </span>
-                  </span>
-                </div>
-                <span>
-                  <span
-                    class="react-loading-skeleton css-1eg0sfo-skeletonStyles-Skeleton"
-                    style="width: 141px; height: 16px;"
                   >
                     ‌
                   </span>
@@ -1720,7 +1661,7 @@ exports[`DelegateTable should render loading state 1`] = `
                 <span>
                   <span
                     class="react-loading-skeleton css-1eg0sfo-skeletonStyles-Skeleton"
-                    style="width: 138px; height: 16px;"
+                    style="width: 134px; height: 16px;"
                   >
                     ‌
                   </span>
@@ -1779,7 +1720,7 @@ exports[`DelegateTable should render loading state 1`] = `
                 <span>
                   <span
                     class="react-loading-skeleton css-1eg0sfo-skeletonStyles-Skeleton"
-                    style="width: 120px; height: 16px;"
+                    style="width: 128px; height: 16px;"
                   >
                     ‌
                   </span>
@@ -1838,7 +1779,7 @@ exports[`DelegateTable should render loading state 1`] = `
                 <span>
                   <span
                     class="react-loading-skeleton css-1eg0sfo-skeletonStyles-Skeleton"
-                    style="width: 120px; height: 16px;"
+                    style="width: 130px; height: 16px;"
                   >
                     ‌
                   </span>
@@ -1897,7 +1838,66 @@ exports[`DelegateTable should render loading state 1`] = `
                 <span>
                   <span
                     class="react-loading-skeleton css-1eg0sfo-skeletonStyles-Skeleton"
-                    style="width: 129px; height: 16px;"
+                    style="width: 141px; height: 16px;"
+                  >
+                    ‌
+                  </span>
+                </span>
+              </div>
+            </td>
+            <td>
+              <div
+                class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 kjTmcB justify-end"
+              >
+                <span>
+                  <span
+                    class="react-loading-skeleton css-1eg0sfo-skeletonStyles-Skeleton"
+                    style="width: 100px; height: 40px;"
+                  >
+                    ‌
+                  </span>
+                </span>
+              </div>
+            </td>
+          </tr>
+          <tr
+            class="TableRow__TableRowStyled-sc-1br46dw-0 fzBhIQ group"
+            data-testid="TableRow"
+          >
+            <td>
+              <div
+                class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 DpDcR"
+              >
+                <span>
+                  <span
+                    class="react-loading-skeleton css-1eg0sfo-skeletonStyles-Skeleton"
+                    style="width: 22px; height: 16px;"
+                  >
+                    ‌
+                  </span>
+                </span>
+              </div>
+            </td>
+            <td>
+              <div
+                class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT space-x-4"
+              >
+                <div
+                  class="Circle__CircleWrapper-uw7h4j-0 bNDQMV border-transparent ring-theme-background"
+                >
+                  <span>
+                    <span
+                      class="react-loading-skeleton align-top css-1eg0sfo-skeletonStyles-Skeleton"
+                      style="width: 44px; height: 44px; border-radius: 50%;"
+                    >
+                      ‌
+                    </span>
+                  </span>
+                </div>
+                <span>
+                  <span
+                    class="react-loading-skeleton css-1eg0sfo-skeletonStyles-Skeleton"
+                    style="width: 145px; height: 16px;"
                   >
                     ‌
                   </span>
@@ -1923,7 +1923,7 @@ exports[`DelegateTable should render loading state 1`] = `
       </table>
     </div>
     <div
-      class="flex justify-center w-full mt-10 mb-24"
+      class="flex justify-center w-full mt-8"
     />
     <div
       class="fixed bottom-0 inset-x-0 py-8 shadow-footer-smooth dark:shadow-footer-smooth-dark bg-theme-background"
@@ -2254,7 +2254,7 @@ exports[`DelegateTable should render pagination 1`] = `
       </table>
     </div>
     <div
-      class="flex justify-center w-full mt-10 mb-24"
+      class="flex justify-center w-full mt-8"
     >
       <div
         class="Pagination__Wrapper-x7juhx-0 klvluR"
@@ -2748,7 +2748,7 @@ exports[`DelegateTable should render with a delegate to unvote 1`] = `
       </table>
     </div>
     <div
-      class="flex justify-center w-full mt-10 mb-24"
+      class="flex justify-center w-full mt-8"
     />
     <div
       class="fixed bottom-0 inset-x-0 py-8 shadow-footer-smooth dark:shadow-footer-smooth-dark bg-theme-background"
@@ -3199,7 +3199,7 @@ exports[`DelegateTable should render with a delegate to unvote/vote 1`] = `
       </table>
     </div>
     <div
-      class="flex justify-center w-full mt-10 mb-24"
+      class="flex justify-center w-full mt-8"
     />
     <div
       class="fixed bottom-0 inset-x-0 py-8 shadow-footer-smooth dark:shadow-footer-smooth-dark bg-theme-background"
@@ -3647,7 +3647,7 @@ exports[`DelegateTable should render with a delegate to vote 1`] = `
       </table>
     </div>
     <div
-      class="flex justify-center w-full mt-10 mb-24"
+      class="flex justify-center w-full mt-8"
     />
     <div
       class="fixed bottom-0 inset-x-0 py-8 shadow-footer-smooth dark:shadow-footer-smooth-dark bg-theme-background"
@@ -4124,7 +4124,7 @@ exports[`DelegateTable should select a delegate to unvote 1`] = `
       </table>
     </div>
     <div
-      class="flex justify-center w-full mt-10 mb-24"
+      class="flex justify-center w-full mt-8"
     />
     <div
       class="fixed bottom-0 inset-x-0 py-8 shadow-footer-smooth dark:shadow-footer-smooth-dark bg-theme-background"
@@ -4576,7 +4576,7 @@ exports[`DelegateTable should select a delegate to unvote/vote 1`] = `
       </table>
     </div>
     <div
-      class="flex justify-center w-full mt-10 mb-24"
+      class="flex justify-center w-full mt-8"
     />
     <div
       class="fixed bottom-0 inset-x-0 py-8 shadow-footer-smooth dark:shadow-footer-smooth-dark bg-theme-background"
@@ -5024,7 +5024,7 @@ exports[`DelegateTable should select a delegate to vote 1`] = `
       </table>
     </div>
     <div
-      class="flex justify-center w-full mt-10 mb-24"
+      class="flex justify-center w-full mt-8"
     />
     <div
       class="fixed bottom-0 inset-x-0 py-8 shadow-footer-smooth dark:shadow-footer-smooth-dark bg-theme-background"
@@ -5473,7 +5473,7 @@ exports[`DelegateTable should select multiple delegates to unvote/vote 1`] = `
       </table>
     </div>
     <div
-      class="flex justify-center w-full mt-10 mb-24"
+      class="flex justify-center w-full mt-8"
     />
     <div
       class="fixed bottom-0 inset-x-0 py-8 shadow-footer-smooth dark:shadow-footer-smooth-dark bg-theme-background"
@@ -5921,7 +5921,7 @@ exports[`DelegateTable should unselect a delegate to unvote 1`] = `
       </table>
     </div>
     <div
-      class="flex justify-center w-full mt-10 mb-24"
+      class="flex justify-center w-full mt-8"
     />
     <div
       class="fixed bottom-0 inset-x-0 py-8 shadow-footer-smooth dark:shadow-footer-smooth-dark bg-theme-background"
@@ -6370,7 +6370,7 @@ exports[`DelegateTable should unselect a delegate to vote 1`] = `
       </table>
     </div>
     <div
-      class="flex justify-center w-full mt-10 mb-24"
+      class="flex justify-center w-full mt-8"
     />
     <div
       class="fixed bottom-0 inset-x-0 py-8 shadow-footer-smooth dark:shadow-footer-smooth-dark bg-theme-background"

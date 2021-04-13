@@ -383,7 +383,7 @@ export const Votes = () => {
 					)
 				)
 			) : (
-				<Section>
+				<Section innerClassName="mb-27">
 					<DelegateTable
 						delegates={filteredDelegates}
 						emptyText={t("VOTE.DELEGATE_TABLE.DELEGATES_NOT_FOUND")}
