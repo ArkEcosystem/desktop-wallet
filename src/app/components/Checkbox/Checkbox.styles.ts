@@ -10,10 +10,6 @@ const baseStyle = [
 	tw`focus:ring-offset-0`,
 	tw`cursor-pointer`,
 	tw`dark:(border-theme-secondary-600)`,
-	tw`checked:hover:(
-		border-theme-secondary-300
-		dark:(border-theme-secondary-600)
-	)`,
 	tw`disabled:(
 		bg-theme-secondary-200 border-theme-secondary-300 cursor-default
 		dark:(bg-theme-secondary-800 border-theme-secondary-600)
@@ -33,21 +29,36 @@ const baseStyle = [
 	`,
 ];
 
+type baseColorsType = Record<
+	string,
+	{
+		color: string;
+		onHover?: string;
+	}
+>;
 const getColor = (color: Color) => {
-	const baseColors: Record<string, string> = {
-		info: "primary-600",
-		success: "success-600",
-		warning: "warning-600",
-		danger: "danger-400",
-		hint: "hint-500",
+	const baseColors: baseColorsType = {
+		info: { color: "primary-600" },
+		success: { color: "success-600", onHover: "success-700" },
+		warning: { color: "warning-600" },
+		danger: { color: "danger-400" },
+		hint: { color: "hint-500" },
 	};
 
-	return css`
-		color: var(--theme-color-${baseColors[color]});
-		&:hover {
-			border-color: var(--theme-color-${baseColors[color]});
-		}
-	`;
+	return [
+		css`
+			color: var(--theme-color-${baseColors[color].color});
+			&:hover {
+				border-color: var(--theme-color-${baseColors[color].color});
+			}
+		`,
+		baseColors[color]?.onHover &&
+			css`
+				&:checked:hover {
+					color: var(--theme-color-${baseColors[color].onHover});
+				}
+			`,
+	];
 };
 
 const getVariant = (variant?: any) => {
