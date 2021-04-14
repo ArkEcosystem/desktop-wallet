@@ -7,6 +7,7 @@ export const translations: { [key: string]: any } = {
 		SEARCH_PLACEHOLDER: "Enter the delegate’s name or address for a quick search",
 		SELECT_CRYPTOASSET_MESSAGE: "Select one of the proposed cryptoassets above to vote for a delegate.",
 		NO_RESULTS: "The Delegate is either unregistered or resigned. Check you search term and try again.",
+		RESIGNED_VOTE: `"<bold>{{ name }}</bold>", the Delegate you are voting for has resigned. Press continue to unvote or select a new Delegate below.`,
 	},
 
 	DELEGATE_TABLE: {

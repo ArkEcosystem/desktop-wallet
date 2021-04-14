@@ -1,6 +1,7 @@
 import { Contracts } from "@arkecosystem/platform-sdk-profiles";
 import { isEmptyObject, uniq, uniqBy } from "@arkecosystem/utils";
 import { Icon } from "app/components//Icon";
+import { Alert } from "app/components/Alert";
 import { Button } from "app/components/Button";
 import { ControlButton } from "app/components/ControlButton";
 import { Dropdown } from "app/components/Dropdown";
@@ -119,6 +120,10 @@ export const Votes = () => {
 		() => votes?.filter((vote) => delegates.some((delegate) => vote.address() === delegate.address())),
 		[votes, delegates],
 	);
+
+	const hasResignedDelegateVotes = useMemo(() => currentVotes?.some((vote) => vote.isResignedDelegate()), [
+		currentVotes,
+	]);
 
 	const filteredDelegatesVotes = useMemo(() => (selectedFilter === "all" ? delegates : currentVotes), [
 		delegates,
@@ -396,6 +401,24 @@ export const Votes = () => {
 						selectedVoteAddresses={voteAddresses}
 						selectedWallet={selectedAddress}
 						onContinue={handleContinue}
+						subtitle={
+							hasResignedDelegateVotes ? (
+								<Alert className="mb-6">
+									<div data-testid="Votes__resigned-vote">
+										<Trans
+											data-testid="Arara"
+											i18nKey="VOTE.VOTES_PAGE.RESIGNED_VOTE"
+											values={{
+												name: currentVotes
+													?.find((vote) => vote.isResignedDelegate())
+													?.username(),
+											}}
+											components={{ bold: <strong /> }}
+										/>
+									</div>
+								</Alert>
+							) : null
+						}
 					/>
 				</Section>
 			)}
