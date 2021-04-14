@@ -183,20 +183,12 @@ exports[`NavigationBar should not render if no active profile 1`] = `
               Your balance
             </div>
             <div
-              class="text-sm font-bold text-theme-secondary-text dark:text-theme-text flex justify-end mt-1"
+              class="text-sm font-bold text-theme-secondary-text dark:text-theme-text"
             >
-              <span>
-                <span
-                  class="flex items-center leading-none"
-                >
-                  <span
-                    class="react-loading-skeleton css-1eg0sfo-skeletonStyles-Skeleton"
-                    style="width: 60px; height: 16px;"
-                  >
-                    ‌
-                  </span>
-                  ‌
-                </span>
+              <span
+                data-testid="Amount"
+              >
+                0 BTC
               </span>
             </div>
           </div>
@@ -464,20 +456,12 @@ exports[`NavigationBar should render 1`] = `
               Your balance
             </div>
             <div
-              class="text-sm font-bold text-theme-secondary-text dark:text-theme-text flex justify-end mt-1"
+              class="text-sm font-bold text-theme-secondary-text dark:text-theme-text"
             >
-              <span>
-                <span
-                  class="flex items-center leading-none"
-                >
-                  <span
-                    class="react-loading-skeleton css-1eg0sfo-skeletonStyles-Skeleton"
-                    style="width: 60px; height: 16px;"
-                  >
-                    ‌
-                  </span>
-                  ‌
-                </span>
+              <span
+                data-testid="Amount"
+              >
+                0 BTC
               </span>
             </div>
           </div>
@@ -785,20 +769,12 @@ exports[`NavigationBar should render with custom menu 1`] = `
               Your balance
             </div>
             <div
-              class="text-sm font-bold text-theme-secondary-text dark:text-theme-text flex justify-end mt-1"
+              class="text-sm font-bold text-theme-secondary-text dark:text-theme-text"
             >
-              <span>
-                <span
-                  class="flex items-center leading-none"
-                >
-                  <span
-                    class="react-loading-skeleton css-1eg0sfo-skeletonStyles-Skeleton"
-                    style="width: 60px; height: 16px;"
-                  >
-                    ‌
-                  </span>
-                  ‌
-                </span>
+              <span
+                data-testid="Amount"
+              >
+                0 BTC
               </span>
             </div>
           </div>
@@ -983,20 +959,12 @@ exports[`NavigationBar should render with shadow if there is a scroll 1`] = `
               Your balance
             </div>
             <div
-              class="text-sm font-bold text-theme-secondary-text dark:text-theme-text flex justify-end mt-1"
+              class="text-sm font-bold text-theme-secondary-text dark:text-theme-text"
             >
-              <span>
-                <span
-                  class="flex items-center leading-none"
-                >
-                  <span
-                    class="react-loading-skeleton css-1eg0sfo-skeletonStyles-Skeleton"
-                    style="width: 60px; height: 16px;"
-                  >
-                    ‌
-                  </span>
-                  ‌
-                </span>
+              <span
+                data-testid="Amount"
+              >
+                0 
               </span>
             </div>
           </div>
@@ -1254,20 +1222,12 @@ exports[`NavigationBar should render with title 1`] = `
               Your balance
             </div>
             <div
-              class="text-sm font-bold text-theme-secondary-text dark:text-theme-text flex justify-end mt-1"
+              class="text-sm font-bold text-theme-secondary-text dark:text-theme-text"
             >
-              <span>
-                <span
-                  class="flex items-center leading-none"
-                >
-                  <span
-                    class="react-loading-skeleton css-1eg0sfo-skeletonStyles-Skeleton"
-                    style="width: 60px; height: 16px;"
-                  >
-                    ‌
-                  </span>
-                  ‌
-                </span>
+              <span
+                data-testid="Amount"
+              >
+                0 BTC
               </span>
             </div>
           </div>
