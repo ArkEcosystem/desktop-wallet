@@ -253,6 +253,7 @@ export const useProfileSynchronizer = ({ onProfileRestoreError }: ProfileSynchro
 
 		syncProfile(profile);
 	}, [
+		saveProfile,
 		allJobs,
 		profile,
 		runAll,
