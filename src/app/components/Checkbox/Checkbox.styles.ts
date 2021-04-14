@@ -52,8 +52,6 @@ const getColor = (color: Color) => {
 
 const getVariant = (variant?: any) => {
 	switch (variant) {
-		case "thick":
-			return [tw`border-2`];
 		default:
 			return [];
 	}
