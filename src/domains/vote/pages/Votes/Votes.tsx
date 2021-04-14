@@ -187,10 +187,12 @@ export const Votes = () => {
 	const loadDelegates = useCallback(
 		async (wallet) => {
 			setIsLoadingDelegates(true);
-			// eslint-disable-next-line @typescript-eslint/no-non-null-asserted-optional-chain
-			await env.delegates().sync(wallet?.coinId()!, wallet?.networkId()!);
-			// eslint-disable-next-line @typescript-eslint/no-non-null-asserted-optional-chain
-			const delegates = env.delegates().all(wallet?.coinId()!, wallet?.networkId()!);
+			await env.delegates().sync(wallet.coinId(), wallet.networkId());
+			const delegates = env
+				.delegates()
+				.all(wallet.coinId(), wallet.networkId())
+				.filter((delegate) => !delegate.isResignedDelegate());
+
 			setDelegates(delegates);
 			setIsLoadingDelegates(false);
 		},
