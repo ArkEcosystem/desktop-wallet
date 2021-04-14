@@ -64,7 +64,6 @@ const useProfileJobs = (profile?: Contracts.IProfile): Record<string, any> => {
 
 		return {
 			allJobs: [syncExchangeRates, syncNotifications, syncKnownWallets, syncDelegates],
-			syncExchangeRates: syncExchangeRates.callback,
 		};
 	}, [env, profile, walletsCount, notifications]); // eslint-disable-line react-hooks/exhaustive-deps
 };
@@ -195,7 +194,7 @@ export const useProfileSynchronizer = ({ onProfileRestoreError }: ProfileSynchro
 		markAsRestored,
 	} = useProfileSyncStatus();
 
-	const { allJobs, syncExchangeRates } = useProfileJobs(profile);
+	const { allJobs } = useProfileJobs(profile);
 	const { start, stop, runAll } = useSynchronizer(allJobs);
 
 	useEffect(() => {
@@ -230,7 +229,7 @@ export const useProfileSynchronizer = ({ onProfileRestoreError }: ProfileSynchro
 			if (shouldSync()) {
 				setStatus("syncing");
 
-				await syncExchangeRates();
+				runAll();
 
 				setStatus("synced");
 			}
@@ -247,7 +246,6 @@ export const useProfileSynchronizer = ({ onProfileRestoreError }: ProfileSynchro
 		syncProfile(profile);
 	}, [
 		allJobs,
-		syncExchangeRates,
 		profile,
 		runAll,
 		start,
