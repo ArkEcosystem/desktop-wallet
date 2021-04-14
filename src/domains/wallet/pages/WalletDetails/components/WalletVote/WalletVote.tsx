@@ -209,7 +209,12 @@ export const WalletVote = ({ wallet, onButtonClick, env }: WalletVoteProps) => {
 
 			<Button
 				data-testid="WalletVote__button"
-				disabled={isLoading || wallet.balance().isZero() || !wallet.hasBeenFullyRestored() || !wallet.hasSyncedWithNetwork()}
+				disabled={
+					isLoading ||
+					wallet.balance().isZero() ||
+					!wallet.hasBeenFullyRestored() ||
+					!wallet.hasSyncedWithNetwork()
+				}
 				variant="secondary"
 				className="space-x-2"
 				isLoading={isLoading}
