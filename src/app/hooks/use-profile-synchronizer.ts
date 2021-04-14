@@ -141,9 +141,10 @@ export const useProfileRestore = () => {
 		const __E2E__ = ["true", "1"].includes(process.env.REACT_APP_IS_E2E?.toLowerCase() as string);
 		if (__E2E__) {
 			await profile.restore(password);
-			profile.save(password);
 
 			await profile.sync();
+
+			profile.save(password);
 
 			await persist();
 
@@ -180,9 +181,10 @@ type ProfileSynchronizerProps = {
 
 export const useProfileSynchronizer = ({ onProfileRestoreError }: ProfileSynchronizerProps = {}) => {
 	const __E2E__ = process.env.REACT_APP_IS_E2E;
-	const { persist } = useEnvironmentContext();
+	const { env, persist } = useEnvironmentContext();
 	const { setConfiguration, profileIsSyncing } = useConfiguration();
 	const { restoreProfile } = useProfileRestore();
+	const { saveProfile } = useProfileUtils(env);
 	const profile = useProfileWatcher();
 
 	const {
@@ -230,6 +232,9 @@ export const useProfileSynchronizer = ({ onProfileRestoreError }: ProfileSynchro
 				setStatus("syncing");
 
 				await profile.sync();
+				saveProfile(profile);
+				await persist();
+
 				runAll();
 
 				setStatus("synced");
