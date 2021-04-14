@@ -153,7 +153,7 @@ export const DelegateTable = ({
 			<EmptyResults
 				className="mt-16"
 				title={t("COMMON.EMPTY_RESULTS.TITLE")}
-				subtitle={t("COMMON.EMPTY_RESULTS.SUBTITLE")}
+				subtitle={t("VOTE.VOTES_PAGE.NO_RESULTS")}
 			/>
 		);
 	}
