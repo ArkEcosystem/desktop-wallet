@@ -141,8 +141,9 @@ export const useProfileRestore = () => {
 		const __E2E__ = ["true", "1"].includes(process.env.REACT_APP_IS_E2E?.toLowerCase() as string);
 		if (__E2E__) {
 			await profile.restore(password);
-			await profile.sync();
 			profile.save(password);
+
+			await profile.sync();
 
 			await persist();
 
