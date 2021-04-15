@@ -10,9 +10,6 @@ module.exports = {
 			lg: "1024px",
 			xl: "1280px",
 		},
-		fontFamily: {
-			sans: ["Inter", ...defaultTheme.fontFamily.sans],
-		},
 		colors: {
 			black: "#121213",
 			white: "#fff",
