@@ -79,7 +79,7 @@ export const SignMessage = ({ walletId, messageText, isOpen, onClose, onCancel, 
 			setActiveTab("ledger");
 
 			try {
-				await connect(wallet.network().coin(), wallet.networkId());
+				await connect(profile, wallet.network().coin(), wallet.networkId());
 			} catch (error) {
 				/* istanbul ignore else */
 				if (isNoDeviceError(error)) {

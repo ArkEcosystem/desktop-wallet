@@ -1,7 +1,6 @@
 import { Coins } from "@arkecosystem/platform-sdk";
 import { Contracts } from "@arkecosystem/platform-sdk-profiles";
 import Transport from "@ledgerhq/hw-transport";
-import { useActiveProfile } from "app/hooks";
 import retry from "async-retry";
 import { useCallback, useEffect, useMemo, useReducer, useRef } from "react";
 
@@ -10,8 +9,7 @@ import { formatLedgerDerivationPath, LedgerData } from "../utils";
 import { connectionReducer, defaultConnectionState } from "./connection.state";
 
 export const useLedgerConnection = (transport: typeof Transport) => {
-	const { env, persist } = useEnvironmentContext();
-	const activeProfile = useActiveProfile();
+	const { persist } = useEnvironmentContext();
 	const [state, dispatch] = useReducer(connectionReducer, defaultConnectionState);
 	const abortRetryRef = useRef<boolean>(false);
 
@@ -49,6 +47,7 @@ export const useLedgerConnection = (transport: typeof Transport) => {
 
 	const connect = useCallback(
 		async (
+			profile: Contracts.IProfile,
 			coin: string,
 			network: string,
 			retryOptions: retry.Options = { retries: 50, randomize: false, factor: 1 },
@@ -56,7 +55,7 @@ export const useLedgerConnection = (transport: typeof Transport) => {
 			dispatch({ type: "waiting" });
 			abortRetryRef.current = false;
 
-			const instance = activeProfile.coins().push(coin, network);
+			const instance = profile.coins().push(coin, network);
 
 			try {
 				const slip44 = instance.config().get<number>("network.crypto.slip44");
@@ -83,7 +82,7 @@ export const useLedgerConnection = (transport: typeof Transport) => {
 				throw connectError;
 			}
 		},
-		[transport, activeProfile],
+		[transport],
 	);
 
 	const disconnect = useCallback(async (coin: Coins.Coin) => {

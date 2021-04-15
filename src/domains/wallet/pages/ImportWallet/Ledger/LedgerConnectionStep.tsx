@@ -5,6 +5,7 @@ import { Header } from "app/components/Header";
 import { Image } from "app/components/Image";
 import { Spinner } from "app/components/Spinner";
 import { useLedgerContext } from "app/contexts/Ledger";
+import { useActiveProfile } from "app/hooks";
 import { SelectNetwork } from "domains/network/components/SelectNetwork";
 import React, { useEffect, useState } from "react";
 import { useFormContext } from "react-hook-form";
@@ -51,6 +52,7 @@ export const LedgerConnectionStep = ({
 	onFailed?: (error: Error) => void;
 }) => {
 	const { t } = useTranslation();
+	const activeProfile = useActiveProfile();
 
 	const { watch, register, setValue, unregister } = useFormContext();
 	const { connect, abortConnectionRetry, error, isConnected } = useLedgerContext();
@@ -69,7 +71,7 @@ export const LedgerConnectionStep = ({
 	useEffect(() => {
 		const run = async () => {
 			try {
-				await connect(network.coin(), network.id());
+				await connect(activeProfile, network.coin(), network.id());
 			} catch (error) {
 				onFailed?.(error);
 			}
