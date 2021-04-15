@@ -619,6 +619,109 @@ exports[`WalletVote should render 1`] = `
 </DocumentFragment>
 `;
 
+exports[`WalletVote should render disabled vote button 1`] = `
+<DocumentFragment>
+  <div
+    class="flex items-center w-full"
+    data-testid="WalletVote"
+  >
+    <div
+      class="Circle__CircleWrapper-uw7h4j-0 bNDQMV border-theme-secondary-900 dark:border-theme-secondary-700 text-theme-secondary-900 dark:text-theme-secondary-700 ring-theme-secondary-background"
+    >
+      <div
+        class="sc-bdfBwQ fdjKgV"
+        height="17"
+        width="17"
+      >
+        <svg>
+          vote.svg
+        </svg>
+      </div>
+    </div>
+    <div
+      class="flex flex-1 ml-4"
+    >
+      <div
+        class="flex flex-col justify-between font-semibold"
+      >
+        <span
+          class="text-sm text-theme-secondary-500 dark:text-theme-secondary-700"
+        >
+          Voting for
+        </span>
+        <span>
+          arkx
+        </span>
+      </div>
+      <div
+        class="flex flex-col justify-between pl-6 ml-6 font-semibold border-l border-theme-secondary-300 dark:border-theme-secondary-800"
+      >
+        <span
+          class="text-sm text-theme-secondary-500 dark:text-theme-secondary-700"
+        >
+          Rank
+        </span>
+        <span>
+          N/A
+        </span>
+      </div>
+    </div>
+    <div
+      class="flex flex-col items-end justify-between pr-6 mr-6 font-semibold border-r border-theme-secondary-300 dark:border-theme-secondary-800"
+    >
+      <span
+        class="text-sm text-theme-secondary-500 dark:text-theme-secondary-700 "
+      >
+        Delegate Status
+      </span>
+      <div
+        class="flex items-center justify-end space-x-2"
+      >
+        <span>
+          <div
+            class="sc-bdfBwQ iyevwF text-theme-primary-300 dark:text-theme-secondary-600"
+            height="20"
+            width="20"
+          >
+            <svg>
+              information-circle.svg
+            </svg>
+          </div>
+        </span>
+        <span
+          class="font-semibold text-theme-warning-500"
+        >
+          Standby
+        </span>
+      </div>
+    </div>
+    <button
+      class="OriginalButton__StyledButton-sc-1y2wptt-0 blpaPr space-x-2"
+      data-testid="WalletVote__button"
+      disabled=""
+      type="button"
+    >
+      <div
+        class="flex relative items-center space-x-2"
+      >
+        <div
+          class="sc-bdfBwQ fdjKgV"
+          height="17"
+          width="17"
+        >
+          <svg>
+            vote.svg
+          </svg>
+        </div>
+        <span>
+          Vote
+        </span>
+      </div>
+    </button>
+  </div>
+</DocumentFragment>
+`;
+
 exports[`WalletVote should render the maximum votes 1`] = `
 <DocumentFragment>
   <div

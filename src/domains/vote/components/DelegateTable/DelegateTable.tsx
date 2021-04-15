@@ -29,7 +29,6 @@ type DelegateTableProps = {
 
 export const DelegateTable = ({
 	delegates,
-	emptyText,
 	isLoading,
 	itemsPerPage,
 	maxVotes,
@@ -324,5 +323,4 @@ DelegateTable.defaultProps = {
 	votes: [],
 	isLoading: false,
 	itemsPerPage: 51,
-	emptyText: "Delegates not found",
 };

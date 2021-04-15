@@ -1,0 +1,78 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Balance should render 1`] = `
+<div>
+  <div
+    class="text-right"
+  >
+    <div
+      class="text-xs font-semibold text-theme-secondary-700"
+    >
+      Your balance
+    </div>
+    <div
+      class="text-sm font-bold text-theme-secondary-text dark:text-theme-text"
+    >
+      <span
+        data-testid="Amount"
+      >
+        0 BTC
+      </span>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Balance should render if ticker is unavailable 1`] = `
+<div>
+  <div
+    class="text-right"
+  >
+    <div
+      class="text-xs font-semibold text-theme-secondary-700"
+    >
+      Your balance
+    </div>
+    <div
+      class="text-sm font-bold text-theme-secondary-text dark:text-theme-text"
+    >
+      <span
+        data-testid="Amount"
+      >
+        0 
+      </span>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Balance should render loading state 1`] = `
+<div>
+  <div
+    class="text-right"
+  >
+    <div
+      class="text-xs font-semibold text-theme-secondary-700"
+    >
+      Your balance
+    </div>
+    <div
+      class="text-sm font-bold text-theme-secondary-text dark:text-theme-text flex justify-end mt-1"
+    >
+      <span>
+        <span
+          class="flex items-center leading-none"
+        >
+          <span
+            class="react-loading-skeleton css-1eg0sfo-skeletonStyles-Skeleton"
+            style="width: 60px; height: 16px;"
+          >
+            ‌
+          </span>
+          ‌
+        </span>
+      </span>
+    </div>
+  </div>
+</div>
+`;

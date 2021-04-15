@@ -12,7 +12,7 @@ exports[`UpdatePeer should render update peer modal 1`] = `
       data-testid="modal__overlay"
     />
     <div
-      class="Modal__ModalContainer-sc-1pv7yg7-0 gDeenD absolute left-0 right-0 z-50 flex flex-col p-10 mx-auto overflow-hidden rounded-2xl bg-theme-background shadow-2xl "
+      class="Modal__ModalContainer-sc-1pv7yg7-0 gDeenD absolute left-0 right-0 z-50 flex flex-col p-10 mx-auto overflow-hidden rounded-3xl bg-theme-background shadow-2xl "
       data-testid="modal__inner"
     >
       <div
@@ -47,7 +47,7 @@ exports[`UpdatePeer should render update peer modal 1`] = `
           Custom Peer
         </h2>
         <div
-          class="flex-1"
+          class="flex-1 mt-4"
         >
           <form
             class="space-y-8"
@@ -80,7 +80,7 @@ exports[`UpdatePeer should render update peer modal 1`] = `
                     id="CustomPeers__network-label"
                   />
                   <div
-                    class="Input__InputWrapperStyled-wu99qs-0 jba-du"
+                    class="Input__InputWrapperStyled-wu99qs-0 fWHFgH"
                   >
                     <div
                       aria-label="ARK"
@@ -322,7 +322,7 @@ exports[`UpdatePeer should render update peer modal 1`] = `
                 />
               </label>
               <div
-                class="Input__InputWrapperStyled-wu99qs-0 jba-du"
+                class="Input__InputWrapperStyled-wu99qs-0 fWHFgH"
               >
                 <div
                   class="relative flex flex-1 h-full"
@@ -351,7 +351,7 @@ exports[`UpdatePeer should render update peer modal 1`] = `
                 />
               </label>
               <div
-                class="Input__InputWrapperStyled-wu99qs-0 jba-du"
+                class="Input__InputWrapperStyled-wu99qs-0 fWHFgH"
               >
                 <div
                   class="relative flex flex-1 h-full"

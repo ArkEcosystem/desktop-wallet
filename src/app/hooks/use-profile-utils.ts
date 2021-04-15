@@ -1,4 +1,5 @@
 import { Contracts, Environment, Helpers } from "@arkecosystem/platform-sdk-profiles";
+import { uniq } from "@arkecosystem/utils";
 import { useCallback, useMemo } from "react";
 import { matchPath } from "react-router-dom";
 
@@ -59,10 +60,18 @@ export const useProfileUtils = (env: Environment) => {
 		[getProfileStoredPassword],
 	);
 
-	return useMemo(() => ({ getProfileById, getProfileFromUrl, getProfileStoredPassword, saveProfile }), [
-		getProfileFromUrl,
-		getProfileById,
-		saveProfile,
-		getProfileStoredPassword,
-	]);
+	const getErroredNetworks = useCallback((profile: Contracts.IProfile) => {
+		const erroredNetworks = profile
+			.wallets()
+			.values()
+			.filter((wallet) => wallet.hasBeenPartiallyRestored())
+			.map((wallet) => `${wallet.network().name()}`);
+
+		return { hasErroredNetworks: erroredNetworks.length > 0, erroredNetworks: uniq(erroredNetworks) };
+	}, []);
+
+	return useMemo(
+		() => ({ getProfileById, getProfileFromUrl, getProfileStoredPassword, saveProfile, getErroredNetworks }),
+		[getProfileFromUrl, getProfileById, saveProfile, getProfileStoredPassword, getErroredNetworks],
+	);
 };

@@ -489,7 +489,22 @@ exports[`Wallets should load more wallets 1`] = `
                     >
                       <div
                         class="inline-flex items-center space-x-1"
-                      />
+                      >
+                        <div
+                          class="inline-block p-1 text-theme-text"
+                          data-testid="WalletIcon__Key"
+                        >
+                          <div
+                            class="sc-bdfBwQ dHWxPT"
+                            height="16"
+                            width="1em"
+                          >
+                            <svg>
+                              key.svg
+                            </svg>
+                          </div>
+                        </div>
+                      </div>
                     </div>
                   </td>
                   <td>
@@ -575,7 +590,22 @@ exports[`Wallets should load more wallets 1`] = `
                     >
                       <div
                         class="inline-flex items-center space-x-1"
-                      />
+                      >
+                        <div
+                          class="inline-block p-1 text-theme-text"
+                          data-testid="WalletIcon__Key"
+                        >
+                          <div
+                            class="sc-bdfBwQ dHWxPT"
+                            height="16"
+                            width="1em"
+                          >
+                            <svg>
+                              key.svg
+                            </svg>
+                          </div>
+                        </div>
+                      </div>
                     </div>
                   </td>
                   <td>
@@ -1100,7 +1130,22 @@ exports[`Wallets should open and close ledger import modal 1`] = `
                     >
                       <div
                         class="inline-flex items-center space-x-1"
-                      />
+                      >
+                        <div
+                          class="inline-block p-1 text-theme-text"
+                          data-testid="WalletIcon__Key"
+                        >
+                          <div
+                            class="sc-bdfBwQ dHWxPT"
+                            height="16"
+                            width="1em"
+                          >
+                            <svg>
+                              key.svg
+                            </svg>
+                          </div>
+                        </div>
+                      </div>
                     </div>
                   </td>
                   <td>
@@ -1186,7 +1231,22 @@ exports[`Wallets should open and close ledger import modal 1`] = `
                     >
                       <div
                         class="inline-flex items-center space-x-1"
-                      />
+                      >
+                        <div
+                          class="inline-block p-1 text-theme-text"
+                          data-testid="WalletIcon__Key"
+                        >
+                          <div
+                            class="sc-bdfBwQ dHWxPT"
+                            height="16"
+                            width="1em"
+                          >
+                            <svg>
+                              key.svg
+                            </svg>
+                          </div>
+                        </div>
+                      </div>
                     </div>
                   </td>
                   <td>
@@ -1225,7 +1285,7 @@ exports[`Wallets should open and close ledger import modal 1`] = `
           data-testid="modal__overlay"
         />
         <div
-          class="Modal__ModalContainer-sc-1pv7yg7-0 bGiJfU absolute left-0 right-0 z-50 flex flex-col p-10 mx-auto overflow-hidden rounded-2xl bg-theme-background shadow-2xl "
+          class="Modal__ModalContainer-sc-1pv7yg7-0 bGiJfU absolute left-0 right-0 z-50 flex flex-col p-10 mx-auto overflow-hidden rounded-3xl bg-theme-background shadow-2xl "
           data-testid="modal__inner"
         >
           <div
@@ -1258,7 +1318,7 @@ exports[`Wallets should open and close ledger import modal 1`] = `
               class="mb-0 text-3xl font-bold"
             />
             <div
-              class="flex-1"
+              class="flex-1 mt-4"
             >
               <div
                 class="mt-8 space-y-8"
@@ -1270,7 +1330,7 @@ exports[`Wallets should open and close ledger import modal 1`] = `
                     class="space-y-4"
                   >
                     <h1
-                      class="mb-0 text-4xl"
+                      class="mb-0 text-3xl"
                       data-testid="header__title"
                     >
                       Ledger Wallet
@@ -1879,7 +1939,22 @@ exports[`Wallets should render grid 1`] = `
                     </div>
                     <div
                       class="flex absolute -top-1 -right-1 items-center m-4 space-x-1"
-                    />
+                    >
+                      <div
+                        class="inline-block p-1 text-theme-text"
+                        data-testid="WalletIcon__Key"
+                      >
+                        <div
+                          class="sc-bdfBwQ dHWxPT"
+                          height="16"
+                          width="1em"
+                        >
+                          <svg>
+                            key.svg
+                          </svg>
+                        </div>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -1953,7 +2028,22 @@ exports[`Wallets should render grid 1`] = `
                     </div>
                     <div
                       class="flex absolute -top-1 -right-1 items-center m-4 space-x-1"
-                    />
+                    >
+                      <div
+                        class="inline-block p-1 text-theme-text"
+                        data-testid="WalletIcon__Key"
+                      >
+                        <div
+                          class="sc-bdfBwQ dHWxPT"
+                          height="16"
+                          width="1em"
+                        >
+                          <svg>
+                            key.svg
+                          </svg>
+                        </div>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -2322,7 +2412,22 @@ exports[`Wallets should render grid in loading state 1`] = `
                     </div>
                     <div
                       class="flex absolute -top-1 -right-1 items-center m-4 space-x-1"
-                    />
+                    >
+                      <div
+                        class="inline-block p-1 text-theme-text"
+                        data-testid="WalletIcon__Key"
+                      >
+                        <div
+                          class="sc-bdfBwQ dHWxPT"
+                          height="16"
+                          width="1em"
+                        >
+                          <svg>
+                            key.svg
+                          </svg>
+                        </div>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -2396,7 +2501,22 @@ exports[`Wallets should render grid in loading state 1`] = `
                     </div>
                     <div
                       class="flex absolute -top-1 -right-1 items-center m-4 space-x-1"
-                    />
+                    >
+                      <div
+                        class="inline-block p-1 text-theme-text"
+                        data-testid="WalletIcon__Key"
+                      >
+                        <div
+                          class="sc-bdfBwQ dHWxPT"
+                          height="16"
+                          width="1em"
+                        >
+                          <svg>
+                            key.svg
+                          </svg>
+                        </div>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -2898,7 +3018,22 @@ exports[`Wallets should render list 1`] = `
                     >
                       <div
                         class="inline-flex items-center space-x-1"
-                      />
+                      >
+                        <div
+                          class="inline-block p-1 text-theme-text"
+                          data-testid="WalletIcon__Key"
+                        >
+                          <div
+                            class="sc-bdfBwQ dHWxPT"
+                            height="16"
+                            width="1em"
+                          >
+                            <svg>
+                              key.svg
+                            </svg>
+                          </div>
+                        </div>
+                      </div>
                     </div>
                   </td>
                   <td>
@@ -2984,7 +3119,22 @@ exports[`Wallets should render list 1`] = `
                     >
                       <div
                         class="inline-flex items-center space-x-1"
-                      />
+                      >
+                        <div
+                          class="inline-block p-1 text-theme-text"
+                          data-testid="WalletIcon__Key"
+                        >
+                          <div
+                            class="sc-bdfBwQ dHWxPT"
+                            height="16"
+                            width="1em"
+                          >
+                            <svg>
+                              key.svg
+                            </svg>
+                          </div>
+                        </div>
+                      </div>
                     </div>
                   </td>
                   <td>
@@ -3298,7 +3448,22 @@ exports[`Wallets should render without testnet wallets 1`] = `
                     </div>
                     <div
                       class="flex absolute -top-1 -right-1 items-center m-4 space-x-1"
-                    />
+                    >
+                      <div
+                        class="inline-block p-1 text-theme-text"
+                        data-testid="WalletIcon__Key"
+                      >
+                        <div
+                          class="sc-bdfBwQ dHWxPT"
+                          height="16"
+                          width="1em"
+                        >
+                          <svg>
+                            key.svg
+                          </svg>
+                        </div>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -3751,7 +3916,22 @@ exports[`Wallets should toggle between grid and list view 1`] = `
                     </div>
                     <div
                       class="flex absolute -top-1 -right-1 items-center m-4 space-x-1"
-                    />
+                    >
+                      <div
+                        class="inline-block p-1 text-theme-text"
+                        data-testid="WalletIcon__Key"
+                      >
+                        <div
+                          class="sc-bdfBwQ dHWxPT"
+                          height="16"
+                          width="1em"
+                        >
+                          <svg>
+                            key.svg
+                          </svg>
+                        </div>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -3825,7 +4005,22 @@ exports[`Wallets should toggle between grid and list view 1`] = `
                     </div>
                     <div
                       class="flex absolute -top-1 -right-1 items-center m-4 space-x-1"
-                    />
+                    >
+                      <div
+                        class="inline-block p-1 text-theme-text"
+                        data-testid="WalletIcon__Key"
+                      >
+                        <div
+                          class="sc-bdfBwQ dHWxPT"
+                          height="16"
+                          width="1em"
+                        >
+                          <svg>
+                            key.svg
+                          </svg>
+                        </div>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>

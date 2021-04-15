@@ -11,7 +11,7 @@ import { useActiveProfile } from "app/hooks";
 import { CreateContact, DeleteContact, UpdateContact } from "domains/contact/components";
 import { ContactListItem } from "domains/contact/components/ContactListItem";
 import querystring from "querystring";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { useHistory } from "react-router-dom";
 
@@ -40,11 +40,7 @@ const ContactsHeaderExtra = ({ showSearchBar, onSearch, onAddContact }: Contacts
 	);
 };
 
-type ContactsProps = {
-	onSearch?: any;
-};
-
-export const Contacts = ({ onSearch }: ContactsProps) => {
+export const Contacts = () => {
 	const { env, state } = useEnvironmentContext();
 
 	const history = useHistory();
@@ -52,6 +48,15 @@ export const Contacts = ({ onSearch }: ContactsProps) => {
 	const activeProfile = useActiveProfile();
 
 	const [contacts, setContacts] = useState<Contracts.IContact[]>([]);
+	const [query, setQuery] = useState<string>("");
+
+	const filteredContacts = useMemo(() => {
+		if (!query.length) {
+			return contacts;
+		}
+
+		return contacts.filter((contact) => contact.name().toLowerCase().includes(query.toLowerCase()));
+	}, [contacts, query]);
 
 	const [createIsOpen, setCreateIsOpen] = useState(false);
 
@@ -132,7 +137,7 @@ export const Contacts = ({ onSearch }: ContactsProps) => {
 						extra={
 							<ContactsHeaderExtra
 								showSearchBar={!!contacts.length}
-								onSearch={onSearch}
+								onSearch={setQuery}
 								onAddContact={() => setCreateIsOpen(true)}
 							/>
 						}
@@ -140,23 +145,31 @@ export const Contacts = ({ onSearch }: ContactsProps) => {
 				</Section>
 
 				<Section>
-					{!contacts.length && <EmptyBlock>{t("CONTACTS.CONTACTS_PAGE.EMPTY_MESSAGE")}</EmptyBlock>}
-
-					{!!contacts.length && (
-						<div className="w-full" data-testid="ContactList">
-							<Table columns={listColumns} data={contacts}>
-								{(contact: Contracts.IContact) => (
-									<ContactListItem
-										item={contact}
-										options={contactOptions}
-										onSend={handleSend}
-										onAction={(action: { value: any }) =>
-											handleContactAction(action.value, contact)
-										}
-									/>
-								)}
-							</Table>
-						</div>
+					{!contacts.length ? (
+						<EmptyBlock>{t("CONTACTS.CONTACTS_PAGE.EMPTY_MESSAGE")}</EmptyBlock>
+					) : (
+						<>
+							{filteredContacts.length ? (
+								<div className="w-full" data-testid="ContactList">
+									<Table columns={listColumns} data={filteredContacts}>
+										{(contact: Contracts.IContact) => (
+											<ContactListItem
+												item={contact}
+												options={contactOptions}
+												onSend={handleSend}
+												onAction={(action: { value: any }) =>
+													handleContactAction(action.value, contact)
+												}
+											/>
+										)}
+									</Table>
+								</div>
+							) : (
+								<EmptyBlock data-testid="Contacts--empty-results">
+									{t("CONTACTS.CONTACTS_PAGE.NO_CONTACTS_FOUND", { query })}
+								</EmptyBlock>
+							)}
+						</>
 					)}
 				</Section>
 			</Page>
