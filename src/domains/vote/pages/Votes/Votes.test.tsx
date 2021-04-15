@@ -552,7 +552,7 @@ describe("Votes", () => {
 			}),
 		]);
 		const route = `/profiles/${profile.id()}/wallets/${wallet.id()}/votes`;
-		const { asFragment, container, getByTestId, getAllByTestId } = renderPage(route);
+		const { container, getByTestId } = renderPage(route);
 
 		expect(getByTestId("DelegateTable")).toBeTruthy();
 

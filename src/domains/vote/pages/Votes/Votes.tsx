@@ -125,11 +125,10 @@ export const Votes = () => {
 		currentVotes,
 	]);
 
-	const filteredDelegatesVotes = useMemo(() => (selectedFilter === "all" ? delegates : currentVotes), [
-		delegates,
-		currentVotes,
-		selectedFilter,
-	]);
+	const filteredDelegatesVotes = useMemo(() => {
+		const value = selectedFilter === "all" ? delegates : currentVotes;
+		return value?.filter((delegate) => !delegate.isResignedDelegate());
+	}, [delegates, currentVotes, selectedFilter]);
 
 	const filterProperties = {
 		networks,
@@ -193,10 +192,7 @@ export const Votes = () => {
 		async (wallet) => {
 			setIsLoadingDelegates(true);
 			await env.delegates().sync(wallet.coinId(), wallet.networkId());
-			const delegates = env
-				.delegates()
-				.all(wallet.coinId(), wallet.networkId())
-				.filter((delegate) => !delegate.isResignedDelegate());
+			const delegates = env.delegates().all(wallet.coinId(), wallet.networkId());
 
 			setDelegates(delegates);
 			setIsLoadingDelegates(false);
@@ -229,6 +225,7 @@ export const Votes = () => {
 			params.append("unvotes", unvotes.join());
 		}
 
+		/* istanbul ignore else */
 		if (votes?.length > 0) {
 			params.append("votes", votes.join());
 		}
