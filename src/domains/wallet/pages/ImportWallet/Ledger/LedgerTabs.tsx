@@ -80,7 +80,7 @@ export const LedgerTabs = ({ activeIndex }: { activeIndex?: number }) => {
 	const activeProfile = useActiveProfile();
 
 	const history = useHistory();
-	const { env, persist } = useEnvironmentContext();
+	const { persist } = useEnvironmentContext();
 	const { importLedgerWallets, isBusy } = useLedgerContext();
 
 	const { t } = useTranslation();

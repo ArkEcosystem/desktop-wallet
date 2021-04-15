@@ -78,7 +78,7 @@ export const LedgerConnectionStep = ({
 			setIsReady(true);
 		};
 		run();
-	}, [connect, network, onFailed]);
+	}, [connect, network, onFailed, activeProfile]);
 
 	useEffect(() => {
 		if (isConnected && isReady) {

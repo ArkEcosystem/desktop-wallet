@@ -6,7 +6,6 @@ import { Button } from "app/components/Button";
 import { Form, FormField, FormLabel, SubForm } from "app/components/Form";
 import { Icon } from "app/components/Icon";
 import { InputAddress, InputDefault } from "app/components/Input";
-import { useEnvironmentContext } from "app/contexts";
 import { useActiveProfile } from "app/hooks";
 import { NetworkIcon } from "domains/network/components/NetworkIcon";
 import { SelectNetwork } from "domains/network/components/SelectNetwork";
@@ -97,7 +96,6 @@ export const ContactForm = ({ contact, networks, onChange, onCancel, onDelete, o
 			: [],
 	);
 
-	const { env } = useEnvironmentContext();
 	const activeProfile = useActiveProfile();
 	const { t } = useTranslation();
 
