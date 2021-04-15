@@ -9,7 +9,7 @@ import { useTranslation } from "react-i18next";
 export const LedgerWaitingDeviceContent = () => {
 	const { t } = useTranslation();
 	return (
-		<div className="mt-8 space-y-8">
+		<div className="space-y-8">
 			<Header
 				title={t("WALLETS.MODAL_LEDGER_WALLET.TITLE")}
 				subtitle={t("WALLETS.MODAL_LEDGER_WALLET.CONNECT_DEVICE")}

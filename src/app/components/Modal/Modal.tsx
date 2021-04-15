@@ -89,8 +89,8 @@ const ModalContent = (props: ModalContentProps) => {
 				</OriginalButton>
 			</div>
 
-			<div className="relative">
-				{props.banner ? (
+			<div className="relative space-y-4">
+				{props.banner && (
 					<div className="relative -mx-10 mb-10 -mt-10 h-56">
 						{props.banner}
 
@@ -104,11 +104,13 @@ const ModalContent = (props: ModalContentProps) => {
 							</h2>
 						</div>
 					</div>
-				) : (
+				)}
+
+				{!props.banner && props.title && (
 					<h2 className={cs("mb-0 text-3xl font-bold", props.titleClass)}>{props.title}</h2>
 				)}
 
-				<div className="flex-1 mt-4">
+				<div className="flex-1">
 					{props.image}
 
 					{props.description && (
