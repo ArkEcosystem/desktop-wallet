@@ -190,6 +190,17 @@ describe("Votes", () => {
 	});
 
 	it("should filter current delegates", async () => {
+		const walletSpy = jest.spyOn(wallet, "votes").mockReturnValue([
+			new ReadOnlyWallet({
+				address: "D5L5zXgvqtg7qoGimt5vYhFuf5Ued6iWVr",
+				explorerLink: "",
+				publicKey: wallet.publicKey(),
+				username: "arkx",
+				rank: 52,
+				isResignedDelegate: false,
+			}),
+		]);
+
 		const route = `/profiles/${profile.id()}/wallets/${wallet.id()}/votes`;
 		const { asFragment, container, getByTestId, getAllByTestId } = renderPage(route);
 

@@ -359,8 +359,15 @@ exports[`Votes should filter current delegates 1`] = `
                         class="group"
                       >
                         <div
-                          class="ControlButton__ControlButtonStyled-sc-1xp1l1a-0 dLCfwp"
+                          class="ControlButton__ControlButtonStyled-sc-1xp1l1a-0 jxlhJv"
                         >
+                          <div
+                            class="flex absolute right-0 justify-center items-center -mt-3 w-3 h-3 rounded-full transition-all duration-100 ease-linear bg-theme-background mr-2"
+                          >
+                            <div
+                              class="w-2 h-2 rounded-full bg-theme-danger-500"
+                            />
+                          </div>
                           <div
                             class="flex items-center justify-center w-5 h-5"
                           >
@@ -404,14 +411,13 @@ exports[`Votes should filter current delegates 1`] = `
                             </span>
                           </label>
                           <label
-                            class="flex items-center px-2 pb-1 space-x-3 rounded-md text-theme-secondary-400"
+                            class="flex items-center px-2 pb-1 space-x-3 rounded-md cursor-pointer text-theme-secondary-text hover:bg-theme-secondary-100"
                             data-testid="VotesFilter__option--current"
                           >
                             <span>
                               <input
                                 class="Checkbox-sc-17gwqiq-0 jArhLO rounded-lg"
                                 color="success"
-                                disabled=""
                                 name="current"
                                 type="checkbox"
                               />
@@ -590,16 +596,16 @@ exports[`Votes should filter current delegates 1`] = `
                       class="w-20"
                     >
                       <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 DpDcR justify-start font-bold text-theme-secondary-text "
+                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 DpDcR justify-start font-bold text-theme-secondary-text bg-theme-primary-50 dark:bg-theme-primary-900"
                       >
                         <span>
-                          #2
+                          #52
                         </span>
                       </div>
                     </td>
                     <td>
                       <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT space-x-4 font-bold "
+                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT space-x-4 font-bold bg-theme-primary-50 dark:bg-theme-primary-900"
                       >
                         <div
                           class="Avatar__AvatarWrapper-sc-1vsy2s2-0 ktCSBk"
@@ -616,7 +622,7 @@ exports[`Votes should filter current delegates 1`] = `
                           </div>
                         </div>
                         <span>
-                          genesis_42
+                          arkx
                         </span>
                       </div>
                     </td>
@@ -624,14 +630,24 @@ exports[`Votes should filter current delegates 1`] = `
                       class="w-20"
                     >
                       <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT justify-center "
-                      />
+                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT justify-center bg-theme-primary-50 dark:bg-theme-primary-900"
+                      >
+                        <div
+                          class="sc-bdfBwQ iSzUah text-xs text-theme-primary-600"
+                          height="22"
+                          width="22"
+                        >
+                          <svg>
+                            status-ok.svg
+                          </svg>
+                        </div>
+                      </div>
                     </td>
                     <td
                       class="w-20"
                     >
                       <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT justify-center font-bold text-theme-secondary-text "
+                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT justify-center font-bold text-theme-secondary-text bg-theme-primary-50 dark:bg-theme-primary-900"
                       >
                         <span>
                           %
@@ -642,7 +658,7 @@ exports[`Votes should filter current delegates 1`] = `
                       class="w-40"
                     >
                       <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 kjTmcB justify-end "
+                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 kjTmcB justify-end bg-theme-primary-50 dark:bg-theme-primary-900"
                       >
                         <button
                           class="OriginalButton__StyledButton-sc-1y2wptt-0 hsoUax"
@@ -653,161 +669,7 @@ exports[`Votes should filter current delegates 1`] = `
                           <div
                             class="flex relative items-center space-x-2"
                           >
-                            Select
-                          </div>
-                        </button>
-                      </div>
-                    </td>
-                  </tr>
-                  <tr
-                    class="TableRow__TableRowStyled-sc-1br46dw-0 fzBhIQ group"
-                    data-testid="TableRow"
-                  >
-                    <td
-                      class="w-20"
-                    >
-                      <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 DpDcR justify-start font-bold text-theme-secondary-text "
-                      >
-                        <span>
-                          #3
-                        </span>
-                      </div>
-                    </td>
-                    <td>
-                      <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT space-x-4 font-bold "
-                      >
-                        <div
-                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 ktCSBk"
-                          data-testid="Avatar"
-                        >
-                          <div
-                            class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
-                          >
-                            <img
-                              alt="DRgF3PvzeGWndQjET7dZsSmnrc6uAy23ES"
-                              src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(63, 81, 181)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"40\\" cx=\\"100\\" cy=\\"40\\" fill=\\"rgb(0, 150, 136)\\"/><circle r=\\"55\\" cx=\\"60\\" cy=\\"60\\" fill=\\"rgb(205, 220, 57)\\"/><circle r=\\"50\\" cx=\\"50\\" cy=\\"30\\" fill=\\"rgb(33, 150, 243)\\"/></svg>"
-                              title="DRgF3PvzeGWndQjET7dZsSmnrc6uAy23ES"
-                            />
-                          </div>
-                        </div>
-                        <span>
-                          genesis_17
-                        </span>
-                      </div>
-                    </td>
-                    <td
-                      class="w-20"
-                    >
-                      <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT justify-center "
-                      />
-                    </td>
-                    <td
-                      class="w-20"
-                    >
-                      <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT justify-center font-bold text-theme-secondary-text "
-                      >
-                        <span>
-                          %
-                        </span>
-                      </div>
-                    </td>
-                    <td
-                      class="w-40"
-                    >
-                      <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 kjTmcB justify-end "
-                      >
-                        <button
-                          class="OriginalButton__StyledButton-sc-1y2wptt-0 hsoUax"
-                          color="primary"
-                          data-testid="DelegateRow__toggle-1"
-                          type="button"
-                        >
-                          <div
-                            class="flex relative items-center space-x-2"
-                          >
-                            Select
-                          </div>
-                        </button>
-                      </div>
-                    </td>
-                  </tr>
-                  <tr
-                    class="TableRow__TableRowStyled-sc-1br46dw-0 fzBhIQ group"
-                    data-testid="TableRow"
-                  >
-                    <td
-                      class="w-20"
-                    >
-                      <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 DpDcR justify-start font-bold text-theme-secondary-text "
-                      >
-                        <span>
-                          #12
-                        </span>
-                      </div>
-                    </td>
-                    <td>
-                      <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT space-x-4 font-bold "
-                      >
-                        <div
-                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 ktCSBk"
-                          data-testid="Avatar"
-                        >
-                          <div
-                            class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
-                          >
-                            <img
-                              alt="DBk4cPYpqp7EBcvkstVDpyX7RQJNHxpMg8"
-                              src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(244, 67, 54)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"40\\" cy=\\"60\\" fill=\\"rgb(33, 150, 243)\\"/><circle r=\\"40\\" cx=\\"100\\" cy=\\"30\\" fill=\\"rgb(205, 220, 57)\\"/><circle r=\\"45\\" cx=\\"20\\" cy=\\"50\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
-                              title="DBk4cPYpqp7EBcvkstVDpyX7RQJNHxpMg8"
-                            />
-                          </div>
-                        </div>
-                        <span>
-                          itsanametoo
-                        </span>
-                      </div>
-                    </td>
-                    <td
-                      class="w-20"
-                    >
-                      <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT justify-center "
-                      />
-                    </td>
-                    <td
-                      class="w-20"
-                    >
-                      <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT justify-center font-bold text-theme-secondary-text "
-                      >
-                        <span>
-                          %
-                        </span>
-                      </div>
-                    </td>
-                    <td
-                      class="w-40"
-                    >
-                      <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 kjTmcB justify-end "
-                      >
-                        <button
-                          class="OriginalButton__StyledButton-sc-1y2wptt-0 hsoUax"
-                          color="primary"
-                          data-testid="DelegateRow__toggle-2"
-                          type="button"
-                        >
-                          <div
-                            class="flex relative items-center space-x-2"
-                          >
-                            Select
+                            Current
                           </div>
                         </button>
                       </div>
@@ -2354,6 +2216,40 @@ exports[`Votes should hide testnet wallet if disabled from profile setting 1`] =
               Select a Delegate
             </h2>
             <div
+              class="flex overflow-hidden flex-col space-y-4 rounded-lg p-4 bg-theme-warning-50 dark:bg-theme-secondary-800 sm:space-y-0 sm:space-x-4 sm:flex-row sm:items-center mb-6"
+            >
+              <div
+                class="h-11 w-11 flex flex-shrink-0 items-center justify-center rounded-lg text-white bg-theme-warning-600"
+              >
+                <div
+                  class="sc-bdfBwQ hteSKx"
+                  height="1.25em"
+                  width="1.25em"
+                >
+                  <svg>
+                    alert-warning.svg
+                  </svg>
+                </div>
+              </div>
+              <div
+                class="flex flex-col w-full"
+              >
+                <div
+                  class="text-sm leading-relaxed break-words dark:text-theme-secondary-500"
+                >
+                  <div
+                    data-testid="Votes__resigned-vote"
+                  >
+                    "
+                    <strong>
+                      arkx
+                    </strong>
+                    ", the Delegate you are voting for has resigned. Press continue to unvote or select a new Delegate below.
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
               class="Table__TableWrapper-sc-84pst5-0 ccYCKK -mt-3"
               role="table"
             >
@@ -3317,6 +3213,40 @@ exports[`Votes should render 1`] = `
             >
               Select a Delegate
             </h2>
+            <div
+              class="flex overflow-hidden flex-col space-y-4 rounded-lg p-4 bg-theme-warning-50 dark:bg-theme-secondary-800 sm:space-y-0 sm:space-x-4 sm:flex-row sm:items-center mb-6"
+            >
+              <div
+                class="h-11 w-11 flex flex-shrink-0 items-center justify-center rounded-lg text-white bg-theme-warning-600"
+              >
+                <div
+                  class="sc-bdfBwQ hteSKx"
+                  height="1.25em"
+                  width="1.25em"
+                >
+                  <svg>
+                    alert-warning.svg
+                  </svg>
+                </div>
+              </div>
+              <div
+                class="flex flex-col w-full"
+              >
+                <div
+                  class="text-sm leading-relaxed break-words dark:text-theme-secondary-500"
+                >
+                  <div
+                    data-testid="Votes__resigned-vote"
+                  >
+                    "
+                    <strong>
+                      arkx
+                    </strong>
+                    ", the Delegate you are voting for has resigned. Press continue to unvote or select a new Delegate below.
+                  </div>
+                </div>
+              </div>
+            </div>
             <div
               class="Table__TableWrapper-sc-84pst5-0 ccYCKK -mt-3"
               role="table"
@@ -4809,7 +4739,7 @@ exports[`Votes should select a delegate 1`] = `
                       class="w-20"
                     >
                       <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 DpDcR justify-start font-bold text-theme-secondary-text bg-theme-success-50 dark:bg-theme-success-900"
+                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 DpDcR justify-start font-bold text-theme-secondary-text bg-theme-danger-50 dark:bg-theme-danger-900"
                       >
                         <span>
                           #2
@@ -4818,7 +4748,7 @@ exports[`Votes should select a delegate 1`] = `
                     </td>
                     <td>
                       <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT space-x-4 font-bold bg-theme-success-50 dark:bg-theme-success-900"
+                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT space-x-4 font-bold bg-theme-danger-50 dark:bg-theme-danger-900"
                       >
                         <div
                           class="Avatar__AvatarWrapper-sc-1vsy2s2-0 ktCSBk"
@@ -4843,14 +4773,24 @@ exports[`Votes should select a delegate 1`] = `
                       class="w-20"
                     >
                       <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT justify-center bg-theme-success-50 dark:bg-theme-success-900"
-                      />
+                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT justify-center bg-theme-danger-50 dark:bg-theme-danger-900"
+                      >
+                        <div
+                          class="sc-bdfBwQ iSzUah text-xs text-theme-danger-500"
+                          height="22"
+                          width="22"
+                        >
+                          <svg>
+                            status-ok.svg
+                          </svg>
+                        </div>
+                      </div>
                     </td>
                     <td
                       class="w-20"
                     >
                       <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT justify-center font-bold text-theme-secondary-text bg-theme-success-50 dark:bg-theme-success-900"
+                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT justify-center font-bold text-theme-secondary-text bg-theme-danger-50 dark:bg-theme-danger-900"
                       >
                         <span>
                           %
@@ -4861,18 +4801,18 @@ exports[`Votes should select a delegate 1`] = `
                       class="w-40"
                     >
                       <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 kjTmcB justify-end bg-theme-success-50 dark:bg-theme-success-900"
+                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 kjTmcB justify-end bg-theme-danger-50 dark:bg-theme-danger-900"
                       >
                         <button
                           class="OriginalButton__StyledButton-sc-1y2wptt-0 hsoUax"
-                          color="success"
+                          color="danger"
                           data-testid="DelegateRow__toggle-0"
                           type="button"
                         >
                           <div
                             class="flex relative items-center space-x-2"
                           >
-                            Selected
+                            Unselected
                           </div>
                         </button>
                       </div>
@@ -4940,21 +4880,18 @@ exports[`Votes should select a delegate 1`] = `
                       <div
                         class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 kjTmcB justify-end "
                       >
-                        <span>
-                          <button
-                            class="OriginalButton__StyledButton-sc-1y2wptt-0 blpaPr"
-                            color="primary"
-                            data-testid="DelegateRow__toggle-1"
-                            disabled=""
-                            type="button"
+                        <button
+                          class="OriginalButton__StyledButton-sc-1y2wptt-0 hsoUax"
+                          color="primary"
+                          data-testid="DelegateRow__toggle-1"
+                          type="button"
+                        >
+                          <div
+                            class="flex relative items-center space-x-2"
                           >
-                            <div
-                              class="flex relative items-center space-x-2"
-                            >
-                              Select
-                            </div>
-                          </button>
-                        </span>
+                            Select
+                          </div>
+                        </button>
                       </div>
                     </td>
                   </tr>
@@ -5020,21 +4957,18 @@ exports[`Votes should select a delegate 1`] = `
                       <div
                         class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 kjTmcB justify-end "
                       >
-                        <span>
-                          <button
-                            class="OriginalButton__StyledButton-sc-1y2wptt-0 blpaPr"
-                            color="primary"
-                            data-testid="DelegateRow__toggle-2"
-                            disabled=""
-                            type="button"
+                        <button
+                          class="OriginalButton__StyledButton-sc-1y2wptt-0 hsoUax"
+                          color="primary"
+                          data-testid="DelegateRow__toggle-2"
+                          type="button"
+                        >
+                          <div
+                            class="flex relative items-center space-x-2"
                           >
-                            <div
-                              class="flex relative items-center space-x-2"
-                            >
-                              Select
-                            </div>
-                          </button>
-                        </span>
+                            Select
+                          </div>
+                        </button>
                       </div>
                     </td>
                   </tr>
@@ -5110,7 +5044,7 @@ exports[`Votes should select a delegate 1`] = `
                         class="inline-flex"
                       >
                         <div
-                          class="Circle__CircleWrapper-uw7h4j-0 bNDQMV mr-2 bg-theme-background border-theme-text text-theme-text ring-theme-background"
+                          class="Circle__CircleWrapper-uw7h4j-0 bNDQMV mr-2 bg-theme-background border-theme-secondary-500 text-theme-secondary-500 ring-theme-background"
                         >
                           <div
                             class="sc-bdfBwQ fPrsah text-xl"
@@ -5131,10 +5065,10 @@ exports[`Votes should select a delegate 1`] = `
                             Votes
                           </div>
                           <div
-                            class="text-theme-text"
+                            class="text-theme-secondary-500"
                             data-testid="DelegateTable__footer--votes"
                           >
-                            1
+                            0
                           </div>
                         </div>
                       </div>
@@ -7634,6 +7568,40 @@ exports[`Votes should show network warning 1`] = `
             >
               Select a Delegate
             </h2>
+            <div
+              class="flex overflow-hidden flex-col space-y-4 rounded-lg p-4 bg-theme-warning-50 dark:bg-theme-secondary-800 sm:space-y-0 sm:space-x-4 sm:flex-row sm:items-center mb-6"
+            >
+              <div
+                class="h-11 w-11 flex flex-shrink-0 items-center justify-center rounded-lg text-white bg-theme-warning-600"
+              >
+                <div
+                  class="sc-bdfBwQ hteSKx"
+                  height="1.25em"
+                  width="1.25em"
+                >
+                  <svg>
+                    alert-warning.svg
+                  </svg>
+                </div>
+              </div>
+              <div
+                class="flex flex-col w-full"
+              >
+                <div
+                  class="text-sm leading-relaxed break-words dark:text-theme-secondary-500"
+                >
+                  <div
+                    data-testid="Votes__resigned-vote"
+                  >
+                    "
+                    <strong>
+                      arkx
+                    </strong>
+                    ", the Delegate you are voting for has resigned. Press continue to unvote or select a new Delegate below.
+                  </div>
+                </div>
+              </div>
+            </div>
             <div
               class="Table__TableWrapper-sc-84pst5-0 ccYCKK -mt-3"
               role="table"
