@@ -186,7 +186,7 @@ module.exports = {
 				20: "20px",
 			},
 			borderRadius: {
-				"3xl": "1.25rem",
+				"2.5xl": "1.25rem",
 			},
 			fontFamily: {
 				sans: ["Inter", ...defaultConfig.theme.fontFamily.sans],
