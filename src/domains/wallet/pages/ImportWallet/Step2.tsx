@@ -142,7 +142,7 @@ const ImportInputField = ({
 				findAddress={async (value) => {
 					try {
 						const instance = coin;
-					await coin.identity().address().fromWIF(value);
+							await coin.identity().address().fromWIF(value);
 					} catch (e) {
 						throw new Error(t("WALLETS.PAGE_IMPORT_WALLET.VALIDATION.INVALID_WIF"));
 					}
