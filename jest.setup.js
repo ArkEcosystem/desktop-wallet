@@ -2,6 +2,7 @@ import MockDate from "mockdate";
 import { env } from "./src/utils/testing-library";
 import TestingPasswords from "tests/fixtures/env/testing-passwords.json";
 import fixtureData from "tests/fixtures/env/storage.json";
+import { Base64 } from "@arkecosystem/platform-sdk-crypto";
 
 jest.mock("@ledgerhq/hw-transport-node-hid-singleton", () => {
 	const { createTransportReplayer } = require("@ledgerhq/hw-transport-mocker");
@@ -50,34 +51,33 @@ jest.mock("electron", () => {
 });
 
 beforeAll(async () => {
-	await env.verify();
+	const ids = Object.keys(fixtureData.profiles);
+	const profiles = {};
+
+	ids.forEach((id) => {
+		profiles[id] = {
+			id,
+			password: undefined,
+			name: fixtureData.profiles[id].settings.NAME,
+			data: Base64.encode(JSON.stringify({ id, ...fixtureData.profiles[id] })),
+		};
+	});
+
+	await env.verify({ profiles });
 	await env.boot();
 
-	env.profiles().fill(fixtureData.profiles);
-	env.profiles()
-		.values()
-		.forEach((profile) => {
-			const profileData = fixtureData.profiles[profile.id()];
-
-			profile.peers().fill(profileData.peers);
-			profile.plugins().fill(profileData.plugins);
-			profile.data().fill(profileData.data);
-			profile.settings().fill(profileData.settings);
-			profile.notifications().fill(profileData.notifications);
-			profile.contacts().fill(profileData.contacts);
-			profile.wallets().fill(profileData.wallets);
-
-			profile.save();
-		});
-
 	for (const profile of env.profiles().values()) {
-		await profile.restore();
-		if (TestingPasswords?.profiles[profile.id()]?.password) {
-			profile.auth().setPassword(TestingPasswords?.profiles[profile.id()]?.password);
+		try {
+			await profile.restore();
+
+			if (TestingPasswords?.profiles[profile.id()]?.password) {
+				profile.auth().setPassword(TestingPasswords?.profiles[profile.id()]?.password);
+				profile.save();
+			}
+		} catch (error) {
+			throw new Error(`Restoring of profile [${profile.id}] failed. Reason: ${error}`);
 		}
 	}
-
-	await env.persist();
 	// Mark profiles as restored, to prevent multiple restoration in profile synchronizer
 	process.env.TEST_PROFILES_RESTORE_STATUS = "restored";
 });
