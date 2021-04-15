@@ -1,7 +1,7 @@
 import MockDate from "mockdate";
 import { env } from "./src/utils/testing-library";
-import { migrateProfileFixtures, restoreProfileTestPassword } from "migrations";
 import TestingPasswords from "tests/fixtures/env/testing-passwords.json";
+import fixtureData from "tests/fixtures/env/storage.json";
 
 jest.mock("@ledgerhq/hw-transport-node-hid-singleton", () => {
 	const { createTransportReplayer } = require("@ledgerhq/hw-transport-mocker");
@@ -50,22 +50,36 @@ jest.mock("electron", () => {
 });
 
 beforeAll(async () => {
-	migrateProfileFixtures(env);
-
 	await env.verify();
 	await env.boot();
 
-	for (const profile of env.profiles().values()) {
-		try {
-			await profile.restore(TestingPasswords?.profiles[profile.id()]?.password);
-			restoreProfileTestPassword(profile);
-		} catch (error) {
-			throw new Error(`Restoring of profile [${profile.id}] failed. Reason: ${error}`);
-		}
+	env.profiles().fill(fixtureData.profiles);
+	env.profiles()
+		.values()
+		.forEach((profile) => {
+			const profileData = fixtureData.profiles[profile.id()];
 
-		// Mark profiles as restored, to prevent multiple restoration in profile synchronizer
-		process.env.TEST_PROFILES_RESTORE_STATUS = "restored";
+			profile.peers().fill(profileData.peers);
+			profile.plugins().fill(profileData.plugins);
+			profile.data().fill(profileData.data);
+			profile.settings().fill(profileData.settings);
+			profile.notifications().fill(profileData.notifications);
+			profile.contacts().fill(profileData.contacts);
+			profile.wallets().fill(profileData.wallets);
+
+			profile.save();
+		});
+
+	for (const profile of env.profiles().values()) {
+		await profile.restore();
+		if (TestingPasswords?.profiles[profile.id()]?.password) {
+			profile.auth().setPassword(TestingPasswords?.profiles[profile.id()]?.password);
+		}
 	}
+
+	await env.persist();
+	// Mark profiles as restored, to prevent multiple restoration in profile synchronizer
+	process.env.TEST_PROFILES_RESTORE_STATUS = "restored";
 });
 
 beforeEach(() => {
