@@ -123,7 +123,7 @@ const ImportInputField = ({
 				findAddress={async (value) => {
 					try {
 						const instance = coin;
-						return await instance.identity().address().fromPrivateKey(value);
+						await coin.identity().address().fromPrivateKey(value);
 					} catch {
 						throw new Error(t("WALLETS.PAGE_IMPORT_WALLET.VALIDATION.INVALID_PRIVATE_KEY"));
 					}
