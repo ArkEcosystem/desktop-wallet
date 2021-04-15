@@ -47,7 +47,7 @@ export const useLedgerScanner = (coin: string, network: string, profile: Contrac
 			abortRetryRef.current = false;
 
 			try {
-				const instance = await env.coin(coin, network);
+				const instance = profile.coins().push(coin, network);
 				const derivationMode = derivationModes[currentDerivationModeIndex];
 
 				const addressMap = await searchAddresses(indexes, instance, profile, derivationMode);
@@ -72,7 +72,7 @@ export const useLedgerScanner = (coin: string, network: string, profile: Contrac
 
 			setIdle();
 		},
-		[coin, network, env, profile, setBusy, setIdle, derivationModes, currentDerivationModeIndex],
+		[coin, network, profile, setBusy, setIdle, derivationModes, currentDerivationModeIndex],
 	);
 
 	const abortScanner = useCallback(() => {

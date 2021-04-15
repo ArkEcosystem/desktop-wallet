@@ -1,6 +1,7 @@
 import { Coins } from "@arkecosystem/platform-sdk";
 import { Contracts } from "@arkecosystem/platform-sdk-profiles";
 import Transport from "@ledgerhq/hw-transport";
+import { useActiveProfile } from "app/hooks";
 import retry from "async-retry";
 import { useCallback, useEffect, useMemo, useReducer, useRef } from "react";
 
@@ -10,6 +11,7 @@ import { connectionReducer, defaultConnectionState } from "./connection.state";
 
 export const useLedgerConnection = (transport: typeof Transport) => {
 	const { env, persist } = useEnvironmentContext();
+	const activeProfile = useActiveProfile();
 	const [state, dispatch] = useReducer(connectionReducer, defaultConnectionState);
 	const abortRetryRef = useRef<boolean>(false);
 
@@ -54,7 +56,7 @@ export const useLedgerConnection = (transport: typeof Transport) => {
 			dispatch({ type: "waiting" });
 			abortRetryRef.current = false;
 
-			const instance = await env.coin(coin, network);
+			const instance = activeProfile.coins().push(coin, network);
 
 			try {
 				const slip44 = instance.config().get<number>("network.crypto.slip44");
@@ -81,7 +83,7 @@ export const useLedgerConnection = (transport: typeof Transport) => {
 				throw connectError;
 			}
 		},
-		[transport, env],
+		[transport, activeProfile],
 	);
 
 	const disconnect = useCallback(async (coin: Coins.Coin) => {

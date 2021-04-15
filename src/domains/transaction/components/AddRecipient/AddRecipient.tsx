@@ -155,8 +155,8 @@ export const AddRecipient = ({
 	useEffect(() => {
 		register("amount", sendTransfer.amount(network, remainingBalance, addedRecipients, isSingle));
 		register("displayAmount");
-		register("recipientAddress", sendTransfer.recipientAddress(network, addedRecipients, isSingle));
-	}, [register, remainingBalance, network, sendTransfer, addedRecipients, isSingle]);
+		register("recipientAddress", sendTransfer.recipientAddress(profile, network, addedRecipients, isSingle));
+	}, [register, remainingBalance, network, sendTransfer, addedRecipients, isSingle, profile]);
 
 	useEffect(() => {
 		clearErrors();

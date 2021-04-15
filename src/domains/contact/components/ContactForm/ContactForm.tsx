@@ -7,6 +7,7 @@ import { Form, FormField, FormLabel, SubForm } from "app/components/Form";
 import { Icon } from "app/components/Icon";
 import { InputAddress, InputDefault } from "app/components/Input";
 import { useEnvironmentContext } from "app/contexts";
+import { useActiveProfile } from "app/hooks";
 import { NetworkIcon } from "domains/network/components/NetworkIcon";
 import { SelectNetwork } from "domains/network/components/SelectNetwork";
 import React, { useEffect, useMemo, useState } from "react";
@@ -97,6 +98,7 @@ export const ContactForm = ({ contact, networks, onChange, onCancel, onDelete, o
 	);
 
 	const { env } = useEnvironmentContext();
+	const activeProfile = useActiveProfile();
 	const { t } = useTranslation();
 
 	const form = useForm({ mode: "onChange" });
@@ -122,7 +124,7 @@ export const ContactForm = ({ contact, networks, onChange, onCancel, onDelete, o
 			});
 		}
 
-		const instance: Coins.Coin = await env.coin(network.coin(), network.id());
+		const instance: Coins.Coin = activeProfile.coins().push(network.coin(), network.id());
 		const isValidAddress: boolean = await instance.identity().address().validate(address);
 
 		if (!isValidAddress) {

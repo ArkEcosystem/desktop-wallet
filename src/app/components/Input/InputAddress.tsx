@@ -1,5 +1,4 @@
-import { Coins } from "@arkecosystem/platform-sdk";
-import { useEnvironmentContext } from "app/contexts";
+import { useActiveProfile } from "app/hooks";
 import React from "react";
 import { RegisterOptions } from "react-hook-form";
 import { useTranslation } from "react-i18next";
@@ -26,10 +25,10 @@ export const InputAddress = ({
 	...props
 }: InputAddressProps) => {
 	const { t } = useTranslation();
-	const { env } = useEnvironmentContext();
+	const activeProfile = useActiveProfile();
 
 	const validateAddress = async (address: string) => {
-		const instance: Coins.Coin = await env.coin(coin!, network!);
+		const instance = activeProfile.coins().push(coin!, network!);
 		const isValidAddress: boolean = await instance.identity().address().validate(address);
 
 		if (isValidAddress) {
