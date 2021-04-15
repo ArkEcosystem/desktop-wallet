@@ -103,7 +103,7 @@ const ImportInputField = ({
 				data-testid="ImportWallet__mnemonic-input"
 				findAddress={(value) => {
 					const instance = coin;
-					return instance.identity().address().fromMnemonic(value);
+					await coin.identity().address().fromMnemonic(value);
 				}}
 			/>
 		);
