@@ -8,6 +8,7 @@ exports[`SelectFile should render 1`] = `
   >
     <div
       class="h-full flex flex-col items-center justify-center rounded-lg transition-colors duration-200 bg-theme-primary-50 dark:bg-theme-secondary-800"
+      data-testid="SelectFile__drop-zone"
     >
       <div
         class="mt-8"
@@ -44,6 +45,7 @@ exports[`SelectFile should render with dwe file format 1`] = `
   >
     <div
       class="h-full flex flex-col items-center justify-center rounded-lg transition-colors duration-200 bg-theme-primary-50 dark:bg-theme-secondary-800"
+      data-testid="SelectFile__drop-zone"
     >
       <div
         class="sc-bdfBwQ fTnhmh"
@@ -89,6 +91,7 @@ exports[`SelectFile should render with json file format 1`] = `
   >
     <div
       class="h-full flex flex-col items-center justify-center rounded-lg transition-colors duration-200 bg-theme-primary-50 dark:bg-theme-secondary-800"
+      data-testid="SelectFile__drop-zone"
     >
       <div
         class="sc-bdfBwQ fTnhmh"

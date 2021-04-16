@@ -58,6 +58,7 @@ export const SelectFile = ({ onSelect, fileFormat }: SelectFileStepProps) => {
 			className="h-52 border-2 border-dashed rounded-lg mt-8 border-theme-secondary-300 dark:border-theme-secondary-800 p-2"
 		>
 			<div
+				data-testid="SelectFile__drop-zone"
 				ref={ref}
 				onDragOver={(event: any) => event.preventDefault()}
 				onDragEnter={(event: any) => {
@@ -69,6 +70,7 @@ export const SelectFile = ({ onSelect, fileFormat }: SelectFileStepProps) => {
 
 					const bounds = ref.current?.getBoundingClientRect();
 
+					/* istanbul ignore next */
 					if (
 						event.clientX >= Number(bounds.left) + Number(bounds.width) ||
 						event.clientX <= bounds.left ||
