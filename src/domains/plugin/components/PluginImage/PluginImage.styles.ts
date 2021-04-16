@@ -10,7 +10,7 @@ const getSize = (size?: Size): any => {
 		case "sm":
 			return tw`flex-shrink-0 h-15 w-15 rounded-lg`;
 		case "lg":
-			return tw`flex-shrink-0 h-44 w-44 rounded-3xl`;
+			return tw`flex-shrink-0 h-44 w-44 rounded-2.5xl`;
 		default:
 			return tw`flex-shrink-0 h-25 w-25 rounded-xl`;
 	}

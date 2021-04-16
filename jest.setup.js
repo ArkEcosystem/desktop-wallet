@@ -68,12 +68,14 @@ beforeAll(async () => {
 
 	for (const profile of env.profiles().values()) {
 		try {
-			await profile.restore();
+			await profile.restore(TestingPasswords?.profiles[profile.id()]?.password);
 
 			if (TestingPasswords?.profiles[profile.id()]?.password) {
 				profile.auth().setPassword(TestingPasswords?.profiles[profile.id()]?.password);
 				profile.save();
 			}
+
+			await profile.sync();
 		} catch (error) {
 			throw new Error(`Restoring of profile [${profile.id}] failed. Reason: ${error}`);
 		}
