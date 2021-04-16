@@ -1,9 +1,9 @@
+import { Contracts } from "@arkecosystem/platform-sdk-profiles";
 import React from "react";
 import { RegisterOptions } from "react-hook-form";
 import { useTranslation } from "react-i18next";
 
 import { Input } from "./Input";
-import { Contracts } from "@arkecosystem/platform-sdk-profiles";
 
 export type InputAddressProps = {
 	profile: Contracts.IProfile;

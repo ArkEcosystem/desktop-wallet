@@ -1,11 +1,11 @@
 /* eslint-disable @typescript-eslint/require-await */
+import { Contracts } from "@arkecosystem/platform-sdk-profiles";
 import { availableNetworksMock as networks } from "domains/network/data";
 import React from "react";
 import { act, env, fireEvent, getDefaultProfileId, renderWithRouter, waitFor } from "testing-library";
 
 import { translations } from "../../i18n";
 import { ContactForm } from "./ContactForm";
-import { Contracts } from "@arkecosystem/platform-sdk-profiles";
 
 const onDelete = jest.fn();
 const onSave = jest.fn();
