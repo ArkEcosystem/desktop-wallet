@@ -1,11 +1,12 @@
-import { useActiveProfile } from "app/hooks";
 import React from "react";
 import { RegisterOptions } from "react-hook-form";
 import { useTranslation } from "react-i18next";
 
 import { Input } from "./Input";
+import { Contracts } from "@arkecosystem/platform-sdk-profiles";
 
 export type InputAddressProps = {
+	profile: Contracts.IProfile;
 	coin?: string;
 	network?: string;
 	registerRef?: (options: RegisterOptions) => (ref: HTMLInputElement | null) => void;
@@ -16,6 +17,7 @@ export type InputAddressProps = {
 } & React.InputHTMLAttributes<any>;
 
 export const InputAddress = ({
+	profile,
 	coin,
 	network,
 	registerRef,
@@ -25,10 +27,9 @@ export const InputAddress = ({
 	...props
 }: InputAddressProps) => {
 	const { t } = useTranslation();
-	const activeProfile = useActiveProfile();
 
 	const validateAddress = async (address: string) => {
-		const instance = activeProfile.coins().push(coin!, network!);
+		const instance = profile.coins().push(coin!, network!);
 		const isValidAddress: boolean = await instance.identity().address().validate(address);
 
 		if (isValidAddress) {
