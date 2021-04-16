@@ -8,7 +8,7 @@ exports[`UpdateWalletName should render a modal 1`] = `
     class="flex fixed inset-0 z-50 justify-center items-center w-full h-full overflow-overlay"
   >
     <div
-      class="fixed z-50 w-full h-full bg-black opacity-50"
+      class="fixed z-50 w-full h-full bg-theme-secondary-900 opacity-60 dark:bg-black dark:opacity-80"
       data-testid="modal__overlay"
     />
     <div
@@ -126,7 +126,7 @@ exports[`UpdateWalletName should show an error message for duplicate name 1`] = 
     class="flex fixed inset-0 z-50 justify-center items-center w-full h-full overflow-overlay"
   >
     <div
-      class="fixed z-50 w-full h-full bg-black opacity-50"
+      class="fixed z-50 w-full h-full bg-theme-secondary-900 opacity-60 dark:bg-black dark:opacity-80"
       data-testid="modal__overlay"
     />
     <div
@@ -263,7 +263,7 @@ exports[`UpdateWalletName should show an error message for duplicate name 2`] = 
     class="flex fixed inset-0 z-50 justify-center items-center w-full h-full overflow-overlay"
   >
     <div
-      class="fixed z-50 w-full h-full bg-black opacity-50"
+      class="fixed z-50 w-full h-full bg-theme-secondary-900 opacity-60 dark:bg-black dark:opacity-80"
       data-testid="modal__overlay"
     />
     <div
@@ -400,7 +400,7 @@ exports[`UpdateWalletName should show an error message for duplicate name 3`] = 
     class="flex fixed inset-0 z-50 justify-center items-center w-full h-full overflow-overlay"
   >
     <div
-      class="fixed z-50 w-full h-full bg-black opacity-50"
+      class="fixed z-50 w-full h-full bg-theme-secondary-900 opacity-60 dark:bg-black dark:opacity-80"
       data-testid="modal__overlay"
     />
     <div
@@ -537,7 +537,7 @@ exports[`UpdateWalletName should show an error message for duplicate name 4`] = 
     class="flex fixed inset-0 z-50 justify-center items-center w-full h-full overflow-overlay"
   >
     <div
-      class="fixed z-50 w-full h-full bg-black opacity-50"
+      class="fixed z-50 w-full h-full bg-theme-secondary-900 opacity-60 dark:bg-black dark:opacity-80"
       data-testid="modal__overlay"
     />
     <div
@@ -674,7 +674,7 @@ exports[`UpdateWalletName should show error message when name consists only of w
     class="flex fixed inset-0 z-50 justify-center items-center w-full h-full overflow-overlay"
   >
     <div
-      class="fixed z-50 w-full h-full bg-black opacity-50"
+      class="fixed z-50 w-full h-full bg-theme-secondary-900 opacity-60 dark:bg-black dark:opacity-80"
       data-testid="modal__overlay"
     />
     <div
@@ -811,7 +811,7 @@ exports[`UpdateWalletName should show error message when name exceeds 42 charact
     class="flex fixed inset-0 z-50 justify-center items-center w-full h-full overflow-overlay"
   >
     <div
-      class="fixed z-50 w-full h-full bg-black opacity-50"
+      class="fixed z-50 w-full h-full bg-theme-secondary-900 opacity-60 dark:bg-black dark:opacity-80"
       data-testid="modal__overlay"
     />
     <div
