@@ -67,21 +67,16 @@ beforeAll(async () => {
 	await env.boot();
 
 	for (const profile of env.profiles().values()) {
-		try {
-			if (TestingPasswords?.profiles[profile.id()]?.password) {
-				await profile.restore(TestingPasswords?.profiles[profile.id()]?.password);
+		await profile.restore();
 
-				profile.auth().setPassword(TestingPasswords?.profiles[profile.id()]?.password);
-				profile.save();
-			} else {
-				await profile.restore();
-			}
-
-			await profile.sync();
-		} catch (error) {
-			throw new Error(`Restoring of profile [${profile.id}] failed. Reason: ${error}`);
+		if (TestingPasswords?.profiles[profile.id()]?.password) {
+			profile.auth().setPassword(TestingPasswords?.profiles[profile.id()]?.password);
 		}
+
+		profile.save();
+		await profile.sync();
 	}
+
 	// Mark profiles as restored, to prevent multiple restoration in profile synchronizer
 	process.env.TEST_PROFILES_RESTORE_STATUS = "restored";
 });
