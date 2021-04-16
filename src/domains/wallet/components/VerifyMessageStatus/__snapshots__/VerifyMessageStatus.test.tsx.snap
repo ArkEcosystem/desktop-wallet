@@ -37,7 +37,7 @@ exports[`VerifyMessageStatus should render verify message error 1`] = `
         </button>
       </div>
       <div
-        class="relative"
+        class="relative space-y-4"
       >
         <h2
           class="mb-0 text-3xl font-bold"
@@ -45,7 +45,7 @@ exports[`VerifyMessageStatus should render verify message error 1`] = `
           Title
         </h2>
         <div
-          class="flex-1 mt-4"
+          class="flex-1"
         >
           <div
             class="text-theme-secondary-text whitespace-pre-line"
@@ -101,7 +101,7 @@ exports[`VerifyMessageStatus should render verify message success 1`] = `
         </button>
       </div>
       <div
-        class="relative"
+        class="relative space-y-4"
       >
         <h2
           class="mb-0 text-3xl font-bold"
@@ -109,7 +109,7 @@ exports[`VerifyMessageStatus should render verify message success 1`] = `
           Title
         </h2>
         <div
-          class="flex-1 mt-4"
+          class="flex-1"
         >
           <div
             class="text-theme-secondary-text whitespace-pre-line"
