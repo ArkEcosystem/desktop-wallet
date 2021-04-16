@@ -1,6 +1,5 @@
 import cls from "classnames";
 import React from "react";
-import { Size } from "types";
 
 import { Icon } from "../Icon";
 
@@ -11,7 +10,6 @@ type AlertProps = {
 	className?: string;
 	title?: string;
 	variant: AlertVariant;
-	size?: Size;
 };
 
 const AlertIcon = ({ variant }: { variant: string }) => {
@@ -38,7 +36,7 @@ const getColorVariant = (variant: string) => {
 	return colorVariant[variant];
 };
 
-export const Alert = ({ variant, title, size, children, className }: AlertProps) => (
+export const Alert = ({ variant, title, children, className }: AlertProps) => (
 	<div
 		className={cls(
 			`flex overflow-hidden flex-col space-y-4 rounded-lg p-4 bg-theme-${

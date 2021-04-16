@@ -114,7 +114,7 @@ const Main = () => {
 
 	return (
 		<main data-testid="Main">
-			<ToastContainer newestOnTop />
+			<ToastContainer closeOnClick={false} newestOnTop />
 
 			{renderContent()}
 		</main>

@@ -1,5 +1,6 @@
 /* eslint-disable @typescript-eslint/require-await */
 import { Contracts } from "@arkecosystem/platform-sdk-profiles";
+import { ReadOnlyWallet } from "@arkecosystem/platform-sdk-profiles/dist/drivers/memory/wallets/read-only-wallet";
 import { toasts } from "app/services";
 import { createMemoryHistory } from "history";
 import nock from "nock";
@@ -189,6 +190,17 @@ describe("Votes", () => {
 	});
 
 	it("should filter current delegates", async () => {
+		const walletSpy = jest.spyOn(wallet, "votes").mockReturnValue([
+			new ReadOnlyWallet({
+				address: "D5L5zXgvqtg7qoGimt5vYhFuf5Ued6iWVr",
+				explorerLink: "",
+				publicKey: wallet.publicKey(),
+				username: "arkx",
+				rank: 52,
+				isResignedDelegate: false,
+			}),
+		]);
+
 		const route = `/profiles/${profile.id()}/wallets/${wallet.id()}/votes`;
 		const { asFragment, container, getByTestId, getAllByTestId } = renderPage(route);
 
@@ -537,5 +549,28 @@ describe("Votes", () => {
 		await waitFor(() => expect(queryAllByTestId("TableRow")).toHaveLength(4));
 
 		jest.useRealTimers();
+	});
+
+	it("should show resigned delegate notice", async () => {
+		const walletSpy = jest.spyOn(wallet, "votes").mockReturnValue([
+			new ReadOnlyWallet({
+				address: "D5L5zXgvqtg7qoGimt5vYhFuf5Ued6iWVr",
+				explorerLink: "",
+				publicKey: wallet.publicKey(),
+				username: "arkx",
+				rank: 52,
+				isResignedDelegate: true,
+			}),
+		]);
+		const route = `/profiles/${profile.id()}/wallets/${wallet.id()}/votes`;
+		const { container, getByTestId } = renderPage(route);
+
+		expect(getByTestId("DelegateTable")).toBeTruthy();
+
+		await waitFor(() => expect(getByTestId("Votes__resigned-vote")).toBeInTheDocument());
+
+		expect(container).toMatchSnapshot();
+
+		walletSpy.mockRestore();
 	});
 });
