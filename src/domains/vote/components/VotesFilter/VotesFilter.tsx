@@ -31,12 +31,7 @@ export const VotesFilter = ({ onChange, selectedOption = "all", totalCurrentVote
 						className="h-5 flex items-center space-x-3 rounded-md cursor-pointer"
 						data-testid="VotesFilter__option--all"
 					>
-						<Checkbox
-							name="all"
-							variant="votesFilter"
-							checked={selectedOption === "all"}
-							onChange={() => onChange?.("all")}
-						/>
+						<Checkbox name="all" checked={selectedOption === "all"} onChange={() => onChange?.("all")} />
 						<span className="text-base font-medium">{t("VOTE.FILTERS.ALL")}</span>
 					</label>
 
@@ -52,7 +47,6 @@ export const VotesFilter = ({ onChange, selectedOption = "all", totalCurrentVote
 							data-testid="VotesFilter__option--current"
 						>
 							<Checkbox
-								variant="votesFilter"
 								disabled={totalCurrentVotes === 0}
 								name="current"
 								checked={selectedOption === "current"}
