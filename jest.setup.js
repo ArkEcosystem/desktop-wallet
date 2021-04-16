@@ -73,8 +73,8 @@ beforeAll(async () => {
 			profile.auth().setPassword(TestingPasswords?.profiles[profile.id()]?.password);
 		}
 
-		profile.save();
 		await profile.sync();
+		profile.save();
 	}
 
 	// Mark profiles as restored, to prevent multiple restoration in profile synchronizer
