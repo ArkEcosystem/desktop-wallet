@@ -212,7 +212,11 @@ export const WalletHeader = ({ profile, wallet, currencyDelta, onSend }: WalletH
 							)}
 
 							<div className="flex items-center space-x-3">
-								<WalletIcons wallet={wallet} />
+								<WalletIcons
+									wallet={wallet}
+									iconColor="text-theme-secondary-text"
+									exclude={["isStarred"]}
+								/>
 							</div>
 						</div>
 
