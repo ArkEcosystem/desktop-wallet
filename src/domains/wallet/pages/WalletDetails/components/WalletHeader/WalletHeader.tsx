@@ -9,13 +9,14 @@ import { Icon } from "app/components/Icon";
 import { Tooltip } from "app/components/Tooltip";
 import { WalletIcons } from "app/components/WalletIcons";
 import { useEnvironmentContext } from "app/contexts";
+import { useTextTruncate } from "app/hooks/use-text-truncate";
 import { NetworkIcon } from "domains/network/components/NetworkIcon";
 import { DeleteWallet } from "domains/wallet/components/DeleteWallet";
 import { ReceiveFunds } from "domains/wallet/components/ReceiveFunds";
 import { SignMessage } from "domains/wallet/components/SignMessage";
 import { UpdateWalletName } from "domains/wallet/components/UpdateWalletName";
 import { VerifyMessage } from "domains/wallet/components/VerifyMessage";
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { useHistory } from "react-router-dom";
 
@@ -27,6 +28,9 @@ type WalletHeaderProps = {
 };
 
 export const WalletHeader = ({ profile, wallet, currencyDelta, onSend }: WalletHeaderProps) => {
+	const ref = useRef(null);
+	const [TruncatedAddress] = useTextTruncate({ text: wallet.address(), parentRef: ref });
+
 	const [modal, setModal] = useState<string | undefined>();
 
 	const history = useHistory();
@@ -203,7 +207,7 @@ export const WalletHeader = ({ profile, wallet, currencyDelta, onSend }: WalletH
 						<Avatar size="lg" address={wallet.address()} shadowClassName="ring-theme-secondary-900" />
 					</div>
 
-					<div className="flex flex-col overflow-hidden">
+					<div className="flex flex-col overflow-hidden w-full">
 						<div className="flex items-center space-x-5 text-theme-secondary-text">
 							{wallet.alias() && (
 								<span data-testid="WalletHeader__name" className="text-sm font-semibold">
@@ -216,8 +220,13 @@ export const WalletHeader = ({ profile, wallet, currencyDelta, onSend }: WalletH
 							</div>
 						</div>
 
-						<div className="flex items-center space-x-5">
-							<span className="text-lg font-semibold text-white truncate">{wallet.address()}</span>
+						<div className="flex items-center space-x-5 w-full">
+							<span
+								ref={ref}
+								className="flex-1 text-lg font-semibold text-white overflow-hidden whitespace-nowrap"
+							>
+								<TruncatedAddress />
+							</span>
 
 							<div className="flex items-end mb-2 space-x-3 text-theme-secondary-text">
 								<Clipboard
