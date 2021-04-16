@@ -1,13 +1,13 @@
 /* eslint-disable @typescript-eslint/require-await */
+import { Contracts } from "@arkecosystem/platform-sdk-profiles";
 import { act, renderHook } from "@testing-library/react-hooks";
 import { EnvironmentProvider } from "app/contexts";
 import { translations as commonTranslations } from "app/i18n/common/i18n";
 import React from "react";
 import { useForm } from "react-hook-form";
-import { env, fireEvent, render, getDefaultProfileId } from "utils/testing-library";
+import { env, fireEvent, getDefaultProfileId, render } from "utils/testing-library";
 
 import { InputAddress, InputAddressProps } from "./InputAddress";
-import { Contracts } from "@arkecosystem/platform-sdk-profiles";
 
 let profile: Contracts.IProfile;
 
