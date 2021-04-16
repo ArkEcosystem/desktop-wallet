@@ -6,7 +6,7 @@ import React from "react";
 
 type Props = {
 	isSent: boolean;
-	wallet?: Contracts.IReadWriteWallet;
+	wallet: Contracts.IReadWriteWallet;
 	total: BigNumber;
 	convertedTotal?: BigNumber;
 	exchangeCurrency?: string;
@@ -30,7 +30,7 @@ export const BaseTransactionRowAmount = ({ isSent, wallet, total, convertedTotal
 
 	return (
 		<Label data-testid="TransactionRowAmount" color={color} className="whitespace-nowrap">
-			<Amount ticker={wallet?.currency() || ""} value={total} isNegative={isNegative} showSign />
+			<Amount ticker={wallet.currency()} value={total} isNegative={isNegative} showSign />
 		</Label>
 	);
 };
