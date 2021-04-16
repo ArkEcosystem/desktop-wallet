@@ -6,8 +6,9 @@ import { env, getDefaultProfileId } from "utils/testing-library";
 describe("useProfileExport", () => {
 	let profile: Contracts.IProfile;
 
-	beforeAll(() => {
+	beforeAll(async () => {
 		profile = env.profiles().findById(getDefaultProfileId());
+		await profile.restore();
 	});
 
 	it("should export with all settings enabled", async () => {
@@ -38,6 +39,7 @@ describe("useProfileExport", () => {
 
 	it("should export password protected profile", async () => {
 		const passwordProtectedProfile = env.profiles().findById("cba050f1-880f-45f0-9af9-cfe48f406052");
+		await passwordProtectedProfile.restore("password");
 		const { result } = renderHook(() => useProfileExport(passwordProtectedProfile));
 
 		const exportedData = result.current.formatExportData({
@@ -45,9 +47,7 @@ describe("useProfileExport", () => {
 			excludeLedgerWallets: false,
 		});
 
-		const importedProfile = await env
-			.profiles()
-			.import(exportedData, Helpers.MemoryPassword.get(passwordProtectedProfile));
+		const importedProfile = await env.profiles().import(exportedData, "password");
 
 		expect(importedProfile.settings().all()).toEqual(passwordProtectedProfile.settings().all());
 	});
