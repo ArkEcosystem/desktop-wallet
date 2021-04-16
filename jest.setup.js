@@ -68,11 +68,13 @@ beforeAll(async () => {
 
 	for (const profile of env.profiles().values()) {
 		try {
-			await profile.restore(TestingPasswords?.profiles[profile.id()]?.password);
-
 			if (TestingPasswords?.profiles[profile.id()]?.password) {
+				await profile.restore(TestingPasswords?.profiles[profile.id()]?.password);
+
 				profile.auth().setPassword(TestingPasswords?.profiles[profile.id()]?.password);
 				profile.save();
+			} else {
+				await profile.restore();
 			}
 
 			await profile.sync();
