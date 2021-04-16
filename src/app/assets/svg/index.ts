@@ -35,6 +35,7 @@ import { ReactComponent as Copy } from "./copy.svg";
 import { ReactComponent as CopyAddress } from "./copy-address.svg";
 import { ReactComponent as CopyKey } from "./copy-key.svg";
 import { ReactComponent as CrossSlim } from "./cross-slim.svg";
+import { SvgCollectionDark } from "./dark";
 import { ReactComponent as Dash } from "./dash.svg";
 import { ReactComponent as Delegate } from "./delegate.svg";
 import { ReactComponent as DelegateResigned } from "./delegate-resigned.svg";
@@ -119,6 +120,7 @@ import { ReactComponent as Voted } from "./voted.svg";
 export const SvgCollection: any = {
 	...Currencies,
 	...Providers,
+	...SvgCollectionDark,
 	AlertDanger,
 	AlertInfo,
 	AlertHint,
