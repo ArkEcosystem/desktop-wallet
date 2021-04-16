@@ -1,6 +1,6 @@
 import { Contracts } from "@arkecosystem/platform-sdk-profiles";
 import React from "react";
-import { env, getDefaultProfileId, render,screen } from "utils/testing-library";
+import { env, getDefaultProfileId, render, screen } from "utils/testing-library";
 
 import { WalletIcons } from "./WalletIcons";
 
