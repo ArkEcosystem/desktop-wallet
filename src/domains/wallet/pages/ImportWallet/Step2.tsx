@@ -61,6 +61,7 @@ const AddressField = ({ network, profile }: { profile: Contracts.IProfile; netwo
 		<FormField name="value">
 			<FormLabel label={t("COMMON.ADDRESS")} />
 			<InputAddress
+				profile={profile}
 				coin={network.coin()}
 				network={network.id()}
 				registerRef={register}
