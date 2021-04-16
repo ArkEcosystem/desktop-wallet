@@ -81,6 +81,8 @@ const renderPage = async ({
 describe("WalletDetails", () => {
 	beforeAll(async () => {
 		profile = env.profiles().findById(getDefaultProfileId());
+		await profile.restore();
+
 		wallet = profile.wallets().findById("ac38fe6d-4b67-4ef1-85be-17c5f6841129");
 		blankWallet = await profile.wallets().importByMnemonic(passphrase2, "ARK", "ark.devnet");
 		unvotedWallet = await profile.wallets().importByMnemonic("unvoted wallet", "ARK", "ark.devnet");
