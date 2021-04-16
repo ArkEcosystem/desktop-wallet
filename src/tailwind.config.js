@@ -220,7 +220,7 @@ module.exports = {
 			borderRadius: ["first", "last"],
 			borderWidth: ["first", "last", "even"],
 			margin: ["first"],
-			opacity: ["group-hover"],
+			opacity: ["dark", "group-hover"],
 			padding: ["first", "last"],
 			ringColor: ["dark", "group-hover"],
 		},
