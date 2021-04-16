@@ -1,6 +1,7 @@
 import { Contracts } from "@arkecosystem/platform-sdk-profiles";
 import { isEmptyObject, uniq, uniqBy } from "@arkecosystem/utils";
 import { Icon } from "app/components//Icon";
+import { Alert } from "app/components/Alert";
 import { Button } from "app/components/Button";
 import { ControlButton } from "app/components/ControlButton";
 import { Dropdown } from "app/components/Dropdown";
@@ -120,11 +121,14 @@ export const Votes = () => {
 		[votes, delegates],
 	);
 
-	const filteredDelegatesVotes = useMemo(() => (selectedFilter === "all" ? delegates : currentVotes), [
-		delegates,
+	const hasResignedDelegateVotes = useMemo(() => currentVotes?.some((vote) => vote.isResignedDelegate()), [
 		currentVotes,
-		selectedFilter,
 	]);
+
+	const filteredDelegatesVotes = useMemo(() => {
+		const value = selectedFilter === "all" ? delegates : currentVotes;
+		return value?.filter((delegate) => !delegate.isResignedDelegate());
+	}, [delegates, currentVotes, selectedFilter]);
 
 	const filterProperties = {
 		networks,
@@ -187,10 +191,9 @@ export const Votes = () => {
 	const loadDelegates = useCallback(
 		async (wallet) => {
 			setIsLoadingDelegates(true);
-			// eslint-disable-next-line @typescript-eslint/no-non-null-asserted-optional-chain
-			await env.delegates().sync(wallet?.coinId()!, wallet?.networkId()!);
-			// eslint-disable-next-line @typescript-eslint/no-non-null-asserted-optional-chain
-			const delegates = env.delegates().all(wallet?.coinId()!, wallet?.networkId()!);
+			await env.delegates().sync(wallet.coinId(), wallet.networkId());
+			const delegates = env.delegates().all(wallet.coinId(), wallet.networkId());
+
 			setDelegates(delegates);
 			setIsLoadingDelegates(false);
 		},
@@ -222,6 +225,7 @@ export const Votes = () => {
 			params.append("unvotes", unvotes.join());
 		}
 
+		/* istanbul ignore else */
 		if (votes?.length > 0) {
 			params.append("votes", votes.join());
 		}
@@ -395,6 +399,24 @@ export const Votes = () => {
 						selectedWallet={selectedAddress}
 						onContinue={handleContinue}
 						isPaginationDisabled={searchQuery.length > 0}
+						subtitle={
+							hasResignedDelegateVotes ? (
+								<Alert className="mb-6">
+									<div data-testid="Votes__resigned-vote">
+										<Trans
+											data-testid="Arara"
+											i18nKey="VOTE.VOTES_PAGE.RESIGNED_VOTE"
+											values={{
+												name: currentVotes
+													?.find((vote) => vote.isResignedDelegate())
+													?.username(),
+											}}
+											components={{ bold: <strong /> }}
+										/>
+									</div>
+								</Alert>
+							) : null
+						}
 					/>
 				</Section>
 			)}

@@ -1,4 +1,4 @@
-const defaultConfig = require("tailwindcss/defaultConfig");
+const defaultTheme = require("tailwindcss/defaultTheme");
 
 module.exports = {
 	purge: false,
@@ -9,9 +9,6 @@ module.exports = {
 			md: "768px",
 			lg: "1024px",
 			xl: "1280px",
-		},
-		fontFamily: {
-			sans: ["Inter", ...defaultConfig.theme.fontFamily.sans],
 		},
 		colors: {
 			black: "#121213",
@@ -186,10 +183,10 @@ module.exports = {
 				20: "20px",
 			},
 			borderRadius: {
-				"3xl": "1.25rem",
+				"2.5xl": "1.25rem",
 			},
 			fontFamily: {
-				sans: ["Inter", ...defaultConfig.theme.fontFamily.sans],
+				sans: ["Inter", ...defaultTheme.fontFamily.sans],
 			},
 			borderColor: (theme) => ({
 				default: theme("colors.theme-secondary-400"),
@@ -219,12 +216,14 @@ module.exports = {
 		},
 	},
 	variants: {
-		borderRadius: [...defaultConfig.variants.borderRadius, "first", "last"],
-		borderWidth: [...defaultConfig.variants.borderWidth, "first", "last", "even"],
-		margin: [...defaultConfig.variants.margin, "first"],
-		opacity: [...defaultConfig.variants.opacity, "group-hover"],
-		padding: [...defaultConfig.variants.padding, "first", "last"],
-		ringColor: [...defaultConfig.variants.ringWidth, "dark", "group-hover"],
+		extend: {
+			borderRadius: ["first", "last"],
+			borderWidth: ["first", "last", "even"],
+			margin: ["first"],
+			opacity: ["group-hover"],
+			padding: ["first", "last"],
+			ringColor: ["dark", "group-hover"],
+		},
 	},
 	plugins: [require("@tailwindcss/forms")],
 };

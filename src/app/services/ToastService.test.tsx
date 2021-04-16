@@ -30,9 +30,7 @@ describe("ToastService", () => {
 	});
 
 	it.each(["info", "success", "warning", "error"])("should call toast %s method with options", (method) => {
-		const mock = jest.spyOn(toast, method);
-
-		const { container } = render(<ToastContainer />);
+		render(<ToastContainer />);
 
 		act(() => {
 			subject[method](method, { position: "top-right" });

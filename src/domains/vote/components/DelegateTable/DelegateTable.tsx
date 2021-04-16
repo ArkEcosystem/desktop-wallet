@@ -25,6 +25,7 @@ type DelegateTableProps = {
 	votes?: Contracts.IReadOnlyWallet[];
 	onContinue?: (unvotes: string[], votes: string[]) => void;
 	isPaginationDisabled?: boolean;
+	subtitle?: React.ReactNode;
 };
 
 export const DelegateTable = ({
@@ -38,6 +39,7 @@ export const DelegateTable = ({
 	votes,
 	onContinue,
 	isPaginationDisabled,
+	subtitle,
 }: DelegateTableProps) => {
 	const { t } = useTranslation();
 	const [currentPage, setCurrentPage] = useState(1);
@@ -159,7 +161,7 @@ export const DelegateTable = ({
 			<EmptyResults
 				className="mt-16"
 				title={t("COMMON.EMPTY_RESULTS.TITLE")}
-				subtitle={t("COMMON.EMPTY_RESULTS.SUBTITLE")}
+				subtitle={t("VOTE.VOTES_PAGE.NO_RESULTS")}
 			/>
 		);
 	}
@@ -167,6 +169,9 @@ export const DelegateTable = ({
 	return (
 		<div data-testid="DelegateTable">
 			<h2 className="py-5 text-2xl font-bold">{t("VOTE.DELEGATE_TABLE.TITLE")}</h2>
+
+			{subtitle && subtitle}
+
 			<Table columns={columns} data={data}>
 				{(delegate: Contracts.IReadOnlyWallet, index: number) => {
 					let isVoted = false;

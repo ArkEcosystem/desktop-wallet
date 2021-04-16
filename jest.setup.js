@@ -59,6 +59,7 @@ beforeAll(async () => {
 		try {
 			await profile.restore(TestingPasswords?.profiles[profile.id()]?.password);
 			restoreProfileTestPassword(profile);
+			await profile.sync();
 		} catch (error) {
 			throw new Error(`Restoring of profile [${profile.id}] failed. Reason: ${error}`);
 		}
