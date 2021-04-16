@@ -6,7 +6,6 @@ import { Button } from "app/components/Button";
 import { Form, FormField, FormLabel, SubForm } from "app/components/Form";
 import { Icon } from "app/components/Icon";
 import { InputAddress, InputDefault } from "app/components/Input";
-import { useActiveProfile } from "app/hooks";
 import { NetworkIcon } from "domains/network/components/NetworkIcon";
 import { SelectNetwork } from "domains/network/components/SelectNetwork";
 import React, { useEffect, useMemo, useState } from "react";
@@ -71,6 +70,7 @@ const AddressList = ({ addresses, onRemove }: AddressListProps) => {
 
 type ContactFormProps = {
 	contact?: Contracts.IContact;
+	profile: Contracts.IProfile;
 	networks: Coins.Network[];
 	onCancel?: any;
 	onChange?: any;
@@ -79,7 +79,16 @@ type ContactFormProps = {
 	errors?: any;
 };
 
-export const ContactForm = ({ contact, networks, onChange, onCancel, onDelete, onSave, errors }: ContactFormProps) => {
+export const ContactForm = ({
+	profile,
+	contact,
+	networks,
+	onChange,
+	onCancel,
+	onDelete,
+	onSave,
+	errors,
+}: ContactFormProps) => {
 	const nameMaxLength = 42;
 
 	const [addresses, setAddresses] = useState(() =>
@@ -96,7 +105,6 @@ export const ContactForm = ({ contact, networks, onChange, onCancel, onDelete, o
 			: [],
 	);
 
-	const activeProfile = useActiveProfile();
 	const { t } = useTranslation();
 
 	const form = useForm({ mode: "onChange" });
@@ -122,7 +130,7 @@ export const ContactForm = ({ contact, networks, onChange, onCancel, onDelete, o
 			});
 		}
 
-		const instance: Coins.Coin = activeProfile.coins().push(network.coin(), network.id());
+		const instance: Coins.Coin = profile.coins().push(network.coin(), network.id());
 		const isValidAddress: boolean = await instance.identity().address().validate(address);
 
 		if (!isValidAddress) {
@@ -201,6 +209,7 @@ export const ContactForm = ({ contact, networks, onChange, onCancel, onDelete, o
 					<FormLabel>{t("CONTACTS.CONTACT_FORM.ADDRESS")}</FormLabel>
 
 					<InputAddress
+						profile={profile}
 						useDefaultRules={false}
 						registerRef={register}
 						onChange={() => onChange?.("address", address)}
