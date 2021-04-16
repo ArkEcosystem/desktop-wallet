@@ -1,7 +1,8 @@
 /* eslint-disable @typescript-eslint/require-await */
-import { renderHook } from "@testing-library/react-hooks";
 import { Contracts } from "@arkecosystem/platform-sdk-profiles";
-import { getDefaultProfileId, env } from "utils/testing-library";
+import { renderHook } from "@testing-library/react-hooks";
+import { env, getDefaultProfileId } from "utils/testing-library";
+
 import { useProfileAddresses } from "./use-profile-addresses";
 
 let profile: Contracts.IProfile;

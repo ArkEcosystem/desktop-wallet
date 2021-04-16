@@ -1,6 +1,6 @@
 import { Contracts } from "@arkecosystem/platform-sdk";
-import { Contracts as ProfileContracts } from "@arkecosystem/platform-sdk-profiles";
 import { SignedMessage } from "@arkecosystem/platform-sdk/dist/contracts";
+import { Contracts as ProfileContracts } from "@arkecosystem/platform-sdk-profiles";
 import { OriginalButton as Button } from "app/components/Button/OriginalButton";
 import { Clipboard } from "app/components/Clipboard";
 import { Form } from "app/components/Form";
