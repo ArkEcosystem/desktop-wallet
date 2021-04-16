@@ -13,7 +13,6 @@ describe("useFees", () => {
 		const profile = env.profiles().findById(getDefaultProfileId());
 
 		await env.wallets().syncByProfile(profile);
-		await env.fees().syncAll();
 		await env.delegates().syncAll();
 
 		const wrapper = ({ children }: any) => <EnvironmentProvider env={env}>{children} </EnvironmentProvider>;
@@ -21,6 +20,7 @@ describe("useFees", () => {
 			result: { current },
 		} = renderHook(() => useFees(), { wrapper });
 
+		await env.fees().sync("ARK", "ark.devnet");
 		expect(current.findByType("ARK", "ark.devnet", "ipfs")).resolves.toEqual({
 			static: "500000000",
 			max: "500000000",
@@ -33,6 +33,7 @@ describe("useFees", () => {
 		env.reset({ coins: { ARK }, httpClient, storage: new StubStorage() });
 
 		const profile = env.profiles().create("John Doe");
+		await profile.restore();
 		await profile.wallets().generate("ARK", "ark.devnet");
 		await env.wallets().syncByProfile(profile);
 
@@ -41,6 +42,7 @@ describe("useFees", () => {
 			result: { current },
 		} = renderHook(() => useFees(), { wrapper });
 
+		await env.fees().sync("ARK", "ark.devnet");
 		expect(current.findByType("ARK", "ark.devnet", "ipfs")).resolves.toEqual({
 			static: "500000000",
 			max: "500000000",
