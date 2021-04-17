@@ -365,30 +365,34 @@ exports[`WalletVote should handle delegate sync error 1`] = `
             You have not voted for a Delegate yet.
           </span>
           <a
-            class="Link__AnchorStyled-sc-1q7sbxr-0 cIuuRE inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary-600 hover:text-theme-primary-700 hover:underline active:text-theme-primary-500"
+            class="Link__AnchorStyled-sc-1q7sbxr-0 kAtXNw pointer-events-none no-underline inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary-600 hover:text-theme-primary-700 hover:underline active:text-theme-primary-500"
             data-testid="Link"
             rel="noopener noreferrer"
             to="https://ark.dev/docs/desktop-wallet/user-guides/how-to-vote-unvote"
           >
             <span
-              class="underline-dotted"
+              class="group"
             >
               <span
-                class="text-sm"
+                class="no-underline break-all pointer-events-auto border-b group-hover:border-0 active:border-0 border-dotted"
               >
-                Learn more
+                <span
+                  class="text-sm"
+                >
+                  Learn more
+                </span>
               </span>
+              <div
+                class="sc-bdfBwQ fPrsah flex-shrink-0 pointer-events-auto inline-block pl-2 text-sm"
+                data-testid="Link__external"
+                height="1em"
+                width="1em"
+              >
+                <svg>
+                  redirect.svg
+                </svg>
+              </div>
             </span>
-            <div
-              class="sc-bdfBwQ fPrsah flex-shrink-0 ml-2 text-sm"
-              data-testid="Link__external"
-              height="1em"
-              width="1em"
-            >
-              <svg>
-                redirect.svg
-              </svg>
-            </div>
           </a>
         </span>
       </div>
@@ -463,30 +467,34 @@ exports[`WalletVote should handle wallet votes error 1`] = `
             You have not voted for a Delegate yet.
           </span>
           <a
-            class="Link__AnchorStyled-sc-1q7sbxr-0 cIuuRE inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary-600 hover:text-theme-primary-700 hover:underline active:text-theme-primary-500"
+            class="Link__AnchorStyled-sc-1q7sbxr-0 kAtXNw pointer-events-none no-underline inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary-600 hover:text-theme-primary-700 hover:underline active:text-theme-primary-500"
             data-testid="Link"
             rel="noopener noreferrer"
             to="https://ark.dev/docs/desktop-wallet/user-guides/how-to-vote-unvote"
           >
             <span
-              class="underline-dotted"
+              class="group"
             >
               <span
-                class="text-sm"
+                class="no-underline break-all pointer-events-auto border-b group-hover:border-0 active:border-0 border-dotted"
               >
-                Learn more
+                <span
+                  class="text-sm"
+                >
+                  Learn more
+                </span>
               </span>
+              <div
+                class="sc-bdfBwQ fPrsah flex-shrink-0 pointer-events-auto inline-block pl-2 text-sm"
+                data-testid="Link__external"
+                height="1em"
+                width="1em"
+              >
+                <svg>
+                  redirect.svg
+                </svg>
+              </div>
             </span>
-            <div
-              class="sc-bdfBwQ fPrsah flex-shrink-0 ml-2 text-sm"
-              data-testid="Link__external"
-              height="1em"
-              width="1em"
-            >
-              <svg>
-                redirect.svg
-              </svg>
-            </div>
           </a>
         </span>
       </div>
@@ -766,30 +774,34 @@ exports[`WalletVote should render the maximum votes 1`] = `
             You have not voted for a Delegate yet.
           </span>
           <a
-            class="Link__AnchorStyled-sc-1q7sbxr-0 cIuuRE inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary-600 hover:text-theme-primary-700 hover:underline active:text-theme-primary-500"
+            class="Link__AnchorStyled-sc-1q7sbxr-0 kAtXNw pointer-events-none no-underline inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary-600 hover:text-theme-primary-700 hover:underline active:text-theme-primary-500"
             data-testid="Link"
             rel="noopener noreferrer"
             to="https://ark.dev/docs/desktop-wallet/user-guides/how-to-vote-unvote"
           >
             <span
-              class="underline-dotted"
+              class="group"
             >
               <span
-                class="text-sm"
+                class="no-underline break-all pointer-events-auto border-b group-hover:border-0 active:border-0 border-dotted"
               >
-                Learn more
+                <span
+                  class="text-sm"
+                >
+                  Learn more
+                </span>
               </span>
+              <div
+                class="sc-bdfBwQ fPrsah flex-shrink-0 pointer-events-auto inline-block pl-2 text-sm"
+                data-testid="Link__external"
+                height="1em"
+                width="1em"
+              >
+                <svg>
+                  redirect.svg
+                </svg>
+              </div>
             </span>
-            <div
-              class="sc-bdfBwQ fPrsah flex-shrink-0 ml-2 text-sm"
-              data-testid="Link__external"
-              height="1em"
-              width="1em"
-            >
-              <svg>
-                redirect.svg
-              </svg>
-            </div>
           </a>
         </span>
       </div>
@@ -864,30 +876,34 @@ exports[`WalletVote should render without votes 1`] = `
             You have not voted for a Delegate yet.
           </span>
           <a
-            class="Link__AnchorStyled-sc-1q7sbxr-0 cIuuRE inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary-600 hover:text-theme-primary-700 hover:underline active:text-theme-primary-500"
+            class="Link__AnchorStyled-sc-1q7sbxr-0 kAtXNw pointer-events-none no-underline inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary-600 hover:text-theme-primary-700 hover:underline active:text-theme-primary-500"
             data-testid="Link"
             rel="noopener noreferrer"
             to="https://ark.dev/docs/desktop-wallet/user-guides/how-to-vote-unvote"
           >
             <span
-              class="underline-dotted"
+              class="group"
             >
               <span
-                class="text-sm"
+                class="no-underline break-all pointer-events-auto border-b group-hover:border-0 active:border-0 border-dotted"
               >
-                Learn more
+                <span
+                  class="text-sm"
+                >
+                  Learn more
+                </span>
               </span>
+              <div
+                class="sc-bdfBwQ fPrsah flex-shrink-0 pointer-events-auto inline-block pl-2 text-sm"
+                data-testid="Link__external"
+                height="1em"
+                width="1em"
+              >
+                <svg>
+                  redirect.svg
+                </svg>
+              </div>
             </span>
-            <div
-              class="sc-bdfBwQ fPrsah flex-shrink-0 ml-2 text-sm"
-              data-testid="Link__external"
-              height="1em"
-              width="1em"
-            >
-              <svg>
-                redirect.svg
-              </svg>
-            </div>
           </a>
         </span>
       </div>
