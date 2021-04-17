@@ -31,6 +31,7 @@ exports[`Import Profile Select File Step should change back from json to dwe 1`]
     >
       <div
         class="h-full flex flex-col items-center justify-center rounded-lg transition-colors duration-200 bg-theme-primary-50 dark:bg-theme-secondary-800"
+        data-testid="SelectFile__drop-zone"
       >
         <div
           class="sc-bdfBwQ fTnhmh"
@@ -145,6 +146,7 @@ exports[`Import Profile Select File Step should handle back event 1`] = `
     >
       <div
         class="h-full flex flex-col items-center justify-center rounded-lg transition-colors duration-200 bg-theme-primary-50 dark:bg-theme-secondary-800"
+        data-testid="SelectFile__drop-zone"
       >
         <div
           class="sc-bdfBwQ fTnhmh"
@@ -244,6 +246,7 @@ exports[`Import Profile Select File Step should render file selection for dwe an
     >
       <div
         class="h-full flex flex-col items-center justify-center rounded-lg transition-colors duration-200 bg-theme-primary-50 dark:bg-theme-secondary-800"
+        data-testid="SelectFile__drop-zone"
       >
         <div
           class="sc-bdfBwQ fTnhmh"
@@ -343,6 +346,7 @@ exports[`Import Profile Select File Step should render with dwe fileFormat selec
     >
       <div
         class="h-full flex flex-col items-center justify-center rounded-lg transition-colors duration-200 bg-theme-primary-50 dark:bg-theme-secondary-800"
+        data-testid="SelectFile__drop-zone"
       >
         <div
           class="sc-bdfBwQ fTnhmh"
@@ -442,6 +446,7 @@ exports[`Import Profile Select File Step should render with json fileFormat sele
     >
       <div
         class="h-full flex flex-col items-center justify-center rounded-lg transition-colors duration-200 bg-theme-primary-50 dark:bg-theme-secondary-800"
+        data-testid="SelectFile__drop-zone"
       >
         <div
           class="sc-bdfBwQ fTnhmh"
