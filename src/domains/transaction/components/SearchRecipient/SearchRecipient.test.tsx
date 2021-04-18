@@ -9,8 +9,10 @@ import { SearchRecipient } from "./SearchRecipient";
 let profile: Contracts.IProfile;
 
 describe("SearchRecipient", () => {
-	beforeAll(() => {
+	beforeAll(async () => {
 		profile = env.profiles().findById(getDefaultProfileId());
+		await profile.restore();
+		await profile.sync();
 	});
 
 	it("should not render if not open", () => {
@@ -50,8 +52,8 @@ describe("SearchRecipient", () => {
 		expect(asFragment()).toMatchSnapshot();
 	});
 
-	it("should not render recipient if not in same network", async () => {
-		const coin = await env.coin("ARK", "ark.mainnet");
+	it("should not render recipient if not in same network", () => {
+		const coin = profile.coins().push("ARK", "ark.mainnet");
 		const { asFragment, getByTestId } = render(
 			<SearchRecipient isOpen={true} profile={profile} network={coin.network()} onAction={jest.fn()} />,
 		);
@@ -63,7 +65,7 @@ describe("SearchRecipient", () => {
 	});
 
 	it("should not render recipient if not in same network", async () => {
-		const coin = await env.coin("ARK", "ark.devnet");
+		const coin = profile.coins().push("ARK", "ark.devnet");
 		const { asFragment, getByTestId } = render(
 			<SearchRecipient isOpen={true} profile={profile} network={coin.network()} onAction={jest.fn()} />,
 		);
