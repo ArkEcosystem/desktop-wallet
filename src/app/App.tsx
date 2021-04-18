@@ -17,7 +17,6 @@ import LedgerTransportNodeHID from "@ledgerhq/hw-transport-node-hid-singleton";
 // import { XRP } from "@arkecosystem/platform-sdk-xrp";
 import { Offline } from "domains/error/pages";
 import { Splash } from "domains/splash/pages";
-import { migrateProfileFixtures } from "migrations";
 import { usePluginManagerContext } from "plugins";
 import { PluginRouterWrapper } from "plugins/components/PluginRouterWrapper";
 import React, { useEffect, useLayoutEffect, useState } from "react";
@@ -36,6 +35,7 @@ import { PluginProviders } from "./PluginProviders";
 import { SentryProvider } from "./sentry/SentryProvider";
 import { SentryRouterWrapper } from "./sentry/SentryRouterWrapper";
 import { httpClient } from "./services";
+import { bootEnvWithProfileFixtures } from "utils/test-helpers";
 
 const RouteWrappers = ({ children }: { children: React.ReactNode }) => (
 	<>
@@ -82,7 +82,9 @@ const Main = () => {
 					? true
 					: false;
 				if (__E2E__) {
-					migrateProfileFixtures(env);
+					await bootEnvWithProfileFixtures({ env });
+					await loadPlugins();
+					return;
 				}
 
 				await env.verify();
@@ -90,7 +92,6 @@ const Main = () => {
 
 				await loadPlugins();
 			} catch (error) {
-				console.error(error);
 				handleError(error);
 			}
 
