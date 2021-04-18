@@ -84,6 +84,7 @@ const Main = () => {
 				if (__E2E__) {
 					await bootEnvWithProfileFixtures({ env });
 					await loadPlugins();
+					setShowSplash(false);
 					return;
 				}
 
