@@ -1,8 +1,6 @@
 import MockDate from "mockdate";
-import { env } from "./src/utils/testing-library";
-import TestingPasswords from "tests/fixtures/env/testing-passwords.json";
-import fixtureData from "tests/fixtures/env/storage.json";
-import { Base64 } from "@arkecosystem/platform-sdk-crypto";
+import { env } from "utils/testing-library";
+import { bootEnvWithProfileFixtures } from "utils/test-helpers";
 
 jest.mock("@ledgerhq/hw-transport-node-hid-singleton", () => {
 	const { createTransportReplayer } = require("@ledgerhq/hw-transport-mocker");
@@ -51,32 +49,7 @@ jest.mock("electron", () => {
 });
 
 beforeAll(async () => {
-	const ids = Object.keys(fixtureData.profiles);
-	const profiles = {};
-
-	ids.forEach((id) => {
-		profiles[id] = {
-			id,
-			password: undefined,
-			name: fixtureData.profiles[id].settings.NAME,
-			data: Base64.encode(JSON.stringify({ id, ...fixtureData.profiles[id] })),
-		};
-	});
-
-	await env.verify({ profiles });
-	await env.boot();
-
-	for (const profile of env.profiles().values()) {
-		await profile.restore();
-
-		if (TestingPasswords?.profiles[profile.id()]?.password) {
-			profile.auth().setPassword(TestingPasswords?.profiles[profile.id()]?.password);
-		}
-
-		await profile.sync();
-		profile.save();
-	}
-
+	await bootEnvWithProfileFixtures({ env });
 	// Mark profiles as restored, to prevent multiple restoration in profile synchronizer
 	process.env.TEST_PROFILES_RESTORE_STATUS = "restored";
 });
