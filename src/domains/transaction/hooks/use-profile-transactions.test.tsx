@@ -40,7 +40,6 @@ describe("useProfileTransactions", () => {
 		await profile.restore();
 		await profile.sync();
 
-
 		const wrapper = ({ children }: any) => (
 			<EnvironmentProvider env={env}>
 				<ConfigurationProvider>{children}</ConfigurationProvider>
@@ -118,7 +117,6 @@ describe("useProfileTransactions", () => {
 		await profile.restore();
 		await profile.sync();
 
-
 		const wrapper = ({ children }: any) => (
 			<EnvironmentProvider env={env}>
 				<ConfigurationProvider>{children}</ConfigurationProvider>
@@ -145,7 +143,6 @@ describe("useProfileTransactions", () => {
 
 	it("#updateFilters", async () => {
 		const profile = env.profiles().findById(getDefaultProfileId());
-
 
 		await profile.restore();
 		await profile.sync();
@@ -200,7 +197,6 @@ describe("useProfileTransactions", () => {
 
 		await profile.restore();
 		await profile.sync();
-
 
 		const wrapper = ({ children }: any) => (
 			<EnvironmentProvider env={env}>
