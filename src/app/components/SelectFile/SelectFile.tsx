@@ -33,6 +33,8 @@ export const SelectFile = ({ onSelect, fileFormat }: SelectFileStepProps) => {
 		event.preventDefault();
 		event.stopPropagation();
 
+		setIsDragging(false);
+
 		const firstAcceptedFileByExtension = [...event.dataTransfer.files].find(
 			({ name }) => path.extname(name) === fileFormat,
 		);
@@ -42,8 +44,6 @@ export const SelectFile = ({ onSelect, fileFormat }: SelectFileStepProps) => {
 		}
 
 		const file = readFileContents(firstAcceptedFileByExtension.path);
-
-		setIsDragging(false);
 
 		onSelect?.(file);
 	};

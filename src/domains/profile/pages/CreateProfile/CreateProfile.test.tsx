@@ -105,7 +105,7 @@ describe("CreateProfile", () => {
 		expect(profiles[0].name()).toEqual("test profile 1");
 		expect(profiles[0].settings().all()).toEqual({
 			...baseSettings,
-			AVATAR: "data:image/png;base64,dGVzdCBtbmVtb25pYw==",
+			AVATAR: "data:image/png;base64,avatarImage",
 			NAME: "test profile 1",
 		});
 		expect(profiles[0].usesPassword()).toBe(false);
@@ -122,7 +122,7 @@ describe("CreateProfile", () => {
 		expect(profiles[1].name()).toEqual("test profile 2");
 		expect(profiles[1].settings().all()).toEqual({
 			...baseSettings,
-			AVATAR: "data:image/png;base64,dGVzdCBtbmVtb25pYw==",
+			AVATAR: "data:image/png;base64,avatarImage",
 			NAME: "test profile 2",
 			THEME: "light",
 		});

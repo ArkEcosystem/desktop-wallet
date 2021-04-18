@@ -35,7 +35,6 @@ import { ReactComponent as Copy } from "./copy.svg";
 import { ReactComponent as CopyAddress } from "./copy-address.svg";
 import { ReactComponent as CopyKey } from "./copy-key.svg";
 import { ReactComponent as CrossSlim } from "./cross-slim.svg";
-import { SvgCollectionDark } from "./dark";
 import { ReactComponent as Dash } from "./dash.svg";
 import { ReactComponent as Delegate } from "./delegate.svg";
 import { ReactComponent as DelegateResigned } from "./delegate-resigned.svg";
@@ -120,11 +119,10 @@ import { ReactComponent as Voted } from "./voted.svg";
 export const SvgCollection: any = {
 	...Currencies,
 	...Providers,
-	...SvgCollectionDark,
 	AlertDanger,
-	AlertInfo,
-	AlertHint,
 	AlertDefault,
+	AlertHint,
+	AlertInfo,
 	AlertSuccess,
 	AlertWarning,
 	ArkLogo,
@@ -138,9 +136,9 @@ export const SvgCollection: any = {
 	Blockfolio,
 	Bridgechain,
 	Business,
-	Category,
 	CaretDown,
 	CaretUp,
+	Category,
 	ChartActiveDot,
 	Checkmark,
 	CheckmarkBig,
@@ -159,10 +157,12 @@ export const SvgCollection: any = {
 	Delegate,
 	DelegateResigned,
 	Download,
+	DweFile,
 	Edit,
 	Entity,
 	Exchange,
 	Explorer,
+	Export,
 	Eye,
 	EyeOff,
 	EyeTag,
@@ -177,6 +177,7 @@ export const SvgCollection: any = {
 	Import,
 	InformationCircle,
 	Ipfs,
+	JsonFile,
 	Key,
 	Ledger,
 	Link,
@@ -219,9 +220,9 @@ export const SvgCollection: any = {
 	Star,
 	StarOutline,
 	StarsOutline,
+	StatusFailed,
 	StatusOk,
 	StatusPending,
-	StatusFailed,
 	Timelock,
 	Trash,
 	Unvote,
@@ -232,7 +233,4 @@ export const SvgCollection: any = {
 	Vote,
 	VoteCombination,
 	Voted,
-	Export,
-	DweFile,
-	JsonFile,
 };
