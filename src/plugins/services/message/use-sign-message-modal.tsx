@@ -25,7 +25,7 @@ export const useSignMessageModal = ({ message, walletId }: { message: string; wa
 				onClose={close}
 			/>
 		);
-	}, [isOpen, message, walletId, close]);
+	}, [isOpen, message, walletId, close, profile]);
 
 	return [ModalWrapper, signedResult, { isOpen, open, close }];
 };
