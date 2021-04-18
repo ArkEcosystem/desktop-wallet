@@ -6,6 +6,7 @@ import Transport, { Observer } from "@ledgerhq/hw-transport";
 import { createTransportReplayer, RecordStore } from "@ledgerhq/hw-transport-mocker";
 import { act, renderHook } from "@testing-library/react-hooks";
 import { LedgerProvider } from "app/contexts";
+import { EnvironmentProvider } from "app/contexts";
 import { translations as commonTranslations } from "app/i18n/common/i18n";
 import { toasts } from "app/services";
 import { NetworkStep } from "domains/wallet/components/NetworkStep";
@@ -16,7 +17,6 @@ import React from "react";
 import { FormProvider, useForm } from "react-hook-form";
 import { Route } from "react-router-dom";
 import { env, fireEvent, getDefaultProfileId, render, renderWithRouter, screen, waitFor } from "utils/testing-library";
-import { EnvironmentProvider } from "app/contexts";
 
 import { ImportWallet } from "./ImportWallet";
 import { SecondStep } from "./Step2";
