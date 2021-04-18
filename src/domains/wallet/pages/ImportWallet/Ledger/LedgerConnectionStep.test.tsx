@@ -4,7 +4,12 @@ import { createTransportReplayer, RecordStore } from "@ledgerhq/hw-transport-moc
 import { LedgerProvider } from "app/contexts/Ledger/Ledger";
 import React from "react";
 import { FormProvider, useForm } from "react-hook-form";
-import { env, getDefaultProfileId, render, screen, waitFor } from "utils/testing-library";
+import { env, getDefaultProfileId, render, screen, waitFor, renderWithRouter } from "utils/testing-library";
+import { createMemoryHistory } from "history";
+import { EnvironmentProvider } from "app/contexts";
+import { Route } from "react-router-dom";
+
+const history = createMemoryHistory();
 
 import { LedgerConnectionStep } from "./LedgerConnectionStep";
 
@@ -15,8 +20,11 @@ describe("LedgerConnectionStep", () => {
 	let profile: Contracts.IProfile;
 	let wallet: Contracts.IReadWriteWallet;
 
-	beforeEach(() => {
+	beforeEach(async () => {
 		profile = env.profiles().findById(getDefaultProfileId());
+		await profile.restore();
+		await profile.sync();
+
 		wallet = profile.wallets().first();
 		transport = createTransportReplayer(RecordStore.fromString(""));
 
@@ -49,15 +57,24 @@ describe("LedgerConnectionStep", () => {
 				},
 			});
 			return (
-				<FormProvider {...form}>
-					<LedgerProvider transport={transport}>
-						<LedgerConnectionStep onFailed={onFailed} />
-					</LedgerProvider>
-				</FormProvider>
+				<EnvironmentProvider env={env}>
+					<FormProvider {...form}>
+						<LedgerProvider transport={transport}>
+							<LedgerConnectionStep onFailed={onFailed} />
+						</LedgerProvider>
+					</FormProvider>
+				</EnvironmentProvider>
 			);
 		};
 
-		const { container } = render(<Component />);
+		history.push(`/profiles/${profile.id()}`);
+
+		const { container } = renderWithRouter(
+			<Route path="/profiles/:profileId">
+				<Component />
+			</Route>,
+			{ history, withProviders: false },
+		);
 
 		await waitFor(() => expect(screen.queryByText("Open the ARK app on your device ...")).toBeInTheDocument());
 
@@ -89,15 +106,23 @@ describe("LedgerConnectionStep", () => {
 				},
 			});
 			return (
-				<FormProvider {...form}>
-					<LedgerProvider transport={transport}>
-						<LedgerConnectionStep onConnect={onConnect} />
-					</LedgerProvider>
-				</FormProvider>
+				<EnvironmentProvider env={env}>
+					<FormProvider {...form}>
+						<LedgerProvider transport={transport}>
+							<LedgerConnectionStep onConnect={onConnect} />
+						</LedgerProvider>
+					</FormProvider>
+				</EnvironmentProvider>
 			);
 		};
 
-		const { container } = render(<Component />);
+		history.push(`/profiles/${profile.id()}`);
+		const { container } = renderWithRouter(
+			<Route path="/profiles/:profileId">
+				<Component />
+			</Route>,
+			{ history, withProviders: false },
+		);
 
 		await waitFor(() => expect(screen.getByText("Successfully connected")).toBeInTheDocument());
 		await waitFor(() => expect(onConnect).toHaveBeenCalled());
