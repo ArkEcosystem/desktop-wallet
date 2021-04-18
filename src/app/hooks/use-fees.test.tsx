@@ -50,4 +50,32 @@ describe("useFees", () => {
 			avg: "500000000",
 		});
 	});
+
+	it("should retry find fees by type", async () => {
+		env.reset({ coins: { ARK }, httpClient, storage: new StubStorage() });
+
+		const mockFind = jest.spyOn(env.fees(), "findByType").mockImplementationOnce(() => {
+			throw new Error("test");
+		});
+
+		const profile = env.profiles().create("John Doe");
+		await profile.restore();
+		await profile.wallets().generate("ARK", "ark.devnet");
+		await env.wallets().syncByProfile(profile);
+
+		const wrapper = ({ children }: any) => <EnvironmentProvider env={env}>{children} </EnvironmentProvider>;
+		const {
+			result: { current },
+		} = renderHook(() => useFees(), { wrapper });
+
+		await env.fees().sync("ARK", "ark.devnet");
+		expect(current.findByType("ARK", "ark.devnet", "ipfs")).resolves.toEqual({
+			static: "500000000",
+			max: "500000000",
+			min: "500000000",
+			avg: "500000000",
+		});
+
+		mockFind.mockRestore();
+	});
 });
