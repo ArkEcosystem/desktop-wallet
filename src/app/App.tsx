@@ -26,6 +26,7 @@ import { useHistory } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
 import { StubStorage } from "tests/mocks";
 import { setThemeSource, shouldUseDarkColors } from "utils/electron-utils";
+import { bootEnvWithProfileFixtures } from "utils/test-helpers";
 
 import { middlewares, RouterView, routes } from "../router";
 import { ConfigurationProvider, EnvironmentProvider, LedgerProvider, useEnvironmentContext } from "./contexts";
@@ -35,7 +36,6 @@ import { PluginProviders } from "./PluginProviders";
 import { SentryProvider } from "./sentry/SentryProvider";
 import { SentryRouterWrapper } from "./sentry/SentryRouterWrapper";
 import { httpClient } from "./services";
-import { bootEnvWithProfileFixtures } from "utils/test-helpers";
 
 const RouteWrappers = ({ children }: { children: React.ReactNode }) => (
 	<>
