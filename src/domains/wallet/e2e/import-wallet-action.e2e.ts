@@ -18,7 +18,7 @@ createFixture(
 );
 
 test("should import a wallet by mnemonic", async (t) => {
-	await t.expect(Selector("span").withText("John Doe").exists).ok({ timeout: 10000 });
+	await t.expect(Selector("span").withText("John Doe").exists).ok({ timeout: 15000 });
 	await t.click(Selector("span").withText("John Doe"));
 	await t.expect(Selector("div").withText(translations.COMMON.WALLETS).exists).ok();
 
