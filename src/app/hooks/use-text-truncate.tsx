@@ -19,6 +19,7 @@ export const useTextTruncate = ({ text = "", minChars = 10, parentRef }: Props) 
 	const textWidthRef = useRef<any>();
 
 	const calculateOffsets = useCallback(() => {
+		/* istanbul ignore next */
 		if (!textNodeRef.current || !parentRef?.current) {
 			return;
 		}
@@ -50,11 +51,10 @@ export const useTextTruncate = ({ text = "", minChars = 10, parentRef }: Props) 
 	}, [calculateOffsets]);
 
 	useEffect(() => {
-		const listener = () => calculateOffsets();
-		window.addEventListener("resize", listener);
+		window.addEventListener("resize", calculateOffsets);
 
 		return () => {
-			window.removeEventListener("resize", listener);
+			window.removeEventListener("resize", calculateOffsets);
 		};
 	}, []); // eslint-disable-line react-hooks/exhaustive-deps
 
