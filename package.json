@@ -36,8 +36,8 @@
 		"lint": "eslint '*/**/*.{js,ts,tsx}' --quiet --fix",
 		"prettier": "prettier --write \"./*.{ts,tsx,js,json,md}\" \"./**/*.{ts,tsx,js,json,md}\"",
 		"start": "cross-env BROWSER=none react-app-rewired start",
-		"test": "react-app-rewired --expose-gc test --logHeapUsage",
-		"test:coverage": "react-app-rewired --expose-gc test --logHeapUsage --coverage --watchAll=false",
+		"test": "react-app-rewired --expose-gc test --env=./src/tests/custom-env.js --logHeapUsage",
+		"test:coverage": "react-app-rewired --expose-gc test --env=./src/tests/custom-env.js --logHeapUsage --coverage --watchAll=false",
 		"test:e2e": "cross-env ELECTRON_IS_E2E=1 ELECTRON_IS_DEV=0 testcafe",
 		"preversion": "cross-env ./scripts/version-artifacts.sh",
 		"prepare": "husky install"
