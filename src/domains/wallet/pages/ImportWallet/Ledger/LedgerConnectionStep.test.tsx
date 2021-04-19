@@ -1,13 +1,13 @@
 import { Contracts } from "@arkecosystem/platform-sdk-profiles";
 import Transport, { Observer } from "@ledgerhq/hw-transport";
 import { createTransportReplayer, RecordStore } from "@ledgerhq/hw-transport-mocker";
+import { EnvironmentProvider } from "app/contexts";
 import { LedgerProvider } from "app/contexts/Ledger/Ledger";
+import { createMemoryHistory } from "history";
 import React from "react";
 import { FormProvider, useForm } from "react-hook-form";
-import { env, getDefaultProfileId, render, screen, waitFor, renderWithRouter } from "utils/testing-library";
-import { createMemoryHistory } from "history";
-import { EnvironmentProvider } from "app/contexts";
 import { Route } from "react-router-dom";
+import { env, getDefaultProfileId, renderWithRouter, screen, waitFor } from "utils/testing-library";
 
 const history = createMemoryHistory();
 
