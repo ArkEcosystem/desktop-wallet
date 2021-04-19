@@ -628,9 +628,10 @@ jobs:
             - name: Rebuild
               run: npm rebuild
             - name: Test
-              run: ./node_modules/react-app-rewired/bin/index.js --expose-gc test src/plugins
-                  --forceExit --maxWorkers=50% --logHeapUsage--watchAll=false
-                  --coverage
+              run: ./node_modules/react-app-rewired/bin/index.js --expose-gc test
+                  src/plugins --forceExit --maxWorkers=50%
+                  --env=./src/tests/custom-env.js
+                  --logHeapUsage--watchAll=false --coverage
                   --collectCoverageFrom='["src/plugins/**/*.{js,jsx,ts,tsx}","!<rootDir>/build/*","!<rootDir>/dist/*","!jest.setup.js","!src/**/e2e/*.ts","!src/**/*.e2e.ts","!src/**/*.models.{js,jsx,ts,tsx}","!src/**/*.stories.{js,jsx,ts,tsx}","!src/**/*.styles.{js,jsx,ts,tsx}","!src/electron/**/*","!src/i18n/**/*","!src/tests/**/*","!src/tailwind.config.js","!src/utils/e2e-utils.ts","!src/polyfill/**/*"]'
                   --coverageThreshold='{"./src/plugins/":{"branches":100,"functions":96.34,"lines":97.78,"statements":97.97}}'
     router:
