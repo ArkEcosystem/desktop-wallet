@@ -30,7 +30,7 @@ export const TransactionDetail = React.forwardRef<HTMLDivElement, TransactionDet
 			className={`${className} no-ligatures`}
 			ref={ref}
 		>
-			<div className="flex-1 space-y-2">
+			<div className="flex-1 space-y-2 flex-shrink overflow-hidden whitespace-nowrap">
 				{label && <div className="text-sm font-semibold text-theme-secondary-700 no-ligatures">{label}</div>}
 
 				<div className="font-semibold">{children}</div>
