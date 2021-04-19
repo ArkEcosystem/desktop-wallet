@@ -10,10 +10,12 @@ createFixture(`NavBar routing`, [
 ]);
 
 test("should navigate to profile dashboard", async (t) => {
+	await t.expect(Selector("span").withText("John Doe").exists).ok({ timeout: 10000 });
 	await t.click(Selector("span").withText("John Doe"));
 });
 
 test("should navigate to plugins", async (t) => {
+	await t.expect(Selector("span").withText("John Doe").exists).ok({ timeout: 10000 });
 	await t.click(Selector("span").withText("John Doe"));
 	await t.click(Selector("a").withExactText(translations.COMMON.PLUGINS));
 	await t.expect(getLocation()).contains("/plugins");
@@ -21,6 +23,7 @@ test("should navigate to plugins", async (t) => {
 });
 
 test("should navigate to exchange", async (t) => {
+	await t.expect(Selector("span").withText("John Doe").exists).ok({ timeout: 10000 });
 	await t.click(Selector("span").withText("John Doe"));
 	await t.click(Selector("a").withExactText(translations.EXCHANGE.PAGE_EXCHANGES.TITLE));
 	await t.expect(getLocation()).contains("/exchange");
@@ -28,6 +31,7 @@ test("should navigate to exchange", async (t) => {
 });
 
 test("should navigate to news", async (t) => {
+	await t.expect(Selector("span").withText("John Doe").exists).ok({ timeout: 10000 });
 	await t.click(Selector("span").withText("John Doe"));
 	await t.click(Selector("a").withExactText(translations.NEWS.NEWS));
 	await t.expect(getLocation()).contains("/news");
@@ -35,6 +39,7 @@ test("should navigate to news", async (t) => {
 });
 
 test("should navigate to transaction send page", async (t) => {
+	await t.expect(Selector("span").withText("John Doe").exists).ok({ timeout: 10000 });
 	await t.click(Selector("span").withText("John Doe"));
 	await t.expect(Selector("[data-testid=navbar__buttons--send]").hasAttribute("disabled")).notOk();
 	await t.click(Selector("[data-testid=navbar__buttons--send]"));
@@ -43,6 +48,7 @@ test("should navigate to transaction send page", async (t) => {
 });
 
 test("should navigate back to portfolio", async (t) => {
+	await t.expect(Selector("span").withText("John Doe").exists).ok({ timeout: 10000 });
 	await t.click(Selector("span").withText("John Doe"));
 	await t.click(Selector("a").withExactText(translations.NEWS.NEWS));
 	await t.click(Selector("a").withExactText(translations.COMMON.PORTFOLIO));

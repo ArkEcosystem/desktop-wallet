@@ -8,6 +8,9 @@ const translations = buildTranslations();
 createFixture(`Welcome Page Profile Card`);
 
 test("should navigate to profile setting from profile card menu", async (t) => {
+	await t
+		.expect(Selector('[data-testid="Card"] [data-testid="dropdown__toggle"]').child(0).exists)
+		.ok({ timeout: 10000 });
 	await t.click(Selector('[data-testid="Card"] [data-testid="dropdown__toggle"]').child(0));
 	await t.click(
 		Selector('[data-testid="Card"] [data-testid="dropdown__option--0"]').withText(translations.COMMON.SETTINGS),

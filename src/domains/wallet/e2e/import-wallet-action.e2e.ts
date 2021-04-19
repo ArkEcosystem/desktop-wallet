@@ -18,6 +18,7 @@ createFixture(
 );
 
 test("should import a wallet by mnemonic", async (t) => {
+	await t.expect(Selector("span").withText("John Doe").exists).ok({ timeout: 10000 });
 	await t.click(Selector("span").withText("John Doe"));
 	await t.expect(Selector("div").withText(translations.COMMON.WALLETS).exists).ok();
 
@@ -51,6 +52,7 @@ test("should import a wallet by mnemonic", async (t) => {
 });
 
 test("should import a wallet by address", async (t) => {
+	await t.expect(Selector("span").withText("John Doe").exists).ok({ timeout: 10000 });
 	await t.click(Selector("span").withText("John Doe"));
 	await t.expect(Selector("div").withText(translations.COMMON.WALLETS).exists).ok();
 
@@ -84,6 +86,7 @@ test("should import a wallet by address", async (t) => {
 });
 
 test("should show an error message for invalid address", async (t) => {
+	await t.expect(Selector("span").withText("John Doe").exists).ok({ timeout: 10000 });
 	await t.click(Selector("span").withText("John Doe"));
 	await t.expect(Selector("div").withText("Wallets").exists).ok();
 
@@ -115,6 +118,7 @@ test("should show an error message for invalid address", async (t) => {
 test("should show an error message for duplicate address", async (t) => {
 	let passphraseInput: Selector;
 
+	await t.expect(Selector("span").withText("John Doe").exists).ok({ timeout: 10000 });
 	await t.click(Selector("span").withText("John Doe"));
 	await t.expect(Selector("div").withText("Wallets").exists).ok();
 
