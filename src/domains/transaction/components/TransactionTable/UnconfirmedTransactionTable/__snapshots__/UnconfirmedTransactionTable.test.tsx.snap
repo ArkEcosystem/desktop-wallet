@@ -118,7 +118,7 @@ exports[`Unconfirmed transaction table should render 1`] = `
                 class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT space-x-3"
               >
                 <div
-                  class="Avatar__AvatarWrapper-sc-1vsy2s2-0 ibTSCJ ring-theme-background bg-theme-background group-hover:ring-theme-secondary-100 group-hover:bg-secondary-100 dark:group-hover:ring-black dark:group-hover:bg-black"
+                  class="Avatar__AvatarWrapper-sc-1vsy2s2-0 ibTSCJ ring-theme-background bg-theme-background group-hover:ring-theme-secondary-100 group-hover:bg-secondary-100 dark:group-hover:ring-black dark:group-hover:bg-black flex-shrink-0"
                   data-testid="Avatar"
                 >
                   <div
@@ -132,13 +132,13 @@ exports[`Unconfirmed transaction table should render 1`] = `
                   </div>
                 </div>
                 <div
-                  class="inline-flex items-center no-ligatures"
+                  class="w-full flex items-center no-ligatures overflow-hidden whitespace-nowrap"
                 >
                   <span
-                    class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-text truncate font-semibold text-base"
+                    class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-text font-semibold text-base"
                     data-testid="address__wallet-address"
                   >
-                    D5sRKW…cvJtwb
+                    D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb
                   </span>
                 </div>
               </div>

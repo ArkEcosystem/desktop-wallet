@@ -13,7 +13,7 @@ exports[`ContactListItem should render 1`] = `
             class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 DpDcR space-x-4"
           >
             <div
-              class="Avatar__AvatarWrapper-sc-1vsy2s2-0 ktCSBk"
+              class="Avatar__AvatarWrapper-sc-1vsy2s2-0 ktCSBk flex-shrink-0"
               data-testid="Avatar"
             >
               <div
@@ -68,7 +68,7 @@ exports[`ContactListItem should render 1`] = `
             class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT space-x-4"
           >
             <div
-              class="Avatar__AvatarWrapper-sc-1vsy2s2-0 ktCSBk"
+              class="Avatar__AvatarWrapper-sc-1vsy2s2-0 ktCSBk flex-shrink-0"
               data-testid="Avatar"
             >
               <div
@@ -82,13 +82,13 @@ exports[`ContactListItem should render 1`] = `
               </div>
             </div>
             <div
-              class="inline-flex items-center no-ligatures"
+              class="w-full flex items-center no-ligatures overflow-hidden whitespace-nowrap"
             >
               <span
-                class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-text truncate font-semibold text-base"
+                class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-text font-semibold text-base"
                 data-testid="address__wallet-address"
               >
-                D61mfS…J3Dyib
+                D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib
               </span>
             </div>
           </div>
@@ -212,7 +212,7 @@ exports[`ContactListItem should render as delegate 1`] = `
             class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 DpDcR space-x-4"
           >
             <div
-              class="Avatar__AvatarWrapper-sc-1vsy2s2-0 ktCSBk"
+              class="Avatar__AvatarWrapper-sc-1vsy2s2-0 ktCSBk flex-shrink-0"
               data-testid="Avatar"
             >
               <div
@@ -267,7 +267,7 @@ exports[`ContactListItem should render as delegate 1`] = `
             class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT space-x-4"
           >
             <div
-              class="Avatar__AvatarWrapper-sc-1vsy2s2-0 ktCSBk"
+              class="Avatar__AvatarWrapper-sc-1vsy2s2-0 ktCSBk flex-shrink-0"
               data-testid="Avatar"
             >
               <div
@@ -281,13 +281,13 @@ exports[`ContactListItem should render as delegate 1`] = `
               </div>
             </div>
             <div
-              class="inline-flex items-center no-ligatures"
+              class="w-full flex items-center no-ligatures overflow-hidden whitespace-nowrap"
             >
               <span
-                class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-text truncate font-semibold text-base"
+                class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-text font-semibold text-base"
                 data-testid="address__wallet-address"
               >
-                id5sRK…cvJtwb
+                id5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb
               </span>
             </div>
           </div>
@@ -411,7 +411,7 @@ exports[`ContactListItem should render using variant 1`] = `
             class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 DpDcR space-x-4"
           >
             <div
-              class="Avatar__AvatarWrapper-sc-1vsy2s2-0 ktCSBk"
+              class="Avatar__AvatarWrapper-sc-1vsy2s2-0 ktCSBk flex-shrink-0"
               data-testid="Avatar"
             >
               <div
@@ -466,7 +466,7 @@ exports[`ContactListItem should render using variant 1`] = `
             class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT space-x-4"
           >
             <div
-              class="Avatar__AvatarWrapper-sc-1vsy2s2-0 ktCSBk"
+              class="Avatar__AvatarWrapper-sc-1vsy2s2-0 ktCSBk flex-shrink-0"
               data-testid="Avatar"
             >
               <div
@@ -480,13 +480,13 @@ exports[`ContactListItem should render using variant 1`] = `
               </div>
             </div>
             <div
-              class="inline-flex items-center no-ligatures"
+              class="w-full flex items-center no-ligatures overflow-hidden whitespace-nowrap"
             >
               <span
-                class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-text truncate font-semibold text-base"
+                class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-text font-semibold text-base"
                 data-testid="address__wallet-address"
               >
-                D61mfSggzb…oHaqJ3Dyib
+                D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib
               </span>
             </div>
           </div>
@@ -589,7 +589,7 @@ exports[`ContactListItem should render with multiple addresses 1`] = `
             class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 DpDcR space-x-4"
           >
             <div
-              class="Avatar__AvatarWrapper-sc-1vsy2s2-0 ktCSBk"
+              class="Avatar__AvatarWrapper-sc-1vsy2s2-0 ktCSBk flex-shrink-0"
               data-testid="Avatar"
             >
               <div
@@ -644,7 +644,7 @@ exports[`ContactListItem should render with multiple addresses 1`] = `
             class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT space-x-4"
           >
             <div
-              class="Avatar__AvatarWrapper-sc-1vsy2s2-0 ktCSBk"
+              class="Avatar__AvatarWrapper-sc-1vsy2s2-0 ktCSBk flex-shrink-0"
               data-testid="Avatar"
             >
               <div
@@ -658,13 +658,13 @@ exports[`ContactListItem should render with multiple addresses 1`] = `
               </div>
             </div>
             <div
-              class="inline-flex items-center no-ligatures"
+              class="w-full flex items-center no-ligatures overflow-hidden whitespace-nowrap"
             >
               <span
-                class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-text truncate font-semibold text-base"
+                class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-text font-semibold text-base"
                 data-testid="address__wallet-address"
               >
-                D61mfS…J3Dyib
+                D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib
               </span>
             </div>
           </div>
@@ -808,7 +808,7 @@ exports[`ContactListItem should render with multiple addresses 1`] = `
             class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT space-x-4"
           >
             <div
-              class="Avatar__AvatarWrapper-sc-1vsy2s2-0 ktCSBk"
+              class="Avatar__AvatarWrapper-sc-1vsy2s2-0 ktCSBk flex-shrink-0"
               data-testid="Avatar"
             >
               <div
@@ -822,13 +822,13 @@ exports[`ContactListItem should render with multiple addresses 1`] = `
               </div>
             </div>
             <div
-              class="inline-flex items-center no-ligatures"
+              class="w-full flex items-center no-ligatures overflow-hidden whitespace-nowrap"
             >
               <span
-                class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-text truncate font-semibold text-base"
+                class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-text font-semibold text-base"
                 data-testid="address__wallet-address"
               >
-                D61mfS…J3Dyib
+                D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib
               </span>
             </div>
           </div>
@@ -972,7 +972,7 @@ exports[`ContactListItem should render with multiple addresses 1`] = `
             class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT space-x-4"
           >
             <div
-              class="Avatar__AvatarWrapper-sc-1vsy2s2-0 ktCSBk"
+              class="Avatar__AvatarWrapper-sc-1vsy2s2-0 ktCSBk flex-shrink-0"
               data-testid="Avatar"
             >
               <div
@@ -986,13 +986,13 @@ exports[`ContactListItem should render with multiple addresses 1`] = `
               </div>
             </div>
             <div
-              class="inline-flex items-center no-ligatures"
+              class="w-full flex items-center no-ligatures overflow-hidden whitespace-nowrap"
             >
               <span
-                class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-text truncate font-semibold text-base"
+                class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-text font-semibold text-base"
                 data-testid="address__wallet-address"
               >
-                DKrACQ…jfXYqu
+                DKrACQw7ytoU2gjppy3qKeE2dQhZjfXYqu
               </span>
             </div>
           </div>
@@ -1102,7 +1102,7 @@ exports[`ContactListItem should render with multiple options 1`] = `
             class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 DpDcR space-x-4"
           >
             <div
-              class="Avatar__AvatarWrapper-sc-1vsy2s2-0 ktCSBk"
+              class="Avatar__AvatarWrapper-sc-1vsy2s2-0 ktCSBk flex-shrink-0"
               data-testid="Avatar"
             >
               <div
@@ -1157,7 +1157,7 @@ exports[`ContactListItem should render with multiple options 1`] = `
             class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT space-x-4"
           >
             <div
-              class="Avatar__AvatarWrapper-sc-1vsy2s2-0 ktCSBk"
+              class="Avatar__AvatarWrapper-sc-1vsy2s2-0 ktCSBk flex-shrink-0"
               data-testid="Avatar"
             >
               <div
@@ -1171,13 +1171,13 @@ exports[`ContactListItem should render with multiple options 1`] = `
               </div>
             </div>
             <div
-              class="inline-flex items-center no-ligatures"
+              class="w-full flex items-center no-ligatures overflow-hidden whitespace-nowrap"
             >
               <span
-                class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-text truncate font-semibold text-base"
+                class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-text font-semibold text-base"
                 data-testid="address__wallet-address"
               >
-                D61mfS…J3Dyib
+                D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib
               </span>
             </div>
           </div>
@@ -1321,7 +1321,7 @@ exports[`ContactListItem should render with multiple options 1`] = `
             class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT space-x-4"
           >
             <div
-              class="Avatar__AvatarWrapper-sc-1vsy2s2-0 ktCSBk"
+              class="Avatar__AvatarWrapper-sc-1vsy2s2-0 ktCSBk flex-shrink-0"
               data-testid="Avatar"
             >
               <div
@@ -1335,13 +1335,13 @@ exports[`ContactListItem should render with multiple options 1`] = `
               </div>
             </div>
             <div
-              class="inline-flex items-center no-ligatures"
+              class="w-full flex items-center no-ligatures overflow-hidden whitespace-nowrap"
             >
               <span
-                class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-text truncate font-semibold text-base"
+                class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-text font-semibold text-base"
                 data-testid="address__wallet-address"
               >
-                D61mfS…J3Dyib
+                D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib
               </span>
             </div>
           </div>
@@ -1485,7 +1485,7 @@ exports[`ContactListItem should render with multiple options 1`] = `
             class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT space-x-4"
           >
             <div
-              class="Avatar__AvatarWrapper-sc-1vsy2s2-0 ktCSBk"
+              class="Avatar__AvatarWrapper-sc-1vsy2s2-0 ktCSBk flex-shrink-0"
               data-testid="Avatar"
             >
               <div
@@ -1499,13 +1499,13 @@ exports[`ContactListItem should render with multiple options 1`] = `
               </div>
             </div>
             <div
-              class="inline-flex items-center no-ligatures"
+              class="w-full flex items-center no-ligatures overflow-hidden whitespace-nowrap"
             >
               <span
-                class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-text truncate font-semibold text-base"
+                class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-text font-semibold text-base"
                 data-testid="address__wallet-address"
               >
-                DKrACQ…jfXYqu
+                DKrACQw7ytoU2gjppy3qKeE2dQhZjfXYqu
               </span>
             </div>
           </div>
@@ -1615,7 +1615,7 @@ exports[`ContactListItem should render with one option 1`] = `
             class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 DpDcR space-x-4"
           >
             <div
-              class="Avatar__AvatarWrapper-sc-1vsy2s2-0 ktCSBk"
+              class="Avatar__AvatarWrapper-sc-1vsy2s2-0 ktCSBk flex-shrink-0"
               data-testid="Avatar"
             >
               <div
@@ -1670,7 +1670,7 @@ exports[`ContactListItem should render with one option 1`] = `
             class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT space-x-4"
           >
             <div
-              class="Avatar__AvatarWrapper-sc-1vsy2s2-0 ktCSBk"
+              class="Avatar__AvatarWrapper-sc-1vsy2s2-0 ktCSBk flex-shrink-0"
               data-testid="Avatar"
             >
               <div
@@ -1684,13 +1684,13 @@ exports[`ContactListItem should render with one option 1`] = `
               </div>
             </div>
             <div
-              class="inline-flex items-center no-ligatures"
+              class="w-full flex items-center no-ligatures overflow-hidden whitespace-nowrap"
             >
               <span
-                class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-text truncate font-semibold text-base"
+                class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-text font-semibold text-base"
                 data-testid="address__wallet-address"
               >
-                D61mfS…J3Dyib
+                D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib
               </span>
             </div>
           </div>
@@ -1819,7 +1819,7 @@ exports[`ContactListItem should render with one option 1`] = `
             class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT space-x-4"
           >
             <div
-              class="Avatar__AvatarWrapper-sc-1vsy2s2-0 ktCSBk"
+              class="Avatar__AvatarWrapper-sc-1vsy2s2-0 ktCSBk flex-shrink-0"
               data-testid="Avatar"
             >
               <div
@@ -1833,13 +1833,13 @@ exports[`ContactListItem should render with one option 1`] = `
               </div>
             </div>
             <div
-              class="inline-flex items-center no-ligatures"
+              class="w-full flex items-center no-ligatures overflow-hidden whitespace-nowrap"
             >
               <span
-                class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-text truncate font-semibold text-base"
+                class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-text font-semibold text-base"
                 data-testid="address__wallet-address"
               >
-                D61mfS…J3Dyib
+                D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib
               </span>
             </div>
           </div>
@@ -1968,7 +1968,7 @@ exports[`ContactListItem should render with one option 1`] = `
             class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT space-x-4"
           >
             <div
-              class="Avatar__AvatarWrapper-sc-1vsy2s2-0 ktCSBk"
+              class="Avatar__AvatarWrapper-sc-1vsy2s2-0 ktCSBk flex-shrink-0"
               data-testid="Avatar"
             >
               <div
@@ -1982,13 +1982,13 @@ exports[`ContactListItem should render with one option 1`] = `
               </div>
             </div>
             <div
-              class="inline-flex items-center no-ligatures"
+              class="w-full flex items-center no-ligatures overflow-hidden whitespace-nowrap"
             >
               <span
-                class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-text truncate font-semibold text-base"
+                class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-text font-semibold text-base"
                 data-testid="address__wallet-address"
               >
-                DKrACQ…jfXYqu
+                DKrACQw7ytoU2gjppy3qKeE2dQhZjfXYqu
               </span>
             </div>
           </div>
