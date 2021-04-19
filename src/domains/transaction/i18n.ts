@@ -308,6 +308,7 @@ export const translations: { [key: string]: any } = {
 		FORM_STEP: {
 			TITLE: "Send {{ticker}}",
 			DESCRIPTION: "Enter details below to send your transaction.",
+			MULTIPLE_UNAVAILBLE: "Multiple Recipient Transactions are not available from Ledger wallets.",
 		},
 	},
 

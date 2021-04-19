@@ -559,28 +559,36 @@ exports[`SendTransfer should display disabled address selection input if selecte
                             <div
                               class="flex items-stretch select-buttons"
                             >
-                              <button
-                                class="OriginalButton__StyledButton-sc-1y2wptt-0 eXZVBc flex-1"
-                                data-testid="AddRecipient__single"
-                                type="button"
+                              <div
+                                class="flex-1"
                               >
-                                <div
-                                  class="flex relative items-center space-x-2"
+                                <button
+                                  class="OriginalButton__StyledButton-sc-1y2wptt-0 eXZVBc w-full"
+                                  data-testid="AddRecipient__single"
+                                  type="button"
                                 >
-                                  Single
-                                </div>
-                              </button>
-                              <button
-                                class="OriginalButton__StyledButton-sc-1y2wptt-0 ehNoEt flex-1 border-l-0"
-                                data-testid="AddRecipient__multi"
-                                type="button"
+                                  <div
+                                    class="flex relative items-center space-x-2"
+                                  >
+                                    Single
+                                  </div>
+                                </button>
+                              </div>
+                              <div
+                                class="flex-1"
                               >
-                                <div
-                                  class="flex relative items-center space-x-2"
+                                <button
+                                  class="OriginalButton__StyledButton-sc-1y2wptt-0 ehNoEt w-full border-l-0"
+                                  data-testid="AddRecipient__multi"
+                                  type="button"
                                 >
-                                  Multiple
-                                </div>
-                              </button>
+                                  <div
+                                    class="flex relative items-center space-x-2"
+                                  >
+                                    Multiple
+                                  </div>
+                                </button>
+                              </div>
                             </div>
                           </div>
                           <div
@@ -1617,28 +1625,36 @@ exports[`SendTransfer should render 1st step with custom deeplink values and use
             <div
               class="flex items-stretch select-buttons"
             >
-              <button
-                class="OriginalButton__StyledButton-sc-1y2wptt-0 eXZVBc flex-1"
-                data-testid="AddRecipient__single"
-                type="button"
+              <div
+                class="flex-1"
               >
-                <div
-                  class="flex relative items-center space-x-2"
+                <button
+                  class="OriginalButton__StyledButton-sc-1y2wptt-0 eXZVBc w-full"
+                  data-testid="AddRecipient__single"
+                  type="button"
                 >
-                  Single
-                </div>
-              </button>
-              <button
-                class="OriginalButton__StyledButton-sc-1y2wptt-0 ehNoEt flex-1 border-l-0"
-                data-testid="AddRecipient__multi"
-                type="button"
+                  <div
+                    class="flex relative items-center space-x-2"
+                  >
+                    Single
+                  </div>
+                </button>
+              </div>
+              <div
+                class="flex-1"
               >
-                <div
-                  class="flex relative items-center space-x-2"
+                <button
+                  class="OriginalButton__StyledButton-sc-1y2wptt-0 ehNoEt w-full border-l-0"
+                  data-testid="AddRecipient__multi"
+                  type="button"
                 >
-                  Multiple
-                </div>
-              </button>
+                  <div
+                    class="flex relative items-center space-x-2"
+                  >
+                    Multiple
+                  </div>
+                </button>
+              </div>
             </div>
           </div>
           <div
@@ -2483,28 +2499,36 @@ exports[`SendTransfer should render form and use location state 1`] = `
                             <div
                               class="flex items-stretch select-buttons"
                             >
-                              <button
-                                class="OriginalButton__StyledButton-sc-1y2wptt-0 eXZVBc flex-1"
-                                data-testid="AddRecipient__single"
-                                type="button"
+                              <div
+                                class="flex-1"
                               >
-                                <div
-                                  class="flex relative items-center space-x-2"
+                                <button
+                                  class="OriginalButton__StyledButton-sc-1y2wptt-0 eXZVBc w-full"
+                                  data-testid="AddRecipient__single"
+                                  type="button"
                                 >
-                                  Single
-                                </div>
-                              </button>
-                              <button
-                                class="OriginalButton__StyledButton-sc-1y2wptt-0 ehNoEt flex-1 border-l-0"
-                                data-testid="AddRecipient__multi"
-                                type="button"
+                                  <div
+                                    class="flex relative items-center space-x-2"
+                                  >
+                                    Single
+                                  </div>
+                                </button>
+                              </div>
+                              <div
+                                class="flex-1"
                               >
-                                <div
-                                  class="flex relative items-center space-x-2"
+                                <button
+                                  class="OriginalButton__StyledButton-sc-1y2wptt-0 ehNoEt w-full border-l-0"
+                                  data-testid="AddRecipient__multi"
+                                  type="button"
                                 >
-                                  Multiple
-                                </div>
-                              </button>
+                                  <div
+                                    class="flex relative items-center space-x-2"
+                                  >
+                                    Multiple
+                                  </div>
+                                </button>
+                              </div>
                             </div>
                           </div>
                           <div
@@ -3465,28 +3489,36 @@ exports[`SendTransfer should render form and use location state without memo 1`]
                             <div
                               class="flex items-stretch select-buttons"
                             >
-                              <button
-                                class="OriginalButton__StyledButton-sc-1y2wptt-0 eXZVBc flex-1"
-                                data-testid="AddRecipient__single"
-                                type="button"
+                              <div
+                                class="flex-1"
                               >
-                                <div
-                                  class="flex relative items-center space-x-2"
+                                <button
+                                  class="OriginalButton__StyledButton-sc-1y2wptt-0 eXZVBc w-full"
+                                  data-testid="AddRecipient__single"
+                                  type="button"
                                 >
-                                  Single
-                                </div>
-                              </button>
-                              <button
-                                class="OriginalButton__StyledButton-sc-1y2wptt-0 ehNoEt flex-1 border-l-0"
-                                data-testid="AddRecipient__multi"
-                                type="button"
+                                  <div
+                                    class="flex relative items-center space-x-2"
+                                  >
+                                    Single
+                                  </div>
+                                </button>
+                              </div>
+                              <div
+                                class="flex-1"
                               >
-                                <div
-                                  class="flex relative items-center space-x-2"
+                                <button
+                                  class="OriginalButton__StyledButton-sc-1y2wptt-0 ehNoEt w-full border-l-0"
+                                  data-testid="AddRecipient__multi"
+                                  type="button"
                                 >
-                                  Multiple
-                                </div>
-                              </button>
+                                  <div
+                                    class="flex relative items-center space-x-2"
+                                  >
+                                    Multiple
+                                  </div>
+                                </button>
+                              </div>
                             </div>
                           </div>
                           <div
@@ -4065,28 +4097,36 @@ exports[`SendTransfer should render form step 1`] = `
             <div
               class="flex items-stretch select-buttons"
             >
-              <button
-                class="OriginalButton__StyledButton-sc-1y2wptt-0 eXZVBc flex-1"
-                data-testid="AddRecipient__single"
-                type="button"
+              <div
+                class="flex-1"
               >
-                <div
-                  class="flex relative items-center space-x-2"
+                <button
+                  class="OriginalButton__StyledButton-sc-1y2wptt-0 eXZVBc w-full"
+                  data-testid="AddRecipient__single"
+                  type="button"
                 >
-                  Single
-                </div>
-              </button>
-              <button
-                class="OriginalButton__StyledButton-sc-1y2wptt-0 ehNoEt flex-1 border-l-0"
-                data-testid="AddRecipient__multi"
-                type="button"
+                  <div
+                    class="flex relative items-center space-x-2"
+                  >
+                    Single
+                  </div>
+                </button>
+              </div>
+              <div
+                class="flex-1"
               >
-                <div
-                  class="flex relative items-center space-x-2"
+                <button
+                  class="OriginalButton__StyledButton-sc-1y2wptt-0 ehNoEt w-full border-l-0"
+                  data-testid="AddRecipient__multi"
+                  type="button"
                 >
-                  Multiple
-                </div>
-              </button>
+                  <div
+                    class="flex relative items-center space-x-2"
+                  >
+                    Multiple
+                  </div>
+                </button>
+              </div>
             </div>
           </div>
           <div
@@ -4560,28 +4600,36 @@ exports[`SendTransfer should render form step with deeplink values and use them 
             <div
               class="flex items-stretch select-buttons"
             >
-              <button
-                class="OriginalButton__StyledButton-sc-1y2wptt-0 eXZVBc flex-1"
-                data-testid="AddRecipient__single"
-                type="button"
+              <div
+                class="flex-1"
               >
-                <div
-                  class="flex relative items-center space-x-2"
+                <button
+                  class="OriginalButton__StyledButton-sc-1y2wptt-0 eXZVBc w-full"
+                  data-testid="AddRecipient__single"
+                  type="button"
                 >
-                  Single
-                </div>
-              </button>
-              <button
-                class="OriginalButton__StyledButton-sc-1y2wptt-0 ehNoEt flex-1 border-l-0"
-                data-testid="AddRecipient__multi"
-                type="button"
+                  <div
+                    class="flex relative items-center space-x-2"
+                  >
+                    Single
+                  </div>
+                </button>
+              </div>
+              <div
+                class="flex-1"
               >
-                <div
-                  class="flex relative items-center space-x-2"
+                <button
+                  class="OriginalButton__StyledButton-sc-1y2wptt-0 ehNoEt w-full border-l-0"
+                  data-testid="AddRecipient__multi"
+                  type="button"
                 >
-                  Multiple
-                </div>
-              </button>
+                  <div
+                    class="flex relative items-center space-x-2"
+                  >
+                    Multiple
+                  </div>
+                </button>
+              </div>
             </div>
           </div>
           <div
@@ -5055,28 +5103,36 @@ exports[`SendTransfer should render form step without test networks 1`] = `
             <div
               class="flex items-stretch select-buttons"
             >
-              <button
-                class="OriginalButton__StyledButton-sc-1y2wptt-0 eXZVBc flex-1"
-                data-testid="AddRecipient__single"
-                type="button"
+              <div
+                class="flex-1"
               >
-                <div
-                  class="flex relative items-center space-x-2"
+                <button
+                  class="OriginalButton__StyledButton-sc-1y2wptt-0 eXZVBc w-full"
+                  data-testid="AddRecipient__single"
+                  type="button"
                 >
-                  Single
-                </div>
-              </button>
-              <button
-                class="OriginalButton__StyledButton-sc-1y2wptt-0 ehNoEt flex-1 border-l-0"
-                data-testid="AddRecipient__multi"
-                type="button"
+                  <div
+                    class="flex relative items-center space-x-2"
+                  >
+                    Single
+                  </div>
+                </button>
+              </div>
+              <div
+                class="flex-1"
               >
-                <div
-                  class="flex relative items-center space-x-2"
+                <button
+                  class="OriginalButton__StyledButton-sc-1y2wptt-0 ehNoEt w-full border-l-0"
+                  data-testid="AddRecipient__multi"
+                  type="button"
                 >
-                  Multiple
-                </div>
-              </button>
+                  <div
+                    class="flex relative items-center space-x-2"
+                  >
+                    Multiple
+                  </div>
+                </button>
+              </div>
             </div>
           </div>
           <div
@@ -7117,28 +7173,36 @@ exports[`SendTransfer should select a cryptoasset and select sender without wall
                             <div
                               class="flex items-stretch select-buttons"
                             >
-                              <button
-                                class="OriginalButton__StyledButton-sc-1y2wptt-0 eXZVBc flex-1"
-                                data-testid="AddRecipient__single"
-                                type="button"
+                              <div
+                                class="flex-1"
                               >
-                                <div
-                                  class="flex relative items-center space-x-2"
+                                <button
+                                  class="OriginalButton__StyledButton-sc-1y2wptt-0 eXZVBc w-full"
+                                  data-testid="AddRecipient__single"
+                                  type="button"
                                 >
-                                  Single
-                                </div>
-                              </button>
-                              <button
-                                class="OriginalButton__StyledButton-sc-1y2wptt-0 ehNoEt flex-1 border-l-0"
-                                data-testid="AddRecipient__multi"
-                                type="button"
+                                  <div
+                                    class="flex relative items-center space-x-2"
+                                  >
+                                    Single
+                                  </div>
+                                </button>
+                              </div>
+                              <div
+                                class="flex-1"
                               >
-                                <div
-                                  class="flex relative items-center space-x-2"
+                                <button
+                                  class="OriginalButton__StyledButton-sc-1y2wptt-0 ehNoEt w-full border-l-0"
+                                  data-testid="AddRecipient__multi"
+                                  type="button"
                                 >
-                                  Multiple
-                                </div>
-                              </button>
+                                  <div
+                                    class="flex relative items-center space-x-2"
+                                  >
+                                    Multiple
+                                  </div>
+                                </button>
+                              </div>
                             </div>
                           </div>
                           <div
