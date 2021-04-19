@@ -83,6 +83,7 @@ jobs:
             - name: Test
               run: ./node_modules/react-app-rewired/bin/index.js --expose-gc test
                   src/domains/contact --forceExit --maxWorkers=50%
+                  --env=./src/tests/custom-env.js
                   --logHeapUsage--watchAll=false --coverage
                   --collectCoverageFrom='["src/domains/contact/**/*.{js,jsx,ts,tsx}","!<rootDir>/build/*","!<rootDir>/dist/*","!jest.setup.js","!src/**/e2e/*.ts","!src/**/*.e2e.ts","!src/**/*.models.{js,jsx,ts,tsx}","!src/**/*.stories.{js,jsx,ts,tsx}","!src/**/*.styles.{js,jsx,ts,tsx}","!src/electron/**/*","!src/i18n/**/*","!src/tests/**/*","!src/tailwind.config.js","!src/utils/e2e-utils.ts","!src/polyfill/**/*"]'
                   --coverageThreshold='{"./src/domains/contact/":{"branches":100,"functions":100,"lines":100,"statements":100}}'
@@ -121,6 +122,7 @@ jobs:
             - name: Test
               run: ./node_modules/react-app-rewired/bin/index.js --expose-gc test
                   src/domains/dashboard --forceExit --maxWorkers=50%
+                  --env=./src/tests/custom-env.js
                   --logHeapUsage--watchAll=false --coverage
                   --collectCoverageFrom='["src/domains/dashboard/**/*.{js,jsx,ts,tsx}","!<rootDir>/build/*","!<rootDir>/dist/*","!jest.setup.js","!src/**/e2e/*.ts","!src/**/*.e2e.ts","!src/**/*.models.{js,jsx,ts,tsx}","!src/**/*.stories.{js,jsx,ts,tsx}","!src/**/*.styles.{js,jsx,ts,tsx}","!src/electron/**/*","!src/i18n/**/*","!src/tests/**/*","!src/tailwind.config.js","!src/utils/e2e-utils.ts","!src/polyfill/**/*"]'
                   --coverageThreshold='{"./src/domains/dashboard/":{"branches":100,"functions":100,"lines":100,"statements":100}}'
@@ -159,6 +161,7 @@ jobs:
             - name: Test
               run: ./node_modules/react-app-rewired/bin/index.js --expose-gc test
                   src/domains/error --forceExit --maxWorkers=50%
+                  --env=./src/tests/custom-env.js
                   --logHeapUsage--watchAll=false --coverage
                   --collectCoverageFrom='["src/domains/error/**/*.{js,jsx,ts,tsx}","!<rootDir>/build/*","!<rootDir>/dist/*","!jest.setup.js","!src/**/e2e/*.ts","!src/**/*.e2e.ts","!src/**/*.models.{js,jsx,ts,tsx}","!src/**/*.stories.{js,jsx,ts,tsx}","!src/**/*.styles.{js,jsx,ts,tsx}","!src/electron/**/*","!src/i18n/**/*","!src/tests/**/*","!src/tailwind.config.js","!src/utils/e2e-utils.ts","!src/polyfill/**/*"]'
                   --coverageThreshold='{"./src/domains/error/":{"branches":100,"functions":100,"lines":100,"statements":100}}'
@@ -197,6 +200,7 @@ jobs:
             - name: Test
               run: ./node_modules/react-app-rewired/bin/index.js --expose-gc test
                   src/domains/exchange --forceExit --maxWorkers=50%
+                  --env=./src/tests/custom-env.js
                   --logHeapUsage--watchAll=false --coverage
                   --collectCoverageFrom='["src/domains/exchange/**/*.{js,jsx,ts,tsx}","!<rootDir>/build/*","!<rootDir>/dist/*","!jest.setup.js","!src/**/e2e/*.ts","!src/**/*.e2e.ts","!src/**/*.models.{js,jsx,ts,tsx}","!src/**/*.stories.{js,jsx,ts,tsx}","!src/**/*.styles.{js,jsx,ts,tsx}","!src/electron/**/*","!src/i18n/**/*","!src/tests/**/*","!src/tailwind.config.js","!src/utils/e2e-utils.ts","!src/polyfill/**/*"]'
                   --coverageThreshold='{"./src/domains/exchange/":{"branches":100,"functions":100,"lines":100,"statements":100}}'
@@ -235,6 +239,7 @@ jobs:
             - name: Test
               run: ./node_modules/react-app-rewired/bin/index.js --expose-gc test
                   src/domains/network --forceExit --maxWorkers=50%
+                  --env=./src/tests/custom-env.js
                   --logHeapUsage--watchAll=false --coverage
                   --collectCoverageFrom='["src/domains/network/**/*.{js,jsx,ts,tsx}","!<rootDir>/build/*","!<rootDir>/dist/*","!jest.setup.js","!src/**/e2e/*.ts","!src/**/*.e2e.ts","!src/**/*.models.{js,jsx,ts,tsx}","!src/**/*.stories.{js,jsx,ts,tsx}","!src/**/*.styles.{js,jsx,ts,tsx}","!src/electron/**/*","!src/i18n/**/*","!src/tests/**/*","!src/tailwind.config.js","!src/utils/e2e-utils.ts","!src/polyfill/**/*"]'
                   --coverageThreshold='{"./src/domains/network/":{"branches":100,"functions":100,"lines":100,"statements":100}}'
@@ -273,6 +278,7 @@ jobs:
             - name: Test
               run: ./node_modules/react-app-rewired/bin/index.js --expose-gc test
                   src/domains/news --forceExit --maxWorkers=50%
+                  --env=./src/tests/custom-env.js
                   --logHeapUsage--watchAll=false --coverage
                   --collectCoverageFrom='["src/domains/news/**/*.{js,jsx,ts,tsx}","!<rootDir>/build/*","!<rootDir>/dist/*","!jest.setup.js","!src/**/e2e/*.ts","!src/**/*.e2e.ts","!src/**/*.models.{js,jsx,ts,tsx}","!src/**/*.stories.{js,jsx,ts,tsx}","!src/**/*.styles.{js,jsx,ts,tsx}","!src/electron/**/*","!src/i18n/**/*","!src/tests/**/*","!src/tailwind.config.js","!src/utils/e2e-utils.ts","!src/polyfill/**/*"]'
                   --coverageThreshold='{"./src/domains/news/":{"branches":100,"functions":100,"lines":100,"statements":100}}'
@@ -311,6 +317,7 @@ jobs:
             - name: Test
               run: ./node_modules/react-app-rewired/bin/index.js --expose-gc test
                   src/domains/plugin --forceExit --maxWorkers=50%
+                  --env=./src/tests/custom-env.js
                   --logHeapUsage--watchAll=false --coverage
                   --collectCoverageFrom='["src/domains/plugin/**/*.{js,jsx,ts,tsx}","!<rootDir>/build/*","!<rootDir>/dist/*","!jest.setup.js","!src/**/e2e/*.ts","!src/**/*.e2e.ts","!src/**/*.models.{js,jsx,ts,tsx}","!src/**/*.stories.{js,jsx,ts,tsx}","!src/**/*.styles.{js,jsx,ts,tsx}","!src/electron/**/*","!src/i18n/**/*","!src/tests/**/*","!src/tailwind.config.js","!src/utils/e2e-utils.ts","!src/polyfill/**/*"]'
                   --coverageThreshold='{"./src/domains/plugin/":{"branches":100,"functions":100,"lines":100,"statements":100}}'
@@ -349,6 +356,7 @@ jobs:
             - name: Test
               run: ./node_modules/react-app-rewired/bin/index.js --expose-gc test
                   src/domains/profile --forceExit --maxWorkers=50%
+                  --env=./src/tests/custom-env.js
                   --logHeapUsage--watchAll=false --coverage
                   --collectCoverageFrom='["src/domains/profile/**/*.{js,jsx,ts,tsx}","!<rootDir>/build/*","!<rootDir>/dist/*","!jest.setup.js","!src/**/e2e/*.ts","!src/**/*.e2e.ts","!src/**/*.models.{js,jsx,ts,tsx}","!src/**/*.stories.{js,jsx,ts,tsx}","!src/**/*.styles.{js,jsx,ts,tsx}","!src/electron/**/*","!src/i18n/**/*","!src/tests/**/*","!src/tailwind.config.js","!src/utils/e2e-utils.ts","!src/polyfill/**/*"]'
                   --coverageThreshold='{"./src/domains/profile/":{"branches":100,"functions":100,"lines":100,"statements":100}}'
@@ -387,6 +395,7 @@ jobs:
             - name: Test
               run: ./node_modules/react-app-rewired/bin/index.js --expose-gc test
                   src/domains/setting --forceExit --maxWorkers=50%
+                  --env=./src/tests/custom-env.js
                   --logHeapUsage--watchAll=false --coverage
                   --collectCoverageFrom='["src/domains/setting/**/*.{js,jsx,ts,tsx}","!<rootDir>/build/*","!<rootDir>/dist/*","!jest.setup.js","!src/**/e2e/*.ts","!src/**/*.e2e.ts","!src/**/*.models.{js,jsx,ts,tsx}","!src/**/*.stories.{js,jsx,ts,tsx}","!src/**/*.styles.{js,jsx,ts,tsx}","!src/electron/**/*","!src/i18n/**/*","!src/tests/**/*","!src/tailwind.config.js","!src/utils/e2e-utils.ts","!src/polyfill/**/*"]'
                   --coverageThreshold='{"./src/domains/setting/":{"branches":100,"functions":100,"lines":100,"statements":100}}'
@@ -425,6 +434,7 @@ jobs:
             - name: Test
               run: ./node_modules/react-app-rewired/bin/index.js --expose-gc test
                   src/domains/splash --forceExit --maxWorkers=50%
+                  --env=./src/tests/custom-env.js
                   --logHeapUsage--watchAll=false --coverage
                   --collectCoverageFrom='["src/domains/splash/**/*.{js,jsx,ts,tsx}","!<rootDir>/build/*","!<rootDir>/dist/*","!jest.setup.js","!src/**/e2e/*.ts","!src/**/*.e2e.ts","!src/**/*.models.{js,jsx,ts,tsx}","!src/**/*.stories.{js,jsx,ts,tsx}","!src/**/*.styles.{js,jsx,ts,tsx}","!src/electron/**/*","!src/i18n/**/*","!src/tests/**/*","!src/tailwind.config.js","!src/utils/e2e-utils.ts","!src/polyfill/**/*"]'
                   --coverageThreshold='{"./src/domains/splash/":{"branches":100,"functions":100,"lines":100,"statements":100}}'
@@ -463,6 +473,7 @@ jobs:
             - name: Test
               run: ./node_modules/react-app-rewired/bin/index.js --expose-gc test
                   src/domains/transaction --forceExit --maxWorkers=50%
+                  --env=./src/tests/custom-env.js
                   --logHeapUsage--watchAll=false --coverage
                   --collectCoverageFrom='["src/domains/transaction/**/*.{js,jsx,ts,tsx}","!<rootDir>/build/*","!<rootDir>/dist/*","!jest.setup.js","!src/**/e2e/*.ts","!src/**/*.e2e.ts","!src/**/*.models.{js,jsx,ts,tsx}","!src/**/*.stories.{js,jsx,ts,tsx}","!src/**/*.styles.{js,jsx,ts,tsx}","!src/electron/**/*","!src/i18n/**/*","!src/tests/**/*","!src/tailwind.config.js","!src/utils/e2e-utils.ts","!src/polyfill/**/*"]'
                   --coverageThreshold='{"./src/domains/transaction/":{"branches":100,"functions":100,"lines":100,"statements":100}}'
@@ -501,6 +512,7 @@ jobs:
             - name: Test
               run: ./node_modules/react-app-rewired/bin/index.js --expose-gc test
                   src/domains/vote --forceExit --maxWorkers=50%
+                  --env=./src/tests/custom-env.js
                   --logHeapUsage--watchAll=false --coverage
                   --collectCoverageFrom='["src/domains/vote/**/*.{js,jsx,ts,tsx}","!<rootDir>/build/*","!<rootDir>/dist/*","!jest.setup.js","!src/**/e2e/*.ts","!src/**/*.e2e.ts","!src/**/*.models.{js,jsx,ts,tsx}","!src/**/*.stories.{js,jsx,ts,tsx}","!src/**/*.styles.{js,jsx,ts,tsx}","!src/electron/**/*","!src/i18n/**/*","!src/tests/**/*","!src/tailwind.config.js","!src/utils/e2e-utils.ts","!src/polyfill/**/*"]'
                   --coverageThreshold='{"./src/domains/vote/":{"branches":100,"functions":100,"lines":100,"statements":100}}'
@@ -539,6 +551,7 @@ jobs:
             - name: Test
               run: ./node_modules/react-app-rewired/bin/index.js --expose-gc test
                   src/domains/wallet --forceExit --maxWorkers=50%
+                  --env=./src/tests/custom-env.js
                   --logHeapUsage--watchAll=false --coverage
                   --collectCoverageFrom='["src/domains/wallet/**/*.{js,jsx,ts,tsx}","!<rootDir>/build/*","!<rootDir>/dist/*","!jest.setup.js","!src/**/e2e/*.ts","!src/**/*.e2e.ts","!src/**/*.models.{js,jsx,ts,tsx}","!src/**/*.stories.{js,jsx,ts,tsx}","!src/**/*.styles.{js,jsx,ts,tsx}","!src/electron/**/*","!src/i18n/**/*","!src/tests/**/*","!src/tailwind.config.js","!src/utils/e2e-utils.ts","!src/polyfill/**/*"]'
                   --coverageThreshold='{"./src/domains/wallet/":{"branches":98.09,"functions":83.27,"lines":70.49,"statements":71.03}}'
@@ -577,6 +590,7 @@ jobs:
             - name: Test
               run: ./node_modules/react-app-rewired/bin/index.js --expose-gc test
                   src/migrations --forceExit --maxWorkers=50%
+                  --env=./src/tests/custom-env.js
                   --logHeapUsage--watchAll=false --coverage
                   --collectCoverageFrom='["src/migrations/**/*.{js,jsx,ts,tsx}","!<rootDir>/build/*","!<rootDir>/dist/*","!jest.setup.js","!src/**/e2e/*.ts","!src/**/*.e2e.ts","!src/**/*.models.{js,jsx,ts,tsx}","!src/**/*.stories.{js,jsx,ts,tsx}","!src/**/*.styles.{js,jsx,ts,tsx}","!src/electron/**/*","!src/i18n/**/*","!src/tests/**/*","!src/tailwind.config.js","!src/utils/e2e-utils.ts","!src/polyfill/**/*"]'
                   --coverageThreshold='{"./src/migrations/":{"branches":100,"functions":100,"lines":100,"statements":100}}'
