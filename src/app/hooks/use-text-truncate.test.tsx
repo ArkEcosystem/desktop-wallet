@@ -30,5 +30,10 @@ describe("UseTextTruncate", () => {
 		rerender(<Component />);
 
 		expect(screen.getByText("Lorem ip…sit amet")).toBeInTheDocument();
+
+		jest.spyOn(truncateRef.current, "offsetWidth", "get").mockReturnValue(60);
+		rerender(<Component />);
+
+		expect(screen.getByText("Lorem ip…sit amet")).toBeInTheDocument();
 	});
 });

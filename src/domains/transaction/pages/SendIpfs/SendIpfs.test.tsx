@@ -264,7 +264,9 @@ describe("SendIpfs", () => {
 		});
 
 		await waitFor(() => expect(getByTestId("TransactionSuccessful")).toBeTruthy());
-		expect(getByTestId("TransactionSuccessful")).toHaveTextContent("1e9b975eff66a…db3d69131067");
+		expect(getByTestId("TransactionSuccessful")).toHaveTextContent(
+			"1e9b975eff66a731095876c3b6cbff14fd4dec3bb37a4127c46db3d69131067e",
+		);
 
 		signMock.mockRestore();
 		broadcastMock.mockRestore();
@@ -677,7 +679,9 @@ describe("SendIpfs", () => {
 		});
 
 		await waitFor(() => expect(getByTestId("TransactionSuccessful")).toBeTruthy());
-		expect(getByTestId("TransactionSuccessful")).toHaveTextContent("1e9b975eff66a…db3d69131067");
+		expect(getByTestId("TransactionSuccessful")).toHaveTextContent(
+			"1e9b975eff66a731095876c3b6cbff14fd4dec3bb37a4127c46db3d69131067e",
+		);
 
 		expect(signMock).toHaveBeenCalledWith(
 			expect.objectContaining({
@@ -781,7 +785,9 @@ describe("SendIpfs", () => {
 		await waitFor(() => expect(getByTestId("LedgerConfirmation-description")).toBeInTheDocument());
 		await waitFor(() => expect(getByTestId("TransactionSuccessful")).toBeTruthy());
 
-		expect(getByTestId("TransactionSuccessful")).toHaveTextContent("81cb2fb05740c…8e896e9daff35");
+		expect(getByTestId("TransactionSuccessful")).toHaveTextContent(
+			"81cb2fb05740cc91ffeff812c513fbac57192f14999dce00ae88e896e9daff35",
+		);
 		getPublicKeySpy.mockRestore();
 		broadcastMock.mockRestore();
 		isLedgerSpy.mockRestore();
