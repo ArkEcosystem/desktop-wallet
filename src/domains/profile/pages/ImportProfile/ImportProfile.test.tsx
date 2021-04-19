@@ -16,7 +16,6 @@ describe("ImportProfile", () => {
 
 	beforeAll(() => {
 		consoleSpy = jest.spyOn(console, "log").mockImplementation(() => undefined);
-		console.log("");
 		fsMock = jest.spyOn(fs, "readFileSync").mockReturnValue(passwordProtectedDwe);
 	});
 
