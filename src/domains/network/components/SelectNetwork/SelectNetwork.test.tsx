@@ -78,7 +78,7 @@ describe("SelectNetwork", () => {
 			fireEvent.change(input, { target: { value: "no-match" } });
 		});
 
-		expect(onInputChange).toHaveBeenCalledWith("no-match", undefined);
+		expect(onInputChange).toHaveBeenCalledWith("no-match", "");
 
 		act(() => {
 			fireEvent.change(input, { target: { value: "" } });
@@ -173,25 +173,34 @@ describe("SelectNetwork", () => {
 	});
 
 	it("should select an item by clicking on it", async () => {
-		const { getByTestId } = render(<SelectNetwork networks={availableNetworksMock} />);
+		const { getByTestId, queryByTestId } = render(<SelectNetwork networks={availableNetworksMock} />);
 
 		act(() => {
 			fireEvent.focus(getByTestId("SelectNetworkInput__input"));
 		});
 
-		await waitFor(() => expect(getByTestId("NetworkIcon-ARK-ark.mainnet")).toBeTruthy());
+		act(() => {
+			fireEvent.change(getByTestId("SelectNetworkInput__input"), { target: { value: "ARK" } });
+		});
+
+		await waitFor(() => expect(getByTestId("Input__suggestion")).toBeTruthy());
+
+		expect(getByTestId("NetworkIcon-ARK-ark.mainnet")).toBeTruthy();
 
 		act(() => {
 			fireEvent.click(getByTestId("NetworkIcon-ARK-ark.mainnet"));
 		});
 
-		await waitFor(() => expect(getByTestId("SelectNetworkInput__network")).toHaveAttribute("aria-label", "ARK"));
+		await waitFor(() => expect(queryByTestId("Input__suggestion")).not.toBeInTheDocument());
 
-		await waitFor(() => expect(getByTestId("NetworkIcon-ARK-ark.devnet")).toBeTruthy());
+		expect(getByTestId("SelectNetworkInput__network")).toHaveAttribute("aria-label", "ARK");
+
+		expect(getByTestId("NetworkIcon-ARK-ark.devnet")).toBeTruthy();
 
 		act(() => {
 			fireEvent.click(getByTestId("NetworkIcon-ARK-ark.devnet"));
 		});
+
 		await waitFor(() =>
 			expect(getByTestId("SelectNetworkInput__network")).toHaveAttribute("aria-label", "ARK Devnet"),
 		);
