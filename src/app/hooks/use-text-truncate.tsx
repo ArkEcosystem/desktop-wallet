@@ -9,24 +9,28 @@ type Props = {
 	minChars?: number;
 };
 
+type TruncateComponentProps = Omit<React.ComponentProps<typeof TruncateMiddle>, "text" | "maxChars">;
+
 export const useTextTruncate = ({ text = "", minChars = 10, parentRef }: Props) => {
-	const textNodeRef = useRef<HTMLElement>();
+	const textNodeRef = useRef<HTMLElement>(null);
 	const textLength = text.length;
 	const [maxChars, setMaxChars] = useState(text.length);
 
-	const fullWidth = useRef<any>();
+	const textWidthRef = useRef<any>();
 
 	const calculateOffsets = useCallback(() => {
 		if (!textNodeRef.current || !parentRef?.current) {
 			return;
 		}
 
-		if (!fullWidth.current) {
-			fullWidth.current = textNodeRef.current.offsetWidth;
+		const currentTextWidth = textNodeRef.current.offsetWidth;
+
+		if (!textWidthRef.current) {
+			textWidthRef.current = currentTextWidth;
 		}
 
 		const parentWidth = parentRef.current.offsetWidth;
-		const textWidth = fullWidth.current;
+		const textWidth = textWidthRef.current;
 
 		if (textWidth > parentWidth) {
 			const overflowSize = textWidth - parentWidth;
@@ -55,7 +59,7 @@ export const useTextTruncate = ({ text = "", minChars = 10, parentRef }: Props) 
 	}, []); // eslint-disable-line react-hooks/exhaustive-deps
 
 	const Component = useCallback(
-		({ className, ...props }: Omit<React.ComponentProps<typeof TruncateMiddle>, "text" | "maxChars">) => (
+		({ className, ...props }: TruncateComponentProps) => (
 			<TruncateMiddle
 				ref={textNodeRef}
 				maxChars={maxChars}
@@ -67,5 +71,5 @@ export const useTextTruncate = ({ text = "", minChars = 10, parentRef }: Props) 
 		[maxChars, text],
 	);
 
-	return [Component];
+	return [Component, textNodeRef] as [typeof Component, React.RefObject<HTMLElement>];
 };
