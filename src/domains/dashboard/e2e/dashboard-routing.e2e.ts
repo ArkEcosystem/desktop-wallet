@@ -15,6 +15,7 @@ test("should navigate to dashboard", async (t) => {
 });
 
 test("should navigate to dashboard of protected profile", async (t) => {
+	await t.expect(Selector("span").withText("Jane Doe").exists).ok({ timeout: 10000 });
 	await t.click(Selector("span").withText("Jane Doe"));
 	await t
 		.expect(Selector('[data-testid="modal__inner"]').withText(translations.PROFILE.MODAL_SIGN_IN.TITLE).exists)
