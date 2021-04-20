@@ -102,7 +102,10 @@ const ImportInputField = ({
 				profile={profile}
 				label={t("COMMON.MNEMONIC")}
 				data-testid="ImportWallet__mnemonic-input"
-				findAddress={(value) => coin.identity().address().fromMnemonic(value)}
+				findAddress={async (value) => {
+					await coin.__construct();
+					return coin.identity().address().fromMnemonic(value);
+				}}
 			/>
 		);
 	}
@@ -120,6 +123,7 @@ const ImportInputField = ({
 				data-testid="ImportWallet__privatekey-input"
 				findAddress={async (value) => {
 					try {
+						await coin.__construct();
 						return coin.identity().address().fromPrivateKey(value);
 					} catch {
 						throw new Error(t("WALLETS.PAGE_IMPORT_WALLET.VALIDATION.INVALID_PRIVATE_KEY"));
@@ -136,8 +140,9 @@ const ImportInputField = ({
 				profile={profile}
 				label={t("COMMON.WIF")}
 				data-testid="ImportWallet__wif-input"
-				findAddress={(value) => {
+				findAddress={async (value) => {
 					try {
+						await coin.__construct();
 						return coin.identity().address().fromWIF(value);
 					} catch (e) {
 						throw new Error(t("WALLETS.PAGE_IMPORT_WALLET.VALIDATION.INVALID_WIF"));
