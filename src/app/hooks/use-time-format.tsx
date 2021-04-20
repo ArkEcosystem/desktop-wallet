@@ -11,7 +11,8 @@ export const useTimeFormat = () => {
 	const history = useHistory();
 
 	const defaultFormat = "DD.MM.YYYY HH:mm";
-	const profile = getProfileFromUrl(history.location.pathname);
+
+	const profile = getProfileFromUrl(history?.location.pathname);
 
 	const result = useMemo(() => {
 		if (!profile) {
