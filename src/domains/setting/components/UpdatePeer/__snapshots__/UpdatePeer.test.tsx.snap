@@ -383,7 +383,6 @@ exports[`UpdatePeer should render update peer modal 1`] = `
               </label>
               <label
                 class="flex items-center space-x-2"
-                for="isMultiSignature"
               >
                 <input
                   class="Checkbox-sc-17gwqiq-0 eAQKb"
@@ -393,7 +392,7 @@ exports[`UpdatePeer should render update peer modal 1`] = `
                   type="checkbox"
                 />
                 <span
-                  class="text-sm font-semibold text-theme-secondary-text"
+                  class="text-sm font-semibold text-theme-secondary-text select-none"
                 >
                   Multisignature
                 </span>
