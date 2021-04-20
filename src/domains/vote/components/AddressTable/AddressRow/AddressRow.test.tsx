@@ -7,7 +7,6 @@ import React from "react";
 import { act, env, fireEvent, getDefaultProfileId, render, syncDelegates, waitFor } from "testing-library";
 import { data } from "tests/fixtures/coins/ark/devnet/delegates.json";
 import walletMock from "tests/fixtures/coins/ark/devnet/wallets/D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD.json";
-import * as utils from "utils/electron-utils";
 
 import { AddressRow } from "./AddressRow";
 
@@ -72,30 +71,6 @@ describe("AddressRow", () => {
 		expect(container).toBeTruthy();
 		await waitFor(() => expect(getByTestId("AddressRow__status")).toBeTruthy());
 		expect(asFragment()).toMatchSnapshot();
-	});
-
-	it.each(["light", "dark"])("should set %s shadow color on mouse events", (theme) => {
-		jest.spyOn(utils, "shouldUseDarkColors").mockImplementation(() => theme === "dark");
-
-		const setState = jest.fn();
-		const useStateSpy = jest.spyOn(React, "useState");
-
-		useStateSpy.mockImplementation((state) => [state, setState]);
-
-		const { asFragment, getByText } = render(
-			<table>
-				<tbody>
-					<AddressRow index={0} maxVotes={1} wallet={wallet} />
-				</tbody>
-			</table>,
-		);
-
-		expect(asFragment()).toMatchSnapshot();
-
-		fireEvent.mouseEnter(getByText(wallet.alias()));
-		fireEvent.mouseLeave(getByText(wallet.alias()));
-
-		expect(setState).toHaveBeenCalled();
 	});
 
 	it("should render when the maximum votes is greater than 1", () => {
