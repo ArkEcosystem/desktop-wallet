@@ -18,12 +18,6 @@ describe("Checkbox", () => {
 		expect(container).toMatchSnapshot();
 	});
 
-	it("should render thick variant", () => {
-		const { container } = render(<Checkbox variant="thick" />);
-
-		expect(container).toMatchSnapshot();
-	});
-
 	it.each(["info", "success", "warning", "danger", "hint"])("should render a %s color", (color) => {
 		const { container } = render(<Checkbox color={color} />);
 

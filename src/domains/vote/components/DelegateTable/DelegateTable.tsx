@@ -11,8 +11,13 @@ import { Tooltip } from "app/components/Tooltip";
 import cn from "classnames";
 import React, { useEffect, useMemo, useState } from "react";
 import { useTranslation } from "react-i18next";
+import tw, { styled } from "twin.macro";
 
 import { DelegateRow } from "./DelegateRow";
+
+const Footer = styled.div`
+	${tw`fixed bottom-0 inset-x-0 py-8 shadow-footer-smooth dark:shadow-footer-smooth-dark bg-theme-background`}
+`;
 
 type DelegateTableProps = {
 	delegates: Contracts.IReadOnlyWallet[];
@@ -25,6 +30,7 @@ type DelegateTableProps = {
 	selectedWallet: string;
 	votes?: Contracts.IReadOnlyWallet[];
 	onContinue?: (unvotes: string[], votes: string[]) => void;
+	subtitle?: React.ReactNode;
 };
 
 export const DelegateTable = ({
@@ -37,6 +43,7 @@ export const DelegateTable = ({
 	selectedWallet,
 	votes,
 	onContinue,
+	subtitle,
 }: DelegateTableProps) => {
 	const { t } = useTranslation();
 	const [currentPage, setCurrentPage] = useState(1);
@@ -145,7 +152,7 @@ export const DelegateTable = ({
 			<EmptyResults
 				className="mt-16"
 				title={t("COMMON.EMPTY_RESULTS.TITLE")}
-				subtitle={t("COMMON.EMPTY_RESULTS.SUBTITLE")}
+				subtitle={t("VOTE.VOTES_PAGE.NO_RESULTS")}
 			/>
 		);
 	}
@@ -153,6 +160,9 @@ export const DelegateTable = ({
 	return (
 		<div data-testid="DelegateTable">
 			<h2 className="mb-6 text-2xl font-bold">{t("VOTE.DELEGATE_TABLE.TITLE")}</h2>
+
+			{subtitle && subtitle}
+
 			<Table columns={columns} data={data}>
 				{(delegate: Contracts.IReadOnlyWallet, index: number) => {
 					let isVoted = false;
@@ -188,10 +198,7 @@ export const DelegateTable = ({
 				)}
 			</div>
 
-			<div
-				data-testid="DelegateTable__footer"
-				className="fixed bottom-0 inset-x-0 py-8 shadow-footer-smooth dark:shadow-footer-smooth-dark bg-theme-background"
-			>
+			<Footer data-testid="DelegateTable__footer">
 				<div className="container px-10 mx-auto">
 					<div className="flex font-semibold h-11">
 						<div className="flex pr-8 border-r border-theme-secondary-300 dark:border-theme-secondary-800">
@@ -299,7 +306,7 @@ export const DelegateTable = ({
 						</Tooltip>
 					</div>
 				</div>
-			</div>
+			</Footer>
 		</div>
 	);
 };
