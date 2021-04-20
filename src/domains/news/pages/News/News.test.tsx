@@ -187,4 +187,27 @@ describe("News", () => {
 
 		expect(asFragment()).toMatchSnapshot();
 	});
+
+	it("should show not found with empty coins", async () => {
+		const { getAllByTestId, getByTestId, queryAllByTestId } = renderWithRouter(
+			<Route path="/profiles/:profileId/news">
+				<News />
+			</Route>,
+			{
+				routes: [newsURL],
+				history,
+			},
+		);
+
+		await waitFor(() => expect(getAllByTestId("NewsCard")).toHaveLength(1), { timeout: 10000 });
+
+		act(() => {
+			fireEvent.click(getByTestId("NetworkOption__ARK"));
+		});
+
+		await waitFor(() => {
+			expect(queryAllByTestId("NewsCard")).toHaveLength(0);
+			expect(queryAllByTestId("EmptyResults")).toHaveLength(1);
+		});
+	});
 });
