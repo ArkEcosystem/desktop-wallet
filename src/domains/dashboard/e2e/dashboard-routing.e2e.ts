@@ -31,7 +31,7 @@ test("should navigate to dashboard of protected profile", async (t) => {
 test("should show ledger waiting device modal", async (t) => {
 	await t.expect(Selector("span").withText("John Doe").exists).ok({ timeout: 20000 });
 	await t.click(Selector("span").withText("John Doe"));
-	await t.expect(Selector("div").withText(translations.COMMON.WALLETS).exists).ok();
+	await t.expect(Selector("div").withText(translations.COMMON.WALLETS).exists).ok({ timeout: 20000 });
 
 	await t.click(Selector("button").withExactText(translations.DASHBOARD.WALLET_CONTROLS.IMPORT_LEDGER));
 	await t.expect(Selector("span").withText(translations.WALLETS.MODAL_LEDGER_WALLET.WAITING_DEVICE).exists).ok();
