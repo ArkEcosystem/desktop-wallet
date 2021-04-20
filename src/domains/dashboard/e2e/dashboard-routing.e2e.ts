@@ -8,14 +8,14 @@ const translations = buildTranslations();
 createFixture(`Dashboard routing`);
 
 test("should navigate to dashboard", async (t) => {
-	await t.expect(Selector("span").withText("John Doe").exists).ok({ timeout: 10000 });
+	await t.expect(Selector("span").withText("John Doe").exists).ok({ timeout: 20000 });
 	await t.click(Selector("span").withText("John Doe"));
 	await t.expect(Selector("div").withText(translations.COMMON.WALLETS).exists).ok();
 	await t.expect(getLocation()).contains("/dashboard");
 });
 
 test("should navigate to dashboard of protected profile", async (t) => {
-	await t.expect(Selector("span").withText("Jane Doe").exists).ok({ timeout: 10000 });
+	await t.expect(Selector("span").withText("Jane Doe").exists).ok({ timeout: 20000 });
 	await t.click(Selector("span").withText("Jane Doe"));
 	await t
 		.expect(Selector('[data-testid="modal__inner"]').withText(translations.PROFILE.MODAL_SIGN_IN.TITLE).exists)
@@ -29,7 +29,7 @@ test("should navigate to dashboard of protected profile", async (t) => {
 });
 
 test("should show ledger waiting device modal", async (t) => {
-	await t.expect(Selector("span").withText("John Doe").exists).ok({ timeout: 10000 });
+	await t.expect(Selector("span").withText("John Doe").exists).ok({ timeout: 20000 });
 	await t.click(Selector("span").withText("John Doe"));
 	await t.expect(Selector("div").withText(translations.COMMON.WALLETS).exists).ok();
 

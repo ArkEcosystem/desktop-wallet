@@ -5,7 +5,7 @@ import { buildTranslations } from "../../../app/i18n/helpers";
 const translations = buildTranslations();
 
 export const goToContacts = async (t: any) => {
-	await t.expect(Selector("span").withText("John Doe").exists).ok({ timeout: 10000 });
+	await t.expect(Selector("span").withText("John Doe").exists).ok({ timeout: 20000 });
 	await t.click(Selector("span").withText("John Doe"));
 	await t.expect(Selector("div").withText(translations.COMMON.WALLETS).exists).ok();
 
