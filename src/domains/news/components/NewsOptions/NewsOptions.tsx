@@ -22,7 +22,7 @@ type NewsOptionsProps = {
 	selectedCategories: string[];
 	selectedCoins: string[];
 	onSearch?: (search: string) => void;
-	onSubmit: (data: object) => void;
+	onSubmit?: (data: object) => void;
 };
 
 export const NewsOptions = ({ selectedCategories, selectedCoins, onSearch, onSubmit }: NewsOptionsProps) => {
@@ -95,7 +95,7 @@ export const NewsOptions = ({ selectedCategories, selectedCoins, onSearch, onSub
 			[],
 		);
 
-		onSubmit({
+		onSubmit?.({
 			categories: categoryNames,
 			coins: coinNames,
 			searchQuery: debouncedSearchQuery,
