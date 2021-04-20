@@ -3,6 +3,7 @@ import { useCallback, useEffect } from "react";
 export const useModal = ({ isOpen, onClose }: { isOpen: boolean; onClose?: any }) => {
 	useEffect(() => {
 		document.body.style.overflow = "overlay";
+		document.body.style.overflowX = "hidden";
 
 		if (isOpen) {
 			document.body.style.overflow = "hidden";
@@ -10,6 +11,7 @@ export const useModal = ({ isOpen, onClose }: { isOpen: boolean; onClose?: any }
 
 		return () => {
 			document.body.style.overflow = "overlay";
+			document.body.style.overflowX = "hidden";
 			return;
 		};
 	}, [isOpen]);
