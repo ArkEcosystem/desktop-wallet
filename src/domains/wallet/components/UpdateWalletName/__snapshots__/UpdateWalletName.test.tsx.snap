@@ -753,7 +753,7 @@ exports[`UpdateWalletName should show error message when name consists only of w
                     class="flex items-center space-x-3 divide-x divide-theme-secondary-300 dark:divide-theme-secondary-800 text-theme-danger-500"
                   >
                     <span
-                      data-errortext="'Wallet Name' is invalid"
+                      data-errortext="Wallet Name invalid"
                       data-testid="Input__error"
                     >
                       <div
@@ -890,7 +890,7 @@ exports[`UpdateWalletName should show error message when name exceeds 42 charact
                     class="flex items-center space-x-3 divide-x divide-theme-secondary-300 dark:divide-theme-secondary-800 text-theme-danger-500"
                   >
                     <span
-                      data-errortext="'Name' should have at most 42 characters"
+                      data-errortext="Name should have at most 42 characters"
                       data-testid="Input__error"
                     >
                       <div
