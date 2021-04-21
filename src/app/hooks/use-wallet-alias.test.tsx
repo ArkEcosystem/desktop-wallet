@@ -22,6 +22,13 @@ describe("UseWalletAlias", () => {
 		expect(result.current).toBe(undefined);
 	});
 
+	it("should return if none alias found", () => {
+		const aliasSpy = jest.spyOn(wallet, "alias").mockReturnValue(undefined);
+		const { result } = renderHook(() => useWalletAlias({ address: "wrong-address", profile }));
+		expect(result.current).toBe(undefined);
+		aliasSpy.mockRestore();
+	});
+
 	it("should return alias", () => {
 		const { result } = renderHook(() => useWalletAlias({ address: wallet.address(), profile }));
 		expect(result.current).toBe("ARK Wallet 1");
