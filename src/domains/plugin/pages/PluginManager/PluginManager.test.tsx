@@ -40,7 +40,10 @@ describe("PluginManager", () => {
 			.get("/dated/delegate-calculator-plugin/master/package.json")
 			.reply(200, require("tests/fixtures/plugins/github/@dated/delegate-calculator-plugin/package.json"))
 			.get("/ark-ecosystem-desktop-plugins/sound-notifications/master/package.json")
-			.reply(200, require("tests/fixtures/plugins/github/@arkecosystem/desktop-wallet-sound-notifications/package.json"))
+			.reply(
+				200,
+				require("tests/fixtures/plugins/github/@arkecosystem/desktop-wallet-sound-notifications/package.json"),
+			)
 			.get("/ark-ecosystem-desktop-plugins/explorer/master/package.json")
 			.reply(200, require("tests/fixtures/plugins/github/@arkecosystem/desktop-wallet-explorer/package.json"))
 			.persist();
@@ -175,23 +178,22 @@ describe("PluginManager", () => {
 	});
 
 	it.only("should switch to category by clicking on view all link", async () => {
-			const { asFragment, getByTestId, getAllByText } = rendered;
+		const { asFragment, getByTestId, getAllByText } = rendered;
 
-			await waitFor(() =>
-				expect(
-					within(getByTestId("PluginManager__latest__utility")).getAllByText("Transaction Export"),
-				).toHaveLength(1),
-			);
+		await waitFor(() =>
+			expect(
+				within(getByTestId("PluginManager__latest__utility")).getAllByText("Transaction Export"),
+			).toHaveLength(1),
+		);
 
-			act(() => {
-				fireEvent.click(getByTestId("PluginManager__latest__utility__view-all"));
-			});
+		act(() => {
+			fireEvent.click(getByTestId("PluginManager__latest__utility__view-all"));
+		});
 
-			expect(getByTestId("PluginManager__container--utility")).toBeTruthy();
+		expect(getByTestId("PluginManager__container--utility")).toBeTruthy();
 
-			expect(asFragment()).toMatchSnapshot();
-		},
-	);
+		expect(asFragment()).toMatchSnapshot();
+	});
 
 	it.skip("should download & install plugin on latest", async () => {
 		const { asFragment, getAllByTestId, queryAllByTestId, getByTestId } = rendered;
