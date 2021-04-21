@@ -4,7 +4,7 @@ import { upperFirst } from "@arkecosystem/utils";
 import { useLedgerContext } from "app/contexts";
 
 type SignFn = (input: any, options?: Contracts.TransactionOptions) => Promise<string>;
-type ConnectFn = (coin: string, network: string) => Promise<void>;
+type ConnectFn = (profile: ProfileContracts.IProfile, coin: string, network: string) => Promise<void>;
 
 const prepareMultiSignature = (
 	input: Contracts.TransactionInputs,
@@ -18,12 +18,13 @@ const prepareMultiSignature = (
 });
 
 const prepareLedger = async (
+	profile: ProfileContracts.IProfile,
 	input: Contracts.TransactionInputs,
 	wallet: ProfileContracts.IReadWriteWallet,
 	signFn: SignFn,
 	connectFn: ConnectFn,
 ) => {
-	await connectFn(wallet.coinId(), wallet.networkId());
+	await connectFn(profile, wallet.coinId(), wallet.networkId());
 
 	const path = wallet.data().get<string>(ProfileContracts.WalletData.LedgerPath);
 	let senderPublicKey = wallet.publicKey();
@@ -86,7 +87,7 @@ export const useTransactionBuilder = (profile: ProfileContracts.IProfile) => {
 			data = await withAbortPromise(
 				options?.abortSignal,
 				abortConnectionRetry,
-			)(prepareLedger(data, wallet, signFn, connect));
+			)(prepareLedger(profile, data, wallet, signFn, connect));
 		}
 
 		const uuid = await signFn(data);

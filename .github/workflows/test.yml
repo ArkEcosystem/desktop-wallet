@@ -556,45 +556,7 @@ jobs:
                   --logHeapUsage--watchAll=false --coverage
                   --collectCoverageFrom='["src/domains/wallet/**/*.{js,jsx,ts,tsx}","!<rootDir>/build/*","!<rootDir>/dist/*","!jest.setup.js","!src/**/e2e/*.ts","!src/**/*.e2e.ts","!src/**/*.models.{js,jsx,ts,tsx}","!src/**/*.stories.{js,jsx,ts,tsx}","!src/**/*.styles.{js,jsx,ts,tsx}","!src/electron/**/*","!src/i18n/**/*","!src/tests/**/*","!src/tailwind.config.js","!src/utils/e2e-utils.ts","!src/polyfill/**/*"]'
                   --coverageThreshold='{"./src/domains/wallet/":{"branches":98.09,"functions":83.27,"lines":70.49,"statements":71.03}}'
-    migrations:
-        runs-on: ubuntu-latest
-        strategy:
-            matrix:
-                node-version:
-                    - 12.x
-        steps:
-            - uses: actions/checkout@v2
-              with:
-                  ref: ${{ github.head_ref }}
-            - name: Get yarn cache directory path
-              id: yarn-cache-dir-path
-              run: echo "::set-output name=dir::$(yarn cache dir)"
-            - name: Cache node modules
-              uses: actions/cache@v2
-              id: yarn-cache
-              with:
-                  path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
-                  key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
-                  restore-keys: ${{ runner.os }}-yarn-
-            - name: Use Node.js ${{ matrix.node-version }}
-              uses: actions/setup-node@v1
-              with:
-                  node-version: ${{ matrix.node-version }}
-            - name: Update System
-              run: sudo apt-get update
-            - name: Install (Ledger Requirements)
-              run: sudo apt-get install libudev-dev libusb-1.0-0-dev
-            - name: Install (Yarn)
-              run: yarn install --frozen-lockfile
-            - name: Rebuild
-              run: npm rebuild
-            - name: Test
-              run: ./node_modules/react-app-rewired/bin/index.js --expose-gc test
-                  src/migrations --forceExit --maxWorkers=50%
-                  --env=./src/tests/custom-env.js
-                  --logHeapUsage--watchAll=false --coverage
-                  --collectCoverageFrom='["src/migrations/**/*.{js,jsx,ts,tsx}","!<rootDir>/build/*","!<rootDir>/dist/*","!jest.setup.js","!src/**/e2e/*.ts","!src/**/*.e2e.ts","!src/**/*.models.{js,jsx,ts,tsx}","!src/**/*.stories.{js,jsx,ts,tsx}","!src/**/*.styles.{js,jsx,ts,tsx}","!src/electron/**/*","!src/i18n/**/*","!src/tests/**/*","!src/tailwind.config.js","!src/utils/e2e-utils.ts","!src/polyfill/**/*"]'
-                  --coverageThreshold='{"./src/migrations/":{"branches":100,"functions":100,"lines":100,"statements":100}}'
+
     plugins:
         runs-on: ubuntu-latest
         strategy:

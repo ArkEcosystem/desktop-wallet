@@ -1,14 +1,21 @@
 /* eslint-disable @typescript-eslint/require-await */
+import { Contracts } from "@arkecosystem/platform-sdk-profiles";
 import { act, renderHook } from "@testing-library/react-hooks";
 import { EnvironmentProvider } from "app/contexts";
 import { translations as commonTranslations } from "app/i18n/common/i18n";
 import React from "react";
 import { useForm } from "react-hook-form";
-import { env, fireEvent, render } from "utils/testing-library";
+import { env, fireEvent, getDefaultProfileId, render } from "utils/testing-library";
 
 import { InputAddress, InputAddressProps } from "./InputAddress";
 
+let profile: Contracts.IProfile;
+
 describe("InputAddress", () => {
+	beforeAll(() => {
+		profile = env.profiles().findById(getDefaultProfileId());
+	});
+
 	const TestInputAddress = (props: InputAddressProps) => (
 		<EnvironmentProvider env={env}>
 			<InputAddress name="address" {...props} />
@@ -16,7 +23,9 @@ describe("InputAddress", () => {
 	);
 
 	it("should render", () => {
-		const { getByTestId, asFragment } = render(<TestInputAddress coin="ARK" network="ark.devnet" />);
+		const { getByTestId, asFragment } = render(
+			<TestInputAddress coin="ARK" network="ark.devnet" profile={profile} />,
+		);
 		expect(getByTestId("InputAddress__input")).toBeInTheDocument();
 		expect(asFragment()).toMatchSnapshot();
 	});
@@ -25,7 +34,9 @@ describe("InputAddress", () => {
 		const { result, waitForNextUpdate } = renderHook(() => useForm({ mode: "onChange" }));
 		const { register, errors } = result.current;
 
-		const { getByTestId } = render(<TestInputAddress coin="ARK" network="ark.devnet" registerRef={register} />);
+		const { getByTestId } = render(
+			<TestInputAddress coin="ARK" network="ark.devnet" registerRef={register} profile={profile} />,
+		);
 
 		act(() => {
 			fireEvent.input(getByTestId("InputAddress__input"), { target: { value: "Abc" } });
@@ -42,7 +53,13 @@ describe("InputAddress", () => {
 		const validAddress = "DT11QcbKqTXJ59jrUTpcMyggTcwmyFYRTM";
 
 		const { getByTestId } = render(
-			<TestInputAddress coin="ARK" network="ark.devnet" registerRef={register} onValidAddress={onValidAddress} />,
+			<TestInputAddress
+				coin="ARK"
+				network="ark.devnet"
+				registerRef={register}
+				onValidAddress={onValidAddress}
+				profile={profile}
+			/>,
 		);
 
 		act(() => {
@@ -62,6 +79,7 @@ describe("InputAddress", () => {
 
 		const { getByTestId } = render(
 			<TestInputAddress
+				profile={profile}
 				coin="ARK"
 				network="ark.devnet"
 				registerRef={register}
@@ -81,7 +99,9 @@ describe("InputAddress", () => {
 		const { result } = renderHook(() => useForm({ mode: "onChange" }));
 		const { register } = result.current;
 
-		const { asFragment } = render(<TestInputAddress useDefaultRules={false} registerRef={register} />);
+		const { asFragment } = render(
+			<TestInputAddress useDefaultRules={false} registerRef={register} profile={profile} />,
+		);
 
 		expect(asFragment()).toMatchSnapshot();
 	});

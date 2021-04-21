@@ -61,6 +61,10 @@ const createTransactionMock = (wallet: ProfilesContracts.IReadWriteWallet) =>
 describe("DelegateRegistrationForm", () => {
 	beforeAll(async () => {
 		profile = env.profiles().findById(getDefaultProfileId());
+
+		await profile.restore();
+		await profile.sync();
+
 		wallet = profile.wallets().first();
 
 		await syncDelegates();

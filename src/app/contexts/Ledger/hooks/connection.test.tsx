@@ -12,9 +12,13 @@ describe("Use Ledger Connection", () => {
 	let wallet: Contracts.IReadWriteWallet;
 	let publicKeyPaths = new Map();
 
-	beforeEach(() => {
+	beforeEach(async () => {
 		transport = createTransportReplayer(RecordStore.fromString(""));
 		profile = env.profiles().findById(getDefaultProfileId());
+
+		await profile.restore();
+		await profile.sync();
+
 		wallet = profile.wallets().first();
 
 		publicKeyPaths = new Map([
@@ -146,7 +150,7 @@ describe("Use Ledger Connection", () => {
 			} = useLedgerConnection(transport);
 			const handleConnect = async () => {
 				try {
-					await connect(wallet.coinId(), wallet.networkId(), {
+					await connect(profile, wallet.coinId(), wallet.networkId(), {
 						retries,
 						factor: 1,
 						randomize: false,
@@ -275,7 +279,7 @@ describe("Use Ledger Connection", () => {
 			} = useLedgerConnection(transport);
 			const handleConnect = async () => {
 				try {
-					await connect(wallet.coinId(), wallet.networkId());
+					await connect(profile, wallet.coinId(), wallet.networkId());
 				} catch {
 					//
 				}

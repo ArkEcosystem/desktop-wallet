@@ -6,6 +6,7 @@ import Transport, { Observer } from "@ledgerhq/hw-transport";
 import { createTransportReplayer, RecordStore } from "@ledgerhq/hw-transport-mocker";
 import { act, renderHook } from "@testing-library/react-hooks";
 import { LedgerProvider } from "app/contexts";
+import { EnvironmentProvider } from "app/contexts";
 import { translations as commonTranslations } from "app/i18n/common/i18n";
 import { toasts } from "app/services";
 import { NetworkStep } from "domains/wallet/components/NetworkStep";
@@ -29,6 +30,7 @@ const mnemonic = "buddy year cost vendor honey tonight viable nut female alarm d
 const randomAddress = "D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib";
 
 const route = `/profiles/${fixtureProfileId}/wallets/import`;
+const history = createMemoryHistory();
 
 jest.setTimeout(30000);
 
@@ -42,8 +44,11 @@ describe("ImportWallet", () => {
 			.persist();
 	});
 
-	beforeEach(() => {
+	beforeEach(async () => {
 		profile = env.profiles().findById(fixtureProfileId);
+
+		await profile.restore();
+		await profile.sync();
 
 		const walletId = profile.wallets().findByAddress(randomAddress)?.id();
 
@@ -120,13 +125,21 @@ describe("ImportWallet", () => {
 			form.register("type");
 			form.register("network");
 			return (
-				<FormProvider {...form}>
-					<SecondStep profile={profile} />
-				</FormProvider>
+				<EnvironmentProvider env={env}>
+					<FormProvider {...form}>
+						<SecondStep profile={profile} />
+					</FormProvider>
+				</EnvironmentProvider>
 			);
 		};
 
-		const { container } = render(<Component />);
+		history.push(`/profiles/${profile.id()}`);
+		const { container } = renderWithRouter(
+			<Route path="/profiles/:profileId">
+				<Component />
+			</Route>,
+			{ history, withProviders: false },
+		);
 
 		expect(screen.getByTestId("ImportWallet__second-step")).toBeTruthy();
 

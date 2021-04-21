@@ -101,12 +101,6 @@ const directories = {
 		lines: 70.49,
 		statements: 71.03,
 	},
-	migrations: {
-		branches: 100,
-		functions: 100,
-		lines: 100,
-		statements: 100,
-	},
 	plugins: {
 		branches: 100,
 		functions: 96.34,
