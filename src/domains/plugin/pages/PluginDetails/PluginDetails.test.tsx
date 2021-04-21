@@ -115,7 +115,11 @@ describe("PluginDetails", () => {
 				"desktop-wallet": { title: "My Export Transaction" },
 			})
 			.get("/dated/delegate-calculator-plugin/master/package.json")
-			.reply(200, require("tests/fixtures/plugins/registry/@dated/delegate-calculator-plugin.json"));
+			.reply(200, require("tests/fixtures/plugins/registry/@dated/delegate-calculator-plugin.json"))
+			.get("/ark-ecosystem-desktop-plugins/sound-notifications/master/package.json")
+			.reply(200, require("tests/fixtures/plugins/github/@arkecosystem/desktop-wallet-sound-notifications/package.json"))
+			.get("/ark-ecosystem-desktop-plugins/explorer/master/package.json")
+			.reply(200, require("tests/fixtures/plugins/github/@arkecosystem/desktop-wallet-explorer/package.json"));
 
 		const FetchComponent = () => {
 			const { fetchPluginPackages } = usePluginManagerContext();
