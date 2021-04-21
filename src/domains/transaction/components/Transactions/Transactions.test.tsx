@@ -66,6 +66,9 @@ describe("Transactions", () => {
 
 		profile = env.profiles().findById(fixtureProfileId);
 
+		await profile.restore();
+		await profile.sync();
+
 		await syncDelegates();
 	});
 
