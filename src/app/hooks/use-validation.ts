@@ -23,7 +23,7 @@ export const useValidation = () => {
 			common: common(t),
 			authentication: authentication(t),
 			delegateRegistration: delegateRegistration(t),
-			sendTransfer: sendTransfer(t, env),
+			sendTransfer: sendTransfer(t),
 			sendIpfs: sendIpfs(t),
 			sendVote: sendVote(t),
 			multiSignatureRegistration: multiSignatureRegistration(t),

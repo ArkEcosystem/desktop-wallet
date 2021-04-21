@@ -4,7 +4,7 @@ import { FormField, FormLabel } from "app/components/Form";
 import { Header } from "app/components/Header";
 import { Input, InputAddress, InputPassword } from "app/components/Input";
 import { Select } from "app/components/SelectDropdown";
-import { useEnvironmentContext } from "app/contexts";
+import { useActiveProfile } from "app/hooks";
 import React, { useMemo, useState } from "react";
 import { useFormContext } from "react-hook-form";
 import { useTranslation } from "react-i18next";
@@ -61,6 +61,7 @@ const AddressField = ({ network, profile }: { profile: Contracts.IProfile; netwo
 		<FormField name="value">
 			<FormLabel label={t("COMMON.ADDRESS")} />
 			<InputAddress
+				profile={profile}
 				coin={network.coin()}
 				network={network.id()}
 				registerRef={register}
@@ -90,8 +91,8 @@ const ImportInputField = ({
 	profile: Contracts.IProfile;
 }) => {
 	const { t } = useTranslation();
-	const { env } = useEnvironmentContext();
-	const [coin] = useState(() => env.coin(network.coin(), network.id()));
+	const activeProfile = useActiveProfile();
+	const [coin] = useState(() => activeProfile.coins().push(network.coin(), network.id()));
 	const { register } = useFormContext();
 
 	if (type === "mnemonic") {
@@ -102,8 +103,8 @@ const ImportInputField = ({
 				label={t("COMMON.MNEMONIC")}
 				data-testid="ImportWallet__mnemonic-input"
 				findAddress={async (value) => {
-					const instance = await coin;
-					return instance.identity().address().fromMnemonic(value);
+					await coin.__construct();
+					return coin.identity().address().fromMnemonic(value);
 				}}
 			/>
 		);
@@ -122,8 +123,8 @@ const ImportInputField = ({
 				data-testid="ImportWallet__privatekey-input"
 				findAddress={async (value) => {
 					try {
-						const instance = await coin;
-						return await instance.identity().address().fromPrivateKey(value);
+						await coin.__construct();
+						return coin.identity().address().fromPrivateKey(value);
 					} catch {
 						throw new Error(t("WALLETS.PAGE_IMPORT_WALLET.VALIDATION.INVALID_PRIVATE_KEY"));
 					}
@@ -141,8 +142,8 @@ const ImportInputField = ({
 				data-testid="ImportWallet__wif-input"
 				findAddress={async (value) => {
 					try {
-						const instance = await coin;
-						return await instance.identity().address().fromWIF(value);
+						await coin.__construct();
+						return coin.identity().address().fromWIF(value);
 					} catch (e) {
 						throw new Error(t("WALLETS.PAGE_IMPORT_WALLET.VALIDATION.INVALID_WIF"));
 					}

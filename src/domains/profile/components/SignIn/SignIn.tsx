@@ -69,7 +69,7 @@ export const SignIn = ({ isOpen, profile, onCancel, onClose, onSuccess }: SignIn
 
 	const handleSubmit = ({ password }: any) => {
 		if (profile.auth().verifyPassword(password)) {
-			Helpers.MemoryPassword.set(profile, password);
+			Helpers.MemoryPassword.set(password);
 			onSuccess(password);
 		} else {
 			setCount(count + 1);

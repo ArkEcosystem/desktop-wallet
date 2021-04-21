@@ -72,6 +72,7 @@ export const UpdateContact = ({
 		>
 			<div className="mt-8">
 				<ContactForm
+					profile={profile}
 					errors={errors}
 					contact={contact}
 					networks={networks}

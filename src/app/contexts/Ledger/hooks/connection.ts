@@ -9,7 +9,7 @@ import { formatLedgerDerivationPath, LedgerData } from "../utils";
 import { connectionReducer, defaultConnectionState } from "./connection.state";
 
 export const useLedgerConnection = (transport: typeof Transport) => {
-	const { env, persist } = useEnvironmentContext();
+	const { persist } = useEnvironmentContext();
 	const [state, dispatch] = useReducer(connectionReducer, defaultConnectionState);
 	const abortRetryRef = useRef<boolean>(false);
 
@@ -47,6 +47,7 @@ export const useLedgerConnection = (transport: typeof Transport) => {
 
 	const connect = useCallback(
 		async (
+			profile: Contracts.IProfile,
 			coin: string,
 			network: string,
 			retryOptions: retry.Options = { retries: 50, randomize: false, factor: 1 },
@@ -54,7 +55,7 @@ export const useLedgerConnection = (transport: typeof Transport) => {
 			dispatch({ type: "waiting" });
 			abortRetryRef.current = false;
 
-			const instance = await env.coin(coin, network);
+			const instance = profile.coins().push(coin, network);
 
 			try {
 				const slip44 = instance.config().get<number>("network.crypto.slip44");
@@ -81,7 +82,7 @@ export const useLedgerConnection = (transport: typeof Transport) => {
 				throw connectError;
 			}
 		},
-		[transport, env],
+		[transport],
 	);
 
 	const disconnect = useCallback(async (coin: Coins.Coin) => {

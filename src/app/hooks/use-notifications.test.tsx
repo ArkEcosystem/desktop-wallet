@@ -25,17 +25,16 @@ describe("Notifications Hook", () => {
 	it("should create and save notifications from received transactions", async () => {
 		const wrapper = ({ children }: any) => <EnvironmentProvider env={env}> {children} </EnvironmentProvider>;
 		const { result } = renderHook(() => useNotifications(), { wrapper });
+		const profile = env.profiles().findById(getDefaultProfileId());
+		await profile.restore();
+		await profile.sync();
 
 		const { notifications } = result.current;
 
 		const transactionNotifications = await notifications.syncReceivedTransactions();
 		expect(transactionNotifications.length).toEqual(1);
 
-		const savedNotification = env
-			.profiles()
-			.findById(getDefaultProfileId())
-			.notifications()
-			.get(transactionNotifications[0].id);
+		const savedNotification = profile.notifications().get(transactionNotifications[0].id);
 		expect(savedNotification).toBeTruthy();
 	});
 
