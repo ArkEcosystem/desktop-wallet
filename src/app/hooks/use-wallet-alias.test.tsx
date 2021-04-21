@@ -23,10 +23,14 @@ describe("UseWalletAlias", () => {
 	});
 
 	it("should return if none alias found", () => {
+		const isKnownSpy = jest.spyOn(wallet, "isKnown").mockReturnValue(false);
 		const aliasSpy = jest.spyOn(wallet, "alias").mockReturnValue(undefined);
-		const { result } = renderHook(() => useWalletAlias({ address: "wrong-address", profile }));
+		const usernameSpy = jest.spyOn(wallet, "username").mockReturnValue(undefined);
+		const { result } = renderHook(() => useWalletAlias({ address: wallet.address(), profile }));
 		expect(result.current).toBe(undefined);
 		aliasSpy.mockRestore();
+		isKnownSpy.mockRestore();
+		usernameSpy.mockRestore();
 	});
 
 	it("should return alias", () => {
