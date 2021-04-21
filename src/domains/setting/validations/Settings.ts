@@ -30,29 +30,4 @@ export const settings = (t: any, env: Environment) => ({
 			},
 		},
 	}),
-	password: () => ({
-		minLength: {
-			value: 6,
-			message: t("COMMON.VALIDATION.MIN_LENGTH", {
-				field: t("SETTINGS.GENERAL.PERSONAL.PASSWORD"),
-				minLength: 6,
-			}),
-		},
-	}),
-	confirmPassword: (password: string) => ({
-		required: t("COMMON.VALIDATION.CONFIRM_PASSWORD_REQUIRED"),
-		validate: (confirmPassword: string) => {
-			if (!password) {
-				return t("COMMON.VALIDATION.FIELD_REQUIRED", {
-					field: t("SETTINGS.GENERAL.PERSONAL.PASSWORD"),
-				}).toString();
-			}
-
-			if (!!password && password !== confirmPassword) {
-				return t("COMMON.VALIDATION.PASSWORD_MISMATCH");
-			}
-
-			return true;
-		},
-	}),
 });
