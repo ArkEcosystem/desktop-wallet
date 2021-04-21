@@ -131,6 +131,7 @@ export const ContactForm = ({
 		}
 
 		const instance: Coins.Coin = profile.coins().push(network.coin(), network.id());
+		await instance.__construct();
 		const isValidAddress: boolean = await instance.identity().address().validate(address);
 
 		if (!isValidAddress) {
