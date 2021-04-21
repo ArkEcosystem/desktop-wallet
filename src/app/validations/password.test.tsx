@@ -61,4 +61,24 @@ describe("Password Validation", () => {
 			}).toString(),
 		);
 	});
+
+	it("should confirm optional password", () => {
+		const { result } = renderHook(() => useTranslation());
+		const { t } = result.current;
+
+		const passwordValidation = password(t);
+		const confirmPassword = passwordValidation.confirmOptionalPassword();
+		expect(confirmPassword.validate()).toEqual(true);
+		expect(confirmPassword.validate("test")).toEqual(true);
+	});
+
+	it("should fail validation if optional password is set", () => {
+		const { result } = renderHook(() => useTranslation());
+		const { t } = result.current;
+
+		const passwordValidation = password(t);
+		const confirmPassword = passwordValidation.confirmOptionalPassword("test");
+		expect(confirmPassword.validate()).toEqual(t("COMMON.VALIDATION.PASSWORD_MISMATCH"));
+		expect(confirmPassword.validate("test2")).toEqual(t("COMMON.VALIDATION.PASSWORD_MISMATCH"));
+	});
 });
