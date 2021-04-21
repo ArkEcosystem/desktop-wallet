@@ -25,6 +25,10 @@ const defaultFee = "7320598";
 describe("SendTransactionForm", () => {
 	beforeAll(async () => {
 		profile = env.profiles().findById(getDefaultProfileId());
+
+		await profile.restore();
+		await profile.sync();
+
 		wallet = profile.wallets().values()[0];
 
 		await syncFees();

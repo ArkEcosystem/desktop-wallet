@@ -47,8 +47,9 @@ jest.mock("fs", () => ({
 }));
 
 describe("Settings", () => {
-	beforeAll(() => {
+	beforeAll(async () => {
 		profile = env.profiles().findById(getDefaultProfileId());
+		await profile.restore();
 	});
 
 	it("should render with prompt paths", async () => {

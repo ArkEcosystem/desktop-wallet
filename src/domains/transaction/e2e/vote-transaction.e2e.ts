@@ -82,7 +82,7 @@ test("should successfully send a vote transaction", async (t) => {
 	await t.click(Selector("[data-testid=SendVote__button--submit]"));
 
 	// Transaction successful
-	await t.expect(Selector("h1").withText(translations.TRANSACTION.SUCCESS.TITLE).exists).ok({ timeout: 10000 });
+	await t.expect(Selector("h1").withText(translations.TRANSACTION.SUCCESS.TITLE).exists).ok({ timeout: 20000 });
 });
 
 test("should show an error if wrong mnemonic", async (t) => {

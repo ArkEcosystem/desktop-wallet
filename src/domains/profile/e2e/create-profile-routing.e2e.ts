@@ -10,6 +10,9 @@ createFixture(`Welcome -> Create Profile routing`);
 const getLocation = ClientFunction(() => document.location.href);
 
 test("should navigate to create profile and back to welcome screen", async (t) => {
+	await t
+		.expect(Selector('[data-testid="Card"]').withExactText(translations.PROFILE.CREATE_PROFILE).exists)
+		.ok({ timeout: 20000 });
 	await t.click(Selector('[data-testid="Card"]').withExactText(translations.PROFILE.CREATE_PROFILE));
 	await t.expect(getLocation()).contains("/profiles/create");
 	await t.click(Selector("h1").withExactText(translations.PROFILE.PAGE_CREATE_PROFILE.TITLE));

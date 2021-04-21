@@ -1,10 +1,10 @@
 import { Coins } from "@arkecosystem/platform-sdk";
-import { Environment } from "@arkecosystem/platform-sdk-profiles";
+import { Contracts } from "@arkecosystem/platform-sdk-profiles";
 import { BigNumber } from "@arkecosystem/platform-sdk-support";
 
 import { RecipientListItem } from "../components/RecipientList/RecipientList.models";
 
-export const sendTransfer = (t: any, env: Environment) => ({
+export const sendTransfer = (t: any) => ({
 	senderAddress: () => ({
 		required: t("COMMON.VALIDATION.FIELD_REQUIRED", {
 			field: t("COMMON.SENDER_ADDRESS"),
@@ -24,7 +24,12 @@ export const sendTransfer = (t: any, env: Environment) => ({
 			field: t("COMMON.CRYPTOASSET"),
 		}),
 	}),
-	recipientAddress: (network: Coins.Network, recipients: RecipientListItem[], isSingleRecipient: boolean) => ({
+	recipientAddress: (
+		profile: Contracts.IProfile,
+		network: Coins.Network,
+		recipients: RecipientListItem[],
+		isSingleRecipient: boolean,
+	) => ({
 		validate: {
 			valid: async (addressValue: string | undefined) => {
 				const address = (addressValue || "").trim();
@@ -45,7 +50,7 @@ export const sendTransfer = (t: any, env: Environment) => ({
 					});
 				}
 
-				const coin: Coins.Coin = await env.coin(network?.coin(), network?.id());
+				const coin: Coins.Coin = profile.coins().push(network?.coin(), network?.id());
 				const isValidAddress: boolean = await coin.identity().address().validate(address);
 				return isValidAddress || t("COMMON.VALIDATION.RECIPIENT_INVALID");
 			},

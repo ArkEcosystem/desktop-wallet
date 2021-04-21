@@ -46,7 +46,7 @@ const useProfileJobs = (profile?: Contracts.IProfile): Record<string, any> => {
 
 		const syncExchangeRates = {
 			callback: () => {
-				const currencies = Object.keys(env.coins().all());
+				const currencies = Object.keys(profile.coins().all());
 				return Promise.all(currencies.map((currency) => env.exchangeRates().syncAll(profile, currency)));
 			},
 			interval: Intervals.Long,
@@ -219,7 +219,7 @@ export const useProfileSynchronizer = ({ onProfileRestoreError }: ProfileSynchro
 
 			if (profile.usesPassword()) {
 				try {
-					Helpers.MemoryPassword.get(profile);
+					Helpers.MemoryPassword.get();
 				} catch (error) {
 					onProfileRestoreError?.(error);
 					return;

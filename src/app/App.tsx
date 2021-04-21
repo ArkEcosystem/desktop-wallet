@@ -17,7 +17,6 @@ import LedgerTransportNodeHID from "@ledgerhq/hw-transport-node-hid-singleton";
 // import { XRP } from "@arkecosystem/platform-sdk-xrp";
 import { Offline } from "domains/error/pages";
 import { Splash } from "domains/splash/pages";
-import { migrateProfileFixtures } from "migrations";
 import { usePluginManagerContext } from "plugins";
 import { PluginRouterWrapper } from "plugins/components/PluginRouterWrapper";
 import React, { useEffect, useLayoutEffect, useState } from "react";
@@ -27,6 +26,7 @@ import { useHistory } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
 import { StubStorage } from "tests/mocks";
 import { setThemeSource, shouldUseDarkColors } from "utils/electron-utils";
+import { bootEnvWithProfileFixtures } from "utils/test-helpers";
 
 import { middlewares, RouterView, routes } from "../router";
 import { ConfigurationProvider, EnvironmentProvider, LedgerProvider, useEnvironmentContext } from "./contexts";
@@ -82,7 +82,10 @@ const Main = () => {
 					? true
 					: false;
 				if (__E2E__) {
-					migrateProfileFixtures(env);
+					await bootEnvWithProfileFixtures({ env });
+					await loadPlugins();
+					setShowSplash(false);
+					return;
 				}
 
 				await env.verify();
@@ -90,7 +93,6 @@ const Main = () => {
 
 				await loadPlugins();
 			} catch (error) {
-				console.error(error);
 				handleError(error);
 			}
 
