@@ -24,4 +24,8 @@ export const password = (t: any) => ({
 			return true;
 		},
 	}),
+	confirmOptionalPassword: (password: string) => ({
+		validate: (confirmPassword: string) =>
+			!!password && password !== confirmPassword ? t("COMMON.VALIDATION.PASSWORD_MISMATCH") : true,
+	}),
 });
