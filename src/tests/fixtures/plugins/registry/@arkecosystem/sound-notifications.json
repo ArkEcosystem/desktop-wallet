@@ -1,0 +1,628 @@
+{
+	"_id": "@arkecosystem/desktop-wallet-sound-notifications",
+	"_rev": "8-4fc0290d712add8231df86d143eadc0b",
+	"name": "@arkecosystem/desktop-wallet-sound-notifications",
+	"dist-tags": {
+		"latest": "0.1.6"
+	},
+	"versions": {
+		"0.1.0": {
+			"name": "@arkecosystem/desktop-wallet-sound-notifications",
+			"version": "0.1.0",
+			"title": "Sound Notifications",
+			"description": "Play a notification sound when you receive new transactions",
+			"main": "src/index.js",
+			"author": {
+				"name": "Lucio Rubens",
+				"email": "lucio@ark.io"
+			},
+			"keywords": ["utility", "notification", "@arkecosystem", "desktop-wallet", "plugin"],
+			"contributors": [
+				{
+					"name": "Lucio Rubens",
+					"email": "lucio@ark.io"
+				}
+			],
+			"license": "MIT",
+			"permissions": ["SANDBOX", "AUDIO", "EVENTS", "ALERTS"],
+			"devDependencies": {
+				"audio-loader": "^1.0.3",
+				"glob": "^7.1.3"
+			},
+			"licenseText": "The MIT License (MIT)\n\nCopyright (c) 2019 Ark Ecosystem <info@ark.io>\n\nPermission is hereby granted, free of charge, to any person obtaining a copy of\nthis software and associated documentation files (the \"Software\"), to deal in\nthe Software without restriction, including without limitation the rights to\nuse, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of\nthe Software, and to permit persons to whom the Software is furnished to do so,\nsubject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in all\ncopies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS\nFOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR\nCOPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER\nIN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN\nCONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.\n",
+			"_id": "@arkecosystem/desktop-wallet-sound-notifications@0.1.0",
+			"dist": {
+				"shasum": "15f3f5e04331d0bb99ec095c8e0d0947cb42fe21",
+				"integrity": "sha512-cmLZBD+ERJ3eyNe9q2zOOxutmpP/3j4zlXs6031sJTtJPK3odDc0NmJQf5+sp4QYvFrULvlzO6m9U3hX5wOtaw==",
+				"tarball": "https://registry.npmjs.org/@arkecosystem/desktop-wallet-sound-notifications/-/desktop-wallet-sound-notifications-0.1.0.tgz",
+				"fileCount": 12,
+				"unpackedSize": 391402,
+				"npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJde3TYCRA9TVsSAnZWagAAdggQAIMbsPbo0j7OMfraEvrM\nXPJPJY3trCq2iNv3VAAHfeabSsa7Rru7hB7u07HZIwQgOH+MNdPAJtlA8zUj\nDW+bynn89TEqbDL3aN4Beysd177aXpe2qpuV0x+b+gy95BsrKZhFs8XqGxo/\naxbKWN9sDDqdCIrF69oCr5/1+giPltHrxo8P/DGkqimd6ohYVw3uMqn1YGNW\n/S7WLG4X3UW4v8v1ary8mWcbXuoHN9u5xGGfmYDumliMJekclLGYDOmwd58W\nNa69XsNlsxsJ54B77ROKpCZmKBxVrKN7UrNbjzxL0o7HYYGTCJ8IQQ8O4vRn\nMUT2WWh7Y28/6hcd05zl+HVgZV39/9KJO+teWJiPzWGVVGxnSij1WEHb7U+M\n73pF8el/kAxI5bt5s7745tqqiHy2av8/XsX6OAxL08ENqdT4sgDYl2RE9K/n\n45coVDOrNgUI01yps1Ud5QtVrZFgtio9dqMKy1WPgN3tFkosqL4AWz+VkiLh\nGG5J/ibn3qfu9Boat63VfJY839v5d+g1B2oX5fuXD2ooK2HF+JQo6Uj0nr36\n7KhoDFI/DhMLABEY6fGJLTengXwAIiitH7UGbmKl2cnr9IgSp1ebCnguGMDi\nRuOOxfhccRJ/expZGYQ/2S2la88kxp6tSb6/WtnI9eZiv6+Ql0VICwEj9m9l\n3WZC\r\n=SoDj\r\n-----END PGP SIGNATURE-----\r\n"
+			},
+			"maintainers": [
+				{
+					"name": "faustbrian",
+					"email": "hello@basecode.sh"
+				},
+				{
+					"name": "luciorubeens",
+					"email": "luciorubeens@gmail.com"
+				},
+				{
+					"name": "j-a-m-l",
+					"email": "dev@jaml.pro"
+				},
+				{
+					"name": "supaiku",
+					"email": "joshua@ark.io"
+				},
+				{
+					"name": "arkio",
+					"email": "fx.thoorens@ark.io"
+				},
+				{
+					"name": "kristjankosic",
+					"email": "kristjan@ark.io"
+				},
+				{
+					"name": "alexbarnsley",
+					"email": "alex@ark.io"
+				}
+			],
+			"_npmUser": {
+				"name": "alexbarnsley",
+				"email": "alex@ark.io"
+			},
+			"directories": {},
+			"_npmOperationalInternal": {
+				"host": "s3://npm-registry-packages",
+				"tmp": "tmp/desktop-wallet-sound-notifications_0.1.0_1568371927631_0.770642215708919"
+			},
+			"_hasShrinkwrap": false
+		},
+		"0.1.1": {
+			"name": "@arkecosystem/desktop-wallet-sound-notifications",
+			"version": "0.1.1",
+			"title": "Sound Notifications",
+			"description": "Play a notification sound when you receive new transactions",
+			"main": "src/index.js",
+			"author": {
+				"name": "Lucio Rubens",
+				"email": "lucio@ark.io"
+			},
+			"desktop-wallet": {
+				"categories": ["utility"],
+				"minVersion": "2.6"
+			},
+			"keywords": ["utility", "notification", "@arkecosystem", "desktop-wallet", "plugin"],
+			"contributors": [
+				{
+					"name": "Lucio Rubens",
+					"email": "lucio@ark.io"
+				}
+			],
+			"license": "MIT",
+			"permissions": ["SANDBOX", "AUDIO", "EVENTS", "ALERTS"],
+			"devDependencies": {
+				"audio-loader": "^1.0.3",
+				"glob": "^7.1.3"
+			},
+			"licenseText": "The MIT License (MIT)\n\nCopyright (c) 2019 Ark Ecosystem <info@ark.io>\n\nPermission is hereby granted, free of charge, to any person obtaining a copy of\nthis software and associated documentation files (the \"Software\"), to deal in\nthe Software without restriction, including without limitation the rights to\nuse, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of\nthe Software, and to permit persons to whom the Software is furnished to do so,\nsubject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in all\ncopies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS\nFOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR\nCOPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER\nIN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN\nCONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.\n",
+			"_id": "@arkecosystem/desktop-wallet-sound-notifications@0.1.1",
+			"dist": {
+				"shasum": "228ea4911bed9c41bedf3dc2a74e4d83adcf4af6",
+				"integrity": "sha512-tEd9d42ZFwt2yx5pBbqP6TwwmjFq9GXGQyEitcGw1p5YX/Iz4LRgVqw/N+hehyHmI/eV6f15svUiN1SHuE2vKw==",
+				"tarball": "https://registry.npmjs.org/@arkecosystem/desktop-wallet-sound-notifications/-/desktop-wallet-sound-notifications-0.1.1.tgz",
+				"fileCount": 13,
+				"unpackedSize": 393065,
+				"npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJd0qxQCRA9TVsSAnZWagAAPJsP/jzhEu4q+qcqnGBovhoi\n6/3U8/tQQLQ01x5UXMnRGK+MFWZos+mbOk0PXZ6dDEsPYY8mnz9FOsoC3iWi\nkkObfai2TWawBx1rv1slKJBCF1LrhsOw5tGVdXqorZxTlpU+japMgCOlOH2/\n6TPp7lm4v7kckDfnwEPBc2zEmcM/WgymNz3/G6++qehE+ilx5wj2vHollioS\nvCPFJjctmuaoMhiJyOP7qpxoReQnADoCRPz6FC8IVnuJ5ffkQFi4KBBU7POq\nqbFPyA4YxSRBuVN7lHOI6E+Ix5WwG6BuirkkycYTzwm8gi22j1tLHZLRHza1\n7ZDhZ7qq24VgX3p5EwcNvFMXCxK22oAQVVJ3iaiwcjz6Uo5aBPFkiRLeJTm2\nZ2aqStoGGoGLuM4Or6Y0KOJpowRIgiV7XxgKwZz6K3CQ3wCo2cN7ctGWumME\nicIUOv1CmsryBA6cp6t1d/FzH3xy2Md1LrNTelWS/RtJ5F/GhjP3jDqLaveW\n6qqub0kTL7SeTurPks69GNKQ2NsiwT/yv2wqfyERUUk9DE1PlZpdD/om5Qcy\nkCmdSmEETsMiI2SpHfjSgd06KMvxiarav97z3sZk0xWk5JcxqsRFjMal3i0q\n5GKr724W8zqaphC+8w/5A4V8Oqe8lgV6vPahmeL0mNoDJv4GgsNoMEISWFpW\ncFe1\r\n=KyoD\r\n-----END PGP SIGNATURE-----\r\n"
+			},
+			"maintainers": [
+				{
+					"name": "alexbarnsley",
+					"email": "alex@ark.io"
+				},
+				{
+					"name": "arkio",
+					"email": "fx.thoorens@ark.io"
+				},
+				{
+					"name": "faustbrian",
+					"email": "hello@basecode.sh"
+				},
+				{
+					"name": "j-a-m-l",
+					"email": "dev@jaml.pro"
+				},
+				{
+					"name": "kristjankosic",
+					"email": "kristjan@ark.io"
+				},
+				{
+					"name": "luciorubeens",
+					"email": "luciorubeens@gmail.com"
+				},
+				{
+					"name": "supaiku",
+					"email": "joshua@ark.io"
+				}
+			],
+			"_npmUser": {
+				"name": "alexbarnsley",
+				"email": "alex@ark.io"
+			},
+			"directories": {},
+			"_npmOperationalInternal": {
+				"host": "s3://npm-registry-packages",
+				"tmp": "tmp/desktop-wallet-sound-notifications_0.1.1_1574087759951_0.46062117027740523"
+			},
+			"_hasShrinkwrap": false
+		},
+		"0.1.2": {
+			"name": "@arkecosystem/desktop-wallet-sound-notifications",
+			"version": "0.1.2",
+			"title": "Sound Notifications",
+			"description": "Play a notification sound when you receive new transactions",
+			"main": "src/index.js",
+			"author": {
+				"name": "Lucio Rubens",
+				"email": "lucio@ark.io"
+			},
+			"desktop-wallet": {
+				"categories": ["utility"],
+				"minVersion": "2.6"
+			},
+			"keywords": ["utility", "notification", "@arkecosystem", "desktop-wallet", "plugin"],
+			"contributors": [
+				{
+					"name": "Lucio Rubens",
+					"email": "lucio@ark.io"
+				}
+			],
+			"permissions": ["SANDBOX", "AUDIO", "EVENTS", "ALERTS"],
+			"devDependencies": {
+				"audio-loader": "^1.0.3",
+				"glob": "^7.1.3"
+			},
+			"license": "MIT",
+			"bugs": {
+				"url": "https://github.com/ark-ecosystem-desktop-plugins/sound-notifications/issues"
+			},
+			"homepage": "https://github.com/ark-ecosystem-desktop-plugins/sound-notifications#readme",
+			"licenseText": "The MIT License (MIT)\n\nCopyright (c) 2019 Ark Ecosystem <info@ark.io>\n\nPermission is hereby granted, free of charge, to any person obtaining a copy of\nthis software and associated documentation files (the \"Software\"), to deal in\nthe Software without restriction, including without limitation the rights to\nuse, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of\nthe Software, and to permit persons to whom the Software is furnished to do so,\nsubject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in all\ncopies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS\nFOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR\nCOPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER\nIN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN\nCONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.\n",
+			"_id": "@arkecosystem/desktop-wallet-sound-notifications@0.1.2",
+			"dist": {
+				"shasum": "4ecdee85a62cc55be4ce0ad43f138ddcaa861141",
+				"integrity": "sha512-XiFR1YiMDRNjHH4nbtFiDrZxF/lDifRlPs7ootYl446+3JEXRGxDIwxx9FeCL7ZfVBOPN4g1osSYMpJqfsN7gQ==",
+				"tarball": "https://registry.npmjs.org/@arkecosystem/desktop-wallet-sound-notifications/-/desktop-wallet-sound-notifications-0.1.2.tgz",
+				"fileCount": 13,
+				"unpackedSize": 393264,
+				"npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJd0q0HCRA9TVsSAnZWagAA77AQAJ1CO0LvFdk8uXR9ePNz\nJVk2ghsyL3LO6SHt+WuN0ubcLDiMop+EqYnQx/2NIKQRRc25xKb7DR4h5nFj\n3MSt10QE/jyWhiLF4f1usJZ1wdW/KZrlJ1gLS7U/Uf7dX5W9NlVMCuurE1GX\ngv2C7TI58O841S5Oiqv+NUdvJBWGme633olAdHpKeGJTdIkwGKYO7C0ByBaR\nk3M7p9A6BPEtPsqWGfzp5Osusd3bpEhDqZmWGGbPCjE1Hg+uCY0gfnEBPJEG\n5eXGftjZW9KR0AgbHRnnuWlOeMBHi6tr2siHdgDwNA2+eqPlwpit9ojigqxe\n6mwRapzECEo2stvQYtSwRLjr/fw86jQkhWx0lrT8RSIqGNBqP718hZrcnqfb\n7HdduC1JB3kQyjNhSEnrziTNZulHn5Vj6cXpdI4mEB3PFnSaXHfr5VHgwQy1\nZjjmHxTq+ggQiaNuISNidkhh/mSIjeqnWekhuevCtD57sryDsg20F2VJtLbs\nTxiGPZn+eoY+KirpVfq27LXjaJ//PxcQSrnEFAeIhsfqvhUQXpCciAoRk2rm\nxBsXENGZVGlcIT2XU1nzKTcQm56+6ZgHoUqs+8OFGhDHlDBpoFU/xirjZSc+\ncsXUshv2afAjIxNTf9atI7mvS2gOCUDJ4qSd8C+LlAeBjJ7/skZrFN8rbAi5\nqU/0\r\n=W6QX\r\n-----END PGP SIGNATURE-----\r\n"
+			},
+			"maintainers": [
+				{
+					"name": "alexbarnsley",
+					"email": "alex@ark.io"
+				},
+				{
+					"name": "arkio",
+					"email": "fx.thoorens@ark.io"
+				},
+				{
+					"name": "faustbrian",
+					"email": "hello@basecode.sh"
+				},
+				{
+					"name": "j-a-m-l",
+					"email": "dev@jaml.pro"
+				},
+				{
+					"name": "kristjankosic",
+					"email": "kristjan@ark.io"
+				},
+				{
+					"name": "luciorubeens",
+					"email": "luciorubeens@gmail.com"
+				},
+				{
+					"name": "supaiku",
+					"email": "joshua@ark.io"
+				}
+			],
+			"_npmUser": {
+				"name": "alexbarnsley",
+				"email": "alex@ark.io"
+			},
+			"directories": {},
+			"_npmOperationalInternal": {
+				"host": "s3://npm-registry-packages",
+				"tmp": "tmp/desktop-wallet-sound-notifications_0.1.2_1574087942754_0.8707514185658234"
+			},
+			"_hasShrinkwrap": false
+		},
+		"0.1.3": {
+			"name": "@arkecosystem/desktop-wallet-sound-notifications",
+			"version": "0.1.3",
+			"title": "Sound Notifications",
+			"description": "Play a notification sound when you receive new transactions",
+			"logo": "https://raw.githubusercontent.com/ark-ecosystem-desktop-plugins/sound-notifications/master/logo.png",
+			"main": "src/index.js",
+			"author": {
+				"name": "Lucio Rubens",
+				"email": "lucio@ark.io"
+			},
+			"desktop-wallet": {
+				"categories": ["utility"],
+				"minVersion": "2.6"
+			},
+			"keywords": ["utility", "notification", "@arkecosystem", "desktop-wallet", "plugin"],
+			"contributors": [
+				{
+					"name": "Lucio Rubens",
+					"email": "lucio@ark.io"
+				}
+			],
+			"permissions": ["SANDBOX", "AUDIO", "EVENTS", "ALERTS"],
+			"devDependencies": {
+				"audio-loader": "^1.0.3",
+				"glob": "^7.1.3"
+			},
+			"license": "MIT",
+			"repository": {
+				"type": "git",
+				"url": "https://github.com/ark-ecosystem-desktop-plugins/sound-notifications"
+			},
+			"bugs": {
+				"url": "https://github.com/ark-ecosystem-desktop-plugins/sound-notifications/issues"
+			},
+			"homepage": "https://github.com/ark-ecosystem-desktop-plugins/sound-notifications#readme",
+			"licenseText": "The MIT License (MIT)\n\nCopyright (c) 2019 Ark Ecosystem <info@ark.io>\n\nPermission is hereby granted, free of charge, to any person obtaining a copy of\nthis software and associated documentation files (the \"Software\"), to deal in\nthe Software without restriction, including without limitation the rights to\nuse, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of\nthe Software, and to permit persons to whom the Software is furnished to do so,\nsubject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in all\ncopies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS\nFOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR\nCOPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER\nIN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN\nCONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.\n",
+			"_id": "@arkecosystem/desktop-wallet-sound-notifications@0.1.3",
+			"dist": {
+				"shasum": "b5f2bf74d2086e47b27c68a513889a9a38615e3d",
+				"integrity": "sha512-/VXUBE3yFZr1BTZNTqEqEFrrHD/WKmbvsanMVapWFNnxQoC1kBHBcTObSycDHBJ8Yf7cNk9A5w5pGmazznEauw==",
+				"tarball": "https://registry.npmjs.org/@arkecosystem/desktop-wallet-sound-notifications/-/desktop-wallet-sound-notifications-0.1.3.tgz",
+				"fileCount": 13,
+				"unpackedSize": 393501,
+				"npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJd1QHkCRA9TVsSAnZWagAA5eYP/Avdre2wpxrgEqbiPk5G\nuYWCVPC6QMzGJOQ5JQhDP5djTwjuuL1DbWH2jgoaicwyxuD1ckHzBIfwL74m\ntLulbxuNwXhJ+I7vqrx9WhPAsOoycdCSMskBwQWc+q6b3mKVCoJWw+jclE+L\nasDCSFc1DZtjg4WFni94qeJt7iOyNyMBkKAckvca96uEE6GbSVfMfrQk1UeD\nhigzX+J9yoUVomL7uwzgbLVC1ciMjxYY3CRTu/WuLSVgONHtukT8E8m2u5Q1\nhoOcPf6gQDpIIGAni4xxdEOJ5QHqyoti9j/TIOxtCf0rvHbV1nUFAslpaRSu\nIx04W3smQzxyQRImxJ8ehZnVyQhAyyQFFbE/6vgGyQTCURXZpMlG8pbknIRl\ncBPTaL0t1Zu/I/BtFpmk4XqZcdnGpv65mKRsKZ9HDdMayqd4aRA+INGbYrFc\ncoOh7U0epl6571GygTMQ3WiGVpYlnOFY6Yv05JAYv0KWhkNeqbonp446Q6Wv\n/HdXKin3r3/KWmBlqR+GOj8/vj/Op0B4B/0XivRMLYgE7XNi1e6Kvg+h9tLE\nuFybIht9On+592XhMME99+HyRvoakDmOI7gc36pvG4uFssbmIf8ClcNFXPIq\nrShaKDYKDHJqHUvPwJE0diZgMl10FgjzmVFzbUyDPZvvykFFKB8Fq0iDVgEu\no9ST\r\n=m9so\r\n-----END PGP SIGNATURE-----\r\n"
+			},
+			"maintainers": [
+				{
+					"email": "alex@ark.io",
+					"name": "alexbarnsley"
+				},
+				{
+					"email": "fx.thoorens@ark.io",
+					"name": "arkio"
+				},
+				{
+					"email": "hello@basecode.sh",
+					"name": "faustbrian"
+				},
+				{
+					"email": "kristjan@ark.io",
+					"name": "kristjankosic"
+				},
+				{
+					"email": "luciorubeens@gmail.com",
+					"name": "luciorubeens"
+				},
+				{
+					"email": "joshua@ark.io",
+					"name": "supaiku"
+				}
+			],
+			"_npmUser": {
+				"name": "alexbarnsley",
+				"email": "alex@ark.io"
+			},
+			"directories": {},
+			"_npmOperationalInternal": {
+				"host": "s3://npm-registry-packages",
+				"tmp": "tmp/desktop-wallet-sound-notifications_0.1.3_1574240740311_0.37901118192323335"
+			},
+			"_hasShrinkwrap": false
+		},
+		"0.1.4": {
+			"name": "@arkecosystem/desktop-wallet-sound-notifications",
+			"version": "0.1.4",
+			"title": "Sound Notifications",
+			"description": "Play a notification sound when you receive new transactions",
+			"logo": "https://raw.githubusercontent.com/ark-ecosystem-desktop-plugins/sound-notifications/master/logo.png",
+			"main": "src/index.js",
+			"author": {
+				"name": "Lucio Rubens",
+				"email": "lucio@ark.io"
+			},
+			"desktop-wallet": {
+				"categories": ["other"],
+				"minVersion": "2.6"
+			},
+			"keywords": ["utility", "notification", "@arkecosystem", "desktop-wallet", "plugin"],
+			"contributors": [
+				{
+					"name": "Lucio Rubens",
+					"email": "lucio@ark.io"
+				}
+			],
+			"permissions": ["SANDBOX", "AUDIO", "EVENTS", "ALERTS"],
+			"devDependencies": {
+				"audio-loader": "^1.0.3",
+				"glob": "^7.1.3"
+			},
+			"license": "MIT",
+			"repository": {
+				"type": "git",
+				"url": "https://github.com/ark-ecosystem-desktop-plugins/sound-notifications"
+			},
+			"bugs": {
+				"url": "https://github.com/ark-ecosystem-desktop-plugins/sound-notifications/issues"
+			},
+			"homepage": "https://github.com/ark-ecosystem-desktop-plugins/sound-notifications#readme",
+			"licenseText": "The MIT License (MIT)\n\nCopyright (c) 2019 Ark Ecosystem <info@ark.io>\n\nPermission is hereby granted, free of charge, to any person obtaining a copy of\nthis software and associated documentation files (the \"Software\"), to deal in\nthe Software without restriction, including without limitation the rights to\nuse, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of\nthe Software, and to permit persons to whom the Software is furnished to do so,\nsubject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in all\ncopies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS\nFOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR\nCOPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER\nIN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN\nCONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.\n",
+			"_id": "@arkecosystem/desktop-wallet-sound-notifications@0.1.4",
+			"dist": {
+				"shasum": "f4c260279aa800f0bdb025a378c6e27a81d74b3f",
+				"integrity": "sha512-MZ8hN4SMmqVQzXOy6JtTIA0pTS4uYB5AZzP6EsVKi+v4Z95rBN8d7RjsWVsQLRYIGRXBrLHpHuNmTAptzV9wkA==",
+				"tarball": "https://registry.npmjs.org/@arkecosystem/desktop-wallet-sound-notifications/-/desktop-wallet-sound-notifications-0.1.4.tgz",
+				"fileCount": 13,
+				"unpackedSize": 393499,
+				"npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJd1Y92CRA9TVsSAnZWagAA828P+wZmUlXzWvA2Acba93s7\nC86WeXRcxoMIPPv/jgLqwCEpupfF3JPdxfJJzBISc5xuSPu374MuTSq8GyrE\nZ6UZ8ErxoNXZCj07+cckRAgUVAl4Bi8P2QGh9qSHzNfe2EIsjsU/TVYX3tzc\nP5ePURNX9d9dz4oB/J/1+9EAOFMH9/ZJd9C4hG0ORVSuPnhRvdxopJB2nN+k\n6qyne9TRdca/ZCp8zTGNnlttKLKJccwLRaC5NoYwJZ7c/+KXzgdPFMp2cKVX\n1pR9deZmTxPqpLWXPDBV7kty+/jlfv11LGIKyferdAPic9a+C8iyzJexzRsT\n9FvxaEBLHtrXVpgslDaUuRFjPWP2T3yTVSmiGA6WvIf/+7HfCYLwD2xzYMLN\nlZ5W42Q+XHdg8CgJ1scKirR7RNtY3fJ6Y6fn6O9bpwH7ORS2upWUEbhmtIyY\nT+oIhS9OjLQyMbgxESMlHHgnk1vnw+57SLdzhrsk3SZmH+CbD3rbvLrKzDvX\nboypSwUda8DLoQ3DJC1m1oQiC37ls7CxaroGnt0ObnVD+pZ41U3SbOe9oo3J\naru6YkPDhENwPCB0LkFsrfI9TLj+4gAswOavD7k+7LyYUcPhTRobscpgegRI\nOwT5bxIci4xeiOOB0PJ+XrwAT849jk4Gqb21tq1ARsHfUihGI5Bainwq056G\nhXof\r\n=wjFg\r\n-----END PGP SIGNATURE-----\r\n"
+			},
+			"maintainers": [
+				{
+					"email": "alex@ark.io",
+					"name": "alexbarnsley"
+				},
+				{
+					"email": "fx.thoorens@ark.io",
+					"name": "arkio"
+				},
+				{
+					"email": "hello@basecode.sh",
+					"name": "faustbrian"
+				},
+				{
+					"email": "kristjan@ark.io",
+					"name": "kristjankosic"
+				},
+				{
+					"email": "luciorubeens@gmail.com",
+					"name": "luciorubeens"
+				},
+				{
+					"email": "joshua@ark.io",
+					"name": "supaiku"
+				}
+			],
+			"_npmUser": {
+				"name": "alexbarnsley",
+				"email": "alex@ark.io"
+			},
+			"directories": {},
+			"_npmOperationalInternal": {
+				"host": "s3://npm-registry-packages",
+				"tmp": "tmp/desktop-wallet-sound-notifications_0.1.4_1574276981855_0.2553715936183121"
+			},
+			"_hasShrinkwrap": false
+		},
+		"0.1.5": {
+			"name": "@arkecosystem/desktop-wallet-sound-notifications",
+			"version": "0.1.5",
+			"description": "Play a notification sound when you receive new transactions",
+			"main": "src/index.js",
+			"author": {
+				"name": "Lucio Rubens",
+				"email": "lucio@ark.io"
+			},
+			"desktop-wallet": {
+				"title": "Sound Notifications",
+				"logo": "https://raw.githubusercontent.com/ark-ecosystem-desktop-plugins/sound-notifications/master/logo.png",
+				"categories": ["other"],
+				"permissions": ["SANDBOX", "AUDIO", "EVENTS", "ALERTS"],
+				"minVersion": "2.6"
+			},
+			"keywords": ["utility", "notification", "@arkecosystem", "desktop-wallet", "plugin"],
+			"contributors": [
+				{
+					"name": "Lucio Rubens",
+					"email": "lucio@ark.io"
+				}
+			],
+			"devDependencies": {
+				"audio-loader": "^1.0.3",
+				"glob": "^7.1.3"
+			},
+			"license": "MIT",
+			"repository": {
+				"type": "git",
+				"url": "https://github.com/ark-ecosystem-desktop-plugins/sound-notifications"
+			},
+			"bugs": {
+				"url": "https://github.com/ark-ecosystem-desktop-plugins/sound-notifications/issues"
+			},
+			"homepage": "https://github.com/ark-ecosystem-desktop-plugins/sound-notifications#readme",
+			"licenseText": "The MIT License (MIT)\n\nCopyright (c) 2019 Ark Ecosystem <info@ark.io>\n\nPermission is hereby granted, free of charge, to any person obtaining a copy of\nthis software and associated documentation files (the \"Software\"), to deal in\nthe Software without restriction, including without limitation the rights to\nuse, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of\nthe Software, and to permit persons to whom the Software is furnished to do so,\nsubject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in all\ncopies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS\nFOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR\nCOPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER\nIN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN\nCONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.\n",
+			"_id": "@arkecosystem/desktop-wallet-sound-notifications@0.1.5",
+			"dist": {
+				"shasum": "dd80991272a6317754ab5821036cd6e6f2de9211",
+				"integrity": "sha512-7q0qVFgxm4Wle/w13vi/HtjS+lrA3wWmpDoUaClP9mFLRoZ0jl6IJOUOkAtZgcj8Ciah00D5sHirk0mqS+L7Yg==",
+				"tarball": "https://registry.npmjs.org/@arkecosystem/desktop-wallet-sound-notifications/-/desktop-wallet-sound-notifications-0.1.5.tgz",
+				"fileCount": 13,
+				"unpackedSize": 393515,
+				"npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJd3USUCRA9TVsSAnZWagAAz/wQAIHiors2UXLLvaYdOALs\nDDzKVi0Zqr/UMbmdKAz2JxqbAG1B2AouuR8tEFB0zc3w/Wc9Zhlj62gejXpH\nLTIksB9EjhMiR3GE+q0SYq6OYbISUMNuYXX5XmZnlb68C/FxisaGLzt+P68w\nMz7SNDMN48j/2bdKjV4DRdgoLG37pHkKxILXlz5uEJk0VHWw2MXN0twV0Ih1\nXTcAfaNxzwwRh5T+AJahAhfPkrV5t8HKI/ScabIKd6Otd5xW1ifvAWauhQJb\nOTdJXKCFTNdueX+9y2lUcmek2GYoepDoPcHmWBkE3cbECMAm8xHuMjKRX3xN\nCndlK/yTIj/NryGHsEBwWDxPBLSdvwKJ7hEywvPpNkim29swZITWJyNekWxD\nUXlAKl7rKZCx36FrXAyWVARP66I3KqbasJ9hNX/dnLQgfF2Ym+dux13/Nx+G\nhnJRamX+aDWSg3y78iGbG+4jCQBehNdkGI2T5e+9pldHk8BCqGpXZh2HUxiI\nw8qAyGcqRsMLC+z3//gGCBhpFHii6JdTxC3PV9xe9xSW8LZAtvm9YTuPX9qc\n/iu7AFOfKLRT+xC+Amax6ru+Rm51DwthYZ++7gYLsJwrv5IqwoNm3bvFVRpZ\noVskt/nCGbBndhq6gqjYuic5rjRzbzerrDPVnnz/wNBA9owHa7kTIlTXBtVz\n8cDU\r\n=3G9c\r\n-----END PGP SIGNATURE-----\r\n"
+			},
+			"maintainers": [
+				{
+					"email": "alex@ark.io",
+					"name": "alexbarnsley"
+				},
+				{
+					"email": "fx.thoorens@ark.io",
+					"name": "arkio"
+				},
+				{
+					"email": "hello@basecode.sh",
+					"name": "faustbrian"
+				},
+				{
+					"email": "kristjan@ark.io",
+					"name": "kristjankosic"
+				},
+				{
+					"email": "luciorubeens@gmail.com",
+					"name": "luciorubeens"
+				},
+				{
+					"email": "joshua@ark.io",
+					"name": "supaiku"
+				}
+			],
+			"_npmUser": {
+				"name": "alexbarnsley",
+				"email": "alex@ark.io"
+			},
+			"directories": {},
+			"_npmOperationalInternal": {
+				"host": "s3://npm-registry-packages",
+				"tmp": "tmp/desktop-wallet-sound-notifications_0.1.5_1574782100245_0.4400110041569716"
+			},
+			"_hasShrinkwrap": false
+		},
+		"0.1.6": {
+			"name": "@arkecosystem/desktop-wallet-sound-notifications",
+			"version": "0.1.6",
+			"description": "Play a notification sound when you receive new transactions",
+			"main": "src/index.js",
+			"author": {
+				"name": "Lucio Rubens",
+				"email": "lucio@ark.io"
+			},
+			"desktop-wallet": {
+				"title": "Sound Notifications",
+				"logo": "https://raw.githubusercontent.com/ark-ecosystem-desktop-plugins/sound-notifications/master/logo.png",
+				"categories": ["other"],
+				"permissions": ["SANDBOX", "AUDIO", "EVENTS", "ALERTS"],
+				"minVersion": "2.6"
+			},
+			"keywords": ["utility", "notification", "@arkecosystem", "desktop-wallet", "plugin"],
+			"contributors": [
+				{
+					"name": "Lucio Rubens",
+					"email": "lucio@ark.io"
+				}
+			],
+			"devDependencies": {
+				"audio-loader": "^1.0.3",
+				"glob": "^7.1.3"
+			},
+			"license": "MIT",
+			"repository": {
+				"type": "git",
+				"url": "https://github.com/ark-ecosystem-desktop-plugins/sound-notifications"
+			},
+			"bugs": {
+				"url": "https://github.com/ark-ecosystem-desktop-plugins/sound-notifications/issues"
+			},
+			"homepage": "https://github.com/ark-ecosystem-desktop-plugins/sound-notifications#readme",
+			"licenseText": "The MIT License (MIT)\n\nCopyright (c) 2019 Ark Ecosystem <info@ark.io>\n\nPermission is hereby granted, free of charge, to any person obtaining a copy of\nthis software and associated documentation files (the \"Software\"), to deal in\nthe Software without restriction, including without limitation the rights to\nuse, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of\nthe Software, and to permit persons to whom the Software is furnished to do so,\nsubject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in all\ncopies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS\nFOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR\nCOPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER\nIN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN\nCONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.\n",
+			"_id": "@arkecosystem/desktop-wallet-sound-notifications@0.1.6",
+			"dist": {
+				"shasum": "af3307f942a47a17c0d17ffbb00166567698a4c7",
+				"integrity": "sha512-e5BWPHN0g55hhdEn1bm7bl+4dvQwzeXF7gIlmIB4KJRGmP5ODhMFRXMQxn49uTKmDenBu21xi0aj4butjfXv7g==",
+				"tarball": "https://registry.npmjs.org/@arkecosystem/desktop-wallet-sound-notifications/-/desktop-wallet-sound-notifications-0.1.6.tgz",
+				"fileCount": 13,
+				"unpackedSize": 393673,
+				"npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJd7sKgCRA9TVsSAnZWagAAj1IP/RsYp+kbN3Qg7q0660PX\nW1bwx9MyPyfu5XP6vCf4VHukNZXbP01vFf2pUZtkf6CWhKq64DChOaYyLTK8\n7Gg/zk6BV+m6Wj0NPCUXwQiSCa9ei4X1SOZFjHfqsVVj60rELkr0tc3b0ttE\nFtZa6BXml8e3GRhmckQClFHUm5er5Xsnsru4UZ+1o3P7vfh5QOccuS9JzDA4\n6j9kWTrM8XJiRtqXpZ8yeewmj9YswCTTW6rMCEB9931BKi3LF0lcUbU2tiiY\n5ZNJzZPlXdH6x9t87snILdBcRK6X1RrlZTYWweQqzFg/EBaC6vHkwvJ5VQDy\nQfG/OSj8bNt4sUK1YaaAUMbGA1PyeIAuv2l+XYNAO5p0PqTylFxmbBV2ORZO\nARtfbacS0sTwU+kEPrq1l80GlDtsAKljtWxdq09aIEOmKtKJk1J/t24CEDdu\ncLqcVBjFxaYndhltMHUWZoKbXN/CmZ9bTojNzoMLVg4Q8f+93QsKaDPuEjJx\nDf5mVKLkhE2qOZlgLwIi499EAQitD/N58gK3hyDquFydo+DItB89agUt0rxj\nbo56ry9C6r82pG2VR3KmCWHDI3AGMGRj9w1y4fb3r0eNfp3zPku5ECZXaoDR\niE8lkXy6dH2l8/ip8lPrm8keg+uG/wfY7v5cLgxBxBVK0jxnMZpZlssdQHnz\nb6Bo\r\n=R0Eg\r\n-----END PGP SIGNATURE-----\r\n"
+			},
+			"maintainers": [
+				{
+					"email": "alex@ark.io",
+					"name": "alexbarnsley"
+				},
+				{
+					"email": "fx.thoorens@ark.io",
+					"name": "arkio"
+				},
+				{
+					"email": "hello@basecode.sh",
+					"name": "faustbrian"
+				},
+				{
+					"email": "kristjan@ark.io",
+					"name": "kristjankosic"
+				},
+				{
+					"email": "luciorubeens@gmail.com",
+					"name": "luciorubeens"
+				},
+				{
+					"email": "joshua@ark.io",
+					"name": "supaiku"
+				}
+			],
+			"_npmUser": {
+				"name": "alexbarnsley",
+				"email": "alex@ark.io"
+			},
+			"directories": {},
+			"_npmOperationalInternal": {
+				"host": "s3://npm-registry-packages",
+				"tmp": "tmp/desktop-wallet-sound-notifications_0.1.6_1575928480429_0.21838936627842198"
+			},
+			"_hasShrinkwrap": false
+		}
+	},
+	"time": {
+		"created": "2019-09-13T10:52:07.509Z",
+		"0.1.0": "2019-09-13T10:52:07.808Z",
+		"modified": "2020-05-14T13:12:52.459Z",
+		"0.1.1": "2019-11-18T14:36:00.109Z",
+		"0.1.2": "2019-11-18T14:39:02.909Z",
+		"0.1.3": "2019-11-20T09:05:40.514Z",
+		"0.1.4": "2019-11-20T19:09:42.030Z",
+		"0.1.5": "2019-11-26T15:28:20.438Z",
+		"0.1.6": "2019-12-09T21:54:40.610Z"
+	},
+	"maintainers": [
+		{
+			"email": "hello@basecode.sh",
+			"name": "faustbrian"
+		},
+		{
+			"email": "luciorubeens@gmail.com",
+			"name": "luciorubeens"
+		},
+		{
+			"email": "fx.thoorens@ark.io",
+			"name": "arkio"
+		},
+		{
+			"email": "alex@ark.io",
+			"name": "alexbarnsley"
+		}
+	],
+	"description": "Play a notification sound when you receive new transactions",
+	"keywords": ["utility", "notification", "@arkecosystem", "desktop-wallet", "plugin"],
+	"contributors": [
+		{
+			"name": "Lucio Rubens",
+			"email": "lucio@ark.io"
+		}
+	],
+	"author": {
+		"name": "Lucio Rubens",
+		"email": "lucio@ark.io"
+	},
+	"license": "MIT",
+	"readme": "# Sound notifications - ARK Desktop Wallet plugin\nPlay a sound when you receive new transactions \n\n## Installation\n\n 1. Drop this repository into `~/.ark-desktop/plugins/`.\n 2. Start the desktop wallet.\n 3. Enable the plugin on the plugin section.\n\n## Credits\n\n- [Lúcio Rubens](https://github.com/luciorubeens)\n- [All Contributors](../../contributors)\n\n## License\n\n[MIT](LICENSE) © [Ark Ecosystem](https://ark.io/)\n",
+	"readmeFilename": "README.md",
+	"homepage": "https://github.com/ark-ecosystem-desktop-plugins/sound-notifications#readme",
+	"bugs": {
+		"url": "https://github.com/ark-ecosystem-desktop-plugins/sound-notifications/issues"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/ark-ecosystem-desktop-plugins/sound-notifications"
+	}
+}
