@@ -110,6 +110,7 @@ export const LedgerTable = ({
 						<TableCell variant="start" innerClassName="space-x-4">
 							<Avatar address={wallet.address} size="lg" noShadow />
 							<Address address={wallet.address} />
+							<span className="hidden">{wallet.path}</span>
 						</TableCell>
 
 						<TableCell innerClassName="justify-end font-semibold" className="w-64">

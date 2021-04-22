@@ -33,7 +33,16 @@ export const useLedgerScanner = (coin: string, network: string) => {
 			try {
 				const instance = profile.coins().push(coin, network);
 
-				const wallets = await instance.ledger().scan();
+				const lastImportedPath = profile
+					.wallets()
+					.values()
+					.filter((wallet) => wallet.isLedger())
+					.map((wallet) => wallet.data().get<string>(Contracts.WalletData.LedgerPath))
+					.sort()
+					.reverse()[0];
+
+				// @ts-ignore
+				const wallets = await instance.ledger().scan({ startPath: lastImportedPath });
 				const legacyWallets = await instance.ledger().scan({ useLegacy: true });
 
 				const allWallets = { ...legacyWallets, ...wallets };
