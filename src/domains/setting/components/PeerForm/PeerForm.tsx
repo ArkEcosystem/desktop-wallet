@@ -3,11 +3,11 @@ import { Button } from "app/components/Button";
 import { Checkbox } from "app/components/Checkbox";
 import { Form, FormField, FormLabel } from "app/components/Form";
 import { InputDefault } from "app/components/Input";
+import { Select } from "app/components/SelectDropdown";
+import { Option } from "domains/contact/components/ContactListItem/ContactListItem.models";
 import React, { useEffect, useMemo } from "react";
 import { useForm } from "react-hook-form";
 import { useTranslation } from "react-i18next";
-import { Select } from "app/components/SelectDropdown";
-import { Option } from "domains/contact/components/ContactListItem/ContactListItem.models";
 
 type PeerFormProps = {
 	networks: Coins.Network[];
@@ -54,12 +54,10 @@ export const PeerForm = ({ networks, peer, onSave, onValidateHost }: PeerFormPro
 
 	const networkOptions = useMemo(
 		() =>
-			networks.map((network) => {
-				return {
-					value: network.id(),
-					label: network.name(),
-				};
-			}),
+			networks.map((network) => ({
+				value: network.id(),
+				label: network.name(),
+			})),
 		[networks],
 	);
 
