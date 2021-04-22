@@ -209,11 +209,19 @@ export const requestMocks = {
 		),
 		mockRequest(
 			"https://raw.github.com/dated/transaction-export-plugin/master/package.json",
-			"plugins/registry/@dated/transaction-export-plugin",
+			"plugins/github/@dated/transaction-export-plugin",
 		),
 		mockRequest(
 			"https://raw.github.com/dated/delegate-calculator-plugin/master/package.json",
-			"plugins/registry/@dated/delegate-calculator-plugin",
+			"plugins/github/@dated/delegate-calculator-plugin",
+		),
+		mockRequest(
+			"https://raw.github.com/ark-ecosystem-desktop-plugins/sound-notifications/master/package.json",
+			"plugins/github/@arkecosystem/desktop-wallet-sound-notifications",
+		),
+		mockRequest(
+			"https://raw.github.com/ark-ecosystem-desktop-plugins/explorer/master/package.json",
+			"plugins/github/@arkecosystem/desktop-wallet-explorer",
 		),
 		mockRequest(/https:\/\/registry\.npmjs\.com\/-\/v1\/search.*from=0.*/, "plugins/registry-response"),
 		mockRequest(/https:\/\/registry\.npmjs\.com\/-\/v1\/search.*from=250.*/, () => ({})),
