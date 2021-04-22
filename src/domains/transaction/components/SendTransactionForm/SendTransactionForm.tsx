@@ -35,7 +35,7 @@ export const SendTransactionForm = ({
 	const { findByType } = useFees();
 
 	const form = useFormContext();
-	const { getValues, setValue, watch } = form;
+	const { getValues, setValue, watch, setError } = form;
 	const { network, senderAddress } = watch();
 
 	const { fee, fees } = watch();
@@ -55,16 +55,6 @@ export const SendTransactionForm = ({
 		};
 
 		if (network) {
-			const selectedNetworkWallets = profile.wallets().findByCoinWithNetwork(network.coin(), network.id());
-			const isFullyRestoredAndSynced = selectedNetworkWallets.every(
-				(wallet) => wallet.hasBeenFullyRestored() && wallet.hasSyncedWithNetwork(),
-			);
-
-			if (!isFullyRestoredAndSynced) {
-				toasts.warning(t("COMMON.ERRORS.NETWORK_ERROR", { network: `${network.coin()} ${network.name()}` }));
-				return;
-			}
-
 			setTransactionFees(network);
 			setDynamicFees(network.can(Coins.FeatureFlag.MiscellaneousDynamicFees));
 
@@ -85,6 +75,14 @@ export const SendTransactionForm = ({
 
 	const handleSelectSender = (address: any) => {
 		setValue("senderAddress", address, { shouldValidate: false, shouldDirty: true });
+
+		const senderWallet = profile.wallets().findByAddress(address);
+		const isFullyRestoredAndSynced = senderWallet?.hasBeenFullyRestored() && senderWallet?.hasSyncedWithNetwork();
+
+		if (!isFullyRestoredAndSynced) {
+			toasts.warning(t("COMMON.ERRORS.NETWORK_ERROR", { network: `${network.coin()} ${network.name()}` }));
+			return;
+		}
 	};
 
 	useEffect(() => {
