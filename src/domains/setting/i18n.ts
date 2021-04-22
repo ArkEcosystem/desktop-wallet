@@ -102,8 +102,8 @@ export const translations: { [key: string]: any } = {
 		SUCCESS: "Your peer settings have been updated",
 		VALIDATION: {
 			HOST_EXISTS: "The host already exists for this network",
-			NOT_VALID: "The '{{field}}' is not valid",
-			NO_PROTOCOL: "The '{{field}}' does not have 'http://' or 'https://'",
+			NOT_VALID: "The {{field}} is not valid",
+			NO_PROTOCOL: "The {{field}} does not have 'http://' or 'https://'",
 		},
 	},
 

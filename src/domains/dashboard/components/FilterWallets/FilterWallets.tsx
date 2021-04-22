@@ -11,7 +11,7 @@ export const FilterWallets = ({ networks, walletsDisplayType, useTestNetworks, o
 
 	const walletDisplayOptions = [
 		{ label: t("COMMON.ALL"), value: "all" },
-		{ label: t("COMMON.FAVORITES"), value: "favorites" },
+		{ label: t("COMMON.STARRED"), value: "starred" },
 		{ label: t("COMMON.LEDGER"), value: "ledger" },
 	];
 

@@ -10,7 +10,7 @@ export const PluginCardSkeleton = () => {
 	return (
 		<div data-testid="PluginCardSkeleton">
 			<Card>
-				<div className="flex items-center space-x-4">
+				<div className="flex items-center space-x-4 overflow-hidden">
 					<div className="flex-shrink-0 w-25 h-25 overflow-hidden rounded-xl">
 						<Skeleton width={100} height={100} />
 					</div>

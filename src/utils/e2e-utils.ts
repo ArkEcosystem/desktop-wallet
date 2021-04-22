@@ -265,7 +265,6 @@ export const createFixture = (name: string, preHooks: RequestMock[] = [], postHo
 			...requestMocks.other,
 			...postHooks,
 			mockRequest(/^https?:\/\//, (request: any) => {
-				console.log(request.url);
 				const mock: { url: string; method: string; body?: string } = {
 					url: request.url,
 					method: request.method,

@@ -1,4 +1,5 @@
 import { useEnvironmentContext } from "app/contexts";
+import { password } from "app/validations/password";
 import { createProfile } from "domains/profile/validations";
 import { settings } from "domains/setting/validations";
 import {
@@ -10,7 +11,7 @@ import {
 	sendTransfer,
 	sendVote,
 } from "domains/transaction/validations";
-import { encryptPassword, receiveFunds, verifyMessage } from "domains/wallet/validations";
+import { receiveFunds, verifyMessage } from "domains/wallet/validations";
 import { useMemo } from "react";
 import { useTranslation } from "react-i18next";
 
@@ -31,7 +32,7 @@ export const useValidation = () => {
 			verifyMessage: verifyMessage(t),
 			createProfile: createProfile(t, env),
 			settings: settings(t, env),
-			encryptPassword: encryptPassword(t),
+			password: password(t),
 		}),
 		[t, env],
 	);
