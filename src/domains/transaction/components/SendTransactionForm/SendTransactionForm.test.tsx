@@ -113,7 +113,6 @@ describe("SendTransactionForm", () => {
 		form.current.register("fee");
 		form.current.register("network");
 
-
 		for (const network of env.availableNetworks()) {
 			if (network.id() === wallet.networkId() && network.coin() === wallet.coinId()) {
 				form.current.setValue("network", network, { shouldValidate: true, shouldDirty: true });
