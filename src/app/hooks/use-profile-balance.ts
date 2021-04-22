@@ -16,7 +16,9 @@ export const useProfileBalance = ({ profile, isLoading = false }: BalanceProps) 
 			if (balance) {
 				setConvertedBalance(balance);
 			}
-		} catch {}
+		} catch {
+			// Ignore error from converted balance
+		}
 	}, [profile]);
 
 	useEffect(() => {
