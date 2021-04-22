@@ -26,7 +26,7 @@ const installExtensions = async () => {
 		const extensions = ["REACT_DEVELOPER_TOOLS"];
 
 		return Promise.all(extensions.map((name) => installer.default(installer[name], forceDownload))).catch(
-			console.log,
+			console.error,
 		);
 	}
 };
@@ -69,7 +69,7 @@ ipcMain.on("open-external", function (_event, url) {
 	try {
 		shell.openExternal(url);
 	} catch (error) {
-		console.log(error);
+		console.error(error);
 	}
 });
 

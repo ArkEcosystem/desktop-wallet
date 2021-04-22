@@ -26,39 +26,44 @@ exports[`Import Profile Select File Step should change back from json to dwe 1`]
       </div>
     </div>
     <div
-      class="h-52 border-2 border-dashed rounded-lg mt-8 border-theme-secondary-300 dark:border-theme-secondary-800 flex flex-col items-center justify-center"
+      class="h-52 border-2 border-dashed rounded-lg mt-8 border-theme-secondary-300 dark:border-theme-secondary-800 p-2"
       data-testid="SelectFile"
     >
       <div
-        class="sc-bdfBwQ fTnhmh"
-        height="40"
-        width="40"
+        class="h-full flex flex-col items-center justify-center rounded-lg transition-colors duration-200 bg-theme-primary-50 dark:bg-theme-secondary-800"
+        data-testid="SelectFile__drop-zone"
       >
-        <svg>
-          json-file.svg
-        </svg>
-      </div>
-      <div
-        class="mt-8"
-      >
-        <span
-          class="font-semibold"
+        <div
+          class="sc-bdfBwQ fTnhmh"
+          height="40"
+          width="40"
         >
-          Drag & Drop or
-           
-        </span>
-        <span
-          class="font-semibold cursor-pointer link"
-          data-testid="SelectFile__browse-files"
-          title="Click here to upload"
+          <svg>
+            json-file.svg
+          </svg>
+        </div>
+        <div
+          class="mt-8"
         >
-          Browse Files
-        </span>
-      </div>
-      <div
-        class="font-semibold text-theme-secondary-500 text-sm mt-2"
-      >
-        Supported format is .json
+          <span
+            class="font-semibold"
+          >
+            Drag & Drop or
+             
+          </span>
+          <span
+            class="font-semibold cursor-pointer link"
+            data-testid="SelectFile__browse-files"
+            title="Click here to upload"
+          >
+            Browse Files
+          </span>
+        </div>
+        <div
+          class="font-semibold text-theme-secondary-500 text-sm mt-2"
+        >
+          Supported format is .json
+        </div>
       </div>
     </div>
     <div
@@ -136,39 +141,44 @@ exports[`Import Profile Select File Step should handle back event 1`] = `
       </div>
     </div>
     <div
-      class="h-52 border-2 border-dashed rounded-lg mt-8 border-theme-secondary-300 dark:border-theme-secondary-800 flex flex-col items-center justify-center"
+      class="h-52 border-2 border-dashed rounded-lg mt-8 border-theme-secondary-300 dark:border-theme-secondary-800 p-2"
       data-testid="SelectFile"
     >
       <div
-        class="sc-bdfBwQ fTnhmh"
-        height="40"
-        width="40"
+        class="h-full flex flex-col items-center justify-center rounded-lg transition-colors duration-200 bg-theme-primary-50 dark:bg-theme-secondary-800"
+        data-testid="SelectFile__drop-zone"
       >
-        <svg>
-          dwe-file.svg
-        </svg>
-      </div>
-      <div
-        class="mt-8"
-      >
-        <span
-          class="font-semibold"
+        <div
+          class="sc-bdfBwQ fTnhmh"
+          height="40"
+          width="40"
         >
-          Drag & Drop or
-           
-        </span>
-        <span
-          class="font-semibold cursor-pointer link"
-          data-testid="SelectFile__browse-files"
-          title="Click here to upload"
+          <svg>
+            dwe-file.svg
+          </svg>
+        </div>
+        <div
+          class="mt-8"
         >
-          Browse Files
-        </span>
-      </div>
-      <div
-        class="font-semibold text-theme-secondary-500 text-sm mt-2"
-      >
-        Supported format is .dwe
+          <span
+            class="font-semibold"
+          >
+            Drag & Drop or
+             
+          </span>
+          <span
+            class="font-semibold cursor-pointer link"
+            data-testid="SelectFile__browse-files"
+            title="Click here to upload"
+          >
+            Browse Files
+          </span>
+        </div>
+        <div
+          class="font-semibold text-theme-secondary-500 text-sm mt-2"
+        >
+          Supported format is .dwe
+        </div>
       </div>
     </div>
     <p
@@ -231,39 +241,44 @@ exports[`Import Profile Select File Step should render file selection for dwe an
       </div>
     </div>
     <div
-      class="h-52 border-2 border-dashed rounded-lg mt-8 border-theme-secondary-300 dark:border-theme-secondary-800 flex flex-col items-center justify-center"
+      class="h-52 border-2 border-dashed rounded-lg mt-8 border-theme-secondary-300 dark:border-theme-secondary-800 p-2"
       data-testid="SelectFile"
     >
       <div
-        class="sc-bdfBwQ fTnhmh"
-        height="40"
-        width="40"
+        class="h-full flex flex-col items-center justify-center rounded-lg transition-colors duration-200 bg-theme-primary-50 dark:bg-theme-secondary-800"
+        data-testid="SelectFile__drop-zone"
       >
-        <svg>
-          dwe-file.svg
-        </svg>
-      </div>
-      <div
-        class="mt-8"
-      >
-        <span
-          class="font-semibold"
+        <div
+          class="sc-bdfBwQ fTnhmh"
+          height="40"
+          width="40"
         >
-          Drag & Drop or
-           
-        </span>
-        <span
-          class="font-semibold cursor-pointer link"
-          data-testid="SelectFile__browse-files"
-          title="Click here to upload"
+          <svg>
+            dwe-file.svg
+          </svg>
+        </div>
+        <div
+          class="mt-8"
         >
-          Browse Files
-        </span>
-      </div>
-      <div
-        class="font-semibold text-theme-secondary-500 text-sm mt-2"
-      >
-        Supported format is .dwe
+          <span
+            class="font-semibold"
+          >
+            Drag & Drop or
+             
+          </span>
+          <span
+            class="font-semibold cursor-pointer link"
+            data-testid="SelectFile__browse-files"
+            title="Click here to upload"
+          >
+            Browse Files
+          </span>
+        </div>
+        <div
+          class="font-semibold text-theme-secondary-500 text-sm mt-2"
+        >
+          Supported format is .dwe
+        </div>
       </div>
     </div>
     <p
@@ -326,39 +341,44 @@ exports[`Import Profile Select File Step should render with dwe fileFormat selec
       </div>
     </div>
     <div
-      class="h-52 border-2 border-dashed rounded-lg mt-8 border-theme-secondary-300 dark:border-theme-secondary-800 flex flex-col items-center justify-center"
+      class="h-52 border-2 border-dashed rounded-lg mt-8 border-theme-secondary-300 dark:border-theme-secondary-800 p-2"
       data-testid="SelectFile"
     >
       <div
-        class="sc-bdfBwQ fTnhmh"
-        height="40"
-        width="40"
+        class="h-full flex flex-col items-center justify-center rounded-lg transition-colors duration-200 bg-theme-primary-50 dark:bg-theme-secondary-800"
+        data-testid="SelectFile__drop-zone"
       >
-        <svg>
-          dwe-file.svg
-        </svg>
-      </div>
-      <div
-        class="mt-8"
-      >
-        <span
-          class="font-semibold"
+        <div
+          class="sc-bdfBwQ fTnhmh"
+          height="40"
+          width="40"
         >
-          Drag & Drop or
-           
-        </span>
-        <span
-          class="font-semibold cursor-pointer link"
-          data-testid="SelectFile__browse-files"
-          title="Click here to upload"
+          <svg>
+            dwe-file.svg
+          </svg>
+        </div>
+        <div
+          class="mt-8"
         >
-          Browse Files
-        </span>
-      </div>
-      <div
-        class="font-semibold text-theme-secondary-500 text-sm mt-2"
-      >
-        Supported format is .dwe
+          <span
+            class="font-semibold"
+          >
+            Drag & Drop or
+             
+          </span>
+          <span
+            class="font-semibold cursor-pointer link"
+            data-testid="SelectFile__browse-files"
+            title="Click here to upload"
+          >
+            Browse Files
+          </span>
+        </div>
+        <div
+          class="font-semibold text-theme-secondary-500 text-sm mt-2"
+        >
+          Supported format is .dwe
+        </div>
       </div>
     </div>
     <p
@@ -421,39 +441,44 @@ exports[`Import Profile Select File Step should render with json fileFormat sele
       </div>
     </div>
     <div
-      class="h-52 border-2 border-dashed rounded-lg mt-8 border-theme-secondary-300 dark:border-theme-secondary-800 flex flex-col items-center justify-center"
+      class="h-52 border-2 border-dashed rounded-lg mt-8 border-theme-secondary-300 dark:border-theme-secondary-800 p-2"
       data-testid="SelectFile"
     >
       <div
-        class="sc-bdfBwQ fTnhmh"
-        height="40"
-        width="40"
+        class="h-full flex flex-col items-center justify-center rounded-lg transition-colors duration-200 bg-theme-primary-50 dark:bg-theme-secondary-800"
+        data-testid="SelectFile__drop-zone"
       >
-        <svg>
-          json-file.svg
-        </svg>
-      </div>
-      <div
-        class="mt-8"
-      >
-        <span
-          class="font-semibold"
+        <div
+          class="sc-bdfBwQ fTnhmh"
+          height="40"
+          width="40"
         >
-          Drag & Drop or
-           
-        </span>
-        <span
-          class="font-semibold cursor-pointer link"
-          data-testid="SelectFile__browse-files"
-          title="Click here to upload"
+          <svg>
+            json-file.svg
+          </svg>
+        </div>
+        <div
+          class="mt-8"
         >
-          Browse Files
-        </span>
-      </div>
-      <div
-        class="font-semibold text-theme-secondary-500 text-sm mt-2"
-      >
-        Supported format is .json
+          <span
+            class="font-semibold"
+          >
+            Drag & Drop or
+             
+          </span>
+          <span
+            class="font-semibold cursor-pointer link"
+            data-testid="SelectFile__browse-files"
+            title="Click here to upload"
+          >
+            Browse Files
+          </span>
+        </div>
+        <div
+          class="font-semibold text-theme-secondary-500 text-sm mt-2"
+        >
+          Supported format is .json
+        </div>
       </div>
     </div>
     <div

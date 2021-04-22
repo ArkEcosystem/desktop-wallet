@@ -15,22 +15,25 @@ describe("Plugin Hooks", () => {
 	});
 
 	it("should has command by key", () => {
-		subject.registerCommand("test.plus", () => console.log("test"));
-		expect(subject.hasCommand("test.plus")).toBe(true);
-	}),
-		it("should execute a command with args", () => {
-			let result = 0;
-			subject.registerCommand("test.plus", (value: number) => (result = result + value));
-			subject.executeCommand("test.plus", 5);
-			expect(result).toBe(5);
+		subject.registerCommand("test.plus", () => {
+			/**/
 		});
+		expect(subject.hasCommand("test.plus")).toBe(true);
+	});
+
+	it("should execute a command with args", () => {
+		let result = 0;
+		subject.registerCommand("test.plus", (value: number) => (result = result + value));
+		subject.executeCommand("test.plus", 5);
+		expect(result).toBe(5);
+	});
 
 	it("should fail to register an invalid command", () => {
 		expect(() => subject.registerCommand("test.plus", 1)).toThrowError();
 	});
 
 	it("should fail to register a duplicate handler", () => {
-		subject.registerCommand("test.log", (value) => console.log(value));
+		subject.registerCommand("test.log", (value) => value);
 		expect(() => subject.registerCommand("test.log", () => void 0)).toThrowError(
 			"Command test.log already registered",
 		);
@@ -53,7 +56,7 @@ describe("Plugin Hooks", () => {
 
 	it("should clear all", () => {
 		subject.addFilter("test", "log", (value: string) => value + "[1]");
-		subject.registerCommand("test.plus", (value: number) => console.log(value));
+		subject.registerCommand("test.plus", (value: number) => value);
 
 		subject.clearAll();
 

@@ -63,7 +63,7 @@ export const useUpdater = () => {
 			setUpdateVersion(updateInfo.version);
 			notifications.notifyWalletUpdate({ version: updateInfo.version });
 		} catch (error) {
-			console.log(`Checking for update failed: ${error.message}`);
+			console.error(`Checking for update failed: ${error.message}`);
 		}
 	}, [notifications]);
 
