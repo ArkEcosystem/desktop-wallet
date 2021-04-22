@@ -177,7 +177,7 @@ describe("PluginManager", () => {
 		expect(asFragment()).toMatchSnapshot();
 	});
 
-	it.only("should switch to category by clicking on view all link", async () => {
+	it("should switch to category by clicking on view all link", async () => {
 		const { asFragment, getByTestId, getAllByText } = rendered;
 
 		await waitFor(() =>
