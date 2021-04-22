@@ -271,10 +271,9 @@ describe("Welcome", () => {
 		// wait for form to be updated
 		await findByTestId("SignIn__submit-button");
 
-		await waitFor(
-			() => expect(getByTestId("Input__error")).toHaveAttribute("data-errortext", "The Password is invalid"),
-			{ timeout: 10000 },
-		);
+		await waitFor(() => expect(getByTestId("Input__error")).toHaveAttribute("data-errortext", "Password invalid"), {
+			timeout: 10000,
+		});
 
 		jest.useRealTimers();
 	});

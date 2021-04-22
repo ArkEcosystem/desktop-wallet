@@ -1,5 +1,5 @@
 export type DashboardConfiguration = {
 	viewType: "list" | "grid";
-	walletsDisplayType: "all" | "favorites" | "ledger";
+	walletsDisplayType: "all" | "starred" | "ledger";
 	selectedNetworkIds: string[];
 };

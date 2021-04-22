@@ -8,7 +8,7 @@ exports[`CreatePeer should render create peer modal 1`] = `
     class="flex fixed inset-0 z-50 justify-center items-center w-full h-full overflow-overlay"
   >
     <div
-      class="fixed z-50 w-full h-full bg-black opacity-50"
+      class="fixed z-50 w-full h-full bg-theme-secondary-900 opacity-60 dark:bg-black dark:opacity-80"
       data-testid="modal__overlay"
     />
     <div
@@ -365,7 +365,6 @@ exports[`CreatePeer should render create peer modal 1`] = `
               </label>
               <label
                 class="flex items-center space-x-2"
-                for="isMultiSignature"
               >
                 <input
                   class="Checkbox-sc-17gwqiq-0 eAQKb"
@@ -375,7 +374,7 @@ exports[`CreatePeer should render create peer modal 1`] = `
                   type="checkbox"
                 />
                 <span
-                  class="text-sm font-semibold text-theme-secondary-text"
+                  class="text-sm font-semibold text-theme-secondary-text select-none"
                 >
                   Multisignature
                 </span>

@@ -1,6 +1,7 @@
 import { Contracts } from "@arkecosystem/platform-sdk-profiles";
 // @README: This import is fine in tests but should be avoided in production code.
 import { ReadOnlyWallet } from "@arkecosystem/platform-sdk-profiles/dist/drivers/memory/wallets/read-only-wallet";
+import * as useRandomNumberHook from "app/hooks/use-random-number";
 import { translations } from "app/i18n/common/i18n";
 import React from "react";
 import { act, fireEvent, render } from "testing-library";
@@ -15,6 +16,8 @@ let votes: Contracts.IReadOnlyWallet[];
 
 describe("DelegateTable", () => {
 	beforeAll(() => {
+		jest.spyOn(useRandomNumberHook, "useRandomNumber").mockImplementation(() => 1);
+
 		delegates = [0, 1, 2].map(
 			(index) =>
 				new ReadOnlyWallet({
@@ -35,6 +38,10 @@ describe("DelegateTable", () => {
 				rank: data[0].rank,
 			}),
 		];
+	});
+
+	afterAll(() => {
+		useRandomNumberHook.useRandomNumber.mockRestore();
 	});
 
 	it("should render", () => {

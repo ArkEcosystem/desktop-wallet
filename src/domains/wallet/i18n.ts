@@ -189,8 +189,8 @@ export const translations: { [key: string]: any } = {
 		REGISTRATION_OPTIONS: "Register",
 		ADDITIONAL_OPTIONS: "Additional Options",
 
-		STAR_WALLET: "Add to favorites",
-		UNSTAR_WALLET: "Remove from favorites",
+		STAR_WALLET: "Star",
+		UNSTAR_WALLET: "Unstar",
 
 		TRANSACTION_HISTORY: {
 			TITLE: "Transaction History",

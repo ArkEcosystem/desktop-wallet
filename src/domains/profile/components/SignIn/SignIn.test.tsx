@@ -83,7 +83,7 @@ describe("SignIn", () => {
 	it("should set an error if the password is invalid", async () => {
 		const onSuccess = jest.fn();
 
-		const { findByTestId, getByTestId, queryByText } = renderWithRouter(
+		const { findByTestId, getByTestId } = renderWithRouter(
 			<SignIn isOpen={true} profile={profile} onSuccess={onSuccess} />,
 		);
 
@@ -114,7 +114,7 @@ describe("SignIn", () => {
 			renderContext = renderWithRouter(<SignIn isOpen={true} profile={profile} onSuccess={onSuccess} />);
 		});
 
-		const { findByTestId, getByTestId, queryByText } = renderContext;
+		const { findByTestId, getByTestId } = renderContext;
 
 		for (const i of [1, 2, 3]) {
 			await act(async () => {
@@ -143,9 +143,8 @@ describe("SignIn", () => {
 		// wait for form to be updated
 		await findByTestId("SignIn__submit-button");
 
-		await waitFor(
-			() => expect(getByTestId("Input__error")).toHaveAttribute("data-errortext", "The Password is invalid"),
-			{ timeout: 10000 },
-		);
+		await waitFor(() => expect(getByTestId("Input__error")).toHaveAttribute("data-errortext", "Password invalid"), {
+			timeout: 10000,
+		});
 	});
 });

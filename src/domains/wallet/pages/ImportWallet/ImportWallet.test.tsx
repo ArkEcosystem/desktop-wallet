@@ -16,7 +16,16 @@ import nock from "nock";
 import React from "react";
 import { FormProvider, useForm } from "react-hook-form";
 import { Route } from "react-router-dom";
-import { env, fireEvent, getDefaultProfileId, render, renderWithRouter, screen, waitFor } from "utils/testing-library";
+import {
+	act as utilsAct,
+	env,
+	fireEvent,
+	getDefaultProfileId,
+	render,
+	renderWithRouter,
+	screen,
+	waitFor,
+} from "utils/testing-library";
 
 import { ImportWallet } from "./ImportWallet";
 import { SecondStep } from "./Step2";
@@ -368,8 +377,13 @@ describe("ImportWallet", () => {
 			expect(getByTestId("EncryptPassword")).toBeTruthy();
 		});
 
-		fireEvent.input(getAllByTestId("InputPassword")[0], { target: { value: "password" } });
-		fireEvent.input(getAllByTestId("InputPassword")[1], { target: { value: "password" } });
+		await utilsAct(async () => {
+			fireEvent.input(getAllByTestId("InputPassword")[0], { target: { value: "password" } });
+		});
+
+		await utilsAct(async () => {
+			fireEvent.input(getAllByTestId("InputPassword")[1], { target: { value: "password" } });
+		});
 
 		await waitFor(() => expect(getByTestId("ImportWallet__continue-button")).not.toBeDisabled());
 		fireEvent.click(getByTestId("ImportWallet__continue-button"));

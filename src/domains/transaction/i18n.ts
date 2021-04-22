@@ -302,12 +302,13 @@ export const translations: { [key: string]: any } = {
 	PAGE_TRANSACTION_SEND: {
 		NETWORK_STEP: {
 			TITLE: "Select a Cryptoasset",
-			SUBTITLE: "Select a cryptoasset to create your new wallet address",
+			SUBTITLE: "Select a cryptoasset to send funds from.",
 		},
 
 		FORM_STEP: {
 			TITLE: "Send {{ticker}}",
 			DESCRIPTION: "Enter details below to send your transaction.",
+			MULTIPLE_UNAVAILBLE: "Multiple Recipient Transactions are not available from Ledger wallets.",
 		},
 	},
 
