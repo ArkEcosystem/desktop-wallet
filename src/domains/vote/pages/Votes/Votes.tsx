@@ -86,7 +86,7 @@ export const Votes = () => {
 						return false;
 					}
 
-					if (walletsDisplayType === "favorites") {
+					if (walletsDisplayType === "starred") {
 						return wallet.isStarred();
 					}
 
@@ -387,7 +387,7 @@ export const Votes = () => {
 					)
 				)
 			) : (
-				<Section>
+				<Section innerClassName="mb-27">
 					<DelegateTable
 						delegates={filteredDelegates}
 						emptyText={t("VOTE.DELEGATE_TABLE.DELEGATES_NOT_FOUND")}
@@ -404,7 +404,6 @@ export const Votes = () => {
 								<Alert className="mb-6">
 									<div data-testid="Votes__resigned-vote">
 										<Trans
-											data-testid="Arara"
 											i18nKey="VOTE.VOTES_PAGE.RESIGNED_VOTE"
 											values={{
 												name: currentVotes

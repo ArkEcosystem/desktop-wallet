@@ -46,6 +46,10 @@ const transport = getDefaultLedgerTransport();
 describe("SendIpfs", () => {
 	beforeAll(async () => {
 		profile = env.profiles().findById(fixtureProfileId);
+
+		await profile.restore();
+		await profile.sync();
+
 		wallet = profile.wallets().findById("ac38fe6d-4b67-4ef1-85be-17c5f6841129");
 
 		jest.spyOn(wallet, "isDelegate").mockImplementation(() => true);
@@ -794,7 +798,6 @@ describe("SendIpfs", () => {
 		const walletWifMock = jest.spyOn(encryptedWallet, "wif").mockImplementation((password) => {
 			const wif = "S9rDfiJ2ar4DpWAQuaXECPTJHfTZ3XjCPv15gjxu4cHJZKzABPyV";
 			return Promise.resolve(wif);
-			console.log("wif");
 		});
 
 		const history = createMemoryHistory();

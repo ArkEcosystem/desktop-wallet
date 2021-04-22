@@ -80,7 +80,7 @@ export const LedgerTabs = ({ activeIndex }: { activeIndex?: number }) => {
 	const activeProfile = useActiveProfile();
 
 	const history = useHistory();
-	const { env, persist } = useEnvironmentContext();
+	const { persist } = useEnvironmentContext();
 	const { importLedgerWallets, isBusy } = useLedgerContext();
 
 	const { t } = useTranslation();
@@ -97,10 +97,10 @@ export const LedgerTabs = ({ activeIndex }: { activeIndex?: number }) => {
 	const importWallets = useCallback(
 		async ({ network, wallets }: any) => {
 			setImportedWallets(wallets);
-			const coin = await env.coin(network.coin(), network.id());
+			const coin = activeProfile.coins().push(network.coin(), network.id());
 			await importLedgerWallets(wallets, coin, activeProfile);
 		},
-		[importLedgerWallets, activeProfile, env],
+		[importLedgerWallets, activeProfile],
 	);
 
 	const saveNames = async ({ names }: { names: Record<string, string> }) => {

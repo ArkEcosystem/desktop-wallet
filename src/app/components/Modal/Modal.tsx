@@ -144,7 +144,7 @@ export const Modal = ({
 	return (
 		<div className="flex fixed inset-0 z-50 justify-center items-center w-full h-full overflow-overlay">
 			<div
-				className="fixed z-50 w-full h-full bg-black opacity-50"
+				className="fixed z-50 w-full h-full bg-theme-secondary-900 opacity-60 dark:bg-black dark:opacity-80"
 				data-testid="modal__overlay"
 				onClick={onClose}
 			/>

@@ -527,7 +527,7 @@ exports[`SendTransfer should display disabled address selection input if selecte
                         data-testid="recipient-address"
                       >
                         <div
-                          class="AddRecipientstyles__AddRecipientWrapper-cy4ht8-0 HduBv"
+                          class="AddRecipientstyles__AddRecipientWrapper-cy4ht8-0 cmbDGH"
                         >
                           <div
                             class="text-theme-secondary-text hover:text-theme-primary-600"
@@ -559,28 +559,36 @@ exports[`SendTransfer should display disabled address selection input if selecte
                             <div
                               class="flex items-stretch select-buttons"
                             >
-                              <button
-                                class="OriginalButton__StyledButton-sc-1y2wptt-0 eXZVBc flex-1"
-                                data-testid="AddRecipient__single"
-                                type="button"
+                              <div
+                                class="flex-1"
                               >
-                                <div
-                                  class="flex relative items-center space-x-2"
+                                <button
+                                  class="OriginalButton__StyledButton-sc-1y2wptt-0 eXZVBc w-full"
+                                  data-testid="AddRecipient__single"
+                                  type="button"
                                 >
-                                  Single
-                                </div>
-                              </button>
-                              <button
-                                class="OriginalButton__StyledButton-sc-1y2wptt-0 ehNoEt flex-1 border-l-0"
-                                data-testid="AddRecipient__multi"
-                                type="button"
+                                  <div
+                                    class="flex relative items-center space-x-2"
+                                  >
+                                    Single
+                                  </div>
+                                </button>
+                              </div>
+                              <div
+                                class="flex-1"
                               >
-                                <div
-                                  class="flex relative items-center space-x-2"
+                                <button
+                                  class="OriginalButton__StyledButton-sc-1y2wptt-0 ehNoEt w-full border-l-0"
+                                  data-testid="AddRecipient__multi"
+                                  type="button"
                                 >
-                                  Multiple
-                                </div>
-                              </button>
+                                  <div
+                                    class="flex relative items-center space-x-2"
+                                  >
+                                    Multiple
+                                  </div>
+                                </button>
+                              </div>
                             </div>
                           </div>
                           <div
@@ -1585,7 +1593,7 @@ exports[`SendTransfer should render 1st step with custom deeplink values and use
         data-testid="recipient-address"
       >
         <div
-          class="AddRecipientstyles__AddRecipientWrapper-cy4ht8-0 HduBv"
+          class="AddRecipientstyles__AddRecipientWrapper-cy4ht8-0 cmbDGH"
         >
           <div
             class="text-theme-secondary-text hover:text-theme-primary-600"
@@ -1617,28 +1625,36 @@ exports[`SendTransfer should render 1st step with custom deeplink values and use
             <div
               class="flex items-stretch select-buttons"
             >
-              <button
-                class="OriginalButton__StyledButton-sc-1y2wptt-0 eXZVBc flex-1"
-                data-testid="AddRecipient__single"
-                type="button"
+              <div
+                class="flex-1"
               >
-                <div
-                  class="flex relative items-center space-x-2"
+                <button
+                  class="OriginalButton__StyledButton-sc-1y2wptt-0 eXZVBc w-full"
+                  data-testid="AddRecipient__single"
+                  type="button"
                 >
-                  Single
-                </div>
-              </button>
-              <button
-                class="OriginalButton__StyledButton-sc-1y2wptt-0 ehNoEt flex-1 border-l-0"
-                data-testid="AddRecipient__multi"
-                type="button"
+                  <div
+                    class="flex relative items-center space-x-2"
+                  >
+                    Single
+                  </div>
+                </button>
+              </div>
+              <div
+                class="flex-1"
               >
-                <div
-                  class="flex relative items-center space-x-2"
+                <button
+                  class="OriginalButton__StyledButton-sc-1y2wptt-0 ehNoEt w-full border-l-0"
+                  data-testid="AddRecipient__multi"
+                  type="button"
                 >
-                  Multiple
-                </div>
-              </button>
+                  <div
+                    class="flex relative items-center space-x-2"
+                  >
+                    Multiple
+                  </div>
+                </button>
+              </div>
             </div>
           </div>
           <div
@@ -2451,7 +2467,7 @@ exports[`SendTransfer should render form and use location state 1`] = `
                         data-testid="recipient-address"
                       >
                         <div
-                          class="AddRecipientstyles__AddRecipientWrapper-cy4ht8-0 HduBv"
+                          class="AddRecipientstyles__AddRecipientWrapper-cy4ht8-0 cmbDGH"
                         >
                           <div
                             class="text-theme-secondary-text hover:text-theme-primary-600"
@@ -2483,28 +2499,36 @@ exports[`SendTransfer should render form and use location state 1`] = `
                             <div
                               class="flex items-stretch select-buttons"
                             >
-                              <button
-                                class="OriginalButton__StyledButton-sc-1y2wptt-0 eXZVBc flex-1"
-                                data-testid="AddRecipient__single"
-                                type="button"
+                              <div
+                                class="flex-1"
                               >
-                                <div
-                                  class="flex relative items-center space-x-2"
+                                <button
+                                  class="OriginalButton__StyledButton-sc-1y2wptt-0 eXZVBc w-full"
+                                  data-testid="AddRecipient__single"
+                                  type="button"
                                 >
-                                  Single
-                                </div>
-                              </button>
-                              <button
-                                class="OriginalButton__StyledButton-sc-1y2wptt-0 ehNoEt flex-1 border-l-0"
-                                data-testid="AddRecipient__multi"
-                                type="button"
+                                  <div
+                                    class="flex relative items-center space-x-2"
+                                  >
+                                    Single
+                                  </div>
+                                </button>
+                              </div>
+                              <div
+                                class="flex-1"
                               >
-                                <div
-                                  class="flex relative items-center space-x-2"
+                                <button
+                                  class="OriginalButton__StyledButton-sc-1y2wptt-0 ehNoEt w-full border-l-0"
+                                  data-testid="AddRecipient__multi"
+                                  type="button"
                                 >
-                                  Multiple
-                                </div>
-                              </button>
+                                  <div
+                                    class="flex relative items-center space-x-2"
+                                  >
+                                    Multiple
+                                  </div>
+                                </button>
+                              </div>
                             </div>
                           </div>
                           <div
@@ -3433,7 +3457,7 @@ exports[`SendTransfer should render form and use location state without memo 1`]
                         data-testid="recipient-address"
                       >
                         <div
-                          class="AddRecipientstyles__AddRecipientWrapper-cy4ht8-0 HduBv"
+                          class="AddRecipientstyles__AddRecipientWrapper-cy4ht8-0 cmbDGH"
                         >
                           <div
                             class="text-theme-secondary-text hover:text-theme-primary-600"
@@ -3465,28 +3489,36 @@ exports[`SendTransfer should render form and use location state without memo 1`]
                             <div
                               class="flex items-stretch select-buttons"
                             >
-                              <button
-                                class="OriginalButton__StyledButton-sc-1y2wptt-0 eXZVBc flex-1"
-                                data-testid="AddRecipient__single"
-                                type="button"
+                              <div
+                                class="flex-1"
                               >
-                                <div
-                                  class="flex relative items-center space-x-2"
+                                <button
+                                  class="OriginalButton__StyledButton-sc-1y2wptt-0 eXZVBc w-full"
+                                  data-testid="AddRecipient__single"
+                                  type="button"
                                 >
-                                  Single
-                                </div>
-                              </button>
-                              <button
-                                class="OriginalButton__StyledButton-sc-1y2wptt-0 ehNoEt flex-1 border-l-0"
-                                data-testid="AddRecipient__multi"
-                                type="button"
+                                  <div
+                                    class="flex relative items-center space-x-2"
+                                  >
+                                    Single
+                                  </div>
+                                </button>
+                              </div>
+                              <div
+                                class="flex-1"
                               >
-                                <div
-                                  class="flex relative items-center space-x-2"
+                                <button
+                                  class="OriginalButton__StyledButton-sc-1y2wptt-0 ehNoEt w-full border-l-0"
+                                  data-testid="AddRecipient__multi"
+                                  type="button"
                                 >
-                                  Multiple
-                                </div>
-                              </button>
+                                  <div
+                                    class="flex relative items-center space-x-2"
+                                  >
+                                    Multiple
+                                  </div>
+                                </button>
+                              </div>
                             </div>
                           </div>
                           <div
@@ -4033,7 +4065,7 @@ exports[`SendTransfer should render form step 1`] = `
         data-testid="recipient-address"
       >
         <div
-          class="AddRecipientstyles__AddRecipientWrapper-cy4ht8-0 HduBv"
+          class="AddRecipientstyles__AddRecipientWrapper-cy4ht8-0 cmbDGH"
         >
           <div
             class="text-theme-secondary-text hover:text-theme-primary-600"
@@ -4065,28 +4097,36 @@ exports[`SendTransfer should render form step 1`] = `
             <div
               class="flex items-stretch select-buttons"
             >
-              <button
-                class="OriginalButton__StyledButton-sc-1y2wptt-0 eXZVBc flex-1"
-                data-testid="AddRecipient__single"
-                type="button"
+              <div
+                class="flex-1"
               >
-                <div
-                  class="flex relative items-center space-x-2"
+                <button
+                  class="OriginalButton__StyledButton-sc-1y2wptt-0 eXZVBc w-full"
+                  data-testid="AddRecipient__single"
+                  type="button"
                 >
-                  Single
-                </div>
-              </button>
-              <button
-                class="OriginalButton__StyledButton-sc-1y2wptt-0 ehNoEt flex-1 border-l-0"
-                data-testid="AddRecipient__multi"
-                type="button"
+                  <div
+                    class="flex relative items-center space-x-2"
+                  >
+                    Single
+                  </div>
+                </button>
+              </div>
+              <div
+                class="flex-1"
               >
-                <div
-                  class="flex relative items-center space-x-2"
+                <button
+                  class="OriginalButton__StyledButton-sc-1y2wptt-0 ehNoEt w-full border-l-0"
+                  data-testid="AddRecipient__multi"
+                  type="button"
                 >
-                  Multiple
-                </div>
-              </button>
+                  <div
+                    class="flex relative items-center space-x-2"
+                  >
+                    Multiple
+                  </div>
+                </button>
+              </div>
             </div>
           </div>
           <div
@@ -4528,7 +4568,7 @@ exports[`SendTransfer should render form step with deeplink values and use them 
         data-testid="recipient-address"
       >
         <div
-          class="AddRecipientstyles__AddRecipientWrapper-cy4ht8-0 HduBv"
+          class="AddRecipientstyles__AddRecipientWrapper-cy4ht8-0 cmbDGH"
         >
           <div
             class="text-theme-secondary-text hover:text-theme-primary-600"
@@ -4560,28 +4600,36 @@ exports[`SendTransfer should render form step with deeplink values and use them 
             <div
               class="flex items-stretch select-buttons"
             >
-              <button
-                class="OriginalButton__StyledButton-sc-1y2wptt-0 eXZVBc flex-1"
-                data-testid="AddRecipient__single"
-                type="button"
+              <div
+                class="flex-1"
               >
-                <div
-                  class="flex relative items-center space-x-2"
+                <button
+                  class="OriginalButton__StyledButton-sc-1y2wptt-0 eXZVBc w-full"
+                  data-testid="AddRecipient__single"
+                  type="button"
                 >
-                  Single
-                </div>
-              </button>
-              <button
-                class="OriginalButton__StyledButton-sc-1y2wptt-0 ehNoEt flex-1 border-l-0"
-                data-testid="AddRecipient__multi"
-                type="button"
+                  <div
+                    class="flex relative items-center space-x-2"
+                  >
+                    Single
+                  </div>
+                </button>
+              </div>
+              <div
+                class="flex-1"
               >
-                <div
-                  class="flex relative items-center space-x-2"
+                <button
+                  class="OriginalButton__StyledButton-sc-1y2wptt-0 ehNoEt w-full border-l-0"
+                  data-testid="AddRecipient__multi"
+                  type="button"
                 >
-                  Multiple
-                </div>
-              </button>
+                  <div
+                    class="flex relative items-center space-x-2"
+                  >
+                    Multiple
+                  </div>
+                </button>
+              </div>
             </div>
           </div>
           <div
@@ -5023,7 +5071,7 @@ exports[`SendTransfer should render form step without test networks 1`] = `
         data-testid="recipient-address"
       >
         <div
-          class="AddRecipientstyles__AddRecipientWrapper-cy4ht8-0 HduBv"
+          class="AddRecipientstyles__AddRecipientWrapper-cy4ht8-0 cmbDGH"
         >
           <div
             class="text-theme-secondary-text hover:text-theme-primary-600"
@@ -5055,28 +5103,36 @@ exports[`SendTransfer should render form step without test networks 1`] = `
             <div
               class="flex items-stretch select-buttons"
             >
-              <button
-                class="OriginalButton__StyledButton-sc-1y2wptt-0 eXZVBc flex-1"
-                data-testid="AddRecipient__single"
-                type="button"
+              <div
+                class="flex-1"
               >
-                <div
-                  class="flex relative items-center space-x-2"
+                <button
+                  class="OriginalButton__StyledButton-sc-1y2wptt-0 eXZVBc w-full"
+                  data-testid="AddRecipient__single"
+                  type="button"
                 >
-                  Single
-                </div>
-              </button>
-              <button
-                class="OriginalButton__StyledButton-sc-1y2wptt-0 ehNoEt flex-1 border-l-0"
-                data-testid="AddRecipient__multi"
-                type="button"
+                  <div
+                    class="flex relative items-center space-x-2"
+                  >
+                    Single
+                  </div>
+                </button>
+              </div>
+              <div
+                class="flex-1"
               >
-                <div
-                  class="flex relative items-center space-x-2"
+                <button
+                  class="OriginalButton__StyledButton-sc-1y2wptt-0 ehNoEt w-full border-l-0"
+                  data-testid="AddRecipient__multi"
+                  type="button"
                 >
-                  Multiple
-                </div>
-              </button>
+                  <div
+                    class="flex relative items-center space-x-2"
+                  >
+                    Multiple
+                  </div>
+                </button>
+              </div>
             </div>
           </div>
           <div
@@ -5679,7 +5735,7 @@ exports[`SendTransfer should render network selection without selected wallet 1`
                           class="text-theme-secondary-text"
                           data-testid="header__subtitle"
                         >
-                          Select a cryptoasset to create your new wallet address
+                          Select a cryptoasset to send funds from.
                         </div>
                       </div>
                     </div>
@@ -5843,7 +5899,7 @@ exports[`SendTransfer should render network step without test networks 1`] = `
           class="text-theme-secondary-text"
           data-testid="header__subtitle"
         >
-          Select a cryptoasset to create your new wallet address
+          Select a cryptoasset to send funds from.
         </div>
       </div>
     </div>
@@ -6288,31 +6344,35 @@ exports[`SendTransfer should render summary step 1`] = `
               class="flex items-center space-x-3"
             >
               <a
-                class="Link__AnchorStyled-sc-1q7sbxr-0 cIuuRE inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary-600 hover:text-theme-primary-700 hover:underline active:text-theme-primary-500"
+                class="Link__AnchorStyled-sc-1q7sbxr-0 kAtXNw pointer-events-none no-underline inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary-600 hover:text-theme-primary-700 hover:underline active:text-theme-primary-500"
                 data-testid="Link"
                 rel="noopener noreferrer"
                 to="https://dexplorer.ark.io/transaction/8f913b6b719e7767d49861c0aec79ced212767645cb793d75d2f1b89abb49877"
               >
                 <span
-                  class="underline-dotted"
+                  class="group"
                 >
                   <span
-                    class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-primary-700"
-                    data-testid="TruncateMiddle"
+                    class="no-underline break-all pointer-events-auto border-b group-hover:border-0 active:border-0 border-dotted"
                   >
-                    8f913b6b719e7…f1b89abb49877
+                    <span
+                      class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-primary-700"
+                      data-testid="TruncateMiddle"
+                    >
+                      8f913b6b719e7…f1b89abb49877
+                    </span>
                   </span>
+                  <div
+                    class="sc-bdfBwQ fPrsah flex-shrink-0 pointer-events-auto inline-block pl-2 text-sm"
+                    data-testid="Link__external"
+                    height="1em"
+                    width="1em"
+                  >
+                    <svg>
+                      redirect.svg
+                    </svg>
+                  </div>
                 </span>
-                <div
-                  class="sc-bdfBwQ fPrsah flex-shrink-0 ml-2 text-sm"
-                  data-testid="Link__external"
-                  height="1em"
-                  width="1em"
-                >
-                  <svg>
-                    redirect.svg
-                  </svg>
-                </div>
               </a>
               <span
                 class="flex text-theme-primary-300 dark:text-theme-secondary-600"
@@ -7085,7 +7145,7 @@ exports[`SendTransfer should select a cryptoasset and select sender without wall
                         data-testid="recipient-address"
                       >
                         <div
-                          class="AddRecipientstyles__AddRecipientWrapper-cy4ht8-0 HduBv"
+                          class="AddRecipientstyles__AddRecipientWrapper-cy4ht8-0 cmbDGH"
                         >
                           <div
                             class="text-theme-secondary-text hover:text-theme-primary-600"
@@ -7117,28 +7177,36 @@ exports[`SendTransfer should select a cryptoasset and select sender without wall
                             <div
                               class="flex items-stretch select-buttons"
                             >
-                              <button
-                                class="OriginalButton__StyledButton-sc-1y2wptt-0 eXZVBc flex-1"
-                                data-testid="AddRecipient__single"
-                                type="button"
+                              <div
+                                class="flex-1"
                               >
-                                <div
-                                  class="flex relative items-center space-x-2"
+                                <button
+                                  class="OriginalButton__StyledButton-sc-1y2wptt-0 eXZVBc w-full"
+                                  data-testid="AddRecipient__single"
+                                  type="button"
                                 >
-                                  Single
-                                </div>
-                              </button>
-                              <button
-                                class="OriginalButton__StyledButton-sc-1y2wptt-0 ehNoEt flex-1 border-l-0"
-                                data-testid="AddRecipient__multi"
-                                type="button"
+                                  <div
+                                    class="flex relative items-center space-x-2"
+                                  >
+                                    Single
+                                  </div>
+                                </button>
+                              </div>
+                              <div
+                                class="flex-1"
                               >
-                                <div
-                                  class="flex relative items-center space-x-2"
+                                <button
+                                  class="OriginalButton__StyledButton-sc-1y2wptt-0 ehNoEt w-full border-l-0"
+                                  data-testid="AddRecipient__multi"
+                                  type="button"
                                 >
-                                  Multiple
-                                </div>
-                              </button>
+                                  <div
+                                    class="flex relative items-center space-x-2"
+                                  >
+                                    Multiple
+                                  </div>
+                                </button>
+                              </div>
                             </div>
                           </div>
                           <div
@@ -7850,7 +7918,7 @@ exports[`SendTransfer should select cryptoasset 1`] = `
                           class="text-theme-secondary-text"
                           data-testid="header__subtitle"
                         >
-                          Select a cryptoasset to create your new wallet address
+                          Select a cryptoasset to send funds from.
                         </div>
                       </div>
                     </div>
@@ -7913,12 +7981,6 @@ exports[`SendTransfer should select cryptoasset 1`] = `
                                 placeholder="Enter a cryptoasset name"
                                 value="ARK Devnet"
                               />
-                              <span
-                                class="absolute inset-y-0 flex items-center font-normal opacity-50 pointer-events-none"
-                                data-testid="Input__suggestion"
-                              >
-                                ARK Devnet
-                              </span>
                             </div>
                           </div>
                         </div>
@@ -8366,31 +8428,35 @@ exports[`SendTransfer should send a single transfer 1`] = `
                               class="flex items-center space-x-3"
                             >
                               <a
-                                class="Link__AnchorStyled-sc-1q7sbxr-0 cIuuRE inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary-600 hover:text-theme-primary-700 hover:underline active:text-theme-primary-500"
+                                class="Link__AnchorStyled-sc-1q7sbxr-0 kAtXNw pointer-events-none no-underline inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary-600 hover:text-theme-primary-700 hover:underline active:text-theme-primary-500"
                                 data-testid="Link"
                                 rel="noopener noreferrer"
                                 to="https://dexplorer.ark.io/transaction/8f913b6b719e7767d49861c0aec79ced212767645cb793d75d2f1b89abb49877"
                               >
                                 <span
-                                  class="underline-dotted"
+                                  class="group"
                                 >
                                   <span
-                                    class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-primary-700"
-                                    data-testid="TruncateMiddle"
+                                    class="no-underline break-all pointer-events-auto border-b group-hover:border-0 active:border-0 border-dotted"
                                   >
-                                    8f913b6b719e7…f1b89abb49877
+                                    <span
+                                      class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-primary-700"
+                                      data-testid="TruncateMiddle"
+                                    >
+                                      8f913b6b719e7…f1b89abb49877
+                                    </span>
                                   </span>
+                                  <div
+                                    class="sc-bdfBwQ fPrsah flex-shrink-0 pointer-events-auto inline-block pl-2 text-sm"
+                                    data-testid="Link__external"
+                                    height="1em"
+                                    width="1em"
+                                  >
+                                    <svg>
+                                      redirect.svg
+                                    </svg>
+                                  </div>
                                 </span>
-                                <div
-                                  class="sc-bdfBwQ fPrsah flex-shrink-0 ml-2 text-sm"
-                                  data-testid="Link__external"
-                                  height="1em"
-                                  width="1em"
-                                >
-                                  <svg>
-                                    redirect.svg
-                                  </svg>
-                                </div>
                               </a>
                               <span
                                 class="flex text-theme-primary-300 dark:text-theme-secondary-600"
@@ -8999,31 +9065,35 @@ exports[`SendTransfer should send a single transfer and show unconfirmed transac
                               class="flex items-center space-x-3"
                             >
                               <a
-                                class="Link__AnchorStyled-sc-1q7sbxr-0 cIuuRE inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary-600 hover:text-theme-primary-700 hover:underline active:text-theme-primary-500"
+                                class="Link__AnchorStyled-sc-1q7sbxr-0 kAtXNw pointer-events-none no-underline inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary-600 hover:text-theme-primary-700 hover:underline active:text-theme-primary-500"
                                 data-testid="Link"
                                 rel="noopener noreferrer"
                                 to="https://dexplorer.ark.io/transaction/8f913b6b719e7767d49861c0aec79ced212767645cb793d75d2f1b89abb49877"
                               >
                                 <span
-                                  class="underline-dotted"
+                                  class="group"
                                 >
                                   <span
-                                    class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-primary-700"
-                                    data-testid="TruncateMiddle"
+                                    class="no-underline break-all pointer-events-auto border-b group-hover:border-0 active:border-0 border-dotted"
                                   >
-                                    8f913b6b719e7…f1b89abb49877
+                                    <span
+                                      class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-primary-700"
+                                      data-testid="TruncateMiddle"
+                                    >
+                                      8f913b6b719e7…f1b89abb49877
+                                    </span>
                                   </span>
+                                  <div
+                                    class="sc-bdfBwQ fPrsah flex-shrink-0 pointer-events-auto inline-block pl-2 text-sm"
+                                    data-testid="Link__external"
+                                    height="1em"
+                                    width="1em"
+                                  >
+                                    <svg>
+                                      redirect.svg
+                                    </svg>
+                                  </div>
                                 </span>
-                                <div
-                                  class="sc-bdfBwQ fPrsah flex-shrink-0 ml-2 text-sm"
-                                  data-testid="Link__external"
-                                  height="1em"
-                                  width="1em"
-                                >
-                                  <svg>
-                                    redirect.svg
-                                  </svg>
-                                </div>
                               </a>
                               <span
                                 class="flex text-theme-primary-300 dark:text-theme-secondary-600"
@@ -9632,31 +9702,35 @@ exports[`SendTransfer should send a single transfer using wallet with encryption
                               class="flex items-center space-x-3"
                             >
                               <a
-                                class="Link__AnchorStyled-sc-1q7sbxr-0 cIuuRE inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary-600 hover:text-theme-primary-700 hover:underline active:text-theme-primary-500"
+                                class="Link__AnchorStyled-sc-1q7sbxr-0 kAtXNw pointer-events-none no-underline inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary-600 hover:text-theme-primary-700 hover:underline active:text-theme-primary-500"
                                 data-testid="Link"
                                 rel="noopener noreferrer"
                                 to="https://dexplorer.ark.io/transaction/8f913b6b719e7767d49861c0aec79ced212767645cb793d75d2f1b89abb49877"
                               >
                                 <span
-                                  class="underline-dotted"
+                                  class="group"
                                 >
                                   <span
-                                    class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-primary-700"
-                                    data-testid="TruncateMiddle"
+                                    class="no-underline break-all pointer-events-auto border-b group-hover:border-0 active:border-0 border-dotted"
                                   >
-                                    8f913b6b719e7…f1b89abb49877
+                                    <span
+                                      class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-primary-700"
+                                      data-testid="TruncateMiddle"
+                                    >
+                                      8f913b6b719e7…f1b89abb49877
+                                    </span>
                                   </span>
+                                  <div
+                                    class="sc-bdfBwQ fPrsah flex-shrink-0 pointer-events-auto inline-block pl-2 text-sm"
+                                    data-testid="Link__external"
+                                    height="1em"
+                                    width="1em"
+                                  >
+                                    <svg>
+                                      redirect.svg
+                                    </svg>
+                                  </div>
                                 </span>
-                                <div
-                                  class="sc-bdfBwQ fPrsah flex-shrink-0 ml-2 text-sm"
-                                  data-testid="Link__external"
-                                  height="1em"
-                                  width="1em"
-                                >
-                                  <svg>
-                                    redirect.svg
-                                  </svg>
-                                </div>
                               </a>
                               <span
                                 class="flex text-theme-primary-300 dark:text-theme-secondary-600"
@@ -10265,31 +10339,35 @@ exports[`SendTransfer should send a single transfer with a high fee by confirmin
                               class="flex items-center space-x-3"
                             >
                               <a
-                                class="Link__AnchorStyled-sc-1q7sbxr-0 cIuuRE inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary-600 hover:text-theme-primary-700 hover:underline active:text-theme-primary-500"
+                                class="Link__AnchorStyled-sc-1q7sbxr-0 kAtXNw pointer-events-none no-underline inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary-600 hover:text-theme-primary-700 hover:underline active:text-theme-primary-500"
                                 data-testid="Link"
                                 rel="noopener noreferrer"
                                 to="https://dexplorer.ark.io/transaction/8f913b6b719e7767d49861c0aec79ced212767645cb793d75d2f1b89abb49877"
                               >
                                 <span
-                                  class="underline-dotted"
+                                  class="group"
                                 >
                                   <span
-                                    class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-primary-700"
-                                    data-testid="TruncateMiddle"
+                                    class="no-underline break-all pointer-events-auto border-b group-hover:border-0 active:border-0 border-dotted"
                                   >
-                                    8f913b6b719e7…f1b89abb49877
+                                    <span
+                                      class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-primary-700"
+                                      data-testid="TruncateMiddle"
+                                    >
+                                      8f913b6b719e7…f1b89abb49877
+                                    </span>
                                   </span>
+                                  <div
+                                    class="sc-bdfBwQ fPrsah flex-shrink-0 pointer-events-auto inline-block pl-2 text-sm"
+                                    data-testid="Link__external"
+                                    height="1em"
+                                    width="1em"
+                                  >
+                                    <svg>
+                                      redirect.svg
+                                    </svg>
+                                  </div>
                                 </span>
-                                <div
-                                  class="sc-bdfBwQ fPrsah flex-shrink-0 ml-2 text-sm"
-                                  data-testid="Link__external"
-                                  height="1em"
-                                  width="1em"
-                                >
-                                  <svg>
-                                    redirect.svg
-                                  </svg>
-                                </div>
                               </a>
                               <span
                                 class="flex text-theme-primary-300 dark:text-theme-secondary-600"
@@ -10898,31 +10976,35 @@ exports[`SendTransfer should send a single transfer with a low fee by confirming
                               class="flex items-center space-x-3"
                             >
                               <a
-                                class="Link__AnchorStyled-sc-1q7sbxr-0 cIuuRE inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary-600 hover:text-theme-primary-700 hover:underline active:text-theme-primary-500"
+                                class="Link__AnchorStyled-sc-1q7sbxr-0 kAtXNw pointer-events-none no-underline inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary-600 hover:text-theme-primary-700 hover:underline active:text-theme-primary-500"
                                 data-testid="Link"
                                 rel="noopener noreferrer"
                                 to="https://dexplorer.ark.io/transaction/8f913b6b719e7767d49861c0aec79ced212767645cb793d75d2f1b89abb49877"
                               >
                                 <span
-                                  class="underline-dotted"
+                                  class="group"
                                 >
                                   <span
-                                    class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-primary-700"
-                                    data-testid="TruncateMiddle"
+                                    class="no-underline break-all pointer-events-auto border-b group-hover:border-0 active:border-0 border-dotted"
                                   >
-                                    8f913b6b719e7…f1b89abb49877
+                                    <span
+                                      class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-primary-700"
+                                      data-testid="TruncateMiddle"
+                                    >
+                                      8f913b6b719e7…f1b89abb49877
+                                    </span>
                                   </span>
+                                  <div
+                                    class="sc-bdfBwQ fPrsah flex-shrink-0 pointer-events-auto inline-block pl-2 text-sm"
+                                    data-testid="Link__external"
+                                    height="1em"
+                                    width="1em"
+                                  >
+                                    <svg>
+                                      redirect.svg
+                                    </svg>
+                                  </div>
                                 </span>
-                                <div
-                                  class="sc-bdfBwQ fPrsah flex-shrink-0 ml-2 text-sm"
-                                  data-testid="Link__external"
-                                  height="1em"
-                                  width="1em"
-                                >
-                                  <svg>
-                                    redirect.svg
-                                  </svg>
-                                </div>
                               </a>
                               <span
                                 class="flex text-theme-primary-300 dark:text-theme-secondary-600"

@@ -3,12 +3,12 @@ import { styled } from "twin.macro";
 const defaultStyle = `
 	& {
 		.select-buttons {
-			button:first-child {
+			div:first-child button {
 				border-top-right-radius: 0;
 				border-bottom-right-radius: 0;
 			}
 
-			button:last-child {
+			div:last-child button {
 				border-top-left-radius: 0;
 				border-bottom-left-radius: 0;
 			}

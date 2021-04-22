@@ -28,6 +28,8 @@ let transport: typeof Transport;
 describe("SignMessage", () => {
 	beforeAll(async () => {
 		profile = env.profiles().findById(getDefaultProfileId());
+		await profile.restore();
+
 		wallet = await profile.wallets().importByMnemonic(mnemonic, "ARK", "ark.devnet");
 		walletUrl = `/profiles/${profile.id()}/wallets/${wallet.id()}`;
 		history.push(walletUrl);
@@ -47,7 +49,7 @@ describe("SignMessage", () => {
 		const { asFragment, getByText } = renderWithRouter(
 			<Route path="/profiles/:profileId/wallets/:walletId">
 				<LedgerProvider transport={transport}>
-					<SignMessage walletId={wallet.id()} isOpen={true} />
+					<SignMessage profile={profile} walletId={wallet.id()} isOpen={true} />
 				</LedgerProvider>
 			</Route>,
 			{
@@ -67,7 +69,7 @@ describe("SignMessage", () => {
 		const { asFragment, getByText } = renderWithRouter(
 			<Route path="/profiles/:profileId/wallets/:walletId">
 				<LedgerProvider transport={transport}>
-					<SignMessage walletId={wallet.id()} isOpen={true} />
+					<SignMessage profile={profile} walletId={wallet.id()} isOpen={true} />
 				</LedgerProvider>
 			</Route>,
 			{
@@ -111,7 +113,7 @@ describe("SignMessage", () => {
 		const { getByTestId, getByText } = renderWithRouter(
 			<Route path="/profiles/:profileId/wallets/:walletId">
 				<LedgerProvider transport={transport}>
-					<SignMessage onSign={onSign} walletId={wallet.id()} isOpen={true} />
+					<SignMessage profile={profile} onSign={onSign} walletId={wallet.id()} isOpen={true} />
 				</LedgerProvider>
 			</Route>,
 			{
@@ -164,7 +166,7 @@ describe("SignMessage", () => {
 		const { getByTestId, getByText } = renderWithRouter(
 			<Route path="/profiles/:profileId/wallets/:walletId">
 				<LedgerProvider transport={transport}>
-					<SignMessage walletId={wallet.id()} isOpen={true} />
+					<SignMessage profile={profile} walletId={wallet.id()} isOpen={true} />
 				</LedgerProvider>
 			</Route>,
 			{
@@ -221,7 +223,7 @@ describe("SignMessage", () => {
 		const { getByTestId, getByText } = renderWithRouter(
 			<Route path="/profiles/:profileId/wallets/:walletId">
 				<LedgerProvider transport={transport}>
-					<SignMessage onSign={onSign} walletId={wallet.id()} isOpen={true} />
+					<SignMessage profile={profile} onSign={onSign} walletId={wallet.id()} isOpen={true} />
 				</LedgerProvider>
 			</Route>,
 			{
@@ -276,7 +278,7 @@ describe("SignMessage", () => {
 		const { getByTestId, getByText } = renderWithRouter(
 			<Route path="/profiles/:profileId/wallets/:walletId">
 				<LedgerProvider transport={transport}>
-					<SignMessage walletId={wallet.id()} isOpen={true} />
+					<SignMessage profile={profile} walletId={wallet.id()} isOpen={true} />
 				</LedgerProvider>
 			</Route>,
 			{
@@ -344,7 +346,7 @@ describe("SignMessage", () => {
 		const { getByTestId, getByText } = renderWithRouter(
 			<Route path="/profiles/:profileId/wallets/:walletId">
 				<LedgerProvider transport={transport}>
-					<SignMessage walletId={wallet.id()} isOpen={true} />
+					<SignMessage profile={profile} walletId={wallet.id()} isOpen={true} />
 				</LedgerProvider>
 			</Route>,
 			{
@@ -406,7 +408,7 @@ describe("SignMessage", () => {
 		const { getByTestId, getByText } = renderWithRouter(
 			<Route path="/profiles/:profileId/wallets/:walletId">
 				<LedgerProvider transport={transport}>
-					<SignMessage walletId={wallet.id()} isOpen={true} />
+					<SignMessage profile={profile} walletId={wallet.id()} isOpen={true} />
 				</LedgerProvider>
 			</Route>,
 			{
@@ -449,7 +451,12 @@ describe("SignMessage", () => {
 		renderWithRouter(
 			<Route path="/profiles/:profileId/wallets/:walletId">
 				<LedgerProvider transport={transport}>
-					<SignMessage messageText="My Custom Message" walletId={wallet.id()} isOpen={true} />
+					<SignMessage
+						profile={profile}
+						messageText="My Custom Message"
+						walletId={wallet.id()}
+						isOpen={true}
+					/>
 				</LedgerProvider>
 			</Route>,
 			{

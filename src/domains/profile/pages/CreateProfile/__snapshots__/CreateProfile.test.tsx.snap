@@ -184,7 +184,7 @@ exports[`CreateProfile should fail password confirmation 1`] = `
                       class="flex items-center space-x-3 divide-x divide-theme-secondary-300 dark:divide-theme-secondary-800 text-theme-danger-500"
                     >
                       <span
-                        data-errortext="'Password' should have at least 6 characters"
+                        data-errortext="Password should have at least 6 characters"
                         data-testid="Input__error"
                       >
                         <div
@@ -1547,7 +1547,7 @@ exports[`CreateProfile should not be able to create new profile if name is too l
                           class="flex items-center space-x-3 divide-x divide-theme-secondary-300 dark:divide-theme-secondary-800 text-theme-danger-500"
                         >
                           <span
-                            data-errortext="'Profile Name' should have at most 42 characters"
+                            data-errortext="Profile Name should have at most 42 characters"
                             data-testid="Input__error"
                           >
                             <div
@@ -2260,7 +2260,7 @@ exports[`CreateProfile should not update the uploaded avatar when removing focus
                           class="flex items-center space-x-3 divide-x divide-theme-secondary-300 dark:divide-theme-secondary-800 text-theme-danger-500"
                         >
                           <span
-                            data-errortext="'Profile Name' is required"
+                            data-errortext="Profile Name required"
                             data-testid="Input__error"
                           >
                             <div
@@ -5758,7 +5758,7 @@ exports[`CreateProfile should update the avatar when removing focus from name in
                           class="flex items-center space-x-3 divide-x divide-theme-secondary-300 dark:divide-theme-secondary-800 text-theme-danger-500"
                         >
                           <span
-                            data-errortext="'Profile Name' is required"
+                            data-errortext="Profile Name required"
                             data-testid="Input__error"
                           >
                             <div

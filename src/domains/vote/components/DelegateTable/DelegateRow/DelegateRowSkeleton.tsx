@@ -1,54 +1,29 @@
 import { Circle } from "app/components/Circle";
+import { TableCell, TableRow } from "app/components/Table";
+import { useRandomNumber } from "app/hooks";
 import React from "react";
 import Skeleton from "react-loading-skeleton";
 
-export const DelegateRowSkeleton = () => (
-	<tr
-		data-testid="DelegateRowSkeleton"
-		className="border-b border-dotted last:border-b-0 border-theme-secondary-300 dark:border-theme-secondary-800"
-	>
-		<td className="py-5">
-			<Circle className="bg-theme-secondary-200 border-theme-secondary-300 dark:border-theme-secondary-800" />
-		</td>
+export const DelegateRowSkeleton = () => {
+	const nameWidth = useRandomNumber(120, 150);
 
-		<td className="py-5">
-			<Skeleton width="80%" height={6} className="mt-4" />
-		</td>
+	return (
+		<TableRow data-testid="DelegateRowSkeleton">
+			<TableCell variant="start">
+				<Skeleton height={16} width={22} />
+			</TableCell>
 
-		<td className="py-5">
-			<Skeleton width="30%" height={6} className="mt-4" />
-		</td>
+			<TableCell innerClassName="space-x-4">
+				<Circle className="border-transparent" size="lg">
+					<Skeleton className="align-top" circle height={44} width={44} />
+				</Circle>
 
-		<td className="py-5">
-			<Skeleton width="40%" height={6} className="mt-4" />
-		</td>
+				<Skeleton height={16} width={nameWidth} />
+			</TableCell>
 
-		<td className="py-5">
-			<div className="flex justify-center h-full">
-				<Skeleton width={24} height={24} />
-			</div>
-		</td>
-
-		<td className="py-5">
-			<Skeleton width="40%" height={6} className="mt-4" />
-		</td>
-
-		<td className="py-5">
-			<Skeleton width="40%" height={6} className="mt-4" />
-		</td>
-
-		<td className="py-5">
-			<Skeleton width="40%" height={6} className="mt-4" />
-		</td>
-
-		<td className="py-5">
-			<Skeleton width="60%" height={6} className="mt-4" />
-		</td>
-
-		<td className="py-5">
-			<div className="text-right">
+			<TableCell variant="end" innerClassName="justify-end">
 				<Skeleton width={100} height={40} />
-			</div>
-		</td>
-	</tr>
-);
+			</TableCell>
+		</TableRow>
+	);
+};

@@ -71,6 +71,10 @@ const createTransactionMock = (wallet: Contracts.IReadWriteWallet) =>
 describe("Registration", () => {
 	beforeAll(async () => {
 		profile = env.profiles().findById(getDefaultProfileId());
+
+		await profile.restore();
+		await profile.sync();
+
 		wallet = profile.wallets().findByAddress("D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD")!;
 		secondWallet = profile.wallets().findByAddress("D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb")!;
 

@@ -93,7 +93,12 @@ export const ReceiveFunds = ({ address, icon, name, network, isOpen, onClose }: 
 				)}
 
 				{isFormOpen && (
-					<Form context={form} onSubmit={console.log}>
+					<Form
+						context={form}
+						onSubmit={() => {
+							/**/
+						}}
+					>
 						<ReceiveFundsForm network={network} />
 					</Form>
 				)}
