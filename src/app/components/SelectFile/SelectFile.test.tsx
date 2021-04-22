@@ -46,6 +46,32 @@ describe("SelectFile", () => {
 		showOpenDialogMock.mockRestore();
 	});
 
+	it("should change background when dragging over drop zone", async () => {
+		const { getByTestId } = render(<SelectFile fileFormat=".json" />);
+
+		expect(getByTestId("SelectFile__drop-zone")).toHaveClass("bg-theme-primary-50 dark:bg-theme-secondary-800");
+
+		act(() => {
+			fireEvent.dragEnter(getByTestId("SelectFile__drop-zone"), {
+				dataTransfer: {
+					files: [{ name: "sample-export.json", path: "path/to/sample-export.json" }],
+				},
+			});
+		});
+
+		await waitFor(() =>
+			expect(getByTestId("SelectFile__drop-zone")).toHaveClass("bg-theme-primary-100 dark:bg-black"),
+		);
+
+		act(() => {
+			fireEvent.dragLeave(getByTestId("SelectFile__drop-zone"), {
+				dataTransfer: {
+					files: [{ name: "sample-export.json", path: "path/to/sample-export.json" }],
+				},
+			});
+		});
+	});
+
 	it("should handle file drop", async () => {
 		//@ts-ignore
 		const onSelect = jest.fn();

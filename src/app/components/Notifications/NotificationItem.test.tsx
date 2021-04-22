@@ -30,7 +30,7 @@ describe("Notifications", () => {
 		const { getByTestId } = render(
 			<table>
 				<tbody>
-					<NotificationItem {...notification} onVisibilityChange={console.log} onAction={onAction} />
+					<NotificationItem {...notification} onAction={onAction} />
 				</tbody>
 			</table>,
 		);

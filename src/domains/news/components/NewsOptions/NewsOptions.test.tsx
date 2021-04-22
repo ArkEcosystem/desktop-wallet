@@ -1,5 +1,5 @@
 import React from "react";
-import { act, fireEvent, render } from "testing-library";
+import { act, fireEvent, render, waitFor } from "utils/testing-library";
 
 import { NewsOptions } from "./NewsOptions";
 
@@ -47,47 +47,6 @@ describe("NewsOptions", () => {
 		expect(onSearch).toBeCalledWith("test query");
 	});
 
-	it("should handle search input pressing the Enter key", () => {
-		const onSearch = jest.fn();
-		const onSubmit = jest.fn();
-
-		const { getByTestId } = render(
-			<NewsOptions
-				selectedCategories={categories}
-				selectedCoins={coins}
-				onSearch={onSearch}
-				onSubmit={onSubmit}
-			/>,
-		);
-
-		act(() => {
-			fireEvent.click(getByTestId("NewsOptions__category-Technical"));
-			fireEvent.click(getByTestId("NetworkOption__ARK"));
-			fireEvent.change(getByTestId("NewsOptions__search"), {
-				target: {
-					value: "test query",
-				},
-			});
-		});
-
-		act(() => {
-			fireEvent.keyDown(getByTestId("NewsOptions__search"), { key: "Escape", code: 27 });
-		});
-
-		expect(onSubmit).not.toHaveBeenCalled();
-
-		act(() => {
-			fireEvent.keyDown(getByTestId("NewsOptions__search"), { key: "Enter", code: 13 });
-		});
-
-		expect(onSearch).toBeCalledWith("test query");
-		expect(onSubmit).toBeCalledWith({
-			categories: expect.arrayContaining(["Technical"]),
-			coins: expect.arrayContaining(["ARK"]),
-			searchQuery: expect.stringMatching("test query"),
-		});
-	});
-
 	it("should limit search query to 32 letters", () => {
 		const onSearch = jest.fn();
 		const { getByTestId } = render(
@@ -114,7 +73,7 @@ describe("NewsOptions", () => {
 		});
 	});
 
-	it("should emit onSubmit with all selected filters", () => {
+	it("should emit onSubmit with all selected filters", async () => {
 		const onSubmit = jest.fn();
 
 		const { getByTestId } = render(
@@ -131,15 +90,13 @@ describe("NewsOptions", () => {
 			});
 		});
 
-		act(() => {
-			fireEvent.click(getByTestId("NewsOptions__submit"));
-		});
-
-		expect(onSubmit).toBeCalledWith({
-			categories: expect.arrayContaining(["Technical"]),
-			coins: expect.arrayContaining(["ARK"]),
-			searchQuery: expect.stringMatching("test query"),
-		});
+		await waitFor(() =>
+			expect(onSubmit).toBeCalledWith({
+				categories: ["Technical"],
+				coins: ["ARK"],
+				searchQuery: "test query",
+			}),
+		);
 	});
 
 	it("should handle multiple selections", () => {
@@ -152,10 +109,6 @@ describe("NewsOptions", () => {
 		act(() => {
 			fireEvent.click(getByTestId("NetworkOption__ETH"));
 			fireEvent.click(getByTestId("NetworkOption__BTC"));
-		});
-
-		act(() => {
-			fireEvent.click(getByTestId("NewsOptions__submit"));
 		});
 
 		expect(onSubmit).toBeCalledWith({

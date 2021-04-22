@@ -798,7 +798,6 @@ describe("SendIpfs", () => {
 		const walletWifMock = jest.spyOn(encryptedWallet, "wif").mockImplementation((password) => {
 			const wif = "S9rDfiJ2ar4DpWAQuaXECPTJHfTZ3XjCPv15gjxu4cHJZKzABPyV";
 			return Promise.resolve(wif);
-			console.log("wif");
 		});
 
 		const history = createMemoryHistory();

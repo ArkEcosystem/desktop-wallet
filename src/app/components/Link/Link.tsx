@@ -1,5 +1,6 @@
 import { Tooltip } from "app/components/Tooltip";
 import { toasts } from "app/services";
+import cn from "classnames";
 import React from "react";
 import { useTranslation } from "react-i18next";
 import { Link as RouterLink, LinkProps } from "react-router-dom";
@@ -9,23 +10,12 @@ import { openExternal } from "utils/electron-utils";
 import { Icon } from "../Icon";
 
 const AnchorStyled = styled.a<{ isExternal: boolean }>`
-	${({ isExternal }) =>
-		isExternal &&
-		css`
-			&:hover,
-			&:active {
-				${tw`no-underline`}
-
-				.underline-dotted {
-					${tw`relative`}
-
-					&:after {
-						content: "";
-						${tw`block w-full border-b absolute bottom-0 border-dotted`}
-					}
-				}
-			}
-		`}
+	${css`
+		&:hover,
+		&:active {
+			${tw`no-underline`}
+		}
+	`}
 `;
 
 type AnchorProps = {
@@ -39,7 +29,7 @@ const Anchor = React.forwardRef<HTMLAnchorElement, AnchorProps>(
 		<AnchorStyled
 			data-testid="Link"
 			isExternal={isExternal!}
-			className="inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary-600 hover:text-theme-primary-700 hover:underline active:text-theme-primary-500"
+			className="pointer-events-none no-underline inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary-600 hover:text-theme-primary-700 hover:underline active:text-theme-primary-500"
 			rel={isExternal ? "noopener noreferrer" : rel}
 			ref={ref}
 			onClick={(event) => {
@@ -49,14 +39,23 @@ const Anchor = React.forwardRef<HTMLAnchorElement, AnchorProps>(
 			}}
 			{...props}
 		>
-			<span className="underline-dotted">{children}</span>
-			{isExternal && showExternalIcon && (
-				<Icon
-					data-testid="Link__external"
-					name="Redirect"
-					className={`flex-shrink-0 ${children ? "ml-2 text-sm" : ""}`}
-				/>
-			)}
+			<span className="group">
+				<span
+					className={cn("no-underline break-all pointer-events-auto", {
+						"border-b group-hover:border-0 active:border-0 border-dotted": isExternal,
+						"hover:border-b": !isExternal,
+					})}
+				>
+					{children}
+				</span>
+				{isExternal && showExternalIcon && (
+					<Icon
+						data-testid="Link__external"
+						name="Redirect"
+						className={cn("flex-shrink-0 pointer-events-auto", { "inline-block pl-2 text-sm": children })}
+					/>
+				)}
+			</span>
 		</AnchorStyled>
 	),
 );

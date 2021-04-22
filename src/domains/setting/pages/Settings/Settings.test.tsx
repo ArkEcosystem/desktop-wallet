@@ -1039,8 +1039,13 @@ describe("Settings", () => {
 
 		expect(() => getByTestId(currentPasswordInput)).toThrow(/Unable to find an element by/);
 
-		fireEvent.input(getByTestId("Password-settings__input--password_1"), { target: { value: "password" } });
-		fireEvent.input(getByTestId("Password-settings__input--password_2"), { target: { value: "password" } });
+		await act(async () => {
+			fireEvent.input(getByTestId("Password-settings__input--password_1"), { target: { value: "password" } });
+		});
+
+		await act(async () => {
+			fireEvent.input(getByTestId("Password-settings__input--password_2"), { target: { value: "password" } });
+		});
 
 		// wait for formState.isValid to be updated
 		await findByTestId("Password-settings__submit-button");
@@ -1118,12 +1123,20 @@ describe("Settings", () => {
 
 		await waitFor(() => expect(getByTestId(currentPasswordInput)).toBeTruthy());
 
-		fireEvent.input(getByTestId(currentPasswordInput), { target: { value: "wrong!" } });
-		fireEvent.input(getByTestId("Password-settings__input--password_1"), {
-			target: { value: "another new password" },
+		await act(async () => {
+			fireEvent.input(getByTestId(currentPasswordInput), { target: { value: "wrong!" } });
 		});
-		fireEvent.input(getByTestId("Password-settings__input--password_2"), {
-			target: { value: "another new password" },
+
+		await act(async () => {
+			fireEvent.input(getByTestId("Password-settings__input--password_1"), {
+				target: { value: "another new password" },
+			});
+		});
+
+		await act(async () => {
+			fireEvent.input(getByTestId("Password-settings__input--password_2"), {
+				target: { value: "another new password" },
+			});
 		});
 
 		// wait for formState.isValid to be updated

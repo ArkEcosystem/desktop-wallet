@@ -57,7 +57,7 @@ describe("useWalletConfig", () => {
 		});
 	});
 
-	it("should render with favorite wallet display type", async () => {
+	it("should render with star wallet display type", async () => {
 		profile.wallets().first().toggleStarred();
 
 		const wrapper = ({ children }: any) => (
@@ -66,13 +66,12 @@ describe("useWalletConfig", () => {
 			</EnvironmentProvider>
 		);
 
-		const { result } = renderHook(
-			() => useWalletConfig({ profile, defaults: { walletsDisplayType: "favorites" } }),
-			{ wrapper },
-		);
+		const { result } = renderHook(() => useWalletConfig({ profile, defaults: { walletsDisplayType: "starred" } }), {
+			wrapper,
+		});
 
 		await waitFor(() => {
-			expect(result.current.walletsDisplayType).toEqual("favorites");
+			expect(result.current.walletsDisplayType).toEqual("starred");
 		});
 	});
 
