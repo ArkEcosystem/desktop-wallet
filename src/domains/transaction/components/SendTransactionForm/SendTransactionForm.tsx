@@ -35,7 +35,7 @@ export const SendTransactionForm = ({
 	const { findByType } = useFees();
 
 	const form = useFormContext();
-	const { getValues, setValue, watch, setError } = form;
+	const { getValues, setValue, watch } = form;
 	const { network, senderAddress } = watch();
 
 	const { fee, fees } = watch();
