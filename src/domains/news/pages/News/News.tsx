@@ -11,7 +11,7 @@ import { httpClient } from "app/services";
 import { BlockfolioAd } from "domains/news/components/BlockfolioAd";
 import { NewsCard, NewsCardSkeleton } from "domains/news/components/NewsCard";
 import { NewsOptions } from "domains/news/components/NewsOptions";
-import React, { useEffect, useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 
 import { AVAILABLE_CATEGORIES } from "../../data";
@@ -53,18 +53,21 @@ export const News = ({ itemsPerPage }: Props) => {
 			setIsLoading(true);
 			setNews([]);
 
-			const query = {
-				coins,
-				page: currentPage,
-				...(categories.length && categories.length !== AVAILABLE_CATEGORIES.length && { categories }),
-				...(searchQuery && { query: searchQuery }),
-			};
+			if (coins.length) {
+				const query = {
+					coins,
+					page: currentPage,
+					...(categories.length && categories.length !== AVAILABLE_CATEGORIES.length && { categories }),
+					...(searchQuery && { query: searchQuery }),
+				};
 
-			const { data, meta }: BlockfolioResponse = await blockfolio.findByCoin(query);
+				const { data, meta }: BlockfolioResponse = await blockfolio.findByCoin(query);
 
-			setNews(data);
+				setNews(data);
+				setTotalCount(meta.total);
+			}
+
 			setIsLoading(false);
-			setTotalCount(meta.total);
 		};
 
 		fetchNews();
@@ -83,10 +86,10 @@ export const News = ({ itemsPerPage }: Props) => {
 		setCurrentPage(page);
 	};
 
-	const handleFilterSubmit = (data: any) => {
+	const handleFilterSubmit = useCallback((data: any) => {
 		setCurrentPage(1);
 		setFilters(data);
-	};
+	}, []);
 
 	return (
 		<Page profile={activeProfile} isBackDisabled={true}>

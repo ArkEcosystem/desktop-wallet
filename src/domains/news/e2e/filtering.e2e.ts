@@ -15,6 +15,35 @@ createFixture(`News filtering`, [
 		"news/filtered",
 	),
 	mockRequest(
+		"https://platform.ark.io/api/coins/signals?coins=ARK&page=1&categories=Technical%2CCommunity%2CEmergency",
+		"news/filtered",
+	),
+	mockRequest(
+		"https://platform.ark.io/api/coins/signals?coins=ARK&page=1&categories=Technical%2CEmergency",
+		"news/filtered",
+	),
+	mockRequest("https://platform.ark.io/api/coins/signals?coins=ARK&page=1&categories=Technical", "news/filtered"),
+	mockRequest(
+		"https://platform.ark.io/api/coins/signals?coins=ARK&page=1&categories=Technical&query=major+league+hacking",
+		"news/filtered",
+	),
+	mockRequest(
+		"https://platform.ark.io/api/coins/signals?coins=ARK%2CETH&page=1&categories=Technical",
+		"news/filtered",
+	),
+	mockRequest(
+		"https://platform.ark.io/api/coins/signals?coins=ARK&page=1&categories=Technical%2CCommunity%2CEmergency&query=major+league+hacking",
+		"news/filtered",
+	),
+	mockRequest(
+		"https://platform.ark.io/api/coins/signals?coins=ARK&page=1&categories=Technical%2CEmergency&query=major+league+hacking",
+		"news/filtered",
+	),
+	mockRequest(
+		"https://platform.ark.io/api/coins/signals?coins=ARK&page=1&categories=Technical&query=major+league+hackin",
+		"news/filtered",
+	),
+	mockRequest(
 		"https://platform.ark.io/api/coins/signals?coins=ARK&page=1&query=fjdskfjdfsdjfkdsfjdsfsd",
 		"news/empty-response",
 	),
@@ -38,7 +67,6 @@ test("should filter news results", async (t) => {
 	}
 
 	await t.click(Selector(`[data-testid="${eth}"]`));
-	await t.click(Selector('[data-testid="NewsOptions__submit"]'));
 
 	await t.expect(Selector('[data-testid="NewsCard"]').exists).ok();
 	await t
@@ -52,8 +80,6 @@ test("should show no results screen", async (t) => {
 
 	const queryInput = Selector('[data-testid="NewsOptions__search"]');
 	await t.typeText(queryInput, query, { replace: true });
-
-	await t.click(Selector(`[data-testid=NewsOptions__submit]`));
 
 	await t.expect(Selector('[data-testid="EmptyResults"]').exists).ok();
 });
