@@ -88,6 +88,19 @@ describe("SendTransactionForm", () => {
 			await waitFor(() => expect(rendered.getByTestId("SelectAddress__wrapper")).toBeTruthy());
 		});
 
+		// Select recipient
+		act(() => {
+			fireEvent.click(rendered.getByTestId("SelectAddress__wrapper"));
+		});
+		expect(rendered.getByTestId("modal__inner")).toBeTruthy();
+
+		act(() => {
+			fireEvent.click(rendered.getAllByTestId("SearchWalletListItem__select-0")[0]);
+		});
+		await waitFor(() =>
+			expect(rendered.getByTestId("SelectAddress__input")).toHaveValue(profile.wallets().first().address()),
+		);
+
 		expect(toastSpy).toHaveBeenCalled();
 
 		walletRestoreMock.mockRestore();
@@ -99,6 +112,7 @@ describe("SendTransactionForm", () => {
 
 		form.current.register("fee");
 		form.current.register("network");
+
 
 		for (const network of env.availableNetworks()) {
 			if (network.id() === wallet.networkId() && network.coin() === wallet.coinId()) {
