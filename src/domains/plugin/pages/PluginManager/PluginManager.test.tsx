@@ -443,7 +443,7 @@ describe("PluginManager", () => {
 		});
 
 		act(() => {
-			fireEvent.click(getAllByTestId("PluginListItem__install")[1]);
+			fireEvent.click(getAllByTestId("PluginListItem__install")[2]);
 		});
 
 		await waitFor(() =>
@@ -480,7 +480,7 @@ describe("PluginManager", () => {
 		});
 
 		act(() => {
-			fireEvent.click(getAllByTestId("PluginListItem__install")[1]);
+			fireEvent.click(getAllByTestId("PluginListItem__install")[2]);
 		});
 
 		await waitFor(() =>

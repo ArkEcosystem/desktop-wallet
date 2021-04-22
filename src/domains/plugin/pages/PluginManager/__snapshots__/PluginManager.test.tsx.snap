@@ -425,7 +425,7 @@ exports[`PluginManager should cancel install plugin 1`] = `
                     <span
                       class="ml-1 text-theme-secondary-500 dark:text-theme-secondary-700"
                     >
-                      2
+                      4
                     </span>
                   </button>
                   <div
@@ -467,7 +467,7 @@ exports[`PluginManager should cancel install plugin 1`] = `
                     <span
                       class="ml-1 text-theme-secondary-500 dark:text-theme-secondary-700"
                     >
-                      1
+                      0
                     </span>
                   </button>
                 </li>
@@ -486,12 +486,6 @@ exports[`PluginManager should cancel install plugin 1`] = `
                 >
                   <span>
                     My Plugins
-                  </span>
-                  <span
-                    class="ml-1 text-theme-secondary-500 dark:text-theme-secondary-700"
-                    data-testid="PluginManagerNavigationBar__my-plugins__count"
-                  >
-                    1
                   </span>
                 </button>
               </div>
@@ -595,6 +589,23 @@ exports[`PluginManager should cancel install plugin 1`] = `
                 >
                   Utility
                 </h2>
+                <span
+                  class="flex items-center font-semibold link space-x-2"
+                  data-testid="PluginManager__latest__utility__view-all"
+                >
+                  <span>
+                    View All
+                  </span>
+                  <div
+                    class="sc-bdfBwQ fGHgjZ"
+                    height="8"
+                    width="8"
+                  >
+                    <svg>
+                      chevron-right.svg
+                    </svg>
+                  </div>
+                </span>
               </div>
               <div
                 data-testid="PluginList"
@@ -877,6 +888,112 @@ exports[`PluginManager should cancel install plugin 1`] = `
                               <img
                                 alt="Logo"
                                 class="object-cover w-full h-full"
+                                src="https://raw.githubusercontent.com/ark-ecosystem-desktop-plugins/explorer/master/images/logo.png"
+                              />
+                            </div>
+                            <div
+                              class="flex items-center space-x-2 text-left"
+                            >
+                              <span
+                                class="font-semibold link flex items-center space-x-2"
+                                data-testid="PluginListItem__link"
+                              >
+                                Ark Explorer
+                              </span>
+                              <div
+                                class="sc-bdfBwQ iNulIV"
+                                height="18"
+                                width="18"
+                              >
+                                <svg>
+                                  official-ark-plugin.svg
+                                </svg>
+                              </div>
+                            </div>
+                          </div>
+                        </td>
+                        <td>
+                          <div
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT"
+                          >
+                            <span>
+                              ARK Ecosystem
+                            </span>
+                          </div>
+                        </td>
+                        <td>
+                          <div
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT"
+                          >
+                            <span>
+                              v0.1.13
+                            </span>
+                          </div>
+                        </td>
+                        <td>
+                          <div
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT"
+                          >
+                            <span>
+                              0 B
+                            </span>
+                          </div>
+                        </td>
+                        <td>
+                          <div
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT"
+                          >
+                            <div
+                              class="flex justify-center items-center mx-auto w-6 h-6 text-theme-secondary-500"
+                              data-testid="PluginListItem__not-installed"
+                            >
+                              <div
+                                class="sc-bdfBwQ fPrsah"
+                                height="1em"
+                                width="1em"
+                              >
+                                <svg>
+                                  dash.svg
+                                </svg>
+                              </div>
+                            </div>
+                          </div>
+                        </td>
+                        <td
+                          class="w-16"
+                        >
+                          <div
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 kjTmcB justify-end"
+                          >
+                            <button
+                              class="OriginalButton__StyledButton-sc-1y2wptt-0 hsoUax flex-1"
+                              data-testid="PluginListItem__install"
+                              type="button"
+                            >
+                              <div
+                                class="flex relative items-center space-x-2"
+                              >
+                                Install
+                              </div>
+                            </button>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr
+                        class="TableRow__TableRowStyled-sc-1br46dw-0 fzBhIQ group"
+                        data-testid="TableRow"
+                      >
+                        <td>
+                          <div
+                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 DpDcR space-x-5"
+                          >
+                            <div
+                              class="PluginImage__PluginImageWrapper-iwox49-0 fITdNR"
+                              data-testid="PluginImage__logo"
+                            >
+                              <img
+                                alt="Logo"
+                                class="object-cover w-full h-full"
                                 src="https://raw.githubusercontent.com/dated/transaction-export-plugin/master/logo.png"
                               />
                             </div>
@@ -1014,294 +1131,11 @@ exports[`PluginManager should cancel install plugin 1`] = `
                 </h2>
               </div>
               <div
-                data-testid="PluginList"
+                class="border border-solid border-theme-secondary-300 dark:border-theme-secondary-800 rounded-lg text-theme-secondary-text p-6"
+                data-testid="PluginList__empty-message"
               >
-                <div
-                  class="Table__TableWrapper-sc-84pst5-0 ccYCKK -mt-3"
-                  role="table"
-                >
-                  <table
-                    cellpadding="0"
-                    class="table-auto"
-                  >
-                    <thead>
-                      <tr
-                        class="border-b border-theme-secondary-300 dark:border-theme-secondary-800"
-                        role="row"
-                      >
-                        <th
-                          class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
-                          colspan="1"
-                          data-testid="table__th--0"
-                          role="columnheader"
-                          style="cursor: pointer;"
-                          title="Toggle SortBy"
-                        >
-                          <div
-                            class="flex flex-inline align-top"
-                          >
-                            <div>
-                              Name
-                            </div>
-                            <div
-                              class="flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity ml-2"
-                            >
-                              <div
-                                class="sc-bdfBwQ kJrqvM transition-transform transform rotate-180"
-                                height="5"
-                                role="img"
-                                width="8"
-                              >
-                                <svg>
-                                  chevron-down.svg
-                                </svg>
-                              </div>
-                            </div>
-                          </div>
-                        </th>
-                        <th
-                          class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
-                          colspan="1"
-                          data-testid="table__th--1"
-                          role="columnheader"
-                          style="cursor: pointer;"
-                          title="Toggle SortBy"
-                        >
-                          <div
-                            class="flex flex-inline align-top"
-                          >
-                            <div>
-                              Author
-                            </div>
-                            <div
-                              class="flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity opacity-0 group-hover:opacity-100 ml-2"
-                            >
-                              <div
-                                class="sc-bdfBwQ kJrqvM transition-transform transform rotate-180"
-                                height="5"
-                                role="img"
-                                width="8"
-                              >
-                                <svg>
-                                  chevron-down.svg
-                                </svg>
-                              </div>
-                            </div>
-                          </div>
-                        </th>
-                        <th
-                          class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
-                          colspan="1"
-                          data-testid="table__th--2"
-                          role="columnheader"
-                          style="cursor: pointer;"
-                          title="Toggle SortBy"
-                        >
-                          <div
-                            class="flex flex-inline align-top"
-                          >
-                            <div>
-                              Version
-                            </div>
-                            <div
-                              class="flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity opacity-0 group-hover:opacity-100 ml-2"
-                            >
-                              <div
-                                class="sc-bdfBwQ kJrqvM transition-transform transform rotate-180"
-                                height="5"
-                                role="img"
-                                width="8"
-                              >
-                                <svg>
-                                  chevron-down.svg
-                                </svg>
-                              </div>
-                            </div>
-                          </div>
-                        </th>
-                        <th
-                          class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
-                          colspan="1"
-                          data-testid="table__th--3"
-                          role="columnheader"
-                          style="cursor: pointer;"
-                          title="Toggle SortBy"
-                        >
-                          <div
-                            class="flex flex-inline align-top"
-                          >
-                            <div>
-                              Size
-                            </div>
-                            <div
-                              class="flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity opacity-0 group-hover:opacity-100 ml-2"
-                            >
-                              <div
-                                class="sc-bdfBwQ kJrqvM transition-transform transform rotate-180"
-                                height="5"
-                                role="img"
-                                width="8"
-                              >
-                                <svg>
-                                  chevron-down.svg
-                                </svg>
-                              </div>
-                            </div>
-                          </div>
-                        </th>
-                        <th
-                          class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold"
-                          colspan="1"
-                          data-testid="table__th--4"
-                          role="columnheader"
-                        >
-                          <div
-                            class="flex flex-inline align-top justify-center no-border"
-                          >
-                            <div>
-                              Status
-                            </div>
-                          </div>
-                        </th>
-                        <th
-                          class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
-                          colspan="1"
-                          data-testid="table__th--5"
-                          role="columnheader"
-                        >
-                          <div
-                            class="flex flex-inline align-top hidden"
-                          >
-                            <div>
-                              Actions
-                            </div>
-                          </div>
-                        </th>
-                      </tr>
-                    </thead>
-                    <tbody
-                      role="rowgroup"
-                    >
-                      <tr
-                        class="TableRow__TableRowStyled-sc-1br46dw-0 fzBhIQ group"
-                        data-testid="TableRow"
-                      >
-                        <td>
-                          <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 DpDcR space-x-5"
-                          >
-                            <div
-                              class="PluginImage__PluginImageWrapper-iwox49-0 fITdNR"
-                              data-testid="PluginImage__placeholder"
-                            >
-                              <svg>
-                                plugin-logo-placeholder.svg
-                              </svg>
-                            </div>
-                            <div
-                              class="flex items-center space-x-2 text-left"
-                            >
-                              <span
-                                class="font-semibold link flex items-center space-x-2"
-                                data-testid="PluginListItem__link"
-                              >
-                                Test Plugin 1
-                              </span>
-                            </div>
-                          </div>
-                        </td>
-                        <td>
-                          <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT"
-                          >
-                            <span>
-                              Unknown
-                            </span>
-                          </div>
-                        </td>
-                        <td>
-                          <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT"
-                          >
-                            <span>
-                              v0.0.0
-                            </span>
-                          </div>
-                        </td>
-                        <td>
-                          <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT"
-                          >
-                            <span>
-                              0 B
-                            </span>
-                          </div>
-                        </td>
-                        <td>
-                          <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT"
-                          >
-                            <div
-                              class="mx-auto text-2xl text-theme-danger-400"
-                              data-testid="PluginListItem__disabled"
-                            >
-                              <div
-                                class="sc-bdfBwQ fPrsah"
-                                height="1em"
-                                width="1em"
-                              >
-                                <svg>
-                                  status-failed.svg
-                                </svg>
-                              </div>
-                            </div>
-                          </div>
-                        </td>
-                        <td
-                          class="w-16"
-                        >
-                          <div
-                            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 kjTmcB justify-end"
-                          >
-                            <div
-                              class="flex items-center space-x-2"
-                            >
-                              <div
-                                class="relative"
-                              >
-                                <span
-                                  data-testid="dropdown__toggle"
-                                >
-                                  <div
-                                    class="relative"
-                                  >
-                                    <button
-                                      class="OriginalButton__StyledButton-sc-1y2wptt-0 koEywu text-left"
-                                      type="button"
-                                    >
-                                      <div
-                                        class="flex relative items-center space-x-2"
-                                      >
-                                        <div
-                                          class="sc-bdfBwQ iyevwF"
-                                          height="20"
-                                          width="20"
-                                        >
-                                          <svg>
-                                            settings.svg
-                                          </svg>
-                                        </div>
-                                      </div>
-                                    </button>
-                                  </div>
-                                </span>
-                              </div>
-                            </div>
-                          </div>
-                        </td>
-                      </tr>
-                    </tbody>
-                  </table>
+                <div>
+                  This category has no available Plugins yet.
                 </div>
               </div>
             </div>
@@ -1745,7 +1579,7 @@ exports[`PluginManager should disable plugin on my-plugins 1`] = `
                     <span
                       class="ml-1 text-theme-secondary-500 dark:text-theme-secondary-700"
                     >
-                      2
+                      4
                     </span>
                   </button>
                   <div
@@ -2650,7 +2484,7 @@ exports[`PluginManager should enable plugin on my-plugins 1`] = `
                     <span
                       class="ml-1 text-theme-secondary-500 dark:text-theme-secondary-700"
                     >
-                      2
+                      4
                     </span>
                   </button>
                   <div
@@ -3555,7 +3389,7 @@ exports[`PluginManager should render 1`] = `
                     <span
                       class="ml-1 text-theme-secondary-500 dark:text-theme-secondary-700"
                     >
-                      2
+                      4
                     </span>
                   </button>
                   <div
@@ -3860,6 +3694,23 @@ exports[`PluginManager should render 1`] = `
                 >
                   Utility
                 </h2>
+                <span
+                  class="flex items-center font-semibold link space-x-2"
+                  data-testid="PluginManager__latest__utility__view-all"
+                >
+                  <span>
+                    View All
+                  </span>
+                  <div
+                    class="sc-bdfBwQ fGHgjZ"
+                    height="8"
+                    width="8"
+                  >
+                    <svg>
+                      chevron-right.svg
+                    </svg>
+                  </div>
+                </span>
               </div>
               <div
                 data-testid="PluginGrid"
@@ -4052,51 +3903,106 @@ exports[`PluginManager should render 1`] = `
                     </div>
                   </div>
                   <div
-                    class="Cardstyles__Wrapper-sc-1uddqgb-0 eJQzer"
-                    data-testid="Card"
+                    data-testid="PluginCard--@arkecosystem/desktop-wallet-explorer"
                   >
                     <div
-                      class="flex items-center space-x-4"
+                      class="Cardstyles__Wrapper-sc-1uddqgb-0 bVJHxj"
+                      data-testid="Card"
                     >
                       <div
-                        class="h-25 w-25 rounded-xl border-2 border-theme-primary-100 dark:border-theme-secondary-800"
-                      />
-                      <div
-                        class="flex flex-col truncate"
+                        class="flex items-center space-x-4"
                       >
-                        <span
-                          class="text-sm font-semibold text-theme-primary-100 dark:text-theme-secondary-800 truncate"
-                        >
-                          Author
-                        </span>
                         <div
-                          class="mt-1 text-lg font-bold text-theme-primary-100 dark:text-theme-secondary-800 truncate"
-                        >
-                          Name
-                        </div>
-                        <div
-                          class="flex items-center space-x-2 mt-4 text-theme-primary-100 dark:text-theme-secondary-800"
+                          class="flex-shrink-0 w-25 h-25 overflow-hidden rounded-lg"
                         >
                           <div
-                            class="sc-bdfBwQ iyevwF"
-                            height="20"
-                            width="20"
+                            class="PluginImage__PluginImageWrapper-iwox49-0 cNxevm"
+                            data-testid="PluginImage__logo"
                           >
-                            <svg>
-                              category.svg
-                            </svg>
+                            <img
+                              alt="Logo"
+                              class="object-cover w-full h-full"
+                              src="https://raw.githubusercontent.com/ark-ecosystem-desktop-plugins/explorer/master/images/logo.png"
+                            />
                           </div>
+                        </div>
+                        <div
+                          class="flex flex-col truncate"
+                        >
                           <span
-                            class="text-sm font-semibold"
+                            class="text-sm font-semibold truncate text-theme-secondary-500 dark:text-theme-secondary-700"
                           >
-                            Utility
+                            ARK Ecosystem
+                          </span>
+                          <div
+                            class="flex items-center space-x-2 mt-1 text-lg font-bold truncate text-theme-primary-600 dark:text-theme-secondary-200"
+                          >
+                            <div
+                              class="truncate"
+                            >
+                              Ark Explorer
+                            </div>
+                            <span>
+                              <div
+                                class="sc-bdfBwQ fpbFeh"
+                                height="16"
+                                width="16"
+                              >
+                                <svg>
+                                  official-ark-plugin.svg
+                                </svg>
+                              </div>
+                            </span>
+                          </div>
+                          <div
+                            class="flex items-center space-x-2 mt-4 dark:text-theme-secondary-600"
+                          >
+                            <div
+                              class="sc-bdfBwQ iyevwF"
+                              height="20"
+                              width="20"
+                            >
+                              <svg>
+                                category.svg
+                              </svg>
+                            </div>
+                            <span
+                              class="text-sm font-semibold"
+                            >
+                              Utility
+                            </span>
+                          </div>
+                        </div>
+                      </div>
+                      <div
+                        class="flex absolute -top-1 -right-1 items-center m-4 space-x-1"
+                      >
+                        <div
+                          class="flex items-center space-x-2"
+                        />
+                        <div
+                          class="relative"
+                        >
+                          <span
+                            data-testid="dropdown__toggle"
+                          >
+                            <div
+                              class="flex overflow-hidden justify-center w-4"
+                            >
+                              <div
+                                class="sc-bdfBwQ fPrsah p-1 transition-colors duration-200 cursor-pointer text-theme-primary-300 dark:text-theme-secondary-600 hover:text-theme-danger-400"
+                                height="1em"
+                                width="1em"
+                              >
+                                <svg>
+                                  settings.svg
+                                </svg>
+                              </div>
+                            </div>
                           </span>
                         </div>
                       </div>
                     </div>
-                    <div
-                      class="flex absolute -top-1 -right-1 items-center m-4 space-x-1"
-                    />
                   </div>
                 </div>
               </div>
@@ -4935,7 +4841,7 @@ exports[`PluginManager should search for plugin 1`] = `
                     <span
                       class="ml-1 text-theme-secondary-500 dark:text-theme-secondary-700"
                     >
-                      2
+                      4
                     </span>
                   </button>
                   <div
@@ -4977,7 +4883,7 @@ exports[`PluginManager should search for plugin 1`] = `
                     <span
                       class="ml-1 text-theme-secondary-500 dark:text-theme-secondary-700"
                     >
-                      1
+                      0
                     </span>
                   </button>
                 </li>
@@ -4996,12 +4902,6 @@ exports[`PluginManager should search for plugin 1`] = `
                 >
                   <span>
                     My Plugins
-                  </span>
-                  <span
-                    class="ml-1 text-theme-secondary-500 dark:text-theme-secondary-700"
-                    data-testid="PluginManagerNavigationBar__my-plugins__count"
-                  >
-                    1
                   </span>
                 </button>
               </div>
@@ -6480,7 +6380,7 @@ exports[`PluginManager should toggle between list and grid on all 1`] = `
                     <span
                       class="ml-1 text-theme-secondary-500 dark:text-theme-secondary-700"
                     >
-                      2
+                      4
                     </span>
                   </button>
                   <div
@@ -6751,6 +6651,210 @@ exports[`PluginManager should toggle between list and grid on all 1`] = `
                               Ark Delegate Calculator
                             </div>
                             <span />
+                          </div>
+                          <div
+                            class="flex items-center space-x-2 mt-4 dark:text-theme-secondary-600"
+                          >
+                            <div
+                              class="sc-bdfBwQ iyevwF"
+                              height="20"
+                              width="20"
+                            >
+                              <svg>
+                                category.svg
+                              </svg>
+                            </div>
+                            <span
+                              class="text-sm font-semibold"
+                            >
+                              Utility
+                            </span>
+                          </div>
+                        </div>
+                      </div>
+                      <div
+                        class="flex absolute -top-1 -right-1 items-center m-4 space-x-1"
+                      >
+                        <div
+                          class="flex items-center space-x-2"
+                        />
+                        <div
+                          class="relative"
+                        >
+                          <span
+                            data-testid="dropdown__toggle"
+                          >
+                            <div
+                              class="flex overflow-hidden justify-center w-4"
+                            >
+                              <div
+                                class="sc-bdfBwQ fPrsah p-1 transition-colors duration-200 cursor-pointer text-theme-primary-300 dark:text-theme-secondary-600 hover:text-theme-danger-400"
+                                height="1em"
+                                width="1em"
+                              >
+                                <svg>
+                                  settings.svg
+                                </svg>
+                              </div>
+                            </div>
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    data-testid="PluginCard--@arkecosystem/desktop-wallet-explorer"
+                  >
+                    <div
+                      class="Cardstyles__Wrapper-sc-1uddqgb-0 bVJHxj"
+                      data-testid="Card"
+                    >
+                      <div
+                        class="flex items-center space-x-4"
+                      >
+                        <div
+                          class="flex-shrink-0 w-25 h-25 overflow-hidden rounded-lg"
+                        >
+                          <div
+                            class="PluginImage__PluginImageWrapper-iwox49-0 cNxevm"
+                            data-testid="PluginImage__logo"
+                          >
+                            <img
+                              alt="Logo"
+                              class="object-cover w-full h-full"
+                              src="https://raw.githubusercontent.com/ark-ecosystem-desktop-plugins/explorer/master/images/logo.png"
+                            />
+                          </div>
+                        </div>
+                        <div
+                          class="flex flex-col truncate"
+                        >
+                          <span
+                            class="text-sm font-semibold truncate text-theme-secondary-500 dark:text-theme-secondary-700"
+                          >
+                            ARK Ecosystem
+                          </span>
+                          <div
+                            class="flex items-center space-x-2 mt-1 text-lg font-bold truncate text-theme-primary-600 dark:text-theme-secondary-200"
+                          >
+                            <div
+                              class="truncate"
+                            >
+                              Ark Explorer
+                            </div>
+                            <span>
+                              <div
+                                class="sc-bdfBwQ fpbFeh"
+                                height="16"
+                                width="16"
+                              >
+                                <svg>
+                                  official-ark-plugin.svg
+                                </svg>
+                              </div>
+                            </span>
+                          </div>
+                          <div
+                            class="flex items-center space-x-2 mt-4 dark:text-theme-secondary-600"
+                          >
+                            <div
+                              class="sc-bdfBwQ iyevwF"
+                              height="20"
+                              width="20"
+                            >
+                              <svg>
+                                category.svg
+                              </svg>
+                            </div>
+                            <span
+                              class="text-sm font-semibold"
+                            >
+                              Utility
+                            </span>
+                          </div>
+                        </div>
+                      </div>
+                      <div
+                        class="flex absolute -top-1 -right-1 items-center m-4 space-x-1"
+                      >
+                        <div
+                          class="flex items-center space-x-2"
+                        />
+                        <div
+                          class="relative"
+                        >
+                          <span
+                            data-testid="dropdown__toggle"
+                          >
+                            <div
+                              class="flex overflow-hidden justify-center w-4"
+                            >
+                              <div
+                                class="sc-bdfBwQ fPrsah p-1 transition-colors duration-200 cursor-pointer text-theme-primary-300 dark:text-theme-secondary-600 hover:text-theme-danger-400"
+                                height="1em"
+                                width="1em"
+                              >
+                                <svg>
+                                  settings.svg
+                                </svg>
+                              </div>
+                            </div>
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    data-testid="PluginCard--@arkecosystem/desktop-wallet-sound-notifications"
+                  >
+                    <div
+                      class="Cardstyles__Wrapper-sc-1uddqgb-0 bVJHxj"
+                      data-testid="Card"
+                    >
+                      <div
+                        class="flex items-center space-x-4"
+                      >
+                        <div
+                          class="flex-shrink-0 w-25 h-25 overflow-hidden rounded-lg"
+                        >
+                          <div
+                            class="PluginImage__PluginImageWrapper-iwox49-0 cNxevm"
+                            data-testid="PluginImage__logo"
+                          >
+                            <img
+                              alt="Logo"
+                              class="object-cover w-full h-full"
+                              src="https://raw.githubusercontent.com/ark-ecosystem-desktop-plugins/sound-notifications/master/logo.png"
+                            />
+                          </div>
+                        </div>
+                        <div
+                          class="flex flex-col truncate"
+                        >
+                          <span
+                            class="text-sm font-semibold truncate text-theme-secondary-500 dark:text-theme-secondary-700"
+                          >
+                            ARK Ecosystem
+                          </span>
+                          <div
+                            class="flex items-center space-x-2 mt-1 text-lg font-bold truncate text-theme-primary-600 dark:text-theme-secondary-200"
+                          >
+                            <div
+                              class="truncate"
+                            >
+                              Sound Notifications
+                            </div>
+                            <span>
+                              <div
+                                class="sc-bdfBwQ fpbFeh"
+                                height="16"
+                                width="16"
+                              >
+                                <svg>
+                                  official-ark-plugin.svg
+                                </svg>
+                              </div>
+                            </span>
                           </div>
                           <div
                             class="flex items-center space-x-2 mt-4 dark:text-theme-secondary-600"
@@ -7241,7 +7345,7 @@ exports[`PluginManager should toggle between list and grid on latest 1`] = `
                     <span
                       class="ml-1 text-theme-secondary-500 dark:text-theme-secondary-700"
                     >
-                      2
+                      4
                     </span>
                   </button>
                   <div
@@ -7546,6 +7650,23 @@ exports[`PluginManager should toggle between list and grid on latest 1`] = `
                 >
                   Utility
                 </h2>
+                <span
+                  class="flex items-center font-semibold link space-x-2"
+                  data-testid="PluginManager__latest__utility__view-all"
+                >
+                  <span>
+                    View All
+                  </span>
+                  <div
+                    class="sc-bdfBwQ fGHgjZ"
+                    height="8"
+                    width="8"
+                  >
+                    <svg>
+                      chevron-right.svg
+                    </svg>
+                  </div>
+                </span>
               </div>
               <div
                 data-testid="PluginGrid"
@@ -7738,51 +7859,106 @@ exports[`PluginManager should toggle between list and grid on latest 1`] = `
                     </div>
                   </div>
                   <div
-                    class="Cardstyles__Wrapper-sc-1uddqgb-0 eJQzer"
-                    data-testid="Card"
+                    data-testid="PluginCard--@arkecosystem/desktop-wallet-explorer"
                   >
                     <div
-                      class="flex items-center space-x-4"
+                      class="Cardstyles__Wrapper-sc-1uddqgb-0 bVJHxj"
+                      data-testid="Card"
                     >
                       <div
-                        class="h-25 w-25 rounded-xl border-2 border-theme-primary-100 dark:border-theme-secondary-800"
-                      />
-                      <div
-                        class="flex flex-col truncate"
+                        class="flex items-center space-x-4"
                       >
-                        <span
-                          class="text-sm font-semibold text-theme-primary-100 dark:text-theme-secondary-800 truncate"
-                        >
-                          Author
-                        </span>
                         <div
-                          class="mt-1 text-lg font-bold text-theme-primary-100 dark:text-theme-secondary-800 truncate"
-                        >
-                          Name
-                        </div>
-                        <div
-                          class="flex items-center space-x-2 mt-4 text-theme-primary-100 dark:text-theme-secondary-800"
+                          class="flex-shrink-0 w-25 h-25 overflow-hidden rounded-lg"
                         >
                           <div
-                            class="sc-bdfBwQ iyevwF"
-                            height="20"
-                            width="20"
+                            class="PluginImage__PluginImageWrapper-iwox49-0 cNxevm"
+                            data-testid="PluginImage__logo"
                           >
-                            <svg>
-                              category.svg
-                            </svg>
+                            <img
+                              alt="Logo"
+                              class="object-cover w-full h-full"
+                              src="https://raw.githubusercontent.com/ark-ecosystem-desktop-plugins/explorer/master/images/logo.png"
+                            />
                           </div>
+                        </div>
+                        <div
+                          class="flex flex-col truncate"
+                        >
                           <span
-                            class="text-sm font-semibold"
+                            class="text-sm font-semibold truncate text-theme-secondary-500 dark:text-theme-secondary-700"
                           >
-                            Utility
+                            ARK Ecosystem
+                          </span>
+                          <div
+                            class="flex items-center space-x-2 mt-1 text-lg font-bold truncate text-theme-primary-600 dark:text-theme-secondary-200"
+                          >
+                            <div
+                              class="truncate"
+                            >
+                              Ark Explorer
+                            </div>
+                            <span>
+                              <div
+                                class="sc-bdfBwQ fpbFeh"
+                                height="16"
+                                width="16"
+                              >
+                                <svg>
+                                  official-ark-plugin.svg
+                                </svg>
+                              </div>
+                            </span>
+                          </div>
+                          <div
+                            class="flex items-center space-x-2 mt-4 dark:text-theme-secondary-600"
+                          >
+                            <div
+                              class="sc-bdfBwQ iyevwF"
+                              height="20"
+                              width="20"
+                            >
+                              <svg>
+                                category.svg
+                              </svg>
+                            </div>
+                            <span
+                              class="text-sm font-semibold"
+                            >
+                              Utility
+                            </span>
+                          </div>
+                        </div>
+                      </div>
+                      <div
+                        class="flex absolute -top-1 -right-1 items-center m-4 space-x-1"
+                      >
+                        <div
+                          class="flex items-center space-x-2"
+                        />
+                        <div
+                          class="relative"
+                        >
+                          <span
+                            data-testid="dropdown__toggle"
+                          >
+                            <div
+                              class="flex overflow-hidden justify-center w-4"
+                            >
+                              <div
+                                class="sc-bdfBwQ fPrsah p-1 transition-colors duration-200 cursor-pointer text-theme-primary-300 dark:text-theme-secondary-600 hover:text-theme-danger-400"
+                                height="1em"
+                                width="1em"
+                              >
+                                <svg>
+                                  settings.svg
+                                </svg>
+                              </div>
+                            </div>
                           </span>
                         </div>
                       </div>
                     </div>
-                    <div
-                      class="flex absolute -top-1 -right-1 items-center m-4 space-x-1"
-                    />
                   </div>
                 </div>
               </div>
@@ -8567,7 +8743,7 @@ exports[`PluginManager should toggle between list and grid on utility tab 1`] = 
                     <span
                       class="ml-1 text-theme-secondary-500 dark:text-theme-secondary-700"
                     >
-                      2
+                      4
                     </span>
                   </button>
                   <div
@@ -8838,6 +9014,210 @@ exports[`PluginManager should toggle between list and grid on utility tab 1`] = 
                               Ark Delegate Calculator
                             </div>
                             <span />
+                          </div>
+                          <div
+                            class="flex items-center space-x-2 mt-4 dark:text-theme-secondary-600"
+                          >
+                            <div
+                              class="sc-bdfBwQ iyevwF"
+                              height="20"
+                              width="20"
+                            >
+                              <svg>
+                                category.svg
+                              </svg>
+                            </div>
+                            <span
+                              class="text-sm font-semibold"
+                            >
+                              Utility
+                            </span>
+                          </div>
+                        </div>
+                      </div>
+                      <div
+                        class="flex absolute -top-1 -right-1 items-center m-4 space-x-1"
+                      >
+                        <div
+                          class="flex items-center space-x-2"
+                        />
+                        <div
+                          class="relative"
+                        >
+                          <span
+                            data-testid="dropdown__toggle"
+                          >
+                            <div
+                              class="flex overflow-hidden justify-center w-4"
+                            >
+                              <div
+                                class="sc-bdfBwQ fPrsah p-1 transition-colors duration-200 cursor-pointer text-theme-primary-300 dark:text-theme-secondary-600 hover:text-theme-danger-400"
+                                height="1em"
+                                width="1em"
+                              >
+                                <svg>
+                                  settings.svg
+                                </svg>
+                              </div>
+                            </div>
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    data-testid="PluginCard--@arkecosystem/desktop-wallet-explorer"
+                  >
+                    <div
+                      class="Cardstyles__Wrapper-sc-1uddqgb-0 bVJHxj"
+                      data-testid="Card"
+                    >
+                      <div
+                        class="flex items-center space-x-4"
+                      >
+                        <div
+                          class="flex-shrink-0 w-25 h-25 overflow-hidden rounded-lg"
+                        >
+                          <div
+                            class="PluginImage__PluginImageWrapper-iwox49-0 cNxevm"
+                            data-testid="PluginImage__logo"
+                          >
+                            <img
+                              alt="Logo"
+                              class="object-cover w-full h-full"
+                              src="https://raw.githubusercontent.com/ark-ecosystem-desktop-plugins/explorer/master/images/logo.png"
+                            />
+                          </div>
+                        </div>
+                        <div
+                          class="flex flex-col truncate"
+                        >
+                          <span
+                            class="text-sm font-semibold truncate text-theme-secondary-500 dark:text-theme-secondary-700"
+                          >
+                            ARK Ecosystem
+                          </span>
+                          <div
+                            class="flex items-center space-x-2 mt-1 text-lg font-bold truncate text-theme-primary-600 dark:text-theme-secondary-200"
+                          >
+                            <div
+                              class="truncate"
+                            >
+                              Ark Explorer
+                            </div>
+                            <span>
+                              <div
+                                class="sc-bdfBwQ fpbFeh"
+                                height="16"
+                                width="16"
+                              >
+                                <svg>
+                                  official-ark-plugin.svg
+                                </svg>
+                              </div>
+                            </span>
+                          </div>
+                          <div
+                            class="flex items-center space-x-2 mt-4 dark:text-theme-secondary-600"
+                          >
+                            <div
+                              class="sc-bdfBwQ iyevwF"
+                              height="20"
+                              width="20"
+                            >
+                              <svg>
+                                category.svg
+                              </svg>
+                            </div>
+                            <span
+                              class="text-sm font-semibold"
+                            >
+                              Utility
+                            </span>
+                          </div>
+                        </div>
+                      </div>
+                      <div
+                        class="flex absolute -top-1 -right-1 items-center m-4 space-x-1"
+                      >
+                        <div
+                          class="flex items-center space-x-2"
+                        />
+                        <div
+                          class="relative"
+                        >
+                          <span
+                            data-testid="dropdown__toggle"
+                          >
+                            <div
+                              class="flex overflow-hidden justify-center w-4"
+                            >
+                              <div
+                                class="sc-bdfBwQ fPrsah p-1 transition-colors duration-200 cursor-pointer text-theme-primary-300 dark:text-theme-secondary-600 hover:text-theme-danger-400"
+                                height="1em"
+                                width="1em"
+                              >
+                                <svg>
+                                  settings.svg
+                                </svg>
+                              </div>
+                            </div>
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    data-testid="PluginCard--@arkecosystem/desktop-wallet-sound-notifications"
+                  >
+                    <div
+                      class="Cardstyles__Wrapper-sc-1uddqgb-0 bVJHxj"
+                      data-testid="Card"
+                    >
+                      <div
+                        class="flex items-center space-x-4"
+                      >
+                        <div
+                          class="flex-shrink-0 w-25 h-25 overflow-hidden rounded-lg"
+                        >
+                          <div
+                            class="PluginImage__PluginImageWrapper-iwox49-0 cNxevm"
+                            data-testid="PluginImage__logo"
+                          >
+                            <img
+                              alt="Logo"
+                              class="object-cover w-full h-full"
+                              src="https://raw.githubusercontent.com/ark-ecosystem-desktop-plugins/sound-notifications/master/logo.png"
+                            />
+                          </div>
+                        </div>
+                        <div
+                          class="flex flex-col truncate"
+                        >
+                          <span
+                            class="text-sm font-semibold truncate text-theme-secondary-500 dark:text-theme-secondary-700"
+                          >
+                            ARK Ecosystem
+                          </span>
+                          <div
+                            class="flex items-center space-x-2 mt-1 text-lg font-bold truncate text-theme-primary-600 dark:text-theme-secondary-200"
+                          >
+                            <div
+                              class="truncate"
+                            >
+                              Sound Notifications
+                            </div>
+                            <span>
+                              <div
+                                class="sc-bdfBwQ fpbFeh"
+                                height="16"
+                                width="16"
+                              >
+                                <svg>
+                                  official-ark-plugin.svg
+                                </svg>
+                              </div>
+                            </span>
                           </div>
                           <div
                             class="flex items-center space-x-2 mt-4 dark:text-theme-secondary-600"
@@ -9328,7 +9708,7 @@ exports[`PluginManager should update plugin on my-plugins 1`] = `
                     <span
                       class="ml-1 text-theme-secondary-500 dark:text-theme-secondary-700"
                     >
-                      2
+                      4
                     </span>
                   </button>
                   <div
