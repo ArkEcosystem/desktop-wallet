@@ -108,7 +108,7 @@ export const NewsOptions = ({ selectedCategories, selectedCoins, onSearch, onSub
 
 	return (
 		<div
-			className="p-8 rounded-lg border-2 bg-theme-background border-theme-primary-100 dark:border-theme-secondary-800"
+			className="sticky top-26 p-8 rounded-lg border-2 bg-theme-background border-theme-primary-100 dark:border-theme-secondary-800"
 			data-testid="NewsOptions"
 		>
 			<div className="flex flex-col space-y-8">
