@@ -1,14 +1,13 @@
 import { Contracts, DTO } from "@arkecosystem/platform-sdk-profiles";
 import { Button } from "app/components/Button";
 import { EmptyBlock } from "app/components/EmptyBlock";
-import { EmptyResults } from "app/components/EmptyResults";
 import { Tab, TabList, Tabs } from "app/components/Tabs";
 import { FilterTransactions } from "domains/transaction/components/FilterTransactions";
 import { TransactionDetailModal } from "domains/transaction/components/TransactionDetailModal";
 import { TransactionTable } from "domains/transaction/components/TransactionTable";
 import { useProfileTransactions } from "domains/transaction/hooks/use-profile-transactions";
 import React, { memo, useEffect, useMemo, useState } from "react";
-import { useTranslation } from "react-i18next";
+import { Trans, useTranslation } from "react-i18next";
 
 type TransactionsProps = {
 	fetchMoreAction?: Function;
@@ -30,6 +29,8 @@ export const Transactions = memo(
 		const [transactionModalItem, setTransactionModalItem] = useState<DTO.ExtendedTransactionData | undefined>(
 			undefined,
 		);
+
+		const [activeTransactionTypeLabel, setActiveTransactionTypeLabel] = useState("");
 
 		const exchangeCurrency = useMemo(
 			() => profile.settings().get<string>(Contracts.ProfileSetting.ExchangeCurrency),
@@ -73,12 +74,13 @@ export const Transactions = memo(
 
 					<FilterTransactions
 						wallets={wallets}
-						onSelect={(_, type) =>
+						onSelect={(option, type) => {
+							setActiveTransactionTypeLabel(option.label);
 							updateFilters({
 								activeMode,
 								activeTransactionType: type,
-							})
-						}
+							});
+						}}
 						className="mt-6"
 					/>
 				</div>
@@ -136,11 +138,15 @@ export const Transactions = memo(
 				)}
 
 				{transactions.length === 0 && !!activeTransactionType && !isLoadingTransactions && (
-					<EmptyResults
-						className="flex-1"
-						title={t("COMMON.EMPTY_RESULTS.TITLE")}
-						subtitle={t("COMMON.EMPTY_RESULTS.SUBTITLE")}
-					/>
+					<EmptyBlock className="-mt-5">
+						<Trans
+							i18nKey="DASHBOARD.TRANSACTION_HISTORY.NO_RESULTS"
+							values={{
+								type: activeTransactionTypeLabel,
+							}}
+							components={{ bold: <strong /> }}
+						/>
+					</EmptyBlock>
 				)}
 
 				{transactionModalItem && (
