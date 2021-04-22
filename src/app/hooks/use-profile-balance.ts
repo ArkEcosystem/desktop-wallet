@@ -24,7 +24,7 @@ export const useProfileBalance = ({ profile, isLoading = false }: BalanceProps) 
 			return;
 		}
 		updateBalance();
-	}, [profile, isLoading]);
+	}, [profile, isLoading, updateBalance]);
 
 	return {
 		convertedBalance,
