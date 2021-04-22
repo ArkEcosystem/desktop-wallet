@@ -3,6 +3,7 @@ import { Button } from "app/components/Button";
 import { Icon } from "app/components/Icon";
 import { Link } from "app/components/Link";
 import { TableCell, TableRow } from "app/components/Table";
+import { useTimeFormat } from "app/hooks/use-time-format";
 import cn from "classnames";
 import React, { memo } from "react";
 
@@ -39,6 +40,8 @@ export const TransactionRow = memo(
 		showSignColumn = false,
 		...props
 	}: Props) => {
+		const timeFormat = useTimeFormat();
+
 		if (isLoading) {
 			return (
 				<TransactionRowSkeleton
@@ -67,7 +70,7 @@ export const TransactionRow = memo(
 
 				<TableCell variant={showExplorerLink ? "middle" : "start"} innerClassName="text-theme-secondary-text">
 					<span data-testid="TransactionRow__timestamp" className="whitespace-nowrap">
-						{transaction.timestamp()!.format("DD MMM YYYY HH:mm:ss")}
+						{transaction.timestamp()!.format(timeFormat)}
 					</span>
 				</TableCell>
 
