@@ -71,6 +71,7 @@ export const PeerForm = ({ networks, peer, onSave, onValidateHost }: PeerFormPro
 					placeholder={t("COMMON.SELECT_OPTION", {
 						option: t("SETTINGS.PEERS.NETWORK"),
 					})}
+					defaultValue={network?.id()}
 					options={networkOptions}
 					onChange={(networkOption: any) => handleSelectNetwork(networkOption)}
 				/>
