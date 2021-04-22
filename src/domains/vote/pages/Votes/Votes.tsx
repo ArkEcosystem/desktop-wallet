@@ -86,7 +86,7 @@ export const Votes = () => {
 						return false;
 					}
 
-					if (walletsDisplayType === "favorites") {
+					if (walletsDisplayType === "starred") {
 						return wallet.isStarred();
 					}
 

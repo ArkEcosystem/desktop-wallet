@@ -112,7 +112,7 @@ describe("useWalletDisplay hook", () => {
 				useWalletDisplay({
 					wallets,
 					selectedNetworkIds: ["ark.devnet", "ark.mainnet"],
-					displayType: "favorites",
+					displayType: "starred",
 				}),
 			{
 				wrapper,
