@@ -1,10 +1,11 @@
 /* eslint-disable @typescript-eslint/require-await */
+import { BigNumber } from "@arkecosystem/platform-sdk-support";
 import { renderHook } from "@testing-library/react-hooks";
 import { ConfigurationProvider } from "app/contexts";
 import React from "react";
 import { env, getDefaultProfileId } from "utils/testing-library";
+
 import { useProfileBalance } from "./use-profile-balance";
-import { BigNumber } from "@arkecosystem/platform-sdk-support";
 
 describe("useProfileBalance", () => {
 	it("should get converted balance", async () => {

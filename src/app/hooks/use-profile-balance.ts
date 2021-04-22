@@ -1,6 +1,6 @@
 import { Contracts } from "@arkecosystem/platform-sdk-profiles";
 import { BigNumber } from "@arkecosystem/platform-sdk-support";
-import { useEffect, useState, useCallback } from "react";
+import { useCallback, useEffect, useState } from "react";
 
 type BalanceProps = {
 	profile?: Contracts.IProfile;

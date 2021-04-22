@@ -1,10 +1,10 @@
 import { Contracts } from "@arkecosystem/platform-sdk-profiles";
 import { Amount } from "app/components/Amount";
+import { useProfileBalance } from "app/hooks/use-profile-balance";
 import React from "react";
 import { useTranslation } from "react-i18next";
 
 import { BalanceSkeleton } from "./BalanceSkeleton";
-import { useProfileBalance } from "app/hooks/use-profile-balance";
 
 type BalanceProps = {
 	profile?: Contracts.IProfile;
