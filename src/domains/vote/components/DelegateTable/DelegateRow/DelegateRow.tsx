@@ -1,7 +1,6 @@
 import { Contracts } from "@arkecosystem/platform-sdk-profiles";
 import { Avatar } from "app/components/Avatar";
 import { Button } from "app/components/Button";
-import { Icon } from "app/components/Icon";
 import { TableCell, TableRow } from "app/components/Table";
 import { Tooltip } from "app/components/Tooltip";
 import React, { useMemo } from "react";
@@ -77,24 +76,6 @@ export const DelegateRow = ({
 			<TableCell innerClassName={`space-x-4 font-bold ${getColorSelected()}`}>
 				<Avatar size="lg" address={delegate.address()} noShadow />
 				<span>{delegate.username()}</span>
-			</TableCell>
-
-			<TableCell className="w-20" innerClassName={`justify-center ${getColorSelected()}`}>
-				{isVoted && (
-					<Icon
-						name="StatusOk"
-						className={`text-xs ${!isSelectedUnvote ? "text-theme-primary-600" : "text-theme-danger-500"}`}
-						width={22}
-						height={22}
-					/>
-				)}
-			</TableCell>
-
-			<TableCell
-				className="w-20"
-				innerClassName={`justify-center font-bold text-theme-secondary-text ${getColorSelected()}`}
-			>
-				<span>%</span>
 			</TableCell>
 
 			<TableCell variant="end" className="w-40" innerClassName={`justify-end ${getColorSelected()}`}>

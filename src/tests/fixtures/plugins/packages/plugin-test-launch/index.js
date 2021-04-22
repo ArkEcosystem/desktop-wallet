@@ -8,8 +8,6 @@ module.exports = (api) => {
 			.message()
 			.useSignMessageModal({ message: "My Plugin", walletId: wallets[0].id });
 
-		console.log({ wallets, Modal, signResult });
-
 		return React.createElement(
 			"div",
 			{ className: "block mt-2" },

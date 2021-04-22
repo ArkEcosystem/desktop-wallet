@@ -29,11 +29,11 @@ export const Page = ({ navbarVariant, title, backToUrl, isBackDisabled, profile,
 			{sidebar ? (
 				<div className="flex flex-1">
 					<div className="container flex mx-auto">
-						<div className="px-10 my-16 border-r border-theme-primary-100 dark:border-theme-secondary-800">
+						<div className="pl-10 pr-15 my-8 border-r border-theme-primary-100 dark:border-theme-secondary-800">
 							{sidebar}
 						</div>
 
-						<div className="ml-16 w-full">{children}</div>
+						<div className="ml-20 w-full">{children}</div>
 					</div>
 				</div>
 			) : (

@@ -31,9 +31,7 @@ export const UnconfirmedTransactionTable = memo(({ transactions }: Props) => {
 	return (
 		<div data-testid="TransactionTable" className="relative">
 			<Table columns={columns} data={transactions}>
-				{(row: DTO.ExtendedTransactionData) => (
-					<UnconfirmedTransactionRow onClick={console.log} transaction={row} />
-				)}
+				{(row: DTO.ExtendedTransactionData) => <UnconfirmedTransactionRow transaction={row} />}
 			</Table>
 		</div>
 	);

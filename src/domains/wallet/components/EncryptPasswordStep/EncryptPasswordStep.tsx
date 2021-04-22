@@ -11,7 +11,7 @@ export const EncryptPasswordStep = () => {
 	const { t } = useTranslation();
 	const { register, watch, trigger } = useFormContext();
 	const { encryptionPassword, confirmEncryptionPassword } = watch();
-	const { encryptPassword } = useValidation();
+	const { password } = useValidation();
 
 	return (
 		<section data-testid="EncryptPassword" className="space-y-8">
@@ -33,7 +33,7 @@ export const EncryptPasswordStep = () => {
 					optional
 				/>
 				<InputPassword
-					ref={register(encryptPassword.password())}
+					ref={register(password.password())}
 					onChange={() => {
 						if (confirmEncryptionPassword) {
 							trigger("confirmEncryptionPassword");
@@ -48,7 +48,7 @@ export const EncryptPasswordStep = () => {
 					required={!!encryptionPassword}
 					optional={!encryptionPassword}
 				/>
-				<InputPassword ref={register(encryptPassword.confirmPassword(watch("encryptionPassword")))} />
+				<InputPassword ref={register(password.confirmPassword(watch("encryptionPassword")))} />
 			</FormField>
 		</section>
 	);

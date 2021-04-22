@@ -48,8 +48,8 @@ describe("WalletsList", () => {
 		expect(asFragment()).toMatchSnapshot();
 	});
 
-	it("should render empty block for favorites display type", () => {
-		const { asFragment, getByTestId } = render(<WalletsList wallets={[]} walletsDisplayType="favorites" />);
+	it("should render empty block for starred display type", () => {
+		const { asFragment, getByTestId } = render(<WalletsList wallets={[]} walletsDisplayType="starred" />);
 
 		expect(getByTestId("EmptyBlock")).toBeTruthy();
 		expect(getByTestId("EmptyBlock")).toHaveTextContent(

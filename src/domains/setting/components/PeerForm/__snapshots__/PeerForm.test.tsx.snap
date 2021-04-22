@@ -318,7 +318,6 @@ exports[`PeerForm should render 1`] = `
       </label>
       <label
         class="flex items-center space-x-2"
-        for="isMultiSignature"
       >
         <input
           class="Checkbox-sc-17gwqiq-0 eAQKb"
@@ -328,7 +327,7 @@ exports[`PeerForm should render 1`] = `
           type="checkbox"
         />
         <span
-          class="text-sm font-semibold text-theme-secondary-text"
+          class="text-sm font-semibold text-theme-secondary-text select-none"
         >
           Multisignature
         </span>
@@ -419,12 +418,6 @@ exports[`PeerForm should render the peer on the form 1`] = `
                 placeholder="Enter a cryptoasset name"
                 value="ARK Devnet"
               />
-              <span
-                class="absolute inset-y-0 flex items-center font-normal opacity-50 pointer-events-none"
-                data-testid="Input__suggestion"
-              >
-                ARK Devnet
-              </span>
             </div>
           </div>
         </div>
@@ -690,7 +683,6 @@ exports[`PeerForm should render the peer on the form 1`] = `
       </label>
       <label
         class="flex items-center space-x-2"
-        for="isMultiSignature"
       >
         <input
           class="Checkbox-sc-17gwqiq-0 eAQKb"
@@ -700,7 +692,7 @@ exports[`PeerForm should render the peer on the form 1`] = `
           type="checkbox"
         />
         <span
-          class="text-sm font-semibold text-theme-secondary-text"
+          class="text-sm font-semibold text-theme-secondary-text select-none"
         >
           Multisignature
         </span>

@@ -68,7 +68,7 @@ const CreateProfileForm = ({
 	const [avatarImage, setAvatarImage] = useState(profile?.avatar());
 
 	const { theme } = useTheme();
-	const { createProfile } = useValidation();
+	const { createProfile, password: passwordValidation } = useValidation();
 
 	const formattedName = name?.trim();
 
@@ -157,7 +157,7 @@ const CreateProfileForm = ({
 						<FormField name="password">
 							<FormLabel label={t("SETTINGS.GENERAL.PERSONAL.PASSWORD")} required={false} optional />
 							<InputPassword
-								ref={register(createProfile.password())}
+								ref={register(passwordValidation.password())}
 								onChange={() => {
 									if (confirmPassword) {
 										trigger("confirmPassword");
@@ -172,7 +172,9 @@ const CreateProfileForm = ({
 								required={!!watch("password")}
 								optional={!watch("password")}
 							/>
-							<InputPassword ref={register(createProfile.confirmPassword(watch("password")!))} />
+							<InputPassword
+								ref={register(passwordValidation.confirmOptionalPassword(watch("password")!))}
+							/>
 						</FormField>
 
 						{showCurrencyField && (

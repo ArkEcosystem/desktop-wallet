@@ -19,32 +19,51 @@ const getIconName = (type: string) => {
 
 const getIconColor = (type: string) => (type === "Starred" ? "text-theme-warning-400" : "text-theme-text");
 
-const WalletIcon = ({ type, label }: { type: string; label?: string }) => {
+const WalletIcon = ({ type, label, iconColor }: { type: string; label?: string; iconColor?: string }) => {
 	const { t } = useTranslation();
 
 	return (
 		<Tooltip content={label || t(`COMMON.${type.toUpperCase()}`)}>
-			<div data-testid={`WalletIcon__${getIconName(type)}`} className={`inline-block p-1 ${getIconColor(type)}`}>
+			<div
+				data-testid={`WalletIcon__${getIconName(type)}`}
+				className={`inline-block p-1 ${iconColor || getIconColor(type)}`}
+			>
 				<Icon name={getIconName(type)} height={16} />
 			</div>
 		</Tooltip>
 	);
 };
 
-export const WalletIcons = ({ wallet }: { wallet: Contracts.IReadWriteWallet }) => {
+export const WalletIcons = ({
+	wallet,
+	iconColor,
+	exclude,
+}: {
+	wallet: Contracts.IReadWriteWallet;
+	iconColor?: string;
+	exclude?: string[];
+}) => {
 	const { t } = useTranslation();
 
 	return (
 		<>
-			{wallet.isKnown() && (
-				<WalletIcon type="Verified" label={t(`COMMON.VERIFIED`, { value: wallet.knownName() })} />
+			{!exclude?.includes("isKnown") && wallet.isKnown() && (
+				<WalletIcon
+					type="Verified"
+					label={t(`COMMON.VERIFIED`, { value: wallet.knownName() })}
+					iconColor={iconColor}
+				/>
 			)}
-			{wallet.hasSyncedWithNetwork() && wallet.isSecondSignature() && (
-				<WalletIcon type="SecondSignature" label={t("COMMON.SECOND_SIGNATURE")} />
+			{!exclude?.includes("isSecondSignature") && wallet.hasSyncedWithNetwork() && wallet.isSecondSignature() && (
+				<WalletIcon type="SecondSignature" label={t("COMMON.SECOND_SIGNATURE")} iconColor={iconColor} />
 			)}
-			{wallet.isLedger() && <WalletIcon type="Ledger" />}
-			{wallet.isStarred() && <WalletIcon type="Starred" />}
-			{wallet.hasSyncedWithNetwork() && wallet.isMultiSignature() && <WalletIcon type="MultiSignature" />}
+			{!exclude?.includes("isLedger") && wallet.isLedger() && <WalletIcon type="Ledger" iconColor={iconColor} />}
+			{!exclude?.includes("isStarred") && wallet.isStarred() && (
+				<WalletIcon type="Starred" iconColor={iconColor} />
+			)}
+			{!exclude?.includes("isMultiSignature") && wallet.hasSyncedWithNetwork() && wallet.isMultiSignature() && (
+				<WalletIcon type="MultiSignature" iconColor={iconColor} />
+			)}
 		</>
 	);
 };
