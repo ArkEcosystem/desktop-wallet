@@ -10,7 +10,7 @@ export const useProfileExport = (profile: Contracts.IProfile) => {
 		let password;
 
 		if (profile.usesPassword()) {
-			password = Helpers.MemoryPassword.get(profile);
+			password = Helpers.MemoryPassword.get();
 		}
 
 		return profile.export(password, {

@@ -8,11 +8,11 @@ exports[`UpdateWalletName should render a modal 1`] = `
     class="flex fixed inset-0 z-50 justify-center items-center w-full h-full overflow-overlay"
   >
     <div
-      class="fixed z-50 w-full h-full bg-black opacity-50"
+      class="fixed z-50 w-full h-full bg-theme-secondary-900 opacity-60 dark:bg-black dark:opacity-80"
       data-testid="modal__overlay"
     />
     <div
-      class="Modal__ModalContainer-sc-1pv7yg7-0 dGbEyf absolute left-0 right-0 z-50 flex flex-col p-10 mx-auto overflow-hidden rounded-3xl bg-theme-background shadow-2xl "
+      class="Modal__ModalContainer-sc-1pv7yg7-0 dGbEyf absolute left-0 right-0 z-50 flex flex-col p-10 mx-auto overflow-hidden rounded-2.5xl bg-theme-background shadow-2xl "
       data-testid="modal__inner"
     >
       <div
@@ -39,7 +39,7 @@ exports[`UpdateWalletName should render a modal 1`] = `
         </button>
       </div>
       <div
-        class="relative"
+        class="relative space-y-4"
       >
         <h2
           class="mb-0 text-3xl font-bold"
@@ -47,7 +47,7 @@ exports[`UpdateWalletName should render a modal 1`] = `
           Wallet Name
         </h2>
         <div
-          class="flex-1 mt-4"
+          class="flex-1"
         >
           <div
             class="text-theme-secondary-text whitespace-pre-line"
@@ -126,11 +126,11 @@ exports[`UpdateWalletName should show an error message for duplicate name 1`] = 
     class="flex fixed inset-0 z-50 justify-center items-center w-full h-full overflow-overlay"
   >
     <div
-      class="fixed z-50 w-full h-full bg-black opacity-50"
+      class="fixed z-50 w-full h-full bg-theme-secondary-900 opacity-60 dark:bg-black dark:opacity-80"
       data-testid="modal__overlay"
     />
     <div
-      class="Modal__ModalContainer-sc-1pv7yg7-0 dGbEyf absolute left-0 right-0 z-50 flex flex-col p-10 mx-auto overflow-hidden rounded-3xl bg-theme-background shadow-2xl "
+      class="Modal__ModalContainer-sc-1pv7yg7-0 dGbEyf absolute left-0 right-0 z-50 flex flex-col p-10 mx-auto overflow-hidden rounded-2.5xl bg-theme-background shadow-2xl "
       data-testid="modal__inner"
     >
       <div
@@ -157,7 +157,7 @@ exports[`UpdateWalletName should show an error message for duplicate name 1`] = 
         </button>
       </div>
       <div
-        class="relative"
+        class="relative space-y-4"
       >
         <h2
           class="mb-0 text-3xl font-bold"
@@ -165,7 +165,7 @@ exports[`UpdateWalletName should show an error message for duplicate name 1`] = 
           Wallet Name
         </h2>
         <div
-          class="flex-1 mt-4"
+          class="flex-1"
         >
           <div
             class="text-theme-secondary-text whitespace-pre-line"
@@ -263,11 +263,11 @@ exports[`UpdateWalletName should show an error message for duplicate name 2`] = 
     class="flex fixed inset-0 z-50 justify-center items-center w-full h-full overflow-overlay"
   >
     <div
-      class="fixed z-50 w-full h-full bg-black opacity-50"
+      class="fixed z-50 w-full h-full bg-theme-secondary-900 opacity-60 dark:bg-black dark:opacity-80"
       data-testid="modal__overlay"
     />
     <div
-      class="Modal__ModalContainer-sc-1pv7yg7-0 dGbEyf absolute left-0 right-0 z-50 flex flex-col p-10 mx-auto overflow-hidden rounded-3xl bg-theme-background shadow-2xl "
+      class="Modal__ModalContainer-sc-1pv7yg7-0 dGbEyf absolute left-0 right-0 z-50 flex flex-col p-10 mx-auto overflow-hidden rounded-2.5xl bg-theme-background shadow-2xl "
       data-testid="modal__inner"
     >
       <div
@@ -294,7 +294,7 @@ exports[`UpdateWalletName should show an error message for duplicate name 2`] = 
         </button>
       </div>
       <div
-        class="relative"
+        class="relative space-y-4"
       >
         <h2
           class="mb-0 text-3xl font-bold"
@@ -302,7 +302,7 @@ exports[`UpdateWalletName should show an error message for duplicate name 2`] = 
           Wallet Name
         </h2>
         <div
-          class="flex-1 mt-4"
+          class="flex-1"
         >
           <div
             class="text-theme-secondary-text whitespace-pre-line"
@@ -400,11 +400,11 @@ exports[`UpdateWalletName should show an error message for duplicate name 3`] = 
     class="flex fixed inset-0 z-50 justify-center items-center w-full h-full overflow-overlay"
   >
     <div
-      class="fixed z-50 w-full h-full bg-black opacity-50"
+      class="fixed z-50 w-full h-full bg-theme-secondary-900 opacity-60 dark:bg-black dark:opacity-80"
       data-testid="modal__overlay"
     />
     <div
-      class="Modal__ModalContainer-sc-1pv7yg7-0 dGbEyf absolute left-0 right-0 z-50 flex flex-col p-10 mx-auto overflow-hidden rounded-3xl bg-theme-background shadow-2xl "
+      class="Modal__ModalContainer-sc-1pv7yg7-0 dGbEyf absolute left-0 right-0 z-50 flex flex-col p-10 mx-auto overflow-hidden rounded-2.5xl bg-theme-background shadow-2xl "
       data-testid="modal__inner"
     >
       <div
@@ -431,7 +431,7 @@ exports[`UpdateWalletName should show an error message for duplicate name 3`] = 
         </button>
       </div>
       <div
-        class="relative"
+        class="relative space-y-4"
       >
         <h2
           class="mb-0 text-3xl font-bold"
@@ -439,7 +439,7 @@ exports[`UpdateWalletName should show an error message for duplicate name 3`] = 
           Wallet Name
         </h2>
         <div
-          class="flex-1 mt-4"
+          class="flex-1"
         >
           <div
             class="text-theme-secondary-text whitespace-pre-line"
@@ -537,11 +537,11 @@ exports[`UpdateWalletName should show an error message for duplicate name 4`] = 
     class="flex fixed inset-0 z-50 justify-center items-center w-full h-full overflow-overlay"
   >
     <div
-      class="fixed z-50 w-full h-full bg-black opacity-50"
+      class="fixed z-50 w-full h-full bg-theme-secondary-900 opacity-60 dark:bg-black dark:opacity-80"
       data-testid="modal__overlay"
     />
     <div
-      class="Modal__ModalContainer-sc-1pv7yg7-0 dGbEyf absolute left-0 right-0 z-50 flex flex-col p-10 mx-auto overflow-hidden rounded-3xl bg-theme-background shadow-2xl "
+      class="Modal__ModalContainer-sc-1pv7yg7-0 dGbEyf absolute left-0 right-0 z-50 flex flex-col p-10 mx-auto overflow-hidden rounded-2.5xl bg-theme-background shadow-2xl "
       data-testid="modal__inner"
     >
       <div
@@ -568,7 +568,7 @@ exports[`UpdateWalletName should show an error message for duplicate name 4`] = 
         </button>
       </div>
       <div
-        class="relative"
+        class="relative space-y-4"
       >
         <h2
           class="mb-0 text-3xl font-bold"
@@ -576,7 +576,7 @@ exports[`UpdateWalletName should show an error message for duplicate name 4`] = 
           Wallet Name
         </h2>
         <div
-          class="flex-1 mt-4"
+          class="flex-1"
         >
           <div
             class="text-theme-secondary-text whitespace-pre-line"
@@ -674,11 +674,11 @@ exports[`UpdateWalletName should show error message when name consists only of w
     class="flex fixed inset-0 z-50 justify-center items-center w-full h-full overflow-overlay"
   >
     <div
-      class="fixed z-50 w-full h-full bg-black opacity-50"
+      class="fixed z-50 w-full h-full bg-theme-secondary-900 opacity-60 dark:bg-black dark:opacity-80"
       data-testid="modal__overlay"
     />
     <div
-      class="Modal__ModalContainer-sc-1pv7yg7-0 dGbEyf absolute left-0 right-0 z-50 flex flex-col p-10 mx-auto overflow-hidden rounded-3xl bg-theme-background shadow-2xl "
+      class="Modal__ModalContainer-sc-1pv7yg7-0 dGbEyf absolute left-0 right-0 z-50 flex flex-col p-10 mx-auto overflow-hidden rounded-2.5xl bg-theme-background shadow-2xl "
       data-testid="modal__inner"
     >
       <div
@@ -705,7 +705,7 @@ exports[`UpdateWalletName should show error message when name consists only of w
         </button>
       </div>
       <div
-        class="relative"
+        class="relative space-y-4"
       >
         <h2
           class="mb-0 text-3xl font-bold"
@@ -713,7 +713,7 @@ exports[`UpdateWalletName should show error message when name consists only of w
           Wallet Name
         </h2>
         <div
-          class="flex-1 mt-4"
+          class="flex-1"
         >
           <div
             class="text-theme-secondary-text whitespace-pre-line"
@@ -753,7 +753,7 @@ exports[`UpdateWalletName should show error message when name consists only of w
                     class="flex items-center space-x-3 divide-x divide-theme-secondary-300 dark:divide-theme-secondary-800 text-theme-danger-500"
                   >
                     <span
-                      data-errortext="'Wallet Name' is invalid"
+                      data-errortext="Wallet Name invalid"
                       data-testid="Input__error"
                     >
                       <div
@@ -811,11 +811,11 @@ exports[`UpdateWalletName should show error message when name exceeds 42 charact
     class="flex fixed inset-0 z-50 justify-center items-center w-full h-full overflow-overlay"
   >
     <div
-      class="fixed z-50 w-full h-full bg-black opacity-50"
+      class="fixed z-50 w-full h-full bg-theme-secondary-900 opacity-60 dark:bg-black dark:opacity-80"
       data-testid="modal__overlay"
     />
     <div
-      class="Modal__ModalContainer-sc-1pv7yg7-0 dGbEyf absolute left-0 right-0 z-50 flex flex-col p-10 mx-auto overflow-hidden rounded-3xl bg-theme-background shadow-2xl "
+      class="Modal__ModalContainer-sc-1pv7yg7-0 dGbEyf absolute left-0 right-0 z-50 flex flex-col p-10 mx-auto overflow-hidden rounded-2.5xl bg-theme-background shadow-2xl "
       data-testid="modal__inner"
     >
       <div
@@ -842,7 +842,7 @@ exports[`UpdateWalletName should show error message when name exceeds 42 charact
         </button>
       </div>
       <div
-        class="relative"
+        class="relative space-y-4"
       >
         <h2
           class="mb-0 text-3xl font-bold"
@@ -850,7 +850,7 @@ exports[`UpdateWalletName should show error message when name exceeds 42 charact
           Wallet Name
         </h2>
         <div
-          class="flex-1 mt-4"
+          class="flex-1"
         >
           <div
             class="text-theme-secondary-text whitespace-pre-line"
@@ -890,7 +890,7 @@ exports[`UpdateWalletName should show error message when name exceeds 42 charact
                     class="flex items-center space-x-3 divide-x divide-theme-secondary-300 dark:divide-theme-secondary-800 text-theme-danger-500"
                   >
                     <span
-                      data-errortext="'Name' should have at most 42 characters"
+                      data-errortext="Name should have at most 42 characters"
                       data-testid="Input__error"
                     >
                       <div

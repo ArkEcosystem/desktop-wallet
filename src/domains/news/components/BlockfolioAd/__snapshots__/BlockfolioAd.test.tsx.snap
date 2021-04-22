@@ -26,21 +26,25 @@ exports[`BlockfolioAd should render 1`] = `
         class="flex flex-col space-y-5 text-white"
       >
         <a
-          class="Link__AnchorStyled-sc-1q7sbxr-0 cIuuRE inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary-600 hover:text-theme-primary-700 hover:underline active:text-theme-primary-500"
+          class="Link__AnchorStyled-sc-1q7sbxr-0 kAtXNw pointer-events-none no-underline inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary-600 hover:text-theme-primary-700 hover:underline active:text-theme-primary-500"
           data-testid="Link"
           rel="noopener noreferrer"
           to="https://blockfolio.com/"
         >
           <span
-            class="underline-dotted"
+            class="group"
           >
-            <svg
-              class="-mx-8 text-white"
-              height="47"
-              width="238"
+            <span
+              class="no-underline break-all pointer-events-auto border-b group-hover:border-0 active:border-0 border-dotted"
             >
-              blockfolio.svg
-            </svg>
+              <svg
+                class="-mx-8 text-white"
+                height="47"
+                width="238"
+              >
+                blockfolio.svg
+              </svg>
+            </span>
           </span>
         </a>
         <p
@@ -53,35 +57,43 @@ exports[`BlockfolioAd should render 1`] = `
         class="flex mt-12 space-x-2"
       >
         <a
-          class="Link__AnchorStyled-sc-1q7sbxr-0 cIuuRE inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary-600 hover:text-theme-primary-700 hover:underline active:text-theme-primary-500"
+          class="Link__AnchorStyled-sc-1q7sbxr-0 kAtXNw pointer-events-none no-underline inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary-600 hover:text-theme-primary-700 hover:underline active:text-theme-primary-500"
           data-testid="Link"
           rel="noopener noreferrer"
           to="https://itunes.apple.com/us/app/blockfolio-bitcoin-altcoin/id1095564685?mt=8"
         >
           <span
-            class="underline-dotted"
+            class="group"
           >
-            <svg
-              class="w-32 h-10 b-0"
+            <span
+              class="no-underline break-all pointer-events-auto border-b group-hover:border-0 active:border-0 border-dotted"
             >
-              download-app-store.svg
-            </svg>
+              <svg
+                class="w-32 h-10 b-0"
+              >
+                download-app-store.svg
+              </svg>
+            </span>
           </span>
         </a>
         <a
-          class="Link__AnchorStyled-sc-1q7sbxr-0 cIuuRE inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary-600 hover:text-theme-primary-700 hover:underline active:text-theme-primary-500"
+          class="Link__AnchorStyled-sc-1q7sbxr-0 kAtXNw pointer-events-none no-underline inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary-600 hover:text-theme-primary-700 hover:underline active:text-theme-primary-500"
           data-testid="Link"
           rel="noopener noreferrer"
           to="https://play.google.com/store/apps/details?id=com.blockfolio.blockfolio&hl=en_US"
         >
           <span
-            class="underline-dotted"
+            class="group"
           >
-            <svg
-              class="w-32 h-10"
+            <span
+              class="no-underline break-all pointer-events-auto border-b group-hover:border-0 active:border-0 border-dotted"
             >
-              download-google-play.svg
-            </svg>
+              <svg
+                class="w-32 h-10"
+              >
+                download-google-play.svg
+              </svg>
+            </span>
           </span>
         </a>
       </div>

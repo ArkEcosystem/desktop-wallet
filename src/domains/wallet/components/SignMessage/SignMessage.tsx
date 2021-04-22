@@ -1,5 +1,6 @@
 import { Contracts } from "@arkecosystem/platform-sdk";
 import { SignedMessage } from "@arkecosystem/platform-sdk/dist/contracts";
+import { Contracts as ProfileContracts } from "@arkecosystem/platform-sdk-profiles";
 import { OriginalButton as Button } from "app/components/Button/OriginalButton";
 import { Clipboard } from "app/components/Clipboard";
 import { Form } from "app/components/Form";
@@ -7,7 +8,6 @@ import { Icon } from "app/components/Icon";
 import { Modal } from "app/components/Modal";
 import { TabPanel, Tabs } from "app/components/Tabs";
 import { useLedgerContext } from "app/contexts";
-import { useActiveProfile } from "app/hooks";
 import { toasts } from "app/services";
 import { isNoDeviceError, isRejectionError } from "domains/transaction/utils";
 import { LedgerWaitingApp, LedgerWaitingDevice } from "domains/wallet/components/Ledger";
@@ -21,6 +21,7 @@ import { LedgerConfirmationStep } from "./LedgerConfirmationStep";
 import { SignedStep } from "./SignedStep";
 
 type SignMessageProps = {
+	profile: ProfileContracts.IProfile;
 	walletId: string;
 	isOpen: boolean;
 	messageText?: string;
@@ -35,7 +36,15 @@ const initialState: Contracts.SignedMessage = {
 	signature: "",
 };
 
-export const SignMessage = ({ walletId, messageText, isOpen, onClose, onCancel, onSign }: SignMessageProps) => {
+export const SignMessage = ({
+	profile,
+	walletId,
+	messageText,
+	isOpen,
+	onClose,
+	onCancel,
+	onSign,
+}: SignMessageProps) => {
 	const [activeTab, setActiveTab] = useState("form");
 
 	const [message, setMessage] = useState<string>();
@@ -53,7 +62,6 @@ export const SignMessage = ({ walletId, messageText, isOpen, onClose, onCancel, 
 	});
 	const { formState } = form;
 
-	const profile = useActiveProfile();
 	const wallet = useMemo(() => profile.wallets().findById(walletId), [profile, walletId]);
 
 	const { abortConnectionRetry, connect, isConnected, hasDeviceAvailable, transport } = useLedgerContext();
@@ -79,7 +87,7 @@ export const SignMessage = ({ walletId, messageText, isOpen, onClose, onCancel, 
 			setActiveTab("ledger");
 
 			try {
-				await connect(wallet.network().coin(), wallet.networkId());
+				await connect(profile, wallet.network().coin(), wallet.networkId());
 			} catch (error) {
 				/* istanbul ignore else */
 				if (isNoDeviceError(error)) {

@@ -1,4 +1,4 @@
-const defaultConfig = require("tailwindcss/defaultConfig");
+const defaultTheme = require("tailwindcss/defaultTheme");
 
 module.exports = {
 	purge: false,
@@ -9,9 +9,6 @@ module.exports = {
 			md: "768px",
 			lg: "1024px",
 			xl: "1280px",
-		},
-		fontFamily: {
-			sans: ["Inter", ...defaultConfig.theme.fontFamily.sans],
 		},
 		colors: {
 			black: "#121213",
@@ -172,6 +169,7 @@ module.exports = {
 				4.5: "1.125rem",
 				18: "4.5rem",
 				25: "6.25rem",
+				27: "6.75rem",
 			},
 			gap: {
 				4.5: "1.125rem",
@@ -186,10 +184,10 @@ module.exports = {
 				20: "20px",
 			},
 			borderRadius: {
-				"3xl": "1.25rem",
+				"2.5xl": "1.25rem",
 			},
 			fontFamily: {
-				sans: ["Inter", ...defaultConfig.theme.fontFamily.sans],
+				sans: ["Inter", ...defaultTheme.fontFamily.sans],
 			},
 			borderColor: (theme) => ({
 				default: theme("colors.theme-secondary-400"),
@@ -206,6 +204,8 @@ module.exports = {
 				outline: "0 0 0 3px rgba(var(--theme-color-primary-rgb), 0.4)",
 				"header-smooth": "0px 2px 10px 0px rgba(192, 200, 207, 0.22)",
 				"header-smooth-dark": "0px 2px 10px 0px rgba(18, 18, 19, .6)",
+				"footer-smooth": "0px -2px 10px 0px rgba(192, 200, 207, 0.22)",
+				"footer-smooth-dark": "0px -2px 10px 0px rgba(18, 18, 19, .6)",
 			},
 			listStyleType: {
 				circle: "circle",
@@ -219,12 +219,14 @@ module.exports = {
 		},
 	},
 	variants: {
-		borderRadius: [...defaultConfig.variants.borderRadius, "first", "last"],
-		borderWidth: [...defaultConfig.variants.borderWidth, "first", "last", "even"],
-		margin: [...defaultConfig.variants.margin, "first"],
-		opacity: [...defaultConfig.variants.opacity, "group-hover"],
-		padding: [...defaultConfig.variants.padding, "first", "last"],
-		ringColor: [...defaultConfig.variants.ringWidth, "dark", "group-hover"],
+		extend: {
+			borderRadius: ["first", "last"],
+			borderWidth: ["hover", "group-hover", "first", "last", "even"],
+			margin: ["first"],
+			opacity: ["dark", "group-hover"],
+			padding: ["first", "last"],
+			ringColor: ["dark", "group-hover"],
+		},
 	},
 	plugins: [require("@tailwindcss/forms")],
 };

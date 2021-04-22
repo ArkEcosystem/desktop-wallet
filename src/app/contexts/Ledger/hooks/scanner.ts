@@ -2,13 +2,11 @@ import { Contracts } from "@arkecosystem/platform-sdk-profiles";
 import { uniqBy } from "@arkecosystem/utils";
 import { useCallback, useMemo, useReducer, useRef, useState } from "react";
 
-import { useEnvironmentContext } from "../../Environment";
 import { useLedgerContext } from "../Ledger";
 import { LedgerData } from "../utils";
 import { scannerReducer } from "./scanner.state";
 
 export const useLedgerScanner = (coin: string, network: string) => {
-	const { env } = useEnvironmentContext();
 	const { setBusy, setIdle } = useLedgerContext();
 
 	const [state, dispatch] = useReducer(scannerReducer, {
@@ -33,7 +31,7 @@ export const useLedgerScanner = (coin: string, network: string) => {
 			abortRetryRef.current = false;
 
 			try {
-				const instance = await env.coin(coin, network);
+				const instance = profile.coins().push(coin, network);
 
 				const wallets = await instance.ledger().scan();
 				const legacyWallets = await instance.ledger().scan({ useLegacy: true });
@@ -69,7 +67,7 @@ export const useLedgerScanner = (coin: string, network: string) => {
 			setIdle();
 			setIsScanning(false);
 		},
-		[coin, network, env, setBusy, setIdle],
+		[coin, network, setBusy, setIdle],
 	);
 
 	const abortScanner = useCallback(() => {

@@ -58,7 +58,7 @@ export const useWalletConfig = ({
 						return false;
 					}
 
-					if (walletsDisplayType === "favorites") {
+					if (walletsDisplayType === "starred") {
 						return wallet.isStarred();
 					}
 

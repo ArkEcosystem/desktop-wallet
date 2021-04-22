@@ -1,49 +1,30 @@
 import { Alert, AlertVariant } from "app/components/Alert";
 import { OriginalButton } from "app/components/Button/OriginalButton";
 import { Icon } from "app/components/Icon";
-import cls from "classnames";
+import cn from "classnames";
 import React from "react";
 import { Id as ToastId, toast, ToastContent, ToastContentProps, ToastOptions, TypeOptions } from "react-toastify";
 
 const { TYPE } = toast;
 
+type ToastTypeOptions = Exclude<TypeOptions, "default" | "dark">;
+
 export const ToastMessage = ({
 	children,
 	type,
-	...props
-}: { children: React.ReactNode; type: TypeOptions } & ToastContentProps) => {
-	const typeVariant: Record<TypeOptions, AlertVariant> = {
+	closeToast,
+}: { children: React.ReactNode; type: ToastTypeOptions } & ToastContentProps) => {
+	const typeVariants: Record<ToastTypeOptions, AlertVariant> = {
 		info: "info",
-		dark: "hint",
-		default: "info",
 		success: "success",
 		error: "danger",
 		warning: "warning",
 	};
 
-	const variant = typeVariant[type];
-
-	const colorVariant: Record<AlertVariant, string> = {
-		info: "primary",
-		success: "success",
-		warning: "warning",
-		danger: "danger",
-		hint: "hint",
-	};
-
-	const buttonColorVariant: Record<AlertVariant, string> = {
-		info: "primary-100",
-		success: "success-200",
-		warning: "warning-100",
-		danger: "danger-100",
-		hint: "hint-100",
-	};
+	const variant = typeVariants[type];
 
 	return (
-		<Alert
-			variant={variant}
-			className={`border border-transparent shadow-sm dark:shadow-none dark:border-theme-${colorVariant[variant]}-200`}
-		>
+		<Alert variant={variant}>
 			<div className="flex items-center space-x-4">
 				<div className="flex-1 text-theme-text">{children}</div>
 
@@ -51,11 +32,13 @@ export const ToastMessage = ({
 					data-testid="ToastMessage__close-button"
 					variant="transparent"
 					size="icon"
-					onClick={props.closeToast}
-					className={cls(
+					onClick={closeToast}
+					className={cn(
 						"w-11 h-11 text-theme-secondary-900",
-						`bg-theme-${buttonColorVariant[variant]}`,
-						"dark:bg-theme-secondary-700 dark:text-theme-secondary-200",
+						`bg-theme-${variant === "info" ? "primary" : variant}-100 hover:bg-theme-${
+							variant === "info" ? "primary" : variant
+						}-200`,
+						"dark:bg-theme-secondary-900 dark:text-theme-secondary-600 dark:hover:bg-theme-secondary-700 dark:hover:text-theme-secondary-400",
 					)}
 				>
 					<Icon name="CrossSlim" width={14} height={14} />
@@ -78,7 +61,7 @@ export class ToastService {
 		return this.defaultOptions;
 	}
 
-	private toast(type: TypeOptions, content: ToastContent, options?: ToastOptions): ToastId {
+	private toast(type: ToastTypeOptions, content: ToastContent, options?: ToastOptions): ToastId {
 		return toast(
 			(props) => (
 				<ToastMessage type={type} {...props}>
@@ -90,19 +73,19 @@ export class ToastService {
 	}
 
 	public info(content: ToastContent, options?: ToastOptions): ToastId {
-		return this.toast(TYPE.INFO, content, options);
+		return this.toast(TYPE.INFO as ToastTypeOptions, content, options);
 	}
 
 	public success(content: ToastContent, options?: ToastOptions): ToastId {
-		return this.toast(TYPE.SUCCESS, content, options);
+		return this.toast(TYPE.SUCCESS as ToastTypeOptions, content, options);
 	}
 
 	public warning(content: ToastContent, options?: ToastOptions): ToastId {
-		return this.toast(TYPE.WARNING, content, options);
+		return this.toast(TYPE.WARNING as ToastTypeOptions, content, options);
 	}
 
 	public error(content: ToastContent, options?: ToastOptions): ToastId {
-		return this.toast(TYPE.ERROR, content, options);
+		return this.toast(TYPE.ERROR as ToastTypeOptions, content, options);
 	}
 
 	public dismiss(id?: ToastId) {

@@ -5,7 +5,7 @@ import Transport from "@ledgerhq/hw-transport";
 import { useLedgerContext } from "app/contexts";
 
 type SignFn = (input: any, options?: Contracts.TransactionOptions) => Promise<string>;
-type ConnectFn = (coin: string, network: string) => Promise<void>;
+type ConnectFn = (profile: ProfileContracts.IProfile, coin: string, network: string) => Promise<void>;
 
 const prepareMultiSignature = (
 	input: Contracts.TransactionInputs,
@@ -19,13 +19,14 @@ const prepareMultiSignature = (
 });
 
 const prepareLedger = async (
+	profile: ProfileContracts.IProfile,
 	input: Contracts.TransactionInputs,
 	wallet: ProfileContracts.IReadWriteWallet,
 	signFn: SignFn,
 	connectFn: ConnectFn,
 	transport: typeof Transport,
 ) => {
-	await connectFn(wallet.coinId(), wallet.networkId());
+	await connectFn(profile, wallet.coinId(), wallet.networkId());
 
 	/*
 	 * NOTE:
@@ -97,7 +98,7 @@ export const useTransactionBuilder = (profile: ProfileContracts.IProfile) => {
 			data = await withAbortPromise(
 				options?.abortSignal,
 				abortConnectionRetry,
-			)(prepareLedger(data, wallet, signFn, connect, transport));
+			)(prepareLedger(profile, data, wallet, signFn, connect, transport));
 		}
 
 		const uuid = await signFn(data);

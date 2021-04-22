@@ -155,7 +155,9 @@ exports[`AddressRow should emit action on select button 1`] = `
             >
               <div
                 class="flex relative items-center space-x-2"
-              />
+              >
+                Vote
+              </div>
             </button>
           </div>
         </td>
@@ -500,7 +502,9 @@ exports[`AddressRow should render for a multisignature wallet 1`] = `
             >
               <div
                 class="flex relative items-center space-x-2"
-              />
+              >
+                Vote
+              </div>
             </button>
           </div>
         </td>
@@ -721,7 +725,9 @@ exports[`AddressRow should render when the maximum votes is greater than 1 1`] =
             >
               <div
                 class="flex relative items-center space-x-2"
-              />
+              >
+                Vote
+              </div>
             </button>
           </div>
         </td>
@@ -933,7 +939,9 @@ exports[`AddressRow should render when the wallet has many votes 1`] = `
             >
               <div
                 class="flex relative items-center space-x-2"
-              />
+              >
+                Vote
+              </div>
             </button>
           </div>
         </td>
@@ -1098,7 +1106,9 @@ exports[`AddressRow should render when wallet hasn't voted 1`] = `
             >
               <div
                 class="flex relative items-center space-x-2"
-              />
+              >
+                Vote
+              </div>
             </button>
           </div>
         </td>
@@ -1166,7 +1176,9 @@ exports[`AddressRow should render when wallet hasn't voted 1`] = `
             />
             <span
               class="text-theme-secondary-400"
-            />
+            >
+              N/A
+            </span>
           </div>
         </td>
         <td>
@@ -1191,7 +1203,9 @@ exports[`AddressRow should render when wallet hasn't voted 1`] = `
             >
               <div
                 class="flex relative items-center space-x-2"
-              />
+              >
+                Vote
+              </div>
             </button>
           </div>
         </td>
@@ -1356,7 +1370,9 @@ exports[`AddressRow should render when wallet not found for votes 1`] = `
             >
               <div
                 class="flex relative items-center space-x-2"
-              />
+              >
+                Vote
+              </div>
             </button>
           </div>
         </td>
@@ -1424,7 +1440,9 @@ exports[`AddressRow should render when wallet not found for votes 1`] = `
             />
             <span
               class="text-theme-secondary-400"
-            />
+            >
+              N/A
+            </span>
           </div>
         </td>
         <td>
@@ -1449,337 +1467,9 @@ exports[`AddressRow should render when wallet not found for votes 1`] = `
             >
               <div
                 class="flex relative items-center space-x-2"
-              />
-            </button>
-          </div>
-        </td>
-      </tr>
-    </tbody>
-  </table>
-</DocumentFragment>
-`;
-
-exports[`AddressRow should set dark shadow color on mouse events 1`] = `
-<DocumentFragment>
-  <table>
-    <tbody>
-      <tr
-        class="TableRow__TableRowStyled-sc-1br46dw-0 fzBhIQ group"
-        data-testid="TableRow"
-      >
-        <td>
-          <div
-            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 DpDcR space-x-4"
-          >
-            <div
-              class="Avatar__AvatarWrapper-sc-1vsy2s2-0 ktCSBk"
-              data-testid="Avatar"
-            >
-              <div
-                class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
               >
-                <img
-                  alt="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
-                  src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(0, 150, 136)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"80\\" cy=\\"50\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"35\\" cx=\\"100\\" cy=\\"40\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"70\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
-                  title="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
-                />
+                Vote
               </div>
-            </div>
-            <div
-              class="inline-flex items-center no-ligatures"
-            >
-              <span
-                class="max-w-24 flex-auto truncate mr-2 font-semibold text-base text-theme-text"
-                data-testid="address__wallet-name"
-              >
-                <span
-                  class="TruncateEnd__Wrapper-sc-1w1nvb9-0"
-                  data-testid="TruncateEnd"
-                >
-                  ARK Wallet 1
-                </span>
-              </span>
-              <span
-                class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-secondary-500 dark:text-theme-secondary-700 truncate font-semibold text-base"
-                data-testid="address__wallet-address"
-              >
-                D8rr7B…s6YUYD
-              </span>
-            </div>
-          </div>
-        </td>
-        <td>
-          <div
-            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT justify-center text-sm font-bold text-center align-middle"
-          >
-            <div
-              class="inline-flex items-center space-x-2"
-            >
-              <div
-                class="inline-block p-1 text-theme-secondary-600"
-              >
-                <div
-                  class="sc-bdfBwQ dCuQLW"
-                  height="1em"
-                  width="20"
-                >
-                  <svg>
-                    ledger.svg
-                  </svg>
-                </div>
-              </div>
-              <div
-                class="inline-block p-1 text-theme-warning-400"
-              >
-                <div
-                  class="sc-bdfBwQ dCuQLW"
-                  height="1em"
-                  width="20"
-                >
-                  <svg>
-                    star.svg
-                  </svg>
-                </div>
-              </div>
-            </div>
-          </div>
-        </td>
-        <td>
-          <div
-            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT justify-end font-bold text-theme-secondary-text whitespace-nowrap"
-          >
-            <span
-              data-testid="Amount"
-            >
-              33.75089801 DARK
-            </span>
-          </div>
-        </td>
-        <td>
-          <div
-            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT space-x-4 font-bold"
-          >
-            <div
-              class="Avatar__AvatarWrapper-sc-1vsy2s2-0 ktCSBk"
-              data-testid="Avatar"
-            >
-              <div
-                class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
-              >
-                <img
-                  alt="D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib"
-                  src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"60\\" cy=\\"40\\" fill=\\"rgb(139, 195, 74)\\"/><circle r=\\"45\\" cx=\\"0\\" cy=\\"30\\" fill=\\"rgb(0, 188, 212)\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"50\\" fill=\\"rgb(255, 193, 7)\\"/></svg>"
-                  title="D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib"
-                />
-              </div>
-            </div>
-            <span>
-              arkx
-            </span>
-          </div>
-        </td>
-        <td>
-          <div
-            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT justify-center font-bold text-theme-secondary-text"
-          >
-            <span>
-              #
-            </span>
-          </div>
-        </td>
-        <td>
-          <div
-            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT justify-center"
-          >
-            <div
-              class="sc-bdfBwQ iSzUah text-theme-success-600"
-              data-testid="AddressRow__status"
-              height="22"
-              width="22"
-            >
-              <svg>
-                status-ok.svg
-              </svg>
-            </div>
-          </div>
-        </td>
-        <td>
-          <div
-            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 kjTmcB justify-end"
-          >
-            <button
-              class="OriginalButton__StyledButton-sc-1y2wptt-0 hsoUax"
-              data-testid="AddressRow__select-0"
-              type="button"
-            >
-              <div
-                class="flex relative items-center space-x-2"
-              />
-            </button>
-          </div>
-        </td>
-      </tr>
-    </tbody>
-  </table>
-</DocumentFragment>
-`;
-
-exports[`AddressRow should set light shadow color on mouse events 1`] = `
-<DocumentFragment>
-  <table>
-    <tbody>
-      <tr
-        class="TableRow__TableRowStyled-sc-1br46dw-0 fzBhIQ group"
-        data-testid="TableRow"
-      >
-        <td>
-          <div
-            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 DpDcR space-x-4"
-          >
-            <div
-              class="Avatar__AvatarWrapper-sc-1vsy2s2-0 ktCSBk"
-              data-testid="Avatar"
-            >
-              <div
-                class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
-              >
-                <img
-                  alt="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
-                  src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(0, 150, 136)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"80\\" cy=\\"50\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"35\\" cx=\\"100\\" cy=\\"40\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"70\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
-                  title="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
-                />
-              </div>
-            </div>
-            <div
-              class="inline-flex items-center no-ligatures"
-            >
-              <span
-                class="max-w-24 flex-auto truncate mr-2 font-semibold text-base text-theme-text"
-                data-testid="address__wallet-name"
-              >
-                <span
-                  class="TruncateEnd__Wrapper-sc-1w1nvb9-0"
-                  data-testid="TruncateEnd"
-                >
-                  ARK Wallet 1
-                </span>
-              </span>
-              <span
-                class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-secondary-500 dark:text-theme-secondary-700 truncate font-semibold text-base"
-                data-testid="address__wallet-address"
-              >
-                D8rr7B…s6YUYD
-              </span>
-            </div>
-          </div>
-        </td>
-        <td>
-          <div
-            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT justify-center text-sm font-bold text-center align-middle"
-          >
-            <div
-              class="inline-flex items-center space-x-2"
-            >
-              <div
-                class="inline-block p-1 text-theme-secondary-600"
-              >
-                <div
-                  class="sc-bdfBwQ dCuQLW"
-                  height="1em"
-                  width="20"
-                >
-                  <svg>
-                    ledger.svg
-                  </svg>
-                </div>
-              </div>
-              <div
-                class="inline-block p-1 text-theme-warning-400"
-              >
-                <div
-                  class="sc-bdfBwQ dCuQLW"
-                  height="1em"
-                  width="20"
-                >
-                  <svg>
-                    star.svg
-                  </svg>
-                </div>
-              </div>
-            </div>
-          </div>
-        </td>
-        <td>
-          <div
-            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT justify-end font-bold text-theme-secondary-text whitespace-nowrap"
-          >
-            <span
-              data-testid="Amount"
-            >
-              33.75089801 DARK
-            </span>
-          </div>
-        </td>
-        <td>
-          <div
-            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT space-x-4 font-bold"
-          >
-            <div
-              class="Avatar__AvatarWrapper-sc-1vsy2s2-0 ktCSBk"
-              data-testid="Avatar"
-            >
-              <div
-                class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
-              >
-                <img
-                  alt="D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib"
-                  src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"60\\" cy=\\"40\\" fill=\\"rgb(139, 195, 74)\\"/><circle r=\\"45\\" cx=\\"0\\" cy=\\"30\\" fill=\\"rgb(0, 188, 212)\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"50\\" fill=\\"rgb(255, 193, 7)\\"/></svg>"
-                  title="D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib"
-                />
-              </div>
-            </div>
-            <span>
-              arkx
-            </span>
-          </div>
-        </td>
-        <td>
-          <div
-            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT justify-center font-bold text-theme-secondary-text"
-          >
-            <span>
-              #
-            </span>
-          </div>
-        </td>
-        <td>
-          <div
-            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT justify-center"
-          >
-            <div
-              class="sc-bdfBwQ iSzUah text-theme-success-600"
-              data-testid="AddressRow__status"
-              height="22"
-              width="22"
-            >
-              <svg>
-                status-ok.svg
-              </svg>
-            </div>
-          </div>
-        </td>
-        <td>
-          <div
-            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 kjTmcB justify-end"
-          >
-            <button
-              class="OriginalButton__StyledButton-sc-1y2wptt-0 hsoUax"
-              data-testid="AddressRow__select-0"
-              type="button"
-            >
-              <div
-                class="flex relative items-center space-x-2"
-              />
             </button>
           </div>
         </td>

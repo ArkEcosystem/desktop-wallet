@@ -8,11 +8,11 @@ exports[`AdvancedMode should render a modal 1`] = `
     class="flex fixed inset-0 z-50 justify-center items-center w-full h-full overflow-overlay"
   >
     <div
-      class="fixed z-50 w-full h-full bg-black opacity-50"
+      class="fixed z-50 w-full h-full bg-theme-secondary-900 opacity-60 dark:bg-black dark:opacity-80"
       data-testid="modal__overlay"
     />
     <div
-      class="Modal__ModalContainer-sc-1pv7yg7-0 gDeenD absolute left-0 right-0 z-50 flex flex-col p-10 mx-auto overflow-hidden rounded-3xl bg-theme-background shadow-2xl "
+      class="Modal__ModalContainer-sc-1pv7yg7-0 gDeenD absolute left-0 right-0 z-50 flex flex-col p-10 mx-auto overflow-hidden rounded-2.5xl bg-theme-background shadow-2xl "
       data-testid="modal__inner"
     >
       <div
@@ -39,7 +39,7 @@ exports[`AdvancedMode should render a modal 1`] = `
         </button>
       </div>
       <div
-        class="relative"
+        class="relative space-y-4"
       >
         <h2
           class="mb-0 text-3xl font-bold"
@@ -47,7 +47,7 @@ exports[`AdvancedMode should render a modal 1`] = `
           Advanced Mode Disclaimer
         </h2>
         <div
-          class="flex-1 mt-4"
+          class="flex-1"
         >
           <svg
             class="w-3/5 m-auto my-8"
@@ -70,7 +70,7 @@ By clicking "I Accept" you acknowledge that enabling Advanced Mode may result in
               class="flex items-center space-x-2"
             >
               <input
-                class="Checkbox-sc-17gwqiq-0 jArhLO"
+                class="Checkbox-sc-17gwqiq-0 eAQKb"
                 color="success"
                 data-testid="AdvancedMode__rememberChoice-toggle"
                 name="rememberChoice"

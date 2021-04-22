@@ -49,7 +49,6 @@ describe("MultiPaymentDetail", () => {
 		const { asFragment, getByText, getByTestId } = render(
 			<MultiPaymentDetail
 				isOpen={true}
-				onClose={() => console.log("onClose")}
 				transaction={{
 					...TransactionFixture,
 					isConfirmed: () => true,

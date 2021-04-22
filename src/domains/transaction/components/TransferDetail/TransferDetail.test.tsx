@@ -24,7 +24,6 @@ describe("TransferDetail", () => {
 		const { asFragment, getByTestId } = render(
 			<TransferDetail
 				isOpen={false}
-				onClose={() => console.log("onClose")}
 				transaction={{ ...TransactionFixture, blockId: () => "adsad12312xsd1w312e1s13203e12" }}
 				ticker="BTC"
 			/>,
@@ -38,7 +37,6 @@ describe("TransferDetail", () => {
 		const { asFragment, getByTestId } = render(
 			<TransferDetail
 				isOpen={true}
-				onClose={() => console.log("onClose")}
 				transaction={{ ...TransactionFixture, blockId: () => "adsad12312xsd1w312e1s13203e12" }}
 				ticker="BTC"
 			/>,
@@ -52,7 +50,6 @@ describe("TransferDetail", () => {
 		const { asFragment, getByText, getByTestId } = render(
 			<TransferDetail
 				isOpen={true}
-				onClose={() => console.log("onClose")}
 				transaction={{
 					...TransactionFixture,
 					isConfirmed: () => true,
@@ -72,7 +69,6 @@ describe("TransferDetail", () => {
 		const { asFragment, getByText, getByTestId } = render(
 			<TransferDetail
 				isOpen={true}
-				onClose={() => console.log("onClose")}
 				transaction={{
 					...TransactionFixture,
 					isSent: () => false,
@@ -90,7 +86,6 @@ describe("TransferDetail", () => {
 		const { asFragment, getByText, getByTestId } = render(
 			<TransferDetail
 				isOpen={true}
-				onClose={() => console.log("onClose")}
 				transaction={{
 					...TransactionFixture,
 					isSent: () => false,

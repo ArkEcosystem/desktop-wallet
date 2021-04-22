@@ -60,8 +60,8 @@ export const SignIn = ({ isOpen, profile, onCancel, onClose, onSuccess }: SignIn
 		} else if (errors.password) {
 			setError("password", {
 				type: "invalid",
-				message: t("COMMON.VALIDATION.SUBJECT_INVALID", {
-					subject: t("COMMON.PASSWORD"),
+				message: t("COMMON.VALIDATION.FIELD_INVALID", {
+					field: t("COMMON.PASSWORD"),
 				}),
 			});
 		}
@@ -69,15 +69,15 @@ export const SignIn = ({ isOpen, profile, onCancel, onClose, onSuccess }: SignIn
 
 	const handleSubmit = ({ password }: any) => {
 		if (profile.auth().verifyPassword(password)) {
-			Helpers.MemoryPassword.set(profile, password);
+			Helpers.MemoryPassword.set(password);
 			onSuccess(password);
 		} else {
 			setCount(count + 1);
 
 			setError("password", {
 				type: "invalid",
-				message: t("COMMON.VALIDATION.SUBJECT_INVALID", {
-					subject: t("COMMON.PASSWORD"),
+				message: t("COMMON.VALIDATION.FIELD_INVALID", {
+					field: t("COMMON.PASSWORD"),
 				}),
 			});
 		}

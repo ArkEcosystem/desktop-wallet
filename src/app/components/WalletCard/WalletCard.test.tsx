@@ -92,10 +92,10 @@ describe("Wallet Card", () => {
 		expect(container).toMatchSnapshot();
 	});
 
-	it("should render blank with favorites display type", () => {
+	it("should render blank with starred display type", () => {
 		const { container } = renderWithRouter(
 			<Route path="/profiles/:profileId/dashboard">
-				<WalletCard displayType="favorites" />
+				<WalletCard displayType="starred" />
 			</Route>,
 			{
 				routes: [dashboardURL],
