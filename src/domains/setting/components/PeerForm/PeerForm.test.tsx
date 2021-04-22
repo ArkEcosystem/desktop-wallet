@@ -28,7 +28,7 @@ describe("PeerForm", () => {
 		expect(asFragment()).toMatchSnapshot();
 	});
 
-	it("should select cryptoasset", async () => {
+	it("should select network", async () => {
 		let rendered: RenderResult;
 
 		await act(async () => {
@@ -38,12 +38,12 @@ describe("PeerForm", () => {
 		const { getByTestId } = rendered;
 
 		await act(async () => {
-			const selectNetworkInput = getByTestId("SelectNetworkInput__input");
+			const selectNetworkInput = getByTestId("SelectDropdownInput__input");
 
-			await fireEvent.change(selectNetworkInput, { target: { value: "Bitco" } });
+			await fireEvent.change(selectNetworkInput, { target: { value: "ark" } });
 			await fireEvent.keyDown(selectNetworkInput, { key: "Enter", code: 13 });
 
-			expect(selectNetworkInput).toHaveValue("Bitcoin");
+			await waitFor(() => expect(selectNetworkInput).toHaveValue("ARK Mainnet"));
 		});
 	});
 
@@ -57,12 +57,12 @@ describe("PeerForm", () => {
 		const { getByTestId } = rendered;
 
 		await act(async () => {
-			const selectNetworkInput = getByTestId("SelectNetworkInput__input");
+			const selectNetworkInput = getByTestId("SelectDropdownInput__input");
 
-			await fireEvent.change(selectNetworkInput, { target: { value: "Bitco" } });
+			await fireEvent.change(selectNetworkInput, { target: { value: "ark" } });
 			await fireEvent.keyDown(selectNetworkInput, { key: "Enter", code: 13 });
 
-			expect(selectNetworkInput).toHaveValue("Bitcoin");
+			await waitFor(() => expect(selectNetworkInput).toHaveValue("ARK Mainnet"));
 
 			await fireEvent.input(getByTestId("PeerForm__name-input"), { target: { value: "ROBank" } });
 			await fireEvent.input(getByTestId("PeerForm__host-input"), {
@@ -90,7 +90,6 @@ describe("PeerForm", () => {
 
 		const { asFragment, getByTestId } = rendered;
 
-		expect(getByTestId("SelectNetworkInput__network")).toHaveAttribute("aria-label", "ARK Devnet");
 		expect(getByTestId("PeerForm__name-input")).toHaveValue(peer.name);
 		expect(getByTestId("PeerForm__host-input")).toHaveValue(peer.host);
 

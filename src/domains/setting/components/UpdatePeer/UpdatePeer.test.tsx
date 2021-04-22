@@ -123,27 +123,16 @@ describe("UpdatePeer", () => {
 		const { getByTestId } = rendered;
 
 		await act(async () => {
-			act(() => {
-				fireEvent.focus(getByTestId("SelectNetworkInput__input"));
-			});
+			const selectNetworkInput = getByTestId("SelectDropdownInput__input");
 
-			await waitFor(() =>
-				expect(getByTestId("SelectNetworkInput__network")).toHaveAttribute("aria-label", "ARK"),
-			);
+			await waitFor(() => expect(selectNetworkInput).toHaveValue("ARK Mainnet"));
 
-			act(() => {
-				fireEvent.focus(getByTestId("SelectNetworkInput__input"));
-			});
+			await fireEvent.focus(selectNetworkInput);
+			await fireEvent.change(selectNetworkInput, { target: { value: " " } });
+			await waitFor(() => expect(getByTestId("select-list__toggle-option-1")).toBeInTheDocument());
+			await fireEvent.click(getByTestId("select-list__toggle-option-1"));
 
-			await waitFor(() => expect(getByTestId("NetworkIcon-ARK-ark.mainnet")).toBeTruthy());
-
-			act(() => {
-				fireEvent.click(getByTestId("NetworkIcon-ARK-ark.devnet"));
-			});
-
-			await waitFor(() =>
-				expect(getByTestId("SelectNetworkInput__network")).toHaveAttribute("aria-label", "ARK Devnet"),
-			);
+			await waitFor(() => expect(selectNetworkInput).not.toHaveValue("ARK Mainnet"));
 
 			await fireEvent.input(getByTestId("PeerForm__name-input"), { target: { value: "Private" } });
 			await fireEvent.input(getByTestId("PeerForm__host-input"), {
