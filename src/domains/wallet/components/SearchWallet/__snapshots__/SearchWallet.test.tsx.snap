@@ -6,7 +6,7 @@ exports[`SearchWallet uses fiat value = false should render 1`] = `
     class="flex fixed inset-0 z-50 justify-center items-center w-full h-full overflow-overlay"
   >
     <div
-      class="fixed z-50 w-full h-full bg-black opacity-50"
+      class="fixed z-50 w-full h-full bg-theme-secondary-900 opacity-60 dark:bg-black dark:opacity-80"
       data-testid="modal__overlay"
     />
     <div
@@ -385,7 +385,7 @@ exports[`SearchWallet uses fiat value = false should render with the default exc
     class="flex fixed inset-0 z-50 justify-center items-center w-full h-full overflow-overlay"
   >
     <div
-      class="fixed z-50 w-full h-full bg-black opacity-50"
+      class="fixed z-50 w-full h-full bg-theme-secondary-900 opacity-60 dark:bg-black dark:opacity-80"
       data-testid="modal__overlay"
     />
     <div
@@ -764,7 +764,7 @@ exports[`SearchWallet uses fiat value = true should render 1`] = `
     class="flex fixed inset-0 z-50 justify-center items-center w-full h-full overflow-overlay"
   >
     <div
-      class="fixed z-50 w-full h-full bg-black opacity-50"
+      class="fixed z-50 w-full h-full bg-theme-secondary-900 opacity-60 dark:bg-black dark:opacity-80"
       data-testid="modal__overlay"
     />
     <div
@@ -1195,7 +1195,7 @@ exports[`SearchWallet uses fiat value = true should render with the default exch
     class="flex fixed inset-0 z-50 justify-center items-center w-full h-full overflow-overlay"
   >
     <div
-      class="fixed z-50 w-full h-full bg-black opacity-50"
+      class="fixed z-50 w-full h-full bg-theme-secondary-900 opacity-60 dark:bg-black dark:opacity-80"
       data-testid="modal__overlay"
     />
     <div

@@ -52,7 +52,8 @@ describe("News", () => {
 			})
 			.get("/coins/signals?coins=ARK&query=NoResult&page=1")
 			.reply(200, require("tests/fixtures/news/empty-response.json"))
-			.get("/coins/signals?coins=ARK&categories=Technical&query=Hacking&page=1")
+			.get("/coins/signals")
+			.query((params) => !!params.categories)
 			.reply(200, require("tests/fixtures/news/filtered.json"))
 			.persist();
 
@@ -135,10 +136,6 @@ describe("News", () => {
 			});
 		});
 
-		act(() => {
-			fireEvent.click(getByTestId("NewsOptions__submit"));
-		});
-
 		await waitFor(() => {
 			expect(queryAllByTestId("NewsCard")).toHaveLength(0);
 			expect(queryAllByTestId("EmptyResults")).toHaveLength(1);
@@ -172,10 +169,6 @@ describe("News", () => {
 			});
 		}
 
-		act(() => {
-			fireEvent.click(getByTestId("NewsOptions__submit"));
-		});
-
 		await waitFor(() => expect(getAllByTestId("NewsCard")).toHaveLength(1), { timeout: 10000 });
 
 		expect(asFragment()).toMatchSnapshot();
@@ -190,12 +183,31 @@ describe("News", () => {
 			fireEvent.click(getByText(commonTranslations.SELECT_ALL));
 		});
 
-		act(() => {
-			fireEvent.click(getByTestId("NewsOptions__submit"));
-		});
-
 		await waitFor(() => expect(getAllByTestId("NewsCard")).toHaveLength(1), { timeout: 10000 });
 
 		expect(asFragment()).toMatchSnapshot();
+	});
+
+	it("should show not found with empty coins", async () => {
+		const { getAllByTestId, getByTestId, queryAllByTestId } = renderWithRouter(
+			<Route path="/profiles/:profileId/news">
+				<News />
+			</Route>,
+			{
+				routes: [newsURL],
+				history,
+			},
+		);
+
+		await waitFor(() => expect(getAllByTestId("NewsCard")).toHaveLength(1), { timeout: 10000 });
+
+		act(() => {
+			fireEvent.click(getByTestId("NetworkOption__ARK"));
+		});
+
+		await waitFor(() => {
+			expect(queryAllByTestId("NewsCard")).toHaveLength(0);
+			expect(queryAllByTestId("EmptyResults")).toHaveLength(1);
+		});
 	});
 });
