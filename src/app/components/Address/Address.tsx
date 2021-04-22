@@ -32,6 +32,8 @@ export const Address = ({
 			case "sm":
 				return "text-sm";
 			case "lg":
+				return "text-lg";
+			case "xl":
 				return "text-xl";
 			default:
 				return "text-base";

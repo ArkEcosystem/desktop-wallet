@@ -10,6 +10,7 @@ export type AddRecipientProps = {
 	labelText?: string;
 	helpText?: string;
 	showMultiPaymentOption?: boolean;
+	disableMultiPaymentOption?: boolean;
 	withDeeplink?: boolean;
 	onChange?: (recipients: RecipientListItem[]) => void;
 };
@@ -20,5 +21,6 @@ export type ToggleButtonProps = {
 	isSingle?: boolean;
 	singleLabel?: string;
 	multipleLabel?: string;
+	disableMultiple?: boolean;
 	onChange?: (isSingle: boolean) => void;
 };

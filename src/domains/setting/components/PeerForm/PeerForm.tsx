@@ -103,14 +103,14 @@ export const PeerForm = ({ networks, peer, onSave, onValidateHost }: PeerFormPro
 
 			<FormField name="type">
 				<FormLabel label={t("SETTINGS.PEERS.TYPE")} required={false} optional />
-				<label htmlFor="isMultiSignature" className="flex items-center space-x-2">
+				<label className="flex items-center space-x-2">
 					<Checkbox
 						ref={register()}
 						name="isMultiSignature"
 						defaultChecked={peer?.isMultiSignature}
 						data-testid="PeerForm__multisignature-toggle"
 					/>
-					<span className="text-sm font-semibold text-theme-secondary-text">
+					<span className="text-sm font-semibold text-theme-secondary-text select-none">
 						{t("COMMON.MULTISIGNATURE")}
 					</span>
 				</label>

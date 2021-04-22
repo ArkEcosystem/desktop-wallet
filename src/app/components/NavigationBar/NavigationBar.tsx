@@ -283,7 +283,7 @@ export const NavigationBar = ({
 										}
 
 										if (action.value === "sign-out" && profile) {
-											Helpers.MemoryPassword.forget(profile);
+											Helpers.MemoryPassword.forget();
 										}
 
 										return history.push(action.mountPath(profile?.id()));

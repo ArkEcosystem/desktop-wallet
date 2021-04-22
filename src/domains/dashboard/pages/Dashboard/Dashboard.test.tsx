@@ -53,6 +53,7 @@ beforeAll(async () => {
 		.persist();
 
 	profile = env.profiles().findById(fixtureProfileId);
+	await profile.restore();
 	const wallet = await profile.wallets().importByAddress("AdVSe37niA3uFUPgCgMUH2tMsHF4LpLoiX", "ARK", "ark.mainnet");
 
 	jest.spyOn(useRandomNumberHook, "useRandomNumber").mockImplementation(() => 1);

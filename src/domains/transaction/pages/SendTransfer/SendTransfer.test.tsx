@@ -63,6 +63,10 @@ let wallet: Contracts.IReadWriteWallet;
 describe("SendTransfer", () => {
 	beforeAll(async () => {
 		profile = env.profiles().findById("b999d134-7a24-481e-a95d-bc47c543bfc9");
+
+		await profile.restore();
+		await profile.sync();
+
 		wallet = profile.wallets().first();
 
 		nock("https://dwallets.ark.io")
@@ -1522,7 +1526,7 @@ describe("SendTransfer", () => {
 		await waitFor(() => expect(passwordInput).toHaveValue(passphrase));
 
 		// Step 5 (skip step 4 for now - ledger confirmation)
-		const coin = await env.coin("ARK", "ark.devnet");
+		const coin = profile.coins().push("ARK", "ark.devnet");
 		const coinMock = jest.spyOn(coin.identity().address(), "validate").mockReturnValue(true);
 
 		const signMock = jest

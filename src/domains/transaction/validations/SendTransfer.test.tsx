@@ -1,26 +1,32 @@
 /* eslint-disable @typescript-eslint/require-await */
+import { Contracts } from "@arkecosystem/platform-sdk-profiles";
 import { BigNumber } from "@arkecosystem/platform-sdk-support";
-import { env } from "utils/testing-library";
+import { env, getDefaultProfileId } from "utils/testing-library";
 
 import { sendTransfer } from "./SendTransfer";
 
+let profile: Contracts.IProfile;
 let translationMock: any;
 let network: any;
 
 describe("Send transfer validations", () => {
-	beforeAll(() => {
+	beforeAll(async () => {
+		profile = env.profiles().findById(getDefaultProfileId());
+		await profile.restore();
+		await profile.sync();
+
 		translationMock = jest.fn((i18nString: string) => i18nString);
 		network = env.profiles().first().wallets().first().network();
 	});
 
 	it("recipientAddress", async () => {
-		const withoutNetwork = sendTransfer(translationMock, env).recipientAddress(undefined, [], false);
+		const withoutNetwork = sendTransfer(translationMock).recipientAddress(profile, undefined, [], false);
 		await expect(withoutNetwork.validate.valid("")).resolves.toBe(false);
 
-		const noAddressWithRecipients = sendTransfer(translationMock, env).recipientAddress(network, [{}], false);
+		const noAddressWithRecipients = sendTransfer(translationMock).recipientAddress(profile, network, [{}], false);
 		await expect(noAddressWithRecipients.validate.valid("")).resolves.toBe(true);
 
-		const noAddressWithoutRecipients = sendTransfer(translationMock, env).recipientAddress(network, [], false);
+		const noAddressWithoutRecipients = sendTransfer(translationMock).recipientAddress(profile, network, [], false);
 		await expect(noAddressWithoutRecipients.validate.valid("")).resolves.toBe("COMMON.VALIDATION.FIELD_REQUIRED");
 	});
 

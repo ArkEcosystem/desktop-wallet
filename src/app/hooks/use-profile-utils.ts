@@ -38,7 +38,7 @@ export const useProfileUtils = (env: Environment) => {
 		}
 
 		try {
-			return Helpers.MemoryPassword.get(profile);
+			return Helpers.MemoryPassword.get();
 		} catch {
 			return;
 		}

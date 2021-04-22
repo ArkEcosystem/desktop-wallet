@@ -1,9 +1,9 @@
-import { Button } from "app/components/Button";
 import { Divider } from "app/components/Divider";
 import { FilterNetwork } from "app/components/FilterNetwork";
 import { Icon } from "app/components/Icon";
 import { Input } from "app/components/Input";
-import React, { useMemo, useState } from "react";
+import { useDebounce } from "app/hooks";
+import React, { useCallback, useEffect, useMemo, useState } from "react";
 import { useTranslation } from "react-i18next";
 
 import { assets as availableCoins, AVAILABLE_CATEGORIES } from "../../data";
@@ -22,7 +22,7 @@ type NewsOptionsProps = {
 	selectedCategories: string[];
 	selectedCoins: string[];
 	onSearch?: (search: string) => void;
-	onSubmit: (data: object) => void;
+	onSubmit?: (data: object) => void;
 };
 
 export const NewsOptions = ({ selectedCategories, selectedCoins, onSearch, onSubmit }: NewsOptionsProps) => {
@@ -42,8 +42,8 @@ export const NewsOptions = ({ selectedCategories, selectedCoins, onSearch, onSub
 		})),
 	);
 
-	const hasCoinsSelected = Object.values(coins).some((coin) => coin.isSelected);
 	const [searchQuery, setSearchQuery] = useState("");
+	const debouncedSearchQuery = useDebounce(searchQuery, 500);
 
 	const showSelectAllCategories = useMemo(() => categories.some((option: Option) => !option.isSelected), [
 		categories,
@@ -83,7 +83,7 @@ export const NewsOptions = ({ selectedCategories, selectedCoins, onSearch, onSub
 		onSearch?.(query);
 	};
 
-	const handleSubmit = () => {
+	const handleQueryUpdate = useCallback(() => {
 		const categoryNames = categories.reduce(
 			(acc: string[], category: Option) =>
 				category.name !== "All" && category.isSelected ? acc.concat(category.name) : acc,
@@ -95,12 +95,16 @@ export const NewsOptions = ({ selectedCategories, selectedCoins, onSearch, onSub
 			[],
 		);
 
-		onSubmit({
+		onSubmit?.({
 			categories: categoryNames,
 			coins: coinNames,
-			searchQuery,
+			searchQuery: debouncedSearchQuery,
 		});
-	};
+	}, [onSubmit, categories, debouncedSearchQuery, coins]);
+
+	useEffect(() => {
+		handleQueryUpdate();
+	}, [handleQueryUpdate]);
 
 	return (
 		<div
@@ -114,11 +118,6 @@ export const NewsOptions = ({ selectedCategories, selectedCoins, onSearch, onSub
 						maxLength={32}
 						placeholder={t("NEWS.NEWS_OPTIONS.PLACEHOLDER")}
 						onChange={(event) => handleSearchInput?.((event.target as HTMLInputElement).value)}
-						onKeyDown={(event) => {
-							if (event.key === "Enter") {
-								handleSubmit();
-							}
-						}}
 						noBorder
 						noShadow
 					/>
@@ -173,16 +172,6 @@ export const NewsOptions = ({ selectedCategories, selectedCoins, onSearch, onSub
 					<div className="pb-4">
 						<FilterNetwork networks={coins} hideViewAll onChange={(_, networks) => setCoins(networks)} />
 					</div>
-
-					<Button
-						disabled={!hasCoinsSelected}
-						className="w-full"
-						variant="secondary"
-						onClick={handleSubmit}
-						data-testid="NewsOptions__submit"
-					>
-						{t("NEWS.NEWS_OPTIONS.UPDATE_FILTER")}
-					</Button>
 				</div>
 			</div>
 		</div>

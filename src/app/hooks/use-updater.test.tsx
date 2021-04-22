@@ -76,7 +76,7 @@ describe("useUpdater hook", () => {
 	});
 
 	it("should handle failed update check in notifyForUpdates", async () => {
-		const consoleSpy = jest.spyOn(console, "log").mockImplementation(() => undefined);
+		const consoleSpy = jest.spyOn(console, "error").mockImplementation(() => undefined);
 
 		jest.spyOn(electron.ipcRenderer, "invoke").mockRejectedValueOnce(new Error("Error!"));
 

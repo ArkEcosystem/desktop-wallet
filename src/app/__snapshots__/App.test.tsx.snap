@@ -259,15 +259,19 @@ exports[`App should close splash screen if not e2e 1`] = `
                     Exported a Profile before? 
                   </span>
                   <a
-                    class="Link__AnchorStyled-sc-1q7sbxr-0 inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary-600 hover:text-theme-primary-700 hover:underline active:text-theme-primary-500"
+                    class="Link__AnchorStyled-sc-1q7sbxr-0 kAtXNw pointer-events-none no-underline inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary-600 hover:text-theme-primary-700 hover:underline active:text-theme-primary-500"
                     data-testid="Link"
                     href="/profiles/import"
                     title="Import Profile"
                   >
                     <span
-                      class="underline-dotted"
+                      class="group"
                     >
-                      Import it here.
+                      <span
+                        class="no-underline break-all pointer-events-auto hover:border-b"
+                      >
+                        Import it here.
+                      </span>
                     </span>
                   </a>
                 </p>
@@ -625,15 +629,19 @@ exports[`App should render mock 1`] = `
                     Exported a Profile before? 
                   </span>
                   <a
-                    class="Link__AnchorStyled-sc-1q7sbxr-0 inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary-600 hover:text-theme-primary-700 hover:underline active:text-theme-primary-500"
+                    class="Link__AnchorStyled-sc-1q7sbxr-0 kAtXNw pointer-events-none no-underline inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary-600 hover:text-theme-primary-700 hover:underline active:text-theme-primary-500"
                     data-testid="Link"
                     href="/profiles/import"
                     title="Import Profile"
                   >
                     <span
-                      class="underline-dotted"
+                      class="group"
                     >
-                      Import it here.
+                      <span
+                        class="no-underline break-all pointer-events-auto hover:border-b"
+                      >
+                        Import it here.
+                      </span>
                     </span>
                   </a>
                 </p>
@@ -906,15 +914,19 @@ exports[`App should render splash screen 1`] = `
                     Exported a Profile before? 
                   </span>
                   <a
-                    class="Link__AnchorStyled-sc-1q7sbxr-0 inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary-600 hover:text-theme-primary-700 hover:underline active:text-theme-primary-500"
+                    class="Link__AnchorStyled-sc-1q7sbxr-0 kAtXNw pointer-events-none no-underline inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary-600 hover:text-theme-primary-700 hover:underline active:text-theme-primary-500"
                     data-testid="Link"
                     href="/profiles/import"
                     title="Import Profile"
                   >
                     <span
-                      class="underline-dotted"
+                      class="group"
                     >
-                      Import it here.
+                      <span
+                        class="no-underline break-all pointer-events-auto hover:border-b"
+                      >
+                        Import it here.
+                      </span>
                     </span>
                   </a>
                 </p>
@@ -1265,15 +1277,19 @@ exports[`App should render welcome screen after splash screen 1`] = `
                     Exported a Profile before? 
                   </span>
                   <a
-                    class="Link__AnchorStyled-sc-1q7sbxr-0 inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary-600 hover:text-theme-primary-700 hover:underline active:text-theme-primary-500"
+                    class="Link__AnchorStyled-sc-1q7sbxr-0 kAtXNw pointer-events-none no-underline inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary-600 hover:text-theme-primary-700 hover:underline active:text-theme-primary-500"
                     data-testid="Link"
                     href="/profiles/import"
                     title="Import Profile"
                   >
                     <span
-                      class="underline-dotted"
+                      class="group"
                     >
-                      Import it here.
+                      <span
+                        class="no-underline break-all pointer-events-auto hover:border-b"
+                      >
+                        Import it here.
+                      </span>
                     </span>
                   </a>
                 </p>
@@ -1406,15 +1422,19 @@ exports[`App shouldn't migrate profiles 1`] = `
                     Exported a Profile before? 
                   </span>
                   <a
-                    class="Link__AnchorStyled-sc-1q7sbxr-0 inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary-600 hover:text-theme-primary-700 hover:underline active:text-theme-primary-500"
+                    class="Link__AnchorStyled-sc-1q7sbxr-0 kAtXNw pointer-events-none no-underline inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary-600 hover:text-theme-primary-700 hover:underline active:text-theme-primary-500"
                     data-testid="Link"
                     href="/profiles/import"
                     title="Import Profile"
                   >
                     <span
-                      class="underline-dotted"
+                      class="group"
                     >
-                      Import it here.
+                      <span
+                        class="no-underline break-all pointer-events-auto hover:border-b"
+                      >
+                        Import it here.
+                      </span>
                     </span>
                   </a>
                 </p>

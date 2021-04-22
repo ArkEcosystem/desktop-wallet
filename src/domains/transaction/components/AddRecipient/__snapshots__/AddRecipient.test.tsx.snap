@@ -3,7 +3,7 @@
 exports[`AddRecipient should render 1`] = `
 <div>
   <div
-    class="AddRecipientstyles__AddRecipientWrapper-cy4ht8-0 HduBv"
+    class="AddRecipientstyles__AddRecipientWrapper-cy4ht8-0 cmbDGH"
   >
     <div
       class="text-theme-secondary-text hover:text-theme-primary-600"
@@ -35,28 +35,36 @@ exports[`AddRecipient should render 1`] = `
       <div
         class="flex items-stretch select-buttons"
       >
-        <button
-          class="OriginalButton__StyledButton-sc-1y2wptt-0 eXZVBc flex-1"
-          data-testid="AddRecipient__single"
-          type="button"
+        <div
+          class="flex-1"
         >
-          <div
-            class="flex relative items-center space-x-2"
+          <button
+            class="OriginalButton__StyledButton-sc-1y2wptt-0 eXZVBc w-full"
+            data-testid="AddRecipient__single"
+            type="button"
           >
-            Single
-          </div>
-        </button>
-        <button
-          class="OriginalButton__StyledButton-sc-1y2wptt-0 ehNoEt flex-1 border-l-0"
-          data-testid="AddRecipient__multi"
-          type="button"
+            <div
+              class="flex relative items-center space-x-2"
+            >
+              Single
+            </div>
+          </button>
+        </div>
+        <div
+          class="flex-1"
         >
-          <div
-            class="flex relative items-center space-x-2"
+          <button
+            class="OriginalButton__StyledButton-sc-1y2wptt-0 ehNoEt w-full border-l-0"
+            data-testid="AddRecipient__multi"
+            type="button"
           >
-            Multiple
-          </div>
-        </button>
+            <div
+              class="flex relative items-center space-x-2"
+            >
+              Multiple
+            </div>
+          </button>
+        </div>
       </div>
     </div>
     <div
@@ -251,7 +259,7 @@ exports[`AddRecipient should render 1`] = `
 exports[`AddRecipient should render with multiple recipients tab 1`] = `
 <div>
   <div
-    class="AddRecipientstyles__AddRecipientWrapper-cy4ht8-0 HduBv"
+    class="AddRecipientstyles__AddRecipientWrapper-cy4ht8-0 cmbDGH"
   >
     <div
       class="text-theme-secondary-text hover:text-theme-primary-600"
@@ -283,28 +291,36 @@ exports[`AddRecipient should render with multiple recipients tab 1`] = `
       <div
         class="flex items-stretch select-buttons"
       >
-        <button
-          class="OriginalButton__StyledButton-sc-1y2wptt-0 eXZVBc flex-1"
-          data-testid="AddRecipient__single"
-          type="button"
+        <div
+          class="flex-1"
         >
-          <div
-            class="flex relative items-center space-x-2"
+          <button
+            class="OriginalButton__StyledButton-sc-1y2wptt-0 eXZVBc w-full"
+            data-testid="AddRecipient__single"
+            type="button"
           >
-            Single
-          </div>
-        </button>
-        <button
-          class="OriginalButton__StyledButton-sc-1y2wptt-0 ehNoEt flex-1 border-l-0"
-          data-testid="AddRecipient__multi"
-          type="button"
+            <div
+              class="flex relative items-center space-x-2"
+            >
+              Single
+            </div>
+          </button>
+        </div>
+        <div
+          class="flex-1"
         >
-          <div
-            class="flex relative items-center space-x-2"
+          <button
+            class="OriginalButton__StyledButton-sc-1y2wptt-0 ehNoEt w-full border-l-0"
+            data-testid="AddRecipient__multi"
+            type="button"
           >
-            Multiple
-          </div>
-        </button>
+            <div
+              class="flex relative items-center space-x-2"
+            >
+              Multiple
+            </div>
+          </button>
+        </div>
       </div>
     </div>
     <div
@@ -499,7 +515,7 @@ exports[`AddRecipient should render with multiple recipients tab 1`] = `
 exports[`AddRecipient should render with single recipient data 1`] = `
 <div>
   <div
-    class="AddRecipientstyles__AddRecipientWrapper-cy4ht8-0 HduBv"
+    class="AddRecipientstyles__AddRecipientWrapper-cy4ht8-0 cmbDGH"
   >
     <div
       class="text-theme-secondary-text hover:text-theme-primary-600"
@@ -531,28 +547,36 @@ exports[`AddRecipient should render with single recipient data 1`] = `
       <div
         class="flex items-stretch select-buttons"
       >
-        <button
-          class="OriginalButton__StyledButton-sc-1y2wptt-0 eXZVBc flex-1"
-          data-testid="AddRecipient__single"
-          type="button"
+        <div
+          class="flex-1"
         >
-          <div
-            class="flex relative items-center space-x-2"
+          <button
+            class="OriginalButton__StyledButton-sc-1y2wptt-0 eXZVBc w-full"
+            data-testid="AddRecipient__single"
+            type="button"
           >
-            Single
-          </div>
-        </button>
-        <button
-          class="OriginalButton__StyledButton-sc-1y2wptt-0 ehNoEt flex-1 border-l-0"
-          data-testid="AddRecipient__multi"
-          type="button"
+            <div
+              class="flex relative items-center space-x-2"
+            >
+              Single
+            </div>
+          </button>
+        </div>
+        <div
+          class="flex-1"
         >
-          <div
-            class="flex relative items-center space-x-2"
+          <button
+            class="OriginalButton__StyledButton-sc-1y2wptt-0 ehNoEt w-full border-l-0"
+            data-testid="AddRecipient__multi"
+            type="button"
           >
-            Multiple
-          </div>
-        </button>
+            <div
+              class="flex relative items-center space-x-2"
+            >
+              Multiple
+            </div>
+          </button>
+        </div>
       </div>
     </div>
     <div
@@ -758,7 +782,7 @@ exports[`AddRecipient should render with single recipient data 1`] = `
 exports[`AddRecipient should render without recipients 1`] = `
 <div>
   <div
-    class="AddRecipientstyles__AddRecipientWrapper-cy4ht8-0 HduBv"
+    class="AddRecipientstyles__AddRecipientWrapper-cy4ht8-0 cmbDGH"
   >
     <div
       class="text-theme-secondary-text hover:text-theme-primary-600"
@@ -790,28 +814,36 @@ exports[`AddRecipient should render without recipients 1`] = `
       <div
         class="flex items-stretch select-buttons"
       >
-        <button
-          class="OriginalButton__StyledButton-sc-1y2wptt-0 eXZVBc flex-1"
-          data-testid="AddRecipient__single"
-          type="button"
+        <div
+          class="flex-1"
         >
-          <div
-            class="flex relative items-center space-x-2"
+          <button
+            class="OriginalButton__StyledButton-sc-1y2wptt-0 eXZVBc w-full"
+            data-testid="AddRecipient__single"
+            type="button"
           >
-            Single
-          </div>
-        </button>
-        <button
-          class="OriginalButton__StyledButton-sc-1y2wptt-0 ehNoEt flex-1 border-l-0"
-          data-testid="AddRecipient__multi"
-          type="button"
+            <div
+              class="flex relative items-center space-x-2"
+            >
+              Single
+            </div>
+          </button>
+        </div>
+        <div
+          class="flex-1"
         >
-          <div
-            class="flex relative items-center space-x-2"
+          <button
+            class="OriginalButton__StyledButton-sc-1y2wptt-0 ehNoEt w-full border-l-0"
+            data-testid="AddRecipient__multi"
+            type="button"
           >
-            Multiple
-          </div>
-        </button>
+            <div
+              class="flex relative items-center space-x-2"
+            >
+              Multiple
+            </div>
+          </button>
+        </div>
       </div>
     </div>
     <div
@@ -1006,7 +1038,7 @@ exports[`AddRecipient should render without recipients 1`] = `
 exports[`AddRecipient should render without the single & multiple tabs 1`] = `
 <div>
   <div
-    class="AddRecipientstyles__AddRecipientWrapper-cy4ht8-0 HduBv"
+    class="AddRecipientstyles__AddRecipientWrapper-cy4ht8-0 cmbDGH"
   >
     <div
       class="SubForm__SubFormWrapper-c4tqfs-0 bbQsCL"
@@ -1200,7 +1232,7 @@ exports[`AddRecipient should render without the single & multiple tabs 1`] = `
 exports[`AddRecipient should set available amount 1`] = `
 <div>
   <div
-    class="AddRecipientstyles__AddRecipientWrapper-cy4ht8-0 HduBv"
+    class="AddRecipientstyles__AddRecipientWrapper-cy4ht8-0 cmbDGH"
   >
     <div
       class="text-theme-secondary-text hover:text-theme-primary-600"
@@ -1232,28 +1264,36 @@ exports[`AddRecipient should set available amount 1`] = `
       <div
         class="flex items-stretch select-buttons"
       >
-        <button
-          class="OriginalButton__StyledButton-sc-1y2wptt-0 eXZVBc flex-1"
-          data-testid="AddRecipient__single"
-          type="button"
+        <div
+          class="flex-1"
         >
-          <div
-            class="flex relative items-center space-x-2"
+          <button
+            class="OriginalButton__StyledButton-sc-1y2wptt-0 eXZVBc w-full"
+            data-testid="AddRecipient__single"
+            type="button"
           >
-            Single
-          </div>
-        </button>
-        <button
-          class="OriginalButton__StyledButton-sc-1y2wptt-0 ehNoEt flex-1 border-l-0"
-          data-testid="AddRecipient__multi"
-          type="button"
+            <div
+              class="flex relative items-center space-x-2"
+            >
+              Single
+            </div>
+          </button>
+        </div>
+        <div
+          class="flex-1"
         >
-          <div
-            class="flex relative items-center space-x-2"
+          <button
+            class="OriginalButton__StyledButton-sc-1y2wptt-0 ehNoEt w-full border-l-0"
+            data-testid="AddRecipient__multi"
+            type="button"
           >
-            Multiple
-          </div>
-        </button>
+            <div
+              class="flex relative items-center space-x-2"
+            >
+              Multiple
+            </div>
+          </button>
+        </div>
       </div>
     </div>
     <div
@@ -1448,7 +1488,7 @@ exports[`AddRecipient should set available amount 1`] = `
 exports[`AddRecipient should show zero amount if wallet has zero or insufficient balance 1`] = `
 <div>
   <div
-    class="AddRecipientstyles__AddRecipientWrapper-cy4ht8-0 HduBv"
+    class="AddRecipientstyles__AddRecipientWrapper-cy4ht8-0 cmbDGH"
   >
     <div
       class="text-theme-secondary-text hover:text-theme-primary-600"
@@ -1480,28 +1520,36 @@ exports[`AddRecipient should show zero amount if wallet has zero or insufficient
       <div
         class="flex items-stretch select-buttons"
       >
-        <button
-          class="OriginalButton__StyledButton-sc-1y2wptt-0 eXZVBc flex-1"
-          data-testid="AddRecipient__single"
-          type="button"
+        <div
+          class="flex-1"
         >
-          <div
-            class="flex relative items-center space-x-2"
+          <button
+            class="OriginalButton__StyledButton-sc-1y2wptt-0 eXZVBc w-full"
+            data-testid="AddRecipient__single"
+            type="button"
           >
-            Single
-          </div>
-        </button>
-        <button
-          class="OriginalButton__StyledButton-sc-1y2wptt-0 ehNoEt flex-1 border-l-0"
-          data-testid="AddRecipient__multi"
-          type="button"
+            <div
+              class="flex relative items-center space-x-2"
+            >
+              Single
+            </div>
+          </button>
+        </div>
+        <div
+          class="flex-1"
         >
-          <div
-            class="flex relative items-center space-x-2"
+          <button
+            class="OriginalButton__StyledButton-sc-1y2wptt-0 ehNoEt w-full border-l-0"
+            data-testid="AddRecipient__multi"
+            type="button"
           >
-            Multiple
-          </div>
-        </button>
+            <div
+              class="flex relative items-center space-x-2"
+            >
+              Multiple
+            </div>
+          </button>
+        </div>
       </div>
     </div>
     <div

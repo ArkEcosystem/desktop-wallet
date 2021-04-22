@@ -30,7 +30,7 @@ export const CreateProfile = () => {
 	const [avatarImage, setAvatarImage] = useState("");
 
 	const { theme } = useTheme();
-	const { createProfile } = useValidation();
+	const { createProfile, password: passwordValidation } = useValidation();
 
 	const formattedName = name.trim();
 
@@ -69,6 +69,7 @@ export const CreateProfile = () => {
 
 	const handleSubmit = async ({ name, password, currency, isDarkMode }: any) => {
 		const profile = env.profiles().create(name.trim());
+		await profile.restore();
 
 		profile.settings().set(Contracts.ProfileSetting.ExchangeCurrency, currency);
 		profile.settings().set(Contracts.ProfileSetting.Theme, isDarkMode ? "dark" : "light");
@@ -130,7 +131,7 @@ export const CreateProfile = () => {
 							<FormField name="password">
 								<FormLabel label={t("SETTINGS.GENERAL.PERSONAL.PASSWORD")} required={false} optional />
 								<InputPassword
-									ref={register(createProfile.password())}
+									ref={register(passwordValidation.password())}
 									onChange={() => {
 										if (confirmPassword) {
 											trigger("confirmPassword");
@@ -145,7 +146,9 @@ export const CreateProfile = () => {
 									required={!!watch("password")}
 									optional={!watch("password")}
 								/>
-								<InputPassword ref={register(createProfile.confirmPassword(watch("password")))} />
+								<InputPassword
+									ref={register(passwordValidation.confirmOptionalPassword(watch("password")))}
+								/>
 							</FormField>
 
 							<FormField name="currency">

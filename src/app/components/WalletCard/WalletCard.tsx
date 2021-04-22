@@ -52,7 +52,7 @@ export const WalletCard = ({
 
 			return (
 				<Icon
-					name={displayType === "favorites" ? "Star" : "Ledger"}
+					name={displayType === "starred" ? "Star" : "Ledger"}
 					className="text-theme-primary-100 dark:text-theme-secondary-800"
 					height={16}
 				/>

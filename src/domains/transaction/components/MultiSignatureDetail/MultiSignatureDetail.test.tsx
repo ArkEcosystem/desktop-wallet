@@ -31,12 +31,14 @@ describe("MultiSignatureDetail", () => {
 		ipfs: undefined,
 	};
 
-	beforeAll(async () => {
-		await syncDelegates();
-	});
-
 	beforeEach(async () => {
 		profile = env.profiles().findById(getDefaultProfileId());
+
+		await profile.restore();
+		await profile.sync();
+
+		await syncDelegates();
+
 		wallet = profile.wallets().first();
 
 		fixtures.transfer = await wallet

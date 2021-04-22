@@ -72,7 +72,10 @@ export const SelectNetwork = ({
 		id,
 		items,
 		itemToString,
-		onSelectedItemChange: ({ selectedItem }) => onSelect?.(selectedItem),
+		onSelectedItemChange: ({ selectedItem }) => {
+			setSuggestion("");
+			onSelect?.(selectedItem);
+		},
 		onInputValueChange: ({ inputValue, selectedItem }) => {
 			// Clear selection when user is changing input,
 			// and input does not match previously selected item
@@ -85,15 +88,17 @@ export const SelectNetwork = ({
 				return onInputChange?.();
 			}
 
-			let newSuggestion: string | undefined = undefined;
+			let newSuggestion = "";
 
-			const matches = items.filter((network: Coins.Network) => isMatch(inputValue, network));
+			if (inputValue !== selectedItem?.extra?.displayName) {
+				const matches = items.filter((network: Coins.Network) => isMatch(inputValue, network));
 
-			if (matches.length > 0) {
-				newSuggestion = [inputValue, matches[0].extra?.displayName?.slice(inputValue.length)].join("");
+				if (matches.length > 0) {
+					newSuggestion = [inputValue, matches[0].extra?.displayName?.slice(inputValue.length)].join("");
+				}
 			}
 
-			setSuggestion(newSuggestion || "");
+			setSuggestion(newSuggestion);
 
 			onInputChange?.(inputValue, newSuggestion);
 		},
