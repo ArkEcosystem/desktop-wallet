@@ -14,7 +14,7 @@ export const PasswordSettings = ({ formConfig, onSuccess, onError }: SettingsPro
 	const { env } = useEnvironmentContext();
 
 	const usesPassword = activeProfile.usesPassword();
-	const { settings } = useValidation();
+	const { password: passwordValidation } = useValidation();
 
 	const { t } = useTranslation();
 
@@ -72,7 +72,7 @@ export const PasswordSettings = ({ formConfig, onSuccess, onError }: SettingsPro
 				<FormField name="password">
 					<FormLabel label={t("SETTINGS.PASSWORD.PASSWORD_1")} />
 					<InputPassword
-						ref={register(settings.password())}
+						ref={register(passwordValidation.password())}
 						onChange={() => {
 							if (confirmPassword) {
 								trigger("confirmPassword");
@@ -85,7 +85,7 @@ export const PasswordSettings = ({ formConfig, onSuccess, onError }: SettingsPro
 				<FormField name="confirmPassword">
 					<FormLabel label={t("SETTINGS.PASSWORD.PASSWORD_2")} />
 					<InputPassword
-						ref={register(settings.confirmPassword(password))}
+						ref={register(passwordValidation.confirmPassword(password))}
 						data-testid={`Password-settings__input--password_2`}
 					/>
 				</FormField>
