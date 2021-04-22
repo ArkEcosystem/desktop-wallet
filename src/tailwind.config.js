@@ -221,7 +221,7 @@ module.exports = {
 	variants: {
 		extend: {
 			borderRadius: ["first", "last"],
-			borderWidth: ["first", "last", "even"],
+			borderWidth: ["hover", "group-hover", "first", "last", "even"],
 			margin: ["first"],
 			opacity: ["group-hover"],
 			padding: ["first", "last"],

@@ -3,24 +3,28 @@
 exports[`Link should open an external link 1`] = `
 <DocumentFragment>
   <a
-    class="Link__AnchorStyled-sc-1q7sbxr-0 cIuuRE inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary-600 hover:text-theme-primary-700 hover:underline active:text-theme-primary-500"
+    class="Link__AnchorStyled-sc-1q7sbxr-0 kAtXNw pointer-events-none no-underline inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary-600 hover:text-theme-primary-700 hover:underline active:text-theme-primary-500"
     data-testid="Link"
     rel="noopener noreferrer"
     to="https://ark.io/"
   >
     <span
-      class="underline-dotted"
-    />
-    <div
-      class="sc-bdfBwQ fPrsah flex-shrink-0 "
-      data-testid="Link__external"
-      height="1em"
-      width="1em"
+      class="group"
     >
-      <svg>
-        redirect.svg
-      </svg>
-    </div>
+      <span
+        class="no-underline break-all pointer-events-auto border-b group-hover:border-0 active:border-0 border-dotted"
+      />
+      <div
+        class="sc-bdfBwQ fPrsah flex-shrink-0 pointer-events-auto"
+        data-testid="Link__external"
+        height="1em"
+        width="1em"
+      >
+        <svg>
+          redirect.svg
+        </svg>
+      </div>
+    </span>
   </a>
 </DocumentFragment>
 `;
@@ -28,14 +32,18 @@ exports[`Link should open an external link 1`] = `
 exports[`Link should render 1`] = `
 <DocumentFragment>
   <a
-    class="Link__AnchorStyled-sc-1q7sbxr-0 inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary-600 hover:text-theme-primary-700 hover:underline active:text-theme-primary-500"
+    class="Link__AnchorStyled-sc-1q7sbxr-0 kAtXNw pointer-events-none no-underline inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary-600 hover:text-theme-primary-700 hover:underline active:text-theme-primary-500"
     data-testid="Link"
     href="/test"
   >
     <span
-      class="underline-dotted"
+      class="group"
     >
-      Test
+      <span
+        class="no-underline break-all pointer-events-auto hover:border-b"
+      >
+        Test
+      </span>
     </span>
   </a>
 </DocumentFragment>
@@ -44,24 +52,28 @@ exports[`Link should render 1`] = `
 exports[`Link should render external without children 1`] = `
 <DocumentFragment>
   <a
-    class="Link__AnchorStyled-sc-1q7sbxr-0 cIuuRE inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary-600 hover:text-theme-primary-700 hover:underline active:text-theme-primary-500"
+    class="Link__AnchorStyled-sc-1q7sbxr-0 kAtXNw pointer-events-none no-underline inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary-600 hover:text-theme-primary-700 hover:underline active:text-theme-primary-500"
     data-testid="Link"
     rel="noopener noreferrer"
     to="https://ark.io"
   >
     <span
-      class="underline-dotted"
-    />
-    <div
-      class="sc-bdfBwQ fPrsah flex-shrink-0 "
-      data-testid="Link__external"
-      height="1em"
-      width="1em"
+      class="group"
     >
-      <svg>
-        redirect.svg
-      </svg>
-    </div>
+      <span
+        class="no-underline break-all pointer-events-auto border-b group-hover:border-0 active:border-0 border-dotted"
+      />
+      <div
+        class="sc-bdfBwQ fPrsah flex-shrink-0 pointer-events-auto"
+        data-testid="Link__external"
+        height="1em"
+        width="1em"
+      >
+        <svg>
+          redirect.svg
+        </svg>
+      </div>
+    </span>
   </a>
 </DocumentFragment>
 `;
@@ -69,14 +81,18 @@ exports[`Link should render external without children 1`] = `
 exports[`Link should render with tooltip 1`] = `
 <DocumentFragment>
   <a
-    class="Link__AnchorStyled-sc-1q7sbxr-0 inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary-600 hover:text-theme-primary-700 hover:underline active:text-theme-primary-500"
+    class="Link__AnchorStyled-sc-1q7sbxr-0 kAtXNw pointer-events-none no-underline inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary-600 hover:text-theme-primary-700 hover:underline active:text-theme-primary-500"
     data-testid="Link"
     href="/test"
   >
     <span
-      class="underline-dotted"
+      class="group"
     >
-      Test
+      <span
+        class="no-underline break-all pointer-events-auto hover:border-b"
+      >
+        Test
+      </span>
     </span>
   </a>
 </DocumentFragment>
@@ -85,24 +101,28 @@ exports[`Link should render with tooltip 1`] = `
 exports[`Link should show a toast when trying to open an invalid external link 1`] = `
 <DocumentFragment>
   <a
-    class="Link__AnchorStyled-sc-1q7sbxr-0 cIuuRE inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary-600 hover:text-theme-primary-700 hover:underline active:text-theme-primary-500"
+    class="Link__AnchorStyled-sc-1q7sbxr-0 kAtXNw pointer-events-none no-underline inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary-600 hover:text-theme-primary-700 hover:underline active:text-theme-primary-500"
     data-testid="Link"
     rel="noopener noreferrer"
     to="invalid-url"
   >
     <span
-      class="underline-dotted"
-    />
-    <div
-      class="sc-bdfBwQ fPrsah flex-shrink-0 "
-      data-testid="Link__external"
-      height="1em"
-      width="1em"
+      class="group"
     >
-      <svg>
-        redirect.svg
-      </svg>
-    </div>
+      <span
+        class="no-underline break-all pointer-events-auto border-b group-hover:border-0 active:border-0 border-dotted"
+      />
+      <div
+        class="sc-bdfBwQ fPrsah flex-shrink-0 pointer-events-auto"
+        data-testid="Link__external"
+        height="1em"
+        width="1em"
+      >
+        <svg>
+          redirect.svg
+        </svg>
+      </div>
+    </span>
   </a>
 </DocumentFragment>
 `;
