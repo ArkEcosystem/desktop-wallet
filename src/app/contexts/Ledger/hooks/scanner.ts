@@ -52,7 +52,7 @@ export const useLedgerScanner = (coin: string, network: string) => {
 				for (const [path, data] of Object.entries(allWallets)) {
 					const address = data.address();
 
-					// Already imported
+					/* istanbul ignore next */
 					if (!profile.wallets().findByAddress(address)) {
 						ledgerData.push({
 							path,
