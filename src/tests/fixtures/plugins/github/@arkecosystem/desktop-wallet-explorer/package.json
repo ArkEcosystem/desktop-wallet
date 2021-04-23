@@ -1,0 +1,46 @@
+{
+	"name": "@arkecosystem/desktop-wallet-explorer",
+	"version": "0.1.13",
+	"description": "Use the ARK Mainnet explorer directly within the wallet",
+	"main": "index.js",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/ark-ecosystem-desktop-plugins/explorer.git"
+	},
+	"desktop-wallet": {
+		"title": "ARK Explorer",
+		"logo": "https://raw.githubusercontent.com/ark-ecosystem-desktop-plugins/explorer/master/images/logo.png",
+		"images": [
+			"https://raw.githubusercontent.com/ark-ecosystem-desktop-plugins/explorer/master/images/preview-1.png",
+			"https://raw.githubusercontent.com/ark-ecosystem-desktop-plugins/explorer/master/images/preview-2.png"
+		],
+		"categories": [
+			"utility"
+		],
+		"permissions": [
+			"COMPONENTS",
+			"ROUTES",
+			"MENU_ITEMS",
+			"UI_COMPONENTS",
+			"PROFILE_CURRENT",
+			"WEBFRAME"
+		],
+		"minimumVersion": "2.6"
+	},
+	"keywords": [
+		"utility",
+		"explorer",
+		"@arkecosystem",
+		"desktop-wallet",
+		"plugin"
+	],
+	"contributors": [
+		"Alex Barnsley <alex@ark.io>",
+		"Juan A. Martín <juan@ark.io>"
+	],
+	"license": "MIT",
+	"bugs": {
+		"url": "https://github.com/ark-ecosystem-desktop-plugins/explorer/issues"
+	},
+	"homepage": "https://github.com/ark-ecosystem-desktop-plugins/explorer#readme"
+}
