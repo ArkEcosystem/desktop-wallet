@@ -86,7 +86,10 @@ const LatestPlugins = ({
 	return (
 		<>
 			{categories.map((category: string) => {
-				const plugins: any[] = sortByDesc(pluginsByCategory[category] || [], "date").slice(0, 3);
+				let plugins: any[] = pluginsByCategory[category] || [];
+				const categoryCount = plugins.length;
+
+				plugins = sortByDesc(plugins, "date").slice(0, 3);
 
 				if (plugins.length < 3 && viewType === "grid") {
 					plugins.push(...new Array(3 - plugins.length).fill(undefined));
@@ -98,14 +101,16 @@ const LatestPlugins = ({
 							<div className="flex justify-between items-center mb-6">
 								<h2 className="font-bold mb-0">{t(`PLUGINS.CATEGORIES.${category.toUpperCase()}`)}</h2>
 
-								<span
-									className="flex items-center font-semibold link space-x-2"
-									data-testid={`PluginManager__latest__${category}__view-more`}
-									onClick={() => onCurrentViewChange(category)}
-								>
-									<span>{t("COMMON.VIEW_MORE")}</span>
-									<Icon name="ChevronRight" width={8} height={8} />
-								</span>
+								{categoryCount > plugins.length && !plugins.some((plugin) => !plugin) && (
+									<span
+										className="flex items-center font-semibold link space-x-2"
+										data-testid={`PluginManager__latest__${category}__view-all`}
+										onClick={() => onCurrentViewChange(category)}
+									>
+										<span>{t("COMMON.VIEW_ALL")}</span>
+										<Icon name="ChevronRight" width={8} height={8} />
+									</span>
+								)}
 							</div>
 
 							{renderPlugins(plugins, category)}
