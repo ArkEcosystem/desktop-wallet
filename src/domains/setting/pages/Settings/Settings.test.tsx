@@ -1097,8 +1097,6 @@ describe("Settings", () => {
 		});
 
 		await waitFor(() => expect(getByTestId(currentPasswordInput)).toBeInTheDocument());
-
-		expect(asFragment()).toMatchSnapshot();
 	});
 
 	it("should show an error toast if the current password does not match", async () => {
