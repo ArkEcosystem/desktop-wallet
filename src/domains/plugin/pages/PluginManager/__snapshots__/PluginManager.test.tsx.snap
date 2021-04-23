@@ -5548,8 +5548,7 @@ exports[`PluginManager should switch to category by clicking on view all link 1`
               data-testid="PluginManager__container--utility"
             >
               <div
-                class="border border-solid border-theme-secondary-300 dark:border-theme-secondary-800 rounded-lg text-theme-secondary-text text-center leading-5 p-6"
-                data-testid="PluginGrid__empty-message"
+                data-testid="PluginGrid"
               >
                 <div
                   class="grid grid-cols-3 gap-4.5 undefined"
@@ -9851,7 +9850,7 @@ exports[`PluginManager should update plugin on my-plugins 1`] = `
               My Plugins
             </h2>
             <div
-              class="border border-solid border-theme-secondary-300 dark:border-theme-secondary-800 rounded-lg text-theme-secondary-text py-3 px-4 mb-6"
+              class="border border-solid border-theme-secondary-300 dark:border-theme-secondary-800 rounded-lg text-theme-secondary-text text-center leading-5 py-3 px-4 mb-6"
               data-testid="EmptyBlock"
             >
               <div>
