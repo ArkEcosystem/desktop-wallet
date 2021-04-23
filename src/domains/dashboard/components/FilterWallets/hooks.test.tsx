@@ -74,10 +74,10 @@ describe("useWalletFilters", () => {
 		const { result } = renderHook(() => useWalletFilters({ profile }), { wrapper });
 
 		act(() => {
-			result.current.update("walletsDisplayType", "favorites");
+			result.current.update("walletsDisplayType", "starred");
 		});
 
 		expect(result.current.isFilterChanged).toBe(true);
-		await waitFor(() => expect(result.current.walletsDisplayType).toBe("favorites"));
+		await waitFor(() => expect(result.current.walletsDisplayType).toBe("starred"));
 	});
 });

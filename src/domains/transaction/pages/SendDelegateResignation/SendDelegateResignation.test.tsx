@@ -60,6 +60,10 @@ const createTransactionMock = (wallet: Contracts.IReadWriteWallet) =>
 describe("SendDelegateResignation", () => {
 	beforeAll(async () => {
 		profile = env.profiles().findById(getDefaultProfileId());
+
+		await profile.restore();
+		await profile.sync();
+
 		wallet = profile.wallets().findById("d044a552-7a49-411c-ae16-8ff407acc430");
 
 		await syncDelegates();

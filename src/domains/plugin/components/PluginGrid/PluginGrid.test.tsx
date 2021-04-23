@@ -1,5 +1,6 @@
 import * as useRandomNumberHook from "app/hooks/use-random-number";
 import { translations as commonTranslations } from "app/i18n/common/i18n";
+import { translations as pluginTranslations } from "domains/plugin/i18n";
 import React from "react";
 import { fireEvent, render, screen } from "utils/testing-library";
 
@@ -96,7 +97,16 @@ describe("PluginGrid", () => {
 		expect(asFragment()).toMatchSnapshot();
 	});
 
-	it("shouldn't render pagination", async () => {
+	it("should render without plugins", async () => {
+		const { asFragment, findByText, getByTestId } = render(<PluginGrid plugins={[]} />);
+
+		expect(getByTestId("PluginGrid__empty-message")).toBeTruthy();
+		expect(await findByText(pluginTranslations.PAGE_PLUGIN_MANAGER.NO_PLUGINS_AVAILABLE)).toBeTruthy();
+
+		expect(asFragment()).toMatchSnapshot();
+	});
+
+	it("should not render pagination", async () => {
 		const { asFragment, findByText, getByTestId } = render(<PluginGrid plugins={plugins} />);
 
 		for (const plugin of plugins) {

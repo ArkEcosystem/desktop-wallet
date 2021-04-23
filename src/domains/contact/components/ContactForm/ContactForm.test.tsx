@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/require-await */
-import { Contact } from "@arkecosystem/platform-sdk-profiles";
+import { Contracts } from "@arkecosystem/platform-sdk-profiles";
 import { availableNetworksMock as networks } from "domains/network/data";
 import React from "react";
 import { act, env, fireEvent, getDefaultProfileId, renderWithRouter, waitFor } from "testing-library";
@@ -11,12 +11,13 @@ const onDelete = jest.fn();
 const onSave = jest.fn();
 const onCancel = jest.fn();
 
+let profile: Contracts.IProfile;
 let contact: Contact;
 let validArkDevnetAddress: string;
 
 describe("ContactForm", () => {
 	beforeAll(() => {
-		const profile = env.profiles().findById(getDefaultProfileId());
+		profile = env.profiles().findById(getDefaultProfileId());
 		const [wallet] = profile.wallets().values();
 		validArkDevnetAddress = wallet.address();
 		contact = profile.contacts().values()[0];
@@ -24,7 +25,7 @@ describe("ContactForm", () => {
 
 	it("should select", () => {
 		const { asFragment } = renderWithRouter(
-			<ContactForm networks={networks} onCancel={onCancel} onSave={onSave} />,
+			<ContactForm profile={profile} networks={networks} onCancel={onCancel} onSave={onSave} />,
 		);
 		expect(asFragment()).toMatchSnapshot();
 	});
@@ -32,6 +33,7 @@ describe("ContactForm", () => {
 	it("should select with errors", () => {
 		const { asFragment } = renderWithRouter(
 			<ContactForm
+				profile={profile}
 				networks={networks}
 				onCancel={onCancel}
 				onSave={onSave}
@@ -44,7 +46,13 @@ describe("ContactForm", () => {
 	it("should handle onChange event", async () => {
 		const fn = jest.fn();
 		const { getByTestId } = renderWithRouter(
-			<ContactForm networks={networks} onChange={fn} onSave={onSave} errors={{ name: "Contact name error" }} />,
+			<ContactForm
+				profile={profile}
+				networks={networks}
+				onChange={fn}
+				onSave={onSave}
+				errors={{ name: "Contact name error" }}
+			/>,
 		);
 
 		const input = getByTestId("contact-form__name-input");
@@ -59,7 +67,7 @@ describe("ContactForm", () => {
 
 	it("should select cryptoasset", () => {
 		const { getByTestId } = renderWithRouter(
-			<ContactForm networks={networks} onCancel={onCancel} onSave={onSave} />,
+			<ContactForm profile={profile} networks={networks} onCancel={onCancel} onSave={onSave} />,
 		);
 
 		const selectNetworkInput = getByTestId("SelectNetworkInput__input");
@@ -76,7 +84,7 @@ describe("ContactForm", () => {
 
 	it("should add a valid address successfully", async () => {
 		const { getAllByTestId, getByTestId, queryByTestId } = renderWithRouter(
-			<ContactForm networks={networks} onCancel={onCancel} onSave={onSave} />,
+			<ContactForm profile={profile} networks={networks} onCancel={onCancel} onSave={onSave} />,
 		);
 
 		expect(() => getAllByTestId("contact-form__address-list-item")).toThrow(/Unable to find an element by/);
@@ -109,7 +117,7 @@ describe("ContactForm", () => {
 
 	it("should not add invalid address and should display error message", async () => {
 		const { getAllByTestId, getByTestId, queryByTestId } = renderWithRouter(
-			<ContactForm networks={networks} onCancel={onCancel} onSave={onSave} />,
+			<ContactForm profile={profile} networks={networks} onCancel={onCancel} onSave={onSave} />,
 		);
 
 		expect(() => getAllByTestId("contact-form__address-list-item")).toThrow(/Unable to find an element by/);
@@ -143,7 +151,7 @@ describe("ContactForm", () => {
 
 	it("should error when adding duplicate address", async () => {
 		const { getAllByTestId, getByTestId, queryByTestId } = renderWithRouter(
-			<ContactForm networks={networks} onCancel={onCancel} onSave={onSave} />,
+			<ContactForm profile={profile} networks={networks} onCancel={onCancel} onSave={onSave} />,
 		);
 
 		expect(() => getAllByTestId("contact-form__address-list-item")).toThrow(/Unable to find an element by/);
@@ -200,7 +208,13 @@ describe("ContactForm", () => {
 
 		await act(async () => {
 			renderContext = renderWithRouter(
-				<ContactForm contact={contact} networks={networks} onCancel={onCancel} onSave={onSave} />,
+				<ContactForm
+					profile={profile}
+					contact={contact}
+					networks={networks}
+					onCancel={onCancel}
+					onSave={onSave}
+				/>,
 			);
 		});
 
@@ -220,7 +234,7 @@ describe("ContactForm", () => {
 	it("should handle save", async () => {
 		const fn = jest.fn();
 		const { getByTestId, queryByTestId } = renderWithRouter(
-			<ContactForm networks={networks} onCancel={onCancel} onSave={fn} />,
+			<ContactForm profile={profile} networks={networks} onCancel={onCancel} onSave={fn} />,
 		);
 
 		const selectNetworkInput = getByTestId("SelectNetworkInput__input");
@@ -259,7 +273,7 @@ describe("ContactForm", () => {
 	describe("when creating a new contact", () => {
 		it("should render the form", () => {
 			const { asFragment, getAllByTestId, getByTestId } = renderWithRouter(
-				<ContactForm onCancel={onCancel} onSave={onSave} />,
+				<ContactForm profile={profile} onCancel={onCancel} onSave={onSave} />,
 			);
 
 			expect(getByTestId("contact-form")).toHaveTextContent(translations.CONTACT_FORM.NAME);
@@ -277,7 +291,9 @@ describe("ContactForm", () => {
 			let renderContext: any;
 
 			await act(async () => {
-				renderContext = renderWithRouter(<ContactForm contact={contact} onCancel={onCancel} onSave={onSave} />);
+				renderContext = renderWithRouter(
+					<ContactForm profile={profile} contact={contact} onCancel={onCancel} onSave={onSave} />,
+				);
 			});
 
 			const { asFragment, getAllByTestId, getByTestId } = renderContext;
@@ -298,6 +314,7 @@ describe("ContactForm", () => {
 			await act(async () => {
 				renderContext = renderWithRouter(
 					<ContactForm
+						profile={profile}
 						contact={contact}
 						networks={networks}
 						onCancel={onCancel}

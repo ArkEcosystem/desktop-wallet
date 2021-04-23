@@ -99,7 +99,7 @@ export const Settings = () => {
 			profile={activeProfile}
 			sidebar={<SideBar items={settingsItems} activeItem={activeSettings} handleActiveItem={setActiveSettings} />}
 		>
-			<Section>{renderSettings()}</Section>
+			<Section innerClassName="px-12">{renderSettings()}</Section>
 			<Prompt message={getPromptMessage} />
 		</Page>
 	);

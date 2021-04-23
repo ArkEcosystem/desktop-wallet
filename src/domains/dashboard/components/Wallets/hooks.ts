@@ -22,7 +22,7 @@ export const useWalletDisplay = ({
 	const { listWallets, gridWallets, listHasMore } = useMemo(() => {
 		const listWallets = wallets
 			.filter((wallet: any) => {
-				if (displayType === "favorites") {
+				if (displayType === "starred") {
 					return wallet.isStarred();
 				}
 				if (displayType === "ledger") {
@@ -39,7 +39,7 @@ export const useWalletDisplay = ({
 						return false;
 					}
 
-					if (displayType === "favorites") {
+					if (displayType === "starred") {
 						return wallet.isStarred();
 					}
 

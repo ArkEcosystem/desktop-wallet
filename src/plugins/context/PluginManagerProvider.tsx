@@ -45,17 +45,6 @@ const useManager = (services: PluginService[], manager: PluginManager) => {
 		try {
 			const results = await PluginLoaderFileSystem.ipc().search();
 			pluginManager.plugins().fill(results);
-
-			/* istanbul ignore next */
-			if (results.length) {
-				console.log(
-					`Plugins loaded`,
-					pluginManager
-						.plugins()
-						.all()
-						.map((item) => item.config().name()),
-				);
-			}
 		} catch (e) {
 			/* istanbul ignore next */
 			toasts.error(e.message);

@@ -14,7 +14,13 @@ export const scrollToBottom = ClientFunction(() => window.scrollTo({ top: docume
 
 export const BASEURL = "https://dwallets.ark.io/api/";
 
-const pluginNames: string[] = ["@dated/transaction-export-plugin", "@dated/delegate-calculator-plugin"];
+const pluginNames: string[] = [
+	"@dated/transaction-export-plugin",
+	"@dated/delegate-calculator-plugin",
+	"@arkecosystem/desktop-wallet-sound-notifications",
+	"@arkecosystem/desktop-wallet-explorer",
+];
+
 const repositoryNames: string[] = [""];
 
 const knownWallets: any[] = [];
@@ -209,30 +215,24 @@ export const requestMocks = {
 		),
 		mockRequest(
 			"https://raw.github.com/dated/transaction-export-plugin/master/package.json",
-			"plugins/registry/@dated/transaction-export-plugin",
+			"plugins/github/@dated/transaction-export-plugin/package",
 		),
 		mockRequest(
 			"https://raw.github.com/dated/delegate-calculator-plugin/master/package.json",
-			"plugins/registry/@dated/delegate-calculator-plugin",
+			"plugins/github/@dated/delegate-calculator-plugin/package",
+		),
+		mockRequest(
+			"https://raw.github.com/ark-ecosystem-desktop-plugins/sound-notifications/master/package.json",
+			"plugins/github/@arkecosystem/desktop-wallet-sound-notifications/package",
+		),
+		mockRequest(
+			"https://raw.github.com/ark-ecosystem-desktop-plugins/explorer/master/package.json",
+			"plugins/github/@arkecosystem/desktop-wallet-explorer/package",
 		),
 		mockRequest(/https:\/\/registry\.npmjs\.com\/-\/v1\/search.*from=0.*/, "plugins/registry-response"),
 		mockRequest(/https:\/\/registry\.npmjs\.com\/-\/v1\/search.*from=250.*/, () => ({})),
-		mockRequest(
-			"https://raw.githubusercontent.com/dated/transaction-export-plugin/master/logo.png",
-			() => "/assets/background.png",
-		),
-		mockRequest(
-			"https://raw.githubusercontent.com/dated/transaction-export-plugin/master/images/preview-1.png",
-			() => "/assets/background.png",
-		),
-		mockRequest(
-			"https://raw.githubusercontent.com/dated/transaction-export-plugin/master/images/preview-2.png",
-			() => "/assets/background.png",
-		),
-		mockRequest(
-			"https://raw.githubusercontent.com/dated/transaction-export-plugin/master/images/preview-3.png",
-			() => "/assets/background.png",
-		),
+		mockRequest(/logo.png$/, () => "/assets/background.png"),
+		mockRequest(/master\/images\/preview-[0-9].png$/, () => "/assets/background.png"),
 		...pluginNames.map((pluginName) =>
 			mockRequest(`https://registry.npmjs.com/${pluginName}`, `plugins/registry/${pluginName}`),
 		),
@@ -265,7 +265,6 @@ export const createFixture = (name: string, preHooks: RequestMock[] = [], postHo
 			...requestMocks.other,
 			...postHooks,
 			mockRequest(/^https?:\/\//, (request: any) => {
-				console.log(request.url);
 				const mock: { url: string; method: string; body?: string } = {
 					url: request.url,
 					method: request.method,

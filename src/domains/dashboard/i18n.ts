@@ -14,6 +14,7 @@ export const translations: { [key: string]: any } = {
 		TITLE: "Transaction History",
 		EMPTY_MESSAGE:
 			"You don't have any transactions yet. Once transactions have been made they will show up in your history.",
+		NO_RESULTS: "No <bold>{{type}}</bold> transactions could be found.",
 	},
 
 	WALLET_CONTROLS: {

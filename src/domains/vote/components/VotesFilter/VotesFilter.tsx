@@ -19,7 +19,7 @@ export const VotesFilter = ({ onChange, selectedOption = "all", totalCurrentVote
 				dropdownClass="shadow-votes-filter"
 				position="right"
 				toggleContent={
-					<ControlButton isChanged={selectedOption !== "all"} isActive={selectedOption !== "all"}>
+					<ControlButton isChanged={selectedOption !== "all"}>
 						<div className="flex items-center justify-center w-5 h-5">
 							<Icon name="Filters" width={17} height={19} />
 						</div>

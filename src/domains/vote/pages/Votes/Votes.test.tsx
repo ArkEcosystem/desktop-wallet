@@ -131,7 +131,7 @@ describe("Votes", () => {
 		expect(asFragment()).toMatchSnapshot();
 	});
 
-	it("should select favorites option in the wallets display type", async () => {
+	it("should select starred option in the wallets display type", async () => {
 		const route = `/profiles/${profile.id()}/votes`;
 		const routePath = "/profiles/:profileId/votes";
 		const { asFragment, container, getByTestId } = renderPage(route, routePath);

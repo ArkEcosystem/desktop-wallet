@@ -84,7 +84,7 @@ export const WalletsList = memo(
 							<Trans
 								i18nKey="DASHBOARD.WALLET_CONTROLS.EMPTY_MESSAGE_TYPE"
 								values={{
-									type: walletsDisplayType === "favorites" ? t("COMMON.STARRED") : t("COMMON.LEDGER"),
+									type: walletsDisplayType === "starred" ? t("COMMON.STARRED") : t("COMMON.LEDGER"),
 								}}
 								components={{ bold: <strong /> }}
 							/>

@@ -66,6 +66,9 @@ describe("Transactions", () => {
 
 		profile = env.profiles().findById(fixtureProfileId);
 
+		await profile.restore();
+		await profile.sync();
+
 		await syncDelegates();
 	});
 
@@ -186,7 +189,7 @@ describe("Transactions", () => {
 			fireEvent.click(getByTestId("dropdown__option--core-2"));
 		});
 
-		await waitFor(() => expect(getByTestId("EmptyResults")).toBeInTheDocument());
+		await waitFor(() => expect(getByTestId("EmptyBlock")).toBeInTheDocument());
 	});
 
 	it("should open detail modal on transaction row click", async () => {
