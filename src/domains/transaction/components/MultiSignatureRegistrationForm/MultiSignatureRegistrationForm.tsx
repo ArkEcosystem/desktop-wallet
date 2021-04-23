@@ -59,7 +59,7 @@ const signTransaction = async ({ env, form, profile }: SendRegistrationSignOptio
 	const publicKeys = (participants as Participant[]).map((item) => item.publicKey);
 	const wif = senderWallet?.usesWIF() ? await senderWallet.wif(encryptionPassword) : undefined;
 
-	const transactionId = await senderWallet!.transaction().signMultiSignature({
+	const uuid = await senderWallet!.transaction().signMultiSignature({
 		nonce: senderWallet!.nonce().plus(1).toString(),
 		fee,
 		from: senderAddress,
@@ -77,7 +77,9 @@ const signTransaction = async ({ env, form, profile }: SendRegistrationSignOptio
 		},
 	});
 
-	await senderWallet!.transaction().broadcast(transactionId);
+	const { accepted } = await senderWallet!.transaction().broadcast(uuid);
+
+	const transactionId = accepted[0];
 
 	await senderWallet!.transaction().sync();
 	await senderWallet!.transaction().addSignature(transactionId, mnemonic);
@@ -85,6 +87,7 @@ const signTransaction = async ({ env, form, profile }: SendRegistrationSignOptio
 	await env.persist();
 
 	const transaction: ExtendedSignedTransactionData = senderWallet!.transaction().transaction(transactionId);
+
 	transaction.generatedAddress = await senderWallet!
 		.coin()
 		.identity()
