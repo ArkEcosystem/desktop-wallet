@@ -19,7 +19,7 @@ import { Offline } from "domains/error/pages";
 import { Splash } from "domains/splash/pages";
 import { usePluginManagerContext } from "plugins";
 import { PluginRouterWrapper } from "plugins/components/PluginRouterWrapper";
-import React, { useEffect, useLayoutEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useErrorHandler } from "react-error-boundary";
 import { I18nextProvider } from "react-i18next";
 import { useHistory } from "react-router-dom";
@@ -65,7 +65,7 @@ const Main = () => {
 		}
 	}, [showSplash, start]);
 
-	useLayoutEffect(() => {
+	useEffect(() => {
 		setThemeSource("system");
 
 		document.body.classList.remove(`theme-${shouldUseDarkColors() ? "light" : "dark"}`);
@@ -74,7 +74,7 @@ const Main = () => {
 
 	const handleError = useErrorHandler();
 
-	useLayoutEffect(() => {
+	useEffect(() => {
 		const boot = async () => {
 			try {
 				/* istanbul ignore next */
