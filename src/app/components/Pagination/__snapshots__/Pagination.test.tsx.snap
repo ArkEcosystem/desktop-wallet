@@ -487,6 +487,8 @@ exports[`Pagination should handle previous page click properly 1`] = `
 </DocumentFragment>
 `;
 
+exports[`Pagination should not render 1`] = `<DocumentFragment />`;
+
 exports[`Pagination should not render first button if pagination buttons include 1 (first page) 1`] = `
 <DocumentFragment>
   <div
@@ -1484,5 +1486,3 @@ exports[`Pagination should render condensed 1`] = `
   </div>
 </DocumentFragment>
 `;
-
-exports[`Pagination shouldn't render 1`] = `<DocumentFragment />`;

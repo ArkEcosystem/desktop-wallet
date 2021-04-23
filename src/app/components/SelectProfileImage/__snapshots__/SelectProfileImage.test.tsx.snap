@@ -69,6 +69,75 @@ exports[`SelectProfileImage should handle upload file 1`] = `
 </div>
 `;
 
+exports[`SelectProfileImage should not handle upload file 1`] = `
+<div>
+  <div
+    class="group space-y-2 undefined"
+  >
+    <span
+      class="text-sm font-semibold transition-colors duration-100 cursor-default group-hover:text-theme-primary-600 text-theme-secondary-text"
+    >
+      Select Profile Image
+    </span>
+    <div
+      class="flex flex-row"
+    >
+      <div
+        class="relative w-20 h-20"
+      >
+        <div
+          class="SelectProfileImage__ProfileImageStyled-t6smk3-1 iIdUcl"
+        >
+          <img
+            alt="Avatar"
+            class="object-cover min-h-full"
+            data-testid="SelectProfileImage__avatar"
+            src="test"
+          />
+          <div
+            class="hidden overflow-hidden absolute inset-1 z-50 rounded-full upload-button-overlay"
+            data-testid="SelectProfileImage__upload-button"
+          >
+            <div
+              class="flex justify-center items-center h-full"
+            >
+              <div
+                class="sc-bdfBwQ cdgnVS text-white dark:text-theme-secondary-200"
+                height="18"
+                width="24"
+              >
+                <svg>
+                  upload.svg
+                </svg>
+              </div>
+            </div>
+          </div>
+        </div>
+        <button
+          class="OriginalButton__StyledButton-sc-1y2wptt-0 dscUFp flex absolute -top-3 -right-3 justify-center items-center p-1 w-6 h-6"
+          data-testid="SelectProfileImage__remove-button"
+          type="button"
+        >
+          <div
+            class="flex relative items-center space-x-2"
+          >
+            <div
+              class="sc-bdfBwQ fdfkzt"
+              height="12"
+              width="12"
+            >
+              <svg>
+                close.svg
+              </svg>
+            </div>
+          </div>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
 exports[`SelectProfileImage should render 1`] = `
 <div>
   <div
@@ -172,75 +241,6 @@ exports[`SelectProfileImage should render with value svg 1`] = `
 `;
 
 exports[`SelectProfileImage should render without value svg 1`] = `
-<div>
-  <div
-    class="group space-y-2 undefined"
-  >
-    <span
-      class="text-sm font-semibold transition-colors duration-100 cursor-default group-hover:text-theme-primary-600 text-theme-secondary-text"
-    >
-      Select Profile Image
-    </span>
-    <div
-      class="flex flex-row"
-    >
-      <div
-        class="relative w-20 h-20"
-      >
-        <div
-          class="SelectProfileImage__ProfileImageStyled-t6smk3-1 iIdUcl"
-        >
-          <img
-            alt="Avatar"
-            class="object-cover min-h-full"
-            data-testid="SelectProfileImage__avatar"
-            src="test"
-          />
-          <div
-            class="hidden overflow-hidden absolute inset-1 z-50 rounded-full upload-button-overlay"
-            data-testid="SelectProfileImage__upload-button"
-          >
-            <div
-              class="flex justify-center items-center h-full"
-            >
-              <div
-                class="sc-bdfBwQ cdgnVS text-white dark:text-theme-secondary-200"
-                height="18"
-                width="24"
-              >
-                <svg>
-                  upload.svg
-                </svg>
-              </div>
-            </div>
-          </div>
-        </div>
-        <button
-          class="OriginalButton__StyledButton-sc-1y2wptt-0 dscUFp flex absolute -top-3 -right-3 justify-center items-center p-1 w-6 h-6"
-          data-testid="SelectProfileImage__remove-button"
-          type="button"
-        >
-          <div
-            class="flex relative items-center space-x-2"
-          >
-            <div
-              class="sc-bdfBwQ fdfkzt"
-              height="12"
-              width="12"
-            >
-              <svg>
-                close.svg
-              </svg>
-            </div>
-          </div>
-        </button>
-      </div>
-    </div>
-  </div>
-</div>
-`;
-
-exports[`SelectProfileImage shouldn't handle upload file 1`] = `
 <div>
   <div
     class="group space-y-2 undefined"
