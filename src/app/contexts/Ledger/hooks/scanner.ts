@@ -36,8 +36,8 @@ export const useLedgerScanner = (coin: string, network: string) => {
 				const lastImportedPath = profile
 					.wallets()
 					.values()
-					.filter((wallet) => wallet.isLedger())
 					.map((wallet) => wallet.data().get<string>(Contracts.WalletData.LedgerPath))
+					.filter(Boolean)
 					.sort()
 					.reverse()[0];
 

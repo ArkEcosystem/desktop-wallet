@@ -28,13 +28,6 @@ const prepareLedger = async (
 ) => {
 	await connectFn(profile, wallet.coinId(), wallet.networkId());
 
-	/*
-	 * NOTE:
-	 * Verify why BIP44 derived wallets requires to "reconnect"
-	 * it seems that `wallet.ledger()` and `coin.ledger()` does not share the same instance
-	 * but for legacy wallets it works
-	 */
-
 	await wallet.ledger().connect(transport);
 
 	const path = wallet.data().get<string>(ProfileContracts.WalletData.LedgerPath);
