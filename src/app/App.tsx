@@ -82,12 +82,10 @@ const Main = () => {
 					? true
 					: false;
 				if (__E2E__) {
-					console.time("boot");
 					await bootEnvWithProfileFixtures({ env });
 
+					loadPlugins();
 					setShowSplash(false);
-					console.timeEnd("boot");
-					await loadPlugins();
 					return;
 				}
 
