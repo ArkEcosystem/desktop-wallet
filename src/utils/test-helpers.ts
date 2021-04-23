@@ -29,6 +29,7 @@ export const bootEnvWithProfileFixtures = async ({ env }: { env: Environment }) 
 			profile.auth().setPassword(storedPassword);
 		}
 
+		await profile.sync();
 		profile.save();
 	}
 };
