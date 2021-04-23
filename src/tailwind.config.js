@@ -169,6 +169,7 @@ module.exports = {
 				4.5: "1.125rem",
 				18: "4.5rem",
 				25: "6.25rem",
+				27: "6.75rem",
 			},
 			gap: {
 				4.5: "1.125rem",
@@ -203,6 +204,9 @@ module.exports = {
 				outline: "0 0 0 3px rgba(var(--theme-color-primary-rgb), 0.4)",
 				"header-smooth": "0px 2px 10px 0px rgba(192, 200, 207, 0.22)",
 				"header-smooth-dark": "0px 2px 10px 0px rgba(18, 18, 19, .6)",
+				"votes-filter": "0 15px 35px 0 rgba(var(--theme-color-secondary-900-rgb), 0.1)",
+				"footer-smooth": "0px -2px 10px 0px rgba(192, 200, 207, 0.22)",
+				"footer-smooth-dark": "0px -2px 10px 0px rgba(18, 18, 19, .6)",
 			},
 			listStyleType: {
 				circle: "circle",
@@ -218,9 +222,9 @@ module.exports = {
 	variants: {
 		extend: {
 			borderRadius: ["first", "last"],
-			borderWidth: ["first", "last", "even"],
+			borderWidth: ["hover", "group-hover", "first", "last", "even"],
 			margin: ["first"],
-			opacity: ["group-hover"],
+			opacity: ["dark", "group-hover"],
 			padding: ["first", "last"],
 			ringColor: ["dark", "group-hover"],
 		},

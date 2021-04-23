@@ -236,7 +236,7 @@ describe("Wallets", () => {
 		});
 
 		await waitFor(() =>
-			expect(getByTestId("filter-wallets__wallets")).toHaveTextContent(commonTranslations.FAVORITES),
+			expect(getByTestId("filter-wallets__wallets")).toHaveTextContent(commonTranslations.STARRED),
 		);
 
 		act(() => {

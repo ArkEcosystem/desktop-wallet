@@ -14,7 +14,7 @@ describe("Pagination", () => {
 		expect(asFragment()).toMatchSnapshot();
 	});
 
-	it("shouldn't render", () => {
+	it("should not render", () => {
 		const { asFragment, queryByTestId } = render(
 			<Pagination totalCount={4} itemsPerPage={4} onSelectPage={handleSelectPage} currentPage={1} />,
 		);

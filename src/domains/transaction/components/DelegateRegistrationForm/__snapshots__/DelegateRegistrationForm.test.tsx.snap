@@ -148,7 +148,7 @@ exports[`DelegateRegistrationForm should error if username is too long 1`] = `
                 class="flex items-center space-x-3 divide-x divide-theme-secondary-300 dark:divide-theme-secondary-800 text-theme-danger-500"
               >
                 <span
-                  data-errortext="'Delegate Name' should have at most 20 characters"
+                  data-errortext="Delegate Name should have at most 20 characters"
                   data-testid="Input__error"
                 >
                   <div
@@ -1429,7 +1429,7 @@ exports[`DelegateRegistrationForm should show error if username already exists 1
                 class="flex items-center space-x-3 divide-x divide-theme-secondary-300 dark:divide-theme-secondary-800 text-theme-danger-500"
               >
                 <span
-                  data-errortext="'Delegate Name' already exists"
+                  data-errortext="Delegate Name already exists"
                   data-testid="Input__error"
                 >
                   <div

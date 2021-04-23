@@ -59,6 +59,7 @@ export const CreateContact = ({ isOpen, networks, profile, onClose, onCancel, on
 		>
 			<div className="mt-8">
 				<ContactForm
+					profile={profile}
 					onChange={handleChange}
 					networks={networks}
 					onCancel={onCancel}

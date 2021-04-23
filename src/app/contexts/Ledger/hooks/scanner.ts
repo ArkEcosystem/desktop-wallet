@@ -1,14 +1,12 @@
 import { Contracts } from "@arkecosystem/platform-sdk-profiles";
 import { useCallback, useMemo, useReducer, useRef, useState } from "react";
 
-import { useEnvironmentContext } from "../../Environment";
 import { useLedgerContext } from "../Ledger";
 import { customDerivationModes } from "../utils";
 import { scannerReducer } from "./scanner.state";
 import { createRange, searchAddresses, searchWallets } from "./scanner.utils";
 
 export const useLedgerScanner = (coin: string, network: string, profile: Contracts.IProfile) => {
-	const { env } = useEnvironmentContext();
 	const { setBusy, setIdle } = useLedgerContext();
 
 	const [state, dispatch] = useReducer(scannerReducer, {
@@ -47,7 +45,7 @@ export const useLedgerScanner = (coin: string, network: string, profile: Contrac
 			abortRetryRef.current = false;
 
 			try {
-				const instance = await env.coin(coin, network);
+				const instance = profile.coins().push(coin, network);
 				const derivationMode = derivationModes[currentDerivationModeIndex];
 
 				const addressMap = await searchAddresses(indexes, instance, profile, derivationMode);
@@ -72,7 +70,7 @@ export const useLedgerScanner = (coin: string, network: string, profile: Contrac
 
 			setIdle();
 		},
-		[coin, network, env, profile, setBusy, setIdle, derivationModes, currentDerivationModeIndex],
+		[coin, network, profile, setBusy, setIdle, derivationModes, currentDerivationModeIndex],
 	);
 
 	const abortScanner = useCallback(() => {

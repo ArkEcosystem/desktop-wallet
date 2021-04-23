@@ -17,7 +17,7 @@ import tw, { styled } from "twin.macro";
 import { AddRecipientProps, ToggleButtonProps } from "./AddRecipient.models";
 import { AddRecipientWrapper } from "./AddRecipient.styles";
 
-const ToggleButtons = ({ isSingle, onChange }: ToggleButtonProps) => {
+const ToggleButtons = ({ isSingle, disableMultiple, onChange }: ToggleButtonProps) => {
 	const { t } = useTranslation();
 
 	return (
@@ -36,24 +36,35 @@ const ToggleButtons = ({ isSingle, onChange }: ToggleButtonProps) => {
 			</div>
 
 			<div className="flex items-stretch select-buttons">
-				<Button
-					data-testid="AddRecipient__single"
-					className="flex-1"
-					size="lg"
-					variant={isSingle ? "primary" : "secondary"}
-					onClick={() => onChange?.(true)}
+				<div className="flex-1">
+					<Button
+						data-testid="AddRecipient__single"
+						className="w-full"
+						size="lg"
+						variant={isSingle ? "primary" : "secondary"}
+						onClick={() => onChange?.(true)}
+					>
+						{t("TRANSACTION.SINGLE")}
+					</Button>
+				</div>
+
+				<Tooltip
+					content={t("TRANSACTION.PAGE_TRANSACTION_SEND.FORM_STEP.MULTIPLE_UNAVAILBLE")}
+					disabled={!disableMultiple}
 				>
-					{t("TRANSACTION.SINGLE")}
-				</Button>
-				<Button
-					data-testid="AddRecipient__multi"
-					className="flex-1 border-l-0"
-					size="lg"
-					variant={!isSingle ? "primary" : "secondary"}
-					onClick={() => onChange?.(false)}
-				>
-					{t("TRANSACTION.MULTIPLE")}
-				</Button>
+					<div className="flex-1">
+						<Button
+							data-testid="AddRecipient__multi"
+							disabled={disableMultiple}
+							className="w-full border-l-0"
+							size="lg"
+							variant={!isSingle ? "primary" : "secondary"}
+							onClick={() => onChange?.(false)}
+						>
+							{t("TRANSACTION.MULTIPLE")}
+						</Button>
+					</div>
+				</Tooltip>
 			</div>
 		</div>
 	);
@@ -76,6 +87,7 @@ export const AddRecipient = ({
 	profile,
 	recipients,
 	showMultiPaymentOption,
+	disableMultiPaymentOption,
 	withDeeplink,
 	onChange,
 }: AddRecipientProps) => {
@@ -155,8 +167,8 @@ export const AddRecipient = ({
 	useEffect(() => {
 		register("amount", sendTransfer.amount(network, remainingBalance, addedRecipients, isSingle));
 		register("displayAmount");
-		register("recipientAddress", sendTransfer.recipientAddress(network, addedRecipients, isSingle));
-	}, [register, remainingBalance, network, sendTransfer, addedRecipients, isSingle]);
+		register("recipientAddress", sendTransfer.recipientAddress(profile, network, addedRecipients, isSingle));
+	}, [register, remainingBalance, network, sendTransfer, addedRecipients, isSingle, profile]);
 
 	useEffect(() => {
 		clearErrors();
@@ -250,7 +262,11 @@ export const AddRecipient = ({
 	return (
 		<AddRecipientWrapper>
 			{showMultiPaymentOption && (
-				<ToggleButtons isSingle={isSingle} onChange={(isSingle) => setIsSingle(isSingle)} />
+				<ToggleButtons
+					isSingle={isSingle}
+					disableMultiple={disableMultiPaymentOption}
+					onChange={(isSingle) => setIsSingle(isSingle)}
+				/>
 			)}
 
 			<SubForm

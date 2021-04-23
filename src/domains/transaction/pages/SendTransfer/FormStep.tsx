@@ -68,9 +68,8 @@ export const FormStep = ({
 							assetSymbol={senderWallet?.currency()}
 							profile={profile}
 							recipients={getRecipients()}
-							showMultiPaymentOption={
-								!senderWallet?.isLedger() && network?.can(Coins.FeatureFlag.TransactionMultiPayment)
-							}
+							showMultiPaymentOption={network?.can(Coins.FeatureFlag.TransactionMultiPayment)}
+							disableMultiPaymentOption={senderWallet?.isLedger()}
 							withDeeplink={!!deeplinkProps?.recipient}
 							onChange={(value: RecipientListItem[]) =>
 								setValue("recipients", value, { shouldValidate: true, shouldDirty: true })
