@@ -76,7 +76,7 @@ describe("PluginList", () => {
 		expect(asFragment()).toMatchSnapshot();
 	});
 
-	it("shouldn't render pagination", () => {
+	it("should not render pagination", () => {
 		const { asFragment, getAllByTestId, getByTestId } = render(<PluginList plugins={plugins} />);
 
 		expect(getAllByTestId("TableRow")).toHaveLength(2);
