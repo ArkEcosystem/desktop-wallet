@@ -11,6 +11,7 @@ type InputProps = {
 	ignoreContext?: boolean;
 	isInvalid?: boolean;
 	isFocused?: boolean;
+	isTextArea?: boolean;
 	hideInputValue?: boolean;
 	suggestion?: string;
 	errorMessage?: string;
@@ -25,8 +26,9 @@ export const InputWrapperStyled = styled.div<{
 	invalid?: boolean;
 	noBorder?: boolean;
 	noShadow?: boolean;
+	isTextArea?: boolean;
 }>`
-	${tw`flex items-center w-full px-4 space-x-2 overflow-hidden transition-colors duration-200 rounded appearance-none h-14 text-theme-text`}
+	${tw`flex items-center w-full px-4 space-x-2 overflow-hidden transition-colors duration-200 rounded appearance-none text-theme-text`}
 
 	${({ noBorder }) => {
 		if (!noBorder) {
@@ -51,6 +53,12 @@ export const InputWrapperStyled = styled.div<{
 
 		return tw`bg-theme-background border-theme-secondary-400 dark:border-theme-secondary-700 focus-within:(border-theme-primary-600 ring-theme-primary-600)`;
 	}}
+
+	${({ isTextArea }) => {
+		if (!isTextArea) {
+			return tw`h-14`;
+		}
+	}}
 `;
 
 const InputStyled = styled.input`
@@ -74,6 +82,7 @@ export const Input = React.forwardRef<InputElement, InputProps>(
 			className,
 			innerClassName,
 			isFocused,
+			isTextArea,
 			ignoreContext,
 			errorMessage,
 			addons,
@@ -113,6 +122,7 @@ export const Input = React.forwardRef<InputElement, InputProps>(
 					invalid={isInvalidValue}
 					noBorder={noBorder}
 					noShadow={noShadow}
+					isTextArea={isTextArea}
 				>
 					{addons?.start !== undefined && addons.start}
 

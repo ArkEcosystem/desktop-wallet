@@ -61,7 +61,7 @@ describe("SelectProfileImage", () => {
 		await waitFor(() => expect(onSelect).toBeCalled());
 	});
 
-	it("shouldn't handle upload file", async () => {
+	it("should not handle upload file", async () => {
 		const onSelect = jest.fn();
 
 		const { container, getByTestId } = render(<SelectProfileImage value="test" onSelect={onSelect} />);
