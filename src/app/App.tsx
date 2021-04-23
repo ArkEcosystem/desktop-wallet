@@ -74,7 +74,7 @@ const Main = () => {
 
 	const handleError = useErrorHandler();
 
-	useLayoutEffect(() => {
+	useEffect(() => {
 		const boot = async () => {
 			try {
 				/* istanbul ignore next */
@@ -83,7 +83,8 @@ const Main = () => {
 					: false;
 				if (__E2E__) {
 					await bootEnvWithProfileFixtures({ env });
-					await loadPlugins();
+
+					loadPlugins();
 					setShowSplash(false);
 					return;
 				}

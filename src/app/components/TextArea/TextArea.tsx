@@ -14,7 +14,7 @@ export const TextArea = React.forwardRef((props: TextareaProps, ref: any) => {
 		}
 	}, [ref, props.value]);
 
-	return <Input data-testid="TextArea" as="textarea" ref={ref} {...props} />;
+	return <Input data-testid="TextArea" as="textarea" isTextArea ref={ref} {...props} />;
 });
 
 TextArea.displayName = "TextArea";
