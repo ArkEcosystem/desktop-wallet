@@ -1,0 +1,796 @@
+{
+	"_id": "@arkecosystem/desktop-wallet-explorer",
+	"_rev": "10-f10b0bbb3f97d1f49ac33782b45f3a6d",
+	"name": "@arkecosystem/desktop-wallet-explorer",
+	"dist-tags": {
+		"latest": "0.1.13"
+	},
+	"versions": {
+		"0.1.4": {
+			"name": "@arkecosystem/desktop-wallet-explorer",
+			"title": "ARK Explorer on the wallet",
+			"version": "0.1.4",
+			"description": "Use the ARK Mainnet explorer directly within the wallet",
+			"main": "index.js",
+			"permissions": ["COMPONENTS", "ROUTES", "MENU_ITEMS", "IFRAME"],
+			"repository": {
+				"type": "git",
+				"url": "git+https://github.com/ark-ecosystem-desktop-plugins/explorer.git"
+			},
+			"desktop-wallet": {
+				"categories": ["utility"],
+				"minimumVersion": "2.6"
+			},
+			"keywords": ["utility", "explorer", "@arkecosystem", "desktop-wallet", "plugin"],
+			"contributors": [
+				{
+					"name": "Alex Barnsley",
+					"email": "alex@ark.io"
+				},
+				{
+					"name": "Juan A. Martín",
+					"email": "juan@ark.io"
+				}
+			],
+			"license": "MIT",
+			"bugs": {
+				"url": "https://github.com/ark-ecosystem-desktop-plugins/explorer/issues"
+			},
+			"homepage": "https://github.com/ark-ecosystem-desktop-plugins/explorer#readme",
+			"gitHead": "ca9a29d21c74f58e2cbc4842937712d3d9de8281",
+			"_id": "@arkecosystem/desktop-wallet-explorer@0.1.4",
+			"_npmVersion": "6.4.1",
+			"_nodeVersion": "12.8.0",
+			"_npmUser": {
+				"name": "alexbarnsley",
+				"email": "alex@ark.io"
+			},
+			"dist": {
+				"integrity": "sha512-Z/jV5WcT2CMGJYtir8hfq14IoBT7OM/1nRUBp0XfkDJdYvRpFBne8pCmlnIC7Q1M5IkShTR09j1+wMyUZ9nwHg==",
+				"shasum": "4d934f5d819538b139089589e1f94132ab6927b0",
+				"tarball": "https://registry.npmjs.org/@arkecosystem/desktop-wallet-explorer/-/desktop-wallet-explorer-0.1.4.tgz",
+				"fileCount": 6,
+				"unpackedSize": 3361,
+				"npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJdWsEPCRA9TVsSAnZWagAA7mIP/1RllBvjUFgzqmXjUrna\neMzi7RcOMSb+ynlO2tLI1Fo9Xs3G42G5xfRJkVE+6zAI0UXBlDsHoP60jZPo\nRazkRQUh+zWR5+pNT/HbVIjNXD/W0EG75gIeLuJDVz1Mq9DUVnyokpr5kH7W\n9iVNrBhPstxHFKx/Un6LU8wjzawfhWi0MDr9D5hxYRDCRVozOwRRKKn1oZ1z\nquV4eHEFb1g5cBuCZS7PBmgat5SD4KKKI0k2LVNm57JYbB+S+p4iwEOsMnyO\nz9FP3pLci8hzzLxowQyG4/ttH2+ZEW8EX5/xeaySgyFv8Kokxyen/sKrD0Wq\nHNcXPT7kqskeMD7HtFf3s6LLDLnJ2cFr94uRWyXCWrMkQssB8+YIOokSQc6S\ng3Pj3tEKCLhhGHvgF8y9ou+9kQ/1NERUv7Jc5xWhpG15/V9BIFv3+gP3I1+k\n8Q0MQHTfQpqLY41YHwAXecEQjgVssgxCII+1It3wpiLCAmfa1nORydUCj/Qb\nX8W13BbWm7ILrEpUtGW7ukHlnOSEpSoNBpk67w+nBWB/0xfWUU8a5ZTYoTfO\n6CnWtKAUYzXVGRxIF/QcAsruRwaSXBU1eiijcgiFdhKoRKdw6RAr25Z72ls4\nV53QYJlUwbXt+JcG5zrJHgZYZiuu8SoqjT49eCKBYUYC1Pn9e04jgasm0ikv\nN80Q\r\n=OaJV\r\n-----END PGP SIGNATURE-----\r\n"
+			},
+			"maintainers": [
+				{
+					"name": "faustbrian",
+					"email": "hello@basecode.sh"
+				},
+				{
+					"name": "luciorubeens",
+					"email": "luciorubeens@gmail.com"
+				},
+				{
+					"name": "j-a-m-l",
+					"email": "dev@jaml.pro"
+				},
+				{
+					"name": "supaiku",
+					"email": "joshua@ark.io"
+				},
+				{
+					"name": "arkio",
+					"email": "fx.thoorens@ark.io"
+				},
+				{
+					"name": "kristjankosic",
+					"email": "kristjan@ark.io"
+				},
+				{
+					"name": "alexbarnsley",
+					"email": "alex@ark.io"
+				}
+			],
+			"directories": {},
+			"_npmOperationalInternal": {
+				"host": "s3://npm-registry-packages",
+				"tmp": "tmp/desktop-wallet-explorer_0.1.4_1566228751131_0.5538331516605612"
+			},
+			"_hasShrinkwrap": false
+		},
+		"0.1.6": {
+			"name": "@arkecosystem/desktop-wallet-explorer",
+			"title": "ARK Explorer on the wallet",
+			"version": "0.1.6",
+			"description": "Use the ARK Mainnet explorer directly within the wallet",
+			"main": "index.js",
+			"permissions": ["COMPONENTS", "ROUTES", "MENU_ITEMS", "WEBFRAME"],
+			"repository": {
+				"type": "git",
+				"url": "git+https://github.com/ark-ecosystem-desktop-plugins/explorer.git"
+			},
+			"desktop-wallet": {
+				"categories": ["utility"],
+				"minimumVersion": "2.6"
+			},
+			"keywords": ["utility", "explorer", "@arkecosystem", "desktop-wallet", "plugin"],
+			"contributors": [
+				{
+					"name": "Alex Barnsley",
+					"email": "alex@ark.io"
+				},
+				{
+					"name": "Juan A. Martín",
+					"email": "juan@ark.io"
+				}
+			],
+			"license": "MIT",
+			"bugs": {
+				"url": "https://github.com/ark-ecosystem-desktop-plugins/explorer/issues"
+			},
+			"homepage": "https://github.com/ark-ecosystem-desktop-plugins/explorer#readme",
+			"licenseText": "The MIT License (MIT)\n\nCopyright (c) 2019 Ark Ecosystem <info@ark.io>\n\nPermission is hereby granted, free of charge, to any person obtaining a copy of\nthis software and associated documentation files (the \"Software\"), to deal in\nthe Software without restriction, including without limitation the rights to\nuse, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of\nthe Software, and to permit persons to whom the Software is furnished to do so,\nsubject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in all\ncopies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS\nFOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR\nCOPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER\nIN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN\nCONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.\n",
+			"_id": "@arkecosystem/desktop-wallet-explorer@0.1.6",
+			"dist": {
+				"shasum": "c78359e08eb814a0f890d07b9d558fc4ba91ec1e",
+				"integrity": "sha512-U2DfLsQLtP+dvWuKlhZhfZ9RZAyItWL9E3AD9wyR0m59FBUSmwVUUtC957bkWJ5hyNdPpOF0yyBRaDdj7n777Q==",
+				"tarball": "https://registry.npmjs.org/@arkecosystem/desktop-wallet-explorer/-/desktop-wallet-explorer-0.1.6.tgz",
+				"fileCount": 9,
+				"unpackedSize": 3431,
+				"npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJd0pm8CRA9TVsSAnZWagAAhxsQAJu7F5w28nEunsRFAse4\nZcGG+s8qNJoB7v3HZNvLKhLuz0mb99b6NzW6XhNurvP4Akc7pVGd/zklg6Z8\nJTxAnrTUgsvFAMHt7j7uaOikKYS3DYvIBn/UPiZs26jKtqKcWcOARQuzqjUG\nk0OQZQh1qbv03pqxsGuPnO0hsBfPM5bOMN4UTBBJ6IhkcaK+jscZ5CvVGCM6\n5btF/zfSHxkGxWymGlynO4J+A4Z/4HwLX14nH2JXmoufq6xC3eHNi4A2iw69\n1Dv0eZb7cI4s8eemf2pJUM3Fa1Oy19em2eh+TcCEXbjL2VtLaG0GMqUMwkYU\nqUf3ADidZDDCNzYlDFQCD6ZV60RidjS3JbsZxFtpkYd4IJNpsuRnmHTkeBKG\nY04lRtibNQs0pcxaxwSo6Wg8OIlWc7zA8N5UVSxzgHaYsFRjPuOk9dflNQBh\nLXW3Fe3aBHlLiO4+8BAyo+OXp5pK+nn8UXSzh/S7l8UHapVAubjxKhbPMKYJ\nyofknnpkeZdXq1k/CrFgtm+1dvlRVNx0AIQ7DzqtHMIP4E7k5UK4PmhXVrna\nO/cfpa96LzWiP5HjNQMUNuzgvxrxD/h/IhcAPsbcd1IepAjVIz3+JaubS7Mp\n6Puh2Y8A5m7LI+WAMQln658j2gT23KfQnkLh2MlxdrWhxxF17DXHcqv/g5cU\nHpB2\r\n=+k/7\r\n-----END PGP SIGNATURE-----\r\n"
+			},
+			"maintainers": [
+				{
+					"name": "alexbarnsley",
+					"email": "alex@ark.io"
+				},
+				{
+					"name": "arkio",
+					"email": "fx.thoorens@ark.io"
+				},
+				{
+					"name": "faustbrian",
+					"email": "hello@basecode.sh"
+				},
+				{
+					"name": "j-a-m-l",
+					"email": "dev@jaml.pro"
+				},
+				{
+					"name": "kristjankosic",
+					"email": "kristjan@ark.io"
+				},
+				{
+					"name": "luciorubeens",
+					"email": "luciorubeens@gmail.com"
+				},
+				{
+					"name": "supaiku",
+					"email": "joshua@ark.io"
+				}
+			],
+			"_npmUser": {
+				"name": "alexbarnsley",
+				"email": "alex@ark.io"
+			},
+			"directories": {},
+			"_npmOperationalInternal": {
+				"host": "s3://npm-registry-packages",
+				"tmp": "tmp/desktop-wallet-explorer_0.1.6_1574083004084_0.6622065375091744"
+			},
+			"_hasShrinkwrap": false
+		},
+		"0.1.7": {
+			"name": "@arkecosystem/desktop-wallet-explorer",
+			"title": "ARK Explorer on the wallet",
+			"version": "0.1.7",
+			"description": "Use the ARK Mainnet explorer directly within the wallet",
+			"main": "index.js",
+			"permissions": ["COMPONENTS", "ROUTES", "MENU_ITEMS", "WEBFRAME"],
+			"repository": {
+				"type": "git",
+				"url": "git+https://github.com/ark-ecosystem-desktop-plugins/explorer.git"
+			},
+			"desktop-wallet": {
+				"categories": ["utility"],
+				"minimumVersion": "2.6"
+			},
+			"keywords": ["utility", "explorer", "@arkecosystem", "desktop-wallet", "plugin"],
+			"contributors": [
+				{
+					"name": "Alex Barnsley",
+					"email": "alex@ark.io"
+				},
+				{
+					"name": "Juan A. Martín",
+					"email": "juan@ark.io"
+				}
+			],
+			"license": "MIT",
+			"bugs": {
+				"url": "https://github.com/ark-ecosystem-desktop-plugins/explorer/issues"
+			},
+			"homepage": "https://github.com/ark-ecosystem-desktop-plugins/explorer#readme",
+			"licenseText": "The MIT License (MIT)\n\nCopyright (c) 2019 Ark Ecosystem <info@ark.io>\n\nPermission is hereby granted, free of charge, to any person obtaining a copy of\nthis software and associated documentation files (the \"Software\"), to deal in\nthe Software without restriction, including without limitation the rights to\nuse, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of\nthe Software, and to permit persons to whom the Software is furnished to do so,\nsubject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in all\ncopies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS\nFOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR\nCOPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER\nIN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN\nCONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.\n",
+			"_id": "@arkecosystem/desktop-wallet-explorer@0.1.7",
+			"dist": {
+				"shasum": "c6496be3b24801d07e0172e2d005cdcdee03c5bf",
+				"integrity": "sha512-QlUmj3PhnVEdPl1tErDc4WuLP8Z3mGKXU5VeCPNYnEIxD38470vVqeb9kAMk9di5I7Qow9WdbLmXaW3n5nc8Fw==",
+				"tarball": "https://registry.npmjs.org/@arkecosystem/desktop-wallet-explorer/-/desktop-wallet-explorer-0.1.7.tgz",
+				"fileCount": 9,
+				"unpackedSize": 3431,
+				"npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJd0qvqCRA9TVsSAnZWagAAEjgP/AgLzzzLvnDQGf/QILnO\ncIHd8cw4Yx+oI0pPSU+dryCNSf6IHzN3ClrlZ8uTU9O3b5RZm0DQySSSgOVQ\nz+H/pOT1X7GRwrI9EHqXBSmw3VI4AVSbjVmhtX40aXhIrsnseqp4wpvc6Nsu\n5xIscRDSMirAXnSl5e14wzXYOC1Lb8aG2TDU6DryTKI3UrwpU1g+ZRGEkxK5\ntQrYT5Qd7ptq0dCEN+PyOWhB29NEDnwlBvZDiu97zCfS8Mh00K4N8a6nYlH/\nJgIESDiDshwtQXV9Bydf5ZtorMI5Q2iABmLBtEuteKEymVULCxfwNi1NlY88\neJkoQCkvJq3BYQKhSgvILFxKoP+H+EnkLTLk4Gfm4efuBTdrAwtXj03HsazK\n8CZ/kDJu/7r4rPbl7wcZ3RTWCvdSZx/mQGBSNMvFYKTRIgZATXFyNphmIZ14\n6PzM9gJq8iE6Xv7Hmjg93ZklZj6YcnL6RkMq+dggWnt73zWkTj/Ypfots5Nv\n4rnRdrqwozGZsF5Y1q1g494wUkImt9TpFxv7NyW0+/AjVGfGA6Im53H+lMdW\nMnhYZmcot4LLF5WfYOjnoQsnGG9E+l9jJAKHaQtcbMUhRxZ0SBrlcqalgZR4\nJsPCQF2mBeHlEP2WqByjlSA5CoKz1qgQ/rTqkgGTvv5nD6D8A96f+CWgfoYL\n47Vn\r\n=gEF0\r\n-----END PGP SIGNATURE-----\r\n"
+			},
+			"maintainers": [
+				{
+					"name": "alexbarnsley",
+					"email": "alex@ark.io"
+				},
+				{
+					"name": "arkio",
+					"email": "fx.thoorens@ark.io"
+				},
+				{
+					"name": "faustbrian",
+					"email": "hello@basecode.sh"
+				},
+				{
+					"name": "j-a-m-l",
+					"email": "dev@jaml.pro"
+				},
+				{
+					"name": "kristjankosic",
+					"email": "kristjan@ark.io"
+				},
+				{
+					"name": "luciorubeens",
+					"email": "luciorubeens@gmail.com"
+				},
+				{
+					"name": "supaiku",
+					"email": "joshua@ark.io"
+				}
+			],
+			"_npmUser": {
+				"name": "alexbarnsley",
+				"email": "alex@ark.io"
+			},
+			"directories": {},
+			"_npmOperationalInternal": {
+				"host": "s3://npm-registry-packages",
+				"tmp": "tmp/desktop-wallet-explorer_0.1.7_1574087657801_0.23352537404688012"
+			},
+			"_hasShrinkwrap": false
+		},
+		"0.1.8": {
+			"name": "@arkecosystem/desktop-wallet-explorer",
+			"title": "ARK Explorer on the wallet",
+			"version": "0.1.8",
+			"description": "Use the ARK Mainnet explorer directly within the wallet",
+			"main": "index.js",
+			"permissions": ["COMPONENTS", "ROUTES", "MENU_ITEMS", "WEBFRAME"],
+			"repository": {
+				"type": "git",
+				"url": "git+https://github.com/ark-ecosystem-desktop-plugins/explorer.git"
+			},
+			"desktop-wallet": {
+				"categories": ["utility"],
+				"minVersion": "2.6"
+			},
+			"keywords": ["utility", "explorer", "@arkecosystem", "desktop-wallet", "plugin"],
+			"contributors": [
+				{
+					"name": "Alex Barnsley",
+					"email": "alex@ark.io"
+				},
+				{
+					"name": "Juan A. Martín",
+					"email": "juan@ark.io"
+				}
+			],
+			"license": "MIT",
+			"bugs": {
+				"url": "https://github.com/ark-ecosystem-desktop-plugins/explorer/issues"
+			},
+			"homepage": "https://github.com/ark-ecosystem-desktop-plugins/explorer#readme",
+			"licenseText": "The MIT License (MIT)\n\nCopyright (c) 2019 Ark Ecosystem <info@ark.io>\n\nPermission is hereby granted, free of charge, to any person obtaining a copy of\nthis software and associated documentation files (the \"Software\"), to deal in\nthe Software without restriction, including without limitation the rights to\nuse, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of\nthe Software, and to permit persons to whom the Software is furnished to do so,\nsubject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in all\ncopies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS\nFOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR\nCOPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER\nIN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN\nCONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.\n",
+			"_id": "@arkecosystem/desktop-wallet-explorer@0.1.8",
+			"dist": {
+				"shasum": "425c6a52c498e0cc6824880764874f22606f2ec3",
+				"integrity": "sha512-DWZTkCGijqcE5L9FWb+ahr4u7RQgkzWqYL+P55FOmTgVDwHa6taxaaHTwpBCf9sMmnv6KV6FDhg/REOSEVynaA==",
+				"tarball": "https://registry.npmjs.org/@arkecosystem/desktop-wallet-explorer/-/desktop-wallet-explorer-0.1.8.tgz",
+				"fileCount": 10,
+				"unpackedSize": 5828,
+				"npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJd0qymCRA9TVsSAnZWagAAadYP/1NvRqGPqAWOTn1+vYfm\n13a5BlwXpwzye30koJJ2JxAVEnoeWi3PtA8wcsPloRmlSZunD9COC7+zE5TT\nGBWq9Sb6Wmz7kiISPHriDnGFuOB7w/8Wk4TcEn6EnvFf9A5d9bsJzI5fOCTi\nsPcwws6vg5FDiMfzenyGEwWecNpFdtKSBDK7xn1eh/o2FcywCTnT6Slve/JX\nKEqV/SstmndQNVIyhXRbXv6sBVDZgyPoCeWnhKgshhgi2iO2tLDuMrRC4F1O\nKua0YFSMjspTVYrjvnjnFQD1ffHwDtDqfx/AGZc/XfPGfp+yKsABpSYZTJrN\nir/j4jj5pkVTDCfCzN+p164MhO5gbMRRaS3PPcKy0gh4+nlPjaHKGfSjX7kp\nb5wrxOeUefOrZL6MwaGMy3cqorBEgoZw563OCgAxkxAkauguoRTGX1k6aD34\nvmpWWiXFDnDXbj5lYB/MQ5YBR02tjSi3vOCaOJm3aPtO5mWhEeHWvWYy/03H\nnjkmvAHIST+TI0bkz0eLXll3mZnQFC+y4VSbHFdmxolvH3nq37ATUbuWh1lE\nAX8yZ4E2r9TcLEXUkfXuiTeWMeuknPD4ripUSn/fnez7Gk1qJd6XLA5fOL6t\ngojXviRdJIxOn2Ff+0mrOsX1ZEuID6v2wX8aMRAoQS/dMTqfL6VuGKfwuaRg\ni9ui\r\n=1ais\r\n-----END PGP SIGNATURE-----\r\n"
+			},
+			"maintainers": [
+				{
+					"name": "alexbarnsley",
+					"email": "alex@ark.io"
+				},
+				{
+					"name": "arkio",
+					"email": "fx.thoorens@ark.io"
+				},
+				{
+					"name": "faustbrian",
+					"email": "hello@basecode.sh"
+				},
+				{
+					"name": "j-a-m-l",
+					"email": "dev@jaml.pro"
+				},
+				{
+					"name": "kristjankosic",
+					"email": "kristjan@ark.io"
+				},
+				{
+					"name": "luciorubeens",
+					"email": "luciorubeens@gmail.com"
+				},
+				{
+					"name": "supaiku",
+					"email": "joshua@ark.io"
+				}
+			],
+			"_npmUser": {
+				"name": "alexbarnsley",
+				"email": "alex@ark.io"
+			},
+			"directories": {},
+			"_npmOperationalInternal": {
+				"host": "s3://npm-registry-packages",
+				"tmp": "tmp/desktop-wallet-explorer_0.1.8_1574087845781_0.2836160945989159"
+			},
+			"_hasShrinkwrap": false
+		},
+		"0.1.9": {
+			"name": "@arkecosystem/desktop-wallet-explorer",
+			"title": "ARK Explorer Wallet Edition",
+			"version": "0.1.9",
+			"description": "Use the ARK Mainnet explorer directly within the wallet",
+			"main": "index.js",
+			"permissions": ["COMPONENTS", "ROUTES", "MENU_ITEMS", "WEBFRAME"],
+			"repository": {
+				"type": "git",
+				"url": "git+https://github.com/ark-ecosystem-desktop-plugins/explorer.git"
+			},
+			"desktop-wallet": {
+				"categories": ["utility"],
+				"minVersion": "2.6"
+			},
+			"keywords": ["utility", "explorer", "@arkecosystem", "desktop-wallet", "plugin"],
+			"contributors": [
+				{
+					"name": "Alex Barnsley",
+					"email": "alex@ark.io"
+				},
+				{
+					"name": "Juan A. Martín",
+					"email": "juan@ark.io"
+				}
+			],
+			"license": "MIT",
+			"bugs": {
+				"url": "https://github.com/ark-ecosystem-desktop-plugins/explorer/issues"
+			},
+			"homepage": "https://github.com/ark-ecosystem-desktop-plugins/explorer#readme",
+			"licenseText": "The MIT License (MIT)\n\nCopyright (c) 2019 Ark Ecosystem <info@ark.io>\n\nPermission is hereby granted, free of charge, to any person obtaining a copy of\nthis software and associated documentation files (the \"Software\"), to deal in\nthe Software without restriction, including without limitation the rights to\nuse, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of\nthe Software, and to permit persons to whom the Software is furnished to do so,\nsubject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in all\ncopies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS\nFOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR\nCOPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER\nIN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN\nCONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.\n",
+			"_id": "@arkecosystem/desktop-wallet-explorer@0.1.9",
+			"dist": {
+				"shasum": "958f91f779348ef07ed8acb2d6dc4a8da41c0728",
+				"integrity": "sha512-Xpr6Gzo/QJz0HyAvFmhrlvGFbldzlVAav2wXzE/feg6jYJyGiLtTHgBcSTr89k8cRpl1J0aBuvQAeD40v9H2wQ==",
+				"tarball": "https://registry.npmjs.org/@arkecosystem/desktop-wallet-explorer/-/desktop-wallet-explorer-0.1.9.tgz",
+				"fileCount": 10,
+				"unpackedSize": 5829,
+				"npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJd0rCvCRA9TVsSAnZWagAAGQMP/0svBQKSEygR63CUoL2p\naHx7Xasyye5u7snCYJ1149P4PAHb/m8iYkvZL2YN2pWCQDHu96bbvvLy/CNs\nBtFuGX2GM6amRxar1upfssMLoVcISUWO3gBXKSxinR3r4GowFqMgIZ9e+IDK\ns4KKl+3pxz5Uz675+CsYcOAMQ8J7YsL+QHlbOt5Gu9/UAqXqtu2vcfzImjQN\nwJIX1RbyPOcDObNFHzn7KhLw4mPId/50vFduiyp2pek81LfHoQpa+Yjjs0Pv\nPBFVEbwClcIvB9w2YOAF/ue+S2rpj6viRwsgnFWX7VtdDLAyWyUKbx08Rhj/\n7Qkhz3u1bVgNHonzcJnBkvYiCtjxR1mjOgbzsHTLEwi9RvVE4CoIZCkW1GnM\nyzbOYtygYRfM3sucDYMeRut9zgKL9cBTdVOotxrKKCC3G1cysOlz+c3fs+/d\nOQUTwWmRls64oUbCqdl5LjCL5Okt3Txu8Rfx66bbmBJ+mgbSnFf6EkYNSkin\n05S6JYX/UygwQN7tieag4llG6l29CoUW52oXOZ2bXifsbMQUZlSwPMdJ3y86\ndoXA+PPxJmQmwpNvmC97gim2LgL7jsKh/LpGXF7ogQTB651kZCaC/CqvuJj8\nhRp3kDH0YKx2EuYV9fe0bQYf8Fi+5cqVbqgsfyIlhpSDvWq4xSKyDV6PNkYA\n9DMm\r\n=HHhX\r\n-----END PGP SIGNATURE-----\r\n"
+			},
+			"maintainers": [
+				{
+					"name": "alexbarnsley",
+					"email": "alex@ark.io"
+				},
+				{
+					"name": "arkio",
+					"email": "fx.thoorens@ark.io"
+				},
+				{
+					"name": "faustbrian",
+					"email": "hello@basecode.sh"
+				},
+				{
+					"name": "j-a-m-l",
+					"email": "dev@jaml.pro"
+				},
+				{
+					"name": "kristjankosic",
+					"email": "kristjan@ark.io"
+				},
+				{
+					"name": "luciorubeens",
+					"email": "luciorubeens@gmail.com"
+				},
+				{
+					"name": "supaiku",
+					"email": "joshua@ark.io"
+				}
+			],
+			"_npmUser": {
+				"name": "alexbarnsley",
+				"email": "alex@ark.io"
+			},
+			"directories": {},
+			"_npmOperationalInternal": {
+				"host": "s3://npm-registry-packages",
+				"tmp": "tmp/desktop-wallet-explorer_0.1.9_1574088879156_0.9029881826945607"
+			},
+			"_hasShrinkwrap": false
+		},
+		"0.1.10": {
+			"name": "@arkecosystem/desktop-wallet-explorer",
+			"title": "ARK Explorer Wallet Edition",
+			"version": "0.1.10",
+			"description": "Use the ARK Mainnet explorer directly within the wallet",
+			"logo": "https://raw.githubusercontent.com/ark-ecosystem-desktop-plugins/explorer/master/logo.png",
+			"main": "index.js",
+			"permissions": ["COMPONENTS", "ROUTES", "MENU_ITEMS", "WEBFRAME"],
+			"repository": {
+				"type": "git",
+				"url": "git+https://github.com/ark-ecosystem-desktop-plugins/explorer.git"
+			},
+			"desktop-wallet": {
+				"categories": ["utility"],
+				"minVersion": "2.6"
+			},
+			"keywords": ["utility", "explorer", "@arkecosystem", "desktop-wallet", "plugin"],
+			"contributors": [
+				{
+					"name": "Alex Barnsley",
+					"email": "alex@ark.io"
+				},
+				{
+					"name": "Juan A. Martín",
+					"email": "juan@ark.io"
+				}
+			],
+			"license": "MIT",
+			"bugs": {
+				"url": "https://github.com/ark-ecosystem-desktop-plugins/explorer/issues"
+			},
+			"homepage": "https://github.com/ark-ecosystem-desktop-plugins/explorer#readme",
+			"licenseText": "The MIT License (MIT)\n\nCopyright (c) 2019 Ark Ecosystem <info@ark.io>\n\nPermission is hereby granted, free of charge, to any person obtaining a copy of\nthis software and associated documentation files (the \"Software\"), to deal in\nthe Software without restriction, including without limitation the rights to\nuse, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of\nthe Software, and to permit persons to whom the Software is furnished to do so,\nsubject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in all\ncopies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS\nFOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR\nCOPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER\nIN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN\nCONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.\n",
+			"_id": "@arkecosystem/desktop-wallet-explorer@0.1.10",
+			"dist": {
+				"shasum": "957df1d66f4c92c89f1b37f1bf39e77bb7d1654e",
+				"integrity": "sha512-clUTDXDFYE8lCMnU7dzYDdcUKge75KuADayGqg3CxeR9p6MlYBph7x4lYE90+xyavRNDgkYUghPJvvOoX9hUnA==",
+				"tarball": "https://registry.npmjs.org/@arkecosystem/desktop-wallet-explorer/-/desktop-wallet-explorer-0.1.10.tgz",
+				"fileCount": 10,
+				"unpackedSize": 5866,
+				"npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJd1QG5CRA9TVsSAnZWagAAat4P/1IX7KOX2Y37Tg/jC1qT\n8GW5nrLARm9Dy0A8TI1sTaWdQpXsJunsyiy2TuNz0ndxB5DX7DWf4AnsMXPI\ndJl7ROsMjAo3AxFAOT2r5NVnbgotnvCdXawi2mzvE4w/Kb1lTU4nDPQYznOA\nTX6b64fmXU5Nh2iG4Ko2Anwx+qddJFIGi0hpT0kC9uRF0wCkcIqiADfaDeaF\n7Xkhm9gvNJYMB7WTNLh3zVaGmD7M0zvqWVfsC0eVnOIsUCFcAc2RwkwKOIGs\nHDuY0DBsYAnoVhpMeBBvSESxXrhNtOpl6w/A4cwXg62IBj9pVGwgvIvMFoEr\nQZawTBLFeWKHeHOBiDQT35K4u8mmrmTjvl+EM2xuia4KqHWJjEIf/+cwvOiq\n0IfqqexAlz+6bEaE/CIzavtaDJEQ5DmG1m5OdUVQhxg4ziVGOCFajpbk4IiL\nrLhuYhI/LSf41vI743duZlXxNsWqNFqhWklr8GpGqwyNjX2518lUYGF/lumr\nCdksnSzPVJIieLrFhqS836gPsHtlPyL+ogJek2rAczLHXXj+J7J8tYTmtm2y\nob9JrPELfLBB3RWAFXY5DfCsGrGOSpdyWjLJZFOhVXiGlvI405SfWNTdl/xr\nYe8G7DZgdwl4dlSmIT/SiILyKqMDWda+930QyJz6xc2u8fxGymmKVf1qgsfO\nHZEg\r\n=ZpYC\r\n-----END PGP SIGNATURE-----\r\n"
+			},
+			"maintainers": [
+				{
+					"email": "alex@ark.io",
+					"name": "alexbarnsley"
+				},
+				{
+					"email": "fx.thoorens@ark.io",
+					"name": "arkio"
+				},
+				{
+					"email": "hello@basecode.sh",
+					"name": "faustbrian"
+				},
+				{
+					"email": "kristjan@ark.io",
+					"name": "kristjankosic"
+				},
+				{
+					"email": "luciorubeens@gmail.com",
+					"name": "luciorubeens"
+				},
+				{
+					"email": "joshua@ark.io",
+					"name": "supaiku"
+				}
+			],
+			"_npmUser": {
+				"name": "alexbarnsley",
+				"email": "alex@ark.io"
+			},
+			"directories": {},
+			"_npmOperationalInternal": {
+				"host": "s3://npm-registry-packages",
+				"tmp": "tmp/desktop-wallet-explorer_0.1.10_1574240696753_0.016276709356951136"
+			},
+			"_hasShrinkwrap": false
+		},
+		"0.1.11": {
+			"name": "@arkecosystem/desktop-wallet-explorer",
+			"title": "ARK Explorer Wallet Edition",
+			"version": "0.1.11",
+			"description": "Use the ARK Mainnet explorer directly within the wallet",
+			"logo": "https://raw.githubusercontent.com/ark-ecosystem-desktop-plugins/explorer/master/logo.png",
+			"main": "index.js",
+			"permissions": ["COMPONENTS", "ROUTES", "MENU_ITEMS", "UI_COMPONENTS", "WEBFRAME"],
+			"repository": {
+				"type": "git",
+				"url": "git+https://github.com/ark-ecosystem-desktop-plugins/explorer.git"
+			},
+			"desktop-wallet": {
+				"categories": ["utility"],
+				"minVersion": "2.6"
+			},
+			"keywords": ["utility", "explorer", "@arkecosystem", "desktop-wallet", "plugin"],
+			"contributors": [
+				{
+					"name": "Alex Barnsley",
+					"email": "alex@ark.io"
+				},
+				{
+					"name": "Juan A. Martín",
+					"email": "juan@ark.io"
+				}
+			],
+			"license": "MIT",
+			"bugs": {
+				"url": "https://github.com/ark-ecosystem-desktop-plugins/explorer/issues"
+			},
+			"homepage": "https://github.com/ark-ecosystem-desktop-plugins/explorer#readme",
+			"licenseText": "The MIT License (MIT)\n\nCopyright (c) 2019 Ark Ecosystem <info@ark.io>\n\nPermission is hereby granted, free of charge, to any person obtaining a copy of\nthis software and associated documentation files (the \"Software\"), to deal in\nthe Software without restriction, including without limitation the rights to\nuse, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of\nthe Software, and to permit persons to whom the Software is furnished to do so,\nsubject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in all\ncopies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS\nFOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR\nCOPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER\nIN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN\nCONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.\n",
+			"_id": "@arkecosystem/desktop-wallet-explorer@0.1.11",
+			"dist": {
+				"shasum": "553aa4556cd55a6304907c8f14c9509ee6f08676",
+				"integrity": "sha512-NMEXlbUiJhmX/T5WqSjn7m/SN3J9j1zSZ7O9YU+y7zhyFPStSI9PCwCnv4knFAunvLsxRYZ3P2ODywgOpV0B+g==",
+				"tarball": "https://registry.npmjs.org/@arkecosystem/desktop-wallet-explorer/-/desktop-wallet-explorer-0.1.11.tgz",
+				"fileCount": 10,
+				"unpackedSize": 7312,
+				"npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJd3D/5CRA9TVsSAnZWagAAdiQQAJPeJ5iJyL1c/dEYiK/T\noY4/fru2Pci9IgH6C3qaQgpLRKxEaAahKagseAniykSvDWfi8lAcVVa/IORC\n0C4hLa2VSkPnQFf4wVFS+64n3K5XOSho6epUCWBxkaeZskts15F1DO4bjvJq\n4wnBPPi/md6ztbyPLoDoTJz2HsTRDfaOYqJ6YOZXPJSj3N3wuPR3HqYnxCBi\nap5RHTpZmzJ5SnOyfNELKAxBrLdryJykavVUJn4+X6sM+JLnQBcXLqZOAXEL\nwZ9z1iu2Fy2nNz2hkAO+aQdDft53KOdjs8Rcwnjzvy7S2OLP8w4o31OEc5ub\nKdSHbxCOcGCkZSaucjUu1PN/Yu8WSo6gIcS/ONk50+X329NStYWXgsMbuYnP\nUSRXvJhpNVy1iemlGmY4xllZ5KM19jK1UPyWE1YA7lRGIn4yT7j/4WJBU2Zo\npxYqvbm09EInbLLjLwrXuVWIFNFCuvt6NMohTO/pQUQe+SRNEdnLajAr9X7j\n4FgDXPEiN/IJTv46LtPgAcJFGm5K3gK2mwR2Act1wKSeTv6I0KpJn+tqW7+d\nZR0dUr98fQrWmcyXp3obKed8fI214vhOsbotmgfUdtvGlqYOenXOyjH81Vhf\nl1fD7UE4aabcwmoabx0qAwvHdmM3gKIDo0zHbvHHuTkkgmSpFp3k3UZsid5D\nD05w\r\n=S3DQ\r\n-----END PGP SIGNATURE-----\r\n"
+			},
+			"maintainers": [
+				{
+					"email": "alex@ark.io",
+					"name": "alexbarnsley"
+				},
+				{
+					"email": "fx.thoorens@ark.io",
+					"name": "arkio"
+				},
+				{
+					"email": "hello@basecode.sh",
+					"name": "faustbrian"
+				},
+				{
+					"email": "kristjan@ark.io",
+					"name": "kristjankosic"
+				},
+				{
+					"email": "luciorubeens@gmail.com",
+					"name": "luciorubeens"
+				},
+				{
+					"email": "joshua@ark.io",
+					"name": "supaiku"
+				}
+			],
+			"_npmUser": {
+				"name": "alexbarnsley",
+				"email": "alex@ark.io"
+			},
+			"directories": {},
+			"_npmOperationalInternal": {
+				"host": "s3://npm-registry-packages",
+				"tmp": "tmp/desktop-wallet-explorer_0.1.11_1574715384963_0.4105152793782645"
+			},
+			"_hasShrinkwrap": false
+		},
+		"0.1.12": {
+			"name": "@arkecosystem/desktop-wallet-explorer",
+			"version": "0.1.12",
+			"description": "Use the ARK Mainnet explorer directly within the wallet",
+			"main": "index.js",
+			"repository": {
+				"type": "git",
+				"url": "git+https://github.com/ark-ecosystem-desktop-plugins/explorer.git"
+			},
+			"desktop-wallet": {
+				"title": "ARK Explorer",
+				"logo": "https://raw.githubusercontent.com/ark-ecosystem-desktop-plugins/explorer/master/logo.png",
+				"categories": ["utility"],
+				"permissions": ["COMPONENTS", "ROUTES", "MENU_ITEMS", "UI_COMPONENTS", "WEBFRAME"],
+				"minVersion": "2.6"
+			},
+			"keywords": ["utility", "explorer", "@arkecosystem", "desktop-wallet", "plugin"],
+			"contributors": [
+				{
+					"name": "Alex Barnsley",
+					"email": "alex@ark.io"
+				},
+				{
+					"name": "Juan A. Martín",
+					"email": "juan@ark.io"
+				}
+			],
+			"license": "MIT",
+			"bugs": {
+				"url": "https://github.com/ark-ecosystem-desktop-plugins/explorer/issues"
+			},
+			"homepage": "https://github.com/ark-ecosystem-desktop-plugins/explorer#readme",
+			"licenseText": "The MIT License (MIT)\n\nCopyright (c) 2019 Ark Ecosystem <info@ark.io>\n\nPermission is hereby granted, free of charge, to any person obtaining a copy of\nthis software and associated documentation files (the \"Software\"), to deal in\nthe Software without restriction, including without limitation the rights to\nuse, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of\nthe Software, and to permit persons to whom the Software is furnished to do so,\nsubject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in all\ncopies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS\nFOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR\nCOPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER\nIN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN\nCONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.\n",
+			"_id": "@arkecosystem/desktop-wallet-explorer@0.1.12",
+			"dist": {
+				"shasum": "8fc5da9b8e648c1bb253b36e0176e1313d1c289a",
+				"integrity": "sha512-pwz2B9zkAFnJN/rL6zZmdaV9/TmRAaqJgKn6MJ9D1rz+LenFwhyReb/+ncUY9v/WFCt9YsKDvUd0gLiLaZoIHA==",
+				"tarball": "https://registry.npmjs.org/@arkecosystem/desktop-wallet-explorer/-/desktop-wallet-explorer-0.1.12.tgz",
+				"fileCount": 10,
+				"unpackedSize": 7315,
+				"npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJd3UQ/CRA9TVsSAnZWagAAlbAP/A+Txvtnz1nLWRJzUZbO\n7JxJLhLy4yGwhmFY9aBG4WHu2gTNIkQbtqP8sdjjNgVX0IWRFGjVe/faHwTH\no07/Ec29j5QbK728VOMmvS29BuJivAo0ouVWGs2/j7hKisUmRTO4QnOfMvWE\nKLBjiSnrdp+SgLTvSpRHTS/0cy2UVLZ/7blzFGOGRZpBDbSkqD7ZN+ufZVp6\nOyB18HoNgaugZy34pz4W8d0YQ9xFb1McATPK83S7Vo6rMhu6wuuwYMBCS0Oi\nnzIdXXg8ch/FnGLf3aYaLwb8k3b8u9jq4oi9PJ1wx1sQfRRVTDIIk9/puHbt\nIApMhCRK521losXO84DiwHDA3brWNt9Mw+6iY4kH2sMuyAP4v0yij03hPIYG\nxzYIpCBFCQTQXsn/oSu8wSS83qQBoC5po5VOSIseEech6ozncOHsHN5SVYKI\nSkk5ZpiUh562MuPQnr4CW5HTXF9rEuIzCnx85jz4B+AvO9KxiFGS6SK9Y6rv\nE3MkigBJpXlx32fhPyMl4UT8d5vYUUocpglqCYCkHYQIG6AjK+e6jlq6VuGK\n+oWfIvPt719+iCprQ7XgLTJstGHPCAj5EHsSS8t8MOkBVX5/wf7EZLe8dmZa\nHPS79HhhBh66v/gLOX03XIbV9xDqLjXYBKBbY/1IldVFQ+eEfdT/NPazqo6L\njBiI\r\n=ODgS\r\n-----END PGP SIGNATURE-----\r\n"
+			},
+			"maintainers": [
+				{
+					"email": "alex@ark.io",
+					"name": "alexbarnsley"
+				},
+				{
+					"email": "fx.thoorens@ark.io",
+					"name": "arkio"
+				},
+				{
+					"email": "hello@basecode.sh",
+					"name": "faustbrian"
+				},
+				{
+					"email": "kristjan@ark.io",
+					"name": "kristjankosic"
+				},
+				{
+					"email": "luciorubeens@gmail.com",
+					"name": "luciorubeens"
+				},
+				{
+					"email": "joshua@ark.io",
+					"name": "supaiku"
+				}
+			],
+			"_npmUser": {
+				"name": "alexbarnsley",
+				"email": "alex@ark.io"
+			},
+			"directories": {},
+			"_npmOperationalInternal": {
+				"host": "s3://npm-registry-packages",
+				"tmp": "tmp/desktop-wallet-explorer_0.1.12_1574782014673_0.11946709643457099"
+			},
+			"_hasShrinkwrap": false
+		},
+		"0.1.13": {
+			"name": "@arkecosystem/desktop-wallet-explorer",
+			"version": "0.1.13",
+			"description": "Use the ARK Mainnet explorer directly within the wallet",
+			"main": "index.js",
+			"repository": {
+				"type": "git",
+				"url": "git+https://github.com/ark-ecosystem-desktop-plugins/explorer.git"
+			},
+			"desktop-wallet": {
+				"title": "ARK Explorer",
+				"logo": "https://raw.githubusercontent.com/ark-ecosystem-desktop-plugins/explorer/master/images/logo.png",
+				"images": [
+					"https://raw.githubusercontent.com/ark-ecosystem-desktop-plugins/explorer/master/images/preview-1.png",
+					"https://raw.githubusercontent.com/ark-ecosystem-desktop-plugins/explorer/master/images/preview-2.png"
+				],
+				"categories": ["utility"],
+				"permissions": ["COMPONENTS", "ROUTES", "MENU_ITEMS", "UI_COMPONENTS", "PROFILE_CURRENT", "WEBFRAME"],
+				"minVersion": "2.6"
+			},
+			"keywords": ["utility", "explorer", "@arkecosystem", "desktop-wallet", "plugin"],
+			"contributors": [
+				{
+					"name": "Alex Barnsley",
+					"email": "alex@ark.io"
+				},
+				{
+					"name": "Juan A. Martín",
+					"email": "juan@ark.io"
+				}
+			],
+			"license": "MIT",
+			"bugs": {
+				"url": "https://github.com/ark-ecosystem-desktop-plugins/explorer/issues"
+			},
+			"homepage": "https://github.com/ark-ecosystem-desktop-plugins/explorer#readme",
+			"licenseText": "The MIT License (MIT)\n\nCopyright (c) 2019 Ark Ecosystem <info@ark.io>\n\nPermission is hereby granted, free of charge, to any person obtaining a copy of\nthis software and associated documentation files (the \"Software\"), to deal in\nthe Software without restriction, including without limitation the rights to\nuse, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of\nthe Software, and to permit persons to whom the Software is furnished to do so,\nsubject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in all\ncopies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS\nFOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR\nCOPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER\nIN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN\nCONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.\n",
+			"_id": "@arkecosystem/desktop-wallet-explorer@0.1.13",
+			"dist": {
+				"shasum": "205638147281c202d84393c8423dba3ba25acb0b",
+				"integrity": "sha512-OnysLyzwYSp6HQi7+492KhOe7P4mqOi3n5oprEVdCV/kjI8YhgYmviAb3IYi53Sz51KAqdEVdVIBYJrvA9dRfA==",
+				"tarball": "https://registry.npmjs.org/@arkecosystem/desktop-wallet-explorer/-/desktop-wallet-explorer-0.1.13.tgz",
+				"fileCount": 13,
+				"unpackedSize": 91314,
+				"npm-signature": "-----BEGIN PGP SIGNATURE-----\r\nVersion: OpenPGP.js v3.0.4\r\nComment: https://openpgpjs.org\r\n\r\nwsFcBAEBCAAQBQJeXpiyCRA9TVsSAnZWagAAfoQP/0uqaVbh5e6c53aSdvoM\nw0z+39FDi7yzpZacfgsLJeTuBkkRKGYc7cXYTJRC0xWeZ9eqXj96VCMLl87O\nBaQ8Q/BpP649AY/C1xReoCp8z0TEbh4VCsaanJu7bZTFjf8lHorycrnLEesS\nAXrND2lm4XOP/byOk2k071jucNvApj1A5rBlRBVH4NymzS3jfeVGSayxjt0f\n0vhFPm7nZbyrAPxu/yTEovdlsNjq4/l+YNP9JDHBLtFBSFWV0ZfQ6vyTT6gi\nkvCYLxzyp91a0UwaRXRD7X8wDoCgoXB421RuT8vzxVSV77ndvxFBXJblMHek\nQapK2DFJ9L+60UXoNbrb2E4RUn1q8tWI/clgEMOe7PT9WqW9aLGjP2hhY1Hc\nrnHbccpZaXR2sx+CiLxLtYoWiC+Rj4tdWiUsn7zG5oTibrd0c/7PSxiEqZKu\n2+CCVWb3b0JzO1XNKKe6IxNYqd+27wwwcSm9RYJeJfA8yybEAX99ac5ug14/\n8AWdh4E0/WWMEd4dFsvzWoQ6Y6F6+ghtHcA4UX+V52WQoVe+4BcC2SuzJn+G\nClDFjYo99A0bX6AiXKswAGhkRglX/ERFlzKXNRZhtHpkDLzSWFnAZRjQBsSe\nm+m4qhjVDBwVJceqVsBeUpUwJQ6i8I0psbmQNNEG/+uJ/75LzwT577je4x67\nNdWL\r\n=zfmM\r\n-----END PGP SIGNATURE-----\r\n"
+			},
+			"maintainers": [
+				{
+					"email": "alex@ark.io",
+					"name": "alexbarnsley"
+				},
+				{
+					"email": "fx.thoorens@ark.io",
+					"name": "arkio"
+				},
+				{
+					"email": "hello@basecode.sh",
+					"name": "faustbrian"
+				},
+				{
+					"email": "kristjan@ark.io",
+					"name": "kristjankosic"
+				},
+				{
+					"email": "luciorubeens@gmail.com",
+					"name": "luciorubeens"
+				},
+				{
+					"email": "joshua@ark.io",
+					"name": "supaiku"
+				}
+			],
+			"_npmUser": {
+				"name": "alexbarnsley",
+				"email": "alex@ark.io"
+			},
+			"directories": {},
+			"_npmOperationalInternal": {
+				"host": "s3://npm-registry-packages",
+				"tmp": "tmp/desktop-wallet-explorer_0.1.13_1583257777827_0.8064868349168051"
+			},
+			"_hasShrinkwrap": false
+		}
+	},
+	"time": {
+		"created": "2019-08-19T15:32:31.061Z",
+		"0.1.4": "2019-08-19T15:32:31.286Z",
+		"modified": "2020-05-14T13:12:51.236Z",
+		"0.1.6": "2019-11-18T13:16:44.257Z",
+		"0.1.7": "2019-11-18T14:34:17.904Z",
+		"0.1.8": "2019-11-18T14:37:25.907Z",
+		"0.1.9": "2019-11-18T14:54:39.259Z",
+		"0.1.10": "2019-11-20T09:04:56.889Z",
+		"0.1.11": "2019-11-25T20:56:25.108Z",
+		"0.1.12": "2019-11-26T15:26:54.770Z",
+		"0.1.13": "2020-03-03T17:49:37.930Z"
+	},
+	"maintainers": [
+		{
+			"email": "hello@basecode.sh",
+			"name": "faustbrian"
+		},
+		{
+			"email": "luciorubeens@gmail.com",
+			"name": "luciorubeens"
+		},
+		{
+			"email": "fx.thoorens@ark.io",
+			"name": "arkio"
+		},
+		{
+			"email": "alex@ark.io",
+			"name": "alexbarnsley"
+		}
+	],
+	"description": "Use the ARK Mainnet explorer directly within the wallet",
+	"homepage": "https://github.com/ark-ecosystem-desktop-plugins/explorer#readme",
+	"keywords": ["utility", "explorer", "@arkecosystem", "desktop-wallet", "plugin"],
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/ark-ecosystem-desktop-plugins/explorer.git"
+	},
+	"contributors": [
+		{
+			"name": "Alex Barnsley",
+			"email": "alex@ark.io"
+		},
+		{
+			"name": "Juan A. Martín",
+			"email": "juan@ark.io"
+		}
+	],
+	"bugs": {
+		"url": "https://github.com/ark-ecosystem-desktop-plugins/explorer/issues"
+	},
+	"license": "MIT",
+	"readme": "# Explorer - ARK Desktop Wallet plugin\nUse the ARK Mainnet explorer directly within the wallet\n\n## Installation\n\n 1. Drop this repository into `~/.ark-desktop/plugins/`.\n 2. Start the desktop wallet.\n 3. Enable the plugin on the plugin section.\n\n## Credits\n\n- [Alex Barnsley](https://github.com/alexbarnsley)\n- [Juan A. Martín](https://github.com/j-a-m-l)\n- [All Contributors](../../contributors)\n\n## License\n\n[MIT](LICENSE) © [Ark Ecosystem](https://ark.io/)\n",
+	"readmeFilename": "README.md"
+}

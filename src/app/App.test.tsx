@@ -302,7 +302,7 @@ describe("App", () => {
 		});
 	});
 
-	it("shouldn't migrate profiles", async () => {
+	it("should not migrate profiles", async () => {
 		process.env.REACT_APP_IS_E2E = undefined;
 
 		const { container, asFragment, getByText, getByTestId } = renderWithRouter(<App />, { withProviders: false });
