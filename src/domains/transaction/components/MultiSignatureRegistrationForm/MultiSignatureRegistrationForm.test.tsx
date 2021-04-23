@@ -200,7 +200,9 @@ describe("MultiSignature Registration Form", () => {
 			.spyOn(wallet.transaction(), "signMultiSignature")
 			.mockReturnValue(Promise.resolve(multiSignatureFixture.data.id));
 		const addSignatureMock = jest.spyOn(wallet.transaction(), "addSignature").mockImplementation();
-		const broadcastMock = jest.spyOn(wallet.transaction(), "broadcast").mockImplementation();
+		const broadcastMock = jest
+			.spyOn(wallet.transaction(), "broadcast")
+			.mockResolvedValue({ accepted: ["id"], rejected: [], errors: {} });
 		const transactionMock = createTransactionMock(wallet);
 
 		await MultiSignatureRegistrationForm.signTransaction({
@@ -297,7 +299,9 @@ describe("MultiSignature Registration Form", () => {
 			.spyOn(wallet.transaction(), "signMultiSignature")
 			.mockReturnValue(Promise.resolve(multiSignatureFixture.data.id));
 		const addSignatureMock = jest.spyOn(wallet.transaction(), "addSignature").mockImplementation();
-		const broadcastMock = jest.spyOn(wallet.transaction(), "broadcast").mockImplementation();
+		const broadcastMock = jest
+			.spyOn(wallet.transaction(), "broadcast")
+			.mockResolvedValue({ accepted: ["id"], rejected: [], errors: {} });
 		const transactionMock = createTransactionMock(wallet);
 
 		await MultiSignatureRegistrationForm.signTransaction({
