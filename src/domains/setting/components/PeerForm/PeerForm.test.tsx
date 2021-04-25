@@ -95,4 +95,38 @@ describe("PeerForm", () => {
 
 		expect(asFragment()).toMatchSnapshot();
 	});
+
+	it("should error if host already exists", async () => {
+		let rendered: RenderResult;
+
+		const validateHost = () => {
+			return "already exists";
+		};
+
+		await act(async () => {
+			rendered = render(<PeerForm networks={networks} onSave={onSave} onValidateHost={validateHost} />);
+		});
+
+		const { getByTestId } = rendered;
+
+		await act(async () => {
+			const selectNetworkInput = getByTestId("SelectDropdownInput__input");
+
+			await fireEvent.input(getByTestId("PeerForm__name-input"), { target: { value: "ROBank" } });
+			await fireEvent.input(getByTestId("PeerForm__host-input"), {
+				target: { value: "http://167.114.29.48:4005/api" },
+			});
+
+			await fireEvent.change(selectNetworkInput, { target: { value: "ark" } });
+			await fireEvent.keyDown(selectNetworkInput, { key: "Enter", code: 13 });
+
+			await waitFor(() => expect(selectNetworkInput).toHaveValue("ARK Mainnet"));
+
+			const submitButton = getByTestId("PeerForm__submit-button");
+			expect(submitButton).toBeTruthy();
+			await waitFor(() => {
+				expect(submitButton).toHaveAttribute("disabled");
+			});
+		});
+	});
 });

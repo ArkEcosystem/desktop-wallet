@@ -108,6 +108,13 @@ describe("UpdatePeer", () => {
 	it("should update a peer selecting another network", async () => {
 		let rendered: RenderResult;
 
+
+		profile.peers().create("ARK", "ark.devnet", {
+			name: "ROBank",
+			host: "http://167.114.29.48:4003/api",
+			isMultiSignature: false,
+		});
+
 		await act(async () => {
 			rendered = render(
 				<UpdatePeer
@@ -128,11 +135,6 @@ describe("UpdatePeer", () => {
 			await waitFor(() => expect(selectNetworkInput).toHaveValue("ARK Mainnet"));
 
 			await fireEvent.focus(selectNetworkInput);
-			await fireEvent.change(selectNetworkInput, { target: { value: " " } });
-			await waitFor(() => expect(getByTestId("select-list__toggle-option-1")).toBeInTheDocument());
-			await fireEvent.click(getByTestId("select-list__toggle-option-1"));
-
-			await waitFor(() => expect(selectNetworkInput).not.toHaveValue("ARK Mainnet"));
 
 			await fireEvent.input(getByTestId("PeerForm__name-input"), { target: { value: "Private" } });
 			await fireEvent.input(getByTestId("PeerForm__host-input"), {
@@ -145,6 +147,7 @@ describe("UpdatePeer", () => {
 				expect(submitButton).not.toHaveAttribute("disabled");
 			});
 
+			peer.network = "ark.devnet";
 			await fireEvent.click(submitButton);
 
 			await waitFor(() => expect(onClose).toHaveBeenCalled());
