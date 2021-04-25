@@ -108,7 +108,6 @@ describe("UpdatePeer", () => {
 	it("should update a peer selecting another network", async () => {
 		let rendered: RenderResult;
 
-
 		profile.peers().create("ARK", "ark.devnet", {
 			name: "ROBank",
 			host: "http://167.114.29.48:4003/api",

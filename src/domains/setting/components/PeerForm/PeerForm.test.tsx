@@ -99,9 +99,7 @@ describe("PeerForm", () => {
 	it("should error if host already exists", async () => {
 		let rendered: RenderResult;
 
-		const validateHost = () => {
-			return "already exists";
-		};
+		const validateHost = () => "already exists";
 
 		await act(async () => {
 			rendered = render(<PeerForm networks={networks} onSave={onSave} onValidateHost={validateHost} />);
