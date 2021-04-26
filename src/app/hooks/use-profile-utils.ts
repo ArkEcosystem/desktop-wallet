@@ -47,7 +47,8 @@ export const useProfileUtils = (env: Environment) => {
 	const saveProfile = useCallback(
 		(profile: Contracts.IProfile) => {
 			if (!profile.usesPassword()) {
-				return profile.save();
+				console.log("[saveProfile] mock profile save");
+				// return profile.save();
 			}
 
 			const password = getProfileStoredPassword(profile);
@@ -55,7 +56,8 @@ export const useProfileUtils = (env: Environment) => {
 				return;
 			}
 
-			return profile.save(password);
+			// return profile.save(password);
+			console.log("[saveProfile] mock profile save", { password });
 		},
 		[getProfileStoredPassword],
 	);

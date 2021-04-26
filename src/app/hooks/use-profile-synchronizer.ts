@@ -125,7 +125,7 @@ export const useProfileSyncStatus = () => {
 export const useProfileRestore = () => {
 	const { shouldRestore, markAsRestored, setStatus } = useProfileSyncStatus();
 	const { persist, env } = useEnvironmentContext();
-	const { getProfileFromUrl, getProfileStoredPassword } = useProfileUtils(env);
+	const { getProfileFromUrl } = useProfileUtils(env);
 	const history = useHistory();
 
 	const restoreProfile = async (profile: Contracts.IProfile, passwordInput?: string) => {
@@ -133,7 +133,9 @@ export const useProfileRestore = () => {
 			return false;
 		}
 
-		const password = passwordInput || getProfileStoredPassword(profile);
+		// const password = passwordInput || getProfileStoredPassword(profile);
+		// TODO: ensure password is not required in profile restore (profile.save is handled in sdk internally)
+		console.log({ passwordInput });
 
 		setStatus("restoring");
 
@@ -142,11 +144,12 @@ export const useProfileRestore = () => {
 		// without password and then reset the password.
 		const __E2E__ = ["true", "1"].includes(process.env.REACT_APP_IS_E2E?.toLowerCase() as string);
 		if (__E2E__) {
-			await profile.restore(password);
+			await env.profiles().restore(profile);
 
 			await profile.sync();
 
-			profile.save(password);
+			// TODO: Make sure necessary sync data are saved
+			// profile.save(password);
 
 			await persist();
 
@@ -155,7 +158,7 @@ export const useProfileRestore = () => {
 		}
 
 		// Reset profile normally (passwordless or not)
-		await profile.restore(password);
+		await env.profiles().restore(profile);
 		markAsRestored(profile.id());
 
 		// Profile restore finished but url changed in the meanwhile.
@@ -166,7 +169,7 @@ export const useProfileRestore = () => {
 		}
 
 		// Make sure the latest profile state is encoded (and optionally encrypted) before persisting
-		profile.save(password);
+		// profile.save(password);
 
 		await persist();
 		return true;
