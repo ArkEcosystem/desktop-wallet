@@ -27,9 +27,24 @@ describe("useTransactionTypes", () => {
 		});
 	});
 
-	it("should filter only supported transaction types from wallets", () => {
+	it("should filter only supported transaction types from wallets without magistrate", () => {
 		const profile = env.profiles().first();
 		const { result } = renderHook(() => useTransactionTypes({ wallets: [profile.wallets().first()] }));
-		expect(result.current.types.core).toEqual(profile.wallets().first().transactionTypes());
+		expect(result.current.types.core).toEqual([
+			"delegate-registration",
+			"delegate-resignation",
+			"entity-registration",
+			"entity-resignation",
+			"entity-update",
+			"htlc-claim",
+			"htlc-lock",
+			"htlc-refund",
+			"ipfs",
+			"multi-payment",
+			"multi-signature",
+			"second-signature",
+			"transfer",
+			"vote",
+		]);
 	});
 });

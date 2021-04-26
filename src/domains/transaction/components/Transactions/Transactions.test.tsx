@@ -167,7 +167,7 @@ describe("Transactions", () => {
 		const emptyProfile = env.profiles().create("test");
 		await emptyProfile.wallets().importByMnemonic("test", "ARK", "ark.devnet");
 
-		const { getByRole, getByTestId } = renderWithRouter(
+		const { getByRole, getByTestId, container } = renderWithRouter(
 			<Route path="/profiles/:profileId/dashboard">
 				<Transactions profile={profile} wallets={profile.wallets().values()} />
 			</Route>,
@@ -183,10 +183,10 @@ describe("Transactions", () => {
 			fireEvent.click(getByRole("button", { name: /Type/ }));
 		});
 
-		await waitFor(() => expect(getByTestId("dropdown__option--core-2")).toBeInTheDocument());
+		await waitFor(() => expect(getByTestId("dropdown__option--magistrate-5")).toBeInTheDocument());
 
 		act(() => {
-			fireEvent.click(getByTestId("dropdown__option--core-2"));
+			fireEvent.click(getByTestId("dropdown__option--magistrate-5"));
 		});
 
 		await waitFor(() => expect(getByTestId("EmptyBlock")).toBeInTheDocument());

@@ -95,7 +95,7 @@ exports[`FilterTransactions should open dropdown list with all transaction types
                   data-testid="dropdown__option--core-0"
                 >
                   <span>
-                    Bridgechain Registration
+                    Delegate Registration
                   </span>
                 </li>
                 <li
@@ -103,7 +103,7 @@ exports[`FilterTransactions should open dropdown list with all transaction types
                   data-testid="dropdown__option--core-1"
                 >
                   <span>
-                    Bridgechain Resignation
+                    Delegate Resignation
                   </span>
                 </li>
                 <li
@@ -111,7 +111,7 @@ exports[`FilterTransactions should open dropdown list with all transaction types
                   data-testid="dropdown__option--core-2"
                 >
                   <span>
-                    Bridgechain Update
+                    Entity Registration
                   </span>
                 </li>
                 <li
@@ -119,7 +119,7 @@ exports[`FilterTransactions should open dropdown list with all transaction types
                   data-testid="dropdown__option--core-3"
                 >
                   <span>
-                    Business Registration
+                    Entity Resignation
                   </span>
                 </li>
                 <li
@@ -127,7 +127,7 @@ exports[`FilterTransactions should open dropdown list with all transaction types
                   data-testid="dropdown__option--core-4"
                 >
                   <span>
-                    Business Resignation
+                    Entity Update
                   </span>
                 </li>
                 <li
@@ -135,7 +135,7 @@ exports[`FilterTransactions should open dropdown list with all transaction types
                   data-testid="dropdown__option--core-5"
                 >
                   <span>
-                    Business Update
+                    Timelock Claim
                   </span>
                 </li>
                 <li
@@ -143,7 +143,7 @@ exports[`FilterTransactions should open dropdown list with all transaction types
                   data-testid="dropdown__option--core-6"
                 >
                   <span>
-                    Delegate Registration
+                    Timelock
                   </span>
                 </li>
                 <li
@@ -151,7 +151,7 @@ exports[`FilterTransactions should open dropdown list with all transaction types
                   data-testid="dropdown__option--core-7"
                 >
                   <span>
-                    Delegate Registration
+                    Timelock Refund
                   </span>
                 </li>
                 <li
@@ -159,7 +159,7 @@ exports[`FilterTransactions should open dropdown list with all transaction types
                   data-testid="dropdown__option--core-8"
                 >
                   <span>
-                    Entity Registration
+                    IPFS
                   </span>
                 </li>
                 <li
@@ -167,7 +167,7 @@ exports[`FilterTransactions should open dropdown list with all transaction types
                   data-testid="dropdown__option--core-9"
                 >
                   <span>
-                    Entity Resignation
+                    Multipayment
                   </span>
                 </li>
                 <li
@@ -175,7 +175,7 @@ exports[`FilterTransactions should open dropdown list with all transaction types
                   data-testid="dropdown__option--core-10"
                 >
                   <span>
-                    Entity Update
+                    Multisignature
                   </span>
                 </li>
                 <li
@@ -183,7 +183,7 @@ exports[`FilterTransactions should open dropdown list with all transaction types
                   data-testid="dropdown__option--core-11"
                 >
                   <span>
-                    Timelock Claim
+                    Second Signature
                   </span>
                 </li>
                 <li
@@ -191,7 +191,7 @@ exports[`FilterTransactions should open dropdown list with all transaction types
                   data-testid="dropdown__option--core-12"
                 >
                   <span>
-                    Timelock
+                    Transfer
                   </span>
                 </li>
                 <li
@@ -199,55 +199,78 @@ exports[`FilterTransactions should open dropdown list with all transaction types
                   data-testid="dropdown__option--core-13"
                 >
                   <span>
-                    Timelock Refund
-                  </span>
-                </li>
-                <li
-                  class="group flex items-center space-x-2 py-4 px-8 text-base font-semibold text-left whitespace-nowrap cursor-pointer text-theme-secondary-800 dark:text-theme-secondary-200 hover:bg-theme-secondary-200 dark:hover:bg-theme-primary-600 hover:text-theme-primary-600 dark:hover:text-theme-secondary-200"
-                  data-testid="dropdown__option--core-14"
-                >
-                  <span>
-                    IPFS
-                  </span>
-                </li>
-                <li
-                  class="group flex items-center space-x-2 py-4 px-8 text-base font-semibold text-left whitespace-nowrap cursor-pointer text-theme-secondary-800 dark:text-theme-secondary-200 hover:bg-theme-secondary-200 dark:hover:bg-theme-primary-600 hover:text-theme-primary-600 dark:hover:text-theme-secondary-200"
-                  data-testid="dropdown__option--core-15"
-                >
-                  <span>
-                    Multipayment
-                  </span>
-                </li>
-                <li
-                  class="group flex items-center space-x-2 py-4 px-8 text-base font-semibold text-left whitespace-nowrap cursor-pointer text-theme-secondary-800 dark:text-theme-secondary-200 hover:bg-theme-secondary-200 dark:hover:bg-theme-primary-600 hover:text-theme-primary-600 dark:hover:text-theme-secondary-200"
-                  data-testid="dropdown__option--core-16"
-                >
-                  <span>
-                    Multisignature
-                  </span>
-                </li>
-                <li
-                  class="group flex items-center space-x-2 py-4 px-8 text-base font-semibold text-left whitespace-nowrap cursor-pointer text-theme-secondary-800 dark:text-theme-secondary-200 hover:bg-theme-secondary-200 dark:hover:bg-theme-primary-600 hover:text-theme-primary-600 dark:hover:text-theme-secondary-200"
-                  data-testid="dropdown__option--core-17"
-                >
-                  <span>
-                    Second Signature
-                  </span>
-                </li>
-                <li
-                  class="group flex items-center space-x-2 py-4 px-8 text-base font-semibold text-left whitespace-nowrap cursor-pointer text-theme-secondary-800 dark:text-theme-secondary-200 hover:bg-theme-secondary-200 dark:hover:bg-theme-primary-600 hover:text-theme-primary-600 dark:hover:text-theme-secondary-200"
-                  data-testid="dropdown__option--core-18"
-                >
-                  <span>
-                    Transfer
-                  </span>
-                </li>
-                <li
-                  class="group flex items-center space-x-2 py-4 px-8 text-base font-semibold text-left whitespace-nowrap cursor-pointer text-theme-secondary-800 dark:text-theme-secondary-200 hover:bg-theme-secondary-200 dark:hover:bg-theme-primary-600 hover:text-theme-primary-600 dark:hover:text-theme-secondary-200"
-                  data-testid="dropdown__option--core-19"
-                >
-                  <span>
                     Vote
+                  </span>
+                </li>
+              </ul>
+            </ul>
+          </div>
+          <div
+            class="mt-4 first:mt-0"
+          >
+            <div
+              class="mx-8 -my-2"
+            >
+              <div
+                class="Divider-sc-19q4mlo-0 daSmjL border-theme-secondary-300 dark:border-theme-secondary-600"
+                type="horizontal"
+              />
+            </div>
+            <ul>
+              <li
+                class="block px-8 text-xs font-bold text-left uppercase whitespace-nowrap text-theme-secondary-500 dark:text-theme-secondary-600"
+              >
+                Magistrate
+              </li>
+              <ul
+                data-testid="dropdown__options"
+              >
+                <li
+                  class="group flex items-center space-x-2 py-4 px-8 text-base font-semibold text-left whitespace-nowrap cursor-pointer text-theme-secondary-800 dark:text-theme-secondary-200 hover:bg-theme-secondary-200 dark:hover:bg-theme-primary-600 hover:text-theme-primary-600 dark:hover:text-theme-secondary-200"
+                  data-testid="dropdown__option--magistrate-0"
+                >
+                  <span>
+                    Business Registration
+                  </span>
+                </li>
+                <li
+                  class="group flex items-center space-x-2 py-4 px-8 text-base font-semibold text-left whitespace-nowrap cursor-pointer text-theme-secondary-800 dark:text-theme-secondary-200 hover:bg-theme-secondary-200 dark:hover:bg-theme-primary-600 hover:text-theme-primary-600 dark:hover:text-theme-secondary-200"
+                  data-testid="dropdown__option--magistrate-1"
+                >
+                  <span>
+                    Business Resignation
+                  </span>
+                </li>
+                <li
+                  class="group flex items-center space-x-2 py-4 px-8 text-base font-semibold text-left whitespace-nowrap cursor-pointer text-theme-secondary-800 dark:text-theme-secondary-200 hover:bg-theme-secondary-200 dark:hover:bg-theme-primary-600 hover:text-theme-primary-600 dark:hover:text-theme-secondary-200"
+                  data-testid="dropdown__option--magistrate-2"
+                >
+                  <span>
+                    Business Update
+                  </span>
+                </li>
+                <li
+                  class="group flex items-center space-x-2 py-4 px-8 text-base font-semibold text-left whitespace-nowrap cursor-pointer text-theme-secondary-800 dark:text-theme-secondary-200 hover:bg-theme-secondary-200 dark:hover:bg-theme-primary-600 hover:text-theme-primary-600 dark:hover:text-theme-secondary-200"
+                  data-testid="dropdown__option--magistrate-3"
+                >
+                  <span>
+                    Bridgechain Registration
+                  </span>
+                </li>
+                <li
+                  class="group flex items-center space-x-2 py-4 px-8 text-base font-semibold text-left whitespace-nowrap cursor-pointer text-theme-secondary-800 dark:text-theme-secondary-200 hover:bg-theme-secondary-200 dark:hover:bg-theme-primary-600 hover:text-theme-primary-600 dark:hover:text-theme-secondary-200"
+                  data-testid="dropdown__option--magistrate-4"
+                >
+                  <span>
+                    Bridgechain Resignation
+                  </span>
+                </li>
+                <li
+                  class="group flex items-center space-x-2 py-4 px-8 text-base font-semibold text-left whitespace-nowrap cursor-pointer text-theme-secondary-800 dark:text-theme-secondary-200 hover:bg-theme-secondary-200 dark:hover:bg-theme-primary-600 hover:text-theme-primary-600 dark:hover:text-theme-secondary-200"
+                  data-testid="dropdown__option--magistrate-5"
+                >
+                  <span>
+                    Bridgechain Update
                   </span>
                 </li>
               </ul>
