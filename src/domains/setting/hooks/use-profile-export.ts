@@ -1,5 +1,4 @@
 import { Contracts, Helpers, Environment } from "@arkecosystem/platform-sdk-profiles";
-import { useEnvironmentContext } from "app/contexts";
 
 interface ProfileExportOptions {
 	excludeEmptyWallets: boolean;
