@@ -38,7 +38,7 @@ export const SignedStep = ({
 
 			<TransactionDetail label={t("COMMON.SIGNATURE")} paddingPosition="top">
 				<TextArea
-					className="mt-2 rounded-lg"
+					className="mt-2 py-4"
 					name="signature"
 					wrap="hard"
 					ref={messageRef}

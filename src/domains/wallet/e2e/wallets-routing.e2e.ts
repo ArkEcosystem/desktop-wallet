@@ -6,7 +6,7 @@ import { createFixture } from "../../../utils/e2e-utils";
 createFixture(`Wallets routing`);
 
 test("should navigate to portfolio and access a wallet details", async (t) => {
-	await t.expect(Selector("span").withText("John Doe").exists).ok({ timeout: 20000 });
+	await t.expect(Selector("span").withText("John Doe").exists).ok({ timeout: 30000 });
 	await t.click(Selector("span").withText("John Doe"));
 	await t.expect(Selector("div").withText(translations().COMMON.WALLETS).exists).ok();
 
@@ -15,7 +15,7 @@ test("should navigate to portfolio and access a wallet details", async (t) => {
 });
 
 test("should navigate to create wallet page", async (t) => {
-	await t.expect(Selector("span").withText("John Doe").exists).ok({ timeout: 20000 });
+	await t.expect(Selector("span").withText("John Doe").exists).ok({ timeout: 30000 });
 	await t.click(Selector("span").withText("John Doe"));
 	await t.expect(Selector("div").withText(translations().COMMON.WALLETS).exists).ok();
 
@@ -27,7 +27,7 @@ test("should navigate to create wallet page", async (t) => {
 });
 
 test("should navigate to import wallet page", async (t) => {
-	await t.expect(Selector("span").withText("John Doe").exists).ok({ timeout: 20000 });
+	await t.expect(Selector("span").withText("John Doe").exists).ok({ timeout: 30000 });
 	await t.click(Selector("span").withText("John Doe"));
 	await t.expect(Selector("div").withText(translations().COMMON.WALLETS).exists).ok();
 

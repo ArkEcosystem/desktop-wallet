@@ -679,15 +679,21 @@ describe("Settings", () => {
 
 		expect(getByTestId("modal__inner")).toBeTruthy();
 
-		act(() => {
-			fireEvent.focus(getByTestId("SelectNetworkInput__input"));
-		});
-
-		await waitFor(() => expect(getByTestId("NetworkIcon-ARK-ark.devnet")).toBeTruthy());
+		const selectNetworkInput = getByTestId("SelectDropdownInput__input");
 
 		act(() => {
-			fireEvent.click(getByTestId("NetworkIcon-ARK-ark.devnet"));
+			fireEvent.focus(selectNetworkInput);
 		});
+
+		act(() => {
+			fireEvent.change(selectNetworkInput, { target: { value: "Ark Mainnet" } });
+		});
+
+		await act(async () => {
+			fireEvent.keyDown(selectNetworkInput, { key: "Enter", code: 13 });
+		});
+
+		await waitFor(() => expect(selectNetworkInput).toHaveValue("ARK Mainnet"));
 
 		act(() => {
 			fireEvent.input(getByTestId("PeerForm__name-input"), { target: { value: "ROBank" } });
@@ -752,18 +758,21 @@ describe("Settings", () => {
 
 		expect(getByTestId("modal__inner")).toBeTruthy();
 
-		act(() => {
-			fireEvent.focus(getByTestId("SelectNetworkInput__input"));
-		});
-
-		await waitFor(() =>
-			expect(within(getByTestId("modal__inner")).getByTestId("NetworkIcon-ARK-ark.devnet")).toBeTruthy(),
-		);
+		const selectNetworkInput = getByTestId("SelectDropdownInput__input");
 
 		act(() => {
-			fireEvent.click(within(getByTestId("modal__inner")).getByTestId("NetworkIcon-ARK-ark.devnet"));
+			fireEvent.focus(selectNetworkInput);
 		});
 
+		act(() => {
+			fireEvent.change(selectNetworkInput, { target: { value: "Ark Mainnet" } });
+		});
+
+		await act(async () => {
+			fireEvent.keyDown(selectNetworkInput, { key: "Enter", code: 13 });
+		});
+
+		await waitFor(() => expect(selectNetworkInput).toHaveValue("ARK Mainnet"));
 		act(() => {
 			fireEvent.input(getByTestId("PeerForm__name-input"), { target: { value: "ROBank" } });
 		});
@@ -776,32 +785,6 @@ describe("Settings", () => {
 
 		await waitFor(() => {
 			expect(getByTestId("Input__error")).toBeVisible();
-		});
-
-		act(() => {
-			fireEvent.focus(getByTestId("SelectNetworkInput__input"));
-		});
-
-		await waitFor(() =>
-			expect(within(getByTestId("modal__inner")).getByTestId("NetworkIcon-ARK-ark.devnet")).toBeTruthy(),
-		);
-
-		act(() => {
-			fireEvent.click(within(getByTestId("modal__inner")).getByTestId("NetworkIcon-ARK-ark.devnet"));
-		});
-
-		await waitFor(() => expect(getByTestId("SelectNetworkInput__input")).toHaveValue(""));
-
-		act(() => {
-			fireEvent.focus(getByTestId("SelectNetworkInput__input"));
-		});
-
-		await waitFor(() =>
-			expect(within(getByTestId("modal__inner")).getByTestId("NetworkIcon-ARK-ark.devnet")).toBeTruthy(),
-		);
-
-		act(() => {
-			fireEvent.click(within(getByTestId("modal__inner")).getByTestId("NetworkIcon-ARK-ark.devnet"));
 		});
 
 		act(() => {
@@ -871,18 +854,21 @@ describe("Settings", () => {
 
 		expect(getByTestId("modal__inner")).toBeTruthy();
 
-		act(() => {
-			fireEvent.focus(getByTestId("SelectNetworkInput__input"));
-		});
-
-		await waitFor(() =>
-			expect(within(getByTestId("modal__inner")).getByTestId("NetworkIcon-ARK-ark.devnet")).toBeTruthy(),
-		);
+		const selectNetworkInput = getByTestId("SelectDropdownInput__input");
 
 		act(() => {
-			fireEvent.click(within(getByTestId("modal__inner")).getByTestId("NetworkIcon-ARK-ark.devnet"));
+			fireEvent.focus(selectNetworkInput);
 		});
 
+		act(() => {
+			fireEvent.change(selectNetworkInput, { target: { value: "Ark Mainnet" } });
+		});
+
+		await act(async () => {
+			fireEvent.keyDown(selectNetworkInput, { key: "Enter", code: 13 });
+		});
+
+		await waitFor(() => expect(selectNetworkInput).toHaveValue("ARK Mainnet"));
 		act(() => {
 			fireEvent.input(getByTestId("PeerForm__name-input"), { target: { value: "ROBank" } });
 		});
@@ -1097,8 +1083,6 @@ describe("Settings", () => {
 		});
 
 		await waitFor(() => expect(getByTestId(currentPasswordInput)).toBeInTheDocument());
-
-		expect(asFragment()).toMatchSnapshot();
 	});
 
 	it("should show an error toast if the current password does not match", async () => {

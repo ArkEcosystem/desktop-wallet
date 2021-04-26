@@ -31,6 +31,13 @@ describe("PluginManagerProvider", () => {
 			.reply(200, require("tests/fixtures/plugins/registry/@dated/transaction-export-plugin.json"))
 			.get("/dated/delegate-calculator-plugin/master/package.json")
 			.reply(200, require("tests/fixtures/plugins/registry/@dated/delegate-calculator-plugin.json"))
+			.get("/ark-ecosystem-desktop-plugins/sound-notifications/master/package.json")
+			.reply(
+				200,
+				require("tests/fixtures/plugins/github/@arkecosystem/desktop-wallet-sound-notifications/package.json"),
+			)
+			.get("/ark-ecosystem-desktop-plugins/explorer/master/package.json")
+			.reply(200, require("tests/fixtures/plugins/github/@arkecosystem/desktop-wallet-explorer/package.json"))
 			.persist();
 	});
 
@@ -150,7 +157,7 @@ describe("PluginManagerProvider", () => {
 
 		fireEvent.click(screen.getByRole("button"));
 
-		await waitFor(() => expect(screen.getAllByRole("listitem").length).toBe(3));
+		await waitFor(() => expect(screen.getAllByRole("listitem").length).toBe(5));
 
 		manager.plugins().removeById(plugin.config().id(), profile);
 	});
@@ -201,7 +208,7 @@ describe("PluginManagerProvider", () => {
 
 		fireEvent.click(screen.getByText("Fetch"));
 
-		await waitFor(() => expect(screen.getAllByRole("listitem").length).toBe(2));
+		await waitFor(() => expect(screen.getAllByRole("listitem").length).toBe(4));
 
 		fireEvent.click(screen.getAllByText("Install")[0]);
 
@@ -505,7 +512,7 @@ describe("PluginManagerProvider", () => {
 
 		fireEvent.click(screen.getByRole("button"));
 
-		await waitFor(() => expect(screen.getAllByRole("listitem").length).toBe(3));
+		await waitFor(() => expect(screen.getAllByRole("listitem").length).toBe(5));
 
 		fireEvent.click(screen.getByTestId("QueryByText"));
 		await waitFor(() => expect(screen.getAllByRole("listitem").length).toBe(1));
@@ -559,13 +566,13 @@ describe("PluginManagerProvider", () => {
 
 		fireEvent.click(screen.getByRole("button"));
 
-		await waitFor(() => expect(screen.getAllByRole("listitem").length).toBe(3));
+		await waitFor(() => expect(screen.getAllByRole("listitem").length).toBe(5));
 
 		fireEvent.click(screen.getByTestId("QueryByText"));
 		await waitFor(() => expect(screen.getAllByRole("listitem").length).toBe(1));
 
 		fireEvent.click(screen.getByTestId("ResetFilters"));
-		await waitFor(() => expect(screen.getAllByRole("listitem").length).toBe(3));
+		await waitFor(() => expect(screen.getAllByRole("listitem").length).toBe(5));
 
 		manager.plugins().removeById(plugin.config().id(), profile);
 	});
@@ -597,7 +604,7 @@ describe("PluginManagerProvider", () => {
 		expect(screen.getByText("Size N/A")).toBeInTheDocument();
 
 		fireEvent.click(screen.getByText("Fetch Plugins"));
-		await waitFor(() => expect(screen.getByText("Plugins 2")).toBeInTheDocument());
+		await waitFor(() => expect(screen.getByText("Plugins 4")).toBeInTheDocument());
 
 		fireEvent.click(screen.getByText("Fetch Size"));
 		await waitFor(() => expect(screen.getByText("Size 304 kB")).toBeInTheDocument());
