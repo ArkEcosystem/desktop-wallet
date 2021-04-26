@@ -42,7 +42,6 @@ export const useLedgerConnection = (transport: typeof Transport) => {
 					path,
 				});
 
-				wallet.data().set(Contracts.WalletData.LedgerPath, path);
 				profile.wallets().push(wallet);
 			}
 			await persist();
