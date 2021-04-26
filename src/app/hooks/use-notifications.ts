@@ -23,7 +23,7 @@ const fetchRecentProfileTransactions = async (profile: ProfileContracts.IProfile
 			.map((wallet) => wallet.address()),
 	};
 
-	const recentTransactions = await profile.transactionAggregate().transactions(query);
+	const recentTransactions = await profile.transactionAggregate().all(query);
 	return recentTransactions.items();
 };
 
