@@ -18,6 +18,7 @@ import { VerifyMessage } from "domains/wallet/components/VerifyMessage";
 import React, { useState } from "react";
 import { useTranslation } from "react-i18next";
 import { useHistory } from "react-router-dom";
+import { openExternal } from "utils/electron-utils";
 
 type WalletHeaderProps = {
 	profile: Contracts.IProfile;
@@ -154,6 +155,14 @@ export const WalletHeader = ({ profile, wallet, currencyDelta, onSend }: WalletH
 		hasDivider: true,
 		options: [
 			{
+				icon: "OpenExplorer",
+				iconPosition: "start",
+				iconWidth: 18,
+				iconHeight: 18,
+				label: t("COMMON.OPEN_IN_EXPLORER"),
+				value: "open-explorer",
+			},
+			{
 				icon: "Trash",
 				iconPosition: "start",
 				iconWidth: 18,
@@ -183,6 +192,10 @@ export const WalletHeader = ({ profile, wallet, currencyDelta, onSend }: WalletH
 
 		if (option.value === "store-hash") {
 			history.push(`/profiles/${profile.id()}/wallets/${wallet.id()}/send-ipfs`);
+		}
+
+		if (option.value === "open-explorer") {
+			openExternal(wallet.explorerLink());
 		}
 
 		setModal(option.value?.toString());
