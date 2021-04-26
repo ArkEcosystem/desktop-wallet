@@ -34,8 +34,10 @@ export const ImportProfile = () => {
 	};
 
 	const handleProfileSave = (updatedProfile: Contracts.IProfile) => {
-		updatedProfile.save(password);
-		env.profiles().fill({ [updatedProfile.id()]: updatedProfile.dump() });
+		console.log("[ImportProfile]", { updatedProfile });
+		// TODO: Make sure profile is created without the need of profiles().fill() and profile.save()
+		// updatedProfile.save(password);
+		// env.profiles().fill({ [updatedProfile.id()]: updatedProfile.dump() });
 
 		persist();
 		history.push("/");
