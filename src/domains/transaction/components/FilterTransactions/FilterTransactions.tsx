@@ -10,9 +10,10 @@ type FilterTransactionsProps = {
 	defaultSelected?: DropdownOption;
 	wallets?: Contracts.IReadWriteWallet[];
 	onSelect?: (selectedOption: DropdownOption, types: any) => void;
+	isDisabled?: boolean;
 };
 
-export const FilterTransactions = memo(({ className, onSelect, defaultSelected, wallets }: FilterTransactionsProps) => {
+export const FilterTransactions = memo(({ className, onSelect, defaultSelected, wallets, isDisabled }: FilterTransactionsProps) => {
 	const { t } = useTranslation();
 	const { types, getLabel, getQueryParamsByType } = useTransactionTypes({ wallets });
 
@@ -40,15 +41,18 @@ export const FilterTransactions = memo(({ className, onSelect, defaultSelected, 
 			<Dropdown
 				dropdownClass="w-80 max-h-128 overflow-y-auto"
 				options={allOptions}
+				disableToggle={isDisabled}
 				toggleContent={(isOpen: boolean) => (
 					<CollapseToggleButton
+						disabled={isDisabled}
 						isOpen={isOpen}
+						className={isDisabled ? `text-theme-secondary-400 dark:text-theme-secondary-800 cursor-not-allowed` : undefined}
 						label={
 							<>
-								<span className="text-theme-secondary-500 dark:text-theme-secondary-600">
+								<span className={isDisabled ? '' : "text-theme-secondary-500 dark:text-theme-secondary-600"}>
 									{t("COMMON.TYPE")}:{" "}
 								</span>
-								<span className="text-theme-secondary-700 dark:text-theme-secondary-200">
+								<span className={isDisabled ? '' : "text-theme-secondary-700 dark:text-theme-secondary-200"}>
 									{selectedOption?.label}
 								</span>
 							</>
