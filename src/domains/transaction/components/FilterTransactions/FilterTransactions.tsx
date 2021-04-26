@@ -16,8 +16,8 @@ export const FilterTransactions = memo(({ className, onSelect, defaultSelected, 
 	const { t } = useTranslation();
 	const { types, getLabel, getQueryParamsByType, hasMagistrationTypesEnabled } = useTransactionTypes({ wallets });
 
-	const allOptions: DropdownOptionGroup[] = useMemo(
-		() => [
+	const allOptions: DropdownOptionGroup[] = useMemo(() => {
+		const options = [
 			{
 				key: "all",
 				options: [{ label: t("COMMON.ALL"), value: "all" }],
@@ -28,15 +28,19 @@ export const FilterTransactions = memo(({ className, onSelect, defaultSelected, 
 				hasDivider: true,
 				options: types.core.map((type) => ({ label: getLabel(type), value: type })),
 			},
-			{
+		];
+
+		if (hasMagistrationTypesEnabled) {
+			options.push({
 				key: "magistrate",
 				title: t("TRANSACTION.MAGISTRATE"),
 				hasDivider: true,
 				options: types.magistrate.map((type) => ({ label: getLabel(type), value: type })),
-			},
-		],
-		[getLabel, types, t],
-	);
+			});
+		}
+
+		return options;
+	}, [getLabel, types, t, hasMagistrationTypesEnabled]);
 
 	const [selectedOption, setSelectedOption] = useState<DropdownOption>(defaultSelected || allOptions[0].options[0]);
 
