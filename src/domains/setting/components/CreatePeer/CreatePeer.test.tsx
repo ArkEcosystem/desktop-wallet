@@ -55,12 +55,13 @@ describe("CreatePeer", () => {
 		const { getByTestId } = rendered;
 
 		await act(async () => {
-			const selectNetworkInput = getByTestId("SelectNetworkInput__input");
+			const selectNetworkInput = getByTestId("SelectDropdownInput__input");
+			await fireEvent.focus(selectNetworkInput);
+			await fireEvent.change(selectNetworkInput, { target: { value: " " } });
+			await waitFor(() => expect(getByTestId("select-list__toggle-option-1")).toBeInTheDocument());
+			await fireEvent.click(getByTestId("select-list__toggle-option-1"));
 
-			await fireEvent.change(selectNetworkInput, { target: { value: "Bitco" } });
-			await fireEvent.keyDown(selectNetworkInput, { key: "Enter", code: 13 });
-
-			expect(selectNetworkInput).toHaveValue("Bitcoin");
+			await waitFor(() => expect(selectNetworkInput).not.toHaveValue("ARK Mainnet"));
 
 			await fireEvent.input(getByTestId("PeerForm__name-input"), { target: { value: "ROBank" } });
 			await fireEvent.input(getByTestId("PeerForm__host-input"), {
