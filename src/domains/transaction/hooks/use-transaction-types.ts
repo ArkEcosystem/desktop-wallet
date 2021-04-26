@@ -87,27 +87,6 @@ const core: Record<string, any> = {
 };
 
 const magistrate: Record<string, any> = {
-	"entity-registration": {
-		type: MagistrateTransactionType.Entity,
-		typeGroup: TransactionTypeGroup.Magistrate,
-		asset: {
-			action: Enums.EntityAction.Register,
-		},
-	},
-	"entity-resignation": {
-		type: MagistrateTransactionType.Entity,
-		typeGroup: TransactionTypeGroup.Magistrate,
-		asset: {
-			action: Enums.EntityAction.Resign,
-		},
-	},
-	"entity-update": {
-		type: MagistrateTransactionType.Entity,
-		typeGroup: TransactionTypeGroup.Magistrate,
-		asset: {
-			action: Enums.EntityAction.Update,
-		},
-	},
 	"business-registration": {
 		type: MagistrateTransactionType.Entity,
 		typeGroup: TransactionTypeGroup.Magistrate,
@@ -168,7 +147,7 @@ export const useTransactionTypes = ({ wallets = [] }: TransactionTypeProps = {})
 		"htlc-claim": t("TRANSACTION.TRANSACTION_TYPES.HTLC_CLAIM"),
 
 		"delegate-registration": t("TRANSACTION.TRANSACTION_TYPES.DELEGATE_REGISTRATION"),
-		"delegate-resignation": t("TRANSACTION.TRANSACTION_TYPES.DELEGATE_REGISTRATION"),
+		"delegate-resignation": t("TRANSACTION.TRANSACTION_TYPES.DELEGATE_RESIGNATION"),
 
 		// magistrate
 		"entity-registration": t("TRANSACTION.TRANSACTION_TYPES.ENTITY_REGISTRATION"),
