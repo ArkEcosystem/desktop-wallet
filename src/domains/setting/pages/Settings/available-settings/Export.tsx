@@ -11,6 +11,7 @@ import React from "react";
 import { useTranslation } from "react-i18next";
 
 import { SettingsProps } from "../Settings.models";
+import { useEnvironmentContext } from "app/contexts";
 
 export const Export = ({ formConfig, onSuccess }: SettingsProps) => {
 	const { t } = useTranslation();
@@ -18,7 +19,8 @@ export const Export = ({ formConfig, onSuccess }: SettingsProps) => {
 	const { register, context } = formConfig;
 
 	const profile = useActiveProfile();
-	const { formatExportData } = useProfileExport(profile);
+	const { env } = useEnvironmentContext();
+	const { formatExportData } = useProfileExport({ profile, env });
 
 	const walletExportOptions = [
 		{
