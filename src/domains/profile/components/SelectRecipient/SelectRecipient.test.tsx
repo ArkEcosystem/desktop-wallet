@@ -111,6 +111,7 @@ describe("SelectRecipient", () => {
 	});
 
 	it("should call onChange prop when entered address in input", async () => {
+		const contactsSpy = jest.spyOn(profile.contacts(), "findByAddress").mockReturnValue([]);
 		const fn = jest.fn();
 		const { getByTestId } = render(<SelectRecipient profile={profile} onChange={fn} />);
 		const address = "bP6T9GQ3kqP6T9GQ3kqP6T9GQ3kqTTTP6T9GQ3kqT";
@@ -122,6 +123,7 @@ describe("SelectRecipient", () => {
 
 		expect(getByTestId("SelectDropdownInput__input")).toHaveValue(address);
 		expect(fn).toBeCalledWith(address);
+		contactsSpy.mockRestore();
 	});
 
 	it("should call onChange prop if provided", async () => {

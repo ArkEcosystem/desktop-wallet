@@ -24,6 +24,7 @@ type SelectProps = {
 	disabled?: boolean;
 	allowFreeInput?: boolean;
 	onChange?: (selected: Option) => void;
+	renderLabel?: (option: Option) => JSX.Element;
 } & React.InputHTMLAttributes<any>;
 
 type SelectDropdownProps = {
@@ -37,6 +38,7 @@ type SelectDropdownProps = {
 	disabled?: boolean;
 	allowFreeInput?: boolean;
 	onSelectedItemChange: any;
+	renderLabel?: (option: Option) => JSX.Element;
 } & React.InputHTMLAttributes<any>;
 
 const itemToString = (item: Option | null) => item?.label || "";
@@ -53,6 +55,7 @@ const SelectDropdown = ({
 	innerClassName,
 	allowFreeInput = false,
 	showCaret = true,
+	renderLabel,
 	id,
 }: SelectDropdownProps) => {
 	const { t } = useTranslation();
@@ -235,7 +238,9 @@ const SelectDropdown = ({
 										},
 									})}
 								>
-									<div className="select-list-option__label">{item.label}</div>
+									<div className="select-list-option__label">
+										{renderLabel ? renderLabel({ ...item }) : item.label}
+									</div>
 								</li>
 							))
 						) : (
@@ -263,6 +268,7 @@ export const Select = React.forwardRef<HTMLInputElement, SelectProps>(
 			isInvalid,
 			disabled,
 			onChange,
+			renderLabel,
 			id,
 		}: SelectProps,
 		ref,
@@ -309,6 +315,7 @@ export const Select = React.forwardRef<HTMLInputElement, SelectProps>(
 							onChange?.(selected);
 						}
 					}}
+					renderLabel={renderLabel}
 				/>
 			</div>
 		);
