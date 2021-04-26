@@ -74,7 +74,7 @@ const Main = () => {
 
 	const handleError = useErrorHandler();
 
-	useEffect(() => {
+	useLayoutEffect(() => {
 		const boot = async () => {
 			try {
 				/* istanbul ignore next */
