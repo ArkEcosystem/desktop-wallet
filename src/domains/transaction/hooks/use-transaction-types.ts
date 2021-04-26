@@ -214,10 +214,14 @@ export const useTransactionTypes = ({ wallets = [] }: TransactionTypeProps = {})
 		return uniq(allSupportedTypes);
 	}, [wallets]);
 
-	const hasMagistrationTypesEnabled = useMemo(() => wallets.some((wallet) =>
-		// @ts-ignore
-		 (wallet.transactionTypes() as string[]).filter((type) => magistrateTypes.includes(type))
-	), [wallets]);
+	const hasMagistrationTypesEnabled = useMemo(
+		() =>
+			wallets.some((wallet) =>
+				// @ts-ignore
+				(wallet.transactionTypes() as string[]).filter((type) => magistrateTypes.includes(type)),
+			),
+		[wallets],
+	);
 
 	return {
 		getLabel,

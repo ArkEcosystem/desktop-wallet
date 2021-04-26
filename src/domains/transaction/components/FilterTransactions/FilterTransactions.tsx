@@ -2,7 +2,7 @@ import { Contracts } from "@arkecosystem/platform-sdk-profiles";
 import { CollapseToggleButton } from "app/components/Collapse";
 import { Dropdown, DropdownOption, DropdownOptionGroup } from "app/components/Dropdown";
 import { useTransactionTypes } from "domains/transaction/hooks/use-transaction-types";
-import React, { memo, useMemo,useState } from "react";
+import React, { memo, useMemo, useState } from "react";
 import { useTranslation } from "react-i18next";
 
 type FilterTransactionsProps = {
@@ -16,7 +16,8 @@ export const FilterTransactions = memo(({ className, onSelect, defaultSelected, 
 	const { t } = useTranslation();
 	const { types, getLabel, getQueryParamsByType, hasMagistrationTypesEnabled } = useTransactionTypes({ wallets });
 
-	const allOptions: DropdownOptionGroup[] = useMemo(() => [
+	const allOptions: DropdownOptionGroup[] = useMemo(
+		() => [
 			{
 				key: "all",
 				options: [{ label: t("COMMON.ALL"), value: "all" }],
@@ -32,8 +33,10 @@ export const FilterTransactions = memo(({ className, onSelect, defaultSelected, 
 				title: t("TRANSACTION.MAGISTRATE"),
 				hasDivider: true,
 				options: types.magistrate.map((type) => ({ label: getLabel(type), value: type })),
-			}
-		], [getLabel, types, t]);
+			},
+		],
+		[getLabel, types, t],
+	);
 
 	const [selectedOption, setSelectedOption] = useState<DropdownOption>(defaultSelected || allOptions[0].options[0]);
 
