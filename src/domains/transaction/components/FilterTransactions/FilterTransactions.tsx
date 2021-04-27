@@ -34,10 +34,12 @@ export const FilterTransactions = memo(({ className, onSelect, defaultSelected, 
 			options.push({
 				key: "magistrate",
 				hasDivider: true,
-				options: [{
-					label: t("TRANSACTION.MAGISTRATE"),
-					value: "magistrate"
-				}]
+				options: [
+					{
+						label: t("TRANSACTION.MAGISTRATE"),
+						value: "magistrate",
+					},
+				],
 			});
 		}
 

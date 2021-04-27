@@ -123,9 +123,9 @@ const magistrate: Record<string, any> = {
 		type: MagistrateTransactionType.BridgechainUpdate,
 		typeGroup: TransactionTypeGroup.Magistrate,
 	},
-	"magistrate": {
+	magistrate: {
 		typeGroup: TransactionTypeGroup.Magistrate,
-	}
+	},
 };
 
 const magistrateTypes = Object.keys(magistrate);
