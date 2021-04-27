@@ -126,6 +126,7 @@ export const translations: { [key: string]: any } = {
 	OF: "of",
 	OFFICIAL: "Official",
 	OPEN: "Open",
+	OPEN_IN_EXPLORER: "Open in Explorer",
 	OPTIONAL: "optional",
 	OTHER: "Other",
 	PAGE: "Page",

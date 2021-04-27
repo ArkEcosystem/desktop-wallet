@@ -399,6 +399,7 @@ export const Votes = () => {
 						selectedVoteAddresses={voteAddresses}
 						selectedWallet={selectedAddress}
 						onContinue={handleContinue}
+						isPaginationDisabled={searchQuery.length > 0}
 						subtitle={
 							hasResignedDelegateVotes ? (
 								<Alert className="mb-6">
