@@ -1,6 +1,6 @@
 import { Contracts } from "@arkecosystem/platform-sdk-profiles";
-import { BigNumber } from "@arkecosystem/platform-sdk-support";
 import { Amount } from "app/components/Amount";
+import { useProfileBalance } from "app/hooks/use-profile-balance";
 import React from "react";
 import { useTranslation } from "react-i18next";
 
@@ -13,6 +13,7 @@ type BalanceProps = {
 
 export const Balance = ({ profile, isLoading }: BalanceProps) => {
 	const { t } = useTranslation();
+	const { convertedBalance } = useProfileBalance({ profile, isLoading });
 
 	if (isLoading) {
 		return <BalanceSkeleton />;
@@ -23,7 +24,7 @@ export const Balance = ({ profile, isLoading }: BalanceProps) => {
 			<div className="text-xs font-semibold text-theme-secondary-700">{t("COMMON.YOUR_BALANCE")}</div>
 			<div className="text-sm font-bold text-theme-secondary-text dark:text-theme-text">
 				<Amount
-					value={profile?.convertedBalance() || BigNumber.ZERO}
+					value={convertedBalance}
 					ticker={profile?.settings().get<string>(Contracts.ProfileSetting.ExchangeCurrency) || ""}
 					normalize={false}
 				/>

@@ -100,6 +100,7 @@ export const translations: { [key: string]: any } = {
 		PEER_IP: "Peer IP",
 		TYPE: "Type",
 		SUCCESS: "Your peer settings have been updated",
+		NETWORK: "Network",
 		VALIDATION: {
 			HOST_EXISTS: "The host already exists for this network",
 			NOT_VALID: "The {{field}} is not valid",

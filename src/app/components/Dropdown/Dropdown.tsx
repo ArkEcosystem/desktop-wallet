@@ -11,8 +11,8 @@ import { defaultClasses, getStyles } from "./Dropdown.styles";
 export type DropdownOption = {
 	icon?: string;
 	iconPosition?: "start" | "end";
-	iconWidth?: number;
-	iconHeight?: number;
+	iconWidth?: number | string;
+	iconHeight?: number | string;
 	label: string;
 	secondaryLabel?: string;
 	value: string | number;

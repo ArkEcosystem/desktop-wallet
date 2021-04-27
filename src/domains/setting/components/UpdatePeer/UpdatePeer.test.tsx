@@ -108,6 +108,12 @@ describe("UpdatePeer", () => {
 	it("should update a peer selecting another network", async () => {
 		let rendered: RenderResult;
 
+		profile.peers().create("ARK", "ark.devnet", {
+			name: "ROBank",
+			host: "http://167.114.29.48:4003/api",
+			isMultiSignature: false,
+		});
+
 		await act(async () => {
 			rendered = render(
 				<UpdatePeer
@@ -123,27 +129,11 @@ describe("UpdatePeer", () => {
 		const { getByTestId } = rendered;
 
 		await act(async () => {
-			act(() => {
-				fireEvent.focus(getByTestId("SelectNetworkInput__input"));
-			});
+			const selectNetworkInput = getByTestId("SelectDropdownInput__input");
 
-			await waitFor(() =>
-				expect(getByTestId("SelectNetworkInput__network")).toHaveAttribute("aria-label", "ARK"),
-			);
+			await waitFor(() => expect(selectNetworkInput).toHaveValue("ARK Mainnet"));
 
-			act(() => {
-				fireEvent.focus(getByTestId("SelectNetworkInput__input"));
-			});
-
-			await waitFor(() => expect(getByTestId("NetworkIcon-ARK-ark.mainnet")).toBeTruthy());
-
-			act(() => {
-				fireEvent.click(getByTestId("NetworkIcon-ARK-ark.devnet"));
-			});
-
-			await waitFor(() =>
-				expect(getByTestId("SelectNetworkInput__network")).toHaveAttribute("aria-label", "ARK Devnet"),
-			);
+			await fireEvent.focus(selectNetworkInput);
 
 			await fireEvent.input(getByTestId("PeerForm__name-input"), { target: { value: "Private" } });
 			await fireEvent.input(getByTestId("PeerForm__host-input"), {
@@ -156,6 +146,7 @@ describe("UpdatePeer", () => {
 				expect(submitButton).not.toHaveAttribute("disabled");
 			});
 
+			peer.network = "ark.devnet";
 			await fireEvent.click(submitButton);
 
 			await waitFor(() => expect(onClose).toHaveBeenCalled());
