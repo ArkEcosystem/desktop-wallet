@@ -29,11 +29,11 @@ describe("UseTextTruncate", () => {
 
 		rerender(<Component />);
 
-		expect(screen.getByText("Lorem ip…sit amet")).toBeInTheDocument();
+		expect(screen.getByText("Lorem i…it amet")).toBeInTheDocument();
 
 		jest.spyOn(truncateRef.current, "offsetWidth", "get").mockReturnValue(60);
 		rerender(<Component minChars={8} />);
 
-		expect(screen.getByText("Lorem ip…sit amet")).toBeInTheDocument();
+		expect(screen.getByText("Lorem i…it amet")).toBeInTheDocument();
 	});
 });
