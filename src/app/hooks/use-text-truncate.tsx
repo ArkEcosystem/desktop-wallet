@@ -31,10 +31,10 @@ export const useTextTruncate = ({ text = "", minChars = 10, parentRef }: Props) 
 		}
 
 		const parentWidth = parentRef.current.offsetWidth;
-		const textWidth = textWidthRef.current;
+		const textWidth: number = textWidthRef.current;
 
 		if (textWidth > parentWidth) {
-			const overflowSize = textWidth - parentWidth;
+			const overflowSize = (textWidth + 5) - parentWidth;
 			const letterSize = textWidth / textLength;
 			const maxChars = textLength - overflowSize / letterSize;
 
