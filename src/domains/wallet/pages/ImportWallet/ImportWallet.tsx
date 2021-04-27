@@ -118,7 +118,7 @@ export const ImportWallet = () => {
 	};
 
 	const encryptMnemonic = async () => {
-		await walletData!.setWif(walletGenerationInput!, getValues("encryptionPassword"));
+		await walletData!.wif().set(walletGenerationInput!, getValues("encryptionPassword"));
 
 		saveProfile(activeProfile);
 
@@ -130,7 +130,7 @@ export const ImportWallet = () => {
 
 		if (name) {
 			const formattedName = name.trim().substring(0, nameMaxLength);
-			walletData?.setAlias(formattedName);
+			walletData?.mutator().alias(formattedName);
 			await persist();
 		}
 
