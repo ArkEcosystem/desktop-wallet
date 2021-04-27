@@ -26,9 +26,9 @@ describe("CollapseToggleButton", () => {
 		expect(button).toHaveTextContent(translations.HIDE);
 	});
 
-	it('should render disabled', () => {
+	it("should render disabled", () => {
 		const { container } = render(<CollapseToggleButton isOpen={true} disabled />);
 
 		expect(container).toMatchSnapshot();
-	})
+	});
 });
