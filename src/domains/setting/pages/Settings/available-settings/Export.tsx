@@ -3,6 +3,7 @@ import { Form } from "app/components/Form";
 import { Header } from "app/components/Header";
 import { ListDivided } from "app/components/ListDivided";
 import { Toggle } from "app/components/Toggle";
+import { useEnvironmentContext } from "app/contexts";
 import { useActiveProfile } from "app/hooks";
 import { useProfileExport } from "domains/setting/hooks/use-profile-export";
 import electron from "electron";
@@ -11,7 +12,6 @@ import React from "react";
 import { useTranslation } from "react-i18next";
 
 import { SettingsProps } from "../Settings.models";
-import { useEnvironmentContext } from "app/contexts";
 
 export const Export = ({ formConfig, onSuccess }: SettingsProps) => {
 	const { t } = useTranslation();

@@ -34,7 +34,12 @@ describe("Use Message Signer Hook", () => {
 			return Promise.resolve(wif);
 		});
 
-		const signedMessage = await result.current.sign(wallet, "message", undefined, await wallet.wif().get("password"));
+		const signedMessage = await result.current.sign(
+			wallet,
+			"message",
+			undefined,
+			await wallet.wif().get("password"),
+		);
 		expect(signedMessage).toEqual({
 			message: "message",
 			signatory: "03df6cd794a7d404db4f1b25816d8976d0e72c5177d17ac9b19a92703b62cdbbbc",

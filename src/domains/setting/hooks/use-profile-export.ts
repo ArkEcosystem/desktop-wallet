@@ -1,4 +1,4 @@
-import { Contracts, Helpers, Environment } from "@arkecosystem/platform-sdk-profiles";
+import { Contracts, Environment, Helpers } from "@arkecosystem/platform-sdk-profiles";
 
 interface ProfileExportOptions {
 	excludeEmptyWallets: boolean;
