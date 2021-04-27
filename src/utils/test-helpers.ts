@@ -21,7 +21,7 @@ export const bootEnvWithProfileFixtures = async ({ env }: { env: Environment }) 
 	await env.boot();
 
 	for (const profile of env.profiles().values()) {
-		await profile.restore();
+		env.profiles().restore(profile);
 
 		//@ts-ignore
 		const storedPassword: string = TestingPasswords?.profiles[profile.id()]?.password;
@@ -30,6 +30,5 @@ export const bootEnvWithProfileFixtures = async ({ env }: { env: Environment }) 
 		}
 
 		await profile.sync();
-		profile.save();
 	}
 };
