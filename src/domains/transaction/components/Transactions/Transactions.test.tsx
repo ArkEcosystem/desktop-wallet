@@ -39,9 +39,9 @@ describe("Transactions", () => {
 		};
 
 		nock("https://dwallets.ark.io")
-			.get("/api/transactions?limit=30&address=D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD&type=5&typeGroup=2")
+			.get("/api/transactions?limit=30&address=D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD&typeGroup=2")
 			.reply(200, () => emptyResponse)
-			.get("/api/transactions?limit=30&address=D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb&type=5&typeGroup=2")
+			.get("/api/transactions?limit=30&address=D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb&typeGroup=2")
 			.reply(200, () => emptyResponse)
 			.persist();
 
@@ -183,10 +183,10 @@ describe("Transactions", () => {
 			fireEvent.click(getByRole("button", { name: /Type/ }));
 		});
 
-		await waitFor(() => expect(getByTestId("dropdown__option--magistrate-5")).toBeInTheDocument());
+		await waitFor(() => expect(getByTestId("dropdown__option--magistrate-0")).toBeInTheDocument());
 
 		act(() => {
-			fireEvent.click(getByTestId("dropdown__option--magistrate-5"));
+			fireEvent.click(getByTestId("dropdown__option--magistrate-0"));
 		});
 
 		await waitFor(() => expect(getByTestId("EmptyBlock")).toBeInTheDocument());
