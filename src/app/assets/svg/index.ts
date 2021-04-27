@@ -72,6 +72,7 @@ import { ReactComponent as Multipayment } from "./multipayment.svg";
 import { ReactComponent as Multisig } from "./multisig.svg";
 import { ReactComponent as Notification } from "./notification.svg";
 import { ReactComponent as OfficialArkPlugin } from "./official-ark-plugin.svg";
+import { ReactComponent as OpenExplorer } from "./open-explorer.svg";
 import { ReactComponent as PaginationFirst } from "./pagination-first.svg";
 import { ReactComponent as PaginationLast } from "./pagination-last.svg";
 import { ReactComponent as Peer } from "./peer.svg";
@@ -190,6 +191,7 @@ export const SvgCollection: any = {
 	Multisig,
 	Notification,
 	OfficialArkPlugin,
+	OpenExplorer,
 	PaginationFirst,
 	PaginationLast,
 	Peer,
