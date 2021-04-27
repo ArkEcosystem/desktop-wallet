@@ -22,7 +22,7 @@ export const ResetProfile = ({ isOpen, profile, onClose, onCancel, onReset }: Re
 	const { persist } = useEnvironmentContext();
 
 	const handleReset = async () => {
-		profile.flush();
+		profile.flushSettings();
 
 		await persist();
 
