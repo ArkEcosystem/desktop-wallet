@@ -389,4 +389,19 @@ describe("DelegateTable", () => {
 
 		expect(getByTestId("DelegateRow__toggle-1")).toBeTruthy();
 	});
+
+	it("should not show pagination", () => {
+		const { queryByTestId } = render(
+			<DelegateTable
+				delegates={delegates}
+				votes={votes}
+				maxVotes={1}
+				selectedWallet={selectedWallet}
+				itemsPerPage={2}
+				isPaginationDisabled
+			/>,
+		);
+
+		expect(queryByTestId("Pagination__next")).not.toBeInTheDocument();
+	});
 });

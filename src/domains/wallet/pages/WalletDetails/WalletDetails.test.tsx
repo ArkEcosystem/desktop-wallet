@@ -6,6 +6,7 @@ import { ReadOnlyWallet } from "@arkecosystem/platform-sdk-profiles/dist/drivers
 import { translations as commonTranslations } from "app/i18n/common/i18n";
 import { toasts } from "app/services";
 import { translations as walletTranslations } from "domains/wallet/i18n";
+import electron from "electron";
 import { createMemoryHistory } from "history";
 import { when } from "jest-when";
 import nock from "nock";
@@ -353,6 +354,27 @@ describe("WalletDetails", () => {
 		);
 	});
 
+	it("should open wallet in explorer", async () => {
+		const ipcRendererMock = jest.spyOn(electron.ipcRenderer, "send").mockImplementation();
+		const { getByTestId, getAllByTestId } = await renderPage();
+
+		const dropdown = getAllByTestId("dropdown__toggle")[2];
+		expect(dropdown).toBeTruthy();
+
+		act(() => {
+			fireEvent.click(dropdown);
+		});
+
+		const openWalletOption = getByTestId("dropdown__option--secondary-0");
+		expect(openWalletOption).toBeTruthy();
+
+		act(() => {
+			fireEvent.click(openWalletOption);
+		});
+
+		expect(ipcRendererMock).toHaveBeenCalledWith("open-external", wallet.explorerLink());
+	});
+
 	it("should delete wallet", async () => {
 		const { getByTestId, getAllByTestId } = await renderPage();
 
@@ -363,7 +385,7 @@ describe("WalletDetails", () => {
 			fireEvent.click(dropdown);
 		});
 
-		const deleteWalletOption = getByTestId("dropdown__option--secondary-0");
+		const deleteWalletOption = getByTestId("dropdown__option--secondary-1");
 		expect(deleteWalletOption).toBeTruthy();
 
 		act(() => {
