@@ -57,9 +57,14 @@ export const CreateWallet = () => {
 
 				forgetTemporaryWallet();
 
-				wallet = await activeProfile
-					.wallets()
-					.importByMnemonicWithEncryption(mnemonic, coin, network, encryptionPassword);
+				wallet = await activeProfile.walletFactory().fromMnemonicWithEncryption({
+					coin,
+					network,
+					password: encryptionPassword,
+					mnemonic,
+				});
+
+				activeProfile.wallets().push(wallet);
 			} catch (error) {
 				setGenerationError(t("WALLETS.PAGE_CREATE_WALLET.NETWORK_STEP.GENERATION_ERROR"));
 			}
@@ -93,7 +98,11 @@ export const CreateWallet = () => {
 		const network = getValues("network");
 
 		const locale = activeProfile.settings().get<string>(Contracts.ProfileSetting.Bip39Locale, "english");
-		const { mnemonic, wallet } = await activeProfile.wallets().generate(network.coin(), network.id(), locale);
+		const { mnemonic, wallet } = await activeProfile.walletFactory().generate({
+			coin: network.coin(),
+			locale,
+			network: network.id(),
+		});
 
 		setValue("wallet", wallet, { shouldValidate: true, shouldDirty: true });
 		setValue("mnemonic", mnemonic, { shouldValidate: true, shouldDirty: true });

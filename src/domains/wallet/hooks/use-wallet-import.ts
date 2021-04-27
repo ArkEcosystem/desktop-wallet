@@ -25,16 +25,40 @@ export const useWalletImport = ({ profile }: { profile: Contracts.IProfile }) =>
 	}): Promise<Contracts.IReadWriteWallet | undefined> => {
 		switch (type) {
 			case "mnemonic":
-				return profile.wallets().importByMnemonic(value, network.coin(), network.id());
+				return profile.wallets().push(
+					await profile.walletFactory().fromMnemonic({
+						coin: network.coin(),
+						network: network.id(),
+						mnemonic: value,
+					}),
+				);
 
 			case "address":
-				return profile.wallets().importByAddress(value, network.coin(), network.id());
+				return profile.wallets().push(
+					await profile.walletFactory().fromAddress({
+						coin: network.coin(),
+						network: network.id(),
+						address: value,
+					}),
+				);
 
 			case "privateKey":
-				return profile.wallets().importByPrivateKey(network.coin(), network.id(), value);
+				return profile.wallets().push(
+					await profile.walletFactory().fromPrivateKey({
+						coin: network.coin(),
+						network: network.id(),
+						privateKey: value,
+					}),
+				);
 
 			case "wif":
-				return profile.wallets().importByWIF({ coin: network.coin(), network: network.id(), wif: value });
+				return profile.wallets().push(
+					await profile.walletFactory().fromWIF({
+						coin: network.coin(),
+						network: network.id(),
+						wif: value,
+					}),
+				);
 
 			case "encryptedWif":
 				return new Promise((resolve, reject) => {
@@ -42,14 +66,17 @@ export const useWalletImport = ({ profile }: { profile: Contracts.IProfile }) =>
 					// as the decryption is a expensive calculation
 					setTimeout(() => {
 						profile
-							.wallets()
-							.importByWIFWithEncryption({
+							.walletFactory()
+							.fromWIFWithEncryption({
 								coin: network.coin(),
 								network: network.id(),
 								wif: encryptedWif,
 								password: value,
 							})
-							.then(resolve)
+							.then((wallet) => {
+								profile.wallets().push(wallet);
+								return resolve();
+							})
 							.catch((error) => {
 								if (error.code === "ERR_ASSERTION") {
 									return reject(
