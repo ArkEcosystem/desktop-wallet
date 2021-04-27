@@ -26,7 +26,7 @@ describe("Notifications Hook", () => {
 		const wrapper = ({ children }: any) => <EnvironmentProvider env={env}> {children} </EnvironmentProvider>;
 		const { result } = renderHook(() => useNotifications(), { wrapper });
 		const profile = env.profiles().findById(getDefaultProfileId());
-		await profile.restore();
+		await env.profiles().restore(profile, "password");
 		await profile.sync();
 
 		const { notifications } = result.current;

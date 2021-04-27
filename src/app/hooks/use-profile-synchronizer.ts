@@ -125,7 +125,7 @@ export const useProfileSyncStatus = () => {
 export const useProfileRestore = () => {
 	const { shouldRestore, markAsRestored, setStatus } = useProfileSyncStatus();
 	const { persist, env } = useEnvironmentContext();
-	const { getProfileFromUrl } = useProfileUtils(env);
+	const { getProfileFromUrl, getProfileStoredPassword } = useProfileUtils(env);
 	const history = useHistory();
 
 	const restoreProfile = async (profile: Contracts.IProfile, passwordInput?: string) => {
@@ -133,8 +133,7 @@ export const useProfileRestore = () => {
 			return false;
 		}
 
-		// const password = passwordInput || getProfileStoredPassword(profile);
-		// TODO: ensure password is not required in profile restore (profile.save is handled in sdk internally)
+		const password = passwordInput || getProfileStoredPassword(profile);
 		console.log({ passwordInput });
 
 		setStatus("restoring");
@@ -144,7 +143,7 @@ export const useProfileRestore = () => {
 		// without password and then reset the password.
 		const __E2E__ = ["true", "1"].includes(process.env.REACT_APP_IS_E2E?.toLowerCase() as string);
 		if (__E2E__) {
-			await env.profiles().restore(profile);
+			await env.profiles().restore(profile, password);
 
 			await profile.sync();
 
@@ -158,7 +157,7 @@ export const useProfileRestore = () => {
 		}
 
 		// Reset profile normally (passwordless or not)
-		await env.profiles().restore(profile);
+		await env.profiles().restore(profile, password);
 		markAsRestored(profile.id());
 
 		// Profile restore finished but url changed in the meanwhile.

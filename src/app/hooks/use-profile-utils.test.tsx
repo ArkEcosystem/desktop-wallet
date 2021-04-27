@@ -39,6 +39,15 @@ describe("useProfileUtils", () => {
 		const profile = env.profiles().findById("cba050f1-880f-45f0-9af9-cfe48f406052");
 		const passwordLessProfile = env.profiles().findById(getDefaultProfileId());
 		const wrapper = ({ children }: any) => <ConfigurationProvider>{children}</ConfigurationProvider>;
+
+		const mockUsesPassword = jest.spyOn(profile, "usesPassword").mockImplementation(() => {
+			return true;
+		});
+
+		const mockPasswordLessProfile = jest.spyOn(passwordLessProfile, "usesPassword").mockImplementation(() => {
+			return false;
+		});
+
 		const memoryPasswordMock = jest.spyOn(Helpers.MemoryPassword, "get").mockImplementation(() => {
 			throw new Error("password not found");
 		});
@@ -49,9 +58,20 @@ describe("useProfileUtils", () => {
 
 		expect(current.getProfileStoredPassword(profile)).toEqual(undefined);
 		expect(current.getProfileStoredPassword(passwordLessProfile)).toEqual(undefined);
+
+
 		memoryPasswordMock.mockRestore();
 
+		const passwordMock = jest.spyOn(Helpers.MemoryPassword, "get").mockImplementation(() => {
+			return "password";
+		});
+
+
 		expect(current.getProfileStoredPassword(profile)).toEqual("password");
+
+		mockUsesPassword.mockRestore();
+		mockPasswordLessProfile.mockRestore();
+		passwordMock.mockRestore();
 	});
 
 	it("#saveProfile", async () => {
@@ -87,6 +107,7 @@ describe("useProfileUtils", () => {
 			result: { current },
 		} = renderHook(() => useProfileUtils(env), { wrapper });
 
+		await profile.wallets().restore();
 		expect(current.getErroredNetworks(profile).hasErroredNetworks).toEqual(false);
 		expect(current.getErroredNetworks(profile).erroredNetworks).toHaveLength(0);
 	});
