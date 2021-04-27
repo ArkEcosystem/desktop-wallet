@@ -382,8 +382,9 @@ exports[`SendIpfs should error if wrong mnemonic 1`] = `
                             class="pl-3"
                           >
                             <button
-                              class="flex items-center justify-center w-full h-full text-2xl focus:outline-none"
+                              class="flex items-center justify-center w-full h-full text-2xl"
                               data-testid="InputPassword__toggle"
+                              tabindex="-1"
                               type="button"
                             >
                               <div
