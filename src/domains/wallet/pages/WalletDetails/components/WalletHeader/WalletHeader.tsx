@@ -84,7 +84,7 @@ export const WalletHeader = ({ profile, wallet, currencyDelta, onSend }: WalletH
 
 	if (!wallet.isLedger() && wallet.hasBeenFullyRestored()) {
 		if (wallet.hasSyncedWithNetwork()) {
-			if (wallet.network().can(Coins.FeatureFlag.TransactionDelegateRegistration) && !wallet.isDelegate()) {
+			if (wallet.network().allows(Coins.FeatureFlag.TransactionDelegateRegistration) && !wallet.isDelegate()) {
 				registrationOptions.options.push({
 					label: t("WALLETS.PAGE_WALLET_DETAILS.OPTIONS.REGISTER_DELEGATE"),
 					value: "delegate-registration",
@@ -92,7 +92,7 @@ export const WalletHeader = ({ profile, wallet, currencyDelta, onSend }: WalletH
 			}
 
 			if (
-				wallet.network().can(Coins.FeatureFlag.TransactionDelegateResignation) &&
+				wallet.network().allows(Coins.FeatureFlag.TransactionDelegateResignation) &&
 				wallet.isDelegate() &&
 				!wallet.isResignedDelegate()
 			) {
@@ -102,7 +102,7 @@ export const WalletHeader = ({ profile, wallet, currencyDelta, onSend }: WalletH
 				});
 			}
 
-			if (wallet.network().can(Coins.FeatureFlag.TransactionSecondSignature) && !wallet.isSecondSignature()) {
+			if (wallet.network().allows(Coins.FeatureFlag.TransactionSecondSignature) && !wallet.isSecondSignature()) {
 				registrationOptions.options.push({
 					label: t("WALLETS.PAGE_WALLET_DETAILS.OPTIONS.SECOND_SIGNATURE"),
 					value: "second-signature",
@@ -110,7 +110,7 @@ export const WalletHeader = ({ profile, wallet, currencyDelta, onSend }: WalletH
 			}
 		}
 
-		if (wallet.network().can(Coins.FeatureFlag.TransactionMultiSignature)) {
+		if (wallet.network().allows(Coins.FeatureFlag.TransactionMultiSignature)) {
 			registrationOptions.options.push({
 				label: t("WALLETS.PAGE_WALLET_DETAILS.OPTIONS.MULTISIGNATURE"),
 				value: "multi-signature",
@@ -124,14 +124,14 @@ export const WalletHeader = ({ profile, wallet, currencyDelta, onSend }: WalletH
 		options: [],
 	};
 
-	if (wallet.network().can(Coins.FeatureFlag.MessageSign)) {
+	if (wallet.network().allows(Coins.FeatureFlag.MessageSign)) {
 		additionalOptions.options.push({
 			label: t("WALLETS.PAGE_WALLET_DETAILS.OPTIONS.SIGN_MESSAGE"),
 			value: "sign-message",
 		});
 	}
 
-	if (wallet.network().can(Coins.FeatureFlag.MessageVerify)) {
+	if (wallet.network().allows(Coins.FeatureFlag.MessageVerify)) {
 		additionalOptions.options.push({
 			label: t("WALLETS.PAGE_WALLET_DETAILS.OPTIONS.VERIFY_MESSAGE"),
 			value: "verify-message",
@@ -139,7 +139,7 @@ export const WalletHeader = ({ profile, wallet, currencyDelta, onSend }: WalletH
 	}
 
 	if (
-		wallet.network().can(Coins.FeatureFlag.TransactionIpfs) &&
+		wallet.network().allows(Coins.FeatureFlag.TransactionIpfs) &&
 		wallet.hasBeenFullyRestored() &&
 		wallet.hasSyncedWithNetwork()
 	) {
