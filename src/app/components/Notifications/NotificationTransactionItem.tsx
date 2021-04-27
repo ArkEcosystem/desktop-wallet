@@ -17,7 +17,9 @@ export const NotificationTransactionItem = ({
 	useEffect(() => {
 		const fetchTransaction = async () => {
 			const wallet = profile.wallets().findByAddress(notification?.meta?.walletAddress);
-			const notificationTransaction = await wallet?.transactionIndex().findById(notification?.meta?.transactionId);
+			const notificationTransaction = await wallet
+				?.transactionIndex()
+				.findById(notification?.meta?.transactionId);
 
 			const senderWallet = profile.contacts().findByAddress(notificationTransaction?.sender() as string);
 
