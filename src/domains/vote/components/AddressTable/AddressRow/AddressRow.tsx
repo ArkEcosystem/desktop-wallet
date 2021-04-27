@@ -42,7 +42,7 @@ export const AddressRow = ({ index, maxVotes, wallet, onSelect }: AddressRowProp
 			let votes: Contracts.IReadOnlyWallet[] = [];
 
 			try {
-				votes = wallet.votes();
+				votes = wallet.voting().current();
 			} catch {
 				votes = [];
 			}
