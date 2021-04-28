@@ -4,7 +4,7 @@ import "focus-visible";
 import { ARK } from "@arkecosystem/platform-sdk-ark";
 // import { ATOM } from "@arkecosystem/platform-sdk-atom";
 import { AVAX } from "@arkecosystem/platform-sdk-avax";
-// import { BTC } from "@arkecosystem/platform-sdk-btc";
+import { BTC } from "@arkecosystem/platform-sdk-btc";
 import { DOT } from "@arkecosystem/platform-sdk-dot";
 // import { EOS } from "@arkecosystem/platform-sdk-eos";
 // import { ETH } from "@arkecosystem/platform-sdk-eth";
@@ -147,17 +147,14 @@ export const App = () => {
 					ARK,
 					// ATOM,
 					AVAX,
-					// BTC,
+					BTC,
 					DOT,
 					// EOS,
 					// ETH,
 					// EGLD,
 					LSK,
-<<<<<<< HEAD
 					NANO,
-=======
 					LUNA,
->>>>>>> develop
 					// NEO,
 					// TRX,
 					XLM,
