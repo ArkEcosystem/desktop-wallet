@@ -3637,19 +3637,23 @@ exports[`TransactionTable should render 1`] = `
                     </div>
                   </div>
                 </div>
-                <span
-                  data-testid="TransactionRowVoteLabel"
+                <div
+                  class="w-40 xl:w-full"
                 >
                   <span
-                    class="font-semibold text-theme-text"
-                    data-testid="TransactionRowRecipientLabel"
+                    data-testid="TransactionRowVoteLabel"
                   >
-                    Vote
+                    <span
+                      class="font-semibold text-theme-text"
+                      data-testid="TransactionRowRecipientLabel"
+                    >
+                      Vote
+                    </span>
+                    <span
+                      class="pl-2 ml-2 font-semibold truncate border-l text-theme-primary-600 border-theme-secondary-300 dark:border-theme-secondary-800"
+                    />
                   </span>
-                  <span
-                    class="pl-2 ml-2 font-semibold truncate border-l text-theme-primary-600 border-theme-secondary-300 dark:border-theme-secondary-800"
-                  />
-                </span>
+                </div>
               </div>
             </td>
             <td>
@@ -3791,19 +3795,23 @@ exports[`TransactionTable should render 1`] = `
                     </div>
                   </div>
                 </div>
-                <span
-                  data-testid="TransactionRowVoteLabel"
+                <div
+                  class="w-40 xl:w-full"
                 >
                   <span
-                    class="font-semibold text-theme-text"
-                    data-testid="TransactionRowRecipientLabel"
+                    data-testid="TransactionRowVoteLabel"
                   >
-                    Unvote
+                    <span
+                      class="font-semibold text-theme-text"
+                      data-testid="TransactionRowRecipientLabel"
+                    >
+                      Unvote
+                    </span>
+                    <span
+                      class="pl-2 ml-2 font-semibold truncate border-l text-theme-primary-600 border-theme-secondary-300 dark:border-theme-secondary-800"
+                    />
                   </span>
-                  <span
-                    class="pl-2 ml-2 font-semibold truncate border-l text-theme-primary-600 border-theme-secondary-300 dark:border-theme-secondary-800"
-                  />
-                </span>
+                </div>
               </div>
             </td>
             <td>
@@ -3945,12 +3953,16 @@ exports[`TransactionTable should render 1`] = `
                     </div>
                   </div>
                 </div>
-                <span
-                  class="font-semibold text-theme-text"
-                  data-testid="TransactionRowRecipientLabel"
+                <div
+                  class="w-40 xl:w-full"
                 >
-                  IPFS
-                </span>
+                  <span
+                    class="font-semibold text-theme-text"
+                    data-testid="TransactionRowRecipientLabel"
+                  >
+                    IPFS
+                  </span>
+                </div>
               </div>
             </td>
             <td>
@@ -4078,7 +4090,7 @@ exports[`TransactionTable should render 1`] = `
                     </div>
                   </div>
                   <div
-                    class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB ring-theme-background bg-theme-background group-hover:ring-theme-secondary-100 group-hover:bg-secondary-100 dark:group-hover:ring-black dark:group-hover:bg-black"
+                    class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB ring-theme-background bg-theme-background group-hover:ring-theme-secondary-100 group-hover:bg-secondary-100 dark:group-hover:ring-black dark:group-hover:bg-black flex-shrink-0"
                     data-testid="Avatar"
                   >
                     <div
@@ -4093,14 +4105,18 @@ exports[`TransactionTable should render 1`] = `
                   </div>
                 </div>
                 <div
-                  class="inline-flex items-center no-ligatures"
+                  class="w-40 xl:w-full"
                 >
-                  <span
-                    class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-text truncate font-semibold text-base"
-                    data-testid="address__wallet-address"
+                  <div
+                    class="w-full flex items-center no-ligatures overflow-hidden whitespace-nowrap"
                   >
-                    D5pVkh…xfKwSv
-                  </span>
+                    <span
+                      class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-text font-semibold text-base"
+                      data-testid="address__wallet-address"
+                    >
+                      D5pVkhZbSb4UNXvfmF6j7zdau8yGxfKwSv
+                    </span>
+                  </div>
                 </div>
               </div>
             </td>
@@ -4229,7 +4245,7 @@ exports[`TransactionTable should render 1`] = `
                     </div>
                   </div>
                   <div
-                    class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB ring-theme-background bg-theme-background group-hover:ring-theme-secondary-100 group-hover:bg-secondary-100 dark:group-hover:ring-black dark:group-hover:bg-black"
+                    class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB ring-theme-background bg-theme-background group-hover:ring-theme-secondary-100 group-hover:bg-secondary-100 dark:group-hover:ring-black dark:group-hover:bg-black flex-shrink-0"
                     data-testid="Avatar"
                   >
                     <div
@@ -4244,14 +4260,18 @@ exports[`TransactionTable should render 1`] = `
                   </div>
                 </div>
                 <div
-                  class="inline-flex items-center no-ligatures"
+                  class="w-40 xl:w-full"
                 >
-                  <span
-                    class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-text truncate font-semibold text-base"
-                    data-testid="address__wallet-address"
+                  <div
+                    class="w-full flex items-center no-ligatures overflow-hidden whitespace-nowrap"
                   >
-                    DKY5ey…bNF53A
-                  </span>
+                    <span
+                      class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-text font-semibold text-base"
+                      data-testid="address__wallet-address"
+                    >
+                      DKY5eyQUKKYyaCfPp6MUv3Y4FW6EbNF53A
+                    </span>
+                  </div>
                 </div>
               </div>
             </td>
@@ -4380,7 +4400,7 @@ exports[`TransactionTable should render 1`] = `
                     </div>
                   </div>
                   <div
-                    class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB ring-theme-background bg-theme-background group-hover:ring-theme-secondary-100 group-hover:bg-secondary-100 dark:group-hover:ring-black dark:group-hover:bg-black"
+                    class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB ring-theme-background bg-theme-background group-hover:ring-theme-secondary-100 group-hover:bg-secondary-100 dark:group-hover:ring-black dark:group-hover:bg-black flex-shrink-0"
                     data-testid="Avatar"
                   >
                     <div
@@ -4395,14 +4415,18 @@ exports[`TransactionTable should render 1`] = `
                   </div>
                 </div>
                 <div
-                  class="inline-flex items-center no-ligatures"
+                  class="w-40 xl:w-full"
                 >
-                  <span
-                    class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-text truncate font-semibold text-base"
-                    data-testid="address__wallet-address"
+                  <div
+                    class="w-full flex items-center no-ligatures overflow-hidden whitespace-nowrap"
                   >
-                    DKY5ey…bNF53A
-                  </span>
+                    <span
+                      class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-text font-semibold text-base"
+                      data-testid="address__wallet-address"
+                    >
+                      DKY5eyQUKKYyaCfPp6MUv3Y4FW6EbNF53A
+                    </span>
+                  </div>
                 </div>
               </div>
             </td>
@@ -4531,7 +4555,7 @@ exports[`TransactionTable should render 1`] = `
                     </div>
                   </div>
                   <div
-                    class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB ring-theme-background bg-theme-background group-hover:ring-theme-secondary-100 group-hover:bg-secondary-100 dark:group-hover:ring-black dark:group-hover:bg-black"
+                    class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB ring-theme-background bg-theme-background group-hover:ring-theme-secondary-100 group-hover:bg-secondary-100 dark:group-hover:ring-black dark:group-hover:bg-black flex-shrink-0"
                     data-testid="Avatar"
                   >
                     <div
@@ -4546,14 +4570,18 @@ exports[`TransactionTable should render 1`] = `
                   </div>
                 </div>
                 <div
-                  class="inline-flex items-center no-ligatures"
+                  class="w-40 xl:w-full"
                 >
-                  <span
-                    class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-text truncate font-semibold text-base"
-                    data-testid="address__wallet-address"
+                  <div
+                    class="w-full flex items-center no-ligatures overflow-hidden whitespace-nowrap"
                   >
-                    DHg1jY…rH6c3Z
-                  </span>
+                    <span
+                      class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-text font-semibold text-base"
+                      data-testid="address__wallet-address"
+                    >
+                      DHg1jYVS23D6GP7RuhckuJsYAr6crH6c3Z
+                    </span>
+                  </div>
                 </div>
               </div>
             </td>
@@ -4682,7 +4710,7 @@ exports[`TransactionTable should render 1`] = `
                     </div>
                   </div>
                   <div
-                    class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB ring-theme-background bg-theme-background group-hover:ring-theme-secondary-100 group-hover:bg-secondary-100 dark:group-hover:ring-black dark:group-hover:bg-black"
+                    class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB ring-theme-background bg-theme-background group-hover:ring-theme-secondary-100 group-hover:bg-secondary-100 dark:group-hover:ring-black dark:group-hover:bg-black flex-shrink-0"
                     data-testid="Avatar"
                   >
                     <div
@@ -4697,14 +4725,18 @@ exports[`TransactionTable should render 1`] = `
                   </div>
                 </div>
                 <div
-                  class="inline-flex items-center no-ligatures"
+                  class="w-40 xl:w-full"
                 >
-                  <span
-                    class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-text truncate font-semibold text-base"
-                    data-testid="address__wallet-address"
+                  <div
+                    class="w-full flex items-center no-ligatures overflow-hidden whitespace-nowrap"
                   >
-                    DM7UiH…GCEWhP
-                  </span>
+                    <span
+                      class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-text font-semibold text-base"
+                      data-testid="address__wallet-address"
+                    >
+                      DM7UiH4b2rW2Nv11Wu6ToiZi8MJhGCEWhP
+                    </span>
+                  </div>
                 </div>
               </div>
             </td>
@@ -4833,7 +4865,7 @@ exports[`TransactionTable should render 1`] = `
                     </div>
                   </div>
                   <div
-                    class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB ring-theme-background bg-theme-background group-hover:ring-theme-secondary-100 group-hover:bg-secondary-100 dark:group-hover:ring-black dark:group-hover:bg-black"
+                    class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB ring-theme-background bg-theme-background group-hover:ring-theme-secondary-100 group-hover:bg-secondary-100 dark:group-hover:ring-black dark:group-hover:bg-black flex-shrink-0"
                     data-testid="Avatar"
                   >
                     <div
@@ -4848,14 +4880,18 @@ exports[`TransactionTable should render 1`] = `
                   </div>
                 </div>
                 <div
-                  class="inline-flex items-center no-ligatures"
+                  class="w-40 xl:w-full"
                 >
-                  <span
-                    class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-text truncate font-semibold text-base"
-                    data-testid="address__wallet-address"
+                  <div
+                    class="w-full flex items-center no-ligatures overflow-hidden whitespace-nowrap"
                   >
-                    DRgF3P…Ay23ES
-                  </span>
+                    <span
+                      class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-text font-semibold text-base"
+                      data-testid="address__wallet-address"
+                    >
+                      DRgF3PvzeGWndQjET7dZsSmnrc6uAy23ES
+                    </span>
+                  </div>
                 </div>
               </div>
             </td>
@@ -4984,7 +5020,7 @@ exports[`TransactionTable should render 1`] = `
                     </div>
                   </div>
                   <div
-                    class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB ring-theme-background bg-theme-background group-hover:ring-theme-secondary-100 group-hover:bg-secondary-100 dark:group-hover:ring-black dark:group-hover:bg-black"
+                    class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB ring-theme-background bg-theme-background group-hover:ring-theme-secondary-100 group-hover:bg-secondary-100 dark:group-hover:ring-black dark:group-hover:bg-black flex-shrink-0"
                     data-testid="Avatar"
                   >
                     <div
@@ -4999,14 +5035,18 @@ exports[`TransactionTable should render 1`] = `
                   </div>
                 </div>
                 <div
-                  class="inline-flex items-center no-ligatures"
+                  class="w-40 xl:w-full"
                 >
-                  <span
-                    class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-text truncate font-semibold text-base"
-                    data-testid="address__wallet-address"
+                  <div
+                    class="w-full flex items-center no-ligatures overflow-hidden whitespace-nowrap"
                   >
-                    D6Z26L…tHY4ax
-                  </span>
+                    <span
+                      class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-text font-semibold text-base"
+                      data-testid="address__wallet-address"
+                    >
+                      D6Z26L69gdk9qYmTv5uzk3uGepigtHY4ax
+                    </span>
+                  </div>
                 </div>
               </div>
             </td>
@@ -5135,7 +5175,7 @@ exports[`TransactionTable should render 1`] = `
                     </div>
                   </div>
                   <div
-                    class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB ring-theme-background bg-theme-background group-hover:ring-theme-secondary-100 group-hover:bg-secondary-100 dark:group-hover:ring-black dark:group-hover:bg-black"
+                    class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB ring-theme-background bg-theme-background group-hover:ring-theme-secondary-100 group-hover:bg-secondary-100 dark:group-hover:ring-black dark:group-hover:bg-black flex-shrink-0"
                     data-testid="Avatar"
                   >
                     <div
@@ -5150,14 +5190,18 @@ exports[`TransactionTable should render 1`] = `
                   </div>
                 </div>
                 <div
-                  class="inline-flex items-center no-ligatures"
+                  class="w-40 xl:w-full"
                 >
-                  <span
-                    class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-text truncate font-semibold text-base"
-                    data-testid="address__wallet-address"
+                  <div
+                    class="w-full flex items-center no-ligatures overflow-hidden whitespace-nowrap"
                   >
-                    DPv1wz…gzP8yQ
-                  </span>
+                    <span
+                      class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-text font-semibold text-base"
+                      data-testid="address__wallet-address"
+                    >
+                      DPv1wzB2xJtJQH5PaCMnw1V9mUBugzP8yQ
+                    </span>
+                  </div>
                 </div>
               </div>
             </td>
@@ -5300,12 +5344,16 @@ exports[`TransactionTable should render 1`] = `
                     </div>
                   </div>
                 </div>
-                <span
-                  class="font-semibold text-theme-text"
-                  data-testid="TransactionRowRecipientLabel"
+                <div
+                  class="w-40 xl:w-full"
                 >
-                  Second Signature
-                </span>
+                  <span
+                    class="font-semibold text-theme-text"
+                    data-testid="TransactionRowRecipientLabel"
+                  >
+                    Second Signature
+                  </span>
+                </div>
               </div>
             </td>
             <td>
@@ -5433,7 +5481,7 @@ exports[`TransactionTable should render 1`] = `
                     </div>
                   </div>
                   <div
-                    class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB ring-theme-background bg-theme-background group-hover:ring-theme-secondary-100 group-hover:bg-secondary-100 dark:group-hover:ring-black dark:group-hover:bg-black"
+                    class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB ring-theme-background bg-theme-background group-hover:ring-theme-secondary-100 group-hover:bg-secondary-100 dark:group-hover:ring-black dark:group-hover:bg-black flex-shrink-0"
                     data-testid="Avatar"
                   >
                     <div
@@ -5448,14 +5496,18 @@ exports[`TransactionTable should render 1`] = `
                   </div>
                 </div>
                 <div
-                  class="inline-flex items-center no-ligatures"
+                  class="w-40 xl:w-full"
                 >
-                  <span
-                    class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-text truncate font-semibold text-base"
-                    data-testid="address__wallet-address"
+                  <div
+                    class="w-full flex items-center no-ligatures overflow-hidden whitespace-nowrap"
                   >
-                    D8c6zg…e9tUMR
-                  </span>
+                    <span
+                      class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-text font-semibold text-base"
+                      data-testid="address__wallet-address"
+                    >
+                      D8c6zgQ2CYWvbCzqZbhWCKXDFHyje9tUMR
+                    </span>
+                  </div>
                 </div>
               </div>
             </td>
@@ -5598,19 +5650,23 @@ exports[`TransactionTable should render 1`] = `
                     </div>
                   </div>
                 </div>
-                <span>
-                  <span
-                    class="font-semibold text-theme-text"
-                    data-testid="TransactionRowRecipientLabel"
-                  >
-                    Multipayment
+                <div
+                  class="w-40 xl:w-full"
+                >
+                  <span>
+                    <span
+                      class="font-semibold text-theme-text"
+                      data-testid="TransactionRowRecipientLabel"
+                    >
+                      Multipayment
+                    </span>
+                    <span
+                      class="ml-1 font-semibold text-theme-secondary-500 dark:text-theme-secondary-700"
+                    >
+                      4
+                    </span>
                   </span>
-                  <span
-                    class="ml-1 font-semibold text-theme-secondary-500 dark:text-theme-secondary-700"
-                  >
-                    4
-                  </span>
-                </span>
+                </div>
               </div>
             </td>
             <td>
@@ -5738,7 +5794,7 @@ exports[`TransactionTable should render 1`] = `
                     </div>
                   </div>
                   <div
-                    class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB ring-theme-background bg-theme-background group-hover:ring-theme-secondary-100 group-hover:bg-secondary-100 dark:group-hover:ring-black dark:group-hover:bg-black"
+                    class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB ring-theme-background bg-theme-background group-hover:ring-theme-secondary-100 group-hover:bg-secondary-100 dark:group-hover:ring-black dark:group-hover:bg-black flex-shrink-0"
                     data-testid="Avatar"
                   >
                     <div
@@ -5753,14 +5809,18 @@ exports[`TransactionTable should render 1`] = `
                   </div>
                 </div>
                 <div
-                  class="inline-flex items-center no-ligatures"
+                  class="w-40 xl:w-full"
                 >
-                  <span
-                    class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-text truncate font-semibold text-base"
-                    data-testid="address__wallet-address"
+                  <div
+                    class="w-full flex items-center no-ligatures overflow-hidden whitespace-nowrap"
                   >
-                    DHawRT…tVmQ5z
-                  </span>
+                    <span
+                      class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-text font-semibold text-base"
+                      data-testid="address__wallet-address"
+                    >
+                      DHawRTCWDw4e4YaPyF8QEdWUmxiwtVmQ5z
+                    </span>
+                  </div>
                 </div>
               </div>
             </td>
@@ -5922,7 +5982,7 @@ exports[`TransactionTable should render compact 1`] = `
                     </div>
                   </div>
                   <div
-                    class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB ring-theme-background bg-theme-background group-hover:ring-theme-secondary-100 group-hover:bg-secondary-100 dark:group-hover:ring-black dark:group-hover:bg-black"
+                    class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB ring-theme-background bg-theme-background group-hover:ring-theme-secondary-100 group-hover:bg-secondary-100 dark:group-hover:ring-black dark:group-hover:bg-black flex-shrink-0"
                     data-testid="Avatar"
                   >
                     <div
@@ -5937,13 +5997,13 @@ exports[`TransactionTable should render compact 1`] = `
                   </div>
                 </div>
                 <div
-                  class="inline-flex items-center no-ligatures"
+                  class="w-full flex items-center no-ligatures overflow-hidden whitespace-nowrap"
                 >
                   <span
-                    class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-text truncate font-semibold text-base"
+                    class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-text font-semibold text-base"
                     data-testid="address__wallet-address"
                   >
-                    DHawRT…tVmQ5z
+                    DHawRTCWDw4e4YaPyF8QEdWUmxiwtVmQ5z
                   </span>
                 </div>
               </div>
@@ -6282,7 +6342,7 @@ exports[`TransactionTable should render compact 1`] = `
                     </div>
                   </div>
                   <div
-                    class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB ring-theme-background bg-theme-background group-hover:ring-theme-secondary-100 group-hover:bg-secondary-100 dark:group-hover:ring-black dark:group-hover:bg-black"
+                    class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB ring-theme-background bg-theme-background group-hover:ring-theme-secondary-100 group-hover:bg-secondary-100 dark:group-hover:ring-black dark:group-hover:bg-black flex-shrink-0"
                     data-testid="Avatar"
                   >
                     <div
@@ -6297,13 +6357,13 @@ exports[`TransactionTable should render compact 1`] = `
                   </div>
                 </div>
                 <div
-                  class="inline-flex items-center no-ligatures"
+                  class="w-full flex items-center no-ligatures overflow-hidden whitespace-nowrap"
                 >
                   <span
-                    class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-text truncate font-semibold text-base"
+                    class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-text font-semibold text-base"
                     data-testid="address__wallet-address"
                   >
-                    D8c6zg…e9tUMR
+                    D8c6zgQ2CYWvbCzqZbhWCKXDFHyje9tUMR
                   </span>
                 </div>
               </div>
@@ -6420,7 +6480,7 @@ exports[`TransactionTable should render compact 1`] = `
                     </div>
                   </div>
                   <div
-                    class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB ring-theme-background bg-theme-background group-hover:ring-theme-secondary-100 group-hover:bg-secondary-100 dark:group-hover:ring-black dark:group-hover:bg-black"
+                    class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB ring-theme-background bg-theme-background group-hover:ring-theme-secondary-100 group-hover:bg-secondary-100 dark:group-hover:ring-black dark:group-hover:bg-black flex-shrink-0"
                     data-testid="Avatar"
                   >
                     <div
@@ -6435,13 +6495,13 @@ exports[`TransactionTable should render compact 1`] = `
                   </div>
                 </div>
                 <div
-                  class="inline-flex items-center no-ligatures"
+                  class="w-full flex items-center no-ligatures overflow-hidden whitespace-nowrap"
                 >
                   <span
-                    class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-text truncate font-semibold text-base"
+                    class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-text font-semibold text-base"
                     data-testid="address__wallet-address"
                   >
-                    DPv1wz…gzP8yQ
+                    DPv1wzB2xJtJQH5PaCMnw1V9mUBugzP8yQ
                   </span>
                 </div>
               </div>
@@ -6491,7 +6551,7 @@ exports[`TransactionTable should render compact 1`] = `
                     </div>
                   </div>
                   <div
-                    class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB ring-theme-background bg-theme-background group-hover:ring-theme-secondary-100 group-hover:bg-secondary-100 dark:group-hover:ring-black dark:group-hover:bg-black"
+                    class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB ring-theme-background bg-theme-background group-hover:ring-theme-secondary-100 group-hover:bg-secondary-100 dark:group-hover:ring-black dark:group-hover:bg-black flex-shrink-0"
                     data-testid="Avatar"
                   >
                     <div
@@ -6506,13 +6566,13 @@ exports[`TransactionTable should render compact 1`] = `
                   </div>
                 </div>
                 <div
-                  class="inline-flex items-center no-ligatures"
+                  class="w-full flex items-center no-ligatures overflow-hidden whitespace-nowrap"
                 >
                   <span
-                    class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-text truncate font-semibold text-base"
+                    class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-text font-semibold text-base"
                     data-testid="address__wallet-address"
                   >
-                    D6Z26L…tHY4ax
+                    D6Z26L69gdk9qYmTv5uzk3uGepigtHY4ax
                   </span>
                 </div>
               </div>
@@ -6562,7 +6622,7 @@ exports[`TransactionTable should render compact 1`] = `
                     </div>
                   </div>
                   <div
-                    class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB ring-theme-background bg-theme-background group-hover:ring-theme-secondary-100 group-hover:bg-secondary-100 dark:group-hover:ring-black dark:group-hover:bg-black"
+                    class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB ring-theme-background bg-theme-background group-hover:ring-theme-secondary-100 group-hover:bg-secondary-100 dark:group-hover:ring-black dark:group-hover:bg-black flex-shrink-0"
                     data-testid="Avatar"
                   >
                     <div
@@ -6577,13 +6637,13 @@ exports[`TransactionTable should render compact 1`] = `
                   </div>
                 </div>
                 <div
-                  class="inline-flex items-center no-ligatures"
+                  class="w-full flex items-center no-ligatures overflow-hidden whitespace-nowrap"
                 >
                   <span
-                    class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-text truncate font-semibold text-base"
+                    class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-text font-semibold text-base"
                     data-testid="address__wallet-address"
                   >
-                    DRgF3P…Ay23ES
+                    DRgF3PvzeGWndQjET7dZsSmnrc6uAy23ES
                   </span>
                 </div>
               </div>
@@ -6633,7 +6693,7 @@ exports[`TransactionTable should render compact 1`] = `
                     </div>
                   </div>
                   <div
-                    class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB ring-theme-background bg-theme-background group-hover:ring-theme-secondary-100 group-hover:bg-secondary-100 dark:group-hover:ring-black dark:group-hover:bg-black"
+                    class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB ring-theme-background bg-theme-background group-hover:ring-theme-secondary-100 group-hover:bg-secondary-100 dark:group-hover:ring-black dark:group-hover:bg-black flex-shrink-0"
                     data-testid="Avatar"
                   >
                     <div
@@ -6648,13 +6708,13 @@ exports[`TransactionTable should render compact 1`] = `
                   </div>
                 </div>
                 <div
-                  class="inline-flex items-center no-ligatures"
+                  class="w-full flex items-center no-ligatures overflow-hidden whitespace-nowrap"
                 >
                   <span
-                    class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-text truncate font-semibold text-base"
+                    class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-text font-semibold text-base"
                     data-testid="address__wallet-address"
                   >
-                    DM7UiH…GCEWhP
+                    DM7UiH4b2rW2Nv11Wu6ToiZi8MJhGCEWhP
                   </span>
                 </div>
               </div>
@@ -6704,7 +6764,7 @@ exports[`TransactionTable should render compact 1`] = `
                     </div>
                   </div>
                   <div
-                    class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB ring-theme-background bg-theme-background group-hover:ring-theme-secondary-100 group-hover:bg-secondary-100 dark:group-hover:ring-black dark:group-hover:bg-black"
+                    class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB ring-theme-background bg-theme-background group-hover:ring-theme-secondary-100 group-hover:bg-secondary-100 dark:group-hover:ring-black dark:group-hover:bg-black flex-shrink-0"
                     data-testid="Avatar"
                   >
                     <div
@@ -6719,13 +6779,13 @@ exports[`TransactionTable should render compact 1`] = `
                   </div>
                 </div>
                 <div
-                  class="inline-flex items-center no-ligatures"
+                  class="w-full flex items-center no-ligatures overflow-hidden whitespace-nowrap"
                 >
                   <span
-                    class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-text truncate font-semibold text-base"
+                    class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-text font-semibold text-base"
                     data-testid="address__wallet-address"
                   >
-                    DHg1jY…rH6c3Z
+                    DHg1jYVS23D6GP7RuhckuJsYAr6crH6c3Z
                   </span>
                 </div>
               </div>
@@ -6775,7 +6835,7 @@ exports[`TransactionTable should render compact 1`] = `
                     </div>
                   </div>
                   <div
-                    class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB ring-theme-background bg-theme-background group-hover:ring-theme-secondary-100 group-hover:bg-secondary-100 dark:group-hover:ring-black dark:group-hover:bg-black"
+                    class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB ring-theme-background bg-theme-background group-hover:ring-theme-secondary-100 group-hover:bg-secondary-100 dark:group-hover:ring-black dark:group-hover:bg-black flex-shrink-0"
                     data-testid="Avatar"
                   >
                     <div
@@ -6790,13 +6850,13 @@ exports[`TransactionTable should render compact 1`] = `
                   </div>
                 </div>
                 <div
-                  class="inline-flex items-center no-ligatures"
+                  class="w-full flex items-center no-ligatures overflow-hidden whitespace-nowrap"
                 >
                   <span
-                    class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-text truncate font-semibold text-base"
+                    class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-text font-semibold text-base"
                     data-testid="address__wallet-address"
                   >
-                    DKY5ey…bNF53A
+                    DKY5eyQUKKYyaCfPp6MUv3Y4FW6EbNF53A
                   </span>
                 </div>
               </div>
@@ -6846,7 +6906,7 @@ exports[`TransactionTable should render compact 1`] = `
                     </div>
                   </div>
                   <div
-                    class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB ring-theme-background bg-theme-background group-hover:ring-theme-secondary-100 group-hover:bg-secondary-100 dark:group-hover:ring-black dark:group-hover:bg-black"
+                    class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB ring-theme-background bg-theme-background group-hover:ring-theme-secondary-100 group-hover:bg-secondary-100 dark:group-hover:ring-black dark:group-hover:bg-black flex-shrink-0"
                     data-testid="Avatar"
                   >
                     <div
@@ -6861,13 +6921,13 @@ exports[`TransactionTable should render compact 1`] = `
                   </div>
                 </div>
                 <div
-                  class="inline-flex items-center no-ligatures"
+                  class="w-full flex items-center no-ligatures overflow-hidden whitespace-nowrap"
                 >
                   <span
-                    class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-text truncate font-semibold text-base"
+                    class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-text font-semibold text-base"
                     data-testid="address__wallet-address"
                   >
-                    DKY5ey…bNF53A
+                    DKY5eyQUKKYyaCfPp6MUv3Y4FW6EbNF53A
                   </span>
                 </div>
               </div>
@@ -6917,7 +6977,7 @@ exports[`TransactionTable should render compact 1`] = `
                     </div>
                   </div>
                   <div
-                    class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB ring-theme-background bg-theme-background group-hover:ring-theme-secondary-100 group-hover:bg-secondary-100 dark:group-hover:ring-black dark:group-hover:bg-black"
+                    class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB ring-theme-background bg-theme-background group-hover:ring-theme-secondary-100 group-hover:bg-secondary-100 dark:group-hover:ring-black dark:group-hover:bg-black flex-shrink-0"
                     data-testid="Avatar"
                   >
                     <div
@@ -6932,13 +6992,13 @@ exports[`TransactionTable should render compact 1`] = `
                   </div>
                 </div>
                 <div
-                  class="inline-flex items-center no-ligatures"
+                  class="w-full flex items-center no-ligatures overflow-hidden whitespace-nowrap"
                 >
                   <span
-                    class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-text truncate font-semibold text-base"
+                    class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-text font-semibold text-base"
                     data-testid="address__wallet-address"
                   >
-                    D5pVkh…xfKwSv
+                    D5pVkhZbSb4UNXvfmF6j7zdau8yGxfKwSv
                   </span>
                 </div>
               </div>
@@ -7205,19 +7265,23 @@ exports[`TransactionTable should render with sign 1`] = `
                     </div>
                   </div>
                 </div>
-                <span
-                  data-testid="TransactionRowVoteLabel"
+                <div
+                  class="w-40 xl:w-full"
                 >
                   <span
-                    class="font-semibold text-theme-text"
-                    data-testid="TransactionRowRecipientLabel"
+                    data-testid="TransactionRowVoteLabel"
                   >
-                    Vote
+                    <span
+                      class="font-semibold text-theme-text"
+                      data-testid="TransactionRowRecipientLabel"
+                    >
+                      Vote
+                    </span>
+                    <span
+                      class="pl-2 ml-2 font-semibold truncate border-l text-theme-primary-600 border-theme-secondary-300 dark:border-theme-secondary-800"
+                    />
                   </span>
-                  <span
-                    class="pl-2 ml-2 font-semibold truncate border-l text-theme-primary-600 border-theme-secondary-300 dark:border-theme-secondary-800"
-                  />
-                </span>
+                </div>
               </div>
             </td>
             <td>
@@ -7382,19 +7446,23 @@ exports[`TransactionTable should render with sign 1`] = `
                     </div>
                   </div>
                 </div>
-                <span
-                  data-testid="TransactionRowVoteLabel"
+                <div
+                  class="w-40 xl:w-full"
                 >
                   <span
-                    class="font-semibold text-theme-text"
-                    data-testid="TransactionRowRecipientLabel"
+                    data-testid="TransactionRowVoteLabel"
                   >
-                    Unvote
+                    <span
+                      class="font-semibold text-theme-text"
+                      data-testid="TransactionRowRecipientLabel"
+                    >
+                      Unvote
+                    </span>
+                    <span
+                      class="pl-2 ml-2 font-semibold truncate border-l text-theme-primary-600 border-theme-secondary-300 dark:border-theme-secondary-800"
+                    />
                   </span>
-                  <span
-                    class="pl-2 ml-2 font-semibold truncate border-l text-theme-primary-600 border-theme-secondary-300 dark:border-theme-secondary-800"
-                  />
-                </span>
+                </div>
               </div>
             </td>
             <td>
@@ -7559,12 +7627,16 @@ exports[`TransactionTable should render with sign 1`] = `
                     </div>
                   </div>
                 </div>
-                <span
-                  class="font-semibold text-theme-text"
-                  data-testid="TransactionRowRecipientLabel"
+                <div
+                  class="w-40 xl:w-full"
                 >
-                  IPFS
-                </span>
+                  <span
+                    class="font-semibold text-theme-text"
+                    data-testid="TransactionRowRecipientLabel"
+                  >
+                    IPFS
+                  </span>
+                </div>
               </div>
             </td>
             <td>
@@ -7715,7 +7787,7 @@ exports[`TransactionTable should render with sign 1`] = `
                     </div>
                   </div>
                   <div
-                    class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB ring-theme-background bg-theme-background group-hover:ring-theme-secondary-100 group-hover:bg-secondary-100 dark:group-hover:ring-black dark:group-hover:bg-black"
+                    class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB ring-theme-background bg-theme-background group-hover:ring-theme-secondary-100 group-hover:bg-secondary-100 dark:group-hover:ring-black dark:group-hover:bg-black flex-shrink-0"
                     data-testid="Avatar"
                   >
                     <div
@@ -7730,14 +7802,18 @@ exports[`TransactionTable should render with sign 1`] = `
                   </div>
                 </div>
                 <div
-                  class="inline-flex items-center no-ligatures"
+                  class="w-40 xl:w-full"
                 >
-                  <span
-                    class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-text truncate font-semibold text-base"
-                    data-testid="address__wallet-address"
+                  <div
+                    class="w-full flex items-center no-ligatures overflow-hidden whitespace-nowrap"
                   >
-                    D5pVkh…xfKwSv
-                  </span>
+                    <span
+                      class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-text font-semibold text-base"
+                      data-testid="address__wallet-address"
+                    >
+                      D5pVkhZbSb4UNXvfmF6j7zdau8yGxfKwSv
+                    </span>
+                  </div>
                 </div>
               </div>
             </td>
@@ -7889,7 +7965,7 @@ exports[`TransactionTable should render with sign 1`] = `
                     </div>
                   </div>
                   <div
-                    class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB ring-theme-background bg-theme-background group-hover:ring-theme-secondary-100 group-hover:bg-secondary-100 dark:group-hover:ring-black dark:group-hover:bg-black"
+                    class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB ring-theme-background bg-theme-background group-hover:ring-theme-secondary-100 group-hover:bg-secondary-100 dark:group-hover:ring-black dark:group-hover:bg-black flex-shrink-0"
                     data-testid="Avatar"
                   >
                     <div
@@ -7904,14 +7980,18 @@ exports[`TransactionTable should render with sign 1`] = `
                   </div>
                 </div>
                 <div
-                  class="inline-flex items-center no-ligatures"
+                  class="w-40 xl:w-full"
                 >
-                  <span
-                    class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-text truncate font-semibold text-base"
-                    data-testid="address__wallet-address"
+                  <div
+                    class="w-full flex items-center no-ligatures overflow-hidden whitespace-nowrap"
                   >
-                    DKY5ey…bNF53A
-                  </span>
+                    <span
+                      class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-text font-semibold text-base"
+                      data-testid="address__wallet-address"
+                    >
+                      DKY5eyQUKKYyaCfPp6MUv3Y4FW6EbNF53A
+                    </span>
+                  </div>
                 </div>
               </div>
             </td>
@@ -8063,7 +8143,7 @@ exports[`TransactionTable should render with sign 1`] = `
                     </div>
                   </div>
                   <div
-                    class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB ring-theme-background bg-theme-background group-hover:ring-theme-secondary-100 group-hover:bg-secondary-100 dark:group-hover:ring-black dark:group-hover:bg-black"
+                    class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB ring-theme-background bg-theme-background group-hover:ring-theme-secondary-100 group-hover:bg-secondary-100 dark:group-hover:ring-black dark:group-hover:bg-black flex-shrink-0"
                     data-testid="Avatar"
                   >
                     <div
@@ -8078,14 +8158,18 @@ exports[`TransactionTable should render with sign 1`] = `
                   </div>
                 </div>
                 <div
-                  class="inline-flex items-center no-ligatures"
+                  class="w-40 xl:w-full"
                 >
-                  <span
-                    class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-text truncate font-semibold text-base"
-                    data-testid="address__wallet-address"
+                  <div
+                    class="w-full flex items-center no-ligatures overflow-hidden whitespace-nowrap"
                   >
-                    DKY5ey…bNF53A
-                  </span>
+                    <span
+                      class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-text font-semibold text-base"
+                      data-testid="address__wallet-address"
+                    >
+                      DKY5eyQUKKYyaCfPp6MUv3Y4FW6EbNF53A
+                    </span>
+                  </div>
                 </div>
               </div>
             </td>
@@ -8237,7 +8321,7 @@ exports[`TransactionTable should render with sign 1`] = `
                     </div>
                   </div>
                   <div
-                    class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB ring-theme-background bg-theme-background group-hover:ring-theme-secondary-100 group-hover:bg-secondary-100 dark:group-hover:ring-black dark:group-hover:bg-black"
+                    class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB ring-theme-background bg-theme-background group-hover:ring-theme-secondary-100 group-hover:bg-secondary-100 dark:group-hover:ring-black dark:group-hover:bg-black flex-shrink-0"
                     data-testid="Avatar"
                   >
                     <div
@@ -8252,14 +8336,18 @@ exports[`TransactionTable should render with sign 1`] = `
                   </div>
                 </div>
                 <div
-                  class="inline-flex items-center no-ligatures"
+                  class="w-40 xl:w-full"
                 >
-                  <span
-                    class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-text truncate font-semibold text-base"
-                    data-testid="address__wallet-address"
+                  <div
+                    class="w-full flex items-center no-ligatures overflow-hidden whitespace-nowrap"
                   >
-                    DHg1jY…rH6c3Z
-                  </span>
+                    <span
+                      class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-text font-semibold text-base"
+                      data-testid="address__wallet-address"
+                    >
+                      DHg1jYVS23D6GP7RuhckuJsYAr6crH6c3Z
+                    </span>
+                  </div>
                 </div>
               </div>
             </td>
@@ -8411,7 +8499,7 @@ exports[`TransactionTable should render with sign 1`] = `
                     </div>
                   </div>
                   <div
-                    class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB ring-theme-background bg-theme-background group-hover:ring-theme-secondary-100 group-hover:bg-secondary-100 dark:group-hover:ring-black dark:group-hover:bg-black"
+                    class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB ring-theme-background bg-theme-background group-hover:ring-theme-secondary-100 group-hover:bg-secondary-100 dark:group-hover:ring-black dark:group-hover:bg-black flex-shrink-0"
                     data-testid="Avatar"
                   >
                     <div
@@ -8426,14 +8514,18 @@ exports[`TransactionTable should render with sign 1`] = `
                   </div>
                 </div>
                 <div
-                  class="inline-flex items-center no-ligatures"
+                  class="w-40 xl:w-full"
                 >
-                  <span
-                    class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-text truncate font-semibold text-base"
-                    data-testid="address__wallet-address"
+                  <div
+                    class="w-full flex items-center no-ligatures overflow-hidden whitespace-nowrap"
                   >
-                    DM7UiH…GCEWhP
-                  </span>
+                    <span
+                      class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-text font-semibold text-base"
+                      data-testid="address__wallet-address"
+                    >
+                      DM7UiH4b2rW2Nv11Wu6ToiZi8MJhGCEWhP
+                    </span>
+                  </div>
                 </div>
               </div>
             </td>
@@ -8585,7 +8677,7 @@ exports[`TransactionTable should render with sign 1`] = `
                     </div>
                   </div>
                   <div
-                    class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB ring-theme-background bg-theme-background group-hover:ring-theme-secondary-100 group-hover:bg-secondary-100 dark:group-hover:ring-black dark:group-hover:bg-black"
+                    class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB ring-theme-background bg-theme-background group-hover:ring-theme-secondary-100 group-hover:bg-secondary-100 dark:group-hover:ring-black dark:group-hover:bg-black flex-shrink-0"
                     data-testid="Avatar"
                   >
                     <div
@@ -8600,14 +8692,18 @@ exports[`TransactionTable should render with sign 1`] = `
                   </div>
                 </div>
                 <div
-                  class="inline-flex items-center no-ligatures"
+                  class="w-40 xl:w-full"
                 >
-                  <span
-                    class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-text truncate font-semibold text-base"
-                    data-testid="address__wallet-address"
+                  <div
+                    class="w-full flex items-center no-ligatures overflow-hidden whitespace-nowrap"
                   >
-                    DRgF3P…Ay23ES
-                  </span>
+                    <span
+                      class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-text font-semibold text-base"
+                      data-testid="address__wallet-address"
+                    >
+                      DRgF3PvzeGWndQjET7dZsSmnrc6uAy23ES
+                    </span>
+                  </div>
                 </div>
               </div>
             </td>
@@ -8759,7 +8855,7 @@ exports[`TransactionTable should render with sign 1`] = `
                     </div>
                   </div>
                   <div
-                    class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB ring-theme-background bg-theme-background group-hover:ring-theme-secondary-100 group-hover:bg-secondary-100 dark:group-hover:ring-black dark:group-hover:bg-black"
+                    class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB ring-theme-background bg-theme-background group-hover:ring-theme-secondary-100 group-hover:bg-secondary-100 dark:group-hover:ring-black dark:group-hover:bg-black flex-shrink-0"
                     data-testid="Avatar"
                   >
                     <div
@@ -8774,14 +8870,18 @@ exports[`TransactionTable should render with sign 1`] = `
                   </div>
                 </div>
                 <div
-                  class="inline-flex items-center no-ligatures"
+                  class="w-40 xl:w-full"
                 >
-                  <span
-                    class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-text truncate font-semibold text-base"
-                    data-testid="address__wallet-address"
+                  <div
+                    class="w-full flex items-center no-ligatures overflow-hidden whitespace-nowrap"
                   >
-                    D6Z26L…tHY4ax
-                  </span>
+                    <span
+                      class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-text font-semibold text-base"
+                      data-testid="address__wallet-address"
+                    >
+                      D6Z26L69gdk9qYmTv5uzk3uGepigtHY4ax
+                    </span>
+                  </div>
                 </div>
               </div>
             </td>
@@ -8933,7 +9033,7 @@ exports[`TransactionTable should render with sign 1`] = `
                     </div>
                   </div>
                   <div
-                    class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB ring-theme-background bg-theme-background group-hover:ring-theme-secondary-100 group-hover:bg-secondary-100 dark:group-hover:ring-black dark:group-hover:bg-black"
+                    class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB ring-theme-background bg-theme-background group-hover:ring-theme-secondary-100 group-hover:bg-secondary-100 dark:group-hover:ring-black dark:group-hover:bg-black flex-shrink-0"
                     data-testid="Avatar"
                   >
                     <div
@@ -8948,14 +9048,18 @@ exports[`TransactionTable should render with sign 1`] = `
                   </div>
                 </div>
                 <div
-                  class="inline-flex items-center no-ligatures"
+                  class="w-40 xl:w-full"
                 >
-                  <span
-                    class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-text truncate font-semibold text-base"
-                    data-testid="address__wallet-address"
+                  <div
+                    class="w-full flex items-center no-ligatures overflow-hidden whitespace-nowrap"
                   >
-                    DPv1wz…gzP8yQ
-                  </span>
+                    <span
+                      class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-text font-semibold text-base"
+                      data-testid="address__wallet-address"
+                    >
+                      DPv1wzB2xJtJQH5PaCMnw1V9mUBugzP8yQ
+                    </span>
+                  </div>
                 </div>
               </div>
             </td>
@@ -9121,12 +9225,16 @@ exports[`TransactionTable should render with sign 1`] = `
                     </div>
                   </div>
                 </div>
-                <span
-                  class="font-semibold text-theme-text"
-                  data-testid="TransactionRowRecipientLabel"
+                <div
+                  class="w-40 xl:w-full"
                 >
-                  Second Signature
-                </span>
+                  <span
+                    class="font-semibold text-theme-text"
+                    data-testid="TransactionRowRecipientLabel"
+                  >
+                    Second Signature
+                  </span>
+                </div>
               </div>
             </td>
             <td>
@@ -9277,7 +9385,7 @@ exports[`TransactionTable should render with sign 1`] = `
                     </div>
                   </div>
                   <div
-                    class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB ring-theme-background bg-theme-background group-hover:ring-theme-secondary-100 group-hover:bg-secondary-100 dark:group-hover:ring-black dark:group-hover:bg-black"
+                    class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB ring-theme-background bg-theme-background group-hover:ring-theme-secondary-100 group-hover:bg-secondary-100 dark:group-hover:ring-black dark:group-hover:bg-black flex-shrink-0"
                     data-testid="Avatar"
                   >
                     <div
@@ -9292,14 +9400,18 @@ exports[`TransactionTable should render with sign 1`] = `
                   </div>
                 </div>
                 <div
-                  class="inline-flex items-center no-ligatures"
+                  class="w-40 xl:w-full"
                 >
-                  <span
-                    class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-text truncate font-semibold text-base"
-                    data-testid="address__wallet-address"
+                  <div
+                    class="w-full flex items-center no-ligatures overflow-hidden whitespace-nowrap"
                   >
-                    D8c6zg…e9tUMR
-                  </span>
+                    <span
+                      class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-text font-semibold text-base"
+                      data-testid="address__wallet-address"
+                    >
+                      D8c6zgQ2CYWvbCzqZbhWCKXDFHyje9tUMR
+                    </span>
+                  </div>
                 </div>
               </div>
             </td>
@@ -9465,19 +9577,23 @@ exports[`TransactionTable should render with sign 1`] = `
                     </div>
                   </div>
                 </div>
-                <span>
-                  <span
-                    class="font-semibold text-theme-text"
-                    data-testid="TransactionRowRecipientLabel"
-                  >
-                    Multipayment
+                <div
+                  class="w-40 xl:w-full"
+                >
+                  <span>
+                    <span
+                      class="font-semibold text-theme-text"
+                      data-testid="TransactionRowRecipientLabel"
+                    >
+                      Multipayment
+                    </span>
+                    <span
+                      class="ml-1 font-semibold text-theme-secondary-500 dark:text-theme-secondary-700"
+                    >
+                      4
+                    </span>
                   </span>
-                  <span
-                    class="ml-1 font-semibold text-theme-secondary-500 dark:text-theme-secondary-700"
-                  >
-                    4
-                  </span>
-                </span>
+                </div>
               </div>
             </td>
             <td>
@@ -9628,7 +9744,7 @@ exports[`TransactionTable should render with sign 1`] = `
                     </div>
                   </div>
                   <div
-                    class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB ring-theme-background bg-theme-background group-hover:ring-theme-secondary-100 group-hover:bg-secondary-100 dark:group-hover:ring-black dark:group-hover:bg-black"
+                    class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB ring-theme-background bg-theme-background group-hover:ring-theme-secondary-100 group-hover:bg-secondary-100 dark:group-hover:ring-black dark:group-hover:bg-black flex-shrink-0"
                     data-testid="Avatar"
                   >
                     <div
@@ -9643,14 +9759,18 @@ exports[`TransactionTable should render with sign 1`] = `
                   </div>
                 </div>
                 <div
-                  class="inline-flex items-center no-ligatures"
+                  class="w-40 xl:w-full"
                 >
-                  <span
-                    class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-text truncate font-semibold text-base"
-                    data-testid="address__wallet-address"
+                  <div
+                    class="w-full flex items-center no-ligatures overflow-hidden whitespace-nowrap"
                   >
-                    DHawRT…tVmQ5z
-                  </span>
+                    <span
+                      class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-text font-semibold text-base"
+                      data-testid="address__wallet-address"
+                    >
+                      DHawRTCWDw4e4YaPyF8QEdWUmxiwtVmQ5z
+                    </span>
+                  </div>
                 </div>
               </div>
             </td>
@@ -9919,19 +10039,23 @@ exports[`TransactionTable should render without explorer link column 1`] = `
                     </div>
                   </div>
                 </div>
-                <span
-                  data-testid="TransactionRowVoteLabel"
+                <div
+                  class="w-40 xl:w-full"
                 >
                   <span
-                    class="font-semibold text-theme-text"
-                    data-testid="TransactionRowRecipientLabel"
+                    data-testid="TransactionRowVoteLabel"
                   >
-                    Vote
+                    <span
+                      class="font-semibold text-theme-text"
+                      data-testid="TransactionRowRecipientLabel"
+                    >
+                      Vote
+                    </span>
+                    <span
+                      class="pl-2 ml-2 font-semibold truncate border-l text-theme-primary-600 border-theme-secondary-300 dark:border-theme-secondary-800"
+                    />
                   </span>
-                  <span
-                    class="pl-2 ml-2 font-semibold truncate border-l text-theme-primary-600 border-theme-secondary-300 dark:border-theme-secondary-800"
-                  />
-                </span>
+                </div>
               </div>
             </td>
             <td>
@@ -10043,19 +10167,23 @@ exports[`TransactionTable should render without explorer link column 1`] = `
                     </div>
                   </div>
                 </div>
-                <span
-                  data-testid="TransactionRowVoteLabel"
+                <div
+                  class="w-40 xl:w-full"
                 >
                   <span
-                    class="font-semibold text-theme-text"
-                    data-testid="TransactionRowRecipientLabel"
+                    data-testid="TransactionRowVoteLabel"
                   >
-                    Unvote
+                    <span
+                      class="font-semibold text-theme-text"
+                      data-testid="TransactionRowRecipientLabel"
+                    >
+                      Unvote
+                    </span>
+                    <span
+                      class="pl-2 ml-2 font-semibold truncate border-l text-theme-primary-600 border-theme-secondary-300 dark:border-theme-secondary-800"
+                    />
                   </span>
-                  <span
-                    class="pl-2 ml-2 font-semibold truncate border-l text-theme-primary-600 border-theme-secondary-300 dark:border-theme-secondary-800"
-                  />
-                </span>
+                </div>
               </div>
             </td>
             <td>
@@ -10167,12 +10295,16 @@ exports[`TransactionTable should render without explorer link column 1`] = `
                     </div>
                   </div>
                 </div>
-                <span
-                  class="font-semibold text-theme-text"
-                  data-testid="TransactionRowRecipientLabel"
+                <div
+                  class="w-40 xl:w-full"
                 >
-                  IPFS
-                </span>
+                  <span
+                    class="font-semibold text-theme-text"
+                    data-testid="TransactionRowRecipientLabel"
+                  >
+                    IPFS
+                  </span>
+                </div>
               </div>
             </td>
             <td>
@@ -10270,7 +10402,7 @@ exports[`TransactionTable should render without explorer link column 1`] = `
                     </div>
                   </div>
                   <div
-                    class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB ring-theme-background bg-theme-background group-hover:ring-theme-secondary-100 group-hover:bg-secondary-100 dark:group-hover:ring-black dark:group-hover:bg-black"
+                    class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB ring-theme-background bg-theme-background group-hover:ring-theme-secondary-100 group-hover:bg-secondary-100 dark:group-hover:ring-black dark:group-hover:bg-black flex-shrink-0"
                     data-testid="Avatar"
                   >
                     <div
@@ -10285,14 +10417,18 @@ exports[`TransactionTable should render without explorer link column 1`] = `
                   </div>
                 </div>
                 <div
-                  class="inline-flex items-center no-ligatures"
+                  class="w-40 xl:w-full"
                 >
-                  <span
-                    class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-text truncate font-semibold text-base"
-                    data-testid="address__wallet-address"
+                  <div
+                    class="w-full flex items-center no-ligatures overflow-hidden whitespace-nowrap"
                   >
-                    D5pVkh…xfKwSv
-                  </span>
+                    <span
+                      class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-text font-semibold text-base"
+                      data-testid="address__wallet-address"
+                    >
+                      D5pVkhZbSb4UNXvfmF6j7zdau8yGxfKwSv
+                    </span>
+                  </div>
                 </div>
               </div>
             </td>
@@ -10391,7 +10527,7 @@ exports[`TransactionTable should render without explorer link column 1`] = `
                     </div>
                   </div>
                   <div
-                    class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB ring-theme-background bg-theme-background group-hover:ring-theme-secondary-100 group-hover:bg-secondary-100 dark:group-hover:ring-black dark:group-hover:bg-black"
+                    class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB ring-theme-background bg-theme-background group-hover:ring-theme-secondary-100 group-hover:bg-secondary-100 dark:group-hover:ring-black dark:group-hover:bg-black flex-shrink-0"
                     data-testid="Avatar"
                   >
                     <div
@@ -10406,14 +10542,18 @@ exports[`TransactionTable should render without explorer link column 1`] = `
                   </div>
                 </div>
                 <div
-                  class="inline-flex items-center no-ligatures"
+                  class="w-40 xl:w-full"
                 >
-                  <span
-                    class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-text truncate font-semibold text-base"
-                    data-testid="address__wallet-address"
+                  <div
+                    class="w-full flex items-center no-ligatures overflow-hidden whitespace-nowrap"
                   >
-                    DKY5ey…bNF53A
-                  </span>
+                    <span
+                      class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-text font-semibold text-base"
+                      data-testid="address__wallet-address"
+                    >
+                      DKY5eyQUKKYyaCfPp6MUv3Y4FW6EbNF53A
+                    </span>
+                  </div>
                 </div>
               </div>
             </td>
@@ -10512,7 +10652,7 @@ exports[`TransactionTable should render without explorer link column 1`] = `
                     </div>
                   </div>
                   <div
-                    class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB ring-theme-background bg-theme-background group-hover:ring-theme-secondary-100 group-hover:bg-secondary-100 dark:group-hover:ring-black dark:group-hover:bg-black"
+                    class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB ring-theme-background bg-theme-background group-hover:ring-theme-secondary-100 group-hover:bg-secondary-100 dark:group-hover:ring-black dark:group-hover:bg-black flex-shrink-0"
                     data-testid="Avatar"
                   >
                     <div
@@ -10527,14 +10667,18 @@ exports[`TransactionTable should render without explorer link column 1`] = `
                   </div>
                 </div>
                 <div
-                  class="inline-flex items-center no-ligatures"
+                  class="w-40 xl:w-full"
                 >
-                  <span
-                    class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-text truncate font-semibold text-base"
-                    data-testid="address__wallet-address"
+                  <div
+                    class="w-full flex items-center no-ligatures overflow-hidden whitespace-nowrap"
                   >
-                    DKY5ey…bNF53A
-                  </span>
+                    <span
+                      class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-text font-semibold text-base"
+                      data-testid="address__wallet-address"
+                    >
+                      DKY5eyQUKKYyaCfPp6MUv3Y4FW6EbNF53A
+                    </span>
+                  </div>
                 </div>
               </div>
             </td>
@@ -10633,7 +10777,7 @@ exports[`TransactionTable should render without explorer link column 1`] = `
                     </div>
                   </div>
                   <div
-                    class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB ring-theme-background bg-theme-background group-hover:ring-theme-secondary-100 group-hover:bg-secondary-100 dark:group-hover:ring-black dark:group-hover:bg-black"
+                    class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB ring-theme-background bg-theme-background group-hover:ring-theme-secondary-100 group-hover:bg-secondary-100 dark:group-hover:ring-black dark:group-hover:bg-black flex-shrink-0"
                     data-testid="Avatar"
                   >
                     <div
@@ -10648,14 +10792,18 @@ exports[`TransactionTable should render without explorer link column 1`] = `
                   </div>
                 </div>
                 <div
-                  class="inline-flex items-center no-ligatures"
+                  class="w-40 xl:w-full"
                 >
-                  <span
-                    class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-text truncate font-semibold text-base"
-                    data-testid="address__wallet-address"
+                  <div
+                    class="w-full flex items-center no-ligatures overflow-hidden whitespace-nowrap"
                   >
-                    DHg1jY…rH6c3Z
-                  </span>
+                    <span
+                      class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-text font-semibold text-base"
+                      data-testid="address__wallet-address"
+                    >
+                      DHg1jYVS23D6GP7RuhckuJsYAr6crH6c3Z
+                    </span>
+                  </div>
                 </div>
               </div>
             </td>
@@ -10754,7 +10902,7 @@ exports[`TransactionTable should render without explorer link column 1`] = `
                     </div>
                   </div>
                   <div
-                    class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB ring-theme-background bg-theme-background group-hover:ring-theme-secondary-100 group-hover:bg-secondary-100 dark:group-hover:ring-black dark:group-hover:bg-black"
+                    class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB ring-theme-background bg-theme-background group-hover:ring-theme-secondary-100 group-hover:bg-secondary-100 dark:group-hover:ring-black dark:group-hover:bg-black flex-shrink-0"
                     data-testid="Avatar"
                   >
                     <div
@@ -10769,14 +10917,18 @@ exports[`TransactionTable should render without explorer link column 1`] = `
                   </div>
                 </div>
                 <div
-                  class="inline-flex items-center no-ligatures"
+                  class="w-40 xl:w-full"
                 >
-                  <span
-                    class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-text truncate font-semibold text-base"
-                    data-testid="address__wallet-address"
+                  <div
+                    class="w-full flex items-center no-ligatures overflow-hidden whitespace-nowrap"
                   >
-                    DM7UiH…GCEWhP
-                  </span>
+                    <span
+                      class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-text font-semibold text-base"
+                      data-testid="address__wallet-address"
+                    >
+                      DM7UiH4b2rW2Nv11Wu6ToiZi8MJhGCEWhP
+                    </span>
+                  </div>
                 </div>
               </div>
             </td>
@@ -10875,7 +11027,7 @@ exports[`TransactionTable should render without explorer link column 1`] = `
                     </div>
                   </div>
                   <div
-                    class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB ring-theme-background bg-theme-background group-hover:ring-theme-secondary-100 group-hover:bg-secondary-100 dark:group-hover:ring-black dark:group-hover:bg-black"
+                    class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB ring-theme-background bg-theme-background group-hover:ring-theme-secondary-100 group-hover:bg-secondary-100 dark:group-hover:ring-black dark:group-hover:bg-black flex-shrink-0"
                     data-testid="Avatar"
                   >
                     <div
@@ -10890,14 +11042,18 @@ exports[`TransactionTable should render without explorer link column 1`] = `
                   </div>
                 </div>
                 <div
-                  class="inline-flex items-center no-ligatures"
+                  class="w-40 xl:w-full"
                 >
-                  <span
-                    class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-text truncate font-semibold text-base"
-                    data-testid="address__wallet-address"
+                  <div
+                    class="w-full flex items-center no-ligatures overflow-hidden whitespace-nowrap"
                   >
-                    DRgF3P…Ay23ES
-                  </span>
+                    <span
+                      class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-text font-semibold text-base"
+                      data-testid="address__wallet-address"
+                    >
+                      DRgF3PvzeGWndQjET7dZsSmnrc6uAy23ES
+                    </span>
+                  </div>
                 </div>
               </div>
             </td>
@@ -10996,7 +11152,7 @@ exports[`TransactionTable should render without explorer link column 1`] = `
                     </div>
                   </div>
                   <div
-                    class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB ring-theme-background bg-theme-background group-hover:ring-theme-secondary-100 group-hover:bg-secondary-100 dark:group-hover:ring-black dark:group-hover:bg-black"
+                    class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB ring-theme-background bg-theme-background group-hover:ring-theme-secondary-100 group-hover:bg-secondary-100 dark:group-hover:ring-black dark:group-hover:bg-black flex-shrink-0"
                     data-testid="Avatar"
                   >
                     <div
@@ -11011,14 +11167,18 @@ exports[`TransactionTable should render without explorer link column 1`] = `
                   </div>
                 </div>
                 <div
-                  class="inline-flex items-center no-ligatures"
+                  class="w-40 xl:w-full"
                 >
-                  <span
-                    class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-text truncate font-semibold text-base"
-                    data-testid="address__wallet-address"
+                  <div
+                    class="w-full flex items-center no-ligatures overflow-hidden whitespace-nowrap"
                   >
-                    D6Z26L…tHY4ax
-                  </span>
+                    <span
+                      class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-text font-semibold text-base"
+                      data-testid="address__wallet-address"
+                    >
+                      D6Z26L69gdk9qYmTv5uzk3uGepigtHY4ax
+                    </span>
+                  </div>
                 </div>
               </div>
             </td>
@@ -11117,7 +11277,7 @@ exports[`TransactionTable should render without explorer link column 1`] = `
                     </div>
                   </div>
                   <div
-                    class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB ring-theme-background bg-theme-background group-hover:ring-theme-secondary-100 group-hover:bg-secondary-100 dark:group-hover:ring-black dark:group-hover:bg-black"
+                    class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB ring-theme-background bg-theme-background group-hover:ring-theme-secondary-100 group-hover:bg-secondary-100 dark:group-hover:ring-black dark:group-hover:bg-black flex-shrink-0"
                     data-testid="Avatar"
                   >
                     <div
@@ -11132,14 +11292,18 @@ exports[`TransactionTable should render without explorer link column 1`] = `
                   </div>
                 </div>
                 <div
-                  class="inline-flex items-center no-ligatures"
+                  class="w-40 xl:w-full"
                 >
-                  <span
-                    class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-text truncate font-semibold text-base"
-                    data-testid="address__wallet-address"
+                  <div
+                    class="w-full flex items-center no-ligatures overflow-hidden whitespace-nowrap"
                   >
-                    DPv1wz…gzP8yQ
-                  </span>
+                    <span
+                      class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-text font-semibold text-base"
+                      data-testid="address__wallet-address"
+                    >
+                      DPv1wzB2xJtJQH5PaCMnw1V9mUBugzP8yQ
+                    </span>
+                  </div>
                 </div>
               </div>
             </td>
@@ -11252,12 +11416,16 @@ exports[`TransactionTable should render without explorer link column 1`] = `
                     </div>
                   </div>
                 </div>
-                <span
-                  class="font-semibold text-theme-text"
-                  data-testid="TransactionRowRecipientLabel"
+                <div
+                  class="w-40 xl:w-full"
                 >
-                  Second Signature
-                </span>
+                  <span
+                    class="font-semibold text-theme-text"
+                    data-testid="TransactionRowRecipientLabel"
+                  >
+                    Second Signature
+                  </span>
+                </div>
               </div>
             </td>
             <td>
@@ -11355,7 +11523,7 @@ exports[`TransactionTable should render without explorer link column 1`] = `
                     </div>
                   </div>
                   <div
-                    class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB ring-theme-background bg-theme-background group-hover:ring-theme-secondary-100 group-hover:bg-secondary-100 dark:group-hover:ring-black dark:group-hover:bg-black"
+                    class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB ring-theme-background bg-theme-background group-hover:ring-theme-secondary-100 group-hover:bg-secondary-100 dark:group-hover:ring-black dark:group-hover:bg-black flex-shrink-0"
                     data-testid="Avatar"
                   >
                     <div
@@ -11370,14 +11538,18 @@ exports[`TransactionTable should render without explorer link column 1`] = `
                   </div>
                 </div>
                 <div
-                  class="inline-flex items-center no-ligatures"
+                  class="w-40 xl:w-full"
                 >
-                  <span
-                    class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-text truncate font-semibold text-base"
-                    data-testid="address__wallet-address"
+                  <div
+                    class="w-full flex items-center no-ligatures overflow-hidden whitespace-nowrap"
                   >
-                    D8c6zg…e9tUMR
-                  </span>
+                    <span
+                      class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-text font-semibold text-base"
+                      data-testid="address__wallet-address"
+                    >
+                      D8c6zgQ2CYWvbCzqZbhWCKXDFHyje9tUMR
+                    </span>
+                  </div>
                 </div>
               </div>
             </td>
@@ -11490,19 +11662,23 @@ exports[`TransactionTable should render without explorer link column 1`] = `
                     </div>
                   </div>
                 </div>
-                <span>
-                  <span
-                    class="font-semibold text-theme-text"
-                    data-testid="TransactionRowRecipientLabel"
-                  >
-                    Multipayment
+                <div
+                  class="w-40 xl:w-full"
+                >
+                  <span>
+                    <span
+                      class="font-semibold text-theme-text"
+                      data-testid="TransactionRowRecipientLabel"
+                    >
+                      Multipayment
+                    </span>
+                    <span
+                      class="ml-1 font-semibold text-theme-secondary-500 dark:text-theme-secondary-700"
+                    >
+                      4
+                    </span>
                   </span>
-                  <span
-                    class="ml-1 font-semibold text-theme-secondary-500 dark:text-theme-secondary-700"
-                  >
-                    4
-                  </span>
-                </span>
+                </div>
               </div>
             </td>
             <td>
@@ -11600,7 +11776,7 @@ exports[`TransactionTable should render without explorer link column 1`] = `
                     </div>
                   </div>
                   <div
-                    class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB ring-theme-background bg-theme-background group-hover:ring-theme-secondary-100 group-hover:bg-secondary-100 dark:group-hover:ring-black dark:group-hover:bg-black"
+                    class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB ring-theme-background bg-theme-background group-hover:ring-theme-secondary-100 group-hover:bg-secondary-100 dark:group-hover:ring-black dark:group-hover:bg-black flex-shrink-0"
                     data-testid="Avatar"
                   >
                     <div
@@ -11615,14 +11791,18 @@ exports[`TransactionTable should render without explorer link column 1`] = `
                   </div>
                 </div>
                 <div
-                  class="inline-flex items-center no-ligatures"
+                  class="w-40 xl:w-full"
                 >
-                  <span
-                    class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-text truncate font-semibold text-base"
-                    data-testid="address__wallet-address"
+                  <div
+                    class="w-full flex items-center no-ligatures overflow-hidden whitespace-nowrap"
                   >
-                    DHawRT…tVmQ5z
-                  </span>
+                    <span
+                      class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-text font-semibold text-base"
+                      data-testid="address__wallet-address"
+                    >
+                      DHawRTCWDw4e4YaPyF8QEdWUmxiwtVmQ5z
+                    </span>
+                  </div>
                 </div>
               </div>
             </td>

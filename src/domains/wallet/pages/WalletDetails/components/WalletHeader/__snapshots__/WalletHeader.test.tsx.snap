@@ -29,7 +29,7 @@ exports[`WalletHeader should render 1`] = `
           </div>
         </div>
         <div
-          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 ksomUO ring-theme-secondary-900"
+          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 ksomUO ring-theme-secondary-900 flex-shrink-0"
           data-testid="Avatar"
         >
           <div
@@ -44,7 +44,7 @@ exports[`WalletHeader should render 1`] = `
         </div>
       </div>
       <div
-        class="flex flex-col overflow-hidden"
+        class="flex flex-col overflow-hidden w-full"
       >
         <div
           class="flex items-center space-x-5 text-theme-secondary-text"
@@ -60,12 +60,17 @@ exports[`WalletHeader should render 1`] = `
           />
         </div>
         <div
-          class="flex items-center space-x-5"
+          class="flex items-center space-x-5 w-full"
         >
           <span
-            class="text-lg font-semibold text-white truncate"
+            class="flex-1 text-lg font-semibold text-white overflow-hidden whitespace-nowrap"
           >
-            D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD
+            <span
+              class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap"
+              data-testid="TruncateMiddle"
+            >
+              D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD
+            </span>
           </span>
           <div
             class="flex items-end mb-2 space-x-3 text-theme-secondary-text"
@@ -225,7 +230,7 @@ exports[`WalletHeader should render converted balance for mainnet wallet 1`] = `
           </div>
         </div>
         <div
-          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 ksomUO ring-theme-secondary-900"
+          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 ksomUO ring-theme-secondary-900 flex-shrink-0"
           data-testid="Avatar"
         >
           <div
@@ -240,7 +245,7 @@ exports[`WalletHeader should render converted balance for mainnet wallet 1`] = `
         </div>
       </div>
       <div
-        class="flex flex-col overflow-hidden"
+        class="flex flex-col overflow-hidden w-full"
       >
         <div
           class="flex items-center space-x-5 text-theme-secondary-text"
@@ -256,12 +261,17 @@ exports[`WalletHeader should render converted balance for mainnet wallet 1`] = `
           />
         </div>
         <div
-          class="flex items-center space-x-5"
+          class="flex items-center space-x-5 w-full"
         >
           <span
-            class="text-lg font-semibold text-white truncate"
+            class="flex-1 text-lg font-semibold text-white overflow-hidden whitespace-nowrap"
           >
-            D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD
+            <span
+              class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap"
+              data-testid="TruncateMiddle"
+            >
+              D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD
+            </span>
           </span>
           <div
             class="flex items-end mb-2 space-x-3 text-theme-secondary-text"
@@ -427,7 +437,7 @@ exports[`WalletHeader should show currency delta (-5%) 1`] = `
           </div>
         </div>
         <div
-          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 ksomUO ring-theme-secondary-900"
+          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 ksomUO ring-theme-secondary-900 flex-shrink-0"
           data-testid="Avatar"
         >
           <div
@@ -442,7 +452,7 @@ exports[`WalletHeader should show currency delta (-5%) 1`] = `
         </div>
       </div>
       <div
-        class="flex flex-col overflow-hidden"
+        class="flex flex-col overflow-hidden w-full"
       >
         <div
           class="flex items-center space-x-5 text-theme-secondary-text"
@@ -458,12 +468,17 @@ exports[`WalletHeader should show currency delta (-5%) 1`] = `
           />
         </div>
         <div
-          class="flex items-center space-x-5"
+          class="flex items-center space-x-5 w-full"
         >
           <span
-            class="text-lg font-semibold text-white truncate"
+            class="flex-1 text-lg font-semibold text-white overflow-hidden whitespace-nowrap"
           >
-            D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD
+            <span
+              class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap"
+              data-testid="TruncateMiddle"
+            >
+              D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD
+            </span>
           </span>
           <div
             class="flex items-end mb-2 space-x-3 text-theme-secondary-text"
@@ -641,7 +656,7 @@ exports[`WalletHeader should show currency delta (5%) 1`] = `
           </div>
         </div>
         <div
-          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 ksomUO ring-theme-secondary-900"
+          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 ksomUO ring-theme-secondary-900 flex-shrink-0"
           data-testid="Avatar"
         >
           <div
@@ -656,7 +671,7 @@ exports[`WalletHeader should show currency delta (5%) 1`] = `
         </div>
       </div>
       <div
-        class="flex flex-col overflow-hidden"
+        class="flex flex-col overflow-hidden w-full"
       >
         <div
           class="flex items-center space-x-5 text-theme-secondary-text"
@@ -672,12 +687,17 @@ exports[`WalletHeader should show currency delta (5%) 1`] = `
           />
         </div>
         <div
-          class="flex items-center space-x-5"
+          class="flex items-center space-x-5 w-full"
         >
           <span
-            class="text-lg font-semibold text-white truncate"
+            class="flex-1 text-lg font-semibold text-white overflow-hidden whitespace-nowrap"
           >
-            D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD
+            <span
+              class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap"
+              data-testid="TruncateMiddle"
+            >
+              D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD
+            </span>
           </span>
           <div
             class="flex items-end mb-2 space-x-3 text-theme-secondary-text"
@@ -855,7 +875,7 @@ exports[`WalletHeader should show modifiers 1`] = `
           </div>
         </div>
         <div
-          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 ksomUO ring-theme-secondary-900"
+          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 ksomUO ring-theme-secondary-900 flex-shrink-0"
           data-testid="Avatar"
         >
           <div
@@ -870,7 +890,7 @@ exports[`WalletHeader should show modifiers 1`] = `
         </div>
       </div>
       <div
-        class="flex flex-col overflow-hidden"
+        class="flex flex-col overflow-hidden w-full"
       >
         <div
           class="flex items-center space-x-5 text-theme-secondary-text"
@@ -915,12 +935,17 @@ exports[`WalletHeader should show modifiers 1`] = `
           </div>
         </div>
         <div
-          class="flex items-center space-x-5"
+          class="flex items-center space-x-5 w-full"
         >
           <span
-            class="text-lg font-semibold text-white truncate"
+            class="flex-1 text-lg font-semibold text-white overflow-hidden whitespace-nowrap"
           >
-            D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD
+            <span
+              class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap"
+              data-testid="TruncateMiddle"
+            >
+              D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD
+            </span>
           </span>
           <div
             class="flex items-end mb-2 space-x-3 text-theme-secondary-text"

@@ -256,7 +256,7 @@ exports[`Dashboard should render 1`] = `
                     data-testid="navbar__useractions"
                   >
                     <div
-                      class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB"
+                      class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB flex-shrink-0"
                       data-testid="Avatar"
                     >
                       <div
@@ -530,7 +530,7 @@ exports[`Dashboard should render 1`] = `
                                 </div>
                               </div>
                               <div
-                                class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB"
+                                class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB flex-shrink-0"
                                 data-testid="Avatar"
                               >
                                 <div
@@ -557,9 +557,14 @@ exports[`Dashboard should render 1`] = `
                             33.75089801 DARK
                           </span>
                           <span
-                            class="mt-1 text-xs font-semibold truncate text-theme-secondary-text no-ligatures"
+                            class="mt-1 text-xs font-semibold text-theme-secondary-text no-ligatures overflow-hidden whitespace-nowrap"
                           >
-                            D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD
+                            <span
+                              class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap"
+                              data-testid="TruncateMiddle"
+                            >
+                              D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD
+                            </span>
                           </span>
                         </div>
                         <div
@@ -606,7 +611,7 @@ exports[`Dashboard should render 1`] = `
                                 </div>
                               </div>
                               <div
-                                class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB"
+                                class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB flex-shrink-0"
                                 data-testid="Avatar"
                               >
                                 <div
@@ -633,9 +638,14 @@ exports[`Dashboard should render 1`] = `
                             57.68 DARK
                           </span>
                           <span
-                            class="mt-1 text-xs font-semibold truncate text-theme-secondary-text no-ligatures"
+                            class="mt-1 text-xs font-semibold text-theme-secondary-text no-ligatures overflow-hidden whitespace-nowrap"
                           >
-                            D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb
+                            <span
+                              class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap"
+                              data-testid="TruncateMiddle"
+                            >
+                              D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb
+                            </span>
                           </span>
                         </div>
                         <div
@@ -697,7 +707,7 @@ exports[`Dashboard should render 1`] = `
                                 </div>
                               </div>
                               <div
-                                class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB"
+                                class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB flex-shrink-0"
                                 data-testid="Avatar"
                               >
                                 <div
@@ -722,9 +732,14 @@ exports[`Dashboard should render 1`] = `
                             50,114.21127898 ARK
                           </span>
                           <span
-                            class="mt-1 text-xs font-semibold truncate text-theme-secondary-text no-ligatures"
+                            class="mt-1 text-xs font-semibold text-theme-secondary-text no-ligatures overflow-hidden whitespace-nowrap"
                           >
-                            AdVSe37niA3uFUPgCgMUH2tMsHF4LpLoiX
+                            <span
+                              class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap"
+                              data-testid="TruncateMiddle"
+                            >
+                              AdVSe37niA3uFUPgCgMUH2tMsHF4LpLoiX
+                            </span>
                           </span>
                         </div>
                         <div
@@ -1062,7 +1077,7 @@ exports[`Dashboard should render 1`] = `
                             </div>
                           </div>
                           <div
-                            class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB ring-theme-background bg-theme-background group-hover:ring-theme-secondary-100 group-hover:bg-secondary-100 dark:group-hover:ring-black dark:group-hover:bg-black"
+                            class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB ring-theme-background bg-theme-background group-hover:ring-theme-secondary-100 group-hover:bg-secondary-100 dark:group-hover:ring-black dark:group-hover:bg-black flex-shrink-0"
                             data-testid="Avatar"
                           >
                             <div
@@ -1077,14 +1092,18 @@ exports[`Dashboard should render 1`] = `
                           </div>
                         </div>
                         <div
-                          class="inline-flex items-center no-ligatures"
+                          class="w-40 xl:w-full"
                         >
-                          <span
-                            class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-text truncate font-semibold text-base"
-                            data-testid="address__wallet-address"
+                          <div
+                            class="w-full flex items-center no-ligatures overflow-hidden whitespace-nowrap"
                           >
-                            D5pVkh…xfKwSv
-                          </span>
+                            <span
+                              class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-text font-semibold text-base"
+                              data-testid="address__wallet-address"
+                            >
+                              D5pVkhZbSb4UNXvfmF6j7zdau8yGxfKwSv
+                            </span>
+                          </div>
                         </div>
                       </div>
                     </td>
@@ -1225,7 +1244,7 @@ exports[`Dashboard should render 1`] = `
                             </div>
                           </div>
                           <div
-                            class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB ring-theme-background bg-theme-background group-hover:ring-theme-secondary-100 group-hover:bg-secondary-100 dark:group-hover:ring-black dark:group-hover:bg-black"
+                            class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB ring-theme-background bg-theme-background group-hover:ring-theme-secondary-100 group-hover:bg-secondary-100 dark:group-hover:ring-black dark:group-hover:bg-black flex-shrink-0"
                             data-testid="Avatar"
                           >
                             <div
@@ -1240,14 +1259,18 @@ exports[`Dashboard should render 1`] = `
                           </div>
                         </div>
                         <div
-                          class="inline-flex items-center no-ligatures"
+                          class="w-40 xl:w-full"
                         >
-                          <span
-                            class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-text truncate font-semibold text-base"
-                            data-testid="address__wallet-address"
+                          <div
+                            class="w-full flex items-center no-ligatures overflow-hidden whitespace-nowrap"
                           >
-                            D5pVkh…xfKwSv
-                          </span>
+                            <span
+                              class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-text font-semibold text-base"
+                              data-testid="address__wallet-address"
+                            >
+                              D5pVkhZbSb4UNXvfmF6j7zdau8yGxfKwSv
+                            </span>
+                          </div>
                         </div>
                       </div>
                     </td>
@@ -1388,7 +1411,7 @@ exports[`Dashboard should render 1`] = `
                             </div>
                           </div>
                           <div
-                            class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB ring-theme-background bg-theme-background group-hover:ring-theme-secondary-100 group-hover:bg-secondary-100 dark:group-hover:ring-black dark:group-hover:bg-black"
+                            class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB ring-theme-background bg-theme-background group-hover:ring-theme-secondary-100 group-hover:bg-secondary-100 dark:group-hover:ring-black dark:group-hover:bg-black flex-shrink-0"
                             data-testid="Avatar"
                           >
                             <div
@@ -1403,14 +1426,18 @@ exports[`Dashboard should render 1`] = `
                           </div>
                         </div>
                         <div
-                          class="inline-flex items-center no-ligatures"
+                          class="w-40 xl:w-full"
                         >
-                          <span
-                            class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-text truncate font-semibold text-base"
-                            data-testid="address__wallet-address"
+                          <div
+                            class="w-full flex items-center no-ligatures overflow-hidden whitespace-nowrap"
                           >
-                            DKY5ey…bNF53A
-                          </span>
+                            <span
+                              class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-text font-semibold text-base"
+                              data-testid="address__wallet-address"
+                            >
+                              DKY5eyQUKKYyaCfPp6MUv3Y4FW6EbNF53A
+                            </span>
+                          </div>
                         </div>
                       </div>
                     </td>
@@ -1551,7 +1578,7 @@ exports[`Dashboard should render 1`] = `
                             </div>
                           </div>
                           <div
-                            class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB ring-theme-background bg-theme-background group-hover:ring-theme-secondary-100 group-hover:bg-secondary-100 dark:group-hover:ring-black dark:group-hover:bg-black"
+                            class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB ring-theme-background bg-theme-background group-hover:ring-theme-secondary-100 group-hover:bg-secondary-100 dark:group-hover:ring-black dark:group-hover:bg-black flex-shrink-0"
                             data-testid="Avatar"
                           >
                             <div
@@ -1566,14 +1593,18 @@ exports[`Dashboard should render 1`] = `
                           </div>
                         </div>
                         <div
-                          class="inline-flex items-center no-ligatures"
+                          class="w-40 xl:w-full"
                         >
-                          <span
-                            class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-text truncate font-semibold text-base"
-                            data-testid="address__wallet-address"
+                          <div
+                            class="w-full flex items-center no-ligatures overflow-hidden whitespace-nowrap"
                           >
-                            DKY5ey…bNF53A
-                          </span>
+                            <span
+                              class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-text font-semibold text-base"
+                              data-testid="address__wallet-address"
+                            >
+                              DKY5eyQUKKYyaCfPp6MUv3Y4FW6EbNF53A
+                            </span>
+                          </div>
                         </div>
                       </div>
                     </td>
@@ -1917,7 +1948,7 @@ exports[`Dashboard should render loading state when profile is syncing 1`] = `
                     data-testid="navbar__useractions"
                   >
                     <div
-                      class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB"
+                      class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB flex-shrink-0"
                       data-testid="Avatar"
                     >
                       <div
@@ -2191,7 +2222,7 @@ exports[`Dashboard should render loading state when profile is syncing 1`] = `
                                 </div>
                               </div>
                               <div
-                                class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB"
+                                class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB flex-shrink-0"
                                 data-testid="Avatar"
                               >
                                 <div
@@ -2218,9 +2249,14 @@ exports[`Dashboard should render loading state when profile is syncing 1`] = `
                             33.75089801 DARK
                           </span>
                           <span
-                            class="mt-1 text-xs font-semibold truncate text-theme-secondary-text no-ligatures"
+                            class="mt-1 text-xs font-semibold text-theme-secondary-text no-ligatures overflow-hidden whitespace-nowrap"
                           >
-                            D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD
+                            <span
+                              class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap"
+                              data-testid="TruncateMiddle"
+                            >
+                              D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD
+                            </span>
                           </span>
                         </div>
                         <div
@@ -2267,7 +2303,7 @@ exports[`Dashboard should render loading state when profile is syncing 1`] = `
                                 </div>
                               </div>
                               <div
-                                class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB"
+                                class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB flex-shrink-0"
                                 data-testid="Avatar"
                               >
                                 <div
@@ -2294,9 +2330,14 @@ exports[`Dashboard should render loading state when profile is syncing 1`] = `
                             57.68 DARK
                           </span>
                           <span
-                            class="mt-1 text-xs font-semibold truncate text-theme-secondary-text no-ligatures"
+                            class="mt-1 text-xs font-semibold text-theme-secondary-text no-ligatures overflow-hidden whitespace-nowrap"
                           >
-                            D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb
+                            <span
+                              class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap"
+                              data-testid="TruncateMiddle"
+                            >
+                              D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb
+                            </span>
                           </span>
                         </div>
                         <div
@@ -2358,7 +2399,7 @@ exports[`Dashboard should render loading state when profile is syncing 1`] = `
                                 </div>
                               </div>
                               <div
-                                class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB"
+                                class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB flex-shrink-0"
                                 data-testid="Avatar"
                               >
                                 <div
@@ -2383,9 +2424,14 @@ exports[`Dashboard should render loading state when profile is syncing 1`] = `
                             50,114.21127898 ARK
                           </span>
                           <span
-                            class="mt-1 text-xs font-semibold truncate text-theme-secondary-text no-ligatures"
+                            class="mt-1 text-xs font-semibold text-theme-secondary-text no-ligatures overflow-hidden whitespace-nowrap"
                           >
-                            AdVSe37niA3uFUPgCgMUH2tMsHF4LpLoiX
+                            <span
+                              class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap"
+                              data-testid="TruncateMiddle"
+                            >
+                              AdVSe37niA3uFUPgCgMUH2tMsHF4LpLoiX
+                            </span>
                           </span>
                         </div>
                         <div
@@ -4627,7 +4673,7 @@ exports[`Dashboard should show warning for errored networks 1`] = `
                     data-testid="navbar__useractions"
                   >
                     <div
-                      class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB"
+                      class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB flex-shrink-0"
                       data-testid="Avatar"
                     >
                       <div
@@ -4901,7 +4947,7 @@ exports[`Dashboard should show warning for errored networks 1`] = `
                                 </div>
                               </div>
                               <div
-                                class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB"
+                                class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB flex-shrink-0"
                                 data-testid="Avatar"
                               >
                                 <div
@@ -4928,9 +4974,14 @@ exports[`Dashboard should show warning for errored networks 1`] = `
                             33.75089801 DARK
                           </span>
                           <span
-                            class="mt-1 text-xs font-semibold truncate text-theme-secondary-text no-ligatures"
+                            class="mt-1 text-xs font-semibold text-theme-secondary-text no-ligatures overflow-hidden whitespace-nowrap"
                           >
-                            D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD
+                            <span
+                              class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap"
+                              data-testid="TruncateMiddle"
+                            >
+                              D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD
+                            </span>
                           </span>
                         </div>
                         <div
@@ -4977,7 +5028,7 @@ exports[`Dashboard should show warning for errored networks 1`] = `
                                 </div>
                               </div>
                               <div
-                                class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB"
+                                class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB flex-shrink-0"
                                 data-testid="Avatar"
                               >
                                 <div
@@ -5004,9 +5055,14 @@ exports[`Dashboard should show warning for errored networks 1`] = `
                             57.68 DARK
                           </span>
                           <span
-                            class="mt-1 text-xs font-semibold truncate text-theme-secondary-text no-ligatures"
+                            class="mt-1 text-xs font-semibold text-theme-secondary-text no-ligatures overflow-hidden whitespace-nowrap"
                           >
-                            D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb
+                            <span
+                              class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap"
+                              data-testid="TruncateMiddle"
+                            >
+                              D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb
+                            </span>
                           </span>
                         </div>
                         <div
@@ -5068,7 +5124,7 @@ exports[`Dashboard should show warning for errored networks 1`] = `
                                 </div>
                               </div>
                               <div
-                                class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB"
+                                class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB flex-shrink-0"
                                 data-testid="Avatar"
                               >
                                 <div
@@ -5093,9 +5149,14 @@ exports[`Dashboard should show warning for errored networks 1`] = `
                             50,114.21127898 ARK
                           </span>
                           <span
-                            class="mt-1 text-xs font-semibold truncate text-theme-secondary-text no-ligatures"
+                            class="mt-1 text-xs font-semibold text-theme-secondary-text no-ligatures overflow-hidden whitespace-nowrap"
                           >
-                            AdVSe37niA3uFUPgCgMUH2tMsHF4LpLoiX
+                            <span
+                              class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap"
+                              data-testid="TruncateMiddle"
+                            >
+                              AdVSe37niA3uFUPgCgMUH2tMsHF4LpLoiX
+                            </span>
                           </span>
                         </div>
                         <div
@@ -5433,7 +5494,7 @@ exports[`Dashboard should show warning for errored networks 1`] = `
                             </div>
                           </div>
                           <div
-                            class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB ring-theme-background bg-theme-background group-hover:ring-theme-secondary-100 group-hover:bg-secondary-100 dark:group-hover:ring-black dark:group-hover:bg-black"
+                            class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB ring-theme-background bg-theme-background group-hover:ring-theme-secondary-100 group-hover:bg-secondary-100 dark:group-hover:ring-black dark:group-hover:bg-black flex-shrink-0"
                             data-testid="Avatar"
                           >
                             <div
@@ -5448,14 +5509,18 @@ exports[`Dashboard should show warning for errored networks 1`] = `
                           </div>
                         </div>
                         <div
-                          class="inline-flex items-center no-ligatures"
+                          class="w-40 xl:w-full"
                         >
-                          <span
-                            class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-text truncate font-semibold text-base"
-                            data-testid="address__wallet-address"
+                          <div
+                            class="w-full flex items-center no-ligatures overflow-hidden whitespace-nowrap"
                           >
-                            D5pVkh…xfKwSv
-                          </span>
+                            <span
+                              class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-text font-semibold text-base"
+                              data-testid="address__wallet-address"
+                            >
+                              D5pVkhZbSb4UNXvfmF6j7zdau8yGxfKwSv
+                            </span>
+                          </div>
                         </div>
                       </div>
                     </td>
@@ -5596,7 +5661,7 @@ exports[`Dashboard should show warning for errored networks 1`] = `
                             </div>
                           </div>
                           <div
-                            class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB ring-theme-background bg-theme-background group-hover:ring-theme-secondary-100 group-hover:bg-secondary-100 dark:group-hover:ring-black dark:group-hover:bg-black"
+                            class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB ring-theme-background bg-theme-background group-hover:ring-theme-secondary-100 group-hover:bg-secondary-100 dark:group-hover:ring-black dark:group-hover:bg-black flex-shrink-0"
                             data-testid="Avatar"
                           >
                             <div
@@ -5611,14 +5676,18 @@ exports[`Dashboard should show warning for errored networks 1`] = `
                           </div>
                         </div>
                         <div
-                          class="inline-flex items-center no-ligatures"
+                          class="w-40 xl:w-full"
                         >
-                          <span
-                            class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-text truncate font-semibold text-base"
-                            data-testid="address__wallet-address"
+                          <div
+                            class="w-full flex items-center no-ligatures overflow-hidden whitespace-nowrap"
                           >
-                            D5pVkh…xfKwSv
-                          </span>
+                            <span
+                              class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-text font-semibold text-base"
+                              data-testid="address__wallet-address"
+                            >
+                              D5pVkhZbSb4UNXvfmF6j7zdau8yGxfKwSv
+                            </span>
+                          </div>
                         </div>
                       </div>
                     </td>
@@ -5759,7 +5828,7 @@ exports[`Dashboard should show warning for errored networks 1`] = `
                             </div>
                           </div>
                           <div
-                            class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB ring-theme-background bg-theme-background group-hover:ring-theme-secondary-100 group-hover:bg-secondary-100 dark:group-hover:ring-black dark:group-hover:bg-black"
+                            class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB ring-theme-background bg-theme-background group-hover:ring-theme-secondary-100 group-hover:bg-secondary-100 dark:group-hover:ring-black dark:group-hover:bg-black flex-shrink-0"
                             data-testid="Avatar"
                           >
                             <div
@@ -5774,14 +5843,18 @@ exports[`Dashboard should show warning for errored networks 1`] = `
                           </div>
                         </div>
                         <div
-                          class="inline-flex items-center no-ligatures"
+                          class="w-40 xl:w-full"
                         >
-                          <span
-                            class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-text truncate font-semibold text-base"
-                            data-testid="address__wallet-address"
+                          <div
+                            class="w-full flex items-center no-ligatures overflow-hidden whitespace-nowrap"
                           >
-                            DKY5ey…bNF53A
-                          </span>
+                            <span
+                              class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-text font-semibold text-base"
+                              data-testid="address__wallet-address"
+                            >
+                              DKY5eyQUKKYyaCfPp6MUv3Y4FW6EbNF53A
+                            </span>
+                          </div>
                         </div>
                       </div>
                     </td>
@@ -5922,7 +5995,7 @@ exports[`Dashboard should show warning for errored networks 1`] = `
                             </div>
                           </div>
                           <div
-                            class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB ring-theme-background bg-theme-background group-hover:ring-theme-secondary-100 group-hover:bg-secondary-100 dark:group-hover:ring-black dark:group-hover:bg-black"
+                            class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB ring-theme-background bg-theme-background group-hover:ring-theme-secondary-100 group-hover:bg-secondary-100 dark:group-hover:ring-black dark:group-hover:bg-black flex-shrink-0"
                             data-testid="Avatar"
                           >
                             <div
@@ -5937,14 +6010,18 @@ exports[`Dashboard should show warning for errored networks 1`] = `
                           </div>
                         </div>
                         <div
-                          class="inline-flex items-center no-ligatures"
+                          class="w-40 xl:w-full"
                         >
-                          <span
-                            class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-text truncate font-semibold text-base"
-                            data-testid="address__wallet-address"
+                          <div
+                            class="w-full flex items-center no-ligatures overflow-hidden whitespace-nowrap"
                           >
-                            DKY5ey…bNF53A
-                          </span>
+                            <span
+                              class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-text font-semibold text-base"
+                              data-testid="address__wallet-address"
+                            >
+                              DKY5eyQUKKYyaCfPp6MUv3Y4FW6EbNF53A
+                            </span>
+                          </div>
                         </div>
                       </div>
                     </td>

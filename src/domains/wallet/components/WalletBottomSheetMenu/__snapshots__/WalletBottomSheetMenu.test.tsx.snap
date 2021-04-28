@@ -197,7 +197,7 @@ exports[`WalletBottomSheetMenu should render 1`] = `
                       class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 DpDcR space-x-4"
                     >
                       <div
-                        class="-space-x-2"
+                        class="-space-x-2 flex-shrink-0"
                       >
                         <div
                           aria-label="ARK Devnet"
@@ -216,7 +216,7 @@ exports[`WalletBottomSheetMenu should render 1`] = `
                           </div>
                         </div>
                         <div
-                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 ksomUO group-hover:ring-theme-secondary-100 group-hover:bg-secondary-100 dark:group-hover:ring-black dark:group-hover:bg-black ring-theme-success-900"
+                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 ksomUO group-hover:ring-theme-secondary-100 group-hover:bg-secondary-100 dark:group-hover:ring-black dark:group-hover:bg-black ring-theme-success-900 flex-shrink-0"
                           data-testid="Avatar"
                         >
                           <div
@@ -231,7 +231,7 @@ exports[`WalletBottomSheetMenu should render 1`] = `
                         </div>
                       </div>
                       <div
-                        class="inline-flex items-center no-ligatures"
+                        class="w-full flex items-center no-ligatures overflow-hidden whitespace-nowrap"
                       >
                         <span
                           class="max-w-24 flex-auto truncate mr-2 font-semibold text-base text-theme-text"
@@ -245,10 +245,10 @@ exports[`WalletBottomSheetMenu should render 1`] = `
                           </span>
                         </span>
                         <span
-                          class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-secondary-500 dark:text-theme-secondary-700 truncate font-semibold text-base"
+                          class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-secondary-500 dark:text-theme-secondary-700 font-semibold text-base"
                           data-testid="address__wallet-address"
                         >
-                          D8rr7B1d6…VBMs6YUYD
+                          D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD
                         </span>
                       </div>
                     </div>
@@ -294,7 +294,7 @@ exports[`WalletBottomSheetMenu should render 1`] = `
                       class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 DpDcR space-x-4"
                     >
                       <div
-                        class="-space-x-2"
+                        class="-space-x-2 flex-shrink-0"
                       >
                         <div
                           aria-label="ARK Devnet"
@@ -313,7 +313,7 @@ exports[`WalletBottomSheetMenu should render 1`] = `
                           </div>
                         </div>
                         <div
-                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 ksomUO group-hover:ring-theme-secondary-100 group-hover:bg-secondary-100 dark:group-hover:ring-black dark:group-hover:bg-black ring-theme-background"
+                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 ksomUO group-hover:ring-theme-secondary-100 group-hover:bg-secondary-100 dark:group-hover:ring-black dark:group-hover:bg-black ring-theme-background flex-shrink-0"
                           data-testid="Avatar"
                         >
                           <div
@@ -328,7 +328,7 @@ exports[`WalletBottomSheetMenu should render 1`] = `
                         </div>
                       </div>
                       <div
-                        class="inline-flex items-center no-ligatures"
+                        class="w-full flex items-center no-ligatures overflow-hidden whitespace-nowrap"
                       >
                         <span
                           class="max-w-24 flex-auto truncate mr-2 font-semibold text-base text-theme-text"
@@ -342,10 +342,10 @@ exports[`WalletBottomSheetMenu should render 1`] = `
                           </span>
                         </span>
                         <span
-                          class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-secondary-500 dark:text-theme-secondary-700 truncate font-semibold text-base"
+                          class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-secondary-500 dark:text-theme-secondary-700 font-semibold text-base"
                           data-testid="address__wallet-address"
                         >
-                          D5sRKWckH…yC3cvJtwb
+                          D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb
                         </span>
                       </div>
                     </div>
