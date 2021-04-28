@@ -194,6 +194,26 @@
     string-crypto "^2.0.1"
     uuid "^8.3.2"
 
+"@arkecosystem/platform-sdk-crypto@5.0.8":
+  version "5.0.8"
+  resolved "https://registry.yarnpkg.com/@arkecosystem/platform-sdk-crypto/-/platform-sdk-crypto-5.0.8.tgz#0a7f17b5cb3e85d88ed8744b32d300b00e577542"
+  integrity sha512-9n+0ZesqTGTOpJgUeA7jVejDlaODRlnu7U9c+RCQFwJSiWGFlgkYqTamP3N9vUiBRizDL7b6PNf1Gb6qFAu0QQ==
+  dependencies:
+    argon2-browser "^1.15.2"
+    bcryptjs "^2.4.3"
+    bcrypto "^5.3.0"
+    bip32 "^2.0.6"
+    bip38 "^3.1.1"
+    bip39 "^3.0.3"
+    bstring "^0.3.9"
+    create-xpub "~2.1.0"
+    hdkey "^2.0.1"
+    keytar "^7.1.0"
+    node-forge "^0.10.0"
+    safe-buffer "^5.2.1"
+    string-crypto "^2.0.1"
+    uuid "^8.3.2"
+
 "@arkecosystem/platform-sdk-cryptocompare@4.2.26":
   version "4.2.26"
   resolved "https://registry.yarnpkg.com/@arkecosystem/platform-sdk-cryptocompare/-/platform-sdk-cryptocompare-4.2.26.tgz#d3e70c3d602b09d309e096917dd2638b2aa9d7da"
@@ -253,6 +273,14 @@
     dayjs "^1.10.4"
     dinero.js "^1.8.1"
 
+"@arkecosystem/platform-sdk-intl@5.0.8":
+  version "5.0.8"
+  resolved "https://registry.yarnpkg.com/@arkecosystem/platform-sdk-intl/-/platform-sdk-intl-5.0.8.tgz#fb2cfd4ae73aedf80fd622cc04c5ff28959c4b77"
+  integrity sha512-OmCZVEIUmXcya28AhLVaFAUn2JCpOKxCgSFbzxVAOXBd+TyomvtEtKyPK3IwJPa98c6max2/QW7jiz6Hjt8DBw==
+  dependencies:
+    dayjs "^1.10.4"
+    dinero.js "^1.8.1"
+
 "@arkecosystem/platform-sdk-lsk@^4.2.26":
   version "4.2.26"
   resolved "https://registry.yarnpkg.com/@arkecosystem/platform-sdk-lsk/-/platform-sdk-lsk-4.2.26.tgz#aae4a3b6f8d46ed0551742949327d422d1e64c4d"
@@ -276,6 +304,18 @@
     "@arkecosystem/platform-sdk-coincap" "4.2.26"
     "@arkecosystem/platform-sdk-coingecko" "4.2.26"
     "@arkecosystem/platform-sdk-cryptocompare" "4.2.26"
+
+"@arkecosystem/platform-sdk-nano@^5.0.8":
+  version "5.0.8"
+  resolved "https://registry.yarnpkg.com/@arkecosystem/platform-sdk-nano/-/platform-sdk-nano-5.0.8.tgz#028b998e768aac9d1f5e52714a8d56b64d92a0fe"
+  integrity sha512-DPCTO10T/LNjuURzfxseiDmGVlAj1yd6Oijon6811VusJlFUxFcD05MFuMDXnUVRzddSTlo6k6u1DN7/e8iDHQ==
+  dependencies:
+    "@arkecosystem/platform-sdk" "5.0.8"
+    "@arkecosystem/platform-sdk-crypto" "5.0.8"
+    "@arkecosystem/platform-sdk-intl" "5.0.8"
+    "@arkecosystem/platform-sdk-support" "5.0.8"
+    nanocurrency "~2.5.0"
+    nanocurrency-web "~1.3.1"
 
 "@arkecosystem/platform-sdk-neo@^4.2.26":
   version "4.2.26"
@@ -341,6 +381,20 @@
     qrcode "^1.4.4"
     remarkable "^2.0.1"
 
+"@arkecosystem/platform-sdk-support@5.0.8":
+  version "5.0.8"
+  resolved "https://registry.yarnpkg.com/@arkecosystem/platform-sdk-support/-/platform-sdk-support-5.0.8.tgz#c735db2f1a131cd6db0fecc35011d9fe8cc60668"
+  integrity sha512-fqi6Wj1iPJBUjAwG+pgbZnoU7Li9Txyalpuo81KSBETh5DqS+mR4AcSKyI6JfmJ28aJ66UAmJ4syM8vE42ZzVA==
+  dependencies:
+    bad-words "^3.0.3"
+    bignumber.js "^9.0.1"
+    censorify-it "^3.0.2"
+    dot-prop "^5.0.0"
+    front-matter "^4.0.2"
+    joi "^17.4.0"
+    qrcode "^1.4.4"
+    remarkable "^2.0.1"
+
 "@arkecosystem/platform-sdk-trx@^4.2.26":
   version "4.2.26"
   resolved "https://registry.yarnpkg.com/@arkecosystem/platform-sdk-trx/-/platform-sdk-trx-4.2.26.tgz#6b2f94f84bfb76e7c37f1d47fa16afdefd928fa6"
@@ -374,6 +428,25 @@
   dependencies:
     "@arkecosystem/platform-sdk-intl" "4.2.26"
     "@arkecosystem/platform-sdk-support" "4.2.26"
+    bad-words "^3.0.3"
+    bent "^7.3"
+    bignumber.js "^9.0.1"
+    bip32 "^2.0.6"
+    bip39 "^3.0.3"
+    censorify-it "^3.0.2"
+    dayjs "^1.10.4"
+    dot-prop "^5.0.0"
+    joi "^17.4.0"
+    node-emoji "^1.10.0"
+    type-fest "^0.21.2"
+
+"@arkecosystem/platform-sdk@5.0.8":
+  version "5.0.8"
+  resolved "https://registry.yarnpkg.com/@arkecosystem/platform-sdk/-/platform-sdk-5.0.8.tgz#948b6b9d90684e2eca57c989b55402f94f6f266a"
+  integrity sha512-LaOgnkUxQVxJ9Q1N8stxIWvc2IEyfZyiZs31y4A4/JBEMrqrmmhceH6dxwNyZBoxiBcPcQAOA444grz/RDbfPA==
+  dependencies:
+    "@arkecosystem/platform-sdk-intl" "5.0.8"
+    "@arkecosystem/platform-sdk-support" "5.0.8"
     bad-words "^3.0.3"
     bent "^7.3"
     bignumber.js "^9.0.1"
@@ -7284,7 +7357,7 @@ bignumber.js@7.2.1, bignumber.js@^7.2.1:
   resolved "https://registry.yarnpkg.com/bignumber.js/-/bignumber.js-7.2.1.tgz#80c048759d826800807c4bfd521e50edbba57a5f"
   integrity sha512-S4XzBk5sMB+Rcb/LNcpzXr57VRTxgAvaAEDAl1AwRx27j00hT84O6OkteE7u8UB3NuaaygCRrEpqox4uDOrbdQ==
 
-bignumber.js@^9.0.0:
+bignumber.js@9.0.0, bignumber.js@^9.0.0:
   version "9.0.0"
   resolved "https://registry.yarnpkg.com/bignumber.js/-/bignumber.js-9.0.0.tgz#805880f84a329b5eac6e7cb6f8274b6d82bdf075"
   integrity sha512-t/OYhhJ2SD+YGBQcjY8GzzDHEk9f3nerxjtfa6tlMXfe7frs/WozhvCNoGvpM0P3bNf3Gq5ZRMlGr5f3r4/N8A==
@@ -7489,7 +7562,7 @@ bl@^4.0.1:
     inherits "^2.0.4"
     readable-stream "^3.4.0"
 
-blakejs@^1.1.0:
+blakejs@1.1.0, blakejs@^1.1.0:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/blakejs/-/blakejs-1.1.0.tgz#69df92ef953aa88ca51a32df6ab1c54a155fc7a5"
   integrity sha1-ad+S75U6qIylGjLfarHFShVfx6U=
@@ -9209,6 +9282,11 @@ crypto-browserify@3.12.0, crypto-browserify@^3.11.0:
     public-encrypt "^4.0.0"
     randombytes "^2.0.0"
     randomfill "^1.0.3"
+
+crypto-js@3.1.9-1:
+  version "3.1.9-1"
+  resolved "https://registry.yarnpkg.com/crypto-js/-/crypto-js-3.1.9-1.tgz#fda19e761fc077e01ffbfdc6e9fdfc59e8806cd8"
+  integrity sha1-/aGedh/Ad+Af+/3G6f38WeiAbNg=
 
 crypto-js@3.3.0:
   version "3.3.0"
@@ -16630,6 +16708,23 @@ nanoclone@^0.2.1:
   version "0.2.1"
   resolved "https://registry.yarnpkg.com/nanoclone/-/nanoclone-0.2.1.tgz#dd4090f8f1a110d26bb32c49ed2f5b9235209ed4"
   integrity sha512-wynEP02LmIbLpcYw8uBKpcfF6dmg2vcpKqxeH5UcoKEYdExslsdUA4ugFauuaeYdTB76ez6gJW8XAZ6CgkXYxA==
+
+nanocurrency-web@~1.3.1:
+  version "1.3.2"
+  resolved "https://registry.yarnpkg.com/nanocurrency-web/-/nanocurrency-web-1.3.2.tgz#1b0ec4db12fb395cb1fe3cc6a776ebc1b1ae6da7"
+  integrity sha512-G+oZqfMFdcTzAeVxcEhAkiJLkQAAWJQETbGyVd1ig7fULCcABgE9t5vFHDiZRvyBrfLfVC/0Ah7ukR3Pz2haZA==
+  dependencies:
+    bignumber.js "9.0.0"
+    blakejs "1.1.0"
+    crypto-js "3.1.9-1"
+
+nanocurrency@~2.5.0:
+  version "2.5.0"
+  resolved "https://registry.yarnpkg.com/nanocurrency/-/nanocurrency-2.5.0.tgz#968659daadfa23150afc44a296fa3b211ffe9380"
+  integrity sha512-zMDlgBCML0vMGvldsZN1Np93vwiMjaBLCkOM2tXv0LNIpty8HghDMZiNRzfBPkP70oRhRU+hOpVCEpTzZK5gDQ==
+  dependencies:
+    bignumber.js "^9.0.0"
+    blakejs "^1.1.0"
 
 nanoid@^1.0.1:
   version "1.3.4"
