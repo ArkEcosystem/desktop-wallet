@@ -12,7 +12,7 @@ import { Environment } from "@arkecosystem/platform-sdk-profiles";
 // @ts-ignore
 import LedgerTransportNodeHID from "@ledgerhq/hw-transport-node-hid-singleton";
 // import { TRX } from "@arkecosystem/platform-sdk-trx";
-// import { XLM } from "@arkecosystem/platform-sdk-xlm";
+import { XLM } from "@arkecosystem/platform-sdk-xlm";
 // import { XMR } from "@arkecosystem/platform-sdk-xmr";
 // import { XRP } from "@arkecosystem/platform-sdk-xrp";
 import { Offline } from "domains/error/pages";
@@ -149,7 +149,7 @@ export const App = () => {
 					LSK,
 					// NEO,
 					// TRX,
-					// XLM,
+					XLM,
 					// XMR,
 					// XRP,
 				},
