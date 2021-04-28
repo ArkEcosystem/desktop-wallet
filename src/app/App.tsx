@@ -9,10 +9,10 @@ import { ARK } from "@arkecosystem/platform-sdk-ark";
 import { LSK } from "@arkecosystem/platform-sdk-lsk";
 // import { NEO } from "@arkecosystem/platform-sdk-neo";
 import { Environment } from "@arkecosystem/platform-sdk-profiles";
-// @ts-ignore
-import LedgerTransportNodeHID from "@ledgerhq/hw-transport-node-hid-singleton";
 // import { TRX } from "@arkecosystem/platform-sdk-trx";
 import { XLM } from "@arkecosystem/platform-sdk-xlm";
+// @ts-ignore
+import LedgerTransportNodeHID from "@ledgerhq/hw-transport-node-hid-singleton";
 // import { XMR } from "@arkecosystem/platform-sdk-xmr";
 // import { XRP } from "@arkecosystem/platform-sdk-xrp";
 import { Offline } from "domains/error/pages";
