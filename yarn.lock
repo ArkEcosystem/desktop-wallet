@@ -194,6 +194,26 @@
     string-crypto "^2.0.1"
     uuid "^8.3.2"
 
+"@arkecosystem/platform-sdk-crypto@5.0.8":
+  version "5.0.8"
+  resolved "https://registry.yarnpkg.com/@arkecosystem/platform-sdk-crypto/-/platform-sdk-crypto-5.0.8.tgz#0a7f17b5cb3e85d88ed8744b32d300b00e577542"
+  integrity sha512-9n+0ZesqTGTOpJgUeA7jVejDlaODRlnu7U9c+RCQFwJSiWGFlgkYqTamP3N9vUiBRizDL7b6PNf1Gb6qFAu0QQ==
+  dependencies:
+    argon2-browser "^1.15.2"
+    bcryptjs "^2.4.3"
+    bcrypto "^5.3.0"
+    bip32 "^2.0.6"
+    bip38 "^3.1.1"
+    bip39 "^3.0.3"
+    bstring "^0.3.9"
+    create-xpub "~2.1.0"
+    hdkey "^2.0.1"
+    keytar "^7.1.0"
+    node-forge "^0.10.0"
+    safe-buffer "^5.2.1"
+    string-crypto "^2.0.1"
+    uuid "^8.3.2"
+
 "@arkecosystem/platform-sdk-cryptocompare@4.2.26":
   version "4.2.26"
   resolved "https://registry.yarnpkg.com/@arkecosystem/platform-sdk-cryptocompare/-/platform-sdk-cryptocompare-4.2.26.tgz#d3e70c3d602b09d309e096917dd2638b2aa9d7da"
@@ -253,6 +273,14 @@
     dayjs "^1.10.4"
     dinero.js "^1.8.1"
 
+"@arkecosystem/platform-sdk-intl@5.0.8":
+  version "5.0.8"
+  resolved "https://registry.yarnpkg.com/@arkecosystem/platform-sdk-intl/-/platform-sdk-intl-5.0.8.tgz#fb2cfd4ae73aedf80fd622cc04c5ff28959c4b77"
+  integrity sha512-OmCZVEIUmXcya28AhLVaFAUn2JCpOKxCgSFbzxVAOXBd+TyomvtEtKyPK3IwJPa98c6max2/QW7jiz6Hjt8DBw==
+  dependencies:
+    dayjs "^1.10.4"
+    dinero.js "^1.8.1"
+
 "@arkecosystem/platform-sdk-lsk@^4.2.26":
   version "4.2.26"
   resolved "https://registry.yarnpkg.com/@arkecosystem/platform-sdk-lsk/-/platform-sdk-lsk-4.2.26.tgz#aae4a3b6f8d46ed0551742949327d422d1e64c4d"
@@ -266,6 +294,17 @@
     "@liskhq/lisk-cryptography" "^2.5"
     "@liskhq/lisk-transactions" "^2.0"
     dpos-ledger-api "^3.0.1"
+
+"@arkecosystem/platform-sdk-luna@^5.0.8":
+  version "5.0.8"
+  resolved "https://registry.yarnpkg.com/@arkecosystem/platform-sdk-luna/-/platform-sdk-luna-5.0.8.tgz#f7330f15e5d73991f0db016e0327cf2ffe9a7271"
+  integrity sha512-AtbZzD11Npfr5+CtS0fWjpq/kCcH7aCnb+qxxxpJVK5T/2oS3wiyvB/1JtD4/zq+k66OmJPUHPP+E0Ju2EeWVA==
+  dependencies:
+    "@arkecosystem/platform-sdk" "5.0.8"
+    "@arkecosystem/platform-sdk-crypto" "5.0.8"
+    "@arkecosystem/platform-sdk-intl" "5.0.8"
+    "@arkecosystem/platform-sdk-support" "5.0.8"
+    "@terra-money/terra.js" "~1.6.0"
 
 "@arkecosystem/platform-sdk-markets@4.2.26":
   version "4.2.26"
@@ -341,6 +380,20 @@
     qrcode "^1.4.4"
     remarkable "^2.0.1"
 
+"@arkecosystem/platform-sdk-support@5.0.8":
+  version "5.0.8"
+  resolved "https://registry.yarnpkg.com/@arkecosystem/platform-sdk-support/-/platform-sdk-support-5.0.8.tgz#c735db2f1a131cd6db0fecc35011d9fe8cc60668"
+  integrity sha512-fqi6Wj1iPJBUjAwG+pgbZnoU7Li9Txyalpuo81KSBETh5DqS+mR4AcSKyI6JfmJ28aJ66UAmJ4syM8vE42ZzVA==
+  dependencies:
+    bad-words "^3.0.3"
+    bignumber.js "^9.0.1"
+    censorify-it "^3.0.2"
+    dot-prop "^5.0.0"
+    front-matter "^4.0.2"
+    joi "^17.4.0"
+    qrcode "^1.4.4"
+    remarkable "^2.0.1"
+
 "@arkecosystem/platform-sdk-trx@^4.2.26":
   version "4.2.26"
   resolved "https://registry.yarnpkg.com/@arkecosystem/platform-sdk-trx/-/platform-sdk-trx-4.2.26.tgz#6b2f94f84bfb76e7c37f1d47fa16afdefd928fa6"
@@ -374,6 +427,25 @@
   dependencies:
     "@arkecosystem/platform-sdk-intl" "4.2.26"
     "@arkecosystem/platform-sdk-support" "4.2.26"
+    bad-words "^3.0.3"
+    bent "^7.3"
+    bignumber.js "^9.0.1"
+    bip32 "^2.0.6"
+    bip39 "^3.0.3"
+    censorify-it "^3.0.2"
+    dayjs "^1.10.4"
+    dot-prop "^5.0.0"
+    joi "^17.4.0"
+    node-emoji "^1.10.0"
+    type-fest "^0.21.2"
+
+"@arkecosystem/platform-sdk@5.0.8":
+  version "5.0.8"
+  resolved "https://registry.yarnpkg.com/@arkecosystem/platform-sdk/-/platform-sdk-5.0.8.tgz#948b6b9d90684e2eca57c989b55402f94f6f266a"
+  integrity sha512-LaOgnkUxQVxJ9Q1N8stxIWvc2IEyfZyiZs31y4A4/JBEMrqrmmhceH6dxwNyZBoxiBcPcQAOA444grz/RDbfPA==
+  dependencies:
+    "@arkecosystem/platform-sdk-intl" "5.0.8"
+    "@arkecosystem/platform-sdk-support" "5.0.8"
     bad-words "^3.0.3"
     bent "^7.3"
     bignumber.js "^9.0.1"
@@ -4966,6 +5038,24 @@
     pretty-hrtime "^1.0.3"
     reduce-css-calc "^2.1.8"
     resolve "^1.20.0"
+
+"@terra-money/terra.js@~1.6.0":
+  version "1.6.0"
+  resolved "https://registry.yarnpkg.com/@terra-money/terra.js/-/terra.js-1.6.0.tgz#83ff948535b5f031437cf49b781a903357ab638b"
+  integrity sha512-8oOJ/KZbYTzv0GFvwC7Uo+5yIpG9NeSvbzLxy6EDmKqIUwIu/MTTBeNyFWCg7bln3fXDY9uRCT3h8ql3FfW4Fg==
+  dependencies:
+    axios "^0.21.1"
+    bech32 "^2.0.0"
+    bip32 "^2.0.6"
+    bip39 "^3.0.3"
+    bufferutil "^4.0.1"
+    crypto-js "3.3.0"
+    decimal.js "^10.2.1"
+    readable-stream "^3.6.0"
+    secp256k1 "^4.0.2"
+    tmp "^0.2.1"
+    utf-8-validate "^5.0.2"
+    ws "^7.4.2"
 
 "@testing-library/dom@^7.28.1":
   version "7.29.0"
@@ -20340,7 +20430,7 @@ scryptsy@^2.1.0:
   resolved "https://registry.yarnpkg.com/scryptsy/-/scryptsy-2.1.0.tgz#8d1e8d0c025b58fdd25b6fa9a0dc905ee8faa790"
   integrity sha512-1CdSqHQowJBnMAFyPEBRfqag/YP9OF394FV+4YREIJX4ljD7OxvQRDayyoyyCk+senRjSkP6VnUNQmVQqB6g7w==
 
-secp256k1@^4.0.0, secp256k1@^4.0.1:
+secp256k1@^4.0.0, secp256k1@^4.0.1, secp256k1@^4.0.2:
   version "4.0.2"
   resolved "https://registry.yarnpkg.com/secp256k1/-/secp256k1-4.0.2.tgz#15dd57d0f0b9fdb54ac1fa1694f40e5e9a54f4a1"
   integrity sha512-UDar4sKvWAksIlfX3xIaQReADn+WFnHvbVujpcbr+9Sf/69odMwy2MUsz5CKLQgX9nsIyrjuxL2imVyoNHa3fg==
@@ -22016,6 +22106,13 @@ tmp@^0.0.33:
   integrity sha512-jRCJlojKnZ3addtTOjdIqoRuPEKBvNXcGYqzO6zWZX8KfKEpnGY5jfggJQ3EjKuu8D4bJRr0y+cYJFmYbImXGw==
   dependencies:
     os-tmpdir "~1.0.2"
+
+tmp@^0.2.1:
+  version "0.2.1"
+  resolved "https://registry.yarnpkg.com/tmp/-/tmp-0.2.1.tgz#8457fc3037dcf4719c251367a1af6500ee1ccf14"
+  integrity sha512-76SUhtfqR2Ijn+xllcI5P1oyannHNHByD80W1q447gU3mp9G9PSpGdWmjUOHRDPiHYacIk66W7ubDTuPF3BEtQ==
+  dependencies:
+    rimraf "^3.0.0"
 
 tmpl@1.0.x:
   version "1.0.4"
@@ -23799,6 +23896,11 @@ ws@^7.2.0, ws@^7.2.3:
   version "7.3.1"
   resolved "https://registry.yarnpkg.com/ws/-/ws-7.3.1.tgz#d0547bf67f7ce4f12a72dfe31262c68d7dc551c8"
   integrity sha512-D3RuNkynyHmEJIpD2qrgVkc9DQ23OrN/moAwZX4L8DfvszsJxpjQuUq3LMx6HoYji9fbIOBY18XWBsAux1ZZUA==
+
+ws@^7.4.2:
+  version "7.4.5"
+  resolved "https://registry.yarnpkg.com/ws/-/ws-7.4.5.tgz#a484dd851e9beb6fdb420027e3885e8ce48986c1"
+  integrity sha512-xzyu3hFvomRfXKH8vOFMU3OguG6oOvhXMo3xsGy3xWExqaM2dxBbVxuD99O7m3ZUFMvvscsZDqxfgMaRr/Nr1g==
 
 xdg-basedir@^4.0.0:
   version "4.0.0"

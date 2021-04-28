@@ -7,6 +7,7 @@ import { ARK } from "@arkecosystem/platform-sdk-ark";
 // import { EOS } from "@arkecosystem/platform-sdk-eos";
 // import { ETH } from "@arkecosystem/platform-sdk-eth";
 import { LSK } from "@arkecosystem/platform-sdk-lsk";
+import { LUNA } from "@arkecosystem/platform-sdk-luna";
 // import { NEO } from "@arkecosystem/platform-sdk-neo";
 import { Environment } from "@arkecosystem/platform-sdk-profiles";
 // @ts-ignore
@@ -147,6 +148,7 @@ export const App = () => {
 					// ETH,
 					// EGLD,
 					LSK,
+					LUNA,
 					// NEO,
 					// TRX,
 					// XLM,
