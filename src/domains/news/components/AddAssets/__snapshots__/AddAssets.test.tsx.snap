@@ -141,11 +141,11 @@ exports[`AddAssets should render a modal 1`] = `
                     data-testid="FilterNetwork"
                   >
                     <ul
-                      class="inline-block"
+                      class="flex flex-wrap"
                       data-testid="NetworkOptions"
                     >
                       <li
-                        class="inline-block mr-5 cursor-pointer"
+                        class="inline-block pr-5 pb-5 cursor-pointer"
                         data-testid="NetworkOption__ARK"
                       >
                         <div
@@ -177,7 +177,7 @@ exports[`AddAssets should render a modal 1`] = `
                         </div>
                       </li>
                       <li
-                        class="inline-block mr-5 cursor-pointer"
+                        class="inline-block pr-5 pb-5 cursor-pointer"
                         data-testid="NetworkOption__ETH"
                       >
                         <div
@@ -200,7 +200,7 @@ exports[`AddAssets should render a modal 1`] = `
                         </div>
                       </li>
                       <li
-                        class="inline-block mr-5 cursor-pointer"
+                        class="inline-block pr-5 pb-5 cursor-pointer"
                         data-testid="NetworkOption__BTC"
                       >
                         <div
@@ -223,7 +223,7 @@ exports[`AddAssets should render a modal 1`] = `
                         </div>
                       </li>
                       <li
-                        class="inline-block mr-5 cursor-pointer"
+                        class="inline-block pr-5 pb-5 cursor-pointer"
                         data-testid="NetworkOption__LSK"
                       >
                         <div

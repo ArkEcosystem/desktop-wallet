@@ -5819,6 +5819,7 @@ exports[`Votes should select ledger option in the wallets display type 1`] = `
                               class="space-y-6"
                             >
                               <div
+                                class="mt-6"
                                 data-testid="FilterNetwork"
                               >
                                 <div
@@ -5827,11 +5828,11 @@ exports[`Votes should select ledger option in the wallets display type 1`] = `
                                   Development Networks
                                 </div>
                                 <ul
-                                  class="inline-block"
+                                  class="flex flex-wrap"
                                   data-testid="NetworkOptions"
                                 >
                                   <li
-                                    class="inline-block mr-5 cursor-pointer"
+                                    class="inline-block pr-5 pb-5 cursor-pointer"
                                     data-testid="NetworkOption__ARK"
                                   >
                                     <div
@@ -6340,6 +6341,7 @@ exports[`Votes should select starred option in the wallets display type 1`] = `
                               class="space-y-6"
                             >
                               <div
+                                class="mt-6"
                                 data-testid="FilterNetwork"
                               >
                                 <div
@@ -6348,11 +6350,11 @@ exports[`Votes should select starred option in the wallets display type 1`] = `
                                   Development Networks
                                 </div>
                                 <ul
-                                  class="inline-block"
+                                  class="flex flex-wrap"
                                   data-testid="NetworkOptions"
                                 >
                                   <li
-                                    class="inline-block mr-5 cursor-pointer"
+                                    class="inline-block pr-5 pb-5 cursor-pointer"
                                     data-testid="NetworkOption__ARK"
                                   >
                                     <div
@@ -8606,6 +8608,7 @@ exports[`Votes should toggle network selection from network filters 1`] = `
                               class="space-y-6"
                             >
                               <div
+                                class="mt-6"
                                 data-testid="FilterNetwork"
                               >
                                 <div
@@ -8614,11 +8617,11 @@ exports[`Votes should toggle network selection from network filters 1`] = `
                                   Development Networks
                                 </div>
                                 <ul
-                                  class="inline-block"
+                                  class="flex flex-wrap"
                                   data-testid="NetworkOptions"
                                 >
                                   <li
-                                    class="inline-block mr-5 cursor-pointer"
+                                    class="inline-block pr-5 pb-5 cursor-pointer"
                                     data-testid="NetworkOption__ARK"
                                   >
                                     <div

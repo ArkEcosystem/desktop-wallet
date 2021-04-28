@@ -3,164 +3,165 @@
 exports[`NewsOptions should render 1`] = `
 <DocumentFragment>
   <div
-    class="sticky top-26 p-8 rounded-lg border-2 bg-theme-background border-theme-primary-100 dark:border-theme-secondary-800"
+    class="sticky top-26"
     data-testid="NewsOptions"
   >
     <div
-      class="flex flex-col space-y-8"
+      class="p-10 pb-4 rounded-lg border-2 bg-theme-background border-theme-primary-100 dark:border-theme-secondary-800 overflow-y-auto max-h-full"
     >
       <div
-        class="flex justify-between items-center py-4 px-2 rounded-md shadow-xl"
+        class="flex flex-col space-y-8"
       >
         <div
-          class="Input__InputWrapperStyled-wu99qs-0 jiWa-do"
+          class="flex justify-between items-center py-4 px-2 rounded-md shadow-xl"
         >
           <div
-            class="relative flex flex-1 h-full"
+            class="Input__InputWrapperStyled-wu99qs-0 jiWa-do"
           >
-            <input
-              class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
-              data-testid="NewsOptions__search"
-              maxlength="32"
-              placeholder="Search"
-            />
+            <div
+              class="relative flex flex-1 h-full"
+            >
+              <input
+                class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
+                data-testid="NewsOptions__search"
+                maxlength="32"
+                placeholder="Search"
+              />
+            </div>
+          </div>
+          <div
+            class="sc-bdfBwQ iNulIV mr-4 text-theme-primary-300 dark:text-theme-secondary-600"
+            height="18"
+            width="18"
+          >
+            <svg>
+              search.svg
+            </svg>
           </div>
         </div>
         <div
-          class="sc-bdfBwQ iNulIV mr-4 text-theme-primary-300 dark:text-theme-secondary-600"
-          height="18"
-          width="18"
-        >
-          <svg>
-            search.svg
-          </svg>
-        </div>
-      </div>
-      <div
-        class="Divider-sc-19q4mlo-0 bKsVMa border-theme-secondary-300 dark:border-theme-secondary-800"
-        type="horizontal"
-      />
-      <div
-        class="flex flex-col space-y-3"
-      >
+          class="Divider-sc-19q4mlo-0 bKsVMa border-theme-secondary-300 dark:border-theme-secondary-800"
+          type="horizontal"
+        />
         <div
-          class="flex justify-between items-center"
+          class="flex flex-col space-y-3"
+        >
+          <div
+            class="flex justify-between items-center"
+          >
+            <h5
+              class="font-semibold"
+            >
+              Category
+            </h5>
+            <button
+              class="text-xs font-semibold focus:outline-none text-theme-secondary-800"
+            >
+              Select All
+            </button>
+          </div>
+          <p
+            class="text-sm text-theme-secondary-500"
+          >
+            Select your categories
+          </p>
+          <div
+            class="flex flex-wrap -mx-1"
+          >
+            <label
+              class="SelectCategory___StyledLabel-k7qbth-2 bkqSTC p-1"
+              data-testid="NewsOptions__category-Technical"
+            >
+              <input
+                checked=""
+                class="SelectCategory__Input-k7qbth-0 jXZdTM"
+                data-testid="SelectCategory__undefined"
+                type="checkbox"
+                value=""
+              />
+              <div
+                class="SelectCategory__CustomButton-k7qbth-1 fYwsfS"
+              >
+                #Technical
+              </div>
+            </label>
+            <label
+              class="SelectCategory___StyledLabel-k7qbth-2 bkqSTC p-1"
+              data-testid="NewsOptions__category-Marketing"
+            >
+              <input
+                class="SelectCategory__Input-k7qbth-0 jXZdTM"
+                data-testid="SelectCategory__undefined"
+                type="checkbox"
+                value=""
+              />
+              <div
+                class="SelectCategory__CustomButton-k7qbth-1 fYwsfS"
+              >
+                #Marketing
+              </div>
+            </label>
+            <label
+              class="SelectCategory___StyledLabel-k7qbth-2 bkqSTC p-1"
+              data-testid="NewsOptions__category-Community"
+            >
+              <input
+                class="SelectCategory__Input-k7qbth-0 jXZdTM"
+                data-testid="SelectCategory__undefined"
+                type="checkbox"
+                value=""
+              />
+              <div
+                class="SelectCategory__CustomButton-k7qbth-1 fYwsfS"
+              >
+                #Community
+              </div>
+            </label>
+            <label
+              class="SelectCategory___StyledLabel-k7qbth-2 bkqSTC p-1"
+              data-testid="NewsOptions__category-Emergency"
+            >
+              <input
+                class="SelectCategory__Input-k7qbth-0 jXZdTM"
+                data-testid="SelectCategory__undefined"
+                type="checkbox"
+                value=""
+              />
+              <div
+                class="SelectCategory__CustomButton-k7qbth-1 fYwsfS"
+              >
+                #Emergency
+              </div>
+            </label>
+          </div>
+        </div>
+        <div
+          class="Divider-sc-19q4mlo-0 bKsVMa border-theme-secondary-300 dark:border-theme-secondary-800"
+          type="horizontal"
+        />
+        <div
+          class="flex flex-col space-y-3"
         >
           <h5
             class="font-semibold"
           >
-            Category
+            Filter Assets
           </h5>
-          <button
-            class="text-xs font-semibold focus:outline-none text-theme-secondary-800"
+          <p
+            class="text-sm text-theme-secondary-500"
           >
-            Select All
-          </button>
-        </div>
-        <p
-          class="text-sm text-theme-secondary-500"
-        >
-          Select your categories
-        </p>
-        <div
-          class="flex flex-wrap -mx-1"
-        >
-          <label
-            class="SelectCategory___StyledLabel-k7qbth-2 bkqSTC p-1"
-            data-testid="NewsOptions__category-Technical"
-          >
-            <input
-              checked=""
-              class="SelectCategory__Input-k7qbth-0 jXZdTM"
-              data-testid="SelectCategory__undefined"
-              type="checkbox"
-              value=""
-            />
-            <div
-              class="SelectCategory__CustomButton-k7qbth-1 fYwsfS"
-            >
-              #Technical
-            </div>
-          </label>
-          <label
-            class="SelectCategory___StyledLabel-k7qbth-2 bkqSTC p-1"
-            data-testid="NewsOptions__category-Marketing"
-          >
-            <input
-              class="SelectCategory__Input-k7qbth-0 jXZdTM"
-              data-testid="SelectCategory__undefined"
-              type="checkbox"
-              value=""
-            />
-            <div
-              class="SelectCategory__CustomButton-k7qbth-1 fYwsfS"
-            >
-              #Marketing
-            </div>
-          </label>
-          <label
-            class="SelectCategory___StyledLabel-k7qbth-2 bkqSTC p-1"
-            data-testid="NewsOptions__category-Community"
-          >
-            <input
-              class="SelectCategory__Input-k7qbth-0 jXZdTM"
-              data-testid="SelectCategory__undefined"
-              type="checkbox"
-              value=""
-            />
-            <div
-              class="SelectCategory__CustomButton-k7qbth-1 fYwsfS"
-            >
-              #Community
-            </div>
-          </label>
-          <label
-            class="SelectCategory___StyledLabel-k7qbth-2 bkqSTC p-1"
-            data-testid="NewsOptions__category-Emergency"
-          >
-            <input
-              class="SelectCategory__Input-k7qbth-0 jXZdTM"
-              data-testid="SelectCategory__undefined"
-              type="checkbox"
-              value=""
-            />
-            <div
-              class="SelectCategory__CustomButton-k7qbth-1 fYwsfS"
-            >
-              #Emergency
-            </div>
-          </label>
-        </div>
-      </div>
-      <div
-        class="Divider-sc-19q4mlo-0 bKsVMa border-theme-secondary-300 dark:border-theme-secondary-800"
-        type="horizontal"
-      />
-      <div
-        class="flex flex-col space-y-3"
-      >
-        <h5
-          class="font-semibold"
-        >
-          Filter Assets
-        </h5>
-        <p
-          class="text-sm text-theme-secondary-500"
-        >
-          Your current selections:
-        </p>
-        <div
-          class="pb-4"
-        >
+            Your current selections:
+          </p>
           <div
+            class="pb-2.5"
             data-testid="FilterNetwork"
           >
             <ul
-              class="inline-block"
+              class="flex flex-wrap"
               data-testid="NetworkOptions"
             >
               <li
-                class="inline-block mr-5 cursor-pointer"
+                class="inline-block pr-5 pb-5 cursor-pointer"
                 data-testid="NetworkOption__ARK"
               >
                 <div
@@ -183,7 +184,7 @@ exports[`NewsOptions should render 1`] = `
                 </div>
               </li>
               <li
-                class="inline-block mr-5 cursor-pointer"
+                class="inline-block pr-5 pb-5 cursor-pointer"
                 data-testid="NetworkOption__ETH"
               >
                 <div
@@ -206,7 +207,7 @@ exports[`NewsOptions should render 1`] = `
                 </div>
               </li>
               <li
-                class="inline-block mr-5 cursor-pointer"
+                class="inline-block pr-5 pb-5 cursor-pointer"
                 data-testid="NetworkOption__BTC"
               >
                 <div
@@ -229,7 +230,7 @@ exports[`NewsOptions should render 1`] = `
                 </div>
               </li>
               <li
-                class="inline-block mr-5 cursor-pointer"
+                class="inline-block pr-5 pb-5 cursor-pointer"
                 data-testid="NetworkOption__LSK"
               >
                 <div
