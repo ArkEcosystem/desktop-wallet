@@ -20,6 +20,8 @@ describe("Signed Transaction Table", () => {
 
 	beforeEach(async () => {
 		profile = env.profiles().findById(getDefaultProfileId());
+		await profile.sync();
+
 		wallet = profile.wallets().first();
 
 		fixtures.transfer = await wallet

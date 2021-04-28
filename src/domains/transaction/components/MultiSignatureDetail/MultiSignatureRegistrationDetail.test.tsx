@@ -10,9 +10,12 @@ describe("MultiSignatureRegistrationDetail", () => {
 	let profile: Contracts.IProfile;
 	let wallet: Contracts.IReadWriteWallet;
 
-	beforeEach(() => {
+	beforeEach(async () => {
 		profile = env.profiles().findById(getDefaultProfileId());
 		wallet = profile.wallets().first();
+
+		await env.profiles().restore(profile);
+		await profile.sync();
 	});
 
 	it("should render", async () => {

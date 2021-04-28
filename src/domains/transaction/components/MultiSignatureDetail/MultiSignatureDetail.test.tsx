@@ -41,6 +41,8 @@ describe("MultiSignatureDetail", () => {
 
 		wallet = profile.wallets().first();
 
+		await wallet.synchroniser().identity();
+
 		fixtures.transfer = await wallet
 			.coin()
 			.transaction()
