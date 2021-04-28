@@ -890,7 +890,9 @@ describe("SendVote", () => {
 		await waitFor(() => expect(getByTestId("LedgerConfirmation-description")).toBeInTheDocument());
 		await waitFor(() => expect(getByTestId("TransactionSuccessful")).toBeTruthy(), { timeout: 3000 });
 
-		expect(getByTestId("TransactionSuccessful")).toHaveTextContent("2eda50b7d59b3…7ecc8339e430");
+		expect(getByTestId("TransactionSuccessful")).toHaveTextContent(
+			"2eda50b7d59b3fdeaa6281a7f2e8cb6995e63bc4547f2614e367ecc8339e430e",
+		);
 
 		getPublicKeySpy.mockRestore();
 		signTransactionSpy.mockRestore();

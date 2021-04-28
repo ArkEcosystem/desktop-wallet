@@ -31,7 +31,7 @@ exports[`LedgerImportStep should render with multiple import 1`] = `
       data-testid="TransactionDetail"
     >
       <div
-        class="flex-1 space-y-2"
+        class="flex-1 space-y-2 flex-shrink overflow-hidden whitespace-nowrap"
       >
         <div
           class="text-sm font-semibold text-theme-secondary-700 no-ligatures"
@@ -69,7 +69,7 @@ exports[`LedgerImportStep should render with multiple import 1`] = `
             data-testid="TransactionDetail"
           >
             <div
-              class="flex-1 space-y-2"
+              class="flex-1 space-y-2 flex-shrink overflow-hidden whitespace-nowrap"
             >
               <div
                 class="font-semibold"
@@ -78,7 +78,7 @@ exports[`LedgerImportStep should render with multiple import 1`] = `
                   class="flex items-center space-x-3"
                 >
                   <div
-                    class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB"
+                    class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB flex-shrink-0"
                     data-testid="Avatar"
                   >
                     <div
@@ -93,7 +93,7 @@ exports[`LedgerImportStep should render with multiple import 1`] = `
                   </div>
                   <div>
                     <div
-                      class="inline-flex items-center no-ligatures"
+                      class="w-full flex items-center no-ligatures overflow-hidden whitespace-nowrap"
                     >
                       <span
                         class="max-w-24 flex-auto truncate mr-2 font-semibold text-base text-theme-text"
@@ -107,10 +107,10 @@ exports[`LedgerImportStep should render with multiple import 1`] = `
                         </span>
                       </span>
                       <span
-                        class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-secondary-500 dark:text-theme-secondary-700 truncate font-semibold text-base"
+                        class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-secondary-500 dark:text-theme-secondary-700 font-semibold text-base"
                         data-testid="address__wallet-address"
                       >
-                        DJpFwW39Q…sX4DJ28jq
+                        DJpFwW39QnQvQRQJF2MCfAoKvsX4DJ28jq
                       </span>
                     </div>
                     <p
@@ -153,7 +153,7 @@ exports[`LedgerImportStep should render with multiple import 1`] = `
             data-testid="TransactionDetail"
           >
             <div
-              class="flex-1 space-y-2"
+              class="flex-1 space-y-2 flex-shrink overflow-hidden whitespace-nowrap"
             >
               <div
                 class="font-semibold"
@@ -162,7 +162,7 @@ exports[`LedgerImportStep should render with multiple import 1`] = `
                   class="flex items-center space-x-3"
                 >
                   <div
-                    class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB"
+                    class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB flex-shrink-0"
                     data-testid="Avatar"
                   >
                     <div
@@ -177,10 +177,10 @@ exports[`LedgerImportStep should render with multiple import 1`] = `
                   </div>
                   <div>
                     <div
-                      class="inline-flex items-center no-ligatures"
+                      class="w-full flex items-center no-ligatures overflow-hidden whitespace-nowrap"
                     >
                       <span
-                        class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-text truncate font-semibold text-base"
+                        class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-text font-semibold text-base"
                         data-testid="address__wallet-address"
                       >
                         DRgF3PvzeGWndQjET7dZsSmnrc6uAy23ES
@@ -257,7 +257,7 @@ exports[`LedgerImportStep should render with single import 1`] = `
       data-testid="TransactionDetail"
     >
       <div
-        class="flex-1 space-y-2"
+        class="flex-1 space-y-2 flex-shrink overflow-hidden whitespace-nowrap"
       >
         <div
           class="text-sm font-semibold text-theme-secondary-700 no-ligatures"
@@ -292,7 +292,7 @@ exports[`LedgerImportStep should render with single import 1`] = `
       data-testid="TransactionDetail"
     >
       <div
-        class="flex-1 space-y-2"
+        class="flex-1 space-y-2 flex-shrink overflow-hidden whitespace-nowrap"
       >
         <div
           class="text-sm font-semibold text-theme-secondary-700 no-ligatures"
@@ -303,10 +303,10 @@ exports[`LedgerImportStep should render with single import 1`] = `
           class="font-semibold"
         >
           <div
-            class="inline-flex items-center no-ligatures"
+            class="w-full flex items-center no-ligatures overflow-hidden whitespace-nowrap"
           >
             <span
-              class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-text truncate font-semibold text-base"
+              class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-text font-semibold text-base"
               data-testid="address__wallet-address"
             >
               DRgF3PvzeGWndQjET7dZsSmnrc6uAy23ES
@@ -315,7 +315,7 @@ exports[`LedgerImportStep should render with single import 1`] = `
         </div>
       </div>
       <div
-        class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB"
+        class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB flex-shrink-0"
         data-testid="Avatar"
       >
         <div
@@ -334,7 +334,7 @@ exports[`LedgerImportStep should render with single import 1`] = `
       data-testid="TransactionDetail"
     >
       <div
-        class="flex-1 space-y-2"
+        class="flex-1 space-y-2 flex-shrink overflow-hidden whitespace-nowrap"
       >
         <div
           class="text-sm font-semibold text-theme-secondary-700 no-ligatures"
@@ -417,7 +417,7 @@ exports[`LedgerImportStep should show an error message for duplicate name 1`] = 
       data-testid="TransactionDetail"
     >
       <div
-        class="flex-1 space-y-2"
+        class="flex-1 space-y-2 flex-shrink overflow-hidden whitespace-nowrap"
       >
         <div
           class="text-sm font-semibold text-theme-secondary-700 no-ligatures"
@@ -452,7 +452,7 @@ exports[`LedgerImportStep should show an error message for duplicate name 1`] = 
       data-testid="TransactionDetail"
     >
       <div
-        class="flex-1 space-y-2"
+        class="flex-1 space-y-2 flex-shrink overflow-hidden whitespace-nowrap"
       >
         <div
           class="text-sm font-semibold text-theme-secondary-700 no-ligatures"
@@ -463,10 +463,10 @@ exports[`LedgerImportStep should show an error message for duplicate name 1`] = 
           class="font-semibold"
         >
           <div
-            class="inline-flex items-center no-ligatures"
+            class="w-full flex items-center no-ligatures overflow-hidden whitespace-nowrap"
           >
             <span
-              class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-text truncate font-semibold text-base"
+              class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-text font-semibold text-base"
               data-testid="address__wallet-address"
             >
               DRgF3PvzeGWndQjET7dZsSmnrc6uAy23ES
@@ -475,7 +475,7 @@ exports[`LedgerImportStep should show an error message for duplicate name 1`] = 
         </div>
       </div>
       <div
-        class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB"
+        class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB flex-shrink-0"
         data-testid="Avatar"
       >
         <div
@@ -494,7 +494,7 @@ exports[`LedgerImportStep should show an error message for duplicate name 1`] = 
       data-testid="TransactionDetail"
     >
       <div
-        class="flex-1 space-y-2"
+        class="flex-1 space-y-2 flex-shrink overflow-hidden whitespace-nowrap"
       >
         <div
           class="text-sm font-semibold text-theme-secondary-700 no-ligatures"
@@ -577,7 +577,7 @@ exports[`LedgerImportStep should show an error message for duplicate name in the
       data-testid="TransactionDetail"
     >
       <div
-        class="flex-1 space-y-2"
+        class="flex-1 space-y-2 flex-shrink overflow-hidden whitespace-nowrap"
       >
         <div
           class="text-sm font-semibold text-theme-secondary-700 no-ligatures"
@@ -615,7 +615,7 @@ exports[`LedgerImportStep should show an error message for duplicate name in the
             data-testid="TransactionDetail"
           >
             <div
-              class="flex-1 space-y-2"
+              class="flex-1 space-y-2 flex-shrink overflow-hidden whitespace-nowrap"
             >
               <div
                 class="font-semibold"
@@ -624,7 +624,7 @@ exports[`LedgerImportStep should show an error message for duplicate name in the
                   class="flex items-center space-x-3"
                 >
                   <div
-                    class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB"
+                    class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB flex-shrink-0"
                     data-testid="Avatar"
                   >
                     <div
@@ -639,7 +639,7 @@ exports[`LedgerImportStep should show an error message for duplicate name in the
                   </div>
                   <div>
                     <div
-                      class="inline-flex items-center no-ligatures"
+                      class="w-full flex items-center no-ligatures overflow-hidden whitespace-nowrap"
                     >
                       <span
                         class="max-w-24 flex-auto truncate mr-2 font-semibold text-base text-theme-text"
@@ -653,10 +653,10 @@ exports[`LedgerImportStep should show an error message for duplicate name in the
                         </span>
                       </span>
                       <span
-                        class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-secondary-500 dark:text-theme-secondary-700 truncate font-semibold text-base"
+                        class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-secondary-500 dark:text-theme-secondary-700 font-semibold text-base"
                         data-testid="address__wallet-address"
                       >
-                        DJpFwW39Q…sX4DJ28jq
+                        DJpFwW39QnQvQRQJF2MCfAoKvsX4DJ28jq
                       </span>
                     </div>
                     <p
@@ -699,7 +699,7 @@ exports[`LedgerImportStep should show an error message for duplicate name in the
             data-testid="TransactionDetail"
           >
             <div
-              class="flex-1 space-y-2"
+              class="flex-1 space-y-2 flex-shrink overflow-hidden whitespace-nowrap"
             >
               <div
                 class="font-semibold"
@@ -708,7 +708,7 @@ exports[`LedgerImportStep should show an error message for duplicate name in the
                   class="flex items-center space-x-3"
                 >
                   <div
-                    class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB"
+                    class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB flex-shrink-0"
                     data-testid="Avatar"
                   >
                     <div
@@ -723,10 +723,10 @@ exports[`LedgerImportStep should show an error message for duplicate name in the
                   </div>
                   <div>
                     <div
-                      class="inline-flex items-center no-ligatures"
+                      class="w-full flex items-center no-ligatures overflow-hidden whitespace-nowrap"
                     >
                       <span
-                        class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-text truncate font-semibold text-base"
+                        class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-text font-semibold text-base"
                         data-testid="address__wallet-address"
                       >
                         DRgF3PvzeGWndQjET7dZsSmnrc6uAy23ES
