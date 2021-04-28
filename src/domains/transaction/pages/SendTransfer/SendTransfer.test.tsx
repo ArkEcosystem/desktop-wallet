@@ -217,7 +217,7 @@ describe("SendTransfer", () => {
 
 		expect(getByTestId("SendTransfer__review-step")).toBeTruthy();
 		expect(container).toHaveTextContent(wallet.network().name());
-		expect(container).toHaveTextContent("D8rr7B…s6YUYD");
+		expect(container).toHaveTextContent("D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD");
 		expect(container).toHaveTextContent("test smartbridge");
 
 		expect(asFragment()).toMatchSnapshot();
@@ -705,7 +705,9 @@ describe("SendTransfer", () => {
 
 		await waitFor(() => expect(getByTestId("TransactionSuccessful")).toBeTruthy());
 		await waitFor(() =>
-			expect(getByTestId("TransactionSuccessful")).toHaveTextContent("8f913b6b719e7…f1b89abb49877"),
+			expect(getByTestId("TransactionSuccessful")).toHaveTextContent(
+				"8f913b6b719e7767d49861c0aec79ced212767645cb793d75d2f1b89abb49877",
+			),
 		);
 
 		signMock.mockRestore();
@@ -800,7 +802,9 @@ describe("SendTransfer", () => {
 		});
 
 		await waitFor(() => expect(getByTestId("TransactionSuccessful")).toBeTruthy());
-		expect(getByTestId("TransactionSuccessful")).toHaveTextContent("8f913b6b719e7…f1b89abb49877");
+		expect(getByTestId("TransactionSuccessful")).toHaveTextContent(
+			"8f913b6b719e7767d49861c0aec79ced212767645cb793d75d2f1b89abb49877",
+		);
 
 		expect(signMock).toHaveBeenCalledWith(
 			expect.objectContaining({
@@ -1199,7 +1203,9 @@ describe("SendTransfer", () => {
 
 		await waitFor(() => expect(getByTestId("TransactionSuccessful")).toBeTruthy());
 		await waitFor(() =>
-			expect(getByTestId("TransactionSuccessful")).toHaveTextContent("8f913b6b719e7…f1b89abb49877"),
+			expect(getByTestId("TransactionSuccessful")).toHaveTextContent(
+				"8f913b6b719e7767d49861c0aec79ced212767645cb793d75d2f1b89abb49877",
+			),
 		);
 
 		signMock.mockRestore();
@@ -1754,7 +1760,9 @@ describe("SendTransfer", () => {
 
 		await waitFor(() => expect(getByTestId("TransactionSuccessful")).toBeTruthy());
 		await waitFor(() =>
-			expect(getByTestId("TransactionSuccessful")).toHaveTextContent("8f913b6b719e7…f1b89abb49877"),
+			expect(getByTestId("TransactionSuccessful")).toHaveTextContent(
+				"8f913b6b719e7767d49861c0aec79ced212767645cb793d75d2f1b89abb49877",
+			),
 		);
 
 		signMock.mockRestore();
@@ -1880,7 +1888,9 @@ describe("SendTransfer", () => {
 
 		await waitFor(() => expect(getByTestId("TransactionSuccessful")).toBeTruthy());
 		await waitFor(() =>
-			expect(getByTestId("TransactionSuccessful")).toHaveTextContent("8f913b6b719e7…f1b89abb49877"),
+			expect(getByTestId("TransactionSuccessful")).toHaveTextContent(
+				"8f913b6b719e7767d49861c0aec79ced212767645cb793d75d2f1b89abb49877",
+			),
 		);
 
 		signMock.mockRestore();
