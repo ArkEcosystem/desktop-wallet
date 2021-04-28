@@ -350,6 +350,18 @@
     "@arkecosystem/platform-sdk-coingecko" "4.2.26"
     "@arkecosystem/platform-sdk-cryptocompare" "4.2.26"
 
+"@arkecosystem/platform-sdk-nano@^5.0.8":
+  version "5.0.8"
+  resolved "https://registry.yarnpkg.com/@arkecosystem/platform-sdk-nano/-/platform-sdk-nano-5.0.8.tgz#028b998e768aac9d1f5e52714a8d56b64d92a0fe"
+  integrity sha512-DPCTO10T/LNjuURzfxseiDmGVlAj1yd6Oijon6811VusJlFUxFcD05MFuMDXnUVRzddSTlo6k6u1DN7/e8iDHQ==
+  dependencies:
+    "@arkecosystem/platform-sdk" "5.0.8"
+    "@arkecosystem/platform-sdk-crypto" "5.0.8"
+    "@arkecosystem/platform-sdk-intl" "5.0.8"
+    "@arkecosystem/platform-sdk-support" "5.0.8"
+    nanocurrency "~2.5.0"
+    nanocurrency-web "~1.3.1"
+
 "@arkecosystem/platform-sdk-neo@^4.2.26":
   version "4.2.26"
   resolved "https://registry.yarnpkg.com/@arkecosystem/platform-sdk-neo/-/platform-sdk-neo-4.2.26.tgz#9de3a43429d513aeed9cef30bf9fe37ad91deb25"
@@ -8105,15 +8117,15 @@ bignumber.js@7.2.1, bignumber.js@^7.2.1:
   resolved "https://registry.yarnpkg.com/bignumber.js/-/bignumber.js-7.2.1.tgz#80c048759d826800807c4bfd521e50edbba57a5f"
   integrity sha512-S4XzBk5sMB+Rcb/LNcpzXr57VRTxgAvaAEDAl1AwRx27j00hT84O6OkteE7u8UB3NuaaygCRrEpqox4uDOrbdQ==
 
+bignumber.js@9.0.0, bignumber.js@^9.0.0:
+  version "9.0.0"
+  resolved "https://registry.yarnpkg.com/bignumber.js/-/bignumber.js-9.0.0.tgz#805880f84a329b5eac6e7cb6f8274b6d82bdf075"
+  integrity sha512-t/OYhhJ2SD+YGBQcjY8GzzDHEk9f3nerxjtfa6tlMXfe7frs/WozhvCNoGvpM0P3bNf3Gq5ZRMlGr5f3r4/N8A==
+
 bignumber.js@^4.0.0:
   version "4.1.0"
   resolved "https://registry.yarnpkg.com/bignumber.js/-/bignumber.js-4.1.0.tgz#db6f14067c140bd46624815a7916c92d9b6c24b1"
   integrity sha512-eJzYkFYy9L4JzXsbymsFn3p54D+llV27oTQ+ziJG7WFRheJcNZilgVXMG0LoZtlQSKBsJdWtLFqOD0u+U0jZKA==
-
-bignumber.js@^9.0.0:
-  version "9.0.0"
-  resolved "https://registry.yarnpkg.com/bignumber.js/-/bignumber.js-9.0.0.tgz#805880f84a329b5eac6e7cb6f8274b6d82bdf075"
-  integrity sha512-t/OYhhJ2SD+YGBQcjY8GzzDHEk9f3nerxjtfa6tlMXfe7frs/WozhvCNoGvpM0P3bNf3Gq5ZRMlGr5f3r4/N8A==
 
 bignumber.js@^9.0.1:
   version "9.0.1"
@@ -8334,7 +8346,7 @@ bl@^4.0.1:
     inherits "^2.0.4"
     readable-stream "^3.4.0"
 
-blakejs@^1.1.0:
+blakejs@1.1.0, blakejs@^1.1.0:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/blakejs/-/blakejs-1.1.0.tgz#69df92ef953aa88ca51a32df6ab1c54a155fc7a5"
   integrity sha1-ad+S75U6qIylGjLfarHFShVfx6U=
@@ -10062,6 +10074,11 @@ crypto-browserify@3.12.0, crypto-browserify@^3.10.0, crypto-browserify@^3.11.0:
     public-encrypt "^4.0.0"
     randombytes "^2.0.0"
     randomfill "^1.0.3"
+
+crypto-js@3.1.9-1:
+  version "3.1.9-1"
+  resolved "https://registry.yarnpkg.com/crypto-js/-/crypto-js-3.1.9-1.tgz#fda19e761fc077e01ffbfdc6e9fdfc59e8806cd8"
+  integrity sha1-/aGedh/Ad+Af+/3G6f38WeiAbNg=
 
 crypto-js@3.3.0:
   version "3.3.0"
@@ -17564,6 +17581,23 @@ nanoclone@^0.2.1:
   version "0.2.1"
   resolved "https://registry.yarnpkg.com/nanoclone/-/nanoclone-0.2.1.tgz#dd4090f8f1a110d26bb32c49ed2f5b9235209ed4"
   integrity sha512-wynEP02LmIbLpcYw8uBKpcfF6dmg2vcpKqxeH5UcoKEYdExslsdUA4ugFauuaeYdTB76ez6gJW8XAZ6CgkXYxA==
+
+nanocurrency-web@~1.3.1:
+  version "1.3.2"
+  resolved "https://registry.yarnpkg.com/nanocurrency-web/-/nanocurrency-web-1.3.2.tgz#1b0ec4db12fb395cb1fe3cc6a776ebc1b1ae6da7"
+  integrity sha512-G+oZqfMFdcTzAeVxcEhAkiJLkQAAWJQETbGyVd1ig7fULCcABgE9t5vFHDiZRvyBrfLfVC/0Ah7ukR3Pz2haZA==
+  dependencies:
+    bignumber.js "9.0.0"
+    blakejs "1.1.0"
+    crypto-js "3.1.9-1"
+
+nanocurrency@~2.5.0:
+  version "2.5.0"
+  resolved "https://registry.yarnpkg.com/nanocurrency/-/nanocurrency-2.5.0.tgz#968659daadfa23150afc44a296fa3b211ffe9380"
+  integrity sha512-zMDlgBCML0vMGvldsZN1Np93vwiMjaBLCkOM2tXv0LNIpty8HghDMZiNRzfBPkP70oRhRU+hOpVCEpTzZK5gDQ==
+  dependencies:
+    bignumber.js "^9.0.0"
+    blakejs "^1.1.0"
 
 nanoid@^1.0.1:
   version "1.3.4"
