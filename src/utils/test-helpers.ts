@@ -1,5 +1,5 @@
 import { Base64 } from "@arkecosystem/platform-sdk-crypto";
-import { Environment, StorageData } from "@arkecosystem/platform-sdk-profiles";
+import { Environment, StorageData, Helpers, container } from "@arkecosystem/platform-sdk-profiles";
 import fixtureData from "tests/fixtures/env/storage.json";
 import TestingPasswords from "tests/fixtures/env/testing-passwords.json";
 
@@ -21,11 +21,12 @@ export const bootEnvWithProfileFixtures = async ({ env }: { env: Environment }) 
 	await env.boot();
 
 	for (const profile of env.profiles().values()) {
-		env.profiles().restore(profile);
+		await env.profiles().restore(profile);
 
 		//@ts-ignore
 		const storedPassword: string = TestingPasswords?.profiles[profile.id()]?.password;
 		if (storedPassword) {
+			container.rebind("State<Profile>", profile);
 			profile.auth().setPassword(storedPassword);
 		}
 
