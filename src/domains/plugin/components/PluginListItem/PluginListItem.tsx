@@ -49,14 +49,14 @@ export const PluginListItem = ({
 			result.push({
 				label: t("COMMON.UPDATE"),
 				value: "update",
-				disabled: plugin.isMinimumVersionSatisfied === false,
+				disabled: plugin.isCompatible === false,
 			});
 		}
 
 		if (plugin.isEnabled) {
 			result.push({ label: t("COMMON.DISABLE"), value: "disable" });
 		} else {
-			result.push({ label: t("COMMON.ENABLE"), value: "enable" });
+			result.push({ label: t("COMMON.ENABLE"), value: "enable", disabled: plugin.isCompatible === false });
 		}
 
 		result.push({ label: t("COMMON.DELETE"), value: "delete" });
@@ -86,7 +86,7 @@ export const PluginListItem = ({
 					{plugin.isOfficial && <Icon name="OfficialArkPlugin" width={18} height={18} />}
 					{plugin.isGrant && <Icon name="Grant" width={14} height={20} />}
 
-					{plugin.hasUpdateAvailable && plugin.isMinimumVersionSatisfied === false && (
+					{plugin.hasUpdateAvailable && plugin.isCompatible === false && (
 						<Tooltip
 							content={t("PLUGINS.MINIMUM_VERSION_NOT_SATISFIED", {
 								minimumVersion: plugin.minimumVersion,

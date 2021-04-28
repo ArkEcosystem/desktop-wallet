@@ -292,7 +292,7 @@ export const PluginManager = () => {
 
 	const onUpdateAll = () => {
 		const notSatisfiedPlugins = plugins.filter(
-			(item) => item.hasUpdateAvailable && !item.isMinimumVersionSatisfied,
+			(item) => item.hasUpdateAvailable && !item.isCompatible,
 		);
 
 		setUpdatesConfirmationPlugins(notSatisfiedPlugins);

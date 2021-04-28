@@ -10,7 +10,6 @@ import prettyBytes from "pretty-bytes";
 import React, { useCallback, useMemo, useState } from "react";
 import { openExternal } from "utils/electron-utils";
 
-import appPkg from "../../../package.json";
 import { PluginController, PluginManager } from "../core";
 
 const PluginManagerContext = React.createContext<any>(undefined);
@@ -184,14 +183,6 @@ const useManager = (services: PluginService[], manager: PluginManager) => {
 		[pluginManager, pluginPackages],
 	);
 
-	const satisfiesMinimumVersion = (pluginMinimumVersion?: string) => {
-		if (!pluginMinimumVersion) {
-			return true;
-		}
-
-		return semver.isGreaterThanOrEqual(appPkg.version, pluginMinimumVersion);
-	};
-
 	const downloadPlugin = useCallback(
 		async (name: string, repositoryURL?: string) => {
 			let realRepositoryURL = repositoryURL;
@@ -254,7 +245,6 @@ const useManager = (services: PluginService[], manager: PluginManager) => {
 				isEnabled: !!localPlugin?.isEnabled(profile),
 				hasLaunch: !!localPlugin?.hooks().hasCommand("service:launch.render"),
 				hasUpdateAvailable: hasUpdateAvailable(config.id()),
-				isMinimumVersionSatisfied: satisfiesMinimumVersion(config.minimumVersion()),
 			};
 		},
 		[hasUpdateAvailable, pluginManager],

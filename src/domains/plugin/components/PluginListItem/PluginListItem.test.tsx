@@ -230,7 +230,7 @@ describe("PluginListItem", () => {
 			size: "4.2 MB",
 			isInstalled: true,
 			hasUpdateAvailable: true,
-			isMinimumVersionSatisfied: false,
+			isCompatible: false,
 		};
 
 		const { getByTestId } = render(
