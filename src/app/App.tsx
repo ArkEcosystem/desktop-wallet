@@ -1,6 +1,6 @@
-// import { ADA } from "@arkecosystem/platform-sdk-ada";
 import "focus-visible";
 
+import { ADA } from "@arkecosystem/platform-sdk-ada";
 import { ARK } from "@arkecosystem/platform-sdk-ark";
 // import { ATOM } from "@arkecosystem/platform-sdk-atom";
 import { AVAX } from "@arkecosystem/platform-sdk-avax";
@@ -143,7 +143,7 @@ export const App = () => {
 		() =>
 			new Environment({
 				coins: {
-					// ADA,
+					ADA,
 					ARK,
 					// ATOM,
 					AVAX,
