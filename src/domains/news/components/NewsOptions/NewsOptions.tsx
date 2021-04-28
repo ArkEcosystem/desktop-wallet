@@ -117,7 +117,7 @@ export const NewsOptions = ({ selectedCategories, selectedCoins, onSearch, onSub
 			className="sticky top-26"
 			style={{ height: `calc(100vh - (${HEADER_HEIGHT}px + ${VERTICAL_PADDING}px))` }}
 		>
-			<div className="p-8 rounded-lg border-2 bg-theme-background border-theme-primary-100 dark:border-theme-secondary-800 overflow-y-auto max-h-full">
+			<div className="p-10 pb-4 rounded-lg border-2 bg-theme-background border-theme-primary-100 dark:border-theme-secondary-800 overflow-y-auto max-h-full">
 				<div className="flex flex-col space-y-8">
 					<div className="flex justify-between items-center py-4 px-2 rounded-md shadow-xl">
 						<Input
@@ -178,13 +178,12 @@ export const NewsOptions = ({ selectedCategories, selectedCoins, onSearch, onSub
 							{t("NEWS.NEWS_OPTIONS.YOUR_CURRENT_SELECTIONS")}:
 						</p>
 
-						<div className="pb-4">
-							<FilterNetwork
-								networks={coins}
-								hideViewAll
-								onChange={(_, networks) => setCoins(networks)}
-							/>
-						</div>
+						<FilterNetwork
+							className="pb-2.5"
+							networks={coins}
+							hideViewAll
+							onChange={(_, networks) => setCoins(networks)}
+						/>
 					</div>
 				</div>
 			</div>

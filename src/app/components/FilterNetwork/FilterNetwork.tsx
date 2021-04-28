@@ -4,7 +4,14 @@ import { useTranslation } from "react-i18next";
 
 import { FilterNetworkProps, Network, NetworkOptions, ToggleAllOption } from "./";
 
-export const FilterNetwork = ({ networks = [], onChange, onViewAll, hideViewAll, title }: FilterNetworkProps) => {
+export const FilterNetwork = ({
+	networks = [],
+	className,
+	onChange,
+	onViewAll,
+	hideViewAll,
+	title,
+}: FilterNetworkProps) => {
 	const [networkList, setNetworkList] = useState(networks);
 	const [showAll, setShowAll] = useState(false);
 	const { t } = useTranslation();
@@ -38,7 +45,7 @@ export const FilterNetwork = ({ networks = [], onChange, onViewAll, hideViewAll,
 	};
 
 	return (
-		<div data-testid="FilterNetwork">
+		<div className={className} data-testid="FilterNetwork">
 			{title && <div className="mb-2 text-sm font-bold text-theme-secondary-400">{title}</div>}
 
 			<ToggleAllOption isSelected={showAll} isHidden={hideViewAll} onClick={handleToggleAll} />
