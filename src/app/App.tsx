@@ -4,6 +4,7 @@ import "focus-visible";
 import { ARK } from "@arkecosystem/platform-sdk-ark";
 // import { ATOM } from "@arkecosystem/platform-sdk-atom";
 // import { BTC } from "@arkecosystem/platform-sdk-btc";
+import { EGLD } from "@arkecosystem/platform-sdk-egld";
 // import { EOS } from "@arkecosystem/platform-sdk-eos";
 // import { ETH } from "@arkecosystem/platform-sdk-eth";
 import { LSK } from "@arkecosystem/platform-sdk-lsk";
@@ -145,7 +146,7 @@ export const App = () => {
 					// BTC,
 					// EOS,
 					// ETH,
-					// EGLD,
+					EGLD,
 					LSK,
 					// NEO,
 					// TRX,
