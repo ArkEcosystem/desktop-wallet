@@ -898,7 +898,7 @@ exports[`ContactForm when editing an existing contact should render the form 1`]
                 </div>
               </div>
               <div
-                class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB"
+                class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB flex-shrink-0"
                 data-testid="Avatar"
               >
                 <div
@@ -917,13 +917,13 @@ exports[`ContactForm when editing an existing contact should render the form 1`]
             class="font-semibold"
           >
             <div
-              class="inline-flex items-center no-ligatures"
+              class="w-full flex items-center no-ligatures overflow-hidden whitespace-nowrap"
             >
               <span
-                class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-text truncate font-semibold text-base"
+                class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-text font-semibold text-base"
                 data-testid="address__wallet-address"
               >
-                D61mfSggzb…oHaqJ3Dyib
+                D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib
               </span>
             </div>
           </span>

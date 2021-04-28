@@ -54,7 +54,7 @@ exports[`MultiPaymentDetail should render a modal 1`] = `
             data-testid="TransactionDetail"
           >
             <div
-              class="flex-1 space-y-2"
+              class="flex-1 space-y-2 flex-shrink overflow-hidden whitespace-nowrap"
             >
               <div
                 class="text-sm font-semibold text-theme-secondary-700 no-ligatures"
@@ -65,7 +65,7 @@ exports[`MultiPaymentDetail should render a modal 1`] = `
                 class="font-semibold"
               >
                 <div
-                  class="inline-flex items-center no-ligatures"
+                  class="w-full flex items-center no-ligatures overflow-hidden whitespace-nowrap"
                 >
                   <span
                     class="max-w-24 flex-auto truncate mr-2 font-semibold text-base text-theme-text"
@@ -79,10 +79,10 @@ exports[`MultiPaymentDetail should render a modal 1`] = `
                     </span>
                   </span>
                   <span
-                    class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-secondary-500 dark:text-theme-secondary-700 truncate font-semibold text-base"
+                    class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-secondary-500 dark:text-theme-secondary-700 font-semibold text-base"
                     data-testid="address__wallet-address"
                   >
-                    D8rr7B…s6YUYD
+                    D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD
                   </span>
                 </div>
               </div>
@@ -104,7 +104,7 @@ exports[`MultiPaymentDetail should render a modal 1`] = `
                 </div>
               </div>
               <div
-                class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB"
+                class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB flex-shrink-0"
                 data-testid="Avatar"
               >
                 <div
@@ -124,7 +124,7 @@ exports[`MultiPaymentDetail should render a modal 1`] = `
             data-testid="TransactionDetail"
           >
             <div
-              class="flex-1 space-y-2"
+              class="flex-1 space-y-2 flex-shrink overflow-hidden whitespace-nowrap"
             >
               <div
                 class="text-sm font-semibold text-theme-secondary-700 no-ligatures"
@@ -171,7 +171,7 @@ exports[`MultiPaymentDetail should render a modal 1`] = `
             data-testid="TransactionDetail"
           >
             <div
-              class="flex-1 space-y-2"
+              class="flex-1 space-y-2 flex-shrink overflow-hidden whitespace-nowrap"
             >
               <div
                 class="text-sm font-semibold text-theme-secondary-700 no-ligatures"
@@ -194,7 +194,7 @@ exports[`MultiPaymentDetail should render a modal 1`] = `
             data-testid="TransactionDetail"
           >
             <div
-              class="flex-1 space-y-2"
+              class="flex-1 space-y-2 flex-shrink overflow-hidden whitespace-nowrap"
             >
               <div
                 class="text-sm font-semibold text-theme-secondary-700 no-ligatures"
@@ -230,7 +230,7 @@ exports[`MultiPaymentDetail should render a modal 1`] = `
             data-testid="TransactionDetail"
           >
             <div
-              class="flex-1 space-y-2"
+              class="flex-1 space-y-2 flex-shrink overflow-hidden whitespace-nowrap"
             >
               <div
                 class="text-sm font-semibold text-theme-secondary-700 no-ligatures"
@@ -249,7 +249,7 @@ exports[`MultiPaymentDetail should render a modal 1`] = `
             data-testid="TransactionDetail"
           >
             <div
-              class="flex-1 space-y-2"
+              class="flex-1 space-y-2 flex-shrink overflow-hidden whitespace-nowrap"
             >
               <div
                 class="text-sm font-semibold text-theme-secondary-700 no-ligatures"
@@ -283,7 +283,7 @@ exports[`MultiPaymentDetail should render a modal 1`] = `
             data-testid="TransactionDetail"
           >
             <div
-              class="flex-1 space-y-2"
+              class="flex-1 space-y-2 flex-shrink overflow-hidden whitespace-nowrap"
             >
               <div
                 class="text-sm font-semibold text-theme-secondary-700 no-ligatures"
@@ -309,10 +309,10 @@ exports[`MultiPaymentDetail should render a modal 1`] = `
                         class="no-underline break-all pointer-events-auto border-b group-hover:border-0 active:border-0 border-dotted"
                       >
                         <span
-                          class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-primary-700"
+                          class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-primary-700"
                           data-testid="TruncateMiddle"
                         >
-                          ee4175091d9f4…9d09bcf3ecefe
+                          ee4175091d9f4dacf5fed213711c3e0e4cc371e37afa7bce0429d09bcf3ecefe
                         </span>
                       </span>
                       <div
@@ -354,7 +354,7 @@ exports[`MultiPaymentDetail should render a modal 1`] = `
             data-testid="TransactionDetail"
           >
             <div
-              class="flex-1 space-y-2"
+              class="flex-1 space-y-2 flex-shrink overflow-hidden whitespace-nowrap"
             >
               <div
                 class="text-sm font-semibold text-theme-secondary-700 no-ligatures"
@@ -380,7 +380,7 @@ exports[`MultiPaymentDetail should render a modal 1`] = `
                         class="no-underline break-all pointer-events-auto border-b group-hover:border-0 active:border-0 border-dotted"
                       >
                         <span
-                          class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-primary-700"
+                          class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-primary-700"
                           data-testid="TruncateMiddle"
                         >
                           adsad12312xsd1w312e1s13203e12
@@ -479,7 +479,7 @@ exports[`MultiPaymentDetail should render with recipients 1`] = `
             data-testid="TransactionDetail"
           >
             <div
-              class="flex-1 space-y-2"
+              class="flex-1 space-y-2 flex-shrink overflow-hidden whitespace-nowrap"
             >
               <div
                 class="text-sm font-semibold text-theme-secondary-700 no-ligatures"
@@ -490,7 +490,7 @@ exports[`MultiPaymentDetail should render with recipients 1`] = `
                 class="font-semibold"
               >
                 <div
-                  class="inline-flex items-center no-ligatures"
+                  class="w-full flex items-center no-ligatures overflow-hidden whitespace-nowrap"
                 >
                   <span
                     class="max-w-24 flex-auto truncate mr-2 font-semibold text-base text-theme-text"
@@ -504,10 +504,10 @@ exports[`MultiPaymentDetail should render with recipients 1`] = `
                     </span>
                   </span>
                   <span
-                    class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-secondary-500 dark:text-theme-secondary-700 truncate font-semibold text-base"
+                    class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-secondary-500 dark:text-theme-secondary-700 font-semibold text-base"
                     data-testid="address__wallet-address"
                   >
-                    D8rr7B…s6YUYD
+                    D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD
                   </span>
                 </div>
               </div>
@@ -529,7 +529,7 @@ exports[`MultiPaymentDetail should render with recipients 1`] = `
                 </div>
               </div>
               <div
-                class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB"
+                class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB flex-shrink-0"
                 data-testid="Avatar"
               >
                 <div
@@ -549,7 +549,7 @@ exports[`MultiPaymentDetail should render with recipients 1`] = `
             data-testid="TransactionDetail"
           >
             <div
-              class="flex-1 space-y-2"
+              class="flex-1 space-y-2 flex-shrink overflow-hidden whitespace-nowrap"
             >
               <div
                 class="text-sm font-semibold text-theme-secondary-700 no-ligatures"
@@ -633,7 +633,7 @@ exports[`MultiPaymentDetail should render with recipients 1`] = `
                               class="py-4 w-12"
                             >
                               <div
-                                class="Avatar__AvatarWrapper-sc-1vsy2s2-0 ibTSCJ"
+                                class="Avatar__AvatarWrapper-sc-1vsy2s2-0 ibTSCJ flex-shrink-0"
                                 data-testid="Avatar"
                               >
                                 <div
@@ -654,13 +654,13 @@ exports[`MultiPaymentDetail should render with recipients 1`] = `
                                 class="max-w-lg"
                               >
                                 <div
-                                  class="inline-flex items-center no-ligatures"
+                                  class="w-full flex items-center no-ligatures overflow-hidden whitespace-nowrap"
                                 >
                                   <span
-                                    class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-text truncate font-semibold text-base"
+                                    class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-text font-semibold text-base"
                                     data-testid="address__wallet-address"
                                   >
-                                    adsad1…203e12
+                                    adsad12312xsd1w312e1s13203e12
                                   </span>
                                 </div>
                               </div>
@@ -688,7 +688,7 @@ exports[`MultiPaymentDetail should render with recipients 1`] = `
                               class="py-4 w-12"
                             >
                               <div
-                                class="Avatar__AvatarWrapper-sc-1vsy2s2-0 ibTSCJ"
+                                class="Avatar__AvatarWrapper-sc-1vsy2s2-0 ibTSCJ flex-shrink-0"
                                 data-testid="Avatar"
                               >
                                 <div
@@ -709,13 +709,13 @@ exports[`MultiPaymentDetail should render with recipients 1`] = `
                                 class="max-w-lg"
                               >
                                 <div
-                                  class="inline-flex items-center no-ligatures"
+                                  class="w-full flex items-center no-ligatures overflow-hidden whitespace-nowrap"
                                 >
                                   <span
-                                    class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-text truncate font-semibold text-base"
+                                    class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-text font-semibold text-base"
                                     data-testid="address__wallet-address"
                                   >
-                                    adsad1…203e13
+                                    adsad12312xsd1w312e1s13203e13
                                   </span>
                                 </div>
                               </div>
@@ -743,7 +743,7 @@ exports[`MultiPaymentDetail should render with recipients 1`] = `
                               class="py-4 w-12"
                             >
                               <div
-                                class="Avatar__AvatarWrapper-sc-1vsy2s2-0 ibTSCJ"
+                                class="Avatar__AvatarWrapper-sc-1vsy2s2-0 ibTSCJ flex-shrink-0"
                                 data-testid="Avatar"
                               >
                                 <div
@@ -764,13 +764,13 @@ exports[`MultiPaymentDetail should render with recipients 1`] = `
                                 class="max-w-lg"
                               >
                                 <div
-                                  class="inline-flex items-center no-ligatures"
+                                  class="w-full flex items-center no-ligatures overflow-hidden whitespace-nowrap"
                                 >
                                   <span
-                                    class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-text truncate font-semibold text-base"
+                                    class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-text font-semibold text-base"
                                     data-testid="address__wallet-address"
                                   >
-                                    adsad1…203e14
+                                    adsad12312xsd1w312e1s13203e14
                                   </span>
                                 </div>
                               </div>
@@ -803,7 +803,7 @@ exports[`MultiPaymentDetail should render with recipients 1`] = `
             data-testid="TransactionDetail"
           >
             <div
-              class="flex-1 space-y-2"
+              class="flex-1 space-y-2 flex-shrink overflow-hidden whitespace-nowrap"
             >
               <div
                 class="text-sm font-semibold text-theme-secondary-700 no-ligatures"
@@ -850,7 +850,7 @@ exports[`MultiPaymentDetail should render with recipients 1`] = `
             data-testid="TransactionDetail"
           >
             <div
-              class="flex-1 space-y-2"
+              class="flex-1 space-y-2 flex-shrink overflow-hidden whitespace-nowrap"
             >
               <div
                 class="text-sm font-semibold text-theme-secondary-700 no-ligatures"
@@ -873,7 +873,7 @@ exports[`MultiPaymentDetail should render with recipients 1`] = `
             data-testid="TransactionDetail"
           >
             <div
-              class="flex-1 space-y-2"
+              class="flex-1 space-y-2 flex-shrink overflow-hidden whitespace-nowrap"
             >
               <div
                 class="text-sm font-semibold text-theme-secondary-700 no-ligatures"
@@ -909,7 +909,7 @@ exports[`MultiPaymentDetail should render with recipients 1`] = `
             data-testid="TransactionDetail"
           >
             <div
-              class="flex-1 space-y-2"
+              class="flex-1 space-y-2 flex-shrink overflow-hidden whitespace-nowrap"
             >
               <div
                 class="text-sm font-semibold text-theme-secondary-700 no-ligatures"
@@ -928,7 +928,7 @@ exports[`MultiPaymentDetail should render with recipients 1`] = `
             data-testid="TransactionDetail"
           >
             <div
-              class="flex-1 space-y-2"
+              class="flex-1 space-y-2 flex-shrink overflow-hidden whitespace-nowrap"
             >
               <div
                 class="text-sm font-semibold text-theme-secondary-700 no-ligatures"
@@ -964,7 +964,7 @@ exports[`MultiPaymentDetail should render with recipients 1`] = `
             data-testid="TransactionDetail"
           >
             <div
-              class="flex-1 space-y-2"
+              class="flex-1 space-y-2 flex-shrink overflow-hidden whitespace-nowrap"
             >
               <div
                 class="text-sm font-semibold text-theme-secondary-700 no-ligatures"
@@ -990,10 +990,10 @@ exports[`MultiPaymentDetail should render with recipients 1`] = `
                         class="no-underline break-all pointer-events-auto border-b group-hover:border-0 active:border-0 border-dotted"
                       >
                         <span
-                          class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-primary-700"
+                          class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-primary-700"
                           data-testid="TruncateMiddle"
                         >
-                          ee4175091d9f4…9d09bcf3ecefe
+                          ee4175091d9f4dacf5fed213711c3e0e4cc371e37afa7bce0429d09bcf3ecefe
                         </span>
                       </span>
                       <div
@@ -1035,7 +1035,7 @@ exports[`MultiPaymentDetail should render with recipients 1`] = `
             data-testid="TransactionDetail"
           >
             <div
-              class="flex-1 space-y-2"
+              class="flex-1 space-y-2 flex-shrink overflow-hidden whitespace-nowrap"
             >
               <div
                 class="text-sm font-semibold text-theme-secondary-700 no-ligatures"
@@ -1061,7 +1061,7 @@ exports[`MultiPaymentDetail should render with recipients 1`] = `
                         class="no-underline break-all pointer-events-auto border-b group-hover:border-0 active:border-0 border-dotted"
                       >
                         <span
-                          class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-primary-700"
+                          class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-primary-700"
                           data-testid="TruncateMiddle"
                         >
                           adsad12312xsd1w312e1s13203e12
