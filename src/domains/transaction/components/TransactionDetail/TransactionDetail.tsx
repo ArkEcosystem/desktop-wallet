@@ -16,33 +16,32 @@ export type TransactionDetailProps = {
 
 const TransactionDetailStyled = styled.div<TransactionDetailProps>(getStyles);
 
-export const TransactionDetail = ({
-	border,
-	borderPosition,
-	children,
-	className,
-	extra,
-	label,
-	padding,
-	paddingPosition,
-}: TransactionDetailProps) => (
-	<TransactionDetailStyled
-		data-testid="TransactionDetail"
-		border={border}
-		borderPosition={borderPosition}
-		padding={padding}
-		paddingPosition={paddingPosition}
-		className={`${className} no-ligatures`}
-	>
-		<div className="flex-1 space-y-2">
-			{label && <div className="text-sm font-semibold text-theme-secondary-700 no-ligatures">{label}</div>}
+export const TransactionDetail = React.forwardRef<HTMLDivElement, TransactionDetailProps>(
+	(
+		{ border, borderPosition, children, className, extra, label, padding, paddingPosition }: TransactionDetailProps,
+		ref,
+	) => (
+		<TransactionDetailStyled
+			data-testid="TransactionDetail"
+			border={border}
+			borderPosition={borderPosition}
+			padding={padding}
+			paddingPosition={paddingPosition}
+			className={`${className} no-ligatures`}
+			ref={ref}
+		>
+			<div className="flex-1 space-y-2 flex-shrink overflow-hidden whitespace-nowrap">
+				{label && <div className="text-sm font-semibold text-theme-secondary-700 no-ligatures">{label}</div>}
 
-			<div className="font-semibold">{children}</div>
-		</div>
+				<div className="font-semibold">{children}</div>
+			</div>
 
-		{extra ? extra : null}
-	</TransactionDetailStyled>
+			{extra ? extra : null}
+		</TransactionDetailStyled>
+	),
 );
+
+TransactionDetail.displayName = "TransactionDetail";
 
 TransactionDetail.defaultProps = {
 	border: true,
