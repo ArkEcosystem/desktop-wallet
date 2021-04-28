@@ -5,6 +5,7 @@ import { ARK } from "@arkecosystem/platform-sdk-ark";
 // import { ATOM } from "@arkecosystem/platform-sdk-atom";
 import { AVAX } from "@arkecosystem/platform-sdk-avax";
 // import { BTC } from "@arkecosystem/platform-sdk-btc";
+import { DOT } from "@arkecosystem/platform-sdk-dot";
 // import { EOS } from "@arkecosystem/platform-sdk-eos";
 // import { ETH } from "@arkecosystem/platform-sdk-eth";
 import { LSK } from "@arkecosystem/platform-sdk-lsk";
@@ -145,6 +146,7 @@ export const App = () => {
 					// ATOM,
 					AVAX,
 					// BTC,
+					DOT,
 					// EOS,
 					// ETH,
 					// EGLD,
