@@ -16,7 +16,6 @@ import { TRX } from "@arkecosystem/platform-sdk-trx";
 import { XLM } from "@arkecosystem/platform-sdk-xlm";
 import { XRP } from "@arkecosystem/platform-sdk-xrp";
 
-
 export interface CoinNetworkExtended {
 	displayName: string;
 	borderClass: string;
