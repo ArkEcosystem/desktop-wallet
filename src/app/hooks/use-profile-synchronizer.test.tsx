@@ -137,10 +137,15 @@ describe("useProfileSyncStatus", () => {
 		expect(current.shouldMarkCompleted()).toEqual(false);
 	});
 });
-//
+
 describe("useProfileSynchronizer", () => {
 	beforeEach(async () => {
 		jest.useFakeTimers();
+
+		const profile = env.profiles().findById(getDefaultProfileId());
+		await env.profiles().restore(profile);
+		await profile.sync();
+
 		await syncDelegates();
 	});
 
@@ -224,9 +229,6 @@ describe("useProfileSynchronizer", () => {
 
 		history.push(dashboardURL);
 
-		const profile = env.profiles().findById(getDefaultProfileId());
-		profile.wallets().flush();
-
 		const { getByTestId } = renderWithRouter(
 			<Route path="/profiles/:profileId/dashboard">
 				<div data-testid="ProfileRestored">test</div>
@@ -276,9 +278,6 @@ describe("useProfileSynchronizer", () => {
 		process.env.REACT_APP_IS_E2E = "1";
 
 		history.push(dashboardURL);
-
-		const profile = env.profiles().findById(getDefaultProfileId());
-		profile.wallets().flush();
 
 		const { getByTestId } = renderWithRouter(
 			<Route path="/profiles/:profileId/dashboard">

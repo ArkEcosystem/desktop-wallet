@@ -24,9 +24,10 @@ describe("Notifications Hook", () => {
 
 	it("should create and save notifications from received transactions", async () => {
 		const wrapper = ({ children }: any) => <EnvironmentProvider env={env}> {children} </EnvironmentProvider>;
+
 		const { result } = renderHook(() => useNotifications(), { wrapper });
 		const profile = env.profiles().findById(getDefaultProfileId());
-		await env.profiles().restore(profile, "password");
+		await env.profiles().restore(profile);
 		await profile.sync();
 
 		const { notifications } = result.current;
