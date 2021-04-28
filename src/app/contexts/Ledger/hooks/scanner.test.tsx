@@ -43,10 +43,14 @@ describe("Use Ledger Scanner", () => {
 			});
 	});
 
-	beforeEach(() => {
+	beforeEach(async () => {
 		profile = env.profiles().findById(getDefaultProfileId());
 		wallet = profile.wallets().first();
 		transport = createTransportReplayer(RecordStore.fromString(""));
+
+		await env.profiles().restore(profile);
+		await profile.sync();
+		await wallet.synchroniser().coin();
 
 		publicKeyPaths = new Map([
 			["44'/1'/0'/0/0", "027716e659220085e41389efc7cf6a05f7f7c659cf3db9126caabce6cda9156582"],
@@ -369,10 +373,21 @@ describe("Use Ledger Scanner", () => {
 			Promise.resolve(publicKeyPaths.get(path)!),
 		);
 
-		await profile.wallets().importByAddress("DJpFwW39QnQvQRQJF2MCfAoKvsX4DJ28jq", "ARK", "ark.devnet");
-		await profile.wallets().importByAddress("DRgF3PvzeGWndQjET7dZsSmnrc6uAy23ES", "ARK", "ark.devnet");
-		await profile.wallets().importByAddress("DSyG9hK9CE8eyfddUoEvsga4kNVQLdw2ve", "ARK", "ark.devnet");
-		await profile.wallets().importByAddress("DFJ5Z51F1euNNdRUQJKQVdG4h495LZkc6T", "ARK", "ark.devnet");
+		const addresses = [
+			"DJpFwW39QnQvQRQJF2MCfAoKvsX4DJ28jq",
+			"DRgF3PvzeGWndQjET7dZsSmnrc6uAy23ES",
+			"DSyG9hK9CE8eyfddUoEvsga4kNVQLdw2ve",
+			"DFJ5Z51F1euNNdRUQJKQVdG4h495LZkc6T",
+		];
+
+		addresses.forEach(async (address) => {
+			const wallet = await profile.walletFactory().fromAddress({
+				address,
+				coin: "ARK",
+				network: "ark.devnet",
+			});
+			profile.wallets().push(wallet);
+		});
 
 		const Component = () => {
 			const { scanUntilNewOrFail, wallets } = useLedgerScanner(wallet.coinId(), wallet.networkId(), profile);
