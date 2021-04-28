@@ -17,11 +17,17 @@ describe("WalletListItem", () => {
 		history.push(dashboardURL);
 	});
 
-	beforeEach(() => {
+	beforeEach(async () => {
 		profile = env.profiles().findById(getDefaultProfileId());
+
+		await env.profiles().restore(profile);
+		await profile.sync();
+
 		wallet = profile.wallets().findById("ac38fe6d-4b67-4ef1-85be-17c5f6841129");
 		wallet.data().set(Contracts.WalletFlag.Starred, true);
 		wallet.data().set(Contracts.WalletData.LedgerPath, "0");
+
+		await wallet.synchronizer().identity();
 	});
 
 	it("should render", () => {

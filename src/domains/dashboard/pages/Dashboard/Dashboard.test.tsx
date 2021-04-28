@@ -53,13 +53,20 @@ beforeAll(async () => {
 		.persist();
 
 	profile = env.profiles().findById(fixtureProfileId);
-	await profile.restore();
-	const wallet = await profile.wallets().importByAddress("AdVSe37niA3uFUPgCgMUH2tMsHF4LpLoiX", "ARK", "ark.mainnet");
+	await env.profiles().restore(profile);
+	await profile.sync();
 
-	jest.spyOn(useRandomNumberHook, "useRandomNumber").mockImplementation(() => 1);
+	const wallet = await profile.walletFactory().fromAddress({
+		address: "AdVSe37niA3uFUPgCgMUH2tMsHF4LpLoiX",
+		coin: "ARK",
+		network: "ark.mainnet",
+	});
+	profile.wallets().push(wallet);
+
 
 	await syncDelegates();
-	await wallet.syncVotes();
+
+	jest.spyOn(useRandomNumberHook, "useRandomNumber").mockImplementation(() => 1);
 });
 
 afterAll(() => {

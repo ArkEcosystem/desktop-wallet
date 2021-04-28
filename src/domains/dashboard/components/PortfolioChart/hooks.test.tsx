@@ -9,8 +9,10 @@ import { usePortfolioData } from "./";
 
 let profile: Contracts.IProfile;
 describe("usePortfolioData hook", () => {
-	beforeAll(() => {
+	beforeAll(async () => {
 		profile = env.profiles().findById(getDefaultProfileId());
+		await env.profiles().restore(profile);
+		await profile.sync();
 	});
 
 	it("should return chartLines", async () => {
@@ -30,7 +32,7 @@ describe("usePortfolioData hook", () => {
 	it("should return percentages", async () => {
 		//@ts-ignore
 		const balancePerCoinMock = jest
-			.spyOn(profile.walletAggregate(), "balancePerCoin")
+			.spyOn(profile.portfolio(), "breakdown")
 			.mockImplementation(() => ({ ARK: { total: 10, percentage: 3 } }));
 
 		const wrapper = ({ children }: any) => <EnvironmentProvider env={env}> {children} </EnvironmentProvider>;
