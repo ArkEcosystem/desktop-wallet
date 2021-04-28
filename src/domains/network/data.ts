@@ -21,13 +21,13 @@ export interface CoinNetworkExtended {
 
 export const coinsNetworkExtendedData: Record<string, Record<string, CoinNetworkExtended>> = {
 	ADA: {
-		'ada.mainnet': {
+		"ada.mainnet": {
 			displayName: "Cardano",
 			borderClass: "border-theme-primary-500",
 			textClass: "text-theme-primary-700",
 			iconName: "Cardano",
 		},
-		'ada.testnet': {
+		"ada.testnet": {
 			displayName: "Cardano",
 			borderClass: "border-theme-primary-500",
 			textClass: "text-theme-primary-700",
