@@ -9,6 +9,7 @@ import { ARK } from "@arkecosystem/platform-sdk-ark";
 import { LSK } from "@arkecosystem/platform-sdk-lsk";
 // import { NEO } from "@arkecosystem/platform-sdk-neo";
 import { Environment } from "@arkecosystem/platform-sdk-profiles";
+import { SOL } from "@arkecosystem/platform-sdk-sol";
 // @ts-ignore
 import LedgerTransportNodeHID from "@ledgerhq/hw-transport-node-hid-singleton";
 // import { TRX } from "@arkecosystem/platform-sdk-trx";
@@ -148,6 +149,7 @@ export const App = () => {
 					// EGLD,
 					LSK,
 					// NEO,
+					SOL,
 					// TRX,
 					// XLM,
 					// XMR,
