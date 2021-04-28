@@ -45,144 +45,144 @@ import { SentryRouterWrapper } from "./sentry/SentryRouterWrapper";
 import { httpClient } from "./services";
 
 const RouteWrappers = ({ children }: { children: React.ReactNode }) => (
-    <>
-        <SentryRouterWrapper>
-            <PluginRouterWrapper>{children}</PluginRouterWrapper>
-        </SentryRouterWrapper>
-    </>
+	<>
+		<SentryRouterWrapper>
+			<PluginRouterWrapper>{children}</PluginRouterWrapper>
+		</SentryRouterWrapper>
+	</>
 );
 
 const Main = () => {
-    const [showSplash, setShowSplash] = useState(true);
-    const { env } = useEnvironmentContext();
-    const { loadPlugins } = usePluginManagerContext();
-    const isOnline = useNetworkStatus();
-    const { start } = useEnvSynchronizer();
-    const history = useHistory();
+	const [showSplash, setShowSplash] = useState(true);
+	const { env } = useEnvironmentContext();
+	const { loadPlugins } = usePluginManagerContext();
+	const isOnline = useNetworkStatus();
+	const { start } = useEnvSynchronizer();
+	const history = useHistory();
 
-    useProfileSynchronizer({
-        onProfileRestoreError: () => history.push("/"),
-    });
+	useProfileSynchronizer({
+		onProfileRestoreError: () => history.push("/"),
+	});
 
-    useDeeplink();
+	useDeeplink();
 
-    useEffect(() => {
-        if (!showSplash) {
-            start();
-        }
-    }, [showSplash, start]);
+	useEffect(() => {
+		if (!showSplash) {
+			start();
+		}
+	}, [showSplash, start]);
 
-    useLayoutEffect(() => {
-        setThemeSource("system");
+	useLayoutEffect(() => {
+		setThemeSource("system");
 
-        document.body.classList.remove(`theme-${shouldUseDarkColors() ? "light" : "dark"}`);
-        document.body.classList.add(`theme-${shouldUseDarkColors() ? "dark" : "light"}`);
-    }, []); // eslint-disable-line react-hooks/exhaustive-deps
+		document.body.classList.remove(`theme-${shouldUseDarkColors() ? "light" : "dark"}`);
+		document.body.classList.add(`theme-${shouldUseDarkColors() ? "dark" : "light"}`);
+	}, []); // eslint-disable-line react-hooks/exhaustive-deps
 
-    const handleError = useErrorHandler();
+	const handleError = useErrorHandler();
 
-    useLayoutEffect(() => {
-        const boot = async () => {
-            try {
-                /* istanbul ignore next */
-                const __E2E__ = ["true", "1"].includes(process.env.REACT_APP_IS_E2E?.toLowerCase() || "")
-                    ? true
-                    : false;
-                if (__E2E__) {
-                    await bootEnvWithProfileFixtures({ env });
+	useLayoutEffect(() => {
+		const boot = async () => {
+			try {
+				/* istanbul ignore next */
+				const __E2E__ = ["true", "1"].includes(process.env.REACT_APP_IS_E2E?.toLowerCase() || "")
+					? true
+					: false;
+				if (__E2E__) {
+					await bootEnvWithProfileFixtures({ env });
 
-                    loadPlugins();
-                    setShowSplash(false);
-                    return;
-                }
+					loadPlugins();
+					setShowSplash(false);
+					return;
+				}
 
-                await env.verify();
-                await env.boot();
+				await env.verify();
+				await env.boot();
 
-                await loadPlugins();
-            } catch (error) {
-                handleError(error);
-            }
+				await loadPlugins();
+			} catch (error) {
+				handleError(error);
+			}
 
-            setShowSplash(false);
-        };
+			setShowSplash(false);
+		};
 
-        boot();
-    }, [env, handleError, loadPlugins]);
+		boot();
+	}, [env, handleError, loadPlugins]);
 
-    const renderContent = () => {
-        if (showSplash) {
-            return <Splash />;
-        }
+	const renderContent = () => {
+		if (showSplash) {
+			return <Splash />;
+		}
 
-        if (!isOnline) {
-            return <Offline />;
-        }
+		if (!isOnline) {
+			return <Offline />;
+		}
 
-        return <RouterView routes={routes} middlewares={middlewares} wrapper={RouteWrappers} />;
-    };
+		return <RouterView routes={routes} middlewares={middlewares} wrapper={RouteWrappers} />;
+	};
 
-    return (
-        <main data-testid="Main">
-            <ToastContainer closeOnClick={false} newestOnTop />
+	return (
+		<main data-testid="Main">
+			<ToastContainer closeOnClick={false} newestOnTop />
 
-            {renderContent()}
-        </main>
-    );
+			{renderContent()}
+		</main>
+	);
 };
 
 export const App = () => {
-    /**
-     * Ensure that the Environment object will not be recreated when the state changes,
-     * as the data is stored in memory by the `DataRepository`.
-     */
+	/**
+	 * Ensure that the Environment object will not be recreated when the state changes,
+	 * as the data is stored in memory by the `DataRepository`.
+	 */
 
-    /* istanbul ignore next */
-    const __E2E__ = process.env.REACT_APP_IS_E2E;
-    /* istanbul ignore next */
-    const storage = __E2E__ ? new StubStorage() : "indexeddb";
+	/* istanbul ignore next */
+	const __E2E__ = process.env.REACT_APP_IS_E2E;
+	/* istanbul ignore next */
+	const storage = __E2E__ ? new StubStorage() : "indexeddb";
 
-    const [env] = useState(
-        () =>
-            new Environment({
-                coins: {
-                    // ADA,
-                    ARK,
-                    ATOM,
-                    // ATOM,
-                    AVAX,
-                    BTC,
-                    DOT,
-                    // EOS,
-                    // ETH,
-                    EGLD,
-                    LSK,
-                    NEO,
-                    NANO,
-                    LUNA,
-                    // TRX,
-                    XLM,
-                    // XMR,
-                    XRP,
-                },
-                httpClient,
-                storage,
-            }),
-    );
+	const [env] = useState(
+		() =>
+			new Environment({
+				coins: {
+					// ADA,
+					ARK,
+					ATOM,
+					// ATOM,
+					AVAX,
+					BTC,
+					DOT,
+					// EOS,
+					// ETH,
+					EGLD,
+					LSK,
+					NEO,
+					NANO,
+					LUNA,
+					// TRX,
+					XLM,
+					// XMR,
+					XRP,
+				},
+				httpClient,
+				storage,
+			}),
+	);
 
-    return (
-        <I18nextProvider i18n={i18n}>
-            <EnvironmentProvider env={env}>
-                <ConfigurationProvider>
-                    <SentryProvider>
-                        <LedgerProvider transport={LedgerTransportNodeHID}>
-                            <PluginProviders>
-                                <Main />
-                            </PluginProviders>
-                        </LedgerProvider>
-                    </SentryProvider>
-                </ConfigurationProvider>
-            </EnvironmentProvider>
-        </I18nextProvider>
-    );
+	return (
+		<I18nextProvider i18n={i18n}>
+			<EnvironmentProvider env={env}>
+				<ConfigurationProvider>
+					<SentryProvider>
+						<LedgerProvider transport={LedgerTransportNodeHID}>
+							<PluginProviders>
+								<Main />
+							</PluginProviders>
+						</LedgerProvider>
+					</SentryProvider>
+				</ConfigurationProvider>
+			</EnvironmentProvider>
+		</I18nextProvider>
+	);
 };
