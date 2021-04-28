@@ -10,9 +10,10 @@ type FilterTransactionsProps = {
 	defaultSelected?: DropdownOption;
 	wallets?: Contracts.IReadWriteWallet[];
 	onSelect?: (selectedOption: DropdownOption, types: any) => void;
+	isDisabled?: boolean;
 };
 
-export const FilterTransactions = memo(({ className, onSelect, defaultSelected, wallets }: FilterTransactionsProps) => {
+export const FilterTransactions = memo(({ className, onSelect, defaultSelected, wallets, isDisabled }: FilterTransactionsProps) => {
 	const { t } = useTranslation();
 	const { types, getLabel, getQueryParamsByType, hasMagistrationTypesEnabled } = useTransactionTypes({ wallets });
 
@@ -46,34 +47,52 @@ export const FilterTransactions = memo(({ className, onSelect, defaultSelected, 
 		return options;
 	}, [getLabel, types, t, hasMagistrationTypesEnabled]);
 
-	const [selectedOption, setSelectedOption] = useState<DropdownOption>(defaultSelected || allOptions[0].options[0]);
+		const [selectedOption, setSelectedOption] = useState<DropdownOption>(
+			defaultSelected || allOptions[0].options[0],
+		);
 
-	const handleSelect = (selectedOption: DropdownOption) => {
-		setSelectedOption(selectedOption);
-		onSelect?.(selectedOption, getQueryParamsByType(String(selectedOption.value)));
-	};
-	return (
-		<div className={className} data-testid="FilterTransactions">
-			<Dropdown
-				dropdownClass="w-80 max-h-128 overflow-y-auto"
-				options={allOptions}
-				toggleContent={(isOpen: boolean) => (
-					<CollapseToggleButton
-						isOpen={isOpen}
-						label={
-							<>
-								<span className="text-theme-secondary-500 dark:text-theme-secondary-600">
-									{t("COMMON.TYPE")}:{" "}
-								</span>
-								<span className="text-theme-secondary-700 dark:text-theme-secondary-200">
-									{selectedOption?.label}
-								</span>
-							</>
-						}
-					/>
-				)}
-				onSelect={handleSelect}
-			/>
-		</div>
-	);
-});
+		const handleSelect = (selectedOption: DropdownOption) => {
+			setSelectedOption(selectedOption);
+			onSelect?.(selectedOption, getQueryParamsByType(String(selectedOption.value)));
+		};
+		return (
+			<div className={className} data-testid="FilterTransactions">
+				<Dropdown
+					dropdownClass="w-80 max-h-128 overflow-y-auto"
+					options={allOptions}
+					disableToggle={isDisabled}
+					toggleContent={(isOpen: boolean) => (
+						<CollapseToggleButton
+							disabled={isDisabled}
+							isOpen={isOpen}
+							className={
+								isDisabled
+									? `text-theme-secondary-400 dark:text-theme-secondary-800 cursor-not-allowed`
+									: undefined
+							}
+							label={
+								<>
+									<span
+										className={
+											isDisabled ? "" : "text-theme-secondary-500 dark:text-theme-secondary-600"
+										}
+									>
+										{t("COMMON.TYPE")}:{" "}
+									</span>
+									<span
+										className={
+											isDisabled ? "" : "text-theme-secondary-700 dark:text-theme-secondary-200"
+										}
+									>
+										{selectedOption?.label}
+									</span>
+								</>
+							}
+						/>
+					)}
+					onSelect={handleSelect}
+				/>
+			</div>
+		);
+	},
+);

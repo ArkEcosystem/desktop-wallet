@@ -7,7 +7,7 @@ exports[`TransactionExplorerLink should render a 'block' link 1`] = `
     data-testid="TransactionDetail"
   >
     <div
-      class="flex-1 space-y-2"
+      class="flex-1 space-y-2 flex-shrink overflow-hidden whitespace-nowrap"
     >
       <div
         class="text-sm font-semibold text-theme-secondary-700 no-ligatures"
@@ -33,7 +33,7 @@ exports[`TransactionExplorerLink should render a 'block' link 1`] = `
                 class="no-underline break-all pointer-events-auto border-b group-hover:border-0 active:border-0 border-dotted"
               >
                 <span
-                  class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-primary-700"
+                  class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-primary-700"
                   data-testid="TruncateMiddle"
                 >
                   test-id
@@ -83,7 +83,7 @@ exports[`TransactionExplorerLink should render a 'transaction' link 1`] = `
     data-testid="TransactionDetail"
   >
     <div
-      class="flex-1 space-y-2"
+      class="flex-1 space-y-2 flex-shrink overflow-hidden whitespace-nowrap"
     >
       <div
         class="text-sm font-semibold text-theme-secondary-700 no-ligatures"
@@ -109,7 +109,7 @@ exports[`TransactionExplorerLink should render a 'transaction' link 1`] = `
                 class="no-underline break-all pointer-events-auto border-b group-hover:border-0 active:border-0 border-dotted"
               >
                 <span
-                  class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-primary-700"
+                  class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-primary-700"
                   data-testid="TruncateMiddle"
                 >
                   test-id
