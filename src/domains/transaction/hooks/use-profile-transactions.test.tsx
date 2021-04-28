@@ -37,7 +37,7 @@ describe("useProfileTransactions", () => {
 	it("should run updates periodically", async () => {
 		const profile = env.profiles().findById(getDefaultProfileId());
 
-		await profile.restore();
+		await env.profiles().restore(profile);
 		await profile.sync();
 
 		const wrapper = ({ children }: any) => (
@@ -55,11 +55,11 @@ describe("useProfileTransactions", () => {
 			);
 
 			jest.advanceTimersByTime(30000);
-			await waitFor(() => expect(result.current.transactions).toHaveLength(4));
+			await waitFor(() => expect(result.current.transactions).toHaveLength(2));
 		});
 
 		const mockTransactionsAggregate = jest
-			.spyOn(profile.transactionAggregate(), "transactions")
+			.spyOn(profile.transactionAggregate(), "all")
 			.mockImplementation(() => {
 				const { data } = require("tests/fixtures/coins/ark/devnet/transactions.json");
 				const response = {
@@ -85,7 +85,7 @@ describe("useProfileTransactions", () => {
 		mockTransactionsAggregate.mockRestore();
 
 		const mockEmptyTransactions = jest
-			.spyOn(profile.transactionAggregate(), "transactions")
+			.spyOn(profile.transactionAggregate(), "all")
 			.mockImplementation(() => {
 				const response = {
 					hasMorePages: () => false,
@@ -114,7 +114,7 @@ describe("useProfileTransactions", () => {
 	it("#fetchTransactions", async () => {
 		const profile = env.profiles().findById(getDefaultProfileId());
 
-		await profile.restore();
+		await env.profiles().restore(profile);
 		await profile.sync();
 
 		const wrapper = ({ children }: any) => (
@@ -133,7 +133,7 @@ describe("useProfileTransactions", () => {
 			mode: "all",
 			flush: true,
 		});
-		await waitFor(() => expect(response.items()).toHaveLength(4));
+		await waitFor(() => expect(response.items()).toHaveLength(2));
 
 		//@ts-ignore
 		const responseEmpty = await current.fetchTransactions({});
@@ -144,7 +144,7 @@ describe("useProfileTransactions", () => {
 	it("#updateFilters", async () => {
 		const profile = env.profiles().findById(getDefaultProfileId());
 
-		await profile.restore();
+		await env.profiles().restore(profile);
 		await profile.sync();
 
 		const wrapper = ({ children }: any) => (
@@ -173,7 +173,7 @@ describe("useProfileTransactions", () => {
 			await waitFor(() => expect(current.transactions).toHaveLength(0));
 
 			const mockTransactionsAggregate = jest
-				.spyOn(profile.transactionAggregate(), "sentTransactions")
+				.spyOn(profile.transactionAggregate(), "sent")
 				.mockImplementation(() => {
 					const response = {
 						hasMorePages: () => true,
@@ -195,7 +195,7 @@ describe("useProfileTransactions", () => {
 	it("#fetchMore", async () => {
 		const profile = env.profiles().findById(getDefaultProfileId());
 
-		await profile.restore();
+		await env.profiles().restore(profile);
 		await profile.sync();
 
 		const wrapper = ({ children }: any) => (
@@ -216,10 +216,10 @@ describe("useProfileTransactions", () => {
 
 			await result.current.fetchMore();
 
-			await waitFor(() => expect(result.current.transactions.length).toEqual(4), { timeout: 4000 });
+			await waitFor(() => expect(result.current.transactions.length).toEqual(2), { timeout: 4000 });
 
 			const mockTransactionsAggregate = jest
-				.spyOn(profile.transactionAggregate(), "transactions")
+				.spyOn(profile.transactionAggregate(), "all")
 				.mockImplementation(() => {
 					const response = {
 						hasMorePages: () => false,
@@ -230,7 +230,7 @@ describe("useProfileTransactions", () => {
 
 			await result.current.fetchMore();
 
-			await waitFor(() => expect(result.current.transactions.length).toEqual(4), { timeout: 4000 });
+			await waitFor(() => expect(result.current.transactions.length).toEqual(2), { timeout: 4000 });
 			mockTransactionsAggregate.mockRestore();
 		});
 	});

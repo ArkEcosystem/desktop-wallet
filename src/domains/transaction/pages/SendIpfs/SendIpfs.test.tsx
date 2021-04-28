@@ -47,13 +47,6 @@ describe("SendIpfs", () => {
 	beforeAll(async () => {
 		profile = env.profiles().findById(fixtureProfileId);
 
-		await profile.restore();
-		await profile.sync();
-
-		wallet = profile.wallets().findById("ac38fe6d-4b67-4ef1-85be-17c5f6841129");
-
-		jest.spyOn(wallet, "isDelegate").mockImplementation(() => true);
-
 		nock("https://dwallets.ark.io")
 			.get("/api/transactions")
 			.query({ address: "D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD" })
@@ -61,7 +54,14 @@ describe("SendIpfs", () => {
 			.get("/api/transactions/1e9b975eff66a731095876c3b6cbff14fd4dec3bb37a4127c46db3d69131067e")
 			.reply(200, ipfsFixture);
 
+		await env.profiles().restore(profile);
+		await profile.sync();
 		await syncFees();
+
+		wallet = profile.wallets().findById("ac38fe6d-4b67-4ef1-85be-17c5f6841129");
+		await wallet.synchroniser().identity();
+
+		jest.spyOn(wallet, "isDelegate").mockImplementation(() => true);
 	});
 
 	it("should render form step", async () => {
@@ -113,9 +113,9 @@ describe("SendIpfs", () => {
 	it("should render summary step", async () => {
 		const { result: form } = renderHook(() => useForm());
 
-		const transaction = (await wallet.transactions()).findById(
-			"1e9b975eff66a731095876c3b6cbff14fd4dec3bb37a4127c46db3d69131067e",
-		);
+		const transaction = await wallet
+			.transactionIndex()
+			.findById("1e9b975eff66a731095876c3b6cbff14fd4dec3bb37a4127c46db3d69131067e");
 
 		hookAct(() => {
 			const { getByTestId, asFragment } = render(
@@ -151,7 +151,8 @@ describe("SendIpfs", () => {
 
 		await waitFor(() => expect(getByTestId("SendIpfs__form-step")).toBeTruthy());
 
-		await waitFor(() => expect(getByTestId("SelectNetworkInput__input")).toHaveValue(wallet.network().name()));
+		const networkLabel = `${wallet.network().coin()} ${wallet.network().name()}`;
+		await waitFor(() => expect(getByTestId("SelectNetworkInput__input")).toHaveValue(networkLabel));
 		await waitFor(() => expect(getByTestId("SelectAddress__input")).toHaveValue(wallet.address()));
 
 		// Hash
@@ -219,7 +220,8 @@ describe("SendIpfs", () => {
 
 		await waitFor(() => expect(getByTestId("SendIpfs__form-step")).toBeTruthy());
 
-		await waitFor(() => expect(getByTestId("SelectNetworkInput__input")).toHaveValue(wallet.network().name()));
+		const networkLabel = `${wallet.network().coin()} ${wallet.network().name()}`;
+		await waitFor(() => expect(getByTestId("SelectNetworkInput__input")).toHaveValue(networkLabel));
 		await waitFor(() => expect(getByTestId("SelectAddress__input")).toHaveValue(wallet.address()));
 
 		// Hash
@@ -309,7 +311,8 @@ describe("SendIpfs", () => {
 
 		expect(getByTestId("SendIpfs__form-step")).toBeTruthy();
 
-		expect(getByTestId("SelectNetworkInput__input")).toHaveValue(wallet.network().name());
+		const networkLabel = `${wallet.network().coin()} ${wallet.network().name()}`;
+		expect(getByTestId("SelectNetworkInput__input")).toHaveValue(networkLabel);
 		expect(getByTestId("SelectAddress__input")).toHaveValue(wallet.address());
 
 		// Hash
@@ -356,7 +359,8 @@ describe("SendIpfs", () => {
 
 		expect(getByTestId("SendIpfs__form-step")).toBeTruthy();
 
-		expect(getByTestId("SelectNetworkInput__input")).toHaveValue(wallet.network().name());
+		const networkLabel = `${wallet.network().coin()} ${wallet.network().name()}`;
+		expect(getByTestId("SelectNetworkInput__input")).toHaveValue(networkLabel);
 		expect(getByTestId("SelectAddress__input")).toHaveValue(wallet.address());
 
 		// Hash
@@ -647,7 +651,8 @@ describe("SendIpfs", () => {
 
 		await waitFor(() => expect(getByTestId("SendIpfs__form-step")).toBeTruthy());
 
-		await waitFor(() => expect(getByTestId("SelectNetworkInput__input")).toHaveValue(wallet.network().name()));
+		const networkLabel = `${wallet.network().coin()} ${wallet.network().name()}`;
+		await waitFor(() => expect(getByTestId("SelectNetworkInput__input")).toHaveValue(networkLabel));
 		await waitFor(() => expect(getByTestId("SelectAddress__input")).toHaveValue(wallet.address()));
 
 		// Hash
@@ -755,7 +760,8 @@ describe("SendIpfs", () => {
 
 		await waitFor(() => expect(getByTestId("SendIpfs__form-step")).toBeTruthy());
 
-		await waitFor(() => expect(getByTestId("SelectNetworkInput__input")).toHaveValue(wallet.network().name()));
+		const networkLabel = `${wallet.network().coin()} ${wallet.network().name()}`;
+		await waitFor(() => expect(getByTestId("SelectNetworkInput__input")).toHaveValue(networkLabel));
 		await waitFor(() => expect(getByTestId("SelectAddress__input")).toHaveValue(wallet.address()));
 
 		// Hash
@@ -800,8 +806,8 @@ describe("SendIpfs", () => {
 
 	it("should send an IPFS transaction using encryption password", async () => {
 		const encryptedWallet = profile.wallets().first();
-		const walletUsesWIFMock = jest.spyOn(encryptedWallet, "usesWIF").mockReturnValue(true);
-		const walletWifMock = jest.spyOn(encryptedWallet, "wif").mockImplementation((password) => {
+		const walletUsesWIFMock = jest.spyOn(encryptedWallet.wif(), "exists").mockReturnValue(true);
+		const walletWifMock = jest.spyOn(encryptedWallet.wif(), "get").mockImplementation(() => {
 			const wif = "S9rDfiJ2ar4DpWAQuaXECPTJHfTZ3XjCPv15gjxu4cHJZKzABPyV";
 			return Promise.resolve(wif);
 		});
@@ -825,9 +831,8 @@ describe("SendIpfs", () => {
 
 		await waitFor(() => expect(getByTestId("SendIpfs__form-step")).toBeTruthy());
 
-		await waitFor(() =>
-			expect(getByTestId("SelectNetworkInput__input")).toHaveValue(encryptedWallet.network().name()),
-		);
+		const networkLabel = `${wallet.network().coin()} ${wallet.network().name()}`;
+		await waitFor(() => expect(getByTestId("SelectNetworkInput__input")).toHaveValue(networkLabel));
 		await waitFor(() => expect(getByTestId("SelectAddress__input")).toHaveValue(encryptedWallet.address()));
 
 		// Hash

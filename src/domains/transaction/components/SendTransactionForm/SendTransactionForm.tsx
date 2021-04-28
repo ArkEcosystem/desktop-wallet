@@ -56,7 +56,7 @@ export const SendTransactionForm = ({
 
 		if (network) {
 			setTransactionFees(network);
-			setDynamicFees(network.can(Coins.FeatureFlag.MiscellaneousDynamicFees));
+			setDynamicFees(network.allows(Coins.FeatureFlag.MiscellaneousDynamicFees));
 
 			return setWallets(profile.wallets().findByCoinWithNetwork(network.coin(), network.id()));
 		}

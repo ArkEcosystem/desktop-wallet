@@ -245,7 +245,7 @@ describe("AuthenticationStep", () => {
 	});
 
 	it("should render with encryption password input", async () => {
-		jest.spyOn(wallet, "usesWIF").mockReturnValue(true);
+		jest.spyOn(wallet.wif(), "exists").mockReturnValue(true);
 
 		const { result } = renderHook(() => useForm({ mode: "onChange" }));
 		const { getByTestId } = renderWithRouter(
@@ -262,8 +262,8 @@ describe("AuthenticationStep", () => {
 	it("should render with encryption password input and second mnemonic", async () => {
 		wallet = profile.wallets().findById(getDefaultWalletId());
 
-		jest.spyOn(wallet, "usesWIF").mockReturnValue(true);
-		jest.spyOn(wallet, "wif").mockImplementation((password) => {
+		jest.spyOn(wallet.wif(), "exists").mockReturnValue(true);
+		jest.spyOn(wallet.wif(), "get").mockImplementation(() => {
 			const wif = "S9rDfiJ2ar4DpWAQuaXECPTJHfTZ3XjCPv15gjxu4cHJZKzABPyV";
 			return Promise.resolve(wif);
 		});

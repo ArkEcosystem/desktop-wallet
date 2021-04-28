@@ -1,5 +1,5 @@
 import { Base64 } from "@arkecosystem/platform-sdk-crypto";
-import { Environment, StorageData, Helpers, container } from "@arkecosystem/platform-sdk-profiles";
+import { Environment, StorageData, container } from "@arkecosystem/platform-sdk-profiles";
 import fixtureData from "tests/fixtures/env/storage.json";
 import TestingPasswords from "tests/fixtures/env/testing-passwords.json";
 
