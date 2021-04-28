@@ -198,7 +198,7 @@ exports[`ImportWallet should render 3rd step 1`] = `
         data-testid="TransactionDetail"
       >
         <div
-          class="flex-1 space-y-2"
+          class="flex-1 space-y-2 flex-shrink overflow-hidden whitespace-nowrap"
         >
           <div
             class="text-sm font-semibold text-theme-secondary-700 no-ligatures"
@@ -233,7 +233,7 @@ exports[`ImportWallet should render 3rd step 1`] = `
         data-testid="TransactionDetail"
       >
         <div
-          class="flex-1 space-y-2"
+          class="flex-1 space-y-2 flex-shrink overflow-hidden whitespace-nowrap"
         >
           <div
             class="text-sm font-semibold text-theme-secondary-700 no-ligatures"
@@ -244,10 +244,10 @@ exports[`ImportWallet should render 3rd step 1`] = `
             class="font-semibold"
           >
             <div
-              class="inline-flex items-center no-ligatures"
+              class="w-full flex items-center no-ligatures overflow-hidden whitespace-nowrap"
             >
               <span
-                class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-text truncate font-semibold text-base"
+                class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-text font-semibold text-base"
                 data-testid="address__wallet-address"
               >
                 DC8ghUdhS8w8d11K8cFQ37YsLBFhL3Dq2P
@@ -256,7 +256,7 @@ exports[`ImportWallet should render 3rd step 1`] = `
           </div>
         </div>
         <div
-          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB"
+          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB flex-shrink-0"
           data-testid="Avatar"
         >
           <div
@@ -276,7 +276,7 @@ exports[`ImportWallet should render 3rd step 1`] = `
       data-testid="TransactionDetail"
     >
       <div
-        class="flex-1 space-y-2"
+        class="flex-1 space-y-2 flex-shrink overflow-hidden whitespace-nowrap"
       >
         <div
           class="text-sm font-semibold text-theme-secondary-700 no-ligatures"
@@ -576,7 +576,7 @@ exports[`ImportWallet should render as ledger import 1`] = `
                     data-testid="navbar__useractions"
                   >
                     <div
-                      class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB"
+                      class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB flex-shrink-0"
                       data-testid="Avatar"
                     >
                       <div

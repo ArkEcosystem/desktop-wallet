@@ -81,6 +81,7 @@ export const Transactions = memo(
 								activeTransactionType: type,
 							});
 						}}
+						isDisabled={wallets.length === 0}
 						className="mt-6"
 					/>
 				</div>

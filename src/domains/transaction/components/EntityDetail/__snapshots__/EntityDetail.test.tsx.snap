@@ -54,7 +54,7 @@ exports[`EntityDetail should render a business entity resignation modal 1`] = `
             data-testid="TransactionDetail"
           >
             <div
-              class="flex-1 space-y-2"
+              class="flex-1 space-y-2 flex-shrink overflow-hidden whitespace-nowrap"
             >
               <div
                 class="text-sm font-semibold text-theme-secondary-700 no-ligatures"
@@ -65,7 +65,7 @@ exports[`EntityDetail should render a business entity resignation modal 1`] = `
                 class="font-semibold"
               >
                 <div
-                  class="inline-flex items-center no-ligatures"
+                  class="w-full flex items-center no-ligatures overflow-hidden whitespace-nowrap"
                 >
                   <span
                     class="max-w-24 flex-auto truncate mr-2 font-semibold text-base text-theme-text"
@@ -79,10 +79,10 @@ exports[`EntityDetail should render a business entity resignation modal 1`] = `
                     </span>
                   </span>
                   <span
-                    class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-secondary-500 dark:text-theme-secondary-700 truncate font-semibold text-base"
+                    class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-secondary-500 dark:text-theme-secondary-700 font-semibold text-base"
                     data-testid="address__wallet-address"
                   >
-                    D8rr7B…s6YUYD
+                    D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD
                   </span>
                 </div>
               </div>
@@ -104,7 +104,7 @@ exports[`EntityDetail should render a business entity resignation modal 1`] = `
                 </div>
               </div>
               <div
-                class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB"
+                class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB flex-shrink-0"
                 data-testid="Avatar"
               >
                 <div
@@ -124,7 +124,7 @@ exports[`EntityDetail should render a business entity resignation modal 1`] = `
             data-testid="TransactionDetail"
           >
             <div
-              class="flex-1 space-y-2"
+              class="flex-1 space-y-2 flex-shrink overflow-hidden whitespace-nowrap"
             >
               <div
                 class="text-sm font-semibold text-theme-secondary-700 no-ligatures"
@@ -147,7 +147,7 @@ exports[`EntityDetail should render a business entity resignation modal 1`] = `
             data-testid="TransactionDetail"
           >
             <div
-              class="flex-1 space-y-2"
+              class="flex-1 space-y-2 flex-shrink overflow-hidden whitespace-nowrap"
             >
               <div
                 class="text-sm font-semibold text-theme-secondary-700 no-ligatures"
@@ -166,7 +166,7 @@ exports[`EntityDetail should render a business entity resignation modal 1`] = `
             data-testid="TransactionDetail"
           >
             <div
-              class="flex-1 space-y-2"
+              class="flex-1 space-y-2 flex-shrink overflow-hidden whitespace-nowrap"
             >
               <div
                 class="text-sm font-semibold text-theme-secondary-700 no-ligatures"
@@ -200,7 +200,7 @@ exports[`EntityDetail should render a business entity resignation modal 1`] = `
             data-testid="TransactionDetail"
           >
             <div
-              class="flex-1 space-y-2"
+              class="flex-1 space-y-2 flex-shrink overflow-hidden whitespace-nowrap"
             >
               <div
                 class="text-sm font-semibold text-theme-secondary-700 no-ligatures"
@@ -226,10 +226,10 @@ exports[`EntityDetail should render a business entity resignation modal 1`] = `
                         class="no-underline break-all pointer-events-auto border-b group-hover:border-0 active:border-0 border-dotted"
                       >
                         <span
-                          class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-primary-700"
+                          class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-primary-700"
                           data-testid="TruncateMiddle"
                         >
-                          ee4175091d9f4…9d09bcf3ecefe
+                          ee4175091d9f4dacf5fed213711c3e0e4cc371e37afa7bce0429d09bcf3ecefe
                         </span>
                       </span>
                       <div
@@ -271,7 +271,7 @@ exports[`EntityDetail should render a business entity resignation modal 1`] = `
             data-testid="TransactionDetail"
           >
             <div
-              class="flex-1 space-y-2"
+              class="flex-1 space-y-2 flex-shrink overflow-hidden whitespace-nowrap"
             >
               <div
                 class="text-sm font-semibold text-theme-secondary-700 no-ligatures"
@@ -297,10 +297,10 @@ exports[`EntityDetail should render a business entity resignation modal 1`] = `
                         class="no-underline break-all pointer-events-auto border-b group-hover:border-0 active:border-0 border-dotted"
                       >
                         <span
-                          class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-primary-700"
+                          class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-primary-700"
                           data-testid="TruncateMiddle"
                         >
-                          71fd1a494ded5…972b8075d67e9
+                          71fd1a494ded5430586f4dd1c79c3ac77bf38120e868c8f8980972b8075d67e9
                         </span>
                       </span>
                       <div
@@ -396,7 +396,7 @@ exports[`EntityDetail should render a business entity update modal 1`] = `
             data-testid="TransactionDetail"
           >
             <div
-              class="flex-1 space-y-2"
+              class="flex-1 space-y-2 flex-shrink overflow-hidden whitespace-nowrap"
             >
               <div
                 class="text-sm font-semibold text-theme-secondary-700 no-ligatures"
@@ -407,7 +407,7 @@ exports[`EntityDetail should render a business entity update modal 1`] = `
                 class="font-semibold"
               >
                 <div
-                  class="inline-flex items-center no-ligatures"
+                  class="w-full flex items-center no-ligatures overflow-hidden whitespace-nowrap"
                 >
                   <span
                     class="max-w-24 flex-auto truncate mr-2 font-semibold text-base text-theme-text"
@@ -421,10 +421,10 @@ exports[`EntityDetail should render a business entity update modal 1`] = `
                     </span>
                   </span>
                   <span
-                    class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-secondary-500 dark:text-theme-secondary-700 truncate font-semibold text-base"
+                    class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-secondary-500 dark:text-theme-secondary-700 font-semibold text-base"
                     data-testid="address__wallet-address"
                   >
-                    D8rr7B…s6YUYD
+                    D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD
                   </span>
                 </div>
               </div>
@@ -446,7 +446,7 @@ exports[`EntityDetail should render a business entity update modal 1`] = `
                 </div>
               </div>
               <div
-                class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB"
+                class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB flex-shrink-0"
                 data-testid="Avatar"
               >
                 <div
@@ -466,7 +466,7 @@ exports[`EntityDetail should render a business entity update modal 1`] = `
             data-testid="TransactionDetail"
           >
             <div
-              class="flex-1 space-y-2"
+              class="flex-1 space-y-2 flex-shrink overflow-hidden whitespace-nowrap"
             >
               <div
                 class="text-sm font-semibold text-theme-secondary-700 no-ligatures"
@@ -489,7 +489,7 @@ exports[`EntityDetail should render a business entity update modal 1`] = `
             data-testid="TransactionDetail"
           >
             <div
-              class="flex-1 space-y-2"
+              class="flex-1 space-y-2 flex-shrink overflow-hidden whitespace-nowrap"
             >
               <div
                 class="text-sm font-semibold text-theme-secondary-700 no-ligatures"
@@ -508,7 +508,7 @@ exports[`EntityDetail should render a business entity update modal 1`] = `
             data-testid="TransactionDetail"
           >
             <div
-              class="flex-1 space-y-2"
+              class="flex-1 space-y-2 flex-shrink overflow-hidden whitespace-nowrap"
             >
               <div
                 class="text-sm font-semibold text-theme-secondary-700 no-ligatures"
@@ -542,7 +542,7 @@ exports[`EntityDetail should render a business entity update modal 1`] = `
             data-testid="TransactionDetail"
           >
             <div
-              class="flex-1 space-y-2"
+              class="flex-1 space-y-2 flex-shrink overflow-hidden whitespace-nowrap"
             >
               <div
                 class="text-sm font-semibold text-theme-secondary-700 no-ligatures"
@@ -568,10 +568,10 @@ exports[`EntityDetail should render a business entity update modal 1`] = `
                         class="no-underline break-all pointer-events-auto border-b group-hover:border-0 active:border-0 border-dotted"
                       >
                         <span
-                          class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-primary-700"
+                          class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-primary-700"
                           data-testid="TruncateMiddle"
                         >
-                          ee4175091d9f4…9d09bcf3ecefe
+                          ee4175091d9f4dacf5fed213711c3e0e4cc371e37afa7bce0429d09bcf3ecefe
                         </span>
                       </span>
                       <div
@@ -613,7 +613,7 @@ exports[`EntityDetail should render a business entity update modal 1`] = `
             data-testid="TransactionDetail"
           >
             <div
-              class="flex-1 space-y-2"
+              class="flex-1 space-y-2 flex-shrink overflow-hidden whitespace-nowrap"
             >
               <div
                 class="text-sm font-semibold text-theme-secondary-700 no-ligatures"
@@ -639,10 +639,10 @@ exports[`EntityDetail should render a business entity update modal 1`] = `
                         class="no-underline break-all pointer-events-auto border-b group-hover:border-0 active:border-0 border-dotted"
                       >
                         <span
-                          class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-primary-700"
+                          class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-primary-700"
                           data-testid="TruncateMiddle"
                         >
-                          71fd1a494ded5…972b8075d67e9
+                          71fd1a494ded5430586f4dd1c79c3ac77bf38120e868c8f8980972b8075d67e9
                         </span>
                       </span>
                       <div
@@ -738,7 +738,7 @@ exports[`EntityDetail should render a modal 1`] = `
             data-testid="TransactionDetail"
           >
             <div
-              class="flex-1 space-y-2"
+              class="flex-1 space-y-2 flex-shrink overflow-hidden whitespace-nowrap"
             >
               <div
                 class="text-sm font-semibold text-theme-secondary-700 no-ligatures"
@@ -749,7 +749,7 @@ exports[`EntityDetail should render a modal 1`] = `
                 class="font-semibold"
               >
                 <div
-                  class="inline-flex items-center no-ligatures"
+                  class="w-full flex items-center no-ligatures overflow-hidden whitespace-nowrap"
                 >
                   <span
                     class="max-w-24 flex-auto truncate mr-2 font-semibold text-base text-theme-text"
@@ -763,10 +763,10 @@ exports[`EntityDetail should render a modal 1`] = `
                     </span>
                   </span>
                   <span
-                    class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-secondary-500 dark:text-theme-secondary-700 truncate font-semibold text-base"
+                    class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-secondary-500 dark:text-theme-secondary-700 font-semibold text-base"
                     data-testid="address__wallet-address"
                   >
-                    D8rr7B…s6YUYD
+                    D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD
                   </span>
                 </div>
               </div>
@@ -788,7 +788,7 @@ exports[`EntityDetail should render a modal 1`] = `
                 </div>
               </div>
               <div
-                class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB"
+                class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB flex-shrink-0"
                 data-testid="Avatar"
               >
                 <div
@@ -808,7 +808,7 @@ exports[`EntityDetail should render a modal 1`] = `
             data-testid="TransactionDetail"
           >
             <div
-              class="flex-1 space-y-2"
+              class="flex-1 space-y-2 flex-shrink overflow-hidden whitespace-nowrap"
             >
               <div
                 class="text-sm font-semibold text-theme-secondary-700 no-ligatures"
@@ -831,7 +831,7 @@ exports[`EntityDetail should render a modal 1`] = `
             data-testid="TransactionDetail"
           >
             <div
-              class="flex-1 space-y-2"
+              class="flex-1 space-y-2 flex-shrink overflow-hidden whitespace-nowrap"
             >
               <div
                 class="text-sm font-semibold text-theme-secondary-700 no-ligatures"
@@ -850,7 +850,7 @@ exports[`EntityDetail should render a modal 1`] = `
             data-testid="TransactionDetail"
           >
             <div
-              class="flex-1 space-y-2"
+              class="flex-1 space-y-2 flex-shrink overflow-hidden whitespace-nowrap"
             >
               <div
                 class="text-sm font-semibold text-theme-secondary-700 no-ligatures"
@@ -884,7 +884,7 @@ exports[`EntityDetail should render a modal 1`] = `
             data-testid="TransactionDetail"
           >
             <div
-              class="flex-1 space-y-2"
+              class="flex-1 space-y-2 flex-shrink overflow-hidden whitespace-nowrap"
             >
               <div
                 class="text-sm font-semibold text-theme-secondary-700 no-ligatures"
@@ -910,10 +910,10 @@ exports[`EntityDetail should render a modal 1`] = `
                         class="no-underline break-all pointer-events-auto border-b group-hover:border-0 active:border-0 border-dotted"
                       >
                         <span
-                          class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-primary-700"
+                          class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-primary-700"
                           data-testid="TruncateMiddle"
                         >
-                          ee4175091d9f4…9d09bcf3ecefe
+                          ee4175091d9f4dacf5fed213711c3e0e4cc371e37afa7bce0429d09bcf3ecefe
                         </span>
                       </span>
                       <div
@@ -955,7 +955,7 @@ exports[`EntityDetail should render a modal 1`] = `
             data-testid="TransactionDetail"
           >
             <div
-              class="flex-1 space-y-2"
+              class="flex-1 space-y-2 flex-shrink overflow-hidden whitespace-nowrap"
             >
               <div
                 class="text-sm font-semibold text-theme-secondary-700 no-ligatures"
@@ -981,10 +981,10 @@ exports[`EntityDetail should render a modal 1`] = `
                         class="no-underline break-all pointer-events-auto border-b group-hover:border-0 active:border-0 border-dotted"
                       >
                         <span
-                          class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-primary-700"
+                          class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-primary-700"
                           data-testid="TruncateMiddle"
                         >
-                          71fd1a494ded5…972b8075d67e9
+                          71fd1a494ded5430586f4dd1c79c3ac77bf38120e868c8f8980972b8075d67e9
                         </span>
                       </span>
                       <div
@@ -1080,7 +1080,7 @@ exports[`EntityDetail should render a modal without a wallet alias 1`] = `
             data-testid="TransactionDetail"
           >
             <div
-              class="flex-1 space-y-2"
+              class="flex-1 space-y-2 flex-shrink overflow-hidden whitespace-nowrap"
             >
               <div
                 class="text-sm font-semibold text-theme-secondary-700 no-ligatures"
@@ -1091,10 +1091,10 @@ exports[`EntityDetail should render a modal without a wallet alias 1`] = `
                 class="font-semibold"
               >
                 <div
-                  class="inline-flex items-center no-ligatures"
+                  class="w-full flex items-center no-ligatures overflow-hidden whitespace-nowrap"
                 >
                   <span
-                    class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-text truncate font-semibold text-base"
+                    class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-text font-semibold text-base"
                     data-testid="address__wallet-address"
                   >
                     D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD
@@ -1119,7 +1119,7 @@ exports[`EntityDetail should render a modal without a wallet alias 1`] = `
                 </div>
               </div>
               <div
-                class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB"
+                class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB flex-shrink-0"
                 data-testid="Avatar"
               >
                 <div
@@ -1139,7 +1139,7 @@ exports[`EntityDetail should render a modal without a wallet alias 1`] = `
             data-testid="TransactionDetail"
           >
             <div
-              class="flex-1 space-y-2"
+              class="flex-1 space-y-2 flex-shrink overflow-hidden whitespace-nowrap"
             >
               <div
                 class="text-sm font-semibold text-theme-secondary-700 no-ligatures"
@@ -1162,7 +1162,7 @@ exports[`EntityDetail should render a modal without a wallet alias 1`] = `
             data-testid="TransactionDetail"
           >
             <div
-              class="flex-1 space-y-2"
+              class="flex-1 space-y-2 flex-shrink overflow-hidden whitespace-nowrap"
             >
               <div
                 class="text-sm font-semibold text-theme-secondary-700 no-ligatures"
@@ -1181,7 +1181,7 @@ exports[`EntityDetail should render a modal without a wallet alias 1`] = `
             data-testid="TransactionDetail"
           >
             <div
-              class="flex-1 space-y-2"
+              class="flex-1 space-y-2 flex-shrink overflow-hidden whitespace-nowrap"
             >
               <div
                 class="text-sm font-semibold text-theme-secondary-700 no-ligatures"
@@ -1215,7 +1215,7 @@ exports[`EntityDetail should render a modal without a wallet alias 1`] = `
             data-testid="TransactionDetail"
           >
             <div
-              class="flex-1 space-y-2"
+              class="flex-1 space-y-2 flex-shrink overflow-hidden whitespace-nowrap"
             >
               <div
                 class="text-sm font-semibold text-theme-secondary-700 no-ligatures"
@@ -1241,10 +1241,10 @@ exports[`EntityDetail should render a modal without a wallet alias 1`] = `
                         class="no-underline break-all pointer-events-auto border-b group-hover:border-0 active:border-0 border-dotted"
                       >
                         <span
-                          class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-primary-700"
+                          class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-primary-700"
                           data-testid="TruncateMiddle"
                         >
-                          ee4175091d9f4…9d09bcf3ecefe
+                          ee4175091d9f4dacf5fed213711c3e0e4cc371e37afa7bce0429d09bcf3ecefe
                         </span>
                       </span>
                       <div
@@ -1286,7 +1286,7 @@ exports[`EntityDetail should render a modal without a wallet alias 1`] = `
             data-testid="TransactionDetail"
           >
             <div
-              class="flex-1 space-y-2"
+              class="flex-1 space-y-2 flex-shrink overflow-hidden whitespace-nowrap"
             >
               <div
                 class="text-sm font-semibold text-theme-secondary-700 no-ligatures"
@@ -1312,10 +1312,10 @@ exports[`EntityDetail should render a modal without a wallet alias 1`] = `
                         class="no-underline break-all pointer-events-auto border-b group-hover:border-0 active:border-0 border-dotted"
                       >
                         <span
-                          class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-primary-700"
+                          class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-primary-700"
                           data-testid="TruncateMiddle"
                         >
-                          71fd1a494ded5…972b8075d67e9
+                          71fd1a494ded5430586f4dd1c79c3ac77bf38120e868c8f8980972b8075d67e9
                         </span>
                       </span>
                       <div
@@ -1411,7 +1411,7 @@ exports[`EntityDetail should render a module entity registration modal 1`] = `
             data-testid="TransactionDetail"
           >
             <div
-              class="flex-1 space-y-2"
+              class="flex-1 space-y-2 flex-shrink overflow-hidden whitespace-nowrap"
             >
               <div
                 class="text-sm font-semibold text-theme-secondary-700 no-ligatures"
@@ -1422,7 +1422,7 @@ exports[`EntityDetail should render a module entity registration modal 1`] = `
                 class="font-semibold"
               >
                 <div
-                  class="inline-flex items-center no-ligatures"
+                  class="w-full flex items-center no-ligatures overflow-hidden whitespace-nowrap"
                 >
                   <span
                     class="max-w-24 flex-auto truncate mr-2 font-semibold text-base text-theme-text"
@@ -1436,10 +1436,10 @@ exports[`EntityDetail should render a module entity registration modal 1`] = `
                     </span>
                   </span>
                   <span
-                    class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-secondary-500 dark:text-theme-secondary-700 truncate font-semibold text-base"
+                    class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-secondary-500 dark:text-theme-secondary-700 font-semibold text-base"
                     data-testid="address__wallet-address"
                   >
-                    D8rr7B…s6YUYD
+                    D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD
                   </span>
                 </div>
               </div>
@@ -1461,7 +1461,7 @@ exports[`EntityDetail should render a module entity registration modal 1`] = `
                 </div>
               </div>
               <div
-                class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB"
+                class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB flex-shrink-0"
                 data-testid="Avatar"
               >
                 <div
@@ -1481,7 +1481,7 @@ exports[`EntityDetail should render a module entity registration modal 1`] = `
             data-testid="TransactionDetail"
           >
             <div
-              class="flex-1 space-y-2"
+              class="flex-1 space-y-2 flex-shrink overflow-hidden whitespace-nowrap"
             >
               <div
                 class="text-sm font-semibold text-theme-secondary-700 no-ligatures"
@@ -1504,7 +1504,7 @@ exports[`EntityDetail should render a module entity registration modal 1`] = `
             data-testid="TransactionDetail"
           >
             <div
-              class="flex-1 space-y-2"
+              class="flex-1 space-y-2 flex-shrink overflow-hidden whitespace-nowrap"
             >
               <div
                 class="text-sm font-semibold text-theme-secondary-700 no-ligatures"
@@ -1523,7 +1523,7 @@ exports[`EntityDetail should render a module entity registration modal 1`] = `
             data-testid="TransactionDetail"
           >
             <div
-              class="flex-1 space-y-2"
+              class="flex-1 space-y-2 flex-shrink overflow-hidden whitespace-nowrap"
             >
               <div
                 class="text-sm font-semibold text-theme-secondary-700 no-ligatures"
@@ -1557,7 +1557,7 @@ exports[`EntityDetail should render a module entity registration modal 1`] = `
             data-testid="TransactionDetail"
           >
             <div
-              class="flex-1 space-y-2"
+              class="flex-1 space-y-2 flex-shrink overflow-hidden whitespace-nowrap"
             >
               <div
                 class="text-sm font-semibold text-theme-secondary-700 no-ligatures"
@@ -1583,10 +1583,10 @@ exports[`EntityDetail should render a module entity registration modal 1`] = `
                         class="no-underline break-all pointer-events-auto border-b group-hover:border-0 active:border-0 border-dotted"
                       >
                         <span
-                          class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-primary-700"
+                          class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-primary-700"
                           data-testid="TruncateMiddle"
                         >
-                          ee4175091d9f4…9d09bcf3ecefe
+                          ee4175091d9f4dacf5fed213711c3e0e4cc371e37afa7bce0429d09bcf3ecefe
                         </span>
                       </span>
                       <div
@@ -1628,7 +1628,7 @@ exports[`EntityDetail should render a module entity registration modal 1`] = `
             data-testid="TransactionDetail"
           >
             <div
-              class="flex-1 space-y-2"
+              class="flex-1 space-y-2 flex-shrink overflow-hidden whitespace-nowrap"
             >
               <div
                 class="text-sm font-semibold text-theme-secondary-700 no-ligatures"
@@ -1654,10 +1654,10 @@ exports[`EntityDetail should render a module entity registration modal 1`] = `
                         class="no-underline break-all pointer-events-auto border-b group-hover:border-0 active:border-0 border-dotted"
                       >
                         <span
-                          class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-primary-700"
+                          class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-primary-700"
                           data-testid="TruncateMiddle"
                         >
-                          71fd1a494ded5…972b8075d67e9
+                          71fd1a494ded5430586f4dd1c79c3ac77bf38120e868c8f8980972b8075d67e9
                         </span>
                       </span>
                       <div
@@ -1753,7 +1753,7 @@ exports[`EntityDetail should render a module entity resignation modal 1`] = `
             data-testid="TransactionDetail"
           >
             <div
-              class="flex-1 space-y-2"
+              class="flex-1 space-y-2 flex-shrink overflow-hidden whitespace-nowrap"
             >
               <div
                 class="text-sm font-semibold text-theme-secondary-700 no-ligatures"
@@ -1764,7 +1764,7 @@ exports[`EntityDetail should render a module entity resignation modal 1`] = `
                 class="font-semibold"
               >
                 <div
-                  class="inline-flex items-center no-ligatures"
+                  class="w-full flex items-center no-ligatures overflow-hidden whitespace-nowrap"
                 >
                   <span
                     class="max-w-24 flex-auto truncate mr-2 font-semibold text-base text-theme-text"
@@ -1778,10 +1778,10 @@ exports[`EntityDetail should render a module entity resignation modal 1`] = `
                     </span>
                   </span>
                   <span
-                    class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-secondary-500 dark:text-theme-secondary-700 truncate font-semibold text-base"
+                    class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-secondary-500 dark:text-theme-secondary-700 font-semibold text-base"
                     data-testid="address__wallet-address"
                   >
-                    D8rr7B…s6YUYD
+                    D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD
                   </span>
                 </div>
               </div>
@@ -1803,7 +1803,7 @@ exports[`EntityDetail should render a module entity resignation modal 1`] = `
                 </div>
               </div>
               <div
-                class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB"
+                class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB flex-shrink-0"
                 data-testid="Avatar"
               >
                 <div
@@ -1823,7 +1823,7 @@ exports[`EntityDetail should render a module entity resignation modal 1`] = `
             data-testid="TransactionDetail"
           >
             <div
-              class="flex-1 space-y-2"
+              class="flex-1 space-y-2 flex-shrink overflow-hidden whitespace-nowrap"
             >
               <div
                 class="text-sm font-semibold text-theme-secondary-700 no-ligatures"
@@ -1846,7 +1846,7 @@ exports[`EntityDetail should render a module entity resignation modal 1`] = `
             data-testid="TransactionDetail"
           >
             <div
-              class="flex-1 space-y-2"
+              class="flex-1 space-y-2 flex-shrink overflow-hidden whitespace-nowrap"
             >
               <div
                 class="text-sm font-semibold text-theme-secondary-700 no-ligatures"
@@ -1865,7 +1865,7 @@ exports[`EntityDetail should render a module entity resignation modal 1`] = `
             data-testid="TransactionDetail"
           >
             <div
-              class="flex-1 space-y-2"
+              class="flex-1 space-y-2 flex-shrink overflow-hidden whitespace-nowrap"
             >
               <div
                 class="text-sm font-semibold text-theme-secondary-700 no-ligatures"
@@ -1899,7 +1899,7 @@ exports[`EntityDetail should render a module entity resignation modal 1`] = `
             data-testid="TransactionDetail"
           >
             <div
-              class="flex-1 space-y-2"
+              class="flex-1 space-y-2 flex-shrink overflow-hidden whitespace-nowrap"
             >
               <div
                 class="text-sm font-semibold text-theme-secondary-700 no-ligatures"
@@ -1925,10 +1925,10 @@ exports[`EntityDetail should render a module entity resignation modal 1`] = `
                         class="no-underline break-all pointer-events-auto border-b group-hover:border-0 active:border-0 border-dotted"
                       >
                         <span
-                          class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-primary-700"
+                          class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-primary-700"
                           data-testid="TruncateMiddle"
                         >
-                          ee4175091d9f4…9d09bcf3ecefe
+                          ee4175091d9f4dacf5fed213711c3e0e4cc371e37afa7bce0429d09bcf3ecefe
                         </span>
                       </span>
                       <div
@@ -1970,7 +1970,7 @@ exports[`EntityDetail should render a module entity resignation modal 1`] = `
             data-testid="TransactionDetail"
           >
             <div
-              class="flex-1 space-y-2"
+              class="flex-1 space-y-2 flex-shrink overflow-hidden whitespace-nowrap"
             >
               <div
                 class="text-sm font-semibold text-theme-secondary-700 no-ligatures"
@@ -1996,10 +1996,10 @@ exports[`EntityDetail should render a module entity resignation modal 1`] = `
                         class="no-underline break-all pointer-events-auto border-b group-hover:border-0 active:border-0 border-dotted"
                       >
                         <span
-                          class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-primary-700"
+                          class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-primary-700"
                           data-testid="TruncateMiddle"
                         >
-                          71fd1a494ded5…972b8075d67e9
+                          71fd1a494ded5430586f4dd1c79c3ac77bf38120e868c8f8980972b8075d67e9
                         </span>
                       </span>
                       <div
@@ -2095,7 +2095,7 @@ exports[`EntityDetail should render a module entity update modal 1`] = `
             data-testid="TransactionDetail"
           >
             <div
-              class="flex-1 space-y-2"
+              class="flex-1 space-y-2 flex-shrink overflow-hidden whitespace-nowrap"
             >
               <div
                 class="text-sm font-semibold text-theme-secondary-700 no-ligatures"
@@ -2106,7 +2106,7 @@ exports[`EntityDetail should render a module entity update modal 1`] = `
                 class="font-semibold"
               >
                 <div
-                  class="inline-flex items-center no-ligatures"
+                  class="w-full flex items-center no-ligatures overflow-hidden whitespace-nowrap"
                 >
                   <span
                     class="max-w-24 flex-auto truncate mr-2 font-semibold text-base text-theme-text"
@@ -2120,10 +2120,10 @@ exports[`EntityDetail should render a module entity update modal 1`] = `
                     </span>
                   </span>
                   <span
-                    class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-secondary-500 dark:text-theme-secondary-700 truncate font-semibold text-base"
+                    class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-secondary-500 dark:text-theme-secondary-700 font-semibold text-base"
                     data-testid="address__wallet-address"
                   >
-                    D8rr7B…s6YUYD
+                    D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD
                   </span>
                 </div>
               </div>
@@ -2145,7 +2145,7 @@ exports[`EntityDetail should render a module entity update modal 1`] = `
                 </div>
               </div>
               <div
-                class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB"
+                class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB flex-shrink-0"
                 data-testid="Avatar"
               >
                 <div
@@ -2165,7 +2165,7 @@ exports[`EntityDetail should render a module entity update modal 1`] = `
             data-testid="TransactionDetail"
           >
             <div
-              class="flex-1 space-y-2"
+              class="flex-1 space-y-2 flex-shrink overflow-hidden whitespace-nowrap"
             >
               <div
                 class="text-sm font-semibold text-theme-secondary-700 no-ligatures"
@@ -2188,7 +2188,7 @@ exports[`EntityDetail should render a module entity update modal 1`] = `
             data-testid="TransactionDetail"
           >
             <div
-              class="flex-1 space-y-2"
+              class="flex-1 space-y-2 flex-shrink overflow-hidden whitespace-nowrap"
             >
               <div
                 class="text-sm font-semibold text-theme-secondary-700 no-ligatures"
@@ -2207,7 +2207,7 @@ exports[`EntityDetail should render a module entity update modal 1`] = `
             data-testid="TransactionDetail"
           >
             <div
-              class="flex-1 space-y-2"
+              class="flex-1 space-y-2 flex-shrink overflow-hidden whitespace-nowrap"
             >
               <div
                 class="text-sm font-semibold text-theme-secondary-700 no-ligatures"
@@ -2241,7 +2241,7 @@ exports[`EntityDetail should render a module entity update modal 1`] = `
             data-testid="TransactionDetail"
           >
             <div
-              class="flex-1 space-y-2"
+              class="flex-1 space-y-2 flex-shrink overflow-hidden whitespace-nowrap"
             >
               <div
                 class="text-sm font-semibold text-theme-secondary-700 no-ligatures"
@@ -2267,10 +2267,10 @@ exports[`EntityDetail should render a module entity update modal 1`] = `
                         class="no-underline break-all pointer-events-auto border-b group-hover:border-0 active:border-0 border-dotted"
                       >
                         <span
-                          class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-primary-700"
+                          class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-primary-700"
                           data-testid="TruncateMiddle"
                         >
-                          ee4175091d9f4…9d09bcf3ecefe
+                          ee4175091d9f4dacf5fed213711c3e0e4cc371e37afa7bce0429d09bcf3ecefe
                         </span>
                       </span>
                       <div
@@ -2312,7 +2312,7 @@ exports[`EntityDetail should render a module entity update modal 1`] = `
             data-testid="TransactionDetail"
           >
             <div
-              class="flex-1 space-y-2"
+              class="flex-1 space-y-2 flex-shrink overflow-hidden whitespace-nowrap"
             >
               <div
                 class="text-sm font-semibold text-theme-secondary-700 no-ligatures"
@@ -2338,10 +2338,10 @@ exports[`EntityDetail should render a module entity update modal 1`] = `
                         class="no-underline break-all pointer-events-auto border-b group-hover:border-0 active:border-0 border-dotted"
                       >
                         <span
-                          class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-primary-700"
+                          class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-primary-700"
                           data-testid="TruncateMiddle"
                         >
-                          71fd1a494ded5…972b8075d67e9
+                          71fd1a494ded5430586f4dd1c79c3ac77bf38120e868c8f8980972b8075d67e9
                         </span>
                       </span>
                       <div
@@ -2437,7 +2437,7 @@ exports[`EntityDetail should render a plugin entity registration modal 1`] = `
             data-testid="TransactionDetail"
           >
             <div
-              class="flex-1 space-y-2"
+              class="flex-1 space-y-2 flex-shrink overflow-hidden whitespace-nowrap"
             >
               <div
                 class="text-sm font-semibold text-theme-secondary-700 no-ligatures"
@@ -2448,7 +2448,7 @@ exports[`EntityDetail should render a plugin entity registration modal 1`] = `
                 class="font-semibold"
               >
                 <div
-                  class="inline-flex items-center no-ligatures"
+                  class="w-full flex items-center no-ligatures overflow-hidden whitespace-nowrap"
                 >
                   <span
                     class="max-w-24 flex-auto truncate mr-2 font-semibold text-base text-theme-text"
@@ -2462,10 +2462,10 @@ exports[`EntityDetail should render a plugin entity registration modal 1`] = `
                     </span>
                   </span>
                   <span
-                    class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-secondary-500 dark:text-theme-secondary-700 truncate font-semibold text-base"
+                    class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-secondary-500 dark:text-theme-secondary-700 font-semibold text-base"
                     data-testid="address__wallet-address"
                   >
-                    D8rr7B…s6YUYD
+                    D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD
                   </span>
                 </div>
               </div>
@@ -2487,7 +2487,7 @@ exports[`EntityDetail should render a plugin entity registration modal 1`] = `
                 </div>
               </div>
               <div
-                class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB"
+                class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB flex-shrink-0"
                 data-testid="Avatar"
               >
                 <div
@@ -2507,7 +2507,7 @@ exports[`EntityDetail should render a plugin entity registration modal 1`] = `
             data-testid="TransactionDetail"
           >
             <div
-              class="flex-1 space-y-2"
+              class="flex-1 space-y-2 flex-shrink overflow-hidden whitespace-nowrap"
             >
               <div
                 class="text-sm font-semibold text-theme-secondary-700 no-ligatures"
@@ -2530,7 +2530,7 @@ exports[`EntityDetail should render a plugin entity registration modal 1`] = `
             data-testid="TransactionDetail"
           >
             <div
-              class="flex-1 space-y-2"
+              class="flex-1 space-y-2 flex-shrink overflow-hidden whitespace-nowrap"
             >
               <div
                 class="text-sm font-semibold text-theme-secondary-700 no-ligatures"
@@ -2549,7 +2549,7 @@ exports[`EntityDetail should render a plugin entity registration modal 1`] = `
             data-testid="TransactionDetail"
           >
             <div
-              class="flex-1 space-y-2"
+              class="flex-1 space-y-2 flex-shrink overflow-hidden whitespace-nowrap"
             >
               <div
                 class="text-sm font-semibold text-theme-secondary-700 no-ligatures"
@@ -2583,7 +2583,7 @@ exports[`EntityDetail should render a plugin entity registration modal 1`] = `
             data-testid="TransactionDetail"
           >
             <div
-              class="flex-1 space-y-2"
+              class="flex-1 space-y-2 flex-shrink overflow-hidden whitespace-nowrap"
             >
               <div
                 class="text-sm font-semibold text-theme-secondary-700 no-ligatures"
@@ -2609,10 +2609,10 @@ exports[`EntityDetail should render a plugin entity registration modal 1`] = `
                         class="no-underline break-all pointer-events-auto border-b group-hover:border-0 active:border-0 border-dotted"
                       >
                         <span
-                          class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-primary-700"
+                          class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-primary-700"
                           data-testid="TruncateMiddle"
                         >
-                          ee4175091d9f4…9d09bcf3ecefe
+                          ee4175091d9f4dacf5fed213711c3e0e4cc371e37afa7bce0429d09bcf3ecefe
                         </span>
                       </span>
                       <div
@@ -2654,7 +2654,7 @@ exports[`EntityDetail should render a plugin entity registration modal 1`] = `
             data-testid="TransactionDetail"
           >
             <div
-              class="flex-1 space-y-2"
+              class="flex-1 space-y-2 flex-shrink overflow-hidden whitespace-nowrap"
             >
               <div
                 class="text-sm font-semibold text-theme-secondary-700 no-ligatures"
@@ -2680,10 +2680,10 @@ exports[`EntityDetail should render a plugin entity registration modal 1`] = `
                         class="no-underline break-all pointer-events-auto border-b group-hover:border-0 active:border-0 border-dotted"
                       >
                         <span
-                          class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-primary-700"
+                          class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-primary-700"
                           data-testid="TruncateMiddle"
                         >
-                          71fd1a494ded5…972b8075d67e9
+                          71fd1a494ded5430586f4dd1c79c3ac77bf38120e868c8f8980972b8075d67e9
                         </span>
                       </span>
                       <div
@@ -2779,7 +2779,7 @@ exports[`EntityDetail should render a plugin entity resignation modal 1`] = `
             data-testid="TransactionDetail"
           >
             <div
-              class="flex-1 space-y-2"
+              class="flex-1 space-y-2 flex-shrink overflow-hidden whitespace-nowrap"
             >
               <div
                 class="text-sm font-semibold text-theme-secondary-700 no-ligatures"
@@ -2790,7 +2790,7 @@ exports[`EntityDetail should render a plugin entity resignation modal 1`] = `
                 class="font-semibold"
               >
                 <div
-                  class="inline-flex items-center no-ligatures"
+                  class="w-full flex items-center no-ligatures overflow-hidden whitespace-nowrap"
                 >
                   <span
                     class="max-w-24 flex-auto truncate mr-2 font-semibold text-base text-theme-text"
@@ -2804,10 +2804,10 @@ exports[`EntityDetail should render a plugin entity resignation modal 1`] = `
                     </span>
                   </span>
                   <span
-                    class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-secondary-500 dark:text-theme-secondary-700 truncate font-semibold text-base"
+                    class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-secondary-500 dark:text-theme-secondary-700 font-semibold text-base"
                     data-testid="address__wallet-address"
                   >
-                    D8rr7B…s6YUYD
+                    D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD
                   </span>
                 </div>
               </div>
@@ -2829,7 +2829,7 @@ exports[`EntityDetail should render a plugin entity resignation modal 1`] = `
                 </div>
               </div>
               <div
-                class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB"
+                class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB flex-shrink-0"
                 data-testid="Avatar"
               >
                 <div
@@ -2849,7 +2849,7 @@ exports[`EntityDetail should render a plugin entity resignation modal 1`] = `
             data-testid="TransactionDetail"
           >
             <div
-              class="flex-1 space-y-2"
+              class="flex-1 space-y-2 flex-shrink overflow-hidden whitespace-nowrap"
             >
               <div
                 class="text-sm font-semibold text-theme-secondary-700 no-ligatures"
@@ -2872,7 +2872,7 @@ exports[`EntityDetail should render a plugin entity resignation modal 1`] = `
             data-testid="TransactionDetail"
           >
             <div
-              class="flex-1 space-y-2"
+              class="flex-1 space-y-2 flex-shrink overflow-hidden whitespace-nowrap"
             >
               <div
                 class="text-sm font-semibold text-theme-secondary-700 no-ligatures"
@@ -2891,7 +2891,7 @@ exports[`EntityDetail should render a plugin entity resignation modal 1`] = `
             data-testid="TransactionDetail"
           >
             <div
-              class="flex-1 space-y-2"
+              class="flex-1 space-y-2 flex-shrink overflow-hidden whitespace-nowrap"
             >
               <div
                 class="text-sm font-semibold text-theme-secondary-700 no-ligatures"
@@ -2925,7 +2925,7 @@ exports[`EntityDetail should render a plugin entity resignation modal 1`] = `
             data-testid="TransactionDetail"
           >
             <div
-              class="flex-1 space-y-2"
+              class="flex-1 space-y-2 flex-shrink overflow-hidden whitespace-nowrap"
             >
               <div
                 class="text-sm font-semibold text-theme-secondary-700 no-ligatures"
@@ -2951,10 +2951,10 @@ exports[`EntityDetail should render a plugin entity resignation modal 1`] = `
                         class="no-underline break-all pointer-events-auto border-b group-hover:border-0 active:border-0 border-dotted"
                       >
                         <span
-                          class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-primary-700"
+                          class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-primary-700"
                           data-testid="TruncateMiddle"
                         >
-                          ee4175091d9f4…9d09bcf3ecefe
+                          ee4175091d9f4dacf5fed213711c3e0e4cc371e37afa7bce0429d09bcf3ecefe
                         </span>
                       </span>
                       <div
@@ -2996,7 +2996,7 @@ exports[`EntityDetail should render a plugin entity resignation modal 1`] = `
             data-testid="TransactionDetail"
           >
             <div
-              class="flex-1 space-y-2"
+              class="flex-1 space-y-2 flex-shrink overflow-hidden whitespace-nowrap"
             >
               <div
                 class="text-sm font-semibold text-theme-secondary-700 no-ligatures"
@@ -3022,10 +3022,10 @@ exports[`EntityDetail should render a plugin entity resignation modal 1`] = `
                         class="no-underline break-all pointer-events-auto border-b group-hover:border-0 active:border-0 border-dotted"
                       >
                         <span
-                          class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-primary-700"
+                          class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-primary-700"
                           data-testid="TruncateMiddle"
                         >
-                          71fd1a494ded5…972b8075d67e9
+                          71fd1a494ded5430586f4dd1c79c3ac77bf38120e868c8f8980972b8075d67e9
                         </span>
                       </span>
                       <div
@@ -3121,7 +3121,7 @@ exports[`EntityDetail should render a plugin entity update modal 1`] = `
             data-testid="TransactionDetail"
           >
             <div
-              class="flex-1 space-y-2"
+              class="flex-1 space-y-2 flex-shrink overflow-hidden whitespace-nowrap"
             >
               <div
                 class="text-sm font-semibold text-theme-secondary-700 no-ligatures"
@@ -3132,7 +3132,7 @@ exports[`EntityDetail should render a plugin entity update modal 1`] = `
                 class="font-semibold"
               >
                 <div
-                  class="inline-flex items-center no-ligatures"
+                  class="w-full flex items-center no-ligatures overflow-hidden whitespace-nowrap"
                 >
                   <span
                     class="max-w-24 flex-auto truncate mr-2 font-semibold text-base text-theme-text"
@@ -3146,10 +3146,10 @@ exports[`EntityDetail should render a plugin entity update modal 1`] = `
                     </span>
                   </span>
                   <span
-                    class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-secondary-500 dark:text-theme-secondary-700 truncate font-semibold text-base"
+                    class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-secondary-500 dark:text-theme-secondary-700 font-semibold text-base"
                     data-testid="address__wallet-address"
                   >
-                    D8rr7B…s6YUYD
+                    D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD
                   </span>
                 </div>
               </div>
@@ -3171,7 +3171,7 @@ exports[`EntityDetail should render a plugin entity update modal 1`] = `
                 </div>
               </div>
               <div
-                class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB"
+                class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB flex-shrink-0"
                 data-testid="Avatar"
               >
                 <div
@@ -3191,7 +3191,7 @@ exports[`EntityDetail should render a plugin entity update modal 1`] = `
             data-testid="TransactionDetail"
           >
             <div
-              class="flex-1 space-y-2"
+              class="flex-1 space-y-2 flex-shrink overflow-hidden whitespace-nowrap"
             >
               <div
                 class="text-sm font-semibold text-theme-secondary-700 no-ligatures"
@@ -3214,7 +3214,7 @@ exports[`EntityDetail should render a plugin entity update modal 1`] = `
             data-testid="TransactionDetail"
           >
             <div
-              class="flex-1 space-y-2"
+              class="flex-1 space-y-2 flex-shrink overflow-hidden whitespace-nowrap"
             >
               <div
                 class="text-sm font-semibold text-theme-secondary-700 no-ligatures"
@@ -3233,7 +3233,7 @@ exports[`EntityDetail should render a plugin entity update modal 1`] = `
             data-testid="TransactionDetail"
           >
             <div
-              class="flex-1 space-y-2"
+              class="flex-1 space-y-2 flex-shrink overflow-hidden whitespace-nowrap"
             >
               <div
                 class="text-sm font-semibold text-theme-secondary-700 no-ligatures"
@@ -3267,7 +3267,7 @@ exports[`EntityDetail should render a plugin entity update modal 1`] = `
             data-testid="TransactionDetail"
           >
             <div
-              class="flex-1 space-y-2"
+              class="flex-1 space-y-2 flex-shrink overflow-hidden whitespace-nowrap"
             >
               <div
                 class="text-sm font-semibold text-theme-secondary-700 no-ligatures"
@@ -3293,10 +3293,10 @@ exports[`EntityDetail should render a plugin entity update modal 1`] = `
                         class="no-underline break-all pointer-events-auto border-b group-hover:border-0 active:border-0 border-dotted"
                       >
                         <span
-                          class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-primary-700"
+                          class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-primary-700"
                           data-testid="TruncateMiddle"
                         >
-                          ee4175091d9f4…9d09bcf3ecefe
+                          ee4175091d9f4dacf5fed213711c3e0e4cc371e37afa7bce0429d09bcf3ecefe
                         </span>
                       </span>
                       <div
@@ -3338,7 +3338,7 @@ exports[`EntityDetail should render a plugin entity update modal 1`] = `
             data-testid="TransactionDetail"
           >
             <div
-              class="flex-1 space-y-2"
+              class="flex-1 space-y-2 flex-shrink overflow-hidden whitespace-nowrap"
             >
               <div
                 class="text-sm font-semibold text-theme-secondary-700 no-ligatures"
@@ -3364,10 +3364,10 @@ exports[`EntityDetail should render a plugin entity update modal 1`] = `
                         class="no-underline break-all pointer-events-auto border-b group-hover:border-0 active:border-0 border-dotted"
                       >
                         <span
-                          class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-primary-700"
+                          class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-primary-700"
                           data-testid="TruncateMiddle"
                         >
-                          71fd1a494ded5…972b8075d67e9
+                          71fd1a494ded5430586f4dd1c79c3ac77bf38120e868c8f8980972b8075d67e9
                         </span>
                       </span>
                       <div
@@ -3463,7 +3463,7 @@ exports[`EntityDetail should render a product entity registration modal 1`] = `
             data-testid="TransactionDetail"
           >
             <div
-              class="flex-1 space-y-2"
+              class="flex-1 space-y-2 flex-shrink overflow-hidden whitespace-nowrap"
             >
               <div
                 class="text-sm font-semibold text-theme-secondary-700 no-ligatures"
@@ -3474,7 +3474,7 @@ exports[`EntityDetail should render a product entity registration modal 1`] = `
                 class="font-semibold"
               >
                 <div
-                  class="inline-flex items-center no-ligatures"
+                  class="w-full flex items-center no-ligatures overflow-hidden whitespace-nowrap"
                 >
                   <span
                     class="max-w-24 flex-auto truncate mr-2 font-semibold text-base text-theme-text"
@@ -3488,10 +3488,10 @@ exports[`EntityDetail should render a product entity registration modal 1`] = `
                     </span>
                   </span>
                   <span
-                    class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-secondary-500 dark:text-theme-secondary-700 truncate font-semibold text-base"
+                    class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-secondary-500 dark:text-theme-secondary-700 font-semibold text-base"
                     data-testid="address__wallet-address"
                   >
-                    D8rr7B…s6YUYD
+                    D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD
                   </span>
                 </div>
               </div>
@@ -3513,7 +3513,7 @@ exports[`EntityDetail should render a product entity registration modal 1`] = `
                 </div>
               </div>
               <div
-                class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB"
+                class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB flex-shrink-0"
                 data-testid="Avatar"
               >
                 <div
@@ -3533,7 +3533,7 @@ exports[`EntityDetail should render a product entity registration modal 1`] = `
             data-testid="TransactionDetail"
           >
             <div
-              class="flex-1 space-y-2"
+              class="flex-1 space-y-2 flex-shrink overflow-hidden whitespace-nowrap"
             >
               <div
                 class="text-sm font-semibold text-theme-secondary-700 no-ligatures"
@@ -3556,7 +3556,7 @@ exports[`EntityDetail should render a product entity registration modal 1`] = `
             data-testid="TransactionDetail"
           >
             <div
-              class="flex-1 space-y-2"
+              class="flex-1 space-y-2 flex-shrink overflow-hidden whitespace-nowrap"
             >
               <div
                 class="text-sm font-semibold text-theme-secondary-700 no-ligatures"
@@ -3575,7 +3575,7 @@ exports[`EntityDetail should render a product entity registration modal 1`] = `
             data-testid="TransactionDetail"
           >
             <div
-              class="flex-1 space-y-2"
+              class="flex-1 space-y-2 flex-shrink overflow-hidden whitespace-nowrap"
             >
               <div
                 class="text-sm font-semibold text-theme-secondary-700 no-ligatures"
@@ -3609,7 +3609,7 @@ exports[`EntityDetail should render a product entity registration modal 1`] = `
             data-testid="TransactionDetail"
           >
             <div
-              class="flex-1 space-y-2"
+              class="flex-1 space-y-2 flex-shrink overflow-hidden whitespace-nowrap"
             >
               <div
                 class="text-sm font-semibold text-theme-secondary-700 no-ligatures"
@@ -3635,10 +3635,10 @@ exports[`EntityDetail should render a product entity registration modal 1`] = `
                         class="no-underline break-all pointer-events-auto border-b group-hover:border-0 active:border-0 border-dotted"
                       >
                         <span
-                          class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-primary-700"
+                          class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-primary-700"
                           data-testid="TruncateMiddle"
                         >
-                          ee4175091d9f4…9d09bcf3ecefe
+                          ee4175091d9f4dacf5fed213711c3e0e4cc371e37afa7bce0429d09bcf3ecefe
                         </span>
                       </span>
                       <div
@@ -3680,7 +3680,7 @@ exports[`EntityDetail should render a product entity registration modal 1`] = `
             data-testid="TransactionDetail"
           >
             <div
-              class="flex-1 space-y-2"
+              class="flex-1 space-y-2 flex-shrink overflow-hidden whitespace-nowrap"
             >
               <div
                 class="text-sm font-semibold text-theme-secondary-700 no-ligatures"
@@ -3706,10 +3706,10 @@ exports[`EntityDetail should render a product entity registration modal 1`] = `
                         class="no-underline break-all pointer-events-auto border-b group-hover:border-0 active:border-0 border-dotted"
                       >
                         <span
-                          class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-primary-700"
+                          class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-primary-700"
                           data-testid="TruncateMiddle"
                         >
-                          71fd1a494ded5…972b8075d67e9
+                          71fd1a494ded5430586f4dd1c79c3ac77bf38120e868c8f8980972b8075d67e9
                         </span>
                       </span>
                       <div
@@ -3805,7 +3805,7 @@ exports[`EntityDetail should render a product entity resignation modal 1`] = `
             data-testid="TransactionDetail"
           >
             <div
-              class="flex-1 space-y-2"
+              class="flex-1 space-y-2 flex-shrink overflow-hidden whitespace-nowrap"
             >
               <div
                 class="text-sm font-semibold text-theme-secondary-700 no-ligatures"
@@ -3816,7 +3816,7 @@ exports[`EntityDetail should render a product entity resignation modal 1`] = `
                 class="font-semibold"
               >
                 <div
-                  class="inline-flex items-center no-ligatures"
+                  class="w-full flex items-center no-ligatures overflow-hidden whitespace-nowrap"
                 >
                   <span
                     class="max-w-24 flex-auto truncate mr-2 font-semibold text-base text-theme-text"
@@ -3830,10 +3830,10 @@ exports[`EntityDetail should render a product entity resignation modal 1`] = `
                     </span>
                   </span>
                   <span
-                    class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-secondary-500 dark:text-theme-secondary-700 truncate font-semibold text-base"
+                    class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-secondary-500 dark:text-theme-secondary-700 font-semibold text-base"
                     data-testid="address__wallet-address"
                   >
-                    D8rr7B…s6YUYD
+                    D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD
                   </span>
                 </div>
               </div>
@@ -3855,7 +3855,7 @@ exports[`EntityDetail should render a product entity resignation modal 1`] = `
                 </div>
               </div>
               <div
-                class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB"
+                class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB flex-shrink-0"
                 data-testid="Avatar"
               >
                 <div
@@ -3875,7 +3875,7 @@ exports[`EntityDetail should render a product entity resignation modal 1`] = `
             data-testid="TransactionDetail"
           >
             <div
-              class="flex-1 space-y-2"
+              class="flex-1 space-y-2 flex-shrink overflow-hidden whitespace-nowrap"
             >
               <div
                 class="text-sm font-semibold text-theme-secondary-700 no-ligatures"
@@ -3898,7 +3898,7 @@ exports[`EntityDetail should render a product entity resignation modal 1`] = `
             data-testid="TransactionDetail"
           >
             <div
-              class="flex-1 space-y-2"
+              class="flex-1 space-y-2 flex-shrink overflow-hidden whitespace-nowrap"
             >
               <div
                 class="text-sm font-semibold text-theme-secondary-700 no-ligatures"
@@ -3917,7 +3917,7 @@ exports[`EntityDetail should render a product entity resignation modal 1`] = `
             data-testid="TransactionDetail"
           >
             <div
-              class="flex-1 space-y-2"
+              class="flex-1 space-y-2 flex-shrink overflow-hidden whitespace-nowrap"
             >
               <div
                 class="text-sm font-semibold text-theme-secondary-700 no-ligatures"
@@ -3951,7 +3951,7 @@ exports[`EntityDetail should render a product entity resignation modal 1`] = `
             data-testid="TransactionDetail"
           >
             <div
-              class="flex-1 space-y-2"
+              class="flex-1 space-y-2 flex-shrink overflow-hidden whitespace-nowrap"
             >
               <div
                 class="text-sm font-semibold text-theme-secondary-700 no-ligatures"
@@ -3977,10 +3977,10 @@ exports[`EntityDetail should render a product entity resignation modal 1`] = `
                         class="no-underline break-all pointer-events-auto border-b group-hover:border-0 active:border-0 border-dotted"
                       >
                         <span
-                          class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-primary-700"
+                          class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-primary-700"
                           data-testid="TruncateMiddle"
                         >
-                          ee4175091d9f4…9d09bcf3ecefe
+                          ee4175091d9f4dacf5fed213711c3e0e4cc371e37afa7bce0429d09bcf3ecefe
                         </span>
                       </span>
                       <div
@@ -4022,7 +4022,7 @@ exports[`EntityDetail should render a product entity resignation modal 1`] = `
             data-testid="TransactionDetail"
           >
             <div
-              class="flex-1 space-y-2"
+              class="flex-1 space-y-2 flex-shrink overflow-hidden whitespace-nowrap"
             >
               <div
                 class="text-sm font-semibold text-theme-secondary-700 no-ligatures"
@@ -4048,10 +4048,10 @@ exports[`EntityDetail should render a product entity resignation modal 1`] = `
                         class="no-underline break-all pointer-events-auto border-b group-hover:border-0 active:border-0 border-dotted"
                       >
                         <span
-                          class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-primary-700"
+                          class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-primary-700"
                           data-testid="TruncateMiddle"
                         >
-                          71fd1a494ded5…972b8075d67e9
+                          71fd1a494ded5430586f4dd1c79c3ac77bf38120e868c8f8980972b8075d67e9
                         </span>
                       </span>
                       <div
@@ -4147,7 +4147,7 @@ exports[`EntityDetail should render a product entity update modal 1`] = `
             data-testid="TransactionDetail"
           >
             <div
-              class="flex-1 space-y-2"
+              class="flex-1 space-y-2 flex-shrink overflow-hidden whitespace-nowrap"
             >
               <div
                 class="text-sm font-semibold text-theme-secondary-700 no-ligatures"
@@ -4158,7 +4158,7 @@ exports[`EntityDetail should render a product entity update modal 1`] = `
                 class="font-semibold"
               >
                 <div
-                  class="inline-flex items-center no-ligatures"
+                  class="w-full flex items-center no-ligatures overflow-hidden whitespace-nowrap"
                 >
                   <span
                     class="max-w-24 flex-auto truncate mr-2 font-semibold text-base text-theme-text"
@@ -4172,10 +4172,10 @@ exports[`EntityDetail should render a product entity update modal 1`] = `
                     </span>
                   </span>
                   <span
-                    class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-secondary-500 dark:text-theme-secondary-700 truncate font-semibold text-base"
+                    class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-secondary-500 dark:text-theme-secondary-700 font-semibold text-base"
                     data-testid="address__wallet-address"
                   >
-                    D8rr7B…s6YUYD
+                    D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD
                   </span>
                 </div>
               </div>
@@ -4197,7 +4197,7 @@ exports[`EntityDetail should render a product entity update modal 1`] = `
                 </div>
               </div>
               <div
-                class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB"
+                class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB flex-shrink-0"
                 data-testid="Avatar"
               >
                 <div
@@ -4217,7 +4217,7 @@ exports[`EntityDetail should render a product entity update modal 1`] = `
             data-testid="TransactionDetail"
           >
             <div
-              class="flex-1 space-y-2"
+              class="flex-1 space-y-2 flex-shrink overflow-hidden whitespace-nowrap"
             >
               <div
                 class="text-sm font-semibold text-theme-secondary-700 no-ligatures"
@@ -4240,7 +4240,7 @@ exports[`EntityDetail should render a product entity update modal 1`] = `
             data-testid="TransactionDetail"
           >
             <div
-              class="flex-1 space-y-2"
+              class="flex-1 space-y-2 flex-shrink overflow-hidden whitespace-nowrap"
             >
               <div
                 class="text-sm font-semibold text-theme-secondary-700 no-ligatures"
@@ -4259,7 +4259,7 @@ exports[`EntityDetail should render a product entity update modal 1`] = `
             data-testid="TransactionDetail"
           >
             <div
-              class="flex-1 space-y-2"
+              class="flex-1 space-y-2 flex-shrink overflow-hidden whitespace-nowrap"
             >
               <div
                 class="text-sm font-semibold text-theme-secondary-700 no-ligatures"
@@ -4293,7 +4293,7 @@ exports[`EntityDetail should render a product entity update modal 1`] = `
             data-testid="TransactionDetail"
           >
             <div
-              class="flex-1 space-y-2"
+              class="flex-1 space-y-2 flex-shrink overflow-hidden whitespace-nowrap"
             >
               <div
                 class="text-sm font-semibold text-theme-secondary-700 no-ligatures"
@@ -4319,10 +4319,10 @@ exports[`EntityDetail should render a product entity update modal 1`] = `
                         class="no-underline break-all pointer-events-auto border-b group-hover:border-0 active:border-0 border-dotted"
                       >
                         <span
-                          class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-primary-700"
+                          class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-primary-700"
                           data-testid="TruncateMiddle"
                         >
-                          ee4175091d9f4…9d09bcf3ecefe
+                          ee4175091d9f4dacf5fed213711c3e0e4cc371e37afa7bce0429d09bcf3ecefe
                         </span>
                       </span>
                       <div
@@ -4364,7 +4364,7 @@ exports[`EntityDetail should render a product entity update modal 1`] = `
             data-testid="TransactionDetail"
           >
             <div
-              class="flex-1 space-y-2"
+              class="flex-1 space-y-2 flex-shrink overflow-hidden whitespace-nowrap"
             >
               <div
                 class="text-sm font-semibold text-theme-secondary-700 no-ligatures"
@@ -4390,10 +4390,10 @@ exports[`EntityDetail should render a product entity update modal 1`] = `
                         class="no-underline break-all pointer-events-auto border-b group-hover:border-0 active:border-0 border-dotted"
                       >
                         <span
-                          class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-primary-700"
+                          class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-primary-700"
                           data-testid="TruncateMiddle"
                         >
-                          71fd1a494ded5…972b8075d67e9
+                          71fd1a494ded5430586f4dd1c79c3ac77bf38120e868c8f8980972b8075d67e9
                         </span>
                       </span>
                       <div
@@ -4489,7 +4489,7 @@ exports[`EntityDetail should render as confirmed 1`] = `
             data-testid="TransactionDetail"
           >
             <div
-              class="flex-1 space-y-2"
+              class="flex-1 space-y-2 flex-shrink overflow-hidden whitespace-nowrap"
             >
               <div
                 class="text-sm font-semibold text-theme-secondary-700 no-ligatures"
@@ -4500,7 +4500,7 @@ exports[`EntityDetail should render as confirmed 1`] = `
                 class="font-semibold"
               >
                 <div
-                  class="inline-flex items-center no-ligatures"
+                  class="w-full flex items-center no-ligatures overflow-hidden whitespace-nowrap"
                 >
                   <span
                     class="max-w-24 flex-auto truncate mr-2 font-semibold text-base text-theme-text"
@@ -4514,10 +4514,10 @@ exports[`EntityDetail should render as confirmed 1`] = `
                     </span>
                   </span>
                   <span
-                    class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-secondary-500 dark:text-theme-secondary-700 truncate font-semibold text-base"
+                    class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-secondary-500 dark:text-theme-secondary-700 font-semibold text-base"
                     data-testid="address__wallet-address"
                   >
-                    D8rr7B…s6YUYD
+                    D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD
                   </span>
                 </div>
               </div>
@@ -4539,7 +4539,7 @@ exports[`EntityDetail should render as confirmed 1`] = `
                 </div>
               </div>
               <div
-                class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB"
+                class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB flex-shrink-0"
                 data-testid="Avatar"
               >
                 <div
@@ -4559,7 +4559,7 @@ exports[`EntityDetail should render as confirmed 1`] = `
             data-testid="TransactionDetail"
           >
             <div
-              class="flex-1 space-y-2"
+              class="flex-1 space-y-2 flex-shrink overflow-hidden whitespace-nowrap"
             >
               <div
                 class="text-sm font-semibold text-theme-secondary-700 no-ligatures"
@@ -4582,7 +4582,7 @@ exports[`EntityDetail should render as confirmed 1`] = `
             data-testid="TransactionDetail"
           >
             <div
-              class="flex-1 space-y-2"
+              class="flex-1 space-y-2 flex-shrink overflow-hidden whitespace-nowrap"
             >
               <div
                 class="text-sm font-semibold text-theme-secondary-700 no-ligatures"
@@ -4601,7 +4601,7 @@ exports[`EntityDetail should render as confirmed 1`] = `
             data-testid="TransactionDetail"
           >
             <div
-              class="flex-1 space-y-2"
+              class="flex-1 space-y-2 flex-shrink overflow-hidden whitespace-nowrap"
             >
               <div
                 class="text-sm font-semibold text-theme-secondary-700 no-ligatures"
@@ -4637,7 +4637,7 @@ exports[`EntityDetail should render as confirmed 1`] = `
             data-testid="TransactionDetail"
           >
             <div
-              class="flex-1 space-y-2"
+              class="flex-1 space-y-2 flex-shrink overflow-hidden whitespace-nowrap"
             >
               <div
                 class="text-sm font-semibold text-theme-secondary-700 no-ligatures"
@@ -4663,10 +4663,10 @@ exports[`EntityDetail should render as confirmed 1`] = `
                         class="no-underline break-all pointer-events-auto border-b group-hover:border-0 active:border-0 border-dotted"
                       >
                         <span
-                          class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-primary-700"
+                          class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-primary-700"
                           data-testid="TruncateMiddle"
                         >
-                          ee4175091d9f4…9d09bcf3ecefe
+                          ee4175091d9f4dacf5fed213711c3e0e4cc371e37afa7bce0429d09bcf3ecefe
                         </span>
                       </span>
                       <div
@@ -4708,7 +4708,7 @@ exports[`EntityDetail should render as confirmed 1`] = `
             data-testid="TransactionDetail"
           >
             <div
-              class="flex-1 space-y-2"
+              class="flex-1 space-y-2 flex-shrink overflow-hidden whitespace-nowrap"
             >
               <div
                 class="text-sm font-semibold text-theme-secondary-700 no-ligatures"
@@ -4734,10 +4734,10 @@ exports[`EntityDetail should render as confirmed 1`] = `
                         class="no-underline break-all pointer-events-auto border-b group-hover:border-0 active:border-0 border-dotted"
                       >
                         <span
-                          class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-primary-700"
+                          class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-primary-700"
                           data-testid="TruncateMiddle"
                         >
-                          71fd1a494ded5…972b8075d67e9
+                          71fd1a494ded5430586f4dd1c79c3ac77bf38120e868c8f8980972b8075d67e9
                         </span>
                       </span>
                       <div
