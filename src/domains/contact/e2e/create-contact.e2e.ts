@@ -1,7 +1,7 @@
 import { Selector } from "testcafe";
 
 import { buildTranslations } from "../../../app/i18n/helpers";
-import { createFixture } from "../../../utils/e2e-utils";
+import { createFixture, scrollToBottom } from "../../../utils/e2e-utils";
 import { goToContacts } from "./common";
 
 const translations = buildTranslations();
@@ -181,6 +181,8 @@ test("should error if contact name already exists", async (t) => {
 	await t.expect(Selector('[data-testid="contact-form__address-list-item"]').withText("D6Z26L69").exists).ok();
 
 	// Save
+	await scrollToBottom();
+
 	await t.expect(Selector('[data-testid="contact-form__save-btn"]').hasAttribute("disabled")).notOk();
 	await t.click(Selector('[data-testid="contact-form__save-btn"]'));
 

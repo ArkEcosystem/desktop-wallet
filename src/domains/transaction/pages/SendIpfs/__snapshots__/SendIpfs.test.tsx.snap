@@ -248,7 +248,7 @@ exports[`SendIpfs should error if wrong mnemonic 1`] = `
                     data-testid="navbar__useractions"
                   >
                     <div
-                      class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB"
+                      class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB flex-shrink-0"
                       data-testid="Avatar"
                     >
                       <div
@@ -382,8 +382,9 @@ exports[`SendIpfs should error if wrong mnemonic 1`] = `
                             class="pl-3"
                           >
                             <button
-                              class="flex items-center justify-center w-full h-full text-2xl focus:outline-none"
+                              class="flex items-center justify-center w-full h-full text-2xl"
                               data-testid="InputPassword__toggle"
+                              tabindex="-1"
                               type="button"
                             >
                               <div
@@ -572,7 +573,7 @@ exports[`SendIpfs should render form step 1`] = `
               class="absolute inset-0 flex items-center border border-transparent px-14 w-full"
             >
               <div
-                class="inline-flex items-center no-ligatures"
+                class="w-full flex items-center no-ligatures overflow-hidden whitespace-nowrap"
               />
             </span>
             <div
@@ -728,7 +729,7 @@ exports[`SendIpfs should render review step 1`] = `
       data-testid="TransactionDetail"
     >
       <div
-        class="flex-1 space-y-2"
+        class="flex-1 space-y-2 flex-shrink overflow-hidden whitespace-nowrap"
       >
         <div
           class="text-sm font-semibold text-theme-secondary-700 no-ligatures"
@@ -763,7 +764,7 @@ exports[`SendIpfs should render review step 1`] = `
       data-testid="TransactionDetail"
     >
       <div
-        class="flex-1 space-y-2"
+        class="flex-1 space-y-2 flex-shrink overflow-hidden whitespace-nowrap"
       >
         <div
           class="text-sm font-semibold text-theme-secondary-700 no-ligatures"
@@ -774,7 +775,7 @@ exports[`SendIpfs should render review step 1`] = `
           class="font-semibold"
         >
           <div
-            class="inline-flex items-center no-ligatures"
+            class="w-full flex items-center no-ligatures overflow-hidden whitespace-nowrap"
           >
             <span
               class="max-w-24 flex-auto truncate mr-2 font-semibold text-base text-theme-text"
@@ -788,10 +789,10 @@ exports[`SendIpfs should render review step 1`] = `
               </span>
             </span>
             <span
-              class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-secondary-500 dark:text-theme-secondary-700 truncate font-semibold text-base"
+              class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-secondary-500 dark:text-theme-secondary-700 font-semibold text-base"
               data-testid="address__wallet-address"
             >
-              D8rr7B…s6YUYD
+              D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD
             </span>
           </div>
         </div>
@@ -813,7 +814,7 @@ exports[`SendIpfs should render review step 1`] = `
           </div>
         </div>
         <div
-          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB"
+          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB flex-shrink-0"
           data-testid="Avatar"
         >
           <div
@@ -833,7 +834,7 @@ exports[`SendIpfs should render review step 1`] = `
       data-testid="TransactionDetail"
     >
       <div
-        class="flex-1 space-y-2"
+        class="flex-1 space-y-2 flex-shrink overflow-hidden whitespace-nowrap"
       >
         <div
           class="text-sm font-semibold text-theme-secondary-700 no-ligatures"
@@ -982,7 +983,7 @@ exports[`SendIpfs should render summary step 1`] = `
         data-testid="TransactionDetail"
       >
         <div
-          class="flex-1 space-y-2"
+          class="flex-1 space-y-2 flex-shrink overflow-hidden whitespace-nowrap"
         >
           <div
             class="text-sm font-semibold text-theme-secondary-700 no-ligatures"
@@ -1260,7 +1261,7 @@ exports[`SendIpfs should send an IPFS transaction and go back to wallet page 1`]
                     data-testid="navbar__useractions"
                   >
                     <div
-                      class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB"
+                      class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB flex-shrink-0"
                       data-testid="Avatar"
                     >
                       <div
@@ -1355,7 +1356,7 @@ exports[`SendIpfs should send an IPFS transaction and go back to wallet page 1`]
                         data-testid="TransactionDetail"
                       >
                         <div
-                          class="flex-1 space-y-2"
+                          class="flex-1 space-y-2 flex-shrink overflow-hidden whitespace-nowrap"
                         >
                           <div
                             class="text-sm font-semibold text-theme-secondary-700 no-ligatures"
@@ -1381,10 +1382,10 @@ exports[`SendIpfs should send an IPFS transaction and go back to wallet page 1`]
                                     class="no-underline break-all pointer-events-auto border-b group-hover:border-0 active:border-0 border-dotted"
                                   >
                                     <span
-                                      class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-primary-700"
+                                      class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-primary-700"
                                       data-testid="TruncateMiddle"
                                     >
-                                      1e9b975eff66a…db3d69131067e
+                                      1e9b975eff66a731095876c3b6cbff14fd4dec3bb37a4127c46db3d69131067e
                                     </span>
                                   </span>
                                   <div
@@ -1426,7 +1427,7 @@ exports[`SendIpfs should send an IPFS transaction and go back to wallet page 1`]
                         data-testid="TransactionDetail"
                       >
                         <div
-                          class="flex-1 space-y-2"
+                          class="flex-1 space-y-2 flex-shrink overflow-hidden whitespace-nowrap"
                         >
                           <div
                             class="text-sm font-semibold text-theme-secondary-700 no-ligatures"
@@ -1461,7 +1462,7 @@ exports[`SendIpfs should send an IPFS transaction and go back to wallet page 1`]
                         data-testid="TransactionDetail"
                       >
                         <div
-                          class="flex-1 space-y-2"
+                          class="flex-1 space-y-2 flex-shrink overflow-hidden whitespace-nowrap"
                         >
                           <div
                             class="text-sm font-semibold text-theme-secondary-700 no-ligatures"
@@ -1472,7 +1473,7 @@ exports[`SendIpfs should send an IPFS transaction and go back to wallet page 1`]
                             class="font-semibold"
                           >
                             <div
-                              class="inline-flex items-center no-ligatures"
+                              class="w-full flex items-center no-ligatures overflow-hidden whitespace-nowrap"
                             >
                               <span
                                 class="max-w-24 flex-auto truncate mr-2 font-semibold text-base text-theme-text"
@@ -1486,10 +1487,10 @@ exports[`SendIpfs should send an IPFS transaction and go back to wallet page 1`]
                                 </span>
                               </span>
                               <span
-                                class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-secondary-500 dark:text-theme-secondary-700 truncate font-semibold text-base"
+                                class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-secondary-500 dark:text-theme-secondary-700 font-semibold text-base"
                                 data-testid="address__wallet-address"
                               >
-                                D8rr7B…s6YUYD
+                                D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD
                               </span>
                             </div>
                           </div>
@@ -1511,7 +1512,7 @@ exports[`SendIpfs should send an IPFS transaction and go back to wallet page 1`]
                             </div>
                           </div>
                           <div
-                            class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB"
+                            class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB flex-shrink-0"
                             data-testid="Avatar"
                           >
                             <div
@@ -1531,7 +1532,7 @@ exports[`SendIpfs should send an IPFS transaction and go back to wallet page 1`]
                         data-testid="TransactionDetail"
                       >
                         <div
-                          class="flex-1 space-y-2"
+                          class="flex-1 space-y-2 flex-shrink overflow-hidden whitespace-nowrap"
                         >
                           <div
                             class="text-sm font-semibold text-theme-secondary-700 no-ligatures"
@@ -1836,7 +1837,7 @@ exports[`SendIpfs should send an IPFS transaction using encryption password 1`] 
                     data-testid="navbar__useractions"
                   >
                     <div
-                      class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB"
+                      class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB flex-shrink-0"
                       data-testid="Avatar"
                     >
                       <div
@@ -1931,7 +1932,7 @@ exports[`SendIpfs should send an IPFS transaction using encryption password 1`] 
                         data-testid="TransactionDetail"
                       >
                         <div
-                          class="flex-1 space-y-2"
+                          class="flex-1 space-y-2 flex-shrink overflow-hidden whitespace-nowrap"
                         >
                           <div
                             class="text-sm font-semibold text-theme-secondary-700 no-ligatures"
@@ -1957,10 +1958,10 @@ exports[`SendIpfs should send an IPFS transaction using encryption password 1`] 
                                     class="no-underline break-all pointer-events-auto border-b group-hover:border-0 active:border-0 border-dotted"
                                   >
                                     <span
-                                      class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-primary-700"
+                                      class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-primary-700"
                                       data-testid="TruncateMiddle"
                                     >
-                                      1e9b975eff66a…db3d69131067e
+                                      1e9b975eff66a731095876c3b6cbff14fd4dec3bb37a4127c46db3d69131067e
                                     </span>
                                   </span>
                                   <div
@@ -2002,7 +2003,7 @@ exports[`SendIpfs should send an IPFS transaction using encryption password 1`] 
                         data-testid="TransactionDetail"
                       >
                         <div
-                          class="flex-1 space-y-2"
+                          class="flex-1 space-y-2 flex-shrink overflow-hidden whitespace-nowrap"
                         >
                           <div
                             class="text-sm font-semibold text-theme-secondary-700 no-ligatures"
@@ -2037,7 +2038,7 @@ exports[`SendIpfs should send an IPFS transaction using encryption password 1`] 
                         data-testid="TransactionDetail"
                       >
                         <div
-                          class="flex-1 space-y-2"
+                          class="flex-1 space-y-2 flex-shrink overflow-hidden whitespace-nowrap"
                         >
                           <div
                             class="text-sm font-semibold text-theme-secondary-700 no-ligatures"
@@ -2048,7 +2049,7 @@ exports[`SendIpfs should send an IPFS transaction using encryption password 1`] 
                             class="font-semibold"
                           >
                             <div
-                              class="inline-flex items-center no-ligatures"
+                              class="w-full flex items-center no-ligatures overflow-hidden whitespace-nowrap"
                             >
                               <span
                                 class="max-w-24 flex-auto truncate mr-2 font-semibold text-base text-theme-text"
@@ -2062,10 +2063,10 @@ exports[`SendIpfs should send an IPFS transaction using encryption password 1`] 
                                 </span>
                               </span>
                               <span
-                                class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-secondary-500 dark:text-theme-secondary-700 truncate font-semibold text-base"
+                                class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-secondary-500 dark:text-theme-secondary-700 font-semibold text-base"
                                 data-testid="address__wallet-address"
                               >
-                                D8rr7B…s6YUYD
+                                D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD
                               </span>
                             </div>
                           </div>
@@ -2087,7 +2088,7 @@ exports[`SendIpfs should send an IPFS transaction using encryption password 1`] 
                             </div>
                           </div>
                           <div
-                            class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB"
+                            class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB flex-shrink-0"
                             data-testid="Avatar"
                           >
                             <div
@@ -2107,7 +2108,7 @@ exports[`SendIpfs should send an IPFS transaction using encryption password 1`] 
                         data-testid="TransactionDetail"
                       >
                         <div
-                          class="flex-1 space-y-2"
+                          class="flex-1 space-y-2 flex-shrink overflow-hidden whitespace-nowrap"
                         >
                           <div
                             class="text-sm font-semibold text-theme-secondary-700 no-ligatures"
@@ -2410,7 +2411,7 @@ exports[`SendIpfs should show an error if an invalid IPFS hash is entered 1`] = 
                     data-testid="navbar__useractions"
                   >
                     <div
-                      class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB"
+                      class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB flex-shrink-0"
                       data-testid="Avatar"
                     >
                       <div
@@ -2638,13 +2639,13 @@ exports[`SendIpfs should show an error if an invalid IPFS hash is entered 1`] = 
                               class="absolute inset-0 flex items-center border border-transparent px-14 w-full"
                             >
                               <div
-                                class="inline-flex items-center no-ligatures"
+                                class="w-full flex items-center no-ligatures overflow-hidden whitespace-nowrap"
                               >
                                 <span
-                                  class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-text truncate font-semibold text-base"
+                                  class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-text font-semibold text-base"
                                   data-testid="address__wallet-address"
                                 >
-                                  D8rr7B1d6TL6p…sKp1VBMs6YUYD
+                                  D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD
                                 </span>
                               </div>
                             </span>
@@ -2652,7 +2653,7 @@ exports[`SendIpfs should show an error if an invalid IPFS hash is entered 1`] = 
                               class="Input__InputWrapperStyled-wu99qs-0 hDeOGV"
                             >
                               <div
-                                class="Avatar__AvatarWrapper-sc-1vsy2s2-0 khDjUE"
+                                class="Avatar__AvatarWrapper-sc-1vsy2s2-0 khDjUE flex-shrink-0"
                                 data-testid="Avatar"
                               >
                                 <div
@@ -3118,7 +3119,7 @@ exports[`SendIpfs should show error step and go back 1`] = `
                     data-testid="navbar__useractions"
                   >
                     <div
-                      class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB"
+                      class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB flex-shrink-0"
                       data-testid="Avatar"
                     >
                       <div

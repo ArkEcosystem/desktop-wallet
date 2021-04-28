@@ -35,7 +35,7 @@ export const WalletListItem = ({ wallet, activeWalletId, variant, onClick }: Wal
 	return (
 		<TableRow isSelected={isSelected} onClick={() => onClick?.(wallet.id())}>
 			<TableCell variant="start" innerClassName="space-x-4">
-				<div className="-space-x-2">
+				<div className="-space-x-2 flex-shrink-0">
 					<NetworkIcon
 						size="lg"
 						coin={wallet.coinId()}
