@@ -1,5 +1,5 @@
 import { Coins } from "@arkecosystem/platform-sdk";
-// import { ADA } from "@arkecosystem/platform-sdk-ada";
+import { ADA } from "@arkecosystem/platform-sdk-ada";
 import { ARK } from "@arkecosystem/platform-sdk-ark";
 import { ATOM } from "@arkecosystem/platform-sdk-atom";
 import { BTC } from "@arkecosystem/platform-sdk-btc";
@@ -20,14 +20,20 @@ export interface CoinNetworkExtended {
 }
 
 export const coinsNetworkExtendedData: Record<string, Record<string, CoinNetworkExtended>> = {
-	// ADA: {
-	// 	'ada.mainnet': {
-	// 		displayName: "Ripple",
-	// 		borderClass: "border-theme-primary-500",
-	// 		textClass: "text-theme-primary-700",
-	// 		iconName: "Ripple",
-	// 	},
-	// },
+	ADA: {
+		'ada.mainnet': {
+			displayName: "Cardano",
+			borderClass: "border-theme-primary-500",
+			textClass: "text-theme-primary-700",
+			iconName: "Cardano",
+		},
+		'ada.testnet': {
+			displayName: "Cardano",
+			borderClass: "border-theme-primary-500",
+			textClass: "text-theme-primary-700",
+			iconName: "Cardano",
+		},
+	},
 	ARK: {
 		"ark.mainnet": {
 			displayName: "ARK",
@@ -283,7 +289,8 @@ export const coinsNetworkExtendedData: Record<string, Record<string, CoinNetwork
 };
 
 export const availableNetworksMock: Coins.Network[] = [
-	// new Coins.Network(ADA.manifest.name, ADA.manifest.networks["ada.mainnet"]),
+	new Coins.Network(ADA.manifest.name, ADA.manifest.networks["ada.mainnet"]),
+	new Coins.Network(ADA.manifest.name, ADA.manifest.networks["ada.testnet"]),
 	new Coins.Network(ARK.manifest.name, ARK.manifest.networks["ark.mainnet"]),
 	new Coins.Network(ARK.manifest.name, ARK.manifest.networks["ark.devnet"]),
 	new Coins.Network(ARK.manifest.name, ARK.manifest.networks["compendia.mainnet"]),
