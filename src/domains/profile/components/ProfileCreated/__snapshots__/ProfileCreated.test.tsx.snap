@@ -55,25 +55,31 @@ exports[`ProfileCreated should render a modal 1`] = `
             profile-created-banner.svg
           </svg>
           <div
-            class="container"
+            class="container space-y-8"
           >
             <div
-              class="mb-8 text-center"
+              class="text-base text-theme-secondary-text leading-7"
             >
-              <p
-                class="mb-1 text-sm text-theme-secondary-text md:text-base"
-              >
+              <p>
                 If you are new to the ARK Desktop Wallet, view our tutorial to get started.
               </p>
-              <p
-                class="text-sm text-theme-secondary-text md:text-base"
-              >
+              <p>
                 If not, you can skip the tutorial to go directly to your portfolio.
               </p>
             </div>
             <div
-              class="flex flex-col justify-center space-x-0 sm:flex-row sm:space-x-3"
+              class="flex justify-end space-x-3"
             >
+              <button
+                class="OriginalButton__StyledButton-sc-1y2wptt-0 hsoUax"
+                type="button"
+              >
+                <div
+                  class="flex relative items-center space-x-2"
+                >
+                  Skip Tutorial
+                </div>
+              </button>
               <button
                 class="OriginalButton__StyledButton-sc-1y2wptt-0 cEUmKc"
                 type="button"
@@ -82,16 +88,6 @@ exports[`ProfileCreated should render a modal 1`] = `
                   class="flex relative items-center space-x-2"
                 >
                   Start Tutorial
-                </div>
-              </button>
-              <button
-                class="OriginalButton__StyledButton-sc-1y2wptt-0 hsoUax mt-2 sm:mt-0"
-                type="button"
-              >
-                <div
-                  class="flex relative items-center space-x-2"
-                >
-                  Skip Tutorial
                 </div>
               </button>
             </div>

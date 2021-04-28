@@ -131,7 +131,7 @@ exports[`SendTransactionForm should render 1`] = `
             class="absolute inset-0 flex items-center border border-transparent px-14 w-full"
           >
             <div
-              class="inline-flex items-center no-ligatures"
+              class="w-full flex items-center no-ligatures overflow-hidden whitespace-nowrap"
             />
           </span>
           <div
@@ -368,13 +368,13 @@ exports[`SendTransactionForm should select a network & update fees 1`] = `
             class="absolute inset-0 flex items-center border border-transparent px-14 w-full"
           >
             <div
-              class="inline-flex items-center no-ligatures"
+              class="w-full flex items-center no-ligatures overflow-hidden whitespace-nowrap"
             >
               <span
-                class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-text truncate font-semibold text-base"
+                class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-text font-semibold text-base"
                 data-testid="address__wallet-address"
               >
-                D5sRKWckH4rE1…AepgyC3cvJtwb
+                D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb
               </span>
             </div>
           </span>
@@ -382,7 +382,7 @@ exports[`SendTransactionForm should select a network & update fees 1`] = `
             class="Input__InputWrapperStyled-wu99qs-0 hDeOGV"
           >
             <div
-              class="Avatar__AvatarWrapper-sc-1vsy2s2-0 khDjUE"
+              class="Avatar__AvatarWrapper-sc-1vsy2s2-0 khDjUE flex-shrink-0"
               data-testid="Avatar"
             >
               <div
@@ -657,13 +657,13 @@ exports[`SendTransactionForm should use static fees if avg is not available 1`] 
             class="absolute inset-0 flex items-center border border-transparent px-14 w-full"
           >
             <div
-              class="inline-flex items-center no-ligatures"
+              class="w-full flex items-center no-ligatures overflow-hidden whitespace-nowrap"
             >
               <span
-                class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-text truncate font-semibold text-base"
+                class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-text font-semibold text-base"
                 data-testid="address__wallet-address"
               >
-                D5sRKWckH4rE1…AepgyC3cvJtwb
+                D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb
               </span>
             </div>
           </span>
@@ -671,7 +671,7 @@ exports[`SendTransactionForm should use static fees if avg is not available 1`] 
             class="Input__InputWrapperStyled-wu99qs-0 hDeOGV"
           >
             <div
-              class="Avatar__AvatarWrapper-sc-1vsy2s2-0 khDjUE"
+              class="Avatar__AvatarWrapper-sc-1vsy2s2-0 khDjUE flex-shrink-0"
               data-testid="Avatar"
             >
               <div

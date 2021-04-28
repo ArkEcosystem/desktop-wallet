@@ -21,21 +21,17 @@ export const ProfileCreated = ({ isOpen, onClose, onSkip, onStart }: ProfileCrea
 			isOpen={isOpen}
 			onClose={onClose}
 		>
-			<div className="container">
-				<div className="mb-8 text-center">
-					<p className="mb-1 text-sm text-theme-secondary-text md:text-base">
-						{t("PROFILE.MODAL_PROFILE_CREATED.DESCRIPTION_1")}
-					</p>
-					<p className="text-sm text-theme-secondary-text md:text-base">
-						{t("PROFILE.MODAL_PROFILE_CREATED.DESCRIPTION_2")}
-					</p>
+			<div className="container space-y-8">
+				<div className="text-base text-theme-secondary-text leading-7">
+					<p>{t("PROFILE.MODAL_PROFILE_CREATED.DESCRIPTION_1")}</p>
+					<p>{t("PROFILE.MODAL_PROFILE_CREATED.DESCRIPTION_2")}</p>
 				</div>
 
-				<div className="flex flex-col justify-center space-x-0 sm:flex-row sm:space-x-3">
-					<Button onClick={onStart}>{t("PROFILE.MODAL_PROFILE_CREATED.START_TUTORIAL")}</Button>
-					<Button variant="secondary" className="mt-2 sm:mt-0" onClick={onSkip}>
+				<div className="flex justify-end space-x-3">
+					<Button variant="secondary" onClick={onSkip}>
 						{t("PROFILE.MODAL_PROFILE_CREATED.SKIP_TUTORIAL")}
 					</Button>
+					<Button onClick={onStart}>{t("PROFILE.MODAL_PROFILE_CREATED.START_TUTORIAL")}</Button>
 				</div>
 			</div>
 		</Modal>

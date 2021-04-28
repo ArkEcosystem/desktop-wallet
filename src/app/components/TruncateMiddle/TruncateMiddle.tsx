@@ -11,7 +11,7 @@ type Props = {
 
 const Wrapper = styled.span``;
 
-export const TruncateMiddle = ({ text, maxChars, showTooltip, ...props }: Props) => {
+export const TruncateMiddle = React.forwardRef(({ text, maxChars, showTooltip, ...props }: Props, ref) => {
 	const result = React.useMemo(() => {
 		if (!maxChars || text.length <= maxChars) {
 			return text;
@@ -26,12 +26,14 @@ export const TruncateMiddle = ({ text, maxChars, showTooltip, ...props }: Props)
 
 	return (
 		<Tooltip content={text} disabled={!showTooltip}>
-			<Wrapper data-testid="TruncateMiddle" {...props}>
+			<Wrapper ref={ref} data-testid="TruncateMiddle" {...props}>
 				{result}
 			</Wrapper>
 		</Tooltip>
 	);
-};
+});
+
+TruncateMiddle.displayName = "TruncateMiddle";
 
 TruncateMiddle.defaultProps = {
 	maxChars: 16,

@@ -3,8 +3,9 @@ import { Button } from "app/components/Button";
 import { Checkbox } from "app/components/Checkbox";
 import { Form, FormField, FormLabel } from "app/components/Form";
 import { InputDefault } from "app/components/Input";
-import { SelectNetwork } from "domains/network/components/SelectNetwork";
-import React, { useEffect } from "react";
+import { Select } from "app/components/SelectDropdown";
+import { Option } from "domains/contact/components/ContactListItem/ContactListItem.models";
+import React, { useEffect, useMemo } from "react";
 import { useForm } from "react-hook-form";
 import { useTranslation } from "react-i18next";
 
@@ -36,7 +37,9 @@ export const PeerForm = ({ networks, peer, onSave, onValidateHost }: PeerFormPro
 		}
 	}, [networks, peer, setValue]);
 
-	const handleSelectNetwork = (network?: Coins.Network | null) => {
+	const handleSelectNetwork = (networkOption?: Option) => {
+		const network = networks.find((network) => network.id() === networkOption?.value);
+
 		if (form.errors.host?.message.includes("already exists")) {
 			form.clearErrors("host");
 
@@ -49,15 +52,26 @@ export const PeerForm = ({ networks, peer, onSave, onValidateHost }: PeerFormPro
 		setValue("network", network, { shouldValidate: true, shouldDirty: true });
 	};
 
+	const networkOptions = useMemo(
+		() =>
+			networks.map((network) => ({
+				value: network.id(),
+				label: network.name(),
+			})),
+		[networks],
+	);
+
 	return (
 		<Form data-testid="PeerForm" context={form} onSubmit={() => onSave({ network, name, host, isMultiSignature })}>
 			<FormField name="network" className="my-8">
-				<FormLabel label={t("SETTINGS.PEERS.CRYPTOASSET")} />
-				<SelectNetwork
-					id="CustomPeers__network"
-					networks={networks}
-					selected={network}
-					onSelect={handleSelectNetwork}
+				<FormLabel label={t("SETTINGS.PEERS.NETWORK")} />
+				<Select
+					placeholder={t("COMMON.SELECT_OPTION", {
+						option: t("SETTINGS.PEERS.NETWORK"),
+					})}
+					defaultValue={network?.id()}
+					options={networkOptions}
+					onChange={(networkOption: any) => handleSelectNetwork(networkOption)}
 				/>
 			</FormField>
 

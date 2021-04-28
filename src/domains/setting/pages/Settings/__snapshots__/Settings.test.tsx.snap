@@ -248,7 +248,7 @@ exports[`Settings should not update the uploaded avatar when removing focus from
                     data-testid="navbar__useractions"
                   >
                     <div
-                      class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB"
+                      class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB flex-shrink-0"
                       data-testid="Avatar"
                     >
                       <div
@@ -1856,7 +1856,7 @@ exports[`Settings should render 1`] = `
                     data-testid="navbar__useractions"
                   >
                     <div
-                      class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB"
+                      class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB flex-shrink-0"
                       data-testid="Avatar"
                     >
                       <div
@@ -3452,7 +3452,7 @@ exports[`Settings should render export settings 1`] = `
                     data-testid="navbar__useractions"
                   >
                     <div
-                      class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB"
+                      class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB flex-shrink-0"
                       data-testid="Avatar"
                     >
                       <div
@@ -4052,7 +4052,7 @@ exports[`Settings should render password settings 1`] = `
                     data-testid="navbar__useractions"
                   >
                     <div
-                      class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB"
+                      class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB flex-shrink-0"
                       data-testid="Avatar"
                     >
                       <div
@@ -4305,8 +4305,9 @@ exports[`Settings should render password settings 1`] = `
                             class=""
                           >
                             <button
-                              class="flex items-center justify-center w-full h-full text-2xl focus:outline-none"
+                              class="flex items-center justify-center w-full h-full text-2xl"
                               data-testid="InputPassword__toggle"
+                              tabindex="-1"
                               type="button"
                             >
                               <div
@@ -4357,8 +4358,9 @@ exports[`Settings should render password settings 1`] = `
                             class=""
                           >
                             <button
-                              class="flex items-center justify-center w-full h-full text-2xl focus:outline-none"
+                              class="flex items-center justify-center w-full h-full text-2xl"
                               data-testid="InputPassword__toggle"
+                              tabindex="-1"
                               type="button"
                             >
                               <div
@@ -4653,7 +4655,7 @@ exports[`Settings should render peer settings 1`] = `
                     data-testid="navbar__useractions"
                   >
                     <div
-                      class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB"
+                      class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB flex-shrink-0"
                       data-testid="Avatar"
                     >
                       <div
@@ -5258,7 +5260,7 @@ exports[`Settings should render plugin settings 1`] = `
                     data-testid="navbar__useractions"
                   >
                     <div
-                      class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB"
+                      class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB flex-shrink-0"
                       data-testid="Avatar"
                     >
                       <div
@@ -5569,12 +5571,12 @@ exports[`Settings should render plugin settings 1`] = `
                                 <div
                                   aria-expanded="false"
                                   aria-haspopup="listbox"
-                                  aria-owns="downshift-0-menu"
+                                  aria-owns="downshift-90-menu"
                                   role="combobox"
                                 >
                                   <label
-                                    for="downshift-0-input"
-                                    id="downshift-0-label"
+                                    for="downshift-90-input"
+                                    id="downshift-90-label"
                                   />
                                   <div
                                     class="Input__InputWrapperStyled-wu99qs-0 hDeOGV"
@@ -5584,12 +5586,12 @@ exports[`Settings should render plugin settings 1`] = `
                                     >
                                       <input
                                         aria-autocomplete="list"
-                                        aria-controls="downshift-0-menu"
-                                        aria-labelledby="downshift-0-label"
+                                        aria-controls="downshift-90-menu"
+                                        aria-labelledby="downshift-90-label"
                                         autocomplete="off"
                                         class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full cursor-default"
                                         data-testid="SelectDropdownInput__input"
-                                        id="downshift-0-input"
+                                        id="downshift-90-input"
                                         name="load-plugins"
                                         placeholder="Select Plugin Source"
                                         value=""
@@ -5619,9 +5621,9 @@ exports[`Settings should render plugin settings 1`] = `
                                     </div>
                                   </div>
                                   <ul
-                                    aria-labelledby="downshift-0-label"
+                                    aria-labelledby="downshift-90-label"
                                     class="styles__SelectOptionsList-b2falt-0 cUNLQk"
-                                    id="downshift-0-menu"
+                                    id="downshift-90-menu"
                                     role="listbox"
                                   />
                                 </div>
@@ -5908,7 +5910,7 @@ exports[`Settings should set a password 1`] = `
                     data-testid="navbar__useractions"
                   >
                     <div
-                      class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB"
+                      class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB flex-shrink-0"
                       data-testid="Avatar"
                     >
                       <div
@@ -6161,8 +6163,9 @@ exports[`Settings should set a password 1`] = `
                             class=""
                           >
                             <button
-                              class="flex items-center justify-center w-full h-full text-2xl focus:outline-none"
+                              class="flex items-center justify-center w-full h-full text-2xl"
                               data-testid="InputPassword__toggle"
+                              tabindex="-1"
                               type="button"
                             >
                               <div
@@ -6213,8 +6216,9 @@ exports[`Settings should set a password 1`] = `
                             class=""
                           >
                             <button
-                              class="flex items-center justify-center w-full h-full text-2xl focus:outline-none"
+                              class="flex items-center justify-center w-full h-full text-2xl"
                               data-testid="InputPassword__toggle"
+                              tabindex="-1"
                               type="button"
                             >
                               <div
@@ -6265,8 +6269,9 @@ exports[`Settings should set a password 1`] = `
                             class=""
                           >
                             <button
-                              class="flex items-center justify-center w-full h-full text-2xl focus:outline-none"
+                              class="flex items-center justify-center w-full h-full text-2xl"
                               data-testid="InputPassword__toggle"
+                              tabindex="-1"
                               type="button"
                             >
                               <div
@@ -6561,7 +6566,7 @@ exports[`Settings should show an error toast if the current password does not ma
                     data-testid="navbar__useractions"
                   >
                     <div
-                      class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB"
+                      class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB flex-shrink-0"
                       data-testid="Avatar"
                     >
                       <div
@@ -6814,8 +6819,9 @@ exports[`Settings should show an error toast if the current password does not ma
                             class=""
                           >
                             <button
-                              class="flex items-center justify-center w-full h-full text-2xl focus:outline-none"
+                              class="flex items-center justify-center w-full h-full text-2xl"
                               data-testid="InputPassword__toggle"
+                              tabindex="-1"
                               type="button"
                             >
                               <div
@@ -6866,8 +6872,9 @@ exports[`Settings should show an error toast if the current password does not ma
                             class=""
                           >
                             <button
-                              class="flex items-center justify-center w-full h-full text-2xl focus:outline-none"
+                              class="flex items-center justify-center w-full h-full text-2xl"
                               data-testid="InputPassword__toggle"
+                              tabindex="-1"
                               type="button"
                             >
                               <div
@@ -6918,8 +6925,9 @@ exports[`Settings should show an error toast if the current password does not ma
                             class=""
                           >
                             <button
-                              class="flex items-center justify-center w-full h-full text-2xl focus:outline-none"
+                              class="flex items-center justify-center w-full h-full text-2xl"
                               data-testid="InputPassword__toggle"
+                              tabindex="-1"
                               type="button"
                             >
                               <div
@@ -7213,7 +7221,7 @@ exports[`Settings should trigger password confirmation mismatch error 1`] = `
                     data-testid="navbar__useractions"
                   >
                     <div
-                      class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB"
+                      class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB flex-shrink-0"
                       data-testid="Avatar"
                     >
                       <div
@@ -7466,8 +7474,9 @@ exports[`Settings should trigger password confirmation mismatch error 1`] = `
                             class=""
                           >
                             <button
-                              class="flex items-center justify-center w-full h-full text-2xl focus:outline-none"
+                              class="flex items-center justify-center w-full h-full text-2xl"
                               data-testid="InputPassword__toggle"
+                              tabindex="-1"
                               type="button"
                             >
                               <div
@@ -7518,8 +7527,9 @@ exports[`Settings should trigger password confirmation mismatch error 1`] = `
                             class=""
                           >
                             <button
-                              class="flex items-center justify-center w-full h-full text-2xl focus:outline-none"
+                              class="flex items-center justify-center w-full h-full text-2xl"
                               data-testid="InputPassword__toggle"
+                              tabindex="-1"
                               type="button"
                             >
                               <div
@@ -7585,8 +7595,9 @@ exports[`Settings should trigger password confirmation mismatch error 1`] = `
                             class="pl-3"
                           >
                             <button
-                              class="flex items-center justify-center w-full h-full text-2xl focus:outline-none"
+                              class="flex items-center justify-center w-full h-full text-2xl"
                               data-testid="InputPassword__toggle"
+                              tabindex="-1"
                               type="button"
                             >
                               <div
@@ -7879,7 +7890,7 @@ exports[`Settings should update profile 1`] = `
                     data-testid="navbar__useractions"
                   >
                     <div
-                      class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB"
+                      class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB flex-shrink-0"
                       data-testid="Avatar"
                     >
                       <div
@@ -9468,7 +9479,7 @@ exports[`Settings should update the avatar when removing focus from name input 1
                     data-testid="navbar__useractions"
                   >
                     <div
-                      class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB"
+                      class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB flex-shrink-0"
                       data-testid="Avatar"
                     >
                       <div
@@ -11062,7 +11073,7 @@ exports[`Settings should update the avatar when removing focus from name input 2
                     data-testid="navbar__useractions"
                   >
                     <div
-                      class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB"
+                      class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB flex-shrink-0"
                       data-testid="Avatar"
                     >
                       <div

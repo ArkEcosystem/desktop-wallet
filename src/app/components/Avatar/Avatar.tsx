@@ -42,7 +42,7 @@ export const Avatar = ({ address, className, highlight, noShadow, shadowClassNam
 			data-testid="Avatar"
 			size={size}
 			noShadow={!!noShadow}
-			className={cn(className, shadowClassName)}
+			className={cn(className, shadowClassName, "flex-shrink-0")}
 			shadowClassName={shadowClassName}
 		>
 			<div

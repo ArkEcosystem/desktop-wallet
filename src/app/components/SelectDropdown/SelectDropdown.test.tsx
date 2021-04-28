@@ -25,6 +25,17 @@ describe("SelectDropdown", () => {
 		expect(container).toMatchSnapshot();
 	});
 
+	it("should render with custom label", () => {
+		const { container, queryByText, getByTestId } = render(
+			<Select options={options} renderLabel={(option) => <span>{`Label ${option.label}`}</span>} />,
+		);
+
+		fireEvent.focus(getByTestId("SelectDropdownInput__input"), { target: { value: "Opt" } });
+
+		expect(container).toMatchSnapshot();
+		expect(queryByText("Label Option 1")).toBeInTheDocument();
+	});
+
 	it("should render invalid", () => {
 		const { container } = render(<Select options={options} isInvalid />);
 		expect(container).toMatchSnapshot();
