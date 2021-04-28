@@ -28,9 +28,14 @@ let transport: typeof Transport;
 describe("SignMessage", () => {
 	beforeAll(async () => {
 		profile = env.profiles().findById(getDefaultProfileId());
-		await profile.restore();
+		await env.profiles().restore(profile);
 
-		wallet = await profile.wallets().importByMnemonic(mnemonic, "ARK", "ark.devnet");
+		wallet = await profile.walletFactory().fromMnemonic({
+			mnemonic,
+			coin: "ARK",
+			network: "ark.devnet",
+		});
+
 		walletUrl = `/profiles/${profile.id()}/wallets/${wallet.id()}`;
 		history.push(walletUrl);
 	});
@@ -212,8 +217,8 @@ describe("SignMessage", () => {
 				"b9791983a2b2b529dad23e0798cf4df30b3880f4fda5f4587f1c3171f02d0c9f4491f8c6d3e76b5cd2e2fd11c9fdcc7958e77d1f19c1b57a55e9c99ed1e6a2b1",
 		};
 
-		const walletUsesWIFMock = jest.spyOn(wallet, "usesWIF").mockReturnValue(true);
-		const walletWifMock = jest.spyOn(wallet, "wif").mockImplementation((password) => {
+		const walletUsesWIFMock = jest.spyOn(wallet.wif(), "exists").mockReturnValue(true);
+		const walletWifMock = jest.spyOn(wallet.wif(), "get").mockImplementation(() => {
 			const wif = "SEyV1EJpyHxAfiRrVXo1SuAFqUP4yJkH2UBg4NZ96jMVUHe4DBpg";
 			return Promise.resolve(wif);
 		});

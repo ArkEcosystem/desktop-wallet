@@ -83,18 +83,35 @@ describe("WalletDetails", () => {
 	beforeAll(async () => {
 		profile = env.profiles().findById(getDefaultProfileId());
 
-		await profile.restore();
+		await env.profiles().restore(profile);
 		await profile.sync();
 
 		wallet = profile.wallets().findById("ac38fe6d-4b67-4ef1-85be-17c5f6841129");
-		blankWallet = await profile.wallets().importByMnemonic(passphrase2, "ARK", "ark.devnet");
-		unvotedWallet = await profile.wallets().importByMnemonic("unvoted wallet", "ARK", "ark.devnet");
+		blankWallet = await profile.walletFactory().fromMnemonic({
+			mnemonic: passphrase2,
+			coin: "ARK",
+			network: "ark.devnet",
+		});
+
+		unvotedWallet = await profile.walletFactory().fromMnemonic({
+			mnemonic: "unvoted wallet",
+			coin: "ARK",
+			network: "ark.devnet",
+		});
 
 		emptyProfile = env.profiles().findById("cba050f1-880f-45f0-9af9-cfe48f406052");
-		wallet2 = await emptyProfile.wallets().importByMnemonic("wallet 2", "ARK", "ark.devnet");
+
+		wallet2 = await emptyProfile.walletFactory().fromMnemonic({
+			mnemonic: "wallet 2",
+			coin: "ARK",
+			network: "ark.devnet",
+		});
+
+		profile.wallets().push(wallet);
+		profile.wallets().push(blankWallet);
+		emptyProfile.wallets().push(wallet2);
 
 		await syncDelegates();
-		await wallet.syncVotes();
 
 		nock("https://dwallets.ark.io")
 			.get("/api/delegates")

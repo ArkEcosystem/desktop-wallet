@@ -56,7 +56,7 @@ describe("ImportWallet", () => {
 	beforeEach(async () => {
 		profile = env.profiles().findById(fixtureProfileId);
 
-		await profile.restore();
+		await env.profiles().restore(profile);
 		await profile.sync();
 
 		const walletId = profile.wallets().findByAddress(randomAddress)?.id();
