@@ -10,6 +10,7 @@ import { EGLD } from "@arkecosystem/platform-sdk-egld";
 // import { EOS } from "@arkecosystem/platform-sdk-eos";
 // import { ETH } from "@arkecosystem/platform-sdk-eth";
 import { LSK } from "@arkecosystem/platform-sdk-lsk";
+import { NEO } from "@arkecosystem/platform-sdk-neo";
 import { NANO } from "@arkecosystem/platform-sdk-nano";
 import { LUNA } from "@arkecosystem/platform-sdk-luna";
 // import { NEO } from "@arkecosystem/platform-sdk-neo";
@@ -154,9 +155,9 @@ export const App = () => {
 					// ETH,
 					EGLD,
 					LSK,
+					NEO,
 					NANO,
 					LUNA,
-					// NEO,
 					// TRX,
 					XLM,
 					// XMR,
