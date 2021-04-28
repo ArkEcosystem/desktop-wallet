@@ -1,14 +1,17 @@
-// import { ADA } from "@arkecosystem/platform-sdk-ada";
 import "focus-visible";
 
+import { ADA } from "@arkecosystem/platform-sdk-ada";
 import { ARK } from "@arkecosystem/platform-sdk-ark";
+import { ATOM } from "@arkecosystem/platform-sdk-atom";
 // import { ATOM } from "@arkecosystem/platform-sdk-atom";
 import { AVAX } from "@arkecosystem/platform-sdk-avax";
-// import { BTC } from "@arkecosystem/platform-sdk-btc";
+import { BTC } from "@arkecosystem/platform-sdk-btc";
 import { DOT } from "@arkecosystem/platform-sdk-dot";
+import { EGLD } from "@arkecosystem/platform-sdk-egld";
 // import { EOS } from "@arkecosystem/platform-sdk-eos";
 // import { ETH } from "@arkecosystem/platform-sdk-eth";
 import { LSK } from "@arkecosystem/platform-sdk-lsk";
+import { NEO } from "@arkecosystem/platform-sdk-neo";
 import { NANO } from "@arkecosystem/platform-sdk-nano";
 import { LUNA } from "@arkecosystem/platform-sdk-luna";
 // import { NEO } from "@arkecosystem/platform-sdk-neo";
@@ -143,22 +146,20 @@ export const App = () => {
 		() =>
 			new Environment({
 				coins: {
-					// ADA,
+					ADA,
 					ARK,
+					ATOM,
 					// ATOM,
 					AVAX,
-					// BTC,
+					BTC,
 					DOT,
 					// EOS,
 					// ETH,
-					// EGLD,
+					EGLD,
 					LSK,
-<<<<<<< HEAD
+					NEO,
 					NANO,
-=======
 					LUNA,
->>>>>>> develop
-					// NEO,
 					// TRX,
 					XLM,
 					// XMR,
