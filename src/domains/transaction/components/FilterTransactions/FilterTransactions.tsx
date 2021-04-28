@@ -13,39 +13,40 @@ type FilterTransactionsProps = {
 	isDisabled?: boolean;
 };
 
-export const FilterTransactions = memo(({ className, onSelect, defaultSelected, wallets, isDisabled }: FilterTransactionsProps) => {
-	const { t } = useTranslation();
-	const { types, getLabel, getQueryParamsByType, hasMagistrationTypesEnabled } = useTransactionTypes({ wallets });
+export const FilterTransactions = memo(
+	({ className, onSelect, defaultSelected, wallets, isDisabled }: FilterTransactionsProps) => {
+		const { t } = useTranslation();
+		const { types, getLabel, getQueryParamsByType, hasMagistrationTypesEnabled } = useTransactionTypes({ wallets });
 
-	const allOptions: DropdownOptionGroup[] = useMemo(() => {
-		const options: DropdownOptionGroup[] = [
-			{
-				key: "all",
-				options: [{ label: t("COMMON.ALL"), value: "all" }],
-			},
-			{
-				key: "core",
-				title: t("TRANSACTION.CORE"),
-				hasDivider: true,
-				options: types.core.map((type) => ({ label: getLabel(type), value: type })),
-			},
-		];
+		const allOptions: DropdownOptionGroup[] = useMemo(() => {
+			const options: DropdownOptionGroup[] = [
+				{
+					key: "all",
+					options: [{ label: t("COMMON.ALL"), value: "all" }],
+				},
+				{
+					key: "core",
+					title: t("TRANSACTION.CORE"),
+					hasDivider: true,
+					options: types.core.map((type) => ({ label: getLabel(type), value: type })),
+				},
+			];
 
-		if (hasMagistrationTypesEnabled) {
-			options.push({
-				key: "magistrate",
-				hasDivider: true,
-				options: [
-					{
-						label: t("TRANSACTION.MAGISTRATE"),
-						value: "magistrate",
-					},
-				],
-			});
-		}
+			if (hasMagistrationTypesEnabled) {
+				options.push({
+					key: "magistrate",
+					hasDivider: true,
+					options: [
+						{
+							label: t("TRANSACTION.MAGISTRATE"),
+							value: "magistrate",
+						},
+					],
+				});
+			}
 
-		return options;
-	}, [getLabel, types, t, hasMagistrationTypesEnabled]);
+			return options;
+		}, [getLabel, types, t, hasMagistrationTypesEnabled]);
 
 		const [selectedOption, setSelectedOption] = useState<DropdownOption>(
 			defaultSelected || allOptions[0].options[0],
