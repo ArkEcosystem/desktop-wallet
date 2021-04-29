@@ -77,8 +77,7 @@ const filterUnseenTransactions = (
 			if (
 				allowedTransactionTypes.includes(transaction.type()) &&
 				isRecipient(profile, transaction) &&
-				!transactionNotificationExists(profile, transaction) &&
-				!addedTransactions.find((t) => t.id() === transaction.id())
+				!transactionNotificationExists(profile, transaction)
 			) {
 				addedTransactions.push(transaction);
 			}
