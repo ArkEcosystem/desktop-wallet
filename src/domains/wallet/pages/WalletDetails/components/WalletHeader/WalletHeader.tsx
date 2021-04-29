@@ -16,7 +16,8 @@ import { ReceiveFunds } from "domains/wallet/components/ReceiveFunds";
 import { SignMessage } from "domains/wallet/components/SignMessage";
 import { UpdateWalletName } from "domains/wallet/components/UpdateWalletName";
 import { VerifyMessage } from "domains/wallet/components/VerifyMessage";
-import React, { useRef, useState } from "react";
+import { useWalletSync } from "domains/wallet/hooks/use-wallet-sync";
+import React, {useRef, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { useHistory } from "react-router-dom";
 import { openExternal } from "utils/electron-utils";
@@ -26,13 +27,19 @@ type WalletHeaderProps = {
 	wallet: Contracts.IReadWriteWallet;
 	currencyDelta?: number;
 	onSend?: () => void;
+	onUpdate?: (callback: (status: boolean) => void) => void;
+	isUpdating?: boolean;
 };
 
-export const WalletHeader = ({ profile, wallet, currencyDelta, onSend }: WalletHeaderProps) => {
+export const WalletHeader = ({ profile, wallet, currencyDelta, onSend, onUpdate }: WalletHeaderProps) => {
 	const ref = useRef(null);
 	const [TruncatedAddress] = useTextTruncate({ text: wallet.address(), parentRef: ref });
 
 	const [modal, setModal] = useState<string | undefined>();
+
+	const { env } = useEnvironmentContext();
+	const { syncAll } = useWalletSync({ profile, env });
+	const [isSyncing, setIsSyncing] = useState(false)
 
 	const history = useHistory();
 
@@ -205,6 +212,23 @@ export const WalletHeader = ({ profile, wallet, currencyDelta, onSend }: WalletH
 		setModal(option.value?.toString());
 	};
 
+	const syncWallet = async () => {
+		setIsSyncing(true);
+		const parentPromise = () => new Promise(resolve => {
+			if (onUpdate) {
+				onUpdate((status) => {
+					if (status) {
+						resolve()
+					}
+				})
+			}
+
+			resolve();
+		});
+		await Promise.all([syncAll(wallet), parentPromise()]);
+		setIsSyncing(false);
+	}
+
 	return (
 		<>
 			<header className="flex items-center" data-testid="WalletHeader">
@@ -313,7 +337,16 @@ export const WalletHeader = ({ profile, wallet, currencyDelta, onSend }: WalletH
 						/>
 					</div>
 
-					<div className="my-auto">
+					<div className="my-auto flex items-center -space-x-2">
+						<Tooltip
+							content={isSyncing ? t("WALLETS.UPDATING_WALLET_DATA") : t("WALLETS.UPDATE_WALLET_DATA")}
+							disabled={!wallet.hasSyncedWithNetwork()}
+						>
+							<Button size="icon" variant="transparent" className="w-11 h-11 text-theme-secondary-text hover:text-theme-secondary-500" onClick={syncWallet} disabled={!wallet.hasSyncedWithNetwork() || isSyncing}>
+								<Icon name="Reload" className={isSyncing ? 'animate-spin' : ''} style={{ animationDirection: 'reverse' }} />
+							</Button>
+						</Tooltip>
+
 						<Button
 							size="icon"
 							variant="transparent"
