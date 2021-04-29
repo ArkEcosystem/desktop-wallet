@@ -117,7 +117,9 @@ describe("Notifications Hook", () => {
 		expect(sorted[0].meta.transactionId).toEqual(
 			"127d323ff3c3a40cb7abec8aa3b045e8c45c72c8feb7dc667d2f85978f8b10cd",
 		);
-		expect(sorted[1].meta.transactionId).toEqual("ea63bf9a4b3eaf75a1dfff721967c45dce64eb7facf1aef29461868681b5c79b");
+		expect(sorted[1].meta.transactionId).toEqual(
+			"ea63bf9a4b3eaf75a1dfff721967c45dce64eb7facf1aef29461868681b5c79b",
+		);
 		expect(sorted[2].meta.transactionId).toEqual("2");
 		expect(sorted[3].meta.transactionId).toEqual("1");
 		expect(sorted[4].name).toEqual("withoutMeta");
