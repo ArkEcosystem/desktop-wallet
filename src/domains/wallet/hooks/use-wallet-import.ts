@@ -75,7 +75,7 @@ export const useWalletImport = ({ profile }: { profile: Contracts.IProfile }) =>
 							})
 							.then((wallet) => {
 								profile.wallets().push(wallet);
-								return resolve();
+								return resolve(wallet);
 							})
 							.catch((error) => {
 								if (error.code === "ERR_ASSERTION") {
