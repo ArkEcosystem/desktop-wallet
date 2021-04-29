@@ -104,6 +104,8 @@ export const CreateWallet = () => {
 			network: network.id(),
 		});
 
+		activeProfile.wallets().push(wallet);
+
 		setValue("wallet", wallet, { shouldValidate: true, shouldDirty: true });
 		setValue("mnemonic", mnemonic, { shouldValidate: true, shouldDirty: true });
 	};
