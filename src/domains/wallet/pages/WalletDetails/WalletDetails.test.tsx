@@ -107,8 +107,8 @@ describe("WalletDetails", () => {
 			network: "ark.devnet",
 		});
 
-		profile.wallets().push(wallet);
 		profile.wallets().push(blankWallet);
+		profile.wallets().push(unvotedWallet);
 		emptyProfile.wallets().push(wallet2);
 
 		await syncDelegates();
@@ -168,7 +168,7 @@ describe("WalletDetails", () => {
 	});
 
 	it("should not render wallet vote when the network does not support votes", async () => {
-		const networkFeatureSpy = jest.spyOn(wallet.network(), "can");
+		const networkFeatureSpy = jest.spyOn(wallet.network(), "allows");
 
 		when(networkFeatureSpy).calledWith(Coins.FeatureFlag.TransactionVote).mockReturnValue(false);
 
@@ -191,13 +191,15 @@ describe("WalletDetails", () => {
 	});
 
 	it("should navigate to votes page when clicking on WalletVote button", async () => {
-		const walletSpy = jest.spyOn(wallet, "votes").mockReturnValue([]);
+		await profile.sync();
+
+		const walletSpy = jest.spyOn(wallet.voting(), "current").mockReturnValue([]);
 		const historySpy = jest.spyOn(history, "push");
 
 		const { getByTestId, getByText } = await renderPage();
 
 		await waitFor(() => expect(getByText(commonTranslations.LEARN_MORE)).toBeTruthy());
-
+		await waitFor(() => expect(getByTestId("WalletVote__button")).not.toBeDisabled());
 		act(() => {
 			fireEvent.click(getByTestId("WalletVote__button"));
 		});
@@ -209,7 +211,7 @@ describe("WalletDetails", () => {
 	});
 
 	it('should navigate to votes with "current" filter param when clicking on Multivote', async () => {
-		const walletSpy = jest.spyOn(wallet, "votes").mockReturnValue([
+		const walletSpy = jest.spyOn(wallet.voting(), "current").mockReturnValue([
 			new ReadOnlyWallet({
 				address: wallet.address(),
 				explorerLink: "",
@@ -420,17 +422,24 @@ describe("WalletDetails", () => {
 	});
 
 	it("should not fail if the votes have not yet been synchronized", async () => {
-		const newWallet = await profile.wallets().importByMnemonic("test mnemonic", "ARK", "ark.devnet");
+		const newWallet = await profile.walletFactory().fromMnemonic({
+			mnemonic: "test mnemonic",
+			coin: "ARK",
+			network: "ark.devnet",
+		});
+
+		profile.wallets().push(newWallet);
+
 		nock("https://dwallets.ark.io").get(`/api/wallets/${newWallet.address()}`).reply(200, walletMock);
 
-		await newWallet.syncIdentity();
+		await newWallet.synchroniser().identity();
 
-		const syncVotesSpy = jest.spyOn(newWallet, "syncVotes").mockReturnValue();
+		const syncVotesSpy = jest.spyOn(newWallet.synchroniser(), "votes").mockReturnValue();
 
 		walletUrl = `/profiles/${profile.id()}/wallets/${newWallet.id()}`;
 		history.push(walletUrl);
 
-		const { asFragment, getByText } = await renderPage();
+		const { getByText } = await renderPage();
 
 		await waitFor(() => expect(getByText(commonTranslations.LEARN_MORE)).toBeTruthy());
 
