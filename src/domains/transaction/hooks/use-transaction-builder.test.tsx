@@ -4,13 +4,12 @@ import { act as actHook, renderHook } from "@testing-library/react-hooks";
 import { LedgerProvider } from "app/contexts";
 import React from "react";
 import {
+	defaultNetMocks,
 	env,
 	getDefaultLedgerTransport,
 	getDefaultProfileId,
 	getDefaultWalletMnemonic,
-	waitFor,
 	WithProviders,
-	defaultNetMocks,
 } from "utils/testing-library";
 
 import { useTransactionBuilder } from "./use-transaction-builder";

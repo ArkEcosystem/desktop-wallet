@@ -63,7 +63,6 @@ beforeAll(async () => {
 	});
 	profile.wallets().push(wallet);
 
-
 	await syncDelegates();
 
 	jest.spyOn(useRandomNumberHook, "useRandomNumber").mockImplementation(() => 1);

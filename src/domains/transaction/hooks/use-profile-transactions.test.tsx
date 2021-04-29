@@ -58,16 +58,14 @@ describe("useProfileTransactions", () => {
 			await waitFor(() => expect(result.current.transactions).toHaveLength(2));
 		});
 
-		const mockTransactionsAggregate = jest
-			.spyOn(profile.transactionAggregate(), "all")
-			.mockImplementation(() => {
-				const { data } = require("tests/fixtures/coins/ark/devnet/transactions.json");
-				const response = {
-					hasMorePages: () => false,
-					items: () => data,
-				};
-				return Promise.resolve(response);
-			});
+		const mockTransactionsAggregate = jest.spyOn(profile.transactionAggregate(), "all").mockImplementation(() => {
+			const { data } = require("tests/fixtures/coins/ark/devnet/transactions.json");
+			const response = {
+				hasMorePages: () => false,
+				items: () => data,
+			};
+			return Promise.resolve(response);
+		});
 
 		await act(async () => {
 			const { result } = renderHook(
@@ -84,15 +82,13 @@ describe("useProfileTransactions", () => {
 
 		mockTransactionsAggregate.mockRestore();
 
-		const mockEmptyTransactions = jest
-			.spyOn(profile.transactionAggregate(), "all")
-			.mockImplementation(() => {
-				const response = {
-					hasMorePages: () => false,
-					items: () => [],
-				};
-				return Promise.resolve(response);
-			});
+		const mockEmptyTransactions = jest.spyOn(profile.transactionAggregate(), "all").mockImplementation(() => {
+			const response = {
+				hasMorePages: () => false,
+				items: () => [],
+			};
+			return Promise.resolve(response);
+		});
 
 		await act(async () => {
 			const { result } = renderHook(
