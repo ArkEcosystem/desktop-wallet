@@ -450,9 +450,7 @@ describe("Use Ledger Scanner", () => {
 			</LedgerProvider>,
 		);
 
-		jest.spyOn(profile.wallets(), "findByAddress").mockImplementation(() => {
-			return profile.wallets().first();
-		});
+		jest.spyOn(profile.wallets(), "findByAddress").mockImplementation(() => profile.wallets().first());
 
 		// Fetch more
 		act(() => {
