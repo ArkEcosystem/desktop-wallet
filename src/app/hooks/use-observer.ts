@@ -5,7 +5,7 @@ type Observer = {
 	once?: boolean;
 };
 
-export function useObserver <T>(defaultValue: T) {
+export function useObserver<T>(defaultValue: T) {
 	const observers = useRef<Observer[]>([]);
 	const [value, setValue] = useState(defaultValue);
 
@@ -40,4 +40,4 @@ export function useObserver <T>(defaultValue: T) {
 		subscribe,
 		notify,
 	};
-};
+}

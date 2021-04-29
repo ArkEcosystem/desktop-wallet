@@ -25,7 +25,17 @@ type TransactionsProps = {
 };
 
 export const Transactions = memo(
-	({ emptyText, isCompact, profile, isVisible = true, wallets, isLoading = false, title, onLoading, shouldReload }: TransactionsProps) => {
+	({
+		emptyText,
+		isCompact,
+		profile,
+		isVisible = true,
+		wallets,
+		isLoading = false,
+		title,
+		onLoading,
+		shouldReload,
+	}: TransactionsProps) => {
 		const { t } = useTranslation();
 
 		const [transactionModalItem, setTransactionModalItem] = useState<DTO.ExtendedTransactionData | undefined>(
@@ -63,11 +73,11 @@ export const Transactions = memo(
 
 		useEffect(() => {
 			onLoading?.(isLoadingTransactions);
-		}, [isLoadingTransactions, onLoading])
+		}, [isLoadingTransactions, onLoading]);
 
 		useEffect(() => {
 			if (shouldReload) {
-				updateFilters({ activeMode, activeTransactionType, timestamp: new Date().getTime() })
+				updateFilters({ activeMode, activeTransactionType, timestamp: new Date().getTime() });
 			}
 		}, [shouldReload]); // eslint-disable-line react-hooks/exhaustive-deps
 

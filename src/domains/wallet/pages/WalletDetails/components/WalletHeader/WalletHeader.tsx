@@ -17,7 +17,7 @@ import { SignMessage } from "domains/wallet/components/SignMessage";
 import { UpdateWalletName } from "domains/wallet/components/UpdateWalletName";
 import { VerifyMessage } from "domains/wallet/components/VerifyMessage";
 import { useWalletSync } from "domains/wallet/hooks/use-wallet-sync";
-import React, {useRef, useState } from "react";
+import React, { useRef, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { useHistory } from "react-router-dom";
 import { openExternal } from "utils/electron-utils";
@@ -39,7 +39,7 @@ export const WalletHeader = ({ profile, wallet, currencyDelta, onSend, onUpdate 
 
 	const { env } = useEnvironmentContext();
 	const { syncAll } = useWalletSync({ profile, env });
-	const [isSyncing, setIsSyncing] = useState(false)
+	const [isSyncing, setIsSyncing] = useState(false);
 
 	const history = useHistory();
 
@@ -214,20 +214,21 @@ export const WalletHeader = ({ profile, wallet, currencyDelta, onSend, onUpdate 
 
 	const syncWallet = async () => {
 		setIsSyncing(true);
-		const parentPromise = () => new Promise(resolve => {
-			if (onUpdate) {
-				onUpdate((status) => {
-					if (status) {
-						resolve()
-					}
-				})
-			}
+		const parentPromise = () =>
+			new Promise((resolve) => {
+				if (onUpdate) {
+					onUpdate((status) => {
+						if (status) {
+							resolve();
+						}
+					});
+				}
 
-			resolve();
-		});
+				resolve();
+			});
 		await Promise.all([syncAll(wallet), parentPromise()]);
 		setIsSyncing(false);
-	}
+	};
 
 	return (
 		<>
@@ -342,8 +343,18 @@ export const WalletHeader = ({ profile, wallet, currencyDelta, onSend, onUpdate 
 							content={isSyncing ? t("WALLETS.UPDATING_WALLET_DATA") : t("WALLETS.UPDATE_WALLET_DATA")}
 							disabled={!wallet.hasSyncedWithNetwork()}
 						>
-							<Button size="icon" variant="transparent" className="w-11 h-11 text-theme-secondary-text hover:text-theme-secondary-500" onClick={syncWallet} disabled={!wallet.hasSyncedWithNetwork() || isSyncing}>
-								<Icon name="Reload" className={isSyncing ? 'animate-spin' : ''} style={{ animationDirection: 'reverse' }} />
+							<Button
+								size="icon"
+								variant="transparent"
+								className="w-11 h-11 text-theme-secondary-text hover:text-theme-secondary-500"
+								onClick={syncWallet}
+								disabled={!wallet.hasSyncedWithNetwork() || isSyncing}
+							>
+								<Icon
+									name="Reload"
+									className={isSyncing ? "animate-spin" : ""}
+									style={{ animationDirection: "reverse" }}
+								/>
 							</Button>
 						</Tooltip>
 

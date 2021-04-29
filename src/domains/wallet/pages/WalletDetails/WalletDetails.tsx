@@ -10,7 +10,7 @@ import { MultiSignatureDetail } from "domains/transaction/components/MultiSignat
 import { TransactionDetailModal } from "domains/transaction/components/TransactionDetailModal";
 import { Transactions } from "domains/transaction/components/Transactions";
 import { SignedTransactionTable } from "domains/transaction/components/TransactionTable/SignedTransactionTable/SignedTransactionTable";
-import React, { useEffect, useMemo,useState } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { useHistory } from "react-router-dom";
 

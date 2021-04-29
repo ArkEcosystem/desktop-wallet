@@ -48,7 +48,7 @@ export const useProfileTransactions = ({
 		transactions: [],
 		activeMode: undefined,
 		activeTransactionType: undefined,
-		timestamp: undefined
+		timestamp: undefined,
 	});
 
 	useEffect(() => {
@@ -114,7 +114,7 @@ export const useProfileTransactions = ({
 				activeMode,
 				activeTransactionType,
 				isLoadingMore: false,
-				timestamp
+				timestamp,
 			});
 		},
 		[wallets.length],
