@@ -74,6 +74,8 @@ describe("AddressRow", () => {
 
 		await syncDelegates();
 		await wallet.synchroniser().votes();
+		await wallet.synchroniser().identity();
+		await wallet.synchroniser().coin();
 	});
 
 	it("should render", async () => {
