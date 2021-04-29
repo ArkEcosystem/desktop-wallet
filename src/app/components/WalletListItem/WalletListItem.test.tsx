@@ -26,7 +26,6 @@ describe("WalletListItem", () => {
 
 		await env.profiles().restore(profile);
 		await profile.sync();
-
 	});
 
 	it("should render", () => {
