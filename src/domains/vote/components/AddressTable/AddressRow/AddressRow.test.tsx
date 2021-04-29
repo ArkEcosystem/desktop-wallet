@@ -27,11 +27,28 @@ describe("AddressRow", () => {
 		wallet.data().set(Contracts.WalletFlag.Starred, true);
 		wallet.data().set(Contracts.WalletData.LedgerPath, "0");
 
-		blankWallet = await profile.wallets().importByMnemonic(blankWalletPassphrase, "ARK", "ark.devnet");
-		unvotedWallet = await profile.wallets().importByMnemonic("unvoted wallet", "ARK", "ark.devnet");
+		blankWallet = await profile.walletFactory().fromMnemonic({
+			mnemonic: blankWalletPassphrase,
+			coin: "ARK",
+			network: "ark.devnet",
+		});
+		profile.wallets().push(blankWallet);
+
+		unvotedWallet = await profile.walletFactory().fromMnemonic({
+			mnemonic: "unvoted wallet",
+			coin: "ARK",
+			network: "ark.devnet",
+		});
+		profile.wallets().push(unvotedWallet);
 
 		emptyProfile = env.profiles().findById("cba050f1-880f-45f0-9af9-cfe48f406052");
-		wallet2 = await emptyProfile.wallets().importByMnemonic("wallet 2", "ARK", "ark.devnet");
+
+		wallet2 = await emptyProfile.walletFactory().fromMnemonic({
+			mnemonic: "wallet 2",
+			coin: "ARK",
+			network: "ark.devnet",
+		});
+		profile.wallets().push(wallet2);
 
 		nock.disableNetConnect();
 
@@ -56,7 +73,7 @@ describe("AddressRow", () => {
 			.persist();
 
 		await syncDelegates();
-		await wallet.syncVotes();
+		await wallet.synchroniser().votes();
 	});
 
 	it("should render", async () => {
@@ -74,7 +91,7 @@ describe("AddressRow", () => {
 	});
 
 	it("should render when the maximum votes is greater than 1", () => {
-		const votesMock = jest.spyOn(wallet, "votes").mockReturnValue(
+		const votesMock = jest.spyOn(wallet.voting(), "current").mockReturnValue(
 			[0, 1, 2, 3].map(
 				(index) =>
 					new ReadOnlyWallet({
@@ -102,7 +119,7 @@ describe("AddressRow", () => {
 	});
 
 	it("should render when the wallet has many votes", () => {
-		const votesMock = jest.spyOn(wallet, "votes").mockReturnValue(
+		const votesMock = jest.spyOn(wallet.voting(), "current").mockReturnValue(
 			[0, 1, 2, 3, 4].map(
 				(index) =>
 					new ReadOnlyWallet({
@@ -178,6 +195,10 @@ describe("AddressRow", () => {
 	});
 
 	it("should emit action on select button", async () => {
+		await wallet.synchroniser().identity();
+		await wallet.synchroniser().votes();
+		await wallet.synchroniser().coin();
+
 		const onSelect = jest.fn();
 		const { asFragment, container, getByTestId } = render(
 			<table>

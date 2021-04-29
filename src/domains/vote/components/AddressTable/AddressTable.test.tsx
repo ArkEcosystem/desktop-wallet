@@ -12,6 +12,7 @@ describe("AddressTable", () => {
 	beforeAll(async () => {
 		profile = env.profiles().findById(getDefaultProfileId());
 		await env.profiles().restore(profile);
+		await profile.sync();
 
 		wallet = profile.wallets().findById("ac38fe6d-4b67-4ef1-85be-17c5f6841129");
 
@@ -24,7 +25,7 @@ describe("AddressTable", () => {
 			.persist();
 
 		await syncDelegates();
-		await wallet.syncVotes();
+		await wallet.synchroniser().votes();
 	});
 
 	it("should render", async () => {

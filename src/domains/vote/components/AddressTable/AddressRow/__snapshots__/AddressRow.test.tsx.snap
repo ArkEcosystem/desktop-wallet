@@ -316,8 +316,9 @@ exports[`AddressRow should render 1`] = `
             class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 kjTmcB justify-end"
           >
             <button
-              class="OriginalButton__StyledButton-sc-1y2wptt-0 hsoUax"
+              class="OriginalButton__StyledButton-sc-1y2wptt-0 blpaPr"
               data-testid="AddressRow__select-0"
+              disabled=""
               type="button"
             >
               <div
@@ -416,19 +417,6 @@ exports[`AddressRow should render for a multisignature wallet 1`] = `
                   </svg>
                 </div>
               </div>
-              <div
-                class="inline-block p-1 text-theme-secondary-600"
-              >
-                <div
-                  class="sc-bdfBwQ dCuQLW"
-                  height="1em"
-                  width="20"
-                >
-                  <svg>
-                    multisig.svg
-                  </svg>
-                </div>
-              </div>
             </div>
           </div>
         </td>
@@ -496,8 +484,9 @@ exports[`AddressRow should render for a multisignature wallet 1`] = `
             class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 kjTmcB justify-end"
           >
             <button
-              class="OriginalButton__StyledButton-sc-1y2wptt-0 hsoUax"
+              class="OriginalButton__StyledButton-sc-1y2wptt-0 blpaPr"
               data-testid="AddressRow__select-0"
+              disabled=""
               type="button"
             >
               <div
@@ -719,8 +708,9 @@ exports[`AddressRow should render when the maximum votes is greater than 1 1`] =
             class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 kjTmcB justify-end"
           >
             <button
-              class="OriginalButton__StyledButton-sc-1y2wptt-0 hsoUax"
+              class="OriginalButton__StyledButton-sc-1y2wptt-0 blpaPr"
               data-testid="AddressRow__select-0"
+              disabled=""
               type="button"
             >
               <div
@@ -933,8 +923,9 @@ exports[`AddressRow should render when the wallet has many votes 1`] = `
             class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 kjTmcB justify-end"
           >
             <button
-              class="OriginalButton__StyledButton-sc-1y2wptt-0 hsoUax"
+              class="OriginalButton__StyledButton-sc-1y2wptt-0 blpaPr"
               data-testid="AddressRow__select-0"
+              disabled=""
               type="button"
             >
               <div
@@ -1100,8 +1091,9 @@ exports[`AddressRow should render when wallet hasn't voted 1`] = `
             class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 kjTmcB justify-end"
           >
             <button
-              class="OriginalButton__StyledButton-sc-1y2wptt-0 hsoUax"
+              class="OriginalButton__StyledButton-sc-1y2wptt-0 blpaPr"
               data-testid="AddressRow__select-0"
+              disabled=""
               type="button"
             >
               <div
@@ -1364,8 +1356,9 @@ exports[`AddressRow should render when wallet not found for votes 1`] = `
             class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 kjTmcB justify-end"
           >
             <button
-              class="OriginalButton__StyledButton-sc-1y2wptt-0 hsoUax"
+              class="OriginalButton__StyledButton-sc-1y2wptt-0 blpaPr"
               data-testid="AddressRow__select-0"
+              disabled=""
               type="button"
             >
               <div
