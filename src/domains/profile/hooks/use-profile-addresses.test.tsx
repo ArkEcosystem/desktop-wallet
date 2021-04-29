@@ -10,7 +10,6 @@ let profile: Contracts.IProfile;
 describe("useProfileAddresses", () => {
 	beforeAll(async () => {
 		profile = env.profiles().findById(getDefaultProfileId());
-		await env.profiles().restore(profile);
 
 		profile
 			.contacts()
@@ -23,13 +22,16 @@ describe("useProfileAddresses", () => {
 					network: "ark.devnet",
 				},
 			]);
+
+		await env.profiles().restore(profile);
+		await profile.sync();
 	});
 
 	it("should return all available addresses", async () => {
 		const { result } = renderHook(() => useProfileAddresses({ profile }));
 
-		expect(result.current.allAddresses).toHaveLength(3);
-		expect(result.current.contactAddresses).toHaveLength(1);
+		expect(result.current.allAddresses).toHaveLength(4);
+		expect(result.current.contactAddresses).toHaveLength(2);
 		expect(result.current.profileAddresses).toHaveLength(2);
 	});
 
@@ -37,14 +39,13 @@ describe("useProfileAddresses", () => {
 		const wallet = await profile.walletFactory().fromMnemonic({
 			mnemonic: "test",
 			coin: "ARK",
-			network: "ark.devnet",
+			network: "ark.mainnet",
 		});
-		profile.wallets().push(wallet);
-
+		await profile.sync();
 		const { result } = renderHook(() => useProfileAddresses({ profile, network: wallet.network() }));
 
-		expect(result.current.allAddresses).toHaveLength(4);
-		expect(result.current.contactAddresses).toHaveLength(1);
-		expect(result.current.profileAddresses).toHaveLength(3);
+		expect(result.current.allAddresses).toHaveLength(0);
+		expect(result.current.contactAddresses).toHaveLength(0);
+		expect(result.current.profileAddresses).toHaveLength(0);
 	});
 });
