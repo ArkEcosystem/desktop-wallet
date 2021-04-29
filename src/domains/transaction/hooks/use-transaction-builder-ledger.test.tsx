@@ -25,7 +25,7 @@ describe("Use Transaction Builder with Ledger", () => {
 		</WithProviders>
 	);
 
-	beforeAll(async () => {
+	beforeAll(() => {
 		defaultNetMocks();
 		profile = env.profiles().findById(getDefaultProfileId());
 		wallet = profile.wallets().first();
