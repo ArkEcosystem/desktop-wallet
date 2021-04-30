@@ -34,7 +34,6 @@ describe("SignMessage", () => {
 			coin: "ARK",
 			network: "ark.devnet",
 		});
-
 		profile.wallets().push(wallet);
 
 		walletUrl = `/profiles/${profile.id()}/wallets/${wallet.id()}`;
@@ -52,6 +51,7 @@ describe("SignMessage", () => {
 	});
 
 	it("should render", async () => {
+		await wallet.synchroniser().identity();
 		const { asFragment, getByText } = renderWithRouter(
 			<Route path="/profiles/:profileId/wallets/:walletId">
 				<LedgerProvider transport={transport}>
@@ -267,10 +267,6 @@ describe("SignMessage", () => {
 	});
 
 	it("should sign message with ledger wallet", async () => {
-		await profile.sync();
-		await wallet.synchroniser().identity();
-		await wallet.synchroniser().coin();
-
 		const isLedgerMock = jest.spyOn(wallet, "isLedger").mockReturnValue(true);
 
 		const unsubscribe = jest.fn();
@@ -319,11 +315,15 @@ describe("SignMessage", () => {
 
 		await waitFor(() => expect(getByTestId("LedgerWaitingApp-loading_message")).toBeTruthy());
 
-		const getPublicKeySpy = jest
-			.spyOn(wallet.coin().ledger(), "getPublicKey")
-			.mockResolvedValue(wallet.publicKey()!);
+		const getPublicKeySpy = jest.spyOn(wallet.coin(), "ledger").mockImplementation(() => {
+			return {
+				getPublicKey: () => {
+					return Promise.resolve(wallet.publicKey());
+				},
+			};
+		});
 
-		await waitFor(() => expect(getByText(walletTranslations.MODAL_SIGN_MESSAGE.SIGNED_STEP.TITLE)).toBeTruthy());
+		await waitFor(() => expect(getPublicKeySpy).toHaveBeenCalled());
 
 		signMessageSpy.mockRestore();
 		isLedgerMock.mockRestore();
