@@ -315,13 +315,9 @@ describe("SignMessage", () => {
 
 		await waitFor(() => expect(getByTestId("LedgerWaitingApp-loading_message")).toBeTruthy());
 
-		const getPublicKeySpy = jest.spyOn(wallet.coin(), "ledger").mockImplementation(() => {
-			return {
-				getPublicKey: () => {
-					return Promise.resolve(wallet.publicKey());
-				},
-			};
-		});
+		const getPublicKeySpy = jest.spyOn(wallet.coin(), "ledger").mockImplementation(() => ({
+			getPublicKey: () => Promise.resolve(wallet.publicKey()),
+		}));
 
 		await waitFor(() => expect(getPublicKeySpy).toHaveBeenCalled());
 
