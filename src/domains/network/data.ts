@@ -231,13 +231,13 @@ export const coinsNetworkExtendedData: Record<string, Record<string, CoinNetwork
 		},
 	},
 	XLM: {
-		'xlm.mainnet': {
+		"xlm.mainnet": {
 			displayName: "Stellar",
 			borderClass: "border-theme-primary-500",
 			textClass: "text-theme-primary-700",
 			iconName: "XLM",
 		},
-		'xlm.testnet': {
+		"xlm.testnet": {
 			displayName: "Stellar Testnet",
 			borderClass: "border-theme-primary-500",
 			textClass: "text-theme-primary-700",
