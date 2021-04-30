@@ -227,6 +227,7 @@ module.exports = {
 			opacity: ["dark", "group-hover"],
 			padding: ["first", "last"],
 			ringColor: ["dark", "group-hover"],
+			ringWidth: ["group-focus"],
 		},
 	},
 	plugins: [require("@tailwindcss/forms")],
