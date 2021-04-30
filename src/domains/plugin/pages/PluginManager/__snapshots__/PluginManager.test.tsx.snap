@@ -4978,7 +4978,11 @@ exports[`PluginManager should search for plugin 1`] = `
                 data-testid="PluginList__empty-message"
               >
                 <div>
-                  Your search query "unknown search query" does not match any Plugins in the manager.
+                  Your search query 
+                  <strong>
+                    unknown search query
+                  </strong>
+                   does not match any Plugins in the manager.
                 </div>
               </div>
             </div>
