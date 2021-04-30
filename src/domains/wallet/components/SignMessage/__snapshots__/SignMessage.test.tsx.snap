@@ -180,11 +180,13 @@ exports[`SignMessage should render 1`] = `
                           class=""
                         >
                           <button
-                            class="flex items-center justify-center w-full h-full text-2xl"
+                            class="relative flex items-center justify-center w-full h-full text-2xl focus:outline-none group"
                             data-testid="InputPassword__toggle"
-                            tabindex="-1"
                             type="button"
                           >
+                            <div
+                              class="absolute inset-0 -m-2 rounded ring-theme-primary-400 group-focus:ring-2"
+                            />
                             <div
                               class="sc-bdfBwQ fPrsah"
                               height="1em"
