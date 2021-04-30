@@ -28,13 +28,14 @@ let transport: typeof Transport;
 describe("SignMessage", () => {
 	beforeAll(async () => {
 		profile = env.profiles().findById(getDefaultProfileId());
-		await env.profiles().restore(profile);
 
 		wallet = await profile.walletFactory().fromMnemonic({
 			mnemonic,
 			coin: "ARK",
 			network: "ark.devnet",
 		});
+
+		profile.wallets().push(wallet);
 
 		walletUrl = `/profiles/${profile.id()}/wallets/${wallet.id()}`;
 		history.push(walletUrl);
@@ -266,6 +267,10 @@ describe("SignMessage", () => {
 	});
 
 	it("should sign message with ledger wallet", async () => {
+		await profile.sync();
+		await wallet.synchroniser().identity();
+		await wallet.synchroniser().coin();
+
 		const isLedgerMock = jest.spyOn(wallet, "isLedger").mockReturnValue(true);
 
 		const unsubscribe = jest.fn();
