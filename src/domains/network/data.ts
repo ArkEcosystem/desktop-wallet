@@ -29,27 +29,27 @@ export const coinsNetworkExtendedData: Record<string, Record<string, CoinNetwork
 			displayName: "Cardano",
 			borderClass: "border-theme-primary-500",
 			textClass: "text-theme-primary-700",
-			iconName: "Cardano",
+			iconName: "ADA",
 		},
 		"ada.testnet": {
-			displayName: "Cardano",
+			displayName: "Cardano Testnet",
 			borderClass: "border-theme-primary-500",
 			textClass: "text-theme-primary-700",
-			iconName: "Cardano",
+			iconName: "ADA",
 		},
 	},
 	AVAX: {
-		"ada.mainnet": {
-			displayName: "Cardano",
+		"avax.mainnet": {
+			displayName: "Avalanche",
 			borderClass: "border-theme-primary-500",
 			textClass: "text-theme-primary-700",
-			iconName: "Cardano",
+			iconName: "AVAX",
 		},
-		"ada.testnet": {
-			displayName: "Cardano",
+		"avax.testnet": {
+			displayName: "Avalanche Testnet",
 			borderClass: "border-theme-primary-500",
 			textClass: "text-theme-primary-700",
-			iconName: "Cardano",
+			iconName: "AVAX",
 		},
 	},
 	ARK: {
@@ -113,17 +113,17 @@ export const coinsNetworkExtendedData: Record<string, Record<string, CoinNetwork
 		},
 	},
 	DOT: {
-		"ada.mainnet": {
-			displayName: "Cardano",
+		"dot.mainnet": {
+			displayName: "Polkadot",
 			borderClass: "border-theme-primary-500",
 			textClass: "text-theme-primary-700",
-			iconName: "Cardano",
+			iconName: "DOT",
 		},
-		"ada.testnet": {
-			displayName: "Cardano",
+		"ksm.mainnet": {
+			displayName: "Kusama",
 			borderClass: "border-theme-primary-500",
 			textClass: "text-theme-primary-700",
-			iconName: "Cardano",
+			iconName: "DOT",
 		},
 	},
 	EGLD: {
@@ -175,31 +175,31 @@ export const coinsNetworkExtendedData: Record<string, Record<string, CoinNetwork
 		},
 	},
 	LUNA: {
-		"ada.mainnet": {
-			displayName: "Cardano",
+		"luna.mainnet": {
+			displayName: "Terra",
 			borderClass: "border-theme-primary-500",
 			textClass: "text-theme-primary-700",
-			iconName: "Cardano",
+			iconName: "LUNA",
 		},
-		"ada.testnet": {
-			displayName: "Cardano",
+		"luna.testnet": {
+			displayName: "Terra Testnet",
 			borderClass: "border-theme-primary-500",
 			textClass: "text-theme-primary-700",
-			iconName: "Cardano",
+			iconName: "LUNA",
 		},
 	},
 	NANO: {
-		"ada.mainnet": {
-			displayName: "Cardano",
+		"nano.mainnet": {
+			displayName: "NANO",
 			borderClass: "border-theme-primary-500",
 			textClass: "text-theme-primary-700",
-			iconName: "Cardano",
+			iconName: "NANO",
 		},
-		"ada.testnet": {
-			displayName: "Cardano",
+		"nano.testnet": {
+			displayName: "NANO Testnet",
 			borderClass: "border-theme-primary-500",
 			textClass: "text-theme-primary-700",
-			iconName: "Cardano",
+			iconName: "NANO",
 		},
 	},
 	NEO: {
@@ -207,13 +207,13 @@ export const coinsNetworkExtendedData: Record<string, Record<string, CoinNetwork
 			displayName: "NEO",
 			borderClass: "border-theme-warning-200",
 			textClass: "text-theme-warning-400",
-			iconName: "BTC",
+			iconName: "NEO",
 		},
 		'neo.testnet': {
 			displayName: "NEO Testnet",
 			borderClass: "border-theme-warning-200",
 			textClass: "text-theme-warning-400",
-			iconName: "BTC",
+			iconName: "NEO",
 		},
 	},
 	TRX: {
@@ -231,13 +231,13 @@ export const coinsNetworkExtendedData: Record<string, Record<string, CoinNetwork
 		},
 	},
 	XLM: {
-		'trx.mainnet': {
+		'xlm.mainnet': {
 			displayName: "Stellar",
 			borderClass: "border-theme-primary-500",
 			textClass: "text-theme-primary-700",
 			iconName: "XLM",
 		},
-		'trx.testnet': {
+		'xlm.testnet': {
 			displayName: "Stellar Testnet",
 			borderClass: "border-theme-primary-500",
 			textClass: "text-theme-primary-700",
