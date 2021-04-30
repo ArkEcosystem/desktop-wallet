@@ -105,7 +105,7 @@ export const coinsNetworkExtendedData: Record<string, Record<string, CoinNetwork
 			textClass: "text-theme-warning-400",
 			iconName: "BTC",
 		},
-		'btc.testnet': {
+		"btc.testnet": {
 			displayName: "Bitcoin Testnet",
 			borderClass: "border-theme-primary-500",
 			textClass: "text-theme-primary-700",
@@ -147,13 +147,13 @@ export const coinsNetworkExtendedData: Record<string, Record<string, CoinNetwork
 			textClass: "text-theme-secondary-800",
 			iconName: "ETH",
 		},
-		'eth.rinkeby': {
+		"eth.rinkeby": {
 			displayName: "Ethereum Rinkeby",
 			borderClass: "border-theme-primary-500",
 			textClass: "text-theme-primary-700",
 			iconName: "ETH",
 		},
-		'eth.ropsten': {
+		"eth.ropsten": {
 			displayName: "Ethereum Ropsten",
 			borderClass: "border-theme-primary-500",
 			textClass: "text-theme-primary-700",
@@ -203,13 +203,13 @@ export const coinsNetworkExtendedData: Record<string, Record<string, CoinNetwork
 		},
 	},
 	NEO: {
-		'neo.mainnet': {
+		"neo.mainnet": {
 			displayName: "NEO",
 			borderClass: "border-theme-warning-200",
 			textClass: "text-theme-warning-400",
 			iconName: "NEO",
 		},
-		'neo.testnet': {
+		"neo.testnet": {
 			displayName: "NEO Testnet",
 			borderClass: "border-theme-warning-200",
 			textClass: "text-theme-warning-400",
@@ -217,13 +217,13 @@ export const coinsNetworkExtendedData: Record<string, Record<string, CoinNetwork
 		},
 	},
 	TRX: {
-		'trx.mainnet': {
+		"trx.mainnet": {
 			displayName: "Tron",
 			borderClass: "border-theme-primary-500",
 			textClass: "text-theme-primary-700",
 			iconName: "TRX",
 		},
-		'trx.testnet': {
+		"trx.testnet": {
 			displayName: "Tron Testnet",
 			borderClass: "border-theme-primary-500",
 			textClass: "text-theme-primary-700",
@@ -245,13 +245,13 @@ export const coinsNetworkExtendedData: Record<string, Record<string, CoinNetwork
 		},
 	},
 	XRP: {
-		'xrp.mainnet': {
+		"xrp.mainnet": {
 			displayName: "Ripple",
 			borderClass: "border-theme-primary-500",
 			textClass: "text-theme-primary-700",
 			iconName: "XRP",
 		},
-		'xrp.testnet': {
+		"xrp.testnet": {
 			displayName: "XRP Testnet",
 			borderClass: "border-theme-primary-500",
 			textClass: "text-theme-primary-700",
