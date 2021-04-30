@@ -3,6 +3,7 @@ import { Button } from "app/components/Button";
 import { Form, FormField, FormLabel } from "app/components/Form";
 import { InputDefault } from "app/components/Input";
 import { Modal } from "app/components/Modal";
+import { TextArea } from "app/components/TextArea";
 import { Toggle } from "app/components/Toggle";
 import { useEnvironmentContext } from "app/contexts";
 import { useValidation } from "app/hooks";
@@ -40,8 +41,9 @@ const JsonForm = () => {
 		<div data-testid="VerifyMessage__json" className="mt-4">
 			<FormField name="jsonString">
 				<FormLabel label={t("WALLETS.MODAL_VERIFY_MESSAGE.JSON_STRING")} />
-				<InputDefault
+				<TextArea
 					data-testid="VerifyMessage__json-jsonString"
+					className="h-32 py-4"
 					placeholder={'{"signatory": "...", "signature": "...", "message": "..."}'}
 					onChange={(event: ChangeEvent<HTMLInputElement>) =>
 						setValue("jsonString", event.target.value, {
