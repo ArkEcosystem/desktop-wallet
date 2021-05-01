@@ -14,8 +14,8 @@ import { I18nextProvider } from "react-i18next";
 import { Router } from "react-router-dom";
 import delegate from "tests/fixtures/coins/ark/devnet/wallets/D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib.json";
 import fixtureData from "tests/fixtures/env/storage.json";
-import { StubStorage } from "tests/mocks";
 import TestingPasswords from "tests/fixtures/env/testing-passwords.json";
+import { StubStorage } from "tests/mocks";
 
 const ProfileSynchronizer = ({ children }: { children?: React.ReactNode }) => {
 	const { profile, profileIsSyncing } = useProfileSynchronizer();

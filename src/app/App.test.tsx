@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/require-await */
-import { Environment, Helpers, Contracts } from "@arkecosystem/platform-sdk-profiles";
+import { Contracts, Environment, Helpers } from "@arkecosystem/platform-sdk-profiles";
 import { translations as errorTranslations } from "domains/error/i18n";
 import { translations as profileTranslations } from "domains/profile/i18n";
 import electron from "electron";
@@ -10,13 +10,13 @@ import {
 	act,
 	env,
 	fireEvent,
+	getDefaultPassword,
 	getDefaultProfileId,
 	getPasswordProtectedProfileId,
 	RenderResult,
 	renderWithRouter,
 	useDefaultNetMocks,
 	waitFor,
-	getDefaultPassword,
 } from "utils/testing-library";
 
 import { App } from "./App";
