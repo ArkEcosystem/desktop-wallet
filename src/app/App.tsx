@@ -33,7 +33,7 @@ import { useHistory } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
 import { StubStorage } from "tests/mocks";
 import { setThemeSource, shouldUseDarkColors } from "utils/electron-utils";
-import { bootEnvWithProfileFixtures } from "utils/test-helpers";
+import { bootEnvWithProfileFixtures, isE2E, isUnit } from "utils/test-helpers";
 
 import { middlewares, RouterView, routes } from "../router";
 import { ConfigurationProvider, EnvironmentProvider, LedgerProvider, useEnvironmentContext } from "./contexts";
@@ -84,12 +84,8 @@ const Main = () => {
 	useLayoutEffect(() => {
 		const boot = async () => {
 			try {
-				/* istanbul ignore next */
-				const __E2E__ = ["true", "1"].includes(process.env.REACT_APP_IS_E2E?.toLowerCase() || "")
-					? true
-					: false;
-				if (__E2E__) {
-					await bootEnvWithProfileFixtures({ env });
+				if (isE2E() || isUnit()) {
+					await bootEnvWithProfileFixtures({ env, shouldRestoreDefaultProfile: isUnit() });
 
 					loadPlugins();
 					setShowSplash(false);
@@ -138,9 +134,7 @@ export const App = () => {
 	 */
 
 	/* istanbul ignore next */
-	const __E2E__ = process.env.REACT_APP_IS_E2E;
-	/* istanbul ignore next */
-	const storage = __E2E__ ? new StubStorage() : "indexeddb";
+	const storage = isE2E() || isUnit() ? new StubStorage() : "indexeddb";
 
 	const [env] = useState(
 		() =>

@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/require-await */
-import { Environment, Helpers } from "@arkecosystem/platform-sdk-profiles";
+import { Environment, Helpers, Contracts } from "@arkecosystem/platform-sdk-profiles";
 import { translations as errorTranslations } from "domains/error/i18n";
 import { translations as profileTranslations } from "domains/profile/i18n";
 import electron from "electron";
@@ -11,23 +11,27 @@ import {
 	env,
 	fireEvent,
 	getDefaultProfileId,
+	getPasswordProtectedProfileId,
 	RenderResult,
 	renderWithRouter,
 	useDefaultNetMocks,
 	waitFor,
+	getDefaultPassword,
 } from "utils/testing-library";
 
 import { App } from "./App";
 
-const dashboardUrl = `/profiles/${getDefaultProfileId()}/dashboard`;
-
 let profile: Contracts.IProfile;
+let passwordProtectedProfile: Contracts.IProfile;
 
 describe("App", () => {
 	beforeAll(async () => {
 		useDefaultNetMocks();
-
 		profile = env.profiles().findById(getDefaultProfileId());
+		passwordProtectedProfile = env.profiles().findById(getPasswordProtectedProfileId());
+
+		await env.profiles().restore(profile);
+		await profile.sync();
 
 		nock("https://dwallets.ark.io")
 			.get("/api/transactions")
@@ -86,9 +90,11 @@ describe("App", () => {
 	});
 
 	it("should render splash screen", async () => {
-		process.env.REACT_APP_IS_E2E = "1";
+		process.env.REACT_APP_IS_UNIT = "1";
 
-		const { container, asFragment, getByTestId } = renderWithRouter(<App />, { withProviders: false });
+		const { container, asFragment, getByTestId } = renderWithRouter(<App />, {
+			withProviders: false,
+		});
 
 		await waitFor(() => expect(getByTestId("Splash__text")).toBeInTheDocument());
 
@@ -101,7 +107,7 @@ describe("App", () => {
 	});
 
 	it.each([false, true])("should set the theme based on system preferences", async (shouldUseDarkColors) => {
-		process.env.REACT_APP_IS_E2E = "1";
+		process.env.REACT_APP_IS_UNIT = "1";
 
 		jest.spyOn(utils, "shouldUseDarkColors").mockReturnValue(shouldUseDarkColors);
 
@@ -115,7 +121,7 @@ describe("App", () => {
 	});
 
 	it("should enter profile", async () => {
-		process.env.REACT_APP_IS_E2E = "1";
+		process.env.REACT_APP_IS_UNIT = "1";
 
 		const { getAllByTestId, getByTestId, getByText, history } = renderWithRouter(<App />, { withProviders: false });
 
@@ -123,7 +129,7 @@ describe("App", () => {
 			expect(getByText(profileTranslations.PAGE_WELCOME.WITH_PROFILES.TITLE)).toBeInTheDocument();
 		});
 
-		const passwordProtectedProfile = env.profiles().findById("cba050f1-880f-45f0-9af9-cfe48f406052");
+		await env.profiles().restore(passwordProtectedProfile, getDefaultPassword());
 		expect(history.location.pathname).toMatch("/");
 
 		await act(async () => {
@@ -155,7 +161,7 @@ describe("App", () => {
 	});
 
 	it("should redirect to root if profile restoration error occurs", async () => {
-		process.env.REACT_APP_IS_E2E = "1";
+		process.env.REACT_APP_IS_UNIT = "1";
 
 		const { getAllByTestId, getByTestId, getByText, history } = renderWithRouter(<App />, { withProviders: false });
 
@@ -181,6 +187,9 @@ describe("App", () => {
 			expect(getByTestId("SignIn__input--password")).toHaveValue("password");
 		});
 
+		await env.profiles().restore(passwordProtectedProfile, getDefaultPassword());
+		await passwordProtectedProfile.sync();
+
 		const memoryPasswordMock = jest.spyOn(Helpers.MemoryPassword, "get").mockImplementation(() => {
 			throw new Error("password not found");
 		});
@@ -199,7 +208,7 @@ describe("App", () => {
 	});
 
 	it("should close splash screen if not e2e", async () => {
-		process.env.REACT_APP_IS_E2E = "1";
+		process.env.REACT_APP_IS_UNIT = "1";
 
 		const { container, asFragment, getByTestId } = renderWithRouter(<App />, { withProviders: false });
 
@@ -227,7 +236,7 @@ describe("App", () => {
 	});
 
 	it("should render the offline screen if there is no internet connection", async () => {
-		process.env.REACT_APP_IS_E2E = "1";
+		process.env.REACT_APP_IS_UNIT = "1";
 
 		jest.spyOn(window.navigator, "onLine", "get").mockReturnValueOnce(false);
 
@@ -255,7 +264,7 @@ describe("App", () => {
 			throw new Error("failed to boot env");
 		});
 
-		process.env.REACT_APP_IS_E2E = "1";
+		process.env.REACT_APP_IS_UNIT = "1";
 
 		let rendered: RenderResult;
 
