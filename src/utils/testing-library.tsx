@@ -15,6 +15,7 @@ import { Router } from "react-router-dom";
 import delegate from "tests/fixtures/coins/ark/devnet/wallets/D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib.json";
 import fixtureData from "tests/fixtures/env/storage.json";
 import { StubStorage } from "tests/mocks";
+import TestingPasswords from "tests/fixtures/env/testing-passwords.json";
 
 const ProfileSynchronizer = ({ children }: { children?: React.ReactNode }) => {
 	const { profile, profileIsSyncing } = useProfileSynchronizer();
@@ -75,9 +76,13 @@ export * from "@testing-library/react";
 export { customRender as render, renderWithRouter };
 
 export const getDefaultProfileId = () => Object.keys(fixtureData.profiles)[0];
+export const getPasswordProtectedProfileId = () => Object.keys(fixtureData.profiles)[1];
 export const getDefaultWalletId = () => Object.keys(Object.values(fixtureData.profiles)[0].wallets)[0];
 export const getDefaultWalletMnemonic = () => "master dizzy era math peanut crew run manage better flame tree prevent";
 export const getDefaultLedgerTransport = () => createTransportReplayer(RecordStore.fromString(""));
+
+//@ts-ignore
+export const getDefaultPassword = () => TestingPasswords?.profiles[getPasswordProtectedProfileId()]?.password;
 
 const pluginNames: string[] = ["@dated/transaction-export-plugin", "@dated/delegate-calculator-plugin"];
 
