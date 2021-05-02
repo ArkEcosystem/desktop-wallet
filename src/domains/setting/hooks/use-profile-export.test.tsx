@@ -1,7 +1,7 @@
 import { Contracts, Helpers } from "@arkecosystem/platform-sdk-profiles";
 import { renderHook } from "@testing-library/react-hooks";
 import { useProfileExport } from "domains/setting/hooks/use-profile-export";
-import { env, getDefaultProfileId, getPasswordProtectedProfileId, getDefaultPassword } from "utils/testing-library";
+import { env, getDefaultPassword, getDefaultProfileId, getPasswordProtectedProfileId } from "utils/testing-library";
 
 describe("useProfileExport", () => {
 	let profile: Contracts.IProfile;
