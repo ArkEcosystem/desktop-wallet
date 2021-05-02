@@ -7,10 +7,10 @@ import { translations as profileTranslations } from "domains/profile/i18n";
 import React from "react";
 import { act, env, fireEvent, getDefaultProfileId, renderWithRouter, waitFor } from "testing-library";
 import { StubStorage } from "tests/mocks";
+import { getDefaultPassword, getPasswordProtectedProfileId } from "utils/testing-library";
 
 import { translations } from "../../i18n";
 import { Welcome } from "../Welcome";
-import { getPasswordProtectedProfileId, getDefaultPassword } from "utils/testing-library";
 
 const fixtureProfileId = getDefaultProfileId();
 const profileDashboardUrl = `/profiles/${fixtureProfileId}/dashboard`;

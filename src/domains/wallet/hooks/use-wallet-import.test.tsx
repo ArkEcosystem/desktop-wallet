@@ -1,9 +1,9 @@
 /* eslint-disable @typescript-eslint/require-await */
-import { renderHook, act } from "@testing-library/react-hooks";
+import { Contracts } from "@arkecosystem/platform-sdk-profiles";
+import { act, renderHook } from "@testing-library/react-hooks";
+import { env } from "utils/testing-library";
 
 import { useWalletImport } from "./use-wallet-import";
-import { Contracts } from "@arkecosystem/platform-sdk-profiles";
-import { env } from "utils/testing-library";
 
 let profile: Contracts.IProfile;
 
