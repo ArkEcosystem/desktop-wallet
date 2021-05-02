@@ -10,6 +10,7 @@ import { StubStorage } from "tests/mocks";
 
 import { translations } from "../../i18n";
 import { Welcome } from "../Welcome";
+import { getPasswordProtectedProfileId, getDefaultPassword } from "utils/testing-library";
 
 const fixtureProfileId = getDefaultProfileId();
 const profileDashboardUrl = `/profiles/${fixtureProfileId}/dashboard`;
@@ -77,7 +78,8 @@ describe("Welcome", () => {
 
 		expect(container).toBeTruthy();
 
-		const profile = env.profiles().findById("cba050f1-880f-45f0-9af9-cfe48f406052");
+		const profile = env.profiles().findById(getPasswordProtectedProfileId());
+		await env.profiles().restore(profile, getDefaultPassword());
 
 		expect(getByText(translations.PAGE_WELCOME.WITH_PROFILES.TITLE)).toBeInTheDocument();
 

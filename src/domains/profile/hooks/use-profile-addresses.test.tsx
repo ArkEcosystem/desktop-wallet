@@ -30,8 +30,8 @@ describe("useProfileAddresses", () => {
 	it("should return all available addresses", async () => {
 		const { result } = renderHook(() => useProfileAddresses({ profile }));
 
-		expect(result.current.allAddresses).toHaveLength(4);
-		expect(result.current.contactAddresses).toHaveLength(2);
+		expect(result.current.allAddresses).toHaveLength(3);
+		expect(result.current.contactAddresses).toHaveLength(1);
 		expect(result.current.profileAddresses).toHaveLength(2);
 	});
 
