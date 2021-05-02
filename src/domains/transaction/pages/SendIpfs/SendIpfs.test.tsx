@@ -629,7 +629,7 @@ describe("SendIpfs", () => {
 	it("should send an ipfs transaction with a multisig wallet", async () => {
 		const isMultiSignatureSpy = jest.spyOn(wallet, "isMultiSignature").mockReturnValue(true);
 		const multisignatureSpy = jest
-			.spyOn(wallet, "multiSignature")
+			.spyOn(wallet.multiSignature(), "all")
 			.mockReturnValue({ min: 2, publicKeys: [wallet.publicKey()!, profile.wallets().last().publicKey()!] });
 
 		const history = createMemoryHistory();

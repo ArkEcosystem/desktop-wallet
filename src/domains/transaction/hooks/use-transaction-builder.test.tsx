@@ -62,7 +62,7 @@ describe("Use Transaction Builder Hook", () => {
 		const { result } = renderHook(() => useTransactionBuilder(profile), { wrapper });
 
 		jest.spyOn(wallet, "isMultiSignature").mockImplementation(() => true);
-		jest.spyOn(wallet, "multiSignature").mockReturnValue({
+		jest.spyOn(wallet.multiSignature(), "all").mockReturnValue({
 			min: 2,
 			publicKeys: [wallet.publicKey()!, profile.wallets().last().publicKey()!],
 		});

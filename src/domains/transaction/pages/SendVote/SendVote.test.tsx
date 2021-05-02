@@ -744,7 +744,7 @@ describe("SendVote", () => {
 	it("should send a unvote transaction with a multisignature wallet", async () => {
 		const isMultiSignatureSpy = jest.spyOn(wallet, "isMultiSignature").mockReturnValue(true);
 		const multisignatureSpy = jest
-			.spyOn(wallet, "multiSignature")
+			.spyOn(wallet.multiSignature(), "all")
 			.mockReturnValue({ min: 2, publicKeys: [wallet.publicKey()!, profile.wallets().last().publicKey()!] });
 
 		const history = createMemoryHistory();
