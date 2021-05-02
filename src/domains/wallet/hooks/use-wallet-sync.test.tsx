@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/require-await */
 import { renderHook, act } from "@testing-library/react-hooks";
 
 import { useWalletSync } from "./use-wallet-sync";
