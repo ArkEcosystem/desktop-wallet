@@ -198,11 +198,7 @@ describe("App", () => {
 			fireEvent.click(getByTestId("SignIn__submit-button"));
 		});
 
-		await act(async () => {
-			await new Promise((resolve) => setTimeout(resolve, 500));
-		});
-
-		await waitFor(() => expect(history.location.pathname).toMatch("/"));
+		await waitFor(() => expect(history.location.pathname).toMatch("/"), { timeout: 4000 });
 
 		memoryPasswordMock.mockRestore();
 	});
