@@ -1,4 +1,4 @@
-import { Contracts, Helpers } from "@arkecosystem/platform-sdk-profiles";
+import { Contracts } from "@arkecosystem/platform-sdk-profiles";
 import { Button } from "app/components/Button";
 import { Divider } from "app/components/Divider";
 import { Form, FormField, FormLabel } from "app/components/Form";
@@ -8,6 +8,7 @@ import { ProfileAvatar } from "domains/profile/components/ProfileAvatar";
 import React, { useCallback, useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import { useTranslation } from "react-i18next";
+import { useEnvironmentContext } from "app/contexts";
 
 type SignInProps = {
 	isOpen: boolean;
@@ -22,6 +23,7 @@ const TIMEOUT = 60;
 
 export const SignIn = ({ isOpen, profile, onCancel, onClose, onSuccess }: SignInProps) => {
 	const { t } = useTranslation();
+	const { env } = useEnvironmentContext();
 
 	const methods = useForm({ mode: "onChange" });
 	const { errors, formState, register, setError } = methods;
@@ -67,9 +69,10 @@ export const SignIn = ({ isOpen, profile, onCancel, onClose, onSuccess }: SignIn
 		}
 	}, [errors, remainingTime, setError, t]);
 
-	const handleSubmit = ({ password }: any) => {
+	const handleSubmit = async ({ password }: any) => {
 		if (profile.auth().verifyPassword(password)) {
-			Helpers.MemoryPassword.set(password);
+			profile.auth().setPassword(password);
+
 			onSuccess(password);
 		} else {
 			setCount(count + 1);
