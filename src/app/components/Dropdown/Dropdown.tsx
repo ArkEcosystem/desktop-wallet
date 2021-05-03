@@ -258,6 +258,20 @@ export const Dropdown = ({
 		clickOutsideHandler(ref, hide);
 	}, [ref]);
 
+	useEffect(() => {
+		const handleKeys = (e: any) => {
+			if (e.key === "Escape") {
+				hide();
+			}
+		};
+
+		if (isOpen) {
+			window.addEventListener("keydown", handleKeys);
+		}
+
+		return () => window.removeEventListener("keydown", handleKeys);
+	}, [isOpen]);
+
 	return (
 		<div ref={ref} className="relative">
 			<span data-testid="dropdown__toggle" onClick={(event: any) => !disableToggle && toggle(event)}>
