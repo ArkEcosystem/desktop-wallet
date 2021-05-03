@@ -1,4 +1,4 @@
-import { Contracts, Helpers, container } from "@arkecosystem/platform-sdk-profiles";
+import { container, Contracts, Helpers } from "@arkecosystem/platform-sdk-profiles";
 import { Card } from "app/components/Card";
 import { Circle } from "app/components/Circle";
 import { Icon } from "app/components/Icon";

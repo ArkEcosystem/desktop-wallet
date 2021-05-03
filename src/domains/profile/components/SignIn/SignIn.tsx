@@ -4,11 +4,11 @@ import { Divider } from "app/components/Divider";
 import { Form, FormField, FormLabel } from "app/components/Form";
 import { InputPassword } from "app/components/Input";
 import { Modal } from "app/components/Modal";
+import { useEnvironmentContext } from "app/contexts";
 import { ProfileAvatar } from "domains/profile/components/ProfileAvatar";
 import React, { useCallback, useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import { useTranslation } from "react-i18next";
-import { useEnvironmentContext } from "app/contexts";
 
 type SignInProps = {
 	isOpen: boolean;
