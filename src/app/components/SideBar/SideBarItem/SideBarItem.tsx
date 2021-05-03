@@ -27,12 +27,9 @@ export const SideBarItem = withRouter(
 
 					{icon && (
 						<div
-							className={cn(
-								"mr-3",
-								isActive
-									? "text-theme-primary-600 dark:text-theme-secondary-200"
-									: "text-theme-primary-300 dark:text-theme-secondary-600",
-							)}
+							className={cn("mr-3", {
+								"text-theme-primary-300 dark:text-theme-secondary-600": !isActive,
+							})}
 						>
 							<Icon name={icon} width={20} height={20} />
 						</div>
