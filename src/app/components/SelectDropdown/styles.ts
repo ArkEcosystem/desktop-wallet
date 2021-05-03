@@ -27,19 +27,19 @@ export const SelectOptionsList = styled.ul`
 			${tw`-mt-px pt-px`};
 		}
 
-		&.is-highlighted {
-			${tw`bg-theme-danger-100 dark:bg-theme-danger-400 text-theme-danger-400 dark:text-white`};
-
-			.select-list-option__label {
-				${tw`border-theme-danger-100 dark:border-theme-danger-400`};
-			}
-		}
-
 		&:hover {
 			${tw`bg-theme-secondary-200 dark:bg-theme-primary-600 text-theme-primary-600 dark:text-theme-secondary-200`};
 
 			.select-list-option__label {
 				${tw`border-transparent`};
+			}
+		}
+
+		&.is-highlighted {
+			${tw`bg-theme-danger-100 dark:bg-theme-danger-400 text-theme-danger-400 dark:text-white`};
+
+			.select-list-option__label {
+				${tw`border-theme-danger-100 dark:border-theme-danger-400`};
 			}
 		}
 
