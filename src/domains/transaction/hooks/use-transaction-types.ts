@@ -1,4 +1,4 @@
-import { Contracts, Enums } from "@arkecosystem/platform-sdk-profiles";
+import { Contracts } from "@arkecosystem/platform-sdk-profiles";
 import { uniq } from "@arkecosystem/utils";
 import { useMemo } from "react";
 import { useTranslation } from "react-i18next";
@@ -6,7 +6,6 @@ import { useTranslation } from "react-i18next";
 export enum TransactionTypeGroup {
 	Test = 0,
 	Core = 1,
-	Magistrate = 2,
 	// Everything above is available to anyone
 	Reserved = 1000,
 }
@@ -60,11 +59,6 @@ export const useTransactionTypes = ({ wallets = [] }: TransactionTypeProps = {})
 
 		"delegate-registration": t("TRANSACTION.TRANSACTION_TYPES.DELEGATE_REGISTRATION"),
 		"delegate-resignation": t("TRANSACTION.TRANSACTION_TYPES.DELEGATE_REGISTRATION"),
-
-		// magistrate
-		"entity-registration": t("TRANSACTION.TRANSACTION_TYPES.ENTITY_REGISTRATION"),
-		"entity-resignation": t("TRANSACTION.TRANSACTION_TYPES.ENTITY_RESIGNATION"),
-		"entity-update": t("TRANSACTION.TRANSACTION_TYPES.ENTITY_UPDATE"),
 
 		"business-registration": t("TRANSACTION.TRANSACTION_TYPES.BUSINESS_ENTITY_REGISTRATION"),
 		"business-resignation": t("TRANSACTION.TRANSACTION_TYPES.BUSINESS_ENTITY_RESIGNATION"),
@@ -157,69 +151,9 @@ export const useTransactionTypes = ({ wallets = [] }: TransactionTypeProps = {})
 		},
 	};
 
-	const magistrate: Record<string, any> = {
-		"entity-registration": {
-			type: MagistrateTransactionType.Entity,
-			typeGroup: TransactionTypeGroup.Magistrate,
-			asset: {
-				action: Enums.EntityAction.Register,
-			},
-		},
-		"entity-resignation": {
-			type: MagistrateTransactionType.Entity,
-			typeGroup: TransactionTypeGroup.Magistrate,
-			asset: {
-				action: Enums.EntityAction.Resign,
-			},
-		},
-		"entity-update": {
-			type: MagistrateTransactionType.Entity,
-			typeGroup: TransactionTypeGroup.Magistrate,
-			asset: {
-				action: Enums.EntityAction.Update,
-			},
-		},
-		"business-registration": {
-			type: MagistrateTransactionType.Entity,
-			typeGroup: TransactionTypeGroup.Magistrate,
-			asset: {
-				type: Enums.EntityType.Business,
-				action: Enums.EntityAction.Register,
-			},
-		},
-		"business-resignation": {
-			type: MagistrateTransactionType.Entity,
-			typeGroup: TransactionTypeGroup.Magistrate,
-			asset: {
-				type: Enums.EntityType.Business,
-				action: Enums.EntityAction.Resign,
-			},
-		},
-		"business-update": {
-			type: MagistrateTransactionType.Entity,
-			typeGroup: TransactionTypeGroup.Magistrate,
-			asset: {
-				type: Enums.EntityType.Business,
-				action: Enums.EntityAction.Update,
-			},
-		},
-		"bridgechain-registration": {
-			type: MagistrateTransactionType.BridgechainRegistration,
-			typeGroup: TransactionTypeGroup.Magistrate,
-		},
-		"bridgechain-resignation": {
-			type: MagistrateTransactionType.BridgechainResignation,
-			typeGroup: TransactionTypeGroup.Magistrate,
-		},
-		"bridgechain-update": {
-			type: MagistrateTransactionType.BridgechainUpdate,
-			typeGroup: TransactionTypeGroup.Magistrate,
-		},
-	};
-
 	const getLabel = (type: string) => allTransactionTypeLabels[type];
 
-	const getQueryParamsByType = (type: string) => core[type] || magistrate[type];
+	const getQueryParamsByType = (type: string) => core[type];
 
 	const availableTypes = useMemo(() => {
 		const allSupportedTypes = wallets.reduce(
@@ -234,7 +168,6 @@ export const useTransactionTypes = ({ wallets = [] }: TransactionTypeProps = {})
 		getLabel,
 		types: {
 			core: availableTypes,
-			magistrate: Object.keys(magistrate),
 		},
 		getQueryParamsByType,
 	};
