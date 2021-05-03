@@ -83,7 +83,6 @@ const SelectDropdown = ({
 		getMenuProps,
 		selectItem,
 		inputValue,
-		highlightedIndex,
 		reset,
 		toggleMenu,
 	} = useCombobox<Option | null>({
@@ -226,11 +225,9 @@ const SelectDropdown = ({
 									{...getItemProps({
 										index,
 										item,
-										className: `select-list-option cursor-default ${
-											item.label === inputValue || (!inputValue && highlightedIndex === index)
-												? "is-highlighted"
-												: ""
-										}`,
+										className: cn("select-list-option", {
+											"is-highlighted": item.label === inputValue,
+										}),
 										onMouseDown: () => {
 											selectItem(item);
 											handleInputChange({ selectedItem: item });
