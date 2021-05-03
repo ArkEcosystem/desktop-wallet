@@ -713,13 +713,9 @@ describe("ImportWallet", () => {
 
 		await waitFor(() => expect(getByTestId("ImportWallet__encryptedWif-input")).toBeTruthy());
 
-		const withWifEncryptionMock = jest.spyOn(emptyProfile, "walletFactory").mockImplementation(() => {
-			return {
-				fromWIFWithEncryption: () => {
-					return Promise.resolve(profile.wallets().first());
-				},
-			};
-		});
+		const withWifEncryptionMock = jest.spyOn(emptyProfile, "walletFactory").mockImplementation(() => ({
+			fromWIFWithEncryption: () => Promise.resolve(profile.wallets().first()),
+		}));
 
 		fireEvent.input(getByTestId("ImportWallet__encryptedWif-input"), {
 			target: { value: "6PYR8Zq7e84mKXq3kxZyrZ8Zyt6iE89fCngdMgibQ5HjCd7Bt3k7wKc4ZL" },
