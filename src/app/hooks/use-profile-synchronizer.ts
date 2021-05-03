@@ -134,7 +134,6 @@ export const useProfileRestore = () => {
 		}
 
 		const password = passwordInput || getProfileStoredPassword(profile);
-		console.log({ passwordInput });
 
 		setStatus("restoring");
 

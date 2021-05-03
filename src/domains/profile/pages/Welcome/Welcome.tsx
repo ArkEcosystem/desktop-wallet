@@ -1,4 +1,4 @@
-import { Contracts } from "@arkecosystem/platform-sdk-profiles";
+import { Contracts, Helpers, container } from "@arkecosystem/platform-sdk-profiles";
 import { Card } from "app/components/Card";
 import { Circle } from "app/components/Circle";
 import { Icon } from "app/components/Icon";
@@ -70,13 +70,16 @@ export const Welcome = () => {
 	const handleRequestedAction = (profile: Contracts.IProfile, action: any, password?: string) => {
 		closeSignInModal();
 
+		if (password) {
+			container.bind("State<Profile>", profile);
+			Helpers.MemoryPassword.set(password);
+		}
+
 		switch (action?.value) {
 			case "home":
-				restoreProfile(profile, password);
 				navigateToProfile(profile);
 				break;
 			case "setting":
-				restoreProfile(profile, password);
 				navigateToProfile(profile, "settings");
 				break;
 			case "delete":
