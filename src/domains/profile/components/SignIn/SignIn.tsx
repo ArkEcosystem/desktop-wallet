@@ -69,7 +69,7 @@ export const SignIn = ({ isOpen, profile, onCancel, onClose, onSuccess }: SignIn
 		}
 	}, [errors, remainingTime, setError, t]);
 
-	const handleSubmit = async ({ password }: any) => {
+	const handleSubmit = ({ password }: any) => {
 		let isValidPassword = true;
 
 		env.profiles().tap(profile.id(), (focusedProfile: Contracts.IProfile) => {
