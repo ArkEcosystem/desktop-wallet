@@ -156,13 +156,49 @@ describe("Transactions", () => {
 			fireEvent.click(getByRole("button", { name: /Type/ }));
 		});
 
-		await waitFor(() => expect(getByTestId("dropdown__option--core-0")).toBeInTheDocument());
+		await waitFor(() => expect(getByTestId("dropdown__option--core-16")).toBeInTheDocument());
 
 		act(() => {
-			fireEvent.click(getByTestId("dropdown__option--core-0"));
+			fireEvent.click(getByTestId("dropdown__option--core-16"));
 		});
 
-		await waitFor(() => expect(within(getByTestId("TransactionTable")).getAllByTestId("TableRow")).toHaveLength(8));
+		await waitFor(() => expect(within(getByTestId("TransactionTable")).getAllByTestId("TableRow")).toHaveLength(4));
+	});
+
+	it("should filter by type and see empty results text", async () => {
+		const emptyProfile = env.profiles().create("test2");
+
+		emptyProfile.wallets().push(
+			await emptyProfile.walletFactory().fromMnemonic({
+				mnemonic: "test",
+				coin: "ARK",
+				network: "ark.devnet",
+			}),
+		);
+
+		const { getByRole, getByTestId } = renderWithRouter(
+			<Route path="/profiles/:profileId/dashboard">
+				<Transactions profile={emptyProfile} wallets={emptyProfile.wallets().values()} />
+			</Route>,
+			{
+				routes: [dashboardURL],
+				history,
+			},
+		);
+
+		expect(getByRole("button", { name: /Type/ })).toBeInTheDocument();
+
+		act(() => {
+			fireEvent.click(getByRole("button", { name: /Type/ }));
+		});
+
+		await waitFor(() => expect(getByTestId("dropdown__option--core-9")).toBeInTheDocument());
+
+		act(() => {
+			fireEvent.click(getByTestId("dropdown__option--core-9"));
+		});
+
+		await waitFor(() => expect(getByTestId("EmptyBlock")).toBeInTheDocument());
 	});
 
 	it("should filter by type and see empty screen", async () => {
