@@ -28,7 +28,6 @@ type WalletHeaderProps = {
 	currencyDelta?: number;
 	onSend?: () => void;
 	onUpdate?: (callback: (status: boolean) => void) => void;
-	isUpdating?: boolean;
 };
 
 export const WalletHeader = ({ profile, wallet, currencyDelta, onSend, onUpdate }: WalletHeaderProps) => {
