@@ -24,26 +24,22 @@ export const SelectOptionsList = styled.ul`
 
 		&:hover,
 		&.is-highlighted {
-			padding-top: 1px;
-
-			&:last-child {
-				${tw`-mb-px`};
-			}
+			${tw`-mt-px pt-px`};
 		}
 
 		&.is-highlighted {
-			${tw`-mt-px bg-theme-danger-100 dark:bg-theme-danger-400 text-theme-danger-400 dark:text-white`};
+			${tw`bg-theme-danger-100 dark:bg-theme-danger-400 text-theme-danger-400 dark:text-white`};
 
 			.select-list-option__label {
-				${tw`border-b border-theme-danger-100 dark:border-theme-danger-400`};
+				${tw`border-theme-danger-100 dark:border-theme-danger-400`};
 			}
 		}
 
 		&:hover {
-			${tw`-mt-px bg-theme-secondary-200 dark:bg-theme-primary-600 text-theme-primary-600 dark:text-theme-secondary-200`};
+			${tw`bg-theme-secondary-200 dark:bg-theme-primary-600 text-theme-primary-600 dark:text-theme-secondary-200`};
 
 			.select-list-option__label {
-				${tw`border-b border-transparent`};
+				${tw`border-transparent`};
 			}
 		}
 
