@@ -83,6 +83,7 @@ const SelectDropdown = ({
 		getMenuProps,
 		selectItem,
 		inputValue,
+		highlightedIndex,
 		reset,
 		toggleMenu,
 	} = useCombobox<Option | null>({
@@ -209,8 +210,6 @@ const SelectDropdown = ({
 										closeMenu();
 									}
 								}
-								event.preventDefault();
-								return;
 							}
 						},
 					})}
@@ -225,9 +224,11 @@ const SelectDropdown = ({
 									{...getItemProps({
 										index,
 										item,
-										className: cn("select-list-option", {
-											"is-highlighted": item.label === inputValue,
-										}),
+										className: cn(
+											"select-list-option",
+											{ "is-highlighted": highlightedIndex === index },
+											{ "is-selected": item.label === inputValue },
+										),
 										onMouseDown: () => {
 											selectItem(item);
 											handleInputChange({ selectedItem: item });
@@ -292,6 +293,7 @@ export const Select = React.forwardRef<HTMLInputElement, SelectProps>(
 					className="sr-only"
 					isInvalid={isInvalidField}
 					readOnly
+					tabIndex={-1}
 				/>
 				<SelectDropdown
 					id={id}
