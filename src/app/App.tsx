@@ -84,6 +84,7 @@ const Main = () => {
 	useLayoutEffect(() => {
 		const boot = async () => {
 			try {
+				/* istanbul ignore next */
 				if (isE2E() || isUnit()) {
 					await bootEnvWithProfileFixtures({ env, shouldRestoreDefaultProfile: isUnit() });
 
