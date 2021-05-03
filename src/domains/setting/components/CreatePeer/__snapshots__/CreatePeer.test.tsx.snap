@@ -211,35 +211,41 @@ exports[`CreatePeer should render create peer modal 1`] = `
             <fieldset
               class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
             >
-              <label
-                class="flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
-                data-testid="FormLabel"
-                for="type"
+              <div
+                class="flex flex-col space-y-2 w-full"
               >
-                Type
-                <span
-                  class="ml-1 text-theme-secondary-500 dark:text-theme-secondary-700"
-                  data-testid="FormLabel__optional"
+                <div
+                  class="flex justify-between items-center space-x-5"
                 >
-                  optional
-                </span>
-              </label>
-              <label
-                class="flex items-center space-x-2"
-              >
-                <input
-                  class="Checkbox-sc-17gwqiq-0 eAQKb"
-                  color="success"
-                  data-testid="PeerForm__multisignature-toggle"
-                  name="isMultiSignature"
-                  type="checkbox"
-                />
+                  <span
+                    class="text-lg font-semibold text-theme-secondary-700 dark:text-theme-secondary-200"
+                  >
+                    Multisignature
+                  </span>
+                  <label
+                    class="flex"
+                  >
+                    <input
+                      class="Toggle__Input-qyyifx-0 WGuGL"
+                      data-testid="PeerForm__multisignature-toggle"
+                      name="isMultiSignature"
+                      type="checkbox"
+                    />
+                    <div
+                      class="Toggle__Handle-qyyifx-1 geejDn"
+                    >
+                      <span
+                        class="Toggle__HandleInner-qyyifx-2 ZjBSs"
+                      />
+                    </div>
+                  </label>
+                </div>
                 <span
-                  class="text-sm font-semibold text-theme-secondary-text select-none"
+                  class="text-sm font-medium text-theme-secondary-500 dark:text-theme-secondary-700"
                 >
-                  Multisignature
+                  Toggle this setting if the IP points to a Multisignature peer.
                 </span>
-              </label>
+              </div>
             </fieldset>
             <div
               class="flex justify-end mt-4"
