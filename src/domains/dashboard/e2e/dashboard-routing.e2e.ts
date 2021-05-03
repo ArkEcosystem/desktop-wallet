@@ -24,7 +24,7 @@ test("should navigate to dashboard of password protected profile", async (t) => 
 	await t.typeText(Selector('[data-testid="SignIn__input--password"]'), "password");
 	await t.click(Selector('[data-testid="SignIn__submit-button"]'));
 
-	await t.expect(Selector("div").withText(translations.COMMON.WALLETS).exists).ok({ timeout: 60000 });
+	await t.expect(Selector("div").withText(translations.COMMON.WALLETS).exists).ok({ timeout: 1200000 });
 	await t.expect(getLocation()).contains("/dashboard");
 });
 

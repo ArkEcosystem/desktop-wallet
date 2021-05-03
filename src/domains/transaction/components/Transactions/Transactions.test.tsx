@@ -162,7 +162,7 @@ describe("Transactions", () => {
 			fireEvent.click(getByTestId("dropdown__option--core-0"));
 		});
 
-		await waitFor(() => expect(within(getByTestId("TransactionTable")).getAllByTestId("TableRow")).toHaveLength(4));
+		await waitFor(() => expect(within(getByTestId("TransactionTable")).getAllByTestId("TableRow")).toHaveLength(8));
 	});
 
 	it("should filter by type and see empty screen", async () => {
