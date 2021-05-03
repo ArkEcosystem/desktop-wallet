@@ -20,6 +20,7 @@ import {
 } from "utils/testing-library";
 
 import { App } from "./App";
+import { Bcrypt } from "@arkecosystem/platform-sdk-crypto";
 
 let profile: Contracts.IProfile;
 let passwordProtectedProfile: Contracts.IProfile;
@@ -187,9 +188,7 @@ describe("App", () => {
 			expect(getByTestId("SignIn__input--password")).toHaveValue("password");
 		});
 
-		await env.profiles().restore(passwordProtectedProfile, getDefaultPassword());
-		await passwordProtectedProfile.sync();
-
+		const verifyPasswordMock = jest.spyOn(Bcrypt, "verify").mockReturnValue(true);
 		const memoryPasswordMock = jest.spyOn(Helpers.MemoryPassword, "get").mockImplementation(() => {
 			throw new Error("password not found");
 		});
@@ -201,6 +200,7 @@ describe("App", () => {
 		await waitFor(() => expect(history.location.pathname).toMatch("/"), { timeout: 4000 });
 
 		memoryPasswordMock.mockRestore();
+		verifyPasswordMock.mockRestore();
 	});
 
 	it("should close splash screen if not e2e", async () => {
@@ -322,4 +322,5 @@ describe("App", () => {
 			expect(asFragment()).toMatchSnapshot();
 		});
 	});
+
 });
