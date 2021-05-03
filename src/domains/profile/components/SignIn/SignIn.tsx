@@ -70,11 +70,14 @@ export const SignIn = ({ isOpen, profile, onCancel, onClose, onSuccess }: SignIn
 	}, [errors, remainingTime, setError, t]);
 
 	const handleSubmit = async ({ password }: any) => {
-		if (profile.auth().verifyPassword(password)) {
-			profile.auth().setPassword(password);
+		let isValidPassword = true;
 
-			onSuccess(password);
-		} else {
+		env.profiles().tap(profile.id(), (focusedProfile: Contracts.IProfile) => {
+			isValidPassword = focusedProfile.auth().verifyPassword(password);
+			return focusedProfile;
+		});
+
+		if (!isValidPassword) {
 			setCount(count + 1);
 
 			setError("password", {
@@ -83,7 +86,10 @@ export const SignIn = ({ isOpen, profile, onCancel, onClose, onSuccess }: SignIn
 					field: t("COMMON.PASSWORD"),
 				}),
 			});
+			return;
 		}
+
+		onSuccess(password);
 	};
 
 	if (!isOpen) {
