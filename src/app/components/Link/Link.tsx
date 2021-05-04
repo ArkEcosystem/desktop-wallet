@@ -25,7 +25,7 @@ type AnchorProps = {
 } & React.AnchorHTMLAttributes<any>;
 
 const Anchor = React.forwardRef<HTMLAnchorElement, AnchorProps>(
-	({ isExternal, showExternalIcon, children, rel, ...props }: AnchorProps, ref) => (
+	({ isExternal, showExternalIcon, href, children, rel, ...props }: AnchorProps, ref) => (
 		<AnchorStyled
 			data-testid="Link"
 			isExternal={isExternal!}
@@ -37,6 +37,7 @@ const Anchor = React.forwardRef<HTMLAnchorElement, AnchorProps>(
 				event.preventDefault();
 				return props.navigate?.();
 			}}
+			href={href || "#"}
 			{...props}
 		>
 			<span className="group">
