@@ -20,6 +20,7 @@ exports[`SelectRecipient should render disabled 1`] = `
               class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
               data-testid="select-list__input"
               readonly=""
+              tabindex="-1"
               value=""
             />
           </div>
@@ -85,7 +86,7 @@ exports[`SelectRecipient should render disabled 1`] = `
             </div>
             <ul
               aria-labelledby="downshift-2-label"
-              class="styles__SelectOptionsList-b2falt-0 cUNLQk"
+              class="styles__SelectOptionsList-b2falt-0 ghEDCU"
               id="downshift-2-menu"
               role="listbox"
             />
@@ -117,6 +118,7 @@ exports[`SelectRecipient should render empty 1`] = `
               class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
               data-testid="select-list__input"
               readonly=""
+              tabindex="-1"
               value=""
             />
           </div>
@@ -180,7 +182,7 @@ exports[`SelectRecipient should render empty 1`] = `
             </div>
             <ul
               aria-labelledby="downshift-0-label"
-              class="styles__SelectOptionsList-b2falt-0 cUNLQk"
+              class="styles__SelectOptionsList-b2falt-0 ghEDCU"
               id="downshift-0-menu"
               role="listbox"
             />
@@ -213,6 +215,7 @@ exports[`SelectRecipient should render invalid 1`] = `
               class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
               data-testid="select-list__input"
               readonly=""
+              tabindex="-1"
               value=""
             />
           </div>
@@ -293,7 +296,7 @@ exports[`SelectRecipient should render invalid 1`] = `
             </div>
             <ul
               aria-labelledby="downshift-4-label"
-              class="styles__SelectOptionsList-b2falt-0 cUNLQk"
+              class="styles__SelectOptionsList-b2falt-0 ghEDCU"
               id="downshift-4-menu"
               role="listbox"
             />
@@ -325,6 +328,7 @@ exports[`SelectRecipient should render with preselected address 1`] = `
               class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
               data-testid="select-list__input"
               readonly=""
+              tabindex="-1"
               value=""
             />
           </div>
@@ -388,7 +392,7 @@ exports[`SelectRecipient should render with preselected address 1`] = `
             </div>
             <ul
               aria-labelledby="downshift-6-label"
-              class="styles__SelectOptionsList-b2falt-0 cUNLQk"
+              class="styles__SelectOptionsList-b2falt-0 ghEDCU"
               id="downshift-6-menu"
               role="listbox"
             />
@@ -420,6 +424,7 @@ exports[`SelectRecipient should update internal state when prop changes 1`] = `
               class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
               data-testid="select-list__input"
               readonly=""
+              tabindex="-1"
               value="bP6T9GQ3kqP6T9GQ3kqP6T9GQ3kqTTTP6T9GQ3kqT"
             />
           </div>
@@ -494,7 +499,7 @@ exports[`SelectRecipient should update internal state when prop changes 1`] = `
             </div>
             <ul
               aria-labelledby="downshift-8-label"
-              class="styles__SelectOptionsList-b2falt-0 cUNLQk"
+              class="styles__SelectOptionsList-b2falt-0 ghEDCU"
               id="downshift-8-menu"
               role="listbox"
             />

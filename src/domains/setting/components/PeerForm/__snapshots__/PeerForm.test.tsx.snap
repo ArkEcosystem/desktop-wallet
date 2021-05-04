@@ -34,6 +34,7 @@ exports[`PeerForm should render 1`] = `
               data-testid="select-list__input"
               name="network"
               readonly=""
+              tabindex="-1"
               value=""
             />
           </div>
@@ -95,7 +96,7 @@ exports[`PeerForm should render 1`] = `
             </div>
             <ul
               aria-labelledby="downshift-0-label"
-              class="styles__SelectOptionsList-b2falt-0 fMNDxc"
+              class="styles__SelectOptionsList-b2falt-0 ghEDCU"
               id="downshift-0-menu"
               role="listbox"
             />
@@ -248,6 +249,7 @@ exports[`PeerForm should render the peer on the form 1`] = `
               data-testid="select-list__input"
               name="network"
               readonly=""
+              tabindex="-1"
               value="ark.devnet"
             />
           </div>
@@ -315,7 +317,7 @@ exports[`PeerForm should render the peer on the form 1`] = `
             </div>
             <ul
               aria-labelledby="downshift-21-label"
-              class="styles__SelectOptionsList-b2falt-0 fMNDxc"
+              class="styles__SelectOptionsList-b2falt-0 ghEDCU"
               id="downshift-21-menu"
               role="listbox"
             />
