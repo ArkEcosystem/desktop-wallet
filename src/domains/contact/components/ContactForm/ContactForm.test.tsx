@@ -1,6 +1,5 @@
 /* eslint-disable @typescript-eslint/require-await */
 import { Contracts } from "@arkecosystem/platform-sdk-profiles";
-import { availableNetworksMock as networks } from "domains/network/data";
 import React from "react";
 import { act, env, fireEvent, getDefaultProfileId, renderWithRouter, waitFor } from "testing-library";
 
@@ -24,9 +23,7 @@ describe("ContactForm", () => {
 	});
 
 	it("should select", () => {
-		const { asFragment } = renderWithRouter(
-			<ContactForm profile={profile} networks={networks} onCancel={onCancel} onSave={onSave} />,
-		);
+		const { asFragment } = renderWithRouter(<ContactForm profile={profile} onCancel={onCancel} onSave={onSave} />);
 		expect(asFragment()).toMatchSnapshot();
 	});
 
@@ -34,7 +31,6 @@ describe("ContactForm", () => {
 		const { asFragment } = renderWithRouter(
 			<ContactForm
 				profile={profile}
-				networks={networks}
 				onCancel={onCancel}
 				onSave={onSave}
 				errors={{ name: "Contact name error" }}
@@ -46,13 +42,7 @@ describe("ContactForm", () => {
 	it("should handle onChange event", async () => {
 		const fn = jest.fn();
 		const { getByTestId } = renderWithRouter(
-			<ContactForm
-				profile={profile}
-				networks={networks}
-				onChange={fn}
-				onSave={onSave}
-				errors={{ name: "Contact name error" }}
-			/>,
+			<ContactForm profile={profile} onChange={fn} onSave={onSave} errors={{ name: "Contact name error" }} />,
 		);
 
 		const input = getByTestId("contact-form__name-input");
@@ -66,30 +56,29 @@ describe("ContactForm", () => {
 	});
 
 	it("should select cryptoasset", () => {
-		const { getByTestId } = renderWithRouter(
-			<ContactForm profile={profile} networks={networks} onCancel={onCancel} onSave={onSave} />,
-		);
+		const { getByTestId } = renderWithRouter(<ContactForm profile={profile} onCancel={onCancel} onSave={onSave} />);
 
-		const selectNetworkInput = getByTestId("SelectNetworkInput__input");
+		const selectNetworkInput = getByTestId("SelectDropdownInput__input");
+
 		act(() => {
-			fireEvent.change(selectNetworkInput, { target: { value: "Bitco" } });
+			fireEvent.change(selectNetworkInput, { target: { value: "ARK D" } });
 		});
 
 		act(() => {
 			fireEvent.keyDown(selectNetworkInput, { key: "Enter", code: 13 });
 		});
 
-		expect(selectNetworkInput).toHaveValue("Bitcoin");
+		expect(selectNetworkInput).toHaveValue("ARK Devnet");
 	});
 
 	it("should add a valid address successfully", async () => {
 		const { getAllByTestId, getByTestId, queryByTestId } = renderWithRouter(
-			<ContactForm profile={profile} networks={networks} onCancel={onCancel} onSave={onSave} />,
+			<ContactForm profile={profile} onCancel={onCancel} onSave={onSave} />,
 		);
 
 		expect(() => getAllByTestId("contact-form__address-list-item")).toThrow(/Unable to find an element by/);
 
-		const selectNetworkInput = getByTestId("SelectNetworkInput__input");
+		const selectNetworkInput = getByTestId("SelectDropdownInput__input");
 
 		await act(async () => {
 			await fireEvent.change(getByTestId("contact-form__address-input"), {
@@ -117,12 +106,12 @@ describe("ContactForm", () => {
 
 	it("should not add invalid address and should display error message", async () => {
 		const { getAllByTestId, getByTestId, queryByTestId } = renderWithRouter(
-			<ContactForm profile={profile} networks={networks} onCancel={onCancel} onSave={onSave} />,
+			<ContactForm profile={profile} onCancel={onCancel} onSave={onSave} />,
 		);
 
 		expect(() => getAllByTestId("contact-form__address-list-item")).toThrow(/Unable to find an element by/);
 
-		const selectNetworkInput = getByTestId("SelectNetworkInput__input");
+		const selectNetworkInput = getByTestId("SelectDropdownInput__input");
 
 		await act(async () => {
 			await fireEvent.change(getByTestId("contact-form__address-input"), {
@@ -151,12 +140,12 @@ describe("ContactForm", () => {
 
 	it("should error when adding duplicate address", async () => {
 		const { getAllByTestId, getByTestId, queryByTestId } = renderWithRouter(
-			<ContactForm profile={profile} networks={networks} onCancel={onCancel} onSave={onSave} />,
+			<ContactForm profile={profile} onCancel={onCancel} onSave={onSave} />,
 		);
 
 		expect(() => getAllByTestId("contact-form__address-list-item")).toThrow(/Unable to find an element by/);
 
-		const selectNetworkInput = getByTestId("SelectNetworkInput__input");
+		const selectNetworkInput = getByTestId("SelectDropdownInput__input");
 
 		await act(async () => {
 			fireEvent.change(getByTestId("contact-form__name-input"), {
@@ -208,13 +197,7 @@ describe("ContactForm", () => {
 
 		await act(async () => {
 			renderContext = renderWithRouter(
-				<ContactForm
-					profile={profile}
-					contact={contact}
-					networks={networks}
-					onCancel={onCancel}
-					onSave={onSave}
-				/>,
+				<ContactForm profile={profile} contact={contact} onCancel={onCancel} onSave={onSave} />,
 			);
 		});
 
@@ -232,41 +215,42 @@ describe("ContactForm", () => {
 	});
 
 	it("should handle save", async () => {
-		const fn = jest.fn();
+		const onSave = jest.fn();
 		const { getByTestId, queryByTestId } = renderWithRouter(
-			<ContactForm profile={profile} networks={networks} onCancel={onCancel} onSave={fn} />,
+			<ContactForm profile={profile} onCancel={onCancel} onSave={onSave} />,
 		);
 
-		const selectNetworkInput = getByTestId("SelectNetworkInput__input");
-
-		await act(async () => {
-			await fireEvent.change(getByTestId("contact-form__address-input"), {
-				target: { value: validArkDevnetAddress },
-			});
-
-			fireEvent.change(getByTestId("contact-form__name-input"), {
-				target: { value: "name" },
-			});
-
-			fireEvent.change(selectNetworkInput, { target: { value: "ARK Devnet" } });
-
-			fireEvent.keyDown(selectNetworkInput, { key: "Enter", code: 13 });
-
-			await waitFor(() => {
-				expect(queryByTestId("contact-form__add-address-btn")).not.toBeDisabled();
-			});
+		fireEvent.change(getByTestId("contact-form__name-input"), {
+			target: { value: "name" },
 		});
 
-		await act(async () => {
-			fireEvent.click(getByTestId("contact-form__add-address-btn"));
+		fireEvent.change(getByTestId("contact-form__address-input"), {
+			target: { value: validArkDevnetAddress },
 		});
 
-		await act(async () => {
-			fireEvent.click(getByTestId("contact-form__save-btn"));
+		const selectNetworkInput = getByTestId("SelectDropdownInput__input");
+
+		fireEvent.change(selectNetworkInput, { target: { value: "ARK D" } });
+		fireEvent.keyDown(selectNetworkInput, { key: "Enter", code: 13 });
+
+		await waitFor(() => {
+			expect(selectNetworkInput).toHaveValue("ARK Devnet");
 		});
 
 		await waitFor(() => {
-			expect(fn).toHaveBeenCalled();
+			expect(queryByTestId("contact-form__add-address-btn")).not.toBeDisabled();
+		});
+
+		fireEvent.click(getByTestId("contact-form__add-address-btn"));
+
+		await waitFor(() => {
+			expect(getByTestId("contact-form__save-btn")).not.toBeDisabled();
+		});
+
+		fireEvent.click(getByTestId("contact-form__save-btn"));
+
+		await waitFor(() => {
+			expect(onSave).toHaveBeenCalled();
 		});
 	});
 
@@ -316,7 +300,6 @@ describe("ContactForm", () => {
 					<ContactForm
 						profile={profile}
 						contact={contact}
-						networks={networks}
 						onCancel={onCancel}
 						onDelete={onDelete}
 						onSave={onSave}

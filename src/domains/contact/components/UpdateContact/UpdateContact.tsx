@@ -1,4 +1,3 @@
-import { Coins } from "@arkecosystem/platform-sdk";
 import { Contracts } from "@arkecosystem/platform-sdk-profiles";
 import { Modal } from "app/components/Modal";
 import { useEnvironmentContext } from "app/contexts";
@@ -10,7 +9,6 @@ type UpdateContactProps = {
 	isOpen: boolean;
 	contact: Contracts.IContact;
 	profile: Contracts.IProfile;
-	networks: Coins.Network[];
 	onCancel?: any;
 	onClose?: any;
 	onDelete?: any;
@@ -20,7 +18,6 @@ type UpdateContactProps = {
 export const UpdateContact = ({
 	isOpen,
 	contact,
-	networks,
 	onClose,
 	onCancel,
 	onDelete,
@@ -75,7 +72,6 @@ export const UpdateContact = ({
 					profile={profile}
 					errors={errors}
 					contact={contact}
-					networks={networks}
 					onCancel={() => onCancel?.()}
 					onDelete={onDelete}
 					onChange={handleChange}
@@ -88,5 +84,4 @@ export const UpdateContact = ({
 
 UpdateContact.defaultProps = {
 	isOpen: false,
-	networks: [],
 };

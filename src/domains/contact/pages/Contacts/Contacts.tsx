@@ -1,4 +1,3 @@
-import { Coins } from "@arkecosystem/platform-sdk";
 import { Contracts } from "@arkecosystem/platform-sdk-profiles";
 import { Button } from "app/components/Button";
 import { EmptyBlock } from "app/components/EmptyBlock";
@@ -62,8 +61,6 @@ export const Contacts = () => {
 
 	const [contactAction, setContactAction] = useState<string | null>(null);
 	const [selectedContact, setSelectedContact] = useState<Contracts.IContact | null>(null);
-
-	const [availableNetworks] = useState<Coins.Network[]>(env.availableNetworks());
 
 	const { t } = useTranslation();
 
@@ -177,7 +174,6 @@ export const Contacts = () => {
 			<CreateContact
 				isOpen={createIsOpen}
 				profile={activeProfile}
-				networks={availableNetworks}
 				onCancel={() => setCreateIsOpen(false)}
 				onClose={() => setCreateIsOpen(false)}
 				onSave={() => setCreateIsOpen(false)}
@@ -189,7 +185,6 @@ export const Contacts = () => {
 						isOpen={contactAction === "edit"}
 						contact={selectedContact}
 						profile={activeProfile}
-						networks={availableNetworks}
 						onCancel={resetContactAction}
 						onClose={resetContactAction}
 						onDelete={() => setContactAction("delete")}

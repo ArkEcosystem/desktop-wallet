@@ -7,6 +7,7 @@ export * from "./use-currency-display";
 export * from "./use-deeplink";
 export * from "./use-env-synchronizer";
 export * from "./use-fees";
+export * from "./use-network-options";
 export * from "./use-notifications";
 export * from "./use-previous";
 export * from "./use-profile-synchronizer";

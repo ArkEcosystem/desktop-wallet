@@ -1,6 +1,5 @@
 /* eslint-disable @typescript-eslint/require-await */
 import { Contact } from "@arkecosystem/platform-sdk-profiles";
-import { availableNetworksMock } from "domains/network/data";
 import React from "react";
 import { act, env, fireEvent, getDefaultProfileId, renderWithRouter, waitFor } from "testing-library";
 
@@ -17,12 +16,7 @@ describe("UpdateContact", () => {
 
 	it("should not render if not open", () => {
 		const { asFragment, getByTestId } = renderWithRouter(
-			<UpdateContact
-				profile={profile}
-				isOpen={false}
-				networks={availableNetworksMock}
-				contact={updatingContact}
-			/>,
+			<UpdateContact profile={profile} isOpen={false} contact={updatingContact} />,
 		);
 
 		expect(() => getByTestId("modal__inner")).toThrow(/Unable to find an element by/);
@@ -79,17 +73,11 @@ describe("UpdateContact", () => {
 		const newContact = profile.contacts().create("New name");
 
 		const { getByTestId, queryByTestId } = renderWithRouter(
-			<UpdateContact
-				isOpen={true}
-				onSave={onSave}
-				profile={profile}
-				contact={newContact}
-				networks={availableNetworksMock}
-			/>,
+			<UpdateContact isOpen={true} onSave={onSave} profile={profile} contact={newContact} />,
 		);
 
 		const saveButton = getByTestId("contact-form__save-btn");
-		const selectNetworkInput = getByTestId("SelectNetworkInput__input");
+		const selectNetworkInput = getByTestId("SelectDropdownInput__input");
 
 		await act(async () => {
 			await fireEvent.change(getByTestId("contact-form__address-input"), {
@@ -156,13 +144,7 @@ describe("UpdateContact", () => {
 		};
 
 		const { getByTestId, queryByTestId } = renderWithRouter(
-			<UpdateContact
-				isOpen={true}
-				onSave={onSave}
-				profile={profile}
-				contact={updatingContact}
-				networks={availableNetworksMock}
-			/>,
+			<UpdateContact isOpen={true} onSave={onSave} profile={profile} contact={updatingContact} />,
 		);
 
 		const nameInput = getByTestId("contact-form__name-input");
@@ -174,7 +156,7 @@ describe("UpdateContact", () => {
 
 		expect(nameInput).toHaveValue(newName);
 		const saveButton = getByTestId("contact-form__save-btn");
-		const selectNetworkInput = getByTestId("SelectNetworkInput__input");
+		const selectNetworkInput = getByTestId("SelectDropdownInput__input");
 
 		await act(async () => {
 			await fireEvent.change(getByTestId("contact-form__address-input"), {

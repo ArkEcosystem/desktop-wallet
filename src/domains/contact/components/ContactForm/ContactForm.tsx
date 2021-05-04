@@ -6,8 +6,9 @@ import { Button } from "app/components/Button";
 import { Form, FormField, FormLabel, SubForm } from "app/components/Form";
 import { Icon } from "app/components/Icon";
 import { InputAddress, InputDefault } from "app/components/Input";
+import { Select } from "app/components/SelectDropdown";
+import { useNetworkOptions } from "app/hooks";
 import { NetworkIcon } from "domains/network/components/NetworkIcon";
-import { SelectNetwork } from "domains/network/components/SelectNetwork";
 import React, { useEffect, useMemo, useState } from "react";
 import { useForm } from "react-hook-form";
 import { useTranslation } from "react-i18next";
@@ -71,7 +72,6 @@ const AddressList = ({ addresses, onRemove }: AddressListProps) => {
 type ContactFormProps = {
 	contact?: Contracts.IContact;
 	profile: Contracts.IProfile;
-	networks: Coins.Network[];
 	onCancel?: any;
 	onChange?: any;
 	onDelete?: any;
@@ -79,16 +79,7 @@ type ContactFormProps = {
 	errors?: any;
 };
 
-export const ContactForm = ({
-	profile,
-	contact,
-	networks,
-	onChange,
-	onCancel,
-	onDelete,
-	onSave,
-	errors,
-}: ContactFormProps) => {
+export const ContactForm = ({ profile, contact, onChange, onCancel, onDelete, onSave, errors }: ContactFormProps) => {
 	const nameMaxLength = 42;
 
 	const [addresses, setAddresses] = useState(() =>
@@ -120,6 +111,8 @@ export const ContactForm = ({
 			setError(field, { type: "manual", message: message as string });
 		}
 	}, [errors, setError]);
+
+	const { networkOptions, networkById } = useNetworkOptions();
 
 	const handleAddAddress = async () => {
 		const addressExists = addresses.some((addr) => addr.address === address);
@@ -157,8 +150,8 @@ export const ContactForm = ({
 		);
 	};
 
-	const handleSelectNetwork = (network?: Coins.Network | null) => {
-		setValue("network", network, { shouldValidate: true, shouldDirty: true });
+	const handleSelectNetwork = (networkOption?: { label: string; value: string }) => {
+		setValue("network", networkById(networkOption?.value), { shouldValidate: true, shouldDirty: true });
 	};
 
 	const isNameValid = useMemo(() => !!name?.trim() && !form.errors?.name, [name, form.errors]);
@@ -198,11 +191,11 @@ export const ContactForm = ({
 			<SubForm>
 				<FormField name="network">
 					<FormLabel>{t("CONTACTS.CONTACT_FORM.CRYPTOASSET")}</FormLabel>
-					<SelectNetwork
-						id="ContactForm__network"
-						networks={networks}
-						onSelect={handleSelectNetwork}
-						selected={network}
+					<Select
+						placeholder={t("COMMON.INPUT_NETWORK.PLACEHOLDER")}
+						defaultValue={network?.id()}
+						options={networkOptions}
+						onChange={(networkOption: any) => handleSelectNetwork(networkOption)}
 					/>
 				</FormField>
 
@@ -261,6 +254,5 @@ export const ContactForm = ({
 };
 
 ContactForm.defaultProps = {
-	networks: [],
 	errors: {},
 };

@@ -111,7 +111,7 @@ test("should error for invalid address", async (t) => {
 		)
 		.ok();
 
-	await t.typeText(Selector('[data-testid="SelectNetworkInput__input"]'), "ARK Devnet");
+	await t.typeText(Selector('[data-testid="SelectDropdownInput__input"]'), "ARK Devnet");
 	await t.pressKey("enter");
 
 	const addressInput = Selector('[data-testid="contact-form__address-input"]');
@@ -150,7 +150,7 @@ test("should error on duplicate address addition", async (t) => {
 		)
 		.ok();
 
-	await t.typeText(Selector('[data-testid="SelectNetworkInput__input"]'), "ARK Devnet");
+	await t.typeText(Selector('[data-testid="SelectDropdownInput__input"]'), "ARK Devnet");
 	await t.pressKey("enter");
 
 	const addressInput = Selector('[data-testid="contact-form__address-input"]');
@@ -181,7 +181,7 @@ test("should error if contact name is already taken", async (t) => {
 	const nameInput = Selector('[data-testid="contact-form__name-input"]');
 	await t.typeText(nameInput, newContact);
 
-	await t.typeText(Selector('[data-testid="SelectNetworkInput__input"]'), "ARK Devnet");
+	await t.typeText(Selector('[data-testid="SelectDropdownInput__input"]'), "ARK Devnet");
 	await t.pressKey("enter");
 
 	const addressInput = Selector('[data-testid="contact-form__address-input"]');

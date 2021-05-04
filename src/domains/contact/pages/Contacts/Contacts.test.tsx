@@ -111,7 +111,7 @@ describe("Contacts", () => {
 		expect(getByTestId("contact-form__save-btn")).toBeDisabled();
 		expect(getByTestId("contact-form__add-address-btn")).toBeDisabled();
 
-		const selectNetworkInput = getByTestId("SelectNetworkInput__input");
+		const selectNetworkInput = getByTestId("SelectDropdownInput__input");
 
 		expect(() => getAllByTestId("contact-form__address-list-item")).toThrow(/Unable to find an element by/);
 
@@ -124,13 +124,14 @@ describe("Contacts", () => {
 				target: { value: "name" },
 			});
 
-			fireEvent.change(selectNetworkInput, { target: { value: "ARK Devnet" } });
+			fireEvent.change(selectNetworkInput, { target: { value: "ark d" } });
 		});
 
 		await act(async () => {
 			fireEvent.keyDown(selectNetworkInput, { key: "Enter", code: 13 });
 		});
 
+		await waitFor(() => expect(selectNetworkInput).toHaveValue("ARK Devnet"));
 		await waitFor(() => expect(queryByTestId("contact-form__add-address-btn")).not.toBeDisabled());
 
 		act(() => {
