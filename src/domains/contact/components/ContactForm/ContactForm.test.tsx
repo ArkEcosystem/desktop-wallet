@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/require-await */
 import { Contracts } from "@arkecosystem/platform-sdk-profiles";
 import React from "react";
-import { act, env, fireEvent, getDefaultProfileId, renderWithRouter, waitFor } from "testing-library";
+import { act, env, fireEvent, getDefaultProfileId, renderWithRouter, waitFor } from "utils/testing-library";
 
 import { translations } from "../../i18n";
 import { ContactForm } from "./ContactForm";
@@ -11,7 +11,7 @@ const onSave = jest.fn();
 const onCancel = jest.fn();
 
 let profile: Contracts.IProfile;
-let contact: Contact;
+let contact: Contracts.IContact;
 let validArkDevnetAddress: string;
 
 describe("ContactForm", () => {
@@ -72,7 +72,7 @@ describe("ContactForm", () => {
 	});
 
 	it("should add a valid address successfully", async () => {
-		const { getAllByTestId, getByTestId, queryByTestId } = renderWithRouter(
+		const { getAllByTestId, getByTestId } = renderWithRouter(
 			<ContactForm profile={profile} onCancel={onCancel} onSave={onSave} />,
 		);
 
@@ -80,32 +80,34 @@ describe("ContactForm", () => {
 
 		const selectNetworkInput = getByTestId("SelectDropdownInput__input");
 
-		await act(async () => {
-			await fireEvent.change(getByTestId("contact-form__address-input"), {
-				target: { value: validArkDevnetAddress },
-			});
+		fireEvent.change(getByTestId("contact-form__address-input"), {
+			target: { value: validArkDevnetAddress },
+		});
 
-			fireEvent.change(getByTestId("contact-form__name-input"), {
-				target: { value: "name" },
-			});
+		fireEvent.change(getByTestId("contact-form__name-input"), {
+			target: { value: "name" },
+		});
 
-			fireEvent.change(selectNetworkInput, { target: { value: "ARK Devnet" } });
+		fireEvent.change(selectNetworkInput, { target: { value: "ARK D" } });
+		fireEvent.keyDown(selectNetworkInput, { key: "Enter", code: 13 });
 
-			fireEvent.keyDown(selectNetworkInput, { key: "Enter", code: 13 });
+		await waitFor(() => {
+			expect(selectNetworkInput).toHaveValue("ARK Devnet");
+		});
 
-			await waitFor(() => {
-				expect(queryByTestId("contact-form__add-address-btn")).not.toBeDisabled();
-			});
+		await waitFor(() => {
+			expect(getByTestId("contact-form__add-address-btn")).not.toBeDisabled();
+		});
 
-			fireEvent.click(getByTestId("contact-form__add-address-btn"));
-			await waitFor(() => {
-				expect(getAllByTestId("contact-form__address-list-item")).toHaveLength(1);
-			});
+		fireEvent.click(getByTestId("contact-form__add-address-btn"));
+
+		await waitFor(() => {
+			expect(getAllByTestId("contact-form__address-list-item")).toHaveLength(1);
 		});
 	});
 
 	it("should not add invalid address and should display error message", async () => {
-		const { getAllByTestId, getByTestId, queryByTestId } = renderWithRouter(
+		const { getAllByTestId, getByTestId } = renderWithRouter(
 			<ContactForm profile={profile} onCancel={onCancel} onSave={onSave} />,
 		);
 
@@ -113,29 +115,32 @@ describe("ContactForm", () => {
 
 		const selectNetworkInput = getByTestId("SelectDropdownInput__input");
 
-		await act(async () => {
-			await fireEvent.change(getByTestId("contact-form__address-input"), {
-				target: { value: "invalid address" },
-			});
-
-			fireEvent.change(getByTestId("contact-form__name-input"), {
-				target: { value: "name" },
-			});
-
-			fireEvent.change(selectNetworkInput, { target: { value: "ARK Devnet" } });
-
-			fireEvent.keyDown(selectNetworkInput, { key: "Enter", code: 13 });
-
-			await waitFor(() => {
-				expect(queryByTestId("contact-form__add-address-btn")).not.toBeDisabled();
-			});
-
-			fireEvent.click(getByTestId("contact-form__add-address-btn"));
-			await waitFor(() => {
-				expect(getByTestId("Input__error")).toBeVisible();
-				expect(() => getAllByTestId("contact-form__address-list-item")).toThrow(/Unable to find an element by/);
-			});
+		fireEvent.change(getByTestId("contact-form__address-input"), {
+			target: { value: "invalid address" },
 		});
+
+		fireEvent.change(getByTestId("contact-form__name-input"), {
+			target: { value: "name" },
+		});
+
+		fireEvent.change(selectNetworkInput, { target: { value: "ARK D" } });
+		fireEvent.keyDown(selectNetworkInput, { key: "Enter", code: 13 });
+
+		await waitFor(() => {
+			expect(selectNetworkInput).toHaveValue("ARK Devnet");
+		});
+
+		await waitFor(() => {
+			expect(getByTestId("contact-form__add-address-btn")).not.toBeDisabled();
+		});
+
+		fireEvent.click(getByTestId("contact-form__add-address-btn"));
+
+		await waitFor(() => {
+			expect(getByTestId("Input__error")).toBeVisible();
+		});
+
+		expect(() => getAllByTestId("contact-form__address-list-item")).toThrow(/Unable to find an element by/);
 	});
 
 	it("should error when adding duplicate address", async () => {
@@ -147,49 +152,54 @@ describe("ContactForm", () => {
 
 		const selectNetworkInput = getByTestId("SelectDropdownInput__input");
 
-		await act(async () => {
-			fireEvent.change(getByTestId("contact-form__name-input"), {
-				target: { value: "name" },
-			});
-
-			await fireEvent.change(getByTestId("contact-form__address-input"), {
-				target: { value: validArkDevnetAddress },
-			});
-
-			fireEvent.change(selectNetworkInput, { target: { value: "ARK Devnet" } });
-
-			fireEvent.keyDown(selectNetworkInput, { key: "Enter", code: 13 });
-
-			await waitFor(() => {
-				expect(queryByTestId("contact-form__add-address-btn")).not.toBeDisabled();
-			});
-
-			fireEvent.click(getByTestId("contact-form__add-address-btn"));
-
-			await waitFor(() => {
-				expect(getAllByTestId("contact-form__address-list-item")).toHaveLength(1);
-			});
-
-			// Second addition
-			await fireEvent.change(getByTestId("contact-form__address-input"), {
-				target: { value: validArkDevnetAddress },
-			});
-
-			fireEvent.change(selectNetworkInput, { target: { value: "ARK Devnet" } });
-
-			fireEvent.keyDown(selectNetworkInput, { key: "Enter", code: 13 });
-
-			await waitFor(() => {
-				expect(queryByTestId("contact-form__add-address-btn")).not.toBeDisabled();
-			});
-
-			fireEvent.click(getByTestId("contact-form__add-address-btn"));
-
-			await waitFor(() => {
-				expect(getByTestId("Input__error")).toBeVisible();
-				expect(getAllByTestId("contact-form__address-list-item")).toHaveLength(1);
-			});
+		fireEvent.change(getByTestId("contact-form__name-input"), {
+			target: { value: "name" },
 		});
+
+		fireEvent.change(getByTestId("contact-form__address-input"), {
+			target: { value: validArkDevnetAddress },
+		});
+
+		fireEvent.change(selectNetworkInput, { target: { value: "ARK D" } });
+		fireEvent.keyDown(selectNetworkInput, { key: "Enter", code: 13 });
+
+		await waitFor(() => {
+			expect(selectNetworkInput).toHaveValue("ARK Devnet");
+		});
+
+		await waitFor(() => {
+			expect(queryByTestId("contact-form__add-address-btn")).not.toBeDisabled();
+		});
+
+		fireEvent.click(getByTestId("contact-form__add-address-btn"));
+
+		await waitFor(() => {
+			expect(getAllByTestId("contact-form__address-list-item")).toHaveLength(1);
+		});
+
+		// Second addition
+		fireEvent.change(getByTestId("contact-form__address-input"), {
+			target: { value: validArkDevnetAddress },
+		});
+
+		fireEvent.change(selectNetworkInput, { target: { value: "ARK D" } });
+		fireEvent.keyDown(selectNetworkInput, { key: "Enter", code: 13 });
+
+		await waitFor(() => {
+			expect(selectNetworkInput).toHaveValue("ARK Devnet");
+		});
+
+		await waitFor(() => {
+			expect(queryByTestId("contact-form__add-address-btn")).not.toBeDisabled();
+		});
+
+		fireEvent.click(getByTestId("contact-form__add-address-btn"));
+
+		await waitFor(() => {
+			expect(getByTestId("Input__error")).toBeVisible();
+		});
+
+		expect(getAllByTestId("contact-form__address-list-item")).toHaveLength(1);
 	});
 
 	it("should remove an address", async () => {

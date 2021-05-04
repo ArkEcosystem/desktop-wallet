@@ -1,12 +1,12 @@
 /* eslint-disable @typescript-eslint/require-await */
-import { Contact } from "@arkecosystem/platform-sdk-profiles";
+import { Contracts } from "@arkecosystem/platform-sdk-profiles";
 import React from "react";
-import { act, env, fireEvent, getDefaultProfileId, renderWithRouter, waitFor } from "testing-library";
+import { act, env, fireEvent, getDefaultProfileId, renderWithRouter, waitFor } from "utils/testing-library";
 
 import { UpdateContact } from "./UpdateContact";
 
 let profile: Contracts.IProfile;
-let updatingContact: Contact;
+let updatingContact: Contracts.IContact;
 
 describe("UpdateContact", () => {
 	beforeEach(async () => {
@@ -79,37 +79,35 @@ describe("UpdateContact", () => {
 		const saveButton = getByTestId("contact-form__save-btn");
 		const selectNetworkInput = getByTestId("SelectDropdownInput__input");
 
-		await act(async () => {
-			await fireEvent.change(getByTestId("contact-form__address-input"), {
-				target: { value: newAddress.address },
-			});
+		fireEvent.change(getByTestId("contact-form__address-input"), {
+			target: { value: newAddress.address },
+		});
 
-			fireEvent.change(selectNetworkInput, { target: { value: "ARK Devnet" } });
-			fireEvent.keyDown(selectNetworkInput, { key: "Enter", code: 13 });
+		fireEvent.change(selectNetworkInput, { target: { value: "ARK D" } });
+		fireEvent.keyDown(selectNetworkInput, { key: "Enter", code: 13 });
+
+		await waitFor(() => {
+			expect(selectNetworkInput).toHaveValue("ARK Devnet");
 		});
 
 		await waitFor(() => {
-			expect(queryByTestId("contact-form__add-address-btn")).not.toBeDisabled();
+			expect(getByTestId("contact-form__add-address-btn")).not.toBeDisabled();
 		});
 
-		await act(async () => {
-			fireEvent.click(getByTestId("contact-form__add-address-btn"));
-		});
+		fireEvent.click(getByTestId("contact-form__add-address-btn"));
 
 		const nameInput = getByTestId("contact-form__name-input");
 		expect(nameInput).toHaveValue(newContact.name());
 
-		await act(async () => {
-			fireEvent.change(nameInput, { target: { value: existingContactName } });
-		});
+		fireEvent.change(nameInput, { target: { value: existingContactName } });
 
 		expect(nameInput).toHaveValue(existingContactName);
 
-		await act(async () => {
-			fireEvent.click(saveButton);
-		});
+		fireEvent.click(saveButton);
 
-		expect(onSave).not.toHaveBeenCalled();
+		await waitFor(() => {
+			expect(onSave).not.toHaveBeenCalled();
+		});
 	});
 
 	it("should call onDelete callback", async () => {
@@ -143,51 +141,49 @@ describe("UpdateContact", () => {
 			coin: "ARK",
 		};
 
-		const { getByTestId, queryByTestId } = renderWithRouter(
+		const { getByTestId } = renderWithRouter(
 			<UpdateContact isOpen={true} onSave={onSave} profile={profile} contact={updatingContact} />,
 		);
 
 		const nameInput = getByTestId("contact-form__name-input");
 		expect(nameInput).toHaveValue(updatingContact.name());
 
-		act(() => {
-			fireEvent.change(nameInput, { target: { value: newName } });
-		});
+		fireEvent.change(nameInput, { target: { value: newName } });
 
 		expect(nameInput).toHaveValue(newName);
 		const saveButton = getByTestId("contact-form__save-btn");
 		const selectNetworkInput = getByTestId("SelectDropdownInput__input");
 
-		await act(async () => {
-			await fireEvent.change(getByTestId("contact-form__address-input"), {
-				target: { value: newAddress.address },
-			});
+		fireEvent.change(getByTestId("contact-form__address-input"), {
+			target: { value: newAddress.address },
+		});
 
-			fireEvent.change(selectNetworkInput, { target: { value: "ARK Devnet" } });
-			fireEvent.keyDown(selectNetworkInput, { key: "Enter", code: 13 });
+		fireEvent.change(selectNetworkInput, { target: { value: "ARK D" } });
+		fireEvent.keyDown(selectNetworkInput, { key: "Enter", code: 13 });
+
+		await waitFor(() => {
+			expect(selectNetworkInput).toHaveValue("ARK Devnet");
 		});
 
 		await waitFor(() => {
-			expect(queryByTestId("contact-form__add-address-btn")).not.toBeDisabled();
+			expect(getByTestId("contact-form__add-address-btn")).not.toBeDisabled();
 		});
 
-		await act(async () => {
-			fireEvent.click(getByTestId("contact-form__add-address-btn"));
+		fireEvent.click(getByTestId("contact-form__add-address-btn"));
+
+		await waitFor(() => {
+			expect(saveButton).not.toBeDisabled();
 		});
 
-		expect(saveButton).not.toBeDisabled();
-
-		await act(async () => {
-			fireEvent.click(saveButton);
-		});
+		fireEvent.click(saveButton);
 
 		await waitFor(() => {
 			expect(onSave).toBeCalledWith(updatingContact.id());
-
-			const savedContact = profile.contacts().findById(updatingContact.id());
-			expect(savedContact.name()).toEqual(newName);
-
-			expect(savedContact.addresses().findByAddress(newAddress.address).length).toBeGreaterThan(0);
 		});
+
+		const savedContact = profile.contacts().findById(updatingContact.id());
+		expect(savedContact.name()).toEqual(newName);
+
+		expect(savedContact.addresses().findByAddress(newAddress.address).length).toBeGreaterThan(0);
 	});
 });

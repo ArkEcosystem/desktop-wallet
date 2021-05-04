@@ -40,7 +40,7 @@ const ContactsHeaderExtra = ({ showSearchBar, onSearch, onAddContact }: Contacts
 };
 
 export const Contacts = () => {
-	const { env, state } = useEnvironmentContext();
+	const { state } = useEnvironmentContext();
 
 	const history = useHistory();
 
