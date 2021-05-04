@@ -3,7 +3,7 @@
 exports[`Link should open an external link 1`] = `
 <DocumentFragment>
   <a
-    class="Link__AnchorStyled-sc-1q7sbxr-0 jwcqOB group"
+    class="Link__AnchorStyled-sc-1q7sbxr-0 bMatQy group"
     data-testid="Link"
     rel="noopener noreferrer"
     to="https://ark.io/"
@@ -11,16 +11,20 @@ exports[`Link should open an external link 1`] = `
     <span
       class="break-all border-b border-transparent transition-colors duration-200 border-current border-dotted group-hover:border-transparent"
     />
-    <div
-      class="sc-bdfBwQ fPrsah flex-shrink-0"
-      data-testid="Link__external"
-      height="1em"
-      width="1em"
+    <span
+      class="align-middle"
     >
-      <svg>
-        redirect.svg
-      </svg>
-    </div>
+      <div
+        class="sc-bdfBwQ fPrsah flex-shrink-0"
+        data-testid="Link__external"
+        height="1em"
+        width="1em"
+      >
+        <svg>
+          redirect.svg
+        </svg>
+      </div>
+    </span>
   </a>
 </DocumentFragment>
 `;
@@ -28,7 +32,7 @@ exports[`Link should open an external link 1`] = `
 exports[`Link should render 1`] = `
 <DocumentFragment>
   <a
-    class="Link__AnchorStyled-sc-1q7sbxr-0 jwcqOB group"
+    class="Link__AnchorStyled-sc-1q7sbxr-0 bMatQy group"
     data-testid="Link"
     href="/test"
   >
@@ -44,7 +48,7 @@ exports[`Link should render 1`] = `
 exports[`Link should render external without children 1`] = `
 <DocumentFragment>
   <a
-    class="Link__AnchorStyled-sc-1q7sbxr-0 jwcqOB group"
+    class="Link__AnchorStyled-sc-1q7sbxr-0 bMatQy group"
     data-testid="Link"
     rel="noopener noreferrer"
     to="https://ark.io"
@@ -52,16 +56,20 @@ exports[`Link should render external without children 1`] = `
     <span
       class="break-all border-b border-transparent transition-colors duration-200 border-current border-dotted group-hover:border-transparent"
     />
-    <div
-      class="sc-bdfBwQ fPrsah flex-shrink-0"
-      data-testid="Link__external"
-      height="1em"
-      width="1em"
+    <span
+      class="align-middle"
     >
-      <svg>
-        redirect.svg
-      </svg>
-    </div>
+      <div
+        class="sc-bdfBwQ fPrsah flex-shrink-0"
+        data-testid="Link__external"
+        height="1em"
+        width="1em"
+      >
+        <svg>
+          redirect.svg
+        </svg>
+      </div>
+    </span>
   </a>
 </DocumentFragment>
 `;
@@ -69,7 +77,7 @@ exports[`Link should render external without children 1`] = `
 exports[`Link should render with tooltip 1`] = `
 <DocumentFragment>
   <a
-    class="Link__AnchorStyled-sc-1q7sbxr-0 jwcqOB group"
+    class="Link__AnchorStyled-sc-1q7sbxr-0 bMatQy group"
     data-testid="Link"
     href="/test"
   >
@@ -85,7 +93,7 @@ exports[`Link should render with tooltip 1`] = `
 exports[`Link should show a toast when trying to open an invalid external link 1`] = `
 <DocumentFragment>
   <a
-    class="Link__AnchorStyled-sc-1q7sbxr-0 jwcqOB group"
+    class="Link__AnchorStyled-sc-1q7sbxr-0 bMatQy group"
     data-testid="Link"
     rel="noopener noreferrer"
     to="invalid-url"
@@ -93,16 +101,20 @@ exports[`Link should show a toast when trying to open an invalid external link 1
     <span
       class="break-all border-b border-transparent transition-colors duration-200 border-current border-dotted group-hover:border-transparent"
     />
-    <div
-      class="sc-bdfBwQ fPrsah flex-shrink-0"
-      data-testid="Link__external"
-      height="1em"
-      width="1em"
+    <span
+      class="align-middle"
     >
-      <svg>
-        redirect.svg
-      </svg>
-    </div>
+      <div
+        class="sc-bdfBwQ fPrsah flex-shrink-0"
+        data-testid="Link__external"
+        height="1em"
+        width="1em"
+      >
+        <svg>
+          redirect.svg
+        </svg>
+      </div>
+    </span>
   </a>
 </DocumentFragment>
 `;

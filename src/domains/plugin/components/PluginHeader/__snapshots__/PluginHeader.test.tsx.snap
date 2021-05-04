@@ -139,7 +139,7 @@ exports[`PluginHeader should render properly 1`] = `
                   class="font-semibold text-theme-secondary-text"
                 >
                   <a
-                    class="Link__AnchorStyled-sc-1q7sbxr-0 jwcqOB group"
+                    class="Link__AnchorStyled-sc-1q7sbxr-0 bMatQy group"
                     data-testid="PluginSpecs__url"
                     rel="noopener noreferrer"
                     to="https://github.com/arkecosystem"
@@ -149,16 +149,20 @@ exports[`PluginHeader should render properly 1`] = `
                     >
                       github.com
                     </span>
-                    <div
-                      class="sc-bdfBwQ fPrsah flex-shrink-0 inline-block pb-px text-sm"
-                      data-testid="Link__external"
-                      height="1em"
-                      width="1em"
+                    <span
+                      class="align-middle"
                     >
-                      <svg>
-                        redirect.svg
-                      </svg>
-                    </div>
+                      <div
+                        class="sc-bdfBwQ fPrsah flex-shrink-0 inline-block pb-px text-sm"
+                        data-testid="Link__external"
+                        height="1em"
+                        width="1em"
+                      >
+                        <svg>
+                          redirect.svg
+                        </svg>
+                      </div>
+                    </span>
                   </a>
                 </span>
               </div>
@@ -405,7 +409,7 @@ exports[`PluginHeader should render updating plugin 1`] = `
                   class="font-semibold text-theme-secondary-text"
                 >
                   <a
-                    class="Link__AnchorStyled-sc-1q7sbxr-0 jwcqOB group"
+                    class="Link__AnchorStyled-sc-1q7sbxr-0 bMatQy group"
                     data-testid="PluginSpecs__url"
                     rel="noopener noreferrer"
                     to="https://github.com/arkecosystem"
@@ -415,16 +419,20 @@ exports[`PluginHeader should render updating plugin 1`] = `
                     >
                       github.com
                     </span>
-                    <div
-                      class="sc-bdfBwQ fPrsah flex-shrink-0 inline-block pb-px text-sm"
-                      data-testid="Link__external"
-                      height="1em"
-                      width="1em"
+                    <span
+                      class="align-middle"
                     >
-                      <svg>
-                        redirect.svg
-                      </svg>
-                    </div>
+                      <div
+                        class="sc-bdfBwQ fPrsah flex-shrink-0 inline-block pb-px text-sm"
+                        data-testid="Link__external"
+                        height="1em"
+                        width="1em"
+                      >
+                        <svg>
+                          redirect.svg
+                        </svg>
+                      </div>
+                    </span>
                   </a>
                 </span>
               </div>
