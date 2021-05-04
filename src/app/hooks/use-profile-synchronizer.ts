@@ -252,7 +252,7 @@ export const useProfileSynchronizer = ({ onProfileRestoreError }: ProfileSynchro
 			}
 		};
 
-		setTimeout(() => syncProfile(profile), 10);
+		setTimeout(() => syncProfile(profile), 0);
 	}, [
 		saveProfile,
 		allJobs,

@@ -1,4 +1,4 @@
-import { Contracts, Helpers } from "@arkecosystem/platform-sdk-profiles";
+import { Contracts } from "@arkecosystem/platform-sdk-profiles";
 import { renderHook } from "@testing-library/react-hooks";
 import { useProfileExport } from "domains/setting/hooks/use-profile-export";
 import { env, getDefaultPassword, getDefaultProfileId, getPasswordProtectedProfileId } from "utils/testing-library";
@@ -46,7 +46,7 @@ describe("useProfileExport", () => {
 
 		const { result } = renderHook(() => useProfileExport({ profile: passwordProtectedProfile, env }));
 
-		Helpers.MemoryPassword.set(getDefaultPassword());
+		passwordProtectedProfile.password().set(getDefaultPassword());
 
 		const exportedData = result.current.formatExportData({
 			excludeEmptyWallets: false,

@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/require-await */
 import { Bcrypt } from "@arkecosystem/platform-sdk-crypto";
-import { Contracts, Environment, Helpers } from "@arkecosystem/platform-sdk-profiles";
+import { Contracts, Environment } from "@arkecosystem/platform-sdk-profiles";
 import { translations as errorTranslations } from "domains/error/i18n";
 import { translations as profileTranslations } from "domains/profile/i18n";
 import electron from "electron";
@@ -189,7 +189,7 @@ describe("App", () => {
 		});
 
 		const verifyPasswordMock = jest.spyOn(Bcrypt, "verify").mockReturnValue(true);
-		const memoryPasswordMock = jest.spyOn(Helpers.MemoryPassword, "get").mockImplementation(() => {
+		const memoryPasswordMock = jest.spyOn(passwordProtectedProfile.password(), "get").mockImplementation(() => {
 			throw new Error("password not found");
 		});
 

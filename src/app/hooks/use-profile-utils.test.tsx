@@ -1,5 +1,4 @@
 /* eslint-disable @typescript-eslint/require-await */
-import { Helpers } from "@arkecosystem/platform-sdk-profiles";
 import { renderHook } from "@testing-library/react-hooks";
 import { ConfigurationProvider } from "app/contexts";
 import React from "react";
@@ -44,7 +43,7 @@ describe("useProfileUtils", () => {
 
 		const mockPasswordLessProfile = jest.spyOn(passwordLessProfile, "usesPassword").mockImplementation(() => false);
 
-		const memoryPasswordMock = jest.spyOn(Helpers.MemoryPassword, "get").mockImplementation(() => {
+		const memoryPasswordMock = jest.spyOn(profile.password(), "get").mockImplementation(() => {
 			throw new Error("password not found");
 		});
 
@@ -57,7 +56,7 @@ describe("useProfileUtils", () => {
 
 		memoryPasswordMock.mockRestore();
 
-		const passwordMock = jest.spyOn(Helpers.MemoryPassword, "get").mockImplementation(() => "password");
+		const passwordMock = jest.spyOn(profile.password(), "get").mockImplementation(() => "password");
 
 		expect(current.getProfileStoredPassword(profile)).toEqual("password");
 
@@ -72,7 +71,7 @@ describe("useProfileUtils", () => {
 
 		const wrapper = ({ children }: any) => <ConfigurationProvider>{children}</ConfigurationProvider>;
 
-		const memoryPasswordMock = jest.spyOn(Helpers.MemoryPassword, "get").mockImplementation(() => {
+		const memoryPasswordMock = jest.spyOn(passwordLessProfile.password(), "get").mockImplementation(() => {
 			throw new Error("password not found");
 		});
 
@@ -84,7 +83,7 @@ describe("useProfileUtils", () => {
 		expect(current.saveProfile(passwordProtectedProfile)).toEqual(undefined);
 		memoryPasswordMock.mockRestore();
 
-		const passwordInMemoryMock = jest.spyOn(Helpers.MemoryPassword, "get").mockReturnValue("password");
+		const passwordInMemoryMock = jest.spyOn(passwordLessProfile.password(), "get").mockReturnValue("password");
 
 		expect(current.saveProfile(passwordProtectedProfile)).toEqual(undefined);
 		passwordInMemoryMock.mockRestore();
