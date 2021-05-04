@@ -189,7 +189,7 @@ describe("App", () => {
 		});
 
 		const verifyPasswordMock = jest.spyOn(Bcrypt, "verify").mockReturnValue(true);
-		const memoryPasswordMock = jest.spyOn(passwordProtectedProfile.password(), "get").mockImplementation(() => {
+		const memoryPasswordMock = jest.spyOn(env.profiles().last().password(), "get").mockImplementation(() => {
 			throw new Error("password not found");
 		});
 
@@ -197,6 +197,7 @@ describe("App", () => {
 			fireEvent.click(getByTestId("SignIn__submit-button"));
 		});
 
+		await waitFor(() => expect(memoryPasswordMock).toHaveBeenCalled());
 		await waitFor(() => expect(history.location.pathname).toMatch("/"), { timeout: 4000 });
 
 		memoryPasswordMock.mockRestore();
