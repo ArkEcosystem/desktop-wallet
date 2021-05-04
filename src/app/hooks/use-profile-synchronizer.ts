@@ -146,9 +146,6 @@ export const useProfileRestore = () => {
 
 			await profile.sync();
 
-			// TODO: Make sure necessary sync data are saved
-			// profile.save(password);
-
 			await persist();
 
 			markAsRestored(profile.id());
@@ -165,9 +162,6 @@ export const useProfileRestore = () => {
 		if (activeProfile?.id() !== profile.id()) {
 			return;
 		}
-
-		// Make sure the latest profile state is encoded (and optionally encrypted) before persisting
-		// profile.save(password);
 
 		await persist();
 		return true;
