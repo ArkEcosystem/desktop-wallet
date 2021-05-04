@@ -2,6 +2,7 @@ import { Contracts } from "@arkecosystem/platform-sdk-profiles";
 import { groupBy } from "@arkecosystem/utils";
 import { Button } from "app/components/Button";
 import { Divider } from "app/components/Divider";
+import { EmptyBlock } from "app/components/EmptyBlock";
 import { Form } from "app/components/Form";
 import { Header } from "app/components/Header";
 import { ListDivided } from "app/components/ListDivided";
@@ -236,11 +237,15 @@ export const Peer = ({ formConfig, onSuccess }: SettingsProps) => {
 
 				{isCustomPeer && (
 					<div className="pt-8" data-testid="Peer-settings__table">
-						<Table columns={columns} data={peers}>
-							{(rowData: any) => (
-								<PeerListItem {...rowData} options={peerOptions} onAction={handlePeerAction} />
-							)}
-						</Table>
+						{peers.length > 0 ? (
+							<Table columns={columns} data={peers}>
+								{(rowData: any) => (
+									<PeerListItem {...rowData} options={peerOptions} onAction={handlePeerAction} />
+								)}
+							</Table>
+						) : (
+							<EmptyBlock>{t("SETTINGS.PEERS.EMPTY_MESSAGE")}</EmptyBlock>
+						)}
 
 						<Button
 							variant="secondary"
