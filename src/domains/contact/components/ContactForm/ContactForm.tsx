@@ -9,7 +9,7 @@ import { InputAddress, InputDefault } from "app/components/Input";
 import { Select } from "app/components/SelectDropdown";
 import { useNetworkOptions } from "app/hooks";
 import { NetworkIcon } from "domains/network/components/NetworkIcon";
-import React, { useEffect, useMemo, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import { useTranslation } from "react-i18next";
 
@@ -99,7 +99,9 @@ export const ContactForm = ({ profile, contact, onChange, onCancel, onDelete, on
 	const { t } = useTranslation();
 
 	const form = useForm({ mode: "onChange" });
-	const { register, setError, setValue, watch } = form;
+	const { formState, register, setError, setValue, watch } = form;
+	const { isValid } = formState;
+
 	const { name, network, address } = watch();
 
 	useEffect(() => {
@@ -154,8 +156,6 @@ export const ContactForm = ({ profile, contact, onChange, onCancel, onDelete, on
 		setValue("network", networkById(networkOption?.value), { shouldValidate: true, shouldDirty: true });
 	};
 
-	const isNameValid = useMemo(() => !!name?.trim() && !form.errors?.name, [name, form.errors]);
-
 	return (
 		<Form
 			data-testid="contact-form"
@@ -181,6 +181,21 @@ export const ContactForm = ({ profile, contact, onChange, onCancel, onDelete, on
 								maxLength: nameMaxLength,
 							}),
 							value: nameMaxLength,
+						},
+						validate: {
+							duplicateName: (name) =>
+								!name ||
+								!profile
+									.contacts()
+									.values()
+									.filter(
+										(item: Contracts.IContact) =>
+											item.id() !== contact?.id() &&
+											item.name().trim().toLowerCase() === name.trim().toLowerCase(),
+									).length ||
+								t("CONTACTS.VALIDATION.NAME_EXISTS", {
+									name: name.trim(),
+								}).toString(),
 						},
 					})}
 					onChange={() => onChange?.("name", name)}
@@ -243,7 +258,7 @@ export const ContactForm = ({ profile, contact, onChange, onCancel, onDelete, on
 						data-testid="contact-form__save-btn"
 						type="submit"
 						variant="primary"
-						disabled={addresses.length === 0 || !isNameValid}
+						disabled={addresses.length === 0 || !isValid}
 					>
 						{t("COMMON.SAVE")}
 					</Button>

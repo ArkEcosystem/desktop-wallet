@@ -5,7 +5,6 @@ import { createMemoryHistory } from "history";
 import React from "react";
 import { Route } from "react-router-dom";
 import {
-	act,
 	env,
 	fireEvent,
 	getDefaultProfileId,
@@ -45,13 +44,13 @@ describe("Contacts", () => {
 	});
 
 	it("should render with contacts", () => {
-		const { asFragment, getByTestId } = renderComponent();
+		const { asFragment } = renderComponent();
 
-		expect(getByTestId("header__title")).toHaveTextContent(translations.CONTACTS_PAGE.TITLE);
-		expect(getByTestId("header__subtitle")).toHaveTextContent(translations.CONTACTS_PAGE.SUBTITLE);
+		expect(screen.getByTestId("header__title")).toHaveTextContent(translations.CONTACTS_PAGE.TITLE);
+		expect(screen.getByTestId("header__subtitle")).toHaveTextContent(translations.CONTACTS_PAGE.SUBTITLE);
 
-		expect(getByTestId("ContactList")).toBeTruthy();
-		expect(() => getByTestId("EmptyBlock")).toThrow(/Unable to find an element by/);
+		expect(screen.getByTestId("ContactList")).toBeTruthy();
+		expect(() => screen.getByTestId("EmptyBlock")).toThrow(/Unable to find an element by/);
 
 		expect(asFragment()).toMatchSnapshot();
 	});
@@ -59,13 +58,13 @@ describe("Contacts", () => {
 	it("should render without contacts", () => {
 		const contactsSpy = jest.spyOn(profile.contacts(), "values").mockReturnValue([]);
 
-		const { asFragment, getByTestId } = renderComponent();
+		const { asFragment } = renderComponent();
 
-		expect(getByTestId("header__title")).toHaveTextContent(translations.CONTACTS_PAGE.TITLE);
-		expect(getByTestId("header__subtitle")).toHaveTextContent(translations.CONTACTS_PAGE.SUBTITLE);
+		expect(screen.getByTestId("header__title")).toHaveTextContent(translations.CONTACTS_PAGE.TITLE);
+		expect(screen.getByTestId("header__subtitle")).toHaveTextContent(translations.CONTACTS_PAGE.SUBTITLE);
 
-		expect(() => getByTestId("ContactList")).toThrow(/Unable to find an element by/);
-		expect(getByTestId("EmptyBlock")).toBeTruthy();
+		expect(() => screen.getByTestId("ContactList")).toThrow(/Unable to find an element by/);
+		expect(screen.getByTestId("EmptyBlock")).toBeTruthy();
 
 		expect(asFragment()).toMatchSnapshot();
 
@@ -76,80 +75,70 @@ describe("Contacts", () => {
 		["close", "modal__close-btn"],
 		["cancel", "contact-form__cancel-btn"],
 	])("should open & %s add contact modal", async (_, buttonId) => {
-		const contactsURL = `/profiles/${profile.id()}/contacts`;
-		history.push(contactsURL);
+		renderComponent();
 
-		const { getAllByTestId, getByTestId, queryByTestId } = renderWithRouter(
-			<Route path="/profiles/:profileId/contacts">
-				<Contacts />
-			</Route>,
-			{
-				routes: [contactsURL],
-				history,
-			},
-		);
+		fireEvent.click(screen.getByTestId("contacts__add-contact-btn"));
 
-		fireEvent.click(getByTestId("contacts__add-contact-btn"));
+		await waitFor(() => expect(screen.getByTestId(buttonId)).not.toBeDisabled());
 
-		await waitFor(() => expect(queryByTestId(buttonId)).not.toBeDisabled());
+		expect(screen.getByTestId("modal__inner")).toHaveTextContent(translations.MODAL_CREATE_CONTACT.TITLE);
+		expect(screen.getByTestId("modal__inner")).toHaveTextContent(translations.MODAL_CREATE_CONTACT.DESCRIPTION);
 
-		expect(getByTestId("modal__inner")).toHaveTextContent(translations.MODAL_CREATE_CONTACT.TITLE);
-		expect(getByTestId("modal__inner")).toHaveTextContent(translations.MODAL_CREATE_CONTACT.DESCRIPTION);
+		fireEvent.click(screen.getByTestId(buttonId));
 
-		act(() => {
-			fireEvent.click(getByTestId(buttonId));
-		});
-
-		await waitFor(() => expect(queryByTestId("modal__inner")).toBeNull());
+		expect(() => screen.getByTestId("modal__inner")).toThrow(/Unable to find an element by/);
 	});
 
 	it("should successfully add contact", async () => {
-		const { getAllByTestId, getByTestId, queryByTestId } = renderComponent();
+		renderComponent();
 
-		fireEvent.click(getByTestId("contacts__add-contact-btn"));
+		fireEvent.click(screen.getByTestId("contacts__add-contact-btn"));
 
-		expect(getByTestId("contact-form__save-btn")).toBeDisabled();
-		expect(getByTestId("contact-form__add-address-btn")).toBeDisabled();
+		expect(screen.getByTestId("contact-form__save-btn")).toBeDisabled();
+		expect(screen.getByTestId("contact-form__add-address-btn")).toBeDisabled();
 
-		const selectNetworkInput = getByTestId("SelectDropdownInput__input");
+		expect(() => screen.getAllByTestId("contact-form__address-list-item")).toThrow(/Unable to find an element by/);
 
-		expect(() => getAllByTestId("contact-form__address-list-item")).toThrow(/Unable to find an element by/);
-
-		await act(async () => {
-			fireEvent.change(getByTestId("contact-form__address-input"), {
-				target: { value: "D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD" },
-			});
-
-			fireEvent.change(getByTestId("contact-form__name-input"), {
-				target: { value: "name" },
-			});
-
-			fireEvent.change(selectNetworkInput, { target: { value: "ark d" } });
+		fireEvent.input(screen.getByTestId("contact-form__name-input"), {
+			target: { value: "Test Contact" },
 		});
 
-		await act(async () => {
-			fireEvent.keyDown(selectNetworkInput, { key: "Enter", code: 13 });
+		await waitFor(() => {
+			expect(screen.getByTestId("contact-form__name-input")).toHaveValue("Test Contact");
 		});
 
-		await waitFor(() => expect(selectNetworkInput).toHaveValue("ARK Devnet"));
-		await waitFor(() => expect(queryByTestId("contact-form__add-address-btn")).not.toBeDisabled());
+		const selectNetworkInput = screen.getByTestId("SelectDropdownInput__input");
 
-		act(() => {
-			fireEvent.click(getByTestId("contact-form__add-address-btn"));
+		fireEvent.change(selectNetworkInput, { target: { value: "ARK D" } });
+		fireEvent.keyDown(selectNetworkInput, { key: "Enter", code: 13 });
+
+		await waitFor(() => {
+			expect(selectNetworkInput).toHaveValue("ARK Devnet");
 		});
 
-		await waitFor(() => expect(getAllByTestId("contact-form__address-list-item")).toHaveLength(1));
-
-		await waitFor(() => expect(queryByTestId("contact-form__save-btn")).not.toBeDisabled());
-
-		expect(getByTestId("modal__inner")).toHaveTextContent(translations.MODAL_CREATE_CONTACT.TITLE);
-		expect(getByTestId("modal__inner")).toHaveTextContent(translations.MODAL_CREATE_CONTACT.DESCRIPTION);
-
-		act(() => {
-			fireEvent.click(getByTestId("contact-form__save-btn"));
+		fireEvent.input(screen.getByTestId("contact-form__address-input"), {
+			target: { value: "D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD" },
 		});
 
-		await waitFor(() => expect(queryByTestId("modal__inner")).toBeNull());
+		await waitFor(() => {
+			expect(screen.getByTestId("contact-form__address-input")).toHaveValue("D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD");
+		});
+
+		await waitFor(() => {
+			expect(screen.getByTestId("contact-form__add-address-btn")).not.toBeDisabled();
+		});
+
+		fireEvent.click(screen.getByTestId("contact-form__add-address-btn"));
+
+		await waitFor(() => expect(screen.getAllByTestId("contact-form__address-list-item")).toHaveLength(1));
+
+		await waitFor(() => expect(screen.getByTestId("contact-form__save-btn")).not.toBeDisabled());
+
+		fireEvent.click(screen.getByTestId("contact-form__save-btn"));
+
+		await waitFor(() => {
+			expect(() => screen.getByTestId("modal__inner")).toThrow(/Unable to find an element by/);
+		});
 
 		expect(profile.contacts().findByAddress("D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD").length).toBe(1);
 	});
@@ -171,39 +160,29 @@ describe("Contacts", () => {
 			.spyOn(profile.contacts(), "values")
 			.mockReturnValue([profile.contacts().findById(newContact.id())]);
 
-		const { getByTestId } = renderComponent();
-
-		expect(getByTestId("header__title")).toHaveTextContent(translations.CONTACTS_PAGE.TITLE);
-		expect(getByTestId("header__subtitle")).toHaveTextContent(translations.CONTACTS_PAGE.SUBTITLE);
+		renderComponent();
 
 		await waitFor(() => {
-			expect(getByTestId("ContactList")).toBeTruthy();
+			expect(screen.getByTestId("ContactList")).toBeTruthy();
 		});
 
-		const firstContactOptionsDropdown = within(getByTestId("ContactList")).getAllByTestId("dropdown__toggle")[0];
-		expect(firstContactOptionsDropdown).toBeTruthy();
-
-		act(() => {
-			fireEvent.click(firstContactOptionsDropdown);
-		});
+		const firstContactOptionsDropdown = within(screen.getByTestId("ContactList")).getAllByTestId(
+			"dropdown__toggle",
+		)[0];
+		fireEvent.click(firstContactOptionsDropdown);
 
 		await waitFor(() => {
-			expect(getByTestId("dropdown__options")).toBeTruthy();
+			expect(screen.getByTestId("dropdown__options")).toBeTruthy();
 		});
 
-		const deleteOption = within(getByTestId("dropdown__options")).getByText(commonTranslations.DELETE);
-
-		act(() => {
-			fireEvent.click(deleteOption);
-		});
+		const deleteOption = within(screen.getByTestId("dropdown__options")).getByText(commonTranslations.DELETE);
+		fireEvent.click(deleteOption);
 
 		await waitFor(() => {
-			expect(getByTestId("modal__inner")).toBeTruthy();
+			expect(screen.getByTestId("modal__inner")).toBeTruthy();
 		});
 
-		act(() => {
-			fireEvent.click(getByTestId("DeleteResource__submit-button"));
-		});
+		fireEvent.click(screen.getByTestId("DeleteResource__submit-button"));
 
 		await waitFor(() => {
 			expect(() => profile.contacts().findById(newContact.id())).toThrowError("Failed to find");
@@ -216,42 +195,32 @@ describe("Contacts", () => {
 		["close", "modal__close-btn"],
 		["cancel", "DeleteResource__cancel-button"],
 	])("should %s delete contact modal", async (_, buttonId) => {
-		const { getByTestId } = renderComponent();
-
-		expect(getByTestId("header__title")).toHaveTextContent(translations.CONTACTS_PAGE.TITLE);
-		expect(getByTestId("header__subtitle")).toHaveTextContent(translations.CONTACTS_PAGE.SUBTITLE);
+		renderComponent();
 
 		await waitFor(() => {
-			expect(getByTestId("ContactList")).toBeTruthy();
+			expect(screen.getByTestId("ContactList")).toBeTruthy();
 		});
 
-		const firstContactOptionsDropdown = within(getByTestId("ContactList")).getAllByTestId("dropdown__toggle")[0];
-		expect(firstContactOptionsDropdown).toBeTruthy();
-
-		act(() => {
-			fireEvent.click(firstContactOptionsDropdown);
-		});
+		const firstContactOptionsDropdown = within(screen.getByTestId("ContactList")).getAllByTestId(
+			"dropdown__toggle",
+		)[0];
+		fireEvent.click(firstContactOptionsDropdown);
 
 		await waitFor(() => {
-			expect(getByTestId("dropdown__options")).toBeTruthy();
+			expect(screen.getByTestId("dropdown__options")).toBeTruthy();
 		});
 
-		const deleteOption = within(getByTestId("dropdown__options")).getByText(commonTranslations.DELETE);
-
-		act(() => {
-			fireEvent.click(deleteOption);
-		});
+		const deleteOption = within(screen.getByTestId("dropdown__options")).getByText(commonTranslations.DELETE);
+		fireEvent.click(deleteOption);
 
 		await waitFor(() => {
-			expect(getByTestId("modal__inner")).toBeTruthy();
+			expect(screen.getByTestId("modal__inner")).toBeTruthy();
 		});
 
-		act(() => {
-			fireEvent.click(getByTestId(buttonId));
-		});
+		fireEvent.click(screen.getByTestId(buttonId));
 
 		await waitFor(() => {
-			expect(() => getByTestId("modal__inner")).toThrow(/Unable to find an element by/);
+			expect(() => screen.getByTestId("modal__inner")).toThrow(/Unable to find an element by/);
 		});
 	});
 
@@ -272,45 +241,32 @@ describe("Contacts", () => {
 			.spyOn(profile.contacts(), "values")
 			.mockReturnValue([profile.contacts().findById(newContact.id())]);
 
-		const { getByTestId } = renderComponent();
-
-		expect(getByTestId("header__title")).toHaveTextContent(translations.CONTACTS_PAGE.TITLE);
-		expect(getByTestId("header__subtitle")).toHaveTextContent(translations.CONTACTS_PAGE.SUBTITLE);
+		renderComponent();
 
 		await waitFor(() => {
-			expect(getByTestId("ContactList")).toBeTruthy();
+			expect(screen.getByTestId("ContactList")).toBeTruthy();
 		});
 
-		const firstContactOptionsDropdown = within(getByTestId("ContactList")).getAllByTestId("dropdown__toggle")[0];
-		expect(firstContactOptionsDropdown).toBeTruthy();
-
-		act(() => {
-			fireEvent.click(firstContactOptionsDropdown);
-		});
+		const firstContactOptionsDropdown = within(screen.getByTestId("ContactList")).getAllByTestId(
+			"dropdown__toggle",
+		)[0];
+		fireEvent.click(firstContactOptionsDropdown);
 
 		await waitFor(() => {
-			expect(getByTestId("dropdown__options")).toBeTruthy();
+			expect(screen.getByTestId("dropdown__options")).toBeTruthy();
 		});
 
-		const editOption = within(getByTestId("dropdown__options")).getByText(commonTranslations.EDIT);
-
-		act(() => {
-			fireEvent.click(editOption);
-		});
+		const editOption = within(screen.getByTestId("dropdown__options")).getByText(commonTranslations.EDIT);
+		fireEvent.click(editOption);
 
 		await waitFor(() => {
-			expect(getByTestId("modal__inner")).toBeTruthy();
+			expect(screen.getByTestId("modal__inner")).toBeTruthy();
 		});
 
-		act(() => {
-			fireEvent.click(getByTestId("contact-form__delete-btn"));
-		});
+		fireEvent.click(screen.getByTestId("contact-form__delete-btn"));
 
-		expect(getByTestId("modal__inner")).toHaveTextContent(translations.MODAL_DELETE_CONTACT.TITLE);
-
-		act(() => {
-			fireEvent.click(getByTestId("DeleteResource__submit-button"));
-		});
+		expect(screen.getByTestId("modal__inner")).toHaveTextContent(translations.MODAL_DELETE_CONTACT.TITLE);
+		fireEvent.click(screen.getByTestId("DeleteResource__submit-button"));
 
 		await waitFor(() => {
 			expect(() => profile.contacts().findById(newContact.id())).toThrowError("Failed to find");
@@ -336,13 +292,13 @@ describe("Contacts", () => {
 			.spyOn(profile.contacts(), "values")
 			.mockReturnValue([profile.contacts().findById(newContact.id())]);
 
-		const { getByTestId, getAllByTestId } = renderComponent();
+		renderComponent();
 
 		await waitFor(() => {
-			expect(getByTestId("ContactList")).toBeTruthy();
+			expect(screen.getByTestId("ContactList")).toBeTruthy();
 		});
 
-		fireEvent.click(getAllByTestId("ContactListItem__send-button")[0]);
+		fireEvent.click(screen.getAllByTestId("ContactListItem__send-button")[0]);
 
 		expect(history.location.pathname).toEqual("/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/send-transfer");
 		expect(history.location.search).toEqual(
@@ -357,32 +313,26 @@ describe("Contacts", () => {
 
 		renderComponent();
 
-		expect(screen.getAllByTestId("ContactListItem__name")).toHaveLength(4);
+		expect(screen.getAllByTestId("ContactListItem__name")).toHaveLength(profile.contacts().count());
 		expect(screen.getByText(contact1.name())).toBeInTheDocument();
 		expect(screen.getByText(contact2.name())).toBeInTheDocument();
 
-		act(() => {
-			fireEvent.click(screen.getByTestId("header-search-bar__button"));
-		});
+		fireEvent.click(screen.getByTestId("header-search-bar__button"));
 
 		await waitFor(() =>
 			expect(within(screen.getByTestId("header-search-bar__input")).getByTestId("Input")).toBeTruthy(),
 		);
 
-		act(() => {
-			fireEvent.input(within(screen.getByTestId("header-search-bar__input")).getByTestId("Input"), {
-				target: { value: contact1.name() },
-			});
+		fireEvent.input(within(screen.getByTestId("header-search-bar__input")).getByTestId("Input"), {
+			target: { value: contact1.name() },
 		});
 
 		await waitFor(() => expect(screen.getAllByTestId("ContactListItem__name")).toHaveLength(1));
 
 		expect(screen.queryByText(contact2.name())).not.toBeInTheDocument();
 
-		act(() => {
-			fireEvent.input(within(screen.getByTestId("header-search-bar__input")).getByTestId("Input"), {
-				target: { value: "Unknown Name" },
-			});
+		fireEvent.input(within(screen.getByTestId("header-search-bar__input")).getByTestId("Input"), {
+			target: { value: "Unknown Name" },
 		});
 
 		await waitFor(() => expect(screen.queryByTestId("Contacts--empty-results")).toBeInTheDocument());

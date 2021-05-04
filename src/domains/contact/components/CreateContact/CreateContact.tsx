@@ -21,26 +21,11 @@ export const CreateContact = ({ isOpen, profile, onClose, onCancel, onSave }: Cr
 
 	useEffect(() => setErrors({}), [isOpen]);
 
-	const formatError = (errorMessage: string, name: string) => {
-		switch (true) {
-			case errorMessage.includes("already exists"):
-				return {
-					name: t("CONTACTS.VALIDATION.CONTACT_NAME_EXISTS", {
-						name,
-					}),
-				};
-		}
-	};
-
 	const handleOnSave = async ({ name, addresses }: any) => {
-		try {
-			const contact = profile.contacts().create(name);
-			await profile.contacts().update(contact?.id(), { addresses });
-			await persist();
-			onSave?.(contact.id());
-		} catch (e) {
-			setErrors(formatError(e.toString(), name));
-		}
+		const contact = profile.contacts().create(name);
+		await profile.contacts().update(contact.id(), { addresses });
+		await persist();
+		onSave?.(contact.id());
 	};
 
 	const handleChange = (fieldName: string) => {

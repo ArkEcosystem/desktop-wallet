@@ -1,9 +1,8 @@
 /* eslint-disable @typescript-eslint/require-await */
 import { Contracts } from "@arkecosystem/platform-sdk-profiles";
 import React from "react";
-import { act, env, fireEvent, getDefaultProfileId, renderWithRouter, waitFor } from "utils/testing-library";
+import { env, fireEvent, getDefaultProfileId, renderWithRouter, screen, waitFor } from "utils/testing-library";
 
-import { translations } from "../../i18n";
 import { ContactForm } from "./ContactForm";
 
 const onDelete = jest.fn();
@@ -22,12 +21,17 @@ describe("ContactForm", () => {
 		contact = profile.contacts().values()[0];
 	});
 
-	it("should select", () => {
+	it("should render", async () => {
 		const { asFragment } = renderWithRouter(<ContactForm profile={profile} onCancel={onCancel} onSave={onSave} />);
+
+		await waitFor(() => {
+			expect(screen.getByTestId("contact-form__save-btn")).toBeDisabled();
+		});
+
 		expect(asFragment()).toMatchSnapshot();
 	});
 
-	it("should select with errors", () => {
+	it("should render with errors", async () => {
 		const { asFragment } = renderWithRouter(
 			<ContactForm
 				profile={profile}
@@ -36,57 +40,66 @@ describe("ContactForm", () => {
 				errors={{ name: "Contact name error" }}
 			/>,
 		);
+
+		await waitFor(() => {
+			expect(screen.getByTestId("contact-form__save-btn")).toBeDisabled();
+		});
+
 		expect(asFragment()).toMatchSnapshot();
 	});
 
 	it("should handle onChange event", async () => {
-		const fn = jest.fn();
-		const { getByTestId } = renderWithRouter(
-			<ContactForm profile={profile} onChange={fn} onSave={onSave} errors={{ name: "Contact name error" }} />,
+		const onChange = jest.fn();
+
+		const name = "Sample name";
+
+		renderWithRouter(
+			<ContactForm
+				profile={profile}
+				onChange={onChange}
+				onSave={onSave}
+				errors={{ name: "Contact name error" }}
+			/>,
 		);
 
-		const input = getByTestId("contact-form__name-input");
-		act(() => {
-			fireEvent.change(input, { target: { value: "Sample name" } });
+		fireEvent.input(screen.getByTestId("contact-form__name-input"), { target: { value: name } });
+
+		await waitFor(() => {
+			expect(screen.getByTestId("contact-form__name-input")).toHaveValue(name);
 		});
 
 		await waitFor(() => {
-			expect(fn).toHaveBeenCalled();
+			expect(onChange).toHaveBeenCalled();
 		});
 	});
 
-	it("should select cryptoasset", () => {
-		const { getByTestId } = renderWithRouter(<ContactForm profile={profile} onCancel={onCancel} onSave={onSave} />);
+	it("should select cryptoasset", async () => {
+		renderWithRouter(<ContactForm profile={profile} onCancel={onCancel} onSave={onSave} />);
 
-		const selectNetworkInput = getByTestId("SelectDropdownInput__input");
+		const selectNetworkInput = screen.getByTestId("SelectDropdownInput__input");
 
-		act(() => {
-			fireEvent.change(selectNetworkInput, { target: { value: "ARK D" } });
+		fireEvent.change(selectNetworkInput, { target: { value: "ARK D" } });
+		fireEvent.keyDown(selectNetworkInput, { key: "Enter", code: 13 });
+
+		await waitFor(() => {
+			expect(selectNetworkInput).toHaveValue("ARK Devnet");
 		});
-
-		act(() => {
-			fireEvent.keyDown(selectNetworkInput, { key: "Enter", code: 13 });
-		});
-
-		expect(selectNetworkInput).toHaveValue("ARK Devnet");
 	});
 
 	it("should add a valid address successfully", async () => {
-		const { getAllByTestId, getByTestId } = renderWithRouter(
-			<ContactForm profile={profile} onCancel={onCancel} onSave={onSave} />,
-		);
+		renderWithRouter(<ContactForm profile={profile} onCancel={onCancel} onSave={onSave} />);
 
-		expect(() => getAllByTestId("contact-form__address-list-item")).toThrow(/Unable to find an element by/);
+		expect(() => screen.getAllByTestId("contact-form__address-list-item")).toThrow(/Unable to find an element by/);
 
-		const selectNetworkInput = getByTestId("SelectDropdownInput__input");
-
-		fireEvent.change(getByTestId("contact-form__address-input"), {
-			target: { value: validArkDevnetAddress },
-		});
-
-		fireEvent.change(getByTestId("contact-form__name-input"), {
+		fireEvent.input(screen.getByTestId("contact-form__name-input"), {
 			target: { value: "name" },
 		});
+
+		await waitFor(() => {
+			expect(screen.getByTestId("contact-form__name-input")).toHaveValue("name");
+		});
+
+		const selectNetworkInput = screen.getByTestId("SelectDropdownInput__input");
 
 		fireEvent.change(selectNetworkInput, { target: { value: "ARK D" } });
 		fireEvent.keyDown(selectNetworkInput, { key: "Enter", code: 13 });
@@ -95,70 +108,82 @@ describe("ContactForm", () => {
 			expect(selectNetworkInput).toHaveValue("ARK Devnet");
 		});
 
-		await waitFor(() => {
-			expect(getByTestId("contact-form__add-address-btn")).not.toBeDisabled();
+		fireEvent.input(screen.getByTestId("contact-form__address-input"), {
+			target: { value: validArkDevnetAddress },
 		});
 
-		fireEvent.click(getByTestId("contact-form__add-address-btn"));
+		await waitFor(() => {
+			expect(screen.getByTestId("contact-form__address-input")).toHaveValue(validArkDevnetAddress);
+		});
 
 		await waitFor(() => {
-			expect(getAllByTestId("contact-form__address-list-item")).toHaveLength(1);
+			expect(screen.getByTestId("contact-form__add-address-btn")).not.toBeDisabled();
+		});
+
+		fireEvent.click(screen.getByTestId("contact-form__add-address-btn"));
+
+		await waitFor(() => {
+			expect(screen.getAllByTestId("contact-form__address-list-item")).toHaveLength(1);
 		});
 	});
 
 	it("should not add invalid address and should display error message", async () => {
-		const { getAllByTestId, getByTestId } = renderWithRouter(
-			<ContactForm profile={profile} onCancel={onCancel} onSave={onSave} />,
-		);
+		renderWithRouter(<ContactForm profile={profile} onCancel={onCancel} onSave={onSave} />);
 
-		expect(() => getAllByTestId("contact-form__address-list-item")).toThrow(/Unable to find an element by/);
+		expect(() => screen.getAllByTestId("contact-form__address-list-item")).toThrow(/Unable to find an element by/);
 
-		const selectNetworkInput = getByTestId("SelectDropdownInput__input");
+		fireEvent.input(screen.getByTestId("contact-form__name-input"), {
+			target: { value: "name" },
+		});
 
-		fireEvent.change(getByTestId("contact-form__address-input"), {
+		await waitFor(() => {
+			expect(screen.getByTestId("contact-form__name-input")).toHaveValue("name");
+		});
+
+		const selectNetworkInput = screen.getByTestId("SelectDropdownInput__input");
+
+		fireEvent.change(selectNetworkInput, { target: { value: "ARK D" } });
+		fireEvent.keyDown(selectNetworkInput, { key: "Enter", code: 13 });
+
+		await waitFor(() => {
+			expect(selectNetworkInput).toHaveValue("ARK Devnet");
+		});
+
+		fireEvent.input(screen.getByTestId("contact-form__address-input"), {
 			target: { value: "invalid address" },
 		});
 
-		fireEvent.change(getByTestId("contact-form__name-input"), {
-			target: { value: "name" },
-		});
-
-		fireEvent.change(selectNetworkInput, { target: { value: "ARK D" } });
-		fireEvent.keyDown(selectNetworkInput, { key: "Enter", code: 13 });
-
 		await waitFor(() => {
-			expect(selectNetworkInput).toHaveValue("ARK Devnet");
+			expect(screen.getByTestId("contact-form__address-input")).toHaveValue("invalid address");
 		});
 
 		await waitFor(() => {
-			expect(getByTestId("contact-form__add-address-btn")).not.toBeDisabled();
+			expect(screen.getByTestId("contact-form__add-address-btn")).not.toBeDisabled();
 		});
 
-		fireEvent.click(getByTestId("contact-form__add-address-btn"));
+		fireEvent.click(screen.getByTestId("contact-form__add-address-btn"));
 
 		await waitFor(() => {
-			expect(getByTestId("Input__error")).toBeVisible();
+			expect(screen.getByTestId("Input__error")).toBeVisible();
 		});
 
-		expect(() => getAllByTestId("contact-form__address-list-item")).toThrow(/Unable to find an element by/);
+		expect(() => screen.getAllByTestId("contact-form__address-list-item")).toThrow(/Unable to find an element by/);
 	});
 
 	it("should error when adding duplicate address", async () => {
-		const { getAllByTestId, getByTestId, queryByTestId } = renderWithRouter(
-			<ContactForm profile={profile} onCancel={onCancel} onSave={onSave} />,
-		);
+		renderWithRouter(<ContactForm profile={profile} onCancel={onCancel} onSave={onSave} />);
 
-		expect(() => getAllByTestId("contact-form__address-list-item")).toThrow(/Unable to find an element by/);
+		expect(() => screen.getAllByTestId("contact-form__address-list-item")).toThrow(/Unable to find an element by/);
 
-		const selectNetworkInput = getByTestId("SelectDropdownInput__input");
-
-		fireEvent.change(getByTestId("contact-form__name-input"), {
+		fireEvent.input(screen.getByTestId("contact-form__name-input"), {
 			target: { value: "name" },
 		});
 
-		fireEvent.change(getByTestId("contact-form__address-input"), {
-			target: { value: validArkDevnetAddress },
+		await waitFor(() => {
+			expect(screen.getByTestId("contact-form__name-input")).toHaveValue("name");
 		});
+
+		const selectNetworkInput = screen.getByTestId("SelectDropdownInput__input");
 
 		fireEvent.change(selectNetworkInput, { target: { value: "ARK D" } });
 		fireEvent.keyDown(selectNetworkInput, { key: "Enter", code: 13 });
@@ -167,20 +192,25 @@ describe("ContactForm", () => {
 			expect(selectNetworkInput).toHaveValue("ARK Devnet");
 		});
 
-		await waitFor(() => {
-			expect(queryByTestId("contact-form__add-address-btn")).not.toBeDisabled();
+		fireEvent.input(screen.getByTestId("contact-form__address-input"), {
+			target: { value: validArkDevnetAddress },
 		});
 
-		fireEvent.click(getByTestId("contact-form__add-address-btn"));
+		await waitFor(() => {
+			expect(screen.getByTestId("contact-form__address-input")).toHaveValue(validArkDevnetAddress);
+		});
 
 		await waitFor(() => {
-			expect(getAllByTestId("contact-form__address-list-item")).toHaveLength(1);
+			expect(screen.getByTestId("contact-form__add-address-btn")).not.toBeDisabled();
+		});
+
+		fireEvent.click(screen.getByTestId("contact-form__add-address-btn"));
+
+		await waitFor(() => {
+			expect(screen.getAllByTestId("contact-form__address-list-item")).toHaveLength(1);
 		});
 
 		// Second addition
-		fireEvent.change(getByTestId("contact-form__address-input"), {
-			target: { value: validArkDevnetAddress },
-		});
 
 		fireEvent.change(selectNetworkInput, { target: { value: "ARK D" } });
 		fireEvent.keyDown(selectNetworkInput, { key: "Enter", code: 13 });
@@ -189,56 +219,53 @@ describe("ContactForm", () => {
 			expect(selectNetworkInput).toHaveValue("ARK Devnet");
 		});
 
-		await waitFor(() => {
-			expect(queryByTestId("contact-form__add-address-btn")).not.toBeDisabled();
+		fireEvent.input(screen.getByTestId("contact-form__address-input"), {
+			target: { value: validArkDevnetAddress },
 		});
 
-		fireEvent.click(getByTestId("contact-form__add-address-btn"));
-
 		await waitFor(() => {
-			expect(getByTestId("Input__error")).toBeVisible();
+			expect(screen.getByTestId("contact-form__address-input")).toHaveValue(validArkDevnetAddress);
 		});
 
-		expect(getAllByTestId("contact-form__address-list-item")).toHaveLength(1);
+		await waitFor(() => {
+			expect(screen.getByTestId("contact-form__add-address-btn")).not.toBeDisabled();
+		});
+
+		fireEvent.click(screen.getByTestId("contact-form__add-address-btn"));
+
+		await waitFor(() => {
+			expect(screen.getByTestId("Input__error")).toBeVisible();
+		});
+
+		expect(screen.getAllByTestId("contact-form__address-list-item")).toHaveLength(1);
 	});
 
 	it("should remove an address", async () => {
-		let renderContext: any;
+		renderWithRouter(<ContactForm profile={profile} contact={contact} onCancel={onCancel} onSave={onSave} />);
 
-		await act(async () => {
-			renderContext = renderWithRouter(
-				<ContactForm profile={profile} contact={contact} onCancel={onCancel} onSave={onSave} />,
-			);
-		});
+		expect(screen.getAllByTestId("contact-form__address-list-item")).toHaveLength(contact.addresses().count());
 
-		const { getByTestId, getAllByTestId } = renderContext;
-
-		expect(getAllByTestId("contact-form__address-list-item")).toHaveLength(contact.addresses().count());
-
-		await act(async () => {
-			fireEvent.click(getAllByTestId("contact-form__remove-address-btn")[0]);
-		});
+		fireEvent.click(screen.getAllByTestId("contact-form__remove-address-btn")[0]);
 
 		await waitFor(() => {
-			expect(() => getByTestId("contact-form__address-list-item")).toThrow(/Unable to find an element by/);
+			expect(() => screen.getByTestId("contact-form__address-list-item")).toThrow(/Unable to find an element by/);
 		});
 	});
 
 	it("should handle save", async () => {
 		const onSave = jest.fn();
-		const { getByTestId, queryByTestId } = renderWithRouter(
-			<ContactForm profile={profile} onCancel={onCancel} onSave={onSave} />,
-		);
 
-		fireEvent.change(getByTestId("contact-form__name-input"), {
+		renderWithRouter(<ContactForm profile={profile} onCancel={onCancel} onSave={onSave} />);
+
+		fireEvent.input(screen.getByTestId("contact-form__name-input"), {
 			target: { value: "name" },
 		});
 
-		fireEvent.change(getByTestId("contact-form__address-input"), {
-			target: { value: validArkDevnetAddress },
+		await waitFor(() => {
+			expect(screen.getByTestId("contact-form__name-input")).toHaveValue("name");
 		});
 
-		const selectNetworkInput = getByTestId("SelectDropdownInput__input");
+		const selectNetworkInput = screen.getByTestId("SelectDropdownInput__input");
 
 		fireEvent.change(selectNetworkInput, { target: { value: "ARK D" } });
 		fireEvent.keyDown(selectNetworkInput, { key: "Enter", code: 13 });
@@ -247,81 +274,32 @@ describe("ContactForm", () => {
 			expect(selectNetworkInput).toHaveValue("ARK Devnet");
 		});
 
-		await waitFor(() => {
-			expect(queryByTestId("contact-form__add-address-btn")).not.toBeDisabled();
+		fireEvent.input(screen.getByTestId("contact-form__address-input"), {
+			target: { value: validArkDevnetAddress },
 		});
 
-		fireEvent.click(getByTestId("contact-form__add-address-btn"));
-
 		await waitFor(() => {
-			expect(getByTestId("contact-form__save-btn")).not.toBeDisabled();
+			expect(screen.getByTestId("contact-form__address-input")).toHaveValue(validArkDevnetAddress);
 		});
 
-		fireEvent.click(getByTestId("contact-form__save-btn"));
+		await waitFor(() => {
+			expect(screen.queryByTestId("contact-form__add-address-btn")).not.toBeDisabled();
+		});
+
+		fireEvent.click(screen.getByTestId("contact-form__add-address-btn"));
+
+		await waitFor(() => {
+			expect(screen.getAllByTestId("contact-form__address-list-item")).toHaveLength(1);
+		});
+
+		await waitFor(() => {
+			expect(screen.getByTestId("contact-form__save-btn")).not.toBeDisabled();
+		});
+
+		fireEvent.click(screen.getByTestId("contact-form__save-btn"));
 
 		await waitFor(() => {
 			expect(onSave).toHaveBeenCalled();
-		});
-	});
-
-	describe("when creating a new contact", () => {
-		it("should render the form", () => {
-			const { asFragment, getAllByTestId, getByTestId } = renderWithRouter(
-				<ContactForm profile={profile} onCancel={onCancel} onSave={onSave} />,
-			);
-
-			expect(getByTestId("contact-form")).toHaveTextContent(translations.CONTACT_FORM.NAME);
-			expect(getByTestId("contact-form")).toHaveTextContent(translations.CONTACT_FORM.CRYPTOASSET);
-			expect(getByTestId("contact-form")).toHaveTextContent(translations.CONTACT_FORM.ADDRESS);
-			expect(getByTestId("contact-form__save-btn")).toBeTruthy();
-			expect(() => getAllByTestId("contact-form__address-list")).toThrow(/Unable to find an element by/);
-			expect(() => getAllByTestId("contact-form__delete-btn")).toThrow(/Unable to find an element by/);
-			expect(asFragment()).toMatchSnapshot();
-		});
-	});
-
-	describe("when editing an existing contact", () => {
-		it("should render the form", async () => {
-			let renderContext: any;
-
-			await act(async () => {
-				renderContext = renderWithRouter(
-					<ContactForm profile={profile} contact={contact} onCancel={onCancel} onSave={onSave} />,
-				);
-			});
-
-			const { asFragment, getAllByTestId, getByTestId } = renderContext;
-
-			expect(getByTestId("contact-form")).toHaveTextContent(translations.CONTACT_FORM.NAME);
-			expect(getByTestId("contact-form")).toHaveTextContent(translations.CONTACT_FORM.CRYPTOASSET);
-			expect(getByTestId("contact-form")).toHaveTextContent(translations.CONTACT_FORM.ADDRESS);
-			expect(getByTestId("contact-form__address-list")).toBeTruthy();
-			expect(getByTestId("contact-form__save-btn")).toBeTruthy();
-			expect(getByTestId("contact-form__delete-btn")).toBeTruthy();
-			expect(getAllByTestId("contact-form__address-list-item")).toHaveLength(contact.addresses().count());
-			expect(asFragment()).toMatchSnapshot();
-		});
-
-		it("should call onDelete callback", async () => {
-			let renderContext: any;
-
-			await act(async () => {
-				renderContext = renderWithRouter(
-					<ContactForm
-						profile={profile}
-						contact={contact}
-						onCancel={onCancel}
-						onDelete={onDelete}
-						onSave={onSave}
-					/>,
-				);
-			});
-
-			await act(async () => {
-				fireEvent.click(renderContext.getByTestId("contact-form__delete-btn"));
-			});
-
-			expect(onDelete).toHaveBeenCalled();
 		});
 	});
 });

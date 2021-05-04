@@ -1,67 +1,52 @@
 /* eslint-disable @typescript-eslint/require-await */
 import { Contracts } from "@arkecosystem/platform-sdk-profiles";
 import React from "react";
-import { act, env, fireEvent, getDefaultProfileId, renderWithRouter, waitFor } from "utils/testing-library";
+import { env, fireEvent, getDefaultProfileId, renderWithRouter, screen, waitFor } from "utils/testing-library";
 
 import { UpdateContact } from "./UpdateContact";
 
 let profile: Contracts.IProfile;
-let updatingContact: Contracts.IContact;
+let contact: Contracts.IContact;
 
 describe("UpdateContact", () => {
 	beforeEach(async () => {
 		profile = env.profiles().findById(getDefaultProfileId());
-		updatingContact = profile.contacts().values()[0];
+		contact = profile.contacts().values()[0];
 	});
 
 	it("should not render if not open", () => {
-		const { asFragment, getByTestId } = renderWithRouter(
-			<UpdateContact profile={profile} isOpen={false} contact={updatingContact} />,
-		);
+		const { asFragment } = renderWithRouter(<UpdateContact profile={profile} isOpen={false} contact={contact} />);
 
-		expect(() => getByTestId("modal__inner")).toThrow(/Unable to find an element by/);
+		expect(() => screen.getByTestId("modal__inner")).toThrow(/Unable to find an element by/);
 		expect(asFragment()).toMatchSnapshot();
 	});
 
-	it("should render a modal", () => {
-		const { asFragment, getByTestId } = renderWithRouter(
-			<UpdateContact profile={profile} isOpen={true} contact={updatingContact} />,
-		);
+	it("should render", async () => {
+		const { asFragment } = renderWithRouter(<UpdateContact isOpen={true} profile={profile} contact={contact} />);
+
+		await waitFor(() => {
+			expect(screen.getByTestId("contact-form__name-input")).toHaveValue(contact.name());
+		});
 
 		expect(asFragment()).toMatchSnapshot();
-	});
-
-	it("should display contact info in form", () => {
-		const { getByTestId } = renderWithRouter(
-			<UpdateContact isOpen={true} profile={profile} contact={updatingContact} />,
-		);
-
-		const nameInput = getByTestId("contact-form__name-input");
-		expect(nameInput).toHaveValue(updatingContact.name());
 	});
 
 	it("should cancel contact update", async () => {
 		const onCancel = jest.fn();
-		const { getByTestId } = renderWithRouter(
-			<UpdateContact isOpen={true} onCancel={onCancel} profile={profile} contact={updatingContact} />,
-		);
 
-		const nameInput = getByTestId("contact-form__name-input");
-		expect(nameInput).toHaveValue(updatingContact.name());
-
-		act(() => {
-			fireEvent.click(getByTestId("contact-form__cancel-btn"));
-		});
+		renderWithRouter(<UpdateContact isOpen={true} onCancel={onCancel} profile={profile} contact={contact} />);
 
 		await waitFor(() => {
-			expect(onCancel).toBeCalled();
+			expect(screen.getByTestId("contact-form__name-input")).toHaveValue(contact.name());
 		});
+
+		fireEvent.click(screen.getByTestId("contact-form__cancel-btn"));
+
+		expect(onCancel).toHaveBeenCalled();
 	});
 
 	it("should not update contact if provided name already exists", async () => {
 		const onSave = jest.fn();
-
-		const existingContactName = updatingContact.name();
 
 		const newAddress = {
 			name: "Test name",
@@ -72,16 +57,13 @@ describe("UpdateContact", () => {
 
 		const newContact = profile.contacts().create("New name");
 
-		const { getByTestId, queryByTestId } = renderWithRouter(
-			<UpdateContact isOpen={true} onSave={onSave} profile={profile} contact={newContact} />,
-		);
+		renderWithRouter(<UpdateContact isOpen={true} onSave={onSave} profile={profile} contact={newContact} />);
 
-		const saveButton = getByTestId("contact-form__save-btn");
-		const selectNetworkInput = getByTestId("SelectDropdownInput__input");
-
-		fireEvent.change(getByTestId("contact-form__address-input"), {
-			target: { value: newAddress.address },
+		await waitFor(() => {
+			expect(screen.getByTestId("contact-form__name-input")).toHaveValue(newContact.name());
 		});
+
+		const selectNetworkInput = screen.getByTestId("SelectDropdownInput__input");
 
 		fireEvent.change(selectNetworkInput, { target: { value: "ARK D" } });
 		fireEvent.keyDown(selectNetworkInput, { key: "Enter", code: 13 });
@@ -90,44 +72,55 @@ describe("UpdateContact", () => {
 			expect(selectNetworkInput).toHaveValue("ARK Devnet");
 		});
 
-		await waitFor(() => {
-			expect(getByTestId("contact-form__add-address-btn")).not.toBeDisabled();
+		fireEvent.change(screen.getByTestId("contact-form__address-input"), {
+			target: { value: newAddress.address },
 		});
 
-		fireEvent.click(getByTestId("contact-form__add-address-btn"));
-
-		const nameInput = getByTestId("contact-form__name-input");
-		expect(nameInput).toHaveValue(newContact.name());
-
-		fireEvent.change(nameInput, { target: { value: existingContactName } });
-
-		expect(nameInput).toHaveValue(existingContactName);
-
-		fireEvent.click(saveButton);
+		await waitFor(() => {
+			expect(screen.getByTestId("contact-form__address-input")).toHaveValue(newAddress.address);
+		});
 
 		await waitFor(() => {
-			expect(onSave).not.toHaveBeenCalled();
+			expect(screen.getByTestId("contact-form__add-address-btn")).not.toBeDisabled();
 		});
+
+		fireEvent.click(screen.getByTestId("contact-form__add-address-btn"));
+
+		fireEvent.input(screen.getByTestId("contact-form__name-input"), { target: { value: contact.name() } });
+
+		await waitFor(() => {
+			expect(screen.getByTestId("contact-form__name-input")).toHaveValue(contact.name());
+		});
+
+		expect(screen.getByTestId("Input__error")).toBeVisible();
+
+		await waitFor(() => {
+			expect(screen.getByTestId("contact-form__save-btn")).toBeDisabled();
+		});
+
+		fireEvent.click(screen.getByTestId("contact-form__save-btn"));
+
+		expect(onSave).not.toHaveBeenCalled();
 	});
 
 	it("should call onDelete callback", async () => {
-		const contactToDelete = profile.contacts().create("Test");
+		const deleteSpy = jest.spyOn(profile.contacts(), "forget").mockImplementation();
 
 		const onDelete = jest.fn();
-		const { getByTestId } = renderWithRouter(
-			<UpdateContact isOpen={true} onDelete={onDelete} profile={profile} contact={contactToDelete} />,
-		);
 
-		const nameInput = getByTestId("contact-form__name-input");
-		expect(nameInput).toHaveValue(contactToDelete.name());
+		renderWithRouter(<UpdateContact isOpen={true} onDelete={onDelete} profile={profile} contact={contact} />);
 
-		act(() => {
-			fireEvent.click(getByTestId("contact-form__delete-btn"));
+		await waitFor(() => {
+			expect(screen.getByTestId("contact-form__name-input")).toHaveValue(contact.name());
 		});
+
+		fireEvent.click(screen.getByTestId("contact-form__delete-btn"));
 
 		await waitFor(() => {
 			expect(onDelete).toBeCalled();
 		});
+
+		deleteSpy.mockRestore();
 	});
 
 	it("should update contact name and address", async () => {
@@ -141,22 +134,19 @@ describe("UpdateContact", () => {
 			coin: "ARK",
 		};
 
-		const { getByTestId } = renderWithRouter(
-			<UpdateContact isOpen={true} onSave={onSave} profile={profile} contact={updatingContact} />,
-		);
+		renderWithRouter(<UpdateContact isOpen={true} onSave={onSave} profile={profile} contact={contact} />);
 
-		const nameInput = getByTestId("contact-form__name-input");
-		expect(nameInput).toHaveValue(updatingContact.name());
-
-		fireEvent.change(nameInput, { target: { value: newName } });
-
-		expect(nameInput).toHaveValue(newName);
-		const saveButton = getByTestId("contact-form__save-btn");
-		const selectNetworkInput = getByTestId("SelectDropdownInput__input");
-
-		fireEvent.change(getByTestId("contact-form__address-input"), {
-			target: { value: newAddress.address },
+		await waitFor(() => {
+			expect(screen.getByTestId("contact-form__name-input")).toHaveValue(contact.name());
 		});
+
+		fireEvent.input(screen.getByTestId("contact-form__name-input"), { target: { value: newName } });
+
+		await waitFor(() => {
+			expect(screen.getByTestId("contact-form__name-input")).toHaveValue(newName);
+		});
+
+		const selectNetworkInput = screen.getByTestId("SelectDropdownInput__input");
 
 		fireEvent.change(selectNetworkInput, { target: { value: "ARK D" } });
 		fireEvent.keyDown(selectNetworkInput, { key: "Enter", code: 13 });
@@ -165,25 +155,33 @@ describe("UpdateContact", () => {
 			expect(selectNetworkInput).toHaveValue("ARK Devnet");
 		});
 
-		await waitFor(() => {
-			expect(getByTestId("contact-form__add-address-btn")).not.toBeDisabled();
+		fireEvent.input(screen.getByTestId("contact-form__address-input"), {
+			target: { value: newAddress.address },
 		});
 
-		fireEvent.click(getByTestId("contact-form__add-address-btn"));
-
 		await waitFor(() => {
-			expect(saveButton).not.toBeDisabled();
+			expect(screen.getByTestId("contact-form__address-input")).toHaveValue(newAddress.address);
 		});
 
-		fireEvent.click(saveButton);
-
 		await waitFor(() => {
-			expect(onSave).toBeCalledWith(updatingContact.id());
+			expect(screen.getByTestId("contact-form__add-address-btn")).not.toBeDisabled();
 		});
 
-		const savedContact = profile.contacts().findById(updatingContact.id());
+		fireEvent.click(screen.getByTestId("contact-form__add-address-btn"));
+
+		await waitFor(() => {
+			expect(screen.getByTestId("contact-form__save-btn")).not.toBeDisabled();
+		});
+
+		fireEvent.click(screen.getByTestId("contact-form__save-btn"));
+
+		await waitFor(() => {
+			expect(onSave).toBeCalledWith(contact.id());
+		});
+
+		const savedContact = profile.contacts().findById(contact.id());
+
 		expect(savedContact.name()).toEqual(newName);
-
 		expect(savedContact.addresses().findByAddress(newAddress.address).length).toBeGreaterThan(0);
 	});
 });

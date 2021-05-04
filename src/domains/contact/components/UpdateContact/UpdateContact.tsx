@@ -31,28 +31,13 @@ export const UpdateContact = ({
 
 	useEffect(() => setErrors({}), [isOpen]);
 
-	const formatError = (errorMessage: string, name: string) => {
-		switch (true) {
-			case errorMessage.includes("already exists"):
-				return {
-					name: t("CONTACTS.VALIDATION.CONTACT_NAME_EXISTS", {
-						name,
-					}),
-				};
-		}
-	};
-
 	const handleSave = async ({ name, addresses }: any) => {
-		try {
-			await profile.contacts().update(contact.id(), {
-				name,
-				addresses,
-			});
-			await persist();
-			onSave?.(contact.id());
-		} catch (e) {
-			setErrors(formatError(e.toString(), name));
-		}
+		await profile.contacts().update(contact.id(), {
+			name,
+			addresses,
+		});
+		await persist();
+		onSave?.(contact.id());
 	};
 
 	const handleChange = (fieldName: string) => {
