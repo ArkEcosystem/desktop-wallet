@@ -1,5 +1,4 @@
 /* eslint-disable @typescript-eslint/require-await */
-import { Helpers } from "@arkecosystem/platform-sdk-profiles";
 import { act, renderHook } from "@testing-library/react-hooks";
 import { ConfigurationProvider, EnvironmentProvider } from "app/contexts";
 import { createMemoryHistory } from "history";
