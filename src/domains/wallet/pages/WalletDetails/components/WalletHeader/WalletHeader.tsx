@@ -347,6 +347,8 @@ export const WalletHeader = ({ profile, wallet, currencyDelta, onSend, isUpdatin
 							disabled={!wallet.hasSyncedWithNetwork()}
 						>
 							<Button
+								aria-busy={isSyncing}
+								data-testid="WalletHeader__refresh"
 								size="icon"
 								variant="transparent"
 								className="w-11 h-11 text-theme-secondary-text hover:text-theme-secondary-500"

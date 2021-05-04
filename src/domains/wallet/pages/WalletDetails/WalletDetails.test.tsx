@@ -402,6 +402,17 @@ describe("WalletDetails", () => {
 		await waitFor(() => expect(profile.wallets().count()).toEqual(3));
 	});
 
+	it("should manually sync wallet data", async () => {
+		const { getByTestId, getAllByTestId } = await renderPage();
+
+		act(() => {
+			fireEvent.click(getByTestId("WalletHeader__refresh"));
+		});
+
+		expect(getByTestId("WalletHeader__refresh")).toHaveAttribute("aria-busy", "true");
+		await waitFor(() => expect(getByTestId("WalletHeader__refresh")).toHaveAttribute("aria-busy", "false"));
+	});
+
 	it("should not fail if the votes have not yet been synchronized", async () => {
 		const newWallet = await profile.wallets().importByMnemonic("test mnemonic", "ARK", "ark.devnet");
 		nock("https://dwallets.ark.io").get(`/api/wallets/${newWallet.address()}`).reply(200, walletMock);
