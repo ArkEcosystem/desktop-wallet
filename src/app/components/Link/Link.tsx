@@ -37,7 +37,6 @@ const Anchor = React.forwardRef<HTMLAnchorElement, AnchorProps>(
 				event.preventDefault();
 				return props.navigate?.();
 			}}
-			tabIndex={0}
 			{...props}
 		>
 			<span className="group">
