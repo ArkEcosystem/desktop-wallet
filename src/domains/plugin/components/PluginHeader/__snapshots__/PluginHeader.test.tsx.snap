@@ -139,30 +139,26 @@ exports[`PluginHeader should render properly 1`] = `
                   class="font-semibold text-theme-secondary-text"
                 >
                   <a
-                    class="Link__AnchorStyled-sc-1q7sbxr-0 kAtXNw pointer-events-none no-underline inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary-600 hover:text-theme-primary-700 hover:underline active:text-theme-primary-500"
+                    class="Link__AnchorStyled-sc-1q7sbxr-0 jwcqOB group"
                     data-testid="PluginSpecs__url"
                     rel="noopener noreferrer"
                     to="https://github.com/arkecosystem"
                   >
                     <span
-                      class="group"
+                      class="break-all border-b border-transparent transition-colors duration-200 border-current border-dotted group-hover:border-transparent"
                     >
-                      <span
-                        class="no-underline break-all pointer-events-auto border-b group-hover:border-0 active:border-0 border-dotted"
-                      >
-                        github.com
-                      </span>
-                      <div
-                        class="sc-bdfBwQ fPrsah flex-shrink-0 pointer-events-auto inline-block pl-2 text-sm"
-                        data-testid="Link__external"
-                        height="1em"
-                        width="1em"
-                      >
-                        <svg>
-                          redirect.svg
-                        </svg>
-                      </div>
+                      github.com
                     </span>
+                    <div
+                      class="sc-bdfBwQ fPrsah flex-shrink-0 inline-block pb-px text-sm"
+                      data-testid="Link__external"
+                      height="1em"
+                      width="1em"
+                    >
+                      <svg>
+                        redirect.svg
+                      </svg>
+                    </div>
                   </a>
                 </span>
               </div>
@@ -409,30 +405,26 @@ exports[`PluginHeader should render updating plugin 1`] = `
                   class="font-semibold text-theme-secondary-text"
                 >
                   <a
-                    class="Link__AnchorStyled-sc-1q7sbxr-0 kAtXNw pointer-events-none no-underline inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary-600 hover:text-theme-primary-700 hover:underline active:text-theme-primary-500"
+                    class="Link__AnchorStyled-sc-1q7sbxr-0 jwcqOB group"
                     data-testid="PluginSpecs__url"
                     rel="noopener noreferrer"
                     to="https://github.com/arkecosystem"
                   >
                     <span
-                      class="group"
+                      class="break-all border-b border-transparent transition-colors duration-200 border-current border-dotted group-hover:border-transparent"
                     >
-                      <span
-                        class="no-underline break-all pointer-events-auto border-b group-hover:border-0 active:border-0 border-dotted"
-                      >
-                        github.com
-                      </span>
-                      <div
-                        class="sc-bdfBwQ fPrsah flex-shrink-0 pointer-events-auto inline-block pl-2 text-sm"
-                        data-testid="Link__external"
-                        height="1em"
-                        width="1em"
-                      >
-                        <svg>
-                          redirect.svg
-                        </svg>
-                      </div>
+                      github.com
                     </span>
+                    <div
+                      class="sc-bdfBwQ fPrsah flex-shrink-0 inline-block pb-px text-sm"
+                      data-testid="Link__external"
+                      height="1em"
+                      width="1em"
+                    >
+                      <svg>
+                        redirect.svg
+                      </svg>
+                    </div>
                   </a>
                 </span>
               </div>
