@@ -13,7 +13,7 @@ export const useFeeConfirmation = (fee: number | string, fees: Contracts.Transac
 	const [feeWarningVariant, setFeeWarningVariant] = useState<FeeWarningVariant | undefined>();
 
 	const activeProfile = useActiveProfile();
-	const { persist, env } = useEnvironmentContext();
+	const { persist } = useEnvironmentContext();
 
 	useEffect(() => {
 		if (!fee) {

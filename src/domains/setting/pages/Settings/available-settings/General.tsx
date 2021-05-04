@@ -24,7 +24,7 @@ import { SettingsProps } from "../Settings.models";
 
 export const General = ({ formConfig, onSuccess }: SettingsProps) => {
 	const reloadPath = useReloadPath();
-	const { persist, env } = useEnvironmentContext();
+	const { persist } = useEnvironmentContext();
 
 	const activeProfile = useActiveProfile();
 
