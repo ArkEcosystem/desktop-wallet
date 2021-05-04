@@ -18,7 +18,7 @@ import { SignMessage } from "domains/wallet/components/SignMessage";
 import { UpdateWalletName } from "domains/wallet/components/UpdateWalletName";
 import { VerifyMessage } from "domains/wallet/components/VerifyMessage";
 import { useWalletSync } from "domains/wallet/hooks/use-wallet-sync";
-import React, { useEffect,useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { useHistory } from "react-router-dom";
 import { openExternal } from "utils/electron-utils";
@@ -32,7 +32,14 @@ type WalletHeaderProps = {
 	onUpdate?: (status: boolean) => void;
 };
 
-export const WalletHeader = ({ profile, wallet, currencyDelta, onSend, isUpdatingTransactions, onUpdate }: WalletHeaderProps) => {
+export const WalletHeader = ({
+	profile,
+	wallet,
+	currencyDelta,
+	onSend,
+	isUpdatingTransactions,
+	onUpdate,
+}: WalletHeaderProps) => {
 	const ref = useRef(null);
 	const [TruncatedAddress] = useTextTruncate({ text: wallet.address(), parentRef: ref });
 

@@ -34,7 +34,7 @@ export const Transactions = memo(
 		isLoading = false,
 		title,
 		isUpdatingWallet,
-		onLoading
+		onLoading,
 	}: TransactionsProps) => {
 		const { t } = useTranslation();
 
