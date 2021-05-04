@@ -948,44 +948,6 @@ describe("Settings", () => {
 		expect(toastSpy).toHaveBeenCalledWith(translations.SETTINGS.PEERS.SUCCESS);
 	});
 
-	it("should render plugin settings", async () => {
-		const { container, asFragment, findByTestId } = renderWithRouter(
-			<Route path="/profiles/:profileId/settings">
-				<Settings />
-			</Route>,
-			{
-				routes: [`/profiles/${profile.id()}/settings`],
-			},
-		);
-
-		expect(container).toBeTruthy();
-
-		fireEvent.click(await findByTestId("side-menu__item--Plugins"));
-
-		expect(asFragment()).toMatchSnapshot();
-	});
-
-	it("should submit plugin settings form", async () => {
-		const toastSpy = jest.spyOn(toasts, "success");
-
-		const { findByTestId, getByTestId } = renderWithRouter(
-			<Route path="/profiles/:profileId/settings">
-				<Settings />
-			</Route>,
-			{
-				routes: [`/profiles/${profile.id()}/settings`],
-			},
-		);
-
-		fireEvent.click(await findByTestId("side-menu__item--Plugins"));
-
-		await act(async () => {
-			fireEvent.click(getByTestId("Plugins-settings__submit-button"));
-		});
-
-		expect(toastSpy).toHaveBeenCalledWith(translations.SETTINGS.PLUGINS.SUCCESS);
-	});
-
 	it("should render password settings", async () => {
 		const { container, asFragment, findByTestId } = renderWithRouter(
 			<Route path="/profiles/:profileId/settings">
