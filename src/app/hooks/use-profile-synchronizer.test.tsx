@@ -5,12 +5,12 @@ import { createMemoryHistory } from "history";
 import React from "react";
 import { Route } from "react-router-dom";
 import {
+	act as utilsAct,
 	env,
 	getDefaultProfileId,
 	renderWithRouter,
 	syncDelegates,
 	waitFor,
-	act as utilsAct,
 } from "utils/testing-library";
 
 const history = createMemoryHistory();
