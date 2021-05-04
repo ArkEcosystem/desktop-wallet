@@ -1,4 +1,4 @@
-import { Contracts, Environment, Helpers } from "@arkecosystem/platform-sdk-profiles";
+import { Contracts, Environment } from "@arkecosystem/platform-sdk-profiles";
 import { uniq } from "@arkecosystem/utils";
 import { useCallback, useMemo } from "react";
 import { matchPath } from "react-router-dom";
@@ -38,7 +38,7 @@ export const useProfileUtils = (env: Environment) => {
 		}
 
 		try {
-			return Helpers.MemoryPassword.get();
+			return profile.password().get();
 		} catch {
 			return;
 		}

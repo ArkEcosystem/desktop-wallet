@@ -1,4 +1,4 @@
-import { Contracts, Environment, Helpers } from "@arkecosystem/platform-sdk-profiles";
+import { Contracts, Environment } from "@arkecosystem/platform-sdk-profiles";
 
 interface ProfileExportOptions {
 	excludeEmptyWallets: boolean;
@@ -10,7 +10,7 @@ export const useProfileExport = ({ profile, env }: { profile: Contracts.IProfile
 		let password;
 
 		if (profile.usesPassword()) {
-			password = Helpers.MemoryPassword.get();
+			password = profile.password().get();
 		}
 
 		return env.profiles().export(

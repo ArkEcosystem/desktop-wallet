@@ -1,4 +1,4 @@
-import { container, Contracts, Helpers } from "@arkecosystem/platform-sdk-profiles";
+import { Contracts } from "@arkecosystem/platform-sdk-profiles";
 import { Card } from "app/components/Card";
 import { Circle } from "app/components/Circle";
 import { Icon } from "app/components/Icon";
@@ -71,8 +71,7 @@ export const Welcome = () => {
 		closeSignInModal();
 
 		if (password) {
-			container.bind("State<Profile>", profile);
-			Helpers.MemoryPassword.set(password);
+			profile.password().set(password);
 		}
 
 		switch (action?.value) {

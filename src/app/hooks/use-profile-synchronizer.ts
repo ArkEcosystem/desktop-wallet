@@ -1,4 +1,4 @@
-import { Contracts, Helpers } from "@arkecosystem/platform-sdk-profiles";
+import { Contracts } from "@arkecosystem/platform-sdk-profiles";
 import { useConfiguration, useEnvironmentContext } from "app/contexts";
 import { useEffect, useMemo, useRef } from "react";
 import { matchPath, useHistory, useLocation } from "react-router-dom";
@@ -220,7 +220,7 @@ export const useProfileSynchronizer = ({ onProfileRestoreError }: ProfileSynchro
 
 			if (profile.usesPassword()) {
 				try {
-					Helpers.MemoryPassword.get();
+					profile.password().get();
 				} catch (error) {
 					onProfileRestoreError?.(error);
 					return;
@@ -252,7 +252,7 @@ export const useProfileSynchronizer = ({ onProfileRestoreError }: ProfileSynchro
 			}
 		};
 
-		syncProfile(profile);
+		setTimeout(() => syncProfile(profile), 10);
 	}, [
 		saveProfile,
 		allJobs,
