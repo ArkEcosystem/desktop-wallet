@@ -136,7 +136,7 @@ export const PeerForm = ({ networks, peer, onSave, onValidateHost }: PeerFormPro
 				</div>
 			</FormField>
 
-			<div className="flex justify-end mt-4">
+			<div className="flex justify-end pt-8 border-t border-theme-secondary-300 dark:border-theme-secondary-800">
 				<Button type="submit" disabled={!isValid || isSubmitting} data-testid="PeerForm__submit-button">
 					{t(`SETTINGS.PEERS.${!peer ? "ADD_PEER" : "EDIT_PEER"}`)}
 				</Button>
