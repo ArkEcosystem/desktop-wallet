@@ -10,7 +10,7 @@ import { openExternal } from "utils/electron-utils";
 import { Icon } from "../Icon";
 
 const AnchorStyled = styled.a(() => [
-	tw`relative inline-flex items-center space-x-2 font-semibold text-theme-primary-600`,
+	tw`relative inline-block space-x-2 font-semibold text-theme-primary-600`,
 	tw`transition-colors duration-200`,
 	tw`cursor-pointer no-underline`,
 	tw`hover:text-theme-primary-700`,
@@ -48,11 +48,13 @@ const Anchor = React.forwardRef<HTMLAnchorElement, AnchorProps>(
 				{children}
 			</span>
 			{isExternal && showExternalIcon && (
-				<Icon
-					data-testid="Link__external"
-					name="Redirect"
-					className={cn("flex-shrink-0", { "inline-block pb-px text-sm": children })}
-				/>
+				<span className="align-middle">
+					<Icon
+						data-testid="Link__external"
+						name="Redirect"
+						className={cn("flex-shrink-0", { "inline-block pb-px text-sm": children })}
+					/>
+				</span>
 			)}
 		</AnchorStyled>
 	),
