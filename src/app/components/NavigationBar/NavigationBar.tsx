@@ -282,10 +282,6 @@ export const NavigationBar = ({
 											return openExternal(action.mountPath());
 										}
 
-										if (action.value === "sign-out" && profile) {
-											// TODO: use env.profiles.().forget(profile?.id())
-										}
-
 										return history.push(action.mountPath(profile?.id()));
 									}}
 								/>

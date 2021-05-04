@@ -163,7 +163,6 @@ export const Votes = () => {
 			let votes: Contracts.IReadOnlyWallet[] = [];
 
 			try {
-				//TODO: Revisit and test
 				votes = wallet!.voting().current();
 			} catch {
 				votes = [];

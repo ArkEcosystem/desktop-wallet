@@ -80,9 +80,6 @@ export const CreateProfile = () => {
 			profile.auth().setPassword(password);
 		}
 
-		// TODO: Check if settings are saved
-		// profile.save(password);
-
 		await persist();
 
 		history.push("/");

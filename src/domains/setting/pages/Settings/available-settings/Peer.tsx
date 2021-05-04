@@ -75,7 +75,6 @@ export const Peer = ({ formConfig, onSuccess }: SettingsProps) => {
 		const promises: Promise<void>[] = [];
 
 		for (const wallet of activeProfile.wallets().values()) {
-			// TODO: Make sure wallets also sync
 			promises.push(wallet.synchroniser().coin({ resetCoin: true }));
 		}
 

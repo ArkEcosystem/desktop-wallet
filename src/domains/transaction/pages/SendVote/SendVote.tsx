@@ -149,7 +149,6 @@ export const SendVote = () => {
 			const interval = setInterval(async () => {
 				let isConfirmed = false;
 
-				// TODO: Revisit and make sure votes are synced
 				await activeWallet.synchroniser().votes();
 				const walletVotes = activeWallet.voting().current();
 
