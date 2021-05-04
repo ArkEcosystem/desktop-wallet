@@ -21,7 +21,7 @@ type TransactionsProps = {
 	isLoading?: boolean;
 	title?: React.ReactNode;
 	onLoading?: (status: boolean) => void;
-	shouldReload?: boolean;
+	isUpdatingWallet?: boolean;
 };
 
 export const Transactions = memo(
@@ -33,8 +33,8 @@ export const Transactions = memo(
 		wallets,
 		isLoading = false,
 		title,
-		onLoading,
-		shouldReload,
+		isUpdatingWallet,
+		onLoading
 	}: TransactionsProps) => {
 		const { t } = useTranslation();
 
@@ -76,10 +76,10 @@ export const Transactions = memo(
 		}, [isLoadingTransactions, onLoading]);
 
 		useEffect(() => {
-			if (shouldReload) {
+			if (isUpdatingWallet) {
 				updateFilters({ activeMode, activeTransactionType, timestamp: new Date().getTime() });
 			}
-		}, [shouldReload]); // eslint-disable-line react-hooks/exhaustive-deps
+		}, [isUpdatingWallet]); // eslint-disable-line react-hooks/exhaustive-deps
 
 		if (!isVisible) {
 			return <></>;

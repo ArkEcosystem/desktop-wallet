@@ -4,7 +4,6 @@ import { DTO } from "@arkecosystem/platform-sdk-profiles";
 import { Page, Section } from "app/components/Layout";
 import { useConfiguration, useEnvironmentContext } from "app/contexts";
 import { useActiveProfile, useActiveWallet } from "app/hooks/env";
-import { useObserver } from "app/hooks/use-observer";
 import { toasts } from "app/services";
 import { MultiSignatureDetail } from "domains/transaction/components/MultiSignatureDetail";
 import { TransactionDetailModal } from "domains/transaction/components/TransactionDetailModal";
@@ -21,7 +20,8 @@ export const WalletDetails = () => {
 	const [signedTransactionModalItem, setSignedTransactionModalItem] = useState<Contracts.SignedTransactionData>();
 	const [transactionModalItem, setTransactionModalItem] = useState<DTO.ExtendedTransactionData>();
 
-	const loadingObserver = useObserver(false);
+	const [isUpdatingTransactions, setIsUpdatingTransactions] = useState(false);
+	const [isUpdatingWallet, setIsUpdatingWallet] = useState(false);
 
 	const history = useHistory();
 	const { t } = useTranslation();
@@ -66,10 +66,8 @@ export const WalletDetails = () => {
 						onSend={() =>
 							history.push(`/profiles/${activeProfile.id()}/wallets/${activeWallet.id()}/send-transfer`)
 						}
-						onUpdate={(cx) => {
-							loadingObserver.notify(true);
-							loadingObserver.subscribe(cx, { once: true });
-						}}
+						onUpdate={setIsUpdatingWallet}
+						isUpdatingTransactions={isUpdatingTransactions}
 					/>
 				</Section>
 
@@ -100,8 +98,8 @@ export const WalletDetails = () => {
 						profile={activeProfile}
 						wallets={[activeWallet]}
 						isLoading={profileIsSyncing}
-						shouldReload={loadingObserver.value}
-						onLoading={(status) => loadingObserver.notify(status)}
+						isUpdatingWallet={isUpdatingWallet}
+						onLoading={setIsUpdatingTransactions}
 					/>
 				</Section>
 			</Page>

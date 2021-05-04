@@ -9,6 +9,7 @@ import { Icon } from "app/components/Icon";
 import { Tooltip } from "app/components/Tooltip";
 import { WalletIcons } from "app/components/WalletIcons";
 import { useEnvironmentContext } from "app/contexts";
+import { usePrevious } from "app/hooks";
 import { useTextTruncate } from "app/hooks/use-text-truncate";
 import { NetworkIcon } from "domains/network/components/NetworkIcon";
 import { DeleteWallet } from "domains/wallet/components/DeleteWallet";
@@ -17,7 +18,7 @@ import { SignMessage } from "domains/wallet/components/SignMessage";
 import { UpdateWalletName } from "domains/wallet/components/UpdateWalletName";
 import { VerifyMessage } from "domains/wallet/components/VerifyMessage";
 import { useWalletSync } from "domains/wallet/hooks/use-wallet-sync";
-import React, { useRef, useState } from "react";
+import React, { useEffect,useRef, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { useHistory } from "react-router-dom";
 import { openExternal } from "utils/electron-utils";
@@ -27,10 +28,11 @@ type WalletHeaderProps = {
 	wallet: Contracts.IReadWriteWallet;
 	currencyDelta?: number;
 	onSend?: () => void;
-	onUpdate?: (callback: (status: boolean) => void) => void;
+	isUpdatingTransactions?: boolean;
+	onUpdate?: (status: boolean) => void;
 };
 
-export const WalletHeader = ({ profile, wallet, currencyDelta, onSend, onUpdate }: WalletHeaderProps) => {
+export const WalletHeader = ({ profile, wallet, currencyDelta, onSend, isUpdatingTransactions, onUpdate }: WalletHeaderProps) => {
 	const ref = useRef(null);
 	const [TruncatedAddress] = useTextTruncate({ text: wallet.address(), parentRef: ref });
 
@@ -39,6 +41,7 @@ export const WalletHeader = ({ profile, wallet, currencyDelta, onSend, onUpdate 
 	const { env } = useEnvironmentContext();
 	const { syncAll } = useWalletSync({ profile, env });
 	const [isSyncing, setIsSyncing] = useState(false);
+	const prevIsUpdatingTransactions = usePrevious(isUpdatingTransactions);
 
 	const history = useHistory();
 
@@ -212,22 +215,23 @@ export const WalletHeader = ({ profile, wallet, currencyDelta, onSend, onUpdate 
 	};
 
 	const syncWallet = async () => {
+		onUpdate?.(true);
 		setIsSyncing(true);
-		const parentPromise = () =>
-			new Promise((resolve) => {
-				if (onUpdate) {
-					onUpdate((status) => {
-						if (status) {
-							resolve();
-						}
-					});
-				}
 
-				resolve();
-			});
-		await Promise.all([syncAll(wallet), parentPromise()]);
-		setIsSyncing(false);
+		await syncAll(wallet);
+
+		if (isUpdatingTransactions === undefined) {
+			setIsSyncing(false);
+			onUpdate?.(false);
+		}
 	};
+
+	useEffect(() => {
+		if (isSyncing && prevIsUpdatingTransactions && !isUpdatingTransactions) {
+			setIsSyncing(false);
+			onUpdate?.(false);
+		}
+	}, [isSyncing, prevIsUpdatingTransactions, isUpdatingTransactions, onUpdate]);
 
 	return (
 		<>
