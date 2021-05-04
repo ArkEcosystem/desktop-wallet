@@ -178,10 +178,9 @@ type ProfileSynchronizerProps = {
 
 export const useProfileSynchronizer = ({ onProfileRestoreError }: ProfileSynchronizerProps = {}) => {
 	const __E2E__ = process.env.REACT_APP_IS_E2E;
-	const { env, persist } = useEnvironmentContext();
+	const { persist } = useEnvironmentContext();
 	const { setConfiguration, profileIsSyncing } = useConfiguration();
 	const { restoreProfile } = useProfileRestore();
-	const { saveProfile } = useProfileUtils(env);
 	const profile = useProfileWatcher();
 
 	const {
@@ -229,7 +228,6 @@ export const useProfileSynchronizer = ({ onProfileRestoreError }: ProfileSynchro
 				setStatus("syncing");
 
 				await profile.sync();
-				saveProfile(profile);
 				await persist();
 
 				runAll();
@@ -248,7 +246,6 @@ export const useProfileSynchronizer = ({ onProfileRestoreError }: ProfileSynchro
 
 		setTimeout(() => syncProfile(profile), 0);
 	}, [
-		saveProfile,
 		allJobs,
 		profile,
 		runAll,

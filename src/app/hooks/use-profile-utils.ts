@@ -44,24 +44,6 @@ export const useProfileUtils = (env: Environment) => {
 		}
 	}, []);
 
-	const saveProfile = useCallback(
-		(profile: Contracts.IProfile) => {
-			if (!profile.usesPassword()) {
-				console.log("[saveProfile] mock profile save");
-				// return profile.save();
-			}
-
-			const password = getProfileStoredPassword(profile);
-			if (!password) {
-				return;
-			}
-
-			// return profile.save(password);
-			console.log("[saveProfile] mock profile save", { password });
-		},
-		[getProfileStoredPassword],
-	);
-
 	const getErroredNetworks = useCallback((profile: Contracts.IProfile) => {
 		const erroredNetworks = profile
 			.wallets()
@@ -72,8 +54,10 @@ export const useProfileUtils = (env: Environment) => {
 		return { hasErroredNetworks: erroredNetworks.length > 0, erroredNetworks: uniq(erroredNetworks) };
 	}, []);
 
-	return useMemo(
-		() => ({ getProfileById, getProfileFromUrl, getProfileStoredPassword, saveProfile, getErroredNetworks }),
-		[getProfileFromUrl, getProfileById, saveProfile, getProfileStoredPassword, getErroredNetworks],
-	);
+	return useMemo(() => ({ getProfileById, getProfileFromUrl, getProfileStoredPassword, getErroredNetworks }), [
+		getProfileFromUrl,
+		getProfileById,
+		getProfileStoredPassword,
+		getErroredNetworks,
+	]);
 };

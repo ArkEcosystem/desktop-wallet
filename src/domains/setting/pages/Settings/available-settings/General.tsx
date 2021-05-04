@@ -9,7 +9,7 @@ import { Select } from "app/components/SelectDropdown";
 import { SelectProfileImage } from "app/components/SelectProfileImage";
 import { Toggle } from "app/components/Toggle";
 import { useEnvironmentContext } from "app/contexts";
-import { useActiveProfile, useProfileUtils, useReloadPath } from "app/hooks";
+import { useActiveProfile, useReloadPath } from "app/hooks";
 import { useValidation } from "app/hooks";
 import { PlatformSdkChoices } from "data";
 import { ResetProfile } from "domains/profile/components/ResetProfile";
@@ -27,7 +27,6 @@ export const General = ({ formConfig, onSuccess }: SettingsProps) => {
 	const { persist, env } = useEnvironmentContext();
 
 	const activeProfile = useActiveProfile();
-	const { saveProfile } = useProfileUtils(env);
 
 	const history = useHistory();
 	const { t } = useTranslation();
@@ -256,8 +255,6 @@ export const General = ({ formConfig, onSuccess }: SettingsProps) => {
 		}
 
 		setScreenshotProtection(isScreenshotProtection);
-
-		saveProfile(activeProfile);
 
 		await persist();
 
