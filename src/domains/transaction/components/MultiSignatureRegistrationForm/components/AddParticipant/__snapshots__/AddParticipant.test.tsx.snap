@@ -40,6 +40,7 @@ exports[`Add Participant should fail if cannot find the address remotely 1`] = `
                     data-testid="select-list__input"
                     name="address"
                     readonly=""
+                    tabindex="-1"
                     value="DC8ghUdhS8w8d11K8cFQ37YsLBFhL3Dq20"
                   />
                 </div>
@@ -148,7 +149,7 @@ exports[`Add Participant should fail if cannot find the address remotely 1`] = `
                   </div>
                   <ul
                     aria-labelledby="downshift-33-label"
-                    class="styles__SelectOptionsList-b2falt-0 fMNDxc"
+                    class="styles__SelectOptionsList-b2falt-0 ghEDCU"
                     id="downshift-33-menu"
                     role="listbox"
                   />
@@ -364,6 +365,7 @@ exports[`Add Participant should fail to find 1`] = `
                     data-testid="select-list__input"
                     name="address"
                     readonly=""
+                    tabindex="-1"
                     value="D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyiba"
                   />
                 </div>
@@ -472,7 +474,7 @@ exports[`Add Participant should fail to find 1`] = `
                   </div>
                   <ul
                     aria-labelledby="downshift-0-label"
-                    class="styles__SelectOptionsList-b2falt-0 fMNDxc"
+                    class="styles__SelectOptionsList-b2falt-0 ghEDCU"
                     id="downshift-0-menu"
                     role="listbox"
                   />
@@ -688,6 +690,7 @@ exports[`Add Participant should fail with cold wallet 1`] = `
                     data-testid="select-list__input"
                     name="address"
                     readonly=""
+                    tabindex="-1"
                     value="DC8ghUdhS8w8d11K8cFQ37YsLBFhL3Dq2P"
                   />
                 </div>
@@ -796,7 +799,7 @@ exports[`Add Participant should fail with cold wallet 1`] = `
                   </div>
                   <ul
                     aria-labelledby="downshift-13-label"
-                    class="styles__SelectOptionsList-b2falt-0 fMNDxc"
+                    class="styles__SelectOptionsList-b2falt-0 ghEDCU"
                     id="downshift-13-menu"
                     role="listbox"
                   />
@@ -1012,6 +1015,7 @@ exports[`Add Participant should render custom participants 1`] = `
                     data-testid="select-list__input"
                     name="address"
                     readonly=""
+                    tabindex="-1"
                     value=""
                   />
                 </div>
@@ -1076,7 +1080,7 @@ exports[`Add Participant should render custom participants 1`] = `
                   </div>
                   <ul
                     aria-labelledby="downshift-88-label"
-                    class="styles__SelectOptionsList-b2falt-0 fMNDxc"
+                    class="styles__SelectOptionsList-b2falt-0 ghEDCU"
                     id="downshift-88-menu"
                     role="listbox"
                   />
@@ -1292,6 +1296,7 @@ exports[`Add Participant should work with a remote wallet 1`] = `
                     data-testid="select-list__input"
                     name="address"
                     readonly=""
+                    tabindex="-1"
                     value="D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib"
                   />
                 </div>
@@ -1373,13 +1378,13 @@ exports[`Add Participant should work with a remote wallet 1`] = `
                   </div>
                   <ul
                     aria-labelledby="downshift-67-label"
-                    class="styles__SelectOptionsList-b2falt-0 fMNDxc is-open"
+                    class="styles__SelectOptionsList-b2falt-0 ghEDCU is-open"
                     id="downshift-67-menu"
                     role="listbox"
                   >
                     <li
                       aria-selected="false"
-                      class="select-list-option cursor-default "
+                      class="select-list-option"
                       data-testid="select-list__toggle-option-0"
                       id="downshift-67-item-0"
                       role="option"
@@ -1429,7 +1434,7 @@ exports[`Add Participant should work with a remote wallet 1`] = `
                     </li>
                     <li
                       aria-selected="false"
-                      class="select-list-option cursor-default "
+                      class="select-list-option"
                       data-testid="select-list__toggle-option-1"
                       id="downshift-67-item-1"
                       role="option"
@@ -1479,7 +1484,7 @@ exports[`Add Participant should work with a remote wallet 1`] = `
                     </li>
                     <li
                       aria-selected="false"
-                      class="select-list-option cursor-default is-highlighted"
+                      class="select-list-option is-selected"
                       data-testid="select-list__toggle-option-2"
                       id="downshift-67-item-2"
                       role="option"
@@ -1529,7 +1534,7 @@ exports[`Add Participant should work with a remote wallet 1`] = `
                     </li>
                     <li
                       aria-selected="false"
-                      class="select-list-option cursor-default "
+                      class="select-list-option"
                       data-testid="select-list__toggle-option-3"
                       id="downshift-67-item-3"
                       role="option"
@@ -1579,7 +1584,7 @@ exports[`Add Participant should work with a remote wallet 1`] = `
                     </li>
                     <li
                       aria-selected="false"
-                      class="select-list-option cursor-default "
+                      class="select-list-option"
                       data-testid="select-list__toggle-option-4"
                       id="downshift-67-item-4"
                       role="option"
@@ -1629,7 +1634,7 @@ exports[`Add Participant should work with a remote wallet 1`] = `
                     </li>
                     <li
                       aria-selected="false"
-                      class="select-list-option cursor-default "
+                      class="select-list-option"
                       data-testid="select-list__toggle-option-5"
                       id="downshift-67-item-5"
                       role="option"
@@ -1969,6 +1974,7 @@ exports[`Add Participant should work with an imported wallet 1`] = `
                     data-testid="select-list__input"
                     name="address"
                     readonly=""
+                    tabindex="-1"
                     value="D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb"
                   />
                 </div>
@@ -2050,13 +2056,13 @@ exports[`Add Participant should work with an imported wallet 1`] = `
                   </div>
                   <ul
                     aria-labelledby="downshift-46-label"
-                    class="styles__SelectOptionsList-b2falt-0 fMNDxc is-open"
+                    class="styles__SelectOptionsList-b2falt-0 ghEDCU is-open"
                     id="downshift-46-menu"
                     role="listbox"
                   >
                     <li
                       aria-selected="false"
-                      class="select-list-option cursor-default "
+                      class="select-list-option"
                       data-testid="select-list__toggle-option-0"
                       id="downshift-46-item-0"
                       role="option"
@@ -2106,7 +2112,7 @@ exports[`Add Participant should work with an imported wallet 1`] = `
                     </li>
                     <li
                       aria-selected="false"
-                      class="select-list-option cursor-default is-highlighted"
+                      class="select-list-option is-selected"
                       data-testid="select-list__toggle-option-1"
                       id="downshift-46-item-1"
                       role="option"
@@ -2156,7 +2162,7 @@ exports[`Add Participant should work with an imported wallet 1`] = `
                     </li>
                     <li
                       aria-selected="false"
-                      class="select-list-option cursor-default "
+                      class="select-list-option"
                       data-testid="select-list__toggle-option-2"
                       id="downshift-46-item-2"
                       role="option"
@@ -2206,7 +2212,7 @@ exports[`Add Participant should work with an imported wallet 1`] = `
                     </li>
                     <li
                       aria-selected="false"
-                      class="select-list-option cursor-default "
+                      class="select-list-option"
                       data-testid="select-list__toggle-option-3"
                       id="downshift-46-item-3"
                       role="option"
@@ -2256,7 +2262,7 @@ exports[`Add Participant should work with an imported wallet 1`] = `
                     </li>
                     <li
                       aria-selected="false"
-                      class="select-list-option cursor-default "
+                      class="select-list-option"
                       data-testid="select-list__toggle-option-4"
                       id="downshift-46-item-4"
                       role="option"
@@ -2306,7 +2312,7 @@ exports[`Add Participant should work with an imported wallet 1`] = `
                     </li>
                     <li
                       aria-selected="false"
-                      class="select-list-option cursor-default "
+                      class="select-list-option"
                       data-testid="select-list__toggle-option-5"
                       id="downshift-46-item-5"
                       role="option"
