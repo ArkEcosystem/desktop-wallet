@@ -375,6 +375,17 @@ describe("WalletDetails", () => {
 		expect(ipcRendererMock).toHaveBeenCalledWith("open-external", wallet.explorerLink());
 	});
 
+	it("should manually sync wallet data", async () => {
+		const { getByTestId, getAllByTestId } = await renderPage();
+
+		act(() => {
+			fireEvent.click(getByTestId("WalletHeader__refresh"));
+		});
+
+		expect(getByTestId("WalletHeader__refresh")).toHaveAttribute("aria-busy", "true");
+		await waitFor(() => expect(getByTestId("WalletHeader__refresh")).toHaveAttribute("aria-busy", "false"));
+	});
+
 	it("should delete wallet", async () => {
 		const { getByTestId, getAllByTestId } = await renderPage();
 
@@ -400,17 +411,6 @@ describe("WalletDetails", () => {
 		});
 
 		await waitFor(() => expect(profile.wallets().count()).toEqual(3));
-	});
-
-	it("should manually sync wallet data", async () => {
-		const { getByTestId, getAllByTestId } = await renderPage();
-
-		act(() => {
-			fireEvent.click(getByTestId("WalletHeader__refresh"));
-		});
-
-		expect(getByTestId("WalletHeader__refresh")).toHaveAttribute("aria-busy", "true");
-		await waitFor(() => expect(getByTestId("WalletHeader__refresh")).toHaveAttribute("aria-busy", "false"));
 	});
 
 	it("should not fail if the votes have not yet been synchronized", async () => {
