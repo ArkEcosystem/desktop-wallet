@@ -4,7 +4,7 @@ import cn from "classnames";
 import React from "react";
 import { useTranslation } from "react-i18next";
 import { Link as RouterLink, LinkProps } from "react-router-dom";
-import tw, { css, styled } from "twin.macro";
+import tw, { styled } from "twin.macro";
 import { openExternal } from "utils/electron-utils";
 
 import { Icon } from "../Icon";
@@ -15,19 +15,8 @@ const AnchorStyled = styled.a(() => [
 	tw`cursor-pointer no-underline`,
 	tw`hover:text-theme-primary-700`,
 	tw`active:text-theme-primary-500`,
-	css`
-		&:after {
-			content: "";
-			${tw`absolute inset-0 -m-1 ring-2 ring-transparent rounded`},
-		}
-		&:focus {
-			${tw`outline-none`},
-
-			&:after {
-				${tw`ring-theme-primary-400`},
-			}
-		}
-	`,
+	tw`focus:(outline-none after:ring-2)`,
+	tw`after:(content absolute inset-0 -m-1 ring-theme-primary-400 rounded)`,
 ]);
 
 type AnchorProps = {
