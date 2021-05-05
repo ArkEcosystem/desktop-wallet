@@ -7,7 +7,7 @@ import { Page, Section } from "app/components/Layout";
 import { StepIndicator } from "app/components/StepIndicator";
 import { TabPanel, Tabs } from "app/components/Tabs";
 import { useEnvironmentContext } from "app/contexts";
-import { useProfileUtils, useQueryParams } from "app/hooks";
+import { useQueryParams } from "app/hooks";
 import { useActiveProfile } from "app/hooks/env";
 import { toasts } from "app/services";
 import { useWalletConfig } from "domains/dashboard/hooks";
@@ -39,7 +39,6 @@ export const ImportWallet = () => {
 	const { env, persist } = useEnvironmentContext();
 
 	const activeProfile = useActiveProfile();
-	const { saveProfile } = useProfileUtils(env);
 
 	const { selectedNetworkIds, setValue } = useWalletConfig({ profile: activeProfile });
 
@@ -112,15 +111,11 @@ export const ImportWallet = () => {
 
 		await syncAll(wallet);
 
-		saveProfile(activeProfile);
-
 		await persist();
 	};
 
 	const encryptMnemonic = async () => {
-		await walletData!.setWif(walletGenerationInput!, getValues("encryptionPassword"));
-
-		saveProfile(activeProfile);
+		await walletData!.wif().set(walletGenerationInput!, getValues("encryptionPassword"));
 
 		await persist();
 	};
@@ -130,7 +125,7 @@ export const ImportWallet = () => {
 
 		if (name) {
 			const formattedName = name.trim().substring(0, nameMaxLength);
-			walletData?.setAlias(formattedName);
+			walletData?.mutator().alias(formattedName);
 			await persist();
 		}
 

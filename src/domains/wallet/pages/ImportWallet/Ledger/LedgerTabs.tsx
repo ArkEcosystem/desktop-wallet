@@ -110,7 +110,7 @@ export const LedgerTabs = ({ activeIndex }: { activeIndex?: number }) => {
 			if (name) {
 				const formattedName = name.trim().substring(0, nameMaxLength);
 				const wallet = activeProfile.wallets().findByAddress(address);
-				wallet?.setAlias(formattedName);
+				wallet?.mutator().alias(formattedName);
 			}
 		}
 		await persist();

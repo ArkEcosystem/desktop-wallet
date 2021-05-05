@@ -7,6 +7,7 @@ import { translations as profileTranslations } from "domains/profile/i18n";
 import React from "react";
 import { act, env, fireEvent, getDefaultProfileId, renderWithRouter, waitFor } from "testing-library";
 import { StubStorage } from "tests/mocks";
+import { getDefaultPassword, getPasswordProtectedProfileId } from "utils/testing-library";
 
 import { translations } from "../../i18n";
 import { Welcome } from "../Welcome";
@@ -77,7 +78,8 @@ describe("Welcome", () => {
 
 		expect(container).toBeTruthy();
 
-		const profile = env.profiles().findById("cba050f1-880f-45f0-9af9-cfe48f406052");
+		const profile = env.profiles().findById(getPasswordProtectedProfileId());
+		await env.profiles().restore(profile, getDefaultPassword());
 
 		expect(getByText(translations.PAGE_WELCOME.WITH_PROFILES.TITLE)).toBeInTheDocument();
 

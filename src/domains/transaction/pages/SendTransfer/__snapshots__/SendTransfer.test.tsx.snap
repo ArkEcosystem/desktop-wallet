@@ -6057,27 +6057,6 @@ exports[`SendTransfer should render network step without test networks 1`] = `
                   </div>
                 </div>
               </li>
-              <li
-                class="inline-block cursor-pointer h-21"
-                data-testid="SelectNetwork__NetworkIcon--container"
-              >
-                <div
-                  aria-label="Compendia"
-                  class="w-full h-full flex justify-center items-center border-2 rounded-xl border-theme-primary-100 dark:border-theme-secondary-800 text-theme-secondary-700"
-                  data-testid="NetworkIcon-ARK-compendia.mainnet"
-                >
-                  <div
-                    class="sc-bdfBwQ caqoGN"
-                    data-testid="NetworkIcon__icon"
-                    height="30"
-                    width="30"
-                  >
-                    <svg>
-                      bind.svg
-                    </svg>
-                  </div>
-                </div>
-              </li>
             </ul>
           </div>
         </div>
@@ -6418,7 +6397,7 @@ exports[`SendTransfer should render summary step 1`] = `
                 data-testid="Link"
                 href="#"
                 rel="noopener noreferrer"
-                to="https://dexplorer.ark.io/transaction/8f913b6b719e7767d49861c0aec79ced212767645cb793d75d2f1b89abb49877"
+                to="https://dexplorer.ark.io/transaction/undefined"
               >
                 <span
                   class="break-all border-b border-transparent transition-colors duration-200 border-current border-dotted group-hover:border-transparent"
@@ -6426,9 +6405,7 @@ exports[`SendTransfer should render summary step 1`] = `
                   <span
                     class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-primary-700"
                     data-testid="TruncateMiddle"
-                  >
-                    8f913b6b719e7767d49861c0aec79ced212767645cb793d75d2f1b89abb49877
-                  </span>
+                  />
                 </span>
                 <span
                   class="align-middle"
@@ -6576,14 +6553,7 @@ exports[`SendTransfer should render summary step 1`] = `
           >
             <div
               class="w-full flex items-center no-ligatures overflow-hidden whitespace-nowrap"
-            >
-              <span
-                class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-text font-semibold text-base"
-                data-testid="address__wallet-address"
-              >
-                D5pVkhZbSb4UNXvfmF6j7zdau8yGxfKwSv
-              </span>
-            </div>
+            />
           </div>
         </div>
         <div
@@ -6592,13 +6562,7 @@ exports[`SendTransfer should render summary step 1`] = `
         >
           <div
             class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
-          >
-            <img
-              alt="D5pVkhZbSb4UNXvfmF6j7zdau8yGxfKwSv"
-              src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(33, 150, 243)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"40\\" cx=\\"80\\" cy=\\"30\\" fill=\\"rgb(255, 87, 34)\\"/><circle r=\\"60\\" cx=\\"70\\" cy=\\"50\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"55\\" cx=\\"100\\" cy=\\"70\\" fill=\\"rgb(0, 150, 136)\\"/></svg>"
-              title="D5pVkhZbSb4UNXvfmF6j7zdau8yGxfKwSv"
-            />
-          </div>
+          />
         </div>
       </div>
       <div
@@ -6623,7 +6587,7 @@ exports[`SendTransfer should render summary step 1`] = `
               <span
                 data-testid="Amount"
               >
-                - 400,000 DARK
+                - NaN DARK
               </span>
             </div>
           </div>
@@ -6660,7 +6624,7 @@ exports[`SendTransfer should render summary step 1`] = `
             <span
               data-testid="Amount"
             >
-              0.1 DARK
+              NaN DARK
             </span>
           </div>
         </div>

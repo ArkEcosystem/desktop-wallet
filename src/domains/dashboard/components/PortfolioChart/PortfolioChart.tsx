@@ -17,8 +17,6 @@ export const PortfolioChart = memo(({ profile, isVisible = true, showChartAnimat
 	const { t } = useTranslation();
 	const { percentages, balances, chartLines } = usePortfolioData({ profile });
 
-	// TODO: Set dashboard config showChartAnimation to false when unmount
-
 	if (!isVisible || !balances.length) {
 		return <></>;
 	}

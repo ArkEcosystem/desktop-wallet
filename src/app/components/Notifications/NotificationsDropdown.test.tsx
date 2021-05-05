@@ -3,7 +3,7 @@ import { createMemoryHistory } from "history";
 import nock from "nock";
 import React from "react";
 import { Route } from "react-router-dom";
-import { act, env, fireEvent, getDefaultProfileId, render, renderWithRouter, waitFor } from "testing-library";
+import { act, env, fireEvent, getDefaultProfileId, render, renderWithRouter, waitFor } from "utils/testing-library";
 const NotificationTransactionsFixtures = require("tests/fixtures/coins/ark/devnet/notification-transactions.json");
 
 import { NotificationsDropdown } from "./";
@@ -12,7 +12,7 @@ const history = createMemoryHistory();
 let profile: Contracts.IProfile;
 
 describe("Notifications", () => {
-	beforeEach(() => {
+	beforeEach(async () => {
 		const dashboardURL = `/profiles/${getDefaultProfileId()}/dashboard`;
 		history.push(dashboardURL);
 
@@ -23,6 +23,9 @@ describe("Notifications", () => {
 			.reply(200, { data: NotificationTransactionsFixtures.data[1] });
 
 		profile = env.profiles().findById(getDefaultProfileId());
+
+		await env.profiles().restore(profile);
+		await profile.sync();
 	});
 
 	it("should render with transactions and plugins", async () => {
@@ -41,6 +44,8 @@ describe("Notifications", () => {
 	});
 
 	it("should open and close transaction details modal", async () => {
+		await profile.sync();
+
 		const { container, getAllByRole, getByTestId, queryAllByTestId, getAllByTestId } = renderWithRouter(
 			<Route path="/profiles/:profileId/dashboard">
 				<NotificationsDropdown profile={profile} />

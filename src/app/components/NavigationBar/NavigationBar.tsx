@@ -1,5 +1,5 @@
 import { Data } from "@arkecosystem/platform-sdk";
-import { Contracts, Helpers } from "@arkecosystem/platform-sdk-profiles";
+import { Contracts } from "@arkecosystem/platform-sdk-profiles";
 import { images } from "app/assets/images";
 import { Avatar } from "app/components/Avatar";
 import { Button } from "app/components/Button";
@@ -282,10 +282,6 @@ export const NavigationBar = ({
 									onUserAction={(action: any) => {
 										if (action?.isExternal) {
 											return openExternal(action.mountPath());
-										}
-
-										if (action.value === "sign-out" && profile) {
-											Helpers.MemoryPassword.forget();
 										}
 
 										return history.push(action.mountPath(profile?.id()));

@@ -43,10 +43,14 @@ describe("Use Ledger Scanner", () => {
 			});
 	});
 
-	beforeEach(() => {
+	beforeEach(async () => {
 		profile = env.profiles().findById(getDefaultProfileId());
 		wallet = profile.wallets().first();
 		transport = createTransportReplayer(RecordStore.fromString(""));
+
+		await env.profiles().restore(profile);
+		await profile.sync();
+		await wallet.synchroniser().coin();
 
 		publicKeyPaths = new Map([
 			["44'/1'/0'/0/0", "027716e659220085e41389efc7cf6a05f7f7c659cf3db9126caabce6cda9156582"],
@@ -369,10 +373,21 @@ describe("Use Ledger Scanner", () => {
 			Promise.resolve(publicKeyPaths.get(path)!),
 		);
 
-		await profile.wallets().importByAddress("DJpFwW39QnQvQRQJF2MCfAoKvsX4DJ28jq", "ARK", "ark.devnet");
-		await profile.wallets().importByAddress("DRgF3PvzeGWndQjET7dZsSmnrc6uAy23ES", "ARK", "ark.devnet");
-		await profile.wallets().importByAddress("DSyG9hK9CE8eyfddUoEvsga4kNVQLdw2ve", "ARK", "ark.devnet");
-		await profile.wallets().importByAddress("DFJ5Z51F1euNNdRUQJKQVdG4h495LZkc6T", "ARK", "ark.devnet");
+		const addresses = [
+			"DJpFwW39QnQvQRQJF2MCfAoKvsX4DJ28jq",
+			"DRgF3PvzeGWndQjET7dZsSmnrc6uAy23ES",
+			"DSyG9hK9CE8eyfddUoEvsga4kNVQLdw2ve",
+			"DFJ5Z51F1euNNdRUQJKQVdG4h495LZkc6T",
+		];
+
+		addresses.forEach(async (address) => {
+			const wallet = await profile.walletFactory().fromAddress({
+				address,
+				coin: "ARK",
+				network: "ark.devnet",
+			});
+			profile.wallets().push(wallet);
+		});
 
 		const Component = () => {
 			const { scanUntilNewOrFail, wallets } = useLedgerScanner(wallet.coinId(), wallet.networkId(), profile);
@@ -397,5 +412,52 @@ describe("Use Ledger Scanner", () => {
 		);
 
 		await waitFor(() => expect(screen.queryByText("DJJWYQwyRnch1ZTeDHp1PGLZmGTb1uP7u9")).toBeInTheDocument());
+	});
+
+	it("should render with empty lazy wallets", async () => {
+		jest.spyOn(wallet.coin().ledger(), "getPublicKey").mockImplementation((path) =>
+			Promise.resolve(publicKeyPaths.get(path)!),
+		);
+
+		const Component = () => {
+			const { scanMore, wallets, isSelected, isLoading, isFailed } = useLedgerScanner(
+				wallet.coinId(),
+				wallet.networkId(),
+				profile,
+			);
+
+			return (
+				<div>
+					<ul>
+						{wallets.map((x) => (
+							<li key={x.path}>
+								<p>{`Path: ${x.path}`}</p>
+								<p>{`Address: ${x.address}`}</p>
+								<p>{`Failed: ${isFailed(x.path)}`}</p>
+								<p>{`Selected: ${isSelected(x.path)}`}</p>
+								<p>{`Balance: ${isLoading(x.path) ? "Loading" : x.balance?.toFixed()}`}</p>
+							</li>
+						))}
+					</ul>
+					<button onClick={scanMore}>Scan</button>
+				</div>
+			);
+		};
+
+		render(
+			<LedgerProvider transport={transport}>
+				<Component />
+			</LedgerProvider>,
+		);
+
+		jest.spyOn(profile.wallets(), "findByAddress").mockImplementation(() => profile.wallets().first());
+
+		// Fetch more
+		act(() => {
+			fireEvent.click(screen.getByRole("button"));
+		});
+
+		await waitFor(() => expect(screen.queryAllByRole("listitem")).toHaveLength(0));
+		await waitFor(() => expect(screen.queryAllByText("Balance: Loading")).toHaveLength(0));
 	});
 });
