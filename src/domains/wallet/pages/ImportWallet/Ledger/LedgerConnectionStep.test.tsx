@@ -34,9 +34,11 @@ describe("LedgerConnectionStep", () => {
 		});
 
 		jest.useFakeTimers();
+		jest.spyOn(wallet.coin(), "__construct").mockImplementation();
 	});
 
 	afterEach(() => {
+		jest.clearAllMocks();
 		jest.runOnlyPendingTimers();
 		jest.useRealTimers();
 	});

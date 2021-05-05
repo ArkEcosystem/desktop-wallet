@@ -24,10 +24,11 @@ exports[`Use Ledger Scanner should dispatch failed 1`] = `
 <div>
   <div>
     <ul />
-    <button
-      data-testid="scan"
-    >
+    <button>
       Scan
+    </button>
+    <button>
+      Retry
     </button>
   </div>
 </div>
@@ -45,61 +46,21 @@ exports[`Use Ledger Scanner should render 1`] = `
           Address: DJpFwW39QnQvQRQJF2MCfAoKvsX4DJ28jq
         </p>
         <p>
-          Failed: false
-        </p>
-        <p>
           Selected: true
-        </p>
-        <p>
-          Balance: 2
         </p>
       </li>
       <li>
         <p>
-          Path: 44'/1'/2'/0/0
+          Path: m/44'/1'/0'/0/0
         </p>
         <p>
-          Address: DRgF3PvzeGWndQjET7dZsSmnrc6uAy23ES
-        </p>
-        <p>
-          Failed: false
+          Address: DQseW3VJ1db5xN5xZi4Qhn6AFWtcwSwzpG
         </p>
         <p>
           Selected: true
-        </p>
-        <p>
-          Balance: 1
-        </p>
-      </li>
-      <li>
-        <p>
-          Path: 44'/1'/3'/0/0
-        </p>
-        <p>
-          Address: DSyG9hK9CE8eyfddUoEvsga4kNVQLdw2ve
-        </p>
-        <p>
-          Failed: false
-        </p>
-        <p>
-          Selected: true
-        </p>
-        <p>
-          Balance: 3
         </p>
       </li>
     </ul>
-    <button>
-      Scan
-    </button>
-  </div>
-</div>
-`;
-
-exports[`Use Ledger Scanner should render with scanRetry 1`] = `
-<div>
-  <div>
-    <ul />
     <button>
       Scan
     </button>
@@ -119,9 +80,6 @@ exports[`Use Ledger Scanner should render with toggleSelect 1`] = `
           Address: DJpFwW39QnQvQRQJF2MCfAoKvsX4DJ28jq
         </p>
         <p>
-          Failed: false
-        </p>
-        <p>
           Selected: false
         </p>
         <input
@@ -131,37 +89,16 @@ exports[`Use Ledger Scanner should render with toggleSelect 1`] = `
       </li>
       <li>
         <p>
-          Path: 44'/1'/2'/0/0
+          Path: m/44'/1'/0'/0/0
         </p>
         <p>
-          Address: DRgF3PvzeGWndQjET7dZsSmnrc6uAy23ES
-        </p>
-        <p>
-          Failed: false
+          Address: DQseW3VJ1db5xN5xZi4Qhn6AFWtcwSwzpG
         </p>
         <p>
           Selected: true
         </p>
         <input
           data-testid="input--1"
-          type="checkbox"
-        />
-      </li>
-      <li>
-        <p>
-          Path: 44'/1'/3'/0/0
-        </p>
-        <p>
-          Address: DSyG9hK9CE8eyfddUoEvsga4kNVQLdw2ve
-        </p>
-        <p>
-          Failed: false
-        </p>
-        <p>
-          Selected: true
-        </p>
-        <input
-          data-testid="input--2"
           type="checkbox"
         />
       </li>
@@ -178,9 +115,35 @@ exports[`Use Ledger Scanner should render with toggleSelect 1`] = `
 exports[`Use Ledger Scanner should render with toggleSelectAll 1`] = `
 <div>
   <div>
-    <ul />
+    <ul>
+      <li>
+        <p>
+          Path: 44'/1'/0'/0/0
+        </p>
+        <p>
+          Address: DJpFwW39QnQvQRQJF2MCfAoKvsX4DJ28jq
+        </p>
+        <p>
+          Selected: false
+        </p>
+      </li>
+      <li>
+        <p>
+          Path: m/44'/1'/0'/0/0
+        </p>
+        <p>
+          Address: DQseW3VJ1db5xN5xZi4Qhn6AFWtcwSwzpG
+        </p>
+        <p>
+          Selected: false
+        </p>
+      </li>
+    </ul>
     <button>
       Scan
+    </button>
+    <button>
+      Toggle All
     </button>
   </div>
 </div>

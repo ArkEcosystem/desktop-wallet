@@ -1,6 +1,7 @@
 import { Contracts } from "@arkecosystem/platform-sdk";
 import { Contracts as ProfileContracts } from "@arkecosystem/platform-sdk-profiles";
 import { upperFirst } from "@arkecosystem/utils";
+import Transport from "@ledgerhq/hw-transport";
 import { useLedgerContext } from "app/contexts";
 
 type SignFn = (input: any, options?: Contracts.TransactionOptions) => Promise<string>;
@@ -23,8 +24,11 @@ const prepareLedger = async (
 	wallet: ProfileContracts.IReadWriteWallet,
 	signFn: SignFn,
 	connectFn: ConnectFn,
+	transport: typeof Transport,
 ) => {
 	await connectFn(profile, wallet.coinId(), wallet.networkId());
+
+	await wallet.ledger().connect(transport);
 
 	const path = wallet.data().get<string>(ProfileContracts.WalletData.LedgerPath);
 	let senderPublicKey = wallet.publicKey();
@@ -63,7 +67,7 @@ const withAbortPromise = (signal?: AbortSignal, callback?: () => void) => <T>(pr
 	});
 
 export const useTransactionBuilder = (profile: ProfileContracts.IProfile) => {
-	const { connect, abortConnectionRetry } = useLedgerContext();
+	const { connect, abortConnectionRetry, transport } = useLedgerContext();
 
 	const build = async (
 		type: string,
@@ -87,7 +91,7 @@ export const useTransactionBuilder = (profile: ProfileContracts.IProfile) => {
 			data = await withAbortPromise(
 				options?.abortSignal,
 				abortConnectionRetry,
-			)(prepareLedger(profile, data, wallet, signFn, connect));
+			)(prepareLedger(profile, data, wallet, signFn, connect, transport));
 		}
 
 		const uuid = await signFn(data);

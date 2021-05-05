@@ -825,6 +825,7 @@ describe("SendVote", () => {
 	});
 
 	it("should send a vote transaction with a ledger wallet", async () => {
+		jest.spyOn(wallet.coin(), "__construct").mockImplementation();
 		const broadcastMock = jest.spyOn(wallet.transaction(), "broadcast").mockImplementation();
 		const getPublicKeySpy = jest
 			.spyOn(wallet.coin().ledger(), "getPublicKey")
