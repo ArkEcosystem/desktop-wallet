@@ -61,6 +61,7 @@ export const TransactionDetailModal = ({ isOpen, transactionItem, onClose }: Tra
 		case "legacyBridgechainRegistration":
 		case "legacyBridgechainResignation":
 		case "legacyBridgechainUpdate":
+		case "magistrate":
 			TransactionModal = LegacyMagistrateDetail;
 			break;
 
