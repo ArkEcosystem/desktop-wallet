@@ -56,7 +56,7 @@ export const PeerForm = ({ networks, peer, onSave, onValidateHost }: PeerFormPro
 		() =>
 			networks.map((network) => ({
 				value: network.id(),
-				label: network.name(),
+				label: `${network.coin()} ${network.name()}`,
 			})),
 		[networks],
 	);

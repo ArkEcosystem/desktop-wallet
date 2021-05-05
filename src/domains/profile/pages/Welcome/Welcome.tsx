@@ -70,13 +70,15 @@ export const Welcome = () => {
 	const handleRequestedAction = (profile: Contracts.IProfile, action: any, password?: string) => {
 		closeSignInModal();
 
+		if (password) {
+			profile.password().set(password);
+		}
+
 		switch (action?.value) {
 			case "home":
-				restoreProfile(profile, password);
 				navigateToProfile(profile);
 				break;
 			case "setting":
-				restoreProfile(profile, password);
 				navigateToProfile(profile, "settings");
 				break;
 			case "delete":

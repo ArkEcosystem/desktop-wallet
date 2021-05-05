@@ -13,7 +13,7 @@ const prepareMultiSignature = (
 	...input,
 	nonce: wallet.nonce().plus(1).toFixed(),
 	sign: {
-		multiSignature: wallet.multiSignature(),
+		multiSignature: wallet.multiSignature().all(),
 	},
 });
 

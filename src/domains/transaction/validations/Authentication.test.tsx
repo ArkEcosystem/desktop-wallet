@@ -14,12 +14,29 @@ describe("Authentication", () => {
 
 		translationMock = jest.fn((i18nString: string) => i18nString);
 
-		wallet = await env.profiles().first().wallets().importByMnemonic("test", "ARK", "ark.devnet");
-		walletWithPassword = await env
-			.profiles()
-			.first()
-			.wallets()
-			.importByMnemonicWithEncryption("test2", "ARK", "ark.devnet", "password");
+		const profile = env.profiles().first();
+		await env.profiles().restore(profile);
+		await profile.sync();
+
+		wallet = await profile.walletFactory().fromMnemonic({
+			mnemonic: "test",
+			coin: "ARK",
+			network: "ark.devnet",
+		});
+
+		walletWithPassword = await profile.walletFactory().fromMnemonicWithEncryption({
+			mnemonic: "test2",
+
+			coin: "ARK",
+			network: "ark.devnet",
+			password: "password",
+		});
+
+		env.profiles().first().wallets().push(wallet);
+		env.profiles().first().wallets().push(walletWithPassword);
+
+		await wallet.synchroniser().identity();
+		await walletWithPassword.synchroniser().identity();
 	});
 
 	afterAll(() => {
@@ -46,7 +63,7 @@ describe("Authentication", () => {
 
 	it("should validate encryption password", () => {
 		const wif = "SCoAuLqLrD6rfSBVhgcLqbdLKz2Gum2j4JR7pvLyiKaK9oiUfobg";
-		const walletWifMock = jest.spyOn(walletWithPassword, "wif").mockResolvedValue(wif);
+		const walletWifMock = jest.spyOn(walletWithPassword.wif(), "get").mockResolvedValue(wif);
 
 		const encryptionPassword = authentication(translationMock).encryptionPassword(walletWithPassword);
 		expect(encryptionPassword.validate("password")).resolves.toBe(true);
@@ -57,7 +74,7 @@ describe("Authentication", () => {
 
 	it("should fail validation for encryption password", () => {
 		const walletWifMock = jest
-			.spyOn(walletWithPassword, "wif")
+			.spyOn(walletWithPassword.wif(), "get")
 			.mockImplementation(() => Promise.reject(new Error("failed")));
 
 		const fromWifMock = jest

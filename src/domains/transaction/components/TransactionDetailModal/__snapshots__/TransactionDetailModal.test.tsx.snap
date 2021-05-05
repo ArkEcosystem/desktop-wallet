@@ -19,7 +19,7 @@ exports[`TransactionDetailModal should render a delegate registration modal 1`] 
         class="absolute top-0 right-0 z-50 mt-5 mr-5 rounded transition-all duration-100 ease-linear bg-theme-primary-100 hover:bg-theme-primary-300 dark:bg-theme-secondary-800 dark:text-theme-secondary-600 dark:hover:bg-theme-secondary-700 dark:hover:text-theme-secondary-400"
       >
         <button
-          class="OriginalButton__StyledButton-sc-1y2wptt-0 lpqSIM w-11 h-11"
+          class="OriginalButton__StyledButton-sc-1y2wptt-0 fNHPRi w-11 h-11"
           data-testid="modal__close-btn"
           type="button"
         >
@@ -233,26 +233,27 @@ exports[`TransactionDetailModal should render a delegate registration modal 1`] 
                   class="flex items-center space-x-3"
                 >
                   <a
-                    class="Link__AnchorStyled-sc-1q7sbxr-0 kAtXNw pointer-events-none no-underline inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary-600 hover:text-theme-primary-700 hover:underline active:text-theme-primary-500"
+                    class="Link__AnchorStyled-sc-1q7sbxr-0 bMatQy group"
                     data-testid="Link"
+                    href="#"
                     rel="noopener noreferrer"
                     to="https://explorer.ark.io/transaction/ee4175091d9f4dacf5fed213711c3e0e4cc371e37afa7bce0429d09bcf3ecefe"
                   >
                     <span
-                      class="group"
+                      class="break-all border-b border-transparent transition-colors duration-200 border-current border-dotted group-hover:border-transparent"
                     >
                       <span
-                        class="no-underline break-all pointer-events-auto border-b group-hover:border-0 active:border-0 border-dotted"
+                        class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-primary-700"
+                        data-testid="TruncateMiddle"
                       >
-                        <span
-                          class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-primary-700"
-                          data-testid="TruncateMiddle"
-                        >
-                          ee4175091d9f4dacf5fed213711c3e0e4cc371e37afa7bce0429d09bcf3ecefe
-                        </span>
+                        ee4175091d9f4dacf5fed213711c3e0e4cc371e37afa7bce0429d09bcf3ecefe
                       </span>
+                    </span>
+                    <span
+                      class="align-middle"
+                    >
                       <div
-                        class="sc-bdfBwQ fPrsah flex-shrink-0 pointer-events-auto inline-block pl-2 text-sm"
+                        class="sc-bdfBwQ fPrsah flex-shrink-0 inline-block pb-px text-sm"
                         data-testid="Link__external"
                         height="1em"
                         width="1em"
@@ -304,26 +305,27 @@ exports[`TransactionDetailModal should render a delegate registration modal 1`] 
                   class="flex items-center space-x-3"
                 >
                   <a
-                    class="Link__AnchorStyled-sc-1q7sbxr-0 kAtXNw pointer-events-none no-underline inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary-600 hover:text-theme-primary-700 hover:underline active:text-theme-primary-500"
+                    class="Link__AnchorStyled-sc-1q7sbxr-0 bMatQy group"
                     data-testid="Link"
+                    href="#"
                     rel="noopener noreferrer"
                     to="https://explorer.ark.io/blocks/71fd1a494ded5430586f4dd1c79c3ac77bf38120e868c8f8980972b8075d67e9"
                   >
                     <span
-                      class="group"
+                      class="break-all border-b border-transparent transition-colors duration-200 border-current border-dotted group-hover:border-transparent"
                     >
                       <span
-                        class="no-underline break-all pointer-events-auto border-b group-hover:border-0 active:border-0 border-dotted"
+                        class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-primary-700"
+                        data-testid="TruncateMiddle"
                       >
-                        <span
-                          class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-primary-700"
-                          data-testid="TruncateMiddle"
-                        >
-                          as32d1as65d1as3d1as32d1asd51as3d21as3d2as165das
-                        </span>
+                        as32d1as65d1as3d1as32d1asd51as3d21as3d2as165das
                       </span>
+                    </span>
+                    <span
+                      class="align-middle"
+                    >
                       <div
-                        class="sc-bdfBwQ fPrsah flex-shrink-0 pointer-events-auto inline-block pl-2 text-sm"
+                        class="sc-bdfBwQ fPrsah flex-shrink-0 inline-block pb-px text-sm"
                         data-testid="Link__external"
                         height="1em"
                         width="1em"
@@ -381,7 +383,7 @@ exports[`TransactionDetailModal should render a delegate resignation modal 1`] =
         class="absolute top-0 right-0 z-50 mt-5 mr-5 rounded transition-all duration-100 ease-linear bg-theme-primary-100 hover:bg-theme-primary-300 dark:bg-theme-secondary-800 dark:text-theme-secondary-600 dark:hover:bg-theme-secondary-700 dark:hover:text-theme-secondary-400"
       >
         <button
-          class="OriginalButton__StyledButton-sc-1y2wptt-0 lpqSIM w-11 h-11"
+          class="OriginalButton__StyledButton-sc-1y2wptt-0 fNHPRi w-11 h-11"
           data-testid="modal__close-btn"
           type="button"
         >
@@ -595,26 +597,27 @@ exports[`TransactionDetailModal should render a delegate resignation modal 1`] =
                   class="flex items-center space-x-3"
                 >
                   <a
-                    class="Link__AnchorStyled-sc-1q7sbxr-0 kAtXNw pointer-events-none no-underline inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary-600 hover:text-theme-primary-700 hover:underline active:text-theme-primary-500"
+                    class="Link__AnchorStyled-sc-1q7sbxr-0 bMatQy group"
                     data-testid="Link"
+                    href="#"
                     rel="noopener noreferrer"
                     to="https://explorer.ark.io/transaction/ee4175091d9f4dacf5fed213711c3e0e4cc371e37afa7bce0429d09bcf3ecefe"
                   >
                     <span
-                      class="group"
+                      class="break-all border-b border-transparent transition-colors duration-200 border-current border-dotted group-hover:border-transparent"
                     >
                       <span
-                        class="no-underline break-all pointer-events-auto border-b group-hover:border-0 active:border-0 border-dotted"
+                        class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-primary-700"
+                        data-testid="TruncateMiddle"
                       >
-                        <span
-                          class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-primary-700"
-                          data-testid="TruncateMiddle"
-                        >
-                          ee4175091d9f4dacf5fed213711c3e0e4cc371e37afa7bce0429d09bcf3ecefe
-                        </span>
+                        ee4175091d9f4dacf5fed213711c3e0e4cc371e37afa7bce0429d09bcf3ecefe
                       </span>
+                    </span>
+                    <span
+                      class="align-middle"
+                    >
                       <div
-                        class="sc-bdfBwQ fPrsah flex-shrink-0 pointer-events-auto inline-block pl-2 text-sm"
+                        class="sc-bdfBwQ fPrsah flex-shrink-0 inline-block pb-px text-sm"
                         data-testid="Link__external"
                         height="1em"
                         width="1em"
@@ -666,26 +669,27 @@ exports[`TransactionDetailModal should render a delegate resignation modal 1`] =
                   class="flex items-center space-x-3"
                 >
                   <a
-                    class="Link__AnchorStyled-sc-1q7sbxr-0 kAtXNw pointer-events-none no-underline inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary-600 hover:text-theme-primary-700 hover:underline active:text-theme-primary-500"
+                    class="Link__AnchorStyled-sc-1q7sbxr-0 bMatQy group"
                     data-testid="Link"
+                    href="#"
                     rel="noopener noreferrer"
                     to="https://explorer.ark.io/blocks/71fd1a494ded5430586f4dd1c79c3ac77bf38120e868c8f8980972b8075d67e9"
                   >
                     <span
-                      class="group"
+                      class="break-all border-b border-transparent transition-colors duration-200 border-current border-dotted group-hover:border-transparent"
                     >
                       <span
-                        class="no-underline break-all pointer-events-auto border-b group-hover:border-0 active:border-0 border-dotted"
+                        class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-primary-700"
+                        data-testid="TruncateMiddle"
                       >
-                        <span
-                          class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-primary-700"
-                          data-testid="TruncateMiddle"
-                        >
-                          as32d1as65d1as3d1as32d1asd51as3d21as3d2as165das
-                        </span>
+                        as32d1as65d1as3d1as32d1asd51as3d21as3d2as165das
                       </span>
+                    </span>
+                    <span
+                      class="align-middle"
+                    >
                       <div
-                        class="sc-bdfBwQ fPrsah flex-shrink-0 pointer-events-auto inline-block pl-2 text-sm"
+                        class="sc-bdfBwQ fPrsah flex-shrink-0 inline-block pb-px text-sm"
                         data-testid="Link__external"
                         height="1em"
                         width="1em"
@@ -743,7 +747,7 @@ exports[`TransactionDetailModal should render a entity modal 1`] = `
         class="absolute top-0 right-0 z-50 mt-5 mr-5 rounded transition-all duration-100 ease-linear bg-theme-primary-100 hover:bg-theme-primary-300 dark:bg-theme-secondary-800 dark:text-theme-secondary-600 dark:hover:bg-theme-secondary-700 dark:hover:text-theme-secondary-400"
       >
         <button
-          class="OriginalButton__StyledButton-sc-1y2wptt-0 lpqSIM w-11 h-11"
+          class="OriginalButton__StyledButton-sc-1y2wptt-0 fNHPRi w-11 h-11"
           data-testid="modal__close-btn"
           type="button"
         >
@@ -938,26 +942,27 @@ exports[`TransactionDetailModal should render a entity modal 1`] = `
                   class="flex items-center space-x-3"
                 >
                   <a
-                    class="Link__AnchorStyled-sc-1q7sbxr-0 kAtXNw pointer-events-none no-underline inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary-600 hover:text-theme-primary-700 hover:underline active:text-theme-primary-500"
+                    class="Link__AnchorStyled-sc-1q7sbxr-0 bMatQy group"
                     data-testid="Link"
+                    href="#"
                     rel="noopener noreferrer"
                     to="https://explorer.ark.io/transaction/ee4175091d9f4dacf5fed213711c3e0e4cc371e37afa7bce0429d09bcf3ecefe"
                   >
                     <span
-                      class="group"
+                      class="break-all border-b border-transparent transition-colors duration-200 border-current border-dotted group-hover:border-transparent"
                     >
                       <span
-                        class="no-underline break-all pointer-events-auto border-b group-hover:border-0 active:border-0 border-dotted"
+                        class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-primary-700"
+                        data-testid="TruncateMiddle"
                       >
-                        <span
-                          class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-primary-700"
-                          data-testid="TruncateMiddle"
-                        >
-                          ee4175091d9f4dacf5fed213711c3e0e4cc371e37afa7bce0429d09bcf3ecefe
-                        </span>
+                        ee4175091d9f4dacf5fed213711c3e0e4cc371e37afa7bce0429d09bcf3ecefe
                       </span>
+                    </span>
+                    <span
+                      class="align-middle"
+                    >
                       <div
-                        class="sc-bdfBwQ fPrsah flex-shrink-0 pointer-events-auto inline-block pl-2 text-sm"
+                        class="sc-bdfBwQ fPrsah flex-shrink-0 inline-block pb-px text-sm"
                         data-testid="Link__external"
                         height="1em"
                         width="1em"
@@ -1009,26 +1014,27 @@ exports[`TransactionDetailModal should render a entity modal 1`] = `
                   class="flex items-center space-x-3"
                 >
                   <a
-                    class="Link__AnchorStyled-sc-1q7sbxr-0 kAtXNw pointer-events-none no-underline inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary-600 hover:text-theme-primary-700 hover:underline active:text-theme-primary-500"
+                    class="Link__AnchorStyled-sc-1q7sbxr-0 bMatQy group"
                     data-testid="Link"
+                    href="#"
                     rel="noopener noreferrer"
                     to="https://explorer.ark.io/blocks/71fd1a494ded5430586f4dd1c79c3ac77bf38120e868c8f8980972b8075d67e9"
                   >
                     <span
-                      class="group"
+                      class="break-all border-b border-transparent transition-colors duration-200 border-current border-dotted group-hover:border-transparent"
                     >
                       <span
-                        class="no-underline break-all pointer-events-auto border-b group-hover:border-0 active:border-0 border-dotted"
+                        class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-primary-700"
+                        data-testid="TruncateMiddle"
                       >
-                        <span
-                          class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-primary-700"
-                          data-testid="TruncateMiddle"
-                        >
-                          as32d1as65d1as3d1as32d1asd51as3d21as3d2as165das
-                        </span>
+                        as32d1as65d1as3d1as32d1asd51as3d21as3d2as165das
                       </span>
+                    </span>
+                    <span
+                      class="align-middle"
+                    >
                       <div
-                        class="sc-bdfBwQ fPrsah flex-shrink-0 pointer-events-auto inline-block pl-2 text-sm"
+                        class="sc-bdfBwQ fPrsah flex-shrink-0 inline-block pb-px text-sm"
                         data-testid="Link__external"
                         height="1em"
                         width="1em"
@@ -1086,7 +1092,7 @@ exports[`TransactionDetailModal should render a ipfs modal 1`] = `
         class="absolute top-0 right-0 z-50 mt-5 mr-5 rounded transition-all duration-100 ease-linear bg-theme-primary-100 hover:bg-theme-primary-300 dark:bg-theme-secondary-800 dark:text-theme-secondary-600 dark:hover:bg-theme-secondary-700 dark:hover:text-theme-secondary-400"
       >
         <button
-          class="OriginalButton__StyledButton-sc-1y2wptt-0 lpqSIM w-11 h-11"
+          class="OriginalButton__StyledButton-sc-1y2wptt-0 fNHPRi w-11 h-11"
           data-testid="modal__close-btn"
           type="button"
         >
@@ -1313,26 +1319,27 @@ exports[`TransactionDetailModal should render a ipfs modal 1`] = `
                   class="flex items-center space-x-3"
                 >
                   <a
-                    class="Link__AnchorStyled-sc-1q7sbxr-0 kAtXNw pointer-events-none no-underline inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary-600 hover:text-theme-primary-700 hover:underline active:text-theme-primary-500"
+                    class="Link__AnchorStyled-sc-1q7sbxr-0 bMatQy group"
                     data-testid="Link"
+                    href="#"
                     rel="noopener noreferrer"
                     to="https://explorer.ark.io/transaction/ee4175091d9f4dacf5fed213711c3e0e4cc371e37afa7bce0429d09bcf3ecefe"
                   >
                     <span
-                      class="group"
+                      class="break-all border-b border-transparent transition-colors duration-200 border-current border-dotted group-hover:border-transparent"
                     >
                       <span
-                        class="no-underline break-all pointer-events-auto border-b group-hover:border-0 active:border-0 border-dotted"
+                        class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-primary-700"
+                        data-testid="TruncateMiddle"
                       >
-                        <span
-                          class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-primary-700"
-                          data-testid="TruncateMiddle"
-                        >
-                          ee4175091d9f4dacf5fed213711c3e0e4cc371e37afa7bce0429d09bcf3ecefe
-                        </span>
+                        ee4175091d9f4dacf5fed213711c3e0e4cc371e37afa7bce0429d09bcf3ecefe
                       </span>
+                    </span>
+                    <span
+                      class="align-middle"
+                    >
                       <div
-                        class="sc-bdfBwQ fPrsah flex-shrink-0 pointer-events-auto inline-block pl-2 text-sm"
+                        class="sc-bdfBwQ fPrsah flex-shrink-0 inline-block pb-px text-sm"
                         data-testid="Link__external"
                         height="1em"
                         width="1em"
@@ -1384,26 +1391,27 @@ exports[`TransactionDetailModal should render a ipfs modal 1`] = `
                   class="flex items-center space-x-3"
                 >
                   <a
-                    class="Link__AnchorStyled-sc-1q7sbxr-0 kAtXNw pointer-events-none no-underline inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary-600 hover:text-theme-primary-700 hover:underline active:text-theme-primary-500"
+                    class="Link__AnchorStyled-sc-1q7sbxr-0 bMatQy group"
                     data-testid="Link"
+                    href="#"
                     rel="noopener noreferrer"
                     to="https://explorer.ark.io/blocks/71fd1a494ded5430586f4dd1c79c3ac77bf38120e868c8f8980972b8075d67e9"
                   >
                     <span
-                      class="group"
+                      class="break-all border-b border-transparent transition-colors duration-200 border-current border-dotted group-hover:border-transparent"
                     >
                       <span
-                        class="no-underline break-all pointer-events-auto border-b group-hover:border-0 active:border-0 border-dotted"
+                        class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-primary-700"
+                        data-testid="TruncateMiddle"
                       >
-                        <span
-                          class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-primary-700"
-                          data-testid="TruncateMiddle"
-                        >
-                          71fd1a494ded5430586f4dd1c79c3ac77bf38120e868c8f8980972b8075d67e9
-                        </span>
+                        71fd1a494ded5430586f4dd1c79c3ac77bf38120e868c8f8980972b8075d67e9
                       </span>
+                    </span>
+                    <span
+                      class="align-middle"
+                    >
                       <div
-                        class="sc-bdfBwQ fPrsah flex-shrink-0 pointer-events-auto inline-block pl-2 text-sm"
+                        class="sc-bdfBwQ fPrsah flex-shrink-0 inline-block pb-px text-sm"
                         data-testid="Link__external"
                         height="1em"
                         width="1em"
@@ -1461,7 +1469,7 @@ exports[`TransactionDetailModal should render a legacy magistrate modal 1`] = `
         class="absolute top-0 right-0 z-50 mt-5 mr-5 rounded transition-all duration-100 ease-linear bg-theme-primary-100 hover:bg-theme-primary-300 dark:bg-theme-secondary-800 dark:text-theme-secondary-600 dark:hover:bg-theme-secondary-700 dark:hover:text-theme-secondary-400"
       >
         <button
-          class="OriginalButton__StyledButton-sc-1y2wptt-0 lpqSIM w-11 h-11"
+          class="OriginalButton__StyledButton-sc-1y2wptt-0 fNHPRi w-11 h-11"
           data-testid="modal__close-btn"
           type="button"
         >
@@ -1656,26 +1664,27 @@ exports[`TransactionDetailModal should render a legacy magistrate modal 1`] = `
                   class="flex items-center space-x-3"
                 >
                   <a
-                    class="Link__AnchorStyled-sc-1q7sbxr-0 kAtXNw pointer-events-none no-underline inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary-600 hover:text-theme-primary-700 hover:underline active:text-theme-primary-500"
+                    class="Link__AnchorStyled-sc-1q7sbxr-0 bMatQy group"
                     data-testid="Link"
+                    href="#"
                     rel="noopener noreferrer"
                     to="https://explorer.ark.io/transaction/ee4175091d9f4dacf5fed213711c3e0e4cc371e37afa7bce0429d09bcf3ecefe"
                   >
                     <span
-                      class="group"
+                      class="break-all border-b border-transparent transition-colors duration-200 border-current border-dotted group-hover:border-transparent"
                     >
                       <span
-                        class="no-underline break-all pointer-events-auto border-b group-hover:border-0 active:border-0 border-dotted"
+                        class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-primary-700"
+                        data-testid="TruncateMiddle"
                       >
-                        <span
-                          class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-primary-700"
-                          data-testid="TruncateMiddle"
-                        >
-                          ee4175091d9f4dacf5fed213711c3e0e4cc371e37afa7bce0429d09bcf3ecefe
-                        </span>
+                        ee4175091d9f4dacf5fed213711c3e0e4cc371e37afa7bce0429d09bcf3ecefe
                       </span>
+                    </span>
+                    <span
+                      class="align-middle"
+                    >
                       <div
-                        class="sc-bdfBwQ fPrsah flex-shrink-0 pointer-events-auto inline-block pl-2 text-sm"
+                        class="sc-bdfBwQ fPrsah flex-shrink-0 inline-block pb-px text-sm"
                         data-testid="Link__external"
                         height="1em"
                         width="1em"
@@ -1727,26 +1736,27 @@ exports[`TransactionDetailModal should render a legacy magistrate modal 1`] = `
                   class="flex items-center space-x-3"
                 >
                   <a
-                    class="Link__AnchorStyled-sc-1q7sbxr-0 kAtXNw pointer-events-none no-underline inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary-600 hover:text-theme-primary-700 hover:underline active:text-theme-primary-500"
+                    class="Link__AnchorStyled-sc-1q7sbxr-0 bMatQy group"
                     data-testid="Link"
+                    href="#"
                     rel="noopener noreferrer"
                     to="https://explorer.ark.io/blocks/71fd1a494ded5430586f4dd1c79c3ac77bf38120e868c8f8980972b8075d67e9"
                   >
                     <span
-                      class="group"
+                      class="break-all border-b border-transparent transition-colors duration-200 border-current border-dotted group-hover:border-transparent"
                     >
                       <span
-                        class="no-underline break-all pointer-events-auto border-b group-hover:border-0 active:border-0 border-dotted"
+                        class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-primary-700"
+                        data-testid="TruncateMiddle"
                       >
-                        <span
-                          class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-primary-700"
-                          data-testid="TruncateMiddle"
-                        >
-                          as32d1as65d1as3d1as32d1asd51as3d21as3d2as165das
-                        </span>
+                        as32d1as65d1as3d1as32d1asd51as3d21as3d2as165das
                       </span>
+                    </span>
+                    <span
+                      class="align-middle"
+                    >
                       <div
-                        class="sc-bdfBwQ fPrsah flex-shrink-0 pointer-events-auto inline-block pl-2 text-sm"
+                        class="sc-bdfBwQ fPrsah flex-shrink-0 inline-block pb-px text-sm"
                         data-testid="Link__external"
                         height="1em"
                         width="1em"
@@ -1804,7 +1814,7 @@ exports[`TransactionDetailModal should render a multi payment modal 1`] = `
         class="absolute top-0 right-0 z-50 mt-5 mr-5 rounded transition-all duration-100 ease-linear bg-theme-primary-100 hover:bg-theme-primary-300 dark:bg-theme-secondary-800 dark:text-theme-secondary-600 dark:hover:bg-theme-secondary-700 dark:hover:text-theme-secondary-400"
       >
         <button
-          class="OriginalButton__StyledButton-sc-1y2wptt-0 lpqSIM w-11 h-11"
+          class="OriginalButton__StyledButton-sc-1y2wptt-0 fNHPRi w-11 h-11"
           data-testid="modal__close-btn"
           type="button"
         >
@@ -2082,26 +2092,27 @@ exports[`TransactionDetailModal should render a multi payment modal 1`] = `
                   class="flex items-center space-x-3"
                 >
                   <a
-                    class="Link__AnchorStyled-sc-1q7sbxr-0 kAtXNw pointer-events-none no-underline inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary-600 hover:text-theme-primary-700 hover:underline active:text-theme-primary-500"
+                    class="Link__AnchorStyled-sc-1q7sbxr-0 bMatQy group"
                     data-testid="Link"
+                    href="#"
                     rel="noopener noreferrer"
                     to="https://explorer.ark.io/transaction/ee4175091d9f4dacf5fed213711c3e0e4cc371e37afa7bce0429d09bcf3ecefe"
                   >
                     <span
-                      class="group"
+                      class="break-all border-b border-transparent transition-colors duration-200 border-current border-dotted group-hover:border-transparent"
                     >
                       <span
-                        class="no-underline break-all pointer-events-auto border-b group-hover:border-0 active:border-0 border-dotted"
+                        class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-primary-700"
+                        data-testid="TruncateMiddle"
                       >
-                        <span
-                          class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-primary-700"
-                          data-testid="TruncateMiddle"
-                        >
-                          ee4175091d9f4dacf5fed213711c3e0e4cc371e37afa7bce0429d09bcf3ecefe
-                        </span>
+                        ee4175091d9f4dacf5fed213711c3e0e4cc371e37afa7bce0429d09bcf3ecefe
                       </span>
+                    </span>
+                    <span
+                      class="align-middle"
+                    >
                       <div
-                        class="sc-bdfBwQ fPrsah flex-shrink-0 pointer-events-auto inline-block pl-2 text-sm"
+                        class="sc-bdfBwQ fPrsah flex-shrink-0 inline-block pb-px text-sm"
                         data-testid="Link__external"
                         height="1em"
                         width="1em"
@@ -2153,26 +2164,27 @@ exports[`TransactionDetailModal should render a multi payment modal 1`] = `
                   class="flex items-center space-x-3"
                 >
                   <a
-                    class="Link__AnchorStyled-sc-1q7sbxr-0 kAtXNw pointer-events-none no-underline inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary-600 hover:text-theme-primary-700 hover:underline active:text-theme-primary-500"
+                    class="Link__AnchorStyled-sc-1q7sbxr-0 bMatQy group"
                     data-testid="Link"
+                    href="#"
                     rel="noopener noreferrer"
                     to="https://explorer.ark.io/blocks/71fd1a494ded5430586f4dd1c79c3ac77bf38120e868c8f8980972b8075d67e9"
                   >
                     <span
-                      class="group"
+                      class="break-all border-b border-transparent transition-colors duration-200 border-current border-dotted group-hover:border-transparent"
                     >
                       <span
-                        class="no-underline break-all pointer-events-auto border-b group-hover:border-0 active:border-0 border-dotted"
+                        class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-primary-700"
+                        data-testid="TruncateMiddle"
                       >
-                        <span
-                          class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-primary-700"
-                          data-testid="TruncateMiddle"
-                        >
-                          as32d1as65d1as3d1as32d1asd51as3d21as3d2as165das
-                        </span>
+                        as32d1as65d1as3d1as32d1asd51as3d21as3d2as165das
                       </span>
+                    </span>
+                    <span
+                      class="align-middle"
+                    >
                       <div
-                        class="sc-bdfBwQ fPrsah flex-shrink-0 pointer-events-auto inline-block pl-2 text-sm"
+                        class="sc-bdfBwQ fPrsah flex-shrink-0 inline-block pb-px text-sm"
                         data-testid="Link__external"
                         height="1em"
                         width="1em"
@@ -2230,7 +2242,7 @@ exports[`TransactionDetailModal should render a multi signature modal 1`] = `
         class="absolute top-0 right-0 z-50 mt-5 mr-5 rounded transition-all duration-100 ease-linear bg-theme-primary-100 hover:bg-theme-primary-300 dark:bg-theme-secondary-800 dark:text-theme-secondary-600 dark:hover:bg-theme-secondary-700 dark:hover:text-theme-secondary-400"
       >
         <button
-          class="OriginalButton__StyledButton-sc-1y2wptt-0 lpqSIM w-11 h-11"
+          class="OriginalButton__StyledButton-sc-1y2wptt-0 fNHPRi w-11 h-11"
           data-testid="modal__close-btn"
           type="button"
         >
@@ -2492,26 +2504,27 @@ exports[`TransactionDetailModal should render a multi signature modal 1`] = `
                   class="flex items-center space-x-3"
                 >
                   <a
-                    class="Link__AnchorStyled-sc-1q7sbxr-0 kAtXNw pointer-events-none no-underline inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary-600 hover:text-theme-primary-700 hover:underline active:text-theme-primary-500"
+                    class="Link__AnchorStyled-sc-1q7sbxr-0 bMatQy group"
                     data-testid="Link"
+                    href="#"
                     rel="noopener noreferrer"
                     to="https://explorer.ark.io/transaction/ee4175091d9f4dacf5fed213711c3e0e4cc371e37afa7bce0429d09bcf3ecefe"
                   >
                     <span
-                      class="group"
+                      class="break-all border-b border-transparent transition-colors duration-200 border-current border-dotted group-hover:border-transparent"
                     >
                       <span
-                        class="no-underline break-all pointer-events-auto border-b group-hover:border-0 active:border-0 border-dotted"
+                        class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-primary-700"
+                        data-testid="TruncateMiddle"
                       >
-                        <span
-                          class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-primary-700"
-                          data-testid="TruncateMiddle"
-                        >
-                          ee4175091d9f4dacf5fed213711c3e0e4cc371e37afa7bce0429d09bcf3ecefe
-                        </span>
+                        ee4175091d9f4dacf5fed213711c3e0e4cc371e37afa7bce0429d09bcf3ecefe
                       </span>
+                    </span>
+                    <span
+                      class="align-middle"
+                    >
                       <div
-                        class="sc-bdfBwQ fPrsah flex-shrink-0 pointer-events-auto inline-block pl-2 text-sm"
+                        class="sc-bdfBwQ fPrsah flex-shrink-0 inline-block pb-px text-sm"
                         data-testid="Link__external"
                         height="1em"
                         width="1em"
@@ -2563,26 +2576,27 @@ exports[`TransactionDetailModal should render a multi signature modal 1`] = `
                   class="flex items-center space-x-3"
                 >
                   <a
-                    class="Link__AnchorStyled-sc-1q7sbxr-0 kAtXNw pointer-events-none no-underline inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary-600 hover:text-theme-primary-700 hover:underline active:text-theme-primary-500"
+                    class="Link__AnchorStyled-sc-1q7sbxr-0 bMatQy group"
                     data-testid="Link"
+                    href="#"
                     rel="noopener noreferrer"
                     to="https://explorer.ark.io/blocks/71fd1a494ded5430586f4dd1c79c3ac77bf38120e868c8f8980972b8075d67e9"
                   >
                     <span
-                      class="group"
+                      class="break-all border-b border-transparent transition-colors duration-200 border-current border-dotted group-hover:border-transparent"
                     >
                       <span
-                        class="no-underline break-all pointer-events-auto border-b group-hover:border-0 active:border-0 border-dotted"
+                        class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-primary-700"
+                        data-testid="TruncateMiddle"
                       >
-                        <span
-                          class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-primary-700"
-                          data-testid="TruncateMiddle"
-                        >
-                          as32d1as65d1as3d1as32d1asd51as3d21as3d2as165das
-                        </span>
+                        as32d1as65d1as3d1as32d1asd51as3d21as3d2as165das
                       </span>
+                    </span>
+                    <span
+                      class="align-middle"
+                    >
                       <div
-                        class="sc-bdfBwQ fPrsah flex-shrink-0 pointer-events-auto inline-block pl-2 text-sm"
+                        class="sc-bdfBwQ fPrsah flex-shrink-0 inline-block pb-px text-sm"
                         data-testid="Link__external"
                         height="1em"
                         width="1em"
@@ -2640,7 +2654,7 @@ exports[`TransactionDetailModal should render a second signature modal 1`] = `
         class="absolute top-0 right-0 z-50 mt-5 mr-5 rounded transition-all duration-100 ease-linear bg-theme-primary-100 hover:bg-theme-primary-300 dark:bg-theme-secondary-800 dark:text-theme-secondary-600 dark:hover:bg-theme-secondary-700 dark:hover:text-theme-secondary-400"
       >
         <button
-          class="OriginalButton__StyledButton-sc-1y2wptt-0 lpqSIM w-11 h-11"
+          class="OriginalButton__StyledButton-sc-1y2wptt-0 fNHPRi w-11 h-11"
           data-testid="modal__close-btn"
           type="button"
         >
@@ -2835,26 +2849,27 @@ exports[`TransactionDetailModal should render a second signature modal 1`] = `
                   class="flex items-center space-x-3"
                 >
                   <a
-                    class="Link__AnchorStyled-sc-1q7sbxr-0 kAtXNw pointer-events-none no-underline inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary-600 hover:text-theme-primary-700 hover:underline active:text-theme-primary-500"
+                    class="Link__AnchorStyled-sc-1q7sbxr-0 bMatQy group"
                     data-testid="Link"
+                    href="#"
                     rel="noopener noreferrer"
                     to="https://explorer.ark.io/transaction/ee4175091d9f4dacf5fed213711c3e0e4cc371e37afa7bce0429d09bcf3ecefe"
                   >
                     <span
-                      class="group"
+                      class="break-all border-b border-transparent transition-colors duration-200 border-current border-dotted group-hover:border-transparent"
                     >
                       <span
-                        class="no-underline break-all pointer-events-auto border-b group-hover:border-0 active:border-0 border-dotted"
+                        class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-primary-700"
+                        data-testid="TruncateMiddle"
                       >
-                        <span
-                          class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-primary-700"
-                          data-testid="TruncateMiddle"
-                        >
-                          ee4175091d9f4dacf5fed213711c3e0e4cc371e37afa7bce0429d09bcf3ecefe
-                        </span>
+                        ee4175091d9f4dacf5fed213711c3e0e4cc371e37afa7bce0429d09bcf3ecefe
                       </span>
+                    </span>
+                    <span
+                      class="align-middle"
+                    >
                       <div
-                        class="sc-bdfBwQ fPrsah flex-shrink-0 pointer-events-auto inline-block pl-2 text-sm"
+                        class="sc-bdfBwQ fPrsah flex-shrink-0 inline-block pb-px text-sm"
                         data-testid="Link__external"
                         height="1em"
                         width="1em"
@@ -2906,26 +2921,27 @@ exports[`TransactionDetailModal should render a second signature modal 1`] = `
                   class="flex items-center space-x-3"
                 >
                   <a
-                    class="Link__AnchorStyled-sc-1q7sbxr-0 kAtXNw pointer-events-none no-underline inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary-600 hover:text-theme-primary-700 hover:underline active:text-theme-primary-500"
+                    class="Link__AnchorStyled-sc-1q7sbxr-0 bMatQy group"
                     data-testid="Link"
+                    href="#"
                     rel="noopener noreferrer"
                     to="https://explorer.ark.io/blocks/71fd1a494ded5430586f4dd1c79c3ac77bf38120e868c8f8980972b8075d67e9"
                   >
                     <span
-                      class="group"
+                      class="break-all border-b border-transparent transition-colors duration-200 border-current border-dotted group-hover:border-transparent"
                     >
                       <span
-                        class="no-underline break-all pointer-events-auto border-b group-hover:border-0 active:border-0 border-dotted"
+                        class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-primary-700"
+                        data-testid="TruncateMiddle"
                       >
-                        <span
-                          class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-primary-700"
-                          data-testid="TruncateMiddle"
-                        >
-                          as32d1as65d1as3d1as32d1asd51as3d21as3d2as165das
-                        </span>
+                        as32d1as65d1as3d1as32d1asd51as3d21as3d2as165das
                       </span>
+                    </span>
+                    <span
+                      class="align-middle"
+                    >
                       <div
-                        class="sc-bdfBwQ fPrsah flex-shrink-0 pointer-events-auto inline-block pl-2 text-sm"
+                        class="sc-bdfBwQ fPrsah flex-shrink-0 inline-block pb-px text-sm"
                         data-testid="Link__external"
                         height="1em"
                         width="1em"
@@ -2983,7 +2999,7 @@ exports[`TransactionDetailModal should render a transfer modal 1`] = `
         class="absolute top-0 right-0 z-50 mt-5 mr-5 rounded transition-all duration-100 ease-linear bg-theme-primary-100 hover:bg-theme-primary-300 dark:bg-theme-secondary-800 dark:text-theme-secondary-600 dark:hover:bg-theme-secondary-700 dark:hover:text-theme-secondary-400"
       >
         <button
-          class="OriginalButton__StyledButton-sc-1y2wptt-0 lpqSIM w-11 h-11"
+          class="OriginalButton__StyledButton-sc-1y2wptt-0 fNHPRi w-11 h-11"
           data-testid="modal__close-btn"
           type="button"
         >
@@ -3303,26 +3319,27 @@ exports[`TransactionDetailModal should render a transfer modal 1`] = `
                   class="flex items-center space-x-3"
                 >
                   <a
-                    class="Link__AnchorStyled-sc-1q7sbxr-0 kAtXNw pointer-events-none no-underline inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary-600 hover:text-theme-primary-700 hover:underline active:text-theme-primary-500"
+                    class="Link__AnchorStyled-sc-1q7sbxr-0 bMatQy group"
                     data-testid="Link"
+                    href="#"
                     rel="noopener noreferrer"
                     to="https://explorer.ark.io/transaction/ee4175091d9f4dacf5fed213711c3e0e4cc371e37afa7bce0429d09bcf3ecefe"
                   >
                     <span
-                      class="group"
+                      class="break-all border-b border-transparent transition-colors duration-200 border-current border-dotted group-hover:border-transparent"
                     >
                       <span
-                        class="no-underline break-all pointer-events-auto border-b group-hover:border-0 active:border-0 border-dotted"
+                        class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-primary-700"
+                        data-testid="TruncateMiddle"
                       >
-                        <span
-                          class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-primary-700"
-                          data-testid="TruncateMiddle"
-                        >
-                          ee4175091d9f4dacf5fed213711c3e0e4cc371e37afa7bce0429d09bcf3ecefe
-                        </span>
+                        ee4175091d9f4dacf5fed213711c3e0e4cc371e37afa7bce0429d09bcf3ecefe
                       </span>
+                    </span>
+                    <span
+                      class="align-middle"
+                    >
                       <div
-                        class="sc-bdfBwQ fPrsah flex-shrink-0 pointer-events-auto inline-block pl-2 text-sm"
+                        class="sc-bdfBwQ fPrsah flex-shrink-0 inline-block pb-px text-sm"
                         data-testid="Link__external"
                         height="1em"
                         width="1em"
@@ -3374,26 +3391,27 @@ exports[`TransactionDetailModal should render a transfer modal 1`] = `
                   class="flex items-center space-x-3"
                 >
                   <a
-                    class="Link__AnchorStyled-sc-1q7sbxr-0 kAtXNw pointer-events-none no-underline inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary-600 hover:text-theme-primary-700 hover:underline active:text-theme-primary-500"
+                    class="Link__AnchorStyled-sc-1q7sbxr-0 bMatQy group"
                     data-testid="Link"
+                    href="#"
                     rel="noopener noreferrer"
                     to="https://explorer.ark.io/blocks/71fd1a494ded5430586f4dd1c79c3ac77bf38120e868c8f8980972b8075d67e9"
                   >
                     <span
-                      class="group"
+                      class="break-all border-b border-transparent transition-colors duration-200 border-current border-dotted group-hover:border-transparent"
                     >
                       <span
-                        class="no-underline break-all pointer-events-auto border-b group-hover:border-0 active:border-0 border-dotted"
+                        class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-primary-700"
+                        data-testid="TruncateMiddle"
                       >
-                        <span
-                          class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-primary-700"
-                          data-testid="TruncateMiddle"
-                        >
-                          as32d1as65d1as3d1as32d1asd51as3d21as3d2as165das
-                        </span>
+                        as32d1as65d1as3d1as32d1asd51as3d21as3d2as165das
                       </span>
+                    </span>
+                    <span
+                      class="align-middle"
+                    >
                       <div
-                        class="sc-bdfBwQ fPrsah flex-shrink-0 pointer-events-auto inline-block pl-2 text-sm"
+                        class="sc-bdfBwQ fPrsah flex-shrink-0 inline-block pb-px text-sm"
                         data-testid="Link__external"
                         height="1em"
                         width="1em"
@@ -3451,7 +3469,7 @@ exports[`TransactionDetailModal should render a unvote modal 1`] = `
         class="absolute top-0 right-0 z-50 mt-5 mr-5 rounded transition-all duration-100 ease-linear bg-theme-primary-100 hover:bg-theme-primary-300 dark:bg-theme-secondary-800 dark:text-theme-secondary-600 dark:hover:bg-theme-secondary-700 dark:hover:text-theme-secondary-400"
       >
         <button
-          class="OriginalButton__StyledButton-sc-1y2wptt-0 lpqSIM w-11 h-11"
+          class="OriginalButton__StyledButton-sc-1y2wptt-0 fNHPRi w-11 h-11"
           data-testid="modal__close-btn"
           type="button"
         >
@@ -3808,26 +3826,27 @@ exports[`TransactionDetailModal should render a unvote modal 1`] = `
                   class="flex items-center space-x-3"
                 >
                   <a
-                    class="Link__AnchorStyled-sc-1q7sbxr-0 kAtXNw pointer-events-none no-underline inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary-600 hover:text-theme-primary-700 hover:underline active:text-theme-primary-500"
+                    class="Link__AnchorStyled-sc-1q7sbxr-0 bMatQy group"
                     data-testid="Link"
+                    href="#"
                     rel="noopener noreferrer"
                     to="https://explorer.ark.io/transaction/ee4175091d9f4dacf5fed213711c3e0e4cc371e37afa7bce0429d09bcf3ecefe"
                   >
                     <span
-                      class="group"
+                      class="break-all border-b border-transparent transition-colors duration-200 border-current border-dotted group-hover:border-transparent"
                     >
                       <span
-                        class="no-underline break-all pointer-events-auto border-b group-hover:border-0 active:border-0 border-dotted"
+                        class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-primary-700"
+                        data-testid="TruncateMiddle"
                       >
-                        <span
-                          class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-primary-700"
-                          data-testid="TruncateMiddle"
-                        >
-                          ee4175091d9f4dacf5fed213711c3e0e4cc371e37afa7bce0429d09bcf3ecefe
-                        </span>
+                        ee4175091d9f4dacf5fed213711c3e0e4cc371e37afa7bce0429d09bcf3ecefe
                       </span>
+                    </span>
+                    <span
+                      class="align-middle"
+                    >
                       <div
-                        class="sc-bdfBwQ fPrsah flex-shrink-0 pointer-events-auto inline-block pl-2 text-sm"
+                        class="sc-bdfBwQ fPrsah flex-shrink-0 inline-block pb-px text-sm"
                         data-testid="Link__external"
                         height="1em"
                         width="1em"
@@ -3879,26 +3898,27 @@ exports[`TransactionDetailModal should render a unvote modal 1`] = `
                   class="flex items-center space-x-3"
                 >
                   <a
-                    class="Link__AnchorStyled-sc-1q7sbxr-0 kAtXNw pointer-events-none no-underline inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary-600 hover:text-theme-primary-700 hover:underline active:text-theme-primary-500"
+                    class="Link__AnchorStyled-sc-1q7sbxr-0 bMatQy group"
                     data-testid="Link"
+                    href="#"
                     rel="noopener noreferrer"
                     to="https://explorer.ark.io/blocks/71fd1a494ded5430586f4dd1c79c3ac77bf38120e868c8f8980972b8075d67e9"
                   >
                     <span
-                      class="group"
+                      class="break-all border-b border-transparent transition-colors duration-200 border-current border-dotted group-hover:border-transparent"
                     >
                       <span
-                        class="no-underline break-all pointer-events-auto border-b group-hover:border-0 active:border-0 border-dotted"
+                        class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-primary-700"
+                        data-testid="TruncateMiddle"
                       >
-                        <span
-                          class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-primary-700"
-                          data-testid="TruncateMiddle"
-                        >
-                          as32d1as65d1as3d1as32d1asd51as3d21as3d2as165das
-                        </span>
+                        as32d1as65d1as3d1as32d1asd51as3d21as3d2as165das
                       </span>
+                    </span>
+                    <span
+                      class="align-middle"
+                    >
                       <div
-                        class="sc-bdfBwQ fPrsah flex-shrink-0 pointer-events-auto inline-block pl-2 text-sm"
+                        class="sc-bdfBwQ fPrsah flex-shrink-0 inline-block pb-px text-sm"
                         data-testid="Link__external"
                         height="1em"
                         width="1em"
@@ -3956,7 +3976,7 @@ exports[`TransactionDetailModal should render a vote modal 1`] = `
         class="absolute top-0 right-0 z-50 mt-5 mr-5 rounded transition-all duration-100 ease-linear bg-theme-primary-100 hover:bg-theme-primary-300 dark:bg-theme-secondary-800 dark:text-theme-secondary-600 dark:hover:bg-theme-secondary-700 dark:hover:text-theme-secondary-400"
       >
         <button
-          class="OriginalButton__StyledButton-sc-1y2wptt-0 lpqSIM w-11 h-11"
+          class="OriginalButton__StyledButton-sc-1y2wptt-0 fNHPRi w-11 h-11"
           data-testid="modal__close-btn"
           type="button"
         >
@@ -4313,26 +4333,27 @@ exports[`TransactionDetailModal should render a vote modal 1`] = `
                   class="flex items-center space-x-3"
                 >
                   <a
-                    class="Link__AnchorStyled-sc-1q7sbxr-0 kAtXNw pointer-events-none no-underline inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary-600 hover:text-theme-primary-700 hover:underline active:text-theme-primary-500"
+                    class="Link__AnchorStyled-sc-1q7sbxr-0 bMatQy group"
                     data-testid="Link"
+                    href="#"
                     rel="noopener noreferrer"
                     to="https://explorer.ark.io/transaction/ee4175091d9f4dacf5fed213711c3e0e4cc371e37afa7bce0429d09bcf3ecefe"
                   >
                     <span
-                      class="group"
+                      class="break-all border-b border-transparent transition-colors duration-200 border-current border-dotted group-hover:border-transparent"
                     >
                       <span
-                        class="no-underline break-all pointer-events-auto border-b group-hover:border-0 active:border-0 border-dotted"
+                        class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-primary-700"
+                        data-testid="TruncateMiddle"
                       >
-                        <span
-                          class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-primary-700"
-                          data-testid="TruncateMiddle"
-                        >
-                          ee4175091d9f4dacf5fed213711c3e0e4cc371e37afa7bce0429d09bcf3ecefe
-                        </span>
+                        ee4175091d9f4dacf5fed213711c3e0e4cc371e37afa7bce0429d09bcf3ecefe
                       </span>
+                    </span>
+                    <span
+                      class="align-middle"
+                    >
                       <div
-                        class="sc-bdfBwQ fPrsah flex-shrink-0 pointer-events-auto inline-block pl-2 text-sm"
+                        class="sc-bdfBwQ fPrsah flex-shrink-0 inline-block pb-px text-sm"
                         data-testid="Link__external"
                         height="1em"
                         width="1em"
@@ -4384,26 +4405,27 @@ exports[`TransactionDetailModal should render a vote modal 1`] = `
                   class="flex items-center space-x-3"
                 >
                   <a
-                    class="Link__AnchorStyled-sc-1q7sbxr-0 kAtXNw pointer-events-none no-underline inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary-600 hover:text-theme-primary-700 hover:underline active:text-theme-primary-500"
+                    class="Link__AnchorStyled-sc-1q7sbxr-0 bMatQy group"
                     data-testid="Link"
+                    href="#"
                     rel="noopener noreferrer"
                     to="https://explorer.ark.io/blocks/71fd1a494ded5430586f4dd1c79c3ac77bf38120e868c8f8980972b8075d67e9"
                   >
                     <span
-                      class="group"
+                      class="break-all border-b border-transparent transition-colors duration-200 border-current border-dotted group-hover:border-transparent"
                     >
                       <span
-                        class="no-underline break-all pointer-events-auto border-b group-hover:border-0 active:border-0 border-dotted"
+                        class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-primary-700"
+                        data-testid="TruncateMiddle"
                       >
-                        <span
-                          class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-primary-700"
-                          data-testid="TruncateMiddle"
-                        >
-                          as32d1as65d1as3d1as32d1asd51as3d21as3d2as165das
-                        </span>
+                        as32d1as65d1as3d1as32d1asd51as3d21as3d2as165das
                       </span>
+                    </span>
+                    <span
+                      class="align-middle"
+                    >
                       <div
-                        class="sc-bdfBwQ fPrsah flex-shrink-0 pointer-events-auto inline-block pl-2 text-sm"
+                        class="sc-bdfBwQ fPrsah flex-shrink-0 inline-block pb-px text-sm"
                         data-testid="Link__external"
                         height="1em"
                         width="1em"

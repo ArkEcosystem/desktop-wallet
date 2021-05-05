@@ -4,19 +4,20 @@ import cn from "classnames";
 import React from "react";
 import { useTranslation } from "react-i18next";
 import { Link as RouterLink, LinkProps } from "react-router-dom";
-import tw, { css, styled } from "twin.macro";
+import tw, { styled } from "twin.macro";
 import { openExternal } from "utils/electron-utils";
 
 import { Icon } from "../Icon";
 
-const AnchorStyled = styled.a<{ isExternal: boolean }>`
-	${css`
-		&:hover,
-		&:active {
-			${tw`no-underline`}
-		}
-	`}
-`;
+const AnchorStyled = styled.a(() => [
+	tw`relative inline-block space-x-2 font-semibold text-theme-primary-600`,
+	tw`transition-colors duration-200`,
+	tw`cursor-pointer no-underline`,
+	tw`hover:text-theme-primary-700`,
+	tw`active:text-theme-primary-500`,
+	tw`focus:(outline-none after:ring-2)`,
+	tw`after:(content absolute inset-0 -m-1 ring-theme-primary-400 rounded)`,
+]);
 
 type AnchorProps = {
 	isExternal?: boolean;
@@ -25,11 +26,10 @@ type AnchorProps = {
 } & React.AnchorHTMLAttributes<any>;
 
 const Anchor = React.forwardRef<HTMLAnchorElement, AnchorProps>(
-	({ isExternal, showExternalIcon, children, rel, ...props }: AnchorProps, ref) => (
+	({ isExternal, showExternalIcon, href, children, rel, ...props }: AnchorProps, ref) => (
 		<AnchorStyled
+			className="group"
 			data-testid="Link"
-			isExternal={isExternal!}
-			className="pointer-events-none no-underline inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary-600 hover:text-theme-primary-700 hover:underline active:text-theme-primary-500"
 			rel={isExternal ? "noopener noreferrer" : rel}
 			ref={ref}
 			onClick={(event) => {
@@ -37,25 +37,26 @@ const Anchor = React.forwardRef<HTMLAnchorElement, AnchorProps>(
 				event.preventDefault();
 				return props.navigate?.();
 			}}
+			href={href || "#"}
 			{...props}
 		>
-			<span className="group">
-				<span
-					className={cn("no-underline break-all pointer-events-auto", {
-						"border-b group-hover:border-0 active:border-0 border-dotted": isExternal,
-						"hover:border-b": !isExternal,
-					})}
-				>
-					{children}
-				</span>
-				{isExternal && showExternalIcon && (
+			<span
+				className={cn("break-all border-b border-transparent transition-colors duration-200", {
+					"border-current border-dotted group-hover:border-transparent": isExternal,
+					"group-hover:border-current": !isExternal,
+				})}
+			>
+				{children}
+			</span>
+			{isExternal && showExternalIcon && (
+				<span className="align-middle">
 					<Icon
 						data-testid="Link__external"
 						name="Redirect"
-						className={cn("flex-shrink-0 pointer-events-auto", { "inline-block pl-2 text-sm": children })}
+						className={cn("flex-shrink-0", { "inline-block pb-px text-sm": children })}
 					/>
-				)}
-			</span>
+				</span>
+			)}
 		</AnchorStyled>
 	),
 );

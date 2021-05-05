@@ -6,7 +6,7 @@ import { Page, Section } from "app/components/Layout";
 import { StepIndicator } from "app/components/StepIndicator";
 import { TabPanel, Tabs } from "app/components/Tabs";
 import { useEnvironmentContext } from "app/contexts";
-import { useActiveProfile, useProfileUtils } from "app/hooks";
+import { useActiveProfile } from "app/hooks";
 import { useWalletConfig } from "domains/dashboard/hooks";
 import { EncryptPasswordStep } from "domains/wallet/components/EncryptPasswordStep";
 import { NetworkStep } from "domains/wallet/components/NetworkStep";
@@ -20,14 +20,13 @@ import { SuccessStep } from "./SuccessStep";
 import { WalletOverviewStep } from "./WalletOverviewStep";
 
 export const CreateWallet = () => {
-	const { env, persist } = useEnvironmentContext();
+	const { persist } = useEnvironmentContext();
 	const history = useHistory();
 	const { t } = useTranslation();
 
 	const [activeTab, setActiveTab] = useState(1);
 	const [encryptionPassword, setEncryptionPassword] = useState<string>();
 	const activeProfile = useActiveProfile();
-	const { saveProfile } = useProfileUtils(env);
 
 	const nameMaxLength = 42;
 
@@ -57,9 +56,14 @@ export const CreateWallet = () => {
 
 				forgetTemporaryWallet();
 
-				wallet = await activeProfile
-					.wallets()
-					.importByMnemonicWithEncryption(mnemonic, coin, network, encryptionPassword);
+				wallet = await activeProfile.walletFactory().fromMnemonicWithEncryption({
+					coin,
+					network,
+					password: encryptionPassword,
+					mnemonic,
+				});
+
+				activeProfile.wallets().push(wallet);
 			} catch (error) {
 				setGenerationError(t("WALLETS.PAGE_CREATE_WALLET.NETWORK_STEP.GENERATION_ERROR"));
 			}
@@ -71,8 +75,6 @@ export const CreateWallet = () => {
 		}
 
 		setConfiguration("selectedNetworkIds", uniq([...selectedNetworkIds, wallet.network().id()]));
-
-		saveProfile(activeProfile);
 
 		await persist();
 
@@ -93,7 +95,13 @@ export const CreateWallet = () => {
 		const network = getValues("network");
 
 		const locale = activeProfile.settings().get<string>(Contracts.ProfileSetting.Bip39Locale, "english");
-		const { mnemonic, wallet } = await activeProfile.wallets().generate(network.coin(), network.id(), locale);
+		const { mnemonic, wallet } = await activeProfile.walletFactory().generate({
+			coin: network.coin(),
+			locale,
+			network: network.id(),
+		});
+
+		activeProfile.wallets().push(wallet);
 
 		setValue("wallet", wallet, { shouldValidate: true, shouldDirty: true });
 		setValue("mnemonic", mnemonic, { shouldValidate: true, shouldDirty: true });

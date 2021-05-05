@@ -247,34 +247,11 @@ exports[`PortfolioChart should render with balance 1`] = `
           </div>
           <div
             class="flex flex-1 justify-end space-x-3"
-          >
-            <div
-              class="flex justify-end items-center py-4 pr-0 pl-6"
-              data-testid="item-percentage"
-            >
-              <div
-                class="mr-2 border-2 rounded-full w-2 h-2 inline-block align-middle border-theme-danger-400"
-              />
-              <div
-                class="inline-block text-sm text-base font-semibold text-theme-secondary-text"
-              >
-                <span>
-                  ARK
-                   - 
-                  3
-                  %
-                </span>
-              </div>
-            </div>
-          </div>
+          />
         </div>
         <div
           class="flex -space-x-1"
-        >
-          <div
-            class="h-1 rounded-sm bg-theme-danger-400"
-          />
-        </div>
+        />
       </div>
     </div>
   </div>
