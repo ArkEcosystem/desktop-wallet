@@ -107,6 +107,7 @@ const renderOptions = (options: DropdownOption[] | DropdownOptionGroup[], onSele
 					data-testid={`dropdown__option--${key ? `${key}-` : ""}${index}`}
 					onClick={(e: any) => onSelectItem(e, option)}
 					onKeyDown={(e: any) => {
+						/* istanbul ignore next */
 						if (e.key === "Enter" || e.key === " ") {
 							onSelectItem(e, option);
 						}
@@ -266,6 +267,7 @@ export const Dropdown = ({
 
 	useEffect(() => {
 		const handleKeys = (e: any) => {
+			/* istanbul ignore next */
 			if (e.key === "Escape") {
 				hide();
 			}
