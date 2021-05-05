@@ -86,6 +86,7 @@ const SelectDropdown = ({
 		highlightedIndex,
 		reset,
 		toggleMenu,
+		selectedItem,
 	} = useCombobox<Option | null>({
 		id,
 		items: options,
@@ -199,7 +200,12 @@ const SelectDropdown = ({
 						},
 						onKeyDown: (event) => {
 							if (event.key === "Tab" || event.key === "Enter") {
-								// Select first match
+								// check if item already was selected
+								if (selectedItem?.label === inputValue) {
+									return;
+								}
+
+								// Select first suggestion
 								const firstMatch = options.find((option) => isMatch(inputValue, option));
 
 								if (inputValue && firstMatch) {
