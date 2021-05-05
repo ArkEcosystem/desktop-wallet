@@ -9,7 +9,7 @@ import { ListDivided } from "app/components/ListDivided";
 import { Table } from "app/components/Table";
 import { Toggle } from "app/components/Toggle";
 import { useEnvironmentContext } from "app/contexts";
-import { useActiveProfile, useProfileUtils } from "app/hooks";
+import { useActiveProfile } from "app/hooks";
 import { CreatePeer } from "domains/setting/components/CreatePeer";
 import { DeletePeer } from "domains/setting/components/DeletePeer";
 import { PeerListItem } from "domains/setting/components/PeerListItem";
@@ -25,7 +25,6 @@ export const Peer = ({ formConfig, onSuccess }: SettingsProps) => {
 
 	const { env, state, persist } = useEnvironmentContext();
 	const activeProfile = useActiveProfile();
-	const { saveProfile } = useProfileUtils(env);
 
 	const [isMultiPeerBroadcast, setIsMultiPeerBroadcast] = useState(
 		activeProfile.settings().get(Contracts.ProfileSetting.UseMultiPeerBroadcast) || false,
@@ -76,7 +75,7 @@ export const Peer = ({ formConfig, onSuccess }: SettingsProps) => {
 		const promises: Promise<void>[] = [];
 
 		for (const wallet of activeProfile.wallets().values()) {
-			promises.push(wallet.sync({ resetCoin: true }));
+			promises.push(wallet.synchroniser().coin({ resetCoin: true }));
 		}
 
 		await Promise.allSettled(promises);
@@ -96,23 +95,12 @@ export const Peer = ({ formConfig, onSuccess }: SettingsProps) => {
 
 				await syncWallets();
 
-				saveProfile(activeProfile);
-
 				await persist();
 			};
 
 			savePeerSettings();
 		}
-	}, [
-		activeProfile,
-		isCustomPeer,
-		isMultiPeerBroadcast,
-		peerGroupByNetwork,
-		peers,
-		persist,
-		syncWallets,
-		saveProfile,
-	]);
+	}, [activeProfile, isCustomPeer, isMultiPeerBroadcast, peerGroupByNetwork, peers, persist, syncWallets]);
 
 	const availableNetworks = useMemo(() => env.availableNetworks(), [env]);
 
@@ -220,8 +208,6 @@ export const Peer = ({ formConfig, onSuccess }: SettingsProps) => {
 		activeProfile.settings().set(Contracts.ProfileSetting.UseCustomPeer, isCustomPeer);
 
 		await syncWallets();
-
-		saveProfile(activeProfile);
 
 		await persist();
 

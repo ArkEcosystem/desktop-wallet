@@ -13,10 +13,12 @@ describe("Add Participant", () => {
 	let wallet: Contracts.IReadWriteWallet;
 	let wallet2: Contracts.IReadWriteWallet;
 
-	beforeEach(() => {
+	beforeEach(async () => {
 		profile = env.profiles().findById(getDefaultProfileId());
 		wallet = profile.wallets().first();
 		wallet2 = profile.wallets().last();
+
+		await profile.sync();
 	});
 
 	it("should fail to find", async () => {

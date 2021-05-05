@@ -3,7 +3,7 @@
 exports[`TextArea should render 1`] = `
 <DocumentFragment>
   <div
-    class="Input__InputWrapperStyled-wu99qs-0 bozrWZ"
+    class="Input__InputWrapperStyled-wu99qs-0 hGjRzu"
   >
     <div
       class="relative flex flex-1 h-full"
@@ -21,7 +21,7 @@ exports[`TextArea should render 1`] = `
 exports[`TextArea should render as disabled 1`] = `
 <DocumentFragment>
   <div
-    class="Input__InputWrapperStyled-wu99qs-0 keddpO"
+    class="Input__InputWrapperStyled-wu99qs-0 bNDzAN"
     disabled=""
   >
     <div
@@ -40,7 +40,7 @@ exports[`TextArea should render as disabled 1`] = `
 exports[`TextArea should render as invalid 1`] = `
 <DocumentFragment>
   <div
-    class="Input__InputWrapperStyled-wu99qs-0 dkxXwG"
+    class="Input__InputWrapperStyled-wu99qs-0 dqQrXV"
   >
     <div
       class="relative flex flex-1 h-full"
@@ -52,7 +52,7 @@ exports[`TextArea should render as invalid 1`] = `
       />
     </div>
     <div
-      class="flex items-center space-x-3 divide-x divide-theme-secondary-300 dark:divide-theme-secondary-800 text-theme-danger-500"
+      class="flex items-center space-x-3 divide-x divide-theme-secondary-300 dark:divide-theme-secondary-800 text-theme-danger-500 absolute bottom-full right-0 mb-2"
     >
       <span
         data-testid="Input__error"

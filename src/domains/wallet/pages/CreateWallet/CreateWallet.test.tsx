@@ -272,7 +272,10 @@ describe("CreateWallet", () => {
 	});
 
 	it("should show an error message if wallet generation failed", async () => {
-		const walletSpy = jest.spyOn(profile.wallets(), "generate").mockRejectedValue(new Error("failed"));
+		bip39GenerateMock.mockRestore();
+		bip39GenerateMock = jest.spyOn(BIP39, "generate").mockImplementation(() => {
+			throw new Error("test");
+		});
 
 		const history = createMemoryHistory();
 		const createURL = `/profiles/${fixtureProfileId}/wallets/create`;
@@ -318,14 +321,18 @@ describe("CreateWallet", () => {
 
 		expect(asFragment()).toMatchSnapshot();
 
-		walletSpy.mockRestore();
+		bip39GenerateMock.mockRestore();
 	});
 
 	it("should show an error message for duplicate name", async () => {
-		const wallet = await profile
-			.wallets()
-			.importByAddress("D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD", "ARK", "ark.devnet");
-		wallet.setAlias("Test");
+		const wallet = await profile.walletFactory().fromAddress({
+			address: "D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD",
+			coin: "ARK",
+			network: "ark.devnet",
+		});
+
+		profile.wallets().push(wallet);
+		wallet.settings().set(Contracts.WalletSetting.Alias, "Test");
 
 		const history = createMemoryHistory();
 		const createURL = `/profiles/${fixtureProfileId}/wallets/create`;

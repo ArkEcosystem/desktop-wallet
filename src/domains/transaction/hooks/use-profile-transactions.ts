@@ -122,23 +122,15 @@ export const useProfileTransactions = ({
 				return { items: () => [], hasMorePages: () => false };
 			}
 
-			const methodMap = {
-				all: "transactions",
-				sent: "sentTransactions",
-				received: "receivedTransactions",
-			};
-
-			const method = methodMap[mode as keyof typeof methodMap];
-
 			if (flush) {
-				profile.transactionAggregate().flush(method);
+				profile.transactionAggregate().flush(mode);
 			}
 
 			const defaultQuery = { limit: 30, addresses: wallets.map((wallet) => wallet.address(), cursor) };
 			const queryParams = transactionType ? { ...defaultQuery, ...transactionType } : defaultQuery;
 
 			// @ts-ignore
-			return profile.transactionAggregate()[method](queryParams);
+			return profile.transactionAggregate()[mode](queryParams);
 		},
 		[profile],
 	);

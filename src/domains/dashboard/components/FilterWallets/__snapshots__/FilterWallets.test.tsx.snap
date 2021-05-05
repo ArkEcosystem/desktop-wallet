@@ -105,11 +105,11 @@ exports[`FilterWallets should render with networks selection 1`] = `
           Public Networks
         </div>
         <ul
-          class="inline-block"
+          class="flex flex-wrap"
           data-testid="NetworkOptions"
         >
           <li
-            class="inline-block mr-5 cursor-pointer"
+            class="inline-block pr-5 pb-5 cursor-pointer"
             data-testid="NetworkOption__ARK"
           >
             <div
@@ -132,7 +132,7 @@ exports[`FilterWallets should render with networks selection 1`] = `
             </div>
           </li>
           <li
-            class="inline-block mr-5 cursor-pointer"
+            class="inline-block pr-5 pb-5 cursor-pointer"
             data-testid="NetworkOption__ETH"
           >
             <div

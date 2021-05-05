@@ -44,14 +44,20 @@ describe("Wallets", () => {
 		emptyProfile = env.profiles().create("Empty");
 		profile = env.profiles().findById(getDefaultProfileId());
 
-		const wallet = await profile
-			.wallets()
-			.importByAddress("AdVSe37niA3uFUPgCgMUH2tMsHF4LpLoiX", "ARK", "ark.mainnet");
+		await env.profiles().restore(profile);
+		await profile.sync();
+
+		const wallet = await profile.walletFactory().fromAddress({
+			address: "AdVSe37niA3uFUPgCgMUH2tMsHF4LpLoiX",
+			coin: "ARK",
+			network: "ark.mainnet",
+		});
+
+		profile.wallets().push(wallet);
 
 		wallets = profile.wallets().values();
 
 		await syncDelegates();
-		await wallet.syncVotes();
 	});
 
 	afterAll(() => {
