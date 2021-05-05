@@ -45,7 +45,7 @@ exports[`FilterTransactions should open dropdown list with all transaction types
         </button>
       </span>
       <div
-        class="Dropdown__Wrapper-ocz1je-0 krLubM opacity-0 mt-3 py-3 absolute z-10 bg-theme-background rounded-lg shadow-xl w-80 max-h-128 overflow-y-auto"
+        class="Dropdown__Wrapper-ocz1je-0 krLubM opacity-0 mt-3 py-3 absolute z-10 bg-theme-background rounded-xl shadow-xl w-80 max-h-128 overflow-y-auto"
         data-testid="dropdown__content"
         style="opacity: 100; height: -30px; overflow-y: scroll;"
       >
@@ -60,8 +60,9 @@ exports[`FilterTransactions should open dropdown list with all transaction types
                 data-testid="dropdown__options"
               >
                 <li
-                  class="group flex items-center space-x-2 py-4 px-8 text-base font-semibold text-left whitespace-nowrap cursor-pointer text-theme-secondary-800 dark:text-theme-secondary-200 hover:bg-theme-secondary-200 dark:hover:bg-theme-primary-600 hover:text-theme-primary-600 dark:hover:text-theme-secondary-200"
+                  class="sc-gsTCUz lhBamA group"
                   data-testid="dropdown__option--all-0"
+                  tabindex="0"
                 >
                   <span>
                     All
@@ -91,160 +92,153 @@ exports[`FilterTransactions should open dropdown list with all transaction types
                 data-testid="dropdown__options"
               >
                 <li
-                  class="group flex items-center space-x-2 py-4 px-8 text-base font-semibold text-left whitespace-nowrap cursor-pointer text-theme-secondary-800 dark:text-theme-secondary-200 hover:bg-theme-secondary-200 dark:hover:bg-theme-primary-600 hover:text-theme-primary-600 dark:hover:text-theme-secondary-200"
+                  class="sc-gsTCUz lhBamA group"
                   data-testid="dropdown__option--core-0"
+                  tabindex="0"
                 >
                   <span>
                     Bridgechain Registration
                   </span>
                 </li>
                 <li
-                  class="group flex items-center space-x-2 py-4 px-8 text-base font-semibold text-left whitespace-nowrap cursor-pointer text-theme-secondary-800 dark:text-theme-secondary-200 hover:bg-theme-secondary-200 dark:hover:bg-theme-primary-600 hover:text-theme-primary-600 dark:hover:text-theme-secondary-200"
+                  class="sc-gsTCUz lhBamA group"
                   data-testid="dropdown__option--core-1"
+                  tabindex="0"
                 >
                   <span>
                     Bridgechain Resignation
                   </span>
                 </li>
                 <li
-                  class="group flex items-center space-x-2 py-4 px-8 text-base font-semibold text-left whitespace-nowrap cursor-pointer text-theme-secondary-800 dark:text-theme-secondary-200 hover:bg-theme-secondary-200 dark:hover:bg-theme-primary-600 hover:text-theme-primary-600 dark:hover:text-theme-secondary-200"
+                  class="sc-gsTCUz lhBamA group"
                   data-testid="dropdown__option--core-2"
+                  tabindex="0"
                 >
                   <span>
                     Bridgechain Update
                   </span>
                 </li>
                 <li
-                  class="group flex items-center space-x-2 py-4 px-8 text-base font-semibold text-left whitespace-nowrap cursor-pointer text-theme-secondary-800 dark:text-theme-secondary-200 hover:bg-theme-secondary-200 dark:hover:bg-theme-primary-600 hover:text-theme-primary-600 dark:hover:text-theme-secondary-200"
+                  class="sc-gsTCUz lhBamA group"
                   data-testid="dropdown__option--core-3"
+                  tabindex="0"
                 >
                   <span>
                     Business Registration
                   </span>
                 </li>
                 <li
-                  class="group flex items-center space-x-2 py-4 px-8 text-base font-semibold text-left whitespace-nowrap cursor-pointer text-theme-secondary-800 dark:text-theme-secondary-200 hover:bg-theme-secondary-200 dark:hover:bg-theme-primary-600 hover:text-theme-primary-600 dark:hover:text-theme-secondary-200"
+                  class="sc-gsTCUz lhBamA group"
                   data-testid="dropdown__option--core-4"
+                  tabindex="0"
                 >
                   <span>
                     Business Resignation
                   </span>
                 </li>
                 <li
-                  class="group flex items-center space-x-2 py-4 px-8 text-base font-semibold text-left whitespace-nowrap cursor-pointer text-theme-secondary-800 dark:text-theme-secondary-200 hover:bg-theme-secondary-200 dark:hover:bg-theme-primary-600 hover:text-theme-primary-600 dark:hover:text-theme-secondary-200"
+                  class="sc-gsTCUz lhBamA group"
                   data-testid="dropdown__option--core-5"
+                  tabindex="0"
                 >
                   <span>
                     Business Update
                   </span>
                 </li>
                 <li
-                  class="group flex items-center space-x-2 py-4 px-8 text-base font-semibold text-left whitespace-nowrap cursor-pointer text-theme-secondary-800 dark:text-theme-secondary-200 hover:bg-theme-secondary-200 dark:hover:bg-theme-primary-600 hover:text-theme-primary-600 dark:hover:text-theme-secondary-200"
+                  class="sc-gsTCUz lhBamA group"
                   data-testid="dropdown__option--core-6"
+                  tabindex="0"
                 >
                   <span>
                     Delegate Registration
                   </span>
                 </li>
                 <li
-                  class="group flex items-center space-x-2 py-4 px-8 text-base font-semibold text-left whitespace-nowrap cursor-pointer text-theme-secondary-800 dark:text-theme-secondary-200 hover:bg-theme-secondary-200 dark:hover:bg-theme-primary-600 hover:text-theme-primary-600 dark:hover:text-theme-secondary-200"
+                  class="sc-gsTCUz lhBamA group"
                   data-testid="dropdown__option--core-7"
+                  tabindex="0"
                 >
                   <span>
                     Delegate Registration
                   </span>
                 </li>
                 <li
-                  class="group flex items-center space-x-2 py-4 px-8 text-base font-semibold text-left whitespace-nowrap cursor-pointer text-theme-secondary-800 dark:text-theme-secondary-200 hover:bg-theme-secondary-200 dark:hover:bg-theme-primary-600 hover:text-theme-primary-600 dark:hover:text-theme-secondary-200"
+                  class="sc-gsTCUz lhBamA group"
                   data-testid="dropdown__option--core-8"
-                >
-                  <span>
-                    Entity Registration
-                  </span>
-                </li>
-                <li
-                  class="group flex items-center space-x-2 py-4 px-8 text-base font-semibold text-left whitespace-nowrap cursor-pointer text-theme-secondary-800 dark:text-theme-secondary-200 hover:bg-theme-secondary-200 dark:hover:bg-theme-primary-600 hover:text-theme-primary-600 dark:hover:text-theme-secondary-200"
-                  data-testid="dropdown__option--core-9"
-                >
-                  <span>
-                    Entity Resignation
-                  </span>
-                </li>
-                <li
-                  class="group flex items-center space-x-2 py-4 px-8 text-base font-semibold text-left whitespace-nowrap cursor-pointer text-theme-secondary-800 dark:text-theme-secondary-200 hover:bg-theme-secondary-200 dark:hover:bg-theme-primary-600 hover:text-theme-primary-600 dark:hover:text-theme-secondary-200"
-                  data-testid="dropdown__option--core-10"
-                >
-                  <span>
-                    Entity Update
-                  </span>
-                </li>
-                <li
-                  class="group flex items-center space-x-2 py-4 px-8 text-base font-semibold text-left whitespace-nowrap cursor-pointer text-theme-secondary-800 dark:text-theme-secondary-200 hover:bg-theme-secondary-200 dark:hover:bg-theme-primary-600 hover:text-theme-primary-600 dark:hover:text-theme-secondary-200"
-                  data-testid="dropdown__option--core-11"
+                  tabindex="0"
                 >
                   <span>
                     Timelock Claim
                   </span>
                 </li>
                 <li
-                  class="group flex items-center space-x-2 py-4 px-8 text-base font-semibold text-left whitespace-nowrap cursor-pointer text-theme-secondary-800 dark:text-theme-secondary-200 hover:bg-theme-secondary-200 dark:hover:bg-theme-primary-600 hover:text-theme-primary-600 dark:hover:text-theme-secondary-200"
-                  data-testid="dropdown__option--core-12"
+                  class="sc-gsTCUz lhBamA group"
+                  data-testid="dropdown__option--core-9"
+                  tabindex="0"
                 >
                   <span>
                     Timelock
                   </span>
                 </li>
                 <li
-                  class="group flex items-center space-x-2 py-4 px-8 text-base font-semibold text-left whitespace-nowrap cursor-pointer text-theme-secondary-800 dark:text-theme-secondary-200 hover:bg-theme-secondary-200 dark:hover:bg-theme-primary-600 hover:text-theme-primary-600 dark:hover:text-theme-secondary-200"
-                  data-testid="dropdown__option--core-13"
+                  class="sc-gsTCUz lhBamA group"
+                  data-testid="dropdown__option--core-10"
+                  tabindex="0"
                 >
                   <span>
                     Timelock Refund
                   </span>
                 </li>
                 <li
-                  class="group flex items-center space-x-2 py-4 px-8 text-base font-semibold text-left whitespace-nowrap cursor-pointer text-theme-secondary-800 dark:text-theme-secondary-200 hover:bg-theme-secondary-200 dark:hover:bg-theme-primary-600 hover:text-theme-primary-600 dark:hover:text-theme-secondary-200"
-                  data-testid="dropdown__option--core-14"
+                  class="sc-gsTCUz lhBamA group"
+                  data-testid="dropdown__option--core-11"
+                  tabindex="0"
                 >
                   <span>
                     IPFS
                   </span>
                 </li>
                 <li
-                  class="group flex items-center space-x-2 py-4 px-8 text-base font-semibold text-left whitespace-nowrap cursor-pointer text-theme-secondary-800 dark:text-theme-secondary-200 hover:bg-theme-secondary-200 dark:hover:bg-theme-primary-600 hover:text-theme-primary-600 dark:hover:text-theme-secondary-200"
-                  data-testid="dropdown__option--core-15"
+                  class="sc-gsTCUz lhBamA group"
+                  data-testid="dropdown__option--core-12"
+                  tabindex="0"
                 >
                   <span>
                     Multipayment
                   </span>
                 </li>
                 <li
-                  class="group flex items-center space-x-2 py-4 px-8 text-base font-semibold text-left whitespace-nowrap cursor-pointer text-theme-secondary-800 dark:text-theme-secondary-200 hover:bg-theme-secondary-200 dark:hover:bg-theme-primary-600 hover:text-theme-primary-600 dark:hover:text-theme-secondary-200"
-                  data-testid="dropdown__option--core-16"
+                  class="sc-gsTCUz lhBamA group"
+                  data-testid="dropdown__option--core-13"
+                  tabindex="0"
                 >
                   <span>
                     Multisignature
                   </span>
                 </li>
                 <li
-                  class="group flex items-center space-x-2 py-4 px-8 text-base font-semibold text-left whitespace-nowrap cursor-pointer text-theme-secondary-800 dark:text-theme-secondary-200 hover:bg-theme-secondary-200 dark:hover:bg-theme-primary-600 hover:text-theme-primary-600 dark:hover:text-theme-secondary-200"
-                  data-testid="dropdown__option--core-17"
+                  class="sc-gsTCUz lhBamA group"
+                  data-testid="dropdown__option--core-14"
+                  tabindex="0"
                 >
                   <span>
                     Second Signature
                   </span>
                 </li>
                 <li
-                  class="group flex items-center space-x-2 py-4 px-8 text-base font-semibold text-left whitespace-nowrap cursor-pointer text-theme-secondary-800 dark:text-theme-secondary-200 hover:bg-theme-secondary-200 dark:hover:bg-theme-primary-600 hover:text-theme-primary-600 dark:hover:text-theme-secondary-200"
-                  data-testid="dropdown__option--core-18"
+                  class="sc-gsTCUz lhBamA group"
+                  data-testid="dropdown__option--core-15"
+                  tabindex="0"
                 >
                   <span>
                     Transfer
                   </span>
                 </li>
                 <li
-                  class="group flex items-center space-x-2 py-4 px-8 text-base font-semibold text-left whitespace-nowrap cursor-pointer text-theme-secondary-800 dark:text-theme-secondary-200 hover:bg-theme-secondary-200 dark:hover:bg-theme-primary-600 hover:text-theme-primary-600 dark:hover:text-theme-secondary-200"
-                  data-testid="dropdown__option--core-19"
+                  class="sc-gsTCUz lhBamA group"
+                  data-testid="dropdown__option--core-16"
+                  tabindex="0"
                 >
                   <span>
                     Vote

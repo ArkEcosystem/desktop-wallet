@@ -57,7 +57,7 @@ const signTransaction = async ({ env, form, profile }: SendRegistrationSignOptio
 	const senderWallet = profile.wallets().findByAddress(senderAddress);
 
 	const publicKeys = (participants as Participant[]).map((item) => item.publicKey);
-	const wif = senderWallet?.usesWIF() ? await senderWallet.wif(encryptionPassword) : undefined;
+	const wif = senderWallet?.wif().exists() ? await senderWallet.wif().get(encryptionPassword) : undefined;
 
 	const uuid = await senderWallet!.transaction().signMultiSignature({
 		nonce: senderWallet!.nonce().plus(1).toString(),

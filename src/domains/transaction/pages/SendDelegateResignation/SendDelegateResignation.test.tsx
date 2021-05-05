@@ -61,10 +61,11 @@ describe("SendDelegateResignation", () => {
 	beforeAll(async () => {
 		profile = env.profiles().findById(getDefaultProfileId());
 
-		await profile.restore();
+		await env.profiles().restore(profile);
 		await profile.sync();
 
 		wallet = profile.wallets().findById("d044a552-7a49-411c-ae16-8ff407acc430");
+		await wallet.synchroniser().identity();
 
 		await syncDelegates();
 		await syncFees();
@@ -497,8 +498,10 @@ describe("SendDelegateResignation", () => {
 
 		it("should successfully sign and submit resignation transaction using encryption password", async () => {
 			const encryptedWallet = profile.wallets().first();
-			const walletUsesWIFMock = jest.spyOn(encryptedWallet, "usesWIF").mockReturnValue(true);
-			const walletWifMock = jest.spyOn(encryptedWallet, "wif").mockImplementation((password) => {
+			await encryptedWallet.synchroniser().identity();
+
+			const walletUsesWIFMock = jest.spyOn(encryptedWallet.wif(), "exists").mockReturnValue(true);
+			const walletWifMock = jest.spyOn(encryptedWallet.wif(), "get").mockImplementation(() => {
 				const wif = "S9rDfiJ2ar4DpWAQuaXECPTJHfTZ3XjCPv15gjxu4cHJZKzABPyV";
 				return Promise.resolve(wif);
 			});

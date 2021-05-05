@@ -15,6 +15,7 @@ module.exports = {
 			white: "#fff",
 			logo: "#c9292c",
 			transparent: "transparent",
+			current: "currentColor",
 
 			"theme-background": "var(--theme-background-color)",
 			"theme-secondary-background": "var(--theme-secondary-background-color)",

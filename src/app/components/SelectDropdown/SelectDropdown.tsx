@@ -210,8 +210,6 @@ const SelectDropdown = ({
 										closeMenu();
 									}
 								}
-								event.preventDefault();
-								return;
 							}
 						},
 					})}
@@ -226,11 +224,11 @@ const SelectDropdown = ({
 									{...getItemProps({
 										index,
 										item,
-										className: `select-list-option cursor-default ${
-											item.label === inputValue || (!inputValue && highlightedIndex === index)
-												? "is-highlighted"
-												: ""
-										}`,
+										className: cn(
+											"select-list-option",
+											{ "is-highlighted": highlightedIndex === index },
+											{ "is-selected": item.label === inputValue },
+										),
 										onMouseDown: () => {
 											selectItem(item);
 											handleInputChange({ selectedItem: item });
@@ -295,6 +293,7 @@ export const Select = React.forwardRef<HTMLInputElement, SelectProps>(
 					className="sr-only"
 					isInvalid={isInvalidField}
 					readOnly
+					tabIndex={-1}
 				/>
 				<SelectDropdown
 					id={id}

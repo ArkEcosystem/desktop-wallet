@@ -11,20 +11,24 @@ import { useWalletDisplay } from "./";
 let profile: Contracts.IProfile;
 let wallets: Contracts.IReadWriteWallet[];
 
-describe("useWalletDisplay hook", () => {
+describe("useWalletDisplay", () => {
 	beforeAll(async () => {
 		nock("https://neoscan.io/api/main_net/v1/")
 			.get("/get_last_transactions_by_address/AdVSe37niA3uFUPgCgMUH2tMsHF4LpLoiX/1")
 			.reply(200, []);
 
 		profile = env.profiles().findById(getDefaultProfileId());
+		await env.profiles().restore(profile);
+		await profile.sync();
 
-		const wallet = await profile
-			.wallets()
-			.importByAddress("AdVSe37niA3uFUPgCgMUH2tMsHF4LpLoiX", "ARK", "ark.mainnet");
+		const wallet = await profile.walletFactory().fromAddress({
+			address: "AdVSe37niA3uFUPgCgMUH2tMsHF4LpLoiX",
+			coin: "ARK",
+			network: "ark.mainnet",
+		});
 
+		profile.wallets().push(wallet);
 		await syncDelegates();
-		await wallet.syncVotes();
 
 		wallets = profile.wallets().values();
 	});
@@ -133,9 +137,28 @@ describe("useWalletDisplay hook", () => {
 
 	it("should return all grid wallets", async () => {
 		const wrapper = ({ children }: any) => <EnvironmentProvider env={env}> {children} </EnvironmentProvider>;
-		await profile.wallets().importByMnemonic("test", "ARK", "ark.devnet");
-		await profile.wallets().importByMnemonic("test2", "ARK", "ark.devnet");
-		const ledger = await profile.wallets().importByMnemonic("test3", "ARK", "ark.devnet");
+
+		const testWallet = await profile.walletFactory().fromMnemonic({
+			mnemonic: "test",
+			coin: "ARK",
+			network: "ark.devnet",
+		});
+		const test2Wallet = await profile.walletFactory().fromMnemonic({
+			mnemonic: "test2",
+			coin: "ARK",
+			network: "ark.devnet",
+		});
+
+		const ledger = await profile.walletFactory().fromMnemonic({
+			mnemonic: "test3",
+			coin: "ARK",
+			network: "ark.devnet",
+		});
+
+		profile.wallets().push(testWallet);
+		profile.wallets().push(test2Wallet);
+		profile.wallets().push(ledger);
+
 		const ledgerMock = jest.spyOn(ledger, "isLedger").mockReturnValue(true);
 
 		const { result } = renderHook(
@@ -155,7 +178,14 @@ describe("useWalletDisplay hook", () => {
 
 	it("should filter ledger grid wallets", async () => {
 		const wrapper = ({ children }: any) => <EnvironmentProvider env={env}> {children} </EnvironmentProvider>;
-		const ledger = await profile.wallets().importByMnemonic("test4", "ARK", "ark.devnet");
+		const ledger = await profile.walletFactory().fromMnemonic({
+			mnemonic: "test4",
+			coin: "ARK",
+			network: "ark.devnet",
+		});
+
+		profile.wallets().push(ledger);
+
 		const ledgerMock = jest.spyOn(ledger, "isLedger").mockReturnValue(true);
 
 		const { result } = renderHook(

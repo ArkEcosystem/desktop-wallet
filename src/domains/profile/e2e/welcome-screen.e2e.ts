@@ -19,5 +19,5 @@ test("should return to welcome page when application is idle", async (t) => {
 	await t.expect(Selector("div").withText(translations.COMMON.WALLETS).exists).ok();
 	await t.expect(Selector('[data-testid="transactions__fetch-more-button"]').exists).ok();
 
-	await t.expect(Selector("div").withText(translations.COMMON.WALLETS).exists).notOk({ timeout: 80000 });
+	await t.expect(Selector("div").withText(translations.COMMON.WALLETS).exists).notOk({ timeout: 100000 });
 });
