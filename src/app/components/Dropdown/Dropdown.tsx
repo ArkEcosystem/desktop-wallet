@@ -101,7 +101,7 @@ const renderOptions = (options: DropdownOption[] | DropdownOptionGroup[], onSele
 			{(options as DropdownOption[]).map((option: DropdownOption, index: number) => (
 				<DropdownItem
 					aria-disabled={option.disabled}
-					className="group"
+					className={cn({ group: !option.disabled })}
 					disabled={option.disabled}
 					key={index}
 					data-testid={`dropdown__option--${key ? `${key}-` : ""}${index}`}
