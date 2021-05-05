@@ -30,7 +30,7 @@ exports[`FilterNetwork should render empty 1`] = `
       </span>
     </div>
     <ul
-      class="inline-block"
+      class="flex flex-wrap"
       data-testid="NetworkOptions"
     />
   </div>
@@ -67,11 +67,11 @@ exports[`FilterNetwork should render public networks 1`] = `
       </span>
     </div>
     <ul
-      class="inline-block"
+      class="flex flex-wrap"
       data-testid="NetworkOptions"
     >
       <li
-        class="inline-block mr-5 cursor-pointer"
+        class="inline-block pr-5 pb-5 cursor-pointer"
         data-testid="NetworkOption__ARK"
       >
         <div
@@ -94,7 +94,7 @@ exports[`FilterNetwork should render public networks 1`] = `
         </div>
       </li>
       <li
-        class="inline-block mr-5 cursor-pointer"
+        class="inline-block pr-5 pb-5 cursor-pointer"
         data-testid="NetworkOption__LSK"
       >
         <div
@@ -126,7 +126,7 @@ exports[`FilterNetwork should render public networks 1`] = `
         </div>
       </li>
       <li
-        class="inline-block mr-5 cursor-pointer"
+        class="inline-block pr-5 pb-5 cursor-pointer"
         data-testid="NetworkOption__ETH"
       >
         <div
@@ -184,11 +184,11 @@ exports[`FilterNetworks should render public and testnet networks 1`] = `
         Public Networks
       </div>
       <ul
-        class="inline-block"
+        class="flex flex-wrap"
         data-testid="NetworkOptions"
       >
         <li
-          class="inline-block mr-5 cursor-pointer"
+          class="inline-block pr-5 pb-5 cursor-pointer"
           data-testid="NetworkOption__ARK"
         >
           <div
@@ -211,7 +211,7 @@ exports[`FilterNetworks should render public and testnet networks 1`] = `
           </div>
         </li>
         <li
-          class="inline-block mr-5 cursor-pointer"
+          class="inline-block pr-5 pb-5 cursor-pointer"
           data-testid="NetworkOption__ETH"
         >
           <div
@@ -245,6 +245,7 @@ exports[`FilterNetworks should render public and testnet networks 1`] = `
       </ul>
     </div>
     <div
+      class="mt-6"
       data-testid="FilterNetwork"
     >
       <div
@@ -253,11 +254,11 @@ exports[`FilterNetworks should render public and testnet networks 1`] = `
         Development Networks
       </div>
       <ul
-        class="inline-block"
+        class="flex flex-wrap"
         data-testid="NetworkOptions"
       >
         <li
-          class="inline-block mr-5 cursor-pointer"
+          class="inline-block pr-5 pb-5 cursor-pointer"
           data-testid="NetworkOption__LSK"
         >
           <div
@@ -308,11 +309,11 @@ exports[`FilterNetworks should render public networks 1`] = `
         Public Networks
       </div>
       <ul
-        class="inline-block"
+        class="flex flex-wrap"
         data-testid="NetworkOptions"
       >
         <li
-          class="inline-block mr-5 cursor-pointer"
+          class="inline-block pr-5 pb-5 cursor-pointer"
           data-testid="NetworkOption__ARK"
         >
           <div
@@ -335,7 +336,7 @@ exports[`FilterNetworks should render public networks 1`] = `
           </div>
         </li>
         <li
-          class="inline-block mr-5 cursor-pointer"
+          class="inline-block pr-5 pb-5 cursor-pointer"
           data-testid="NetworkOption__ETH"
         >
           <div
@@ -386,11 +387,11 @@ exports[`FilterNetworks should toggle a testnet network option 1`] = `
         Public Networks
       </div>
       <ul
-        class="inline-block"
+        class="flex flex-wrap"
         data-testid="NetworkOptions"
       >
         <li
-          class="inline-block mr-5 cursor-pointer"
+          class="inline-block pr-5 pb-5 cursor-pointer"
           data-testid="NetworkOption__ARK"
         >
           <div
@@ -413,7 +414,7 @@ exports[`FilterNetworks should toggle a testnet network option 1`] = `
           </div>
         </li>
         <li
-          class="inline-block mr-5 cursor-pointer"
+          class="inline-block pr-5 pb-5 cursor-pointer"
           data-testid="NetworkOption__ETH"
         >
           <div
@@ -447,6 +448,7 @@ exports[`FilterNetworks should toggle a testnet network option 1`] = `
       </ul>
     </div>
     <div
+      class="mt-6"
       data-testid="FilterNetwork"
     >
       <div
@@ -455,11 +457,11 @@ exports[`FilterNetworks should toggle a testnet network option 1`] = `
         Development Networks
       </div>
       <ul
-        class="inline-block"
+        class="flex flex-wrap"
         data-testid="NetworkOptions"
       >
         <li
-          class="inline-block mr-5 cursor-pointer"
+          class="inline-block pr-5 pb-5 cursor-pointer"
           data-testid="NetworkOption__LSK"
         >
           <div
@@ -534,11 +536,11 @@ exports[`FilterNetworks should toggle view all 1`] = `
         </span>
       </div>
       <ul
-        class="inline-block"
+        class="flex flex-wrap"
         data-testid="NetworkOptions"
       >
         <li
-          class="inline-block mr-5 cursor-pointer"
+          class="inline-block pr-5 pb-5 cursor-pointer"
           data-testid="NetworkOption__ARK"
         >
           <div
@@ -561,7 +563,7 @@ exports[`FilterNetworks should toggle view all 1`] = `
           </div>
         </li>
         <li
-          class="inline-block mr-5 cursor-pointer"
+          class="inline-block pr-5 pb-5 cursor-pointer"
           data-testid="NetworkOption__ETH"
         >
           <div
@@ -608,6 +610,7 @@ exports[`FilterNetworks should toggle view all 1`] = `
       </div>
     </div>
     <div
+      class="mt-6"
       data-testid="FilterNetwork"
     >
       <div
@@ -640,11 +643,11 @@ exports[`FilterNetworks should toggle view all 1`] = `
         </span>
       </div>
       <ul
-        class="inline-block"
+        class="flex flex-wrap"
         data-testid="NetworkOptions"
       >
         <li
-          class="inline-block mr-5 cursor-pointer"
+          class="inline-block pr-5 pb-5 cursor-pointer"
           data-testid="NetworkOption__LSK"
         >
           <div
@@ -719,11 +722,11 @@ exports[`FilterNetworks should toggle view all 2`] = `
         </span>
       </div>
       <ul
-        class="inline-block"
+        class="flex flex-wrap"
         data-testid="NetworkOptions"
       >
         <li
-          class="inline-block mr-5 cursor-pointer"
+          class="inline-block pr-5 pb-5 cursor-pointer"
           data-testid="NetworkOption__ARK"
         >
           <div
@@ -746,7 +749,7 @@ exports[`FilterNetworks should toggle view all 2`] = `
           </div>
         </li>
         <li
-          class="inline-block mr-5 cursor-pointer"
+          class="inline-block pr-5 pb-5 cursor-pointer"
           data-testid="NetworkOption__ETH"
         >
           <div
@@ -780,6 +783,7 @@ exports[`FilterNetworks should toggle view all 2`] = `
       </ul>
     </div>
     <div
+      class="mt-6"
       data-testid="FilterNetwork"
     >
       <div
@@ -812,11 +816,11 @@ exports[`FilterNetworks should toggle view all 2`] = `
         </span>
       </div>
       <ul
-        class="inline-block"
+        class="flex flex-wrap"
         data-testid="NetworkOptions"
       >
         <li
-          class="inline-block mr-5 cursor-pointer"
+          class="inline-block pr-5 pb-5 cursor-pointer"
           data-testid="NetworkOption__LSK"
         >
           <div
@@ -856,11 +860,11 @@ exports[`FilterNetworks should toggle view all 2`] = `
 exports[`NetworkOptions should not render unknown networks 1`] = `
 <div>
   <ul
-    class="inline-block"
+    class="flex flex-wrap"
     data-testid="NetworkOptions"
   >
     <li
-      class="inline-block mr-5 cursor-pointer"
+      class="inline-block pr-5 pb-5 cursor-pointer"
       data-testid="NetworkOption__ARK"
     >
       <div
@@ -883,7 +887,7 @@ exports[`NetworkOptions should not render unknown networks 1`] = `
       </div>
     </li>
     <li
-      class="inline-block mr-5 cursor-pointer"
+      class="inline-block pr-5 pb-5 cursor-pointer"
       data-testid="NetworkOption__LSK"
     >
       <div
@@ -915,7 +919,7 @@ exports[`NetworkOptions should not render unknown networks 1`] = `
       </div>
     </li>
     <li
-      class="inline-block mr-5 cursor-pointer"
+      class="inline-block pr-5 pb-5 cursor-pointer"
       data-testid="NetworkOption__ETH"
     >
       <div
@@ -953,11 +957,11 @@ exports[`NetworkOptions should not render unknown networks 1`] = `
 exports[`NetworkOptions should render available networks options 1`] = `
 <div>
   <ul
-    class="inline-block"
+    class="flex flex-wrap"
     data-testid="NetworkOptions"
   >
     <li
-      class="inline-block mr-5 cursor-pointer"
+      class="inline-block pr-5 pb-5 cursor-pointer"
       data-testid="NetworkOption__ARK"
     >
       <div
@@ -980,7 +984,7 @@ exports[`NetworkOptions should render available networks options 1`] = `
       </div>
     </li>
     <li
-      class="inline-block mr-5 cursor-pointer"
+      class="inline-block pr-5 pb-5 cursor-pointer"
       data-testid="NetworkOption__LSK"
     >
       <div
@@ -1012,7 +1016,7 @@ exports[`NetworkOptions should render available networks options 1`] = `
       </div>
     </li>
     <li
-      class="inline-block mr-5 cursor-pointer"
+      class="inline-block pr-5 pb-5 cursor-pointer"
       data-testid="NetworkOption__ETH"
     >
       <div
@@ -1050,7 +1054,7 @@ exports[`NetworkOptions should render available networks options 1`] = `
 exports[`NetworkOptions should render empty 1`] = `
 <div>
   <ul
-    class="inline-block"
+    class="flex flex-wrap"
     data-testid="NetworkOptions"
   />
 </div>
@@ -1059,11 +1063,11 @@ exports[`NetworkOptions should render empty 1`] = `
 exports[`NetworkOptions should render networks that have coin and id defined 1`] = `
 <div>
   <ul
-    class="inline-block"
+    class="flex flex-wrap"
     data-testid="NetworkOptions"
   >
     <li
-      class="inline-block mr-5 cursor-pointer"
+      class="inline-block pr-5 pb-5 cursor-pointer"
       data-testid="NetworkOption__ARK"
     >
       <div
@@ -1086,7 +1090,7 @@ exports[`NetworkOptions should render networks that have coin and id defined 1`]
       </div>
     </li>
     <li
-      class="inline-block mr-5 cursor-pointer"
+      class="inline-block pr-5 pb-5 cursor-pointer"
       data-testid="NetworkOption__LSK"
     >
       <div
@@ -1118,7 +1122,7 @@ exports[`NetworkOptions should render networks that have coin and id defined 1`]
       </div>
     </li>
     <li
-      class="inline-block mr-5 cursor-pointer"
+      class="inline-block pr-5 pb-5 cursor-pointer"
       data-testid="NetworkOption__ETH"
     >
       <div
