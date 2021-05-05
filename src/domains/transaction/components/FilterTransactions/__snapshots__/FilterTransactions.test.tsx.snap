@@ -115,7 +115,7 @@ exports[`FilterTransactions should open dropdown list with all transaction types
                   tabindex="0"
                 >
                   <span>
-                    Entity Registration
+                    Timelock Claim
                   </span>
                 </li>
                 <li
@@ -124,7 +124,7 @@ exports[`FilterTransactions should open dropdown list with all transaction types
                   tabindex="0"
                 >
                   <span>
-                    Entity Resignation
+                    Timelock
                   </span>
                 </li>
                 <li
@@ -133,7 +133,7 @@ exports[`FilterTransactions should open dropdown list with all transaction types
                   tabindex="0"
                 >
                   <span>
-                    Entity Update
+                    Timelock Refund
                   </span>
                 </li>
                 <li
@@ -142,7 +142,7 @@ exports[`FilterTransactions should open dropdown list with all transaction types
                   tabindex="0"
                 >
                   <span>
-                    Timelock Claim
+                    IPFS
                   </span>
                 </li>
                 <li
@@ -151,7 +151,7 @@ exports[`FilterTransactions should open dropdown list with all transaction types
                   tabindex="0"
                 >
                   <span>
-                    Timelock
+                    Multipayment
                   </span>
                 </li>
                 <li
@@ -160,40 +160,13 @@ exports[`FilterTransactions should open dropdown list with all transaction types
                   tabindex="0"
                 >
                   <span>
-                    Timelock Refund
+                    Multisignature
                   </span>
                 </li>
                 <li
                   class="sc-gsTCUz lhBamA group"
                   data-testid="dropdown__option--core-8"
-<<<<<<< HEAD
-                >
-                  <span>
-                    IPFS
-                  </span>
-                </li>
-                <li
-                  class="group flex items-center space-x-2 py-4 px-8 text-base font-semibold text-left whitespace-nowrap cursor-pointer text-theme-secondary-800 dark:text-theme-secondary-200 hover:bg-theme-secondary-200 dark:hover:bg-theme-primary-600 hover:text-theme-primary-600 dark:hover:text-theme-secondary-200"
-                  data-testid="dropdown__option--core-9"
-                >
-                  <span>
-                    Multipayment
-                  </span>
-                </li>
-                <li
-                  class="group flex items-center space-x-2 py-4 px-8 text-base font-semibold text-left whitespace-nowrap cursor-pointer text-theme-secondary-800 dark:text-theme-secondary-200 hover:bg-theme-secondary-200 dark:hover:bg-theme-primary-600 hover:text-theme-primary-600 dark:hover:text-theme-secondary-200"
-                  data-testid="dropdown__option--core-10"
-                >
-                  <span>
-                    Multisignature
-                  </span>
-                </li>
-                <li
-                  class="group flex items-center space-x-2 py-4 px-8 text-base font-semibold text-left whitespace-nowrap cursor-pointer text-theme-secondary-800 dark:text-theme-secondary-200 hover:bg-theme-secondary-200 dark:hover:bg-theme-primary-600 hover:text-theme-primary-600 dark:hover:text-theme-secondary-200"
-                  data-testid="dropdown__option--core-11"
-=======
                   tabindex="0"
->>>>>>> develop
                 >
                   <span>
                     Second Signature
@@ -214,56 +187,7 @@ exports[`FilterTransactions should open dropdown list with all transaction types
                   tabindex="0"
                 >
                   <span>
-<<<<<<< HEAD
                     Vote
-=======
-                    Timelock Refund
-                  </span>
-                </li>
-                <li
-                  class="sc-gsTCUz lhBamA group"
-                  data-testid="dropdown__option--core-11"
-                  tabindex="0"
-                >
-                  <span>
-                    IPFS
-                  </span>
-                </li>
-                <li
-                  class="sc-gsTCUz lhBamA group"
-                  data-testid="dropdown__option--core-12"
-                  tabindex="0"
-                >
-                  <span>
-                    Multipayment
-                  </span>
-                </li>
-                <li
-                  class="sc-gsTCUz lhBamA group"
-                  data-testid="dropdown__option--core-13"
-                  tabindex="0"
-                >
-                  <span>
-                    Multisignature
-                  </span>
-                </li>
-                <li
-                  class="sc-gsTCUz lhBamA group"
-                  data-testid="dropdown__option--core-14"
-                  tabindex="0"
-                >
-                  <span>
-                    Second Signature
-                  </span>
-                </li>
-                <li
-                  class="sc-gsTCUz lhBamA group"
-                  data-testid="dropdown__option--core-15"
-                  tabindex="0"
-                >
-                  <span>
-                    Transfer
->>>>>>> develop
                   </span>
                 </li>
               </ul>
@@ -285,14 +209,9 @@ exports[`FilterTransactions should open dropdown list with all transaction types
                 data-testid="dropdown__options"
               >
                 <li
-<<<<<<< HEAD
-                  class="group flex items-center space-x-2 py-4 px-8 text-base font-semibold text-left whitespace-nowrap cursor-pointer text-theme-secondary-800 dark:text-theme-secondary-200 hover:bg-theme-secondary-200 dark:hover:bg-theme-primary-600 hover:text-theme-primary-600 dark:hover:text-theme-secondary-200"
-                  data-testid="dropdown__option--magistrate-0"
-=======
                   class="sc-gsTCUz lhBamA group"
-                  data-testid="dropdown__option--core-16"
+                  data-testid="dropdown__option--magistrate-0"
                   tabindex="0"
->>>>>>> develop
                 >
                   <span>
                     Magistrate
