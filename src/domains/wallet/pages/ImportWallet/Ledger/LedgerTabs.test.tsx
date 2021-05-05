@@ -10,7 +10,8 @@ import { act, env, fireEvent, getDefaultProfileId, renderWithRouter, screen, wai
 
 import { LedgerTabs } from "./LedgerTabs";
 
-jest.setTimeout(10000);
+jest.setTimeout(20000);
+
 describe("LedgerTabs", () => {
 	let profile: Contracts.IProfile;
 	let wallet: Contracts.IReadWriteWallet;
@@ -26,21 +27,37 @@ describe("LedgerTabs", () => {
 				meta: {},
 				data: [
 					{
-						address: "DRgF3PvzeGWndQjET7dZsSmnrc6uAy23ES",
-						balance: "1",
+						address: "DJpFwW39QnQvQRQJF2MCfAoKvsX4DJ28jq",
+						balance: "2",
 					},
 					{
-						address: "DJpFwW39QnQvQRQJF2MCfAoKvsX4DJ28jq",
-						balance: "0",
+						address: "DSyG9hK9CE8eyfddUoEvsga4kNVQLdw2ve",
+						balance: "3",
 					},
 				],
 			})
-			.persist();
+			.get("/wallets")
+			.query((params) => !!params.address)
+			.reply(200, {
+				meta: {},
+				data: [],
+			})
+			.get("/wallets")
+			.query((params) => !!params.address)
+			.reply(200, {
+				meta: {},
+				data: [],
+			});
 	});
 
-	beforeEach(() => {
+	beforeEach(async () => {
 		profile = env.profiles().findById(getDefaultProfileId());
+		await env.profiles().restore(profile);
+		await profile.sync();
+
 		wallet = profile.wallets().first();
+		await wallet.synchroniser().identity();
+
 		transport = createTransportReplayer(RecordStore.fromString(""));
 		publicKeyPaths = new Map([
 			["44'/1'/0'/0/0", "027716e659220085e41389efc7cf6a05f7f7c659cf3db9126caabce6cda9156582"],
@@ -60,10 +77,14 @@ describe("LedgerTabs", () => {
 			return { unsubscribe: jest.fn() };
 		});
 
+		jest.spyOn(wallet.coin(), "__construct").mockImplementation();
+		jest.spyOn(wallet.coin().ledger(), "getExtendedPublicKey").mockResolvedValue(wallet.publicKey()!);
+
 		jest.useFakeTimers();
 	});
 
 	afterEach(() => {
+		jest.clearAllMocks();
 		jest.runOnlyPendingTimers();
 		jest.useRealTimers();
 	});
@@ -174,7 +195,9 @@ describe("LedgerTabs", () => {
 
 		// Auto redirect to next step
 		await waitFor(() => expect(screen.getByTestId("LedgerScanStep")).toBeInTheDocument());
-		await waitFor(() => expect(screen.getAllByRole("row")).toHaveLength(7), { timeout: 3000 });
+		await waitFor(() => expect(screen.getAllByRole("row")).toHaveLength(6), { timeout: 3000 });
+
+		await waitFor(() => expect(screen.getAllByRole("checkbox")).toHaveLength(3));
 
 		getPublicKeySpy.mockReset();
 	});
@@ -252,9 +275,11 @@ describe("LedgerTabs", () => {
 		renderWithRouter(<Component />, { routes: [`/profiles/${profile.id()}`] });
 
 		await waitFor(() => expect(screen.getByTestId("LedgerScanStep")).toBeInTheDocument());
-		await waitFor(() => expect(screen.getAllByRole("row")).toHaveLength(7));
+		await waitFor(() => expect(screen.getAllByRole("row")).toHaveLength(3), { timeout: 3000 });
 
 		expect(profile.wallets().values()).toHaveLength(2);
+
+		await waitFor(() => expect(screen.getAllByRole("checkbox")).toHaveLength(3));
 
 		act(() => {
 			fireEvent.click(nextSelector());
@@ -292,13 +317,7 @@ describe("LedgerTabs", () => {
 	});
 
 	it("should render scan step with failing fetch", async () => {
-		nock.cleanAll();
-
-		nock("https://dwallets.ark.io/api")
-			.get("/wallets")
-			.query((params) => !!params.address)
-			.replyWithError(new Error("Failed"))
-			.persist();
+		jest.spyOn(wallet.ledger(), "scan").mockRejectedValue(new Error("Scan Failed"));
 
 		const getPublicKeySpy = jest
 			.spyOn(wallet.coin().ledger(), "getPublicKey")
@@ -331,9 +350,7 @@ describe("LedgerTabs", () => {
 
 		// Auto redirect to next step
 		await waitFor(() => expect(screen.getByTestId("LedgerScanStep")).toBeInTheDocument());
-		await waitFor(() => expect(screen.queryAllByTestId("LedgerScanStep__amount-error")).toHaveLength(2));
-
-		expect(screen.getByTestId("LedgerScanStep__view-more")).toBeDisabled();
+		await waitFor(() => expect(screen.getByTestId("LedgerScanStep__error")).toBeInTheDocument());
 
 		act(() => {
 			fireEvent.click(screen.getByTestId("Paginator__retry-button"));
@@ -342,9 +359,7 @@ describe("LedgerTabs", () => {
 		await waitFor(() => expect(screen.queryAllByTestId("LedgerScanStep__amount-skeleton")).toHaveLength(0), {
 			interval: 5,
 		});
-		await waitFor(() => expect(screen.queryAllByTestId("LedgerScanStep__amount-error")).toHaveLength(2), {
-			timeout: 500,
-		});
+		await waitFor(() => expect(screen.getByTestId("LedgerScanStep__error")).toBeInTheDocument());
 
 		expect(container).toMatchSnapshot();
 

@@ -25,6 +25,11 @@ type NewsOptionsProps = {
 	onSubmit?: (data: object) => void;
 };
 
+//region for scrollable sidebar on small screen
+const HEADER_HEIGHT = 86;
+const VERTICAL_PADDING = 40;
+//endregion
+
 export const NewsOptions = ({ selectedCategories, selectedCoins, onSearch, onSubmit }: NewsOptionsProps) => {
 	const { t } = useTranslation();
 
@@ -108,69 +113,77 @@ export const NewsOptions = ({ selectedCategories, selectedCoins, onSearch, onSub
 
 	return (
 		<div
-			className="p-8 rounded-lg border-2 bg-theme-background border-theme-primary-100 dark:border-theme-secondary-800"
 			data-testid="NewsOptions"
+			className="sticky top-26"
+			style={{ height: `calc(100vh - (${HEADER_HEIGHT}px + ${VERTICAL_PADDING}px))` }}
 		>
-			<div className="flex flex-col space-y-8">
-				<div className="flex justify-between items-center py-4 px-2 rounded-md shadow-xl">
-					<Input
-						data-testid="NewsOptions__search"
-						maxLength={32}
-						placeholder={t("NEWS.NEWS_OPTIONS.PLACEHOLDER")}
-						onChange={(event) => handleSearchInput?.((event.target as HTMLInputElement).value)}
-						noBorder
-						noShadow
-					/>
-					<Icon
-						className="mr-4 text-theme-primary-300 dark:text-theme-secondary-600"
-						name="Search"
-						width={18}
-						height={18}
-					/>
-				</div>
-
-				<Divider dashed />
-
-				<div className="flex flex-col space-y-3">
-					<div className="flex justify-between items-center">
-						<h5 className="font-semibold">{t("COMMON.CATEGORY")}</h5>
-						{showSelectAllCategories && (
-							<button
-								onClick={handleSelectAllCategories}
-								className="text-xs font-semibold focus:outline-none text-theme-secondary-800"
-							>
-								{t("COMMON.SELECT_ALL")}
-							</button>
-						)}
+			<div className="p-10 pb-4 rounded-lg border-2 bg-theme-background border-theme-primary-100 dark:border-theme-secondary-800 overflow-y-auto max-h-full">
+				<div className="flex flex-col space-y-8">
+					<div className="flex justify-between items-center py-4 px-2 rounded-md shadow-xl">
+						<Input
+							data-testid="NewsOptions__search"
+							maxLength={32}
+							placeholder={t("NEWS.NEWS_OPTIONS.PLACEHOLDER")}
+							onChange={(event) => handleSearchInput?.((event.target as HTMLInputElement).value)}
+							noBorder
+							noShadow
+						/>
+						<Icon
+							className="mr-4 text-theme-primary-300 dark:text-theme-secondary-600"
+							name="Search"
+							width={18}
+							height={18}
+						/>
 					</div>
 
-					<p className="text-sm text-theme-secondary-500">{t("NEWS.NEWS_OPTIONS.SELECT_YOUR_CATEGORIES")}</p>
+					<Divider dashed />
 
-					<div className="flex flex-wrap -mx-1">
-						{categories.map((category, index) => (
-							<SelectCategory
-								data-testid={`NewsOptions__category-${category.name}`}
-								key={index}
-								className="p-1"
-								checked={category.isSelected}
-								onChange={() => handleSelectCategory(category.name)}
-							>
-								#{t(`NEWS.CATEGORIES.${category.name.toUpperCase()}`)}
-							</SelectCategory>
-						))}
+					<div className="flex flex-col space-y-3">
+						<div className="flex justify-between items-center">
+							<h5 className="font-semibold">{t("COMMON.CATEGORY")}</h5>
+							{showSelectAllCategories && (
+								<button
+									onClick={handleSelectAllCategories}
+									className="text-xs font-semibold focus:outline-none text-theme-secondary-800"
+								>
+									{t("COMMON.SELECT_ALL")}
+								</button>
+							)}
+						</div>
+
+						<p className="text-sm text-theme-secondary-500">
+							{t("NEWS.NEWS_OPTIONS.SELECT_YOUR_CATEGORIES")}
+						</p>
+
+						<div className="flex flex-wrap -mx-1">
+							{categories.map((category, index) => (
+								<SelectCategory
+									data-testid={`NewsOptions__category-${category.name}`}
+									key={index}
+									className="p-1"
+									checked={category.isSelected}
+									onChange={() => handleSelectCategory(category.name)}
+								>
+									#{t(`NEWS.CATEGORIES.${category.name.toUpperCase()}`)}
+								</SelectCategory>
+							))}
+						</div>
 					</div>
-				</div>
 
-				<Divider dashed />
+					<Divider dashed />
 
-				<div className="flex flex-col space-y-3">
-					<h5 className="font-semibold">{t("NEWS.NEWS_OPTIONS.FILTER_ASSETS")}</h5>
-					<p className="text-sm text-theme-secondary-500">
-						{t("NEWS.NEWS_OPTIONS.YOUR_CURRENT_SELECTIONS")}:
-					</p>
+					<div className="flex flex-col space-y-3">
+						<h5 className="font-semibold">{t("NEWS.NEWS_OPTIONS.FILTER_ASSETS")}</h5>
+						<p className="text-sm text-theme-secondary-500">
+							{t("NEWS.NEWS_OPTIONS.YOUR_CURRENT_SELECTIONS")}:
+						</p>
 
-					<div className="pb-4">
-						<FilterNetwork networks={coins} hideViewAll onChange={(_, networks) => setCoins(networks)} />
+						<FilterNetwork
+							className="pb-2.5"
+							networks={coins}
+							hideViewAll
+							onChange={(_, networks) => setCoins(networks)}
+						/>
 					</div>
 				</div>
 			</div>

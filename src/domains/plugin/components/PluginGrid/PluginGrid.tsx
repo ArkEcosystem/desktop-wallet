@@ -4,7 +4,7 @@ import { EmptyBlock } from "app/components/EmptyBlock";
 import { Pagination } from "app/components/Pagination";
 import { PluginCard } from "domains/plugin/components/PluginCard";
 import React, { useCallback } from "react";
-import { useTranslation } from "react-i18next";
+import { Trans, useTranslation } from "react-i18next";
 
 import { PluginCardSkeleton } from "../PluginCard/PluginCardSkeleton";
 
@@ -135,7 +135,7 @@ export const PluginGrid = ({
 	if (!plugins.length) {
 		return (
 			<EmptyBlock data-testid="PluginGrid__empty-message">
-				{emptyMessage || t("PLUGINS.PAGE_PLUGIN_MANAGER.NO_PLUGINS_AVAILABLE")}
+				<Trans>{emptyMessage || t("PLUGINS.PAGE_PLUGIN_MANAGER.NO_PLUGINS_AVAILABLE")}</Trans>
 			</EmptyBlock>
 		);
 	}

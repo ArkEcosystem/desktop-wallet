@@ -7,6 +7,7 @@ import { styled } from "twin.macro";
 import { Position, Size } from "types";
 
 import { defaultClasses, getStyles } from "./Dropdown.styles";
+import { DropdownItem } from "./DropdownItem.styles";
 
 export type DropdownOption = {
 	icon?: string;
@@ -86,26 +87,32 @@ const renderOptions = (options: DropdownOption[] | DropdownOptionGroup[], onSele
 		/>
 	);
 
+	const onSelectItem = (e: any, option: DropdownOption) => {
+		if (option.disabled) {
+			return;
+		}
+		onSelect?.(option);
+		e.preventDefault();
+		e.stopPropagation();
+	};
+
 	return (
 		<ul data-testid="dropdown__options">
 			{(options as DropdownOption[]).map((option: DropdownOption, index: number) => (
-				<li
+				<DropdownItem
 					aria-disabled={option.disabled}
-					className={`group flex items-center space-x-2 py-4 px-8 text-base font-semibold text-left whitespace-nowrap ${
-						option.disabled
-							? "cursor-not-allowed select-none bg-theme-secondary-100 text-theme-secondary-400 dark:bg-theme-secondary-700 dark:text-theme-secondary-500"
-							: "cursor-pointer text-theme-secondary-800 dark:text-theme-secondary-200 hover:bg-theme-secondary-200 dark:hover:bg-theme-primary-600 hover:text-theme-primary-600 dark:hover:text-theme-secondary-200"
-					}`}
+					className="group"
+					disabled={option.disabled}
 					key={index}
 					data-testid={`dropdown__option--${key ? `${key}-` : ""}${index}`}
-					onClick={(e: any) => {
-						if (option.disabled) {
-							return;
+					onClick={(e: any) => onSelectItem(e, option)}
+					onKeyDown={(e: any) => {
+						/* istanbul ignore next */
+						if (e.key === "Enter" || e.key === " ") {
+							onSelectItem(e, option);
 						}
-						onSelect?.(option);
-						e.preventDefault();
-						e.stopPropagation();
 					}}
+					tabIndex={option.disabled ? -1 : 0}
 				>
 					{option?.icon && option?.iconPosition === "start" && renderIcon(option)}
 					<span>
@@ -117,7 +124,7 @@ const renderOptions = (options: DropdownOption[] | DropdownOptionGroup[], onSele
 						)}
 					</span>
 					{option?.icon && option?.iconPosition !== "start" && renderIcon(option)}
-				</li>
+				</DropdownItem>
 			))}
 		</ul>
 	);
@@ -257,6 +264,21 @@ export const Dropdown = ({
 	useEffect(() => {
 		clickOutsideHandler(ref, hide);
 	}, [ref]);
+
+	useEffect(() => {
+		const handleKeys = (e: any) => {
+			/* istanbul ignore next */
+			if (e.key === "Escape") {
+				hide();
+			}
+		};
+
+		if (isOpen) {
+			window.addEventListener("keydown", handleKeys);
+		}
+
+		return () => window.removeEventListener("keydown", handleKeys);
+	}, [isOpen]);
 
 	return (
 		<div ref={ref} className="relative">

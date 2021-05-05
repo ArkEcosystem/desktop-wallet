@@ -15,6 +15,7 @@ module.exports = {
 			white: "#fff",
 			logo: "#c9292c",
 			transparent: "transparent",
+			current: "currentColor",
 
 			"theme-background": "var(--theme-background-color)",
 			"theme-secondary-background": "var(--theme-secondary-background-color)",
@@ -100,6 +101,7 @@ module.exports = {
 				full: "100%",
 				"1/2": "50%",
 				21: "5.25rem",
+				26: "6.5rem",
 				"-1": "-0.25rem",
 				"-2": "-0.5rem",
 				"-3": "-0.75rem",
@@ -227,6 +229,7 @@ module.exports = {
 			opacity: ["dark", "group-hover"],
 			padding: ["first", "last"],
 			ringColor: ["dark", "group-hover"],
+			ringWidth: ["group-focus"],
 		},
 	},
 	plugins: [require("@tailwindcss/forms")],

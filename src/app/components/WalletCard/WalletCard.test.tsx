@@ -20,12 +20,13 @@ describe("Wallet Card", () => {
 		history.push(dashboardURL);
 	});
 
-	beforeEach(() => {
+	beforeEach(async () => {
 		profile = env.profiles().findById(getDefaultProfileId());
 		wallet = profile.wallets().findById("ac38fe6d-4b67-4ef1-85be-17c5f6841129");
 		wallet.data().set(Contracts.WalletFlag.Starred, true);
 		wallet.data().set(Contracts.WalletData.LedgerPath, "0");
 
+		await wallet.synchroniser().identity();
 		jest.spyOn(wallet, "isMultiSignature").mockReturnValue(true);
 	});
 

@@ -1,20 +1,25 @@
 import { Contracts } from "@arkecosystem/platform-sdk-profiles";
+import Transport from "@ledgerhq/hw-transport";
 import { renderHook } from "@testing-library/react-hooks";
-import { env, getDefaultProfileId, getDefaultWalletMnemonic } from "utils/testing-library";
+import { env, getDefaultLedgerTransport, getDefaultProfileId, getDefaultWalletMnemonic } from "utils/testing-library";
 
 import { useMessageSigner } from "./use-message-signer";
 
 describe("Use Message Signer Hook", () => {
 	let profile: Contracts.IProfile;
 	let wallet: Contracts.IReadWriteWallet;
+	let transport: typeof Transport;
 
-	beforeEach(() => {
+	beforeEach(async () => {
 		profile = env.profiles().findById(getDefaultProfileId());
 		wallet = profile.wallets().first();
+		transport = getDefaultLedgerTransport();
+		await env.profiles().restore(profile);
+		await profile.sync();
 	});
 
 	it("should sign message", async () => {
-		const { result } = renderHook(() => useMessageSigner());
+		const { result } = renderHook(() => useMessageSigner(transport));
 
 		const signedMessage = await result.current.sign(wallet, "message", getDefaultWalletMnemonic());
 		expect(signedMessage).toEqual({
@@ -26,15 +31,20 @@ describe("Use Message Signer Hook", () => {
 	});
 
 	it("should sign message with wif", async () => {
-		const { result } = renderHook(() => useMessageSigner());
+		const { result } = renderHook(() => useMessageSigner(transport));
 
-		const walletUsesWIFMock = jest.spyOn(wallet, "usesWIF").mockReturnValue(true);
-		const walletWifMock = jest.spyOn(wallet, "wif").mockImplementation((password) => {
+		const walletUsesWIFMock = jest.spyOn(wallet.wif(), "exists").mockReturnValue(true);
+		const walletWifMock = jest.spyOn(wallet.wif(), "get").mockImplementation(() => {
 			const wif = "S9rDfiJ2ar4DpWAQuaXECPTJHfTZ3XjCPv15gjxu4cHJZKzABPyV";
 			return Promise.resolve(wif);
 		});
 
-		const signedMessage = await result.current.sign(wallet, "message", undefined, await wallet.wif("password"));
+		const signedMessage = await result.current.sign(
+			wallet,
+			"message",
+			undefined,
+			await wallet.wif().get("password"),
+		);
 		expect(signedMessage).toEqual({
 			message: "message",
 			signatory: "03df6cd794a7d404db4f1b25816d8976d0e72c5177d17ac9b19a92703b62cdbbbc",
@@ -47,7 +57,7 @@ describe("Use Message Signer Hook", () => {
 	});
 
 	it("should sign message with ledger", async () => {
-		const { result } = renderHook(() => useMessageSigner());
+		const { result } = renderHook(() => useMessageSigner(transport));
 
 		jest.spyOn(wallet, "isLedger").mockReturnValue(true);
 		jest.spyOn(wallet.coin().ledger(), "signMessage").mockResolvedValue("signature");
@@ -63,7 +73,7 @@ describe("Use Message Signer Hook", () => {
 	});
 
 	it("should sign message with cold ledger wallet", async () => {
-		const { result } = renderHook(() => useMessageSigner());
+		const { result } = renderHook(() => useMessageSigner(transport));
 
 		jest.spyOn(wallet, "publicKey").mockReturnValue(undefined);
 		jest.spyOn(wallet, "isLedger").mockReturnValue(true);
@@ -86,7 +96,7 @@ describe("Use Message Signer Hook", () => {
 		const abortCtrl = new AbortController();
 		const abortSignal = abortCtrl.signal;
 
-		const { result } = renderHook(() => useMessageSigner());
+		const { result } = renderHook(() => useMessageSigner(transport));
 
 		jest.spyOn(wallet, "isLedger").mockReturnValue(true);
 		jest.spyOn(wallet.coin().ledger(), "signMessage").mockImplementation(

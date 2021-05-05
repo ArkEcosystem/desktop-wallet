@@ -22,7 +22,7 @@ describe("LedgerConnectionStep", () => {
 
 	beforeEach(async () => {
 		profile = env.profiles().findById(getDefaultProfileId());
-		await profile.restore();
+		await env.profiles().restore(profile);
 		await profile.sync();
 
 		wallet = profile.wallets().first();
@@ -34,9 +34,11 @@ describe("LedgerConnectionStep", () => {
 		});
 
 		jest.useFakeTimers();
+		jest.spyOn(wallet.coin(), "__construct").mockImplementation();
 	});
 
 	afterEach(() => {
+		jest.clearAllMocks();
 		jest.runOnlyPendingTimers();
 		jest.useRealTimers();
 	});

@@ -72,13 +72,22 @@ describe("Registration", () => {
 	beforeAll(async () => {
 		profile = env.profiles().findById(getDefaultProfileId());
 
-		await profile.restore();
+		await env.profiles().restore(profile);
 		await profile.sync();
 
 		wallet = profile.wallets().findByAddress("D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD")!;
 		secondWallet = profile.wallets().findByAddress("D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb")!;
 
-		await profile.wallets().importByAddress("D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib", "ARK", "ark.devnet");
+		await wallet.synchroniser().identity();
+		await secondWallet.synchroniser().identity();
+
+		profile.wallets().push(
+			await profile.walletFactory().fromAddress({
+				address: "D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib",
+				coin: "ARK",
+				network: "ark.devnet",
+			}),
+		);
 
 		await syncDelegates();
 		await syncFees();
@@ -198,7 +207,7 @@ describe("Registration", () => {
 	});
 
 	it("should return to form step by cancelling fee warning", async () => {
-		const { asFragment, getByTestId, history } = await renderPage(wallet);
+		const { getByTestId } = await renderPage(wallet);
 
 		await waitFor(() => expect(getByTestId("DelegateRegistrationForm__form-step")).toBeTruthy());
 
@@ -224,7 +233,7 @@ describe("Registration", () => {
 	});
 
 	it("should proceed to authentication step by confirming fee warning", async () => {
-		const { asFragment, getByTestId, history } = await renderPage(wallet);
+		const { getByTestId } = await renderPage(wallet);
 
 		await waitFor(() => expect(getByTestId("DelegateRegistrationForm__form-step")).toBeTruthy());
 
@@ -250,7 +259,7 @@ describe("Registration", () => {
 	});
 
 	it("should show mnemonic error", async () => {
-		const { getByTestId, queryAllByTestId } = await renderPage(secondWallet);
+		const { getByTestId } = await renderPage(secondWallet);
 
 		const secondPublicKeyMock = jest
 			.spyOn(secondWallet, "secondPublicKey")
@@ -329,7 +338,7 @@ describe("Registration", () => {
 	});
 
 	it("should show error step and go back", async () => {
-		const { asFragment, getByTestId, queryAllByTestId } = await renderPage(secondWallet);
+		const { asFragment, getByTestId } = await renderPage(secondWallet);
 
 		const secondPublicKeyMock = jest
 			.spyOn(secondWallet, "secondPublicKey")

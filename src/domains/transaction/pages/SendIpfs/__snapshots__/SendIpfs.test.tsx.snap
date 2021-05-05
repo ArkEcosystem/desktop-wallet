@@ -48,10 +48,13 @@ exports[`SendIpfs should error if wrong mnemonic 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text"
+                class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
                 title="Portfolio"
               >
+                <div
+                  class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2"
+                />
                 Portfolio
               </a>
             </li>
@@ -59,10 +62,13 @@ exports[`SendIpfs should error if wrong mnemonic 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text"
+                class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/plugins"
                 title="Plugins"
               >
+                <div
+                  class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2"
+                />
                 Plugins
               </a>
             </li>
@@ -70,10 +76,13 @@ exports[`SendIpfs should error if wrong mnemonic 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text"
+                class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/exchange"
                 title="Exchange"
               >
+                <div
+                  class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2"
+                />
                 Exchange
               </a>
             </li>
@@ -81,10 +90,13 @@ exports[`SendIpfs should error if wrong mnemonic 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text"
+                class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/news"
                 title="News"
               >
+                <div
+                  class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2"
+                />
                 News
               </a>
             </li>
@@ -103,7 +115,7 @@ exports[`SendIpfs should error if wrong mnemonic 1`] = `
                     class="NavigationBar__NavigationButtonWrapper-sc-1qsoskw-1 eUPnft group"
                   >
                     <button
-                      class="OriginalButton__StyledButton-sc-1y2wptt-0 lpqSIM"
+                      class="OriginalButton__StyledButton-sc-1y2wptt-0 fNHPRi"
                       data-testid="navbar__buttons--notifications"
                       type="button"
                     >
@@ -142,7 +154,7 @@ exports[`SendIpfs should error if wrong mnemonic 1`] = `
                 class="NavigationBar__NavigationButtonWrapper-sc-1qsoskw-1 eUPnft"
               >
                 <button
-                  class="OriginalButton__StyledButton-sc-1y2wptt-0 lpqSIM"
+                  class="OriginalButton__StyledButton-sc-1y2wptt-0 fNHPRi"
                   data-testid="navbar__buttons--send"
                   type="button"
                 >
@@ -172,7 +184,7 @@ exports[`SendIpfs should error if wrong mnemonic 1`] = `
                 class="NavigationBar__NavigationButtonWrapper-sc-1qsoskw-1 eUPnft"
               >
                 <button
-                  class="OriginalButton__StyledButton-sc-1y2wptt-0 lpqSIM"
+                  class="OriginalButton__StyledButton-sc-1y2wptt-0 fNHPRi"
                   data-testid="navbar__buttons--receive"
                   type="button"
                 >
@@ -348,7 +360,7 @@ exports[`SendIpfs should error if wrong mnemonic 1`] = `
                         />
                       </label>
                       <div
-                        class="Input__InputWrapperStyled-wu99qs-0 iXDeQC"
+                        class="Input__InputWrapperStyled-wu99qs-0 jXtMoQ"
                       >
                         <div
                           class="relative flex flex-1 h-full"
@@ -382,11 +394,13 @@ exports[`SendIpfs should error if wrong mnemonic 1`] = `
                             class="pl-3"
                           >
                             <button
-                              class="flex items-center justify-center w-full h-full text-2xl"
+                              class="relative flex items-center justify-center w-full h-full text-2xl focus:outline-none group"
                               data-testid="InputPassword__toggle"
-                              tabindex="-1"
                               type="button"
                             >
+                              <div
+                                class="absolute inset-0 -m-1 rounded ring-theme-primary-400 group-focus:ring-2"
+                              />
                               <div
                                 class="sc-bdfBwQ fPrsah"
                                 height="1em"
@@ -407,7 +421,7 @@ exports[`SendIpfs should error if wrong mnemonic 1`] = `
                   class="flex justify-end mt-10 space-x-2"
                 >
                   <button
-                    class="OriginalButton__StyledButton-sc-1y2wptt-0 hsoUax"
+                    class="OriginalButton__StyledButton-sc-1y2wptt-0 izJbbP"
                     data-testid="SendIpfs__button--back"
                     type="button"
                   >
@@ -418,7 +432,7 @@ exports[`SendIpfs should error if wrong mnemonic 1`] = `
                     </div>
                   </button>
                   <button
-                    class="OriginalButton__StyledButton-sc-1y2wptt-0 blpaPr"
+                    class="OriginalButton__StyledButton-sc-1y2wptt-0 fqRthJ"
                     data-testid="SendIpfs__button--submit"
                     disabled=""
                     type="submit"
@@ -507,7 +521,7 @@ exports[`SendIpfs should render form step 1`] = `
               id="SendTransactionForm__network-label"
             />
             <div
-              class="Input__InputWrapperStyled-wu99qs-0 hDeOGV"
+              class="Input__InputWrapperStyled-wu99qs-0 jYUFQr"
             >
               <div
                 class="Circle__CircleWrapper-uw7h4j-0 grnDUY border-theme-secondary-200 dark:border-theme-secondary-700 text-theme-secondary-500 ring-theme-background"
@@ -577,7 +591,7 @@ exports[`SendIpfs should render form step 1`] = `
               />
             </span>
             <div
-              class="Input__InputWrapperStyled-wu99qs-0 hDeOGV"
+              class="Input__InputWrapperStyled-wu99qs-0 jYUFQr"
             >
               <div
                 class="Circle__CircleWrapper-uw7h4j-0 grnDUY bg-theme-secondary-200 dark:bg-theme-secondary-700 border-theme-secondary-200 dark:border-theme-secondary-700 ring-theme-background"
@@ -633,7 +647,7 @@ exports[`SendIpfs should render form step 1`] = `
           />
         </label>
         <div
-          class="Input__InputWrapperStyled-wu99qs-0 hDeOGV pr-20"
+          class="Input__InputWrapperStyled-wu99qs-0 jYUFQr pr-20"
         >
           <div
             class="relative flex flex-1 h-full"
@@ -674,7 +688,7 @@ exports[`SendIpfs should render form step 1`] = `
               class="relative"
             >
               <div
-                class="Input__InputWrapperStyled-wu99qs-0 bPzSMW"
+                class="Input__InputWrapperStyled-wu99qs-0 iRRxpY"
                 disabled=""
               >
                 <div
@@ -1061,10 +1075,13 @@ exports[`SendIpfs should send an IPFS transaction and go back to wallet page 1`]
               class="flex"
             >
               <a
-                class="flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text"
+                class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
                 title="Portfolio"
               >
+                <div
+                  class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2"
+                />
                 Portfolio
               </a>
             </li>
@@ -1072,10 +1089,13 @@ exports[`SendIpfs should send an IPFS transaction and go back to wallet page 1`]
               class="flex"
             >
               <a
-                class="flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text"
+                class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/plugins"
                 title="Plugins"
               >
+                <div
+                  class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2"
+                />
                 Plugins
               </a>
             </li>
@@ -1083,10 +1103,13 @@ exports[`SendIpfs should send an IPFS transaction and go back to wallet page 1`]
               class="flex"
             >
               <a
-                class="flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text"
+                class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/exchange"
                 title="Exchange"
               >
+                <div
+                  class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2"
+                />
                 Exchange
               </a>
             </li>
@@ -1094,10 +1117,13 @@ exports[`SendIpfs should send an IPFS transaction and go back to wallet page 1`]
               class="flex"
             >
               <a
-                class="flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text"
+                class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/news"
                 title="News"
               >
+                <div
+                  class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2"
+                />
                 News
               </a>
             </li>
@@ -1116,7 +1142,7 @@ exports[`SendIpfs should send an IPFS transaction and go back to wallet page 1`]
                     class="NavigationBar__NavigationButtonWrapper-sc-1qsoskw-1 eUPnft group"
                   >
                     <button
-                      class="OriginalButton__StyledButton-sc-1y2wptt-0 lpqSIM"
+                      class="OriginalButton__StyledButton-sc-1y2wptt-0 fNHPRi"
                       data-testid="navbar__buttons--notifications"
                       type="button"
                     >
@@ -1155,7 +1181,7 @@ exports[`SendIpfs should send an IPFS transaction and go back to wallet page 1`]
                 class="NavigationBar__NavigationButtonWrapper-sc-1qsoskw-1 eUPnft"
               >
                 <button
-                  class="OriginalButton__StyledButton-sc-1y2wptt-0 lpqSIM"
+                  class="OriginalButton__StyledButton-sc-1y2wptt-0 fNHPRi"
                   data-testid="navbar__buttons--send"
                   type="button"
                 >
@@ -1185,7 +1211,7 @@ exports[`SendIpfs should send an IPFS transaction and go back to wallet page 1`]
                 class="NavigationBar__NavigationButtonWrapper-sc-1qsoskw-1 eUPnft"
               >
                 <button
-                  class="OriginalButton__StyledButton-sc-1y2wptt-0 lpqSIM"
+                  class="OriginalButton__StyledButton-sc-1y2wptt-0 fNHPRi"
                   data-testid="navbar__buttons--receive"
                   type="button"
                 >
@@ -1370,26 +1396,27 @@ exports[`SendIpfs should send an IPFS transaction and go back to wallet page 1`]
                               class="flex items-center space-x-3"
                             >
                               <a
-                                class="Link__AnchorStyled-sc-1q7sbxr-0 kAtXNw pointer-events-none no-underline inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary-600 hover:text-theme-primary-700 hover:underline active:text-theme-primary-500"
+                                class="Link__AnchorStyled-sc-1q7sbxr-0 bMatQy group"
                                 data-testid="Link"
+                                href="#"
                                 rel="noopener noreferrer"
                                 to="https://dexplorer.ark.io/transaction/1e9b975eff66a731095876c3b6cbff14fd4dec3bb37a4127c46db3d69131067e"
                               >
                                 <span
-                                  class="group"
+                                  class="break-all border-b border-transparent transition-colors duration-200 border-current border-dotted group-hover:border-transparent"
                                 >
                                   <span
-                                    class="no-underline break-all pointer-events-auto border-b group-hover:border-0 active:border-0 border-dotted"
+                                    class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-primary-700"
+                                    data-testid="TruncateMiddle"
                                   >
-                                    <span
-                                      class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-primary-700"
-                                      data-testid="TruncateMiddle"
-                                    >
-                                      1e9b975eff66a731095876c3b6cbff14fd4dec3bb37a4127c46db3d69131067e
-                                    </span>
+                                    1e9b975eff66a731095876c3b6cbff14fd4dec3bb37a4127c46db3d69131067e
                                   </span>
+                                </span>
+                                <span
+                                  class="align-middle"
+                                >
                                   <div
-                                    class="sc-bdfBwQ fPrsah flex-shrink-0 pointer-events-auto inline-block pl-2 text-sm"
+                                    class="sc-bdfBwQ fPrsah flex-shrink-0 inline-block pb-px text-sm"
                                     data-testid="Link__external"
                                     height="1em"
                                     width="1em"
@@ -1566,7 +1593,7 @@ exports[`SendIpfs should send an IPFS transaction and go back to wallet page 1`]
                   class="flex justify-end mt-10 space-x-2"
                 >
                   <button
-                    class="OriginalButton__StyledButton-sc-1y2wptt-0 hsoUax block"
+                    class="OriginalButton__StyledButton-sc-1y2wptt-0 izJbbP block"
                     data-testid="SendIpfs__button--back-to-wallet"
                     type="button"
                   >
@@ -1637,10 +1664,13 @@ exports[`SendIpfs should send an IPFS transaction using encryption password 1`] 
               class="flex"
             >
               <a
-                class="flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text"
+                class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
                 title="Portfolio"
               >
+                <div
+                  class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2"
+                />
                 Portfolio
               </a>
             </li>
@@ -1648,10 +1678,13 @@ exports[`SendIpfs should send an IPFS transaction using encryption password 1`] 
               class="flex"
             >
               <a
-                class="flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text"
+                class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/plugins"
                 title="Plugins"
               >
+                <div
+                  class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2"
+                />
                 Plugins
               </a>
             </li>
@@ -1659,10 +1692,13 @@ exports[`SendIpfs should send an IPFS transaction using encryption password 1`] 
               class="flex"
             >
               <a
-                class="flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text"
+                class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/exchange"
                 title="Exchange"
               >
+                <div
+                  class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2"
+                />
                 Exchange
               </a>
             </li>
@@ -1670,10 +1706,13 @@ exports[`SendIpfs should send an IPFS transaction using encryption password 1`] 
               class="flex"
             >
               <a
-                class="flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text"
+                class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/news"
                 title="News"
               >
+                <div
+                  class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2"
+                />
                 News
               </a>
             </li>
@@ -1692,7 +1731,7 @@ exports[`SendIpfs should send an IPFS transaction using encryption password 1`] 
                     class="NavigationBar__NavigationButtonWrapper-sc-1qsoskw-1 eUPnft group"
                   >
                     <button
-                      class="OriginalButton__StyledButton-sc-1y2wptt-0 lpqSIM"
+                      class="OriginalButton__StyledButton-sc-1y2wptt-0 fNHPRi"
                       data-testid="navbar__buttons--notifications"
                       type="button"
                     >
@@ -1731,7 +1770,7 @@ exports[`SendIpfs should send an IPFS transaction using encryption password 1`] 
                 class="NavigationBar__NavigationButtonWrapper-sc-1qsoskw-1 eUPnft"
               >
                 <button
-                  class="OriginalButton__StyledButton-sc-1y2wptt-0 lpqSIM"
+                  class="OriginalButton__StyledButton-sc-1y2wptt-0 fNHPRi"
                   data-testid="navbar__buttons--send"
                   type="button"
                 >
@@ -1761,7 +1800,7 @@ exports[`SendIpfs should send an IPFS transaction using encryption password 1`] 
                 class="NavigationBar__NavigationButtonWrapper-sc-1qsoskw-1 eUPnft"
               >
                 <button
-                  class="OriginalButton__StyledButton-sc-1y2wptt-0 lpqSIM"
+                  class="OriginalButton__StyledButton-sc-1y2wptt-0 fNHPRi"
                   data-testid="navbar__buttons--receive"
                   type="button"
                 >
@@ -1946,26 +1985,27 @@ exports[`SendIpfs should send an IPFS transaction using encryption password 1`] 
                               class="flex items-center space-x-3"
                             >
                               <a
-                                class="Link__AnchorStyled-sc-1q7sbxr-0 kAtXNw pointer-events-none no-underline inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary-600 hover:text-theme-primary-700 hover:underline active:text-theme-primary-500"
+                                class="Link__AnchorStyled-sc-1q7sbxr-0 bMatQy group"
                                 data-testid="Link"
+                                href="#"
                                 rel="noopener noreferrer"
                                 to="https://dexplorer.ark.io/transaction/1e9b975eff66a731095876c3b6cbff14fd4dec3bb37a4127c46db3d69131067e"
                               >
                                 <span
-                                  class="group"
+                                  class="break-all border-b border-transparent transition-colors duration-200 border-current border-dotted group-hover:border-transparent"
                                 >
                                   <span
-                                    class="no-underline break-all pointer-events-auto border-b group-hover:border-0 active:border-0 border-dotted"
+                                    class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-primary-700"
+                                    data-testid="TruncateMiddle"
                                   >
-                                    <span
-                                      class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-primary-700"
-                                      data-testid="TruncateMiddle"
-                                    >
-                                      1e9b975eff66a731095876c3b6cbff14fd4dec3bb37a4127c46db3d69131067e
-                                    </span>
+                                    1e9b975eff66a731095876c3b6cbff14fd4dec3bb37a4127c46db3d69131067e
                                   </span>
+                                </span>
+                                <span
+                                  class="align-middle"
+                                >
                                   <div
-                                    class="sc-bdfBwQ fPrsah flex-shrink-0 pointer-events-auto inline-block pl-2 text-sm"
+                                    class="sc-bdfBwQ fPrsah flex-shrink-0 inline-block pb-px text-sm"
                                     data-testid="Link__external"
                                     height="1em"
                                     width="1em"
@@ -2142,7 +2182,7 @@ exports[`SendIpfs should send an IPFS transaction using encryption password 1`] 
                   class="flex justify-end mt-10 space-x-2"
                 >
                   <button
-                    class="OriginalButton__StyledButton-sc-1y2wptt-0 hsoUax block"
+                    class="OriginalButton__StyledButton-sc-1y2wptt-0 izJbbP block"
                     data-testid="SendIpfs__button--back-to-wallet"
                     type="button"
                   >
@@ -2211,10 +2251,13 @@ exports[`SendIpfs should show an error if an invalid IPFS hash is entered 1`] = 
               class="flex"
             >
               <a
-                class="flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text"
+                class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
                 title="Portfolio"
               >
+                <div
+                  class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2"
+                />
                 Portfolio
               </a>
             </li>
@@ -2222,10 +2265,13 @@ exports[`SendIpfs should show an error if an invalid IPFS hash is entered 1`] = 
               class="flex"
             >
               <a
-                class="flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text"
+                class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/plugins"
                 title="Plugins"
               >
+                <div
+                  class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2"
+                />
                 Plugins
               </a>
             </li>
@@ -2233,10 +2279,13 @@ exports[`SendIpfs should show an error if an invalid IPFS hash is entered 1`] = 
               class="flex"
             >
               <a
-                class="flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text"
+                class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/exchange"
                 title="Exchange"
               >
+                <div
+                  class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2"
+                />
                 Exchange
               </a>
             </li>
@@ -2244,10 +2293,13 @@ exports[`SendIpfs should show an error if an invalid IPFS hash is entered 1`] = 
               class="flex"
             >
               <a
-                class="flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text"
+                class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/news"
                 title="News"
               >
+                <div
+                  class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2"
+                />
                 News
               </a>
             </li>
@@ -2266,7 +2318,7 @@ exports[`SendIpfs should show an error if an invalid IPFS hash is entered 1`] = 
                     class="NavigationBar__NavigationButtonWrapper-sc-1qsoskw-1 eUPnft group"
                   >
                     <button
-                      class="OriginalButton__StyledButton-sc-1y2wptt-0 lpqSIM"
+                      class="OriginalButton__StyledButton-sc-1y2wptt-0 fNHPRi"
                       data-testid="navbar__buttons--notifications"
                       type="button"
                     >
@@ -2305,7 +2357,7 @@ exports[`SendIpfs should show an error if an invalid IPFS hash is entered 1`] = 
                 class="NavigationBar__NavigationButtonWrapper-sc-1qsoskw-1 eUPnft"
               >
                 <button
-                  class="OriginalButton__StyledButton-sc-1y2wptt-0 lpqSIM"
+                  class="OriginalButton__StyledButton-sc-1y2wptt-0 fNHPRi"
                   data-testid="navbar__buttons--send"
                   type="button"
                 >
@@ -2335,7 +2387,7 @@ exports[`SendIpfs should show an error if an invalid IPFS hash is entered 1`] = 
                 class="NavigationBar__NavigationButtonWrapper-sc-1qsoskw-1 eUPnft"
               >
                 <button
-                  class="OriginalButton__StyledButton-sc-1y2wptt-0 lpqSIM"
+                  class="OriginalButton__StyledButton-sc-1y2wptt-0 fNHPRi"
                   data-testid="navbar__buttons--receive"
                   type="button"
                 >
@@ -2526,7 +2578,7 @@ exports[`SendIpfs should show an error if an invalid IPFS hash is entered 1`] = 
                               id="SendTransactionForm__network-label"
                             />
                             <div
-                              class="Input__InputWrapperStyled-wu99qs-0 bPzSMW"
+                              class="Input__InputWrapperStyled-wu99qs-0 iRRxpY"
                               disabled=""
                             >
                               <div
@@ -2650,7 +2702,7 @@ exports[`SendIpfs should show an error if an invalid IPFS hash is entered 1`] = 
                               </div>
                             </span>
                             <div
-                              class="Input__InputWrapperStyled-wu99qs-0 hDeOGV"
+                              class="Input__InputWrapperStyled-wu99qs-0 jYUFQr"
                             >
                               <div
                                 class="Avatar__AvatarWrapper-sc-1vsy2s2-0 khDjUE flex-shrink-0"
@@ -2717,7 +2769,7 @@ exports[`SendIpfs should show an error if an invalid IPFS hash is entered 1`] = 
                           />
                         </label>
                         <div
-                          class="Input__InputWrapperStyled-wu99qs-0 iXDeQC pr-20"
+                          class="Input__InputWrapperStyled-wu99qs-0 jXtMoQ pr-20"
                         >
                           <div
                             class="relative flex flex-1 h-full"
@@ -2777,7 +2829,7 @@ exports[`SendIpfs should show an error if an invalid IPFS hash is entered 1`] = 
                               class="relative"
                             >
                               <div
-                                class="Input__InputWrapperStyled-wu99qs-0 hDeOGV"
+                                class="Input__InputWrapperStyled-wu99qs-0 jYUFQr"
                               >
                                 <div
                                   class="relative flex flex-1 h-full"
@@ -2838,7 +2890,7 @@ exports[`SendIpfs should show an error if an invalid IPFS hash is entered 1`] = 
                   class="flex justify-end mt-10 space-x-2"
                 >
                   <button
-                    class="OriginalButton__StyledButton-sc-1y2wptt-0 hsoUax"
+                    class="OriginalButton__StyledButton-sc-1y2wptt-0 izJbbP"
                     data-testid="SendIpfs__button--back"
                     type="button"
                   >
@@ -2849,7 +2901,7 @@ exports[`SendIpfs should show an error if an invalid IPFS hash is entered 1`] = 
                     </div>
                   </button>
                   <button
-                    class="OriginalButton__StyledButton-sc-1y2wptt-0 blpaPr"
+                    class="OriginalButton__StyledButton-sc-1y2wptt-0 fqRthJ"
                     data-testid="SendIpfs__button--continue"
                     disabled=""
                     type="button"
@@ -2919,10 +2971,13 @@ exports[`SendIpfs should show error step and go back 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text"
+                class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
                 title="Portfolio"
               >
+                <div
+                  class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2"
+                />
                 Portfolio
               </a>
             </li>
@@ -2930,10 +2985,13 @@ exports[`SendIpfs should show error step and go back 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text"
+                class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/plugins"
                 title="Plugins"
               >
+                <div
+                  class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2"
+                />
                 Plugins
               </a>
             </li>
@@ -2941,10 +2999,13 @@ exports[`SendIpfs should show error step and go back 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text"
+                class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/exchange"
                 title="Exchange"
               >
+                <div
+                  class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2"
+                />
                 Exchange
               </a>
             </li>
@@ -2952,10 +3013,13 @@ exports[`SendIpfs should show error step and go back 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text"
+                class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/news"
                 title="News"
               >
+                <div
+                  class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2"
+                />
                 News
               </a>
             </li>
@@ -2974,7 +3038,7 @@ exports[`SendIpfs should show error step and go back 1`] = `
                     class="NavigationBar__NavigationButtonWrapper-sc-1qsoskw-1 eUPnft group"
                   >
                     <button
-                      class="OriginalButton__StyledButton-sc-1y2wptt-0 lpqSIM"
+                      class="OriginalButton__StyledButton-sc-1y2wptt-0 fNHPRi"
                       data-testid="navbar__buttons--notifications"
                       type="button"
                     >
@@ -3013,7 +3077,7 @@ exports[`SendIpfs should show error step and go back 1`] = `
                 class="NavigationBar__NavigationButtonWrapper-sc-1qsoskw-1 eUPnft"
               >
                 <button
-                  class="OriginalButton__StyledButton-sc-1y2wptt-0 lpqSIM"
+                  class="OriginalButton__StyledButton-sc-1y2wptt-0 fNHPRi"
                   data-testid="navbar__buttons--send"
                   type="button"
                 >
@@ -3043,7 +3107,7 @@ exports[`SendIpfs should show error step and go back 1`] = `
                 class="NavigationBar__NavigationButtonWrapper-sc-1qsoskw-1 eUPnft"
               >
                 <button
-                  class="OriginalButton__StyledButton-sc-1y2wptt-0 lpqSIM"
+                  class="OriginalButton__StyledButton-sc-1y2wptt-0 fNHPRi"
                   data-testid="navbar__buttons--receive"
                   type="button"
                 >
@@ -3212,7 +3276,7 @@ exports[`SendIpfs should show error step and go back 1`] = `
                       class="flex justify-end space-x-3"
                     >
                       <button
-                        class="OriginalButton__StyledButton-sc-1y2wptt-0 hsoUax"
+                        class="OriginalButton__StyledButton-sc-1y2wptt-0 izJbbP"
                         data-testid="ErrorStep__wallet-button"
                         type="button"
                       >
@@ -3223,7 +3287,7 @@ exports[`SendIpfs should show error step and go back 1`] = `
                         </div>
                       </button>
                       <button
-                        class="OriginalButton__StyledButton-sc-1y2wptt-0 cEUmKc space-x-2"
+                        class="OriginalButton__StyledButton-sc-1y2wptt-0 dYkFxS space-x-2"
                         data-testid="ErrorStep__repeat-button"
                         type="button"
                       >

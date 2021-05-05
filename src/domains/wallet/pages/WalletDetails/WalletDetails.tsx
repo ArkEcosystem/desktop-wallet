@@ -20,6 +20,9 @@ export const WalletDetails = () => {
 	const [signedTransactionModalItem, setSignedTransactionModalItem] = useState<Contracts.SignedTransactionData>();
 	const [transactionModalItem, setTransactionModalItem] = useState<DTO.ExtendedTransactionData>();
 
+	const [isUpdatingTransactions, setIsUpdatingTransactions] = useState(false);
+	const [isUpdatingWallet, setIsUpdatingWallet] = useState(false);
+
 	const history = useHistory();
 	const { t } = useTranslation();
 	const { env } = useEnvironmentContext();
@@ -27,7 +30,7 @@ export const WalletDetails = () => {
 	const activeWallet = useActiveWallet();
 	const { profileIsSyncing } = useConfiguration();
 
-	const shouldVote = useMemo(() => activeWallet.network().can(Coins.FeatureFlag.TransactionVote), [activeWallet]);
+	const shouldVote = useMemo(() => activeWallet.network().allows(Coins.FeatureFlag.TransactionVote), [activeWallet]);
 	const { syncMultiSignatures, pendingMultiSignatureTransactions } = useWalletTransactions(activeWallet);
 
 	useEffect(() => {
@@ -63,6 +66,8 @@ export const WalletDetails = () => {
 						onSend={() =>
 							history.push(`/profiles/${activeProfile.id()}/wallets/${activeWallet.id()}/send-transfer`)
 						}
+						onUpdate={setIsUpdatingWallet}
+						isUpdatingTransactions={isUpdatingTransactions}
 					/>
 				</Section>
 
@@ -93,6 +98,8 @@ export const WalletDetails = () => {
 						profile={activeProfile}
 						wallets={[activeWallet]}
 						isLoading={profileIsSyncing}
+						isUpdatingWallet={isUpdatingWallet}
+						onLoading={setIsUpdatingTransactions}
 					/>
 				</Section>
 			</Page>

@@ -35,7 +35,7 @@ export const usePortfolioData = ({ profile }: { profile: Contracts.IProfile }) =
 		[env],
 	);
 
-	const balancePerCoin = useMemo(() => profile.walletAggregate().balancePerCoin("live"), [profile]);
+	const balancePerCoin: any = useMemo(() => profile.portfolio().breakdown(), [profile]);
 
 	const percentages = useMemo(() => {
 		const data: BarItem[] = [];

@@ -19,7 +19,7 @@ exports[`CreateContact should render create contact modal 1`] = `
         class="absolute top-0 right-0 z-50 mt-5 mr-5 rounded transition-all duration-100 ease-linear bg-theme-primary-100 hover:bg-theme-primary-300 dark:bg-theme-secondary-800 dark:text-theme-secondary-600 dark:hover:bg-theme-secondary-700 dark:hover:text-theme-secondary-400"
       >
         <button
-          class="OriginalButton__StyledButton-sc-1y2wptt-0 lpqSIM w-11 h-11"
+          class="OriginalButton__StyledButton-sc-1y2wptt-0 fNHPRi w-11 h-11"
           data-testid="modal__close-btn"
           type="button"
         >
@@ -76,7 +76,7 @@ exports[`CreateContact should render create contact modal 1`] = `
                   />
                 </label>
                 <div
-                  class="Input__InputWrapperStyled-wu99qs-0 hDeOGV"
+                  class="Input__InputWrapperStyled-wu99qs-0 jYUFQr"
                 >
                   <div
                     class="relative flex flex-1 h-full"
@@ -120,7 +120,7 @@ exports[`CreateContact should render create contact modal 1`] = `
                         id="ContactForm__network-label"
                       />
                       <div
-                        class="Input__InputWrapperStyled-wu99qs-0 hDeOGV"
+                        class="Input__InputWrapperStyled-wu99qs-0 jYUFQr"
                       >
                         <div
                           class="Circle__CircleWrapper-uw7h4j-0 grnDUY border-theme-secondary-200 dark:border-theme-secondary-700 text-theme-secondary-500 ring-theme-background"
@@ -182,90 +182,6 @@ exports[`CreateContact should render create contact modal 1`] = `
                               </div>
                             </div>
                           </li>
-                          <li
-                            class="inline-block cursor-pointer h-21"
-                            data-testid="SelectNetwork__NetworkIcon--container"
-                          >
-                            <div
-                              aria-label="Compendia"
-                              class="w-full h-full flex justify-center items-center border-2 rounded-xl border-theme-primary-100 dark:border-theme-secondary-800 text-theme-secondary-700"
-                              data-testid="NetworkIcon-ARK-compendia.mainnet"
-                            >
-                              <div
-                                class="sc-bdfBwQ caqoGN"
-                                data-testid="NetworkIcon__icon"
-                                height="30"
-                                width="30"
-                              >
-                                <svg>
-                                  bind.svg
-                                </svg>
-                              </div>
-                            </div>
-                          </li>
-                          <li
-                            class="inline-block cursor-pointer h-21"
-                            data-testid="SelectNetwork__NetworkIcon--container"
-                          >
-                            <div
-                              aria-label="Bitcoin"
-                              class="w-full h-full flex justify-center items-center border-2 rounded-xl border-theme-primary-100 dark:border-theme-secondary-800 text-theme-secondary-700"
-                              data-testid="NetworkIcon-BTC-btc.livenet"
-                            >
-                              <div
-                                class="sc-bdfBwQ caqoGN"
-                                data-testid="NetworkIcon__icon"
-                                height="30"
-                                width="30"
-                              >
-                                <svg>
-                                  btc.svg
-                                </svg>
-                              </div>
-                            </div>
-                          </li>
-                          <li
-                            class="inline-block cursor-pointer h-21"
-                            data-testid="SelectNetwork__NetworkIcon--container"
-                          >
-                            <div
-                              aria-label="Ethereum"
-                              class="w-full h-full flex justify-center items-center border-2 rounded-xl border-theme-primary-100 dark:border-theme-secondary-800 text-theme-secondary-700"
-                              data-testid="NetworkIcon-ETH-eth.mainnet"
-                            >
-                              <div
-                                class="sc-bdfBwQ caqoGN"
-                                data-testid="NetworkIcon__icon"
-                                height="30"
-                                width="30"
-                              >
-                                <svg>
-                                  eth.svg
-                                </svg>
-                              </div>
-                            </div>
-                          </li>
-                          <li
-                            class="inline-block cursor-pointer h-21"
-                            data-testid="SelectNetwork__NetworkIcon--container"
-                          >
-                            <div
-                              aria-label="Lisk"
-                              class="w-full h-full flex justify-center items-center border-2 rounded-xl border-theme-primary-100 dark:border-theme-secondary-800 text-theme-secondary-700"
-                              data-testid="NetworkIcon-LSK-lsk.mainnet"
-                            >
-                              <div
-                                class="sc-bdfBwQ caqoGN"
-                                data-testid="NetworkIcon__icon"
-                                height="30"
-                                width="30"
-                              >
-                                <svg>
-                                  lsk.svg
-                                </svg>
-                              </div>
-                            </div>
-                          </li>
                         </ul>
                       </div>
                       <div
@@ -303,27 +219,6 @@ exports[`CreateContact should render create contact modal 1`] = `
                               </div>
                             </div>
                           </li>
-                          <li
-                            class="inline-block cursor-pointer h-21"
-                            data-testid="SelectNetwork__NetworkIcon--container"
-                          >
-                            <div
-                              aria-label="Lisk Testnet"
-                              class="w-full h-full flex justify-center items-center border-2 rounded-xl border-theme-primary-100 dark:border-theme-secondary-800 text-theme-primary-300"
-                              data-testid="NetworkIcon-LSK-lsk.testnet"
-                            >
-                              <div
-                                class="sc-bdfBwQ caqoGN"
-                                data-testid="NetworkIcon__icon"
-                                height="30"
-                                width="30"
-                              >
-                                <svg>
-                                  lsk.svg
-                                </svg>
-                              </div>
-                            </div>
-                          </li>
                         </ul>
                       </div>
                     </div>
@@ -345,7 +240,7 @@ exports[`CreateContact should render create contact modal 1`] = `
                     />
                   </label>
                   <div
-                    class="Input__InputWrapperStyled-wu99qs-0 hDeOGV"
+                    class="Input__InputWrapperStyled-wu99qs-0 jYUFQr"
                   >
                     <div
                       class="relative flex flex-1 h-full"
@@ -363,7 +258,7 @@ exports[`CreateContact should render create contact modal 1`] = `
                   class="mt-4"
                 >
                   <button
-                    class="OriginalButton__StyledButton-sc-1y2wptt-0 blpaPr w-full"
+                    class="OriginalButton__StyledButton-sc-1y2wptt-0 fqRthJ w-full"
                     data-testid="contact-form__add-address-btn"
                     disabled=""
                     type="button"
@@ -377,13 +272,13 @@ exports[`CreateContact should render create contact modal 1`] = `
                 </div>
               </div>
               <div
-                class="flex w-full justify-end"
+                class="flex w-full pt-8 border-t border-theme-secondary-300 dark:border-theme-secondary-800 justify-end"
               >
                 <div
                   class="space-x-3"
                 >
                   <button
-                    class="OriginalButton__StyledButton-sc-1y2wptt-0 hsoUax"
+                    class="OriginalButton__StyledButton-sc-1y2wptt-0 izJbbP"
                     data-testid="contact-form__cancel-btn"
                     type="button"
                   >
@@ -394,7 +289,7 @@ exports[`CreateContact should render create contact modal 1`] = `
                     </div>
                   </button>
                   <button
-                    class="OriginalButton__StyledButton-sc-1y2wptt-0 blpaPr"
+                    class="OriginalButton__StyledButton-sc-1y2wptt-0 fqRthJ"
                     data-testid="contact-form__save-btn"
                     disabled=""
                     type="submit"

@@ -31,10 +31,14 @@ describe("TransactionDetailModal", () => {
 		await syncDelegates();
 	});
 
-	beforeEach(() => {
+	beforeEach(async () => {
 		dashboardURL = `/profiles/${fixtureProfileId}/dashboard`;
 		history.push(dashboardURL);
 		profile = env.profiles().findById(getDefaultProfileId());
+
+		await env.profiles().restore(profile);
+		await profile.sync();
+
 		wallet = profile.wallets().first();
 	});
 
@@ -84,6 +88,8 @@ describe("TransactionDetailModal", () => {
 	});
 
 	it("should render a multi signature modal", async () => {
+		await profile.wallets().restore();
+
 		const { asFragment, getByTestId } = renderWithRouter(
 			<Route path="/profiles/:profileId/dashboard">
 				<TransactionDetailModal
@@ -319,7 +325,7 @@ describe("TransactionDetailModal", () => {
 					transactionItem={{
 						...TransactionFixture,
 						isTransfer: () => false,
-						isBusinessEntityRegistration: () => true,
+						isMagistrate: () => true,
 						blockId: () => "as32d1as65d1as3d1as32d1asd51as3d21as3d2as165das",
 						type: () => "entityRegistration",
 					}}
@@ -332,9 +338,6 @@ describe("TransactionDetailModal", () => {
 			},
 		);
 
-		expect(getByTestId("modal__inner")).toHaveTextContent(
-			translations.TRANSACTION_TYPES.BUSINESS_ENTITY_REGISTRATION,
-		);
 		expect(asFragment()).toMatchSnapshot();
 	});
 
@@ -346,9 +349,9 @@ describe("TransactionDetailModal", () => {
 					transactionItem={{
 						...TransactionFixture,
 						isTransfer: () => false,
-						isLegacyBusinessRegistration: () => true,
+						isMagistrate: () => true,
 						blockId: () => "as32d1as65d1as3d1as32d1asd51as3d21as3d2as165das",
-						type: () => "legacyBusinessRegistration",
+						type: () => "magistrate",
 					}}
 				/>
 				,
@@ -359,9 +362,6 @@ describe("TransactionDetailModal", () => {
 			},
 		);
 
-		expect(getByTestId("modal__inner")).toHaveTextContent(
-			translations.TRANSACTION_TYPES.LEGACY_BUSINESS_REGISTRATION,
-		);
 		expect(asFragment()).toMatchSnapshot();
 	});
 

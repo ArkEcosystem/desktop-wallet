@@ -24,7 +24,9 @@ describe("WalletHeader", () => {
 		profile = env.profiles().findById(getDefaultProfileId());
 		wallet = profile.wallets().first();
 
-		await wallet.syncVotes();
+		await wallet.synchroniser().votes();
+		await wallet.synchroniser().identity();
+		await wallet.synchroniser().coin();
 
 		walletUrl = `/profiles/${profile.id()}/wallets/${wallet.id()}`;
 
@@ -260,6 +262,17 @@ describe("WalletHeader", () => {
 			fireEvent.click(getByTestId("modal__close-btn"));
 		});
 		expect(() => getByTestId("modal__inner")).toThrow(/Unable to find an element by/);
+	});
+
+	it("should manually sync wallet data", async () => {
+		const { getByTestId } = render(<WalletHeader profile={profile} wallet={wallet} />);
+
+		act(() => {
+			fireEvent.click(getByTestId("WalletHeader__refresh"));
+		});
+
+		expect(getByTestId("WalletHeader__refresh")).toHaveAttribute("aria-busy", "true");
+		await waitFor(() => expect(getByTestId("WalletHeader__refresh")).toHaveAttribute("aria-busy", "false"));
 	});
 
 	it("should handle multisignature registration", () => {

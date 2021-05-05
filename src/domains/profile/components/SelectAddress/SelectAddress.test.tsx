@@ -8,8 +8,14 @@ let wallets: Contracts.IReadWriteWallet[];
 
 beforeAll(async () => {
 	const profile = env.profiles().findById(getDefaultProfileId());
-	await profile.wallets().importByMnemonic("additional wallet", "ARK", "ark.devnet");
 
+	const wallet = await profile.walletFactory().fromMnemonic({
+		mnemonic: "additional wallet",
+		coin: "ARK",
+		network: "ark.devnet",
+	});
+
+	profile.wallets().push(wallet);
 	wallets = profile.wallets().values();
 });
 

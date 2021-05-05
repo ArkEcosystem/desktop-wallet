@@ -2,17 +2,15 @@ import { Coins } from "@arkecosystem/platform-sdk";
 import { Contracts } from "@arkecosystem/platform-sdk-profiles";
 import Tippy from "@tippyjs/react";
 import { Address } from "app/components/Address";
+import { Alert } from "app/components/Alert";
 import { Amount } from "app/components/Amount";
 import { Avatar } from "app/components/Avatar";
-import { Button } from "app/components/Button";
 import { Checkbox } from "app/components/Checkbox";
 import { Circle } from "app/components/Circle";
 import { FormField, FormLabel } from "app/components/Form";
 import { Header } from "app/components/Header";
-import { Icon } from "app/components/Icon";
 import { Skeleton } from "app/components/Skeleton";
 import { Table, TableCell, TableRow } from "app/components/Table";
-import { Tooltip } from "app/components/Tooltip";
 import { useLedgerContext } from "app/contexts";
 import { LedgerData, useLedgerScanner } from "app/contexts/Ledger";
 import { useRandomNumber } from "app/hooks";
@@ -21,16 +19,7 @@ import React, { useEffect, useState } from "react";
 import { useFormContext } from "react-hook-form";
 import { useTranslation } from "react-i18next";
 
-const AmountWrapper = ({
-	isFailed,
-	isLoading,
-	children,
-}: {
-	isFailed?: boolean;
-	isLoading: boolean;
-	children?: React.ReactNode;
-}) => {
-	const { t } = useTranslation();
+const AmountWrapper = ({ isLoading, children }: { isLoading: boolean; children?: React.ReactNode }) => {
 	const amountWidth = useRandomNumber(100, 130);
 
 	if (isLoading) {
@@ -42,20 +31,6 @@ const AmountWrapper = ({
 		);
 	}
 
-	if (isFailed) {
-		return (
-			<div
-				data-testid="LedgerScanStep__amount-error"
-				className="flex items-center space-x-3 text-theme-danger-400"
-			>
-				<Circle className="border-theme-danger-400" noShadow size="sm">
-					<Icon name="CrossSlim" />
-				</Circle>
-				<span>{t("COMMON.ERROR")}</span>
-			</div>
-		);
-	}
-
 	return <div>{children}</div>;
 };
 
@@ -64,8 +39,6 @@ export const LedgerTable = ({
 	wallets,
 	selectedWallets,
 	isSelected,
-	isLoading,
-	isFailed,
 	toggleSelect,
 	toggleSelectAll,
 	isScanning,
@@ -137,20 +110,17 @@ export const LedgerTable = ({
 						<TableCell variant="start" innerClassName="space-x-4">
 							<Avatar address={wallet.address} size="lg" noShadow />
 							<Address address={wallet.address} />
+							<span className="hidden">{wallet.path}</span>
 						</TableCell>
 
 						<TableCell innerClassName="justify-end font-semibold" className="w-64">
-							<AmountWrapper isLoading={isLoading(wallet.path)} isFailed={isFailed(wallet.path)}>
+							<AmountWrapper isLoading={false}>
 								<Amount value={wallet.balance!} ticker={network.ticker()} />
 							</AmountWrapper>
 						</TableCell>
 
 						<TableCell variant="end" innerClassName="justify-center">
-							<Checkbox
-								disabled={isLoading(wallet.path) || isFailed(wallet.path)}
-								checked={isSelected(wallet.path)}
-								onChange={() => toggleSelect(wallet.path)}
-							/>
+							<Checkbox checked={isSelected(wallet.path)} onChange={() => toggleSelect(wallet.path)} />
 						</TableCell>
 					</TableRow>
 				);
@@ -160,8 +130,8 @@ export const LedgerTable = ({
 };
 
 export const LedgerScanStep = ({
-	profile,
 	setRetryFn,
+	profile,
 }: {
 	profile: Contracts.IProfile;
 	setRetryFn?: (fn?: () => void) => void;
@@ -170,18 +140,9 @@ export const LedgerScanStep = ({
 	const { watch, register, unregister, setValue } = useFormContext();
 	const [network] = useState<Coins.Network>(() => watch("network"));
 
-	const { isBusy, isConnected } = useLedgerContext();
+	const ledgerScanner = useLedgerScanner(network.coin(), network.id());
 
-	const ledgerScanner = useLedgerScanner(network.coin(), network.id(), profile);
-	const {
-		scanUntilNewOrFail,
-		selectedWallets,
-		scanRetry,
-		canRetry,
-		scanMore,
-		isScanning,
-		abortScanner,
-	} = ledgerScanner;
+	const { scan, selectedWallets, canRetry, isScanning, abortScanner, error } = ledgerScanner;
 
 	// eslint-disable-next-line arrow-body-style
 	useEffect(() => {
@@ -196,16 +157,16 @@ export const LedgerScanStep = ({
 
 	useEffect(() => {
 		if (canRetry) {
-			setRetryFn?.(() => scanRetry());
+			setRetryFn?.(() => scan(profile));
 		} else {
 			setRetryFn?.(undefined);
 		}
 		return () => setRetryFn?.(undefined);
-	}, [setRetryFn, scanRetry, canRetry]);
+	}, [setRetryFn, scan, canRetry, profile]);
 
 	useEffect(() => {
-		scanUntilNewOrFail();
-	}, [scanUntilNewOrFail]);
+		scan(profile);
+	}, [scan, profile]);
 
 	useEffect(() => {
 		register("wallets", { required: true, validate: (value) => Array.isArray(value) && value.length > 0 });
@@ -233,22 +194,13 @@ export const LedgerScanStep = ({
 				<SelectNetwork id="ImportWallet__network" networks={[]} selected={network} disabled />
 			</FormField>
 
-			<LedgerTable network={network} {...ledgerScanner} />
-
-			<Tooltip content={t("COMMON.LEDGER_DISCONNECTED")} disabled={isConnected}>
-				<div>
-					<Button
-						data-testid="LedgerScanStep__view-more"
-						variant="secondary"
-						className="w-full"
-						disabled={!isConnected || canRetry || isBusy || isScanning}
-						isLoading={isScanning || isBusy}
-						onClick={scanMore}
-					>
-						{t("COMMON.VIEW_MORE")}
-					</Button>
-				</div>
-			</Tooltip>
+			{error ? (
+				<Alert variant="danger">
+					<span data-testid="LedgerScanStep__error">{error}</span>
+				</Alert>
+			) : (
+				<LedgerTable network={network} {...ledgerScanner} />
+			)}
 		</section>
 	);
 };

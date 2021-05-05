@@ -35,13 +35,31 @@ describe("LedgerScanStep", () => {
 					},
 				],
 			})
-			.persist();
+			.get("/wallets")
+			.query((params) => !!params.address)
+			.reply(200, {
+				meta: {},
+				data: [],
+			})
+			.get("/wallets")
+			.query((params) => !!params.address)
+			.reply(200, {
+				meta: {},
+				data: [],
+			});
 	});
 
-	beforeEach(() => {
+	beforeEach(async () => {
 		profile = env.profiles().findById(getDefaultProfileId());
+
+		await env.profiles().restore(profile);
+		await profile.sync();
+
 		wallet = profile.wallets().first();
+		await wallet.synchroniser().identity();
+
 		transport = createTransportReplayer(RecordStore.fromString(""));
+
 		publicKeyPaths = new Map([
 			["44'/1'/0'/0/0", "027716e659220085e41389efc7cf6a05f7f7c659cf3db9126caabce6cda9156582"],
 			["44'/1'/0'/0/1", "03d3fdad9c5b25bf8880e6b519eb3611a5c0b31adebc8455f0e096175b28321aff"],
@@ -64,6 +82,7 @@ describe("LedgerScanStep", () => {
 		jest.spyOn(wallet.coin().ledger(), "getPublicKey").mockImplementation((path) =>
 			Promise.resolve(publicKeyPaths.get(path)!),
 		);
+		jest.spyOn(wallet.coin().ledger(), "getExtendedPublicKey").mockResolvedValue(wallet.publicKey()!);
 
 		jest.useFakeTimers();
 	});
@@ -72,52 +91,6 @@ describe("LedgerScanStep", () => {
 		jest.clearAllMocks();
 		jest.runOnlyPendingTimers();
 		jest.useRealTimers();
-	});
-
-	it("should render", async () => {
-		let formRef: ReturnType<typeof useForm>;
-		const Component = () => {
-			const form = useForm({
-				defaultValues: {
-					network: wallet.network(),
-				},
-			});
-			formRef = form;
-
-			return (
-				<FormProvider {...form}>
-					<LedgerProvider transport={transport}>
-						<LedgerScanStep profile={profile} />
-					</LedgerProvider>
-				</FormProvider>
-			);
-		};
-
-		const { container } = render(<Component />);
-
-		await waitFor(() => expect(screen.getAllByRole("row")).toHaveLength(7), { timeout: 6000 });
-		await waitFor(() => expect(screen.getByText("DJpFwW39QnQvQRQJF2MCfAoKvsX4DJ28jq")).toBeInTheDocument());
-
-		await waitFor(() => expect(screen.getAllByRole("checkbox")).toHaveLength(7));
-
-		await waitFor(() =>
-			expect(formRef.getValues("wallets")).toMatchObject([
-				{ address: "DJpFwW39QnQvQRQJF2MCfAoKvsX4DJ28jq", index: 0 },
-				{ address: "DSyG9hK9CE8eyfddUoEvsga4kNVQLdw2ve", index: 3 },
-			]),
-		);
-
-		act(() => {
-			fireEvent.click(screen.getAllByRole("checkbox")[1]);
-		});
-
-		await waitFor(() =>
-			expect(formRef.getValues("wallets")).toMatchObject([
-				{ address: "DSyG9hK9CE8eyfddUoEvsga4kNVQLdw2ve", index: 3 },
-			]),
-		);
-
-		expect(container).toMatchSnapshot();
 	});
 
 	it("should handle select", async () => {
@@ -142,13 +115,13 @@ describe("LedgerScanStep", () => {
 
 		render(<Component />);
 
-		await waitFor(() => expect(screen.getAllByRole("row")).toHaveLength(7), { timeout: 5000 });
+		await waitFor(() => expect(screen.getAllByRole("row")).toHaveLength(6), { timeout: 5000 });
 
 		act(() => {
 			fireEvent.click(screen.getByTestId("LedgerScanStep__select-all"));
 		});
 
-		await waitFor(() => expect(screen.getAllByRole("checkbox", { checked: true })).toHaveLength(7));
+		await waitFor(() => expect(screen.getAllByRole("checkbox", { checked: true })).toHaveLength(3));
 
 		// Unselect All
 
@@ -156,7 +129,7 @@ describe("LedgerScanStep", () => {
 			fireEvent.click(screen.getByTestId("LedgerScanStep__select-all"));
 		});
 
-		await waitFor(() => expect(screen.getAllByRole("checkbox", { checked: false })).toHaveLength(7));
+		await waitFor(() => expect(screen.getAllByRole("checkbox", { checked: false })).toHaveLength(3));
 
 		// Select just first
 
@@ -171,5 +144,49 @@ describe("LedgerScanStep", () => {
 		});
 
 		await waitFor(() => expect(formRef.getValues("wallets").length).toBe(0));
+	});
+
+	it("should render", async () => {
+		let formRef: ReturnType<typeof useForm>;
+		const Component = () => {
+			const form = useForm({
+				defaultValues: {
+					network: wallet.network(),
+				},
+			});
+			formRef = form;
+
+			return (
+				<FormProvider {...form}>
+					<LedgerProvider transport={transport}>
+						<LedgerScanStep profile={profile} />
+					</LedgerProvider>
+				</FormProvider>
+			);
+		};
+
+		const { container } = render(<Component />);
+
+		await waitFor(() => expect(screen.getAllByRole("row")).toHaveLength(6), { timeout: 6000 });
+		await waitFor(() => expect(screen.getByText("DJpFwW39QnQvQRQJF2MCfAoKvsX4DJ28jq")).toBeInTheDocument());
+
+		await waitFor(() => expect(screen.getAllByRole("checkbox")).toHaveLength(3));
+
+		await waitFor(() =>
+			expect(formRef.getValues("wallets")).toMatchObject([
+				{ address: "DJpFwW39QnQvQRQJF2MCfAoKvsX4DJ28jq" },
+				{ address: "DQseW3VJ1db5xN5xZi4Qhn6AFWtcwSwzpG" },
+			]),
+		);
+
+		act(() => {
+			fireEvent.click(screen.getAllByRole("checkbox")[1]);
+		});
+
+		await waitFor(() =>
+			expect(formRef.getValues("wallets")).toMatchObject([{ address: "DQseW3VJ1db5xN5xZi4Qhn6AFWtcwSwzpG" }]),
+		);
+
+		expect(container).toMatchSnapshot();
 	});
 });

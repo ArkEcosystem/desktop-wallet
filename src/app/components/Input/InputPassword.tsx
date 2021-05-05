@@ -7,7 +7,7 @@ type InputPasswordProps = React.InputHTMLAttributes<any>;
 
 export const InputPassword = React.forwardRef<HTMLInputElement, InputPasswordProps>((props, ref) => {
 	const [show, setShow] = React.useState(false);
-	const togglePasswordVisibilty = () => setShow(!show);
+	const togglePasswordVisibility = () => setShow(!show);
 
 	return (
 		<Input
@@ -18,11 +18,13 @@ export const InputPassword = React.forwardRef<HTMLInputElement, InputPasswordPro
 				end: (
 					<button
 						data-testid="InputPassword__toggle"
-						tabIndex={-1}
 						type="button"
-						onClick={togglePasswordVisibilty}
-						className="flex items-center justify-center w-full h-full text-2xl"
+						onClick={togglePasswordVisibility}
+						className="relative flex items-center justify-center w-full h-full text-2xl focus:outline-none group"
 					>
+						{/* icon border on focus */}
+						<div className="absolute inset-0 -m-1 rounded ring-theme-primary-400 group-focus:ring-2" />
+
 						<Icon name={show ? "EyeOff" : "Eye"} />
 					</button>
 				),

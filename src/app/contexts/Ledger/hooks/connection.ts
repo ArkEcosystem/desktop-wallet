@@ -35,10 +35,14 @@ export const useLedgerConnection = (transport: typeof Transport) => {
 	const importLedgerWallets = useCallback(
 		async (wallets: LedgerData[], coin: Coins.Coin, profile: Contracts.IProfile) => {
 			for (const { address, path } of wallets) {
-				const wallet = await profile
-					.wallets()
-					.importByAddress(address, coin.network().coin(), coin.network().id());
-				wallet.data().set(Contracts.WalletData.LedgerPath, path);
+				const wallet = await profile.walletFactory().fromAddressWithLedgerPath({
+					address,
+					coin: coin.network().coin(),
+					network: coin.network().id(),
+					path,
+				});
+
+				profile.wallets().push(wallet);
 			}
 			await persist();
 		},
@@ -65,6 +69,7 @@ export const useLedgerConnection = (transport: typeof Transport) => {
 						bail(new Error("User aborted"));
 					}
 
+					await instance.__construct();
 					await instance.ledger().connect(transport);
 					// Ensure that the app is accessible
 					await instance.ledger().getPublicKey(formatLedgerDerivationPath({ coinType: slip44 }));
@@ -119,5 +124,6 @@ export const useLedgerConnection = (transport: typeof Transport) => {
 		isAwaitingDeviceConfirmation,
 		isBusy,
 		isConnected,
+		transport,
 	};
 };

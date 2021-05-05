@@ -1,11 +1,17 @@
 /* eslint-disable @typescript-eslint/require-await */
-import { Helpers } from "@arkecosystem/platform-sdk-profiles";
 import { act, renderHook } from "@testing-library/react-hooks";
 import { ConfigurationProvider, EnvironmentProvider } from "app/contexts";
 import { createMemoryHistory } from "history";
 import React from "react";
 import { Route } from "react-router-dom";
-import { env, getDefaultProfileId, renderWithRouter, syncDelegates, waitFor } from "utils/testing-library";
+import {
+	act as utilsAct,
+	env,
+	getDefaultProfileId,
+	renderWithRouter,
+	syncDelegates,
+	waitFor,
+} from "utils/testing-library";
 
 const history = createMemoryHistory();
 const dashboardURL = `/profiles/${getDefaultProfileId()}/dashboard`;
@@ -137,10 +143,15 @@ describe("useProfileSyncStatus", () => {
 		expect(current.shouldMarkCompleted()).toEqual(false);
 	});
 });
-//
+
 describe("useProfileSynchronizer", () => {
 	beforeEach(async () => {
 		jest.useFakeTimers();
+
+		const profile = env.profiles().findById(getDefaultProfileId());
+		await env.profiles().restore(profile);
+		await profile.sync();
+
 		await syncDelegates();
 	});
 
@@ -168,6 +179,7 @@ describe("useProfileSynchronizer", () => {
 
 	it("should clear last profile sync jobs", async () => {
 		history.push(dashboardURL);
+		jest.useFakeTimers();
 		const { getByTestId } = renderWithRouter(
 			<Route path="/profiles/:profileId/dashboard">
 				<div data-testid="ProfileSynced">test</div>
@@ -179,14 +191,24 @@ describe("useProfileSynchronizer", () => {
 			},
 		);
 
+		jest.runAllTimers();
 		await waitFor(() => expect(getByTestId("ProfileSynced")).toBeInTheDocument(), { timeout: 4000 });
+
 		history.push("/");
-		await waitFor(() => expect(history.location.pathname).toEqual("/"));
+
+		await utilsAct(async () => {
+			jest.runAllTimers();
+			await waitFor(() => expect(history.location.pathname).toEqual("/"));
+			await waitFor(() => expect(() => getByTestId("ProfileSynced")).toThrow(), { timeout: 4000 });
+		});
+
+		jest.clearAllTimers();
 	});
 
 	it("should not sync if not in profile's url", async () => {
 		history.push("/");
 
+		jest.useFakeTimers();
 		const { getByTestId } = renderWithRouter(
 			<Route path="/">
 				<div data-testid="RenderedContent">test</div>
@@ -199,6 +221,7 @@ describe("useProfileSynchronizer", () => {
 		);
 
 		await waitFor(() => expect(getByTestId("RenderedContent")).toBeInTheDocument(), { timeout: 4000 });
+		jest.runAllTimers();
 	});
 
 	it("should sync only valid profiles from url", async () => {
@@ -224,9 +247,6 @@ describe("useProfileSynchronizer", () => {
 
 		history.push(dashboardURL);
 
-		const profile = env.profiles().findById(getDefaultProfileId());
-		profile.wallets().flush();
-
 		const { getByTestId } = renderWithRouter(
 			<Route path="/profiles/:profileId/dashboard">
 				<div data-testid="ProfileRestored">test</div>
@@ -251,7 +271,7 @@ describe("useProfileSynchronizer", () => {
 		const profile = env.profiles().findById("cba050f1-880f-45f0-9af9-cfe48f406052");
 		profile.wallets().flush();
 
-		const memoryPasswordMock = jest.spyOn(Helpers.MemoryPassword, "get").mockImplementation(() => {
+		const memoryPasswordMock = jest.spyOn(profile.password(), "get").mockImplementation(() => {
 			throw new Error("password not found");
 		});
 
@@ -276,9 +296,6 @@ describe("useProfileSynchronizer", () => {
 		process.env.REACT_APP_IS_E2E = "1";
 
 		history.push(dashboardURL);
-
-		const profile = env.profiles().findById(getDefaultProfileId());
-		profile.wallets().flush();
 
 		const { getByTestId } = renderWithRouter(
 			<Route path="/profiles/:profileId/dashboard">
