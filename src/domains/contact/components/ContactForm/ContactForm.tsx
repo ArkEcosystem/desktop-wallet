@@ -172,9 +172,6 @@ export const ContactForm = ({ profile, contact, onChange, onCancel, onDelete, on
 				<InputDefault
 					data-testid="contact-form__name-input"
 					ref={register({
-						required: t("COMMON.VALIDATION.FIELD_REQUIRED", {
-							field: t("CONTACTS.CONTACT_FORM.NAME"),
-						}).toString(),
 						maxLength: {
 							message: t("COMMON.VALIDATION.MAX_LENGTH", {
 								field: t("CONTACTS.CONTACT_FORM.NAME"),
@@ -183,8 +180,12 @@ export const ContactForm = ({ profile, contact, onChange, onCancel, onDelete, on
 							value: nameMaxLength,
 						},
 						validate: {
+							required: (name) =>
+								!!name?.trim() ||
+								t("COMMON.VALIDATION.FIELD_REQUIRED", {
+									field: t("CONTACTS.CONTACT_FORM.NAME"),
+								}).toString(),
 							duplicateName: (name) =>
-								!name ||
 								!profile
 									.contacts()
 									.values()

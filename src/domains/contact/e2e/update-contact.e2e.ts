@@ -231,10 +231,7 @@ test("should error if contact name is already taken", async (t) => {
 
 	const name = Selector('[data-testid="contact-form__name-input"]');
 	await t.typeText(name, "Test Contact", { replace: true });
-
-	// Save
-	await t.expect(Selector('[data-testid="contact-form__save-btn"]').hasAttribute("disabled")).notOk();
-	await t.click(Selector('[data-testid="contact-form__save-btn"]'));
+	await t.expect(Selector('[data-testid="contact-form__save-btn"]').hasAttribute("disabled")).ok();
 
 	await t.expect(Selector('[data-testid="Input__error"]').exists).ok();
 
