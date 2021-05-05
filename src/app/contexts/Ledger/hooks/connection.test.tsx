@@ -139,6 +139,14 @@ describe("Use Ledger Connection", () => {
 	});
 
 	describe("Ledger Connection", () => {
+		beforeEach(() => {
+			jest.spyOn(wallet.coin(), "__construct").mockImplementation();
+		});
+
+		afterEach(() => {
+			jest.clearAllMocks();
+		});
+
 		const Component = ({ retries = 3 }: { retries?: number }) => {
 			const {
 				connect,

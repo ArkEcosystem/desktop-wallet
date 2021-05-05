@@ -69,6 +69,7 @@ export const useLedgerConnection = (transport: typeof Transport) => {
 						bail(new Error("User aborted"));
 					}
 
+					await instance.__construct();
 					await instance.ledger().connect(transport);
 					// Ensure that the app is accessible
 					await instance.ledger().getPublicKey(formatLedgerDerivationPath({ coinType: slip44 }));
@@ -123,5 +124,6 @@ export const useLedgerConnection = (transport: typeof Transport) => {
 		isAwaitingDeviceConfirmation,
 		isBusy,
 		isConnected,
+		transport,
 	};
 };

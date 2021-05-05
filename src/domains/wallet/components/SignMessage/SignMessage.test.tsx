@@ -267,6 +267,7 @@ describe("SignMessage", () => {
 	});
 
 	it("should sign message with ledger wallet", async () => {
+		jest.spyOn(wallet.coin(), "__construct").mockImplementation();
 		const isLedgerMock = jest.spyOn(wallet, "isLedger").mockReturnValue(true);
 
 		const unsubscribe = jest.fn();

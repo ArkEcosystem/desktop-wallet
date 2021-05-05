@@ -64,10 +64,10 @@ export const SignMessage = ({
 
 	const wallet = useMemo(() => profile.wallets().findById(walletId), [profile, walletId]);
 
-	const { abortConnectionRetry, connect, isConnected, hasDeviceAvailable } = useLedgerContext();
+	const { abortConnectionRetry, connect, isConnected, hasDeviceAvailable, transport } = useLedgerContext();
 
 	const abortRef = useRef(new AbortController());
-	const { sign } = useMessageSigner();
+	const { sign } = useMessageSigner(transport);
 
 	const isLedger = wallet.isLedger();
 
@@ -112,6 +112,7 @@ export const SignMessage = ({
 
 			setActiveTab("signed");
 		} catch (error) {
+			console.error(error);
 			/* istanbul ignore else */
 			if (isRejectionError(error)) {
 				toasts.error(t("TRANSACTION.LEDGER_CONFIRMATION.REJECTED"));
