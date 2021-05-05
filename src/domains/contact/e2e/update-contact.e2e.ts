@@ -112,7 +112,7 @@ test("should error for invalid address", async (t) => {
 		.ok();
 
 	await t.typeText(Selector('[data-testid="SelectDropdownInput__input"]'), "ARK D");
-	await t.pressKey("enter");
+	await t.pressKey("tab");
 
 	const addressInput = Selector('[data-testid="contact-form__address-input"]');
 	await t.typeText(addressInput, "invalid address");
@@ -130,7 +130,7 @@ test("should error for invalid address", async (t) => {
 		.ok();
 });
 
-test.only("should error on duplicate address addition", async (t) => {
+test("should error on duplicate address addition", async (t) => {
 	await t.expect(Selector('[data-testid="ContactList"] tbody > tr:first-child td').withText("Brian").exists).ok();
 	await t
 		.expect(Selector('[data-testid="ContactList"] tbody > tr:first-child td').withText("Anne Doe").exists)
@@ -151,7 +151,7 @@ test.only("should error on duplicate address addition", async (t) => {
 		.ok();
 
 	await t.typeText(Selector('[data-testid="SelectDropdownInput__input"]'), "ARK D");
-	await t.pressKey("enter");
+	await t.pressKey("tab");
 
 	const addressInput = Selector('[data-testid="contact-form__address-input"]');
 	await t.typeText(addressInput, "D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib");
@@ -182,7 +182,7 @@ test("should error if contact name is already taken", async (t) => {
 	await t.typeText(nameInput, newContact);
 
 	await t.typeText(Selector('[data-testid="SelectDropdownInput__input"]'), "ARK D");
-	await t.pressKey("enter");
+	await t.pressKey("tab");
 
 	const addressInput = Selector('[data-testid="contact-form__address-input"]');
 	await t.typeText(addressInput, "D6Z26L69gdk9qYmTv5uzk3uGepigtHY4ax");

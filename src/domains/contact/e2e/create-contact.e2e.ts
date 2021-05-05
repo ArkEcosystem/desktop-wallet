@@ -52,7 +52,7 @@ test("should successfully create contact", async (t) => {
 	await t.typeText(nameInput, contactName);
 
 	await t.typeText(Selector('[data-testid="SelectDropdownInput__input"]'), "ARK D");
-	await t.pressKey("enter");
+	await t.pressKey("tab");
 
 	const addressInput = Selector('[data-testid="contact-form__address-input"]');
 	await t.typeText(addressInput, "D6Z26L69gdk9qYmTv5uzk3uGepigtHY4ax");
@@ -94,7 +94,7 @@ test("should error for invalid address", async (t) => {
 	await t.typeText(nameInput, contactName);
 
 	await t.typeText(Selector('[data-testid="SelectDropdownInput__input"]'), "ARK D");
-	await t.pressKey("enter");
+	await t.pressKey("tab");
 
 	const addressInput = Selector('[data-testid="contact-form__address-input"]');
 	await t.typeText(addressInput, "invalid address");
@@ -126,7 +126,7 @@ test("should error on duplicate address addition", async (t) => {
 	await t.typeText(nameInput, contactName);
 
 	await t.typeText(Selector('[data-testid="SelectDropdownInput__input"]'), "ARK D");
-	await t.pressKey("enter");
+	await t.pressKey("tab");
 
 	const addressInput = Selector('[data-testid="contact-form__address-input"]');
 	await t.typeText(addressInput, "D6Z26L69gdk9qYmTv5uzk3uGepigtHY4ax");
@@ -138,7 +138,7 @@ test("should error on duplicate address addition", async (t) => {
 
 	// Add secondary duplicate address
 	await t.typeText(Selector('[data-testid="SelectDropdownInput__input"]'), "ARK D");
-	await t.pressKey("enter");
+	await t.pressKey("tab");
 
 	await t.typeText(addressInput, "D6Z26L69gdk9qYmTv5uzk3uGepigtHY4ax");
 	await t.expect(Selector('[data-testid="contact-form__add-address-btn"]').hasAttribute("disabled")).notOk();
@@ -170,7 +170,7 @@ test("should error if contact name already exists", async (t) => {
 	await t.typeText(nameInput, contactName);
 
 	await t.typeText(Selector('[data-testid="SelectDropdownInput__input"]'), "ARK D");
-	await t.pressKey("enter");
+	await t.pressKey("tab");
 
 	const addressInput = Selector('[data-testid="contact-form__address-input"]');
 	await t.typeText(addressInput, "D6Z26L69gdk9qYmTv5uzk3uGepigtHY4ax");
@@ -207,7 +207,7 @@ test("should disable save button if name consists of empty spaces", async (t) =>
 	await t.typeText(nameInput, "          ");
 
 	await t.typeText(Selector('[data-testid="SelectDropdownInput__input"]'), "ARK D");
-	await t.pressKey("enter");
+	await t.pressKey("tab");
 
 	const addressInput = Selector('[data-testid="contact-form__address-input"]');
 	await t.typeText(addressInput, "D6Z26L69gdk9qYmTv5uzk3uGepigtHY4ax");
