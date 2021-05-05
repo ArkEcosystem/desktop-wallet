@@ -21,7 +21,7 @@ exports[`ContactForm should render 1`] = `
         />
       </label>
       <div
-        class="Input__InputWrapperStyled-wu99qs-0 hDeOGV"
+        class="Input__InputWrapperStyled-wu99qs-0 knbpfp"
       >
         <div
           class="relative flex flex-1 h-full"
@@ -56,7 +56,7 @@ exports[`ContactForm should render 1`] = `
           class="relative w-full"
         >
           <div
-            class="Input__InputWrapperStyled-wu99qs-0 hDeOGV sr-only"
+            class="Input__InputWrapperStyled-wu99qs-0 knbpfp sr-only"
           >
             <div
               class="relative flex flex-1 h-full"
@@ -66,6 +66,7 @@ exports[`ContactForm should render 1`] = `
                 data-testid="select-list__input"
                 name="network"
                 readonly=""
+                tabindex="-1"
                 value=""
               />
             </div>
@@ -84,7 +85,7 @@ exports[`ContactForm should render 1`] = `
                 id="downshift-0-label"
               />
               <div
-                class="Input__InputWrapperStyled-wu99qs-0 hDeOGV"
+                class="Input__InputWrapperStyled-wu99qs-0 knbpfp"
               >
                 <div
                   class="relative flex flex-1 h-full"
@@ -127,7 +128,7 @@ exports[`ContactForm should render 1`] = `
               </div>
               <ul
                 aria-labelledby="downshift-0-label"
-                class="styles__SelectOptionsList-b2falt-0 cUNLQk"
+                class="styles__SelectOptionsList-b2falt-0 ghEDCU"
                 id="downshift-0-menu"
                 role="listbox"
               />
@@ -151,7 +152,7 @@ exports[`ContactForm should render 1`] = `
           />
         </label>
         <div
-          class="Input__InputWrapperStyled-wu99qs-0 hDeOGV"
+          class="Input__InputWrapperStyled-wu99qs-0 knbpfp"
         >
           <div
             class="relative flex flex-1 h-full"
@@ -169,7 +170,7 @@ exports[`ContactForm should render 1`] = `
         class="mt-4"
       >
         <button
-          class="OriginalButton__StyledButton-sc-1y2wptt-0 blpaPr w-full"
+          class="OriginalButton__StyledButton-sc-1y2wptt-0 fqRthJ w-full"
           data-testid="contact-form__add-address-btn"
           disabled=""
           type="button"
@@ -183,13 +184,13 @@ exports[`ContactForm should render 1`] = `
       </div>
     </div>
     <div
-      class="flex w-full justify-end"
+      class="flex w-full pt-8 border-t border-theme-secondary-300 dark:border-theme-secondary-800 justify-end"
     >
       <div
         class="space-x-3"
       >
         <button
-          class="OriginalButton__StyledButton-sc-1y2wptt-0 hsoUax"
+          class="OriginalButton__StyledButton-sc-1y2wptt-0 izJbbP"
           data-testid="contact-form__cancel-btn"
           type="button"
         >
@@ -200,7 +201,7 @@ exports[`ContactForm should render 1`] = `
           </div>
         </button>
         <button
-          class="OriginalButton__StyledButton-sc-1y2wptt-0 blpaPr"
+          class="OriginalButton__StyledButton-sc-1y2wptt-0 fqRthJ"
           data-testid="contact-form__save-btn"
           disabled=""
           type="submit"
@@ -238,7 +239,7 @@ exports[`ContactForm should render with errors 1`] = `
         />
       </label>
       <div
-        class="Input__InputWrapperStyled-wu99qs-0 iXDeQC"
+        class="Input__InputWrapperStyled-wu99qs-0 liGcJS"
       >
         <div
           class="relative flex flex-1 h-full"
@@ -292,7 +293,7 @@ exports[`ContactForm should render with errors 1`] = `
           class="relative w-full"
         >
           <div
-            class="Input__InputWrapperStyled-wu99qs-0 hDeOGV sr-only"
+            class="Input__InputWrapperStyled-wu99qs-0 knbpfp sr-only"
           >
             <div
               class="relative flex flex-1 h-full"
@@ -302,6 +303,7 @@ exports[`ContactForm should render with errors 1`] = `
                 data-testid="select-list__input"
                 name="network"
                 readonly=""
+                tabindex="-1"
                 value=""
               />
             </div>
@@ -320,7 +322,7 @@ exports[`ContactForm should render with errors 1`] = `
                 id="downshift-3-label"
               />
               <div
-                class="Input__InputWrapperStyled-wu99qs-0 hDeOGV"
+                class="Input__InputWrapperStyled-wu99qs-0 knbpfp"
               >
                 <div
                   class="relative flex flex-1 h-full"
@@ -363,7 +365,7 @@ exports[`ContactForm should render with errors 1`] = `
               </div>
               <ul
                 aria-labelledby="downshift-3-label"
-                class="styles__SelectOptionsList-b2falt-0 cUNLQk"
+                class="styles__SelectOptionsList-b2falt-0 ghEDCU"
                 id="downshift-3-menu"
                 role="listbox"
               />
@@ -387,7 +389,7 @@ exports[`ContactForm should render with errors 1`] = `
           />
         </label>
         <div
-          class="Input__InputWrapperStyled-wu99qs-0 hDeOGV"
+          class="Input__InputWrapperStyled-wu99qs-0 knbpfp"
         >
           <div
             class="relative flex flex-1 h-full"
@@ -405,7 +407,7 @@ exports[`ContactForm should render with errors 1`] = `
         class="mt-4"
       >
         <button
-          class="OriginalButton__StyledButton-sc-1y2wptt-0 blpaPr w-full"
+          class="OriginalButton__StyledButton-sc-1y2wptt-0 fqRthJ w-full"
           data-testid="contact-form__add-address-btn"
           disabled=""
           type="button"
@@ -419,13 +421,13 @@ exports[`ContactForm should render with errors 1`] = `
       </div>
     </div>
     <div
-      class="flex w-full justify-end"
+      class="flex w-full pt-8 border-t border-theme-secondary-300 dark:border-theme-secondary-800 justify-end"
     >
       <div
         class="space-x-3"
       >
         <button
-          class="OriginalButton__StyledButton-sc-1y2wptt-0 hsoUax"
+          class="OriginalButton__StyledButton-sc-1y2wptt-0 izJbbP"
           data-testid="contact-form__cancel-btn"
           type="button"
         >
@@ -436,7 +438,7 @@ exports[`ContactForm should render with errors 1`] = `
           </div>
         </button>
         <button
-          class="OriginalButton__StyledButton-sc-1y2wptt-0 blpaPr"
+          class="OriginalButton__StyledButton-sc-1y2wptt-0 fqRthJ"
           data-testid="contact-form__save-btn"
           disabled=""
           type="submit"

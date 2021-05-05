@@ -9,6 +9,7 @@ import { Icon } from "app/components/Icon";
 import { Tooltip } from "app/components/Tooltip";
 import { WalletIcons } from "app/components/WalletIcons";
 import { useEnvironmentContext } from "app/contexts";
+import { usePrevious } from "app/hooks";
 import { useTextTruncate } from "app/hooks/use-text-truncate";
 import { NetworkIcon } from "domains/network/components/NetworkIcon";
 import { DeleteWallet } from "domains/wallet/components/DeleteWallet";
@@ -16,7 +17,8 @@ import { ReceiveFunds } from "domains/wallet/components/ReceiveFunds";
 import { SignMessage } from "domains/wallet/components/SignMessage";
 import { UpdateWalletName } from "domains/wallet/components/UpdateWalletName";
 import { VerifyMessage } from "domains/wallet/components/VerifyMessage";
-import React, { useRef, useState } from "react";
+import { useWalletSync } from "domains/wallet/hooks/use-wallet-sync";
+import React, { useEffect, useRef, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { useHistory } from "react-router-dom";
 import { openExternal } from "utils/electron-utils";
@@ -26,13 +28,27 @@ type WalletHeaderProps = {
 	wallet: Contracts.IReadWriteWallet;
 	currencyDelta?: number;
 	onSend?: () => void;
+	isUpdatingTransactions?: boolean;
+	onUpdate?: (status: boolean) => void;
 };
 
-export const WalletHeader = ({ profile, wallet, currencyDelta, onSend }: WalletHeaderProps) => {
+export const WalletHeader = ({
+	profile,
+	wallet,
+	currencyDelta,
+	onSend,
+	isUpdatingTransactions,
+	onUpdate,
+}: WalletHeaderProps) => {
 	const ref = useRef(null);
 	const [TruncatedAddress] = useTextTruncate({ text: wallet.address(), parentRef: ref });
 
 	const [modal, setModal] = useState<string | undefined>();
+
+	const { env } = useEnvironmentContext();
+	const { syncAll } = useWalletSync({ profile, env });
+	const [isSyncing, setIsSyncing] = useState(false);
+	const prevIsUpdatingTransactions = usePrevious(isUpdatingTransactions);
 
 	const history = useHistory();
 
@@ -89,7 +105,7 @@ export const WalletHeader = ({ profile, wallet, currencyDelta, onSend }: WalletH
 
 	if (!wallet.isLedger() && wallet.hasBeenFullyRestored()) {
 		if (wallet.hasSyncedWithNetwork()) {
-			if (wallet.network().can(Coins.FeatureFlag.TransactionDelegateRegistration) && !wallet.isDelegate()) {
+			if (wallet.network().allows(Coins.FeatureFlag.TransactionDelegateRegistration) && !wallet.isDelegate()) {
 				registrationOptions.options.push({
 					label: t("WALLETS.PAGE_WALLET_DETAILS.OPTIONS.REGISTER_DELEGATE"),
 					value: "delegate-registration",
@@ -97,7 +113,7 @@ export const WalletHeader = ({ profile, wallet, currencyDelta, onSend }: WalletH
 			}
 
 			if (
-				wallet.network().can(Coins.FeatureFlag.TransactionDelegateResignation) &&
+				wallet.network().allows(Coins.FeatureFlag.TransactionDelegateResignation) &&
 				wallet.isDelegate() &&
 				!wallet.isResignedDelegate()
 			) {
@@ -107,7 +123,7 @@ export const WalletHeader = ({ profile, wallet, currencyDelta, onSend }: WalletH
 				});
 			}
 
-			if (wallet.network().can(Coins.FeatureFlag.TransactionSecondSignature) && !wallet.isSecondSignature()) {
+			if (wallet.network().allows(Coins.FeatureFlag.TransactionSecondSignature) && !wallet.isSecondSignature()) {
 				registrationOptions.options.push({
 					label: t("WALLETS.PAGE_WALLET_DETAILS.OPTIONS.SECOND_SIGNATURE"),
 					value: "second-signature",
@@ -115,7 +131,7 @@ export const WalletHeader = ({ profile, wallet, currencyDelta, onSend }: WalletH
 			}
 		}
 
-		if (wallet.network().can(Coins.FeatureFlag.TransactionMultiSignature)) {
+		if (wallet.network().allows(Coins.FeatureFlag.TransactionMultiSignature)) {
 			registrationOptions.options.push({
 				label: t("WALLETS.PAGE_WALLET_DETAILS.OPTIONS.MULTISIGNATURE"),
 				value: "multi-signature",
@@ -129,14 +145,14 @@ export const WalletHeader = ({ profile, wallet, currencyDelta, onSend }: WalletH
 		options: [],
 	};
 
-	if (wallet.network().can(Coins.FeatureFlag.MessageSign)) {
+	if (wallet.network().allows(Coins.FeatureFlag.MessageSign)) {
 		additionalOptions.options.push({
 			label: t("WALLETS.PAGE_WALLET_DETAILS.OPTIONS.SIGN_MESSAGE"),
 			value: "sign-message",
 		});
 	}
 
-	if (wallet.network().can(Coins.FeatureFlag.MessageVerify)) {
+	if (wallet.network().allows(Coins.FeatureFlag.MessageVerify)) {
 		additionalOptions.options.push({
 			label: t("WALLETS.PAGE_WALLET_DETAILS.OPTIONS.VERIFY_MESSAGE"),
 			value: "verify-message",
@@ -144,7 +160,7 @@ export const WalletHeader = ({ profile, wallet, currencyDelta, onSend }: WalletH
 	}
 
 	if (
-		wallet.network().can(Coins.FeatureFlag.TransactionIpfs) &&
+		wallet.network().allows(Coins.FeatureFlag.TransactionIpfs) &&
 		wallet.hasBeenFullyRestored() &&
 		wallet.hasSyncedWithNetwork()
 	) {
@@ -204,6 +220,25 @@ export const WalletHeader = ({ profile, wallet, currencyDelta, onSend }: WalletH
 
 		setModal(option.value?.toString());
 	};
+
+	const syncWallet = async () => {
+		onUpdate?.(true);
+		setIsSyncing(true);
+
+		await syncAll(wallet);
+
+		if (isUpdatingTransactions === undefined) {
+			setIsSyncing(false);
+			onUpdate?.(false);
+		}
+	};
+
+	useEffect(() => {
+		if (isSyncing && prevIsUpdatingTransactions && !isUpdatingTransactions) {
+			setIsSyncing(false);
+			onUpdate?.(false);
+		}
+	}, [isSyncing, prevIsUpdatingTransactions, isUpdatingTransactions, onUpdate]);
 
 	return (
 		<>
@@ -313,7 +348,28 @@ export const WalletHeader = ({ profile, wallet, currencyDelta, onSend }: WalletH
 						/>
 					</div>
 
-					<div className="my-auto">
+					<div className="my-auto flex items-center -space-x-2">
+						<Tooltip
+							content={isSyncing ? t("WALLETS.UPDATING_WALLET_DATA") : t("WALLETS.UPDATE_WALLET_DATA")}
+							disabled={!wallet.hasSyncedWithNetwork()}
+						>
+							<Button
+								aria-busy={isSyncing}
+								data-testid="WalletHeader__refresh"
+								size="icon"
+								variant="transparent"
+								className="w-11 h-11 text-theme-secondary-text hover:text-theme-secondary-500"
+								onClick={syncWallet}
+								disabled={!wallet.hasSyncedWithNetwork() || isSyncing}
+							>
+								<Icon
+									name="Reload"
+									className={isSyncing ? "animate-spin" : ""}
+									style={{ animationDirection: "reverse" }}
+								/>
+							</Button>
+						</Tooltip>
+
 						<Button
 							size="icon"
 							variant="transparent"

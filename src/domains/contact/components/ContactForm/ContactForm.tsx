@@ -21,7 +21,7 @@ type AddressListItemProps = {
 const AddressListItem = ({ address, onRemove }: AddressListItemProps) => (
 	<div
 		data-testid="contact-form__address-list-item"
-		className="flex items-center py-4 border-b border-dashed border-theme-secondary-300 dark:border-theme-secondary-800"
+		className="flex items-center py-4 last:pb-0 border-b border-dashed last:border-b-0 border-theme-secondary-300 dark:border-theme-secondary-800"
 	>
 		<div className="mr-4">
 			<div className="flex items-center -space-x-1">
@@ -241,7 +241,11 @@ export const ContactForm = ({ profile, contact, onChange, onCancel, onDelete, on
 
 			{addresses && addresses.length > 0 && <AddressList addresses={addresses} onRemove={handleRemoveAddress} />}
 
-			<div className={`flex w-full ${contact ? "justify-between" : "justify-end"}`}>
+			<div
+				className={`flex w-full pt-8 border-t border-theme-secondary-300 dark:border-theme-secondary-800 ${
+					contact ? "justify-between" : "justify-end"
+				}`}
+			>
 				{contact && (
 					<Button data-testid="contact-form__delete-btn" onClick={onDelete} variant="danger">
 						<Icon name="Trash" />

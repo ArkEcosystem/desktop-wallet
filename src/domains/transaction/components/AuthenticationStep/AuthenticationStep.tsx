@@ -46,7 +46,7 @@ export const AuthenticationStep = ({
 	const { errors, getValues, register } = useFormContext();
 
 	const isLedger = wallet.isLedger();
-	const usesWIF = wallet.usesWIF();
+	const usesWIF = wallet.wif().exists();
 	const { authentication } = useValidation();
 
 	if (isLedger) {

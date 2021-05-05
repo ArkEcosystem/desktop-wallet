@@ -88,6 +88,7 @@ import { ReactComponent as QrCode } from "./qr-code.svg";
 import { ReactComponent as QuestionMark } from "./questionmark.svg";
 import { ReactComponent as Received } from "./received.svg";
 import { ReactComponent as Redirect } from "./redirect.svg";
+import { ReactComponent as Reload } from "./reload.svg";
 import { ReactComponent as ReplyArrow } from "./reply-arrow.svg";
 import { ReactComponent as Report } from "./report.svg";
 import { ReactComponent as Reset } from "./reset.svg";
@@ -207,6 +208,7 @@ export const SvgCollection: any = {
 	QuestionMark,
 	Received,
 	Redirect,
+	Reload,
 	ReplyArrow,
 	Report,
 	Reset,

@@ -19,7 +19,7 @@ exports[`UpdateContact should render 1`] = `
         class="absolute top-0 right-0 z-50 mt-5 mr-5 rounded transition-all duration-100 ease-linear bg-theme-primary-100 hover:bg-theme-primary-300 dark:bg-theme-secondary-800 dark:text-theme-secondary-600 dark:hover:bg-theme-secondary-700 dark:hover:text-theme-secondary-400"
       >
         <button
-          class="OriginalButton__StyledButton-sc-1y2wptt-0 lpqSIM w-11 h-11"
+          class="OriginalButton__StyledButton-sc-1y2wptt-0 fNHPRi w-11 h-11"
           data-testid="modal__close-btn"
           type="button"
         >
@@ -76,7 +76,7 @@ exports[`UpdateContact should render 1`] = `
                   />
                 </label>
                 <div
-                  class="Input__InputWrapperStyled-wu99qs-0 hDeOGV"
+                  class="Input__InputWrapperStyled-wu99qs-0 knbpfp"
                 >
                   <div
                     class="relative flex flex-1 h-full"
@@ -111,7 +111,7 @@ exports[`UpdateContact should render 1`] = `
                     class="relative w-full"
                   >
                     <div
-                      class="Input__InputWrapperStyled-wu99qs-0 hDeOGV sr-only"
+                      class="Input__InputWrapperStyled-wu99qs-0 knbpfp sr-only"
                     >
                       <div
                         class="relative flex flex-1 h-full"
@@ -121,6 +121,7 @@ exports[`UpdateContact should render 1`] = `
                           data-testid="select-list__input"
                           name="network"
                           readonly=""
+                          tabindex="-1"
                           value=""
                         />
                       </div>
@@ -139,7 +140,7 @@ exports[`UpdateContact should render 1`] = `
                           id="downshift-0-label"
                         />
                         <div
-                          class="Input__InputWrapperStyled-wu99qs-0 hDeOGV"
+                          class="Input__InputWrapperStyled-wu99qs-0 knbpfp"
                         >
                           <div
                             class="relative flex flex-1 h-full"
@@ -182,7 +183,7 @@ exports[`UpdateContact should render 1`] = `
                         </div>
                         <ul
                           aria-labelledby="downshift-0-label"
-                          class="styles__SelectOptionsList-b2falt-0 cUNLQk"
+                          class="styles__SelectOptionsList-b2falt-0 ghEDCU"
                           id="downshift-0-menu"
                           role="listbox"
                         />
@@ -206,7 +207,7 @@ exports[`UpdateContact should render 1`] = `
                     />
                   </label>
                   <div
-                    class="Input__InputWrapperStyled-wu99qs-0 hDeOGV"
+                    class="Input__InputWrapperStyled-wu99qs-0 knbpfp"
                   >
                     <div
                       class="relative flex flex-1 h-full"
@@ -224,7 +225,7 @@ exports[`UpdateContact should render 1`] = `
                   class="mt-4"
                 >
                   <button
-                    class="OriginalButton__StyledButton-sc-1y2wptt-0 blpaPr w-full"
+                    class="OriginalButton__StyledButton-sc-1y2wptt-0 fqRthJ w-full"
                     data-testid="contact-form__add-address-btn"
                     disabled=""
                     type="button"
@@ -249,7 +250,7 @@ exports[`UpdateContact should render 1`] = `
                   data-testid="contact-form__address-list"
                 >
                   <div
-                    class="flex items-center py-4 border-b border-dashed border-theme-secondary-300 dark:border-theme-secondary-800"
+                    class="flex items-center py-4 last:pb-0 border-b border-dashed last:border-b-0 border-theme-secondary-300 dark:border-theme-secondary-800"
                     data-testid="contact-form__address-list-item"
                   >
                     <div
@@ -305,7 +306,7 @@ exports[`UpdateContact should render 1`] = `
                       </div>
                     </span>
                     <button
-                      class="OriginalButton__StyledButton-sc-1y2wptt-0 dscUFp flex items-center ml-auto"
+                      class="OriginalButton__StyledButton-sc-1y2wptt-0 gLgNOz flex items-center ml-auto"
                       data-testid="contact-form__remove-address-btn"
                       type="button"
                     >
@@ -327,10 +328,10 @@ exports[`UpdateContact should render 1`] = `
                 </div>
               </div>
               <div
-                class="flex w-full justify-between"
+                class="flex w-full pt-8 border-t border-theme-secondary-300 dark:border-theme-secondary-800 justify-between"
               >
                 <button
-                  class="OriginalButton__StyledButton-sc-1y2wptt-0 hLYMjm"
+                  class="OriginalButton__StyledButton-sc-1y2wptt-0 gDVvgk"
                   data-testid="contact-form__delete-btn"
                   type="button"
                 >
@@ -355,7 +356,7 @@ exports[`UpdateContact should render 1`] = `
                   class="space-x-3"
                 >
                   <button
-                    class="OriginalButton__StyledButton-sc-1y2wptt-0 hsoUax"
+                    class="OriginalButton__StyledButton-sc-1y2wptt-0 izJbbP"
                     data-testid="contact-form__cancel-btn"
                     type="button"
                   >
@@ -366,7 +367,7 @@ exports[`UpdateContact should render 1`] = `
                     </div>
                   </button>
                   <button
-                    class="OriginalButton__StyledButton-sc-1y2wptt-0 cEUmKc"
+                    class="OriginalButton__StyledButton-sc-1y2wptt-0 dYkFxS"
                     data-testid="contact-form__save-btn"
                     type="submit"
                   >

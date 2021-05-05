@@ -7,8 +7,9 @@ import { WalletIcons } from "./WalletIcons";
 let wallet: Contracts.IReadWriteWallet;
 
 describe("WalletIcons", () => {
-	beforeEach(() => {
+	beforeEach(async () => {
 		wallet = env.profiles().findById(getDefaultProfileId()).wallets().first();
+		await wallet.synchroniser().identity();
 	});
 
 	it("should render the verified icon", () => {

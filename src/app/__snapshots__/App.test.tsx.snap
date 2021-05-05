@@ -259,19 +259,15 @@ exports[`App should close splash screen if not e2e 1`] = `
                     Exported a Profile before? 
                   </span>
                   <a
-                    class="Link__AnchorStyled-sc-1q7sbxr-0 kAtXNw pointer-events-none no-underline inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary-600 hover:text-theme-primary-700 hover:underline active:text-theme-primary-500"
+                    class="Link__AnchorStyled-sc-1q7sbxr-0 bMatQy group"
                     data-testid="Link"
                     href="/profiles/import"
                     title="Import Profile"
                   >
                     <span
-                      class="group"
+                      class="break-all border-b border-transparent transition-colors duration-200 group-hover:border-current"
                     >
-                      <span
-                        class="no-underline break-all pointer-events-auto hover:border-b"
-                      >
-                        Import it here.
-                      </span>
+                      Import it here.
                     </span>
                   </a>
                 </p>
@@ -350,12 +346,12 @@ exports[`App should not migrate profiles 1`] = `
                 <h2
                   class="mx-4 text-xl font-bold md:text-2xl"
                 >
-                  Create Profile
+                  Select Profile
                 </h2>
                 <p
                   class="text-sm text-theme-secondary-text md:text-base"
                 >
-                  Create a new Profile to get started.
+                  Choose from an existing Profile below or create a new Profile to get started.
                 </p>
                 <div
                   class="mt-8"
@@ -363,6 +359,146 @@ exports[`App should not migrate profiles 1`] = `
                   <div
                     class="ml-4.5 -mb-4.5 flex flex-wrap justify-center"
                   >
+                    <div
+                      class="Cardstyles__Wrapper-sc-1uddqgb-0 bVJHxj w-40 h-40 leading-tight mr-4.5 mb-4.5"
+                      data-testid="Card"
+                    >
+                      <div
+                        class="flex flex-col justify-center items-center mx-auto h-full"
+                      >
+                        <div
+                          class="relative"
+                        >
+                          <div
+                            class="Avatar__AvatarWrapper-sc-1vsy2s2-0 iowXEI flex-shrink-0"
+                            data-testid="Avatar"
+                          >
+                            <div
+                              class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
+                            >
+                              <img
+                                alt="John Doe"
+                                data-testid="ProfileAvatar__svg"
+                                src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"30\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"55\\" cx=\\"0\\" cy=\\"60\\" fill=\\"rgb(255, 152, 0)\\"/><circle r=\\"40\\" cx=\\"50\\" cy=\\"50\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
+                                title="John Doe"
+                              />
+                              <span
+                                class="absolute font-semibold text-white"
+                              >
+                                JO
+                              </span>
+                            </div>
+                          </div>
+                        </div>
+                        <span
+                          class="mt-3 font-semibold text-theme-primary-text max-w-32 truncate"
+                        >
+                          John Doe
+                        </span>
+                      </div>
+                      <div
+                        class="flex absolute -top-1 -right-1 items-center m-4 space-x-1"
+                      >
+                        <div
+                          class="relative"
+                        >
+                          <span
+                            data-testid="dropdown__toggle"
+                          >
+                            <div
+                              class="flex overflow-hidden justify-center w-4"
+                            >
+                              <div
+                                class="sc-bdfBwQ fPrsah p-1 transition-colors duration-200 cursor-pointer text-theme-primary-300 dark:text-theme-secondary-600 hover:text-theme-danger-400"
+                                height="1em"
+                                width="1em"
+                              >
+                                <svg>
+                                  settings.svg
+                                </svg>
+                              </div>
+                            </div>
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      class="Cardstyles__Wrapper-sc-1uddqgb-0 bVJHxj w-40 h-40 leading-tight mr-4.5 mb-4.5"
+                      data-testid="Card"
+                    >
+                      <div
+                        class="flex flex-col justify-center items-center mx-auto h-full"
+                      >
+                        <div
+                          class="relative"
+                        >
+                          <div
+                            class="Avatar__AvatarWrapper-sc-1vsy2s2-0 iowXEI flex-shrink-0"
+                            data-testid="Avatar"
+                          >
+                            <div
+                              class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
+                            >
+                              <img
+                                alt="Jane Doe"
+                                data-testid="ProfileAvatar__svg"
+                                src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(0, 150, 136)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"55\\" cx=\\"20\\" cy=\\"60\\" fill=\\"rgb(233, 30, 99)\\"/><circle r=\\"60\\" cx=\\"50\\" cy=\\"70\\" fill=\\"rgb(255, 193, 7)\\"/><circle r=\\"45\\" cx=\\"30\\" cy=\\"30\\" fill=\\"rgb(63, 81, 181)\\"/></svg>"
+                                title="Jane Doe"
+                              />
+                              <span
+                                class="absolute font-semibold text-white"
+                              >
+                                JA
+                              </span>
+                            </div>
+                          </div>
+                          <span
+                            class="Badge__Wrapper-sc-1d7juq8-0 kDeFGr flex border-2 rounded-full justify-center items-center align-middle bg-theme-background border-transparent mr-2 mb-2 bg-theme-background border-theme-background text-theme-secondary-900 dark:text-theme-secondary-600"
+                          >
+                            <div
+                              class="sc-bdfBwQ iwcOAK"
+                              height="18"
+                              width="13"
+                            >
+                              <svg>
+                                lock.svg
+                              </svg>
+                            </div>
+                            <span />
+                          </span>
+                        </div>
+                        <span
+                          class="mt-3 font-semibold text-theme-primary-text max-w-32 truncate"
+                        >
+                          Jane Doe
+                        </span>
+                      </div>
+                      <div
+                        class="flex absolute -top-1 -right-1 items-center m-4 space-x-1"
+                      >
+                        <div
+                          class="relative"
+                        >
+                          <span
+                            data-testid="dropdown__toggle"
+                          >
+                            <div
+                              class="flex overflow-hidden justify-center w-4"
+                            >
+                              <div
+                                class="sc-bdfBwQ fPrsah p-1 transition-colors duration-200 cursor-pointer text-theme-primary-300 dark:text-theme-secondary-600 hover:text-theme-danger-400"
+                                height="1em"
+                                width="1em"
+                              >
+                                <svg>
+                                  settings.svg
+                                </svg>
+                              </div>
+                            </div>
+                          </span>
+                        </div>
+                      </div>
+                    </div>
                     <div
                       class="Cardstyles__Wrapper-sc-1uddqgb-0 bVJHxj w-40 h-40 leading-tight mr-4.5 mb-4.5 group"
                       data-testid="Card"
@@ -388,7 +524,7 @@ exports[`App should not migrate profiles 1`] = `
                         <span
                           class="mt-3 font-semibold text-theme-primary-600 dark:text-white max-w-32 truncate dark:group-hover:text-white group-hover:text-theme-primary-700"
                         >
-                          Create
+                          Create Profile
                         </span>
                       </div>
                       <div
@@ -404,19 +540,15 @@ exports[`App should not migrate profiles 1`] = `
                     Exported a Profile before? 
                   </span>
                   <a
-                    class="Link__AnchorStyled-sc-1q7sbxr-0 kAtXNw pointer-events-none no-underline inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary-600 hover:text-theme-primary-700 hover:underline active:text-theme-primary-500"
+                    class="Link__AnchorStyled-sc-1q7sbxr-0 bMatQy group"
                     data-testid="Link"
                     href="/profiles/import"
                     title="Import Profile"
                   >
                     <span
-                      class="group"
+                      class="break-all border-b border-transparent transition-colors duration-200 group-hover:border-current"
                     >
-                      <span
-                        class="no-underline break-all pointer-events-auto hover:border-b"
-                      >
-                        Import it here.
-                      </span>
+                      Import it here.
                     </span>
                   </a>
                 </p>
@@ -497,7 +629,7 @@ exports[`App should render application error if the app fails to boot 1`] = `
               </p>
             </div>
             <button
-              class="OriginalButton__StyledButton-sc-1y2wptt-0 cEUmKc mt-8"
+              class="OriginalButton__StyledButton-sc-1y2wptt-0 dYkFxS mt-8"
               data-testid="ApplicationError__button--reload"
               type="button"
             >
@@ -774,19 +906,15 @@ exports[`App should render mock 1`] = `
                     Exported a Profile before? 
                   </span>
                   <a
-                    class="Link__AnchorStyled-sc-1q7sbxr-0 kAtXNw pointer-events-none no-underline inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary-600 hover:text-theme-primary-700 hover:underline active:text-theme-primary-500"
+                    class="Link__AnchorStyled-sc-1q7sbxr-0 bMatQy group"
                     data-testid="Link"
                     href="/profiles/import"
                     title="Import Profile"
                   >
                     <span
-                      class="group"
+                      class="break-all border-b border-transparent transition-colors duration-200 group-hover:border-current"
                     >
-                      <span
-                        class="no-underline break-all pointer-events-auto hover:border-b"
-                      >
-                        Import it here.
-                      </span>
+                      Import it here.
                     </span>
                   </a>
                 </p>
@@ -1059,19 +1187,15 @@ exports[`App should render splash screen 1`] = `
                     Exported a Profile before? 
                   </span>
                   <a
-                    class="Link__AnchorStyled-sc-1q7sbxr-0 kAtXNw pointer-events-none no-underline inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary-600 hover:text-theme-primary-700 hover:underline active:text-theme-primary-500"
+                    class="Link__AnchorStyled-sc-1q7sbxr-0 bMatQy group"
                     data-testid="Link"
                     href="/profiles/import"
                     title="Import Profile"
                   >
                     <span
-                      class="group"
+                      class="break-all border-b border-transparent transition-colors duration-200 group-hover:border-current"
                     >
-                      <span
-                        class="no-underline break-all pointer-events-auto hover:border-b"
-                      >
-                        Import it here.
-                      </span>
+                      Import it here.
                     </span>
                   </a>
                 </p>
@@ -1422,19 +1546,15 @@ exports[`App should render welcome screen after splash screen 1`] = `
                     Exported a Profile before? 
                   </span>
                   <a
-                    class="Link__AnchorStyled-sc-1q7sbxr-0 kAtXNw pointer-events-none no-underline inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary-600 hover:text-theme-primary-700 hover:underline active:text-theme-primary-500"
+                    class="Link__AnchorStyled-sc-1q7sbxr-0 bMatQy group"
                     data-testid="Link"
                     href="/profiles/import"
                     title="Import Profile"
                   >
                     <span
-                      class="group"
+                      class="break-all border-b border-transparent transition-colors duration-200 group-hover:border-current"
                     >
-                      <span
-                        class="no-underline break-all pointer-events-auto hover:border-b"
-                      >
-                        Import it here.
-                      </span>
+                      Import it here.
                     </span>
                   </a>
                 </p>

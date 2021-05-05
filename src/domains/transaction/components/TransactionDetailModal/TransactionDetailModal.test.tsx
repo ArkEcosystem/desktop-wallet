@@ -31,10 +31,14 @@ describe("TransactionDetailModal", () => {
 		await syncDelegates();
 	});
 
-	beforeEach(() => {
+	beforeEach(async () => {
 		dashboardURL = `/profiles/${fixtureProfileId}/dashboard`;
 		history.push(dashboardURL);
 		profile = env.profiles().findById(getDefaultProfileId());
+
+		await env.profiles().restore(profile);
+		await profile.sync();
+
 		wallet = profile.wallets().first();
 	});
 
@@ -84,6 +88,8 @@ describe("TransactionDetailModal", () => {
 	});
 
 	it("should render a multi signature modal", async () => {
+		await profile.wallets().restore();
+
 		const { asFragment, getByTestId } = renderWithRouter(
 			<Route path="/profiles/:profileId/dashboard">
 				<TransactionDetailModal

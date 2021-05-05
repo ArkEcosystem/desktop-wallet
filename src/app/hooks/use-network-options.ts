@@ -11,7 +11,7 @@ export const useNetworkOptions = () => {
 		() =>
 			networks.map((network) => ({
 				value: network.id(),
-				label: network.name(),
+				label: `${network.coin()} ${network.name()}`,
 			})),
 		[networks],
 	);

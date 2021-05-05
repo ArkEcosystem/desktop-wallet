@@ -30,6 +30,7 @@ export const InputAddress = ({
 
 	const validateAddress = async (address: string) => {
 		const instance = profile.coins().push(coin!, network!);
+		await instance.__construct();
 		const isValidAddress: boolean = await instance.identity().address().validate(address);
 
 		if (isValidAddress) {
