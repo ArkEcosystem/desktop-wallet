@@ -39,7 +39,7 @@ exports[`AddRecipient should render 1`] = `
           class="flex-1"
         >
           <button
-            class="OriginalButton__StyledButton-sc-1y2wptt-0 eXZVBc w-full"
+            class="OriginalButton__StyledButton-sc-1y2wptt-0 gmqqPG w-full"
             data-testid="AddRecipient__single"
             type="button"
           >
@@ -54,7 +54,7 @@ exports[`AddRecipient should render 1`] = `
           class="flex-1"
         >
           <button
-            class="OriginalButton__StyledButton-sc-1y2wptt-0 ehNoEt w-full border-l-0"
+            class="OriginalButton__StyledButton-sc-1y2wptt-0 hfmmWr w-full border-l-0"
             data-testid="AddRecipient__multi"
             type="button"
           >
@@ -107,6 +107,7 @@ exports[`AddRecipient should render 1`] = `
                       data-testid="select-list__input"
                       name="recipientAddress"
                       readonly=""
+                      tabindex="-1"
                       value=""
                     />
                   </div>
@@ -171,7 +172,7 @@ exports[`AddRecipient should render 1`] = `
                     </div>
                     <ul
                       aria-labelledby="downshift-0-label"
-                      class="styles__SelectOptionsList-b2falt-0 cUNLQk"
+                      class="styles__SelectOptionsList-b2falt-0 ghEDCU"
                       id="downshift-0-menu"
                       role="listbox"
                     />
@@ -295,7 +296,7 @@ exports[`AddRecipient should render with multiple recipients tab 1`] = `
           class="flex-1"
         >
           <button
-            class="OriginalButton__StyledButton-sc-1y2wptt-0 eXZVBc w-full"
+            class="OriginalButton__StyledButton-sc-1y2wptt-0 gmqqPG w-full"
             data-testid="AddRecipient__single"
             type="button"
           >
@@ -310,7 +311,7 @@ exports[`AddRecipient should render with multiple recipients tab 1`] = `
           class="flex-1"
         >
           <button
-            class="OriginalButton__StyledButton-sc-1y2wptt-0 ehNoEt w-full border-l-0"
+            class="OriginalButton__StyledButton-sc-1y2wptt-0 hfmmWr w-full border-l-0"
             data-testid="AddRecipient__multi"
             type="button"
           >
@@ -363,6 +364,7 @@ exports[`AddRecipient should render with multiple recipients tab 1`] = `
                       data-testid="select-list__input"
                       name="recipientAddress"
                       readonly=""
+                      tabindex="-1"
                       value=""
                     />
                   </div>
@@ -427,7 +429,7 @@ exports[`AddRecipient should render with multiple recipients tab 1`] = `
                     </div>
                     <ul
                       aria-labelledby="downshift-7-label"
-                      class="styles__SelectOptionsList-b2falt-0 cUNLQk"
+                      class="styles__SelectOptionsList-b2falt-0 ghEDCU"
                       id="downshift-7-menu"
                       role="listbox"
                     />
@@ -551,7 +553,7 @@ exports[`AddRecipient should render with single recipient data 1`] = `
           class="flex-1"
         >
           <button
-            class="OriginalButton__StyledButton-sc-1y2wptt-0 eXZVBc w-full"
+            class="OriginalButton__StyledButton-sc-1y2wptt-0 gmqqPG w-full"
             data-testid="AddRecipient__single"
             type="button"
           >
@@ -566,7 +568,7 @@ exports[`AddRecipient should render with single recipient data 1`] = `
           class="flex-1"
         >
           <button
-            class="OriginalButton__StyledButton-sc-1y2wptt-0 ehNoEt w-full border-l-0"
+            class="OriginalButton__StyledButton-sc-1y2wptt-0 hfmmWr w-full border-l-0"
             data-testid="AddRecipient__multi"
             type="button"
           >
@@ -619,6 +621,7 @@ exports[`AddRecipient should render with single recipient data 1`] = `
                       data-testid="select-list__input"
                       name="recipientAddress"
                       readonly=""
+                      tabindex="-1"
                       value="D6Z26L69gdk9qYmTv5uzk3uGepigtHY4ax"
                     />
                   </div>
@@ -694,7 +697,7 @@ exports[`AddRecipient should render with single recipient data 1`] = `
                     </div>
                     <ul
                       aria-labelledby="downshift-4-label"
-                      class="styles__SelectOptionsList-b2falt-0 cUNLQk"
+                      class="styles__SelectOptionsList-b2falt-0 ghEDCU"
                       id="downshift-4-menu"
                       role="listbox"
                     />
@@ -818,7 +821,7 @@ exports[`AddRecipient should render without recipients 1`] = `
           class="flex-1"
         >
           <button
-            class="OriginalButton__StyledButton-sc-1y2wptt-0 eXZVBc w-full"
+            class="OriginalButton__StyledButton-sc-1y2wptt-0 gmqqPG w-full"
             data-testid="AddRecipient__single"
             type="button"
           >
@@ -833,7 +836,7 @@ exports[`AddRecipient should render without recipients 1`] = `
           class="flex-1"
         >
           <button
-            class="OriginalButton__StyledButton-sc-1y2wptt-0 ehNoEt w-full border-l-0"
+            class="OriginalButton__StyledButton-sc-1y2wptt-0 hfmmWr w-full border-l-0"
             data-testid="AddRecipient__multi"
             type="button"
           >
@@ -886,6 +889,7 @@ exports[`AddRecipient should render without recipients 1`] = `
                       data-testid="select-list__input"
                       name="recipientAddress"
                       readonly=""
+                      tabindex="-1"
                       value=""
                     />
                   </div>
@@ -950,7 +954,7 @@ exports[`AddRecipient should render without recipients 1`] = `
                     </div>
                     <ul
                       aria-labelledby="downshift-2-label"
-                      class="styles__SelectOptionsList-b2falt-0 cUNLQk"
+                      class="styles__SelectOptionsList-b2falt-0 ghEDCU"
                       id="downshift-2-menu"
                       role="listbox"
                     />
@@ -1080,6 +1084,7 @@ exports[`AddRecipient should render without the single & multiple tabs 1`] = `
                       data-testid="select-list__input"
                       name="recipientAddress"
                       readonly=""
+                      tabindex="-1"
                       value=""
                     />
                   </div>
@@ -1144,7 +1149,7 @@ exports[`AddRecipient should render without the single & multiple tabs 1`] = `
                     </div>
                     <ul
                       aria-labelledby="downshift-9-label"
-                      class="styles__SelectOptionsList-b2falt-0 cUNLQk"
+                      class="styles__SelectOptionsList-b2falt-0 ghEDCU"
                       id="downshift-9-menu"
                       role="listbox"
                     />
@@ -1268,7 +1273,7 @@ exports[`AddRecipient should set available amount 1`] = `
           class="flex-1"
         >
           <button
-            class="OriginalButton__StyledButton-sc-1y2wptt-0 eXZVBc w-full"
+            class="OriginalButton__StyledButton-sc-1y2wptt-0 gmqqPG w-full"
             data-testid="AddRecipient__single"
             type="button"
           >
@@ -1283,7 +1288,7 @@ exports[`AddRecipient should set available amount 1`] = `
           class="flex-1"
         >
           <button
-            class="OriginalButton__StyledButton-sc-1y2wptt-0 ehNoEt w-full border-l-0"
+            class="OriginalButton__StyledButton-sc-1y2wptt-0 hfmmWr w-full border-l-0"
             data-testid="AddRecipient__multi"
             type="button"
           >
@@ -1336,6 +1341,7 @@ exports[`AddRecipient should set available amount 1`] = `
                       data-testid="select-list__input"
                       name="recipientAddress"
                       readonly=""
+                      tabindex="-1"
                       value=""
                     />
                   </div>
@@ -1400,7 +1406,7 @@ exports[`AddRecipient should set available amount 1`] = `
                     </div>
                     <ul
                       aria-labelledby="downshift-23-label"
-                      class="styles__SelectOptionsList-b2falt-0 cUNLQk"
+                      class="styles__SelectOptionsList-b2falt-0 ghEDCU"
                       id="downshift-23-menu"
                       role="listbox"
                     />
@@ -1524,7 +1530,7 @@ exports[`AddRecipient should show zero amount if wallet has zero or insufficient
           class="flex-1"
         >
           <button
-            class="OriginalButton__StyledButton-sc-1y2wptt-0 eXZVBc w-full"
+            class="OriginalButton__StyledButton-sc-1y2wptt-0 gmqqPG w-full"
             data-testid="AddRecipient__single"
             type="button"
           >
@@ -1539,7 +1545,7 @@ exports[`AddRecipient should show zero amount if wallet has zero or insufficient
           class="flex-1"
         >
           <button
-            class="OriginalButton__StyledButton-sc-1y2wptt-0 ehNoEt w-full border-l-0"
+            class="OriginalButton__StyledButton-sc-1y2wptt-0 hfmmWr w-full border-l-0"
             data-testid="AddRecipient__multi"
             type="button"
           >
@@ -1592,6 +1598,7 @@ exports[`AddRecipient should show zero amount if wallet has zero or insufficient
                       data-testid="select-list__input"
                       name="recipientAddress"
                       readonly=""
+                      tabindex="-1"
                       value=""
                     />
                   </div>
@@ -1656,7 +1663,7 @@ exports[`AddRecipient should show zero amount if wallet has zero or insufficient
                     </div>
                     <ul
                       aria-labelledby="downshift-25-label"
-                      class="styles__SelectOptionsList-b2falt-0 cUNLQk"
+                      class="styles__SelectOptionsList-b2falt-0 ghEDCU"
                       id="downshift-25-menu"
                       role="listbox"
                     />

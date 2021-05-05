@@ -295,6 +295,7 @@ exports[`Import Profile - Profile Form Step should fail password confirmation 1`
                         data-testid="select-list__input"
                         name="currency"
                         readonly=""
+                        tabindex="-1"
                         value="BTC"
                       />
                     </div>
@@ -363,13 +364,13 @@ exports[`Import Profile - Profile Form Step should fail password confirmation 1`
                       </div>
                       <ul
                         aria-labelledby="downshift-55-label"
-                        class="styles__SelectOptionsList-b2falt-0 cUNLQk is-open"
+                        class="styles__SelectOptionsList-b2falt-0 ghEDCU is-open"
                         id="downshift-55-menu"
                         role="listbox"
                       >
                         <li
                           aria-selected="true"
-                          class="select-list-option cursor-default is-highlighted"
+                          class="select-list-option is-highlighted is-selected"
                           data-testid="select-list__toggle-option-0"
                           id="downshift-55-item-0"
                           role="option"
@@ -382,7 +383,7 @@ exports[`Import Profile - Profile Form Step should fail password confirmation 1`
                         </li>
                         <li
                           aria-selected="false"
-                          class="select-list-option cursor-default "
+                          class="select-list-option"
                           data-testid="select-list__toggle-option-1"
                           id="downshift-55-item-1"
                           role="option"
@@ -395,7 +396,7 @@ exports[`Import Profile - Profile Form Step should fail password confirmation 1`
                         </li>
                         <li
                           aria-selected="false"
-                          class="select-list-option cursor-default "
+                          class="select-list-option"
                           data-testid="select-list__toggle-option-2"
                           id="downshift-55-item-2"
                           role="option"
@@ -408,7 +409,7 @@ exports[`Import Profile - Profile Form Step should fail password confirmation 1`
                         </li>
                         <li
                           aria-selected="false"
-                          class="select-list-option cursor-default "
+                          class="select-list-option"
                           data-testid="select-list__toggle-option-3"
                           id="downshift-55-item-3"
                           role="option"
@@ -421,7 +422,7 @@ exports[`Import Profile - Profile Form Step should fail password confirmation 1`
                         </li>
                         <li
                           aria-selected="false"
-                          class="select-list-option cursor-default "
+                          class="select-list-option"
                           data-testid="select-list__toggle-option-4"
                           id="downshift-55-item-4"
                           role="option"
@@ -434,7 +435,7 @@ exports[`Import Profile - Profile Form Step should fail password confirmation 1`
                         </li>
                         <li
                           aria-selected="false"
-                          class="select-list-option cursor-default "
+                          class="select-list-option"
                           data-testid="select-list__toggle-option-5"
                           id="downshift-55-item-5"
                           role="option"
@@ -447,7 +448,7 @@ exports[`Import Profile - Profile Form Step should fail password confirmation 1`
                         </li>
                         <li
                           aria-selected="false"
-                          class="select-list-option cursor-default "
+                          class="select-list-option"
                           data-testid="select-list__toggle-option-6"
                           id="downshift-55-item-6"
                           role="option"
@@ -460,7 +461,7 @@ exports[`Import Profile - Profile Form Step should fail password confirmation 1`
                         </li>
                         <li
                           aria-selected="false"
-                          class="select-list-option cursor-default "
+                          class="select-list-option"
                           data-testid="select-list__toggle-option-7"
                           id="downshift-55-item-7"
                           role="option"
@@ -473,7 +474,7 @@ exports[`Import Profile - Profile Form Step should fail password confirmation 1`
                         </li>
                         <li
                           aria-selected="false"
-                          class="select-list-option cursor-default "
+                          class="select-list-option"
                           data-testid="select-list__toggle-option-8"
                           id="downshift-55-item-8"
                           role="option"
@@ -486,7 +487,7 @@ exports[`Import Profile - Profile Form Step should fail password confirmation 1`
                         </li>
                         <li
                           aria-selected="false"
-                          class="select-list-option cursor-default "
+                          class="select-list-option"
                           data-testid="select-list__toggle-option-9"
                           id="downshift-55-item-9"
                           role="option"
@@ -499,7 +500,7 @@ exports[`Import Profile - Profile Form Step should fail password confirmation 1`
                         </li>
                         <li
                           aria-selected="false"
-                          class="select-list-option cursor-default "
+                          class="select-list-option"
                           data-testid="select-list__toggle-option-10"
                           id="downshift-55-item-10"
                           role="option"
@@ -512,7 +513,7 @@ exports[`Import Profile - Profile Form Step should fail password confirmation 1`
                         </li>
                         <li
                           aria-selected="false"
-                          class="select-list-option cursor-default "
+                          class="select-list-option"
                           data-testid="select-list__toggle-option-11"
                           id="downshift-55-item-11"
                           role="option"
@@ -525,7 +526,7 @@ exports[`Import Profile - Profile Form Step should fail password confirmation 1`
                         </li>
                         <li
                           aria-selected="false"
-                          class="select-list-option cursor-default "
+                          class="select-list-option"
                           data-testid="select-list__toggle-option-12"
                           id="downshift-55-item-12"
                           role="option"
@@ -538,7 +539,7 @@ exports[`Import Profile - Profile Form Step should fail password confirmation 1`
                         </li>
                         <li
                           aria-selected="false"
-                          class="select-list-option cursor-default "
+                          class="select-list-option"
                           data-testid="select-list__toggle-option-13"
                           id="downshift-55-item-13"
                           role="option"
@@ -551,7 +552,7 @@ exports[`Import Profile - Profile Form Step should fail password confirmation 1`
                         </li>
                         <li
                           aria-selected="false"
-                          class="select-list-option cursor-default "
+                          class="select-list-option"
                           data-testid="select-list__toggle-option-14"
                           id="downshift-55-item-14"
                           role="option"
@@ -564,7 +565,7 @@ exports[`Import Profile - Profile Form Step should fail password confirmation 1`
                         </li>
                         <li
                           aria-selected="false"
-                          class="select-list-option cursor-default "
+                          class="select-list-option"
                           data-testid="select-list__toggle-option-15"
                           id="downshift-55-item-15"
                           role="option"
@@ -577,7 +578,7 @@ exports[`Import Profile - Profile Form Step should fail password confirmation 1`
                         </li>
                         <li
                           aria-selected="false"
-                          class="select-list-option cursor-default "
+                          class="select-list-option"
                           data-testid="select-list__toggle-option-16"
                           id="downshift-55-item-16"
                           role="option"
@@ -590,7 +591,7 @@ exports[`Import Profile - Profile Form Step should fail password confirmation 1`
                         </li>
                         <li
                           aria-selected="false"
-                          class="select-list-option cursor-default "
+                          class="select-list-option"
                           data-testid="select-list__toggle-option-17"
                           id="downshift-55-item-17"
                           role="option"
@@ -675,7 +676,7 @@ exports[`Import Profile - Profile Form Step should fail password confirmation 1`
             class="flex justify-end pt-4 space-x-3"
           >
             <button
-              class="OriginalButton__StyledButton-sc-1y2wptt-0 hsoUax"
+              class="OriginalButton__StyledButton-sc-1y2wptt-0 izJbbP"
               data-testid="CreateProfile__back-button"
               type="button"
             >
@@ -686,7 +687,7 @@ exports[`Import Profile - Profile Form Step should fail password confirmation 1`
               </div>
             </button>
             <button
-              class="OriginalButton__StyledButton-sc-1y2wptt-0 blpaPr"
+              class="OriginalButton__StyledButton-sc-1y2wptt-0 fqRthJ"
               data-testid="CreateProfile__submit-button"
               disabled=""
               type="submit"
@@ -972,6 +973,7 @@ exports[`Import Profile - Profile Form Step should render profile form 1`] = `
                         data-testid="select-list__input"
                         name="currency"
                         readonly=""
+                        tabindex="-1"
                         value="BTC"
                       />
                     </div>
@@ -1039,7 +1041,7 @@ exports[`Import Profile - Profile Form Step should render profile form 1`] = `
                       </div>
                       <ul
                         aria-labelledby="downshift-0-label"
-                        class="styles__SelectOptionsList-b2falt-0 cUNLQk"
+                        class="styles__SelectOptionsList-b2falt-0 ghEDCU"
                         id="downshift-0-menu"
                         role="listbox"
                       />
@@ -1116,7 +1118,7 @@ exports[`Import Profile - Profile Form Step should render profile form 1`] = `
             class="flex justify-end pt-4 space-x-3"
           >
             <button
-              class="OriginalButton__StyledButton-sc-1y2wptt-0 hsoUax"
+              class="OriginalButton__StyledButton-sc-1y2wptt-0 izJbbP"
               data-testid="CreateProfile__back-button"
               type="button"
             >
@@ -1127,7 +1129,7 @@ exports[`Import Profile - Profile Form Step should render profile form 1`] = `
               </div>
             </button>
             <button
-              class="OriginalButton__StyledButton-sc-1y2wptt-0 blpaPr"
+              class="OriginalButton__StyledButton-sc-1y2wptt-0 fqRthJ"
               data-testid="CreateProfile__submit-button"
               disabled=""
               type="submit"
@@ -1413,6 +1415,7 @@ exports[`Import Profile - Profile Form Step should render profile form with empt
                         data-testid="select-list__input"
                         name="currency"
                         readonly=""
+                        tabindex="-1"
                         value="BTC"
                       />
                     </div>
@@ -1480,7 +1483,7 @@ exports[`Import Profile - Profile Form Step should render profile form with empt
                       </div>
                       <ul
                         aria-labelledby="downshift-12-label"
-                        class="styles__SelectOptionsList-b2falt-0 cUNLQk"
+                        class="styles__SelectOptionsList-b2falt-0 ghEDCU"
                         id="downshift-12-menu"
                         role="listbox"
                       />
@@ -1557,7 +1560,7 @@ exports[`Import Profile - Profile Form Step should render profile form with empt
             class="flex justify-end pt-4 space-x-3"
           >
             <button
-              class="OriginalButton__StyledButton-sc-1y2wptt-0 hsoUax"
+              class="OriginalButton__StyledButton-sc-1y2wptt-0 izJbbP"
               data-testid="CreateProfile__back-button"
               type="button"
             >
@@ -1568,7 +1571,7 @@ exports[`Import Profile - Profile Form Step should render profile form with empt
               </div>
             </button>
             <button
-              class="OriginalButton__StyledButton-sc-1y2wptt-0 blpaPr"
+              class="OriginalButton__StyledButton-sc-1y2wptt-0 fqRthJ"
               data-testid="CreateProfile__submit-button"
               disabled=""
               type="submit"
@@ -1854,6 +1857,7 @@ exports[`Import Profile - Profile Form Step should render profile form with hidd
                         data-testid="select-list__input"
                         name="currency"
                         readonly=""
+                        tabindex="-1"
                         value="BTC"
                       />
                     </div>
@@ -1921,7 +1925,7 @@ exports[`Import Profile - Profile Form Step should render profile form with hidd
                       </div>
                       <ul
                         aria-labelledby="downshift-6-label"
-                        class="styles__SelectOptionsList-b2falt-0 cUNLQk"
+                        class="styles__SelectOptionsList-b2falt-0 ghEDCU"
                         id="downshift-6-menu"
                         role="listbox"
                       />
@@ -1998,7 +2002,7 @@ exports[`Import Profile - Profile Form Step should render profile form with hidd
             class="flex justify-end pt-4 space-x-3"
           >
             <button
-              class="OriginalButton__StyledButton-sc-1y2wptt-0 hsoUax"
+              class="OriginalButton__StyledButton-sc-1y2wptt-0 izJbbP"
               data-testid="CreateProfile__back-button"
               type="button"
             >
@@ -2009,7 +2013,7 @@ exports[`Import Profile - Profile Form Step should render profile form with hidd
               </div>
             </button>
             <button
-              class="OriginalButton__StyledButton-sc-1y2wptt-0 blpaPr"
+              class="OriginalButton__StyledButton-sc-1y2wptt-0 fqRthJ"
               data-testid="CreateProfile__submit-button"
               disabled=""
               type="submit"
@@ -2145,7 +2149,7 @@ exports[`Import Profile - Profile Form Step should store new profile with passwo
                         </div>
                       </div>
                       <button
-                        class="OriginalButton__StyledButton-sc-1y2wptt-0 dscUFp flex absolute -top-3 -right-3 justify-center items-center p-1 w-6 h-6"
+                        class="OriginalButton__StyledButton-sc-1y2wptt-0 gLgNOz flex absolute -top-3 -right-3 justify-center items-center p-1 w-6 h-6"
                         data-testid="SelectProfileImage__remove-button"
                         type="button"
                       >
@@ -2307,6 +2311,7 @@ exports[`Import Profile - Profile Form Step should store new profile with passwo
                         data-testid="select-list__input"
                         name="currency"
                         readonly=""
+                        tabindex="-1"
                         value="BTC"
                       />
                     </div>
@@ -2375,13 +2380,13 @@ exports[`Import Profile - Profile Form Step should store new profile with passwo
                       </div>
                       <ul
                         aria-labelledby="downshift-39-label"
-                        class="styles__SelectOptionsList-b2falt-0 cUNLQk is-open"
+                        class="styles__SelectOptionsList-b2falt-0 ghEDCU is-open"
                         id="downshift-39-menu"
                         role="listbox"
                       >
                         <li
                           aria-selected="true"
-                          class="select-list-option cursor-default is-highlighted"
+                          class="select-list-option is-highlighted is-selected"
                           data-testid="select-list__toggle-option-0"
                           id="downshift-39-item-0"
                           role="option"
@@ -2394,7 +2399,7 @@ exports[`Import Profile - Profile Form Step should store new profile with passwo
                         </li>
                         <li
                           aria-selected="false"
-                          class="select-list-option cursor-default "
+                          class="select-list-option"
                           data-testid="select-list__toggle-option-1"
                           id="downshift-39-item-1"
                           role="option"
@@ -2407,7 +2412,7 @@ exports[`Import Profile - Profile Form Step should store new profile with passwo
                         </li>
                         <li
                           aria-selected="false"
-                          class="select-list-option cursor-default "
+                          class="select-list-option"
                           data-testid="select-list__toggle-option-2"
                           id="downshift-39-item-2"
                           role="option"
@@ -2420,7 +2425,7 @@ exports[`Import Profile - Profile Form Step should store new profile with passwo
                         </li>
                         <li
                           aria-selected="false"
-                          class="select-list-option cursor-default "
+                          class="select-list-option"
                           data-testid="select-list__toggle-option-3"
                           id="downshift-39-item-3"
                           role="option"
@@ -2433,7 +2438,7 @@ exports[`Import Profile - Profile Form Step should store new profile with passwo
                         </li>
                         <li
                           aria-selected="false"
-                          class="select-list-option cursor-default "
+                          class="select-list-option"
                           data-testid="select-list__toggle-option-4"
                           id="downshift-39-item-4"
                           role="option"
@@ -2446,7 +2451,7 @@ exports[`Import Profile - Profile Form Step should store new profile with passwo
                         </li>
                         <li
                           aria-selected="false"
-                          class="select-list-option cursor-default "
+                          class="select-list-option"
                           data-testid="select-list__toggle-option-5"
                           id="downshift-39-item-5"
                           role="option"
@@ -2459,7 +2464,7 @@ exports[`Import Profile - Profile Form Step should store new profile with passwo
                         </li>
                         <li
                           aria-selected="false"
-                          class="select-list-option cursor-default "
+                          class="select-list-option"
                           data-testid="select-list__toggle-option-6"
                           id="downshift-39-item-6"
                           role="option"
@@ -2472,7 +2477,7 @@ exports[`Import Profile - Profile Form Step should store new profile with passwo
                         </li>
                         <li
                           aria-selected="false"
-                          class="select-list-option cursor-default "
+                          class="select-list-option"
                           data-testid="select-list__toggle-option-7"
                           id="downshift-39-item-7"
                           role="option"
@@ -2485,7 +2490,7 @@ exports[`Import Profile - Profile Form Step should store new profile with passwo
                         </li>
                         <li
                           aria-selected="false"
-                          class="select-list-option cursor-default "
+                          class="select-list-option"
                           data-testid="select-list__toggle-option-8"
                           id="downshift-39-item-8"
                           role="option"
@@ -2498,7 +2503,7 @@ exports[`Import Profile - Profile Form Step should store new profile with passwo
                         </li>
                         <li
                           aria-selected="false"
-                          class="select-list-option cursor-default "
+                          class="select-list-option"
                           data-testid="select-list__toggle-option-9"
                           id="downshift-39-item-9"
                           role="option"
@@ -2511,7 +2516,7 @@ exports[`Import Profile - Profile Form Step should store new profile with passwo
                         </li>
                         <li
                           aria-selected="false"
-                          class="select-list-option cursor-default "
+                          class="select-list-option"
                           data-testid="select-list__toggle-option-10"
                           id="downshift-39-item-10"
                           role="option"
@@ -2524,7 +2529,7 @@ exports[`Import Profile - Profile Form Step should store new profile with passwo
                         </li>
                         <li
                           aria-selected="false"
-                          class="select-list-option cursor-default "
+                          class="select-list-option"
                           data-testid="select-list__toggle-option-11"
                           id="downshift-39-item-11"
                           role="option"
@@ -2537,7 +2542,7 @@ exports[`Import Profile - Profile Form Step should store new profile with passwo
                         </li>
                         <li
                           aria-selected="false"
-                          class="select-list-option cursor-default "
+                          class="select-list-option"
                           data-testid="select-list__toggle-option-12"
                           id="downshift-39-item-12"
                           role="option"
@@ -2550,7 +2555,7 @@ exports[`Import Profile - Profile Form Step should store new profile with passwo
                         </li>
                         <li
                           aria-selected="false"
-                          class="select-list-option cursor-default "
+                          class="select-list-option"
                           data-testid="select-list__toggle-option-13"
                           id="downshift-39-item-13"
                           role="option"
@@ -2563,7 +2568,7 @@ exports[`Import Profile - Profile Form Step should store new profile with passwo
                         </li>
                         <li
                           aria-selected="false"
-                          class="select-list-option cursor-default "
+                          class="select-list-option"
                           data-testid="select-list__toggle-option-14"
                           id="downshift-39-item-14"
                           role="option"
@@ -2576,7 +2581,7 @@ exports[`Import Profile - Profile Form Step should store new profile with passwo
                         </li>
                         <li
                           aria-selected="false"
-                          class="select-list-option cursor-default "
+                          class="select-list-option"
                           data-testid="select-list__toggle-option-15"
                           id="downshift-39-item-15"
                           role="option"
@@ -2589,7 +2594,7 @@ exports[`Import Profile - Profile Form Step should store new profile with passwo
                         </li>
                         <li
                           aria-selected="false"
-                          class="select-list-option cursor-default "
+                          class="select-list-option"
                           data-testid="select-list__toggle-option-16"
                           id="downshift-39-item-16"
                           role="option"
@@ -2602,7 +2607,7 @@ exports[`Import Profile - Profile Form Step should store new profile with passwo
                         </li>
                         <li
                           aria-selected="false"
-                          class="select-list-option cursor-default "
+                          class="select-list-option"
                           data-testid="select-list__toggle-option-17"
                           id="downshift-39-item-17"
                           role="option"
@@ -2685,7 +2690,7 @@ exports[`Import Profile - Profile Form Step should store new profile with passwo
             class="flex justify-end pt-4 space-x-3"
           >
             <button
-              class="OriginalButton__StyledButton-sc-1y2wptt-0 hsoUax"
+              class="OriginalButton__StyledButton-sc-1y2wptt-0 izJbbP"
               data-testid="CreateProfile__back-button"
               type="button"
             >
@@ -2696,7 +2701,7 @@ exports[`Import Profile - Profile Form Step should store new profile with passwo
               </div>
             </button>
             <button
-              class="OriginalButton__StyledButton-sc-1y2wptt-0 cEUmKc"
+              class="OriginalButton__StyledButton-sc-1y2wptt-0 dYkFxS"
               data-testid="CreateProfile__submit-button"
               type="submit"
             >
@@ -2831,7 +2836,7 @@ exports[`Import Profile - Profile Form Step should store profile 1`] = `
                         </div>
                       </div>
                       <button
-                        class="OriginalButton__StyledButton-sc-1y2wptt-0 dscUFp flex absolute -top-3 -right-3 justify-center items-center p-1 w-6 h-6"
+                        class="OriginalButton__StyledButton-sc-1y2wptt-0 gLgNOz flex absolute -top-3 -right-3 justify-center items-center p-1 w-6 h-6"
                         data-testid="SelectProfileImage__remove-button"
                         type="button"
                       >
@@ -2995,6 +3000,7 @@ exports[`Import Profile - Profile Form Step should store profile 1`] = `
                         data-testid="select-list__input"
                         name="currency"
                         readonly=""
+                        tabindex="-1"
                         value="BTC"
                       />
                     </div>
@@ -3063,13 +3069,13 @@ exports[`Import Profile - Profile Form Step should store profile 1`] = `
                       </div>
                       <ul
                         aria-labelledby="downshift-18-label"
-                        class="styles__SelectOptionsList-b2falt-0 cUNLQk is-open"
+                        class="styles__SelectOptionsList-b2falt-0 ghEDCU is-open"
                         id="downshift-18-menu"
                         role="listbox"
                       >
                         <li
                           aria-selected="true"
-                          class="select-list-option cursor-default is-highlighted"
+                          class="select-list-option is-highlighted is-selected"
                           data-testid="select-list__toggle-option-0"
                           id="downshift-18-item-0"
                           role="option"
@@ -3082,7 +3088,7 @@ exports[`Import Profile - Profile Form Step should store profile 1`] = `
                         </li>
                         <li
                           aria-selected="false"
-                          class="select-list-option cursor-default "
+                          class="select-list-option"
                           data-testid="select-list__toggle-option-1"
                           id="downshift-18-item-1"
                           role="option"
@@ -3095,7 +3101,7 @@ exports[`Import Profile - Profile Form Step should store profile 1`] = `
                         </li>
                         <li
                           aria-selected="false"
-                          class="select-list-option cursor-default "
+                          class="select-list-option"
                           data-testid="select-list__toggle-option-2"
                           id="downshift-18-item-2"
                           role="option"
@@ -3108,7 +3114,7 @@ exports[`Import Profile - Profile Form Step should store profile 1`] = `
                         </li>
                         <li
                           aria-selected="false"
-                          class="select-list-option cursor-default "
+                          class="select-list-option"
                           data-testid="select-list__toggle-option-3"
                           id="downshift-18-item-3"
                           role="option"
@@ -3121,7 +3127,7 @@ exports[`Import Profile - Profile Form Step should store profile 1`] = `
                         </li>
                         <li
                           aria-selected="false"
-                          class="select-list-option cursor-default "
+                          class="select-list-option"
                           data-testid="select-list__toggle-option-4"
                           id="downshift-18-item-4"
                           role="option"
@@ -3134,7 +3140,7 @@ exports[`Import Profile - Profile Form Step should store profile 1`] = `
                         </li>
                         <li
                           aria-selected="false"
-                          class="select-list-option cursor-default "
+                          class="select-list-option"
                           data-testid="select-list__toggle-option-5"
                           id="downshift-18-item-5"
                           role="option"
@@ -3147,7 +3153,7 @@ exports[`Import Profile - Profile Form Step should store profile 1`] = `
                         </li>
                         <li
                           aria-selected="false"
-                          class="select-list-option cursor-default "
+                          class="select-list-option"
                           data-testid="select-list__toggle-option-6"
                           id="downshift-18-item-6"
                           role="option"
@@ -3160,7 +3166,7 @@ exports[`Import Profile - Profile Form Step should store profile 1`] = `
                         </li>
                         <li
                           aria-selected="false"
-                          class="select-list-option cursor-default "
+                          class="select-list-option"
                           data-testid="select-list__toggle-option-7"
                           id="downshift-18-item-7"
                           role="option"
@@ -3173,7 +3179,7 @@ exports[`Import Profile - Profile Form Step should store profile 1`] = `
                         </li>
                         <li
                           aria-selected="false"
-                          class="select-list-option cursor-default "
+                          class="select-list-option"
                           data-testid="select-list__toggle-option-8"
                           id="downshift-18-item-8"
                           role="option"
@@ -3186,7 +3192,7 @@ exports[`Import Profile - Profile Form Step should store profile 1`] = `
                         </li>
                         <li
                           aria-selected="false"
-                          class="select-list-option cursor-default "
+                          class="select-list-option"
                           data-testid="select-list__toggle-option-9"
                           id="downshift-18-item-9"
                           role="option"
@@ -3199,7 +3205,7 @@ exports[`Import Profile - Profile Form Step should store profile 1`] = `
                         </li>
                         <li
                           aria-selected="false"
-                          class="select-list-option cursor-default "
+                          class="select-list-option"
                           data-testid="select-list__toggle-option-10"
                           id="downshift-18-item-10"
                           role="option"
@@ -3212,7 +3218,7 @@ exports[`Import Profile - Profile Form Step should store profile 1`] = `
                         </li>
                         <li
                           aria-selected="false"
-                          class="select-list-option cursor-default "
+                          class="select-list-option"
                           data-testid="select-list__toggle-option-11"
                           id="downshift-18-item-11"
                           role="option"
@@ -3225,7 +3231,7 @@ exports[`Import Profile - Profile Form Step should store profile 1`] = `
                         </li>
                         <li
                           aria-selected="false"
-                          class="select-list-option cursor-default "
+                          class="select-list-option"
                           data-testid="select-list__toggle-option-12"
                           id="downshift-18-item-12"
                           role="option"
@@ -3238,7 +3244,7 @@ exports[`Import Profile - Profile Form Step should store profile 1`] = `
                         </li>
                         <li
                           aria-selected="false"
-                          class="select-list-option cursor-default "
+                          class="select-list-option"
                           data-testid="select-list__toggle-option-13"
                           id="downshift-18-item-13"
                           role="option"
@@ -3251,7 +3257,7 @@ exports[`Import Profile - Profile Form Step should store profile 1`] = `
                         </li>
                         <li
                           aria-selected="false"
-                          class="select-list-option cursor-default "
+                          class="select-list-option"
                           data-testid="select-list__toggle-option-14"
                           id="downshift-18-item-14"
                           role="option"
@@ -3264,7 +3270,7 @@ exports[`Import Profile - Profile Form Step should store profile 1`] = `
                         </li>
                         <li
                           aria-selected="false"
-                          class="select-list-option cursor-default "
+                          class="select-list-option"
                           data-testid="select-list__toggle-option-15"
                           id="downshift-18-item-15"
                           role="option"
@@ -3277,7 +3283,7 @@ exports[`Import Profile - Profile Form Step should store profile 1`] = `
                         </li>
                         <li
                           aria-selected="false"
-                          class="select-list-option cursor-default "
+                          class="select-list-option"
                           data-testid="select-list__toggle-option-16"
                           id="downshift-18-item-16"
                           role="option"
@@ -3290,7 +3296,7 @@ exports[`Import Profile - Profile Form Step should store profile 1`] = `
                         </li>
                         <li
                           aria-selected="false"
-                          class="select-list-option cursor-default "
+                          class="select-list-option"
                           data-testid="select-list__toggle-option-17"
                           id="downshift-18-item-17"
                           role="option"
@@ -3373,7 +3379,7 @@ exports[`Import Profile - Profile Form Step should store profile 1`] = `
             class="flex justify-end pt-4 space-x-3"
           >
             <button
-              class="OriginalButton__StyledButton-sc-1y2wptt-0 hsoUax"
+              class="OriginalButton__StyledButton-sc-1y2wptt-0 izJbbP"
               data-testid="CreateProfile__back-button"
               type="button"
             >
@@ -3384,7 +3390,7 @@ exports[`Import Profile - Profile Form Step should store profile 1`] = `
               </div>
             </button>
             <button
-              class="OriginalButton__StyledButton-sc-1y2wptt-0 cEUmKc"
+              class="OriginalButton__StyledButton-sc-1y2wptt-0 dYkFxS"
               data-testid="CreateProfile__submit-button"
               type="submit"
             >
@@ -3647,7 +3653,7 @@ exports[`Import Profile - Profile Form Step should update the avatar when removi
             class="flex justify-end pt-4 space-x-3"
           >
             <button
-              class="OriginalButton__StyledButton-sc-1y2wptt-0 hsoUax"
+              class="OriginalButton__StyledButton-sc-1y2wptt-0 izJbbP"
               data-testid="CreateProfile__back-button"
               type="button"
             >
@@ -3658,7 +3664,7 @@ exports[`Import Profile - Profile Form Step should update the avatar when removi
               </div>
             </button>
             <button
-              class="OriginalButton__StyledButton-sc-1y2wptt-0 cEUmKc"
+              class="OriginalButton__StyledButton-sc-1y2wptt-0 dYkFxS"
               data-testid="CreateProfile__submit-button"
               type="submit"
             >
@@ -3793,7 +3799,7 @@ exports[`Import Profile - Profile Form Step should update the avatar when removi
                         </div>
                       </div>
                       <button
-                        class="OriginalButton__StyledButton-sc-1y2wptt-0 dscUFp flex absolute -top-3 -right-3 justify-center items-center p-1 w-6 h-6"
+                        class="OriginalButton__StyledButton-sc-1y2wptt-0 gLgNOz flex absolute -top-3 -right-3 justify-center items-center p-1 w-6 h-6"
                         data-testid="SelectProfileImage__remove-button"
                         type="button"
                       >
@@ -3935,7 +3941,7 @@ exports[`Import Profile - Profile Form Step should update the avatar when removi
             class="flex justify-end pt-4 space-x-3"
           >
             <button
-              class="OriginalButton__StyledButton-sc-1y2wptt-0 hsoUax"
+              class="OriginalButton__StyledButton-sc-1y2wptt-0 izJbbP"
               data-testid="CreateProfile__back-button"
               type="button"
             >
@@ -3946,7 +3952,7 @@ exports[`Import Profile - Profile Form Step should update the avatar when removi
               </div>
             </button>
             <button
-              class="OriginalButton__StyledButton-sc-1y2wptt-0 cEUmKc"
+              class="OriginalButton__StyledButton-sc-1y2wptt-0 dYkFxS"
               data-testid="CreateProfile__submit-button"
               type="submit"
             >

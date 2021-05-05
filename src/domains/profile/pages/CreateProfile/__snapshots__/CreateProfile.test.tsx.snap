@@ -126,7 +126,7 @@ exports[`CreateProfile should fail password confirmation 1`] = `
                             class="SelectProfileImage__UploadButtonWrapper-t6smk3-0 fPlqSP"
                           >
                             <button
-                              class="OriginalButton__StyledButton-sc-1y2wptt-0 hsoUax"
+                              class="OriginalButton__StyledButton-sc-1y2wptt-0 izJbbP"
                               data-testid="SelectProfileImage__upload-button"
                               type="button"
                             >
@@ -320,6 +320,7 @@ exports[`CreateProfile should fail password confirmation 1`] = `
                           data-testid="select-list__input"
                           name="currency"
                           readonly=""
+                          tabindex="-1"
                           value="BTC"
                         />
                       </div>
@@ -388,13 +389,13 @@ exports[`CreateProfile should fail password confirmation 1`] = `
                         </div>
                         <ul
                           aria-labelledby="downshift-59-label"
-                          class="styles__SelectOptionsList-b2falt-0 cUNLQk is-open"
+                          class="styles__SelectOptionsList-b2falt-0 ghEDCU is-open"
                           id="downshift-59-menu"
                           role="listbox"
                         >
                           <li
                             aria-selected="true"
-                            class="select-list-option cursor-default is-highlighted"
+                            class="select-list-option is-highlighted is-selected"
                             data-testid="select-list__toggle-option-0"
                             id="downshift-59-item-0"
                             role="option"
@@ -407,7 +408,7 @@ exports[`CreateProfile should fail password confirmation 1`] = `
                           </li>
                           <li
                             aria-selected="false"
-                            class="select-list-option cursor-default "
+                            class="select-list-option"
                             data-testid="select-list__toggle-option-1"
                             id="downshift-59-item-1"
                             role="option"
@@ -420,7 +421,7 @@ exports[`CreateProfile should fail password confirmation 1`] = `
                           </li>
                           <li
                             aria-selected="false"
-                            class="select-list-option cursor-default "
+                            class="select-list-option"
                             data-testid="select-list__toggle-option-2"
                             id="downshift-59-item-2"
                             role="option"
@@ -433,7 +434,7 @@ exports[`CreateProfile should fail password confirmation 1`] = `
                           </li>
                           <li
                             aria-selected="false"
-                            class="select-list-option cursor-default "
+                            class="select-list-option"
                             data-testid="select-list__toggle-option-3"
                             id="downshift-59-item-3"
                             role="option"
@@ -446,7 +447,7 @@ exports[`CreateProfile should fail password confirmation 1`] = `
                           </li>
                           <li
                             aria-selected="false"
-                            class="select-list-option cursor-default "
+                            class="select-list-option"
                             data-testid="select-list__toggle-option-4"
                             id="downshift-59-item-4"
                             role="option"
@@ -459,7 +460,7 @@ exports[`CreateProfile should fail password confirmation 1`] = `
                           </li>
                           <li
                             aria-selected="false"
-                            class="select-list-option cursor-default "
+                            class="select-list-option"
                             data-testid="select-list__toggle-option-5"
                             id="downshift-59-item-5"
                             role="option"
@@ -472,7 +473,7 @@ exports[`CreateProfile should fail password confirmation 1`] = `
                           </li>
                           <li
                             aria-selected="false"
-                            class="select-list-option cursor-default "
+                            class="select-list-option"
                             data-testid="select-list__toggle-option-6"
                             id="downshift-59-item-6"
                             role="option"
@@ -485,7 +486,7 @@ exports[`CreateProfile should fail password confirmation 1`] = `
                           </li>
                           <li
                             aria-selected="false"
-                            class="select-list-option cursor-default "
+                            class="select-list-option"
                             data-testid="select-list__toggle-option-7"
                             id="downshift-59-item-7"
                             role="option"
@@ -498,7 +499,7 @@ exports[`CreateProfile should fail password confirmation 1`] = `
                           </li>
                           <li
                             aria-selected="false"
-                            class="select-list-option cursor-default "
+                            class="select-list-option"
                             data-testid="select-list__toggle-option-8"
                             id="downshift-59-item-8"
                             role="option"
@@ -511,7 +512,7 @@ exports[`CreateProfile should fail password confirmation 1`] = `
                           </li>
                           <li
                             aria-selected="false"
-                            class="select-list-option cursor-default "
+                            class="select-list-option"
                             data-testid="select-list__toggle-option-9"
                             id="downshift-59-item-9"
                             role="option"
@@ -524,7 +525,7 @@ exports[`CreateProfile should fail password confirmation 1`] = `
                           </li>
                           <li
                             aria-selected="false"
-                            class="select-list-option cursor-default "
+                            class="select-list-option"
                             data-testid="select-list__toggle-option-10"
                             id="downshift-59-item-10"
                             role="option"
@@ -537,7 +538,7 @@ exports[`CreateProfile should fail password confirmation 1`] = `
                           </li>
                           <li
                             aria-selected="false"
-                            class="select-list-option cursor-default "
+                            class="select-list-option"
                             data-testid="select-list__toggle-option-11"
                             id="downshift-59-item-11"
                             role="option"
@@ -550,7 +551,7 @@ exports[`CreateProfile should fail password confirmation 1`] = `
                           </li>
                           <li
                             aria-selected="false"
-                            class="select-list-option cursor-default "
+                            class="select-list-option"
                             data-testid="select-list__toggle-option-12"
                             id="downshift-59-item-12"
                             role="option"
@@ -563,7 +564,7 @@ exports[`CreateProfile should fail password confirmation 1`] = `
                           </li>
                           <li
                             aria-selected="false"
-                            class="select-list-option cursor-default "
+                            class="select-list-option"
                             data-testid="select-list__toggle-option-13"
                             id="downshift-59-item-13"
                             role="option"
@@ -576,7 +577,7 @@ exports[`CreateProfile should fail password confirmation 1`] = `
                           </li>
                           <li
                             aria-selected="false"
-                            class="select-list-option cursor-default "
+                            class="select-list-option"
                             data-testid="select-list__toggle-option-14"
                             id="downshift-59-item-14"
                             role="option"
@@ -589,7 +590,7 @@ exports[`CreateProfile should fail password confirmation 1`] = `
                           </li>
                           <li
                             aria-selected="false"
-                            class="select-list-option cursor-default "
+                            class="select-list-option"
                             data-testid="select-list__toggle-option-15"
                             id="downshift-59-item-15"
                             role="option"
@@ -602,7 +603,7 @@ exports[`CreateProfile should fail password confirmation 1`] = `
                           </li>
                           <li
                             aria-selected="false"
-                            class="select-list-option cursor-default "
+                            class="select-list-option"
                             data-testid="select-list__toggle-option-16"
                             id="downshift-59-item-16"
                             role="option"
@@ -615,7 +616,7 @@ exports[`CreateProfile should fail password confirmation 1`] = `
                           </li>
                           <li
                             aria-selected="false"
-                            class="select-list-option cursor-default "
+                            class="select-list-option"
                             data-testid="select-list__toggle-option-17"
                             id="downshift-59-item-17"
                             role="option"
@@ -636,7 +637,7 @@ exports[`CreateProfile should fail password confirmation 1`] = `
                 class="pb-4 mt-8"
               >
                 <ul
-                  class="sc-dlfnbm cOiGXi"
+                  class="sc-hKgILt gfmZFQ"
                   data-testid="list-divided__items"
                 >
                   <li
@@ -697,7 +698,7 @@ exports[`CreateProfile should fail password confirmation 1`] = `
                 class="flex justify-end pt-4 space-x-3"
               >
                 <button
-                  class="OriginalButton__StyledButton-sc-1y2wptt-0 hsoUax"
+                  class="OriginalButton__StyledButton-sc-1y2wptt-0 izJbbP"
                   type="button"
                 >
                   <div
@@ -707,7 +708,7 @@ exports[`CreateProfile should fail password confirmation 1`] = `
                   </div>
                 </button>
                 <button
-                  class="OriginalButton__StyledButton-sc-1y2wptt-0 blpaPr"
+                  class="OriginalButton__StyledButton-sc-1y2wptt-0 fqRthJ"
                   data-testid="CreateProfile__submit-button"
                   disabled=""
                   type="submit"
@@ -873,7 +874,7 @@ exports[`CreateProfile should not be able to create new profile if name already 
                             class="SelectProfileImage__UploadButtonWrapper-t6smk3-0 fPlqSP"
                           >
                             <button
-                              class="OriginalButton__StyledButton-sc-1y2wptt-0 hsoUax"
+                              class="OriginalButton__StyledButton-sc-1y2wptt-0 izJbbP"
                               data-testid="SelectProfileImage__upload-button"
                               type="button"
                             >
@@ -1039,6 +1040,7 @@ exports[`CreateProfile should not be able to create new profile if name already 
                           data-testid="select-list__input"
                           name="currency"
                           readonly=""
+                          tabindex="-1"
                           value="BTC"
                         />
                       </div>
@@ -1107,13 +1109,13 @@ exports[`CreateProfile should not be able to create new profile if name already 
                         </div>
                         <ul
                           aria-labelledby="downshift-23-label"
-                          class="styles__SelectOptionsList-b2falt-0 cUNLQk is-open"
+                          class="styles__SelectOptionsList-b2falt-0 ghEDCU is-open"
                           id="downshift-23-menu"
                           role="listbox"
                         >
                           <li
                             aria-selected="true"
-                            class="select-list-option cursor-default is-highlighted"
+                            class="select-list-option is-highlighted is-selected"
                             data-testid="select-list__toggle-option-0"
                             id="downshift-23-item-0"
                             role="option"
@@ -1126,7 +1128,7 @@ exports[`CreateProfile should not be able to create new profile if name already 
                           </li>
                           <li
                             aria-selected="false"
-                            class="select-list-option cursor-default "
+                            class="select-list-option"
                             data-testid="select-list__toggle-option-1"
                             id="downshift-23-item-1"
                             role="option"
@@ -1139,7 +1141,7 @@ exports[`CreateProfile should not be able to create new profile if name already 
                           </li>
                           <li
                             aria-selected="false"
-                            class="select-list-option cursor-default "
+                            class="select-list-option"
                             data-testid="select-list__toggle-option-2"
                             id="downshift-23-item-2"
                             role="option"
@@ -1152,7 +1154,7 @@ exports[`CreateProfile should not be able to create new profile if name already 
                           </li>
                           <li
                             aria-selected="false"
-                            class="select-list-option cursor-default "
+                            class="select-list-option"
                             data-testid="select-list__toggle-option-3"
                             id="downshift-23-item-3"
                             role="option"
@@ -1165,7 +1167,7 @@ exports[`CreateProfile should not be able to create new profile if name already 
                           </li>
                           <li
                             aria-selected="false"
-                            class="select-list-option cursor-default "
+                            class="select-list-option"
                             data-testid="select-list__toggle-option-4"
                             id="downshift-23-item-4"
                             role="option"
@@ -1178,7 +1180,7 @@ exports[`CreateProfile should not be able to create new profile if name already 
                           </li>
                           <li
                             aria-selected="false"
-                            class="select-list-option cursor-default "
+                            class="select-list-option"
                             data-testid="select-list__toggle-option-5"
                             id="downshift-23-item-5"
                             role="option"
@@ -1191,7 +1193,7 @@ exports[`CreateProfile should not be able to create new profile if name already 
                           </li>
                           <li
                             aria-selected="false"
-                            class="select-list-option cursor-default "
+                            class="select-list-option"
                             data-testid="select-list__toggle-option-6"
                             id="downshift-23-item-6"
                             role="option"
@@ -1204,7 +1206,7 @@ exports[`CreateProfile should not be able to create new profile if name already 
                           </li>
                           <li
                             aria-selected="false"
-                            class="select-list-option cursor-default "
+                            class="select-list-option"
                             data-testid="select-list__toggle-option-7"
                             id="downshift-23-item-7"
                             role="option"
@@ -1217,7 +1219,7 @@ exports[`CreateProfile should not be able to create new profile if name already 
                           </li>
                           <li
                             aria-selected="false"
-                            class="select-list-option cursor-default "
+                            class="select-list-option"
                             data-testid="select-list__toggle-option-8"
                             id="downshift-23-item-8"
                             role="option"
@@ -1230,7 +1232,7 @@ exports[`CreateProfile should not be able to create new profile if name already 
                           </li>
                           <li
                             aria-selected="false"
-                            class="select-list-option cursor-default "
+                            class="select-list-option"
                             data-testid="select-list__toggle-option-9"
                             id="downshift-23-item-9"
                             role="option"
@@ -1243,7 +1245,7 @@ exports[`CreateProfile should not be able to create new profile if name already 
                           </li>
                           <li
                             aria-selected="false"
-                            class="select-list-option cursor-default "
+                            class="select-list-option"
                             data-testid="select-list__toggle-option-10"
                             id="downshift-23-item-10"
                             role="option"
@@ -1256,7 +1258,7 @@ exports[`CreateProfile should not be able to create new profile if name already 
                           </li>
                           <li
                             aria-selected="false"
-                            class="select-list-option cursor-default "
+                            class="select-list-option"
                             data-testid="select-list__toggle-option-11"
                             id="downshift-23-item-11"
                             role="option"
@@ -1269,7 +1271,7 @@ exports[`CreateProfile should not be able to create new profile if name already 
                           </li>
                           <li
                             aria-selected="false"
-                            class="select-list-option cursor-default "
+                            class="select-list-option"
                             data-testid="select-list__toggle-option-12"
                             id="downshift-23-item-12"
                             role="option"
@@ -1282,7 +1284,7 @@ exports[`CreateProfile should not be able to create new profile if name already 
                           </li>
                           <li
                             aria-selected="false"
-                            class="select-list-option cursor-default "
+                            class="select-list-option"
                             data-testid="select-list__toggle-option-13"
                             id="downshift-23-item-13"
                             role="option"
@@ -1295,7 +1297,7 @@ exports[`CreateProfile should not be able to create new profile if name already 
                           </li>
                           <li
                             aria-selected="false"
-                            class="select-list-option cursor-default "
+                            class="select-list-option"
                             data-testid="select-list__toggle-option-14"
                             id="downshift-23-item-14"
                             role="option"
@@ -1308,7 +1310,7 @@ exports[`CreateProfile should not be able to create new profile if name already 
                           </li>
                           <li
                             aria-selected="false"
-                            class="select-list-option cursor-default "
+                            class="select-list-option"
                             data-testid="select-list__toggle-option-15"
                             id="downshift-23-item-15"
                             role="option"
@@ -1321,7 +1323,7 @@ exports[`CreateProfile should not be able to create new profile if name already 
                           </li>
                           <li
                             aria-selected="false"
-                            class="select-list-option cursor-default "
+                            class="select-list-option"
                             data-testid="select-list__toggle-option-16"
                             id="downshift-23-item-16"
                             role="option"
@@ -1334,7 +1336,7 @@ exports[`CreateProfile should not be able to create new profile if name already 
                           </li>
                           <li
                             aria-selected="false"
-                            class="select-list-option cursor-default "
+                            class="select-list-option"
                             data-testid="select-list__toggle-option-17"
                             id="downshift-23-item-17"
                             role="option"
@@ -1355,7 +1357,7 @@ exports[`CreateProfile should not be able to create new profile if name already 
                 class="pb-4 mt-8"
               >
                 <ul
-                  class="sc-dlfnbm cOiGXi"
+                  class="sc-hKgILt gfmZFQ"
                   data-testid="list-divided__items"
                 >
                   <li
@@ -1416,7 +1418,7 @@ exports[`CreateProfile should not be able to create new profile if name already 
                 class="flex justify-end pt-4 space-x-3"
               >
                 <button
-                  class="OriginalButton__StyledButton-sc-1y2wptt-0 hsoUax"
+                  class="OriginalButton__StyledButton-sc-1y2wptt-0 izJbbP"
                   type="button"
                 >
                   <div
@@ -1426,7 +1428,7 @@ exports[`CreateProfile should not be able to create new profile if name already 
                   </div>
                 </button>
                 <button
-                  class="OriginalButton__StyledButton-sc-1y2wptt-0 blpaPr"
+                  class="OriginalButton__StyledButton-sc-1y2wptt-0 fqRthJ"
                   data-testid="CreateProfile__submit-button"
                   disabled=""
                   type="submit"
@@ -1592,7 +1594,7 @@ exports[`CreateProfile should not be able to create new profile if name is too l
                             class="SelectProfileImage__UploadButtonWrapper-t6smk3-0 fPlqSP"
                           >
                             <button
-                              class="OriginalButton__StyledButton-sc-1y2wptt-0 hsoUax"
+                              class="OriginalButton__StyledButton-sc-1y2wptt-0 izJbbP"
                               data-testid="SelectProfileImage__upload-button"
                               type="button"
                             >
@@ -1758,6 +1760,7 @@ exports[`CreateProfile should not be able to create new profile if name is too l
                           data-testid="select-list__input"
                           name="currency"
                           readonly=""
+                          tabindex="-1"
                           value="BTC"
                         />
                       </div>
@@ -1826,13 +1829,13 @@ exports[`CreateProfile should not be able to create new profile if name is too l
                         </div>
                         <ul
                           aria-labelledby="downshift-34-label"
-                          class="styles__SelectOptionsList-b2falt-0 cUNLQk is-open"
+                          class="styles__SelectOptionsList-b2falt-0 ghEDCU is-open"
                           id="downshift-34-menu"
                           role="listbox"
                         >
                           <li
                             aria-selected="true"
-                            class="select-list-option cursor-default is-highlighted"
+                            class="select-list-option is-highlighted is-selected"
                             data-testid="select-list__toggle-option-0"
                             id="downshift-34-item-0"
                             role="option"
@@ -1845,7 +1848,7 @@ exports[`CreateProfile should not be able to create new profile if name is too l
                           </li>
                           <li
                             aria-selected="false"
-                            class="select-list-option cursor-default "
+                            class="select-list-option"
                             data-testid="select-list__toggle-option-1"
                             id="downshift-34-item-1"
                             role="option"
@@ -1858,7 +1861,7 @@ exports[`CreateProfile should not be able to create new profile if name is too l
                           </li>
                           <li
                             aria-selected="false"
-                            class="select-list-option cursor-default "
+                            class="select-list-option"
                             data-testid="select-list__toggle-option-2"
                             id="downshift-34-item-2"
                             role="option"
@@ -1871,7 +1874,7 @@ exports[`CreateProfile should not be able to create new profile if name is too l
                           </li>
                           <li
                             aria-selected="false"
-                            class="select-list-option cursor-default "
+                            class="select-list-option"
                             data-testid="select-list__toggle-option-3"
                             id="downshift-34-item-3"
                             role="option"
@@ -1884,7 +1887,7 @@ exports[`CreateProfile should not be able to create new profile if name is too l
                           </li>
                           <li
                             aria-selected="false"
-                            class="select-list-option cursor-default "
+                            class="select-list-option"
                             data-testid="select-list__toggle-option-4"
                             id="downshift-34-item-4"
                             role="option"
@@ -1897,7 +1900,7 @@ exports[`CreateProfile should not be able to create new profile if name is too l
                           </li>
                           <li
                             aria-selected="false"
-                            class="select-list-option cursor-default "
+                            class="select-list-option"
                             data-testid="select-list__toggle-option-5"
                             id="downshift-34-item-5"
                             role="option"
@@ -1910,7 +1913,7 @@ exports[`CreateProfile should not be able to create new profile if name is too l
                           </li>
                           <li
                             aria-selected="false"
-                            class="select-list-option cursor-default "
+                            class="select-list-option"
                             data-testid="select-list__toggle-option-6"
                             id="downshift-34-item-6"
                             role="option"
@@ -1923,7 +1926,7 @@ exports[`CreateProfile should not be able to create new profile if name is too l
                           </li>
                           <li
                             aria-selected="false"
-                            class="select-list-option cursor-default "
+                            class="select-list-option"
                             data-testid="select-list__toggle-option-7"
                             id="downshift-34-item-7"
                             role="option"
@@ -1936,7 +1939,7 @@ exports[`CreateProfile should not be able to create new profile if name is too l
                           </li>
                           <li
                             aria-selected="false"
-                            class="select-list-option cursor-default "
+                            class="select-list-option"
                             data-testid="select-list__toggle-option-8"
                             id="downshift-34-item-8"
                             role="option"
@@ -1949,7 +1952,7 @@ exports[`CreateProfile should not be able to create new profile if name is too l
                           </li>
                           <li
                             aria-selected="false"
-                            class="select-list-option cursor-default "
+                            class="select-list-option"
                             data-testid="select-list__toggle-option-9"
                             id="downshift-34-item-9"
                             role="option"
@@ -1962,7 +1965,7 @@ exports[`CreateProfile should not be able to create new profile if name is too l
                           </li>
                           <li
                             aria-selected="false"
-                            class="select-list-option cursor-default "
+                            class="select-list-option"
                             data-testid="select-list__toggle-option-10"
                             id="downshift-34-item-10"
                             role="option"
@@ -1975,7 +1978,7 @@ exports[`CreateProfile should not be able to create new profile if name is too l
                           </li>
                           <li
                             aria-selected="false"
-                            class="select-list-option cursor-default "
+                            class="select-list-option"
                             data-testid="select-list__toggle-option-11"
                             id="downshift-34-item-11"
                             role="option"
@@ -1988,7 +1991,7 @@ exports[`CreateProfile should not be able to create new profile if name is too l
                           </li>
                           <li
                             aria-selected="false"
-                            class="select-list-option cursor-default "
+                            class="select-list-option"
                             data-testid="select-list__toggle-option-12"
                             id="downshift-34-item-12"
                             role="option"
@@ -2001,7 +2004,7 @@ exports[`CreateProfile should not be able to create new profile if name is too l
                           </li>
                           <li
                             aria-selected="false"
-                            class="select-list-option cursor-default "
+                            class="select-list-option"
                             data-testid="select-list__toggle-option-13"
                             id="downshift-34-item-13"
                             role="option"
@@ -2014,7 +2017,7 @@ exports[`CreateProfile should not be able to create new profile if name is too l
                           </li>
                           <li
                             aria-selected="false"
-                            class="select-list-option cursor-default "
+                            class="select-list-option"
                             data-testid="select-list__toggle-option-14"
                             id="downshift-34-item-14"
                             role="option"
@@ -2027,7 +2030,7 @@ exports[`CreateProfile should not be able to create new profile if name is too l
                           </li>
                           <li
                             aria-selected="false"
-                            class="select-list-option cursor-default "
+                            class="select-list-option"
                             data-testid="select-list__toggle-option-15"
                             id="downshift-34-item-15"
                             role="option"
@@ -2040,7 +2043,7 @@ exports[`CreateProfile should not be able to create new profile if name is too l
                           </li>
                           <li
                             aria-selected="false"
-                            class="select-list-option cursor-default "
+                            class="select-list-option"
                             data-testid="select-list__toggle-option-16"
                             id="downshift-34-item-16"
                             role="option"
@@ -2053,7 +2056,7 @@ exports[`CreateProfile should not be able to create new profile if name is too l
                           </li>
                           <li
                             aria-selected="false"
-                            class="select-list-option cursor-default "
+                            class="select-list-option"
                             data-testid="select-list__toggle-option-17"
                             id="downshift-34-item-17"
                             role="option"
@@ -2074,7 +2077,7 @@ exports[`CreateProfile should not be able to create new profile if name is too l
                 class="pb-4 mt-8"
               >
                 <ul
-                  class="sc-dlfnbm cOiGXi"
+                  class="sc-hKgILt gfmZFQ"
                   data-testid="list-divided__items"
                 >
                   <li
@@ -2135,7 +2138,7 @@ exports[`CreateProfile should not be able to create new profile if name is too l
                 class="flex justify-end pt-4 space-x-3"
               >
                 <button
-                  class="OriginalButton__StyledButton-sc-1y2wptt-0 hsoUax"
+                  class="OriginalButton__StyledButton-sc-1y2wptt-0 izJbbP"
                   type="button"
                 >
                   <div
@@ -2145,7 +2148,7 @@ exports[`CreateProfile should not be able to create new profile if name is too l
                   </div>
                 </button>
                 <button
-                  class="OriginalButton__StyledButton-sc-1y2wptt-0 blpaPr"
+                  class="OriginalButton__StyledButton-sc-1y2wptt-0 fqRthJ"
                   data-testid="CreateProfile__submit-button"
                   disabled=""
                   type="submit"
@@ -2333,7 +2336,7 @@ exports[`CreateProfile should not update the uploaded avatar when removing focus
                           </div>
                         </div>
                         <button
-                          class="OriginalButton__StyledButton-sc-1y2wptt-0 dscUFp flex absolute -top-3 -right-3 justify-center items-center p-1 w-6 h-6"
+                          class="OriginalButton__StyledButton-sc-1y2wptt-0 gLgNOz flex absolute -top-3 -right-3 justify-center items-center p-1 w-6 h-6"
                           data-testid="SelectProfileImage__remove-button"
                           type="button"
                         >
@@ -2497,6 +2500,7 @@ exports[`CreateProfile should not update the uploaded avatar when removing focus
                           data-testid="select-list__input"
                           name="currency"
                           readonly=""
+                          tabindex="-1"
                           value=""
                         />
                       </div>
@@ -2558,7 +2562,7 @@ exports[`CreateProfile should not update the uploaded avatar when removing focus
                         </div>
                         <ul
                           aria-labelledby="downshift-84-label"
-                          class="styles__SelectOptionsList-b2falt-0 cUNLQk"
+                          class="styles__SelectOptionsList-b2falt-0 ghEDCU"
                           id="downshift-84-menu"
                           role="listbox"
                         />
@@ -2571,7 +2575,7 @@ exports[`CreateProfile should not update the uploaded avatar when removing focus
                 class="pb-4 mt-8"
               >
                 <ul
-                  class="sc-dlfnbm cOiGXi"
+                  class="sc-hKgILt gfmZFQ"
                   data-testid="list-divided__items"
                 >
                   <li
@@ -2632,7 +2636,7 @@ exports[`CreateProfile should not update the uploaded avatar when removing focus
                 class="flex justify-end pt-4 space-x-3"
               >
                 <button
-                  class="OriginalButton__StyledButton-sc-1y2wptt-0 hsoUax"
+                  class="OriginalButton__StyledButton-sc-1y2wptt-0 izJbbP"
                   type="button"
                 >
                   <div
@@ -2642,7 +2646,7 @@ exports[`CreateProfile should not update the uploaded avatar when removing focus
                   </div>
                 </button>
                 <button
-                  class="OriginalButton__StyledButton-sc-1y2wptt-0 blpaPr"
+                  class="OriginalButton__StyledButton-sc-1y2wptt-0 fqRthJ"
                   data-testid="CreateProfile__submit-button"
                   disabled=""
                   type="submit"
@@ -2789,7 +2793,7 @@ exports[`CreateProfile should not upload avatar image 1`] = `
                             class="SelectProfileImage__UploadButtonWrapper-t6smk3-0 fPlqSP"
                           >
                             <button
-                              class="OriginalButton__StyledButton-sc-1y2wptt-0 hsoUax"
+                              class="OriginalButton__StyledButton-sc-1y2wptt-0 izJbbP"
                               data-testid="SelectProfileImage__upload-button"
                               type="button"
                             >
@@ -2955,6 +2959,7 @@ exports[`CreateProfile should not upload avatar image 1`] = `
                           data-testid="select-list__input"
                           name="currency"
                           readonly=""
+                          tabindex="-1"
                           value="BTC"
                         />
                       </div>
@@ -3023,13 +3028,13 @@ exports[`CreateProfile should not upload avatar image 1`] = `
                         </div>
                         <ul
                           aria-labelledby="downshift-105-label"
-                          class="styles__SelectOptionsList-b2falt-0 cUNLQk is-open"
+                          class="styles__SelectOptionsList-b2falt-0 ghEDCU is-open"
                           id="downshift-105-menu"
                           role="listbox"
                         >
                           <li
                             aria-selected="true"
-                            class="select-list-option cursor-default is-highlighted"
+                            class="select-list-option is-highlighted is-selected"
                             data-testid="select-list__toggle-option-0"
                             id="downshift-105-item-0"
                             role="option"
@@ -3042,7 +3047,7 @@ exports[`CreateProfile should not upload avatar image 1`] = `
                           </li>
                           <li
                             aria-selected="false"
-                            class="select-list-option cursor-default "
+                            class="select-list-option"
                             data-testid="select-list__toggle-option-1"
                             id="downshift-105-item-1"
                             role="option"
@@ -3055,7 +3060,7 @@ exports[`CreateProfile should not upload avatar image 1`] = `
                           </li>
                           <li
                             aria-selected="false"
-                            class="select-list-option cursor-default "
+                            class="select-list-option"
                             data-testid="select-list__toggle-option-2"
                             id="downshift-105-item-2"
                             role="option"
@@ -3068,7 +3073,7 @@ exports[`CreateProfile should not upload avatar image 1`] = `
                           </li>
                           <li
                             aria-selected="false"
-                            class="select-list-option cursor-default "
+                            class="select-list-option"
                             data-testid="select-list__toggle-option-3"
                             id="downshift-105-item-3"
                             role="option"
@@ -3081,7 +3086,7 @@ exports[`CreateProfile should not upload avatar image 1`] = `
                           </li>
                           <li
                             aria-selected="false"
-                            class="select-list-option cursor-default "
+                            class="select-list-option"
                             data-testid="select-list__toggle-option-4"
                             id="downshift-105-item-4"
                             role="option"
@@ -3094,7 +3099,7 @@ exports[`CreateProfile should not upload avatar image 1`] = `
                           </li>
                           <li
                             aria-selected="false"
-                            class="select-list-option cursor-default "
+                            class="select-list-option"
                             data-testid="select-list__toggle-option-5"
                             id="downshift-105-item-5"
                             role="option"
@@ -3107,7 +3112,7 @@ exports[`CreateProfile should not upload avatar image 1`] = `
                           </li>
                           <li
                             aria-selected="false"
-                            class="select-list-option cursor-default "
+                            class="select-list-option"
                             data-testid="select-list__toggle-option-6"
                             id="downshift-105-item-6"
                             role="option"
@@ -3120,7 +3125,7 @@ exports[`CreateProfile should not upload avatar image 1`] = `
                           </li>
                           <li
                             aria-selected="false"
-                            class="select-list-option cursor-default "
+                            class="select-list-option"
                             data-testid="select-list__toggle-option-7"
                             id="downshift-105-item-7"
                             role="option"
@@ -3133,7 +3138,7 @@ exports[`CreateProfile should not upload avatar image 1`] = `
                           </li>
                           <li
                             aria-selected="false"
-                            class="select-list-option cursor-default "
+                            class="select-list-option"
                             data-testid="select-list__toggle-option-8"
                             id="downshift-105-item-8"
                             role="option"
@@ -3146,7 +3151,7 @@ exports[`CreateProfile should not upload avatar image 1`] = `
                           </li>
                           <li
                             aria-selected="false"
-                            class="select-list-option cursor-default "
+                            class="select-list-option"
                             data-testid="select-list__toggle-option-9"
                             id="downshift-105-item-9"
                             role="option"
@@ -3159,7 +3164,7 @@ exports[`CreateProfile should not upload avatar image 1`] = `
                           </li>
                           <li
                             aria-selected="false"
-                            class="select-list-option cursor-default "
+                            class="select-list-option"
                             data-testid="select-list__toggle-option-10"
                             id="downshift-105-item-10"
                             role="option"
@@ -3172,7 +3177,7 @@ exports[`CreateProfile should not upload avatar image 1`] = `
                           </li>
                           <li
                             aria-selected="false"
-                            class="select-list-option cursor-default "
+                            class="select-list-option"
                             data-testid="select-list__toggle-option-11"
                             id="downshift-105-item-11"
                             role="option"
@@ -3185,7 +3190,7 @@ exports[`CreateProfile should not upload avatar image 1`] = `
                           </li>
                           <li
                             aria-selected="false"
-                            class="select-list-option cursor-default "
+                            class="select-list-option"
                             data-testid="select-list__toggle-option-12"
                             id="downshift-105-item-12"
                             role="option"
@@ -3198,7 +3203,7 @@ exports[`CreateProfile should not upload avatar image 1`] = `
                           </li>
                           <li
                             aria-selected="false"
-                            class="select-list-option cursor-default "
+                            class="select-list-option"
                             data-testid="select-list__toggle-option-13"
                             id="downshift-105-item-13"
                             role="option"
@@ -3211,7 +3216,7 @@ exports[`CreateProfile should not upload avatar image 1`] = `
                           </li>
                           <li
                             aria-selected="false"
-                            class="select-list-option cursor-default "
+                            class="select-list-option"
                             data-testid="select-list__toggle-option-14"
                             id="downshift-105-item-14"
                             role="option"
@@ -3224,7 +3229,7 @@ exports[`CreateProfile should not upload avatar image 1`] = `
                           </li>
                           <li
                             aria-selected="false"
-                            class="select-list-option cursor-default "
+                            class="select-list-option"
                             data-testid="select-list__toggle-option-15"
                             id="downshift-105-item-15"
                             role="option"
@@ -3237,7 +3242,7 @@ exports[`CreateProfile should not upload avatar image 1`] = `
                           </li>
                           <li
                             aria-selected="false"
-                            class="select-list-option cursor-default "
+                            class="select-list-option"
                             data-testid="select-list__toggle-option-16"
                             id="downshift-105-item-16"
                             role="option"
@@ -3250,7 +3255,7 @@ exports[`CreateProfile should not upload avatar image 1`] = `
                           </li>
                           <li
                             aria-selected="false"
-                            class="select-list-option cursor-default "
+                            class="select-list-option"
                             data-testid="select-list__toggle-option-17"
                             id="downshift-105-item-17"
                             role="option"
@@ -3271,7 +3276,7 @@ exports[`CreateProfile should not upload avatar image 1`] = `
                 class="pb-4 mt-8"
               >
                 <ul
-                  class="sc-dlfnbm cOiGXi"
+                  class="sc-hKgILt gfmZFQ"
                   data-testid="list-divided__items"
                 >
                   <li
@@ -3332,7 +3337,7 @@ exports[`CreateProfile should not upload avatar image 1`] = `
                 class="flex justify-end pt-4 space-x-3"
               >
                 <button
-                  class="OriginalButton__StyledButton-sc-1y2wptt-0 hsoUax"
+                  class="OriginalButton__StyledButton-sc-1y2wptt-0 izJbbP"
                   type="button"
                 >
                   <div
@@ -3342,7 +3347,7 @@ exports[`CreateProfile should not upload avatar image 1`] = `
                   </div>
                 </button>
                 <button
-                  class="OriginalButton__StyledButton-sc-1y2wptt-0 cEUmKc"
+                  class="OriginalButton__StyledButton-sc-1y2wptt-0 dYkFxS"
                   data-testid="CreateProfile__submit-button"
                   type="submit"
                 >
@@ -3488,7 +3493,7 @@ exports[`CreateProfile should render 1`] = `
                             class="SelectProfileImage__UploadButtonWrapper-t6smk3-0 fPlqSP"
                           >
                             <button
-                              class="OriginalButton__StyledButton-sc-1y2wptt-0 hsoUax"
+                              class="OriginalButton__StyledButton-sc-1y2wptt-0 izJbbP"
                               data-testid="SelectProfileImage__upload-button"
                               type="button"
                             >
@@ -3654,6 +3659,7 @@ exports[`CreateProfile should render 1`] = `
                           data-testid="select-list__input"
                           name="currency"
                           readonly=""
+                          tabindex="-1"
                           value=""
                         />
                       </div>
@@ -3715,7 +3721,7 @@ exports[`CreateProfile should render 1`] = `
                         </div>
                         <ul
                           aria-labelledby="downshift-0-label"
-                          class="styles__SelectOptionsList-b2falt-0 cUNLQk"
+                          class="styles__SelectOptionsList-b2falt-0 ghEDCU"
                           id="downshift-0-menu"
                           role="listbox"
                         />
@@ -3728,7 +3734,7 @@ exports[`CreateProfile should render 1`] = `
                 class="pb-4 mt-8"
               >
                 <ul
-                  class="sc-dlfnbm cOiGXi"
+                  class="sc-hKgILt gfmZFQ"
                   data-testid="list-divided__items"
                 >
                   <li
@@ -3789,7 +3795,7 @@ exports[`CreateProfile should render 1`] = `
                 class="flex justify-end pt-4 space-x-3"
               >
                 <button
-                  class="OriginalButton__StyledButton-sc-1y2wptt-0 hsoUax"
+                  class="OriginalButton__StyledButton-sc-1y2wptt-0 izJbbP"
                   type="button"
                 >
                   <div
@@ -3799,7 +3805,7 @@ exports[`CreateProfile should render 1`] = `
                   </div>
                 </button>
                 <button
-                  class="OriginalButton__StyledButton-sc-1y2wptt-0 blpaPr"
+                  class="OriginalButton__StyledButton-sc-1y2wptt-0 fqRthJ"
                   data-testid="CreateProfile__submit-button"
                   disabled=""
                   type="submit"
@@ -3968,7 +3974,7 @@ exports[`CreateProfile should store profile 1`] = `
                           </div>
                         </div>
                         <button
-                          class="OriginalButton__StyledButton-sc-1y2wptt-0 dscUFp flex absolute -top-3 -right-3 justify-center items-center p-1 w-6 h-6"
+                          class="OriginalButton__StyledButton-sc-1y2wptt-0 gLgNOz flex absolute -top-3 -right-3 justify-center items-center p-1 w-6 h-6"
                           data-testid="SelectProfileImage__remove-button"
                           type="button"
                         >
@@ -4132,6 +4138,7 @@ exports[`CreateProfile should store profile 1`] = `
                           data-testid="select-list__input"
                           name="currency"
                           readonly=""
+                          tabindex="-1"
                           value="BTC"
                         />
                       </div>
@@ -4200,13 +4207,13 @@ exports[`CreateProfile should store profile 1`] = `
                         </div>
                         <ul
                           aria-labelledby="downshift-4-label"
-                          class="styles__SelectOptionsList-b2falt-0 cUNLQk is-open"
+                          class="styles__SelectOptionsList-b2falt-0 ghEDCU is-open"
                           id="downshift-4-menu"
                           role="listbox"
                         >
                           <li
                             aria-selected="true"
-                            class="select-list-option cursor-default is-highlighted"
+                            class="select-list-option is-highlighted is-selected"
                             data-testid="select-list__toggle-option-0"
                             id="downshift-4-item-0"
                             role="option"
@@ -4219,7 +4226,7 @@ exports[`CreateProfile should store profile 1`] = `
                           </li>
                           <li
                             aria-selected="false"
-                            class="select-list-option cursor-default "
+                            class="select-list-option"
                             data-testid="select-list__toggle-option-1"
                             id="downshift-4-item-1"
                             role="option"
@@ -4232,7 +4239,7 @@ exports[`CreateProfile should store profile 1`] = `
                           </li>
                           <li
                             aria-selected="false"
-                            class="select-list-option cursor-default "
+                            class="select-list-option"
                             data-testid="select-list__toggle-option-2"
                             id="downshift-4-item-2"
                             role="option"
@@ -4245,7 +4252,7 @@ exports[`CreateProfile should store profile 1`] = `
                           </li>
                           <li
                             aria-selected="false"
-                            class="select-list-option cursor-default "
+                            class="select-list-option"
                             data-testid="select-list__toggle-option-3"
                             id="downshift-4-item-3"
                             role="option"
@@ -4258,7 +4265,7 @@ exports[`CreateProfile should store profile 1`] = `
                           </li>
                           <li
                             aria-selected="false"
-                            class="select-list-option cursor-default "
+                            class="select-list-option"
                             data-testid="select-list__toggle-option-4"
                             id="downshift-4-item-4"
                             role="option"
@@ -4271,7 +4278,7 @@ exports[`CreateProfile should store profile 1`] = `
                           </li>
                           <li
                             aria-selected="false"
-                            class="select-list-option cursor-default "
+                            class="select-list-option"
                             data-testid="select-list__toggle-option-5"
                             id="downshift-4-item-5"
                             role="option"
@@ -4284,7 +4291,7 @@ exports[`CreateProfile should store profile 1`] = `
                           </li>
                           <li
                             aria-selected="false"
-                            class="select-list-option cursor-default "
+                            class="select-list-option"
                             data-testid="select-list__toggle-option-6"
                             id="downshift-4-item-6"
                             role="option"
@@ -4297,7 +4304,7 @@ exports[`CreateProfile should store profile 1`] = `
                           </li>
                           <li
                             aria-selected="false"
-                            class="select-list-option cursor-default "
+                            class="select-list-option"
                             data-testid="select-list__toggle-option-7"
                             id="downshift-4-item-7"
                             role="option"
@@ -4310,7 +4317,7 @@ exports[`CreateProfile should store profile 1`] = `
                           </li>
                           <li
                             aria-selected="false"
-                            class="select-list-option cursor-default "
+                            class="select-list-option"
                             data-testid="select-list__toggle-option-8"
                             id="downshift-4-item-8"
                             role="option"
@@ -4323,7 +4330,7 @@ exports[`CreateProfile should store profile 1`] = `
                           </li>
                           <li
                             aria-selected="false"
-                            class="select-list-option cursor-default "
+                            class="select-list-option"
                             data-testid="select-list__toggle-option-9"
                             id="downshift-4-item-9"
                             role="option"
@@ -4336,7 +4343,7 @@ exports[`CreateProfile should store profile 1`] = `
                           </li>
                           <li
                             aria-selected="false"
-                            class="select-list-option cursor-default "
+                            class="select-list-option"
                             data-testid="select-list__toggle-option-10"
                             id="downshift-4-item-10"
                             role="option"
@@ -4349,7 +4356,7 @@ exports[`CreateProfile should store profile 1`] = `
                           </li>
                           <li
                             aria-selected="false"
-                            class="select-list-option cursor-default "
+                            class="select-list-option"
                             data-testid="select-list__toggle-option-11"
                             id="downshift-4-item-11"
                             role="option"
@@ -4362,7 +4369,7 @@ exports[`CreateProfile should store profile 1`] = `
                           </li>
                           <li
                             aria-selected="false"
-                            class="select-list-option cursor-default "
+                            class="select-list-option"
                             data-testid="select-list__toggle-option-12"
                             id="downshift-4-item-12"
                             role="option"
@@ -4375,7 +4382,7 @@ exports[`CreateProfile should store profile 1`] = `
                           </li>
                           <li
                             aria-selected="false"
-                            class="select-list-option cursor-default "
+                            class="select-list-option"
                             data-testid="select-list__toggle-option-13"
                             id="downshift-4-item-13"
                             role="option"
@@ -4388,7 +4395,7 @@ exports[`CreateProfile should store profile 1`] = `
                           </li>
                           <li
                             aria-selected="false"
-                            class="select-list-option cursor-default "
+                            class="select-list-option"
                             data-testid="select-list__toggle-option-14"
                             id="downshift-4-item-14"
                             role="option"
@@ -4401,7 +4408,7 @@ exports[`CreateProfile should store profile 1`] = `
                           </li>
                           <li
                             aria-selected="false"
-                            class="select-list-option cursor-default "
+                            class="select-list-option"
                             data-testid="select-list__toggle-option-15"
                             id="downshift-4-item-15"
                             role="option"
@@ -4414,7 +4421,7 @@ exports[`CreateProfile should store profile 1`] = `
                           </li>
                           <li
                             aria-selected="false"
-                            class="select-list-option cursor-default "
+                            class="select-list-option"
                             data-testid="select-list__toggle-option-16"
                             id="downshift-4-item-16"
                             role="option"
@@ -4427,7 +4434,7 @@ exports[`CreateProfile should store profile 1`] = `
                           </li>
                           <li
                             aria-selected="false"
-                            class="select-list-option cursor-default "
+                            class="select-list-option"
                             data-testid="select-list__toggle-option-17"
                             id="downshift-4-item-17"
                             role="option"
@@ -4448,7 +4455,7 @@ exports[`CreateProfile should store profile 1`] = `
                 class="pb-4 mt-8"
               >
                 <ul
-                  class="sc-dlfnbm cOiGXi"
+                  class="sc-hKgILt gfmZFQ"
                   data-testid="list-divided__items"
                 >
                   <li
@@ -4509,7 +4516,7 @@ exports[`CreateProfile should store profile 1`] = `
                 class="flex justify-end pt-4 space-x-3"
               >
                 <button
-                  class="OriginalButton__StyledButton-sc-1y2wptt-0 hsoUax"
+                  class="OriginalButton__StyledButton-sc-1y2wptt-0 izJbbP"
                   type="button"
                 >
                   <div
@@ -4519,7 +4526,7 @@ exports[`CreateProfile should store profile 1`] = `
                   </div>
                 </button>
                 <button
-                  class="OriginalButton__StyledButton-sc-1y2wptt-0 cEUmKc"
+                  class="OriginalButton__StyledButton-sc-1y2wptt-0 dYkFxS"
                   data-testid="CreateProfile__submit-button"
                   type="submit"
                 >
@@ -4665,7 +4672,7 @@ exports[`CreateProfile should store profile with password 1`] = `
                             class="SelectProfileImage__UploadButtonWrapper-t6smk3-0 fPlqSP"
                           >
                             <button
-                              class="OriginalButton__StyledButton-sc-1y2wptt-0 hsoUax"
+                              class="OriginalButton__StyledButton-sc-1y2wptt-0 izJbbP"
                               data-testid="SelectProfileImage__upload-button"
                               type="button"
                             >
@@ -4829,6 +4836,7 @@ exports[`CreateProfile should store profile with password 1`] = `
                           data-testid="select-list__input"
                           name="currency"
                           readonly=""
+                          tabindex="-1"
                           value="BTC"
                         />
                       </div>
@@ -4897,13 +4905,13 @@ exports[`CreateProfile should store profile with password 1`] = `
                         </div>
                         <ul
                           aria-labelledby="downshift-45-label"
-                          class="styles__SelectOptionsList-b2falt-0 cUNLQk is-open"
+                          class="styles__SelectOptionsList-b2falt-0 ghEDCU is-open"
                           id="downshift-45-menu"
                           role="listbox"
                         >
                           <li
                             aria-selected="true"
-                            class="select-list-option cursor-default is-highlighted"
+                            class="select-list-option is-highlighted is-selected"
                             data-testid="select-list__toggle-option-0"
                             id="downshift-45-item-0"
                             role="option"
@@ -4916,7 +4924,7 @@ exports[`CreateProfile should store profile with password 1`] = `
                           </li>
                           <li
                             aria-selected="false"
-                            class="select-list-option cursor-default "
+                            class="select-list-option"
                             data-testid="select-list__toggle-option-1"
                             id="downshift-45-item-1"
                             role="option"
@@ -4929,7 +4937,7 @@ exports[`CreateProfile should store profile with password 1`] = `
                           </li>
                           <li
                             aria-selected="false"
-                            class="select-list-option cursor-default "
+                            class="select-list-option"
                             data-testid="select-list__toggle-option-2"
                             id="downshift-45-item-2"
                             role="option"
@@ -4942,7 +4950,7 @@ exports[`CreateProfile should store profile with password 1`] = `
                           </li>
                           <li
                             aria-selected="false"
-                            class="select-list-option cursor-default "
+                            class="select-list-option"
                             data-testid="select-list__toggle-option-3"
                             id="downshift-45-item-3"
                             role="option"
@@ -4955,7 +4963,7 @@ exports[`CreateProfile should store profile with password 1`] = `
                           </li>
                           <li
                             aria-selected="false"
-                            class="select-list-option cursor-default "
+                            class="select-list-option"
                             data-testid="select-list__toggle-option-4"
                             id="downshift-45-item-4"
                             role="option"
@@ -4968,7 +4976,7 @@ exports[`CreateProfile should store profile with password 1`] = `
                           </li>
                           <li
                             aria-selected="false"
-                            class="select-list-option cursor-default "
+                            class="select-list-option"
                             data-testid="select-list__toggle-option-5"
                             id="downshift-45-item-5"
                             role="option"
@@ -4981,7 +4989,7 @@ exports[`CreateProfile should store profile with password 1`] = `
                           </li>
                           <li
                             aria-selected="false"
-                            class="select-list-option cursor-default "
+                            class="select-list-option"
                             data-testid="select-list__toggle-option-6"
                             id="downshift-45-item-6"
                             role="option"
@@ -4994,7 +5002,7 @@ exports[`CreateProfile should store profile with password 1`] = `
                           </li>
                           <li
                             aria-selected="false"
-                            class="select-list-option cursor-default "
+                            class="select-list-option"
                             data-testid="select-list__toggle-option-7"
                             id="downshift-45-item-7"
                             role="option"
@@ -5007,7 +5015,7 @@ exports[`CreateProfile should store profile with password 1`] = `
                           </li>
                           <li
                             aria-selected="false"
-                            class="select-list-option cursor-default "
+                            class="select-list-option"
                             data-testid="select-list__toggle-option-8"
                             id="downshift-45-item-8"
                             role="option"
@@ -5020,7 +5028,7 @@ exports[`CreateProfile should store profile with password 1`] = `
                           </li>
                           <li
                             aria-selected="false"
-                            class="select-list-option cursor-default "
+                            class="select-list-option"
                             data-testid="select-list__toggle-option-9"
                             id="downshift-45-item-9"
                             role="option"
@@ -5033,7 +5041,7 @@ exports[`CreateProfile should store profile with password 1`] = `
                           </li>
                           <li
                             aria-selected="false"
-                            class="select-list-option cursor-default "
+                            class="select-list-option"
                             data-testid="select-list__toggle-option-10"
                             id="downshift-45-item-10"
                             role="option"
@@ -5046,7 +5054,7 @@ exports[`CreateProfile should store profile with password 1`] = `
                           </li>
                           <li
                             aria-selected="false"
-                            class="select-list-option cursor-default "
+                            class="select-list-option"
                             data-testid="select-list__toggle-option-11"
                             id="downshift-45-item-11"
                             role="option"
@@ -5059,7 +5067,7 @@ exports[`CreateProfile should store profile with password 1`] = `
                           </li>
                           <li
                             aria-selected="false"
-                            class="select-list-option cursor-default "
+                            class="select-list-option"
                             data-testid="select-list__toggle-option-12"
                             id="downshift-45-item-12"
                             role="option"
@@ -5072,7 +5080,7 @@ exports[`CreateProfile should store profile with password 1`] = `
                           </li>
                           <li
                             aria-selected="false"
-                            class="select-list-option cursor-default "
+                            class="select-list-option"
                             data-testid="select-list__toggle-option-13"
                             id="downshift-45-item-13"
                             role="option"
@@ -5085,7 +5093,7 @@ exports[`CreateProfile should store profile with password 1`] = `
                           </li>
                           <li
                             aria-selected="false"
-                            class="select-list-option cursor-default "
+                            class="select-list-option"
                             data-testid="select-list__toggle-option-14"
                             id="downshift-45-item-14"
                             role="option"
@@ -5098,7 +5106,7 @@ exports[`CreateProfile should store profile with password 1`] = `
                           </li>
                           <li
                             aria-selected="false"
-                            class="select-list-option cursor-default "
+                            class="select-list-option"
                             data-testid="select-list__toggle-option-15"
                             id="downshift-45-item-15"
                             role="option"
@@ -5111,7 +5119,7 @@ exports[`CreateProfile should store profile with password 1`] = `
                           </li>
                           <li
                             aria-selected="false"
-                            class="select-list-option cursor-default "
+                            class="select-list-option"
                             data-testid="select-list__toggle-option-16"
                             id="downshift-45-item-16"
                             role="option"
@@ -5124,7 +5132,7 @@ exports[`CreateProfile should store profile with password 1`] = `
                           </li>
                           <li
                             aria-selected="false"
-                            class="select-list-option cursor-default "
+                            class="select-list-option"
                             data-testid="select-list__toggle-option-17"
                             id="downshift-45-item-17"
                             role="option"
@@ -5145,7 +5153,7 @@ exports[`CreateProfile should store profile with password 1`] = `
                 class="pb-4 mt-8"
               >
                 <ul
-                  class="sc-dlfnbm cOiGXi"
+                  class="sc-hKgILt gfmZFQ"
                   data-testid="list-divided__items"
                 >
                   <li
@@ -5206,7 +5214,7 @@ exports[`CreateProfile should store profile with password 1`] = `
                 class="flex justify-end pt-4 space-x-3"
               >
                 <button
-                  class="OriginalButton__StyledButton-sc-1y2wptt-0 hsoUax"
+                  class="OriginalButton__StyledButton-sc-1y2wptt-0 izJbbP"
                   type="button"
                 >
                   <div
@@ -5216,7 +5224,7 @@ exports[`CreateProfile should store profile with password 1`] = `
                   </div>
                 </button>
                 <button
-                  class="OriginalButton__StyledButton-sc-1y2wptt-0 cEUmKc"
+                  class="OriginalButton__StyledButton-sc-1y2wptt-0 dYkFxS"
                   data-testid="CreateProfile__submit-button"
                   type="submit"
                 >
@@ -5534,6 +5542,7 @@ exports[`CreateProfile should update the avatar when removing focus from name in
                           data-testid="select-list__input"
                           name="currency"
                           readonly=""
+                          tabindex="-1"
                           value=""
                         />
                       </div>
@@ -5595,7 +5604,7 @@ exports[`CreateProfile should update the avatar when removing focus from name in
                         </div>
                         <ul
                           aria-labelledby="downshift-74-label"
-                          class="styles__SelectOptionsList-b2falt-0 cUNLQk"
+                          class="styles__SelectOptionsList-b2falt-0 ghEDCU"
                           id="downshift-74-menu"
                           role="listbox"
                         />
@@ -5608,7 +5617,7 @@ exports[`CreateProfile should update the avatar when removing focus from name in
                 class="pb-4 mt-8"
               >
                 <ul
-                  class="sc-dlfnbm cOiGXi"
+                  class="sc-hKgILt gfmZFQ"
                   data-testid="list-divided__items"
                 >
                   <li
@@ -5669,7 +5678,7 @@ exports[`CreateProfile should update the avatar when removing focus from name in
                 class="flex justify-end pt-4 space-x-3"
               >
                 <button
-                  class="OriginalButton__StyledButton-sc-1y2wptt-0 hsoUax"
+                  class="OriginalButton__StyledButton-sc-1y2wptt-0 izJbbP"
                   type="button"
                 >
                   <div
@@ -5679,7 +5688,7 @@ exports[`CreateProfile should update the avatar when removing focus from name in
                   </div>
                 </button>
                 <button
-                  class="OriginalButton__StyledButton-sc-1y2wptt-0 blpaPr"
+                  class="OriginalButton__StyledButton-sc-1y2wptt-0 fqRthJ"
                   data-testid="CreateProfile__submit-button"
                   disabled=""
                   type="submit"
@@ -5845,7 +5854,7 @@ exports[`CreateProfile should update the avatar when removing focus from name in
                             class="SelectProfileImage__UploadButtonWrapper-t6smk3-0 fPlqSP"
                           >
                             <button
-                              class="OriginalButton__StyledButton-sc-1y2wptt-0 hsoUax"
+                              class="OriginalButton__StyledButton-sc-1y2wptt-0 izJbbP"
                               data-testid="SelectProfileImage__upload-button"
                               type="button"
                             >
@@ -6011,6 +6020,7 @@ exports[`CreateProfile should update the avatar when removing focus from name in
                           data-testid="select-list__input"
                           name="currency"
                           readonly=""
+                          tabindex="-1"
                           value=""
                         />
                       </div>
@@ -6072,7 +6082,7 @@ exports[`CreateProfile should update the avatar when removing focus from name in
                         </div>
                         <ul
                           aria-labelledby="downshift-74-label"
-                          class="styles__SelectOptionsList-b2falt-0 cUNLQk"
+                          class="styles__SelectOptionsList-b2falt-0 ghEDCU"
                           id="downshift-74-menu"
                           role="listbox"
                         />
@@ -6085,7 +6095,7 @@ exports[`CreateProfile should update the avatar when removing focus from name in
                 class="pb-4 mt-8"
               >
                 <ul
-                  class="sc-dlfnbm cOiGXi"
+                  class="sc-hKgILt gfmZFQ"
                   data-testid="list-divided__items"
                 >
                   <li
@@ -6146,7 +6156,7 @@ exports[`CreateProfile should update the avatar when removing focus from name in
                 class="flex justify-end pt-4 space-x-3"
               >
                 <button
-                  class="OriginalButton__StyledButton-sc-1y2wptt-0 hsoUax"
+                  class="OriginalButton__StyledButton-sc-1y2wptt-0 izJbbP"
                   type="button"
                 >
                   <div
@@ -6156,7 +6166,7 @@ exports[`CreateProfile should update the avatar when removing focus from name in
                   </div>
                 </button>
                 <button
-                  class="OriginalButton__StyledButton-sc-1y2wptt-0 blpaPr"
+                  class="OriginalButton__StyledButton-sc-1y2wptt-0 fqRthJ"
                   data-testid="CreateProfile__submit-button"
                   disabled=""
                   type="submit"
@@ -6303,7 +6313,7 @@ exports[`CreateProfile should upload and remove avatar image 1`] = `
                             class="SelectProfileImage__UploadButtonWrapper-t6smk3-0 fPlqSP"
                           >
                             <button
-                              class="OriginalButton__StyledButton-sc-1y2wptt-0 hsoUax"
+                              class="OriginalButton__StyledButton-sc-1y2wptt-0 izJbbP"
                               data-testid="SelectProfileImage__upload-button"
                               type="button"
                             >
@@ -6469,6 +6479,7 @@ exports[`CreateProfile should upload and remove avatar image 1`] = `
                           data-testid="select-list__input"
                           name="currency"
                           readonly=""
+                          tabindex="-1"
                           value="BTC"
                         />
                       </div>
@@ -6537,13 +6548,13 @@ exports[`CreateProfile should upload and remove avatar image 1`] = `
                         </div>
                         <ul
                           aria-labelledby="downshift-90-label"
-                          class="styles__SelectOptionsList-b2falt-0 cUNLQk is-open"
+                          class="styles__SelectOptionsList-b2falt-0 ghEDCU is-open"
                           id="downshift-90-menu"
                           role="listbox"
                         >
                           <li
                             aria-selected="true"
-                            class="select-list-option cursor-default is-highlighted"
+                            class="select-list-option is-highlighted is-selected"
                             data-testid="select-list__toggle-option-0"
                             id="downshift-90-item-0"
                             role="option"
@@ -6556,7 +6567,7 @@ exports[`CreateProfile should upload and remove avatar image 1`] = `
                           </li>
                           <li
                             aria-selected="false"
-                            class="select-list-option cursor-default "
+                            class="select-list-option"
                             data-testid="select-list__toggle-option-1"
                             id="downshift-90-item-1"
                             role="option"
@@ -6569,7 +6580,7 @@ exports[`CreateProfile should upload and remove avatar image 1`] = `
                           </li>
                           <li
                             aria-selected="false"
-                            class="select-list-option cursor-default "
+                            class="select-list-option"
                             data-testid="select-list__toggle-option-2"
                             id="downshift-90-item-2"
                             role="option"
@@ -6582,7 +6593,7 @@ exports[`CreateProfile should upload and remove avatar image 1`] = `
                           </li>
                           <li
                             aria-selected="false"
-                            class="select-list-option cursor-default "
+                            class="select-list-option"
                             data-testid="select-list__toggle-option-3"
                             id="downshift-90-item-3"
                             role="option"
@@ -6595,7 +6606,7 @@ exports[`CreateProfile should upload and remove avatar image 1`] = `
                           </li>
                           <li
                             aria-selected="false"
-                            class="select-list-option cursor-default "
+                            class="select-list-option"
                             data-testid="select-list__toggle-option-4"
                             id="downshift-90-item-4"
                             role="option"
@@ -6608,7 +6619,7 @@ exports[`CreateProfile should upload and remove avatar image 1`] = `
                           </li>
                           <li
                             aria-selected="false"
-                            class="select-list-option cursor-default "
+                            class="select-list-option"
                             data-testid="select-list__toggle-option-5"
                             id="downshift-90-item-5"
                             role="option"
@@ -6621,7 +6632,7 @@ exports[`CreateProfile should upload and remove avatar image 1`] = `
                           </li>
                           <li
                             aria-selected="false"
-                            class="select-list-option cursor-default "
+                            class="select-list-option"
                             data-testid="select-list__toggle-option-6"
                             id="downshift-90-item-6"
                             role="option"
@@ -6634,7 +6645,7 @@ exports[`CreateProfile should upload and remove avatar image 1`] = `
                           </li>
                           <li
                             aria-selected="false"
-                            class="select-list-option cursor-default "
+                            class="select-list-option"
                             data-testid="select-list__toggle-option-7"
                             id="downshift-90-item-7"
                             role="option"
@@ -6647,7 +6658,7 @@ exports[`CreateProfile should upload and remove avatar image 1`] = `
                           </li>
                           <li
                             aria-selected="false"
-                            class="select-list-option cursor-default "
+                            class="select-list-option"
                             data-testid="select-list__toggle-option-8"
                             id="downshift-90-item-8"
                             role="option"
@@ -6660,7 +6671,7 @@ exports[`CreateProfile should upload and remove avatar image 1`] = `
                           </li>
                           <li
                             aria-selected="false"
-                            class="select-list-option cursor-default "
+                            class="select-list-option"
                             data-testid="select-list__toggle-option-9"
                             id="downshift-90-item-9"
                             role="option"
@@ -6673,7 +6684,7 @@ exports[`CreateProfile should upload and remove avatar image 1`] = `
                           </li>
                           <li
                             aria-selected="false"
-                            class="select-list-option cursor-default "
+                            class="select-list-option"
                             data-testid="select-list__toggle-option-10"
                             id="downshift-90-item-10"
                             role="option"
@@ -6686,7 +6697,7 @@ exports[`CreateProfile should upload and remove avatar image 1`] = `
                           </li>
                           <li
                             aria-selected="false"
-                            class="select-list-option cursor-default "
+                            class="select-list-option"
                             data-testid="select-list__toggle-option-11"
                             id="downshift-90-item-11"
                             role="option"
@@ -6699,7 +6710,7 @@ exports[`CreateProfile should upload and remove avatar image 1`] = `
                           </li>
                           <li
                             aria-selected="false"
-                            class="select-list-option cursor-default "
+                            class="select-list-option"
                             data-testid="select-list__toggle-option-12"
                             id="downshift-90-item-12"
                             role="option"
@@ -6712,7 +6723,7 @@ exports[`CreateProfile should upload and remove avatar image 1`] = `
                           </li>
                           <li
                             aria-selected="false"
-                            class="select-list-option cursor-default "
+                            class="select-list-option"
                             data-testid="select-list__toggle-option-13"
                             id="downshift-90-item-13"
                             role="option"
@@ -6725,7 +6736,7 @@ exports[`CreateProfile should upload and remove avatar image 1`] = `
                           </li>
                           <li
                             aria-selected="false"
-                            class="select-list-option cursor-default "
+                            class="select-list-option"
                             data-testid="select-list__toggle-option-14"
                             id="downshift-90-item-14"
                             role="option"
@@ -6738,7 +6749,7 @@ exports[`CreateProfile should upload and remove avatar image 1`] = `
                           </li>
                           <li
                             aria-selected="false"
-                            class="select-list-option cursor-default "
+                            class="select-list-option"
                             data-testid="select-list__toggle-option-15"
                             id="downshift-90-item-15"
                             role="option"
@@ -6751,7 +6762,7 @@ exports[`CreateProfile should upload and remove avatar image 1`] = `
                           </li>
                           <li
                             aria-selected="false"
-                            class="select-list-option cursor-default "
+                            class="select-list-option"
                             data-testid="select-list__toggle-option-16"
                             id="downshift-90-item-16"
                             role="option"
@@ -6764,7 +6775,7 @@ exports[`CreateProfile should upload and remove avatar image 1`] = `
                           </li>
                           <li
                             aria-selected="false"
-                            class="select-list-option cursor-default "
+                            class="select-list-option"
                             data-testid="select-list__toggle-option-17"
                             id="downshift-90-item-17"
                             role="option"
@@ -6785,7 +6796,7 @@ exports[`CreateProfile should upload and remove avatar image 1`] = `
                 class="pb-4 mt-8"
               >
                 <ul
-                  class="sc-dlfnbm cOiGXi"
+                  class="sc-hKgILt gfmZFQ"
                   data-testid="list-divided__items"
                 >
                   <li
@@ -6846,7 +6857,7 @@ exports[`CreateProfile should upload and remove avatar image 1`] = `
                 class="flex justify-end pt-4 space-x-3"
               >
                 <button
-                  class="OriginalButton__StyledButton-sc-1y2wptt-0 hsoUax"
+                  class="OriginalButton__StyledButton-sc-1y2wptt-0 izJbbP"
                   type="button"
                 >
                   <div
@@ -6856,7 +6867,7 @@ exports[`CreateProfile should upload and remove avatar image 1`] = `
                   </div>
                 </button>
                 <button
-                  class="OriginalButton__StyledButton-sc-1y2wptt-0 cEUmKc"
+                  class="OriginalButton__StyledButton-sc-1y2wptt-0 dYkFxS"
                   data-testid="CreateProfile__submit-button"
                   type="submit"
                 >

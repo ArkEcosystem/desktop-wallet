@@ -89,7 +89,7 @@ exports[`WalletVote multi vote networks should render a vote for multiple active
       </div>
     </div>
     <button
-      class="OriginalButton__StyledButton-sc-1y2wptt-0 hsoUax space-x-2"
+      class="OriginalButton__StyledButton-sc-1y2wptt-0 izJbbP space-x-2"
       data-testid="WalletVote__button"
       type="button"
     >
@@ -187,7 +187,7 @@ exports[`WalletVote multi vote networks should render a vote for multiple active
       </div>
     </div>
     <button
-      class="OriginalButton__StyledButton-sc-1y2wptt-0 hsoUax space-x-2"
+      class="OriginalButton__StyledButton-sc-1y2wptt-0 izJbbP space-x-2"
       data-testid="WalletVote__button"
       type="button"
     >
@@ -296,7 +296,7 @@ exports[`WalletVote multi vote networks should render a vote for multiple active
       </div>
     </div>
     <button
-      class="OriginalButton__StyledButton-sc-1y2wptt-0 hsoUax space-x-2"
+      class="OriginalButton__StyledButton-sc-1y2wptt-0 izJbbP space-x-2"
       data-testid="WalletVote__button"
       type="button"
     >
@@ -365,26 +365,26 @@ exports[`WalletVote should handle delegate sync error 1`] = `
             You have not voted for a Delegate yet.
           </span>
           <a
-            class="Link__AnchorStyled-sc-1q7sbxr-0 kAtXNw pointer-events-none no-underline inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary-600 hover:text-theme-primary-700 hover:underline active:text-theme-primary-500"
+            class="Link__AnchorStyled-sc-1q7sbxr-0 bMatQy group"
             data-testid="Link"
             href="#"
             rel="noopener noreferrer"
             to="https://ark.dev/docs/desktop-wallet/user-guides/how-to-vote-unvote"
           >
             <span
-              class="group"
+              class="break-all border-b border-transparent transition-colors duration-200 border-current border-dotted group-hover:border-transparent"
             >
               <span
-                class="no-underline break-all pointer-events-auto border-b group-hover:border-0 active:border-0 border-dotted"
+                class="text-sm"
               >
-                <span
-                  class="text-sm"
-                >
-                  Learn more
-                </span>
+                Learn more
               </span>
+            </span>
+            <span
+              class="align-middle"
+            >
               <div
-                class="sc-bdfBwQ fPrsah flex-shrink-0 pointer-events-auto inline-block pl-2 text-sm"
+                class="sc-bdfBwQ fPrsah flex-shrink-0 inline-block pb-px text-sm"
                 data-testid="Link__external"
                 height="1em"
                 width="1em"
@@ -399,7 +399,7 @@ exports[`WalletVote should handle delegate sync error 1`] = `
       </div>
     </div>
     <button
-      class="OriginalButton__StyledButton-sc-1y2wptt-0 hsoUax space-x-2"
+      class="OriginalButton__StyledButton-sc-1y2wptt-0 izJbbP space-x-2"
       data-testid="WalletVote__button"
       type="button"
     >
@@ -468,26 +468,26 @@ exports[`WalletVote should handle wallet votes error 1`] = `
             You have not voted for a Delegate yet.
           </span>
           <a
-            class="Link__AnchorStyled-sc-1q7sbxr-0 kAtXNw pointer-events-none no-underline inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary-600 hover:text-theme-primary-700 hover:underline active:text-theme-primary-500"
+            class="Link__AnchorStyled-sc-1q7sbxr-0 bMatQy group"
             data-testid="Link"
             href="#"
             rel="noopener noreferrer"
             to="https://ark.dev/docs/desktop-wallet/user-guides/how-to-vote-unvote"
           >
             <span
-              class="group"
+              class="break-all border-b border-transparent transition-colors duration-200 border-current border-dotted group-hover:border-transparent"
             >
               <span
-                class="no-underline break-all pointer-events-auto border-b group-hover:border-0 active:border-0 border-dotted"
+                class="text-sm"
               >
-                <span
-                  class="text-sm"
-                >
-                  Learn more
-                </span>
+                Learn more
               </span>
+            </span>
+            <span
+              class="align-middle"
+            >
               <div
-                class="sc-bdfBwQ fPrsah flex-shrink-0 pointer-events-auto inline-block pl-2 text-sm"
+                class="sc-bdfBwQ fPrsah flex-shrink-0 inline-block pb-px text-sm"
                 data-testid="Link__external"
                 height="1em"
                 width="1em"
@@ -502,7 +502,7 @@ exports[`WalletVote should handle wallet votes error 1`] = `
       </div>
     </div>
     <button
-      class="OriginalButton__StyledButton-sc-1y2wptt-0 hsoUax space-x-2"
+      class="OriginalButton__StyledButton-sc-1y2wptt-0 izJbbP space-x-2"
       data-testid="WalletVote__button"
       type="button"
     >
@@ -604,7 +604,7 @@ exports[`WalletVote should render 1`] = `
       </div>
     </div>
     <button
-      class="OriginalButton__StyledButton-sc-1y2wptt-0 hsoUax space-x-2"
+      class="OriginalButton__StyledButton-sc-1y2wptt-0 izJbbP space-x-2"
       data-testid="WalletVote__button"
       type="button"
     >
@@ -706,7 +706,7 @@ exports[`WalletVote should render disabled vote button 1`] = `
       </div>
     </div>
     <button
-      class="OriginalButton__StyledButton-sc-1y2wptt-0 blpaPr space-x-2"
+      class="OriginalButton__StyledButton-sc-1y2wptt-0 fqRthJ space-x-2"
       data-testid="WalletVote__button"
       disabled=""
       type="button"
@@ -776,26 +776,26 @@ exports[`WalletVote should render the maximum votes 1`] = `
             You have not voted for a Delegate yet.
           </span>
           <a
-            class="Link__AnchorStyled-sc-1q7sbxr-0 kAtXNw pointer-events-none no-underline inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary-600 hover:text-theme-primary-700 hover:underline active:text-theme-primary-500"
+            class="Link__AnchorStyled-sc-1q7sbxr-0 bMatQy group"
             data-testid="Link"
             href="#"
             rel="noopener noreferrer"
             to="https://ark.dev/docs/desktop-wallet/user-guides/how-to-vote-unvote"
           >
             <span
-              class="group"
+              class="break-all border-b border-transparent transition-colors duration-200 border-current border-dotted group-hover:border-transparent"
             >
               <span
-                class="no-underline break-all pointer-events-auto border-b group-hover:border-0 active:border-0 border-dotted"
+                class="text-sm"
               >
-                <span
-                  class="text-sm"
-                >
-                  Learn more
-                </span>
+                Learn more
               </span>
+            </span>
+            <span
+              class="align-middle"
+            >
               <div
-                class="sc-bdfBwQ fPrsah flex-shrink-0 pointer-events-auto inline-block pl-2 text-sm"
+                class="sc-bdfBwQ fPrsah flex-shrink-0 inline-block pb-px text-sm"
                 data-testid="Link__external"
                 height="1em"
                 width="1em"
@@ -810,7 +810,7 @@ exports[`WalletVote should render the maximum votes 1`] = `
       </div>
     </div>
     <button
-      class="OriginalButton__StyledButton-sc-1y2wptt-0 hsoUax space-x-2"
+      class="OriginalButton__StyledButton-sc-1y2wptt-0 izJbbP space-x-2"
       data-testid="WalletVote__button"
       type="button"
     >
@@ -879,26 +879,26 @@ exports[`WalletVote should render without votes 1`] = `
             You have not voted for a Delegate yet.
           </span>
           <a
-            class="Link__AnchorStyled-sc-1q7sbxr-0 kAtXNw pointer-events-none no-underline inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary-600 hover:text-theme-primary-700 hover:underline active:text-theme-primary-500"
+            class="Link__AnchorStyled-sc-1q7sbxr-0 bMatQy group"
             data-testid="Link"
             href="#"
             rel="noopener noreferrer"
             to="https://ark.dev/docs/desktop-wallet/user-guides/how-to-vote-unvote"
           >
             <span
-              class="group"
+              class="break-all border-b border-transparent transition-colors duration-200 border-current border-dotted group-hover:border-transparent"
             >
               <span
-                class="no-underline break-all pointer-events-auto border-b group-hover:border-0 active:border-0 border-dotted"
+                class="text-sm"
               >
-                <span
-                  class="text-sm"
-                >
-                  Learn more
-                </span>
+                Learn more
               </span>
+            </span>
+            <span
+              class="align-middle"
+            >
               <div
-                class="sc-bdfBwQ fPrsah flex-shrink-0 pointer-events-auto inline-block pl-2 text-sm"
+                class="sc-bdfBwQ fPrsah flex-shrink-0 inline-block pb-px text-sm"
                 data-testid="Link__external"
                 height="1em"
                 width="1em"
@@ -913,7 +913,7 @@ exports[`WalletVote should render without votes 1`] = `
       </div>
     </div>
     <button
-      class="OriginalButton__StyledButton-sc-1y2wptt-0 hsoUax space-x-2"
+      class="OriginalButton__StyledButton-sc-1y2wptt-0 izJbbP space-x-2"
       data-testid="WalletVote__button"
       type="button"
     >
@@ -1015,7 +1015,7 @@ exports[`WalletVote single vote networks should render a vote for a delegate wit
       </div>
     </div>
     <button
-      class="OriginalButton__StyledButton-sc-1y2wptt-0 hsoUax space-x-2"
+      class="OriginalButton__StyledButton-sc-1y2wptt-0 izJbbP space-x-2"
       data-testid="WalletVote__button"
       type="button"
     >
@@ -1117,7 +1117,7 @@ exports[`WalletVote single vote networks should render a vote for a standby dele
       </div>
     </div>
     <button
-      class="OriginalButton__StyledButton-sc-1y2wptt-0 hsoUax space-x-2"
+      class="OriginalButton__StyledButton-sc-1y2wptt-0 izJbbP space-x-2"
       data-testid="WalletVote__button"
       type="button"
     >
@@ -1208,7 +1208,7 @@ exports[`WalletVote single vote networks should render a vote for an active dele
       </div>
     </div>
     <button
-      class="OriginalButton__StyledButton-sc-1y2wptt-0 hsoUax space-x-2"
+      class="OriginalButton__StyledButton-sc-1y2wptt-0 izJbbP space-x-2"
       data-testid="WalletVote__button"
       type="button"
     >
