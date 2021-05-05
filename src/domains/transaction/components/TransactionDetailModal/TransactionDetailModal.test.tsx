@@ -325,7 +325,7 @@ describe("TransactionDetailModal", () => {
 					transactionItem={{
 						...TransactionFixture,
 						isTransfer: () => false,
-						isBusinessEntityRegistration: () => true,
+						isMagistrate: () => true,
 						blockId: () => "as32d1as65d1as3d1as32d1asd51as3d21as3d2as165das",
 						type: () => "entityRegistration",
 					}}
@@ -338,9 +338,6 @@ describe("TransactionDetailModal", () => {
 			},
 		);
 
-		expect(getByTestId("modal__inner")).toHaveTextContent(
-			translations.TRANSACTION_TYPES.BUSINESS_ENTITY_REGISTRATION,
-		);
 		expect(asFragment()).toMatchSnapshot();
 	});
 
@@ -352,9 +349,9 @@ describe("TransactionDetailModal", () => {
 					transactionItem={{
 						...TransactionFixture,
 						isTransfer: () => false,
-						isLegacyBusinessRegistration: () => true,
+						isMagistrate: () => true,
 						blockId: () => "as32d1as65d1as3d1as32d1asd51as3d21as3d2as165das",
-						type: () => "legacyBusinessRegistration",
+						type: () => "magistrate",
 					}}
 				/>
 				,
@@ -365,9 +362,6 @@ describe("TransactionDetailModal", () => {
 			},
 		);
 
-		expect(getByTestId("modal__inner")).toHaveTextContent(
-			translations.TRANSACTION_TYPES.LEGACY_BUSINESS_REGISTRATION,
-		);
 		expect(asFragment()).toMatchSnapshot();
 	});
 
