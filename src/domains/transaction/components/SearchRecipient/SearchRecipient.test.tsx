@@ -11,7 +11,7 @@ let profile: Contracts.IProfile;
 describe("SearchRecipient", () => {
 	beforeAll(async () => {
 		profile = env.profiles().findById(getDefaultProfileId());
-		await profile.restore();
+		await env.profiles().restore(profile);
 		await profile.sync();
 	});
 

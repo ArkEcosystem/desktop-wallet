@@ -54,10 +54,10 @@ describe("SelectNetwork", () => {
 		const input = getByTestId("SelectNetworkInput__input");
 
 		act(() => {
-			fireEvent.change(input, { target: { value: "Bitco" } });
+			fireEvent.change(input, { target: { value: "ar" } });
 		});
 
-		expect(getByTestId("Input__suggestion")).toHaveTextContent("Bitcoin");
+		expect(getByTestId("Input__suggestion")).toHaveTextContent("arK");
 	});
 
 	it("should show call onInputChange callback when input value changed", () => {
@@ -69,10 +69,10 @@ describe("SelectNetwork", () => {
 		const input = getByTestId("SelectNetworkInput__input");
 
 		act(() => {
-			fireEvent.change(input, { target: { value: "Bitco" } });
+			fireEvent.change(input, { target: { value: "ark" } });
 		});
 
-		expect(onInputChange).toHaveBeenCalledWith("Bitco", "Bitcoin");
+		expect(onInputChange).toHaveBeenCalledWith("ark", "ark");
 
 		act(() => {
 			fireEvent.change(input, { target: { value: "no-match" } });
@@ -91,28 +91,28 @@ describe("SelectNetwork", () => {
 		const { getByTestId } = render(<SelectNetwork networks={availableNetworksMock} />);
 		const input = getByTestId("SelectNetworkInput__input");
 		act(() => {
-			fireEvent.change(input, { target: { value: "Bitco" } });
+			fireEvent.change(input, { target: { value: "ark" } });
 		});
 
 		act(() => {
 			fireEvent.keyDown(input, { key: "Enter", code: 13 });
 		});
 
-		expect(getByTestId("SelectNetworkInput__network")).toHaveAttribute("aria-label", "Bitcoin");
+		expect(getByTestId("SelectNetworkInput__network")).toHaveAttribute("aria-label", "ARK");
 	});
 
 	it("should select first matching asset with tab", () => {
 		const { getByTestId } = render(<SelectNetwork networks={availableNetworksMock} />);
 		const input = getByTestId("SelectNetworkInput__input");
 		act(() => {
-			fireEvent.change(input, { target: { value: "Bitcoi" } });
+			fireEvent.change(input, { target: { value: "ark" } });
 		});
 
 		act(() => {
 			fireEvent.keyDown(input, { key: "Tab", code: 9 });
 		});
 
-		expect(getByTestId("SelectNetworkInput__network")).toHaveAttribute("aria-label", "Bitcoin");
+		expect(getByTestId("SelectNetworkInput__network")).toHaveAttribute("aria-label", "ARK");
 	});
 
 	it("should not select non-matching asset after key input and tab", () => {
@@ -149,14 +149,14 @@ describe("SelectNetwork", () => {
 		const input = getByTestId("SelectNetworkInput__input");
 
 		act(() => {
-			fireEvent.change(input, { target: { value: "Bitcoin" } });
+			fireEvent.change(input, { target: { value: "ark" } });
 		});
 
 		act(() => {
 			fireEvent.keyDown(input, { key: "Enter", code: 13 });
 		});
 
-		expect(getByTestId("SelectNetworkInput__network")).toHaveAttribute("aria-label", "Bitcoin");
+		expect(getByTestId("SelectNetworkInput__network")).toHaveAttribute("aria-label", "ARK");
 
 		act(() => {
 			fireEvent.change(input, { target: { value: "test" } });

@@ -55,7 +55,7 @@ export class ProfileMiddleware implements Middleware {
 				}
 
 				const idleThreshold =
-					(profile.settings().get(Contracts.ProfileSetting.AutomaticSignOutPeriod) as number) * 60;
+					(profile.settings().get(Contracts.ProfileSetting.AutomaticSignOutPeriod, 1) as number) * 60;
 
 				if (this.state.intervalId === undefined || this.state.threshold !== idleThreshold) {
 					this.setActivityState(

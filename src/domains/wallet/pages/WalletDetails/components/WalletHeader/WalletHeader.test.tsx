@@ -24,7 +24,9 @@ describe("WalletHeader", () => {
 		profile = env.profiles().findById(getDefaultProfileId());
 		wallet = profile.wallets().first();
 
-		await wallet.syncVotes();
+		await wallet.synchroniser().votes();
+		await wallet.synchroniser().identity();
+		await wallet.synchroniser().coin();
 
 		walletUrl = `/profiles/${profile.id()}/wallets/${wallet.id()}`;
 

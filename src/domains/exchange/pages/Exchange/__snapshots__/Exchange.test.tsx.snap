@@ -50,10 +50,13 @@ exports[`Exchange should not render filler exchange cards 1`] = `
                 class="flex"
               >
                 <a
-                  class="flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text"
+                  class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
                   href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
                   title="Portfolio"
                 >
+                  <div
+                    class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2"
+                  />
                   Portfolio
                 </a>
               </li>
@@ -61,10 +64,13 @@ exports[`Exchange should not render filler exchange cards 1`] = `
                 class="flex"
               >
                 <a
-                  class="flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text"
+                  class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
                   href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/plugins"
                   title="Plugins"
                 >
+                  <div
+                    class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2"
+                  />
                   Plugins
                 </a>
               </li>
@@ -73,10 +79,13 @@ exports[`Exchange should not render filler exchange cards 1`] = `
               >
                 <a
                   aria-current="page"
-                  class="flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text active"
+                  class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group active"
                   href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/exchange"
                   title="Exchange"
                 >
+                  <div
+                    class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2"
+                  />
                   Exchange
                 </a>
               </li>
@@ -84,10 +93,13 @@ exports[`Exchange should not render filler exchange cards 1`] = `
                 class="flex"
               >
                 <a
-                  class="flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text"
+                  class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
                   href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/news"
                   title="News"
                 >
+                  <div
+                    class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2"
+                  />
                   News
                 </a>
               </li>
@@ -106,7 +118,7 @@ exports[`Exchange should not render filler exchange cards 1`] = `
                       class="NavigationBar__NavigationButtonWrapper-sc-1qsoskw-1 eUPnft group"
                     >
                       <button
-                        class="OriginalButton__StyledButton-sc-1y2wptt-0 lpqSIM"
+                        class="OriginalButton__StyledButton-sc-1y2wptt-0 fNHPRi"
                         data-testid="navbar__buttons--notifications"
                         type="button"
                       >
@@ -145,7 +157,7 @@ exports[`Exchange should not render filler exchange cards 1`] = `
                   class="NavigationBar__NavigationButtonWrapper-sc-1qsoskw-1 eUPnft"
                 >
                   <button
-                    class="OriginalButton__StyledButton-sc-1y2wptt-0 lpqSIM"
+                    class="OriginalButton__StyledButton-sc-1y2wptt-0 fNHPRi"
                     data-testid="navbar__buttons--send"
                     type="button"
                   >
@@ -175,7 +187,7 @@ exports[`Exchange should not render filler exchange cards 1`] = `
                   class="NavigationBar__NavigationButtonWrapper-sc-1qsoskw-1 eUPnft"
                 >
                   <button
-                    class="OriginalButton__StyledButton-sc-1y2wptt-0 lpqSIM"
+                    class="OriginalButton__StyledButton-sc-1y2wptt-0 fNHPRi"
                     data-testid="navbar__buttons--receive"
                     type="button"
                   >
@@ -309,7 +321,7 @@ exports[`Exchange should not render filler exchange cards 1`] = `
                   class="flex justify-end items-top"
                 >
                   <button
-                    class="OriginalButton__StyledButton-sc-1y2wptt-0 cEUmKc whitespace-nowrap"
+                    class="OriginalButton__StyledButton-sc-1y2wptt-0 dYkFxS whitespace-nowrap"
                     data-testid="Exchange__add-exchange-button"
                     type="button"
                   >
@@ -609,10 +621,13 @@ exports[`Exchange should open & close add exchange modal 1`] = `
                 class="flex"
               >
                 <a
-                  class="flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text"
+                  class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
                   href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
                   title="Portfolio"
                 >
+                  <div
+                    class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2"
+                  />
                   Portfolio
                 </a>
               </li>
@@ -620,10 +635,13 @@ exports[`Exchange should open & close add exchange modal 1`] = `
                 class="flex"
               >
                 <a
-                  class="flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text"
+                  class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
                   href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/plugins"
                   title="Plugins"
                 >
+                  <div
+                    class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2"
+                  />
                   Plugins
                 </a>
               </li>
@@ -632,10 +650,13 @@ exports[`Exchange should open & close add exchange modal 1`] = `
               >
                 <a
                   aria-current="page"
-                  class="flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text active"
+                  class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group active"
                   href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/exchange"
                   title="Exchange"
                 >
+                  <div
+                    class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2"
+                  />
                   Exchange
                 </a>
               </li>
@@ -643,10 +664,13 @@ exports[`Exchange should open & close add exchange modal 1`] = `
                 class="flex"
               >
                 <a
-                  class="flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text"
+                  class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
                   href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/news"
                   title="News"
                 >
+                  <div
+                    class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2"
+                  />
                   News
                 </a>
               </li>
@@ -665,7 +689,7 @@ exports[`Exchange should open & close add exchange modal 1`] = `
                       class="NavigationBar__NavigationButtonWrapper-sc-1qsoskw-1 eUPnft group"
                     >
                       <button
-                        class="OriginalButton__StyledButton-sc-1y2wptt-0 lpqSIM"
+                        class="OriginalButton__StyledButton-sc-1y2wptt-0 fNHPRi"
                         data-testid="navbar__buttons--notifications"
                         type="button"
                       >
@@ -704,7 +728,7 @@ exports[`Exchange should open & close add exchange modal 1`] = `
                   class="NavigationBar__NavigationButtonWrapper-sc-1qsoskw-1 eUPnft"
                 >
                   <button
-                    class="OriginalButton__StyledButton-sc-1y2wptt-0 lpqSIM"
+                    class="OriginalButton__StyledButton-sc-1y2wptt-0 fNHPRi"
                     data-testid="navbar__buttons--send"
                     type="button"
                   >
@@ -734,7 +758,7 @@ exports[`Exchange should open & close add exchange modal 1`] = `
                   class="NavigationBar__NavigationButtonWrapper-sc-1qsoskw-1 eUPnft"
                 >
                   <button
-                    class="OriginalButton__StyledButton-sc-1y2wptt-0 lpqSIM"
+                    class="OriginalButton__StyledButton-sc-1y2wptt-0 fNHPRi"
                     data-testid="navbar__buttons--receive"
                     type="button"
                   >
@@ -868,7 +892,7 @@ exports[`Exchange should open & close add exchange modal 1`] = `
                   class="flex justify-end items-top"
                 >
                   <button
-                    class="OriginalButton__StyledButton-sc-1y2wptt-0 cEUmKc whitespace-nowrap"
+                    class="OriginalButton__StyledButton-sc-1y2wptt-0 dYkFxS whitespace-nowrap"
                     data-testid="Exchange__add-exchange-button"
                     type="button"
                   >
@@ -1039,10 +1063,13 @@ exports[`Exchange should render 1`] = `
                 class="flex"
               >
                 <a
-                  class="flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text"
+                  class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
                   href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
                   title="Portfolio"
                 >
+                  <div
+                    class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2"
+                  />
                   Portfolio
                 </a>
               </li>
@@ -1050,10 +1077,13 @@ exports[`Exchange should render 1`] = `
                 class="flex"
               >
                 <a
-                  class="flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text"
+                  class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
                   href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/plugins"
                   title="Plugins"
                 >
+                  <div
+                    class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2"
+                  />
                   Plugins
                 </a>
               </li>
@@ -1062,10 +1092,13 @@ exports[`Exchange should render 1`] = `
               >
                 <a
                   aria-current="page"
-                  class="flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text active"
+                  class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group active"
                   href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/exchange"
                   title="Exchange"
                 >
+                  <div
+                    class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2"
+                  />
                   Exchange
                 </a>
               </li>
@@ -1073,10 +1106,13 @@ exports[`Exchange should render 1`] = `
                 class="flex"
               >
                 <a
-                  class="flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text"
+                  class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
                   href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/news"
                   title="News"
                 >
+                  <div
+                    class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2"
+                  />
                   News
                 </a>
               </li>
@@ -1095,7 +1131,7 @@ exports[`Exchange should render 1`] = `
                       class="NavigationBar__NavigationButtonWrapper-sc-1qsoskw-1 eUPnft group"
                     >
                       <button
-                        class="OriginalButton__StyledButton-sc-1y2wptt-0 lpqSIM"
+                        class="OriginalButton__StyledButton-sc-1y2wptt-0 fNHPRi"
                         data-testid="navbar__buttons--notifications"
                         type="button"
                       >
@@ -1134,7 +1170,7 @@ exports[`Exchange should render 1`] = `
                   class="NavigationBar__NavigationButtonWrapper-sc-1qsoskw-1 eUPnft"
                 >
                   <button
-                    class="OriginalButton__StyledButton-sc-1y2wptt-0 lpqSIM"
+                    class="OriginalButton__StyledButton-sc-1y2wptt-0 fNHPRi"
                     data-testid="navbar__buttons--send"
                     type="button"
                   >
@@ -1164,7 +1200,7 @@ exports[`Exchange should render 1`] = `
                   class="NavigationBar__NavigationButtonWrapper-sc-1qsoskw-1 eUPnft"
                 >
                   <button
-                    class="OriginalButton__StyledButton-sc-1y2wptt-0 lpqSIM"
+                    class="OriginalButton__StyledButton-sc-1y2wptt-0 fNHPRi"
                     data-testid="navbar__buttons--receive"
                     type="button"
                   >
@@ -1298,7 +1334,7 @@ exports[`Exchange should render 1`] = `
                   class="flex justify-end items-top"
                 >
                   <button
-                    class="OriginalButton__StyledButton-sc-1y2wptt-0 cEUmKc whitespace-nowrap"
+                    class="OriginalButton__StyledButton-sc-1y2wptt-0 dYkFxS whitespace-nowrap"
                     data-testid="Exchange__add-exchange-button"
                     type="button"
                   >
@@ -1469,10 +1505,13 @@ exports[`Exchange should render filler exchange cards 1`] = `
                 class="flex"
               >
                 <a
-                  class="flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text"
+                  class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
                   href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
                   title="Portfolio"
                 >
+                  <div
+                    class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2"
+                  />
                   Portfolio
                 </a>
               </li>
@@ -1480,10 +1519,13 @@ exports[`Exchange should render filler exchange cards 1`] = `
                 class="flex"
               >
                 <a
-                  class="flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text"
+                  class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
                   href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/plugins"
                   title="Plugins"
                 >
+                  <div
+                    class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2"
+                  />
                   Plugins
                 </a>
               </li>
@@ -1492,10 +1534,13 @@ exports[`Exchange should render filler exchange cards 1`] = `
               >
                 <a
                   aria-current="page"
-                  class="flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text active"
+                  class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group active"
                   href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/exchange"
                   title="Exchange"
                 >
+                  <div
+                    class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2"
+                  />
                   Exchange
                 </a>
               </li>
@@ -1503,10 +1548,13 @@ exports[`Exchange should render filler exchange cards 1`] = `
                 class="flex"
               >
                 <a
-                  class="flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text"
+                  class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
                   href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/news"
                   title="News"
                 >
+                  <div
+                    class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2"
+                  />
                   News
                 </a>
               </li>
@@ -1525,7 +1573,7 @@ exports[`Exchange should render filler exchange cards 1`] = `
                       class="NavigationBar__NavigationButtonWrapper-sc-1qsoskw-1 eUPnft group"
                     >
                       <button
-                        class="OriginalButton__StyledButton-sc-1y2wptt-0 lpqSIM"
+                        class="OriginalButton__StyledButton-sc-1y2wptt-0 fNHPRi"
                         data-testid="navbar__buttons--notifications"
                         type="button"
                       >
@@ -1564,7 +1612,7 @@ exports[`Exchange should render filler exchange cards 1`] = `
                   class="NavigationBar__NavigationButtonWrapper-sc-1qsoskw-1 eUPnft"
                 >
                   <button
-                    class="OriginalButton__StyledButton-sc-1y2wptt-0 lpqSIM"
+                    class="OriginalButton__StyledButton-sc-1y2wptt-0 fNHPRi"
                     data-testid="navbar__buttons--send"
                     type="button"
                   >
@@ -1594,7 +1642,7 @@ exports[`Exchange should render filler exchange cards 1`] = `
                   class="NavigationBar__NavigationButtonWrapper-sc-1qsoskw-1 eUPnft"
                 >
                   <button
-                    class="OriginalButton__StyledButton-sc-1y2wptt-0 lpqSIM"
+                    class="OriginalButton__StyledButton-sc-1y2wptt-0 fNHPRi"
                     data-testid="navbar__buttons--receive"
                     type="button"
                   >
@@ -1728,7 +1776,7 @@ exports[`Exchange should render filler exchange cards 1`] = `
                   class="flex justify-end items-top"
                 >
                   <button
-                    class="OriginalButton__StyledButton-sc-1y2wptt-0 cEUmKc whitespace-nowrap"
+                    class="OriginalButton__StyledButton-sc-1y2wptt-0 dYkFxS whitespace-nowrap"
                     data-testid="Exchange__add-exchange-button"
                     type="button"
                   >
@@ -1899,10 +1947,13 @@ exports[`Exchange should render with exchanges 1`] = `
                 class="flex"
               >
                 <a
-                  class="flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text"
+                  class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
                   href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
                   title="Portfolio"
                 >
+                  <div
+                    class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2"
+                  />
                   Portfolio
                 </a>
               </li>
@@ -1910,10 +1961,13 @@ exports[`Exchange should render with exchanges 1`] = `
                 class="flex"
               >
                 <a
-                  class="flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text"
+                  class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
                   href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/plugins"
                   title="Plugins"
                 >
+                  <div
+                    class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2"
+                  />
                   Plugins
                 </a>
               </li>
@@ -1922,10 +1976,13 @@ exports[`Exchange should render with exchanges 1`] = `
               >
                 <a
                   aria-current="page"
-                  class="flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text active"
+                  class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group active"
                   href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/exchange"
                   title="Exchange"
                 >
+                  <div
+                    class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2"
+                  />
                   Exchange
                 </a>
               </li>
@@ -1933,10 +1990,13 @@ exports[`Exchange should render with exchanges 1`] = `
                 class="flex"
               >
                 <a
-                  class="flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text"
+                  class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
                   href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/news"
                   title="News"
                 >
+                  <div
+                    class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2"
+                  />
                   News
                 </a>
               </li>
@@ -1955,7 +2015,7 @@ exports[`Exchange should render with exchanges 1`] = `
                       class="NavigationBar__NavigationButtonWrapper-sc-1qsoskw-1 eUPnft group"
                     >
                       <button
-                        class="OriginalButton__StyledButton-sc-1y2wptt-0 lpqSIM"
+                        class="OriginalButton__StyledButton-sc-1y2wptt-0 fNHPRi"
                         data-testid="navbar__buttons--notifications"
                         type="button"
                       >
@@ -1994,7 +2054,7 @@ exports[`Exchange should render with exchanges 1`] = `
                   class="NavigationBar__NavigationButtonWrapper-sc-1qsoskw-1 eUPnft"
                 >
                   <button
-                    class="OriginalButton__StyledButton-sc-1y2wptt-0 lpqSIM"
+                    class="OriginalButton__StyledButton-sc-1y2wptt-0 fNHPRi"
                     data-testid="navbar__buttons--send"
                     type="button"
                   >
@@ -2024,7 +2084,7 @@ exports[`Exchange should render with exchanges 1`] = `
                   class="NavigationBar__NavigationButtonWrapper-sc-1qsoskw-1 eUPnft"
                 >
                   <button
-                    class="OriginalButton__StyledButton-sc-1y2wptt-0 lpqSIM"
+                    class="OriginalButton__StyledButton-sc-1y2wptt-0 fNHPRi"
                     data-testid="navbar__buttons--receive"
                     type="button"
                   >
@@ -2158,7 +2218,7 @@ exports[`Exchange should render with exchanges 1`] = `
                   class="flex justify-end items-top"
                 >
                   <button
-                    class="OriginalButton__StyledButton-sc-1y2wptt-0 cEUmKc whitespace-nowrap"
+                    class="OriginalButton__StyledButton-sc-1y2wptt-0 dYkFxS whitespace-nowrap"
                     data-testid="Exchange__add-exchange-button"
                     type="button"
                   >

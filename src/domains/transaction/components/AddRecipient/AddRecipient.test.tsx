@@ -162,7 +162,15 @@ describe("AddRecipient", () => {
 
 	it("should show zero amount if wallet has zero or insufficient balance", async () => {
 		const emptyProfile = env.profiles().create("Empty");
-		emptyProfile.wallets().importByMnemonic("test test", "ARK", "ark.devnet");
+
+		emptyProfile.wallets().push(
+			await emptyProfile.walletFactory().fromMnemonic({
+				mnemonic: "test test",
+				coin: "ARK",
+				network: "ark.devnet",
+			}),
+		);
+
 		const { getByTestId, container, form } = await renderWithFormProvider(
 			<AddRecipient profile={emptyProfile} assetSymbol="ARK" />,
 		);

@@ -34,11 +34,6 @@ export const Settings = () => {
 			icon: "Peer",
 		},
 		{
-			itemKey: "Plugins",
-			label: t("SETTINGS.PLUGINS.MENU_ITEM"),
-			icon: "Plugin",
-		},
-		{
 			itemKey: "Password",
 			label: t("SETTINGS.PASSWORD.MENU_ITEM"),
 			icon: "Lock",

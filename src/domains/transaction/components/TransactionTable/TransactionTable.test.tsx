@@ -30,7 +30,9 @@ describe("TransactionTable", () => {
 	beforeEach(async () => {
 		profile = env.profiles().findById(getDefaultProfileId());
 		wallet = profile.wallets().findById(getDefaultWalletId());
-		transactions = (await wallet.transactions()).items();
+
+		const allTransactions = await wallet.transactionIndex().all();
+		transactions = allTransactions.items();
 	});
 
 	it("should render", () => {

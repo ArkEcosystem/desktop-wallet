@@ -49,7 +49,8 @@ jest.mock("fs", () => ({
 describe("Settings", () => {
 	beforeAll(async () => {
 		profile = env.profiles().findById(getDefaultProfileId());
-		await profile.restore();
+		await env.profiles().restore(profile);
+		await profile.sync();
 	});
 
 	it("should render with prompt paths", async () => {
@@ -611,7 +612,13 @@ describe("Settings", () => {
 
 	it("should render peer settings", async () => {
 		// Import a wallet after the profile reset test
-		await profile.wallets().importByAddress("D6Z26L69gdk9qYmTv5uzk3uGepigtHY4ax", "ARK", "ark.devnet");
+		const wallet = await profile.walletFactory().fromAddress({
+			address: "D6Z26L69gdk9qYmTv5uzk3uGepigtHY4ax",
+			coin: "ARK",
+			network: "ark.devnet",
+		});
+
+		profile.wallets().push(wallet);
 
 		const { container, asFragment, findByTestId } = renderWithRouter(
 			<Route path="/profiles/:profileId/settings">
@@ -946,44 +953,6 @@ describe("Settings", () => {
 		});
 
 		expect(toastSpy).toHaveBeenCalledWith(translations.SETTINGS.PEERS.SUCCESS);
-	});
-
-	it("should render plugin settings", async () => {
-		const { container, asFragment, findByTestId } = renderWithRouter(
-			<Route path="/profiles/:profileId/settings">
-				<Settings />
-			</Route>,
-			{
-				routes: [`/profiles/${profile.id()}/settings`],
-			},
-		);
-
-		expect(container).toBeTruthy();
-
-		fireEvent.click(await findByTestId("side-menu__item--Plugins"));
-
-		expect(asFragment()).toMatchSnapshot();
-	});
-
-	it("should submit plugin settings form", async () => {
-		const toastSpy = jest.spyOn(toasts, "success");
-
-		const { findByTestId, getByTestId } = renderWithRouter(
-			<Route path="/profiles/:profileId/settings">
-				<Settings />
-			</Route>,
-			{
-				routes: [`/profiles/${profile.id()}/settings`],
-			},
-		);
-
-		fireEvent.click(await findByTestId("side-menu__item--Plugins"));
-
-		await act(async () => {
-			fireEvent.click(getByTestId("Plugins-settings__submit-button"));
-		});
-
-		expect(toastSpy).toHaveBeenCalledWith(translations.SETTINGS.PLUGINS.SUCCESS);
 	});
 
 	it("should render password settings", async () => {

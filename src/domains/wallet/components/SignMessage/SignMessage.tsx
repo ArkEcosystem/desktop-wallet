@@ -101,7 +101,7 @@ export const SignMessage = ({
 		}
 
 		try {
-			const wif = wallet?.usesWIF() ? await wallet.wif(encryptionPassword) : undefined;
+			const wif = wallet?.wif().exists() ? await wallet.wif().get(encryptionPassword) : undefined;
 
 			const signedMessageResult = await sign(wallet, message, mnemonic, wif, {
 				abortSignal,

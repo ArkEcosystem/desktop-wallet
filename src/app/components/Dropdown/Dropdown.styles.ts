@@ -2,7 +2,7 @@ import tw from "twin.macro";
 
 import { DropdownVariantType } from "./Dropdown";
 
-export const defaultClasses = "mt-3 py-3 absolute z-10 bg-theme-background rounded-lg shadow-xl";
+export const defaultClasses = "mt-3 py-3 absolute z-10 bg-theme-background rounded-xl shadow-xl";
 
 const getVariant = (variant: DropdownVariantType): any => {
 	if (variant === "options" || variant === "votesFilter") {

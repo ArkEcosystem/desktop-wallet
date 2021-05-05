@@ -12,8 +12,15 @@ let networkTestnet: Coins.Network & { extra?: CoinNetworkExtended };
 describe("NetworkIcon", () => {
 	beforeAll(async () => {
 		const profile = env.profiles().findById(getDefaultProfileId());
+		await env.profiles().restore(profile);
+		await profile.sync();
 
-		const wallet1 = await profile.wallets().importByMnemonic("test", "ARK", "ark.mainnet");
+		const wallet1 = await profile.walletFactory().fromMnemonic({
+			mnemonic: "test",
+			coin: "ARK",
+			network: "ark.mainnet",
+		});
+
 		network = wallet1.network();
 
 		network.extra = getNetworkExtendedData({ coin: network.coin(), network: network.id() });
