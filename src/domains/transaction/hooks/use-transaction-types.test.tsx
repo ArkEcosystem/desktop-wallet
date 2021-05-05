@@ -11,7 +11,7 @@ describe("useTransactionTypes", () => {
 
 	it("should have core  types", () => {
 		const { result } = renderHook(() => useTransactionTypes());
-		expect(Object.keys(result.current.types)).toEqual(["core"]);
+		expect(Object.keys(result.current.types)).toEqual(["core", "magistrate"]);
 	});
 
 	it("should get query params by transaction type", () => {
@@ -25,9 +25,6 @@ describe("useTransactionTypes", () => {
 		expect(result.current.types.core).toEqual([
 			"delegate-registration",
 			"delegate-resignation",
-			"entity-registration",
-			"entity-resignation",
-			"entity-update",
 			"htlc-claim",
 			"htlc-lock",
 			"htlc-refund",

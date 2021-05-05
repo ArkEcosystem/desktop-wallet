@@ -214,6 +214,7 @@ export const useTransactionTypes = ({ wallets = [] }: TransactionTypeProps = {})
 		hasMagistrationTypesEnabled,
 		types: {
 			core: availableTypes,
+			magistrate: Object.keys(magistrate),
 		},
 		getQueryParamsByType,
 	};
