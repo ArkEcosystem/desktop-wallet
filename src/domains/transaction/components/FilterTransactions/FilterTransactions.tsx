@@ -2,7 +2,7 @@ import { Contracts } from "@arkecosystem/platform-sdk-profiles";
 import { CollapseToggleButton } from "app/components/Collapse";
 import { Dropdown, DropdownOption, DropdownOptionGroup } from "app/components/Dropdown";
 import { useTransactionTypes } from "domains/transaction/hooks/use-transaction-types";
-import React, { memo, useState } from "react";
+import React, { memo, useMemo, useState } from "react";
 import { useTranslation } from "react-i18next";
 
 type FilterTransactionsProps = {
@@ -16,20 +16,37 @@ type FilterTransactionsProps = {
 export const FilterTransactions = memo(
 	({ className, onSelect, defaultSelected, wallets, isDisabled }: FilterTransactionsProps) => {
 		const { t } = useTranslation();
-		const { types, getLabel, getQueryParamsByType } = useTransactionTypes({ wallets });
+		const { types, getLabel, getQueryParamsByType, hasMagistrationTypesEnabled } = useTransactionTypes({ wallets });
 
-		const allOptions: DropdownOptionGroup[] = [
-			{
-				key: "all",
-				options: [{ label: t("COMMON.ALL"), value: "all" }],
-			},
-			{
-				key: "core",
-				title: t("TRANSACTION.CORE"),
-				hasDivider: true,
-				options: types.core.map((type) => ({ label: getLabel(type), value: type })),
-			},
-		];
+		const allOptions: DropdownOptionGroup[] = useMemo(() => {
+			const options: DropdownOptionGroup[] = [
+				{
+					key: "all",
+					options: [{ label: t("COMMON.ALL"), value: "all" }],
+				},
+				{
+					key: "core",
+					title: t("TRANSACTION.CORE"),
+					hasDivider: true,
+					options: types.core.map((type) => ({ label: getLabel(type), value: type })),
+				},
+			];
+
+			if (hasMagistrationTypesEnabled) {
+				options.push({
+					key: "magistrate",
+					hasDivider: true,
+					options: [
+						{
+							label: t("TRANSACTION.MAGISTRATE"),
+							value: "magistrate",
+						},
+					],
+				});
+			}
+
+			return options;
+		}, [getLabel, types, t, hasMagistrationTypesEnabled]);
 
 		const [selectedOption, setSelectedOption] = useState<DropdownOption>(
 			defaultSelected || allOptions[0].options[0],
