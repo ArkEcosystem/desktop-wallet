@@ -156,10 +156,10 @@ describe("Transactions", () => {
 			fireEvent.click(getByRole("button", { name: /Type/ }));
 		});
 
-		await waitFor(() => expect(getByTestId("dropdown__option--core-16")).toBeInTheDocument());
+		await waitFor(() => expect(getByTestId("dropdown__option--core-0")).toBeInTheDocument());
 
 		act(() => {
-			fireEvent.click(getByTestId("dropdown__option--core-16"));
+			fireEvent.click(getByTestId("dropdown__option--core-0"));
 		});
 
 		await waitFor(() => expect(within(getByTestId("TransactionTable")).getAllByTestId("TableRow")).toHaveLength(4));
