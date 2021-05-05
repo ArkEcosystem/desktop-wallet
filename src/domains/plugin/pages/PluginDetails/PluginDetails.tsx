@@ -11,7 +11,7 @@ import { useTranslation } from "react-i18next";
 import { useHistory } from "react-router-dom";
 
 export const PluginDetails = () => {
-	const { t } = useTranslation()
+	const { t } = useTranslation();
 	const activeProfile = useActiveProfile();
 	const queryParams = useQueryParams();
 	const history = useHistory();
@@ -88,9 +88,9 @@ export const PluginDetails = () => {
 			pluginCtrl?.enable(activeProfile, { autoRun: true });
 			trigger();
 		} catch (e) {
-			toasts.error(t('PLUGINS.ENABLE_FAILURE', { name: pluginData.title, msg: e.message }))
+			toasts.error(t("PLUGINS.ENABLE_FAILURE", { name: pluginData.title, msg: e.message }));
 		}
-	}
+	};
 
 	useEffect(() => {
 		if (isInstalled) {

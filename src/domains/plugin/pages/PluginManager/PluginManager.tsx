@@ -242,7 +242,7 @@ export const PluginManager = () => {
 			pluginManager.plugins().findById(pluginData.id)?.enable(activeProfile, { autoRun: true });
 			persist();
 		} catch (e) {
-			toasts.error(t('PLUGINS.ENABLE_FAILURE', { name: pluginData.title, msg: e.message }))
+			toasts.error(t("PLUGINS.ENABLE_FAILURE", { name: pluginData.title, msg: e.message }));
 		}
 	};
 
@@ -296,9 +296,7 @@ export const PluginManager = () => {
 	}, [currentView, installedPlugins, plugins, filteredPackages, searchResultsData]);
 
 	const onUpdateAll = () => {
-		const notSatisfiedPlugins = plugins.filter(
-			(item) => item.hasUpdateAvailable && !item.isCompatible,
-		);
+		const notSatisfiedPlugins = plugins.filter((item) => item.hasUpdateAvailable && !item.isCompatible);
 
 		setUpdatesConfirmationPlugins(notSatisfiedPlugins);
 	};
