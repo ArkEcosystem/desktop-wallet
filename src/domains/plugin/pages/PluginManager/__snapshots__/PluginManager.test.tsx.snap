@@ -50,10 +50,13 @@ exports[`PluginManager should cancel install plugin 1`] = `
                 class="flex"
               >
                 <a
-                  class="flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text"
+                  class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
                   href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
                   title="Portfolio"
                 >
+                  <div
+                    class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2"
+                  />
                   Portfolio
                 </a>
               </li>
@@ -62,10 +65,13 @@ exports[`PluginManager should cancel install plugin 1`] = `
               >
                 <a
                   aria-current="page"
-                  class="flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text active"
+                  class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group active"
                   href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/plugins"
                   title="Plugins"
                 >
+                  <div
+                    class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2"
+                  />
                   Plugins
                 </a>
               </li>
@@ -73,10 +79,13 @@ exports[`PluginManager should cancel install plugin 1`] = `
                 class="flex"
               >
                 <a
-                  class="flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text"
+                  class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
                   href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/exchange"
                   title="Exchange"
                 >
+                  <div
+                    class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2"
+                  />
                   Exchange
                 </a>
               </li>
@@ -84,10 +93,13 @@ exports[`PluginManager should cancel install plugin 1`] = `
                 class="flex"
               >
                 <a
-                  class="flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text"
+                  class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
                   href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/news"
                   title="News"
                 >
+                  <div
+                    class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2"
+                  />
                   News
                 </a>
               </li>
@@ -106,7 +118,7 @@ exports[`PluginManager should cancel install plugin 1`] = `
                       class="NavigationBar__NavigationButtonWrapper-sc-1qsoskw-1 eUPnft group"
                     >
                       <button
-                        class="OriginalButton__StyledButton-sc-1y2wptt-0 lpqSIM"
+                        class="OriginalButton__StyledButton-sc-1y2wptt-0 fNHPRi"
                         data-testid="navbar__buttons--notifications"
                         type="button"
                       >
@@ -145,7 +157,7 @@ exports[`PluginManager should cancel install plugin 1`] = `
                   class="NavigationBar__NavigationButtonWrapper-sc-1qsoskw-1 eUPnft"
                 >
                   <button
-                    class="OriginalButton__StyledButton-sc-1y2wptt-0 lpqSIM"
+                    class="OriginalButton__StyledButton-sc-1y2wptt-0 fNHPRi"
                     data-testid="navbar__buttons--send"
                     type="button"
                   >
@@ -175,7 +187,7 @@ exports[`PluginManager should cancel install plugin 1`] = `
                   class="NavigationBar__NavigationButtonWrapper-sc-1qsoskw-1 eUPnft"
                 >
                   <button
-                    class="OriginalButton__StyledButton-sc-1y2wptt-0 lpqSIM"
+                    class="OriginalButton__StyledButton-sc-1y2wptt-0 fNHPRi"
                     data-testid="navbar__buttons--receive"
                     type="button"
                   >
@@ -860,7 +872,7 @@ exports[`PluginManager should cancel install plugin 1`] = `
                             class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 kjTmcB justify-end"
                           >
                             <button
-                              class="OriginalButton__StyledButton-sc-1y2wptt-0 hsoUax flex-1"
+                              class="OriginalButton__StyledButton-sc-1y2wptt-0 izJbbP flex-1"
                               data-testid="PluginListItem__install"
                               type="button"
                             >
@@ -966,7 +978,7 @@ exports[`PluginManager should cancel install plugin 1`] = `
                             class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 kjTmcB justify-end"
                           >
                             <button
-                              class="OriginalButton__StyledButton-sc-1y2wptt-0 hsoUax flex-1"
+                              class="OriginalButton__StyledButton-sc-1y2wptt-0 izJbbP flex-1"
                               data-testid="PluginListItem__install"
                               type="button"
                             >
@@ -1063,7 +1075,7 @@ exports[`PluginManager should cancel install plugin 1`] = `
                             class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 kjTmcB justify-end"
                           >
                             <button
-                              class="OriginalButton__StyledButton-sc-1y2wptt-0 hsoUax flex-1"
+                              class="OriginalButton__StyledButton-sc-1y2wptt-0 izJbbP flex-1"
                               data-testid="PluginListItem__install"
                               type="button"
                             >
@@ -1204,10 +1216,13 @@ exports[`PluginManager should disable plugin on my-plugins 1`] = `
                 class="flex"
               >
                 <a
-                  class="flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text"
+                  class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
                   href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
                   title="Portfolio"
                 >
+                  <div
+                    class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2"
+                  />
                   Portfolio
                 </a>
               </li>
@@ -1216,10 +1231,13 @@ exports[`PluginManager should disable plugin on my-plugins 1`] = `
               >
                 <a
                   aria-current="page"
-                  class="flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text active"
+                  class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group active"
                   href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/plugins"
                   title="Plugins"
                 >
+                  <div
+                    class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2"
+                  />
                   Plugins
                 </a>
               </li>
@@ -1227,10 +1245,13 @@ exports[`PluginManager should disable plugin on my-plugins 1`] = `
                 class="flex"
               >
                 <a
-                  class="flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text"
+                  class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
                   href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/exchange"
                   title="Exchange"
                 >
+                  <div
+                    class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2"
+                  />
                   Exchange
                 </a>
               </li>
@@ -1238,10 +1259,13 @@ exports[`PluginManager should disable plugin on my-plugins 1`] = `
                 class="flex"
               >
                 <a
-                  class="flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text"
+                  class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
                   href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/news"
                   title="News"
                 >
+                  <div
+                    class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2"
+                  />
                   News
                 </a>
               </li>
@@ -1260,7 +1284,7 @@ exports[`PluginManager should disable plugin on my-plugins 1`] = `
                       class="NavigationBar__NavigationButtonWrapper-sc-1qsoskw-1 eUPnft group"
                     >
                       <button
-                        class="OriginalButton__StyledButton-sc-1y2wptt-0 lpqSIM"
+                        class="OriginalButton__StyledButton-sc-1y2wptt-0 fNHPRi"
                         data-testid="navbar__buttons--notifications"
                         type="button"
                       >
@@ -1299,7 +1323,7 @@ exports[`PluginManager should disable plugin on my-plugins 1`] = `
                   class="NavigationBar__NavigationButtonWrapper-sc-1qsoskw-1 eUPnft"
                 >
                   <button
-                    class="OriginalButton__StyledButton-sc-1y2wptt-0 lpqSIM"
+                    class="OriginalButton__StyledButton-sc-1y2wptt-0 fNHPRi"
                     data-testid="navbar__buttons--send"
                     type="button"
                   >
@@ -1329,7 +1353,7 @@ exports[`PluginManager should disable plugin on my-plugins 1`] = `
                   class="NavigationBar__NavigationButtonWrapper-sc-1qsoskw-1 eUPnft"
                 >
                   <button
-                    class="OriginalButton__StyledButton-sc-1y2wptt-0 lpqSIM"
+                    class="OriginalButton__StyledButton-sc-1y2wptt-0 fNHPRi"
                     data-testid="navbar__buttons--receive"
                     type="button"
                   >
@@ -2019,7 +2043,7 @@ exports[`PluginManager should disable plugin on my-plugins 1`] = `
                                     class="relative"
                                   >
                                     <button
-                                      class="OriginalButton__StyledButton-sc-1y2wptt-0 koEywu text-left"
+                                      class="OriginalButton__StyledButton-sc-1y2wptt-0 jaUyKg text-left"
                                       type="button"
                                     >
                                       <div
@@ -2109,10 +2133,13 @@ exports[`PluginManager should enable plugin on my-plugins 1`] = `
                 class="flex"
               >
                 <a
-                  class="flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text"
+                  class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
                   href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
                   title="Portfolio"
                 >
+                  <div
+                    class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2"
+                  />
                   Portfolio
                 </a>
               </li>
@@ -2121,10 +2148,13 @@ exports[`PluginManager should enable plugin on my-plugins 1`] = `
               >
                 <a
                   aria-current="page"
-                  class="flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text active"
+                  class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group active"
                   href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/plugins"
                   title="Plugins"
                 >
+                  <div
+                    class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2"
+                  />
                   Plugins
                 </a>
               </li>
@@ -2132,10 +2162,13 @@ exports[`PluginManager should enable plugin on my-plugins 1`] = `
                 class="flex"
               >
                 <a
-                  class="flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text"
+                  class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
                   href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/exchange"
                   title="Exchange"
                 >
+                  <div
+                    class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2"
+                  />
                   Exchange
                 </a>
               </li>
@@ -2143,10 +2176,13 @@ exports[`PluginManager should enable plugin on my-plugins 1`] = `
                 class="flex"
               >
                 <a
-                  class="flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text"
+                  class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
                   href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/news"
                   title="News"
                 >
+                  <div
+                    class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2"
+                  />
                   News
                 </a>
               </li>
@@ -2165,7 +2201,7 @@ exports[`PluginManager should enable plugin on my-plugins 1`] = `
                       class="NavigationBar__NavigationButtonWrapper-sc-1qsoskw-1 eUPnft group"
                     >
                       <button
-                        class="OriginalButton__StyledButton-sc-1y2wptt-0 lpqSIM"
+                        class="OriginalButton__StyledButton-sc-1y2wptt-0 fNHPRi"
                         data-testid="navbar__buttons--notifications"
                         type="button"
                       >
@@ -2204,7 +2240,7 @@ exports[`PluginManager should enable plugin on my-plugins 1`] = `
                   class="NavigationBar__NavigationButtonWrapper-sc-1qsoskw-1 eUPnft"
                 >
                   <button
-                    class="OriginalButton__StyledButton-sc-1y2wptt-0 lpqSIM"
+                    class="OriginalButton__StyledButton-sc-1y2wptt-0 fNHPRi"
                     data-testid="navbar__buttons--send"
                     type="button"
                   >
@@ -2234,7 +2270,7 @@ exports[`PluginManager should enable plugin on my-plugins 1`] = `
                   class="NavigationBar__NavigationButtonWrapper-sc-1qsoskw-1 eUPnft"
                 >
                   <button
-                    class="OriginalButton__StyledButton-sc-1y2wptt-0 lpqSIM"
+                    class="OriginalButton__StyledButton-sc-1y2wptt-0 fNHPRi"
                     data-testid="navbar__buttons--receive"
                     type="button"
                   >
@@ -2924,7 +2960,7 @@ exports[`PluginManager should enable plugin on my-plugins 1`] = `
                                     class="relative"
                                   >
                                     <button
-                                      class="OriginalButton__StyledButton-sc-1y2wptt-0 koEywu text-left"
+                                      class="OriginalButton__StyledButton-sc-1y2wptt-0 jaUyKg text-left"
                                       type="button"
                                     >
                                       <div
@@ -3014,10 +3050,13 @@ exports[`PluginManager should render 1`] = `
                 class="flex"
               >
                 <a
-                  class="flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text"
+                  class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
                   href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
                   title="Portfolio"
                 >
+                  <div
+                    class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2"
+                  />
                   Portfolio
                 </a>
               </li>
@@ -3026,10 +3065,13 @@ exports[`PluginManager should render 1`] = `
               >
                 <a
                   aria-current="page"
-                  class="flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text active"
+                  class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group active"
                   href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/plugins"
                   title="Plugins"
                 >
+                  <div
+                    class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2"
+                  />
                   Plugins
                 </a>
               </li>
@@ -3037,10 +3079,13 @@ exports[`PluginManager should render 1`] = `
                 class="flex"
               >
                 <a
-                  class="flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text"
+                  class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
                   href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/exchange"
                   title="Exchange"
                 >
+                  <div
+                    class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2"
+                  />
                   Exchange
                 </a>
               </li>
@@ -3048,10 +3093,13 @@ exports[`PluginManager should render 1`] = `
                 class="flex"
               >
                 <a
-                  class="flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text"
+                  class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
                   href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/news"
                   title="News"
                 >
+                  <div
+                    class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2"
+                  />
                   News
                 </a>
               </li>
@@ -3070,7 +3118,7 @@ exports[`PluginManager should render 1`] = `
                       class="NavigationBar__NavigationButtonWrapper-sc-1qsoskw-1 eUPnft group"
                     >
                       <button
-                        class="OriginalButton__StyledButton-sc-1y2wptt-0 lpqSIM"
+                        class="OriginalButton__StyledButton-sc-1y2wptt-0 fNHPRi"
                         data-testid="navbar__buttons--notifications"
                         type="button"
                       >
@@ -3109,7 +3157,7 @@ exports[`PluginManager should render 1`] = `
                   class="NavigationBar__NavigationButtonWrapper-sc-1qsoskw-1 eUPnft"
                 >
                   <button
-                    class="OriginalButton__StyledButton-sc-1y2wptt-0 lpqSIM"
+                    class="OriginalButton__StyledButton-sc-1y2wptt-0 fNHPRi"
                     data-testid="navbar__buttons--send"
                     type="button"
                   >
@@ -3139,7 +3187,7 @@ exports[`PluginManager should render 1`] = `
                   class="NavigationBar__NavigationButtonWrapper-sc-1qsoskw-1 eUPnft"
                 >
                   <button
-                    class="OriginalButton__StyledButton-sc-1y2wptt-0 lpqSIM"
+                    class="OriginalButton__StyledButton-sc-1y2wptt-0 fNHPRi"
                     data-testid="navbar__buttons--receive"
                     type="button"
                   >
@@ -4412,10 +4460,13 @@ exports[`PluginManager should search for plugin 1`] = `
                 class="flex"
               >
                 <a
-                  class="flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text"
+                  class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
                   href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
                   title="Portfolio"
                 >
+                  <div
+                    class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2"
+                  />
                   Portfolio
                 </a>
               </li>
@@ -4424,10 +4475,13 @@ exports[`PluginManager should search for plugin 1`] = `
               >
                 <a
                   aria-current="page"
-                  class="flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text active"
+                  class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group active"
                   href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/plugins"
                   title="Plugins"
                 >
+                  <div
+                    class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2"
+                  />
                   Plugins
                 </a>
               </li>
@@ -4435,10 +4489,13 @@ exports[`PluginManager should search for plugin 1`] = `
                 class="flex"
               >
                 <a
-                  class="flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text"
+                  class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
                   href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/exchange"
                   title="Exchange"
                 >
+                  <div
+                    class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2"
+                  />
                   Exchange
                 </a>
               </li>
@@ -4446,10 +4503,13 @@ exports[`PluginManager should search for plugin 1`] = `
                 class="flex"
               >
                 <a
-                  class="flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text"
+                  class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
                   href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/news"
                   title="News"
                 >
+                  <div
+                    class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2"
+                  />
                   News
                 </a>
               </li>
@@ -4468,7 +4528,7 @@ exports[`PluginManager should search for plugin 1`] = `
                       class="NavigationBar__NavigationButtonWrapper-sc-1qsoskw-1 eUPnft group"
                     >
                       <button
-                        class="OriginalButton__StyledButton-sc-1y2wptt-0 lpqSIM"
+                        class="OriginalButton__StyledButton-sc-1y2wptt-0 fNHPRi"
                         data-testid="navbar__buttons--notifications"
                         type="button"
                       >
@@ -4507,7 +4567,7 @@ exports[`PluginManager should search for plugin 1`] = `
                   class="NavigationBar__NavigationButtonWrapper-sc-1qsoskw-1 eUPnft"
                 >
                   <button
-                    class="OriginalButton__StyledButton-sc-1y2wptt-0 lpqSIM"
+                    class="OriginalButton__StyledButton-sc-1y2wptt-0 fNHPRi"
                     data-testid="navbar__buttons--send"
                     type="button"
                   >
@@ -4537,7 +4597,7 @@ exports[`PluginManager should search for plugin 1`] = `
                   class="NavigationBar__NavigationButtonWrapper-sc-1qsoskw-1 eUPnft"
                 >
                   <button
-                    class="OriginalButton__StyledButton-sc-1y2wptt-0 lpqSIM"
+                    class="OriginalButton__StyledButton-sc-1y2wptt-0 fNHPRi"
                     data-testid="navbar__buttons--receive"
                     type="button"
                   >
@@ -4733,7 +4793,7 @@ exports[`PluginManager should search for plugin 1`] = `
                         class="flex-1"
                       >
                         <div
-                          class="Input__InputWrapperStyled-wu99qs-0 jiWa-do pl-3"
+                          class="Input__InputWrapperStyled-wu99qs-0 jnSKYE pl-3"
                         >
                           <div
                             class="relative flex flex-1 h-full"
@@ -4978,7 +5038,11 @@ exports[`PluginManager should search for plugin 1`] = `
                 data-testid="PluginList__empty-message"
               >
                 <div>
-                  Your search query "unknown search query" does not match any Plugins in the manager.
+                  Your search query 
+                  <strong>
+                    unknown search query
+                  </strong>
+                   does not match any Plugins in the manager.
                 </div>
               </div>
             </div>
@@ -5040,10 +5104,13 @@ exports[`PluginManager should switch to category by clicking on view all link 1`
                 class="flex"
               >
                 <a
-                  class="flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text"
+                  class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
                   href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
                   title="Portfolio"
                 >
+                  <div
+                    class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2"
+                  />
                   Portfolio
                 </a>
               </li>
@@ -5052,10 +5119,13 @@ exports[`PluginManager should switch to category by clicking on view all link 1`
               >
                 <a
                   aria-current="page"
-                  class="flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text active"
+                  class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group active"
                   href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/plugins"
                   title="Plugins"
                 >
+                  <div
+                    class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2"
+                  />
                   Plugins
                 </a>
               </li>
@@ -5063,10 +5133,13 @@ exports[`PluginManager should switch to category by clicking on view all link 1`
                 class="flex"
               >
                 <a
-                  class="flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text"
+                  class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
                   href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/exchange"
                   title="Exchange"
                 >
+                  <div
+                    class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2"
+                  />
                   Exchange
                 </a>
               </li>
@@ -5074,10 +5147,13 @@ exports[`PluginManager should switch to category by clicking on view all link 1`
                 class="flex"
               >
                 <a
-                  class="flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text"
+                  class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
                   href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/news"
                   title="News"
                 >
+                  <div
+                    class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2"
+                  />
                   News
                 </a>
               </li>
@@ -5096,7 +5172,7 @@ exports[`PluginManager should switch to category by clicking on view all link 1`
                       class="NavigationBar__NavigationButtonWrapper-sc-1qsoskw-1 eUPnft group"
                     >
                       <button
-                        class="OriginalButton__StyledButton-sc-1y2wptt-0 lpqSIM"
+                        class="OriginalButton__StyledButton-sc-1y2wptt-0 fNHPRi"
                         data-testid="navbar__buttons--notifications"
                         type="button"
                       >
@@ -5135,7 +5211,7 @@ exports[`PluginManager should switch to category by clicking on view all link 1`
                   class="NavigationBar__NavigationButtonWrapper-sc-1qsoskw-1 eUPnft"
                 >
                   <button
-                    class="OriginalButton__StyledButton-sc-1y2wptt-0 lpqSIM"
+                    class="OriginalButton__StyledButton-sc-1y2wptt-0 fNHPRi"
                     data-testid="navbar__buttons--send"
                     type="button"
                   >
@@ -5165,7 +5241,7 @@ exports[`PluginManager should switch to category by clicking on view all link 1`
                   class="NavigationBar__NavigationButtonWrapper-sc-1qsoskw-1 eUPnft"
                 >
                   <button
-                    class="OriginalButton__StyledButton-sc-1y2wptt-0 lpqSIM"
+                    class="OriginalButton__StyledButton-sc-1y2wptt-0 fNHPRi"
                     data-testid="navbar__buttons--receive"
                     type="button"
                   >
@@ -6005,10 +6081,13 @@ exports[`PluginManager should toggle between list and grid on all 1`] = `
                 class="flex"
               >
                 <a
-                  class="flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text"
+                  class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
                   href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
                   title="Portfolio"
                 >
+                  <div
+                    class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2"
+                  />
                   Portfolio
                 </a>
               </li>
@@ -6017,10 +6096,13 @@ exports[`PluginManager should toggle between list and grid on all 1`] = `
               >
                 <a
                   aria-current="page"
-                  class="flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text active"
+                  class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group active"
                   href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/plugins"
                   title="Plugins"
                 >
+                  <div
+                    class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2"
+                  />
                   Plugins
                 </a>
               </li>
@@ -6028,10 +6110,13 @@ exports[`PluginManager should toggle between list and grid on all 1`] = `
                 class="flex"
               >
                 <a
-                  class="flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text"
+                  class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
                   href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/exchange"
                   title="Exchange"
                 >
+                  <div
+                    class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2"
+                  />
                   Exchange
                 </a>
               </li>
@@ -6039,10 +6124,13 @@ exports[`PluginManager should toggle between list and grid on all 1`] = `
                 class="flex"
               >
                 <a
-                  class="flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text"
+                  class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
                   href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/news"
                   title="News"
                 >
+                  <div
+                    class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2"
+                  />
                   News
                 </a>
               </li>
@@ -6061,7 +6149,7 @@ exports[`PluginManager should toggle between list and grid on all 1`] = `
                       class="NavigationBar__NavigationButtonWrapper-sc-1qsoskw-1 eUPnft group"
                     >
                       <button
-                        class="OriginalButton__StyledButton-sc-1y2wptt-0 lpqSIM"
+                        class="OriginalButton__StyledButton-sc-1y2wptt-0 fNHPRi"
                         data-testid="navbar__buttons--notifications"
                         type="button"
                       >
@@ -6100,7 +6188,7 @@ exports[`PluginManager should toggle between list and grid on all 1`] = `
                   class="NavigationBar__NavigationButtonWrapper-sc-1qsoskw-1 eUPnft"
                 >
                   <button
-                    class="OriginalButton__StyledButton-sc-1y2wptt-0 lpqSIM"
+                    class="OriginalButton__StyledButton-sc-1y2wptt-0 fNHPRi"
                     data-testid="navbar__buttons--send"
                     type="button"
                   >
@@ -6130,7 +6218,7 @@ exports[`PluginManager should toggle between list and grid on all 1`] = `
                   class="NavigationBar__NavigationButtonWrapper-sc-1qsoskw-1 eUPnft"
                 >
                   <button
-                    class="OriginalButton__StyledButton-sc-1y2wptt-0 lpqSIM"
+                    class="OriginalButton__StyledButton-sc-1y2wptt-0 fNHPRi"
                     data-testid="navbar__buttons--receive"
                     type="button"
                   >
@@ -6970,10 +7058,13 @@ exports[`PluginManager should toggle between list and grid on latest 1`] = `
                 class="flex"
               >
                 <a
-                  class="flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text"
+                  class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
                   href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
                   title="Portfolio"
                 >
+                  <div
+                    class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2"
+                  />
                   Portfolio
                 </a>
               </li>
@@ -6982,10 +7073,13 @@ exports[`PluginManager should toggle between list and grid on latest 1`] = `
               >
                 <a
                   aria-current="page"
-                  class="flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text active"
+                  class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group active"
                   href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/plugins"
                   title="Plugins"
                 >
+                  <div
+                    class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2"
+                  />
                   Plugins
                 </a>
               </li>
@@ -6993,10 +7087,13 @@ exports[`PluginManager should toggle between list and grid on latest 1`] = `
                 class="flex"
               >
                 <a
-                  class="flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text"
+                  class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
                   href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/exchange"
                   title="Exchange"
                 >
+                  <div
+                    class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2"
+                  />
                   Exchange
                 </a>
               </li>
@@ -7004,10 +7101,13 @@ exports[`PluginManager should toggle between list and grid on latest 1`] = `
                 class="flex"
               >
                 <a
-                  class="flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text"
+                  class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
                   href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/news"
                   title="News"
                 >
+                  <div
+                    class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2"
+                  />
                   News
                 </a>
               </li>
@@ -7026,7 +7126,7 @@ exports[`PluginManager should toggle between list and grid on latest 1`] = `
                       class="NavigationBar__NavigationButtonWrapper-sc-1qsoskw-1 eUPnft group"
                     >
                       <button
-                        class="OriginalButton__StyledButton-sc-1y2wptt-0 lpqSIM"
+                        class="OriginalButton__StyledButton-sc-1y2wptt-0 fNHPRi"
                         data-testid="navbar__buttons--notifications"
                         type="button"
                       >
@@ -7065,7 +7165,7 @@ exports[`PluginManager should toggle between list and grid on latest 1`] = `
                   class="NavigationBar__NavigationButtonWrapper-sc-1qsoskw-1 eUPnft"
                 >
                   <button
-                    class="OriginalButton__StyledButton-sc-1y2wptt-0 lpqSIM"
+                    class="OriginalButton__StyledButton-sc-1y2wptt-0 fNHPRi"
                     data-testid="navbar__buttons--send"
                     type="button"
                   >
@@ -7095,7 +7195,7 @@ exports[`PluginManager should toggle between list and grid on latest 1`] = `
                   class="NavigationBar__NavigationButtonWrapper-sc-1qsoskw-1 eUPnft"
                 >
                   <button
-                    class="OriginalButton__StyledButton-sc-1y2wptt-0 lpqSIM"
+                    class="OriginalButton__StyledButton-sc-1y2wptt-0 fNHPRi"
                     data-testid="navbar__buttons--receive"
                     type="button"
                   >
@@ -8368,10 +8468,13 @@ exports[`PluginManager should toggle between list and grid on utility tab 1`] = 
                 class="flex"
               >
                 <a
-                  class="flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text"
+                  class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
                   href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
                   title="Portfolio"
                 >
+                  <div
+                    class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2"
+                  />
                   Portfolio
                 </a>
               </li>
@@ -8380,10 +8483,13 @@ exports[`PluginManager should toggle between list and grid on utility tab 1`] = 
               >
                 <a
                   aria-current="page"
-                  class="flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text active"
+                  class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group active"
                   href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/plugins"
                   title="Plugins"
                 >
+                  <div
+                    class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2"
+                  />
                   Plugins
                 </a>
               </li>
@@ -8391,10 +8497,13 @@ exports[`PluginManager should toggle between list and grid on utility tab 1`] = 
                 class="flex"
               >
                 <a
-                  class="flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text"
+                  class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
                   href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/exchange"
                   title="Exchange"
                 >
+                  <div
+                    class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2"
+                  />
                   Exchange
                 </a>
               </li>
@@ -8402,10 +8511,13 @@ exports[`PluginManager should toggle between list and grid on utility tab 1`] = 
                 class="flex"
               >
                 <a
-                  class="flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text"
+                  class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
                   href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/news"
                   title="News"
                 >
+                  <div
+                    class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2"
+                  />
                   News
                 </a>
               </li>
@@ -8424,7 +8536,7 @@ exports[`PluginManager should toggle between list and grid on utility tab 1`] = 
                       class="NavigationBar__NavigationButtonWrapper-sc-1qsoskw-1 eUPnft group"
                     >
                       <button
-                        class="OriginalButton__StyledButton-sc-1y2wptt-0 lpqSIM"
+                        class="OriginalButton__StyledButton-sc-1y2wptt-0 fNHPRi"
                         data-testid="navbar__buttons--notifications"
                         type="button"
                       >
@@ -8463,7 +8575,7 @@ exports[`PluginManager should toggle between list and grid on utility tab 1`] = 
                   class="NavigationBar__NavigationButtonWrapper-sc-1qsoskw-1 eUPnft"
                 >
                   <button
-                    class="OriginalButton__StyledButton-sc-1y2wptt-0 lpqSIM"
+                    class="OriginalButton__StyledButton-sc-1y2wptt-0 fNHPRi"
                     data-testid="navbar__buttons--send"
                     type="button"
                   >
@@ -8493,7 +8605,7 @@ exports[`PluginManager should toggle between list and grid on utility tab 1`] = 
                   class="NavigationBar__NavigationButtonWrapper-sc-1qsoskw-1 eUPnft"
                 >
                   <button
-                    class="OriginalButton__StyledButton-sc-1y2wptt-0 lpqSIM"
+                    class="OriginalButton__StyledButton-sc-1y2wptt-0 fNHPRi"
                     data-testid="navbar__buttons--receive"
                     type="button"
                   >
@@ -9333,10 +9445,13 @@ exports[`PluginManager should update plugin on my-plugins 1`] = `
                 class="flex"
               >
                 <a
-                  class="flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text"
+                  class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
                   href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
                   title="Portfolio"
                 >
+                  <div
+                    class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2"
+                  />
                   Portfolio
                 </a>
               </li>
@@ -9345,10 +9460,13 @@ exports[`PluginManager should update plugin on my-plugins 1`] = `
               >
                 <a
                   aria-current="page"
-                  class="flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text active"
+                  class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group active"
                   href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/plugins"
                   title="Plugins"
                 >
+                  <div
+                    class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2"
+                  />
                   Plugins
                 </a>
               </li>
@@ -9356,10 +9474,13 @@ exports[`PluginManager should update plugin on my-plugins 1`] = `
                 class="flex"
               >
                 <a
-                  class="flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text"
+                  class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
                   href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/exchange"
                   title="Exchange"
                 >
+                  <div
+                    class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2"
+                  />
                   Exchange
                 </a>
               </li>
@@ -9367,10 +9488,13 @@ exports[`PluginManager should update plugin on my-plugins 1`] = `
                 class="flex"
               >
                 <a
-                  class="flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text"
+                  class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
                   href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/news"
                   title="News"
                 >
+                  <div
+                    class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2"
+                  />
                   News
                 </a>
               </li>
@@ -9389,7 +9513,7 @@ exports[`PluginManager should update plugin on my-plugins 1`] = `
                       class="NavigationBar__NavigationButtonWrapper-sc-1qsoskw-1 eUPnft group"
                     >
                       <button
-                        class="OriginalButton__StyledButton-sc-1y2wptt-0 lpqSIM"
+                        class="OriginalButton__StyledButton-sc-1y2wptt-0 fNHPRi"
                         data-testid="navbar__buttons--notifications"
                         type="button"
                       >
@@ -9428,7 +9552,7 @@ exports[`PluginManager should update plugin on my-plugins 1`] = `
                   class="NavigationBar__NavigationButtonWrapper-sc-1qsoskw-1 eUPnft"
                 >
                   <button
-                    class="OriginalButton__StyledButton-sc-1y2wptt-0 lpqSIM"
+                    class="OriginalButton__StyledButton-sc-1y2wptt-0 fNHPRi"
                     data-testid="navbar__buttons--send"
                     type="button"
                   >
@@ -9458,7 +9582,7 @@ exports[`PluginManager should update plugin on my-plugins 1`] = `
                   class="NavigationBar__NavigationButtonWrapper-sc-1qsoskw-1 eUPnft"
                 >
                   <button
-                    class="OriginalButton__StyledButton-sc-1y2wptt-0 lpqSIM"
+                    class="OriginalButton__StyledButton-sc-1y2wptt-0 fNHPRi"
                     data-testid="navbar__buttons--receive"
                     type="button"
                   >
@@ -9861,7 +9985,7 @@ exports[`PluginManager should update plugin on my-plugins 1`] = `
                     There is 1 update available for your plugins. Would you like to update it?
                   </span>
                   <button
-                    class="OriginalButton__StyledButton-sc-1y2wptt-0 cEUmKc -mr-1"
+                    class="OriginalButton__StyledButton-sc-1y2wptt-0 dYkFxS -mr-1"
                     data-testid="PluginManager__update-all"
                     type="button"
                   >
@@ -10185,7 +10309,7 @@ exports[`PluginManager should update plugin on my-plugins 1`] = `
                                       <span />
                                     </span>
                                     <button
-                                      class="OriginalButton__StyledButton-sc-1y2wptt-0 koEywu text-left"
+                                      class="OriginalButton__StyledButton-sc-1y2wptt-0 jaUyKg text-left"
                                       type="button"
                                     >
                                       <div

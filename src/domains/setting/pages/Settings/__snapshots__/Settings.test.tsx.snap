@@ -48,10 +48,13 @@ exports[`Settings should not update the uploaded avatar when removing focus from
               class="flex"
             >
               <a
-                class="flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text"
+                class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
                 title="Portfolio"
               >
+                <div
+                  class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2"
+                />
                 Portfolio
               </a>
             </li>
@@ -59,10 +62,13 @@ exports[`Settings should not update the uploaded avatar when removing focus from
               class="flex"
             >
               <a
-                class="flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text"
+                class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/plugins"
                 title="Plugins"
               >
+                <div
+                  class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2"
+                />
                 Plugins
               </a>
             </li>
@@ -70,10 +76,13 @@ exports[`Settings should not update the uploaded avatar when removing focus from
               class="flex"
             >
               <a
-                class="flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text"
+                class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/exchange"
                 title="Exchange"
               >
+                <div
+                  class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2"
+                />
                 Exchange
               </a>
             </li>
@@ -81,10 +90,13 @@ exports[`Settings should not update the uploaded avatar when removing focus from
               class="flex"
             >
               <a
-                class="flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text"
+                class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/news"
                 title="News"
               >
+                <div
+                  class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2"
+                />
                 News
               </a>
             </li>
@@ -103,7 +115,7 @@ exports[`Settings should not update the uploaded avatar when removing focus from
                     class="NavigationBar__NavigationButtonWrapper-sc-1qsoskw-1 eUPnft group"
                   >
                     <button
-                      class="OriginalButton__StyledButton-sc-1y2wptt-0 lpqSIM"
+                      class="OriginalButton__StyledButton-sc-1y2wptt-0 fNHPRi"
                       data-testid="navbar__buttons--notifications"
                       type="button"
                     >
@@ -142,7 +154,7 @@ exports[`Settings should not update the uploaded avatar when removing focus from
                 class="NavigationBar__NavigationButtonWrapper-sc-1qsoskw-1 eUPnft"
               >
                 <button
-                  class="OriginalButton__StyledButton-sc-1y2wptt-0 lpqSIM"
+                  class="OriginalButton__StyledButton-sc-1y2wptt-0 fNHPRi"
                   data-testid="navbar__buttons--send"
                   type="button"
                 >
@@ -172,7 +184,7 @@ exports[`Settings should not update the uploaded avatar when removing focus from
                 class="NavigationBar__NavigationButtonWrapper-sc-1qsoskw-1 eUPnft"
               >
                 <button
-                  class="OriginalButton__StyledButton-sc-1y2wptt-0 lpqSIM"
+                  class="OriginalButton__StyledButton-sc-1y2wptt-0 fNHPRi"
                   data-testid="navbar__buttons--receive"
                   type="button"
                 >
@@ -294,13 +306,13 @@ exports[`Settings should not update the uploaded avatar when removing focus from
                   data-testid="side-menu__item--General"
                 >
                   <li
-                    class="rounded-lg py-5 pl-10 pr-8 h-15 flex items-center text-theme-primary-600 bg-theme-primary-100 dark:bg-theme-secondary-800"
+                    class="rounded py-5 pl-10 pr-8 h-15 flex items-center text-theme-primary-600 dark:text-theme-secondary-200 bg-theme-primary-100 dark:bg-theme-secondary-800"
                   >
                     <div
                       class="absolute top-0 bottom-0 left-0 w-2 rounded bg-theme-primary-600"
                     />
                     <div
-                      class="mr-3 text-theme-primary-600"
+                      class="mr-3"
                     >
                       <div
                         class="sc-bdfBwQ iyevwF"
@@ -324,7 +336,7 @@ exports[`Settings should not update the uploaded avatar when removing focus from
                   data-testid="side-menu__item--Peer"
                 >
                   <li
-                    class="rounded-lg py-5 pl-10 pr-8 h-15 flex items-center "
+                    class="rounded py-5 pl-10 pr-8 h-15 flex items-center"
                   >
                     <div
                       class="mr-3 text-theme-primary-300 dark:text-theme-secondary-600"
@@ -351,7 +363,7 @@ exports[`Settings should not update the uploaded avatar when removing focus from
                   data-testid="side-menu__item--Plugins"
                 >
                   <li
-                    class="rounded-lg py-5 pl-10 pr-8 h-15 flex items-center "
+                    class="rounded py-5 pl-10 pr-8 h-15 flex items-center"
                   >
                     <div
                       class="mr-3 text-theme-primary-300 dark:text-theme-secondary-600"
@@ -378,7 +390,7 @@ exports[`Settings should not update the uploaded avatar when removing focus from
                   data-testid="side-menu__item--Password"
                 >
                   <li
-                    class="rounded-lg py-5 pl-10 pr-8 h-15 flex items-center "
+                    class="rounded py-5 pl-10 pr-8 h-15 flex items-center"
                   >
                     <div
                       class="mr-3 text-theme-primary-300 dark:text-theme-secondary-600"
@@ -405,7 +417,7 @@ exports[`Settings should not update the uploaded avatar when removing focus from
                   data-testid="side-menu__item--Export"
                 >
                   <li
-                    class="rounded-lg py-5 pl-10 pr-8 h-15 flex items-center "
+                    class="rounded py-5 pl-10 pr-8 h-15 flex items-center"
                   >
                     <div
                       class="mr-3 text-theme-primary-300 dark:text-theme-secondary-600"
@@ -514,7 +526,7 @@ exports[`Settings should not update the uploaded avatar when removing focus from
                             </div>
                           </div>
                           <button
-                            class="OriginalButton__StyledButton-sc-1y2wptt-0 dscUFp flex absolute -top-3 -right-3 justify-center items-center p-1 w-6 h-6"
+                            class="OriginalButton__StyledButton-sc-1y2wptt-0 gLgNOz flex absolute -top-3 -right-3 justify-center items-center p-1 w-6 h-6"
                             data-testid="SelectProfileImage__remove-button"
                             type="button"
                           >
@@ -556,7 +568,7 @@ exports[`Settings should not update the uploaded avatar when removing focus from
                             />
                           </label>
                           <div
-                            class="Input__InputWrapperStyled-wu99qs-0 hDeOGV"
+                            class="Input__InputWrapperStyled-wu99qs-0 knbpfp"
                           >
                             <div
                               class="relative flex flex-1 h-full"
@@ -588,7 +600,7 @@ exports[`Settings should not update the uploaded avatar when removing focus from
                             class="relative w-full"
                           >
                             <div
-                              class="Input__InputWrapperStyled-wu99qs-0 hDeOGV sr-only"
+                              class="Input__InputWrapperStyled-wu99qs-0 knbpfp sr-only"
                             >
                               <div
                                 class="relative flex flex-1 h-full"
@@ -598,6 +610,7 @@ exports[`Settings should not update the uploaded avatar when removing focus from
                                   data-testid="select-list__input"
                                   name="passphraseLanguage"
                                   readonly=""
+                                  tabindex="-1"
                                   value="english"
                                 />
                               </div>
@@ -616,7 +629,7 @@ exports[`Settings should not update the uploaded avatar when removing focus from
                                   id="select-passphrase-language-label"
                                 />
                                 <div
-                                  class="Input__InputWrapperStyled-wu99qs-0 hDeOGV"
+                                  class="Input__InputWrapperStyled-wu99qs-0 knbpfp"
                                 >
                                   <div
                                     class="relative flex flex-1 h-full"
@@ -665,7 +678,7 @@ exports[`Settings should not update the uploaded avatar when removing focus from
                                 </div>
                                 <ul
                                   aria-labelledby="select-passphrase-language-label"
-                                  class="styles__SelectOptionsList-b2falt-0 cUNLQk"
+                                  class="styles__SelectOptionsList-b2falt-0 ghEDCU"
                                   id="select-passphrase-language-menu"
                                   role="listbox"
                                 />
@@ -691,7 +704,7 @@ exports[`Settings should not update the uploaded avatar when removing focus from
                             class="relative w-full"
                           >
                             <div
-                              class="Input__InputWrapperStyled-wu99qs-0 hDeOGV sr-only"
+                              class="Input__InputWrapperStyled-wu99qs-0 knbpfp sr-only"
                             >
                               <div
                                 class="relative flex flex-1 h-full"
@@ -701,6 +714,7 @@ exports[`Settings should not update the uploaded avatar when removing focus from
                                   data-testid="select-list__input"
                                   name="currency"
                                   readonly=""
+                                  tabindex="-1"
                                   value="BTC"
                                 />
                               </div>
@@ -719,7 +733,7 @@ exports[`Settings should not update the uploaded avatar when removing focus from
                                   id="select-currency-label"
                                 />
                                 <div
-                                  class="Input__InputWrapperStyled-wu99qs-0 hDeOGV"
+                                  class="Input__InputWrapperStyled-wu99qs-0 knbpfp"
                                 >
                                   <div
                                     class="relative flex flex-1 h-full"
@@ -768,7 +782,7 @@ exports[`Settings should not update the uploaded avatar when removing focus from
                                 </div>
                                 <ul
                                   aria-labelledby="select-currency-label"
-                                  class="styles__SelectOptionsList-b2falt-0 cUNLQk"
+                                  class="styles__SelectOptionsList-b2falt-0 ghEDCU"
                                   id="select-currency-menu"
                                   role="listbox"
                                 />
@@ -798,7 +812,7 @@ exports[`Settings should not update the uploaded avatar when removing focus from
                             class="relative w-full"
                           >
                             <div
-                              class="Input__InputWrapperStyled-wu99qs-0 hDeOGV sr-only"
+                              class="Input__InputWrapperStyled-wu99qs-0 knbpfp sr-only"
                             >
                               <div
                                 class="relative flex flex-1 h-full"
@@ -808,6 +822,7 @@ exports[`Settings should not update the uploaded avatar when removing focus from
                                   data-testid="select-list__input"
                                   name="language"
                                   readonly=""
+                                  tabindex="-1"
                                   value="en-US"
                                 />
                               </div>
@@ -826,7 +841,7 @@ exports[`Settings should not update the uploaded avatar when removing focus from
                                   id="select-language-label"
                                 />
                                 <div
-                                  class="Input__InputWrapperStyled-wu99qs-0 hDeOGV"
+                                  class="Input__InputWrapperStyled-wu99qs-0 knbpfp"
                                 >
                                   <div
                                     class="relative flex flex-1 h-full"
@@ -875,7 +890,7 @@ exports[`Settings should not update the uploaded avatar when removing focus from
                                 </div>
                                 <ul
                                   aria-labelledby="select-language-label"
-                                  class="styles__SelectOptionsList-b2falt-0 cUNLQk"
+                                  class="styles__SelectOptionsList-b2falt-0 ghEDCU"
                                   id="select-language-menu"
                                   role="listbox"
                                 />
@@ -901,7 +916,7 @@ exports[`Settings should not update the uploaded avatar when removing focus from
                             class="relative w-full"
                           >
                             <div
-                              class="Input__InputWrapperStyled-wu99qs-0 hDeOGV sr-only"
+                              class="Input__InputWrapperStyled-wu99qs-0 knbpfp sr-only"
                             >
                               <div
                                 class="relative flex flex-1 h-full"
@@ -911,6 +926,7 @@ exports[`Settings should not update the uploaded avatar when removing focus from
                                   data-testid="select-list__input"
                                   name="marketProvider"
                                   readonly=""
+                                  tabindex="-1"
                                   value="cryptocompare"
                                 />
                               </div>
@@ -929,7 +945,7 @@ exports[`Settings should not update the uploaded avatar when removing focus from
                                   id="select-market-provider-label"
                                 />
                                 <div
-                                  class="Input__InputWrapperStyled-wu99qs-0 hDeOGV"
+                                  class="Input__InputWrapperStyled-wu99qs-0 knbpfp"
                                 >
                                   <div
                                     class="relative flex flex-1 h-full"
@@ -978,7 +994,7 @@ exports[`Settings should not update the uploaded avatar when removing focus from
                                 </div>
                                 <ul
                                   aria-labelledby="select-market-provider-label"
-                                  class="styles__SelectOptionsList-b2falt-0 cUNLQk"
+                                  class="styles__SelectOptionsList-b2falt-0 ghEDCU"
                                   id="select-market-provider-menu"
                                   role="listbox"
                                 />
@@ -1004,7 +1020,7 @@ exports[`Settings should not update the uploaded avatar when removing focus from
                             class="relative w-full"
                           >
                             <div
-                              class="Input__InputWrapperStyled-wu99qs-0 hDeOGV sr-only"
+                              class="Input__InputWrapperStyled-wu99qs-0 knbpfp sr-only"
                             >
                               <div
                                 class="relative flex flex-1 h-full"
@@ -1014,6 +1030,7 @@ exports[`Settings should not update the uploaded avatar when removing focus from
                                   data-testid="select-list__input"
                                   name="timeFormat"
                                   readonly=""
+                                  tabindex="-1"
                                   value="h:mm A"
                                 />
                               </div>
@@ -1032,7 +1049,7 @@ exports[`Settings should not update the uploaded avatar when removing focus from
                                   id="select-time-format-label"
                                 />
                                 <div
-                                  class="Input__InputWrapperStyled-wu99qs-0 hDeOGV"
+                                  class="Input__InputWrapperStyled-wu99qs-0 knbpfp"
                                 >
                                   <div
                                     class="relative flex flex-1 h-full"
@@ -1081,7 +1098,7 @@ exports[`Settings should not update the uploaded avatar when removing focus from
                                 </div>
                                 <ul
                                   aria-labelledby="select-time-format-label"
-                                  class="styles__SelectOptionsList-b2falt-0 cUNLQk"
+                                  class="styles__SelectOptionsList-b2falt-0 ghEDCU"
                                   id="select-time-format-menu"
                                   role="listbox"
                                 />
@@ -1101,7 +1118,7 @@ exports[`Settings should not update the uploaded avatar when removing focus from
                       Security
                     </h2>
                     <ul
-                      class="sc-dlfnbm cOiGXi"
+                      class="sc-hKgILt gfmZFQ"
                       data-testid="list-divided__items"
                     >
                       <li
@@ -1245,7 +1262,7 @@ exports[`Settings should not update the uploaded avatar when removing focus from
                               class="relative w-full"
                             >
                               <div
-                                class="Input__InputWrapperStyled-wu99qs-0 hDeOGV sr-only"
+                                class="Input__InputWrapperStyled-wu99qs-0 knbpfp sr-only"
                               >
                                 <div
                                   class="relative flex flex-1 h-full"
@@ -1255,6 +1272,7 @@ exports[`Settings should not update the uploaded avatar when removing focus from
                                     data-testid="select-list__input"
                                     name="automaticSignOutPeriod"
                                     readonly=""
+                                    tabindex="-1"
                                     value="1"
                                   />
                                 </div>
@@ -1273,7 +1291,7 @@ exports[`Settings should not update the uploaded avatar when removing focus from
                                     id="select-auto-signout-label"
                                   />
                                   <div
-                                    class="Input__InputWrapperStyled-wu99qs-0 hDeOGV"
+                                    class="Input__InputWrapperStyled-wu99qs-0 knbpfp"
                                   >
                                     <div
                                       class="relative flex flex-1 h-full"
@@ -1322,7 +1340,7 @@ exports[`Settings should not update the uploaded avatar when removing focus from
                                   </div>
                                   <ul
                                     aria-labelledby="select-auto-signout-label"
-                                    class="styles__SelectOptionsList-b2falt-0 cUNLQk"
+                                    class="styles__SelectOptionsList-b2falt-0 ghEDCU"
                                     id="select-auto-signout-menu"
                                     role="listbox"
                                   />
@@ -1343,7 +1361,7 @@ exports[`Settings should not update the uploaded avatar when removing focus from
                       Other
                     </h2>
                     <ul
-                      class="sc-dlfnbm cOiGXi"
+                      class="sc-hKgILt gfmZFQ"
                       data-testid="list-divided__items"
                     >
                       <li
@@ -1550,7 +1568,7 @@ exports[`Settings should not update the uploaded avatar when removing focus from
                     class="flex justify-between pt-2 w-full"
                   >
                     <button
-                      class="OriginalButton__StyledButton-sc-1y2wptt-0 hLYMjm"
+                      class="OriginalButton__StyledButton-sc-1y2wptt-0 gDVvgk"
                       type="button"
                     >
                       <div
@@ -1574,7 +1592,7 @@ exports[`Settings should not update the uploaded avatar when removing focus from
                       class="space-x-3"
                     >
                       <button
-                        class="OriginalButton__StyledButton-sc-1y2wptt-0 hsoUax"
+                        class="OriginalButton__StyledButton-sc-1y2wptt-0 izJbbP"
                         data-testid="General-settings__cancel-button"
                         type="button"
                       >
@@ -1585,7 +1603,7 @@ exports[`Settings should not update the uploaded avatar when removing focus from
                         </div>
                       </button>
                       <button
-                        class="OriginalButton__StyledButton-sc-1y2wptt-0 cEUmKc"
+                        class="OriginalButton__StyledButton-sc-1y2wptt-0 dYkFxS"
                         data-testid="General-settings__submit-button"
                         type="submit"
                       >
@@ -1656,10 +1674,13 @@ exports[`Settings should render 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text"
+                class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
                 title="Portfolio"
               >
+                <div
+                  class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2"
+                />
                 Portfolio
               </a>
             </li>
@@ -1667,10 +1688,13 @@ exports[`Settings should render 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text"
+                class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/plugins"
                 title="Plugins"
               >
+                <div
+                  class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2"
+                />
                 Plugins
               </a>
             </li>
@@ -1678,10 +1702,13 @@ exports[`Settings should render 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text"
+                class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/exchange"
                 title="Exchange"
               >
+                <div
+                  class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2"
+                />
                 Exchange
               </a>
             </li>
@@ -1689,10 +1716,13 @@ exports[`Settings should render 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text"
+                class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/news"
                 title="News"
               >
+                <div
+                  class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2"
+                />
                 News
               </a>
             </li>
@@ -1711,7 +1741,7 @@ exports[`Settings should render 1`] = `
                     class="NavigationBar__NavigationButtonWrapper-sc-1qsoskw-1 eUPnft group"
                   >
                     <button
-                      class="OriginalButton__StyledButton-sc-1y2wptt-0 lpqSIM"
+                      class="OriginalButton__StyledButton-sc-1y2wptt-0 fNHPRi"
                       data-testid="navbar__buttons--notifications"
                       type="button"
                     >
@@ -1750,7 +1780,7 @@ exports[`Settings should render 1`] = `
                 class="NavigationBar__NavigationButtonWrapper-sc-1qsoskw-1 eUPnft"
               >
                 <button
-                  class="OriginalButton__StyledButton-sc-1y2wptt-0 lpqSIM"
+                  class="OriginalButton__StyledButton-sc-1y2wptt-0 fNHPRi"
                   data-testid="navbar__buttons--send"
                   type="button"
                 >
@@ -1780,7 +1810,7 @@ exports[`Settings should render 1`] = `
                 class="NavigationBar__NavigationButtonWrapper-sc-1qsoskw-1 eUPnft"
               >
                 <button
-                  class="OriginalButton__StyledButton-sc-1y2wptt-0 lpqSIM"
+                  class="OriginalButton__StyledButton-sc-1y2wptt-0 fNHPRi"
                   data-testid="navbar__buttons--receive"
                   type="button"
                 >
@@ -1902,13 +1932,13 @@ exports[`Settings should render 1`] = `
                   data-testid="side-menu__item--General"
                 >
                   <li
-                    class="rounded-lg py-5 pl-10 pr-8 h-15 flex items-center text-theme-primary-600 bg-theme-primary-100 dark:bg-theme-secondary-800"
+                    class="rounded py-5 pl-10 pr-8 h-15 flex items-center text-theme-primary-600 dark:text-theme-secondary-200 bg-theme-primary-100 dark:bg-theme-secondary-800"
                   >
                     <div
                       class="absolute top-0 bottom-0 left-0 w-2 rounded bg-theme-primary-600"
                     />
                     <div
-                      class="mr-3 text-theme-primary-600"
+                      class="mr-3"
                     >
                       <div
                         class="sc-bdfBwQ iyevwF"
@@ -1932,7 +1962,7 @@ exports[`Settings should render 1`] = `
                   data-testid="side-menu__item--Peer"
                 >
                   <li
-                    class="rounded-lg py-5 pl-10 pr-8 h-15 flex items-center "
+                    class="rounded py-5 pl-10 pr-8 h-15 flex items-center"
                   >
                     <div
                       class="mr-3 text-theme-primary-300 dark:text-theme-secondary-600"
@@ -1959,7 +1989,7 @@ exports[`Settings should render 1`] = `
                   data-testid="side-menu__item--Plugins"
                 >
                   <li
-                    class="rounded-lg py-5 pl-10 pr-8 h-15 flex items-center "
+                    class="rounded py-5 pl-10 pr-8 h-15 flex items-center"
                   >
                     <div
                       class="mr-3 text-theme-primary-300 dark:text-theme-secondary-600"
@@ -1986,7 +2016,7 @@ exports[`Settings should render 1`] = `
                   data-testid="side-menu__item--Password"
                 >
                   <li
-                    class="rounded-lg py-5 pl-10 pr-8 h-15 flex items-center "
+                    class="rounded py-5 pl-10 pr-8 h-15 flex items-center"
                   >
                     <div
                       class="mr-3 text-theme-primary-300 dark:text-theme-secondary-600"
@@ -2013,7 +2043,7 @@ exports[`Settings should render 1`] = `
                   data-testid="side-menu__item--Export"
                 >
                   <li
-                    class="rounded-lg py-5 pl-10 pr-8 h-15 flex items-center "
+                    class="rounded py-5 pl-10 pr-8 h-15 flex items-center"
                   >
                     <div
                       class="mr-3 text-theme-primary-300 dark:text-theme-secondary-600"
@@ -2150,7 +2180,7 @@ exports[`Settings should render 1`] = `
                             />
                           </label>
                           <div
-                            class="Input__InputWrapperStyled-wu99qs-0 hDeOGV"
+                            class="Input__InputWrapperStyled-wu99qs-0 knbpfp"
                           >
                             <div
                               class="relative flex flex-1 h-full"
@@ -2182,7 +2212,7 @@ exports[`Settings should render 1`] = `
                             class="relative w-full"
                           >
                             <div
-                              class="Input__InputWrapperStyled-wu99qs-0 hDeOGV sr-only"
+                              class="Input__InputWrapperStyled-wu99qs-0 knbpfp sr-only"
                             >
                               <div
                                 class="relative flex flex-1 h-full"
@@ -2192,6 +2222,7 @@ exports[`Settings should render 1`] = `
                                   data-testid="select-list__input"
                                   name="passphraseLanguage"
                                   readonly=""
+                                  tabindex="-1"
                                   value="english"
                                 />
                               </div>
@@ -2210,7 +2241,7 @@ exports[`Settings should render 1`] = `
                                   id="select-passphrase-language-label"
                                 />
                                 <div
-                                  class="Input__InputWrapperStyled-wu99qs-0 hDeOGV"
+                                  class="Input__InputWrapperStyled-wu99qs-0 knbpfp"
                                 >
                                   <div
                                     class="relative flex flex-1 h-full"
@@ -2259,7 +2290,7 @@ exports[`Settings should render 1`] = `
                                 </div>
                                 <ul
                                   aria-labelledby="select-passphrase-language-label"
-                                  class="styles__SelectOptionsList-b2falt-0 cUNLQk"
+                                  class="styles__SelectOptionsList-b2falt-0 ghEDCU"
                                   id="select-passphrase-language-menu"
                                   role="listbox"
                                 />
@@ -2285,7 +2316,7 @@ exports[`Settings should render 1`] = `
                             class="relative w-full"
                           >
                             <div
-                              class="Input__InputWrapperStyled-wu99qs-0 hDeOGV sr-only"
+                              class="Input__InputWrapperStyled-wu99qs-0 knbpfp sr-only"
                             >
                               <div
                                 class="relative flex flex-1 h-full"
@@ -2295,6 +2326,7 @@ exports[`Settings should render 1`] = `
                                   data-testid="select-list__input"
                                   name="currency"
                                   readonly=""
+                                  tabindex="-1"
                                   value="BTC"
                                 />
                               </div>
@@ -2313,7 +2345,7 @@ exports[`Settings should render 1`] = `
                                   id="select-currency-label"
                                 />
                                 <div
-                                  class="Input__InputWrapperStyled-wu99qs-0 hDeOGV"
+                                  class="Input__InputWrapperStyled-wu99qs-0 knbpfp"
                                 >
                                   <div
                                     class="relative flex flex-1 h-full"
@@ -2362,7 +2394,7 @@ exports[`Settings should render 1`] = `
                                 </div>
                                 <ul
                                   aria-labelledby="select-currency-label"
-                                  class="styles__SelectOptionsList-b2falt-0 cUNLQk"
+                                  class="styles__SelectOptionsList-b2falt-0 ghEDCU"
                                   id="select-currency-menu"
                                   role="listbox"
                                 />
@@ -2392,7 +2424,7 @@ exports[`Settings should render 1`] = `
                             class="relative w-full"
                           >
                             <div
-                              class="Input__InputWrapperStyled-wu99qs-0 hDeOGV sr-only"
+                              class="Input__InputWrapperStyled-wu99qs-0 knbpfp sr-only"
                             >
                               <div
                                 class="relative flex flex-1 h-full"
@@ -2402,6 +2434,7 @@ exports[`Settings should render 1`] = `
                                   data-testid="select-list__input"
                                   name="language"
                                   readonly=""
+                                  tabindex="-1"
                                   value="en-US"
                                 />
                               </div>
@@ -2420,7 +2453,7 @@ exports[`Settings should render 1`] = `
                                   id="select-language-label"
                                 />
                                 <div
-                                  class="Input__InputWrapperStyled-wu99qs-0 hDeOGV"
+                                  class="Input__InputWrapperStyled-wu99qs-0 knbpfp"
                                 >
                                   <div
                                     class="relative flex flex-1 h-full"
@@ -2469,7 +2502,7 @@ exports[`Settings should render 1`] = `
                                 </div>
                                 <ul
                                   aria-labelledby="select-language-label"
-                                  class="styles__SelectOptionsList-b2falt-0 cUNLQk"
+                                  class="styles__SelectOptionsList-b2falt-0 ghEDCU"
                                   id="select-language-menu"
                                   role="listbox"
                                 />
@@ -2495,7 +2528,7 @@ exports[`Settings should render 1`] = `
                             class="relative w-full"
                           >
                             <div
-                              class="Input__InputWrapperStyled-wu99qs-0 hDeOGV sr-only"
+                              class="Input__InputWrapperStyled-wu99qs-0 knbpfp sr-only"
                             >
                               <div
                                 class="relative flex flex-1 h-full"
@@ -2505,6 +2538,7 @@ exports[`Settings should render 1`] = `
                                   data-testid="select-list__input"
                                   name="marketProvider"
                                   readonly=""
+                                  tabindex="-1"
                                   value="cryptocompare"
                                 />
                               </div>
@@ -2523,7 +2557,7 @@ exports[`Settings should render 1`] = `
                                   id="select-market-provider-label"
                                 />
                                 <div
-                                  class="Input__InputWrapperStyled-wu99qs-0 hDeOGV"
+                                  class="Input__InputWrapperStyled-wu99qs-0 knbpfp"
                                 >
                                   <div
                                     class="relative flex flex-1 h-full"
@@ -2572,7 +2606,7 @@ exports[`Settings should render 1`] = `
                                 </div>
                                 <ul
                                   aria-labelledby="select-market-provider-label"
-                                  class="styles__SelectOptionsList-b2falt-0 cUNLQk"
+                                  class="styles__SelectOptionsList-b2falt-0 ghEDCU"
                                   id="select-market-provider-menu"
                                   role="listbox"
                                 />
@@ -2598,7 +2632,7 @@ exports[`Settings should render 1`] = `
                             class="relative w-full"
                           >
                             <div
-                              class="Input__InputWrapperStyled-wu99qs-0 hDeOGV sr-only"
+                              class="Input__InputWrapperStyled-wu99qs-0 knbpfp sr-only"
                             >
                               <div
                                 class="relative flex flex-1 h-full"
@@ -2608,6 +2642,7 @@ exports[`Settings should render 1`] = `
                                   data-testid="select-list__input"
                                   name="timeFormat"
                                   readonly=""
+                                  tabindex="-1"
                                   value="h:mm A"
                                 />
                               </div>
@@ -2626,7 +2661,7 @@ exports[`Settings should render 1`] = `
                                   id="select-time-format-label"
                                 />
                                 <div
-                                  class="Input__InputWrapperStyled-wu99qs-0 hDeOGV"
+                                  class="Input__InputWrapperStyled-wu99qs-0 knbpfp"
                                 >
                                   <div
                                     class="relative flex flex-1 h-full"
@@ -2675,7 +2710,7 @@ exports[`Settings should render 1`] = `
                                 </div>
                                 <ul
                                   aria-labelledby="select-time-format-label"
-                                  class="styles__SelectOptionsList-b2falt-0 cUNLQk"
+                                  class="styles__SelectOptionsList-b2falt-0 ghEDCU"
                                   id="select-time-format-menu"
                                   role="listbox"
                                 />
@@ -2695,7 +2730,7 @@ exports[`Settings should render 1`] = `
                       Security
                     </h2>
                     <ul
-                      class="sc-dlfnbm cOiGXi"
+                      class="sc-hKgILt gfmZFQ"
                       data-testid="list-divided__items"
                     >
                       <li
@@ -2839,7 +2874,7 @@ exports[`Settings should render 1`] = `
                               class="relative w-full"
                             >
                               <div
-                                class="Input__InputWrapperStyled-wu99qs-0 hDeOGV sr-only"
+                                class="Input__InputWrapperStyled-wu99qs-0 knbpfp sr-only"
                               >
                                 <div
                                   class="relative flex flex-1 h-full"
@@ -2849,6 +2884,7 @@ exports[`Settings should render 1`] = `
                                     data-testid="select-list__input"
                                     name="automaticSignOutPeriod"
                                     readonly=""
+                                    tabindex="-1"
                                     value="1"
                                   />
                                 </div>
@@ -2867,7 +2903,7 @@ exports[`Settings should render 1`] = `
                                     id="select-auto-signout-label"
                                   />
                                   <div
-                                    class="Input__InputWrapperStyled-wu99qs-0 hDeOGV"
+                                    class="Input__InputWrapperStyled-wu99qs-0 knbpfp"
                                   >
                                     <div
                                       class="relative flex flex-1 h-full"
@@ -2916,7 +2952,7 @@ exports[`Settings should render 1`] = `
                                   </div>
                                   <ul
                                     aria-labelledby="select-auto-signout-label"
-                                    class="styles__SelectOptionsList-b2falt-0 cUNLQk"
+                                    class="styles__SelectOptionsList-b2falt-0 ghEDCU"
                                     id="select-auto-signout-menu"
                                     role="listbox"
                                   />
@@ -2937,7 +2973,7 @@ exports[`Settings should render 1`] = `
                       Other
                     </h2>
                     <ul
-                      class="sc-dlfnbm cOiGXi"
+                      class="sc-hKgILt gfmZFQ"
                       data-testid="list-divided__items"
                     >
                       <li
@@ -3144,7 +3180,7 @@ exports[`Settings should render 1`] = `
                     class="flex justify-between pt-2 w-full"
                   >
                     <button
-                      class="OriginalButton__StyledButton-sc-1y2wptt-0 hLYMjm"
+                      class="OriginalButton__StyledButton-sc-1y2wptt-0 gDVvgk"
                       type="button"
                     >
                       <div
@@ -3168,7 +3204,7 @@ exports[`Settings should render 1`] = `
                       class="space-x-3"
                     >
                       <button
-                        class="OriginalButton__StyledButton-sc-1y2wptt-0 hsoUax"
+                        class="OriginalButton__StyledButton-sc-1y2wptt-0 izJbbP"
                         data-testid="General-settings__cancel-button"
                         type="button"
                       >
@@ -3179,7 +3215,7 @@ exports[`Settings should render 1`] = `
                         </div>
                       </button>
                       <button
-                        class="OriginalButton__StyledButton-sc-1y2wptt-0 cEUmKc"
+                        class="OriginalButton__StyledButton-sc-1y2wptt-0 dYkFxS"
                         data-testid="General-settings__submit-button"
                         type="submit"
                       >
@@ -3250,10 +3286,13 @@ exports[`Settings should render export settings 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text"
+                class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
                 title="Portfolio"
               >
+                <div
+                  class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2"
+                />
                 Portfolio
               </a>
             </li>
@@ -3261,10 +3300,13 @@ exports[`Settings should render export settings 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text"
+                class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/plugins"
                 title="Plugins"
               >
+                <div
+                  class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2"
+                />
                 Plugins
               </a>
             </li>
@@ -3272,10 +3314,13 @@ exports[`Settings should render export settings 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text"
+                class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/exchange"
                 title="Exchange"
               >
+                <div
+                  class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2"
+                />
                 Exchange
               </a>
             </li>
@@ -3283,10 +3328,13 @@ exports[`Settings should render export settings 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text"
+                class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/news"
                 title="News"
               >
+                <div
+                  class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2"
+                />
                 News
               </a>
             </li>
@@ -3305,7 +3353,7 @@ exports[`Settings should render export settings 1`] = `
                     class="NavigationBar__NavigationButtonWrapper-sc-1qsoskw-1 eUPnft group"
                   >
                     <button
-                      class="OriginalButton__StyledButton-sc-1y2wptt-0 lpqSIM"
+                      class="OriginalButton__StyledButton-sc-1y2wptt-0 fNHPRi"
                       data-testid="navbar__buttons--notifications"
                       type="button"
                     >
@@ -3344,7 +3392,7 @@ exports[`Settings should render export settings 1`] = `
                 class="NavigationBar__NavigationButtonWrapper-sc-1qsoskw-1 eUPnft"
               >
                 <button
-                  class="OriginalButton__StyledButton-sc-1y2wptt-0 jNneja"
+                  class="OriginalButton__StyledButton-sc-1y2wptt-0 epuIM"
                   data-testid="navbar__buttons--send"
                   disabled=""
                   type="button"
@@ -3375,7 +3423,7 @@ exports[`Settings should render export settings 1`] = `
                 class="NavigationBar__NavigationButtonWrapper-sc-1qsoskw-1 eUPnft"
               >
                 <button
-                  class="OriginalButton__StyledButton-sc-1y2wptt-0 jNneja"
+                  class="OriginalButton__StyledButton-sc-1y2wptt-0 epuIM"
                   data-testid="navbar__buttons--receive"
                   disabled=""
                   type="button"
@@ -3498,7 +3546,7 @@ exports[`Settings should render export settings 1`] = `
                   data-testid="side-menu__item--General"
                 >
                   <li
-                    class="rounded-lg py-5 pl-10 pr-8 h-15 flex items-center "
+                    class="rounded py-5 pl-10 pr-8 h-15 flex items-center"
                   >
                     <div
                       class="mr-3 text-theme-primary-300 dark:text-theme-secondary-600"
@@ -3525,7 +3573,7 @@ exports[`Settings should render export settings 1`] = `
                   data-testid="side-menu__item--Peer"
                 >
                   <li
-                    class="rounded-lg py-5 pl-10 pr-8 h-15 flex items-center "
+                    class="rounded py-5 pl-10 pr-8 h-15 flex items-center"
                   >
                     <div
                       class="mr-3 text-theme-primary-300 dark:text-theme-secondary-600"
@@ -3552,7 +3600,7 @@ exports[`Settings should render export settings 1`] = `
                   data-testid="side-menu__item--Plugins"
                 >
                   <li
-                    class="rounded-lg py-5 pl-10 pr-8 h-15 flex items-center "
+                    class="rounded py-5 pl-10 pr-8 h-15 flex items-center"
                   >
                     <div
                       class="mr-3 text-theme-primary-300 dark:text-theme-secondary-600"
@@ -3579,7 +3627,7 @@ exports[`Settings should render export settings 1`] = `
                   data-testid="side-menu__item--Password"
                 >
                   <li
-                    class="rounded-lg py-5 pl-10 pr-8 h-15 flex items-center "
+                    class="rounded py-5 pl-10 pr-8 h-15 flex items-center"
                   >
                     <div
                       class="mr-3 text-theme-primary-300 dark:text-theme-secondary-600"
@@ -3606,13 +3654,13 @@ exports[`Settings should render export settings 1`] = `
                   data-testid="side-menu__item--Export"
                 >
                   <li
-                    class="rounded-lg py-5 pl-10 pr-8 h-15 flex items-center text-theme-primary-600 bg-theme-primary-100 dark:bg-theme-secondary-800"
+                    class="rounded py-5 pl-10 pr-8 h-15 flex items-center text-theme-primary-600 dark:text-theme-secondary-200 bg-theme-primary-100 dark:bg-theme-secondary-800"
                   >
                     <div
                       class="absolute top-0 bottom-0 left-0 w-2 rounded bg-theme-primary-600"
                     />
                     <div
-                      class="mr-3 text-theme-primary-600"
+                      class="mr-3"
                     >
                       <div
                         class="sc-bdfBwQ iyevwF"
@@ -3674,7 +3722,7 @@ exports[`Settings should render export settings 1`] = `
                     Wallets
                   </h2>
                   <ul
-                    class="sc-dlfnbm cOiGXi"
+                    class="sc-hKgILt gfmZFQ"
                     data-testid="list-divided__items"
                   >
                     <li
@@ -3780,7 +3828,7 @@ exports[`Settings should render export settings 1`] = `
                     class="flex justify-end w-full space-x-3 mt-8"
                   >
                     <button
-                      class="OriginalButton__StyledButton-sc-1y2wptt-0 cEUmKc"
+                      class="OriginalButton__StyledButton-sc-1y2wptt-0 dYkFxS"
                       data-testid="Export-settings__submit-button"
                       type="submit"
                     >
@@ -3850,10 +3898,13 @@ exports[`Settings should render password settings 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text"
+                class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
                 title="Portfolio"
               >
+                <div
+                  class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2"
+                />
                 Portfolio
               </a>
             </li>
@@ -3861,10 +3912,13 @@ exports[`Settings should render password settings 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text"
+                class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/plugins"
                 title="Plugins"
               >
+                <div
+                  class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2"
+                />
                 Plugins
               </a>
             </li>
@@ -3872,10 +3926,13 @@ exports[`Settings should render password settings 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text"
+                class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/exchange"
                 title="Exchange"
               >
+                <div
+                  class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2"
+                />
                 Exchange
               </a>
             </li>
@@ -3883,10 +3940,13 @@ exports[`Settings should render password settings 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text"
+                class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/news"
                 title="News"
               >
+                <div
+                  class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2"
+                />
                 News
               </a>
             </li>
@@ -3905,7 +3965,7 @@ exports[`Settings should render password settings 1`] = `
                     class="NavigationBar__NavigationButtonWrapper-sc-1qsoskw-1 eUPnft group"
                   >
                     <button
-                      class="OriginalButton__StyledButton-sc-1y2wptt-0 lpqSIM"
+                      class="OriginalButton__StyledButton-sc-1y2wptt-0 fNHPRi"
                       data-testid="navbar__buttons--notifications"
                       type="button"
                     >
@@ -3944,7 +4004,7 @@ exports[`Settings should render password settings 1`] = `
                 class="NavigationBar__NavigationButtonWrapper-sc-1qsoskw-1 eUPnft"
               >
                 <button
-                  class="OriginalButton__StyledButton-sc-1y2wptt-0 jNneja"
+                  class="OriginalButton__StyledButton-sc-1y2wptt-0 epuIM"
                   data-testid="navbar__buttons--send"
                   disabled=""
                   type="button"
@@ -3975,7 +4035,7 @@ exports[`Settings should render password settings 1`] = `
                 class="NavigationBar__NavigationButtonWrapper-sc-1qsoskw-1 eUPnft"
               >
                 <button
-                  class="OriginalButton__StyledButton-sc-1y2wptt-0 jNneja"
+                  class="OriginalButton__StyledButton-sc-1y2wptt-0 epuIM"
                   data-testid="navbar__buttons--receive"
                   disabled=""
                   type="button"
@@ -4098,7 +4158,7 @@ exports[`Settings should render password settings 1`] = `
                   data-testid="side-menu__item--General"
                 >
                   <li
-                    class="rounded-lg py-5 pl-10 pr-8 h-15 flex items-center "
+                    class="rounded py-5 pl-10 pr-8 h-15 flex items-center"
                   >
                     <div
                       class="mr-3 text-theme-primary-300 dark:text-theme-secondary-600"
@@ -4125,7 +4185,7 @@ exports[`Settings should render password settings 1`] = `
                   data-testid="side-menu__item--Peer"
                 >
                   <li
-                    class="rounded-lg py-5 pl-10 pr-8 h-15 flex items-center "
+                    class="rounded py-5 pl-10 pr-8 h-15 flex items-center"
                   >
                     <div
                       class="mr-3 text-theme-primary-300 dark:text-theme-secondary-600"
@@ -4152,7 +4212,7 @@ exports[`Settings should render password settings 1`] = `
                   data-testid="side-menu__item--Plugins"
                 >
                   <li
-                    class="rounded-lg py-5 pl-10 pr-8 h-15 flex items-center "
+                    class="rounded py-5 pl-10 pr-8 h-15 flex items-center"
                   >
                     <div
                       class="mr-3 text-theme-primary-300 dark:text-theme-secondary-600"
@@ -4179,13 +4239,13 @@ exports[`Settings should render password settings 1`] = `
                   data-testid="side-menu__item--Password"
                 >
                   <li
-                    class="rounded-lg py-5 pl-10 pr-8 h-15 flex items-center text-theme-primary-600 bg-theme-primary-100 dark:bg-theme-secondary-800"
+                    class="rounded py-5 pl-10 pr-8 h-15 flex items-center text-theme-primary-600 dark:text-theme-secondary-200 bg-theme-primary-100 dark:bg-theme-secondary-800"
                   >
                     <div
                       class="absolute top-0 bottom-0 left-0 w-2 rounded bg-theme-primary-600"
                     />
                     <div
-                      class="mr-3 text-theme-primary-600"
+                      class="mr-3"
                     >
                       <div
                         class="sc-bdfBwQ iyevwF"
@@ -4209,7 +4269,7 @@ exports[`Settings should render password settings 1`] = `
                   data-testid="side-menu__item--Export"
                 >
                   <li
-                    class="rounded-lg py-5 pl-10 pr-8 h-15 flex items-center "
+                    class="rounded py-5 pl-10 pr-8 h-15 flex items-center"
                   >
                     <div
                       class="mr-3 text-theme-primary-300 dark:text-theme-secondary-600"
@@ -4286,7 +4346,7 @@ exports[`Settings should render password settings 1`] = `
                         />
                       </label>
                       <div
-                        class="Input__InputWrapperStyled-wu99qs-0 hDeOGV"
+                        class="Input__InputWrapperStyled-wu99qs-0 knbpfp"
                       >
                         <div
                           class="relative flex flex-1 h-full"
@@ -4310,7 +4370,7 @@ exports[`Settings should render password settings 1`] = `
                               type="button"
                             >
                               <div
-                                class="absolute inset-0 -m-2 rounded ring-theme-primary-400 group-focus:ring-2"
+                                class="absolute inset-0 -m-1 rounded ring-theme-primary-400 group-focus:ring-2"
                               />
                               <div
                                 class="sc-bdfBwQ fPrsah"
@@ -4341,7 +4401,7 @@ exports[`Settings should render password settings 1`] = `
                         />
                       </label>
                       <div
-                        class="Input__InputWrapperStyled-wu99qs-0 hDeOGV"
+                        class="Input__InputWrapperStyled-wu99qs-0 knbpfp"
                       >
                         <div
                           class="relative flex flex-1 h-full"
@@ -4365,7 +4425,7 @@ exports[`Settings should render password settings 1`] = `
                               type="button"
                             >
                               <div
-                                class="absolute inset-0 -m-2 rounded ring-theme-primary-400 group-focus:ring-2"
+                                class="absolute inset-0 -m-1 rounded ring-theme-primary-400 group-focus:ring-2"
                               />
                               <div
                                 class="sc-bdfBwQ fPrsah"
@@ -4385,7 +4445,7 @@ exports[`Settings should render password settings 1`] = `
                       class="flex justify-end mt-8 w-full"
                     >
                       <button
-                        class="OriginalButton__StyledButton-sc-1y2wptt-0 blpaPr"
+                        class="OriginalButton__StyledButton-sc-1y2wptt-0 fqRthJ"
                         data-testid="Password-settings__submit-button"
                         disabled=""
                         type="submit"
@@ -4457,10 +4517,13 @@ exports[`Settings should render peer settings 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text"
+                class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
                 title="Portfolio"
               >
+                <div
+                  class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2"
+                />
                 Portfolio
               </a>
             </li>
@@ -4468,10 +4531,13 @@ exports[`Settings should render peer settings 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text"
+                class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/plugins"
                 title="Plugins"
               >
+                <div
+                  class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2"
+                />
                 Plugins
               </a>
             </li>
@@ -4479,10 +4545,13 @@ exports[`Settings should render peer settings 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text"
+                class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/exchange"
                 title="Exchange"
               >
+                <div
+                  class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2"
+                />
                 Exchange
               </a>
             </li>
@@ -4490,10 +4559,13 @@ exports[`Settings should render peer settings 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text"
+                class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/news"
                 title="News"
               >
+                <div
+                  class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2"
+                />
                 News
               </a>
             </li>
@@ -4512,7 +4584,7 @@ exports[`Settings should render peer settings 1`] = `
                     class="NavigationBar__NavigationButtonWrapper-sc-1qsoskw-1 eUPnft group"
                   >
                     <button
-                      class="OriginalButton__StyledButton-sc-1y2wptt-0 lpqSIM"
+                      class="OriginalButton__StyledButton-sc-1y2wptt-0 fNHPRi"
                       data-testid="navbar__buttons--notifications"
                       type="button"
                     >
@@ -4551,7 +4623,7 @@ exports[`Settings should render peer settings 1`] = `
                 class="NavigationBar__NavigationButtonWrapper-sc-1qsoskw-1 eUPnft"
               >
                 <button
-                  class="OriginalButton__StyledButton-sc-1y2wptt-0 jNneja"
+                  class="OriginalButton__StyledButton-sc-1y2wptt-0 epuIM"
                   data-testid="navbar__buttons--send"
                   disabled=""
                   type="button"
@@ -4582,7 +4654,7 @@ exports[`Settings should render peer settings 1`] = `
                 class="NavigationBar__NavigationButtonWrapper-sc-1qsoskw-1 eUPnft"
               >
                 <button
-                  class="OriginalButton__StyledButton-sc-1y2wptt-0 jNneja"
+                  class="OriginalButton__StyledButton-sc-1y2wptt-0 epuIM"
                   data-testid="navbar__buttons--receive"
                   disabled=""
                   type="button"
@@ -4705,7 +4777,7 @@ exports[`Settings should render peer settings 1`] = `
                   data-testid="side-menu__item--General"
                 >
                   <li
-                    class="rounded-lg py-5 pl-10 pr-8 h-15 flex items-center "
+                    class="rounded py-5 pl-10 pr-8 h-15 flex items-center"
                   >
                     <div
                       class="mr-3 text-theme-primary-300 dark:text-theme-secondary-600"
@@ -4732,13 +4804,13 @@ exports[`Settings should render peer settings 1`] = `
                   data-testid="side-menu__item--Peer"
                 >
                   <li
-                    class="rounded-lg py-5 pl-10 pr-8 h-15 flex items-center text-theme-primary-600 bg-theme-primary-100 dark:bg-theme-secondary-800"
+                    class="rounded py-5 pl-10 pr-8 h-15 flex items-center text-theme-primary-600 dark:text-theme-secondary-200 bg-theme-primary-100 dark:bg-theme-secondary-800"
                   >
                     <div
                       class="absolute top-0 bottom-0 left-0 w-2 rounded bg-theme-primary-600"
                     />
                     <div
-                      class="mr-3 text-theme-primary-600"
+                      class="mr-3"
                     >
                       <div
                         class="sc-bdfBwQ iyevwF"
@@ -4762,7 +4834,7 @@ exports[`Settings should render peer settings 1`] = `
                   data-testid="side-menu__item--Plugins"
                 >
                   <li
-                    class="rounded-lg py-5 pl-10 pr-8 h-15 flex items-center "
+                    class="rounded py-5 pl-10 pr-8 h-15 flex items-center"
                   >
                     <div
                       class="mr-3 text-theme-primary-300 dark:text-theme-secondary-600"
@@ -4789,7 +4861,7 @@ exports[`Settings should render peer settings 1`] = `
                   data-testid="side-menu__item--Password"
                 >
                   <li
-                    class="rounded-lg py-5 pl-10 pr-8 h-15 flex items-center "
+                    class="rounded py-5 pl-10 pr-8 h-15 flex items-center"
                   >
                     <div
                       class="mr-3 text-theme-primary-300 dark:text-theme-secondary-600"
@@ -4816,7 +4888,7 @@ exports[`Settings should render peer settings 1`] = `
                   data-testid="side-menu__item--Export"
                 >
                   <li
-                    class="rounded-lg py-5 pl-10 pr-8 h-15 flex items-center "
+                    class="rounded py-5 pl-10 pr-8 h-15 flex items-center"
                   >
                     <div
                       class="mr-3 text-theme-primary-300 dark:text-theme-secondary-600"
@@ -4876,7 +4948,7 @@ exports[`Settings should render peer settings 1`] = `
                   id="peer-settings__form"
                 >
                   <ul
-                    class="sc-dlfnbm cOiGXi"
+                    class="sc-hKgILt gfmZFQ"
                     data-testid="list-divided__items"
                   >
                     <li
@@ -4992,7 +5064,7 @@ exports[`Settings should render peer settings 1`] = `
                     class="flex justify-end w-full"
                   >
                     <button
-                      class="OriginalButton__StyledButton-sc-1y2wptt-0 cEUmKc"
+                      class="OriginalButton__StyledButton-sc-1y2wptt-0 dYkFxS"
                       data-testid="Peer-settings__submit-button"
                       type="submit"
                     >
@@ -5062,10 +5134,13 @@ exports[`Settings should render plugin settings 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text"
+                class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
                 title="Portfolio"
               >
+                <div
+                  class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2"
+                />
                 Portfolio
               </a>
             </li>
@@ -5073,10 +5148,13 @@ exports[`Settings should render plugin settings 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text"
+                class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/plugins"
                 title="Plugins"
               >
+                <div
+                  class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2"
+                />
                 Plugins
               </a>
             </li>
@@ -5084,10 +5162,13 @@ exports[`Settings should render plugin settings 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text"
+                class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/exchange"
                 title="Exchange"
               >
+                <div
+                  class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2"
+                />
                 Exchange
               </a>
             </li>
@@ -5095,10 +5176,13 @@ exports[`Settings should render plugin settings 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text"
+                class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/news"
                 title="News"
               >
+                <div
+                  class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2"
+                />
                 News
               </a>
             </li>
@@ -5117,7 +5201,7 @@ exports[`Settings should render plugin settings 1`] = `
                     class="NavigationBar__NavigationButtonWrapper-sc-1qsoskw-1 eUPnft group"
                   >
                     <button
-                      class="OriginalButton__StyledButton-sc-1y2wptt-0 lpqSIM"
+                      class="OriginalButton__StyledButton-sc-1y2wptt-0 fNHPRi"
                       data-testid="navbar__buttons--notifications"
                       type="button"
                     >
@@ -5156,7 +5240,7 @@ exports[`Settings should render plugin settings 1`] = `
                 class="NavigationBar__NavigationButtonWrapper-sc-1qsoskw-1 eUPnft"
               >
                 <button
-                  class="OriginalButton__StyledButton-sc-1y2wptt-0 jNneja"
+                  class="OriginalButton__StyledButton-sc-1y2wptt-0 epuIM"
                   data-testid="navbar__buttons--send"
                   disabled=""
                   type="button"
@@ -5187,7 +5271,7 @@ exports[`Settings should render plugin settings 1`] = `
                 class="NavigationBar__NavigationButtonWrapper-sc-1qsoskw-1 eUPnft"
               >
                 <button
-                  class="OriginalButton__StyledButton-sc-1y2wptt-0 jNneja"
+                  class="OriginalButton__StyledButton-sc-1y2wptt-0 epuIM"
                   data-testid="navbar__buttons--receive"
                   disabled=""
                   type="button"
@@ -5310,7 +5394,7 @@ exports[`Settings should render plugin settings 1`] = `
                   data-testid="side-menu__item--General"
                 >
                   <li
-                    class="rounded-lg py-5 pl-10 pr-8 h-15 flex items-center "
+                    class="rounded py-5 pl-10 pr-8 h-15 flex items-center"
                   >
                     <div
                       class="mr-3 text-theme-primary-300 dark:text-theme-secondary-600"
@@ -5337,7 +5421,7 @@ exports[`Settings should render plugin settings 1`] = `
                   data-testid="side-menu__item--Peer"
                 >
                   <li
-                    class="rounded-lg py-5 pl-10 pr-8 h-15 flex items-center "
+                    class="rounded py-5 pl-10 pr-8 h-15 flex items-center"
                   >
                     <div
                       class="mr-3 text-theme-primary-300 dark:text-theme-secondary-600"
@@ -5364,13 +5448,13 @@ exports[`Settings should render plugin settings 1`] = `
                   data-testid="side-menu__item--Plugins"
                 >
                   <li
-                    class="rounded-lg py-5 pl-10 pr-8 h-15 flex items-center text-theme-primary-600 bg-theme-primary-100 dark:bg-theme-secondary-800"
+                    class="rounded py-5 pl-10 pr-8 h-15 flex items-center text-theme-primary-600 dark:text-theme-secondary-200 bg-theme-primary-100 dark:bg-theme-secondary-800"
                   >
                     <div
                       class="absolute top-0 bottom-0 left-0 w-2 rounded bg-theme-primary-600"
                     />
                     <div
-                      class="mr-3 text-theme-primary-600"
+                      class="mr-3"
                     >
                       <div
                         class="sc-bdfBwQ iyevwF"
@@ -5394,7 +5478,7 @@ exports[`Settings should render plugin settings 1`] = `
                   data-testid="side-menu__item--Password"
                 >
                   <li
-                    class="rounded-lg py-5 pl-10 pr-8 h-15 flex items-center "
+                    class="rounded py-5 pl-10 pr-8 h-15 flex items-center"
                   >
                     <div
                       class="mr-3 text-theme-primary-300 dark:text-theme-secondary-600"
@@ -5421,7 +5505,7 @@ exports[`Settings should render plugin settings 1`] = `
                   data-testid="side-menu__item--Export"
                 >
                   <li
-                    class="rounded-lg py-5 pl-10 pr-8 h-15 flex items-center "
+                    class="rounded py-5 pl-10 pr-8 h-15 flex items-center"
                   >
                     <div
                       class="mr-3 text-theme-primary-300 dark:text-theme-secondary-600"
@@ -5481,7 +5565,7 @@ exports[`Settings should render plugin settings 1`] = `
                   id="plugin-settings__form"
                 >
                   <ul
-                    class="sc-dlfnbm cOiGXi"
+                    class="sc-hKgILt gfmZFQ"
                     data-testid="list-divided__items"
                   >
                     <li
@@ -5555,7 +5639,7 @@ exports[`Settings should render plugin settings 1`] = `
                               class="relative w-full"
                             >
                               <div
-                                class="Input__InputWrapperStyled-wu99qs-0 hDeOGV sr-only"
+                                class="Input__InputWrapperStyled-wu99qs-0 knbpfp sr-only"
                               >
                                 <div
                                   class="relative flex flex-1 h-full"
@@ -5565,6 +5649,7 @@ exports[`Settings should render plugin settings 1`] = `
                                     data-testid="select-list__input"
                                     name="load-plugins"
                                     readonly=""
+                                    tabindex="-1"
                                     value=""
                                   />
                                 </div>
@@ -5583,7 +5668,7 @@ exports[`Settings should render plugin settings 1`] = `
                                     id="downshift-90-label"
                                   />
                                   <div
-                                    class="Input__InputWrapperStyled-wu99qs-0 hDeOGV"
+                                    class="Input__InputWrapperStyled-wu99qs-0 knbpfp"
                                   >
                                     <div
                                       class="relative flex flex-1 h-full"
@@ -5626,7 +5711,7 @@ exports[`Settings should render plugin settings 1`] = `
                                   </div>
                                   <ul
                                     aria-labelledby="downshift-90-label"
-                                    class="styles__SelectOptionsList-b2falt-0 cUNLQk"
+                                    class="styles__SelectOptionsList-b2falt-0 ghEDCU"
                                     id="downshift-90-menu"
                                     role="listbox"
                                   />
@@ -5642,7 +5727,7 @@ exports[`Settings should render plugin settings 1`] = `
                     class="flex justify-end mt-8 w-full"
                   >
                     <button
-                      class="OriginalButton__StyledButton-sc-1y2wptt-0 cEUmKc"
+                      class="OriginalButton__StyledButton-sc-1y2wptt-0 dYkFxS"
                       data-testid="Plugins-settings__submit-button"
                       type="submit"
                     >
@@ -5712,10 +5797,13 @@ exports[`Settings should set a password 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text"
+                class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
                 title="Portfolio"
               >
+                <div
+                  class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2"
+                />
                 Portfolio
               </a>
             </li>
@@ -5723,10 +5811,13 @@ exports[`Settings should set a password 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text"
+                class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/plugins"
                 title="Plugins"
               >
+                <div
+                  class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2"
+                />
                 Plugins
               </a>
             </li>
@@ -5734,10 +5825,13 @@ exports[`Settings should set a password 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text"
+                class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/exchange"
                 title="Exchange"
               >
+                <div
+                  class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2"
+                />
                 Exchange
               </a>
             </li>
@@ -5745,10 +5839,13 @@ exports[`Settings should set a password 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text"
+                class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/news"
                 title="News"
               >
+                <div
+                  class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2"
+                />
                 News
               </a>
             </li>
@@ -5767,7 +5864,7 @@ exports[`Settings should set a password 1`] = `
                     class="NavigationBar__NavigationButtonWrapper-sc-1qsoskw-1 eUPnft group"
                   >
                     <button
-                      class="OriginalButton__StyledButton-sc-1y2wptt-0 lpqSIM"
+                      class="OriginalButton__StyledButton-sc-1y2wptt-0 fNHPRi"
                       data-testid="navbar__buttons--notifications"
                       type="button"
                     >
@@ -5806,7 +5903,7 @@ exports[`Settings should set a password 1`] = `
                 class="NavigationBar__NavigationButtonWrapper-sc-1qsoskw-1 eUPnft"
               >
                 <button
-                  class="OriginalButton__StyledButton-sc-1y2wptt-0 jNneja"
+                  class="OriginalButton__StyledButton-sc-1y2wptt-0 epuIM"
                   data-testid="navbar__buttons--send"
                   disabled=""
                   type="button"
@@ -5837,7 +5934,7 @@ exports[`Settings should set a password 1`] = `
                 class="NavigationBar__NavigationButtonWrapper-sc-1qsoskw-1 eUPnft"
               >
                 <button
-                  class="OriginalButton__StyledButton-sc-1y2wptt-0 jNneja"
+                  class="OriginalButton__StyledButton-sc-1y2wptt-0 epuIM"
                   data-testid="navbar__buttons--receive"
                   disabled=""
                   type="button"
@@ -5960,7 +6057,7 @@ exports[`Settings should set a password 1`] = `
                   data-testid="side-menu__item--General"
                 >
                   <li
-                    class="rounded-lg py-5 pl-10 pr-8 h-15 flex items-center "
+                    class="rounded py-5 pl-10 pr-8 h-15 flex items-center"
                   >
                     <div
                       class="mr-3 text-theme-primary-300 dark:text-theme-secondary-600"
@@ -5987,7 +6084,7 @@ exports[`Settings should set a password 1`] = `
                   data-testid="side-menu__item--Peer"
                 >
                   <li
-                    class="rounded-lg py-5 pl-10 pr-8 h-15 flex items-center "
+                    class="rounded py-5 pl-10 pr-8 h-15 flex items-center"
                   >
                     <div
                       class="mr-3 text-theme-primary-300 dark:text-theme-secondary-600"
@@ -6014,7 +6111,7 @@ exports[`Settings should set a password 1`] = `
                   data-testid="side-menu__item--Plugins"
                 >
                   <li
-                    class="rounded-lg py-5 pl-10 pr-8 h-15 flex items-center "
+                    class="rounded py-5 pl-10 pr-8 h-15 flex items-center"
                   >
                     <div
                       class="mr-3 text-theme-primary-300 dark:text-theme-secondary-600"
@@ -6041,13 +6138,13 @@ exports[`Settings should set a password 1`] = `
                   data-testid="side-menu__item--Password"
                 >
                   <li
-                    class="rounded-lg py-5 pl-10 pr-8 h-15 flex items-center text-theme-primary-600 bg-theme-primary-100 dark:bg-theme-secondary-800"
+                    class="rounded py-5 pl-10 pr-8 h-15 flex items-center text-theme-primary-600 dark:text-theme-secondary-200 bg-theme-primary-100 dark:bg-theme-secondary-800"
                   >
                     <div
                       class="absolute top-0 bottom-0 left-0 w-2 rounded bg-theme-primary-600"
                     />
                     <div
-                      class="mr-3 text-theme-primary-600"
+                      class="mr-3"
                     >
                       <div
                         class="sc-bdfBwQ iyevwF"
@@ -6071,7 +6168,7 @@ exports[`Settings should set a password 1`] = `
                   data-testid="side-menu__item--Export"
                 >
                   <li
-                    class="rounded-lg py-5 pl-10 pr-8 h-15 flex items-center "
+                    class="rounded py-5 pl-10 pr-8 h-15 flex items-center"
                   >
                     <div
                       class="mr-3 text-theme-primary-300 dark:text-theme-secondary-600"
@@ -6148,7 +6245,7 @@ exports[`Settings should set a password 1`] = `
                         />
                       </label>
                       <div
-                        class="Input__InputWrapperStyled-wu99qs-0 hDeOGV"
+                        class="Input__InputWrapperStyled-wu99qs-0 knbpfp"
                       >
                         <div
                           class="relative flex flex-1 h-full"
@@ -6172,7 +6269,7 @@ exports[`Settings should set a password 1`] = `
                               type="button"
                             >
                               <div
-                                class="absolute inset-0 -m-2 rounded ring-theme-primary-400 group-focus:ring-2"
+                                class="absolute inset-0 -m-1 rounded ring-theme-primary-400 group-focus:ring-2"
                               />
                               <div
                                 class="sc-bdfBwQ fPrsah"
@@ -6203,7 +6300,7 @@ exports[`Settings should set a password 1`] = `
                         />
                       </label>
                       <div
-                        class="Input__InputWrapperStyled-wu99qs-0 hDeOGV"
+                        class="Input__InputWrapperStyled-wu99qs-0 knbpfp"
                       >
                         <div
                           class="relative flex flex-1 h-full"
@@ -6227,7 +6324,7 @@ exports[`Settings should set a password 1`] = `
                               type="button"
                             >
                               <div
-                                class="absolute inset-0 -m-2 rounded ring-theme-primary-400 group-focus:ring-2"
+                                class="absolute inset-0 -m-1 rounded ring-theme-primary-400 group-focus:ring-2"
                               />
                               <div
                                 class="sc-bdfBwQ fPrsah"
@@ -6258,7 +6355,7 @@ exports[`Settings should set a password 1`] = `
                         />
                       </label>
                       <div
-                        class="Input__InputWrapperStyled-wu99qs-0 hDeOGV"
+                        class="Input__InputWrapperStyled-wu99qs-0 knbpfp"
                       >
                         <div
                           class="relative flex flex-1 h-full"
@@ -6282,7 +6379,7 @@ exports[`Settings should set a password 1`] = `
                               type="button"
                             >
                               <div
-                                class="absolute inset-0 -m-2 rounded ring-theme-primary-400 group-focus:ring-2"
+                                class="absolute inset-0 -m-1 rounded ring-theme-primary-400 group-focus:ring-2"
                               />
                               <div
                                 class="sc-bdfBwQ fPrsah"
@@ -6302,7 +6399,7 @@ exports[`Settings should set a password 1`] = `
                       class="flex justify-end mt-8 w-full"
                     >
                       <button
-                        class="OriginalButton__StyledButton-sc-1y2wptt-0 blpaPr"
+                        class="OriginalButton__StyledButton-sc-1y2wptt-0 fqRthJ"
                         data-testid="Password-settings__submit-button"
                         disabled=""
                         type="submit"
@@ -6374,10 +6471,13 @@ exports[`Settings should show an error toast if the current password does not ma
               class="flex"
             >
               <a
-                class="flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text"
+                class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
                 title="Portfolio"
               >
+                <div
+                  class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2"
+                />
                 Portfolio
               </a>
             </li>
@@ -6385,10 +6485,13 @@ exports[`Settings should show an error toast if the current password does not ma
               class="flex"
             >
               <a
-                class="flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text"
+                class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/plugins"
                 title="Plugins"
               >
+                <div
+                  class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2"
+                />
                 Plugins
               </a>
             </li>
@@ -6396,10 +6499,13 @@ exports[`Settings should show an error toast if the current password does not ma
               class="flex"
             >
               <a
-                class="flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text"
+                class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/exchange"
                 title="Exchange"
               >
+                <div
+                  class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2"
+                />
                 Exchange
               </a>
             </li>
@@ -6407,10 +6513,13 @@ exports[`Settings should show an error toast if the current password does not ma
               class="flex"
             >
               <a
-                class="flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text"
+                class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/news"
                 title="News"
               >
+                <div
+                  class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2"
+                />
                 News
               </a>
             </li>
@@ -6429,7 +6538,7 @@ exports[`Settings should show an error toast if the current password does not ma
                     class="NavigationBar__NavigationButtonWrapper-sc-1qsoskw-1 eUPnft group"
                   >
                     <button
-                      class="OriginalButton__StyledButton-sc-1y2wptt-0 lpqSIM"
+                      class="OriginalButton__StyledButton-sc-1y2wptt-0 fNHPRi"
                       data-testid="navbar__buttons--notifications"
                       type="button"
                     >
@@ -6468,7 +6577,7 @@ exports[`Settings should show an error toast if the current password does not ma
                 class="NavigationBar__NavigationButtonWrapper-sc-1qsoskw-1 eUPnft"
               >
                 <button
-                  class="OriginalButton__StyledButton-sc-1y2wptt-0 jNneja"
+                  class="OriginalButton__StyledButton-sc-1y2wptt-0 epuIM"
                   data-testid="navbar__buttons--send"
                   disabled=""
                   type="button"
@@ -6499,7 +6608,7 @@ exports[`Settings should show an error toast if the current password does not ma
                 class="NavigationBar__NavigationButtonWrapper-sc-1qsoskw-1 eUPnft"
               >
                 <button
-                  class="OriginalButton__StyledButton-sc-1y2wptt-0 jNneja"
+                  class="OriginalButton__StyledButton-sc-1y2wptt-0 epuIM"
                   data-testid="navbar__buttons--receive"
                   disabled=""
                   type="button"
@@ -6622,7 +6731,7 @@ exports[`Settings should show an error toast if the current password does not ma
                   data-testid="side-menu__item--General"
                 >
                   <li
-                    class="rounded-lg py-5 pl-10 pr-8 h-15 flex items-center "
+                    class="rounded py-5 pl-10 pr-8 h-15 flex items-center"
                   >
                     <div
                       class="mr-3 text-theme-primary-300 dark:text-theme-secondary-600"
@@ -6649,7 +6758,7 @@ exports[`Settings should show an error toast if the current password does not ma
                   data-testid="side-menu__item--Peer"
                 >
                   <li
-                    class="rounded-lg py-5 pl-10 pr-8 h-15 flex items-center "
+                    class="rounded py-5 pl-10 pr-8 h-15 flex items-center"
                   >
                     <div
                       class="mr-3 text-theme-primary-300 dark:text-theme-secondary-600"
@@ -6676,7 +6785,7 @@ exports[`Settings should show an error toast if the current password does not ma
                   data-testid="side-menu__item--Plugins"
                 >
                   <li
-                    class="rounded-lg py-5 pl-10 pr-8 h-15 flex items-center "
+                    class="rounded py-5 pl-10 pr-8 h-15 flex items-center"
                   >
                     <div
                       class="mr-3 text-theme-primary-300 dark:text-theme-secondary-600"
@@ -6703,13 +6812,13 @@ exports[`Settings should show an error toast if the current password does not ma
                   data-testid="side-menu__item--Password"
                 >
                   <li
-                    class="rounded-lg py-5 pl-10 pr-8 h-15 flex items-center text-theme-primary-600 bg-theme-primary-100 dark:bg-theme-secondary-800"
+                    class="rounded py-5 pl-10 pr-8 h-15 flex items-center text-theme-primary-600 dark:text-theme-secondary-200 bg-theme-primary-100 dark:bg-theme-secondary-800"
                   >
                     <div
                       class="absolute top-0 bottom-0 left-0 w-2 rounded bg-theme-primary-600"
                     />
                     <div
-                      class="mr-3 text-theme-primary-600"
+                      class="mr-3"
                     >
                       <div
                         class="sc-bdfBwQ iyevwF"
@@ -6733,7 +6842,7 @@ exports[`Settings should show an error toast if the current password does not ma
                   data-testid="side-menu__item--Export"
                 >
                   <li
-                    class="rounded-lg py-5 pl-10 pr-8 h-15 flex items-center "
+                    class="rounded py-5 pl-10 pr-8 h-15 flex items-center"
                   >
                     <div
                       class="mr-3 text-theme-primary-300 dark:text-theme-secondary-600"
@@ -6810,7 +6919,7 @@ exports[`Settings should show an error toast if the current password does not ma
                         />
                       </label>
                       <div
-                        class="Input__InputWrapperStyled-wu99qs-0 hDeOGV"
+                        class="Input__InputWrapperStyled-wu99qs-0 knbpfp"
                       >
                         <div
                           class="relative flex flex-1 h-full"
@@ -6834,7 +6943,7 @@ exports[`Settings should show an error toast if the current password does not ma
                               type="button"
                             >
                               <div
-                                class="absolute inset-0 -m-2 rounded ring-theme-primary-400 group-focus:ring-2"
+                                class="absolute inset-0 -m-1 rounded ring-theme-primary-400 group-focus:ring-2"
                               />
                               <div
                                 class="sc-bdfBwQ fPrsah"
@@ -6865,7 +6974,7 @@ exports[`Settings should show an error toast if the current password does not ma
                         />
                       </label>
                       <div
-                        class="Input__InputWrapperStyled-wu99qs-0 hDeOGV"
+                        class="Input__InputWrapperStyled-wu99qs-0 knbpfp"
                       >
                         <div
                           class="relative flex flex-1 h-full"
@@ -6889,7 +6998,7 @@ exports[`Settings should show an error toast if the current password does not ma
                               type="button"
                             >
                               <div
-                                class="absolute inset-0 -m-2 rounded ring-theme-primary-400 group-focus:ring-2"
+                                class="absolute inset-0 -m-1 rounded ring-theme-primary-400 group-focus:ring-2"
                               />
                               <div
                                 class="sc-bdfBwQ fPrsah"
@@ -6920,7 +7029,7 @@ exports[`Settings should show an error toast if the current password does not ma
                         />
                       </label>
                       <div
-                        class="Input__InputWrapperStyled-wu99qs-0 hDeOGV"
+                        class="Input__InputWrapperStyled-wu99qs-0 knbpfp"
                       >
                         <div
                           class="relative flex flex-1 h-full"
@@ -6944,7 +7053,7 @@ exports[`Settings should show an error toast if the current password does not ma
                               type="button"
                             >
                               <div
-                                class="absolute inset-0 -m-2 rounded ring-theme-primary-400 group-focus:ring-2"
+                                class="absolute inset-0 -m-1 rounded ring-theme-primary-400 group-focus:ring-2"
                               />
                               <div
                                 class="sc-bdfBwQ fPrsah"
@@ -6964,7 +7073,7 @@ exports[`Settings should show an error toast if the current password does not ma
                       class="flex justify-end mt-8 w-full"
                     >
                       <button
-                        class="OriginalButton__StyledButton-sc-1y2wptt-0 cEUmKc"
+                        class="OriginalButton__StyledButton-sc-1y2wptt-0 dYkFxS"
                         data-testid="Password-settings__submit-button"
                         type="submit"
                       >
@@ -7035,10 +7144,13 @@ exports[`Settings should trigger password confirmation mismatch error 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text"
+                class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
                 title="Portfolio"
               >
+                <div
+                  class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2"
+                />
                 Portfolio
               </a>
             </li>
@@ -7046,10 +7158,13 @@ exports[`Settings should trigger password confirmation mismatch error 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text"
+                class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/plugins"
                 title="Plugins"
               >
+                <div
+                  class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2"
+                />
                 Plugins
               </a>
             </li>
@@ -7057,10 +7172,13 @@ exports[`Settings should trigger password confirmation mismatch error 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text"
+                class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/exchange"
                 title="Exchange"
               >
+                <div
+                  class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2"
+                />
                 Exchange
               </a>
             </li>
@@ -7068,10 +7186,13 @@ exports[`Settings should trigger password confirmation mismatch error 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text"
+                class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/news"
                 title="News"
               >
+                <div
+                  class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2"
+                />
                 News
               </a>
             </li>
@@ -7090,7 +7211,7 @@ exports[`Settings should trigger password confirmation mismatch error 1`] = `
                     class="NavigationBar__NavigationButtonWrapper-sc-1qsoskw-1 eUPnft group"
                   >
                     <button
-                      class="OriginalButton__StyledButton-sc-1y2wptt-0 lpqSIM"
+                      class="OriginalButton__StyledButton-sc-1y2wptt-0 fNHPRi"
                       data-testid="navbar__buttons--notifications"
                       type="button"
                     >
@@ -7129,7 +7250,7 @@ exports[`Settings should trigger password confirmation mismatch error 1`] = `
                 class="NavigationBar__NavigationButtonWrapper-sc-1qsoskw-1 eUPnft"
               >
                 <button
-                  class="OriginalButton__StyledButton-sc-1y2wptt-0 jNneja"
+                  class="OriginalButton__StyledButton-sc-1y2wptt-0 epuIM"
                   data-testid="navbar__buttons--send"
                   disabled=""
                   type="button"
@@ -7160,7 +7281,7 @@ exports[`Settings should trigger password confirmation mismatch error 1`] = `
                 class="NavigationBar__NavigationButtonWrapper-sc-1qsoskw-1 eUPnft"
               >
                 <button
-                  class="OriginalButton__StyledButton-sc-1y2wptt-0 jNneja"
+                  class="OriginalButton__StyledButton-sc-1y2wptt-0 epuIM"
                   data-testid="navbar__buttons--receive"
                   disabled=""
                   type="button"
@@ -7283,7 +7404,7 @@ exports[`Settings should trigger password confirmation mismatch error 1`] = `
                   data-testid="side-menu__item--General"
                 >
                   <li
-                    class="rounded-lg py-5 pl-10 pr-8 h-15 flex items-center "
+                    class="rounded py-5 pl-10 pr-8 h-15 flex items-center"
                   >
                     <div
                       class="mr-3 text-theme-primary-300 dark:text-theme-secondary-600"
@@ -7310,7 +7431,7 @@ exports[`Settings should trigger password confirmation mismatch error 1`] = `
                   data-testid="side-menu__item--Peer"
                 >
                   <li
-                    class="rounded-lg py-5 pl-10 pr-8 h-15 flex items-center "
+                    class="rounded py-5 pl-10 pr-8 h-15 flex items-center"
                   >
                     <div
                       class="mr-3 text-theme-primary-300 dark:text-theme-secondary-600"
@@ -7337,7 +7458,7 @@ exports[`Settings should trigger password confirmation mismatch error 1`] = `
                   data-testid="side-menu__item--Plugins"
                 >
                   <li
-                    class="rounded-lg py-5 pl-10 pr-8 h-15 flex items-center "
+                    class="rounded py-5 pl-10 pr-8 h-15 flex items-center"
                   >
                     <div
                       class="mr-3 text-theme-primary-300 dark:text-theme-secondary-600"
@@ -7364,13 +7485,13 @@ exports[`Settings should trigger password confirmation mismatch error 1`] = `
                   data-testid="side-menu__item--Password"
                 >
                   <li
-                    class="rounded-lg py-5 pl-10 pr-8 h-15 flex items-center text-theme-primary-600 bg-theme-primary-100 dark:bg-theme-secondary-800"
+                    class="rounded py-5 pl-10 pr-8 h-15 flex items-center text-theme-primary-600 dark:text-theme-secondary-200 bg-theme-primary-100 dark:bg-theme-secondary-800"
                   >
                     <div
                       class="absolute top-0 bottom-0 left-0 w-2 rounded bg-theme-primary-600"
                     />
                     <div
-                      class="mr-3 text-theme-primary-600"
+                      class="mr-3"
                     >
                       <div
                         class="sc-bdfBwQ iyevwF"
@@ -7394,7 +7515,7 @@ exports[`Settings should trigger password confirmation mismatch error 1`] = `
                   data-testid="side-menu__item--Export"
                 >
                   <li
-                    class="rounded-lg py-5 pl-10 pr-8 h-15 flex items-center "
+                    class="rounded py-5 pl-10 pr-8 h-15 flex items-center"
                   >
                     <div
                       class="mr-3 text-theme-primary-300 dark:text-theme-secondary-600"
@@ -7471,7 +7592,7 @@ exports[`Settings should trigger password confirmation mismatch error 1`] = `
                         />
                       </label>
                       <div
-                        class="Input__InputWrapperStyled-wu99qs-0 hDeOGV"
+                        class="Input__InputWrapperStyled-wu99qs-0 knbpfp"
                       >
                         <div
                           class="relative flex flex-1 h-full"
@@ -7495,7 +7616,7 @@ exports[`Settings should trigger password confirmation mismatch error 1`] = `
                               type="button"
                             >
                               <div
-                                class="absolute inset-0 -m-2 rounded ring-theme-primary-400 group-focus:ring-2"
+                                class="absolute inset-0 -m-1 rounded ring-theme-primary-400 group-focus:ring-2"
                               />
                               <div
                                 class="sc-bdfBwQ fPrsah"
@@ -7526,7 +7647,7 @@ exports[`Settings should trigger password confirmation mismatch error 1`] = `
                         />
                       </label>
                       <div
-                        class="Input__InputWrapperStyled-wu99qs-0 hDeOGV"
+                        class="Input__InputWrapperStyled-wu99qs-0 knbpfp"
                       >
                         <div
                           class="relative flex flex-1 h-full"
@@ -7550,7 +7671,7 @@ exports[`Settings should trigger password confirmation mismatch error 1`] = `
                               type="button"
                             >
                               <div
-                                class="absolute inset-0 -m-2 rounded ring-theme-primary-400 group-focus:ring-2"
+                                class="absolute inset-0 -m-1 rounded ring-theme-primary-400 group-focus:ring-2"
                               />
                               <div
                                 class="sc-bdfBwQ fPrsah"
@@ -7581,7 +7702,7 @@ exports[`Settings should trigger password confirmation mismatch error 1`] = `
                         />
                       </label>
                       <div
-                        class="Input__InputWrapperStyled-wu99qs-0 iXDeQC"
+                        class="Input__InputWrapperStyled-wu99qs-0 liGcJS"
                       >
                         <div
                           class="relative flex flex-1 h-full"
@@ -7620,7 +7741,7 @@ exports[`Settings should trigger password confirmation mismatch error 1`] = `
                               type="button"
                             >
                               <div
-                                class="absolute inset-0 -m-2 rounded ring-theme-primary-400 group-focus:ring-2"
+                                class="absolute inset-0 -m-1 rounded ring-theme-primary-400 group-focus:ring-2"
                               />
                               <div
                                 class="sc-bdfBwQ fPrsah"
@@ -7640,7 +7761,7 @@ exports[`Settings should trigger password confirmation mismatch error 1`] = `
                       class="flex justify-end mt-8 w-full"
                     >
                       <button
-                        class="OriginalButton__StyledButton-sc-1y2wptt-0 blpaPr"
+                        class="OriginalButton__StyledButton-sc-1y2wptt-0 fqRthJ"
                         data-testid="Password-settings__submit-button"
                         disabled=""
                         type="submit"
@@ -7712,10 +7833,13 @@ exports[`Settings should update profile 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text"
+                class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
                 title="Portfolio"
               >
+                <div
+                  class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2"
+                />
                 Portfolio
               </a>
             </li>
@@ -7723,10 +7847,13 @@ exports[`Settings should update profile 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text"
+                class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/plugins"
                 title="Plugins"
               >
+                <div
+                  class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2"
+                />
                 Plugins
               </a>
             </li>
@@ -7734,10 +7861,13 @@ exports[`Settings should update profile 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text"
+                class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/exchange"
                 title="Exchange"
               >
+                <div
+                  class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2"
+                />
                 Exchange
               </a>
             </li>
@@ -7745,10 +7875,13 @@ exports[`Settings should update profile 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text"
+                class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/news"
                 title="News"
               >
+                <div
+                  class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2"
+                />
                 News
               </a>
             </li>
@@ -7767,7 +7900,7 @@ exports[`Settings should update profile 1`] = `
                     class="NavigationBar__NavigationButtonWrapper-sc-1qsoskw-1 eUPnft group"
                   >
                     <button
-                      class="OriginalButton__StyledButton-sc-1y2wptt-0 lpqSIM"
+                      class="OriginalButton__StyledButton-sc-1y2wptt-0 fNHPRi"
                       data-testid="navbar__buttons--notifications"
                       type="button"
                     >
@@ -7806,7 +7939,7 @@ exports[`Settings should update profile 1`] = `
                 class="NavigationBar__NavigationButtonWrapper-sc-1qsoskw-1 eUPnft"
               >
                 <button
-                  class="OriginalButton__StyledButton-sc-1y2wptt-0 lpqSIM"
+                  class="OriginalButton__StyledButton-sc-1y2wptt-0 fNHPRi"
                   data-testid="navbar__buttons--send"
                   type="button"
                 >
@@ -7836,7 +7969,7 @@ exports[`Settings should update profile 1`] = `
                 class="NavigationBar__NavigationButtonWrapper-sc-1qsoskw-1 eUPnft"
               >
                 <button
-                  class="OriginalButton__StyledButton-sc-1y2wptt-0 lpqSIM"
+                  class="OriginalButton__StyledButton-sc-1y2wptt-0 fNHPRi"
                   data-testid="navbar__buttons--receive"
                   type="button"
                 >
@@ -7958,13 +8091,13 @@ exports[`Settings should update profile 1`] = `
                   data-testid="side-menu__item--General"
                 >
                   <li
-                    class="rounded-lg py-5 pl-10 pr-8 h-15 flex items-center text-theme-primary-600 bg-theme-primary-100 dark:bg-theme-secondary-800"
+                    class="rounded py-5 pl-10 pr-8 h-15 flex items-center text-theme-primary-600 dark:text-theme-secondary-200 bg-theme-primary-100 dark:bg-theme-secondary-800"
                   >
                     <div
                       class="absolute top-0 bottom-0 left-0 w-2 rounded bg-theme-primary-600"
                     />
                     <div
-                      class="mr-3 text-theme-primary-600"
+                      class="mr-3"
                     >
                       <div
                         class="sc-bdfBwQ iyevwF"
@@ -7988,7 +8121,7 @@ exports[`Settings should update profile 1`] = `
                   data-testid="side-menu__item--Peer"
                 >
                   <li
-                    class="rounded-lg py-5 pl-10 pr-8 h-15 flex items-center "
+                    class="rounded py-5 pl-10 pr-8 h-15 flex items-center"
                   >
                     <div
                       class="mr-3 text-theme-primary-300 dark:text-theme-secondary-600"
@@ -8015,7 +8148,7 @@ exports[`Settings should update profile 1`] = `
                   data-testid="side-menu__item--Plugins"
                 >
                   <li
-                    class="rounded-lg py-5 pl-10 pr-8 h-15 flex items-center "
+                    class="rounded py-5 pl-10 pr-8 h-15 flex items-center"
                   >
                     <div
                       class="mr-3 text-theme-primary-300 dark:text-theme-secondary-600"
@@ -8042,7 +8175,7 @@ exports[`Settings should update profile 1`] = `
                   data-testid="side-menu__item--Password"
                 >
                   <li
-                    class="rounded-lg py-5 pl-10 pr-8 h-15 flex items-center "
+                    class="rounded py-5 pl-10 pr-8 h-15 flex items-center"
                   >
                     <div
                       class="mr-3 text-theme-primary-300 dark:text-theme-secondary-600"
@@ -8069,7 +8202,7 @@ exports[`Settings should update profile 1`] = `
                   data-testid="side-menu__item--Export"
                 >
                   <li
-                    class="rounded-lg py-5 pl-10 pr-8 h-15 flex items-center "
+                    class="rounded py-5 pl-10 pr-8 h-15 flex items-center"
                   >
                     <div
                       class="mr-3 text-theme-primary-300 dark:text-theme-secondary-600"
@@ -8156,7 +8289,7 @@ exports[`Settings should update profile 1`] = `
                               class="SelectProfileImage__UploadButtonWrapper-t6smk3-0 fPlqSP"
                             >
                               <button
-                                class="OriginalButton__StyledButton-sc-1y2wptt-0 hsoUax"
+                                class="OriginalButton__StyledButton-sc-1y2wptt-0 izJbbP"
                                 data-testid="SelectProfileImage__upload-button"
                                 type="button"
                               >
@@ -8200,7 +8333,7 @@ exports[`Settings should update profile 1`] = `
                             />
                           </label>
                           <div
-                            class="Input__InputWrapperStyled-wu99qs-0 hDeOGV"
+                            class="Input__InputWrapperStyled-wu99qs-0 knbpfp"
                           >
                             <div
                               class="relative flex flex-1 h-full"
@@ -8232,7 +8365,7 @@ exports[`Settings should update profile 1`] = `
                             class="relative w-full"
                           >
                             <div
-                              class="Input__InputWrapperStyled-wu99qs-0 hDeOGV sr-only"
+                              class="Input__InputWrapperStyled-wu99qs-0 knbpfp sr-only"
                             >
                               <div
                                 class="relative flex flex-1 h-full"
@@ -8242,6 +8375,7 @@ exports[`Settings should update profile 1`] = `
                                   data-testid="select-list__input"
                                   name="passphraseLanguage"
                                   readonly=""
+                                  tabindex="-1"
                                   value="english"
                                 />
                               </div>
@@ -8260,7 +8394,7 @@ exports[`Settings should update profile 1`] = `
                                   id="select-passphrase-language-label"
                                 />
                                 <div
-                                  class="Input__InputWrapperStyled-wu99qs-0 hDeOGV"
+                                  class="Input__InputWrapperStyled-wu99qs-0 knbpfp"
                                 >
                                   <div
                                     class="relative flex flex-1 h-full"
@@ -8309,7 +8443,7 @@ exports[`Settings should update profile 1`] = `
                                 </div>
                                 <ul
                                   aria-labelledby="select-passphrase-language-label"
-                                  class="styles__SelectOptionsList-b2falt-0 cUNLQk"
+                                  class="styles__SelectOptionsList-b2falt-0 ghEDCU"
                                   id="select-passphrase-language-menu"
                                   role="listbox"
                                 />
@@ -8335,7 +8469,7 @@ exports[`Settings should update profile 1`] = `
                             class="relative w-full"
                           >
                             <div
-                              class="Input__InputWrapperStyled-wu99qs-0 hDeOGV sr-only"
+                              class="Input__InputWrapperStyled-wu99qs-0 knbpfp sr-only"
                             >
                               <div
                                 class="relative flex flex-1 h-full"
@@ -8345,6 +8479,7 @@ exports[`Settings should update profile 1`] = `
                                   data-testid="select-list__input"
                                   name="currency"
                                   readonly=""
+                                  tabindex="-1"
                                   value="BTC"
                                 />
                               </div>
@@ -8363,7 +8498,7 @@ exports[`Settings should update profile 1`] = `
                                   id="select-currency-label"
                                 />
                                 <div
-                                  class="Input__InputWrapperStyled-wu99qs-0 hDeOGV"
+                                  class="Input__InputWrapperStyled-wu99qs-0 knbpfp"
                                 >
                                   <div
                                     class="relative flex flex-1 h-full"
@@ -8412,7 +8547,7 @@ exports[`Settings should update profile 1`] = `
                                 </div>
                                 <ul
                                   aria-labelledby="select-currency-label"
-                                  class="styles__SelectOptionsList-b2falt-0 cUNLQk"
+                                  class="styles__SelectOptionsList-b2falt-0 ghEDCU"
                                   id="select-currency-menu"
                                   role="listbox"
                                 />
@@ -8442,7 +8577,7 @@ exports[`Settings should update profile 1`] = `
                             class="relative w-full"
                           >
                             <div
-                              class="Input__InputWrapperStyled-wu99qs-0 hDeOGV sr-only"
+                              class="Input__InputWrapperStyled-wu99qs-0 knbpfp sr-only"
                             >
                               <div
                                 class="relative flex flex-1 h-full"
@@ -8452,6 +8587,7 @@ exports[`Settings should update profile 1`] = `
                                   data-testid="select-list__input"
                                   name="language"
                                   readonly=""
+                                  tabindex="-1"
                                   value="en-US"
                                 />
                               </div>
@@ -8470,7 +8606,7 @@ exports[`Settings should update profile 1`] = `
                                   id="select-language-label"
                                 />
                                 <div
-                                  class="Input__InputWrapperStyled-wu99qs-0 hDeOGV"
+                                  class="Input__InputWrapperStyled-wu99qs-0 knbpfp"
                                 >
                                   <div
                                     class="relative flex flex-1 h-full"
@@ -8519,7 +8655,7 @@ exports[`Settings should update profile 1`] = `
                                 </div>
                                 <ul
                                   aria-labelledby="select-language-label"
-                                  class="styles__SelectOptionsList-b2falt-0 cUNLQk"
+                                  class="styles__SelectOptionsList-b2falt-0 ghEDCU"
                                   id="select-language-menu"
                                   role="listbox"
                                 />
@@ -8545,7 +8681,7 @@ exports[`Settings should update profile 1`] = `
                             class="relative w-full"
                           >
                             <div
-                              class="Input__InputWrapperStyled-wu99qs-0 hDeOGV sr-only"
+                              class="Input__InputWrapperStyled-wu99qs-0 knbpfp sr-only"
                             >
                               <div
                                 class="relative flex flex-1 h-full"
@@ -8555,6 +8691,7 @@ exports[`Settings should update profile 1`] = `
                                   data-testid="select-list__input"
                                   name="marketProvider"
                                   readonly=""
+                                  tabindex="-1"
                                   value="cryptocompare"
                                 />
                               </div>
@@ -8573,7 +8710,7 @@ exports[`Settings should update profile 1`] = `
                                   id="select-market-provider-label"
                                 />
                                 <div
-                                  class="Input__InputWrapperStyled-wu99qs-0 hDeOGV"
+                                  class="Input__InputWrapperStyled-wu99qs-0 knbpfp"
                                 >
                                   <div
                                     class="relative flex flex-1 h-full"
@@ -8622,7 +8759,7 @@ exports[`Settings should update profile 1`] = `
                                 </div>
                                 <ul
                                   aria-labelledby="select-market-provider-label"
-                                  class="styles__SelectOptionsList-b2falt-0 cUNLQk"
+                                  class="styles__SelectOptionsList-b2falt-0 ghEDCU"
                                   id="select-market-provider-menu"
                                   role="listbox"
                                 />
@@ -8648,7 +8785,7 @@ exports[`Settings should update profile 1`] = `
                             class="relative w-full"
                           >
                             <div
-                              class="Input__InputWrapperStyled-wu99qs-0 hDeOGV sr-only"
+                              class="Input__InputWrapperStyled-wu99qs-0 knbpfp sr-only"
                             >
                               <div
                                 class="relative flex flex-1 h-full"
@@ -8658,6 +8795,7 @@ exports[`Settings should update profile 1`] = `
                                   data-testid="select-list__input"
                                   name="timeFormat"
                                   readonly=""
+                                  tabindex="-1"
                                   value="h:mm A"
                                 />
                               </div>
@@ -8676,7 +8814,7 @@ exports[`Settings should update profile 1`] = `
                                   id="select-time-format-label"
                                 />
                                 <div
-                                  class="Input__InputWrapperStyled-wu99qs-0 hDeOGV"
+                                  class="Input__InputWrapperStyled-wu99qs-0 knbpfp"
                                 >
                                   <div
                                     class="relative flex flex-1 h-full"
@@ -8725,7 +8863,7 @@ exports[`Settings should update profile 1`] = `
                                 </div>
                                 <ul
                                   aria-labelledby="select-time-format-label"
-                                  class="styles__SelectOptionsList-b2falt-0 cUNLQk"
+                                  class="styles__SelectOptionsList-b2falt-0 ghEDCU"
                                   id="select-time-format-menu"
                                   role="listbox"
                                 />
@@ -8745,7 +8883,7 @@ exports[`Settings should update profile 1`] = `
                       Security
                     </h2>
                     <ul
-                      class="sc-dlfnbm cOiGXi"
+                      class="sc-hKgILt gfmZFQ"
                       data-testid="list-divided__items"
                     >
                       <li
@@ -8890,7 +9028,7 @@ exports[`Settings should update profile 1`] = `
                               class="relative w-full"
                             >
                               <div
-                                class="Input__InputWrapperStyled-wu99qs-0 hDeOGV sr-only"
+                                class="Input__InputWrapperStyled-wu99qs-0 knbpfp sr-only"
                               >
                                 <div
                                   class="relative flex flex-1 h-full"
@@ -8900,6 +9038,7 @@ exports[`Settings should update profile 1`] = `
                                     data-testid="select-list__input"
                                     name="automaticSignOutPeriod"
                                     readonly=""
+                                    tabindex="-1"
                                     value="1"
                                   />
                                 </div>
@@ -8918,7 +9057,7 @@ exports[`Settings should update profile 1`] = `
                                     id="select-auto-signout-label"
                                   />
                                   <div
-                                    class="Input__InputWrapperStyled-wu99qs-0 hDeOGV"
+                                    class="Input__InputWrapperStyled-wu99qs-0 knbpfp"
                                   >
                                     <div
                                       class="relative flex flex-1 h-full"
@@ -8967,7 +9106,7 @@ exports[`Settings should update profile 1`] = `
                                   </div>
                                   <ul
                                     aria-labelledby="select-auto-signout-label"
-                                    class="styles__SelectOptionsList-b2falt-0 cUNLQk"
+                                    class="styles__SelectOptionsList-b2falt-0 ghEDCU"
                                     id="select-auto-signout-menu"
                                     role="listbox"
                                   />
@@ -8988,7 +9127,7 @@ exports[`Settings should update profile 1`] = `
                       Other
                     </h2>
                     <ul
-                      class="sc-dlfnbm cOiGXi"
+                      class="sc-hKgILt gfmZFQ"
                       data-testid="list-divided__items"
                     >
                       <li
@@ -9195,7 +9334,7 @@ exports[`Settings should update profile 1`] = `
                     class="flex justify-between pt-2 w-full"
                   >
                     <button
-                      class="OriginalButton__StyledButton-sc-1y2wptt-0 hLYMjm"
+                      class="OriginalButton__StyledButton-sc-1y2wptt-0 gDVvgk"
                       type="button"
                     >
                       <div
@@ -9219,7 +9358,7 @@ exports[`Settings should update profile 1`] = `
                       class="space-x-3"
                     >
                       <button
-                        class="OriginalButton__StyledButton-sc-1y2wptt-0 hsoUax"
+                        class="OriginalButton__StyledButton-sc-1y2wptt-0 izJbbP"
                         data-testid="General-settings__cancel-button"
                         type="button"
                       >
@@ -9230,7 +9369,7 @@ exports[`Settings should update profile 1`] = `
                         </div>
                       </button>
                       <button
-                        class="OriginalButton__StyledButton-sc-1y2wptt-0 cEUmKc"
+                        class="OriginalButton__StyledButton-sc-1y2wptt-0 dYkFxS"
                         data-testid="General-settings__submit-button"
                         type="submit"
                       >
@@ -9301,10 +9440,13 @@ exports[`Settings should update the avatar when removing focus from name input 1
               class="flex"
             >
               <a
-                class="flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text"
+                class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
                 title="Portfolio"
               >
+                <div
+                  class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2"
+                />
                 Portfolio
               </a>
             </li>
@@ -9312,10 +9454,13 @@ exports[`Settings should update the avatar when removing focus from name input 1
               class="flex"
             >
               <a
-                class="flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text"
+                class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/plugins"
                 title="Plugins"
               >
+                <div
+                  class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2"
+                />
                 Plugins
               </a>
             </li>
@@ -9323,10 +9468,13 @@ exports[`Settings should update the avatar when removing focus from name input 1
               class="flex"
             >
               <a
-                class="flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text"
+                class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/exchange"
                 title="Exchange"
               >
+                <div
+                  class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2"
+                />
                 Exchange
               </a>
             </li>
@@ -9334,10 +9482,13 @@ exports[`Settings should update the avatar when removing focus from name input 1
               class="flex"
             >
               <a
-                class="flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text"
+                class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/news"
                 title="News"
               >
+                <div
+                  class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2"
+                />
                 News
               </a>
             </li>
@@ -9356,7 +9507,7 @@ exports[`Settings should update the avatar when removing focus from name input 1
                     class="NavigationBar__NavigationButtonWrapper-sc-1qsoskw-1 eUPnft group"
                   >
                     <button
-                      class="OriginalButton__StyledButton-sc-1y2wptt-0 lpqSIM"
+                      class="OriginalButton__StyledButton-sc-1y2wptt-0 fNHPRi"
                       data-testid="navbar__buttons--notifications"
                       type="button"
                     >
@@ -9395,7 +9546,7 @@ exports[`Settings should update the avatar when removing focus from name input 1
                 class="NavigationBar__NavigationButtonWrapper-sc-1qsoskw-1 eUPnft"
               >
                 <button
-                  class="OriginalButton__StyledButton-sc-1y2wptt-0 lpqSIM"
+                  class="OriginalButton__StyledButton-sc-1y2wptt-0 fNHPRi"
                   data-testid="navbar__buttons--send"
                   type="button"
                 >
@@ -9425,7 +9576,7 @@ exports[`Settings should update the avatar when removing focus from name input 1
                 class="NavigationBar__NavigationButtonWrapper-sc-1qsoskw-1 eUPnft"
               >
                 <button
-                  class="OriginalButton__StyledButton-sc-1y2wptt-0 lpqSIM"
+                  class="OriginalButton__StyledButton-sc-1y2wptt-0 fNHPRi"
                   data-testid="navbar__buttons--receive"
                   type="button"
                 >
@@ -9547,13 +9698,13 @@ exports[`Settings should update the avatar when removing focus from name input 1
                   data-testid="side-menu__item--General"
                 >
                   <li
-                    class="rounded-lg py-5 pl-10 pr-8 h-15 flex items-center text-theme-primary-600 bg-theme-primary-100 dark:bg-theme-secondary-800"
+                    class="rounded py-5 pl-10 pr-8 h-15 flex items-center text-theme-primary-600 dark:text-theme-secondary-200 bg-theme-primary-100 dark:bg-theme-secondary-800"
                   >
                     <div
                       class="absolute top-0 bottom-0 left-0 w-2 rounded bg-theme-primary-600"
                     />
                     <div
-                      class="mr-3 text-theme-primary-600"
+                      class="mr-3"
                     >
                       <div
                         class="sc-bdfBwQ iyevwF"
@@ -9577,7 +9728,7 @@ exports[`Settings should update the avatar when removing focus from name input 1
                   data-testid="side-menu__item--Peer"
                 >
                   <li
-                    class="rounded-lg py-5 pl-10 pr-8 h-15 flex items-center "
+                    class="rounded py-5 pl-10 pr-8 h-15 flex items-center"
                   >
                     <div
                       class="mr-3 text-theme-primary-300 dark:text-theme-secondary-600"
@@ -9604,7 +9755,7 @@ exports[`Settings should update the avatar when removing focus from name input 1
                   data-testid="side-menu__item--Plugins"
                 >
                   <li
-                    class="rounded-lg py-5 pl-10 pr-8 h-15 flex items-center "
+                    class="rounded py-5 pl-10 pr-8 h-15 flex items-center"
                   >
                     <div
                       class="mr-3 text-theme-primary-300 dark:text-theme-secondary-600"
@@ -9631,7 +9782,7 @@ exports[`Settings should update the avatar when removing focus from name input 1
                   data-testid="side-menu__item--Password"
                 >
                   <li
-                    class="rounded-lg py-5 pl-10 pr-8 h-15 flex items-center "
+                    class="rounded py-5 pl-10 pr-8 h-15 flex items-center"
                   >
                     <div
                       class="mr-3 text-theme-primary-300 dark:text-theme-secondary-600"
@@ -9658,7 +9809,7 @@ exports[`Settings should update the avatar when removing focus from name input 1
                   data-testid="side-menu__item--Export"
                 >
                   <li
-                    class="rounded-lg py-5 pl-10 pr-8 h-15 flex items-center "
+                    class="rounded py-5 pl-10 pr-8 h-15 flex items-center"
                   >
                     <div
                       class="mr-3 text-theme-primary-300 dark:text-theme-secondary-600"
@@ -9795,7 +9946,7 @@ exports[`Settings should update the avatar when removing focus from name input 1
                             />
                           </label>
                           <div
-                            class="Input__InputWrapperStyled-wu99qs-0 hDeOGV"
+                            class="Input__InputWrapperStyled-wu99qs-0 knbpfp"
                           >
                             <div
                               class="relative flex flex-1 h-full"
@@ -9827,7 +9978,7 @@ exports[`Settings should update the avatar when removing focus from name input 1
                             class="relative w-full"
                           >
                             <div
-                              class="Input__InputWrapperStyled-wu99qs-0 hDeOGV sr-only"
+                              class="Input__InputWrapperStyled-wu99qs-0 knbpfp sr-only"
                             >
                               <div
                                 class="relative flex flex-1 h-full"
@@ -9837,6 +9988,7 @@ exports[`Settings should update the avatar when removing focus from name input 1
                                   data-testid="select-list__input"
                                   name="passphraseLanguage"
                                   readonly=""
+                                  tabindex="-1"
                                   value="english"
                                 />
                               </div>
@@ -9855,7 +10007,7 @@ exports[`Settings should update the avatar when removing focus from name input 1
                                   id="select-passphrase-language-label"
                                 />
                                 <div
-                                  class="Input__InputWrapperStyled-wu99qs-0 hDeOGV"
+                                  class="Input__InputWrapperStyled-wu99qs-0 knbpfp"
                                 >
                                   <div
                                     class="relative flex flex-1 h-full"
@@ -9904,7 +10056,7 @@ exports[`Settings should update the avatar when removing focus from name input 1
                                 </div>
                                 <ul
                                   aria-labelledby="select-passphrase-language-label"
-                                  class="styles__SelectOptionsList-b2falt-0 cUNLQk"
+                                  class="styles__SelectOptionsList-b2falt-0 ghEDCU"
                                   id="select-passphrase-language-menu"
                                   role="listbox"
                                 />
@@ -9930,7 +10082,7 @@ exports[`Settings should update the avatar when removing focus from name input 1
                             class="relative w-full"
                           >
                             <div
-                              class="Input__InputWrapperStyled-wu99qs-0 hDeOGV sr-only"
+                              class="Input__InputWrapperStyled-wu99qs-0 knbpfp sr-only"
                             >
                               <div
                                 class="relative flex flex-1 h-full"
@@ -9940,6 +10092,7 @@ exports[`Settings should update the avatar when removing focus from name input 1
                                   data-testid="select-list__input"
                                   name="currency"
                                   readonly=""
+                                  tabindex="-1"
                                   value="BTC"
                                 />
                               </div>
@@ -9958,7 +10111,7 @@ exports[`Settings should update the avatar when removing focus from name input 1
                                   id="select-currency-label"
                                 />
                                 <div
-                                  class="Input__InputWrapperStyled-wu99qs-0 hDeOGV"
+                                  class="Input__InputWrapperStyled-wu99qs-0 knbpfp"
                                 >
                                   <div
                                     class="relative flex flex-1 h-full"
@@ -10007,7 +10160,7 @@ exports[`Settings should update the avatar when removing focus from name input 1
                                 </div>
                                 <ul
                                   aria-labelledby="select-currency-label"
-                                  class="styles__SelectOptionsList-b2falt-0 cUNLQk"
+                                  class="styles__SelectOptionsList-b2falt-0 ghEDCU"
                                   id="select-currency-menu"
                                   role="listbox"
                                 />
@@ -10037,7 +10190,7 @@ exports[`Settings should update the avatar when removing focus from name input 1
                             class="relative w-full"
                           >
                             <div
-                              class="Input__InputWrapperStyled-wu99qs-0 hDeOGV sr-only"
+                              class="Input__InputWrapperStyled-wu99qs-0 knbpfp sr-only"
                             >
                               <div
                                 class="relative flex flex-1 h-full"
@@ -10047,6 +10200,7 @@ exports[`Settings should update the avatar when removing focus from name input 1
                                   data-testid="select-list__input"
                                   name="language"
                                   readonly=""
+                                  tabindex="-1"
                                   value="en-US"
                                 />
                               </div>
@@ -10065,7 +10219,7 @@ exports[`Settings should update the avatar when removing focus from name input 1
                                   id="select-language-label"
                                 />
                                 <div
-                                  class="Input__InputWrapperStyled-wu99qs-0 hDeOGV"
+                                  class="Input__InputWrapperStyled-wu99qs-0 knbpfp"
                                 >
                                   <div
                                     class="relative flex flex-1 h-full"
@@ -10114,7 +10268,7 @@ exports[`Settings should update the avatar when removing focus from name input 1
                                 </div>
                                 <ul
                                   aria-labelledby="select-language-label"
-                                  class="styles__SelectOptionsList-b2falt-0 cUNLQk"
+                                  class="styles__SelectOptionsList-b2falt-0 ghEDCU"
                                   id="select-language-menu"
                                   role="listbox"
                                 />
@@ -10140,7 +10294,7 @@ exports[`Settings should update the avatar when removing focus from name input 1
                             class="relative w-full"
                           >
                             <div
-                              class="Input__InputWrapperStyled-wu99qs-0 hDeOGV sr-only"
+                              class="Input__InputWrapperStyled-wu99qs-0 knbpfp sr-only"
                             >
                               <div
                                 class="relative flex flex-1 h-full"
@@ -10150,6 +10304,7 @@ exports[`Settings should update the avatar when removing focus from name input 1
                                   data-testid="select-list__input"
                                   name="marketProvider"
                                   readonly=""
+                                  tabindex="-1"
                                   value="cryptocompare"
                                 />
                               </div>
@@ -10168,7 +10323,7 @@ exports[`Settings should update the avatar when removing focus from name input 1
                                   id="select-market-provider-label"
                                 />
                                 <div
-                                  class="Input__InputWrapperStyled-wu99qs-0 hDeOGV"
+                                  class="Input__InputWrapperStyled-wu99qs-0 knbpfp"
                                 >
                                   <div
                                     class="relative flex flex-1 h-full"
@@ -10217,7 +10372,7 @@ exports[`Settings should update the avatar when removing focus from name input 1
                                 </div>
                                 <ul
                                   aria-labelledby="select-market-provider-label"
-                                  class="styles__SelectOptionsList-b2falt-0 cUNLQk"
+                                  class="styles__SelectOptionsList-b2falt-0 ghEDCU"
                                   id="select-market-provider-menu"
                                   role="listbox"
                                 />
@@ -10243,7 +10398,7 @@ exports[`Settings should update the avatar when removing focus from name input 1
                             class="relative w-full"
                           >
                             <div
-                              class="Input__InputWrapperStyled-wu99qs-0 hDeOGV sr-only"
+                              class="Input__InputWrapperStyled-wu99qs-0 knbpfp sr-only"
                             >
                               <div
                                 class="relative flex flex-1 h-full"
@@ -10253,6 +10408,7 @@ exports[`Settings should update the avatar when removing focus from name input 1
                                   data-testid="select-list__input"
                                   name="timeFormat"
                                   readonly=""
+                                  tabindex="-1"
                                   value="h:mm A"
                                 />
                               </div>
@@ -10271,7 +10427,7 @@ exports[`Settings should update the avatar when removing focus from name input 1
                                   id="select-time-format-label"
                                 />
                                 <div
-                                  class="Input__InputWrapperStyled-wu99qs-0 hDeOGV"
+                                  class="Input__InputWrapperStyled-wu99qs-0 knbpfp"
                                 >
                                   <div
                                     class="relative flex flex-1 h-full"
@@ -10320,7 +10476,7 @@ exports[`Settings should update the avatar when removing focus from name input 1
                                 </div>
                                 <ul
                                   aria-labelledby="select-time-format-label"
-                                  class="styles__SelectOptionsList-b2falt-0 cUNLQk"
+                                  class="styles__SelectOptionsList-b2falt-0 ghEDCU"
                                   id="select-time-format-menu"
                                   role="listbox"
                                 />
@@ -10340,7 +10496,7 @@ exports[`Settings should update the avatar when removing focus from name input 1
                       Security
                     </h2>
                     <ul
-                      class="sc-dlfnbm cOiGXi"
+                      class="sc-hKgILt gfmZFQ"
                       data-testid="list-divided__items"
                     >
                       <li
@@ -10484,7 +10640,7 @@ exports[`Settings should update the avatar when removing focus from name input 1
                               class="relative w-full"
                             >
                               <div
-                                class="Input__InputWrapperStyled-wu99qs-0 hDeOGV sr-only"
+                                class="Input__InputWrapperStyled-wu99qs-0 knbpfp sr-only"
                               >
                                 <div
                                   class="relative flex flex-1 h-full"
@@ -10494,6 +10650,7 @@ exports[`Settings should update the avatar when removing focus from name input 1
                                     data-testid="select-list__input"
                                     name="automaticSignOutPeriod"
                                     readonly=""
+                                    tabindex="-1"
                                     value="1"
                                   />
                                 </div>
@@ -10512,7 +10669,7 @@ exports[`Settings should update the avatar when removing focus from name input 1
                                     id="select-auto-signout-label"
                                   />
                                   <div
-                                    class="Input__InputWrapperStyled-wu99qs-0 hDeOGV"
+                                    class="Input__InputWrapperStyled-wu99qs-0 knbpfp"
                                   >
                                     <div
                                       class="relative flex flex-1 h-full"
@@ -10561,7 +10718,7 @@ exports[`Settings should update the avatar when removing focus from name input 1
                                   </div>
                                   <ul
                                     aria-labelledby="select-auto-signout-label"
-                                    class="styles__SelectOptionsList-b2falt-0 cUNLQk"
+                                    class="styles__SelectOptionsList-b2falt-0 ghEDCU"
                                     id="select-auto-signout-menu"
                                     role="listbox"
                                   />
@@ -10582,7 +10739,7 @@ exports[`Settings should update the avatar when removing focus from name input 1
                       Other
                     </h2>
                     <ul
-                      class="sc-dlfnbm cOiGXi"
+                      class="sc-hKgILt gfmZFQ"
                       data-testid="list-divided__items"
                     >
                       <li
@@ -10789,7 +10946,7 @@ exports[`Settings should update the avatar when removing focus from name input 1
                     class="flex justify-between pt-2 w-full"
                   >
                     <button
-                      class="OriginalButton__StyledButton-sc-1y2wptt-0 hLYMjm"
+                      class="OriginalButton__StyledButton-sc-1y2wptt-0 gDVvgk"
                       type="button"
                     >
                       <div
@@ -10813,7 +10970,7 @@ exports[`Settings should update the avatar when removing focus from name input 1
                       class="space-x-3"
                     >
                       <button
-                        class="OriginalButton__StyledButton-sc-1y2wptt-0 hsoUax"
+                        class="OriginalButton__StyledButton-sc-1y2wptt-0 izJbbP"
                         data-testid="General-settings__cancel-button"
                         type="button"
                       >
@@ -10824,7 +10981,7 @@ exports[`Settings should update the avatar when removing focus from name input 1
                         </div>
                       </button>
                       <button
-                        class="OriginalButton__StyledButton-sc-1y2wptt-0 cEUmKc"
+                        class="OriginalButton__StyledButton-sc-1y2wptt-0 dYkFxS"
                         data-testid="General-settings__submit-button"
                         type="submit"
                       >
@@ -10895,10 +11052,13 @@ exports[`Settings should update the avatar when removing focus from name input 2
               class="flex"
             >
               <a
-                class="flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text"
+                class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
                 title="Portfolio"
               >
+                <div
+                  class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2"
+                />
                 Portfolio
               </a>
             </li>
@@ -10906,10 +11066,13 @@ exports[`Settings should update the avatar when removing focus from name input 2
               class="flex"
             >
               <a
-                class="flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text"
+                class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/plugins"
                 title="Plugins"
               >
+                <div
+                  class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2"
+                />
                 Plugins
               </a>
             </li>
@@ -10917,10 +11080,13 @@ exports[`Settings should update the avatar when removing focus from name input 2
               class="flex"
             >
               <a
-                class="flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text"
+                class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/exchange"
                 title="Exchange"
               >
+                <div
+                  class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2"
+                />
                 Exchange
               </a>
             </li>
@@ -10928,10 +11094,13 @@ exports[`Settings should update the avatar when removing focus from name input 2
               class="flex"
             >
               <a
-                class="flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text"
+                class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/news"
                 title="News"
               >
+                <div
+                  class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2"
+                />
                 News
               </a>
             </li>
@@ -10950,7 +11119,7 @@ exports[`Settings should update the avatar when removing focus from name input 2
                     class="NavigationBar__NavigationButtonWrapper-sc-1qsoskw-1 eUPnft group"
                   >
                     <button
-                      class="OriginalButton__StyledButton-sc-1y2wptt-0 lpqSIM"
+                      class="OriginalButton__StyledButton-sc-1y2wptt-0 fNHPRi"
                       data-testid="navbar__buttons--notifications"
                       type="button"
                     >
@@ -10989,7 +11158,7 @@ exports[`Settings should update the avatar when removing focus from name input 2
                 class="NavigationBar__NavigationButtonWrapper-sc-1qsoskw-1 eUPnft"
               >
                 <button
-                  class="OriginalButton__StyledButton-sc-1y2wptt-0 lpqSIM"
+                  class="OriginalButton__StyledButton-sc-1y2wptt-0 fNHPRi"
                   data-testid="navbar__buttons--send"
                   type="button"
                 >
@@ -11019,7 +11188,7 @@ exports[`Settings should update the avatar when removing focus from name input 2
                 class="NavigationBar__NavigationButtonWrapper-sc-1qsoskw-1 eUPnft"
               >
                 <button
-                  class="OriginalButton__StyledButton-sc-1y2wptt-0 lpqSIM"
+                  class="OriginalButton__StyledButton-sc-1y2wptt-0 fNHPRi"
                   data-testid="navbar__buttons--receive"
                   type="button"
                 >
@@ -11141,13 +11310,13 @@ exports[`Settings should update the avatar when removing focus from name input 2
                   data-testid="side-menu__item--General"
                 >
                   <li
-                    class="rounded-lg py-5 pl-10 pr-8 h-15 flex items-center text-theme-primary-600 bg-theme-primary-100 dark:bg-theme-secondary-800"
+                    class="rounded py-5 pl-10 pr-8 h-15 flex items-center text-theme-primary-600 dark:text-theme-secondary-200 bg-theme-primary-100 dark:bg-theme-secondary-800"
                   >
                     <div
                       class="absolute top-0 bottom-0 left-0 w-2 rounded bg-theme-primary-600"
                     />
                     <div
-                      class="mr-3 text-theme-primary-600"
+                      class="mr-3"
                     >
                       <div
                         class="sc-bdfBwQ iyevwF"
@@ -11171,7 +11340,7 @@ exports[`Settings should update the avatar when removing focus from name input 2
                   data-testid="side-menu__item--Peer"
                 >
                   <li
-                    class="rounded-lg py-5 pl-10 pr-8 h-15 flex items-center "
+                    class="rounded py-5 pl-10 pr-8 h-15 flex items-center"
                   >
                     <div
                       class="mr-3 text-theme-primary-300 dark:text-theme-secondary-600"
@@ -11198,7 +11367,7 @@ exports[`Settings should update the avatar when removing focus from name input 2
                   data-testid="side-menu__item--Plugins"
                 >
                   <li
-                    class="rounded-lg py-5 pl-10 pr-8 h-15 flex items-center "
+                    class="rounded py-5 pl-10 pr-8 h-15 flex items-center"
                   >
                     <div
                       class="mr-3 text-theme-primary-300 dark:text-theme-secondary-600"
@@ -11225,7 +11394,7 @@ exports[`Settings should update the avatar when removing focus from name input 2
                   data-testid="side-menu__item--Password"
                 >
                   <li
-                    class="rounded-lg py-5 pl-10 pr-8 h-15 flex items-center "
+                    class="rounded py-5 pl-10 pr-8 h-15 flex items-center"
                   >
                     <div
                       class="mr-3 text-theme-primary-300 dark:text-theme-secondary-600"
@@ -11252,7 +11421,7 @@ exports[`Settings should update the avatar when removing focus from name input 2
                   data-testid="side-menu__item--Export"
                 >
                   <li
-                    class="rounded-lg py-5 pl-10 pr-8 h-15 flex items-center "
+                    class="rounded py-5 pl-10 pr-8 h-15 flex items-center"
                   >
                     <div
                       class="mr-3 text-theme-primary-300 dark:text-theme-secondary-600"
@@ -11339,7 +11508,7 @@ exports[`Settings should update the avatar when removing focus from name input 2
                               class="SelectProfileImage__UploadButtonWrapper-t6smk3-0 fPlqSP"
                             >
                               <button
-                                class="OriginalButton__StyledButton-sc-1y2wptt-0 hsoUax"
+                                class="OriginalButton__StyledButton-sc-1y2wptt-0 izJbbP"
                                 data-testid="SelectProfileImage__upload-button"
                                 type="button"
                               >
@@ -11383,7 +11552,7 @@ exports[`Settings should update the avatar when removing focus from name input 2
                             />
                           </label>
                           <div
-                            class="Input__InputWrapperStyled-wu99qs-0 iXDeQC"
+                            class="Input__InputWrapperStyled-wu99qs-0 liGcJS"
                           >
                             <div
                               class="relative flex flex-1 h-full"
@@ -11434,7 +11603,7 @@ exports[`Settings should update the avatar when removing focus from name input 2
                             class="relative w-full"
                           >
                             <div
-                              class="Input__InputWrapperStyled-wu99qs-0 hDeOGV sr-only"
+                              class="Input__InputWrapperStyled-wu99qs-0 knbpfp sr-only"
                             >
                               <div
                                 class="relative flex flex-1 h-full"
@@ -11444,6 +11613,7 @@ exports[`Settings should update the avatar when removing focus from name input 2
                                   data-testid="select-list__input"
                                   name="passphraseLanguage"
                                   readonly=""
+                                  tabindex="-1"
                                   value="english"
                                 />
                               </div>
@@ -11462,7 +11632,7 @@ exports[`Settings should update the avatar when removing focus from name input 2
                                   id="select-passphrase-language-label"
                                 />
                                 <div
-                                  class="Input__InputWrapperStyled-wu99qs-0 hDeOGV"
+                                  class="Input__InputWrapperStyled-wu99qs-0 knbpfp"
                                 >
                                   <div
                                     class="relative flex flex-1 h-full"
@@ -11511,7 +11681,7 @@ exports[`Settings should update the avatar when removing focus from name input 2
                                 </div>
                                 <ul
                                   aria-labelledby="select-passphrase-language-label"
-                                  class="styles__SelectOptionsList-b2falt-0 cUNLQk"
+                                  class="styles__SelectOptionsList-b2falt-0 ghEDCU"
                                   id="select-passphrase-language-menu"
                                   role="listbox"
                                 />
@@ -11537,7 +11707,7 @@ exports[`Settings should update the avatar when removing focus from name input 2
                             class="relative w-full"
                           >
                             <div
-                              class="Input__InputWrapperStyled-wu99qs-0 hDeOGV sr-only"
+                              class="Input__InputWrapperStyled-wu99qs-0 knbpfp sr-only"
                             >
                               <div
                                 class="relative flex flex-1 h-full"
@@ -11547,6 +11717,7 @@ exports[`Settings should update the avatar when removing focus from name input 2
                                   data-testid="select-list__input"
                                   name="currency"
                                   readonly=""
+                                  tabindex="-1"
                                   value="BTC"
                                 />
                               </div>
@@ -11565,7 +11736,7 @@ exports[`Settings should update the avatar when removing focus from name input 2
                                   id="select-currency-label"
                                 />
                                 <div
-                                  class="Input__InputWrapperStyled-wu99qs-0 hDeOGV"
+                                  class="Input__InputWrapperStyled-wu99qs-0 knbpfp"
                                 >
                                   <div
                                     class="relative flex flex-1 h-full"
@@ -11614,7 +11785,7 @@ exports[`Settings should update the avatar when removing focus from name input 2
                                 </div>
                                 <ul
                                   aria-labelledby="select-currency-label"
-                                  class="styles__SelectOptionsList-b2falt-0 cUNLQk"
+                                  class="styles__SelectOptionsList-b2falt-0 ghEDCU"
                                   id="select-currency-menu"
                                   role="listbox"
                                 />
@@ -11644,7 +11815,7 @@ exports[`Settings should update the avatar when removing focus from name input 2
                             class="relative w-full"
                           >
                             <div
-                              class="Input__InputWrapperStyled-wu99qs-0 hDeOGV sr-only"
+                              class="Input__InputWrapperStyled-wu99qs-0 knbpfp sr-only"
                             >
                               <div
                                 class="relative flex flex-1 h-full"
@@ -11654,6 +11825,7 @@ exports[`Settings should update the avatar when removing focus from name input 2
                                   data-testid="select-list__input"
                                   name="language"
                                   readonly=""
+                                  tabindex="-1"
                                   value="en-US"
                                 />
                               </div>
@@ -11672,7 +11844,7 @@ exports[`Settings should update the avatar when removing focus from name input 2
                                   id="select-language-label"
                                 />
                                 <div
-                                  class="Input__InputWrapperStyled-wu99qs-0 hDeOGV"
+                                  class="Input__InputWrapperStyled-wu99qs-0 knbpfp"
                                 >
                                   <div
                                     class="relative flex flex-1 h-full"
@@ -11721,7 +11893,7 @@ exports[`Settings should update the avatar when removing focus from name input 2
                                 </div>
                                 <ul
                                   aria-labelledby="select-language-label"
-                                  class="styles__SelectOptionsList-b2falt-0 cUNLQk"
+                                  class="styles__SelectOptionsList-b2falt-0 ghEDCU"
                                   id="select-language-menu"
                                   role="listbox"
                                 />
@@ -11747,7 +11919,7 @@ exports[`Settings should update the avatar when removing focus from name input 2
                             class="relative w-full"
                           >
                             <div
-                              class="Input__InputWrapperStyled-wu99qs-0 hDeOGV sr-only"
+                              class="Input__InputWrapperStyled-wu99qs-0 knbpfp sr-only"
                             >
                               <div
                                 class="relative flex flex-1 h-full"
@@ -11757,6 +11929,7 @@ exports[`Settings should update the avatar when removing focus from name input 2
                                   data-testid="select-list__input"
                                   name="marketProvider"
                                   readonly=""
+                                  tabindex="-1"
                                   value="cryptocompare"
                                 />
                               </div>
@@ -11775,7 +11948,7 @@ exports[`Settings should update the avatar when removing focus from name input 2
                                   id="select-market-provider-label"
                                 />
                                 <div
-                                  class="Input__InputWrapperStyled-wu99qs-0 hDeOGV"
+                                  class="Input__InputWrapperStyled-wu99qs-0 knbpfp"
                                 >
                                   <div
                                     class="relative flex flex-1 h-full"
@@ -11824,7 +11997,7 @@ exports[`Settings should update the avatar when removing focus from name input 2
                                 </div>
                                 <ul
                                   aria-labelledby="select-market-provider-label"
-                                  class="styles__SelectOptionsList-b2falt-0 cUNLQk"
+                                  class="styles__SelectOptionsList-b2falt-0 ghEDCU"
                                   id="select-market-provider-menu"
                                   role="listbox"
                                 />
@@ -11850,7 +12023,7 @@ exports[`Settings should update the avatar when removing focus from name input 2
                             class="relative w-full"
                           >
                             <div
-                              class="Input__InputWrapperStyled-wu99qs-0 hDeOGV sr-only"
+                              class="Input__InputWrapperStyled-wu99qs-0 knbpfp sr-only"
                             >
                               <div
                                 class="relative flex flex-1 h-full"
@@ -11860,6 +12033,7 @@ exports[`Settings should update the avatar when removing focus from name input 2
                                   data-testid="select-list__input"
                                   name="timeFormat"
                                   readonly=""
+                                  tabindex="-1"
                                   value="h:mm A"
                                 />
                               </div>
@@ -11878,7 +12052,7 @@ exports[`Settings should update the avatar when removing focus from name input 2
                                   id="select-time-format-label"
                                 />
                                 <div
-                                  class="Input__InputWrapperStyled-wu99qs-0 hDeOGV"
+                                  class="Input__InputWrapperStyled-wu99qs-0 knbpfp"
                                 >
                                   <div
                                     class="relative flex flex-1 h-full"
@@ -11927,7 +12101,7 @@ exports[`Settings should update the avatar when removing focus from name input 2
                                 </div>
                                 <ul
                                   aria-labelledby="select-time-format-label"
-                                  class="styles__SelectOptionsList-b2falt-0 cUNLQk"
+                                  class="styles__SelectOptionsList-b2falt-0 ghEDCU"
                                   id="select-time-format-menu"
                                   role="listbox"
                                 />
@@ -11947,7 +12121,7 @@ exports[`Settings should update the avatar when removing focus from name input 2
                       Security
                     </h2>
                     <ul
-                      class="sc-dlfnbm cOiGXi"
+                      class="sc-hKgILt gfmZFQ"
                       data-testid="list-divided__items"
                     >
                       <li
@@ -12091,7 +12265,7 @@ exports[`Settings should update the avatar when removing focus from name input 2
                               class="relative w-full"
                             >
                               <div
-                                class="Input__InputWrapperStyled-wu99qs-0 hDeOGV sr-only"
+                                class="Input__InputWrapperStyled-wu99qs-0 knbpfp sr-only"
                               >
                                 <div
                                   class="relative flex flex-1 h-full"
@@ -12101,6 +12275,7 @@ exports[`Settings should update the avatar when removing focus from name input 2
                                     data-testid="select-list__input"
                                     name="automaticSignOutPeriod"
                                     readonly=""
+                                    tabindex="-1"
                                     value="1"
                                   />
                                 </div>
@@ -12119,7 +12294,7 @@ exports[`Settings should update the avatar when removing focus from name input 2
                                     id="select-auto-signout-label"
                                   />
                                   <div
-                                    class="Input__InputWrapperStyled-wu99qs-0 hDeOGV"
+                                    class="Input__InputWrapperStyled-wu99qs-0 knbpfp"
                                   >
                                     <div
                                       class="relative flex flex-1 h-full"
@@ -12168,7 +12343,7 @@ exports[`Settings should update the avatar when removing focus from name input 2
                                   </div>
                                   <ul
                                     aria-labelledby="select-auto-signout-label"
-                                    class="styles__SelectOptionsList-b2falt-0 cUNLQk"
+                                    class="styles__SelectOptionsList-b2falt-0 ghEDCU"
                                     id="select-auto-signout-menu"
                                     role="listbox"
                                   />
@@ -12189,7 +12364,7 @@ exports[`Settings should update the avatar when removing focus from name input 2
                       Other
                     </h2>
                     <ul
-                      class="sc-dlfnbm cOiGXi"
+                      class="sc-hKgILt gfmZFQ"
                       data-testid="list-divided__items"
                     >
                       <li
@@ -12396,7 +12571,7 @@ exports[`Settings should update the avatar when removing focus from name input 2
                     class="flex justify-between pt-2 w-full"
                   >
                     <button
-                      class="OriginalButton__StyledButton-sc-1y2wptt-0 hLYMjm"
+                      class="OriginalButton__StyledButton-sc-1y2wptt-0 gDVvgk"
                       type="button"
                     >
                       <div
@@ -12420,7 +12595,7 @@ exports[`Settings should update the avatar when removing focus from name input 2
                       class="space-x-3"
                     >
                       <button
-                        class="OriginalButton__StyledButton-sc-1y2wptt-0 hsoUax"
+                        class="OriginalButton__StyledButton-sc-1y2wptt-0 izJbbP"
                         data-testid="General-settings__cancel-button"
                         type="button"
                       >
@@ -12431,7 +12606,7 @@ exports[`Settings should update the avatar when removing focus from name input 2
                         </div>
                       </button>
                       <button
-                        class="OriginalButton__StyledButton-sc-1y2wptt-0 blpaPr"
+                        class="OriginalButton__StyledButton-sc-1y2wptt-0 fqRthJ"
                         data-testid="General-settings__submit-button"
                         disabled=""
                         type="submit"

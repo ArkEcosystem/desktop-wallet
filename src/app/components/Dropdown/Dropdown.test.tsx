@@ -48,7 +48,7 @@ describe("Dropdown", () => {
 		expect(getByTestId("dropdown__content")).toBeTruthy();
 	});
 
-	it("should select option", () => {
+	it("should select option by click", () => {
 		const onSelect = jest.fn();
 		const { getByTestId } = render(<Dropdown options={options} onSelect={onSelect} />);
 		const toggle = getByTestId("dropdown__toggle");
@@ -64,6 +64,48 @@ describe("Dropdown", () => {
 
 		act(() => {
 			fireEvent.click(firstOption);
+		});
+
+		expect(onSelect).toBeCalledWith({ label: "Option 1", value: "1" });
+	});
+
+	it("should select option with enter key", () => {
+		const onSelect = jest.fn();
+		const { getByTestId } = render(<Dropdown options={options} onSelect={onSelect} />);
+		const toggle = getByTestId("dropdown__toggle");
+
+		act(() => {
+			fireEvent.click(toggle);
+		});
+
+		expect(getByTestId("dropdown__content")).toBeTruthy();
+
+		const firstOption = getByTestId("dropdown__option--0");
+		expect(firstOption).toBeTruthy();
+
+		act(() => {
+			fireEvent.keyDown(firstOption, { key: "Enter", code: 13 });
+		});
+
+		expect(onSelect).toBeCalledWith({ label: "Option 1", value: "1" });
+	});
+
+	it("should select option with space key", () => {
+		const onSelect = jest.fn();
+		const { getByTestId } = render(<Dropdown options={options} onSelect={onSelect} />);
+		const toggle = getByTestId("dropdown__toggle");
+
+		act(() => {
+			fireEvent.click(toggle);
+		});
+
+		expect(getByTestId("dropdown__content")).toBeTruthy();
+
+		const firstOption = getByTestId("dropdown__option--0");
+		expect(firstOption).toBeTruthy();
+
+		act(() => {
+			fireEvent.keyDown(firstOption, { key: " ", keyCode: 32 });
 		});
 
 		expect(onSelect).toBeCalledWith({ label: "Option 1", value: "1" });
@@ -117,6 +159,23 @@ describe("Dropdown", () => {
 
 		act(() => {
 			fireEvent.mouseDown(outsideElement);
+		});
+
+		expect(container.querySelectorAll("ul").length).toEqual(0);
+	});
+
+	it("should close dropdown with escape key", () => {
+		const { getByTestId, container } = render(<Dropdown options={options} />);
+		const toggle = getByTestId("dropdown__toggle");
+
+		act(() => {
+			fireEvent.click(toggle);
+		});
+
+		expect(getByTestId("dropdown__content")).toBeTruthy();
+
+		act(() => {
+			fireEvent.keyDown(toggle, { key: "Escape", keyCode: 27 });
 		});
 
 		expect(container.querySelectorAll("ul").length).toEqual(0);

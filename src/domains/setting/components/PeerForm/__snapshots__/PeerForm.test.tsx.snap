@@ -24,7 +24,7 @@ exports[`PeerForm should render 1`] = `
         class="relative w-full"
       >
         <div
-          class="Input__InputWrapperStyled-wu99qs-0 hDeOGV sr-only"
+          class="Input__InputWrapperStyled-wu99qs-0 knbpfp sr-only"
         >
           <div
             class="relative flex flex-1 h-full"
@@ -34,6 +34,7 @@ exports[`PeerForm should render 1`] = `
               data-testid="select-list__input"
               name="network"
               readonly=""
+              tabindex="-1"
               value=""
             />
           </div>
@@ -52,7 +53,7 @@ exports[`PeerForm should render 1`] = `
               id="downshift-0-label"
             />
             <div
-              class="Input__InputWrapperStyled-wu99qs-0 hDeOGV"
+              class="Input__InputWrapperStyled-wu99qs-0 knbpfp"
             >
               <div
                 class="relative flex flex-1 h-full"
@@ -95,7 +96,7 @@ exports[`PeerForm should render 1`] = `
             </div>
             <ul
               aria-labelledby="downshift-0-label"
-              class="styles__SelectOptionsList-b2falt-0 cUNLQk"
+              class="styles__SelectOptionsList-b2falt-0 ghEDCU"
               id="downshift-0-menu"
               role="listbox"
             />
@@ -118,7 +119,7 @@ exports[`PeerForm should render 1`] = `
         />
       </label>
       <div
-        class="Input__InputWrapperStyled-wu99qs-0 hDeOGV"
+        class="Input__InputWrapperStyled-wu99qs-0 knbpfp"
       >
         <div
           class="relative flex flex-1 h-full"
@@ -147,7 +148,7 @@ exports[`PeerForm should render 1`] = `
         />
       </label>
       <div
-        class="Input__InputWrapperStyled-wu99qs-0 hDeOGV"
+        class="Input__InputWrapperStyled-wu99qs-0 knbpfp"
       >
         <div
           class="relative flex flex-1 h-full"
@@ -198,7 +199,7 @@ exports[`PeerForm should render 1`] = `
       class="flex justify-end mt-4"
     >
       <button
-        class="OriginalButton__StyledButton-sc-1y2wptt-0 blpaPr"
+        class="OriginalButton__StyledButton-sc-1y2wptt-0 fqRthJ"
         data-testid="PeerForm__submit-button"
         disabled=""
         type="submit"
@@ -238,7 +239,7 @@ exports[`PeerForm should render the peer on the form 1`] = `
         class="relative w-full"
       >
         <div
-          class="Input__InputWrapperStyled-wu99qs-0 hDeOGV sr-only"
+          class="Input__InputWrapperStyled-wu99qs-0 knbpfp sr-only"
         >
           <div
             class="relative flex flex-1 h-full"
@@ -248,6 +249,7 @@ exports[`PeerForm should render the peer on the form 1`] = `
               data-testid="select-list__input"
               name="network"
               readonly=""
+              tabindex="-1"
               value="ark.devnet"
             />
           </div>
@@ -266,7 +268,7 @@ exports[`PeerForm should render the peer on the form 1`] = `
               id="downshift-21-label"
             />
             <div
-              class="Input__InputWrapperStyled-wu99qs-0 hDeOGV"
+              class="Input__InputWrapperStyled-wu99qs-0 knbpfp"
             >
               <div
                 class="relative flex flex-1 h-full"
@@ -315,7 +317,7 @@ exports[`PeerForm should render the peer on the form 1`] = `
             </div>
             <ul
               aria-labelledby="downshift-21-label"
-              class="styles__SelectOptionsList-b2falt-0 cUNLQk"
+              class="styles__SelectOptionsList-b2falt-0 ghEDCU"
               id="downshift-21-menu"
               role="listbox"
             />
@@ -338,7 +340,7 @@ exports[`PeerForm should render the peer on the form 1`] = `
         />
       </label>
       <div
-        class="Input__InputWrapperStyled-wu99qs-0 hDeOGV"
+        class="Input__InputWrapperStyled-wu99qs-0 knbpfp"
       >
         <div
           class="relative flex flex-1 h-full"
@@ -367,7 +369,7 @@ exports[`PeerForm should render the peer on the form 1`] = `
         />
       </label>
       <div
-        class="Input__InputWrapperStyled-wu99qs-0 hDeOGV"
+        class="Input__InputWrapperStyled-wu99qs-0 knbpfp"
       >
         <div
           class="relative flex flex-1 h-full"
@@ -418,7 +420,7 @@ exports[`PeerForm should render the peer on the form 1`] = `
       class="flex justify-end mt-4"
     >
       <button
-        class="OriginalButton__StyledButton-sc-1y2wptt-0 cEUmKc"
+        class="OriginalButton__StyledButton-sc-1y2wptt-0 dYkFxS"
         data-testid="PeerForm__submit-button"
         type="submit"
       >
