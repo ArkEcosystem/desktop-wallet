@@ -322,7 +322,7 @@ exports[`ContactForm should select 1`] = `
       </div>
     </div>
     <div
-      class="flex w-full justify-end"
+      class="flex w-full pt-8 border-t border-theme-secondary-300 dark:border-theme-secondary-800 justify-end"
     >
       <div
         class="space-x-3"
@@ -697,7 +697,7 @@ exports[`ContactForm should select with errors 1`] = `
       </div>
     </div>
     <div
-      class="flex w-full justify-end"
+      class="flex w-full pt-8 border-t border-theme-secondary-300 dark:border-theme-secondary-800 justify-end"
     >
       <div
         class="space-x-3"
@@ -884,7 +884,7 @@ exports[`ContactForm when creating a new contact should render the form 1`] = `
       </div>
     </div>
     <div
-      class="flex w-full justify-end"
+      class="flex w-full pt-8 border-t border-theme-secondary-300 dark:border-theme-secondary-800 justify-end"
     >
       <div
         class="space-x-3"
@@ -1082,7 +1082,7 @@ exports[`ContactForm when editing an existing contact should render the form 1`]
         data-testid="contact-form__address-list"
       >
         <div
-          class="flex items-center py-4 border-b border-dashed border-theme-secondary-300 dark:border-theme-secondary-800"
+          class="flex items-center py-4 last:pb-0 border-b border-dashed last:border-b-0 border-theme-secondary-300 dark:border-theme-secondary-800"
           data-testid="contact-form__address-list-item"
         >
           <div
@@ -1160,7 +1160,7 @@ exports[`ContactForm when editing an existing contact should render the form 1`]
       </div>
     </div>
     <div
-      class="flex w-full justify-between"
+      class="flex w-full pt-8 border-t border-theme-secondary-300 dark:border-theme-secondary-800 justify-between"
     >
       <button
         class="OriginalButton__StyledButton-sc-1y2wptt-0 gDVvgk"

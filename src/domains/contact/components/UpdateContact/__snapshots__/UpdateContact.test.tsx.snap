@@ -219,7 +219,7 @@ exports[`UpdateContact should render a modal 1`] = `
                   data-testid="contact-form__address-list"
                 >
                   <div
-                    class="flex items-center py-4 border-b border-dashed border-theme-secondary-300 dark:border-theme-secondary-800"
+                    class="flex items-center py-4 last:pb-0 border-b border-dashed last:border-b-0 border-theme-secondary-300 dark:border-theme-secondary-800"
                     data-testid="contact-form__address-list-item"
                   >
                     <div
@@ -297,7 +297,7 @@ exports[`UpdateContact should render a modal 1`] = `
                 </div>
               </div>
               <div
-                class="flex w-full justify-between"
+                class="flex w-full pt-8 border-t border-theme-secondary-300 dark:border-theme-secondary-800 justify-between"
               >
                 <button
                   class="OriginalButton__StyledButton-sc-1y2wptt-0 gDVvgk"
