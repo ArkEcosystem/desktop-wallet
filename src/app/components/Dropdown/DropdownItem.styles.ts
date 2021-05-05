@@ -12,7 +12,7 @@ export const DropdownItem = styled.li<{ disabled?: boolean }>(({ disabled }) => 
 	!disabled &&
 		tw`
 		cursor-pointer text-theme-secondary-800
-		hover:(bg-theme-secondary-200 text-theme-primary-600)
+		light:hover:(text-theme-primary-600 bg-theme-secondary-200)
 		dark:(text-theme-secondary-200 hover:bg-theme-primary-600)
 		focus:(ring-2 ring-inset ring-theme-primary-400)
 	`,
