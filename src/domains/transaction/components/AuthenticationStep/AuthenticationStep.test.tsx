@@ -31,7 +31,13 @@ describe("AuthenticationStep", () => {
 	);
 
 	it("should validate if mnemonic match the wallet address", async () => {
-		wallet = await profile.wallets().importByMnemonic("passphrase", "ARK", "ark.devnet");
+		wallet = await profile.walletFactory().fromMnemonic({
+			mnemonic: "passphrase",
+			coin: "ARK",
+			network: "ark.devnet",
+		});
+
+		profile.wallets().push(wallet);
 
 		jest.spyOn(wallet, "isSecondSignature").mockReturnValue(false);
 
@@ -75,7 +81,13 @@ describe("AuthenticationStep", () => {
 	});
 
 	it("should validate if second mnemonic match the wallet second public key", async () => {
-		wallet = await profile.wallets().importByMnemonic("passphrase", "ARK", "ark.devnet");
+		wallet = await profile.walletFactory().fromMnemonic({
+			mnemonic: "passphrase",
+			coin: "ARK",
+			network: "ark.devnet",
+		});
+
+		profile.wallets().push(wallet);
 		const secondMnemonic = "my second mnemonic";
 
 		jest.spyOn(wallet, "isSecondSignature").mockReturnValue(true);
@@ -152,6 +164,7 @@ describe("AuthenticationStep", () => {
 	});
 
 	it("should request mnemonic and second mnemonic", async () => {
+		await wallet.synchroniser().identity();
 		jest.spyOn(wallet, "isSecondSignature").mockReturnValueOnce(true);
 
 		const { result } = renderHook(() => useForm({ mode: "onChange", shouldUnregister: false }));
@@ -245,7 +258,7 @@ describe("AuthenticationStep", () => {
 	});
 
 	it("should render with encryption password input", async () => {
-		jest.spyOn(wallet, "usesWIF").mockReturnValue(true);
+		jest.spyOn(wallet.wif(), "exists").mockReturnValue(true);
 
 		const { result } = renderHook(() => useForm({ mode: "onChange" }));
 		const { getByTestId } = renderWithRouter(
@@ -262,8 +275,8 @@ describe("AuthenticationStep", () => {
 	it("should render with encryption password input and second mnemonic", async () => {
 		wallet = profile.wallets().findById(getDefaultWalletId());
 
-		jest.spyOn(wallet, "usesWIF").mockReturnValue(true);
-		jest.spyOn(wallet, "wif").mockImplementation((password) => {
+		jest.spyOn(wallet.wif(), "exists").mockReturnValue(true);
+		jest.spyOn(wallet.wif(), "get").mockImplementation(() => {
 			const wif = "S9rDfiJ2ar4DpWAQuaXECPTJHfTZ3XjCPv15gjxu4cHJZKzABPyV";
 			return Promise.resolve(wif);
 		});

@@ -33,7 +33,7 @@ describe("MultiSignature Registration Form", () => {
 		await syncFees();
 	});
 
-	beforeEach(() => {
+	beforeEach(async () => {
 		profile = env.profiles().findById(getDefaultProfileId());
 		wallet = profile.wallets().first();
 		wallet2 = profile.wallets().last();
@@ -43,6 +43,8 @@ describe("MultiSignature Registration Form", () => {
 			max: (10 * 1e8).toFixed(0),
 			avg: (1.354 * 1e8).toFixed(0),
 		};
+
+		await profile.sync();
 	});
 
 	const Component = ({
@@ -267,8 +269,8 @@ describe("MultiSignature Registration Form", () => {
 	});
 
 	it("should sign transaction using encryption password", async () => {
-		const walletUsesWIFMock = jest.spyOn(wallet, "usesWIF").mockReturnValue(true);
-		const walletWifMock = jest.spyOn(wallet, "wif").mockImplementation((password) => {
+		const walletUsesWIFMock = jest.spyOn(wallet.wif(), "exists").mockReturnValue(true);
+		const walletWifMock = jest.spyOn(wallet.wif(), "get").mockImplementation(() => {
 			const wif = "S9rDfiJ2ar4DpWAQuaXECPTJHfTZ3XjCPv15gjxu4cHJZKzABPyV";
 			return Promise.resolve(wif);
 		});

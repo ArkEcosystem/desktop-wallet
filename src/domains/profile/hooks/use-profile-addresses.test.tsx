@@ -10,7 +10,7 @@ let profile: Contracts.IProfile;
 describe("useProfileAddresses", () => {
 	beforeAll(async () => {
 		profile = env.profiles().findById(getDefaultProfileId());
-		await profile.restore();
+
 		profile
 			.contacts()
 			.last()
@@ -22,6 +22,9 @@ describe("useProfileAddresses", () => {
 					network: "ark.devnet",
 				},
 			]);
+
+		await env.profiles().restore(profile);
+		await profile.sync();
 	});
 
 	it("should return all available addresses", async () => {
@@ -33,11 +36,16 @@ describe("useProfileAddresses", () => {
 	});
 
 	it("should filter address by selected network", async () => {
-		const wallet = await profile.wallets().importByMnemonic("test", "ARK", "ark.mainnet");
+		const wallet = await profile.walletFactory().fromMnemonic({
+			mnemonic: "test",
+			coin: "ARK",
+			network: "ark.mainnet",
+		});
+		await profile.sync();
 		const { result } = renderHook(() => useProfileAddresses({ profile, network: wallet.network() }));
 
-		expect(result.current.allAddresses).toHaveLength(1);
+		expect(result.current.allAddresses).toHaveLength(0);
 		expect(result.current.contactAddresses).toHaveLength(0);
-		expect(result.current.profileAddresses).toHaveLength(1);
+		expect(result.current.profileAddresses).toHaveLength(0);
 	});
 });

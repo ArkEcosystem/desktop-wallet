@@ -28,7 +28,7 @@ export const InputWrapperStyled = styled.div<{
 	noShadow?: boolean;
 	isTextArea?: boolean;
 }>`
-	${tw`flex items-center w-full px-4 space-x-2 overflow-hidden transition-colors duration-200 rounded appearance-none text-theme-text`}
+	${tw`relative flex items-center w-full px-4 space-x-2 transition-colors duration-200 rounded appearance-none text-theme-text`}
 
 	${({ noBorder }) => {
 		if (!noBorder) {
@@ -56,7 +56,7 @@ export const InputWrapperStyled = styled.div<{
 
 	${({ isTextArea }) => {
 		if (!isTextArea) {
-			return tw`h-14`;
+			return tw`h-14 overflow-hidden`;
 		}
 	}}
 `;
@@ -161,6 +161,7 @@ export const Input = React.forwardRef<InputElement, InputProps>(
 								{
 									"text-theme-danger-500": isInvalidValue,
 									"text-theme-primary-300 dark:text-theme-secondary-600": !isInvalidValue,
+									"absolute bottom-full right-0 mb-2": isTextArea,
 								},
 							)}
 						>

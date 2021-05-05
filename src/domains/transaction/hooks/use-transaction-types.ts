@@ -1,4 +1,4 @@
-import { Contracts, Enums } from "@arkecosystem/platform-sdk-profiles";
+import { Contracts } from "@arkecosystem/platform-sdk-profiles";
 import { uniq } from "@arkecosystem/utils";
 import { useMemo } from "react";
 import { useTranslation } from "react-i18next";
@@ -90,26 +90,14 @@ const magistrate: Record<string, any> = {
 	"business-registration": {
 		type: MagistrateTransactionType.Entity,
 		typeGroup: TransactionTypeGroup.Magistrate,
-		asset: {
-			type: Enums.EntityType.Business,
-			action: Enums.EntityAction.Register,
-		},
 	},
 	"business-resignation": {
 		type: MagistrateTransactionType.Entity,
 		typeGroup: TransactionTypeGroup.Magistrate,
-		asset: {
-			type: Enums.EntityType.Business,
-			action: Enums.EntityAction.Resign,
-		},
 	},
 	"business-update": {
 		type: MagistrateTransactionType.Entity,
 		typeGroup: TransactionTypeGroup.Magistrate,
-		asset: {
-			type: Enums.EntityType.Business,
-			action: Enums.EntityAction.Update,
-		},
 	},
 	"bridgechain-registration": {
 		type: MagistrateTransactionType.BridgechainRegistration,
@@ -151,11 +139,6 @@ export const useTransactionTypes = ({ wallets = [] }: TransactionTypeProps = {})
 
 		"delegate-registration": t("TRANSACTION.TRANSACTION_TYPES.DELEGATE_REGISTRATION"),
 		"delegate-resignation": t("TRANSACTION.TRANSACTION_TYPES.DELEGATE_RESIGNATION"),
-
-		// magistrate
-		"entity-registration": t("TRANSACTION.TRANSACTION_TYPES.ENTITY_REGISTRATION"),
-		"entity-resignation": t("TRANSACTION.TRANSACTION_TYPES.ENTITY_RESIGNATION"),
-		"entity-update": t("TRANSACTION.TRANSACTION_TYPES.ENTITY_UPDATE"),
 
 		"business-registration": t("TRANSACTION.TRANSACTION_TYPES.BUSINESS_ENTITY_REGISTRATION"),
 		"business-resignation": t("TRANSACTION.TRANSACTION_TYPES.BUSINESS_ENTITY_RESIGNATION"),
@@ -231,7 +214,6 @@ export const useTransactionTypes = ({ wallets = [] }: TransactionTypeProps = {})
 		hasMagistrationTypesEnabled,
 		types: {
 			core: availableTypes,
-			magistrate: Object.keys(magistrate),
 		},
 		getQueryParamsByType,
 	};

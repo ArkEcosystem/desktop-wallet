@@ -7,8 +7,9 @@ import { FilterTransactions } from "./";
 let profile: Contracts.IProfile;
 
 describe("FilterTransactions", () => {
-	beforeAll(() => {
+	beforeAll(async () => {
 		profile = env.profiles().findById(getDefaultProfileId());
+		await profile.sync();
 	});
 
 	it("should render", () => {

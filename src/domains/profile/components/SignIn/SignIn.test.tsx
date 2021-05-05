@@ -1,7 +1,15 @@
 /* eslint-disable @typescript-eslint/require-await */
 import { Contracts } from "@arkecosystem/platform-sdk-profiles";
 import React from "react";
-import { act, env, fireEvent, renderWithRouter, waitFor } from "testing-library";
+import {
+	act,
+	env,
+	fireEvent,
+	getDefaultPassword,
+	getPasswordProtectedProfileId,
+	renderWithRouter,
+	waitFor,
+} from "utils/testing-library";
 
 import { translations } from "../../i18n";
 import { SignIn } from "./SignIn";
@@ -12,7 +20,8 @@ jest.setTimeout(30000);
 
 describe("SignIn", () => {
 	beforeEach(async () => {
-		profile = env.profiles().findById("cba050f1-880f-45f0-9af9-cfe48f406052");
+		profile = env.profiles().findById(getPasswordProtectedProfileId());
+		await env.profiles().restore(profile, getDefaultPassword());
 	});
 
 	beforeEach(() => {
@@ -65,7 +74,7 @@ describe("SignIn", () => {
 		);
 
 		await act(async () => {
-			fireEvent.input(getByTestId("SignIn__input--password"), { target: { value: "password" } });
+			fireEvent.input(getByTestId("SignIn__input--password"), { target: { value: getDefaultPassword() } });
 		});
 
 		// wait for formState.isValid to be updated

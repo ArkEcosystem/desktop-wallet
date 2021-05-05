@@ -29,7 +29,7 @@ export const useWalletSync = ({ profile, env }: WalletImportTypes) => {
 				// Sync network delegates for the first time
 				await env.delegates().sync(network.coin(), network.id());
 			}
-			await wallet.syncVotes();
+			await wallet.synchroniser().votes();
 		}
 	};
 

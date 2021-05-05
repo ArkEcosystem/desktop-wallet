@@ -19,7 +19,7 @@ export const ReceiveFundsForm = ({ network }: { network?: Coins.Network }) => {
 		register("amount");
 	}, [register]);
 
-	const isSmartbridgeUsedInNetwork = useMemo(() => network?.can(Coins.FeatureFlag.MiscellaneousMemo), [network]);
+	const isSmartbridgeUsedInNetwork = useMemo(() => network?.allows(Coins.FeatureFlag.MiscellaneousMemo), [network]);
 
 	return (
 		<div data-testid="ReceiveFundsForm">
