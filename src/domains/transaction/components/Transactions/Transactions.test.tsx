@@ -427,7 +427,7 @@ describe("Transactions", () => {
 	it("should update wallet filters", async () => {
 		const { asFragment, getByTestId } = renderWithRouter(
 			<Route path="/profiles/:profileId/dashboard">
-				<Transactions isUpdatingWallet={true} profile={profile} wallets={profile.wallets().values()} />
+				<Transactions isUpdatingWallet={true} profile={profile} wallets={[]} />
 			</Route>,
 			{
 				routes: [dashboardURL],
@@ -435,10 +435,7 @@ describe("Transactions", () => {
 			},
 		);
 
-		await waitFor(
-			() => expect(within(getByTestId("TransactionTable")).getAllByTestId("TableRow")).toHaveLength(4),
-			{ timeout: 4000 },
-		);
+		await waitFor(() => expect(getByTestId("EmptyBlock")).toBeInTheDocument());
 		expect(asFragment()).toMatchSnapshot();
 	});
 });
