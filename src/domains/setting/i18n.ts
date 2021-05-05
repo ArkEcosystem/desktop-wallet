@@ -93,6 +93,10 @@ export const translations: { [key: string]: any } = {
 			TITLE: "Use Custom Peers",
 			DESCRIPTION: "Manages your list of custom peers for Blockchain networks.",
 		},
+		MULTISIGNATURE: {
+			TITLE: "Multisignature",
+			DESCRIPTION: "Toggle this setting if the IP points to a Multisignature peer.",
+		},
 		CRYPTOASSET: "Cryptoasset",
 		ADD_PEER: "Add Peer",
 		EDIT_PEER: "Edit Peer",

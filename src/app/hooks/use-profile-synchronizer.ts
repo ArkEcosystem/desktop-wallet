@@ -1,4 +1,4 @@
-import { Contracts, Helpers } from "@arkecosystem/platform-sdk-profiles";
+import { Contracts } from "@arkecosystem/platform-sdk-profiles";
 import { useConfiguration, useEnvironmentContext } from "app/contexts";
 import { useEffect, useMemo, useRef } from "react";
 import { matchPath, useHistory, useLocation } from "react-router-dom";
@@ -142,11 +142,9 @@ export const useProfileRestore = () => {
 		// without password and then reset the password.
 		const __E2E__ = ["true", "1"].includes(process.env.REACT_APP_IS_E2E?.toLowerCase() as string);
 		if (__E2E__) {
-			await profile.restore(password);
+			await env.profiles().restore(profile, password);
 
 			await profile.sync();
-
-			profile.save(password);
 
 			await persist();
 
@@ -155,7 +153,7 @@ export const useProfileRestore = () => {
 		}
 
 		// Reset profile normally (passwordless or not)
-		await profile.restore(password);
+		await env.profiles().restore(profile, password);
 		markAsRestored(profile.id());
 
 		// Profile restore finished but url changed in the meanwhile.
@@ -164,9 +162,6 @@ export const useProfileRestore = () => {
 		if (activeProfile?.id() !== profile.id()) {
 			return;
 		}
-
-		// Make sure the latest profile state is encoded (and optionally encrypted) before persisting
-		profile.save(password);
 
 		await persist();
 		return true;
@@ -183,10 +178,9 @@ type ProfileSynchronizerProps = {
 
 export const useProfileSynchronizer = ({ onProfileRestoreError }: ProfileSynchronizerProps = {}) => {
 	const __E2E__ = process.env.REACT_APP_IS_E2E;
-	const { env, persist } = useEnvironmentContext();
+	const { persist } = useEnvironmentContext();
 	const { setConfiguration, profileIsSyncing } = useConfiguration();
 	const { restoreProfile } = useProfileRestore();
-	const { saveProfile } = useProfileUtils(env);
 	const profile = useProfileWatcher();
 
 	const {
@@ -219,7 +213,7 @@ export const useProfileSynchronizer = ({ onProfileRestoreError }: ProfileSynchro
 
 			if (profile.usesPassword()) {
 				try {
-					Helpers.MemoryPassword.get();
+					profile.password().get();
 				} catch (error) {
 					onProfileRestoreError?.(error);
 					return;
@@ -234,7 +228,6 @@ export const useProfileSynchronizer = ({ onProfileRestoreError }: ProfileSynchro
 				setStatus("syncing");
 
 				await profile.sync();
-				saveProfile(profile);
 				await persist();
 
 				runAll();
@@ -251,9 +244,8 @@ export const useProfileSynchronizer = ({ onProfileRestoreError }: ProfileSynchro
 			}
 		};
 
-		syncProfile(profile);
+		setTimeout(() => syncProfile(profile), 0);
 	}, [
-		saveProfile,
 		allJobs,
 		profile,
 		runAll,

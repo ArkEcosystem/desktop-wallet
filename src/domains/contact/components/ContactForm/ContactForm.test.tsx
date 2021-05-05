@@ -72,14 +72,14 @@ describe("ContactForm", () => {
 
 		const selectNetworkInput = getByTestId("SelectNetworkInput__input");
 		act(() => {
-			fireEvent.change(selectNetworkInput, { target: { value: "Bitco" } });
+			fireEvent.change(selectNetworkInput, { target: { value: "ark" } });
 		});
 
 		act(() => {
 			fireEvent.keyDown(selectNetworkInput, { key: "Enter", code: 13 });
 		});
 
-		expect(selectNetworkInput).toHaveValue("Bitcoin");
+		expect(selectNetworkInput).toHaveValue("ARK");
 	});
 
 	it("should add a valid address successfully", async () => {
