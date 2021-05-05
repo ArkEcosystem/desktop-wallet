@@ -82,7 +82,7 @@ export const FormStep = ({ fees, wallet, step = 0.001 }: any) => {
 						defaultValue={fee}
 						value={fee}
 						step={step}
-						showFeeOptions={wallet.network().can(Coins.FeatureFlag.MiscellaneousDynamicFees)}
+						showFeeOptions={wallet.network().allows(Coins.FeatureFlag.MiscellaneousDynamicFees)}
 						onChange={(currency) => {
 							setValue("fee", currency.value, { shouldValidate: true, shouldDirty: true });
 						}}

@@ -80,7 +80,7 @@ export const SendDelegateResignation = ({ formDefaultData }: SendResignationProp
 		const { fee, mnemonic, secondMnemonic, encryptionPassword } = getValues();
 		const from = activeWallet.address();
 
-		const wif = activeWallet?.usesWIF() ? await activeWallet.wif(encryptionPassword) : undefined;
+		const wif = activeWallet?.wif().exists() ? await activeWallet.wif().get(encryptionPassword) : undefined;
 
 		try {
 			const signedTransactionId = await activeWallet.transaction().signDelegateResignation({

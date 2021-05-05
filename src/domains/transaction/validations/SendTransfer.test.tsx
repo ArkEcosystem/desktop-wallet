@@ -12,7 +12,7 @@ let network: any;
 describe("Send transfer validations", () => {
 	beforeAll(async () => {
 		profile = env.profiles().findById(getDefaultProfileId());
-		await profile.restore();
+		await env.profiles().restore(profile);
 		await profile.sync();
 
 		translationMock = jest.fn((i18nString: string) => i18nString);

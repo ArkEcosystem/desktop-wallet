@@ -4,7 +4,7 @@ import { Pagination } from "app/components/Pagination";
 import { Table } from "app/components/Table";
 import { PluginListItem } from "domains/plugin/components/PluginListItem";
 import React from "react";
-import { useTranslation } from "react-i18next";
+import { Trans, useTranslation } from "react-i18next";
 
 type PluginListProps = {
 	className?: string;
@@ -91,7 +91,7 @@ export const PluginList = ({
 	if (!plugins.length) {
 		return (
 			<EmptyBlock data-testid="PluginList__empty-message">
-				{emptyMessage || t("PLUGINS.PAGE_PLUGIN_MANAGER.NO_PLUGINS_AVAILABLE")}
+				<Trans>{emptyMessage || t("PLUGINS.PAGE_PLUGIN_MANAGER.NO_PLUGINS_AVAILABLE")}</Trans>
 			</EmptyBlock>
 		);
 	}

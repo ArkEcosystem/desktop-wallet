@@ -36,7 +36,7 @@ export const WalletVote = ({ wallet, onButtonClick, env }: WalletVoteProps) => {
 		const syncVotes = async () => {
 			try {
 				await env.delegates().sync(wallet?.coinId(), wallet?.networkId());
-				await wallet.syncVotes();
+				await wallet.synchroniser().votes();
 			} catch {
 				// TODO: Retry sync if error code is greater than 499. Needs status code number from sdk.
 			}
@@ -59,7 +59,7 @@ export const WalletVote = ({ wallet, onButtonClick, env }: WalletVoteProps) => {
 	let votes: Contracts.IReadOnlyWallet[];
 
 	try {
-		votes = wallet.votes();
+		votes = wallet.voting().current();
 	} catch {
 		votes = [];
 	}

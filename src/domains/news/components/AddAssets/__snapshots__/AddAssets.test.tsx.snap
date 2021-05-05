@@ -19,7 +19,7 @@ exports[`AddAssets should render a modal 1`] = `
         class="absolute top-0 right-0 z-50 mt-5 mr-5 rounded transition-all duration-100 ease-linear bg-theme-primary-100 hover:bg-theme-primary-300 dark:bg-theme-secondary-800 dark:text-theme-secondary-600 dark:hover:bg-theme-secondary-700 dark:hover:text-theme-secondary-400"
       >
         <button
-          class="OriginalButton__StyledButton-sc-1y2wptt-0 lpqSIM w-11 h-11"
+          class="OriginalButton__StyledButton-sc-1y2wptt-0 fNHPRi w-11 h-11"
           data-testid="modal__close-btn"
           type="button"
         >
@@ -85,7 +85,7 @@ exports[`AddAssets should render a modal 1`] = `
                     id="AddAssets__network-label"
                   />
                   <div
-                    class="Input__InputWrapperStyled-wu99qs-0 hDeOGV"
+                    class="Input__InputWrapperStyled-wu99qs-0 knbpfp"
                   >
                     <div
                       class="Circle__CircleWrapper-uw7h4j-0 grnDUY border-theme-secondary-200 dark:border-theme-secondary-700 text-theme-secondary-500 ring-theme-background"
@@ -141,11 +141,11 @@ exports[`AddAssets should render a modal 1`] = `
                     data-testid="FilterNetwork"
                   >
                     <ul
-                      class="inline-block"
+                      class="flex flex-wrap"
                       data-testid="NetworkOptions"
                     >
                       <li
-                        class="inline-block mr-5 cursor-pointer"
+                        class="inline-block pr-5 pb-5 cursor-pointer"
                         data-testid="NetworkOption__ARK"
                       >
                         <div
@@ -177,7 +177,7 @@ exports[`AddAssets should render a modal 1`] = `
                         </div>
                       </li>
                       <li
-                        class="inline-block mr-5 cursor-pointer"
+                        class="inline-block pr-5 pb-5 cursor-pointer"
                         data-testid="NetworkOption__ETH"
                       >
                         <div
@@ -200,7 +200,7 @@ exports[`AddAssets should render a modal 1`] = `
                         </div>
                       </li>
                       <li
-                        class="inline-block mr-5 cursor-pointer"
+                        class="inline-block pr-5 pb-5 cursor-pointer"
                         data-testid="NetworkOption__BTC"
                       >
                         <div
@@ -223,7 +223,7 @@ exports[`AddAssets should render a modal 1`] = `
                         </div>
                       </li>
                       <li
-                        class="inline-block mr-5 cursor-pointer"
+                        class="inline-block pr-5 pb-5 cursor-pointer"
                         data-testid="NetworkOption__LSK"
                       >
                         <div
@@ -760,7 +760,7 @@ exports[`AddAssets should render a modal 1`] = `
               class="flex justify-end mt-4 space-x-3"
             >
               <button
-                class="OriginalButton__StyledButton-sc-1y2wptt-0 hsoUax"
+                class="OriginalButton__StyledButton-sc-1y2wptt-0 izJbbP"
                 type="button"
               >
                 <div
@@ -770,7 +770,7 @@ exports[`AddAssets should render a modal 1`] = `
                 </div>
               </button>
               <button
-                class="OriginalButton__StyledButton-sc-1y2wptt-0 cEUmKc"
+                class="OriginalButton__StyledButton-sc-1y2wptt-0 dYkFxS"
                 type="submit"
               >
                 <div

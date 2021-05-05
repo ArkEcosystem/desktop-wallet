@@ -3,6 +3,7 @@ import { Form } from "app/components/Form";
 import { Header } from "app/components/Header";
 import { ListDivided } from "app/components/ListDivided";
 import { Toggle } from "app/components/Toggle";
+import { useEnvironmentContext } from "app/contexts";
 import { useActiveProfile } from "app/hooks";
 import { useProfileExport } from "domains/setting/hooks/use-profile-export";
 import electron from "electron";
@@ -18,7 +19,8 @@ export const Export = ({ formConfig, onSuccess }: SettingsProps) => {
 	const { register, context } = formConfig;
 
 	const profile = useActiveProfile();
-	const { formatExportData } = useProfileExport(profile);
+	const { env } = useEnvironmentContext();
+	const { formatExportData } = useProfileExport({ profile, env });
 
 	const walletExportOptions = [
 		{

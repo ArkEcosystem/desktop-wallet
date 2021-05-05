@@ -30,7 +30,7 @@ export const WalletDetails = () => {
 	const activeWallet = useActiveWallet();
 	const { profileIsSyncing } = useConfiguration();
 
-	const shouldVote = useMemo(() => activeWallet.network().can(Coins.FeatureFlag.TransactionVote), [activeWallet]);
+	const shouldVote = useMemo(() => activeWallet.network().allows(Coins.FeatureFlag.TransactionVote), [activeWallet]);
 	const { syncMultiSignatures, pendingMultiSignatureTransactions } = useWalletTransactions(activeWallet);
 
 	useEffect(() => {

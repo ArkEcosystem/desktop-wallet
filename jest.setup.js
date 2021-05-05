@@ -49,7 +49,7 @@ jest.mock("electron", () => {
 });
 
 beforeAll(async () => {
-	await bootEnvWithProfileFixtures({ env });
+	await bootEnvWithProfileFixtures({ env, shouldRestoreDefaultProfile: true });
 	// Mark profiles as restored, to prevent multiple restoration in profile synchronizer
 	process.env.TEST_PROFILES_RESTORE_STATUS = "restored";
 });

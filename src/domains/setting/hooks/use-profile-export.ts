@@ -1,23 +1,27 @@
-import { Contracts, Helpers } from "@arkecosystem/platform-sdk-profiles";
+import { Contracts, Environment } from "@arkecosystem/platform-sdk-profiles";
 
 interface ProfileExportOptions {
 	excludeEmptyWallets: boolean;
 	excludeLedgerWallets: boolean;
 }
 
-export const useProfileExport = (profile: Contracts.IProfile) => {
+export const useProfileExport = ({ profile, env }: { profile: Contracts.IProfile; env: Environment }) => {
 	const formatExportData = (filters: ProfileExportOptions) => {
 		let password;
 
 		if (profile.usesPassword()) {
-			password = Helpers.MemoryPassword.get();
+			password = profile.password().get();
 		}
 
-		return profile.export(password, {
-			...filters,
-			addNetworkInformation: true,
-			saveGeneralSettings: true,
-		});
+		return env.profiles().export(
+			profile,
+			{
+				...filters,
+				addNetworkInformation: true,
+				saveGeneralSettings: true,
+			},
+			password,
+		);
 	};
 
 	return { formatExportData };

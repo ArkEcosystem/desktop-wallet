@@ -5,8 +5,9 @@ import { debounceAsync } from "utils/debounce";
 export const authentication = (t: any) => {
 	const addressFromEncryptedPassword = async (wallet: Contracts.IReadWriteWallet, password: string) =>
 		wallet
-			.wif(password)
-			.then((wif) => wallet.coin().identity().address().fromWIF(wif))
+			.wif()
+			.get(password)
+			.then((wif: string) => wallet.coin().identity().address().fromWIF(wif))
 			.catch(() => undefined);
 
 	const addressFromPassword = debounceAsync(addressFromEncryptedPassword, 700);

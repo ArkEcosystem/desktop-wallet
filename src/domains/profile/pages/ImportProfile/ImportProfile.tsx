@@ -33,9 +33,8 @@ export const ImportProfile = () => {
 		setActiveTab(10);
 	};
 
-	const handleProfileSave = (updatedProfile: Contracts.IProfile) => {
-		updatedProfile.save(password);
-		env.profiles().fill({ [updatedProfile.id()]: updatedProfile.dump() });
+	const handleProfileSave = (importedProfile: Contracts.IProfile) => {
+		env.profiles().push(importedProfile);
 
 		persist();
 		history.push("/");

@@ -1,4 +1,4 @@
-import { Contracts, Environment, Helpers } from "@arkecosystem/platform-sdk-profiles";
+import { Contracts, Environment } from "@arkecosystem/platform-sdk-profiles";
 import { uniq } from "@arkecosystem/utils";
 import { useCallback, useMemo } from "react";
 import { matchPath } from "react-router-dom";
@@ -38,27 +38,11 @@ export const useProfileUtils = (env: Environment) => {
 		}
 
 		try {
-			return Helpers.MemoryPassword.get();
+			return profile.password().get();
 		} catch {
 			return;
 		}
 	}, []);
-
-	const saveProfile = useCallback(
-		(profile: Contracts.IProfile) => {
-			if (!profile.usesPassword()) {
-				return profile.save();
-			}
-
-			const password = getProfileStoredPassword(profile);
-			if (!password) {
-				return;
-			}
-
-			return profile.save(password);
-		},
-		[getProfileStoredPassword],
-	);
 
 	const getErroredNetworks = useCallback((profile: Contracts.IProfile) => {
 		const erroredNetworks = profile
@@ -70,8 +54,10 @@ export const useProfileUtils = (env: Environment) => {
 		return { hasErroredNetworks: erroredNetworks.length > 0, erroredNetworks: uniq(erroredNetworks) };
 	}, []);
 
-	return useMemo(
-		() => ({ getProfileById, getProfileFromUrl, getProfileStoredPassword, saveProfile, getErroredNetworks }),
-		[getProfileFromUrl, getProfileById, saveProfile, getProfileStoredPassword, getErroredNetworks],
-	);
+	return useMemo(() => ({ getProfileById, getProfileFromUrl, getProfileStoredPassword, getErroredNetworks }), [
+		getProfileFromUrl,
+		getProfileById,
+		getProfileStoredPassword,
+		getErroredNetworks,
+	]);
 };
