@@ -28,7 +28,7 @@ export const InputWrapperStyled = styled.div<{
 	noShadow?: boolean;
 	isTextArea?: boolean;
 }>`
-	${tw`relative flex items-center w-full px-4 space-x-2 transition-colors duration-200 rounded appearance-none text-theme-text`}
+	${tw`flex items-center w-full px-4 space-x-2 transition-colors duration-200 rounded appearance-none text-theme-text`}
 
 	${({ noBorder }) => {
 		if (!noBorder) {
@@ -55,9 +55,11 @@ export const InputWrapperStyled = styled.div<{
 	}}
 
 	${({ isTextArea }) => {
-		if (!isTextArea) {
-			return tw`h-14 overflow-hidden`;
+		if (isTextArea) {
+			return tw`relative`;
 		}
+
+		return tw`h-14 overflow-hidden`;
 	}}
 `;
 
