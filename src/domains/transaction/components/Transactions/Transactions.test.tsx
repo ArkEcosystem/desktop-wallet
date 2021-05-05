@@ -423,4 +423,19 @@ describe("Transactions", () => {
 
 		await waitFor(() => expect(getByTestId("EmptyBlock")).toBeInTheDocument());
 	});
+
+	it("should update wallet filters", async () => {
+		const { asFragment, getByTestId } = renderWithRouter(
+			<Route path="/profiles/:profileId/dashboard">
+				<Transactions isUpdatingWallet={true} profile={profile} wallets={[]} />
+			</Route>,
+			{
+				routes: [dashboardURL],
+				history,
+			},
+		);
+
+		await waitFor(() => expect(getByTestId("EmptyBlock")).toBeInTheDocument());
+		expect(asFragment()).toMatchSnapshot();
+	});
 });

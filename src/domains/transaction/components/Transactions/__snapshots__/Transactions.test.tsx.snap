@@ -2968,3 +2968,116 @@ exports[`Transactions should render with custom title 1`] = `
   </button>
 </DocumentFragment>
 `;
+
+exports[`Transactions should update wallet filters 1`] = `
+<DocumentFragment>
+  <div
+    class="flex relative justify-between"
+  >
+    <div
+      class="mb-8 text-4xl font-bold"
+    >
+      Transaction History
+    </div>
+    <div
+      class="mt-6"
+      data-testid="FilterTransactions"
+    >
+      <div
+        class="relative"
+      >
+        <span
+          data-testid="dropdown__toggle"
+        >
+          <button
+            class="flex items-center py-2 font-semibold rounded focus:outline-none space-x-2 text-theme-secondary-400 dark:text-theme-secondary-800 cursor-not-allowed"
+            data-testid="CollapseToggleButton"
+            disabled=""
+          >
+            <span>
+              <span
+                class=""
+              >
+                Type: 
+              </span>
+              <span
+                class=""
+              >
+                All
+              </span>
+            </span>
+            <span
+              class="CollapseToggleButton__ToggleIcon-sc-1f6f05f-0 hdzQGX"
+            >
+              <div
+                class="sc-bdfBwQ kJrqvM"
+                height="5"
+                width="8"
+              >
+                <svg>
+                  chevron-down.svg
+                </svg>
+              </div>
+            </span>
+          </button>
+        </span>
+      </div>
+    </div>
+  </div>
+  <div
+    class="mb-8"
+  >
+    <div
+      class="Tabs__TabList-sc-1lxyvu-1 jCqqnd w-full"
+    >
+      <button
+        aria-selected="false"
+        class="Tabs__TabButton-sc-1lxyvu-0"
+        data-testid="tabs__tab-button-all"
+      >
+        All
+      </button>
+      <button
+        aria-selected="false"
+        class="Tabs__TabButton-sc-1lxyvu-0"
+        data-testid="tabs__tab-button-received"
+      >
+        Incoming
+      </button>
+      <button
+        aria-selected="false"
+        class="Tabs__TabButton-sc-1lxyvu-0"
+        data-testid="tabs__tab-button-sent"
+      >
+        Outgoing
+      </button>
+    </div>
+  </div>
+  <div
+    class="relative"
+    data-testid="TransactionTable"
+  >
+    <div
+      class="Table__TableWrapper-sc-84pst5-0 ccYCKK"
+      role="table"
+    >
+      <table
+        cellpadding="0"
+        class="table-auto"
+      >
+        <tbody
+          role="rowgroup"
+        />
+      </table>
+    </div>
+  </div>
+  <div
+    class="border border-solid border-theme-secondary-300 dark:border-theme-secondary-800 rounded-lg text-theme-secondary-text text-center leading-5 p-6 -mt-5"
+    data-testid="EmptyBlock"
+  >
+    <div>
+      You don't have any transactions yet. Once transactions have been made they will show up in your history.
+    </div>
+  </div>
+</DocumentFragment>
+`;
