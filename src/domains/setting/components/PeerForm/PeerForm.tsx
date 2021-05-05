@@ -1,9 +1,9 @@
 import { Coins } from "@arkecosystem/platform-sdk";
 import { Button } from "app/components/Button";
-import { Checkbox } from "app/components/Checkbox";
 import { Form, FormField, FormLabel } from "app/components/Form";
 import { InputDefault } from "app/components/Input";
 import { Select } from "app/components/SelectDropdown";
+import { Toggle } from "app/components/Toggle";
 import { Option } from "domains/contact/components/ContactListItem/ContactListItem.models";
 import React, { useEffect, useMemo } from "react";
 import { useForm } from "react-hook-form";
@@ -21,7 +21,7 @@ export const PeerForm = ({ networks, peer, onSave, onValidateHost }: PeerFormPro
 
 	const form = useForm({ mode: "onChange" });
 	const { formState, register, setValue, watch } = form;
-	const { isValid } = formState;
+	const { isValid, isSubmitting } = formState;
 	const { network, name, host, isMultiSignature } = watch();
 
 	const nameMaxLength = 20;
@@ -115,23 +115,29 @@ export const PeerForm = ({ networks, peer, onSave, onValidateHost }: PeerFormPro
 				/>
 			</FormField>
 
-			<FormField name="type">
-				<FormLabel label={t("SETTINGS.PEERS.TYPE")} required={false} optional />
-				<label className="flex items-center space-x-2">
-					<Checkbox
-						ref={register()}
-						name="isMultiSignature"
-						defaultChecked={peer?.isMultiSignature}
-						data-testid="PeerForm__multisignature-toggle"
-					/>
-					<span className="text-sm font-semibold text-theme-secondary-text select-none">
-						{t("COMMON.MULTISIGNATURE")}
+			<FormField name="isMultiSignature">
+				<div className="flex flex-col space-y-2 w-full">
+					<div className="flex justify-between items-center space-x-5">
+						<span className="text-lg font-semibold text-theme-secondary-700 dark:text-theme-secondary-200">
+							{t("SETTINGS.PEERS.MULTISIGNATURE.TITLE")}
+						</span>
+
+						<Toggle
+							ref={register()}
+							name="isMultiSignature"
+							defaultChecked={peer?.isMultiSignature}
+							data-testid="PeerForm__multisignature-toggle"
+						/>
+					</div>
+
+					<span className="text-sm font-medium text-theme-secondary-500 dark:text-theme-secondary-700">
+						{t("SETTINGS.PEERS.MULTISIGNATURE.DESCRIPTION")}
 					</span>
-				</label>
+				</div>
 			</FormField>
 
-			<div className="flex justify-end mt-4">
-				<Button type="submit" disabled={!isValid} data-testid="PeerForm__submit-button">
+			<div className="flex justify-end pt-8 border-t border-theme-secondary-300 dark:border-theme-secondary-800">
+				<Button type="submit" disabled={!isValid || isSubmitting} data-testid="PeerForm__submit-button">
 					{t(`SETTINGS.PEERS.${!peer ? "ADD_PEER" : "EDIT_PEER"}`)}
 				</Button>
 			</div>
