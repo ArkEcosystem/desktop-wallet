@@ -73,7 +73,7 @@ describe("ContactForm", () => {
 		});
 	});
 
-	it.only("should select cryptoasset", async () => {
+	it("should select cryptoasset", async () => {
 		renderWithRouter(<ContactForm profile={profile} onCancel={onCancel} onSave={onSave} />);
 
 		const selectNetworkInput = screen.getByTestId("SelectDropdownInput__input");

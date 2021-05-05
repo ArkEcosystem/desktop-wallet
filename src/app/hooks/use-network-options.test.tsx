@@ -22,7 +22,7 @@ describe("useNetworkOptions hook", () => {
 				value: "ark.devnet",
 			},
 			{
-				label: "Compendia - Mainnet",
+				label: "Compendia Mainnet",
 				value: "compendia.mainnet",
 			},
 		]);
