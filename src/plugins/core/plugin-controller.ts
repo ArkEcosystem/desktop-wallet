@@ -39,13 +39,13 @@ export class PluginController {
 
 	// TODO: Better integration with SDK
 	enable(profile: Contracts.IProfile, options?: { autoRun?: true }) {
-		// @ts-ignore
-		const { id } = profile.plugins().push({ name: this.config().name(), isEnabled: true });
-
 		/* istanbul ignore next */
 		if (options?.autoRun) {
 			this.run(profile);
 		}
+
+		// @ts-ignore
+		const { id } = profile.plugins().push({ name: this.config().name(), isEnabled: true });
 
 		return id;
 	}
@@ -68,6 +68,7 @@ export class PluginController {
 			this.#hooks.emit("activated");
 		} catch (e) {
 			console.error(`Failed to run the plugin "${this.config().name()}": ${e.message}`);
+			throw e;
 		}
 	}
 

@@ -127,9 +127,9 @@ export class PluginConfigurationData {
 		return this.manifest().get<string[]>("urls", []);
 	}
 
-	minimumVersion(): string {
+	minimumVersion(): string | undefined {
 		const minimumVersion = process.env.REACT_APP_PLUGIN_MINIMUM_VERSION ?? this.manifest().get<string>("minimumVersion");
-		return semver.valid(minimumVersion) ? semver.coerce(minimumVersion)!.version : "0.0.0";
+		return minimumVersion;
 	}
 
 	version() {
@@ -214,7 +214,9 @@ export class PluginConfigurationData {
 	}
 
 	isCompatible() {
-		return semver.gte(appPkg.version, this.minimumVersion());
+		const minimumVersion = this.minimumVersion()
+		const validMinimumVersion = semver.valid(minimumVersion) ? semver.coerce(minimumVersion)!.version : "0.0.0";
+		return minimumVersion ? semver.gte(appPkg.version, validMinimumVersion) : true;
 	}
 
 	toObject() {

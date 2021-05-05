@@ -19,6 +19,6 @@ export const schema = yup.object().shape({
 		permissions: yup.array().of(yup.string()),
 		title: yup.string(),
 		urls: yup.array().of(yup.string()),
-		minimumVersion: yup.string().required()
+		minimumVersion: yup.string()
 	}),
 });
