@@ -51,7 +51,7 @@ test("should successfully create contact", async (t) => {
 	const nameInput = Selector('[data-testid="contact-form__name-input"]');
 	await t.typeText(nameInput, contactName);
 
-	await t.typeText(Selector('[data-testid="SelectDropdownInput__input"]'), "ARK Devnet");
+	await t.typeText(Selector('[data-testid="SelectDropdownInput__input"]'), "ARK D");
 	await t.pressKey("enter");
 
 	const addressInput = Selector('[data-testid="contact-form__address-input"]');
@@ -93,7 +93,7 @@ test("should error for invalid address", async (t) => {
 	const nameInput = Selector('[data-testid="contact-form__name-input"]');
 	await t.typeText(nameInput, contactName);
 
-	await t.typeText(Selector('[data-testid="SelectDropdownInput__input"]'), "ARK Devnet");
+	await t.typeText(Selector('[data-testid="SelectDropdownInput__input"]'), "ARK D");
 	await t.pressKey("enter");
 
 	const addressInput = Selector('[data-testid="contact-form__address-input"]');
@@ -125,7 +125,7 @@ test("should error on duplicate address addition", async (t) => {
 	const nameInput = Selector('[data-testid="contact-form__name-input"]');
 	await t.typeText(nameInput, contactName);
 
-	await t.typeText(Selector('[data-testid="SelectDropdownInput__input"]'), "ARK Devnet");
+	await t.typeText(Selector('[data-testid="SelectDropdownInput__input"]'), "ARK D");
 	await t.pressKey("enter");
 
 	const addressInput = Selector('[data-testid="contact-form__address-input"]');
@@ -137,7 +137,7 @@ test("should error on duplicate address addition", async (t) => {
 	await t.expect(Selector('[data-testid="contact-form__address-list-item"]').withText("D6Z26L69").exists).ok();
 
 	// Add secondary duplicate address
-	await t.typeText(Selector('[data-testid="SelectDropdownInput__input"]'), "ARK Devnet");
+	await t.typeText(Selector('[data-testid="SelectDropdownInput__input"]'), "ARK D");
 	await t.pressKey("enter");
 
 	await t.typeText(addressInput, "D6Z26L69gdk9qYmTv5uzk3uGepigtHY4ax");
@@ -169,7 +169,7 @@ test("should error if contact name already exists", async (t) => {
 	const nameInput = Selector('[data-testid="contact-form__name-input"]');
 	await t.typeText(nameInput, contactName);
 
-	await t.typeText(Selector('[data-testid="SelectDropdownInput__input"]'), "ARK Devnet");
+	await t.typeText(Selector('[data-testid="SelectDropdownInput__input"]'), "ARK D");
 	await t.pressKey("enter");
 
 	const addressInput = Selector('[data-testid="contact-form__address-input"]');
@@ -206,7 +206,7 @@ test("should disable save button if name consists of empty spaces", async (t) =>
 	const nameInput = Selector('[data-testid="contact-form__name-input"]');
 	await t.typeText(nameInput, "          ");
 
-	await t.typeText(Selector('[data-testid="SelectDropdownInput__input"]'), "ARK Devnet");
+	await t.typeText(Selector('[data-testid="SelectDropdownInput__input"]'), "ARK D");
 	await t.pressKey("enter");
 
 	const addressInput = Selector('[data-testid="contact-form__address-input"]');
