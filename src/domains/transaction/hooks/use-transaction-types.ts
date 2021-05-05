@@ -6,6 +6,7 @@ import { useTranslation } from "react-i18next";
 export enum TransactionTypeGroup {
 	Test = 0,
 	Core = 1,
+	Magistrate = 2,
 	// Everything above is available to anyone
 	Reserved = 1000,
 }
@@ -38,6 +39,85 @@ type TransactionTypeProps = {
 	wallets?: Contracts.IReadWriteWallet[];
 };
 
+const core: Record<string, any> = {
+	transfer: {
+		type: CoreTransactionType.Transfer,
+		typeGroup: TransactionTypeGroup.Core,
+	},
+	vote: {
+		type: CoreTransactionType.Vote,
+		typeGroup: TransactionTypeGroup.Core,
+	},
+	"second-signature": {
+		type: CoreTransactionType.SecondSignature,
+		typeGroup: TransactionTypeGroup.Core,
+	},
+	"multi-signature": {
+		type: CoreTransactionType.MultiSignature,
+		typeGroup: TransactionTypeGroup.Core,
+	},
+	"multi-payment": {
+		type: CoreTransactionType.MultiPayment,
+		typeGroup: TransactionTypeGroup.Core,
+	},
+	ipfs: {
+		type: CoreTransactionType.Ipfs,
+		typeGroup: TransactionTypeGroup.Core,
+	},
+	"htlc-refund": {
+		type: CoreTransactionType.HtlcRefund,
+		typeGroup: TransactionTypeGroup.Core,
+	},
+	"htlc-lock": {
+		type: CoreTransactionType.HtlcLock,
+		typeGroup: TransactionTypeGroup.Core,
+	},
+	"htlc-claim": {
+		type: CoreTransactionType.HtlcClaim,
+		typeGroup: TransactionTypeGroup.Core,
+	},
+	"delegate-registration": {
+		type: CoreTransactionType.DelegateRegistration,
+		typeGroup: TransactionTypeGroup.Core,
+	},
+	"delegate-resignation": {
+		type: CoreTransactionType.DelegateResignation,
+		typeGroup: TransactionTypeGroup.Core,
+	},
+};
+
+const magistrate: Record<string, any> = {
+	"business-registration": {
+		type: MagistrateTransactionType.Entity,
+		typeGroup: TransactionTypeGroup.Magistrate,
+	},
+	"business-resignation": {
+		type: MagistrateTransactionType.Entity,
+		typeGroup: TransactionTypeGroup.Magistrate,
+	},
+	"business-update": {
+		type: MagistrateTransactionType.Entity,
+		typeGroup: TransactionTypeGroup.Magistrate,
+	},
+	"bridgechain-registration": {
+		type: MagistrateTransactionType.BridgechainRegistration,
+		typeGroup: TransactionTypeGroup.Magistrate,
+	},
+	"bridgechain-resignation": {
+		type: MagistrateTransactionType.BridgechainResignation,
+		typeGroup: TransactionTypeGroup.Magistrate,
+	},
+	"bridgechain-update": {
+		type: MagistrateTransactionType.BridgechainUpdate,
+		typeGroup: TransactionTypeGroup.Magistrate,
+	},
+	magistrate: {
+		typeGroup: TransactionTypeGroup.Magistrate,
+	},
+};
+
+const magistrateTypes = Object.keys(magistrate);
+
 export const useTransactionTypes = ({ wallets = [] }: TransactionTypeProps = {}) => {
 	const { t } = useTranslation();
 
@@ -58,7 +138,7 @@ export const useTransactionTypes = ({ wallets = [] }: TransactionTypeProps = {})
 		"htlc-claim": t("TRANSACTION.TRANSACTION_TYPES.HTLC_CLAIM"),
 
 		"delegate-registration": t("TRANSACTION.TRANSACTION_TYPES.DELEGATE_REGISTRATION"),
-		"delegate-resignation": t("TRANSACTION.TRANSACTION_TYPES.DELEGATE_REGISTRATION"),
+		"delegate-resignation": t("TRANSACTION.TRANSACTION_TYPES.DELEGATE_RESIGNATION"),
 
 		"business-registration": t("TRANSACTION.TRANSACTION_TYPES.BUSINESS_ENTITY_REGISTRATION"),
 		"business-resignation": t("TRANSACTION.TRANSACTION_TYPES.BUSINESS_ENTITY_RESIGNATION"),
@@ -104,70 +184,37 @@ export const useTransactionTypes = ({ wallets = [] }: TransactionTypeProps = {})
 		legacyBridgechainUpdate: t("TRANSACTION.TRANSACTION_TYPES.LEGACY_BRIDGECHAIN_UPDATE"),
 	};
 
-	const core: Record<string, any> = {
-		transfer: {
-			type: CoreTransactionType.Transfer,
-			typeGroup: TransactionTypeGroup.Core,
-		},
-		vote: {
-			type: CoreTransactionType.Vote,
-			typeGroup: TransactionTypeGroup.Core,
-		},
-		"second-signature": {
-			type: CoreTransactionType.SecondSignature,
-			typeGroup: TransactionTypeGroup.Core,
-		},
-		"multi-signature": {
-			type: CoreTransactionType.MultiSignature,
-			typeGroup: TransactionTypeGroup.Core,
-		},
-		"multi-payment": {
-			type: CoreTransactionType.MultiPayment,
-			typeGroup: TransactionTypeGroup.Core,
-		},
-		ipfs: {
-			type: CoreTransactionType.Ipfs,
-			typeGroup: TransactionTypeGroup.Core,
-		},
-		"htlc-refund": {
-			type: CoreTransactionType.HtlcRefund,
-			typeGroup: TransactionTypeGroup.Core,
-		},
-		"htlc-lock": {
-			type: CoreTransactionType.HtlcLock,
-			typeGroup: TransactionTypeGroup.Core,
-		},
-		"htlc-claim": {
-			type: CoreTransactionType.HtlcClaim,
-			typeGroup: TransactionTypeGroup.Core,
-		},
-		"delegate-registration": {
-			type: CoreTransactionType.DelegateRegistration,
-			typeGroup: TransactionTypeGroup.Core,
-		},
-		"delegate-resignation": {
-			type: CoreTransactionType.DelegateResignation,
-			typeGroup: TransactionTypeGroup.Core,
-		},
-	};
-
 	const getLabel = (type: string) => allTransactionTypeLabels[type];
 
-	const getQueryParamsByType = (type: string) => core[type];
+	const getQueryParamsByType = (type: string) => core[type] || magistrate[type];
 
 	const availableTypes = useMemo(() => {
-		const allSupportedTypes = wallets.reduce(
-			(all: string[], wallet: Contracts.IReadWriteWallet) => [...all, ...wallet.transactionTypes()],
-			[],
-		);
+		const allSupportedTypes = wallets.reduce((all: string[], wallet: Contracts.IReadWriteWallet) => {
+			// @ts-ignore
+			const walletTransactionTypes = (wallet.transactionTypes() as string[]).filter(
+				(type) => !magistrateTypes.includes(type),
+			);
+			return [...all, ...walletTransactionTypes];
+		}, []);
 
 		return uniq(allSupportedTypes);
 	}, [wallets]);
 
+	const hasMagistrationTypesEnabled = useMemo(
+		() =>
+			wallets.some((wallet) =>
+				// @ts-ignore
+				(wallet.transactionTypes() as string[]).filter((type) => magistrateTypes.includes(type)),
+			),
+		[wallets],
+	);
+
 	return {
 		getLabel,
+		hasMagistrationTypesEnabled,
 		types: {
 			core: availableTypes,
+			magistrate: Object.keys(magistrate),
 		},
 		getQueryParamsByType,
 	};

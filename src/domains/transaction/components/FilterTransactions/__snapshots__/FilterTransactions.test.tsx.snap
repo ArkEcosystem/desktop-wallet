@@ -97,7 +97,7 @@ exports[`FilterTransactions should open dropdown list with all transaction types
                   tabindex="0"
                 >
                   <span>
-                    Bridgechain Registration
+                    Delegate Registration
                   </span>
                 </li>
                 <li
@@ -106,7 +106,7 @@ exports[`FilterTransactions should open dropdown list with all transaction types
                   tabindex="0"
                 >
                   <span>
-                    Bridgechain Resignation
+                    Delegate Resignation
                   </span>
                 </li>
                 <li
@@ -115,7 +115,7 @@ exports[`FilterTransactions should open dropdown list with all transaction types
                   tabindex="0"
                 >
                   <span>
-                    Bridgechain Update
+                    Timelock Claim
                   </span>
                 </li>
                 <li
@@ -124,7 +124,7 @@ exports[`FilterTransactions should open dropdown list with all transaction types
                   tabindex="0"
                 >
                   <span>
-                    Business Registration
+                    Timelock
                   </span>
                 </li>
                 <li
@@ -133,7 +133,7 @@ exports[`FilterTransactions should open dropdown list with all transaction types
                   tabindex="0"
                 >
                   <span>
-                    Business Resignation
+                    Timelock Refund
                   </span>
                 </li>
                 <li
@@ -142,7 +142,7 @@ exports[`FilterTransactions should open dropdown list with all transaction types
                   tabindex="0"
                 >
                   <span>
-                    Business Update
+                    IPFS
                   </span>
                 </li>
                 <li
@@ -151,7 +151,7 @@ exports[`FilterTransactions should open dropdown list with all transaction types
                   tabindex="0"
                 >
                   <span>
-                    Delegate Registration
+                    Multipayment
                   </span>
                 </li>
                 <li
@@ -160,7 +160,7 @@ exports[`FilterTransactions should open dropdown list with all transaction types
                   tabindex="0"
                 >
                   <span>
-                    Delegate Registration
+                    Multisignature
                   </span>
                 </li>
                 <li
@@ -169,7 +169,7 @@ exports[`FilterTransactions should open dropdown list with all transaction types
                   tabindex="0"
                 >
                   <span>
-                    Timelock Claim
+                    Second Signature
                   </span>
                 </li>
                 <li
@@ -178,7 +178,7 @@ exports[`FilterTransactions should open dropdown list with all transaction types
                   tabindex="0"
                 >
                   <span>
-                    Timelock
+                    Transfer
                   </span>
                 </li>
                 <li
@@ -187,61 +187,34 @@ exports[`FilterTransactions should open dropdown list with all transaction types
                   tabindex="0"
                 >
                   <span>
-                    Timelock Refund
-                  </span>
-                </li>
-                <li
-                  class="sc-gsTCUz lhBamA group"
-                  data-testid="dropdown__option--core-11"
-                  tabindex="0"
-                >
-                  <span>
-                    IPFS
-                  </span>
-                </li>
-                <li
-                  class="sc-gsTCUz lhBamA group"
-                  data-testid="dropdown__option--core-12"
-                  tabindex="0"
-                >
-                  <span>
-                    Multipayment
-                  </span>
-                </li>
-                <li
-                  class="sc-gsTCUz lhBamA group"
-                  data-testid="dropdown__option--core-13"
-                  tabindex="0"
-                >
-                  <span>
-                    Multisignature
-                  </span>
-                </li>
-                <li
-                  class="sc-gsTCUz lhBamA group"
-                  data-testid="dropdown__option--core-14"
-                  tabindex="0"
-                >
-                  <span>
-                    Second Signature
-                  </span>
-                </li>
-                <li
-                  class="sc-gsTCUz lhBamA group"
-                  data-testid="dropdown__option--core-15"
-                  tabindex="0"
-                >
-                  <span>
-                    Transfer
-                  </span>
-                </li>
-                <li
-                  class="sc-gsTCUz lhBamA group"
-                  data-testid="dropdown__option--core-16"
-                  tabindex="0"
-                >
-                  <span>
                     Vote
+                  </span>
+                </li>
+              </ul>
+            </ul>
+          </div>
+          <div
+            class="mt-4 first:mt-0"
+          >
+            <div
+              class="mx-8 -my-2"
+            >
+              <div
+                class="Divider-sc-19q4mlo-0 daSmjL border-theme-secondary-300 dark:border-theme-secondary-600"
+                type="horizontal"
+              />
+            </div>
+            <ul>
+              <ul
+                data-testid="dropdown__options"
+              >
+                <li
+                  class="sc-gsTCUz lhBamA group"
+                  data-testid="dropdown__option--magistrate-0"
+                  tabindex="0"
+                >
+                  <span>
+                    Magistrate
                   </span>
                 </li>
               </ul>
