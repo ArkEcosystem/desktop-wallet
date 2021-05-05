@@ -33,8 +33,11 @@ describe("useFees", () => {
 		env.reset({ coins: { ARK }, httpClient, storage: new StubStorage() });
 
 		const profile = env.profiles().create("John Doe");
-		await profile.restore();
-		await profile.wallets().generate("ARK", "ark.devnet");
+		await env.profiles().restore(profile);
+		await profile.walletFactory().generate({
+			coin: "ARK",
+			network: "ark.devnet",
+		});
 		await env.wallets().syncByProfile(profile);
 
 		const wrapper = ({ children }: any) => <EnvironmentProvider env={env}>{children} </EnvironmentProvider>;
@@ -59,8 +62,11 @@ describe("useFees", () => {
 		});
 
 		const profile = env.profiles().create("John Doe");
-		await profile.restore();
-		await profile.wallets().generate("ARK", "ark.devnet");
+		await env.profiles().restore(profile);
+		await profile.walletFactory().generate({
+			coin: "ARK",
+			network: "ark.devnet",
+		});
 		await env.wallets().syncByProfile(profile);
 
 		const wrapper = ({ children }: any) => <EnvironmentProvider env={env}>{children} </EnvironmentProvider>;

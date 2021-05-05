@@ -49,10 +49,17 @@ describe("LedgerScanStep", () => {
 			});
 	});
 
-	beforeEach(() => {
+	beforeEach(async () => {
 		profile = env.profiles().findById(getDefaultProfileId());
+
+		await env.profiles().restore(profile);
+		await profile.sync();
+
 		wallet = profile.wallets().first();
+		await wallet.synchroniser().identity();
+
 		transport = createTransportReplayer(RecordStore.fromString(""));
+
 		publicKeyPaths = new Map([
 			["44'/1'/0'/0/0", "027716e659220085e41389efc7cf6a05f7f7c659cf3db9126caabce6cda9156582"],
 			["44'/1'/0'/0/1", "03d3fdad9c5b25bf8880e6b519eb3611a5c0b31adebc8455f0e096175b28321aff"],

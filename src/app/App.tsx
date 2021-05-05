@@ -1,20 +1,27 @@
-// import { ADA } from "@arkecosystem/platform-sdk-ada";
 import "focus-visible";
 
+// import { ADA } from "@arkecosystem/platform-sdk-ada";
 import { ARK } from "@arkecosystem/platform-sdk-ark";
+import { ATOM } from "@arkecosystem/platform-sdk-atom";
 // import { ATOM } from "@arkecosystem/platform-sdk-atom";
-// import { BTC } from "@arkecosystem/platform-sdk-btc";
+import { AVAX } from "@arkecosystem/platform-sdk-avax";
+import { BTC } from "@arkecosystem/platform-sdk-btc";
+import { DOT } from "@arkecosystem/platform-sdk-dot";
+import { EGLD } from "@arkecosystem/platform-sdk-egld";
 // import { EOS } from "@arkecosystem/platform-sdk-eos";
 // import { ETH } from "@arkecosystem/platform-sdk-eth";
 import { LSK } from "@arkecosystem/platform-sdk-lsk";
+import { LUNA } from "@arkecosystem/platform-sdk-luna";
+import { NANO } from "@arkecosystem/platform-sdk-nano";
+import { NEO } from "@arkecosystem/platform-sdk-neo";
 // import { NEO } from "@arkecosystem/platform-sdk-neo";
 import { Environment } from "@arkecosystem/platform-sdk-profiles";
+// import { TRX } from "@arkecosystem/platform-sdk-trx";
+import { XLM } from "@arkecosystem/platform-sdk-xlm";
+import { XRP } from "@arkecosystem/platform-sdk-xrp";
 // @ts-ignore
 import LedgerTransportNodeHID from "@ledgerhq/hw-transport-node-hid-singleton";
-// import { TRX } from "@arkecosystem/platform-sdk-trx";
-// import { XLM } from "@arkecosystem/platform-sdk-xlm";
 // import { XMR } from "@arkecosystem/platform-sdk-xmr";
-// import { XRP } from "@arkecosystem/platform-sdk-xrp";
 import { Offline } from "domains/error/pages";
 import { Splash } from "domains/splash/pages";
 import { usePluginManagerContext } from "plugins";
@@ -26,7 +33,7 @@ import { useHistory } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
 import { StubStorage } from "tests/mocks";
 import { setThemeSource, shouldUseDarkColors } from "utils/electron-utils";
-import { bootEnvWithProfileFixtures } from "utils/test-helpers";
+import { bootEnvWithProfileFixtures, isE2E, isUnit } from "utils/test-helpers";
 
 import { middlewares, RouterView, routes } from "../router";
 import { ConfigurationProvider, EnvironmentProvider, LedgerProvider, useEnvironmentContext } from "./contexts";
@@ -74,24 +81,23 @@ const Main = () => {
 
 	const handleError = useErrorHandler();
 
-	useEffect(() => {
+	useLayoutEffect(() => {
 		const boot = async () => {
 			try {
 				/* istanbul ignore next */
-				const __E2E__ = ["true", "1"].includes(process.env.REACT_APP_IS_E2E?.toLowerCase() || "")
-					? true
-					: false;
-				if (__E2E__) {
-					await bootEnvWithProfileFixtures({ env });
+				if (isE2E() || isUnit()) {
+					await bootEnvWithProfileFixtures({ env, shouldRestoreDefaultProfile: isUnit() });
 
 					loadPlugins();
 					setShowSplash(false);
 					return;
 				}
 
+				/* istanbul ignore next */
 				await env.verify();
+				/* istanbul ignore next */
 				await env.boot();
-
+				/* istanbul ignore next */
 				await loadPlugins();
 			} catch (error) {
 				handleError(error);
@@ -131,9 +137,7 @@ export const App = () => {
 	 */
 
 	/* istanbul ignore next */
-	const __E2E__ = process.env.REACT_APP_IS_E2E;
-	/* istanbul ignore next */
-	const storage = __E2E__ ? new StubStorage() : "indexeddb";
+	const storage = isE2E() || isUnit() ? new StubStorage() : "indexeddb";
 
 	const [env] = useState(
 		() =>
@@ -141,17 +145,22 @@ export const App = () => {
 				coins: {
 					// ADA,
 					ARK,
+					ATOM,
 					// ATOM,
-					// BTC,
+					AVAX,
+					BTC,
+					DOT,
 					// EOS,
 					// ETH,
-					// EGLD,
+					EGLD,
 					LSK,
-					// NEO,
+					NEO,
+					NANO,
+					LUNA,
 					// TRX,
-					// XLM,
+					XLM,
 					// XMR,
-					// XRP,
+					XRP,
 				},
 				httpClient,
 				storage,

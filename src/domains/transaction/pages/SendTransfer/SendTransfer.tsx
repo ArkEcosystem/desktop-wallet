@@ -199,7 +199,7 @@ export const SendTransfer = () => {
 
 		const transactionType = isMultiPayment ? "multiPayment" : "transfer";
 
-		const wif = wallet?.usesWIF() ? await wallet.wif(encryptionPassword) : undefined;
+		const wif = activeWallet?.wif().exists() ? await activeWallet.wif().get(encryptionPassword) : undefined;
 
 		const transactionInput: Contracts.TransactionInputs = {
 			fee,

@@ -52,10 +52,13 @@ exports[`Votes should filter current delegates 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text"
+                class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
                 title="Portfolio"
               >
+                <div
+                  class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2"
+                />
                 Portfolio
               </a>
             </li>
@@ -63,10 +66,13 @@ exports[`Votes should filter current delegates 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text"
+                class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/plugins"
                 title="Plugins"
               >
+                <div
+                  class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2"
+                />
                 Plugins
               </a>
             </li>
@@ -74,10 +80,13 @@ exports[`Votes should filter current delegates 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text"
+                class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/exchange"
                 title="Exchange"
               >
+                <div
+                  class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2"
+                />
                 Exchange
               </a>
             </li>
@@ -85,10 +94,13 @@ exports[`Votes should filter current delegates 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text"
+                class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/news"
                 title="News"
               >
+                <div
+                  class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2"
+                />
                 News
               </a>
             </li>
@@ -107,7 +119,7 @@ exports[`Votes should filter current delegates 1`] = `
                     class="NavigationBar__NavigationButtonWrapper-sc-1qsoskw-1 eUPnft group"
                   >
                     <button
-                      class="OriginalButton__StyledButton-sc-1y2wptt-0 lpqSIM"
+                      class="OriginalButton__StyledButton-sc-1y2wptt-0 fNHPRi"
                       data-testid="navbar__buttons--notifications"
                       type="button"
                     >
@@ -146,7 +158,7 @@ exports[`Votes should filter current delegates 1`] = `
                 class="NavigationBar__NavigationButtonWrapper-sc-1qsoskw-1 eUPnft"
               >
                 <button
-                  class="OriginalButton__StyledButton-sc-1y2wptt-0 lpqSIM"
+                  class="OriginalButton__StyledButton-sc-1y2wptt-0 fNHPRi"
                   data-testid="navbar__buttons--send"
                   type="button"
                 >
@@ -176,7 +188,7 @@ exports[`Votes should filter current delegates 1`] = `
                 class="NavigationBar__NavigationButtonWrapper-sc-1qsoskw-1 eUPnft"
               >
                 <button
-                  class="OriginalButton__StyledButton-sc-1y2wptt-0 lpqSIM"
+                  class="OriginalButton__StyledButton-sc-1y2wptt-0 fNHPRi"
                   data-testid="navbar__buttons--receive"
                   type="button"
                 >
@@ -252,7 +264,7 @@ exports[`Votes should filter current delegates 1`] = `
                     data-testid="navbar__useractions"
                   >
                     <div
-                      class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB"
+                      class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB flex-shrink-0"
                       data-testid="Avatar"
                     >
                       <div
@@ -385,7 +397,7 @@ exports[`Votes should filter current delegates 1`] = `
                       </div>
                     </span>
                     <div
-                      class="Dropdown__Wrapper-ocz1je-0 krLubM opacity-0 mt-3 py-3 absolute z-10 bg-theme-background rounded-lg shadow-xl shadow-votes-filter"
+                      class="Dropdown__Wrapper-ocz1je-0 krLubM opacity-0 mt-3 py-3 absolute z-10 bg-theme-background rounded-xl shadow-xl shadow-votes-filter"
                       data-testid="dropdown__content"
                       style="opacity: 100; height: -30px; overflow-y: scroll;"
                     >
@@ -562,7 +574,7 @@ exports[`Votes should filter current delegates 1`] = `
                         class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT space-x-4 font-bold bg-theme-primary-50 dark:bg-theme-primary-900"
                       >
                         <div
-                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 ktCSBk"
+                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 ktCSBk flex-shrink-0"
                           data-testid="Avatar"
                         >
                           <div
@@ -587,7 +599,7 @@ exports[`Votes should filter current delegates 1`] = `
                         class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 kjTmcB justify-end bg-theme-primary-50 dark:bg-theme-primary-900"
                       >
                         <button
-                          class="OriginalButton__StyledButton-sc-1y2wptt-0 hsoUax"
+                          class="OriginalButton__StyledButton-sc-1y2wptt-0 izJbbP"
                           color="primary"
                           data-testid="DelegateRow__toggle-0"
                           type="button"
@@ -621,7 +633,7 @@ exports[`Votes should filter current delegates 1`] = `
                     class="flex pr-8 border-r border-theme-secondary-300 dark:border-theme-secondary-800"
                   >
                     <div
-                      class="Avatar__AvatarWrapper-sc-1vsy2s2-0 ktCSBk mr-2"
+                      class="Avatar__AvatarWrapper-sc-1vsy2s2-0 ktCSBk mr-2 flex-shrink-0"
                       data-testid="Avatar"
                     >
                       <div
@@ -643,13 +655,13 @@ exports[`Votes should filter current delegates 1`] = `
                         Address
                       </div>
                       <div
-                        class="inline-flex items-center no-ligatures"
+                        class="w-full flex items-center no-ligatures overflow-hidden whitespace-nowrap"
                       >
                         <span
-                          class="TruncateMiddle__Wrapper-sc-3j3e79-0 leading-tight truncate font-semibold text-lg"
+                          class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap leading-tight font-semibold text-lg"
                           data-testid="address__wallet-address"
                         >
-                          D8rr7B1d6T…1VBMs6YUYD
+                          D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD
                         </span>
                       </div>
                     </div>
@@ -752,7 +764,7 @@ exports[`Votes should filter current delegates 1`] = `
                   </div>
                   <span>
                     <button
-                      class="OriginalButton__StyledButton-sc-1y2wptt-0 blpaPr ml-auto"
+                      class="OriginalButton__StyledButton-sc-1y2wptt-0 fqRthJ ml-auto"
                       data-testid="DelegateTable__continue-button"
                       disabled=""
                       type="button"
@@ -823,10 +835,13 @@ exports[`Votes should handle wallet vote error and show empty delegates 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text"
+                class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
                 title="Portfolio"
               >
+                <div
+                  class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2"
+                />
                 Portfolio
               </a>
             </li>
@@ -834,10 +849,13 @@ exports[`Votes should handle wallet vote error and show empty delegates 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text"
+                class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/plugins"
                 title="Plugins"
               >
+                <div
+                  class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2"
+                />
                 Plugins
               </a>
             </li>
@@ -845,10 +863,13 @@ exports[`Votes should handle wallet vote error and show empty delegates 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text"
+                class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/exchange"
                 title="Exchange"
               >
+                <div
+                  class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2"
+                />
                 Exchange
               </a>
             </li>
@@ -856,10 +877,13 @@ exports[`Votes should handle wallet vote error and show empty delegates 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text"
+                class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/news"
                 title="News"
               >
+                <div
+                  class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2"
+                />
                 News
               </a>
             </li>
@@ -878,7 +902,7 @@ exports[`Votes should handle wallet vote error and show empty delegates 1`] = `
                     class="NavigationBar__NavigationButtonWrapper-sc-1qsoskw-1 eUPnft group"
                   >
                     <button
-                      class="OriginalButton__StyledButton-sc-1y2wptt-0 lpqSIM"
+                      class="OriginalButton__StyledButton-sc-1y2wptt-0 fNHPRi"
                       data-testid="navbar__buttons--notifications"
                       type="button"
                     >
@@ -917,7 +941,7 @@ exports[`Votes should handle wallet vote error and show empty delegates 1`] = `
                 class="NavigationBar__NavigationButtonWrapper-sc-1qsoskw-1 eUPnft"
               >
                 <button
-                  class="OriginalButton__StyledButton-sc-1y2wptt-0 lpqSIM"
+                  class="OriginalButton__StyledButton-sc-1y2wptt-0 fNHPRi"
                   data-testid="navbar__buttons--send"
                   type="button"
                 >
@@ -947,7 +971,7 @@ exports[`Votes should handle wallet vote error and show empty delegates 1`] = `
                 class="NavigationBar__NavigationButtonWrapper-sc-1qsoskw-1 eUPnft"
               >
                 <button
-                  class="OriginalButton__StyledButton-sc-1y2wptt-0 lpqSIM"
+                  class="OriginalButton__StyledButton-sc-1y2wptt-0 fNHPRi"
                   data-testid="navbar__buttons--receive"
                   type="button"
                 >
@@ -1023,7 +1047,7 @@ exports[`Votes should handle wallet vote error and show empty delegates 1`] = `
                     data-testid="navbar__useractions"
                   >
                     <div
-                      class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB"
+                      class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB flex-shrink-0"
                       data-testid="Avatar"
                     >
                       <div
@@ -1281,7 +1305,7 @@ exports[`Votes should handle wallet vote error and show empty delegates 1`] = `
                         class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT space-x-4 font-bold bg-theme-success-50 dark:bg-theme-success-900"
                       >
                         <div
-                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 ktCSBk"
+                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 ktCSBk flex-shrink-0"
                           data-testid="Avatar"
                         >
                           <div
@@ -1306,7 +1330,7 @@ exports[`Votes should handle wallet vote error and show empty delegates 1`] = `
                         class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 kjTmcB justify-end bg-theme-success-50 dark:bg-theme-success-900"
                       >
                         <button
-                          class="OriginalButton__StyledButton-sc-1y2wptt-0 hsoUax"
+                          class="OriginalButton__StyledButton-sc-1y2wptt-0 izJbbP"
                           color="success"
                           data-testid="DelegateRow__toggle-0"
                           type="button"
@@ -1340,7 +1364,7 @@ exports[`Votes should handle wallet vote error and show empty delegates 1`] = `
                         class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT space-x-4 font-bold "
                       >
                         <div
-                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 ktCSBk"
+                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 ktCSBk flex-shrink-0"
                           data-testid="Avatar"
                         >
                           <div
@@ -1365,7 +1389,7 @@ exports[`Votes should handle wallet vote error and show empty delegates 1`] = `
                         class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 kjTmcB justify-end "
                       >
                         <button
-                          class="OriginalButton__StyledButton-sc-1y2wptt-0 hsoUax"
+                          class="OriginalButton__StyledButton-sc-1y2wptt-0 izJbbP"
                           color="primary"
                           data-testid="DelegateRow__toggle-1"
                           type="button"
@@ -1399,7 +1423,7 @@ exports[`Votes should handle wallet vote error and show empty delegates 1`] = `
                         class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT space-x-4 font-bold "
                       >
                         <div
-                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 ktCSBk"
+                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 ktCSBk flex-shrink-0"
                           data-testid="Avatar"
                         >
                           <div
@@ -1424,7 +1448,7 @@ exports[`Votes should handle wallet vote error and show empty delegates 1`] = `
                         class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 kjTmcB justify-end "
                       >
                         <button
-                          class="OriginalButton__StyledButton-sc-1y2wptt-0 hsoUax"
+                          class="OriginalButton__StyledButton-sc-1y2wptt-0 izJbbP"
                           color="primary"
                           data-testid="DelegateRow__toggle-2"
                           type="button"
@@ -1458,7 +1482,7 @@ exports[`Votes should handle wallet vote error and show empty delegates 1`] = `
                     class="flex pr-8 border-r border-theme-secondary-300 dark:border-theme-secondary-800"
                   >
                     <div
-                      class="Avatar__AvatarWrapper-sc-1vsy2s2-0 ktCSBk mr-2"
+                      class="Avatar__AvatarWrapper-sc-1vsy2s2-0 ktCSBk mr-2 flex-shrink-0"
                       data-testid="Avatar"
                     >
                       <div
@@ -1480,13 +1504,13 @@ exports[`Votes should handle wallet vote error and show empty delegates 1`] = `
                         Address
                       </div>
                       <div
-                        class="inline-flex items-center no-ligatures"
+                        class="w-full flex items-center no-ligatures overflow-hidden whitespace-nowrap"
                       >
                         <span
-                          class="TruncateMiddle__Wrapper-sc-3j3e79-0 leading-tight truncate font-semibold text-lg"
+                          class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap leading-tight font-semibold text-lg"
                           data-testid="address__wallet-address"
                         >
-                          D8rr7B1d6T…1VBMs6YUYD
+                          D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD
                         </span>
                       </div>
                     </div>
@@ -1589,7 +1613,7 @@ exports[`Votes should handle wallet vote error and show empty delegates 1`] = `
                   </div>
                   <span>
                     <button
-                      class="OriginalButton__StyledButton-sc-1y2wptt-0 cEUmKc ml-auto"
+                      class="OriginalButton__StyledButton-sc-1y2wptt-0 dYkFxS ml-auto"
                       data-testid="DelegateTable__continue-button"
                       type="button"
                     >
@@ -1659,10 +1683,13 @@ exports[`Votes should hide testnet wallet if disabled from profile setting 1`] =
               class="flex"
             >
               <a
-                class="flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text"
+                class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
                 title="Portfolio"
               >
+                <div
+                  class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2"
+                />
                 Portfolio
               </a>
             </li>
@@ -1670,10 +1697,13 @@ exports[`Votes should hide testnet wallet if disabled from profile setting 1`] =
               class="flex"
             >
               <a
-                class="flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text"
+                class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/plugins"
                 title="Plugins"
               >
+                <div
+                  class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2"
+                />
                 Plugins
               </a>
             </li>
@@ -1681,10 +1711,13 @@ exports[`Votes should hide testnet wallet if disabled from profile setting 1`] =
               class="flex"
             >
               <a
-                class="flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text"
+                class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/exchange"
                 title="Exchange"
               >
+                <div
+                  class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2"
+                />
                 Exchange
               </a>
             </li>
@@ -1692,10 +1725,13 @@ exports[`Votes should hide testnet wallet if disabled from profile setting 1`] =
               class="flex"
             >
               <a
-                class="flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text"
+                class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/news"
                 title="News"
               >
+                <div
+                  class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2"
+                />
                 News
               </a>
             </li>
@@ -1714,7 +1750,7 @@ exports[`Votes should hide testnet wallet if disabled from profile setting 1`] =
                     class="NavigationBar__NavigationButtonWrapper-sc-1qsoskw-1 eUPnft group"
                   >
                     <button
-                      class="OriginalButton__StyledButton-sc-1y2wptt-0 lpqSIM"
+                      class="OriginalButton__StyledButton-sc-1y2wptt-0 fNHPRi"
                       data-testid="navbar__buttons--notifications"
                       type="button"
                     >
@@ -1753,7 +1789,7 @@ exports[`Votes should hide testnet wallet if disabled from profile setting 1`] =
                 class="NavigationBar__NavigationButtonWrapper-sc-1qsoskw-1 eUPnft"
               >
                 <button
-                  class="OriginalButton__StyledButton-sc-1y2wptt-0 lpqSIM"
+                  class="OriginalButton__StyledButton-sc-1y2wptt-0 fNHPRi"
                   data-testid="navbar__buttons--send"
                   type="button"
                 >
@@ -1783,7 +1819,7 @@ exports[`Votes should hide testnet wallet if disabled from profile setting 1`] =
                 class="NavigationBar__NavigationButtonWrapper-sc-1qsoskw-1 eUPnft"
               >
                 <button
-                  class="OriginalButton__StyledButton-sc-1y2wptt-0 lpqSIM"
+                  class="OriginalButton__StyledButton-sc-1y2wptt-0 fNHPRi"
                   data-testid="navbar__buttons--receive"
                   type="button"
                 >
@@ -1849,7 +1885,7 @@ exports[`Votes should hide testnet wallet if disabled from profile setting 1`] =
                     data-testid="navbar__useractions"
                   >
                     <div
-                      class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB"
+                      class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB flex-shrink-0"
                       data-testid="Avatar"
                     >
                       <div
@@ -2139,7 +2175,7 @@ exports[`Votes should hide testnet wallet if disabled from profile setting 1`] =
                         class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT space-x-4 font-bold "
                       >
                         <div
-                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 ktCSBk"
+                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 ktCSBk flex-shrink-0"
                           data-testid="Avatar"
                         >
                           <div
@@ -2164,7 +2200,7 @@ exports[`Votes should hide testnet wallet if disabled from profile setting 1`] =
                         class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 kjTmcB justify-end "
                       >
                         <button
-                          class="OriginalButton__StyledButton-sc-1y2wptt-0 hsoUax"
+                          class="OriginalButton__StyledButton-sc-1y2wptt-0 izJbbP"
                           color="primary"
                           data-testid="DelegateRow__toggle-0"
                           type="button"
@@ -2198,7 +2234,7 @@ exports[`Votes should hide testnet wallet if disabled from profile setting 1`] =
                         class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT space-x-4 font-bold "
                       >
                         <div
-                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 ktCSBk"
+                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 ktCSBk flex-shrink-0"
                           data-testid="Avatar"
                         >
                           <div
@@ -2223,7 +2259,7 @@ exports[`Votes should hide testnet wallet if disabled from profile setting 1`] =
                         class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 kjTmcB justify-end "
                       >
                         <button
-                          class="OriginalButton__StyledButton-sc-1y2wptt-0 hsoUax"
+                          class="OriginalButton__StyledButton-sc-1y2wptt-0 izJbbP"
                           color="primary"
                           data-testid="DelegateRow__toggle-1"
                           type="button"
@@ -2257,7 +2293,7 @@ exports[`Votes should hide testnet wallet if disabled from profile setting 1`] =
                         class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT space-x-4 font-bold "
                       >
                         <div
-                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 ktCSBk"
+                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 ktCSBk flex-shrink-0"
                           data-testid="Avatar"
                         >
                           <div
@@ -2282,7 +2318,7 @@ exports[`Votes should hide testnet wallet if disabled from profile setting 1`] =
                         class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 kjTmcB justify-end "
                       >
                         <button
-                          class="OriginalButton__StyledButton-sc-1y2wptt-0 hsoUax"
+                          class="OriginalButton__StyledButton-sc-1y2wptt-0 izJbbP"
                           color="primary"
                           data-testid="DelegateRow__toggle-2"
                           type="button"
@@ -2316,7 +2352,7 @@ exports[`Votes should hide testnet wallet if disabled from profile setting 1`] =
                     class="flex pr-8 border-r border-theme-secondary-300 dark:border-theme-secondary-800"
                   >
                     <div
-                      class="Avatar__AvatarWrapper-sc-1vsy2s2-0 ktCSBk mr-2"
+                      class="Avatar__AvatarWrapper-sc-1vsy2s2-0 ktCSBk mr-2 flex-shrink-0"
                       data-testid="Avatar"
                     >
                       <div
@@ -2338,13 +2374,13 @@ exports[`Votes should hide testnet wallet if disabled from profile setting 1`] =
                         Address
                       </div>
                       <div
-                        class="inline-flex items-center no-ligatures"
+                        class="w-full flex items-center no-ligatures overflow-hidden whitespace-nowrap"
                       >
                         <span
-                          class="TruncateMiddle__Wrapper-sc-3j3e79-0 leading-tight truncate font-semibold text-lg"
+                          class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap leading-tight font-semibold text-lg"
                           data-testid="address__wallet-address"
                         >
-                          D8rr7B1d6T…1VBMs6YUYD
+                          D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD
                         </span>
                       </div>
                     </div>
@@ -2447,7 +2483,7 @@ exports[`Votes should hide testnet wallet if disabled from profile setting 1`] =
                   </div>
                   <span>
                     <button
-                      class="OriginalButton__StyledButton-sc-1y2wptt-0 blpaPr ml-auto"
+                      class="OriginalButton__StyledButton-sc-1y2wptt-0 fqRthJ ml-auto"
                       data-testid="DelegateTable__continue-button"
                       disabled=""
                       type="button"
@@ -2522,10 +2558,13 @@ exports[`Votes should render 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text"
+                class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
                 title="Portfolio"
               >
+                <div
+                  class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2"
+                />
                 Portfolio
               </a>
             </li>
@@ -2533,10 +2572,13 @@ exports[`Votes should render 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text"
+                class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/plugins"
                 title="Plugins"
               >
+                <div
+                  class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2"
+                />
                 Plugins
               </a>
             </li>
@@ -2544,10 +2586,13 @@ exports[`Votes should render 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text"
+                class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/exchange"
                 title="Exchange"
               >
+                <div
+                  class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2"
+                />
                 Exchange
               </a>
             </li>
@@ -2555,10 +2600,13 @@ exports[`Votes should render 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text"
+                class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/news"
                 title="News"
               >
+                <div
+                  class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2"
+                />
                 News
               </a>
             </li>
@@ -2577,7 +2625,7 @@ exports[`Votes should render 1`] = `
                     class="NavigationBar__NavigationButtonWrapper-sc-1qsoskw-1 eUPnft group"
                   >
                     <button
-                      class="OriginalButton__StyledButton-sc-1y2wptt-0 lpqSIM"
+                      class="OriginalButton__StyledButton-sc-1y2wptt-0 fNHPRi"
                       data-testid="navbar__buttons--notifications"
                       type="button"
                     >
@@ -2616,7 +2664,7 @@ exports[`Votes should render 1`] = `
                 class="NavigationBar__NavigationButtonWrapper-sc-1qsoskw-1 eUPnft"
               >
                 <button
-                  class="OriginalButton__StyledButton-sc-1y2wptt-0 lpqSIM"
+                  class="OriginalButton__StyledButton-sc-1y2wptt-0 fNHPRi"
                   data-testid="navbar__buttons--send"
                   type="button"
                 >
@@ -2646,7 +2694,7 @@ exports[`Votes should render 1`] = `
                 class="NavigationBar__NavigationButtonWrapper-sc-1qsoskw-1 eUPnft"
               >
                 <button
-                  class="OriginalButton__StyledButton-sc-1y2wptt-0 lpqSIM"
+                  class="OriginalButton__StyledButton-sc-1y2wptt-0 fNHPRi"
                   data-testid="navbar__buttons--receive"
                   type="button"
                 >
@@ -2722,7 +2770,7 @@ exports[`Votes should render 1`] = `
                     data-testid="navbar__useractions"
                   >
                     <div
-                      class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB"
+                      class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB flex-shrink-0"
                       data-testid="Avatar"
                     >
                       <div
@@ -3014,7 +3062,7 @@ exports[`Votes should render 1`] = `
                         class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT space-x-4 font-bold "
                       >
                         <div
-                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 ktCSBk"
+                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 ktCSBk flex-shrink-0"
                           data-testid="Avatar"
                         >
                           <div
@@ -3039,7 +3087,7 @@ exports[`Votes should render 1`] = `
                         class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 kjTmcB justify-end "
                       >
                         <button
-                          class="OriginalButton__StyledButton-sc-1y2wptt-0 hsoUax"
+                          class="OriginalButton__StyledButton-sc-1y2wptt-0 izJbbP"
                           color="primary"
                           data-testid="DelegateRow__toggle-0"
                           type="button"
@@ -3073,7 +3121,7 @@ exports[`Votes should render 1`] = `
                         class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT space-x-4 font-bold "
                       >
                         <div
-                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 ktCSBk"
+                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 ktCSBk flex-shrink-0"
                           data-testid="Avatar"
                         >
                           <div
@@ -3098,7 +3146,7 @@ exports[`Votes should render 1`] = `
                         class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 kjTmcB justify-end "
                       >
                         <button
-                          class="OriginalButton__StyledButton-sc-1y2wptt-0 hsoUax"
+                          class="OriginalButton__StyledButton-sc-1y2wptt-0 izJbbP"
                           color="primary"
                           data-testid="DelegateRow__toggle-1"
                           type="button"
@@ -3132,7 +3180,7 @@ exports[`Votes should render 1`] = `
                         class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT space-x-4 font-bold "
                       >
                         <div
-                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 ktCSBk"
+                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 ktCSBk flex-shrink-0"
                           data-testid="Avatar"
                         >
                           <div
@@ -3157,7 +3205,7 @@ exports[`Votes should render 1`] = `
                         class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 kjTmcB justify-end "
                       >
                         <button
-                          class="OriginalButton__StyledButton-sc-1y2wptt-0 hsoUax"
+                          class="OriginalButton__StyledButton-sc-1y2wptt-0 izJbbP"
                           color="primary"
                           data-testid="DelegateRow__toggle-2"
                           type="button"
@@ -3191,7 +3239,7 @@ exports[`Votes should render 1`] = `
                     class="flex pr-8 border-r border-theme-secondary-300 dark:border-theme-secondary-800"
                   >
                     <div
-                      class="Avatar__AvatarWrapper-sc-1vsy2s2-0 ktCSBk mr-2"
+                      class="Avatar__AvatarWrapper-sc-1vsy2s2-0 ktCSBk mr-2 flex-shrink-0"
                       data-testid="Avatar"
                     >
                       <div
@@ -3213,13 +3261,13 @@ exports[`Votes should render 1`] = `
                         Address
                       </div>
                       <div
-                        class="inline-flex items-center no-ligatures"
+                        class="w-full flex items-center no-ligatures overflow-hidden whitespace-nowrap"
                       >
                         <span
-                          class="TruncateMiddle__Wrapper-sc-3j3e79-0 leading-tight truncate font-semibold text-lg"
+                          class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap leading-tight font-semibold text-lg"
                           data-testid="address__wallet-address"
                         >
-                          D8rr7B1d6T…1VBMs6YUYD
+                          D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD
                         </span>
                       </div>
                     </div>
@@ -3322,7 +3370,7 @@ exports[`Votes should render 1`] = `
                   </div>
                   <span>
                     <button
-                      class="OriginalButton__StyledButton-sc-1y2wptt-0 blpaPr ml-auto"
+                      class="OriginalButton__StyledButton-sc-1y2wptt-0 fqRthJ ml-auto"
                       data-testid="DelegateTable__continue-button"
                       disabled=""
                       type="button"
@@ -3393,10 +3441,13 @@ exports[`Votes should render with no wallets 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text"
+                class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
                 href="/profiles/cba050f1-880f-45f0-9af9-cfe48f406052/dashboard"
                 title="Portfolio"
               >
+                <div
+                  class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2"
+                />
                 Portfolio
               </a>
             </li>
@@ -3404,10 +3455,13 @@ exports[`Votes should render with no wallets 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text"
+                class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
                 href="/profiles/cba050f1-880f-45f0-9af9-cfe48f406052/plugins"
                 title="Plugins"
               >
+                <div
+                  class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2"
+                />
                 Plugins
               </a>
             </li>
@@ -3415,10 +3469,13 @@ exports[`Votes should render with no wallets 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text"
+                class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
                 href="/profiles/cba050f1-880f-45f0-9af9-cfe48f406052/exchange"
                 title="Exchange"
               >
+                <div
+                  class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2"
+                />
                 Exchange
               </a>
             </li>
@@ -3426,10 +3483,13 @@ exports[`Votes should render with no wallets 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text"
+                class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
                 href="/profiles/cba050f1-880f-45f0-9af9-cfe48f406052/news"
                 title="News"
               >
+                <div
+                  class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2"
+                />
                 News
               </a>
             </li>
@@ -3448,7 +3508,7 @@ exports[`Votes should render with no wallets 1`] = `
                     class="NavigationBar__NavigationButtonWrapper-sc-1qsoskw-1 eUPnft group"
                   >
                     <button
-                      class="OriginalButton__StyledButton-sc-1y2wptt-0 lpqSIM"
+                      class="OriginalButton__StyledButton-sc-1y2wptt-0 fNHPRi"
                       data-testid="navbar__buttons--notifications"
                       type="button"
                     >
@@ -3480,7 +3540,7 @@ exports[`Votes should render with no wallets 1`] = `
                 class="NavigationBar__NavigationButtonWrapper-sc-1qsoskw-1 eUPnft"
               >
                 <button
-                  class="OriginalButton__StyledButton-sc-1y2wptt-0 jNneja"
+                  class="OriginalButton__StyledButton-sc-1y2wptt-0 epuIM"
                   data-testid="navbar__buttons--send"
                   disabled=""
                   type="button"
@@ -3511,7 +3571,7 @@ exports[`Votes should render with no wallets 1`] = `
                 class="NavigationBar__NavigationButtonWrapper-sc-1qsoskw-1 eUPnft"
               >
                 <button
-                  class="OriginalButton__StyledButton-sc-1y2wptt-0 jNneja"
+                  class="OriginalButton__StyledButton-sc-1y2wptt-0 epuIM"
                   data-testid="navbar__buttons--receive"
                   disabled=""
                   type="button"
@@ -3588,7 +3648,7 @@ exports[`Votes should render with no wallets 1`] = `
                     data-testid="navbar__useractions"
                   >
                     <div
-                      class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB"
+                      class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB flex-shrink-0"
                       data-testid="Avatar"
                     >
                       <div
@@ -3651,7 +3711,7 @@ exports[`Votes should render with no wallets 1`] = `
           class="container px-10 mx-auto"
         >
           <div
-            class="border border-solid border-theme-secondary-300 dark:border-theme-secondary-800 rounded-lg text-theme-secondary-text p-6"
+            class="border border-solid border-theme-secondary-300 dark:border-theme-secondary-800 rounded-lg text-theme-secondary-text text-center leading-5 p-6"
             data-testid="EmptyBlock"
           >
             <div>
@@ -3673,7 +3733,7 @@ exports[`Votes should render with no wallets 1`] = `
                   class="flex -m-3 space-x-3"
                 >
                   <button
-                    class="OriginalButton__StyledButton-sc-1y2wptt-0 hsoUax"
+                    class="OriginalButton__StyledButton-sc-1y2wptt-0 izJbbP"
                     type="button"
                   >
                     <div
@@ -3698,7 +3758,7 @@ exports[`Votes should render with no wallets 1`] = `
                     </div>
                   </button>
                   <button
-                    class="OriginalButton__StyledButton-sc-1y2wptt-0 hsoUax"
+                    class="OriginalButton__StyledButton-sc-1y2wptt-0 izJbbP"
                     type="button"
                   >
                     <div
@@ -3781,10 +3841,13 @@ exports[`Votes should select a delegate 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text"
+                class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
                 title="Portfolio"
               >
+                <div
+                  class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2"
+                />
                 Portfolio
               </a>
             </li>
@@ -3792,10 +3855,13 @@ exports[`Votes should select a delegate 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text"
+                class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/plugins"
                 title="Plugins"
               >
+                <div
+                  class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2"
+                />
                 Plugins
               </a>
             </li>
@@ -3803,10 +3869,13 @@ exports[`Votes should select a delegate 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text"
+                class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/exchange"
                 title="Exchange"
               >
+                <div
+                  class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2"
+                />
                 Exchange
               </a>
             </li>
@@ -3814,10 +3883,13 @@ exports[`Votes should select a delegate 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text"
+                class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/news"
                 title="News"
               >
+                <div
+                  class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2"
+                />
                 News
               </a>
             </li>
@@ -3836,7 +3908,7 @@ exports[`Votes should select a delegate 1`] = `
                     class="NavigationBar__NavigationButtonWrapper-sc-1qsoskw-1 eUPnft group"
                   >
                     <button
-                      class="OriginalButton__StyledButton-sc-1y2wptt-0 lpqSIM"
+                      class="OriginalButton__StyledButton-sc-1y2wptt-0 fNHPRi"
                       data-testid="navbar__buttons--notifications"
                       type="button"
                     >
@@ -3875,7 +3947,7 @@ exports[`Votes should select a delegate 1`] = `
                 class="NavigationBar__NavigationButtonWrapper-sc-1qsoskw-1 eUPnft"
               >
                 <button
-                  class="OriginalButton__StyledButton-sc-1y2wptt-0 lpqSIM"
+                  class="OriginalButton__StyledButton-sc-1y2wptt-0 fNHPRi"
                   data-testid="navbar__buttons--send"
                   type="button"
                 >
@@ -3905,7 +3977,7 @@ exports[`Votes should select a delegate 1`] = `
                 class="NavigationBar__NavigationButtonWrapper-sc-1qsoskw-1 eUPnft"
               >
                 <button
-                  class="OriginalButton__StyledButton-sc-1y2wptt-0 lpqSIM"
+                  class="OriginalButton__StyledButton-sc-1y2wptt-0 fNHPRi"
                   data-testid="navbar__buttons--receive"
                   type="button"
                 >
@@ -3981,7 +4053,7 @@ exports[`Votes should select a delegate 1`] = `
                     data-testid="navbar__useractions"
                   >
                     <div
-                      class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB"
+                      class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB flex-shrink-0"
                       data-testid="Avatar"
                     >
                       <div
@@ -4239,7 +4311,7 @@ exports[`Votes should select a delegate 1`] = `
                         class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT space-x-4 font-bold bg-theme-danger-50 dark:bg-theme-danger-900"
                       >
                         <div
-                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 ktCSBk"
+                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 ktCSBk flex-shrink-0"
                           data-testid="Avatar"
                         >
                           <div
@@ -4264,7 +4336,7 @@ exports[`Votes should select a delegate 1`] = `
                         class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 kjTmcB justify-end bg-theme-danger-50 dark:bg-theme-danger-900"
                       >
                         <button
-                          class="OriginalButton__StyledButton-sc-1y2wptt-0 hsoUax"
+                          class="OriginalButton__StyledButton-sc-1y2wptt-0 izJbbP"
                           color="danger"
                           data-testid="DelegateRow__toggle-0"
                           type="button"
@@ -4298,7 +4370,7 @@ exports[`Votes should select a delegate 1`] = `
                         class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT space-x-4 font-bold "
                       >
                         <div
-                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 ktCSBk"
+                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 ktCSBk flex-shrink-0"
                           data-testid="Avatar"
                         >
                           <div
@@ -4323,7 +4395,7 @@ exports[`Votes should select a delegate 1`] = `
                         class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 kjTmcB justify-end "
                       >
                         <button
-                          class="OriginalButton__StyledButton-sc-1y2wptt-0 hsoUax"
+                          class="OriginalButton__StyledButton-sc-1y2wptt-0 izJbbP"
                           color="primary"
                           data-testid="DelegateRow__toggle-1"
                           type="button"
@@ -4357,7 +4429,7 @@ exports[`Votes should select a delegate 1`] = `
                         class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT space-x-4 font-bold "
                       >
                         <div
-                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 ktCSBk"
+                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 ktCSBk flex-shrink-0"
                           data-testid="Avatar"
                         >
                           <div
@@ -4382,7 +4454,7 @@ exports[`Votes should select a delegate 1`] = `
                         class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 kjTmcB justify-end "
                       >
                         <button
-                          class="OriginalButton__StyledButton-sc-1y2wptt-0 hsoUax"
+                          class="OriginalButton__StyledButton-sc-1y2wptt-0 izJbbP"
                           color="primary"
                           data-testid="DelegateRow__toggle-2"
                           type="button"
@@ -4416,7 +4488,7 @@ exports[`Votes should select a delegate 1`] = `
                     class="flex pr-8 border-r border-theme-secondary-300 dark:border-theme-secondary-800"
                   >
                     <div
-                      class="Avatar__AvatarWrapper-sc-1vsy2s2-0 ktCSBk mr-2"
+                      class="Avatar__AvatarWrapper-sc-1vsy2s2-0 ktCSBk mr-2 flex-shrink-0"
                       data-testid="Avatar"
                     >
                       <div
@@ -4438,13 +4510,13 @@ exports[`Votes should select a delegate 1`] = `
                         Address
                       </div>
                       <div
-                        class="inline-flex items-center no-ligatures"
+                        class="w-full flex items-center no-ligatures overflow-hidden whitespace-nowrap"
                       >
                         <span
-                          class="TruncateMiddle__Wrapper-sc-3j3e79-0 leading-tight truncate font-semibold text-lg"
+                          class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap leading-tight font-semibold text-lg"
                           data-testid="address__wallet-address"
                         >
-                          D8rr7B1d6T…1VBMs6YUYD
+                          D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD
                         </span>
                       </div>
                     </div>
@@ -4547,7 +4619,7 @@ exports[`Votes should select a delegate 1`] = `
                   </div>
                   <span>
                     <button
-                      class="OriginalButton__StyledButton-sc-1y2wptt-0 cEUmKc ml-auto"
+                      class="OriginalButton__StyledButton-sc-1y2wptt-0 dYkFxS ml-auto"
                       data-testid="DelegateTable__continue-button"
                       type="button"
                     >
@@ -4619,10 +4691,13 @@ exports[`Votes should select an address without vote 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text"
+                class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
                 title="Portfolio"
               >
+                <div
+                  class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2"
+                />
                 Portfolio
               </a>
             </li>
@@ -4630,10 +4705,13 @@ exports[`Votes should select an address without vote 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text"
+                class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/plugins"
                 title="Plugins"
               >
+                <div
+                  class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2"
+                />
                 Plugins
               </a>
             </li>
@@ -4641,10 +4719,13 @@ exports[`Votes should select an address without vote 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text"
+                class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/exchange"
                 title="Exchange"
               >
+                <div
+                  class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2"
+                />
                 Exchange
               </a>
             </li>
@@ -4652,10 +4733,13 @@ exports[`Votes should select an address without vote 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text"
+                class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/news"
                 title="News"
               >
+                <div
+                  class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2"
+                />
                 News
               </a>
             </li>
@@ -4674,7 +4758,7 @@ exports[`Votes should select an address without vote 1`] = `
                     class="NavigationBar__NavigationButtonWrapper-sc-1qsoskw-1 eUPnft group"
                   >
                     <button
-                      class="OriginalButton__StyledButton-sc-1y2wptt-0 lpqSIM"
+                      class="OriginalButton__StyledButton-sc-1y2wptt-0 fNHPRi"
                       data-testid="navbar__buttons--notifications"
                       type="button"
                     >
@@ -4713,7 +4797,7 @@ exports[`Votes should select an address without vote 1`] = `
                 class="NavigationBar__NavigationButtonWrapper-sc-1qsoskw-1 eUPnft"
               >
                 <button
-                  class="OriginalButton__StyledButton-sc-1y2wptt-0 lpqSIM"
+                  class="OriginalButton__StyledButton-sc-1y2wptt-0 fNHPRi"
                   data-testid="navbar__buttons--send"
                   type="button"
                 >
@@ -4743,7 +4827,7 @@ exports[`Votes should select an address without vote 1`] = `
                 class="NavigationBar__NavigationButtonWrapper-sc-1qsoskw-1 eUPnft"
               >
                 <button
-                  class="OriginalButton__StyledButton-sc-1y2wptt-0 lpqSIM"
+                  class="OriginalButton__StyledButton-sc-1y2wptt-0 fNHPRi"
                   data-testid="navbar__buttons--receive"
                   type="button"
                 >
@@ -4819,7 +4903,7 @@ exports[`Votes should select an address without vote 1`] = `
                     data-testid="navbar__useractions"
                   >
                     <div
-                      class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB"
+                      class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB flex-shrink-0"
                       data-testid="Avatar"
                     >
                       <div
@@ -5077,7 +5161,7 @@ exports[`Votes should select an address without vote 1`] = `
                         class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT space-x-4 font-bold "
                       >
                         <div
-                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 ktCSBk"
+                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 ktCSBk flex-shrink-0"
                           data-testid="Avatar"
                         >
                           <div
@@ -5102,7 +5186,7 @@ exports[`Votes should select an address without vote 1`] = `
                         class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 kjTmcB justify-end "
                       >
                         <button
-                          class="OriginalButton__StyledButton-sc-1y2wptt-0 hsoUax"
+                          class="OriginalButton__StyledButton-sc-1y2wptt-0 izJbbP"
                           color="primary"
                           data-testid="DelegateRow__toggle-0"
                           type="button"
@@ -5136,7 +5220,7 @@ exports[`Votes should select an address without vote 1`] = `
                         class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT space-x-4 font-bold "
                       >
                         <div
-                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 ktCSBk"
+                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 ktCSBk flex-shrink-0"
                           data-testid="Avatar"
                         >
                           <div
@@ -5161,7 +5245,7 @@ exports[`Votes should select an address without vote 1`] = `
                         class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 kjTmcB justify-end "
                       >
                         <button
-                          class="OriginalButton__StyledButton-sc-1y2wptt-0 hsoUax"
+                          class="OriginalButton__StyledButton-sc-1y2wptt-0 izJbbP"
                           color="primary"
                           data-testid="DelegateRow__toggle-1"
                           type="button"
@@ -5195,7 +5279,7 @@ exports[`Votes should select an address without vote 1`] = `
                         class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT space-x-4 font-bold "
                       >
                         <div
-                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 ktCSBk"
+                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 ktCSBk flex-shrink-0"
                           data-testid="Avatar"
                         >
                           <div
@@ -5220,7 +5304,7 @@ exports[`Votes should select an address without vote 1`] = `
                         class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 kjTmcB justify-end "
                       >
                         <button
-                          class="OriginalButton__StyledButton-sc-1y2wptt-0 hsoUax"
+                          class="OriginalButton__StyledButton-sc-1y2wptt-0 izJbbP"
                           color="primary"
                           data-testid="DelegateRow__toggle-2"
                           type="button"
@@ -5254,7 +5338,7 @@ exports[`Votes should select an address without vote 1`] = `
                     class="flex pr-8 border-r border-theme-secondary-300 dark:border-theme-secondary-800"
                   >
                     <div
-                      class="Avatar__AvatarWrapper-sc-1vsy2s2-0 ktCSBk mr-2"
+                      class="Avatar__AvatarWrapper-sc-1vsy2s2-0 ktCSBk mr-2 flex-shrink-0"
                       data-testid="Avatar"
                     >
                       <div
@@ -5276,13 +5360,13 @@ exports[`Votes should select an address without vote 1`] = `
                         Address
                       </div>
                       <div
-                        class="inline-flex items-center no-ligatures"
+                        class="w-full flex items-center no-ligatures overflow-hidden whitespace-nowrap"
                       >
                         <span
-                          class="TruncateMiddle__Wrapper-sc-3j3e79-0 leading-tight truncate font-semibold text-lg"
+                          class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap leading-tight font-semibold text-lg"
                           data-testid="address__wallet-address"
                         >
-                          D5sRKWckH4…gyC3cvJtwb
+                          D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb
                         </span>
                       </div>
                     </div>
@@ -5385,7 +5469,7 @@ exports[`Votes should select an address without vote 1`] = `
                   </div>
                   <span>
                     <button
-                      class="OriginalButton__StyledButton-sc-1y2wptt-0 blpaPr ml-auto"
+                      class="OriginalButton__StyledButton-sc-1y2wptt-0 fqRthJ ml-auto"
                       data-testid="DelegateTable__continue-button"
                       disabled=""
                       type="button"
@@ -5456,10 +5540,13 @@ exports[`Votes should select ledger option in the wallets display type 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text"
+                class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
                 title="Portfolio"
               >
+                <div
+                  class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2"
+                />
                 Portfolio
               </a>
             </li>
@@ -5467,10 +5554,13 @@ exports[`Votes should select ledger option in the wallets display type 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text"
+                class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/plugins"
                 title="Plugins"
               >
+                <div
+                  class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2"
+                />
                 Plugins
               </a>
             </li>
@@ -5478,10 +5568,13 @@ exports[`Votes should select ledger option in the wallets display type 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text"
+                class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/exchange"
                 title="Exchange"
               >
+                <div
+                  class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2"
+                />
                 Exchange
               </a>
             </li>
@@ -5489,10 +5582,13 @@ exports[`Votes should select ledger option in the wallets display type 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text"
+                class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/news"
                 title="News"
               >
+                <div
+                  class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2"
+                />
                 News
               </a>
             </li>
@@ -5511,7 +5607,7 @@ exports[`Votes should select ledger option in the wallets display type 1`] = `
                     class="NavigationBar__NavigationButtonWrapper-sc-1qsoskw-1 eUPnft group"
                   >
                     <button
-                      class="OriginalButton__StyledButton-sc-1y2wptt-0 lpqSIM"
+                      class="OriginalButton__StyledButton-sc-1y2wptt-0 fNHPRi"
                       data-testid="navbar__buttons--notifications"
                       type="button"
                     >
@@ -5550,7 +5646,7 @@ exports[`Votes should select ledger option in the wallets display type 1`] = `
                 class="NavigationBar__NavigationButtonWrapper-sc-1qsoskw-1 eUPnft"
               >
                 <button
-                  class="OriginalButton__StyledButton-sc-1y2wptt-0 lpqSIM"
+                  class="OriginalButton__StyledButton-sc-1y2wptt-0 fNHPRi"
                   data-testid="navbar__buttons--send"
                   type="button"
                 >
@@ -5580,7 +5676,7 @@ exports[`Votes should select ledger option in the wallets display type 1`] = `
                 class="NavigationBar__NavigationButtonWrapper-sc-1qsoskw-1 eUPnft"
               >
                 <button
-                  class="OriginalButton__StyledButton-sc-1y2wptt-0 lpqSIM"
+                  class="OriginalButton__StyledButton-sc-1y2wptt-0 fNHPRi"
                   data-testid="navbar__buttons--receive"
                   type="button"
                 >
@@ -5656,7 +5752,7 @@ exports[`Votes should select ledger option in the wallets display type 1`] = `
                     data-testid="navbar__useractions"
                   >
                     <div
-                      class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB"
+                      class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB flex-shrink-0"
                       data-testid="Avatar"
                     >
                       <div
@@ -5789,7 +5885,7 @@ exports[`Votes should select ledger option in the wallets display type 1`] = `
                       </div>
                     </span>
                     <div
-                      class="Dropdown__Wrapper-ocz1je-0 boXiNv opacity-0 mt-3 py-3 absolute z-10 bg-theme-background rounded-lg shadow-xl"
+                      class="Dropdown__Wrapper-ocz1je-0 boXiNv opacity-0 mt-3 py-3 absolute z-10 bg-theme-background rounded-xl shadow-xl"
                       data-testid="dropdown__content"
                       style="opacity: 100; height: -30px; overflow-y: scroll;"
                     >
@@ -5819,6 +5915,7 @@ exports[`Votes should select ledger option in the wallets display type 1`] = `
                               class="space-y-6"
                             >
                               <div
+                                class="mt-6"
                                 data-testid="FilterNetwork"
                               >
                                 <div
@@ -5827,11 +5924,11 @@ exports[`Votes should select ledger option in the wallets display type 1`] = `
                                   Development Networks
                                 </div>
                                 <ul
-                                  class="inline-block"
+                                  class="flex flex-wrap"
                                   data-testid="NetworkOptions"
                                 >
                                   <li
-                                    class="inline-block mr-5 cursor-pointer"
+                                    class="inline-block pr-5 pb-5 cursor-pointer"
                                     data-testid="NetworkOption__ARK"
                                   >
                                     <div
@@ -5977,10 +6074,13 @@ exports[`Votes should select starred option in the wallets display type 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text"
+                class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
                 title="Portfolio"
               >
+                <div
+                  class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2"
+                />
                 Portfolio
               </a>
             </li>
@@ -5988,10 +6088,13 @@ exports[`Votes should select starred option in the wallets display type 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text"
+                class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/plugins"
                 title="Plugins"
               >
+                <div
+                  class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2"
+                />
                 Plugins
               </a>
             </li>
@@ -5999,10 +6102,13 @@ exports[`Votes should select starred option in the wallets display type 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text"
+                class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/exchange"
                 title="Exchange"
               >
+                <div
+                  class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2"
+                />
                 Exchange
               </a>
             </li>
@@ -6010,10 +6116,13 @@ exports[`Votes should select starred option in the wallets display type 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text"
+                class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/news"
                 title="News"
               >
+                <div
+                  class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2"
+                />
                 News
               </a>
             </li>
@@ -6032,7 +6141,7 @@ exports[`Votes should select starred option in the wallets display type 1`] = `
                     class="NavigationBar__NavigationButtonWrapper-sc-1qsoskw-1 eUPnft group"
                   >
                     <button
-                      class="OriginalButton__StyledButton-sc-1y2wptt-0 lpqSIM"
+                      class="OriginalButton__StyledButton-sc-1y2wptt-0 fNHPRi"
                       data-testid="navbar__buttons--notifications"
                       type="button"
                     >
@@ -6071,7 +6180,7 @@ exports[`Votes should select starred option in the wallets display type 1`] = `
                 class="NavigationBar__NavigationButtonWrapper-sc-1qsoskw-1 eUPnft"
               >
                 <button
-                  class="OriginalButton__StyledButton-sc-1y2wptt-0 lpqSIM"
+                  class="OriginalButton__StyledButton-sc-1y2wptt-0 fNHPRi"
                   data-testid="navbar__buttons--send"
                   type="button"
                 >
@@ -6101,7 +6210,7 @@ exports[`Votes should select starred option in the wallets display type 1`] = `
                 class="NavigationBar__NavigationButtonWrapper-sc-1qsoskw-1 eUPnft"
               >
                 <button
-                  class="OriginalButton__StyledButton-sc-1y2wptt-0 lpqSIM"
+                  class="OriginalButton__StyledButton-sc-1y2wptt-0 fNHPRi"
                   data-testid="navbar__buttons--receive"
                   type="button"
                 >
@@ -6177,7 +6286,7 @@ exports[`Votes should select starred option in the wallets display type 1`] = `
                     data-testid="navbar__useractions"
                   >
                     <div
-                      class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB"
+                      class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB flex-shrink-0"
                       data-testid="Avatar"
                     >
                       <div
@@ -6310,7 +6419,7 @@ exports[`Votes should select starred option in the wallets display type 1`] = `
                       </div>
                     </span>
                     <div
-                      class="Dropdown__Wrapper-ocz1je-0 boXiNv opacity-0 mt-3 py-3 absolute z-10 bg-theme-background rounded-lg shadow-xl"
+                      class="Dropdown__Wrapper-ocz1je-0 boXiNv opacity-0 mt-3 py-3 absolute z-10 bg-theme-background rounded-xl shadow-xl"
                       data-testid="dropdown__content"
                       style="opacity: 100; height: -30px; overflow-y: scroll;"
                     >
@@ -6340,6 +6449,7 @@ exports[`Votes should select starred option in the wallets display type 1`] = `
                               class="space-y-6"
                             >
                               <div
+                                class="mt-6"
                                 data-testid="FilterNetwork"
                               >
                                 <div
@@ -6348,11 +6458,11 @@ exports[`Votes should select starred option in the wallets display type 1`] = `
                                   Development Networks
                                 </div>
                                 <ul
-                                  class="inline-block"
+                                  class="flex flex-wrap"
                                   data-testid="NetworkOptions"
                                 >
                                   <li
-                                    class="inline-block mr-5 cursor-pointer"
+                                    class="inline-block pr-5 pb-5 cursor-pointer"
                                     data-testid="NetworkOption__ARK"
                                   >
                                     <div
@@ -6498,10 +6608,13 @@ exports[`Votes should show network warning 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text"
+                class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
                 title="Portfolio"
               >
+                <div
+                  class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2"
+                />
                 Portfolio
               </a>
             </li>
@@ -6509,10 +6622,13 @@ exports[`Votes should show network warning 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text"
+                class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/plugins"
                 title="Plugins"
               >
+                <div
+                  class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2"
+                />
                 Plugins
               </a>
             </li>
@@ -6520,10 +6636,13 @@ exports[`Votes should show network warning 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text"
+                class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/exchange"
                 title="Exchange"
               >
+                <div
+                  class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2"
+                />
                 Exchange
               </a>
             </li>
@@ -6531,10 +6650,13 @@ exports[`Votes should show network warning 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text"
+                class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/news"
                 title="News"
               >
+                <div
+                  class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2"
+                />
                 News
               </a>
             </li>
@@ -6553,7 +6675,7 @@ exports[`Votes should show network warning 1`] = `
                     class="NavigationBar__NavigationButtonWrapper-sc-1qsoskw-1 eUPnft group"
                   >
                     <button
-                      class="OriginalButton__StyledButton-sc-1y2wptt-0 lpqSIM"
+                      class="OriginalButton__StyledButton-sc-1y2wptt-0 fNHPRi"
                       data-testid="navbar__buttons--notifications"
                       type="button"
                     >
@@ -6592,7 +6714,7 @@ exports[`Votes should show network warning 1`] = `
                 class="NavigationBar__NavigationButtonWrapper-sc-1qsoskw-1 eUPnft"
               >
                 <button
-                  class="OriginalButton__StyledButton-sc-1y2wptt-0 lpqSIM"
+                  class="OriginalButton__StyledButton-sc-1y2wptt-0 fNHPRi"
                   data-testid="navbar__buttons--send"
                   type="button"
                 >
@@ -6622,7 +6744,7 @@ exports[`Votes should show network warning 1`] = `
                 class="NavigationBar__NavigationButtonWrapper-sc-1qsoskw-1 eUPnft"
               >
                 <button
-                  class="OriginalButton__StyledButton-sc-1y2wptt-0 lpqSIM"
+                  class="OriginalButton__StyledButton-sc-1y2wptt-0 fNHPRi"
                   data-testid="navbar__buttons--receive"
                   type="button"
                 >
@@ -6698,7 +6820,7 @@ exports[`Votes should show network warning 1`] = `
                     data-testid="navbar__useractions"
                   >
                     <div
-                      class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB"
+                      class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB flex-shrink-0"
                       data-testid="Avatar"
                     >
                       <div
@@ -6990,7 +7112,7 @@ exports[`Votes should show network warning 1`] = `
                         class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT space-x-4 font-bold bg-theme-success-50 dark:bg-theme-success-900"
                       >
                         <div
-                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 ktCSBk"
+                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 ktCSBk flex-shrink-0"
                           data-testid="Avatar"
                         >
                           <div
@@ -7015,7 +7137,7 @@ exports[`Votes should show network warning 1`] = `
                         class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 kjTmcB justify-end bg-theme-success-50 dark:bg-theme-success-900"
                       >
                         <button
-                          class="OriginalButton__StyledButton-sc-1y2wptt-0 hsoUax"
+                          class="OriginalButton__StyledButton-sc-1y2wptt-0 izJbbP"
                           color="success"
                           data-testid="DelegateRow__toggle-0"
                           type="button"
@@ -7049,7 +7171,7 @@ exports[`Votes should show network warning 1`] = `
                         class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT space-x-4 font-bold "
                       >
                         <div
-                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 ktCSBk"
+                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 ktCSBk flex-shrink-0"
                           data-testid="Avatar"
                         >
                           <div
@@ -7075,7 +7197,7 @@ exports[`Votes should show network warning 1`] = `
                       >
                         <span>
                           <button
-                            class="OriginalButton__StyledButton-sc-1y2wptt-0 blpaPr"
+                            class="OriginalButton__StyledButton-sc-1y2wptt-0 fqRthJ"
                             color="primary"
                             data-testid="DelegateRow__toggle-1"
                             disabled=""
@@ -7111,7 +7233,7 @@ exports[`Votes should show network warning 1`] = `
                         class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT space-x-4 font-bold "
                       >
                         <div
-                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 ktCSBk"
+                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 ktCSBk flex-shrink-0"
                           data-testid="Avatar"
                         >
                           <div
@@ -7137,7 +7259,7 @@ exports[`Votes should show network warning 1`] = `
                       >
                         <span>
                           <button
-                            class="OriginalButton__StyledButton-sc-1y2wptt-0 blpaPr"
+                            class="OriginalButton__StyledButton-sc-1y2wptt-0 fqRthJ"
                             color="primary"
                             data-testid="DelegateRow__toggle-2"
                             disabled=""
@@ -7173,7 +7295,7 @@ exports[`Votes should show network warning 1`] = `
                     class="flex pr-8 border-r border-theme-secondary-300 dark:border-theme-secondary-800"
                   >
                     <div
-                      class="Avatar__AvatarWrapper-sc-1vsy2s2-0 ktCSBk mr-2"
+                      class="Avatar__AvatarWrapper-sc-1vsy2s2-0 ktCSBk mr-2 flex-shrink-0"
                       data-testid="Avatar"
                     >
                       <div
@@ -7195,13 +7317,13 @@ exports[`Votes should show network warning 1`] = `
                         Address
                       </div>
                       <div
-                        class="inline-flex items-center no-ligatures"
+                        class="w-full flex items-center no-ligatures overflow-hidden whitespace-nowrap"
                       >
                         <span
-                          class="TruncateMiddle__Wrapper-sc-3j3e79-0 leading-tight truncate font-semibold text-lg"
+                          class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap leading-tight font-semibold text-lg"
                           data-testid="address__wallet-address"
                         >
-                          D8rr7B1d6T…1VBMs6YUYD
+                          D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD
                         </span>
                       </div>
                     </div>
@@ -7304,7 +7426,7 @@ exports[`Votes should show network warning 1`] = `
                   </div>
                   <span>
                     <button
-                      class="OriginalButton__StyledButton-sc-1y2wptt-0 cEUmKc ml-auto"
+                      class="OriginalButton__StyledButton-sc-1y2wptt-0 dYkFxS ml-auto"
                       data-testid="DelegateTable__continue-button"
                       type="button"
                     >
@@ -7374,10 +7496,13 @@ exports[`Votes should show resigned delegate notice 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text"
+                class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
                 title="Portfolio"
               >
+                <div
+                  class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2"
+                />
                 Portfolio
               </a>
             </li>
@@ -7385,10 +7510,13 @@ exports[`Votes should show resigned delegate notice 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text"
+                class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/plugins"
                 title="Plugins"
               >
+                <div
+                  class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2"
+                />
                 Plugins
               </a>
             </li>
@@ -7396,10 +7524,13 @@ exports[`Votes should show resigned delegate notice 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text"
+                class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/exchange"
                 title="Exchange"
               >
+                <div
+                  class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2"
+                />
                 Exchange
               </a>
             </li>
@@ -7407,10 +7538,13 @@ exports[`Votes should show resigned delegate notice 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text"
+                class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/news"
                 title="News"
               >
+                <div
+                  class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2"
+                />
                 News
               </a>
             </li>
@@ -7429,7 +7563,7 @@ exports[`Votes should show resigned delegate notice 1`] = `
                     class="NavigationBar__NavigationButtonWrapper-sc-1qsoskw-1 eUPnft group"
                   >
                     <button
-                      class="OriginalButton__StyledButton-sc-1y2wptt-0 lpqSIM"
+                      class="OriginalButton__StyledButton-sc-1y2wptt-0 fNHPRi"
                       data-testid="navbar__buttons--notifications"
                       type="button"
                     >
@@ -7468,7 +7602,7 @@ exports[`Votes should show resigned delegate notice 1`] = `
                 class="NavigationBar__NavigationButtonWrapper-sc-1qsoskw-1 eUPnft"
               >
                 <button
-                  class="OriginalButton__StyledButton-sc-1y2wptt-0 lpqSIM"
+                  class="OriginalButton__StyledButton-sc-1y2wptt-0 fNHPRi"
                   data-testid="navbar__buttons--send"
                   type="button"
                 >
@@ -7498,7 +7632,7 @@ exports[`Votes should show resigned delegate notice 1`] = `
                 class="NavigationBar__NavigationButtonWrapper-sc-1qsoskw-1 eUPnft"
               >
                 <button
-                  class="OriginalButton__StyledButton-sc-1y2wptt-0 lpqSIM"
+                  class="OriginalButton__StyledButton-sc-1y2wptt-0 fNHPRi"
                   data-testid="navbar__buttons--receive"
                   type="button"
                 >
@@ -7574,7 +7708,7 @@ exports[`Votes should show resigned delegate notice 1`] = `
                     data-testid="navbar__useractions"
                   >
                     <div
-                      class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB"
+                      class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB flex-shrink-0"
                       data-testid="Avatar"
                     >
                       <div
@@ -7867,7 +8001,7 @@ exports[`Votes should show resigned delegate notice 1`] = `
                         class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT space-x-4 font-bold bg-theme-primary-50 dark:bg-theme-primary-900"
                       >
                         <div
-                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 ktCSBk"
+                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 ktCSBk flex-shrink-0"
                           data-testid="Avatar"
                         >
                           <div
@@ -7892,7 +8026,7 @@ exports[`Votes should show resigned delegate notice 1`] = `
                         class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 kjTmcB justify-end bg-theme-primary-50 dark:bg-theme-primary-900"
                       >
                         <button
-                          class="OriginalButton__StyledButton-sc-1y2wptt-0 hsoUax"
+                          class="OriginalButton__StyledButton-sc-1y2wptt-0 izJbbP"
                           color="primary"
                           data-testid="DelegateRow__toggle-0"
                           type="button"
@@ -7927,7 +8061,7 @@ exports[`Votes should show resigned delegate notice 1`] = `
                         class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT space-x-4 font-bold "
                       >
                         <div
-                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 ktCSBk"
+                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 ktCSBk flex-shrink-0"
                           data-testid="Avatar"
                         >
                           <div
@@ -7952,7 +8086,7 @@ exports[`Votes should show resigned delegate notice 1`] = `
                         class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 kjTmcB justify-end "
                       >
                         <button
-                          class="OriginalButton__StyledButton-sc-1y2wptt-0 hsoUax"
+                          class="OriginalButton__StyledButton-sc-1y2wptt-0 izJbbP"
                           color="primary"
                           data-testid="DelegateRow__toggle-1"
                           type="button"
@@ -7987,7 +8121,7 @@ exports[`Votes should show resigned delegate notice 1`] = `
                         class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT space-x-4 font-bold "
                       >
                         <div
-                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 ktCSBk"
+                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 ktCSBk flex-shrink-0"
                           data-testid="Avatar"
                         >
                           <div
@@ -8012,7 +8146,7 @@ exports[`Votes should show resigned delegate notice 1`] = `
                         class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 kjTmcB justify-end "
                       >
                         <button
-                          class="OriginalButton__StyledButton-sc-1y2wptt-0 hsoUax"
+                          class="OriginalButton__StyledButton-sc-1y2wptt-0 izJbbP"
                           color="primary"
                           data-testid="DelegateRow__toggle-2"
                           type="button"
@@ -8046,7 +8180,7 @@ exports[`Votes should show resigned delegate notice 1`] = `
                     class="flex pr-8 border-r border-theme-secondary-300 dark:border-theme-secondary-800"
                   >
                     <div
-                      class="Avatar__AvatarWrapper-sc-1vsy2s2-0 ktCSBk mr-2"
+                      class="Avatar__AvatarWrapper-sc-1vsy2s2-0 ktCSBk mr-2 flex-shrink-0"
                       data-testid="Avatar"
                     >
                       <div
@@ -8068,13 +8202,13 @@ exports[`Votes should show resigned delegate notice 1`] = `
                         Address
                       </div>
                       <div
-                        class="inline-flex items-center no-ligatures"
+                        class="w-full flex items-center no-ligatures overflow-hidden whitespace-nowrap"
                       >
                         <span
-                          class="TruncateMiddle__Wrapper-sc-3j3e79-0 leading-tight truncate font-semibold text-lg"
+                          class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap leading-tight font-semibold text-lg"
                           data-testid="address__wallet-address"
                         >
-                          D8rr7B1d6T…1VBMs6YUYD
+                          D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD
                         </span>
                       </div>
                     </div>
@@ -8179,7 +8313,7 @@ exports[`Votes should show resigned delegate notice 1`] = `
                   </div>
                   <span>
                     <button
-                      class="OriginalButton__StyledButton-sc-1y2wptt-0 blpaPr ml-auto"
+                      class="OriginalButton__StyledButton-sc-1y2wptt-0 fqRthJ ml-auto"
                       data-testid="DelegateTable__continue-button"
                       disabled=""
                       type="button"
@@ -8250,10 +8384,13 @@ exports[`Votes should toggle network selection from network filters 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text"
+                class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
                 title="Portfolio"
               >
+                <div
+                  class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2"
+                />
                 Portfolio
               </a>
             </li>
@@ -8261,10 +8398,13 @@ exports[`Votes should toggle network selection from network filters 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text"
+                class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/plugins"
                 title="Plugins"
               >
+                <div
+                  class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2"
+                />
                 Plugins
               </a>
             </li>
@@ -8272,10 +8412,13 @@ exports[`Votes should toggle network selection from network filters 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text"
+                class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/exchange"
                 title="Exchange"
               >
+                <div
+                  class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2"
+                />
                 Exchange
               </a>
             </li>
@@ -8283,10 +8426,13 @@ exports[`Votes should toggle network selection from network filters 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text"
+                class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/news"
                 title="News"
               >
+                <div
+                  class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2"
+                />
                 News
               </a>
             </li>
@@ -8305,7 +8451,7 @@ exports[`Votes should toggle network selection from network filters 1`] = `
                     class="NavigationBar__NavigationButtonWrapper-sc-1qsoskw-1 eUPnft group"
                   >
                     <button
-                      class="OriginalButton__StyledButton-sc-1y2wptt-0 lpqSIM"
+                      class="OriginalButton__StyledButton-sc-1y2wptt-0 fNHPRi"
                       data-testid="navbar__buttons--notifications"
                       type="button"
                     >
@@ -8344,7 +8490,7 @@ exports[`Votes should toggle network selection from network filters 1`] = `
                 class="NavigationBar__NavigationButtonWrapper-sc-1qsoskw-1 eUPnft"
               >
                 <button
-                  class="OriginalButton__StyledButton-sc-1y2wptt-0 lpqSIM"
+                  class="OriginalButton__StyledButton-sc-1y2wptt-0 fNHPRi"
                   data-testid="navbar__buttons--send"
                   type="button"
                 >
@@ -8374,7 +8520,7 @@ exports[`Votes should toggle network selection from network filters 1`] = `
                 class="NavigationBar__NavigationButtonWrapper-sc-1qsoskw-1 eUPnft"
               >
                 <button
-                  class="OriginalButton__StyledButton-sc-1y2wptt-0 lpqSIM"
+                  class="OriginalButton__StyledButton-sc-1y2wptt-0 fNHPRi"
                   data-testid="navbar__buttons--receive"
                   type="button"
                 >
@@ -8450,7 +8596,7 @@ exports[`Votes should toggle network selection from network filters 1`] = `
                     data-testid="navbar__useractions"
                   >
                     <div
-                      class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB"
+                      class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB flex-shrink-0"
                       data-testid="Avatar"
                     >
                       <div
@@ -8576,7 +8722,7 @@ exports[`Votes should toggle network selection from network filters 1`] = `
                       </div>
                     </span>
                     <div
-                      class="Dropdown__Wrapper-ocz1je-0 boXiNv opacity-0 mt-3 py-3 absolute z-10 bg-theme-background rounded-lg shadow-xl"
+                      class="Dropdown__Wrapper-ocz1je-0 boXiNv opacity-0 mt-3 py-3 absolute z-10 bg-theme-background rounded-xl shadow-xl"
                       data-testid="dropdown__content"
                       style="opacity: 100; height: -30px; overflow-y: scroll;"
                     >
@@ -8606,6 +8752,7 @@ exports[`Votes should toggle network selection from network filters 1`] = `
                               class="space-y-6"
                             >
                               <div
+                                class="mt-6"
                                 data-testid="FilterNetwork"
                               >
                                 <div
@@ -8614,11 +8761,11 @@ exports[`Votes should toggle network selection from network filters 1`] = `
                                   Development Networks
                                 </div>
                                 <ul
-                                  class="inline-block"
+                                  class="flex flex-wrap"
                                   data-testid="NetworkOptions"
                                 >
                                   <li
-                                    class="inline-block mr-5 cursor-pointer"
+                                    class="inline-block pr-5 pb-5 cursor-pointer"
                                     data-testid="NetworkOption__ARK"
                                   >
                                     <div
@@ -8911,7 +9058,7 @@ exports[`Votes should toggle network selection from network filters 1`] = `
                         class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 DpDcR space-x-4"
                       >
                         <div
-                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 ktCSBk"
+                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 ktCSBk flex-shrink-0 flex-shrink-0"
                           data-testid="Avatar"
                         >
                           <div
@@ -8925,7 +9072,7 @@ exports[`Votes should toggle network selection from network filters 1`] = `
                           </div>
                         </div>
                         <div
-                          class="inline-flex items-center no-ligatures"
+                          class="w-full flex items-center no-ligatures overflow-hidden whitespace-nowrap"
                         >
                           <span
                             class="max-w-24 flex-auto truncate mr-2 font-semibold text-base text-theme-text"
@@ -8939,10 +9086,10 @@ exports[`Votes should toggle network selection from network filters 1`] = `
                             </span>
                           </span>
                           <span
-                            class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-secondary-500 dark:text-theme-secondary-700 truncate font-semibold text-base"
+                            class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-secondary-500 dark:text-theme-secondary-700 font-semibold text-base"
                             data-testid="address__wallet-address"
                           >
-                            D8rr7B…s6YUYD
+                            D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD
                           </span>
                         </div>
                       </div>
@@ -8972,7 +9119,7 @@ exports[`Votes should toggle network selection from network filters 1`] = `
                         class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT space-x-4 font-bold"
                       >
                         <div
-                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 ktCSBk"
+                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 ktCSBk flex-shrink-0"
                           data-testid="Avatar"
                         >
                           <div
@@ -9020,7 +9167,7 @@ exports[`Votes should toggle network selection from network filters 1`] = `
                         class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 kjTmcB justify-end"
                       >
                         <button
-                          class="OriginalButton__StyledButton-sc-1y2wptt-0 hsoUax"
+                          class="OriginalButton__StyledButton-sc-1y2wptt-0 izJbbP"
                           data-testid="AddressRow__select-0"
                           type="button"
                         >
@@ -9042,7 +9189,7 @@ exports[`Votes should toggle network selection from network filters 1`] = `
                         class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 DpDcR space-x-4"
                       >
                         <div
-                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 ktCSBk"
+                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 ktCSBk flex-shrink-0 flex-shrink-0"
                           data-testid="Avatar"
                         >
                           <div
@@ -9056,7 +9203,7 @@ exports[`Votes should toggle network selection from network filters 1`] = `
                           </div>
                         </div>
                         <div
-                          class="inline-flex items-center no-ligatures"
+                          class="w-full flex items-center no-ligatures overflow-hidden whitespace-nowrap"
                         >
                           <span
                             class="max-w-24 flex-auto truncate mr-2 font-semibold text-base text-theme-text"
@@ -9070,10 +9217,10 @@ exports[`Votes should toggle network selection from network filters 1`] = `
                             </span>
                           </span>
                           <span
-                            class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-secondary-500 dark:text-theme-secondary-700 truncate font-semibold text-base"
+                            class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-secondary-500 dark:text-theme-secondary-700 font-semibold text-base"
                             data-testid="address__wallet-address"
                           >
-                            D5sRKW…cvJtwb
+                            D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb
                           </span>
                         </div>
                       </div>
@@ -9127,7 +9274,7 @@ exports[`Votes should toggle network selection from network filters 1`] = `
                         class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 kjTmcB justify-end"
                       >
                         <button
-                          class="OriginalButton__StyledButton-sc-1y2wptt-0 hsoUax"
+                          class="OriginalButton__StyledButton-sc-1y2wptt-0 izJbbP"
                           data-testid="AddressRow__select-1"
                           type="button"
                         >
@@ -9149,7 +9296,7 @@ exports[`Votes should toggle network selection from network filters 1`] = `
                         class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 DpDcR space-x-4"
                       >
                         <div
-                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 ktCSBk"
+                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 ktCSBk flex-shrink-0 flex-shrink-0"
                           data-testid="Avatar"
                         >
                           <div
@@ -9163,13 +9310,13 @@ exports[`Votes should toggle network selection from network filters 1`] = `
                           </div>
                         </div>
                         <div
-                          class="inline-flex items-center no-ligatures"
+                          class="w-full flex items-center no-ligatures overflow-hidden whitespace-nowrap"
                         >
                           <span
-                            class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-text truncate font-semibold text-base"
+                            class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-text font-semibold text-base"
                             data-testid="address__wallet-address"
                           >
-                            DTLomV…JnG23z
+                            DTLomV8hpJheFDPnBGB5EtrDCfDZJnG23z
                           </span>
                         </div>
                       </div>
@@ -9223,7 +9370,7 @@ exports[`Votes should toggle network selection from network filters 1`] = `
                         class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 kjTmcB justify-end"
                       >
                         <button
-                          class="OriginalButton__StyledButton-sc-1y2wptt-0 blpaPr"
+                          class="OriginalButton__StyledButton-sc-1y2wptt-0 fqRthJ"
                           data-testid="AddressRow__select-2"
                           disabled=""
                           type="button"

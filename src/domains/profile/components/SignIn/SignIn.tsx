@@ -1,9 +1,10 @@
-import { Contracts, Helpers } from "@arkecosystem/platform-sdk-profiles";
+import { Contracts } from "@arkecosystem/platform-sdk-profiles";
 import { Button } from "app/components/Button";
 import { Divider } from "app/components/Divider";
 import { Form, FormField, FormLabel } from "app/components/Form";
 import { InputPassword } from "app/components/Input";
 import { Modal } from "app/components/Modal";
+import { useEnvironmentContext } from "app/contexts";
 import { ProfileAvatar } from "domains/profile/components/ProfileAvatar";
 import React, { useCallback, useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
@@ -22,6 +23,7 @@ const TIMEOUT = 60;
 
 export const SignIn = ({ isOpen, profile, onCancel, onClose, onSuccess }: SignInProps) => {
 	const { t } = useTranslation();
+	const { env } = useEnvironmentContext();
 
 	const methods = useForm({ mode: "onChange" });
 	const { errors, formState, register, setError } = methods;
@@ -68,10 +70,14 @@ export const SignIn = ({ isOpen, profile, onCancel, onClose, onSuccess }: SignIn
 	}, [errors, remainingTime, setError, t]);
 
 	const handleSubmit = ({ password }: any) => {
-		if (profile.auth().verifyPassword(password)) {
-			Helpers.MemoryPassword.set(password);
-			onSuccess(password);
-		} else {
+		let isValidPassword = true;
+
+		env.profiles().tap(profile.id(), (focusedProfile: Contracts.IProfile) => {
+			isValidPassword = focusedProfile.auth().verifyPassword(password);
+			return focusedProfile;
+		});
+
+		if (!isValidPassword) {
 			setCount(count + 1);
 
 			setError("password", {
@@ -80,7 +86,10 @@ export const SignIn = ({ isOpen, profile, onCancel, onClose, onSuccess }: SignIn
 					field: t("COMMON.PASSWORD"),
 				}),
 			});
+			return;
 		}
+
+		onSuccess(password);
 	};
 
 	if (!isOpen) {

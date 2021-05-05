@@ -45,10 +45,13 @@ exports[`NavigationBar should not render if no active profile 1`] = `
             class="flex"
           >
             <a
-              class="flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text"
+              class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
               href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
               title="Portfolio"
             >
+              <div
+                class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2"
+              />
               Portfolio
             </a>
           </li>
@@ -56,10 +59,13 @@ exports[`NavigationBar should not render if no active profile 1`] = `
             class="flex"
           >
             <a
-              class="flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text"
+              class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
               href="/test"
               title="test"
             >
+              <div
+                class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2"
+              />
               test
             </a>
           </li>
@@ -78,7 +84,7 @@ exports[`NavigationBar should not render if no active profile 1`] = `
                   class="NavigationBar__NavigationButtonWrapper-sc-1qsoskw-1 eUPnft group"
                 >
                   <button
-                    class="OriginalButton__StyledButton-sc-1y2wptt-0 lpqSIM"
+                    class="OriginalButton__StyledButton-sc-1y2wptt-0 fNHPRi"
                     data-testid="navbar__buttons--notifications"
                     type="button"
                   >
@@ -117,7 +123,7 @@ exports[`NavigationBar should not render if no active profile 1`] = `
               class="NavigationBar__NavigationButtonWrapper-sc-1qsoskw-1 eUPnft"
             >
               <button
-                class="OriginalButton__StyledButton-sc-1y2wptt-0 lpqSIM"
+                class="OriginalButton__StyledButton-sc-1y2wptt-0 fNHPRi"
                 data-testid="navbar__buttons--send"
                 type="button"
               >
@@ -147,7 +153,7 @@ exports[`NavigationBar should not render if no active profile 1`] = `
               class="NavigationBar__NavigationButtonWrapper-sc-1qsoskw-1 eUPnft"
             >
               <button
-                class="OriginalButton__StyledButton-sc-1y2wptt-0 lpqSIM"
+                class="OriginalButton__StyledButton-sc-1y2wptt-0 fNHPRi"
                 data-testid="navbar__buttons--receive"
                 type="button"
               >
@@ -223,7 +229,7 @@ exports[`NavigationBar should not render if no active profile 1`] = `
                   data-testid="navbar__useractions"
                 >
                   <div
-                    class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB"
+                    class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB flex-shrink-0"
                     data-testid="Avatar"
                   >
                     <div
@@ -296,10 +302,13 @@ exports[`NavigationBar should render 1`] = `
             class="flex"
           >
             <a
-              class="flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text"
+              class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
               href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
               title="Portfolio"
             >
+              <div
+                class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2"
+              />
               Portfolio
             </a>
           </li>
@@ -307,10 +316,13 @@ exports[`NavigationBar should render 1`] = `
             class="flex"
           >
             <a
-              class="flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text"
+              class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
               href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/plugins"
               title="Plugins"
             >
+              <div
+                class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2"
+              />
               Plugins
             </a>
           </li>
@@ -318,10 +330,13 @@ exports[`NavigationBar should render 1`] = `
             class="flex"
           >
             <a
-              class="flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text"
+              class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
               href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/exchange"
               title="Exchange"
             >
+              <div
+                class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2"
+              />
               Exchange
             </a>
           </li>
@@ -329,10 +344,13 @@ exports[`NavigationBar should render 1`] = `
             class="flex"
           >
             <a
-              class="flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text"
+              class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
               href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/news"
               title="News"
             >
+              <div
+                class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2"
+              />
               News
             </a>
           </li>
@@ -351,7 +369,7 @@ exports[`NavigationBar should render 1`] = `
                   class="NavigationBar__NavigationButtonWrapper-sc-1qsoskw-1 eUPnft group"
                 >
                   <button
-                    class="OriginalButton__StyledButton-sc-1y2wptt-0 lpqSIM"
+                    class="OriginalButton__StyledButton-sc-1y2wptt-0 fNHPRi"
                     data-testid="navbar__buttons--notifications"
                     type="button"
                   >
@@ -390,7 +408,7 @@ exports[`NavigationBar should render 1`] = `
               class="NavigationBar__NavigationButtonWrapper-sc-1qsoskw-1 eUPnft"
             >
               <button
-                class="OriginalButton__StyledButton-sc-1y2wptt-0 lpqSIM"
+                class="OriginalButton__StyledButton-sc-1y2wptt-0 fNHPRi"
                 data-testid="navbar__buttons--send"
                 type="button"
               >
@@ -420,7 +438,7 @@ exports[`NavigationBar should render 1`] = `
               class="NavigationBar__NavigationButtonWrapper-sc-1qsoskw-1 eUPnft"
             >
               <button
-                class="OriginalButton__StyledButton-sc-1y2wptt-0 lpqSIM"
+                class="OriginalButton__StyledButton-sc-1y2wptt-0 fNHPRi"
                 data-testid="navbar__buttons--receive"
                 type="button"
               >
@@ -496,7 +514,7 @@ exports[`NavigationBar should render 1`] = `
                   data-testid="navbar__useractions"
                 >
                   <div
-                    class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB"
+                    class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB flex-shrink-0"
                     data-testid="Avatar"
                   >
                     <div
@@ -631,10 +649,13 @@ exports[`NavigationBar should render with custom menu 1`] = `
             class="flex"
           >
             <a
-              class="flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text"
+              class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
               href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
               title="Portfolio"
             >
+              <div
+                class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2"
+              />
               Portfolio
             </a>
           </li>
@@ -642,10 +663,13 @@ exports[`NavigationBar should render with custom menu 1`] = `
             class="flex"
           >
             <a
-              class="flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text"
+              class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
               href="/test"
               title="test"
             >
+              <div
+                class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2"
+              />
               test
             </a>
           </li>
@@ -664,7 +688,7 @@ exports[`NavigationBar should render with custom menu 1`] = `
                   class="NavigationBar__NavigationButtonWrapper-sc-1qsoskw-1 eUPnft group"
                 >
                   <button
-                    class="OriginalButton__StyledButton-sc-1y2wptt-0 lpqSIM"
+                    class="OriginalButton__StyledButton-sc-1y2wptt-0 fNHPRi"
                     data-testid="navbar__buttons--notifications"
                     type="button"
                   >
@@ -703,7 +727,7 @@ exports[`NavigationBar should render with custom menu 1`] = `
               class="NavigationBar__NavigationButtonWrapper-sc-1qsoskw-1 eUPnft"
             >
               <button
-                class="OriginalButton__StyledButton-sc-1y2wptt-0 lpqSIM"
+                class="OriginalButton__StyledButton-sc-1y2wptt-0 fNHPRi"
                 data-testid="navbar__buttons--send"
                 type="button"
               >
@@ -733,7 +757,7 @@ exports[`NavigationBar should render with custom menu 1`] = `
               class="NavigationBar__NavigationButtonWrapper-sc-1qsoskw-1 eUPnft"
             >
               <button
-                class="OriginalButton__StyledButton-sc-1y2wptt-0 lpqSIM"
+                class="OriginalButton__StyledButton-sc-1y2wptt-0 fNHPRi"
                 data-testid="navbar__buttons--receive"
                 type="button"
               >
@@ -809,7 +833,7 @@ exports[`NavigationBar should render with custom menu 1`] = `
                   data-testid="navbar__useractions"
                 >
                   <div
-                    class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB"
+                    class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB flex-shrink-0"
                     data-testid="Avatar"
                   >
                     <div
@@ -891,7 +915,7 @@ exports[`NavigationBar should render with shadow if there is a scroll 1`] = `
               class="NavigationBar__NavigationButtonWrapper-sc-1qsoskw-1 eUPnft"
             >
               <button
-                class="OriginalButton__StyledButton-sc-1y2wptt-0 jNneja"
+                class="OriginalButton__StyledButton-sc-1y2wptt-0 epuIM"
                 data-testid="navbar__buttons--send"
                 disabled=""
                 type="button"
@@ -922,7 +946,7 @@ exports[`NavigationBar should render with shadow if there is a scroll 1`] = `
               class="NavigationBar__NavigationButtonWrapper-sc-1qsoskw-1 eUPnft"
             >
               <button
-                class="OriginalButton__StyledButton-sc-1y2wptt-0 jNneja"
+                class="OriginalButton__StyledButton-sc-1y2wptt-0 epuIM"
                 data-testid="navbar__buttons--receive"
                 disabled=""
                 type="button"
@@ -989,7 +1013,7 @@ exports[`NavigationBar should render with shadow if there is a scroll 1`] = `
                   data-testid="navbar__useractions"
                 >
                   <div
-                    class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB"
+                    class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB flex-shrink-0"
                     data-testid="Avatar"
                   >
                     <div
@@ -1062,10 +1086,13 @@ exports[`NavigationBar should render with title 1`] = `
             class="flex"
           >
             <a
-              class="flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text"
+              class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
               href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
               title="Portfolio"
             >
+              <div
+                class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2"
+              />
               Portfolio
             </a>
           </li>
@@ -1073,10 +1100,13 @@ exports[`NavigationBar should render with title 1`] = `
             class="flex"
           >
             <a
-              class="flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text"
+              class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
               href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/plugins"
               title="Plugins"
             >
+              <div
+                class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2"
+              />
               Plugins
             </a>
           </li>
@@ -1084,10 +1114,13 @@ exports[`NavigationBar should render with title 1`] = `
             class="flex"
           >
             <a
-              class="flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text"
+              class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
               href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/exchange"
               title="Exchange"
             >
+              <div
+                class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2"
+              />
               Exchange
             </a>
           </li>
@@ -1095,10 +1128,13 @@ exports[`NavigationBar should render with title 1`] = `
             class="flex"
           >
             <a
-              class="flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text"
+              class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
               href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/news"
               title="News"
             >
+              <div
+                class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2"
+              />
               News
             </a>
           </li>
@@ -1117,7 +1153,7 @@ exports[`NavigationBar should render with title 1`] = `
                   class="NavigationBar__NavigationButtonWrapper-sc-1qsoskw-1 eUPnft group"
                 >
                   <button
-                    class="OriginalButton__StyledButton-sc-1y2wptt-0 lpqSIM"
+                    class="OriginalButton__StyledButton-sc-1y2wptt-0 fNHPRi"
                     data-testid="navbar__buttons--notifications"
                     type="button"
                   >
@@ -1156,7 +1192,7 @@ exports[`NavigationBar should render with title 1`] = `
               class="NavigationBar__NavigationButtonWrapper-sc-1qsoskw-1 eUPnft"
             >
               <button
-                class="OriginalButton__StyledButton-sc-1y2wptt-0 lpqSIM"
+                class="OriginalButton__StyledButton-sc-1y2wptt-0 fNHPRi"
                 data-testid="navbar__buttons--send"
                 type="button"
               >
@@ -1186,7 +1222,7 @@ exports[`NavigationBar should render with title 1`] = `
               class="NavigationBar__NavigationButtonWrapper-sc-1qsoskw-1 eUPnft"
             >
               <button
-                class="OriginalButton__StyledButton-sc-1y2wptt-0 lpqSIM"
+                class="OriginalButton__StyledButton-sc-1y2wptt-0 fNHPRi"
                 data-testid="navbar__buttons--receive"
                 type="button"
               >
@@ -1262,7 +1298,7 @@ exports[`NavigationBar should render with title 1`] = `
                   data-testid="navbar__useractions"
                 >
                   <div
-                    class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB"
+                    class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB flex-shrink-0"
                     data-testid="Avatar"
                   >
                     <div

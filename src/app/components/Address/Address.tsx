@@ -1,6 +1,6 @@
 import { TruncateEnd } from "app/components/TruncateEnd";
-import { TruncateMiddle } from "app/components/TruncateMiddle";
-import React from "react";
+import { useTextTruncate } from "app/hooks/use-text-truncate";
+import React, { useRef } from "react";
 import { Size } from "types";
 
 type Props = {
@@ -24,6 +24,9 @@ export const Address = ({
 	maxNameChars,
 	size,
 }: Props) => {
+	const ref = useRef(null);
+	const [TruncatedAddress] = useTextTruncate({ text: address, parentRef: ref });
+
 	const getFontSize = (size?: Size) => {
 		switch (size) {
 			case "sm":
@@ -47,7 +50,7 @@ export const Address = ({
 	};
 
 	return (
-		<div className="inline-flex items-center no-ligatures">
+		<div ref={ref} className="w-full flex items-center no-ligatures overflow-hidden whitespace-nowrap">
 			{walletName && (
 				<span
 					data-testid="address__wallet-name"
@@ -63,14 +66,12 @@ export const Address = ({
 				</span>
 			)}
 			{address && (
-				<TruncateMiddle
-					text={address}
-					maxChars={maxChars}
+				<TruncatedAddress
 					data-testid="address__wallet-address"
 					className={`${
 						addressClass ||
 						(walletName ? "text-theme-secondary-500 dark:text-theme-secondary-700" : "text-theme-text")
-					} truncate ${getFontWeight(fontWeight)} ${getFontSize(size)}`}
+					} ${getFontWeight(fontWeight)} ${getFontSize(size)}`}
 				/>
 			)}
 		</div>

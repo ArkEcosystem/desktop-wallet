@@ -112,7 +112,7 @@ exports[`Wallets should load more wallets 1`] = `
               class="flex space-x-3"
             >
               <button
-                class="OriginalButton__StyledButton-sc-1y2wptt-0 hsoUax"
+                class="OriginalButton__StyledButton-sc-1y2wptt-0 izJbbP"
                 data-testid="WalletControls__create-wallet"
                 type="button"
               >
@@ -138,7 +138,7 @@ exports[`Wallets should load more wallets 1`] = `
                 </div>
               </button>
               <button
-                class="OriginalButton__StyledButton-sc-1y2wptt-0 hsoUax"
+                class="OriginalButton__StyledButton-sc-1y2wptt-0 izJbbP"
                 data-testid="WalletControls__import-wallet"
                 type="button"
               >
@@ -164,7 +164,7 @@ exports[`Wallets should load more wallets 1`] = `
                 </div>
               </button>
               <button
-                class="OriginalButton__StyledButton-sc-1y2wptt-0 hsoUax"
+                class="OriginalButton__StyledButton-sc-1y2wptt-0 izJbbP"
                 data-testid="WalletControls__import-ledger"
                 type="button"
               >
@@ -330,7 +330,7 @@ exports[`Wallets should load more wallets 1`] = `
                       class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 DpDcR space-x-4"
                     >
                       <div
-                        class="-space-x-2"
+                        class="-space-x-2 flex-shrink-0"
                       >
                         <div
                           aria-label="ARK Devnet"
@@ -349,7 +349,7 @@ exports[`Wallets should load more wallets 1`] = `
                           </div>
                         </div>
                         <div
-                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 ksomUO group-hover:ring-theme-secondary-100 group-hover:bg-secondary-100 dark:group-hover:ring-black dark:group-hover:bg-black ring-theme-background"
+                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 ksomUO group-hover:ring-theme-secondary-100 group-hover:bg-secondary-100 dark:group-hover:ring-black dark:group-hover:bg-black ring-theme-background flex-shrink-0"
                           data-testid="Avatar"
                         >
                           <div
@@ -364,7 +364,7 @@ exports[`Wallets should load more wallets 1`] = `
                         </div>
                       </div>
                       <div
-                        class="inline-flex items-center no-ligatures"
+                        class="w-full flex items-center no-ligatures overflow-hidden whitespace-nowrap"
                       >
                         <span
                           class="max-w-24 flex-auto truncate mr-2 font-semibold text-base text-theme-text"
@@ -378,10 +378,10 @@ exports[`Wallets should load more wallets 1`] = `
                           </span>
                         </span>
                         <span
-                          class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-secondary-500 dark:text-theme-secondary-700 truncate font-semibold text-base"
+                          class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-secondary-500 dark:text-theme-secondary-700 font-semibold text-base"
                           data-testid="address__wallet-address"
                         >
-                          D8rr7B1d6…VBMs6YUYD
+                          D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD
                         </span>
                       </div>
                     </div>
@@ -427,7 +427,7 @@ exports[`Wallets should load more wallets 1`] = `
                       class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 DpDcR space-x-4"
                     >
                       <div
-                        class="-space-x-2"
+                        class="-space-x-2 flex-shrink-0"
                       >
                         <div
                           aria-label="ARK Devnet"
@@ -446,7 +446,7 @@ exports[`Wallets should load more wallets 1`] = `
                           </div>
                         </div>
                         <div
-                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 ksomUO group-hover:ring-theme-secondary-100 group-hover:bg-secondary-100 dark:group-hover:ring-black dark:group-hover:bg-black ring-theme-background"
+                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 ksomUO group-hover:ring-theme-secondary-100 group-hover:bg-secondary-100 dark:group-hover:ring-black dark:group-hover:bg-black ring-theme-background flex-shrink-0"
                           data-testid="Avatar"
                         >
                           <div
@@ -461,7 +461,7 @@ exports[`Wallets should load more wallets 1`] = `
                         </div>
                       </div>
                       <div
-                        class="inline-flex items-center no-ligatures"
+                        class="w-full flex items-center no-ligatures overflow-hidden whitespace-nowrap"
                       >
                         <span
                           class="max-w-24 flex-auto truncate mr-2 font-semibold text-base text-theme-text"
@@ -475,10 +475,10 @@ exports[`Wallets should load more wallets 1`] = `
                           </span>
                         </span>
                         <span
-                          class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-secondary-500 dark:text-theme-secondary-700 truncate font-semibold text-base"
+                          class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-secondary-500 dark:text-theme-secondary-700 font-semibold text-base"
                           data-testid="address__wallet-address"
                         >
-                          D5sRKWckH…yC3cvJtwb
+                          D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb
                         </span>
                       </div>
                     </div>
@@ -539,7 +539,7 @@ exports[`Wallets should load more wallets 1`] = `
                       class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 DpDcR space-x-4"
                     >
                       <div
-                        class="-space-x-2"
+                        class="-space-x-2 flex-shrink-0"
                       >
                         <div
                           aria-label="ARK"
@@ -558,7 +558,7 @@ exports[`Wallets should load more wallets 1`] = `
                           </div>
                         </div>
                         <div
-                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 ksomUO group-hover:ring-theme-secondary-100 group-hover:bg-secondary-100 dark:group-hover:ring-black dark:group-hover:bg-black ring-theme-background"
+                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 ksomUO group-hover:ring-theme-secondary-100 group-hover:bg-secondary-100 dark:group-hover:ring-black dark:group-hover:bg-black ring-theme-background flex-shrink-0"
                           data-testid="Avatar"
                         >
                           <div
@@ -573,13 +573,13 @@ exports[`Wallets should load more wallets 1`] = `
                         </div>
                       </div>
                       <div
-                        class="inline-flex items-center no-ligatures"
+                        class="w-full flex items-center no-ligatures overflow-hidden whitespace-nowrap"
                       >
                         <span
-                          class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-text truncate font-semibold text-base"
+                          class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-text font-semibold text-base"
                           data-testid="address__wallet-address"
                         >
-                          AdVSe37ni…HF4LpLoiX
+                          AdVSe37niA3uFUPgCgMUH2tMsHF4LpLoiX
                         </span>
                       </div>
                     </div>
@@ -753,7 +753,7 @@ exports[`Wallets should open and close ledger import modal 1`] = `
               class="flex space-x-3"
             >
               <button
-                class="OriginalButton__StyledButton-sc-1y2wptt-0 hsoUax"
+                class="OriginalButton__StyledButton-sc-1y2wptt-0 izJbbP"
                 data-testid="WalletControls__create-wallet"
                 type="button"
               >
@@ -779,7 +779,7 @@ exports[`Wallets should open and close ledger import modal 1`] = `
                 </div>
               </button>
               <button
-                class="OriginalButton__StyledButton-sc-1y2wptt-0 hsoUax"
+                class="OriginalButton__StyledButton-sc-1y2wptt-0 izJbbP"
                 data-testid="WalletControls__import-wallet"
                 type="button"
               >
@@ -805,7 +805,7 @@ exports[`Wallets should open and close ledger import modal 1`] = `
                 </div>
               </button>
               <button
-                class="OriginalButton__StyledButton-sc-1y2wptt-0 hsoUax"
+                class="OriginalButton__StyledButton-sc-1y2wptt-0 izJbbP"
                 data-testid="WalletControls__import-ledger"
                 type="button"
               >
@@ -971,7 +971,7 @@ exports[`Wallets should open and close ledger import modal 1`] = `
                       class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 DpDcR space-x-4"
                     >
                       <div
-                        class="-space-x-2"
+                        class="-space-x-2 flex-shrink-0"
                       >
                         <div
                           aria-label="ARK Devnet"
@@ -990,7 +990,7 @@ exports[`Wallets should open and close ledger import modal 1`] = `
                           </div>
                         </div>
                         <div
-                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 ksomUO group-hover:ring-theme-secondary-100 group-hover:bg-secondary-100 dark:group-hover:ring-black dark:group-hover:bg-black ring-theme-background"
+                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 ksomUO group-hover:ring-theme-secondary-100 group-hover:bg-secondary-100 dark:group-hover:ring-black dark:group-hover:bg-black ring-theme-background flex-shrink-0"
                           data-testid="Avatar"
                         >
                           <div
@@ -1005,7 +1005,7 @@ exports[`Wallets should open and close ledger import modal 1`] = `
                         </div>
                       </div>
                       <div
-                        class="inline-flex items-center no-ligatures"
+                        class="w-full flex items-center no-ligatures overflow-hidden whitespace-nowrap"
                       >
                         <span
                           class="max-w-24 flex-auto truncate mr-2 font-semibold text-base text-theme-text"
@@ -1019,10 +1019,10 @@ exports[`Wallets should open and close ledger import modal 1`] = `
                           </span>
                         </span>
                         <span
-                          class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-secondary-500 dark:text-theme-secondary-700 truncate font-semibold text-base"
+                          class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-secondary-500 dark:text-theme-secondary-700 font-semibold text-base"
                           data-testid="address__wallet-address"
                         >
-                          D8rr7B1d6…VBMs6YUYD
+                          D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD
                         </span>
                       </div>
                     </div>
@@ -1068,7 +1068,7 @@ exports[`Wallets should open and close ledger import modal 1`] = `
                       class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 DpDcR space-x-4"
                     >
                       <div
-                        class="-space-x-2"
+                        class="-space-x-2 flex-shrink-0"
                       >
                         <div
                           aria-label="ARK Devnet"
@@ -1087,7 +1087,7 @@ exports[`Wallets should open and close ledger import modal 1`] = `
                           </div>
                         </div>
                         <div
-                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 ksomUO group-hover:ring-theme-secondary-100 group-hover:bg-secondary-100 dark:group-hover:ring-black dark:group-hover:bg-black ring-theme-background"
+                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 ksomUO group-hover:ring-theme-secondary-100 group-hover:bg-secondary-100 dark:group-hover:ring-black dark:group-hover:bg-black ring-theme-background flex-shrink-0"
                           data-testid="Avatar"
                         >
                           <div
@@ -1102,7 +1102,7 @@ exports[`Wallets should open and close ledger import modal 1`] = `
                         </div>
                       </div>
                       <div
-                        class="inline-flex items-center no-ligatures"
+                        class="w-full flex items-center no-ligatures overflow-hidden whitespace-nowrap"
                       >
                         <span
                           class="max-w-24 flex-auto truncate mr-2 font-semibold text-base text-theme-text"
@@ -1116,10 +1116,10 @@ exports[`Wallets should open and close ledger import modal 1`] = `
                           </span>
                         </span>
                         <span
-                          class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-secondary-500 dark:text-theme-secondary-700 truncate font-semibold text-base"
+                          class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-secondary-500 dark:text-theme-secondary-700 font-semibold text-base"
                           data-testid="address__wallet-address"
                         >
-                          D5sRKWckH…yC3cvJtwb
+                          D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb
                         </span>
                       </div>
                     </div>
@@ -1180,7 +1180,7 @@ exports[`Wallets should open and close ledger import modal 1`] = `
                       class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 DpDcR space-x-4"
                     >
                       <div
-                        class="-space-x-2"
+                        class="-space-x-2 flex-shrink-0"
                       >
                         <div
                           aria-label="ARK"
@@ -1199,7 +1199,7 @@ exports[`Wallets should open and close ledger import modal 1`] = `
                           </div>
                         </div>
                         <div
-                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 ksomUO group-hover:ring-theme-secondary-100 group-hover:bg-secondary-100 dark:group-hover:ring-black dark:group-hover:bg-black ring-theme-background"
+                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 ksomUO group-hover:ring-theme-secondary-100 group-hover:bg-secondary-100 dark:group-hover:ring-black dark:group-hover:bg-black ring-theme-background flex-shrink-0"
                           data-testid="Avatar"
                         >
                           <div
@@ -1214,13 +1214,13 @@ exports[`Wallets should open and close ledger import modal 1`] = `
                         </div>
                       </div>
                       <div
-                        class="inline-flex items-center no-ligatures"
+                        class="w-full flex items-center no-ligatures overflow-hidden whitespace-nowrap"
                       >
                         <span
-                          class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-text truncate font-semibold text-base"
+                          class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-text font-semibold text-base"
                           data-testid="address__wallet-address"
                         >
-                          AdVSe37ni…HF4LpLoiX
+                          AdVSe37niA3uFUPgCgMUH2tMsHF4LpLoiX
                         </span>
                       </div>
                     </div>
@@ -1292,7 +1292,7 @@ exports[`Wallets should open and close ledger import modal 1`] = `
             class="absolute top-0 right-0 z-50 mt-5 mr-5 rounded transition-all duration-100 ease-linear bg-theme-primary-100 hover:bg-theme-primary-300 dark:bg-theme-secondary-800 dark:text-theme-secondary-600 dark:hover:bg-theme-secondary-700 dark:hover:text-theme-secondary-400"
           >
             <button
-              class="OriginalButton__StyledButton-sc-1y2wptt-0 lpqSIM w-11 h-11"
+              class="OriginalButton__StyledButton-sc-1y2wptt-0 fNHPRi w-11 h-11"
               data-testid="modal__close-btn"
               type="button"
             >
@@ -1482,7 +1482,7 @@ exports[`Wallets should render empty profile wallets 1`] = `
               class="flex space-x-3"
             >
               <button
-                class="OriginalButton__StyledButton-sc-1y2wptt-0 hsoUax"
+                class="OriginalButton__StyledButton-sc-1y2wptt-0 izJbbP"
                 data-testid="WalletControls__create-wallet"
                 type="button"
               >
@@ -1508,7 +1508,7 @@ exports[`Wallets should render empty profile wallets 1`] = `
                 </div>
               </button>
               <button
-                class="OriginalButton__StyledButton-sc-1y2wptt-0 hsoUax"
+                class="OriginalButton__StyledButton-sc-1y2wptt-0 izJbbP"
                 data-testid="WalletControls__import-wallet"
                 type="button"
               >
@@ -1534,7 +1534,7 @@ exports[`Wallets should render empty profile wallets 1`] = `
                 </div>
               </button>
               <button
-                class="OriginalButton__StyledButton-sc-1y2wptt-0 hsoUax"
+                class="OriginalButton__StyledButton-sc-1y2wptt-0 izJbbP"
                 data-testid="WalletControls__import-ledger"
                 type="button"
               >
@@ -1567,7 +1567,7 @@ exports[`Wallets should render empty profile wallets 1`] = `
         data-testid="WalletsList"
       >
         <div
-          class="border border-solid border-theme-secondary-300 dark:border-theme-secondary-800 rounded-lg text-theme-secondary-text p-6"
+          class="border border-solid border-theme-secondary-300 dark:border-theme-secondary-800 rounded-lg text-theme-secondary-text text-center leading-5 p-6"
           data-testid="EmptyBlock"
         >
           <div>
@@ -1692,7 +1692,7 @@ exports[`Wallets should render grid 1`] = `
               class="flex space-x-3"
             >
               <button
-                class="OriginalButton__StyledButton-sc-1y2wptt-0 hsoUax"
+                class="OriginalButton__StyledButton-sc-1y2wptt-0 izJbbP"
                 data-testid="WalletControls__create-wallet"
                 type="button"
               >
@@ -1718,7 +1718,7 @@ exports[`Wallets should render grid 1`] = `
                 </div>
               </button>
               <button
-                class="OriginalButton__StyledButton-sc-1y2wptt-0 hsoUax"
+                class="OriginalButton__StyledButton-sc-1y2wptt-0 izJbbP"
                 data-testid="WalletControls__import-wallet"
                 type="button"
               >
@@ -1744,7 +1744,7 @@ exports[`Wallets should render grid 1`] = `
                 </div>
               </button>
               <button
-                class="OriginalButton__StyledButton-sc-1y2wptt-0 hsoUax"
+                class="OriginalButton__StyledButton-sc-1y2wptt-0 izJbbP"
                 data-testid="WalletControls__import-ledger"
                 type="button"
               >
@@ -1826,7 +1826,7 @@ exports[`Wallets should render grid 1`] = `
                             </div>
                           </div>
                           <div
-                            class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB"
+                            class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB flex-shrink-0"
                             data-testid="Avatar"
                           >
                             <div
@@ -1853,9 +1853,14 @@ exports[`Wallets should render grid 1`] = `
                         33.75089801 DARK
                       </span>
                       <span
-                        class="mt-1 text-xs font-semibold truncate text-theme-secondary-text no-ligatures"
+                        class="mt-1 text-xs font-semibold text-theme-secondary-text no-ligatures overflow-hidden whitespace-nowrap"
                       >
-                        D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD
+                        <span
+                          class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap"
+                          data-testid="TruncateMiddle"
+                        >
+                          D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD
+                        </span>
                       </span>
                     </div>
                     <div
@@ -1902,7 +1907,7 @@ exports[`Wallets should render grid 1`] = `
                             </div>
                           </div>
                           <div
-                            class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB"
+                            class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB flex-shrink-0"
                             data-testid="Avatar"
                           >
                             <div
@@ -1929,9 +1934,14 @@ exports[`Wallets should render grid 1`] = `
                         57.68 DARK
                       </span>
                       <span
-                        class="mt-1 text-xs font-semibold truncate text-theme-secondary-text no-ligatures"
+                        class="mt-1 text-xs font-semibold text-theme-secondary-text no-ligatures overflow-hidden whitespace-nowrap"
                       >
-                        D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb
+                        <span
+                          class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap"
+                          data-testid="TruncateMiddle"
+                        >
+                          D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb
+                        </span>
                       </span>
                     </div>
                     <div
@@ -1993,7 +2003,7 @@ exports[`Wallets should render grid 1`] = `
                             </div>
                           </div>
                           <div
-                            class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB"
+                            class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB flex-shrink-0"
                             data-testid="Avatar"
                           >
                             <div
@@ -2018,9 +2028,14 @@ exports[`Wallets should render grid 1`] = `
                         50,114.21127898 ARK
                       </span>
                       <span
-                        class="mt-1 text-xs font-semibold truncate text-theme-secondary-text no-ligatures"
+                        class="mt-1 text-xs font-semibold text-theme-secondary-text no-ligatures overflow-hidden whitespace-nowrap"
                       >
-                        AdVSe37niA3uFUPgCgMUH2tMsHF4LpLoiX
+                        <span
+                          class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap"
+                          data-testid="TruncateMiddle"
+                        >
+                          AdVSe37niA3uFUPgCgMUH2tMsHF4LpLoiX
+                        </span>
                       </span>
                     </div>
                     <div
@@ -2165,7 +2180,7 @@ exports[`Wallets should render grid in loading state 1`] = `
               class="flex space-x-3"
             >
               <button
-                class="OriginalButton__StyledButton-sc-1y2wptt-0 hsoUax"
+                class="OriginalButton__StyledButton-sc-1y2wptt-0 izJbbP"
                 data-testid="WalletControls__create-wallet"
                 type="button"
               >
@@ -2191,7 +2206,7 @@ exports[`Wallets should render grid in loading state 1`] = `
                 </div>
               </button>
               <button
-                class="OriginalButton__StyledButton-sc-1y2wptt-0 hsoUax"
+                class="OriginalButton__StyledButton-sc-1y2wptt-0 izJbbP"
                 data-testid="WalletControls__import-wallet"
                 type="button"
               >
@@ -2217,7 +2232,7 @@ exports[`Wallets should render grid in loading state 1`] = `
                 </div>
               </button>
               <button
-                class="OriginalButton__StyledButton-sc-1y2wptt-0 hsoUax"
+                class="OriginalButton__StyledButton-sc-1y2wptt-0 izJbbP"
                 data-testid="WalletControls__import-ledger"
                 type="button"
               >
@@ -2299,7 +2314,7 @@ exports[`Wallets should render grid in loading state 1`] = `
                             </div>
                           </div>
                           <div
-                            class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB"
+                            class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB flex-shrink-0"
                             data-testid="Avatar"
                           >
                             <div
@@ -2326,9 +2341,14 @@ exports[`Wallets should render grid in loading state 1`] = `
                         33.75089801 DARK
                       </span>
                       <span
-                        class="mt-1 text-xs font-semibold truncate text-theme-secondary-text no-ligatures"
+                        class="mt-1 text-xs font-semibold text-theme-secondary-text no-ligatures overflow-hidden whitespace-nowrap"
                       >
-                        D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD
+                        <span
+                          class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap"
+                          data-testid="TruncateMiddle"
+                        >
+                          D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD
+                        </span>
                       </span>
                     </div>
                     <div
@@ -2375,7 +2395,7 @@ exports[`Wallets should render grid in loading state 1`] = `
                             </div>
                           </div>
                           <div
-                            class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB"
+                            class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB flex-shrink-0"
                             data-testid="Avatar"
                           >
                             <div
@@ -2402,9 +2422,14 @@ exports[`Wallets should render grid in loading state 1`] = `
                         57.68 DARK
                       </span>
                       <span
-                        class="mt-1 text-xs font-semibold truncate text-theme-secondary-text no-ligatures"
+                        class="mt-1 text-xs font-semibold text-theme-secondary-text no-ligatures overflow-hidden whitespace-nowrap"
                       >
-                        D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb
+                        <span
+                          class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap"
+                          data-testid="TruncateMiddle"
+                        >
+                          D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb
+                        </span>
                       </span>
                     </div>
                     <div
@@ -2466,7 +2491,7 @@ exports[`Wallets should render grid in loading state 1`] = `
                             </div>
                           </div>
                           <div
-                            class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB"
+                            class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB flex-shrink-0"
                             data-testid="Avatar"
                           >
                             <div
@@ -2491,9 +2516,14 @@ exports[`Wallets should render grid in loading state 1`] = `
                         50,114.21127898 ARK
                       </span>
                       <span
-                        class="mt-1 text-xs font-semibold truncate text-theme-secondary-text no-ligatures"
+                        class="mt-1 text-xs font-semibold text-theme-secondary-text no-ligatures overflow-hidden whitespace-nowrap"
                       >
-                        AdVSe37niA3uFUPgCgMUH2tMsHF4LpLoiX
+                        <span
+                          class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap"
+                          data-testid="TruncateMiddle"
+                        >
+                          AdVSe37niA3uFUPgCgMUH2tMsHF4LpLoiX
+                        </span>
                       </span>
                     </div>
                     <div
@@ -2638,7 +2668,7 @@ exports[`Wallets should render list 1`] = `
               class="flex space-x-3"
             >
               <button
-                class="OriginalButton__StyledButton-sc-1y2wptt-0 hsoUax"
+                class="OriginalButton__StyledButton-sc-1y2wptt-0 izJbbP"
                 data-testid="WalletControls__create-wallet"
                 type="button"
               >
@@ -2664,7 +2694,7 @@ exports[`Wallets should render list 1`] = `
                 </div>
               </button>
               <button
-                class="OriginalButton__StyledButton-sc-1y2wptt-0 hsoUax"
+                class="OriginalButton__StyledButton-sc-1y2wptt-0 izJbbP"
                 data-testid="WalletControls__import-wallet"
                 type="button"
               >
@@ -2690,7 +2720,7 @@ exports[`Wallets should render list 1`] = `
                 </div>
               </button>
               <button
-                class="OriginalButton__StyledButton-sc-1y2wptt-0 hsoUax"
+                class="OriginalButton__StyledButton-sc-1y2wptt-0 izJbbP"
                 data-testid="WalletControls__import-ledger"
                 type="button"
               >
@@ -2856,7 +2886,7 @@ exports[`Wallets should render list 1`] = `
                       class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 DpDcR space-x-4"
                     >
                       <div
-                        class="-space-x-2"
+                        class="-space-x-2 flex-shrink-0"
                       >
                         <div
                           aria-label="ARK Devnet"
@@ -2875,7 +2905,7 @@ exports[`Wallets should render list 1`] = `
                           </div>
                         </div>
                         <div
-                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 ksomUO group-hover:ring-theme-secondary-100 group-hover:bg-secondary-100 dark:group-hover:ring-black dark:group-hover:bg-black ring-theme-background"
+                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 ksomUO group-hover:ring-theme-secondary-100 group-hover:bg-secondary-100 dark:group-hover:ring-black dark:group-hover:bg-black ring-theme-background flex-shrink-0"
                           data-testid="Avatar"
                         >
                           <div
@@ -2890,7 +2920,7 @@ exports[`Wallets should render list 1`] = `
                         </div>
                       </div>
                       <div
-                        class="inline-flex items-center no-ligatures"
+                        class="w-full flex items-center no-ligatures overflow-hidden whitespace-nowrap"
                       >
                         <span
                           class="max-w-24 flex-auto truncate mr-2 font-semibold text-base text-theme-text"
@@ -2904,10 +2934,10 @@ exports[`Wallets should render list 1`] = `
                           </span>
                         </span>
                         <span
-                          class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-secondary-500 dark:text-theme-secondary-700 truncate font-semibold text-base"
+                          class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-secondary-500 dark:text-theme-secondary-700 font-semibold text-base"
                           data-testid="address__wallet-address"
                         >
-                          D8rr7B1d6…VBMs6YUYD
+                          D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD
                         </span>
                       </div>
                     </div>
@@ -2953,7 +2983,7 @@ exports[`Wallets should render list 1`] = `
                       class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 DpDcR space-x-4"
                     >
                       <div
-                        class="-space-x-2"
+                        class="-space-x-2 flex-shrink-0"
                       >
                         <div
                           aria-label="ARK Devnet"
@@ -2972,7 +3002,7 @@ exports[`Wallets should render list 1`] = `
                           </div>
                         </div>
                         <div
-                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 ksomUO group-hover:ring-theme-secondary-100 group-hover:bg-secondary-100 dark:group-hover:ring-black dark:group-hover:bg-black ring-theme-background"
+                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 ksomUO group-hover:ring-theme-secondary-100 group-hover:bg-secondary-100 dark:group-hover:ring-black dark:group-hover:bg-black ring-theme-background flex-shrink-0"
                           data-testid="Avatar"
                         >
                           <div
@@ -2987,7 +3017,7 @@ exports[`Wallets should render list 1`] = `
                         </div>
                       </div>
                       <div
-                        class="inline-flex items-center no-ligatures"
+                        class="w-full flex items-center no-ligatures overflow-hidden whitespace-nowrap"
                       >
                         <span
                           class="max-w-24 flex-auto truncate mr-2 font-semibold text-base text-theme-text"
@@ -3001,10 +3031,10 @@ exports[`Wallets should render list 1`] = `
                           </span>
                         </span>
                         <span
-                          class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-secondary-500 dark:text-theme-secondary-700 truncate font-semibold text-base"
+                          class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-secondary-500 dark:text-theme-secondary-700 font-semibold text-base"
                           data-testid="address__wallet-address"
                         >
-                          D5sRKWckH…yC3cvJtwb
+                          D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb
                         </span>
                       </div>
                     </div>
@@ -3065,7 +3095,7 @@ exports[`Wallets should render list 1`] = `
                       class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 DpDcR space-x-4"
                     >
                       <div
-                        class="-space-x-2"
+                        class="-space-x-2 flex-shrink-0"
                       >
                         <div
                           aria-label="ARK"
@@ -3084,7 +3114,7 @@ exports[`Wallets should render list 1`] = `
                           </div>
                         </div>
                         <div
-                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 ksomUO group-hover:ring-theme-secondary-100 group-hover:bg-secondary-100 dark:group-hover:ring-black dark:group-hover:bg-black ring-theme-background"
+                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 ksomUO group-hover:ring-theme-secondary-100 group-hover:bg-secondary-100 dark:group-hover:ring-black dark:group-hover:bg-black ring-theme-background flex-shrink-0"
                           data-testid="Avatar"
                         >
                           <div
@@ -3099,13 +3129,13 @@ exports[`Wallets should render list 1`] = `
                         </div>
                       </div>
                       <div
-                        class="inline-flex items-center no-ligatures"
+                        class="w-full flex items-center no-ligatures overflow-hidden whitespace-nowrap"
                       >
                         <span
-                          class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-text truncate font-semibold text-base"
+                          class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-text font-semibold text-base"
                           data-testid="address__wallet-address"
                         >
-                          AdVSe37ni…HF4LpLoiX
+                          AdVSe37niA3uFUPgCgMUH2tMsHF4LpLoiX
                         </span>
                       </div>
                     </div>
@@ -3279,7 +3309,7 @@ exports[`Wallets should render without testnet wallets 1`] = `
               class="flex space-x-3"
             >
               <button
-                class="OriginalButton__StyledButton-sc-1y2wptt-0 hsoUax"
+                class="OriginalButton__StyledButton-sc-1y2wptt-0 izJbbP"
                 data-testid="WalletControls__create-wallet"
                 type="button"
               >
@@ -3305,7 +3335,7 @@ exports[`Wallets should render without testnet wallets 1`] = `
                 </div>
               </button>
               <button
-                class="OriginalButton__StyledButton-sc-1y2wptt-0 hsoUax"
+                class="OriginalButton__StyledButton-sc-1y2wptt-0 izJbbP"
                 data-testid="WalletControls__import-wallet"
                 type="button"
               >
@@ -3331,7 +3361,7 @@ exports[`Wallets should render without testnet wallets 1`] = `
                 </div>
               </button>
               <button
-                class="OriginalButton__StyledButton-sc-1y2wptt-0 hsoUax"
+                class="OriginalButton__StyledButton-sc-1y2wptt-0 izJbbP"
                 data-testid="WalletControls__import-ledger"
                 type="button"
               >
@@ -3413,7 +3443,7 @@ exports[`Wallets should render without testnet wallets 1`] = `
                             </div>
                           </div>
                           <div
-                            class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB"
+                            class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB flex-shrink-0"
                             data-testid="Avatar"
                           >
                             <div
@@ -3438,9 +3468,14 @@ exports[`Wallets should render without testnet wallets 1`] = `
                         50,114.21127898 ARK
                       </span>
                       <span
-                        class="mt-1 text-xs font-semibold truncate text-theme-secondary-text no-ligatures"
+                        class="mt-1 text-xs font-semibold text-theme-secondary-text no-ligatures overflow-hidden whitespace-nowrap"
                       >
-                        AdVSe37niA3uFUPgCgMUH2tMsHF4LpLoiX
+                        <span
+                          class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap"
+                          data-testid="TruncateMiddle"
+                        >
+                          AdVSe37niA3uFUPgCgMUH2tMsHF4LpLoiX
+                        </span>
                       </span>
                     </div>
                     <div
@@ -3669,7 +3704,7 @@ exports[`Wallets should toggle between grid and list view 1`] = `
               class="flex space-x-3"
             >
               <button
-                class="OriginalButton__StyledButton-sc-1y2wptt-0 hsoUax"
+                class="OriginalButton__StyledButton-sc-1y2wptt-0 izJbbP"
                 data-testid="WalletControls__create-wallet"
                 type="button"
               >
@@ -3695,7 +3730,7 @@ exports[`Wallets should toggle between grid and list view 1`] = `
                 </div>
               </button>
               <button
-                class="OriginalButton__StyledButton-sc-1y2wptt-0 hsoUax"
+                class="OriginalButton__StyledButton-sc-1y2wptt-0 izJbbP"
                 data-testid="WalletControls__import-wallet"
                 type="button"
               >
@@ -3721,7 +3756,7 @@ exports[`Wallets should toggle between grid and list view 1`] = `
                 </div>
               </button>
               <button
-                class="OriginalButton__StyledButton-sc-1y2wptt-0 hsoUax"
+                class="OriginalButton__StyledButton-sc-1y2wptt-0 izJbbP"
                 data-testid="WalletControls__import-ledger"
                 type="button"
               >
@@ -3803,7 +3838,7 @@ exports[`Wallets should toggle between grid and list view 1`] = `
                             </div>
                           </div>
                           <div
-                            class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB"
+                            class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB flex-shrink-0"
                             data-testid="Avatar"
                           >
                             <div
@@ -3830,9 +3865,14 @@ exports[`Wallets should toggle between grid and list view 1`] = `
                         33.75089801 DARK
                       </span>
                       <span
-                        class="mt-1 text-xs font-semibold truncate text-theme-secondary-text no-ligatures"
+                        class="mt-1 text-xs font-semibold text-theme-secondary-text no-ligatures overflow-hidden whitespace-nowrap"
                       >
-                        D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD
+                        <span
+                          class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap"
+                          data-testid="TruncateMiddle"
+                        >
+                          D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD
+                        </span>
                       </span>
                     </div>
                     <div
@@ -3879,7 +3919,7 @@ exports[`Wallets should toggle between grid and list view 1`] = `
                             </div>
                           </div>
                           <div
-                            class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB"
+                            class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB flex-shrink-0"
                             data-testid="Avatar"
                           >
                             <div
@@ -3906,9 +3946,14 @@ exports[`Wallets should toggle between grid and list view 1`] = `
                         57.68 DARK
                       </span>
                       <span
-                        class="mt-1 text-xs font-semibold truncate text-theme-secondary-text no-ligatures"
+                        class="mt-1 text-xs font-semibold text-theme-secondary-text no-ligatures overflow-hidden whitespace-nowrap"
                       >
-                        D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb
+                        <span
+                          class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap"
+                          data-testid="TruncateMiddle"
+                        >
+                          D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb
+                        </span>
                       </span>
                     </div>
                     <div
@@ -3970,7 +4015,7 @@ exports[`Wallets should toggle between grid and list view 1`] = `
                             </div>
                           </div>
                           <div
-                            class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB"
+                            class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB flex-shrink-0"
                             data-testid="Avatar"
                           >
                             <div
@@ -3995,9 +4040,14 @@ exports[`Wallets should toggle between grid and list view 1`] = `
                         50,114.21127898 ARK
                       </span>
                       <span
-                        class="mt-1 text-xs font-semibold truncate text-theme-secondary-text no-ligatures"
+                        class="mt-1 text-xs font-semibold text-theme-secondary-text no-ligatures overflow-hidden whitespace-nowrap"
                       >
-                        AdVSe37niA3uFUPgCgMUH2tMsHF4LpLoiX
+                        <span
+                          class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap"
+                          data-testid="TruncateMiddle"
+                        >
+                          AdVSe37niA3uFUPgCgMUH2tMsHF4LpLoiX
+                        </span>
                       </span>
                     </div>
                     <div

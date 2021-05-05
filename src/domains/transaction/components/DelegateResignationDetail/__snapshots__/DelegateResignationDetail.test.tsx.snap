@@ -19,7 +19,7 @@ exports[`DelegateResignationDetail should render a modal 1`] = `
         class="absolute top-0 right-0 z-50 mt-5 mr-5 rounded transition-all duration-100 ease-linear bg-theme-primary-100 hover:bg-theme-primary-300 dark:bg-theme-secondary-800 dark:text-theme-secondary-600 dark:hover:bg-theme-secondary-700 dark:hover:text-theme-secondary-400"
       >
         <button
-          class="OriginalButton__StyledButton-sc-1y2wptt-0 lpqSIM w-11 h-11"
+          class="OriginalButton__StyledButton-sc-1y2wptt-0 fNHPRi w-11 h-11"
           data-testid="modal__close-btn"
           type="button"
         >
@@ -54,7 +54,7 @@ exports[`DelegateResignationDetail should render a modal 1`] = `
             data-testid="TransactionDetail"
           >
             <div
-              class="flex-1 space-y-2"
+              class="flex-1 space-y-2 flex-shrink overflow-hidden whitespace-nowrap"
             >
               <div
                 class="text-sm font-semibold text-theme-secondary-700 no-ligatures"
@@ -65,7 +65,7 @@ exports[`DelegateResignationDetail should render a modal 1`] = `
                 class="font-semibold"
               >
                 <div
-                  class="inline-flex items-center no-ligatures"
+                  class="w-full flex items-center no-ligatures overflow-hidden whitespace-nowrap"
                 >
                   <span
                     class="max-w-24 flex-auto truncate mr-2 font-semibold text-base text-theme-text"
@@ -79,10 +79,10 @@ exports[`DelegateResignationDetail should render a modal 1`] = `
                     </span>
                   </span>
                   <span
-                    class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-secondary-500 dark:text-theme-secondary-700 truncate font-semibold text-base"
+                    class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-secondary-500 dark:text-theme-secondary-700 font-semibold text-base"
                     data-testid="address__wallet-address"
                   >
-                    D8rr7B…s6YUYD
+                    D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD
                   </span>
                 </div>
               </div>
@@ -91,7 +91,7 @@ exports[`DelegateResignationDetail should render a modal 1`] = `
               class="flex items-center -space-x-2"
             >
               <div
-                class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB"
+                class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB flex-shrink-0"
                 data-testid="Avatar"
               >
                 <div
@@ -111,7 +111,7 @@ exports[`DelegateResignationDetail should render a modal 1`] = `
             data-testid="TransactionDetail"
           >
             <div
-              class="flex-1 space-y-2"
+              class="flex-1 space-y-2 flex-shrink overflow-hidden whitespace-nowrap"
             >
               <div
                 class="text-sm font-semibold text-theme-secondary-700 no-ligatures"
@@ -143,7 +143,7 @@ exports[`DelegateResignationDetail should render a modal 1`] = `
             data-testid="TransactionDetail"
           >
             <div
-              class="flex-1 space-y-2"
+              class="flex-1 space-y-2 flex-shrink overflow-hidden whitespace-nowrap"
             >
               <div
                 class="text-sm font-semibold text-theme-secondary-700 no-ligatures"
@@ -166,7 +166,7 @@ exports[`DelegateResignationDetail should render a modal 1`] = `
             data-testid="TransactionDetail"
           >
             <div
-              class="flex-1 space-y-2"
+              class="flex-1 space-y-2 flex-shrink overflow-hidden whitespace-nowrap"
             >
               <div
                 class="text-sm font-semibold text-theme-secondary-700 no-ligatures"
@@ -185,7 +185,7 @@ exports[`DelegateResignationDetail should render a modal 1`] = `
             data-testid="TransactionDetail"
           >
             <div
-              class="flex-1 space-y-2"
+              class="flex-1 space-y-2 flex-shrink overflow-hidden whitespace-nowrap"
             >
               <div
                 class="text-sm font-semibold text-theme-secondary-700 no-ligatures"
@@ -219,7 +219,7 @@ exports[`DelegateResignationDetail should render a modal 1`] = `
             data-testid="TransactionDetail"
           >
             <div
-              class="flex-1 space-y-2"
+              class="flex-1 space-y-2 flex-shrink overflow-hidden whitespace-nowrap"
             >
               <div
                 class="text-sm font-semibold text-theme-secondary-700 no-ligatures"
@@ -233,26 +233,27 @@ exports[`DelegateResignationDetail should render a modal 1`] = `
                   class="flex items-center space-x-3"
                 >
                   <a
-                    class="Link__AnchorStyled-sc-1q7sbxr-0 kAtXNw pointer-events-none no-underline inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary-600 hover:text-theme-primary-700 hover:underline active:text-theme-primary-500"
+                    class="Link__AnchorStyled-sc-1q7sbxr-0 bMatQy group"
                     data-testid="Link"
+                    href="#"
                     rel="noopener noreferrer"
                     to="https://explorer.ark.io/transaction/ee4175091d9f4dacf5fed213711c3e0e4cc371e37afa7bce0429d09bcf3ecefe"
                   >
                     <span
-                      class="group"
+                      class="break-all border-b border-transparent transition-colors duration-200 border-current border-dotted group-hover:border-transparent"
                     >
                       <span
-                        class="no-underline break-all pointer-events-auto border-b group-hover:border-0 active:border-0 border-dotted"
+                        class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-primary-700"
+                        data-testid="TruncateMiddle"
                       >
-                        <span
-                          class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-primary-700"
-                          data-testid="TruncateMiddle"
-                        >
-                          ee4175091d9f4…9d09bcf3ecefe
-                        </span>
+                        ee4175091d9f4dacf5fed213711c3e0e4cc371e37afa7bce0429d09bcf3ecefe
                       </span>
+                    </span>
+                    <span
+                      class="align-middle"
+                    >
                       <div
-                        class="sc-bdfBwQ fPrsah flex-shrink-0 pointer-events-auto inline-block pl-2 text-sm"
+                        class="sc-bdfBwQ fPrsah flex-shrink-0 inline-block pb-px text-sm"
                         data-testid="Link__external"
                         height="1em"
                         width="1em"
@@ -290,7 +291,7 @@ exports[`DelegateResignationDetail should render a modal 1`] = `
             data-testid="TransactionDetail"
           >
             <div
-              class="flex-1 space-y-2"
+              class="flex-1 space-y-2 flex-shrink overflow-hidden whitespace-nowrap"
             >
               <div
                 class="text-sm font-semibold text-theme-secondary-700 no-ligatures"
@@ -304,26 +305,27 @@ exports[`DelegateResignationDetail should render a modal 1`] = `
                   class="flex items-center space-x-3"
                 >
                   <a
-                    class="Link__AnchorStyled-sc-1q7sbxr-0 kAtXNw pointer-events-none no-underline inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary-600 hover:text-theme-primary-700 hover:underline active:text-theme-primary-500"
+                    class="Link__AnchorStyled-sc-1q7sbxr-0 bMatQy group"
                     data-testid="Link"
+                    href="#"
                     rel="noopener noreferrer"
                     to="https://explorer.ark.io/blocks/71fd1a494ded5430586f4dd1c79c3ac77bf38120e868c8f8980972b8075d67e9"
                   >
                     <span
-                      class="group"
+                      class="break-all border-b border-transparent transition-colors duration-200 border-current border-dotted group-hover:border-transparent"
                     >
                       <span
-                        class="no-underline break-all pointer-events-auto border-b group-hover:border-0 active:border-0 border-dotted"
+                        class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-primary-700"
+                        data-testid="TruncateMiddle"
                       >
-                        <span
-                          class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-primary-700"
-                          data-testid="TruncateMiddle"
-                        >
-                          71fd1a494ded5…972b8075d67e9
-                        </span>
+                        71fd1a494ded5430586f4dd1c79c3ac77bf38120e868c8f8980972b8075d67e9
                       </span>
+                    </span>
+                    <span
+                      class="align-middle"
+                    >
                       <div
-                        class="sc-bdfBwQ fPrsah flex-shrink-0 pointer-events-auto inline-block pl-2 text-sm"
+                        class="sc-bdfBwQ fPrsah flex-shrink-0 inline-block pb-px text-sm"
                         data-testid="Link__external"
                         height="1em"
                         width="1em"
@@ -380,7 +382,7 @@ exports[`DelegateResignationDetail should render as confirmed 1`] = `
         class="absolute top-0 right-0 z-50 mt-5 mr-5 rounded transition-all duration-100 ease-linear bg-theme-primary-100 hover:bg-theme-primary-300 dark:bg-theme-secondary-800 dark:text-theme-secondary-600 dark:hover:bg-theme-secondary-700 dark:hover:text-theme-secondary-400"
       >
         <button
-          class="OriginalButton__StyledButton-sc-1y2wptt-0 lpqSIM w-11 h-11"
+          class="OriginalButton__StyledButton-sc-1y2wptt-0 fNHPRi w-11 h-11"
           data-testid="modal__close-btn"
           type="button"
         >
@@ -415,7 +417,7 @@ exports[`DelegateResignationDetail should render as confirmed 1`] = `
             data-testid="TransactionDetail"
           >
             <div
-              class="flex-1 space-y-2"
+              class="flex-1 space-y-2 flex-shrink overflow-hidden whitespace-nowrap"
             >
               <div
                 class="text-sm font-semibold text-theme-secondary-700 no-ligatures"
@@ -426,7 +428,7 @@ exports[`DelegateResignationDetail should render as confirmed 1`] = `
                 class="font-semibold"
               >
                 <div
-                  class="inline-flex items-center no-ligatures"
+                  class="w-full flex items-center no-ligatures overflow-hidden whitespace-nowrap"
                 >
                   <span
                     class="max-w-24 flex-auto truncate mr-2 font-semibold text-base text-theme-text"
@@ -440,10 +442,10 @@ exports[`DelegateResignationDetail should render as confirmed 1`] = `
                     </span>
                   </span>
                   <span
-                    class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-secondary-500 dark:text-theme-secondary-700 truncate font-semibold text-base"
+                    class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-secondary-500 dark:text-theme-secondary-700 font-semibold text-base"
                     data-testid="address__wallet-address"
                   >
-                    D8rr7B…s6YUYD
+                    D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD
                   </span>
                 </div>
               </div>
@@ -452,7 +454,7 @@ exports[`DelegateResignationDetail should render as confirmed 1`] = `
               class="flex items-center -space-x-2"
             >
               <div
-                class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB"
+                class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB flex-shrink-0"
                 data-testid="Avatar"
               >
                 <div
@@ -472,7 +474,7 @@ exports[`DelegateResignationDetail should render as confirmed 1`] = `
             data-testid="TransactionDetail"
           >
             <div
-              class="flex-1 space-y-2"
+              class="flex-1 space-y-2 flex-shrink overflow-hidden whitespace-nowrap"
             >
               <div
                 class="text-sm font-semibold text-theme-secondary-700 no-ligatures"
@@ -504,7 +506,7 @@ exports[`DelegateResignationDetail should render as confirmed 1`] = `
             data-testid="TransactionDetail"
           >
             <div
-              class="flex-1 space-y-2"
+              class="flex-1 space-y-2 flex-shrink overflow-hidden whitespace-nowrap"
             >
               <div
                 class="text-sm font-semibold text-theme-secondary-700 no-ligatures"
@@ -527,7 +529,7 @@ exports[`DelegateResignationDetail should render as confirmed 1`] = `
             data-testid="TransactionDetail"
           >
             <div
-              class="flex-1 space-y-2"
+              class="flex-1 space-y-2 flex-shrink overflow-hidden whitespace-nowrap"
             >
               <div
                 class="text-sm font-semibold text-theme-secondary-700 no-ligatures"
@@ -546,7 +548,7 @@ exports[`DelegateResignationDetail should render as confirmed 1`] = `
             data-testid="TransactionDetail"
           >
             <div
-              class="flex-1 space-y-2"
+              class="flex-1 space-y-2 flex-shrink overflow-hidden whitespace-nowrap"
             >
               <div
                 class="text-sm font-semibold text-theme-secondary-700 no-ligatures"
@@ -582,7 +584,7 @@ exports[`DelegateResignationDetail should render as confirmed 1`] = `
             data-testid="TransactionDetail"
           >
             <div
-              class="flex-1 space-y-2"
+              class="flex-1 space-y-2 flex-shrink overflow-hidden whitespace-nowrap"
             >
               <div
                 class="text-sm font-semibold text-theme-secondary-700 no-ligatures"
@@ -596,26 +598,27 @@ exports[`DelegateResignationDetail should render as confirmed 1`] = `
                   class="flex items-center space-x-3"
                 >
                   <a
-                    class="Link__AnchorStyled-sc-1q7sbxr-0 kAtXNw pointer-events-none no-underline inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary-600 hover:text-theme-primary-700 hover:underline active:text-theme-primary-500"
+                    class="Link__AnchorStyled-sc-1q7sbxr-0 bMatQy group"
                     data-testid="Link"
+                    href="#"
                     rel="noopener noreferrer"
                     to="https://explorer.ark.io/transaction/ee4175091d9f4dacf5fed213711c3e0e4cc371e37afa7bce0429d09bcf3ecefe"
                   >
                     <span
-                      class="group"
+                      class="break-all border-b border-transparent transition-colors duration-200 border-current border-dotted group-hover:border-transparent"
                     >
                       <span
-                        class="no-underline break-all pointer-events-auto border-b group-hover:border-0 active:border-0 border-dotted"
+                        class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-primary-700"
+                        data-testid="TruncateMiddle"
                       >
-                        <span
-                          class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-primary-700"
-                          data-testid="TruncateMiddle"
-                        >
-                          ee4175091d9f4…9d09bcf3ecefe
-                        </span>
+                        ee4175091d9f4dacf5fed213711c3e0e4cc371e37afa7bce0429d09bcf3ecefe
                       </span>
+                    </span>
+                    <span
+                      class="align-middle"
+                    >
                       <div
-                        class="sc-bdfBwQ fPrsah flex-shrink-0 pointer-events-auto inline-block pl-2 text-sm"
+                        class="sc-bdfBwQ fPrsah flex-shrink-0 inline-block pb-px text-sm"
                         data-testid="Link__external"
                         height="1em"
                         width="1em"
@@ -653,7 +656,7 @@ exports[`DelegateResignationDetail should render as confirmed 1`] = `
             data-testid="TransactionDetail"
           >
             <div
-              class="flex-1 space-y-2"
+              class="flex-1 space-y-2 flex-shrink overflow-hidden whitespace-nowrap"
             >
               <div
                 class="text-sm font-semibold text-theme-secondary-700 no-ligatures"
@@ -667,26 +670,27 @@ exports[`DelegateResignationDetail should render as confirmed 1`] = `
                   class="flex items-center space-x-3"
                 >
                   <a
-                    class="Link__AnchorStyled-sc-1q7sbxr-0 kAtXNw pointer-events-none no-underline inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary-600 hover:text-theme-primary-700 hover:underline active:text-theme-primary-500"
+                    class="Link__AnchorStyled-sc-1q7sbxr-0 bMatQy group"
                     data-testid="Link"
+                    href="#"
                     rel="noopener noreferrer"
                     to="https://explorer.ark.io/blocks/71fd1a494ded5430586f4dd1c79c3ac77bf38120e868c8f8980972b8075d67e9"
                   >
                     <span
-                      class="group"
+                      class="break-all border-b border-transparent transition-colors duration-200 border-current border-dotted group-hover:border-transparent"
                     >
                       <span
-                        class="no-underline break-all pointer-events-auto border-b group-hover:border-0 active:border-0 border-dotted"
+                        class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-primary-700"
+                        data-testid="TruncateMiddle"
                       >
-                        <span
-                          class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-primary-700"
-                          data-testid="TruncateMiddle"
-                        >
-                          71fd1a494ded5…972b8075d67e9
-                        </span>
+                        71fd1a494ded5430586f4dd1c79c3ac77bf38120e868c8f8980972b8075d67e9
                       </span>
+                    </span>
+                    <span
+                      class="align-middle"
+                    >
                       <div
-                        class="sc-bdfBwQ fPrsah flex-shrink-0 pointer-events-auto inline-block pl-2 text-sm"
+                        class="sc-bdfBwQ fPrsah flex-shrink-0 inline-block pb-px text-sm"
                         data-testid="Link__external"
                         height="1em"
                         width="1em"

@@ -19,7 +19,7 @@ exports[`SignIn should render a modal 1`] = `
         class="absolute top-0 right-0 z-50 mt-5 mr-5 rounded transition-all duration-100 ease-linear bg-theme-primary-100 hover:bg-theme-primary-300 dark:bg-theme-secondary-800 dark:text-theme-secondary-600 dark:hover:bg-theme-secondary-700 dark:hover:text-theme-secondary-400"
       >
         <button
-          class="OriginalButton__StyledButton-sc-1y2wptt-0 lpqSIM w-11 h-11"
+          class="OriginalButton__StyledButton-sc-1y2wptt-0 fNHPRi w-11 h-11"
           data-testid="modal__close-btn"
           type="button"
         >
@@ -61,7 +61,7 @@ exports[`SignIn should render a modal 1`] = `
               class="flex items-center space-x-3"
             >
               <div
-                class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB"
+                class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB flex-shrink-0"
                 data-testid="Avatar"
               >
                 <div
@@ -122,7 +122,7 @@ exports[`SignIn should render a modal 1`] = `
                 />
               </label>
               <div
-                class="Input__InputWrapperStyled-wu99qs-0 hDeOGV"
+                class="Input__InputWrapperStyled-wu99qs-0 knbpfp"
               >
                 <div
                   class="relative flex flex-1 h-full"
@@ -141,10 +141,13 @@ exports[`SignIn should render a modal 1`] = `
                     class=""
                   >
                     <button
-                      class="flex items-center justify-center w-full h-full text-2xl focus:outline-none"
+                      class="relative flex items-center justify-center w-full h-full text-2xl focus:outline-none group"
                       data-testid="InputPassword__toggle"
                       type="button"
                     >
+                      <div
+                        class="absolute inset-0 -m-1 rounded ring-theme-primary-400 group-focus:ring-2"
+                      />
                       <div
                         class="sc-bdfBwQ fPrsah"
                         height="1em"
@@ -163,7 +166,7 @@ exports[`SignIn should render a modal 1`] = `
               class="flex justify-end mt-8 space-x-3"
             >
               <button
-                class="OriginalButton__StyledButton-sc-1y2wptt-0 hsoUax"
+                class="OriginalButton__StyledButton-sc-1y2wptt-0 izJbbP"
                 data-testid="SignIn__cancel-button"
                 type="button"
               >
@@ -174,7 +177,7 @@ exports[`SignIn should render a modal 1`] = `
                 </div>
               </button>
               <button
-                class="OriginalButton__StyledButton-sc-1y2wptt-0 blpaPr"
+                class="OriginalButton__StyledButton-sc-1y2wptt-0 fqRthJ"
                 data-testid="SignIn__submit-button"
                 disabled=""
                 type="submit"

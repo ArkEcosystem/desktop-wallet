@@ -54,6 +54,9 @@ describe("Use Ledger Scanner", () => {
 		wallet = profile.wallets().first();
 		transport = createTransportReplayer(RecordStore.fromString(""));
 
+		await env.profiles().restore(profile);
+		await profile.sync();
+		await wallet.synchroniser().coin();
 		await wallet.coin().ledger().connect(transport);
 
 		legacyPublicKeyPaths = new Map([

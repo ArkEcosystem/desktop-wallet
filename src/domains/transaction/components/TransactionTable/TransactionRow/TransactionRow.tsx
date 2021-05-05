@@ -76,7 +76,9 @@ export const TransactionRow = memo(
 
 				<TableCell innerClassName="space-x-4">
 					<TransactionRowMode transaction={transaction} />
-					<TransactionRowRecipientLabel transaction={transaction} walletName={walletName} />
+					<div className="w-40 xl:w-full">
+						<TransactionRowRecipientLabel transaction={transaction} walletName={walletName} />
+					</div>
 				</TableCell>
 
 				<TableCell innerClassName="justify-center">

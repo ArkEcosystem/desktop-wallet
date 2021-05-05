@@ -29,7 +29,7 @@ exports[`WalletHeader should render 1`] = `
           </div>
         </div>
         <div
-          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 ksomUO ring-theme-secondary-900"
+          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 ksomUO ring-theme-secondary-900 flex-shrink-0"
           data-testid="Avatar"
         >
           <div
@@ -44,7 +44,7 @@ exports[`WalletHeader should render 1`] = `
         </div>
       </div>
       <div
-        class="flex flex-col overflow-hidden"
+        class="flex flex-col overflow-hidden w-full"
       >
         <div
           class="flex items-center space-x-5 text-theme-secondary-text"
@@ -60,12 +60,17 @@ exports[`WalletHeader should render 1`] = `
           />
         </div>
         <div
-          class="flex items-center space-x-5"
+          class="flex items-center space-x-5 w-full"
         >
           <span
-            class="text-lg font-semibold text-white truncate"
+            class="flex-1 text-lg font-semibold text-white overflow-hidden whitespace-nowrap"
           >
-            D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD
+            <span
+              class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap"
+              data-testid="TruncateMiddle"
+            >
+              D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD
+            </span>
           </span>
           <div
             class="flex items-end mb-2 space-x-3 text-theme-secondary-text"
@@ -123,10 +128,31 @@ exports[`WalletHeader should render 1`] = `
         </span>
       </div>
       <div
-        class="my-auto"
+        class="my-auto flex items-center -space-x-2"
       >
         <button
-          class="OriginalButton__StyledButton-sc-1y2wptt-0 lpqSIM w-11 h-11 text-theme-secondary-text hover:text-theme-secondary-500"
+          aria-busy="false"
+          class="OriginalButton__StyledButton-sc-1y2wptt-0 fNHPRi w-11 h-11 text-theme-secondary-text hover:text-theme-secondary-500"
+          data-testid="WalletHeader__refresh"
+          type="button"
+        >
+          <div
+            class="flex relative items-center space-x-2"
+          >
+            <div
+              class="sc-bdfBwQ fPrsah"
+              height="1em"
+              style="animation-direction: reverse;"
+              width="1em"
+            >
+              <svg>
+                reload.svg
+              </svg>
+            </div>
+          </div>
+        </button>
+        <button
+          class="OriginalButton__StyledButton-sc-1y2wptt-0 fNHPRi w-11 h-11 text-theme-secondary-text hover:text-theme-secondary-500"
           data-testid="WalletHeader__star-button"
           type="button"
         >
@@ -150,7 +176,7 @@ exports[`WalletHeader should render 1`] = `
         </button>
       </div>
       <button
-        class="OriginalButton__StyledButton-sc-1y2wptt-0 cEUmKc my-auto ml-1"
+        class="OriginalButton__StyledButton-sc-1y2wptt-0 dYkFxS my-auto ml-1"
         data-testid="WalletHeader__send-button"
         type="button"
       >
@@ -171,7 +197,7 @@ exports[`WalletHeader should render 1`] = `
             data-testid="dropdown__toggle"
           >
             <button
-              class="OriginalButton__StyledButton-sc-1y2wptt-0 koEywu text-left"
+              class="OriginalButton__StyledButton-sc-1y2wptt-0 jaUyKg text-left"
               type="button"
             >
               <div
@@ -225,7 +251,7 @@ exports[`WalletHeader should render converted balance for mainnet wallet 1`] = `
           </div>
         </div>
         <div
-          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 ksomUO ring-theme-secondary-900"
+          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 ksomUO ring-theme-secondary-900 flex-shrink-0"
           data-testid="Avatar"
         >
           <div
@@ -240,7 +266,7 @@ exports[`WalletHeader should render converted balance for mainnet wallet 1`] = `
         </div>
       </div>
       <div
-        class="flex flex-col overflow-hidden"
+        class="flex flex-col overflow-hidden w-full"
       >
         <div
           class="flex items-center space-x-5 text-theme-secondary-text"
@@ -256,12 +282,17 @@ exports[`WalletHeader should render converted balance for mainnet wallet 1`] = `
           />
         </div>
         <div
-          class="flex items-center space-x-5"
+          class="flex items-center space-x-5 w-full"
         >
           <span
-            class="text-lg font-semibold text-white truncate"
+            class="flex-1 text-lg font-semibold text-white overflow-hidden whitespace-nowrap"
           >
-            D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD
+            <span
+              class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap"
+              data-testid="TruncateMiddle"
+            >
+              D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD
+            </span>
           </span>
           <div
             class="flex items-end mb-2 space-x-3 text-theme-secondary-text"
@@ -325,10 +356,31 @@ exports[`WalletHeader should render converted balance for mainnet wallet 1`] = `
         </span>
       </div>
       <div
-        class="my-auto"
+        class="my-auto flex items-center -space-x-2"
       >
         <button
-          class="OriginalButton__StyledButton-sc-1y2wptt-0 lpqSIM w-11 h-11 text-theme-secondary-text hover:text-theme-secondary-500"
+          aria-busy="false"
+          class="OriginalButton__StyledButton-sc-1y2wptt-0 fNHPRi w-11 h-11 text-theme-secondary-text hover:text-theme-secondary-500"
+          data-testid="WalletHeader__refresh"
+          type="button"
+        >
+          <div
+            class="flex relative items-center space-x-2"
+          >
+            <div
+              class="sc-bdfBwQ fPrsah"
+              height="1em"
+              style="animation-direction: reverse;"
+              width="1em"
+            >
+              <svg>
+                reload.svg
+              </svg>
+            </div>
+          </div>
+        </button>
+        <button
+          class="OriginalButton__StyledButton-sc-1y2wptt-0 fNHPRi w-11 h-11 text-theme-secondary-text hover:text-theme-secondary-500"
           data-testid="WalletHeader__star-button"
           type="button"
         >
@@ -352,7 +404,7 @@ exports[`WalletHeader should render converted balance for mainnet wallet 1`] = `
         </button>
       </div>
       <button
-        class="OriginalButton__StyledButton-sc-1y2wptt-0 cEUmKc my-auto ml-1"
+        class="OriginalButton__StyledButton-sc-1y2wptt-0 dYkFxS my-auto ml-1"
         data-testid="WalletHeader__send-button"
         type="button"
       >
@@ -373,7 +425,7 @@ exports[`WalletHeader should render converted balance for mainnet wallet 1`] = `
             data-testid="dropdown__toggle"
           >
             <button
-              class="OriginalButton__StyledButton-sc-1y2wptt-0 koEywu text-left"
+              class="OriginalButton__StyledButton-sc-1y2wptt-0 jaUyKg text-left"
               type="button"
             >
               <div
@@ -427,7 +479,7 @@ exports[`WalletHeader should show currency delta (-5%) 1`] = `
           </div>
         </div>
         <div
-          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 ksomUO ring-theme-secondary-900"
+          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 ksomUO ring-theme-secondary-900 flex-shrink-0"
           data-testid="Avatar"
         >
           <div
@@ -442,7 +494,7 @@ exports[`WalletHeader should show currency delta (-5%) 1`] = `
         </div>
       </div>
       <div
-        class="flex flex-col overflow-hidden"
+        class="flex flex-col overflow-hidden w-full"
       >
         <div
           class="flex items-center space-x-5 text-theme-secondary-text"
@@ -458,12 +510,17 @@ exports[`WalletHeader should show currency delta (-5%) 1`] = `
           />
         </div>
         <div
-          class="flex items-center space-x-5"
+          class="flex items-center space-x-5 w-full"
         >
           <span
-            class="text-lg font-semibold text-white truncate"
+            class="flex-1 text-lg font-semibold text-white overflow-hidden whitespace-nowrap"
           >
-            D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD
+            <span
+              class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap"
+              data-testid="TruncateMiddle"
+            >
+              D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD
+            </span>
           </span>
           <div
             class="flex items-end mb-2 space-x-3 text-theme-secondary-text"
@@ -539,10 +596,31 @@ exports[`WalletHeader should show currency delta (-5%) 1`] = `
         </span>
       </div>
       <div
-        class="my-auto"
+        class="my-auto flex items-center -space-x-2"
       >
         <button
-          class="OriginalButton__StyledButton-sc-1y2wptt-0 lpqSIM w-11 h-11 text-theme-secondary-text hover:text-theme-secondary-500"
+          aria-busy="false"
+          class="OriginalButton__StyledButton-sc-1y2wptt-0 fNHPRi w-11 h-11 text-theme-secondary-text hover:text-theme-secondary-500"
+          data-testid="WalletHeader__refresh"
+          type="button"
+        >
+          <div
+            class="flex relative items-center space-x-2"
+          >
+            <div
+              class="sc-bdfBwQ fPrsah"
+              height="1em"
+              style="animation-direction: reverse;"
+              width="1em"
+            >
+              <svg>
+                reload.svg
+              </svg>
+            </div>
+          </div>
+        </button>
+        <button
+          class="OriginalButton__StyledButton-sc-1y2wptt-0 fNHPRi w-11 h-11 text-theme-secondary-text hover:text-theme-secondary-500"
           data-testid="WalletHeader__star-button"
           type="button"
         >
@@ -566,7 +644,7 @@ exports[`WalletHeader should show currency delta (-5%) 1`] = `
         </button>
       </div>
       <button
-        class="OriginalButton__StyledButton-sc-1y2wptt-0 cEUmKc my-auto ml-1"
+        class="OriginalButton__StyledButton-sc-1y2wptt-0 dYkFxS my-auto ml-1"
         data-testid="WalletHeader__send-button"
         type="button"
       >
@@ -587,7 +665,7 @@ exports[`WalletHeader should show currency delta (-5%) 1`] = `
             data-testid="dropdown__toggle"
           >
             <button
-              class="OriginalButton__StyledButton-sc-1y2wptt-0 koEywu text-left"
+              class="OriginalButton__StyledButton-sc-1y2wptt-0 jaUyKg text-left"
               type="button"
             >
               <div
@@ -641,7 +719,7 @@ exports[`WalletHeader should show currency delta (5%) 1`] = `
           </div>
         </div>
         <div
-          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 ksomUO ring-theme-secondary-900"
+          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 ksomUO ring-theme-secondary-900 flex-shrink-0"
           data-testid="Avatar"
         >
           <div
@@ -656,7 +734,7 @@ exports[`WalletHeader should show currency delta (5%) 1`] = `
         </div>
       </div>
       <div
-        class="flex flex-col overflow-hidden"
+        class="flex flex-col overflow-hidden w-full"
       >
         <div
           class="flex items-center space-x-5 text-theme-secondary-text"
@@ -672,12 +750,17 @@ exports[`WalletHeader should show currency delta (5%) 1`] = `
           />
         </div>
         <div
-          class="flex items-center space-x-5"
+          class="flex items-center space-x-5 w-full"
         >
           <span
-            class="text-lg font-semibold text-white truncate"
+            class="flex-1 text-lg font-semibold text-white overflow-hidden whitespace-nowrap"
           >
-            D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD
+            <span
+              class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap"
+              data-testid="TruncateMiddle"
+            >
+              D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD
+            </span>
           </span>
           <div
             class="flex items-end mb-2 space-x-3 text-theme-secondary-text"
@@ -753,10 +836,31 @@ exports[`WalletHeader should show currency delta (5%) 1`] = `
         </span>
       </div>
       <div
-        class="my-auto"
+        class="my-auto flex items-center -space-x-2"
       >
         <button
-          class="OriginalButton__StyledButton-sc-1y2wptt-0 lpqSIM w-11 h-11 text-theme-secondary-text hover:text-theme-secondary-500"
+          aria-busy="false"
+          class="OriginalButton__StyledButton-sc-1y2wptt-0 fNHPRi w-11 h-11 text-theme-secondary-text hover:text-theme-secondary-500"
+          data-testid="WalletHeader__refresh"
+          type="button"
+        >
+          <div
+            class="flex relative items-center space-x-2"
+          >
+            <div
+              class="sc-bdfBwQ fPrsah"
+              height="1em"
+              style="animation-direction: reverse;"
+              width="1em"
+            >
+              <svg>
+                reload.svg
+              </svg>
+            </div>
+          </div>
+        </button>
+        <button
+          class="OriginalButton__StyledButton-sc-1y2wptt-0 fNHPRi w-11 h-11 text-theme-secondary-text hover:text-theme-secondary-500"
           data-testid="WalletHeader__star-button"
           type="button"
         >
@@ -780,7 +884,7 @@ exports[`WalletHeader should show currency delta (5%) 1`] = `
         </button>
       </div>
       <button
-        class="OriginalButton__StyledButton-sc-1y2wptt-0 cEUmKc my-auto ml-1"
+        class="OriginalButton__StyledButton-sc-1y2wptt-0 dYkFxS my-auto ml-1"
         data-testid="WalletHeader__send-button"
         type="button"
       >
@@ -801,7 +905,7 @@ exports[`WalletHeader should show currency delta (5%) 1`] = `
             data-testid="dropdown__toggle"
           >
             <button
-              class="OriginalButton__StyledButton-sc-1y2wptt-0 koEywu text-left"
+              class="OriginalButton__StyledButton-sc-1y2wptt-0 jaUyKg text-left"
               type="button"
             >
               <div
@@ -855,7 +959,7 @@ exports[`WalletHeader should show modifiers 1`] = `
           </div>
         </div>
         <div
-          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 ksomUO ring-theme-secondary-900"
+          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 ksomUO ring-theme-secondary-900 flex-shrink-0"
           data-testid="Avatar"
         >
           <div
@@ -870,7 +974,7 @@ exports[`WalletHeader should show modifiers 1`] = `
         </div>
       </div>
       <div
-        class="flex flex-col overflow-hidden"
+        class="flex flex-col overflow-hidden w-full"
       >
         <div
           class="flex items-center space-x-5 text-theme-secondary-text"
@@ -915,12 +1019,17 @@ exports[`WalletHeader should show modifiers 1`] = `
           </div>
         </div>
         <div
-          class="flex items-center space-x-5"
+          class="flex items-center space-x-5 w-full"
         >
           <span
-            class="text-lg font-semibold text-white truncate"
+            class="flex-1 text-lg font-semibold text-white overflow-hidden whitespace-nowrap"
           >
-            D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD
+            <span
+              class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap"
+              data-testid="TruncateMiddle"
+            >
+              D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD
+            </span>
           </span>
           <div
             class="flex items-end mb-2 space-x-3 text-theme-secondary-text"
@@ -978,10 +1087,31 @@ exports[`WalletHeader should show modifiers 1`] = `
         </span>
       </div>
       <div
-        class="my-auto"
+        class="my-auto flex items-center -space-x-2"
       >
         <button
-          class="OriginalButton__StyledButton-sc-1y2wptt-0 lpqSIM w-11 h-11 text-theme-secondary-text hover:text-theme-secondary-500"
+          aria-busy="false"
+          class="OriginalButton__StyledButton-sc-1y2wptt-0 fNHPRi w-11 h-11 text-theme-secondary-text hover:text-theme-secondary-500"
+          data-testid="WalletHeader__refresh"
+          type="button"
+        >
+          <div
+            class="flex relative items-center space-x-2"
+          >
+            <div
+              class="sc-bdfBwQ fPrsah"
+              height="1em"
+              style="animation-direction: reverse;"
+              width="1em"
+            >
+              <svg>
+                reload.svg
+              </svg>
+            </div>
+          </div>
+        </button>
+        <button
+          class="OriginalButton__StyledButton-sc-1y2wptt-0 fNHPRi w-11 h-11 text-theme-secondary-text hover:text-theme-secondary-500"
           data-testid="WalletHeader__star-button"
           type="button"
         >
@@ -1005,7 +1135,7 @@ exports[`WalletHeader should show modifiers 1`] = `
         </button>
       </div>
       <button
-        class="OriginalButton__StyledButton-sc-1y2wptt-0 cEUmKc my-auto ml-1"
+        class="OriginalButton__StyledButton-sc-1y2wptt-0 dYkFxS my-auto ml-1"
         data-testid="WalletHeader__send-button"
         type="button"
       >
@@ -1026,7 +1156,7 @@ exports[`WalletHeader should show modifiers 1`] = `
             data-testid="dropdown__toggle"
           >
             <button
-              class="OriginalButton__StyledButton-sc-1y2wptt-0 koEywu text-left"
+              class="OriginalButton__StyledButton-sc-1y2wptt-0 jaUyKg text-left"
               type="button"
             >
               <div

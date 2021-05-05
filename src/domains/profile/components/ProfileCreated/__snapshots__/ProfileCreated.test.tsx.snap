@@ -19,7 +19,7 @@ exports[`ProfileCreated should render a modal 1`] = `
         class="absolute top-0 right-0 z-50 mt-5 mr-5 rounded transition-all duration-100 ease-linear bg-theme-primary-100 hover:bg-theme-primary-300 dark:bg-theme-secondary-800 dark:text-theme-secondary-600 dark:hover:bg-theme-secondary-700 dark:hover:text-theme-secondary-400"
       >
         <button
-          class="OriginalButton__StyledButton-sc-1y2wptt-0 lpqSIM w-11 h-11"
+          class="OriginalButton__StyledButton-sc-1y2wptt-0 fNHPRi w-11 h-11"
           data-testid="modal__close-btn"
           type="button"
         >
@@ -55,43 +55,39 @@ exports[`ProfileCreated should render a modal 1`] = `
             profile-created-banner.svg
           </svg>
           <div
-            class="container"
+            class="container space-y-8"
           >
             <div
-              class="mb-8 text-center"
+              class="text-base text-theme-secondary-text leading-7"
             >
-              <p
-                class="mb-1 text-sm text-theme-secondary-text md:text-base"
-              >
+              <p>
                 If you are new to the ARK Desktop Wallet, view our tutorial to get started.
               </p>
-              <p
-                class="text-sm text-theme-secondary-text md:text-base"
-              >
+              <p>
                 If not, you can skip the tutorial to go directly to your portfolio.
               </p>
             </div>
             <div
-              class="flex flex-col justify-center space-x-0 sm:flex-row sm:space-x-3"
+              class="flex justify-end space-x-3"
             >
               <button
-                class="OriginalButton__StyledButton-sc-1y2wptt-0 cEUmKc"
-                type="button"
-              >
-                <div
-                  class="flex relative items-center space-x-2"
-                >
-                  Start Tutorial
-                </div>
-              </button>
-              <button
-                class="OriginalButton__StyledButton-sc-1y2wptt-0 hsoUax mt-2 sm:mt-0"
+                class="OriginalButton__StyledButton-sc-1y2wptt-0 izJbbP"
                 type="button"
               >
                 <div
                   class="flex relative items-center space-x-2"
                 >
                   Skip Tutorial
+                </div>
+              </button>
+              <button
+                class="OriginalButton__StyledButton-sc-1y2wptt-0 dYkFxS"
+                type="button"
+              >
+                <div
+                  class="flex relative items-center space-x-2"
+                >
+                  Start Tutorial
                 </div>
               </button>
             </div>

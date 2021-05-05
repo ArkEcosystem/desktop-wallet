@@ -10,11 +10,13 @@ type TransactionsState = {
 	activeMode?: string;
 	activeTransactionType?: any;
 	hasMore?: boolean;
+	timestamp?: number;
 };
 
 type TransactionFilters = {
 	activeMode?: string;
 	activeTransactionType?: any;
+	timestamp?: number;
 };
 
 type FetchTransactionProps = {
@@ -37,7 +39,7 @@ export const useProfileTransactions = ({
 	const cursor = useRef(1);
 
 	const [
-		{ transactions, activeMode, activeTransactionType, isLoadingTransactions, isLoadingMore, hasMore },
+		{ transactions, activeMode, activeTransactionType, isLoadingTransactions, isLoadingMore, hasMore, timestamp },
 		setState,
 	] = useState<TransactionsState>({
 		hasMore: true,
@@ -46,6 +48,7 @@ export const useProfileTransactions = ({
 		transactions: [],
 		activeMode: undefined,
 		activeTransactionType: undefined,
+		timestamp: undefined,
 	});
 
 	useEffect(() => {
@@ -91,10 +94,10 @@ export const useProfileTransactions = ({
 		};
 
 		// eslint-disable-next-line
-	}, [wallets.length, activeMode, activeTransactionType]);
+	}, [wallets.length, activeMode, activeTransactionType, timestamp]);
 
 	const updateFilters = useCallback(
-		({ activeMode, activeTransactionType }: TransactionFilters) => {
+		({ activeMode, activeTransactionType, timestamp }: TransactionFilters) => {
 			lastQuery.current = JSON.stringify({ activeMode, activeTransactionType });
 
 			const hasWallets = wallets.length !== 0;
@@ -111,6 +114,7 @@ export const useProfileTransactions = ({
 				activeMode,
 				activeTransactionType,
 				isLoadingMore: false,
+				timestamp,
 			});
 		},
 		[wallets.length],
@@ -122,23 +126,15 @@ export const useProfileTransactions = ({
 				return { items: () => [], hasMorePages: () => false };
 			}
 
-			const methodMap = {
-				all: "transactions",
-				sent: "sentTransactions",
-				received: "receivedTransactions",
-			};
-
-			const method = methodMap[mode as keyof typeof methodMap];
-
 			if (flush) {
-				profile.transactionAggregate().flush(method);
+				profile.transactionAggregate().flush(mode);
 			}
 
 			const defaultQuery = { limit: 30, addresses: wallets.map((wallet) => wallet.address(), cursor) };
 			const queryParams = transactionType ? { ...defaultQuery, ...transactionType } : defaultQuery;
 
 			// @ts-ignore
-			return profile.transactionAggregate()[method](queryParams);
+			return profile.transactionAggregate()[mode](queryParams);
 		},
 		[profile],
 	);

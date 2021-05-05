@@ -49,7 +49,8 @@ jest.mock("fs", () => ({
 describe("Settings", () => {
 	beforeAll(async () => {
 		profile = env.profiles().findById(getDefaultProfileId());
-		await profile.restore();
+		await env.profiles().restore(profile);
+		await profile.sync();
 	});
 
 	it("should render with prompt paths", async () => {
@@ -611,7 +612,13 @@ describe("Settings", () => {
 
 	it("should render peer settings", async () => {
 		// Import a wallet after the profile reset test
-		await profile.wallets().importByAddress("D6Z26L69gdk9qYmTv5uzk3uGepigtHY4ax", "ARK", "ark.devnet");
+		const wallet = await profile.walletFactory().fromAddress({
+			address: "D6Z26L69gdk9qYmTv5uzk3uGepigtHY4ax",
+			coin: "ARK",
+			network: "ark.devnet",
+		});
+
+		profile.wallets().push(wallet);
 
 		const { container, asFragment, findByTestId } = renderWithRouter(
 			<Route path="/profiles/:profileId/settings">
@@ -679,15 +686,21 @@ describe("Settings", () => {
 
 		expect(getByTestId("modal__inner")).toBeTruthy();
 
-		act(() => {
-			fireEvent.focus(getByTestId("SelectNetworkInput__input"));
-		});
-
-		await waitFor(() => expect(getByTestId("NetworkIcon-ARK-ark.devnet")).toBeTruthy());
+		const selectNetworkInput = getByTestId("SelectDropdownInput__input");
 
 		act(() => {
-			fireEvent.click(getByTestId("NetworkIcon-ARK-ark.devnet"));
+			fireEvent.focus(selectNetworkInput);
 		});
+
+		act(() => {
+			fireEvent.change(selectNetworkInput, { target: { value: "Ark Mainnet" } });
+		});
+
+		await act(async () => {
+			fireEvent.keyDown(selectNetworkInput, { key: "Enter", code: 13 });
+		});
+
+		await waitFor(() => expect(selectNetworkInput).toHaveValue("ARK Mainnet"));
 
 		act(() => {
 			fireEvent.input(getByTestId("PeerForm__name-input"), { target: { value: "ROBank" } });
@@ -752,18 +765,21 @@ describe("Settings", () => {
 
 		expect(getByTestId("modal__inner")).toBeTruthy();
 
-		act(() => {
-			fireEvent.focus(getByTestId("SelectNetworkInput__input"));
-		});
-
-		await waitFor(() =>
-			expect(within(getByTestId("modal__inner")).getByTestId("NetworkIcon-ARK-ark.devnet")).toBeTruthy(),
-		);
+		const selectNetworkInput = getByTestId("SelectDropdownInput__input");
 
 		act(() => {
-			fireEvent.click(within(getByTestId("modal__inner")).getByTestId("NetworkIcon-ARK-ark.devnet"));
+			fireEvent.focus(selectNetworkInput);
 		});
 
+		act(() => {
+			fireEvent.change(selectNetworkInput, { target: { value: "Ark Mainnet" } });
+		});
+
+		await act(async () => {
+			fireEvent.keyDown(selectNetworkInput, { key: "Enter", code: 13 });
+		});
+
+		await waitFor(() => expect(selectNetworkInput).toHaveValue("ARK Mainnet"));
 		act(() => {
 			fireEvent.input(getByTestId("PeerForm__name-input"), { target: { value: "ROBank" } });
 		});
@@ -776,32 +792,6 @@ describe("Settings", () => {
 
 		await waitFor(() => {
 			expect(getByTestId("Input__error")).toBeVisible();
-		});
-
-		act(() => {
-			fireEvent.focus(getByTestId("SelectNetworkInput__input"));
-		});
-
-		await waitFor(() =>
-			expect(within(getByTestId("modal__inner")).getByTestId("NetworkIcon-ARK-ark.devnet")).toBeTruthy(),
-		);
-
-		act(() => {
-			fireEvent.click(within(getByTestId("modal__inner")).getByTestId("NetworkIcon-ARK-ark.devnet"));
-		});
-
-		await waitFor(() => expect(getByTestId("SelectNetworkInput__input")).toHaveValue(""));
-
-		act(() => {
-			fireEvent.focus(getByTestId("SelectNetworkInput__input"));
-		});
-
-		await waitFor(() =>
-			expect(within(getByTestId("modal__inner")).getByTestId("NetworkIcon-ARK-ark.devnet")).toBeTruthy(),
-		);
-
-		act(() => {
-			fireEvent.click(within(getByTestId("modal__inner")).getByTestId("NetworkIcon-ARK-ark.devnet"));
 		});
 
 		act(() => {
@@ -871,18 +861,21 @@ describe("Settings", () => {
 
 		expect(getByTestId("modal__inner")).toBeTruthy();
 
-		act(() => {
-			fireEvent.focus(getByTestId("SelectNetworkInput__input"));
-		});
-
-		await waitFor(() =>
-			expect(within(getByTestId("modal__inner")).getByTestId("NetworkIcon-ARK-ark.devnet")).toBeTruthy(),
-		);
+		const selectNetworkInput = getByTestId("SelectDropdownInput__input");
 
 		act(() => {
-			fireEvent.click(within(getByTestId("modal__inner")).getByTestId("NetworkIcon-ARK-ark.devnet"));
+			fireEvent.focus(selectNetworkInput);
 		});
 
+		act(() => {
+			fireEvent.change(selectNetworkInput, { target: { value: "Ark Mainnet" } });
+		});
+
+		await act(async () => {
+			fireEvent.keyDown(selectNetworkInput, { key: "Enter", code: 13 });
+		});
+
+		await waitFor(() => expect(selectNetworkInput).toHaveValue("ARK Mainnet"));
 		act(() => {
 			fireEvent.input(getByTestId("PeerForm__name-input"), { target: { value: "ROBank" } });
 		});
@@ -960,44 +953,6 @@ describe("Settings", () => {
 		});
 
 		expect(toastSpy).toHaveBeenCalledWith(translations.SETTINGS.PEERS.SUCCESS);
-	});
-
-	it("should render plugin settings", async () => {
-		const { container, asFragment, findByTestId } = renderWithRouter(
-			<Route path="/profiles/:profileId/settings">
-				<Settings />
-			</Route>,
-			{
-				routes: [`/profiles/${profile.id()}/settings`],
-			},
-		);
-
-		expect(container).toBeTruthy();
-
-		fireEvent.click(await findByTestId("side-menu__item--Plugins"));
-
-		expect(asFragment()).toMatchSnapshot();
-	});
-
-	it("should submit plugin settings form", async () => {
-		const toastSpy = jest.spyOn(toasts, "success");
-
-		const { findByTestId, getByTestId } = renderWithRouter(
-			<Route path="/profiles/:profileId/settings">
-				<Settings />
-			</Route>,
-			{
-				routes: [`/profiles/${profile.id()}/settings`],
-			},
-		);
-
-		fireEvent.click(await findByTestId("side-menu__item--Plugins"));
-
-		await act(async () => {
-			fireEvent.click(getByTestId("Plugins-settings__submit-button"));
-		});
-
-		expect(toastSpy).toHaveBeenCalledWith(translations.SETTINGS.PLUGINS.SUCCESS);
 	});
 
 	it("should render password settings", async () => {

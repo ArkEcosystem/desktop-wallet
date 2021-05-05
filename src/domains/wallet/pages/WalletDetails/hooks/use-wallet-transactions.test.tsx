@@ -32,9 +32,11 @@ describe("Wallet Transactions Hook", () => {
 			.persist();
 	});
 
-	beforeEach(() => {
+	beforeEach(async () => {
 		profile = env.profiles().findById(getDefaultProfileId());
 		wallet = profile.wallets().first();
+
+		await profile.sync();
 	});
 
 	it("should sync multisignatures", async () => {

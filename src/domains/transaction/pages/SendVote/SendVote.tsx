@@ -149,8 +149,8 @@ export const SendVote = () => {
 			const interval = setInterval(async () => {
 				let isConfirmed = false;
 
-				await activeWallet.syncVotes();
-				const walletVotes = activeWallet.votes();
+				await activeWallet.synchroniser().votes();
+				const walletVotes = activeWallet.voting().current();
 
 				if (type === "vote") {
 					isConfirmed = !!walletVotes.find((vote) => vote.address() === votes[0].address());
@@ -182,7 +182,7 @@ export const SendVote = () => {
 		const { fee, mnemonic, secondMnemonic, senderAddress, encryptionPassword } = getValues();
 		const abortSignal = abortRef.current?.signal;
 
-		const wif = activeWallet?.usesWIF() ? await activeWallet.wif(encryptionPassword) : undefined;
+		const wif = activeWallet?.wif().exists() ? await activeWallet.wif().get(encryptionPassword) : undefined;
 
 		try {
 			const voteTransactionInput: Contracts.TransactionInput = {

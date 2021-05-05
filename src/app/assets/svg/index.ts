@@ -72,6 +72,7 @@ import { ReactComponent as Multipayment } from "./multipayment.svg";
 import { ReactComponent as Multisig } from "./multisig.svg";
 import { ReactComponent as Notification } from "./notification.svg";
 import { ReactComponent as OfficialArkPlugin } from "./official-ark-plugin.svg";
+import { ReactComponent as OpenExplorer } from "./open-explorer.svg";
 import { ReactComponent as PaginationFirst } from "./pagination-first.svg";
 import { ReactComponent as PaginationLast } from "./pagination-last.svg";
 import { ReactComponent as Peer } from "./peer.svg";
@@ -87,6 +88,7 @@ import { ReactComponent as QrCode } from "./qr-code.svg";
 import { ReactComponent as QuestionMark } from "./questionmark.svg";
 import { ReactComponent as Received } from "./received.svg";
 import { ReactComponent as Redirect } from "./redirect.svg";
+import { ReactComponent as Reload } from "./reload.svg";
 import { ReactComponent as ReplyArrow } from "./reply-arrow.svg";
 import { ReactComponent as Report } from "./report.svg";
 import { ReactComponent as Reset } from "./reset.svg";
@@ -190,6 +192,7 @@ export const SvgCollection: any = {
 	Multisig,
 	Notification,
 	OfficialArkPlugin,
+	OpenExplorer,
 	PaginationFirst,
 	PaginationLast,
 	Peer,
@@ -205,6 +208,7 @@ export const SvgCollection: any = {
 	QuestionMark,
 	Received,
 	Redirect,
+	Reload,
 	ReplyArrow,
 	Report,
 	Reset,

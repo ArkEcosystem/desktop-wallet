@@ -63,10 +63,11 @@ describe("SendVote", () => {
 	beforeAll(async () => {
 		profile = env.profiles().findById(getDefaultProfileId());
 
-		await profile.restore();
+		await env.profiles().restore(profile);
 		await profile.sync();
 
 		wallet = profile.wallets().findById("ac38fe6d-4b67-4ef1-85be-17c5f6841129");
+		await wallet.synchroniser().identity();
 
 		jest.spyOn(wallet, "isDelegate").mockImplementation(() => true);
 
@@ -211,7 +212,7 @@ describe("SendVote", () => {
 	});
 
 	it("should send a unvote & vote transaction", async () => {
-		const votesMock = jest.spyOn(wallet, "votes").mockImplementation(() => [
+		const votesMock = jest.spyOn(wallet.voting(), "current").mockImplementation(() => [
 			new ReadOnlyWallet({
 				address: delegateData[1].address,
 				explorerLink: "",
@@ -220,7 +221,7 @@ describe("SendVote", () => {
 				rank: delegateData[1].rank,
 			}),
 		]);
-		await wallet.syncVotes();
+		await wallet.synchroniser().votes();
 
 		const history = createMemoryHistory();
 		const voteURL = `/profiles/${fixtureProfileId}/wallets/${wallet.id()}/send-vote`;
@@ -743,7 +744,7 @@ describe("SendVote", () => {
 	it("should send a unvote transaction with a multisignature wallet", async () => {
 		const isMultiSignatureSpy = jest.spyOn(wallet, "isMultiSignature").mockReturnValue(true);
 		const multisignatureSpy = jest
-			.spyOn(wallet, "multiSignature")
+			.spyOn(wallet.multiSignature(), "all")
 			.mockReturnValue({ min: 2, publicKeys: [wallet.publicKey()!, profile.wallets().last().publicKey()!] });
 
 		const history = createMemoryHistory();
@@ -891,7 +892,9 @@ describe("SendVote", () => {
 		await waitFor(() => expect(getByTestId("LedgerConfirmation-description")).toBeInTheDocument());
 		await waitFor(() => expect(getByTestId("TransactionSuccessful")).toBeTruthy(), { timeout: 3000 });
 
-		expect(getByTestId("TransactionSuccessful")).toHaveTextContent("2eda50b7d59b3…7ecc8339e430");
+		expect(getByTestId("TransactionSuccessful")).toHaveTextContent(
+			"2eda50b7d59b3fdeaa6281a7f2e8cb6995e63bc4547f2614e367ecc8339e430e",
+		);
 
 		getPublicKeySpy.mockRestore();
 		signTransactionSpy.mockRestore();
@@ -899,8 +902,8 @@ describe("SendVote", () => {
 	});
 
 	it("should send a vote transaction using encryption password", async () => {
-		const walletUsesWIFMock = jest.spyOn(wallet, "usesWIF").mockReturnValue(true);
-		const walletWifMock = jest.spyOn(wallet, "wif").mockImplementation((password) => {
+		const walletUsesWIFMock = jest.spyOn(wallet.wif(), "exists").mockReturnValue(true);
+		const walletWifMock = jest.spyOn(wallet.wif(), "get").mockImplementation(() => {
 			const wif = "S9rDfiJ2ar4DpWAQuaXECPTJHfTZ3XjCPv15gjxu4cHJZKzABPyV";
 			return Promise.resolve(wif);
 		});
@@ -924,7 +927,7 @@ describe("SendVote", () => {
 			}),
 		);
 
-		const { container, getByTestId } = renderWithRouter(
+		const { getByTestId } = renderWithRouter(
 			<Route path="/profiles/:profileId/wallets/:walletId/send-vote">
 				<FormProvider {...form.current}>
 					<LedgerProvider transport={transport}>

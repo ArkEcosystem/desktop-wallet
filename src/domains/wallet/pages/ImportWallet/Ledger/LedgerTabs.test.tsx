@@ -50,9 +50,14 @@ describe("LedgerTabs", () => {
 			});
 	});
 
-	beforeEach(() => {
+	beforeEach(async () => {
 		profile = env.profiles().findById(getDefaultProfileId());
+		await env.profiles().restore(profile);
+		await profile.sync();
+
 		wallet = profile.wallets().first();
+		await wallet.synchroniser().identity();
+
 		transport = createTransportReplayer(RecordStore.fromString(""));
 		publicKeyPaths = new Map([
 			["44'/1'/0'/0/0", "027716e659220085e41389efc7cf6a05f7f7c659cf3db9126caabce6cda9156582"],

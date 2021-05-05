@@ -15,7 +15,7 @@ export const EmptyBlock = ({ className, children, size, ...props }: EmptyBlockPr
 		<div
 			data-testid="EmptyBlock"
 			className={cn(
-				"border border-solid border-theme-secondary-300 dark:border-theme-secondary-800 rounded-lg text-theme-secondary-text",
+				"border border-solid border-theme-secondary-300 dark:border-theme-secondary-800 rounded-lg text-theme-secondary-text text-center leading-5",
 				padding,
 				className,
 			)}

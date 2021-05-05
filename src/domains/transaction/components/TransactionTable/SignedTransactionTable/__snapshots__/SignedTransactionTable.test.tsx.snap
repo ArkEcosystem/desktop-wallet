@@ -211,7 +211,7 @@ exports[`Signed Transaction Table should render 1`] = `
                     </div>
                   </div>
                   <div
-                    class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB ring-theme-background bg-theme-background group-hover:ring-theme-secondary-100 group-hover:bg-secondary-100 dark:group-hover:ring-black dark:group-hover:bg-black"
+                    class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB ring-theme-background bg-theme-background group-hover:ring-theme-secondary-100 group-hover:bg-secondary-100 dark:group-hover:ring-black dark:group-hover:bg-black flex-shrink-0"
                     data-testid="Avatar"
                   >
                     <div
@@ -226,13 +226,13 @@ exports[`Signed Transaction Table should render 1`] = `
                   </div>
                 </div>
                 <div
-                  class="inline-flex items-center no-ligatures"
+                  class="w-full flex items-center no-ligatures overflow-hidden whitespace-nowrap"
                 >
                   <span
-                    class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-text truncate font-semibold text-base"
+                    class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-text font-semibold text-base"
                     data-testid="address__wallet-address"
                   >
-                    D8rr7B…s6YUYD
+                    D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD
                   </span>
                 </div>
               </div>
@@ -1264,7 +1264,7 @@ exports[`Signed Transaction Table should show as awaiting confirmations 1`] = `
                     </div>
                   </div>
                   <div
-                    class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB ring-theme-background bg-theme-background group-hover:ring-theme-secondary-100 group-hover:bg-secondary-100 dark:group-hover:ring-black dark:group-hover:bg-black"
+                    class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB ring-theme-background bg-theme-background group-hover:ring-theme-secondary-100 group-hover:bg-secondary-100 dark:group-hover:ring-black dark:group-hover:bg-black flex-shrink-0"
                     data-testid="Avatar"
                   >
                     <div
@@ -1279,13 +1279,13 @@ exports[`Signed Transaction Table should show as awaiting confirmations 1`] = `
                   </div>
                 </div>
                 <div
-                  class="inline-flex items-center no-ligatures"
+                  class="w-full flex items-center no-ligatures overflow-hidden whitespace-nowrap"
                 >
                   <span
-                    class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-text truncate font-semibold text-base"
+                    class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-text font-semibold text-base"
                     data-testid="address__wallet-address"
                   >
-                    D8rr7B…s6YUYD
+                    D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD
                   </span>
                 </div>
               </div>
@@ -1577,7 +1577,7 @@ exports[`Signed Transaction Table should show as awaiting other wallets signatur
                     </div>
                   </div>
                   <div
-                    class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB ring-theme-background bg-theme-background group-hover:ring-theme-secondary-100 group-hover:bg-secondary-100 dark:group-hover:ring-black dark:group-hover:bg-black"
+                    class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB ring-theme-background bg-theme-background group-hover:ring-theme-secondary-100 group-hover:bg-secondary-100 dark:group-hover:ring-black dark:group-hover:bg-black flex-shrink-0"
                     data-testid="Avatar"
                   >
                     <div
@@ -1592,13 +1592,13 @@ exports[`Signed Transaction Table should show as awaiting other wallets signatur
                   </div>
                 </div>
                 <div
-                  class="inline-flex items-center no-ligatures"
+                  class="w-full flex items-center no-ligatures overflow-hidden whitespace-nowrap"
                 >
                   <span
-                    class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-text truncate font-semibold text-base"
+                    class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-text font-semibold text-base"
                     data-testid="address__wallet-address"
                   >
-                    D8rr7B…s6YUYD
+                    D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD
                   </span>
                 </div>
               </div>
@@ -1890,7 +1890,7 @@ exports[`Signed Transaction Table should show as awaiting the wallet signature 1
                     </div>
                   </div>
                   <div
-                    class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB ring-theme-background bg-theme-background group-hover:ring-theme-secondary-100 group-hover:bg-secondary-100 dark:group-hover:ring-black dark:group-hover:bg-black"
+                    class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB ring-theme-background bg-theme-background group-hover:ring-theme-secondary-100 group-hover:bg-secondary-100 dark:group-hover:ring-black dark:group-hover:bg-black flex-shrink-0"
                     data-testid="Avatar"
                   >
                     <div
@@ -1905,13 +1905,13 @@ exports[`Signed Transaction Table should show as awaiting the wallet signature 1
                   </div>
                 </div>
                 <div
-                  class="inline-flex items-center no-ligatures"
+                  class="w-full flex items-center no-ligatures overflow-hidden whitespace-nowrap"
                 >
                   <span
-                    class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-text truncate font-semibold text-base"
+                    class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-text font-semibold text-base"
                     data-testid="address__wallet-address"
                   >
-                    D8rr7B…s6YUYD
+                    D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD
                   </span>
                 </div>
               </div>
@@ -2203,7 +2203,7 @@ exports[`Signed Transaction Table should show as final signature 1`] = `
                     </div>
                   </div>
                   <div
-                    class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB ring-theme-background bg-theme-background group-hover:ring-theme-secondary-100 group-hover:bg-secondary-100 dark:group-hover:ring-black dark:group-hover:bg-black"
+                    class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB ring-theme-background bg-theme-background group-hover:ring-theme-secondary-100 group-hover:bg-secondary-100 dark:group-hover:ring-black dark:group-hover:bg-black flex-shrink-0"
                     data-testid="Avatar"
                   >
                     <div
@@ -2218,13 +2218,13 @@ exports[`Signed Transaction Table should show as final signature 1`] = `
                   </div>
                 </div>
                 <div
-                  class="inline-flex items-center no-ligatures"
+                  class="w-full flex items-center no-ligatures overflow-hidden whitespace-nowrap"
                 >
                   <span
-                    class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-text truncate font-semibold text-base"
+                    class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-text font-semibold text-base"
                     data-testid="address__wallet-address"
                   >
-                    D8rr7B…s6YUYD
+                    D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD
                   </span>
                 </div>
               </div>
@@ -2606,7 +2606,7 @@ exports[`Signed Transaction Table should show the sign button 1`] = `
                 class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 kjTmcB justify-end"
               >
                 <button
-                  class="OriginalButton__StyledButton-sc-1y2wptt-0 hsoUax"
+                  class="OriginalButton__StyledButton-sc-1y2wptt-0 izJbbP"
                   data-testid="TransactionRow__sign"
                   type="button"
                 >

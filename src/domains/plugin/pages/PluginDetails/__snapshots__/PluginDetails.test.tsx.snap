@@ -51,10 +51,13 @@ exports[`PluginDetails should render properly 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text"
+                class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
                 title="Portfolio"
               >
+                <div
+                  class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2"
+                />
                 Portfolio
               </a>
             </li>
@@ -63,10 +66,13 @@ exports[`PluginDetails should render properly 1`] = `
             >
               <a
                 aria-current="page"
-                class="flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text active"
+                class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group active"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/plugins"
                 title="Plugins"
               >
+                <div
+                  class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2"
+                />
                 Plugins
               </a>
             </li>
@@ -74,10 +80,13 @@ exports[`PluginDetails should render properly 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text"
+                class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/exchange"
                 title="Exchange"
               >
+                <div
+                  class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2"
+                />
                 Exchange
               </a>
             </li>
@@ -85,10 +94,13 @@ exports[`PluginDetails should render properly 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text"
+                class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/news"
                 title="News"
               >
+                <div
+                  class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2"
+                />
                 News
               </a>
             </li>
@@ -107,7 +119,7 @@ exports[`PluginDetails should render properly 1`] = `
                     class="NavigationBar__NavigationButtonWrapper-sc-1qsoskw-1 eUPnft group"
                   >
                     <button
-                      class="OriginalButton__StyledButton-sc-1y2wptt-0 lpqSIM"
+                      class="OriginalButton__StyledButton-sc-1y2wptt-0 fNHPRi"
                       data-testid="navbar__buttons--notifications"
                       type="button"
                     >
@@ -146,7 +158,7 @@ exports[`PluginDetails should render properly 1`] = `
                 class="NavigationBar__NavigationButtonWrapper-sc-1qsoskw-1 eUPnft"
               >
                 <button
-                  class="OriginalButton__StyledButton-sc-1y2wptt-0 lpqSIM"
+                  class="OriginalButton__StyledButton-sc-1y2wptt-0 fNHPRi"
                   data-testid="navbar__buttons--send"
                   type="button"
                 >
@@ -176,7 +188,7 @@ exports[`PluginDetails should render properly 1`] = `
                 class="NavigationBar__NavigationButtonWrapper-sc-1qsoskw-1 eUPnft"
               >
                 <button
-                  class="OriginalButton__StyledButton-sc-1y2wptt-0 lpqSIM"
+                  class="OriginalButton__StyledButton-sc-1y2wptt-0 fNHPRi"
                   data-testid="navbar__buttons--receive"
                   type="button"
                 >
@@ -252,7 +264,7 @@ exports[`PluginDetails should render properly 1`] = `
                     data-testid="navbar__useractions"
                   >
                     <div
-                      class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB"
+                      class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB flex-shrink-0"
                       data-testid="Avatar"
                     >
                       <div
@@ -326,7 +338,7 @@ exports[`PluginDetails should render properly 1`] = `
                       class="flex items-center space-x-3"
                     >
                       <button
-                        class="OriginalButton__StyledButton-sc-1y2wptt-0 hsoUax"
+                        class="OriginalButton__StyledButton-sc-1y2wptt-0 izJbbP"
                         data-testid="PluginHeader__button--report"
                         type="button"
                       >
@@ -351,7 +363,7 @@ exports[`PluginDetails should render properly 1`] = `
                           data-testid="dropdown__toggle"
                         >
                           <button
-                            class="OriginalButton__StyledButton-sc-1y2wptt-0 koEywu text-left"
+                            class="OriginalButton__StyledButton-sc-1y2wptt-0 jaUyKg text-left"
                             data-testid="PluginHeader__dropdown-toggle"
                             type="button"
                           >
@@ -597,10 +609,13 @@ exports[`PluginDetails should render properly for remote package 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text"
+                class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
                 title="Portfolio"
               >
+                <div
+                  class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2"
+                />
                 Portfolio
               </a>
             </li>
@@ -609,10 +624,13 @@ exports[`PluginDetails should render properly for remote package 1`] = `
             >
               <a
                 aria-current="page"
-                class="flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text active"
+                class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group active"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/plugins"
                 title="Plugins"
               >
+                <div
+                  class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2"
+                />
                 Plugins
               </a>
             </li>
@@ -620,10 +638,13 @@ exports[`PluginDetails should render properly for remote package 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text"
+                class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/exchange"
                 title="Exchange"
               >
+                <div
+                  class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2"
+                />
                 Exchange
               </a>
             </li>
@@ -631,10 +652,13 @@ exports[`PluginDetails should render properly for remote package 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text"
+                class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/news"
                 title="News"
               >
+                <div
+                  class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2"
+                />
                 News
               </a>
             </li>
@@ -653,7 +677,7 @@ exports[`PluginDetails should render properly for remote package 1`] = `
                     class="NavigationBar__NavigationButtonWrapper-sc-1qsoskw-1 eUPnft group"
                   >
                     <button
-                      class="OriginalButton__StyledButton-sc-1y2wptt-0 lpqSIM"
+                      class="OriginalButton__StyledButton-sc-1y2wptt-0 fNHPRi"
                       data-testid="navbar__buttons--notifications"
                       type="button"
                     >
@@ -692,7 +716,7 @@ exports[`PluginDetails should render properly for remote package 1`] = `
                 class="NavigationBar__NavigationButtonWrapper-sc-1qsoskw-1 eUPnft"
               >
                 <button
-                  class="OriginalButton__StyledButton-sc-1y2wptt-0 lpqSIM"
+                  class="OriginalButton__StyledButton-sc-1y2wptt-0 fNHPRi"
                   data-testid="navbar__buttons--send"
                   type="button"
                 >
@@ -722,7 +746,7 @@ exports[`PluginDetails should render properly for remote package 1`] = `
                 class="NavigationBar__NavigationButtonWrapper-sc-1qsoskw-1 eUPnft"
               >
                 <button
-                  class="OriginalButton__StyledButton-sc-1y2wptt-0 lpqSIM"
+                  class="OriginalButton__StyledButton-sc-1y2wptt-0 fNHPRi"
                   data-testid="navbar__buttons--receive"
                   type="button"
                 >
@@ -798,7 +822,7 @@ exports[`PluginDetails should render properly for remote package 1`] = `
                     data-testid="navbar__useractions"
                   >
                     <div
-                      class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB"
+                      class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB flex-shrink-0"
                       data-testid="Avatar"
                     >
                       <div
@@ -869,7 +893,7 @@ exports[`PluginDetails should render properly for remote package 1`] = `
                     class="flex"
                   >
                     <button
-                      class="OriginalButton__StyledButton-sc-1y2wptt-0 cEUmKc"
+                      class="OriginalButton__StyledButton-sc-1y2wptt-0 dYkFxS"
                       data-testid="PluginHeader__button--install"
                       type="button"
                     >
@@ -880,7 +904,7 @@ exports[`PluginDetails should render properly for remote package 1`] = `
                       </div>
                     </button>
                     <button
-                      class="OriginalButton__StyledButton-sc-1y2wptt-0 hsoUax ml-3"
+                      class="OriginalButton__StyledButton-sc-1y2wptt-0 izJbbP ml-3"
                       data-testid="PluginHeader__button--report"
                       type="button"
                     >
@@ -1123,10 +1147,13 @@ exports[`PluginDetails should report plugin 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text"
+                class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
                 title="Portfolio"
               >
+                <div
+                  class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2"
+                />
                 Portfolio
               </a>
             </li>
@@ -1135,10 +1162,13 @@ exports[`PluginDetails should report plugin 1`] = `
             >
               <a
                 aria-current="page"
-                class="flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text active"
+                class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group active"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/plugins"
                 title="Plugins"
               >
+                <div
+                  class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2"
+                />
                 Plugins
               </a>
             </li>
@@ -1146,10 +1176,13 @@ exports[`PluginDetails should report plugin 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text"
+                class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/exchange"
                 title="Exchange"
               >
+                <div
+                  class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2"
+                />
                 Exchange
               </a>
             </li>
@@ -1157,10 +1190,13 @@ exports[`PluginDetails should report plugin 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text"
+                class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/news"
                 title="News"
               >
+                <div
+                  class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2"
+                />
                 News
               </a>
             </li>
@@ -1179,7 +1215,7 @@ exports[`PluginDetails should report plugin 1`] = `
                     class="NavigationBar__NavigationButtonWrapper-sc-1qsoskw-1 eUPnft group"
                   >
                     <button
-                      class="OriginalButton__StyledButton-sc-1y2wptt-0 lpqSIM"
+                      class="OriginalButton__StyledButton-sc-1y2wptt-0 fNHPRi"
                       data-testid="navbar__buttons--notifications"
                       type="button"
                     >
@@ -1218,7 +1254,7 @@ exports[`PluginDetails should report plugin 1`] = `
                 class="NavigationBar__NavigationButtonWrapper-sc-1qsoskw-1 eUPnft"
               >
                 <button
-                  class="OriginalButton__StyledButton-sc-1y2wptt-0 lpqSIM"
+                  class="OriginalButton__StyledButton-sc-1y2wptt-0 fNHPRi"
                   data-testid="navbar__buttons--send"
                   type="button"
                 >
@@ -1248,7 +1284,7 @@ exports[`PluginDetails should report plugin 1`] = `
                 class="NavigationBar__NavigationButtonWrapper-sc-1qsoskw-1 eUPnft"
               >
                 <button
-                  class="OriginalButton__StyledButton-sc-1y2wptt-0 lpqSIM"
+                  class="OriginalButton__StyledButton-sc-1y2wptt-0 fNHPRi"
                   data-testid="navbar__buttons--receive"
                   type="button"
                 >
@@ -1324,7 +1360,7 @@ exports[`PluginDetails should report plugin 1`] = `
                     data-testid="navbar__useractions"
                   >
                     <div
-                      class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB"
+                      class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB flex-shrink-0"
                       data-testid="Avatar"
                     >
                       <div
@@ -1398,7 +1434,7 @@ exports[`PluginDetails should report plugin 1`] = `
                       class="flex items-center space-x-3"
                     >
                       <button
-                        class="OriginalButton__StyledButton-sc-1y2wptt-0 hsoUax"
+                        class="OriginalButton__StyledButton-sc-1y2wptt-0 izJbbP"
                         data-testid="PluginHeader__button--report"
                         type="button"
                       >
@@ -1423,7 +1459,7 @@ exports[`PluginDetails should report plugin 1`] = `
                           data-testid="dropdown__toggle"
                         >
                           <button
-                            class="OriginalButton__StyledButton-sc-1y2wptt-0 koEywu text-left"
+                            class="OriginalButton__StyledButton-sc-1y2wptt-0 jaUyKg text-left"
                             data-testid="PluginHeader__dropdown-toggle"
                             type="button"
                           >
@@ -1669,10 +1705,13 @@ exports[`PluginDetails should show configuration for plugins from npm 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text"
+                class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
                 title="Portfolio"
               >
+                <div
+                  class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2"
+                />
                 Portfolio
               </a>
             </li>
@@ -1681,10 +1720,13 @@ exports[`PluginDetails should show configuration for plugins from npm 1`] = `
             >
               <a
                 aria-current="page"
-                class="flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text active"
+                class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group active"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/plugins"
                 title="Plugins"
               >
+                <div
+                  class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2"
+                />
                 Plugins
               </a>
             </li>
@@ -1692,10 +1734,13 @@ exports[`PluginDetails should show configuration for plugins from npm 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text"
+                class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/exchange"
                 title="Exchange"
               >
+                <div
+                  class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2"
+                />
                 Exchange
               </a>
             </li>
@@ -1703,10 +1748,13 @@ exports[`PluginDetails should show configuration for plugins from npm 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text"
+                class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/news"
                 title="News"
               >
+                <div
+                  class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2"
+                />
                 News
               </a>
             </li>
@@ -1725,7 +1773,7 @@ exports[`PluginDetails should show configuration for plugins from npm 1`] = `
                     class="NavigationBar__NavigationButtonWrapper-sc-1qsoskw-1 eUPnft group"
                   >
                     <button
-                      class="OriginalButton__StyledButton-sc-1y2wptt-0 lpqSIM"
+                      class="OriginalButton__StyledButton-sc-1y2wptt-0 fNHPRi"
                       data-testid="navbar__buttons--notifications"
                       type="button"
                     >
@@ -1764,7 +1812,7 @@ exports[`PluginDetails should show configuration for plugins from npm 1`] = `
                 class="NavigationBar__NavigationButtonWrapper-sc-1qsoskw-1 eUPnft"
               >
                 <button
-                  class="OriginalButton__StyledButton-sc-1y2wptt-0 lpqSIM"
+                  class="OriginalButton__StyledButton-sc-1y2wptt-0 fNHPRi"
                   data-testid="navbar__buttons--send"
                   type="button"
                 >
@@ -1794,7 +1842,7 @@ exports[`PluginDetails should show configuration for plugins from npm 1`] = `
                 class="NavigationBar__NavigationButtonWrapper-sc-1qsoskw-1 eUPnft"
               >
                 <button
-                  class="OriginalButton__StyledButton-sc-1y2wptt-0 lpqSIM"
+                  class="OriginalButton__StyledButton-sc-1y2wptt-0 fNHPRi"
                   data-testid="navbar__buttons--receive"
                   type="button"
                 >
@@ -1870,7 +1918,7 @@ exports[`PluginDetails should show configuration for plugins from npm 1`] = `
                     data-testid="navbar__useractions"
                   >
                     <div
-                      class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB"
+                      class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB flex-shrink-0"
                       data-testid="Avatar"
                     >
                       <div
@@ -1943,7 +1991,7 @@ exports[`PluginDetails should show configuration for plugins from npm 1`] = `
                     class="flex"
                   >
                     <button
-                      class="OriginalButton__StyledButton-sc-1y2wptt-0 cEUmKc"
+                      class="OriginalButton__StyledButton-sc-1y2wptt-0 dYkFxS"
                       data-testid="PluginHeader__button--install"
                       type="button"
                     >
@@ -1954,7 +2002,7 @@ exports[`PluginDetails should show configuration for plugins from npm 1`] = `
                       </div>
                     </button>
                     <button
-                      class="OriginalButton__StyledButton-sc-1y2wptt-0 hsoUax ml-3"
+                      class="OriginalButton__StyledButton-sc-1y2wptt-0 izJbbP ml-3"
                       data-testid="PluginHeader__button--report"
                       type="button"
                     >
@@ -2043,21 +2091,22 @@ exports[`PluginDetails should show configuration for plugins from npm 1`] = `
                           class="font-semibold text-theme-secondary-text"
                         >
                           <a
-                            class="Link__AnchorStyled-sc-1q7sbxr-0 kAtXNw pointer-events-none no-underline inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary-600 hover:text-theme-primary-700 hover:underline active:text-theme-primary-500"
+                            class="Link__AnchorStyled-sc-1q7sbxr-0 bMatQy group"
                             data-testid="PluginSpecs__url"
+                            href="#"
                             rel="noopener noreferrer"
                             to="https://github.com/dated/transaction-export-plugin"
                           >
                             <span
-                              class="group"
+                              class="break-all border-b border-transparent transition-colors duration-200 border-current border-dotted group-hover:border-transparent"
                             >
-                              <span
-                                class="no-underline break-all pointer-events-auto border-b group-hover:border-0 active:border-0 border-dotted"
-                              >
-                                github.com
-                              </span>
+                              github.com
+                            </span>
+                            <span
+                              class="align-middle"
+                            >
                               <div
-                                class="sc-bdfBwQ fPrsah flex-shrink-0 pointer-events-auto inline-block pl-2 text-sm"
+                                class="sc-bdfBwQ fPrsah flex-shrink-0 inline-block pb-px text-sm"
                                 data-testid="Link__external"
                                 height="1em"
                                 width="1em"
@@ -2235,10 +2284,13 @@ exports[`PluginDetails should update package 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text"
+                class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
                 title="Portfolio"
               >
+                <div
+                  class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2"
+                />
                 Portfolio
               </a>
             </li>
@@ -2247,10 +2299,13 @@ exports[`PluginDetails should update package 1`] = `
             >
               <a
                 aria-current="page"
-                class="flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text active"
+                class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group active"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/plugins"
                 title="Plugins"
               >
+                <div
+                  class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2"
+                />
                 Plugins
               </a>
             </li>
@@ -2258,10 +2313,13 @@ exports[`PluginDetails should update package 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text"
+                class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/exchange"
                 title="Exchange"
               >
+                <div
+                  class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2"
+                />
                 Exchange
               </a>
             </li>
@@ -2269,10 +2327,13 @@ exports[`PluginDetails should update package 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text"
+                class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/news"
                 title="News"
               >
+                <div
+                  class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2"
+                />
                 News
               </a>
             </li>
@@ -2291,7 +2352,7 @@ exports[`PluginDetails should update package 1`] = `
                     class="NavigationBar__NavigationButtonWrapper-sc-1qsoskw-1 eUPnft group"
                   >
                     <button
-                      class="OriginalButton__StyledButton-sc-1y2wptt-0 lpqSIM"
+                      class="OriginalButton__StyledButton-sc-1y2wptt-0 fNHPRi"
                       data-testid="navbar__buttons--notifications"
                       type="button"
                     >
@@ -2330,7 +2391,7 @@ exports[`PluginDetails should update package 1`] = `
                 class="NavigationBar__NavigationButtonWrapper-sc-1qsoskw-1 eUPnft"
               >
                 <button
-                  class="OriginalButton__StyledButton-sc-1y2wptt-0 lpqSIM"
+                  class="OriginalButton__StyledButton-sc-1y2wptt-0 fNHPRi"
                   data-testid="navbar__buttons--send"
                   type="button"
                 >
@@ -2360,7 +2421,7 @@ exports[`PluginDetails should update package 1`] = `
                 class="NavigationBar__NavigationButtonWrapper-sc-1qsoskw-1 eUPnft"
               >
                 <button
-                  class="OriginalButton__StyledButton-sc-1y2wptt-0 lpqSIM"
+                  class="OriginalButton__StyledButton-sc-1y2wptt-0 fNHPRi"
                   data-testid="navbar__buttons--receive"
                   type="button"
                 >
@@ -2436,7 +2497,7 @@ exports[`PluginDetails should update package 1`] = `
                     data-testid="navbar__useractions"
                   >
                     <div
-                      class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB"
+                      class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB flex-shrink-0"
                       data-testid="Avatar"
                     >
                       <div
@@ -2510,7 +2571,7 @@ exports[`PluginDetails should update package 1`] = `
                       class="flex items-center space-x-3"
                     >
                       <button
-                        class="OriginalButton__StyledButton-sc-1y2wptt-0 hsoUax"
+                        class="OriginalButton__StyledButton-sc-1y2wptt-0 izJbbP"
                         data-testid="PluginHeader__button--report"
                         type="button"
                       >
@@ -2535,7 +2596,7 @@ exports[`PluginDetails should update package 1`] = `
                           data-testid="dropdown__toggle"
                         >
                           <button
-                            class="OriginalButton__StyledButton-sc-1y2wptt-0 koEywu text-left"
+                            class="OriginalButton__StyledButton-sc-1y2wptt-0 jaUyKg text-left"
                             data-testid="PluginHeader__dropdown-toggle"
                             type="button"
                           >

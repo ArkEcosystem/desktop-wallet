@@ -93,6 +93,11 @@ export const translations: { [key: string]: any } = {
 			TITLE: "Use Custom Peers",
 			DESCRIPTION: "Manages your list of custom peers for Blockchain networks.",
 		},
+		EMPTY_MESSAGE: "You have not added any custom peers yet.",
+		MULTISIGNATURE: {
+			TITLE: "Multisignature",
+			DESCRIPTION: "Toggle this setting if the IP points to a Multisignature peer.",
+		},
 		CRYPTOASSET: "Cryptoasset",
 		ADD_PEER: "Add Peer",
 		EDIT_PEER: "Edit Peer",
@@ -100,6 +105,7 @@ export const translations: { [key: string]: any } = {
 		PEER_IP: "Peer IP",
 		TYPE: "Type",
 		SUCCESS: "Your peer settings have been updated",
+		NETWORK: "Network",
 		VALIDATION: {
 			HOST_EXISTS: "The host already exists for this network",
 			NOT_VALID: "The {{field}} is not valid",

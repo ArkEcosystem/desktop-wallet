@@ -3,6 +3,8 @@ export const translations: { [key: string]: any } = {
 	SIGNATORY: "Signatory",
 	SIGNATURE: "Signature",
 	WALLET_NAME: "Wallet Name",
+	UPDATE_WALLET_DATA: "Update Wallet Data",
+	UPDATING_WALLET_DATA: "Updating Wallet Data",
 
 	MODAL_NAME_WALLET: {
 		TITLE: "Wallet Name",

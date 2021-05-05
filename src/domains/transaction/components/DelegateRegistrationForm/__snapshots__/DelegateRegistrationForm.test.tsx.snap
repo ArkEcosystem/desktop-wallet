@@ -61,7 +61,7 @@ exports[`DelegateRegistrationForm should error if username is too long 1`] = `
           data-testid="TransactionDetail"
         >
           <div
-            class="flex-1 space-y-2"
+            class="flex-1 space-y-2 flex-shrink overflow-hidden whitespace-nowrap"
           >
             <div
               class="text-sm font-semibold text-theme-secondary-700 no-ligatures"
@@ -72,7 +72,7 @@ exports[`DelegateRegistrationForm should error if username is too long 1`] = `
               class="font-semibold"
             >
               <div
-                class="inline-flex items-center no-ligatures"
+                class="w-full flex items-center no-ligatures overflow-hidden whitespace-nowrap"
               >
                 <span
                   class="max-w-24 flex-auto truncate mr-2 font-semibold text-base text-theme-text"
@@ -86,10 +86,10 @@ exports[`DelegateRegistrationForm should error if username is too long 1`] = `
                   </span>
                 </span>
                 <span
-                  class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-secondary-500 dark:text-theme-secondary-700 truncate font-semibold text-base"
+                  class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-secondary-500 dark:text-theme-secondary-700 font-semibold text-base"
                   data-testid="address__wallet-address"
                 >
-                  D8rr7B…s6YUYD
+                  D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD
                 </span>
               </div>
             </div>
@@ -98,7 +98,7 @@ exports[`DelegateRegistrationForm should error if username is too long 1`] = `
             class="flex items-center -space-x-2"
           >
             <div
-              class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB"
+              class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB flex-shrink-0"
               data-testid="Avatar"
             >
               <div
@@ -131,7 +131,7 @@ exports[`DelegateRegistrationForm should error if username is too long 1`] = `
               />
             </label>
             <div
-              class="Input__InputWrapperStyled-wu99qs-0 iXDeQC"
+              class="Input__InputWrapperStyled-wu99qs-0 liGcJS"
             >
               <div
                 class="relative flex flex-1 h-full"
@@ -189,7 +189,7 @@ exports[`DelegateRegistrationForm should error if username is too long 1`] = `
                   class="relative"
                 >
                   <div
-                    class="Input__InputWrapperStyled-wu99qs-0 hDeOGV"
+                    class="Input__InputWrapperStyled-wu99qs-0 knbpfp"
                   >
                     <div
                       class="relative flex flex-1 h-full"
@@ -340,7 +340,7 @@ exports[`DelegateRegistrationForm should render form step 1`] = `
           data-testid="TransactionDetail"
         >
           <div
-            class="flex-1 space-y-2"
+            class="flex-1 space-y-2 flex-shrink overflow-hidden whitespace-nowrap"
           >
             <div
               class="text-sm font-semibold text-theme-secondary-700 no-ligatures"
@@ -351,7 +351,7 @@ exports[`DelegateRegistrationForm should render form step 1`] = `
               class="font-semibold"
             >
               <div
-                class="inline-flex items-center no-ligatures"
+                class="w-full flex items-center no-ligatures overflow-hidden whitespace-nowrap"
               >
                 <span
                   class="max-w-24 flex-auto truncate mr-2 font-semibold text-base text-theme-text"
@@ -365,10 +365,10 @@ exports[`DelegateRegistrationForm should render form step 1`] = `
                   </span>
                 </span>
                 <span
-                  class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-secondary-500 dark:text-theme-secondary-700 truncate font-semibold text-base"
+                  class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-secondary-500 dark:text-theme-secondary-700 font-semibold text-base"
                   data-testid="address__wallet-address"
                 >
-                  D8rr7B…s6YUYD
+                  D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD
                 </span>
               </div>
             </div>
@@ -377,7 +377,7 @@ exports[`DelegateRegistrationForm should render form step 1`] = `
             class="flex items-center -space-x-2"
           >
             <div
-              class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB"
+              class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB flex-shrink-0"
               data-testid="Avatar"
             >
               <div
@@ -410,7 +410,7 @@ exports[`DelegateRegistrationForm should render form step 1`] = `
               />
             </label>
             <div
-              class="Input__InputWrapperStyled-wu99qs-0 hDeOGV"
+              class="Input__InputWrapperStyled-wu99qs-0 knbpfp"
             >
               <div
                 class="relative flex flex-1 h-full"
@@ -449,7 +449,7 @@ exports[`DelegateRegistrationForm should render form step 1`] = `
                   class="relative"
                 >
                   <div
-                    class="Input__InputWrapperStyled-wu99qs-0 hDeOGV"
+                    class="Input__InputWrapperStyled-wu99qs-0 knbpfp"
                   >
                     <div
                       class="relative flex flex-1 h-full"
@@ -573,7 +573,7 @@ exports[`DelegateRegistrationForm should render review step 1`] = `
           data-testid="TransactionDetail"
         >
           <div
-            class="flex-1 space-y-2"
+            class="flex-1 space-y-2 flex-shrink overflow-hidden whitespace-nowrap"
           >
             <div
               class="text-sm font-semibold text-theme-secondary-700 no-ligatures"
@@ -608,7 +608,7 @@ exports[`DelegateRegistrationForm should render review step 1`] = `
           data-testid="TransactionDetail"
         >
           <div
-            class="flex-1 space-y-2"
+            class="flex-1 space-y-2 flex-shrink overflow-hidden whitespace-nowrap"
           >
             <div
               class="text-sm font-semibold text-theme-secondary-700 no-ligatures"
@@ -619,7 +619,7 @@ exports[`DelegateRegistrationForm should render review step 1`] = `
               class="font-semibold"
             >
               <div
-                class="inline-flex items-center no-ligatures"
+                class="w-full flex items-center no-ligatures overflow-hidden whitespace-nowrap"
               >
                 <span
                   class="max-w-24 flex-auto truncate mr-2 font-semibold text-base text-theme-text"
@@ -633,10 +633,10 @@ exports[`DelegateRegistrationForm should render review step 1`] = `
                   </span>
                 </span>
                 <span
-                  class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-secondary-500 dark:text-theme-secondary-700 truncate font-semibold text-base"
+                  class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-secondary-500 dark:text-theme-secondary-700 font-semibold text-base"
                   data-testid="address__wallet-address"
                 >
-                  D8rr7B…s6YUYD
+                  D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD
                 </span>
               </div>
             </div>
@@ -645,7 +645,7 @@ exports[`DelegateRegistrationForm should render review step 1`] = `
             class="flex items-center -space-x-2"
           >
             <div
-              class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB"
+              class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB flex-shrink-0"
               data-testid="Avatar"
             >
               <div
@@ -665,7 +665,7 @@ exports[`DelegateRegistrationForm should render review step 1`] = `
           data-testid="TransactionDetail"
         >
           <div
-            class="flex-1 space-y-2"
+            class="flex-1 space-y-2 flex-shrink overflow-hidden whitespace-nowrap"
           >
             <div
               class="text-sm font-semibold text-theme-secondary-700 no-ligatures"
@@ -822,7 +822,7 @@ exports[`DelegateRegistrationForm should set fee 1`] = `
           data-testid="TransactionDetail"
         >
           <div
-            class="flex-1 space-y-2"
+            class="flex-1 space-y-2 flex-shrink overflow-hidden whitespace-nowrap"
           >
             <div
               class="text-sm font-semibold text-theme-secondary-700 no-ligatures"
@@ -833,7 +833,7 @@ exports[`DelegateRegistrationForm should set fee 1`] = `
               class="font-semibold"
             >
               <div
-                class="inline-flex items-center no-ligatures"
+                class="w-full flex items-center no-ligatures overflow-hidden whitespace-nowrap"
               >
                 <span
                   class="max-w-24 flex-auto truncate mr-2 font-semibold text-base text-theme-text"
@@ -847,10 +847,10 @@ exports[`DelegateRegistrationForm should set fee 1`] = `
                   </span>
                 </span>
                 <span
-                  class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-secondary-500 dark:text-theme-secondary-700 truncate font-semibold text-base"
+                  class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-secondary-500 dark:text-theme-secondary-700 font-semibold text-base"
                   data-testid="address__wallet-address"
                 >
-                  D8rr7B…s6YUYD
+                  D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD
                 </span>
               </div>
             </div>
@@ -859,7 +859,7 @@ exports[`DelegateRegistrationForm should set fee 1`] = `
             class="flex items-center -space-x-2"
           >
             <div
-              class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB"
+              class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB flex-shrink-0"
               data-testid="Avatar"
             >
               <div
@@ -892,7 +892,7 @@ exports[`DelegateRegistrationForm should set fee 1`] = `
               />
             </label>
             <div
-              class="Input__InputWrapperStyled-wu99qs-0 hDeOGV"
+              class="Input__InputWrapperStyled-wu99qs-0 knbpfp"
             >
               <div
                 class="relative flex flex-1 h-full"
@@ -931,7 +931,7 @@ exports[`DelegateRegistrationForm should set fee 1`] = `
                   class="relative"
                 >
                   <div
-                    class="Input__InputWrapperStyled-wu99qs-0 hDeOGV"
+                    class="Input__InputWrapperStyled-wu99qs-0 knbpfp"
                   >
                     <div
                       class="relative flex flex-1 h-full"
@@ -1082,7 +1082,7 @@ exports[`DelegateRegistrationForm should set username 1`] = `
           data-testid="TransactionDetail"
         >
           <div
-            class="flex-1 space-y-2"
+            class="flex-1 space-y-2 flex-shrink overflow-hidden whitespace-nowrap"
           >
             <div
               class="text-sm font-semibold text-theme-secondary-700 no-ligatures"
@@ -1093,7 +1093,7 @@ exports[`DelegateRegistrationForm should set username 1`] = `
               class="font-semibold"
             >
               <div
-                class="inline-flex items-center no-ligatures"
+                class="w-full flex items-center no-ligatures overflow-hidden whitespace-nowrap"
               >
                 <span
                   class="max-w-24 flex-auto truncate mr-2 font-semibold text-base text-theme-text"
@@ -1107,10 +1107,10 @@ exports[`DelegateRegistrationForm should set username 1`] = `
                   </span>
                 </span>
                 <span
-                  class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-secondary-500 dark:text-theme-secondary-700 truncate font-semibold text-base"
+                  class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-secondary-500 dark:text-theme-secondary-700 font-semibold text-base"
                   data-testid="address__wallet-address"
                 >
-                  D8rr7B…s6YUYD
+                  D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD
                 </span>
               </div>
             </div>
@@ -1119,7 +1119,7 @@ exports[`DelegateRegistrationForm should set username 1`] = `
             class="flex items-center -space-x-2"
           >
             <div
-              class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB"
+              class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB flex-shrink-0"
               data-testid="Avatar"
             >
               <div
@@ -1152,7 +1152,7 @@ exports[`DelegateRegistrationForm should set username 1`] = `
               />
             </label>
             <div
-              class="Input__InputWrapperStyled-wu99qs-0 hDeOGV"
+              class="Input__InputWrapperStyled-wu99qs-0 knbpfp"
             >
               <div
                 class="relative flex flex-1 h-full"
@@ -1191,7 +1191,7 @@ exports[`DelegateRegistrationForm should set username 1`] = `
                   class="relative"
                 >
                   <div
-                    class="Input__InputWrapperStyled-wu99qs-0 hDeOGV"
+                    class="Input__InputWrapperStyled-wu99qs-0 knbpfp"
                   >
                     <div
                       class="relative flex flex-1 h-full"
@@ -1342,7 +1342,7 @@ exports[`DelegateRegistrationForm should show error if username already exists 1
           data-testid="TransactionDetail"
         >
           <div
-            class="flex-1 space-y-2"
+            class="flex-1 space-y-2 flex-shrink overflow-hidden whitespace-nowrap"
           >
             <div
               class="text-sm font-semibold text-theme-secondary-700 no-ligatures"
@@ -1353,7 +1353,7 @@ exports[`DelegateRegistrationForm should show error if username already exists 1
               class="font-semibold"
             >
               <div
-                class="inline-flex items-center no-ligatures"
+                class="w-full flex items-center no-ligatures overflow-hidden whitespace-nowrap"
               >
                 <span
                   class="max-w-24 flex-auto truncate mr-2 font-semibold text-base text-theme-text"
@@ -1367,10 +1367,10 @@ exports[`DelegateRegistrationForm should show error if username already exists 1
                   </span>
                 </span>
                 <span
-                  class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-secondary-500 dark:text-theme-secondary-700 truncate font-semibold text-base"
+                  class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-secondary-500 dark:text-theme-secondary-700 font-semibold text-base"
                   data-testid="address__wallet-address"
                 >
-                  D8rr7B…s6YUYD
+                  D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD
                 </span>
               </div>
             </div>
@@ -1379,7 +1379,7 @@ exports[`DelegateRegistrationForm should show error if username already exists 1
             class="flex items-center -space-x-2"
           >
             <div
-              class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB"
+              class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB flex-shrink-0"
               data-testid="Avatar"
             >
               <div
@@ -1412,7 +1412,7 @@ exports[`DelegateRegistrationForm should show error if username already exists 1
               />
             </label>
             <div
-              class="Input__InputWrapperStyled-wu99qs-0 iXDeQC"
+              class="Input__InputWrapperStyled-wu99qs-0 liGcJS"
             >
               <div
                 class="relative flex flex-1 h-full"
@@ -1470,7 +1470,7 @@ exports[`DelegateRegistrationForm should show error if username already exists 1
                   class="relative"
                 >
                   <div
-                    class="Input__InputWrapperStyled-wu99qs-0 hDeOGV"
+                    class="Input__InputWrapperStyled-wu99qs-0 knbpfp"
                   >
                     <div
                       class="relative flex flex-1 h-full"
@@ -1621,7 +1621,7 @@ exports[`DelegateRegistrationForm should show error if username contains illegal
           data-testid="TransactionDetail"
         >
           <div
-            class="flex-1 space-y-2"
+            class="flex-1 space-y-2 flex-shrink overflow-hidden whitespace-nowrap"
           >
             <div
               class="text-sm font-semibold text-theme-secondary-700 no-ligatures"
@@ -1632,7 +1632,7 @@ exports[`DelegateRegistrationForm should show error if username contains illegal
               class="font-semibold"
             >
               <div
-                class="inline-flex items-center no-ligatures"
+                class="w-full flex items-center no-ligatures overflow-hidden whitespace-nowrap"
               >
                 <span
                   class="max-w-24 flex-auto truncate mr-2 font-semibold text-base text-theme-text"
@@ -1646,10 +1646,10 @@ exports[`DelegateRegistrationForm should show error if username contains illegal
                   </span>
                 </span>
                 <span
-                  class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-secondary-500 dark:text-theme-secondary-700 truncate font-semibold text-base"
+                  class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-secondary-500 dark:text-theme-secondary-700 font-semibold text-base"
                   data-testid="address__wallet-address"
                 >
-                  D8rr7B…s6YUYD
+                  D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD
                 </span>
               </div>
             </div>
@@ -1658,7 +1658,7 @@ exports[`DelegateRegistrationForm should show error if username contains illegal
             class="flex items-center -space-x-2"
           >
             <div
-              class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB"
+              class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB flex-shrink-0"
               data-testid="Avatar"
             >
               <div
@@ -1691,7 +1691,7 @@ exports[`DelegateRegistrationForm should show error if username contains illegal
               />
             </label>
             <div
-              class="Input__InputWrapperStyled-wu99qs-0 iXDeQC"
+              class="Input__InputWrapperStyled-wu99qs-0 liGcJS"
             >
               <div
                 class="relative flex flex-1 h-full"
@@ -1749,7 +1749,7 @@ exports[`DelegateRegistrationForm should show error if username contains illegal
                   class="relative"
                 >
                   <div
-                    class="Input__InputWrapperStyled-wu99qs-0 hDeOGV"
+                    class="Input__InputWrapperStyled-wu99qs-0 knbpfp"
                   >
                     <div
                       class="relative flex flex-1 h-full"

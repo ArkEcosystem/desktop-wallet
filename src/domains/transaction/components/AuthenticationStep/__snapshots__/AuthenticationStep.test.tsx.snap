@@ -45,7 +45,7 @@ exports[`AuthenticationStep should request mnemonic 1`] = `
           />
         </label>
         <div
-          class="Input__InputWrapperStyled-wu99qs-0 hDeOGV"
+          class="Input__InputWrapperStyled-wu99qs-0 knbpfp"
         >
           <div
             class="relative flex flex-1 h-full"
@@ -64,10 +64,13 @@ exports[`AuthenticationStep should request mnemonic 1`] = `
               class=""
             >
               <button
-                class="flex items-center justify-center w-full h-full text-2xl focus:outline-none"
+                class="relative flex items-center justify-center w-full h-full text-2xl focus:outline-none group"
                 data-testid="InputPassword__toggle"
                 type="button"
               >
+                <div
+                  class="absolute inset-0 -m-1 rounded ring-theme-primary-400 group-focus:ring-2"
+                />
                 <div
                   class="sc-bdfBwQ fPrsah"
                   height="1em"
@@ -132,7 +135,7 @@ exports[`AuthenticationStep should request mnemonic and second mnemonic 1`] = `
           />
         </label>
         <div
-          class="Input__InputWrapperStyled-wu99qs-0 hDeOGV"
+          class="Input__InputWrapperStyled-wu99qs-0 knbpfp"
         >
           <div
             class="relative flex flex-1 h-full"
@@ -151,10 +154,13 @@ exports[`AuthenticationStep should request mnemonic and second mnemonic 1`] = `
               class=""
             >
               <button
-                class="flex items-center justify-center w-full h-full text-2xl focus:outline-none"
+                class="relative flex items-center justify-center w-full h-full text-2xl focus:outline-none group"
                 data-testid="InputPassword__toggle"
                 type="button"
               >
+                <div
+                  class="absolute inset-0 -m-1 rounded ring-theme-primary-400 group-focus:ring-2"
+                />
                 <div
                   class="sc-bdfBwQ fPrsah"
                   height="1em"
@@ -184,7 +190,7 @@ exports[`AuthenticationStep should request mnemonic and second mnemonic 1`] = `
           />
         </label>
         <div
-          class="Input__InputWrapperStyled-wu99qs-0 bPzSMW"
+          class="Input__InputWrapperStyled-wu99qs-0 dMuUyK"
           disabled=""
         >
           <div
@@ -205,10 +211,13 @@ exports[`AuthenticationStep should request mnemonic and second mnemonic 1`] = `
               class=""
             >
               <button
-                class="flex items-center justify-center w-full h-full text-2xl focus:outline-none"
+                class="relative flex items-center justify-center w-full h-full text-2xl focus:outline-none group"
                 data-testid="InputPassword__toggle"
                 type="button"
               >
+                <div
+                  class="absolute inset-0 -m-1 rounded ring-theme-primary-400 group-focus:ring-2"
+                />
                 <div
                   class="sc-bdfBwQ fPrsah"
                   height="1em"

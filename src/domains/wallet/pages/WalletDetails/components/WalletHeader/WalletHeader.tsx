@@ -9,25 +9,46 @@ import { Icon } from "app/components/Icon";
 import { Tooltip } from "app/components/Tooltip";
 import { WalletIcons } from "app/components/WalletIcons";
 import { useEnvironmentContext } from "app/contexts";
+import { usePrevious } from "app/hooks";
+import { useTextTruncate } from "app/hooks/use-text-truncate";
 import { NetworkIcon } from "domains/network/components/NetworkIcon";
 import { DeleteWallet } from "domains/wallet/components/DeleteWallet";
 import { ReceiveFunds } from "domains/wallet/components/ReceiveFunds";
 import { SignMessage } from "domains/wallet/components/SignMessage";
 import { UpdateWalletName } from "domains/wallet/components/UpdateWalletName";
 import { VerifyMessage } from "domains/wallet/components/VerifyMessage";
-import React, { useState } from "react";
+import { useWalletSync } from "domains/wallet/hooks/use-wallet-sync";
+import React, { useEffect, useRef, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { useHistory } from "react-router-dom";
+import { openExternal } from "utils/electron-utils";
 
 type WalletHeaderProps = {
 	profile: Contracts.IProfile;
 	wallet: Contracts.IReadWriteWallet;
 	currencyDelta?: number;
 	onSend?: () => void;
+	isUpdatingTransactions?: boolean;
+	onUpdate?: (status: boolean) => void;
 };
 
-export const WalletHeader = ({ profile, wallet, currencyDelta, onSend }: WalletHeaderProps) => {
+export const WalletHeader = ({
+	profile,
+	wallet,
+	currencyDelta,
+	onSend,
+	isUpdatingTransactions,
+	onUpdate,
+}: WalletHeaderProps) => {
+	const ref = useRef(null);
+	const [TruncatedAddress] = useTextTruncate({ text: wallet.address(), parentRef: ref });
+
 	const [modal, setModal] = useState<string | undefined>();
+
+	const { env } = useEnvironmentContext();
+	const { syncAll } = useWalletSync({ profile, env });
+	const [isSyncing, setIsSyncing] = useState(false);
+	const prevIsUpdatingTransactions = usePrevious(isUpdatingTransactions);
 
 	const history = useHistory();
 
@@ -84,7 +105,7 @@ export const WalletHeader = ({ profile, wallet, currencyDelta, onSend }: WalletH
 
 	if (!wallet.isLedger() && wallet.hasBeenFullyRestored()) {
 		if (wallet.hasSyncedWithNetwork()) {
-			if (wallet.network().can(Coins.FeatureFlag.TransactionDelegateRegistration) && !wallet.isDelegate()) {
+			if (wallet.network().allows(Coins.FeatureFlag.TransactionDelegateRegistration) && !wallet.isDelegate()) {
 				registrationOptions.options.push({
 					label: t("WALLETS.PAGE_WALLET_DETAILS.OPTIONS.REGISTER_DELEGATE"),
 					value: "delegate-registration",
@@ -92,7 +113,7 @@ export const WalletHeader = ({ profile, wallet, currencyDelta, onSend }: WalletH
 			}
 
 			if (
-				wallet.network().can(Coins.FeatureFlag.TransactionDelegateResignation) &&
+				wallet.network().allows(Coins.FeatureFlag.TransactionDelegateResignation) &&
 				wallet.isDelegate() &&
 				!wallet.isResignedDelegate()
 			) {
@@ -102,7 +123,7 @@ export const WalletHeader = ({ profile, wallet, currencyDelta, onSend }: WalletH
 				});
 			}
 
-			if (wallet.network().can(Coins.FeatureFlag.TransactionSecondSignature) && !wallet.isSecondSignature()) {
+			if (wallet.network().allows(Coins.FeatureFlag.TransactionSecondSignature) && !wallet.isSecondSignature()) {
 				registrationOptions.options.push({
 					label: t("WALLETS.PAGE_WALLET_DETAILS.OPTIONS.SECOND_SIGNATURE"),
 					value: "second-signature",
@@ -110,7 +131,7 @@ export const WalletHeader = ({ profile, wallet, currencyDelta, onSend }: WalletH
 			}
 		}
 
-		if (wallet.network().can(Coins.FeatureFlag.TransactionMultiSignature)) {
+		if (wallet.network().allows(Coins.FeatureFlag.TransactionMultiSignature)) {
 			registrationOptions.options.push({
 				label: t("WALLETS.PAGE_WALLET_DETAILS.OPTIONS.MULTISIGNATURE"),
 				value: "multi-signature",
@@ -124,14 +145,14 @@ export const WalletHeader = ({ profile, wallet, currencyDelta, onSend }: WalletH
 		options: [],
 	};
 
-	if (wallet.network().can(Coins.FeatureFlag.MessageSign)) {
+	if (wallet.network().allows(Coins.FeatureFlag.MessageSign)) {
 		additionalOptions.options.push({
 			label: t("WALLETS.PAGE_WALLET_DETAILS.OPTIONS.SIGN_MESSAGE"),
 			value: "sign-message",
 		});
 	}
 
-	if (wallet.network().can(Coins.FeatureFlag.MessageVerify)) {
+	if (wallet.network().allows(Coins.FeatureFlag.MessageVerify)) {
 		additionalOptions.options.push({
 			label: t("WALLETS.PAGE_WALLET_DETAILS.OPTIONS.VERIFY_MESSAGE"),
 			value: "verify-message",
@@ -139,7 +160,7 @@ export const WalletHeader = ({ profile, wallet, currencyDelta, onSend }: WalletH
 	}
 
 	if (
-		wallet.network().can(Coins.FeatureFlag.TransactionIpfs) &&
+		wallet.network().allows(Coins.FeatureFlag.TransactionIpfs) &&
 		wallet.hasBeenFullyRestored() &&
 		wallet.hasSyncedWithNetwork()
 	) {
@@ -153,6 +174,14 @@ export const WalletHeader = ({ profile, wallet, currencyDelta, onSend }: WalletH
 		key: "secondary",
 		hasDivider: true,
 		options: [
+			{
+				icon: "OpenExplorer",
+				iconPosition: "start",
+				iconWidth: 18,
+				iconHeight: 18,
+				label: t("COMMON.OPEN_IN_EXPLORER"),
+				value: "open-explorer",
+			},
 			{
 				icon: "Trash",
 				iconPosition: "start",
@@ -185,8 +214,31 @@ export const WalletHeader = ({ profile, wallet, currencyDelta, onSend }: WalletH
 			history.push(`/profiles/${profile.id()}/wallets/${wallet.id()}/send-ipfs`);
 		}
 
+		if (option.value === "open-explorer") {
+			openExternal(wallet.explorerLink());
+		}
+
 		setModal(option.value?.toString());
 	};
+
+	const syncWallet = async () => {
+		onUpdate?.(true);
+		setIsSyncing(true);
+
+		await syncAll(wallet);
+
+		if (isUpdatingTransactions === undefined) {
+			setIsSyncing(false);
+			onUpdate?.(false);
+		}
+	};
+
+	useEffect(() => {
+		if (isSyncing && prevIsUpdatingTransactions && !isUpdatingTransactions) {
+			setIsSyncing(false);
+			onUpdate?.(false);
+		}
+	}, [isSyncing, prevIsUpdatingTransactions, isUpdatingTransactions, onUpdate]);
 
 	return (
 		<>
@@ -203,7 +255,7 @@ export const WalletHeader = ({ profile, wallet, currencyDelta, onSend }: WalletH
 						<Avatar size="lg" address={wallet.address()} shadowClassName="ring-theme-secondary-900" />
 					</div>
 
-					<div className="flex flex-col overflow-hidden">
+					<div className="flex flex-col overflow-hidden w-full">
 						<div className="flex items-center space-x-5 text-theme-secondary-text">
 							{wallet.alias() && (
 								<span data-testid="WalletHeader__name" className="text-sm font-semibold">
@@ -220,8 +272,13 @@ export const WalletHeader = ({ profile, wallet, currencyDelta, onSend }: WalletH
 							</div>
 						</div>
 
-						<div className="flex items-center space-x-5">
-							<span className="text-lg font-semibold text-white truncate">{wallet.address()}</span>
+						<div className="flex items-center space-x-5 w-full">
+							<span
+								ref={ref}
+								className="flex-1 text-lg font-semibold text-white overflow-hidden whitespace-nowrap"
+							>
+								<TruncatedAddress />
+							</span>
 
 							<div className="flex items-end mb-2 space-x-3 text-theme-secondary-text">
 								<Clipboard
@@ -291,7 +348,28 @@ export const WalletHeader = ({ profile, wallet, currencyDelta, onSend }: WalletH
 						/>
 					</div>
 
-					<div className="my-auto">
+					<div className="my-auto flex items-center -space-x-2">
+						<Tooltip
+							content={isSyncing ? t("WALLETS.UPDATING_WALLET_DATA") : t("WALLETS.UPDATE_WALLET_DATA")}
+							disabled={!wallet.hasSyncedWithNetwork()}
+						>
+							<Button
+								aria-busy={isSyncing}
+								data-testid="WalletHeader__refresh"
+								size="icon"
+								variant="transparent"
+								className="w-11 h-11 text-theme-secondary-text hover:text-theme-secondary-500"
+								onClick={syncWallet}
+								disabled={!wallet.hasSyncedWithNetwork() || isSyncing}
+							>
+								<Icon
+									name="Reload"
+									className={isSyncing ? "animate-spin" : ""}
+									style={{ animationDirection: "reverse" }}
+								/>
+							</Button>
+						</Tooltip>
+
 						<Button
 							size="icon"
 							variant="transparent"

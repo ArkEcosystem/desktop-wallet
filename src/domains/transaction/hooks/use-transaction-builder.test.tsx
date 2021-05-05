@@ -4,6 +4,7 @@ import { act as actHook, renderHook } from "@testing-library/react-hooks";
 import { LedgerProvider } from "app/contexts";
 import React from "react";
 import {
+	defaultNetMocks,
 	env,
 	getDefaultLedgerTransport,
 	getDefaultProfileId,
@@ -25,9 +26,12 @@ describe("Use Transaction Builder Hook", () => {
 		</WithProviders>
 	);
 
-	beforeEach(() => {
+	beforeAll(async () => {
+		defaultNetMocks();
 		profile = env.profiles().findById(getDefaultProfileId());
 		wallet = profile.wallets().first();
+
+		await profile.sync();
 	});
 
 	it("should sign transfer", async () => {
@@ -59,7 +63,7 @@ describe("Use Transaction Builder Hook", () => {
 		const { result } = renderHook(() => useTransactionBuilder(profile), { wrapper });
 
 		jest.spyOn(wallet, "isMultiSignature").mockImplementation(() => true);
-		jest.spyOn(wallet, "multiSignature").mockReturnValue({
+		jest.spyOn(wallet.multiSignature(), "all").mockReturnValue({
 			min: 2,
 			publicKeys: [wallet.publicKey()!, profile.wallets().last().publicKey()!],
 		});

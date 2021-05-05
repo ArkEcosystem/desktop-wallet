@@ -20,10 +20,22 @@ type TransactionsProps = {
 	wallets: Contracts.IReadWriteWallet[];
 	isLoading?: boolean;
 	title?: React.ReactNode;
+	onLoading?: (status: boolean) => void;
+	isUpdatingWallet?: boolean;
 };
 
 export const Transactions = memo(
-	({ emptyText, isCompact, profile, isVisible = true, wallets, isLoading = false, title }: TransactionsProps) => {
+	({
+		emptyText,
+		isCompact,
+		profile,
+		isVisible = true,
+		wallets,
+		isLoading = false,
+		title,
+		isUpdatingWallet,
+		onLoading,
+	}: TransactionsProps) => {
 		const { t } = useTranslation();
 
 		const [transactionModalItem, setTransactionModalItem] = useState<DTO.ExtendedTransactionData | undefined>(
@@ -59,6 +71,16 @@ export const Transactions = memo(
 			});
 		}, [isLoading, wallets.length, updateFilters]);
 
+		useEffect(() => {
+			onLoading?.(isLoadingTransactions);
+		}, [isLoadingTransactions, onLoading]);
+
+		useEffect(() => {
+			if (isUpdatingWallet) {
+				updateFilters({ activeMode, activeTransactionType, timestamp: new Date().getTime() });
+			}
+		}, [isUpdatingWallet]); // eslint-disable-line react-hooks/exhaustive-deps
+
 		if (!isVisible) {
 			return <></>;
 		}
@@ -81,6 +103,7 @@ export const Transactions = memo(
 								activeTransactionType: type,
 							});
 						}}
+						isDisabled={wallets.length === 0}
 						className="mt-6"
 					/>
 				</div>

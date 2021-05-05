@@ -108,8 +108,16 @@ export const News = ({ itemsPerPage }: Props) => {
 			</Section>
 
 			<Section className="flex-1" backgroundColor="--theme-secondary-background-color">
-				<div className="container flex space-x-8">
-					<div className="flex-none w-4/6">
+				<div className="container flex space-x-5 xl:space-x-8">
+					<div className="flex-none w-2/3">
+						{isLoading && (
+							<div className="space-y-5">
+								{skeletonCards.map((_, key: number) => (
+									<NewsCardSkeleton key={key} />
+								))}
+							</div>
+						)}
+
 						{!isLoading && news.length === 0 && (
 							<EmptyResults
 								className="rounded-lg border-2 border-theme-primary-100 dark:border-theme-secondary-800"
@@ -118,29 +126,17 @@ export const News = ({ itemsPerPage }: Props) => {
 							/>
 						)}
 
-						{isLoading && (
-							<div className="space-y-6">
-								{skeletonCards.map((_, key: number) => (
-									<NewsCardSkeleton key={key} />
-								))}
-							</div>
-						)}
-
-						{!isLoading && (
-							<div className="space-y-6">
-								{news?.map((data, index) => (
-									<NewsCard key={index} {...data} />
-								))}
-							</div>
-						)}
-
 						{!isLoading && news.length > 0 && (
 							<>
-								<div className="my-10">
+								<div className="space-y-5">
+									{news?.map((data, index) => (
+										<NewsCard key={index} {...data} />
+									))}
+
 									<BlockfolioAd />
 								</div>
 
-								<div className="flex justify-center w-full">
+								<div className="mt-10 flex justify-center w-full">
 									<Pagination
 										totalCount={totalCount}
 										itemsPerPage={itemsPerPage}
@@ -151,7 +147,7 @@ export const News = ({ itemsPerPage }: Props) => {
 							</>
 						)}
 					</div>
-					<div className="flex-none w-2/6">
+					<div className="relative w-1/3">
 						<NewsOptions
 							selectedCategories={categories}
 							selectedCoins={coins}

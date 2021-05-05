@@ -56,10 +56,13 @@ exports[`Dashboard should render 1`] = `
             >
               <a
                 aria-current="page"
-                class="flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text active"
+                class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group active"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
                 title="Portfolio"
               >
+                <div
+                  class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2"
+                />
                 Portfolio
               </a>
             </li>
@@ -67,10 +70,13 @@ exports[`Dashboard should render 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text"
+                class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/plugins"
                 title="Plugins"
               >
+                <div
+                  class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2"
+                />
                 Plugins
               </a>
             </li>
@@ -78,10 +84,13 @@ exports[`Dashboard should render 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text"
+                class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/exchange"
                 title="Exchange"
               >
+                <div
+                  class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2"
+                />
                 Exchange
               </a>
             </li>
@@ -89,10 +98,13 @@ exports[`Dashboard should render 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text"
+                class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/news"
                 title="News"
               >
+                <div
+                  class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2"
+                />
                 News
               </a>
             </li>
@@ -111,7 +123,7 @@ exports[`Dashboard should render 1`] = `
                     class="NavigationBar__NavigationButtonWrapper-sc-1qsoskw-1 eUPnft group"
                   >
                     <button
-                      class="OriginalButton__StyledButton-sc-1y2wptt-0 lpqSIM"
+                      class="OriginalButton__StyledButton-sc-1y2wptt-0 fNHPRi"
                       data-testid="navbar__buttons--notifications"
                       type="button"
                     >
@@ -150,7 +162,7 @@ exports[`Dashboard should render 1`] = `
                 class="NavigationBar__NavigationButtonWrapper-sc-1qsoskw-1 eUPnft"
               >
                 <button
-                  class="OriginalButton__StyledButton-sc-1y2wptt-0 lpqSIM"
+                  class="OriginalButton__StyledButton-sc-1y2wptt-0 fNHPRi"
                   data-testid="navbar__buttons--send"
                   type="button"
                 >
@@ -180,7 +192,7 @@ exports[`Dashboard should render 1`] = `
                 class="NavigationBar__NavigationButtonWrapper-sc-1qsoskw-1 eUPnft"
               >
                 <button
-                  class="OriginalButton__StyledButton-sc-1y2wptt-0 lpqSIM"
+                  class="OriginalButton__StyledButton-sc-1y2wptt-0 fNHPRi"
                   data-testid="navbar__buttons--receive"
                   type="button"
                 >
@@ -256,7 +268,7 @@ exports[`Dashboard should render 1`] = `
                     data-testid="navbar__useractions"
                   >
                     <div
-                      class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB"
+                      class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB flex-shrink-0"
                       data-testid="Avatar"
                     >
                       <div
@@ -396,7 +408,7 @@ exports[`Dashboard should render 1`] = `
                   class="flex space-x-3"
                 >
                   <button
-                    class="OriginalButton__StyledButton-sc-1y2wptt-0 hsoUax"
+                    class="OriginalButton__StyledButton-sc-1y2wptt-0 izJbbP"
                     data-testid="WalletControls__create-wallet"
                     type="button"
                   >
@@ -422,7 +434,7 @@ exports[`Dashboard should render 1`] = `
                     </div>
                   </button>
                   <button
-                    class="OriginalButton__StyledButton-sc-1y2wptt-0 hsoUax"
+                    class="OriginalButton__StyledButton-sc-1y2wptt-0 izJbbP"
                     data-testid="WalletControls__import-wallet"
                     type="button"
                   >
@@ -448,7 +460,7 @@ exports[`Dashboard should render 1`] = `
                     </div>
                   </button>
                   <button
-                    class="OriginalButton__StyledButton-sc-1y2wptt-0 hsoUax"
+                    class="OriginalButton__StyledButton-sc-1y2wptt-0 izJbbP"
                     data-testid="WalletControls__import-ledger"
                     type="button"
                   >
@@ -530,7 +542,7 @@ exports[`Dashboard should render 1`] = `
                                 </div>
                               </div>
                               <div
-                                class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB"
+                                class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB flex-shrink-0"
                                 data-testid="Avatar"
                               >
                                 <div
@@ -557,9 +569,14 @@ exports[`Dashboard should render 1`] = `
                             33.75089801 DARK
                           </span>
                           <span
-                            class="mt-1 text-xs font-semibold truncate text-theme-secondary-text no-ligatures"
+                            class="mt-1 text-xs font-semibold text-theme-secondary-text no-ligatures overflow-hidden whitespace-nowrap"
                           >
-                            D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD
+                            <span
+                              class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap"
+                              data-testid="TruncateMiddle"
+                            >
+                              D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD
+                            </span>
                           </span>
                         </div>
                         <div
@@ -606,7 +623,7 @@ exports[`Dashboard should render 1`] = `
                                 </div>
                               </div>
                               <div
-                                class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB"
+                                class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB flex-shrink-0"
                                 data-testid="Avatar"
                               >
                                 <div
@@ -633,9 +650,14 @@ exports[`Dashboard should render 1`] = `
                             57.68 DARK
                           </span>
                           <span
-                            class="mt-1 text-xs font-semibold truncate text-theme-secondary-text no-ligatures"
+                            class="mt-1 text-xs font-semibold text-theme-secondary-text no-ligatures overflow-hidden whitespace-nowrap"
                           >
-                            D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb
+                            <span
+                              class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap"
+                              data-testid="TruncateMiddle"
+                            >
+                              D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb
+                            </span>
                           </span>
                         </div>
                         <div
@@ -697,7 +719,7 @@ exports[`Dashboard should render 1`] = `
                                 </div>
                               </div>
                               <div
-                                class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB"
+                                class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB flex-shrink-0"
                                 data-testid="Avatar"
                               >
                                 <div
@@ -722,9 +744,14 @@ exports[`Dashboard should render 1`] = `
                             50,114.21127898 ARK
                           </span>
                           <span
-                            class="mt-1 text-xs font-semibold truncate text-theme-secondary-text no-ligatures"
+                            class="mt-1 text-xs font-semibold text-theme-secondary-text no-ligatures overflow-hidden whitespace-nowrap"
                           >
-                            AdVSe37niA3uFUPgCgMUH2tMsHF4LpLoiX
+                            <span
+                              class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap"
+                              data-testid="TruncateMiddle"
+                            >
+                              AdVSe37niA3uFUPgCgMUH2tMsHF4LpLoiX
+                            </span>
                           </span>
                         </div>
                         <div
@@ -795,7 +822,7 @@ exports[`Dashboard should render 1`] = `
                       </span>
                     </span>
                     <span
-                      class="CollapseToggleButton__ToggleIcon-sc-1f6f05f-0 jAAVWJ"
+                      class="CollapseToggleButton__ToggleIcon-sc-1f6f05f-0 jmsVky"
                     >
                       <div
                         class="sc-bdfBwQ kJrqvM"
@@ -1002,27 +1029,24 @@ exports[`Dashboard should render 1`] = `
                         class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 DpDcR"
                       >
                         <a
-                          class="Link__AnchorStyled-sc-1q7sbxr-0 kAtXNw pointer-events-none no-underline inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary-600 hover:text-theme-primary-700 hover:underline active:text-theme-primary-500"
+                          class="Link__AnchorStyled-sc-1q7sbxr-0 bMatQy group"
                           data-testid="TransactionRow__ID"
+                          href="#"
                           rel="noopener noreferrer"
                           to="https://dexplorer.ark.io/transaction/8f913b6b719e7767d49861c0aec79ced212767645cb793d75d2f1b89abb49877"
                         >
                           <span
-                            class="group"
+                            class="break-all border-b border-transparent transition-colors duration-200 border-current border-dotted group-hover:border-transparent"
                           >
-                            <span
-                              class="no-underline break-all pointer-events-auto border-b group-hover:border-0 active:border-0 border-dotted"
+                            <div
+                              class="sc-bdfBwQ fPrsah"
+                              height="1em"
+                              width="1em"
                             >
-                              <div
-                                class="sc-bdfBwQ fPrsah"
-                                height="1em"
-                                width="1em"
-                              >
-                                <svg>
-                                  id.svg
-                                </svg>
-                              </div>
-                            </span>
+                              <svg>
+                                id.svg
+                              </svg>
+                            </div>
                           </span>
                         </a>
                       </div>
@@ -1062,7 +1086,7 @@ exports[`Dashboard should render 1`] = `
                             </div>
                           </div>
                           <div
-                            class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB ring-theme-background bg-theme-background group-hover:ring-theme-secondary-100 group-hover:bg-secondary-100 dark:group-hover:ring-black dark:group-hover:bg-black"
+                            class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB ring-theme-background bg-theme-background group-hover:ring-theme-secondary-100 group-hover:bg-secondary-100 dark:group-hover:ring-black dark:group-hover:bg-black flex-shrink-0"
                             data-testid="Avatar"
                           >
                             <div
@@ -1077,14 +1101,18 @@ exports[`Dashboard should render 1`] = `
                           </div>
                         </div>
                         <div
-                          class="inline-flex items-center no-ligatures"
+                          class="w-40 xl:w-full"
                         >
-                          <span
-                            class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-text truncate font-semibold text-base"
-                            data-testid="address__wallet-address"
+                          <div
+                            class="w-full flex items-center no-ligatures overflow-hidden whitespace-nowrap"
                           >
-                            D5pVkh…xfKwSv
-                          </span>
+                            <span
+                              class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-text font-semibold text-base"
+                              data-testid="address__wallet-address"
+                            >
+                              D5pVkhZbSb4UNXvfmF6j7zdau8yGxfKwSv
+                            </span>
+                          </div>
                         </div>
                       </div>
                     </td>
@@ -1165,27 +1193,24 @@ exports[`Dashboard should render 1`] = `
                         class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 DpDcR"
                       >
                         <a
-                          class="Link__AnchorStyled-sc-1q7sbxr-0 kAtXNw pointer-events-none no-underline inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary-600 hover:text-theme-primary-700 hover:underline active:text-theme-primary-500"
+                          class="Link__AnchorStyled-sc-1q7sbxr-0 bMatQy group"
                           data-testid="TransactionRow__ID"
+                          href="#"
                           rel="noopener noreferrer"
                           to="https://dexplorer.ark.io/transaction/8f913b6b719e7767d49861c0aec79ced212767645cb793d75d2f1b89abb49877"
                         >
                           <span
-                            class="group"
+                            class="break-all border-b border-transparent transition-colors duration-200 border-current border-dotted group-hover:border-transparent"
                           >
-                            <span
-                              class="no-underline break-all pointer-events-auto border-b group-hover:border-0 active:border-0 border-dotted"
+                            <div
+                              class="sc-bdfBwQ fPrsah"
+                              height="1em"
+                              width="1em"
                             >
-                              <div
-                                class="sc-bdfBwQ fPrsah"
-                                height="1em"
-                                width="1em"
-                              >
-                                <svg>
-                                  id.svg
-                                </svg>
-                              </div>
-                            </span>
+                              <svg>
+                                id.svg
+                              </svg>
+                            </div>
                           </span>
                         </a>
                       </div>
@@ -1225,7 +1250,7 @@ exports[`Dashboard should render 1`] = `
                             </div>
                           </div>
                           <div
-                            class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB ring-theme-background bg-theme-background group-hover:ring-theme-secondary-100 group-hover:bg-secondary-100 dark:group-hover:ring-black dark:group-hover:bg-black"
+                            class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB ring-theme-background bg-theme-background group-hover:ring-theme-secondary-100 group-hover:bg-secondary-100 dark:group-hover:ring-black dark:group-hover:bg-black flex-shrink-0"
                             data-testid="Avatar"
                           >
                             <div
@@ -1240,14 +1265,18 @@ exports[`Dashboard should render 1`] = `
                           </div>
                         </div>
                         <div
-                          class="inline-flex items-center no-ligatures"
+                          class="w-40 xl:w-full"
                         >
-                          <span
-                            class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-text truncate font-semibold text-base"
-                            data-testid="address__wallet-address"
+                          <div
+                            class="w-full flex items-center no-ligatures overflow-hidden whitespace-nowrap"
                           >
-                            D5pVkh…xfKwSv
-                          </span>
+                            <span
+                              class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-text font-semibold text-base"
+                              data-testid="address__wallet-address"
+                            >
+                              D5pVkhZbSb4UNXvfmF6j7zdau8yGxfKwSv
+                            </span>
+                          </div>
                         </div>
                       </div>
                     </td>
@@ -1328,27 +1357,24 @@ exports[`Dashboard should render 1`] = `
                         class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 DpDcR"
                       >
                         <a
-                          class="Link__AnchorStyled-sc-1q7sbxr-0 kAtXNw pointer-events-none no-underline inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary-600 hover:text-theme-primary-700 hover:underline active:text-theme-primary-500"
+                          class="Link__AnchorStyled-sc-1q7sbxr-0 bMatQy group"
                           data-testid="TransactionRow__ID"
+                          href="#"
                           rel="noopener noreferrer"
                           to="https://dexplorer.ark.io/transaction/0d8d12d7980bf0183ef015e5938e56c44c3db4d3695cefd16ccec4a7bfd8a2cf"
                         >
                           <span
-                            class="group"
+                            class="break-all border-b border-transparent transition-colors duration-200 border-current border-dotted group-hover:border-transparent"
                           >
-                            <span
-                              class="no-underline break-all pointer-events-auto border-b group-hover:border-0 active:border-0 border-dotted"
+                            <div
+                              class="sc-bdfBwQ fPrsah"
+                              height="1em"
+                              width="1em"
                             >
-                              <div
-                                class="sc-bdfBwQ fPrsah"
-                                height="1em"
-                                width="1em"
-                              >
-                                <svg>
-                                  id.svg
-                                </svg>
-                              </div>
-                            </span>
+                              <svg>
+                                id.svg
+                              </svg>
+                            </div>
                           </span>
                         </a>
                       </div>
@@ -1388,7 +1414,7 @@ exports[`Dashboard should render 1`] = `
                             </div>
                           </div>
                           <div
-                            class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB ring-theme-background bg-theme-background group-hover:ring-theme-secondary-100 group-hover:bg-secondary-100 dark:group-hover:ring-black dark:group-hover:bg-black"
+                            class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB ring-theme-background bg-theme-background group-hover:ring-theme-secondary-100 group-hover:bg-secondary-100 dark:group-hover:ring-black dark:group-hover:bg-black flex-shrink-0"
                             data-testid="Avatar"
                           >
                             <div
@@ -1403,14 +1429,18 @@ exports[`Dashboard should render 1`] = `
                           </div>
                         </div>
                         <div
-                          class="inline-flex items-center no-ligatures"
+                          class="w-40 xl:w-full"
                         >
-                          <span
-                            class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-text truncate font-semibold text-base"
-                            data-testid="address__wallet-address"
+                          <div
+                            class="w-full flex items-center no-ligatures overflow-hidden whitespace-nowrap"
                           >
-                            DKY5ey…bNF53A
-                          </span>
+                            <span
+                              class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-text font-semibold text-base"
+                              data-testid="address__wallet-address"
+                            >
+                              DKY5eyQUKKYyaCfPp6MUv3Y4FW6EbNF53A
+                            </span>
+                          </div>
                         </div>
                       </div>
                     </td>
@@ -1491,27 +1521,24 @@ exports[`Dashboard should render 1`] = `
                         class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 DpDcR"
                       >
                         <a
-                          class="Link__AnchorStyled-sc-1q7sbxr-0 kAtXNw pointer-events-none no-underline inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary-600 hover:text-theme-primary-700 hover:underline active:text-theme-primary-500"
+                          class="Link__AnchorStyled-sc-1q7sbxr-0 bMatQy group"
                           data-testid="TransactionRow__ID"
+                          href="#"
                           rel="noopener noreferrer"
                           to="https://dexplorer.ark.io/transaction/0d8d12d7980bf0183ef015e5938e56c44c3db4d3695cefd16ccec4a7bfd8a2cf"
                         >
                           <span
-                            class="group"
+                            class="break-all border-b border-transparent transition-colors duration-200 border-current border-dotted group-hover:border-transparent"
                           >
-                            <span
-                              class="no-underline break-all pointer-events-auto border-b group-hover:border-0 active:border-0 border-dotted"
+                            <div
+                              class="sc-bdfBwQ fPrsah"
+                              height="1em"
+                              width="1em"
                             >
-                              <div
-                                class="sc-bdfBwQ fPrsah"
-                                height="1em"
-                                width="1em"
-                              >
-                                <svg>
-                                  id.svg
-                                </svg>
-                              </div>
-                            </span>
+                              <svg>
+                                id.svg
+                              </svg>
+                            </div>
                           </span>
                         </a>
                       </div>
@@ -1551,7 +1578,7 @@ exports[`Dashboard should render 1`] = `
                             </div>
                           </div>
                           <div
-                            class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB ring-theme-background bg-theme-background group-hover:ring-theme-secondary-100 group-hover:bg-secondary-100 dark:group-hover:ring-black dark:group-hover:bg-black"
+                            class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB ring-theme-background bg-theme-background group-hover:ring-theme-secondary-100 group-hover:bg-secondary-100 dark:group-hover:ring-black dark:group-hover:bg-black flex-shrink-0"
                             data-testid="Avatar"
                           >
                             <div
@@ -1566,14 +1593,18 @@ exports[`Dashboard should render 1`] = `
                           </div>
                         </div>
                         <div
-                          class="inline-flex items-center no-ligatures"
+                          class="w-40 xl:w-full"
                         >
-                          <span
-                            class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-text truncate font-semibold text-base"
-                            data-testid="address__wallet-address"
+                          <div
+                            class="w-full flex items-center no-ligatures overflow-hidden whitespace-nowrap"
                           >
-                            DKY5ey…bNF53A
-                          </span>
+                            <span
+                              class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-text font-semibold text-base"
+                              data-testid="address__wallet-address"
+                            >
+                              DKY5eyQUKKYyaCfPp6MUv3Y4FW6EbNF53A
+                            </span>
+                          </div>
                         </div>
                       </div>
                     </td>
@@ -1650,7 +1681,7 @@ exports[`Dashboard should render 1`] = `
             </div>
           </div>
           <button
-            class="OriginalButton__StyledButton-sc-1y2wptt-0 hsoUax mt-10 mb-5 w-full"
+            class="OriginalButton__StyledButton-sc-1y2wptt-0 izJbbP mt-10 mb-5 w-full"
             data-testid="transactions__fetch-more-button"
             type="button"
           >
@@ -1717,10 +1748,13 @@ exports[`Dashboard should render loading state when profile is syncing 1`] = `
             >
               <a
                 aria-current="page"
-                class="flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text active"
+                class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group active"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
                 title="Portfolio"
               >
+                <div
+                  class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2"
+                />
                 Portfolio
               </a>
             </li>
@@ -1728,10 +1762,13 @@ exports[`Dashboard should render loading state when profile is syncing 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text"
+                class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/plugins"
                 title="Plugins"
               >
+                <div
+                  class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2"
+                />
                 Plugins
               </a>
             </li>
@@ -1739,10 +1776,13 @@ exports[`Dashboard should render loading state when profile is syncing 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text"
+                class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/exchange"
                 title="Exchange"
               >
+                <div
+                  class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2"
+                />
                 Exchange
               </a>
             </li>
@@ -1750,10 +1790,13 @@ exports[`Dashboard should render loading state when profile is syncing 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text"
+                class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/news"
                 title="News"
               >
+                <div
+                  class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2"
+                />
                 News
               </a>
             </li>
@@ -1772,7 +1815,7 @@ exports[`Dashboard should render loading state when profile is syncing 1`] = `
                     class="NavigationBar__NavigationButtonWrapper-sc-1qsoskw-1 eUPnft group"
                   >
                     <button
-                      class="OriginalButton__StyledButton-sc-1y2wptt-0 lpqSIM"
+                      class="OriginalButton__StyledButton-sc-1y2wptt-0 fNHPRi"
                       data-testid="navbar__buttons--notifications"
                       type="button"
                     >
@@ -1811,7 +1854,7 @@ exports[`Dashboard should render loading state when profile is syncing 1`] = `
                 class="NavigationBar__NavigationButtonWrapper-sc-1qsoskw-1 eUPnft"
               >
                 <button
-                  class="OriginalButton__StyledButton-sc-1y2wptt-0 lpqSIM"
+                  class="OriginalButton__StyledButton-sc-1y2wptt-0 fNHPRi"
                   data-testid="navbar__buttons--send"
                   type="button"
                 >
@@ -1841,7 +1884,7 @@ exports[`Dashboard should render loading state when profile is syncing 1`] = `
                 class="NavigationBar__NavigationButtonWrapper-sc-1qsoskw-1 eUPnft"
               >
                 <button
-                  class="OriginalButton__StyledButton-sc-1y2wptt-0 lpqSIM"
+                  class="OriginalButton__StyledButton-sc-1y2wptt-0 fNHPRi"
                   data-testid="navbar__buttons--receive"
                   type="button"
                 >
@@ -1917,7 +1960,7 @@ exports[`Dashboard should render loading state when profile is syncing 1`] = `
                     data-testid="navbar__useractions"
                   >
                     <div
-                      class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB"
+                      class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB flex-shrink-0"
                       data-testid="Avatar"
                     >
                       <div
@@ -2057,7 +2100,7 @@ exports[`Dashboard should render loading state when profile is syncing 1`] = `
                   class="flex space-x-3"
                 >
                   <button
-                    class="OriginalButton__StyledButton-sc-1y2wptt-0 hsoUax"
+                    class="OriginalButton__StyledButton-sc-1y2wptt-0 izJbbP"
                     data-testid="WalletControls__create-wallet"
                     type="button"
                   >
@@ -2083,7 +2126,7 @@ exports[`Dashboard should render loading state when profile is syncing 1`] = `
                     </div>
                   </button>
                   <button
-                    class="OriginalButton__StyledButton-sc-1y2wptt-0 hsoUax"
+                    class="OriginalButton__StyledButton-sc-1y2wptt-0 izJbbP"
                     data-testid="WalletControls__import-wallet"
                     type="button"
                   >
@@ -2109,7 +2152,7 @@ exports[`Dashboard should render loading state when profile is syncing 1`] = `
                     </div>
                   </button>
                   <button
-                    class="OriginalButton__StyledButton-sc-1y2wptt-0 hsoUax"
+                    class="OriginalButton__StyledButton-sc-1y2wptt-0 izJbbP"
                     data-testid="WalletControls__import-ledger"
                     type="button"
                   >
@@ -2191,7 +2234,7 @@ exports[`Dashboard should render loading state when profile is syncing 1`] = `
                                 </div>
                               </div>
                               <div
-                                class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB"
+                                class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB flex-shrink-0"
                                 data-testid="Avatar"
                               >
                                 <div
@@ -2218,9 +2261,14 @@ exports[`Dashboard should render loading state when profile is syncing 1`] = `
                             33.75089801 DARK
                           </span>
                           <span
-                            class="mt-1 text-xs font-semibold truncate text-theme-secondary-text no-ligatures"
+                            class="mt-1 text-xs font-semibold text-theme-secondary-text no-ligatures overflow-hidden whitespace-nowrap"
                           >
-                            D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD
+                            <span
+                              class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap"
+                              data-testid="TruncateMiddle"
+                            >
+                              D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD
+                            </span>
                           </span>
                         </div>
                         <div
@@ -2267,7 +2315,7 @@ exports[`Dashboard should render loading state when profile is syncing 1`] = `
                                 </div>
                               </div>
                               <div
-                                class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB"
+                                class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB flex-shrink-0"
                                 data-testid="Avatar"
                               >
                                 <div
@@ -2294,9 +2342,14 @@ exports[`Dashboard should render loading state when profile is syncing 1`] = `
                             57.68 DARK
                           </span>
                           <span
-                            class="mt-1 text-xs font-semibold truncate text-theme-secondary-text no-ligatures"
+                            class="mt-1 text-xs font-semibold text-theme-secondary-text no-ligatures overflow-hidden whitespace-nowrap"
                           >
-                            D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb
+                            <span
+                              class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap"
+                              data-testid="TruncateMiddle"
+                            >
+                              D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb
+                            </span>
                           </span>
                         </div>
                         <div
@@ -2358,7 +2411,7 @@ exports[`Dashboard should render loading state when profile is syncing 1`] = `
                                 </div>
                               </div>
                               <div
-                                class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB"
+                                class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB flex-shrink-0"
                                 data-testid="Avatar"
                               >
                                 <div
@@ -2383,9 +2436,14 @@ exports[`Dashboard should render loading state when profile is syncing 1`] = `
                             50,114.21127898 ARK
                           </span>
                           <span
-                            class="mt-1 text-xs font-semibold truncate text-theme-secondary-text no-ligatures"
+                            class="mt-1 text-xs font-semibold text-theme-secondary-text no-ligatures overflow-hidden whitespace-nowrap"
                           >
-                            AdVSe37niA3uFUPgCgMUH2tMsHF4LpLoiX
+                            <span
+                              class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap"
+                              data-testid="TruncateMiddle"
+                            >
+                              AdVSe37niA3uFUPgCgMUH2tMsHF4LpLoiX
+                            </span>
                           </span>
                         </div>
                         <div
@@ -2456,7 +2514,7 @@ exports[`Dashboard should render loading state when profile is syncing 1`] = `
                       </span>
                     </span>
                     <span
-                      class="CollapseToggleButton__ToggleIcon-sc-1f6f05f-0 jAAVWJ"
+                      class="CollapseToggleButton__ToggleIcon-sc-1f6f05f-0 jmsVky"
                     >
                       <div
                         class="sc-bdfBwQ kJrqvM"
@@ -4427,10 +4485,13 @@ exports[`Dashboard should show warning for errored networks 1`] = `
             >
               <a
                 aria-current="page"
-                class="flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text active"
+                class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group active"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
                 title="Portfolio"
               >
+                <div
+                  class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2"
+                />
                 Portfolio
               </a>
             </li>
@@ -4438,10 +4499,13 @@ exports[`Dashboard should show warning for errored networks 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text"
+                class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/plugins"
                 title="Plugins"
               >
+                <div
+                  class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2"
+                />
                 Plugins
               </a>
             </li>
@@ -4449,10 +4513,13 @@ exports[`Dashboard should show warning for errored networks 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text"
+                class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/exchange"
                 title="Exchange"
               >
+                <div
+                  class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2"
+                />
                 Exchange
               </a>
             </li>
@@ -4460,10 +4527,13 @@ exports[`Dashboard should show warning for errored networks 1`] = `
               class="flex"
             >
               <a
-                class="flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text"
+                class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/news"
                 title="News"
               >
+                <div
+                  class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2"
+                />
                 News
               </a>
             </li>
@@ -4482,7 +4552,7 @@ exports[`Dashboard should show warning for errored networks 1`] = `
                     class="NavigationBar__NavigationButtonWrapper-sc-1qsoskw-1 eUPnft group"
                   >
                     <button
-                      class="OriginalButton__StyledButton-sc-1y2wptt-0 lpqSIM"
+                      class="OriginalButton__StyledButton-sc-1y2wptt-0 fNHPRi"
                       data-testid="navbar__buttons--notifications"
                       type="button"
                     >
@@ -4521,7 +4591,7 @@ exports[`Dashboard should show warning for errored networks 1`] = `
                 class="NavigationBar__NavigationButtonWrapper-sc-1qsoskw-1 eUPnft"
               >
                 <button
-                  class="OriginalButton__StyledButton-sc-1y2wptt-0 lpqSIM"
+                  class="OriginalButton__StyledButton-sc-1y2wptt-0 fNHPRi"
                   data-testid="navbar__buttons--send"
                   type="button"
                 >
@@ -4551,7 +4621,7 @@ exports[`Dashboard should show warning for errored networks 1`] = `
                 class="NavigationBar__NavigationButtonWrapper-sc-1qsoskw-1 eUPnft"
               >
                 <button
-                  class="OriginalButton__StyledButton-sc-1y2wptt-0 lpqSIM"
+                  class="OriginalButton__StyledButton-sc-1y2wptt-0 fNHPRi"
                   data-testid="navbar__buttons--receive"
                   type="button"
                 >
@@ -4627,7 +4697,7 @@ exports[`Dashboard should show warning for errored networks 1`] = `
                     data-testid="navbar__useractions"
                   >
                     <div
-                      class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB"
+                      class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB flex-shrink-0"
                       data-testid="Avatar"
                     >
                       <div
@@ -4767,7 +4837,7 @@ exports[`Dashboard should show warning for errored networks 1`] = `
                   class="flex space-x-3"
                 >
                   <button
-                    class="OriginalButton__StyledButton-sc-1y2wptt-0 hsoUax"
+                    class="OriginalButton__StyledButton-sc-1y2wptt-0 izJbbP"
                     data-testid="WalletControls__create-wallet"
                     type="button"
                   >
@@ -4793,7 +4863,7 @@ exports[`Dashboard should show warning for errored networks 1`] = `
                     </div>
                   </button>
                   <button
-                    class="OriginalButton__StyledButton-sc-1y2wptt-0 hsoUax"
+                    class="OriginalButton__StyledButton-sc-1y2wptt-0 izJbbP"
                     data-testid="WalletControls__import-wallet"
                     type="button"
                   >
@@ -4819,7 +4889,7 @@ exports[`Dashboard should show warning for errored networks 1`] = `
                     </div>
                   </button>
                   <button
-                    class="OriginalButton__StyledButton-sc-1y2wptt-0 hsoUax"
+                    class="OriginalButton__StyledButton-sc-1y2wptt-0 izJbbP"
                     data-testid="WalletControls__import-ledger"
                     type="button"
                   >
@@ -4901,7 +4971,7 @@ exports[`Dashboard should show warning for errored networks 1`] = `
                                 </div>
                               </div>
                               <div
-                                class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB"
+                                class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB flex-shrink-0"
                                 data-testid="Avatar"
                               >
                                 <div
@@ -4928,9 +4998,14 @@ exports[`Dashboard should show warning for errored networks 1`] = `
                             33.75089801 DARK
                           </span>
                           <span
-                            class="mt-1 text-xs font-semibold truncate text-theme-secondary-text no-ligatures"
+                            class="mt-1 text-xs font-semibold text-theme-secondary-text no-ligatures overflow-hidden whitespace-nowrap"
                           >
-                            D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD
+                            <span
+                              class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap"
+                              data-testid="TruncateMiddle"
+                            >
+                              D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD
+                            </span>
                           </span>
                         </div>
                         <div
@@ -4977,7 +5052,7 @@ exports[`Dashboard should show warning for errored networks 1`] = `
                                 </div>
                               </div>
                               <div
-                                class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB"
+                                class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB flex-shrink-0"
                                 data-testid="Avatar"
                               >
                                 <div
@@ -5004,9 +5079,14 @@ exports[`Dashboard should show warning for errored networks 1`] = `
                             57.68 DARK
                           </span>
                           <span
-                            class="mt-1 text-xs font-semibold truncate text-theme-secondary-text no-ligatures"
+                            class="mt-1 text-xs font-semibold text-theme-secondary-text no-ligatures overflow-hidden whitespace-nowrap"
                           >
-                            D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb
+                            <span
+                              class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap"
+                              data-testid="TruncateMiddle"
+                            >
+                              D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb
+                            </span>
                           </span>
                         </div>
                         <div
@@ -5068,7 +5148,7 @@ exports[`Dashboard should show warning for errored networks 1`] = `
                                 </div>
                               </div>
                               <div
-                                class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB"
+                                class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB flex-shrink-0"
                                 data-testid="Avatar"
                               >
                                 <div
@@ -5093,9 +5173,14 @@ exports[`Dashboard should show warning for errored networks 1`] = `
                             50,114.21127898 ARK
                           </span>
                           <span
-                            class="mt-1 text-xs font-semibold truncate text-theme-secondary-text no-ligatures"
+                            class="mt-1 text-xs font-semibold text-theme-secondary-text no-ligatures overflow-hidden whitespace-nowrap"
                           >
-                            AdVSe37niA3uFUPgCgMUH2tMsHF4LpLoiX
+                            <span
+                              class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap"
+                              data-testid="TruncateMiddle"
+                            >
+                              AdVSe37niA3uFUPgCgMUH2tMsHF4LpLoiX
+                            </span>
                           </span>
                         </div>
                         <div
@@ -5166,7 +5251,7 @@ exports[`Dashboard should show warning for errored networks 1`] = `
                       </span>
                     </span>
                     <span
-                      class="CollapseToggleButton__ToggleIcon-sc-1f6f05f-0 jAAVWJ"
+                      class="CollapseToggleButton__ToggleIcon-sc-1f6f05f-0 jmsVky"
                     >
                       <div
                         class="sc-bdfBwQ kJrqvM"
@@ -5373,27 +5458,24 @@ exports[`Dashboard should show warning for errored networks 1`] = `
                         class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 DpDcR"
                       >
                         <a
-                          class="Link__AnchorStyled-sc-1q7sbxr-0 kAtXNw pointer-events-none no-underline inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary-600 hover:text-theme-primary-700 hover:underline active:text-theme-primary-500"
+                          class="Link__AnchorStyled-sc-1q7sbxr-0 bMatQy group"
                           data-testid="TransactionRow__ID"
+                          href="#"
                           rel="noopener noreferrer"
                           to="https://dexplorer.ark.io/transaction/8f913b6b719e7767d49861c0aec79ced212767645cb793d75d2f1b89abb49877"
                         >
                           <span
-                            class="group"
+                            class="break-all border-b border-transparent transition-colors duration-200 border-current border-dotted group-hover:border-transparent"
                           >
-                            <span
-                              class="no-underline break-all pointer-events-auto border-b group-hover:border-0 active:border-0 border-dotted"
+                            <div
+                              class="sc-bdfBwQ fPrsah"
+                              height="1em"
+                              width="1em"
                             >
-                              <div
-                                class="sc-bdfBwQ fPrsah"
-                                height="1em"
-                                width="1em"
-                              >
-                                <svg>
-                                  id.svg
-                                </svg>
-                              </div>
-                            </span>
+                              <svg>
+                                id.svg
+                              </svg>
+                            </div>
                           </span>
                         </a>
                       </div>
@@ -5433,7 +5515,7 @@ exports[`Dashboard should show warning for errored networks 1`] = `
                             </div>
                           </div>
                           <div
-                            class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB ring-theme-background bg-theme-background group-hover:ring-theme-secondary-100 group-hover:bg-secondary-100 dark:group-hover:ring-black dark:group-hover:bg-black"
+                            class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB ring-theme-background bg-theme-background group-hover:ring-theme-secondary-100 group-hover:bg-secondary-100 dark:group-hover:ring-black dark:group-hover:bg-black flex-shrink-0"
                             data-testid="Avatar"
                           >
                             <div
@@ -5448,14 +5530,18 @@ exports[`Dashboard should show warning for errored networks 1`] = `
                           </div>
                         </div>
                         <div
-                          class="inline-flex items-center no-ligatures"
+                          class="w-40 xl:w-full"
                         >
-                          <span
-                            class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-text truncate font-semibold text-base"
-                            data-testid="address__wallet-address"
+                          <div
+                            class="w-full flex items-center no-ligatures overflow-hidden whitespace-nowrap"
                           >
-                            D5pVkh…xfKwSv
-                          </span>
+                            <span
+                              class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-text font-semibold text-base"
+                              data-testid="address__wallet-address"
+                            >
+                              D5pVkhZbSb4UNXvfmF6j7zdau8yGxfKwSv
+                            </span>
+                          </div>
                         </div>
                       </div>
                     </td>
@@ -5536,27 +5622,24 @@ exports[`Dashboard should show warning for errored networks 1`] = `
                         class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 DpDcR"
                       >
                         <a
-                          class="Link__AnchorStyled-sc-1q7sbxr-0 kAtXNw pointer-events-none no-underline inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary-600 hover:text-theme-primary-700 hover:underline active:text-theme-primary-500"
+                          class="Link__AnchorStyled-sc-1q7sbxr-0 bMatQy group"
                           data-testid="TransactionRow__ID"
+                          href="#"
                           rel="noopener noreferrer"
                           to="https://dexplorer.ark.io/transaction/8f913b6b719e7767d49861c0aec79ced212767645cb793d75d2f1b89abb49877"
                         >
                           <span
-                            class="group"
+                            class="break-all border-b border-transparent transition-colors duration-200 border-current border-dotted group-hover:border-transparent"
                           >
-                            <span
-                              class="no-underline break-all pointer-events-auto border-b group-hover:border-0 active:border-0 border-dotted"
+                            <div
+                              class="sc-bdfBwQ fPrsah"
+                              height="1em"
+                              width="1em"
                             >
-                              <div
-                                class="sc-bdfBwQ fPrsah"
-                                height="1em"
-                                width="1em"
-                              >
-                                <svg>
-                                  id.svg
-                                </svg>
-                              </div>
-                            </span>
+                              <svg>
+                                id.svg
+                              </svg>
+                            </div>
                           </span>
                         </a>
                       </div>
@@ -5596,7 +5679,7 @@ exports[`Dashboard should show warning for errored networks 1`] = `
                             </div>
                           </div>
                           <div
-                            class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB ring-theme-background bg-theme-background group-hover:ring-theme-secondary-100 group-hover:bg-secondary-100 dark:group-hover:ring-black dark:group-hover:bg-black"
+                            class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB ring-theme-background bg-theme-background group-hover:ring-theme-secondary-100 group-hover:bg-secondary-100 dark:group-hover:ring-black dark:group-hover:bg-black flex-shrink-0"
                             data-testid="Avatar"
                           >
                             <div
@@ -5611,14 +5694,18 @@ exports[`Dashboard should show warning for errored networks 1`] = `
                           </div>
                         </div>
                         <div
-                          class="inline-flex items-center no-ligatures"
+                          class="w-40 xl:w-full"
                         >
-                          <span
-                            class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-text truncate font-semibold text-base"
-                            data-testid="address__wallet-address"
+                          <div
+                            class="w-full flex items-center no-ligatures overflow-hidden whitespace-nowrap"
                           >
-                            D5pVkh…xfKwSv
-                          </span>
+                            <span
+                              class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-text font-semibold text-base"
+                              data-testid="address__wallet-address"
+                            >
+                              D5pVkhZbSb4UNXvfmF6j7zdau8yGxfKwSv
+                            </span>
+                          </div>
                         </div>
                       </div>
                     </td>
@@ -5699,27 +5786,24 @@ exports[`Dashboard should show warning for errored networks 1`] = `
                         class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 DpDcR"
                       >
                         <a
-                          class="Link__AnchorStyled-sc-1q7sbxr-0 kAtXNw pointer-events-none no-underline inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary-600 hover:text-theme-primary-700 hover:underline active:text-theme-primary-500"
+                          class="Link__AnchorStyled-sc-1q7sbxr-0 bMatQy group"
                           data-testid="TransactionRow__ID"
+                          href="#"
                           rel="noopener noreferrer"
                           to="https://dexplorer.ark.io/transaction/0d8d12d7980bf0183ef015e5938e56c44c3db4d3695cefd16ccec4a7bfd8a2cf"
                         >
                           <span
-                            class="group"
+                            class="break-all border-b border-transparent transition-colors duration-200 border-current border-dotted group-hover:border-transparent"
                           >
-                            <span
-                              class="no-underline break-all pointer-events-auto border-b group-hover:border-0 active:border-0 border-dotted"
+                            <div
+                              class="sc-bdfBwQ fPrsah"
+                              height="1em"
+                              width="1em"
                             >
-                              <div
-                                class="sc-bdfBwQ fPrsah"
-                                height="1em"
-                                width="1em"
-                              >
-                                <svg>
-                                  id.svg
-                                </svg>
-                              </div>
-                            </span>
+                              <svg>
+                                id.svg
+                              </svg>
+                            </div>
                           </span>
                         </a>
                       </div>
@@ -5759,7 +5843,7 @@ exports[`Dashboard should show warning for errored networks 1`] = `
                             </div>
                           </div>
                           <div
-                            class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB ring-theme-background bg-theme-background group-hover:ring-theme-secondary-100 group-hover:bg-secondary-100 dark:group-hover:ring-black dark:group-hover:bg-black"
+                            class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB ring-theme-background bg-theme-background group-hover:ring-theme-secondary-100 group-hover:bg-secondary-100 dark:group-hover:ring-black dark:group-hover:bg-black flex-shrink-0"
                             data-testid="Avatar"
                           >
                             <div
@@ -5774,14 +5858,18 @@ exports[`Dashboard should show warning for errored networks 1`] = `
                           </div>
                         </div>
                         <div
-                          class="inline-flex items-center no-ligatures"
+                          class="w-40 xl:w-full"
                         >
-                          <span
-                            class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-text truncate font-semibold text-base"
-                            data-testid="address__wallet-address"
+                          <div
+                            class="w-full flex items-center no-ligatures overflow-hidden whitespace-nowrap"
                           >
-                            DKY5ey…bNF53A
-                          </span>
+                            <span
+                              class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-text font-semibold text-base"
+                              data-testid="address__wallet-address"
+                            >
+                              DKY5eyQUKKYyaCfPp6MUv3Y4FW6EbNF53A
+                            </span>
+                          </div>
                         </div>
                       </div>
                     </td>
@@ -5862,27 +5950,24 @@ exports[`Dashboard should show warning for errored networks 1`] = `
                         class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 DpDcR"
                       >
                         <a
-                          class="Link__AnchorStyled-sc-1q7sbxr-0 kAtXNw pointer-events-none no-underline inline-flex items-center font-semibold transition-colors duration-200 cursor-pointer text-theme-primary-600 hover:text-theme-primary-700 hover:underline active:text-theme-primary-500"
+                          class="Link__AnchorStyled-sc-1q7sbxr-0 bMatQy group"
                           data-testid="TransactionRow__ID"
+                          href="#"
                           rel="noopener noreferrer"
                           to="https://dexplorer.ark.io/transaction/0d8d12d7980bf0183ef015e5938e56c44c3db4d3695cefd16ccec4a7bfd8a2cf"
                         >
                           <span
-                            class="group"
+                            class="break-all border-b border-transparent transition-colors duration-200 border-current border-dotted group-hover:border-transparent"
                           >
-                            <span
-                              class="no-underline break-all pointer-events-auto border-b group-hover:border-0 active:border-0 border-dotted"
+                            <div
+                              class="sc-bdfBwQ fPrsah"
+                              height="1em"
+                              width="1em"
                             >
-                              <div
-                                class="sc-bdfBwQ fPrsah"
-                                height="1em"
-                                width="1em"
-                              >
-                                <svg>
-                                  id.svg
-                                </svg>
-                              </div>
-                            </span>
+                              <svg>
+                                id.svg
+                              </svg>
+                            </div>
                           </span>
                         </a>
                       </div>
@@ -5922,7 +6007,7 @@ exports[`Dashboard should show warning for errored networks 1`] = `
                             </div>
                           </div>
                           <div
-                            class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB ring-theme-background bg-theme-background group-hover:ring-theme-secondary-100 group-hover:bg-secondary-100 dark:group-hover:ring-black dark:group-hover:bg-black"
+                            class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB ring-theme-background bg-theme-background group-hover:ring-theme-secondary-100 group-hover:bg-secondary-100 dark:group-hover:ring-black dark:group-hover:bg-black flex-shrink-0"
                             data-testid="Avatar"
                           >
                             <div
@@ -5937,14 +6022,18 @@ exports[`Dashboard should show warning for errored networks 1`] = `
                           </div>
                         </div>
                         <div
-                          class="inline-flex items-center no-ligatures"
+                          class="w-40 xl:w-full"
                         >
-                          <span
-                            class="TruncateMiddle__Wrapper-sc-3j3e79-0 text-theme-text truncate font-semibold text-base"
-                            data-testid="address__wallet-address"
+                          <div
+                            class="w-full flex items-center no-ligatures overflow-hidden whitespace-nowrap"
                           >
-                            DKY5ey…bNF53A
-                          </span>
+                            <span
+                              class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-text font-semibold text-base"
+                              data-testid="address__wallet-address"
+                            >
+                              DKY5eyQUKKYyaCfPp6MUv3Y4FW6EbNF53A
+                            </span>
+                          </div>
                         </div>
                       </div>
                     </td>
@@ -6021,7 +6110,7 @@ exports[`Dashboard should show warning for errored networks 1`] = `
             </div>
           </div>
           <button
-            class="OriginalButton__StyledButton-sc-1y2wptt-0 hsoUax mt-10 mb-5 w-full"
+            class="OriginalButton__StyledButton-sc-1y2wptt-0 izJbbP mt-10 mb-5 w-full"
             data-testid="transactions__fetch-more-button"
             type="button"
           >

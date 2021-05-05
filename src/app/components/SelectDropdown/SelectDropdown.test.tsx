@@ -25,6 +25,17 @@ describe("SelectDropdown", () => {
 		expect(container).toMatchSnapshot();
 	});
 
+	it("should render with custom label", () => {
+		const { container, queryByText, getByTestId } = render(
+			<Select options={options} renderLabel={(option) => <span>{`Label ${option.label}`}</span>} />,
+		);
+
+		fireEvent.focus(getByTestId("SelectDropdownInput__input"), { target: { value: "Opt" } });
+
+		expect(container).toMatchSnapshot();
+		expect(queryByText("Label Option 1")).toBeInTheDocument();
+	});
+
 	it("should render invalid", () => {
 		const { container } = render(<Select options={options} isInvalid />);
 		expect(container).toMatchSnapshot();
@@ -73,7 +84,6 @@ describe("SelectDropdown", () => {
 	});
 
 	it("should toggle select list options", () => {
-		const options = [{ label: "Option 1", value: "1" }];
 		const { getByTestId } = render(<Select options={options} />);
 
 		const selectDropdown = getByTestId("SelectDropdownInput__input");
@@ -91,7 +101,6 @@ describe("SelectDropdown", () => {
 	});
 
 	it("should select option", () => {
-		const options = [{ label: "Option 1", value: "1" }];
 		const { getByTestId } = render(<Select options={options} />);
 
 		const selectDropdown = getByTestId("SelectDropdownInput__input");
@@ -111,7 +120,6 @@ describe("SelectDropdown", () => {
 	});
 
 	it("should highlight option", () => {
-		const options = [{ label: "Option 1", value: "1" }];
 		const { getByTestId } = render(<Select options={options} />);
 
 		const selectDropdown = getByTestId("SelectDropdownInput__input");
@@ -127,11 +135,10 @@ describe("SelectDropdown", () => {
 		const firstOption = getByTestId("select-list__toggle-option-0");
 		expect(firstOption).toBeTruthy();
 
-		expect(firstOption).toHaveClass("is-highlighted");
+		expect(firstOption).toHaveClass("is-selected");
 	});
 
 	it("should select options with arrow keys", () => {
-		const options = [{ label: "Option 1", value: "1" }];
 		const { getByTestId } = render(<Select options={options} />);
 
 		const selectDropdown = getByTestId("SelectDropdownInput__input");

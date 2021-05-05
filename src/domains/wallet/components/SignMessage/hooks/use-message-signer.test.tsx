@@ -10,10 +10,12 @@ describe("Use Message Signer Hook", () => {
 	let wallet: Contracts.IReadWriteWallet;
 	let transport: typeof Transport;
 
-	beforeEach(() => {
+	beforeEach(async () => {
 		profile = env.profiles().findById(getDefaultProfileId());
 		wallet = profile.wallets().first();
 		transport = getDefaultLedgerTransport();
+		await env.profiles().restore(profile);
+		await profile.sync();
 	});
 
 	it("should sign message", async () => {
@@ -31,13 +33,18 @@ describe("Use Message Signer Hook", () => {
 	it("should sign message with wif", async () => {
 		const { result } = renderHook(() => useMessageSigner(transport));
 
-		const walletUsesWIFMock = jest.spyOn(wallet, "usesWIF").mockReturnValue(true);
-		const walletWifMock = jest.spyOn(wallet, "wif").mockImplementation((password) => {
+		const walletUsesWIFMock = jest.spyOn(wallet.wif(), "exists").mockReturnValue(true);
+		const walletWifMock = jest.spyOn(wallet.wif(), "get").mockImplementation(() => {
 			const wif = "S9rDfiJ2ar4DpWAQuaXECPTJHfTZ3XjCPv15gjxu4cHJZKzABPyV";
 			return Promise.resolve(wif);
 		});
 
-		const signedMessage = await result.current.sign(wallet, "message", undefined, await wallet.wif("password"));
+		const signedMessage = await result.current.sign(
+			wallet,
+			"message",
+			undefined,
+			await wallet.wif().get("password"),
+		);
 		expect(signedMessage).toEqual({
 			message: "message",
 			signatory: "03df6cd794a7d404db4f1b25816d8976d0e72c5177d17ac9b19a92703b62cdbbbc",

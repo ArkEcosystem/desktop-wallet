@@ -64,7 +64,7 @@ describe("SendTransfer", () => {
 	beforeAll(async () => {
 		profile = env.profiles().findById("b999d134-7a24-481e-a95d-bc47c543bfc9");
 
-		await profile.restore();
+		await env.profiles().restore(profile);
 		await profile.sync();
 
 		wallet = profile.wallets().first();
@@ -73,7 +73,9 @@ describe("SendTransfer", () => {
 			.get("/api/transactions?address=D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD")
 			.reply(200, require("tests/fixtures/coins/ark/devnet/transactions.json"))
 			.get("/api/transactions?page=1&limit=20&senderId=D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD")
-			.reply(200, { meta: {}, data: [] });
+			.reply(200, { meta: {}, data: [] })
+			.get("/api/transactions/8f913b6b719e7767d49861c0aec79ced212767645cb793d75d2f1b89abb49877")
+			.reply(200, () => require("tests/fixtures/coins/ark/devnet/transactions.json"));
 
 		await syncFees();
 	});
@@ -217,7 +219,7 @@ describe("SendTransfer", () => {
 
 		expect(getByTestId("SendTransfer__review-step")).toBeTruthy();
 		expect(container).toHaveTextContent(wallet.network().name());
-		expect(container).toHaveTextContent("D8rr7B…s6YUYD");
+		expect(container).toHaveTextContent("D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD");
 		expect(container).toHaveTextContent("test smartbridge");
 
 		expect(asFragment()).toMatchSnapshot();
@@ -225,10 +227,11 @@ describe("SendTransfer", () => {
 
 	it("should render summary step", async () => {
 		const { result: form } = renderHook(() => useForm());
+		await wallet.synchroniser().identity();
 
-		const transaction = (await wallet.transactions()).findById(
-			"8f913b6b719e7767d49861c0aec79ced212767645cb793d75d2f1b89abb49877",
-		);
+		const transaction = await wallet
+			.transactionIndex()
+			.findById("8f913b6b719e7767d49861c0aec79ced212767645cb793d75d2f1b89abb49877");
 
 		const { getByTestId, asFragment } = render(
 			<FormProvider {...form.current}>
@@ -492,7 +495,8 @@ describe("SendTransfer", () => {
 
 		await waitFor(() => expect(getByTestId("SendTransfer__form-step")).toBeTruthy());
 
-		await waitFor(() => expect(getByTestId("SelectNetworkInput__input")).toHaveValue(wallet.network().name()));
+		const networkLabel = `${wallet.network().coin()} ${wallet.network().name()}`;
+		await waitFor(() => expect(getByTestId("SelectNetworkInput__input")).toHaveValue(networkLabel));
 		await waitFor(() => expect(getByTestId("SelectAddress__input")).toHaveValue(wallet.address()));
 
 		// Select recipient
@@ -613,7 +617,8 @@ describe("SendTransfer", () => {
 
 		await waitFor(() => expect(getByTestId("SendTransfer__form-step")).toBeTruthy());
 
-		await waitFor(() => expect(getByTestId("SelectNetworkInput__input")).toHaveValue(wallet.network().name()));
+		const networkLabel = `${wallet.network().coin()} ${wallet.network().name()}`;
+		await waitFor(() => expect(getByTestId("SelectNetworkInput__input")).toHaveValue(networkLabel));
 		await waitFor(() => expect(getByTestId("SelectAddress__input")).toHaveValue(wallet.address()));
 
 		const goSpy = jest.spyOn(history, "go").mockImplementation();
@@ -705,7 +710,9 @@ describe("SendTransfer", () => {
 
 		await waitFor(() => expect(getByTestId("TransactionSuccessful")).toBeTruthy());
 		await waitFor(() =>
-			expect(getByTestId("TransactionSuccessful")).toHaveTextContent("8f913b6b719e7…f1b89abb49877"),
+			expect(getByTestId("TransactionSuccessful")).toHaveTextContent(
+				"8f913b6b719e7767d49861c0aec79ced212767645cb793d75d2f1b89abb49877",
+			),
 		);
 
 		signMock.mockRestore();
@@ -730,7 +737,7 @@ describe("SendTransfer", () => {
 	it("should send a single transfer with a multisignature wallet", async () => {
 		const isMultiSignatureSpy = jest.spyOn(wallet, "isMultiSignature").mockImplementation(() => true);
 		const multisignatureSpy = jest
-			.spyOn(wallet, "multiSignature")
+			.spyOn(wallet.multiSignature(), "all")
 			.mockReturnValue({ min: 2, publicKeys: [wallet.publicKey()!, profile.wallets().last().publicKey()!] });
 
 		const transferURL = `/profiles/${fixtureProfileId}/transactions/${wallet.id()}/transfer`;
@@ -752,7 +759,8 @@ describe("SendTransfer", () => {
 
 		await waitFor(() => expect(getByTestId("SendTransfer__form-step")).toBeTruthy());
 
-		await waitFor(() => expect(getByTestId("SelectNetworkInput__input")).toHaveValue(wallet.network().name()));
+		const networkLabel = `${wallet.network().coin()} ${wallet.network().name()}`;
+		await waitFor(() => expect(getByTestId("SelectNetworkInput__input")).toHaveValue(networkLabel));
 		await waitFor(() => expect(getByTestId("SelectAddress__input")).toHaveValue(wallet.address()));
 
 		// Select recipient
@@ -800,7 +808,9 @@ describe("SendTransfer", () => {
 		});
 
 		await waitFor(() => expect(getByTestId("TransactionSuccessful")).toBeTruthy());
-		expect(getByTestId("TransactionSuccessful")).toHaveTextContent("8f913b6b719e7…f1b89abb49877");
+		expect(getByTestId("TransactionSuccessful")).toHaveTextContent(
+			"8f913b6b719e7767d49861c0aec79ced212767645cb793d75d2f1b89abb49877",
+		);
 
 		expect(signMock).toHaveBeenCalledWith(
 			expect.objectContaining({
@@ -868,7 +878,8 @@ describe("SendTransfer", () => {
 
 		await waitFor(() => expect(getByTestId("SendTransfer__form-step")).toBeTruthy());
 
-		await waitFor(() => expect(getByTestId("SelectNetworkInput__input")).toHaveValue(wallet.network().name()));
+		const networkLabel = `${wallet.network().coin()} ${wallet.network().name()}`;
+		await waitFor(() => expect(getByTestId("SelectNetworkInput__input")).toHaveValue(networkLabel));
 		await waitFor(() => expect(getByTestId("SelectAddress__input")).toHaveValue(wallet.address()));
 
 		// Select recipient
@@ -945,7 +956,8 @@ describe("SendTransfer", () => {
 
 		await waitFor(() => expect(getByTestId("SendTransfer__form-step")).toBeTruthy());
 
-		await waitFor(() => expect(getByTestId("SelectNetworkInput__input")).toHaveValue(wallet.network().name()));
+		const networkLabel = `${wallet.network().coin()} ${wallet.network().name()}`;
+		await waitFor(() => expect(getByTestId("SelectNetworkInput__input")).toHaveValue(networkLabel));
 		await waitFor(() => expect(getByTestId("SelectAddress__input")).toHaveValue(wallet.address()));
 
 		// Select recipient
@@ -1032,7 +1044,8 @@ describe("SendTransfer", () => {
 
 			await waitFor(() => expect(getByTestId("SendTransfer__form-step")).toBeTruthy());
 
-			await waitFor(() => expect(getByTestId("SelectNetworkInput__input")).toHaveValue(wallet.network().name()));
+			const networkLabel = `${wallet.network().coin()} ${wallet.network().name()}`;
+			await waitFor(() => expect(getByTestId("SelectNetworkInput__input")).toHaveValue(networkLabel));
 			await waitFor(() => expect(getByTestId("SelectAddress__input")).toHaveValue(wallet.address()));
 
 			// Select recipient
@@ -1102,7 +1115,6 @@ describe("SendTransfer", () => {
 			profileSpy.mockRestore();
 		},
 	);
-
 	it.each([
 		["high", "1"],
 		["low", "0.000001"],
@@ -1126,7 +1138,8 @@ describe("SendTransfer", () => {
 
 		await waitFor(() => expect(getByTestId("SendTransfer__form-step")).toBeTruthy());
 
-		await waitFor(() => expect(getByTestId("SelectNetworkInput__input")).toHaveValue(wallet.network().name()));
+		const networkLabel = `${wallet.network().coin()} ${wallet.network().name()}`;
+		await waitFor(() => expect(getByTestId("SelectNetworkInput__input")).toHaveValue(networkLabel));
 		await waitFor(() => expect(getByTestId("SelectAddress__input")).toHaveValue(wallet.address()));
 
 		// Select recipient
@@ -1200,7 +1213,9 @@ describe("SendTransfer", () => {
 
 		await waitFor(() => expect(getByTestId("TransactionSuccessful")).toBeTruthy());
 		await waitFor(() =>
-			expect(getByTestId("TransactionSuccessful")).toHaveTextContent("8f913b6b719e7…f1b89abb49877"),
+			expect(getByTestId("TransactionSuccessful")).toHaveTextContent(
+				"8f913b6b719e7767d49861c0aec79ced212767645cb793d75d2f1b89abb49877",
+			),
 		);
 
 		signMock.mockRestore();
@@ -1241,7 +1256,8 @@ describe("SendTransfer", () => {
 
 		await waitFor(() => expect(getByTestId("SendTransfer__form-step")).toBeTruthy());
 
-		await waitFor(() => expect(getByTestId("SelectNetworkInput__input")).toHaveValue(wallet.network().name()));
+		const networkLabel = `${wallet.network().coin()} ${wallet.network().name()}`;
+		await waitFor(() => expect(getByTestId("SelectNetworkInput__input")).toHaveValue(networkLabel));
 		await waitFor(() => expect(getByTestId("SelectAddress__input")).toHaveValue(wallet.address()));
 
 		// Select recipient
@@ -1333,7 +1349,8 @@ describe("SendTransfer", () => {
 
 		await waitFor(() => expect(getByTestId("SendTransfer__form-step")).toBeTruthy());
 
-		await waitFor(() => expect(getByTestId("SelectNetworkInput__input")).toHaveValue(wallet.network().name()));
+		const networkLabel = `${wallet.network().coin()} ${wallet.network().name()}`;
+		await waitFor(() => expect(getByTestId("SelectNetworkInput__input")).toHaveValue(networkLabel));
 		await waitFor(() => expect(getByTestId("SelectAddress__input")).toHaveValue(wallet.address()));
 
 		// Select recipient
@@ -1437,9 +1454,10 @@ describe("SendTransfer", () => {
 
 		await waitFor(() => expect(getByTestId("SendTransfer__form-step")).toBeTruthy());
 
+		const networkLabel = `${wallet.network().coin()} ${wallet.network().name()}`;
 		await waitFor(() => {
 			expect(getByTestId("SelectAddress__input")).toHaveValue(wallet.address());
-			expect(getByTestId("SelectNetworkInput__input")).toHaveValue(wallet.network().name());
+			expect(getByTestId("SelectNetworkInput__input")).toHaveValue(networkLabel);
 		});
 
 		// Select multiple tab
@@ -1563,7 +1581,8 @@ describe("SendTransfer", () => {
 
 		await waitFor(() => expect(getByTestId("SendTransfer__form-step")).toBeTruthy());
 
-		await waitFor(() => expect(getByTestId("SelectNetworkInput__input")).toHaveValue(wallet.network().name()));
+		const networkLabel = `${wallet.network().coin()} ${wallet.network().name()}`;
+		await waitFor(() => expect(getByTestId("SelectNetworkInput__input")).toHaveValue(networkLabel));
 		await waitFor(() => expect(getByTestId("SelectAddress__input")).toHaveValue(wallet.address()));
 
 		// Select recipient
@@ -1593,7 +1612,7 @@ describe("SendTransfer", () => {
 
 	it("should send a single transfer and show unconfirmed transactions modal", async () => {
 		//@ts-ignore
-		const sentTransactionsMock = jest.spyOn(wallet, "sentTransactions").mockImplementation(() =>
+		const sentTransactionsMock = jest.spyOn(wallet.transactionIndex(), "sent").mockImplementation(() =>
 			Promise.resolve({
 				items: () => [
 					{
@@ -1649,7 +1668,8 @@ describe("SendTransfer", () => {
 
 		await waitFor(() => expect(getByTestId("SendTransfer__form-step")).toBeTruthy());
 
-		await waitFor(() => expect(getByTestId("SelectNetworkInput__input")).toHaveValue(wallet.network().name()));
+		const networkLabel = `${wallet.network().coin()} ${wallet.network().name()}`;
+		await waitFor(() => expect(getByTestId("SelectNetworkInput__input")).toHaveValue(networkLabel));
 		await waitFor(() => expect(getByTestId("SelectAddress__input")).toHaveValue(wallet.address()));
 
 		const goSpy = jest.spyOn(history, "go").mockImplementation();
@@ -1755,7 +1775,9 @@ describe("SendTransfer", () => {
 
 		await waitFor(() => expect(getByTestId("TransactionSuccessful")).toBeTruthy());
 		await waitFor(() =>
-			expect(getByTestId("TransactionSuccessful")).toHaveTextContent("8f913b6b719e7…f1b89abb49877"),
+			expect(getByTestId("TransactionSuccessful")).toHaveTextContent(
+				"8f913b6b719e7767d49861c0aec79ced212767645cb793d75d2f1b89abb49877",
+			),
 		);
 
 		signMock.mockRestore();
@@ -1780,8 +1802,9 @@ describe("SendTransfer", () => {
 
 	it("should send a single transfer using wallet with encryption password", async () => {
 		const transferURL = `/profiles/${fixtureProfileId}/wallets/${wallet.id()}/send-transfer`;
-		const walletUsesWIFMock = jest.spyOn(wallet, "usesWIF").mockReturnValue(true);
-		const walletWifMock = jest.spyOn(wallet, "wif").mockImplementation((password) => {
+		const walletUsesWIFMock = jest.spyOn(wallet.wif(), "exists").mockReturnValue(true);
+
+		const walletWifMock = jest.spyOn(wallet.wif(), "get").mockImplementation(() => {
 			const wif = "S9rDfiJ2ar4DpWAQuaXECPTJHfTZ3XjCPv15gjxu4cHJZKzABPyV";
 			return Promise.resolve(wif);
 		});
@@ -1803,7 +1826,8 @@ describe("SendTransfer", () => {
 
 		await waitFor(() => expect(getByTestId("SendTransfer__form-step")).toBeTruthy());
 
-		await waitFor(() => expect(getByTestId("SelectNetworkInput__input")).toHaveValue(wallet.network().name()));
+		const networkLabel = `${wallet.network().coin()} ${wallet.network().name()}`;
+		await waitFor(() => expect(getByTestId("SelectNetworkInput__input")).toHaveValue(networkLabel));
 		await waitFor(() => expect(getByTestId("SelectAddress__input")).toHaveValue(wallet.address()));
 
 		const goSpy = jest.spyOn(history, "go").mockImplementation();
@@ -1881,7 +1905,9 @@ describe("SendTransfer", () => {
 
 		await waitFor(() => expect(getByTestId("TransactionSuccessful")).toBeTruthy());
 		await waitFor(() =>
-			expect(getByTestId("TransactionSuccessful")).toHaveTextContent("8f913b6b719e7…f1b89abb49877"),
+			expect(getByTestId("TransactionSuccessful")).toHaveTextContent(
+				"8f913b6b719e7767d49861c0aec79ced212767645cb793d75d2f1b89abb49877",
+			),
 		);
 
 		signMock.mockRestore();

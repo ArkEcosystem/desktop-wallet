@@ -163,7 +163,7 @@ export const Votes = () => {
 			let votes: Contracts.IReadOnlyWallet[] = [];
 
 			try {
-				votes = wallet!.votes();
+				votes = wallet!.voting().current();
 			} catch {
 				votes = [];
 			}
@@ -398,6 +398,7 @@ export const Votes = () => {
 						selectedVoteAddresses={voteAddresses}
 						selectedWallet={selectedAddress}
 						onContinue={handleContinue}
+						isPaginationDisabled={searchQuery.length > 0}
 						subtitle={
 							hasResignedDelegateVotes ? (
 								<Alert className="mb-6">

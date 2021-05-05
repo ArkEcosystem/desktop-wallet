@@ -59,7 +59,13 @@ describe("Votes", () => {
 		emptyProfile = env.profiles().findById("cba050f1-880f-45f0-9af9-cfe48f406052");
 		profile = env.profiles().findById(getDefaultProfileId());
 		wallet = profile.wallets().findById("ac38fe6d-4b67-4ef1-85be-17c5f6841129");
-		blankWallet = await profile.wallets().importByMnemonic(blankWalletPassphrase, "ARK", "ark.devnet");
+		blankWallet = profile.wallets().push(
+			await profile.walletFactory().fromMnemonic({
+				mnemonic: blankWalletPassphrase,
+				coin: "ARK",
+				network: "ark.devnet",
+			}),
+		);
 
 		wallet.settings().set(Contracts.WalletSetting.Alias, "Sample Wallet");
 
@@ -78,7 +84,7 @@ describe("Votes", () => {
 			.persist();
 
 		await syncDelegates();
-		await wallet.syncVotes();
+		await wallet.synchroniser().votes();
 	});
 
 	it("should render", async () => {
@@ -104,6 +110,8 @@ describe("Votes", () => {
 	});
 
 	it("should toggle network selection from network filters", async () => {
+		await profile.sync();
+
 		const route = `/profiles/${profile.id()}/votes`;
 		const routePath = "/profiles/:profileId/votes";
 		const { asFragment, container, getByTestId } = renderPage(route, routePath);
@@ -132,6 +140,8 @@ describe("Votes", () => {
 	});
 
 	it("should select starred option in the wallets display type", async () => {
+		await profile.sync();
+
 		const route = `/profiles/${profile.id()}/votes`;
 		const routePath = "/profiles/:profileId/votes";
 		const { asFragment, container, getByTestId } = renderPage(route, routePath);
@@ -161,6 +171,8 @@ describe("Votes", () => {
 	});
 
 	it("should select ledger option in the wallets display type", async () => {
+		await profile.sync();
+
 		const route = `/profiles/${profile.id()}/votes`;
 		const routePath = "/profiles/:profileId/votes";
 		const { asFragment, container, getByTestId } = renderPage(route, routePath);
@@ -190,7 +202,7 @@ describe("Votes", () => {
 	});
 
 	it("should filter current delegates", async () => {
-		const walletSpy = jest.spyOn(wallet, "votes").mockReturnValue([
+		const walletSpy = jest.spyOn(wallet.voting(), "current").mockReturnValue([
 			new ReadOnlyWallet({
 				address: "D5L5zXgvqtg7qoGimt5vYhFuf5Ued6iWVr",
 				explorerLink: "",
@@ -329,7 +341,7 @@ describe("Votes", () => {
 	it("should handle wallet vote error and show empty delegates", async () => {
 		const route = `/profiles/${profile.id()}/wallets/${wallet.id()}/votes`;
 
-		const walletVoteMock = jest.spyOn(wallet, "votes").mockImplementation(() => {
+		const walletVoteMock = jest.spyOn(wallet.voting(), "current").mockImplementation(() => {
 			throw new Error("delegate error");
 		});
 
@@ -450,7 +462,13 @@ describe("Votes", () => {
 
 	it("should hide testnet wallet if disabled from profile setting", async () => {
 		const useNetworksMock = jest.spyOn(profile.settings(), "get").mockReturnValue(false);
-		await profile.wallets().importByAddress("AdVSe37niA3uFUPgCgMUH2tMsHF4LpLoiX", "ARK", "ark.mainnet");
+		profile.wallets().push(
+			await profile.walletFactory().fromAddress({
+				address: "AdVSe37niA3uFUPgCgMUH2tMsHF4LpLoiX",
+				coin: "ARK",
+				network: "ark.mainnet",
+			}),
+		);
 
 		const route = `/profiles/${profile.id()}/wallets/${wallet.id()}/votes`;
 		const { asFragment, container, getByTestId } = renderPage(route);
@@ -552,7 +570,7 @@ describe("Votes", () => {
 	});
 
 	it("should show resigned delegate notice", async () => {
-		const walletSpy = jest.spyOn(wallet, "votes").mockReturnValue([
+		const walletSpy = jest.spyOn(wallet.voting(), "current").mockReturnValue([
 			new ReadOnlyWallet({
 				address: "D5L5zXgvqtg7qoGimt5vYhFuf5Ued6iWVr",
 				explorerLink: "",
