@@ -157,6 +157,26 @@ describe("CreateProfile", () => {
 		env.profiles().forget(profile.id());
 	});
 
+	it("should not be able to create new profile if name consists only of whitespace", async () => {
+		const { asFragment, getAllByTestId, getByTestId } = await renderComponent();
+
+		const selectDropdown = getByTestId("SelectDropdownInput__input");
+		fireEvent.change(selectDropdown, { target: { value: "BTC" } });
+		fireEvent.click(getByTestId("select-list__toggle-option-0"));
+
+		fireEvent.input(getAllByTestId("Input")[0], { target: { value: "t" } });
+
+		await waitFor(() => expect(getByTestId("CreateProfile__submit-button")).not.toHaveAttribute("disabled"));
+
+		fireEvent.input(getAllByTestId("Input")[0], { target: { value: "     " } });
+
+		await waitFor(() => expect(getByTestId("CreateProfile__submit-button")).toHaveAttribute("disabled"));
+
+		expect(getByTestId("Input__error")).toBeVisible();
+
+		expect(asFragment()).toMatchSnapshot();
+	});
+
 	it("should not be able to create new profile if name is too long", async () => {
 		const { asFragment, getAllByTestId, getByTestId } = await renderComponent();
 

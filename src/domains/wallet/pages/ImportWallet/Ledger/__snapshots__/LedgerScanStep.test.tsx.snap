@@ -53,7 +53,7 @@ exports[`LedgerScanStep should render 1`] = `
             id="ImportWallet__network-label"
           />
           <div
-            class="Input__InputWrapperStyled-wu99qs-0 dMuUyK"
+            class="Input__InputWrapperStyled-wu99qs-0 iRRxpY"
             disabled=""
           >
             <div
@@ -237,6 +237,11 @@ exports[`LedgerScanStep should render 1`] = `
                     DJpFwW39QnQvQRQJF2MCfAoKvsX4DJ28jq
                   </span>
                 </div>
+                <span
+                  class="hidden"
+                >
+                  44'/1'/0'/0/0
+                </span>
               </div>
             </td>
             <td
@@ -249,7 +254,7 @@ exports[`LedgerScanStep should render 1`] = `
                   <span
                     data-testid="Amount"
                   >
-                    0.00000002 DARK
+                    0 DARK
                   </span>
                 </div>
               </div>
@@ -283,9 +288,9 @@ exports[`LedgerScanStep should render 1`] = `
                     class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
                   >
                     <img
-                      alt="D6Z26L69gdk9qYmTv5uzk3uGepigtHY4ax"
-                      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(255, 87, 34)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"35\\" cx=\\"70\\" cy=\\"50\\" fill=\\"rgb(244, 67, 54)\\"/><circle r=\\"45\\" cx=\\"30\\" cy=\\"40\\" fill=\\"rgb(0, 150, 136)\\"/><circle r=\\"40\\" cx=\\"20\\" cy=\\"60\\" fill=\\"rgb(255, 193, 7)\\"/></svg>"
-                      title="D6Z26L69gdk9qYmTv5uzk3uGepigtHY4ax"
+                      alt="DQseW3VJ1db5xN5xZi4Qhn6AFWtcwSwzpG"
+                      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(156, 39, 176)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"40\\" cx=\\"10\\" cy=\\"50\\" fill=\\"rgb(255, 87, 34)\\"/><circle r=\\"35\\" cx=\\"90\\" cy=\\"60\\" fill=\\"rgb(255, 152, 0)\\"/><circle r=\\"50\\" cx=\\"80\\" cy=\\"30\\" fill=\\"rgb(244, 67, 54)\\"/></svg>"
+                      title="DQseW3VJ1db5xN5xZi4Qhn6AFWtcwSwzpG"
                     />
                   </div>
                 </div>
@@ -296,9 +301,14 @@ exports[`LedgerScanStep should render 1`] = `
                     class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-text font-semibold text-base"
                     data-testid="address__wallet-address"
                   >
-                    D6Z26L69gdk9qYmTv5uzk3uGepigtHY4ax
+                    DQseW3VJ1db5xN5xZi4Qhn6AFWtcwSwzpG
                   </span>
                 </div>
+                <span
+                  class="hidden"
+                >
+                  m/44'/1'/0'/0/0
+                </span>
               </div>
             </td>
             <td
@@ -312,189 +322,6 @@ exports[`LedgerScanStep should render 1`] = `
                     data-testid="Amount"
                   >
                     0 DARK
-                  </span>
-                </div>
-              </div>
-            </td>
-            <td>
-              <div
-                class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 kjTmcB justify-center"
-              >
-                <input
-                  class="Checkbox-sc-17gwqiq-0 eAQKb"
-                  color="success"
-                  type="checkbox"
-                />
-              </div>
-            </td>
-          </tr>
-          <tr
-            class="TableRow__TableRowStyled-sc-1br46dw-0 fzBhIQ group"
-            data-testid="TableRow"
-          >
-            <td>
-              <div
-                class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 DpDcR space-x-4"
-              >
-                <div
-                  class="Avatar__AvatarWrapper-sc-1vsy2s2-0 ktCSBk flex-shrink-0"
-                  data-testid="Avatar"
-                >
-                  <div
-                    class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
-                  >
-                    <img
-                      alt="DM7UiH4b2rW2Nv11Wu6ToiZi8MJhGCEWhP"
-                      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(244, 67, 54)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"35\\" cx=\\"100\\" cy=\\"70\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"50\\" cx=\\"90\\" cy=\\"60\\" fill=\\"rgb(255, 193, 7)\\"/><circle r=\\"45\\" cx=\\"0\\" cy=\\"50\\" fill=\\"rgb(255, 152, 0)\\"/></svg>"
-                      title="DM7UiH4b2rW2Nv11Wu6ToiZi8MJhGCEWhP"
-                    />
-                  </div>
-                </div>
-                <div
-                  class="w-full flex items-center no-ligatures overflow-hidden whitespace-nowrap"
-                >
-                  <span
-                    class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-text font-semibold text-base"
-                    data-testid="address__wallet-address"
-                  >
-                    DM7UiH4b2rW2Nv11Wu6ToiZi8MJhGCEWhP
-                  </span>
-                </div>
-              </div>
-            </td>
-            <td
-              class="w-64"
-            >
-              <div
-                class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT justify-end font-semibold"
-              >
-                <div>
-                  <span
-                    data-testid="Amount"
-                  >
-                    0 DARK
-                  </span>
-                </div>
-              </div>
-            </td>
-            <td>
-              <div
-                class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 kjTmcB justify-center"
-              >
-                <input
-                  class="Checkbox-sc-17gwqiq-0 eAQKb"
-                  color="success"
-                  type="checkbox"
-                />
-              </div>
-            </td>
-          </tr>
-          <tr
-            class="TableRow__TableRowStyled-sc-1br46dw-0 fzBhIQ group"
-            data-testid="TableRow"
-          >
-            <td>
-              <div
-                class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 DpDcR space-x-4"
-              >
-                <div
-                  class="Avatar__AvatarWrapper-sc-1vsy2s2-0 ktCSBk flex-shrink-0"
-                  data-testid="Avatar"
-                >
-                  <div
-                    class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
-                  >
-                    <img
-                      alt="DNA6BqdX2mYw3PtPfGmEz2bGyyCA9hbaED"
-                      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(244, 67, 54)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"100\\" cy=\\"70\\" fill=\\"rgb(205, 220, 57)\\"/><circle r=\\"60\\" cx=\\"70\\" cy=\\"60\\" fill=\\"rgb(0, 188, 212)\\"/><circle r=\\"35\\" cx=\\"50\\" cy=\\"50\\" fill=\\"rgb(139, 195, 74)\\"/></svg>"
-                      title="DNA6BqdX2mYw3PtPfGmEz2bGyyCA9hbaED"
-                    />
-                  </div>
-                </div>
-                <div
-                  class="w-full flex items-center no-ligatures overflow-hidden whitespace-nowrap"
-                >
-                  <span
-                    class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-text font-semibold text-base"
-                    data-testid="address__wallet-address"
-                  >
-                    DNA6BqdX2mYw3PtPfGmEz2bGyyCA9hbaED
-                  </span>
-                </div>
-              </div>
-            </td>
-            <td
-              class="w-64"
-            >
-              <div
-                class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT justify-end font-semibold"
-              >
-                <div>
-                  <span
-                    data-testid="Amount"
-                  >
-                    0 DARK
-                  </span>
-                </div>
-              </div>
-            </td>
-            <td>
-              <div
-                class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 kjTmcB justify-center"
-              >
-                <input
-                  class="Checkbox-sc-17gwqiq-0 eAQKb"
-                  color="success"
-                  type="checkbox"
-                />
-              </div>
-            </td>
-          </tr>
-          <tr
-            class="TableRow__TableRowStyled-sc-1br46dw-0 fzBhIQ group"
-            data-testid="TableRow"
-          >
-            <td>
-              <div
-                class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 DpDcR space-x-4"
-              >
-                <div
-                  class="Avatar__AvatarWrapper-sc-1vsy2s2-0 ktCSBk flex-shrink-0"
-                  data-testid="Avatar"
-                >
-                  <div
-                    class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
-                  >
-                    <img
-                      alt="DSyG9hK9CE8eyfddUoEvsga4kNVQLdw2ve"
-                      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(3, 169, 244)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"35\\" cx=\\"40\\" cy=\\"30\\" fill=\\"rgb(0, 188, 212)\\"/><circle r=\\"60\\" cx=\\"100\\" cy=\\"40\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"55\\" cx=\\"90\\" cy=\\"70\\" fill=\\"rgb(205, 220, 57)\\"/></svg>"
-                      title="DSyG9hK9CE8eyfddUoEvsga4kNVQLdw2ve"
-                    />
-                  </div>
-                </div>
-                <div
-                  class="w-full flex items-center no-ligatures overflow-hidden whitespace-nowrap"
-                >
-                  <span
-                    class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-text font-semibold text-base"
-                    data-testid="address__wallet-address"
-                  >
-                    DSyG9hK9CE8eyfddUoEvsga4kNVQLdw2ve
-                  </span>
-                </div>
-              </div>
-            </td>
-            <td
-              class="w-64"
-            >
-              <div
-                class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT justify-end font-semibold"
-              >
-                <div>
-                  <span
-                    data-testid="Amount"
-                  >
-                    0.00000003 DARK
                   </span>
                 </div>
               </div>
@@ -505,67 +332,6 @@ exports[`LedgerScanStep should render 1`] = `
               >
                 <input
                   checked=""
-                  class="Checkbox-sc-17gwqiq-0 eAQKb"
-                  color="success"
-                  type="checkbox"
-                />
-              </div>
-            </td>
-          </tr>
-          <tr
-            class="TableRow__TableRowStyled-sc-1br46dw-0 fzBhIQ group"
-            data-testid="TableRow"
-          >
-            <td>
-              <div
-                class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 DpDcR space-x-4"
-              >
-                <div
-                  class="Avatar__AvatarWrapper-sc-1vsy2s2-0 ktCSBk flex-shrink-0"
-                  data-testid="Avatar"
-                >
-                  <div
-                    class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
-                  >
-                    <img
-                      alt="DJJWYQwyRnch1ZTeDHp1PGLZmGTb1uP7u9"
-                      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(255, 87, 34)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"40\\" cx=\\"70\\" cy=\\"50\\" fill=\\"rgb(244, 67, 54)\\"/><circle r=\\"50\\" cx=\\"100\\" cy=\\"30\\" fill=\\"rgb(63, 81, 181)\\"/><circle r=\\"45\\" cx=\\"30\\" cy=\\"60\\" fill=\\"rgb(255, 193, 7)\\"/></svg>"
-                      title="DJJWYQwyRnch1ZTeDHp1PGLZmGTb1uP7u9"
-                    />
-                  </div>
-                </div>
-                <div
-                  class="w-full flex items-center no-ligatures overflow-hidden whitespace-nowrap"
-                >
-                  <span
-                    class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-text font-semibold text-base"
-                    data-testid="address__wallet-address"
-                  >
-                    DJJWYQwyRnch1ZTeDHp1PGLZmGTb1uP7u9
-                  </span>
-                </div>
-              </div>
-            </td>
-            <td
-              class="w-64"
-            >
-              <div
-                class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT justify-end font-semibold"
-              >
-                <div>
-                  <span
-                    data-testid="Amount"
-                  >
-                    0 DARK
-                  </span>
-                </div>
-              </div>
-            </td>
-            <td>
-              <div
-                class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 kjTmcB justify-center"
-              >
-                <input
                   class="Checkbox-sc-17gwqiq-0 eAQKb"
                   color="success"
                   type="checkbox"
@@ -575,19 +341,6 @@ exports[`LedgerScanStep should render 1`] = `
           </tr>
         </tbody>
       </table>
-    </div>
-    <div>
-      <button
-        class="OriginalButton__StyledButton-sc-1y2wptt-0 izJbbP w-full"
-        data-testid="LedgerScanStep__view-more"
-        type="button"
-      >
-        <div
-          class="flex relative items-center space-x-2"
-        >
-          View More
-        </div>
-      </button>
     </div>
   </section>
 </div>

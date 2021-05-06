@@ -1,4 +1,3 @@
-import { Coins } from "@arkecosystem/platform-sdk";
 import { Contracts } from "@arkecosystem/platform-sdk-profiles";
 import { Modal } from "app/components/Modal";
 import { useEnvironmentContext } from "app/contexts";
@@ -10,7 +9,6 @@ type UpdateContactProps = {
 	isOpen: boolean;
 	contact: Contracts.IContact;
 	profile: Contracts.IProfile;
-	networks: Coins.Network[];
 	onCancel?: any;
 	onClose?: any;
 	onDelete?: any;
@@ -20,7 +18,6 @@ type UpdateContactProps = {
 export const UpdateContact = ({
 	isOpen,
 	contact,
-	networks,
 	onClose,
 	onCancel,
 	onDelete,
@@ -34,28 +31,13 @@ export const UpdateContact = ({
 
 	useEffect(() => setErrors({}), [isOpen]);
 
-	const formatError = (errorMessage: string, name: string) => {
-		switch (true) {
-			case errorMessage.includes("already exists"):
-				return {
-					name: t("CONTACTS.VALIDATION.CONTACT_NAME_EXISTS", {
-						name,
-					}),
-				};
-		}
-	};
-
 	const handleSave = async ({ name, addresses }: any) => {
-		try {
-			await profile.contacts().update(contact.id(), {
-				name,
-				addresses,
-			});
-			await persist();
-			onSave?.(contact.id());
-		} catch (e) {
-			setErrors(formatError(e.toString(), name));
-		}
+		await profile.contacts().update(contact.id(), {
+			name,
+			addresses,
+		});
+		await persist();
+		onSave?.(contact.id());
 	};
 
 	const handleChange = (fieldName: string) => {
@@ -75,7 +57,6 @@ export const UpdateContact = ({
 					profile={profile}
 					errors={errors}
 					contact={contact}
-					networks={networks}
 					onCancel={() => onCancel?.()}
 					onDelete={onDelete}
 					onChange={handleChange}
@@ -88,5 +69,4 @@ export const UpdateContact = ({
 
 UpdateContact.defaultProps = {
 	isOpen: false,
-	networks: [],
 };

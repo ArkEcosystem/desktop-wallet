@@ -839,6 +839,7 @@ describe("SendTransfer", () => {
 
 	it("should send a single transfer with a ledger wallet", async () => {
 		const isLedgerSpy = jest.spyOn(wallet, "isLedger").mockImplementation(() => true);
+		jest.spyOn(wallet.coin(), "__construct").mockImplementation();
 		const getPublicKeySpy = jest
 			.spyOn(wallet.coin().ledger(), "getPublicKey")
 			.mockResolvedValue("0335a27397927bfa1704116814474d39c2b933aabb990e7226389f022886e48deb");

@@ -101,12 +101,13 @@ const renderOptions = (options: DropdownOption[] | DropdownOptionGroup[], onSele
 			{(options as DropdownOption[]).map((option: DropdownOption, index: number) => (
 				<DropdownItem
 					aria-disabled={option.disabled}
-					className="group"
+					className={cn({ group: !option.disabled })}
 					disabled={option.disabled}
 					key={index}
 					data-testid={`dropdown__option--${key ? `${key}-` : ""}${index}`}
 					onClick={(e: any) => onSelectItem(e, option)}
 					onKeyDown={(e: any) => {
+						/* istanbul ignore next */
 						if (e.key === "Enter" || e.key === " ") {
 							onSelectItem(e, option);
 						}
@@ -266,6 +267,7 @@ export const Dropdown = ({
 
 	useEffect(() => {
 		const handleKeys = (e: any) => {
+			/* istanbul ignore next */
 			if (e.key === "Escape") {
 				hide();
 			}

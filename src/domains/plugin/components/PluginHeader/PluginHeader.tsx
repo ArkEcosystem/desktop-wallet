@@ -22,7 +22,7 @@ type Props = {
 	isOfficial?: boolean;
 	isEnabled?: boolean;
 	hasUpdateAvailable?: boolean;
-	isMinimumVersionSatisfied?: boolean;
+	isCompatible?: boolean;
 	onReport?: () => void;
 	onInstall?: () => void;
 	hasLaunch?: boolean;
@@ -55,14 +55,14 @@ export const PluginHeader = ({
 			result.push({
 				label: t("COMMON.UPDATE"),
 				value: "update",
-				disabled: props.isMinimumVersionSatisfied === false,
+				disabled: props.isCompatible === false,
 			});
 		}
 
 		if (props.isEnabled) {
 			result.push({ label: t("COMMON.DISABLE"), value: "disable" });
 		} else {
-			result.push({ label: t("COMMON.ENABLE"), value: "enable" });
+			result.push({ label: t("COMMON.ENABLE"), value: "enable", disabled: props.isCompatible === false });
 		}
 
 		result.push({ label: t("COMMON.DELETE"), value: "delete" });

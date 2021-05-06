@@ -76,7 +76,7 @@ export const PluginCard = ({
 					<div className="flex items-center space-x-2">
 						{plugin.hasUpdateAvailable && (
 							<>
-								{plugin.isMinimumVersionSatisfied === false ? (
+								{plugin.isCompatible === false ? (
 									<Tooltip
 										content={t("PLUGINS.MINIMUM_VERSION_NOT_SATISFIED", {
 											minimumVersion: plugin.minimumVersion,

@@ -266,6 +266,45 @@ describe("PluginDetails", () => {
 		manager.plugins().removeById(plugin.config().id(), profile);
 	});
 
+	it("should fail to enable package", async () => {
+		const toastSpy = jest.spyOn(toasts, "error").mockImplementation();
+
+		const plugin = new PluginController(
+			{ name: "test-plugin", "desktop-wallet": { categories: ["exchange"] } },
+			{ incompatible: true },
+		);
+
+		manager.plugins().push(plugin);
+
+		const FetchComponent = () => {
+			const { fetchPluginPackages } = usePluginManagerContext();
+			return <button onClick={fetchPluginPackages}>Fetch Packages</button>;
+		};
+
+		const { history } = renderWithRouter(
+			<Route path="/profiles/:profileId/plugins/details">
+				<PluginManagerProvider manager={manager} services={[]}>
+					<FetchComponent />
+					<PluginDetails />
+				</PluginManagerProvider>
+			</Route>,
+			{
+				routes: [`/profiles/${profile.id()}/plugins/details?pluginId=${plugin.config().id()}`],
+			},
+		);
+
+		fireEvent.click(screen.getByText("Fetch Packages"));
+
+		await waitFor(() => expect(screen.getAllByText("Test Plugin").length).toBeGreaterThan(0));
+
+		fireEvent.click(screen.getByTestId("PluginHeader__dropdown-toggle"));
+		fireEvent.click(screen.getByText(commonTranslations.ENABLE));
+
+		await waitFor(() => expect(toastSpy).toHaveBeenCalled());
+
+		manager.plugins().removeById(plugin.config().id(), profile);
+	});
+
 	it("should disable package from header", async () => {
 		const plugin = new PluginController(
 			{ name: "test-plugin", "desktop-wallet": { categories: ["exchange"] } },

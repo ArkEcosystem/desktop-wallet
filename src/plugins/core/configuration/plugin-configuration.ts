@@ -5,6 +5,7 @@ import du from "du";
 import parseAuthor from "parse-author";
 import semver from "semver";
 
+import appPkg from "../../../../package.json";
 import { allPermissions } from "./permissions";
 import { schema } from "./schema";
 
@@ -126,8 +127,10 @@ export class PluginConfigurationData {
 		return this.manifest().get<string[]>("urls", []);
 	}
 
-	minimumVersion() {
-		return process.env.REACT_APP_PLUGIN_MINIMUM_VERSION ?? this.manifest().get<string>("minimumVersion");
+	minimumVersion(): string | undefined {
+		const minimumVersion =
+			process.env.REACT_APP_PLUGIN_MINIMUM_VERSION ?? this.manifest().get<string>("minimumVersion");
+		return minimumVersion;
 	}
 
 	version() {
@@ -211,6 +214,12 @@ export class PluginConfigurationData {
 		this.#size = size;
 	}
 
+	isCompatible() {
+		const minimumVersion = this.minimumVersion();
+		const validMinimumVersion = semver.valid(minimumVersion) ? semver.coerce(minimumVersion)!.version : "0.0.0";
+		return minimumVersion ? semver.gte(appPkg.version, validMinimumVersion) : true;
+	}
+
 	toObject() {
 		return {
 			id: this.id(),
@@ -229,6 +238,7 @@ export class PluginConfigurationData {
 			description: this.description(),
 			isOfficial: this.isOfficial(),
 			minimumVersion: this.minimumVersion(),
+			isCompatible: this.isCompatible(),
 			url: this.url(),
 		};
 	}

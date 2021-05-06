@@ -11,7 +11,7 @@ describe("useTransactionTypes", () => {
 
 	it("should have core  types", () => {
 		const { result } = renderHook(() => useTransactionTypes());
-		expect(Object.keys(result.current.types)).toEqual(["core"]);
+		expect(Object.keys(result.current.types)).toEqual(["core", "magistrate"]);
 	});
 
 	it("should get query params by transaction type", () => {
@@ -19,9 +19,21 @@ describe("useTransactionTypes", () => {
 		expect(result.current.getQueryParamsByType("transfer")).toEqual({ type: 0, typeGroup: 1 });
 	});
 
-	it("should filter only supported transaction types from wallets", () => {
+	it("should filter only supported transaction types from wallets without magistrate", () => {
 		const profile = env.profiles().first();
 		const { result } = renderHook(() => useTransactionTypes({ wallets: [profile.wallets().first()] }));
-		expect(result.current.types.core).toEqual(profile.wallets().first().transactionTypes());
+		expect(result.current.types.core).toEqual([
+			"delegate-registration",
+			"delegate-resignation",
+			"htlc-claim",
+			"htlc-lock",
+			"htlc-refund",
+			"ipfs",
+			"multi-payment",
+			"multi-signature",
+			"second-signature",
+			"transfer",
+			"vote",
+		]);
 	});
 });

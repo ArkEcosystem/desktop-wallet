@@ -2,10 +2,12 @@ import { Contracts, Environment } from "@arkecosystem/platform-sdk-profiles";
 
 export const settings = (t: any, env: Environment) => ({
 	name: (id: string) => ({
-		required: t("COMMON.VALIDATION.FIELD_REQUIRED", {
-			field: t("SETTINGS.GENERAL.PERSONAL.NAME"),
-		}).toString(),
 		validate: {
+			required: (name: string) =>
+				!!name?.trim() ||
+				t("COMMON.VALIDATION.FIELD_REQUIRED", {
+					field: t("SETTINGS.GENERAL.PERSONAL.NAME"),
+				}).toString(),
 			maxLength: (name: string) =>
 				name.trim().length > 42
 					? t("COMMON.VALIDATION.MAX_LENGTH", {

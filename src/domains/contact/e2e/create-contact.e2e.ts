@@ -1,7 +1,7 @@
 import { Selector } from "testcafe";
 
 import { buildTranslations } from "../../../app/i18n/helpers";
-import { createFixture, scrollToBottom } from "../../../utils/e2e-utils";
+import { createFixture } from "../../../utils/e2e-utils";
 import { goToContacts } from "./common";
 
 const translations = buildTranslations();
@@ -51,8 +51,8 @@ test("should successfully create contact", async (t) => {
 	const nameInput = Selector('[data-testid="contact-form__name-input"]');
 	await t.typeText(nameInput, contactName);
 
-	await t.typeText(Selector('[data-testid="SelectNetworkInput__input"]'), "ARK Devnet");
-	await t.pressKey("enter");
+	await t.typeText(Selector('[data-testid="SelectDropdownInput__input"]'), "ARK D");
+	await t.pressKey("tab");
 
 	const addressInput = Selector('[data-testid="contact-form__address-input"]');
 	await t.typeText(addressInput, "D6Z26L69gdk9qYmTv5uzk3uGepigtHY4ax");
@@ -93,8 +93,8 @@ test("should error for invalid address", async (t) => {
 	const nameInput = Selector('[data-testid="contact-form__name-input"]');
 	await t.typeText(nameInput, contactName);
 
-	await t.typeText(Selector('[data-testid="SelectNetworkInput__input"]'), "ARK Devnet");
-	await t.pressKey("enter");
+	await t.typeText(Selector('[data-testid="SelectDropdownInput__input"]'), "ARK D");
+	await t.pressKey("tab");
 
 	const addressInput = Selector('[data-testid="contact-form__address-input"]');
 	await t.typeText(addressInput, "invalid address");
@@ -125,8 +125,8 @@ test("should error on duplicate address addition", async (t) => {
 	const nameInput = Selector('[data-testid="contact-form__name-input"]');
 	await t.typeText(nameInput, contactName);
 
-	await t.typeText(Selector('[data-testid="SelectNetworkInput__input"]'), "ARK Devnet");
-	await t.pressKey("enter");
+	await t.typeText(Selector('[data-testid="SelectDropdownInput__input"]'), "ARK D");
+	await t.pressKey("tab");
 
 	const addressInput = Selector('[data-testid="contact-form__address-input"]');
 	await t.typeText(addressInput, "D6Z26L69gdk9qYmTv5uzk3uGepigtHY4ax");
@@ -137,8 +137,8 @@ test("should error on duplicate address addition", async (t) => {
 	await t.expect(Selector('[data-testid="contact-form__address-list-item"]').withText("D6Z26L69").exists).ok();
 
 	// Add secondary duplicate address
-	await t.typeText(Selector('[data-testid="SelectNetworkInput__input"]'), "ARK Devnet");
-	await t.pressKey("enter");
+	await t.typeText(Selector('[data-testid="SelectDropdownInput__input"]'), "ARK D");
+	await t.pressKey("tab");
 
 	await t.typeText(addressInput, "D6Z26L69gdk9qYmTv5uzk3uGepigtHY4ax");
 	await t.expect(Selector('[data-testid="contact-form__add-address-btn"]').hasAttribute("disabled")).notOk();
@@ -169,8 +169,8 @@ test("should error if contact name already exists", async (t) => {
 	const nameInput = Selector('[data-testid="contact-form__name-input"]');
 	await t.typeText(nameInput, contactName);
 
-	await t.typeText(Selector('[data-testid="SelectNetworkInput__input"]'), "ARK Devnet");
-	await t.pressKey("enter");
+	await t.typeText(Selector('[data-testid="SelectDropdownInput__input"]'), "ARK D");
+	await t.pressKey("tab");
 
 	const addressInput = Selector('[data-testid="contact-form__address-input"]');
 	await t.typeText(addressInput, "D6Z26L69gdk9qYmTv5uzk3uGepigtHY4ax");
@@ -180,11 +180,7 @@ test("should error if contact name already exists", async (t) => {
 	await t.click(Selector('[data-testid="contact-form__add-address-btn"]'));
 	await t.expect(Selector('[data-testid="contact-form__address-list-item"]').withText("D6Z26L69").exists).ok();
 
-	// Save
-	await scrollToBottom();
-
-	await t.expect(Selector('[data-testid="contact-form__save-btn"]').hasAttribute("disabled")).notOk();
-	await t.click(Selector('[data-testid="contact-form__save-btn"]'));
+	await t.expect(Selector('[data-testid="contact-form__save-btn"]').hasAttribute("disabled")).ok();
 
 	await t.expect(Selector('[data-testid="Input__error"]').exists).ok();
 
@@ -206,8 +202,8 @@ test("should disable save button if name consists of empty spaces", async (t) =>
 	const nameInput = Selector('[data-testid="contact-form__name-input"]');
 	await t.typeText(nameInput, "          ");
 
-	await t.typeText(Selector('[data-testid="SelectNetworkInput__input"]'), "ARK Devnet");
-	await t.pressKey("enter");
+	await t.typeText(Selector('[data-testid="SelectDropdownInput__input"]'), "ARK D");
+	await t.pressKey("tab");
 
 	const addressInput = Selector('[data-testid="contact-form__address-input"]');
 	await t.typeText(addressInput, "D6Z26L69gdk9qYmTv5uzk3uGepigtHY4ax");
