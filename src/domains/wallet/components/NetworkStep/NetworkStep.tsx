@@ -24,7 +24,6 @@ export const NetworkStep = ({ profile, title, subtitle, disabled, error }: Netwo
 	const networks = useMemo(() => {
 		const usesTestNetworks = profile.settings().get(Contracts.ProfileSetting.UseTestNetworks);
 		const availableNetworks = env.availableNetworks();
-		console.log(availableNetworks);
 
 		if (!usesTestNetworks) {
 			return availableNetworks.filter((item) => item.isLive());
