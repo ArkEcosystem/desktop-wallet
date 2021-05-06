@@ -24,6 +24,7 @@ export const NetworkStep = ({ profile, title, subtitle, disabled, error }: Netwo
 	const networks = useMemo(() => {
 		const usesTestNetworks = profile.settings().get(Contracts.ProfileSetting.UseTestNetworks);
 		const availableNetworks = env.availableNetworks();
+		console.log(availableNetworks);
 
 		if (!usesTestNetworks) {
 			return availableNetworks.filter((item) => item.isLive());
@@ -72,7 +73,7 @@ export const NetworkStep = ({ profile, title, subtitle, disabled, error }: Netwo
 				</div>
 			)}
 
-			<FormField name="network" className="flex flex-col space-y-2 mt-8">
+			<FormField name="network" className="flex flex-col mt-8 space-y-2">
 				<FormLabel label={t("COMMON.CRYPTOASSET")} />
 				<SelectNetwork
 					id="NetworkStep__network"

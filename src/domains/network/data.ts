@@ -9,40 +9,30 @@ export interface CoinNetworkExtended {
 	iconName: string;
 }
 
-export const coinsNetworkExtendedData: Record<string, Record<string, CoinNetworkExtended>> = {
-	ARK: {
-		"ark.mainnet": {
-			displayName: "ARK",
-			borderClass: "border-theme-danger-200",
-			textClass: "text-theme-danger-400",
-			iconName: "ARK",
-		},
-		"ark.devnet": {
-			displayName: "ARK Devnet",
-			borderClass: "border-theme-primary-100",
-			textClass: "text-theme-primary-400",
-			iconName: "ARK",
-		},
-		"compendia.mainnet": {
-			displayName: "Compendia",
-			borderClass: "border-theme-primary-100",
-			textClass: "text-theme-primary-400",
-			iconName: "BIND",
-		},
+export const coinsNetworkExtendedData: Record<string, CoinNetworkExtended> = {
+	"ark.mainnet": {
+		displayName: "ARK",
+		borderClass: "border-theme-danger-200",
+		textClass: "text-theme-danger-400",
+		iconName: "ARK",
 	},
-	LSK: {
-		"lsk.mainnet": {
-			displayName: "Lisk",
-			borderClass: "border-theme-primary-400",
-			textClass: "text-theme-primary-600",
-			iconName: "LSK",
-		},
-		"lsk.testnet": {
-			displayName: "Lisk Testnet",
-			borderClass: "border-theme-primary-100",
-			textClass: "text-theme-primary-400",
-			iconName: "LSK",
-		},
+	"ark.devnet": {
+		displayName: "ARK Devnet",
+		borderClass: "border-theme-primary-100",
+		textClass: "text-theme-primary-400",
+		iconName: "ARK",
+	},
+	"lsk.mainnet": {
+		displayName: "Lisk",
+		borderClass: "border-theme-primary-400",
+		textClass: "text-theme-primary-600",
+		iconName: "LSK",
+	},
+	"lsk.testnet": {
+		displayName: "Lisk Testnet",
+		borderClass: "border-theme-primary-100",
+		textClass: "text-theme-primary-400",
+		iconName: "LSK",
 	},
 };
 

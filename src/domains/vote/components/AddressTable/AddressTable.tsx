@@ -17,7 +17,7 @@ export const AddressTable = ({ wallets, onSelect }: AddressTableProps) => {
 
 	const wallet = useMemo(() => wallets[0], [wallets]);
 	const maxVotes = wallet.network().maximumVotesPerWallet();
-	const networkExtendedData = getNetworkExtendedData({ coin: wallet.coinId(), network: wallet.networkId() });
+	const networkExtendedData = getNetworkExtendedData(wallet.networkId());
 
 	const commonColumns = [
 		{

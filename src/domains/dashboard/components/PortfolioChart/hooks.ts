@@ -29,7 +29,7 @@ export const usePortfolioData = ({ profile }: { profile: Contracts.IProfile }) =
 				.availableNetworks()
 				.filter((network) => network.isLive())
 				.map((network) => {
-					const extended = getNetworkExtendedData({ coin: network.coin(), network: network.id() });
+					const extended = getNetworkExtendedData(network.id());
 					return Object.assign(network, { extra: extended });
 				}),
 		[env],

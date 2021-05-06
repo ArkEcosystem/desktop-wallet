@@ -13,7 +13,7 @@ type TransactionNetworkProps = {
 export const TransactionNetwork = ({ network, ...props }: TransactionNetworkProps) => {
 	const { t } = useTranslation();
 
-	const networkExtendedData = getNetworkExtendedData({ coin: network.coin(), network: network.id() });
+	const networkExtendedData = getNetworkExtendedData(network.id());
 
 	return (
 		<TransactionDetail
