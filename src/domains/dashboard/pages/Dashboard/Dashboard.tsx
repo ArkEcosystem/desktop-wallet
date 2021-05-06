@@ -4,7 +4,8 @@ import { useConfiguration, useEnvironmentContext } from "app/contexts";
 import { useActiveProfile, useProfileUtils } from "app/hooks";
 import { toasts } from "app/services";
 import { Wallets } from "domains/dashboard/components/Wallets";
-import { useWalletConfig } from "domains/dashboard/hooks";
+import { useTutorial, useWalletConfig } from "domains/dashboard/hooks";
+import { ProfileCreated } from "domains/profile/components/ProfileCreated";
 import { Transactions } from "domains/transaction/components/Transactions";
 import React, { useEffect, useMemo } from "react";
 import { useTranslation } from "react-i18next";
@@ -14,6 +15,7 @@ export const Dashboard = () => {
 	const history = useHistory();
 	const { t } = useTranslation();
 	const activeProfile = useActiveProfile();
+	const { showTutorial, startTutorial, skipTutorial } = useTutorial(activeProfile);
 
 	const { profileIsSyncing } = useConfiguration();
 	const { env } = useEnvironmentContext();
@@ -63,6 +65,13 @@ export const Dashboard = () => {
 					/>
 				</Section>
 			</Page>
+
+			<ProfileCreated
+				isOpen={showTutorial}
+				onStart={startTutorial}
+				onClose={skipTutorial}
+				onSkip={skipTutorial}
+			/>
 		</>
 	);
 };
