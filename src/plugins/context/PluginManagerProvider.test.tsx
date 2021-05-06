@@ -440,13 +440,13 @@ describe("PluginManagerProvider", () => {
 			);
 		};
 
-		 	render(
-				<EnvironmentProvider env={env}>
-					<PluginManagerProvider manager={manager} services={[]}>
-						<Component />
-					</PluginManagerProvider>
-				</EnvironmentProvider>,
-			);
+		render(
+			<EnvironmentProvider env={env}>
+				<PluginManagerProvider manager={manager} services={[]}>
+					<Component />
+				</PluginManagerProvider>
+			</EnvironmentProvider>,
+		);
 
 		fireEvent.click(screen.getByText("Fetch"));
 
@@ -513,13 +513,11 @@ describe("PluginManagerProvider", () => {
 							<li key={pkg.name()}>
 								<span>{pkg.name()}</span>
 								{ updatingStats[pkg.name()]?.failed
-									? (<span>Updated failed</span>)
-									: (
-										<>
-											<>{hasUpdateAvailable(pkg.id()) ? <span>Update Available</span> : null}</>
-											<button onClick={() => updatePlugin(pkg.name())}>Update</button>
-										</>
-									)
+									? <span>Updated failed</span>
+									: <>
+										{hasUpdateAvailable(pkg.id()) ? <span>Update Available</span> : null}
+										<button onClick={() => updatePlugin(pkg.name())}>Update</button>
+									</>
 								}
 
 							</li>
