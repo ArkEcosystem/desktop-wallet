@@ -56,7 +56,7 @@ test("should display news feed", async (t) => {
 
 test("should filter news results", async (t) => {
 	// Filter technical category
-	const eth = "NetworkOption__ARK";
+	const ark = "NetworkOption__ARK";
 	const query = "major league hacking";
 
 	const queryInput = Selector('[data-testid="NewsOptions__search"]');
@@ -66,13 +66,16 @@ test("should filter news results", async (t) => {
 		await t.click(Selector(`[data-testid="NewsOptions__category-${category}"]`));
 	}
 
-	await t.click(Selector(`[data-testid="${eth}"]`));
-
 	await t.expect(Selector('[data-testid="NewsCard"]').exists).ok();
 	await t
 		.expect(Selector('[data-testid="NewsCard__category"]').withText(translations.NEWS.CATEGORIES.TECHNICAL).exists)
 		.ok();
 	await t.expect(Selector('[data-testid="NewsCard__content"]').withText(/major league hacking/i).exists).ok();
+
+	// deselect ark network
+	await t.click(Selector(`[data-testid="${ark}"]`));
+
+	await t.expect(Selector('[data-testid="EmptyResults"]').exists).ok();
 });
 
 test("should show no results screen", async (t) => {

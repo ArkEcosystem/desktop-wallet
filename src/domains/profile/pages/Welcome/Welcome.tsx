@@ -6,7 +6,6 @@ import { Image } from "app/components/Image";
 import { Page, Section } from "app/components/Layout";
 import { Link } from "app/components/Link";
 import { useEnvironmentContext } from "app/contexts";
-import { useProfileRestore } from "app/hooks";
 import { DeleteProfile } from "domains/profile/components/DeleteProfile/DeleteProfile";
 import { ProfileCard } from "domains/profile/components/ProfileCard";
 import { SignIn } from "domains/profile/components/SignIn/SignIn";
@@ -17,7 +16,6 @@ import { setScreenshotProtection } from "utils/electron-utils";
 
 export const Welcome = () => {
 	const context = useEnvironmentContext();
-	const { restoreProfile } = useProfileRestore();
 	const history = useHistory();
 
 	const { t } = useTranslation();
@@ -53,7 +51,6 @@ export const Welcome = () => {
 			setSelectedProfile(profile);
 			setRequestedAction({ label: "Homepage", value: "home" });
 		} else {
-			restoreProfile(profile);
 			navigateToProfile(profile);
 		}
 	};
