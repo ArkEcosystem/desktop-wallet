@@ -23,7 +23,7 @@ describe("useProfileTransactions", () => {
 			})
 			.persist();
 
-		await syncDelegates();
+		await syncDelegates(profile);
 	});
 
 	beforeEach(() => {

@@ -89,7 +89,7 @@ describe("Registration", () => {
 			}),
 		);
 
-		await syncDelegates();
+		await syncDelegates(profile);
 		await syncFees();
 	});
 

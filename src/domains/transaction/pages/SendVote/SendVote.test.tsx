@@ -71,7 +71,7 @@ describe("SendVote", () => {
 
 		jest.spyOn(wallet, "isDelegate").mockImplementation(() => true);
 
-		await syncDelegates();
+		await syncDelegates(profile);
 		await syncFees();
 
 		votes = [0, 1].map((index) =>

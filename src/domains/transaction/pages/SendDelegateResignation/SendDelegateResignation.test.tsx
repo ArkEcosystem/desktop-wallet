@@ -67,7 +67,7 @@ describe("SendDelegateResignation", () => {
 		wallet = profile.wallets().findById("d044a552-7a49-411c-ae16-8ff407acc430");
 		await wallet.synchroniser().identity();
 
-		await syncDelegates();
+		await syncDelegates(profile);
 		await syncFees();
 	});
 
