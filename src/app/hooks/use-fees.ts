@@ -3,9 +3,12 @@ import { BigNumber } from "@arkecosystem/platform-sdk-support";
 import { useEnvironmentContext } from "app/contexts";
 import { useCallback } from "react";
 
+import { useActiveProfile } from "./env";
+
 type FeeInput = string | number | BigNumber;
 
 export const useFees = () => {
+	const activeProfile = useActiveProfile();
 	const { env } = useEnvironmentContext();
 
 	const findByType = useCallback(
@@ -15,13 +18,13 @@ export const useFees = () => {
 			try {
 				transactionFees = env.fees().findByType(coin, network, type);
 			} catch (error) {
-				await env.fees().syncAll();
+				await env.fees().syncAll(activeProfile);
 				transactionFees = env.fees().findByType(coin, network, type);
 			}
 
 			return transactionFees;
 		},
-		[env],
+		[env, activeProfile],
 	);
 
 	return { findByType };

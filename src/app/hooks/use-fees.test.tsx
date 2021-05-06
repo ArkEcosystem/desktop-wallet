@@ -13,14 +13,14 @@ describe("useFees", () => {
 		const profile = env.profiles().findById(getDefaultProfileId());
 
 		await env.wallets().syncByProfile(profile);
-		await env.delegates().syncAll();
+		await env.delegates().syncAll(profile);
 
 		const wrapper = ({ children }: any) => <EnvironmentProvider env={env}>{children} </EnvironmentProvider>;
 		const {
 			result: { current },
 		} = renderHook(() => useFees(), { wrapper });
 
-		await env.fees().sync("ARK", "ark.devnet");
+		await env.fees().sync(profile, "ARK", "ark.devnet");
 		expect(current.findByType("ARK", "ark.devnet", "ipfs")).resolves.toEqual({
 			static: "500000000",
 			max: "500000000",
@@ -45,7 +45,7 @@ describe("useFees", () => {
 			result: { current },
 		} = renderHook(() => useFees(), { wrapper });
 
-		await env.fees().sync("ARK", "ark.devnet");
+		await env.fees().sync(profile, "ARK", "ark.devnet");
 		expect(current.findByType("ARK", "ark.devnet", "ipfs")).resolves.toEqual({
 			static: "500000000",
 			max: "500000000",
@@ -74,7 +74,7 @@ describe("useFees", () => {
 			result: { current },
 		} = renderHook(() => useFees(), { wrapper });
 
-		await env.fees().sync("ARK", "ark.devnet");
+		await env.fees().sync(profile, "ARK", "ark.devnet");
 		expect(current.findByType("ARK", "ark.devnet", "ipfs")).resolves.toEqual({
 			static: "500000000",
 			max: "500000000",
