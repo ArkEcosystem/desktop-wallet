@@ -1,10 +1,27 @@
 import "focus-visible";
 
+// import { ADA } from "@arkecosystem/platform-sdk-ada";
 import { ARK } from "@arkecosystem/platform-sdk-ark";
+import { ATOM } from "@arkecosystem/platform-sdk-atom";
+// import { ATOM } from "@arkecosystem/platform-sdk-atom";
+import { AVAX } from "@arkecosystem/platform-sdk-avax";
+import { BTC } from "@arkecosystem/platform-sdk-btc";
+import { DOT } from "@arkecosystem/platform-sdk-dot";
+import { EGLD } from "@arkecosystem/platform-sdk-egld";
+// import { EOS } from "@arkecosystem/platform-sdk-eos";
+// import { ETH } from "@arkecosystem/platform-sdk-eth";
 import { LSK } from "@arkecosystem/platform-sdk-lsk";
+import { LUNA } from "@arkecosystem/platform-sdk-luna";
+import { NANO } from "@arkecosystem/platform-sdk-nano";
+import { NEO } from "@arkecosystem/platform-sdk-neo";
+// import { NEO } from "@arkecosystem/platform-sdk-neo";
 import { Environment } from "@arkecosystem/platform-sdk-profiles";
+// import { TRX } from "@arkecosystem/platform-sdk-trx";
+import { XLM } from "@arkecosystem/platform-sdk-xlm";
+import { XRP } from "@arkecosystem/platform-sdk-xrp";
 // @ts-ignore
 import LedgerTransportNodeHID from "@ledgerhq/hw-transport-node-hid-singleton";
+// import { XMR } from "@arkecosystem/platform-sdk-xmr";
 import { Offline } from "domains/error/pages";
 import { Splash } from "domains/splash/pages";
 import { usePluginManagerContext } from "plugins";
@@ -126,8 +143,24 @@ export const App = () => {
 		() =>
 			new Environment({
 				coins: {
+					// ADA,
 					ARK,
+					ATOM,
+					// ATOM,
+					AVAX,
+					BTC,
+					DOT,
+					// EOS,
+					// ETH,
+					EGLD,
 					LSK,
+					NEO,
+					NANO,
+					LUNA,
+					// TRX,
+					XLM,
+					// XMR,
+					XRP,
 				},
 				httpClient,
 				storage,
