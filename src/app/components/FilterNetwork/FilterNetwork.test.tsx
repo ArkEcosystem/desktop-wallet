@@ -57,16 +57,16 @@ describe("NetworkOptions", () => {
 		const onClick = jest.fn();
 		const { getByTestId } = render(<NetworkOptions networks={networks()} onClick={onClick} />);
 		act(() => {
-			fireEvent.click(getByTestId("NetworkOption__ETH"));
+			fireEvent.click(getByTestId("NetworkOption__ARK"));
 		});
 
 		expect(onClick).toHaveBeenCalledWith(
 			{
-				coin: "ETH",
-				id: "eth.mainnet",
+				coin: "ARK",
+				id: "ark.mainnet",
 				isLive: true,
-				isSelected: true,
-				name: "Ethereum",
+				isSelected: false,
+				name: "ARK Devnet",
 			},
 			expect.anything(),
 		);
@@ -147,15 +147,15 @@ describe("FilterNetwork", () => {
 		expect(getAllByTestId("FilterNetwork")).toHaveLength(1);
 
 		act(() => {
-			fireEvent.click(getByTestId("NetworkOption__ETH"));
+			fireEvent.click(getByTestId("NetworkOption__ARK"));
 		});
 
 		expect(onChange).toHaveBeenCalledWith(
 			{
-				name: "Ethereum",
-				coin: "ETH",
-				id: "eth.mainnet",
-				isSelected: false,
+				name: "ARK Devnet",
+				coin: "ARK",
+				id: "ark.mainnet",
+				isSelected: true,
 				isLive: true,
 			},
 			expect.anything(),
@@ -235,16 +235,16 @@ describe("FilterNetworks", () => {
 		expect(getAllByTestId("FilterNetwork")).toHaveLength(1);
 
 		act(() => {
-			fireEvent.click(getByTestId("NetworkOption__ETH"));
+			fireEvent.click(getByTestId("NetworkOption__ARK"));
 		});
 
 		expect(onChange).toHaveBeenCalledWith(
 			{
-				name: "Ethereum",
-				coin: "ETH",
-				id: "eth.mainnet",
-				isSelected: false,
+				coin: "ARK",
+				id: "ark.mainnet",
 				isLive: true,
+				isSelected: true,
+				name: "ARK Devnet",
 			},
 			expect.anything(),
 		);
