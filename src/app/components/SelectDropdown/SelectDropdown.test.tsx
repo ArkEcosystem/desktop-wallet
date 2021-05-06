@@ -216,6 +216,31 @@ describe("SelectDropdown", () => {
 		expect(getByTestId("select-list__input")).toHaveValue("1");
 	});
 
+	it("should select new option with enter", () => {
+		const { getByTestId } = render(<Select options={options} />);
+		const selectDropdown = getByTestId("SelectDropdownInput__input");
+
+		act(() => {
+			fireEvent.change(selectDropdown, { target: { value: "Opt" } });
+		});
+
+		act(() => {
+			fireEvent.keyDown(selectDropdown, { key: "Enter", code: 13 });
+		});
+
+		expect(selectDropdown).toHaveValue("Option 1");
+
+		act(() => {
+			fireEvent.keyDown(selectDropdown, { key: "ArrowDown", code: 40 });
+		});
+
+		act(() => {
+			fireEvent.keyDown(selectDropdown, { key: "Enter", code: 13 });
+		});
+
+		expect(selectDropdown).toHaveValue("Option 2");
+	});
+
 	it("should not select non-matching option after key input and tab", () => {
 		const { getByTestId } = render(<Select options={options} />);
 		const selectDropdown = getByTestId("SelectDropdownInput__input");
