@@ -272,6 +272,32 @@ describe("Settings", () => {
 		expect(asFragment()).toMatchSnapshot();
 	});
 
+	it("should not update profile if name consists only of whitespace", async () => {
+		const { getByTestId } = renderWithRouter(
+			<Route path="/profiles/:profileId/settings">
+				<Settings />
+			</Route>,
+			{
+				routes: [`/profiles/${profile.id()}/settings`],
+			},
+		);
+
+		const otherProfile = env
+			.profiles()
+			.values()
+			.filter((el: Profile) => el.id() !== profile.id())[0];
+
+		fireEvent.input(getByTestId("General-settings__input--name"), {
+			target: { value: "     " },
+		});
+
+		await waitFor(() => {
+			expect(getByTestId("Input__error")).toBeVisible();
+		});
+
+		await waitFor(() => expect(getByTestId("General-settings__submit-button")).toBeDisabled());
+	});
+
 	it("should not update profile if profile name exists", async () => {
 		const { getByTestId } = renderWithRouter(
 			<Route path="/profiles/:profileId/settings">
@@ -287,17 +313,17 @@ describe("Settings", () => {
 			.values()
 			.filter((el: Profile) => el.id() !== profile.id())[0];
 
-		act(() => {
-			fireEvent.input(getByTestId("General-settings__input--name"), {
-				target: { value: otherProfile.settings().get(Contracts.ProfileSetting.Name) },
-			});
+		fireEvent.input(getByTestId("General-settings__input--name"), {
+			target: { value: otherProfile.settings().get(Contracts.ProfileSetting.Name) },
+		});
+
+		await waitFor(() => {
+			expect(getByTestId("Input__error")).toBeVisible();
 		});
 
 		await waitFor(() => expect(getByTestId("General-settings__submit-button")).toBeDisabled());
 
-		act(() => {
-			fireEvent.input(getByTestId("General-settings__input--name"), { target: { value: "unique profile name" } });
-		});
+		fireEvent.input(getByTestId("General-settings__input--name"), { target: { value: "unique profile name" } });
 
 		await waitFor(() => expect(getByTestId("General-settings__submit-button")).toBeEnabled());
 	});
