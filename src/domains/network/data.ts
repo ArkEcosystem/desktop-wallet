@@ -1,20 +1,5 @@
 import { Coins } from "@arkecosystem/platform-sdk";
-import { ADA } from "@arkecosystem/platform-sdk-ada";
 import { ARK } from "@arkecosystem/platform-sdk-ark";
-import { ATOM } from "@arkecosystem/platform-sdk-atom";
-import { AVAX } from "@arkecosystem/platform-sdk-avax";
-import { BTC } from "@arkecosystem/platform-sdk-btc";
-import { DOT } from "@arkecosystem/platform-sdk-dot";
-import { EGLD } from "@arkecosystem/platform-sdk-egld";
-import { EOS } from "@arkecosystem/platform-sdk-eos";
-import { ETH } from "@arkecosystem/platform-sdk-eth";
-import { LSK } from "@arkecosystem/platform-sdk-lsk";
-import { LUNA } from "@arkecosystem/platform-sdk-luna";
-import { NANO } from "@arkecosystem/platform-sdk-nano";
-import { NEO } from "@arkecosystem/platform-sdk-neo";
-import { TRX } from "@arkecosystem/platform-sdk-trx";
-import { XLM } from "@arkecosystem/platform-sdk-xlm";
-import { XRP } from "@arkecosystem/platform-sdk-xrp";
 
 export interface CoinNetworkExtended {
 	displayName: string;
