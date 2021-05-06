@@ -76,7 +76,6 @@ test("should filter news results", async (t) => {
 	await t.click(Selector(`[data-testid="${ark}"]`));
 
 	await t.expect(Selector('[data-testid="EmptyResults"]').exists).ok();
-
 });
 
 test("should show no results screen", async (t) => {
