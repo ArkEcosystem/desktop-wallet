@@ -1,7 +1,7 @@
 import { Selector } from "testcafe";
 
 import { buildTranslations } from "../../../app/i18n/helpers";
-import { createFixture, scrollToBottom } from "../../../utils/e2e-utils";
+import { createFixture } from "../../../utils/e2e-utils";
 import { goToContacts } from "./common";
 
 const translations = buildTranslations();
