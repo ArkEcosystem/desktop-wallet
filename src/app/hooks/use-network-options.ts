@@ -7,14 +7,12 @@ export const useNetworkOptions = () => {
 
 	const networks: Coins.Network[] = useMemo(() => env.availableNetworks(), [env]);
 
-	const networkOptions = useMemo(
-		() =>
-			networks.map((network) => ({
-				value: network.id(),
-				label: `${network.coin()} ${network.name()}`,
-			})),
-		[networks],
-	);
+	const networkOptions = useMemo(() => {
+		return networks.map((network) => ({
+			value: network.id(),
+			label: `${network.coinName()} ${network.name()}`,
+		}));
+	}, [networks]);
 
 	const networkById = useCallback((id?: string) => networks.find((network) => network.id() === id), [networks]);
 
