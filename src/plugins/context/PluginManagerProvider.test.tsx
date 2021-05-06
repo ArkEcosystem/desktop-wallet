@@ -6,7 +6,7 @@ import nock from "nock";
 import { PluginController, PluginManager } from "plugins/core";
 import { PluginConfigurationData } from "plugins/core/configuration";
 import React, { useState } from "react";
-import { env, getDefaultProfileId } from "utils/testing-library";
+import { act,env, getDefaultProfileId } from "utils/testing-library";
 
 import { PluginManagerProvider, usePluginManagerContext } from "./PluginManagerProvider";
 
@@ -419,7 +419,7 @@ describe("PluginManagerProvider", () => {
 		});
 
 		const Component = () => {
-			const { fetchPluginPackages, allPlugins, updatePlugin, hasUpdateAvailable } = usePluginManagerContext();
+			const { fetchPluginPackages, allPlugins, updatePlugin, hasUpdateAvailable, updatingStats } = usePluginManagerContext();
 			const onClick = () => fetchPluginPackages();
 			return (
 				<div>
@@ -428,7 +428,10 @@ describe("PluginManagerProvider", () => {
 						{allPlugins.map((pkg) => (
 							<li key={pkg.name()}>
 								<span>{pkg.name()}</span>
-								{hasUpdateAvailable(pkg.id()) ? <span>Update Available</span> : null}
+								{ (updatingStats[pkg.name()]?.completed)
+									? (<span>Update Completed</span>)
+									: (hasUpdateAvailable(pkg.id()) ? (<span>Update Available</span>) : null)
+								}
 								<button onClick={() => updatePlugin(pkg.name())}>Update</button>
 							</li>
 						))}
@@ -437,13 +440,13 @@ describe("PluginManagerProvider", () => {
 			);
 		};
 
-		render(
-			<EnvironmentProvider env={env}>
-				<PluginManagerProvider manager={manager} services={[]}>
-					<Component />
-				</PluginManagerProvider>
-			</EnvironmentProvider>,
-		);
+		 	render(
+				<EnvironmentProvider env={env}>
+					<PluginManagerProvider manager={manager} services={[]}>
+						<Component />
+					</PluginManagerProvider>
+				</EnvironmentProvider>,
+			);
 
 		fireEvent.click(screen.getByText("Fetch"));
 
@@ -468,6 +471,12 @@ describe("PluginManagerProvider", () => {
 		await waitFor(() =>
 			expect(manager.plugins().findById("@dated/transaction-export-plugin")?.config().version()).toBe("1.0.1"),
 		);
+
+		act(() => {
+			jest.runOnlyPendingTimers()
+		})
+
+		await waitFor(() => expect(screen.getByText("Update Completed")).toBeInTheDocument());
 
 		ipcRendererSpy.mockRestore();
 		onSpy.mockRestore();
