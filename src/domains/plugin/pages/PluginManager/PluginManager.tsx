@@ -9,6 +9,7 @@ import { Icon } from "app/components/Icon";
 import { Page, Section } from "app/components/Layout";
 import { useEnvironmentContext } from "app/contexts";
 import { useActiveProfile } from "app/hooks";
+import { toasts } from "app/services";
 import { InstallPlugin } from "domains/plugin/components/InstallPlugin";
 import { PluginGrid } from "domains/plugin/components/PluginGrid";
 import { PluginList } from "domains/plugin/components/PluginList";
@@ -237,8 +238,12 @@ export const PluginManager = () => {
 		history.push(`/profiles/${activeProfile.id()}/plugins/details?pluginId=${pluginData.id}`);
 
 	const handleEnablePlugin = (pluginData: any) => {
-		pluginManager.plugins().findById(pluginData.id)?.enable(activeProfile, { autoRun: true });
-		persist();
+		try {
+			pluginManager.plugins().findById(pluginData.id)?.enable(activeProfile, { autoRun: true });
+			persist();
+		} catch (e) {
+			toasts.error(t("PLUGINS.ENABLE_FAILURE", { name: pluginData.title, msg: e.message }));
+		}
 	};
 
 	const handleDisablePlugin = (pluginData: any) => {
@@ -291,9 +296,7 @@ export const PluginManager = () => {
 	}, [currentView, installedPlugins, plugins, filteredPackages, searchResultsData]);
 
 	const onUpdateAll = () => {
-		const notSatisfiedPlugins = plugins.filter(
-			(item) => item.hasUpdateAvailable && !item.isMinimumVersionSatisfied,
-		);
+		const notSatisfiedPlugins = plugins.filter((item) => item.hasUpdateAvailable && !item.isCompatible);
 
 		setUpdatesConfirmationPlugins(notSatisfiedPlugins);
 	};

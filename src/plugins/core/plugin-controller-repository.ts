@@ -59,7 +59,11 @@ export class PluginControllerRepository {
 		container.services().hooks().emit("profile", profile);
 
 		for (const plugin of this.enabled(profile)) {
-			plugin?.run(profile);
+			try {
+				plugin?.run(profile);
+			} catch {
+				//
+			}
 		}
 
 		this.#currentProfile = profile;

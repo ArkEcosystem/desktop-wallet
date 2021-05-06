@@ -17,6 +17,8 @@ export const translations: { [key: string]: any } = {
 
 	DEVELOPER_RESPONSE: "Developer response",
 
+	ENABLE_FAILURE: `Failed to enable plugin "{{name}}". Reason: {{msg}}.`,
+
 	PERMISSIONS: {
 		EVENTS: "Allows access to the Desktop Wallet events",
 		FILESYSTEM: "Allows using file dialogs",
@@ -66,7 +68,7 @@ export const translations: { [key: string]: any } = {
 	MODAL_INSTALL_PLUGIN: {
 		DESCRIPTION: "This plugin needs the following permissions:",
 		SUCCESS: `The plugin "{{name}}" was successfully installed`,
-		INSTALL_FAILURE: `Failed to install plugin "{{name}}"`,
+		INSTALL_FAILURE: `Failed to install plugin "{{name}}". Reason: {{msg}}.`,
 		DOWNLOAD_FAILURE: `Failed to donwload plugin "{{name}}"`,
 	},
 

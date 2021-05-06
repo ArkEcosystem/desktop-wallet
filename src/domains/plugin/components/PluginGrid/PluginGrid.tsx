@@ -72,7 +72,7 @@ export const PluginGrid = ({
 					result.push({
 						label: t("COMMON.UPDATE"),
 						value: "update",
-						disabled: plugin.isMinimumVersionSatisfied === false,
+						disabled: plugin.isCompatible === false,
 					});
 				}
 

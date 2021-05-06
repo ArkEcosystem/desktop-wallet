@@ -549,6 +549,32 @@ describe("PluginManager", () => {
 		pluginManager.plugins().removeById(plugin.config().id(), profile);
 	});
 
+	it("should fail to enable", async () => {
+		const toastSpy = jest.spyOn(toasts, "error").mockImplementation();
+		const plugin = new PluginController({ name: "test-plugin" }, { incompatible: true });
+		pluginManager.plugins().push(plugin);
+
+		const { asFragment, getByTestId, getAllByText, getAllByTestId } = rendered;
+
+		await waitFor(() => expect(getAllByText("Transaction Export").length).toBeGreaterThan(0));
+		await waitFor(() => expect(getAllByTestId("Card")).toHaveLength(12));
+
+		fireEvent.click(getByTestId("PluginManagerNavigationBar__my-plugins"));
+		fireEvent.click(getByTestId("LayoutControls__list--icon"));
+
+		expect(getByTestId("PluginListItem__disabled")).toBeInTheDocument();
+
+		fireEvent.click(
+			within(getByTestId("PluginManager__container--my-plugins")).getAllByTestId("dropdown__toggle")[0],
+		);
+		fireEvent.click(
+			within(getByTestId("PluginManager__container--my-plugins")).getByText(commonTranslations.ENABLE),
+		);
+
+		expect(toastSpy).toHaveBeenCalled();
+		pluginManager.plugins().removeById(plugin.config().id(), profile);
+	});
+
 	it("should disable plugin on my-plugins", async () => {
 		const onEnabled = jest.fn();
 		const plugin = new PluginController({ name: "test-plugin" }, onEnabled);

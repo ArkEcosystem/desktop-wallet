@@ -1,14 +1,17 @@
 import { Page, Section } from "app/components/Layout";
 import { useActiveProfile, useQueryParams } from "app/hooks";
+import { toasts } from "app/services";
 import { InstallPlugin } from "domains/plugin/components/InstallPlugin";
 import { PluginHeader } from "domains/plugin/components/PluginHeader";
 import { PluginInfo } from "domains/plugin/components/PluginInfo";
 import { PluginUninstallConfirmation } from "domains/plugin/components/PluginUninstallConfirmation/PluginUninstallConfirmation";
 import { usePluginManagerContext } from "plugins";
 import React, { useEffect, useMemo, useState } from "react";
+import { useTranslation } from "react-i18next";
 import { useHistory } from "react-router-dom";
 
 export const PluginDetails = () => {
+	const { t } = useTranslation();
 	const activeProfile = useActiveProfile();
 	const queryParams = useQueryParams();
 	const history = useHistory();
@@ -80,6 +83,15 @@ export const PluginDetails = () => {
 		setIsLoadingSize(false);
 	};
 
+	const onEnable = () => {
+		try {
+			pluginCtrl?.enable(activeProfile, { autoRun: true });
+			trigger();
+		} catch (e) {
+			toasts.error(t("PLUGINS.ENABLE_FAILURE", { name: pluginData.title, msg: e.message }));
+		}
+	};
+
 	useEffect(() => {
 		if (isInstalled) {
 			setSize(pluginData.size);
@@ -100,10 +112,7 @@ export const PluginDetails = () => {
 					onDelete={() => setIsUninstallOpen(true)}
 					onReport={handleReportPlugin}
 					onInstall={() => setIsInstallOpen(true)}
-					onEnable={() => {
-						pluginCtrl?.enable(activeProfile, { autoRun: true });
-						trigger();
-					}}
+					onEnable={onEnable}
 					onDisable={() => {
 						pluginCtrl?.disable(activeProfile);
 						trigger();
