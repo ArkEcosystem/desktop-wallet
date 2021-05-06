@@ -72,7 +72,7 @@ export const NetworkStep = ({ profile, title, subtitle, disabled, error }: Netwo
 				</div>
 			)}
 
-			<FormField name="network" className="flex flex-col mt-8 space-y-2">
+			<FormField name="network" className="flex flex-col space-y-2 mt-8">
 				<FormLabel label={t("COMMON.CRYPTOASSET")} />
 				<SelectNetwork
 					id="NetworkStep__network"
