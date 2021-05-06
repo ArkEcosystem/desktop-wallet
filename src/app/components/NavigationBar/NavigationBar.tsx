@@ -252,7 +252,7 @@ export const NavigationBar = ({
 
 								<div className="h-8 border-r border-theme-secondary-300 dark:border-theme-secondary-800" />
 
-								<div className="flex overflow-hidden items-center rounded-lg">
+								<div className="flex items-center">
 									<Tooltip content={wallets.length ? undefined : t("COMMON.NOTICE_NO_WALLETS")}>
 										<NavigationButtonWrapper>
 											<Button
