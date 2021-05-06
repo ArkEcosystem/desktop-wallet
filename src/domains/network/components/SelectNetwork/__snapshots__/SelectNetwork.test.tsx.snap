@@ -136,6 +136,48 @@ exports[`SelectNetwork should render with hidden options 1`] = `
               </div>
             </div>
           </li>
+          <li
+            class="inline-block cursor-pointer h-21"
+            data-testid="SelectNetwork__NetworkIcon--container"
+          >
+            <div
+              aria-label="Compendia"
+              class="w-full h-full flex justify-center items-center border-2 rounded-xl border-theme-primary-100 dark:border-theme-secondary-800 text-theme-secondary-700"
+              data-testid="NetworkIcon-Compendia-compendia.mainnet"
+            >
+              <div
+                class="sc-bdfBwQ caqoGN"
+                data-testid="NetworkIcon__icon"
+                height="30"
+                width="30"
+              >
+                <svg>
+                  bind.svg
+                </svg>
+              </div>
+            </div>
+          </li>
+          <li
+            class="inline-block cursor-pointer h-21"
+            data-testid="SelectNetwork__NetworkIcon--container"
+          >
+            <div
+              aria-label="Lisk"
+              class="w-full h-full flex justify-center items-center border-2 rounded-xl border-theme-primary-100 dark:border-theme-secondary-800 text-theme-secondary-700"
+              data-testid="NetworkIcon-Lisk-lsk.mainnet"
+            >
+              <div
+                class="sc-bdfBwQ caqoGN"
+                data-testid="NetworkIcon__icon"
+                height="30"
+                width="30"
+              >
+                <svg>
+                  lsk.svg
+                </svg>
+              </div>
+            </div>
+          </li>
         </ul>
       </div>
       <div
@@ -169,6 +211,27 @@ exports[`SelectNetwork should render with hidden options 1`] = `
               >
                 <svg>
                   ark.svg
+                </svg>
+              </div>
+            </div>
+          </li>
+          <li
+            class="inline-block cursor-pointer h-21"
+            data-testid="SelectNetwork__NetworkIcon--container"
+          >
+            <div
+              aria-label="Lisk Testnet"
+              class="w-full h-full flex justify-center items-center border-2 rounded-xl border-theme-primary-100 dark:border-theme-secondary-800 text-theme-primary-300"
+              data-testid="NetworkIcon-Lisk-lsk.testnet"
+            >
+              <div
+                class="sc-bdfBwQ caqoGN"
+                data-testid="NetworkIcon__icon"
+                height="30"
+                width="30"
+              >
+                <svg>
+                  lsk.svg
                 </svg>
               </div>
             </div>
@@ -258,6 +321,48 @@ exports[`SelectNetwork should render with networks 1`] = `
               </div>
             </div>
           </li>
+          <li
+            class="inline-block cursor-pointer h-21"
+            data-testid="SelectNetwork__NetworkIcon--container"
+          >
+            <div
+              aria-label="Compendia"
+              class="w-full h-full flex justify-center items-center border-2 rounded-xl border-theme-primary-100 dark:border-theme-secondary-800 text-theme-secondary-700"
+              data-testid="NetworkIcon-Compendia-compendia.mainnet"
+            >
+              <div
+                class="sc-bdfBwQ caqoGN"
+                data-testid="NetworkIcon__icon"
+                height="30"
+                width="30"
+              >
+                <svg>
+                  bind.svg
+                </svg>
+              </div>
+            </div>
+          </li>
+          <li
+            class="inline-block cursor-pointer h-21"
+            data-testid="SelectNetwork__NetworkIcon--container"
+          >
+            <div
+              aria-label="Lisk"
+              class="w-full h-full flex justify-center items-center border-2 rounded-xl border-theme-primary-100 dark:border-theme-secondary-800 text-theme-secondary-700"
+              data-testid="NetworkIcon-Lisk-lsk.mainnet"
+            >
+              <div
+                class="sc-bdfBwQ caqoGN"
+                data-testid="NetworkIcon__icon"
+                height="30"
+                width="30"
+              >
+                <svg>
+                  lsk.svg
+                </svg>
+              </div>
+            </div>
+          </li>
         </ul>
       </div>
       <div
@@ -291,6 +396,27 @@ exports[`SelectNetwork should render with networks 1`] = `
               >
                 <svg>
                   ark.svg
+                </svg>
+              </div>
+            </div>
+          </li>
+          <li
+            class="inline-block cursor-pointer h-21"
+            data-testid="SelectNetwork__NetworkIcon--container"
+          >
+            <div
+              aria-label="Lisk Testnet"
+              class="w-full h-full flex justify-center items-center border-2 rounded-xl border-theme-primary-100 dark:border-theme-secondary-800 text-theme-primary-300"
+              data-testid="NetworkIcon-Lisk-lsk.testnet"
+            >
+              <div
+                class="sc-bdfBwQ caqoGN"
+                data-testid="NetworkIcon__icon"
+                height="30"
+                width="30"
+              >
+                <svg>
+                  lsk.svg
                 </svg>
               </div>
             </div>

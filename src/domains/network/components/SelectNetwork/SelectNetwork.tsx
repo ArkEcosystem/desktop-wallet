@@ -45,7 +45,7 @@ export const SelectNetwork = ({
 	const extendedItems = useMemo(
 		() =>
 			networks.map((network) => {
-				const extended = getNetworkExtendedData({ coin: network.coin(), network: network.id() });
+				const extended = getNetworkExtendedData(network.id());
 				return Object.assign(network, { extra: extended });
 			}),
 		[networks],

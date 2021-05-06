@@ -8,7 +8,7 @@ import React from "react";
 import { Network } from "./";
 
 export const NetworkOption = ({ coin, id, name, isSelected, onClick }: Network) => {
-	const networkExtendedData = coin && id ? getNetworkExtendedData({ coin, network: id }) : undefined;
+	const networkExtendedData = coin && id ? getNetworkExtendedData(id) : undefined;
 	if (!networkExtendedData) {
 		return <></>;
 	}

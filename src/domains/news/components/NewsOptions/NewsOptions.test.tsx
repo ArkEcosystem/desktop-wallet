@@ -107,13 +107,13 @@ describe("NewsOptions", () => {
 		);
 
 		act(() => {
-			fireEvent.click(getByTestId("NetworkOption__ETH"));
-			fireEvent.click(getByTestId("NetworkOption__BTC"));
+			fireEvent.click(getByTestId("NetworkOption__ARK"));
+			fireEvent.click(getByTestId("NetworkOption__LSK"));
 		});
 
 		expect(onSubmit).toBeCalledWith({
 			categories: ["Technical"],
-			coins: ["ETH", "BTC"],
+			coins: ["ARK", "LSK"],
 			searchQuery: "",
 		});
 	});

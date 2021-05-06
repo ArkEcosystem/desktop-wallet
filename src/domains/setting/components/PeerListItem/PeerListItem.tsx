@@ -17,7 +17,7 @@ type PeerListItemProps = {
 };
 
 export const PeerListItem = ({ coin, network, name, host, isMultiSignature, options, onAction }: PeerListItemProps) => {
-	const networkExtendedData = getNetworkExtendedData({ coin, network });
+	const networkExtendedData = getNetworkExtendedData(network);
 
 	return (
 		<TableRow>
