@@ -23,10 +23,10 @@ describe("NetworkIcon", () => {
 
 		network = wallet1.network();
 
-		network.extra = getNetworkExtendedData({ coin: network.coin(), network: network.id() });
+		network.extra = getNetworkExtendedData(network.id());
 
 		networkTestnet = profile.wallets().first().network();
-		networkTestnet.extra = getNetworkExtendedData({ coin: networkTestnet.coin(), network: networkTestnet.id() });
+		networkTestnet.extra = getNetworkExtendedData(networkTestnet.id());
 	});
 
 	it("should render network", () => {
