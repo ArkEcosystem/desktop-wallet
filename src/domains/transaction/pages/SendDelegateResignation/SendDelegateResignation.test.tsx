@@ -68,7 +68,7 @@ describe("SendDelegateResignation", () => {
 		await wallet.synchroniser().identity();
 
 		await syncDelegates(profile);
-		await syncFees();
+		await syncFees(profile);
 	});
 
 	describe("Delegate Resignation", () => {

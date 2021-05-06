@@ -77,7 +77,7 @@ describe("SendTransfer", () => {
 			.get("/api/transactions/8f913b6b719e7767d49861c0aec79ced212767645cb793d75d2f1b89abb49877")
 			.reply(200, () => require("tests/fixtures/coins/ark/devnet/transactions.json"));
 
-		await syncFees();
+		await syncFees(profile);
 	});
 
 	it("should render form step", async () => {

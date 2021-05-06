@@ -30,7 +30,7 @@ describe("MultiSignature Registration Form", () => {
 		});
 
 	beforeAll(async () => {
-		await syncFees();
+		await syncFees(profile);
 	});
 
 	beforeEach(async () => {
