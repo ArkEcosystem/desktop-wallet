@@ -228,10 +228,9 @@ export const SendTransfer = () => {
 				};
 			}
 
-
 			const expiration = await wallet?.coin()?.transaction().estimateExpiration();
 			if (expiration) {
-				transactionInput.data.expiration = parseInt(expiration!);
+				transactionInput.data.expiration = parseInt(expiration);
 				setLastEstimatedExpiration(transactionInput.data.expiration);
 			}
 			const abortSignal = abortRef.current?.signal;
