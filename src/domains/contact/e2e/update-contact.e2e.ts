@@ -111,8 +111,8 @@ test("should error for invalid address", async (t) => {
 		)
 		.ok();
 
-	await t.typeText(Selector('[data-testid="SelectNetworkInput__input"]'), "ARK Devnet");
-	await t.pressKey("enter");
+	await t.typeText(Selector('[data-testid="SelectDropdownInput__input"]'), "ARK D");
+	await t.pressKey("tab");
 
 	const addressInput = Selector('[data-testid="contact-form__address-input"]');
 	await t.typeText(addressInput, "invalid address");
@@ -150,8 +150,8 @@ test("should error on duplicate address addition", async (t) => {
 		)
 		.ok();
 
-	await t.typeText(Selector('[data-testid="SelectNetworkInput__input"]'), "ARK Devnet");
-	await t.pressKey("enter");
+	await t.typeText(Selector('[data-testid="SelectDropdownInput__input"]'), "ARK D");
+	await t.pressKey("tab");
 
 	const addressInput = Selector('[data-testid="contact-form__address-input"]');
 	await t.typeText(addressInput, "D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib");
@@ -181,8 +181,8 @@ test("should error if contact name is already taken", async (t) => {
 	const nameInput = Selector('[data-testid="contact-form__name-input"]');
 	await t.typeText(nameInput, newContact);
 
-	await t.typeText(Selector('[data-testid="SelectNetworkInput__input"]'), "ARK Devnet");
-	await t.pressKey("enter");
+	await t.typeText(Selector('[data-testid="SelectDropdownInput__input"]'), "ARK D");
+	await t.pressKey("tab");
 
 	const addressInput = Selector('[data-testid="contact-form__address-input"]');
 	await t.typeText(addressInput, "D6Z26L69gdk9qYmTv5uzk3uGepigtHY4ax");
@@ -231,10 +231,7 @@ test("should error if contact name is already taken", async (t) => {
 
 	const name = Selector('[data-testid="contact-form__name-input"]');
 	await t.typeText(name, "Test Contact", { replace: true });
-
-	// Save
-	await t.expect(Selector('[data-testid="contact-form__save-btn"]').hasAttribute("disabled")).notOk();
-	await t.click(Selector('[data-testid="contact-form__save-btn"]'));
+	await t.expect(Selector('[data-testid="contact-form__save-btn"]').hasAttribute("disabled")).ok();
 
 	await t.expect(Selector('[data-testid="Input__error"]').exists).ok();
 
