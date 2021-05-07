@@ -11,7 +11,8 @@ import { TRX } from "@arkecosystem/platform-sdk-trx";
 import { XLM } from "@arkecosystem/platform-sdk-xlm";
 import { XRP } from "@arkecosystem/platform-sdk-xrp";
 
-const createNetwork = (coin: Coins.CoinSpec, network: string) => new Coins.Network(coin.manifest, coin.manifest.networks[network]);
+const createNetwork = (coin: Coins.CoinSpec, network: string) =>
+	new Coins.Network(coin.manifest, coin.manifest.networks[network]);
 
 export interface CoinNetworkExtended {
 	displayName: string;
