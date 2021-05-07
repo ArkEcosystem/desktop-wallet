@@ -57,7 +57,7 @@ describe("Wallets", () => {
 
 		wallets = profile.wallets().values();
 
-		await syncDelegates();
+		await syncDelegates(profile);
 	});
 
 	afterAll(() => {

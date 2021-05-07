@@ -31,7 +31,7 @@ describe("SendTransactionForm", () => {
 
 		wallet = profile.wallets().values()[0];
 
-		await syncFees();
+		await syncFees(profile);
 	});
 
 	beforeEach(() => {
