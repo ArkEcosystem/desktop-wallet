@@ -1,14 +1,9 @@
 import { Contracts } from "@arkecosystem/platform-sdk";
-import { BigNumber } from "@arkecosystem/platform-sdk-support";
+import { Contracts as ProfileContracts } from "@arkecosystem/platform-sdk-profiles";
 import { useEnvironmentContext } from "app/contexts";
 import { useCallback } from "react";
 
-import { useActiveProfile } from "./env";
-
-type FeeInput = string | number | BigNumber;
-
-export const useFees = () => {
-	const activeProfile = useActiveProfile();
+export const useFees = ({ profile }: { profile: ProfileContracts.IProfile }) => {
 	const { env } = useEnvironmentContext();
 
 	const findByType = useCallback(
@@ -18,13 +13,13 @@ export const useFees = () => {
 			try {
 				transactionFees = env.fees().findByType(coin, network, type);
 			} catch (error) {
-				await env.fees().syncAll(activeProfile);
+				await env.fees().syncAll(profile);
 				transactionFees = env.fees().findByType(coin, network, type);
 			}
 
 			return transactionFees;
 		},
-		[env, activeProfile],
+		[env, profile],
 	);
 
 	return { findByType };

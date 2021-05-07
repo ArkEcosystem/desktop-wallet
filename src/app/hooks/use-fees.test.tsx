@@ -18,7 +18,7 @@ describe("useFees", () => {
 		const wrapper = ({ children }: any) => <EnvironmentProvider env={env}>{children} </EnvironmentProvider>;
 		const {
 			result: { current },
-		} = renderHook(() => useFees(), { wrapper });
+		} = renderHook(() => useFees({ profile }), { wrapper });
 
 		await env.fees().sync(profile, "ARK", "ark.devnet");
 		expect(current.findByType("ARK", "ark.devnet", "ipfs")).resolves.toEqual({
@@ -43,7 +43,7 @@ describe("useFees", () => {
 		const wrapper = ({ children }: any) => <EnvironmentProvider env={env}>{children} </EnvironmentProvider>;
 		const {
 			result: { current },
-		} = renderHook(() => useFees(), { wrapper });
+		} = renderHook(() => useFees({ profile }), { wrapper });
 
 		await env.fees().sync(profile, "ARK", "ark.devnet");
 		expect(current.findByType("ARK", "ark.devnet", "ipfs")).resolves.toEqual({
@@ -72,7 +72,7 @@ describe("useFees", () => {
 		const wrapper = ({ children }: any) => <EnvironmentProvider env={env}>{children} </EnvironmentProvider>;
 		const {
 			result: { current },
-		} = renderHook(() => useFees(), { wrapper });
+		} = renderHook(() => useFees({ profile }), { wrapper });
 
 		await env.fees().sync(profile, "ARK", "ark.devnet");
 		expect(current.findByType("ARK", "ark.devnet", "ipfs")).resolves.toEqual({
