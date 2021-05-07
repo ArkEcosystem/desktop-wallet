@@ -29,11 +29,9 @@ describe("MultiSignature Registration Form", () => {
 			data: () => multiSignatureFixture.data,
 		});
 
-	beforeAll(async () => {
-		await syncFees(profile);
-	});
-
 	beforeEach(async () => {
+		await syncFees(profile);
+
 		profile = env.profiles().findById(getDefaultProfileId());
 		wallet = profile.wallets().first();
 		wallet2 = profile.wallets().last();
