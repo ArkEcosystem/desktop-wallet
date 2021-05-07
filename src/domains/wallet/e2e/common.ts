@@ -60,7 +60,4 @@ export const importWalletByAddress = async (t: any, address: string, alias = "Te
 	await t.click(Selector("button").withExactText(translations.COMMON.SAVE_FINISH));
 
 	await t.expect(Selector("[data-testid=WalletHeader]").exists).ok();
-
-	const transactionsCount = Selector('[data-testid="TransactionRowMode"]').count;
-	await t.expect(transactionsCount).gte(2, { timeout: 120000 });
 };
