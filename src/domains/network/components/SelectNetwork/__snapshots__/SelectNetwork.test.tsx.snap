@@ -162,6 +162,48 @@ exports[`SelectNetwork should render with hidden options 1`] = `
             data-testid="SelectNetwork__NetworkIcon--container"
           >
             <div
+              aria-label="Cosmos"
+              class="w-full h-full flex justify-center items-center border-2 rounded-xl border-theme-primary-100 dark:border-theme-secondary-800 text-theme-secondary-700"
+              data-testid="NetworkIcon-ATOM-cosmos.mainnet"
+            >
+              <div
+                class="sc-bdfBwQ caqoGN"
+                data-testid="NetworkIcon__icon"
+                height="30"
+                width="30"
+              >
+                <svg>
+                  atom.svg
+                </svg>
+              </div>
+            </div>
+          </li>
+          <li
+            class="inline-block cursor-pointer h-21"
+            data-testid="SelectNetwork__NetworkIcon--container"
+          >
+            <div
+              aria-label="Elrond"
+              class="w-full h-full flex justify-center items-center border-2 rounded-xl border-theme-primary-100 dark:border-theme-secondary-800 text-theme-secondary-700"
+              data-testid="NetworkIcon-EGLD-egld.mainnet"
+            >
+              <div
+                class="sc-bdfBwQ caqoGN"
+                data-testid="NetworkIcon__icon"
+                height="30"
+                width="30"
+              >
+                <svg>
+                  egld.svg
+                </svg>
+              </div>
+            </div>
+          </li>
+          <li
+            class="inline-block cursor-pointer h-21"
+            data-testid="SelectNetwork__NetworkIcon--container"
+          >
+            <div
               aria-label="Lisk"
               class="w-full h-full flex justify-center items-center border-2 rounded-xl border-theme-primary-100 dark:border-theme-secondary-800 text-theme-secondary-700"
               data-testid="NetworkIcon-LSK-lsk.mainnet"
@@ -174,6 +216,90 @@ exports[`SelectNetwork should render with hidden options 1`] = `
               >
                 <svg>
                   lsk.svg
+                </svg>
+              </div>
+            </div>
+          </li>
+          <li
+            class="inline-block cursor-pointer h-21"
+            data-testid="SelectNetwork__NetworkIcon--container"
+          >
+            <div
+              aria-label="NEO"
+              class="w-full h-full flex justify-center items-center border-2 rounded-xl border-theme-primary-100 dark:border-theme-secondary-800 text-theme-secondary-700"
+              data-testid="NetworkIcon-NEO-neo.mainnet"
+            >
+              <div
+                class="sc-bdfBwQ caqoGN"
+                data-testid="NetworkIcon__icon"
+                height="30"
+                width="30"
+              >
+                <svg>
+                  neo.svg
+                </svg>
+              </div>
+            </div>
+          </li>
+          <li
+            class="inline-block cursor-pointer h-21"
+            data-testid="SelectNetwork__NetworkIcon--container"
+          >
+            <div
+              aria-label="Tron"
+              class="w-full h-full flex justify-center items-center border-2 rounded-xl border-theme-primary-100 dark:border-theme-secondary-800 text-theme-secondary-700"
+              data-testid="NetworkIcon-TRX-trx.mainnet"
+            >
+              <div
+                class="sc-bdfBwQ caqoGN"
+                data-testid="NetworkIcon__icon"
+                height="30"
+                width="30"
+              >
+                <svg>
+                  trx.svg
+                </svg>
+              </div>
+            </div>
+          </li>
+          <li
+            class="inline-block cursor-pointer h-21"
+            data-testid="SelectNetwork__NetworkIcon--container"
+          >
+            <div
+              aria-label="Stellar"
+              class="w-full h-full flex justify-center items-center border-2 rounded-xl border-theme-primary-100 dark:border-theme-secondary-800 text-theme-secondary-700"
+              data-testid="NetworkIcon-XLM-xlm.mainnet"
+            >
+              <div
+                class="sc-bdfBwQ caqoGN"
+                data-testid="NetworkIcon__icon"
+                height="30"
+                width="30"
+              >
+                <svg>
+                  xlm.svg
+                </svg>
+              </div>
+            </div>
+          </li>
+          <li
+            class="inline-block cursor-pointer h-21"
+            data-testid="SelectNetwork__NetworkIcon--container"
+          >
+            <div
+              aria-label="Ripple"
+              class="w-full h-full flex justify-center items-center border-2 rounded-xl border-theme-primary-100 dark:border-theme-secondary-800 text-theme-secondary-700"
+              data-testid="NetworkIcon-XRP-xrp.mainnet"
+            >
+              <div
+                class="sc-bdfBwQ caqoGN"
+                data-testid="NetworkIcon__icon"
+                height="30"
+                width="30"
+              >
+                <svg>
+                  xrp.svg
                 </svg>
               </div>
             </div>
@@ -220,6 +346,48 @@ exports[`SelectNetwork should render with hidden options 1`] = `
             data-testid="SelectNetwork__NetworkIcon--container"
           >
             <div
+              aria-label="Cosmos Testnet"
+              class="w-full h-full flex justify-center items-center border-2 rounded-xl border-theme-primary-100 dark:border-theme-secondary-800 text-theme-primary-300"
+              data-testid="NetworkIcon-ATOM-cosmos.testnet"
+            >
+              <div
+                class="sc-bdfBwQ caqoGN"
+                data-testid="NetworkIcon__icon"
+                height="30"
+                width="30"
+              >
+                <svg>
+                  atom.svg
+                </svg>
+              </div>
+            </div>
+          </li>
+          <li
+            class="inline-block cursor-pointer h-21"
+            data-testid="SelectNetwork__NetworkIcon--container"
+          >
+            <div
+              aria-label="Elrond Testnet"
+              class="w-full h-full flex justify-center items-center border-2 rounded-xl border-theme-primary-100 dark:border-theme-secondary-800 text-theme-primary-300"
+              data-testid="NetworkIcon-EGLD-egld.testnet"
+            >
+              <div
+                class="sc-bdfBwQ caqoGN"
+                data-testid="NetworkIcon__icon"
+                height="30"
+                width="30"
+              >
+                <svg>
+                  egld.svg
+                </svg>
+              </div>
+            </div>
+          </li>
+          <li
+            class="inline-block cursor-pointer h-21"
+            data-testid="SelectNetwork__NetworkIcon--container"
+          >
+            <div
               aria-label="Lisk Testnet"
               class="w-full h-full flex justify-center items-center border-2 rounded-xl border-theme-primary-100 dark:border-theme-secondary-800 text-theme-primary-300"
               data-testid="NetworkIcon-LSK-lsk.testnet"
@@ -232,6 +400,90 @@ exports[`SelectNetwork should render with hidden options 1`] = `
               >
                 <svg>
                   lsk.svg
+                </svg>
+              </div>
+            </div>
+          </li>
+          <li
+            class="inline-block cursor-pointer h-21"
+            data-testid="SelectNetwork__NetworkIcon--container"
+          >
+            <div
+              aria-label="NEO Testnet"
+              class="w-full h-full flex justify-center items-center border-2 rounded-xl border-theme-primary-100 dark:border-theme-secondary-800 text-theme-primary-300"
+              data-testid="NetworkIcon-NEO-neo.testnet"
+            >
+              <div
+                class="sc-bdfBwQ caqoGN"
+                data-testid="NetworkIcon__icon"
+                height="30"
+                width="30"
+              >
+                <svg>
+                  neo.svg
+                </svg>
+              </div>
+            </div>
+          </li>
+          <li
+            class="inline-block cursor-pointer h-21"
+            data-testid="SelectNetwork__NetworkIcon--container"
+          >
+            <div
+              aria-label="Tron Testnet"
+              class="w-full h-full flex justify-center items-center border-2 rounded-xl border-theme-primary-100 dark:border-theme-secondary-800 text-theme-primary-300"
+              data-testid="NetworkIcon-TRX-trx.testnet"
+            >
+              <div
+                class="sc-bdfBwQ caqoGN"
+                data-testid="NetworkIcon__icon"
+                height="30"
+                width="30"
+              >
+                <svg>
+                  trx.svg
+                </svg>
+              </div>
+            </div>
+          </li>
+          <li
+            class="inline-block cursor-pointer h-21"
+            data-testid="SelectNetwork__NetworkIcon--container"
+          >
+            <div
+              aria-label="Stellar Testnet"
+              class="w-full h-full flex justify-center items-center border-2 rounded-xl border-theme-primary-100 dark:border-theme-secondary-800 text-theme-primary-300"
+              data-testid="NetworkIcon-XLM-xlm.testnet"
+            >
+              <div
+                class="sc-bdfBwQ caqoGN"
+                data-testid="NetworkIcon__icon"
+                height="30"
+                width="30"
+              >
+                <svg>
+                  xlm.svg
+                </svg>
+              </div>
+            </div>
+          </li>
+          <li
+            class="inline-block cursor-pointer h-21"
+            data-testid="SelectNetwork__NetworkIcon--container"
+          >
+            <div
+              aria-label="XRP Testnet"
+              class="w-full h-full flex justify-center items-center border-2 rounded-xl border-theme-primary-100 dark:border-theme-secondary-800 text-theme-primary-300"
+              data-testid="NetworkIcon-XRP-xrp.testnet"
+            >
+              <div
+                class="sc-bdfBwQ caqoGN"
+                data-testid="NetworkIcon__icon"
+                height="30"
+                width="30"
+              >
+                <svg>
+                  xrp.svg
                 </svg>
               </div>
             </div>
@@ -347,6 +599,48 @@ exports[`SelectNetwork should render with networks 1`] = `
             data-testid="SelectNetwork__NetworkIcon--container"
           >
             <div
+              aria-label="Cosmos"
+              class="w-full h-full flex justify-center items-center border-2 rounded-xl border-theme-primary-100 dark:border-theme-secondary-800 text-theme-secondary-700"
+              data-testid="NetworkIcon-ATOM-cosmos.mainnet"
+            >
+              <div
+                class="sc-bdfBwQ caqoGN"
+                data-testid="NetworkIcon__icon"
+                height="30"
+                width="30"
+              >
+                <svg>
+                  atom.svg
+                </svg>
+              </div>
+            </div>
+          </li>
+          <li
+            class="inline-block cursor-pointer h-21"
+            data-testid="SelectNetwork__NetworkIcon--container"
+          >
+            <div
+              aria-label="Elrond"
+              class="w-full h-full flex justify-center items-center border-2 rounded-xl border-theme-primary-100 dark:border-theme-secondary-800 text-theme-secondary-700"
+              data-testid="NetworkIcon-EGLD-egld.mainnet"
+            >
+              <div
+                class="sc-bdfBwQ caqoGN"
+                data-testid="NetworkIcon__icon"
+                height="30"
+                width="30"
+              >
+                <svg>
+                  egld.svg
+                </svg>
+              </div>
+            </div>
+          </li>
+          <li
+            class="inline-block cursor-pointer h-21"
+            data-testid="SelectNetwork__NetworkIcon--container"
+          >
+            <div
               aria-label="Lisk"
               class="w-full h-full flex justify-center items-center border-2 rounded-xl border-theme-primary-100 dark:border-theme-secondary-800 text-theme-secondary-700"
               data-testid="NetworkIcon-LSK-lsk.mainnet"
@@ -359,6 +653,90 @@ exports[`SelectNetwork should render with networks 1`] = `
               >
                 <svg>
                   lsk.svg
+                </svg>
+              </div>
+            </div>
+          </li>
+          <li
+            class="inline-block cursor-pointer h-21"
+            data-testid="SelectNetwork__NetworkIcon--container"
+          >
+            <div
+              aria-label="NEO"
+              class="w-full h-full flex justify-center items-center border-2 rounded-xl border-theme-primary-100 dark:border-theme-secondary-800 text-theme-secondary-700"
+              data-testid="NetworkIcon-NEO-neo.mainnet"
+            >
+              <div
+                class="sc-bdfBwQ caqoGN"
+                data-testid="NetworkIcon__icon"
+                height="30"
+                width="30"
+              >
+                <svg>
+                  neo.svg
+                </svg>
+              </div>
+            </div>
+          </li>
+          <li
+            class="inline-block cursor-pointer h-21"
+            data-testid="SelectNetwork__NetworkIcon--container"
+          >
+            <div
+              aria-label="Tron"
+              class="w-full h-full flex justify-center items-center border-2 rounded-xl border-theme-primary-100 dark:border-theme-secondary-800 text-theme-secondary-700"
+              data-testid="NetworkIcon-TRX-trx.mainnet"
+            >
+              <div
+                class="sc-bdfBwQ caqoGN"
+                data-testid="NetworkIcon__icon"
+                height="30"
+                width="30"
+              >
+                <svg>
+                  trx.svg
+                </svg>
+              </div>
+            </div>
+          </li>
+          <li
+            class="inline-block cursor-pointer h-21"
+            data-testid="SelectNetwork__NetworkIcon--container"
+          >
+            <div
+              aria-label="Stellar"
+              class="w-full h-full flex justify-center items-center border-2 rounded-xl border-theme-primary-100 dark:border-theme-secondary-800 text-theme-secondary-700"
+              data-testid="NetworkIcon-XLM-xlm.mainnet"
+            >
+              <div
+                class="sc-bdfBwQ caqoGN"
+                data-testid="NetworkIcon__icon"
+                height="30"
+                width="30"
+              >
+                <svg>
+                  xlm.svg
+                </svg>
+              </div>
+            </div>
+          </li>
+          <li
+            class="inline-block cursor-pointer h-21"
+            data-testid="SelectNetwork__NetworkIcon--container"
+          >
+            <div
+              aria-label="Ripple"
+              class="w-full h-full flex justify-center items-center border-2 rounded-xl border-theme-primary-100 dark:border-theme-secondary-800 text-theme-secondary-700"
+              data-testid="NetworkIcon-XRP-xrp.mainnet"
+            >
+              <div
+                class="sc-bdfBwQ caqoGN"
+                data-testid="NetworkIcon__icon"
+                height="30"
+                width="30"
+              >
+                <svg>
+                  xrp.svg
                 </svg>
               </div>
             </div>
@@ -405,6 +783,48 @@ exports[`SelectNetwork should render with networks 1`] = `
             data-testid="SelectNetwork__NetworkIcon--container"
           >
             <div
+              aria-label="Cosmos Testnet"
+              class="w-full h-full flex justify-center items-center border-2 rounded-xl border-theme-primary-100 dark:border-theme-secondary-800 text-theme-primary-300"
+              data-testid="NetworkIcon-ATOM-cosmos.testnet"
+            >
+              <div
+                class="sc-bdfBwQ caqoGN"
+                data-testid="NetworkIcon__icon"
+                height="30"
+                width="30"
+              >
+                <svg>
+                  atom.svg
+                </svg>
+              </div>
+            </div>
+          </li>
+          <li
+            class="inline-block cursor-pointer h-21"
+            data-testid="SelectNetwork__NetworkIcon--container"
+          >
+            <div
+              aria-label="Elrond Testnet"
+              class="w-full h-full flex justify-center items-center border-2 rounded-xl border-theme-primary-100 dark:border-theme-secondary-800 text-theme-primary-300"
+              data-testid="NetworkIcon-EGLD-egld.testnet"
+            >
+              <div
+                class="sc-bdfBwQ caqoGN"
+                data-testid="NetworkIcon__icon"
+                height="30"
+                width="30"
+              >
+                <svg>
+                  egld.svg
+                </svg>
+              </div>
+            </div>
+          </li>
+          <li
+            class="inline-block cursor-pointer h-21"
+            data-testid="SelectNetwork__NetworkIcon--container"
+          >
+            <div
               aria-label="Lisk Testnet"
               class="w-full h-full flex justify-center items-center border-2 rounded-xl border-theme-primary-100 dark:border-theme-secondary-800 text-theme-primary-300"
               data-testid="NetworkIcon-LSK-lsk.testnet"
@@ -417,6 +837,90 @@ exports[`SelectNetwork should render with networks 1`] = `
               >
                 <svg>
                   lsk.svg
+                </svg>
+              </div>
+            </div>
+          </li>
+          <li
+            class="inline-block cursor-pointer h-21"
+            data-testid="SelectNetwork__NetworkIcon--container"
+          >
+            <div
+              aria-label="NEO Testnet"
+              class="w-full h-full flex justify-center items-center border-2 rounded-xl border-theme-primary-100 dark:border-theme-secondary-800 text-theme-primary-300"
+              data-testid="NetworkIcon-NEO-neo.testnet"
+            >
+              <div
+                class="sc-bdfBwQ caqoGN"
+                data-testid="NetworkIcon__icon"
+                height="30"
+                width="30"
+              >
+                <svg>
+                  neo.svg
+                </svg>
+              </div>
+            </div>
+          </li>
+          <li
+            class="inline-block cursor-pointer h-21"
+            data-testid="SelectNetwork__NetworkIcon--container"
+          >
+            <div
+              aria-label="Tron Testnet"
+              class="w-full h-full flex justify-center items-center border-2 rounded-xl border-theme-primary-100 dark:border-theme-secondary-800 text-theme-primary-300"
+              data-testid="NetworkIcon-TRX-trx.testnet"
+            >
+              <div
+                class="sc-bdfBwQ caqoGN"
+                data-testid="NetworkIcon__icon"
+                height="30"
+                width="30"
+              >
+                <svg>
+                  trx.svg
+                </svg>
+              </div>
+            </div>
+          </li>
+          <li
+            class="inline-block cursor-pointer h-21"
+            data-testid="SelectNetwork__NetworkIcon--container"
+          >
+            <div
+              aria-label="Stellar Testnet"
+              class="w-full h-full flex justify-center items-center border-2 rounded-xl border-theme-primary-100 dark:border-theme-secondary-800 text-theme-primary-300"
+              data-testid="NetworkIcon-XLM-xlm.testnet"
+            >
+              <div
+                class="sc-bdfBwQ caqoGN"
+                data-testid="NetworkIcon__icon"
+                height="30"
+                width="30"
+              >
+                <svg>
+                  xlm.svg
+                </svg>
+              </div>
+            </div>
+          </li>
+          <li
+            class="inline-block cursor-pointer h-21"
+            data-testid="SelectNetwork__NetworkIcon--container"
+          >
+            <div
+              aria-label="XRP Testnet"
+              class="w-full h-full flex justify-center items-center border-2 rounded-xl border-theme-primary-100 dark:border-theme-secondary-800 text-theme-primary-300"
+              data-testid="NetworkIcon-XRP-xrp.testnet"
+            >
+              <div
+                class="sc-bdfBwQ caqoGN"
+                data-testid="NetworkIcon__icon"
+                height="30"
+                width="30"
+              >
+                <svg>
+                  xrp.svg
                 </svg>
               </div>
             </div>
