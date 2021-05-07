@@ -4,7 +4,6 @@ import { Circle } from "app/components/Circle";
 import { Icon } from "app/components/Icon";
 import { Link } from "app/components/Link";
 import { Tooltip } from "app/components/Tooltip";
-import { useActiveProfile } from "app/hooks";
 import React, { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 
@@ -14,6 +13,7 @@ type WalletVoteProps = {
 	wallet: Contracts.IReadWriteWallet;
 	onButtonClick: (address?: string) => void;
 	env: Environment;
+	profile: Contracts.IProfile;
 };
 
 const HintIcon = ({ tooltipContent }: { tooltipContent: string }) => (
@@ -29,15 +29,14 @@ const HintIcon = ({ tooltipContent }: { tooltipContent: string }) => (
 	</Tooltip>
 );
 
-export const WalletVote = ({ wallet, onButtonClick, env }: WalletVoteProps) => {
-	const activeProfile = useActiveProfile();
+export const WalletVote = ({ wallet, onButtonClick, env, profile }: WalletVoteProps) => {
 	const { t } = useTranslation();
 	const [isLoading, setIsLoading] = useState(true);
 
 	useEffect(() => {
 		const syncVotes = async () => {
 			try {
-				await env.delegates().sync(activeProfile, wallet?.coinId(), wallet?.networkId());
+				await env.delegates().sync(profile, wallet?.coinId(), wallet?.networkId());
 				await wallet.synchroniser().votes();
 			} catch {
 				// TODO: Retry sync if error code is greater than 499. Needs status code number from sdk.
@@ -47,7 +46,7 @@ export const WalletVote = ({ wallet, onButtonClick, env }: WalletVoteProps) => {
 		};
 
 		syncVotes();
-	}, [wallet, env, activeProfile]);
+	}, [wallet, env, profile]);
 
 	if (isLoading) {
 		return <WalletVoteSkeleton />;
