@@ -1,5 +1,5 @@
 import { ARK } from "@arkecosystem/platform-sdk-ark";
-import { Environment } from "@arkecosystem/platform-sdk-profiles";
+import { Contracts, Environment } from "@arkecosystem/platform-sdk-profiles";
 // @ts-ignore
 import { createTransportReplayer, RecordStore } from "@ledgerhq/hw-transport-mocker";
 import { render } from "@testing-library/react";
@@ -181,6 +181,6 @@ const envWithMocks = () => {
 
 export const env = envWithMocks();
 
-export const syncDelegates = async () => await env.delegates().syncAll();
+export const syncDelegates = async (profile: Contracts.IProfile) => await env.delegates().syncAll(profile);
 
-export const syncFees = async () => await env.fees().syncAll();
+export const syncFees = async (profile: Contracts.IProfile) => await env.fees().syncAll(profile);

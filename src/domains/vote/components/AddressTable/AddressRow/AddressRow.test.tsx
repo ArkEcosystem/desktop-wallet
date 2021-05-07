@@ -72,7 +72,7 @@ describe("AddressRow", () => {
 			})
 			.persist();
 
-		await syncDelegates();
+		await syncDelegates(profile);
 		await wallet.synchroniser().votes();
 		await wallet.synchroniser().identity();
 		await wallet.synchroniser().coin();
