@@ -191,13 +191,13 @@ export const Votes = () => {
 	const loadDelegates = useCallback(
 		async (wallet) => {
 			setIsLoadingDelegates(true);
-			await env.delegates().sync(wallet.coinId(), wallet.networkId());
+			await env.delegates().sync(activeProfile, wallet.coinId(), wallet.networkId());
 			const delegates = env.delegates().all(wallet.coinId(), wallet.networkId());
 
 			setDelegates(delegates);
 			setIsLoadingDelegates(false);
 		},
-		[env],
+		[env, activeProfile],
 	);
 
 	useEffect(() => {

@@ -10,7 +10,13 @@ import React, { useEffect, useState } from "react";
 import { useFormContext } from "react-hook-form";
 import { useTranslation } from "react-i18next";
 
-export const FormStep = ({ senderWallet }: { senderWallet: ProfilesContracts.IReadWriteWallet }) => {
+export const FormStep = ({
+	senderWallet,
+	profile,
+}: {
+	senderWallet: ProfilesContracts.IReadWriteWallet;
+	profile: ProfilesContracts.IProfile;
+}) => {
 	const { t } = useTranslation();
 
 	const { getValues, register, setValue, watch } = useFormContext();
@@ -29,7 +35,7 @@ export const FormStep = ({ senderWallet }: { senderWallet: ProfilesContracts.IRe
 	const [defaultFee] = useState(() => watch("fee"));
 	const fee = getValues("fee") || defaultFee;
 
-	const { findByType } = useFees();
+	const { findByType } = useFees({ profile });
 
 	useEffect(() => {
 		const setTransactionFees = async (senderWallet: ProfilesContracts.IReadWriteWallet) => {

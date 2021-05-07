@@ -24,7 +24,7 @@ describe("AddressTable", () => {
 			.reply(200, require("tests/fixtures/coins/ark/devnet/delegates.json"))
 			.persist();
 
-		await syncDelegates();
+		await syncDelegates(profile);
 		await wallet.synchroniser().votes();
 	});
 

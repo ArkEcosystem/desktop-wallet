@@ -29,13 +29,14 @@ export const SendRegistration = () => {
 	const [activeTab, setActiveTab] = useState(1);
 	const [transaction, setTransaction] = useState((null as unknown) as Contracts.SignedTransactionData);
 	const [registrationForm, setRegistrationForm] = useState<SendRegistrationForm>();
-	const { findByType } = useFees();
 
 	const { registrationType } = useParams();
 
 	const { env } = useEnvironmentContext();
 	const activeProfile = useActiveProfile();
 	const activeWallet = useActiveWallet();
+
+	const { findByType } = useFees({ profile: activeProfile });
 
 	const form = useForm({ mode: "onChange" });
 

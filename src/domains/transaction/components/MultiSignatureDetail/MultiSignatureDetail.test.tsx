@@ -37,7 +37,7 @@ describe("MultiSignatureDetail", () => {
 		await env.profiles().restore(profile);
 		await profile.sync();
 
-		await syncDelegates();
+		await syncDelegates(profile);
 
 		wallet = profile.wallets().first();
 

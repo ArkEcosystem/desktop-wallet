@@ -56,7 +56,7 @@ describe("SendIpfs", () => {
 
 		await env.profiles().restore(profile);
 		await profile.sync();
-		await syncFees();
+		await syncFees(profile);
 
 		wallet = profile.wallets().findById("ac38fe6d-4b67-4ef1-85be-17c5f6841129");
 		await wallet.synchroniser().identity();

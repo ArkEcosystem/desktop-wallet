@@ -19,6 +19,7 @@ export const FormStep = ({
 	unvotes,
 	votes,
 	wallet,
+	profile,
 }: {
 	profile: ProfilesContracts.IProfile;
 	unvotes: ProfilesContracts.IReadOnlyWallet[];
@@ -28,7 +29,7 @@ export const FormStep = ({
 	const { env } = useEnvironmentContext();
 	const { t } = useTranslation();
 
-	const { findByType } = useFees();
+	const { findByType } = useFees({ profile });
 	const form = useFormContext();
 	const { getValues, setValue, watch, register } = form;
 
