@@ -11,6 +11,8 @@ import { TRX } from "@arkecosystem/platform-sdk-trx";
 import { XLM } from "@arkecosystem/platform-sdk-xlm";
 import { XRP } from "@arkecosystem/platform-sdk-xrp";
 
+const createNetwork = (coin: Coins.CoinSpec, network: string) => new Coins.Network(coin.manifest, coin.manifest.networks[network]);
+
 export interface CoinNetworkExtended {
 	displayName: string;
 	borderClass: string;
@@ -172,28 +174,28 @@ export const coinsNetworkExtendedData: Record<string, CoinNetworkExtended> = {
 };
 
 export const availableNetworksMock: Coins.Network[] = [
-	// new Coins.Network(ADA.manifest, "ada.mainnet"),
-	// new Coins.Network(ADA.manifest, "ada.testnet"),
-	new Coins.Network(ARK.manifest, "ark.mainnet"),
-	new Coins.Network(ARK.manifest, "ark.devnet"),
-	new Coins.Network(ARK.manifest, "compendia.mainnet"),
-	new Coins.Network(ATOM.manifest, "cosmos.mainnet"),
-	new Coins.Network(ATOM.manifest, "cosmos.testnet"),
-	new Coins.Network(BTC.manifest, "btc.livenet"),
-	new Coins.Network(BTC.manifest, "btc.testnet"),
-	new Coins.Network(EGLD.manifest, "egld.mainnet"),
-	new Coins.Network(EGLD.manifest, "egld.testnet"),
-	new Coins.Network(ETH.manifest, "eth.mainnet"),
-	new Coins.Network(ETH.manifest, "eth.rinkeby"),
-	new Coins.Network(ETH.manifest, "eth.ropsten"),
-	new Coins.Network(LSK.manifest, "lsk.mainnet"),
-	new Coins.Network(LSK.manifest, "lsk.testnet"),
-	new Coins.Network(NEO.manifest, "neo.mainnet"),
-	new Coins.Network(NEO.manifest, "neo.testnet"),
-	new Coins.Network(TRX.manifest, "trx.mainnet"),
-	new Coins.Network(TRX.manifest, "trx.testnet"),
-	new Coins.Network(XLM.manifest, "xlm.mainnet"),
-	new Coins.Network(XLM.manifest, "xlm.testnet"),
-	new Coins.Network(XRP.manifest, "xrp.mainnet"),
-	new Coins.Network(XRP.manifest, "xrp.testnet"),
+	// createNetwork(ADA, "ada.mainnet"),
+	// createNetwork(ADA, "ada.testnet"),
+	createNetwork(ARK, "ark.mainnet"),
+	createNetwork(ARK, "ark.devnet"),
+	createNetwork(ARK, "compendia.mainnet"),
+	createNetwork(ATOM, "cosmos.mainnet"),
+	createNetwork(ATOM, "cosmos.testnet"),
+	createNetwork(BTC, "btc.livenet"),
+	createNetwork(BTC, "btc.testnet"),
+	createNetwork(EGLD, "egld.mainnet"),
+	createNetwork(EGLD, "egld.testnet"),
+	createNetwork(ETH, "eth.mainnet"),
+	createNetwork(ETH, "eth.rinkeby"),
+	createNetwork(ETH, "eth.ropsten"),
+	createNetwork(LSK, "lsk.mainnet"),
+	createNetwork(LSK, "lsk.testnet"),
+	createNetwork(NEO, "neo.mainnet"),
+	createNetwork(NEO, "neo.testnet"),
+	createNetwork(TRX, "trx.mainnet"),
+	createNetwork(TRX, "trx.testnet"),
+	createNetwork(XLM, "xlm.mainnet"),
+	createNetwork(XLM, "xlm.testnet"),
+	createNetwork(XRP, "xrp.mainnet"),
+	createNetwork(XRP, "xrp.testnet"),
 ];
