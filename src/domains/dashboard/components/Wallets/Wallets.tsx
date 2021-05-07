@@ -106,13 +106,11 @@ export const Wallets = ({
 				onViewMore={() => setViewMore(true)}
 			/>
 
-			{isWaitingLedger && (
-				<LedgerWaitingDevice
-					isOpen={true}
-					onDeviceAvailable={handleDeviceAvailable}
-					onClose={() => setIsWaitingLedger(false)}
-				/>
-			)}
+			<LedgerWaitingDevice
+				isOpen={isWaitingLedger}
+				onDeviceAvailable={handleDeviceAvailable}
+				onClose={() => setIsWaitingLedger(false)}
+			/>
 		</Section>
 	);
 };

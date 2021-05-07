@@ -418,15 +418,13 @@ export const WalletHeader = ({
 				</div>
 			</header>
 
-			{modal === "sign-message" && (
-				<SignMessage
-					profile={profile}
-					walletId={wallet.id()}
-					isOpen={true}
-					onClose={() => setModal(undefined)}
-					onCancel={() => setModal(undefined)}
-				/>
-			)}
+			<SignMessage
+				isOpen={modal === "sign-message"}
+				profile={profile}
+				walletId={wallet.id()}
+				onClose={() => setModal(undefined)}
+				onCancel={() => setModal(undefined)}
+			/>
 
 			<VerifyMessage
 				isOpen={modal === "verify-message"}
