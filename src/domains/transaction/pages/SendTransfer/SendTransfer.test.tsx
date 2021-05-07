@@ -1310,6 +1310,7 @@ describe("SendTransfer", () => {
 		});
 		await waitFor(() => expect(passwordInput).toHaveValue(passphrase));
 
+		const consoleErrorMock = jest.spyOn(console, "error").mockImplementation(() => undefined);
 		// Summary Step (skip ledger confirmation for now)
 		const signMock = jest.spyOn(wallet.transaction(), "signTransfer").mockImplementation(() => {
 			throw new Error("Signatory should be");
@@ -1319,12 +1320,14 @@ describe("SendTransfer", () => {
 			fireEvent.click(getByTestId("SendTransfer__button--submit"));
 		});
 
+		await waitFor(() => expect(signMock).toHaveBeenCalled());
 		await waitFor(() => expect(passwordInput).toHaveValue(""));
 		await waitFor(() => {
 			expect(getByTestId("Input__error")).toBeVisible();
 		});
 
 		signMock.mockRestore();
+		consoleErrorMock.mockRestore();
 
 		await waitFor(() => expect(container).toMatchSnapshot());
 	});
@@ -1402,6 +1405,7 @@ describe("SendTransfer", () => {
 		});
 		await waitFor(() => expect(passwordInput).toHaveValue(passphrase));
 
+		const consoleErrorMock = jest.spyOn(console, "error").mockImplementation(() => undefined);
 		// Step 5 (skip step 4 for now - ledger confirmation)
 		const signMock = jest.spyOn(wallet.transaction(), "signTransfer").mockImplementation(() => {
 			throw new Error();
@@ -1424,6 +1428,7 @@ describe("SendTransfer", () => {
 		await waitFor(() => expect(historyMock).toHaveBeenCalledWith(walletDetailPage));
 
 		signMock.mockRestore();
+		consoleErrorMock.mockRestore();
 	});
 
 	it("should send a multi payment", async () => {
