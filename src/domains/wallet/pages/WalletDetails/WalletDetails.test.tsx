@@ -111,7 +111,7 @@ describe("WalletDetails", () => {
 		profile.wallets().push(unvotedWallet);
 		emptyProfile.wallets().push(wallet2);
 
-		await syncDelegates();
+		await syncDelegates(profile);
 
 		nock("https://dwallets.ark.io")
 			.get("/api/delegates")

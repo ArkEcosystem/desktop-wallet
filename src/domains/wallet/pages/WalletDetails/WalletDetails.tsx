@@ -73,7 +73,12 @@ export const WalletDetails = () => {
 
 				{shouldVote && (
 					<Section backgroundColor="--theme-secondary-background-color" innerClassName="-my-2">
-						<WalletVote env={env} wallet={activeWallet} onButtonClick={handleVoteButton} />
+						<WalletVote
+							env={env}
+							wallet={activeWallet}
+							onButtonClick={handleVoteButton}
+							profile={activeProfile}
+						/>
 					</Section>
 				)}
 

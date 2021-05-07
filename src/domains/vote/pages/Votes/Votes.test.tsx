@@ -83,7 +83,7 @@ describe("Votes", () => {
 			})
 			.persist();
 
-		await syncDelegates();
+		await syncDelegates(profile);
 		await wallet.synchroniser().votes();
 	});
 

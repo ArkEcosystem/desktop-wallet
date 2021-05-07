@@ -4,11 +4,16 @@ import { buildTranslations } from "../../../app/i18n/helpers";
 
 const translations = buildTranslations();
 
-export const goToWallet = async (t: any, wallet = "D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD") => {
+export const goToWalletAndWaitTransactions = async (t: any, wallet = "D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD") => {
 	await t.click(Selector(`[data-testid=WalletCard__${wallet}]`));
 	await t.expect(Selector("[data-testid=WalletHeader]").exists).ok();
 	const transactionsCount = Selector('[data-testid="TableRow"]').count;
-	await t.expect(transactionsCount).gte(12);
+	await t.expect(transactionsCount).gte(12, { timeout: 300000 });
+};
+
+export const goToWallet = async (t: any, wallet = "D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD") => {
+	await t.click(Selector(`[data-testid=WalletCard__${wallet}]`));
+	await t.expect(Selector("[data-testid=WalletHeader]").exists).ok();
 };
 
 export const importWallet = async (t: any, passphrase = "passphrase", alias = "Test Wallet") => {
@@ -33,7 +38,7 @@ export const importWallet = async (t: any, passphrase = "passphrase", alias = "T
 
 	if (passphrase === "passphrase") {
 		const transactionsCount = Selector('[data-testid="TransactionRowMode"]').count;
-		await t.expect(transactionsCount).gte(2);
+		await t.expect(transactionsCount).gte(2, { timeout: 300000 });
 	}
 };
 
@@ -55,7 +60,4 @@ export const importWalletByAddress = async (t: any, address: string, alias = "Te
 	await t.click(Selector("button").withExactText(translations.COMMON.SAVE_FINISH));
 
 	await t.expect(Selector("[data-testid=WalletHeader]").exists).ok();
-
-	const transactionsCount = Selector('[data-testid="TransactionRowMode"]').count;
-	await t.expect(transactionsCount).gte(2);
 };
