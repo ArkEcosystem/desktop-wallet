@@ -67,7 +67,7 @@ describe("DelegateRegistrationForm", () => {
 
 		wallet = profile.wallets().first();
 
-		await syncDelegates();
+		await syncDelegates(profile);
 
 		fees = {
 			min: "0",

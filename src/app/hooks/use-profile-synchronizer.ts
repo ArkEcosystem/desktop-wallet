@@ -40,7 +40,7 @@ const useProfileJobs = (profile?: Contracts.IProfile): Record<string, any> => {
 		// Syncing delegates is necessary for every domain not only votes,
 		// Because it's used in wallet and transaction lists
 		const syncDelegates = {
-			callback: () => env.delegates().syncAll(),
+			callback: () => env.delegates().syncAll(profile),
 			interval: Intervals.Long,
 		};
 
@@ -58,7 +58,7 @@ const useProfileJobs = (profile?: Contracts.IProfile): Record<string, any> => {
 		};
 
 		const syncKnownWallets = {
-			callback: () => env.knownWallets().syncAll(),
+			callback: () => env.knownWallets().syncAll(profile),
 			interval: Intervals.Long,
 		};
 

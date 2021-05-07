@@ -12,7 +12,7 @@ export const useWalletSync = ({ profile, env }: WalletImportTypes) => {
 			env.fees().all(network.coin(), network.id());
 		} catch {
 			// Sync network fees for the first time
-			await env.fees().sync(network.coin(), network.id());
+			await env.fees().sync(profile, network.coin(), network.id());
 		}
 	};
 
@@ -27,7 +27,7 @@ export const useWalletSync = ({ profile, env }: WalletImportTypes) => {
 				env.delegates().all(network.coin(), network.id());
 			} catch {
 				// Sync network delegates for the first time
-				await env.delegates().sync(network.coin(), network.id());
+				await env.delegates().sync(profile, network.coin(), network.id());
 			}
 			await wallet.synchroniser().votes();
 		}

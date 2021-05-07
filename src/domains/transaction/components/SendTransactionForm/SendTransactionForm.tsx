@@ -32,7 +32,7 @@ export const SendTransactionForm = ({
 	const [availableNetworks, setAvailableNetworks] = useState<Coins.Network[]>([]);
 	const [dynamicFees, setDynamicFees] = useState(false);
 
-	const { findByType } = useFees();
+	const { findByType } = useFees({ profile });
 
 	const form = useFormContext();
 	const { getValues, setValue, watch } = form;
