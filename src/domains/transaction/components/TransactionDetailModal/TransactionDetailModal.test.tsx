@@ -20,7 +20,7 @@ describe("TransactionDetailModal", () => {
 	let profile: Contracts.IProfile;
 	let wallet: Contracts.IReadWriteWallet;
 
-	beforeAll(async () => {
+	beforeAll(() => {
 		nock.disableNetConnect();
 		nock("https://dwallets.ark.io")
 			.get("/api/delegates")
