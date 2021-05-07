@@ -27,14 +27,14 @@ describe("TransactionDetailModal", () => {
 			.query({ page: "1" })
 			.reply(200, require("tests/fixtures/coins/ark/devnet/delegates.json"))
 			.persist();
-
-		await syncDelegates(profile);
 	});
 
 	beforeEach(async () => {
 		dashboardURL = `/profiles/${fixtureProfileId}/dashboard`;
 		history.push(dashboardURL);
 		profile = env.profiles().findById(getDefaultProfileId());
+
+		await syncDelegates(profile);
 
 		await env.profiles().restore(profile);
 		await profile.sync();
