@@ -121,49 +121,49 @@ export const coinsNetworkExtendedData: Record<string, CoinNetworkExtended> = {
 		textClass: "text-theme-primary-400",
 		iconName: "LSK",
 	},
-	'neo.mainnet': {
+	"neo.mainnet": {
 		displayName: "NEO",
 		borderClass: "border-theme-warning-200",
 		textClass: "text-theme-warning-400",
 		iconName: "NEO",
 	},
-	'neo.testnet': {
+	"neo.testnet": {
 		displayName: "NEO Testnet",
 		borderClass: "border-theme-warning-200",
 		textClass: "text-theme-warning-400",
 		iconName: "NEO",
 	},
-	'trx.mainnet': {
+	"trx.mainnet": {
 		displayName: "Tron",
 		borderClass: "border-theme-primary-500",
 		textClass: "text-theme-primary-700",
 		iconName: "TRX",
 	},
-	'trx.testnet': {
+	"trx.testnet": {
 		displayName: "Tron Testnet",
 		borderClass: "border-theme-primary-500",
 		textClass: "text-theme-primary-700",
 		iconName: "TRX",
 	},
-	'xlm.mainnet': {
+	"xlm.mainnet": {
 		displayName: "Stellar",
 		borderClass: "border-theme-primary-500",
 		textClass: "text-theme-primary-700",
 		iconName: "XLM",
 	},
-	'xlm.testnet': {
+	"xlm.testnet": {
 		displayName: "Stellar Testnet",
 		borderClass: "border-theme-primary-500",
 		textClass: "text-theme-primary-700",
 		iconName: "XLM",
 	},
-	'xrp.mainnet': {
+	"xrp.mainnet": {
 		displayName: "Ripple",
 		borderClass: "border-theme-primary-500",
 		textClass: "text-theme-primary-700",
 		iconName: "XRP",
 	},
-	'xrp.testnet': {
+	"xrp.testnet": {
 		displayName: "XRP Testnet",
 		borderClass: "border-theme-primary-500",
 		textClass: "text-theme-primary-700",
