@@ -233,6 +233,7 @@ export const SendTransfer = () => {
 				transactionInput.data.expiration = parseInt(expiration);
 				setLastEstimatedExpiration(transactionInput.data.expiration);
 			}
+
 			const abortSignal = abortRef.current?.signal;
 			const { uuid, transaction } = await transactionBuilder.build(transactionType, transactionInput, {
 				abortSignal,
