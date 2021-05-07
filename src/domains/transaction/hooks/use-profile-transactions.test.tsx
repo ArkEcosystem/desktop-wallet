@@ -22,8 +22,6 @@ describe("useProfileTransactions", () => {
 				};
 			})
 			.persist();
-
-		await syncDelegates(profile);
 	});
 
 	beforeEach(() => {
@@ -36,6 +34,8 @@ describe("useProfileTransactions", () => {
 
 	it("should run updates periodically", async () => {
 		const profile = env.profiles().findById(getDefaultProfileId());
+
+		await syncDelegates(profile);
 
 		await env.profiles().restore(profile);
 		await profile.sync();
@@ -110,6 +110,8 @@ describe("useProfileTransactions", () => {
 	it("#fetchTransactions", async () => {
 		const profile = env.profiles().findById(getDefaultProfileId());
 
+		await syncDelegates(profile);
+
 		await env.profiles().restore(profile);
 		await profile.sync();
 
@@ -139,6 +141,8 @@ describe("useProfileTransactions", () => {
 
 	it("#updateFilters", async () => {
 		const profile = env.profiles().findById(getDefaultProfileId());
+
+		await syncDelegates(profile);
 
 		await env.profiles().restore(profile);
 		await profile.sync();
@@ -190,6 +194,8 @@ describe("useProfileTransactions", () => {
 
 	it("#fetchMore", async () => {
 		const profile = env.profiles().findById(getDefaultProfileId());
+
+		await syncDelegates(profile);
 
 		await env.profiles().restore(profile);
 		await profile.sync();
