@@ -839,7 +839,9 @@ describe("SendTransfer", () => {
 			.mockReturnValue(Promise.resolve(transactionFixture.data.id));
 		const broadcastMock = jest.spyOn(wallet.transaction(), "broadcast").mockImplementation();
 		const transactionMock = createTransactionMock(wallet);
-		const expirationMock = jest.spyOn(wallet.coin().transaction(), "estimateExpiration").mockResolvedValue(undefined);
+		const expirationMock = jest
+			.spyOn(wallet.coin().transaction(), "estimateExpiration")
+			.mockResolvedValue(undefined);
 
 		await waitFor(() => expect(getByTestId("SendTransfer__button--submit")).not.toBeDisabled());
 		act(() => {
