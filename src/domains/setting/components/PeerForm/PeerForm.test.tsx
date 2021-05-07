@@ -93,18 +93,9 @@ describe("PeerForm", () => {
 	});
 
 	it("should error if host already exists", async () => {
-		const validateHost = () => false;
+		const validateHost = () => "already exists";
 
 		render(<PeerForm networks={networks} onSave={onSave} onValidateHost={validateHost} />);
-
-		const selectNetworkInput = screen.getByTestId("SelectDropdownInput__input");
-
-		fireEvent.input(selectNetworkInput, { target: { value: "ark" } });
-		fireEvent.keyDown(selectNetworkInput, { key: "Enter", code: 13 });
-
-		await waitFor(() => {
-			expect(selectNetworkInput).toHaveValue("ARK Mainnet");
-		});
 
 		fireEvent.input(screen.getByTestId("PeerForm__name-input"), { target: { value: "ROBank" } });
 
@@ -118,6 +109,15 @@ describe("PeerForm", () => {
 
 		await waitFor(() => {
 			expect(screen.getByTestId("PeerForm__host-input")).toHaveValue("http://167.114.29.48:4005/api");
+		});
+
+		const selectNetworkInput = screen.getByTestId("SelectDropdownInput__input");
+
+		fireEvent.input(selectNetworkInput, { target: { value: "ark" } });
+		fireEvent.keyDown(selectNetworkInput, { key: "Enter", code: 13 });
+
+		await waitFor(() => {
+			expect(selectNetworkInput).toHaveValue("ARK Mainnet");
 		});
 
 		expect(screen.getByTestId("Input__error")).toBeVisible();
