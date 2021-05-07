@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/require-await */
 import { availableNetworksMock as networks } from "domains/network/data";
 import React from "react";
-import { act, fireEvent, render, RenderResult, waitFor } from "testing-library";
+import { fireEvent, render, screen, waitFor } from "testing-library";
 
 import { PeerForm } from "./PeerForm";
 
@@ -17,114 +17,102 @@ const onSave = jest.fn();
 
 describe("PeerForm", () => {
 	it("should render", async () => {
-		let rendered: RenderResult;
+		const { asFragment } = render(<PeerForm networks={networks} onSave={onSave} />);
 
-		await act(async () => {
-			rendered = render(<PeerForm networks={networks} onSave={onSave} />);
+		await waitFor(() => {
+			expect(screen.getByTestId("PeerForm__submit-button")).not.toBeDisabled();
 		});
-
-		const { asFragment } = rendered;
 
 		expect(asFragment()).toMatchSnapshot();
 	});
 
 	it("should select network", async () => {
-		let rendered: RenderResult;
+		render(<PeerForm networks={networks} onSave={onSave} />);
 
-		await act(async () => {
-			rendered = render(<PeerForm networks={networks} onSave={onSave} />);
-		});
+		const selectNetworkInput = screen.getByTestId("SelectDropdownInput__input");
 
-		const { getByTestId } = rendered;
+		fireEvent.input(selectNetworkInput, { target: { value: "ark" } });
+		fireEvent.keyDown(selectNetworkInput, { key: "Enter", code: 13 });
 
-		await act(async () => {
-			const selectNetworkInput = getByTestId("SelectDropdownInput__input");
-
-			await fireEvent.change(selectNetworkInput, { target: { value: "ark" } });
-			await fireEvent.keyDown(selectNetworkInput, { key: "Enter", code: 13 });
-
-			await waitFor(() => expect(selectNetworkInput).toHaveValue("ARK Mainnet"));
+		await waitFor(() => {
+			expect(selectNetworkInput).toHaveValue("ARK Mainnet");
 		});
 	});
 
 	it("should handle save", async () => {
-		let rendered: RenderResult;
+		render(<PeerForm networks={networks} onSave={onSave} />);
 
-		await act(async () => {
-			rendered = render(<PeerForm networks={networks} onSave={onSave} />);
+		const selectNetworkInput = screen.getByTestId("SelectDropdownInput__input");
+
+		fireEvent.input(selectNetworkInput, { target: { value: "ark" } });
+		fireEvent.keyDown(selectNetworkInput, { key: "Enter", code: 13 });
+
+		await waitFor(() => {
+			expect(selectNetworkInput).toHaveValue("ARK Mainnet");
 		});
 
-		const { getByTestId } = rendered;
+		fireEvent.input(screen.getByTestId("PeerForm__name-input"), { target: { value: "ROBank" } });
+		fireEvent.input(screen.getByTestId("PeerForm__host-input"), {
+			target: { value: "http://167.114.29.48:4003/api" },
+		});
 
-		await act(async () => {
-			const selectNetworkInput = getByTestId("SelectDropdownInput__input");
+		const submitButton = screen.getByTestId("PeerForm__submit-button");
+		await waitFor(() => {
+			expect(submitButton).not.toBeDisabled();
+		});
 
-			await fireEvent.change(selectNetworkInput, { target: { value: "ark" } });
-			await fireEvent.keyDown(selectNetworkInput, { key: "Enter", code: 13 });
+		fireEvent.click(submitButton);
 
-			await waitFor(() => expect(selectNetworkInput).toHaveValue("ARK Mainnet"));
-
-			await fireEvent.input(getByTestId("PeerForm__name-input"), { target: { value: "ROBank" } });
-			await fireEvent.input(getByTestId("PeerForm__host-input"), {
-				target: { value: "http://167.114.29.48:4003/api" },
-			});
-
-			const submitButton = getByTestId("PeerForm__submit-button");
-			expect(submitButton).toBeTruthy();
-			await waitFor(() => {
-				expect(submitButton).not.toHaveAttribute("disabled");
-			});
-
-			await fireEvent.click(submitButton);
-
-			await waitFor(() => expect(onSave).toHaveBeenCalled());
+		await waitFor(() => {
+			expect(onSave).toHaveBeenCalled();
 		});
 	});
 
 	it("should render the peer on the form", async () => {
-		let rendered: RenderResult;
+		const { asFragment } = render(<PeerForm networks={networks} peer={peer} onSave={onSave} />);
 
-		await act(async () => {
-			rendered = render(<PeerForm networks={networks} peer={peer} onSave={onSave} />);
+		await waitFor(() => {
+			expect(screen.getByTestId("PeerForm__name-input")).toHaveValue(peer.name);
 		});
 
-		const { asFragment, getByTestId } = rendered;
-
-		expect(getByTestId("PeerForm__name-input")).toHaveValue(peer.name);
-		expect(getByTestId("PeerForm__host-input")).toHaveValue(peer.host);
+		expect(screen.getByTestId("PeerForm__host-input")).toHaveValue(peer.host);
 
 		expect(asFragment()).toMatchSnapshot();
 	});
 
-	it("should error if host already exists", async () => {
-		let rendered: RenderResult;
+	it("should error if name consists only of whitespace", async () => {
+		render(<PeerForm networks={networks} onSave={onSave} />);
 
-		const validateHost = () => "already exists";
+		fireEvent.input(screen.getByTestId("PeerForm__name-input"), { target: { value: "     " } });
 
-		await act(async () => {
-			rendered = render(<PeerForm networks={networks} onSave={onSave} onValidateHost={validateHost} />);
+		await waitFor(() => {
+			expect(screen.getByTestId("Input__error")).toBeVisible();
 		});
 
-		const { getByTestId } = rendered;
+		expect(screen.getByTestId("PeerForm__submit-button")).toBeDisabled();
+	});
 
-		await act(async () => {
-			const selectNetworkInput = getByTestId("SelectDropdownInput__input");
+	it("should error if host already exists", async () => {
+		const validateHost = () => "already exists";
 
-			await fireEvent.input(getByTestId("PeerForm__name-input"), { target: { value: "ROBank" } });
-			await fireEvent.input(getByTestId("PeerForm__host-input"), {
-				target: { value: "http://167.114.29.48:4005/api" },
-			});
+		render(<PeerForm networks={networks} onSave={onSave} onValidateHost={validateHost} />);
 
-			await fireEvent.change(selectNetworkInput, { target: { value: "ark" } });
-			await fireEvent.keyDown(selectNetworkInput, { key: "Enter", code: 13 });
+		const selectNetworkInput = screen.getByTestId("SelectDropdownInput__input");
 
-			await waitFor(() => expect(selectNetworkInput).toHaveValue("ARK Mainnet"));
+		fireEvent.input(screen.getByTestId("PeerForm__name-input"), { target: { value: "ROBank" } });
+		fireEvent.input(screen.getByTestId("PeerForm__host-input"), {
+			target: { value: "http://167.114.29.48:4005/api" },
+		});
 
-			const submitButton = getByTestId("PeerForm__submit-button");
-			expect(submitButton).toBeTruthy();
-			await waitFor(() => {
-				expect(submitButton).toHaveAttribute("disabled");
-			});
+		fireEvent.input(selectNetworkInput, { target: { value: "ark" } });
+		fireEvent.keyDown(selectNetworkInput, { key: "Enter", code: 13 });
+
+		await waitFor(() => {
+			expect(selectNetworkInput).toHaveValue("ARK Mainnet");
+		});
+
+		await waitFor(() => {
+			expect(screen.getByTestId("PeerForm__submit-button")).toBeDisabled();
 		});
 	});
 });
