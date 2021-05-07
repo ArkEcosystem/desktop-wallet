@@ -71,8 +71,8 @@ describe("SendVote", () => {
 
 		jest.spyOn(wallet, "isDelegate").mockImplementation(() => true);
 
-		await syncDelegates();
-		await syncFees();
+		await syncDelegates(profile);
+		await syncFees(profile);
 
 		votes = [0, 1].map((index) =>
 			env.delegates().findByAddress(wallet.coinId(), wallet.networkId(), delegateData[index].address),

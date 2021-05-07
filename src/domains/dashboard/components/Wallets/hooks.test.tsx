@@ -28,7 +28,7 @@ describe("useWalletDisplay", () => {
 		});
 
 		profile.wallets().push(wallet);
-		await syncDelegates();
+		await syncDelegates(profile);
 
 		wallets = profile.wallets().values();
 	});

@@ -193,11 +193,16 @@ export const requestMocks = {
 			"https://dwallets.ark.io/api/transactions?page=1&limit=10&orderBy=timestamp&address=D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb",
 			"coins/ark/devnet/transactions",
 		),
+		mockRequest(
+			"https://dwallets.ark.io/api/transactions?page=1&limit=10&orderBy=timestamp&address=DJXg9Vqg2tofRNrMAvMzhZTkegu8QyyNQq",
+			"coins/ark/devnet/transactions",
+		),
 
 		mockRequest(
 			"https://dwallets.ark.io/api/transactions?page=1&limit=10&orderBy=timestamp&address=D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD%2CD5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb",
 			{ meta: {}, data: [] },
 		),
+
 		...searchAddressesMocks(),
 	],
 	wallets: [

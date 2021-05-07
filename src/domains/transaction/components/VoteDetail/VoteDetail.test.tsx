@@ -28,7 +28,9 @@ describe("VoteDetail", () => {
 			.reply(200, require("tests/fixtures/coins/ark/devnet/delegates.json"))
 			.persist();
 
-		await syncDelegates();
+		const profile = env.profiles().findById(fixtureProfileId);
+
+		await syncDelegates(profile);
 	});
 
 	beforeEach(() => {

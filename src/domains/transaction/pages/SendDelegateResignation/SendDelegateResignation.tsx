@@ -119,7 +119,7 @@ export const SendDelegateResignation = ({ formDefaultData }: SendResignationProp
 
 						<div className="mt-8">
 							<TabPanel tabId={1}>
-								<FormStep senderWallet={activeWallet} />
+								<FormStep senderWallet={activeWallet} profile={activeProfile} />
 							</TabPanel>
 
 							<TabPanel tabId={2}>
