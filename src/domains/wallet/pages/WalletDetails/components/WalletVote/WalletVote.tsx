@@ -13,6 +13,7 @@ type WalletVoteProps = {
 	wallet: Contracts.IReadWriteWallet;
 	onButtonClick: (address?: string) => void;
 	env: Environment;
+	profile: Contracts.IProfile;
 };
 
 const HintIcon = ({ tooltipContent }: { tooltipContent: string }) => (
@@ -28,14 +29,14 @@ const HintIcon = ({ tooltipContent }: { tooltipContent: string }) => (
 	</Tooltip>
 );
 
-export const WalletVote = ({ wallet, onButtonClick, env }: WalletVoteProps) => {
+export const WalletVote = ({ wallet, onButtonClick, env, profile }: WalletVoteProps) => {
 	const { t } = useTranslation();
 	const [isLoading, setIsLoading] = useState(true);
 
 	useEffect(() => {
 		const syncVotes = async () => {
 			try {
-				await env.delegates().sync(wallet?.coinId(), wallet?.networkId());
+				await env.delegates().sync(profile, wallet?.coinId(), wallet?.networkId());
 				await wallet.synchroniser().votes();
 			} catch {
 				// TODO: Retry sync if error code is greater than 499. Needs status code number from sdk.
@@ -45,7 +46,7 @@ export const WalletVote = ({ wallet, onButtonClick, env }: WalletVoteProps) => {
 		};
 
 		syncVotes();
-	}, [wallet, env]);
+	}, [wallet, env, profile]);
 
 	if (isLoading) {
 		return <WalletVoteSkeleton />;

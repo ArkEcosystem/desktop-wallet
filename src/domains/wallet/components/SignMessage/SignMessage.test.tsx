@@ -341,6 +341,7 @@ describe("SignMessage", () => {
 			return { unsubscribe };
 		});
 
+		const consoleErrorMock = jest.spyOn(console, "error").mockImplementation(() => undefined);
 		const signMessageSpy = jest
 			.spyOn(wallet.coin().ledger(), "signMessage")
 			.mockImplementation(
@@ -397,6 +398,7 @@ describe("SignMessage", () => {
 		isLedgerMock.mockRestore();
 		listenSpy.mockRestore();
 		getPublicKeySpy.mockRestore();
+		consoleErrorMock.mockRestore();
 	});
 
 	it("should display error toast if ledger is not found in time", async () => {

@@ -69,7 +69,7 @@ describe("Transactions", () => {
 		await env.profiles().restore(profile);
 		await profile.sync();
 
-		await syncDelegates();
+		await syncDelegates(profile);
 	});
 
 	beforeEach(async () => {
