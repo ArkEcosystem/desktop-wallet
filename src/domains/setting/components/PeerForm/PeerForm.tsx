@@ -79,9 +79,13 @@ export const PeerForm = ({ networks, peer, onSave, onValidateHost }: PeerFormPro
 				<FormLabel label={t("SETTINGS.PEERS.NAME")} />
 				<InputDefault
 					ref={register({
-						required: t("COMMON.VALIDATION.FIELD_REQUIRED", {
-							field: t("SETTINGS.PEERS.NAME"),
-						}).toString(),
+						validate: {
+							required: (name: string) =>
+								!!name?.trim() ||
+								t("COMMON.VALIDATION.FIELD_REQUIRED", {
+									field: t("SETTINGS.PEERS.NAME"),
+								}).toString(),
+						},
 						maxLength: {
 							message: t("COMMON.VALIDATION.MAX_LENGTH", {
 								field: t("SETTINGS.PEERS.NAME"),
