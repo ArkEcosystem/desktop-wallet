@@ -124,7 +124,7 @@ const UserInfo = ({ exchangeCurrency, onUserAction, avatarImage, userActions, us
 export const NavigationButtonWrapper = styled.div`
 	${css`
 		button {
-			${tw`w-11 h-11 overflow-hidden rounded-lg text-theme-primary-300 dark:text-theme-secondary-600 not-disabled:(hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-secondary-800 dark:hover:text-theme-secondary-200)`};
+			${tw`w-11 h-11 overflow-hidden rounded text-theme-primary-300 dark:text-theme-secondary-600 not-disabled:(hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-secondary-800 dark:hover:text-theme-secondary-200)`};
 		}
 	`};
 `;
@@ -173,7 +173,7 @@ export const NavigationBar = ({
 						className="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
 					>
 						{/* border on focus */}
-						<div className="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2" />
+						<div className="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible" />
 						{menuItem.title}
 					</NavLink>
 				</li>
@@ -252,7 +252,7 @@ export const NavigationBar = ({
 
 								<div className="h-8 border-r border-theme-secondary-300 dark:border-theme-secondary-800" />
 
-								<div className="flex overflow-hidden items-center rounded-lg">
+								<div className="flex items-center">
 									<Tooltip content={wallets.length ? undefined : t("COMMON.NOTICE_NO_WALLETS")}>
 										<NavigationButtonWrapper>
 											<Button
