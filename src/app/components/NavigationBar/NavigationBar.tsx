@@ -173,7 +173,7 @@ export const NavigationBar = ({
 						className="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
 					>
 						{/* border on focus */}
-						<div className="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2" />
+						<div className="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible" />
 						{menuItem.title}
 					</NavLink>
 				</li>
