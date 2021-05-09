@@ -1,4 +1,5 @@
-[data-js-focus-visible] :focus:not([data-focus-visible-added]) {
+[data-js-focus-visible] :focus:not([data-focus-visible-added]),
+[data-js-focus-visible] :focus:not([data-focus-visible-added]) > .group-focus-visible {
 	outline: none;
 	box-shadow: none;
 }

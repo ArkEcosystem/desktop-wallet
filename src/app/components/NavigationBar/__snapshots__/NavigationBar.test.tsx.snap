@@ -50,7 +50,7 @@ exports[`NavigationBar should not render if no active profile 1`] = `
               title="Portfolio"
             >
               <div
-                class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2"
+                class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
               />
               Portfolio
             </a>
@@ -64,7 +64,7 @@ exports[`NavigationBar should not render if no active profile 1`] = `
               title="test"
             >
               <div
-                class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2"
+                class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
               />
               test
             </a>
@@ -81,7 +81,7 @@ exports[`NavigationBar should not render if no active profile 1`] = `
                 data-testid="dropdown__toggle"
               >
                 <div
-                  class="NavigationBar__NavigationButtonWrapper-sc-1qsoskw-1 eUPnft group"
+                  class="NavigationBar__NavigationButtonWrapper-sc-1qsoskw-1 dlRYmL group"
                 >
                   <button
                     class="OriginalButton__StyledButton-sc-1y2wptt-0 fNHPRi"
@@ -120,7 +120,7 @@ exports[`NavigationBar should not render if no active profile 1`] = `
             class="flex items-center"
           >
             <div
-              class="NavigationBar__NavigationButtonWrapper-sc-1qsoskw-1 eUPnft"
+              class="NavigationBar__NavigationButtonWrapper-sc-1qsoskw-1 dlRYmL"
             >
               <button
                 class="OriginalButton__StyledButton-sc-1y2wptt-0 fNHPRi"
@@ -147,10 +147,10 @@ exports[`NavigationBar should not render if no active profile 1`] = `
             class="h-8 border-r border-theme-secondary-300 dark:border-theme-secondary-800"
           />
           <div
-            class="flex overflow-hidden items-center rounded-lg"
+            class="flex items-center"
           >
             <div
-              class="NavigationBar__NavigationButtonWrapper-sc-1qsoskw-1 eUPnft"
+              class="NavigationBar__NavigationButtonWrapper-sc-1qsoskw-1 dlRYmL"
             >
               <button
                 class="OriginalButton__StyledButton-sc-1y2wptt-0 fNHPRi"
@@ -307,7 +307,7 @@ exports[`NavigationBar should render 1`] = `
               title="Portfolio"
             >
               <div
-                class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2"
+                class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
               />
               Portfolio
             </a>
@@ -321,7 +321,7 @@ exports[`NavigationBar should render 1`] = `
               title="Plugins"
             >
               <div
-                class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2"
+                class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
               />
               Plugins
             </a>
@@ -335,7 +335,7 @@ exports[`NavigationBar should render 1`] = `
               title="Exchange"
             >
               <div
-                class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2"
+                class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
               />
               Exchange
             </a>
@@ -349,7 +349,7 @@ exports[`NavigationBar should render 1`] = `
               title="News"
             >
               <div
-                class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2"
+                class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
               />
               News
             </a>
@@ -366,7 +366,7 @@ exports[`NavigationBar should render 1`] = `
                 data-testid="dropdown__toggle"
               >
                 <div
-                  class="NavigationBar__NavigationButtonWrapper-sc-1qsoskw-1 eUPnft group"
+                  class="NavigationBar__NavigationButtonWrapper-sc-1qsoskw-1 dlRYmL group"
                 >
                   <button
                     class="OriginalButton__StyledButton-sc-1y2wptt-0 fNHPRi"
@@ -405,7 +405,7 @@ exports[`NavigationBar should render 1`] = `
             class="flex items-center"
           >
             <div
-              class="NavigationBar__NavigationButtonWrapper-sc-1qsoskw-1 eUPnft"
+              class="NavigationBar__NavigationButtonWrapper-sc-1qsoskw-1 dlRYmL"
             >
               <button
                 class="OriginalButton__StyledButton-sc-1y2wptt-0 fNHPRi"
@@ -432,10 +432,10 @@ exports[`NavigationBar should render 1`] = `
             class="h-8 border-r border-theme-secondary-300 dark:border-theme-secondary-800"
           />
           <div
-            class="flex overflow-hidden items-center rounded-lg"
+            class="flex items-center"
           >
             <div
-              class="NavigationBar__NavigationButtonWrapper-sc-1qsoskw-1 eUPnft"
+              class="NavigationBar__NavigationButtonWrapper-sc-1qsoskw-1 dlRYmL"
             >
               <button
                 class="OriginalButton__StyledButton-sc-1y2wptt-0 fNHPRi"
@@ -654,7 +654,7 @@ exports[`NavigationBar should render with custom menu 1`] = `
               title="Portfolio"
             >
               <div
-                class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2"
+                class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
               />
               Portfolio
             </a>
@@ -668,7 +668,7 @@ exports[`NavigationBar should render with custom menu 1`] = `
               title="test"
             >
               <div
-                class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2"
+                class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
               />
               test
             </a>
@@ -685,7 +685,7 @@ exports[`NavigationBar should render with custom menu 1`] = `
                 data-testid="dropdown__toggle"
               >
                 <div
-                  class="NavigationBar__NavigationButtonWrapper-sc-1qsoskw-1 eUPnft group"
+                  class="NavigationBar__NavigationButtonWrapper-sc-1qsoskw-1 dlRYmL group"
                 >
                   <button
                     class="OriginalButton__StyledButton-sc-1y2wptt-0 fNHPRi"
@@ -724,7 +724,7 @@ exports[`NavigationBar should render with custom menu 1`] = `
             class="flex items-center"
           >
             <div
-              class="NavigationBar__NavigationButtonWrapper-sc-1qsoskw-1 eUPnft"
+              class="NavigationBar__NavigationButtonWrapper-sc-1qsoskw-1 dlRYmL"
             >
               <button
                 class="OriginalButton__StyledButton-sc-1y2wptt-0 fNHPRi"
@@ -751,10 +751,10 @@ exports[`NavigationBar should render with custom menu 1`] = `
             class="h-8 border-r border-theme-secondary-300 dark:border-theme-secondary-800"
           />
           <div
-            class="flex overflow-hidden items-center rounded-lg"
+            class="flex items-center"
           >
             <div
-              class="NavigationBar__NavigationButtonWrapper-sc-1qsoskw-1 eUPnft"
+              class="NavigationBar__NavigationButtonWrapper-sc-1qsoskw-1 dlRYmL"
             >
               <button
                 class="OriginalButton__StyledButton-sc-1y2wptt-0 fNHPRi"
@@ -912,7 +912,7 @@ exports[`NavigationBar should render with shadow if there is a scroll 1`] = `
             class="flex items-center"
           >
             <div
-              class="NavigationBar__NavigationButtonWrapper-sc-1qsoskw-1 eUPnft"
+              class="NavigationBar__NavigationButtonWrapper-sc-1qsoskw-1 dlRYmL"
             >
               <button
                 class="OriginalButton__StyledButton-sc-1y2wptt-0 epuIM"
@@ -940,10 +940,10 @@ exports[`NavigationBar should render with shadow if there is a scroll 1`] = `
             class="h-8 border-r border-theme-secondary-300 dark:border-theme-secondary-800"
           />
           <div
-            class="flex overflow-hidden items-center rounded-lg"
+            class="flex items-center"
           >
             <div
-              class="NavigationBar__NavigationButtonWrapper-sc-1qsoskw-1 eUPnft"
+              class="NavigationBar__NavigationButtonWrapper-sc-1qsoskw-1 dlRYmL"
             >
               <button
                 class="OriginalButton__StyledButton-sc-1y2wptt-0 epuIM"
@@ -1091,7 +1091,7 @@ exports[`NavigationBar should render with title 1`] = `
               title="Portfolio"
             >
               <div
-                class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2"
+                class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
               />
               Portfolio
             </a>
@@ -1105,7 +1105,7 @@ exports[`NavigationBar should render with title 1`] = `
               title="Plugins"
             >
               <div
-                class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2"
+                class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
               />
               Plugins
             </a>
@@ -1119,7 +1119,7 @@ exports[`NavigationBar should render with title 1`] = `
               title="Exchange"
             >
               <div
-                class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2"
+                class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
               />
               Exchange
             </a>
@@ -1133,7 +1133,7 @@ exports[`NavigationBar should render with title 1`] = `
               title="News"
             >
               <div
-                class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2"
+                class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
               />
               News
             </a>
@@ -1150,7 +1150,7 @@ exports[`NavigationBar should render with title 1`] = `
                 data-testid="dropdown__toggle"
               >
                 <div
-                  class="NavigationBar__NavigationButtonWrapper-sc-1qsoskw-1 eUPnft group"
+                  class="NavigationBar__NavigationButtonWrapper-sc-1qsoskw-1 dlRYmL group"
                 >
                   <button
                     class="OriginalButton__StyledButton-sc-1y2wptt-0 fNHPRi"
@@ -1189,7 +1189,7 @@ exports[`NavigationBar should render with title 1`] = `
             class="flex items-center"
           >
             <div
-              class="NavigationBar__NavigationButtonWrapper-sc-1qsoskw-1 eUPnft"
+              class="NavigationBar__NavigationButtonWrapper-sc-1qsoskw-1 dlRYmL"
             >
               <button
                 class="OriginalButton__StyledButton-sc-1y2wptt-0 fNHPRi"
@@ -1216,10 +1216,10 @@ exports[`NavigationBar should render with title 1`] = `
             class="h-8 border-r border-theme-secondary-300 dark:border-theme-secondary-800"
           />
           <div
-            class="flex overflow-hidden items-center rounded-lg"
+            class="flex items-center"
           >
             <div
-              class="NavigationBar__NavigationButtonWrapper-sc-1qsoskw-1 eUPnft"
+              class="NavigationBar__NavigationButtonWrapper-sc-1qsoskw-1 dlRYmL"
             >
               <button
                 class="OriginalButton__StyledButton-sc-1y2wptt-0 fNHPRi"

@@ -53,7 +53,7 @@ exports[`Settings should not update the uploaded avatar when removing focus from
                 title="Portfolio"
               >
                 <div
-                  class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2"
+                  class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
                 />
                 Portfolio
               </a>
@@ -67,7 +67,7 @@ exports[`Settings should not update the uploaded avatar when removing focus from
                 title="Plugins"
               >
                 <div
-                  class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2"
+                  class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
                 />
                 Plugins
               </a>
@@ -81,7 +81,7 @@ exports[`Settings should not update the uploaded avatar when removing focus from
                 title="Exchange"
               >
                 <div
-                  class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2"
+                  class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
                 />
                 Exchange
               </a>
@@ -95,7 +95,7 @@ exports[`Settings should not update the uploaded avatar when removing focus from
                 title="News"
               >
                 <div
-                  class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2"
+                  class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
                 />
                 News
               </a>
@@ -112,7 +112,7 @@ exports[`Settings should not update the uploaded avatar when removing focus from
                   data-testid="dropdown__toggle"
                 >
                   <div
-                    class="NavigationBar__NavigationButtonWrapper-sc-1qsoskw-1 eUPnft group"
+                    class="NavigationBar__NavigationButtonWrapper-sc-1qsoskw-1 dlRYmL group"
                   >
                     <button
                       class="OriginalButton__StyledButton-sc-1y2wptt-0 fNHPRi"
@@ -151,7 +151,7 @@ exports[`Settings should not update the uploaded avatar when removing focus from
               class="flex items-center"
             >
               <div
-                class="NavigationBar__NavigationButtonWrapper-sc-1qsoskw-1 eUPnft"
+                class="NavigationBar__NavigationButtonWrapper-sc-1qsoskw-1 dlRYmL"
               >
                 <button
                   class="OriginalButton__StyledButton-sc-1y2wptt-0 fNHPRi"
@@ -178,10 +178,10 @@ exports[`Settings should not update the uploaded avatar when removing focus from
               class="h-8 border-r border-theme-secondary-300 dark:border-theme-secondary-800"
             />
             <div
-              class="flex overflow-hidden items-center rounded-lg"
+              class="flex items-center"
             >
               <div
-                class="NavigationBar__NavigationButtonWrapper-sc-1qsoskw-1 eUPnft"
+                class="NavigationBar__NavigationButtonWrapper-sc-1qsoskw-1 dlRYmL"
               >
                 <button
                   class="OriginalButton__StyledButton-sc-1y2wptt-0 fNHPRi"
@@ -1652,7 +1652,7 @@ exports[`Settings should render 1`] = `
                 title="Portfolio"
               >
                 <div
-                  class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2"
+                  class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
                 />
                 Portfolio
               </a>
@@ -1666,7 +1666,7 @@ exports[`Settings should render 1`] = `
                 title="Plugins"
               >
                 <div
-                  class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2"
+                  class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
                 />
                 Plugins
               </a>
@@ -1680,7 +1680,7 @@ exports[`Settings should render 1`] = `
                 title="Exchange"
               >
                 <div
-                  class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2"
+                  class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
                 />
                 Exchange
               </a>
@@ -1694,7 +1694,7 @@ exports[`Settings should render 1`] = `
                 title="News"
               >
                 <div
-                  class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2"
+                  class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
                 />
                 News
               </a>
@@ -1711,7 +1711,7 @@ exports[`Settings should render 1`] = `
                   data-testid="dropdown__toggle"
                 >
                   <div
-                    class="NavigationBar__NavigationButtonWrapper-sc-1qsoskw-1 eUPnft group"
+                    class="NavigationBar__NavigationButtonWrapper-sc-1qsoskw-1 dlRYmL group"
                   >
                     <button
                       class="OriginalButton__StyledButton-sc-1y2wptt-0 fNHPRi"
@@ -1750,7 +1750,7 @@ exports[`Settings should render 1`] = `
               class="flex items-center"
             >
               <div
-                class="NavigationBar__NavigationButtonWrapper-sc-1qsoskw-1 eUPnft"
+                class="NavigationBar__NavigationButtonWrapper-sc-1qsoskw-1 dlRYmL"
               >
                 <button
                   class="OriginalButton__StyledButton-sc-1y2wptt-0 fNHPRi"
@@ -1777,10 +1777,10 @@ exports[`Settings should render 1`] = `
               class="h-8 border-r border-theme-secondary-300 dark:border-theme-secondary-800"
             />
             <div
-              class="flex overflow-hidden items-center rounded-lg"
+              class="flex items-center"
             >
               <div
-                class="NavigationBar__NavigationButtonWrapper-sc-1qsoskw-1 eUPnft"
+                class="NavigationBar__NavigationButtonWrapper-sc-1qsoskw-1 dlRYmL"
               >
                 <button
                   class="OriginalButton__StyledButton-sc-1y2wptt-0 fNHPRi"
@@ -3237,7 +3237,7 @@ exports[`Settings should render export settings 1`] = `
                 title="Portfolio"
               >
                 <div
-                  class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2"
+                  class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
                 />
                 Portfolio
               </a>
@@ -3251,7 +3251,7 @@ exports[`Settings should render export settings 1`] = `
                 title="Plugins"
               >
                 <div
-                  class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2"
+                  class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
                 />
                 Plugins
               </a>
@@ -3265,7 +3265,7 @@ exports[`Settings should render export settings 1`] = `
                 title="Exchange"
               >
                 <div
-                  class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2"
+                  class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
                 />
                 Exchange
               </a>
@@ -3279,7 +3279,7 @@ exports[`Settings should render export settings 1`] = `
                 title="News"
               >
                 <div
-                  class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2"
+                  class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
                 />
                 News
               </a>
@@ -3296,7 +3296,7 @@ exports[`Settings should render export settings 1`] = `
                   data-testid="dropdown__toggle"
                 >
                   <div
-                    class="NavigationBar__NavigationButtonWrapper-sc-1qsoskw-1 eUPnft group"
+                    class="NavigationBar__NavigationButtonWrapper-sc-1qsoskw-1 dlRYmL group"
                   >
                     <button
                       class="OriginalButton__StyledButton-sc-1y2wptt-0 fNHPRi"
@@ -3335,7 +3335,7 @@ exports[`Settings should render export settings 1`] = `
               class="flex items-center"
             >
               <div
-                class="NavigationBar__NavigationButtonWrapper-sc-1qsoskw-1 eUPnft"
+                class="NavigationBar__NavigationButtonWrapper-sc-1qsoskw-1 dlRYmL"
               >
                 <button
                   class="OriginalButton__StyledButton-sc-1y2wptt-0 epuIM"
@@ -3363,10 +3363,10 @@ exports[`Settings should render export settings 1`] = `
               class="h-8 border-r border-theme-secondary-300 dark:border-theme-secondary-800"
             />
             <div
-              class="flex overflow-hidden items-center rounded-lg"
+              class="flex items-center"
             >
               <div
-                class="NavigationBar__NavigationButtonWrapper-sc-1qsoskw-1 eUPnft"
+                class="NavigationBar__NavigationButtonWrapper-sc-1qsoskw-1 dlRYmL"
               >
                 <button
                   class="OriginalButton__StyledButton-sc-1y2wptt-0 epuIM"
@@ -3822,7 +3822,7 @@ exports[`Settings should render password settings 1`] = `
                 title="Portfolio"
               >
                 <div
-                  class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2"
+                  class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
                 />
                 Portfolio
               </a>
@@ -3836,7 +3836,7 @@ exports[`Settings should render password settings 1`] = `
                 title="Plugins"
               >
                 <div
-                  class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2"
+                  class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
                 />
                 Plugins
               </a>
@@ -3850,7 +3850,7 @@ exports[`Settings should render password settings 1`] = `
                 title="Exchange"
               >
                 <div
-                  class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2"
+                  class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
                 />
                 Exchange
               </a>
@@ -3864,7 +3864,7 @@ exports[`Settings should render password settings 1`] = `
                 title="News"
               >
                 <div
-                  class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2"
+                  class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
                 />
                 News
               </a>
@@ -3881,7 +3881,7 @@ exports[`Settings should render password settings 1`] = `
                   data-testid="dropdown__toggle"
                 >
                   <div
-                    class="NavigationBar__NavigationButtonWrapper-sc-1qsoskw-1 eUPnft group"
+                    class="NavigationBar__NavigationButtonWrapper-sc-1qsoskw-1 dlRYmL group"
                   >
                     <button
                       class="OriginalButton__StyledButton-sc-1y2wptt-0 fNHPRi"
@@ -3920,7 +3920,7 @@ exports[`Settings should render password settings 1`] = `
               class="flex items-center"
             >
               <div
-                class="NavigationBar__NavigationButtonWrapper-sc-1qsoskw-1 eUPnft"
+                class="NavigationBar__NavigationButtonWrapper-sc-1qsoskw-1 dlRYmL"
               >
                 <button
                   class="OriginalButton__StyledButton-sc-1y2wptt-0 epuIM"
@@ -3948,10 +3948,10 @@ exports[`Settings should render password settings 1`] = `
               class="h-8 border-r border-theme-secondary-300 dark:border-theme-secondary-800"
             />
             <div
-              class="flex overflow-hidden items-center rounded-lg"
+              class="flex items-center"
             >
               <div
-                class="NavigationBar__NavigationButtonWrapper-sc-1qsoskw-1 eUPnft"
+                class="NavigationBar__NavigationButtonWrapper-sc-1qsoskw-1 dlRYmL"
               >
                 <button
                   class="OriginalButton__StyledButton-sc-1y2wptt-0 epuIM"
@@ -4414,7 +4414,7 @@ exports[`Settings should render peer settings 1`] = `
                 title="Portfolio"
               >
                 <div
-                  class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2"
+                  class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
                 />
                 Portfolio
               </a>
@@ -4428,7 +4428,7 @@ exports[`Settings should render peer settings 1`] = `
                 title="Plugins"
               >
                 <div
-                  class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2"
+                  class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
                 />
                 Plugins
               </a>
@@ -4442,7 +4442,7 @@ exports[`Settings should render peer settings 1`] = `
                 title="Exchange"
               >
                 <div
-                  class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2"
+                  class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
                 />
                 Exchange
               </a>
@@ -4456,7 +4456,7 @@ exports[`Settings should render peer settings 1`] = `
                 title="News"
               >
                 <div
-                  class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2"
+                  class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
                 />
                 News
               </a>
@@ -4473,7 +4473,7 @@ exports[`Settings should render peer settings 1`] = `
                   data-testid="dropdown__toggle"
                 >
                   <div
-                    class="NavigationBar__NavigationButtonWrapper-sc-1qsoskw-1 eUPnft group"
+                    class="NavigationBar__NavigationButtonWrapper-sc-1qsoskw-1 dlRYmL group"
                   >
                     <button
                       class="OriginalButton__StyledButton-sc-1y2wptt-0 fNHPRi"
@@ -4512,7 +4512,7 @@ exports[`Settings should render peer settings 1`] = `
               class="flex items-center"
             >
               <div
-                class="NavigationBar__NavigationButtonWrapper-sc-1qsoskw-1 eUPnft"
+                class="NavigationBar__NavigationButtonWrapper-sc-1qsoskw-1 dlRYmL"
               >
                 <button
                   class="OriginalButton__StyledButton-sc-1y2wptt-0 epuIM"
@@ -4540,10 +4540,10 @@ exports[`Settings should render peer settings 1`] = `
               class="h-8 border-r border-theme-secondary-300 dark:border-theme-secondary-800"
             />
             <div
-              class="flex overflow-hidden items-center rounded-lg"
+              class="flex items-center"
             >
               <div
-                class="NavigationBar__NavigationButtonWrapper-sc-1qsoskw-1 eUPnft"
+                class="NavigationBar__NavigationButtonWrapper-sc-1qsoskw-1 dlRYmL"
               >
                 <button
                   class="OriginalButton__StyledButton-sc-1y2wptt-0 epuIM"
@@ -5004,7 +5004,7 @@ exports[`Settings should set a password 1`] = `
                 title="Portfolio"
               >
                 <div
-                  class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2"
+                  class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
                 />
                 Portfolio
               </a>
@@ -5018,7 +5018,7 @@ exports[`Settings should set a password 1`] = `
                 title="Plugins"
               >
                 <div
-                  class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2"
+                  class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
                 />
                 Plugins
               </a>
@@ -5032,7 +5032,7 @@ exports[`Settings should set a password 1`] = `
                 title="Exchange"
               >
                 <div
-                  class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2"
+                  class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
                 />
                 Exchange
               </a>
@@ -5046,7 +5046,7 @@ exports[`Settings should set a password 1`] = `
                 title="News"
               >
                 <div
-                  class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2"
+                  class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
                 />
                 News
               </a>
@@ -5063,7 +5063,7 @@ exports[`Settings should set a password 1`] = `
                   data-testid="dropdown__toggle"
                 >
                   <div
-                    class="NavigationBar__NavigationButtonWrapper-sc-1qsoskw-1 eUPnft group"
+                    class="NavigationBar__NavigationButtonWrapper-sc-1qsoskw-1 dlRYmL group"
                   >
                     <button
                       class="OriginalButton__StyledButton-sc-1y2wptt-0 fNHPRi"
@@ -5102,7 +5102,7 @@ exports[`Settings should set a password 1`] = `
               class="flex items-center"
             >
               <div
-                class="NavigationBar__NavigationButtonWrapper-sc-1qsoskw-1 eUPnft"
+                class="NavigationBar__NavigationButtonWrapper-sc-1qsoskw-1 dlRYmL"
               >
                 <button
                   class="OriginalButton__StyledButton-sc-1y2wptt-0 epuIM"
@@ -5130,10 +5130,10 @@ exports[`Settings should set a password 1`] = `
               class="h-8 border-r border-theme-secondary-300 dark:border-theme-secondary-800"
             />
             <div
-              class="flex overflow-hidden items-center rounded-lg"
+              class="flex items-center"
             >
               <div
-                class="NavigationBar__NavigationButtonWrapper-sc-1qsoskw-1 eUPnft"
+                class="NavigationBar__NavigationButtonWrapper-sc-1qsoskw-1 dlRYmL"
               >
                 <button
                   class="OriginalButton__StyledButton-sc-1y2wptt-0 epuIM"
@@ -5651,7 +5651,7 @@ exports[`Settings should show an error toast if the current password does not ma
                 title="Portfolio"
               >
                 <div
-                  class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2"
+                  class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
                 />
                 Portfolio
               </a>
@@ -5665,7 +5665,7 @@ exports[`Settings should show an error toast if the current password does not ma
                 title="Plugins"
               >
                 <div
-                  class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2"
+                  class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
                 />
                 Plugins
               </a>
@@ -5679,7 +5679,7 @@ exports[`Settings should show an error toast if the current password does not ma
                 title="Exchange"
               >
                 <div
-                  class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2"
+                  class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
                 />
                 Exchange
               </a>
@@ -5693,7 +5693,7 @@ exports[`Settings should show an error toast if the current password does not ma
                 title="News"
               >
                 <div
-                  class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2"
+                  class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
                 />
                 News
               </a>
@@ -5710,7 +5710,7 @@ exports[`Settings should show an error toast if the current password does not ma
                   data-testid="dropdown__toggle"
                 >
                   <div
-                    class="NavigationBar__NavigationButtonWrapper-sc-1qsoskw-1 eUPnft group"
+                    class="NavigationBar__NavigationButtonWrapper-sc-1qsoskw-1 dlRYmL group"
                   >
                     <button
                       class="OriginalButton__StyledButton-sc-1y2wptt-0 fNHPRi"
@@ -5749,7 +5749,7 @@ exports[`Settings should show an error toast if the current password does not ma
               class="flex items-center"
             >
               <div
-                class="NavigationBar__NavigationButtonWrapper-sc-1qsoskw-1 eUPnft"
+                class="NavigationBar__NavigationButtonWrapper-sc-1qsoskw-1 dlRYmL"
               >
                 <button
                   class="OriginalButton__StyledButton-sc-1y2wptt-0 epuIM"
@@ -5777,10 +5777,10 @@ exports[`Settings should show an error toast if the current password does not ma
               class="h-8 border-r border-theme-secondary-300 dark:border-theme-secondary-800"
             />
             <div
-              class="flex overflow-hidden items-center rounded-lg"
+              class="flex items-center"
             >
               <div
-                class="NavigationBar__NavigationButtonWrapper-sc-1qsoskw-1 eUPnft"
+                class="NavigationBar__NavigationButtonWrapper-sc-1qsoskw-1 dlRYmL"
               >
                 <button
                   class="OriginalButton__StyledButton-sc-1y2wptt-0 epuIM"
@@ -6297,7 +6297,7 @@ exports[`Settings should trigger password confirmation mismatch error 1`] = `
                 title="Portfolio"
               >
                 <div
-                  class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2"
+                  class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
                 />
                 Portfolio
               </a>
@@ -6311,7 +6311,7 @@ exports[`Settings should trigger password confirmation mismatch error 1`] = `
                 title="Plugins"
               >
                 <div
-                  class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2"
+                  class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
                 />
                 Plugins
               </a>
@@ -6325,7 +6325,7 @@ exports[`Settings should trigger password confirmation mismatch error 1`] = `
                 title="Exchange"
               >
                 <div
-                  class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2"
+                  class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
                 />
                 Exchange
               </a>
@@ -6339,7 +6339,7 @@ exports[`Settings should trigger password confirmation mismatch error 1`] = `
                 title="News"
               >
                 <div
-                  class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2"
+                  class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
                 />
                 News
               </a>
@@ -6356,7 +6356,7 @@ exports[`Settings should trigger password confirmation mismatch error 1`] = `
                   data-testid="dropdown__toggle"
                 >
                   <div
-                    class="NavigationBar__NavigationButtonWrapper-sc-1qsoskw-1 eUPnft group"
+                    class="NavigationBar__NavigationButtonWrapper-sc-1qsoskw-1 dlRYmL group"
                   >
                     <button
                       class="OriginalButton__StyledButton-sc-1y2wptt-0 fNHPRi"
@@ -6395,7 +6395,7 @@ exports[`Settings should trigger password confirmation mismatch error 1`] = `
               class="flex items-center"
             >
               <div
-                class="NavigationBar__NavigationButtonWrapper-sc-1qsoskw-1 eUPnft"
+                class="NavigationBar__NavigationButtonWrapper-sc-1qsoskw-1 dlRYmL"
               >
                 <button
                   class="OriginalButton__StyledButton-sc-1y2wptt-0 epuIM"
@@ -6423,10 +6423,10 @@ exports[`Settings should trigger password confirmation mismatch error 1`] = `
               class="h-8 border-r border-theme-secondary-300 dark:border-theme-secondary-800"
             />
             <div
-              class="flex overflow-hidden items-center rounded-lg"
+              class="flex items-center"
             >
               <div
-                class="NavigationBar__NavigationButtonWrapper-sc-1qsoskw-1 eUPnft"
+                class="NavigationBar__NavigationButtonWrapper-sc-1qsoskw-1 dlRYmL"
               >
                 <button
                   class="OriginalButton__StyledButton-sc-1y2wptt-0 epuIM"
@@ -6959,7 +6959,7 @@ exports[`Settings should update profile 1`] = `
                 title="Portfolio"
               >
                 <div
-                  class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2"
+                  class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
                 />
                 Portfolio
               </a>
@@ -6973,7 +6973,7 @@ exports[`Settings should update profile 1`] = `
                 title="Plugins"
               >
                 <div
-                  class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2"
+                  class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
                 />
                 Plugins
               </a>
@@ -6987,7 +6987,7 @@ exports[`Settings should update profile 1`] = `
                 title="Exchange"
               >
                 <div
-                  class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2"
+                  class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
                 />
                 Exchange
               </a>
@@ -7001,7 +7001,7 @@ exports[`Settings should update profile 1`] = `
                 title="News"
               >
                 <div
-                  class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2"
+                  class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
                 />
                 News
               </a>
@@ -7018,7 +7018,7 @@ exports[`Settings should update profile 1`] = `
                   data-testid="dropdown__toggle"
                 >
                   <div
-                    class="NavigationBar__NavigationButtonWrapper-sc-1qsoskw-1 eUPnft group"
+                    class="NavigationBar__NavigationButtonWrapper-sc-1qsoskw-1 dlRYmL group"
                   >
                     <button
                       class="OriginalButton__StyledButton-sc-1y2wptt-0 fNHPRi"
@@ -7057,7 +7057,7 @@ exports[`Settings should update profile 1`] = `
               class="flex items-center"
             >
               <div
-                class="NavigationBar__NavigationButtonWrapper-sc-1qsoskw-1 eUPnft"
+                class="NavigationBar__NavigationButtonWrapper-sc-1qsoskw-1 dlRYmL"
               >
                 <button
                   class="OriginalButton__StyledButton-sc-1y2wptt-0 fNHPRi"
@@ -7084,10 +7084,10 @@ exports[`Settings should update profile 1`] = `
               class="h-8 border-r border-theme-secondary-300 dark:border-theme-secondary-800"
             />
             <div
-              class="flex overflow-hidden items-center rounded-lg"
+              class="flex items-center"
             >
               <div
-                class="NavigationBar__NavigationButtonWrapper-sc-1qsoskw-1 eUPnft"
+                class="NavigationBar__NavigationButtonWrapper-sc-1qsoskw-1 dlRYmL"
               >
                 <button
                   class="OriginalButton__StyledButton-sc-1y2wptt-0 fNHPRi"
@@ -8539,7 +8539,7 @@ exports[`Settings should update the avatar when removing focus from name input 1
                 title="Portfolio"
               >
                 <div
-                  class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2"
+                  class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
                 />
                 Portfolio
               </a>
@@ -8553,7 +8553,7 @@ exports[`Settings should update the avatar when removing focus from name input 1
                 title="Plugins"
               >
                 <div
-                  class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2"
+                  class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
                 />
                 Plugins
               </a>
@@ -8567,7 +8567,7 @@ exports[`Settings should update the avatar when removing focus from name input 1
                 title="Exchange"
               >
                 <div
-                  class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2"
+                  class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
                 />
                 Exchange
               </a>
@@ -8581,7 +8581,7 @@ exports[`Settings should update the avatar when removing focus from name input 1
                 title="News"
               >
                 <div
-                  class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2"
+                  class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
                 />
                 News
               </a>
@@ -8598,7 +8598,7 @@ exports[`Settings should update the avatar when removing focus from name input 1
                   data-testid="dropdown__toggle"
                 >
                   <div
-                    class="NavigationBar__NavigationButtonWrapper-sc-1qsoskw-1 eUPnft group"
+                    class="NavigationBar__NavigationButtonWrapper-sc-1qsoskw-1 dlRYmL group"
                   >
                     <button
                       class="OriginalButton__StyledButton-sc-1y2wptt-0 fNHPRi"
@@ -8637,7 +8637,7 @@ exports[`Settings should update the avatar when removing focus from name input 1
               class="flex items-center"
             >
               <div
-                class="NavigationBar__NavigationButtonWrapper-sc-1qsoskw-1 eUPnft"
+                class="NavigationBar__NavigationButtonWrapper-sc-1qsoskw-1 dlRYmL"
               >
                 <button
                   class="OriginalButton__StyledButton-sc-1y2wptt-0 fNHPRi"
@@ -8664,10 +8664,10 @@ exports[`Settings should update the avatar when removing focus from name input 1
               class="h-8 border-r border-theme-secondary-300 dark:border-theme-secondary-800"
             />
             <div
-              class="flex overflow-hidden items-center rounded-lg"
+              class="flex items-center"
             >
               <div
-                class="NavigationBar__NavigationButtonWrapper-sc-1qsoskw-1 eUPnft"
+                class="NavigationBar__NavigationButtonWrapper-sc-1qsoskw-1 dlRYmL"
               >
                 <button
                   class="OriginalButton__StyledButton-sc-1y2wptt-0 fNHPRi"
@@ -10124,7 +10124,7 @@ exports[`Settings should update the avatar when removing focus from name input 2
                 title="Portfolio"
               >
                 <div
-                  class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2"
+                  class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
                 />
                 Portfolio
               </a>
@@ -10138,7 +10138,7 @@ exports[`Settings should update the avatar when removing focus from name input 2
                 title="Plugins"
               >
                 <div
-                  class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2"
+                  class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
                 />
                 Plugins
               </a>
@@ -10152,7 +10152,7 @@ exports[`Settings should update the avatar when removing focus from name input 2
                 title="Exchange"
               >
                 <div
-                  class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2"
+                  class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
                 />
                 Exchange
               </a>
@@ -10166,7 +10166,7 @@ exports[`Settings should update the avatar when removing focus from name input 2
                 title="News"
               >
                 <div
-                  class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2"
+                  class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
                 />
                 News
               </a>
@@ -10183,7 +10183,7 @@ exports[`Settings should update the avatar when removing focus from name input 2
                   data-testid="dropdown__toggle"
                 >
                   <div
-                    class="NavigationBar__NavigationButtonWrapper-sc-1qsoskw-1 eUPnft group"
+                    class="NavigationBar__NavigationButtonWrapper-sc-1qsoskw-1 dlRYmL group"
                   >
                     <button
                       class="OriginalButton__StyledButton-sc-1y2wptt-0 fNHPRi"
@@ -10222,7 +10222,7 @@ exports[`Settings should update the avatar when removing focus from name input 2
               class="flex items-center"
             >
               <div
-                class="NavigationBar__NavigationButtonWrapper-sc-1qsoskw-1 eUPnft"
+                class="NavigationBar__NavigationButtonWrapper-sc-1qsoskw-1 dlRYmL"
               >
                 <button
                   class="OriginalButton__StyledButton-sc-1y2wptt-0 fNHPRi"
@@ -10249,10 +10249,10 @@ exports[`Settings should update the avatar when removing focus from name input 2
               class="h-8 border-r border-theme-secondary-300 dark:border-theme-secondary-800"
             />
             <div
-              class="flex overflow-hidden items-center rounded-lg"
+              class="flex items-center"
             >
               <div
-                class="NavigationBar__NavigationButtonWrapper-sc-1qsoskw-1 eUPnft"
+                class="NavigationBar__NavigationButtonWrapper-sc-1qsoskw-1 dlRYmL"
               >
                 <button
                   class="OriginalButton__StyledButton-sc-1y2wptt-0 fNHPRi"
