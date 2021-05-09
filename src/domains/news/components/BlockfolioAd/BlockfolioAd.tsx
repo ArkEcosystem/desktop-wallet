@@ -23,7 +23,7 @@ export const BlockfolioAd = () => {
 			/>
 
 			<div className="absolute left-10 top-16">
-				<div className="flex flex-col space-y-5 text-white">
+				<div className="flex flex-col items-start space-y-5 text-white">
 					<Link to="https://blockfolio.com/" showExternalIcon={false} isExternal>
 						<SvgCollection.Blockfolio className="-mx-8 text-white" width={238} height={47} />
 					</Link>
