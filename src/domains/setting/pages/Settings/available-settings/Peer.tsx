@@ -23,7 +23,7 @@ import { SettingsProps } from "../Settings.models";
 export const Peer = ({ formConfig, onSuccess }: SettingsProps) => {
 	const { t } = useTranslation();
 
-	const { env, state, persist } = useEnvironmentContext();
+	const { state, persist } = useEnvironmentContext();
 	const activeProfile = useActiveProfile();
 
 	const [isMultiPeerBroadcast, setIsMultiPeerBroadcast] = useState(
@@ -101,8 +101,6 @@ export const Peer = ({ formConfig, onSuccess }: SettingsProps) => {
 			savePeerSettings();
 		}
 	}, [activeProfile, isCustomPeer, isMultiPeerBroadcast, peerGroupByNetwork, peers, persist, syncWallets]);
-
-	const availableNetworks = useMemo(() => env.availableNetworks(), [env]);
 
 	const { context, register } = formConfig;
 
@@ -257,7 +255,6 @@ export const Peer = ({ formConfig, onSuccess }: SettingsProps) => {
 
 			<CreatePeer
 				isOpen={isCreatePeer}
-				networks={availableNetworks}
 				profile={activeProfile}
 				onClose={() => setIsCreatePeer(false)}
 				onValidateHost={validateHost}
@@ -267,7 +264,6 @@ export const Peer = ({ formConfig, onSuccess }: SettingsProps) => {
 				<>
 					<UpdatePeer
 						isOpen={peerAction === "edit"}
-						networks={availableNetworks}
 						peer={selectedPeer}
 						profile={activeProfile}
 						onClose={resetPeerAction}

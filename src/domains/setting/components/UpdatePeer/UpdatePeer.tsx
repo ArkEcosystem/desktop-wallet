@@ -8,14 +8,13 @@ import { useTranslation } from "react-i18next";
 
 type UpdatePeerProps = {
 	isOpen: boolean;
-	networks: Coins.Network[];
 	peer: any;
 	profile: Contracts.IProfile;
 	onClose?: () => void;
 	onValidateHost?: any;
 };
 
-export const UpdatePeer = ({ isOpen, networks, peer, profile, onClose, onValidateHost }: UpdatePeerProps) => {
+export const UpdatePeer = ({ isOpen, peer, profile, onClose, onValidateHost }: UpdatePeerProps) => {
 	const { t } = useTranslation();
 
 	const { persist } = useEnvironmentContext();
@@ -53,12 +52,11 @@ export const UpdatePeer = ({ isOpen, networks, peer, profile, onClose, onValidat
 
 	return (
 		<Modal title={t("SETTINGS.MODAL_CUSTOM_PEER.TITLE")} size="xl" isOpen={isOpen} onClose={onClose}>
-			<PeerForm networks={networks} peer={peer} onValidateHost={onValidateHost} onSave={handleUpdatePeer} />
+			<PeerForm peer={peer} onValidateHost={onValidateHost} onSave={handleUpdatePeer} />
 		</Modal>
 	);
 };
 
 UpdatePeer.defaultProps = {
 	isOpen: false,
-	networks: [],
 };
