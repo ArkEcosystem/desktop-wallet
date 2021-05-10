@@ -1,22 +1,20 @@
-import { Coins } from "@arkecosystem/platform-sdk";
 import { Button } from "app/components/Button";
 import { Form, FormField, FormLabel } from "app/components/Form";
 import { InputDefault } from "app/components/Input";
 import { Select } from "app/components/SelectDropdown";
 import { Toggle } from "app/components/Toggle";
-import { Option } from "domains/contact/components/ContactListItem/ContactListItem.models";
-import React, { useEffect, useMemo } from "react";
+import { useNetworkOptions } from "app/hooks";
+import React, { useEffect } from "react";
 import { useForm } from "react-hook-form";
 import { useTranslation } from "react-i18next";
 
 type PeerFormProps = {
-	networks: Coins.Network[];
 	peer?: any;
 	onSave: any;
 	onValidateHost?: any;
 };
 
-export const PeerForm = ({ networks, peer, onSave, onValidateHost }: PeerFormProps) => {
+export const PeerForm = ({ peer, onSave, onValidateHost }: PeerFormProps) => {
 	const { t } = useTranslation();
 
 	const form = useForm({ mode: "onChange" });
@@ -26,19 +24,20 @@ export const PeerForm = ({ networks, peer, onSave, onValidateHost }: PeerFormPro
 
 	const nameMaxLength = 20;
 
+	const { networkOptions, networkById } = useNetworkOptions();
+
 	useEffect(() => {
 		register("network", { required: true });
 	}, [register]);
 
 	useEffect(() => {
 		if (peer) {
-			const network = networks.find((network) => network.coin() === peer.coin && network.id() === peer.network);
-			setValue("network", network, { shouldValidate: true, shouldDirty: true });
+			setValue("network", networkById(peer.network), { shouldValidate: true, shouldDirty: true });
 		}
-	}, [networks, peer, setValue]);
+	}, [networkById, peer, setValue]);
 
-	const handleSelectNetwork = (networkOption?: Option) => {
-		const network = networks.find((network) => network.id() === networkOption?.value);
+	const handleSelectNetwork = (networkOption?: { label: string; value: string }) => {
+		const network = networkById(networkOption?.value);
 
 		if (form.errors.host?.message.includes("already exists")) {
 			form.clearErrors("host");
@@ -51,15 +50,6 @@ export const PeerForm = ({ networks, peer, onSave, onValidateHost }: PeerFormPro
 
 		setValue("network", network, { shouldValidate: true, shouldDirty: true });
 	};
-
-	const networkOptions = useMemo(
-		() =>
-			networks.map((network) => ({
-				value: network.id(),
-				label: `${network.coin()} ${network.name()}`,
-			})),
-		[networks],
-	);
 
 	return (
 		<Form data-testid="PeerForm" context={form} onSubmit={() => onSave({ network, name, host, isMultiSignature })}>
@@ -79,9 +69,13 @@ export const PeerForm = ({ networks, peer, onSave, onValidateHost }: PeerFormPro
 				<FormLabel label={t("SETTINGS.PEERS.NAME")} />
 				<InputDefault
 					ref={register({
-						required: t("COMMON.VALIDATION.FIELD_REQUIRED", {
-							field: t("SETTINGS.PEERS.NAME"),
-						}).toString(),
+						validate: {
+							required: (name: string) =>
+								!!name?.trim() ||
+								t("COMMON.VALIDATION.FIELD_REQUIRED", {
+									field: t("SETTINGS.PEERS.NAME"),
+								}).toString(),
+						},
 						maxLength: {
 							message: t("COMMON.VALIDATION.MAX_LENGTH", {
 								field: t("SETTINGS.PEERS.NAME"),
@@ -143,8 +137,4 @@ export const PeerForm = ({ networks, peer, onSave, onValidateHost }: PeerFormPro
 			</div>
 		</Form>
 	);
-};
-
-PeerForm.defaultProps = {
-	networks: [],
 };
