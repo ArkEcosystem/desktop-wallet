@@ -6,7 +6,7 @@ import nock from "nock";
 import { PluginController, PluginManager } from "plugins/core";
 import { PluginConfigurationData } from "plugins/core/configuration";
 import React, { useState } from "react";
-import { env, getDefaultProfileId } from "utils/testing-library";
+import { act, env, getDefaultProfileId } from "utils/testing-library";
 
 import { PluginManagerProvider, usePluginManagerContext } from "./PluginManagerProvider";
 
@@ -419,7 +419,13 @@ describe("PluginManagerProvider", () => {
 		});
 
 		const Component = () => {
-			const { fetchPluginPackages, allPlugins, updatePlugin, hasUpdateAvailable } = usePluginManagerContext();
+			const {
+				fetchPluginPackages,
+				allPlugins,
+				updatePlugin,
+				hasUpdateAvailable,
+				updatingStats,
+			} = usePluginManagerContext();
 			const onClick = () => fetchPluginPackages();
 			return (
 				<div>
@@ -428,7 +434,11 @@ describe("PluginManagerProvider", () => {
 						{allPlugins.map((pkg) => (
 							<li key={pkg.name()}>
 								<span>{pkg.name()}</span>
-								{hasUpdateAvailable(pkg.id()) ? <span>Update Available</span> : null}
+								{updatingStats[pkg.name()]?.completed ? (
+									<span>Update Completed</span>
+								) : hasUpdateAvailable(pkg.id()) ? (
+									<span>Update Available</span>
+								) : null}
 								<button onClick={() => updatePlugin(pkg.name())}>Update</button>
 							</li>
 						))}
@@ -469,8 +479,88 @@ describe("PluginManagerProvider", () => {
 			expect(manager.plugins().findById("@dated/transaction-export-plugin")?.config().version()).toBe("1.0.1"),
 		);
 
+		act(() => {
+			jest.runOnlyPendingTimers();
+		});
+
+		await waitFor(() => expect(screen.getByText("Update Completed")).toBeInTheDocument());
+
 		ipcRendererSpy.mockRestore();
 		onSpy.mockRestore();
+		jest.useRealTimers();
+	});
+
+	it("should handle and exception while updating a plugin", async () => {
+		jest.useFakeTimers();
+
+		const plugin = new PluginController(
+			{
+				name: "@dated/transaction-export-plugin",
+				version: "1.0.0",
+				"desktop-wallet": { minimumVersion: "4.0.0" },
+			},
+			() => void 0,
+		);
+		manager.plugins().push(plugin);
+
+		const ipcRendererSpy = jest.spyOn(ipcRenderer, "invoke").mockImplementation((channel) => {
+			if (channel === "plugin:install") {
+				throw new Error();
+			}
+		});
+
+		const Component = () => {
+			const {
+				fetchPluginPackages,
+				allPlugins,
+				updatePlugin,
+				hasUpdateAvailable,
+				updatingStats,
+			} = usePluginManagerContext();
+			const onClick = () => fetchPluginPackages();
+			return (
+				<div>
+					<button onClick={onClick}>Fetch</button>
+					<ul>
+						{allPlugins.map((pkg) => (
+							<li key={pkg.name()}>
+								<span>{pkg.name()}</span>
+								{updatingStats[pkg.name()]?.failed ? (
+									<span>Updated failed</span>
+								) : (
+									<>
+										{hasUpdateAvailable(pkg.id()) ? <span>Update Available</span> : null}
+										<button onClick={() => updatePlugin(pkg.name())}>Update</button>
+									</>
+								)}
+							</li>
+						))}
+					</ul>
+				</div>
+			);
+		};
+
+		render(
+			<EnvironmentProvider env={env}>
+				<PluginManagerProvider manager={manager} services={[]}>
+					<Component />
+				</PluginManagerProvider>
+			</EnvironmentProvider>,
+		);
+
+		fireEvent.click(screen.getByText("Fetch"));
+
+		await waitFor(() => expect(screen.getByText("Update Available")).toBeInTheDocument());
+
+		fireEvent.click(screen.getAllByText("Update")[0]);
+
+		await waitFor(() =>
+			expect(manager.plugins().findById("@dated/transaction-export-plugin")?.config().version()).toBe("1.0.0"),
+		);
+
+		expect(screen.getAllByText("Updated failed")).toBeTruthy();
+
+		ipcRendererSpy.mockRestore();
 		jest.useRealTimers();
 	});
 
