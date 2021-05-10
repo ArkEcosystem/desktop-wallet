@@ -181,7 +181,7 @@ exports[`CreateProfile should fail password confirmation 1`] = `
                       />
                     </div>
                     <div
-                      class="flex items-center space-x-3 divide-x divide-theme-danger-500 text-theme-danger-500"
+                      class="flex items-center space-x-3 divide-x divide-theme-secondary-300 dark:divide-theme-secondary-800 text-theme-danger-500"
                     >
                       <span
                         data-errortext="Password should have at least 6 characters"
@@ -251,7 +251,7 @@ exports[`CreateProfile should fail password confirmation 1`] = `
                       />
                     </div>
                     <div
-                      class="flex items-center space-x-3 divide-x divide-theme-danger-500 text-theme-danger-500"
+                      class="flex items-center space-x-3 divide-x divide-theme-secondary-300 dark:divide-theme-secondary-800 text-theme-danger-500"
                     >
                       <span
                         data-errortext="Passwords do not match"
@@ -838,7 +838,7 @@ exports[`CreateProfile should not be able to create new profile if name already 
                           />
                         </div>
                         <div
-                          class="flex items-center space-x-3 divide-x divide-theme-danger-500 text-theme-danger-500"
+                          class="flex items-center space-x-3 divide-x divide-theme-secondary-300 dark:divide-theme-secondary-800 text-theme-danger-500"
                         >
                           <span
                             data-errortext="A profile with this name already exists"
@@ -1558,7 +1558,7 @@ exports[`CreateProfile should not be able to create new profile if name consists
                           />
                         </div>
                         <div
-                          class="flex items-center space-x-3 divide-x divide-theme-danger-500 text-theme-danger-500"
+                          class="flex items-center space-x-3 divide-x divide-theme-secondary-300 dark:divide-theme-secondary-800 text-theme-danger-500"
                         >
                           <span
                             data-errortext="Profile Name required"
@@ -2278,7 +2278,7 @@ exports[`CreateProfile should not be able to create new profile if name is too l
                           />
                         </div>
                         <div
-                          class="flex items-center space-x-3 divide-x divide-theme-danger-500 text-theme-danger-500"
+                          class="flex items-center space-x-3 divide-x divide-theme-secondary-300 dark:divide-theme-secondary-800 text-theme-danger-500"
                         >
                           <span
                             data-errortext="Profile Name should have at most 42 characters"
@@ -2998,7 +2998,7 @@ exports[`CreateProfile should not update the uploaded avatar when removing focus
                           />
                         </div>
                         <div
-                          class="flex items-center space-x-3 divide-x divide-theme-danger-500 text-theme-danger-500"
+                          class="flex items-center space-x-3 divide-x divide-theme-secondary-300 dark:divide-theme-secondary-800 text-theme-danger-500"
                         >
                           <span
                             data-errortext="Profile Name required"
@@ -6538,7 +6538,7 @@ exports[`CreateProfile should update the avatar when removing focus from name in
                           />
                         </div>
                         <div
-                          class="flex items-center space-x-3 divide-x divide-theme-danger-500 text-theme-danger-500"
+                          class="flex items-center space-x-3 divide-x divide-theme-secondary-300 dark:divide-theme-secondary-800 text-theme-danger-500"
                         >
                           <span
                             data-errortext="Profile Name required"

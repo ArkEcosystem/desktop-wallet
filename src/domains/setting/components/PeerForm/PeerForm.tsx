@@ -28,6 +28,10 @@ export const PeerForm = ({ peer, onSave, onValidateHost }: PeerFormProps) => {
 	const { networkOptions, networkById } = useNetworkOptions();
 
 	useEffect(() => {
+		register("network", { required: true });
+	}, [register]);
+
+	useEffect(() => {
 		if (peer) {
 			setValue("network", networkById(peer.network), { shouldValidate: true, shouldDirty: true });
 		}
