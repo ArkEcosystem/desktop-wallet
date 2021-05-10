@@ -23,7 +23,7 @@ export const InputPassword = React.forwardRef<HTMLInputElement, InputPasswordPro
 						className="relative flex items-center justify-center w-full h-full text-2xl focus:outline-none group"
 					>
 						{/* icon border on focus */}
-						<div className="absolute inset-0 -m-1 rounded ring-theme-primary-400 group-focus:ring-2" />
+						<div className="absolute inset-0 -m-1 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible" />
 
 						<Icon name={show ? "EyeOff" : "Eye"} />
 					</button>
