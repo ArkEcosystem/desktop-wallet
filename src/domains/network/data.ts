@@ -10,6 +10,7 @@ import { NEO } from "@arkecosystem/platform-sdk-neo";
 import { TRX } from "@arkecosystem/platform-sdk-trx";
 import { XLM } from "@arkecosystem/platform-sdk-xlm";
 import { XRP } from "@arkecosystem/platform-sdk-xrp";
+import { ZIL } from "@arkecosystem/platform-sdk-zil";
 
 const createNetwork = (coin: Coins.CoinSpec, network: string) =>
 	new Coins.Network(coin.manifest, coin.manifest.networks[network]);
@@ -167,10 +168,22 @@ export const coinsNetworkExtendedData: Record<string, CoinNetworkExtended> = {
 		iconName: "XRP",
 	},
 	"xrp.testnet": {
-		displayName: "XRP Testnet",
+		displayName: "Ripple Testnet",
 		borderClass: "border-theme-primary-500",
 		textClass: "text-theme-primary-700",
 		iconName: "XRP",
+	},
+	"zil.mainnet": {
+		displayName: "Zilliqa",
+		borderClass: "border-theme-primary-500",
+		textClass: "text-theme-primary-700",
+		iconName: "ZIL",
+	},
+	"zil.testnet": {
+		displayName: "Zilliqa Testnet",
+		borderClass: "border-theme-primary-500",
+		textClass: "text-theme-primary-700",
+		iconName: "ZIL",
 	},
 };
 
@@ -199,4 +212,6 @@ export const availableNetworksMock: Coins.Network[] = [
 	createNetwork(XLM, "xlm.testnet"),
 	createNetwork(XRP, "xrp.mainnet"),
 	createNetwork(XRP, "xrp.testnet"),
+	createNetwork(ZIL, "zil.mainnet"),
+	createNetwork(ZIL, "zil.testnet"),
 ];
