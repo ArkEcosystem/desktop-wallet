@@ -188,7 +188,7 @@ const CreateProfileForm = ({
 									ref={register(createProfile.currency())}
 									options={PlatformSdkChoices.currencies}
 									onChange={(currency: any) =>
-										setValue("currency", currency.value, {
+										setValue("currency", currency?.value, {
 											shouldDirty: true,
 											shouldValidate: true,
 										})

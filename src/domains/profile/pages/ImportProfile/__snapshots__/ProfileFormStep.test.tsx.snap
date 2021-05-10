@@ -156,7 +156,7 @@ exports[`Import Profile - Profile Form Step should fail password confirmation 1`
                     />
                   </div>
                   <div
-                    class="flex items-center space-x-3 divide-x divide-theme-secondary-300 dark:divide-theme-secondary-800 text-theme-danger-500"
+                    class="flex items-center space-x-3 divide-x divide-theme-danger-500 text-theme-danger-500"
                   >
                     <span
                       data-errortext="Password should have at least 6 characters"
@@ -226,7 +226,7 @@ exports[`Import Profile - Profile Form Step should fail password confirmation 1`
                     />
                   </div>
                   <div
-                    class="flex items-center space-x-3 divide-x divide-theme-secondary-300 dark:divide-theme-secondary-800 text-theme-danger-500"
+                    class="flex items-center space-x-3 divide-x divide-theme-danger-500 text-theme-danger-500"
                   >
                     <span
                       data-errortext="Passwords do not match"
@@ -346,11 +346,11 @@ exports[`Import Profile - Profile Form Step should fail password confirmation 1`
                             class=""
                           >
                             <div
-                              class="py-2 px-1 text-theme-secondary-500 flex items-center justify-center"
+                              class="py-2 px-1 flex items-center justify-center"
                               data-testid="SelectDropdown__caret"
                             >
                               <div
-                                class="sc-bdfBwQ gLRWTb transition-transform transform rotate-180"
+                                class="sc-bdfBwQ gLRWTb transition-transform text-theme-secondary-500 transform rotate-180"
                                 height="5"
                                 width="7"
                               >
@@ -1023,11 +1023,11 @@ exports[`Import Profile - Profile Form Step should render profile form 1`] = `
                             class=""
                           >
                             <div
-                              class="py-2 px-1 text-theme-secondary-500 flex items-center justify-center"
+                              class="py-2 px-1 flex items-center justify-center"
                               data-testid="SelectDropdown__caret"
                             >
                               <div
-                                class="sc-bdfBwQ gLRWTb transition-transform "
+                                class="sc-bdfBwQ gLRWTb transition-transform text-theme-secondary-500"
                                 height="5"
                                 width="7"
                               >
@@ -1465,11 +1465,11 @@ exports[`Import Profile - Profile Form Step should render profile form with empt
                             class=""
                           >
                             <div
-                              class="py-2 px-1 text-theme-secondary-500 flex items-center justify-center"
+                              class="py-2 px-1 flex items-center justify-center"
                               data-testid="SelectDropdown__caret"
                             >
                               <div
-                                class="sc-bdfBwQ gLRWTb transition-transform "
+                                class="sc-bdfBwQ gLRWTb transition-transform text-theme-secondary-500"
                                 height="5"
                                 width="7"
                               >
@@ -1907,11 +1907,11 @@ exports[`Import Profile - Profile Form Step should render profile form with hidd
                             class=""
                           >
                             <div
-                              class="py-2 px-1 text-theme-secondary-500 flex items-center justify-center"
+                              class="py-2 px-1 flex items-center justify-center"
                               data-testid="SelectDropdown__caret"
                             >
                               <div
-                                class="sc-bdfBwQ gLRWTb transition-transform "
+                                class="sc-bdfBwQ gLRWTb transition-transform text-theme-secondary-500"
                                 height="5"
                                 width="7"
                               >
@@ -2362,11 +2362,11 @@ exports[`Import Profile - Profile Form Step should store new profile with passwo
                             class=""
                           >
                             <div
-                              class="py-2 px-1 text-theme-secondary-500 flex items-center justify-center"
+                              class="py-2 px-1 flex items-center justify-center"
                               data-testid="SelectDropdown__caret"
                             >
                               <div
-                                class="sc-bdfBwQ gLRWTb transition-transform transform rotate-180"
+                                class="sc-bdfBwQ gLRWTb transition-transform text-theme-secondary-500 transform rotate-180"
                                 height="5"
                                 width="7"
                               >
@@ -3051,11 +3051,11 @@ exports[`Import Profile - Profile Form Step should store profile 1`] = `
                             class=""
                           >
                             <div
-                              class="py-2 px-1 text-theme-secondary-500 flex items-center justify-center"
+                              class="py-2 px-1 flex items-center justify-center"
                               data-testid="SelectDropdown__caret"
                             >
                               <div
-                                class="sc-bdfBwQ gLRWTb transition-transform transform rotate-180"
+                                class="sc-bdfBwQ gLRWTb transition-transform text-theme-secondary-500 transform rotate-180"
                                 height="5"
                                 width="7"
                               >
