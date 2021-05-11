@@ -1,17 +1,23 @@
 import { Contracts } from "@arkecosystem/platform-sdk-profiles";
+import { useConfiguration } from "app/contexts";
 import { useCallback, useEffect, useState } from "react";
 
 export const useTutorial = (profile: Contracts.IProfile) => {
 	const [showTutorial, setShowTutorial] = useState(false);
+	const { profileIsSyncing } = useConfiguration();
 
 	useEffect(() => {
-		setShowTutorial(!profile.hasCompletedTutorial());
-	}, [profile]);
+		if (profileIsSyncing) {
+			return;
+		}
+
+		setShowTutorial(!profile.hasCompletedIntroductoryTutorial());
+	}, [profile, profileIsSyncing]);
 
 	const startTutorial = () => undefined;
 
 	const skipTutorial = useCallback(() => {
-		profile.data().set(Contracts.ProfileData.HasCompletedTutorial, true);
+		profile.markIntroductoryTutorialAsComplete();
 		setShowTutorial(false);
 	}, [profile]);
 
