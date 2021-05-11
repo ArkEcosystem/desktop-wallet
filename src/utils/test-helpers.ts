@@ -1,5 +1,5 @@
 import { Base64, PBKDF2 } from "@arkecosystem/platform-sdk-crypto";
-import { container, Environment, StorageData } from "@arkecosystem/platform-sdk-profiles";
+import { Environment, StorageData } from "@arkecosystem/platform-sdk-profiles";
 import fixtureData from "tests/fixtures/env/storage.json";
 import TestingPasswords from "tests/fixtures/env/testing-passwords.json";
 
@@ -52,7 +52,6 @@ export const bootEnvWithProfileFixtures = async ({
 	if (shouldRestoreDefaultProfile) {
 		const profile = env.profiles().first();
 		await env.profiles().restore(profile);
-		container.bind("State<Profile>", profile);
 
 		await profile.sync();
 	}
