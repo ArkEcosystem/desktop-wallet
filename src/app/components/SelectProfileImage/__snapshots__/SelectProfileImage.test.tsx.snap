@@ -17,7 +17,7 @@ exports[`SelectProfileImage should handle upload file 1`] = `
         class="relative w-20 h-20"
       >
         <div
-          class="SelectProfileImage__ProfileImageStyled-t6smk3-1 iIdUcl"
+          class="SelectProfileImage__ProfileImageStyled-t6smk3-1 bVbLLU"
         >
           <img
             alt="Avatar"
@@ -25,12 +25,13 @@ exports[`SelectProfileImage should handle upload file 1`] = `
             data-testid="SelectProfileImage__avatar"
             src="test"
           />
-          <div
-            class="hidden overflow-hidden absolute inset-1 z-50 rounded-full upload-button-overlay"
+          <button
+            class="opacity-0 absolute w-full h-full p-1 z-50 transition-opacity	duration-200 overflow-hidden upload-button-overlay focus:outline-none"
             data-testid="SelectProfileImage__upload-button"
+            type="button"
           >
             <div
-              class="flex justify-center items-center h-full"
+              class="flex justify-center items-center h-full rounded-full bg-theme-secondary-900 dark:bg-black opacity-85"
             >
               <div
                 class="sc-bdfBwQ cdgnVS text-white dark:text-theme-secondary-200"
@@ -42,7 +43,7 @@ exports[`SelectProfileImage should handle upload file 1`] = `
                 </svg>
               </div>
             </div>
-          </div>
+          </button>
         </div>
         <button
           class="OriginalButton__StyledButton-sc-1y2wptt-0 gLgNOz flex absolute -top-3 -right-3 justify-center items-center p-1 w-6 h-6"
@@ -86,7 +87,7 @@ exports[`SelectProfileImage should not handle upload file 1`] = `
         class="relative w-20 h-20"
       >
         <div
-          class="SelectProfileImage__ProfileImageStyled-t6smk3-1 iIdUcl"
+          class="SelectProfileImage__ProfileImageStyled-t6smk3-1 bVbLLU"
         >
           <img
             alt="Avatar"
@@ -94,12 +95,13 @@ exports[`SelectProfileImage should not handle upload file 1`] = `
             data-testid="SelectProfileImage__avatar"
             src="test"
           />
-          <div
-            class="hidden overflow-hidden absolute inset-1 z-50 rounded-full upload-button-overlay"
+          <button
+            class="opacity-0 absolute w-full h-full p-1 z-50 transition-opacity	duration-200 overflow-hidden upload-button-overlay focus:outline-none"
             data-testid="SelectProfileImage__upload-button"
+            type="button"
           >
             <div
-              class="flex justify-center items-center h-full"
+              class="flex justify-center items-center h-full rounded-full bg-theme-secondary-900 dark:bg-black opacity-85"
             >
               <div
                 class="sc-bdfBwQ cdgnVS text-white dark:text-theme-secondary-200"
@@ -111,7 +113,7 @@ exports[`SelectProfileImage should not handle upload file 1`] = `
                 </svg>
               </div>
             </div>
-          </div>
+          </button>
         </div>
         <button
           class="OriginalButton__StyledButton-sc-1y2wptt-0 gLgNOz flex absolute -top-3 -right-3 justify-center items-center p-1 w-6 h-6"
@@ -152,13 +154,13 @@ exports[`SelectProfileImage should render 1`] = `
       class="flex flex-row"
     >
       <div
-        class="p-1 w-20 h-20 rounded-md border-2 border-dashed border-theme-secondary-400 dark:border-theme-secondary-700"
+        class="p-1 w-20 h-20 rounded-md border-2 border-dashed border-theme-secondary-400 dark:border-theme-secondary-700 focus-within:border-solid focus-within:border-theme-primary-400"
       >
         <div
           class="overflow-hidden h-full rounded-full"
         >
           <div
-            class="SelectProfileImage__UploadButtonWrapper-t6smk3-0 fPlqSP"
+            class="SelectProfileImage__UploadButtonWrapper-t6smk3-0 euBdNq"
           >
             <button
               class="OriginalButton__StyledButton-sc-1y2wptt-0 izJbbP"
@@ -204,7 +206,7 @@ exports[`SelectProfileImage should render with value svg 1`] = `
         class="relative w-20 h-20"
       >
         <div
-          class="SelectProfileImage__ProfileImageStyled-t6smk3-1 iIdUcl"
+          class="SelectProfileImage__ProfileImageStyled-t6smk3-1 bVbLLU"
         >
           <img
             alt="Avatar"
@@ -215,12 +217,13 @@ exports[`SelectProfileImage should render with value svg 1`] = `
           <span
             class="absolute text-2xl font-semibold text-theme-background"
           />
-          <div
-            class="hidden overflow-hidden absolute inset-1 z-50 rounded-full upload-button-overlay"
+          <button
+            class="opacity-0 absolute w-full h-full p-1 z-50 transition-opacity	duration-200 overflow-hidden upload-button-overlay focus:outline-none"
             data-testid="SelectProfileImage__upload-button"
+            type="button"
           >
             <div
-              class="flex justify-center items-center h-full"
+              class="flex justify-center items-center h-full rounded-full bg-theme-secondary-900 dark:bg-black opacity-85"
             >
               <div
                 class="sc-bdfBwQ cdgnVS text-white dark:text-theme-secondary-200"
@@ -232,7 +235,7 @@ exports[`SelectProfileImage should render with value svg 1`] = `
                 </svg>
               </div>
             </div>
-          </div>
+          </button>
         </div>
       </div>
     </div>
@@ -257,7 +260,7 @@ exports[`SelectProfileImage should render without value svg 1`] = `
         class="relative w-20 h-20"
       >
         <div
-          class="SelectProfileImage__ProfileImageStyled-t6smk3-1 iIdUcl"
+          class="SelectProfileImage__ProfileImageStyled-t6smk3-1 bVbLLU"
         >
           <img
             alt="Avatar"
@@ -265,12 +268,13 @@ exports[`SelectProfileImage should render without value svg 1`] = `
             data-testid="SelectProfileImage__avatar"
             src="test"
           />
-          <div
-            class="hidden overflow-hidden absolute inset-1 z-50 rounded-full upload-button-overlay"
+          <button
+            class="opacity-0 absolute w-full h-full p-1 z-50 transition-opacity	duration-200 overflow-hidden upload-button-overlay focus:outline-none"
             data-testid="SelectProfileImage__upload-button"
+            type="button"
           >
             <div
-              class="flex justify-center items-center h-full"
+              class="flex justify-center items-center h-full rounded-full bg-theme-secondary-900 dark:bg-black opacity-85"
             >
               <div
                 class="sc-bdfBwQ cdgnVS text-white dark:text-theme-secondary-200"
@@ -282,7 +286,7 @@ exports[`SelectProfileImage should render without value svg 1`] = `
                 </svg>
               </div>
             </div>
-          </div>
+          </button>
         </div>
         <button
           class="OriginalButton__StyledButton-sc-1y2wptt-0 gLgNOz flex absolute -top-3 -right-3 justify-center items-center p-1 w-6 h-6"
