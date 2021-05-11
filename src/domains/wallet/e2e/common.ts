@@ -35,11 +35,6 @@ export const importWallet = async (t: any, passphrase = "passphrase", alias = "T
 	await t.click(Selector("button").withExactText(translations.COMMON.SAVE_FINISH));
 
 	await t.expect(Selector("[data-testid=WalletHeader]").exists).ok();
-
-	if (passphrase === "passphrase") {
-		const transactionsCount = Selector('[data-testid="TransactionRowMode"]').count;
-		await t.expect(transactionsCount).gte(2, { timeout: 300000 });
-	}
 };
 
 export const importWalletByAddress = async (t: any, address: string, alias = "Test Wallet") => {
