@@ -101,8 +101,9 @@ export const PluginManagerNavigationBar = ({
 									<Badge
 										data-testid="PluginManagerNavigationBar_update-badge"
 										size="sm"
-										className="ml-2 bg-theme-danger-500"
+										className="-mt-3 bg-theme-danger-400"
 										position="right"
+										noShadow={true}
 									/>
 								</Tooltip>
 							)}
