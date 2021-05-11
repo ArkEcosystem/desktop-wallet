@@ -1,8 +1,7 @@
 /* eslint-disable @typescript-eslint/require-await */
 import { Contracts } from "@arkecosystem/platform-sdk-profiles";
-import { availableNetworksMock } from "domains/network/data";
 import React from "react";
-import { act, env, fireEvent, getDefaultProfileId, render, RenderResult, waitFor } from "testing-library";
+import { env, fireEvent, getDefaultProfileId, render, screen, waitFor } from "testing-library";
 
 import { CreatePeer } from "./CreatePeer";
 
@@ -15,68 +14,40 @@ describe("CreatePeer", () => {
 	});
 
 	it("should not render if not open", async () => {
-		let rendered: RenderResult;
+		const { asFragment } = render(<CreatePeer isOpen={false} profile={profile} onClose={onClose} />);
 
-		await act(async () => {
-			rendered = render(
-				<CreatePeer isOpen={false} networks={availableNetworksMock} profile={profile} onClose={onClose} />,
-			);
-		});
+		expect(() => screen.getByTestId("modal__inner")).toThrow(/Unable to find an element by/);
 
-		const { asFragment, getByTestId } = rendered;
-
-		expect(() => getByTestId("modal__inner")).toThrow(/Unable to find an element by/);
 		expect(asFragment()).toMatchSnapshot();
 	});
 
 	it("should render create peer modal", async () => {
-		let rendered: RenderResult;
+		const { asFragment } = render(<CreatePeer isOpen={true} profile={profile} onClose={onClose} />);
 
-		await act(async () => {
-			rendered = render(
-				<CreatePeer isOpen={true} networks={availableNetworksMock} profile={profile} onClose={onClose} />,
-			);
-		});
-
-		const { asFragment } = rendered;
+		await waitFor(() => expect(screen.getByTestId("PeerForm__submit-button")).toBeDisabled());
 
 		expect(asFragment()).toMatchSnapshot();
 	});
 
 	it("should create a peer", async () => {
-		let rendered: RenderResult;
+		render(<CreatePeer isOpen={true} profile={profile} onClose={onClose} />);
 
-		await act(async () => {
-			rendered = render(
-				<CreatePeer isOpen={true} networks={availableNetworksMock} profile={profile} onClose={onClose} />,
-			);
+		const selectNetworkInput = screen.getByTestId("SelectDropdownInput__input");
+
+		fireEvent.change(selectNetworkInput, { target: { value: "ARK D" } });
+		fireEvent.keyDown(selectNetworkInput, { key: "Enter", code: 13 });
+
+		await waitFor(() => expect(selectNetworkInput).toHaveValue("ARK Devnet"));
+
+		fireEvent.input(screen.getByTestId("PeerForm__name-input"), { target: { value: "ROBank" } });
+		fireEvent.input(screen.getByTestId("PeerForm__host-input"), {
+			target: { value: "http://167.114.29.48:4003/api" },
 		});
 
-		const { getByTestId } = rendered;
+		await waitFor(() => expect(screen.getByTestId("PeerForm__submit-button")).not.toBeDisabled());
 
-		await act(async () => {
-			const selectNetworkInput = getByTestId("SelectDropdownInput__input");
-			await fireEvent.focus(selectNetworkInput);
-			await fireEvent.change(selectNetworkInput, { target: { value: " " } });
-			await waitFor(() => expect(getByTestId("select-list__toggle-option-1")).toBeInTheDocument());
-			await fireEvent.click(getByTestId("select-list__toggle-option-1"));
+		fireEvent.click(screen.getByTestId("PeerForm__submit-button"));
 
-			await waitFor(() => expect(selectNetworkInput).not.toHaveValue("ARK Mainnet"));
-
-			await fireEvent.input(getByTestId("PeerForm__name-input"), { target: { value: "ROBank" } });
-			await fireEvent.input(getByTestId("PeerForm__host-input"), {
-				target: { value: "http://167.114.29.48:4003/api" },
-			});
-
-			const submitButton = getByTestId("PeerForm__submit-button");
-			expect(submitButton).toBeTruthy();
-			await waitFor(() => {
-				expect(submitButton).not.toHaveAttribute("disabled");
-			});
-
-			await fireEvent.click(submitButton);
-
-			await waitFor(() => expect(onClose).toHaveBeenCalled());
-		});
+		await waitFor(() => expect(onClose).toHaveBeenCalled());
 	});
 });

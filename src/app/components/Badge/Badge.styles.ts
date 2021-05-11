@@ -1,16 +1,20 @@
 import tw, { css } from "twin.macro";
 import { Position, Size } from "types";
 
-const baseStyle = (size?: Size) => {
+const baseStyle = (size?: Size, noShadow?: boolean) => {
+	const base = tw`absolute transform`;
+
+	if (noShadow) {
+		return [base];
+	}
+
 	const shadowSize = size === "sm" ? "3px" : "5px";
-	return [
-		css`
-			& {
-				box-shadow: 0 0 0 ${shadowSize} var(--theme-background-color);
-			}
-		`,
-		tw`absolute transform`,
-	];
+	const shadow = css`
+		& {
+			box-shadow: 0 0 0 ${shadowSize} var(--theme-background-color);
+		}
+	`;
+	return [base, shadow];
 };
 
 const shape = "flex border-2 rounded-full justify-center items-center align-middle";
@@ -51,8 +55,13 @@ const getSize = (size?: Size) => {
 	}
 };
 
-export const getStyles = ({ position, size }: { position?: Position; size?: Size }) => [
-	...baseStyle(size),
+export type StylesType = {
+	position?: Position;
+	size?: Size;
+	noShadow?: boolean;
+};
+export const getStyles = ({ position, size, noShadow }: StylesType) => [
+	...baseStyle(size, noShadow),
 	getPosition(position),
 	getSize(size),
 ];
