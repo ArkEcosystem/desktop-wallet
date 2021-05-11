@@ -153,12 +153,18 @@ const SelectDropdown = ({
 			end: (
 				<div
 					data-testid="SelectDropdown__caret"
-					className="py-2 px-1 text-theme-secondary-500 flex items-center justify-center"
+					className="py-2 px-1 flex items-center justify-center"
 					onClick={toggleMenu}
 				>
 					<Icon
 						name="CaretDown"
-						className={`transition-transform ${isOpen ? "transform rotate-180" : ""}`}
+						className={cn(
+							"transition-transform",
+							isInvalid ? "text-theme-danger-500" : "text-theme-secondary-500",
+							{
+								"transform rotate-180": isOpen,
+							},
+						)}
 						width={7}
 						height={5}
 					/>
@@ -174,6 +180,7 @@ const SelectDropdown = ({
 				<SelectDropdownInput
 					suggestion={suggestion}
 					disabled={disabled}
+					isInvalid={isInvalid}
 					addons={addons}
 					innerClassName={cn("cursor-default", innerClassName)}
 					{...getInputProps({
@@ -315,10 +322,7 @@ export const Select = React.forwardRef<HTMLInputElement, SelectProps>(
 					addons={addons}
 					onSelectedItemChange={({ selected }: { selected: Option }) => {
 						setSelected(selected);
-
-						if (selected) {
-							onChange?.(selected);
-						}
+						onChange?.(selected);
 					}}
 					renderLabel={renderLabel}
 				/>
