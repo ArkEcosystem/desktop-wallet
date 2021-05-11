@@ -19,6 +19,7 @@ const UploadButtonWrapper = styled.div`
 
 	button {
 		${tw`h-full w-full`}
+		${tw`focus:ring-0!`}
 
 		&:not(:focus):hover:enabled {
 			${tw`bg-theme-secondary-900 dark:bg-theme-secondary-600 opacity-85`};
@@ -29,6 +30,7 @@ const UploadButtonWrapper = styled.div`
 const ProfileImageStyled = styled.div`
 	& {
 		${tw`relative inline-flex items-center justify-center rounded-md overflow-hidden cursor-pointer h-full`};
+		${tw`focus-within:(ring-2 ring-theme-primary-400)`};
 	}
 
 	&:after {
@@ -38,11 +40,7 @@ const ProfileImageStyled = styled.div`
 	}
 
 	&:hover .upload-button-overlay {
-		${tw`block`};
-
-		div {
-			${tw`bg-theme-secondary-900 dark:bg-black opacity-85`};
-		}
+		${tw`opacity-100`};
 	}
 `;
 
@@ -87,12 +85,13 @@ export const SelectProfileImage = ({ className, value, name, showLabel, onSelect
 									</span>
 								)}
 
-								<div
-									className="hidden overflow-hidden absolute inset-1 z-50 rounded-full upload-button-overlay"
+								<button
+									type="button"
+									className="opacity-0 absolute w-full h-full p-1 z-50 transition-opacity	duration-200 overflow-hidden upload-button-overlay focus:outline-none"
 									onClick={handleUploadImage}
 									data-testid="SelectProfileImage__upload-button"
 								>
-									<div className="flex justify-center items-center h-full">
+									<div className="flex justify-center items-center h-full rounded-full bg-theme-secondary-900 dark:bg-black opacity-85">
 										<Icon
 											name="Upload"
 											className="text-white dark:text-theme-secondary-200"
@@ -100,7 +99,7 @@ export const SelectProfileImage = ({ className, value, name, showLabel, onSelect
 											height={18}
 										/>
 									</div>
-								</div>
+								</button>
 							</ProfileImageStyled>
 						</Tooltip>
 						{!isSvg && (
@@ -119,7 +118,7 @@ export const SelectProfileImage = ({ className, value, name, showLabel, onSelect
 					</div>
 				) : (
 					<Tooltip content={t("SETTINGS.GENERAL.PERSONAL.UPLOAD_AVATAR")}>
-						<div className="p-1 w-20 h-20 rounded-md border-2 border-dashed border-theme-secondary-400 dark:border-theme-secondary-700">
+						<div className="p-1 w-20 h-20 rounded-md border-2 border-dashed border-theme-secondary-400 dark:border-theme-secondary-700 focus-within:border-solid focus-within:border-theme-primary-400">
 							<div className="overflow-hidden h-full rounded-full">
 								<UploadButtonWrapper>
 									<Button
