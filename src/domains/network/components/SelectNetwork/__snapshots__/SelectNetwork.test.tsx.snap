@@ -304,6 +304,27 @@ exports[`SelectNetwork should render with hidden options 1`] = `
               </div>
             </div>
           </li>
+          <li
+            class="inline-block cursor-pointer h-21"
+            data-testid="SelectNetwork__NetworkIcon--container"
+          >
+            <div
+              aria-label="Zilliqa"
+              class="w-full h-full flex justify-center items-center border-2 rounded-xl border-theme-primary-100 dark:border-theme-secondary-800 text-theme-secondary-700"
+              data-testid="NetworkIcon-ZIL-zil.mainnet"
+            >
+              <div
+                class="sc-bdfBwQ caqoGN"
+                data-testid="NetworkIcon__icon"
+                height="30"
+                width="30"
+              >
+                <svg>
+                  zil.svg
+                </svg>
+              </div>
+            </div>
+          </li>
         </ul>
       </div>
       <div
@@ -472,7 +493,7 @@ exports[`SelectNetwork should render with hidden options 1`] = `
             data-testid="SelectNetwork__NetworkIcon--container"
           >
             <div
-              aria-label="XRP Testnet"
+              aria-label="Ripple Testnet"
               class="w-full h-full flex justify-center items-center border-2 rounded-xl border-theme-primary-100 dark:border-theme-secondary-800 text-theme-primary-300"
               data-testid="NetworkIcon-XRP-xrp.testnet"
             >
@@ -484,6 +505,27 @@ exports[`SelectNetwork should render with hidden options 1`] = `
               >
                 <svg>
                   xrp.svg
+                </svg>
+              </div>
+            </div>
+          </li>
+          <li
+            class="inline-block cursor-pointer h-21"
+            data-testid="SelectNetwork__NetworkIcon--container"
+          >
+            <div
+              aria-label="Zilliqa Testnet"
+              class="w-full h-full flex justify-center items-center border-2 rounded-xl border-theme-primary-100 dark:border-theme-secondary-800 text-theme-primary-300"
+              data-testid="NetworkIcon-ZIL-zil.testnet"
+            >
+              <div
+                class="sc-bdfBwQ caqoGN"
+                data-testid="NetworkIcon__icon"
+                height="30"
+                width="30"
+              >
+                <svg>
+                  zil.svg
                 </svg>
               </div>
             </div>
@@ -741,6 +783,27 @@ exports[`SelectNetwork should render with networks 1`] = `
               </div>
             </div>
           </li>
+          <li
+            class="inline-block cursor-pointer h-21"
+            data-testid="SelectNetwork__NetworkIcon--container"
+          >
+            <div
+              aria-label="Zilliqa"
+              class="w-full h-full flex justify-center items-center border-2 rounded-xl border-theme-primary-100 dark:border-theme-secondary-800 text-theme-secondary-700"
+              data-testid="NetworkIcon-ZIL-zil.mainnet"
+            >
+              <div
+                class="sc-bdfBwQ caqoGN"
+                data-testid="NetworkIcon__icon"
+                height="30"
+                width="30"
+              >
+                <svg>
+                  zil.svg
+                </svg>
+              </div>
+            </div>
+          </li>
         </ul>
       </div>
       <div
@@ -909,7 +972,7 @@ exports[`SelectNetwork should render with networks 1`] = `
             data-testid="SelectNetwork__NetworkIcon--container"
           >
             <div
-              aria-label="XRP Testnet"
+              aria-label="Ripple Testnet"
               class="w-full h-full flex justify-center items-center border-2 rounded-xl border-theme-primary-100 dark:border-theme-secondary-800 text-theme-primary-300"
               data-testid="NetworkIcon-XRP-xrp.testnet"
             >
@@ -921,6 +984,27 @@ exports[`SelectNetwork should render with networks 1`] = `
               >
                 <svg>
                   xrp.svg
+                </svg>
+              </div>
+            </div>
+          </li>
+          <li
+            class="inline-block cursor-pointer h-21"
+            data-testid="SelectNetwork__NetworkIcon--container"
+          >
+            <div
+              aria-label="Zilliqa Testnet"
+              class="w-full h-full flex justify-center items-center border-2 rounded-xl border-theme-primary-100 dark:border-theme-secondary-800 text-theme-primary-300"
+              data-testid="NetworkIcon-ZIL-zil.testnet"
+            >
+              <div
+                class="sc-bdfBwQ caqoGN"
+                data-testid="NetworkIcon__icon"
+                height="30"
+                width="30"
+              >
+                <svg>
+                  zil.svg
                 </svg>
               </div>
             </div>
