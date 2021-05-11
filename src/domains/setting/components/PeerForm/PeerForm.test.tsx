@@ -98,6 +98,37 @@ describe("PeerForm", () => {
 		expect(screen.getByTestId("PeerForm__submit-button")).toBeDisabled();
 	});
 
+	it("should error if host does not start with a protocol", async () => {
+		render(<PeerForm profile={profile} onSave={onSave} />);
+
+		fireEvent.input(screen.getByTestId("PeerForm__host-input"), { target: { value: "invalid" } });
+
+		await waitFor(() => {
+			expect(screen.getByTestId("Input__error")).toBeVisible();
+		});
+
+		expect(screen.getByTestId("Input__error")).toHaveAttribute(
+			"data-errortext",
+			"The Peer IP does not have 'http://' or 'https://'",
+		);
+
+		expect(screen.getByTestId("PeerForm__submit-button")).toBeDisabled();
+	});
+
+	it("should error if host is not a valid url", async () => {
+		render(<PeerForm profile={profile} onSave={onSave} />);
+
+		fireEvent.input(screen.getByTestId("PeerForm__host-input"), { target: { value: "http://invalid" } });
+
+		await waitFor(() => {
+			expect(screen.getByTestId("Input__error")).toBeVisible();
+		});
+
+		expect(screen.getByTestId("Input__error")).toHaveAttribute("data-errortext", "The Peer IP is not valid");
+
+		expect(screen.getByTestId("PeerForm__submit-button")).toBeDisabled();
+	});
+
 	it("should error if host already exists", async () => {
 		const peersSpy = jest.spyOn(profile.peers(), "get").mockReturnValue([
 			{
