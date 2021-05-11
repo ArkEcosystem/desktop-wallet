@@ -8,7 +8,7 @@ export const goToWalletAndWaitTransactions = async (t: any, wallet = "D8rr7B1d6T
 	await t.click(Selector(`[data-testid=WalletCard__${wallet}]`));
 	await t.expect(Selector("[data-testid=WalletHeader]").exists).ok();
 	const transactionsCount = Selector('[data-testid="TableRow"]').count;
-	await t.expect(transactionsCount).gte(12, { timeout: 300000 });
+	await t.expect(transactionsCount).gte(12);
 };
 
 export const goToWallet = async (t: any, wallet = "D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD") => {
@@ -38,7 +38,7 @@ export const importWallet = async (t: any, passphrase = "passphrase", alias = "T
 
 	if (passphrase === "passphrase") {
 		const transactionsCount = Selector('[data-testid="TransactionRowMode"]').count;
-		await t.expect(transactionsCount).gte(2, { timeout: 300000 });
+		await t.expect(transactionsCount).gte(2);
 	}
 };
 
