@@ -117,13 +117,13 @@ exports[`CreateProfile should fail password confirmation 1`] = `
                       class="flex flex-row"
                     >
                       <div
-                        class="p-1 w-20 h-20 rounded-md border-2 border-dashed border-theme-secondary-400 dark:border-theme-secondary-700"
+                        class="p-1 w-20 h-20 rounded-md border-2 border-dashed border-theme-secondary-400 dark:border-theme-secondary-700 focus-within:border-solid focus-within:border-theme-primary-400"
                       >
                         <div
                           class="overflow-hidden h-full rounded-full"
                         >
                           <div
-                            class="SelectProfileImage__UploadButtonWrapper-t6smk3-0 fPlqSP"
+                            class="SelectProfileImage__UploadButtonWrapper-t6smk3-0 euBdNq"
                           >
                             <button
                               class="OriginalButton__StyledButton-sc-1y2wptt-0 izJbbP"
@@ -865,13 +865,13 @@ exports[`CreateProfile should not be able to create new profile if name already 
                       class="flex flex-row"
                     >
                       <div
-                        class="p-1 w-20 h-20 rounded-md border-2 border-dashed border-theme-secondary-400 dark:border-theme-secondary-700"
+                        class="p-1 w-20 h-20 rounded-md border-2 border-dashed border-theme-secondary-400 dark:border-theme-secondary-700 focus-within:border-solid focus-within:border-theme-primary-400"
                       >
                         <div
                           class="overflow-hidden h-full rounded-full"
                         >
                           <div
-                            class="SelectProfileImage__UploadButtonWrapper-t6smk3-0 fPlqSP"
+                            class="SelectProfileImage__UploadButtonWrapper-t6smk3-0 euBdNq"
                           >
                             <button
                               class="OriginalButton__StyledButton-sc-1y2wptt-0 izJbbP"
@@ -1585,13 +1585,13 @@ exports[`CreateProfile should not be able to create new profile if name consists
                       class="flex flex-row"
                     >
                       <div
-                        class="p-1 w-20 h-20 rounded-md border-2 border-dashed border-theme-secondary-400 dark:border-theme-secondary-700"
+                        class="p-1 w-20 h-20 rounded-md border-2 border-dashed border-theme-secondary-400 dark:border-theme-secondary-700 focus-within:border-solid focus-within:border-theme-primary-400"
                       >
                         <div
                           class="overflow-hidden h-full rounded-full"
                         >
                           <div
-                            class="SelectProfileImage__UploadButtonWrapper-t6smk3-0 fPlqSP"
+                            class="SelectProfileImage__UploadButtonWrapper-t6smk3-0 euBdNq"
                           >
                             <button
                               class="OriginalButton__StyledButton-sc-1y2wptt-0 izJbbP"
@@ -2305,13 +2305,13 @@ exports[`CreateProfile should not be able to create new profile if name is too l
                       class="flex flex-row"
                     >
                       <div
-                        class="p-1 w-20 h-20 rounded-md border-2 border-dashed border-theme-secondary-400 dark:border-theme-secondary-700"
+                        class="p-1 w-20 h-20 rounded-md border-2 border-dashed border-theme-secondary-400 dark:border-theme-secondary-700 focus-within:border-solid focus-within:border-theme-primary-400"
                       >
                         <div
                           class="overflow-hidden h-full rounded-full"
                         >
                           <div
-                            class="SelectProfileImage__UploadButtonWrapper-t6smk3-0 fPlqSP"
+                            class="SelectProfileImage__UploadButtonWrapper-t6smk3-0 euBdNq"
                           >
                             <button
                               class="OriginalButton__StyledButton-sc-1y2wptt-0 izJbbP"
@@ -3028,7 +3028,7 @@ exports[`CreateProfile should not update the uploaded avatar when removing focus
                         class="relative w-20 h-20"
                       >
                         <div
-                          class="SelectProfileImage__ProfileImageStyled-t6smk3-1 iIdUcl"
+                          class="SelectProfileImage__ProfileImageStyled-t6smk3-1 bVbLLU"
                         >
                           <img
                             alt="Avatar"
@@ -3036,12 +3036,13 @@ exports[`CreateProfile should not update the uploaded avatar when removing focus
                             data-testid="SelectProfileImage__avatar"
                             src="data:image/png;base64,avatarImage"
                           />
-                          <div
-                            class="hidden overflow-hidden absolute inset-1 z-50 rounded-full upload-button-overlay"
+                          <button
+                            class="opacity-0 absolute w-full h-full p-1 z-50 transition-opacity	duration-200 overflow-hidden upload-button-overlay focus:outline-none"
                             data-testid="SelectProfileImage__upload-button"
+                            type="button"
                           >
                             <div
-                              class="flex justify-center items-center h-full"
+                              class="flex justify-center items-center h-full rounded-full bg-theme-secondary-900 dark:bg-black opacity-85"
                             >
                               <div
                                 class="sc-bdfBwQ cdgnVS text-white dark:text-theme-secondary-200"
@@ -3053,7 +3054,7 @@ exports[`CreateProfile should not update the uploaded avatar when removing focus
                                 </svg>
                               </div>
                             </div>
-                          </div>
+                          </button>
                         </div>
                         <button
                           class="OriginalButton__StyledButton-sc-1y2wptt-0 gLgNOz flex absolute -top-3 -right-3 justify-center items-center p-1 w-6 h-6"
@@ -3504,13 +3505,13 @@ exports[`CreateProfile should not upload avatar image 1`] = `
                       class="flex flex-row"
                     >
                       <div
-                        class="p-1 w-20 h-20 rounded-md border-2 border-dashed border-theme-secondary-400 dark:border-theme-secondary-700"
+                        class="p-1 w-20 h-20 rounded-md border-2 border-dashed border-theme-secondary-400 dark:border-theme-secondary-700 focus-within:border-solid focus-within:border-theme-primary-400"
                       >
                         <div
                           class="overflow-hidden h-full rounded-full"
                         >
                           <div
-                            class="SelectProfileImage__UploadButtonWrapper-t6smk3-0 fPlqSP"
+                            class="SelectProfileImage__UploadButtonWrapper-t6smk3-0 euBdNq"
                           >
                             <button
                               class="OriginalButton__StyledButton-sc-1y2wptt-0 izJbbP"
@@ -4204,13 +4205,13 @@ exports[`CreateProfile should render 1`] = `
                       class="flex flex-row"
                     >
                       <div
-                        class="p-1 w-20 h-20 rounded-md border-2 border-dashed border-theme-secondary-400 dark:border-theme-secondary-700"
+                        class="p-1 w-20 h-20 rounded-md border-2 border-dashed border-theme-secondary-400 dark:border-theme-secondary-700 focus-within:border-solid focus-within:border-theme-primary-400"
                       >
                         <div
                           class="overflow-hidden h-full rounded-full"
                         >
                           <div
-                            class="SelectProfileImage__UploadButtonWrapper-t6smk3-0 fPlqSP"
+                            class="SelectProfileImage__UploadButtonWrapper-t6smk3-0 euBdNq"
                           >
                             <button
                               class="OriginalButton__StyledButton-sc-1y2wptt-0 izJbbP"
@@ -4666,7 +4667,7 @@ exports[`CreateProfile should store profile 1`] = `
                         class="relative w-20 h-20"
                       >
                         <div
-                          class="SelectProfileImage__ProfileImageStyled-t6smk3-1 iIdUcl"
+                          class="SelectProfileImage__ProfileImageStyled-t6smk3-1 bVbLLU"
                         >
                           <img
                             alt="Avatar"
@@ -4674,12 +4675,13 @@ exports[`CreateProfile should store profile 1`] = `
                             data-testid="SelectProfileImage__avatar"
                             src="data:image/png;base64,avatarImage"
                           />
-                          <div
-                            class="hidden overflow-hidden absolute inset-1 z-50 rounded-full upload-button-overlay"
+                          <button
+                            class="opacity-0 absolute w-full h-full p-1 z-50 transition-opacity	duration-200 overflow-hidden upload-button-overlay focus:outline-none"
                             data-testid="SelectProfileImage__upload-button"
+                            type="button"
                           >
                             <div
-                              class="flex justify-center items-center h-full"
+                              class="flex justify-center items-center h-full rounded-full bg-theme-secondary-900 dark:bg-black opacity-85"
                             >
                               <div
                                 class="sc-bdfBwQ cdgnVS text-white dark:text-theme-secondary-200"
@@ -4691,7 +4693,7 @@ exports[`CreateProfile should store profile 1`] = `
                                 </svg>
                               </div>
                             </div>
-                          </div>
+                          </button>
                         </div>
                         <button
                           class="OriginalButton__StyledButton-sc-1y2wptt-0 gLgNOz flex absolute -top-3 -right-3 justify-center items-center p-1 w-6 h-6"
@@ -5383,13 +5385,13 @@ exports[`CreateProfile should store profile with password 1`] = `
                       class="flex flex-row"
                     >
                       <div
-                        class="p-1 w-20 h-20 rounded-md border-2 border-dashed border-theme-secondary-400 dark:border-theme-secondary-700"
+                        class="p-1 w-20 h-20 rounded-md border-2 border-dashed border-theme-secondary-400 dark:border-theme-secondary-700 focus-within:border-solid focus-within:border-theme-primary-400"
                       >
                         <div
                           class="overflow-hidden h-full rounded-full"
                         >
                           <div
-                            class="SelectProfileImage__UploadButtonWrapper-t6smk3-0 fPlqSP"
+                            class="SelectProfileImage__UploadButtonWrapper-t6smk3-0 euBdNq"
                           >
                             <button
                               class="OriginalButton__StyledButton-sc-1y2wptt-0 izJbbP"
@@ -6084,7 +6086,7 @@ exports[`CreateProfile should update the avatar when removing focus from name in
                         class="relative w-20 h-20"
                       >
                         <div
-                          class="SelectProfileImage__ProfileImageStyled-t6smk3-1 iIdUcl"
+                          class="SelectProfileImage__ProfileImageStyled-t6smk3-1 bVbLLU"
                         >
                           <img
                             alt="Avatar"
@@ -6097,12 +6099,13 @@ exports[`CreateProfile should update the avatar when removing focus from name in
                           >
                             TE
                           </span>
-                          <div
-                            class="hidden overflow-hidden absolute inset-1 z-50 rounded-full upload-button-overlay"
+                          <button
+                            class="opacity-0 absolute w-full h-full p-1 z-50 transition-opacity	duration-200 overflow-hidden upload-button-overlay focus:outline-none"
                             data-testid="SelectProfileImage__upload-button"
+                            type="button"
                           >
                             <div
-                              class="flex justify-center items-center h-full"
+                              class="flex justify-center items-center h-full rounded-full bg-theme-secondary-900 dark:bg-black opacity-85"
                             >
                               <div
                                 class="sc-bdfBwQ cdgnVS text-white dark:text-theme-secondary-200"
@@ -6114,7 +6117,7 @@ exports[`CreateProfile should update the avatar when removing focus from name in
                                 </svg>
                               </div>
                             </div>
-                          </div>
+                          </button>
                         </div>
                       </div>
                     </div>
@@ -6565,13 +6568,13 @@ exports[`CreateProfile should update the avatar when removing focus from name in
                       class="flex flex-row"
                     >
                       <div
-                        class="p-1 w-20 h-20 rounded-md border-2 border-dashed border-theme-secondary-400 dark:border-theme-secondary-700"
+                        class="p-1 w-20 h-20 rounded-md border-2 border-dashed border-theme-secondary-400 dark:border-theme-secondary-700 focus-within:border-solid focus-within:border-theme-primary-400"
                       >
                         <div
                           class="overflow-hidden h-full rounded-full"
                         >
                           <div
-                            class="SelectProfileImage__UploadButtonWrapper-t6smk3-0 fPlqSP"
+                            class="SelectProfileImage__UploadButtonWrapper-t6smk3-0 euBdNq"
                           >
                             <button
                               class="OriginalButton__StyledButton-sc-1y2wptt-0 izJbbP"
@@ -7024,13 +7027,13 @@ exports[`CreateProfile should upload and remove avatar image 1`] = `
                       class="flex flex-row"
                     >
                       <div
-                        class="p-1 w-20 h-20 rounded-md border-2 border-dashed border-theme-secondary-400 dark:border-theme-secondary-700"
+                        class="p-1 w-20 h-20 rounded-md border-2 border-dashed border-theme-secondary-400 dark:border-theme-secondary-700 focus-within:border-solid focus-within:border-theme-primary-400"
                       >
                         <div
                           class="overflow-hidden h-full rounded-full"
                         >
                           <div
-                            class="SelectProfileImage__UploadButtonWrapper-t6smk3-0 fPlqSP"
+                            class="SelectProfileImage__UploadButtonWrapper-t6smk3-0 euBdNq"
                           >
                             <button
                               class="OriginalButton__StyledButton-sc-1y2wptt-0 izJbbP"
