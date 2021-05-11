@@ -18,7 +18,8 @@ export const PeerForm = ({ peer, onSave, onValidateHost }: PeerFormProps) => {
 	const { t } = useTranslation();
 
 	const form = useForm({ mode: "onChange" });
-	const { formState, register, setValue, watch } = form;
+
+	const { formState, register, setError, setValue, watch } = form;
 	const { isValid, isSubmitting } = formState;
 	const { network, name, host, isMultiSignature } = watch();
 
@@ -38,6 +39,15 @@ export const PeerForm = ({ peer, onSave, onValidateHost }: PeerFormProps) => {
 
 	const handleSelectNetwork = (networkOption?: { label: string; value: string }) => {
 		const network = networkById(networkOption?.value);
+
+		if (!network) {
+			return setError("network", {
+				type: "manual",
+				message: t("COMMON.VALIDATION.FIELD_REQUIRED", {
+					field: t("SETTINGS.PEERS.NETWORK"),
+				}).toString(),
+			});
+		}
 
 		if (form.errors.host?.message.includes("already exists")) {
 			form.clearErrors("host");
