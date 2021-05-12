@@ -106,6 +106,9 @@ jobs:
               run: xvfb-run --server-args="-screen 0 1920x1080x16" yarn test:e2e src/domains/vote/e2e/votes.e2e.ts
 
             - name: Upload Screenshots
+              run: tar -czvf screenshots-votes.tar.gz ${{ github.workspace }}/screenshots
+
+            - name: Upload Screenshots
               if: ${{ failure() }}
               uses: actions/upload-artifact@v2
               with:
@@ -160,6 +163,9 @@ jobs:
 
             - name: Test
               run: xvfb-run --server-args="-screen 0 1920x1080x16" yarn test:e2e src/domains/transaction/e2e/ipfs-transaction.e2e.ts
+
+            - name: Upload Screenshots
+              run: tar -czvf screenshots-ipfs-transaction.tar.gz ${{ github.workspace }}/screenshots
 
             - name: Upload Screenshots
               if: ${{ failure() }}
@@ -218,6 +224,9 @@ jobs:
               run: xvfb-run --server-args="-screen 0 1920x1080x16" yarn test:e2e src/domains/transaction/e2e/ipfs-transaction-multisig.e2e.ts
 
             - name: Upload Screenshots
+              run: tar -czvf screenshots-ipfs-transaction-multisig.tar.gz ${{ github.workspace }}/screenshots
+
+            - name: Upload Screenshots
               if: ${{ failure() }}
               uses: actions/upload-artifact@v2
               with:
@@ -272,6 +281,9 @@ jobs:
 
             - name: Test
               run: xvfb-run --server-args="-screen 0 1920x1080x16" yarn test:e2e src/domains/transaction/e2e/single-transfer.e2e.ts
+
+            - name: Upload Screenshots
+              run: tar -czvf screenshots-single-transfer.tar.gz ${{ github.workspace }}/screenshots
 
             - name: Upload Screenshots
               if: ${{ failure() }}
@@ -330,6 +342,9 @@ jobs:
               run: xvfb-run --server-args="-screen 0 1920x1080x16" yarn test:e2e src/domains/transaction/e2e/single-transfer-multisig.e2e.ts
 
             - name: Upload Screenshots
+              run: tar -czvf screenshots-single-transfer-multisig.tar.gz ${{ github.workspace }}/screenshots
+
+            - name: Upload Screenshots
               if: ${{ failure() }}
               uses: actions/upload-artifact@v2
               with:
@@ -384,6 +399,9 @@ jobs:
 
             - name: Test
               run: xvfb-run --server-args="-screen 0 1920x1080x16" yarn test:e2e src/domains/transaction/e2e/multiple-transfer.e2e.ts
+
+            - name: Upload Screenshots
+              run: tar -czvf screenshots-multiple-transfer.tar.gz ${{ github.workspace }}/screenshots
 
             - name: Upload Screenshots
               if: ${{ failure() }}
@@ -442,6 +460,9 @@ jobs:
               run: xvfb-run --server-args="-screen 0 1920x1080x16" yarn test:e2e src/domains/transaction/e2e/transactions-routing.e2e.ts
 
             - name: Upload Screenshots
+              run: tar -czvf screenshots-transactions-routing.tar.gz ${{ github.workspace }}/screenshots
+
+            - name: Upload Screenshots
               if: ${{ failure() }}
               uses: actions/upload-artifact@v2
               with:
@@ -496,6 +517,9 @@ jobs:
 
             - name: Test
               run: xvfb-run --server-args="-screen 0 1920x1080x16" yarn test:e2e src/domains/transaction/e2e/delegate-resignation.e2e.ts
+
+            - name: Upload Screenshots
+              run: tar -czvf screenshots-delegate-resignation.tar.gz ${{ github.workspace }}/screenshots
 
             - name: Upload Screenshots
               if: ${{ failure() }}
@@ -554,6 +578,9 @@ jobs:
               run: xvfb-run --server-args="-screen 0 1920x1080x16" yarn test:e2e src/domains/transaction/e2e/vote-transaction.e2e.ts
 
             - name: Upload Screenshots
+              run: tar -czvf screenshots-vote-transaction.tar.gz ${{ github.workspace }}/screenshots
+
+            - name: Upload Screenshots
               if: ${{ failure() }}
               uses: actions/upload-artifact@v2
               with:
@@ -608,6 +635,9 @@ jobs:
 
             - name: Test
               run: xvfb-run --server-args="-screen 0 1920x1080x16" yarn test:e2e src/domains/transaction/e2e/vote-transaction-multisig.e2e.ts
+
+            - name: Upload Screenshots
+              run: tar -czvf screenshots-vote-transaction-multisig.tar.gz ${{ github.workspace }}/screenshots
 
             - name: Upload Screenshots
               if: ${{ failure() }}
@@ -666,6 +696,9 @@ jobs:
               run: xvfb-run --server-args="-screen 0 1920x1080x16" yarn test:e2e src/domains/transaction/e2e/delegate-registration.e2e.ts
 
             - name: Upload Screenshots
+              run: tar -czvf screenshots-delegate-registration.tar.gz ${{ github.workspace }}/screenshots
+
+            - name: Upload Screenshots
               if: ${{ failure() }}
               uses: actions/upload-artifact@v2
               with:
@@ -720,6 +753,9 @@ jobs:
 
             - name: Test
               run: xvfb-run --server-args="-screen 0 1920x1080x16" yarn test:e2e src/domains/splash/e2e/splash-screen.e2e.ts
+
+            - name: Upload Screenshots
+              run: tar -czvf screenshots-splash-screen.tar.gz ${{ github.workspace }}/screenshots
 
             - name: Upload Screenshots
               if: ${{ failure() }}
@@ -778,6 +814,9 @@ jobs:
               run: xvfb-run --server-args="-screen 0 1920x1080x16" yarn test:e2e src/domains/contact/e2e/contacts-routing.e2e.ts
 
             - name: Upload Screenshots
+              run: tar -czvf screenshots-contacts-routing.tar.gz ${{ github.workspace }}/screenshots
+
+            - name: Upload Screenshots
               if: ${{ failure() }}
               uses: actions/upload-artifact@v2
               with:
@@ -832,6 +871,9 @@ jobs:
 
             - name: Test
               run: xvfb-run --server-args="-screen 0 1920x1200x16" yarn test:e2e src/domains/contact/e2e/update-contact.e2e.ts
+
+            - name: Upload Screenshots
+              run: tar -czvf screenshots-update-contact.tar.gz ${{ github.workspace }}/screenshots
 
             - name: Upload Screenshots
               if: ${{ failure() }}
@@ -890,6 +932,9 @@ jobs:
               run: xvfb-run --server-args="-screen 0 1920x1080x16" yarn test:e2e src/domains/contact/e2e/delete-contact.e2e.ts
 
             - name: Upload Screenshots
+              run: tar -czvf screenshots-delete-contact.tar.gz ${{ github.workspace }}/screenshots
+
+            - name: Upload Screenshots
               if: ${{ failure() }}
               uses: actions/upload-artifact@v2
               with:
@@ -944,6 +989,9 @@ jobs:
 
             - name: Test
               run: xvfb-run --server-args="-screen 0 1920x1200x16" yarn test:e2e src/domains/contact/e2e/create-contact.e2e.ts
+
+            - name: Upload Screenshots
+              run: tar -czvf screenshots-create-contact.tar.gz ${{ github.workspace }}/screenshots
 
             - name: Upload Screenshots
               if: ${{ failure() }}
@@ -1002,6 +1050,9 @@ jobs:
               run: xvfb-run --server-args="-screen 0 1920x1080x16" yarn test:e2e src/domains/plugin/e2e/plugins-routing.e2e.ts
 
             - name: Upload Screenshots
+              run: tar -czvf screenshots-plugins-routing.tar.gz ${{ github.workspace }}/screenshots
+
+            - name: Upload Screenshots
               if: ${{ failure() }}
               uses: actions/upload-artifact@v2
               with:
@@ -1056,6 +1107,9 @@ jobs:
 
             - name: Test
               run: xvfb-run --server-args="-screen 0 1920x1080x16" yarn test:e2e src/domains/dashboard/e2e/dashboard-routing.e2e.ts
+
+            - name: Upload Screenshots
+              run: tar -czvf screenshots-dashboard-routing.tar.gz ${{ github.workspace }}/screenshots
 
             - name: Upload Screenshots
               if: ${{ failure() }}
@@ -1114,6 +1168,9 @@ jobs:
               run: xvfb-run --server-args="-screen 0 1920x1080x16" yarn test:e2e src/domains/dashboard/e2e/navbar-routing.e2e.ts
 
             - name: Upload Screenshots
+              run: tar -czvf screenshots-navbar-routing.tar.gz ${{ github.workspace }}/screenshots
+
+            - name: Upload Screenshots
               if: ${{ failure() }}
               uses: actions/upload-artifact@v2
               with:
@@ -1168,6 +1225,9 @@ jobs:
 
             - name: Test
               run: xvfb-run --server-args="-screen 0 1920x1080x16" yarn test:e2e src/domains/profile/e2e/welcome-screen.e2e.ts
+
+            - name: Upload Screenshots
+              run: tar -czvf screenshots-welcome-screen.tar.gz ${{ github.workspace }}/screenshots
 
             - name: Upload Screenshots
               if: ${{ failure() }}
@@ -1226,6 +1286,9 @@ jobs:
               run: xvfb-run --server-args="-screen 0 1920x1080x16" yarn test:e2e src/domains/profile/e2e/create-profile-action.e2e.ts
 
             - name: Upload Screenshots
+              run: tar -czvf screenshots-create-profile-action.tar.gz ${{ github.workspace }}/screenshots
+
+            - name: Upload Screenshots
               if: ${{ failure() }}
               uses: actions/upload-artifact@v2
               with:
@@ -1280,6 +1343,9 @@ jobs:
 
             - name: Test
               run: xvfb-run --server-args="-screen 0 1920x1080x16" yarn test:e2e src/domains/profile/e2e/navigate-profile-settings.e2e.ts
+
+            - name: Upload Screenshots
+              run: tar -czvf screenshots-navigate-profile-settings.tar.gz ${{ github.workspace }}/screenshots
 
             - name: Upload Screenshots
               if: ${{ failure() }}
@@ -1338,6 +1404,9 @@ jobs:
               run: xvfb-run --server-args="-screen 0 1920x1080x16" yarn test:e2e src/domains/profile/e2e/create-profile-routing.e2e.ts
 
             - name: Upload Screenshots
+              run: tar -czvf screenshots-create-profile-routing.tar.gz ${{ github.workspace }}/screenshots
+
+            - name: Upload Screenshots
               if: ${{ failure() }}
               uses: actions/upload-artifact@v2
               with:
@@ -1392,6 +1461,9 @@ jobs:
 
             - name: Test
               run: xvfb-run --server-args="-screen 0 1920x1080x16" yarn test:e2e src/domains/profile/e2e/notifications.e2e.ts
+
+            - name: Upload Screenshots
+              run: tar -czvf screenshots-notifications.tar.gz ${{ github.workspace }}/screenshots
 
             - name: Upload Screenshots
               if: ${{ failure() }}
@@ -1450,6 +1522,9 @@ jobs:
               run: xvfb-run --server-args="-screen 0 1920x1080x16" yarn test:e2e src/domains/profile/e2e/delete-profile-action.e2e.ts
 
             - name: Upload Screenshots
+              run: tar -czvf screenshots-delete-profile-action.tar.gz ${{ github.workspace }}/screenshots
+
+            - name: Upload Screenshots
               if: ${{ failure() }}
               uses: actions/upload-artifact@v2
               with:
@@ -1504,6 +1579,9 @@ jobs:
 
             - name: Test
               run: xvfb-run --server-args="-screen 0 1920x1080x16" yarn test:e2e src/domains/news/e2e/news-routing.e2e.ts
+
+            - name: Upload Screenshots
+              run: tar -czvf screenshots-news-routing.tar.gz ${{ github.workspace }}/screenshots
 
             - name: Upload Screenshots
               if: ${{ failure() }}
@@ -1562,6 +1640,9 @@ jobs:
               run: xvfb-run --server-args="-screen 0 1920x1080x16" yarn test:e2e src/domains/news/e2e/filtering.e2e.ts
 
             - name: Upload Screenshots
+              run: tar -czvf screenshots-filtering.tar.gz ${{ github.workspace }}/screenshots
+
+            - name: Upload Screenshots
               if: ${{ failure() }}
               uses: actions/upload-artifact@v2
               with:
@@ -1616,6 +1697,9 @@ jobs:
 
             - name: Test
               run: xvfb-run --server-args="-screen 0 1920x1080x16" yarn test:e2e src/domains/wallet/e2e/create-wallet-action.e2e.ts
+
+            - name: Upload Screenshots
+              run: tar -czvf screenshots-create-wallet-action.tar.gz ${{ github.workspace }}/screenshots
 
             - name: Upload Screenshots
               if: ${{ failure() }}
@@ -1674,6 +1758,9 @@ jobs:
               run: xvfb-run --server-args="-screen 0 1920x1080x16" yarn test:e2e src/domains/wallet/e2e/delete-wallet-action.e2e.ts
 
             - name: Upload Screenshots
+              run: tar -czvf screenshots-delete-wallet-action.tar.gz ${{ github.workspace }}/screenshots
+
+            - name: Upload Screenshots
               if: ${{ failure() }}
               uses: actions/upload-artifact@v2
               with:
@@ -1728,6 +1815,9 @@ jobs:
 
             - name: Test
               run: xvfb-run --server-args="-screen 0 1920x1080x16" yarn test:e2e src/domains/wallet/e2e/wallet-details.e2e.ts
+
+            - name: Upload Screenshots
+              run: tar -czvf screenshots-wallet-details.tar.gz ${{ github.workspace }}/screenshots
 
             - name: Upload Screenshots
               if: ${{ failure() }}
@@ -1786,6 +1876,9 @@ jobs:
               run: xvfb-run --server-args="-screen 0 1920x1080x16" yarn test:e2e src/domains/wallet/e2e/sign-message-action.e2e.ts
 
             - name: Upload Screenshots
+              run: tar -czvf screenshots-sign-message-action.tar.gz ${{ github.workspace }}/screenshots
+
+            - name: Upload Screenshots
               if: ${{ failure() }}
               uses: actions/upload-artifact@v2
               with:
@@ -1840,6 +1933,9 @@ jobs:
 
             - name: Test
               run: xvfb-run --server-args="-screen 0 1920x1080x16" yarn test:e2e src/domains/wallet/e2e/import-wallet-action.e2e.ts
+
+            - name: Upload Screenshots
+              run: tar -czvf screenshots-import-wallet-action.tar.gz ${{ github.workspace }}/screenshots
 
             - name: Upload Screenshots
               if: ${{ failure() }}
@@ -1898,6 +1994,9 @@ jobs:
               run: xvfb-run --server-args="-screen 0 1920x1080x16" yarn test:e2e src/domains/wallet/e2e/verify-message-action.e2e.ts
 
             - name: Upload Screenshots
+              run: tar -czvf screenshots-verify-message-action.tar.gz ${{ github.workspace }}/screenshots
+
+            - name: Upload Screenshots
               if: ${{ failure() }}
               uses: actions/upload-artifact@v2
               with:
@@ -1952,6 +2051,9 @@ jobs:
 
             - name: Test
               run: xvfb-run --server-args="-screen 0 1920x1080x16" yarn test:e2e src/domains/wallet/e2e/wallets-routing.e2e.ts
+
+            - name: Upload Screenshots
+              run: tar -czvf screenshots-wallets-routing.tar.gz ${{ github.workspace }}/screenshots
 
             - name: Upload Screenshots
               if: ${{ failure() }}
@@ -2010,6 +2112,9 @@ jobs:
               run: xvfb-run --server-args="-screen 0 1920x1080x16" yarn test:e2e src/domains/wallet/e2e/update-wallet-name-action.e2e.ts
 
             - name: Upload Screenshots
+              run: tar -czvf screenshots-update-wallet-name-action.tar.gz ${{ github.workspace }}/screenshots
+
+            - name: Upload Screenshots
               if: ${{ failure() }}
               uses: actions/upload-artifact@v2
               with:
@@ -2064,6 +2169,9 @@ jobs:
 
             - name: Test
               run: xvfb-run --server-args="-screen 0 1920x1080x16" yarn test:e2e src/domains/setting/e2e/save-settings.e2e.ts
+
+            - name: Upload Screenshots
+              run: tar -czvf screenshots-save-settings.tar.gz ${{ github.workspace }}/screenshots
 
             - name: Upload Screenshots
               if: ${{ failure() }}
@@ -2122,6 +2230,9 @@ jobs:
               run: xvfb-run --server-args="-screen 0 1920x1080x16" yarn test:e2e src/domains/setting/e2e/reset-profile.e2e.ts
 
             - name: Upload Screenshots
+              run: tar -czvf screenshots-reset-profile.tar.gz ${{ github.workspace }}/screenshots
+
+            - name: Upload Screenshots
               if: ${{ failure() }}
               uses: actions/upload-artifact@v2
               with:
@@ -2176,6 +2287,9 @@ jobs:
 
             - name: Test
               run: xvfb-run --server-args="-screen 0 1920x1080x16" yarn test:e2e src/domains/setting/e2e/settings-routing.e2e.ts
+
+            - name: Upload Screenshots
+              run: tar -czvf screenshots-settings-routing.tar.gz ${{ github.workspace }}/screenshots
 
             - name: Upload Screenshots
               if: ${{ failure() }}
