@@ -25,8 +25,6 @@ import { App } from "./App";
 let profile: Contracts.IProfile;
 let passwordProtectedProfile: Contracts.IProfile;
 
-jest.setTimeout(60000);
-
 describe("App", () => {
 	beforeAll(async () => {
 		useDefaultNetMocks();
