@@ -135,7 +135,7 @@ export const CreateWallet = () => {
 			try {
 				await generateWallet();
 				setActiveTab(newIndex);
-			} catch {
+			} catch (error) {
 				setGenerationError(t("WALLETS.PAGE_CREATE_WALLET.NETWORK_STEP.GENERATION_ERROR"));
 			} finally {
 				setIsGeneratingWallet(false);

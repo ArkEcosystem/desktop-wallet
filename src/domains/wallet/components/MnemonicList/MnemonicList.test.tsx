@@ -1,16 +1,41 @@
 import React from "react";
-import { render } from "testing-library";
+import { render, screen } from "testing-library";
 
 import { MnemonicList } from "./MnemonicList";
 
-const mnemonic = "lorem ipsum dolor sit amet";
-
 describe("MnemonicList", () => {
-	it("should contain mnemonic words", () => {
-		const { getAllByTestId, asFragment } = render(<MnemonicList mnemonic={mnemonic} />);
-		const words = getAllByTestId("MnemonicList__item");
-		expect(words.length).toEqual(mnemonic.split(" ").length);
-		expect(words[0]).toHaveTextContent(mnemonic[0]);
+	it("should render", () => {
+		const mnemonic = "stomach practice violin later term trend suit switch inch theory hundred system";
+		const words = mnemonic.split(" ");
+
+		const { asFragment } = render(<MnemonicList mnemonic={mnemonic} />);
+
+		const items = screen.getAllByTestId("MnemonicList__item");
+
+		expect(items.length).toEqual(words.length);
+
+		for (const [index, item] of items.entries()) {
+			expect(item).toHaveTextContent(words[index]);
+		}
+
+		expect(asFragment()).toMatchSnapshot();
+	});
+
+	it("should render with special delimiter", () => {
+		const mnemonic =
+			"あさい　せつでん　さいかい　にんち　たんけん　ぬまえび　こうじ　こっか　はあく　げきか　ふめつ　ちらし";
+		const words = mnemonic.split("\u3000");
+
+		const { asFragment } = render(<MnemonicList mnemonic={mnemonic} />);
+
+		const items = screen.getAllByTestId("MnemonicList__item");
+
+		expect(items.length).toEqual(words.length);
+
+		for (const [index, item] of items.entries()) {
+			expect(item).toHaveTextContent(words[index]);
+		}
+
 		expect(asFragment()).toMatchSnapshot();
 	});
 });
