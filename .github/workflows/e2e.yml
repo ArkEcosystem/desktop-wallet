@@ -107,14 +107,14 @@ jobs:
 
             - name: Pack Screenshots
               if: ${{ failure() }}
-              run: tar -czvf ${{ github.workspace }}/votes-screenshots.tar.gz ${{ github.workspace }}/screenshots
+              run: tar -czvf votes-screenshots.tar.gz ${{ github.workspace }}/screenshots
 
             - name: Upload Screenshots
               if: ${{ failure() }}
               uses: actions/upload-artifact@v2
               with:
                   name: ${{ github.job }}-screenshots
-                  path: ${{ github.workspace }}/votes-screenshots.tar.gz
+                  path: votes-screenshots.tar.gz
 
     ipfs-transaction:
         needs: build-and-upload
@@ -167,14 +167,14 @@ jobs:
 
             - name: Pack Screenshots
               if: ${{ failure() }}
-              run: tar -czvf ${{ github.workspace }}/ipfs-transaction-screenshots.tar.gz ${{ github.workspace }}/screenshots
+              run: tar -czvf ipfs-transaction-screenshots.tar.gz ${{ github.workspace }}/screenshots
 
             - name: Upload Screenshots
               if: ${{ failure() }}
               uses: actions/upload-artifact@v2
               with:
                   name: ${{ github.job }}-screenshots
-                  path: ${{ github.workspace }}/ipfs-transaction-screenshots.tar.gz
+                  path: ipfs-transaction-screenshots.tar.gz
 
     ipfs-transaction-multisig:
         needs: build-and-upload
@@ -227,14 +227,14 @@ jobs:
 
             - name: Pack Screenshots
               if: ${{ failure() }}
-              run: tar -czvf ${{ github.workspace }}/ipfs-transaction-multisig-screenshots.tar.gz ${{ github.workspace }}/screenshots
+              run: tar -czvf ipfs-transaction-multisig-screenshots.tar.gz ${{ github.workspace }}/screenshots
 
             - name: Upload Screenshots
               if: ${{ failure() }}
               uses: actions/upload-artifact@v2
               with:
                   name: ${{ github.job }}-screenshots
-                  path: ${{ github.workspace }}/ipfs-transaction-multisig-screenshots.tar.gz
+                  path: ipfs-transaction-multisig-screenshots.tar.gz
 
     single-transfer:
         needs: build-and-upload
@@ -287,14 +287,14 @@ jobs:
 
             - name: Pack Screenshots
               if: ${{ failure() }}
-              run: tar -czvf ${{ github.workspace }}/single-transfer-screenshots.tar.gz ${{ github.workspace }}/screenshots
+              run: tar -czvf single-transfer-screenshots.tar.gz ${{ github.workspace }}/screenshots
 
             - name: Upload Screenshots
               if: ${{ failure() }}
               uses: actions/upload-artifact@v2
               with:
                   name: ${{ github.job }}-screenshots
-                  path: ${{ github.workspace }}/single-transfer-screenshots.tar.gz
+                  path: single-transfer-screenshots.tar.gz
 
     single-transfer-multisig:
         needs: build-and-upload
@@ -347,14 +347,14 @@ jobs:
 
             - name: Pack Screenshots
               if: ${{ failure() }}
-              run: tar -czvf ${{ github.workspace }}/single-transfer-multisig-screenshots.tar.gz ${{ github.workspace }}/screenshots
+              run: tar -czvf single-transfer-multisig-screenshots.tar.gz ${{ github.workspace }}/screenshots
 
             - name: Upload Screenshots
               if: ${{ failure() }}
               uses: actions/upload-artifact@v2
               with:
                   name: ${{ github.job }}-screenshots
-                  path: ${{ github.workspace }}/single-transfer-multisig-screenshots.tar.gz
+                  path: single-transfer-multisig-screenshots.tar.gz
 
     multiple-transfer:
         needs: build-and-upload
@@ -407,14 +407,14 @@ jobs:
 
             - name: Pack Screenshots
               if: ${{ failure() }}
-              run: tar -czvf ${{ github.workspace }}/multiple-transfer-screenshots.tar.gz ${{ github.workspace }}/screenshots
+              run: tar -czvf multiple-transfer-screenshots.tar.gz ${{ github.workspace }}/screenshots
 
             - name: Upload Screenshots
               if: ${{ failure() }}
               uses: actions/upload-artifact@v2
               with:
                   name: ${{ github.job }}-screenshots
-                  path: ${{ github.workspace }}/multiple-transfer-screenshots.tar.gz
+                  path: multiple-transfer-screenshots.tar.gz
 
     transactions-routing:
         needs: build-and-upload
@@ -467,14 +467,14 @@ jobs:
 
             - name: Pack Screenshots
               if: ${{ failure() }}
-              run: tar -czvf ${{ github.workspace }}/transactions-routing-screenshots.tar.gz ${{ github.workspace }}/screenshots
+              run: tar -czvf transactions-routing-screenshots.tar.gz ${{ github.workspace }}/screenshots
 
             - name: Upload Screenshots
               if: ${{ failure() }}
               uses: actions/upload-artifact@v2
               with:
                   name: ${{ github.job }}-screenshots
-                  path: ${{ github.workspace }}/transactions-routing-screenshots.tar.gz
+                  path: transactions-routing-screenshots.tar.gz
 
     delegate-resignation:
         needs: build-and-upload
@@ -527,14 +527,14 @@ jobs:
 
             - name: Pack Screenshots
               if: ${{ failure() }}
-              run: tar -czvf ${{ github.workspace }}/delegate-resignation-screenshots.tar.gz ${{ github.workspace }}/screenshots
+              run: tar -czvf delegate-resignation-screenshots.tar.gz ${{ github.workspace }}/screenshots
 
             - name: Upload Screenshots
               if: ${{ failure() }}
               uses: actions/upload-artifact@v2
               with:
                   name: ${{ github.job }}-screenshots
-                  path: ${{ github.workspace }}/delegate-resignation-screenshots.tar.gz
+                  path: delegate-resignation-screenshots.tar.gz
 
     vote-transaction:
         needs: build-and-upload
@@ -587,14 +587,14 @@ jobs:
 
             - name: Pack Screenshots
               if: ${{ failure() }}
-              run: tar -czvf ${{ github.workspace }}/vote-transaction-screenshots.tar.gz ${{ github.workspace }}/screenshots
+              run: tar -czvf vote-transaction-screenshots.tar.gz ${{ github.workspace }}/screenshots
 
             - name: Upload Screenshots
               if: ${{ failure() }}
               uses: actions/upload-artifact@v2
               with:
                   name: ${{ github.job }}-screenshots
-                  path: ${{ github.workspace }}/vote-transaction-screenshots.tar.gz
+                  path: vote-transaction-screenshots.tar.gz
 
     vote-transaction-multisig:
         needs: build-and-upload
@@ -647,14 +647,14 @@ jobs:
 
             - name: Pack Screenshots
               if: ${{ failure() }}
-              run: tar -czvf ${{ github.workspace }}/vote-transaction-multisig-screenshots.tar.gz ${{ github.workspace }}/screenshots
+              run: tar -czvf vote-transaction-multisig-screenshots.tar.gz ${{ github.workspace }}/screenshots
 
             - name: Upload Screenshots
               if: ${{ failure() }}
               uses: actions/upload-artifact@v2
               with:
                   name: ${{ github.job }}-screenshots
-                  path: ${{ github.workspace }}/vote-transaction-multisig-screenshots.tar.gz
+                  path: vote-transaction-multisig-screenshots.tar.gz
 
     delegate-registration:
         needs: build-and-upload
@@ -707,14 +707,14 @@ jobs:
 
             - name: Pack Screenshots
               if: ${{ failure() }}
-              run: tar -czvf ${{ github.workspace }}/delegate-registration-screenshots.tar.gz ${{ github.workspace }}/screenshots
+              run: tar -czvf delegate-registration-screenshots.tar.gz ${{ github.workspace }}/screenshots
 
             - name: Upload Screenshots
               if: ${{ failure() }}
               uses: actions/upload-artifact@v2
               with:
                   name: ${{ github.job }}-screenshots
-                  path: ${{ github.workspace }}/delegate-registration-screenshots.tar.gz
+                  path: delegate-registration-screenshots.tar.gz
 
     splash-screen:
         needs: build-and-upload
@@ -767,14 +767,14 @@ jobs:
 
             - name: Pack Screenshots
               if: ${{ failure() }}
-              run: tar -czvf ${{ github.workspace }}/splash-screen-screenshots.tar.gz ${{ github.workspace }}/screenshots
+              run: tar -czvf splash-screen-screenshots.tar.gz ${{ github.workspace }}/screenshots
 
             - name: Upload Screenshots
               if: ${{ failure() }}
               uses: actions/upload-artifact@v2
               with:
                   name: ${{ github.job }}-screenshots
-                  path: ${{ github.workspace }}/splash-screen-screenshots.tar.gz
+                  path: splash-screen-screenshots.tar.gz
 
     contacts-routing:
         needs: build-and-upload
@@ -827,14 +827,14 @@ jobs:
 
             - name: Pack Screenshots
               if: ${{ failure() }}
-              run: tar -czvf ${{ github.workspace }}/contacts-routing-screenshots.tar.gz ${{ github.workspace }}/screenshots
+              run: tar -czvf contacts-routing-screenshots.tar.gz ${{ github.workspace }}/screenshots
 
             - name: Upload Screenshots
               if: ${{ failure() }}
               uses: actions/upload-artifact@v2
               with:
                   name: ${{ github.job }}-screenshots
-                  path: ${{ github.workspace }}/contacts-routing-screenshots.tar.gz
+                  path: contacts-routing-screenshots.tar.gz
 
     update-contact:
         needs: build-and-upload
@@ -887,14 +887,14 @@ jobs:
 
             - name: Pack Screenshots
               if: ${{ failure() }}
-              run: tar -czvf ${{ github.workspace }}/update-contact-screenshots.tar.gz ${{ github.workspace }}/screenshots
+              run: tar -czvf update-contact-screenshots.tar.gz ${{ github.workspace }}/screenshots
 
             - name: Upload Screenshots
               if: ${{ failure() }}
               uses: actions/upload-artifact@v2
               with:
                   name: ${{ github.job }}-screenshots
-                  path: ${{ github.workspace }}/update-contact-screenshots.tar.gz
+                  path: update-contact-screenshots.tar.gz
 
     delete-contact:
         needs: build-and-upload
@@ -947,14 +947,14 @@ jobs:
 
             - name: Pack Screenshots
               if: ${{ failure() }}
-              run: tar -czvf ${{ github.workspace }}/delete-contact-screenshots.tar.gz ${{ github.workspace }}/screenshots
+              run: tar -czvf delete-contact-screenshots.tar.gz ${{ github.workspace }}/screenshots
 
             - name: Upload Screenshots
               if: ${{ failure() }}
               uses: actions/upload-artifact@v2
               with:
                   name: ${{ github.job }}-screenshots
-                  path: ${{ github.workspace }}/delete-contact-screenshots.tar.gz
+                  path: delete-contact-screenshots.tar.gz
 
     create-contact:
         needs: build-and-upload
@@ -1007,14 +1007,14 @@ jobs:
 
             - name: Pack Screenshots
               if: ${{ failure() }}
-              run: tar -czvf ${{ github.workspace }}/create-contact-screenshots.tar.gz ${{ github.workspace }}/screenshots
+              run: tar -czvf create-contact-screenshots.tar.gz ${{ github.workspace }}/screenshots
 
             - name: Upload Screenshots
               if: ${{ failure() }}
               uses: actions/upload-artifact@v2
               with:
                   name: ${{ github.job }}-screenshots
-                  path: ${{ github.workspace }}/create-contact-screenshots.tar.gz
+                  path: create-contact-screenshots.tar.gz
 
     plugins-routing:
         needs: build-and-upload
@@ -1067,14 +1067,14 @@ jobs:
 
             - name: Pack Screenshots
               if: ${{ failure() }}
-              run: tar -czvf ${{ github.workspace }}/plugins-routing-screenshots.tar.gz ${{ github.workspace }}/screenshots
+              run: tar -czvf plugins-routing-screenshots.tar.gz ${{ github.workspace }}/screenshots
 
             - name: Upload Screenshots
               if: ${{ failure() }}
               uses: actions/upload-artifact@v2
               with:
                   name: ${{ github.job }}-screenshots
-                  path: ${{ github.workspace }}/plugins-routing-screenshots.tar.gz
+                  path: plugins-routing-screenshots.tar.gz
 
     dashboard-routing:
         needs: build-and-upload
@@ -1127,14 +1127,14 @@ jobs:
 
             - name: Pack Screenshots
               if: ${{ failure() }}
-              run: tar -czvf ${{ github.workspace }}/dashboard-routing-screenshots.tar.gz ${{ github.workspace }}/screenshots
+              run: tar -czvf dashboard-routing-screenshots.tar.gz ${{ github.workspace }}/screenshots
 
             - name: Upload Screenshots
               if: ${{ failure() }}
               uses: actions/upload-artifact@v2
               with:
                   name: ${{ github.job }}-screenshots
-                  path: ${{ github.workspace }}/dashboard-routing-screenshots.tar.gz
+                  path: dashboard-routing-screenshots.tar.gz
 
     navbar-routing:
         needs: build-and-upload
@@ -1187,14 +1187,14 @@ jobs:
 
             - name: Pack Screenshots
               if: ${{ failure() }}
-              run: tar -czvf ${{ github.workspace }}/navbar-routing-screenshots.tar.gz ${{ github.workspace }}/screenshots
+              run: tar -czvf navbar-routing-screenshots.tar.gz ${{ github.workspace }}/screenshots
 
             - name: Upload Screenshots
               if: ${{ failure() }}
               uses: actions/upload-artifact@v2
               with:
                   name: ${{ github.job }}-screenshots
-                  path: ${{ github.workspace }}/navbar-routing-screenshots.tar.gz
+                  path: navbar-routing-screenshots.tar.gz
 
     welcome-screen:
         needs: build-and-upload
@@ -1247,14 +1247,14 @@ jobs:
 
             - name: Pack Screenshots
               if: ${{ failure() }}
-              run: tar -czvf ${{ github.workspace }}/welcome-screen-screenshots.tar.gz ${{ github.workspace }}/screenshots
+              run: tar -czvf welcome-screen-screenshots.tar.gz ${{ github.workspace }}/screenshots
 
             - name: Upload Screenshots
               if: ${{ failure() }}
               uses: actions/upload-artifact@v2
               with:
                   name: ${{ github.job }}-screenshots
-                  path: ${{ github.workspace }}/welcome-screen-screenshots.tar.gz
+                  path: welcome-screen-screenshots.tar.gz
 
     create-profile-action:
         needs: build-and-upload
@@ -1307,14 +1307,14 @@ jobs:
 
             - name: Pack Screenshots
               if: ${{ failure() }}
-              run: tar -czvf ${{ github.workspace }}/create-profile-action-screenshots.tar.gz ${{ github.workspace }}/screenshots
+              run: tar -czvf create-profile-action-screenshots.tar.gz ${{ github.workspace }}/screenshots
 
             - name: Upload Screenshots
               if: ${{ failure() }}
               uses: actions/upload-artifact@v2
               with:
                   name: ${{ github.job }}-screenshots
-                  path: ${{ github.workspace }}/create-profile-action-screenshots.tar.gz
+                  path: create-profile-action-screenshots.tar.gz
 
     navigate-profile-settings:
         needs: build-and-upload
@@ -1367,14 +1367,14 @@ jobs:
 
             - name: Pack Screenshots
               if: ${{ failure() }}
-              run: tar -czvf ${{ github.workspace }}/navigate-profile-settings-screenshots.tar.gz ${{ github.workspace }}/screenshots
+              run: tar -czvf navigate-profile-settings-screenshots.tar.gz ${{ github.workspace }}/screenshots
 
             - name: Upload Screenshots
               if: ${{ failure() }}
               uses: actions/upload-artifact@v2
               with:
                   name: ${{ github.job }}-screenshots
-                  path: ${{ github.workspace }}/navigate-profile-settings-screenshots.tar.gz
+                  path: navigate-profile-settings-screenshots.tar.gz
 
     create-profile-routing:
         needs: build-and-upload
@@ -1427,14 +1427,14 @@ jobs:
 
             - name: Pack Screenshots
               if: ${{ failure() }}
-              run: tar -czvf ${{ github.workspace }}/create-profile-routing-screenshots.tar.gz ${{ github.workspace }}/screenshots
+              run: tar -czvf create-profile-routing-screenshots.tar.gz ${{ github.workspace }}/screenshots
 
             - name: Upload Screenshots
               if: ${{ failure() }}
               uses: actions/upload-artifact@v2
               with:
                   name: ${{ github.job }}-screenshots
-                  path: ${{ github.workspace }}/create-profile-routing-screenshots.tar.gz
+                  path: create-profile-routing-screenshots.tar.gz
 
     notifications:
         needs: build-and-upload
@@ -1487,14 +1487,14 @@ jobs:
 
             - name: Pack Screenshots
               if: ${{ failure() }}
-              run: tar -czvf ${{ github.workspace }}/notifications-screenshots.tar.gz ${{ github.workspace }}/screenshots
+              run: tar -czvf notifications-screenshots.tar.gz ${{ github.workspace }}/screenshots
 
             - name: Upload Screenshots
               if: ${{ failure() }}
               uses: actions/upload-artifact@v2
               with:
                   name: ${{ github.job }}-screenshots
-                  path: ${{ github.workspace }}/notifications-screenshots.tar.gz
+                  path: notifications-screenshots.tar.gz
 
     delete-profile-action:
         needs: build-and-upload
@@ -1547,14 +1547,14 @@ jobs:
 
             - name: Pack Screenshots
               if: ${{ failure() }}
-              run: tar -czvf ${{ github.workspace }}/delete-profile-action-screenshots.tar.gz ${{ github.workspace }}/screenshots
+              run: tar -czvf delete-profile-action-screenshots.tar.gz ${{ github.workspace }}/screenshots
 
             - name: Upload Screenshots
               if: ${{ failure() }}
               uses: actions/upload-artifact@v2
               with:
                   name: ${{ github.job }}-screenshots
-                  path: ${{ github.workspace }}/delete-profile-action-screenshots.tar.gz
+                  path: delete-profile-action-screenshots.tar.gz
 
     news-routing:
         needs: build-and-upload
@@ -1607,14 +1607,14 @@ jobs:
 
             - name: Pack Screenshots
               if: ${{ failure() }}
-              run: tar -czvf ${{ github.workspace }}/news-routing-screenshots.tar.gz ${{ github.workspace }}/screenshots
+              run: tar -czvf news-routing-screenshots.tar.gz ${{ github.workspace }}/screenshots
 
             - name: Upload Screenshots
               if: ${{ failure() }}
               uses: actions/upload-artifact@v2
               with:
                   name: ${{ github.job }}-screenshots
-                  path: ${{ github.workspace }}/news-routing-screenshots.tar.gz
+                  path: news-routing-screenshots.tar.gz
 
     filtering:
         needs: build-and-upload
@@ -1667,14 +1667,14 @@ jobs:
 
             - name: Pack Screenshots
               if: ${{ failure() }}
-              run: tar -czvf ${{ github.workspace }}/filtering-screenshots.tar.gz ${{ github.workspace }}/screenshots
+              run: tar -czvf filtering-screenshots.tar.gz ${{ github.workspace }}/screenshots
 
             - name: Upload Screenshots
               if: ${{ failure() }}
               uses: actions/upload-artifact@v2
               with:
                   name: ${{ github.job }}-screenshots
-                  path: ${{ github.workspace }}/filtering-screenshots.tar.gz
+                  path: filtering-screenshots.tar.gz
 
     create-wallet-action:
         needs: build-and-upload
@@ -1727,14 +1727,14 @@ jobs:
 
             - name: Pack Screenshots
               if: ${{ failure() }}
-              run: tar -czvf ${{ github.workspace }}/create-wallet-action-screenshots.tar.gz ${{ github.workspace }}/screenshots
+              run: tar -czvf create-wallet-action-screenshots.tar.gz ${{ github.workspace }}/screenshots
 
             - name: Upload Screenshots
               if: ${{ failure() }}
               uses: actions/upload-artifact@v2
               with:
                   name: ${{ github.job }}-screenshots
-                  path: ${{ github.workspace }}/create-wallet-action-screenshots.tar.gz
+                  path: create-wallet-action-screenshots.tar.gz
 
     delete-wallet-action:
         needs: build-and-upload
@@ -1787,14 +1787,14 @@ jobs:
 
             - name: Pack Screenshots
               if: ${{ failure() }}
-              run: tar -czvf ${{ github.workspace }}/delete-wallet-action-screenshots.tar.gz ${{ github.workspace }}/screenshots
+              run: tar -czvf delete-wallet-action-screenshots.tar.gz ${{ github.workspace }}/screenshots
 
             - name: Upload Screenshots
               if: ${{ failure() }}
               uses: actions/upload-artifact@v2
               with:
                   name: ${{ github.job }}-screenshots
-                  path: ${{ github.workspace }}/delete-wallet-action-screenshots.tar.gz
+                  path: delete-wallet-action-screenshots.tar.gz
 
     wallet-details:
         needs: build-and-upload
@@ -1847,14 +1847,14 @@ jobs:
 
             - name: Pack Screenshots
               if: ${{ failure() }}
-              run: tar -czvf ${{ github.workspace }}/wallet-details-screenshots.tar.gz ${{ github.workspace }}/screenshots
+              run: tar -czvf wallet-details-screenshots.tar.gz ${{ github.workspace }}/screenshots
 
             - name: Upload Screenshots
               if: ${{ failure() }}
               uses: actions/upload-artifact@v2
               with:
                   name: ${{ github.job }}-screenshots
-                  path: ${{ github.workspace }}/wallet-details-screenshots.tar.gz
+                  path: wallet-details-screenshots.tar.gz
 
     sign-message-action:
         needs: build-and-upload
@@ -1907,14 +1907,14 @@ jobs:
 
             - name: Pack Screenshots
               if: ${{ failure() }}
-              run: tar -czvf ${{ github.workspace }}/sign-message-action-screenshots.tar.gz ${{ github.workspace }}/screenshots
+              run: tar -czvf sign-message-action-screenshots.tar.gz ${{ github.workspace }}/screenshots
 
             - name: Upload Screenshots
               if: ${{ failure() }}
               uses: actions/upload-artifact@v2
               with:
                   name: ${{ github.job }}-screenshots
-                  path: ${{ github.workspace }}/sign-message-action-screenshots.tar.gz
+                  path: sign-message-action-screenshots.tar.gz
 
     import-wallet-action:
         needs: build-and-upload
@@ -1967,14 +1967,14 @@ jobs:
 
             - name: Pack Screenshots
               if: ${{ failure() }}
-              run: tar -czvf ${{ github.workspace }}/import-wallet-action-screenshots.tar.gz ${{ github.workspace }}/screenshots
+              run: tar -czvf import-wallet-action-screenshots.tar.gz ${{ github.workspace }}/screenshots
 
             - name: Upload Screenshots
               if: ${{ failure() }}
               uses: actions/upload-artifact@v2
               with:
                   name: ${{ github.job }}-screenshots
-                  path: ${{ github.workspace }}/import-wallet-action-screenshots.tar.gz
+                  path: import-wallet-action-screenshots.tar.gz
 
     verify-message-action:
         needs: build-and-upload
@@ -2027,14 +2027,14 @@ jobs:
 
             - name: Pack Screenshots
               if: ${{ failure() }}
-              run: tar -czvf ${{ github.workspace }}/verify-message-action-screenshots.tar.gz ${{ github.workspace }}/screenshots
+              run: tar -czvf verify-message-action-screenshots.tar.gz ${{ github.workspace }}/screenshots
 
             - name: Upload Screenshots
               if: ${{ failure() }}
               uses: actions/upload-artifact@v2
               with:
                   name: ${{ github.job }}-screenshots
-                  path: ${{ github.workspace }}/verify-message-action-screenshots.tar.gz
+                  path: verify-message-action-screenshots.tar.gz
 
     wallets-routing:
         needs: build-and-upload
@@ -2087,14 +2087,14 @@ jobs:
 
             - name: Pack Screenshots
               if: ${{ failure() }}
-              run: tar -czvf ${{ github.workspace }}/wallets-routing-screenshots.tar.gz ${{ github.workspace }}/screenshots
+              run: tar -czvf wallets-routing-screenshots.tar.gz ${{ github.workspace }}/screenshots
 
             - name: Upload Screenshots
               if: ${{ failure() }}
               uses: actions/upload-artifact@v2
               with:
                   name: ${{ github.job }}-screenshots
-                  path: ${{ github.workspace }}/wallets-routing-screenshots.tar.gz
+                  path: wallets-routing-screenshots.tar.gz
 
     update-wallet-name-action:
         needs: build-and-upload
@@ -2147,14 +2147,14 @@ jobs:
 
             - name: Pack Screenshots
               if: ${{ failure() }}
-              run: tar -czvf ${{ github.workspace }}/update-wallet-name-action-screenshots.tar.gz ${{ github.workspace }}/screenshots
+              run: tar -czvf update-wallet-name-action-screenshots.tar.gz ${{ github.workspace }}/screenshots
 
             - name: Upload Screenshots
               if: ${{ failure() }}
               uses: actions/upload-artifact@v2
               with:
                   name: ${{ github.job }}-screenshots
-                  path: ${{ github.workspace }}/update-wallet-name-action-screenshots.tar.gz
+                  path: update-wallet-name-action-screenshots.tar.gz
 
     save-settings:
         needs: build-and-upload
@@ -2207,14 +2207,14 @@ jobs:
 
             - name: Pack Screenshots
               if: ${{ failure() }}
-              run: tar -czvf ${{ github.workspace }}/save-settings-screenshots.tar.gz ${{ github.workspace }}/screenshots
+              run: tar -czvf save-settings-screenshots.tar.gz ${{ github.workspace }}/screenshots
 
             - name: Upload Screenshots
               if: ${{ failure() }}
               uses: actions/upload-artifact@v2
               with:
                   name: ${{ github.job }}-screenshots
-                  path: ${{ github.workspace }}/save-settings-screenshots.tar.gz
+                  path: save-settings-screenshots.tar.gz
 
     reset-profile:
         needs: build-and-upload
@@ -2267,14 +2267,14 @@ jobs:
 
             - name: Pack Screenshots
               if: ${{ failure() }}
-              run: tar -czvf ${{ github.workspace }}/reset-profile-screenshots.tar.gz ${{ github.workspace }}/screenshots
+              run: tar -czvf reset-profile-screenshots.tar.gz ${{ github.workspace }}/screenshots
 
             - name: Upload Screenshots
               if: ${{ failure() }}
               uses: actions/upload-artifact@v2
               with:
                   name: ${{ github.job }}-screenshots
-                  path: ${{ github.workspace }}/reset-profile-screenshots.tar.gz
+                  path: reset-profile-screenshots.tar.gz
 
     settings-routing:
         needs: build-and-upload
@@ -2327,11 +2327,11 @@ jobs:
 
             - name: Pack Screenshots
               if: ${{ failure() }}
-              run: tar -czvf ${{ github.workspace }}/settings-routing-screenshots.tar.gz ${{ github.workspace }}/screenshots
+              run: tar -czvf settings-routing-screenshots.tar.gz ${{ github.workspace }}/screenshots
 
             - name: Upload Screenshots
               if: ${{ failure() }}
               uses: actions/upload-artifact@v2
               with:
                   name: ${{ github.job }}-screenshots
-                  path: ${{ github.workspace }}/settings-routing-screenshots.tar.gz
+                  path: settings-routing-screenshots.tar.gz
