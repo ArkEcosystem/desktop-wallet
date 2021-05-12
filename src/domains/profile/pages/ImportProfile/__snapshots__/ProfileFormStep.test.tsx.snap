@@ -89,7 +89,7 @@ exports[`Import Profile - Profile Form Step should fail password confirmation 1`
                       class="relative w-20 h-20"
                     >
                       <div
-                        class="SelectProfileImage__ProfileImageStyled-t6smk3-1 iIdUcl"
+                        class="SelectProfileImage__ProfileImageStyled-t6smk3-1 bVbLLU"
                       >
                         <img
                           alt="Avatar"
@@ -102,12 +102,13 @@ exports[`Import Profile - Profile Form Step should fail password confirmation 1`
                         >
                           AS
                         </span>
-                        <div
-                          class="hidden overflow-hidden absolute inset-1 z-50 rounded-full upload-button-overlay"
+                        <button
+                          class="opacity-0 absolute w-full h-full p-1 z-50 transition-opacity	duration-200 overflow-hidden upload-button-overlay focus:outline-none"
                           data-testid="SelectProfileImage__upload-button"
+                          type="button"
                         >
                           <div
-                            class="flex justify-center items-center h-full"
+                            class="flex justify-center items-center h-full rounded-full bg-theme-secondary-900 dark:bg-black opacity-85"
                           >
                             <div
                               class="sc-bdfBwQ cdgnVS text-white dark:text-theme-secondary-200"
@@ -119,7 +120,7 @@ exports[`Import Profile - Profile Form Step should fail password confirmation 1`
                               </svg>
                             </div>
                           </div>
-                        </div>
+                        </button>
                       </div>
                     </div>
                   </div>
@@ -795,7 +796,7 @@ exports[`Import Profile - Profile Form Step should render profile form 1`] = `
                       class="relative w-20 h-20"
                     >
                       <div
-                        class="SelectProfileImage__ProfileImageStyled-t6smk3-1 iIdUcl"
+                        class="SelectProfileImage__ProfileImageStyled-t6smk3-1 bVbLLU"
                       >
                         <img
                           alt="Avatar"
@@ -808,12 +809,13 @@ exports[`Import Profile - Profile Form Step should render profile form 1`] = `
                         >
                           JO
                         </span>
-                        <div
-                          class="hidden overflow-hidden absolute inset-1 z-50 rounded-full upload-button-overlay"
+                        <button
+                          class="opacity-0 absolute w-full h-full p-1 z-50 transition-opacity	duration-200 overflow-hidden upload-button-overlay focus:outline-none"
                           data-testid="SelectProfileImage__upload-button"
+                          type="button"
                         >
                           <div
-                            class="flex justify-center items-center h-full"
+                            class="flex justify-center items-center h-full rounded-full bg-theme-secondary-900 dark:bg-black opacity-85"
                           >
                             <div
                               class="sc-bdfBwQ cdgnVS text-white dark:text-theme-secondary-200"
@@ -825,7 +827,7 @@ exports[`Import Profile - Profile Form Step should render profile form 1`] = `
                               </svg>
                             </div>
                           </div>
-                        </div>
+                        </button>
                       </div>
                     </div>
                   </div>
@@ -1237,7 +1239,7 @@ exports[`Import Profile - Profile Form Step should render profile form with empt
                       class="relative w-20 h-20"
                     >
                       <div
-                        class="SelectProfileImage__ProfileImageStyled-t6smk3-1 iIdUcl"
+                        class="SelectProfileImage__ProfileImageStyled-t6smk3-1 bVbLLU"
                       >
                         <img
                           alt="Avatar"
@@ -1250,12 +1252,13 @@ exports[`Import Profile - Profile Form Step should render profile form with empt
                         >
                           TE
                         </span>
-                        <div
-                          class="hidden overflow-hidden absolute inset-1 z-50 rounded-full upload-button-overlay"
+                        <button
+                          class="opacity-0 absolute w-full h-full p-1 z-50 transition-opacity	duration-200 overflow-hidden upload-button-overlay focus:outline-none"
                           data-testid="SelectProfileImage__upload-button"
+                          type="button"
                         >
                           <div
-                            class="flex justify-center items-center h-full"
+                            class="flex justify-center items-center h-full rounded-full bg-theme-secondary-900 dark:bg-black opacity-85"
                           >
                             <div
                               class="sc-bdfBwQ cdgnVS text-white dark:text-theme-secondary-200"
@@ -1267,7 +1270,7 @@ exports[`Import Profile - Profile Form Step should render profile form with empt
                               </svg>
                             </div>
                           </div>
-                        </div>
+                        </button>
                       </div>
                     </div>
                   </div>
@@ -1679,7 +1682,7 @@ exports[`Import Profile - Profile Form Step should render profile form with hidd
                       class="relative w-20 h-20"
                     >
                       <div
-                        class="SelectProfileImage__ProfileImageStyled-t6smk3-1 iIdUcl"
+                        class="SelectProfileImage__ProfileImageStyled-t6smk3-1 bVbLLU"
                       >
                         <img
                           alt="Avatar"
@@ -1692,12 +1695,13 @@ exports[`Import Profile - Profile Form Step should render profile form with hidd
                         >
                           JO
                         </span>
-                        <div
-                          class="hidden overflow-hidden absolute inset-1 z-50 rounded-full upload-button-overlay"
+                        <button
+                          class="opacity-0 absolute w-full h-full p-1 z-50 transition-opacity	duration-200 overflow-hidden upload-button-overlay focus:outline-none"
                           data-testid="SelectProfileImage__upload-button"
+                          type="button"
                         >
                           <div
-                            class="flex justify-center items-center h-full"
+                            class="flex justify-center items-center h-full rounded-full bg-theme-secondary-900 dark:bg-black opacity-85"
                           >
                             <div
                               class="sc-bdfBwQ cdgnVS text-white dark:text-theme-secondary-200"
@@ -1709,7 +1713,7 @@ exports[`Import Profile - Profile Form Step should render profile form with hidd
                               </svg>
                             </div>
                           </div>
-                        </div>
+                        </button>
                       </div>
                     </div>
                   </div>
@@ -2121,7 +2125,7 @@ exports[`Import Profile - Profile Form Step should store new profile with passwo
                       class="relative w-20 h-20"
                     >
                       <div
-                        class="SelectProfileImage__ProfileImageStyled-t6smk3-1 iIdUcl"
+                        class="SelectProfileImage__ProfileImageStyled-t6smk3-1 bVbLLU"
                       >
                         <img
                           alt="Avatar"
@@ -2129,12 +2133,13 @@ exports[`Import Profile - Profile Form Step should store new profile with passwo
                           data-testid="SelectProfileImage__avatar"
                           src="data:image/png;base64,avatarImage"
                         />
-                        <div
-                          class="hidden overflow-hidden absolute inset-1 z-50 rounded-full upload-button-overlay"
+                        <button
+                          class="opacity-0 absolute w-full h-full p-1 z-50 transition-opacity	duration-200 overflow-hidden upload-button-overlay focus:outline-none"
                           data-testid="SelectProfileImage__upload-button"
+                          type="button"
                         >
                           <div
-                            class="flex justify-center items-center h-full"
+                            class="flex justify-center items-center h-full rounded-full bg-theme-secondary-900 dark:bg-black opacity-85"
                           >
                             <div
                               class="sc-bdfBwQ cdgnVS text-white dark:text-theme-secondary-200"
@@ -2146,7 +2151,7 @@ exports[`Import Profile - Profile Form Step should store new profile with passwo
                               </svg>
                             </div>
                           </div>
-                        </div>
+                        </button>
                       </div>
                       <button
                         class="OriginalButton__StyledButton-sc-1y2wptt-0 gLgNOz flex absolute -top-3 -right-3 justify-center items-center p-1 w-6 h-6"
@@ -2808,7 +2813,7 @@ exports[`Import Profile - Profile Form Step should store profile 1`] = `
                       class="relative w-20 h-20"
                     >
                       <div
-                        class="SelectProfileImage__ProfileImageStyled-t6smk3-1 iIdUcl"
+                        class="SelectProfileImage__ProfileImageStyled-t6smk3-1 bVbLLU"
                       >
                         <img
                           alt="Avatar"
@@ -2816,12 +2821,13 @@ exports[`Import Profile - Profile Form Step should store profile 1`] = `
                           data-testid="SelectProfileImage__avatar"
                           src="data:image/png;base64,avatarImage"
                         />
-                        <div
-                          class="hidden overflow-hidden absolute inset-1 z-50 rounded-full upload-button-overlay"
+                        <button
+                          class="opacity-0 absolute w-full h-full p-1 z-50 transition-opacity	duration-200 overflow-hidden upload-button-overlay focus:outline-none"
                           data-testid="SelectProfileImage__upload-button"
+                          type="button"
                         >
                           <div
-                            class="flex justify-center items-center h-full"
+                            class="flex justify-center items-center h-full rounded-full bg-theme-secondary-900 dark:bg-black opacity-85"
                           >
                             <div
                               class="sc-bdfBwQ cdgnVS text-white dark:text-theme-secondary-200"
@@ -2833,7 +2839,7 @@ exports[`Import Profile - Profile Form Step should store profile 1`] = `
                               </svg>
                             </div>
                           </div>
-                        </div>
+                        </button>
                       </div>
                       <button
                         class="OriginalButton__StyledButton-sc-1y2wptt-0 gLgNOz flex absolute -top-3 -right-3 justify-center items-center p-1 w-6 h-6"
@@ -3497,7 +3503,7 @@ exports[`Import Profile - Profile Form Step should update the avatar when removi
                       class="relative w-20 h-20"
                     >
                       <div
-                        class="SelectProfileImage__ProfileImageStyled-t6smk3-1 iIdUcl"
+                        class="SelectProfileImage__ProfileImageStyled-t6smk3-1 bVbLLU"
                       >
                         <img
                           alt="Avatar"
@@ -3510,12 +3516,13 @@ exports[`Import Profile - Profile Form Step should update the avatar when removi
                         >
                           TE
                         </span>
-                        <div
-                          class="hidden overflow-hidden absolute inset-1 z-50 rounded-full upload-button-overlay"
+                        <button
+                          class="opacity-0 absolute w-full h-full p-1 z-50 transition-opacity	duration-200 overflow-hidden upload-button-overlay focus:outline-none"
                           data-testid="SelectProfileImage__upload-button"
+                          type="button"
                         >
                           <div
-                            class="flex justify-center items-center h-full"
+                            class="flex justify-center items-center h-full rounded-full bg-theme-secondary-900 dark:bg-black opacity-85"
                           >
                             <div
                               class="sc-bdfBwQ cdgnVS text-white dark:text-theme-secondary-200"
@@ -3527,7 +3534,7 @@ exports[`Import Profile - Profile Form Step should update the avatar when removi
                               </svg>
                             </div>
                           </div>
-                        </div>
+                        </button>
                       </div>
                     </div>
                   </div>
@@ -3771,7 +3778,7 @@ exports[`Import Profile - Profile Form Step should update the avatar when removi
                       class="relative w-20 h-20"
                     >
                       <div
-                        class="SelectProfileImage__ProfileImageStyled-t6smk3-1 iIdUcl"
+                        class="SelectProfileImage__ProfileImageStyled-t6smk3-1 bVbLLU"
                       >
                         <img
                           alt="Avatar"
@@ -3779,12 +3786,13 @@ exports[`Import Profile - Profile Form Step should update the avatar when removi
                           data-testid="SelectProfileImage__avatar"
                           src="data:image/png;base64,avatarImage"
                         />
-                        <div
-                          class="hidden overflow-hidden absolute inset-1 z-50 rounded-full upload-button-overlay"
+                        <button
+                          class="opacity-0 absolute w-full h-full p-1 z-50 transition-opacity	duration-200 overflow-hidden upload-button-overlay focus:outline-none"
                           data-testid="SelectProfileImage__upload-button"
+                          type="button"
                         >
                           <div
-                            class="flex justify-center items-center h-full"
+                            class="flex justify-center items-center h-full rounded-full bg-theme-secondary-900 dark:bg-black opacity-85"
                           >
                             <div
                               class="sc-bdfBwQ cdgnVS text-white dark:text-theme-secondary-200"
@@ -3796,7 +3804,7 @@ exports[`Import Profile - Profile Form Step should update the avatar when removi
                               </svg>
                             </div>
                           </div>
-                        </div>
+                        </button>
                       </div>
                       <button
                         class="OriginalButton__StyledButton-sc-1y2wptt-0 gLgNOz flex absolute -top-3 -right-3 justify-center items-center p-1 w-6 h-6"

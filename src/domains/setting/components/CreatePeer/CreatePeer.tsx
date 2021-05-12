@@ -10,10 +10,9 @@ type CreatePeerProps = {
 	isOpen: boolean;
 	profile: Contracts.IProfile;
 	onClose?: () => void;
-	onValidateHost?: any;
 };
 
-export const CreatePeer = ({ isOpen, profile, onClose, onValidateHost }: CreatePeerProps) => {
+export const CreatePeer = ({ isOpen, profile, onClose }: CreatePeerProps) => {
 	const { t } = useTranslation();
 
 	const { persist } = useEnvironmentContext();
@@ -42,7 +41,7 @@ export const CreatePeer = ({ isOpen, profile, onClose, onValidateHost }: CreateP
 
 	return (
 		<Modal title={t("SETTINGS.MODAL_CUSTOM_PEER.TITLE")} size="xl" isOpen={isOpen} onClose={onClose}>
-			<PeerForm onValidateHost={onValidateHost} onSave={handleCreatePeer} />
+			<PeerForm profile={profile} onSave={handleCreatePeer} />
 		</Modal>
 	);
 };

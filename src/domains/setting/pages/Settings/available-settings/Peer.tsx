@@ -16,7 +16,6 @@ import { PeerListItem } from "domains/setting/components/PeerListItem";
 import { UpdatePeer } from "domains/setting/components/UpdatePeer";
 import React, { useCallback, useEffect, useMemo, useState } from "react";
 import { Trans, useTranslation } from "react-i18next";
-import * as yup from "yup";
 
 import { SettingsProps } from "../Settings.models";
 
@@ -175,23 +174,6 @@ export const Peer = ({ formConfig, onSuccess }: SettingsProps) => {
 		},
 	];
 
-	const validateHost = (network: string, host: string) => {
-		const hostHasProtocol = (value: string) => /^https?:\/\//.test(value);
-
-		if (!yup.string().url().isValidSync(host)) {
-			return t("SETTINGS.PEERS.VALIDATION.NOT_VALID", { field: t("SETTINGS.PEERS.PEER_IP") });
-		}
-
-		if (!hostHasProtocol(host)) {
-			return t("SETTINGS.PEERS.VALIDATION.NO_PROTOCOL", { field: t("SETTINGS.PEERS.PEER_IP") });
-		}
-
-		return (
-			!peerGroupByNetwork?.[network]?.some((peer: any) => peer.host === host) ||
-			t("SETTINGS.PEERS.VALIDATION.HOST_EXISTS")
-		);
-	};
-
 	const handlePeerAction = (action: string, peer: any) => {
 		setPeerAction(action);
 		setSelectedPeer(peer);
@@ -253,12 +235,7 @@ export const Peer = ({ formConfig, onSuccess }: SettingsProps) => {
 				</div>
 			</Form>
 
-			<CreatePeer
-				isOpen={isCreatePeer}
-				profile={activeProfile}
-				onClose={() => setIsCreatePeer(false)}
-				onValidateHost={validateHost}
-			/>
+			<CreatePeer isOpen={isCreatePeer} profile={activeProfile} onClose={() => setIsCreatePeer(false)} />
 
 			{selectedPeer && (
 				<>
@@ -267,7 +244,6 @@ export const Peer = ({ formConfig, onSuccess }: SettingsProps) => {
 						peer={selectedPeer}
 						profile={activeProfile}
 						onClose={resetPeerAction}
-						onValidateHost={validateHost}
 					/>
 
 					<DeletePeer

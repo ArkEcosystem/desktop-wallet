@@ -11,10 +11,9 @@ type UpdatePeerProps = {
 	peer: any;
 	profile: Contracts.IProfile;
 	onClose?: () => void;
-	onValidateHost?: any;
 };
 
-export const UpdatePeer = ({ isOpen, peer, profile, onClose, onValidateHost }: UpdatePeerProps) => {
+export const UpdatePeer = ({ isOpen, peer, profile, onClose }: UpdatePeerProps) => {
 	const { t } = useTranslation();
 
 	const { persist } = useEnvironmentContext();
@@ -30,6 +29,7 @@ export const UpdatePeer = ({ isOpen, peer, profile, onClose, onValidateHost }: U
 		host: string;
 		isMultiSignature: boolean;
 	}) => {
+		// @TODO: move forget / create to PSDK
 		if (network.coin() === peer.coin && network.id() === peer.network) {
 			profile.peers().update(network.coin(), network.id(), peer.host, {
 				name,
@@ -52,7 +52,7 @@ export const UpdatePeer = ({ isOpen, peer, profile, onClose, onValidateHost }: U
 
 	return (
 		<Modal title={t("SETTINGS.MODAL_CUSTOM_PEER.TITLE")} size="xl" isOpen={isOpen} onClose={onClose}>
-			<PeerForm peer={peer} onValidateHost={onValidateHost} onSave={handleUpdatePeer} />
+			<PeerForm profile={profile} peer={peer} onSave={handleUpdatePeer} />
 		</Modal>
 	);
 };

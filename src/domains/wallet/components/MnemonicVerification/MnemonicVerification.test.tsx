@@ -1,5 +1,5 @@
 import React from "react";
-import { fireEvent, render } from "testing-library";
+import { fireEvent, render, screen } from "testing-library";
 
 import { MnemonicVerification } from "./MnemonicVerification";
 
@@ -9,6 +9,40 @@ const limit = 6;
 const handleComplete = jest.fn();
 
 describe("MnemonicVerification", () => {
+	it("should render", () => {
+		const wordPositions = [1, 2, 3];
+
+		const { asFragment } = render(
+			<MnemonicVerification
+				mnemonic={mnemonic}
+				optionsLimit={limit}
+				wordPositions={wordPositions}
+				handleComplete={handleComplete}
+			/>,
+		);
+
+		expect(screen.getAllByTestId("MnemonicVerificationOptions__button")).toHaveLength(mnemonic.split(" ").length);
+	});
+
+	it("should render with special delimiter", () => {
+		const mnemonic = "てまきずし　くわしい　うけもつ　ないす　にっけい　おつり";
+
+		const wordPositions = [1, 2, 3];
+
+		const { asFragment } = render(
+			<MnemonicVerification
+				mnemonic={mnemonic}
+				optionsLimit={limit}
+				wordPositions={wordPositions}
+				handleComplete={handleComplete}
+			/>,
+		);
+
+		expect(screen.getAllByTestId("MnemonicVerificationOptions__button")).toHaveLength(
+			mnemonic.split("\u3000").length,
+		);
+	});
+
 	it("should verify mnemonic", () => {
 		const wordPositions = [1, 2, 3];
 
