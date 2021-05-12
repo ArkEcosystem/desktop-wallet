@@ -7,15 +7,7 @@ import { createHashHistory } from "history";
 import os from "os";
 import React from "react";
 import { Route } from "react-router-dom";
-import {
-	act,
-	env,
-	fireEvent,
-	getDefaultProfileId,
-	renderWithRouter,
-	screen,
-	waitFor,
-} from "utils/testing-library";
+import { act, env, fireEvent, getDefaultProfileId, renderWithRouter, screen, waitFor } from "utils/testing-library";
 
 import { Settings } from "./Settings";
 
