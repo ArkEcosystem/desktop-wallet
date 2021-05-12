@@ -39,7 +39,7 @@ export const FeeWarning = ({ isOpen, variant, onCancel, onConfirm }: FeeWarningP
 			</div>
 
 			<FormField name="suppressWarning">
-				<label className="flex items-center space-x-2">
+				<label className="flex items-center space-x-3 w-max cursor-pointer">
 					<Checkbox
 						name="suppressWarning"
 						data-testid="FeeWarning__suppressWarning-toggle"
