@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`MnemonicList should contain mnemonic words 1`] = `
+exports[`MnemonicList should render 1`] = `
 <DocumentFragment>
   <ul
     class="grid grid-cols-2 gap-x-3 gap-y-5 md:grid-cols-3 lg:grid-cols-4"
@@ -17,7 +17,7 @@ exports[`MnemonicList should contain mnemonic words 1`] = `
       <span
         class="font-medium"
       >
-        lorem
+        stomach
       </span>
     </li>
     <li
@@ -32,7 +32,7 @@ exports[`MnemonicList should contain mnemonic words 1`] = `
       <span
         class="font-medium"
       >
-        ipsum
+        practice
       </span>
     </li>
     <li
@@ -47,7 +47,7 @@ exports[`MnemonicList should contain mnemonic words 1`] = `
       <span
         class="font-medium"
       >
-        dolor
+        violin
       </span>
     </li>
     <li
@@ -62,7 +62,7 @@ exports[`MnemonicList should contain mnemonic words 1`] = `
       <span
         class="font-medium"
       >
-        sit
+        later
       </span>
     </li>
     <li
@@ -77,7 +77,301 @@ exports[`MnemonicList should contain mnemonic words 1`] = `
       <span
         class="font-medium"
       >
-        amet
+        term
+      </span>
+    </li>
+    <li
+      class="relative p-4 rounded border border-theme-secondary-400 dark:border-theme-secondary-700"
+      data-testid="MnemonicList__item"
+    >
+      <span
+        class="absolute top-0 left-0 px-1 text-xs font-medium transform translate-x-2 -translate-y-2 bg-theme-background text-theme-secondary-700"
+      >
+        6
+      </span>
+      <span
+        class="font-medium"
+      >
+        trend
+      </span>
+    </li>
+    <li
+      class="relative p-4 rounded border border-theme-secondary-400 dark:border-theme-secondary-700"
+      data-testid="MnemonicList__item"
+    >
+      <span
+        class="absolute top-0 left-0 px-1 text-xs font-medium transform translate-x-2 -translate-y-2 bg-theme-background text-theme-secondary-700"
+      >
+        7
+      </span>
+      <span
+        class="font-medium"
+      >
+        suit
+      </span>
+    </li>
+    <li
+      class="relative p-4 rounded border border-theme-secondary-400 dark:border-theme-secondary-700"
+      data-testid="MnemonicList__item"
+    >
+      <span
+        class="absolute top-0 left-0 px-1 text-xs font-medium transform translate-x-2 -translate-y-2 bg-theme-background text-theme-secondary-700"
+      >
+        8
+      </span>
+      <span
+        class="font-medium"
+      >
+        switch
+      </span>
+    </li>
+    <li
+      class="relative p-4 rounded border border-theme-secondary-400 dark:border-theme-secondary-700"
+      data-testid="MnemonicList__item"
+    >
+      <span
+        class="absolute top-0 left-0 px-1 text-xs font-medium transform translate-x-2 -translate-y-2 bg-theme-background text-theme-secondary-700"
+      >
+        9
+      </span>
+      <span
+        class="font-medium"
+      >
+        inch
+      </span>
+    </li>
+    <li
+      class="relative p-4 rounded border border-theme-secondary-400 dark:border-theme-secondary-700"
+      data-testid="MnemonicList__item"
+    >
+      <span
+        class="absolute top-0 left-0 px-1 text-xs font-medium transform translate-x-2 -translate-y-2 bg-theme-background text-theme-secondary-700"
+      >
+        10
+      </span>
+      <span
+        class="font-medium"
+      >
+        theory
+      </span>
+    </li>
+    <li
+      class="relative p-4 rounded border border-theme-secondary-400 dark:border-theme-secondary-700"
+      data-testid="MnemonicList__item"
+    >
+      <span
+        class="absolute top-0 left-0 px-1 text-xs font-medium transform translate-x-2 -translate-y-2 bg-theme-background text-theme-secondary-700"
+      >
+        11
+      </span>
+      <span
+        class="font-medium"
+      >
+        hundred
+      </span>
+    </li>
+    <li
+      class="relative p-4 rounded border border-theme-secondary-400 dark:border-theme-secondary-700"
+      data-testid="MnemonicList__item"
+    >
+      <span
+        class="absolute top-0 left-0 px-1 text-xs font-medium transform translate-x-2 -translate-y-2 bg-theme-background text-theme-secondary-700"
+      >
+        12
+      </span>
+      <span
+        class="font-medium"
+      >
+        system
+      </span>
+    </li>
+  </ul>
+</DocumentFragment>
+`;
+
+exports[`MnemonicList should render with special delimiter 1`] = `
+<DocumentFragment>
+  <ul
+    class="grid grid-cols-2 gap-x-3 gap-y-5 md:grid-cols-3 lg:grid-cols-4"
+  >
+    <li
+      class="relative p-4 rounded border border-theme-secondary-400 dark:border-theme-secondary-700"
+      data-testid="MnemonicList__item"
+    >
+      <span
+        class="absolute top-0 left-0 px-1 text-xs font-medium transform translate-x-2 -translate-y-2 bg-theme-background text-theme-secondary-700"
+      >
+        1
+      </span>
+      <span
+        class="font-medium"
+      >
+        あさい
+      </span>
+    </li>
+    <li
+      class="relative p-4 rounded border border-theme-secondary-400 dark:border-theme-secondary-700"
+      data-testid="MnemonicList__item"
+    >
+      <span
+        class="absolute top-0 left-0 px-1 text-xs font-medium transform translate-x-2 -translate-y-2 bg-theme-background text-theme-secondary-700"
+      >
+        2
+      </span>
+      <span
+        class="font-medium"
+      >
+        せつでん
+      </span>
+    </li>
+    <li
+      class="relative p-4 rounded border border-theme-secondary-400 dark:border-theme-secondary-700"
+      data-testid="MnemonicList__item"
+    >
+      <span
+        class="absolute top-0 left-0 px-1 text-xs font-medium transform translate-x-2 -translate-y-2 bg-theme-background text-theme-secondary-700"
+      >
+        3
+      </span>
+      <span
+        class="font-medium"
+      >
+        さいかい
+      </span>
+    </li>
+    <li
+      class="relative p-4 rounded border border-theme-secondary-400 dark:border-theme-secondary-700"
+      data-testid="MnemonicList__item"
+    >
+      <span
+        class="absolute top-0 left-0 px-1 text-xs font-medium transform translate-x-2 -translate-y-2 bg-theme-background text-theme-secondary-700"
+      >
+        4
+      </span>
+      <span
+        class="font-medium"
+      >
+        にんち
+      </span>
+    </li>
+    <li
+      class="relative p-4 rounded border border-theme-secondary-400 dark:border-theme-secondary-700"
+      data-testid="MnemonicList__item"
+    >
+      <span
+        class="absolute top-0 left-0 px-1 text-xs font-medium transform translate-x-2 -translate-y-2 bg-theme-background text-theme-secondary-700"
+      >
+        5
+      </span>
+      <span
+        class="font-medium"
+      >
+        たんけん
+      </span>
+    </li>
+    <li
+      class="relative p-4 rounded border border-theme-secondary-400 dark:border-theme-secondary-700"
+      data-testid="MnemonicList__item"
+    >
+      <span
+        class="absolute top-0 left-0 px-1 text-xs font-medium transform translate-x-2 -translate-y-2 bg-theme-background text-theme-secondary-700"
+      >
+        6
+      </span>
+      <span
+        class="font-medium"
+      >
+        ぬまえび
+      </span>
+    </li>
+    <li
+      class="relative p-4 rounded border border-theme-secondary-400 dark:border-theme-secondary-700"
+      data-testid="MnemonicList__item"
+    >
+      <span
+        class="absolute top-0 left-0 px-1 text-xs font-medium transform translate-x-2 -translate-y-2 bg-theme-background text-theme-secondary-700"
+      >
+        7
+      </span>
+      <span
+        class="font-medium"
+      >
+        こうじ
+      </span>
+    </li>
+    <li
+      class="relative p-4 rounded border border-theme-secondary-400 dark:border-theme-secondary-700"
+      data-testid="MnemonicList__item"
+    >
+      <span
+        class="absolute top-0 left-0 px-1 text-xs font-medium transform translate-x-2 -translate-y-2 bg-theme-background text-theme-secondary-700"
+      >
+        8
+      </span>
+      <span
+        class="font-medium"
+      >
+        こっか
+      </span>
+    </li>
+    <li
+      class="relative p-4 rounded border border-theme-secondary-400 dark:border-theme-secondary-700"
+      data-testid="MnemonicList__item"
+    >
+      <span
+        class="absolute top-0 left-0 px-1 text-xs font-medium transform translate-x-2 -translate-y-2 bg-theme-background text-theme-secondary-700"
+      >
+        9
+      </span>
+      <span
+        class="font-medium"
+      >
+        はあく
+      </span>
+    </li>
+    <li
+      class="relative p-4 rounded border border-theme-secondary-400 dark:border-theme-secondary-700"
+      data-testid="MnemonicList__item"
+    >
+      <span
+        class="absolute top-0 left-0 px-1 text-xs font-medium transform translate-x-2 -translate-y-2 bg-theme-background text-theme-secondary-700"
+      >
+        10
+      </span>
+      <span
+        class="font-medium"
+      >
+        げきか
+      </span>
+    </li>
+    <li
+      class="relative p-4 rounded border border-theme-secondary-400 dark:border-theme-secondary-700"
+      data-testid="MnemonicList__item"
+    >
+      <span
+        class="absolute top-0 left-0 px-1 text-xs font-medium transform translate-x-2 -translate-y-2 bg-theme-background text-theme-secondary-700"
+      >
+        11
+      </span>
+      <span
+        class="font-medium"
+      >
+        ふめつ
+      </span>
+    </li>
+    <li
+      class="relative p-4 rounded border border-theme-secondary-400 dark:border-theme-secondary-700"
+      data-testid="MnemonicList__item"
+    >
+      <span
+        class="absolute top-0 left-0 px-1 text-xs font-medium transform translate-x-2 -translate-y-2 bg-theme-background text-theme-secondary-700"
+      >
+        12
+      </span>
+      <span
+        class="font-medium"
+      >
+        ちらし
       </span>
     </li>
   </ul>

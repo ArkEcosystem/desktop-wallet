@@ -5,9 +5,18 @@ type Props = {
 };
 
 export function MnemonicList({ mnemonic }: Props) {
+	let mnemonicWords: string[];
+
+	// Check for Japanese "space"
+	if (/\u3000/.test(mnemonic)) {
+		mnemonicWords = mnemonic.split("\u3000");
+	} else {
+		mnemonicWords = mnemonic.split(" ");
+	}
+
 	return (
 		<ul className="grid grid-cols-2 gap-x-3 gap-y-5 md:grid-cols-3 lg:grid-cols-4">
-			{mnemonic.split(" ").map((word, index) => (
+			{mnemonicWords.map((word, index) => (
 				<li
 					data-testid="MnemonicList__item"
 					key={index}

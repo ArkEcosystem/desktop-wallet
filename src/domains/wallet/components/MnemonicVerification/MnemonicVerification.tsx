@@ -27,7 +27,15 @@ const randomWordPositions = () => {
 export function MnemonicVerification({ mnemonic, wordPositions, optionsLimit, handleComplete, isCompleted }: Props) {
 	const [activeTab, setActiveTab] = useState(0);
 	const [positions, setPositions] = useState([] as number[]);
-	const mnemonicWords = mnemonic.split(" ");
+
+	let mnemonicWords: string[];
+
+	// Check for Japanese "space"
+	if (/\u3000/.test(mnemonic)) {
+		mnemonicWords = mnemonic.split("\u3000");
+	} else {
+		mnemonicWords = mnemonic.split(" ");
+	}
 
 	if (!wordPositions?.length && activeTab === 0 && !positions.length) {
 		setPositions(randomWordPositions());
