@@ -225,6 +225,7 @@ module.exports = {
 		extend: {
 			borderRadius: ["first", "last"],
 			borderWidth: ["hover", "group-hover", "first", "last", "even"],
+			borderStyle: ["focus-within"],
 			margin: ["first"],
 			opacity: ["dark", "group-hover"],
 			padding: ["first", "last"],
