@@ -85,14 +85,6 @@ export const translations: { [key: string]: any } = {
 		MENU_ITEM: "Peers",
 		TITLE: "Peer Settings",
 		SUBTITLE: "Manage your peer settings for your wallet.",
-		BROADCAST_TRANSACTIONS: {
-			TITLE: "Broadcast to Multiple Peers",
-			DESCRIPTION: "Broadcasts your transactions to mulitple peers for additional reliability.",
-		},
-		CUSTOM_PEERS: {
-			TITLE: "Use Custom Peers",
-			DESCRIPTION: "Manages your list of custom peers for Blockchain networks.",
-		},
 		EMPTY_MESSAGE: "You have not added any custom peers yet.",
 		MULTISIGNATURE: {
 			TITLE: "Multisignature",
@@ -156,10 +148,6 @@ export const translations: { [key: string]: any } = {
 		TITLE: "Development Network",
 		DESCRIPTION:
 			"Disabling this setting will hide your wallets associated with development networks. Are you sure you want to continue?",
-	},
-
-	MODAL_CUSTOM_PEER: {
-		TITLE: "Custom Peer",
 	},
 
 	MODAL_DELETE_PEER: {
