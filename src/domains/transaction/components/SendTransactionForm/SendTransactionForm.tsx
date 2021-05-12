@@ -8,7 +8,7 @@ import { SelectAddress } from "domains/profile/components/SelectAddress";
 import { InputFee } from "domains/transaction/components/InputFee";
 import React, { useEffect, useState } from "react";
 import { useFormContext } from "react-hook-form";
-import { useTranslation } from "react-i18next";
+import { Trans, useTranslation } from "react-i18next";
 
 type SendTransactionFormProps = {
 	children?: React.ReactNode;
@@ -80,7 +80,13 @@ export const SendTransactionForm = ({
 		const isFullyRestoredAndSynced = senderWallet?.hasBeenFullyRestored() && senderWallet?.hasSyncedWithNetwork();
 
 		if (!isFullyRestoredAndSynced) {
-			toasts.warning(t("COMMON.ERRORS.NETWORK_ERROR", { network: `${network.coin()} ${network.name()}` }));
+			toasts.warning(
+				<Trans
+					i18nKey="COMMON.ERRORS.NETWORK_ERROR"
+					values={{ network: `${network.coin()} ${network.name()}` }}
+					components={{ bold: <strong /> }}
+				/>,
+			);
 			return;
 		}
 	};
