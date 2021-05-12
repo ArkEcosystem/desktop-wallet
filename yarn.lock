@@ -94,31 +94,31 @@
   dependencies:
     "@arkecosystem/crypto" "^2.7.0-next.2"
 
-"@arkecosystem/platform-sdk-ada@^6.0.29":
-  version "6.0.29"
-  resolved "https://registry.yarnpkg.com/@arkecosystem/platform-sdk-ada/-/platform-sdk-ada-6.0.29.tgz#9e6deeb19605dceb847a07e57864258a21151c75"
-  integrity sha512-4HvQATFyk9eCsnErsJKNVn9JLgulZe0AYh7JHF7xVxvySJq9zgMNQ8sUYuKBKpTuPIiGBYCoo0I0Qz1J0vPVgQ==
+"@arkecosystem/platform-sdk-ada@^7.0.3":
+  version "7.0.3"
+  resolved "https://registry.yarnpkg.com/@arkecosystem/platform-sdk-ada/-/platform-sdk-ada-7.0.3.tgz#f2075f863bd36a72c4f27a6665ffcdc0168598f5"
+  integrity sha512-iWncn1lGZuzyGn27Mi3QKVD8hE2Pv6P6WNXibQH+XMaIkDNJFgl35AvsiEP8Fb3p6R/kM9HveH+p032wuebh0g==
   dependencies:
-    "@arkecosystem/platform-sdk" "6.0.29"
-    "@arkecosystem/platform-sdk-crypto" "6.0.29"
-    "@arkecosystem/platform-sdk-intl" "6.0.29"
-    "@arkecosystem/platform-sdk-support" "6.0.29"
+    "@arkecosystem/platform-sdk" "7.0.3"
+    "@arkecosystem/platform-sdk-crypto" "7.0.3"
+    "@arkecosystem/platform-sdk-intl" "7.0.3"
+    "@arkecosystem/platform-sdk-support" "7.0.3"
     "@emurgo/cardano-serialization-lib-nodejs" "^7.0.0"
     bech32 "^2.0.0"
 
-"@arkecosystem/platform-sdk-ark@^6.0.29":
-  version "6.0.29"
-  resolved "https://registry.yarnpkg.com/@arkecosystem/platform-sdk-ark/-/platform-sdk-ark-6.0.29.tgz#5f27a1a5be1bc44a6d9a2e00f756355ff5386c1f"
-  integrity sha512-70YsebiTExJlvmov6hK/lkt0TNfACXy9uaGsoSKgbNzH6X84mLDg10Sw+ZV+pUqsAZOBGv5cog0iNhrHrgtN9Q==
+"@arkecosystem/platform-sdk-ark@^7.0.3":
+  version "7.0.3"
+  resolved "https://registry.yarnpkg.com/@arkecosystem/platform-sdk-ark/-/platform-sdk-ark-7.0.3.tgz#a09bb19846fb3ee1f41e07c0a510ea5f43bd4ab3"
+  integrity sha512-Iq5PQ24vCiYCZvyP3UItCtlQVwfIMNYk9LyymioKdGUibkJJ8fvoUFMwqPixJyYX2hiejipRan7OVF0xJuTqFA==
   dependencies:
     "@arkecosystem/crypto" "^3.0.0-next.23"
     "@arkecosystem/crypto-identities" "^1.1.1"
     "@arkecosystem/ledger-transport" "^2.0.0"
     "@arkecosystem/multi-signature" "^0.1.5"
-    "@arkecosystem/platform-sdk" "6.0.29"
-    "@arkecosystem/platform-sdk-crypto" "6.0.29"
-    "@arkecosystem/platform-sdk-intl" "6.0.29"
-    "@arkecosystem/platform-sdk-support" "6.0.29"
+    "@arkecosystem/platform-sdk" "7.0.3"
+    "@arkecosystem/platform-sdk-crypto" "7.0.3"
+    "@arkecosystem/platform-sdk-intl" "7.0.3"
+    "@arkecosystem/platform-sdk-support" "7.0.3"
     dot-prop "^6.0.0"
     is-url-superb "^4.0.0"
     lodash.orderby "^4.6.0"
@@ -126,44 +126,44 @@
     semver "^7.3.5"
     uuid "^8.3.2"
 
-"@arkecosystem/platform-sdk-atom@^6.0.29":
-  version "6.0.29"
-  resolved "https://registry.yarnpkg.com/@arkecosystem/platform-sdk-atom/-/platform-sdk-atom-6.0.29.tgz#47950fcf10c45d378b0caedaaa296fb22649b27a"
-  integrity sha512-2ahLuDvTo+fwe7AbUY3xz8AY6JdDHSWxWxKU19CdqQ40xzGrNCezYTtv9aegBvGYpO+DkYXsL1zbns1WoOz9BQ==
+"@arkecosystem/platform-sdk-atom@^7.0.3":
+  version "7.0.3"
+  resolved "https://registry.yarnpkg.com/@arkecosystem/platform-sdk-atom/-/platform-sdk-atom-7.0.3.tgz#9d403941f8ff21c3ecf458405bf51ae9634aa991"
+  integrity sha512-iCnOctcV1U3lB5a9XcAF3hoQeZPoGW7t+HX/x0UiivUZgsGM9KXTqz8fVJoKPGCsgSLXS5g5Hf+dMpM0/jaM2w==
   dependencies:
-    "@arkecosystem/platform-sdk" "6.0.29"
-    "@arkecosystem/platform-sdk-crypto" "6.0.29"
-    "@arkecosystem/platform-sdk-intl" "6.0.29"
-    "@arkecosystem/platform-sdk-support" "6.0.29"
+    "@arkecosystem/platform-sdk" "7.0.3"
+    "@arkecosystem/platform-sdk-crypto" "7.0.3"
+    "@arkecosystem/platform-sdk-intl" "7.0.3"
+    "@arkecosystem/platform-sdk-support" "7.0.3"
     bcrypto "^5.4.0"
     bech32 "^2.0.0"
     ledger-cosmos-js "^2.1.8"
     uuid "^8.3.2"
 
-"@arkecosystem/platform-sdk-avax@^6.0.29":
-  version "6.0.29"
-  resolved "https://registry.yarnpkg.com/@arkecosystem/platform-sdk-avax/-/platform-sdk-avax-6.0.29.tgz#beb77ab5f303461391df8a171b3a6ee40d567067"
-  integrity sha512-Cz04Vnh4VQXwzTP7/nib8KkLw6wmtnha8dFrlVtYgfrmHgYgubPwTtz5qBK1nS3EQ8c1FGaqbympJOEp39SEgw==
+"@arkecosystem/platform-sdk-avax@^7.0.3":
+  version "7.0.3"
+  resolved "https://registry.yarnpkg.com/@arkecosystem/platform-sdk-avax/-/platform-sdk-avax-7.0.3.tgz#ff42f09fae9d91b87b125cc67639f032c4938b86"
+  integrity sha512-4AVqQ7qOPrsne/tEzulg3lQ4Do79fcjFVNUU59Q1bFRmRVsqRgxIS4IE6Pacm82idDnxysujCD5tnmwZ6KpAgw==
   dependencies:
-    "@arkecosystem/platform-sdk" "6.0.29"
-    "@arkecosystem/platform-sdk-crypto" "6.0.29"
-    "@arkecosystem/platform-sdk-intl" "6.0.29"
-    "@arkecosystem/platform-sdk-support" "6.0.29"
+    "@arkecosystem/platform-sdk" "7.0.3"
+    "@arkecosystem/platform-sdk-crypto" "7.0.3"
+    "@arkecosystem/platform-sdk-intl" "7.0.3"
+    "@arkecosystem/platform-sdk-support" "7.0.3"
     "@arkecosystem/utils" "^1.3.0"
     avalanche "^3.3.0"
     hdkey "^2.0.1"
     url-parse-lax "^4.0.0"
     uuid "^8.3.2"
 
-"@arkecosystem/platform-sdk-btc@^6.0.29":
-  version "6.0.29"
-  resolved "https://registry.yarnpkg.com/@arkecosystem/platform-sdk-btc/-/platform-sdk-btc-6.0.29.tgz#bbd140731f648a8c9a4df05af78a0ec9b65a3db7"
-  integrity sha512-memDtV01ZzbU+DdSN1IYNt2x/mPganIYas8jAN/oSzMiffkS+cIbB8DZU4WlMBWsV9XUytFHUjUIY9Ie1pgTuw==
+"@arkecosystem/platform-sdk-btc@^7.0.3":
+  version "7.0.3"
+  resolved "https://registry.yarnpkg.com/@arkecosystem/platform-sdk-btc/-/platform-sdk-btc-7.0.3.tgz#f4ebad7c51195f45c09b47b02336451f3e6e94f3"
+  integrity sha512-XkO7ZBy3Vhj8tlXX/6d0Flmo00mNzDLVFzz2pfgYKWP/8Qs1qxeX19YRhRA03M8em409D+McpxBdCnreKLnHqg==
   dependencies:
-    "@arkecosystem/platform-sdk" "6.0.29"
-    "@arkecosystem/platform-sdk-crypto" "6.0.29"
-    "@arkecosystem/platform-sdk-intl" "6.0.29"
-    "@arkecosystem/platform-sdk-support" "6.0.29"
+    "@arkecosystem/platform-sdk" "7.0.3"
+    "@arkecosystem/platform-sdk-crypto" "7.0.3"
+    "@arkecosystem/platform-sdk-intl" "7.0.3"
+    "@arkecosystem/platform-sdk-support" "7.0.3"
     "@ledgerhq/hw-app-btc" "^5.50.0"
     bignumber.js "^9.0.1"
     bip32 "^2.0.6"
@@ -171,28 +171,28 @@
     bitcoinjs-lib "^5.2.0"
     bitcore-lib "^8.25.8"
 
-"@arkecosystem/platform-sdk-coincap@6.1.8":
-  version "6.1.8"
-  resolved "https://registry.yarnpkg.com/@arkecosystem/platform-sdk-coincap/-/platform-sdk-coincap-6.1.8.tgz#03c8609b8b7316a9835dd96689fc03a29c3e88f6"
-  integrity sha512-NQDiYVg3AxWUTS1+1V4Zgt6IHEIJ0e5rAKxMIpBvABwbr9zZdrh37KrtegOgxlGlXWcbbJPirkLcjmUI90jhuQ==
+"@arkecosystem/platform-sdk-coincap@7.0.3":
+  version "7.0.3"
+  resolved "https://registry.yarnpkg.com/@arkecosystem/platform-sdk-coincap/-/platform-sdk-coincap-7.0.3.tgz#cd5a7b4ca03b7f27ba56ae68ea958841c3ce66f5"
+  integrity sha512-beYs59Yw/6Vn/6vK1ZCu0bLc4hfpnyK259Mj3FqJXdAJ25jMUkNVdMWGBa1//XfyXEhWMnDD2w+pft7v6I2Dfg==
   dependencies:
-    "@arkecosystem/platform-sdk" "6.1.8"
-    "@arkecosystem/platform-sdk-intl" "6.1.8"
-    "@arkecosystem/platform-sdk-support" "6.1.8"
+    "@arkecosystem/platform-sdk" "7.0.3"
+    "@arkecosystem/platform-sdk-intl" "7.0.3"
+    "@arkecosystem/platform-sdk-support" "7.0.3"
 
-"@arkecosystem/platform-sdk-coingecko@6.1.8":
-  version "6.1.8"
-  resolved "https://registry.yarnpkg.com/@arkecosystem/platform-sdk-coingecko/-/platform-sdk-coingecko-6.1.8.tgz#b8ee889f6238ab0e4972e26909552e6495159129"
-  integrity sha512-+v1sCCyyyPj0nxehSbJ97qddS2wjODw0+daP3z4q5Eu38s2fjqH3R6d+J4TMyFHwoktPCCj8sPFIL2i2h3OFqQ==
+"@arkecosystem/platform-sdk-coingecko@7.0.3":
+  version "7.0.3"
+  resolved "https://registry.yarnpkg.com/@arkecosystem/platform-sdk-coingecko/-/platform-sdk-coingecko-7.0.3.tgz#0968654e2f8255acdb709403ac4703eef4a4fe48"
+  integrity sha512-irTbyjuS11enSPVLJwer5p8tgeKmPdcTMNWMBcnnrJjOQXyx5hB3Da7E7v7HiEUN8RTDQSAIkG8FpVzGID+rcw==
   dependencies:
-    "@arkecosystem/platform-sdk" "6.1.8"
-    "@arkecosystem/platform-sdk-intl" "6.1.8"
-    "@arkecosystem/platform-sdk-support" "6.1.8"
+    "@arkecosystem/platform-sdk" "7.0.3"
+    "@arkecosystem/platform-sdk-intl" "7.0.3"
+    "@arkecosystem/platform-sdk-support" "7.0.3"
 
-"@arkecosystem/platform-sdk-crypto@6.0.29", "@arkecosystem/platform-sdk-crypto@^6.0.29":
-  version "6.0.29"
-  resolved "https://registry.yarnpkg.com/@arkecosystem/platform-sdk-crypto/-/platform-sdk-crypto-6.0.29.tgz#33e4356abb0da0a59de7d3a33327bbc527b00d58"
-  integrity sha512-17+MS27g1bXB9SOQ+NsOb3joCPHRVAVnWGfiwMgzDXb8bkrmtNn/v7C3/3QVARGecRCWCFzSnLIrDRdgtcPq0Q==
+"@arkecosystem/platform-sdk-crypto@7.0.3", "@arkecosystem/platform-sdk-crypto@^7.0.3":
+  version "7.0.3"
+  resolved "https://registry.yarnpkg.com/@arkecosystem/platform-sdk-crypto/-/platform-sdk-crypto-7.0.3.tgz#2c2ab3db6d5bb85b58e40c3f4064627ed3160bc8"
+  integrity sha512-lAtXfud8lV//IAm9/0I9WlhT8rMBHKwNqIE5l2DkqQdQoSDB/f4L/uC3sqXt5vFlmyQv9DZ4NqsF+XocnLNX9g==
   dependencies:
     argon2-browser "^1.15.4"
     bcryptjs "^2.4.3"
@@ -209,43 +209,23 @@
     string-crypto "^2.0.1"
     uuid "^8.3.2"
 
-"@arkecosystem/platform-sdk-crypto@6.1.8":
-  version "6.1.8"
-  resolved "https://registry.yarnpkg.com/@arkecosystem/platform-sdk-crypto/-/platform-sdk-crypto-6.1.8.tgz#b852980dea0a582c8630fd6ab62eca57f75fd7e4"
-  integrity sha512-KKrwxL7sAZ5dJNnjYihlyANLzZkyFS5afeLnJZakDuj81qZcfD3HzPRd/GuPImpx88RnW3e7bBWH/xKnoTmk2w==
+"@arkecosystem/platform-sdk-cryptocompare@7.0.3":
+  version "7.0.3"
+  resolved "https://registry.yarnpkg.com/@arkecosystem/platform-sdk-cryptocompare/-/platform-sdk-cryptocompare-7.0.3.tgz#98c8cee921054fbef0ef0342e2963a74973006bd"
+  integrity sha512-7JoJ9CGiN/jC0xUp4Qjlwt/KODIPsb5w/KSVG0A9LbveYKuBn1T34tzLZLMWqMPuJB97v1CVWkSHWQ/+B3pX6w==
   dependencies:
-    argon2-browser "^1.15.4"
-    bcryptjs "^2.4.3"
-    bcrypto "^5.4.0"
-    bip32 "^2.0.6"
-    bip38 "^3.1.1"
-    bip39 "^3.0.4"
-    bstring "^0.3.9"
-    create-xpub "~2.1.0"
-    hdkey "^2.0.1"
-    keytar "^7.7.0"
-    node-forge "^0.10.0"
-    safe-buffer "^5.2.1"
-    string-crypto "^2.0.1"
-    uuid "^8.3.2"
+    "@arkecosystem/platform-sdk" "7.0.3"
+    "@arkecosystem/platform-sdk-intl" "7.0.3"
+    "@arkecosystem/platform-sdk-support" "7.0.3"
 
-"@arkecosystem/platform-sdk-cryptocompare@6.1.8":
-  version "6.1.8"
-  resolved "https://registry.yarnpkg.com/@arkecosystem/platform-sdk-cryptocompare/-/platform-sdk-cryptocompare-6.1.8.tgz#9da3bac0fd474b6c6592730fd6beb5a9a2d3b4d0"
-  integrity sha512-i8sG0vrY4oruady3hBJZNl7MpEydOd36CU1o2BDajTz9+5HBDOwnirKvvaXH4q24TQ8jVMl1TtJvFqgoExqsHw==
+"@arkecosystem/platform-sdk-dot@^7.0.3":
+  version "7.0.3"
+  resolved "https://registry.yarnpkg.com/@arkecosystem/platform-sdk-dot/-/platform-sdk-dot-7.0.3.tgz#19b231def6d49f9fd310dbb50b10284c8734279f"
+  integrity sha512-yXrJf1mGLB9LusrfD0+00XotJpcPZ4PW0tc/1brsM8hqsDpXTl2/MlUhkASikKFIaD8IEqeuGH6PkIIvnGxD+A==
   dependencies:
-    "@arkecosystem/platform-sdk" "6.1.8"
-    "@arkecosystem/platform-sdk-intl" "6.1.8"
-    "@arkecosystem/platform-sdk-support" "6.1.8"
-
-"@arkecosystem/platform-sdk-dot@^6.0.29":
-  version "6.0.29"
-  resolved "https://registry.yarnpkg.com/@arkecosystem/platform-sdk-dot/-/platform-sdk-dot-6.0.29.tgz#302b5a1bcdef4fbd158e8abeb6c2ca8b3e194c25"
-  integrity sha512-3iPcRwtiLTIj3n8KOSneHCFtd97iRyRFO8JzO9CyJFlkMaskz3uFq315Yo3T9XQ8dz2ckzhdeIzqxythNQo54g==
-  dependencies:
-    "@arkecosystem/platform-sdk" "6.0.29"
-    "@arkecosystem/platform-sdk-crypto" "6.0.29"
-    "@arkecosystem/platform-sdk-support" "6.0.29"
+    "@arkecosystem/platform-sdk" "7.0.3"
+    "@arkecosystem/platform-sdk-crypto" "7.0.3"
+    "@arkecosystem/platform-sdk-support" "7.0.3"
     "@polkadot/api" "^3.6.4"
     "@polkadot/keyring" "^5.5.1"
     "@polkadot/rpc-provider" "^3.7.3"
@@ -257,42 +237,42 @@
     "@zondax/ledger-polkadot" "^0.13.0"
     uuid "^8.3.2"
 
-"@arkecosystem/platform-sdk-egld@^6.0.29":
-  version "6.0.29"
-  resolved "https://registry.yarnpkg.com/@arkecosystem/platform-sdk-egld/-/platform-sdk-egld-6.0.29.tgz#0ad5f2c966490265622a5f1a4cb91ff8a234ad9c"
-  integrity sha512-ZFZYatHr48YPwAn+OHRo82WigM0uFZV2nmpnPiiuQKwyxb8nLjbNCvvUjcd+9LRjc2PUYKpAJ9qwVbDYJoNvWQ==
+"@arkecosystem/platform-sdk-egld@^7.0.3":
+  version "7.0.3"
+  resolved "https://registry.yarnpkg.com/@arkecosystem/platform-sdk-egld/-/platform-sdk-egld-7.0.3.tgz#33cc6be7a49090826067bc560a9d32cb1201dbdb"
+  integrity sha512-54wqb/1DPiElHFR9c/nj3mhBisaNAVpWPEvW1ThuHAJWF9uCFq3hIUfY6u3X0YaGlzvKw8hM63IhRjCiF0NLcg==
   dependencies:
-    "@arkecosystem/platform-sdk" "6.0.29"
-    "@arkecosystem/platform-sdk-crypto" "6.0.29"
-    "@arkecosystem/platform-sdk-intl" "6.0.29"
-    "@arkecosystem/platform-sdk-support" "6.0.29"
+    "@arkecosystem/platform-sdk" "7.0.3"
+    "@arkecosystem/platform-sdk-crypto" "7.0.3"
+    "@arkecosystem/platform-sdk-intl" "7.0.3"
+    "@arkecosystem/platform-sdk-support" "7.0.3"
     "@elrondnetwork/elrond-core-js" "^2.1.0"
     "@elrondnetwork/erdjs" "^4.1.0"
     bech32 "^2.0.0"
 
-"@arkecosystem/platform-sdk-eos@^6.0.29":
-  version "6.0.29"
-  resolved "https://registry.yarnpkg.com/@arkecosystem/platform-sdk-eos/-/platform-sdk-eos-6.0.29.tgz#5677bcebcbd237e8225fbdee52ecf634993e124e"
-  integrity sha512-y04LXicqPy6O1/YYpQ3ij8jfQ4DdJrcjv+KcyktTXse5pmp/81kG1fST+R6XCfuBlcBp35QnnrQLsiNcD9/xBg==
+"@arkecosystem/platform-sdk-eos@^7.0.3":
+  version "7.0.3"
+  resolved "https://registry.yarnpkg.com/@arkecosystem/platform-sdk-eos/-/platform-sdk-eos-7.0.3.tgz#6acb8e45f3b8cbe9690564df40cd6cd17c8df4db"
+  integrity sha512-eWbYYX0PO7TMWjWBSXUQsBCmYwZFqOC+xYQKiVi/ZH6bUSRdz/VkkEvb9Y2hRRWh64vM6RE6COnb9kot/tljNg==
   dependencies:
-    "@arkecosystem/platform-sdk" "6.0.29"
-    "@arkecosystem/platform-sdk-crypto" "6.0.29"
-    "@arkecosystem/platform-sdk-intl" "6.0.29"
-    "@arkecosystem/platform-sdk-support" "6.0.29"
+    "@arkecosystem/platform-sdk" "7.0.3"
+    "@arkecosystem/platform-sdk-crypto" "7.0.3"
+    "@arkecosystem/platform-sdk-intl" "7.0.3"
+    "@arkecosystem/platform-sdk-support" "7.0.3"
     bn.js "5.1.3"
     elliptic "^6.5.3"
     eosjs "^21.0.3"
     node-fetch "^2.6.1"
 
-"@arkecosystem/platform-sdk-eth@^6.0.29":
-  version "6.0.29"
-  resolved "https://registry.yarnpkg.com/@arkecosystem/platform-sdk-eth/-/platform-sdk-eth-6.0.29.tgz#b1554c61882a0ffaa528dce07cc009402db8dc71"
-  integrity sha512-nIL1lwPzSuqoWm3PRPTCHSthm1ijwiYRLDuc7sV+ARAOnHagcsh55zr0Vx2i0R4fuxaQ6PalqI1jX722zPN0VQ==
+"@arkecosystem/platform-sdk-eth@^7.0.3":
+  version "7.0.3"
+  resolved "https://registry.yarnpkg.com/@arkecosystem/platform-sdk-eth/-/platform-sdk-eth-7.0.3.tgz#7081efd9941ab28adf8c797d55bab94cd5b356b6"
+  integrity sha512-hhqWZ4rf7UqzYciuDnxEUUJRKElv+iueqA+cDmCtDGNz3BGRE0jvlvAUAFQXk96AgJEBuy04b/lQecIwTg4Q+A==
   dependencies:
-    "@arkecosystem/platform-sdk" "6.0.29"
-    "@arkecosystem/platform-sdk-crypto" "6.0.29"
-    "@arkecosystem/platform-sdk-intl" "6.0.29"
-    "@arkecosystem/platform-sdk-support" "6.0.29"
+    "@arkecosystem/platform-sdk" "7.0.3"
+    "@arkecosystem/platform-sdk-crypto" "7.0.3"
+    "@arkecosystem/platform-sdk-intl" "7.0.3"
+    "@arkecosystem/platform-sdk-support" "7.0.3"
     "@ethereumjs/common" "^2.2.0"
     "@ethereumjs/tx" "^3.1.4"
     "@ledgerhq/hw-app-eth" "^5.50.0"
@@ -300,99 +280,91 @@
     ethereumjs-wallet "^1.0.1"
     web3 "^1.3.4"
 
-"@arkecosystem/platform-sdk-intl@6.0.29", "@arkecosystem/platform-sdk-intl@^6.0.29":
-  version "6.0.29"
-  resolved "https://registry.yarnpkg.com/@arkecosystem/platform-sdk-intl/-/platform-sdk-intl-6.0.29.tgz#5b9352c8e30b9913f1126b9604a23be901429f3a"
-  integrity sha512-VYqEms5OINW/LYvpbihNkepN8JoC38A0rAr69w0eY17arM3lmlH9iirp1+60GbE770MqKJq2rNgOCCcpb3NNbQ==
+"@arkecosystem/platform-sdk-intl@7.0.3", "@arkecosystem/platform-sdk-intl@^7.0.3":
+  version "7.0.3"
+  resolved "https://registry.yarnpkg.com/@arkecosystem/platform-sdk-intl/-/platform-sdk-intl-7.0.3.tgz#7a94ad62213b5d92de6da0307cab24f3d830017d"
+  integrity sha512-VuW0J9sWHkWSt3k6kK41l8HpoG7eNcZozYtfZYNHgrYn1zC5e2OX66PtobxEbALkHtWANCsui7Nx2mXGXbWSEw==
   dependencies:
     dayjs "^1.10.4"
     dinero.js "^1.8.1"
 
-"@arkecosystem/platform-sdk-intl@6.1.8":
-  version "6.1.8"
-  resolved "https://registry.yarnpkg.com/@arkecosystem/platform-sdk-intl/-/platform-sdk-intl-6.1.8.tgz#1385ea40f432a4c347c7153ade177ce64d50342d"
-  integrity sha512-OzdmM/G/5WHZCUEQsn8LTaq/IFDGcz6k/K5gTXqE4DICo7f3zit4A0E3FYMPNWJHTNGHUhNVU0a7Rr0P9pXO1w==
+"@arkecosystem/platform-sdk-lsk@^7.0.3":
+  version "7.0.3"
+  resolved "https://registry.yarnpkg.com/@arkecosystem/platform-sdk-lsk/-/platform-sdk-lsk-7.0.3.tgz#da994e97a373a0977d10f80384a38eef779e94e3"
+  integrity sha512-PsLYkQVrHcSNAucljkUbCpeJcIuPTllOuEGmXnbigW2LGyBm9YbHYuiTNhRw9Px3LJKtv1Bz6/5RiZD91obHGA==
   dependencies:
-    dayjs "^1.10.4"
-    dinero.js "^1.8.1"
-
-"@arkecosystem/platform-sdk-lsk@^6.0.29":
-  version "6.0.29"
-  resolved "https://registry.yarnpkg.com/@arkecosystem/platform-sdk-lsk/-/platform-sdk-lsk-6.0.29.tgz#0f59bb0db6c5ca527df3b397a60deacde6dda811"
-  integrity sha512-iH1m9ztGbT1IBbBVyNQUAjlR/Js5VVnPdeg6cVMluxKnAkN0ivzEJa2Acl1YOldYZNmhFVl9mq89qUaUzkYhgQ==
-  dependencies:
-    "@arkecosystem/platform-sdk" "6.0.29"
-    "@arkecosystem/platform-sdk-crypto" "6.0.29"
-    "@arkecosystem/platform-sdk-intl" "6.0.29"
-    "@arkecosystem/platform-sdk-support" "6.0.29"
+    "@arkecosystem/platform-sdk" "7.0.3"
+    "@arkecosystem/platform-sdk-crypto" "7.0.3"
+    "@arkecosystem/platform-sdk-intl" "7.0.3"
+    "@arkecosystem/platform-sdk-support" "7.0.3"
     "@liskhq/lisk-client" "^2.0"
     "@liskhq/lisk-cryptography" "^2.5"
     "@liskhq/lisk-transactions" "^2.0"
     dpos-ledger-api "^3.0.1"
 
-"@arkecosystem/platform-sdk-luna@^6.0.29":
-  version "6.0.29"
-  resolved "https://registry.yarnpkg.com/@arkecosystem/platform-sdk-luna/-/platform-sdk-luna-6.0.29.tgz#1dd2f0503c4243ebeeccafa74718bd55c7333ad3"
-  integrity sha512-Ir8tXm7qRt9WuVBKau0Al/i+jLTflMKc67ErWGQajXwugC+lcJnsOmcCHR2pZo3Fwhh95f52R18IEofQk6/kBA==
+"@arkecosystem/platform-sdk-luna@^7.0.3":
+  version "7.0.3"
+  resolved "https://registry.yarnpkg.com/@arkecosystem/platform-sdk-luna/-/platform-sdk-luna-7.0.3.tgz#40e26461958406ce52b28933ce72d0a08af5c88a"
+  integrity sha512-C+FQAmAQKGvJrLLil1qsNJice0zbZkDJOBrju1x7oL1unP3i+/fo+6zHolab0YaUZoa/q2+gHhTJSrLxze4/MQ==
   dependencies:
-    "@arkecosystem/platform-sdk" "6.0.29"
-    "@arkecosystem/platform-sdk-crypto" "6.0.29"
-    "@arkecosystem/platform-sdk-intl" "6.0.29"
-    "@arkecosystem/platform-sdk-support" "6.0.29"
+    "@arkecosystem/platform-sdk" "7.0.3"
+    "@arkecosystem/platform-sdk-crypto" "7.0.3"
+    "@arkecosystem/platform-sdk-intl" "7.0.3"
+    "@arkecosystem/platform-sdk-support" "7.0.3"
     "@terra-money/terra.js" "~1.7.0"
 
-"@arkecosystem/platform-sdk-markets@6.1.8":
-  version "6.1.8"
-  resolved "https://registry.yarnpkg.com/@arkecosystem/platform-sdk-markets/-/platform-sdk-markets-6.1.8.tgz#f0dc9ee34719a01886cc697ddb668090199fd610"
-  integrity sha512-xvDD+lGJgkF6/WGUG3ab6kg+8/RR5LXVkur3f+dW0irCf8s8mzKmQRvfo+XVImDBazsEH9tRRla8htZdS68tXg==
+"@arkecosystem/platform-sdk-markets@7.0.3":
+  version "7.0.3"
+  resolved "https://registry.yarnpkg.com/@arkecosystem/platform-sdk-markets/-/platform-sdk-markets-7.0.3.tgz#e66b702d5d3fe65a8def93cae03b25e2c7f00dd7"
+  integrity sha512-tsZaR4OX4ZQxhzJytq4etUUwyKelDV8sVfUaifTmpJfeFv1ZZq71YJblncSZu60Kx4Z5BjggdxFzJ/zkpGDKnw==
   dependencies:
-    "@arkecosystem/platform-sdk" "6.1.8"
-    "@arkecosystem/platform-sdk-coincap" "6.1.8"
-    "@arkecosystem/platform-sdk-coingecko" "6.1.8"
-    "@arkecosystem/platform-sdk-cryptocompare" "6.1.8"
+    "@arkecosystem/platform-sdk" "7.0.3"
+    "@arkecosystem/platform-sdk-coincap" "7.0.3"
+    "@arkecosystem/platform-sdk-coingecko" "7.0.3"
+    "@arkecosystem/platform-sdk-cryptocompare" "7.0.3"
 
-"@arkecosystem/platform-sdk-nano@^6.0.29":
-  version "6.0.29"
-  resolved "https://registry.yarnpkg.com/@arkecosystem/platform-sdk-nano/-/platform-sdk-nano-6.0.29.tgz#7a52811bd64d4f68c422789a6a6ae71b2e2f48d9"
-  integrity sha512-OPBZdoyOSJvTRpnmax+P0th2qtWuyi6RAK7BH4xhhx9JRlNujWJlfWRmFLfr8JQUq3AvK9XMobQlcOr39A8IyA==
+"@arkecosystem/platform-sdk-nano@^7.0.3":
+  version "7.0.3"
+  resolved "https://registry.yarnpkg.com/@arkecosystem/platform-sdk-nano/-/platform-sdk-nano-7.0.3.tgz#6f2f20ce5829d0d107015caf22d8178f9142a5ee"
+  integrity sha512-zrNF4Vg/KIdoVFEzCOxwZH38SO9KOpi4AppBlX1bYuylHxatGOFpO0ntK+1La8Vj9Cvm9Pxfu5M6Plu4+1MoIA==
   dependencies:
-    "@arkecosystem/platform-sdk" "6.0.29"
-    "@arkecosystem/platform-sdk-crypto" "6.0.29"
-    "@arkecosystem/platform-sdk-intl" "6.0.29"
-    "@arkecosystem/platform-sdk-support" "6.0.29"
+    "@arkecosystem/platform-sdk" "7.0.3"
+    "@arkecosystem/platform-sdk-crypto" "7.0.3"
+    "@arkecosystem/platform-sdk-intl" "7.0.3"
+    "@arkecosystem/platform-sdk-support" "7.0.3"
     nanocurrency "~2.5.0"
     nanocurrency-web "~1.3.2"
 
-"@arkecosystem/platform-sdk-neo@^6.0.29":
-  version "6.0.29"
-  resolved "https://registry.yarnpkg.com/@arkecosystem/platform-sdk-neo/-/platform-sdk-neo-6.0.29.tgz#7f9253d0de7caf82a6102db78ac446ba0811a013"
-  integrity sha512-GRhPnAsYwNRMGP+rj1mNQdGUBh/tY12KXNxkOqzoHAT6UEWV4KRnqXBM5AYw4b0XeTwVuaenvGodwku6ya+qgw==
+"@arkecosystem/platform-sdk-neo@^7.0.3":
+  version "7.0.3"
+  resolved "https://registry.yarnpkg.com/@arkecosystem/platform-sdk-neo/-/platform-sdk-neo-7.0.3.tgz#857828ea1d41f52bca6e10bac6fc9544d73ce285"
+  integrity sha512-F/R//XT34ApHjEOxDotCZ9mZUGbmt5wOvllW2dnCqk95fWakE9KoG54jvTOjprvjTq8ldI6WzJxbVBGnkaOjpQ==
   dependencies:
-    "@arkecosystem/platform-sdk" "6.0.29"
-    "@arkecosystem/platform-sdk-crypto" "6.0.29"
-    "@arkecosystem/platform-sdk-intl" "6.0.29"
-    "@arkecosystem/platform-sdk-support" "6.0.29"
+    "@arkecosystem/platform-sdk" "7.0.3"
+    "@arkecosystem/platform-sdk-crypto" "7.0.3"
+    "@arkecosystem/platform-sdk-intl" "7.0.3"
+    "@arkecosystem/platform-sdk-support" "7.0.3"
     "@cityofzion/neon-js" "^4.8.2"
     uuid "^8.3.2"
 
-"@arkecosystem/platform-sdk-news@^6.0.29":
-  version "6.0.29"
-  resolved "https://registry.yarnpkg.com/@arkecosystem/platform-sdk-news/-/platform-sdk-news-6.0.29.tgz#da30eafb6236406f71b97630ae6afec78fe6a466"
-  integrity sha512-dqsyp1VZhpFAMsSSCo3HIOWGX90Q6JFQgOv35ze4J9BiU3CI5vHVKfarfVyr+lAkx5SjSSx2LTVvU2nSqYgyMg==
+"@arkecosystem/platform-sdk-news@^7.0.3":
+  version "7.0.3"
+  resolved "https://registry.yarnpkg.com/@arkecosystem/platform-sdk-news/-/platform-sdk-news-7.0.3.tgz#311a1046416bf7412a1d0750bcd9244d91f946ab"
+  integrity sha512-ZNQpUDP+xaFNKzaPghHb+RbkCX/vpDrqX1HoEJeu2DRAKnGoXk9xFLFw3ZA1ozhlAzsoJAaMEl3PrbsAcL+5TQ==
   dependencies:
-    "@arkecosystem/platform-sdk" "6.0.29"
+    "@arkecosystem/platform-sdk" "7.0.3"
     rss-parser "^3.9.0"
 
-"@arkecosystem/platform-sdk-profiles@^6.1.8":
-  version "6.1.8"
-  resolved "https://registry.yarnpkg.com/@arkecosystem/platform-sdk-profiles/-/platform-sdk-profiles-6.1.8.tgz#d792ec83a96bec1891431c55b149ea5aed650c59"
-  integrity sha512-MA77M6ULj5jD/td3k5J4F2Q9psAoPedx+1S9fd0t94gpgrg6EV7TLDgle1pCbwJCR6K/YcYV38jkfHbcppEvwA==
+"@arkecosystem/platform-sdk-profiles@^7.0.3":
+  version "7.0.3"
+  resolved "https://registry.yarnpkg.com/@arkecosystem/platform-sdk-profiles/-/platform-sdk-profiles-7.0.3.tgz#f2b96fa3adec87931d1eb68a33c4f4bf56a3ce92"
+  integrity sha512-X5gEIrzSq9G1AJdRowXBZBdW1TZ9+1wLmzB+Kotd2avRQr42gBwbCOG1cHCikebeZ5pC/uoOofjkFL5rpB8H1A==
   dependencies:
-    "@arkecosystem/platform-sdk" "6.1.8"
-    "@arkecosystem/platform-sdk-crypto" "6.1.8"
-    "@arkecosystem/platform-sdk-intl" "6.1.8"
-    "@arkecosystem/platform-sdk-markets" "6.1.8"
-    "@arkecosystem/platform-sdk-support" "6.1.8"
+    "@arkecosystem/platform-sdk" "7.0.3"
+    "@arkecosystem/platform-sdk-crypto" "7.0.3"
+    "@arkecosystem/platform-sdk-intl" "7.0.3"
+    "@arkecosystem/platform-sdk-markets" "7.0.3"
+    "@arkecosystem/platform-sdk-support" "7.0.3"
     "@arkecosystem/utils" "^1.3.0"
     "@sindresorhus/slugify" "^1.1.0"
     "@vechain/picasso" "^2.1.1"
@@ -415,10 +387,10 @@
     uuid "^8.3.2"
     wif "^2.0.6"
 
-"@arkecosystem/platform-sdk-support@6.0.29", "@arkecosystem/platform-sdk-support@^6.0.29":
-  version "6.0.29"
-  resolved "https://registry.yarnpkg.com/@arkecosystem/platform-sdk-support/-/platform-sdk-support-6.0.29.tgz#33a490e9f43a61f990de4ca54264aaf373325fc6"
-  integrity sha512-lBzEz/c+ckQVeesUbfpHJneAfVe9/77ffqdkE/3v1MAvMHbG3+O7QvMb+RgFAXPJxq/T0kGG2Cj5faO3ZTRvAQ==
+"@arkecosystem/platform-sdk-support@7.0.3", "@arkecosystem/platform-sdk-support@^7.0.3":
+  version "7.0.3"
+  resolved "https://registry.yarnpkg.com/@arkecosystem/platform-sdk-support/-/platform-sdk-support-7.0.3.tgz#d3a227ab101d7090030a0f0837eb58e8ef32fc20"
+  integrity sha512-6Fpm9TR97kYfANoAtTFH1jFXkACQg+Z4xkVe8vBwU/cQGMPGXK25Zw+xVezc8nI/Smv/GTHA9NG68du4PEMlkg==
   dependencies:
     bad-words "^3.0.4"
     bignumber.js "^9.0.1"
@@ -429,86 +401,65 @@
     qrcode "^1.4.4"
     remarkable "^2.0.1"
 
-"@arkecosystem/platform-sdk-support@6.1.8":
-  version "6.1.8"
-  resolved "https://registry.yarnpkg.com/@arkecosystem/platform-sdk-support/-/platform-sdk-support-6.1.8.tgz#593479dec00bf82c53b88c8bd38ddf7998c4d68d"
-  integrity sha512-6Kyt6cMr4iWBIRihDoZ20f0cSSRGCROwzLG9ax1hiKVRkGsqVUC6Qifki64GzpAos/stIHS2FfPXyMOLq1QQHg==
+"@arkecosystem/platform-sdk-trx@^7.0.3":
+  version "7.0.3"
+  resolved "https://registry.yarnpkg.com/@arkecosystem/platform-sdk-trx/-/platform-sdk-trx-7.0.3.tgz#bcf74256e8f17cf5faa8395b21c64ac46beffe58"
+  integrity sha512-hNPA6mzd+OyVtVFVKx5lAa56KDsIdxPcfrVnr/HOWXnv0hUCOUg76PrzWW6WwgG3SXwQT8XxdAruLo0/OMZzkA==
   dependencies:
-    bad-words "^3.0.4"
-    bignumber.js "^9.0.1"
-    censorify-it "^3.0.2"
-    dot-prop "^6.0.0"
-    front-matter "^4.0.2"
-    joi "^17.4.0"
-    qrcode "^1.4.4"
-    remarkable "^2.0.1"
-
-"@arkecosystem/platform-sdk-trx@^6.0.29":
-  version "6.0.29"
-  resolved "https://registry.yarnpkg.com/@arkecosystem/platform-sdk-trx/-/platform-sdk-trx-6.0.29.tgz#6bcb3990cdc43b92e7ccb9d74ab8d23794d8d502"
-  integrity sha512-Rbz6wMyOQgXxLprhNwU2MJmo9cHtvG9dLJs2rkY9RrVniVQ47OWGgEFXtijebZrH5tXBp1S/8M9VLl3kyAEPyg==
-  dependencies:
-    "@arkecosystem/platform-sdk" "6.0.29"
-    "@arkecosystem/platform-sdk-crypto" "6.0.29"
-    "@arkecosystem/platform-sdk-intl" "6.0.29"
-    "@arkecosystem/platform-sdk-support" "6.0.29"
+    "@arkecosystem/platform-sdk" "7.0.3"
+    "@arkecosystem/platform-sdk-crypto" "7.0.3"
+    "@arkecosystem/platform-sdk-intl" "7.0.3"
+    "@arkecosystem/platform-sdk-support" "7.0.3"
     "@ledgerhq/hw-app-trx" "^5.50.0"
     tronweb "^3.2.6"
 
-"@arkecosystem/platform-sdk-xlm@^6.0.29":
-  version "6.0.29"
-  resolved "https://registry.yarnpkg.com/@arkecosystem/platform-sdk-xlm/-/platform-sdk-xlm-6.0.29.tgz#e352eac794fc296096ae2f72057ff3504388ef9c"
-  integrity sha512-Fu8/qXiUWZOiL6YGfNE8mQvY326UT4PWTak0mH2NJYLVmuZ/4mpTVROSnyN3YGEcOSZKz9yG1B9ots3n2yuw1g==
+"@arkecosystem/platform-sdk-xlm@^7.0.3":
+  version "7.0.3"
+  resolved "https://registry.yarnpkg.com/@arkecosystem/platform-sdk-xlm/-/platform-sdk-xlm-7.0.3.tgz#372e5c50c1b788bdad1938c1f949821f8843d8b3"
+  integrity sha512-ex/DX2Xx6wASqDX+8CDSBtvLsYJbDNOOfDRPfXsTKomJJU0oQDX4JUM7TpUCS+ENBGRDUU4l50GfYbNzWtEVVA==
   dependencies:
-    "@arkecosystem/platform-sdk" "6.0.29"
-    "@arkecosystem/platform-sdk-crypto" "6.0.29"
-    "@arkecosystem/platform-sdk-intl" "6.0.29"
-    "@arkecosystem/platform-sdk-support" "6.0.29"
+    "@arkecosystem/platform-sdk" "7.0.3"
+    "@arkecosystem/platform-sdk-crypto" "7.0.3"
+    "@arkecosystem/platform-sdk-intl" "7.0.3"
+    "@arkecosystem/platform-sdk-support" "7.0.3"
     "@ledgerhq/hw-app-str" "^5.50.0"
     stellar-hd-wallet "^0.0.10"
     stellar-sdk "^8.1.1"
     uuid "^8.3.2"
 
-"@arkecosystem/platform-sdk-xrp@^6.0.29":
-  version "6.0.29"
-  resolved "https://registry.yarnpkg.com/@arkecosystem/platform-sdk-xrp/-/platform-sdk-xrp-6.0.29.tgz#a9a419b99899f521ecbdd7a47af13a35f827d672"
-  integrity sha512-odyYuzcVU2NsZQ0PxemPgyaKb5FFxD3crYAYtdO09IGhJjyOozA4owufnDj/oqDykP8W5eOc54yN8VwmN3xcRg==
+"@arkecosystem/platform-sdk-xrp@^7.0.3":
+  version "7.0.3"
+  resolved "https://registry.yarnpkg.com/@arkecosystem/platform-sdk-xrp/-/platform-sdk-xrp-7.0.3.tgz#88b68fcd7e0f1928512e90ff545c25cf641a2ddc"
+  integrity sha512-rcsYuhrdgvcy3/Ry4p1Fo1Kh/WpgH2pORBNE9VD5G+wbKbtluZVqIea58nlpuTKKSQE3thRfmujqjmu3ePDfwQ==
   dependencies:
-    "@arkecosystem/platform-sdk" "6.0.29"
-    "@arkecosystem/platform-sdk-crypto" "6.0.29"
-    "@arkecosystem/platform-sdk-intl" "6.0.29"
-    "@arkecosystem/platform-sdk-support" "6.0.29"
+    "@arkecosystem/platform-sdk" "7.0.3"
+    "@arkecosystem/platform-sdk-crypto" "7.0.3"
+    "@arkecosystem/platform-sdk-intl" "7.0.3"
+    "@arkecosystem/platform-sdk-support" "7.0.3"
     "@ledgerhq/hw-app-xrp" "^5.50.0"
     bignumber.js "^9.0.1"
     ripple-keypairs "^1.0.3"
     ripple-lib "^1.9.4"
 
-"@arkecosystem/platform-sdk@6.0.29", "@arkecosystem/platform-sdk@^6.0.29":
-  version "6.0.29"
-  resolved "https://registry.yarnpkg.com/@arkecosystem/platform-sdk/-/platform-sdk-6.0.29.tgz#81d921b374c3a0e96e992fceb96888562da278b6"
-  integrity sha512-ybscqFL3hAQxD6G9rsNOHRDfBiMEV63eWTVKF+fXV+x/nwqqyXYjD0/4EmKooKDEpm3InbVxWHIUKLi73zkulA==
+"@arkecosystem/platform-sdk-zil@^7.0.3":
+  version "7.0.3"
+  resolved "https://registry.yarnpkg.com/@arkecosystem/platform-sdk-zil/-/platform-sdk-zil-7.0.3.tgz#85105b09c0addb9dfc4feab82d3cb5dc4a4b9315"
+  integrity sha512-6EO8Zj4afavytQYk5WAgiLo9ngwYx2PaoLZ894QfnL6HvlSE1uLE+2fQ8dF5zxW6OrkVDgWshfYsz+oXLXH+oQ==
   dependencies:
-    "@arkecosystem/platform-sdk-intl" "6.0.29"
-    "@arkecosystem/platform-sdk-support" "6.0.29"
-    bad-words "^3.0.4"
-    bent "^7.3"
-    bignumber.js "^9.0.1"
-    bip32 "^2.0.6"
-    bip39 "^3.0.4"
-    censorify-it "^3.0.2"
-    dayjs "^1.10.4"
-    dot-prop "^6.0.0"
-    joi "^17.4.0"
-    node-emoji "^1.10.0"
-    type-fest "^1.0.2"
+    "@arkecosystem/platform-sdk" "7.0.3"
+    "@arkecosystem/platform-sdk-crypto" "7.0.3"
+    "@arkecosystem/platform-sdk-intl" "7.0.3"
+    "@arkecosystem/platform-sdk-support" "7.0.3"
+    "@zilliqa-js/account" "^2.2.1"
+    "@zilliqa-js/zilliqa" "^2.2.1"
 
-"@arkecosystem/platform-sdk@6.1.8":
-  version "6.1.8"
-  resolved "https://registry.yarnpkg.com/@arkecosystem/platform-sdk/-/platform-sdk-6.1.8.tgz#3ca76768edce098026a3e29fefb97d81e95d1e41"
-  integrity sha512-U2bADPnADKZXGqEJREtWSbsIzj+WYNMBigrY2MMuXUmjOpzQAKe0ikCtktYNiVJrqNbv6pdyNq9KfqlvuEzjJg==
+"@arkecosystem/platform-sdk@7.0.3", "@arkecosystem/platform-sdk@^7.0.3":
+  version "7.0.3"
+  resolved "https://registry.yarnpkg.com/@arkecosystem/platform-sdk/-/platform-sdk-7.0.3.tgz#0d999a724c183d056192e601616d014a44b1dbd6"
+  integrity sha512-kFi0OuFC4D7e/441lGjZz+ZsasVak/yp0rw0FwKkk+qvwPFhwCjD44BDR25AQspyRgl2vnN+IqzytJxSPCjuhg==
   dependencies:
-    "@arkecosystem/platform-sdk-intl" "6.1.8"
-    "@arkecosystem/platform-sdk-support" "6.1.8"
+    "@arkecosystem/platform-sdk-intl" "7.0.3"
+    "@arkecosystem/platform-sdk-support" "7.0.3"
     bad-words "^3.0.4"
     bent "^7.3"
     bignumber.js "^9.0.1"
@@ -5912,6 +5863,13 @@
   dependencies:
     "@types/node" "*"
 
+"@types/bip39@^2.4.0":
+  version "2.4.2"
+  resolved "https://registry.yarnpkg.com/@types/bip39/-/bip39-2.4.2.tgz#f5d6617212be496bb998d3969f657f77a10c5287"
+  integrity sha512-Vo9lqOIRq8uoIzEVrV87ZvcIM0PN9t0K3oYZ/CS61fIYKCBdOIM7mlWzXuRvSXrDtVa1uUO2w1cdfufxTC0bzg==
+  dependencies:
+    "@types/node" "*"
+
 "@types/bn.js@*", "@types/bn.js@4.11.6", "@types/bn.js@^4.11.3", "@types/bn.js@^4.11.5", "@types/bn.js@^4.11.6":
   version "4.11.6"
   resolved "https://registry.yarnpkg.com/@types/bn.js/-/bn.js-4.11.6.tgz#c306c70d9358aaea33cd4eda092a742b9505967c"
@@ -6116,6 +6074,13 @@
   dependencies:
     "@types/node" "*"
 
+"@types/hdkey@^0.7.0":
+  version "0.7.1"
+  resolved "https://registry.yarnpkg.com/@types/hdkey/-/hdkey-0.7.1.tgz#9bc63ebbe96b107b277b65ea7a95442a677d0d61"
+  integrity sha512-4Kkr06hq+R8a9EzVNqXGOY2x1xA7dhY6qlp6OvaZ+IJy1BCca1Cv126RD9X7CMJoXoLo8WvAizy8gQHpqW6K0Q==
+  dependencies:
+    "@types/node" "*"
+
 "@types/history@*":
   version "4.7.7"
   resolved "https://registry.yarnpkg.com/@types/history/-/history-4.7.7.tgz#613957d900fab9ff84c8dfb24fa3eef0c2a40896"
@@ -6221,7 +6186,7 @@
   resolved "https://registry.yarnpkg.com/@types/lodash/-/lodash-4.14.165.tgz#74d55d947452e2de0742bad65270433b63a8c30f"
   integrity sha512-tjSSOTHhI5mCHTy/OOXYIhi2Wt1qcbHmuXD1Ha7q70CgI/I71afO4XtLb/cVexki1oVYchpul/TOuu3Arcdxrg==
 
-"@types/long@*", "@types/long@^4.0.1":
+"@types/long@*", "@types/long@^4.0.0", "@types/long@^4.0.1":
   version "4.0.1"
   resolved "https://registry.yarnpkg.com/@types/long/-/long-4.0.1.tgz#459c65fa1867dafe6a8f322c4c51695663cc55e9"
   integrity sha512-5tXH6Bx/kNGd3MgffdmP4dy2Z+G4eaXw0SE81Tq3BNadtnMR5/ySMzX4SLEzHJzSmPNn4HIdpQsBvXMUykr58w==
@@ -6952,6 +6917,112 @@
   version "4.2.2"
   resolved "https://registry.yarnpkg.com/@xtuc/long/-/long-4.2.2.tgz#d291c6a4e97989b5c61d9acf396ae4fe133a718d"
   integrity sha512-NuHqBY1PB/D8xU6s/thBgOAiAP7HOYDQ32+BFZILJ8ivkUkAHQnWfn6WhL79Owj1qmUnoN/YPhktdIoucipkAQ==
+
+"@zilliqa-js/account@2.2.1", "@zilliqa-js/account@^2.2.1":
+  version "2.2.1"
+  resolved "https://registry.yarnpkg.com/@zilliqa-js/account/-/account-2.2.1.tgz#f12c2ef5219a899bd5c64077fbf0a4b677189ce4"
+  integrity sha512-egq/S1KyrH8qlmMBKHaAmLU/RLl66JYPDEPe3n97NP/yvrbPTt7sEfgfOwL1IO0hIBLlJPQYIdKtlYHzn22BLw==
+  dependencies:
+    "@types/bip39" "^2.4.0"
+    "@types/hdkey" "^0.7.0"
+    "@zilliqa-js/core" "2.2.1"
+    "@zilliqa-js/crypto" "2.2.1"
+    "@zilliqa-js/proto" "2.2.0"
+    "@zilliqa-js/util" "2.2.0"
+    bip39 "^2.5.0"
+    hdkey "^1.1.0"
+
+"@zilliqa-js/blockchain@2.2.1":
+  version "2.2.1"
+  resolved "https://registry.yarnpkg.com/@zilliqa-js/blockchain/-/blockchain-2.2.1.tgz#bed1811bc5af4ce8cd7f32620a1aa4e368cad975"
+  integrity sha512-GiUzRAceOgsF9Nk/LzdionZt6QlLMDH72Z4/qt1SQY2vdK0rz9fbjBtQbZjVjfvwvGSjmOBo3KVYPhviJHuGYQ==
+  dependencies:
+    "@zilliqa-js/account" "2.2.1"
+    "@zilliqa-js/contract" "2.2.1"
+    "@zilliqa-js/core" "2.2.1"
+    "@zilliqa-js/crypto" "2.2.1"
+    "@zilliqa-js/util" "2.2.0"
+    utility-types "^3.4.1"
+
+"@zilliqa-js/contract@2.2.1":
+  version "2.2.1"
+  resolved "https://registry.yarnpkg.com/@zilliqa-js/contract/-/contract-2.2.1.tgz#2b123f0a0ce77f1a20b10a4d2effdffdc260330d"
+  integrity sha512-DmhElqUbgyUNxwKwKSJq6L8WfxOBVrrQ72crHrnubIgnhN3uNRaS9lZ4oAMAi1o6eSYe94GCBHGOZ5imSYxFrg==
+  dependencies:
+    "@zilliqa-js/account" "2.2.1"
+    "@zilliqa-js/blockchain" "2.2.1"
+    "@zilliqa-js/core" "2.2.1"
+    "@zilliqa-js/crypto" "2.2.1"
+    "@zilliqa-js/util" "2.2.0"
+    hash.js "^1.1.5"
+    utility-types "^2.1.0"
+
+"@zilliqa-js/core@2.2.1":
+  version "2.2.1"
+  resolved "https://registry.yarnpkg.com/@zilliqa-js/core/-/core-2.2.1.tgz#c151d1e2cd530f8928236d68835f0ff7faa119b1"
+  integrity sha512-dEViTcv54waiDckyWROgBcuwDX8iugSKY/Fooa2RynDGHTlb4XvvAxmShTy4+OF1tldhV86cE9nsDW//ICTZPQ==
+  dependencies:
+    "@zilliqa-js/crypto" "2.2.1"
+    "@zilliqa-js/util" "2.2.0"
+    cross-fetch "^2.2.2"
+    mitt "^1.1.3"
+
+"@zilliqa-js/crypto@2.2.1":
+  version "2.2.1"
+  resolved "https://registry.yarnpkg.com/@zilliqa-js/crypto/-/crypto-2.2.1.tgz#c1468244f35a9ebf7f0ee27881e0a718c09f8d97"
+  integrity sha512-80fCuf6Bjpci+mmTfBp9r+umhWbxji8WE4Ii8jz1QtszkWBXLUvXhw6xFv0txgt74ZmUj12Ot1MENALAFEJEDg==
+  dependencies:
+    "@zilliqa-js/util" "2.2.0"
+    aes-js "^3.1.1"
+    bsert "^0.0.4"
+    elliptic "^6.5.0"
+    hash.js "^1.1.5"
+    hmac-drbg "^1.0.1"
+    pbkdf2 "^3.0.16"
+    randombytes "^2.0.6"
+    scrypt-js "^3.0.1"
+    scryptsy "^2.1.0"
+    sodium-native "^3.2.0"
+    uuid "^3.3.2"
+
+"@zilliqa-js/proto@2.2.0":
+  version "2.2.0"
+  resolved "https://registry.yarnpkg.com/@zilliqa-js/proto/-/proto-2.2.0.tgz#c3fea22daf4a8e385e5f239119765a0d60f18df7"
+  integrity sha512-0QPNJdvafT0ItPGrqEff7KMYNCT/DkWCn0/x2/UwVoVANy5BHL3WkwDV3y49KthVwdZUotQVzRaweHTs6PIcuA==
+  dependencies:
+    protobufjs "^6.8.8"
+
+"@zilliqa-js/subscriptions@2.2.1":
+  version "2.2.1"
+  resolved "https://registry.yarnpkg.com/@zilliqa-js/subscriptions/-/subscriptions-2.2.1.tgz#f334ef896521d3b6d5c87507cee5acf6cfeeb6fd"
+  integrity sha512-MIz7i1kRCF7TpDzmpOFOhL13xl2CxCfmzpXvaBF1keGcOrqf8o/rgF7YARZ2H5YXobLlGDP5Gjm2qcShkiYfWw==
+  dependencies:
+    "@zilliqa-js/core" "2.2.1"
+    mock-socket "^9.0.2"
+    websocket "^1.0.28"
+
+"@zilliqa-js/util@2.2.0":
+  version "2.2.0"
+  resolved "https://registry.yarnpkg.com/@zilliqa-js/util/-/util-2.2.0.tgz#6f64adc5494596c93dd0eff566f830b316eba677"
+  integrity sha512-bzThiraMQKDumhQY0HMsutX28HPgqB+KKqiet8M8QQbCFvQODxAGpuxJX6bZiX+6K6tZUk8yDSW8Ri3dgOdRDg==
+  dependencies:
+    "@types/bn.js" "^4.11.3"
+    "@types/long" "^4.0.0"
+    bn.js "^4.11.8"
+    long "^4.0.0"
+
+"@zilliqa-js/zilliqa@^2.2.1":
+  version "2.2.1"
+  resolved "https://registry.yarnpkg.com/@zilliqa-js/zilliqa/-/zilliqa-2.2.1.tgz#7d39c8e8459b050033bd5f77126a9fb0fd59d8f6"
+  integrity sha512-gN3VnuwSvK7SFlzRiXUg18In9rBHn33iZRfmVrggRqTtwG04Dv4AyiCG37+ieNG5hQHI5O+gRrCIPSVG24/n2w==
+  dependencies:
+    "@zilliqa-js/account" "2.2.1"
+    "@zilliqa-js/blockchain" "2.2.1"
+    "@zilliqa-js/contract" "2.2.1"
+    "@zilliqa-js/core" "2.2.1"
+    "@zilliqa-js/crypto" "2.2.1"
+    "@zilliqa-js/subscriptions" "2.2.1"
+    "@zilliqa-js/util" "2.2.0"
 
 "@zondax/ledger-polkadot@^0.13.0":
   version "0.13.6"
@@ -8327,7 +8398,7 @@ bip39@^3.0.4:
     pbkdf2 "^3.0.9"
     randombytes "^2.0.1"
 
-bip66@^1.1.0:
+bip66@^1.1.0, bip66@^1.1.5:
   version "1.1.5"
   resolved "https://registry.yarnpkg.com/bip66/-/bip66-1.1.5.tgz#01fa8748785ca70955d5011217d1b3139969ca22"
   integrity sha1-AfqHSHhcpwlV1QESF9GzE5lpyiI=
@@ -8583,7 +8654,7 @@ browser-resolve@^1.11.3:
   dependencies:
     resolve "1.1.7"
 
-browserify-aes@^1.0.0, browserify-aes@^1.0.1, browserify-aes@^1.0.4, browserify-aes@^1.2.0:
+browserify-aes@^1.0.0, browserify-aes@^1.0.1, browserify-aes@^1.0.4, browserify-aes@^1.0.6, browserify-aes@^1.2.0:
   version "1.2.0"
   resolved "https://registry.yarnpkg.com/browserify-aes/-/browserify-aes-1.2.0.tgz#326734642f403dabc3003209853bb70ad428ef48"
   integrity sha512-+7CHXqGuspUn/Sl5aO7Ea0xWGAtETPXNSAjHo48JfLdPWcMng33Xe4znFvQweqc/uzk5zSOI3H52CYnjCfb5hA==
@@ -8708,6 +8779,11 @@ bser@2.1.1:
   integrity sha512-gQxTNE/GAfIIrmHLUE3oJyp5FO6HRBfhjnw4/wMmA63ZGDJnWBmgY/lyQBpnDUkGmAhbSe39tx2d/iTOAfglwQ==
   dependencies:
     node-int64 "^0.4.0"
+
+bsert@^0.0.4:
+  version "0.0.4"
+  resolved "https://registry.yarnpkg.com/bsert/-/bsert-0.0.4.tgz#2b3c236357923f0625f948802a5f9b66c0383d0b"
+  integrity sha512-VReLe1aTaHRmf80YLOHUk8ONQ48SjseZP76GlNIDheD5REYByn/Mm9yrtI0/ZCaFrcfxzgpiw1/hMMCUOSMa3w==
 
 bsert@~0.0.10:
   version "0.0.10"
@@ -10066,6 +10142,14 @@ cross-env@^7.0.3:
   dependencies:
     cross-spawn "^7.0.1"
 
+cross-fetch@^2.2.2:
+  version "2.2.3"
+  resolved "https://registry.yarnpkg.com/cross-fetch/-/cross-fetch-2.2.3.tgz#e8a0b3c54598136e037f8650f8e823ccdfac198e"
+  integrity sha512-PrWWNH3yL2NYIb/7WF/5vFG3DCQiXDOVf8k3ijatbrtnwNuhMWLC7YF7uqf53tbTFDzHIUD8oITw4Bxt8ST3Nw==
+  dependencies:
+    node-fetch "2.1.2"
+    whatwg-fetch "2.0.4"
+
 cross-fetch@^3.0.4:
   version "3.0.5"
   resolved "https://registry.yarnpkg.com/cross-fetch/-/cross-fetch-3.0.5.tgz#2739d2981892e7ab488a7ad03b92df2816e03f4c"
@@ -11328,6 +11412,15 @@ dpos-ledger-api@^3.0.1:
     bip32-path "^0.4.2"
     crc "^3.5.0"
 
+drbg.js@^1.0.1:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/drbg.js/-/drbg.js-1.0.1.tgz#3e36b6c42b37043823cdbc332d58f31e2445480b"
+  integrity sha1-Pja2xCs3BDgjzbwzLVjzHiRFSAs=
+  dependencies:
+    browserify-aes "^1.0.6"
+    create-hash "^1.1.2"
+    create-hmac "^1.1.4"
+
 dset@^2.0.1:
   version "2.0.1"
   resolved "https://registry.yarnpkg.com/dset/-/dset-2.0.1.tgz#a15fff3d1e4d60ac0c95634625cbd5441a76deb1"
@@ -11655,7 +11748,7 @@ elliptic@6.5.3, elliptic@^6.4.0, elliptic@^6.5.2, elliptic@^6.5.3:
     minimalistic-assert "^1.0.0"
     minimalistic-crypto-utils "^1.0.0"
 
-elliptic@6.5.4, elliptic@^6.4.1, elliptic@^6.5.4:
+elliptic@6.5.4, elliptic@^6.4.1, elliptic@^6.5.0, elliptic@^6.5.4:
   version "6.5.4"
   resolved "https://registry.yarnpkg.com/elliptic/-/elliptic-6.5.4.tgz#da37cebd31e79a1367e941b592ed1fbebd58abbb"
   integrity sha512-iLhC6ULemrljPZb+QutR5TQGB+pdW6KGD5RSegS+8sorOZT+rdQFbsQFJgvN3eRqNALqJer4oQ16YvJHlU8hzQ==
@@ -14010,13 +14103,22 @@ hash.js@1.1.3:
     inherits "^2.0.3"
     minimalistic-assert "^1.0.0"
 
-hash.js@1.1.7, hash.js@^1.0.0, hash.js@^1.0.3, hash.js@^1.1.7:
+hash.js@1.1.7, hash.js@^1.0.0, hash.js@^1.0.3, hash.js@^1.1.5, hash.js@^1.1.7:
   version "1.1.7"
   resolved "https://registry.yarnpkg.com/hash.js/-/hash.js-1.1.7.tgz#0babca538e8d4ee4a0f8988d68866537a003cf42"
   integrity sha512-taOaskGt4z4SOANNseOviYDvjEJinIkRgmp7LbKP2YTTmVxWBl87s/uzK9r+44BclBSp2X7K1hqeNfz9JbBeXA==
   dependencies:
     inherits "^2.0.3"
     minimalistic-assert "^1.0.1"
+
+hdkey@^1.1.0:
+  version "1.1.2"
+  resolved "https://registry.yarnpkg.com/hdkey/-/hdkey-1.1.2.tgz#c60f9cf6f90fbf24a8a52ea06893f36a0108cd3e"
+  integrity sha512-PTQ4VKu0oRnCrYfLp04iQZ7T2Cxz0UsEXYauk2j8eh6PJXCpbXuCFhOmtIFtbET0i3PMWmHN9J11gU8LEgUljQ==
+  dependencies:
+    bs58check "^2.1.2"
+    safe-buffer "^5.1.1"
+    secp256k1 "^3.0.1"
 
 hdkey@^2.0.1:
   version "2.0.1"
@@ -17456,6 +17558,11 @@ mississippi@^3.0.0:
     stream-each "^1.1.0"
     through2 "^2.0.0"
 
+mitt@^1.1.3:
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/mitt/-/mitt-1.2.0.tgz#cb24e6569c806e31bd4e3995787fe38a04fdf90d"
+  integrity sha512-r6lj77KlwqLhIUku9UWYes7KJtsczvolZkzp8hbaDPPaE24OmWl5s539Mytlj22siEQKosZ26qCBgda2PKwoJw==
+
 mixin-deep@^1.2.0:
   version "1.3.2"
   resolved "https://registry.yarnpkg.com/mixin-deep/-/mixin-deep-1.3.2.tgz#1120b43dc359a785dce65b55b82e257ccf479566"
@@ -17500,6 +17607,13 @@ mock-fs@^4.1.0:
   version "4.12.0"
   resolved "https://registry.yarnpkg.com/mock-fs/-/mock-fs-4.12.0.tgz#a5d50b12d2d75e5bec9dac3b67ffe3c41d31ade4"
   integrity sha512-/P/HtrlvBxY4o/PzXY9cCNBrdylDNxg7gnrv2sMNxj+UJ2m8jSpl0/A6fuJeNAWr99ZvGWH8XCbE0vmnM5KupQ==
+
+mock-socket@^9.0.2:
+  version "9.0.3"
+  resolved "https://registry.yarnpkg.com/mock-socket/-/mock-socket-9.0.3.tgz#4bc6d2aea33191e4fed5ec71f039e2bbeb95e414"
+  integrity sha512-SxIiD2yE/By79p3cNAAXyLQWTvEFNEzcAO7PH+DzRqKSFaplAPFjiQLmw8ofmpCsZf+Rhfn2/xCJagpdGmYdTw==
+  dependencies:
+    url-parse "^1.4.4"
 
 mockdate@^3.0.5:
   version "3.0.5"
@@ -17877,6 +17991,11 @@ node-emoji@^1.10.0, node-emoji@^1.8.1:
   integrity sha512-Yt3384If5H6BYGVHiHwTL+99OzJKHhgp82S8/dktEK73T26BazdgZ4JZh92xSVtGNJvz9UbXdNAc5hcrXV42vw==
   dependencies:
     lodash.toarray "^4.4.0"
+
+node-fetch@2.1.2:
+  version "2.1.2"
+  resolved "https://registry.yarnpkg.com/node-fetch/-/node-fetch-2.1.2.tgz#ab884e8e7e57e38a944753cec706f788d1768bb5"
+  integrity sha1-q4hOjn5X44qUR1POxwb3iNF2i7U=
 
 node-fetch@2.6.0:
   version "2.6.0"
@@ -18807,6 +18926,17 @@ pathval@^1.1.0:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/pathval/-/pathval-1.1.0.tgz#b942e6d4bde653005ef6b71361def8727d0645e0"
   integrity sha1-uULm1L3mUwBe9rcTYd74cn0GReA=
+
+pbkdf2@^3.0.16:
+  version "3.1.2"
+  resolved "https://registry.yarnpkg.com/pbkdf2/-/pbkdf2-3.1.2.tgz#dd822aa0887580e52f1a039dc3eda108efae3075"
+  integrity sha512-iuh7L6jA7JEGu2WxDwtQP1ddOpaJNC4KlDEFfdQajSGgGPNi4OyDc2R7QnbY2bR9QjBVGwgvTdNJZoE7RaxUMA==
+  dependencies:
+    create-hash "^1.1.2"
+    create-hmac "^1.1.4"
+    ripemd160 "^2.0.1"
+    safe-buffer "^5.0.1"
+    sha.js "^2.4.8"
 
 pbkdf2@^3.0.17, pbkdf2@^3.0.3, pbkdf2@^3.0.9:
   version "3.1.1"
@@ -19948,7 +20078,7 @@ proto-list@~1.2.1:
   resolved "https://registry.yarnpkg.com/proto-list/-/proto-list-1.2.4.tgz#212d5bfe1318306a420f6402b8e26ff39647a849"
   integrity sha1-IS1b/hMYMGpCD2QCuOJv85ZHqEk=
 
-protobufjs@^6.10.2:
+protobufjs@^6.10.2, protobufjs@^6.8.8:
   version "6.11.2"
   resolved "https://registry.yarnpkg.com/protobufjs/-/protobufjs-6.11.2.tgz#de39fabd4ed32beaa08e9bb1e30d08544c1edf8b"
   integrity sha512-4BQJoPooKJl2G9j3XftkIXjoC9C0Av2NOrWmbLWT1vH32GcSUHjM0Arra6UfTsVyfMAuFzaLucXn1sadxJydAw==
@@ -21478,6 +21608,20 @@ secp256k1@4.0.2, secp256k1@^4.0.0, secp256k1@^4.0.1, secp256k1@^4.0.2:
     node-addon-api "^2.0.0"
     node-gyp-build "^4.2.0"
 
+secp256k1@^3.0.1:
+  version "3.8.0"
+  resolved "https://registry.yarnpkg.com/secp256k1/-/secp256k1-3.8.0.tgz#28f59f4b01dbee9575f56a47034b7d2e3b3b352d"
+  integrity sha512-k5ke5avRZbtl9Tqx/SA7CbY3NF6Ro+Sj9cZxezFzuBlLDmyqPiL8hJJ+EmzD8Ig4LUDByHJ3/iPOVoRixs/hmw==
+  dependencies:
+    bindings "^1.5.0"
+    bip66 "^1.1.5"
+    bn.js "^4.11.8"
+    create-hash "^1.2.0"
+    drbg.js "^1.0.1"
+    elliptic "^6.5.2"
+    nan "^2.14.0"
+    safe-buffer "^5.1.2"
+
 secure-random@1.1.2:
   version "1.1.2"
   resolved "https://registry.yarnpkg.com/secure-random/-/secure-random-1.1.2.tgz#ed103b460a851632d420d46448b2a900a41e7f7c"
@@ -21927,6 +22071,14 @@ sodium-native@^2.3.0:
     ini "^1.3.5"
     nan "^2.14.0"
     node-gyp-build "^4.1.0"
+
+sodium-native@^3.2.0:
+  version "3.2.1"
+  resolved "https://registry.yarnpkg.com/sodium-native/-/sodium-native-3.2.1.tgz#91cd6a175d4b58b038eeccc7078ebc33202328be"
+  integrity sha512-EgDZ/Z7PxL2kCasKk7wnRkV8W9kvwuIlHuHXAxkQm3FF0MgVsjyLBXGjSRGhjE6u7rhSpk3KaMfFM23bfMysIQ==
+  dependencies:
+    ini "^1.3.5"
+    node-gyp-build "^4.2.0"
 
 sort-keys-length@^1.0.0:
   version "1.0.1"
@@ -23843,7 +23995,7 @@ url-parse-lax@^4.0.0:
   dependencies:
     prepend-http "^3.0.1"
 
-url-parse@^1.4.3, url-parse@^1.4.7:
+url-parse@^1.4.3, url-parse@^1.4.4, url-parse@^1.4.7:
   version "1.5.1"
   resolved "https://registry.yarnpkg.com/url-parse/-/url-parse-1.5.1.tgz#d5fa9890af8a5e1f274a2c98376510f6425f6e3b"
   integrity sha512-HOfCOUJt7iSYzEx/UqgtwKRMC6EU91NFhsCHMv9oM03VJcVo2Qrp8T8kI9D7amFf1cu+/3CEhgb3rF9zL7k85Q==
@@ -23971,7 +24123,12 @@ utila@^0.4.0, utila@~0.4:
   resolved "https://registry.yarnpkg.com/utila/-/utila-0.4.0.tgz#8a16a05d445657a3aea5eecc5b12a4fa5379772c"
   integrity sha1-ihagXURWV6Oupe7MWxKk+lN5dyw=
 
-utility-types@^3.7.0:
+utility-types@^2.1.0:
+  version "2.1.0"
+  resolved "https://registry.yarnpkg.com/utility-types/-/utility-types-2.1.0.tgz#0c78fc9f7eb424d14302222b4ddd13fdb17f44ab"
+  integrity sha512-/nP2gqavggo6l38rtQI/CdeV+2fmBGXVvHgj9kV2MAnms3TIi77Mz9BtapPFI0+GZQCqqom0vACQ+VlTTaCovw==
+
+utility-types@^3.4.1, utility-types@^3.7.0:
   version "3.10.0"
   resolved "https://registry.yarnpkg.com/utility-types/-/utility-types-3.10.0.tgz#ea4148f9a741015f05ed74fd615e1d20e6bed82b"
   integrity sha512-O11mqxmi7wMKCo6HKFt5AhO4BwY3VV68YU07tgxfz8zJTIxr4BpsezN49Ffwy9j3ZpwwJp4fkRwjRzq3uWE6Rg==
@@ -24651,10 +24808,10 @@ websocket-extensions@>=0.1.1:
   resolved "https://registry.yarnpkg.com/websocket-extensions/-/websocket-extensions-0.1.4.tgz#7f8473bc839dfd87608adb95d7eb075211578a42"
   integrity sha512-OqedPIGOfsDlo31UNwYbCFMSaO9m9G/0faIHj5/dZFDMFqPTcx6UwqyOy3COEaEOg/9VsGIpdqn62W5KhoKSpg==
 
-websocket@^1.0.32:
-  version "1.0.32"
-  resolved "https://registry.yarnpkg.com/websocket/-/websocket-1.0.32.tgz#1f16ddab3a21a2d929dec1687ab21cfdc6d3dbb1"
-  integrity sha512-i4yhcllSP4wrpoPMU2N0TQ/q0O94LRG/eUQjEAamRltjQ1oT1PFFKOG4i877OlJgCG8rw6LrrowJp+TYCEWF7Q==
+websocket@^1.0.28, websocket@^1.0.33:
+  version "1.0.34"
+  resolved "https://registry.yarnpkg.com/websocket/-/websocket-1.0.34.tgz#2bdc2602c08bf2c82253b730655c0ef7dcab3111"
+  integrity sha512-PRDso2sGwF6kM75QykIesBijKSVceR6jL2G8NGYyq2XrItNC2P5/qL5XeR056GhA+Ly7JMFvJb9I312mJfmqnQ==
   dependencies:
     bufferutil "^4.0.1"
     debug "^2.2.0"
@@ -24663,10 +24820,10 @@ websocket@^1.0.32:
     utf-8-validate "^5.0.2"
     yaeti "^0.0.6"
 
-websocket@^1.0.33:
-  version "1.0.34"
-  resolved "https://registry.yarnpkg.com/websocket/-/websocket-1.0.34.tgz#2bdc2602c08bf2c82253b730655c0ef7dcab3111"
-  integrity sha512-PRDso2sGwF6kM75QykIesBijKSVceR6jL2G8NGYyq2XrItNC2P5/qL5XeR056GhA+Ly7JMFvJb9I312mJfmqnQ==
+websocket@^1.0.32:
+  version "1.0.32"
+  resolved "https://registry.yarnpkg.com/websocket/-/websocket-1.0.32.tgz#1f16ddab3a21a2d929dec1687ab21cfdc6d3dbb1"
+  integrity sha512-i4yhcllSP4wrpoPMU2N0TQ/q0O94LRG/eUQjEAamRltjQ1oT1PFFKOG4i877OlJgCG8rw6LrrowJp+TYCEWF7Q==
   dependencies:
     bufferutil "^4.0.1"
     debug "^2.2.0"
@@ -24681,6 +24838,11 @@ whatwg-encoding@^1.0.1, whatwg-encoding@^1.0.3, whatwg-encoding@^1.0.5:
   integrity sha512-b5lim54JOPN9HtzvK9HFXvBma/rnfFeqsic0hSpjtDbVxR3dJKLc+KB4V6GgiGOvl7CY/KNh8rxSo9DKQrnUEw==
   dependencies:
     iconv-lite "0.4.24"
+
+whatwg-fetch@2.0.4:
+  version "2.0.4"
+  resolved "https://registry.yarnpkg.com/whatwg-fetch/-/whatwg-fetch-2.0.4.tgz#dde6a5df315f9d39991aa17621853d720b85566f"
+  integrity sha512-dcQ1GWpOD/eEQ97k66aiEVpNnapVj90/+R+SXTPYGHpYBBypfKJEQjLrvMZ7YXbKm21gXd4NcuxUTjiv1YtLng==
 
 whatwg-fetch@^3.0.0:
   version "3.4.0"
