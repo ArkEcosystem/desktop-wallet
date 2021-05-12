@@ -1,64 +1,58 @@
+import { Contracts } from "@arkecosystem/platform-sdk-profiles";
 import { Button } from "app/components/Button";
 import { Form, FormField, FormLabel } from "app/components/Form";
 import { InputDefault } from "app/components/Input";
 import { Select } from "app/components/SelectDropdown";
 import { Toggle } from "app/components/Toggle";
-import { useNetworkOptions } from "app/hooks";
+import { useNetworkOptions, useValidation } from "app/hooks";
 import React, { useEffect } from "react";
 import { useForm } from "react-hook-form";
 import { useTranslation } from "react-i18next";
 
 type PeerFormProps = {
 	peer?: any;
+	profile: Contracts.IProfile;
 	onSave: any;
-	onValidateHost?: any;
 };
 
-export const PeerForm = ({ peer, onSave, onValidateHost }: PeerFormProps) => {
+export const PeerForm = ({ peer, profile, onSave }: PeerFormProps) => {
 	const { t } = useTranslation();
 
 	const form = useForm({ mode: "onChange" });
 
-	const { formState, register, setError, setValue, watch } = form;
+	const { clearErrors, formState, register, setValue, trigger, watch } = form;
 	const { isValid, isSubmitting } = formState;
 	const { network, name, host, isMultiSignature } = watch();
 
-	const nameMaxLength = 20;
-
+	const { peer: peerValidation } = useValidation();
 	const { networkOptions, networkById } = useNetworkOptions();
 
 	useEffect(() => {
-		register("network", { required: true });
-	}, [register]);
+		register("network", {
+			required: t("COMMON.VALIDATION.FIELD_REQUIRED", {
+				field: t("SETTINGS.PEERS.NETWORK"),
+			}).toString(),
+		});
+	}, [register, t]);
 
 	useEffect(() => {
 		if (peer) {
-			setValue("network", networkById(peer.network), { shouldValidate: true, shouldDirty: true });
+			setValue("network", networkById(peer.network)!, { shouldValidate: true, shouldDirty: true });
 		}
 	}, [networkById, peer, setValue]);
 
-	const handleSelectNetwork = (networkOption?: { label: string; value: string }) => {
-		const network = networkById(networkOption?.value);
+	const handleSelectNetwork = async (networkOption?: { label: string; value: string }) => {
+		const selectedNetwork = networkById(networkOption?.value);
 
-		if (!network) {
-			return setError("network", {
-				type: "manual",
-				message: t("COMMON.VALIDATION.FIELD_REQUIRED", {
-					field: t("SETTINGS.PEERS.NETWORK"),
-				}).toString(),
-			});
+		// eslint-disable-next-line @typescript-eslint/await-thenable
+		await setValue("network", selectedNetwork, { shouldValidate: true, shouldDirty: true });
+
+		clearErrors("host");
+
+		/* istanbul ignore else */
+		if (selectedNetwork && host) {
+			trigger("host");
 		}
-
-		if (form.errors.host?.message.includes("already exists")) {
-			form.clearErrors("host");
-
-			/* istanbul ignore else */
-			if (host) {
-				setValue("host", host, { shouldValidate: true, shouldDirty: true });
-			}
-		}
-
-		setValue("network", network, { shouldValidate: true, shouldDirty: true });
 	};
 
 	return (
@@ -78,22 +72,7 @@ export const PeerForm = ({ peer, onSave, onValidateHost }: PeerFormProps) => {
 			<FormField name="name">
 				<FormLabel label={t("SETTINGS.PEERS.NAME")} />
 				<InputDefault
-					ref={register({
-						validate: {
-							required: (name: string) =>
-								!!name?.trim() ||
-								t("COMMON.VALIDATION.FIELD_REQUIRED", {
-									field: t("SETTINGS.PEERS.NAME"),
-								}).toString(),
-						},
-						maxLength: {
-							message: t("COMMON.VALIDATION.MAX_LENGTH", {
-								field: t("SETTINGS.PEERS.NAME"),
-								maxLength: nameMaxLength,
-							}),
-							value: nameMaxLength,
-						},
-					})}
+					ref={register(peerValidation.name())}
 					defaultValue={peer?.name}
 					data-testid="PeerForm__name-input"
 				/>
@@ -102,18 +81,7 @@ export const PeerForm = ({ peer, onSave, onValidateHost }: PeerFormProps) => {
 			<FormField name="host">
 				<FormLabel label={t("SETTINGS.PEERS.PEER_IP")} />
 				<InputDefault
-					ref={register({
-						required: t("COMMON.VALIDATION.FIELD_REQUIRED", {
-							field: t("SETTINGS.PEERS.PEER_IP"),
-						}).toString(),
-						validate: (host) => {
-							if (peer?.host === host) {
-								return true;
-							}
-
-							return onValidateHost?.(network?.id(), host);
-						},
-					})}
+					ref={register(peerValidation.host(peer?.network === network?.id() ? 1 : 0, profile, network))}
 					defaultValue={peer?.host}
 					data-testid="PeerForm__host-input"
 				/>
