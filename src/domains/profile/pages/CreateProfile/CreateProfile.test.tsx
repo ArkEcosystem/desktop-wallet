@@ -107,7 +107,7 @@ describe("CreateProfile", () => {
 			...baseSettings,
 			AVATAR: "data:image/png;base64,avatarImage",
 			NAME: "test profile 1",
-			THEME: "light",
+			THEME: "dark",
 		});
 		expect(profiles[0].usesPassword()).toBe(false);
 
