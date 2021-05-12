@@ -39,7 +39,11 @@ export const WalletDetails = () => {
 
 	useEffect(() => {
 		if (activeWallet.hasBeenPartiallyRestored()) {
-			toasts.warning(t("COMMON.ERRORS.NETWORK_ERROR", { network: `${activeWallet.network().name()} ` }));
+			toasts.warning(
+				t("COMMON.ERRORS.NETWORK_ERROR", {
+					network: `${activeWallet.network().coin()} ${activeWallet.network().name()}`,
+				}),
+			);
 		}
 	}, [activeWallet, t]);
 
