@@ -57,7 +57,7 @@ export const useLedgerScanner = (coin: string, network: string) => {
 						ledgerData.push({
 							path,
 							address,
-							balance: data.balance(),
+							balance: data.balance().total,
 						});
 					}
 				}
