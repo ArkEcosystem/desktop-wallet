@@ -35,6 +35,8 @@ const baseSettings = {
 	SCREENSHOT_PROTECTION: true,
 	THEME: "dark",
 	TIME_FORMAT: "h:mm A",
+	USE_CUSTOM_PEER: false,
+	USE_MULTI_PEER_BROADCAST: false,
 	USE_TEST_NETWORKS: false,
 };
 
