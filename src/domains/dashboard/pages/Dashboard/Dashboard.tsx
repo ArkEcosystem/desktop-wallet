@@ -7,7 +7,7 @@ import { Wallets } from "domains/dashboard/components/Wallets";
 import { useWalletConfig } from "domains/dashboard/hooks";
 import { Transactions } from "domains/transaction/components/Transactions";
 import React, { useEffect, useMemo } from "react";
-import { useTranslation } from "react-i18next";
+import { Trans, useTranslation } from "react-i18next";
 import { useHistory } from "react-router-dom";
 
 export const Dashboard = () => {
@@ -37,7 +37,13 @@ export const Dashboard = () => {
 			return;
 		}
 
-		toasts.warning(t("COMMON.ERRORS.NETWORK_ERROR", { network: erroredNetworks.join(", ") }));
+		toasts.warning(
+			<Trans
+				i18nKey="COMMON.ERRORS.NETWORK_ERROR"
+				values={{ network: erroredNetworks.join(", ") }}
+				components={{ bold: <strong /> }}
+			/>,
+		);
 	}, [profileIsSyncing, activeProfile, t, getErroredNetworks]);
 
 	return (

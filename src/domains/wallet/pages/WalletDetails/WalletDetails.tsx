@@ -10,7 +10,7 @@ import { TransactionDetailModal } from "domains/transaction/components/Transacti
 import { Transactions } from "domains/transaction/components/Transactions";
 import { SignedTransactionTable } from "domains/transaction/components/TransactionTable/SignedTransactionTable/SignedTransactionTable";
 import React, { useEffect, useMemo, useState } from "react";
-import { useTranslation } from "react-i18next";
+import { Trans, useTranslation } from "react-i18next";
 import { useHistory } from "react-router-dom";
 
 import { WalletHeader, WalletVote } from "./components";
@@ -39,7 +39,13 @@ export const WalletDetails = () => {
 
 	useEffect(() => {
 		if (activeWallet.hasBeenPartiallyRestored()) {
-			toasts.warning(t("COMMON.ERRORS.NETWORK_ERROR", { network: `${activeWallet.network().name()} ` }));
+			toasts.warning(
+				<Trans
+					i18nKey="COMMON.ERRORS.NETWORK_ERROR"
+					values={{ network: `${activeWallet.network().coin()} ${activeWallet.network().name()}` }}
+					components={{ bold: <strong /> }}
+				/>,
+			);
 		}
 	}, [activeWallet, t]);
 
