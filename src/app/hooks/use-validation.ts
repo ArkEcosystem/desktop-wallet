@@ -1,7 +1,7 @@
 import { useEnvironmentContext } from "app/contexts";
 import { password } from "app/validations/password";
 import { createProfile } from "domains/profile/validations";
-import { peer, settings } from "domains/setting/validations";
+import { settings } from "domains/setting/validations";
 import {
 	authentication,
 	common,
@@ -33,7 +33,6 @@ export const useValidation = () => {
 			createProfile: createProfile(t, env),
 			settings: settings(t, env),
 			password: password(t),
-			peer: peer(t),
 		}),
 		[t, env],
 	);
