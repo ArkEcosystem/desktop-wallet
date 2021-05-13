@@ -185,7 +185,13 @@ export const Votes = () => {
 			return;
 		}
 
-		toasts.warning(t("COMMON.ERRORS.NETWORK_ERROR", { network: erroredNetworks.join(", ") }));
+		toasts.warning(
+			<Trans
+				i18nKey="COMMON.ERRORS.NETWORK_ERROR"
+				values={{ network: erroredNetworks.join(", ") }}
+				components={{ bold: <strong /> }}
+			/>,
+		);
 	}, [getErroredNetworks, activeProfile, t]);
 
 	const loadDelegates = useCallback(
