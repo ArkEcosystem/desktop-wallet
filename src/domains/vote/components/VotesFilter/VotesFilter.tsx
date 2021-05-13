@@ -26,7 +26,7 @@ export const VotesFilter = ({ onChange, selectedOption = "all", totalCurrentVote
 					</ControlButton>
 				}
 			>
-				<div className="w-56 flex flex-col space-y-5 px-10 py-7 text-theme-secondary-700 dark:text-theme-secondary-200">
+				<div className="w-56 flex flex-col items-start space-y-5 px-10 py-7 text-theme-secondary-700 dark:text-theme-secondary-200">
 					<label
 						className="h-5 flex items-center space-x-3 rounded-md cursor-pointer"
 						data-testid="VotesFilter__option--all"
