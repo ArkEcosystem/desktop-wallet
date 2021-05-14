@@ -81,38 +81,6 @@ export const translations: { [key: string]: any } = {
 		SUCCESS: "Your password has been successfully changed.",
 	},
 
-	PEERS: {
-		MENU_ITEM: "Peers",
-		TITLE: "Peer Settings",
-		SUBTITLE: "Manage your peer settings for your wallet.",
-		BROADCAST_TRANSACTIONS: {
-			TITLE: "Broadcast to Multiple Peers",
-			DESCRIPTION: "Broadcasts your transactions to mulitple peers for additional reliability.",
-		},
-		CUSTOM_PEERS: {
-			TITLE: "Use Custom Peers",
-			DESCRIPTION: "Manages your list of custom peers for Blockchain networks.",
-		},
-		EMPTY_MESSAGE: "You have not added any custom peers yet.",
-		MULTISIGNATURE: {
-			TITLE: "Multisignature",
-			DESCRIPTION: "Toggle this setting if the IP points to a Multisignature peer.",
-		},
-		CRYPTOASSET: "Cryptoasset",
-		ADD_PEER: "Add Peer",
-		EDIT_PEER: "Edit Peer",
-		NAME: "Name",
-		PEER_IP: "Peer IP",
-		TYPE: "Type",
-		SUCCESS: "Your peer settings have been updated",
-		NETWORK: "Network",
-		VALIDATION: {
-			HOST_EXISTS: "The host already exists for this network",
-			NOT_VALID: "The {{field}} is not valid",
-			NO_PROTOCOL: "The {{field}} does not have 'http://' or 'https://'",
-		},
-	},
-
 	PLUGINS: {
 		MENU_ITEM: "Plugins",
 		TITLE: "Plugin Settings",
@@ -156,14 +124,5 @@ export const translations: { [key: string]: any } = {
 		TITLE: "Development Network",
 		DESCRIPTION:
 			"Disabling this setting will hide your wallets associated with development networks. Are you sure you want to continue?",
-	},
-
-	MODAL_CUSTOM_PEER: {
-		TITLE: "Custom Peer",
-	},
-
-	MODAL_DELETE_PEER: {
-		TITLE: "Delete Peer",
-		DESCRIPTION: "Do you really want to delete this peer? Once deleted, you will not be able to restore it.",
 	},
 };

@@ -55,7 +55,7 @@ describe("useProfileTransactions", () => {
 			);
 
 			jest.advanceTimersByTime(30000);
-			await waitFor(() => expect(result.current.transactions).toHaveLength(2));
+			await waitFor(() => expect(result.current.transactions).toHaveLength(4));
 		});
 
 		const mockTransactionsAggregate = jest.spyOn(profile.transactionAggregate(), "all").mockImplementation(() => {
@@ -131,7 +131,7 @@ describe("useProfileTransactions", () => {
 			mode: "all",
 			flush: true,
 		});
-		await waitFor(() => expect(response.items()).toHaveLength(2));
+		await waitFor(() => expect(response.items()).toHaveLength(4));
 
 		//@ts-ignore
 		const responseEmpty = await current.fetchTransactions({});
@@ -218,7 +218,7 @@ describe("useProfileTransactions", () => {
 
 			await result.current.fetchMore();
 
-			await waitFor(() => expect(result.current.transactions.length).toEqual(2), { timeout: 4000 });
+			await waitFor(() => expect(result.current.transactions.length).toEqual(4), { timeout: 4000 });
 
 			const mockTransactionsAggregate = jest
 				.spyOn(profile.transactionAggregate(), "all")
@@ -232,7 +232,7 @@ describe("useProfileTransactions", () => {
 
 			await result.current.fetchMore();
 
-			await waitFor(() => expect(result.current.transactions.length).toEqual(2), { timeout: 4000 });
+			await waitFor(() => expect(result.current.transactions.length).toEqual(4), { timeout: 4000 });
 			mockTransactionsAggregate.mockRestore();
 		});
 	});

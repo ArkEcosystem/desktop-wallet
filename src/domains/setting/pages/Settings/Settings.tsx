@@ -29,11 +29,6 @@ export const Settings = () => {
 			icon: "SettingsHorizontal",
 		},
 		{
-			itemKey: "Peer",
-			label: t("SETTINGS.PEERS.MENU_ITEM"),
-			icon: "Peer",
-		},
-		{
 			itemKey: "Password",
 			label: t("SETTINGS.PASSWORD.MENU_ITEM"),
 			icon: "Lock",

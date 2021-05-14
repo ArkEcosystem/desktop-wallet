@@ -53,17 +53,14 @@ export const FilterNetwork = ({
 			<NetworkOptions networks={networkList} onClick={handleClick} />
 
 			{showAll && networkList.length > 1 && (
-				<div className="mt-4 cursor-pointer text-theme-secondary-text">
-					<label>
-						<Checkbox
-							data-testid="FilterNetwork__select-all-checkbox"
-							className="mr-2"
-							checked={networkList.every((n) => n.isSelected)}
-							onChange={handleSelectAll}
-						/>
-						{t("COMMON.SELECT_ALL")}
-					</label>
-				</div>
+				<label className="mt-4 inline-flex items-center space-x-3 text-theme-secondary-text cursor-pointer">
+					<Checkbox
+						data-testid="FilterNetwork__select-all-checkbox"
+						checked={networkList.every((n) => n.isSelected)}
+						onChange={handleSelectAll}
+					/>
+					<span>{t("COMMON.SELECT_ALL")}</span>
+				</label>
 			)}
 		</div>
 	);
