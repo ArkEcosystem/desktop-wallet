@@ -77,7 +77,7 @@ describe("SearchRecipient", () => {
 		expect(asFragment()).toMatchSnapshot();
 	});
 
-	it("should not render recipient if not in same network", async () => {
+	it("should not render recipient if not in same network", () => {
 		const coin = profile.coins().set("ARK", "ark.mainnet");
 
 		const { asFragment, getByTestId } = render(
