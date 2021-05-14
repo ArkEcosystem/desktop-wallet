@@ -153,10 +153,6 @@ describe("App", () => {
 			fireEvent.click(getByTestId("SignIn__submit-button"));
 		});
 
-		await act(async () => {
-			await new Promise((resolve) => setTimeout(resolve, 500));
-		});
-
 		const profileDashboardUrl = `/profiles/${passwordProtectedProfile.id()}/dashboard`;
 		await waitFor(() => expect(history.location.pathname).toMatch(profileDashboardUrl));
 	});
