@@ -3,12 +3,9 @@ import { Selector } from "testcafe";
 import { CustomSelector, CustomSnapshot } from "../../../utils/e2e-interfaces";
 import { createFixture, scrollToBottom } from "../../../utils/e2e-utils";
 import { goToProfile } from "../../profile/e2e/common";
-import { goToWalletAndWaitTransactions } from "./common";
+import { goToWalletAndWaitTransactions, goToWallet } from "./common";
 
-createFixture(`Wallet Details`).beforeEach(async (t) => {
-	await goToProfile(t);
-	await goToWalletAndWaitTransactions(t);
-});
+createFixture(`Wallet Details`);
 
 // TODO: Investigate better and fix why loading is immediate in e2e
 // test("should show initial loading state", async (t) => {
@@ -22,6 +19,9 @@ createFixture(`Wallet Details`).beforeEach(async (t) => {
 // });
 
 test("should load transactions with load more action", async (t) => {
+	await goToProfile(t);
+	await goToWalletAndWaitTransactions(t);
+
 	// Check for transactions rows
 	await t.expect(Selector("[data-testid=TransactionTable]").exists).ok();
 	await t.expect(Selector("[data-testid=transactions__fetch-more-button]").exists).ok();
@@ -36,6 +36,9 @@ test("should load transactions with load more action", async (t) => {
 });
 
 test("should star a wallet", async (t) => {
+	await goToProfile(t);
+	await goToWallet(t);
+
 	const starButton = <CustomSelector>Selector("[data-testid=WalletHeader__star-button]").addCustomDOMProperties({
 		innerHTML: (el) => el.innerHTML,
 	});
