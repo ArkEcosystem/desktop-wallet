@@ -13,20 +13,14 @@ export const useWalletAlias = ({ address, profile }: Props) => {
 		return;
 	}
 
-	if (wallet?.alias()) {
-		return wallet?.alias();
-	}
-
 	if (contact) {
-		const contactWallet = contact.addresses().findByAddress(address)[0];
-		return contactWallet.name();
+		return contact.addresses().findByAddress(address)[0].name();
 	}
 
-	if (wallet?.isKnown()) {
-		return wallet?.knownName();
-	}
-
-	if (wallet?.hasSyncedWithNetwork() && wallet?.username()) {
-		return wallet?.username();
+	try {
+		const displayName = wallet!.displayName();
+		return displayName;
+	} catch {
+		//
 	}
 };
