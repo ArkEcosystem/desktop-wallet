@@ -31,7 +31,7 @@ export const useLedgerScanner = (coin: string, network: string) => {
 			abortRetryRef.current = false;
 
 			try {
-				const instance = profile.coins().push(coin, network);
+				const instance = profile.coins().set(coin, network);
 
 				const lastImportedPath = profile
 					.wallets()
@@ -57,7 +57,7 @@ export const useLedgerScanner = (coin: string, network: string) => {
 						ledgerData.push({
 							path,
 							address,
-							balance: data.balance().total,
+							balance: data.balance().available,
 						});
 					}
 				}

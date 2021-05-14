@@ -1685,7 +1685,7 @@ describe("SendTransfer", () => {
 		await waitFor(() => expect(passwordInput).toHaveValue(passphrase));
 
 		// Step 5 (skip step 4 for now - ledger confirmation)
-		const coin = profile.coins().push("ARK", "ark.devnet");
+		const coin = profile.coins().set("ARK", "ark.devnet");
 		const coinMock = jest.spyOn(coin.identity().address(), "validate").mockReturnValue(true);
 
 		const signMock = jest
