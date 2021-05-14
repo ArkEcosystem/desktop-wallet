@@ -2,8 +2,6 @@ import MockDate from "mockdate";
 import { env } from "utils/testing-library";
 import { bootEnvWithProfileFixtures } from "utils/test-helpers";
 
-jest.setTimeout(60000);
-
 jest.mock("@ledgerhq/hw-transport-node-hid-singleton", () => {
 	const { createTransportReplayer } = require("@ledgerhq/hw-transport-mocker");
 	return createTransportReplayer();

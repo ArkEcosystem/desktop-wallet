@@ -5,9 +5,6 @@
 		"takeOnFails": true,
 		"path": "./screenshots"
 	},
-	"selectorTimeout": 600000,
-	"assertionTimeout": 600000,
-	"pageLoadTimeout": 600000,
-	"pageRequestTimeout": 600000,
-	"browserInitTimeout": 600000
+	"selectorTimeout": 20000,
+	"assertionTimeout": 15000
 }
