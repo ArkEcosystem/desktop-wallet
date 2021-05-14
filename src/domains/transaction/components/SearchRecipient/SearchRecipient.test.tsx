@@ -53,7 +53,7 @@ describe("SearchRecipient", () => {
 	});
 
 	it("should not render recipient if not in same network", () => {
-		const coin = profile.coins().push("ARK", "ark.mainnet");
+		const coin = profile.coins().set("ARK", "ark.mainnet");
 		const { asFragment, getByTestId } = render(
 			<SearchRecipient isOpen={true} profile={profile} network={coin.network()} onAction={jest.fn()} />,
 		);
@@ -65,7 +65,7 @@ describe("SearchRecipient", () => {
 	});
 
 	it("should not render recipient if not in same network", () => {
-		const coin = profile.coins().push("ARK", "ark.devnet");
+		const coin = profile.coins().set("ARK", "ark.devnet");
 		const { asFragment, getByTestId } = render(
 			<SearchRecipient isOpen={true} profile={profile} network={coin.network()} onAction={jest.fn()} />,
 		);
