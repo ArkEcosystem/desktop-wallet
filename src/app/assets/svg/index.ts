@@ -1,5 +1,4 @@
 import { Currencies } from "app/assets/svg/currencies";
-import { Providers } from "app/assets/svg/providers";
 
 import { ReactComponent as AlertDanger } from "./alert-danger.svg";
 import { ReactComponent as AlertDefault } from "./alert-default.svg";
@@ -16,8 +15,6 @@ import { ReactComponent as AwaitingOtherSignature } from "./awaiting-other-signa
 import { ReactComponent as AwaitingOurSignature } from "./awaiting-our-signature.svg";
 import { ReactComponent as Back } from "./back.svg";
 import { ReactComponent as Blockfolio } from "./blockfolio.svg";
-import { ReactComponent as Bridgechain } from "./bridgechain.svg";
-import { ReactComponent as Business } from "./business.svg";
 import { ReactComponent as CaretDown } from "./caret-down.svg";
 import { ReactComponent as CaretUp } from "./caret-up.svg";
 import { ReactComponent as Category } from "./category.svg";
@@ -66,7 +63,6 @@ import { ReactComponent as Link } from "./link.svg";
 import { ReactComponent as ListView } from "./list-view.svg";
 import { ReactComponent as LoaderLogo } from "./loader-logo.svg";
 import { ReactComponent as Lock } from "./lock.svg";
-import { ReactComponent as Module } from "./module.svg";
 import { ReactComponent as Msq } from "./msq.svg";
 import { ReactComponent as Multipayment } from "./multipayment.svg";
 import { ReactComponent as Multisig } from "./multisig.svg";
@@ -77,12 +73,9 @@ import { ReactComponent as PaginationFirst } from "./pagination-first.svg";
 import { ReactComponent as PaginationLast } from "./pagination-last.svg";
 import { ReactComponent as Peer } from "./peer.svg";
 import { ReactComponent as Placeholder } from "./placeholder.svg";
-import { ReactComponent as Plugin } from "./plugin.svg";
-import { ReactComponent as Plugins } from "./plugins.svg";
 import { ReactComponent as Plus } from "./plus.svg";
 import { ReactComponent as Portfolio } from "./portfolio.svg";
 import { ReactComponent as PortfolioTag } from "./portfolio-tag.svg";
-import { ReactComponent as Product } from "./product.svg";
 import { ReactComponent as Profile } from "./profile.svg";
 import { ReactComponent as QrCode } from "./qr-code.svg";
 import { ReactComponent as QuestionMark } from "./questionmark.svg";
@@ -120,7 +113,6 @@ import { ReactComponent as Voted } from "./voted.svg";
 
 export const SvgCollection: any = {
 	...Currencies,
-	...Providers,
 	AlertDanger,
 	AlertDefault,
 	AlertHint,
@@ -136,8 +128,6 @@ export const SvgCollection: any = {
 	AwaitingOurSignature,
 	Back,
 	Blockfolio,
-	Bridgechain,
-	Business,
 	CaretDown,
 	CaretUp,
 	Category,
@@ -186,7 +176,6 @@ export const SvgCollection: any = {
 	ListView,
 	LoaderLogo,
 	Lock,
-	Module,
 	Msq,
 	Multipayment,
 	Multisig,
@@ -197,12 +186,9 @@ export const SvgCollection: any = {
 	PaginationLast,
 	Peer,
 	Placeholder,
-	Plugin,
-	Plugins,
 	Plus,
 	Portfolio,
 	PortfolioTag,
-	Product,
 	Profile,
 	QrCode,
 	QuestionMark,

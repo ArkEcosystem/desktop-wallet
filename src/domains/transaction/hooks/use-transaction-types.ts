@@ -25,16 +25,6 @@ export enum CoreTransactionType {
 	HtlcRefund = 10,
 }
 
-export enum MagistrateTransactionType {
-	BusinessRegistration = 0,
-	BusinessResignation = 1,
-	BusinessUpdate = 2,
-	BridgechainRegistration = 3,
-	BridgechainResignation = 4,
-	BridgechainUpdate = 5,
-	Entity = 6,
-}
-
 type TransactionTypeProps = {
 	wallets?: Contracts.IReadWriteWallet[];
 };
@@ -87,30 +77,6 @@ const core: Record<string, any> = {
 };
 
 const magistrate: Record<string, any> = {
-	"business-registration": {
-		type: MagistrateTransactionType.Entity,
-		typeGroup: TransactionTypeGroup.Magistrate,
-	},
-	"business-resignation": {
-		type: MagistrateTransactionType.Entity,
-		typeGroup: TransactionTypeGroup.Magistrate,
-	},
-	"business-update": {
-		type: MagistrateTransactionType.Entity,
-		typeGroup: TransactionTypeGroup.Magistrate,
-	},
-	"bridgechain-registration": {
-		type: MagistrateTransactionType.BridgechainRegistration,
-		typeGroup: TransactionTypeGroup.Magistrate,
-	},
-	"bridgechain-resignation": {
-		type: MagistrateTransactionType.BridgechainResignation,
-		typeGroup: TransactionTypeGroup.Magistrate,
-	},
-	"bridgechain-update": {
-		type: MagistrateTransactionType.BridgechainUpdate,
-		typeGroup: TransactionTypeGroup.Magistrate,
-	},
 	magistrate: {
 		typeGroup: TransactionTypeGroup.Magistrate,
 	},
@@ -140,14 +106,6 @@ export const useTransactionTypes = ({ wallets = [] }: TransactionTypeProps = {})
 		"delegate-registration": t("TRANSACTION.TRANSACTION_TYPES.DELEGATE_REGISTRATION"),
 		"delegate-resignation": t("TRANSACTION.TRANSACTION_TYPES.DELEGATE_RESIGNATION"),
 
-		"business-registration": t("TRANSACTION.TRANSACTION_TYPES.BUSINESS_ENTITY_REGISTRATION"),
-		"business-resignation": t("TRANSACTION.TRANSACTION_TYPES.BUSINESS_ENTITY_RESIGNATION"),
-		"business-update": t("TRANSACTION.TRANSACTION_TYPES.BUSINESS_ENTITY_UPDATE"),
-
-		"bridgechain-registration": t("TRANSACTION.TRANSACTION_TYPES.BRIDGECHAIN_REGISTRATION"),
-		"bridgechain-resignation": t("TRANSACTION.TRANSACTION_TYPES.BRIDGECHAIN_RESIGNATION"),
-		"bridgechain-update": t("TRANSACTION.TRANSACTION_TYPES.BRIDGECHAIN_UPDATE"),
-
 		// Labels in transaction type format as in ExtendedTransactionData
 		secondSignature: t("TRANSACTION.TRANSACTION_TYPES.SECOND_SIGNATURE"),
 		delegateRegistration: t("TRANSACTION.TRANSACTION_TYPES.DELEGATE_REGISTRATION"),
@@ -158,30 +116,7 @@ export const useTransactionTypes = ({ wallets = [] }: TransactionTypeProps = {})
 		htlcLock: t("TRANSACTION.TRANSACTION_TYPES.HTLC_LOCK"),
 		htlcClaim: t("TRANSACTION.TRANSACTION_TYPES.HTLC_CLAIM"),
 		htlcRefund: t("TRANSACTION.TRANSACTION_TYPES.HTLC_REFUND"),
-		entityRegistration: t("TRANSACTION.TRANSACTION_TYPES.ENTITY_REGISTRATION"),
-		entityResignation: t("TRANSACTION.TRANSACTION_TYPES.ENTITY_RESIGNATION"),
-		entityUpdate: t("TRANSACTION.TRANSACTION_TYPES.ENTITY_UPDATE"),
-		businessEntityRegistration: t("TRANSACTION.TRANSACTION_TYPES.BUSINESS_ENTITY_REGISTRATION"),
-		businessEntityResignation: t("TRANSACTION.TRANSACTION_TYPES.BUSINESS_ENTITY_RESIGNATION"),
-		businessEntityUpdate: t("TRANSACTION.TRANSACTION_TYPES.BUSINESS_ENTITY_UPDATE"),
-		productEntityRegistration: t("TRANSACTION.TRANSACTION_TYPES.PRODUCT_ENTITY_REGISTRATION"),
-		productEntityResignation: t("TRANSACTION.TRANSACTION_TYPES.PRODUCT_ENTITY_RESIGNATION"),
-		productEntityUpdate: t("TRANSACTION.TRANSACTION_TYPES.PRODUCT_ENTITY_UPDATE"),
-		pluginEntityRegistration: t("TRANSACTION.TRANSACTION_TYPES.PLUGIN_ENTITY_REGISTRATION"),
-		pluginEntityResignation: t("TRANSACTION.TRANSACTION_TYPES.PLUGIN_ENTITY_RESIGNATION"),
-		pluginEntityUpdate: t("TRANSACTION.TRANSACTION_TYPES.PLUGIN_ENTITY_UPDATE"),
-		moduleEntityRegistration: t("TRANSACTION.TRANSACTION_TYPES.MODULE_ENTITY_REGISTRATION"),
-		moduleEntityResignation: t("TRANSACTION.TRANSACTION_TYPES.MODULE_ENTITY_RESIGNATION"),
-		moduleEntityUpdate: t("TRANSACTION.TRANSACTION_TYPES.MODULE_ENTITY_UPDATE"),
-		delegateEntityRegistration: t("TRANSACTION.TRANSACTION_TYPES.DELEGATE_ENTITY_REGISTRATION"),
-		delegateEntityResignation: t("TRANSACTION.TRANSACTION_TYPES.DELEGATE_ENTITY_RESIGNATION"),
-		delegateEntityUpdate: t("TRANSACTION.TRANSACTION_TYPES.DELEGATE_ENTITY_UPDATE"),
-		legacyBusinessRegistration: t("TRANSACTION.TRANSACTION_TYPES.LEGACY_BUSINESS_REGISTRATION"),
-		legacyBusinessResignation: t("TRANSACTION.TRANSACTION_TYPES.LEGACY_BUSINESS_RESIGNATION"),
-		legacyBusinessUpdate: t("TRANSACTION.TRANSACTION_TYPES.LEGACY_BUSINESS_UPDATE"),
-		legacyBridgechainRegistration: t("TRANSACTION.TRANSACTION_TYPES.LEGACY_BRIDGECHAIN_REGISTRATION"),
-		legacyBridgechainResignation: t("TRANSACTION.TRANSACTION_TYPES.LEGACY_BRIDGECHAIN_RESIGNATION"),
-		legacyBridgechainUpdate: t("TRANSACTION.TRANSACTION_TYPES.LEGACY_BRIDGECHAIN_UPDATE"),
+		magistrate: t("TRANSACTION.TRANSACTION_TYPES.MAGISTRATE"),
 	};
 
 	const getLabel = (type: string) => allTransactionTypeLabels[type];

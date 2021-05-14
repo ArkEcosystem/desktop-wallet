@@ -317,31 +317,7 @@ describe("TransactionDetailModal", () => {
 		expect(asFragment()).toMatchSnapshot();
 	});
 
-	it("should render a entity modal", () => {
-		const { asFragment, getByTestId } = renderWithRouter(
-			<Route path="/profiles/:profileId/dashboard">
-				<TransactionDetailModal
-					isOpen={true}
-					transactionItem={{
-						...TransactionFixture,
-						isTransfer: () => false,
-						isMagistrate: () => true,
-						blockId: () => "as32d1as65d1as3d1as32d1asd51as3d21as3d2as165das",
-						type: () => "entityRegistration",
-					}}
-				/>
-				,
-			</Route>,
-			{
-				routes: [dashboardURL],
-				history,
-			},
-		);
-
-		expect(asFragment()).toMatchSnapshot();
-	});
-
-	it("should render a legacy magistrate modal", () => {
+	it("should render a magistrate modal", () => {
 		const { asFragment, getByTestId } = renderWithRouter(
 			<Route path="/profiles/:profileId/dashboard">
 				<TransactionDetailModal
