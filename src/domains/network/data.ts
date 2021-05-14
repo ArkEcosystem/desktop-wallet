@@ -71,18 +71,18 @@ export const coinsNetworkExtendedData: Record<string, CoinNetworkExtended> = {
 		textClass: "text-theme-primary-700",
 		iconName: "ATOM",
 	},
-	// "btc.livenet": {
-	// 	displayName: "Bitcoin",
-	// 	borderClass: "border-theme-warning-200",
-	// 	textClass: "text-theme-warning-400",
-	// 	iconName: "BTC",
-	// },
-	// 'btc.testnet': {
-	// 	displayName: "Bitcoin Testnet",
-	// 	borderClass: "border-theme-primary-500",
-	// 	textClass: "text-theme-primary-700",
-	// 	iconName: "BTC",
-	// },
+	"btc.livenet": {
+		displayName: "Bitcoin",
+		borderClass: "border-theme-warning-200",
+		textClass: "text-theme-warning-400",
+		iconName: "BTC",
+	},
+	'btc.testnet': {
+		displayName: "Bitcoin Testnet",
+		borderClass: "border-theme-primary-500",
+		textClass: "text-theme-primary-700",
+		iconName: "BTC",
+	},
 	"egld.mainnet": {
 		displayName: "Elrond",
 		borderClass: "border-theme-warning-200",
@@ -95,24 +95,24 @@ export const coinsNetworkExtendedData: Record<string, CoinNetworkExtended> = {
 		textClass: "text-theme-primary-700",
 		iconName: "EGLD",
 	},
-	// 'eth.mainnet': {
-	// 	displayName: "Ethereum",
-	// 	borderClass: "border-theme-primary-500",
-	// 	textClass: "text-theme-primary-700",
-	// 	iconName: "ETH",
-	// },
-	// 'eth.rinkeby': {
-	// 	displayName: "Ethereum Rinkeby",
-	// 	borderClass: "border-theme-primary-500",
-	// 	textClass: "text-theme-primary-700",
-	// 	iconName: "ETH",
-	// },
-	// 'eth.ropsten': {
-	// 	displayName: "Ethereum Ropsten",
-	// 	borderClass: "border-theme-primary-500",
-	// 	textClass: "text-theme-primary-700",
-	// 	iconName: "ETH",
-	// },
+	'eth.mainnet': {
+		displayName: "Ethereum",
+		borderClass: "border-theme-primary-500",
+		textClass: "text-theme-primary-700",
+		iconName: "ETH",
+	},
+	'eth.rinkeby': {
+		displayName: "Ethereum Rinkeby",
+		borderClass: "border-theme-primary-500",
+		textClass: "text-theme-primary-700",
+		iconName: "ETH",
+	},
+	'eth.ropsten': {
+		displayName: "Ethereum Ropsten",
+		borderClass: "border-theme-primary-500",
+		textClass: "text-theme-primary-700",
+		iconName: "ETH",
+	},
 	"lsk.mainnet": {
 		displayName: "Lisk",
 		borderClass: "border-theme-primary-400",
