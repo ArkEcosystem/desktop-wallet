@@ -59,7 +59,7 @@ export const useLedgerConnection = (transport: typeof Transport) => {
 			dispatch({ type: "waiting" });
 			abortRetryRef.current = false;
 
-			const instance = profile.coins().push(coin, network);
+			const instance = profile.coins().set(coin, network);
 
 			try {
 				const slip44 = instance.config().get<number>("network.crypto.slip44");

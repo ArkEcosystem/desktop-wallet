@@ -252,7 +252,7 @@ describe("Transactions", () => {
 		);
 
 		await waitFor(
-			() => expect(within(getByTestId("TransactionTable")).getAllByTestId("TableRow")).toHaveLength(2),
+			() => expect(within(getByTestId("TransactionTable")).getAllByTestId("TableRow")).toHaveLength(4),
 			{ timeout: 4000 },
 		);
 
@@ -287,7 +287,7 @@ describe("Transactions", () => {
 
 		await waitFor(() => {
 			expect(getByTestId("transactions__fetch-more-button")).toHaveTextContent(commonTranslations.VIEW_MORE);
-			expect(within(getByTestId("TransactionTable")).getAllByTestId("TableRow")).toHaveLength(2);
+			expect(within(getByTestId("TransactionTable")).getAllByTestId("TableRow")).toHaveLength(4);
 		});
 
 		act(() => {
@@ -298,7 +298,7 @@ describe("Transactions", () => {
 
 		await waitFor(() => {
 			expect(() => getByTestId("transactions__fetch-more-button")).toThrow();
-			expect(within(getByTestId("TransactionTable")).getAllByTestId("TableRow")).toHaveLength(2);
+			expect(within(getByTestId("TransactionTable")).getAllByTestId("TableRow")).toHaveLength(4);
 		});
 
 		expect(asFragment()).toMatchSnapshot();

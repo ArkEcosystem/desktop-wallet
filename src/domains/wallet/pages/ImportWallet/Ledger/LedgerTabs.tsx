@@ -97,7 +97,7 @@ export const LedgerTabs = ({ activeIndex }: { activeIndex?: number }) => {
 	const importWallets = useCallback(
 		async ({ network, wallets }: any) => {
 			setImportedWallets(wallets);
-			const coin = activeProfile.coins().push(network.coin(), network.id());
+			const coin = activeProfile.coins().set(network.coin(), network.id());
 			await importLedgerWallets(wallets, coin, activeProfile);
 		},
 		[importLedgerWallets, activeProfile],

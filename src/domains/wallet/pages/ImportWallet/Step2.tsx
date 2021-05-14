@@ -92,7 +92,7 @@ const ImportInputField = ({
 }) => {
 	const { t } = useTranslation();
 	const activeProfile = useActiveProfile();
-	const [coin] = useState(() => activeProfile.coins().push(network.coin(), network.id()));
+	const [coin] = useState(() => activeProfile.coins().set(network.coin(), network.id()));
 	const { register } = useFormContext();
 
 	if (type === "mnemonic") {
