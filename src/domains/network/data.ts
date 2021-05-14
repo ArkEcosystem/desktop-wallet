@@ -125,6 +125,18 @@ export const coinsNetworkExtendedData: Record<string, CoinNetworkExtended> = {
 		textClass: "text-theme-primary-400",
 		iconName: "LSK",
 	},
+	"nano.mainnet": {
+		displayName: "NANO",
+		borderClass: "border-theme-warning-200",
+		textClass: "text-theme-warning-400",
+		iconName: "NANO",
+	},
+	"nano.testnet": {
+		displayName: "NANO Testnet",
+		borderClass: "border-theme-warning-200",
+		textClass: "text-theme-warning-400",
+		iconName: "NANO",
+	},
 	"neo.mainnet": {
 		displayName: "NEO",
 		borderClass: "border-theme-warning-200",
