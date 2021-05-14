@@ -77,7 +77,7 @@ export const coinsNetworkExtendedData: Record<string, CoinNetworkExtended> = {
 		textClass: "text-theme-warning-400",
 		iconName: "BTC",
 	},
-	'btc.testnet': {
+	"btc.testnet": {
 		displayName: "Bitcoin Testnet",
 		borderClass: "border-theme-primary-500",
 		textClass: "text-theme-primary-700",
@@ -95,19 +95,19 @@ export const coinsNetworkExtendedData: Record<string, CoinNetworkExtended> = {
 		textClass: "text-theme-primary-700",
 		iconName: "EGLD",
 	},
-	'eth.mainnet': {
+	"eth.mainnet": {
 		displayName: "Ethereum",
 		borderClass: "border-theme-primary-500",
 		textClass: "text-theme-primary-700",
 		iconName: "ETH",
 	},
-	'eth.rinkeby': {
+	"eth.rinkeby": {
 		displayName: "Ethereum Rinkeby",
 		borderClass: "border-theme-primary-500",
 		textClass: "text-theme-primary-700",
 		iconName: "ETH",
 	},
-	'eth.ropsten': {
+	"eth.ropsten": {
 		displayName: "Ethereum Ropsten",
 		borderClass: "border-theme-primary-500",
 		textClass: "text-theme-primary-700",
