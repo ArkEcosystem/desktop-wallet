@@ -3,7 +3,7 @@ import { Selector } from "testcafe";
 import { CustomSelector, CustomSnapshot } from "../../../utils/e2e-interfaces";
 import { createFixture, scrollToBottom } from "../../../utils/e2e-utils";
 import { goToProfile } from "../../profile/e2e/common";
-import { goToWalletAndWaitTransactions, goToWallet } from "./common";
+import { goToWallet, goToWalletAndWaitTransactions } from "./common";
 
 createFixture(`Wallet Details`);
 
