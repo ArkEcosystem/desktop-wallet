@@ -17,29 +17,19 @@ describe("UseWalletAlias", () => {
 		jest.clearAllMocks();
 	});
 
-	it("should return undefined with an address not found", () => {
+	it("should return undefined when no wallet or contact was found", () => {
 		const { result } = renderHook(() => useWalletAlias({ address: "wrong-address", profile }));
 		expect(result.current).toBe(undefined);
 	});
 
-	it("should return if none alias found", () => {
-		const isKnownSpy = jest.spyOn(wallet, "isKnown").mockReturnValue(false);
-		const aliasSpy = jest.spyOn(wallet, "alias").mockReturnValue(undefined);
-		const usernameSpy = jest.spyOn(wallet, "username").mockReturnValue(undefined);
+	it("should return undefined if wallet has no display name", () => {
+		const displayNameSpy = jest.spyOn(wallet, "displayName").mockReturnValue(undefined);
 		const { result } = renderHook(() => useWalletAlias({ address: wallet.address(), profile }));
 		expect(result.current).toBe(undefined);
-		aliasSpy.mockRestore();
-		isKnownSpy.mockRestore();
-		usernameSpy.mockRestore();
-	});
-
-	it("should return alias", () => {
-		const { result } = renderHook(() => useWalletAlias({ address: wallet.address(), profile }));
-		expect(result.current).toBe("ARK Wallet 1");
+		displayNameSpy.mockRestore();
 	});
 
 	it("should return contact name", async () => {
-		jest.spyOn(wallet, "alias").mockReturnValueOnce(undefined);
 		const contact = profile.contacts().create("Test");
 		await contact.setAddresses([
 			{ name: "my contact name", address: wallet.address(), coin: wallet.coinId(), network: wallet.networkId() },
@@ -51,21 +41,8 @@ describe("UseWalletAlias", () => {
 		profile.contacts().forget(contact.id());
 	});
 
-	it("should return known name", () => {
-		jest.spyOn(wallet, "alias").mockReturnValue(undefined);
-		jest.spyOn(wallet, "isKnown").mockReturnValueOnce(true);
-		jest.spyOn(wallet, "knownName").mockImplementation(() => "known alias");
-
+	it("should return displayName", () => {
 		const { result } = renderHook(() => useWalletAlias({ address: wallet.address(), profile }));
-		expect(result.current).toBe("known alias");
-	});
-
-	it("should return username", () => {
-		jest.spyOn(wallet, "alias").mockReturnValue(undefined);
-		jest.spyOn(wallet, "hasSyncedWithNetwork").mockReturnValue(true);
-		jest.spyOn(wallet, "username").mockImplementation(() => "my username");
-
-		const { result } = renderHook(() => useWalletAlias({ address: wallet.address(), profile }));
-		expect(result.current).toBe("my username");
+		expect(result.current).toBe("ARK Wallet 1");
 	});
 });
