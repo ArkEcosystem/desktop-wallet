@@ -5,6 +5,7 @@ import { Page, Section } from "app/components/Layout";
 import { useConfiguration, useEnvironmentContext } from "app/contexts";
 import { useActiveProfile, useActiveWallet } from "app/hooks/env";
 import { toasts } from "app/services";
+import cn from "classnames";
 import { MultiSignatureDetail } from "domains/transaction/components/MultiSignatureDetail";
 import { TransactionDetailModal } from "domains/transaction/components/TransactionDetailModal";
 import { Transactions } from "domains/transaction/components/Transactions";
@@ -30,7 +31,9 @@ export const WalletDetails = () => {
 	const activeWallet = useActiveWallet();
 	const { profileIsSyncing } = useConfiguration();
 
-	const shouldVote = useMemo(() => activeWallet.network().allows(Coins.FeatureFlag.TransactionVote), [activeWallet]);
+	const networkAllowsVoting = useMemo(() => activeWallet.network().allows(Coins.FeatureFlag.TransactionVote), [
+		activeWallet,
+	]);
 	const { syncMultiSignatures, pendingMultiSignatureTransactions } = useWalletTransactions(activeWallet);
 
 	useEffect(() => {
@@ -65,7 +68,12 @@ export const WalletDetails = () => {
 	return (
 		<>
 			<Page profile={activeProfile}>
-				<Section backgroundColor="--theme-color-secondary-900">
+				<Section
+					className={cn({
+						"border-b border-transparent dark:border-theme-secondary-800": !networkAllowsVoting,
+					})}
+					backgroundColor="--theme-color-secondary-900"
+				>
 					<WalletHeader
 						profile={activeProfile}
 						wallet={activeWallet}
@@ -77,7 +85,7 @@ export const WalletDetails = () => {
 					/>
 				</Section>
 
-				{shouldVote && (
+				{networkAllowsVoting && (
 					<Section backgroundColor="--theme-secondary-background-color" innerClassName="-my-2">
 						<WalletVote
 							env={env}
