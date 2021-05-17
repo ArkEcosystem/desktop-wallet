@@ -6,7 +6,7 @@ import { toasts } from "app/services";
 import { SelectNetwork } from "domains/network/components/SelectNetwork";
 import { SelectAddress } from "domains/profile/components/SelectAddress";
 import { InputFee } from "domains/transaction/components/InputFee";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import { useFormContext } from "react-hook-form";
 import { Trans, useTranslation } from "react-i18next";
 
@@ -63,6 +63,8 @@ export const SendTransactionForm = ({
 
 		setWallets(profile.wallets().values());
 	}, [findByType, getValues, network, profile, setValue, transactionType, t]);
+
+	const showFeeInput = useMemo(() => network?.denies(Coins.FeatureFlag.MiscellaneousZeroFees), [network]);
 
 	const handleSelectNetwork = (selectedNetwork: Coins.Network | null | undefined) => {
 		/* istanbul ignore next */
@@ -131,20 +133,22 @@ export const SendTransactionForm = ({
 
 			{children}
 
-			<FormField name="fee">
-				<FormLabel label={t("TRANSACTION.TRANSACTION_FEE")} />
-				<InputFee
-					min={fees?.min}
-					avg={fees?.avg}
-					max={fees?.max}
-					value={fee}
-					step={0.01}
-					showFeeOptions={dynamicFees}
-					onChange={(currency) => {
-						setValue("fee", currency.value, { shouldValidate: true, shouldDirty: true });
-					}}
-				/>
-			</FormField>
+			{showFeeInput && (
+				<FormField name="fee">
+					<FormLabel label={t("TRANSACTION.TRANSACTION_FEE")} />
+					<InputFee
+						min={fees?.min}
+						avg={fees?.avg}
+						max={fees?.max}
+						value={fee}
+						step={0.01}
+						showFeeOptions={dynamicFees}
+						onChange={(currency) => {
+							setValue("fee", currency.value, { shouldValidate: true, shouldDirty: true });
+						}}
+					/>
+				</FormField>
+			)}
 		</div>
 	);
 };
