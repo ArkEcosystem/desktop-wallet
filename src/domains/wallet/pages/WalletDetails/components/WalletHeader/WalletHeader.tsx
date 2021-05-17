@@ -407,7 +407,11 @@ export const WalletHeader = ({
 					<div data-testid="WalletHeader__more-button" className="my-auto ml-3">
 						<Dropdown
 							toggleContent={
-								<Button variant="transparent" size="icon" className="bg-theme-secondary-800 text-white hover:bg-theme-primary-700">
+								<Button
+									variant="transparent"
+									size="icon"
+									className="bg-theme-secondary-800 text-white hover:bg-theme-primary-700"
+								>
 									<Icon name="Settings" width={20} height={20} />
 								</Button>
 							}
