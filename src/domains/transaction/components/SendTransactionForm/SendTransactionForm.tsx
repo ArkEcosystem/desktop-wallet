@@ -64,7 +64,7 @@ export const SendTransactionForm = ({
 		setWallets(profile.wallets().values());
 	}, [findByType, getValues, network, profile, setValue, transactionType, t]);
 
-	const showFeeInput = useMemo(() => network?.denies(Coins.FeatureFlag.MiscellaneousZeroFees), [network]);
+	const showFeeInput = useMemo(() => !network?.chargesZeroFees(), [network]);
 
 	const handleSelectNetwork = (selectedNetwork: Coins.Network | null | undefined) => {
 		/* istanbul ignore next */
