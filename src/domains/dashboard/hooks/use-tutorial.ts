@@ -14,6 +14,7 @@ export const useTutorial = (profile: Contracts.IProfile) => {
 		setShowTutorial(!profile.hasCompletedIntroductoryTutorial());
 	}, [profile, profileIsSyncing]);
 
+	/* istanbul ignore next */
 	const startTutorial = () => undefined;
 
 	const skipTutorial = useCallback(() => {
