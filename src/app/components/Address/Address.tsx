@@ -54,7 +54,7 @@ export const Address = ({
 			{walletName && (
 				<span
 					data-testid="address__wallet-name"
-					className={`max-w-24 flex-auto truncate mr-2 ${getFontWeight(fontWeight)} ${getFontSize(size)} ${
+					className={`max-w-24 truncate mr-2 ${getFontWeight(fontWeight)} ${getFontSize(size)} ${
 						walletNameClass || "text-theme-text"
 					}`}
 				>
