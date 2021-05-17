@@ -19,7 +19,11 @@
 					"address": "D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD",
 					"publicKey": "03df6cd794a7d404db4f1b25816d8976d0e72c5177d17ac9b19a92703b62cdbbbc",
 					"data": {
-						"BALANCE": "3375089801",
+						"BALANCE": {
+							"total": "3375089801",
+							"available": "3375089801",
+							"fees": "3375089801"
+						},
 						"BROADCASTED_TRANSACTIONS": {},
 						"EXCHANGE_CURRENCY": "BTC",
 						"EXCHANGE_RATE": 0,
@@ -50,7 +54,11 @@
 					"address": "D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb",
 					"publicKey": "03af2feb4fc97301e16d6a877d5b135417e8f284d40fac0f84c09ca37f82886c51",
 					"data": {
-						"BALANCE": "5768000000",
+						"BALANCE": {
+							"total": "5768000000",
+							"available": "5768000000",
+							"fees": "5768000000"
+						},
 						"BROADCASTED_TRANSACTIONS": {},
 						"EXCHANGE_CURRENCY": "BTC",
 						"EXCHANGE_RATE": 0,
