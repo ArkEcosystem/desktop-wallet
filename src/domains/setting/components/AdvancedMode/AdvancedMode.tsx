@@ -27,8 +27,8 @@ export const AdvancedMode = ({ isOpen, onClose, onDecline, onAccept }: AdvancedM
 			isOpen={isOpen}
 			onClose={onClose}
 		>
-			<FormField name="rememberChoice" className="flex flex-col space-y-2 mt-6">
-				<label className="flex items-center space-x-2">
+			<FormField name="rememberChoice" className="flex mt-6">
+				<label className="flex items-center space-x-3 w-max cursor-pointer">
 					<Checkbox
 						name="rememberChoice"
 						data-testid="AdvancedMode__rememberChoice-toggle"

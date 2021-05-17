@@ -16,6 +16,7 @@ import { Environment } from "@arkecosystem/platform-sdk-profiles";
 import { TRX } from "@arkecosystem/platform-sdk-trx";
 import { XLM } from "@arkecosystem/platform-sdk-xlm";
 import { XRP } from "@arkecosystem/platform-sdk-xrp";
+import { ZIL } from "@arkecosystem/platform-sdk-zil";
 // @ts-ignore
 import LedgerTransportNodeHID from "@ledgerhq/hw-transport-node-hid-singleton";
 import { Offline } from "domains/error/pages";
@@ -154,6 +155,7 @@ export const App = () => {
 					TRX,
 					XLM,
 					XRP,
+					ZIL,
 				},
 				httpClient,
 				storage,

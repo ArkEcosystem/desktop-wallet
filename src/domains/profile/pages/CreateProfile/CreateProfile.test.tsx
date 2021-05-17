@@ -35,8 +35,6 @@ const baseSettings = {
 	SCREENSHOT_PROTECTION: true,
 	THEME: "dark",
 	TIME_FORMAT: "h:mm A",
-	USE_CUSTOM_PEER: false,
-	USE_MULTI_PEER_BROADCAST: false,
 	USE_TEST_NETWORKS: false,
 };
 
@@ -107,7 +105,7 @@ describe("CreateProfile", () => {
 			...baseSettings,
 			AVATAR: "data:image/png;base64,avatarImage",
 			NAME: "test profile 1",
-			THEME: "light",
+			THEME: "dark",
 		});
 		expect(profiles[0].usesPassword()).toBe(false);
 

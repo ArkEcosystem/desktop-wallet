@@ -56,7 +56,7 @@ describe("Use Transaction Builder Hook", () => {
 			transaction = (await result.current.build("transfer", input)).transaction;
 		});
 
-		expect(transaction.id()).toBe("98e5294a2cdd0f93fc94e8eb85ba707fdb798090b89503cebc33756b48a101c2");
+		expect(transaction.id()).toBe("3eed0f2c07fde6600f5a6dbee543878bcdc19ab60fb435fe3a1bdc5430f5b3b6");
 	});
 
 	it("should sign transfer with multisignature wallet", async () => {
@@ -85,7 +85,7 @@ describe("Use Transaction Builder Hook", () => {
 			transaction = (await result.current.build("transfer", input)).transaction;
 		});
 
-		expect(transaction.id()).toBe("4f42da4b1e0428d49993a3dccc7ab52d43b9426074d754dbf353fb79cd9a5db9");
+		expect(transaction.id()).toBe("a1e869f3942f3cbe91d2fbde6ffc04a80c107341e36837bbe35eb06d79676589");
 
 		jest.clearAllMocks();
 	});
@@ -119,7 +119,7 @@ describe("Use Transaction Builder Hook", () => {
 		});
 
 		await waitFor(() =>
-			expect(transaction.id()).toBe("5ef0e7225bed4cb4c3c763ac4d3bd37f8c8d1b93e5edf540b8cc444bce4cdca5"),
+			expect(transaction.id()).toBe("c927d06a45fe7f3d23434807b84fc112c3ead27a2953dad17d802dbf9017341d"),
 		);
 
 		jest.clearAllMocks();
@@ -154,7 +154,7 @@ describe("Use Transaction Builder Hook", () => {
 			transaction = (await result.current.build("transfer", input)).transaction;
 		});
 
-		expect(transaction.id()).toBe("50f6046de032ea49b5d2894c5f027527564764c7d84633c146babada1707dd9f");
+		expect(transaction.id()).toBe("f10bfaf9c7f23e557b3e19ae5954d8f3966b1c8c72ecfa7d71da77c32ba0702a");
 
 		jest.clearAllMocks();
 	});

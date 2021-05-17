@@ -34,7 +34,7 @@ describe("Notifications Hook", () => {
 		const { notifications } = result.current;
 
 		const transactionNotifications = await notifications.syncReceivedTransactions();
-		expect(transactionNotifications.length).toEqual(1);
+		expect(transactionNotifications.length).toEqual(2);
 
 		const savedNotification = profile.notifications().get(transactionNotifications[0].id);
 		expect(savedNotification).toBeTruthy();

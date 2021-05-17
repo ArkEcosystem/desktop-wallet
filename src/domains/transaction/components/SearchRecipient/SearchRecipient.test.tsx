@@ -9,10 +9,35 @@ import { SearchRecipient } from "./SearchRecipient";
 let profile: Contracts.IProfile;
 
 describe("SearchRecipient", () => {
+	let newContact: Contracts.IContact;
+
 	beforeAll(async () => {
 		profile = env.profiles().findById(getDefaultProfileId());
 		await env.profiles().restore(profile);
-		await profile.sync();
+
+		newContact = profile.contacts().create("New Contact");
+		await profile.contacts().update(newContact.id(), {
+			addresses: [
+				{
+					coin: "ARK",
+					network: "ark.devnet",
+					name: "DFJ5Z51F1euNNdRUQJKQVdG4h495LZkc6T",
+					address: "DFJ5Z51F1euNNdRUQJKQVdG4h495LZkc6T",
+				},
+				{
+					coin: "ARK",
+					network: "ark.devnet",
+					name: "D9YiyRYMBS2ofzqkufjrkB9nHofWgJLM7f",
+					address: "D9YiyRYMBS2ofzqkufjrkB9nHofWgJLM7f",
+				},
+				{
+					coin: "ARK",
+					network: "ark.devnet",
+					name: "DKrACQw7ytoU2gjppy3qKeE2dQhZjfXYqu",
+					address: "DKrACQw7ytoU2gjppy3qKeE2dQhZjfXYqu",
+				},
+			],
+		});
 	});
 
 	it("should not render if not open", () => {
@@ -53,7 +78,7 @@ describe("SearchRecipient", () => {
 	});
 
 	it("should not render recipient if not in same network", () => {
-		const coin = profile.coins().push("ARK", "ark.mainnet");
+		const coin = profile.coins().set("ARK", "ark.mainnet");
 		const { asFragment, getByTestId } = render(
 			<SearchRecipient isOpen={true} profile={profile} network={coin.network()} onAction={jest.fn()} />,
 		);
@@ -65,7 +90,8 @@ describe("SearchRecipient", () => {
 	});
 
 	it("should not render recipient if not in same network", () => {
-		const coin = profile.coins().push("ARK", "ark.devnet");
+		const coin = profile.coins().set("ARK", "ark.devnet");
+		const mockContactNetwork = jest.spyOn(newContact.addresses().last(), "network").mockReturnValue("ark.mainnet");
 		const { asFragment, getByTestId } = render(
 			<SearchRecipient isOpen={true} profile={profile} network={coin.network()} onAction={jest.fn()} />,
 		);
@@ -74,9 +100,10 @@ describe("SearchRecipient", () => {
 		expect(getByTestId("modal__inner")).toHaveTextContent(translations.MODAL_SEARCH_RECIPIENT.DESCRIPTION);
 		expect(() => getByTestId("TableRow")).toThrow();
 		expect(asFragment()).toMatchSnapshot();
+		mockContactNetwork.mockRestore();
 	});
 
-	it("should not render recipient if not in same network", async () => {
+	it("should not render recipient if network is missing", async () => {
 		const onAction = jest.fn();
 		const { getAllByTestId, getByTestId } = render(
 			<SearchRecipient isOpen={true} profile={profile} onAction={onAction} />,

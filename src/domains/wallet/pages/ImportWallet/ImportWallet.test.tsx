@@ -63,8 +63,6 @@ describe("ImportWallet", () => {
 		if (walletId) {
 			profile.wallets().forget(walletId);
 		}
-
-		await profile.sync();
 	});
 
 	it("should render network step", async () => {
