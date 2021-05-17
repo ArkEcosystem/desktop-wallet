@@ -1695,6 +1695,98 @@ exports[`Dashboard should render 1`] = `
       </div>
     </div>
   </div>
+  <div
+    class="flex fixed inset-0 z-50 justify-center items-center w-full h-full overflow-overlay"
+  >
+    <div
+      class="fixed z-50 w-full h-full bg-theme-secondary-900 opacity-60 dark:bg-black dark:opacity-80"
+      data-testid="modal__overlay"
+    />
+    <div
+      class="Modal__ModalContainer-sc-1pv7yg7-0 bGiJfU absolute left-0 right-0 z-50 flex flex-col p-10 mx-auto overflow-hidden rounded-2.5xl bg-theme-background shadow-2xl "
+      data-testid="modal__inner"
+    >
+      <div
+        class="absolute top-0 right-0 z-50 mt-5 mr-5 rounded transition-all duration-100 ease-linear bg-theme-primary-100 hover:bg-theme-primary-300 dark:bg-theme-secondary-800 dark:text-theme-secondary-600 dark:hover:bg-theme-secondary-700 dark:hover:text-theme-secondary-400"
+      >
+        <button
+          class="OriginalButton__StyledButton-sc-1y2wptt-0 fNHPRi w-11 h-11"
+          data-testid="modal__close-btn"
+          type="button"
+        >
+          <div
+            class="flex relative items-center space-x-2"
+          >
+            <div
+              class="sc-bdfBwQ bfBhNR"
+              height="14"
+              width="14"
+            >
+              <svg>
+                cross-slim.svg
+              </svg>
+            </div>
+          </div>
+        </button>
+      </div>
+      <div
+        class="relative space-y-4"
+      >
+        <h2
+          class="mb-0 text-3xl font-bold"
+        >
+          Profile Created!
+        </h2>
+        <div
+          class="flex-1"
+        >
+          <svg
+            class="my-8"
+          >
+            profile-created-banner.svg
+          </svg>
+          <div
+            class="container space-y-8"
+          >
+            <div
+              class="text-base text-theme-secondary-text leading-7"
+            >
+              <p>
+                If you are new to the ARK Desktop Wallet, view our tutorial to get started.
+              </p>
+              <p>
+                If not, you can skip the tutorial to go directly to your portfolio.
+              </p>
+            </div>
+            <div
+              class="flex justify-end space-x-3"
+            >
+              <button
+                class="OriginalButton__StyledButton-sc-1y2wptt-0 izJbbP"
+                type="button"
+              >
+                <div
+                  class="flex relative items-center space-x-2"
+                >
+                  Skip Tutorial
+                </div>
+              </button>
+              <button
+                class="OriginalButton__StyledButton-sc-1y2wptt-0 dYkFxS"
+                type="button"
+              >
+                <div
+                  class="flex relative items-center space-x-2"
+                >
+                  Start Tutorial
+                </div>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </DocumentFragment>
 `;
 
