@@ -12,12 +12,18 @@ exports[`Card Control should render 1`] = `
       value=""
     />
     <div
-      class="Cardstyles__Wrapper-sc-1uddqgb-0 eJQzer CardControl__CustomCard-sc-28luv0-1 fJUymd"
-      data-testid="Card"
+      class="CardControl__CustomCard-sc-28luv0-1 fJUymd"
     >
-      <div
-        class="flex absolute -top-1 -right-1 items-center m-4 space-x-1"
-      />
+      <button
+        class="Cardstyles__CardButton-sc-1uddqgb-0 ixtuUQ"
+        data-testid="Card"
+        tabindex="-1"
+        type="button"
+      >
+        <div
+          class="flex absolute -top-1 -right-1 items-center m-4 space-x-1"
+        />
+      </button>
     </div>
   </label>
 </DocumentFragment>
@@ -35,33 +41,39 @@ exports[`Card Control should render with a control state 1`] = `
       value=""
     />
     <div
-      class="Cardstyles__Wrapper-sc-1uddqgb-0 eJQzer CardControl__CustomCard-sc-28luv0-1 fJUymd"
-      data-testid="Card"
+      class="CardControl__CustomCard-sc-28luv0-1 fJUymd"
     >
-      <div
-        class="flex flex-col justify-between items-center h-full"
+      <button
+        class="Cardstyles__CardButton-sc-1uddqgb-0 ixtuUQ"
+        data-testid="Card"
+        tabindex="-1"
+        type="button"
       >
-        <span>
-          Bitcoin
-        </span>
         <div
-          class="CardControl__StateStyle-sc-28luv0-2 eTogjj"
-          data-testid="card__control-state"
+          class="flex flex-col justify-between items-center h-full"
         >
+          <span>
+            Bitcoin
+          </span>
           <div
-            class="sc-bdfBwQ fPrsah"
-            height="1em"
-            width="1em"
+            class="CardControl__StateStyle-sc-28luv0-2 eTogjj"
+            data-testid="card__control-state"
           >
-            <svg>
-              checkmark.svg
-            </svg>
+            <div
+              class="sc-bdfBwQ fPrsah"
+              height="1em"
+              width="1em"
+            >
+              <svg>
+                checkmark.svg
+              </svg>
+            </div>
           </div>
         </div>
-      </div>
-      <div
-        class="flex absolute -top-1 -right-1 items-center m-4 space-x-1"
-      />
+        <div
+          class="flex absolute -top-1 -right-1 items-center m-4 space-x-1"
+        />
+      </button>
     </div>
   </label>
 </DocumentFragment>
