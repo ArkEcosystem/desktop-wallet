@@ -9,7 +9,7 @@ const baseStyle = [
 	tw`transition duration-150 ease-in-out`,
 	tw`cursor-pointer`,
 	tw`focus:(ring-offset-0 ring-theme-primary-400)`,
-	tw`dark:(border-theme-secondary-600)`,
+	tw`dark:border-theme-secondary-600`,
 	tw`disabled:(
 		bg-theme-secondary-200 border-theme-secondary-300 cursor-default
 		dark:(bg-theme-secondary-800 border-theme-secondary-600)
