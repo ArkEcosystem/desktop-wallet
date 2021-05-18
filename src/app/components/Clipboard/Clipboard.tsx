@@ -27,9 +27,17 @@ export const Clipboard = ({ data, tooltip, options, children }: ClipboardProps) 
 			content={hasCopied ? t("COMMON.CLIPBOARD.SUCCESS") : tooltip || t("COMMON.CLIPBOARD.TOOLTIP_TEXT")}
 			hideOnClick={false}
 		>
-			<div data-testid="clipboard__wrapper" className="inline-block cursor-pointer" onClick={() => copy(data)}>
+			<button
+				type="button"
+				data-testid="clipboard__wrapper"
+				className="relative focus:outline-none group"
+				onClick={() => copy(data)}
+			>
+				{/* border on focus */}
+				<div className="absolute inset-0 -m-1 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible" />
+
 				{children}
-			</div>
+			</button>
 		</Tooltip>
 	);
 };

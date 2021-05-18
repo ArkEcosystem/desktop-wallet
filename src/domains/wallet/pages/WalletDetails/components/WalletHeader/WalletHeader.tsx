@@ -255,7 +255,7 @@ export const WalletHeader = ({
 						<Avatar size="lg" address={wallet.address()} shadowClassName="ring-theme-secondary-900" />
 					</div>
 
-					<div className="flex flex-col overflow-hidden w-full">
+					<div className="flex flex-col w-full">
 						<div className="flex items-center space-x-5 text-theme-secondary-text">
 							{wallet.alias() && (
 								<span data-testid="WalletHeader__name" className="text-sm font-semibold">
@@ -275,12 +275,12 @@ export const WalletHeader = ({
 						<div className="flex items-center space-x-5 w-full">
 							<span
 								ref={ref}
-								className="flex-1 text-lg font-semibold text-white overflow-hidden whitespace-nowrap"
+								className="w-36 flex-1 text-lg font-semibold text-white overflow-hidden whitespace-nowrap"
 							>
 								<TruncatedAddress />
 							</span>
 
-							<div className="flex items-end mb-2 space-x-3 text-theme-secondary-text">
+							<div className="flex items-end mb-1 space-x-3 text-theme-secondary-text">
 								<Clipboard
 									data={wallet.address()}
 									tooltip={t("WALLETS.PAGE_WALLET_DETAILS.COPY_ADDRESS")}
