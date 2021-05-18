@@ -4,6 +4,7 @@ import { Amount } from "app/components/Amount";
 import { Avatar } from "app/components/Avatar";
 import { TableCell, TableRow } from "app/components/Table";
 import { WalletIcons } from "app/components/WalletIcons";
+import { useActiveProfile, useWalletAlias } from "app/hooks";
 import cn from "classnames";
 import { NetworkIcon } from "domains/network/components/NetworkIcon";
 import React, { useMemo } from "react";
@@ -19,6 +20,8 @@ export type WalletListItemProps = {
 export const WalletListItem = ({ wallet, activeWalletId, variant, onClick }: WalletListItemProps) => {
 	const isSelected = useMemo(() => activeWalletId === wallet.id(), [activeWalletId, wallet]);
 
+	const activeProfile = useActiveProfile();
+
 	const shadowClasses = useMemo(
 		() =>
 			cn(
@@ -32,6 +35,13 @@ export const WalletListItem = ({ wallet, activeWalletId, variant, onClick }: Wal
 		[isSelected],
 	);
 
+	const alias = useWalletAlias({
+		address: wallet.address() || "",
+		profile: activeProfile,
+		coinId: wallet.coinId(),
+		networkId: wallet.networkId(),
+	});
+
 	return (
 		<TableRow isSelected={isSelected} onClick={() => onClick?.(wallet.id())}>
 			<TableCell variant="start" innerClassName="space-x-4">
@@ -44,7 +54,7 @@ export const WalletListItem = ({ wallet, activeWalletId, variant, onClick }: Wal
 					/>
 					<Avatar size="lg" address={wallet.address()} shadowClassName={shadowClasses} />
 				</div>
-				<Address walletName={wallet.alias()} address={wallet.address()} maxChars={22} />
+				<Address walletName={alias} address={wallet.address()} maxChars={22} />
 			</TableCell>
 
 			<TableCell innerClassName="justify-center text-sm font-bold text-center align-middle">
