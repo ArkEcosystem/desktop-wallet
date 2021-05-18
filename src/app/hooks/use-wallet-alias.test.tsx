@@ -2,7 +2,7 @@ import { Contracts } from "@arkecosystem/platform-sdk-profiles";
 import { renderHook } from "@testing-library/react-hooks";
 import { EnvironmentProvider } from "app/contexts";
 import React from "react";
-import { env, getDefaultProfileId, getDefaultWalletId } from "utils/testing-library";
+import { env, getDefaultProfileId, getDefaultWalletId, syncDelegates } from "utils/testing-library";
 
 import { useWalletAlias } from "./use-wallet-alias";
 
@@ -49,5 +49,29 @@ describe("UseWalletAlias", () => {
 	it("should return displayName", () => {
 		const { result } = renderHook(() => useWalletAlias({ address: wallet.address(), profile }), { wrapper });
 		expect(result.current).toBe("ARK Wallet 1");
+	});
+
+	it("should return delegate name", async () => {
+		await syncDelegates(profile);
+
+		const walletsSpy = jest.spyOn(profile.wallets(), "findByAddress").mockReturnValue(undefined);
+		const contactsSpy = jest.spyOn(profile.contacts(), "findByAddress").mockReturnValue([]);
+
+		const delegate = env.delegates().all(wallet.coinId(), wallet.networkId())[0];
+
+		const { result } = renderHook(
+			() =>
+				useWalletAlias({
+					address: delegate.address(),
+					profile,
+					coinId: wallet.coinId(),
+					networkId: wallet.networkId(),
+				}),
+			{ wrapper },
+		);
+		expect(result.current).toBe(delegate.username());
+
+		walletsSpy.mockRestore();
+		contactsSpy.mockRestore();
 	});
 });

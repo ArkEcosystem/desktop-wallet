@@ -19,7 +19,7 @@ export const useWalletAlias = ({ address, profile, coinId, networkId }: Props) =
 	}
 
 	try {
-		const alias = wallet!.displayName();
+		const alias = wallet?.displayName();
 
 		if (alias) {
 			return alias;
