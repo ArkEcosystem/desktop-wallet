@@ -44,7 +44,7 @@ exports[`WalletHeader should render 1`] = `
         </div>
       </div>
       <div
-        class="flex flex-col overflow-hidden w-full"
+        class="flex flex-col w-full"
       >
         <div
           class="flex items-center space-x-5 text-theme-secondary-text"
@@ -63,7 +63,7 @@ exports[`WalletHeader should render 1`] = `
           class="flex items-center space-x-5 w-full"
         >
           <span
-            class="flex-1 text-lg font-semibold text-white overflow-hidden whitespace-nowrap"
+            class="w-36 flex-1 text-lg font-semibold text-white overflow-hidden whitespace-nowrap"
           >
             <span
               class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap"
@@ -73,12 +73,16 @@ exports[`WalletHeader should render 1`] = `
             </span>
           </span>
           <div
-            class="flex items-end mb-2 space-x-3 text-theme-secondary-text"
+            class="flex items-end mb-1 space-x-3 text-theme-secondary-text"
           >
-            <div
-              class="inline-block cursor-pointer"
+            <button
+              class="relative focus:outline-none group"
               data-testid="clipboard__wrapper"
+              type="button"
             >
+              <div
+                class="absolute inset-0 -m-1 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+              />
               <div
                 class="sc-bdfBwQ ijAwew hover:text-theme-secondary-500"
                 height="21"
@@ -88,11 +92,15 @@ exports[`WalletHeader should render 1`] = `
                   copy-address.svg
                 </svg>
               </div>
-            </div>
-            <div
-              class="inline-block cursor-pointer"
+            </button>
+            <button
+              class="relative focus:outline-none group"
               data-testid="clipboard__wrapper"
+              type="button"
             >
+              <div
+                class="absolute inset-0 -m-1 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+              />
               <div
                 class="sc-bdfBwQ dGcmIA hover:text-theme-secondary-500"
                 height="21"
@@ -102,7 +110,7 @@ exports[`WalletHeader should render 1`] = `
                   copy-key.svg
                 </svg>
               </div>
-            </div>
+            </button>
           </div>
         </div>
       </div>
@@ -266,7 +274,7 @@ exports[`WalletHeader should render converted balance for mainnet wallet 1`] = `
         </div>
       </div>
       <div
-        class="flex flex-col overflow-hidden w-full"
+        class="flex flex-col w-full"
       >
         <div
           class="flex items-center space-x-5 text-theme-secondary-text"
@@ -285,7 +293,7 @@ exports[`WalletHeader should render converted balance for mainnet wallet 1`] = `
           class="flex items-center space-x-5 w-full"
         >
           <span
-            class="flex-1 text-lg font-semibold text-white overflow-hidden whitespace-nowrap"
+            class="w-36 flex-1 text-lg font-semibold text-white overflow-hidden whitespace-nowrap"
           >
             <span
               class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap"
@@ -295,12 +303,16 @@ exports[`WalletHeader should render converted balance for mainnet wallet 1`] = `
             </span>
           </span>
           <div
-            class="flex items-end mb-2 space-x-3 text-theme-secondary-text"
+            class="flex items-end mb-1 space-x-3 text-theme-secondary-text"
           >
-            <div
-              class="inline-block cursor-pointer"
+            <button
+              class="relative focus:outline-none group"
               data-testid="clipboard__wrapper"
+              type="button"
             >
+              <div
+                class="absolute inset-0 -m-1 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+              />
               <div
                 class="sc-bdfBwQ ijAwew hover:text-theme-secondary-500"
                 height="21"
@@ -310,11 +322,15 @@ exports[`WalletHeader should render converted balance for mainnet wallet 1`] = `
                   copy-address.svg
                 </svg>
               </div>
-            </div>
-            <div
-              class="inline-block cursor-pointer"
+            </button>
+            <button
+              class="relative focus:outline-none group"
               data-testid="clipboard__wrapper"
+              type="button"
             >
+              <div
+                class="absolute inset-0 -m-1 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+              />
               <div
                 class="sc-bdfBwQ dGcmIA hover:text-theme-secondary-500"
                 height="21"
@@ -324,7 +340,7 @@ exports[`WalletHeader should render converted balance for mainnet wallet 1`] = `
                   copy-key.svg
                 </svg>
               </div>
-            </div>
+            </button>
           </div>
         </div>
       </div>
@@ -494,7 +510,7 @@ exports[`WalletHeader should show currency delta (-5%) 1`] = `
         </div>
       </div>
       <div
-        class="flex flex-col overflow-hidden w-full"
+        class="flex flex-col w-full"
       >
         <div
           class="flex items-center space-x-5 text-theme-secondary-text"
@@ -513,7 +529,7 @@ exports[`WalletHeader should show currency delta (-5%) 1`] = `
           class="flex items-center space-x-5 w-full"
         >
           <span
-            class="flex-1 text-lg font-semibold text-white overflow-hidden whitespace-nowrap"
+            class="w-36 flex-1 text-lg font-semibold text-white overflow-hidden whitespace-nowrap"
           >
             <span
               class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap"
@@ -523,12 +539,16 @@ exports[`WalletHeader should show currency delta (-5%) 1`] = `
             </span>
           </span>
           <div
-            class="flex items-end mb-2 space-x-3 text-theme-secondary-text"
+            class="flex items-end mb-1 space-x-3 text-theme-secondary-text"
           >
-            <div
-              class="inline-block cursor-pointer"
+            <button
+              class="relative focus:outline-none group"
               data-testid="clipboard__wrapper"
+              type="button"
             >
+              <div
+                class="absolute inset-0 -m-1 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+              />
               <div
                 class="sc-bdfBwQ ijAwew hover:text-theme-secondary-500"
                 height="21"
@@ -538,11 +558,15 @@ exports[`WalletHeader should show currency delta (-5%) 1`] = `
                   copy-address.svg
                 </svg>
               </div>
-            </div>
-            <div
-              class="inline-block cursor-pointer"
+            </button>
+            <button
+              class="relative focus:outline-none group"
               data-testid="clipboard__wrapper"
+              type="button"
             >
+              <div
+                class="absolute inset-0 -m-1 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+              />
               <div
                 class="sc-bdfBwQ dGcmIA hover:text-theme-secondary-500"
                 height="21"
@@ -552,7 +576,7 @@ exports[`WalletHeader should show currency delta (-5%) 1`] = `
                   copy-key.svg
                 </svg>
               </div>
-            </div>
+            </button>
           </div>
         </div>
       </div>
@@ -734,7 +758,7 @@ exports[`WalletHeader should show currency delta (5%) 1`] = `
         </div>
       </div>
       <div
-        class="flex flex-col overflow-hidden w-full"
+        class="flex flex-col w-full"
       >
         <div
           class="flex items-center space-x-5 text-theme-secondary-text"
@@ -753,7 +777,7 @@ exports[`WalletHeader should show currency delta (5%) 1`] = `
           class="flex items-center space-x-5 w-full"
         >
           <span
-            class="flex-1 text-lg font-semibold text-white overflow-hidden whitespace-nowrap"
+            class="w-36 flex-1 text-lg font-semibold text-white overflow-hidden whitespace-nowrap"
           >
             <span
               class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap"
@@ -763,12 +787,16 @@ exports[`WalletHeader should show currency delta (5%) 1`] = `
             </span>
           </span>
           <div
-            class="flex items-end mb-2 space-x-3 text-theme-secondary-text"
+            class="flex items-end mb-1 space-x-3 text-theme-secondary-text"
           >
-            <div
-              class="inline-block cursor-pointer"
+            <button
+              class="relative focus:outline-none group"
               data-testid="clipboard__wrapper"
+              type="button"
             >
+              <div
+                class="absolute inset-0 -m-1 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+              />
               <div
                 class="sc-bdfBwQ ijAwew hover:text-theme-secondary-500"
                 height="21"
@@ -778,11 +806,15 @@ exports[`WalletHeader should show currency delta (5%) 1`] = `
                   copy-address.svg
                 </svg>
               </div>
-            </div>
-            <div
-              class="inline-block cursor-pointer"
+            </button>
+            <button
+              class="relative focus:outline-none group"
               data-testid="clipboard__wrapper"
+              type="button"
             >
+              <div
+                class="absolute inset-0 -m-1 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+              />
               <div
                 class="sc-bdfBwQ dGcmIA hover:text-theme-secondary-500"
                 height="21"
@@ -792,7 +824,7 @@ exports[`WalletHeader should show currency delta (5%) 1`] = `
                   copy-key.svg
                 </svg>
               </div>
-            </div>
+            </button>
           </div>
         </div>
       </div>
@@ -974,7 +1006,7 @@ exports[`WalletHeader should show modifiers 1`] = `
         </div>
       </div>
       <div
-        class="flex flex-col overflow-hidden w-full"
+        class="flex flex-col w-full"
       >
         <div
           class="flex items-center space-x-5 text-theme-secondary-text"
@@ -1022,7 +1054,7 @@ exports[`WalletHeader should show modifiers 1`] = `
           class="flex items-center space-x-5 w-full"
         >
           <span
-            class="flex-1 text-lg font-semibold text-white overflow-hidden whitespace-nowrap"
+            class="w-36 flex-1 text-lg font-semibold text-white overflow-hidden whitespace-nowrap"
           >
             <span
               class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap"
@@ -1032,12 +1064,16 @@ exports[`WalletHeader should show modifiers 1`] = `
             </span>
           </span>
           <div
-            class="flex items-end mb-2 space-x-3 text-theme-secondary-text"
+            class="flex items-end mb-1 space-x-3 text-theme-secondary-text"
           >
-            <div
-              class="inline-block cursor-pointer"
+            <button
+              class="relative focus:outline-none group"
               data-testid="clipboard__wrapper"
+              type="button"
             >
+              <div
+                class="absolute inset-0 -m-1 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+              />
               <div
                 class="sc-bdfBwQ ijAwew hover:text-theme-secondary-500"
                 height="21"
@@ -1047,11 +1083,15 @@ exports[`WalletHeader should show modifiers 1`] = `
                   copy-address.svg
                 </svg>
               </div>
-            </div>
-            <div
-              class="inline-block cursor-pointer"
+            </button>
+            <button
+              class="relative focus:outline-none group"
               data-testid="clipboard__wrapper"
+              type="button"
             >
+              <div
+                class="absolute inset-0 -m-1 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+              />
               <div
                 class="sc-bdfBwQ dGcmIA hover:text-theme-secondary-500"
                 height="21"
@@ -1061,7 +1101,7 @@ exports[`WalletHeader should show modifiers 1`] = `
                   copy-key.svg
                 </svg>
               </div>
-            </div>
+            </button>
           </div>
         </div>
       </div>

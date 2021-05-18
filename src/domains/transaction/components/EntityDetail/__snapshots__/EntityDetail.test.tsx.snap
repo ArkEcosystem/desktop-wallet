@@ -248,10 +248,14 @@ exports[`EntityDetail should render a business entity resignation modal 1`] = `
                   <span
                     class="flex text-theme-primary-300 dark:text-theme-secondary-600"
                   >
-                    <div
-                      class="inline-block cursor-pointer"
+                    <button
+                      class="relative focus:outline-none group"
                       data-testid="clipboard__wrapper"
+                      type="button"
                     >
+                      <div
+                        class="absolute inset-0 -m-1 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                      />
                       <div
                         class="sc-bdfBwQ fPrsah"
                         height="1em"
@@ -261,7 +265,7 @@ exports[`EntityDetail should render a business entity resignation modal 1`] = `
                           copy.svg
                         </svg>
                       </div>
-                    </div>
+                    </button>
                   </span>
                 </div>
               </div>
@@ -320,10 +324,14 @@ exports[`EntityDetail should render a business entity resignation modal 1`] = `
                   <span
                     class="flex text-theme-primary-300 dark:text-theme-secondary-600"
                   >
-                    <div
-                      class="inline-block cursor-pointer"
+                    <button
+                      class="relative focus:outline-none group"
                       data-testid="clipboard__wrapper"
+                      type="button"
                     >
+                      <div
+                        class="absolute inset-0 -m-1 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                      />
                       <div
                         class="sc-bdfBwQ fPrsah"
                         height="1em"
@@ -333,7 +341,7 @@ exports[`EntityDetail should render a business entity resignation modal 1`] = `
                           copy.svg
                         </svg>
                       </div>
-                    </div>
+                    </button>
                   </span>
                 </div>
               </div>
@@ -592,10 +600,14 @@ exports[`EntityDetail should render a business entity update modal 1`] = `
                   <span
                     class="flex text-theme-primary-300 dark:text-theme-secondary-600"
                   >
-                    <div
-                      class="inline-block cursor-pointer"
+                    <button
+                      class="relative focus:outline-none group"
                       data-testid="clipboard__wrapper"
+                      type="button"
                     >
+                      <div
+                        class="absolute inset-0 -m-1 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                      />
                       <div
                         class="sc-bdfBwQ fPrsah"
                         height="1em"
@@ -605,7 +617,7 @@ exports[`EntityDetail should render a business entity update modal 1`] = `
                           copy.svg
                         </svg>
                       </div>
-                    </div>
+                    </button>
                   </span>
                 </div>
               </div>
@@ -664,10 +676,14 @@ exports[`EntityDetail should render a business entity update modal 1`] = `
                   <span
                     class="flex text-theme-primary-300 dark:text-theme-secondary-600"
                   >
-                    <div
-                      class="inline-block cursor-pointer"
+                    <button
+                      class="relative focus:outline-none group"
                       data-testid="clipboard__wrapper"
+                      type="button"
                     >
+                      <div
+                        class="absolute inset-0 -m-1 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                      />
                       <div
                         class="sc-bdfBwQ fPrsah"
                         height="1em"
@@ -677,7 +693,7 @@ exports[`EntityDetail should render a business entity update modal 1`] = `
                           copy.svg
                         </svg>
                       </div>
-                    </div>
+                    </button>
                   </span>
                 </div>
               </div>
@@ -936,10 +952,14 @@ exports[`EntityDetail should render a modal 1`] = `
                   <span
                     class="flex text-theme-primary-300 dark:text-theme-secondary-600"
                   >
-                    <div
-                      class="inline-block cursor-pointer"
+                    <button
+                      class="relative focus:outline-none group"
                       data-testid="clipboard__wrapper"
+                      type="button"
                     >
+                      <div
+                        class="absolute inset-0 -m-1 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                      />
                       <div
                         class="sc-bdfBwQ fPrsah"
                         height="1em"
@@ -949,7 +969,7 @@ exports[`EntityDetail should render a modal 1`] = `
                           copy.svg
                         </svg>
                       </div>
-                    </div>
+                    </button>
                   </span>
                 </div>
               </div>
@@ -1008,10 +1028,14 @@ exports[`EntityDetail should render a modal 1`] = `
                   <span
                     class="flex text-theme-primary-300 dark:text-theme-secondary-600"
                   >
-                    <div
-                      class="inline-block cursor-pointer"
+                    <button
+                      class="relative focus:outline-none group"
                       data-testid="clipboard__wrapper"
+                      type="button"
                     >
+                      <div
+                        class="absolute inset-0 -m-1 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                      />
                       <div
                         class="sc-bdfBwQ fPrsah"
                         height="1em"
@@ -1021,7 +1045,7 @@ exports[`EntityDetail should render a modal 1`] = `
                           copy.svg
                         </svg>
                       </div>
-                    </div>
+                    </button>
                   </span>
                 </div>
               </div>
@@ -1269,10 +1293,14 @@ exports[`EntityDetail should render a modal without a wallet alias 1`] = `
                   <span
                     class="flex text-theme-primary-300 dark:text-theme-secondary-600"
                   >
-                    <div
-                      class="inline-block cursor-pointer"
+                    <button
+                      class="relative focus:outline-none group"
                       data-testid="clipboard__wrapper"
+                      type="button"
                     >
+                      <div
+                        class="absolute inset-0 -m-1 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                      />
                       <div
                         class="sc-bdfBwQ fPrsah"
                         height="1em"
@@ -1282,7 +1310,7 @@ exports[`EntityDetail should render a modal without a wallet alias 1`] = `
                           copy.svg
                         </svg>
                       </div>
-                    </div>
+                    </button>
                   </span>
                 </div>
               </div>
@@ -1341,10 +1369,14 @@ exports[`EntityDetail should render a modal without a wallet alias 1`] = `
                   <span
                     class="flex text-theme-primary-300 dark:text-theme-secondary-600"
                   >
-                    <div
-                      class="inline-block cursor-pointer"
+                    <button
+                      class="relative focus:outline-none group"
                       data-testid="clipboard__wrapper"
+                      type="button"
                     >
+                      <div
+                        class="absolute inset-0 -m-1 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                      />
                       <div
                         class="sc-bdfBwQ fPrsah"
                         height="1em"
@@ -1354,7 +1386,7 @@ exports[`EntityDetail should render a modal without a wallet alias 1`] = `
                           copy.svg
                         </svg>
                       </div>
-                    </div>
+                    </button>
                   </span>
                 </div>
               </div>
@@ -1613,10 +1645,14 @@ exports[`EntityDetail should render a module entity registration modal 1`] = `
                   <span
                     class="flex text-theme-primary-300 dark:text-theme-secondary-600"
                   >
-                    <div
-                      class="inline-block cursor-pointer"
+                    <button
+                      class="relative focus:outline-none group"
                       data-testid="clipboard__wrapper"
+                      type="button"
                     >
+                      <div
+                        class="absolute inset-0 -m-1 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                      />
                       <div
                         class="sc-bdfBwQ fPrsah"
                         height="1em"
@@ -1626,7 +1662,7 @@ exports[`EntityDetail should render a module entity registration modal 1`] = `
                           copy.svg
                         </svg>
                       </div>
-                    </div>
+                    </button>
                   </span>
                 </div>
               </div>
@@ -1685,10 +1721,14 @@ exports[`EntityDetail should render a module entity registration modal 1`] = `
                   <span
                     class="flex text-theme-primary-300 dark:text-theme-secondary-600"
                   >
-                    <div
-                      class="inline-block cursor-pointer"
+                    <button
+                      class="relative focus:outline-none group"
                       data-testid="clipboard__wrapper"
+                      type="button"
                     >
+                      <div
+                        class="absolute inset-0 -m-1 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                      />
                       <div
                         class="sc-bdfBwQ fPrsah"
                         height="1em"
@@ -1698,7 +1738,7 @@ exports[`EntityDetail should render a module entity registration modal 1`] = `
                           copy.svg
                         </svg>
                       </div>
-                    </div>
+                    </button>
                   </span>
                 </div>
               </div>
@@ -1957,10 +1997,14 @@ exports[`EntityDetail should render a module entity resignation modal 1`] = `
                   <span
                     class="flex text-theme-primary-300 dark:text-theme-secondary-600"
                   >
-                    <div
-                      class="inline-block cursor-pointer"
+                    <button
+                      class="relative focus:outline-none group"
                       data-testid="clipboard__wrapper"
+                      type="button"
                     >
+                      <div
+                        class="absolute inset-0 -m-1 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                      />
                       <div
                         class="sc-bdfBwQ fPrsah"
                         height="1em"
@@ -1970,7 +2014,7 @@ exports[`EntityDetail should render a module entity resignation modal 1`] = `
                           copy.svg
                         </svg>
                       </div>
-                    </div>
+                    </button>
                   </span>
                 </div>
               </div>
@@ -2029,10 +2073,14 @@ exports[`EntityDetail should render a module entity resignation modal 1`] = `
                   <span
                     class="flex text-theme-primary-300 dark:text-theme-secondary-600"
                   >
-                    <div
-                      class="inline-block cursor-pointer"
+                    <button
+                      class="relative focus:outline-none group"
                       data-testid="clipboard__wrapper"
+                      type="button"
                     >
+                      <div
+                        class="absolute inset-0 -m-1 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                      />
                       <div
                         class="sc-bdfBwQ fPrsah"
                         height="1em"
@@ -2042,7 +2090,7 @@ exports[`EntityDetail should render a module entity resignation modal 1`] = `
                           copy.svg
                         </svg>
                       </div>
-                    </div>
+                    </button>
                   </span>
                 </div>
               </div>
@@ -2301,10 +2349,14 @@ exports[`EntityDetail should render a module entity update modal 1`] = `
                   <span
                     class="flex text-theme-primary-300 dark:text-theme-secondary-600"
                   >
-                    <div
-                      class="inline-block cursor-pointer"
+                    <button
+                      class="relative focus:outline-none group"
                       data-testid="clipboard__wrapper"
+                      type="button"
                     >
+                      <div
+                        class="absolute inset-0 -m-1 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                      />
                       <div
                         class="sc-bdfBwQ fPrsah"
                         height="1em"
@@ -2314,7 +2366,7 @@ exports[`EntityDetail should render a module entity update modal 1`] = `
                           copy.svg
                         </svg>
                       </div>
-                    </div>
+                    </button>
                   </span>
                 </div>
               </div>
@@ -2373,10 +2425,14 @@ exports[`EntityDetail should render a module entity update modal 1`] = `
                   <span
                     class="flex text-theme-primary-300 dark:text-theme-secondary-600"
                   >
-                    <div
-                      class="inline-block cursor-pointer"
+                    <button
+                      class="relative focus:outline-none group"
                       data-testid="clipboard__wrapper"
+                      type="button"
                     >
+                      <div
+                        class="absolute inset-0 -m-1 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                      />
                       <div
                         class="sc-bdfBwQ fPrsah"
                         height="1em"
@@ -2386,7 +2442,7 @@ exports[`EntityDetail should render a module entity update modal 1`] = `
                           copy.svg
                         </svg>
                       </div>
-                    </div>
+                    </button>
                   </span>
                 </div>
               </div>
@@ -2645,10 +2701,14 @@ exports[`EntityDetail should render a plugin entity registration modal 1`] = `
                   <span
                     class="flex text-theme-primary-300 dark:text-theme-secondary-600"
                   >
-                    <div
-                      class="inline-block cursor-pointer"
+                    <button
+                      class="relative focus:outline-none group"
                       data-testid="clipboard__wrapper"
+                      type="button"
                     >
+                      <div
+                        class="absolute inset-0 -m-1 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                      />
                       <div
                         class="sc-bdfBwQ fPrsah"
                         height="1em"
@@ -2658,7 +2718,7 @@ exports[`EntityDetail should render a plugin entity registration modal 1`] = `
                           copy.svg
                         </svg>
                       </div>
-                    </div>
+                    </button>
                   </span>
                 </div>
               </div>
@@ -2717,10 +2777,14 @@ exports[`EntityDetail should render a plugin entity registration modal 1`] = `
                   <span
                     class="flex text-theme-primary-300 dark:text-theme-secondary-600"
                   >
-                    <div
-                      class="inline-block cursor-pointer"
+                    <button
+                      class="relative focus:outline-none group"
                       data-testid="clipboard__wrapper"
+                      type="button"
                     >
+                      <div
+                        class="absolute inset-0 -m-1 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                      />
                       <div
                         class="sc-bdfBwQ fPrsah"
                         height="1em"
@@ -2730,7 +2794,7 @@ exports[`EntityDetail should render a plugin entity registration modal 1`] = `
                           copy.svg
                         </svg>
                       </div>
-                    </div>
+                    </button>
                   </span>
                 </div>
               </div>
@@ -2989,10 +3053,14 @@ exports[`EntityDetail should render a plugin entity resignation modal 1`] = `
                   <span
                     class="flex text-theme-primary-300 dark:text-theme-secondary-600"
                   >
-                    <div
-                      class="inline-block cursor-pointer"
+                    <button
+                      class="relative focus:outline-none group"
                       data-testid="clipboard__wrapper"
+                      type="button"
                     >
+                      <div
+                        class="absolute inset-0 -m-1 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                      />
                       <div
                         class="sc-bdfBwQ fPrsah"
                         height="1em"
@@ -3002,7 +3070,7 @@ exports[`EntityDetail should render a plugin entity resignation modal 1`] = `
                           copy.svg
                         </svg>
                       </div>
-                    </div>
+                    </button>
                   </span>
                 </div>
               </div>
@@ -3061,10 +3129,14 @@ exports[`EntityDetail should render a plugin entity resignation modal 1`] = `
                   <span
                     class="flex text-theme-primary-300 dark:text-theme-secondary-600"
                   >
-                    <div
-                      class="inline-block cursor-pointer"
+                    <button
+                      class="relative focus:outline-none group"
                       data-testid="clipboard__wrapper"
+                      type="button"
                     >
+                      <div
+                        class="absolute inset-0 -m-1 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                      />
                       <div
                         class="sc-bdfBwQ fPrsah"
                         height="1em"
@@ -3074,7 +3146,7 @@ exports[`EntityDetail should render a plugin entity resignation modal 1`] = `
                           copy.svg
                         </svg>
                       </div>
-                    </div>
+                    </button>
                   </span>
                 </div>
               </div>
@@ -3333,10 +3405,14 @@ exports[`EntityDetail should render a plugin entity update modal 1`] = `
                   <span
                     class="flex text-theme-primary-300 dark:text-theme-secondary-600"
                   >
-                    <div
-                      class="inline-block cursor-pointer"
+                    <button
+                      class="relative focus:outline-none group"
                       data-testid="clipboard__wrapper"
+                      type="button"
                     >
+                      <div
+                        class="absolute inset-0 -m-1 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                      />
                       <div
                         class="sc-bdfBwQ fPrsah"
                         height="1em"
@@ -3346,7 +3422,7 @@ exports[`EntityDetail should render a plugin entity update modal 1`] = `
                           copy.svg
                         </svg>
                       </div>
-                    </div>
+                    </button>
                   </span>
                 </div>
               </div>
@@ -3405,10 +3481,14 @@ exports[`EntityDetail should render a plugin entity update modal 1`] = `
                   <span
                     class="flex text-theme-primary-300 dark:text-theme-secondary-600"
                   >
-                    <div
-                      class="inline-block cursor-pointer"
+                    <button
+                      class="relative focus:outline-none group"
                       data-testid="clipboard__wrapper"
+                      type="button"
                     >
+                      <div
+                        class="absolute inset-0 -m-1 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                      />
                       <div
                         class="sc-bdfBwQ fPrsah"
                         height="1em"
@@ -3418,7 +3498,7 @@ exports[`EntityDetail should render a plugin entity update modal 1`] = `
                           copy.svg
                         </svg>
                       </div>
-                    </div>
+                    </button>
                   </span>
                 </div>
               </div>
@@ -3677,10 +3757,14 @@ exports[`EntityDetail should render a product entity registration modal 1`] = `
                   <span
                     class="flex text-theme-primary-300 dark:text-theme-secondary-600"
                   >
-                    <div
-                      class="inline-block cursor-pointer"
+                    <button
+                      class="relative focus:outline-none group"
                       data-testid="clipboard__wrapper"
+                      type="button"
                     >
+                      <div
+                        class="absolute inset-0 -m-1 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                      />
                       <div
                         class="sc-bdfBwQ fPrsah"
                         height="1em"
@@ -3690,7 +3774,7 @@ exports[`EntityDetail should render a product entity registration modal 1`] = `
                           copy.svg
                         </svg>
                       </div>
-                    </div>
+                    </button>
                   </span>
                 </div>
               </div>
@@ -3749,10 +3833,14 @@ exports[`EntityDetail should render a product entity registration modal 1`] = `
                   <span
                     class="flex text-theme-primary-300 dark:text-theme-secondary-600"
                   >
-                    <div
-                      class="inline-block cursor-pointer"
+                    <button
+                      class="relative focus:outline-none group"
                       data-testid="clipboard__wrapper"
+                      type="button"
                     >
+                      <div
+                        class="absolute inset-0 -m-1 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                      />
                       <div
                         class="sc-bdfBwQ fPrsah"
                         height="1em"
@@ -3762,7 +3850,7 @@ exports[`EntityDetail should render a product entity registration modal 1`] = `
                           copy.svg
                         </svg>
                       </div>
-                    </div>
+                    </button>
                   </span>
                 </div>
               </div>
@@ -4021,10 +4109,14 @@ exports[`EntityDetail should render a product entity resignation modal 1`] = `
                   <span
                     class="flex text-theme-primary-300 dark:text-theme-secondary-600"
                   >
-                    <div
-                      class="inline-block cursor-pointer"
+                    <button
+                      class="relative focus:outline-none group"
                       data-testid="clipboard__wrapper"
+                      type="button"
                     >
+                      <div
+                        class="absolute inset-0 -m-1 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                      />
                       <div
                         class="sc-bdfBwQ fPrsah"
                         height="1em"
@@ -4034,7 +4126,7 @@ exports[`EntityDetail should render a product entity resignation modal 1`] = `
                           copy.svg
                         </svg>
                       </div>
-                    </div>
+                    </button>
                   </span>
                 </div>
               </div>
@@ -4093,10 +4185,14 @@ exports[`EntityDetail should render a product entity resignation modal 1`] = `
                   <span
                     class="flex text-theme-primary-300 dark:text-theme-secondary-600"
                   >
-                    <div
-                      class="inline-block cursor-pointer"
+                    <button
+                      class="relative focus:outline-none group"
                       data-testid="clipboard__wrapper"
+                      type="button"
                     >
+                      <div
+                        class="absolute inset-0 -m-1 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                      />
                       <div
                         class="sc-bdfBwQ fPrsah"
                         height="1em"
@@ -4106,7 +4202,7 @@ exports[`EntityDetail should render a product entity resignation modal 1`] = `
                           copy.svg
                         </svg>
                       </div>
-                    </div>
+                    </button>
                   </span>
                 </div>
               </div>
@@ -4365,10 +4461,14 @@ exports[`EntityDetail should render a product entity update modal 1`] = `
                   <span
                     class="flex text-theme-primary-300 dark:text-theme-secondary-600"
                   >
-                    <div
-                      class="inline-block cursor-pointer"
+                    <button
+                      class="relative focus:outline-none group"
                       data-testid="clipboard__wrapper"
+                      type="button"
                     >
+                      <div
+                        class="absolute inset-0 -m-1 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                      />
                       <div
                         class="sc-bdfBwQ fPrsah"
                         height="1em"
@@ -4378,7 +4478,7 @@ exports[`EntityDetail should render a product entity update modal 1`] = `
                           copy.svg
                         </svg>
                       </div>
-                    </div>
+                    </button>
                   </span>
                 </div>
               </div>
@@ -4437,10 +4537,14 @@ exports[`EntityDetail should render a product entity update modal 1`] = `
                   <span
                     class="flex text-theme-primary-300 dark:text-theme-secondary-600"
                   >
-                    <div
-                      class="inline-block cursor-pointer"
+                    <button
+                      class="relative focus:outline-none group"
                       data-testid="clipboard__wrapper"
+                      type="button"
                     >
+                      <div
+                        class="absolute inset-0 -m-1 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                      />
                       <div
                         class="sc-bdfBwQ fPrsah"
                         height="1em"
@@ -4450,7 +4554,7 @@ exports[`EntityDetail should render a product entity update modal 1`] = `
                           copy.svg
                         </svg>
                       </div>
-                    </div>
+                    </button>
                   </span>
                 </div>
               </div>
@@ -4711,10 +4815,14 @@ exports[`EntityDetail should render as confirmed 1`] = `
                   <span
                     class="flex text-theme-primary-300 dark:text-theme-secondary-600"
                   >
-                    <div
-                      class="inline-block cursor-pointer"
+                    <button
+                      class="relative focus:outline-none group"
                       data-testid="clipboard__wrapper"
+                      type="button"
                     >
+                      <div
+                        class="absolute inset-0 -m-1 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                      />
                       <div
                         class="sc-bdfBwQ fPrsah"
                         height="1em"
@@ -4724,7 +4832,7 @@ exports[`EntityDetail should render as confirmed 1`] = `
                           copy.svg
                         </svg>
                       </div>
-                    </div>
+                    </button>
                   </span>
                 </div>
               </div>
@@ -4783,10 +4891,14 @@ exports[`EntityDetail should render as confirmed 1`] = `
                   <span
                     class="flex text-theme-primary-300 dark:text-theme-secondary-600"
                   >
-                    <div
-                      class="inline-block cursor-pointer"
+                    <button
+                      class="relative focus:outline-none group"
                       data-testid="clipboard__wrapper"
+                      type="button"
                     >
+                      <div
+                        class="absolute inset-0 -m-1 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                      />
                       <div
                         class="sc-bdfBwQ fPrsah"
                         height="1em"
@@ -4796,7 +4908,7 @@ exports[`EntityDetail should render as confirmed 1`] = `
                           copy.svg
                         </svg>
                       </div>
-                    </div>
+                    </button>
                   </span>
                 </div>
               </div>

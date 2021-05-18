@@ -4,13 +4,17 @@ exports[`Clipboard should not render without children 1`] = `<DocumentFragment /
 
 exports[`Clipboard should render with children 1`] = `
 <DocumentFragment>
-  <div
-    class="inline-block cursor-pointer"
+  <button
+    class="relative focus:outline-none group"
     data-testid="clipboard__wrapper"
+    type="button"
   >
+    <div
+      class="absolute inset-0 -m-1 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+    />
     <span>
       Hello!
     </span>
-  </div>
+  </button>
 </DocumentFragment>
 `;

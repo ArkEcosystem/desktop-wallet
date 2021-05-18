@@ -122,33 +122,37 @@ exports[`SecondSignatureRegistrationForm backup step should render 1`] = `
           <div
             class="flex justify-end w-full space-x-3"
           >
-            <div
-              class="inline-block cursor-pointer"
+            <button
+              class="relative focus:outline-none group"
               data-testid="clipboard__wrapper"
+              type="button"
             >
-              <button
-                class="OriginalButton__StyledButton-sc-1y2wptt-0 izJbbP"
-                data-testid="SecondSignature__copy"
-                type="button"
+              <div
+                class="absolute inset-0 -m-1 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+              />
+            </button>
+            <button
+              class="OriginalButton__StyledButton-sc-1y2wptt-0 izJbbP"
+              data-testid="SecondSignature__copy"
+              type="button"
+            >
+              <div
+                class="flex relative items-center space-x-2"
               >
                 <div
-                  class="flex relative items-center space-x-2"
+                  class="sc-bdfBwQ fPrsah"
+                  height="1em"
+                  width="1em"
                 >
-                  <div
-                    class="sc-bdfBwQ fPrsah"
-                    height="1em"
-                    width="1em"
-                  >
-                    <svg>
-                      copy.svg
-                    </svg>
-                  </div>
-                  <span>
-                    Copy
-                  </span>
+                  <svg>
+                    copy.svg
+                  </svg>
                 </div>
-              </button>
-            </div>
+                <span>
+                  Copy
+                </span>
+              </div>
+            </button>
             <button
               class="OriginalButton__StyledButton-sc-1y2wptt-0 izJbbP"
               data-testid="SecondSignature__download"
