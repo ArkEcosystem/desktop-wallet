@@ -6,6 +6,7 @@ import { matchPath, useHistory, useLocation } from "react-router-dom";
 import { useNotifications } from "./use-notifications";
 import { useProfileUtils } from "./use-profile-utils";
 import { useSynchronizer } from "./use-synchronizer";
+import { useTheme } from "./use-theme";
 
 enum Intervals {
 	Short = 30000,
@@ -194,6 +195,7 @@ export const useProfileSynchronizer = ({ onProfileRestoreError }: ProfileSynchro
 
 	const { allJobs } = useProfileJobs(profile);
 	const { start, stop, runAll } = useSynchronizer(allJobs);
+	const { setProfileTheme, resetTheme } = useTheme();
 
 	useEffect(() => {
 		const clearProfileSyncStatus = () => {
@@ -204,6 +206,7 @@ export const useProfileSynchronizer = ({ onProfileRestoreError }: ProfileSynchro
 			setStatus("idle");
 			stop({ clearTimers: true });
 			setConfiguration({ profileIsSyncing: true });
+			resetTheme();
 		};
 
 		const syncProfile = async (profile?: Contracts.IProfile) => {
@@ -222,6 +225,7 @@ export const useProfileSynchronizer = ({ onProfileRestoreError }: ProfileSynchro
 
 			if (shouldRestore(profile)) {
 				await restoreProfile(profile);
+				setProfileTheme(profile);
 			}
 
 			if (shouldSync()) {
@@ -246,6 +250,8 @@ export const useProfileSynchronizer = ({ onProfileRestoreError }: ProfileSynchro
 
 		setTimeout(() => syncProfile(profile), 0);
 	}, [
+		resetTheme,
+		setProfileTheme,
 		allJobs,
 		profile,
 		runAll,
