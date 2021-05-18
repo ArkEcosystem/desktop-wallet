@@ -11,301 +11,310 @@ exports[`PluginGrid should not render pagination 1`] = `
       <div
         data-testid="PluginCard--ark-explorer"
       >
-        <div
-          class="Cardstyles__Wrapper-sc-1uddqgb-0 bVJHxj"
-          data-testid="Card"
-        >
-          <div
-            class="flex items-center space-x-4"
+        <div>
+          <button
+            class="Cardstyles__CardButton-sc-1uddqgb-0 jaxCkf"
+            data-testid="Card"
+            type="button"
           >
             <div
-              class="flex-shrink-0 w-25 h-25 overflow-hidden rounded-lg"
+              class="flex items-center space-x-4"
             >
               <div
-                class="PluginImage__PluginImageWrapper-iwox49-0 cNxevm"
-                data-testid="PluginImage__placeholder"
-              >
-                <svg>
-                  plugin-logo-placeholder.svg
-                </svg>
-              </div>
-            </div>
-            <div
-              class="flex flex-col truncate"
-            >
-              <span
-                class="text-sm font-semibold truncate text-theme-secondary-500 dark:text-theme-secondary-700"
-              >
-                ARK.io
-              </span>
-              <div
-                class="flex items-center space-x-2 mt-1 text-lg font-bold truncate text-theme-primary-600 dark:text-theme-secondary-200"
+                class="flex-shrink-0 w-25 h-25 overflow-hidden rounded-lg"
               >
                 <div
-                  class="truncate"
-                >
-                  ARK Explorer
-                </div>
-                <span>
-                  <div
-                    class="sc-bdfBwQ fpbFeh"
-                    height="16"
-                    width="16"
-                  >
-                    <svg>
-                      official-ark-plugin.svg
-                    </svg>
-                  </div>
-                </span>
-              </div>
-              <div
-                class="flex items-center space-x-2 mt-4 dark:text-theme-secondary-600"
-              >
-                <div
-                  class="sc-bdfBwQ iyevwF"
-                  height="20"
-                  width="20"
+                  class="PluginImage__PluginImageWrapper-iwox49-0 cNxevm"
+                  data-testid="PluginImage__placeholder"
                 >
                   <svg>
-                    category.svg
+                    plugin-logo-placeholder.svg
                   </svg>
                 </div>
+              </div>
+              <div
+                class="flex flex-col truncate"
+              >
                 <span
-                  class="text-sm font-semibold"
+                  class="text-sm font-semibold truncate text-theme-secondary-500 dark:text-theme-secondary-700"
                 >
-                  Utility
+                  ARK.io
+                </span>
+                <div
+                  class="flex items-center space-x-2 mt-1 text-lg font-bold truncate text-theme-primary-600 dark:text-theme-secondary-200"
+                >
+                  <div
+                    class="truncate"
+                  >
+                    ARK Explorer
+                  </div>
+                  <span>
+                    <div
+                      class="sc-bdfBwQ fpbFeh"
+                      height="16"
+                      width="16"
+                    >
+                      <svg>
+                        official-ark-plugin.svg
+                      </svg>
+                    </div>
+                  </span>
+                </div>
+                <div
+                  class="flex items-center space-x-2 mt-4 dark:text-theme-secondary-600"
+                >
+                  <div
+                    class="sc-bdfBwQ iyevwF"
+                    height="20"
+                    width="20"
+                  >
+                    <svg>
+                      category.svg
+                    </svg>
+                  </div>
+                  <span
+                    class="text-sm font-semibold"
+                  >
+                    Utility
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div
+              class="flex absolute -top-1 -right-1 items-center m-4 space-x-1"
+            >
+              <div
+                class="flex items-center space-x-2"
+              />
+              <div
+                class="relative"
+              >
+                <span
+                  data-testid="dropdown__toggle"
+                >
+                  <div
+                    class="flex overflow-hidden justify-center w-4"
+                  >
+                    <div
+                      class="sc-bdfBwQ fPrsah p-1 transition-colors duration-200 cursor-pointer text-theme-primary-300 dark:text-theme-secondary-600 hover:text-theme-danger-400"
+                      height="1em"
+                      width="1em"
+                    >
+                      <svg>
+                        settings.svg
+                      </svg>
+                    </div>
+                  </div>
                 </span>
               </div>
             </div>
-          </div>
-          <div
-            class="flex absolute -top-1 -right-1 items-center m-4 space-x-1"
-          >
-            <div
-              class="flex items-center space-x-2"
-            />
-            <div
-              class="relative"
-            >
-              <span
-                data-testid="dropdown__toggle"
-              >
-                <div
-                  class="flex overflow-hidden justify-center w-4"
-                >
-                  <div
-                    class="sc-bdfBwQ fPrsah p-1 transition-colors duration-200 cursor-pointer text-theme-primary-300 dark:text-theme-secondary-600 hover:text-theme-danger-400"
-                    height="1em"
-                    width="1em"
-                  >
-                    <svg>
-                      settings.svg
-                    </svg>
-                  </div>
-                </div>
-              </span>
-            </div>
-          </div>
+          </button>
         </div>
       </div>
       <div
         data-testid="PluginCard--ark-avatars"
       >
-        <div
-          class="Cardstyles__Wrapper-sc-1uddqgb-0 bVJHxj"
-          data-testid="Card"
-        >
-          <div
-            class="flex items-center space-x-4"
+        <div>
+          <button
+            class="Cardstyles__CardButton-sc-1uddqgb-0 jaxCkf"
+            data-testid="Card"
+            type="button"
           >
             <div
-              class="flex-shrink-0 w-25 h-25 overflow-hidden rounded-lg"
+              class="flex items-center space-x-4"
             >
               <div
-                class="PluginImage__PluginImageWrapper-iwox49-0 cNxevm"
-                data-testid="PluginImage__placeholder"
-              >
-                <svg>
-                  plugin-logo-placeholder.svg
-                </svg>
-              </div>
-            </div>
-            <div
-              class="flex flex-col truncate"
-            >
-              <span
-                class="text-sm font-semibold truncate text-theme-secondary-500 dark:text-theme-secondary-700"
-              >
-                ARK.io
-              </span>
-              <div
-                class="flex items-center space-x-2 mt-1 text-lg font-bold truncate text-theme-primary-600 dark:text-theme-secondary-200"
+                class="flex-shrink-0 w-25 h-25 overflow-hidden rounded-lg"
               >
                 <div
-                  class="truncate"
+                  class="PluginImage__PluginImageWrapper-iwox49-0 cNxevm"
+                  data-testid="PluginImage__placeholder"
                 >
-                  ARK Avatars
+                  <svg>
+                    plugin-logo-placeholder.svg
+                  </svg>
                 </div>
-                <span>
+              </div>
+              <div
+                class="flex flex-col truncate"
+              >
+                <span
+                  class="text-sm font-semibold truncate text-theme-secondary-500 dark:text-theme-secondary-700"
+                >
+                  ARK.io
+                </span>
+                <div
+                  class="flex items-center space-x-2 mt-1 text-lg font-bold truncate text-theme-primary-600 dark:text-theme-secondary-200"
+                >
+                  <div
+                    class="truncate"
+                  >
+                    ARK Avatars
+                  </div>
+                  <span>
+                    <div
+                      class="sc-bdfBwQ iyevwF"
+                      height="20"
+                      width="20"
+                    >
+                      <svg>
+                        grant.svg
+                      </svg>
+                    </div>
+                  </span>
+                </div>
+                <div
+                  class="flex items-center space-x-2 mt-4 dark:text-theme-secondary-600"
+                >
                   <div
                     class="sc-bdfBwQ iyevwF"
                     height="20"
                     width="20"
                   >
                     <svg>
-                      grant.svg
+                      category.svg
                     </svg>
                   </div>
-                </span>
-              </div>
-              <div
-                class="flex items-center space-x-2 mt-4 dark:text-theme-secondary-600"
-              >
-                <div
-                  class="sc-bdfBwQ iyevwF"
-                  height="20"
-                  width="20"
-                >
-                  <svg>
-                    category.svg
-                  </svg>
+                  <span
+                    class="text-sm font-semibold"
+                  >
+                    Other
+                  </span>
                 </div>
-                <span
-                  class="text-sm font-semibold"
-                >
-                  Other
-                </span>
               </div>
             </div>
-          </div>
-          <div
-            class="flex absolute -top-1 -right-1 items-center m-4 space-x-1"
-          >
             <div
-              class="flex items-center space-x-2"
-            />
-            <div
-              class="relative"
+              class="flex absolute -top-1 -right-1 items-center m-4 space-x-1"
             >
-              <span
-                data-testid="dropdown__toggle"
+              <div
+                class="flex items-center space-x-2"
+              />
+              <div
+                class="relative"
               >
-                <div
-                  class="flex overflow-hidden justify-center w-4"
+                <span
+                  data-testid="dropdown__toggle"
                 >
                   <div
-                    class="sc-bdfBwQ fPrsah p-1 transition-colors duration-200 cursor-pointer text-theme-primary-300 dark:text-theme-secondary-600 hover:text-theme-danger-400"
-                    height="1em"
-                    width="1em"
+                    class="flex overflow-hidden justify-center w-4"
                   >
-                    <svg>
-                      settings.svg
-                    </svg>
+                    <div
+                      class="sc-bdfBwQ fPrsah p-1 transition-colors duration-200 cursor-pointer text-theme-primary-300 dark:text-theme-secondary-600 hover:text-theme-danger-400"
+                      height="1em"
+                      width="1em"
+                    >
+                      <svg>
+                        settings.svg
+                      </svg>
+                    </div>
                   </div>
-                </div>
-              </span>
+                </span>
+              </div>
             </div>
-          </div>
+          </button>
         </div>
       </div>
       <div
         data-testid="PluginCard--ark-theme"
       >
-        <div
-          class="Cardstyles__Wrapper-sc-1uddqgb-0 bVJHxj"
-          data-testid="Card"
-        >
-          <div
-            class="flex items-center space-x-4"
+        <div>
+          <button
+            class="Cardstyles__CardButton-sc-1uddqgb-0 jaxCkf"
+            data-testid="Card"
+            type="button"
           >
             <div
-              class="flex-shrink-0 w-25 h-25 overflow-hidden rounded-lg"
+              class="flex items-center space-x-4"
             >
               <div
-                class="PluginImage__PluginImageWrapper-iwox49-0 cNxevm"
-                data-testid="PluginImage__placeholder"
-              >
-                <svg>
-                  plugin-logo-placeholder.svg
-                </svg>
-              </div>
-            </div>
-            <div
-              class="flex flex-col truncate"
-            >
-              <span
-                class="text-sm font-semibold truncate text-theme-secondary-500 dark:text-theme-secondary-700"
-              >
-                ARK.io
-              </span>
-              <div
-                class="flex items-center space-x-2 mt-1 text-lg font-bold truncate text-theme-primary-600 dark:text-theme-secondary-200"
+                class="flex-shrink-0 w-25 h-25 overflow-hidden rounded-lg"
               >
                 <div
-                  class="truncate"
+                  class="PluginImage__PluginImageWrapper-iwox49-0 cNxevm"
+                  data-testid="PluginImage__placeholder"
                 >
-                  ARK Theme
+                  <svg>
+                    plugin-logo-placeholder.svg
+                  </svg>
                 </div>
-                <span>
+              </div>
+              <div
+                class="flex flex-col truncate"
+              >
+                <span
+                  class="text-sm font-semibold truncate text-theme-secondary-500 dark:text-theme-secondary-700"
+                >
+                  ARK.io
+                </span>
+                <div
+                  class="flex items-center space-x-2 mt-1 text-lg font-bold truncate text-theme-primary-600 dark:text-theme-secondary-200"
+                >
+                  <div
+                    class="truncate"
+                  >
+                    ARK Theme
+                  </div>
+                  <span>
+                    <div
+                      class="sc-bdfBwQ iyevwF"
+                      height="20"
+                      width="20"
+                    >
+                      <svg>
+                        grant.svg
+                      </svg>
+                    </div>
+                  </span>
+                </div>
+                <div
+                  class="flex items-center space-x-2 mt-4 dark:text-theme-secondary-600"
+                >
                   <div
                     class="sc-bdfBwQ iyevwF"
                     height="20"
                     width="20"
                   >
                     <svg>
-                      grant.svg
+                      category.svg
                     </svg>
                   </div>
-                </span>
-              </div>
-              <div
-                class="flex items-center space-x-2 mt-4 dark:text-theme-secondary-600"
-              >
-                <div
-                  class="sc-bdfBwQ iyevwF"
-                  height="20"
-                  width="20"
-                >
-                  <svg>
-                    category.svg
-                  </svg>
+                  <span
+                    class="text-sm font-semibold"
+                  >
+                    Other
+                  </span>
                 </div>
-                <span
-                  class="text-sm font-semibold"
-                >
-                  Other
-                </span>
               </div>
             </div>
-          </div>
-          <div
-            class="flex absolute -top-1 -right-1 items-center m-4 space-x-1"
-          >
             <div
-              class="flex items-center space-x-2"
-            />
-            <div
-              class="relative"
+              class="flex absolute -top-1 -right-1 items-center m-4 space-x-1"
             >
-              <span
-                data-testid="dropdown__toggle"
+              <div
+                class="flex items-center space-x-2"
+              />
+              <div
+                class="relative"
               >
-                <div
-                  class="flex overflow-hidden justify-center w-4"
+                <span
+                  data-testid="dropdown__toggle"
                 >
                   <div
-                    class="sc-bdfBwQ fPrsah p-1 transition-colors duration-200 cursor-pointer text-theme-primary-300 dark:text-theme-secondary-600 hover:text-theme-danger-400"
-                    height="1em"
-                    width="1em"
+                    class="flex overflow-hidden justify-center w-4"
                   >
-                    <svg>
-                      settings.svg
-                    </svg>
+                    <div
+                      class="sc-bdfBwQ fPrsah p-1 transition-colors duration-200 cursor-pointer text-theme-primary-300 dark:text-theme-secondary-600 hover:text-theme-danger-400"
+                      height="1em"
+                      width="1em"
+                    >
+                      <svg>
+                        settings.svg
+                      </svg>
+                    </div>
                   </div>
-                </div>
-              </span>
+                </span>
+              </div>
             </div>
-          </div>
+          </button>
         </div>
       </div>
     </div>
@@ -327,304 +336,316 @@ exports[`PluginGrid should render custom number of skeletons 1`] = `
       <div
         data-testid="PluginCardSkeleton"
       >
-        <div
-          class="Cardstyles__Wrapper-sc-1uddqgb-0 eJQzer"
-          data-testid="Card"
-        >
-          <div
-            class="flex items-center space-x-4 overflow-hidden"
+        <div>
+          <button
+            class="Cardstyles__CardButton-sc-1uddqgb-0 ixtuUQ"
+            data-testid="Card"
+            tabindex="-1"
+            type="button"
           >
             <div
-              class="flex-shrink-0 w-25 h-25 overflow-hidden rounded-xl"
+              class="flex items-center space-x-4 overflow-hidden"
             >
-              <span>
-                <span
-                  class="flex items-center leading-none"
-                >
+              <div
+                class="flex-shrink-0 w-25 h-25 overflow-hidden rounded-xl"
+              >
+                <span>
                   <span
-                    class="react-loading-skeleton css-1eg0sfo-skeletonStyles-Skeleton"
-                    style="width: 100px; height: 100px;"
+                    class="flex items-center leading-none"
                   >
+                    <span
+                      class="react-loading-skeleton css-1eg0sfo-skeletonStyles-Skeleton"
+                      style="width: 100px; height: 100px;"
+                    >
+                      ‌
+                    </span>
                     ‌
                   </span>
-                  ‌
                 </span>
-              </span>
+              </div>
+              <div
+                class="flex flex-col"
+              >
+                <div
+                  class="flex items-center h-5"
+                >
+                  <span>
+                    <span
+                      class="flex items-center leading-none"
+                    >
+                      <span
+                        class="react-loading-skeleton css-1eg0sfo-skeletonStyles-Skeleton"
+                        style="width: 1px; height: 14px;"
+                      >
+                        ‌
+                      </span>
+                      ‌
+                    </span>
+                  </span>
+                </div>
+                <div
+                  class="flex items-center h-7 mt-1"
+                >
+                  <span>
+                    <span
+                      class="flex items-center leading-none"
+                    >
+                      <span
+                        class="react-loading-skeleton css-1eg0sfo-skeletonStyles-Skeleton"
+                        style="width: 1px; height: 16px;"
+                      >
+                        ‌
+                      </span>
+                      ‌
+                    </span>
+                  </span>
+                </div>
+                <div
+                  class="flex items-center space-x-2 mt-4"
+                >
+                  <span>
+                    <span
+                      class="flex items-center leading-none"
+                    >
+                      <span
+                        class="react-loading-skeleton css-1eg0sfo-skeletonStyles-Skeleton"
+                        style="width: 20px; height: 20px;"
+                      >
+                        ‌
+                      </span>
+                      ‌
+                    </span>
+                  </span>
+                  <span>
+                    <span
+                      class="flex items-center leading-none"
+                    >
+                      <span
+                        class="react-loading-skeleton css-1eg0sfo-skeletonStyles-Skeleton"
+                        style="width: 70px; height: 14px;"
+                      >
+                        ‌
+                      </span>
+                      ‌
+                    </span>
+                  </span>
+                </div>
+              </div>
             </div>
             <div
-              class="flex flex-col"
-            >
-              <div
-                class="flex items-center h-5"
-              >
-                <span>
-                  <span
-                    class="flex items-center leading-none"
-                  >
-                    <span
-                      class="react-loading-skeleton css-1eg0sfo-skeletonStyles-Skeleton"
-                      style="width: 1px; height: 14px;"
-                    >
-                      ‌
-                    </span>
-                    ‌
-                  </span>
-                </span>
-              </div>
-              <div
-                class="flex items-center h-7 mt-1"
-              >
-                <span>
-                  <span
-                    class="flex items-center leading-none"
-                  >
-                    <span
-                      class="react-loading-skeleton css-1eg0sfo-skeletonStyles-Skeleton"
-                      style="width: 1px; height: 16px;"
-                    >
-                      ‌
-                    </span>
-                    ‌
-                  </span>
-                </span>
-              </div>
-              <div
-                class="flex items-center space-x-2 mt-4"
-              >
-                <span>
-                  <span
-                    class="flex items-center leading-none"
-                  >
-                    <span
-                      class="react-loading-skeleton css-1eg0sfo-skeletonStyles-Skeleton"
-                      style="width: 20px; height: 20px;"
-                    >
-                      ‌
-                    </span>
-                    ‌
-                  </span>
-                </span>
-                <span>
-                  <span
-                    class="flex items-center leading-none"
-                  >
-                    <span
-                      class="react-loading-skeleton css-1eg0sfo-skeletonStyles-Skeleton"
-                      style="width: 70px; height: 14px;"
-                    >
-                      ‌
-                    </span>
-                    ‌
-                  </span>
-                </span>
-              </div>
-            </div>
-          </div>
-          <div
-            class="flex absolute -top-1 -right-1 items-center m-4 space-x-1"
-          />
+              class="flex absolute -top-1 -right-1 items-center m-4 space-x-1"
+            />
+          </button>
         </div>
       </div>
       <div
         data-testid="PluginCardSkeleton"
       >
-        <div
-          class="Cardstyles__Wrapper-sc-1uddqgb-0 eJQzer"
-          data-testid="Card"
-        >
-          <div
-            class="flex items-center space-x-4 overflow-hidden"
+        <div>
+          <button
+            class="Cardstyles__CardButton-sc-1uddqgb-0 ixtuUQ"
+            data-testid="Card"
+            tabindex="-1"
+            type="button"
           >
             <div
-              class="flex-shrink-0 w-25 h-25 overflow-hidden rounded-xl"
+              class="flex items-center space-x-4 overflow-hidden"
             >
-              <span>
-                <span
-                  class="flex items-center leading-none"
-                >
+              <div
+                class="flex-shrink-0 w-25 h-25 overflow-hidden rounded-xl"
+              >
+                <span>
                   <span
-                    class="react-loading-skeleton css-1eg0sfo-skeletonStyles-Skeleton"
-                    style="width: 100px; height: 100px;"
+                    class="flex items-center leading-none"
                   >
+                    <span
+                      class="react-loading-skeleton css-1eg0sfo-skeletonStyles-Skeleton"
+                      style="width: 100px; height: 100px;"
+                    >
+                      ‌
+                    </span>
                     ‌
                   </span>
-                  ‌
                 </span>
-              </span>
+              </div>
+              <div
+                class="flex flex-col"
+              >
+                <div
+                  class="flex items-center h-5"
+                >
+                  <span>
+                    <span
+                      class="flex items-center leading-none"
+                    >
+                      <span
+                        class="react-loading-skeleton css-1eg0sfo-skeletonStyles-Skeleton"
+                        style="width: 1px; height: 14px;"
+                      >
+                        ‌
+                      </span>
+                      ‌
+                    </span>
+                  </span>
+                </div>
+                <div
+                  class="flex items-center h-7 mt-1"
+                >
+                  <span>
+                    <span
+                      class="flex items-center leading-none"
+                    >
+                      <span
+                        class="react-loading-skeleton css-1eg0sfo-skeletonStyles-Skeleton"
+                        style="width: 1px; height: 16px;"
+                      >
+                        ‌
+                      </span>
+                      ‌
+                    </span>
+                  </span>
+                </div>
+                <div
+                  class="flex items-center space-x-2 mt-4"
+                >
+                  <span>
+                    <span
+                      class="flex items-center leading-none"
+                    >
+                      <span
+                        class="react-loading-skeleton css-1eg0sfo-skeletonStyles-Skeleton"
+                        style="width: 20px; height: 20px;"
+                      >
+                        ‌
+                      </span>
+                      ‌
+                    </span>
+                  </span>
+                  <span>
+                    <span
+                      class="flex items-center leading-none"
+                    >
+                      <span
+                        class="react-loading-skeleton css-1eg0sfo-skeletonStyles-Skeleton"
+                        style="width: 70px; height: 14px;"
+                      >
+                        ‌
+                      </span>
+                      ‌
+                    </span>
+                  </span>
+                </div>
+              </div>
             </div>
             <div
-              class="flex flex-col"
-            >
-              <div
-                class="flex items-center h-5"
-              >
-                <span>
-                  <span
-                    class="flex items-center leading-none"
-                  >
-                    <span
-                      class="react-loading-skeleton css-1eg0sfo-skeletonStyles-Skeleton"
-                      style="width: 1px; height: 14px;"
-                    >
-                      ‌
-                    </span>
-                    ‌
-                  </span>
-                </span>
-              </div>
-              <div
-                class="flex items-center h-7 mt-1"
-              >
-                <span>
-                  <span
-                    class="flex items-center leading-none"
-                  >
-                    <span
-                      class="react-loading-skeleton css-1eg0sfo-skeletonStyles-Skeleton"
-                      style="width: 1px; height: 16px;"
-                    >
-                      ‌
-                    </span>
-                    ‌
-                  </span>
-                </span>
-              </div>
-              <div
-                class="flex items-center space-x-2 mt-4"
-              >
-                <span>
-                  <span
-                    class="flex items-center leading-none"
-                  >
-                    <span
-                      class="react-loading-skeleton css-1eg0sfo-skeletonStyles-Skeleton"
-                      style="width: 20px; height: 20px;"
-                    >
-                      ‌
-                    </span>
-                    ‌
-                  </span>
-                </span>
-                <span>
-                  <span
-                    class="flex items-center leading-none"
-                  >
-                    <span
-                      class="react-loading-skeleton css-1eg0sfo-skeletonStyles-Skeleton"
-                      style="width: 70px; height: 14px;"
-                    >
-                      ‌
-                    </span>
-                    ‌
-                  </span>
-                </span>
-              </div>
-            </div>
-          </div>
-          <div
-            class="flex absolute -top-1 -right-1 items-center m-4 space-x-1"
-          />
+              class="flex absolute -top-1 -right-1 items-center m-4 space-x-1"
+            />
+          </button>
         </div>
       </div>
       <div
         data-testid="PluginCardSkeleton"
       >
-        <div
-          class="Cardstyles__Wrapper-sc-1uddqgb-0 eJQzer"
-          data-testid="Card"
-        >
-          <div
-            class="flex items-center space-x-4 overflow-hidden"
+        <div>
+          <button
+            class="Cardstyles__CardButton-sc-1uddqgb-0 ixtuUQ"
+            data-testid="Card"
+            tabindex="-1"
+            type="button"
           >
             <div
-              class="flex-shrink-0 w-25 h-25 overflow-hidden rounded-xl"
+              class="flex items-center space-x-4 overflow-hidden"
             >
-              <span>
-                <span
-                  class="flex items-center leading-none"
-                >
+              <div
+                class="flex-shrink-0 w-25 h-25 overflow-hidden rounded-xl"
+              >
+                <span>
                   <span
-                    class="react-loading-skeleton css-1eg0sfo-skeletonStyles-Skeleton"
-                    style="width: 100px; height: 100px;"
+                    class="flex items-center leading-none"
                   >
+                    <span
+                      class="react-loading-skeleton css-1eg0sfo-skeletonStyles-Skeleton"
+                      style="width: 100px; height: 100px;"
+                    >
+                      ‌
+                    </span>
                     ‌
                   </span>
-                  ‌
                 </span>
-              </span>
+              </div>
+              <div
+                class="flex flex-col"
+              >
+                <div
+                  class="flex items-center h-5"
+                >
+                  <span>
+                    <span
+                      class="flex items-center leading-none"
+                    >
+                      <span
+                        class="react-loading-skeleton css-1eg0sfo-skeletonStyles-Skeleton"
+                        style="width: 1px; height: 14px;"
+                      >
+                        ‌
+                      </span>
+                      ‌
+                    </span>
+                  </span>
+                </div>
+                <div
+                  class="flex items-center h-7 mt-1"
+                >
+                  <span>
+                    <span
+                      class="flex items-center leading-none"
+                    >
+                      <span
+                        class="react-loading-skeleton css-1eg0sfo-skeletonStyles-Skeleton"
+                        style="width: 1px; height: 16px;"
+                      >
+                        ‌
+                      </span>
+                      ‌
+                    </span>
+                  </span>
+                </div>
+                <div
+                  class="flex items-center space-x-2 mt-4"
+                >
+                  <span>
+                    <span
+                      class="flex items-center leading-none"
+                    >
+                      <span
+                        class="react-loading-skeleton css-1eg0sfo-skeletonStyles-Skeleton"
+                        style="width: 20px; height: 20px;"
+                      >
+                        ‌
+                      </span>
+                      ‌
+                    </span>
+                  </span>
+                  <span>
+                    <span
+                      class="flex items-center leading-none"
+                    >
+                      <span
+                        class="react-loading-skeleton css-1eg0sfo-skeletonStyles-Skeleton"
+                        style="width: 70px; height: 14px;"
+                      >
+                        ‌
+                      </span>
+                      ‌
+                    </span>
+                  </span>
+                </div>
+              </div>
             </div>
             <div
-              class="flex flex-col"
-            >
-              <div
-                class="flex items-center h-5"
-              >
-                <span>
-                  <span
-                    class="flex items-center leading-none"
-                  >
-                    <span
-                      class="react-loading-skeleton css-1eg0sfo-skeletonStyles-Skeleton"
-                      style="width: 1px; height: 14px;"
-                    >
-                      ‌
-                    </span>
-                    ‌
-                  </span>
-                </span>
-              </div>
-              <div
-                class="flex items-center h-7 mt-1"
-              >
-                <span>
-                  <span
-                    class="flex items-center leading-none"
-                  >
-                    <span
-                      class="react-loading-skeleton css-1eg0sfo-skeletonStyles-Skeleton"
-                      style="width: 1px; height: 16px;"
-                    >
-                      ‌
-                    </span>
-                    ‌
-                  </span>
-                </span>
-              </div>
-              <div
-                class="flex items-center space-x-2 mt-4"
-              >
-                <span>
-                  <span
-                    class="flex items-center leading-none"
-                  >
-                    <span
-                      class="react-loading-skeleton css-1eg0sfo-skeletonStyles-Skeleton"
-                      style="width: 20px; height: 20px;"
-                    >
-                      ‌
-                    </span>
-                    ‌
-                  </span>
-                </span>
-                <span>
-                  <span
-                    class="flex items-center leading-none"
-                  >
-                    <span
-                      class="react-loading-skeleton css-1eg0sfo-skeletonStyles-Skeleton"
-                      style="width: 70px; height: 14px;"
-                    >
-                      ‌
-                    </span>
-                    ‌
-                  </span>
-                </span>
-              </div>
-            </div>
-          </div>
-          <div
-            class="flex absolute -top-1 -right-1 items-center m-4 space-x-1"
-          />
+              class="flex absolute -top-1 -right-1 items-center m-4 space-x-1"
+            />
+          </button>
         </div>
       </div>
     </div>
@@ -643,401 +664,413 @@ exports[`PluginGrid should render pagination 1`] = `
       <div
         data-testid="PluginCard--ark-explorer"
       >
-        <div
-          class="Cardstyles__Wrapper-sc-1uddqgb-0 bVJHxj"
-          data-testid="Card"
-        >
-          <div
-            class="flex items-center space-x-4"
+        <div>
+          <button
+            class="Cardstyles__CardButton-sc-1uddqgb-0 jaxCkf"
+            data-testid="Card"
+            type="button"
           >
             <div
-              class="flex-shrink-0 w-25 h-25 overflow-hidden rounded-lg"
+              class="flex items-center space-x-4"
             >
               <div
-                class="PluginImage__PluginImageWrapper-iwox49-0 cNxevm"
-                data-testid="PluginImage__placeholder"
-              >
-                <svg>
-                  plugin-logo-placeholder.svg
-                </svg>
-              </div>
-            </div>
-            <div
-              class="flex flex-col truncate"
-            >
-              <span
-                class="text-sm font-semibold truncate text-theme-secondary-500 dark:text-theme-secondary-700"
-              >
-                ARK.io
-              </span>
-              <div
-                class="flex items-center space-x-2 mt-1 text-lg font-bold truncate text-theme-primary-600 dark:text-theme-secondary-200"
+                class="flex-shrink-0 w-25 h-25 overflow-hidden rounded-lg"
               >
                 <div
-                  class="truncate"
-                >
-                  ARK Explorer
-                </div>
-                <span>
-                  <div
-                    class="sc-bdfBwQ fpbFeh"
-                    height="16"
-                    width="16"
-                  >
-                    <svg>
-                      official-ark-plugin.svg
-                    </svg>
-                  </div>
-                </span>
-              </div>
-              <div
-                class="flex items-center space-x-2 mt-4 dark:text-theme-secondary-600"
-              >
-                <div
-                  class="sc-bdfBwQ iyevwF"
-                  height="20"
-                  width="20"
+                  class="PluginImage__PluginImageWrapper-iwox49-0 cNxevm"
+                  data-testid="PluginImage__placeholder"
                 >
                   <svg>
-                    category.svg
+                    plugin-logo-placeholder.svg
                   </svg>
                 </div>
+              </div>
+              <div
+                class="flex flex-col truncate"
+              >
                 <span
-                  class="text-sm font-semibold"
+                  class="text-sm font-semibold truncate text-theme-secondary-500 dark:text-theme-secondary-700"
                 >
-                  Utility
+                  ARK.io
+                </span>
+                <div
+                  class="flex items-center space-x-2 mt-1 text-lg font-bold truncate text-theme-primary-600 dark:text-theme-secondary-200"
+                >
+                  <div
+                    class="truncate"
+                  >
+                    ARK Explorer
+                  </div>
+                  <span>
+                    <div
+                      class="sc-bdfBwQ fpbFeh"
+                      height="16"
+                      width="16"
+                    >
+                      <svg>
+                        official-ark-plugin.svg
+                      </svg>
+                    </div>
+                  </span>
+                </div>
+                <div
+                  class="flex items-center space-x-2 mt-4 dark:text-theme-secondary-600"
+                >
+                  <div
+                    class="sc-bdfBwQ iyevwF"
+                    height="20"
+                    width="20"
+                  >
+                    <svg>
+                      category.svg
+                    </svg>
+                  </div>
+                  <span
+                    class="text-sm font-semibold"
+                  >
+                    Utility
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div
+              class="flex absolute -top-1 -right-1 items-center m-4 space-x-1"
+            >
+              <div
+                class="flex items-center space-x-2"
+              />
+              <div
+                class="relative"
+              >
+                <span
+                  data-testid="dropdown__toggle"
+                >
+                  <div
+                    class="flex overflow-hidden justify-center w-4"
+                  >
+                    <div
+                      class="sc-bdfBwQ fPrsah p-1 transition-colors duration-200 cursor-pointer text-theme-primary-300 dark:text-theme-secondary-600 hover:text-theme-danger-400"
+                      height="1em"
+                      width="1em"
+                    >
+                      <svg>
+                        settings.svg
+                      </svg>
+                    </div>
+                  </div>
                 </span>
               </div>
             </div>
-          </div>
-          <div
-            class="flex absolute -top-1 -right-1 items-center m-4 space-x-1"
-          >
-            <div
-              class="flex items-center space-x-2"
-            />
-            <div
-              class="relative"
-            >
-              <span
-                data-testid="dropdown__toggle"
-              >
-                <div
-                  class="flex overflow-hidden justify-center w-4"
-                >
-                  <div
-                    class="sc-bdfBwQ fPrsah p-1 transition-colors duration-200 cursor-pointer text-theme-primary-300 dark:text-theme-secondary-600 hover:text-theme-danger-400"
-                    height="1em"
-                    width="1em"
-                  >
-                    <svg>
-                      settings.svg
-                    </svg>
-                  </div>
-                </div>
-              </span>
-            </div>
-          </div>
+          </button>
         </div>
       </div>
       <div
         data-testid="PluginCard--ark-avatars"
       >
-        <div
-          class="Cardstyles__Wrapper-sc-1uddqgb-0 bVJHxj"
-          data-testid="Card"
-        >
-          <div
-            class="flex items-center space-x-4"
+        <div>
+          <button
+            class="Cardstyles__CardButton-sc-1uddqgb-0 jaxCkf"
+            data-testid="Card"
+            type="button"
           >
             <div
-              class="flex-shrink-0 w-25 h-25 overflow-hidden rounded-lg"
+              class="flex items-center space-x-4"
             >
               <div
-                class="PluginImage__PluginImageWrapper-iwox49-0 cNxevm"
-                data-testid="PluginImage__placeholder"
-              >
-                <svg>
-                  plugin-logo-placeholder.svg
-                </svg>
-              </div>
-            </div>
-            <div
-              class="flex flex-col truncate"
-            >
-              <span
-                class="text-sm font-semibold truncate text-theme-secondary-500 dark:text-theme-secondary-700"
-              >
-                ARK.io
-              </span>
-              <div
-                class="flex items-center space-x-2 mt-1 text-lg font-bold truncate text-theme-primary-600 dark:text-theme-secondary-200"
+                class="flex-shrink-0 w-25 h-25 overflow-hidden rounded-lg"
               >
                 <div
-                  class="truncate"
+                  class="PluginImage__PluginImageWrapper-iwox49-0 cNxevm"
+                  data-testid="PluginImage__placeholder"
                 >
-                  ARK Avatars
+                  <svg>
+                    plugin-logo-placeholder.svg
+                  </svg>
                 </div>
-                <span>
+              </div>
+              <div
+                class="flex flex-col truncate"
+              >
+                <span
+                  class="text-sm font-semibold truncate text-theme-secondary-500 dark:text-theme-secondary-700"
+                >
+                  ARK.io
+                </span>
+                <div
+                  class="flex items-center space-x-2 mt-1 text-lg font-bold truncate text-theme-primary-600 dark:text-theme-secondary-200"
+                >
+                  <div
+                    class="truncate"
+                  >
+                    ARK Avatars
+                  </div>
+                  <span>
+                    <div
+                      class="sc-bdfBwQ iyevwF"
+                      height="20"
+                      width="20"
+                    >
+                      <svg>
+                        grant.svg
+                      </svg>
+                    </div>
+                  </span>
+                </div>
+                <div
+                  class="flex items-center space-x-2 mt-4 dark:text-theme-secondary-600"
+                >
                   <div
                     class="sc-bdfBwQ iyevwF"
                     height="20"
                     width="20"
                   >
                     <svg>
-                      grant.svg
+                      category.svg
                     </svg>
                   </div>
-                </span>
-              </div>
-              <div
-                class="flex items-center space-x-2 mt-4 dark:text-theme-secondary-600"
-              >
-                <div
-                  class="sc-bdfBwQ iyevwF"
-                  height="20"
-                  width="20"
-                >
-                  <svg>
-                    category.svg
-                  </svg>
+                  <span
+                    class="text-sm font-semibold"
+                  >
+                    Other
+                  </span>
                 </div>
-                <span
-                  class="text-sm font-semibold"
-                >
-                  Other
-                </span>
               </div>
             </div>
-          </div>
-          <div
-            class="flex absolute -top-1 -right-1 items-center m-4 space-x-1"
-          >
             <div
-              class="flex items-center space-x-2"
-            />
-            <div
-              class="relative"
+              class="flex absolute -top-1 -right-1 items-center m-4 space-x-1"
             >
-              <span
-                data-testid="dropdown__toggle"
+              <div
+                class="flex items-center space-x-2"
+              />
+              <div
+                class="relative"
               >
-                <div
-                  class="flex overflow-hidden justify-center w-4"
+                <span
+                  data-testid="dropdown__toggle"
                 >
                   <div
-                    class="sc-bdfBwQ fPrsah p-1 transition-colors duration-200 cursor-pointer text-theme-primary-300 dark:text-theme-secondary-600 hover:text-theme-danger-400"
-                    height="1em"
-                    width="1em"
+                    class="flex overflow-hidden justify-center w-4"
                   >
-                    <svg>
-                      settings.svg
-                    </svg>
+                    <div
+                      class="sc-bdfBwQ fPrsah p-1 transition-colors duration-200 cursor-pointer text-theme-primary-300 dark:text-theme-secondary-600 hover:text-theme-danger-400"
+                      height="1em"
+                      width="1em"
+                    >
+                      <svg>
+                        settings.svg
+                      </svg>
+                    </div>
                   </div>
-                </div>
-              </span>
+                </span>
+              </div>
             </div>
-          </div>
+          </button>
         </div>
       </div>
       <div
         data-testid="PluginCard--ark-theme"
       >
-        <div
-          class="Cardstyles__Wrapper-sc-1uddqgb-0 bVJHxj"
-          data-testid="Card"
-        >
-          <div
-            class="flex items-center space-x-4"
+        <div>
+          <button
+            class="Cardstyles__CardButton-sc-1uddqgb-0 jaxCkf"
+            data-testid="Card"
+            type="button"
           >
             <div
-              class="flex-shrink-0 w-25 h-25 overflow-hidden rounded-lg"
+              class="flex items-center space-x-4"
             >
               <div
-                class="PluginImage__PluginImageWrapper-iwox49-0 cNxevm"
-                data-testid="PluginImage__placeholder"
-              >
-                <svg>
-                  plugin-logo-placeholder.svg
-                </svg>
-              </div>
-            </div>
-            <div
-              class="flex flex-col truncate"
-            >
-              <span
-                class="text-sm font-semibold truncate text-theme-secondary-500 dark:text-theme-secondary-700"
-              >
-                ARK.io
-              </span>
-              <div
-                class="flex items-center space-x-2 mt-1 text-lg font-bold truncate text-theme-primary-600 dark:text-theme-secondary-200"
+                class="flex-shrink-0 w-25 h-25 overflow-hidden rounded-lg"
               >
                 <div
-                  class="truncate"
+                  class="PluginImage__PluginImageWrapper-iwox49-0 cNxevm"
+                  data-testid="PluginImage__placeholder"
                 >
-                  ARK Theme
+                  <svg>
+                    plugin-logo-placeholder.svg
+                  </svg>
                 </div>
-                <span>
+              </div>
+              <div
+                class="flex flex-col truncate"
+              >
+                <span
+                  class="text-sm font-semibold truncate text-theme-secondary-500 dark:text-theme-secondary-700"
+                >
+                  ARK.io
+                </span>
+                <div
+                  class="flex items-center space-x-2 mt-1 text-lg font-bold truncate text-theme-primary-600 dark:text-theme-secondary-200"
+                >
+                  <div
+                    class="truncate"
+                  >
+                    ARK Theme
+                  </div>
+                  <span>
+                    <div
+                      class="sc-bdfBwQ iyevwF"
+                      height="20"
+                      width="20"
+                    >
+                      <svg>
+                        grant.svg
+                      </svg>
+                    </div>
+                  </span>
+                </div>
+                <div
+                  class="flex items-center space-x-2 mt-4 dark:text-theme-secondary-600"
+                >
                   <div
                     class="sc-bdfBwQ iyevwF"
                     height="20"
                     width="20"
                   >
                     <svg>
-                      grant.svg
+                      category.svg
                     </svg>
                   </div>
-                </span>
-              </div>
-              <div
-                class="flex items-center space-x-2 mt-4 dark:text-theme-secondary-600"
-              >
-                <div
-                  class="sc-bdfBwQ iyevwF"
-                  height="20"
-                  width="20"
-                >
-                  <svg>
-                    category.svg
-                  </svg>
+                  <span
+                    class="text-sm font-semibold"
+                  >
+                    Other
+                  </span>
                 </div>
-                <span
-                  class="text-sm font-semibold"
-                >
-                  Other
-                </span>
               </div>
             </div>
-          </div>
-          <div
-            class="flex absolute -top-1 -right-1 items-center m-4 space-x-1"
-          >
             <div
-              class="flex items-center space-x-2"
-            />
-            <div
-              class="relative"
+              class="flex absolute -top-1 -right-1 items-center m-4 space-x-1"
             >
-              <span
-                data-testid="dropdown__toggle"
+              <div
+                class="flex items-center space-x-2"
+              />
+              <div
+                class="relative"
               >
-                <div
-                  class="flex overflow-hidden justify-center w-4"
+                <span
+                  data-testid="dropdown__toggle"
                 >
                   <div
-                    class="sc-bdfBwQ fPrsah p-1 transition-colors duration-200 cursor-pointer text-theme-primary-300 dark:text-theme-secondary-600 hover:text-theme-danger-400"
-                    height="1em"
-                    width="1em"
+                    class="flex overflow-hidden justify-center w-4"
                   >
-                    <svg>
-                      settings.svg
-                    </svg>
+                    <div
+                      class="sc-bdfBwQ fPrsah p-1 transition-colors duration-200 cursor-pointer text-theme-primary-300 dark:text-theme-secondary-600 hover:text-theme-danger-400"
+                      height="1em"
+                      width="1em"
+                    >
+                      <svg>
+                        settings.svg
+                      </svg>
+                    </div>
                   </div>
-                </div>
-              </span>
+                </span>
+              </div>
             </div>
-          </div>
+          </button>
         </div>
       </div>
       <div
         data-testid="PluginCard--drakula-theme"
       >
-        <div
-          class="Cardstyles__Wrapper-sc-1uddqgb-0 bVJHxj"
-          data-testid="Card"
-        >
-          <div
-            class="flex items-center space-x-4"
+        <div>
+          <button
+            class="Cardstyles__CardButton-sc-1uddqgb-0 jaxCkf"
+            data-testid="Card"
+            type="button"
           >
             <div
-              class="flex-shrink-0 w-25 h-25 overflow-hidden rounded-lg"
+              class="flex items-center space-x-4"
             >
               <div
-                class="PluginImage__PluginImageWrapper-iwox49-0 cNxevm"
-                data-testid="PluginImage__placeholder"
-              >
-                <svg>
-                  plugin-logo-placeholder.svg
-                </svg>
-              </div>
-            </div>
-            <div
-              class="flex flex-col truncate"
-            >
-              <span
-                class="text-sm font-semibold truncate text-theme-secondary-500 dark:text-theme-secondary-700"
-              >
-                Breno Polanski
-              </span>
-              <div
-                class="flex items-center space-x-2 mt-1 text-lg font-bold truncate text-theme-primary-600 dark:text-theme-secondary-200"
+                class="flex-shrink-0 w-25 h-25 overflow-hidden rounded-lg"
               >
                 <div
-                  class="truncate"
+                  class="PluginImage__PluginImageWrapper-iwox49-0 cNxevm"
+                  data-testid="PluginImage__placeholder"
                 >
-                  Drakula Theme
+                  <svg>
+                    plugin-logo-placeholder.svg
+                  </svg>
                 </div>
-                <span>
+              </div>
+              <div
+                class="flex flex-col truncate"
+              >
+                <span
+                  class="text-sm font-semibold truncate text-theme-secondary-500 dark:text-theme-secondary-700"
+                >
+                  Breno Polanski
+                </span>
+                <div
+                  class="flex items-center space-x-2 mt-1 text-lg font-bold truncate text-theme-primary-600 dark:text-theme-secondary-200"
+                >
+                  <div
+                    class="truncate"
+                  >
+                    Drakula Theme
+                  </div>
+                  <span>
+                    <div
+                      class="sc-bdfBwQ iyevwF"
+                      height="20"
+                      width="20"
+                    >
+                      <svg>
+                        grant.svg
+                      </svg>
+                    </div>
+                  </span>
+                </div>
+                <div
+                  class="flex items-center space-x-2 mt-4 dark:text-theme-secondary-600"
+                >
                   <div
                     class="sc-bdfBwQ iyevwF"
                     height="20"
                     width="20"
                   >
                     <svg>
-                      grant.svg
+                      category.svg
                     </svg>
                   </div>
-                </span>
-              </div>
-              <div
-                class="flex items-center space-x-2 mt-4 dark:text-theme-secondary-600"
-              >
-                <div
-                  class="sc-bdfBwQ iyevwF"
-                  height="20"
-                  width="20"
-                >
-                  <svg>
-                    category.svg
-                  </svg>
+                  <span
+                    class="text-sm font-semibold"
+                  >
+                    Other
+                  </span>
                 </div>
-                <span
-                  class="text-sm font-semibold"
-                >
-                  Other
-                </span>
               </div>
             </div>
-          </div>
-          <div
-            class="flex absolute -top-1 -right-1 items-center m-4 space-x-1"
-          >
             <div
-              class="flex items-center space-x-2"
-            />
-            <div
-              class="relative"
+              class="flex absolute -top-1 -right-1 items-center m-4 space-x-1"
             >
-              <span
-                data-testid="dropdown__toggle"
+              <div
+                class="flex items-center space-x-2"
+              />
+              <div
+                class="relative"
               >
-                <div
-                  class="flex overflow-hidden justify-center w-4"
+                <span
+                  data-testid="dropdown__toggle"
                 >
                   <div
-                    class="sc-bdfBwQ fPrsah p-1 transition-colors duration-200 cursor-pointer text-theme-primary-300 dark:text-theme-secondary-600 hover:text-theme-danger-400"
-                    height="1em"
-                    width="1em"
+                    class="flex overflow-hidden justify-center w-4"
                   >
-                    <svg>
-                      settings.svg
-                    </svg>
+                    <div
+                      class="sc-bdfBwQ fPrsah p-1 transition-colors duration-200 cursor-pointer text-theme-primary-300 dark:text-theme-secondary-600 hover:text-theme-danger-400"
+                      height="1em"
+                      width="1em"
+                    >
+                      <svg>
+                        settings.svg
+                      </svg>
+                    </div>
                   </div>
-                </div>
-              </span>
+                </span>
+              </div>
             </div>
-          </div>
+          </button>
         </div>
       </div>
     </div>
@@ -1099,304 +1132,316 @@ exports[`PluginGrid should render skeletons 1`] = `
       <div
         data-testid="PluginCardSkeleton"
       >
-        <div
-          class="Cardstyles__Wrapper-sc-1uddqgb-0 eJQzer"
-          data-testid="Card"
-        >
-          <div
-            class="flex items-center space-x-4 overflow-hidden"
+        <div>
+          <button
+            class="Cardstyles__CardButton-sc-1uddqgb-0 ixtuUQ"
+            data-testid="Card"
+            tabindex="-1"
+            type="button"
           >
             <div
-              class="flex-shrink-0 w-25 h-25 overflow-hidden rounded-xl"
+              class="flex items-center space-x-4 overflow-hidden"
             >
-              <span>
-                <span
-                  class="flex items-center leading-none"
-                >
+              <div
+                class="flex-shrink-0 w-25 h-25 overflow-hidden rounded-xl"
+              >
+                <span>
                   <span
-                    class="react-loading-skeleton css-1eg0sfo-skeletonStyles-Skeleton"
-                    style="width: 100px; height: 100px;"
+                    class="flex items-center leading-none"
                   >
+                    <span
+                      class="react-loading-skeleton css-1eg0sfo-skeletonStyles-Skeleton"
+                      style="width: 100px; height: 100px;"
+                    >
+                      ‌
+                    </span>
                     ‌
                   </span>
-                  ‌
                 </span>
-              </span>
+              </div>
+              <div
+                class="flex flex-col"
+              >
+                <div
+                  class="flex items-center h-5"
+                >
+                  <span>
+                    <span
+                      class="flex items-center leading-none"
+                    >
+                      <span
+                        class="react-loading-skeleton css-1eg0sfo-skeletonStyles-Skeleton"
+                        style="width: 1px; height: 14px;"
+                      >
+                        ‌
+                      </span>
+                      ‌
+                    </span>
+                  </span>
+                </div>
+                <div
+                  class="flex items-center h-7 mt-1"
+                >
+                  <span>
+                    <span
+                      class="flex items-center leading-none"
+                    >
+                      <span
+                        class="react-loading-skeleton css-1eg0sfo-skeletonStyles-Skeleton"
+                        style="width: 1px; height: 16px;"
+                      >
+                        ‌
+                      </span>
+                      ‌
+                    </span>
+                  </span>
+                </div>
+                <div
+                  class="flex items-center space-x-2 mt-4"
+                >
+                  <span>
+                    <span
+                      class="flex items-center leading-none"
+                    >
+                      <span
+                        class="react-loading-skeleton css-1eg0sfo-skeletonStyles-Skeleton"
+                        style="width: 20px; height: 20px;"
+                      >
+                        ‌
+                      </span>
+                      ‌
+                    </span>
+                  </span>
+                  <span>
+                    <span
+                      class="flex items-center leading-none"
+                    >
+                      <span
+                        class="react-loading-skeleton css-1eg0sfo-skeletonStyles-Skeleton"
+                        style="width: 70px; height: 14px;"
+                      >
+                        ‌
+                      </span>
+                      ‌
+                    </span>
+                  </span>
+                </div>
+              </div>
             </div>
             <div
-              class="flex flex-col"
-            >
-              <div
-                class="flex items-center h-5"
-              >
-                <span>
-                  <span
-                    class="flex items-center leading-none"
-                  >
-                    <span
-                      class="react-loading-skeleton css-1eg0sfo-skeletonStyles-Skeleton"
-                      style="width: 1px; height: 14px;"
-                    >
-                      ‌
-                    </span>
-                    ‌
-                  </span>
-                </span>
-              </div>
-              <div
-                class="flex items-center h-7 mt-1"
-              >
-                <span>
-                  <span
-                    class="flex items-center leading-none"
-                  >
-                    <span
-                      class="react-loading-skeleton css-1eg0sfo-skeletonStyles-Skeleton"
-                      style="width: 1px; height: 16px;"
-                    >
-                      ‌
-                    </span>
-                    ‌
-                  </span>
-                </span>
-              </div>
-              <div
-                class="flex items-center space-x-2 mt-4"
-              >
-                <span>
-                  <span
-                    class="flex items-center leading-none"
-                  >
-                    <span
-                      class="react-loading-skeleton css-1eg0sfo-skeletonStyles-Skeleton"
-                      style="width: 20px; height: 20px;"
-                    >
-                      ‌
-                    </span>
-                    ‌
-                  </span>
-                </span>
-                <span>
-                  <span
-                    class="flex items-center leading-none"
-                  >
-                    <span
-                      class="react-loading-skeleton css-1eg0sfo-skeletonStyles-Skeleton"
-                      style="width: 70px; height: 14px;"
-                    >
-                      ‌
-                    </span>
-                    ‌
-                  </span>
-                </span>
-              </div>
-            </div>
-          </div>
-          <div
-            class="flex absolute -top-1 -right-1 items-center m-4 space-x-1"
-          />
+              class="flex absolute -top-1 -right-1 items-center m-4 space-x-1"
+            />
+          </button>
         </div>
       </div>
       <div
         data-testid="PluginCardSkeleton"
       >
-        <div
-          class="Cardstyles__Wrapper-sc-1uddqgb-0 eJQzer"
-          data-testid="Card"
-        >
-          <div
-            class="flex items-center space-x-4 overflow-hidden"
+        <div>
+          <button
+            class="Cardstyles__CardButton-sc-1uddqgb-0 ixtuUQ"
+            data-testid="Card"
+            tabindex="-1"
+            type="button"
           >
             <div
-              class="flex-shrink-0 w-25 h-25 overflow-hidden rounded-xl"
+              class="flex items-center space-x-4 overflow-hidden"
             >
-              <span>
-                <span
-                  class="flex items-center leading-none"
-                >
+              <div
+                class="flex-shrink-0 w-25 h-25 overflow-hidden rounded-xl"
+              >
+                <span>
                   <span
-                    class="react-loading-skeleton css-1eg0sfo-skeletonStyles-Skeleton"
-                    style="width: 100px; height: 100px;"
+                    class="flex items-center leading-none"
                   >
+                    <span
+                      class="react-loading-skeleton css-1eg0sfo-skeletonStyles-Skeleton"
+                      style="width: 100px; height: 100px;"
+                    >
+                      ‌
+                    </span>
                     ‌
                   </span>
-                  ‌
                 </span>
-              </span>
+              </div>
+              <div
+                class="flex flex-col"
+              >
+                <div
+                  class="flex items-center h-5"
+                >
+                  <span>
+                    <span
+                      class="flex items-center leading-none"
+                    >
+                      <span
+                        class="react-loading-skeleton css-1eg0sfo-skeletonStyles-Skeleton"
+                        style="width: 1px; height: 14px;"
+                      >
+                        ‌
+                      </span>
+                      ‌
+                    </span>
+                  </span>
+                </div>
+                <div
+                  class="flex items-center h-7 mt-1"
+                >
+                  <span>
+                    <span
+                      class="flex items-center leading-none"
+                    >
+                      <span
+                        class="react-loading-skeleton css-1eg0sfo-skeletonStyles-Skeleton"
+                        style="width: 1px; height: 16px;"
+                      >
+                        ‌
+                      </span>
+                      ‌
+                    </span>
+                  </span>
+                </div>
+                <div
+                  class="flex items-center space-x-2 mt-4"
+                >
+                  <span>
+                    <span
+                      class="flex items-center leading-none"
+                    >
+                      <span
+                        class="react-loading-skeleton css-1eg0sfo-skeletonStyles-Skeleton"
+                        style="width: 20px; height: 20px;"
+                      >
+                        ‌
+                      </span>
+                      ‌
+                    </span>
+                  </span>
+                  <span>
+                    <span
+                      class="flex items-center leading-none"
+                    >
+                      <span
+                        class="react-loading-skeleton css-1eg0sfo-skeletonStyles-Skeleton"
+                        style="width: 70px; height: 14px;"
+                      >
+                        ‌
+                      </span>
+                      ‌
+                    </span>
+                  </span>
+                </div>
+              </div>
             </div>
             <div
-              class="flex flex-col"
-            >
-              <div
-                class="flex items-center h-5"
-              >
-                <span>
-                  <span
-                    class="flex items-center leading-none"
-                  >
-                    <span
-                      class="react-loading-skeleton css-1eg0sfo-skeletonStyles-Skeleton"
-                      style="width: 1px; height: 14px;"
-                    >
-                      ‌
-                    </span>
-                    ‌
-                  </span>
-                </span>
-              </div>
-              <div
-                class="flex items-center h-7 mt-1"
-              >
-                <span>
-                  <span
-                    class="flex items-center leading-none"
-                  >
-                    <span
-                      class="react-loading-skeleton css-1eg0sfo-skeletonStyles-Skeleton"
-                      style="width: 1px; height: 16px;"
-                    >
-                      ‌
-                    </span>
-                    ‌
-                  </span>
-                </span>
-              </div>
-              <div
-                class="flex items-center space-x-2 mt-4"
-              >
-                <span>
-                  <span
-                    class="flex items-center leading-none"
-                  >
-                    <span
-                      class="react-loading-skeleton css-1eg0sfo-skeletonStyles-Skeleton"
-                      style="width: 20px; height: 20px;"
-                    >
-                      ‌
-                    </span>
-                    ‌
-                  </span>
-                </span>
-                <span>
-                  <span
-                    class="flex items-center leading-none"
-                  >
-                    <span
-                      class="react-loading-skeleton css-1eg0sfo-skeletonStyles-Skeleton"
-                      style="width: 70px; height: 14px;"
-                    >
-                      ‌
-                    </span>
-                    ‌
-                  </span>
-                </span>
-              </div>
-            </div>
-          </div>
-          <div
-            class="flex absolute -top-1 -right-1 items-center m-4 space-x-1"
-          />
+              class="flex absolute -top-1 -right-1 items-center m-4 space-x-1"
+            />
+          </button>
         </div>
       </div>
       <div
         data-testid="PluginCardSkeleton"
       >
-        <div
-          class="Cardstyles__Wrapper-sc-1uddqgb-0 eJQzer"
-          data-testid="Card"
-        >
-          <div
-            class="flex items-center space-x-4 overflow-hidden"
+        <div>
+          <button
+            class="Cardstyles__CardButton-sc-1uddqgb-0 ixtuUQ"
+            data-testid="Card"
+            tabindex="-1"
+            type="button"
           >
             <div
-              class="flex-shrink-0 w-25 h-25 overflow-hidden rounded-xl"
+              class="flex items-center space-x-4 overflow-hidden"
             >
-              <span>
-                <span
-                  class="flex items-center leading-none"
-                >
+              <div
+                class="flex-shrink-0 w-25 h-25 overflow-hidden rounded-xl"
+              >
+                <span>
                   <span
-                    class="react-loading-skeleton css-1eg0sfo-skeletonStyles-Skeleton"
-                    style="width: 100px; height: 100px;"
+                    class="flex items-center leading-none"
                   >
+                    <span
+                      class="react-loading-skeleton css-1eg0sfo-skeletonStyles-Skeleton"
+                      style="width: 100px; height: 100px;"
+                    >
+                      ‌
+                    </span>
                     ‌
                   </span>
-                  ‌
                 </span>
-              </span>
+              </div>
+              <div
+                class="flex flex-col"
+              >
+                <div
+                  class="flex items-center h-5"
+                >
+                  <span>
+                    <span
+                      class="flex items-center leading-none"
+                    >
+                      <span
+                        class="react-loading-skeleton css-1eg0sfo-skeletonStyles-Skeleton"
+                        style="width: 1px; height: 14px;"
+                      >
+                        ‌
+                      </span>
+                      ‌
+                    </span>
+                  </span>
+                </div>
+                <div
+                  class="flex items-center h-7 mt-1"
+                >
+                  <span>
+                    <span
+                      class="flex items-center leading-none"
+                    >
+                      <span
+                        class="react-loading-skeleton css-1eg0sfo-skeletonStyles-Skeleton"
+                        style="width: 1px; height: 16px;"
+                      >
+                        ‌
+                      </span>
+                      ‌
+                    </span>
+                  </span>
+                </div>
+                <div
+                  class="flex items-center space-x-2 mt-4"
+                >
+                  <span>
+                    <span
+                      class="flex items-center leading-none"
+                    >
+                      <span
+                        class="react-loading-skeleton css-1eg0sfo-skeletonStyles-Skeleton"
+                        style="width: 20px; height: 20px;"
+                      >
+                        ‌
+                      </span>
+                      ‌
+                    </span>
+                  </span>
+                  <span>
+                    <span
+                      class="flex items-center leading-none"
+                    >
+                      <span
+                        class="react-loading-skeleton css-1eg0sfo-skeletonStyles-Skeleton"
+                        style="width: 70px; height: 14px;"
+                      >
+                        ‌
+                      </span>
+                      ‌
+                    </span>
+                  </span>
+                </div>
+              </div>
             </div>
             <div
-              class="flex flex-col"
-            >
-              <div
-                class="flex items-center h-5"
-              >
-                <span>
-                  <span
-                    class="flex items-center leading-none"
-                  >
-                    <span
-                      class="react-loading-skeleton css-1eg0sfo-skeletonStyles-Skeleton"
-                      style="width: 1px; height: 14px;"
-                    >
-                      ‌
-                    </span>
-                    ‌
-                  </span>
-                </span>
-              </div>
-              <div
-                class="flex items-center h-7 mt-1"
-              >
-                <span>
-                  <span
-                    class="flex items-center leading-none"
-                  >
-                    <span
-                      class="react-loading-skeleton css-1eg0sfo-skeletonStyles-Skeleton"
-                      style="width: 1px; height: 16px;"
-                    >
-                      ‌
-                    </span>
-                    ‌
-                  </span>
-                </span>
-              </div>
-              <div
-                class="flex items-center space-x-2 mt-4"
-              >
-                <span>
-                  <span
-                    class="flex items-center leading-none"
-                  >
-                    <span
-                      class="react-loading-skeleton css-1eg0sfo-skeletonStyles-Skeleton"
-                      style="width: 20px; height: 20px;"
-                    >
-                      ‌
-                    </span>
-                    ‌
-                  </span>
-                </span>
-                <span>
-                  <span
-                    class="flex items-center leading-none"
-                  >
-                    <span
-                      class="react-loading-skeleton css-1eg0sfo-skeletonStyles-Skeleton"
-                      style="width: 70px; height: 14px;"
-                    >
-                      ‌
-                    </span>
-                    ‌
-                  </span>
-                </span>
-              </div>
-            </div>
-          </div>
-          <div
-            class="flex absolute -top-1 -right-1 items-center m-4 space-x-1"
-          />
+              class="flex absolute -top-1 -right-1 items-center m-4 space-x-1"
+            />
+          </button>
         </div>
       </div>
     </div>
@@ -1415,301 +1460,310 @@ exports[`PluginGrid should render without pagination 1`] = `
       <div
         data-testid="PluginCard--ark-explorer"
       >
-        <div
-          class="Cardstyles__Wrapper-sc-1uddqgb-0 bVJHxj"
-          data-testid="Card"
-        >
-          <div
-            class="flex items-center space-x-4"
+        <div>
+          <button
+            class="Cardstyles__CardButton-sc-1uddqgb-0 jaxCkf"
+            data-testid="Card"
+            type="button"
           >
             <div
-              class="flex-shrink-0 w-25 h-25 overflow-hidden rounded-lg"
+              class="flex items-center space-x-4"
             >
               <div
-                class="PluginImage__PluginImageWrapper-iwox49-0 cNxevm"
-                data-testid="PluginImage__placeholder"
-              >
-                <svg>
-                  plugin-logo-placeholder.svg
-                </svg>
-              </div>
-            </div>
-            <div
-              class="flex flex-col truncate"
-            >
-              <span
-                class="text-sm font-semibold truncate text-theme-secondary-500 dark:text-theme-secondary-700"
-              >
-                ARK.io
-              </span>
-              <div
-                class="flex items-center space-x-2 mt-1 text-lg font-bold truncate text-theme-primary-600 dark:text-theme-secondary-200"
+                class="flex-shrink-0 w-25 h-25 overflow-hidden rounded-lg"
               >
                 <div
-                  class="truncate"
-                >
-                  ARK Explorer
-                </div>
-                <span>
-                  <div
-                    class="sc-bdfBwQ fpbFeh"
-                    height="16"
-                    width="16"
-                  >
-                    <svg>
-                      official-ark-plugin.svg
-                    </svg>
-                  </div>
-                </span>
-              </div>
-              <div
-                class="flex items-center space-x-2 mt-4 dark:text-theme-secondary-600"
-              >
-                <div
-                  class="sc-bdfBwQ iyevwF"
-                  height="20"
-                  width="20"
+                  class="PluginImage__PluginImageWrapper-iwox49-0 cNxevm"
+                  data-testid="PluginImage__placeholder"
                 >
                   <svg>
-                    category.svg
+                    plugin-logo-placeholder.svg
                   </svg>
                 </div>
+              </div>
+              <div
+                class="flex flex-col truncate"
+              >
                 <span
-                  class="text-sm font-semibold"
+                  class="text-sm font-semibold truncate text-theme-secondary-500 dark:text-theme-secondary-700"
                 >
-                  Utility
+                  ARK.io
+                </span>
+                <div
+                  class="flex items-center space-x-2 mt-1 text-lg font-bold truncate text-theme-primary-600 dark:text-theme-secondary-200"
+                >
+                  <div
+                    class="truncate"
+                  >
+                    ARK Explorer
+                  </div>
+                  <span>
+                    <div
+                      class="sc-bdfBwQ fpbFeh"
+                      height="16"
+                      width="16"
+                    >
+                      <svg>
+                        official-ark-plugin.svg
+                      </svg>
+                    </div>
+                  </span>
+                </div>
+                <div
+                  class="flex items-center space-x-2 mt-4 dark:text-theme-secondary-600"
+                >
+                  <div
+                    class="sc-bdfBwQ iyevwF"
+                    height="20"
+                    width="20"
+                  >
+                    <svg>
+                      category.svg
+                    </svg>
+                  </div>
+                  <span
+                    class="text-sm font-semibold"
+                  >
+                    Utility
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div
+              class="flex absolute -top-1 -right-1 items-center m-4 space-x-1"
+            >
+              <div
+                class="flex items-center space-x-2"
+              />
+              <div
+                class="relative"
+              >
+                <span
+                  data-testid="dropdown__toggle"
+                >
+                  <div
+                    class="flex overflow-hidden justify-center w-4"
+                  >
+                    <div
+                      class="sc-bdfBwQ fPrsah p-1 transition-colors duration-200 cursor-pointer text-theme-primary-300 dark:text-theme-secondary-600 hover:text-theme-danger-400"
+                      height="1em"
+                      width="1em"
+                    >
+                      <svg>
+                        settings.svg
+                      </svg>
+                    </div>
+                  </div>
                 </span>
               </div>
             </div>
-          </div>
-          <div
-            class="flex absolute -top-1 -right-1 items-center m-4 space-x-1"
-          >
-            <div
-              class="flex items-center space-x-2"
-            />
-            <div
-              class="relative"
-            >
-              <span
-                data-testid="dropdown__toggle"
-              >
-                <div
-                  class="flex overflow-hidden justify-center w-4"
-                >
-                  <div
-                    class="sc-bdfBwQ fPrsah p-1 transition-colors duration-200 cursor-pointer text-theme-primary-300 dark:text-theme-secondary-600 hover:text-theme-danger-400"
-                    height="1em"
-                    width="1em"
-                  >
-                    <svg>
-                      settings.svg
-                    </svg>
-                  </div>
-                </div>
-              </span>
-            </div>
-          </div>
+          </button>
         </div>
       </div>
       <div
         data-testid="PluginCard--ark-avatars"
       >
-        <div
-          class="Cardstyles__Wrapper-sc-1uddqgb-0 bVJHxj"
-          data-testid="Card"
-        >
-          <div
-            class="flex items-center space-x-4"
+        <div>
+          <button
+            class="Cardstyles__CardButton-sc-1uddqgb-0 jaxCkf"
+            data-testid="Card"
+            type="button"
           >
             <div
-              class="flex-shrink-0 w-25 h-25 overflow-hidden rounded-lg"
+              class="flex items-center space-x-4"
             >
               <div
-                class="PluginImage__PluginImageWrapper-iwox49-0 cNxevm"
-                data-testid="PluginImage__placeholder"
-              >
-                <svg>
-                  plugin-logo-placeholder.svg
-                </svg>
-              </div>
-            </div>
-            <div
-              class="flex flex-col truncate"
-            >
-              <span
-                class="text-sm font-semibold truncate text-theme-secondary-500 dark:text-theme-secondary-700"
-              >
-                ARK.io
-              </span>
-              <div
-                class="flex items-center space-x-2 mt-1 text-lg font-bold truncate text-theme-primary-600 dark:text-theme-secondary-200"
+                class="flex-shrink-0 w-25 h-25 overflow-hidden rounded-lg"
               >
                 <div
-                  class="truncate"
+                  class="PluginImage__PluginImageWrapper-iwox49-0 cNxevm"
+                  data-testid="PluginImage__placeholder"
                 >
-                  ARK Avatars
+                  <svg>
+                    plugin-logo-placeholder.svg
+                  </svg>
                 </div>
-                <span>
+              </div>
+              <div
+                class="flex flex-col truncate"
+              >
+                <span
+                  class="text-sm font-semibold truncate text-theme-secondary-500 dark:text-theme-secondary-700"
+                >
+                  ARK.io
+                </span>
+                <div
+                  class="flex items-center space-x-2 mt-1 text-lg font-bold truncate text-theme-primary-600 dark:text-theme-secondary-200"
+                >
+                  <div
+                    class="truncate"
+                  >
+                    ARK Avatars
+                  </div>
+                  <span>
+                    <div
+                      class="sc-bdfBwQ iyevwF"
+                      height="20"
+                      width="20"
+                    >
+                      <svg>
+                        grant.svg
+                      </svg>
+                    </div>
+                  </span>
+                </div>
+                <div
+                  class="flex items-center space-x-2 mt-4 dark:text-theme-secondary-600"
+                >
                   <div
                     class="sc-bdfBwQ iyevwF"
                     height="20"
                     width="20"
                   >
                     <svg>
-                      grant.svg
+                      category.svg
                     </svg>
                   </div>
-                </span>
-              </div>
-              <div
-                class="flex items-center space-x-2 mt-4 dark:text-theme-secondary-600"
-              >
-                <div
-                  class="sc-bdfBwQ iyevwF"
-                  height="20"
-                  width="20"
-                >
-                  <svg>
-                    category.svg
-                  </svg>
+                  <span
+                    class="text-sm font-semibold"
+                  >
+                    Other
+                  </span>
                 </div>
-                <span
-                  class="text-sm font-semibold"
-                >
-                  Other
-                </span>
               </div>
             </div>
-          </div>
-          <div
-            class="flex absolute -top-1 -right-1 items-center m-4 space-x-1"
-          >
             <div
-              class="flex items-center space-x-2"
-            />
-            <div
-              class="relative"
+              class="flex absolute -top-1 -right-1 items-center m-4 space-x-1"
             >
-              <span
-                data-testid="dropdown__toggle"
+              <div
+                class="flex items-center space-x-2"
+              />
+              <div
+                class="relative"
               >
-                <div
-                  class="flex overflow-hidden justify-center w-4"
+                <span
+                  data-testid="dropdown__toggle"
                 >
                   <div
-                    class="sc-bdfBwQ fPrsah p-1 transition-colors duration-200 cursor-pointer text-theme-primary-300 dark:text-theme-secondary-600 hover:text-theme-danger-400"
-                    height="1em"
-                    width="1em"
+                    class="flex overflow-hidden justify-center w-4"
                   >
-                    <svg>
-                      settings.svg
-                    </svg>
+                    <div
+                      class="sc-bdfBwQ fPrsah p-1 transition-colors duration-200 cursor-pointer text-theme-primary-300 dark:text-theme-secondary-600 hover:text-theme-danger-400"
+                      height="1em"
+                      width="1em"
+                    >
+                      <svg>
+                        settings.svg
+                      </svg>
+                    </div>
                   </div>
-                </div>
-              </span>
+                </span>
+              </div>
             </div>
-          </div>
+          </button>
         </div>
       </div>
       <div
         data-testid="PluginCard--ark-theme"
       >
-        <div
-          class="Cardstyles__Wrapper-sc-1uddqgb-0 bVJHxj"
-          data-testid="Card"
-        >
-          <div
-            class="flex items-center space-x-4"
+        <div>
+          <button
+            class="Cardstyles__CardButton-sc-1uddqgb-0 jaxCkf"
+            data-testid="Card"
+            type="button"
           >
             <div
-              class="flex-shrink-0 w-25 h-25 overflow-hidden rounded-lg"
+              class="flex items-center space-x-4"
             >
               <div
-                class="PluginImage__PluginImageWrapper-iwox49-0 cNxevm"
-                data-testid="PluginImage__placeholder"
-              >
-                <svg>
-                  plugin-logo-placeholder.svg
-                </svg>
-              </div>
-            </div>
-            <div
-              class="flex flex-col truncate"
-            >
-              <span
-                class="text-sm font-semibold truncate text-theme-secondary-500 dark:text-theme-secondary-700"
-              >
-                ARK.io
-              </span>
-              <div
-                class="flex items-center space-x-2 mt-1 text-lg font-bold truncate text-theme-primary-600 dark:text-theme-secondary-200"
+                class="flex-shrink-0 w-25 h-25 overflow-hidden rounded-lg"
               >
                 <div
-                  class="truncate"
+                  class="PluginImage__PluginImageWrapper-iwox49-0 cNxevm"
+                  data-testid="PluginImage__placeholder"
                 >
-                  ARK Theme
+                  <svg>
+                    plugin-logo-placeholder.svg
+                  </svg>
                 </div>
-                <span>
+              </div>
+              <div
+                class="flex flex-col truncate"
+              >
+                <span
+                  class="text-sm font-semibold truncate text-theme-secondary-500 dark:text-theme-secondary-700"
+                >
+                  ARK.io
+                </span>
+                <div
+                  class="flex items-center space-x-2 mt-1 text-lg font-bold truncate text-theme-primary-600 dark:text-theme-secondary-200"
+                >
+                  <div
+                    class="truncate"
+                  >
+                    ARK Theme
+                  </div>
+                  <span>
+                    <div
+                      class="sc-bdfBwQ iyevwF"
+                      height="20"
+                      width="20"
+                    >
+                      <svg>
+                        grant.svg
+                      </svg>
+                    </div>
+                  </span>
+                </div>
+                <div
+                  class="flex items-center space-x-2 mt-4 dark:text-theme-secondary-600"
+                >
                   <div
                     class="sc-bdfBwQ iyevwF"
                     height="20"
                     width="20"
                   >
                     <svg>
-                      grant.svg
+                      category.svg
                     </svg>
                   </div>
-                </span>
-              </div>
-              <div
-                class="flex items-center space-x-2 mt-4 dark:text-theme-secondary-600"
-              >
-                <div
-                  class="sc-bdfBwQ iyevwF"
-                  height="20"
-                  width="20"
-                >
-                  <svg>
-                    category.svg
-                  </svg>
+                  <span
+                    class="text-sm font-semibold"
+                  >
+                    Other
+                  </span>
                 </div>
-                <span
-                  class="text-sm font-semibold"
-                >
-                  Other
-                </span>
               </div>
             </div>
-          </div>
-          <div
-            class="flex absolute -top-1 -right-1 items-center m-4 space-x-1"
-          >
             <div
-              class="flex items-center space-x-2"
-            />
-            <div
-              class="relative"
+              class="flex absolute -top-1 -right-1 items-center m-4 space-x-1"
             >
-              <span
-                data-testid="dropdown__toggle"
+              <div
+                class="flex items-center space-x-2"
+              />
+              <div
+                class="relative"
               >
-                <div
-                  class="flex overflow-hidden justify-center w-4"
+                <span
+                  data-testid="dropdown__toggle"
                 >
                   <div
-                    class="sc-bdfBwQ fPrsah p-1 transition-colors duration-200 cursor-pointer text-theme-primary-300 dark:text-theme-secondary-600 hover:text-theme-danger-400"
-                    height="1em"
-                    width="1em"
+                    class="flex overflow-hidden justify-center w-4"
                   >
-                    <svg>
-                      settings.svg
-                    </svg>
+                    <div
+                      class="sc-bdfBwQ fPrsah p-1 transition-colors duration-200 cursor-pointer text-theme-primary-300 dark:text-theme-secondary-600 hover:text-theme-danger-400"
+                      height="1em"
+                      width="1em"
+                    >
+                      <svg>
+                        settings.svg
+                      </svg>
+                    </div>
                   </div>
-                </div>
-              </span>
+                </span>
+              </div>
             </div>
-          </div>
+          </button>
         </div>
       </div>
     </div>
@@ -1741,101 +1795,104 @@ exports[`PluginGrid should split by page 1`] = `
       <div
         data-testid="PluginCard--ark-avatars"
       >
-        <div
-          class="Cardstyles__Wrapper-sc-1uddqgb-0 bVJHxj"
-          data-testid="Card"
-        >
-          <div
-            class="flex items-center space-x-4"
+        <div>
+          <button
+            class="Cardstyles__CardButton-sc-1uddqgb-0 jaxCkf"
+            data-testid="Card"
+            type="button"
           >
             <div
-              class="flex-shrink-0 w-25 h-25 overflow-hidden rounded-lg"
+              class="flex items-center space-x-4"
             >
               <div
-                class="PluginImage__PluginImageWrapper-iwox49-0 cNxevm"
-                data-testid="PluginImage__placeholder"
-              >
-                <svg>
-                  plugin-logo-placeholder.svg
-                </svg>
-              </div>
-            </div>
-            <div
-              class="flex flex-col truncate"
-            >
-              <span
-                class="text-sm font-semibold truncate text-theme-secondary-500 dark:text-theme-secondary-700"
-              >
-                ARK.io
-              </span>
-              <div
-                class="flex items-center space-x-2 mt-1 text-lg font-bold truncate text-theme-primary-600 dark:text-theme-secondary-200"
+                class="flex-shrink-0 w-25 h-25 overflow-hidden rounded-lg"
               >
                 <div
-                  class="truncate"
+                  class="PluginImage__PluginImageWrapper-iwox49-0 cNxevm"
+                  data-testid="PluginImage__placeholder"
                 >
-                  ARK Avatars
+                  <svg>
+                    plugin-logo-placeholder.svg
+                  </svg>
                 </div>
-                <span>
+              </div>
+              <div
+                class="flex flex-col truncate"
+              >
+                <span
+                  class="text-sm font-semibold truncate text-theme-secondary-500 dark:text-theme-secondary-700"
+                >
+                  ARK.io
+                </span>
+                <div
+                  class="flex items-center space-x-2 mt-1 text-lg font-bold truncate text-theme-primary-600 dark:text-theme-secondary-200"
+                >
+                  <div
+                    class="truncate"
+                  >
+                    ARK Avatars
+                  </div>
+                  <span>
+                    <div
+                      class="sc-bdfBwQ iyevwF"
+                      height="20"
+                      width="20"
+                    >
+                      <svg>
+                        grant.svg
+                      </svg>
+                    </div>
+                  </span>
+                </div>
+                <div
+                  class="flex items-center space-x-2 mt-4 dark:text-theme-secondary-600"
+                >
                   <div
                     class="sc-bdfBwQ iyevwF"
                     height="20"
                     width="20"
                   >
                     <svg>
-                      grant.svg
+                      category.svg
                     </svg>
                   </div>
-                </span>
-              </div>
-              <div
-                class="flex items-center space-x-2 mt-4 dark:text-theme-secondary-600"
-              >
-                <div
-                  class="sc-bdfBwQ iyevwF"
-                  height="20"
-                  width="20"
-                >
-                  <svg>
-                    category.svg
-                  </svg>
+                  <span
+                    class="text-sm font-semibold"
+                  >
+                    Other
+                  </span>
                 </div>
-                <span
-                  class="text-sm font-semibold"
-                >
-                  Other
-                </span>
               </div>
             </div>
-          </div>
-          <div
-            class="flex absolute -top-1 -right-1 items-center m-4 space-x-1"
-          >
             <div
-              class="flex items-center space-x-2"
-            />
-            <div
-              class="relative"
+              class="flex absolute -top-1 -right-1 items-center m-4 space-x-1"
             >
-              <span
-                data-testid="dropdown__toggle"
+              <div
+                class="flex items-center space-x-2"
+              />
+              <div
+                class="relative"
               >
-                <div
-                  class="flex overflow-hidden justify-center w-4"
+                <span
+                  data-testid="dropdown__toggle"
                 >
                   <div
-                    class="sc-bdfBwQ fPrsah p-1 transition-colors duration-200 cursor-pointer text-theme-primary-300 dark:text-theme-secondary-600 hover:text-theme-danger-400"
-                    height="1em"
-                    width="1em"
+                    class="flex overflow-hidden justify-center w-4"
                   >
-                    <svg>
-                      settings.svg
-                    </svg>
+                    <div
+                      class="sc-bdfBwQ fPrsah p-1 transition-colors duration-200 cursor-pointer text-theme-primary-300 dark:text-theme-secondary-600 hover:text-theme-danger-400"
+                      height="1em"
+                      width="1em"
+                    >
+                      <svg>
+                        settings.svg
+                      </svg>
+                    </div>
                   </div>
-                </div>
-              </span>
+                </span>
+              </div>
             </div>
-          </div>
+          </button>
         </div>
       </div>
     </div>
@@ -1922,115 +1979,118 @@ exports[`PluginGrid should trigger update by addon button 1`] = `
       <div
         data-testid="PluginCard--ark-explorer"
       >
-        <div
-          class="Cardstyles__Wrapper-sc-1uddqgb-0 bVJHxj"
-          data-testid="Card"
-        >
-          <div
-            class="flex items-center space-x-4"
+        <div>
+          <button
+            class="Cardstyles__CardButton-sc-1uddqgb-0 jaxCkf"
+            data-testid="Card"
+            type="button"
           >
             <div
-              class="flex-shrink-0 w-25 h-25 overflow-hidden rounded-lg"
+              class="flex items-center space-x-4"
             >
               <div
-                class="PluginImage__PluginImageWrapper-iwox49-0 cNxevm"
-                data-testid="PluginImage__placeholder"
-              >
-                <svg>
-                  plugin-logo-placeholder.svg
-                </svg>
-              </div>
-            </div>
-            <div
-              class="flex flex-col truncate"
-            >
-              <span
-                class="text-sm font-semibold truncate text-theme-secondary-500 dark:text-theme-secondary-700"
-              >
-                ARK.io
-              </span>
-              <div
-                class="flex items-center space-x-2 mt-1 text-lg font-bold truncate text-theme-primary-600 dark:text-theme-secondary-200"
+                class="flex-shrink-0 w-25 h-25 overflow-hidden rounded-lg"
               >
                 <div
-                  class="truncate"
-                >
-                  ARK Explorer
-                </div>
-                <span>
-                  <div
-                    class="sc-bdfBwQ fpbFeh"
-                    height="16"
-                    width="16"
-                  >
-                    <svg>
-                      official-ark-plugin.svg
-                    </svg>
-                  </div>
-                </span>
-              </div>
-              <div
-                class="flex items-center space-x-2 mt-4 dark:text-theme-secondary-600"
-              >
-                <div
-                  class="sc-bdfBwQ iyevwF"
-                  height="20"
-                  width="20"
+                  class="PluginImage__PluginImageWrapper-iwox49-0 cNxevm"
+                  data-testid="PluginImage__placeholder"
                 >
                   <svg>
-                    category.svg
+                    plugin-logo-placeholder.svg
                   </svg>
                 </div>
+              </div>
+              <div
+                class="flex flex-col truncate"
+              >
                 <span
-                  class="text-sm font-semibold"
+                  class="text-sm font-semibold truncate text-theme-secondary-500 dark:text-theme-secondary-700"
                 >
-                  Utility
+                  ARK.io
+                </span>
+                <div
+                  class="flex items-center space-x-2 mt-1 text-lg font-bold truncate text-theme-primary-600 dark:text-theme-secondary-200"
+                >
+                  <div
+                    class="truncate"
+                  >
+                    ARK Explorer
+                  </div>
+                  <span>
+                    <div
+                      class="sc-bdfBwQ fpbFeh"
+                      height="16"
+                      width="16"
+                    >
+                      <svg>
+                        official-ark-plugin.svg
+                      </svg>
+                    </div>
+                  </span>
+                </div>
+                <div
+                  class="flex items-center space-x-2 mt-4 dark:text-theme-secondary-600"
+                >
+                  <div
+                    class="sc-bdfBwQ iyevwF"
+                    height="20"
+                    width="20"
+                  >
+                    <svg>
+                      category.svg
+                    </svg>
+                  </div>
+                  <span
+                    class="text-sm font-semibold"
+                  >
+                    Utility
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div
+              class="flex absolute -top-1 -right-1 items-center m-4 space-x-1"
+            >
+              <div
+                class="flex items-center space-x-2"
+              >
+                <button
+                  data-testid="PluginCard__update-available"
+                >
+                  <div
+                    class="sc-bdfBwQ iyevwF"
+                    height="20"
+                    width="20"
+                  >
+                    <svg>
+                      update.svg
+                    </svg>
+                  </div>
+                </button>
+              </div>
+              <div
+                class="relative"
+              >
+                <span
+                  data-testid="dropdown__toggle"
+                >
+                  <div
+                    class="flex overflow-hidden justify-center w-4"
+                  >
+                    <div
+                      class="sc-bdfBwQ fPrsah p-1 transition-colors duration-200 cursor-pointer text-theme-primary-300 dark:text-theme-secondary-600 hover:text-theme-danger-400"
+                      height="1em"
+                      width="1em"
+                    >
+                      <svg>
+                        settings.svg
+                      </svg>
+                    </div>
+                  </div>
                 </span>
               </div>
             </div>
-          </div>
-          <div
-            class="flex absolute -top-1 -right-1 items-center m-4 space-x-1"
-          >
-            <div
-              class="flex items-center space-x-2"
-            >
-              <button
-                data-testid="PluginCard__update-available"
-              >
-                <div
-                  class="sc-bdfBwQ iyevwF"
-                  height="20"
-                  width="20"
-                >
-                  <svg>
-                    update.svg
-                  </svg>
-                </div>
-              </button>
-            </div>
-            <div
-              class="relative"
-            >
-              <span
-                data-testid="dropdown__toggle"
-              >
-                <div
-                  class="flex overflow-hidden justify-center w-4"
-                >
-                  <div
-                    class="sc-bdfBwQ fPrsah p-1 transition-colors duration-200 cursor-pointer text-theme-primary-300 dark:text-theme-secondary-600 hover:text-theme-danger-400"
-                    height="1em"
-                    width="1em"
-                  >
-                    <svg>
-                      settings.svg
-                    </svg>
-                  </div>
-                </div>
-              </span>
-            </div>
-          </div>
+          </button>
         </div>
       </div>
     </div>
