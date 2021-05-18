@@ -112,11 +112,8 @@ export const SendTransfer = () => {
 	} = useFeeConfirmation(fee, fees);
 
 	useEffect(() => {
-		if (!hasWalletId && senderAddress) {
-			const wallet = activeProfile.wallets().findByAddress(senderAddress);
-			setWallet(wallet);
-		}
-	}, [activeProfile, hasWalletId, senderAddress]);
+		setWallet(activeProfile.wallets().findByAddress(senderAddress || ""));
+	}, [activeProfile, senderAddress]);
 
 	useEffect(() => {
 		if (Object.keys(deepLinkParams).length === 0) {
