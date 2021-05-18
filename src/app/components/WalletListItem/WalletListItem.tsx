@@ -36,7 +36,7 @@ export const WalletListItem = ({ wallet, activeWalletId, variant, onClick }: Wal
 	);
 
 	const alias = useWalletAlias({
-		address: wallet.address() || "",
+		address: wallet.address(),
 		profile: activeProfile,
 		coinId: wallet.coinId(),
 		networkId: wallet.networkId(),

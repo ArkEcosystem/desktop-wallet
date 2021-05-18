@@ -74,4 +74,26 @@ describe("UseWalletAlias", () => {
 		walletsSpy.mockRestore();
 		contactsSpy.mockRestore();
 	});
+
+	it("should return undefined if no name could be found", async () => {
+		await syncDelegates(profile);
+
+		const walletsSpy = jest.spyOn(profile.wallets(), "findByAddress").mockReturnValue(undefined);
+		const contactsSpy = jest.spyOn(profile.contacts(), "findByAddress").mockReturnValue([]);
+
+		const { result } = renderHook(
+			() =>
+				useWalletAlias({
+					address: wallet.address(),
+					profile,
+					coinId: wallet.coinId(),
+					networkId: wallet.networkId(),
+				}),
+			{ wrapper },
+		);
+		expect(result.current).toBe(undefined);
+
+		walletsSpy.mockRestore();
+		contactsSpy.mockRestore();
+	});
 });

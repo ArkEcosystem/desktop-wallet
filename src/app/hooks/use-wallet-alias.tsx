@@ -27,10 +27,7 @@ export const useWalletAlias = ({ address, profile, coinId, networkId }: Props) =
 
 		if (coinId && networkId) {
 			const delegate = env.delegates().findByAddress(coinId, networkId, address);
-
-			if (delegate) {
-				return delegate.username();
-			}
+			return delegate.username();
 		}
 	} catch {
 		//
