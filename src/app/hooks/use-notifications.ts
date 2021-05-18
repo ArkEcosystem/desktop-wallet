@@ -141,7 +141,7 @@ const sortTransactionNotificationsDesc = (notifications: any[]) =>
 
 export const useNotifications = () => {
 	const { t } = useTranslation();
-	const { env } = useEnvironmentContext();
+	const { env, persist } = useEnvironmentContext();
 
 	const profiles = env.profiles();
 
@@ -153,7 +153,7 @@ export const useNotifications = () => {
 					.map((profile: ProfileContracts.IProfile) => notifyReceivedTransactions({ ...params, profile })),
 			);
 
-			await env.persist();
+			await persist();
 			return savedNotifications.flat();
 		};
 
