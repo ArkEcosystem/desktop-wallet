@@ -224,7 +224,7 @@ export const Dropdown = ({
 					spaceBefore > dropdownElement.offsetHeight + numberFromPixels(styles.marginTop) + OFFSET
 				) {
 					setStyles({
-						opacity: 100,
+						opacity: 1,
 						marginTop: `-${
 							dropdownElement.offsetHeight + toggleHeight + numberFromPixels(styles.marginTop)
 						}px`,
@@ -247,7 +247,7 @@ export const Dropdown = ({
 									overflowY: "scroll",
 							  };
 
-					setStyles({ opacity: 100, ...newStyles });
+					setStyles({ opacity: 1, ...newStyles });
 				}
 			}
 		};
