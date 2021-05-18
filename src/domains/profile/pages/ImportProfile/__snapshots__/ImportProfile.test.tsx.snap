@@ -108,7 +108,7 @@ exports[`ImportProfile should render first step 1`] = `
                         </svg>
                       </div>
                       <div
-                        class="mt-8"
+                        class="mt-8 space-x-px"
                       >
                         <span
                           class="font-semibold"
@@ -116,13 +116,17 @@ exports[`ImportProfile should render first step 1`] = `
                           Drag & Drop or
                            
                         </span>
-                        <span
-                          class="font-semibold cursor-pointer link"
+                        <button
+                          class="relative font-semibold cursor-pointer link focus:outline-none group"
                           data-testid="SelectFile__browse-files"
                           title="Click here to upload"
+                          type="button"
                         >
+                          <div
+                            class="absolute inset-0 -m-1 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                          />
                           Browse Files
-                        </span>
+                        </button>
                       </div>
                       <div
                         class="font-semibold text-theme-secondary-500 text-sm mt-2"
@@ -132,19 +136,23 @@ exports[`ImportProfile should render first step 1`] = `
                     </div>
                   </div>
                   <p
-                    class="text-sm text-theme-secondary-text md:text-base mt-6 text-center"
+                    class="mt-6 text-base text-theme-secondary-text text-center"
                   >
                     <span>
                       Importing from Desktop Wallet v2?
                        
                     </span>
-                    <span
-                      class="font-semibold cursor-pointer link"
+                    <button
+                      class="relative font-semibold cursor-pointer link focus:outline-none group"
                       data-testid="SelectFileStep__change-file"
                       title="Click here."
+                      type="button"
                     >
+                      <div
+                        class="absolute inset-0 -m-1 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                      />
                       Click here.
-                    </span>
+                    </button>
                   </p>
                   <div
                     class="flex justify-end mt-8 space-x-3"
