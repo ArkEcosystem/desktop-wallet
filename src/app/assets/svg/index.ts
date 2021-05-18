@@ -63,6 +63,7 @@ import { ReactComponent as Link } from "./link.svg";
 import { ReactComponent as ListView } from "./list-view.svg";
 import { ReactComponent as LoaderLogo } from "./loader-logo.svg";
 import { ReactComponent as Lock } from "./lock.svg";
+import { ReactComponent as Magistrate } from "./magistrate.svg";
 import { ReactComponent as Msq } from "./msq.svg";
 import { ReactComponent as Multipayment } from "./multipayment.svg";
 import { ReactComponent as Multisig } from "./multisig.svg";
@@ -176,6 +177,7 @@ export const SvgCollection: any = {
 	ListView,
 	LoaderLogo,
 	Lock,
+	Magistrate,
 	Msq,
 	Multipayment,
 	Multisig,
