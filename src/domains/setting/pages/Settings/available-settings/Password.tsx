@@ -19,7 +19,7 @@ export const PasswordSettings = ({ formConfig, onSuccess, onError }: SettingsPro
 	const { t } = useTranslation();
 
 	const { formState, register, reset, trigger, watch } = formConfig.context;
-	const { confirmPassword, password } = watch();
+	const { currentPassword, confirmPassword, password } = watch();
 
 	const handleSubmit = async ({ currentPassword, password }: any) => {
 		try {
@@ -72,7 +72,7 @@ export const PasswordSettings = ({ formConfig, onSuccess, onError }: SettingsPro
 				<FormField name="password">
 					<FormLabel label={t("SETTINGS.PASSWORD.PASSWORD_1")} />
 					<InputPassword
-						ref={register(passwordValidation.password())}
+						ref={register(passwordValidation.password(currentPassword))}
 						onChange={() => {
 							if (confirmPassword) {
 								trigger("confirmPassword");
