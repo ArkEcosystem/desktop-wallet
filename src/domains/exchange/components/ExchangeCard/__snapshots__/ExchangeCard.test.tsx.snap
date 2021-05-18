@@ -5,50 +5,54 @@ exports[`ExchangeCard should render 1`] = `
   <div
     data-testid="PluginCard--test-exchange"
   >
-    <div
-      class="Cardstyles__Wrapper-sc-1uddqgb-0 eJQzer"
-      data-testid="Card"
-    >
-      <div
-        class="flex items-center space-x-4"
+    <div>
+      <button
+        class="Cardstyles__CardButton-sc-1uddqgb-0 ixtuUQ"
+        data-testid="Card"
+        tabindex="-1"
+        type="button"
       >
         <div
-          class="flex-shrink-0 w-25 h-25 overflow-hidden rounded-lg"
+          class="flex items-center space-x-4"
         >
           <div
-            class="PluginImage__PluginImageWrapper-iwox49-0 cNxevm"
-            data-testid="PluginImage__placeholder"
-          >
-            <svg>
-              plugin-logo-placeholder.svg
-            </svg>
-          </div>
-        </div>
-        <div
-          class="flex flex-col truncate"
-        >
-          <span
-            class="text-sm font-semibold truncate text-theme-secondary-500 dark:text-theme-secondary-700"
-          />
-          <div
-            class="flex items-center space-x-2 mt-1 text-lg font-bold truncate text-theme-primary-600 dark:text-theme-secondary-200"
+            class="flex-shrink-0 w-25 h-25 overflow-hidden rounded-lg"
           >
             <div
-              class="truncate"
+              class="PluginImage__PluginImageWrapper-iwox49-0 cNxevm"
+              data-testid="PluginImage__placeholder"
             >
-              Test Exchange
+              <svg>
+                plugin-logo-placeholder.svg
+              </svg>
             </div>
-            <span />
+          </div>
+          <div
+            class="flex flex-col truncate"
+          >
+            <span
+              class="text-sm font-semibold truncate text-theme-secondary-500 dark:text-theme-secondary-700"
+            />
+            <div
+              class="flex items-center space-x-2 mt-1 text-lg font-bold truncate text-theme-primary-600 dark:text-theme-secondary-200"
+            >
+              <div
+                class="truncate"
+              >
+                Test Exchange
+              </div>
+              <span />
+            </div>
           </div>
         </div>
-      </div>
-      <div
-        class="flex absolute -top-1 -right-1 items-center m-4 space-x-1"
-      >
         <div
-          class="flex items-center space-x-2"
-        />
-      </div>
+          class="flex absolute -top-1 -right-1 items-center m-4 space-x-1"
+        >
+          <div
+            class="flex items-center space-x-2"
+          />
+        </div>
+      </button>
     </div>
   </div>
 </div>
@@ -56,34 +60,38 @@ exports[`ExchangeCard should render 1`] = `
 
 exports[`ExchangeCard should render a blank card 1`] = `
 <div>
-  <div
-    class="Cardstyles__Wrapper-sc-1uddqgb-0 eJQzer"
-    data-testid="Card"
-  >
-    <div
-      class="flex items-center space-x-4"
+  <div>
+    <button
+      class="Cardstyles__CardButton-sc-1uddqgb-0 ixtuUQ"
+      data-testid="Card"
+      tabindex="-1"
+      type="button"
     >
       <div
-        class="h-25 w-25 rounded-xl border-2 border-theme-primary-100 dark:border-theme-secondary-800"
-      />
-      <div
-        class="flex flex-col truncate"
+        class="flex items-center space-x-4"
       >
-        <span
-          class="text-sm font-semibold text-theme-primary-100 dark:text-theme-secondary-800 truncate"
-        >
-          Author
-        </span>
         <div
-          class="mt-1 text-lg font-bold text-theme-primary-100 dark:text-theme-secondary-800 truncate"
+          class="h-25 w-25 rounded-xl border-2 border-theme-primary-100 dark:border-theme-secondary-800"
+        />
+        <div
+          class="flex flex-col truncate"
         >
-          Exchange
+          <span
+            class="text-sm font-semibold text-theme-primary-100 dark:text-theme-secondary-800 truncate"
+          >
+            Author
+          </span>
+          <div
+            class="mt-1 text-lg font-bold text-theme-primary-100 dark:text-theme-secondary-800 truncate"
+          >
+            Exchange
+          </div>
         </div>
       </div>
-    </div>
-    <div
-      class="flex absolute -top-1 -right-1 items-center m-4 space-x-1"
-    />
+      <div
+        class="flex absolute -top-1 -right-1 items-center m-4 space-x-1"
+      />
+    </button>
   </div>
 </div>
 `;

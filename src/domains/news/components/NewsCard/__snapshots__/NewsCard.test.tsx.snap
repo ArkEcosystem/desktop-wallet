@@ -6,124 +6,130 @@ exports[`NewsCard should render 1`] = `
     data-testid="NewsCard"
   >
     <div
-      class="Cardstyles__Wrapper-sc-1uddqgb-0 eJQzer bg-theme-background"
-      data-testid="Card"
+      class="bg-theme-background"
     >
-      <div
-        class="flex flex-col p-4 space-y-8 bg-theme-background"
+      <button
+        class="Cardstyles__CardButton-sc-1uddqgb-0 ixtuUQ"
+        data-testid="Card"
+        tabindex="-1"
+        type="button"
       >
         <div
-          class="flex justify-between w-full"
+          class="flex flex-col p-4 space-y-8 bg-theme-background"
         >
           <div
-            class="flex items-center space-x-4"
+            class="flex justify-between w-full"
           >
             <div
-              aria-label="ARK"
-              class="Circle__CircleWrapper-uw7h4j-0 kOlXCb border-theme-danger-200 text-theme-danger-400 ring-theme-background"
-              data-testid="NetworkIcon-ARK-ark.mainnet"
+              class="flex items-center space-x-4"
             >
               <div
-                class="sc-bdfBwQ iyevwF"
-                data-testid="NetworkIcon__icon"
-                height="20"
-                width="20"
+                aria-label="ARK"
+                class="Circle__CircleWrapper-uw7h4j-0 kOlXCb border-theme-danger-200 text-theme-danger-400 ring-theme-background"
+                data-testid="NetworkIcon-ARK-ark.mainnet"
               >
-                <svg>
-                  ark.svg
-                </svg>
+                <div
+                  class="sc-bdfBwQ iyevwF"
+                  data-testid="NetworkIcon__icon"
+                  height="20"
+                  width="20"
+                >
+                  <svg>
+                    ark.svg
+                  </svg>
+                </div>
+              </div>
+              <div>
+                <h4
+                  class="text-lg font-semibold"
+                  data-testid="NewsCard__asset-ARK Ecosystem"
+                >
+                  ARK Ecosystem
+                </h4>
+                <div
+                  class="flex items-center space-x-4"
+                >
+                  <p
+                    class="text-sm font-semibold text-theme-secondary-500 dark:text-theme-secondary-700"
+                    data-testid="NewsCard__author"
+                  >
+                    Travis Walker, Co-Founder
+                  </p>
+                  <div
+                    class="Divider-sc-19q4mlo-0 gSJoMw border-theme-secondary-300 dark:border-theme-secondary-800"
+                    type="vertical"
+                  />
+                  <p
+                    class="text-sm font-semibold text-theme-secondary-500 dark:text-theme-secondary-700"
+                    data-testid="NewsCard__date-created"
+                  >
+                    <span
+                      data-testid="timeago"
+                    >
+                      A few seconds ago
+                    </span>
+                  </p>
+                </div>
               </div>
             </div>
-            <div>
-              <h4
-                class="text-lg font-semibold"
-                data-testid="NewsCard__asset-ARK Ecosystem"
-              >
-                ARK Ecosystem
-              </h4>
+            <div
+              class="flex flex-col justify-end"
+            >
               <div
-                class="flex items-center space-x-4"
+                class="Label-sc-1tj9hzr-0 ftOOah"
+                color="warning"
               >
-                <p
-                  class="text-sm font-semibold text-theme-secondary-500 dark:text-theme-secondary-700"
-                  data-testid="NewsCard__author"
+                <span
+                  class="text-sm"
+                  data-testid="NewsCard__category"
                 >
-                  Travis Walker, Co-Founder
-                </p>
-                <div
-                  class="Divider-sc-19q4mlo-0 gSJoMw border-theme-secondary-300 dark:border-theme-secondary-800"
-                  type="vertical"
-                />
-                <p
-                  class="text-sm font-semibold text-theme-secondary-500 dark:text-theme-secondary-700"
-                  data-testid="NewsCard__date-created"
-                >
-                  <span
-                    data-testid="timeago"
-                  >
-                    A few seconds ago
-                  </span>
-                </p>
+                  #Technical
+                </span>
               </div>
             </div>
           </div>
           <div
-            class="flex flex-col justify-end"
+            class="Divider-sc-19q4mlo-0 daSmjL border-theme-secondary-300 dark:border-theme-secondary-800"
+            type="horizontal"
+          />
+          <div
+            class="whitespace-pre-line text-theme-secondary-text"
+            data-testid="NewsCard__content"
           >
-            <div
-              class="Label-sc-1tj9hzr-0 ftOOah"
-              color="warning"
+            Recently we released our all-in-one toolkit the ARK Platform SDK, along with an overview and what blockchain projects it will initially support. Today we are going into more details on a technical level. 
+            <a
+              class="Link__AnchorStyled-sc-1q7sbxr-0 fCYCVa group"
+              data-testid="Link"
+              href="#"
+              rel="noopener noreferrer"
+              to="https://blog.ark.io/ark-platform-sdk-modernization-of-blockchain-network-interactions-b5a7d70c2461"
             >
               <span
-                class="text-sm"
-                data-testid="NewsCard__category"
+                class="break-all border-b border-transparent transition-colors duration-200 border-current border-dotted group-hover:border-transparent"
               >
-                #Technical
+                https://blog.ark.io/ark-platform-sdk-modernization-of-blockchain-network-interactions-b5a7d70c2461
               </span>
-            </div>
+              <span
+                class="align-middle"
+              >
+                <div
+                  class="sc-bdfBwQ fPrsah flex-shrink-0 inline-block pb-px text-sm"
+                  data-testid="Link__external"
+                  height="1em"
+                  width="1em"
+                >
+                  <svg>
+                    redirect.svg
+                  </svg>
+                </div>
+              </span>
+            </a>
           </div>
         </div>
         <div
-          class="Divider-sc-19q4mlo-0 daSmjL border-theme-secondary-300 dark:border-theme-secondary-800"
-          type="horizontal"
+          class="flex absolute -top-1 -right-1 items-center m-4 space-x-1"
         />
-        <div
-          class="whitespace-pre-line text-theme-secondary-text"
-          data-testid="NewsCard__content"
-        >
-          Recently we released our all-in-one toolkit the ARK Platform SDK, along with an overview and what blockchain projects it will initially support. Today we are going into more details on a technical level. 
-          <a
-            class="Link__AnchorStyled-sc-1q7sbxr-0 fCYCVa group"
-            data-testid="Link"
-            href="#"
-            rel="noopener noreferrer"
-            to="https://blog.ark.io/ark-platform-sdk-modernization-of-blockchain-network-interactions-b5a7d70c2461"
-          >
-            <span
-              class="break-all border-b border-transparent transition-colors duration-200 border-current border-dotted group-hover:border-transparent"
-            >
-              https://blog.ark.io/ark-platform-sdk-modernization-of-blockchain-network-interactions-b5a7d70c2461
-            </span>
-            <span
-              class="align-middle"
-            >
-              <div
-                class="sc-bdfBwQ fPrsah flex-shrink-0 inline-block pb-px text-sm"
-                data-testid="Link__external"
-                height="1em"
-                width="1em"
-              >
-                <svg>
-                  redirect.svg
-                </svg>
-              </div>
-            </span>
-          </a>
-        </div>
-      </div>
-      <div
-        class="flex absolute -top-1 -right-1 items-center m-4 space-x-1"
-      />
+      </button>
     </div>
   </div>
 </DocumentFragment>
@@ -135,132 +141,138 @@ exports[`NewsCard should render with cover image 1`] = `
     data-testid="NewsCard"
   >
     <div
-      class="Cardstyles__Wrapper-sc-1uddqgb-0 eJQzer bg-theme-background"
-      data-testid="Card"
+      class="bg-theme-background"
     >
-      <div
-        class="flex flex-col p-4 space-y-8 bg-theme-background"
+      <button
+        class="Cardstyles__CardButton-sc-1uddqgb-0 ixtuUQ"
+        data-testid="Card"
+        tabindex="-1"
+        type="button"
       >
         <div
-          class="flex justify-between w-full"
+          class="flex flex-col p-4 space-y-8 bg-theme-background"
         >
           <div
-            class="flex items-center space-x-4"
+            class="flex justify-between w-full"
           >
             <div
-              aria-label="ARK"
-              class="Circle__CircleWrapper-uw7h4j-0 kOlXCb border-theme-danger-200 text-theme-danger-400 ring-theme-background"
-              data-testid="NetworkIcon-ARK-ark.mainnet"
+              class="flex items-center space-x-4"
             >
               <div
-                class="sc-bdfBwQ iyevwF"
-                data-testid="NetworkIcon__icon"
-                height="20"
-                width="20"
+                aria-label="ARK"
+                class="Circle__CircleWrapper-uw7h4j-0 kOlXCb border-theme-danger-200 text-theme-danger-400 ring-theme-background"
+                data-testid="NetworkIcon-ARK-ark.mainnet"
               >
-                <svg>
-                  ark.svg
-                </svg>
+                <div
+                  class="sc-bdfBwQ iyevwF"
+                  data-testid="NetworkIcon__icon"
+                  height="20"
+                  width="20"
+                >
+                  <svg>
+                    ark.svg
+                  </svg>
+                </div>
+              </div>
+              <div>
+                <h4
+                  class="text-lg font-semibold"
+                  data-testid="NewsCard__asset-ARK Ecosystem"
+                >
+                  ARK Ecosystem
+                </h4>
+                <div
+                  class="flex items-center space-x-4"
+                >
+                  <p
+                    class="text-sm font-semibold text-theme-secondary-500 dark:text-theme-secondary-700"
+                    data-testid="NewsCard__author"
+                  >
+                    Travis Walker, Co-Founder
+                  </p>
+                  <div
+                    class="Divider-sc-19q4mlo-0 gSJoMw border-theme-secondary-300 dark:border-theme-secondary-800"
+                    type="vertical"
+                  />
+                  <p
+                    class="text-sm font-semibold text-theme-secondary-500 dark:text-theme-secondary-700"
+                    data-testid="NewsCard__date-created"
+                  >
+                    <span
+                      data-testid="timeago"
+                    >
+                      A few seconds ago
+                    </span>
+                  </p>
+                </div>
               </div>
             </div>
-            <div>
-              <h4
-                class="text-lg font-semibold"
-                data-testid="NewsCard__asset-ARK Ecosystem"
-              >
-                ARK Ecosystem
-              </h4>
+            <div
+              class="flex flex-col justify-end"
+            >
               <div
-                class="flex items-center space-x-4"
+                class="Label-sc-1tj9hzr-0 ftOOah"
+                color="warning"
               >
-                <p
-                  class="text-sm font-semibold text-theme-secondary-500 dark:text-theme-secondary-700"
-                  data-testid="NewsCard__author"
+                <span
+                  class="text-sm"
+                  data-testid="NewsCard__category"
                 >
-                  Travis Walker, Co-Founder
-                </p>
-                <div
-                  class="Divider-sc-19q4mlo-0 gSJoMw border-theme-secondary-300 dark:border-theme-secondary-800"
-                  type="vertical"
-                />
-                <p
-                  class="text-sm font-semibold text-theme-secondary-500 dark:text-theme-secondary-700"
-                  data-testid="NewsCard__date-created"
-                >
-                  <span
-                    data-testid="timeago"
-                  >
-                    A few seconds ago
-                  </span>
-                </p>
+                  #Marketing
+                </span>
               </div>
             </div>
           </div>
           <div
-            class="flex flex-col justify-end"
+            class="Divider-sc-19q4mlo-0 daSmjL border-theme-secondary-300 dark:border-theme-secondary-800"
+            type="horizontal"
+          />
+          <div
+            class="whitespace-pre-line text-theme-secondary-text"
+            data-testid="NewsCard__content"
           >
-            <div
-              class="Label-sc-1tj9hzr-0 ftOOah"
-              color="warning"
+            June is over and it's time for the Monthly Update. This blog post will cover last month’s highlights, activities, development, partner activities, news and updates of our upcoming releases. 
+            <a
+              class="Link__AnchorStyled-sc-1q7sbxr-0 fCYCVa group"
+              data-testid="Link"
+              href="#"
+              rel="noopener noreferrer"
+              to="https://blog.ark.io/ark-monthly-update-june-2020-edition-279a3dd47a36"
             >
               <span
-                class="text-sm"
-                data-testid="NewsCard__category"
+                class="break-all border-b border-transparent transition-colors duration-200 border-current border-dotted group-hover:border-transparent"
               >
-                #Marketing
+                https://blog.ark.io/ark-monthly-update-june-2020-edition-279a3dd47a36
               </span>
-            </div>
+              <span
+                class="align-middle"
+              >
+                <div
+                  class="sc-bdfBwQ fPrsah flex-shrink-0 inline-block pb-px text-sm"
+                  data-testid="Link__external"
+                  height="1em"
+                  width="1em"
+                >
+                  <svg>
+                    redirect.svg
+                  </svg>
+                </div>
+              </span>
+            </a>
+          </div>
+          <div
+            class="flex justify-center p-1 -mx-10 border-t-2 border-theme-primary-100 dark:border-theme-secondary-800"
+          >
+            <img
+              alt="ARK Banner"
+              src="https://via.placeholder.com/150"
+            />
           </div>
         </div>
         <div
-          class="Divider-sc-19q4mlo-0 daSmjL border-theme-secondary-300 dark:border-theme-secondary-800"
-          type="horizontal"
+          class="flex absolute -top-1 -right-1 items-center m-4 space-x-1"
         />
-        <div
-          class="whitespace-pre-line text-theme-secondary-text"
-          data-testid="NewsCard__content"
-        >
-          June is over and it's time for the Monthly Update. This blog post will cover last month’s highlights, activities, development, partner activities, news and updates of our upcoming releases. 
-          <a
-            class="Link__AnchorStyled-sc-1q7sbxr-0 fCYCVa group"
-            data-testid="Link"
-            href="#"
-            rel="noopener noreferrer"
-            to="https://blog.ark.io/ark-monthly-update-june-2020-edition-279a3dd47a36"
-          >
-            <span
-              class="break-all border-b border-transparent transition-colors duration-200 border-current border-dotted group-hover:border-transparent"
-            >
-              https://blog.ark.io/ark-monthly-update-june-2020-edition-279a3dd47a36
-            </span>
-            <span
-              class="align-middle"
-            >
-              <div
-                class="sc-bdfBwQ fPrsah flex-shrink-0 inline-block pb-px text-sm"
-                data-testid="Link__external"
-                height="1em"
-                width="1em"
-              >
-                <svg>
-                  redirect.svg
-                </svg>
-              </div>
-            </span>
-          </a>
-        </div>
-        <div
-          class="flex justify-center p-1 -mx-10 border-t-2 border-theme-primary-100 dark:border-theme-secondary-800"
-        >
-          <img
-            alt="ARK Banner"
-            src="https://via.placeholder.com/150"
-          />
-        </div>
-      </div>
-      <div
-        class="flex absolute -top-1 -right-1 items-center m-4 space-x-1"
-      />
+      </button>
     </div>
   </div>
 </DocumentFragment>
