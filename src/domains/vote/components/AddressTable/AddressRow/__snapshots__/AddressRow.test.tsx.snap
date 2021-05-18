@@ -30,7 +30,7 @@ exports[`AddressRow should emit action on select button 1`] = `
               class="w-full flex items-center no-ligatures overflow-hidden whitespace-nowrap"
             >
               <span
-                class="max-w-24 flex-auto truncate mr-2 font-semibold text-base text-theme-text"
+                class="max-w-24 truncate mr-2 font-semibold text-base text-theme-text"
                 data-testid="address__wallet-name"
               >
                 <span
@@ -197,7 +197,7 @@ exports[`AddressRow should render 1`] = `
               class="w-full flex items-center no-ligatures overflow-hidden whitespace-nowrap"
             >
               <span
-                class="max-w-24 flex-auto truncate mr-2 font-semibold text-base text-theme-text"
+                class="max-w-24 truncate mr-2 font-semibold text-base text-theme-text"
                 data-testid="address__wallet-name"
               >
                 <span
@@ -364,7 +364,7 @@ exports[`AddressRow should render for a multisignature wallet 1`] = `
               class="w-full flex items-center no-ligatures overflow-hidden whitespace-nowrap"
             >
               <span
-                class="max-w-24 flex-auto truncate mr-2 font-semibold text-base text-theme-text"
+                class="max-w-24 truncate mr-2 font-semibold text-base text-theme-text"
                 data-testid="address__wallet-name"
               >
                 <span
@@ -544,7 +544,7 @@ exports[`AddressRow should render when the maximum votes is greater than 1 1`] =
               class="w-full flex items-center no-ligatures overflow-hidden whitespace-nowrap"
             >
               <span
-                class="max-w-24 flex-auto truncate mr-2 font-semibold text-base text-theme-text"
+                class="max-w-24 truncate mr-2 font-semibold text-base text-theme-text"
                 data-testid="address__wallet-name"
               >
                 <span
@@ -767,7 +767,7 @@ exports[`AddressRow should render when the wallet has many votes 1`] = `
               class="w-full flex items-center no-ligatures overflow-hidden whitespace-nowrap"
             >
               <span
-                class="max-w-24 flex-auto truncate mr-2 font-semibold text-base text-theme-text"
+                class="max-w-24 truncate mr-2 font-semibold text-base text-theme-text"
                 data-testid="address__wallet-name"
               >
                 <span
@@ -981,7 +981,7 @@ exports[`AddressRow should render when wallet hasn't voted 1`] = `
               class="w-full flex items-center no-ligatures overflow-hidden whitespace-nowrap"
             >
               <span
-                class="max-w-24 flex-auto truncate mr-2 font-semibold text-base text-theme-text"
+                class="max-w-24 truncate mr-2 font-semibold text-base text-theme-text"
                 data-testid="address__wallet-name"
               >
                 <span
@@ -1245,7 +1245,7 @@ exports[`AddressRow should render when wallet not found for votes 1`] = `
               class="w-full flex items-center no-ligatures overflow-hidden whitespace-nowrap"
             >
               <span
-                class="max-w-24 flex-auto truncate mr-2 font-semibold text-base text-theme-text"
+                class="max-w-24 truncate mr-2 font-semibold text-base text-theme-text"
                 data-testid="address__wallet-name"
               >
                 <span

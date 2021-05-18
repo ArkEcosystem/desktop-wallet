@@ -5,102 +5,106 @@ exports[`PluginCardSkeleton should render 1`] = `
   <div
     data-testid="PluginCardSkeleton"
   >
-    <div
-      class="Cardstyles__Wrapper-sc-1uddqgb-0 eJQzer"
-      data-testid="Card"
-    >
-      <div
-        class="flex items-center space-x-4 overflow-hidden"
+    <div>
+      <button
+        class="Cardstyles__CardButton-sc-1uddqgb-0 ixtuUQ"
+        data-testid="Card"
+        tabindex="-1"
+        type="button"
       >
         <div
-          class="flex-shrink-0 w-25 h-25 overflow-hidden rounded-xl"
+          class="flex items-center space-x-4 overflow-hidden"
         >
-          <span>
-            <span
-              class="flex items-center leading-none"
-            >
+          <div
+            class="flex-shrink-0 w-25 h-25 overflow-hidden rounded-xl"
+          >
+            <span>
               <span
-                class="react-loading-skeleton css-1eg0sfo-skeletonStyles-Skeleton"
-                style="width: 100px; height: 100px;"
+                class="flex items-center leading-none"
               >
+                <span
+                  class="react-loading-skeleton css-1eg0sfo-skeletonStyles-Skeleton"
+                  style="width: 100px; height: 100px;"
+                >
+                  ‌
+                </span>
                 ‌
               </span>
-              ‌
             </span>
-          </span>
+          </div>
+          <div
+            class="flex flex-col"
+          >
+            <div
+              class="flex items-center h-5"
+            >
+              <span>
+                <span
+                  class="flex items-center leading-none"
+                >
+                  <span
+                    class="react-loading-skeleton css-1eg0sfo-skeletonStyles-Skeleton"
+                    style="width: 1px; height: 14px;"
+                  >
+                    ‌
+                  </span>
+                  ‌
+                </span>
+              </span>
+            </div>
+            <div
+              class="flex items-center h-7 mt-1"
+            >
+              <span>
+                <span
+                  class="flex items-center leading-none"
+                >
+                  <span
+                    class="react-loading-skeleton css-1eg0sfo-skeletonStyles-Skeleton"
+                    style="width: 1px; height: 16px;"
+                  >
+                    ‌
+                  </span>
+                  ‌
+                </span>
+              </span>
+            </div>
+            <div
+              class="flex items-center space-x-2 mt-4"
+            >
+              <span>
+                <span
+                  class="flex items-center leading-none"
+                >
+                  <span
+                    class="react-loading-skeleton css-1eg0sfo-skeletonStyles-Skeleton"
+                    style="width: 20px; height: 20px;"
+                  >
+                    ‌
+                  </span>
+                  ‌
+                </span>
+              </span>
+              <span>
+                <span
+                  class="flex items-center leading-none"
+                >
+                  <span
+                    class="react-loading-skeleton css-1eg0sfo-skeletonStyles-Skeleton"
+                    style="width: 70px; height: 14px;"
+                  >
+                    ‌
+                  </span>
+                  ‌
+                </span>
+              </span>
+            </div>
+          </div>
         </div>
         <div
-          class="flex flex-col"
-        >
-          <div
-            class="flex items-center h-5"
-          >
-            <span>
-              <span
-                class="flex items-center leading-none"
-              >
-                <span
-                  class="react-loading-skeleton css-1eg0sfo-skeletonStyles-Skeleton"
-                  style="width: 1px; height: 14px;"
-                >
-                  ‌
-                </span>
-                ‌
-              </span>
-            </span>
-          </div>
-          <div
-            class="flex items-center h-7 mt-1"
-          >
-            <span>
-              <span
-                class="flex items-center leading-none"
-              >
-                <span
-                  class="react-loading-skeleton css-1eg0sfo-skeletonStyles-Skeleton"
-                  style="width: 1px; height: 16px;"
-                >
-                  ‌
-                </span>
-                ‌
-              </span>
-            </span>
-          </div>
-          <div
-            class="flex items-center space-x-2 mt-4"
-          >
-            <span>
-              <span
-                class="flex items-center leading-none"
-              >
-                <span
-                  class="react-loading-skeleton css-1eg0sfo-skeletonStyles-Skeleton"
-                  style="width: 20px; height: 20px;"
-                >
-                  ‌
-                </span>
-                ‌
-              </span>
-            </span>
-            <span>
-              <span
-                class="flex items-center leading-none"
-              >
-                <span
-                  class="react-loading-skeleton css-1eg0sfo-skeletonStyles-Skeleton"
-                  style="width: 70px; height: 14px;"
-                >
-                  ‌
-                </span>
-                ‌
-              </span>
-            </span>
-          </div>
-        </div>
-      </div>
-      <div
-        class="flex absolute -top-1 -right-1 items-center m-4 space-x-1"
-      />
+          class="flex absolute -top-1 -right-1 items-center m-4 space-x-1"
+        />
+      </button>
     </div>
   </div>
 </DocumentFragment>

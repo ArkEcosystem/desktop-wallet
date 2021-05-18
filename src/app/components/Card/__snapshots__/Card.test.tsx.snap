@@ -2,40 +2,51 @@
 
 exports[`Card should handle click 1`] = `
 <DocumentFragment>
-  <div
-    class="Cardstyles__Wrapper-sc-1uddqgb-0 bVJHxj"
-    data-testid="Card"
-  >
-    Test
-    <div
-      class="flex absolute -top-1 -right-1 items-center m-4 space-x-1"
-    />
+  <div>
+    <button
+      class="Cardstyles__CardButton-sc-1uddqgb-0 jaxCkf"
+      data-testid="Card"
+      type="button"
+    >
+      Test
+      <div
+        class="flex absolute -top-1 -right-1 items-center m-4 space-x-1"
+      />
+    </button>
   </div>
 </DocumentFragment>
 `;
 
 exports[`Card should render 1`] = `
 <DocumentFragment>
-  <div
-    class="Cardstyles__Wrapper-sc-1uddqgb-0 eJQzer"
-    data-testid="Card"
-  >
-    <div
-      class="flex absolute -top-1 -right-1 items-center m-4 space-x-1"
-    />
+  <div>
+    <button
+      class="Cardstyles__CardButton-sc-1uddqgb-0 ixtuUQ"
+      data-testid="Card"
+      tabindex="-1"
+      type="button"
+    >
+      <div
+        class="flex absolute -top-1 -right-1 items-center m-4 space-x-1"
+      />
+    </button>
   </div>
 </DocumentFragment>
 `;
 
 exports[`Card should selected 1`] = `
 <DocumentFragment>
-  <div
-    class="Cardstyles__Wrapper-sc-1uddqgb-0 cuQWNE"
-    data-testid="Card"
-  >
-    <div
-      class="flex absolute -top-1 -right-1 items-center m-4 space-x-1"
-    />
+  <div>
+    <button
+      class="Cardstyles__CardButton-sc-1uddqgb-0 cJaglD"
+      data-testid="Card"
+      tabindex="-1"
+      type="button"
+    >
+      <div
+        class="flex absolute -top-1 -right-1 items-center m-4 space-x-1"
+      />
+    </button>
   </div>
 </DocumentFragment>
 `;
