@@ -30,23 +30,8 @@ const RecipientListItem = ({ recipient, onAction }: RecipientListItemProps) => {
 	return (
 		<TableRow key={recipient.id} border>
 			<TableCell variant="start" innerClassName="space-x-4">
-				<Avatar size="lg" noShadow>
-					<img
-						src={`data:image/svg+xml;utf8,${recipient.avatar}`}
-						title={recipient.alias}
-						alt={recipient.alias}
-					/>
-					{recipient.alias && (
-						<span className="absolute text-sm font-semibold text-theme-background">
-							{recipient.alias.slice(0, 2)?.toUpperCase()}
-						</span>
-					)}
-				</Avatar>
-				<Address address={recipient.address} maxChars={24} />
-			</TableCell>
-
-			<TableCell>
-				<span data-testid="RecipientListItem__name">{recipient.alias}</span>
+				<Avatar size="lg" address={recipient.address} />
+				<Address walletName={recipient.alias} address={recipient.address} maxChars={16} maxNameChars={16} />
 			</TableCell>
 
 			<TableCell>
@@ -94,12 +79,8 @@ export const SearchRecipient = ({
 
 	const columns = [
 		{
-			Header: t("COMMON.ADDRESS"),
-			accessor: "address",
-		},
-		{
-			Header: t("COMMON.NAME"),
-			accessor: "alias",
+			Header: t("COMMON.WALLET_ADDRESS"),
+			accessor: (recipient: Recipient) => recipient.alias,
 		},
 		{
 			Header: t("COMMON.TYPE"),
