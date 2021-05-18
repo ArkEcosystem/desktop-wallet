@@ -1,5 +1,6 @@
 import { Environment } from "@arkecosystem/platform-sdk-profiles";
 import React from "react";
+import { isE2E } from "utils/test-helpers";
 
 type Context = { env: Environment; state?: Record<string, unknown>; persist: () => Promise<void> };
 
@@ -11,11 +12,10 @@ type Props = {
 export const EnvironmentContext = React.createContext<any>(undefined);
 
 export const EnvironmentProvider = ({ children, env }: Props) => {
-	const __E2E__ = process.env.REACT_APP_IS_E2E;
 	const [state, setState] = React.useState<any>(undefined);
 
 	const persist = React.useCallback(async () => {
-		if (__E2E__) {
+		if (isE2E()) {
 			// prevent from persisting when in e2e mode. Tests failing
 			setState({});
 			return;
@@ -25,7 +25,7 @@ export const EnvironmentProvider = ({ children, env }: Props) => {
 
 		// Force update
 		setState({});
-	}, [env, __E2E__]);
+	}, [env]);
 
 	return (
 		<EnvironmentContext.Provider value={{ env, state, persist } as Context}>{children}</EnvironmentContext.Provider>
