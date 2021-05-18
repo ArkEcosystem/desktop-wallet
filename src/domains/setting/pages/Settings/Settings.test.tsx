@@ -831,6 +831,47 @@ describe("Settings", () => {
 		expect(asFragment()).toMatchSnapshot();
 	});
 
+	it("should not allow setting the current password as the new password", async () => {
+		const { asFragment, findByTestId, getByTestId } = renderWithRouter(
+			<Route path="/profiles/:profileId/settings">
+				<Settings />
+			</Route>,
+			{
+				routes: [`/profiles/${profile.id()}/settings`],
+			},
+		);
+
+		await act(async () => {
+			fireEvent.click(await findByTestId("side-menu__item--Password"));
+		});
+
+		await waitFor(() => expect(getByTestId("Password-settings__input--currentPassword")).toBeTruthy());
+
+		act(() => {
+			fireEvent.input(getByTestId("Password-settings__input--currentPassword"), {
+				target: { value: "password" },
+			});
+		});
+
+		await waitFor(() => expect(getByTestId("Password-settings__input--currentPassword")).toHaveValue("password"));
+
+		act(() => {
+			fireEvent.input(getByTestId("Password-settings__input--password_1"), {
+				target: { value: "password" },
+			});
+		});
+
+		await waitFor(() => expect(getByTestId("Password-settings__input--password_1")).toHaveValue("password"));
+
+		await waitFor(() =>
+			expect(getByTestId("Password-settings__input--password_1")).toHaveAttribute("aria-invalid"),
+		);
+
+		await waitFor(() => expect(getByTestId("Password-settings__submit-button")).toBeDisabled());
+
+		expect(asFragment()).toMatchSnapshot();
+	});
+
 	it("should render export settings", async () => {
 		const { container, asFragment, findByTestId } = renderWithRouter(
 			<Route path="/profiles/:profileId/settings">
