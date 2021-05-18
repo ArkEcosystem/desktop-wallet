@@ -29,7 +29,7 @@ export const TransactionExplorerLink = ({ id, link, variant, ...props }: Transac
 		>
 			<div className="flex items-center space-x-3">
 				<Link to={link} isExternal>
-					<TruncatedId className="text-theme-primary-700" />
+					<TruncatedId />
 				</Link>
 
 				<span className="flex text-theme-primary-300 dark:text-theme-secondary-600">
