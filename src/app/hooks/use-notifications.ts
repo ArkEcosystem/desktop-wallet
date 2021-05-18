@@ -167,5 +167,5 @@ export const useNotifications = () => {
 				deleteNotificationsByVersion: deleteNotificationsByVersion(env),
 			},
 		};
-	}, [profiles, env, t]);
+	}, [profiles, env, persist, t]);
 };

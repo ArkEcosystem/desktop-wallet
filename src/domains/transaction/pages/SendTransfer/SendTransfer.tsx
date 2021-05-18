@@ -49,7 +49,7 @@ export const SendTransfer = () => {
 	const [isConfirming, setIsConfirming] = useState(false);
 	const [transaction, setTransaction] = useState((null as unknown) as Contracts.SignedTransactionData);
 
-	const { env, persist } = useEnvironmentContext();
+	const { persist } = useEnvironmentContext();
 	const activeProfile = useActiveProfile();
 	const activeWallet = useActiveWallet();
 
