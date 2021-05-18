@@ -1,7 +1,6 @@
-import { shouldUseDarkColors, setThemeSource } from "utils/electron-utils";
-
-import { Theme } from "types";
 import { Contracts } from "@arkecosystem/platform-sdk-profiles";
+import { Theme } from "types";
+import { setThemeSource, shouldUseDarkColors } from "utils/electron-utils";
 
 export const useTheme = () => {
 	const theme = shouldUseDarkColors() ? "dark" : "light";
