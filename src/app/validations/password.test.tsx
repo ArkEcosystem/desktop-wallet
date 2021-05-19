@@ -10,24 +10,20 @@ describe("Password Validation", () => {
 		const { t } = result.current;
 
 		const passwordValidation = password(t);
-		expect(passwordValidation.password("password")).toEqual({
-			minLength: {
-				message: t("COMMON.VALIDATION.MIN_LENGTH", {
-					field: t("SETTINGS.GENERAL.PERSONAL.PASSWORD"),
-					minLength: 6,
-				}),
-				value: 6,
-			},
+		expect(passwordValidation.password("password").minLength).toEqual({
+			message: t("COMMON.VALIDATION.MIN_LENGTH", {
+				field: t("SETTINGS.GENERAL.PERSONAL.PASSWORD"),
+				minLength: 6,
+			}),
+			value: 6,
 		});
 
-		expect(passwordValidation.password()).toEqual({
-			minLength: {
-				message: t("COMMON.VALIDATION.MIN_LENGTH", {
-					field: t("SETTINGS.GENERAL.PERSONAL.PASSWORD"),
-					minLength: 6,
-				}),
-				value: 6,
-			},
+		expect(passwordValidation.password("password").minLength).toEqual({
+			message: t("COMMON.VALIDATION.MIN_LENGTH", {
+				field: t("SETTINGS.GENERAL.PERSONAL.PASSWORD"),
+				minLength: 6,
+			}),
+			value: 6,
 		});
 	});
 
