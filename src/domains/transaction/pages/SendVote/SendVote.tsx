@@ -21,7 +21,7 @@ import { VoteLedgerReview } from "./LedgerReview";
 
 export const SendVote = () => {
 	const { t } = useTranslation();
-	const { env } = useEnvironmentContext();
+	const { env, persist } = useEnvironmentContext();
 	const history = useHistory();
 	const activeProfile = useActiveProfile();
 	const activeWallet = useActiveWallet();
@@ -216,7 +216,7 @@ export const SendVote = () => {
 
 					await transactionBuilder.broadcast(unvoteResult.uuid, voteTransactionInput);
 
-					await env.persist();
+					await persist();
 
 					await confirmSendVote("unvote");
 
@@ -233,7 +233,7 @@ export const SendVote = () => {
 
 					await transactionBuilder.broadcast(voteResult.uuid, voteTransactionInput);
 
-					await env.persist();
+					await persist();
 
 					setTransaction(voteResult.transaction);
 
@@ -257,7 +257,7 @@ export const SendVote = () => {
 
 					await transactionBuilder.broadcast(uuid, voteTransactionInput);
 
-					await env.persist();
+					await persist();
 
 					setTransaction(transaction);
 
@@ -286,7 +286,7 @@ export const SendVote = () => {
 
 				await transactionBuilder.broadcast(uuid, voteTransactionInput);
 
-				await env.persist();
+				await persist();
 
 				setTransaction(transaction);
 

@@ -49,7 +49,7 @@ export const SendTransfer = () => {
 	const [isConfirming, setIsConfirming] = useState(false);
 	const [transaction, setTransaction] = useState((null as unknown) as Contracts.SignedTransactionData);
 
-	const { env } = useEnvironmentContext();
+	const { persist } = useEnvironmentContext();
 	const activeProfile = useActiveProfile();
 	const activeWallet = useActiveWallet();
 
@@ -238,7 +238,7 @@ export const SendTransfer = () => {
 
 			await transactionBuilder.broadcast(uuid, transactionInput);
 
-			await env.persist();
+			await persist();
 
 			setTransaction(transaction);
 			setActiveTab(4);
