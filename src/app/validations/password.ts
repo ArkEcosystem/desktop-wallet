@@ -1,5 +1,5 @@
 export const password = (t: any) => ({
-	password: (currentPassword: string) => ({
+	password: (currentPassword?: string) => ({
 		minLength: {
 			value: 6,
 			message: t("COMMON.VALIDATION.MIN_LENGTH", {
@@ -8,7 +8,7 @@ export const password = (t: any) => ({
 			}),
 		},
 		validate: (password: string) => {
-			if (password === currentPassword) {
+			if (!!currentPassword && currentPassword === password) {
 				return t("COMMON.VALIDATION.PASSWORD_SAME_AS_OLD");
 			}
 
