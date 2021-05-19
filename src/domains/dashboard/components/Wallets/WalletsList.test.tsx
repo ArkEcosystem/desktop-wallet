@@ -1,9 +1,14 @@
 import { Contracts } from "@arkecosystem/platform-sdk-profiles";
+import { createMemoryHistory } from "history";
 import React from "react";
-import { env, getDefaultProfileId, render } from "utils/testing-library";
+import { Route } from "react-router-dom";
+import { env, getDefaultProfileId, render, renderWithRouter } from "utils/testing-library";
 
 import { translations } from "../../i18n";
 import { GridWallet, WalletsList } from "./";
+
+const dashboardURL = `/profiles/${getDefaultProfileId()}/dashboard`;
+const history = createMemoryHistory();
 
 let profile: Contracts.IProfile;
 let wallets: GridWallet[];
@@ -16,10 +21,20 @@ describe("WalletsList", () => {
 			.wallets()
 			.values()
 			.map((wallet) => ({ wallet: wallet, actions: [] }));
+
+		history.push(dashboardURL);
 	});
 
 	it("should render", () => {
-		const { asFragment, getByTestId } = render(<WalletsList wallets={wallets} />);
+		const { asFragment, getByTestId } = renderWithRouter(
+			<Route path="/profiles/:profileId/dashboard">
+				<WalletsList wallets={wallets} />
+			</Route>,
+			{
+				routes: [dashboardURL],
+				history,
+			},
+		);
 
 		expect(getByTestId("WalletsList")).toBeTruthy();
 		expect(asFragment()).toMatchSnapshot();
@@ -33,7 +48,15 @@ describe("WalletsList", () => {
 	});
 
 	it("should render with view more button", () => {
-		const { asFragment, getByTestId } = render(<WalletsList wallets={wallets} hasMore={true} />);
+		const { asFragment, getByTestId } = renderWithRouter(
+			<Route path="/profiles/:profileId/dashboard">
+				<WalletsList wallets={wallets} hasMore={true} />
+			</Route>,
+			{
+				routes: [dashboardURL],
+				history,
+			},
+		);
 
 		expect(getByTestId("WalletsList")).toBeTruthy();
 		expect(asFragment()).toMatchSnapshot();

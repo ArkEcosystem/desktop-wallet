@@ -11,7 +11,7 @@ exports[`SelectFile should render 1`] = `
       data-testid="SelectFile__drop-zone"
     >
       <div
-        class="mt-8"
+        class="mt-8 space-x-px"
       >
         <span
           class="font-semibold"
@@ -19,13 +19,17 @@ exports[`SelectFile should render 1`] = `
           Drag & Drop or
            
         </span>
-        <span
-          class="font-semibold cursor-pointer link"
+        <button
+          class="relative font-semibold cursor-pointer link focus:outline-none group"
           data-testid="SelectFile__browse-files"
           title="Click here to upload"
+          type="button"
         >
+          <div
+            class="absolute inset-0 -m-1 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+          />
           Browse Files
-        </span>
+        </button>
       </div>
       <div
         class="font-semibold text-theme-secondary-500 text-sm mt-2"
@@ -57,7 +61,7 @@ exports[`SelectFile should render with dwe file format 1`] = `
         </svg>
       </div>
       <div
-        class="mt-8"
+        class="mt-8 space-x-px"
       >
         <span
           class="font-semibold"
@@ -65,13 +69,17 @@ exports[`SelectFile should render with dwe file format 1`] = `
           Drag & Drop or
            
         </span>
-        <span
-          class="font-semibold cursor-pointer link"
+        <button
+          class="relative font-semibold cursor-pointer link focus:outline-none group"
           data-testid="SelectFile__browse-files"
           title="Click here to upload"
+          type="button"
         >
+          <div
+            class="absolute inset-0 -m-1 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+          />
           Browse Files
-        </span>
+        </button>
       </div>
       <div
         class="font-semibold text-theme-secondary-500 text-sm mt-2"
@@ -103,7 +111,7 @@ exports[`SelectFile should render with json file format 1`] = `
         </svg>
       </div>
       <div
-        class="mt-8"
+        class="mt-8 space-x-px"
       >
         <span
           class="font-semibold"
@@ -111,13 +119,17 @@ exports[`SelectFile should render with json file format 1`] = `
           Drag & Drop or
            
         </span>
-        <span
-          class="font-semibold cursor-pointer link"
+        <button
+          class="relative font-semibold cursor-pointer link focus:outline-none group"
           data-testid="SelectFile__browse-files"
           title="Click here to upload"
+          type="button"
         >
+          <div
+            class="absolute inset-0 -m-1 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+          />
           Browse Files
-        </span>
+        </button>
       </div>
       <div
         class="font-semibold text-theme-secondary-500 text-sm mt-2"

@@ -2,7 +2,6 @@ import { Contracts, DTO } from "@arkecosystem/platform-sdk-profiles";
 import { useActiveProfile } from "app/hooks";
 import { DelegateRegistrationDetail } from "domains/transaction/components/DelegateRegistrationDetail";
 import { DelegateResignationDetail } from "domains/transaction/components/DelegateResignationDetail";
-import { EntityDetail } from "domains/transaction/components/EntityDetail";
 import { IpfsDetail } from "domains/transaction/components/IpfsDetail";
 import { LegacyMagistrateDetail } from "domains/transaction/components/LegacyMagistrateDetail";
 import { MultiPaymentDetail } from "domains/transaction/components/MultiPaymentDetail";
@@ -61,10 +60,6 @@ export const TransactionDetailModal = ({ isOpen, transactionItem, onClose }: Tra
 
 		default:
 			break;
-	}
-
-	if (transactionType.toLowerCase().includes("entity")) {
-		TransactionModal = EntityDetail;
 	}
 
 	if (!TransactionModal) {

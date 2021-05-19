@@ -1,2067 +1,347 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`LegacyMagistrateDetail Legacy Bridgechain Transactions should render a legacy Registration modal 1`] = `
-<DocumentFragment>
-  <div
-    class="flex fixed inset-0 z-50 justify-center items-center w-full h-full overflow-overlay"
-  >
-    <div
-      class="fixed z-50 w-full h-full bg-theme-secondary-900 opacity-60 dark:bg-black dark:opacity-80"
-      data-testid="modal__overlay"
-    />
-    <div
-      class="Modal__ModalContainer-sc-1pv7yg7-0 bGiJfU absolute left-0 right-0 z-50 flex flex-col p-10 mx-auto overflow-hidden rounded-2.5xl bg-theme-background shadow-2xl "
-      data-testid="modal__inner"
-    >
-      <div
-        class="absolute top-0 right-0 z-50 mt-5 mr-5 rounded transition-all duration-100 ease-linear bg-theme-primary-100 hover:bg-theme-primary-300 dark:bg-theme-secondary-800 dark:text-theme-secondary-600 dark:hover:bg-theme-secondary-700 dark:hover:text-theme-secondary-400"
-      >
-        <button
-          class="OriginalButton__StyledButton-sc-1y2wptt-0 fNHPRi w-11 h-11"
-          data-testid="modal__close-btn"
-          type="button"
-        >
-          <div
-            class="flex relative items-center space-x-2"
-          >
-            <div
-              class="sc-bdfBwQ bfBhNR"
-              height="14"
-              width="14"
-            >
-              <svg>
-                cross-slim.svg
-              </svg>
-            </div>
-          </div>
-        </button>
-      </div>
-      <div
-        class="relative space-y-4"
-      >
-        <h2
-          class="mb-0 text-3xl font-bold"
-        >
-          Bridgechain Registration (Legacy)
-        </h2>
-        <div
-          class="flex-1"
-        >
-          <div
-            class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 ekYoCX undefined no-ligatures"
-            data-testid="TransactionDetail"
-          >
-            <div
-              class="flex-1 space-y-2 flex-shrink overflow-hidden whitespace-nowrap"
-            >
-              <div
-                class="text-sm font-semibold text-theme-secondary-700 no-ligatures"
-              >
-                Sender
-              </div>
-              <div
-                class="font-semibold"
-              >
-                <div
-                  class="w-full flex items-center no-ligatures overflow-hidden whitespace-nowrap"
-                >
-                  <span
-                    class="max-w-24 truncate mr-2 font-semibold text-base text-theme-text"
-                    data-testid="address__wallet-name"
-                  >
-                    <span
-                      class="TruncateEnd__Wrapper-sc-1w1nvb9-0"
-                      data-testid="TruncateEnd"
-                    >
-                      Test Wallet
-                    </span>
-                  </span>
-                  <span
-                    class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-secondary-500 dark:text-theme-secondary-700 font-semibold text-base"
-                    data-testid="address__wallet-address"
-                  >
-                    D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD
-                  </span>
-                </div>
-              </div>
-            </div>
-            <div
-              class="flex items-center -space-x-2"
-            >
-              <div
-                class="Circle__CircleWrapper-uw7h4j-0 bNDQMV border-theme-text text-theme-text dark:border-theme-secondary-600 dark:text-theme-secondary-600 ring-theme-background"
-              >
-                <div
-                  class="sc-bdfBwQ catSEV"
-                  height="25"
-                  width="25"
-                >
-                  <svg>
-                    delegate.svg
-                  </svg>
-                </div>
-              </div>
-              <div
-                class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB flex-shrink-0"
-                data-testid="Avatar"
-              >
-                <div
-                  class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
-                >
-                  <img
-                    alt="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
-                    src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(0, 150, 136)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"80\\" cy=\\"50\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"35\\" cx=\\"100\\" cy=\\"40\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"70\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
-                    title="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
-                  />
-                </div>
-              </div>
-            </div>
-          </div>
-          <div
-            class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 hqOyLp undefined no-ligatures"
-            data-testid="TransactionDetail"
-          >
-            <div
-              class="flex-1 space-y-2 flex-shrink overflow-hidden whitespace-nowrap"
-            >
-              <div
-                class="text-sm font-semibold text-theme-secondary-700 no-ligatures"
-              >
-                Transaction Fee
-              </div>
-              <div
-                class="font-semibold"
-              >
-                <span
-                  data-testid="Amount"
-                >
-                  21 ARK
-                </span>
-              </div>
-            </div>
-          </div>
-          <div
-            class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 hqOyLp undefined no-ligatures"
-            data-testid="TransactionDetail"
-          >
-            <div
-              class="flex-1 space-y-2 flex-shrink overflow-hidden whitespace-nowrap"
-            >
-              <div
-                class="text-sm font-semibold text-theme-secondary-700 no-ligatures"
-              >
-                Timestamp
-              </div>
-              <div
-                class="font-semibold"
-              >
-                31.07.2020 16:34
-              </div>
-            </div>
-          </div>
-          <div
-            class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 hqOyLp undefined no-ligatures"
-            data-testid="TransactionDetail"
-          >
-            <div
-              class="flex-1 space-y-2 flex-shrink overflow-hidden whitespace-nowrap"
-            >
-              <div
-                class="text-sm font-semibold text-theme-secondary-700 no-ligatures"
-              >
-                Confirmations
-              </div>
-              <div
-                class="font-semibold"
-              >
-                <div
-                  class="flex space-x-3"
-                >
-                  <span>
-                    Not confirmed
-                  </span>
-                  <div
-                    class="sc-bdfBwQ iSzUah text-theme-warning-600"
-                    height="22"
-                    width="22"
-                  >
-                    <svg>
-                      status-pending.svg
-                    </svg>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div
-            class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 hqOyLp undefined no-ligatures"
-            data-testid="TransactionDetail"
-          >
-            <div
-              class="flex-1 space-y-2 flex-shrink overflow-hidden whitespace-nowrap"
-            >
-              <div
-                class="text-sm font-semibold text-theme-secondary-700 no-ligatures"
-              >
-                ID
-              </div>
-              <div
-                class="font-semibold"
-              >
-                <div
-                  class="flex items-center space-x-3"
-                >
-                  <a
-                    class="Link__AnchorStyled-sc-1q7sbxr-0 fCYCVa group"
-                    data-testid="Link"
-                    href="#"
-                    rel="noopener noreferrer"
-                    to="https://explorer.ark.io/transaction/ee4175091d9f4dacf5fed213711c3e0e4cc371e37afa7bce0429d09bcf3ecefe"
-                  >
-                    <span
-                      class="break-all border-b border-transparent transition-colors duration-200 border-current border-dotted group-hover:border-transparent"
-                    >
-                      <span
-                        class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-primary-700"
-                        data-testid="TruncateMiddle"
-                      >
-                        ee4175091d9f4dacf5fed213711c3e0e4cc371e37afa7bce0429d09bcf3ecefe
-                      </span>
-                    </span>
-                    <span
-                      class="align-middle"
-                    >
-                      <div
-                        class="sc-bdfBwQ fPrsah flex-shrink-0 inline-block pb-px text-sm"
-                        data-testid="Link__external"
-                        height="1em"
-                        width="1em"
-                      >
-                        <svg>
-                          redirect.svg
-                        </svg>
-                      </div>
-                    </span>
-                  </a>
-                  <span
-                    class="flex text-theme-primary-300 dark:text-theme-secondary-600"
-                  >
-                    <div
-                      class="inline-block cursor-pointer"
-                      data-testid="clipboard__wrapper"
-                    >
-                      <div
-                        class="sc-bdfBwQ fPrsah"
-                        height="1em"
-                        width="1em"
-                      >
-                        <svg>
-                          copy.svg
-                        </svg>
-                      </div>
-                    </div>
-                  </span>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div
-            class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 hqOyLp undefined no-ligatures"
-            data-testid="TransactionDetail"
-          >
-            <div
-              class="flex-1 space-y-2 flex-shrink overflow-hidden whitespace-nowrap"
-            >
-              <div
-                class="text-sm font-semibold text-theme-secondary-700 no-ligatures"
-              >
-                Block ID
-              </div>
-              <div
-                class="font-semibold"
-              >
-                <div
-                  class="flex items-center space-x-3"
-                >
-                  <a
-                    class="Link__AnchorStyled-sc-1q7sbxr-0 fCYCVa group"
-                    data-testid="Link"
-                    href="#"
-                    rel="noopener noreferrer"
-                    to="https://explorer.ark.io/blocks/71fd1a494ded5430586f4dd1c79c3ac77bf38120e868c8f8980972b8075d67e9"
-                  >
-                    <span
-                      class="break-all border-b border-transparent transition-colors duration-200 border-current border-dotted group-hover:border-transparent"
-                    >
-                      <span
-                        class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-primary-700"
-                        data-testid="TruncateMiddle"
-                      >
-                        71fd1a494ded5430586f4dd1c79c3ac77bf38120e868c8f8980972b8075d67e9
-                      </span>
-                    </span>
-                    <span
-                      class="align-middle"
-                    >
-                      <div
-                        class="sc-bdfBwQ fPrsah flex-shrink-0 inline-block pb-px text-sm"
-                        data-testid="Link__external"
-                        height="1em"
-                        width="1em"
-                      >
-                        <svg>
-                          redirect.svg
-                        </svg>
-                      </div>
-                    </span>
-                  </a>
-                  <span
-                    class="flex text-theme-primary-300 dark:text-theme-secondary-600"
-                  >
-                    <div
-                      class="inline-block cursor-pointer"
-                      data-testid="clipboard__wrapper"
-                    >
-                      <div
-                        class="sc-bdfBwQ fPrsah"
-                        height="1em"
-                        width="1em"
-                      >
-                        <svg>
-                          copy.svg
-                        </svg>
-                      </div>
-                    </div>
-                  </span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</DocumentFragment>
-`;
-
-exports[`LegacyMagistrateDetail Legacy Bridgechain Transactions should render a legacy Resignation modal 1`] = `
-<DocumentFragment>
-  <div
-    class="flex fixed inset-0 z-50 justify-center items-center w-full h-full overflow-overlay"
-  >
-    <div
-      class="fixed z-50 w-full h-full bg-theme-secondary-900 opacity-60 dark:bg-black dark:opacity-80"
-      data-testid="modal__overlay"
-    />
-    <div
-      class="Modal__ModalContainer-sc-1pv7yg7-0 bGiJfU absolute left-0 right-0 z-50 flex flex-col p-10 mx-auto overflow-hidden rounded-2.5xl bg-theme-background shadow-2xl "
-      data-testid="modal__inner"
-    >
-      <div
-        class="absolute top-0 right-0 z-50 mt-5 mr-5 rounded transition-all duration-100 ease-linear bg-theme-primary-100 hover:bg-theme-primary-300 dark:bg-theme-secondary-800 dark:text-theme-secondary-600 dark:hover:bg-theme-secondary-700 dark:hover:text-theme-secondary-400"
-      >
-        <button
-          class="OriginalButton__StyledButton-sc-1y2wptt-0 fNHPRi w-11 h-11"
-          data-testid="modal__close-btn"
-          type="button"
-        >
-          <div
-            class="flex relative items-center space-x-2"
-          >
-            <div
-              class="sc-bdfBwQ bfBhNR"
-              height="14"
-              width="14"
-            >
-              <svg>
-                cross-slim.svg
-              </svg>
-            </div>
-          </div>
-        </button>
-      </div>
-      <div
-        class="relative space-y-4"
-      >
-        <h2
-          class="mb-0 text-3xl font-bold"
-        >
-          Bridgechain Resignation (Legacy)
-        </h2>
-        <div
-          class="flex-1"
-        >
-          <div
-            class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 ekYoCX undefined no-ligatures"
-            data-testid="TransactionDetail"
-          >
-            <div
-              class="flex-1 space-y-2 flex-shrink overflow-hidden whitespace-nowrap"
-            >
-              <div
-                class="text-sm font-semibold text-theme-secondary-700 no-ligatures"
-              >
-                Sender
-              </div>
-              <div
-                class="font-semibold"
-              >
-                <div
-                  class="w-full flex items-center no-ligatures overflow-hidden whitespace-nowrap"
-                >
-                  <span
-                    class="max-w-24 truncate mr-2 font-semibold text-base text-theme-text"
-                    data-testid="address__wallet-name"
-                  >
-                    <span
-                      class="TruncateEnd__Wrapper-sc-1w1nvb9-0"
-                      data-testid="TruncateEnd"
-                    >
-                      Test Wallet
-                    </span>
-                  </span>
-                  <span
-                    class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-secondary-500 dark:text-theme-secondary-700 font-semibold text-base"
-                    data-testid="address__wallet-address"
-                  >
-                    D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD
-                  </span>
-                </div>
-              </div>
-            </div>
-            <div
-              class="flex items-center -space-x-2"
-            >
-              <div
-                class="Circle__CircleWrapper-uw7h4j-0 bNDQMV border-theme-text text-theme-text dark:border-theme-secondary-600 dark:text-theme-secondary-600 ring-theme-background"
-              >
-                <div
-                  class="sc-bdfBwQ catSEV"
-                  height="25"
-                  width="25"
-                >
-                  <svg>
-                    delegate.svg
-                  </svg>
-                </div>
-              </div>
-              <div
-                class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB flex-shrink-0"
-                data-testid="Avatar"
-              >
-                <div
-                  class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
-                >
-                  <img
-                    alt="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
-                    src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(0, 150, 136)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"80\\" cy=\\"50\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"35\\" cx=\\"100\\" cy=\\"40\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"70\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
-                    title="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
-                  />
-                </div>
-              </div>
-            </div>
-          </div>
-          <div
-            class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 hqOyLp undefined no-ligatures"
-            data-testid="TransactionDetail"
-          >
-            <div
-              class="flex-1 space-y-2 flex-shrink overflow-hidden whitespace-nowrap"
-            >
-              <div
-                class="text-sm font-semibold text-theme-secondary-700 no-ligatures"
-              >
-                Transaction Fee
-              </div>
-              <div
-                class="font-semibold"
-              >
-                <span
-                  data-testid="Amount"
-                >
-                  21 ARK
-                </span>
-              </div>
-            </div>
-          </div>
-          <div
-            class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 hqOyLp undefined no-ligatures"
-            data-testid="TransactionDetail"
-          >
-            <div
-              class="flex-1 space-y-2 flex-shrink overflow-hidden whitespace-nowrap"
-            >
-              <div
-                class="text-sm font-semibold text-theme-secondary-700 no-ligatures"
-              >
-                Timestamp
-              </div>
-              <div
-                class="font-semibold"
-              >
-                31.07.2020 16:34
-              </div>
-            </div>
-          </div>
-          <div
-            class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 hqOyLp undefined no-ligatures"
-            data-testid="TransactionDetail"
-          >
-            <div
-              class="flex-1 space-y-2 flex-shrink overflow-hidden whitespace-nowrap"
-            >
-              <div
-                class="text-sm font-semibold text-theme-secondary-700 no-ligatures"
-              >
-                Confirmations
-              </div>
-              <div
-                class="font-semibold"
-              >
-                <div
-                  class="flex space-x-3"
-                >
-                  <span>
-                    Not confirmed
-                  </span>
-                  <div
-                    class="sc-bdfBwQ iSzUah text-theme-warning-600"
-                    height="22"
-                    width="22"
-                  >
-                    <svg>
-                      status-pending.svg
-                    </svg>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div
-            class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 hqOyLp undefined no-ligatures"
-            data-testid="TransactionDetail"
-          >
-            <div
-              class="flex-1 space-y-2 flex-shrink overflow-hidden whitespace-nowrap"
-            >
-              <div
-                class="text-sm font-semibold text-theme-secondary-700 no-ligatures"
-              >
-                ID
-              </div>
-              <div
-                class="font-semibold"
-              >
-                <div
-                  class="flex items-center space-x-3"
-                >
-                  <a
-                    class="Link__AnchorStyled-sc-1q7sbxr-0 fCYCVa group"
-                    data-testid="Link"
-                    href="#"
-                    rel="noopener noreferrer"
-                    to="https://explorer.ark.io/transaction/ee4175091d9f4dacf5fed213711c3e0e4cc371e37afa7bce0429d09bcf3ecefe"
-                  >
-                    <span
-                      class="break-all border-b border-transparent transition-colors duration-200 border-current border-dotted group-hover:border-transparent"
-                    >
-                      <span
-                        class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-primary-700"
-                        data-testid="TruncateMiddle"
-                      >
-                        ee4175091d9f4dacf5fed213711c3e0e4cc371e37afa7bce0429d09bcf3ecefe
-                      </span>
-                    </span>
-                    <span
-                      class="align-middle"
-                    >
-                      <div
-                        class="sc-bdfBwQ fPrsah flex-shrink-0 inline-block pb-px text-sm"
-                        data-testid="Link__external"
-                        height="1em"
-                        width="1em"
-                      >
-                        <svg>
-                          redirect.svg
-                        </svg>
-                      </div>
-                    </span>
-                  </a>
-                  <span
-                    class="flex text-theme-primary-300 dark:text-theme-secondary-600"
-                  >
-                    <div
-                      class="inline-block cursor-pointer"
-                      data-testid="clipboard__wrapper"
-                    >
-                      <div
-                        class="sc-bdfBwQ fPrsah"
-                        height="1em"
-                        width="1em"
-                      >
-                        <svg>
-                          copy.svg
-                        </svg>
-                      </div>
-                    </div>
-                  </span>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div
-            class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 hqOyLp undefined no-ligatures"
-            data-testid="TransactionDetail"
-          >
-            <div
-              class="flex-1 space-y-2 flex-shrink overflow-hidden whitespace-nowrap"
-            >
-              <div
-                class="text-sm font-semibold text-theme-secondary-700 no-ligatures"
-              >
-                Block ID
-              </div>
-              <div
-                class="font-semibold"
-              >
-                <div
-                  class="flex items-center space-x-3"
-                >
-                  <a
-                    class="Link__AnchorStyled-sc-1q7sbxr-0 fCYCVa group"
-                    data-testid="Link"
-                    href="#"
-                    rel="noopener noreferrer"
-                    to="https://explorer.ark.io/blocks/71fd1a494ded5430586f4dd1c79c3ac77bf38120e868c8f8980972b8075d67e9"
-                  >
-                    <span
-                      class="break-all border-b border-transparent transition-colors duration-200 border-current border-dotted group-hover:border-transparent"
-                    >
-                      <span
-                        class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-primary-700"
-                        data-testid="TruncateMiddle"
-                      >
-                        71fd1a494ded5430586f4dd1c79c3ac77bf38120e868c8f8980972b8075d67e9
-                      </span>
-                    </span>
-                    <span
-                      class="align-middle"
-                    >
-                      <div
-                        class="sc-bdfBwQ fPrsah flex-shrink-0 inline-block pb-px text-sm"
-                        data-testid="Link__external"
-                        height="1em"
-                        width="1em"
-                      >
-                        <svg>
-                          redirect.svg
-                        </svg>
-                      </div>
-                    </span>
-                  </a>
-                  <span
-                    class="flex text-theme-primary-300 dark:text-theme-secondary-600"
-                  >
-                    <div
-                      class="inline-block cursor-pointer"
-                      data-testid="clipboard__wrapper"
-                    >
-                      <div
-                        class="sc-bdfBwQ fPrsah"
-                        height="1em"
-                        width="1em"
-                      >
-                        <svg>
-                          copy.svg
-                        </svg>
-                      </div>
-                    </div>
-                  </span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</DocumentFragment>
-`;
-
-exports[`LegacyMagistrateDetail Legacy Bridgechain Transactions should render a legacy Update modal 1`] = `
-<DocumentFragment>
-  <div
-    class="flex fixed inset-0 z-50 justify-center items-center w-full h-full overflow-overlay"
-  >
-    <div
-      class="fixed z-50 w-full h-full bg-theme-secondary-900 opacity-60 dark:bg-black dark:opacity-80"
-      data-testid="modal__overlay"
-    />
-    <div
-      class="Modal__ModalContainer-sc-1pv7yg7-0 bGiJfU absolute left-0 right-0 z-50 flex flex-col p-10 mx-auto overflow-hidden rounded-2.5xl bg-theme-background shadow-2xl "
-      data-testid="modal__inner"
-    >
-      <div
-        class="absolute top-0 right-0 z-50 mt-5 mr-5 rounded transition-all duration-100 ease-linear bg-theme-primary-100 hover:bg-theme-primary-300 dark:bg-theme-secondary-800 dark:text-theme-secondary-600 dark:hover:bg-theme-secondary-700 dark:hover:text-theme-secondary-400"
-      >
-        <button
-          class="OriginalButton__StyledButton-sc-1y2wptt-0 fNHPRi w-11 h-11"
-          data-testid="modal__close-btn"
-          type="button"
-        >
-          <div
-            class="flex relative items-center space-x-2"
-          >
-            <div
-              class="sc-bdfBwQ bfBhNR"
-              height="14"
-              width="14"
-            >
-              <svg>
-                cross-slim.svg
-              </svg>
-            </div>
-          </div>
-        </button>
-      </div>
-      <div
-        class="relative space-y-4"
-      >
-        <h2
-          class="mb-0 text-3xl font-bold"
-        >
-          Bridgechain Update (Legacy)
-        </h2>
-        <div
-          class="flex-1"
-        >
-          <div
-            class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 ekYoCX undefined no-ligatures"
-            data-testid="TransactionDetail"
-          >
-            <div
-              class="flex-1 space-y-2 flex-shrink overflow-hidden whitespace-nowrap"
-            >
-              <div
-                class="text-sm font-semibold text-theme-secondary-700 no-ligatures"
-              >
-                Sender
-              </div>
-              <div
-                class="font-semibold"
-              >
-                <div
-                  class="w-full flex items-center no-ligatures overflow-hidden whitespace-nowrap"
-                >
-                  <span
-                    class="max-w-24 truncate mr-2 font-semibold text-base text-theme-text"
-                    data-testid="address__wallet-name"
-                  >
-                    <span
-                      class="TruncateEnd__Wrapper-sc-1w1nvb9-0"
-                      data-testid="TruncateEnd"
-                    >
-                      Test Wallet
-                    </span>
-                  </span>
-                  <span
-                    class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-secondary-500 dark:text-theme-secondary-700 font-semibold text-base"
-                    data-testid="address__wallet-address"
-                  >
-                    D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD
-                  </span>
-                </div>
-              </div>
-            </div>
-            <div
-              class="flex items-center -space-x-2"
-            >
-              <div
-                class="Circle__CircleWrapper-uw7h4j-0 bNDQMV border-theme-text text-theme-text dark:border-theme-secondary-600 dark:text-theme-secondary-600 ring-theme-background"
-              >
-                <div
-                  class="sc-bdfBwQ catSEV"
-                  height="25"
-                  width="25"
-                >
-                  <svg>
-                    delegate.svg
-                  </svg>
-                </div>
-              </div>
-              <div
-                class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB flex-shrink-0"
-                data-testid="Avatar"
-              >
-                <div
-                  class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
-                >
-                  <img
-                    alt="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
-                    src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(0, 150, 136)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"80\\" cy=\\"50\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"35\\" cx=\\"100\\" cy=\\"40\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"70\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
-                    title="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
-                  />
-                </div>
-              </div>
-            </div>
-          </div>
-          <div
-            class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 hqOyLp undefined no-ligatures"
-            data-testid="TransactionDetail"
-          >
-            <div
-              class="flex-1 space-y-2 flex-shrink overflow-hidden whitespace-nowrap"
-            >
-              <div
-                class="text-sm font-semibold text-theme-secondary-700 no-ligatures"
-              >
-                Transaction Fee
-              </div>
-              <div
-                class="font-semibold"
-              >
-                <span
-                  data-testid="Amount"
-                >
-                  21 ARK
-                </span>
-              </div>
-            </div>
-          </div>
-          <div
-            class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 hqOyLp undefined no-ligatures"
-            data-testid="TransactionDetail"
-          >
-            <div
-              class="flex-1 space-y-2 flex-shrink overflow-hidden whitespace-nowrap"
-            >
-              <div
-                class="text-sm font-semibold text-theme-secondary-700 no-ligatures"
-              >
-                Timestamp
-              </div>
-              <div
-                class="font-semibold"
-              >
-                31.07.2020 16:34
-              </div>
-            </div>
-          </div>
-          <div
-            class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 hqOyLp undefined no-ligatures"
-            data-testid="TransactionDetail"
-          >
-            <div
-              class="flex-1 space-y-2 flex-shrink overflow-hidden whitespace-nowrap"
-            >
-              <div
-                class="text-sm font-semibold text-theme-secondary-700 no-ligatures"
-              >
-                Confirmations
-              </div>
-              <div
-                class="font-semibold"
-              >
-                <div
-                  class="flex space-x-3"
-                >
-                  <span>
-                    Not confirmed
-                  </span>
-                  <div
-                    class="sc-bdfBwQ iSzUah text-theme-warning-600"
-                    height="22"
-                    width="22"
-                  >
-                    <svg>
-                      status-pending.svg
-                    </svg>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div
-            class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 hqOyLp undefined no-ligatures"
-            data-testid="TransactionDetail"
-          >
-            <div
-              class="flex-1 space-y-2 flex-shrink overflow-hidden whitespace-nowrap"
-            >
-              <div
-                class="text-sm font-semibold text-theme-secondary-700 no-ligatures"
-              >
-                ID
-              </div>
-              <div
-                class="font-semibold"
-              >
-                <div
-                  class="flex items-center space-x-3"
-                >
-                  <a
-                    class="Link__AnchorStyled-sc-1q7sbxr-0 fCYCVa group"
-                    data-testid="Link"
-                    href="#"
-                    rel="noopener noreferrer"
-                    to="https://explorer.ark.io/transaction/ee4175091d9f4dacf5fed213711c3e0e4cc371e37afa7bce0429d09bcf3ecefe"
-                  >
-                    <span
-                      class="break-all border-b border-transparent transition-colors duration-200 border-current border-dotted group-hover:border-transparent"
-                    >
-                      <span
-                        class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-primary-700"
-                        data-testid="TruncateMiddle"
-                      >
-                        ee4175091d9f4dacf5fed213711c3e0e4cc371e37afa7bce0429d09bcf3ecefe
-                      </span>
-                    </span>
-                    <span
-                      class="align-middle"
-                    >
-                      <div
-                        class="sc-bdfBwQ fPrsah flex-shrink-0 inline-block pb-px text-sm"
-                        data-testid="Link__external"
-                        height="1em"
-                        width="1em"
-                      >
-                        <svg>
-                          redirect.svg
-                        </svg>
-                      </div>
-                    </span>
-                  </a>
-                  <span
-                    class="flex text-theme-primary-300 dark:text-theme-secondary-600"
-                  >
-                    <div
-                      class="inline-block cursor-pointer"
-                      data-testid="clipboard__wrapper"
-                    >
-                      <div
-                        class="sc-bdfBwQ fPrsah"
-                        height="1em"
-                        width="1em"
-                      >
-                        <svg>
-                          copy.svg
-                        </svg>
-                      </div>
-                    </div>
-                  </span>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div
-            class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 hqOyLp undefined no-ligatures"
-            data-testid="TransactionDetail"
-          >
-            <div
-              class="flex-1 space-y-2 flex-shrink overflow-hidden whitespace-nowrap"
-            >
-              <div
-                class="text-sm font-semibold text-theme-secondary-700 no-ligatures"
-              >
-                Block ID
-              </div>
-              <div
-                class="font-semibold"
-              >
-                <div
-                  class="flex items-center space-x-3"
-                >
-                  <a
-                    class="Link__AnchorStyled-sc-1q7sbxr-0 fCYCVa group"
-                    data-testid="Link"
-                    href="#"
-                    rel="noopener noreferrer"
-                    to="https://explorer.ark.io/blocks/71fd1a494ded5430586f4dd1c79c3ac77bf38120e868c8f8980972b8075d67e9"
-                  >
-                    <span
-                      class="break-all border-b border-transparent transition-colors duration-200 border-current border-dotted group-hover:border-transparent"
-                    >
-                      <span
-                        class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-primary-700"
-                        data-testid="TruncateMiddle"
-                      >
-                        71fd1a494ded5430586f4dd1c79c3ac77bf38120e868c8f8980972b8075d67e9
-                      </span>
-                    </span>
-                    <span
-                      class="align-middle"
-                    >
-                      <div
-                        class="sc-bdfBwQ fPrsah flex-shrink-0 inline-block pb-px text-sm"
-                        data-testid="Link__external"
-                        height="1em"
-                        width="1em"
-                      >
-                        <svg>
-                          redirect.svg
-                        </svg>
-                      </div>
-                    </span>
-                  </a>
-                  <span
-                    class="flex text-theme-primary-300 dark:text-theme-secondary-600"
-                  >
-                    <div
-                      class="inline-block cursor-pointer"
-                      data-testid="clipboard__wrapper"
-                    >
-                      <div
-                        class="sc-bdfBwQ fPrsah"
-                        height="1em"
-                        width="1em"
-                      >
-                        <svg>
-                          copy.svg
-                        </svg>
-                      </div>
-                    </div>
-                  </span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</DocumentFragment>
-`;
-
-exports[`LegacyMagistrateDetail Legacy Business Transactions should render a legacy Registration modal 1`] = `
-<DocumentFragment>
-  <div
-    class="flex fixed inset-0 z-50 justify-center items-center w-full h-full overflow-overlay"
-  >
-    <div
-      class="fixed z-50 w-full h-full bg-theme-secondary-900 opacity-60 dark:bg-black dark:opacity-80"
-      data-testid="modal__overlay"
-    />
-    <div
-      class="Modal__ModalContainer-sc-1pv7yg7-0 bGiJfU absolute left-0 right-0 z-50 flex flex-col p-10 mx-auto overflow-hidden rounded-2.5xl bg-theme-background shadow-2xl "
-      data-testid="modal__inner"
-    >
-      <div
-        class="absolute top-0 right-0 z-50 mt-5 mr-5 rounded transition-all duration-100 ease-linear bg-theme-primary-100 hover:bg-theme-primary-300 dark:bg-theme-secondary-800 dark:text-theme-secondary-600 dark:hover:bg-theme-secondary-700 dark:hover:text-theme-secondary-400"
-      >
-        <button
-          class="OriginalButton__StyledButton-sc-1y2wptt-0 fNHPRi w-11 h-11"
-          data-testid="modal__close-btn"
-          type="button"
-        >
-          <div
-            class="flex relative items-center space-x-2"
-          >
-            <div
-              class="sc-bdfBwQ bfBhNR"
-              height="14"
-              width="14"
-            >
-              <svg>
-                cross-slim.svg
-              </svg>
-            </div>
-          </div>
-        </button>
-      </div>
-      <div
-        class="relative space-y-4"
-      >
-        <h2
-          class="mb-0 text-3xl font-bold"
-        >
-          Business Registration (Legacy)
-        </h2>
-        <div
-          class="flex-1"
-        >
-          <div
-            class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 ekYoCX undefined no-ligatures"
-            data-testid="TransactionDetail"
-          >
-            <div
-              class="flex-1 space-y-2 flex-shrink overflow-hidden whitespace-nowrap"
-            >
-              <div
-                class="text-sm font-semibold text-theme-secondary-700 no-ligatures"
-              >
-                Sender
-              </div>
-              <div
-                class="font-semibold"
-              >
-                <div
-                  class="w-full flex items-center no-ligatures overflow-hidden whitespace-nowrap"
-                >
-                  <span
-                    class="max-w-24 truncate mr-2 font-semibold text-base text-theme-text"
-                    data-testid="address__wallet-name"
-                  >
-                    <span
-                      class="TruncateEnd__Wrapper-sc-1w1nvb9-0"
-                      data-testid="TruncateEnd"
-                    >
-                      Test Wallet
-                    </span>
-                  </span>
-                  <span
-                    class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-secondary-500 dark:text-theme-secondary-700 font-semibold text-base"
-                    data-testid="address__wallet-address"
-                  >
-                    D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD
-                  </span>
-                </div>
-              </div>
-            </div>
-            <div
-              class="flex items-center -space-x-2"
-            >
-              <div
-                class="Circle__CircleWrapper-uw7h4j-0 bNDQMV border-theme-text text-theme-text dark:border-theme-secondary-600 dark:text-theme-secondary-600 ring-theme-background"
-              >
-                <div
-                  class="sc-bdfBwQ catSEV"
-                  height="25"
-                  width="25"
-                >
-                  <svg>
-                    delegate.svg
-                  </svg>
-                </div>
-              </div>
-              <div
-                class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB flex-shrink-0"
-                data-testid="Avatar"
-              >
-                <div
-                  class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
-                >
-                  <img
-                    alt="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
-                    src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(0, 150, 136)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"80\\" cy=\\"50\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"35\\" cx=\\"100\\" cy=\\"40\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"70\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
-                    title="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
-                  />
-                </div>
-              </div>
-            </div>
-          </div>
-          <div
-            class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 hqOyLp undefined no-ligatures"
-            data-testid="TransactionDetail"
-          >
-            <div
-              class="flex-1 space-y-2 flex-shrink overflow-hidden whitespace-nowrap"
-            >
-              <div
-                class="text-sm font-semibold text-theme-secondary-700 no-ligatures"
-              >
-                Transaction Fee
-              </div>
-              <div
-                class="font-semibold"
-              >
-                <span
-                  data-testid="Amount"
-                >
-                  21 ARK
-                </span>
-              </div>
-            </div>
-          </div>
-          <div
-            class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 hqOyLp undefined no-ligatures"
-            data-testid="TransactionDetail"
-          >
-            <div
-              class="flex-1 space-y-2 flex-shrink overflow-hidden whitespace-nowrap"
-            >
-              <div
-                class="text-sm font-semibold text-theme-secondary-700 no-ligatures"
-              >
-                Timestamp
-              </div>
-              <div
-                class="font-semibold"
-              >
-                31.07.2020 16:34
-              </div>
-            </div>
-          </div>
-          <div
-            class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 hqOyLp undefined no-ligatures"
-            data-testid="TransactionDetail"
-          >
-            <div
-              class="flex-1 space-y-2 flex-shrink overflow-hidden whitespace-nowrap"
-            >
-              <div
-                class="text-sm font-semibold text-theme-secondary-700 no-ligatures"
-              >
-                Confirmations
-              </div>
-              <div
-                class="font-semibold"
-              >
-                <div
-                  class="flex space-x-3"
-                >
-                  <span>
-                    Not confirmed
-                  </span>
-                  <div
-                    class="sc-bdfBwQ iSzUah text-theme-warning-600"
-                    height="22"
-                    width="22"
-                  >
-                    <svg>
-                      status-pending.svg
-                    </svg>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div
-            class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 hqOyLp undefined no-ligatures"
-            data-testid="TransactionDetail"
-          >
-            <div
-              class="flex-1 space-y-2 flex-shrink overflow-hidden whitespace-nowrap"
-            >
-              <div
-                class="text-sm font-semibold text-theme-secondary-700 no-ligatures"
-              >
-                ID
-              </div>
-              <div
-                class="font-semibold"
-              >
-                <div
-                  class="flex items-center space-x-3"
-                >
-                  <a
-                    class="Link__AnchorStyled-sc-1q7sbxr-0 fCYCVa group"
-                    data-testid="Link"
-                    href="#"
-                    rel="noopener noreferrer"
-                    to="https://explorer.ark.io/transaction/ee4175091d9f4dacf5fed213711c3e0e4cc371e37afa7bce0429d09bcf3ecefe"
-                  >
-                    <span
-                      class="break-all border-b border-transparent transition-colors duration-200 border-current border-dotted group-hover:border-transparent"
-                    >
-                      <span
-                        class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-primary-700"
-                        data-testid="TruncateMiddle"
-                      >
-                        ee4175091d9f4dacf5fed213711c3e0e4cc371e37afa7bce0429d09bcf3ecefe
-                      </span>
-                    </span>
-                    <span
-                      class="align-middle"
-                    >
-                      <div
-                        class="sc-bdfBwQ fPrsah flex-shrink-0 inline-block pb-px text-sm"
-                        data-testid="Link__external"
-                        height="1em"
-                        width="1em"
-                      >
-                        <svg>
-                          redirect.svg
-                        </svg>
-                      </div>
-                    </span>
-                  </a>
-                  <span
-                    class="flex text-theme-primary-300 dark:text-theme-secondary-600"
-                  >
-                    <div
-                      class="inline-block cursor-pointer"
-                      data-testid="clipboard__wrapper"
-                    >
-                      <div
-                        class="sc-bdfBwQ fPrsah"
-                        height="1em"
-                        width="1em"
-                      >
-                        <svg>
-                          copy.svg
-                        </svg>
-                      </div>
-                    </div>
-                  </span>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div
-            class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 hqOyLp undefined no-ligatures"
-            data-testid="TransactionDetail"
-          >
-            <div
-              class="flex-1 space-y-2 flex-shrink overflow-hidden whitespace-nowrap"
-            >
-              <div
-                class="text-sm font-semibold text-theme-secondary-700 no-ligatures"
-              >
-                Block ID
-              </div>
-              <div
-                class="font-semibold"
-              >
-                <div
-                  class="flex items-center space-x-3"
-                >
-                  <a
-                    class="Link__AnchorStyled-sc-1q7sbxr-0 fCYCVa group"
-                    data-testid="Link"
-                    href="#"
-                    rel="noopener noreferrer"
-                    to="https://explorer.ark.io/blocks/71fd1a494ded5430586f4dd1c79c3ac77bf38120e868c8f8980972b8075d67e9"
-                  >
-                    <span
-                      class="break-all border-b border-transparent transition-colors duration-200 border-current border-dotted group-hover:border-transparent"
-                    >
-                      <span
-                        class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-primary-700"
-                        data-testid="TruncateMiddle"
-                      >
-                        71fd1a494ded5430586f4dd1c79c3ac77bf38120e868c8f8980972b8075d67e9
-                      </span>
-                    </span>
-                    <span
-                      class="align-middle"
-                    >
-                      <div
-                        class="sc-bdfBwQ fPrsah flex-shrink-0 inline-block pb-px text-sm"
-                        data-testid="Link__external"
-                        height="1em"
-                        width="1em"
-                      >
-                        <svg>
-                          redirect.svg
-                        </svg>
-                      </div>
-                    </span>
-                  </a>
-                  <span
-                    class="flex text-theme-primary-300 dark:text-theme-secondary-600"
-                  >
-                    <div
-                      class="inline-block cursor-pointer"
-                      data-testid="clipboard__wrapper"
-                    >
-                      <div
-                        class="sc-bdfBwQ fPrsah"
-                        height="1em"
-                        width="1em"
-                      >
-                        <svg>
-                          copy.svg
-                        </svg>
-                      </div>
-                    </div>
-                  </span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</DocumentFragment>
-`;
-
-exports[`LegacyMagistrateDetail Legacy Business Transactions should render a legacy Resignation modal 1`] = `
-<DocumentFragment>
-  <div
-    class="flex fixed inset-0 z-50 justify-center items-center w-full h-full overflow-overlay"
-  >
-    <div
-      class="fixed z-50 w-full h-full bg-theme-secondary-900 opacity-60 dark:bg-black dark:opacity-80"
-      data-testid="modal__overlay"
-    />
-    <div
-      class="Modal__ModalContainer-sc-1pv7yg7-0 bGiJfU absolute left-0 right-0 z-50 flex flex-col p-10 mx-auto overflow-hidden rounded-2.5xl bg-theme-background shadow-2xl "
-      data-testid="modal__inner"
-    >
-      <div
-        class="absolute top-0 right-0 z-50 mt-5 mr-5 rounded transition-all duration-100 ease-linear bg-theme-primary-100 hover:bg-theme-primary-300 dark:bg-theme-secondary-800 dark:text-theme-secondary-600 dark:hover:bg-theme-secondary-700 dark:hover:text-theme-secondary-400"
-      >
-        <button
-          class="OriginalButton__StyledButton-sc-1y2wptt-0 fNHPRi w-11 h-11"
-          data-testid="modal__close-btn"
-          type="button"
-        >
-          <div
-            class="flex relative items-center space-x-2"
-          >
-            <div
-              class="sc-bdfBwQ bfBhNR"
-              height="14"
-              width="14"
-            >
-              <svg>
-                cross-slim.svg
-              </svg>
-            </div>
-          </div>
-        </button>
-      </div>
-      <div
-        class="relative space-y-4"
-      >
-        <h2
-          class="mb-0 text-3xl font-bold"
-        >
-          Business Resignation (Legacy)
-        </h2>
-        <div
-          class="flex-1"
-        >
-          <div
-            class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 ekYoCX undefined no-ligatures"
-            data-testid="TransactionDetail"
-          >
-            <div
-              class="flex-1 space-y-2 flex-shrink overflow-hidden whitespace-nowrap"
-            >
-              <div
-                class="text-sm font-semibold text-theme-secondary-700 no-ligatures"
-              >
-                Sender
-              </div>
-              <div
-                class="font-semibold"
-              >
-                <div
-                  class="w-full flex items-center no-ligatures overflow-hidden whitespace-nowrap"
-                >
-                  <span
-                    class="max-w-24 truncate mr-2 font-semibold text-base text-theme-text"
-                    data-testid="address__wallet-name"
-                  >
-                    <span
-                      class="TruncateEnd__Wrapper-sc-1w1nvb9-0"
-                      data-testid="TruncateEnd"
-                    >
-                      Test Wallet
-                    </span>
-                  </span>
-                  <span
-                    class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-secondary-500 dark:text-theme-secondary-700 font-semibold text-base"
-                    data-testid="address__wallet-address"
-                  >
-                    D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD
-                  </span>
-                </div>
-              </div>
-            </div>
-            <div
-              class="flex items-center -space-x-2"
-            >
-              <div
-                class="Circle__CircleWrapper-uw7h4j-0 bNDQMV border-theme-text text-theme-text dark:border-theme-secondary-600 dark:text-theme-secondary-600 ring-theme-background"
-              >
-                <div
-                  class="sc-bdfBwQ catSEV"
-                  height="25"
-                  width="25"
-                >
-                  <svg>
-                    delegate.svg
-                  </svg>
-                </div>
-              </div>
-              <div
-                class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB flex-shrink-0"
-                data-testid="Avatar"
-              >
-                <div
-                  class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
-                >
-                  <img
-                    alt="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
-                    src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(0, 150, 136)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"80\\" cy=\\"50\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"35\\" cx=\\"100\\" cy=\\"40\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"70\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
-                    title="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
-                  />
-                </div>
-              </div>
-            </div>
-          </div>
-          <div
-            class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 hqOyLp undefined no-ligatures"
-            data-testid="TransactionDetail"
-          >
-            <div
-              class="flex-1 space-y-2 flex-shrink overflow-hidden whitespace-nowrap"
-            >
-              <div
-                class="text-sm font-semibold text-theme-secondary-700 no-ligatures"
-              >
-                Transaction Fee
-              </div>
-              <div
-                class="font-semibold"
-              >
-                <span
-                  data-testid="Amount"
-                >
-                  21 ARK
-                </span>
-              </div>
-            </div>
-          </div>
-          <div
-            class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 hqOyLp undefined no-ligatures"
-            data-testid="TransactionDetail"
-          >
-            <div
-              class="flex-1 space-y-2 flex-shrink overflow-hidden whitespace-nowrap"
-            >
-              <div
-                class="text-sm font-semibold text-theme-secondary-700 no-ligatures"
-              >
-                Timestamp
-              </div>
-              <div
-                class="font-semibold"
-              >
-                31.07.2020 16:34
-              </div>
-            </div>
-          </div>
-          <div
-            class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 hqOyLp undefined no-ligatures"
-            data-testid="TransactionDetail"
-          >
-            <div
-              class="flex-1 space-y-2 flex-shrink overflow-hidden whitespace-nowrap"
-            >
-              <div
-                class="text-sm font-semibold text-theme-secondary-700 no-ligatures"
-              >
-                Confirmations
-              </div>
-              <div
-                class="font-semibold"
-              >
-                <div
-                  class="flex space-x-3"
-                >
-                  <span>
-                    Not confirmed
-                  </span>
-                  <div
-                    class="sc-bdfBwQ iSzUah text-theme-warning-600"
-                    height="22"
-                    width="22"
-                  >
-                    <svg>
-                      status-pending.svg
-                    </svg>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div
-            class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 hqOyLp undefined no-ligatures"
-            data-testid="TransactionDetail"
-          >
-            <div
-              class="flex-1 space-y-2 flex-shrink overflow-hidden whitespace-nowrap"
-            >
-              <div
-                class="text-sm font-semibold text-theme-secondary-700 no-ligatures"
-              >
-                ID
-              </div>
-              <div
-                class="font-semibold"
-              >
-                <div
-                  class="flex items-center space-x-3"
-                >
-                  <a
-                    class="Link__AnchorStyled-sc-1q7sbxr-0 fCYCVa group"
-                    data-testid="Link"
-                    href="#"
-                    rel="noopener noreferrer"
-                    to="https://explorer.ark.io/transaction/ee4175091d9f4dacf5fed213711c3e0e4cc371e37afa7bce0429d09bcf3ecefe"
-                  >
-                    <span
-                      class="break-all border-b border-transparent transition-colors duration-200 border-current border-dotted group-hover:border-transparent"
-                    >
-                      <span
-                        class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-primary-700"
-                        data-testid="TruncateMiddle"
-                      >
-                        ee4175091d9f4dacf5fed213711c3e0e4cc371e37afa7bce0429d09bcf3ecefe
-                      </span>
-                    </span>
-                    <span
-                      class="align-middle"
-                    >
-                      <div
-                        class="sc-bdfBwQ fPrsah flex-shrink-0 inline-block pb-px text-sm"
-                        data-testid="Link__external"
-                        height="1em"
-                        width="1em"
-                      >
-                        <svg>
-                          redirect.svg
-                        </svg>
-                      </div>
-                    </span>
-                  </a>
-                  <span
-                    class="flex text-theme-primary-300 dark:text-theme-secondary-600"
-                  >
-                    <div
-                      class="inline-block cursor-pointer"
-                      data-testid="clipboard__wrapper"
-                    >
-                      <div
-                        class="sc-bdfBwQ fPrsah"
-                        height="1em"
-                        width="1em"
-                      >
-                        <svg>
-                          copy.svg
-                        </svg>
-                      </div>
-                    </div>
-                  </span>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div
-            class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 hqOyLp undefined no-ligatures"
-            data-testid="TransactionDetail"
-          >
-            <div
-              class="flex-1 space-y-2 flex-shrink overflow-hidden whitespace-nowrap"
-            >
-              <div
-                class="text-sm font-semibold text-theme-secondary-700 no-ligatures"
-              >
-                Block ID
-              </div>
-              <div
-                class="font-semibold"
-              >
-                <div
-                  class="flex items-center space-x-3"
-                >
-                  <a
-                    class="Link__AnchorStyled-sc-1q7sbxr-0 fCYCVa group"
-                    data-testid="Link"
-                    href="#"
-                    rel="noopener noreferrer"
-                    to="https://explorer.ark.io/blocks/71fd1a494ded5430586f4dd1c79c3ac77bf38120e868c8f8980972b8075d67e9"
-                  >
-                    <span
-                      class="break-all border-b border-transparent transition-colors duration-200 border-current border-dotted group-hover:border-transparent"
-                    >
-                      <span
-                        class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-primary-700"
-                        data-testid="TruncateMiddle"
-                      >
-                        71fd1a494ded5430586f4dd1c79c3ac77bf38120e868c8f8980972b8075d67e9
-                      </span>
-                    </span>
-                    <span
-                      class="align-middle"
-                    >
-                      <div
-                        class="sc-bdfBwQ fPrsah flex-shrink-0 inline-block pb-px text-sm"
-                        data-testid="Link__external"
-                        height="1em"
-                        width="1em"
-                      >
-                        <svg>
-                          redirect.svg
-                        </svg>
-                      </div>
-                    </span>
-                  </a>
-                  <span
-                    class="flex text-theme-primary-300 dark:text-theme-secondary-600"
-                  >
-                    <div
-                      class="inline-block cursor-pointer"
-                      data-testid="clipboard__wrapper"
-                    >
-                      <div
-                        class="sc-bdfBwQ fPrsah"
-                        height="1em"
-                        width="1em"
-                      >
-                        <svg>
-                          copy.svg
-                        </svg>
-                      </div>
-                    </div>
-                  </span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</DocumentFragment>
-`;
-
-exports[`LegacyMagistrateDetail Legacy Business Transactions should render a legacy Update modal 1`] = `
-<DocumentFragment>
-  <div
-    class="flex fixed inset-0 z-50 justify-center items-center w-full h-full overflow-overlay"
-  >
-    <div
-      class="fixed z-50 w-full h-full bg-theme-secondary-900 opacity-60 dark:bg-black dark:opacity-80"
-      data-testid="modal__overlay"
-    />
-    <div
-      class="Modal__ModalContainer-sc-1pv7yg7-0 bGiJfU absolute left-0 right-0 z-50 flex flex-col p-10 mx-auto overflow-hidden rounded-2.5xl bg-theme-background shadow-2xl "
-      data-testid="modal__inner"
-    >
-      <div
-        class="absolute top-0 right-0 z-50 mt-5 mr-5 rounded transition-all duration-100 ease-linear bg-theme-primary-100 hover:bg-theme-primary-300 dark:bg-theme-secondary-800 dark:text-theme-secondary-600 dark:hover:bg-theme-secondary-700 dark:hover:text-theme-secondary-400"
-      >
-        <button
-          class="OriginalButton__StyledButton-sc-1y2wptt-0 fNHPRi w-11 h-11"
-          data-testid="modal__close-btn"
-          type="button"
-        >
-          <div
-            class="flex relative items-center space-x-2"
-          >
-            <div
-              class="sc-bdfBwQ bfBhNR"
-              height="14"
-              width="14"
-            >
-              <svg>
-                cross-slim.svg
-              </svg>
-            </div>
-          </div>
-        </button>
-      </div>
-      <div
-        class="relative space-y-4"
-      >
-        <h2
-          class="mb-0 text-3xl font-bold"
-        >
-          Business Update (Legacy)
-        </h2>
-        <div
-          class="flex-1"
-        >
-          <div
-            class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 ekYoCX undefined no-ligatures"
-            data-testid="TransactionDetail"
-          >
-            <div
-              class="flex-1 space-y-2 flex-shrink overflow-hidden whitespace-nowrap"
-            >
-              <div
-                class="text-sm font-semibold text-theme-secondary-700 no-ligatures"
-              >
-                Sender
-              </div>
-              <div
-                class="font-semibold"
-              >
-                <div
-                  class="w-full flex items-center no-ligatures overflow-hidden whitespace-nowrap"
-                >
-                  <span
-                    class="max-w-24 truncate mr-2 font-semibold text-base text-theme-text"
-                    data-testid="address__wallet-name"
-                  >
-                    <span
-                      class="TruncateEnd__Wrapper-sc-1w1nvb9-0"
-                      data-testid="TruncateEnd"
-                    >
-                      Test Wallet
-                    </span>
-                  </span>
-                  <span
-                    class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-secondary-500 dark:text-theme-secondary-700 font-semibold text-base"
-                    data-testid="address__wallet-address"
-                  >
-                    D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD
-                  </span>
-                </div>
-              </div>
-            </div>
-            <div
-              class="flex items-center -space-x-2"
-            >
-              <div
-                class="Circle__CircleWrapper-uw7h4j-0 bNDQMV border-theme-text text-theme-text dark:border-theme-secondary-600 dark:text-theme-secondary-600 ring-theme-background"
-              >
-                <div
-                  class="sc-bdfBwQ catSEV"
-                  height="25"
-                  width="25"
-                >
-                  <svg>
-                    delegate.svg
-                  </svg>
-                </div>
-              </div>
-              <div
-                class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB flex-shrink-0"
-                data-testid="Avatar"
-              >
-                <div
-                  class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
-                >
-                  <img
-                    alt="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
-                    src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(0, 150, 136)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"80\\" cy=\\"50\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"35\\" cx=\\"100\\" cy=\\"40\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"70\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
-                    title="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
-                  />
-                </div>
-              </div>
-            </div>
-          </div>
-          <div
-            class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 hqOyLp undefined no-ligatures"
-            data-testid="TransactionDetail"
-          >
-            <div
-              class="flex-1 space-y-2 flex-shrink overflow-hidden whitespace-nowrap"
-            >
-              <div
-                class="text-sm font-semibold text-theme-secondary-700 no-ligatures"
-              >
-                Transaction Fee
-              </div>
-              <div
-                class="font-semibold"
-              >
-                <span
-                  data-testid="Amount"
-                >
-                  21 ARK
-                </span>
-              </div>
-            </div>
-          </div>
-          <div
-            class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 hqOyLp undefined no-ligatures"
-            data-testid="TransactionDetail"
-          >
-            <div
-              class="flex-1 space-y-2 flex-shrink overflow-hidden whitespace-nowrap"
-            >
-              <div
-                class="text-sm font-semibold text-theme-secondary-700 no-ligatures"
-              >
-                Timestamp
-              </div>
-              <div
-                class="font-semibold"
-              >
-                31.07.2020 16:34
-              </div>
-            </div>
-          </div>
-          <div
-            class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 hqOyLp undefined no-ligatures"
-            data-testid="TransactionDetail"
-          >
-            <div
-              class="flex-1 space-y-2 flex-shrink overflow-hidden whitespace-nowrap"
-            >
-              <div
-                class="text-sm font-semibold text-theme-secondary-700 no-ligatures"
-              >
-                Confirmations
-              </div>
-              <div
-                class="font-semibold"
-              >
-                <div
-                  class="flex space-x-3"
-                >
-                  <span>
-                    Not confirmed
-                  </span>
-                  <div
-                    class="sc-bdfBwQ iSzUah text-theme-warning-600"
-                    height="22"
-                    width="22"
-                  >
-                    <svg>
-                      status-pending.svg
-                    </svg>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div
-            class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 hqOyLp undefined no-ligatures"
-            data-testid="TransactionDetail"
-          >
-            <div
-              class="flex-1 space-y-2 flex-shrink overflow-hidden whitespace-nowrap"
-            >
-              <div
-                class="text-sm font-semibold text-theme-secondary-700 no-ligatures"
-              >
-                ID
-              </div>
-              <div
-                class="font-semibold"
-              >
-                <div
-                  class="flex items-center space-x-3"
-                >
-                  <a
-                    class="Link__AnchorStyled-sc-1q7sbxr-0 fCYCVa group"
-                    data-testid="Link"
-                    href="#"
-                    rel="noopener noreferrer"
-                    to="https://explorer.ark.io/transaction/ee4175091d9f4dacf5fed213711c3e0e4cc371e37afa7bce0429d09bcf3ecefe"
-                  >
-                    <span
-                      class="break-all border-b border-transparent transition-colors duration-200 border-current border-dotted group-hover:border-transparent"
-                    >
-                      <span
-                        class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-primary-700"
-                        data-testid="TruncateMiddle"
-                      >
-                        ee4175091d9f4dacf5fed213711c3e0e4cc371e37afa7bce0429d09bcf3ecefe
-                      </span>
-                    </span>
-                    <span
-                      class="align-middle"
-                    >
-                      <div
-                        class="sc-bdfBwQ fPrsah flex-shrink-0 inline-block pb-px text-sm"
-                        data-testid="Link__external"
-                        height="1em"
-                        width="1em"
-                      >
-                        <svg>
-                          redirect.svg
-                        </svg>
-                      </div>
-                    </span>
-                  </a>
-                  <span
-                    class="flex text-theme-primary-300 dark:text-theme-secondary-600"
-                  >
-                    <div
-                      class="inline-block cursor-pointer"
-                      data-testid="clipboard__wrapper"
-                    >
-                      <div
-                        class="sc-bdfBwQ fPrsah"
-                        height="1em"
-                        width="1em"
-                      >
-                        <svg>
-                          copy.svg
-                        </svg>
-                      </div>
-                    </div>
-                  </span>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div
-            class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 hqOyLp undefined no-ligatures"
-            data-testid="TransactionDetail"
-          >
-            <div
-              class="flex-1 space-y-2 flex-shrink overflow-hidden whitespace-nowrap"
-            >
-              <div
-                class="text-sm font-semibold text-theme-secondary-700 no-ligatures"
-              >
-                Block ID
-              </div>
-              <div
-                class="font-semibold"
-              >
-                <div
-                  class="flex items-center space-x-3"
-                >
-                  <a
-                    class="Link__AnchorStyled-sc-1q7sbxr-0 fCYCVa group"
-                    data-testid="Link"
-                    href="#"
-                    rel="noopener noreferrer"
-                    to="https://explorer.ark.io/blocks/71fd1a494ded5430586f4dd1c79c3ac77bf38120e868c8f8980972b8075d67e9"
-                  >
-                    <span
-                      class="break-all border-b border-transparent transition-colors duration-200 border-current border-dotted group-hover:border-transparent"
-                    >
-                      <span
-                        class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-primary-700"
-                        data-testid="TruncateMiddle"
-                      >
-                        71fd1a494ded5430586f4dd1c79c3ac77bf38120e868c8f8980972b8075d67e9
-                      </span>
-                    </span>
-                    <span
-                      class="align-middle"
-                    >
-                      <div
-                        class="sc-bdfBwQ fPrsah flex-shrink-0 inline-block pb-px text-sm"
-                        data-testid="Link__external"
-                        height="1em"
-                        width="1em"
-                      >
-                        <svg>
-                          redirect.svg
-                        </svg>
-                      </div>
-                    </span>
-                  </a>
-                  <span
-                    class="flex text-theme-primary-300 dark:text-theme-secondary-600"
-                  >
-                    <div
-                      class="inline-block cursor-pointer"
-                      data-testid="clipboard__wrapper"
-                    >
-                      <div
-                        class="sc-bdfBwQ fPrsah"
-                        height="1em"
-                        width="1em"
-                      >
-                        <svg>
-                          copy.svg
-                        </svg>
-                      </div>
-                    </div>
-                  </span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</DocumentFragment>
-`;
-
 exports[`LegacyMagistrateDetail should not render if not open 1`] = `<DocumentFragment />`;
+
+exports[`LegacyMagistrateDetail should render a legacy magistrate modal 1`] = `
+<DocumentFragment>
+  <div
+    class="flex fixed inset-0 z-50 justify-center items-center w-full h-full overflow-overlay"
+  >
+    <div
+      class="fixed z-50 w-full h-full bg-theme-secondary-900 opacity-60 dark:bg-black dark:opacity-80"
+      data-testid="modal__overlay"
+    />
+    <div
+      class="Modal__ModalContainer-sc-1pv7yg7-0 bGiJfU absolute left-0 right-0 z-50 flex flex-col p-10 mx-auto overflow-hidden rounded-2.5xl bg-theme-background shadow-2xl "
+      data-testid="modal__inner"
+    >
+      <div
+        class="absolute top-0 right-0 z-50 mt-5 mr-5 rounded transition-all duration-100 ease-linear bg-theme-primary-100 hover:bg-theme-primary-300 dark:bg-theme-secondary-800 dark:text-theme-secondary-600 dark:hover:bg-theme-secondary-700 dark:hover:text-theme-secondary-400"
+      >
+        <button
+          class="OriginalButton__StyledButton-sc-1y2wptt-0 fNHPRi w-11 h-11"
+          data-testid="modal__close-btn"
+          type="button"
+        >
+          <div
+            class="flex relative items-center space-x-2"
+          >
+            <div
+              class="sc-bdfBwQ bfBhNR"
+              height="14"
+              width="14"
+            >
+              <svg>
+                cross-slim.svg
+              </svg>
+            </div>
+          </div>
+        </button>
+      </div>
+      <div
+        class="relative space-y-4"
+      >
+        <h2
+          class="mb-0 text-3xl font-bold"
+        >
+          Magistrate
+        </h2>
+        <div
+          class="flex-1"
+        >
+          <div
+            class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 ekYoCX undefined no-ligatures"
+            data-testid="TransactionDetail"
+          >
+            <div
+              class="flex-1 space-y-2 flex-shrink overflow-hidden whitespace-nowrap"
+            >
+              <div
+                class="text-sm font-semibold text-theme-secondary-700 no-ligatures"
+              >
+                Sender
+              </div>
+              <div
+                class="font-semibold"
+              >
+                <div
+                  class="w-full flex items-center no-ligatures overflow-hidden whitespace-nowrap"
+                >
+                  <span
+                    class="max-w-24 truncate mr-2 font-semibold text-base text-theme-text"
+                    data-testid="address__wallet-name"
+                  >
+                    <span
+                      class="TruncateEnd__Wrapper-sc-1w1nvb9-0"
+                      data-testid="TruncateEnd"
+                    >
+                      Test Wallet
+                    </span>
+                  </span>
+                  <span
+                    class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-secondary-500 dark:text-theme-secondary-700 font-semibold text-base"
+                    data-testid="address__wallet-address"
+                  >
+                    D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div
+              class="flex items-center -space-x-2"
+            >
+              <div
+                class="Circle__CircleWrapper-uw7h4j-0 bNDQMV border-theme-text text-theme-text dark:border-theme-secondary-600 dark:text-theme-secondary-600 ring-theme-background"
+              >
+                <div
+                  class="sc-bdfBwQ catSEV"
+                  height="25"
+                  width="25"
+                >
+                  <svg>
+                    delegate.svg
+                  </svg>
+                </div>
+              </div>
+              <div
+                class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB flex-shrink-0"
+                data-testid="Avatar"
+              >
+                <div
+                  class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
+                >
+                  <img
+                    alt="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
+                    src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(0, 150, 136)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"80\\" cy=\\"50\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"35\\" cx=\\"100\\" cy=\\"40\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"70\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
+                    title="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 hqOyLp undefined no-ligatures"
+            data-testid="TransactionDetail"
+          >
+            <div
+              class="flex-1 space-y-2 flex-shrink overflow-hidden whitespace-nowrap"
+            >
+              <div
+                class="text-sm font-semibold text-theme-secondary-700 no-ligatures"
+              >
+                Transaction Fee
+              </div>
+              <div
+                class="font-semibold"
+              >
+                <span
+                  data-testid="Amount"
+                >
+                  21 ARK
+                </span>
+              </div>
+            </div>
+          </div>
+          <div
+            class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 hqOyLp undefined no-ligatures"
+            data-testid="TransactionDetail"
+          >
+            <div
+              class="flex-1 space-y-2 flex-shrink overflow-hidden whitespace-nowrap"
+            >
+              <div
+                class="text-sm font-semibold text-theme-secondary-700 no-ligatures"
+              >
+                Timestamp
+              </div>
+              <div
+                class="font-semibold"
+              >
+                31.07.2020 16:34
+              </div>
+            </div>
+          </div>
+          <div
+            class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 hqOyLp undefined no-ligatures"
+            data-testid="TransactionDetail"
+          >
+            <div
+              class="flex-1 space-y-2 flex-shrink overflow-hidden whitespace-nowrap"
+            >
+              <div
+                class="text-sm font-semibold text-theme-secondary-700 no-ligatures"
+              >
+                Confirmations
+              </div>
+              <div
+                class="font-semibold"
+              >
+                <div
+                  class="flex space-x-3"
+                >
+                  <span>
+                    Not confirmed
+                  </span>
+                  <div
+                    class="sc-bdfBwQ iSzUah text-theme-warning-600"
+                    height="22"
+                    width="22"
+                  >
+                    <svg>
+                      status-pending.svg
+                    </svg>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 hqOyLp undefined no-ligatures"
+            data-testid="TransactionDetail"
+          >
+            <div
+              class="flex-1 space-y-2 flex-shrink overflow-hidden whitespace-nowrap"
+            >
+              <div
+                class="text-sm font-semibold text-theme-secondary-700 no-ligatures"
+              >
+                ID
+              </div>
+              <div
+                class="font-semibold"
+              >
+                <div
+                  class="flex items-center space-x-3"
+                >
+                  <a
+                    class="Link__AnchorStyled-sc-1q7sbxr-0 fCYCVa group"
+                    data-testid="Link"
+                    href="#"
+                    rel="noopener noreferrer"
+                    to="https://explorer.ark.io/transaction/ee4175091d9f4dacf5fed213711c3e0e4cc371e37afa7bce0429d09bcf3ecefe"
+                  >
+                    <span
+                      class="break-all border-b border-transparent transition-colors duration-200 border-current border-dotted group-hover:border-transparent"
+                    >
+                      <span
+                        class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-primary-700"
+                        data-testid="TruncateMiddle"
+                      >
+                        ee4175091d9f4dacf5fed213711c3e0e4cc371e37afa7bce0429d09bcf3ecefe
+                      </span>
+                    </span>
+                    <span
+                      class="align-middle"
+                    >
+                      <div
+                        class="sc-bdfBwQ fPrsah flex-shrink-0 inline-block pb-px text-sm"
+                        data-testid="Link__external"
+                        height="1em"
+                        width="1em"
+                      >
+                        <svg>
+                          redirect.svg
+                        </svg>
+                      </div>
+                    </span>
+                  </a>
+                  <span
+                    class="flex text-theme-primary-300 dark:text-theme-secondary-600"
+                  >
+                    <div
+                      class="inline-block cursor-pointer"
+                      data-testid="clipboard__wrapper"
+                    >
+                      <div
+                        class="sc-bdfBwQ fPrsah"
+                        height="1em"
+                        width="1em"
+                      >
+                        <svg>
+                          copy.svg
+                        </svg>
+                      </div>
+                    </div>
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 hqOyLp undefined no-ligatures"
+            data-testid="TransactionDetail"
+          >
+            <div
+              class="flex-1 space-y-2 flex-shrink overflow-hidden whitespace-nowrap"
+            >
+              <div
+                class="text-sm font-semibold text-theme-secondary-700 no-ligatures"
+              >
+                Block ID
+              </div>
+              <div
+                class="font-semibold"
+              >
+                <div
+                  class="flex items-center space-x-3"
+                >
+                  <a
+                    class="Link__AnchorStyled-sc-1q7sbxr-0 fCYCVa group"
+                    data-testid="Link"
+                    href="#"
+                    rel="noopener noreferrer"
+                    to="https://explorer.ark.io/blocks/71fd1a494ded5430586f4dd1c79c3ac77bf38120e868c8f8980972b8075d67e9"
+                  >
+                    <span
+                      class="break-all border-b border-transparent transition-colors duration-200 border-current border-dotted group-hover:border-transparent"
+                    >
+                      <span
+                        class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-primary-700"
+                        data-testid="TruncateMiddle"
+                      >
+                        71fd1a494ded5430586f4dd1c79c3ac77bf38120e868c8f8980972b8075d67e9
+                      </span>
+                    </span>
+                    <span
+                      class="align-middle"
+                    >
+                      <div
+                        class="sc-bdfBwQ fPrsah flex-shrink-0 inline-block pb-px text-sm"
+                        data-testid="Link__external"
+                        height="1em"
+                        width="1em"
+                      >
+                        <svg>
+                          redirect.svg
+                        </svg>
+                      </div>
+                    </span>
+                  </a>
+                  <span
+                    class="flex text-theme-primary-300 dark:text-theme-secondary-600"
+                  >
+                    <div
+                      class="inline-block cursor-pointer"
+                      data-testid="clipboard__wrapper"
+                    >
+                      <div
+                        class="sc-bdfBwQ fPrsah"
+                        height="1em"
+                        width="1em"
+                      >
+                        <svg>
+                          copy.svg
+                        </svg>
+                      </div>
+                    </div>
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;

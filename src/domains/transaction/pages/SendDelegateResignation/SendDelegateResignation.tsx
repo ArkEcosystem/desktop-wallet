@@ -38,7 +38,7 @@ export const SendDelegateResignation = ({ formDefaultData }: SendResignationProp
 
 	const [transaction, setTransaction] = useState((null as unknown) as Contracts.SignedTransactionData);
 
-	const { env } = useEnvironmentContext();
+	const { persist } = useEnvironmentContext();
 
 	const activeProfile = useActiveProfile();
 	const activeWallet = useActiveWallet();
@@ -95,7 +95,7 @@ export const SendDelegateResignation = ({ formDefaultData }: SendResignationProp
 
 			await activeWallet.transaction().broadcast(signedTransactionId);
 
-			await env.persist();
+			await persist();
 
 			setTransaction(activeWallet.transaction().transaction(signedTransactionId));
 

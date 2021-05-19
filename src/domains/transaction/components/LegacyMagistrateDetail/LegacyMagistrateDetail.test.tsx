@@ -15,25 +15,19 @@ describe("LegacyMagistrateDetail", () => {
 		expect(asFragment()).toMatchSnapshot();
 	});
 
-	describe.each(["Business", "Bridgechain"])("Legacy %s Transactions", (type) => {
-		it.each(["Registration", "Resignation", "Update"])("should render a legacy %s modal", (subtype) => {
-			const transactionType = `legacy${type}${subtype}`;
+	it("should render a legacy magistrate modal", () => {
+		const { asFragment, getByTestId } = render(
+			<LegacyMagistrateDetail
+				isOpen={true}
+				transaction={{
+					...TransactionFixture,
+					isTransfer: () => false,
+					type: () => "magistrate",
+				}}
+			/>,
+		);
 
-			const { asFragment, getByTestId } = render(
-				<LegacyMagistrateDetail
-					isOpen={true}
-					transaction={{
-						...TransactionFixture,
-						isTransfer: () => false,
-						type: () => transactionType,
-					}}
-				/>,
-			);
-
-			expect(getByTestId("modal__inner")).toHaveTextContent(
-				translations.TRANSACTION_TYPES[`LEGACY_${type.toUpperCase()}_${subtype.toUpperCase()}`],
-			);
-			expect(asFragment()).toMatchSnapshot();
-		});
+		expect(getByTestId("modal__inner")).toHaveTextContent(translations.TRANSACTION_TYPES.MAGISTRATE);
+		expect(asFragment()).toMatchSnapshot();
 	});
 });

@@ -6,6 +6,7 @@ import { LedgerProvider } from "app/contexts/Ledger/Ledger";
 import * as useRandomNumberHook from "app/hooks/use-random-number";
 import { toasts } from "app/services";
 import { translations as dashboardTranslations } from "domains/dashboard/i18n";
+import { translations as profileTranslations } from "domains/profile/i18n";
 import { translations as walletTranslations } from "domains/wallet/i18n";
 import { createMemoryHistory } from "history";
 import nock from "nock";
@@ -97,6 +98,44 @@ describe("Dashboard", () => {
 		expect(asFragment()).toMatchSnapshot();
 	});
 
+	it("should show introductory tutorial", async () => {
+		const { getByText } = renderWithRouter(
+			<Route path="/profiles/:profileId/dashboard">
+				<Dashboard />
+			</Route>,
+			{
+				routes: [dashboardURL],
+				history,
+				withProfileSynchronizer: true,
+			},
+		);
+
+		await waitFor(() => expect(getByText(profileTranslations.MODAL_PROFILE_CREATED.TITLE)).toBeInTheDocument());
+	});
+
+	it("should able to skip introductory tutorial", async () => {
+		const { getByText, queryByText } = renderWithRouter(
+			<Route path="/profiles/:profileId/dashboard">
+				<Dashboard />
+			</Route>,
+			{
+				routes: [dashboardURL],
+				history,
+				withProfileSynchronizer: true,
+			},
+		);
+
+		await waitFor(() => expect(getByText(profileTranslations.MODAL_PROFILE_CREATED.TITLE)).toBeInTheDocument());
+
+		act(() => {
+			fireEvent.click(getByText(profileTranslations.MODAL_PROFILE_CREATED.SKIP_TUTORIAL));
+		});
+
+		await waitFor(() =>
+			expect(queryByText(profileTranslations.MODAL_PROFILE_CREATED.TITLE)).not.toBeInTheDocument(),
+		);
+	});
+
 	it("should navigate to import ledger page", async () => {
 		const unsubscribe = jest.fn();
 		let observer: Observer<any>;
@@ -104,6 +143,7 @@ describe("Dashboard", () => {
 			observer = obv;
 			return { unsubscribe };
 		});
+		profile.markIntroductoryTutorialAsComplete();
 
 		const { asFragment, getByTestId, getByText, queryByText, getAllByRole } = renderWithRouter(
 			<Route path="/profiles/:profileId/dashboard">

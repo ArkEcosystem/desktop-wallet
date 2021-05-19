@@ -1,4 +1,4 @@
-import { Icon } from "app/components//Icon";
+import { Icon } from "app/components/Icon";
 import { Spinner } from "app/components/Spinner";
 import React from "react";
 import { styled } from "twin.macro";

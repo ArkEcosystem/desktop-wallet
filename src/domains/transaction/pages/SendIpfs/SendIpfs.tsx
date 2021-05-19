@@ -26,7 +26,7 @@ export const SendIpfs = () => {
 	const [activeTab, setActiveTab] = useState(1);
 	const [transaction, setTransaction] = useState((null as unknown) as Contracts.SignedTransactionData);
 
-	const { env } = useEnvironmentContext();
+	const { env, persist } = useEnvironmentContext();
 	const activeProfile = useActiveProfile();
 	const activeWallet = useActiveWallet();
 	const networks = useMemo(() => env.availableNetworks(), [env]);
@@ -94,7 +94,7 @@ export const SendIpfs = () => {
 			const { uuid, transaction } = await transactionBuilder.build("ipfs", transactionInput, { abortSignal });
 			await transactionBuilder.broadcast(uuid, transactionInput);
 
-			await env.persist();
+			await persist();
 
 			setTransaction(transaction);
 			setActiveTab(4);
