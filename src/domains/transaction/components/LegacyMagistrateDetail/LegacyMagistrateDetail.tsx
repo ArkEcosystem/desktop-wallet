@@ -20,17 +20,8 @@ export const LegacyMagistrateDetail = ({ isOpen, transaction, onClose }: LegacyM
 
 	const wallet = useMemo(() => transaction.wallet(), [transaction]);
 
-	const titles: Record<string, string> = {
-		legacyBusinessRegistration: t("TRANSACTION.TRANSACTION_TYPES.LEGACY_BUSINESS_REGISTRATION"),
-		legacyBusinessResignation: t("TRANSACTION.TRANSACTION_TYPES.LEGACY_BUSINESS_RESIGNATION"),
-		legacyBusinessUpdate: t("TRANSACTION.TRANSACTION_TYPES.LEGACY_BUSINESS_UPDATE"),
-		legacyBridgechainRegistration: t("TRANSACTION.TRANSACTION_TYPES.LEGACY_BRIDGECHAIN_REGISTRATION"),
-		legacyBridgechainResignation: t("TRANSACTION.TRANSACTION_TYPES.LEGACY_BRIDGECHAIN_RESIGNATION"),
-		legacyBridgechainUpdate: t("TRANSACTION.TRANSACTION_TYPES.LEGACY_BRIDGECHAIN_UPDATE"),
-	};
-
 	return (
-		<Modal title={titles[transaction.type()]} isOpen={isOpen} onClose={onClose}>
+		<Modal title={t("TRANSACTION.TRANSACTION_TYPES.MAGISTRATE")} isOpen={isOpen} onClose={onClose}>
 			<TransactionSender
 				address={transaction.sender()}
 				alias={wallet.alias()}

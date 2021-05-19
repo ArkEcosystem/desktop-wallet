@@ -255,6 +255,7 @@ export const translations: { [key: string]: any } = {
 		CONFIRM_PASSWORD_REQUIRED: "Password confirmation is required",
 		MIN_RECIPIENTS: "At least one recipient is required",
 		RECIPIENT_INVALID: "Recipient address is invalid",
+		PASSWORD_SAME_AS_OLD: "New password cannot be old password",
 	},
 
 	DATETIME: {

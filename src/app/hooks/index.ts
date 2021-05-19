@@ -20,3 +20,4 @@ export * from "./use-synchronizer";
 export * from "./use-theme";
 export * from "./use-updater";
 export * from "./use-validation";
+export * from "./use-wallet-alias";
