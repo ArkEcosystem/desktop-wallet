@@ -24,7 +24,7 @@ import { SettingsProps } from "../Settings.models";
 
 export const General = ({ formConfig, onSuccess }: SettingsProps) => {
 	const reloadPath = useReloadPath();
-	const { persist } = useEnvironmentContext();
+	const { env, persist } = useEnvironmentContext();
 
 	const activeProfile = useActiveProfile();
 
@@ -256,6 +256,7 @@ export const General = ({ formConfig, onSuccess }: SettingsProps) => {
 
 		setScreenshotProtection(isScreenshotProtection);
 
+		env.profiles().persist(activeProfile);
 		await persist();
 
 		onSuccess();
