@@ -2054,7 +2054,8 @@ exports[`PluginGrid should trigger update by addon button 1`] = `
               <div
                 class="flex items-center space-x-2"
               >
-                <button
+                <span
+                  class=""
                   data-testid="PluginCard__update-available"
                 >
                   <div
@@ -2066,7 +2067,7 @@ exports[`PluginGrid should trigger update by addon button 1`] = `
                       update.svg
                     </svg>
                   </div>
-                </button>
+                </span>
               </div>
               <div
                 class="relative"

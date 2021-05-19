@@ -2,7 +2,7 @@ import { Card } from "app/components/Card";
 import { DropdownOption } from "app/components/Dropdown";
 import { Icon } from "app/components/Icon";
 import { Tooltip } from "app/components/Tooltip";
-import cls from "classnames";
+import cn from "classnames";
 import React from "react";
 import { useTranslation } from "react-i18next";
 
@@ -90,22 +90,24 @@ export const PluginCard = ({
 										</span>
 									</Tooltip>
 								) : (
-									<Tooltip content={t("PLUGINS.NEW_VERSION_AVAILABLE")}>
-										<button
+									<Tooltip content={!isUpdating && t("PLUGINS.NEW_VERSION_AVAILABLE")}>
+										<span
 											data-testid="PluginCard__update-available"
-											disabled={isUpdating}
-											onClick={(evt) => {
-												evt.stopPropagation();
-												onSelect?.({ value: "update" });
+											className={cn({ "cursor-not-allowed": isUpdating })}
+											onClick={(event: any) => {
+												event.stopPropagation();
+												if (!isUpdating) {
+													onSelect?.({ value: "update" });
+												}
 											}}
 										>
 											<Icon
-												className={cls({ "animate-spin": isUpdating })}
+												className={cn({ "animate-spin": isUpdating })}
 												name="Update"
 												width={20}
 												height={20}
 											/>
-										</button>
+										</span>
 									</Tooltip>
 								)}
 							</>
