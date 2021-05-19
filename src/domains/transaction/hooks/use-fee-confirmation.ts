@@ -13,7 +13,7 @@ export const useFeeConfirmation = (fee: number | string, fees: Contracts.Transac
 	const [feeWarningVariant, setFeeWarningVariant] = useState<FeeWarningVariant | undefined>();
 
 	const activeProfile = useActiveProfile();
-	const { persist } = useEnvironmentContext();
+	const { env, persist } = useEnvironmentContext();
 
 	useEffect(() => {
 		if (!fee) {
@@ -42,6 +42,8 @@ export const useFeeConfirmation = (fee: number | string, fees: Contracts.Transac
 			if (suppressWarning) {
 				activeProfile.settings().set(ProfileContracts.ProfileSetting.DoNotShowFeeWarning, true);
 
+				env.profiles().persist(activeProfile);
+
 				await persist();
 			}
 
@@ -51,7 +53,7 @@ export const useFeeConfirmation = (fee: number | string, fees: Contracts.Transac
 				await result;
 			}
 		},
-		[activeProfile, persist],
+		[activeProfile, persist, env],
 	);
 
 	const requireFeeConfirmation = useMemo(
