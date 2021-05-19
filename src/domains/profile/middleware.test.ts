@@ -1,6 +1,5 @@
 import electron from "electron";
 import { Middleware } from "router/interfaces";
-import * as utils from "utils/electron-utils";
 import { env, getDefaultProfileId } from "utils/testing-library";
 
 import { ProfileMiddleware } from "./middleware";

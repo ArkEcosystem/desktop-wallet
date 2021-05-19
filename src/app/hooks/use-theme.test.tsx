@@ -1,6 +1,6 @@
 import { useTheme } from "app/hooks/use-theme";
-import * as utils from "utils/electron-utils";
 import electron from "electron";
+import * as utils from "utils/electron-utils";
 import { env, getDefaultProfileId } from "utils/testing-library";
 
 describe("useTheme", () => {
