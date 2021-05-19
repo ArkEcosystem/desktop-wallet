@@ -111,11 +111,15 @@ export const ImportWallet = () => {
 
 		await syncAll(wallet);
 
+		env.profiles().persist(activeProfile);
+
 		await persist();
 	};
 
 	const encryptMnemonic = async () => {
 		await walletData!.wif().set(walletGenerationInput!, getValues("encryptionPassword"));
+
+		env.profiles().persist(activeProfile);
 
 		await persist();
 	};

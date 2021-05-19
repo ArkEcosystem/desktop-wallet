@@ -20,7 +20,7 @@ import { SuccessStep } from "./SuccessStep";
 import { WalletOverviewStep } from "./WalletOverviewStep";
 
 export const CreateWallet = () => {
-	const { persist } = useEnvironmentContext();
+	const { env, persist } = useEnvironmentContext();
 	const history = useHistory();
 	const { t } = useTranslation();
 
@@ -75,6 +75,8 @@ export const CreateWallet = () => {
 		}
 
 		setConfiguration("selectedNetworkIds", uniq([...selectedNetworkIds, wallet.network().id()]));
+
+		env.profiles().persist(activeProfile);
 
 		await persist();
 

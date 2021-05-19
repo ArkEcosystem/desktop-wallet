@@ -11,5 +11,7 @@ export const markAsRead = async (isVisible: boolean, id: string, profile: Contra
 	}
 
 	profile.notifications().markAsRead(id);
+	env.profiles().persist(profile);
+
 	await env.persist();
 };

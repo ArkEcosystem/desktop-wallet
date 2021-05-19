@@ -28,7 +28,7 @@ type Props = {
 
 export const News = ({ itemsPerPage }: Props) => {
 	const activeProfile = useActiveProfile();
-	const { persist } = useEnvironmentContext();
+	const { env, persist } = useEnvironmentContext();
 
 	const [isLoading, setIsLoading] = useState(true);
 	const [blockfolio] = useState(() => new Blockfolio(httpClient));
@@ -76,6 +76,9 @@ export const News = ({ itemsPerPage }: Props) => {
 	useEffect(() => {
 		const updateSettings = async () => {
 			activeProfile.settings().set(Contracts.ProfileSetting.NewsFilters, { categories, coins });
+
+			env.profiles().persist(activeProfile);
+
 			await persist();
 		};
 

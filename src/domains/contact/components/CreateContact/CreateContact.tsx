@@ -17,13 +17,16 @@ export const CreateContact = ({ isOpen, profile, onClose, onCancel, onSave }: Cr
 	const { t } = useTranslation();
 	const [errors, setErrors] = useState<any>({});
 
-	const { persist } = useEnvironmentContext();
+	const { env, persist } = useEnvironmentContext();
 
 	useEffect(() => setErrors({}), [isOpen]);
 
 	const handleOnSave = async ({ name, addresses }: any) => {
 		const contact = profile.contacts().create(name);
 		await profile.contacts().update(contact.id(), { addresses });
+
+		env.profiles().persist(profile);
+
 		await persist();
 		onSave?.(contact.id());
 	};

@@ -9,7 +9,7 @@ import { formatLedgerDerivationPath, LedgerData } from "../utils";
 import { connectionReducer, defaultConnectionState } from "./connection.state";
 
 export const useLedgerConnection = (transport: typeof Transport) => {
-	const { persist } = useEnvironmentContext();
+	const { env, persist } = useEnvironmentContext();
 	const [state, dispatch] = useReducer(connectionReducer, defaultConnectionState);
 	const abortRetryRef = useRef<boolean>(false);
 
@@ -44,6 +44,9 @@ export const useLedgerConnection = (transport: typeof Transport) => {
 
 				profile.wallets().push(wallet);
 			}
+
+			env.profiles().persist(profile);
+
 			await persist();
 		},
 		[persist],

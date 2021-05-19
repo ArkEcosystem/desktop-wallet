@@ -11,7 +11,7 @@ import { SettingsProps } from "../Settings.models";
 
 export const PasswordSettings = ({ formConfig, onSuccess, onError }: SettingsProps) => {
 	const activeProfile = useActiveProfile();
-	const { persist } = useEnvironmentContext();
+	const { env, persist } = useEnvironmentContext();
 
 	const usesPassword = activeProfile.usesPassword();
 	const { password: passwordValidation } = useValidation();
@@ -34,7 +34,8 @@ export const PasswordSettings = ({ formConfig, onSuccess, onError }: SettingsPro
 
 		reset();
 
-		// the profile has already been saved by the changePassword / setPassword methods above
+		env.profiles().persist(activeProfile);
+
 		await persist();
 
 		onSuccess(t("SETTINGS.PASSWORD.SUCCESS"));
