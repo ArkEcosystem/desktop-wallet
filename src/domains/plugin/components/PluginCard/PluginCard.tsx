@@ -66,6 +66,13 @@ export const PluginCard = ({
 		return <BlankPluginCard category={category} />;
 	}
 
+	const handleUpdate = () => {
+		/* istanbul ignore else */
+		if (!isUpdating) {
+			onSelect?.({ value: "update" });
+		}
+	};
+
 	return (
 		<div data-testid={`PluginCard--${plugin.id}`}>
 			<Card
@@ -93,14 +100,19 @@ export const PluginCard = ({
 									<Tooltip content={!isUpdating && t("PLUGINS.NEW_VERSION_AVAILABLE")}>
 										<span
 											data-testid="PluginCard__update-available"
+											role="button"
+											tabIndex={0}
 											className={cn({ "cursor-not-allowed": isUpdating })}
+											onKeyDown={(event: any) => {
+												if (event.key === " " || event.key === "Enter") {
+													event.preventDefault();
+													event.stopPropagation();
+													handleUpdate();
+												}
+											}}
 											onClick={(event: any) => {
 												event.stopPropagation();
-
-												/* istanbul ignore else */
-												if (!isUpdating) {
-													onSelect?.({ value: "update" });
-												}
+												handleUpdate();
 											}}
 										>
 											<Icon
