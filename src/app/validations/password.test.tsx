@@ -9,22 +9,24 @@ describe("Password Validation", () => {
 		const { result } = renderHook(() => useTranslation());
 		const { t } = result.current;
 
-		const passwordValidation = password(t);
-		expect(passwordValidation.password("password").minLength).toEqual({
+		const passwordRule = password(t);
+		expect(passwordRule.password("password").minLength).toEqual({
 			message: t("COMMON.VALIDATION.MIN_LENGTH", {
 				field: t("SETTINGS.GENERAL.PERSONAL.PASSWORD"),
 				minLength: 6,
 			}),
 			value: 6,
 		});
+	});
 
-		expect(passwordValidation.password("password").minLength).toEqual({
-			message: t("COMMON.VALIDATION.MIN_LENGTH", {
-				field: t("SETTINGS.GENERAL.PERSONAL.PASSWORD"),
-				minLength: 6,
-			}),
-			value: 6,
-		});
+	it("should require different password than the old password", () => {
+		const { result } = renderHook(() => useTranslation());
+		const { t } = result.current;
+
+		const passwordRule = password(t);
+		const passwordValidation = passwordRule.password("password");
+		expect(passwordValidation.validate("password")).toEqual(t("COMMON.VALIDATION.PASSWORD_SAME_AS_OLD"));
+		expect(passwordValidation.validate("new password")).toEqual(true);
 	});
 
 	it("should match password and confirm password", () => {
