@@ -9,7 +9,7 @@ import { InputAddress, InputDefault } from "app/components/Input";
 import { Select } from "app/components/SelectDropdown";
 import { useNetworkOptions } from "app/hooks";
 import { NetworkIcon } from "domains/network/components/NetworkIcon";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import { useForm } from "react-hook-form";
 import { useTranslation } from "react-i18next";
 
@@ -17,6 +17,8 @@ type AddressListItemProps = {
 	address: any;
 	onRemove: any;
 };
+
+type NetworkOption = { label: string; value: string };
 
 const AddressListItem = ({ address, onRemove }: AddressListItemProps) => (
 	<div
@@ -116,6 +118,11 @@ export const ContactForm = ({ profile, contact, onChange, onCancel, onDelete, on
 
 	const { networkOptions, networkById } = useNetworkOptions();
 
+	const filteredNetworks = useMemo(() => {
+		const usedNetworks = addresses.map((address: any) => address.network);
+		return networkOptions.filter(({ value }: NetworkOption) => !usedNetworks.includes(value));
+	}, [addresses, networkOptions]);
+
 	const handleAddAddress = async () => {
 		const addressExists = addresses.some((addr) => addr.address === address);
 		if (addressExists) {
@@ -152,7 +159,7 @@ export const ContactForm = ({ profile, contact, onChange, onCancel, onDelete, on
 		);
 	};
 
-	const handleSelectNetwork = (networkOption?: { label: string; value: string }) => {
+	const handleSelectNetwork = (networkOption?: NetworkOption) => {
 		setValue("network", networkById(networkOption?.value), { shouldValidate: true, shouldDirty: true });
 	};
 
@@ -210,7 +217,7 @@ export const ContactForm = ({ profile, contact, onChange, onCancel, onDelete, on
 					<Select
 						placeholder={t("COMMON.INPUT_NETWORK.PLACEHOLDER")}
 						defaultValue={network?.id()}
-						options={networkOptions}
+						options={filteredNetworks}
 						onChange={(networkOption: any) => handleSelectNetwork(networkOption)}
 					/>
 				</FormField>
