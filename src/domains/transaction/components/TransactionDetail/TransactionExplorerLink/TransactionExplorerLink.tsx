@@ -17,7 +17,7 @@ export const TransactionExplorerLink = ({ id, link, variant, ...props }: Transac
 	const { t } = useTranslation();
 
 	const ref = useRef(null);
-	const [TruncatedId] = useTextTruncate({ text: id, parentRef: ref });
+	const [TruncatedId] = useTextTruncate({ text: id, parentRef: ref, extraSpace: 20 });
 
 	const isTransactionLink = () => variant === "transaction";
 

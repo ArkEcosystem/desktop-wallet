@@ -7,11 +7,12 @@ type Props = {
 	text?: string;
 	parentRef: React.RefObject<HTMLElement>;
 	minChars?: number;
+	extraSpace?: number;
 };
 
 type TruncateComponentProps = Omit<React.ComponentProps<typeof TruncateMiddle>, "text" | "maxChars">;
 
-export const useTextTruncate = ({ text = "", minChars = 10, parentRef }: Props) => {
+export const useTextTruncate = ({ text = "", minChars = 10, extraSpace = 5, parentRef }: Props) => {
 	const textNodeRef = useRef<HTMLElement>(null);
 	const textLength = text.length;
 	const [maxChars, setMaxChars] = useState(text.length);
@@ -34,7 +35,7 @@ export const useTextTruncate = ({ text = "", minChars = 10, parentRef }: Props) 
 		const textWidth: number = textWidthRef.current;
 
 		if (textWidth > parentWidth) {
-			const overflowSize = textWidth + 5 - parentWidth;
+			const overflowSize = textWidth + extraSpace - parentWidth;
 			const letterSize = textWidth / textLength;
 			const maxChars = textLength - overflowSize / letterSize;
 
