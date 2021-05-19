@@ -34,16 +34,20 @@ export const SelectFileStep = ({ onBack, onSelect, onFileFormatChange, fileForma
 			<SelectFile fileFormat={fileFormat} onSelect={onSelect} />
 
 			{fileFormat === ".dwe" && (
-				<p className="text-sm text-theme-secondary-text md:text-base mt-6 text-center">
+				<p className="mt-6 text-base text-theme-secondary-text text-center">
 					<span>{t("PROFILE.IMPORT.SELECT_FILE_STEP.LEGACY_IMPORT")} </span>
-					<span
+					<button
+						type="button"
 						onClick={() => onFileFormatChange?.(".json")}
 						title={t("PROFILE.IMPORT.SELECT_FILE_STEP.CLICK_HERE")}
 						data-testid="SelectFileStep__change-file"
-						className="font-semibold cursor-pointer link"
+						className="relative font-semibold cursor-pointer link focus:outline-none group"
 					>
+						{/* border on focus */}
+						<div className="absolute inset-0 -m-1 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible" />
+
 						{t("PROFILE.IMPORT.SELECT_FILE_STEP.CLICK_HERE")}
-					</span>
+					</button>
 				</p>
 			)}
 

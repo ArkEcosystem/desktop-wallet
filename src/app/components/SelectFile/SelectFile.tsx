@@ -92,16 +92,20 @@ export const SelectFile = ({ onSelect, fileFormat }: SelectFileStepProps) => {
 			>
 				{fileFormatIcon[fileFormat] && <Icon name={fileFormatIcon[fileFormat]} width={40} height={40} />}
 
-				<div className="mt-8">
+				<div className="mt-8 space-x-px">
 					<span className="font-semibold">{t("PROFILE.IMPORT.SELECT_FILE_STEP.DRAG_AND_DROP")} </span>
-					<span
+					<button
+						type="button"
 						onClick={handleBrowseFiles}
 						title={t("PROFILE.IMPORT.SELECT_FILE_STEP.UPLOAD_TITLE")}
 						data-testid="SelectFile__browse-files"
-						className="font-semibold cursor-pointer link"
+						className="relative font-semibold cursor-pointer link focus:outline-none group"
 					>
+						{/* border on focus */}
+						<div className="absolute inset-0 -m-1 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible" />
+
 						{t("PROFILE.IMPORT.SELECT_FILE_STEP.BROWSE_FILES")}
-					</span>
+					</button>
 				</div>
 				<div className="font-semibold text-theme-secondary-500 text-sm mt-2">
 					{t("PROFILE.IMPORT.SELECT_FILE_STEP.SUPPORTED_FORMAT", { fileFormat })}

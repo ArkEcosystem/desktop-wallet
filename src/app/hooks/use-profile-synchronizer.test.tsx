@@ -431,34 +431,6 @@ describe("useProfileRestore", () => {
 		mockProfileFromUrl.mockRestore();
 	});
 
-	it("should restore in e2e", async () => {
-		process.env.TEST_PROFILES_RESTORE_STATUS = undefined;
-		process.env.REACT_APP_IS_E2E = "1";
-
-		const profile = env.profiles().findById(getDefaultProfileId());
-		profile.wallets().flush();
-
-		const wrapper = ({ children }: any) => (
-			<EnvironmentProvider env={env}>
-				<ConfigurationProvider>{children}</ConfigurationProvider>
-			</EnvironmentProvider>
-		);
-
-		const {
-			result: { current },
-		} = renderHook(() => useProfileRestore(), { wrapper });
-
-		let isRestored;
-
-		await act(async () => {
-			isRestored = await current.restoreProfile(profile);
-		});
-
-		expect(isRestored).toEqual(true);
-
-		process.env.TEST_PROFILES_RESTORE_STATUS = "restored";
-	});
-
 	it("should restore only once", async () => {
 		process.env.TEST_PROFILES_RESTORE_STATUS = undefined;
 		process.env.REACT_APP_IS_E2E = undefined;
