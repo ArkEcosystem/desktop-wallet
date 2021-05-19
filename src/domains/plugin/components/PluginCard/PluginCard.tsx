@@ -96,6 +96,8 @@ export const PluginCard = ({
 											className={cn({ "cursor-not-allowed": isUpdating })}
 											onClick={(event: any) => {
 												event.stopPropagation();
+
+												/* istanbul ignore else */
 												if (!isUpdating) {
 													onSelect?.({ value: "update" });
 												}
