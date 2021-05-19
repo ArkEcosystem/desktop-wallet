@@ -162,7 +162,7 @@ type ProfileSynchronizerProps = {
 };
 
 export const useProfileSynchronizer = ({ onProfileRestoreError }: ProfileSynchronizerProps = {}) => {
-	const { persist } = useEnvironmentContext();
+	const { env, persist } = useEnvironmentContext();
 	const { setConfiguration, profileIsSyncing } = useConfiguration();
 	const { restoreProfile } = useProfileRestore();
 	const profile = useProfileWatcher();
@@ -212,6 +212,8 @@ export const useProfileSynchronizer = ({ onProfileRestoreError }: ProfileSynchro
 				setStatus("syncing");
 
 				await profile.sync();
+
+				env.profiles().persist(profile);
 				await persist();
 
 				runAll();
