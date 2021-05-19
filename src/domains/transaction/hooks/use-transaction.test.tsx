@@ -23,6 +23,7 @@ describe("useTransaction", () => {
 				};
 			});
 	});
+
 	beforeEach(() => {
 		profile = env.profiles().findById(getDefaultProfileId());
 		wallet = profile.wallets().first();
@@ -32,6 +33,21 @@ describe("useTransaction", () => {
 		const { result } = renderHook(() => useTransaction());
 
 		const transactions = await result.current.fetchWalletUnconfirmedTransactions(wallet);
+
+		expect(Array.isArray(transactions)).toBe(true);
 		expect(transactions.length).toBe(1);
+	});
+
+	it("should return an empty list if lookup fails", async () => {
+		const walletSpy = jest.spyOn(wallet.transactionIndex(), "sent").mockRejectedValue(new Error());
+
+		const { result } = renderHook(() => useTransaction());
+
+		const transactions = await result.current.fetchWalletUnconfirmedTransactions(wallet);
+
+		expect(Array.isArray(transactions)).toBe(true);
+		expect(transactions.length).toBe(0);
+
+		walletSpy.mockRestore();
 	});
 });
