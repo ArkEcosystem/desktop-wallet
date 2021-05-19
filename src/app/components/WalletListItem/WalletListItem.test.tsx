@@ -2,7 +2,7 @@ import { Contracts } from "@arkecosystem/platform-sdk-profiles";
 import { createMemoryHistory } from "history";
 import React from "react";
 import { Route } from "react-router-dom";
-import { act, env, fireEvent, getDefaultProfileId, render, renderWithRouter } from "testing-library";
+import { act, env, fireEvent, getDefaultProfileId, renderWithRouter } from "testing-library";
 
 import { WalletListItem } from "./WalletListItem";
 
@@ -51,12 +51,18 @@ describe("WalletListItem", () => {
 	it("should render for selected wallet", () => {
 		const walletId = "ac38fe6d-4b67-4ef1-85be-17c5f6841129";
 
-		const { asFragment } = render(
+		const { asFragment } = renderWithRouter(
 			<table>
 				<tbody>
-					<WalletListItem wallet={wallet} activeWalletId={walletId} />
+					<Route path="/profiles/:profileId/dashboard">
+						<WalletListItem wallet={wallet} activeWalletId={walletId} />
+					</Route>
 				</tbody>
 			</table>,
+			{
+				routes: [dashboardURL],
+				history,
+			},
 		);
 
 		expect(asFragment()).toMatchSnapshot();

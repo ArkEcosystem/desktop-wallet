@@ -576,7 +576,18 @@ exports[`Wallets should load more wallets 1`] = `
                         class="w-full flex items-center no-ligatures overflow-hidden whitespace-nowrap"
                       >
                         <span
-                          class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-text font-semibold text-base"
+                          class="max-w-24 truncate mr-2 font-semibold text-base text-theme-text"
+                          data-testid="address__wallet-name"
+                        >
+                          <span
+                            class="TruncateEnd__Wrapper-sc-1w1nvb9-0"
+                            data-testid="TruncateEnd"
+                          >
+                            arkx
+                          </span>
+                        </span>
+                        <span
+                          class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-secondary-500 dark:text-theme-secondary-700 font-semibold text-base"
                           data-testid="address__wallet-address"
                         >
                           AdVSe37niA3uFUPgCgMUH2tMsHF4LpLoiX
@@ -1217,7 +1228,18 @@ exports[`Wallets should open and close ledger import modal 1`] = `
                         class="w-full flex items-center no-ligatures overflow-hidden whitespace-nowrap"
                       >
                         <span
-                          class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-text font-semibold text-base"
+                          class="max-w-24 truncate mr-2 font-semibold text-base text-theme-text"
+                          data-testid="address__wallet-name"
+                        >
+                          <span
+                            class="TruncateEnd__Wrapper-sc-1w1nvb9-0"
+                            data-testid="TruncateEnd"
+                          >
+                            arkx
+                          </span>
+                        </span>
+                        <span
+                          class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-secondary-500 dark:text-theme-secondary-700 font-semibold text-base"
                           data-testid="address__wallet-address"
                         >
                           AdVSe37niA3uFUPgCgMUH2tMsHF4LpLoiX
@@ -2033,7 +2055,9 @@ exports[`Wallets should render grid 1`] = `
                           </div>
                           <span
                             class="font-semibold truncate text-theme-secondary-text"
-                          />
+                          >
+                            arkx
+                          </span>
                         </div>
                         <span
                           class="mt-auto text-lg font-bold text-theme-text"
@@ -2536,7 +2560,9 @@ exports[`Wallets should render grid in loading state 1`] = `
                           </div>
                           <span
                             class="font-semibold truncate text-theme-secondary-text"
-                          />
+                          >
+                            arkx
+                          </span>
                         </div>
                         <span
                           class="mt-auto text-lg font-bold text-theme-text"
@@ -3162,7 +3188,18 @@ exports[`Wallets should render list 1`] = `
                         class="w-full flex items-center no-ligatures overflow-hidden whitespace-nowrap"
                       >
                         <span
-                          class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-text font-semibold text-base"
+                          class="max-w-24 truncate mr-2 font-semibold text-base text-theme-text"
+                          data-testid="address__wallet-name"
+                        >
+                          <span
+                            class="TruncateEnd__Wrapper-sc-1w1nvb9-0"
+                            data-testid="TruncateEnd"
+                          >
+                            arkx
+                          </span>
+                        </span>
+                        <span
+                          class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-secondary-500 dark:text-theme-secondary-700 font-semibold text-base"
                           data-testid="address__wallet-address"
                         >
                           AdVSe37niA3uFUPgCgMUH2tMsHF4LpLoiX
@@ -3493,7 +3530,9 @@ exports[`Wallets should render without testnet wallets 1`] = `
                           </div>
                           <span
                             class="font-semibold truncate text-theme-secondary-text"
-                          />
+                          >
+                            arkx
+                          </span>
                         </div>
                         <span
                           class="mt-auto text-lg font-bold text-theme-text"
@@ -4092,7 +4131,9 @@ exports[`Wallets should toggle between grid and list view 1`] = `
                           </div>
                           <span
                             class="font-semibold truncate text-theme-secondary-text"
-                          />
+                          >
+                            arkx
+                          </span>
                         </div>
                         <span
                           class="mt-auto text-lg font-bold text-theme-text"
