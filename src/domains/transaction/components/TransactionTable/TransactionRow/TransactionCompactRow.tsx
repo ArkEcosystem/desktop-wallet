@@ -15,12 +15,12 @@ type Props = {
 
 export const TransactionCompactRow = ({ transaction, walletName, iconSize, ...props }: Props) => (
 	<TableRow {...props}>
-		<TableCell variant="start" innerClassName="space-x-3">
+		<TableCell variant="start" innerClassName="space-x-3" isCompact>
 			<TransactionRowMode transaction={transaction} iconSize={iconSize} />
 			<TransactionRowRecipientLabel transaction={transaction} walletName={walletName} />
 		</TableCell>
 
-		<TableCell variant="end" innerClassName="justify-end">
+		<TableCell variant="end" innerClassName="justify-end" isCompact>
 			<TransactionRowAmount transaction={transaction} />
 		</TableCell>
 	</TableRow>
