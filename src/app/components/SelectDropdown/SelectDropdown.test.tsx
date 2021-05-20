@@ -1,5 +1,5 @@
 import { act } from "@testing-library/react-hooks";
-import React from "react";
+import React, { useState } from "react";
 import { fireEvent, render, screen, waitFor } from "testing-library";
 
 import { Select } from "./SelectDropdown";
@@ -364,6 +364,39 @@ describe("SelectDropdown", () => {
 		});
 
 		expect(getByTestId("select-list__input")).toHaveValue("1");
+	});
+
+	it("should not open the dropdown on reset", () => {
+		const initialValue = options[0].value;
+
+		const Component = () => {
+			const [selected, setSelected] = useState<any>(initialValue);
+			const onChange = (x: any) => setSelected(x?.value);
+
+			return (
+				<>
+					<Select onChange={onChange} defaultValue={selected} options={options} />
+					<button type="button" data-testid="btn-reset" onClick={() => setSelected(null)}>
+						Reset
+					</button>
+				</>
+			);
+		};
+
+		const { getByTestId, queryByText } = render(<Component />);
+
+		// check dropdown not open
+		expect(getByTestId("select-list__input")).toHaveValue(initialValue);
+		expect(queryByText("Option 2")).not.toBeInTheDocument();
+
+		// set null value
+		act(() => {
+			fireEvent.click(getByTestId("btn-reset"));
+		});
+
+		// check value reset and dropdown not open
+		expect(getByTestId("select-list__input")).toHaveValue("");
+		expect(queryByText("Option 2")).not.toBeInTheDocument();
 	});
 
 	it("should allow entering free text", () => {
