@@ -48,6 +48,22 @@ jest.mock("electron", () => {
 	};
 });
 
+jest.mock("fs", () => {
+	const { readFileSync } = jest.requireActual(`fs`);
+
+	return {
+		...fs,
+		readFileSync: (filepath) => {
+			try {
+				return readFileSync(filepath);
+			} catch {
+				return "";
+			}
+		},
+		writeFileSync: jest.fn(),
+	};
+});
+
 beforeAll(async () => {
 	await bootEnvWithProfileFixtures({ env, shouldRestoreDefaultProfile: true });
 	// Mark profiles as restored, to prevent multiple restoration in profile synchronizer

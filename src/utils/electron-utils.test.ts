@@ -7,11 +7,6 @@ const defaultFilters = [
 	{ name: "All Files", extensions: ["*"] },
 ];
 
-jest.mock("fs", () => ({
-	writeFileSync: jest.fn(),
-	readFileSync: jest.fn(),
-}));
-
 describe("Electron utils", () => {
 	describe("setThemeSource", () => {
 		it("should set theme source", () => {
