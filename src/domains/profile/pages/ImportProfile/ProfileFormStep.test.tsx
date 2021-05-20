@@ -108,7 +108,7 @@ describe("Import Profile - Profile Form Step", () => {
 		const selectDropdown = getByTestId("SelectDropdownInput__input");
 
 		await act(async () => {
-			fireEvent.change(selectDropdown, { target: { value: "BTC" } });
+			fireEvent.focus(selectDropdown);
 		});
 
 		fireEvent.click(getByTestId("select-list__toggle-option-0"));
@@ -158,7 +158,7 @@ describe("Import Profile - Profile Form Step", () => {
 		const selectDropdown = getByTestId("SelectDropdownInput__input");
 
 		await act(async () => {
-			fireEvent.change(selectDropdown, { target: { value: "BTC" } });
+			fireEvent.focus(selectDropdown);
 		});
 
 		fireEvent.click(getByTestId("select-list__toggle-option-0"));
@@ -201,7 +201,7 @@ describe("Import Profile - Profile Form Step", () => {
 		fireEvent.input(getAllByTestId("Input")[0], { target: { value: "asdasdas" } });
 
 		const selectDropdown = getByTestId("SelectDropdownInput__input");
-		fireEvent.change(selectDropdown, { target: { value: "none" } });
+		fireEvent.focus(selectDropdown);
 		fireEvent.click(getByTestId("select-list__toggle-option-0"));
 
 		fireEvent.change(getAllByTestId("InputPassword")[0], { target: { value: "test password" } });
