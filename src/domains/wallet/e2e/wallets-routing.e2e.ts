@@ -31,8 +31,9 @@ test("should navigate to import wallet page", async (t) => {
 	await t.click(Selector("span").withText("John Doe"));
 	await t.expect(Selector("div").withText(translations().COMMON.WALLETS).exists).ok();
 
-	// Go to create wallet page
-	await t.click(Selector("button").withText(translations().COMMON.IMPORT));
+	// Go to import wallet page
+	await t.click(Selector('[data-testid="WalletControls__import-wallet"]'));
+
 	await t
 		.expect(Selector("div").withText(translations().WALLETS.PAGE_IMPORT_WALLET.NETWORK_STEP.SUBTITLE).exists)
 		.ok();
