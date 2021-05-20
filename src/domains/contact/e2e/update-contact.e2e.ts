@@ -130,44 +130,6 @@ test("should error for invalid address", async (t) => {
 		.ok();
 });
 
-test("should error on duplicate address addition", async (t) => {
-	await t.expect(Selector('[data-testid="ContactList"] tbody > tr:first-child td').withText("Brian").exists).ok();
-	await t
-		.expect(Selector('[data-testid="ContactList"] tbody > tr:first-child td').withText("Anne Doe").exists)
-		.notOk();
-
-	await t.click(
-		Selector('[data-testid="ContactList"] tbody > tr:first-child [data-testid="dropdown__toggle"]').child(0),
-	);
-	await t.click(
-		Selector('[data-testid="ContactList"] tbody > tr:first-child [data-testid="dropdown__option--0"]').withText(
-			translations.COMMON.EDIT,
-		),
-	);
-	await t
-		.expect(
-			Selector('[data-testid="modal__inner"]').withText(translations.CONTACTS.MODAL_UPDATE_CONTACT.TITLE).exists,
-		)
-		.ok();
-
-	await t.typeText(Selector('[data-testid="SelectDropdownInput__input"]'), "ARK D");
-	await t.pressKey("tab");
-
-	const addressInput = Selector('[data-testid="contact-form__address-input"]');
-	await t.typeText(addressInput, "D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib");
-	await t.expect(Selector('[data-testid="contact-form__add-address-btn"]').hasAttribute("disabled")).notOk();
-
-	// Add address
-	await t.click(Selector('[data-testid="contact-form__add-address-btn"]'));
-	await t.expect(Selector('[data-testid="Input__error"]').exists).ok();
-
-	await t
-		.expect(
-			Selector('[data-testid="modal__inner"]').withText(translations.CONTACTS.MODAL_UPDATE_CONTACT.TITLE).exists,
-		)
-		.ok();
-});
-
 test("should error if contact name is already taken", async (t) => {
 	const newContact = "Test contact";
 
