@@ -99,7 +99,8 @@ describe("Dashboard", () => {
 	});
 
 	it("should show introductory tutorial", async () => {
-		const { getByText } = renderWithRouter(
+		const mockHasCompletedTutorial = jest.spyOn(profile, "hasCompletedIntroductoryTutorial").mockReturnValue(false);
+		const { getByText, getByTestId } = renderWithRouter(
 			<Route path="/profiles/:profileId/dashboard">
 				<Dashboard />
 			</Route>,
@@ -110,11 +111,18 @@ describe("Dashboard", () => {
 			},
 		);
 
+		await waitFor(
+			() => expect(within(getByTestId("TransactionTable")).getAllByTestId("TableRow")).toHaveLength(4),
+			{ timeout: 4000 },
+		);
+
 		await waitFor(() => expect(getByText(profileTranslations.MODAL_PROFILE_CREATED.TITLE)).toBeInTheDocument());
+		mockHasCompletedTutorial.mockRestore();
 	});
 
 	it("should able to skip introductory tutorial", async () => {
-		const { getByText, queryByText } = renderWithRouter(
+		const mockHasCompletedTutorial = jest.spyOn(profile, "hasCompletedIntroductoryTutorial").mockReturnValue(false);
+		const { getByText, queryByText, getByTestId } = renderWithRouter(
 			<Route path="/profiles/:profileId/dashboard">
 				<Dashboard />
 			</Route>,
@@ -123,6 +131,11 @@ describe("Dashboard", () => {
 				history,
 				withProfileSynchronizer: true,
 			},
+		);
+
+		await waitFor(
+			() => expect(within(getByTestId("TransactionTable")).getAllByTestId("TableRow")).toHaveLength(4),
+			{ timeout: 4000 },
 		);
 
 		await waitFor(() => expect(getByText(profileTranslations.MODAL_PROFILE_CREATED.TITLE)).toBeInTheDocument());
@@ -134,6 +147,8 @@ describe("Dashboard", () => {
 		await waitFor(() =>
 			expect(queryByText(profileTranslations.MODAL_PROFILE_CREATED.TITLE)).not.toBeInTheDocument(),
 		);
+
+		mockHasCompletedTutorial.mockRestore();
 	});
 
 	it("should navigate to import ledger page", async () => {
