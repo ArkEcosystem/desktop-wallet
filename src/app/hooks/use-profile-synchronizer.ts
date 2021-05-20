@@ -6,6 +6,7 @@ import { matchPath, useHistory, useLocation } from "react-router-dom";
 import { useNotifications } from "./use-notifications";
 import { useProfileUtils } from "./use-profile-utils";
 import { useSynchronizer } from "./use-synchronizer";
+import { useTheme } from "./use-theme";
 
 enum Intervals {
 	Short = 30000,
@@ -137,21 +138,6 @@ export const useProfileRestore = () => {
 
 		setStatus("restoring");
 
-		// When in e2e mode, profiles are migrated passwordless and
-		// password needs to be set again. The restore should happen
-		// without password and then reset the password.
-		const __E2E__ = ["true", "1"].includes(process.env.REACT_APP_IS_E2E?.toLowerCase() as string);
-		if (__E2E__) {
-			await env.profiles().restore(profile, password);
-
-			await profile.sync();
-
-			await persist();
-
-			markAsRestored(profile.id());
-			return true;
-		}
-
 		// Reset profile normally (passwordless or not)
 		await env.profiles().restore(profile, password);
 		markAsRestored(profile.id());
@@ -177,7 +163,6 @@ type ProfileSynchronizerProps = {
 };
 
 export const useProfileSynchronizer = ({ onProfileRestoreError }: ProfileSynchronizerProps = {}) => {
-	const __E2E__ = process.env.REACT_APP_IS_E2E;
 	const { persist } = useEnvironmentContext();
 	const { setConfiguration, profileIsSyncing } = useConfiguration();
 	const { restoreProfile } = useProfileRestore();
@@ -194,6 +179,7 @@ export const useProfileSynchronizer = ({ onProfileRestoreError }: ProfileSynchro
 
 	const { allJobs } = useProfileJobs(profile);
 	const { start, stop, runAll } = useSynchronizer(allJobs);
+	const { setProfileTheme, resetTheme } = useTheme();
 
 	useEffect(() => {
 		const clearProfileSyncStatus = () => {
@@ -204,6 +190,7 @@ export const useProfileSynchronizer = ({ onProfileRestoreError }: ProfileSynchro
 			setStatus("idle");
 			stop({ clearTimers: true });
 			setConfiguration({ profileIsSyncing: true });
+			resetTheme();
 		};
 
 		const syncProfile = async (profile?: Contracts.IProfile) => {
@@ -222,6 +209,7 @@ export const useProfileSynchronizer = ({ onProfileRestoreError }: ProfileSynchro
 
 			if (shouldRestore(profile)) {
 				await restoreProfile(profile);
+				setProfileTheme(profile);
 			}
 
 			if (shouldSync()) {
@@ -246,6 +234,8 @@ export const useProfileSynchronizer = ({ onProfileRestoreError }: ProfileSynchro
 
 		setTimeout(() => syncProfile(profile), 0);
 	}, [
+		resetTheme,
+		setProfileTheme,
 		allJobs,
 		profile,
 		runAll,
@@ -262,7 +252,6 @@ export const useProfileSynchronizer = ({ onProfileRestoreError }: ProfileSynchro
 		status,
 		onProfileRestoreError,
 		stop,
-		__E2E__,
 	]);
 
 	return { profile, profileIsSyncing };

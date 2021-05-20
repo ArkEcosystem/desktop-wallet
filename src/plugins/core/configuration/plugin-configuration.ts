@@ -1,6 +1,5 @@
 import { Contracts, Repositories } from "@arkecosystem/platform-sdk-profiles";
 import { intersection, prettyBytes, startCase, uniq } from "@arkecosystem/utils";
-import { githubImageProvider } from "domains/transaction/entity/providers";
 import du from "du";
 import parseAuthor from "parse-author";
 import semver from "semver";
@@ -147,7 +146,9 @@ export class PluginConfigurationData {
 			logo = this.#manifest.get("logo");
 		}
 
-		if (logo && githubImageProvider.validate(logo)) {
+		const regex = /(?:https?:)?\/(?:raw\.githubusercontent\.com)\/([A-Za-z0-9-_.]+)(?:\/[A-z0-9_-].*)(\.(jpe?g|png|gif))$/;
+
+		if (logo && regex.test(logo)) {
 			return logo;
 		}
 	}

@@ -5,6 +5,7 @@ import { Circle } from "app/components/Circle";
 import { DropdownOption } from "app/components/Dropdown";
 import { Icon } from "app/components/Icon";
 import { WalletIcons } from "app/components/WalletIcons";
+import { useWalletAlias } from "app/hooks";
 import { useActiveProfile } from "app/hooks";
 import { useTextTruncate } from "app/hooks/use-text-truncate";
 import { NetworkIcon } from "domains/network/components/NetworkIcon";
@@ -39,6 +40,13 @@ export const WalletCard = ({
 
 	const history = useHistory();
 	const { t } = useTranslation();
+
+	const alias = useWalletAlias({
+		address: wallet?.address() || "",
+		profile: activeProfile,
+		coinId: wallet?.coinId(),
+		networkId: wallet?.networkId(),
+	});
 
 	if (isLoading) {
 		return <WalletCardSkeleton />;
@@ -103,7 +111,7 @@ export const WalletCard = ({
 							<Avatar size="lg" address={wallet.address()} />
 						</div>
 
-						<span className="font-semibold truncate text-theme-secondary-text">{wallet.alias()}</span>
+						<span className="font-semibold truncate text-theme-secondary-text">{alias}</span>
 					</div>
 
 					<Amount

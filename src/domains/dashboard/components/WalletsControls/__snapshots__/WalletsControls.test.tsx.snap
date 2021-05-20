@@ -13,35 +13,13 @@ exports[`WalletsControls should render 1`] = `
         class="flex items-center space-x-1"
       >
         <div
-          data-testid="LayoutControls__grid"
-        >
-          <div
-            class="group"
-          >
-            <div
-              class="ControlButton__ControlButtonStyled-sc-1xp1l1a-0 dLCfwp"
-              data-testid="LayoutControls__grid--icon"
-            >
-              <div
-                class="sc-bdfBwQ iyevwF"
-                height="20"
-                width="20"
-              >
-                <svg>
-                  grid-view.svg
-                </svg>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div
           data-testid="LayoutControls__list"
         >
           <div
             class="group"
           >
             <div
-              class="ControlButton__ControlButtonStyled-sc-1xp1l1a-0 jxlhJv"
+              class="ControlButton__ControlButtonStyled-sc-1xp1l1a-0 gCTrBm"
               data-testid="LayoutControls__list--icon"
             >
               <div
@@ -51,6 +29,28 @@ exports[`WalletsControls should render 1`] = `
               >
                 <svg>
                   list-view.svg
+                </svg>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          data-testid="LayoutControls__grid"
+        >
+          <div
+            class="group"
+          >
+            <div
+              class="ControlButton__ControlButtonStyled-sc-1xp1l1a-0 kMCise"
+              data-testid="LayoutControls__grid--icon"
+            >
+              <div
+                class="sc-bdfBwQ iyevwF"
+                height="20"
+                width="20"
+              >
+                <svg>
+                  grid-view.svg
                 </svg>
               </div>
             </div>
@@ -72,7 +72,7 @@ exports[`WalletsControls should render 1`] = `
               class="group"
             >
               <div
-                class="ControlButton__ControlButtonStyled-sc-1xp1l1a-0 dLCfwp"
+                class="ControlButton__ControlButtonStyled-sc-1xp1l1a-0 kMCise"
               >
                 <div
                   class="flex items-center justify-center w-5 h-5"
@@ -98,7 +98,7 @@ exports[`WalletsControls should render 1`] = `
     >
       <button
         class="OriginalButton__StyledButton-sc-1y2wptt-0 izJbbP"
-        data-testid="WalletControls__create-wallet"
+        data-testid="WalletControls__import-ledger"
         type="button"
       >
         <div
@@ -108,16 +108,16 @@ exports[`WalletsControls should render 1`] = `
             class="flex items-center space-x-2"
           >
             <div
-              class="sc-bdfBwQ bfBhNR"
-              height="14"
-              width="14"
+              class="sc-bdfBwQ fPrsah"
+              height="1em"
+              width="1em"
             >
               <svg>
-                plus.svg
+                ledger.svg
               </svg>
             </div>
             <span>
-              Create
+              Import Ledger
             </span>
           </div>
         </div>
@@ -149,8 +149,8 @@ exports[`WalletsControls should render 1`] = `
         </div>
       </button>
       <button
-        class="OriginalButton__StyledButton-sc-1y2wptt-0 izJbbP"
-        data-testid="WalletControls__import-ledger"
+        class="OriginalButton__StyledButton-sc-1y2wptt-0 dYkFxS"
+        data-testid="WalletControls__create-wallet"
         type="button"
       >
         <div
@@ -160,16 +160,16 @@ exports[`WalletsControls should render 1`] = `
             class="flex items-center space-x-2"
           >
             <div
-              class="sc-bdfBwQ fPrsah"
-              height="1em"
-              width="1em"
+              class="sc-bdfBwQ bfBhNR"
+              height="14"
+              width="14"
             >
               <svg>
-                ledger.svg
+                plus.svg
               </svg>
             </div>
             <span>
-              Import Ledger
+              Create
             </span>
           </div>
         </div>
@@ -192,35 +192,13 @@ exports[`WalletsControls should render with networks selection 1`] = `
         class="flex items-center space-x-1"
       >
         <div
-          data-testid="LayoutControls__grid"
-        >
-          <div
-            class="group"
-          >
-            <div
-              class="ControlButton__ControlButtonStyled-sc-1xp1l1a-0 dLCfwp"
-              data-testid="LayoutControls__grid--icon"
-            >
-              <div
-                class="sc-bdfBwQ iyevwF"
-                height="20"
-                width="20"
-              >
-                <svg>
-                  grid-view.svg
-                </svg>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div
           data-testid="LayoutControls__list"
         >
           <div
             class="group"
           >
             <div
-              class="ControlButton__ControlButtonStyled-sc-1xp1l1a-0 jxlhJv"
+              class="ControlButton__ControlButtonStyled-sc-1xp1l1a-0 gCTrBm"
               data-testid="LayoutControls__list--icon"
             >
               <div
@@ -230,6 +208,28 @@ exports[`WalletsControls should render with networks selection 1`] = `
               >
                 <svg>
                   list-view.svg
+                </svg>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          data-testid="LayoutControls__grid"
+        >
+          <div
+            class="group"
+          >
+            <div
+              class="ControlButton__ControlButtonStyled-sc-1xp1l1a-0 kMCise"
+              data-testid="LayoutControls__grid--icon"
+            >
+              <div
+                class="sc-bdfBwQ iyevwF"
+                height="20"
+                width="20"
+              >
+                <svg>
+                  grid-view.svg
                 </svg>
               </div>
             </div>
@@ -251,7 +251,7 @@ exports[`WalletsControls should render with networks selection 1`] = `
               class="group"
             >
               <div
-                class="ControlButton__ControlButtonStyled-sc-1xp1l1a-0 dLCfwp"
+                class="ControlButton__ControlButtonStyled-sc-1xp1l1a-0 kMCise"
               >
                 <div
                   class="flex items-center justify-center w-5 h-5"
@@ -277,7 +277,7 @@ exports[`WalletsControls should render with networks selection 1`] = `
     >
       <button
         class="OriginalButton__StyledButton-sc-1y2wptt-0 izJbbP"
-        data-testid="WalletControls__create-wallet"
+        data-testid="WalletControls__import-ledger"
         type="button"
       >
         <div
@@ -287,16 +287,16 @@ exports[`WalletsControls should render with networks selection 1`] = `
             class="flex items-center space-x-2"
           >
             <div
-              class="sc-bdfBwQ bfBhNR"
-              height="14"
-              width="14"
+              class="sc-bdfBwQ fPrsah"
+              height="1em"
+              width="1em"
             >
               <svg>
-                plus.svg
+                ledger.svg
               </svg>
             </div>
             <span>
-              Create
+              Import Ledger
             </span>
           </div>
         </div>
@@ -328,8 +328,8 @@ exports[`WalletsControls should render with networks selection 1`] = `
         </div>
       </button>
       <button
-        class="OriginalButton__StyledButton-sc-1y2wptt-0 izJbbP"
-        data-testid="WalletControls__import-ledger"
+        class="OriginalButton__StyledButton-sc-1y2wptt-0 dYkFxS"
+        data-testid="WalletControls__create-wallet"
         type="button"
       >
         <div
@@ -339,16 +339,16 @@ exports[`WalletsControls should render with networks selection 1`] = `
             class="flex items-center space-x-2"
           >
             <div
-              class="sc-bdfBwQ fPrsah"
-              height="1em"
-              width="1em"
+              class="sc-bdfBwQ bfBhNR"
+              height="14"
+              width="14"
             >
               <svg>
-                ledger.svg
+                plus.svg
               </svg>
             </div>
             <span>
-              Import Ledger
+              Create
             </span>
           </div>
         </div>

@@ -22,7 +22,7 @@ const ControlButtonStyled = styled.div<{ isActive?: boolean; noBorder?: boolean;
 			styles.push(
 				css`
 					&:after {
-						${tw`transition-opacity duration-200 absolute inset-x-0 bg-theme-danger-100 dark:bg-theme-danger-700 rounded opacity-0 group-hover:opacity-100`}
+						${tw`transition-opacity duration-200 absolute inset-x-0 bg-theme-primary-400 rounded opacity-0 group-hover:opacity-100`}
 						content: "";
 						height: 3px;
 						bottom: -3px;
@@ -33,15 +33,16 @@ const ControlButtonStyled = styled.div<{ isActive?: boolean; noBorder?: boolean;
 
 		if (isActive) {
 			styles.push(
-				tw`text-theme-danger-400`,
+				tw`text-theme-primary-600`,
 				css`
 					&:after {
-						opacity: 100;
+						opacity: 1;
+						${tw`bg-theme-primary-600`}
 					}
 				`,
 			);
 		} else {
-			styles.push(tw`text-theme-primary-300 dark:text-theme-secondary-600 hover:text-theme-danger-400`);
+			styles.push(tw`text-theme-primary-300 dark:text-theme-secondary-600 hover:text-theme-primary-400`);
 		}
 
 		return styles;
@@ -67,7 +68,7 @@ export const ControlButton = ({ isChanged, children, ...props }: ControlButtonPr
 						props.noBorder ? "-mr-1" : "mr-2",
 					)}
 				>
-					<div className="w-2 h-2 rounded-full bg-theme-danger-500" />
+					<div className="w-2 h-2 rounded-full bg-theme-primary-500" />
 				</div>
 			)}
 			{children}

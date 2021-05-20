@@ -1,11 +1,18 @@
 export const password = (t: any) => ({
-	password: () => ({
+	password: (currentPassword?: string) => ({
 		minLength: {
 			value: 6,
 			message: t("COMMON.VALIDATION.MIN_LENGTH", {
 				field: t("SETTINGS.GENERAL.PERSONAL.PASSWORD"),
 				minLength: 6,
 			}),
+		},
+		validate: (password: string) => {
+			if (!!currentPassword && currentPassword === password) {
+				return t("COMMON.VALIDATION.PASSWORD_SAME_AS_OLD");
+			}
+
+			return true;
 		},
 	}),
 	confirmPassword: (password: string) => ({

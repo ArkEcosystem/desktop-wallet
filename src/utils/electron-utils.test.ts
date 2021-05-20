@@ -112,12 +112,10 @@ describe("Electron utils", () => {
 
 		it("should return the basename", async () => {
 			showSaveDialogMock = jest.spyOn(electron.remote.dialog, "showSaveDialog").mockImplementation(() => ({
-				filePath: "directory/filename.txt",
+				filePath: "filename.txt",
 			}));
 
-			await expect(saveFile("raw", "directory/filename", { returnBasename: true })).resolves.toEqual(
-				"filename.txt",
-			);
+			await expect(saveFile("raw", "filename", { returnBasename: true })).resolves.toEqual("filename.txt");
 		});
 
 		describe("with filter parameter", () => {
@@ -152,10 +150,10 @@ describe("Electron utils", () => {
 		describe("when restricting the file path", () => {
 			it("should not throw an error if the given filepath is valid", async () => {
 				showSaveDialogMock = jest.spyOn(electron.remote.dialog, "showSaveDialog").mockImplementation(() => ({
-					filePath: "/home/foo/bar",
+					filePath: "./bar.txt",
 				}));
 
-				await expect(saveFile(null, null, { restrictToPath: "/home/foo" })).resolves.not.toThrow();
+				await expect(saveFile(null, null, { restrictToPath: "./" })).resolves.not.toThrow();
 			});
 
 			it("should throw an error if the given filepath is invalid", async () => {
@@ -224,10 +222,10 @@ describe("Electron utils", () => {
 		describe("when restricting the file path", () => {
 			it("should not throw an error if the given filepath is valid", async () => {
 				showOpenDialogMock = jest.spyOn(electron.remote.dialog, "showOpenDialog").mockImplementation(() => ({
-					filePaths: ["/home/foo/bar"],
+					filePaths: ["./bar.txt"],
 				}));
 
-				await expect(openFile(null, { restrictToPath: "/home/foo" })).resolves.not.toThrow();
+				await expect(openFile(null, { restrictToPath: "./" })).resolves.not.toThrow();
 			});
 
 			it("should throw an error if the given filepath is invalid", async () => {
