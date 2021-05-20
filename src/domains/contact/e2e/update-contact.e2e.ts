@@ -1,14 +1,12 @@
 import { Selector } from "testcafe";
 
 import { buildTranslations } from "../../../app/i18n/helpers";
-import { createFixture, mockRequest } from "../../../utils/e2e-utils";
+import { createFixture } from "../../../utils/e2e-utils";
 import { goToContacts } from "./common";
 
 const translations = buildTranslations();
 
-createFixture("Update contact", [
-	mockRequest("https://wallets.ark.io/api/node/configuration/crypto", "coins/ark/mainnet/cryptoConfiguration"),
-]).beforeEach(async (t) => await goToContacts(t));
+createFixture("Update contact").beforeEach(async (t) => await goToContacts(t));
 
 test("should open and close contact update modal", async (t) => {
 	await t.click(
@@ -113,7 +111,9 @@ test("should error for invalid address", async (t) => {
 		)
 		.ok();
 
-	await t.typeText(Selector('[data-testid="SelectDropdownInput__input"]'), "ARK M");
+	await t.click(Selector('[data-testid="contact-form__remove-address-btn"]'));
+
+	await t.typeText(Selector('[data-testid="SelectDropdownInput__input"]'), "ARK D");
 	await t.pressKey("tab");
 
 	const addressInput = Selector('[data-testid="contact-form__address-input"]');
