@@ -22,9 +22,11 @@ describe("useTutorial", () => {
 	});
 
 	it("should show tutorial for the new profile", () => {
+		const mockHasCompletedTutorial = jest.spyOn(profile, "hasCompletedIntroductoryTutorial").mockReturnValue(false);
 		const { result } = renderHook(() => useTutorial(profile), { wrapper });
 
 		expect(result.current.showTutorial).toBeTruthy();
+		mockHasCompletedTutorial.mockRestore();
 	});
 
 	it("should able to skip tutorial", () => {
