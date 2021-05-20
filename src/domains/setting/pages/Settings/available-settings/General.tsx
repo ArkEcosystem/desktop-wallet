@@ -11,6 +11,7 @@ import { Toggle } from "app/components/Toggle";
 import { useEnvironmentContext } from "app/contexts";
 import { useActiveProfile, useReloadPath } from "app/hooks";
 import { useValidation } from "app/hooks";
+import { useTheme } from "app/hooks/use-theme";
 import { PlatformSdkChoices } from "data";
 import { ResetProfile } from "domains/profile/components/ResetProfile";
 import { AdvancedMode } from "domains/setting/components/AdvancedMode";
@@ -25,6 +26,7 @@ import { SettingsProps } from "../Settings.models";
 export const General = ({ formConfig, onSuccess }: SettingsProps) => {
 	const reloadPath = useReloadPath();
 	const { persist } = useEnvironmentContext();
+	const { setProfileTheme } = useTheme();
 
 	const activeProfile = useActiveProfile();
 
@@ -256,6 +258,7 @@ export const General = ({ formConfig, onSuccess }: SettingsProps) => {
 
 		setScreenshotProtection(isScreenshotProtection);
 
+		setProfileTheme(activeProfile);
 		await persist();
 
 		onSuccess();
