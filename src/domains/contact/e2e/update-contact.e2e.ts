@@ -111,7 +111,7 @@ test("should error for invalid address", async (t) => {
 		)
 		.ok();
 
-	await t.typeText(Selector('[data-testid="SelectDropdownInput__input"]'), "ARK D");
+	await t.typeText(Selector('[data-testid="SelectDropdownInput__input"]'), "ARK M");
 	await t.pressKey("tab");
 
 	const addressInput = Selector('[data-testid="contact-form__address-input"]');
