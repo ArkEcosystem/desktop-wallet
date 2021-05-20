@@ -45,7 +45,7 @@ export const useTextTruncate = ({ text = "", minChars = 10, extraSpace = 5, pare
 		}
 
 		setMaxChars(textLength);
-	}, [textLength, parentRef, minChars]);
+	}, [textLength, parentRef, extraSpace, minChars]);
 
 	useLayoutEffect(() => {
 		calculateOffsets();
