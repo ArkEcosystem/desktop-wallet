@@ -124,14 +124,6 @@ export const ContactForm = ({ profile, contact, onChange, onCancel, onDelete, on
 	}, [addresses, networkOptions]);
 
 	const handleAddAddress = async () => {
-		const addressExists = addresses.some((addr) => addr.address === address);
-		if (addressExists) {
-			return setError("address", {
-				type: "manual",
-				message: t("CONTACTS.VALIDATION.ADDRESS_EXISTS", { address }),
-			});
-		}
-
 		const instance: Coins.Coin = profile.coins().set(network.coin(), network.id());
 		await instance.__construct();
 		const isValidAddress: boolean = await instance.identity().address().validate(address);
