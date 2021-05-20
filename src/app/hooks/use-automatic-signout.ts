@@ -45,10 +45,12 @@ export const useAutomaticSignout = () => {
 
 		setActivityState(
 			() => {
-				if (isIdle(10)) {
-					onTimeout?.();
-					clearActivityState();
+				if (!isIdle(idleThreshold)) {
+					return;
 				}
+
+				onTimeout?.();
+				clearActivityState();
 			},
 			15 * 1000,
 			idleThreshold,
