@@ -36,7 +36,7 @@ const ControlButtonStyled = styled.div<{ isActive?: boolean; noBorder?: boolean;
 				tw`text-theme-primary-600`,
 				css`
 					&:after {
-						opacity: 100;
+						opacity: 1;
 						${tw`bg-theme-primary-600`}
 					}
 				`,

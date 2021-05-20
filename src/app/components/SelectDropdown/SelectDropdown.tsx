@@ -122,10 +122,6 @@ const SelectDropdown = ({
 				return;
 			}
 
-			if (!inputValue) {
-				openMenu();
-			}
-
 			// Clear selection when user is changing input,
 			// and input does not match previously selected item
 			if (selectedItem && selectedItem.label !== inputValue) {
