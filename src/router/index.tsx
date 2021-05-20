@@ -3,7 +3,6 @@ import { DashboardRoutes } from "domains/dashboard/routing";
 import { ExchangeRoutes } from "domains/exchange/routing";
 import { NewsRoutes } from "domains/news/routing";
 import { PluginRoutes } from "domains/plugin/routing";
-import { ProfileMiddleware } from "domains/profile/middleware";
 import { ProfileRoutes } from "domains/profile/routing";
 import { SettingRoutes } from "domains/setting/routing";
 import { TransactionRoutes } from "domains/transaction/routing";
@@ -28,4 +27,4 @@ export const routes: Array<Object> = [
 	...ProfileRoutes,
 ];
 
-export const middlewares: Middleware[] = [new ProfileMiddleware(), new WalletMiddleware()];
+export const middlewares: Middleware[] = [new WalletMiddleware()];
