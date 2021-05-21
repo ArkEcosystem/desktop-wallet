@@ -26,8 +26,8 @@ export const ClipboardButton = ({ data, variant, options, children, ...props }: 
 				{hasCopied && (
 					<motion.div
 						initial={{ opacity: 0 }}
-						animate={{ opacity: 1, transition: { duration: 0.4 } }}
-						exit={{ opacity: 0, transition: { duration: 0.4 } }}
+						animate={{ opacity: 1, transition: { duration: 0.3 } }}
+						exit={{ opacity: 0, transition: { duration: 0.3 } }}
 						className="absolute inset-0 flex justify-center items-center bg-theme-primary-100 dark:bg-theme-secondary-800 rounded"
 					>
 						<Icon
