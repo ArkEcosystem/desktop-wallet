@@ -50,16 +50,8 @@ jest.mock("electron", () => {
 
 jest.mock("fs", () => {
 	const fs = jest.requireActual(`fs`);
-
 	return {
 		...fs,
-		readFileSync: (filepath) => {
-			try {
-				return fs.readFileSync(filepath);
-			} catch {
-				return "";
-			}
-		},
 		writeFileSync: jest.fn(),
 	};
 });
