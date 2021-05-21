@@ -49,13 +49,13 @@ jest.mock("electron", () => {
 });
 
 jest.mock("fs", () => {
-	const { readFileSync } = jest.requireActual(`fs`);
+	const fs = jest.requireActual(`fs`);
 
 	return {
 		...fs,
 		readFileSync: (filepath) => {
 			try {
-				return readFileSync(filepath);
+				return fs.readFileSync(filepath);
 			} catch {
 				return "";
 			}
