@@ -80,6 +80,20 @@ describe("PluginCard", () => {
 		expect(container).toHaveTextContent("grant.svg");
 		expect(asFragment()).toMatchSnapshot();
 	});
+
+	it("should render alert icon", () => {
+		const plugin = {
+			...basePlugin,
+			isInstalled: true,
+			hasUpdateAvailable: true,
+			isCompatible: false,
+		};
+
+		const { asFragment, container } = render(<PluginCard plugin={plugin} />);
+
+		expect(container).toHaveTextContent("alert-warning.svg");
+		expect(asFragment()).toMatchSnapshot();
+	});
 });
 
 describe("BlankPluginCard", () => {
