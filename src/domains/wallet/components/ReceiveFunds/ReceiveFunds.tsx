@@ -72,7 +72,7 @@ export const ReceiveFunds = ({ address, icon, name, network, isOpen, onClose }: 
 					<div className="flex items-center space-x-2">
 						<Address address={address} maxChars={25} />
 						<span className="flex text-theme-primary-300 dark:text-theme-secondary-600">
-							<Clipboard data={address}>
+							<Clipboard variant="icon" data={address}>
 								<Icon name="Copy" />
 							</Clipboard>
 						</span>
@@ -132,7 +132,7 @@ export const ReceiveFunds = ({ address, icon, name, network, isOpen, onClose }: 
 						<div className="flex items-center justify-between w-full pl-6 pr-5 space-x-4 overflow-hidden bg-theme-secondary-100 dark:bg-theme-background">
 							<span className="truncate">{uri}</span>
 							<span className="flex text-theme-primary-300 dark:text-theme-secondary-600 hover:text-theme-primary-700">
-								<Clipboard data={uri}>
+								<Clipboard variant="icon" data={uri || ""}>
 									<Icon name="Copy" width={12} height={15} className="p-1" />
 								</Clipboard>
 							</span>

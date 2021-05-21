@@ -282,6 +282,7 @@ export const WalletHeader = ({
 
 							<div className="flex items-end mb-1 space-x-3 text-theme-secondary-text">
 								<Clipboard
+									variant="icon"
 									data={wallet.address()}
 									tooltip={t("WALLETS.PAGE_WALLET_DETAILS.COPY_ADDRESS")}
 								>
@@ -294,7 +295,8 @@ export const WalletHeader = ({
 								</Clipboard>
 
 								<Clipboard
-									data={wallet.publicKey()}
+									variant="icon"
+									data={wallet.publicKey() || ""}
 									tooltip={t("WALLETS.PAGE_WALLET_DETAILS.COPY_PUBLIC_KEY")}
 								>
 									<Icon
