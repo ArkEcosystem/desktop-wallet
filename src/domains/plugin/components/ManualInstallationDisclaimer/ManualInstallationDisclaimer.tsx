@@ -6,23 +6,28 @@ import { Modal } from "app/components/Modal";
 import React, { useState } from "react";
 import { useTranslation } from "react-i18next";
 
-type AdvancedModeProps = {
+type ManualInstallationDisclaimerProps = {
 	isOpen: boolean;
 	onClose?: any;
 	onDecline?: any;
 	onAccept: (rememberChoice: boolean) => void;
 };
 
-export const AdvancedMode = ({ isOpen, onClose, onDecline, onAccept }: AdvancedModeProps) => {
+export const ManualInstallationDisclaimer = ({
+	isOpen,
+	onClose,
+	onDecline,
+	onAccept,
+}: ManualInstallationDisclaimerProps) => {
 	const { t } = useTranslation();
 
 	const [rememberChoice, setRememberChoice] = useState(false);
 
 	return (
 		<Modal
-			title={t("SETTINGS.MODAL_ADVANCED_MODE.TITLE")}
+			title={t("PLUGINS.MANUAL_INSTALLATION_DISCLAIMER.TITLE")}
 			image={<Image name="GenericWarning" className="w-3/5 m-auto my-8" />}
-			description={t("SETTINGS.MODAL_ADVANCED_MODE.DISCLAIMER")}
+			description={t("PLUGINS.MANUAL_INSTALLATION_DISCLAIMER.DISCLAIMER")}
 			size="xl"
 			isOpen={isOpen}
 			onClose={onClose}
@@ -31,7 +36,7 @@ export const AdvancedMode = ({ isOpen, onClose, onDecline, onAccept }: AdvancedM
 				<label className="flex items-center space-x-3 w-max cursor-pointer">
 					<Checkbox
 						name="rememberChoice"
-						data-testid="AdvancedMode__rememberChoice-toggle"
+						data-testid="ManualInstallationDisclaimer__rememberChoice-toggle"
 						onChange={() => setRememberChoice(!rememberChoice)}
 					/>
 					<span className="text-sm text-theme-secondary-500 dark:text-theme-secondary-700">
@@ -41,14 +46,18 @@ export const AdvancedMode = ({ isOpen, onClose, onDecline, onAccept }: AdvancedM
 			</FormField>
 
 			<div className="flex justify-end mt-8 space-x-3">
-				<Button variant="secondary" onClick={onDecline} data-testid="AdvancedMode__decline-button">
+				<Button
+					variant="secondary"
+					onClick={onDecline}
+					data-testid="ManualInstallationDisclaimer__decline-button"
+				>
 					{t("COMMON.I_DECLINE")}
 				</Button>
 
 				<Button
 					variant="primary"
 					onClick={() => onAccept(rememberChoice)}
-					data-testid="AdvancedMode__accept-button"
+					data-testid="ManualInstallationDisclaimer__accept-button"
 				>
 					{t("COMMON.I_ACCEPT")}
 				</Button>
@@ -57,6 +66,6 @@ export const AdvancedMode = ({ isOpen, onClose, onDecline, onAccept }: AdvancedM
 	);
 };
 
-AdvancedMode.defaultProps = {
+ManualInstallationDisclaimer.defaultProps = {
 	isOpen: false,
 };

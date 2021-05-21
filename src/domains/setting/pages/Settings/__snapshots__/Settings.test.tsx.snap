@@ -1753,55 +1753,6 @@ exports[`Settings should not update the uploaded avatar when removing focus from
                         </div>
                       </li>
                       <li
-                        class="flex flex-col w-full py-6"
-                        data-testid="list-divided-item__wrapper"
-                      >
-                        <div
-                          class="flex justify-between items-center"
-                          data-testid="list-divided-item__inner-wrapper"
-                        >
-                          <div
-                            class="flex flex-col space-y-2 w-full"
-                          >
-                            <div
-                              class="flex justify-between items-center space-x-5"
-                            >
-                              <span
-                                class="text-lg font-semibold text-theme-secondary-700 dark:text-theme-secondary-200"
-                                data-testid="list-divided-item__label"
-                              >
-                                Advanced Mode
-                              </span>
-                              <span>
-                                <label
-                                  class="flex"
-                                >
-                                  <input
-                                    class="Toggle__Input-qyyifx-0 WGuGL"
-                                    data-testid="General-settings__toggle--isAdvancedMode"
-                                    name="isAdvancedMode"
-                                    type="checkbox"
-                                  />
-                                  <div
-                                    class="Toggle__Handle-qyyifx-1 geejDn"
-                                  >
-                                    <span
-                                      class="Toggle__HandleInner-qyyifx-2 ZjBSs"
-                                    />
-                                  </div>
-                                </label>
-                              </span>
-                            </div>
-                            <span
-                              class="text-sm font-medium text-theme-secondary-500 dark:text-theme-secondary-700"
-                              data-testid="list-divided-item__label--description"
-                            >
-                              Allows installations from direct URLs. Enable at your own risk.
-                            </span>
-                          </div>
-                        </div>
-                      </li>
-                      <li
                         class="flex flex-col w-full pt-8"
                         data-testid="list-divided-item__wrapper"
                       >
@@ -3307,55 +3258,6 @@ exports[`Settings should render 1`] = `
                               data-testid="list-divided-item__label--description"
                             >
                               When enabled, wallet application is hidden from screen-capturing software.
-                            </span>
-                          </div>
-                        </div>
-                      </li>
-                      <li
-                        class="flex flex-col w-full py-6"
-                        data-testid="list-divided-item__wrapper"
-                      >
-                        <div
-                          class="flex justify-between items-center"
-                          data-testid="list-divided-item__inner-wrapper"
-                        >
-                          <div
-                            class="flex flex-col space-y-2 w-full"
-                          >
-                            <div
-                              class="flex justify-between items-center space-x-5"
-                            >
-                              <span
-                                class="text-lg font-semibold text-theme-secondary-700 dark:text-theme-secondary-200"
-                                data-testid="list-divided-item__label"
-                              >
-                                Advanced Mode
-                              </span>
-                              <span>
-                                <label
-                                  class="flex"
-                                >
-                                  <input
-                                    class="Toggle__Input-qyyifx-0 WGuGL"
-                                    data-testid="General-settings__toggle--isAdvancedMode"
-                                    name="isAdvancedMode"
-                                    type="checkbox"
-                                  />
-                                  <div
-                                    class="Toggle__Handle-qyyifx-1 geejDn"
-                                  >
-                                    <span
-                                      class="Toggle__HandleInner-qyyifx-2 ZjBSs"
-                                    />
-                                  </div>
-                                </label>
-                              </span>
-                            </div>
-                            <span
-                              class="text-sm font-medium text-theme-secondary-500 dark:text-theme-secondary-700"
-                              data-testid="list-divided-item__label--description"
-                            >
-                              Allows installations from direct URLs. Enable at your own risk.
                             </span>
                           </div>
                         </div>
@@ -7862,55 +7764,6 @@ exports[`Settings should update profile 1`] = `
                         </div>
                       </li>
                       <li
-                        class="flex flex-col w-full py-6"
-                        data-testid="list-divided-item__wrapper"
-                      >
-                        <div
-                          class="flex justify-between items-center"
-                          data-testid="list-divided-item__inner-wrapper"
-                        >
-                          <div
-                            class="flex flex-col space-y-2 w-full"
-                          >
-                            <div
-                              class="flex justify-between items-center space-x-5"
-                            >
-                              <span
-                                class="text-lg font-semibold text-theme-secondary-700 dark:text-theme-secondary-200"
-                                data-testid="list-divided-item__label"
-                              >
-                                Advanced Mode
-                              </span>
-                              <span>
-                                <label
-                                  class="flex"
-                                >
-                                  <input
-                                    class="Toggle__Input-qyyifx-0 WGuGL"
-                                    data-testid="General-settings__toggle--isAdvancedMode"
-                                    name="isAdvancedMode"
-                                    type="checkbox"
-                                  />
-                                  <div
-                                    class="Toggle__Handle-qyyifx-1 geejDn"
-                                  >
-                                    <span
-                                      class="Toggle__HandleInner-qyyifx-2 ZjBSs"
-                                    />
-                                  </div>
-                                </label>
-                              </span>
-                            </div>
-                            <span
-                              class="text-sm font-medium text-theme-secondary-500 dark:text-theme-secondary-700"
-                              data-testid="list-divided-item__label--description"
-                            >
-                              Allows installations from direct URLs. Enable at your own risk.
-                            </span>
-                          </div>
-                        </div>
-                      </li>
-                      <li
                         class="flex flex-col w-full pt-8"
                         data-testid="list-divided-item__wrapper"
                       >
@@ -9416,55 +9269,6 @@ exports[`Settings should update the avatar when removing focus from name input 1
                               data-testid="list-divided-item__label--description"
                             >
                               When enabled, wallet application is hidden from screen-capturing software.
-                            </span>
-                          </div>
-                        </div>
-                      </li>
-                      <li
-                        class="flex flex-col w-full py-6"
-                        data-testid="list-divided-item__wrapper"
-                      >
-                        <div
-                          class="flex justify-between items-center"
-                          data-testid="list-divided-item__inner-wrapper"
-                        >
-                          <div
-                            class="flex flex-col space-y-2 w-full"
-                          >
-                            <div
-                              class="flex justify-between items-center space-x-5"
-                            >
-                              <span
-                                class="text-lg font-semibold text-theme-secondary-700 dark:text-theme-secondary-200"
-                                data-testid="list-divided-item__label"
-                              >
-                                Advanced Mode
-                              </span>
-                              <span>
-                                <label
-                                  class="flex"
-                                >
-                                  <input
-                                    class="Toggle__Input-qyyifx-0 WGuGL"
-                                    data-testid="General-settings__toggle--isAdvancedMode"
-                                    name="isAdvancedMode"
-                                    type="checkbox"
-                                  />
-                                  <div
-                                    class="Toggle__Handle-qyyifx-1 geejDn"
-                                  >
-                                    <span
-                                      class="Toggle__HandleInner-qyyifx-2 ZjBSs"
-                                    />
-                                  </div>
-                                </label>
-                              </span>
-                            </div>
-                            <span
-                              class="text-sm font-medium text-theme-secondary-500 dark:text-theme-secondary-700"
-                              data-testid="list-divided-item__label--description"
-                            >
-                              Allows installations from direct URLs. Enable at your own risk.
                             </span>
                           </div>
                         </div>
@@ -10987,55 +10791,6 @@ exports[`Settings should update the avatar when removing focus from name input 2
                               data-testid="list-divided-item__label--description"
                             >
                               When enabled, wallet application is hidden from screen-capturing software.
-                            </span>
-                          </div>
-                        </div>
-                      </li>
-                      <li
-                        class="flex flex-col w-full py-6"
-                        data-testid="list-divided-item__wrapper"
-                      >
-                        <div
-                          class="flex justify-between items-center"
-                          data-testid="list-divided-item__inner-wrapper"
-                        >
-                          <div
-                            class="flex flex-col space-y-2 w-full"
-                          >
-                            <div
-                              class="flex justify-between items-center space-x-5"
-                            >
-                              <span
-                                class="text-lg font-semibold text-theme-secondary-700 dark:text-theme-secondary-200"
-                                data-testid="list-divided-item__label"
-                              >
-                                Advanced Mode
-                              </span>
-                              <span>
-                                <label
-                                  class="flex"
-                                >
-                                  <input
-                                    class="Toggle__Input-qyyifx-0 WGuGL"
-                                    data-testid="General-settings__toggle--isAdvancedMode"
-                                    name="isAdvancedMode"
-                                    type="checkbox"
-                                  />
-                                  <div
-                                    class="Toggle__Handle-qyyifx-1 geejDn"
-                                  >
-                                    <span
-                                      class="Toggle__HandleInner-qyyifx-2 ZjBSs"
-                                    />
-                                  </div>
-                                </label>
-                              </span>
-                            </div>
-                            <span
-                              class="text-sm font-medium text-theme-secondary-500 dark:text-theme-secondary-700"
-                              data-testid="list-divided-item__label--description"
-                            >
-                              Allows installations from direct URLs. Enable at your own risk.
                             </span>
                           </div>
                         </div>

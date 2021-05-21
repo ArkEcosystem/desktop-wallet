@@ -11,6 +11,7 @@ import { useEnvironmentContext } from "app/contexts";
 import { useActiveProfile } from "app/hooks";
 import { toasts } from "app/services";
 import { InstallPlugin } from "domains/plugin/components/InstallPlugin";
+import { ManualInstallationDisclaimer } from "domains/plugin/components/ManualInstallationDisclaimer";
 import { PluginGrid } from "domains/plugin/components/PluginGrid";
 import { PluginList } from "domains/plugin/components/PluginList";
 import { PluginManagerNavigationBar } from "domains/plugin/components/PluginManagerNavigationBar";
@@ -186,6 +187,8 @@ export const PluginManager = () => {
 		return currentViewValue;
 	}, [currentViewValue, hasFilters]);
 
+	const [isOpenDisclaimer, setIsOpenDisclaimer] = useState(false);
+
 	const [updatesConfirmationPlugins, setUpdatesConfirmationPlugins] = useState<any[] | undefined>(undefined);
 	const [isManualInstallModalOpen, setIsManualInstallModalOpen] = useState(false);
 	const [uninstallSelectedPlugin, setUninstallSelectedPlugin] = useState<PluginController | undefined>(undefined);
@@ -194,7 +197,6 @@ export const PluginManager = () => {
 	const plugins = allPlugins.map(mapConfigToPluginData.bind(null, activeProfile));
 	const searchResultsData = searchResults.map(mapConfigToPluginData.bind(null, activeProfile));
 
-	const isAdvancedMode = activeProfile.settings().get<boolean>(Contracts.ProfileSetting.AdvancedMode, false)!;
 	const hasUpdateAvailableCount = plugins.filter((item) => item.hasUpdateAvailable).length;
 
 	const pluginsByCategory = useMemo(() => {
@@ -273,8 +275,32 @@ export const PluginManager = () => {
 		updatePlugin(pluginData.name);
 	};
 
-	const openInstallModalPlugin = (pluginData: any) => {
+	const openInstallPluginModal = (pluginData: any) => {
 		setInstallSelectedPlugin(pluginData);
+	};
+
+	const openManualInstallPluginModal = () => {
+		const shouldShowDisclaimer = !activeProfile
+			.settings()
+			.get(Contracts.ProfileSetting.DoNotShowAdvancedModeDisclaimer, false);
+
+		if (shouldShowDisclaimer) {
+			setIsOpenDisclaimer(true);
+		} else {
+			setIsManualInstallModalOpen(true);
+		}
+	};
+
+	const handleDisclaimer = (isAccepted: boolean, rememberChoice?: boolean) => {
+		setIsOpenDisclaimer(false);
+
+		if (isAccepted) {
+			setIsManualInstallModalOpen(true);
+
+			if (rememberChoice) {
+				activeProfile.settings().set(Contracts.ProfileSetting.DoNotShowAdvancedModeDisclaimer, true);
+			}
+		}
 	};
 
 	const onDeletePlugin = () => {
@@ -332,20 +358,17 @@ export const PluginManager = () => {
 									resetFields={filters.query === ""}
 								/>
 
-								{isAdvancedMode && (
-									<>
-										<div className="pl-8 my-auto ml-5 h-10 border-l border-theme-secondary-300 dark:border-theme-secondary-800" />
-										<Button
-											data-testid="PluginManager_header--install"
-											onClick={() => setIsManualInstallModalOpen(true)}
-										>
-											<div className="flex items-center space-x-2 whitespace-nowrap">
-												<Icon name="File" width={15} height={15} />
-												<span>{t("PLUGINS.MODAL_MANUAL_INSTALL_PLUGIN.TITLE")}</span>
-											</div>
-										</Button>
-									</>
-								)}
+								<div className="pl-8 my-auto ml-5 h-10 border-l border-theme-secondary-300 dark:border-theme-secondary-800" />
+
+								<Button
+									data-testid="PluginManager_header--install"
+									onClick={openManualInstallPluginModal}
+								>
+									<div className="flex items-center space-x-2 whitespace-nowrap">
+										<Icon name="File" width={15} height={15} />
+										<span>{t("PLUGINS.MODAL_MANUAL_INSTALL_PLUGIN.TITLE")}</span>
+									</div>
+								</Button>
 							</div>
 						}
 					/>
@@ -368,7 +391,7 @@ export const PluginManager = () => {
 						viewType={viewType}
 						pluginsByCategory={pluginsByCategory}
 						onCurrentViewChange={setCurrentView}
-						onInstall={openInstallModalPlugin}
+						onInstall={openInstallPluginModal}
 						onEnable={handleEnablePlugin}
 						onDisable={handleDisablePlugin}
 						onDelete={handleDeletePlugin}
@@ -410,7 +433,7 @@ export const PluginManager = () => {
 										onDelete={handleDeletePlugin}
 										onDisable={handleDisablePlugin}
 										onEnable={handleEnablePlugin}
-										onInstall={openInstallModalPlugin}
+										onInstall={openInstallPluginModal}
 										onLaunch={handleLaunchPlugin}
 										onSelect={handleSelectPlugin}
 										onUpdate={handleUpdate}
@@ -436,7 +459,7 @@ export const PluginManager = () => {
 										onDelete={handleDeletePlugin}
 										onDisable={handleDisablePlugin}
 										onEnable={handleEnablePlugin}
-										onInstall={openInstallModalPlugin}
+										onInstall={openInstallPluginModal}
 										onLaunch={handleLaunchPlugin}
 									/>
 								)}
@@ -445,6 +468,13 @@ export const PluginManager = () => {
 					)}
 				</Section>
 			</Page>
+
+			<ManualInstallationDisclaimer
+				isOpen={isOpenDisclaimer}
+				onClose={() => handleDisclaimer(false)}
+				onDecline={() => handleDisclaimer(false)}
+				onAccept={(rememberChoice) => handleDisclaimer(true, rememberChoice)}
+			/>
 
 			{installSelectedPlugin && (
 				<InstallPlugin

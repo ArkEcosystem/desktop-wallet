@@ -14,7 +14,6 @@ import { useValidation } from "app/hooks";
 import { useTheme } from "app/hooks/use-theme";
 import { PlatformSdkChoices } from "data";
 import { ResetProfile } from "domains/profile/components/ResetProfile";
-import { AdvancedMode } from "domains/setting/components/AdvancedMode";
 import { DevelopmentNetwork } from "domains/setting/components/DevelopmentNetwork";
 import React, { useEffect, useMemo, useState } from "react";
 import { useTranslation } from "react-i18next";
@@ -46,13 +45,9 @@ export const General = ({ formConfig, onSuccess }: SettingsProps) => {
 		activeProfile.settings().get(Contracts.ProfileSetting.Avatar) || Helpers.Avatar.make(formattedName || ""),
 	);
 
-	const [isOpenAdvancedModeModal, setIsOpenAdvancedModeModal] = useState(false);
 	const [isOpenDevelopmentNetworkModal, setIsOpenDevelopmentNetworkModal] = useState(false);
 	const [isResetProfileOpen, setIsResetProfileOpen] = useState(false);
 
-	const [isAdvancedMode, setIsAdvancedMode] = useState(
-		activeProfile.settings().get(Contracts.ProfileSetting.AdvancedMode) || false,
-	);
 	const [isDevelopmentNetwork, setIsDevelopmentNetwork] = useState(
 		activeProfile.settings().get(Contracts.ProfileSetting.UseTestNetworks) || false,
 	);
@@ -64,29 +59,6 @@ export const General = ({ formConfig, onSuccess }: SettingsProps) => {
 			setAvatarImage("");
 		}
 	}, [formattedName, isSvg, setAvatarImage]);
-
-	const handleOpenAdvancedModeModal = (event: React.ChangeEvent<HTMLInputElement>) => {
-		const { checked } = event.target;
-
-		const shouldShowDisclaimer = !activeProfile
-			.settings()
-			.get(Contracts.ProfileSetting.DoNotShowAdvancedModeDisclaimer, false);
-
-		if (checked && shouldShowDisclaimer) {
-			setIsOpenAdvancedModeModal(true);
-		} else {
-			setIsAdvancedMode(checked);
-		}
-	};
-
-	const handleAdvancedMode = (isAccepted: boolean, rememberChoice?: boolean) => {
-		setIsOpenAdvancedModeModal(false);
-		setIsAdvancedMode(isAccepted);
-
-		if (isAccepted && rememberChoice) {
-			activeProfile.settings().set(Contracts.ProfileSetting.DoNotShowAdvancedModeDisclaimer, true);
-		}
-	};
 
 	const handleOpenDevelopmentNetworkModal = (event: React.ChangeEvent<HTMLInputElement>) => {
 		const { checked } = event.target;
@@ -106,7 +78,6 @@ export const General = ({ formConfig, onSuccess }: SettingsProps) => {
 	const handleOnReset = () => {
 		setIsResetProfileOpen(false);
 		setIsDevelopmentNetwork(activeProfile.settings().get<boolean>(Contracts.ProfileSetting.UseTestNetworks)!);
-		setIsAdvancedMode(activeProfile.settings().get<boolean>(Contracts.ProfileSetting.AdvancedMode)!);
 		context.reset();
 		reloadPath();
 	};
@@ -124,20 +95,6 @@ export const General = ({ formConfig, onSuccess }: SettingsProps) => {
 				/>
 			),
 			wrapperClass: "pb-6",
-		},
-		{
-			label: t("SETTINGS.GENERAL.SECURITY.ADVANCED_MODE.TITLE"),
-			labelDescription: t("SETTINGS.GENERAL.SECURITY.ADVANCED_MODE.DESCRIPTION"),
-			labelAddon: (
-				<Toggle
-					ref={register()}
-					name="isAdvancedMode"
-					checked={isAdvancedMode}
-					onChange={handleOpenAdvancedModeModal}
-					data-testid="General-settings__toggle--isAdvancedMode"
-				/>
-			),
-			wrapperClass: "py-6",
 		},
 		{
 			content: (
@@ -230,7 +187,6 @@ export const General = ({ formConfig, onSuccess }: SettingsProps) => {
 		timeFormat,
 		automaticSignOutPeriod,
 		isScreenshotProtection,
-		isAdvancedMode,
 		isDarkMode,
 		useTestNetworks,
 		errorReporting,
@@ -243,7 +199,6 @@ export const General = ({ formConfig, onSuccess }: SettingsProps) => {
 		activeProfile.settings().set(Contracts.ProfileSetting.ExchangeCurrency, currency);
 		activeProfile.settings().set(Contracts.ProfileSetting.TimeFormat, timeFormat);
 		activeProfile.settings().set(Contracts.ProfileSetting.ScreenshotProtection, isScreenshotProtection);
-		activeProfile.settings().set(Contracts.ProfileSetting.AdvancedMode, isAdvancedMode);
 		activeProfile.settings().set(Contracts.ProfileSetting.AutomaticSignOutPeriod, +automaticSignOutPeriod);
 		activeProfile.settings().set(Contracts.ProfileSetting.Theme, isDarkMode ? "dark" : "light");
 		activeProfile.settings().set(Contracts.ProfileSetting.UseTestNetworks, useTestNetworks);
@@ -416,13 +371,6 @@ export const General = ({ formConfig, onSuccess }: SettingsProps) => {
 					</div>
 				</div>
 			</Form>
-
-			<AdvancedMode
-				isOpen={isOpenAdvancedModeModal}
-				onClose={() => handleAdvancedMode(false)}
-				onDecline={() => handleAdvancedMode(false)}
-				onAccept={(rememberChoice) => handleAdvancedMode(true, rememberChoice)}
-			/>
 
 			<DevelopmentNetwork
 				isOpen={isOpenDevelopmentNetworkModal}

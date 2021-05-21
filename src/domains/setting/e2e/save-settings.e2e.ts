@@ -17,11 +17,6 @@ test("should save settings", async (t) => {
 
 	await scrollToTop();
 
-	// Open Advanced Mode Modal
-	await t.expect(Selector("[data-testid=modal__inner]").exists).ok();
-	await t.click(Selector("[data-testid=AdvancedMode__accept-button]"));
-	await t.expect(Selector("[data-testid=modal__inner]").exists).notOk();
-
 	await t.click(Selector("[data-testid=Input__suggestion]").withText("1 minute"));
 	await t.click('[data-testid="select-list__toggle-option-2"]');
 

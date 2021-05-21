@@ -9,18 +9,27 @@ import nock from "nock";
 import { LaunchPluginService, PluginController, usePluginManagerContext } from "plugins";
 import React, { useEffect } from "react";
 import { Route } from "react-router-dom";
-import { act, fireEvent, getDefaultProfileId, RenderResult, renderWithRouter, waitFor, within } from "testing-library";
+import { act, fireEvent, getDefaultProfileId, renderWithRouter, screen, waitFor, within } from "testing-library";
 import { env } from "utils/testing-library";
 
 import { translations } from "../../i18n";
 import { PluginManager } from "./PluginManager";
 
-let rendered: RenderResult;
 let profile: Contracts.IProfile;
 const history = createMemoryHistory();
 
 const fixtureProfileId = getDefaultProfileId();
 const pluginsURL = `/profiles/${fixtureProfileId}/plugins`;
+
+const Component = () => {
+	const { fetchPluginPackages } = usePluginManagerContext();
+
+	useEffect(() => {
+		fetchPluginPackages();
+	}, []);
+
+	return <PluginManager />;
+};
 
 describe("PluginManager", () => {
 	beforeEach(async () => {
@@ -50,185 +59,289 @@ describe("PluginManager", () => {
 
 		profile = env.profiles().findById(getDefaultProfileId());
 		history.push(pluginsURL);
-
-		const Component = () => {
-			const { fetchPluginPackages } = usePluginManagerContext();
-
-			useEffect(() => {
-				fetchPluginPackages();
-			}, []);
-
-			return <PluginManager />;
-		};
-
-		await act(async () => {
-			rendered = renderWithRouter(
-				<Route path="/profiles/:profileId/plugins">
-					<PluginProviders>
-						<Component />
-					</PluginProviders>
-				</Route>,
-				{
-					routes: [pluginsURL],
-					history,
-				},
-			);
-		});
 	});
 
 	it("should render", async () => {
-		const { asFragment, getByTestId, getAllByTestId } = rendered;
+		const { asFragment } = renderWithRouter(
+			<Route path="/profiles/:profileId/plugins">
+				<PluginProviders>
+					<Component />
+				</PluginProviders>
+			</Route>,
+			{
+				routes: [pluginsURL],
+				history,
+			},
+		);
 
-		expect(getByTestId("header__title")).toHaveTextContent(translations.PAGE_PLUGIN_MANAGER.TITLE);
-		expect(getByTestId("header__subtitle")).toHaveTextContent(translations.PAGE_PLUGIN_MANAGER.DESCRIPTION);
+		expect(screen.getByTestId("header__title")).toHaveTextContent(translations.PAGE_PLUGIN_MANAGER.TITLE);
+		expect(screen.getByTestId("header__subtitle")).toHaveTextContent(translations.PAGE_PLUGIN_MANAGER.DESCRIPTION);
 
 		await waitFor(() =>
 			expect(
-				within(getByTestId("PluginManager__latest__utility")).getAllByText("Transaction Export"),
+				within(screen.getByTestId("PluginManager__latest__utility")).getAllByText("Transaction Export"),
 			).toHaveLength(1),
 		);
 
-		await waitFor(() => expect(getAllByTestId("Card")).toHaveLength(12));
+		await waitFor(() => expect(screen.getAllByTestId("Card")).toHaveLength(12));
 
 		expect(asFragment()).toMatchSnapshot();
 	});
 
 	it("should toggle between list and grid on latest", async () => {
-		const { asFragment, getByTestId, getAllByText, getAllByTestId } = rendered;
+		const { asFragment } = renderWithRouter(
+			<Route path="/profiles/:profileId/plugins">
+				<PluginProviders>
+					<Component />
+				</PluginProviders>
+			</Route>,
+			{
+				routes: [pluginsURL],
+				history,
+			},
+		);
 
 		await waitFor(() =>
 			expect(
-				within(getByTestId("PluginManager__latest__utility")).getAllByText("Transaction Export"),
+				within(screen.getByTestId("PluginManager__latest__utility")).getAllByText("Transaction Export"),
 			).toHaveLength(1),
 		);
 
-		await waitFor(() => expect(getAllByTestId("Card")).toHaveLength(12));
+		await waitFor(() => expect(screen.getAllByTestId("Card")).toHaveLength(12));
 
-		await waitFor(() =>
-			expect(within(getByTestId("PluginManager__latest__utility")).getByTestId("PluginGrid")).toBeTruthy(),
-		);
+		expect(within(screen.getByTestId("PluginManager__latest__utility")).getByTestId("PluginGrid")).toBeTruthy();
 
-		act(() => {
-			fireEvent.click(getByTestId("LayoutControls__list--icon"));
-		});
+		fireEvent.click(screen.getByTestId("LayoutControls__list--icon"));
+		expect(within(screen.getByTestId("PluginManager__latest__utility")).getByTestId("PluginList")).toBeTruthy();
 
-		expect(within(getByTestId("PluginManager__latest__utility")).getByTestId("PluginList")).toBeTruthy(),
-			act(() => {
-				fireEvent.click(getByTestId("LayoutControls__grid--icon"));
-			});
-
-		expect(within(getByTestId("PluginManager__latest__utility")).getByTestId("PluginGrid")).toBeTruthy();
+		fireEvent.click(screen.getByTestId("LayoutControls__grid--icon"));
+		expect(within(screen.getByTestId("PluginManager__latest__utility")).getByTestId("PluginGrid")).toBeTruthy();
 
 		expect(asFragment()).toMatchSnapshot();
 	});
 
 	it("should toggle between list and grid on all", async () => {
-		const { asFragment, getByTestId, getAllByText, getAllByTestId } = rendered;
+		const { asFragment } = renderWithRouter(
+			<Route path="/profiles/:profileId/plugins">
+				<PluginProviders>
+					<Component />
+				</PluginProviders>
+			</Route>,
+			{
+				routes: [pluginsURL],
+				history,
+			},
+		);
 
-		act(() => {
-			fireEvent.click(getByTestId("PluginManagerNavigationBar__all"));
-		});
+		fireEvent.click(screen.getByTestId("PluginManagerNavigationBar__all"));
 
 		await waitFor(() =>
 			expect(
-				within(getByTestId("PluginManager__container--all")).getAllByText("Transaction Export"),
+				within(screen.getByTestId("PluginManager__container--all")).getAllByText("Transaction Export"),
 			).toHaveLength(1),
 		);
 
-		act(() => {
-			fireEvent.click(getByTestId("LayoutControls__list--icon"));
-		});
-
-		expect(within(getByTestId("PluginManager__container--all")).getByTestId("PluginList")).toBeTruthy(),
+		fireEvent.click(screen.getByTestId("LayoutControls__list--icon"));
+		expect(within(screen.getByTestId("PluginManager__container--all")).getByTestId("PluginList")).toBeTruthy(),
 			act(() => {
-				fireEvent.click(getByTestId("LayoutControls__grid--icon"));
+				fireEvent.click(screen.getByTestId("LayoutControls__grid--icon"));
 			});
 
-		expect(within(getByTestId("PluginManager__container--all")).getByTestId("PluginGrid")).toBeTruthy();
+		expect(within(screen.getByTestId("PluginManager__container--all")).getByTestId("PluginGrid")).toBeTruthy();
 
 		expect(asFragment()).toMatchSnapshot();
 	});
 
 	it.each(["utility"])("should toggle between list and grid on %s tab", async (category) => {
-		const { asFragment, getByTestId, getAllByText } = rendered;
-
-		await waitFor(() =>
-			expect(within(getByTestId(`PluginManager__latest__${category}`)).getByTestId("PluginGrid")).toBeTruthy(),
+		const { asFragment } = renderWithRouter(
+			<Route path="/profiles/:profileId/plugins">
+				<PluginProviders>
+					<Component />
+				</PluginProviders>
+			</Route>,
+			{
+				routes: [pluginsURL],
+				history,
+			},
 		);
 
-		act(() => {
-			fireEvent.click(getByTestId(`PluginManagerNavigationBar__${category}`));
-		});
+		await waitFor(() =>
+			expect(
+				within(screen.getByTestId(`PluginManager__latest__${category}`)).getByTestId("PluginGrid"),
+			).toBeTruthy(),
+		);
 
-		expect(within(getByTestId(`PluginManager__container--${category}`)).getByTestId("PluginGrid")).toBeTruthy();
+		fireEvent.click(screen.getByTestId(`PluginManagerNavigationBar__${category}`));
+		expect(
+			within(screen.getByTestId(`PluginManager__container--${category}`)).getByTestId("PluginGrid"),
+		).toBeTruthy();
 
-		act(() => {
-			fireEvent.click(getByTestId("LayoutControls__list--icon"));
-		});
+		fireEvent.click(screen.getByTestId("LayoutControls__list--icon"));
+		expect(
+			within(screen.getByTestId(`PluginManager__container--${category}`)).getByTestId("PluginList"),
+		).toBeTruthy();
 
-		expect(within(getByTestId(`PluginManager__container--${category}`)).getByTestId("PluginList")).toBeTruthy();
-
-		act(() => {
-			fireEvent.click(getByTestId("LayoutControls__grid--icon"));
-		});
-
-		expect(within(getByTestId(`PluginManager__container--${category}`)).getByTestId("PluginGrid")).toBeTruthy();
+		fireEvent.click(screen.getByTestId("LayoutControls__grid--icon"));
+		expect(
+			within(screen.getByTestId(`PluginManager__container--${category}`)).getByTestId("PluginGrid"),
+		).toBeTruthy();
 
 		expect(asFragment()).toMatchSnapshot();
 	});
 
 	it("should switch to category by clicking on view all link", async () => {
-		const { asFragment, getByTestId, getAllByText } = rendered;
+		const { asFragment } = renderWithRouter(
+			<Route path="/profiles/:profileId/plugins">
+				<PluginProviders>
+					<Component />
+				</PluginProviders>
+			</Route>,
+			{
+				routes: [pluginsURL],
+				history,
+			},
+		);
 
 		await waitFor(() =>
 			expect(
-				within(getByTestId("PluginManager__latest__utility")).getAllByText("Transaction Export"),
+				within(screen.getByTestId("PluginManager__latest__utility")).getAllByText("Transaction Export"),
 			).toHaveLength(1),
 		);
 
-		act(() => {
-			fireEvent.click(getByTestId("PluginManager__latest__utility__view-all"));
-		});
-
-		expect(getByTestId("PluginManager__container--utility")).toBeTruthy();
+		fireEvent.click(screen.getByTestId("PluginManager__latest__utility__view-all"));
+		expect(screen.getByTestId("PluginManager__container--utility")).toBeTruthy();
 
 		expect(asFragment()).toMatchSnapshot();
 	});
 
 	it.skip("should download & install plugin on latest", async () => {
-		const { asFragment, getAllByTestId, queryAllByTestId, getByTestId } = rendered;
-
-		await waitFor(() =>
-			expect(within(getByTestId("PluginManager__latest__gaming")).getByTestId("PluginGrid")).toBeTruthy(),
+		const { asFragment } = renderWithRouter(
+			<Route path="/profiles/:profileId/plugins">
+				<PluginProviders>
+					<Component />
+				</PluginProviders>
+			</Route>,
+			{
+				routes: [pluginsURL],
+				history,
+			},
 		);
 
-		act(() => {
-			fireEvent.click(getByTestId("LayoutControls__list--icon"));
-		});
+		await waitFor(() =>
+			expect(within(screen.getByTestId("PluginManager__latest__gaming")).getByTestId("PluginGrid")).toBeTruthy(),
+		);
 
-		act(() => {
-			fireEvent.click(getAllByTestId("PluginListItem__install")[0]);
-		});
+		fireEvent.click(screen.getByTestId("LayoutControls__list--icon"));
 
-		expect(getByTestId("modal__inner")).toHaveTextContent(translations.MODAL_INSTALL_PLUGIN.DESCRIPTION);
+		fireEvent.click(screen.getAllByTestId("PluginListItem__install")[0]);
 
-		act(() => {
-			fireEvent.click(getByTestId("InstallPlugin__download-button"));
-		});
+		expect(screen.getByTestId("modal__inner")).toHaveTextContent(translations.MODAL_INSTALL_PLUGIN.DESCRIPTION);
 
-		await waitFor(() => expect(getByTestId("InstallPlugin__continue-button")).toBeTruthy());
+		fireEvent.click(screen.getByTestId("InstallPlugin__download-button"));
 
-		act(() => {
-			fireEvent.click(getByTestId("InstallPlugin__continue-button"));
-		});
+		await waitFor(() => expect(screen.getByTestId("InstallPlugin__continue-button")).toBeTruthy());
 
-		await waitFor(() => expect(getByTestId("InstallPlugin__install-button")).toBeTruthy());
-		act(() => {
-			fireEvent.click(getByTestId("InstallPlugin__install-button"));
-		});
+		fireEvent.click(screen.getByTestId("InstallPlugin__continue-button"));
 
-		await waitFor(() => expect(getByTestId(`InstallPlugin__step--third`)).toBeTruthy());
+		await waitFor(() => expect(screen.getByTestId("InstallPlugin__install-button")).toBeTruthy());
+
+		fireEvent.click(screen.getByTestId("InstallPlugin__install-button"));
+
+		await waitFor(() => expect(screen.getByTestId("InstallPlugin__step--third")).toBeTruthy());
 		expect(asFragment()).toMatchSnapshot();
+	});
+
+	it("should open and accept disclaimer", async () => {
+		renderWithRouter(
+			<Route path="/profiles/:profileId/plugins">
+				<PluginProviders>
+					<Component />
+				</PluginProviders>
+			</Route>,
+			{
+				routes: [pluginsURL],
+				history,
+			},
+		);
+
+		fireEvent.click(screen.getByTestId("PluginManager_header--install"));
+
+		expect(screen.getByTestId("modal__inner")).toHaveTextContent(translations.MANUAL_INSTALLATION_DISCLAIMER.TITLE);
+		expect(screen.getByTestId("modal__inner")).toHaveTextContent(
+			translations.MANUAL_INSTALLATION_DISCLAIMER.DISCLAIMER.replace(/\n\n/g, " "),
+		);
+
+		fireEvent.click(screen.getByTestId("ManualInstallationDisclaimer__accept-button"));
+		await waitFor(() =>
+			expect(screen.getByTestId("modal__inner")).toHaveTextContent(
+				translations.MODAL_MANUAL_INSTALL_PLUGIN.TITLE,
+			),
+		);
+	});
+
+	it("should open, accept disclaimer and remember choice", async () => {
+		renderWithRouter(
+			<Route path="/profiles/:profileId/plugins">
+				<PluginProviders>
+					<Component />
+				</PluginProviders>
+			</Route>,
+			{
+				routes: [pluginsURL],
+				history,
+			},
+		);
+
+		fireEvent.click(screen.getByTestId("PluginManager_header--install"));
+
+		expect(screen.getByTestId("modal__inner")).toHaveTextContent(translations.MANUAL_INSTALLATION_DISCLAIMER.TITLE);
+		expect(screen.getByTestId("modal__inner")).toHaveTextContent(
+			translations.MANUAL_INSTALLATION_DISCLAIMER.DISCLAIMER.replace(/\n\n/g, " "),
+		);
+
+		fireEvent.click(screen.getByTestId("ManualInstallationDisclaimer__rememberChoice-toggle"));
+
+		fireEvent.click(screen.getByTestId("ManualInstallationDisclaimer__accept-button"));
+		await waitFor(() =>
+			expect(screen.getByTestId("modal__inner")).toHaveTextContent(
+				translations.MODAL_MANUAL_INSTALL_PLUGIN.TITLE,
+			),
+		);
+
+		fireEvent.click(screen.getByTestId("modal__close-btn"));
+
+		fireEvent.click(screen.getByTestId("PluginManager_header--install"));
+		expect(screen.getByTestId("modal__inner")).toHaveTextContent(translations.MODAL_MANUAL_INSTALL_PLUGIN.TITLE);
+
+		profile.settings().set(Contracts.ProfileSetting.DoNotShowAdvancedModeDisclaimer, false);
+	});
+
+	it.each([
+		["close", "modal__close-btn"],
+		["decline", "ManualInstallationDisclaimer__decline-button"],
+	])("should open and %s disclaimer", async (_, buttonId) => {
+		renderWithRouter(
+			<Route path="/profiles/:profileId/plugins">
+				<PluginProviders>
+					<Component />
+				</PluginProviders>
+			</Route>,
+			{
+				routes: [pluginsURL],
+				history,
+			},
+		);
+
+		fireEvent.click(screen.getByTestId("PluginManager_header--install"));
+
+		expect(screen.getByTestId("modal__inner")).toHaveTextContent(translations.MANUAL_INSTALLATION_DISCLAIMER.TITLE);
+		expect(screen.getByTestId("modal__inner")).toHaveTextContent(
+			translations.MANUAL_INSTALLATION_DISCLAIMER.DISCLAIMER.replace(/\n\n/g, " "),
+		);
+
+		fireEvent.click(screen.getByTestId(buttonId));
+
+		await waitFor(() => expect(() => screen.getByTestId("modal__inner")).toThrow(/Unable to find an element by/));
 	});
 
 	it("should install plugin from header install button", async () => {
@@ -236,9 +349,9 @@ describe("PluginManager", () => {
 			.get("/arkecosystem/test-plugin/raw/master/package.json")
 			.reply(200, { name: "test-plugin", keywords: ["@arkecosystem", "desktop-wallet"] });
 
-		profile.settings().set(Contracts.ProfileSetting.AdvancedMode, true);
+		profile.settings().set(Contracts.ProfileSetting.DoNotShowAdvancedModeDisclaimer, true);
 
-		const { getByTestId, queryByTestId } = renderWithRouter(
+		renderWithRouter(
 			<Route path="/profiles/:profileId/plugins">
 				<PluginProviders>
 					<PluginManager />
@@ -250,177 +363,100 @@ describe("PluginManager", () => {
 			},
 		);
 
-		await waitFor(() => expect(queryByTestId("PluginManager_header--install")).toBeInTheDocument());
-
 		// Open and close
-		act(() => {
-			fireEvent.click(queryByTestId("PluginManager_header--install"));
-		});
-		await waitFor(() => expect(queryByTestId("PluginManualInstallModal")).toBeInTheDocument());
-		act(() => {
-			fireEvent.click(queryByTestId("modal__close-btn"));
-		});
+		fireEvent.click(screen.getByTestId("PluginManager_header--install"));
+		await waitFor(() => expect(screen.getByTestId("PluginManualInstallModal")).toBeInTheDocument());
+		fireEvent.click(screen.getByTestId("modal__close-btn"));
 
 		// Open and type
-		act(() => {
-			fireEvent.click(queryByTestId("PluginManager_header--install"));
-		});
-		await waitFor(() => expect(queryByTestId("PluginManualInstallModal")).toBeInTheDocument());
+		fireEvent.click(screen.getByTestId("PluginManager_header--install"));
+		await waitFor(() => expect(screen.getByTestId("PluginManualInstallModal")).toBeInTheDocument());
 
-		act(() => {
-			fireEvent.input(getByTestId("PluginManualInstallModal__input"), {
-				target: { value: "https://github.com/arkecosystem/test-plugin" },
-			});
+		fireEvent.input(screen.getByTestId("PluginManualInstallModal__input"), {
+			target: { value: "https://github.com/arkecosystem/test-plugin" },
 		});
 
 		const historySpy = jest.spyOn(history, "push").mockImplementation();
 
 		await waitFor(async () => {
-			expect(getByTestId("PluginManualInstallModal__submit-button")).not.toBeDisabled();
+			expect(screen.getByTestId("PluginManualInstallModal__submit-button")).not.toBeDisabled();
 		});
 
-		act(() => {
-			fireEvent.click(getByTestId("PluginManualInstallModal__submit-button"));
-		});
+		fireEvent.click(screen.getByTestId("PluginManualInstallModal__submit-button"));
 
 		const redirectUrl = `/profiles/${fixtureProfileId}/plugins/details?pluginId=test-plugin&repositoryURL=https://github.com/arkecosystem/test-plugin`;
 		await waitFor(() => expect(historySpy).toHaveBeenCalledWith(redirectUrl));
 
+		profile.settings().set(Contracts.ProfileSetting.DoNotShowAdvancedModeDisclaimer, false);
 		historySpy.mockRestore();
-		profile.settings().set(Contracts.ProfileSetting.AdvancedMode, false);
-	});
-
-	it.skip("should install a plugin from other category", async () => {
-		const { asFragment, getByTestId, getAllByTestId } = rendered;
-
-		await waitFor(() =>
-			expect(within(getByTestId("PluginManager__latest__gaming")).getByTestId("PluginGrid")).toBeTruthy(),
-		);
-
-		act(() => {
-			fireEvent.click(getByTestId("PluginManagerNavigationBar__other"));
-		});
-
-		act(() => {
-			fireEvent.click(getByTestId("LayoutControls__list--icon"));
-		});
-
-		await waitFor(() => expect(getByTestId("PluginManager__container--other")).toBeTruthy());
-		await waitFor(() => expect(getAllByTestId("PluginListItem__install")[0]).toBeTruthy());
-
-		act(() => {
-			fireEvent.click(getAllByTestId("PluginListItem__install")[0]);
-		});
-
-		expect(getByTestId("modal__inner")).toHaveTextContent(translations.MODAL_INSTALL_PLUGIN.DESCRIPTION);
-
-		act(() => {
-			fireEvent.click(getByTestId("InstallPlugin__download-button"));
-		});
-
-		await waitFor(() => expect(getByTestId("InstallPlugin__continue-button")).toBeTruthy());
-
-		act(() => {
-			fireEvent.click(getByTestId("InstallPlugin__continue-button"));
-		});
-
-		await waitFor(() => expect(getByTestId("InstallPlugin__install-button")).toBeTruthy());
-		act(() => {
-			fireEvent.click(getByTestId("InstallPlugin__install-button"));
-		});
-
-		await waitFor(() => expect(getByTestId(`InstallPlugin__step--third`)).toBeTruthy());
-		expect(asFragment()).toMatchSnapshot();
-	});
-
-	it.skip("should close install plugin modal", async () => {
-		const { asFragment, getAllByTestId, getByTestId } = rendered;
-
-		await waitFor(() =>
-			expect(within(getByTestId("PluginManager__latest__gaming")).getByTestId("PluginGrid")).toBeTruthy(),
-		);
-
-		act(() => {
-			fireEvent.click(getByTestId("LayoutControls__list--icon"));
-		});
-
-		await waitFor(() => expect(getAllByTestId("PluginListItem__install")[0]).toBeTruthy());
-
-		act(() => {
-			fireEvent.click(getAllByTestId("PluginListItem__install")[0]);
-		});
-
-		act(() => {
-			fireEvent.click(getByTestId("modal__close-btn"));
-		});
-
-		await waitFor(() => expect(() => getByTestId("modal__inner")).toThrow(/Unable to find an element by/));
-		expect(asFragment()).toMatchSnapshot();
 	});
 
 	it("should cancel install plugin", async () => {
-		const { asFragment, getAllByTestId, getByTestId } = rendered;
-
-		await waitFor(() =>
-			expect(within(getByTestId("PluginManager__latest__gaming")).getByTestId("PluginGrid")).toBeTruthy(),
+		const { asFragment } = renderWithRouter(
+			<Route path="/profiles/:profileId/plugins">
+				<PluginProviders>
+					<Component />
+				</PluginProviders>
+			</Route>,
+			{
+				routes: [pluginsURL],
+				history,
+			},
 		);
 
-		act(() => {
-			fireEvent.click(getByTestId("LayoutControls__list--icon"));
-		});
+		await waitFor(() =>
+			expect(within(screen.getByTestId("PluginManager__latest__gaming")).getByTestId("PluginGrid")).toBeTruthy(),
+		);
 
-		await waitFor(() => expect(getAllByTestId("PluginListItem__install")[0]).toBeTruthy());
+		fireEvent.click(screen.getByTestId("LayoutControls__list--icon"));
+		await waitFor(() => expect(screen.getAllByTestId("PluginListItem__install")[0]).toBeTruthy());
 
-		act(() => {
-			fireEvent.click(getAllByTestId("PluginListItem__install")[0]);
-		});
+		fireEvent.click(screen.getAllByTestId("PluginListItem__install")[0]);
+		expect(screen.getByTestId("modal__inner")).toHaveTextContent(translations.MODAL_INSTALL_PLUGIN.DESCRIPTION);
 
-		expect(getByTestId("modal__inner")).toHaveTextContent(translations.MODAL_INSTALL_PLUGIN.DESCRIPTION);
+		fireEvent.click(screen.getByTestId("InstallPlugin__cancel-button"));
 
-		act(() => {
-			fireEvent.click(getByTestId("InstallPlugin__cancel-button"));
-		});
-
-		expect(() => getByTestId("modal__inner")).toThrow(/Unable to find an element by/);
+		expect(() => screen.getByTestId("modal__inner")).toThrow(/Unable to find an element by/);
 		expect(asFragment()).toMatchSnapshot();
 	});
 
 	it("should search for plugin", async () => {
-		const { asFragment, getByText, getByTestId, getAllByTestId, getAllByText, debug } = rendered;
-
-		await waitFor(() =>
-			expect(within(getByTestId("PluginManager__latest__gaming")).getByTestId("PluginGrid")).toBeTruthy(),
+		const { asFragment } = renderWithRouter(
+			<Route path="/profiles/:profileId/plugins">
+				<PluginProviders>
+					<Component />
+				</PluginProviders>
+			</Route>,
+			{
+				routes: [pluginsURL],
+				history,
+			},
 		);
 
-		act(() => {
-			fireEvent.click(getByTestId("header-search-bar__button"));
+		await waitFor(() =>
+			expect(within(screen.getByTestId("PluginManager__latest__gaming")).getByTestId("PluginGrid")).toBeTruthy(),
+		);
+
+		fireEvent.click(screen.getByTestId("header-search-bar__button"));
+		expect(within(screen.getByTestId("header-search-bar__input")).getByTestId("Input")).toBeTruthy();
+
+		fireEvent.input(within(screen.getByTestId("header-search-bar__input")).getByTestId("Input"), {
+			target: { value: "Transaction Export" },
 		});
 
-		await waitFor(() => expect(within(getByTestId("header-search-bar__input")).getByTestId("Input")).toBeTruthy());
+		await waitFor(() => expect(screen.getByText(translations.PAGE_PLUGIN_MANAGER.VIEW.SEARCH)).toBeInTheDocument());
+		await waitFor(() => expect(screen.getAllByTestId("PluginImage__logo")).toHaveLength(1));
 
-		act(() => {
-			fireEvent.input(within(getByTestId("header-search-bar__input")).getByTestId("Input"), {
-				target: { value: "Transaction Export" },
-			});
+		fireEvent.input(within(screen.getByTestId("header-search-bar__input")).getByTestId("Input"), {
+			target: { value: "unknown search query" },
 		});
 
-		await waitFor(() => expect(getByText(translations.PAGE_PLUGIN_MANAGER.VIEW.SEARCH)).toBeInTheDocument());
-		await waitFor(() => expect(getAllByTestId("PluginImage__logo")).toHaveLength(1));
-
-		act(() => {
-			fireEvent.input(within(getByTestId("header-search-bar__input")).getByTestId("Input"), {
-				target: { value: "unknown search query" },
-			});
-		});
-
-		await waitFor(() => expect(getByTestId("PluginGrid__empty-message")).toBeInTheDocument());
+		await waitFor(() => expect(screen.getByTestId("PluginGrid__empty-message")).toBeInTheDocument());
 
 		// Switch to list view
-		act(() => {
-			fireEvent.click(getByTestId("LayoutControls__list--icon"));
-		});
+		fireEvent.click(screen.getByTestId("LayoutControls__list--icon"));
 
-		await waitFor(() => expect(getByTestId("PluginList__empty-message")).toBeInTheDocument());
+		await waitFor(() => expect(screen.getByTestId("PluginList__empty-message")).toBeInTheDocument());
 
 		expect(asFragment()).toMatchSnapshot();
 	});
@@ -432,27 +468,30 @@ describe("PluginManager", () => {
 			}
 		});
 
-		const { getAllByTestId, getByTestId } = rendered;
-
-		await waitFor(() =>
-			expect(within(getByTestId("PluginManager__latest__gaming")).getByTestId("PluginGrid")).toBeTruthy(),
+		renderWithRouter(
+			<Route path="/profiles/:profileId/plugins">
+				<PluginProviders>
+					<Component />
+				</PluginProviders>
+			</Route>,
+			{
+				routes: [pluginsURL],
+				history,
+			},
 		);
 
-		act(() => {
-			fireEvent.click(getByTestId("LayoutControls__list--icon"));
-		});
-
-		act(() => {
-			fireEvent.click(getAllByTestId("PluginListItem__install")[2]);
-		});
-
 		await waitFor(() =>
-			expect(getByTestId("modal__inner")).toHaveTextContent(translations.MODAL_INSTALL_PLUGIN.DESCRIPTION),
+			expect(within(screen.getByTestId("PluginManager__latest__gaming")).getByTestId("PluginGrid")).toBeTruthy(),
 		);
 
-		act(() => {
-			fireEvent.click(getByTestId("InstallPlugin__download-button"));
-		});
+		fireEvent.click(screen.getByTestId("LayoutControls__list--icon"));
+		fireEvent.click(screen.getAllByTestId("PluginListItem__install")[2]);
+
+		await waitFor(() =>
+			expect(screen.getByTestId("modal__inner")).toHaveTextContent(translations.MODAL_INSTALL_PLUGIN.DESCRIPTION),
+		);
+
+		fireEvent.click(screen.getByTestId("InstallPlugin__download-button"));
 
 		await waitFor(() =>
 			expect(ipcRendererSpy).toHaveBeenLastCalledWith("plugin:download", {
@@ -460,7 +499,8 @@ describe("PluginManager", () => {
 				url: "https://github.com/dated/transaction-export-plugin/archive/master.zip",
 			}),
 		);
-		await waitFor(() => expect(getByTestId("InstallPlugin__install-button")).toBeTruthy());
+
+		await waitFor(() => expect(screen.getByTestId("InstallPlugin__install-button")).toBeTruthy());
 
 		ipcRendererSpy.mockRestore();
 	});
@@ -469,27 +509,30 @@ describe("PluginManager", () => {
 		const ipcRendererSpy = jest.spyOn(ipcRenderer, "invoke").mockRejectedValue("Failed");
 		const toastSpy = jest.spyOn(toasts, "error");
 
-		const { getAllByTestId, getByTestId } = rendered;
-
-		await waitFor(() =>
-			expect(within(getByTestId("PluginManager__latest__gaming")).getByTestId("PluginGrid")).toBeTruthy(),
+		renderWithRouter(
+			<Route path="/profiles/:profileId/plugins">
+				<PluginProviders>
+					<Component />
+				</PluginProviders>
+			</Route>,
+			{
+				routes: [pluginsURL],
+				history,
+			},
 		);
 
-		act(() => {
-			fireEvent.click(getByTestId("LayoutControls__list--icon"));
-		});
-
-		act(() => {
-			fireEvent.click(getAllByTestId("PluginListItem__install")[2]);
-		});
-
 		await waitFor(() =>
-			expect(getByTestId("modal__inner")).toHaveTextContent(translations.MODAL_INSTALL_PLUGIN.DESCRIPTION),
+			expect(within(screen.getByTestId("PluginManager__latest__gaming")).getByTestId("PluginGrid")).toBeTruthy(),
 		);
 
-		act(() => {
-			fireEvent.click(getByTestId("InstallPlugin__download-button"));
-		});
+		fireEvent.click(screen.getByTestId("LayoutControls__list--icon"));
+		fireEvent.click(screen.getAllByTestId("PluginListItem__install")[2]);
+
+		await waitFor(() =>
+			expect(screen.getByTestId("modal__inner")).toHaveTextContent(translations.MODAL_INSTALL_PLUGIN.DESCRIPTION),
+		);
+
+		fireEvent.click(screen.getByTestId("InstallPlugin__download-button"));
 
 		await waitFor(() =>
 			expect(ipcRendererSpy).toHaveBeenLastCalledWith("plugin:download", {
@@ -505,16 +548,24 @@ describe("PluginManager", () => {
 	});
 
 	it("should select plugin on latest grids", async () => {
-		const { getByTestId, getAllByText, getAllByTestId } = rendered;
+		renderWithRouter(
+			<Route path="/profiles/:profileId/plugins">
+				<PluginProviders>
+					<Component />
+				</PluginProviders>
+			</Route>,
+			{
+				routes: [pluginsURL],
+				history,
+			},
+		);
 
-		await waitFor(() => expect(getAllByText("Transaction Export").length).toBeGreaterThan(0));
-		await waitFor(() => expect(getAllByTestId("Card")).toHaveLength(12));
+		await waitFor(() => expect(screen.getAllByText("Transaction Export").length).toBeGreaterThan(0));
+		await waitFor(() => expect(screen.getAllByTestId("Card")).toHaveLength(12));
 
-		act(() => {
-			fireEvent.click(
-				within(getByTestId("PluginManager__latest__utility")).getAllByText("Transaction Export")[0],
-			);
-		});
+		fireEvent.click(
+			within(screen.getByTestId("PluginManager__latest__utility")).getAllByText("Transaction Export")[0],
+		);
 
 		expect(history.location.pathname).toEqual(`/profiles/${fixtureProfileId}/plugins/details`);
 		expect(history.location.search).toEqual("?pluginId=@dated/transaction-export-plugin");
@@ -525,27 +576,38 @@ describe("PluginManager", () => {
 		const plugin = new PluginController({ name: "test-plugin" }, onEnabled);
 		pluginManager.plugins().push(plugin);
 
-		const { asFragment, getByTestId, getAllByText, getAllByTestId } = rendered;
-
-		await waitFor(() => expect(getAllByText("Transaction Export").length).toBeGreaterThan(0));
-		await waitFor(() => expect(getAllByTestId("Card")).toHaveLength(12));
-
-		fireEvent.click(getByTestId("PluginManagerNavigationBar__my-plugins"));
-		fireEvent.click(getByTestId("LayoutControls__list--icon"));
-
-		expect(getByTestId("PluginListItem__disabled")).toBeInTheDocument();
-
-		fireEvent.click(
-			within(getByTestId("PluginManager__container--my-plugins")).getAllByTestId("dropdown__toggle")[0],
-		);
-		fireEvent.click(
-			within(getByTestId("PluginManager__container--my-plugins")).getByText(commonTranslations.ENABLE),
+		const { asFragment } = renderWithRouter(
+			<Route path="/profiles/:profileId/plugins">
+				<PluginProviders>
+					<Component />
+				</PluginProviders>
+			</Route>,
+			{
+				routes: [pluginsURL],
+				history,
+			},
 		);
 
-		await waitFor(() => expect(getByTestId("PluginListItem__enabled")).toBeInTheDocument());
+		await waitFor(() => expect(screen.getAllByText("Transaction Export").length).toBeGreaterThan(0));
+		await waitFor(() => expect(screen.getAllByTestId("Card")).toHaveLength(12));
+
+		fireEvent.click(screen.getByTestId("PluginManagerNavigationBar__my-plugins"));
+		fireEvent.click(screen.getByTestId("LayoutControls__list--icon"));
+
+		expect(screen.getByTestId("PluginListItem__disabled")).toBeInTheDocument();
+
+		fireEvent.click(
+			within(screen.getByTestId("PluginManager__container--my-plugins")).getAllByTestId("dropdown__toggle")[0],
+		);
+		fireEvent.click(
+			within(screen.getByTestId("PluginManager__container--my-plugins")).getByText(commonTranslations.ENABLE),
+		);
+
+		await waitFor(() => expect(screen.getByTestId("PluginListItem__enabled")).toBeInTheDocument());
 
 		expect(asFragment()).toMatchSnapshot();
 		expect(onEnabled).toHaveBeenCalled();
+
 		pluginManager.plugins().removeById(plugin.config().id(), profile);
 	});
 
@@ -554,21 +616,31 @@ describe("PluginManager", () => {
 		const plugin = new PluginController({ name: "test-plugin" }, { incompatible: true });
 		pluginManager.plugins().push(plugin);
 
-		const { asFragment, getByTestId, getAllByText, getAllByTestId } = rendered;
+		renderWithRouter(
+			<Route path="/profiles/:profileId/plugins">
+				<PluginProviders>
+					<Component />
+				</PluginProviders>
+			</Route>,
+			{
+				routes: [pluginsURL],
+				history,
+			},
+		);
 
-		await waitFor(() => expect(getAllByText("Transaction Export").length).toBeGreaterThan(0));
-		await waitFor(() => expect(getAllByTestId("Card")).toHaveLength(12));
+		await waitFor(() => expect(screen.getAllByText("Transaction Export").length).toBeGreaterThan(0));
+		await waitFor(() => expect(screen.getAllByTestId("Card")).toHaveLength(12));
 
-		fireEvent.click(getByTestId("PluginManagerNavigationBar__my-plugins"));
-		fireEvent.click(getByTestId("LayoutControls__list--icon"));
+		fireEvent.click(screen.getByTestId("PluginManagerNavigationBar__my-plugins"));
+		fireEvent.click(screen.getByTestId("LayoutControls__list--icon"));
 
-		expect(getByTestId("PluginListItem__disabled")).toBeInTheDocument();
+		expect(screen.getByTestId("PluginListItem__disabled")).toBeInTheDocument();
 
 		fireEvent.click(
-			within(getByTestId("PluginManager__container--my-plugins")).getAllByTestId("dropdown__toggle")[0],
+			within(screen.getByTestId("PluginManager__container--my-plugins")).getAllByTestId("dropdown__toggle")[0],
 		);
 		fireEvent.click(
-			within(getByTestId("PluginManager__container--my-plugins")).getByText(commonTranslations.ENABLE),
+			within(screen.getByTestId("PluginManager__container--my-plugins")).getByText(commonTranslations.ENABLE),
 		);
 
 		expect(toastSpy).toHaveBeenCalled();
@@ -581,21 +653,31 @@ describe("PluginManager", () => {
 		pluginManager.plugins().push(plugin);
 		plugin.enable(profile);
 
-		const { asFragment, getByTestId } = rendered;
-
-		fireEvent.click(getByTestId("PluginManagerNavigationBar__my-plugins"));
-		fireEvent.click(getByTestId("LayoutControls__list--icon"));
-
-		expect(getByTestId("PluginListItem__enabled")).toBeInTheDocument();
-
-		fireEvent.click(
-			within(getByTestId("PluginManager__container--my-plugins")).getAllByTestId("dropdown__toggle")[0],
-		);
-		fireEvent.click(
-			within(getByTestId("PluginManager__container--my-plugins")).getByText(commonTranslations.DISABLE),
+		const { asFragment } = renderWithRouter(
+			<Route path="/profiles/:profileId/plugins">
+				<PluginProviders>
+					<Component />
+				</PluginProviders>
+			</Route>,
+			{
+				routes: [pluginsURL],
+				history,
+			},
 		);
 
-		await waitFor(() => expect(getByTestId("PluginListItem__disabled")).toBeInTheDocument());
+		fireEvent.click(screen.getByTestId("PluginManagerNavigationBar__my-plugins"));
+		fireEvent.click(screen.getByTestId("LayoutControls__list--icon"));
+
+		expect(screen.getByTestId("PluginListItem__enabled")).toBeInTheDocument();
+
+		fireEvent.click(
+			within(screen.getByTestId("PluginManager__container--my-plugins")).getAllByTestId("dropdown__toggle")[0],
+		);
+		fireEvent.click(
+			within(screen.getByTestId("PluginManager__container--my-plugins")).getByText(commonTranslations.DISABLE),
+		);
+
+		await waitFor(() => expect(screen.getByTestId("PluginListItem__disabled")).toBeInTheDocument());
 
 		expect(asFragment()).toMatchSnapshot();
 		pluginManager.plugins().removeById(plugin.config().id(), profile);
@@ -607,18 +689,28 @@ describe("PluginManager", () => {
 		const plugin = new PluginController({ name: "@dated/transaction-export-plugin", version: "0.1" }, () => void 0);
 		pluginManager.plugins().push(plugin);
 
-		const { asFragment, getByTestId } = rendered;
+		const { asFragment } = renderWithRouter(
+			<Route path="/profiles/:profileId/plugins">
+				<PluginProviders>
+					<Component />
+				</PluginProviders>
+			</Route>,
+			{
+				routes: [pluginsURL],
+				history,
+			},
+		);
 
-		fireEvent.click(getByTestId("PluginManagerNavigationBar__my-plugins"));
-		fireEvent.click(getByTestId("LayoutControls__list--icon"));
+		fireEvent.click(screen.getByTestId("PluginManagerNavigationBar__my-plugins"));
+		fireEvent.click(screen.getByTestId("LayoutControls__list--icon"));
 
-		await waitFor(() => expect(getByTestId("PluginListItem__update-badge")).toBeInTheDocument());
+		await waitFor(() => expect(screen.getByTestId("PluginListItem__update-badge")).toBeInTheDocument());
 
 		fireEvent.click(
-			within(getByTestId("PluginManager__container--my-plugins")).getAllByTestId("dropdown__toggle")[0],
+			within(screen.getByTestId("PluginManager__container--my-plugins")).getAllByTestId("dropdown__toggle")[0],
 		);
 		fireEvent.click(
-			within(getByTestId("PluginManager__container--my-plugins")).getByText(commonTranslations.UPDATE),
+			within(screen.getByTestId("PluginManager__container--my-plugins")).getByText(commonTranslations.UPDATE),
 		);
 
 		await waitFor(() =>
@@ -637,24 +729,34 @@ describe("PluginManager", () => {
 		const plugin = new PluginController({ name: "test-plugin" }, onEnabled);
 		pluginManager.plugins().push(plugin);
 
-		const { getByTestId, queryByTestId } = rendered;
+		renderWithRouter(
+			<Route path="/profiles/:profileId/plugins">
+				<PluginProviders>
+					<Component />
+				</PluginProviders>
+			</Route>,
+			{
+				routes: [pluginsURL],
+				history,
+			},
+		);
 
-		fireEvent.click(getByTestId("PluginManagerNavigationBar__my-plugins"));
-		fireEvent.click(getByTestId("LayoutControls__list--icon"));
+		fireEvent.click(screen.getByTestId("PluginManagerNavigationBar__my-plugins"));
+		fireEvent.click(screen.getByTestId("LayoutControls__list--icon"));
 
 		fireEvent.click(
-			within(getByTestId("PluginManager__container--my-plugins")).getAllByTestId("dropdown__toggle")[0],
+			within(screen.getByTestId("PluginManager__container--my-plugins")).getAllByTestId("dropdown__toggle")[0],
 		);
 		fireEvent.click(
-			within(getByTestId("PluginManager__container--my-plugins")).getByText(commonTranslations.DELETE),
+			within(screen.getByTestId("PluginManager__container--my-plugins")).getByText(commonTranslations.DELETE),
 		);
 
-		await waitFor(() => expect(getByTestId("PluginUninstallConfirmation")).toBeInTheDocument());
+		await waitFor(() => expect(screen.getByTestId("PluginUninstallConfirmation")).toBeInTheDocument());
 
 		const invokeMock = jest.spyOn(ipcRenderer, "invoke").mockResolvedValue([]);
-		fireEvent.click(getByTestId("PluginUninstall__cancel-button"));
+		fireEvent.click(screen.getByTestId("PluginUninstall__cancel-button"));
 
-		await waitFor(() => expect(queryByTestId("PluginUninstallConfirmation")).not.toBeInTheDocument());
+		expect(() => screen.getByTestId("PluginUninstallConfirmation")).toThrow(/Unable to find an element by/);
 
 		invokeMock.mockRestore();
 	});
@@ -666,25 +768,35 @@ describe("PluginManager", () => {
 		const plugin = new PluginController({ name: "test-plugin" }, onEnabled);
 		pluginManager.plugins().push(plugin);
 
-		const { getByTestId, queryByTestId } = rendered;
+		renderWithRouter(
+			<Route path="/profiles/:profileId/plugins">
+				<PluginProviders>
+					<Component />
+				</PluginProviders>
+			</Route>,
+			{
+				routes: [pluginsURL],
+				history,
+			},
+		);
 
-		fireEvent.click(getByTestId("PluginManagerNavigationBar__my-plugins"));
-		fireEvent.click(getByTestId("LayoutControls__list--icon"));
+		fireEvent.click(screen.getByTestId("PluginManagerNavigationBar__my-plugins"));
+		fireEvent.click(screen.getByTestId("LayoutControls__list--icon"));
 
 		fireEvent.click(
-			within(getByTestId("PluginManager__container--my-plugins")).getAllByTestId("dropdown__toggle")[0],
+			within(screen.getByTestId("PluginManager__container--my-plugins")).getAllByTestId("dropdown__toggle")[0],
 		);
 		fireEvent.click(
-			within(getByTestId("PluginManager__container--my-plugins")).getByText(commonTranslations.DELETE),
+			within(screen.getByTestId("PluginManager__container--my-plugins")).getByText(commonTranslations.DELETE),
 		);
 
-		await waitFor(() => expect(getByTestId("PluginUninstallConfirmation")).toBeInTheDocument());
+		await waitFor(() => expect(screen.getByTestId("PluginUninstallConfirmation")).toBeInTheDocument());
 
 		const invokeMock = jest.spyOn(ipcRenderer, "invoke").mockResolvedValue([]);
-		fireEvent.click(getByTestId("PluginUninstall__submit-button"));
+		fireEvent.click(screen.getByTestId("PluginUninstall__submit-button"));
 
 		await waitFor(() => expect(pluginManager.plugins().findById(plugin.config().id())).toBeUndefined());
-		await waitFor(() => expect(queryByTestId("PluginUninstallConfirmation")).not.toBeInTheDocument());
+		expect(() => screen.getByTestId("PluginUninstallConfirmation")).toThrow(/Unable to find an element by/);
 
 		invokeMock.mockRestore();
 	});
@@ -700,20 +812,28 @@ describe("PluginManager", () => {
 
 		plugin.enable(profile, { autoRun: true });
 
-		const { getByTestId } = rendered;
+		renderWithRouter(
+			<Route path="/profiles/:profileId/plugins">
+				<PluginProviders>
+					<Component />
+				</PluginProviders>
+			</Route>,
+			{
+				routes: [pluginsURL],
+				history,
+			},
+		);
 
 		act(() => {
-			fireEvent.click(getByTestId("PluginManagerNavigationBar__my-plugins"));
+			fireEvent.click(screen.getByTestId("PluginManagerNavigationBar__my-plugins"));
 		});
 		act(() => {
-			fireEvent.click(getByTestId("LayoutControls__list--icon"));
+			fireEvent.click(screen.getByTestId("LayoutControls__list--icon"));
 		});
 
 		const historySpy = jest.spyOn(history, "push").mockImplementation();
 
-		act(() => {
-			fireEvent.click(getByTestId("PluginListItem__launch"));
-		});
+		fireEvent.click(screen.getByTestId("PluginListItem__launch"));
 
 		const redirectUrl = `/profiles/${profile.id()}/plugins/view?pluginId=test-plugin`;
 		await waitFor(() => expect(historySpy).toHaveBeenCalledWith(redirectUrl));
@@ -728,12 +848,22 @@ describe("PluginManager", () => {
 		);
 		pluginManager.plugins().push(plugin);
 
-		const { getByTestId } = rendered;
+		renderWithRouter(
+			<Route path="/profiles/:profileId/plugins">
+				<PluginProviders>
+					<Component />
+				</PluginProviders>
+			</Route>,
+			{
+				routes: [pluginsURL],
+				history,
+			},
+		);
 
-		fireEvent.click(getByTestId("PluginManagerNavigationBar__my-plugins"));
-		fireEvent.click(getByTestId("LayoutControls__list--icon"));
+		fireEvent.click(screen.getByTestId("PluginManagerNavigationBar__my-plugins"));
+		fireEvent.click(screen.getByTestId("LayoutControls__list--icon"));
 
-		await waitFor(() => expect(getByTestId("PluginManager__update-all")).toBeInTheDocument());
+		await waitFor(() => expect(screen.getByTestId("PluginManager__update-all")).toBeInTheDocument());
 		pluginManager.plugins().removeById(plugin.config().id(), profile);
 	});
 
@@ -746,22 +876,32 @@ describe("PluginManager", () => {
 		);
 		pluginManager.plugins().push(plugin);
 
-		const { getByTestId, queryByTestId, getByText } = rendered;
+		renderWithRouter(
+			<Route path="/profiles/:profileId/plugins">
+				<PluginProviders>
+					<Component />
+				</PluginProviders>
+			</Route>,
+			{
+				routes: [pluginsURL],
+				history,
+			},
+		);
 
-		fireEvent.click(getByTestId("PluginManagerNavigationBar__my-plugins"));
-		fireEvent.click(getByTestId("LayoutControls__list--icon"));
+		fireEvent.click(screen.getByTestId("PluginManagerNavigationBar__my-plugins"));
+		fireEvent.click(screen.getByTestId("LayoutControls__list--icon"));
 
-		await waitFor(() => expect(getByTestId("PluginManager__update-all")).toBeInTheDocument());
+		await waitFor(() => expect(screen.getByTestId("PluginManager__update-all")).toBeInTheDocument());
 
-		fireEvent.click(getByTestId("PluginManager__update-all"));
+		fireEvent.click(screen.getByTestId("PluginManager__update-all"));
 
-		await waitFor(() => expect(getByTestId("PluginUpdatesConfirmation")).toBeInTheDocument());
+		await waitFor(() => expect(screen.getByTestId("PluginUpdatesConfirmation")).toBeInTheDocument());
 
-		expect(getByText("100.0.0")).toBeInTheDocument();
+		expect(screen.getByText("100.0.0")).toBeInTheDocument();
 
-		fireEvent.click(getByTestId("PluginUpdates__cancel-button"));
+		fireEvent.click(screen.getByTestId("PluginUpdates__cancel-button"));
 
-		await waitFor(() => expect(queryByTestId("PluginUpdatesConfirmation")).not.toBeInTheDocument());
+		expect(() => screen.getByTestId("PluginUpdatesConfirmation")).toThrow(/Unable to find an element by/);
 
 		process.env.REACT_APP_PLUGIN_MINIMUM_VERSION = undefined;
 		pluginManager.plugins().removeById(plugin.config().id(), profile);
@@ -796,20 +936,30 @@ describe("PluginManager", () => {
 		pluginManager.plugins().push(plugin);
 		pluginManager.plugins().push(plugin2);
 
-		const { getByTestId, getAllByText, getByText } = rendered;
+		renderWithRouter(
+			<Route path="/profiles/:profileId/plugins">
+				<PluginProviders>
+					<Component />
+				</PluginProviders>
+			</Route>,
+			{
+				routes: [pluginsURL],
+				history,
+			},
+		);
 
-		fireEvent.click(getByTestId("PluginManagerNavigationBar__my-plugins"));
-		fireEvent.click(getByTestId("LayoutControls__list--icon"));
+		fireEvent.click(screen.getByTestId("PluginManagerNavigationBar__my-plugins"));
+		fireEvent.click(screen.getByTestId("LayoutControls__list--icon"));
 
-		await waitFor(() => expect(getByTestId("PluginManager__update-all")).toBeInTheDocument());
+		await waitFor(() => expect(screen.getByTestId("PluginManager__update-all")).toBeInTheDocument());
 
-		fireEvent.click(getByTestId("PluginManager__update-all"));
+		fireEvent.click(screen.getByTestId("PluginManager__update-all"));
 
-		await waitFor(() => expect(getByTestId("PluginUpdatesConfirmation")).toBeInTheDocument());
+		await waitFor(() => expect(screen.getByTestId("PluginUpdatesConfirmation")).toBeInTheDocument());
 
-		expect(getAllByText("100.0.0").length).toBeGreaterThan(0);
+		expect(screen.getAllByText("100.0.0").length).toBeGreaterThan(0);
 
-		fireEvent.click(getByTestId("PluginUpdates__continue-button"));
+		fireEvent.click(screen.getByTestId("PluginUpdates__continue-button"));
 
 		await waitFor(() => expect(downloadsCount).toBe(2));
 		await waitFor(() => expect(installCount).toBe(2));
