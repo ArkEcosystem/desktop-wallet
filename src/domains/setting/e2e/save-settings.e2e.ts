@@ -13,7 +13,6 @@ test("should save settings", async (t) => {
 	await t.typeText(nameInput, "Anne Doe");
 
 	await t.click(Selector("input[name=isScreenshotProtection]").parent());
-	await t.click(Selector("input[name=isAdvancedMode]").parent());
 
 	await scrollToTop();
 
