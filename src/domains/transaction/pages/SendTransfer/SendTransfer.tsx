@@ -286,12 +286,12 @@ export const SendTransfer = () => {
 
 		// Skip authorization step
 		if (newIndex === 3 && senderWallet?.isMultiSignature()) {
-			await handleSubmit(() => submitForm())();
+			await handleSubmit(() => submitForm(true))();
 			return;
 		}
 
 		if (newIndex === 3 && senderWallet?.isLedger()) {
-			handleSubmit(() => submitForm())();
+			handleSubmit(() => submitForm(true))();
 		}
 
 		setActiveTab(newIndex);
