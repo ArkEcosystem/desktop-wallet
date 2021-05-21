@@ -350,7 +350,7 @@ export const SendTransfer = () => {
 										history.push(`/profiles/${activeProfile.id()}/wallets/${wallet!.id()}`)
 									}
 									isRepeatDisabled={isSubmitting}
-									onRepeat={handleSubmit(() => submitForm())}
+									onRepeat={handleSubmit(submitForm as any)}
 								/>
 							</TabPanel>
 
