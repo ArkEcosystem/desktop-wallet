@@ -3,18 +3,13 @@ import electron from "electron";
 
 import { useFiles } from "./use-files";
 
-jest.mock("fs", () => ({
-	writeFileSync: jest.fn(),
-	readFileSync: jest.fn().mockReturnValue({ toString: () => "{test:'test'}" }),
-}));
-
 describe("useFiles", () => {
 	it("should read file contents", () => {
 		const { result } = renderHook(() => useFiles());
-		expect(result.current.readFileContents("/path/to/file.json")).toEqual({
-			content: "{test:'test'}",
-			extension: ".json",
-			name: "file.json",
+		expect(result.current.readFileContents("filePath")).toEqual({
+			content: "test mnemonic",
+			extension: "",
+			name: "filePath",
 		});
 	});
 
