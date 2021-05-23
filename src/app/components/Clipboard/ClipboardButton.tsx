@@ -18,7 +18,7 @@ export const ClipboardButton = ({ data, variant, options, children, ...props }: 
 
 	return (
 		<div className="relative">
-			<Button variant="secondary" onClick={() => copy(data)} {...props}>
+			<Button variant="secondary" onClick={() => copy(data)} data-testid="clipboard-button__wrapper" {...props}>
 				{children}
 			</Button>
 
@@ -29,6 +29,7 @@ export const ClipboardButton = ({ data, variant, options, children, ...props }: 
 						animate={{ opacity: 1, transition: { duration: 0.3 } }}
 						exit={{ opacity: 0, transition: { duration: 0.3 } }}
 						className="absolute inset-0 flex justify-center items-center bg-theme-primary-100 dark:bg-theme-secondary-800 rounded"
+						data-testid="clipboard-button__checkmark"
 					>
 						<Icon
 							name="Checkmark"

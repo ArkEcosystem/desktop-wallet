@@ -25,7 +25,7 @@ export const ClipboardIcon = ({ data, tooltip, options, children }: ClipboardIco
 		>
 			<button
 				type="button"
-				data-testid="clipboard__wrapper"
+				data-testid="clipboard-icon__wrapper"
 				className="relative focus:outline-none group"
 				onClick={() => copy(data)}
 			>

@@ -12,6 +12,10 @@ export type ClipboardCommonProps = {
 type ClipboardProps = ClipboardIconProps | ClipboardButtonProps;
 
 export const Clipboard = (props: ClipboardProps) => {
+	if (!props.children) {
+		return null;
+	}
+
 	if (props.variant === "icon") {
 		return <ClipboardIcon {...props}>{props.children}</ClipboardIcon>;
 	}
