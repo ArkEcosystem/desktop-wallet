@@ -5,6 +5,7 @@ import { Circle } from "app/components/Circle";
 import { useFormField } from "app/components/Form/useFormField";
 import { Icon } from "app/components/Icon";
 import { Input } from "app/components/Input";
+import { useWalletAlias } from "app/hooks";
 import { SearchWallet } from "domains/wallet/components/SearchWallet";
 import { SelectedWallet } from "domains/wallet/components/SearchWallet/SearchWallet.models";
 import React, { useEffect, useState } from "react";
@@ -13,13 +14,14 @@ import { useTranslation } from "react-i18next";
 type SelectAddressProps = {
 	address?: string;
 	wallets: Contracts.IReadWriteWallet[];
+	profile: Contracts.IProfile;
 	disabled?: boolean;
 	isInvalid?: boolean;
 	isVerified?: boolean;
 	onChange?: (address: string) => void;
 } & React.InputHTMLAttributes<any>;
 
-const ProfileAvatar = ({ address }: any) => {
+const WalletAvatar = ({ address }: any) => {
 	if (!address) {
 		return (
 			<Circle
@@ -33,7 +35,7 @@ const ProfileAvatar = ({ address }: any) => {
 };
 
 export const SelectAddress = React.forwardRef<HTMLInputElement, SelectAddressProps>(
-	({ address, wallets, disabled, isInvalid, isVerified, onChange }: SelectAddressProps, ref) => {
+	({ address, wallets, profile, disabled, isInvalid, isVerified, onChange }: SelectAddressProps, ref) => {
 		const [searchWalletIsOpen, setSearchWalletIsOpen] = useState(false);
 		const [selectedAddress, setSelectedAddress] = useState(address);
 
@@ -50,6 +52,11 @@ export const SelectAddress = React.forwardRef<HTMLInputElement, SelectAddressPro
 			onChange?.(address);
 		};
 
+		const alias = useWalletAlias({
+			address: selectedAddress || "",
+			profile,
+		});
+
 		return (
 			<>
 				<button
@@ -60,7 +67,7 @@ export const SelectAddress = React.forwardRef<HTMLInputElement, SelectAddressPro
 					disabled={disabled}
 				>
 					<span className="absolute inset-0 flex items-center border border-transparent px-14 w-full">
-						<Address maxChars={30} address={selectedAddress} />
+						<Address walletName={alias} maxChars={30} address={selectedAddress} />
 					</span>
 
 					<Input
@@ -71,7 +78,7 @@ export const SelectAddress = React.forwardRef<HTMLInputElement, SelectAddressPro
 						readOnly
 						isInvalid={isInvalidField}
 						addons={{
-							start: <ProfileAvatar address={selectedAddress} />,
+							start: <WalletAvatar address={selectedAddress} />,
 							end: (
 								<div className="flex items-center space-x-3 text-theme-primary-300 dark:text-theme-secondary-600">
 									{isVerified && (

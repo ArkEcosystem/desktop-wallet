@@ -54,7 +54,7 @@ exports[`IpfsDetail should render a modal 1`] = `
             data-testid="TransactionDetail"
           >
             <div
-              class="flex-1 space-y-2 flex-shrink overflow-hidden whitespace-nowrap"
+              class="w-40 flex-1 space-y-2 whitespace-nowrap"
             >
               <div
                 class="text-sm font-semibold text-theme-secondary-700 no-ligatures"
@@ -124,7 +124,7 @@ exports[`IpfsDetail should render a modal 1`] = `
             data-testid="TransactionDetail"
           >
             <div
-              class="flex-1 space-y-2 flex-shrink overflow-hidden whitespace-nowrap"
+              class="w-40 flex-1 space-y-2 whitespace-nowrap"
             >
               <div
                 class="text-sm font-semibold text-theme-secondary-700 no-ligatures"
@@ -147,7 +147,7 @@ exports[`IpfsDetail should render a modal 1`] = `
             data-testid="TransactionDetail"
           >
             <div
-              class="flex-1 space-y-2 flex-shrink overflow-hidden whitespace-nowrap"
+              class="w-40 flex-1 space-y-2 whitespace-nowrap"
             >
               <div
                 class="text-sm font-semibold text-theme-secondary-700 no-ligatures"
@@ -179,7 +179,7 @@ exports[`IpfsDetail should render a modal 1`] = `
             data-testid="TransactionDetail"
           >
             <div
-              class="flex-1 space-y-2 flex-shrink overflow-hidden whitespace-nowrap"
+              class="w-40 flex-1 space-y-2 whitespace-nowrap"
             >
               <div
                 class="text-sm font-semibold text-theme-secondary-700 no-ligatures"
@@ -198,7 +198,7 @@ exports[`IpfsDetail should render a modal 1`] = `
             data-testid="TransactionDetail"
           >
             <div
-              class="flex-1 space-y-2 flex-shrink overflow-hidden whitespace-nowrap"
+              class="w-40 flex-1 space-y-2 whitespace-nowrap"
             >
               <div
                 class="text-sm font-semibold text-theme-secondary-700 no-ligatures"
@@ -232,7 +232,7 @@ exports[`IpfsDetail should render a modal 1`] = `
             data-testid="TransactionDetail"
           >
             <div
-              class="flex-1 space-y-2 flex-shrink overflow-hidden whitespace-nowrap"
+              class="w-40 flex-1 space-y-2 whitespace-nowrap"
             >
               <div
                 class="text-sm font-semibold text-theme-secondary-700 no-ligatures"
@@ -246,17 +246,17 @@ exports[`IpfsDetail should render a modal 1`] = `
                   class="flex items-center space-x-3"
                 >
                   <a
-                    class="Link__AnchorStyled-sc-1q7sbxr-0 fCYCVa group"
+                    class="Link__AnchorStyled-sc-1q7sbxr-0 jXgXXh group"
                     data-testid="Link"
                     href="#"
                     rel="noopener noreferrer"
                     to="https://explorer.ark.io/transaction/ee4175091d9f4dacf5fed213711c3e0e4cc371e37afa7bce0429d09bcf3ecefe"
                   >
                     <span
-                      class="break-all border-b border-transparent transition-colors duration-200 border-current border-dotted group-hover:border-transparent"
+                      class="break-all border-b border-transparent duration-200 group-hover:border-current"
                     >
                       <span
-                        class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-primary-700"
+                        class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap"
                         data-testid="TruncateMiddle"
                       >
                         ee4175091d9f4dacf5fed213711c3e0e4cc371e37afa7bce0429d09bcf3ecefe
@@ -266,7 +266,7 @@ exports[`IpfsDetail should render a modal 1`] = `
                       class="align-middle"
                     >
                       <div
-                        class="sc-bdfBwQ fPrsah flex-shrink-0 inline-block pb-px text-sm"
+                        class="sc-bdfBwQ fPrsah flex-shrink-0 duration-200 inline-block pb-px text-sm"
                         data-testid="Link__external"
                         height="1em"
                         width="1em"
@@ -308,7 +308,7 @@ exports[`IpfsDetail should render a modal 1`] = `
             data-testid="TransactionDetail"
           >
             <div
-              class="flex-1 space-y-2 flex-shrink overflow-hidden whitespace-nowrap"
+              class="w-40 flex-1 space-y-2 whitespace-nowrap"
             >
               <div
                 class="text-sm font-semibold text-theme-secondary-700 no-ligatures"
@@ -322,17 +322,17 @@ exports[`IpfsDetail should render a modal 1`] = `
                   class="flex items-center space-x-3"
                 >
                   <a
-                    class="Link__AnchorStyled-sc-1q7sbxr-0 fCYCVa group"
+                    class="Link__AnchorStyled-sc-1q7sbxr-0 jXgXXh group"
                     data-testid="Link"
                     href="#"
                     rel="noopener noreferrer"
                     to="https://explorer.ark.io/blocks/71fd1a494ded5430586f4dd1c79c3ac77bf38120e868c8f8980972b8075d67e9"
                   >
                     <span
-                      class="break-all border-b border-transparent transition-colors duration-200 border-current border-dotted group-hover:border-transparent"
+                      class="break-all border-b border-transparent duration-200 group-hover:border-current"
                     >
                       <span
-                        class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-primary-700"
+                        class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap"
                         data-testid="TruncateMiddle"
                       >
                         71fd1a494ded5430586f4dd1c79c3ac77bf38120e868c8f8980972b8075d67e9
@@ -342,7 +342,7 @@ exports[`IpfsDetail should render a modal 1`] = `
                       class="align-middle"
                     >
                       <div
-                        class="sc-bdfBwQ fPrsah flex-shrink-0 inline-block pb-px text-sm"
+                        class="sc-bdfBwQ fPrsah flex-shrink-0 duration-200 inline-block pb-px text-sm"
                         data-testid="Link__external"
                         height="1em"
                         width="1em"
@@ -438,7 +438,7 @@ exports[`IpfsDetail should render a modal without a wallet alias 1`] = `
             data-testid="TransactionDetail"
           >
             <div
-              class="flex-1 space-y-2 flex-shrink overflow-hidden whitespace-nowrap"
+              class="w-40 flex-1 space-y-2 whitespace-nowrap"
             >
               <div
                 class="text-sm font-semibold text-theme-secondary-700 no-ligatures"
@@ -497,7 +497,7 @@ exports[`IpfsDetail should render a modal without a wallet alias 1`] = `
             data-testid="TransactionDetail"
           >
             <div
-              class="flex-1 space-y-2 flex-shrink overflow-hidden whitespace-nowrap"
+              class="w-40 flex-1 space-y-2 whitespace-nowrap"
             >
               <div
                 class="text-sm font-semibold text-theme-secondary-700 no-ligatures"
@@ -520,7 +520,7 @@ exports[`IpfsDetail should render a modal without a wallet alias 1`] = `
             data-testid="TransactionDetail"
           >
             <div
-              class="flex-1 space-y-2 flex-shrink overflow-hidden whitespace-nowrap"
+              class="w-40 flex-1 space-y-2 whitespace-nowrap"
             >
               <div
                 class="text-sm font-semibold text-theme-secondary-700 no-ligatures"
@@ -552,7 +552,7 @@ exports[`IpfsDetail should render a modal without a wallet alias 1`] = `
             data-testid="TransactionDetail"
           >
             <div
-              class="flex-1 space-y-2 flex-shrink overflow-hidden whitespace-nowrap"
+              class="w-40 flex-1 space-y-2 whitespace-nowrap"
             >
               <div
                 class="text-sm font-semibold text-theme-secondary-700 no-ligatures"
@@ -571,7 +571,7 @@ exports[`IpfsDetail should render a modal without a wallet alias 1`] = `
             data-testid="TransactionDetail"
           >
             <div
-              class="flex-1 space-y-2 flex-shrink overflow-hidden whitespace-nowrap"
+              class="w-40 flex-1 space-y-2 whitespace-nowrap"
             >
               <div
                 class="text-sm font-semibold text-theme-secondary-700 no-ligatures"
@@ -605,7 +605,7 @@ exports[`IpfsDetail should render a modal without a wallet alias 1`] = `
             data-testid="TransactionDetail"
           >
             <div
-              class="flex-1 space-y-2 flex-shrink overflow-hidden whitespace-nowrap"
+              class="w-40 flex-1 space-y-2 whitespace-nowrap"
             >
               <div
                 class="text-sm font-semibold text-theme-secondary-700 no-ligatures"
@@ -619,17 +619,17 @@ exports[`IpfsDetail should render a modal without a wallet alias 1`] = `
                   class="flex items-center space-x-3"
                 >
                   <a
-                    class="Link__AnchorStyled-sc-1q7sbxr-0 fCYCVa group"
+                    class="Link__AnchorStyled-sc-1q7sbxr-0 jXgXXh group"
                     data-testid="Link"
                     href="#"
                     rel="noopener noreferrer"
                     to="https://explorer.ark.io/transaction/ee4175091d9f4dacf5fed213711c3e0e4cc371e37afa7bce0429d09bcf3ecefe"
                   >
                     <span
-                      class="break-all border-b border-transparent transition-colors duration-200 border-current border-dotted group-hover:border-transparent"
+                      class="break-all border-b border-transparent duration-200 group-hover:border-current"
                     >
                       <span
-                        class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-primary-700"
+                        class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap"
                         data-testid="TruncateMiddle"
                       >
                         ee4175091d9f4dacf5fed213711c3e0e4cc371e37afa7bce0429d09bcf3ecefe
@@ -639,7 +639,7 @@ exports[`IpfsDetail should render a modal without a wallet alias 1`] = `
                       class="align-middle"
                     >
                       <div
-                        class="sc-bdfBwQ fPrsah flex-shrink-0 inline-block pb-px text-sm"
+                        class="sc-bdfBwQ fPrsah flex-shrink-0 duration-200 inline-block pb-px text-sm"
                         data-testid="Link__external"
                         height="1em"
                         width="1em"
@@ -681,7 +681,7 @@ exports[`IpfsDetail should render a modal without a wallet alias 1`] = `
             data-testid="TransactionDetail"
           >
             <div
-              class="flex-1 space-y-2 flex-shrink overflow-hidden whitespace-nowrap"
+              class="w-40 flex-1 space-y-2 whitespace-nowrap"
             >
               <div
                 class="text-sm font-semibold text-theme-secondary-700 no-ligatures"
@@ -695,17 +695,17 @@ exports[`IpfsDetail should render a modal without a wallet alias 1`] = `
                   class="flex items-center space-x-3"
                 >
                   <a
-                    class="Link__AnchorStyled-sc-1q7sbxr-0 fCYCVa group"
+                    class="Link__AnchorStyled-sc-1q7sbxr-0 jXgXXh group"
                     data-testid="Link"
                     href="#"
                     rel="noopener noreferrer"
                     to="https://explorer.ark.io/blocks/71fd1a494ded5430586f4dd1c79c3ac77bf38120e868c8f8980972b8075d67e9"
                   >
                     <span
-                      class="break-all border-b border-transparent transition-colors duration-200 border-current border-dotted group-hover:border-transparent"
+                      class="break-all border-b border-transparent duration-200 group-hover:border-current"
                     >
                       <span
-                        class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-primary-700"
+                        class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap"
                         data-testid="TruncateMiddle"
                       >
                         71fd1a494ded5430586f4dd1c79c3ac77bf38120e868c8f8980972b8075d67e9
@@ -715,7 +715,7 @@ exports[`IpfsDetail should render a modal without a wallet alias 1`] = `
                       class="align-middle"
                     >
                       <div
-                        class="sc-bdfBwQ fPrsah flex-shrink-0 inline-block pb-px text-sm"
+                        class="sc-bdfBwQ fPrsah flex-shrink-0 duration-200 inline-block pb-px text-sm"
                         data-testid="Link__external"
                         height="1em"
                         width="1em"
@@ -811,7 +811,7 @@ exports[`IpfsDetail should render as confirmed 1`] = `
             data-testid="TransactionDetail"
           >
             <div
-              class="flex-1 space-y-2 flex-shrink overflow-hidden whitespace-nowrap"
+              class="w-40 flex-1 space-y-2 whitespace-nowrap"
             >
               <div
                 class="text-sm font-semibold text-theme-secondary-700 no-ligatures"
@@ -881,7 +881,7 @@ exports[`IpfsDetail should render as confirmed 1`] = `
             data-testid="TransactionDetail"
           >
             <div
-              class="flex-1 space-y-2 flex-shrink overflow-hidden whitespace-nowrap"
+              class="w-40 flex-1 space-y-2 whitespace-nowrap"
             >
               <div
                 class="text-sm font-semibold text-theme-secondary-700 no-ligatures"
@@ -904,7 +904,7 @@ exports[`IpfsDetail should render as confirmed 1`] = `
             data-testid="TransactionDetail"
           >
             <div
-              class="flex-1 space-y-2 flex-shrink overflow-hidden whitespace-nowrap"
+              class="w-40 flex-1 space-y-2 whitespace-nowrap"
             >
               <div
                 class="text-sm font-semibold text-theme-secondary-700 no-ligatures"
@@ -936,7 +936,7 @@ exports[`IpfsDetail should render as confirmed 1`] = `
             data-testid="TransactionDetail"
           >
             <div
-              class="flex-1 space-y-2 flex-shrink overflow-hidden whitespace-nowrap"
+              class="w-40 flex-1 space-y-2 whitespace-nowrap"
             >
               <div
                 class="text-sm font-semibold text-theme-secondary-700 no-ligatures"
@@ -955,7 +955,7 @@ exports[`IpfsDetail should render as confirmed 1`] = `
             data-testid="TransactionDetail"
           >
             <div
-              class="flex-1 space-y-2 flex-shrink overflow-hidden whitespace-nowrap"
+              class="w-40 flex-1 space-y-2 whitespace-nowrap"
             >
               <div
                 class="text-sm font-semibold text-theme-secondary-700 no-ligatures"
@@ -991,7 +991,7 @@ exports[`IpfsDetail should render as confirmed 1`] = `
             data-testid="TransactionDetail"
           >
             <div
-              class="flex-1 space-y-2 flex-shrink overflow-hidden whitespace-nowrap"
+              class="w-40 flex-1 space-y-2 whitespace-nowrap"
             >
               <div
                 class="text-sm font-semibold text-theme-secondary-700 no-ligatures"
@@ -1005,17 +1005,17 @@ exports[`IpfsDetail should render as confirmed 1`] = `
                   class="flex items-center space-x-3"
                 >
                   <a
-                    class="Link__AnchorStyled-sc-1q7sbxr-0 fCYCVa group"
+                    class="Link__AnchorStyled-sc-1q7sbxr-0 jXgXXh group"
                     data-testid="Link"
                     href="#"
                     rel="noopener noreferrer"
                     to="https://explorer.ark.io/transaction/ee4175091d9f4dacf5fed213711c3e0e4cc371e37afa7bce0429d09bcf3ecefe"
                   >
                     <span
-                      class="break-all border-b border-transparent transition-colors duration-200 border-current border-dotted group-hover:border-transparent"
+                      class="break-all border-b border-transparent duration-200 group-hover:border-current"
                     >
                       <span
-                        class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-primary-700"
+                        class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap"
                         data-testid="TruncateMiddle"
                       >
                         ee4175091d9f4dacf5fed213711c3e0e4cc371e37afa7bce0429d09bcf3ecefe
@@ -1025,7 +1025,7 @@ exports[`IpfsDetail should render as confirmed 1`] = `
                       class="align-middle"
                     >
                       <div
-                        class="sc-bdfBwQ fPrsah flex-shrink-0 inline-block pb-px text-sm"
+                        class="sc-bdfBwQ fPrsah flex-shrink-0 duration-200 inline-block pb-px text-sm"
                         data-testid="Link__external"
                         height="1em"
                         width="1em"
@@ -1067,7 +1067,7 @@ exports[`IpfsDetail should render as confirmed 1`] = `
             data-testid="TransactionDetail"
           >
             <div
-              class="flex-1 space-y-2 flex-shrink overflow-hidden whitespace-nowrap"
+              class="w-40 flex-1 space-y-2 whitespace-nowrap"
             >
               <div
                 class="text-sm font-semibold text-theme-secondary-700 no-ligatures"
@@ -1081,17 +1081,17 @@ exports[`IpfsDetail should render as confirmed 1`] = `
                   class="flex items-center space-x-3"
                 >
                   <a
-                    class="Link__AnchorStyled-sc-1q7sbxr-0 fCYCVa group"
+                    class="Link__AnchorStyled-sc-1q7sbxr-0 jXgXXh group"
                     data-testid="Link"
                     href="#"
                     rel="noopener noreferrer"
                     to="https://explorer.ark.io/blocks/71fd1a494ded5430586f4dd1c79c3ac77bf38120e868c8f8980972b8075d67e9"
                   >
                     <span
-                      class="break-all border-b border-transparent transition-colors duration-200 border-current border-dotted group-hover:border-transparent"
+                      class="break-all border-b border-transparent duration-200 group-hover:border-current"
                     >
                       <span
-                        class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-primary-700"
+                        class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap"
                         data-testid="TruncateMiddle"
                       >
                         71fd1a494ded5430586f4dd1c79c3ac77bf38120e868c8f8980972b8075d67e9
@@ -1101,7 +1101,7 @@ exports[`IpfsDetail should render as confirmed 1`] = `
                       class="align-middle"
                     >
                       <div
-                        class="sc-bdfBwQ fPrsah flex-shrink-0 inline-block pb-px text-sm"
+                        class="sc-bdfBwQ fPrsah flex-shrink-0 duration-200 inline-block pb-px text-sm"
                         data-testid="Link__external"
                         height="1em"
                         width="1em"
