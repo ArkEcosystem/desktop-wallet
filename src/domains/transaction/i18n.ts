@@ -1,6 +1,7 @@
 export const translations: { [key: string]: any } = {
 	ACCOUNT: "Account",
 	ACCOUNT_NICKNAME: "Account Nickname",
+	ACTION_REQUIRED: "Action Required",
 	ADD_LINK: "Add Link",
 	ADD_RECIPIENT: "Add Recipient",
 	ADDRESS: "Address",
@@ -9,6 +10,7 @@ export const translations: { [key: string]: any } = {
 	BLOCK_ID: "Block ID",
 	CONFIRMATIONS: "Confirmations",
 	CONFIRMATIONS_COUNT: "{{count}} Confirmations",
+	CONFIRMATIONS_COUNT_PENDING: "Confirmations {{count}}/51",
 	CRYPTOASSET: "Cryptoasset",
 	DELEGATE: "Delegate",
 	DELEGATE_NAME: "Delegate Name",
