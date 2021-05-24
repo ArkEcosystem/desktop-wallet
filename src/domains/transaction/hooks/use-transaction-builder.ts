@@ -4,6 +4,12 @@ import { upperFirst } from "@arkecosystem/utils";
 import Transport from "@ledgerhq/hw-transport";
 import { useLedgerContext } from "app/contexts";
 
+type SignInput = {
+	encryptionPassword?: string;
+	mnemonic?: string;
+	secondMnemonic?: string;
+	wallet: ProfileContracts.IReadWriteWallet;
+};
 type SignFn = (input: any, options?: Contracts.TransactionOptions) => Promise<string>;
 type ConnectFn = (profile: ProfileContracts.IProfile, coin: string, network: string) => Promise<void>;
 
@@ -69,14 +75,35 @@ const withAbortPromise = (signal?: AbortSignal, callback?: () => void) => <T>(pr
 export const useTransactionBuilder = (profile: ProfileContracts.IProfile) => {
 	const { connect, abortConnectionRetry, transport } = useLedgerContext();
 
+	const sign = async ({ wallet, mnemonic, secondMnemonic, encryptionPassword }: SignInput) => {
+		if (encryptionPassword) {
+			console.log("encryption password");
+			return wallet.signatory().wif(await wallet.wif().get(encryptionPassword));
+		}
+
+		if (!!mnemonic && !!secondMnemonic) {
+			console.log("secondMnemonic");
+			return wallet.signatory().secondaryMnemonic(mnemonic, secondMnemonic);
+		}
+
+		if (mnemonic) {
+			console.log("mnemonic only", mnemonic);
+			return wallet.signatory().mnemonic(mnemonic);
+		}
+
+		// TODO: handle signing for multisignature wallets
+
+		throw new Error("Signing failed. No mnemonic or encryption password provided");
+	};
+
 	const build = async (
 		type: string,
 		input: Contracts.TransactionInputs,
+		wallet: ProfileContracts.IReadWriteWallet,
 		options?: {
 			abortSignal?: AbortSignal;
 		},
 	): Promise<{ uuid: string; transaction: Contracts.SignedTransactionData }> => {
-		const wallet = profile.wallets().findByAddress(input.from)!;
 		const service = wallet.transaction();
 
 		// @ts-ignore
@@ -102,10 +129,5 @@ export const useTransactionBuilder = (profile: ProfileContracts.IProfile) => {
 		};
 	};
 
-	const broadcast = (id: string, input: Contracts.TransactionInputs) => {
-		const wallet = profile.wallets().findByAddress(input.from)!;
-		return wallet.transaction().broadcast(id);
-	};
-
-	return { build, broadcast };
+	return { build, sign };
 };
