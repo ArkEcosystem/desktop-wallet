@@ -48,6 +48,22 @@ jest.mock("electron", () => {
 	};
 });
 
+jest.mock("fs", () => {
+	const fs = jest.requireActual(`fs`);
+
+	return {
+		...fs,
+		readFileSync: (filepath, encoding) => {
+			// Exceptions
+			if (filepath === "path/to/sample-export.json") return "";
+
+			// Use actual
+			return fs.readFileSync(filepath, encoding);
+		},
+		writeFileSync: jest.fn(),
+	};
+});
+
 beforeAll(async () => {
 	await bootEnvWithProfileFixtures({ env, shouldRestoreDefaultProfile: true });
 	// Mark profiles as restored, to prevent multiple restoration in profile synchronizer

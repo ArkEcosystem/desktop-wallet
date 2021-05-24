@@ -55,7 +55,7 @@ exports[`ReceiveFunds should not render qrcode without an address 1`] = `
               data-testid="TransactionDetail"
             >
               <div
-                class="flex-1 space-y-2 flex-shrink overflow-hidden whitespace-nowrap"
+                class="w-40 flex-1 space-y-2 whitespace-nowrap"
               >
                 <div
                   class="text-sm font-semibold text-theme-secondary-700 no-ligatures"
@@ -204,7 +204,7 @@ exports[`ReceiveFunds should render with a wallet name 1`] = `
               data-testid="TransactionDetail"
             >
               <div
-                class="flex-1 space-y-2 flex-shrink overflow-hidden whitespace-nowrap"
+                class="w-40 flex-1 space-y-2 whitespace-nowrap"
               >
                 <div
                   class="text-sm font-semibold text-theme-secondary-700 no-ligatures"
@@ -243,7 +243,7 @@ exports[`ReceiveFunds should render with a wallet name 1`] = `
               data-testid="TransactionDetail"
             >
               <div
-                class="flex-1 space-y-2 flex-shrink overflow-hidden whitespace-nowrap"
+                class="w-40 flex-1 space-y-2 whitespace-nowrap"
               >
                 <div
                   class="text-sm font-semibold text-theme-secondary-700 no-ligatures"
@@ -396,7 +396,7 @@ exports[`ReceiveFunds should render without a wallet name 1`] = `
               data-testid="TransactionDetail"
             >
               <div
-                class="flex-1 space-y-2 flex-shrink overflow-hidden whitespace-nowrap"
+                class="w-40 flex-1 space-y-2 whitespace-nowrap"
               >
                 <div
                   class="text-sm font-semibold text-theme-secondary-700 no-ligatures"

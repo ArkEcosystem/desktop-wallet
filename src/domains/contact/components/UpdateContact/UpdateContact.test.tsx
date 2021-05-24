@@ -140,6 +140,12 @@ describe("UpdateContact", () => {
 			expect(screen.getByTestId("contact-form__name-input")).toHaveValue(contact.name());
 		});
 
+		fireEvent.click(screen.getAllByTestId("contact-form__remove-address-btn")[0]);
+
+		await waitFor(() => {
+			expect(() => screen.getByTestId("contact-form__address-list-item")).toThrow(/Unable to find an element by/);
+		});
+
 		fireEvent.input(screen.getByTestId("contact-form__name-input"), { target: { value: newName } });
 
 		await waitFor(() => {

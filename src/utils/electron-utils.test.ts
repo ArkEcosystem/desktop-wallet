@@ -7,11 +7,6 @@ const defaultFilters = [
 	{ name: "All Files", extensions: ["*"] },
 ];
 
-jest.mock("fs", () => ({
-	writeFileSync: jest.fn(),
-	readFileSync: jest.fn(),
-}));
-
 describe("Electron utils", () => {
 	describe("setThemeSource", () => {
 		it("should set theme source", () => {
@@ -150,7 +145,7 @@ describe("Electron utils", () => {
 		describe("when restricting the file path", () => {
 			it("should not throw an error if the given filepath is valid", async () => {
 				showSaveDialogMock = jest.spyOn(electron.remote.dialog, "showSaveDialog").mockImplementation(() => ({
-					filePath: "./bar.txt",
+					filePath: "./filePath",
 				}));
 
 				await expect(saveFile(null, null, { restrictToPath: "./" })).resolves.not.toThrow();
@@ -222,7 +217,7 @@ describe("Electron utils", () => {
 		describe("when restricting the file path", () => {
 			it("should not throw an error if the given filepath is valid", async () => {
 				showOpenDialogMock = jest.spyOn(electron.remote.dialog, "showOpenDialog").mockImplementation(() => ({
-					filePaths: ["./bar.txt"],
+					filePaths: ["./filePath"],
 				}));
 
 				await expect(openFile(null, { restrictToPath: "./" })).resolves.not.toThrow();
