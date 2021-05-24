@@ -75,6 +75,15 @@ describe("Password Validation", () => {
 		expect(pwnd).toHaveBeenCalledWith("S3cUr3!Pas#w0rd");
 	});
 
+	it("should ignore pwned validation if haveibeenpwned API is unreachable", async () => {
+		const { result } = renderHook(() => useTranslation());
+		const { t } = result.current;
+		const passwordValidation = password(t);
+
+		pwnd.mockImplementation(() => Promise.reject());
+		expect(await passwordValidation.password().validate("S3cUr3!Pas#w0rd")).toEqual(true);
+	});
+
 	it("should require different password than the old password", async () => {
 		const { result } = renderHook(() => useTranslation());
 		const { t } = result.current;

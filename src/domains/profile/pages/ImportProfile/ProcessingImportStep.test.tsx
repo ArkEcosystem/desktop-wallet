@@ -56,7 +56,7 @@ describe("Import Profile - Processing import", () => {
 		await waitFor(() => expect(getByTestId("modal__inner")).toBeInTheDocument());
 
 		act(() => {
-			fireEvent.input(getByTestId("PasswordModal__input"), { target: { value: "testtest" } });
+			fireEvent.input(getByTestId("PasswordModal__input"), { target: { value: "S3cUrePa$sword" } });
 		});
 
 		await findByTestId("PasswordModal__submit-button");
@@ -66,7 +66,7 @@ describe("Import Profile - Processing import", () => {
 		});
 
 		await waitFor(() => expect(() => getByTestId("modal__inner")).toThrow());
-		await waitFor(() => expect(onPasswordChange).toHaveBeenCalledWith("testtest"));
+		await waitFor(() => expect(onPasswordChange).toHaveBeenCalledWith("S3cUrePa$sword"));
 		expect(container).toMatchSnapshot();
 	});
 

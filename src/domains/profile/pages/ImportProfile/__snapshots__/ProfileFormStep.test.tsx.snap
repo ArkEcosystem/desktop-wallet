@@ -160,7 +160,7 @@ exports[`Import Profile - Profile Form Step should fail password confirmation 1`
                     class="flex items-center space-x-3 divide-x divide-theme-secondary-300 dark:divide-theme-secondary-800 text-theme-danger-500"
                   >
                     <span
-                      data-errortext="Password should have at least 6 characters"
+                      data-errortext="The password must contain at least 1 lowercase character, 1 uppercase character, 1 numeric character, 1 special character and must be 8 characters or longer"
                       data-testid="Input__error"
                     >
                       <div

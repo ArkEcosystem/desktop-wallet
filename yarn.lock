@@ -18845,6 +18845,13 @@ pascalcase@^0.1.1:
   resolved "https://registry.yarnpkg.com/pascalcase/-/pascalcase-0.1.1.tgz#b363e55e8006ca6fe21784d2db22bd15d7917f14"
   integrity sha1-s2PlXoAGym/iF4TS2yK9FdeRfxQ=
 
+password-pwnd@^1.0.7:
+  version "1.0.7"
+  resolved "https://registry.yarnpkg.com/password-pwnd/-/password-pwnd-1.0.7.tgz#0a3367d6fb0754881045fbbe9171411388e7e164"
+  integrity sha512-2GO0lhYKoTgJHsuL0eipXS+E2bXx8ZRTpPsrQ7RipdUj9WcvaIgv0FCeEq/T70qJn6nMIclgZumWwJpa9U0ZnQ==
+  dependencies:
+    node-fetch "^2.6.1"
+
 path-browserify@0.0.1:
   version "0.0.1"
   resolved "https://registry.yarnpkg.com/path-browserify/-/path-browserify-0.0.1.tgz#e6c4ddd7ed3aa27c68a20cc4e50e1a4ee83bbc4a"

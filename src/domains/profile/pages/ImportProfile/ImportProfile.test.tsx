@@ -129,7 +129,7 @@ describe("ImportProfile", () => {
 		await waitFor(() => expect(getByTestId("modal__inner")).toBeInTheDocument());
 
 		await act(async () => {
-			fireEvent.input(getByTestId("PasswordModal__input"), { target: { value: "testtest" } });
+			fireEvent.input(getByTestId("PasswordModal__input"), { target: { value: "S3cUrePa$sword" } });
 		});
 
 		// wait for formState.isValid to be updated
@@ -200,7 +200,7 @@ describe("ImportProfile", () => {
 		await waitFor(() => expect(getByTestId("modal__inner")).toBeInTheDocument());
 
 		await act(async () => {
-			fireEvent.input(getByTestId("PasswordModal__input"), { target: { value: "testtest" } });
+			fireEvent.input(getByTestId("PasswordModal__input"), { target: { value: "S3cUrePa$sword" } });
 		});
 
 		act(() => {
@@ -242,7 +242,7 @@ describe("ImportProfile", () => {
 		await waitFor(() => expect(getByTestId("modal__inner")).toBeInTheDocument());
 
 		await act(async () => {
-			fireEvent.input(getByTestId("PasswordModal__input"), { target: { value: "testtest" } });
+			fireEvent.input(getByTestId("PasswordModal__input"), { target: { value: "S3cUrePa$sword" } });
 		});
 
 		act(() => {

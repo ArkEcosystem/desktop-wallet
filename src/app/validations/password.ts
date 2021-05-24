@@ -7,19 +7,21 @@ export const password = (t: any) => ({
 				return t("COMMON.VALIDATION.PASSWORD_SAME_AS_OLD");
 			}
 
-			if (!(await strong(password))) {
-				return t("COMMON.VALIDATION.PASSWORD_WEAK");
-			}
-
-			try {
-				const isPwned = await pwnd(password);
-
-				if (isPwned) {
-					return t("COMMON.VALIDATION.PASSWORD_PWNED");
+			if (password) {
+				if (!(await strong(password))) {
+					return t("COMMON.VALIDATION.PASSWORD_WEAK");
 				}
-			} catch {
-				// API might be unreachable, ignore this validation.
-				return true;
+
+				try {
+					const isPwned = await pwnd(password);
+
+					if (isPwned) {
+						return t("COMMON.VALIDATION.PASSWORD_PWNED");
+					}
+				} catch {
+					// API might be unreachable, ignore this validation.
+					return true;
+				}
 			}
 
 			return true;
