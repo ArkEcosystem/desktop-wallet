@@ -112,50 +112,6 @@ test("should error for invalid address", async (t) => {
 		.ok();
 });
 
-test("should error on duplicate address addition", async (t) => {
-	const contactName = "Test contact";
-
-	await t.click(Selector('[data-testid="contacts__add-contact-btn"]'));
-	await t
-		.expect(
-			Selector('[data-testid="modal__inner"]').withText(translations.CONTACTS.MODAL_CREATE_CONTACT.TITLE).exists,
-		)
-		.ok();
-
-	const nameInput = Selector('[data-testid="contact-form__name-input"]');
-	await t.typeText(nameInput, contactName);
-
-	await t.typeText(Selector('[data-testid="SelectDropdownInput__input"]'), "ARK D");
-	await t.pressKey("tab");
-
-	const addressInput = Selector('[data-testid="contact-form__address-input"]');
-	await t.typeText(addressInput, "D6Z26L69gdk9qYmTv5uzk3uGepigtHY4ax");
-	await t.expect(Selector('[data-testid="contact-form__add-address-btn"]').hasAttribute("disabled")).notOk();
-
-	// Add address
-	await t.click(Selector('[data-testid="contact-form__add-address-btn"]'));
-	await t.expect(Selector('[data-testid="contact-form__address-list-item"]').withText("D6Z26L69").exists).ok();
-
-	// Add secondary duplicate address
-	await t.typeText(Selector('[data-testid="SelectDropdownInput__input"]'), "ARK D");
-	await t.pressKey("tab");
-
-	await t.typeText(addressInput, "D6Z26L69gdk9qYmTv5uzk3uGepigtHY4ax");
-	await t.expect(Selector('[data-testid="contact-form__add-address-btn"]').hasAttribute("disabled")).notOk();
-
-	// Add address
-	await t.click(Selector('[data-testid="contact-form__add-address-btn"]'));
-	await t.expect(Selector('[data-testid="contact-form__address-list-item"]').withText("D6Z26L69").exists).ok();
-
-	await t.expect(Selector('[data-testid="Input__error"]').exists).ok();
-
-	await t
-		.expect(
-			Selector('[data-testid="modal__inner"]').withText(translations.CONTACTS.MODAL_CREATE_CONTACT.TITLE).exists,
-		)
-		.ok();
-});
-
 test("should error if contact name already exists", async (t) => {
 	const contactName = "Brian";
 
