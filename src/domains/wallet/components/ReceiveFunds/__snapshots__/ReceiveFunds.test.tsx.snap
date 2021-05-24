@@ -76,7 +76,7 @@ exports[`ReceiveFunds should not render qrcode without an address 1`] = `
                     >
                       <button
                         class="relative focus:outline-none group"
-                        data-testid="clipboard__wrapper"
+                        data-testid="clipboard-icon__wrapper"
                         type="button"
                       >
                         <div
@@ -271,7 +271,7 @@ exports[`ReceiveFunds should render with a wallet name 1`] = `
                     >
                       <button
                         class="relative focus:outline-none group"
-                        data-testid="clipboard__wrapper"
+                        data-testid="clipboard-icon__wrapper"
                         type="button"
                       >
                         <div
@@ -424,7 +424,7 @@ exports[`ReceiveFunds should render without a wallet name 1`] = `
                     >
                       <button
                         class="relative focus:outline-none group"
-                        data-testid="clipboard__wrapper"
+                        data-testid="clipboard-icon__wrapper"
                         type="button"
                       >
                         <div

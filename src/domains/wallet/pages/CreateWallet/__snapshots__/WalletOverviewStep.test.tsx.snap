@@ -114,37 +114,32 @@ exports[`WalletOverviewStep Render step should render 1`] = `
     <div
       class="flex justify-end w-full space-x-3"
     >
-      <button
-        class="relative focus:outline-none group"
-        data-testid="clipboard__wrapper"
-        type="button"
+      <div
+        class="relative"
       >
-        <div
-          class="absolute inset-0 -m-1 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
-        />
-      </button>
-      <button
-        class="OriginalButton__StyledButton-sc-1y2wptt-0 izJbbP"
-        data-testid="CreateWallet__copy"
-        type="button"
-      >
-        <div
-          class="flex relative items-center space-x-2"
+        <button
+          class="OriginalButton__StyledButton-sc-1y2wptt-0 izJbbP"
+          data-testid="CreateWallet__copy"
+          type="button"
         >
           <div
-            class="sc-bdfBwQ fPrsah"
-            height="1em"
-            width="1em"
+            class="flex relative items-center space-x-2"
           >
-            <svg>
-              copy.svg
-            </svg>
+            <div
+              class="sc-bdfBwQ fPrsah"
+              height="1em"
+              width="1em"
+            >
+              <svg>
+                copy.svg
+              </svg>
+            </div>
+            <span>
+              Copy
+            </span>
           </div>
-          <span>
-            Copy
-          </span>
-        </div>
-      </button>
+        </button>
+      </div>
       <button
         class="OriginalButton__StyledButton-sc-1y2wptt-0 izJbbP flex items-center space-x-2"
         data-testid="CreateWallet__download"

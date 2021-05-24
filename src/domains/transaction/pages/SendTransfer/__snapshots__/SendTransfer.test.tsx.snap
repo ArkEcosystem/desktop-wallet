@@ -1373,10 +1373,14 @@ exports[`SendTransfer should display unconfirmed transactions modal when submitt
                               <span
                                 class="flex text-theme-primary-300 dark:text-theme-secondary-600"
                               >
-                                <div
-                                  class="inline-block cursor-pointer"
-                                  data-testid="clipboard__wrapper"
+                                <button
+                                  class="relative focus:outline-none group"
+                                  data-testid="clipboard-icon__wrapper"
+                                  type="button"
                                 >
+                                  <div
+                                    class="absolute inset-0 -m-1 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                                  />
                                   <div
                                     class="sc-bdfBwQ fPrsah"
                                     height="1em"
@@ -1386,7 +1390,7 @@ exports[`SendTransfer should display unconfirmed transactions modal when submitt
                                       copy.svg
                                     </svg>
                                   </div>
-                                </div>
+                                </button>
                               </span>
                             </div>
                           </div>
@@ -7352,7 +7356,7 @@ exports[`SendTransfer should render summary step 1`] = `
               >
                 <button
                   class="relative focus:outline-none group"
-                  data-testid="clipboard__wrapper"
+                  data-testid="clipboard-icon__wrapper"
                   type="button"
                 >
                   <div
@@ -9477,7 +9481,7 @@ exports[`SendTransfer should send a single transfer 1`] = `
                               >
                                 <button
                                   class="relative focus:outline-none group"
-                                  data-testid="clipboard__wrapper"
+                                  data-testid="clipboard-icon__wrapper"
                                   type="button"
                                 >
                                   <div
@@ -10131,7 +10135,7 @@ exports[`SendTransfer should send a single transfer and handle undefined expirat
                               >
                                 <button
                                   class="relative focus:outline-none group"
-                                  data-testid="clipboard__wrapper"
+                                  data-testid="clipboard-icon__wrapper"
                                   type="button"
                                 >
                                   <div
@@ -10785,7 +10789,7 @@ exports[`SendTransfer should send a single transfer and show unconfirmed transac
                               >
                                 <button
                                   class="relative focus:outline-none group"
-                                  data-testid="clipboard__wrapper"
+                                  data-testid="clipboard-icon__wrapper"
                                   type="button"
                                 >
                                   <div
@@ -11748,7 +11752,7 @@ exports[`SendTransfer should send a single transfer using wallet with encryption
                               >
                                 <button
                                   class="relative focus:outline-none group"
-                                  data-testid="clipboard__wrapper"
+                                  data-testid="clipboard-icon__wrapper"
                                   type="button"
                                 >
                                   <div
@@ -12402,7 +12406,7 @@ exports[`SendTransfer should send a single transfer with a high fee by confirmin
                               >
                                 <button
                                   class="relative focus:outline-none group"
-                                  data-testid="clipboard__wrapper"
+                                  data-testid="clipboard-icon__wrapper"
                                   type="button"
                                 >
                                   <div
@@ -13056,7 +13060,7 @@ exports[`SendTransfer should send a single transfer with a low fee by confirming
                               >
                                 <button
                                   class="relative focus:outline-none group"
-                                  data-testid="clipboard__wrapper"
+                                  data-testid="clipboard-icon__wrapper"
                                   type="button"
                                 >
                                   <div

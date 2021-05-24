@@ -122,37 +122,47 @@ exports[`SecondSignatureRegistrationForm backup step should render 1`] = `
           <div
             class="flex justify-end w-full space-x-3"
           >
-            <button
-              class="relative focus:outline-none group"
-              data-testid="clipboard__wrapper"
-              type="button"
+            <div
+              class="relative"
             >
-              <div
-                class="absolute inset-0 -m-1 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
-              />
-            </button>
-            <button
-              class="OriginalButton__StyledButton-sc-1y2wptt-0 izJbbP"
-              data-testid="SecondSignature__copy"
-              type="button"
-            >
-              <div
-                class="flex relative items-center space-x-2"
+              <button
+                class="OriginalButton__StyledButton-sc-1y2wptt-0 izJbbP"
+                data-testid="SecondSignature__copy"
+                type="button"
               >
                 <div
-                  class="sc-bdfBwQ fPrsah"
-                  height="1em"
-                  width="1em"
+                  class="flex relative items-center space-x-2"
+                >
+                  <div
+                    class="sc-bdfBwQ fPrsah"
+                    height="1em"
+                    width="1em"
+                  >
+                    <svg>
+                      copy.svg
+                    </svg>
+                  </div>
+                  <span>
+                    Copy
+                  </span>
+                </div>
+              </button>
+              <div
+                class="absolute inset-0 flex justify-center items-center bg-theme-primary-100 dark:bg-theme-secondary-800 rounded"
+                data-testid="clipboard-button__checkmark"
+                style="opacity: 0;"
+              >
+                <div
+                  class="sc-bdfBwQ fcykxB text-theme-primary-600 dark:text-theme-secondary-200"
+                  height="28"
+                  width="28"
                 >
                   <svg>
-                    copy.svg
+                    checkmark.svg
                   </svg>
                 </div>
-                <span>
-                  Copy
-                </span>
               </div>
-            </button>
+            </div>
             <button
               class="OriginalButton__StyledButton-sc-1y2wptt-0 izJbbP"
               data-testid="SecondSignature__download"
