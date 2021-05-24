@@ -1,7 +1,7 @@
 import { translations as commonTranslations } from "app/i18n/common/i18n";
 import { translations as pluginTranslations } from "domains/plugin/i18n";
 import React from "react";
-import { fireEvent, render } from "utils/testing-library";
+import { fireEvent, render, screen } from "utils/testing-library";
 
 import { BlankPluginCard, PluginCard } from "./PluginCard";
 
@@ -15,27 +15,27 @@ const basePlugin = {
 };
 
 describe("PluginCard", () => {
-	it("should render", async () => {
+	it("should render", () => {
 		const plugin = {
 			...basePlugin,
 			isInstalled: false,
 		};
 
-		const { asFragment, findByText } = render(<PluginCard plugin={plugin} />);
+		const { asFragment } = render(<PluginCard plugin={plugin} />);
 
-		expect(await findByText(plugin.title)).toBeTruthy();
+		expect(screen.getByText(plugin.title)).toBeTruthy();
 		expect(asFragment()).toMatchSnapshot();
 	});
 
-	it("should render without category", async () => {
+	it("should render without category", () => {
 		const plugin = {
 			...basePlugin,
 			isInstalled: false,
 		};
 
-		const { asFragment, findByText } = render(<PluginCard plugin={plugin} showCategory={false} />);
+		const { asFragment } = render(<PluginCard plugin={plugin} showCategory={false} />);
 
-		expect(await findByText(plugin.title)).toBeTruthy();
+		expect(screen.getByText(plugin.title)).toBeTruthy();
 		expect(asFragment()).toMatchSnapshot();
 	});
 
@@ -47,9 +47,9 @@ describe("PluginCard", () => {
 
 		const onClick = jest.fn();
 
-		const { asFragment, getByTestId } = render(<PluginCard plugin={plugin} onClick={onClick} />);
+		const { asFragment } = render(<PluginCard plugin={plugin} onClick={onClick} />);
 
-		fireEvent.click(getByTestId("Card"));
+		fireEvent.click(screen.getByTestId("Card"));
 
 		expect(onClick).toHaveBeenCalledTimes(1);
 		expect(asFragment()).toMatchSnapshot();
@@ -94,33 +94,94 @@ describe("PluginCard", () => {
 		expect(container).toHaveTextContent("alert-warning.svg");
 		expect(asFragment()).toMatchSnapshot();
 	});
+
+	it("should render update icon", () => {
+		const plugin = {
+			...basePlugin,
+			isInstalled: true,
+			hasUpdateAvailable: true,
+		};
+
+		const { asFragment, container } = render(<PluginCard plugin={plugin} />);
+
+		expect(container).toHaveTextContent("update.svg");
+		expect(asFragment()).toMatchSnapshot();
+	});
+
+	it("should call onSelect callback on update icon click", () => {
+		const onSelect = jest.fn();
+
+		const plugin = {
+			...basePlugin,
+			isInstalled: true,
+			hasUpdateAvailable: true,
+		};
+
+		render(<PluginCard plugin={plugin} onSelect={onSelect} />);
+
+		fireEvent.click(screen.getByText("update.svg"));
+		expect(onSelect).toHaveBeenCalledWith({ value: "update" });
+	});
+
+	it.each([
+		["space", { key: " ", keyCode: 32 }],
+		["enter", { key: "Enter", keyCode: 13 }],
+	])("should call onSelect callback on update icon keypress (%s)", (_, key) => {
+		const onSelect = jest.fn();
+
+		const plugin = {
+			...basePlugin,
+			isInstalled: true,
+			hasUpdateAvailable: true,
+		};
+
+		render(<PluginCard plugin={plugin} onSelect={onSelect} />);
+
+		fireEvent.keyDown(screen.getByText("update.svg"), key);
+		expect(onSelect).toHaveBeenCalledWith({ value: "update" });
+	});
+
+	it("should not call onSelect callback on update icon keypress", () => {
+		const onSelect = jest.fn();
+
+		const plugin = {
+			...basePlugin,
+			isInstalled: true,
+			hasUpdateAvailable: true,
+		};
+
+		render(<PluginCard plugin={plugin} onSelect={onSelect} />);
+
+		fireEvent.keyDown(screen.getByText("update.svg"), { key: "Escape", keyCode: 27 });
+		expect(onSelect).not.toHaveBeenCalled();
+	});
 });
 
 describe("BlankPluginCard", () => {
-	it("should render", async () => {
-		const { container, findByText } = render(<BlankPluginCard />);
+	it("should render", () => {
+		const { asFragment } = render(<BlankPluginCard />);
 
-		expect(await findByText(commonTranslations.AUTHOR)).toBeTruthy();
-		expect(await findByText(commonTranslations.NAME)).toBeTruthy();
+		expect(screen.getByText(commonTranslations.AUTHOR)).toBeTruthy();
+		expect(screen.getByText(commonTranslations.NAME)).toBeTruthy();
 
-		expect(container).toMatchSnapshot();
+		expect(asFragment()).toMatchSnapshot();
 	});
 
-	it("should render with name", async () => {
-		const { container, findByText } = render(<BlankPluginCard name="test-name" />);
+	it("should render with name", () => {
+		const { asFragment } = render(<BlankPluginCard name="test-name" />);
 
-		expect(await findByText(commonTranslations.AUTHOR)).toBeTruthy();
-		expect(await findByText("test-name")).toBeTruthy();
+		expect(screen.getByText(commonTranslations.AUTHOR)).toBeTruthy();
+		expect(screen.getByText("test-name")).toBeTruthy();
 
-		expect(container).toMatchSnapshot();
+		expect(asFragment()).toMatchSnapshot();
 	});
 
-	it("should render with category", async () => {
-		const { container, findByText } = render(<BlankPluginCard category="exchange" />);
+	it("should render with category", () => {
+		const { asFragment } = render(<BlankPluginCard category="exchange" />);
 
-		expect(await findByText(commonTranslations.AUTHOR)).toBeTruthy();
-		expect(await findByText(pluginTranslations.CATEGORIES.EXCHANGE)).toBeTruthy();
+		expect(screen.getByText(commonTranslations.AUTHOR)).toBeTruthy();
+		expect(screen.getByText(pluginTranslations.CATEGORIES.EXCHANGE)).toBeTruthy();
 
-		expect(container).toMatchSnapshot();
+		expect(asFragment()).toMatchSnapshot();
 	});
 });

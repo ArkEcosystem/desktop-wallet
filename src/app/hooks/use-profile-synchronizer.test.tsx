@@ -1,6 +1,7 @@
 /* eslint-disable @typescript-eslint/require-await */
 import { act, renderHook } from "@testing-library/react-hooks";
 import { ConfigurationProvider, EnvironmentProvider } from "app/contexts";
+import electron from "electron";
 import { createMemoryHistory } from "history";
 import React from "react";
 import { Route } from "react-router-dom";
@@ -459,5 +460,39 @@ describe("useProfileRestore", () => {
 		expect(isRestored).toEqual(false);
 
 		process.env.TEST_PROFILES_RESTORE_STATUS = "restored";
+	});
+
+	it("should restore sign out automatically", async () => {
+		jest.useFakeTimers();
+		process.env.TEST_PROFILES_RESTORE_STATUS = undefined;
+		process.env.REACT_APP_IS_E2E = undefined;
+
+		history.push(dashboardURL);
+
+		const idleTimeMock = jest
+			.spyOn(electron.remote.powerMonitor, "getSystemIdleTime")
+			.mockImplementation(() => 1000);
+
+		const { getByTestId } = renderWithRouter(
+			<Route path="/profiles/:profileId/dashboard">
+				<div data-testid="ProfileRestored">test</div>
+			</Route>,
+			{
+				routes: [dashboardURL],
+				history,
+				withProfileSynchronizer: true,
+			},
+		);
+
+		const historyMock = jest.spyOn(history, "push").mockReturnValue();
+
+		jest.runAllTimers();
+		await waitFor(() => expect(getByTestId("ProfileRestored")).toBeInTheDocument(), { timeout: 4000 });
+
+		await waitFor(() => expect(historyMock).toHaveBeenCalled(), { timeout: 4000 });
+
+		process.env.TEST_PROFILES_RESTORE_STATUS = "restored";
+		idleTimeMock.mockRestore();
+		historyMock.mockRestore();
 	});
 });

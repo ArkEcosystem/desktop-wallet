@@ -170,7 +170,7 @@ describe("ContactForm", () => {
 		expect(() => screen.getAllByTestId("contact-form__address-list-item")).toThrow(/Unable to find an element by/);
 	});
 
-	it("should error when adding duplicate address", async () => {
+	it("should remove network from options", async () => {
 		renderWithRouter(<ContactForm profile={profile} onCancel={onCancel} onSave={onSave} />);
 
 		expect(() => screen.getAllByTestId("contact-form__address-list-item")).toThrow(/Unable to find an element by/);
@@ -185,19 +185,19 @@ describe("ContactForm", () => {
 
 		const selectNetworkInput = screen.getByTestId("SelectDropdownInput__input");
 
-		fireEvent.change(selectNetworkInput, { target: { value: "ARK D" } });
+		fireEvent.change(selectNetworkInput, { target: { value: "ARK" } });
 		fireEvent.keyDown(selectNetworkInput, { key: "Enter", code: 13 });
 
 		await waitFor(() => {
-			expect(selectNetworkInput).toHaveValue("ARK Devnet");
+			expect(selectNetworkInput).toHaveValue("ARK Mainnet");
 		});
 
 		fireEvent.input(screen.getByTestId("contact-form__address-input"), {
-			target: { value: validArkDevnetAddress },
+			target: { value: "AYuYnr7WwwLUc9rLpALwVFn85NFGGmsNK7" },
 		});
 
 		await waitFor(() => {
-			expect(screen.getByTestId("contact-form__address-input")).toHaveValue(validArkDevnetAddress);
+			expect(screen.getByTestId("contact-form__address-input")).toHaveValue("AYuYnr7WwwLUc9rLpALwVFn85NFGGmsNK7");
 		});
 
 		await waitFor(() => {
@@ -212,32 +212,12 @@ describe("ContactForm", () => {
 
 		// Second addition
 
-		fireEvent.change(selectNetworkInput, { target: { value: "ARK D" } });
+		fireEvent.change(selectNetworkInput, { target: { value: "ARK" } });
 		fireEvent.keyDown(selectNetworkInput, { key: "Enter", code: 13 });
 
 		await waitFor(() => {
 			expect(selectNetworkInput).toHaveValue("ARK Devnet");
 		});
-
-		fireEvent.input(screen.getByTestId("contact-form__address-input"), {
-			target: { value: validArkDevnetAddress },
-		});
-
-		await waitFor(() => {
-			expect(screen.getByTestId("contact-form__address-input")).toHaveValue(validArkDevnetAddress);
-		});
-
-		await waitFor(() => {
-			expect(screen.getByTestId("contact-form__add-address-btn")).not.toBeDisabled();
-		});
-
-		fireEvent.click(screen.getByTestId("contact-form__add-address-btn"));
-
-		await waitFor(() => {
-			expect(screen.getByTestId("Input__error")).toBeVisible();
-		});
-
-		expect(screen.getAllByTestId("contact-form__address-list-item")).toHaveLength(1);
 	});
 
 	it("should remove an address", async () => {
