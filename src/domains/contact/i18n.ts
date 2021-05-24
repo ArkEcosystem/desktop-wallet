@@ -37,7 +37,5 @@ export const translations: { [key: string]: any } = {
 		CONTACT_NAME_EXISTS: "Contact with name {{name}} already exists.",
 		CONTACT_NAME_EXISTS_SUFFIX: "already exists",
 		ADDRESS_IS_INVALID: "The address is not valid",
-		ADDRESS_EXISTS: "Address {{address}} already exists",
-		ADDRESS_EXISTS_SUFFIX: "already exists",
 	},
 };

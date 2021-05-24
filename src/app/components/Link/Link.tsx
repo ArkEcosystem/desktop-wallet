@@ -11,10 +11,10 @@ import { Icon } from "../Icon";
 
 const AnchorStyled = styled.a(() => [
 	tw`relative inline-block space-x-2 font-semibold text-theme-primary-600`,
-	tw`transition-colors duration-200`,
+	tw`transition-colors`,
 	tw`cursor-pointer no-underline`,
 	tw`hover:text-theme-primary-700`,
-	tw`active:text-theme-primary-500`,
+	tw`active:text-theme-primary-400`,
 	tw`focus:(outline-none after:ring-2)`,
 	tw`after:(content absolute inset-0 -m-1 ring-theme-primary-400 rounded)`,
 	css`
@@ -47,12 +47,7 @@ const Anchor = React.forwardRef<HTMLAnchorElement, AnchorProps>(
 			href={href || "#"}
 			{...props}
 		>
-			<span
-				className={cn("break-all border-b border-transparent transition-colors duration-200", {
-					"border-current border-dotted group-hover:border-transparent": isExternal,
-					"group-hover:border-current": !isExternal,
-				})}
-			>
+			<span className="break-all border-b border-transparent duration-200 group-hover:border-current">
 				{children}
 			</span>
 			{isExternal && showExternalIcon && (
@@ -60,7 +55,7 @@ const Anchor = React.forwardRef<HTMLAnchorElement, AnchorProps>(
 					<Icon
 						data-testid="Link__external"
 						name="Redirect"
-						className={cn("flex-shrink-0", { "inline-block pb-px text-sm": children })}
+						className={cn("flex-shrink-0 duration-200", { "inline-block pb-px text-sm": children })}
 					/>
 				</span>
 			)}
