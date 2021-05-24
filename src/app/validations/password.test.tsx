@@ -59,14 +59,14 @@ describe("Password Validation", () => {
 		expect(pwnd).not.toHaveBeenCalled();
 	});
 
-	it("should require the password not to have been pwned", async () => {
+	it("should require the password not to have been leaked", async () => {
 		const { result } = renderHook(() => useTranslation());
 		const { t } = result.current;
 		const passwordValidation = password(t);
 
 		pwnd.mockImplementation(() => Promise.resolve(1));
 		expect(await passwordValidation.password().validate("S3cUr3!Pas#w0rd")).toEqual(
-			t("COMMON.VALIDATION.PASSWORD_PWNED"),
+			t("COMMON.VALIDATION.PASSWORD_LEAKED"),
 		);
 		expect(pwnd).toHaveBeenCalledWith("S3cUr3!Pas#w0rd");
 
@@ -75,7 +75,7 @@ describe("Password Validation", () => {
 		expect(pwnd).toHaveBeenCalledWith("S3cUr3!Pas#w0rd");
 	});
 
-	it("should ignore pwned validation if haveibeenpwned API is unreachable", async () => {
+	it("should ignore leaked validation if haveibeenpwned API is unreachable", async () => {
 		const { result } = renderHook(() => useTranslation());
 		const { t } = result.current;
 		const passwordValidation = password(t);

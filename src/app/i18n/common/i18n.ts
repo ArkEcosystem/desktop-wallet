@@ -258,7 +258,7 @@ export const translations: { [key: string]: any } = {
 		PASSWORD_SAME_AS_OLD: "New password cannot be old password",
 		PASSWORD_WEAK:
 			"The password must contain at least 1 lowercase character, 1 uppercase character, 1 numeric character, 1 special character and must be 8 characters or longer",
-		PASSWORD_PWNED: "Please change your password, it has been found in a previous breach",
+		PASSWORD_LEAKED: "Please change your password, it has been found in a previous breach",
 	},
 
 	DATETIME: {

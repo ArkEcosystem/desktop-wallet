@@ -13,10 +13,10 @@ export const password = (t: any) => ({
 				}
 
 				try {
-					const isPwned = await pwnd(password);
+					const hasBeenLeaked = await pwnd(password);
 
-					if (isPwned) {
-						return t("COMMON.VALIDATION.PASSWORD_PWNED");
+					if (hasBeenLeaked) {
+						return t("COMMON.VALIDATION.PASSWORD_LEAKED");
 					}
 				} catch {
 					// API might be unreachable, ignore this validation.
