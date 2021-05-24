@@ -125,6 +125,7 @@ export const SendTransactionForm = ({
 					<SelectAddress
 						address={senderAddress}
 						wallets={wallets}
+						profile={profile}
 						disabled={wallets.length === 0}
 						onChange={handleSelectSender}
 					/>
