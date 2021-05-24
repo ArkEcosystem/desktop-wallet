@@ -3321,7 +3321,18 @@ exports[`SendTransfer should render form and use location state 1`] = `
                                 class="w-full flex items-center no-ligatures overflow-hidden whitespace-nowrap"
                               >
                                 <span
-                                  class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-text font-semibold text-base"
+                                  class="max-w-24 truncate mr-2 font-semibold text-base text-theme-text"
+                                  data-testid="address__wallet-name"
+                                >
+                                  <span
+                                    class="TruncateEnd__Wrapper-sc-1w1nvb9-0"
+                                    data-testid="TruncateEnd"
+                                  >
+                                    ARK Wallet 1
+                                  </span>
+                                </span>
+                                <span
+                                  class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-secondary-500 dark:text-theme-secondary-700 font-semibold text-base"
                                   data-testid="address__wallet-address"
                                 >
                                   D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD
@@ -4325,7 +4336,18 @@ exports[`SendTransfer should render form and use location state without memo 1`]
                                 class="w-full flex items-center no-ligatures overflow-hidden whitespace-nowrap"
                               >
                                 <span
-                                  class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-text font-semibold text-base"
+                                  class="max-w-24 truncate mr-2 font-semibold text-base text-theme-text"
+                                  data-testid="address__wallet-name"
+                                >
+                                  <span
+                                    class="TruncateEnd__Wrapper-sc-1w1nvb9-0"
+                                    data-testid="TruncateEnd"
+                                  >
+                                    ARK Wallet 1
+                                  </span>
+                                </span>
+                                <span
+                                  class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-secondary-500 dark:text-theme-secondary-700 font-semibold text-base"
                                   data-testid="address__wallet-address"
                                 >
                                   D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD
@@ -8031,7 +8053,18 @@ exports[`SendTransfer should select a cryptoasset and select sender without wall
                                 class="w-full flex items-center no-ligatures overflow-hidden whitespace-nowrap"
                               >
                                 <span
-                                  class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-text font-semibold text-base"
+                                  class="max-w-24 truncate mr-2 font-semibold text-base text-theme-text"
+                                  data-testid="address__wallet-name"
+                                >
+                                  <span
+                                    class="TruncateEnd__Wrapper-sc-1w1nvb9-0"
+                                    data-testid="TruncateEnd"
+                                  >
+                                    ARK Wallet 2
+                                  </span>
+                                </span>
+                                <span
+                                  class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-secondary-500 dark:text-theme-secondary-700 font-semibold text-base"
                                   data-testid="address__wallet-address"
                                 >
                                   D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb
