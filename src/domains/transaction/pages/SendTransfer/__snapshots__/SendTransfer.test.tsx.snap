@@ -1325,7 +1325,7 @@ exports[`SendTransfer should display unconfirmed transactions modal when submitt
                         data-testid="TransactionDetail"
                       >
                         <div
-                          class="flex-1 space-y-2 flex-shrink overflow-hidden whitespace-nowrap"
+                          class="w-40 flex-1 space-y-2 whitespace-nowrap"
                         >
                           <div
                             class="text-sm font-semibold text-theme-secondary-700 no-ligatures"
@@ -1339,17 +1339,17 @@ exports[`SendTransfer should display unconfirmed transactions modal when submitt
                               class="flex items-center space-x-3"
                             >
                               <a
-                                class="Link__AnchorStyled-sc-1q7sbxr-0 fCYCVa group"
+                                class="Link__AnchorStyled-sc-1q7sbxr-0 jXgXXh group"
                                 data-testid="Link"
                                 href="#"
                                 rel="noopener noreferrer"
                                 to="https://dexplorer.ark.io/transaction/8f913b6b719e7767d49861c0aec79ced212767645cb793d75d2f1b89abb49877"
                               >
                                 <span
-                                  class="break-all border-b border-transparent transition-colors duration-200 border-current border-dotted group-hover:border-transparent"
+                                  class="break-all border-b border-transparent duration-200 group-hover:border-current"
                                 >
                                   <span
-                                    class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-primary-700"
+                                    class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap"
                                     data-testid="TruncateMiddle"
                                   >
                                     8f913b6b719e7767d49861c0aec79ced212767645cb793d75d2f1b89abb49877
@@ -1359,7 +1359,7 @@ exports[`SendTransfer should display unconfirmed transactions modal when submitt
                                   class="align-middle"
                                 >
                                   <div
-                                    class="sc-bdfBwQ fPrsah flex-shrink-0 inline-block pb-px text-sm"
+                                    class="sc-bdfBwQ fPrsah flex-shrink-0 duration-200 inline-block pb-px text-sm"
                                     data-testid="Link__external"
                                     height="1em"
                                     width="1em"
@@ -1397,7 +1397,7 @@ exports[`SendTransfer should display unconfirmed transactions modal when submitt
                         data-testid="TransactionDetail"
                       >
                         <div
-                          class="flex-1 space-y-2 flex-shrink overflow-hidden whitespace-nowrap"
+                          class="w-40 flex-1 space-y-2 whitespace-nowrap"
                         >
                           <div
                             class="text-sm font-semibold text-theme-secondary-700 no-ligatures"
@@ -1432,7 +1432,7 @@ exports[`SendTransfer should display unconfirmed transactions modal when submitt
                         data-testid="TransactionDetail"
                       >
                         <div
-                          class="flex-1 space-y-2 flex-shrink overflow-hidden whitespace-nowrap"
+                          class="w-40 flex-1 space-y-2 whitespace-nowrap"
                         >
                           <div
                             class="text-sm font-semibold text-theme-secondary-700 no-ligatures"
@@ -1489,7 +1489,7 @@ exports[`SendTransfer should display unconfirmed transactions modal when submitt
                         data-testid="TransactionDetail"
                       >
                         <div
-                          class="flex-1 space-y-2 flex-shrink overflow-hidden whitespace-nowrap"
+                          class="w-40 flex-1 space-y-2 whitespace-nowrap"
                         >
                           <div
                             class="text-sm font-semibold text-theme-secondary-700 no-ligatures"
@@ -1531,7 +1531,7 @@ exports[`SendTransfer should display unconfirmed transactions modal when submitt
                         data-testid="TransactionDetail"
                       >
                         <div
-                          class="flex-1 space-y-2 flex-shrink overflow-hidden whitespace-nowrap"
+                          class="w-40 flex-1 space-y-2 whitespace-nowrap"
                         >
                           <div
                             class="text-sm font-semibold text-theme-secondary-700 no-ligatures"
@@ -1572,7 +1572,7 @@ exports[`SendTransfer should display unconfirmed transactions modal when submitt
                         data-testid="TransactionDetail"
                       >
                         <div
-                          class="flex-1 space-y-2 flex-shrink overflow-hidden whitespace-nowrap"
+                          class="w-40 flex-1 space-y-2 whitespace-nowrap"
                         >
                           <div
                             class="text-sm font-semibold text-theme-secondary-700 no-ligatures"
@@ -1762,7 +1762,7 @@ exports[`SendTransfer should display unconfirmed transactions modal when submitt
                             >
                               <td>
                                 <div
-                                  class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 DpDcR space-x-3 text-theme-secondary-500"
+                                  class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 jJMXCE space-x-3 text-theme-secondary-500"
                                 >
                                   <span
                                     data-testid="timeago"
@@ -1773,7 +1773,7 @@ exports[`SendTransfer should display unconfirmed transactions modal when submitt
                               </td>
                               <td>
                                 <div
-                                  class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT space-x-3"
+                                  class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 hAleYq space-x-3 w-50"
                                 >
                                   <div
                                     class="Avatar__AvatarWrapper-sc-1vsy2s2-0 ibTSCJ ring-theme-background bg-theme-background group-hover:ring-theme-secondary-100 group-hover:bg-secondary-100 dark:group-hover:ring-black dark:group-hover:bg-black flex-shrink-0"
@@ -1803,7 +1803,7 @@ exports[`SendTransfer should display unconfirmed transactions modal when submitt
                               </td>
                               <td>
                                 <div
-                                  class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 kjTmcB justify-end"
+                                  class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 ncRGo justify-end"
                                 >
                                   <div
                                     class="Label-sc-1tj9hzr-0 ganlOQ whitespace-nowrap"
@@ -11160,7 +11160,7 @@ exports[`SendTransfer should send a single transfer and show unconfirmed transac
                             >
                               <td>
                                 <div
-                                  class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 DpDcR space-x-3 text-theme-secondary-500"
+                                  class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 jJMXCE space-x-3 text-theme-secondary-500"
                                 >
                                   <span
                                     data-testid="timeago"
@@ -11171,7 +11171,7 @@ exports[`SendTransfer should send a single transfer and show unconfirmed transac
                               </td>
                               <td>
                                 <div
-                                  class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT space-x-3"
+                                  class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 hAleYq space-x-3 w-50"
                                 >
                                   <div
                                     class="Avatar__AvatarWrapper-sc-1vsy2s2-0 ibTSCJ ring-theme-background bg-theme-background group-hover:ring-theme-secondary-100 group-hover:bg-secondary-100 dark:group-hover:ring-black dark:group-hover:bg-black flex-shrink-0"
@@ -11201,7 +11201,7 @@ exports[`SendTransfer should send a single transfer and show unconfirmed transac
                               </td>
                               <td>
                                 <div
-                                  class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 kjTmcB justify-end"
+                                  class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 ncRGo justify-end"
                                 >
                                   <div
                                     class="Label-sc-1tj9hzr-0 ganlOQ whitespace-nowrap"
@@ -11223,7 +11223,7 @@ exports[`SendTransfer should send a single transfer and show unconfirmed transac
                             >
                               <td>
                                 <div
-                                  class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 DpDcR space-x-3 text-theme-secondary-500"
+                                  class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 jJMXCE space-x-3 text-theme-secondary-500"
                                 >
                                   <span
                                     data-testid="timeago"
@@ -11234,7 +11234,7 @@ exports[`SendTransfer should send a single transfer and show unconfirmed transac
                               </td>
                               <td>
                                 <div
-                                  class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT space-x-3"
+                                  class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 hAleYq space-x-3 w-50"
                                 >
                                   <div
                                     class="Circle__CircleWrapper-uw7h4j-0 byFmWC border-theme-text text-theme-text dark:border-theme-secondary-600 dark:text-theme-secondary-600 ring-theme-background bg-theme-background group-hover:ring-theme-secondary-100 group-hover:bg-secondary-100 dark:group-hover:ring-black dark:group-hover:bg-black ring-theme-background"
@@ -11267,7 +11267,7 @@ exports[`SendTransfer should send a single transfer and show unconfirmed transac
                               </td>
                               <td>
                                 <div
-                                  class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 kjTmcB justify-end"
+                                  class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 ncRGo justify-end"
                                 >
                                   <div
                                     class="Label-sc-1tj9hzr-0 ganlOQ whitespace-nowrap"
