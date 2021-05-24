@@ -3,8 +3,10 @@ import { useConfiguration, useEnvironmentContext } from "app/contexts";
 import { useEffect, useMemo, useRef } from "react";
 import { matchPath, useHistory, useLocation } from "react-router-dom";
 
+import { useAutomaticSignout } from "./use-automatic-signout";
 import { useNotifications } from "./use-notifications";
 import { useProfileUtils } from "./use-profile-utils";
+import { useScreenshotProtection } from "./use-screenshot-protection";
 import { useSynchronizer } from "./use-synchronizer";
 import { useTheme } from "./use-theme";
 
@@ -180,6 +182,9 @@ export const useProfileSynchronizer = ({ onProfileRestoreError }: ProfileSynchro
 	const { allJobs } = useProfileJobs(profile);
 	const { start, stop, runAll } = useSynchronizer(allJobs);
 	const { setProfileTheme, resetTheme } = useTheme();
+	const { monitorIdleTime, resetAutomatiSignout } = useAutomaticSignout();
+	const { setScreenshotProtection } = useScreenshotProtection();
+	const history = useHistory();
 
 	useEffect(() => {
 		const clearProfileSyncStatus = () => {
@@ -191,6 +196,7 @@ export const useProfileSynchronizer = ({ onProfileRestoreError }: ProfileSynchro
 			stop({ clearTimers: true });
 			setConfiguration({ profileIsSyncing: true });
 			resetTheme();
+			resetAutomatiSignout();
 		};
 
 		const syncProfile = async (profile?: Contracts.IProfile) => {
@@ -209,7 +215,14 @@ export const useProfileSynchronizer = ({ onProfileRestoreError }: ProfileSynchro
 
 			if (shouldRestore(profile)) {
 				await restoreProfile(profile);
+
 				setProfileTheme(profile);
+				setScreenshotProtection(profile);
+
+				monitorIdleTime({
+					profile,
+					onTimeout: () => history.push("/"),
+				});
 			}
 
 			if (shouldSync()) {
@@ -251,6 +264,10 @@ export const useProfileSynchronizer = ({ onProfileRestoreError }: ProfileSynchro
 		restoreProfile,
 		status,
 		onProfileRestoreError,
+		monitorIdleTime,
+		resetAutomatiSignout,
+		history,
+		setScreenshotProtection,
 		stop,
 	]);
 

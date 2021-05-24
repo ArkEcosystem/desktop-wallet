@@ -12,11 +12,6 @@ const config = {
 	"desktop-wallet": { permissions: ["FILESYSTEM"] },
 };
 
-jest.mock("fs", () => ({
-	writeFileSync: jest.fn(),
-	readFileSync: jest.fn(() => "test"),
-}));
-
 describe("FileSystemPluginService", () => {
 	let profile: Contracts.IProfile;
 	let manager: PluginManager;
@@ -37,7 +32,7 @@ describe("FileSystemPluginService", () => {
 	it("should open file", async () => {
 		let content: any;
 
-		jest.spyOn(electron.remote.dialog, "showOpenDialog").mockResolvedValue({ filePaths: ["/test.txt"] });
+		jest.spyOn(electron.remote.dialog, "showOpenDialog").mockResolvedValue({ filePaths: ["filePath"] });
 
 		const fixture = (api: PluginAPI) => {
 			api.filesystem()
@@ -53,7 +48,7 @@ describe("FileSystemPluginService", () => {
 
 		await new Promise((r) => setTimeout(r, 200));
 
-		expect(content).toBe("test");
+		expect(content).toBe("test mnemonic");
 	});
 
 	it("should save file", async () => {
@@ -61,7 +56,7 @@ describe("FileSystemPluginService", () => {
 
 		const saveSpy = jest
 			.spyOn(electron.remote.dialog, "showSaveDialog")
-			.mockResolvedValue({ filePath: "/test.txt" });
+			.mockResolvedValue({ filePath: "filePath" });
 
 		const fixture = (api: PluginAPI) => {
 			api.filesystem().askUserToSaveFile(content);

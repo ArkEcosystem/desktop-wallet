@@ -6,7 +6,7 @@ import { goToContacts } from "./common";
 
 const translations = buildTranslations();
 
-createFixture(`Update contact`).beforeEach(async (t) => await goToContacts(t));
+createFixture("Update contact").beforeEach(async (t) => await goToContacts(t));
 
 test("should open and close contact update modal", async (t) => {
 	await t.click(
@@ -111,6 +111,8 @@ test("should error for invalid address", async (t) => {
 		)
 		.ok();
 
+	await t.click(Selector('[data-testid="contact-form__remove-address-btn"]'));
+
 	await t.typeText(Selector('[data-testid="SelectDropdownInput__input"]'), "ARK D");
 	await t.pressKey("tab");
 
@@ -120,44 +122,6 @@ test("should error for invalid address", async (t) => {
 
 	// Add address
 	await t.hover(Selector('[data-testid="contact-form__add-address-btn"]'));
-	await t.click(Selector('[data-testid="contact-form__add-address-btn"]'));
-	await t.expect(Selector('[data-testid="Input__error"]').exists).ok();
-
-	await t
-		.expect(
-			Selector('[data-testid="modal__inner"]').withText(translations.CONTACTS.MODAL_UPDATE_CONTACT.TITLE).exists,
-		)
-		.ok();
-});
-
-test("should error on duplicate address addition", async (t) => {
-	await t.expect(Selector('[data-testid="ContactList"] tbody > tr:first-child td').withText("Brian").exists).ok();
-	await t
-		.expect(Selector('[data-testid="ContactList"] tbody > tr:first-child td').withText("Anne Doe").exists)
-		.notOk();
-
-	await t.click(
-		Selector('[data-testid="ContactList"] tbody > tr:first-child [data-testid="dropdown__toggle"]').child(0),
-	);
-	await t.click(
-		Selector('[data-testid="ContactList"] tbody > tr:first-child [data-testid="dropdown__option--0"]').withText(
-			translations.COMMON.EDIT,
-		),
-	);
-	await t
-		.expect(
-			Selector('[data-testid="modal__inner"]').withText(translations.CONTACTS.MODAL_UPDATE_CONTACT.TITLE).exists,
-		)
-		.ok();
-
-	await t.typeText(Selector('[data-testid="SelectDropdownInput__input"]'), "ARK D");
-	await t.pressKey("tab");
-
-	const addressInput = Selector('[data-testid="contact-form__address-input"]');
-	await t.typeText(addressInput, "D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib");
-	await t.expect(Selector('[data-testid="contact-form__add-address-btn"]').hasAttribute("disabled")).notOk();
-
-	// Add address
 	await t.click(Selector('[data-testid="contact-form__add-address-btn"]'));
 	await t.expect(Selector('[data-testid="Input__error"]').exists).ok();
 

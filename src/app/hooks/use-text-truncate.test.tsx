@@ -8,9 +8,14 @@ describe("UseTextTruncate", () => {
 		let parentRef: any;
 		let truncateRef: any;
 
-		const Component = ({ minChars }: any) => {
+		const Component = ({ minChars, extraSpace }: any) => {
 			parentRef = useRef(null);
-			const [TruncatedText, ref] = useTextTruncate({ text: "Lorem ipsum dolor sit amet", parentRef, minChars });
+			const [TruncatedText, ref] = useTextTruncate({
+				text: "Lorem ipsum dolor sit amet",
+				parentRef,
+				minChars,
+				extraSpace,
+			});
 			truncateRef = ref;
 
 			return (
@@ -35,5 +40,9 @@ describe("UseTextTruncate", () => {
 		rerender(<Component minChars={8} />);
 
 		expect(screen.getByText("Lorem i…it amet")).toBeInTheDocument();
+
+		rerender(<Component extraSpace={20} />);
+
+		expect(screen.getByText("Lorem …t amet")).toBeInTheDocument();
 	});
 });

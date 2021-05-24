@@ -45,9 +45,9 @@ export const SendTransfer = () => {
 	const firstTabIndex = showNetworkStep ? 0 : 1;
 
 	const [activeTab, setActiveTab] = useState(showNetworkStep ? 0 : 1);
-	const [unconfirmedTransactions, setUnconfirmedTransactions] = useState([] as DTO.ExtendedTransactionData[]);
-	const [isConfirming, setIsConfirming] = useState(false);
-	const [transaction, setTransaction] = useState((null as unknown) as Contracts.SignedTransactionData);
+	const [unconfirmedTransactions, setUnconfirmedTransactions] = useState<DTO.ExtendedTransactionData[]>([]);
+	const [isConfirmModalOpen, setIsConfirmModalOpen] = useState(false);
+	const [transaction, setTransaction] = useState<Contracts.SignedTransactionData | null>(null);
 
 	const { persist } = useEnvironmentContext();
 	const activeProfile = useActiveProfile();
@@ -179,7 +179,17 @@ export const SendTransfer = () => {
 		form.trigger(["fee", "amount"]);
 	}, [fee]); // eslint-disable-line react-hooks/exhaustive-deps
 
-	const submitForm = async () => {
+	const submitForm = async (skipUnconfirmedCheck = false) => {
+		if (!skipUnconfirmedCheck) {
+			const unconfirmed = await fetchWalletUnconfirmedTransactions(wallet!);
+			setUnconfirmedTransactions(unconfirmed);
+
+			if (unconfirmed.length) {
+				setIsConfirmModalOpen(true);
+				return;
+			}
+		}
+
 		clearErrors("mnemonic");
 
 		const { fee, mnemonic, secondMnemonic, recipients, smartbridge, encryptionPassword } = getValues();
@@ -215,7 +225,7 @@ export const SendTransfer = () => {
 				};
 			}
 
-			const expiration = await wallet?.coin()?.transaction().estimateExpiration();
+			const expiration = await wallet?.coin()?.transaction()?.estimateExpiration();
 			if (expiration) {
 				transactionInput.data.expiration = parseInt(expiration);
 				setLastEstimatedExpiration(transactionInput.data.expiration);
@@ -272,12 +282,12 @@ export const SendTransfer = () => {
 
 		// Skip authorization step
 		if (newIndex === 3 && senderWallet?.isMultiSignature()) {
-			await handleSubmit(submitForm)();
+			await handleSubmit(() => submitForm(true))();
 			return;
 		}
 
 		if (newIndex === 3 && senderWallet?.isLedger()) {
-			handleSubmit(submitForm)();
+			handleSubmit(() => submitForm(true))();
 		}
 
 		setActiveTab(newIndex);
@@ -286,7 +296,7 @@ export const SendTransfer = () => {
 	return (
 		<Page profile={activeProfile}>
 			<Section className="flex-1">
-				<Form className="max-w-xl mx-auto" context={form} onSubmit={submitForm}>
+				<Form className="max-w-xl mx-auto" context={form} onSubmit={() => submitForm()}>
 					<Tabs activeId={activeTab}>
 						<StepIndicator
 							size={showNetworkStep ? 5 : 4}
@@ -327,7 +337,7 @@ export const SendTransfer = () => {
 							</TabPanel>
 
 							<TabPanel tabId={4}>
-								<SummaryStep transaction={transaction} senderWallet={wallet!} />
+								{!!transaction && <SummaryStep transaction={transaction} senderWallet={wallet!} />}
 							</TabPanel>
 
 							<TabPanel tabId={5}>
@@ -335,8 +345,8 @@ export const SendTransfer = () => {
 									onBack={() =>
 										history.push(`/profiles/${activeProfile.id()}/wallets/${wallet!.id()}`)
 									}
-									isRepeatDisabled={formState.isSubmitting}
-									onRepeat={form.handleSubmit(submitForm)}
+									isRepeatDisabled={isSubmitting}
+									onRepeat={handleSubmit(submitForm as any)}
 								/>
 							</TabPanel>
 
@@ -359,7 +369,7 @@ export const SendTransfer = () => {
 														activeTab === 0 && network ? false : !isValid || isSubmitting
 													}
 													onClick={async () => await handleNext()}
-													isLoading={isSubmitting || isConfirming}
+													isLoading={isSubmitting}
 												>
 													{t("COMMON.CONTINUE")}
 												</Button>
@@ -377,25 +387,11 @@ export const SendTransfer = () => {
 												</Button>
 
 												<Button
-													onClick={async () => {
-														setIsConfirming(true);
-
-														const unconfirmed = await fetchWalletUnconfirmedTransactions(
-															wallet!,
-														);
-
-														setUnconfirmedTransactions(unconfirmed);
-
-														if (unconfirmed.length > 0) {
-															return;
-														}
-
-														handleSubmit(submitForm)();
-													}}
+													type="submit"
 													data-testid="SendTransfer__button--submit"
-													disabled={!isValid || isSubmitting || isConfirming}
+													disabled={!isValid || isSubmitting}
 													icon="Send"
-													isLoading={isSubmitting || isConfirming}
+													isLoading={isSubmitting}
 												>
 													<span>{t("COMMON.SEND")}</span>
 												</Button>
@@ -431,14 +427,13 @@ export const SendTransfer = () => {
 
 					<ConfirmSendTransaction
 						unconfirmedTransactions={unconfirmedTransactions}
-						isOpen={unconfirmedTransactions.length > 0}
+						isOpen={isConfirmModalOpen}
 						onConfirm={() => {
-							handleSubmit(submitForm)();
-							setUnconfirmedTransactions([]);
+							setIsConfirmModalOpen(false);
+							handleSubmit(() => submitForm(true))();
 						}}
 						onClose={() => {
-							setIsConfirming(false);
-							setUnconfirmedTransactions([]);
+							setIsConfirmModalOpen(false);
 						}}
 					/>
 				</Form>
