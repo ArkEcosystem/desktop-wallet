@@ -12,6 +12,14 @@ describe("Password Validation", () => {
 		pwnd = jest.spyOn(passwordPwnd, "pwnd").mockImplementation(() => Promise.resolve(0));
 	});
 
+	it("should not be required", async () => {
+		const { result } = renderHook(() => useTranslation());
+		const { t } = result.current;
+		const passwordValidation = password(t);
+
+		expect(await passwordValidation.password().validate("")).toEqual(true);
+	});
+
 	it("should require at least 1 lowercase character", async () => {
 		const { result } = renderHook(() => useTranslation());
 		const { t } = result.current;

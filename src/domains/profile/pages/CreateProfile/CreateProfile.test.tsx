@@ -199,8 +199,8 @@ describe("CreateProfile", () => {
 		const { asFragment, getAllByTestId, getByTestId } = await renderComponent();
 
 		fireEvent.input(getAllByTestId("Input")[0], { target: { value: "test profile 3" } });
-		fireEvent.input(getAllByTestId("InputPassword")[0], { target: { value: "S3cUrePa$sword" } });
-		fireEvent.input(getAllByTestId("InputPassword")[1], { target: { value: "S3cUrePa$sword" } });
+		fireEvent.input(getAllByTestId("InputPassword")[0], { target: { value: "S3cUrePa$sword.test" } });
+		fireEvent.input(getAllByTestId("InputPassword")[1], { target: { value: "S3cUrePa$sword.test" } });
 
 		const selectDropdown = getByTestId("SelectDropdownInput__input");
 
@@ -229,8 +229,8 @@ describe("CreateProfile", () => {
 		fireEvent.change(selectDropdown, { target: { value: "BTC" } });
 		fireEvent.click(getByTestId("select-list__toggle-option-0"));
 
-		fireEvent.change(getAllByTestId("InputPassword")[0], { target: { value: "S3cUrePa$sword" } });
-		fireEvent.change(getAllByTestId("InputPassword")[1], { target: { value: "S3cUrePa$sword.different" } });
+		fireEvent.change(getAllByTestId("InputPassword")[0], { target: { value: "S3cUrePa$sword.test" } });
+		fireEvent.change(getAllByTestId("InputPassword")[1], { target: { value: "S3cUrePa$sword.wrong" } });
 
 		await waitFor(() => expect(getByTestId("CreateProfile__submit-button")).toHaveAttribute("disabled"));
 
@@ -239,8 +239,8 @@ describe("CreateProfile", () => {
 
 		await waitFor(() => expect(getByTestId("CreateProfile__submit-button")).not.toHaveAttribute("disabled"));
 
-		fireEvent.input(getAllByTestId("InputPassword")[0], { target: { value: "S3cUrePa$sword" } });
-		fireEvent.input(getAllByTestId("InputPassword")[1], { target: { value: "S3cUrePa$sword.diff" } });
+		fireEvent.input(getAllByTestId("InputPassword")[1], { target: { value: "S3cUrePa$sword.test" } });
+		fireEvent.input(getAllByTestId("InputPassword")[0], { target: { value: "S3cUrePa$sword.wrong" } });
 
 		await waitFor(() => expect(getByTestId("CreateProfile__submit-button")).toHaveAttribute("disabled"));
 
