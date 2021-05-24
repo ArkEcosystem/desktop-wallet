@@ -182,34 +182,24 @@ export const SendTransfer = () => {
 	const submitForm = async () => {
 		clearErrors("mnemonic");
 
-		const {
-			fee,
-			mnemonic,
-			secondMnemonic,
-			recipients,
-			senderAddress,
-			smartbridge,
-			encryptionPassword,
-		} = getValues();
-
+		const { fee, mnemonic, secondMnemonic, recipients, smartbridge, encryptionPassword } = getValues();
 		const isMultiPayment = recipients.length > 1;
-
 		const transactionType = isMultiPayment ? "multiPayment" : "transfer";
 
-		const wif = activeWallet?.wif().exists() ? await activeWallet.wif().get(encryptionPassword) : undefined;
-
-		const transactionInput: Contracts.TransactionInputs = {
-			fee,
-			from: senderAddress,
-			sign: {
-				wif,
+		try {
+			const signatory = await transactionBuilder.sign({
+				wallet: activeWallet,
 				mnemonic,
 				secondMnemonic,
-			},
-			data: {},
-		};
+				encryptionPassword,
+			});
 
-		try {
+			const transactionInput: Contracts.TransactionInputs = {
+				fee,
+				signatory,
+				data: {},
+			};
+
 			if (isMultiPayment) {
 				transactionInput.data = {
 					payments: recipients.map(({ address, amount }: { address: string; amount: string }) => ({
@@ -232,17 +222,23 @@ export const SendTransfer = () => {
 			}
 
 			const abortSignal = abortRef.current?.signal;
-			const { uuid, transaction } = await transactionBuilder.build(transactionType, transactionInput, {
-				abortSignal,
-			});
+			const { uuid, transaction } = await transactionBuilder.build(
+				transactionType,
+				transactionInput,
+				activeWallet,
+				{
+					abortSignal,
+				},
+			);
 
-			await transactionBuilder.broadcast(uuid, transactionInput);
+			await activeWallet.transaction().broadcast(uuid);
 
 			await persist();
 
 			setTransaction(transaction);
 			setActiveTab(4);
 		} catch (error) {
+			console.log("error", error);
 			if (isMnemonicError(error)) {
 				setValue("mnemonic", "");
 				return setError("mnemonic", { type: "manual", message: t("TRANSACTION.INVALID_MNEMONIC") });
