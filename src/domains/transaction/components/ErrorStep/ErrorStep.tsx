@@ -4,7 +4,7 @@ import { Image } from "app/components/Image";
 import React from "react";
 import { useTranslation } from "react-i18next";
 
-type ErroStepProps = {
+type Props = {
 	title?: string;
 	description?: string;
 	isRepeatDisabled?: boolean;
@@ -12,7 +12,7 @@ type ErroStepProps = {
 	onRepeat?: () => void;
 };
 
-export const ErrorStep = ({ title, description, onBack, onRepeat, isRepeatDisabled = false }: ErroStepProps) => {
+export const ErrorStep = ({ title, description, onBack, onRepeat, isRepeatDisabled = false }: Props) => {
 	const { t } = useTranslation();
 
 	return (
