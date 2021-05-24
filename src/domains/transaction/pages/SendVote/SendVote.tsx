@@ -179,25 +179,25 @@ export const SendVote = () => {
 
 	const submitForm = async () => {
 		clearErrors("mnemonic");
-		const { fee, mnemonic, secondMnemonic, senderAddress, encryptionPassword } = getValues();
+		const { fee, mnemonic, secondMnemonic, encryptionPassword } = getValues();
 		const abortSignal = abortRef.current?.signal;
 
-		const wif = activeWallet?.wif().exists() ? await activeWallet.wif().get(encryptionPassword) : undefined;
-
 		try {
+			const signatory = await transactionBuilder.sign({
+				wallet: activeWallet,
+				mnemonic,
+				secondMnemonic,
+				encryptionPassword,
+			});
+
 			const voteTransactionInput: Contracts.TransactionInput = {
 				fee,
-				from: senderAddress,
-				sign: {
-					wif,
-					mnemonic,
-					secondMnemonic,
-				},
+				signatory,
 			};
 
-			if (unvotes.length > 0 && votes.length > 0) {
-				const senderWallet = activeProfile.wallets().findByAddress(getValues("senderAddress"));
+			const senderWallet = activeProfile.wallets().findByAddress(getValues("senderAddress"));
 
+			if (unvotes.length > 0 && votes.length > 0) {
 				// @README: This needs to be temporarily hardcoded here because we need to create 1 or 2
 				// transactions but the SDK is only capable of creating 1 transaction because it has no
 				// concept of all those weird legacy constructs that exist within ARK.
@@ -211,10 +211,11 @@ export const SendVote = () => {
 								unvotes: unvotes.map((wallet: ProfileContracts.IReadOnlyWallet) => wallet.publicKey()),
 							},
 						},
+						senderWallet,
 						{ abortSignal },
 					);
 
-					await transactionBuilder.broadcast(unvoteResult.uuid, voteTransactionInput);
+					await activeWallet.transaction().broadcast(unvoteResult.uuid);
 
 					await persist();
 
@@ -228,10 +229,11 @@ export const SendVote = () => {
 								votes: votes.map((wallet: ProfileContracts.IReadOnlyWallet) => wallet.publicKey()),
 							},
 						},
+						senderWallet,
 						{ abortSignal },
 					);
 
-					await transactionBuilder.broadcast(voteResult.uuid, voteTransactionInput);
+					await activeWallet.transaction().broadcast(voteResult.uuid);
 
 					await persist();
 
@@ -252,10 +254,11 @@ export const SendVote = () => {
 								unvotes: unvotes.map((wallet: ProfileContracts.IReadOnlyWallet) => wallet.publicKey()),
 							},
 						},
+						senderWallet!,
 						{ abortSignal },
 					);
 
-					await transactionBuilder.broadcast(uuid, voteTransactionInput);
+					await activeWallet.transaction().broadcast(uuid);
 
 					await persist();
 
@@ -281,10 +284,11 @@ export const SendVote = () => {
 									votes: votes.map((wallet: ProfileContracts.IReadOnlyWallet) => wallet.publicKey()),
 							  },
 					},
+					senderWallet!,
 					{ abortSignal },
 				);
 
-				await transactionBuilder.broadcast(uuid, voteTransactionInput);
+				await activeWallet.transaction().broadcast(uuid);
 
 				await persist();
 
