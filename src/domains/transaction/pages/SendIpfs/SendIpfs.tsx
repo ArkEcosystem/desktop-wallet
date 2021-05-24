@@ -74,31 +74,37 @@ export const SendIpfs = () => {
 	const submitForm = async () => {
 		clearErrors("mnemonic");
 
-		const { fee, mnemonic, secondMnemonic, senderAddress, hash, encryptionPassword } = getValues();
-		const wif = activeWallet?.wif().exists() ? await activeWallet.wif().get(encryptionPassword) : undefined;
+		const { fee, mnemonic, secondMnemonic, hash, encryptionPassword } = getValues();
+
+		console.log({ mnemonic, secondMnemonic, encryptionPassword });
+		const signatory = await transactionBuilder.sign({
+			wallet: activeWallet,
+			mnemonic,
+			secondMnemonic,
+			encryptionPassword,
+		});
 
 		const transactionInput: Contracts.IpfsInput = {
 			fee,
-			from: senderAddress,
-			sign: {
-				wif,
-				mnemonic,
-				secondMnemonic,
-			},
+			signatory,
 			data: { hash },
 		};
 
 		try {
 			const abortSignal = abortRef.current?.signal;
 
-			const { uuid, transaction } = await transactionBuilder.build("ipfs", transactionInput, { abortSignal });
-			await transactionBuilder.broadcast(uuid, transactionInput);
+			const { uuid, transaction } = await transactionBuilder.build("ipfs", transactionInput, activeWallet, {
+				abortSignal,
+			});
+
+			await activeWallet.transaction().broadcast(uuid);
 
 			await persist();
 
 			setTransaction(transaction);
 			setActiveTab(4);
 		} catch (error) {
+			console.log("error", error);
 			if (isMnemonicError(error)) {
 				setValue("mnemonic", "");
 				return setError("mnemonic", { type: "manual", message: t("TRANSACTION.INVALID_MNEMONIC") });
