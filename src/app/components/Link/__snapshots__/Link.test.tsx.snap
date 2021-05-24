@@ -3,20 +3,20 @@
 exports[`Link should open an external link 1`] = `
 <DocumentFragment>
   <a
-    class="Link__AnchorStyled-sc-1q7sbxr-0 fCYCVa group"
+    class="Link__AnchorStyled-sc-1q7sbxr-0 jXgXXh group"
     data-testid="Link"
     href="#"
     rel="noopener noreferrer"
     to="https://ark.io/"
   >
     <span
-      class="break-all border-b border-transparent transition-colors duration-200 border-current border-dotted group-hover:border-transparent"
+      class="break-all border-b border-transparent duration-200 group-hover:border-current"
     />
     <span
       class="align-middle"
     >
       <div
-        class="sc-bdfBwQ fPrsah flex-shrink-0"
+        class="sc-bdfBwQ fPrsah flex-shrink-0 duration-200"
         data-testid="Link__external"
         height="1em"
         width="1em"
@@ -33,12 +33,12 @@ exports[`Link should open an external link 1`] = `
 exports[`Link should render 1`] = `
 <DocumentFragment>
   <a
-    class="Link__AnchorStyled-sc-1q7sbxr-0 fCYCVa group"
+    class="Link__AnchorStyled-sc-1q7sbxr-0 jXgXXh group"
     data-testid="Link"
     href="/test"
   >
     <span
-      class="break-all border-b border-transparent transition-colors duration-200 group-hover:border-current"
+      class="break-all border-b border-transparent duration-200 group-hover:border-current"
     >
       Test
     </span>
@@ -49,20 +49,20 @@ exports[`Link should render 1`] = `
 exports[`Link should render external without children 1`] = `
 <DocumentFragment>
   <a
-    class="Link__AnchorStyled-sc-1q7sbxr-0 fCYCVa group"
+    class="Link__AnchorStyled-sc-1q7sbxr-0 jXgXXh group"
     data-testid="Link"
     href="#"
     rel="noopener noreferrer"
     to="https://ark.io"
   >
     <span
-      class="break-all border-b border-transparent transition-colors duration-200 border-current border-dotted group-hover:border-transparent"
+      class="break-all border-b border-transparent duration-200 group-hover:border-current"
     />
     <span
       class="align-middle"
     >
       <div
-        class="sc-bdfBwQ fPrsah flex-shrink-0"
+        class="sc-bdfBwQ fPrsah flex-shrink-0 duration-200"
         data-testid="Link__external"
         height="1em"
         width="1em"
@@ -79,12 +79,12 @@ exports[`Link should render external without children 1`] = `
 exports[`Link should render with tooltip 1`] = `
 <DocumentFragment>
   <a
-    class="Link__AnchorStyled-sc-1q7sbxr-0 fCYCVa group"
+    class="Link__AnchorStyled-sc-1q7sbxr-0 jXgXXh group"
     data-testid="Link"
     href="/test"
   >
     <span
-      class="break-all border-b border-transparent transition-colors duration-200 group-hover:border-current"
+      class="break-all border-b border-transparent duration-200 group-hover:border-current"
     >
       Test
     </span>
@@ -95,20 +95,20 @@ exports[`Link should render with tooltip 1`] = `
 exports[`Link should show a toast when trying to open an invalid external link 1`] = `
 <DocumentFragment>
   <a
-    class="Link__AnchorStyled-sc-1q7sbxr-0 fCYCVa group"
+    class="Link__AnchorStyled-sc-1q7sbxr-0 jXgXXh group"
     data-testid="Link"
     href="#"
     rel="noopener noreferrer"
     to="invalid-url"
   >
     <span
-      class="break-all border-b border-transparent transition-colors duration-200 border-current border-dotted group-hover:border-transparent"
+      class="break-all border-b border-transparent duration-200 group-hover:border-current"
     />
     <span
       class="align-middle"
     >
       <div
-        class="sc-bdfBwQ fPrsah flex-shrink-0"
+        class="sc-bdfBwQ fPrsah flex-shrink-0 duration-200"
         data-testid="Link__external"
         height="1em"
         width="1em"
