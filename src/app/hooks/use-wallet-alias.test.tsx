@@ -37,18 +37,18 @@ describe("UseWalletAlias", () => {
 	it("should return contact name", async () => {
 		const contact = profile.contacts().create("Test");
 		await contact.setAddresses([
-			{ name: "my contact name", address: wallet.address(), coin: wallet.coinId(), network: wallet.networkId() },
+			{ name: wallet.address(), address: wallet.address(), coin: wallet.coinId(), network: wallet.networkId() },
 		]);
 
 		const { result } = renderHook(() => useWalletAlias({ address: wallet.address(), profile }), { wrapper });
-		expect(result.current).toBe("my contact name");
+		expect(result.current).toBe(contact.name());
 
 		profile.contacts().forget(contact.id());
 	});
 
 	it("should return displayName", () => {
 		const { result } = renderHook(() => useWalletAlias({ address: wallet.address(), profile }), { wrapper });
-		expect(result.current).toBe("ARK Wallet 1");
+		expect(result.current).toBe(wallet.displayName());
 	});
 
 	it("should return delegate name", async () => {
