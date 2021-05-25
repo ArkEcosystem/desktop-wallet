@@ -45,7 +45,10 @@ describe("useProfileImport", () => {
 		const { result } = renderHook(() => useProfileImport({ env }));
 
 		await act(async () => {
-			const profile = await result.current.importProfile({ file: passwordProtectedDwe, password: "testtest" });
+			const profile = await result.current.importProfile({
+				file: passwordProtectedDwe,
+				password: "S3cUrePa$sword",
+			});
 			expect(profile?.name()).toEqual("test");
 		});
 	});
