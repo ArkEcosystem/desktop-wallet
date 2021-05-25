@@ -71,7 +71,7 @@ export const ReceiveFunds = ({ address, icon, name, network, isOpen, onClose }: 
 				>
 					<div className="flex items-center space-x-2">
 						<Address address={address} maxChars={25} />
-						<span className="flex text-theme-primary-300 dark:text-theme-secondary-600">
+						<span className="flex-grow flex text-theme-primary-300 dark:text-theme-secondary-600">
 							<Clipboard variant="icon" data={address}>
 								<Icon name="Copy" />
 							</Clipboard>
