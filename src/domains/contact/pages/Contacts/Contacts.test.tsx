@@ -109,7 +109,7 @@ describe("Contacts", () => {
 
 		const selectNetworkInput = screen.getByTestId("SelectDropdownInput__input");
 
-		fireEvent.change(selectNetworkInput, { target: { value: "DARK D" } });
+		fireEvent.change(selectNetworkInput, { target: { value: "ARK D" } });
 		fireEvent.keyDown(selectNetworkInput, { key: "Enter", code: 13 });
 
 		await waitFor(() => {
