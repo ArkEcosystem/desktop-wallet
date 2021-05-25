@@ -36,26 +36,25 @@ describe("Wallet Transactions Hook", () => {
 		profile = env.profiles().findById(getDefaultProfileId());
 		wallet = profile.wallets().first();
 
+		await env.profiles().restore(profile);
 		await profile.sync();
 	});
 
 	it("should sync multisignatures", async () => {
+		const signatory = await wallet
+			.signatory()
+			.multiSignature(2, [wallet.publicKey()!, profile.wallets().last().publicKey()!]);
+
 		const transfer = await wallet
 			.coin()
 			.transaction()
 			.transfer({
 				fee: "1",
+				signatory,
 				nonce: "1",
-				from: wallet.address(),
 				data: {
 					to: wallet.address(),
 					amount: "1",
-				},
-				sign: {
-					multiSignature: {
-						min: 2,
-						publicKeys: [wallet.publicKey()!, profile.wallets().last().publicKey()!],
-					},
 				},
 			});
 
@@ -110,39 +109,36 @@ describe("Wallet Transactions Hook", () => {
 	});
 
 	it("should show only pending multisignature transactions", async () => {
+		const mnemonicSignatory = await wallet.signatory().mnemonic("test");
+
 		const transfer = await wallet
 			.coin()
 			.transaction()
 			.transfer({
-				from: "DM7UiH4b2rW2Nv11Wu6ToiZi8MJhGCEWhP",
+				signatory: mnemonicSignatory,
 				nonce: "1",
 				fee: "1",
 				data: {
 					to: wallet.address(),
 					amount: "1",
 				},
-				sign: {
-					mnemonic: "test",
-				},
 			});
+
+		const signatory = await wallet
+			.signatory()
+			.multiSignature(2, [wallet.publicKey()!, profile.wallets().last().publicKey()!]);
 
 		const transferWithMultisig = await wallet
 			.coin()
 			.transaction()
 			.transfer({
-				from: "DM7UiH4b2rW2Nv11Wu6ToiZi8MJhGCEWhP",
 				nonce: "1",
 				fee: "1",
 				data: {
 					to: wallet.address(),
 					amount: "1",
 				},
-				sign: {
-					multiSignature: {
-						min: 2,
-						publicKeys: [wallet.publicKey()!, profile.wallets().last().publicKey()!],
-					},
-				},
+				signatory,
 			});
 
 		const signedMock = jest.spyOn(wallet.transaction(), "signed").mockReturnValue({
