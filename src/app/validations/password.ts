@@ -1,15 +1,29 @@
+import { pwnd, strong } from "password-pwnd";
+
 export const password = (t: any) => ({
 	password: (currentPassword?: string) => ({
-		minLength: {
-			value: 6,
-			message: t("COMMON.VALIDATION.MIN_LENGTH", {
-				field: t("SETTINGS.GENERAL.PERSONAL.PASSWORD"),
-				minLength: 6,
-			}),
-		},
-		validate: (password: string) => {
+		validate: async (password: string) => {
+			if (!password) {
+				return true;
+			}
+
 			if (!!currentPassword && currentPassword === password) {
 				return t("COMMON.VALIDATION.PASSWORD_SAME_AS_OLD");
+			}
+
+			if (!(await strong(password))) {
+				return t("COMMON.VALIDATION.PASSWORD_WEAK");
+			}
+
+			try {
+				const hasBeenLeaked = await pwnd(password);
+
+				if (hasBeenLeaked) {
+					return t("COMMON.VALIDATION.PASSWORD_LEAKED");
+				}
+			} catch {
+				// API might be unreachable, ignore this validation.
+				return true;
 			}
 
 			return true;

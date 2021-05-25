@@ -1,3 +1,4 @@
+import cn from "classnames";
 import React from "react";
 import { styled } from "twin.macro";
 
@@ -27,7 +28,7 @@ export const TransactionDetail = React.forwardRef<HTMLDivElement, TransactionDet
 			borderPosition={borderPosition}
 			padding={padding}
 			paddingPosition={paddingPosition}
-			className={`${className} no-ligatures`}
+			className={cn("no-ligatures", className)}
 			ref={ref}
 		>
 			<div className="w-40 flex-1 space-y-2 whitespace-nowrap">

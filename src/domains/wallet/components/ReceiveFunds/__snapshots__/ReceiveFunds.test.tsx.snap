@@ -51,7 +51,7 @@ exports[`ReceiveFunds should not render qrcode without an address 1`] = `
             data-testid="ReceiveFunds__address"
           >
             <div
-              class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 ilSsHd undefined no-ligatures"
+              class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 eAofZT no-ligatures"
               data-testid="TransactionDetail"
             >
               <div
@@ -66,13 +66,13 @@ exports[`ReceiveFunds should not render qrcode without an address 1`] = `
                   class="font-semibold"
                 >
                   <div
-                    class="flex items-center space-x-2"
+                    class="flex items-center"
                   >
                     <div
-                      class="w-full flex items-center no-ligatures overflow-hidden whitespace-nowrap"
+                      class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap"
                     />
                     <span
-                      class="flex text-theme-primary-300 dark:text-theme-secondary-600"
+                      class="flex-grow flex text-theme-primary-300 dark:text-theme-secondary-600"
                     >
                       <div
                         class="inline-block cursor-pointer"
@@ -196,7 +196,7 @@ exports[`ReceiveFunds should render with a wallet name 1`] = `
             data-testid="ReceiveFunds__name"
           >
             <div
-              class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 ilSsHd undefined no-ligatures"
+              class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 eAofZT no-ligatures"
               data-testid="TransactionDetail"
             >
               <div
@@ -235,7 +235,7 @@ exports[`ReceiveFunds should render with a wallet name 1`] = `
             data-testid="ReceiveFunds__address"
           >
             <div
-              class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 ilSsHd undefined no-ligatures"
+              class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 eAofZT no-ligatures"
               data-testid="TransactionDetail"
             >
               <div
@@ -250,10 +250,10 @@ exports[`ReceiveFunds should render with a wallet name 1`] = `
                   class="font-semibold"
                 >
                   <div
-                    class="flex items-center space-x-2"
+                    class="flex items-center"
                   >
                     <div
-                      class="w-full flex items-center no-ligatures overflow-hidden whitespace-nowrap"
+                      class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap"
                     >
                       <span
                         class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-text font-semibold text-base"
@@ -263,7 +263,7 @@ exports[`ReceiveFunds should render with a wallet name 1`] = `
                       </span>
                     </div>
                     <span
-                      class="flex text-theme-primary-300 dark:text-theme-secondary-600"
+                      class="flex-grow flex text-theme-primary-300 dark:text-theme-secondary-600"
                     >
                       <div
                         class="inline-block cursor-pointer"
@@ -384,7 +384,7 @@ exports[`ReceiveFunds should render without a wallet name 1`] = `
             data-testid="ReceiveFunds__address"
           >
             <div
-              class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 ilSsHd undefined no-ligatures"
+              class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 eAofZT no-ligatures"
               data-testid="TransactionDetail"
             >
               <div
@@ -399,10 +399,10 @@ exports[`ReceiveFunds should render without a wallet name 1`] = `
                   class="font-semibold"
                 >
                   <div
-                    class="flex items-center space-x-2"
+                    class="flex items-center"
                   >
                     <div
-                      class="w-full flex items-center no-ligatures overflow-hidden whitespace-nowrap"
+                      class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap"
                     >
                       <span
                         class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-text font-semibold text-base"
@@ -412,7 +412,7 @@ exports[`ReceiveFunds should render without a wallet name 1`] = `
                       </span>
                     </div>
                     <span
-                      class="flex text-theme-primary-300 dark:text-theme-secondary-600"
+                      class="flex-grow flex text-theme-primary-300 dark:text-theme-secondary-600"
                     >
                       <div
                         class="inline-block cursor-pointer"

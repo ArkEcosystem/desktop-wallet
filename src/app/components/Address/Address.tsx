@@ -50,7 +50,7 @@ export const Address = ({
 	};
 
 	return (
-		<div ref={ref} className="w-full flex items-center no-ligatures overflow-hidden whitespace-nowrap">
+		<div ref={ref} className="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap">
 			{walletName && (
 				<span
 					data-testid="address__wallet-name"

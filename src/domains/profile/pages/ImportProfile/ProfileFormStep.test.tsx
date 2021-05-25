@@ -173,8 +173,8 @@ describe("Import Profile - Profile Form Step", () => {
 		fireEvent.click(container.querySelector("input[name=isDarkMode]"));
 
 		await act(async () => {
-			fireEvent.change(getAllByTestId("InputPassword")[0], { target: { value: "password" } });
-			fireEvent.change(getAllByTestId("InputPassword")[1], { target: { value: "password" } });
+			fireEvent.change(getAllByTestId("InputPassword")[0], { target: { value: "S3cUrePa$sword" } });
+			fireEvent.change(getAllByTestId("InputPassword")[1], { target: { value: "S3cUrePa$sword" } });
 		});
 
 		await act(async () => {

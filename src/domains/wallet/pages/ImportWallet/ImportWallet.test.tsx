@@ -377,11 +377,11 @@ describe("ImportWallet", () => {
 		});
 
 		await utilsAct(async () => {
-			fireEvent.input(getAllByTestId("InputPassword")[0], { target: { value: "password" } });
+			fireEvent.input(getAllByTestId("InputPassword")[0], { target: { value: "S3cUrePa$sword" } });
 		});
 
 		await utilsAct(async () => {
-			fireEvent.input(getAllByTestId("InputPassword")[1], { target: { value: "password" } });
+			fireEvent.input(getAllByTestId("InputPassword")[1], { target: { value: "S3cUrePa$sword" } });
 		});
 
 		await waitFor(() => expect(getByTestId("ImportWallet__continue-button")).not.toBeDisabled());
