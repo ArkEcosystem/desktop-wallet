@@ -131,7 +131,7 @@ exports[`SendTransactionForm should render 1`] = `
             class="absolute inset-0 flex items-center border border-transparent px-14 w-full"
           >
             <div
-              class="w-full flex items-center no-ligatures overflow-hidden whitespace-nowrap"
+              class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap"
             />
           </span>
           <div
@@ -368,7 +368,7 @@ exports[`SendTransactionForm should select a network & update fees 1`] = `
             class="absolute inset-0 flex items-center border border-transparent px-14 w-full"
           >
             <div
-              class="w-full flex items-center no-ligatures overflow-hidden whitespace-nowrap"
+              class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap"
             >
               <span
                 class="max-w-24 truncate mr-2 font-semibold text-base text-theme-text"
@@ -668,7 +668,7 @@ exports[`SendTransactionForm should use static fees if avg is not available 1`] 
             class="absolute inset-0 flex items-center border border-transparent px-14 w-full"
           >
             <div
-              class="w-full flex items-center no-ligatures overflow-hidden whitespace-nowrap"
+              class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap"
             >
               <span
                 class="max-w-24 truncate mr-2 font-semibold text-base text-theme-text"
