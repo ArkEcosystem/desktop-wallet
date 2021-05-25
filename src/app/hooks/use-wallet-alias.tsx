@@ -11,15 +11,14 @@ type Props = {
 export const useWalletAlias = ({ address, profile, coinId, networkId }: Props) => {
 	const { env } = useEnvironmentContext();
 
-	const wallet = profile.wallets().findByAddress(address);
 	const contact = profile.contacts().findByAddress(address)[0];
 
 	if (contact) {
-		return contact.addresses().findByAddress(address)[0].name();
+		return contact.name();
 	}
 
 	try {
-		const alias = wallet?.displayName();
+		const alias = profile.wallets().findByAddress(address)?.displayName();
 
 		if (alias) {
 			return alias;
