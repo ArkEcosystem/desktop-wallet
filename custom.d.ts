@@ -4,3 +4,8 @@ declare module "*.svg" {
 	const src: string;
 	export default src;
 }
+
+declare module "password-pwnd" {
+	const pwnd: (value: string) => Promise<number>;
+	const strong: (value: string) => Promise<1 | 0>;
+}

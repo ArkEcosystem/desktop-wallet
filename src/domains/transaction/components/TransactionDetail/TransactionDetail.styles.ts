@@ -1,6 +1,6 @@
 import tw from "twin.macro";
 
-const baseStyles = () => tw`flex items-center`;
+const baseStyles = () => tw`flex items-center space-x-2`;
 
 const getBorder = (border?: boolean, borderPosition?: "top" | "bottom" | "both") =>
 	border

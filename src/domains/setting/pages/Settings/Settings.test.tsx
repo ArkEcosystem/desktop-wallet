@@ -547,11 +547,15 @@ describe("Settings", () => {
 		expect(() => getByTestId(currentPasswordInput)).toThrow(/Unable to find an element by/);
 
 		await act(async () => {
-			fireEvent.input(getByTestId("Password-settings__input--password_1"), { target: { value: "password" } });
+			fireEvent.input(getByTestId("Password-settings__input--password_1"), {
+				target: { value: "S3cUrePa$sword" },
+			});
 		});
 
 		await act(async () => {
-			fireEvent.input(getByTestId("Password-settings__input--password_2"), { target: { value: "password" } });
+			fireEvent.input(getByTestId("Password-settings__input--password_2"), {
+				target: { value: "S3cUrePa$sword" },
+			});
 		});
 
 		// wait for formState.isValid to be updated
@@ -587,13 +591,17 @@ describe("Settings", () => {
 		await waitFor(() => expect(getByTestId(currentPasswordInput)).toBeTruthy());
 
 		act(() => {
-			fireEvent.input(getByTestId(currentPasswordInput), { target: { value: "password" } });
+			fireEvent.input(getByTestId(currentPasswordInput), { target: { value: "S3cUrePa$sword" } });
 		});
 		act(() => {
-			fireEvent.input(getByTestId("Password-settings__input--password_1"), { target: { value: "new password" } });
+			fireEvent.input(getByTestId("Password-settings__input--password_1"), {
+				target: { value: "S3cUrePa$sword2different" },
+			});
 		});
 		act(() => {
-			fireEvent.input(getByTestId("Password-settings__input--password_2"), { target: { value: "new password" } });
+			fireEvent.input(getByTestId("Password-settings__input--password_2"), {
+				target: { value: "S3cUrePa$sword2different" },
+			});
 		});
 
 		// wait for formState.isValid to be updated
@@ -634,13 +642,13 @@ describe("Settings", () => {
 
 		await act(async () => {
 			fireEvent.input(getByTestId("Password-settings__input--password_1"), {
-				target: { value: "another new password" },
+				target: { value: "AnotherS3cUrePa$swordNew" },
 			});
 		});
 
 		await act(async () => {
 			fireEvent.input(getByTestId("Password-settings__input--password_2"), {
-				target: { value: "another new password" },
+				target: { value: "AnotherS3cUrePa$swordNew" },
 			});
 		});
 
@@ -679,22 +687,28 @@ describe("Settings", () => {
 		await waitFor(() => expect(getByTestId(currentPasswordInput)).toBeTruthy());
 
 		act(() => {
-			fireEvent.input(getByTestId(currentPasswordInput), { target: { value: "password" } });
+			fireEvent.input(getByTestId(currentPasswordInput), { target: { value: "S3cUrePa$sword" } });
 		});
 
 		act(() => {
-			fireEvent.input(getByTestId("Password-settings__input--password_1"), { target: { value: "new password" } });
-		});
-
-		await waitFor(() => expect(getByTestId("Password-settings__input--password_1")).toHaveValue("new password"));
-
-		act(() => {
-			fireEvent.input(getByTestId("Password-settings__input--password_2"), {
-				target: { value: "new password 1" },
+			fireEvent.input(getByTestId("Password-settings__input--password_1"), {
+				target: { value: "S3cUrePa$sword2different" },
 			});
 		});
 
-		await waitFor(() => expect(getByTestId("Password-settings__input--password_2")).toHaveValue("new password 1"));
+		await waitFor(() =>
+			expect(getByTestId("Password-settings__input--password_1")).toHaveValue("S3cUrePa$sword2different"),
+		);
+
+		act(() => {
+			fireEvent.input(getByTestId("Password-settings__input--password_2"), {
+				target: { value: "S3cUrePa$sword2different1" },
+			});
+		});
+
+		await waitFor(() =>
+			expect(getByTestId("Password-settings__input--password_2")).toHaveValue("S3cUrePa$sword2different1"),
+		);
 
 		act(() => {
 			fireEvent.input(getByTestId("Password-settings__input--password_1"), {
@@ -729,19 +743,21 @@ describe("Settings", () => {
 
 		act(() => {
 			fireEvent.input(getByTestId("Password-settings__input--currentPassword"), {
-				target: { value: "password" },
+				target: { value: "S3cUrePa$sword" },
 			});
 		});
 
-		await waitFor(() => expect(getByTestId("Password-settings__input--currentPassword")).toHaveValue("password"));
+		await waitFor(() =>
+			expect(getByTestId("Password-settings__input--currentPassword")).toHaveValue("S3cUrePa$sword"),
+		);
 
 		act(() => {
 			fireEvent.input(getByTestId("Password-settings__input--password_1"), {
-				target: { value: "password" },
+				target: { value: "S3cUrePa$sword" },
 			});
 		});
 
-		await waitFor(() => expect(getByTestId("Password-settings__input--password_1")).toHaveValue("password"));
+		await waitFor(() => expect(getByTestId("Password-settings__input--password_1")).toHaveValue("S3cUrePa$sword"));
 
 		await waitFor(() =>
 			expect(getByTestId("Password-settings__input--password_1")).toHaveAttribute("aria-invalid"),

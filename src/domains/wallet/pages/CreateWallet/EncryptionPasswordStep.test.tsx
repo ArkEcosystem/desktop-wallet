@@ -144,16 +144,16 @@ describe("EncryptionPasswordStep", () => {
 		const confirmPassword = getAllByTestId("InputPassword")[1];
 
 		actAsync(() => {
-			fireEvent.input(passwordInput, { target: { value: "password" } });
+			fireEvent.input(passwordInput, { target: { value: "S3cUrePa$sword" } });
 		});
 
-		await waitFor(() => expect(passwordInput).toHaveValue("password"));
+		await waitFor(() => expect(passwordInput).toHaveValue("S3cUrePa$sword"));
 
 		actAsync(() => {
-			fireEvent.input(confirmPassword, { target: { value: "password" } });
+			fireEvent.input(confirmPassword, { target: { value: "S3cUrePa$sword" } });
 		});
 
-		await waitFor(() => expect(confirmPassword).toHaveValue("password"));
+		await waitFor(() => expect(confirmPassword).toHaveValue("S3cUrePa$sword"));
 
 		actAsync(() => {
 			fireEvent.click(getByTestId("CreateWallet__continue-button"));
@@ -288,16 +288,16 @@ describe("EncryptionPasswordStep", () => {
 		const confirmPassword = getAllByTestId("InputPassword")[1];
 
 		actAsync(() => {
-			fireEvent.input(passwordInput, { target: { value: "password" } });
+			fireEvent.input(passwordInput, { target: { value: "S3cUrePa$sword" } });
 		});
 
-		await waitFor(() => expect(passwordInput).toHaveValue("password"));
+		await waitFor(() => expect(passwordInput).toHaveValue("S3cUrePa$sword"));
 
 		actAsync(() => {
-			fireEvent.input(confirmPassword, { target: { value: "password" } });
+			fireEvent.input(confirmPassword, { target: { value: "S3cUrePa$sword" } });
 		});
 
-		await waitFor(() => expect(confirmPassword).toHaveValue("password"));
+		await waitFor(() => expect(confirmPassword).toHaveValue("S3cUrePa$sword"));
 
 		actAsync(() => {
 			fireEvent.click(getByTestId("CreateWallet__continue-button"));
