@@ -363,7 +363,9 @@ describe("SignMessage", () => {
 			},
 		);
 
-		await waitFor(() => expect(getByText(walletTranslations.MODAL_SIGN_MESSAGE.FORM_STEP.TITLE)).toBeTruthy());
+		await waitFor(() => expect(getByText(walletTranslations.MODAL_SIGN_MESSAGE.FORM_STEP.TITLE)).toBeTruthy(), {
+			timeout: 4000,
+		});
 
 		const messageInput = getByTestId("SignMessage__message-input");
 
@@ -446,9 +448,14 @@ describe("SignMessage", () => {
 			fireEvent.click(getByTestId("SignMessage__submit-button"));
 		});
 
-		await waitFor(() => {
-			expect(toastSpy).toHaveBeenCalledWith(walletTranslations.MODAL_LEDGER_WALLET.NO_DEVICE_FOUND);
-		});
+		await waitFor(
+			() => {
+				expect(toastSpy).toHaveBeenCalledWith(walletTranslations.MODAL_LEDGER_WALLET.NO_DEVICE_FOUND);
+			},
+			{
+				timeout: 4000,
+			},
+		);
 
 		toastSpy.mockRestore();
 		transportSpy.mockRestore();
