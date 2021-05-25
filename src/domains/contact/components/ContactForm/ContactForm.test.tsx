@@ -212,7 +212,7 @@ describe("ContactForm", () => {
 
 		// Second addition
 
-		fireEvent.change(selectNetworkInput, { target: { value: "DARK" } });
+		fireEvent.change(selectNetworkInput, { target: { value: "ARK" } });
 		fireEvent.keyDown(selectNetworkInput, { key: "Enter", code: 13 });
 
 		await waitFor(() => {
