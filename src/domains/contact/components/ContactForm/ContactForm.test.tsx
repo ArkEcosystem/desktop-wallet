@@ -82,7 +82,7 @@ describe("ContactForm", () => {
 		fireEvent.keyDown(selectNetworkInput, { key: "Enter", code: 13 });
 
 		await waitFor(() => {
-			expect(selectNetworkInput).toHaveValue("DARK Devnet");
+			expect(selectNetworkInput).toHaveValue("ARK Devnet");
 		});
 	});
 
@@ -105,7 +105,7 @@ describe("ContactForm", () => {
 		fireEvent.keyDown(selectNetworkInput, { key: "Enter", code: 13 });
 
 		await waitFor(() => {
-			expect(selectNetworkInput).toHaveValue("DARK Devnet");
+			expect(selectNetworkInput).toHaveValue("ARK Devnet");
 		});
 
 		fireEvent.input(screen.getByTestId("contact-form__address-input"), {
@@ -146,7 +146,7 @@ describe("ContactForm", () => {
 		fireEvent.keyDown(selectNetworkInput, { key: "Enter", code: 13 });
 
 		await waitFor(() => {
-			expect(selectNetworkInput).toHaveValue("DARK Devnet");
+			expect(selectNetworkInput).toHaveValue("ARK Devnet");
 		});
 
 		fireEvent.input(screen.getByTestId("contact-form__address-input"), {
@@ -216,7 +216,7 @@ describe("ContactForm", () => {
 		fireEvent.keyDown(selectNetworkInput, { key: "Enter", code: 13 });
 
 		await waitFor(() => {
-			expect(selectNetworkInput).toHaveValue("DARK Devnet");
+			expect(selectNetworkInput).toHaveValue("ARK Devnet");
 		});
 	});
 
@@ -251,7 +251,7 @@ describe("ContactForm", () => {
 		fireEvent.keyDown(selectNetworkInput, { key: "Enter", code: 13 });
 
 		await waitFor(() => {
-			expect(selectNetworkInput).toHaveValue("DARK Devnet");
+			expect(selectNetworkInput).toHaveValue("ARK Devnet");
 		});
 
 		fireEvent.input(screen.getByTestId("contact-form__address-input"), {
