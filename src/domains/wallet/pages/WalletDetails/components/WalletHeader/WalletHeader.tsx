@@ -370,25 +370,25 @@ export const WalletHeader = ({
 							</Button>
 						</Tooltip>
 
-						<Button
-							size="icon"
-							variant="transparent"
-							className="w-11 h-11 text-theme-secondary-text hover:text-theme-secondary-500"
-							data-testid="WalletHeader__star-button"
-							onClick={handleStar}
+						<Tooltip
+							content={
+								wallet.isStarred()
+									? t("WALLETS.PAGE_WALLET_DETAILS.UNSTAR_WALLET")
+									: t("WALLETS.PAGE_WALLET_DETAILS.STAR_WALLET")
+							}
 						>
-							<Tooltip
-								content={
-									wallet.isStarred()
-										? t("WALLETS.PAGE_WALLET_DETAILS.UNSTAR_WALLET")
-										: t("WALLETS.PAGE_WALLET_DETAILS.STAR_WALLET")
-								}
+							<Button
+								size="icon"
+								variant="transparent"
+								className="w-11 h-11 text-theme-secondary-text hover:text-theme-secondary-500"
+								data-testid="WalletHeader__star-button"
+								onClick={handleStar}
 							>
 								<span className={wallet.isStarred() ? "text-theme-warning-400" : ""}>
 									<Icon name={wallet.isStarred() ? "Star" : "StarOutline"} />
 								</span>
-							</Tooltip>
-						</Button>
+							</Button>
+						</Tooltip>
 					</div>
 
 					<Button
