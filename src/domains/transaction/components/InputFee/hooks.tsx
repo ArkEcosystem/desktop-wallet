@@ -7,18 +7,17 @@ export type InputFee = {
 };
 
 export const useFeeFormat = ({ defaultValue, value, avg }: any) => {
-	const toHuman = (inputValue: string | number) =>
-		inputValue ? BigNumber.make(inputValue).divide(1e8).toString() : "";
+	const toHuman = (inputValue: string | number) => (inputValue ? BigNumber.make(inputValue).toHuman() : "");
 
 	const defaultFeeValue = value || defaultValue || avg;
 	const defaultHuman = toHuman(defaultFeeValue);
 
 	const [fee, setFee] = useState<InputFee>({ display: defaultHuman, value: defaultFeeValue });
 
-	const feeFromValue = (feevalue?: string | number): InputFee => {
-		const value = feevalue ? BigNumber.make(feevalue) : undefined;
+	const feeFromValue = (feeValue?: string | number): InputFee => {
+		const value = feeValue ? BigNumber.make(feeValue) : undefined;
 		return {
-			display: value ? value.divide(1e8).toString() : "",
+			display: value ? value.toHuman() : "",
 			value: value?.toString(),
 		};
 	};

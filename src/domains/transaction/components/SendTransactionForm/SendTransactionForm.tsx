@@ -145,7 +145,7 @@ export const SendTransactionForm = ({
 						step={0.01}
 						showFeeOptions={dynamicFees}
 						onChange={(currency) => {
-							setValue("fee", currency.value, { shouldValidate: true, shouldDirty: true });
+							setValue("fee", currency.display, { shouldValidate: true, shouldDirty: true });
 						}}
 					/>
 				</FormField>
