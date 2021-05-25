@@ -1,32 +1,105 @@
 /* eslint-disable @typescript-eslint/require-await */
 import { renderHook } from "@testing-library/react-hooks";
+import passwordPwnd from "password-pwnd";
 import { useTranslation } from "react-i18next";
 
 import { password } from "./password";
 
 describe("Password Validation", () => {
-	it("should require a password of 6 characters minimum", () => {
-		const { result } = renderHook(() => useTranslation());
-		const { t } = result.current;
+	let pwnd: jest.SpyInstance;
 
-		const passwordRule = password(t);
-		expect(passwordRule.password("password").minLength).toEqual({
-			message: t("COMMON.VALIDATION.MIN_LENGTH", {
-				field: t("SETTINGS.GENERAL.PERSONAL.PASSWORD"),
-				minLength: 6,
-			}),
-			value: 6,
-		});
+	beforeEach(() => {
+		pwnd = jest.spyOn(passwordPwnd, "pwnd").mockImplementation(() => Promise.resolve(0));
 	});
 
-	it("should require different password than the old password", () => {
+	it("should not be required", async () => {
+		const { result } = renderHook(() => useTranslation());
+		const { t } = result.current;
+		const passwordValidation = password(t);
+
+		expect(await passwordValidation.password().validate("")).toEqual(true);
+	});
+
+	it("should require at least 1 lowercase character", async () => {
+		const { result } = renderHook(() => useTranslation());
+		const { t } = result.current;
+		const passwordValidation = password(t);
+
+		expect(await passwordValidation.password().validate("NO_LOWER")).toEqual(t("COMMON.VALIDATION.PASSWORD_WEAK"));
+		expect(pwnd).not.toHaveBeenCalled();
+	});
+
+	it("should require at least 1 uppercase character", async () => {
+		const { result } = renderHook(() => useTranslation());
+		const { t } = result.current;
+		const passwordValidation = password(t);
+
+		expect(await passwordValidation.password().validate("no_upper")).toEqual(t("COMMON.VALIDATION.PASSWORD_WEAK"));
+		expect(pwnd).not.toHaveBeenCalled();
+	});
+
+	it("should require at least 1 numeric character", async () => {
+		const { result } = renderHook(() => useTranslation());
+		const { t } = result.current;
+		const passwordValidation = password(t);
+
+		expect(await passwordValidation.password().validate("NoNumeric")).toEqual(t("COMMON.VALIDATION.PASSWORD_WEAK"));
+		expect(pwnd).not.toHaveBeenCalled();
+	});
+
+	it("should require at least 1 special character", async () => {
+		const { result } = renderHook(() => useTranslation());
+		const { t } = result.current;
+		const passwordValidation = password(t);
+
+		expect(await passwordValidation.password().validate("N0SpecialChar5")).toEqual(
+			t("COMMON.VALIDATION.PASSWORD_WEAK"),
+		);
+		expect(pwnd).not.toHaveBeenCalled();
+	});
+
+	it("should be at least 8 characters long", async () => {
+		const { result } = renderHook(() => useTranslation());
+		const { t } = result.current;
+		const passwordValidation = password(t);
+
+		expect(await passwordValidation.password().validate("shortpw")).toEqual(t("COMMON.VALIDATION.PASSWORD_WEAK"));
+		expect(pwnd).not.toHaveBeenCalled();
+	});
+
+	it("should require the password not to have been leaked", async () => {
+		const { result } = renderHook(() => useTranslation());
+		const { t } = result.current;
+		const passwordValidation = password(t);
+
+		pwnd.mockImplementation(() => Promise.resolve(1));
+		expect(await passwordValidation.password().validate("S3cUr3!Pas#w0rd")).toEqual(
+			t("COMMON.VALIDATION.PASSWORD_LEAKED"),
+		);
+		expect(pwnd).toHaveBeenCalledWith("S3cUr3!Pas#w0rd");
+
+		pwnd.mockImplementation(() => Promise.resolve(0));
+		expect(await passwordValidation.password().validate("S3cUr3!Pas#w0rd")).toEqual(true);
+		expect(pwnd).toHaveBeenCalledWith("S3cUr3!Pas#w0rd");
+	});
+
+	it("should ignore leaked validation if haveibeenpwned API is unreachable", async () => {
+		const { result } = renderHook(() => useTranslation());
+		const { t } = result.current;
+		const passwordValidation = password(t);
+
+		pwnd.mockImplementation(() => Promise.reject());
+		expect(await passwordValidation.password().validate("S3cUr3!Pas#w0rd")).toEqual(true);
+	});
+
+	it("should require different password than the old password", async () => {
 		const { result } = renderHook(() => useTranslation());
 		const { t } = result.current;
 
-		const passwordRule = password(t);
-		const passwordValidation = passwordRule.password("password");
-		expect(passwordValidation.validate("password")).toEqual(t("COMMON.VALIDATION.PASSWORD_SAME_AS_OLD"));
-		expect(passwordValidation.validate("new password")).toEqual(true);
+		const passwordRule = password(t).password("S3cUr3!Pas#w0rd");
+
+		expect(await passwordRule.validate("S3cUr3!Pas#w0rd")).toEqual(t("COMMON.VALIDATION.PASSWORD_SAME_AS_OLD"));
+		expect(await passwordRule.validate("S3cUr3!Pas#w0rd2different")).toEqual(true);
 	});
 
 	it("should match password and confirm password", () => {
