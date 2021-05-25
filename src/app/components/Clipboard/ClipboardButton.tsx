@@ -1,14 +1,22 @@
+import { getStyles } from "app/components/Button/Button.styles";
+import { Icon } from "app/components/Icon";
+import { useClipboard } from "app/hooks";
 import { AnimatePresence, motion } from "framer-motion";
 import React from "react";
+import { styled } from "twin.macro";
+import { ButtonVariant, Size } from "types";
 
-import { useClipboard } from "../../hooks";
-import { Button } from "../Button";
-import { Icon } from "../Icon";
 import { ClipboardCommonProps } from "./Clipboard";
 
 export type ClipboardButtonProps = ClipboardCommonProps & {
 	variant: "button";
 } & React.ButtonHTMLAttributes<any>;
+
+type ButtonProps = {
+	variant?: ButtonVariant;
+	size?: Size;
+} & React.ButtonHTMLAttributes<any>;
+const StyledButton = styled.button<ButtonProps>(getStyles);
 
 export const ClipboardButton = ({ data, variant, options, children, ...props }: ClipboardButtonProps) => {
 	const [hasCopied, copy] = useClipboard({
@@ -18,9 +26,15 @@ export const ClipboardButton = ({ data, variant, options, children, ...props }: 
 
 	return (
 		<div className="relative">
-			<Button variant="secondary" onClick={() => copy(data)} data-testid="clipboard-button__wrapper" {...props}>
-				{children}
-			</Button>
+			<StyledButton
+				type="button"
+				variant="secondary"
+				onClick={() => copy(data)}
+				data-testid="clipboard-button__wrapper"
+				{...props}
+			>
+				<div className="flex items-center space-x-2">{children}</div>
+			</StyledButton>
 
 			<AnimatePresence>
 				{hasCopied && (
