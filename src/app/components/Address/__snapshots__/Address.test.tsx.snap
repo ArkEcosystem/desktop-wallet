@@ -3,7 +3,7 @@
 exports[`Formatted Address should not render without address 1`] = `
 <div>
   <div
-    class="w-full flex items-center no-ligatures overflow-hidden whitespace-nowrap"
+    class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap"
   />
 </div>
 `;
@@ -11,7 +11,7 @@ exports[`Formatted Address should not render without address 1`] = `
 exports[`Formatted Address should render address only 1`] = `
 <div>
   <div
-    class="w-full flex items-center no-ligatures overflow-hidden whitespace-nowrap"
+    class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap"
   >
     <span
       class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-text font-semibold text-base"
@@ -26,7 +26,7 @@ exports[`Formatted Address should render address only 1`] = `
 exports[`Formatted Address should render with normal font 1`] = `
 <div>
   <div
-    class="w-full flex items-center no-ligatures overflow-hidden whitespace-nowrap"
+    class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap"
   >
     <span
       class="max-w-24 truncate mr-2 font-normal text-base text-theme-text"
@@ -52,7 +52,7 @@ exports[`Formatted Address should render with normal font 1`] = `
 exports[`Formatted Address should render with wallet name 1`] = `
 <div>
   <div
-    class="w-full flex items-center no-ligatures overflow-hidden whitespace-nowrap"
+    class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap"
   >
     <span
       class="max-w-24 truncate mr-2 font-semibold text-base text-theme-text"

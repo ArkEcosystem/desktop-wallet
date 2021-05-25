@@ -45,8 +45,8 @@ test("should create a profile with password and navigate to welcome screen", asy
 	await t.expect(getLocation()).contains("/profiles/create");
 
 	await t.typeText(nameInput, "Joe Bloggs");
-	await t.typeText(Selector("input[name=password]"), "password");
-	await t.typeText(Selector("input[name=confirmPassword]"), "password");
+	await t.typeText(Selector("input[name=password]"), "S3cUrePa$sword");
+	await t.typeText(Selector("input[name=confirmPassword]"), "S3cUrePa$sword");
 	await t.click('[data-testid="SelectDropdownInput__input"]');
 	await t.click('[data-testid="select-list__toggle-option-0"]');
 	await t.click(Selector("input[name=isDarkMode]").parent());
