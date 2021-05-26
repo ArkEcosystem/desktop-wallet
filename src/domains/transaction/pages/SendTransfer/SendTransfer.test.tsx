@@ -957,7 +957,6 @@ describe("SendTransfer", () => {
 			expect.objectContaining({
 				data: expect.anything(),
 				fee: "357000",
-				from: "D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD",
 				nonce: expect.any(String),
 				sign: {
 					multiSignature: {
