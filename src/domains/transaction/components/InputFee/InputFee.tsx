@@ -34,14 +34,6 @@ export const InputFee = memo(({ onChange, step, showFeeOptions, ...props }: Inpu
 		onChange?.(feeValue);
 	};
 
-	console.log({
-		defaultValue,
-		value,
-		avg,
-		min,
-		max,
-	});
-
 	const isOptionDisabled = (value: number) => value === 0 || (min === avg && avg === max);
 
 	return (
