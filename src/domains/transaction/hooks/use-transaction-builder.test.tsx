@@ -69,20 +69,18 @@ describe("Use Transaction Builder Hook", () => {
 		});
 
 		const input: Contracts.TransferInput = {
-			from: wallet.address(),
 			fee: "1",
 			nonce: "1",
 			data: {
 				amount: "1",
 				to: wallet.address(),
 			},
-			sign: {},
 		};
 
 		let transaction: any;
 
 		await actHook(async () => {
-			transaction = (await result.current.build("transfer", input)).transaction;
+			transaction = (await result.current.build("transfer", input, wallet)).transaction;
 		});
 
 		expect(transaction.id()).toBe("a1e869f3942f3cbe91d2fbde6ffc04a80c107341e36837bbe35eb06d79676589");
@@ -102,20 +100,18 @@ describe("Use Transaction Builder Hook", () => {
 		);
 
 		const input: Contracts.TransferInput = {
-			from: wallet.address(),
 			fee: "1",
 			nonce: "1",
 			data: {
 				amount: "1",
 				to: wallet.address(),
 			},
-			sign: {},
 		};
 
 		let transaction: any;
 
 		await actHook(async () => {
-			transaction = (await result.current.build("transfer", input)).transaction;
+			transaction = (await result.current.build("transfer", input, wallet)).transaction;
 		});
 
 		await waitFor(() =>
@@ -151,7 +147,7 @@ describe("Use Transaction Builder Hook", () => {
 		let transaction: any;
 
 		await actHook(async () => {
-			transaction = (await result.current.build("transfer", input)).transaction;
+			transaction = (await result.current.build("transfer", input, wallet)).transaction;
 		});
 
 		expect(transaction.id()).toBe("f10bfaf9c7f23e557b3e19ae5954d8f3966b1c8c72ecfa7d71da77c32ba0702a");

@@ -44,20 +44,18 @@ describe("Use Transaction Builder with Ledger", () => {
 		);
 
 		const input: Contracts.TransferInput = {
-			from: wallet.address(),
 			fee: "1",
 			nonce: "1",
 			data: {
 				amount: "1",
 				to: wallet.address(),
 			},
-			sign: {},
 		};
 
 		let transaction: any;
 
 		await actHook(async () => {
-			transaction = (await result.current.build("transfer", input)).transaction;
+			transaction = (await result.current.build("transfer", input, wallet)).transaction;
 		});
 
 		await waitFor(() =>
@@ -93,7 +91,7 @@ describe("Use Transaction Builder with Ledger", () => {
 		let transaction: any;
 
 		await actHook(async () => {
-			transaction = (await result.current.build("transfer", input)).transaction;
+			transaction = (await result.current.build("transfer", input, wallet)).transaction;
 		});
 
 		expect(transaction.id()).toBe("f10bfaf9c7f23e557b3e19ae5954d8f3966b1c8c72ecfa7d71da77c32ba0702a");
@@ -137,7 +135,7 @@ describe("Use Transaction Builder with Ledger", () => {
 
 		await actHook(async () => {
 			try {
-				await result.current.build("transfer", input, { abortSignal });
+				await result.current.build("transfer", input, wallet, { abortSignal });
 			} catch (e) {
 				error = e;
 			}
