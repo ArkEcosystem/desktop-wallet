@@ -77,21 +77,21 @@ export const useTransactionBuilder = (profile: ProfileContracts.IProfile) => {
 
 	const sign = async ({ wallet, mnemonic, secondMnemonic, encryptionPassword }: SignInput) => {
 		if (encryptionPassword) {
-			console.log("encryption password");
 			return wallet.signatory().wif(await wallet.wif().get(encryptionPassword));
 		}
 
 		if (!!mnemonic && !!secondMnemonic) {
-			console.log("secondMnemonic");
 			return wallet.signatory().secondaryMnemonic(mnemonic, secondMnemonic);
 		}
 
 		if (mnemonic) {
-			console.log("mnemonic only", mnemonic);
 			return wallet.signatory().mnemonic(mnemonic);
 		}
 
-		// TODO: handle signing for multisignature wallets
+		// TODO: revisit
+		if (wallet.isMultiSignature() || wallet.isLedger()) {
+			return wallet.signatory().senderPublicKey(wallet.publicKey()!);
+		}
 
 		throw new Error("Signing failed. No mnemonic or encryption password provided");
 	};
