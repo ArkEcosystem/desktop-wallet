@@ -120,13 +120,14 @@ export const Input = React.forwardRef<InputElement, InputProps>(
 		const suggestionRef = useRef<HTMLSpanElement>(null);
 
 		const hideSuggestion = () => {
-			const suggestionWidth = suggestionRef?.current?.clientWidth;
+			const suggestionWidth = suggestionRef?.current?.clientWidth || 0;
+			const parentWidth = suggestionRef?.current?.parentElement?.clientWidth || 0;
 
-			if (!suggestionWidth || suggestionWidth < suggestionRef?.current?.parentElement.clientWidth) {
+			if (!suggestionWidth || suggestionWidth < parentWidth) {
 				return false;
 			}
 
-			return hiddenRef?.current?.clientWidth >= suggestionWidth;
+			return (hiddenRef?.current?.clientWidth || 0) >= suggestionWidth;
 		};
 
 		return (
