@@ -1,7 +1,8 @@
+import { BigNumber } from "@arkecosystem/platform-sdk-support";
 import { useFormField } from "app/components/Form/useFormField";
 import { Range } from "app/components/Range";
 import cn from "classnames";
-import React from "react";
+import React, { useMemo } from "react";
 import { getTrackBackground } from "react-range";
 
 import { InputCurrency } from "./InputCurrency";
@@ -18,18 +19,26 @@ type Props = {
 };
 
 export const InputRange = React.forwardRef<HTMLInputElement, Props>(
-	({ min, max, step, onChange, value, disabled }: Props, ref) => {
+	({ value, onChange, step, disabled, max, ...props }: Props, ref) => {
 		const fieldContext = useFormField();
 
-		const rangeValues = [Math.min(min, 0), max];
-		const minValue = Math.min(min, +value || 0);
-		const maxValue = max;
+		// @TODO could be simplified after SDK update
+		const rangeValues = useMemo<number[]>(() => {
+			const sanitized = BigNumber.make(value);
+			return isNaN(sanitized.toNumber()) ? [] : [Math.min(sanitized.toNumber(), max)];
+		}, [value, max]);
+
+		const min = Math.min(props.min, +value || 0);
 
 		const backgroundColor = !fieldContext?.isInvalid
 			? "rgba(var(--theme-color-primary-rgb), 0.1)"
 			: "rgba(var(--theme-color-danger-rgb), 0.1)";
 
-		const sanitizedStep = sanitizeStep({ min: minValue, max: maxValue, step });
+		const sanitizedStep = sanitizeStep({ min, max, step });
+
+		const handleRangeChange = ([rangeValue]: number[]) => {
+			onChange?.(rangeValue.toString());
+		};
 
 		return (
 			<InputCurrency
@@ -39,10 +48,10 @@ export const InputRange = React.forwardRef<HTMLInputElement, Props>(
 						? undefined
 						: {
 								background: getTrackBackground({
-									values: [+value || 0],
+									values: [+value],
 									colors: [backgroundColor, "transparent"],
-									min: minValue,
-									max: maxValue,
+									min,
+									max,
 								}),
 						  }
 				}
@@ -50,14 +59,14 @@ export const InputRange = React.forwardRef<HTMLInputElement, Props>(
 				ref={ref}
 				onChange={onChange}
 			>
-				{!disabled && minValue < maxValue && (
+				{!disabled && min < max && (
 					<div className={cn("absolute bottom-0 px-1 w-full", { invisible: !rangeValues.length })}>
 						<Range
 							step={sanitizedStep}
 							isInvalid={fieldContext?.isInvalid}
-							min={minValue}
-							max={maxValue}
-							onChange={([x]) => onChange(x.toString())}
+							min={min}
+							max={max}
+							onChange={handleRangeChange}
 							values={rangeValues}
 						/>
 					</div>
