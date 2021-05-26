@@ -75,27 +75,6 @@ const withAbortPromise = (signal?: AbortSignal, callback?: () => void) => <T>(pr
 export const useTransactionBuilder = (profile: ProfileContracts.IProfile) => {
 	const { connect, abortConnectionRetry, transport } = useLedgerContext();
 
-	const sign = async ({ wallet, mnemonic, secondMnemonic, encryptionPassword }: SignInput) => {
-		if (encryptionPassword) {
-			return wallet.signatory().wif(await wallet.wif().get(encryptionPassword));
-		}
-
-		if (!!mnemonic && !!secondMnemonic) {
-			return wallet.signatory().secondaryMnemonic(mnemonic, secondMnemonic);
-		}
-
-		if (mnemonic) {
-			return wallet.signatory().mnemonic(mnemonic);
-		}
-
-		// TODO: revisit
-		if (wallet.isMultiSignature() || wallet.isLedger()) {
-			return wallet.signatory().senderPublicKey(wallet.publicKey()!);
-		}
-
-		throw new Error("Signing failed. No mnemonic or encryption password provided");
-	};
-
 	const build = async (
 		type: string,
 		input: Contracts.TransactionInputs,
@@ -129,5 +108,5 @@ export const useTransactionBuilder = (profile: ProfileContracts.IProfile) => {
 		};
 	};
 
-	return { build, sign };
+	return { build };
 };
