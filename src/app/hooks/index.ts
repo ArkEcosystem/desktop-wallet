@@ -3,7 +3,6 @@ export * from "./debounce";
 export * from "./env";
 export * from "./network-status";
 export * from "./use-clipboard";
-export * from "./use-currency-display";
 export * from "./use-deeplink";
 export * from "./use-env-synchronizer";
 export * from "./use-fees";

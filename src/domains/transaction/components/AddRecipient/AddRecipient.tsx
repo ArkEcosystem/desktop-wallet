@@ -312,11 +312,13 @@ export const AddRecipient = ({
 									placeholder={t("COMMON.AMOUNT")}
 									value={getValues("displayAmount") || recipientsAmount}
 									addons={addons}
-									onChange={(currency) => {
+									onChange={(amount) => {
 										setValue("isSendAllSelected", false);
-										setValue("displayAmount", currency.display);
-										setValue("amount", currency.value, { shouldValidate: true, shouldDirty: true });
-										singleRecipientOnChange(currency.value, recipientAddress);
+
+										// @TODO - check if still needed to keep both displayAmount and amount
+										setValue("displayAmount", amount);
+										setValue("amount", amount, { shouldValidate: true, shouldDirty: true });
+										singleRecipientOnChange(amount, recipientAddress);
 									}}
 								/>
 							</div>

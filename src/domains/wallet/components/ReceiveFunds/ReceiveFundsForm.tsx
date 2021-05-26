@@ -31,7 +31,7 @@ export const ReceiveFundsForm = ({ network }: { network?: Coins.Network }) => {
 						placeholder={t("COMMON.AMOUNT")}
 						className="pr-20"
 						value={getValues("amount")}
-						onChange={(currency) => setValue("amount", currency.display)}
+						onChange={(amount) => setValue("amount", amount)}
 					/>
 					<FormHelperText />
 				</FormField>
