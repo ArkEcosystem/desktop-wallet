@@ -65,23 +65,17 @@ export const DelegateRegistrationForm: SendRegistrationForm = {
 	component,
 	transactionDetails,
 	formFields: ["username"],
-	signTransaction: async ({ env, form, profile }: any) => {
+	signTransaction: async ({ env, form, profile, signatory }: any) => {
 		const { clearErrors, getValues } = form;
 
 		clearErrors("mnemonic");
-		const { fee, mnemonic, secondMnemonic, senderAddress, username, encryptionPassword } = getValues();
+		const { fee, senderAddress, username } = getValues();
 		const senderWallet = profile.wallets().findByAddress(senderAddress);
-
-		const wif = senderWallet?.wif().exists() ? await senderWallet.wif().get(encryptionPassword) : undefined;
 
 		const transactionId = await senderWallet.transaction().signDelegateRegistration({
 			fee,
 			from: senderAddress,
-			sign: {
-				wif,
-				mnemonic,
-				secondMnemonic,
-			},
+			signatory,
 			data: {
 				username,
 			},

@@ -68,22 +68,17 @@ export const SecondSignatureRegistrationForm: SendRegistrationForm = {
 	transactionDetails,
 	formFields: ["secondMnemonic", "verification"],
 
-	signTransaction: async ({ env, form, profile }: any) => {
+	signTransaction: async ({ env, form, profile, signatory }: any) => {
 		const { clearErrors, getValues } = form;
 
 		clearErrors("mnemonic");
-		const { fee, mnemonic, senderAddress, secondMnemonic, encryptionPassword } = getValues();
+		const { fee, senderAddress, secondMnemonic } = getValues();
 		const senderWallet = profile.wallets().findByAddress(senderAddress);
-
-		const wif = senderWallet?.wif().exists() ? await senderWallet.wif().get(encryptionPassword) : undefined;
 
 		const transactionId = await senderWallet.transaction().signSecondSignature({
 			fee,
 			from: senderAddress,
-			sign: {
-				wif,
-				mnemonic,
-			},
+			signatory,
 			data: {
 				mnemonic: secondMnemonic,
 			},
