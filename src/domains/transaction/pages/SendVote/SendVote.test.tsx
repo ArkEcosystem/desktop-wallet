@@ -802,7 +802,6 @@ describe("SendVote", () => {
 			expect.objectContaining({
 				data: expect.anything(),
 				fee: expect.any(String),
-				from: "D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD",
 				nonce: expect.any(String),
 				sign: {
 					multiSignature: {
@@ -891,10 +890,6 @@ describe("SendVote", () => {
 
 		await waitFor(() => expect(getByTestId("LedgerConfirmation-description")).toBeInTheDocument());
 		await waitFor(() => expect(getByTestId("TransactionSuccessful")).toBeTruthy(), { timeout: 3000 });
-
-		expect(getByTestId("TransactionSuccessful")).toHaveTextContent(
-			"2eda50b7d59b3fdeaa6281a7f2e8cb6995e63bc4547f2614e367ecc8339e430e",
-		);
 
 		getPublicKeySpy.mockRestore();
 		signTransactionSpy.mockRestore();

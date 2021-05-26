@@ -10,7 +10,7 @@ import { useActiveProfile, useActiveWallet, useQueryParams, useValidation } from
 import { AuthenticationStep } from "domains/transaction/components/AuthenticationStep";
 import { ErrorStep } from "domains/transaction/components/ErrorStep";
 import { FeeWarning } from "domains/transaction/components/FeeWarning";
-import { useFeeConfirmation, useTransactionBuilder } from "domains/transaction/hooks";
+import { useFeeConfirmation, useTransactionBuilder, useWalletSignatory } from "domains/transaction/hooks";
 import React, { useEffect, useMemo, useRef, useState } from "react";
 import { useForm } from "react-hook-form";
 import { useTranslation } from "react-i18next";
@@ -48,6 +48,7 @@ export const SendVote = () => {
 
 	const abortRef = useRef(new AbortController());
 	const transactionBuilder = useTransactionBuilder(activeProfile);
+	const { sign } = useWalletSignatory(activeWallet);
 
 	useEffect(() => {
 		register("network", sendVote.network());
@@ -183,8 +184,7 @@ export const SendVote = () => {
 		const abortSignal = abortRef.current?.signal;
 
 		try {
-			const signatory = await transactionBuilder.sign({
-				wallet: activeWallet,
+			const signatory = await sign({
 				mnemonic,
 				secondMnemonic,
 				encryptionPassword,

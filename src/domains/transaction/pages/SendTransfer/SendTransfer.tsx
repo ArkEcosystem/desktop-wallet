@@ -12,7 +12,12 @@ import { AuthenticationStep } from "domains/transaction/components/Authenticatio
 import { ConfirmSendTransaction } from "domains/transaction/components/ConfirmSendTransaction";
 import { ErrorStep } from "domains/transaction/components/ErrorStep";
 import { FeeWarning } from "domains/transaction/components/FeeWarning";
-import { useFeeConfirmation, useTransaction, useTransactionBuilder } from "domains/transaction/hooks";
+import {
+	useFeeConfirmation,
+	useTransaction,
+	useTransactionBuilder,
+	useWalletSignatory,
+} from "domains/transaction/hooks";
 import { isMnemonicError } from "domains/transaction/utils";
 import React, { useEffect, useMemo, useRef, useState } from "react";
 import { useForm } from "react-hook-form";
@@ -86,6 +91,7 @@ export const SendTransfer = () => {
 	const [lastEstimatedExpiration, setLastEstimatedExpiration] = useState<number | undefined>();
 	const abortRef = useRef(new AbortController());
 	const transactionBuilder = useTransactionBuilder(activeProfile);
+	const { sign } = useWalletSignatory(wallet!);
 	const { fetchWalletUnconfirmedTransactions } = useTransaction();
 
 	useEffect(() => {
@@ -197,8 +203,7 @@ export const SendTransfer = () => {
 		const transactionType = isMultiPayment ? "multiPayment" : "transfer";
 
 		try {
-			const signatory = await transactionBuilder.sign({
-				wallet: activeWallet,
+			const signatory = await sign({
 				mnemonic,
 				secondMnemonic,
 				encryptionPassword,

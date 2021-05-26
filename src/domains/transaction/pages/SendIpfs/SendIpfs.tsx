@@ -9,7 +9,7 @@ import { useActiveProfile, useActiveWallet, useValidation } from "app/hooks";
 import { AuthenticationStep } from "domains/transaction/components/AuthenticationStep";
 import { ErrorStep } from "domains/transaction/components/ErrorStep";
 import { FeeWarning } from "domains/transaction/components/FeeWarning";
-import { useFeeConfirmation, useTransactionBuilder } from "domains/transaction/hooks";
+import { useFeeConfirmation, useTransactionBuilder, useWalletSignatory } from "domains/transaction/hooks";
 import { isMnemonicError } from "domains/transaction/utils";
 import React, { useEffect, useMemo, useRef, useState } from "react";
 import { useForm } from "react-hook-form";
@@ -42,6 +42,7 @@ export const SendIpfs = () => {
 
 	const abortRef = useRef(new AbortController());
 	const transactionBuilder = useTransactionBuilder(activeProfile);
+	const { sign } = useWalletSignatory(activeWallet);
 
 	useEffect(() => {
 		register("network", sendIpfs.network());
@@ -76,8 +77,7 @@ export const SendIpfs = () => {
 
 		const { fee, mnemonic, secondMnemonic, hash, encryptionPassword } = getValues();
 
-		const signatory = await transactionBuilder.sign({
-			wallet: activeWallet,
+		const signatory = await sign({
 			mnemonic,
 			secondMnemonic,
 			encryptionPassword,
