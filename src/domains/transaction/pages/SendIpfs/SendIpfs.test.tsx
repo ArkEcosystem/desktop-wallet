@@ -696,7 +696,6 @@ describe("SendIpfs", () => {
 			expect.objectContaining({
 				data: expect.anything(),
 				fee: expect.any(String),
-				from: "D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD",
 				nonce: expect.any(String),
 				sign: {
 					multiSignature: {
@@ -796,9 +795,6 @@ describe("SendIpfs", () => {
 		await waitFor(() => expect(getByTestId("LedgerConfirmation-description")).toBeInTheDocument());
 		await waitFor(() => expect(getByTestId("TransactionSuccessful")).toBeTruthy());
 
-		expect(getByTestId("TransactionSuccessful")).toHaveTextContent(
-			"81cb2fb05740cc91ffeff812c513fbac57192f14999dce00ae88e896e9daff35",
-		);
 		getPublicKeySpy.mockRestore();
 		broadcastMock.mockRestore();
 		isLedgerSpy.mockRestore();

@@ -76,7 +76,6 @@ export const SendIpfs = () => {
 
 		const { fee, mnemonic, secondMnemonic, hash, encryptionPassword } = getValues();
 
-		console.log({ mnemonic, secondMnemonic, encryptionPassword });
 		const signatory = await transactionBuilder.sign({
 			wallet: activeWallet,
 			mnemonic,
@@ -104,7 +103,6 @@ export const SendIpfs = () => {
 			setTransaction(transaction);
 			setActiveTab(4);
 		} catch (error) {
-			console.log("error", error);
 			if (isMnemonicError(error)) {
 				setValue("mnemonic", "");
 				return setError("mnemonic", { type: "manual", message: t("TRANSACTION.INVALID_MNEMONIC") });
