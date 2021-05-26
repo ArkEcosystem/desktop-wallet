@@ -76,6 +76,12 @@ exports[`LedgerTabs should render connection step 1`] = `
                   id="NetworkStep__network-label"
                 />
                 <div
+                  class="fixed invisible w-auto whitespace-nowrap"
+                >
+                  
+                  …
+                </div>
+                <div
                   class="Input__InputWrapperStyled-wu99qs-0 jYUFQr"
                 >
                   <div
@@ -317,6 +323,12 @@ exports[`LedgerTabs should render scan step with failing fetch 1`] = `
                   for="ImportWallet__network-input"
                   id="ImportWallet__network-label"
                 />
+                <div
+                  class="fixed invisible w-auto whitespace-nowrap"
+                >
+                  
+                  …
+                </div>
                 <div
                   class="Input__InputWrapperStyled-wu99qs-0 iRRxpY"
                   disabled=""

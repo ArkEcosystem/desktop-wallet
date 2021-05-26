@@ -22,6 +22,11 @@ exports[`SearchBar should render 1`] = `
         class="flex-1 pl-4 mr-4 border-l border-theme-secondary-300 dark:border-theme-secondary-800"
       >
         <div
+          class="fixed invisible w-auto whitespace-nowrap"
+        >
+          …
+        </div>
+        <div
           class="Input__InputWrapperStyled-wu99qs-0 cRhsWS"
         >
           <div
@@ -31,6 +36,7 @@ exports[`SearchBar should render 1`] = `
               class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
               data-testid="Input"
               placeholder="What would you like to search for?"
+              value=""
             />
           </div>
         </div>

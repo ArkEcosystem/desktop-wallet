@@ -3,6 +3,11 @@
 exports[`Input should render a default input 1`] = `
 <DocumentFragment>
   <div
+    class="fixed invisible w-auto whitespace-nowrap"
+  >
+    …
+  </div>
+  <div
     class="Input__InputWrapperStyled-wu99qs-0 jYUFQr"
   >
     <div
@@ -11,6 +16,7 @@ exports[`Input should render a default input 1`] = `
       <input
         class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
         data-testid="Input"
+        value=""
       />
     </div>
   </div>
@@ -19,6 +25,11 @@ exports[`Input should render a default input 1`] = `
 
 exports[`Input should render as custom element 1`] = `
 <DocumentFragment>
+  <div
+    class="fixed invisible w-auto whitespace-nowrap"
+  >
+    …
+  </div>
   <div
     class="Input__InputWrapperStyled-wu99qs-0 jYUFQr"
   >
@@ -37,6 +48,11 @@ exports[`Input should render as custom element 1`] = `
 exports[`Input should render with addons 1`] = `
 <DocumentFragment>
   <div
+    class="fixed invisible w-auto whitespace-nowrap"
+  >
+    …
+  </div>
+  <div
     class="Input__InputWrapperStyled-wu99qs-0 jYUFQr"
   >
     <span>
@@ -48,6 +64,7 @@ exports[`Input should render with addons 1`] = `
       <input
         class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
         data-testid="Input"
+        value=""
       />
     </div>
     <div
@@ -68,6 +85,11 @@ exports[`Input should render with addons 1`] = `
 exports[`Input should render with focus 1`] = `
 <DocumentFragment>
   <div
+    class="fixed invisible w-auto whitespace-nowrap"
+  >
+    …
+  </div>
+  <div
     class="Input__InputWrapperStyled-wu99qs-0 jYUFQr"
   >
     <div
@@ -76,6 +98,7 @@ exports[`Input should render with focus 1`] = `
       <input
         class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
         data-testid="Input"
+        value=""
       />
     </div>
   </div>
@@ -84,6 +107,11 @@ exports[`Input should render with focus 1`] = `
 
 exports[`Input should render with invalid 1`] = `
 <DocumentFragment>
+  <div
+    class="fixed invisible w-auto whitespace-nowrap"
+  >
+    …
+  </div>
   <div
     class="Input__InputWrapperStyled-wu99qs-0 jXtMoQ"
   >
@@ -94,6 +122,7 @@ exports[`Input should render with invalid 1`] = `
         aria-invalid="true"
         class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
         data-testid="Input"
+        value=""
       />
     </div>
     <div

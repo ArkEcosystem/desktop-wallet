@@ -122,6 +122,11 @@ exports[`SignIn should render a modal 1`] = `
                 />
               </label>
               <div
+                class="fixed invisible w-auto whitespace-nowrap"
+              >
+                …
+              </div>
+              <div
                 class="Input__InputWrapperStyled-wu99qs-0 jYUFQr"
               >
                 <div
@@ -132,6 +137,7 @@ exports[`SignIn should render a modal 1`] = `
                     data-testid="SignIn__input--password"
                     name="password"
                     type="password"
+                    value=""
                   />
                 </div>
                 <div

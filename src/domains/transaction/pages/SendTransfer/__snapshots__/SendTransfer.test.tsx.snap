@@ -378,6 +378,11 @@ exports[`SendTransfer should display disabled address selection input if selecte
                               id="SendTransactionForm__network-label"
                             />
                             <div
+                              class="fixed invisible w-auto whitespace-nowrap"
+                            >
+                              ARK Devnet…
+                            </div>
+                            <div
                               class="Input__InputWrapperStyled-wu99qs-0 iRRxpY"
                               disabled=""
                             >
@@ -493,6 +498,11 @@ exports[`SendTransfer should display disabled address selection input if selecte
                                 class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap"
                               />
                             </span>
+                            <div
+                              class="fixed invisible w-auto whitespace-nowrap"
+                            >
+                              …
+                            </div>
                             <div
                               class="Input__InputWrapperStyled-wu99qs-0 jYUFQr"
                             >
@@ -632,6 +642,11 @@ exports[`SendTransfer should display disabled address selection input if selecte
                                       class="relative w-full"
                                     >
                                       <div
+                                        class="fixed invisible w-auto whitespace-nowrap"
+                                      >
+                                        …
+                                      </div>
+                                      <div
                                         class="Input__InputWrapperStyled-wu99qs-0 jYUFQr sr-only"
                                       >
                                         <div
@@ -661,6 +676,11 @@ exports[`SendTransfer should display disabled address selection input if selecte
                                             for="downshift-42-input"
                                             id="downshift-42-label"
                                           />
+                                          <div
+                                            class="fixed invisible w-auto whitespace-nowrap"
+                                          >
+                                            …
+                                          </div>
                                           <div
                                             class="Input__InputWrapperStyled-wu99qs-0 iRRxpY"
                                             disabled=""
@@ -745,6 +765,11 @@ exports[`SendTransfer should display disabled address selection input if selecte
                                       class="relative"
                                     >
                                       <div
+                                        class="fixed invisible w-auto whitespace-nowrap"
+                                      >
+                                        …
+                                      </div>
+                                      <div
                                         class="Input__InputWrapperStyled-wu99qs-0 iRRxpY"
                                         disabled=""
                                       >
@@ -792,6 +817,11 @@ exports[`SendTransfer should display disabled address selection input if selecte
                         >
                           Smartbridge
                         </label>
+                        <div
+                          class="fixed invisible w-auto whitespace-nowrap"
+                        >
+                          …
+                        </div>
                         <div
                           class="Input__InputWrapperStyled-wu99qs-0 jYUFQr"
                         >
@@ -847,6 +877,11 @@ exports[`SendTransfer should display disabled address selection input if selecte
                             <div
                               class="relative"
                             >
+                              <div
+                                class="fixed invisible w-auto whitespace-nowrap"
+                              >
+                                0.07320598…
+                              </div>
                               <div
                                 class="Input__InputWrapperStyled-wu99qs-0 jYUFQr"
                               >
@@ -2221,6 +2256,11 @@ exports[`SendTransfer should error if wrong mnemonic 1`] = `
                         />
                       </label>
                       <div
+                        class="fixed invisible w-auto whitespace-nowrap"
+                      >
+                        …
+                      </div>
+                      <div
                         class="Input__InputWrapperStyled-wu99qs-0 jXtMoQ"
                       >
                         <div
@@ -2232,6 +2272,7 @@ exports[`SendTransfer should error if wrong mnemonic 1`] = `
                             data-testid="AuthenticationStep__mnemonic"
                             name="mnemonic"
                             type="password"
+                            value=""
                           />
                         </div>
                         <div
@@ -2382,6 +2423,11 @@ exports[`SendTransfer should render 1st step with custom deeplink values and use
               id="SendTransactionForm__network-label"
             />
             <div
+              class="fixed invisible w-auto whitespace-nowrap"
+            >
+              …
+            </div>
+            <div
               class="Input__InputWrapperStyled-wu99qs-0 jYUFQr"
             >
               <div
@@ -2451,6 +2497,11 @@ exports[`SendTransfer should render 1st step with custom deeplink values and use
                 class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap"
               />
             </span>
+            <div
+              class="fixed invisible w-auto whitespace-nowrap"
+            >
+              …
+            </div>
             <div
               class="Input__InputWrapperStyled-wu99qs-0 jYUFQr"
             >
@@ -2590,6 +2641,11 @@ exports[`SendTransfer should render 1st step with custom deeplink values and use
                       class="relative w-full"
                     >
                       <div
+                        class="fixed invisible w-auto whitespace-nowrap"
+                      >
+                        …
+                      </div>
+                      <div
                         class="Input__InputWrapperStyled-wu99qs-0 jYUFQr sr-only"
                       >
                         <div
@@ -2619,6 +2675,11 @@ exports[`SendTransfer should render 1st step with custom deeplink values and use
                             for="downshift-7-input"
                             id="downshift-7-label"
                           />
+                          <div
+                            class="fixed invisible w-auto whitespace-nowrap"
+                          >
+                            …
+                          </div>
                           <div
                             class="Input__InputWrapperStyled-wu99qs-0 iRRxpY"
                             disabled=""
@@ -2703,6 +2764,11 @@ exports[`SendTransfer should render 1st step with custom deeplink values and use
                       class="relative"
                     >
                       <div
+                        class="fixed invisible w-auto whitespace-nowrap"
+                      >
+                        1.2…
+                      </div>
+                      <div
                         class="Input__InputWrapperStyled-wu99qs-0 iRRxpY"
                         disabled=""
                       >
@@ -2750,6 +2816,11 @@ exports[`SendTransfer should render 1st step with custom deeplink values and use
         >
           Smartbridge
         </label>
+        <div
+          class="fixed invisible w-auto whitespace-nowrap"
+        >
+          …
+        </div>
         <div
           class="Input__InputWrapperStyled-wu99qs-0 jYUFQr"
         >
@@ -2805,6 +2876,11 @@ exports[`SendTransfer should render 1st step with custom deeplink values and use
             <div
               class="relative"
             >
+              <div
+                class="fixed invisible w-auto whitespace-nowrap"
+              >
+                …
+              </div>
               <div
                 class="Input__InputWrapperStyled-wu99qs-0 iRRxpY"
                 disabled=""
@@ -3206,6 +3282,11 @@ exports[`SendTransfer should render form and use location state 1`] = `
                               id="SendTransactionForm__network-label"
                             />
                             <div
+                              class="fixed invisible w-auto whitespace-nowrap"
+                            >
+                              ARK Devnet…
+                            </div>
+                            <div
                               class="Input__InputWrapperStyled-wu99qs-0 iRRxpY"
                               disabled=""
                             >
@@ -3339,6 +3420,11 @@ exports[`SendTransfer should render form and use location state 1`] = `
                                 </span>
                               </div>
                             </span>
+                            <div
+                              class="fixed invisible w-auto whitespace-nowrap"
+                            >
+                              D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD…
+                            </div>
                             <div
                               class="Input__InputWrapperStyled-wu99qs-0 jYUFQr"
                             >
@@ -3489,6 +3575,11 @@ exports[`SendTransfer should render form and use location state 1`] = `
                                       class="relative w-full"
                                     >
                                       <div
+                                        class="fixed invisible w-auto whitespace-nowrap"
+                                      >
+                                        DNjuJEDQkhrJ7cA9FZ2iVXt5anYiM8Jtc9…
+                                      </div>
+                                      <div
                                         class="Input__InputWrapperStyled-wu99qs-0 jYUFQr sr-only"
                                       >
                                         <div
@@ -3518,6 +3609,11 @@ exports[`SendTransfer should render form and use location state 1`] = `
                                             for="downshift-10-input"
                                             id="downshift-10-label"
                                           />
+                                          <div
+                                            class="fixed invisible w-auto whitespace-nowrap"
+                                          >
+                                            DNjuJEDQkhrJ7cA9FZ2iVXt5anYiM8Jtc9…
+                                          </div>
                                           <div
                                             class="Input__InputWrapperStyled-wu99qs-0 jYUFQr"
                                           >
@@ -3611,6 +3707,11 @@ exports[`SendTransfer should render form and use location state 1`] = `
                                       class="relative"
                                     >
                                       <div
+                                        class="fixed invisible w-auto whitespace-nowrap"
+                                      >
+                                        0…
+                                      </div>
+                                      <div
                                         class="Input__InputWrapperStyled-wu99qs-0 jYUFQr"
                                       >
                                         <div
@@ -3669,6 +3770,11 @@ exports[`SendTransfer should render form and use location state 1`] = `
                           Smartbridge
                         </label>
                         <div
+                          class="fixed invisible w-auto whitespace-nowrap"
+                        >
+                          …
+                        </div>
+                        <div
                           class="Input__InputWrapperStyled-wu99qs-0 jYUFQr"
                         >
                           <div
@@ -3680,7 +3786,7 @@ exports[`SendTransfer should render form and use location state 1`] = `
                               name="smartbridge"
                               placeholder=" "
                               type="text"
-                              value="ARK"
+                              value=""
                             />
                           </div>
                           <div
@@ -3723,6 +3829,11 @@ exports[`SendTransfer should render form and use location state 1`] = `
                             <div
                               class="relative"
                             >
+                              <div
+                                class="fixed invisible w-auto whitespace-nowrap"
+                              >
+                                0.07320598…
+                              </div>
                               <div
                                 class="Input__InputWrapperStyled-wu99qs-0 jYUFQr"
                               >
@@ -4221,6 +4332,11 @@ exports[`SendTransfer should render form and use location state without memo 1`]
                               id="SendTransactionForm__network-label"
                             />
                             <div
+                              class="fixed invisible w-auto whitespace-nowrap"
+                            >
+                              ARK Devnet…
+                            </div>
+                            <div
                               class="Input__InputWrapperStyled-wu99qs-0 iRRxpY"
                               disabled=""
                             >
@@ -4354,6 +4470,11 @@ exports[`SendTransfer should render form and use location state without memo 1`]
                                 </span>
                               </div>
                             </span>
+                            <div
+                              class="fixed invisible w-auto whitespace-nowrap"
+                            >
+                              D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD…
+                            </div>
                             <div
                               class="Input__InputWrapperStyled-wu99qs-0 jYUFQr"
                             >
@@ -4504,6 +4625,11 @@ exports[`SendTransfer should render form and use location state without memo 1`]
                                       class="relative w-full"
                                     >
                                       <div
+                                        class="fixed invisible w-auto whitespace-nowrap"
+                                      >
+                                        …
+                                      </div>
+                                      <div
                                         class="Input__InputWrapperStyled-wu99qs-0 jYUFQr sr-only"
                                       >
                                         <div
@@ -4533,6 +4659,11 @@ exports[`SendTransfer should render form and use location state without memo 1`]
                                             for="downshift-27-input"
                                             id="downshift-27-label"
                                           />
+                                          <div
+                                            class="fixed invisible w-auto whitespace-nowrap"
+                                          >
+                                            …
+                                          </div>
                                           <div
                                             class="Input__InputWrapperStyled-wu99qs-0 jYUFQr"
                                           >
@@ -4615,6 +4746,11 @@ exports[`SendTransfer should render form and use location state without memo 1`]
                                       class="relative"
                                     >
                                       <div
+                                        class="fixed invisible w-auto whitespace-nowrap"
+                                      >
+                                        …
+                                      </div>
+                                      <div
                                         class="Input__InputWrapperStyled-wu99qs-0 jYUFQr"
                                       >
                                         <div
@@ -4673,6 +4809,11 @@ exports[`SendTransfer should render form and use location state without memo 1`]
                           Smartbridge
                         </label>
                         <div
+                          class="fixed invisible w-auto whitespace-nowrap"
+                        >
+                          …
+                        </div>
+                        <div
                           class="Input__InputWrapperStyled-wu99qs-0 jYUFQr"
                         >
                           <div
@@ -4727,6 +4868,11 @@ exports[`SendTransfer should render form and use location state without memo 1`]
                             <div
                               class="relative"
                             >
+                              <div
+                                class="fixed invisible w-auto whitespace-nowrap"
+                              >
+                                0.07320598…
+                              </div>
                               <div
                                 class="Input__InputWrapperStyled-wu99qs-0 jYUFQr"
                               >
@@ -4906,6 +5052,11 @@ exports[`SendTransfer should render form step 1`] = `
               id="SendTransactionForm__network-label"
             />
             <div
+              class="fixed invisible w-auto whitespace-nowrap"
+            >
+              …
+            </div>
+            <div
               class="Input__InputWrapperStyled-wu99qs-0 jYUFQr"
             >
               <div
@@ -4975,6 +5126,11 @@ exports[`SendTransfer should render form step 1`] = `
                 class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap"
               />
             </span>
+            <div
+              class="fixed invisible w-auto whitespace-nowrap"
+            >
+              …
+            </div>
             <div
               class="Input__InputWrapperStyled-wu99qs-0 jYUFQr"
             >
@@ -5114,6 +5270,11 @@ exports[`SendTransfer should render form step 1`] = `
                       class="relative w-full"
                     >
                       <div
+                        class="fixed invisible w-auto whitespace-nowrap"
+                      >
+                        …
+                      </div>
+                      <div
                         class="Input__InputWrapperStyled-wu99qs-0 jYUFQr sr-only"
                       >
                         <div
@@ -5143,6 +5304,11 @@ exports[`SendTransfer should render form step 1`] = `
                             for="downshift-0-input"
                             id="downshift-0-label"
                           />
+                          <div
+                            class="fixed invisible w-auto whitespace-nowrap"
+                          >
+                            …
+                          </div>
                           <div
                             class="Input__InputWrapperStyled-wu99qs-0 iRRxpY"
                             disabled=""
@@ -5227,6 +5393,11 @@ exports[`SendTransfer should render form step 1`] = `
                       class="relative"
                     >
                       <div
+                        class="fixed invisible w-auto whitespace-nowrap"
+                      >
+                        …
+                      </div>
+                      <div
                         class="Input__InputWrapperStyled-wu99qs-0 iRRxpY"
                         disabled=""
                       >
@@ -5274,6 +5445,11 @@ exports[`SendTransfer should render form step 1`] = `
         >
           Smartbridge
         </label>
+        <div
+          class="fixed invisible w-auto whitespace-nowrap"
+        >
+          …
+        </div>
         <div
           class="Input__InputWrapperStyled-wu99qs-0 jYUFQr"
         >
@@ -5329,6 +5505,11 @@ exports[`SendTransfer should render form step 1`] = `
             <div
               class="relative"
             >
+              <div
+                class="fixed invisible w-auto whitespace-nowrap"
+              >
+                …
+              </div>
               <div
                 class="Input__InputWrapperStyled-wu99qs-0 iRRxpY"
                 disabled=""
@@ -5411,6 +5592,11 @@ exports[`SendTransfer should render form step with deeplink values and use them 
               id="SendTransactionForm__network-label"
             />
             <div
+              class="fixed invisible w-auto whitespace-nowrap"
+            >
+              …
+            </div>
+            <div
               class="Input__InputWrapperStyled-wu99qs-0 jYUFQr"
             >
               <div
@@ -5480,6 +5666,11 @@ exports[`SendTransfer should render form step with deeplink values and use them 
                 class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap"
               />
             </span>
+            <div
+              class="fixed invisible w-auto whitespace-nowrap"
+            >
+              …
+            </div>
             <div
               class="Input__InputWrapperStyled-wu99qs-0 jYUFQr"
             >
@@ -5619,6 +5810,11 @@ exports[`SendTransfer should render form step with deeplink values and use them 
                       class="relative w-full"
                     >
                       <div
+                        class="fixed invisible w-auto whitespace-nowrap"
+                      >
+                        …
+                      </div>
+                      <div
                         class="Input__InputWrapperStyled-wu99qs-0 jYUFQr sr-only"
                       >
                         <div
@@ -5648,6 +5844,11 @@ exports[`SendTransfer should render form step with deeplink values and use them 
                             for="downshift-4-input"
                             id="downshift-4-label"
                           />
+                          <div
+                            class="fixed invisible w-auto whitespace-nowrap"
+                          >
+                            …
+                          </div>
                           <div
                             class="Input__InputWrapperStyled-wu99qs-0 iRRxpY"
                             disabled=""
@@ -5732,6 +5933,11 @@ exports[`SendTransfer should render form step with deeplink values and use them 
                       class="relative"
                     >
                       <div
+                        class="fixed invisible w-auto whitespace-nowrap"
+                      >
+                        1.2…
+                      </div>
+                      <div
                         class="Input__InputWrapperStyled-wu99qs-0 iRRxpY"
                         disabled=""
                       >
@@ -5779,6 +5985,11 @@ exports[`SendTransfer should render form step with deeplink values and use them 
         >
           Smartbridge
         </label>
+        <div
+          class="fixed invisible w-auto whitespace-nowrap"
+        >
+          …
+        </div>
         <div
           class="Input__InputWrapperStyled-wu99qs-0 jYUFQr"
         >
@@ -5834,6 +6045,11 @@ exports[`SendTransfer should render form step with deeplink values and use them 
             <div
               class="relative"
             >
+              <div
+                class="fixed invisible w-auto whitespace-nowrap"
+              >
+                …
+              </div>
               <div
                 class="Input__InputWrapperStyled-wu99qs-0 iRRxpY"
                 disabled=""
@@ -5916,6 +6132,11 @@ exports[`SendTransfer should render form step without test networks 1`] = `
               id="SendTransactionForm__network-label"
             />
             <div
+              class="fixed invisible w-auto whitespace-nowrap"
+            >
+              …
+            </div>
+            <div
               class="Input__InputWrapperStyled-wu99qs-0 jYUFQr"
             >
               <div
@@ -5985,6 +6206,11 @@ exports[`SendTransfer should render form step without test networks 1`] = `
                 class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap"
               />
             </span>
+            <div
+              class="fixed invisible w-auto whitespace-nowrap"
+            >
+              …
+            </div>
             <div
               class="Input__InputWrapperStyled-wu99qs-0 jYUFQr"
             >
@@ -6124,6 +6350,11 @@ exports[`SendTransfer should render form step without test networks 1`] = `
                       class="relative w-full"
                     >
                       <div
+                        class="fixed invisible w-auto whitespace-nowrap"
+                      >
+                        …
+                      </div>
+                      <div
                         class="Input__InputWrapperStyled-wu99qs-0 jYUFQr sr-only"
                       >
                         <div
@@ -6153,6 +6384,11 @@ exports[`SendTransfer should render form step without test networks 1`] = `
                             for="downshift-2-input"
                             id="downshift-2-label"
                           />
+                          <div
+                            class="fixed invisible w-auto whitespace-nowrap"
+                          >
+                            …
+                          </div>
                           <div
                             class="Input__InputWrapperStyled-wu99qs-0 iRRxpY"
                             disabled=""
@@ -6237,6 +6473,11 @@ exports[`SendTransfer should render form step without test networks 1`] = `
                       class="relative"
                     >
                       <div
+                        class="fixed invisible w-auto whitespace-nowrap"
+                      >
+                        …
+                      </div>
+                      <div
                         class="Input__InputWrapperStyled-wu99qs-0 iRRxpY"
                         disabled=""
                       >
@@ -6284,6 +6525,11 @@ exports[`SendTransfer should render form step without test networks 1`] = `
         >
           Smartbridge
         </label>
+        <div
+          class="fixed invisible w-auto whitespace-nowrap"
+        >
+          …
+        </div>
         <div
           class="Input__InputWrapperStyled-wu99qs-0 jYUFQr"
         >
@@ -6339,6 +6585,11 @@ exports[`SendTransfer should render form step without test networks 1`] = `
             <div
               class="relative"
             >
+              <div
+                class="fixed invisible w-auto whitespace-nowrap"
+              >
+                …
+              </div>
               <div
                 class="Input__InputWrapperStyled-wu99qs-0 iRRxpY"
                 disabled=""
@@ -6740,6 +6991,11 @@ exports[`SendTransfer should render network selection without selected wallet 1`
                             id="SendTransfer__network-step__select-label"
                           />
                           <div
+                            class="fixed invisible w-auto whitespace-nowrap"
+                          >
+                            …
+                          </div>
+                          <div
                             class="Input__InputWrapperStyled-wu99qs-0 jYUFQr"
                           >
                             <div
@@ -6903,6 +7159,11 @@ exports[`SendTransfer should render network step without test networks 1`] = `
             for="SendTransfer__network-step__select-input"
             id="SendTransfer__network-step__select-label"
           />
+          <div
+            class="fixed invisible w-auto whitespace-nowrap"
+          >
+            …
+          </div>
           <div
             class="Input__InputWrapperStyled-wu99qs-0 jYUFQr"
           >
@@ -7937,6 +8198,12 @@ exports[`SendTransfer should select a cryptoasset and select sender without wall
                               id="SendTransactionForm__network-label"
                             />
                             <div
+                              class="fixed invisible w-auto whitespace-nowrap"
+                            >
+                              ARK Devnet
+                              …
+                            </div>
+                            <div
                               class="Input__InputWrapperStyled-wu99qs-0 iRRxpY"
                               disabled=""
                             >
@@ -8071,6 +8338,12 @@ exports[`SendTransfer should select a cryptoasset and select sender without wall
                                 </span>
                               </div>
                             </span>
+                            <div
+                              class="fixed invisible w-auto whitespace-nowrap"
+                            >
+                              D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb
+                              …
+                            </div>
                             <div
                               class="Input__InputWrapperStyled-wu99qs-0 jYUFQr"
                             >
@@ -8221,6 +8494,12 @@ exports[`SendTransfer should select a cryptoasset and select sender without wall
                                       class="relative w-full"
                                     >
                                       <div
+                                        class="fixed invisible w-auto whitespace-nowrap"
+                                      >
+                                        
+                                        …
+                                      </div>
+                                      <div
                                         class="Input__InputWrapperStyled-wu99qs-0 jYUFQr sr-only"
                                       >
                                         <div
@@ -8250,6 +8529,12 @@ exports[`SendTransfer should select a cryptoasset and select sender without wall
                                             for="downshift-51-input"
                                             id="downshift-51-label"
                                           />
+                                          <div
+                                            class="fixed invisible w-auto whitespace-nowrap"
+                                          >
+                                            
+                                            …
+                                          </div>
                                           <div
                                             class="Input__InputWrapperStyled-wu99qs-0 jYUFQr"
                                           >
@@ -8332,6 +8617,12 @@ exports[`SendTransfer should select a cryptoasset and select sender without wall
                                       class="relative"
                                     >
                                       <div
+                                        class="fixed invisible w-auto whitespace-nowrap"
+                                      >
+                                        
+                                        …
+                                      </div>
+                                      <div
                                         class="Input__InputWrapperStyled-wu99qs-0 jYUFQr"
                                       >
                                         <div
@@ -8392,6 +8683,11 @@ exports[`SendTransfer should select a cryptoasset and select sender without wall
                           Smartbridge
                         </label>
                         <div
+                          class="fixed invisible w-auto whitespace-nowrap"
+                        >
+                          …
+                        </div>
+                        <div
                           class="Input__InputWrapperStyled-wu99qs-0 jYUFQr"
                         >
                           <div
@@ -8448,6 +8744,12 @@ exports[`SendTransfer should select a cryptoasset and select sender without wall
                             <div
                               class="relative"
                             >
+                              <div
+                                class="fixed invisible w-auto whitespace-nowrap"
+                              >
+                                0.07320598
+                                …
+                              </div>
                               <div
                                 class="Input__InputWrapperStyled-wu99qs-0 jYUFQr"
                               >
@@ -8945,6 +9247,11 @@ exports[`SendTransfer should select cryptoasset 1`] = `
                             for="SendTransfer__network-step__select-input"
                             id="SendTransfer__network-step__select-label"
                           />
+                          <div
+                            class="fixed invisible w-auto whitespace-nowrap"
+                          >
+                            ARK Devnet…
+                          </div>
                           <div
                             class="Input__InputWrapperStyled-wu99qs-0 jYUFQr"
                           >

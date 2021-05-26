@@ -360,6 +360,11 @@ exports[`SendIpfs should error if wrong mnemonic 1`] = `
                         />
                       </label>
                       <div
+                        class="fixed invisible w-auto whitespace-nowrap"
+                      >
+                        …
+                      </div>
+                      <div
                         class="Input__InputWrapperStyled-wu99qs-0 jXtMoQ"
                       >
                         <div
@@ -371,6 +376,7 @@ exports[`SendIpfs should error if wrong mnemonic 1`] = `
                             data-testid="AuthenticationStep__mnemonic"
                             name="mnemonic"
                             type="password"
+                            value=""
                           />
                         </div>
                         <div
@@ -521,6 +527,11 @@ exports[`SendIpfs should render form step 1`] = `
               id="SendTransactionForm__network-label"
             />
             <div
+              class="fixed invisible w-auto whitespace-nowrap"
+            >
+              …
+            </div>
+            <div
               class="Input__InputWrapperStyled-wu99qs-0 jYUFQr"
             >
               <div
@@ -591,6 +602,11 @@ exports[`SendIpfs should render form step 1`] = `
               />
             </span>
             <div
+              class="fixed invisible w-auto whitespace-nowrap"
+            >
+              …
+            </div>
+            <div
               class="Input__InputWrapperStyled-wu99qs-0 jYUFQr"
             >
               <div
@@ -647,6 +663,11 @@ exports[`SendIpfs should render form step 1`] = `
           />
         </label>
         <div
+          class="fixed invisible w-auto whitespace-nowrap"
+        >
+          …
+        </div>
+        <div
           class="Input__InputWrapperStyled-wu99qs-0 jYUFQr pr-20"
         >
           <div
@@ -687,6 +708,11 @@ exports[`SendIpfs should render form step 1`] = `
             <div
               class="relative"
             >
+              <div
+                class="fixed invisible w-auto whitespace-nowrap"
+              >
+                …
+              </div>
               <div
                 class="Input__InputWrapperStyled-wu99qs-0 iRRxpY"
                 disabled=""
@@ -2578,6 +2604,12 @@ exports[`SendIpfs should show an error if an invalid IPFS hash is entered 1`] = 
                               id="SendTransactionForm__network-label"
                             />
                             <div
+                              class="fixed invisible w-auto whitespace-nowrap"
+                            >
+                              ARK Devnet
+                              …
+                            </div>
+                            <div
                               class="Input__InputWrapperStyled-wu99qs-0 iRRxpY"
                               disabled=""
                             >
@@ -2713,6 +2745,12 @@ exports[`SendIpfs should show an error if an invalid IPFS hash is entered 1`] = 
                               </div>
                             </span>
                             <div
+                              class="fixed invisible w-auto whitespace-nowrap"
+                            >
+                              D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD
+                              …
+                            </div>
+                            <div
                               class="Input__InputWrapperStyled-wu99qs-0 jYUFQr"
                             >
                               <div
@@ -2780,6 +2818,11 @@ exports[`SendIpfs should show an error if an invalid IPFS hash is entered 1`] = 
                           />
                         </label>
                         <div
+                          class="fixed invisible w-auto whitespace-nowrap"
+                        >
+                          …
+                        </div>
+                        <div
                           class="Input__InputWrapperStyled-wu99qs-0 jXtMoQ pr-20"
                         >
                           <div
@@ -2792,7 +2835,7 @@ exports[`SendIpfs should show an error if an invalid IPFS hash is entered 1`] = 
                               name="hash"
                               placeholder=" "
                               type="text"
-                              value="invalid-ipfs-hash"
+                              value=""
                             />
                           </div>
                           <div
@@ -2839,6 +2882,12 @@ exports[`SendIpfs should show an error if an invalid IPFS hash is entered 1`] = 
                             <div
                               class="relative"
                             >
+                              <div
+                                class="fixed invisible w-auto whitespace-nowrap"
+                              >
+                                5
+                                …
+                              </div>
                               <div
                                 class="Input__InputWrapperStyled-wu99qs-0 jYUFQr"
                               >

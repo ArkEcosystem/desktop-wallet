@@ -574,6 +574,11 @@ exports[`News should filter results based on category query and asset 1`] = `
                       class="flex justify-between items-center py-4 px-2 rounded-md shadow-xl"
                     >
                       <div
+                        class="fixed invisible w-auto whitespace-nowrap"
+                      >
+                        …
+                      </div>
+                      <div
                         class="Input__InputWrapperStyled-wu99qs-0 cRhsWS"
                       >
                         <div
@@ -584,6 +589,7 @@ exports[`News should filter results based on category query and asset 1`] = `
                             data-testid="NewsOptions__search"
                             maxlength="32"
                             placeholder="Search"
+                            value=""
                           />
                         </div>
                       </div>
@@ -1522,6 +1528,11 @@ exports[`News should filter results based on category query and asset 2`] = `
                       class="flex justify-between items-center py-4 px-2 rounded-md shadow-xl"
                     >
                       <div
+                        class="fixed invisible w-auto whitespace-nowrap"
+                      >
+                        …
+                      </div>
+                      <div
                         class="Input__InputWrapperStyled-wu99qs-0 cRhsWS"
                       >
                         <div
@@ -1532,6 +1543,7 @@ exports[`News should filter results based on category query and asset 2`] = `
                             data-testid="NewsOptions__search"
                             maxlength="32"
                             placeholder="Search"
+                            value=""
                           />
                         </div>
                       </div>

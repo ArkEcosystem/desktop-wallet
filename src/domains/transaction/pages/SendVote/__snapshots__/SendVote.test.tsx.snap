@@ -1716,6 +1716,11 @@ exports[`SendVote should show error if wrong mnemonic 1`] = `
                         />
                       </label>
                       <div
+                        class="fixed invisible w-auto whitespace-nowrap"
+                      >
+                        …
+                      </div>
+                      <div
                         class="Input__InputWrapperStyled-wu99qs-0 jXtMoQ"
                       >
                         <div
@@ -1727,6 +1732,7 @@ exports[`SendVote should show error if wrong mnemonic 1`] = `
                             data-testid="AuthenticationStep__mnemonic"
                             name="mnemonic"
                             type="password"
+                            value=""
                           />
                         </div>
                         <div

@@ -94,6 +94,7 @@ export const Input = React.forwardRef<InputElement, InputProps>(
 			suggestion,
 			hideInputValue,
 			style,
+			value,
 			...props
 		}: InputProps,
 		ref,
@@ -115,8 +116,24 @@ export const Input = React.forwardRef<InputElement, InputProps>(
 			}
 		}, [focusRef, isFocused]);
 
+		const hiddenRef = useRef<HTMLDivElement>(null);
+		const suggestionRef = useRef<HTMLSpanElement>(null);
+
+		const hideSuggestion = () => {
+			const suggestionWidth = suggestionRef?.current?.clientWidth;
+
+			if (!suggestionWidth || suggestionWidth < suggestionRef?.current?.parentElement.clientWidth) {
+				return false;
+			}
+
+			return hiddenRef?.current?.clientWidth >= suggestionWidth;
+		};
+
 		return (
 			<>
+				<div ref={hiddenRef} className="fixed invisible w-auto whitespace-nowrap">
+					{value}…
+				</div>
 				<InputWrapperStyled
 					style={style}
 					className={className}
@@ -127,7 +144,6 @@ export const Input = React.forwardRef<InputElement, InputProps>(
 					isTextArea={isTextArea}
 				>
 					{addons?.start !== undefined && addons.start}
-
 					<div className={cn("relative flex flex-1 h-full", { invisible: hideInputValue })}>
 						<InputStyled
 							data-testid="Input"
@@ -139,6 +155,7 @@ export const Input = React.forwardRef<InputElement, InputProps>(
 							name={fieldContext?.name}
 							aria-invalid={isInvalidValue}
 							disabled={disabled}
+							value={value}
 							ref={ref}
 							{...props}
 						/>
@@ -147,11 +164,14 @@ export const Input = React.forwardRef<InputElement, InputProps>(
 							<span
 								data-testid="Input__suggestion"
 								className={cn(
-									"absolute inset-y-0 flex items-center font-normal opacity-50 pointer-events-none",
+									"absolute inset-y-0 flex items-center font-normal opacity-50 pointer-events-none w-full",
+									{ invisible: hideSuggestion() },
 									innerClassName,
 								)}
 							>
-								{suggestion}
+								<span ref={suggestionRef} className="truncate">
+									{suggestion}
+								</span>
 							</span>
 						)}
 					</div>
