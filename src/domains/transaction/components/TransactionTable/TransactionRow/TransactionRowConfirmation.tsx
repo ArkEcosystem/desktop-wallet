@@ -5,10 +5,10 @@ import React from "react";
 
 import { TransactionStatus } from "../TransactionTable.models";
 
-type Props = {
+interface Props {
 	isSignaturePending?: boolean;
 	transaction: DTO.ExtendedTransactionData;
-};
+}
 
 const getStatus = (isConfirmed: boolean, isSignaturePending?: boolean): TransactionStatus => {
 	if (isSignaturePending) {

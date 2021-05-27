@@ -3,9 +3,9 @@ import { Address } from "app/components/Address";
 import { Avatar } from "app/components/Avatar";
 import React from "react";
 
-type VoteListProps = {
+interface VoteListProps {
 	votes?: Contracts.IReadOnlyWallet[];
-};
+}
 
 export const VoteList = ({ votes }: VoteListProps) => (
 	<div className="-my-2">

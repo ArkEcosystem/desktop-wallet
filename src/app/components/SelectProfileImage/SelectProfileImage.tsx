@@ -6,13 +6,13 @@ import { useTranslation } from "react-i18next";
 import tw, { styled } from "twin.macro";
 import { openFile } from "utils/electron-utils";
 
-type SelectProfileImageProps = {
+interface SelectProfileImageProps {
 	className?: string;
 	value?: string;
 	name?: string;
 	showLabel?: boolean;
 	onSelect: (raw: string) => void;
-};
+}
 
 const UploadButtonWrapper = styled.div`
 	${tw`h-full w-full`}

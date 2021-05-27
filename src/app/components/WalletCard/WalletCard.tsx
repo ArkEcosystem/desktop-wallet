@@ -16,14 +16,14 @@ import { useHistory } from "react-router-dom";
 import { Amount } from "../Amount";
 import { WalletCardSkeleton } from "./WalletCardSkeleton";
 
-type WalletCardProps = {
+interface WalletCardProps {
 	isLoading: boolean;
 	className?: string;
 	wallet?: Contracts.IReadWriteWallet;
 	actions?: DropdownOption[];
 	displayType?: string;
 	onSelect?: any;
-};
+}
 
 export const WalletCard = ({
 	isLoading,

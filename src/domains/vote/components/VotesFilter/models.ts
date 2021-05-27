@@ -1,7 +1,7 @@
 export type FilterOption = "all" | "current";
 
-export type FilterProps = {
+export interface FilterProps {
 	onChange?: (selected: FilterOption) => void;
 	selectedOption?: FilterOption;
 	totalCurrentVotes: number;
-};
+}

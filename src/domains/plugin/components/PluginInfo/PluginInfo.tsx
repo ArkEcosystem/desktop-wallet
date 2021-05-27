@@ -6,12 +6,12 @@ import { useTranslation } from "react-i18next";
 
 import { PluginPermissionsModal } from "../PluginPermissionsModal/PluginPermissionsModal";
 
-type Props = {
+interface Props {
 	description?: string;
 	permissions?: any;
 	images?: any;
 	minimumVersion?: string;
-};
+}
 
 export const PluginInfo = ({ description, permissions, images, minimumVersion }: Props) => {
 	const { t, i18n } = useTranslation();

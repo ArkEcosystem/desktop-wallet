@@ -9,11 +9,11 @@ import {
 import React, { useMemo } from "react";
 import { useTranslation } from "react-i18next";
 
-type SecondSignatureDetailProps = {
+interface SecondSignatureDetailProps {
 	isOpen: boolean;
 	transaction: any;
 	onClose?: any;
-};
+}
 
 export const SecondSignatureDetail = ({ isOpen, transaction, onClose }: SecondSignatureDetailProps) => {
 	const { t } = useTranslation();

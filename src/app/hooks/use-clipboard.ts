@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react";
 
-type ClipboardOptions = {
+interface ClipboardOptions {
 	resetAfter?: number;
 	onSuccess?: any;
 	onError?: any;
-};
+}
 
 export const useClipboard = (options?: ClipboardOptions): [boolean, (data: string | object) => void] => {
 	const [hasCopied, setHasCopied] = useState(false);

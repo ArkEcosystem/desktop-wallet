@@ -9,11 +9,11 @@ import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import { useTranslation } from "react-i18next";
 
-type Props = {
+interface Props {
 	isOpen: boolean;
 	onClose?: () => void;
 	onSuccess: (result: { pluginId: string; repositoryURL: string }) => void;
-};
+}
 
 export const PluginManualInstallModal = ({ isOpen, onClose, onSuccess }: Props) => {
 	const { t } = useTranslation();

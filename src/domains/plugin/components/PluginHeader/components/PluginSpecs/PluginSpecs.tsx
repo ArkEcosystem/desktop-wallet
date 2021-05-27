@@ -6,7 +6,7 @@ import extractDomain from "extract-domain";
 import React from "react";
 import { useTranslation } from "react-i18next";
 
-type Props = {
+interface Props {
 	author?: string;
 	category?: string;
 	url?: string;
@@ -15,18 +15,18 @@ type Props = {
 	logo?: string;
 	isOfficial?: boolean;
 	isLoadingSize?: boolean;
-};
+}
 
-type GridColProps = {
+interface GridColProps {
 	children: React.ReactNode;
 	padding?: string;
-};
+}
 
-type GridItemProps = {
+interface GridItemProps {
 	label: string;
 	children: React.ReactNode;
 	textDirection?: string;
-};
+}
 
 const GridItem = ({ label, children, textDirection }: GridItemProps) => (
 	<div className={`flex flex-col ${textDirection && `text-${textDirection}`}`}>

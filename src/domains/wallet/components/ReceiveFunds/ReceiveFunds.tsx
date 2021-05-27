@@ -14,14 +14,14 @@ import { useTranslation } from "react-i18next";
 
 import { ReceiveFundsForm, useQRCode } from "./";
 
-type ReceiveFundsProps = {
+interface ReceiveFundsProps {
 	address: string;
 	icon: string;
 	name?: string;
 	network?: Coins.Network;
 	isOpen: boolean;
 	onClose?: () => void;
-};
+}
 
 export const ReceiveFunds = ({ address, icon, name, network, isOpen, onClose }: ReceiveFundsProps) => {
 	const [isFormOpen, setIsFormOpen] = useState<boolean>(false);

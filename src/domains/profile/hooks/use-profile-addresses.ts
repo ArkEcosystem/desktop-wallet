@@ -2,14 +2,14 @@ import { Coins } from "@arkecosystem/platform-sdk";
 import { Contracts } from "@arkecosystem/platform-sdk-profiles";
 import { useMemo } from "react";
 
-type Address = {
+interface Address {
 	id: string;
 	address: string;
 	alias?: string;
 	network?: string;
 	avatar: string;
 	type: string;
-};
+}
 
 export const useProfileAddresses = ({ profile, network }: { profile: Contracts.IProfile; network?: Coins.Network }) => {
 	const contacts = profile.contacts().values();

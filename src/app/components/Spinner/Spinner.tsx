@@ -3,10 +3,10 @@ import { Color, Size } from "types";
 
 import { getStyles } from "./Spinner.styles";
 
-type Spinner = {
+interface Spinner {
 	color?: Color;
 	size?: Size;
-};
+}
 
 export const Spinner = styled.div<Spinner>(getStyles);
 

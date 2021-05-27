@@ -1,11 +1,11 @@
 import { Contracts, DTO } from "@arkecosystem/platform-sdk-profiles";
 
-export type Action = {
+export interface Action {
 	label: string;
 	value: string;
-};
+}
 
-export type NotificationItemProps = {
+export interface NotificationItemProps {
 	id: string;
 	body: string;
 	name: string;
@@ -16,18 +16,18 @@ export type NotificationItemProps = {
 	onVisibilityChange?: (isVisible: boolean) => void;
 	containmentRef?: any;
 	meta?: Record<string, any>;
-};
+}
 
-export type NotificationTransactionItemProps = {
+export interface NotificationTransactionItemProps {
 	notification: NotificationItemProps;
 	profile: Contracts.IProfile;
 	containmentRef?: any;
 	onVisibilityChange?: (isVisible: boolean) => void;
 	onTransactionClick?: (item?: DTO.ExtendedTransactionData) => void;
-};
+}
 
-export type NotificationsProps = {
+export interface NotificationsProps {
 	profile: Contracts.IProfile;
 	onNotificationAction?: (id: string) => void;
 	onTransactionClick?: (item?: DTO.ExtendedTransactionData) => void;
-};
+}

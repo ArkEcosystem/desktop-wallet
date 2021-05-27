@@ -5,11 +5,11 @@ import { styled } from "twin.macro";
 
 import { getStyles } from "./BackButton.styles";
 
-type BackButtonProps = {
+interface BackButtonProps {
 	backToUrl?: string;
 	className?: string;
 	disabled?: boolean;
-};
+}
 
 const StyledBackButton = styled.button<BackButtonProps>(getStyles);
 

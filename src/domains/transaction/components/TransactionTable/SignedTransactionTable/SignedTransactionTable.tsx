@@ -15,11 +15,11 @@ import { BaseTransactionRowRecipientLabel } from "../TransactionRow/TransactionR
 
 type SignedTransactionData = Contracts.SignedTransactionData;
 
-type Props = {
+interface Props {
 	transactions: SignedTransactionData[];
 	wallet: ProfileContracts.IReadWriteWallet;
 	onClick?: (transaction: SignedTransactionData) => void;
-};
+}
 
 const getType = (transaction: SignedTransactionData): string => {
 	const type = transaction.get<number>("type");

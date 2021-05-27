@@ -1,10 +1,10 @@
 import { BigNumber } from "@arkecosystem/platform-sdk-support";
 import { useEffect, useRef, useState } from "react";
 
-export type InputFee = {
+export interface InputFee {
 	display: string;
 	value?: string;
-};
+}
 
 export const useFeeFormat = ({ defaultValue, value, avg }: any) => {
 	const toHuman = (inputValue: string | number) =>

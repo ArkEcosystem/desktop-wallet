@@ -2,11 +2,11 @@ import electron from "electron";
 import fs from "fs";
 import path from "path";
 
-export type ReadableFile = {
+export interface ReadableFile {
 	content: string;
 	extension: string;
 	name: string;
-};
+}
 
 export const useFiles = () => {
 	const readFileContents = (filePath: string): ReadableFile => {

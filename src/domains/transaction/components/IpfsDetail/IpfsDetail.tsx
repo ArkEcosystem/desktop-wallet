@@ -12,11 +12,11 @@ import {
 import React, { useMemo } from "react";
 import { useTranslation } from "react-i18next";
 
-type IpfsDetailProps = {
+interface IpfsDetailProps {
 	isOpen: boolean;
 	transaction?: any;
 	onClose?: any;
-};
+}
 
 export const IpfsDetail = ({ isOpen, transaction, onClose }: IpfsDetailProps) => {
 	const { t } = useTranslation();

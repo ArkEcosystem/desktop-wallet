@@ -6,7 +6,7 @@ import { useTranslation } from "react-i18next";
 import { TransactionCompactRow } from "./TransactionRow/TransactionCompactRow";
 import { TransactionRow } from "./TransactionRow/TransactionRow";
 
-type Props = {
+interface Props {
 	transactions: DTO.ExtendedTransactionData[];
 	exchangeCurrency?: string;
 	showSignColumn?: boolean;
@@ -16,7 +16,7 @@ type Props = {
 	onRowClick?: (row: DTO.ExtendedTransactionData) => void;
 	isLoading?: boolean;
 	skeletonRowsLimit?: number;
-};
+}
 
 export const TransactionTable = memo(
 	({

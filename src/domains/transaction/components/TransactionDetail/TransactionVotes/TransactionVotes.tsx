@@ -7,11 +7,11 @@ import React from "react";
 import { useTranslation } from "react-i18next";
 import Skeleton from "react-loading-skeleton";
 
-type TransactionVotesProps = {
+interface TransactionVotesProps {
 	isLoading: boolean;
 	votes: Contracts.IReadOnlyWallet[];
 	unvotes: Contracts.IReadOnlyWallet[];
-};
+}
 
 export const TransactionVotes = ({ isLoading, votes, unvotes }: TransactionVotesProps) => {
 	const { t } = useTranslation();

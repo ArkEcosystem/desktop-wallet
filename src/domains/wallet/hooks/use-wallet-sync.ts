@@ -1,9 +1,9 @@
 import { Contracts, Environment } from "@arkecosystem/platform-sdk-profiles";
 
-type WalletImportTypes = {
+interface WalletImportTypes {
 	profile: Contracts.IProfile;
 	env: Environment;
-};
+}
 
 export const useWalletSync = ({ profile, env }: WalletImportTypes) => {
 	const syncFees = async (wallet: Contracts.IReadWriteWallet) => {

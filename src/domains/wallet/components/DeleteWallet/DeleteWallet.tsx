@@ -2,12 +2,12 @@ import { DeleteResource } from "app/components/DeleteResource";
 import React from "react";
 import { useTranslation } from "react-i18next";
 
-type DeleteWalletProps = {
+interface DeleteWalletProps {
 	isOpen: boolean;
 	onClose?: any;
 	onCancel?: any;
 	onDelete: any;
-};
+}
 
 export const DeleteWallet = ({ isOpen, onClose, onCancel, onDelete }: DeleteWalletProps) => {
 	const { t } = useTranslation();

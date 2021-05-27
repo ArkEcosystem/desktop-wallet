@@ -2,13 +2,13 @@ import React from "react";
 
 import { useSlider } from "./";
 
-type SliderProps = {
+interface SliderProps {
 	children?: any;
 	data?: any;
 	options?: any;
 	className?: string;
 	paginationPosition: "bottom-center" | "top-right";
-};
+}
 
 export const Slider = ({ children, data, options, className, paginationPosition }: SliderProps) => {
 	const { showPagination, containerHeight, slideStyles, wrapperRef } = useSlider({

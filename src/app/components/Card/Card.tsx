@@ -4,7 +4,7 @@ import React from "react";
 
 import { CardButton } from "./Card.styles";
 
-type CardProps = {
+interface CardProps {
 	as?: React.ElementType;
 	children: React.ReactNode;
 	addonIcons?: React.ReactNode;
@@ -13,7 +13,7 @@ type CardProps = {
 	onSelect?: any;
 	isSelected?: boolean;
 	className?: string;
-};
+}
 
 export const Card = ({ children, addonIcons, actions, onClick, onSelect, isSelected, className }: CardProps) => (
 	<div className={className}>

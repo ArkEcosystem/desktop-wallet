@@ -9,12 +9,12 @@ import { useTranslation } from "react-i18next";
 
 import { WalletVoteSkeleton } from "./WalletVoteSkeleton";
 
-type WalletVoteProps = {
+interface WalletVoteProps {
 	wallet: Contracts.IReadWriteWallet;
 	onButtonClick: (address?: string) => void;
 	env: Environment;
 	profile: Contracts.IProfile;
-};
+}
 
 const HintIcon = ({ tooltipContent }: { tooltipContent: string }) => (
 	<Tooltip content={tooltipContent} className="mb-1">

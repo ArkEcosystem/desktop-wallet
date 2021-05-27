@@ -4,9 +4,9 @@ import { useTranslation } from "react-i18next";
 
 import { TransactionDetail } from "../TransactionDetail";
 
-type TransactionMemoProps = {
+interface TransactionMemoProps {
 	memo: string;
-};
+}
 
 export const TransactionMemo = ({ memo }: TransactionMemoProps) => {
 	const { t } = useTranslation();

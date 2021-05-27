@@ -1,19 +1,19 @@
-export type ToggleAllOptionProps = {
+export interface ToggleAllOptionProps {
 	onClick?: any;
 	isHidden?: boolean;
 	isSelected?: boolean;
-};
+}
 
-export type Network = {
+export interface Network {
 	id?: string;
 	name: string;
 	isSelected: boolean;
 	coin: string;
 	onClick?: any;
 	isLive?: boolean;
-};
+}
 
-export type FilterNetworkProps = {
+export interface FilterNetworkProps {
 	title?: string;
 	networks?: Network[];
 	onChange?: (network: Network, networks: Network[]) => void;
@@ -21,4 +21,4 @@ export type FilterNetworkProps = {
 	hideViewAll?: boolean;
 	className?: string;
 	useTestNetworks?: boolean;
-};
+}

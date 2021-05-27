@@ -1,9 +1,9 @@
 import React from "react";
 import tw, { css, styled } from "twin.macro";
 
-type ButtonGroupProps = {
+interface ButtonGroupProps {
 	children?: React.ReactNode;
-};
+}
 
 export const ButtonGroup = ({ children }: ButtonGroupProps) => (
 	<div data-testid="ButtonGroup" role="radiogroup" className="inline-flex items-center space-x-2">
@@ -28,13 +28,13 @@ const ButtonGroupOptionStyled = styled.button(() => [
 	`,
 ]);
 
-type ButtonGroupOptionProps = {
+interface ButtonGroupOptionProps {
 	children: React.ReactNode;
 	value: string | number;
 	disabled?: boolean;
 	isSelected: (value: string | number) => boolean;
 	setSelectedValue: (value: string | number) => void;
-};
+}
 
 export const ButtonGroupOption = ({
 	value,

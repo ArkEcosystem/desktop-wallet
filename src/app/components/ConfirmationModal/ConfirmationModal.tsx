@@ -5,14 +5,14 @@ import React from "react";
 import { useTranslation } from "react-i18next";
 import { Size } from "types";
 
-type Props = {
+interface Props {
 	isOpen?: boolean;
 	description?: string;
 	title?: string;
 	onCancel?: () => void;
 	onConfirm?: () => void;
 	size?: Size;
-};
+}
 
 export const ConfirmationModal = ({ description, title, size, isOpen, onCancel, onConfirm }: Props) => {
 	const { t } = useTranslation();
