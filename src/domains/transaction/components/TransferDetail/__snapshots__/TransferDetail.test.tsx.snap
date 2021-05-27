@@ -373,10 +373,14 @@ exports[`TransferDetail should render a modal 1`] = `
                   <span
                     class="flex text-theme-primary-300 dark:text-theme-secondary-600"
                   >
-                    <div
-                      class="inline-block cursor-pointer"
-                      data-testid="clipboard__wrapper"
+                    <button
+                      class="relative focus:outline-none group"
+                      data-testid="clipboard-icon__wrapper"
+                      type="button"
                     >
+                      <div
+                        class="absolute inset-0 -m-1 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                      />
                       <div
                         class="sc-bdfBwQ fPrsah"
                         height="1em"
@@ -386,7 +390,7 @@ exports[`TransferDetail should render a modal 1`] = `
                           copy.svg
                         </svg>
                       </div>
-                    </div>
+                    </button>
                   </span>
                 </div>
               </div>
@@ -445,10 +449,14 @@ exports[`TransferDetail should render a modal 1`] = `
                   <span
                     class="flex text-theme-primary-300 dark:text-theme-secondary-600"
                   >
-                    <div
-                      class="inline-block cursor-pointer"
-                      data-testid="clipboard__wrapper"
+                    <button
+                      class="relative focus:outline-none group"
+                      data-testid="clipboard-icon__wrapper"
+                      type="button"
                     >
+                      <div
+                        class="absolute inset-0 -m-1 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                      />
                       <div
                         class="sc-bdfBwQ fPrsah"
                         height="1em"
@@ -458,7 +466,7 @@ exports[`TransferDetail should render a modal 1`] = `
                           copy.svg
                         </svg>
                       </div>
-                    </div>
+                    </button>
                   </span>
                 </div>
               </div>
@@ -844,10 +852,14 @@ exports[`TransferDetail should render as confirmed 1`] = `
                   <span
                     class="flex text-theme-primary-300 dark:text-theme-secondary-600"
                   >
-                    <div
-                      class="inline-block cursor-pointer"
-                      data-testid="clipboard__wrapper"
+                    <button
+                      class="relative focus:outline-none group"
+                      data-testid="clipboard-icon__wrapper"
+                      type="button"
                     >
+                      <div
+                        class="absolute inset-0 -m-1 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                      />
                       <div
                         class="sc-bdfBwQ fPrsah"
                         height="1em"
@@ -857,7 +869,7 @@ exports[`TransferDetail should render as confirmed 1`] = `
                           copy.svg
                         </svg>
                       </div>
-                    </div>
+                    </button>
                   </span>
                 </div>
               </div>
@@ -916,10 +928,14 @@ exports[`TransferDetail should render as confirmed 1`] = `
                   <span
                     class="flex text-theme-primary-300 dark:text-theme-secondary-600"
                   >
-                    <div
-                      class="inline-block cursor-pointer"
-                      data-testid="clipboard__wrapper"
+                    <button
+                      class="relative focus:outline-none group"
+                      data-testid="clipboard-icon__wrapper"
+                      type="button"
                     >
+                      <div
+                        class="absolute inset-0 -m-1 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                      />
                       <div
                         class="sc-bdfBwQ fPrsah"
                         height="1em"
@@ -929,7 +945,7 @@ exports[`TransferDetail should render as confirmed 1`] = `
                           copy.svg
                         </svg>
                       </div>
-                    </div>
+                    </button>
                   </span>
                 </div>
               </div>
@@ -1313,10 +1329,14 @@ exports[`TransferDetail should render as not is sent 1`] = `
                   <span
                     class="flex text-theme-primary-300 dark:text-theme-secondary-600"
                   >
-                    <div
-                      class="inline-block cursor-pointer"
-                      data-testid="clipboard__wrapper"
+                    <button
+                      class="relative focus:outline-none group"
+                      data-testid="clipboard-icon__wrapper"
+                      type="button"
                     >
+                      <div
+                        class="absolute inset-0 -m-1 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                      />
                       <div
                         class="sc-bdfBwQ fPrsah"
                         height="1em"
@@ -1326,7 +1346,7 @@ exports[`TransferDetail should render as not is sent 1`] = `
                           copy.svg
                         </svg>
                       </div>
-                    </div>
+                    </button>
                   </span>
                 </div>
               </div>
@@ -1385,10 +1405,14 @@ exports[`TransferDetail should render as not is sent 1`] = `
                   <span
                     class="flex text-theme-primary-300 dark:text-theme-secondary-600"
                   >
-                    <div
-                      class="inline-block cursor-pointer"
-                      data-testid="clipboard__wrapper"
+                    <button
+                      class="relative focus:outline-none group"
+                      data-testid="clipboard-icon__wrapper"
+                      type="button"
                     >
+                      <div
+                        class="absolute inset-0 -m-1 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                      />
                       <div
                         class="sc-bdfBwQ fPrsah"
                         height="1em"
@@ -1398,7 +1422,7 @@ exports[`TransferDetail should render as not is sent 1`] = `
                           copy.svg
                         </svg>
                       </div>
-                    </div>
+                    </button>
                   </span>
                 </div>
               </div>
@@ -1782,10 +1806,14 @@ exports[`TransferDetail should render with wallet alias 1`] = `
                   <span
                     class="flex text-theme-primary-300 dark:text-theme-secondary-600"
                   >
-                    <div
-                      class="inline-block cursor-pointer"
-                      data-testid="clipboard__wrapper"
+                    <button
+                      class="relative focus:outline-none group"
+                      data-testid="clipboard-icon__wrapper"
+                      type="button"
                     >
+                      <div
+                        class="absolute inset-0 -m-1 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                      />
                       <div
                         class="sc-bdfBwQ fPrsah"
                         height="1em"
@@ -1795,7 +1823,7 @@ exports[`TransferDetail should render with wallet alias 1`] = `
                           copy.svg
                         </svg>
                       </div>
-                    </div>
+                    </button>
                   </span>
                 </div>
               </div>
@@ -1854,10 +1882,14 @@ exports[`TransferDetail should render with wallet alias 1`] = `
                   <span
                     class="flex text-theme-primary-300 dark:text-theme-secondary-600"
                   >
-                    <div
-                      class="inline-block cursor-pointer"
-                      data-testid="clipboard__wrapper"
+                    <button
+                      class="relative focus:outline-none group"
+                      data-testid="clipboard-icon__wrapper"
+                      type="button"
                     >
+                      <div
+                        class="absolute inset-0 -m-1 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                      />
                       <div
                         class="sc-bdfBwQ fPrsah"
                         height="1em"
@@ -1867,7 +1899,7 @@ exports[`TransferDetail should render with wallet alias 1`] = `
                           copy.svg
                         </svg>
                       </div>
-                    </div>
+                    </button>
                   </span>
                 </div>
               </div>

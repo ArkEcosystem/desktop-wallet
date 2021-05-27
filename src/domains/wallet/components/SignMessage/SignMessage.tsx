@@ -190,11 +190,13 @@ export const SignMessage = ({
 								{t("COMMON.BACK")}
 							</Button>
 
-							<Clipboard data={JSON.stringify(signedMessage)}>
-								<Button variant="secondary" data-testid="SignMessage__copy-button">
-									<Icon name="Copy" />
-									<span>{t("WALLETS.MODAL_SIGN_MESSAGE.COPY_SIGNATURE")}</span>
-								</Button>
+							<Clipboard
+								variant="button"
+								data={JSON.stringify(signedMessage)}
+								data-testid="SignMessage__copy-button"
+							>
+								<Icon name="Copy" />
+								<span>{t("WALLETS.MODAL_SIGN_MESSAGE.COPY_SIGNATURE")}</span>
 							</Clipboard>
 						</div>
 					)}

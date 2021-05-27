@@ -123,16 +123,15 @@ exports[`SecondSignatureRegistrationForm backup step should render 1`] = `
             class="flex justify-end w-full space-x-3"
           >
             <div
-              class="inline-block cursor-pointer"
-              data-testid="clipboard__wrapper"
+              class="relative"
             >
               <button
-                class="OriginalButton__StyledButton-sc-1y2wptt-0 izJbbP"
+                class="ClipboardButton__StyledButton-sc-1ft1991-0 KCoaM"
                 data-testid="SecondSignature__copy"
                 type="button"
               >
                 <div
-                  class="flex relative items-center space-x-2"
+                  class="flex items-center space-x-2"
                 >
                   <div
                     class="sc-bdfBwQ fPrsah"
@@ -148,6 +147,21 @@ exports[`SecondSignatureRegistrationForm backup step should render 1`] = `
                   </span>
                 </div>
               </button>
+              <div
+                class="absolute inset-0 flex justify-center items-center bg-theme-primary-100 dark:bg-theme-secondary-800 rounded"
+                data-testid="clipboard-button__checkmark"
+                style="opacity: 0;"
+              >
+                <div
+                  class="sc-bdfBwQ fcykxB text-theme-primary-600 dark:text-theme-secondary-200"
+                  height="28"
+                  width="28"
+                >
+                  <svg>
+                    checkmark.svg
+                  </svg>
+                </div>
+              </div>
             </div>
             <button
               class="OriginalButton__StyledButton-sc-1y2wptt-0 izJbbP"

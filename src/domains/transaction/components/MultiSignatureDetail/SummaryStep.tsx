@@ -171,7 +171,7 @@ export const SummaryStep = ({
 					<TruncateMiddle text={transaction.id()} maxChars={30} className="text-theme-text" />
 
 					<span className="flex text-theme-primary-300 dark:text-theme-secondary-600">
-						<Clipboard data={transaction.id()}>
+						<Clipboard variant="icon" data={transaction.id()}>
 							<Icon name="Copy" />
 						</Clipboard>
 					</span>
