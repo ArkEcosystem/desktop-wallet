@@ -46,7 +46,7 @@ describe("Authentication", () => {
 	it("should validate mnemonic", () => {
 		const fromWifMock = jest
 			.spyOn(wallet.coin().identity().address(), "fromWIF")
-			.mockResolvedValue(wallet.address());
+			.mockResolvedValue({ address: wallet.address() });
 
 		const mnemonic = authentication(translationMock).mnemonic(wallet.coin(), wallet.address());
 		expect(mnemonic.validate.matchSenderAddress("test")).resolves.toBe(true);

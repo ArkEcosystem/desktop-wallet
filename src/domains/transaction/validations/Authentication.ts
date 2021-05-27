@@ -3,12 +3,16 @@ import { Contracts } from "@arkecosystem/platform-sdk-profiles";
 import { debounceAsync } from "utils/debounce";
 
 export const authentication = (t: any) => {
-	const addressFromEncryptedPassword = async (wallet: Contracts.IReadWriteWallet, password: string) =>
-		wallet
-			.wif()
-			.get(password)
-			.then((wif: string) => wallet.coin().identity().address().fromWIF(wif))
-			.catch(() => undefined);
+	const addressFromEncryptedPassword = async (wallet: Contracts.IReadWriteWallet, password: string) => {
+		try {
+			const wif = await wallet.wif().get(password);
+			const { address } = await wallet.coin().identity().address().fromWIF(wif);
+
+			return address;
+		} catch {
+			return undefined;
+		}
+	}
 
 	const addressFromPassword = debounceAsync(addressFromEncryptedPassword, 700);
 
@@ -19,9 +23,9 @@ export const authentication = (t: any) => {
 			}),
 			validate: {
 				matchSenderAddress: async (mnemonic: string) => {
-					const generatedAddress = await coin.identity().address().fromMnemonic(mnemonic);
+					const { address } = await coin.identity().address().fromMnemonic(mnemonic);
 
-					if (generatedAddress === senderAddress) {
+					if (address === senderAddress) {
 						return true;
 					}
 
@@ -35,9 +39,9 @@ export const authentication = (t: any) => {
 			}),
 			validate: {
 				matchSenderPublicKey: async (mnemonic: string) => {
-					const generatedPublicKey = await coin.identity().publicKey().fromMnemonic(mnemonic);
+					const { publicKey } = await coin.identity().publicKey().fromMnemonic(mnemonic);
 
-					if (generatedPublicKey === secondPublicKey) {
+					if (publicKey === secondPublicKey) {
 						return true;
 					}
 

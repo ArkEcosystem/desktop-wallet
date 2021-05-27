@@ -85,11 +85,11 @@ const signTransaction = async ({ env, form, profile }: SendRegistrationSignOptio
 
 	const transaction: ExtendedSignedTransactionData = senderWallet!.transaction().transaction(transactionId);
 
-	transaction.generatedAddress = await senderWallet!
-		.coin()
-		.identity()
-		.address()
-		.fromMultiSignature(minParticipants, publicKeys);
+	transaction.generatedAddress = (await senderWallet!
+			.coin()
+			.identity()
+			.address()
+			.fromMultiSignature(minParticipants, publicKeys)).address;
 	return transaction;
 };
 

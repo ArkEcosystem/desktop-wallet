@@ -103,8 +103,8 @@ export const SummaryStep = ({
 
 	useEffect(() => {
 		const setAddress = async () => {
-			const sender = await wallet.coin().identity().address().fromPublicKey(transaction.get("senderPublicKey"));
-			setSenderAddress(sender);
+			const { address } = await wallet.coin().identity().address().fromPublicKey(transaction.get("senderPublicKey"));
+			setSenderAddress(address);
 		};
 
 		const findVoteDelegates = () => {
