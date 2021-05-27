@@ -597,10 +597,14 @@ exports[`Contacts should render with contacts 1`] = `
                       <div
                         class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT space-x-4 justify-center"
                       >
-                        <div
-                          class="inline-block cursor-pointer"
-                          data-testid="clipboard__wrapper"
+                        <button
+                          class="relative focus:outline-none group"
+                          data-testid="clipboard-icon__wrapper"
+                          type="button"
                         >
+                          <div
+                            class="absolute inset-0 -m-1 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                          />
                           <div
                             class="text-theme-primary-300 dark:text-theme-secondary-700"
                           >
@@ -614,7 +618,7 @@ exports[`Contacts should render with contacts 1`] = `
                               </svg>
                             </div>
                           </div>
-                        </div>
+                        </button>
                       </div>
                     </td>
                     <td
@@ -773,10 +777,14 @@ exports[`Contacts should render with contacts 1`] = `
                       <div
                         class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT space-x-4 justify-center"
                       >
-                        <div
-                          class="inline-block cursor-pointer"
-                          data-testid="clipboard__wrapper"
+                        <button
+                          class="relative focus:outline-none group"
+                          data-testid="clipboard-icon__wrapper"
+                          type="button"
                         >
+                          <div
+                            class="absolute inset-0 -m-1 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                          />
                           <div
                             class="text-theme-primary-300 dark:text-theme-secondary-700"
                           >
@@ -790,7 +798,7 @@ exports[`Contacts should render with contacts 1`] = `
                               </svg>
                             </div>
                           </div>
-                        </div>
+                        </button>
                       </div>
                     </td>
                     <td
@@ -937,10 +945,14 @@ exports[`Contacts should render with contacts 1`] = `
                       <div
                         class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT space-x-4 justify-center"
                       >
-                        <div
-                          class="inline-block cursor-pointer"
-                          data-testid="clipboard__wrapper"
+                        <button
+                          class="relative focus:outline-none group"
+                          data-testid="clipboard-icon__wrapper"
+                          type="button"
                         >
+                          <div
+                            class="absolute inset-0 -m-1 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                          />
                           <div
                             class="text-theme-primary-300 dark:text-theme-secondary-700"
                           >
@@ -954,7 +966,7 @@ exports[`Contacts should render with contacts 1`] = `
                               </svg>
                             </div>
                           </div>
-                        </div>
+                        </button>
                       </div>
                     </td>
                     <td
@@ -1101,10 +1113,14 @@ exports[`Contacts should render with contacts 1`] = `
                       <div
                         class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT space-x-4 justify-center"
                       >
-                        <div
-                          class="inline-block cursor-pointer"
-                          data-testid="clipboard__wrapper"
+                        <button
+                          class="relative focus:outline-none group"
+                          data-testid="clipboard-icon__wrapper"
+                          type="button"
                         >
+                          <div
+                            class="absolute inset-0 -m-1 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                          />
                           <div
                             class="text-theme-primary-300 dark:text-theme-secondary-700"
                           >
@@ -1118,7 +1134,7 @@ exports[`Contacts should render with contacts 1`] = `
                               </svg>
                             </div>
                           </div>
-                        </div>
+                        </button>
                       </div>
                     </td>
                     <td

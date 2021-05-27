@@ -74,11 +74,9 @@ export const BackupStep = () => {
 			</div>
 
 			<div className="flex justify-end w-full space-x-3">
-				<Clipboard data={mnemonic}>
-					<Button data-testid="SecondSignature__copy" variant="secondary">
-						<Icon name="Copy" />
-						<span>{t("COMMON.COPY")}</span>
-					</Button>
+				<Clipboard variant="button" data={mnemonic} data-testid="SecondSignature__copy">
+					<Icon name="Copy" />
+					<span>{t("COMMON.COPY")}</span>
 				</Clipboard>
 
 				<Button data-testid="SecondSignature__download" variant="secondary" onClick={handleDownload}>

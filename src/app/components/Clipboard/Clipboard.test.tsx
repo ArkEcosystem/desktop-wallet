@@ -1,59 +1,39 @@
 /* eslint-disable @typescript-eslint/require-await */
-import { translations } from "app/i18n/common/i18n";
 import React from "react";
-import { act, fireEvent, render } from "testing-library";
+import { act, fireEvent, render, screen } from "utils/testing-library";
 
 import { Clipboard } from "./Clipboard";
 
+type VariantType = "icon" | "button";
+
 describe("Clipboard", () => {
 	beforeAll(() => {
-		navigator.clipboard = {
-			writeText: jest.fn().mockResolvedValue(),
+		(navigator as any).clipboard = {
+			writeText: jest.fn().mockResolvedValue("test"),
 		};
 	});
 
 	afterAll(() => {
-		navigator.clipboard.writeText.mockRestore();
+		(navigator as any).clipboard.writeText.mockRestore();
 	});
 
-	it("should not render without children", () => {
-		const { asFragment, getByTestId } = render(<Clipboard />);
+	it.each<VariantType>(["icon", "button"])("should not render without children in variant type '%s'", (variant) => {
+		// @ts-ignore
+		const { asFragment } = render(<Clipboard variant={variant} data="" />);
 
-		expect(() => getByTestId("clipboard__wrapper")).toThrow(/Unable to find an element by/);
+		expect(screen.queryByTestId(`clipboard-${variant}__wrapper`)).not.toBeInTheDocument();
 		expect(asFragment()).toMatchSnapshot();
 	});
 
-	it("should render with children", () => {
-		const { asFragment, getByTestId } = render(
-			<Clipboard>
+	it.each<VariantType>(["icon", "button"])("should render with children in variant type '%s'", (variant) => {
+		const { asFragment } = render(
+			<Clipboard variant={variant} data="">
 				<span>Hello!</span>
 			</Clipboard>,
 		);
 
-		expect(getByTestId("clipboard__wrapper")).toHaveTextContent("Hello!");
+		expect(screen.queryByTestId(`clipboard-${variant}__wrapper`)).toHaveTextContent("Hello!");
 		expect(asFragment()).toMatchSnapshot();
-	});
-
-	it("should change the tooltip content when clicked", async () => {
-		const { baseElement, getByTestId } = render(
-			<Clipboard>
-				<span>Hello!</span>
-			</Clipboard>,
-		);
-
-		act(() => {
-			fireEvent.mouseEnter(getByTestId("clipboard__wrapper"));
-		});
-
-		expect(baseElement).toHaveTextContent(translations.CLIPBOARD.TOOLTIP_TEXT);
-		expect(baseElement).not.toHaveTextContent(translations.CLIPBOARD.SUCCESS);
-
-		await act(async () => {
-			fireEvent.click(getByTestId("clipboard__wrapper"));
-		});
-
-		expect(baseElement).not.toHaveTextContent(translations.CLIPBOARD.TOOLTIP_TEXT);
-		expect(baseElement).toHaveTextContent(translations.CLIPBOARD.SUCCESS);
 	});
 
 	it.each([
@@ -65,107 +45,105 @@ describe("Clipboard", () => {
 		const onError = jest.fn();
 
 		const { getByTestId } = render(
-			<Clipboard data={data} options={{ resetAfter: 1000, onError }}>
+			<Clipboard variant="icon" data={data} options={{ resetAfter: 1000, onError }}>
 				<span>Hello!</span>
 			</Clipboard>,
 		);
 
 		await act(async () => {
-			fireEvent.click(getByTestId("clipboard__wrapper"));
+			fireEvent.click(getByTestId("clipboard-icon__wrapper"));
 		});
 
-		await act(async () => {
-			jest.runAllTimers();
+		act(() => {
+			jest.runOnlyPendingTimers();
 		});
 
 		expect(onError).not.toHaveBeenCalled();
 	});
 
 	describe("on success", () => {
-		beforeAll(() => {
-			navigator.clipboard = {
-				writeText: jest.fn().mockResolvedValue(),
-			};
-		});
+		it.each<VariantType>(["icon", "button"])(
+			"should execute the onSuccess callback if given in variant type '%s'",
+			async (variant) => {
+				const onSuccess = jest.fn();
 
-		afterAll(() => {
-			navigator.clipboard.writeText.mockRestore();
-		});
+				const { getByTestId } = render(
+					<Clipboard variant={variant} data="" options={{ onSuccess }}>
+						<span>Hello!</span>
+					</Clipboard>,
+				);
 
-		it("should execute the onSuccess callback if given", async () => {
-			const onSuccess = jest.fn();
+				await act(async () => {
+					fireEvent.click(getByTestId(`clipboard-${variant}__wrapper`));
+				});
 
-			const { getByTestId } = render(
-				<Clipboard options={{ onSuccess }}>
-					<span>Hello!</span>
-				</Clipboard>,
-			);
+				expect(onSuccess).toHaveBeenCalled();
+			},
+		);
 
-			await act(async () => {
-				fireEvent.click(getByTestId("clipboard__wrapper"));
-			});
+		it.each<VariantType>(["icon", "button"])(
+			"should execute no callback if missing in variant type '%s'",
+			async (variant) => {
+				const onSuccess = jest.fn();
 
-			expect(onSuccess).toHaveBeenCalled();
-		});
+				const { getByTestId } = render(
+					<Clipboard variant={variant} data="">
+						<span>Hello!</span>
+					</Clipboard>,
+				);
 
-		it("should execute no callback if missing", async () => {
-			const onSuccess = jest.fn();
+				await act(async () => {
+					fireEvent.click(getByTestId(`clipboard-${variant}__wrapper`));
+				});
 
-			const { getByTestId } = render(
-				<Clipboard>
-					<span>Hello!</span>
-				</Clipboard>,
-			);
-
-			await act(async () => {
-				fireEvent.click(getByTestId("clipboard__wrapper"));
-			});
-
-			expect(onSuccess).not.toHaveBeenCalled();
-		});
+				expect(onSuccess).not.toHaveBeenCalled();
+			},
+		);
 	});
 
 	describe("on error", () => {
 		beforeAll(() => {
-			navigator.clipboard = {
+			(navigator as any).clipboard = {
 				writeText: jest.fn().mockRejectedValue(new Error()),
 			};
 		});
 
-		afterAll(() => {
-			navigator.clipboard.writeText.mockRestore();
-		});
+		it.each<VariantType>(["icon", "button"])(
+			"should execute the onError callback if given in variant type '%s'",
+			async (variant) => {
+				const onError = jest.fn();
 
-		it("should execute the onError callback if given", async () => {
-			const onError = jest.fn();
+				const { getByTestId } = render(
+					<Clipboard variant={variant} data="" options={{ onError }}>
+						<span>Hello!</span>
+					</Clipboard>,
+				);
 
-			const { getByTestId } = render(
-				<Clipboard options={{ onError }}>
-					<span>Hello!</span>
-				</Clipboard>,
-			);
+				await act(async () => {
+					fireEvent.click(getByTestId(`clipboard-${variant}__wrapper`));
+				});
 
-			await act(async () => {
-				fireEvent.click(getByTestId("clipboard__wrapper"));
-			});
+				expect(onError).toHaveBeenCalled();
+			},
+		);
 
-			expect(onError).toHaveBeenCalled();
-		});
+		it.each<VariantType>(["icon", "button"])(
+			"should execute no callback if missing in variant type '%s'",
+			async (variant) => {
+				const onError = jest.fn();
 
-		it("should execute no callback if missing", async () => {
-			const onError = jest.fn();
+				const { getByTestId } = render(
+					<Clipboard variant={variant} data="">
+						<span>Hello!</span>
+					</Clipboard>,
+				);
 
-			const { getByTestId } = render(
-				<Clipboard>
-					<span>Hello!</span>
-				</Clipboard>,
-			);
+				await act(async () => {
+					fireEvent.click(getByTestId(`clipboard-${variant}__wrapper`));
+				});
 
-			await act(async () => {
-				fireEvent.click(getByTestId("clipboard__wrapper"));
-			});
-
-			expect(onError).not.toHaveBeenCalled();
-		});
+				expect(onError).not.toHaveBeenCalled();
+			},
+		);
 	});
 });
