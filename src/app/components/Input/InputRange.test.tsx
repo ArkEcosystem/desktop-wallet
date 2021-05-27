@@ -34,7 +34,7 @@ describe("InputRange", () => {
 		expect(asFragment()).toMatchSnapshot();
 	});
 
-	it.only("should update the range when changing the input", () => {
+	it("should update the range when changing the input", () => {
 		const { getByTestId } = render(<InputRange {...properties} />);
 		const input = getByTestId("InputCurrency");
 
