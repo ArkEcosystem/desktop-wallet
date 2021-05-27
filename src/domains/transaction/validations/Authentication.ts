@@ -12,7 +12,7 @@ export const authentication = (t: any) => {
 		} catch {
 			return undefined;
 		}
-	}
+	};
 
 	const addressFromPassword = debounceAsync(addressFromEncryptedPassword, 700);
 

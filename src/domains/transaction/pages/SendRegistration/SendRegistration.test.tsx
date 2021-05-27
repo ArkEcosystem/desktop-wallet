@@ -263,7 +263,9 @@ describe("Registration", () => {
 
 		const secondPublicKeyMock = jest
 			.spyOn(secondWallet, "secondPublicKey")
-			.mockReturnValue((await secondWallet.coin().identity().publicKey().fromMnemonic("second mnemonic")).publicKey);
+			.mockReturnValue(
+				(await secondWallet.coin().identity().publicKey().fromMnemonic("second mnemonic")).publicKey,
+			);
 
 		await waitFor(() => expect(getByTestId("DelegateRegistrationForm__form-step")).toBeTruthy());
 
@@ -342,7 +344,9 @@ describe("Registration", () => {
 
 		const secondPublicKeyMock = jest
 			.spyOn(secondWallet, "secondPublicKey")
-			.mockReturnValue((await secondWallet.coin().identity().publicKey().fromMnemonic("second mnemonic")).publicKey);
+			.mockReturnValue(
+				(await secondWallet.coin().identity().publicKey().fromMnemonic("second mnemonic")).publicKey,
+			);
 
 		await waitFor(() => expect(getByTestId("DelegateRegistrationForm__form-step")).toBeTruthy());
 
