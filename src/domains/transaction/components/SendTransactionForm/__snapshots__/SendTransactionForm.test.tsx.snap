@@ -213,7 +213,7 @@ exports[`SendTransactionForm should render 1`] = `
                   disabled=""
                   name="fee"
                   type="text"
-                  value=""
+                  value="0"
                 />
               </div>
             </div>
@@ -477,7 +477,7 @@ exports[`SendTransactionForm should select a network & update fees 1`] = `
                   data-testid="InputCurrency"
                   name="fee"
                   type="text"
-                  value=""
+                  value="0"
                 />
               </div>
             </div>
@@ -777,7 +777,7 @@ exports[`SendTransactionForm should use static fees if avg is not available 1`] 
                   data-testid="InputCurrency"
                   name="fee"
                   type="text"
-                  value=""
+                  value="0"
                 />
               </div>
             </div>

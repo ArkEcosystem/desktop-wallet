@@ -2,7 +2,7 @@ import { BigNumber } from "@arkecosystem/platform-sdk-support";
 import { useFormField } from "app/components/Form/useFormField";
 import { Range } from "app/components/Range";
 import cn from "classnames";
-import React, { useMemo, useState } from "react";
+import React, { useMemo } from "react";
 import { getTrackBackground } from "react-range";
 
 import { InputCurrency } from "./InputCurrency";
@@ -19,18 +19,17 @@ type Props = {
 };
 
 export const InputRange = React.forwardRef<HTMLInputElement, Props>(
-	({ onChange, step, disabled, max, ...props }: Props, ref) => {
+	({ value, onChange, step, disabled, max, ...props }: Props, ref) => {
 		const fieldContext = useFormField();
-
-		const [value, setValue] = useState<string>(props.value);
 
 		// @TODO could be simplified after SDK update
 		const rangeValues = useMemo<number[]>(() => {
 			const sanitized = BigNumber.make(value);
+			/* istanbul ignore next */
 			return isNaN(sanitized.toNumber()) ? [] : [Math.min(sanitized.toNumber(), max)];
 		}, [value, max]);
 
-		const min = Math.min(props.min, +value || 0);
+		const min = Math.min(props.min, +value);
 
 		const backgroundColor = !fieldContext?.isInvalid
 			? "rgba(var(--theme-color-primary-rgb), 0.1)"
@@ -39,12 +38,7 @@ export const InputRange = React.forwardRef<HTMLInputElement, Props>(
 		const sanitizedStep = sanitizeStep({ min, max, step });
 
 		const handleRangeChange = ([rangeValue]: number[]) => {
-			onChange?.(rangeValue.toString());
-		};
-
-		const handleInputChange = (inputValue: string) => {
-			onChange?.(inputValue);
-			setValue(inputValue);
+			onChange(rangeValue.toString());
 		};
 
 		return (
@@ -64,7 +58,7 @@ export const InputRange = React.forwardRef<HTMLInputElement, Props>(
 				}
 				value={value}
 				ref={ref}
-				onChange={handleInputChange}
+				onChange={onChange}
 			>
 				{!disabled && min < max && (
 					<div className={cn("absolute bottom-0 px-1 w-full", { invisible: !rangeValues.length })}>

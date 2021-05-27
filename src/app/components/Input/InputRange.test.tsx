@@ -1,5 +1,5 @@
 import { act as hookAct, renderHook } from "@testing-library/react-hooks";
-import React from "react";
+import React, { useState } from "react";
 import { FormProvider, useForm } from "react-hook-form";
 import { act, fireEvent, render, waitFor } from "testing-library";
 
@@ -36,7 +36,21 @@ describe("InputRange", () => {
 	});
 
 	it("should update the range when changing the input", () => {
-		const { getByTestId } = render(<InputRange {...properties} />);
+		const onChange = jest.fn();
+
+		// wrap InputRange as it does not keep the value state internally
+		const Wrapper = () => {
+			const [value, setValue] = useState(properties.value);
+
+			const handleChange = (val: string) => {
+				setValue(val);
+				onChange(val);
+			};
+
+			return <InputRange {...properties} value={value} onChange={handleChange} />;
+		};
+
+		const { getByTestId } = render(<Wrapper />);
 		const input = getByTestId("InputCurrency");
 
 		act(() => {
@@ -45,7 +59,7 @@ describe("InputRange", () => {
 
 		expect(getByTestId("Range__thumb")).toHaveAttribute("aria-valuenow", "9");
 		expect(input).toHaveValue("9");
-		expect(properties.onChange).toHaveBeenCalledWith("9");
+		expect(onChange).toHaveBeenCalledWith("9");
 	});
 
 	it("should update the input when changing the range", () => {
