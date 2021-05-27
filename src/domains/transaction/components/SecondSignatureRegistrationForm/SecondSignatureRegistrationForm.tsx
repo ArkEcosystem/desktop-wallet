@@ -77,14 +77,18 @@ export const SecondSignatureRegistrationForm: SendRegistrationForm = {
 
 		const transactionId = await senderWallet.transaction().signSecondSignature({
 			fee,
-			from: senderAddress,
 			signatory,
 			data: {
 				mnemonic: secondMnemonic,
 			},
 		});
 
-		await senderWallet.transaction().broadcast(transactionId);
+		const { rejected, errors } = await senderWallet.transaction().broadcast(transactionId);
+
+		if (rejected.length > 0) {
+			throw new Error(Object.values(errors as object)[0]);
+		}
+
 		await env.persist();
 
 		return senderWallet.transaction().transaction(transactionId);

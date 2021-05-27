@@ -92,7 +92,11 @@ export const SendDelegateResignation = ({ formDefaultData }: SendResignationProp
 				signatory,
 			});
 
-			await activeWallet.transaction().broadcast(signedTransactionId);
+			const { rejected, errors } = await activeWallet.transaction().broadcast(signedTransactionId);
+
+			if (rejected.length > 0) {
+				throw new Error(Object.values(errors as object)[0]);
+			}
 
 			await persist();
 

@@ -215,7 +215,11 @@ export const SendVote = () => {
 						{ abortSignal },
 					);
 
-					await activeWallet.transaction().broadcast(unvoteResult.uuid);
+					const unvoteResponse = await activeWallet.transaction().broadcast(unvoteResult.uuid);
+
+					if (unvoteResponse.rejected.length > 0) {
+						throw new Error(Object.values(unvoteResponse.errors as object)[0]);
+					}
 
 					await persist();
 
@@ -233,7 +237,11 @@ export const SendVote = () => {
 						{ abortSignal },
 					);
 
-					await activeWallet.transaction().broadcast(voteResult.uuid);
+					const voteResponse = await activeWallet.transaction().broadcast(voteResult.uuid);
+
+					if (voteResponse.rejected.length > 0) {
+						throw new Error(Object.values(voteResponse.errors as object)[0]);
+					}
 
 					await persist();
 
@@ -258,7 +266,11 @@ export const SendVote = () => {
 						{ abortSignal },
 					);
 
-					await activeWallet.transaction().broadcast(uuid);
+					const voteResponse = await activeWallet.transaction().broadcast(uuid);
+
+					if (voteResponse.rejected.length > 0) {
+						throw new Error(Object.values(voteResponse.errors as object)[0]);
+					}
 
 					await persist();
 
@@ -288,7 +300,11 @@ export const SendVote = () => {
 					{ abortSignal },
 				);
 
-				await activeWallet.transaction().broadcast(uuid);
+				const { rejected, errors } = await activeWallet.transaction().broadcast(uuid);
+
+				if (rejected.length > 0) {
+					throw new Error(Object.values(errors as object)[0]);
+				}
 
 				await persist();
 

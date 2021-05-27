@@ -74,7 +74,11 @@ const signTransaction = async ({ env, form, profile }: SendRegistrationSignOptio
 		},
 	});
 
-	const { accepted } = await senderWallet!.transaction().broadcast(uuid);
+	const { accepted, rejected, errors } = await senderWallet!.transaction().broadcast(uuid);
+
+	if (rejected.length > 0) {
+		throw new Error(Object.values(errors as object)[0]);
+	}
 
 	const transactionId = accepted[0];
 

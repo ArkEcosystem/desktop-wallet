@@ -246,7 +246,11 @@ export const SendTransfer = () => {
 				},
 			);
 
-			await activeWallet.transaction().broadcast(uuid);
+			const { rejected, errors } = await activeWallet.transaction().broadcast(uuid);
+
+			if (rejected.length > 0) {
+				throw new Error(Object.values(errors as object)[0]);
+			}
 
 			await persist();
 

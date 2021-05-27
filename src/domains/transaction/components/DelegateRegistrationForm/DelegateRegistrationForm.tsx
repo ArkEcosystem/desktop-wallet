@@ -74,14 +74,17 @@ export const DelegateRegistrationForm: SendRegistrationForm = {
 
 		const transactionId = await senderWallet.transaction().signDelegateRegistration({
 			fee,
-			from: senderAddress,
 			signatory,
 			data: {
 				username,
 			},
 		});
 
-		await senderWallet.transaction().broadcast(transactionId);
+		const { rejected, errors } = await senderWallet.transaction().broadcast(transactionId);
+
+		if (rejected.length > 0) {
+			throw new Error(Object.values(errors as object)[0]);
+		}
 
 		await env.persist();
 
