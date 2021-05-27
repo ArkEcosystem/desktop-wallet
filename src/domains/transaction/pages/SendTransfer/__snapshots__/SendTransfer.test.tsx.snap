@@ -768,7 +768,7 @@ exports[`SendTransfer should display disabled address selection input if selecte
                                     class="inline-flex"
                                   >
                                     <button
-                                      class="AddRecipient__InputButtonStyled-sc-14iwd9r-0 cBZIpU"
+                                      class="AddRecipient__InputButtonStyled-sc-14iwd9r-0 ebyOIl"
                                       data-testid="AddRecipient__send-all"
                                       disabled=""
                                       type="button"
@@ -896,13 +896,13 @@ exports[`SendTransfer should display disabled address selection input if selecte
                             </div>
                           </div>
                           <div
-                            class="inline-flex overflow-hidden items-center space-x-2"
+                            class="inline-flex items-center space-x-2"
                             data-testid="ButtonGroup"
                             role="radiogroup"
                           >
                             <button
                               aria-checked="false"
-                              class="ButtonGroup__ButtonGroupOptionStyled-sc-1u00raz-0 cQPjbG"
+                              class="ButtonGroup__ButtonGroupOptionStyled-sc-1u00raz-0 cqjOKw"
                               data-testid="ButtonGroupOption"
                               role="radio"
                               type="button"
@@ -911,7 +911,7 @@ exports[`SendTransfer should display disabled address selection input if selecte
                             </button>
                             <button
                               aria-checked="true"
-                              class="ButtonGroup__ButtonGroupOptionStyled-sc-1u00raz-0 cQPjbG"
+                              class="ButtonGroup__ButtonGroupOptionStyled-sc-1u00raz-0 cqjOKw"
                               data-testid="ButtonGroupOption"
                               role="radio"
                               type="button"
@@ -920,7 +920,7 @@ exports[`SendTransfer should display disabled address selection input if selecte
                             </button>
                             <button
                               aria-checked="false"
-                              class="ButtonGroup__ButtonGroupOptionStyled-sc-1u00raz-0 cQPjbG"
+                              class="ButtonGroup__ButtonGroupOptionStyled-sc-1u00raz-0 cqjOKw"
                               data-testid="ButtonGroupOption"
                               role="radio"
                               type="button"
@@ -1373,10 +1373,14 @@ exports[`SendTransfer should display unconfirmed transactions modal when submitt
                               <span
                                 class="flex text-theme-primary-300 dark:text-theme-secondary-600"
                               >
-                                <div
-                                  class="inline-block cursor-pointer"
-                                  data-testid="clipboard__wrapper"
+                                <button
+                                  class="relative focus:outline-none group"
+                                  data-testid="clipboard-icon__wrapper"
+                                  type="button"
                                 >
+                                  <div
+                                    class="absolute inset-0 -m-1 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                                  />
                                   <div
                                     class="sc-bdfBwQ fPrsah"
                                     height="1em"
@@ -1386,7 +1390,7 @@ exports[`SendTransfer should display unconfirmed transactions modal when submitt
                                       copy.svg
                                     </svg>
                                   </div>
-                                </div>
+                                </button>
                               </span>
                             </div>
                           </div>
@@ -2726,7 +2730,7 @@ exports[`SendTransfer should render 1st step with custom deeplink values and use
                     class="inline-flex"
                   >
                     <button
-                      class="AddRecipient__InputButtonStyled-sc-14iwd9r-0 cBZIpU"
+                      class="AddRecipient__InputButtonStyled-sc-14iwd9r-0 ebyOIl"
                       data-testid="AddRecipient__send-all"
                       disabled=""
                       type="button"
@@ -3645,7 +3649,7 @@ exports[`SendTransfer should render form and use location state 1`] = `
                                     class="inline-flex"
                                   >
                                     <button
-                                      class="AddRecipient__InputButtonStyled-sc-14iwd9r-0 cBZIpU"
+                                      class="AddRecipient__InputButtonStyled-sc-14iwd9r-0 ebyOIl"
                                       data-testid="AddRecipient__send-all"
                                       type="button"
                                     >
@@ -3772,13 +3776,13 @@ exports[`SendTransfer should render form and use location state 1`] = `
                             </div>
                           </div>
                           <div
-                            class="inline-flex overflow-hidden items-center space-x-2"
+                            class="inline-flex items-center space-x-2"
                             data-testid="ButtonGroup"
                             role="radiogroup"
                           >
                             <button
                               aria-checked="false"
-                              class="ButtonGroup__ButtonGroupOptionStyled-sc-1u00raz-0 cQPjbG"
+                              class="ButtonGroup__ButtonGroupOptionStyled-sc-1u00raz-0 cqjOKw"
                               data-testid="ButtonGroupOption"
                               role="radio"
                               type="button"
@@ -3787,7 +3791,7 @@ exports[`SendTransfer should render form and use location state 1`] = `
                             </button>
                             <button
                               aria-checked="true"
-                              class="ButtonGroup__ButtonGroupOptionStyled-sc-1u00raz-0 cQPjbG"
+                              class="ButtonGroup__ButtonGroupOptionStyled-sc-1u00raz-0 cqjOKw"
                               data-testid="ButtonGroupOption"
                               role="radio"
                               type="button"
@@ -3796,7 +3800,7 @@ exports[`SendTransfer should render form and use location state 1`] = `
                             </button>
                             <button
                               aria-checked="false"
-                              class="ButtonGroup__ButtonGroupOptionStyled-sc-1u00raz-0 cQPjbG"
+                              class="ButtonGroup__ButtonGroupOptionStyled-sc-1u00raz-0 cqjOKw"
                               data-testid="ButtonGroupOption"
                               role="radio"
                               type="button"
@@ -4649,7 +4653,7 @@ exports[`SendTransfer should render form and use location state without memo 1`]
                                     class="inline-flex"
                                   >
                                     <button
-                                      class="AddRecipient__InputButtonStyled-sc-14iwd9r-0 cBZIpU"
+                                      class="AddRecipient__InputButtonStyled-sc-14iwd9r-0 ebyOIl"
                                       data-testid="AddRecipient__send-all"
                                       type="button"
                                     >
@@ -4776,13 +4780,13 @@ exports[`SendTransfer should render form and use location state without memo 1`]
                             </div>
                           </div>
                           <div
-                            class="inline-flex overflow-hidden items-center space-x-2"
+                            class="inline-flex items-center space-x-2"
                             data-testid="ButtonGroup"
                             role="radiogroup"
                           >
                             <button
                               aria-checked="false"
-                              class="ButtonGroup__ButtonGroupOptionStyled-sc-1u00raz-0 cQPjbG"
+                              class="ButtonGroup__ButtonGroupOptionStyled-sc-1u00raz-0 cqjOKw"
                               data-testid="ButtonGroupOption"
                               role="radio"
                               type="button"
@@ -4791,7 +4795,7 @@ exports[`SendTransfer should render form and use location state without memo 1`]
                             </button>
                             <button
                               aria-checked="true"
-                              class="ButtonGroup__ButtonGroupOptionStyled-sc-1u00raz-0 cQPjbG"
+                              class="ButtonGroup__ButtonGroupOptionStyled-sc-1u00raz-0 cqjOKw"
                               data-testid="ButtonGroupOption"
                               role="radio"
                               type="button"
@@ -4800,7 +4804,7 @@ exports[`SendTransfer should render form and use location state without memo 1`]
                             </button>
                             <button
                               aria-checked="false"
-                              class="ButtonGroup__ButtonGroupOptionStyled-sc-1u00raz-0 cQPjbG"
+                              class="ButtonGroup__ButtonGroupOptionStyled-sc-1u00raz-0 cqjOKw"
                               data-testid="ButtonGroupOption"
                               role="radio"
                               type="button"
@@ -5250,7 +5254,7 @@ exports[`SendTransfer should render form step 1`] = `
                     class="inline-flex"
                   >
                     <button
-                      class="AddRecipient__InputButtonStyled-sc-14iwd9r-0 cBZIpU"
+                      class="AddRecipient__InputButtonStyled-sc-14iwd9r-0 ebyOIl"
                       data-testid="AddRecipient__send-all"
                       disabled=""
                       type="button"
@@ -5755,7 +5759,7 @@ exports[`SendTransfer should render form step with deeplink values and use them 
                     class="inline-flex"
                   >
                     <button
-                      class="AddRecipient__InputButtonStyled-sc-14iwd9r-0 cBZIpU"
+                      class="AddRecipient__InputButtonStyled-sc-14iwd9r-0 ebyOIl"
                       data-testid="AddRecipient__send-all"
                       disabled=""
                       type="button"
@@ -6260,7 +6264,7 @@ exports[`SendTransfer should render form step without test networks 1`] = `
                     class="inline-flex"
                   >
                     <button
-                      class="AddRecipient__InputButtonStyled-sc-14iwd9r-0 cBZIpU"
+                      class="AddRecipient__InputButtonStyled-sc-14iwd9r-0 ebyOIl"
                       data-testid="AddRecipient__send-all"
                       disabled=""
                       type="button"
@@ -7350,10 +7354,14 @@ exports[`SendTransfer should render summary step 1`] = `
               <span
                 class="flex text-theme-primary-300 dark:text-theme-secondary-600"
               >
-                <div
-                  class="inline-block cursor-pointer"
-                  data-testid="clipboard__wrapper"
+                <button
+                  class="relative focus:outline-none group"
+                  data-testid="clipboard-icon__wrapper"
+                  type="button"
                 >
+                  <div
+                    class="absolute inset-0 -m-1 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                  />
                   <div
                     class="sc-bdfBwQ fPrsah"
                     height="1em"
@@ -7363,7 +7371,7 @@ exports[`SendTransfer should render summary step 1`] = `
                       copy.svg
                     </svg>
                   </div>
-                </div>
+                </button>
               </span>
             </div>
           </div>
@@ -8368,7 +8376,7 @@ exports[`SendTransfer should select a cryptoasset and select sender without wall
                                     class="inline-flex"
                                   >
                                     <button
-                                      class="AddRecipient__InputButtonStyled-sc-14iwd9r-0 cBZIpU"
+                                      class="AddRecipient__InputButtonStyled-sc-14iwd9r-0 ebyOIl"
                                       data-testid="AddRecipient__send-all"
                                       type="button"
                                     >
@@ -8497,13 +8505,13 @@ exports[`SendTransfer should select a cryptoasset and select sender without wall
                             </div>
                           </div>
                           <div
-                            class="inline-flex overflow-hidden items-center space-x-2"
+                            class="inline-flex items-center space-x-2"
                             data-testid="ButtonGroup"
                             role="radiogroup"
                           >
                             <button
                               aria-checked="false"
-                              class="ButtonGroup__ButtonGroupOptionStyled-sc-1u00raz-0 cQPjbG"
+                              class="ButtonGroup__ButtonGroupOptionStyled-sc-1u00raz-0 cqjOKw"
                               data-testid="ButtonGroupOption"
                               role="radio"
                               type="button"
@@ -8512,7 +8520,7 @@ exports[`SendTransfer should select a cryptoasset and select sender without wall
                             </button>
                             <button
                               aria-checked="true"
-                              class="ButtonGroup__ButtonGroupOptionStyled-sc-1u00raz-0 cQPjbG"
+                              class="ButtonGroup__ButtonGroupOptionStyled-sc-1u00raz-0 cqjOKw"
                               data-testid="ButtonGroupOption"
                               role="radio"
                               type="button"
@@ -8521,7 +8529,7 @@ exports[`SendTransfer should select a cryptoasset and select sender without wall
                             </button>
                             <button
                               aria-checked="false"
-                              class="ButtonGroup__ButtonGroupOptionStyled-sc-1u00raz-0 cQPjbG"
+                              class="ButtonGroup__ButtonGroupOptionStyled-sc-1u00raz-0 cqjOKw"
                               data-testid="ButtonGroupOption"
                               role="radio"
                               type="button"
@@ -9471,10 +9479,14 @@ exports[`SendTransfer should send a single transfer 1`] = `
                               <span
                                 class="flex text-theme-primary-300 dark:text-theme-secondary-600"
                               >
-                                <div
-                                  class="inline-block cursor-pointer"
-                                  data-testid="clipboard__wrapper"
+                                <button
+                                  class="relative focus:outline-none group"
+                                  data-testid="clipboard-icon__wrapper"
+                                  type="button"
                                 >
+                                  <div
+                                    class="absolute inset-0 -m-1 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                                  />
                                   <div
                                     class="sc-bdfBwQ fPrsah"
                                     height="1em"
@@ -9484,7 +9496,7 @@ exports[`SendTransfer should send a single transfer 1`] = `
                                       copy.svg
                                     </svg>
                                   </div>
-                                </div>
+                                </button>
                               </span>
                             </div>
                           </div>
@@ -10121,10 +10133,14 @@ exports[`SendTransfer should send a single transfer and handle undefined expirat
                               <span
                                 class="flex text-theme-primary-300 dark:text-theme-secondary-600"
                               >
-                                <div
-                                  class="inline-block cursor-pointer"
-                                  data-testid="clipboard__wrapper"
+                                <button
+                                  class="relative focus:outline-none group"
+                                  data-testid="clipboard-icon__wrapper"
+                                  type="button"
                                 >
+                                  <div
+                                    class="absolute inset-0 -m-1 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                                  />
                                   <div
                                     class="sc-bdfBwQ fPrsah"
                                     height="1em"
@@ -10134,7 +10150,7 @@ exports[`SendTransfer should send a single transfer and handle undefined expirat
                                       copy.svg
                                     </svg>
                                   </div>
-                                </div>
+                                </button>
                               </span>
                             </div>
                           </div>
@@ -10771,10 +10787,14 @@ exports[`SendTransfer should send a single transfer and show unconfirmed transac
                               <span
                                 class="flex text-theme-primary-300 dark:text-theme-secondary-600"
                               >
-                                <div
-                                  class="inline-block cursor-pointer"
-                                  data-testid="clipboard__wrapper"
+                                <button
+                                  class="relative focus:outline-none group"
+                                  data-testid="clipboard-icon__wrapper"
+                                  type="button"
                                 >
+                                  <div
+                                    class="absolute inset-0 -m-1 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                                  />
                                   <div
                                     class="sc-bdfBwQ fPrsah"
                                     height="1em"
@@ -10784,7 +10804,7 @@ exports[`SendTransfer should send a single transfer and show unconfirmed transac
                                       copy.svg
                                     </svg>
                                   </div>
-                                </div>
+                                </button>
                               </span>
                             </div>
                           </div>
@@ -11730,10 +11750,14 @@ exports[`SendTransfer should send a single transfer using wallet with encryption
                               <span
                                 class="flex text-theme-primary-300 dark:text-theme-secondary-600"
                               >
-                                <div
-                                  class="inline-block cursor-pointer"
-                                  data-testid="clipboard__wrapper"
+                                <button
+                                  class="relative focus:outline-none group"
+                                  data-testid="clipboard-icon__wrapper"
+                                  type="button"
                                 >
+                                  <div
+                                    class="absolute inset-0 -m-1 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                                  />
                                   <div
                                     class="sc-bdfBwQ fPrsah"
                                     height="1em"
@@ -11743,7 +11767,7 @@ exports[`SendTransfer should send a single transfer using wallet with encryption
                                       copy.svg
                                     </svg>
                                   </div>
-                                </div>
+                                </button>
                               </span>
                             </div>
                           </div>
@@ -12380,10 +12404,14 @@ exports[`SendTransfer should send a single transfer with a high fee by confirmin
                               <span
                                 class="flex text-theme-primary-300 dark:text-theme-secondary-600"
                               >
-                                <div
-                                  class="inline-block cursor-pointer"
-                                  data-testid="clipboard__wrapper"
+                                <button
+                                  class="relative focus:outline-none group"
+                                  data-testid="clipboard-icon__wrapper"
+                                  type="button"
                                 >
+                                  <div
+                                    class="absolute inset-0 -m-1 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                                  />
                                   <div
                                     class="sc-bdfBwQ fPrsah"
                                     height="1em"
@@ -12393,7 +12421,7 @@ exports[`SendTransfer should send a single transfer with a high fee by confirmin
                                       copy.svg
                                     </svg>
                                   </div>
-                                </div>
+                                </button>
                               </span>
                             </div>
                           </div>
@@ -13030,10 +13058,14 @@ exports[`SendTransfer should send a single transfer with a low fee by confirming
                               <span
                                 class="flex text-theme-primary-300 dark:text-theme-secondary-600"
                               >
-                                <div
-                                  class="inline-block cursor-pointer"
-                                  data-testid="clipboard__wrapper"
+                                <button
+                                  class="relative focus:outline-none group"
+                                  data-testid="clipboard-icon__wrapper"
+                                  type="button"
                                 >
+                                  <div
+                                    class="absolute inset-0 -m-1 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                                  />
                                   <div
                                     class="sc-bdfBwQ fPrsah"
                                     height="1em"
@@ -13043,7 +13075,7 @@ exports[`SendTransfer should send a single transfer with a low fee by confirming
                                       copy.svg
                                     </svg>
                                   </div>
-                                </div>
+                                </button>
                               </span>
                             </div>
                           </div>

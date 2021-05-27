@@ -66,7 +66,7 @@ exports[`ReceiveFunds should not render qrcode without an address 1`] = `
                   class="font-semibold"
                 >
                   <div
-                    class="flex items-center"
+                    class="flex items-center space-x-2"
                   >
                     <div
                       class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap"
@@ -74,10 +74,14 @@ exports[`ReceiveFunds should not render qrcode without an address 1`] = `
                     <span
                       class="flex-grow flex text-theme-primary-300 dark:text-theme-secondary-600"
                     >
-                      <div
-                        class="inline-block cursor-pointer"
-                        data-testid="clipboard__wrapper"
+                      <button
+                        class="relative focus:outline-none group"
+                        data-testid="clipboard-icon__wrapper"
+                        type="button"
                       >
+                        <div
+                          class="absolute inset-0 -m-1 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                        />
                         <div
                           class="sc-bdfBwQ fPrsah"
                           height="1em"
@@ -87,7 +91,7 @@ exports[`ReceiveFunds should not render qrcode without an address 1`] = `
                             copy.svg
                           </svg>
                         </div>
-                      </div>
+                      </button>
                     </span>
                   </div>
                 </div>
@@ -250,7 +254,7 @@ exports[`ReceiveFunds should render with a wallet name 1`] = `
                   class="font-semibold"
                 >
                   <div
-                    class="flex items-center"
+                    class="flex items-center space-x-2"
                   >
                     <div
                       class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap"
@@ -265,10 +269,14 @@ exports[`ReceiveFunds should render with a wallet name 1`] = `
                     <span
                       class="flex-grow flex text-theme-primary-300 dark:text-theme-secondary-600"
                     >
-                      <div
-                        class="inline-block cursor-pointer"
-                        data-testid="clipboard__wrapper"
+                      <button
+                        class="relative focus:outline-none group"
+                        data-testid="clipboard-icon__wrapper"
+                        type="button"
                       >
+                        <div
+                          class="absolute inset-0 -m-1 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                        />
                         <div
                           class="sc-bdfBwQ fPrsah"
                           height="1em"
@@ -278,7 +286,7 @@ exports[`ReceiveFunds should render with a wallet name 1`] = `
                             copy.svg
                           </svg>
                         </div>
-                      </div>
+                      </button>
                     </span>
                   </div>
                 </div>
@@ -399,7 +407,7 @@ exports[`ReceiveFunds should render without a wallet name 1`] = `
                   class="font-semibold"
                 >
                   <div
-                    class="flex items-center"
+                    class="flex items-center space-x-2"
                   >
                     <div
                       class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap"
@@ -414,10 +422,14 @@ exports[`ReceiveFunds should render without a wallet name 1`] = `
                     <span
                       class="flex-grow flex text-theme-primary-300 dark:text-theme-secondary-600"
                     >
-                      <div
-                        class="inline-block cursor-pointer"
-                        data-testid="clipboard__wrapper"
+                      <button
+                        class="relative focus:outline-none group"
+                        data-testid="clipboard-icon__wrapper"
+                        type="button"
                       >
+                        <div
+                          class="absolute inset-0 -m-1 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                        />
                         <div
                           class="sc-bdfBwQ fPrsah"
                           height="1em"
@@ -427,7 +439,7 @@ exports[`ReceiveFunds should render without a wallet name 1`] = `
                             copy.svg
                           </svg>
                         </div>
-                      </div>
+                      </button>
                     </span>
                   </div>
                 </div>
