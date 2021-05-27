@@ -17,7 +17,7 @@ export const useTextTruncate = ({ text = "", minChars = 10, extraSpace = 5, pare
 	const textLength = text.length;
 	const [maxChars, setMaxChars] = useState(text.length);
 
-	const textWidthRef = useRef<any>();
+	const textWidthRef = useRef<number>();
 
 	const calculateOffsets = useCallback(() => {
 		/* istanbul ignore next */
