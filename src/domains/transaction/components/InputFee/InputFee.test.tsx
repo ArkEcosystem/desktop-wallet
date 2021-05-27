@@ -61,7 +61,7 @@ describe("InputFee", () => {
 
 		await waitFor(() => {
 			expect(getByTestId("InputCurrency")).toHaveValue("1");
-			expect(onChange).toHaveBeenCalledWith({ display: "1", value: "100000000" });
+			expect(onChange).toHaveBeenCalledWith("100000000"); // @TODO change to 1 after sdk update
 		});
 
 		expect(asFragment()).toMatchSnapshot();
@@ -80,7 +80,7 @@ describe("InputFee", () => {
 
 		await waitFor(() => {
 			expect(getByTestId("InputCurrency")).toHaveValue("1.355");
-			expect(onChange).toHaveBeenCalledWith({ display: "1.355", value: "135500000" });
+			expect(onChange).toHaveBeenCalledWith("135500000"); // @TODO change to 1.355 after sdk update
 		});
 
 		expect(asFragment()).toMatchSnapshot();
@@ -99,7 +99,7 @@ describe("InputFee", () => {
 
 		await waitFor(() => {
 			expect(getByTestId("InputCurrency")).toHaveValue("10");
-			expect(onChange).toHaveBeenCalledWith({ display: "10", value: "1000000000" });
+			expect(onChange).toHaveBeenCalledWith("1000000000"); // @TODO change to 10 after sdk update
 		});
 
 		expect(asFragment()).toMatchSnapshot();

@@ -9,21 +9,21 @@ type Props = {
 	as?: React.ElementType<any>;
 } & Omit<React.InputHTMLAttributes<any>, "onChange" | "defaultValue">;
 
-const sanitizeValue = (x?: string) => Currency.fromString(x || "").display;
+const sanitize = (value?: string) => Currency.fromString(value || "").display;
 
 export const InputCurrency = React.forwardRef<HTMLInputElement, Props>(
 	({ onChange, value, as: Component, children, ...props }: Props, ref: any) => {
-		const [amount, setAmount] = useState<string>(sanitizeValue(value?.toString()));
+		const [amount, setAmount] = useState<string>(sanitize(value?.toString()));
 
 		useEffect(() => {
 			// when value is changed outside, update amount as well
-			setAmount(sanitizeValue(value?.toString()));
+			setAmount(sanitize(value?.toString()));
 		}, [value]);
 
 		ref = useRef<HTMLInputElement>();
 
 		const handleInput = (event: React.ChangeEvent<HTMLInputElement>) => {
-			const sanitizedValue = sanitizeValue(event.target.value);
+			const sanitizedValue = sanitize(event.target.value);
 
 			setAmount(sanitizedValue);
 			onChange?.(sanitizedValue);

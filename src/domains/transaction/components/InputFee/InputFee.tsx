@@ -1,7 +1,8 @@
+import { Currency } from "@arkecosystem/platform-sdk-intl";
 import { BigNumber } from "@arkecosystem/platform-sdk-support";
 import { ButtonGroup, ButtonGroupOption } from "app/components/ButtonGroup";
 import { InputRange } from "app/components/Input";
-import React, { memo, useState } from "react";
+import React, { memo, useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 
 export type InputFeeProps = {
@@ -15,11 +16,12 @@ export type InputFeeProps = {
 	onChange?: (value: string) => void;
 };
 
+// @TODO remove toHuman and fromHuman def and usages after sdk update: no transformation should be applied on the values
+const toHuman = (value: string): string => (+BigNumber.make(value ?? "0").toHuman()).toString();
+const fromHuman = (value: string): string => Currency.fromString(value).value ?? "";
+
 export const InputFee = memo(({ onChange, step, showFeeOptions, ...props }: InputFeeProps) => {
 	const { t } = useTranslation();
-
-	// @TODO remove this after sdk update: no transformation should be applied on the values
-	const toHuman = (value: string): string => BigNumber.make(value ?? "0").toHuman();
 
 	const defaultValue = toHuman(props.defaultValue ?? "0");
 	const value = toHuman(props.value ?? "0");
@@ -29,9 +31,13 @@ export const InputFee = memo(({ onChange, step, showFeeOptions, ...props }: Inpu
 
 	const [fee, setFee] = useState<string>(value || defaultValue || `${avg}`);
 
+	useEffect(() => {
+		setFee(toHuman(props.value ?? "0"));
+	}, [props.value]);
+
 	const handleFeeChange = (feeValue: string): void => {
 		setFee(feeValue);
-		onChange?.(feeValue);
+		onChange?.(fromHuman(feeValue));
 	};
 
 	const isOptionDisabled = (value: number) => value === 0 || (min === avg && avg === max);
