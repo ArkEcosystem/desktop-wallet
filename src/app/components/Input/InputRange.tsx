@@ -2,7 +2,7 @@ import { BigNumber } from "@arkecosystem/platform-sdk-support";
 import { useFormField } from "app/components/Form/useFormField";
 import { Range } from "app/components/Range";
 import cn from "classnames";
-import React, { useMemo } from "react";
+import React, { useMemo, useState } from "react";
 import { getTrackBackground } from "react-range";
 
 import { InputCurrency } from "./InputCurrency";
@@ -19,8 +19,10 @@ type Props = {
 };
 
 export const InputRange = React.forwardRef<HTMLInputElement, Props>(
-	({ value, onChange, step, disabled, max, ...props }: Props, ref) => {
+	({ onChange, step, disabled, max, ...props }: Props, ref) => {
 		const fieldContext = useFormField();
+
+		const [value, setValue] = useState<string>(props.value);
 
 		// @TODO could be simplified after SDK update
 		const rangeValues = useMemo<number[]>(() => {
@@ -40,6 +42,11 @@ export const InputRange = React.forwardRef<HTMLInputElement, Props>(
 			onChange?.(rangeValue.toString());
 		};
 
+		const handleInputChange = (inputValue: string) => {
+			onChange?.(inputValue);
+			setValue(inputValue);
+		};
+
 		return (
 			<InputCurrency
 				disabled={disabled}
@@ -57,7 +64,7 @@ export const InputRange = React.forwardRef<HTMLInputElement, Props>(
 				}
 				value={value}
 				ref={ref}
-				onChange={onChange}
+				onChange={handleInputChange}
 			>
 				{!disabled && min < max && (
 					<div className={cn("absolute bottom-0 px-1 w-full", { invisible: !rangeValues.length })}>
