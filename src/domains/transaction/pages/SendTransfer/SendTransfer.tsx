@@ -18,7 +18,7 @@ import {
 	useTransactionBuilder,
 	useWalletSignatory,
 } from "domains/transaction/hooks";
-import { handleBroadcastError,isMnemonicError } from "domains/transaction/utils";
+import { handleBroadcastError, isMnemonicError } from "domains/transaction/utils";
 import React, { useEffect, useMemo, useRef, useState } from "react";
 import { useForm } from "react-hook-form";
 import { useTranslation } from "react-i18next";

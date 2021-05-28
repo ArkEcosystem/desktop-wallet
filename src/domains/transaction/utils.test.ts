@@ -1,4 +1,4 @@
-import { evaluateFee, handleBroadcastError,isNoDeviceError, isRejectionError } from "./utils";
+import { evaluateFee, handleBroadcastError, isNoDeviceError, isRejectionError } from "./utils";
 
 describe("Transaction utils", () => {
 	describe("Evalute Fee", () => {
