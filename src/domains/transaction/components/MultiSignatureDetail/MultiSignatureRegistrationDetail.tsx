@@ -33,10 +33,10 @@ export const MultiSignatureRegistrationDetail = ({
 		const fetchData = async () => {
 			const addresses: string[] = [];
 			for (const publicKey of (transaction as DTO.MultiSignatureData).publicKeys()) {
-				addresses.push(await wallet.coin().identity().address().fromPublicKey(publicKey));
+				addresses.push((await wallet.coin().identity().address().fromPublicKey(publicKey)).address);
 			}
 
-			const address = await wallet
+			const { address } = await wallet
 				.coin()
 				.identity()
 				.address()

@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/require-await */
-import { Coins, Contracts } from "@arkecosystem/platform-sdk";
+import { Contracts } from "@arkecosystem/platform-sdk";
 import { DTO } from "@arkecosystem/platform-sdk-profiles";
 import { Page, Section } from "app/components/Layout";
 import { useConfiguration, useEnvironmentContext } from "app/contexts";
@@ -31,9 +31,7 @@ export const WalletDetails = () => {
 	const activeWallet = useActiveWallet();
 	const { profileIsSyncing } = useConfiguration();
 
-	const networkAllowsVoting = useMemo(() => activeWallet.network().allows(Coins.FeatureFlag.TransactionVote), [
-		activeWallet,
-	]);
+	const networkAllowsVoting = useMemo(() => activeWallet.network().allowsVoting(), [activeWallet]);
 	const { syncMultiSignatures, pendingMultiSignatureTransactions } = useWalletTransactions(activeWallet);
 
 	useEffect(() => {

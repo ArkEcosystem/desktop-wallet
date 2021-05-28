@@ -10,7 +10,8 @@ import { useActiveProfile, useActiveWallet, useQueryParams, useValidation } from
 import { AuthenticationStep } from "domains/transaction/components/AuthenticationStep";
 import { ErrorStep } from "domains/transaction/components/ErrorStep";
 import { FeeWarning } from "domains/transaction/components/FeeWarning";
-import { useFeeConfirmation, useTransactionBuilder } from "domains/transaction/hooks";
+import { useFeeConfirmation, useTransactionBuilder, useWalletSignatory } from "domains/transaction/hooks";
+import { handleBroadcastError } from "domains/transaction/utils";
 import React, { useEffect, useMemo, useRef, useState } from "react";
 import { useForm } from "react-hook-form";
 import { useTranslation } from "react-i18next";
@@ -48,6 +49,7 @@ export const SendVote = () => {
 
 	const abortRef = useRef(new AbortController());
 	const transactionBuilder = useTransactionBuilder(activeProfile);
+	const { sign } = useWalletSignatory(activeWallet);
 
 	useEffect(() => {
 		register("network", sendVote.network());
@@ -179,25 +181,24 @@ export const SendVote = () => {
 
 	const submitForm = async () => {
 		clearErrors("mnemonic");
-		const { fee, mnemonic, secondMnemonic, senderAddress, encryptionPassword } = getValues();
+		const { fee, mnemonic, secondMnemonic, encryptionPassword } = getValues();
 		const abortSignal = abortRef.current?.signal;
 
-		const wif = activeWallet?.wif().exists() ? await activeWallet.wif().get(encryptionPassword) : undefined;
-
 		try {
+			const signatory = await sign({
+				mnemonic,
+				secondMnemonic,
+				encryptionPassword,
+			});
+
 			const voteTransactionInput: Contracts.TransactionInput = {
 				fee,
-				from: senderAddress,
-				sign: {
-					wif,
-					mnemonic,
-					secondMnemonic,
-				},
+				signatory,
 			};
 
-			if (unvotes.length > 0 && votes.length > 0) {
-				const senderWallet = activeProfile.wallets().findByAddress(getValues("senderAddress"));
+			const senderWallet = activeProfile.wallets().findByAddress(getValues("senderAddress"));
 
+			if (unvotes.length > 0 && votes.length > 0) {
 				// @README: This needs to be temporarily hardcoded here because we need to create 1 or 2
 				// transactions but the SDK is only capable of creating 1 transaction because it has no
 				// concept of all those weird legacy constructs that exist within ARK.
@@ -211,10 +212,13 @@ export const SendVote = () => {
 								unvotes: unvotes.map((wallet: ProfileContracts.IReadOnlyWallet) => wallet.publicKey()),
 							},
 						},
+						senderWallet,
 						{ abortSignal },
 					);
 
-					await transactionBuilder.broadcast(unvoteResult.uuid, voteTransactionInput);
+					const unvoteResponse = await activeWallet.transaction().broadcast(unvoteResult.uuid);
+
+					handleBroadcastError(unvoteResponse);
 
 					await persist();
 
@@ -228,10 +232,13 @@ export const SendVote = () => {
 								votes: votes.map((wallet: ProfileContracts.IReadOnlyWallet) => wallet.publicKey()),
 							},
 						},
+						senderWallet,
 						{ abortSignal },
 					);
 
-					await transactionBuilder.broadcast(voteResult.uuid, voteTransactionInput);
+					const voteResponse = await activeWallet.transaction().broadcast(voteResult.uuid);
+
+					handleBroadcastError(voteResponse);
 
 					await persist();
 
@@ -252,10 +259,13 @@ export const SendVote = () => {
 								unvotes: unvotes.map((wallet: ProfileContracts.IReadOnlyWallet) => wallet.publicKey()),
 							},
 						},
+						senderWallet!,
 						{ abortSignal },
 					);
 
-					await transactionBuilder.broadcast(uuid, voteTransactionInput);
+					const voteResponse = await activeWallet.transaction().broadcast(uuid);
+
+					handleBroadcastError(voteResponse);
 
 					await persist();
 
@@ -281,10 +291,13 @@ export const SendVote = () => {
 									votes: votes.map((wallet: ProfileContracts.IReadOnlyWallet) => wallet.publicKey()),
 							  },
 					},
+					senderWallet!,
 					{ abortSignal },
 				);
 
-				await transactionBuilder.broadcast(uuid, voteTransactionInput);
+				const response = await activeWallet.transaction().broadcast(uuid);
+
+				handleBroadcastError(response);
 
 				await persist();
 

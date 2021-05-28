@@ -9,8 +9,8 @@ import { useActiveProfile, useActiveWallet, useValidation } from "app/hooks";
 import { AuthenticationStep } from "domains/transaction/components/AuthenticationStep";
 import { ErrorStep } from "domains/transaction/components/ErrorStep";
 import { FeeWarning } from "domains/transaction/components/FeeWarning";
-import { useFeeConfirmation } from "domains/transaction/hooks";
-import { isMnemonicError } from "domains/transaction/utils";
+import { useFeeConfirmation, useWalletSignatory } from "domains/transaction/hooks";
+import { handleBroadcastError, isMnemonicError } from "domains/transaction/utils";
 import React, { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import { useTranslation } from "react-i18next";
@@ -42,6 +42,7 @@ export const SendDelegateResignation = ({ formDefaultData }: SendResignationProp
 
 	const activeProfile = useActiveProfile();
 	const activeWallet = useActiveWallet();
+	const { sign } = useWalletSignatory(activeWallet);
 
 	useEffect(() => {
 		register("fees");
@@ -78,22 +79,22 @@ export const SendDelegateResignation = ({ formDefaultData }: SendResignationProp
 
 	const handleSubmit = async () => {
 		const { fee, mnemonic, secondMnemonic, encryptionPassword } = getValues();
-		const from = activeWallet.address();
-
-		const wif = activeWallet?.wif().exists() ? await activeWallet.wif().get(encryptionPassword) : undefined;
 
 		try {
-			const signedTransactionId = await activeWallet.transaction().signDelegateResignation({
-				from,
-				fee,
-				sign: {
-					wif,
-					mnemonic,
-					secondMnemonic,
-				},
+			const signatory = await sign({
+				mnemonic,
+				secondMnemonic,
+				encryptionPassword,
 			});
 
-			await activeWallet.transaction().broadcast(signedTransactionId);
+			const signedTransactionId = await activeWallet.transaction().signDelegateResignation({
+				fee,
+				signatory,
+			});
+
+			const response = await activeWallet.transaction().broadcast(signedTransactionId);
+
+			handleBroadcastError(response);
 
 			await persist();
 
