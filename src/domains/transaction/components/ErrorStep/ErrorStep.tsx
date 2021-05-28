@@ -4,13 +4,13 @@ import { Image } from "app/components/Image";
 import React from "react";
 import { useTranslation } from "react-i18next";
 
-type Props = {
+interface Props {
 	title?: string;
 	description?: string;
 	isRepeatDisabled?: boolean;
 	onBack?: () => void;
 	onRepeat?: () => void;
-};
+}
 
 export const ErrorStep = ({ title, description, onBack, onRepeat, isRepeatDisabled = false }: Props) => {
 	const { t } = useTranslation();

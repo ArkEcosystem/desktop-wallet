@@ -5,7 +5,7 @@ import { InputRange } from "app/components/Input";
 import React, { memo, useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 
-export type InputFeeProps = {
+export interface InputFeeProps {
 	value?: string;
 	min: string;
 	avg: string;
@@ -13,7 +13,7 @@ export type InputFeeProps = {
 	step: number;
 	showFeeOptions?: boolean;
 	onChange?: (value: string) => void;
-};
+}
 
 // @TODO remove toHuman and fromHuman def and usages after sdk update: no transformation should be applied on the values
 const toHuman = (value: string): string => (+BigNumber.make(value ?? "0").toHuman()).toString();

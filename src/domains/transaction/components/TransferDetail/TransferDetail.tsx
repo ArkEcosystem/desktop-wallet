@@ -12,14 +12,14 @@ import {
 import React, { useMemo } from "react";
 import { useTranslation } from "react-i18next";
 
-type TransferDetailProps = {
+interface TransferDetailProps {
 	isOpen: boolean;
 	ticker?: string;
 	transaction: any;
 	walletAlias?: string;
 	recipientWalletAlias?: string;
 	onClose?: any;
-};
+}
 
 export const TransferDetail = ({
 	isOpen,

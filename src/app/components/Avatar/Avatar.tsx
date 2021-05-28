@@ -4,7 +4,7 @@ import React from "react";
 import tw, { styled } from "twin.macro";
 import { Size } from "types";
 
-type Props = {
+interface Props {
 	address?: string;
 	className?: string;
 	shadowClassName?: string;
@@ -12,7 +12,7 @@ type Props = {
 	noShadow?: boolean;
 	size?: Size;
 	children?: React.ReactNode;
-};
+}
 
 const AvatarWrapper = styled.div<Props>`
 	${tw`transition-all duration-100 relative inline-flex items-center justify-center align-middle rounded-full`}

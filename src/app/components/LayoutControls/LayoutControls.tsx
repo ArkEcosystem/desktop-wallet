@@ -2,11 +2,11 @@ import { ControlButton } from "app/components/ControlButton";
 import { Icon } from "app/components/Icon";
 import React from "react";
 
-type LayoutControlsProps = {
+interface LayoutControlsProps {
 	onSelectGridView: () => void;
 	onSelectListView: () => void;
 	selectedViewType: string;
-};
+}
 
 export const LayoutControls = ({ onSelectGridView, onSelectListView, selectedViewType }: LayoutControlsProps) => (
 	<div className="flex items-center space-x-1">

@@ -4,7 +4,7 @@ import { styled } from "twin.macro";
 
 import { getStyles } from "./TransactionDetail.styles";
 
-export type TransactionDetailProps = {
+export interface TransactionDetailProps {
 	children?: React.ReactNode;
 	label?: string | React.ReactNode;
 	extra?: React.ReactNode;
@@ -13,7 +13,7 @@ export type TransactionDetailProps = {
 	padding?: boolean;
 	paddingPosition?: "top" | "bottom" | "both" | "none";
 	className?: string;
-};
+}
 
 const TransactionDetailStyled = styled.div<TransactionDetailProps>(getStyles);
 

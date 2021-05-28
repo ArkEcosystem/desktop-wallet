@@ -1,10 +1,10 @@
 import { LedgerData } from "../utils";
 
-type State = {
+interface State {
 	error?: string;
 	selected: string[];
 	wallets: LedgerData[];
-};
+}
 
 type Action =
 	| { type: "success"; payload: LedgerData[] }

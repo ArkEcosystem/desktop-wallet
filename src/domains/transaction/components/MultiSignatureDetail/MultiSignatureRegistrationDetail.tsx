@@ -12,11 +12,11 @@ import {
 import React, { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 
-type MultisignatureRegistrationDetailProps = {
+interface MultisignatureRegistrationDetailProps {
 	isOpen: boolean;
 	transaction: DTO.ExtendedTransactionData;
 	onClose?: () => void;
-};
+}
 
 export const MultiSignatureRegistrationDetail = ({
 	isOpen,

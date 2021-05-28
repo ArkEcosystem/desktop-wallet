@@ -1,6 +1,6 @@
 import { DeepMap, FieldError, UseFormMethods } from "react-hook-form";
 
-export type SettingsProps = {
+export interface SettingsProps {
 	formConfig: {
 		context: UseFormMethods<Record<string, any>>;
 		errors: DeepMap<Record<string, any>, FieldError>;
@@ -8,4 +8,4 @@ export type SettingsProps = {
 	};
 	onSuccess: (message?: string) => void;
 	onError: (errorMessage: string, message?: string) => void;
-};
+}

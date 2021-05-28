@@ -8,7 +8,7 @@ import { useTranslation } from "react-i18next";
 
 import { DelegateRowSkeleton } from "./DelegateRowSkeleton";
 
-type DelegateRowProps = {
+interface DelegateRowProps {
 	index: number;
 	delegate: Contracts.IReadOnlyWallet;
 	selectedUnvotes?: string[];
@@ -18,7 +18,7 @@ type DelegateRowProps = {
 	isLoading?: boolean;
 	onUnvoteSelect?: (address: string) => void;
 	onVoteSelect?: (address: string) => void;
-};
+}
 
 export const DelegateRow = ({
 	index,

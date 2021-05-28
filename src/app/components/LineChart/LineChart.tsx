@@ -7,7 +7,7 @@ import { styled } from "twin.macro";
 import { Icon } from "../Icon";
 import { chartStyles } from "./LineChart.styles";
 
-type LineChartProps = {
+interface LineChartProps {
 	data: any[];
 	lines: any[];
 	period?: string;
@@ -15,7 +15,7 @@ type LineChartProps = {
 	width?: number;
 	height?: number;
 	showAnimation?: boolean;
-};
+}
 
 const ActiveDotSvg = SvgCollection["ChartActiveDot"];
 

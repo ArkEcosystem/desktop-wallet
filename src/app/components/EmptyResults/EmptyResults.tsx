@@ -1,11 +1,11 @@
 import { Image } from "app/components/Image";
 import React from "react";
 
-type EmptyResultsProps = {
+interface EmptyResultsProps {
 	className?: string;
 	title?: string;
 	subtitle?: string;
-};
+}
 
 export const EmptyResults = ({ className, title, subtitle }: EmptyResultsProps) => (
 	<div

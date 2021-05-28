@@ -9,7 +9,7 @@ import { useProfileTransactions } from "domains/transaction/hooks/use-profile-tr
 import React, { memo, useEffect, useMemo, useState } from "react";
 import { Trans, useTranslation } from "react-i18next";
 
-type TransactionsProps = {
+interface TransactionsProps {
 	fetchMoreAction?: Function;
 	onRowClick?: (row: DTO.ExtendedTransactionData) => void;
 	emptyText?: string;
@@ -22,7 +22,7 @@ type TransactionsProps = {
 	title?: React.ReactNode;
 	onLoading?: (status: boolean) => void;
 	isUpdatingWallet?: boolean;
-};
+}
 
 export const Transactions = memo(
 	({

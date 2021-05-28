@@ -9,10 +9,10 @@ import React from "react";
 import { useFormContext } from "react-hook-form";
 import { useTranslation } from "react-i18next";
 
-type LedgerStates = {
+interface LedgerStates {
 	ledgerIsAwaitingDevice?: boolean;
 	ledgerIsAwaitingApp?: boolean;
-};
+}
 
 const LedgerStateWrapper = ({
 	ledgerIsAwaitingApp,

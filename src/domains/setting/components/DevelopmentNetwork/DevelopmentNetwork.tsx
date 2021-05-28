@@ -3,12 +3,12 @@ import { Modal } from "app/components/Modal";
 import React from "react";
 import { useTranslation } from "react-i18next";
 
-type DevelopmentNetworkProps = {
+interface DevelopmentNetworkProps {
 	isOpen: boolean;
 	onClose?: () => void;
 	onCancel?: () => void;
 	onContinue?: () => void;
-};
+}
 
 export const DevelopmentNetwork = ({ isOpen, onClose, onCancel, onContinue }: DevelopmentNetworkProps) => {
 	const { t } = useTranslation();

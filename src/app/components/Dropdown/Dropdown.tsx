@@ -9,7 +9,7 @@ import { Position, Size } from "types";
 import { defaultClasses, getStyles } from "./Dropdown.styles";
 import { DropdownItem } from "./DropdownItem.styles";
 
-export type DropdownOption = {
+export interface DropdownOption {
 	icon?: string;
 	iconPosition?: "start" | "end";
 	iconWidth?: number | string;
@@ -18,18 +18,18 @@ export type DropdownOption = {
 	secondaryLabel?: string;
 	value: string | number;
 	disabled?: boolean;
-};
+}
 
-export type DropdownOptionGroup = {
+export interface DropdownOptionGroup {
 	key: string;
 	title?: string;
 	hasDivider?: boolean;
 	options: DropdownOption[];
 	onSelect?: any;
-};
+}
 
 export type DropdownVariantType = "options" | "custom" | "votesFilter";
-type DropdownProps = {
+interface DropdownProps {
 	as?: React.ElementType;
 	children?: React.ReactNode;
 	onSelect?: any;
@@ -41,7 +41,7 @@ type DropdownProps = {
 	toggleSize?: Size;
 	toggleContent?: any;
 	disableToggle?: boolean;
-};
+}
 
 export const Wrapper = styled.div<{ position?: string; variant: DropdownVariantType }>(getStyles);
 

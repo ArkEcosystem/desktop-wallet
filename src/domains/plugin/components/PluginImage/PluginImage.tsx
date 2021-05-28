@@ -9,7 +9,7 @@ import { Size } from "types";
 
 import { getStyles } from "./PluginImage.styles";
 
-type Props = {
+interface Props {
 	size?: Size;
 	logoURL?: string;
 	isEnabled?: boolean;
@@ -18,7 +18,7 @@ type Props = {
 	progressSize?: number;
 	className?: string;
 	showUpdatingLabel?: boolean;
-};
+}
 
 const PluginImageWrapper = styled.div<{ size?: Size; variant?: string }>(getStyles);
 

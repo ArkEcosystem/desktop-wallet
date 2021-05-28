@@ -4,20 +4,20 @@ import tw, { styled } from "twin.macro";
 // UI Elements
 import { SideBarItem } from "./SideBarItem";
 
-type Props = {
+interface Props {
 	activeItem: string;
 	handleActiveItem: any;
 	items: any;
-};
+}
 
-export type ItemProps = {
+export interface ItemProps {
 	itemKey: string;
 	label: string;
 	icon: string;
 	route: string;
 	isActive: boolean;
 	handleActiveItem?: any;
-};
+}
 
 const SideBarContainer = styled.div`
 	${tw`h-full`}

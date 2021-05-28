@@ -1,14 +1,14 @@
 import React from "react";
 
-type ConfigurationContextType = {
+interface ConfigurationContextType {
 	configuration: Record<string, any>;
 	setConfiguration: (configuration: Record<string, any>) => void;
-};
+}
 
-type Props = {
+interface Props {
 	children: React.ReactNode;
 	defaultConfiguration?: any;
-};
+}
 
 const ConfigurationContext = React.createContext<any>(undefined);
 

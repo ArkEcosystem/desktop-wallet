@@ -1,11 +1,11 @@
 import { LayoutControls } from "app/components/LayoutControls";
 import React from "react";
 
-type PluginManagerControlsProps = {
+interface PluginManagerControlsProps {
 	onSelectGridView: any;
 	onSelectListView: any;
 	selectedViewType: string;
-};
+}
 
 export const PluginManagerControls = ({
 	onSelectGridView,

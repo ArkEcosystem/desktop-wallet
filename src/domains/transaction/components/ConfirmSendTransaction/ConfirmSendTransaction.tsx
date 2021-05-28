@@ -6,12 +6,12 @@ import { useTranslation } from "react-i18next";
 
 import { UnconfirmedTransactionTable } from "../TransactionTable/UnconfirmedTransactionTable/UnconfirmedTransactionTable";
 
-type ConfirmSendTransactionProps = {
+interface ConfirmSendTransactionProps {
 	isOpen: boolean;
 	onClose?: any;
 	onConfirm?: any;
 	unconfirmedTransactions: DTO.ExtendedTransactionData[];
-};
+}
 
 export const ConfirmSendTransaction = ({
 	isOpen,

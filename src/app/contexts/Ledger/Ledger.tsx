@@ -3,7 +3,10 @@ import React, { createContext, useContext } from "react";
 
 import { useLedgerConnection } from "./hooks/connection";
 
-type Props = { transport: typeof Transport; children: React.ReactNode };
+interface Props {
+	transport: typeof Transport;
+	children: React.ReactNode;
+}
 
 const LedgerContext = createContext<any>(undefined);
 
