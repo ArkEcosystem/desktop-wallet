@@ -5,9 +5,9 @@ import { useTranslation } from "react-i18next";
 
 import { TransactionDetail } from "../TransactionDetail";
 
-type TransactionTimestampProps = {
+interface TransactionTimestampProps {
 	timestamp: DateTime;
-};
+}
 
 export const TransactionTimestamp = ({ timestamp }: TransactionTimestampProps) => {
 	const { t } = useTranslation();

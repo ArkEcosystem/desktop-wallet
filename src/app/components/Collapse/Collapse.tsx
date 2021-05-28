@@ -1,14 +1,14 @@
 import { motion } from "framer-motion";
 import React from "react";
 
-type Props = {
+interface Props {
 	children: React.ReactNode;
 	isOpen?: boolean;
 	minHeight?: number | string;
 	maxHeight?: number | string;
 	duration?: number;
 	className?: string;
-};
+}
 
 export const Collapse = ({ isOpen, children, minHeight, maxHeight, duration, ...props }: Props) => {
 	const variants = {

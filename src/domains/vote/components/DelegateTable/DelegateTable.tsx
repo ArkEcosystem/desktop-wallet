@@ -19,7 +19,7 @@ const Footer = styled.div`
 	${tw`fixed bottom-0 inset-x-0 py-8 shadow-footer-smooth dark:shadow-footer-smooth-dark bg-theme-background`}
 `;
 
-type DelegateTableProps = {
+interface DelegateTableProps {
 	delegates: Contracts.IReadOnlyWallet[];
 	emptyText?: string;
 	isLoading?: boolean;
@@ -32,7 +32,7 @@ type DelegateTableProps = {
 	onContinue?: (unvotes: string[], votes: string[]) => void;
 	isPaginationDisabled?: boolean;
 	subtitle?: React.ReactNode;
-};
+}
 
 export const DelegateTable = ({
 	delegates,

@@ -1,19 +1,19 @@
 import { Contracts } from "@arkecosystem/platform-sdk-profiles";
 
-export type GridWallet = {
+export interface GridWallet {
 	isBlank?: boolean;
 	wallet?: Contracts.IReadWriteWallet;
-};
+}
 
-export type WalletGridProps = {
+export interface WalletGridProps {
 	isVisible?: boolean;
 	isLoading?: boolean;
 	sliderOptions?: Record<string, any>;
 	wallets: GridWallet[];
 	onWalletAction?: any;
-};
+}
 
-export type WalletListProps = {
+export interface WalletListProps {
 	wallets: GridWallet[];
 	walletsDisplayType?: string;
 	isVisible?: boolean;
@@ -21,12 +21,12 @@ export type WalletListProps = {
 	hasMore?: boolean;
 	onViewMore?: any;
 	onRowClick?: (walletId: string) => void;
-};
+}
 
-export type UseWalletDisplayProps = {
+export interface UseWalletDisplayProps {
 	wallets?: Contracts.IReadWriteWallet[];
 	selectedNetworkIds?: string[];
 	displayType?: string;
 	viewMore?: boolean;
 	listPagerLimit?: number;
-};
+}

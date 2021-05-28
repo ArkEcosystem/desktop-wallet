@@ -16,11 +16,11 @@ const TabStyled = styled(OptionButton)<{ isActive: boolean; isComplete: boolean;
 	min-height: 56px;
 `;
 
-type TabProps = {
+interface TabProps {
 	activeTab: number;
 	tabId: number;
 	wordPosition: number;
-};
+}
 
 const Tab = ({ activeTab, tabId, wordPosition }: TabProps) => {
 	const { isActive, isComplete, isPending } = React.useMemo(
@@ -58,10 +58,10 @@ const Tab = ({ activeTab, tabId, wordPosition }: TabProps) => {
 	);
 };
 
-type Props = {
+interface Props {
 	activeTab: number;
 	wordPositions: number[];
-};
+}
 
 export const MnemonicVerificationProgress = ({ activeTab, wordPositions }: Props) => (
 	<ul className="flex space-x-2">

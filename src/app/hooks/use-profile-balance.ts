@@ -2,10 +2,10 @@ import { Contracts } from "@arkecosystem/platform-sdk-profiles";
 import { BigNumber } from "@arkecosystem/platform-sdk-support";
 import { useCallback, useEffect, useState } from "react";
 
-type BalanceProps = {
+interface BalanceProps {
 	profile?: Contracts.IProfile;
 	isLoading?: boolean;
-};
+}
 
 export const useProfileBalance = ({ profile, isLoading = false }: BalanceProps) => {
 	const [convertedBalance, setConvertedBalance] = useState(BigNumber.ZERO);

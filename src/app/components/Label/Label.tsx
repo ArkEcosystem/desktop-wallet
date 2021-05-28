@@ -3,11 +3,11 @@ import { Size } from "types";
 
 import { getStyles } from "./Label.styles";
 
-type LabelProps = {
+interface LabelProps {
 	color?: "primary" | "success" | "danger" | "warning" | "neutral";
 	size?: Size;
 	variant?: "solid";
-};
+}
 
 export const Label = styled.div<LabelProps>(getStyles);
 

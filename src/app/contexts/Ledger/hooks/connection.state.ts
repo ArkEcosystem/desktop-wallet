@@ -1,4 +1,4 @@
-type State = {
+interface State {
 	device?: {
 		path: string;
 		id: string;
@@ -7,7 +7,7 @@ type State = {
 	isBusy: boolean;
 	isWaiting: boolean;
 	error?: any;
-};
+}
 
 type Action =
 	| { type: "add"; path: string; id: string }

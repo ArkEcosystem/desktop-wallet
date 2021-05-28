@@ -1,6 +1,6 @@
 import { BigNumber } from "@arkecosystem/platform-sdk-support";
 
-export type RecipientListItem = {
+export interface RecipientListItem {
 	address: string;
 	displayAmount?: string;
 	amount?: BigNumber;
@@ -14,9 +14,9 @@ export type RecipientListItem = {
 	buttonTooltip?: string;
 	disableButton?: (address: string) => boolean;
 	onRemove?: (index: number) => void;
-};
+}
 
-export type RecipientList = {
+export interface RecipientList {
 	network?: string;
 	assetSymbol?: string;
 	isEditable?: boolean;
@@ -27,4 +27,4 @@ export type RecipientList = {
 	buttonTooltip?: string;
 	disableButton?: (address: string) => boolean;
 	onRemove?: (index: number) => void;
-};
+}

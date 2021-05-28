@@ -6,7 +6,7 @@ import { PluginListItem } from "domains/plugin/components/PluginListItem";
 import React from "react";
 import { Trans, useTranslation } from "react-i18next";
 
-type PluginListProps = {
+interface PluginListProps {
 	className?: string;
 	emptyMessage?: string;
 	itemsPerPage?: number;
@@ -21,7 +21,7 @@ type PluginListProps = {
 	onInstall: any;
 	onLaunch?: (plugin: any) => void;
 	onUpdate?: (plugin: any) => void;
-};
+}
 
 export const PluginList = ({
 	className,

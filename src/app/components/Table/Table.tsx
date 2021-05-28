@@ -6,14 +6,14 @@ import { styled } from "twin.macro";
 import { Icon } from "../Icon";
 import { defaultTableStyle } from "./Table.styles";
 
-type TableProps = {
+interface TableProps {
 	children?: any;
 	className?: string;
 	data: any[];
 	columns: any[];
 	hideHeader?: boolean;
 	initialState?: Record<string, any>;
-};
+}
 
 const TableWrapper = styled.div`
 	${defaultTableStyle}

@@ -25,7 +25,7 @@ import { useHistory } from "react-router-dom";
 
 const categories = ["gaming", "utility", "exchange", "other"];
 
-type LatestPluginsProps = {
+interface LatestPluginsProps {
 	onCurrentViewChange: (view: string) => void;
 	onDelete: any;
 	onSelect: (pluginId: string) => void;
@@ -36,7 +36,7 @@ type LatestPluginsProps = {
 	viewType: string;
 	isLoading?: boolean;
 	pluginsByCategory: Record<string, any[]>;
-};
+}
 
 const LatestPlugins = ({
 	onCurrentViewChange,

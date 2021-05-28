@@ -6,10 +6,10 @@ import { useTranslation } from "react-i18next";
 
 import { BalanceSkeleton } from "./BalanceSkeleton";
 
-type BalanceProps = {
+interface BalanceProps {
 	profile?: Contracts.IProfile;
 	isLoading?: boolean;
-};
+}
 
 export const Balance = ({ profile, isLoading }: BalanceProps) => {
 	const { t } = useTranslation();

@@ -1,10 +1,10 @@
 import React from "react";
 
-type FieldContext = {
+interface FieldContext {
 	isInvalid: boolean;
 	name: string;
 	errorMessage?: string;
-};
+}
 
 const Context = React.createContext<FieldContext | undefined>(undefined);
 

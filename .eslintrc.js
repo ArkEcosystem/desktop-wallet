@@ -50,6 +50,7 @@ module.exports = {
 		"@typescript-eslint/no-unused-expressions": "off",
 		"@typescript-eslint/no-var-requires": "off",
 		"@typescript-eslint/prefer-regexp-exec": "off",
+		"@typescript-eslint/consistent-type-definitions": ["error", "interface"],
 		"@typescript-eslint/restrict-template-expressions": "off",
 		"@typescript-eslint/unbound-method": "off",
 		"arrow-body-style": ["error", "as-needed"],

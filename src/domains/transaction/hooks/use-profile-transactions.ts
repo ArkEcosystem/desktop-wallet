@@ -3,7 +3,7 @@ import { IReadWriteWallet } from "@arkecosystem/platform-sdk-profiles/dist/contr
 import { useSynchronizer } from "app/hooks";
 import { useCallback, useEffect, useRef, useState } from "react";
 
-type TransactionsState = {
+interface TransactionsState {
 	transactions: DTO.ExtendedTransactionData[];
 	isLoadingTransactions: boolean;
 	isLoadingMore: boolean;
@@ -11,21 +11,21 @@ type TransactionsState = {
 	activeTransactionType?: any;
 	hasMore?: boolean;
 	timestamp?: number;
-};
+}
 
-type TransactionFilters = {
+interface TransactionFilters {
 	activeMode?: string;
 	activeTransactionType?: any;
 	timestamp?: number;
-};
+}
 
-type FetchTransactionProps = {
+interface FetchTransactionProps {
 	flush?: boolean;
 	mode?: string;
 	transactionType?: any;
 	wallets: IReadWriteWallet[];
 	cursor?: number;
-};
+}
 
 export const useProfileTransactions = ({
 	profile,

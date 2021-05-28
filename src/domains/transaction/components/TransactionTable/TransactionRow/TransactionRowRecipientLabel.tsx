@@ -4,12 +4,12 @@ import { useEnvironmentContext } from "app/contexts";
 import { useTransactionTypes } from "domains/transaction/hooks/use-transaction-types";
 import React, { useEffect, useState } from "react";
 
-type Props = {
+interface Props {
 	transaction?: DTO.ExtendedTransactionData;
 	type: string;
 	recipient: string;
 	walletName?: string;
-};
+}
 
 const RecipientLabel = ({ type }: { type: string }) => {
 	const { getLabel } = useTransactionTypes();

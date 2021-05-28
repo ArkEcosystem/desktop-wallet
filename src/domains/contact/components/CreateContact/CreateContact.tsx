@@ -5,13 +5,13 @@ import { ContactForm } from "domains/contact/components/ContactForm";
 import React, { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 
-type CreateContactProps = {
+interface CreateContactProps {
 	isOpen: boolean;
 	profile: Contracts.IProfile;
 	onClose?: any;
 	onCancel?: any;
 	onSave: any;
-};
+}
 
 export const CreateContact = ({ isOpen, profile, onClose, onCancel, onSave }: CreateContactProps) => {
 	const { t } = useTranslation();

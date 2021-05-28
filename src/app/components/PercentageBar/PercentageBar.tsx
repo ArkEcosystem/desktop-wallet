@@ -1,16 +1,16 @@
 import React, { useMemo } from "react";
 import { useTranslation } from "react-i18next";
 
-export type BarItem = {
+export interface BarItem {
 	color: string;
 	label: string;
 	percentage: number | string;
-};
+}
 
-type PercentageBarProps = {
+interface PercentageBarProps {
 	data?: BarItem[];
 	title?: string;
-};
+}
 
 export const PercentageBar = ({ data, title }: PercentageBarProps) => {
 	const { t } = useTranslation();

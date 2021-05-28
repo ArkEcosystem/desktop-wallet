@@ -9,13 +9,13 @@ import React, { useMemo } from "react";
 import { useFormContext } from "react-hook-form";
 import { useTranslation } from "react-i18next";
 
-type NetworkStepProps = {
+interface NetworkStepProps {
 	profile: Contracts.IProfile;
 	title: string;
 	subtitle: string;
 	disabled?: boolean;
 	error?: string;
-};
+}
 
 export const NetworkStep = ({ profile, title, subtitle, disabled, error }: NetworkStepProps) => {
 	const { getValues, setValue, setError, clearErrors } = useFormContext();

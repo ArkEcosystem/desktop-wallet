@@ -1,10 +1,10 @@
 import React from "react";
 import tw, { css, styled } from "twin.macro";
 
-type StepIndicatorProps = {
+interface StepIndicatorProps {
 	activeIndex?: number;
 	size?: number;
-};
+}
 
 const StepStyled = styled.li<{ isActive: boolean }>`
 	${tw`flex-1 rounded-lg transition-colors duration-300`}

@@ -11,10 +11,10 @@ type Props = {
 	fallback?: React.ReactNode;
 } & React.HTMLProps<any>;
 
-type WrapperProps = {
+interface WrapperProps {
 	width: number | string;
 	height: number | string;
-};
+}
 
 const Wrapper = styled.div(({ width, height }: WrapperProps) => ({
 	svg: {
