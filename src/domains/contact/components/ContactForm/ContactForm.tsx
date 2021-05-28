@@ -92,7 +92,7 @@ export const ContactForm = ({ profile, contact, onChange, onCancel, onDelete, on
 					.map((address: Contracts.IContactAddress) => ({
 						network: address.network(),
 						address: address.address(),
-						name: address.name(),
+						name: contact.name(),
 						coin: address.coin(),
 					}))
 			: [],

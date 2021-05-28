@@ -7,15 +7,7 @@
 					"id": "ac38fe6d-4b67-4ef1-85be-17c5f6841129",
 					"coin": "ARK",
 					"network": "ark.mainnet",
-					"networkConfig": {
-						"crypto": {
-							"slip44": 111
-						},
-						"networking": {
-							"hosts": ["https://wallets.ark.io"],
-							"hostsMultiSignature": ["https://musig1.ark.io"]
-						}
-					},
+					"networkConfig": { "constants": { "slip44": 1 } },
 					"address": "AHZLH1CwMEGPBxMjuohAgdR79DpezntksA",
 					"publicKey": "034151a3ec46b5670a682b0a63394f863587d1bc97483b1b6c70eb58e7f0aed192",
 					"data": {

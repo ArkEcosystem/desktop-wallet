@@ -7,15 +7,7 @@
 					"id": "ac38fe6d-4b67-4ef1-85be-17c5f6841129",
 					"coin": "ARK",
 					"network": "ark.devnet",
-					"networkConfig": {
-						"crypto": {
-							"slip44": 1
-						},
-						"networking": {
-							"hosts": ["https://dwallets.ark.io"],
-							"hostsMultiSignature": ["https://dmusig1.ark.io"]
-						}
-					},
+					"networkConfig": { "constants": { "slip44": 1 } },
 					"address": "D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD",
 					"publicKey": "03df6cd794a7d404db4f1b25816d8976d0e72c5177d17ac9b19a92703b62cdbbbc",
 					"data": {
@@ -42,15 +34,7 @@
 					"id": "d044a552-7a49-411c-ae16-8ff407acc430",
 					"coin": "ARK",
 					"network": "ark.devnet",
-					"networkConfig": {
-						"crypto": {
-							"slip44": 1
-						},
-						"networking": {
-							"hosts": ["https://dwallets.ark.io"],
-							"hostsMultiSignature": ["https://dmusig1.ark.io"]
-						}
-					},
+					"networkConfig": { "constants": { "slip44": 1 } },
 					"address": "D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb",
 					"publicKey": "03af2feb4fc97301e16d6a877d5b135417e8f284d40fac0f84c09ca37f82886c51",
 					"data": {
@@ -84,7 +68,6 @@
 							"id": "01ccbf8c-f9af-4fda-8227-55858631ce4e",
 							"coin": "ARK",
 							"network": "ark.devnet",
-							"name": "Brians Devnet Address",
 							"address": "D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib"
 						}
 					]
@@ -98,21 +81,18 @@
 							"id": "84c6cffd-eeef-4d6f-be35-44d88d705841",
 							"coin": "ARK",
 							"network": "ark.devnet",
-							"name": "DFJ5Z51F1euNNdRUQJKQVdG4h495LZkc6T",
 							"address": "DFJ5Z51F1euNNdRUQJKQVdG4h495LZkc6T"
 						},
 						{
 							"id": "62124a4d-6f8f-48a9-9b33-69e15062949c",
 							"coin": "ARK",
 							"network": "ark.devnet",
-							"name": "D9YiyRYMBS2ofzqkufjrkB9nHofWgJLM7f",
 							"address": "D9YiyRYMBS2ofzqkufjrkB9nHofWgJLM7f"
 						},
 						{
 							"id": "1c465ed8-76f8-4f9d-9489-0046d645f3f4",
 							"coin": "ARK",
 							"network": "ark.devnet",
-							"name": "DKrACQw7ytoU2gjppy3qKeE2dQhZjfXYqu",
 							"address": "DKrACQw7ytoU2gjppy3qKeE2dQhZjfXYqu"
 						}
 					]
