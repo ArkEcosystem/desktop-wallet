@@ -6,7 +6,7 @@ import { Size } from "types";
 interface Props {
 	walletName?: string;
 	addressClass?: string;
-	address?: string | undefined;
+	address?: string;
 	maxChars?: number;
 	maxNameChars?: number;
 	walletNameClass?: string;
