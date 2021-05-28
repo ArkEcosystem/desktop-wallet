@@ -65,7 +65,6 @@ export const GenerationStep = ({
 						min={fees.min}
 						avg={fees.avg}
 						max={fees.max}
-						defaultValue={fee || 0}
 						value={fee || 0}
 						step={step}
 						showFeeOptions={wallet.network().feeType() === "dynamic"}

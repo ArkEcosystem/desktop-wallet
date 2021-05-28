@@ -10,7 +10,7 @@ let max: string;
 let avg: string;
 let step: number;
 
-let defaultProps = {};
+let defaultProps: any = {};
 
 describe("InputFee", () => {
 	beforeEach(() => {

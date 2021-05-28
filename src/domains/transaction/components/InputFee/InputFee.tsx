@@ -6,7 +6,6 @@ import React, { memo, useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 
 export type InputFeeProps = {
-	defaultValue?: string;
 	value?: string;
 	min: string;
 	avg: string;
@@ -23,13 +22,12 @@ const fromHuman = (value: string): string => Currency.fromString(value).value ??
 export const InputFee = memo(({ onChange, step, showFeeOptions, ...props }: InputFeeProps) => {
 	const { t } = useTranslation();
 
-	const defaultValue = toHuman(props.defaultValue ?? "0");
 	const value = toHuman(props.value ?? "0");
 	const avg = +toHuman(props.avg);
 	const min = +toHuman(props.min);
 	const max = +toHuman(props.max);
 
-	const [fee, setFee] = useState<string>(value || defaultValue || `${avg}`);
+	const [fee, setFee] = useState<string>(value);
 
 	useEffect(() => {
 		setFee(toHuman(props.value ?? "0"));

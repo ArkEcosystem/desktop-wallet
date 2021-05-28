@@ -78,7 +78,6 @@ export const FormStep = ({ fees, wallet, step = 0.001 }: any) => {
 						min={fees.min}
 						avg={fees.avg}
 						max={fees.max}
-						defaultValue={fee}
 						value={fee}
 						step={step}
 						showFeeOptions={wallet.network().feeType() === "dynamic"}
