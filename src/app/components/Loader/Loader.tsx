@@ -4,9 +4,9 @@ import React from "react";
 
 import { LoaderWrapper, LogoSpinner } from "./Loader.styles";
 
-type LoaderProps = {
+interface LoaderProps {
 	show?: boolean;
-};
+}
 
 export const Loader = ({ show }: LoaderProps) => {
 	if (!show) {

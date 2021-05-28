@@ -6,12 +6,12 @@ import { ReadableFile } from "app/hooks/use-files";
 import React from "react";
 import { useTranslation } from "react-i18next";
 
-type SelectFileStepProps = {
+interface SelectFileStepProps {
 	fileFormat: string;
 	onFileFormatChange?: (fileFormat: string) => void;
 	onSelect?: (file: ReadableFile) => void;
 	onBack?: () => void;
-};
+}
 
 export const SelectFileStep = ({ onBack, onSelect, onFileFormatChange, fileFormat }: SelectFileStepProps) => {
 	const { t } = useTranslation();

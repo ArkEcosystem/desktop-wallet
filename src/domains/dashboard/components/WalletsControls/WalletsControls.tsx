@@ -5,10 +5,10 @@ import { Dropdown } from "app/components/Dropdown";
 import { LayoutControls } from "app/components/LayoutControls";
 import { Tooltip } from "app/components/Tooltip";
 import { FilterWallets, FilterWalletsHookProps } from "domains/dashboard/components/FilterWallets";
-import React, { memo, useState } from "react";
+import React, { memo, useLayoutEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 
-type WalletsControlsProps = {
+interface WalletsControlsProps {
 	filterProperties: FilterWalletsHookProps;
 	onCreateWallet?: any;
 	onImportWallet?: any;
@@ -16,7 +16,7 @@ type WalletsControlsProps = {
 	onSelectGridView?: any;
 	onSelectListView?: any;
 	onFilterChange?: (key: string, value: any) => void;
-};
+}
 
 export const WalletsControls = memo(
 	({
@@ -29,6 +29,8 @@ export const WalletsControls = memo(
 		onFilterChange,
 	}: WalletsControlsProps) => {
 		const [walletsViewType, setWalletsViewType] = useState(filterProperties.viewType);
+
+		useLayoutEffect(() => setWalletsViewType(filterProperties.viewType), [filterProperties.viewType]);
 
 		const { t } = useTranslation();
 

@@ -12,11 +12,11 @@ import {
 import React, { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 
-type MultisignatureRegistrationDetailProps = {
+interface MultisignatureRegistrationDetailProps {
 	isOpen: boolean;
 	transaction: DTO.ExtendedTransactionData;
 	onClose?: () => void;
-};
+}
 
 export const MultiSignatureRegistrationDetail = ({
 	isOpen,
@@ -33,10 +33,10 @@ export const MultiSignatureRegistrationDetail = ({
 		const fetchData = async () => {
 			const addresses: string[] = [];
 			for (const publicKey of (transaction as DTO.MultiSignatureData).publicKeys()) {
-				addresses.push(await wallet.coin().identity().address().fromPublicKey(publicKey));
+				addresses.push((await wallet.coin().identity().address().fromPublicKey(publicKey)).address);
 			}
 
-			const address = await wallet
+			const { address } = await wallet
 				.coin()
 				.identity()
 				.address()

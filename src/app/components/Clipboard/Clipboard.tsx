@@ -1,40 +1,28 @@
-import { Tooltip } from "app/components/Tooltip";
-import { useClipboard } from "app/hooks";
 import React from "react";
-import { useTranslation } from "react-i18next";
 
-type ClipboardProps = {
+import { ClipboardButton, ClipboardButtonProps } from "./ClipboardButton";
+import { ClipboardIcon, ClipboardIconProps } from "./ClipboardIcon";
+
+export interface ClipboardCommonProps {
 	data: string | object;
-	tooltip?: string;
 	options?: Record<string, any>;
 	children: React.ReactNode;
-};
+}
 
-export const Clipboard = ({ data, tooltip, options, children }: ClipboardProps) => {
-	const { t } = useTranslation();
+type ClipboardProps = ClipboardIconProps | ClipboardButtonProps;
 
-	const [hasCopied, copy] = useClipboard({
-		resetAfter: 1000,
-		...options,
-	});
-
-	if (!children) {
+export const Clipboard = (props: ClipboardProps) => {
+	if (!props.children) {
 		return null;
 	}
 
-	return (
-		<Tooltip
-			content={hasCopied ? t("COMMON.CLIPBOARD.SUCCESS") : tooltip || t("COMMON.CLIPBOARD.TOOLTIP_TEXT")}
-			hideOnClick={false}
-		>
-			<div data-testid="clipboard__wrapper" className="inline-block cursor-pointer" onClick={() => copy(data)}>
-				{children}
-			</div>
-		</Tooltip>
-	);
+	if (props.variant === "icon") {
+		return <ClipboardIcon {...props}>{props.children}</ClipboardIcon>;
+	}
+
+	return <ClipboardButton {...props}>{props.children}</ClipboardButton>;
 };
 
 Clipboard.defaultProps = {
-	data: "",
 	options: {},
 };

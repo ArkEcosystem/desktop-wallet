@@ -27,12 +27,12 @@ import { defaultStyle } from "./NavigationBar.styles";
 
 const { ARKLogo } = images.common;
 
-type MenuItem = {
+interface MenuItem {
 	title: string;
 	mountPath: any;
-};
+}
 
-type NavigationBarProps = {
+interface NavigationBarProps {
 	title?: string;
 	backToUrl?: string;
 	isBackDisabled?: boolean;
@@ -44,7 +44,7 @@ type NavigationBarProps = {
 	onUserAction?: any;
 	noBorder?: boolean;
 	noShadow?: boolean;
-};
+}
 
 const NavWrapper = styled.nav<{ noBorder?: boolean; noShadow?: boolean; scroll?: number }>`
 	${defaultStyle}
@@ -64,13 +64,13 @@ const NavWrapper = styled.nav<{ noBorder?: boolean; noShadow?: boolean; scroll?:
 	}};
 `;
 
-type UserInfoProps = {
+interface UserInfoProps {
 	avatarImage?: string;
 	exchangeCurrency?: string;
 	onUserAction?: any;
 	userActions?: Action[];
 	userInitials?: string;
-};
+}
 
 const UserInfo = ({ exchangeCurrency, onUserAction, avatarImage, userActions, userInitials }: UserInfoProps) => {
 	const tickerConfig: typeof Data.CURRENCIES["BTC"] | undefined =

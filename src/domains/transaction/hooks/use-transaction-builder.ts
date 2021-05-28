@@ -4,6 +4,12 @@ import { upperFirst } from "@arkecosystem/utils";
 import Transport from "@ledgerhq/hw-transport";
 import { useLedgerContext } from "app/contexts";
 
+interface SignInput {
+	encryptionPassword?: string;
+	mnemonic?: string;
+	secondMnemonic?: string;
+	wallet: ProfileContracts.IReadWriteWallet;
+}
 type SignFn = (input: any, options?: Contracts.TransactionOptions) => Promise<string>;
 type ConnectFn = (profile: ProfileContracts.IProfile, coin: string, network: string) => Promise<void>;
 
@@ -72,11 +78,11 @@ export const useTransactionBuilder = (profile: ProfileContracts.IProfile) => {
 	const build = async (
 		type: string,
 		input: Contracts.TransactionInputs,
+		wallet: ProfileContracts.IReadWriteWallet,
 		options?: {
 			abortSignal?: AbortSignal;
 		},
 	): Promise<{ uuid: string; transaction: Contracts.SignedTransactionData }> => {
-		const wallet = profile.wallets().findByAddress(input.from)!;
 		const service = wallet.transaction();
 
 		// @ts-ignore
@@ -102,10 +108,5 @@ export const useTransactionBuilder = (profile: ProfileContracts.IProfile) => {
 		};
 	};
 
-	const broadcast = (id: string, input: Contracts.TransactionInputs) => {
-		const wallet = profile.wallets().findByAddress(input.from)!;
-		return wallet.transaction().broadcast(id);
-	};
-
-	return { build, broadcast };
+	return { build };
 };

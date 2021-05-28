@@ -11,13 +11,13 @@ import { FirstStep } from "./Step1";
 import { SecondStep } from "./Step2";
 import { ThirdStep } from "./Step3";
 
-type WalletUpdateProps = {
+interface WalletUpdateProps {
 	version?: string;
 	profile?: Contracts.IProfile;
 	isOpen: boolean;
 	onClose?: any;
 	onCancel?: any;
-};
+}
 
 export const WalletUpdate = ({ isOpen, onClose, onCancel, version }: WalletUpdateProps) => {
 	const [activeStep, setActiveStep] = useState(1);

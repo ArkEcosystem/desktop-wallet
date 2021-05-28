@@ -2,11 +2,11 @@ import React from "react";
 
 import { useFormField } from "./useFormField";
 
-type FormHelperTextProps = {
+interface FormHelperTextProps {
 	isInvalid?: boolean;
 	errorMessage?: React.ReactNode;
 	children?: React.ReactNode;
-};
+}
 
 export function FormHelperText({ children, ...props }: FormHelperTextProps) {
 	const fieldContext = useFormField();

@@ -10,12 +10,12 @@ import { Size } from "types";
 
 import { TransactionRowRecipientIcon } from "./TransactionRowRecipientIcon";
 
-type Props = {
+interface Props {
 	type: string;
 	isSent: boolean;
 	recipient: string;
 	iconSize?: Size;
-};
+}
 
 export const BaseTransactionRowMode = ({ type, isSent, recipient, iconSize = "lg" }: Props) => {
 	const { t } = useTranslation();

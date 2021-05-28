@@ -9,21 +9,21 @@ import { useTranslation } from "react-i18next";
 import { assets as availableCoins, AVAILABLE_CATEGORIES } from "../../data";
 import { SelectCategory } from "./components/SelectCategory";
 
-type Option = {
+interface Option {
 	name: string;
 	isSelected: boolean;
-};
+}
 
 type CoinOption = {
 	coin: string;
 } & Option;
 
-type NewsOptionsProps = {
+interface NewsOptionsProps {
 	selectedCategories: string[];
 	selectedCoins: string[];
 	onSearch?: (search: string) => void;
 	onSubmit?: (data: object) => void;
-};
+}
 
 //region for scrollable sidebar on small screen
 const HEADER_HEIGHT = 86;

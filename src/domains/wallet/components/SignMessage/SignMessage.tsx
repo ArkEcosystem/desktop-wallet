@@ -20,7 +20,7 @@ import { useMessageSigner } from "./hooks/use-message-signer";
 import { LedgerConfirmationStep } from "./LedgerConfirmationStep";
 import { SignedStep } from "./SignedStep";
 
-type SignMessageProps = {
+interface SignMessageProps {
 	profile: ProfileContracts.IProfile;
 	walletId: string;
 	isOpen: boolean;
@@ -28,7 +28,7 @@ type SignMessageProps = {
 	onClose?: () => void;
 	onCancel?: () => void;
 	onSign?: (result: SignedMessage) => void;
-};
+}
 
 const initialState: Contracts.SignedMessage = {
 	message: "",
@@ -190,11 +190,13 @@ export const SignMessage = ({
 								{t("COMMON.BACK")}
 							</Button>
 
-							<Clipboard data={JSON.stringify(signedMessage)}>
-								<Button variant="secondary" data-testid="SignMessage__copy-button">
-									<Icon name="Copy" />
-									<span>{t("WALLETS.MODAL_SIGN_MESSAGE.COPY_SIGNATURE")}</span>
-								</Button>
+							<Clipboard
+								variant="button"
+								data={JSON.stringify(signedMessage)}
+								data-testid="SignMessage__copy-button"
+							>
+								<Icon name="Copy" />
+								<span>{t("WALLETS.MODAL_SIGN_MESSAGE.COPY_SIGNATURE")}</span>
 							</Clipboard>
 						</div>
 					)}

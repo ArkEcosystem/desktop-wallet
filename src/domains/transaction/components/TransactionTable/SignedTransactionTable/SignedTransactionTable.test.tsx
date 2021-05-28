@@ -20,27 +20,25 @@ describe("Signed Transaction Table", () => {
 
 	beforeEach(async () => {
 		profile = env.profiles().findById(getDefaultProfileId());
-		await profile.sync();
 
 		wallet = profile.wallets().first();
+
+		await profile.sync();
 
 		fixtures.transfer = await wallet
 			.coin()
 			.transaction()
 			.transfer({
 				nonce: "1",
-				from: "DM7UiH4b2rW2Nv11Wu6ToiZi8MJhGCEWhP",
 				fee: "1",
 				data: {
 					to: wallet.address(),
 					amount: "1",
 				},
-				sign: {
-					multiSignature: {
-						min: 2,
-						publicKeys: [wallet.publicKey()!, profile.wallets().last().publicKey()!],
-					},
-				},
+				signatory: await wallet
+					.coin()
+					.signatory()
+					.multiSignature(2, [wallet.publicKey()!, profile.wallets().last().publicKey()!]),
 			});
 
 		fixtures.multiSignature = await wallet
@@ -48,19 +46,16 @@ describe("Signed Transaction Table", () => {
 			.transaction()
 			.multiSignature({
 				nonce: "1",
-				from: "DM7UiH4b2rW2Nv11Wu6ToiZi8MJhGCEWhP",
 				fee: "1",
 				data: {
 					min: 2,
 					publicKeys: [wallet.publicKey()!, profile.wallets().last().publicKey()!],
 					senderPublicKey: wallet.publicKey()!,
 				},
-				sign: {
-					multiSignature: {
-						min: 2,
-						publicKeys: [wallet.publicKey()!, profile.wallets().last().publicKey()!],
-					},
-				},
+				signatory: await wallet
+					.coin()
+					.signatory()
+					.multiSignature(2, [wallet.publicKey()!, profile.wallets().last().publicKey()!]),
 			});
 
 		fixtures.multiPayment = await wallet
@@ -68,7 +63,6 @@ describe("Signed Transaction Table", () => {
 			.transaction()
 			.multiPayment({
 				nonce: "1",
-				from: "DM7UiH4b2rW2Nv11Wu6ToiZi8MJhGCEWhP",
 				fee: "1",
 				data: {
 					payments: [
@@ -82,12 +76,10 @@ describe("Signed Transaction Table", () => {
 						},
 					],
 				},
-				sign: {
-					multiSignature: {
-						min: 2,
-						publicKeys: [wallet.publicKey()!, profile.wallets().last().publicKey()!],
-					},
-				},
+				signatory: await wallet
+					.coin()
+					.signatory()
+					.multiSignature(2, [wallet.publicKey()!, profile.wallets().last().publicKey()!]),
 			});
 
 		fixtures.vote = await wallet
@@ -95,18 +87,15 @@ describe("Signed Transaction Table", () => {
 			.transaction()
 			.vote({
 				nonce: "1",
-				from: "DM7UiH4b2rW2Nv11Wu6ToiZi8MJhGCEWhP",
 				fee: "1",
 				data: {
 					votes: ["034151a3ec46b5670a682b0a63394f863587d1bc97483b1b6c70eb58e7f0aed192"],
 					unvotes: [],
 				},
-				sign: {
-					multiSignature: {
-						min: 2,
-						publicKeys: [wallet.publicKey()!, profile.wallets().last().publicKey()!],
-					},
-				},
+				signatory: await wallet
+					.coin()
+					.signatory()
+					.multiSignature(2, [wallet.publicKey()!, profile.wallets().last().publicKey()!]),
 			});
 
 		fixtures.unvote = await wallet
@@ -114,18 +103,15 @@ describe("Signed Transaction Table", () => {
 			.transaction()
 			.vote({
 				nonce: "1",
-				from: "DM7UiH4b2rW2Nv11Wu6ToiZi8MJhGCEWhP",
 				fee: "1",
 				data: {
 					votes: [],
 					unvotes: ["034151a3ec46b5670a682b0a63394f863587d1bc97483b1b6c70eb58e7f0aed192"],
 				},
-				sign: {
-					multiSignature: {
-						min: 2,
-						publicKeys: [wallet.publicKey()!, profile.wallets().last().publicKey()!],
-					},
-				},
+				signatory: await wallet
+					.coin()
+					.signatory()
+					.multiSignature(2, [wallet.publicKey()!, profile.wallets().last().publicKey()!]),
 			});
 
 		fixtures.ipfs = await wallet
@@ -133,17 +119,14 @@ describe("Signed Transaction Table", () => {
 			.transaction()
 			.ipfs({
 				nonce: "1",
-				from: "DM7UiH4b2rW2Nv11Wu6ToiZi8MJhGCEWhP",
 				fee: "1",
 				data: {
 					hash: "QmXoypizjW3WknFiJnKLwHCnL72vedxjQkDDP1mXWo6uco",
 				},
-				sign: {
-					multiSignature: {
-						min: 2,
-						publicKeys: [wallet.publicKey()!, profile.wallets().last().publicKey()!],
-					},
-				},
+				signatory: await wallet
+					.coin()
+					.signatory()
+					.multiSignature(2, [wallet.publicKey()!, profile.wallets().last().publicKey()!]),
 			});
 	});
 

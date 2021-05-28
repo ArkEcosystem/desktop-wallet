@@ -12,7 +12,7 @@ import { ErrorStep } from "domains/transaction/components/ErrorStep";
 import { FeeWarning } from "domains/transaction/components/FeeWarning";
 import { MultiSignatureRegistrationForm } from "domains/transaction/components/MultiSignatureRegistrationForm";
 import { SecondSignatureRegistrationForm } from "domains/transaction/components/SecondSignatureRegistrationForm";
-import { useFeeConfirmation } from "domains/transaction/hooks";
+import { useFeeConfirmation, useWalletSignatory } from "domains/transaction/hooks";
 import { isMnemonicError } from "domains/transaction/utils";
 import React, { useCallback, useEffect, useLayoutEffect, useState } from "react";
 import { useForm } from "react-hook-form";
@@ -35,6 +35,7 @@ export const SendRegistration = () => {
 	const { env } = useEnvironmentContext();
 	const activeProfile = useActiveProfile();
 	const activeWallet = useActiveWallet();
+	const { sign } = useWalletSignatory(activeWallet);
 
 	const { findByType } = useFees({ profile: activeProfile });
 
@@ -113,10 +114,17 @@ export const SendRegistration = () => {
 
 	const handleSubmit = async () => {
 		try {
+			const signatory = await sign({
+				mnemonic: form.getValues("mnemonic"),
+				secondMnemonic: form.getValues("secondMnemonic"),
+				encryptionPassword: form.getValues("encryptionPassword"),
+			});
+
 			const transaction = await registrationForm!.signTransaction({
 				env,
 				form,
 				profile: activeProfile,
+				signatory,
 			});
 
 			setTransaction(transaction);

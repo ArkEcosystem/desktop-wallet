@@ -3,11 +3,11 @@ import { Dropdown } from "app/components/Dropdown";
 import React from "react";
 import { useTranslation } from "react-i18next";
 
-type SearchBarOptionsProps = {
+interface SearchBarOptionsProps {
 	selectedOption?: any;
 	options: any;
 	onSelect: any;
-};
+}
 
 export const SearchBarOptions = (props: SearchBarOptionsProps) => {
 	const { t } = useTranslation();

@@ -3,10 +3,10 @@ import { BigNumber } from "@arkecosystem/platform-sdk-support";
 import { isNil } from "@arkecosystem/utils";
 import { useCallback } from "react";
 
-type CurrencyInput = {
+interface CurrencyInput {
 	display: string;
 	value?: string;
-};
+}
 
 export const useCurrencyDisplay = () => {
 	const formatRange = useCallback((inputValue: any, maxNumber: string | number): number[] => {

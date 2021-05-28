@@ -266,13 +266,21 @@ describe("SendVote", () => {
 		const signUnvoteMock = jest
 			.spyOn(wallet.transaction(), "signVote")
 			.mockReturnValue(Promise.resolve(unvoteFixture.data.id));
-		const broadcastUnvoteMock = jest.spyOn(wallet.transaction(), "broadcast").mockImplementation();
+		const broadcastUnvoteMock = jest.spyOn(wallet.transaction(), "broadcast").mockResolvedValue({
+			accepted: [unvoteFixture.data.id],
+			rejected: [],
+			errors: {},
+		});
 		const transactionUnvoteMock = createVoteTransactionMock(wallet);
 
 		const signVoteMock = jest
 			.spyOn(wallet.transaction(), "signVote")
 			.mockReturnValue(Promise.resolve(voteFixture.data.id));
-		const broadcastVoteMock = jest.spyOn(wallet.transaction(), "broadcast").mockImplementation();
+		const broadcastVoteMock = jest.spyOn(wallet.transaction(), "broadcast").mockResolvedValue({
+			accepted: [voteFixture.data.id],
+			rejected: [],
+			errors: {},
+		});
 		const transactionVoteMock = createVoteTransactionMock(wallet);
 
 		const passwordInput = getByTestId("AuthenticationStep__mnemonic");
@@ -369,7 +377,11 @@ describe("SendVote", () => {
 		const signMock = jest
 			.spyOn(wallet.transaction(), "signVote")
 			.mockReturnValue(Promise.resolve(voteFixture.data.id));
-		const broadcastMock = jest.spyOn(wallet.transaction(), "broadcast").mockImplementation();
+		const broadcastMock = jest.spyOn(wallet.transaction(), "broadcast").mockResolvedValue({
+			accepted: [voteFixture.data.id],
+			rejected: [],
+			errors: {},
+		});
 		const transactionMock = createVoteTransactionMock(wallet);
 
 		const passwordInput = getByTestId("AuthenticationStep__mnemonic");
@@ -496,7 +508,11 @@ describe("SendVote", () => {
 		const signMock = jest
 			.spyOn(wallet.transaction(), "signVote")
 			.mockReturnValue(Promise.resolve(unvoteFixture.data.id));
-		const broadcastMock = jest.spyOn(wallet.transaction(), "broadcast").mockImplementation();
+		const broadcastMock = jest.spyOn(wallet.transaction(), "broadcast").mockResolvedValue({
+			accepted: [unvoteFixture.data.id],
+			rejected: [],
+			errors: {},
+		});
 		const transactionMock = createUnvoteTransactionMock(wallet);
 
 		const passwordInput = getByTestId("AuthenticationStep__mnemonic");
@@ -785,7 +801,11 @@ describe("SendVote", () => {
 		const signMock = jest
 			.spyOn(wallet.transaction(), "signVote")
 			.mockReturnValue(Promise.resolve(unvoteFixture.data.id));
-		const broadcastMock = jest.spyOn(wallet.transaction(), "broadcast").mockImplementation();
+		const broadcastMock = jest.spyOn(wallet.transaction(), "broadcast").mockResolvedValue({
+			accepted: [unvoteFixture.data.id],
+			rejected: [],
+			errors: {},
+		});
 		const transactionMock = createUnvoteTransactionMock(wallet);
 
 		await waitFor(() => expect(getByTestId("SendVote__button--continue")).not.toBeDisabled());
@@ -802,7 +822,6 @@ describe("SendVote", () => {
 			expect.objectContaining({
 				data: expect.anything(),
 				fee: expect.any(String),
-				from: "D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD",
 				nonce: expect.any(String),
 				sign: {
 					multiSignature: {
@@ -826,7 +845,11 @@ describe("SendVote", () => {
 
 	it("should send a vote transaction with a ledger wallet", async () => {
 		jest.spyOn(wallet.coin(), "__construct").mockImplementation();
-		const broadcastMock = jest.spyOn(wallet.transaction(), "broadcast").mockImplementation();
+		const broadcastMock = jest.spyOn(wallet.transaction(), "broadcast").mockResolvedValue({
+			accepted: [voteFixture.data.id],
+			rejected: [],
+			errors: {},
+		});
 		const getPublicKeySpy = jest
 			.spyOn(wallet.coin().ledger(), "getPublicKey")
 			.mockResolvedValue("0335a27397927bfa1704116814474d39c2b933aabb990e7226389f022886e48deb");
@@ -892,13 +915,10 @@ describe("SendVote", () => {
 		await waitFor(() => expect(getByTestId("LedgerConfirmation-description")).toBeInTheDocument());
 		await waitFor(() => expect(getByTestId("TransactionSuccessful")).toBeTruthy(), { timeout: 3000 });
 
-		expect(getByTestId("TransactionSuccessful")).toHaveTextContent(
-			"2eda50b7d59b3fdeaa6281a7f2e8cb6995e63bc4547f2614e367ecc8339e430e",
-		);
-
 		getPublicKeySpy.mockRestore();
 		signTransactionSpy.mockRestore();
 		isLedgerSpy.mockRestore();
+		broadcastMock.mockRestore();
 	});
 
 	it("should send a vote transaction using encryption password", async () => {
@@ -959,7 +979,11 @@ describe("SendVote", () => {
 		const signMock = jest
 			.spyOn(wallet.transaction(), "signVote")
 			.mockReturnValue(Promise.resolve(voteFixture.data.id));
-		const broadcastMock = jest.spyOn(wallet.transaction(), "broadcast").mockImplementation();
+		const broadcastMock = jest.spyOn(wallet.transaction(), "broadcast").mockResolvedValue({
+			accepted: [voteFixture.data.id],
+			rejected: [],
+			errors: {},
+		});
 		const transactionMock = createVoteTransactionMock(wallet);
 
 		const passwordInput = getByTestId("AuthenticationStep__encryption-password");

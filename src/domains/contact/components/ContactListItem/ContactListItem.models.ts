@@ -1,14 +1,14 @@
 import { Contracts } from "@arkecosystem/platform-sdk-profiles";
 
-export type Option = {
+export interface Option {
 	label: string;
 	value: string | number;
-};
+}
 
-export type ContactListItemProps = {
+export interface ContactListItemProps {
 	item: any;
 	options: Option[];
 	variant?: "condensed";
 	onAction?: (action: Option, address: any) => void;
 	onSend?: (address: Contracts.IContactAddress) => void;
-};
+}

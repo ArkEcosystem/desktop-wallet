@@ -12,7 +12,7 @@ import { RecipientListItem } from "domains/transaction/components/RecipientList/
 import React, { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { useFormContext } from "react-hook-form";
 import { useTranslation } from "react-i18next";
-import tw, { styled } from "twin.macro";
+import tw, { css, styled } from "twin.macro";
 
 import { AddRecipientProps, ToggleButtonProps } from "./AddRecipient.models";
 import { AddRecipientWrapper } from "./AddRecipient.styles";
@@ -70,17 +70,22 @@ const ToggleButtons = ({ isSingle, disableMultiple, onChange }: ToggleButtonProp
 	);
 };
 
-const InputButtonStyled = styled.button`
-	& {
-		${tw`flex items-center px-5 h-full transition-colors duration-300 focus:outline-none rounded font-semibold border-2 border-theme-primary-100 dark:border-theme-secondary-800 text-theme-secondary-700 dark:text-theme-secondary-200`};
-	}
-	&.active {
-		${tw`border-theme-success-600 bg-theme-success-100 dark:bg-theme-success-900`}
-	}
-	&:disabled {
-		${tw`border border-theme-secondary-300 dark:border-theme-secondary-700 text-theme-secondary-500 dark:text-theme-secondary-700 cursor-not-allowed`},
-	}
-`;
+const InputButtonStyled = styled.button(() => [
+	tw`flex items-center px-5 h-full font-semibold text-theme-secondary-700`,
+	tw`rounded border-2 border-theme-primary-100`,
+	tw`transition-colors duration-300`,
+	tw`dark:(border-theme-secondary-800 text-theme-secondary-200)`,
+	tw`focus:(outline-none ring-2 ring-theme-primary-400)`,
+	tw`disabled:(
+		border border-theme-secondary-300 text-theme-secondary-500 cursor-not-allowed
+		dark:(border-theme-secondary-700 text-theme-secondary-700)
+	)`,
+	css`
+		&.active {
+			${tw`border-theme-success-600 bg-theme-success-100 dark:bg-theme-success-900`}
+		}
+	`,
+]);
 
 export const AddRecipient = ({
 	assetSymbol,

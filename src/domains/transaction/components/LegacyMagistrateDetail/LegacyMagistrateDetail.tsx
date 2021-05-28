@@ -9,11 +9,11 @@ import {
 import React, { useMemo } from "react";
 import { useTranslation } from "react-i18next";
 
-type LegacyMagistrateDetailProps = {
+interface LegacyMagistrateDetailProps {
 	isOpen: boolean;
 	transaction: any;
 	onClose?: any;
-};
+}
 
 export const LegacyMagistrateDetail = ({ isOpen, transaction, onClose }: LegacyMagistrateDetailProps) => {
 	const { t } = useTranslation();

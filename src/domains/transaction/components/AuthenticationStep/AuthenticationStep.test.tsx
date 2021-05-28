@@ -92,7 +92,7 @@ describe("AuthenticationStep", () => {
 
 		jest.spyOn(wallet, "isSecondSignature").mockReturnValue(true);
 		jest.spyOn(wallet, "secondPublicKey").mockReturnValue(
-			await wallet.coin().identity().publicKey().fromMnemonic(secondMnemonic),
+			(await wallet.coin().identity().publicKey().fromMnemonic(secondMnemonic)).publicKey,
 		);
 
 		const TestValidation = () => {

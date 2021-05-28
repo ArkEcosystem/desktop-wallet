@@ -5,7 +5,7 @@ import { getNetworkExtendedData } from "domains/network/helpers";
 import React from "react";
 import { Size } from "types";
 
-type Props = {
+interface Props {
 	coin?: string;
 	network?: string;
 	as?: React.ElementType;
@@ -15,7 +15,7 @@ type Props = {
 	iconSize?: number;
 	showTooltip?: boolean;
 	noShadow?: boolean;
-};
+}
 
 const Placeholder = (props: CircleProps) => (
 	<Circle

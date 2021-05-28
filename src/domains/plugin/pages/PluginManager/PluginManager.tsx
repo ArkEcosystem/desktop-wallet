@@ -1,4 +1,3 @@
-import { Contracts } from "@arkecosystem/platform-sdk-profiles";
 import { sortByDesc } from "@arkecosystem/utils";
 import { snakeCase } from "@arkecosystem/utils";
 import { Button } from "app/components/Button";
@@ -26,7 +25,7 @@ import { useHistory } from "react-router-dom";
 
 const categories = ["gaming", "utility", "exchange", "other"];
 
-type LatestPluginsProps = {
+interface LatestPluginsProps {
 	onCurrentViewChange: (view: string) => void;
 	onDelete: any;
 	onSelect: (pluginId: string) => void;
@@ -37,7 +36,7 @@ type LatestPluginsProps = {
 	viewType: string;
 	isLoading?: boolean;
 	pluginsByCategory: Record<string, any[]>;
-};
+}
 
 const LatestPlugins = ({
 	onCurrentViewChange,
@@ -280,9 +279,7 @@ export const PluginManager = () => {
 	};
 
 	const openManualInstallPluginModal = () => {
-		const shouldShowDisclaimer = !activeProfile
-			.settings()
-			.get(Contracts.ProfileSetting.DoNotShowAdvancedModeDisclaimer, false);
+		const shouldShowDisclaimer = !activeProfile.hasAcceptedManualInstallationDisclaimer();
 
 		if (shouldShowDisclaimer) {
 			setIsOpenDisclaimer(true);
@@ -298,7 +295,7 @@ export const PluginManager = () => {
 			setIsManualInstallModalOpen(true);
 
 			if (rememberChoice) {
-				activeProfile.settings().set(Contracts.ProfileSetting.DoNotShowAdvancedModeDisclaimer, true);
+				activeProfile.markManualInstallationDisclaimerAsAccepted();
 			}
 		}
 	};

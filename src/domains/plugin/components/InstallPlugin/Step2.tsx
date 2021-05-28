@@ -4,10 +4,10 @@ import { Image } from "app/components/Image";
 import React from "react";
 import { useTranslation } from "react-i18next";
 
-type Props = {
+interface Props {
 	plugin: any;
 	downloadProgress: { percent?: number; transferredBytes?: number; totalBytes: number };
-};
+}
 
 export const SecondStep = ({ plugin, downloadProgress }: Props) => {
 	const { t } = useTranslation();

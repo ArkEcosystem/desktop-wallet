@@ -1,8 +1,8 @@
-type RangeInput = {
+interface RangeInput {
 	min: number;
 	max: number;
 	step: number;
-};
+}
 
 const isStepDivisible = ({ min, max, step }: RangeInput) => {
 	const res = (max - min) / step;

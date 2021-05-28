@@ -3,11 +3,11 @@ import { useCallback, useEffect, useState } from "react";
 
 import { useNotifications } from "./use-notifications";
 
-export type DownloadProgress = {
+export interface DownloadProgress {
 	total: number;
 	percent: number;
 	transferred: number;
-};
+}
 
 type DownloadStatus = "idle" | "started" | "completed" | "canceled" | "errored";
 
@@ -67,7 +67,7 @@ export const useUpdater = () => {
 		}
 	}, [notifications]);
 
-	useEffect((): any => {
+	useEffect(() => {
 		const updateDownloaded = () => {
 			setDownloadStatus("completed");
 			setDownloadProgress(downloadProgressDefaults());

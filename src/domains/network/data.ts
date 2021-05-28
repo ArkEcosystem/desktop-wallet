@@ -1,16 +1,16 @@
 import { Coins } from "@arkecosystem/platform-sdk";
 // import { ADA } from "@arkecosystem/platform-sdk-ada";
 import { ARK } from "@arkecosystem/platform-sdk-ark";
-import { ATOM } from "@arkecosystem/platform-sdk-atom";
-import { BTC } from "@arkecosystem/platform-sdk-btc";
-import { EGLD } from "@arkecosystem/platform-sdk-egld";
-import { ETH } from "@arkecosystem/platform-sdk-eth";
+// import { ATOM } from "@arkecosystem/platform-sdk-atom";
+// import { BTC } from "@arkecosystem/platform-sdk-btc";
+// import { EGLD } from "@arkecosystem/platform-sdk-egld";
+// import { ETH } from "@arkecosystem/platform-sdk-eth";
 import { LSK } from "@arkecosystem/platform-sdk-lsk";
-import { NEO } from "@arkecosystem/platform-sdk-neo";
-import { TRX } from "@arkecosystem/platform-sdk-trx";
-import { XLM } from "@arkecosystem/platform-sdk-xlm";
-import { XRP } from "@arkecosystem/platform-sdk-xrp";
-import { ZIL } from "@arkecosystem/platform-sdk-zil";
+// import { NEO } from "@arkecosystem/platform-sdk-neo";
+// import { TRX } from "@arkecosystem/platform-sdk-trx";
+// import { XLM } from "@arkecosystem/platform-sdk-xlm";
+// import { XRP } from "@arkecosystem/platform-sdk-xrp";
+// import { ZIL } from "@arkecosystem/platform-sdk-zil";
 
 const createNetwork = (coin: Coins.CoinSpec, network: string) =>
 	new Coins.Network(coin.manifest, coin.manifest.networks[network]);
@@ -53,66 +53,60 @@ export const coinsNetworkExtendedData: Record<string, CoinNetworkExtended> = {
 		textClass: "text-theme-primary-400",
 		iconName: "BIND",
 	},
-	// "compendia.testnet": {
-	// 	displayName: "Compendia Testnet",
-	// 	borderClass: "border-theme-primary-100",
-	// 	textClass: "text-theme-primary-400",
-	// 	iconName: "BIND",
+	// "atom.mainnet": {
+	// 	displayName: "Cosmos",
+	// 	borderClass: "border-theme-primary-500",
+	// 	textClass: "text-theme-primary-700",
+	// 	iconName: "ATOM",
 	// },
-	"cosmos.mainnet": {
-		displayName: "Cosmos",
-		borderClass: "border-theme-primary-500",
-		textClass: "text-theme-primary-700",
-		iconName: "ATOM",
-	},
-	"cosmos.testnet": {
-		displayName: "Cosmos Testnet",
-		borderClass: "border-theme-primary-500",
-		textClass: "text-theme-primary-700",
-		iconName: "ATOM",
-	},
-	"btc.livenet": {
-		displayName: "Bitcoin",
-		borderClass: "border-theme-warning-200",
-		textClass: "text-theme-warning-400",
-		iconName: "BTC",
-	},
-	"btc.testnet": {
-		displayName: "Bitcoin Testnet",
-		borderClass: "border-theme-primary-500",
-		textClass: "text-theme-primary-700",
-		iconName: "BTC",
-	},
-	"egld.mainnet": {
-		displayName: "Elrond",
-		borderClass: "border-theme-warning-200",
-		textClass: "text-theme-warning-400",
-		iconName: "EGLD",
-	},
-	"egld.testnet": {
-		displayName: "Elrond Testnet",
-		borderClass: "border-theme-primary-500",
-		textClass: "text-theme-primary-700",
-		iconName: "EGLD",
-	},
-	"eth.mainnet": {
-		displayName: "Ethereum",
-		borderClass: "border-theme-primary-500",
-		textClass: "text-theme-primary-700",
-		iconName: "ETH",
-	},
-	"eth.rinkeby": {
-		displayName: "Ethereum Rinkeby",
-		borderClass: "border-theme-primary-500",
-		textClass: "text-theme-primary-700",
-		iconName: "ETH",
-	},
-	"eth.ropsten": {
-		displayName: "Ethereum Ropsten",
-		borderClass: "border-theme-primary-500",
-		textClass: "text-theme-primary-700",
-		iconName: "ETH",
-	},
+	// "atom.testnet": {
+	// 	displayName: "Cosmos Testnet",
+	// 	borderClass: "border-theme-primary-500",
+	// 	textClass: "text-theme-primary-700",
+	// 	iconName: "ATOM",
+	// },
+	// "btc.livenet": {
+	// 	displayName: "Bitcoin",
+	// 	borderClass: "border-theme-warning-200",
+	// 	textClass: "text-theme-warning-400",
+	// 	iconName: "BTC",
+	// },
+	// "btc.testnet": {
+	// 	displayName: "Bitcoin Testnet",
+	// 	borderClass: "border-theme-primary-500",
+	// 	textClass: "text-theme-primary-700",
+	// 	iconName: "BTC",
+	// },
+	// "egld.mainnet": {
+	// 	displayName: "Elrond",
+	// 	borderClass: "border-theme-warning-200",
+	// 	textClass: "text-theme-warning-400",
+	// 	iconName: "EGLD",
+	// },
+	// "egld.testnet": {
+	// 	displayName: "Elrond Testnet",
+	// 	borderClass: "border-theme-primary-500",
+	// 	textClass: "text-theme-primary-700",
+	// 	iconName: "EGLD",
+	// },
+	// "eth.mainnet": {
+	// 	displayName: "Ethereum",
+	// 	borderClass: "border-theme-primary-500",
+	// 	textClass: "text-theme-primary-700",
+	// 	iconName: "ETH",
+	// },
+	// "eth.rinkeby": {
+	// 	displayName: "Ethereum Rinkeby",
+	// 	borderClass: "border-theme-primary-500",
+	// 	textClass: "text-theme-primary-700",
+	// 	iconName: "ETH",
+	// },
+	// "eth.ropsten": {
+	// 	displayName: "Ethereum Ropsten",
+	// 	borderClass: "border-theme-primary-500",
+	// 	textClass: "text-theme-primary-700",
+	// 	iconName: "ETH",
+	// },
 	"lsk.mainnet": {
 		displayName: "Lisk",
 		borderClass: "border-theme-primary-400",
@@ -125,78 +119,78 @@ export const coinsNetworkExtendedData: Record<string, CoinNetworkExtended> = {
 		textClass: "text-theme-primary-400",
 		iconName: "LSK",
 	},
-	"nano.mainnet": {
-		displayName: "NANO",
-		borderClass: "border-theme-warning-200",
-		textClass: "text-theme-warning-400",
-		iconName: "NANO",
-	},
-	"nano.testnet": {
-		displayName: "NANO Testnet",
-		borderClass: "border-theme-warning-200",
-		textClass: "text-theme-warning-400",
-		iconName: "NANO",
-	},
-	"neo.mainnet": {
-		displayName: "NEO",
-		borderClass: "border-theme-warning-200",
-		textClass: "text-theme-warning-400",
-		iconName: "NEO",
-	},
-	"neo.testnet": {
-		displayName: "NEO Testnet",
-		borderClass: "border-theme-warning-200",
-		textClass: "text-theme-warning-400",
-		iconName: "NEO",
-	},
-	"trx.mainnet": {
-		displayName: "Tron",
-		borderClass: "border-theme-primary-500",
-		textClass: "text-theme-primary-700",
-		iconName: "TRX",
-	},
-	"trx.testnet": {
-		displayName: "Tron Testnet",
-		borderClass: "border-theme-primary-500",
-		textClass: "text-theme-primary-700",
-		iconName: "TRX",
-	},
-	"xlm.mainnet": {
-		displayName: "Stellar",
-		borderClass: "border-theme-primary-500",
-		textClass: "text-theme-primary-700",
-		iconName: "XLM",
-	},
-	"xlm.testnet": {
-		displayName: "Stellar Testnet",
-		borderClass: "border-theme-primary-500",
-		textClass: "text-theme-primary-700",
-		iconName: "XLM",
-	},
-	"xrp.mainnet": {
-		displayName: "Ripple",
-		borderClass: "border-theme-primary-500",
-		textClass: "text-theme-primary-700",
-		iconName: "XRP",
-	},
-	"xrp.testnet": {
-		displayName: "Ripple Testnet",
-		borderClass: "border-theme-primary-500",
-		textClass: "text-theme-primary-700",
-		iconName: "XRP",
-	},
-	"zil.mainnet": {
-		displayName: "Zilliqa",
-		borderClass: "border-theme-primary-500",
-		textClass: "text-theme-primary-700",
-		iconName: "ZIL",
-	},
-	"zil.testnet": {
-		displayName: "Zilliqa Testnet",
-		borderClass: "border-theme-primary-500",
-		textClass: "text-theme-primary-700",
-		iconName: "ZIL",
-	},
+	// "nano.mainnet": {
+	// 	displayName: "NANO",
+	// 	borderClass: "border-theme-warning-200",
+	// 	textClass: "text-theme-warning-400",
+	// 	iconName: "NANO",
+	// },
+	// "nano.testnet": {
+	// 	displayName: "NANO Testnet",
+	// 	borderClass: "border-theme-warning-200",
+	// 	textClass: "text-theme-warning-400",
+	// 	iconName: "NANO",
+	// },
+	// "neo.mainnet": {
+	// 	displayName: "NEO",
+	// 	borderClass: "border-theme-warning-200",
+	// 	textClass: "text-theme-warning-400",
+	// 	iconName: "NEO",
+	// },
+	// "neo.testnet": {
+	// 	displayName: "NEO Testnet",
+	// 	borderClass: "border-theme-warning-200",
+	// 	textClass: "text-theme-warning-400",
+	// 	iconName: "NEO",
+	// },
+	// "trx.mainnet": {
+	// 	displayName: "Tron",
+	// 	borderClass: "border-theme-primary-500",
+	// 	textClass: "text-theme-primary-700",
+	// 	iconName: "TRX",
+	// },
+	// "trx.testnet": {
+	// 	displayName: "Tron Testnet",
+	// 	borderClass: "border-theme-primary-500",
+	// 	textClass: "text-theme-primary-700",
+	// 	iconName: "TRX",
+	// },
+	// "xlm.mainnet": {
+	// 	displayName: "Stellar",
+	// 	borderClass: "border-theme-primary-500",
+	// 	textClass: "text-theme-primary-700",
+	// 	iconName: "XLM",
+	// },
+	// "xlm.testnet": {
+	// 	displayName: "Stellar Testnet",
+	// 	borderClass: "border-theme-primary-500",
+	// 	textClass: "text-theme-primary-700",
+	// 	iconName: "XLM",
+	// },
+	// "xrp.mainnet": {
+	// 	displayName: "Ripple",
+	// 	borderClass: "border-theme-primary-500",
+	// 	textClass: "text-theme-primary-700",
+	// 	iconName: "XRP",
+	// },
+	// "xrp.testnet": {
+	// 	displayName: "Ripple Testnet",
+	// 	borderClass: "border-theme-primary-500",
+	// 	textClass: "text-theme-primary-700",
+	// 	iconName: "XRP",
+	// },
+	// "zil.mainnet": {
+	// 	displayName: "Zilliqa",
+	// 	borderClass: "border-theme-primary-500",
+	// 	textClass: "text-theme-primary-700",
+	// 	iconName: "ZIL",
+	// },
+	// "zil.testnet": {
+	// 	displayName: "Zilliqa Testnet",
+	// 	borderClass: "border-theme-primary-500",
+	// 	textClass: "text-theme-primary-700",
+	// 	iconName: "ZIL",
+	// },
 };
 
 export const availableNetworksMock: Coins.Network[] = [
@@ -205,25 +199,25 @@ export const availableNetworksMock: Coins.Network[] = [
 	createNetwork(ARK, "ark.mainnet"),
 	createNetwork(ARK, "ark.devnet"),
 	createNetwork(ARK, "compendia.mainnet"),
-	createNetwork(ATOM, "cosmos.mainnet"),
-	createNetwork(ATOM, "cosmos.testnet"),
-	createNetwork(BTC, "btc.livenet"),
-	createNetwork(BTC, "btc.testnet"),
-	createNetwork(EGLD, "egld.mainnet"),
-	createNetwork(EGLD, "egld.testnet"),
-	createNetwork(ETH, "eth.mainnet"),
-	createNetwork(ETH, "eth.rinkeby"),
-	createNetwork(ETH, "eth.ropsten"),
+	// createNetwork(ATOM, "atom.mainnet"),
+	// createNetwork(ATOM, "atom.testnet"),
+	// createNetwork(BTC, "btc.livenet"),
+	// createNetwork(BTC, "btc.testnet"),
+	// createNetwork(EGLD, "egld.mainnet"),
+	// createNetwork(EGLD, "egld.testnet"),
+	// createNetwork(ETH, "eth.mainnet"),
+	// createNetwork(ETH, "eth.rinkeby"),
+	// createNetwork(ETH, "eth.ropsten"),
 	createNetwork(LSK, "lsk.mainnet"),
 	createNetwork(LSK, "lsk.testnet"),
-	createNetwork(NEO, "neo.mainnet"),
-	createNetwork(NEO, "neo.testnet"),
-	createNetwork(TRX, "trx.mainnet"),
-	createNetwork(TRX, "trx.testnet"),
-	createNetwork(XLM, "xlm.mainnet"),
-	createNetwork(XLM, "xlm.testnet"),
-	createNetwork(XRP, "xrp.mainnet"),
-	createNetwork(XRP, "xrp.testnet"),
-	createNetwork(ZIL, "zil.mainnet"),
-	createNetwork(ZIL, "zil.testnet"),
+	// createNetwork(NEO, "neo.mainnet"),
+	// createNetwork(NEO, "neo.testnet"),
+	// createNetwork(TRX, "trx.mainnet"),
+	// createNetwork(TRX, "trx.testnet"),
+	// createNetwork(XLM, "xlm.mainnet"),
+	// createNetwork(XLM, "xlm.testnet"),
+	// createNetwork(XRP, "xrp.mainnet"),
+	// createNetwork(XRP, "xrp.testnet"),
+	// createNetwork(ZIL, "zil.mainnet"),
+	// createNetwork(ZIL, "zil.testnet"),
 ];

@@ -76,7 +76,7 @@ describe("ReceiveFundsForm", () => {
 		const smartbridge = Array(256).fill("x").join("");
 		const { result: form } = renderHook(() => useForm({ mode: "onChange", defaultValues: { smartbridge } }));
 
-		const memoMock = jest.spyOn(network, "allows").mockReturnValue(false);
+		const memoMock = jest.spyOn(network, "usesMemo").mockReturnValue(false);
 
 		await act(async () => {
 			const { asFragment, getByTestId } = render(

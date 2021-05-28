@@ -10,11 +10,11 @@ import {
 import React from "react";
 import { useTranslation } from "react-i18next";
 
-type TransactionSuccessfulProps = {
+interface TransactionSuccessfulProps {
 	children?: React.ReactNode;
 	transaction?: Contracts.SignedTransactionData;
 	senderWallet?: ProfileContracts.IReadWriteWallet;
-};
+}
 
 export const TransactionSuccessful = ({ children, transaction, senderWallet }: TransactionSuccessfulProps) => {
 	const { t } = useTranslation();

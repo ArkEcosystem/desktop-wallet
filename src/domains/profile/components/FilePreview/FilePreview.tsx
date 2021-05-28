@@ -6,11 +6,11 @@ import React from "react";
 
 type FilePreviewVariant = "success" | "loading" | "danger";
 
-type FilePreviewProps = {
+interface FilePreviewProps {
 	file?: ImportFile;
 	variant?: FilePreviewVariant;
 	useBorders?: boolean;
-};
+}
 
 export const FilePreviewPlain = ({ file, variant }: { file: ImportFile; variant?: FilePreviewVariant }) => {
 	const fileTypeIcon: Record<string, string> = {

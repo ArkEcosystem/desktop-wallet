@@ -4,12 +4,12 @@ import os from "os";
 import path from "path";
 import { Theme } from "types";
 
-type DialogOptions = {
+interface DialogOptions {
 	filters?: FileFilter | FileFilter[];
 	restrictToPath?: string;
 	encoding?: "utf-8" | "base64";
 	returnBasename?: boolean;
-};
+}
 
 const defaultFilters = [
 	{ name: "JSON", extensions: ["json"] },

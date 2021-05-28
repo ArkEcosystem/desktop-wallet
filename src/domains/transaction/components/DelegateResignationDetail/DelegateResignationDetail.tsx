@@ -11,11 +11,11 @@ import {
 } from "domains/transaction/components/TransactionDetail";
 import React, { useMemo } from "react";
 import { useTranslation } from "react-i18next";
-type DelegateResignationDetailProps = {
+interface DelegateResignationDetailProps {
 	isOpen: boolean;
 	transaction: any;
 	onClose?: any;
-};
+}
 
 export const DelegateResignationDetail = ({ isOpen, transaction, onClose }: DelegateResignationDetailProps) => {
 	const { t } = useTranslation();

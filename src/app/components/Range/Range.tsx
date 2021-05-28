@@ -18,14 +18,14 @@ const Thumb = styled.div`
 	${tw`m-0 transition-colors duration-100 w-4 h-4 rounded-full bg-theme-background border-3 border-theme-primary-600 focus:outline-none focus:shadow-outline`}
 `;
 
-type Props = {
+interface Props {
 	values: number[];
 	onChange: (values: number[]) => void;
 	min?: number;
 	max?: number;
 	step?: number;
 	isInvalid?: boolean;
-};
+}
 
 export const Range = ({ values, min, max, step, onChange, isInvalid }: Props) => {
 	const color = !isInvalid ? "var(--theme-color-primary-600)" : "var(--theme-color-danger-700)";

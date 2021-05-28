@@ -13,14 +13,14 @@ import React, { ChangeEvent, useEffect, useState } from "react";
 import { useForm, useFormContext } from "react-hook-form";
 import { useTranslation } from "react-i18next";
 
-type Props = {
+interface Props {
 	isOpen: boolean;
 	profileId: string;
 	walletId: string;
 	onSubmit?: any;
 	onCancel?: any;
 	onClose?: any;
-};
+}
 
 const JsonForm = () => {
 	const { t } = useTranslation();

@@ -8,7 +8,7 @@ import { Size } from "types";
 import { usePrevious } from "../../hooks";
 import { modalOffsetClass, useModal } from "./";
 
-type ModalProps = {
+interface ModalProps {
 	children: React.ReactNode;
 	title: string | React.ReactNode;
 	titleClass?: string;
@@ -19,9 +19,9 @@ type ModalProps = {
 	isOpen: boolean;
 	onClose?: any;
 	onClick?: any;
-};
+}
 
-type ModalContentProps = {
+interface ModalContentProps {
 	children: React.ReactNode;
 	title: string | React.ReactNode;
 	titleClass?: string;
@@ -30,7 +30,7 @@ type ModalContentProps = {
 	image?: React.ReactNode;
 	size?: Size;
 	onClose?: any;
-};
+}
 
 const ModalContainer = styled.div<{ size?: Size }>`
 	${({ size }) => {

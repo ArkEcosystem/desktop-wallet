@@ -6,12 +6,12 @@ import { Modal } from "app/components/Modal";
 import React, { useState } from "react";
 import { useTranslation } from "react-i18next";
 
-type ManualInstallationDisclaimerProps = {
+interface ManualInstallationDisclaimerProps {
 	isOpen: boolean;
 	onClose?: any;
 	onDecline?: any;
 	onAccept: (rememberChoice: boolean) => void;
-};
+}
 
 export const ManualInstallationDisclaimer = ({
 	isOpen,

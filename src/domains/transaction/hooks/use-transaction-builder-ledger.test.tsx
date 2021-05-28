@@ -8,6 +8,7 @@ import {
 	env,
 	getDefaultLedgerTransport,
 	getDefaultProfileId,
+	getDefaultWalletMnemonic,
 	waitFor,
 	WithProviders,
 } from "utils/testing-library";
@@ -43,25 +44,25 @@ describe("Use Transaction Builder with Ledger", () => {
 			"dd3f96466bc50077b01e441cd35eb3c5aabd83670d371c2be8cc772ed189a7315dd66e88bde275d89a3beb7ef85ef84a52ec4213f540481cd09ecf6d21e452bf",
 		);
 
+		const signatory = await wallet.signatory().mnemonic(getDefaultWalletMnemonic());
 		const input: Contracts.TransferInput = {
-			from: wallet.address(),
 			fee: "1",
 			nonce: "1",
 			data: {
 				amount: "1",
 				to: wallet.address(),
 			},
-			sign: {},
+			signatory,
 		};
 
 		let transaction: any;
 
 		await actHook(async () => {
-			transaction = (await result.current.build("transfer", input)).transaction;
+			transaction = (await result.current.build("transfer", input, wallet)).transaction;
 		});
 
 		await waitFor(() =>
-			expect(transaction.id()).toBe("c927d06a45fe7f3d23434807b84fc112c3ead27a2953dad17d802dbf9017341d"),
+			expect(transaction.id()).toBe("b08d2b2113534a4a39f363c62d27892ae8b60406c6aaeae4bd863fb87512613d"),
 		);
 
 		jest.clearAllMocks();
@@ -79,24 +80,24 @@ describe("Use Transaction Builder with Ledger", () => {
 			"dd3f96466bc50077b01e441cd35eb3c5aabd83670d371c2be8cc772ed189a7315dd66e88bde275d89a3beb7ef85ef84a52ec4213f540481cd09ecf6d21e452bf",
 		);
 
+		const signatory = await wallet.signatory().mnemonic(getDefaultWalletMnemonic());
 		const input: Contracts.TransferInput = {
-			from: wallet.address(),
 			fee: "1",
 			nonce: "1",
 			data: {
 				amount: "1",
 				to: wallet.address(),
 			},
-			sign: {},
+			signatory,
 		};
 
 		let transaction: any;
 
 		await actHook(async () => {
-			transaction = (await result.current.build("transfer", input)).transaction;
+			transaction = (await result.current.build("transfer", input, wallet)).transaction;
 		});
 
-		expect(transaction.id()).toBe("f10bfaf9c7f23e557b3e19ae5954d8f3966b1c8c72ecfa7d71da77c32ba0702a");
+		expect(transaction.id()).toBe("b08d2b2113534a4a39f363c62d27892ae8b60406c6aaeae4bd863fb87512613d");
 
 		jest.clearAllMocks();
 	});
@@ -121,15 +122,15 @@ describe("Use Transaction Builder with Ledger", () => {
 				),
 		);
 
+		const signatory = await wallet.signatory().mnemonic(getDefaultWalletMnemonic());
 		const input: Contracts.TransferInput = {
-			from: wallet.address(),
 			fee: "1",
 			nonce: "1",
 			data: {
 				amount: "1",
 				to: wallet.address(),
 			},
-			sign: {},
+			signatory,
 		};
 
 		setTimeout(() => abortCtrl.abort(), 100);
@@ -137,7 +138,7 @@ describe("Use Transaction Builder with Ledger", () => {
 
 		await actHook(async () => {
 			try {
-				await result.current.build("transfer", input, { abortSignal });
+				await result.current.build("transfer", input, wallet, { abortSignal });
 			} catch (e) {
 				error = e;
 			}

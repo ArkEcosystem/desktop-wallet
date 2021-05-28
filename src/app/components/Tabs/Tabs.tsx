@@ -3,12 +3,12 @@ import tw, { styled } from "twin.macro";
 
 import { TabContext, TabId, useTab } from "./useTab";
 
-type TabsProps = {
+interface TabsProps {
 	children: React.ReactNode;
 	activeId?: TabId;
 	className?: string;
 	onChange?: (id: TabId) => void;
-};
+}
 
 export function Tabs({ children, activeId, className, onChange }: TabsProps) {
 	const context = useTab({ initialId: activeId });
@@ -31,10 +31,10 @@ export function Tabs({ children, activeId, className, onChange }: TabsProps) {
 	);
 }
 
-type TabProps = {
+interface TabProps {
 	children: React.ReactNode;
 	tabId: string | number;
-};
+}
 
 const TabButton = styled.button``;
 

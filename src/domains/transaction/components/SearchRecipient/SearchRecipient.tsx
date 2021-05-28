@@ -10,19 +10,19 @@ import { TableCell, TableRow } from "app/components/Table";
 import React, { useMemo } from "react";
 import { useTranslation } from "react-i18next";
 
-type Recipient = {
+interface Recipient {
 	id: string;
 	address: string;
 	alias?: string;
 	network?: string;
 	avatar: string;
 	type: string;
-};
+}
 
-type RecipientListItemProps = {
+interface RecipientListItemProps {
 	recipient: Recipient;
 	onAction: (address: string) => void;
-};
+}
 
 const RecipientListItem = ({ recipient, onAction }: RecipientListItemProps) => {
 	const { t } = useTranslation();
@@ -53,7 +53,7 @@ const RecipientListItem = ({ recipient, onAction }: RecipientListItemProps) => {
 	);
 };
 
-type SearchRecipientProps = {
+interface SearchRecipientProps {
 	title?: string;
 	description?: string;
 	network?: Coins.Network;
@@ -61,7 +61,7 @@ type SearchRecipientProps = {
 	profile: Contracts.IProfile;
 	onClose?: () => void;
 	onAction: (address: string) => void;
-};
+}
 
 export const SearchRecipient = ({
 	title,

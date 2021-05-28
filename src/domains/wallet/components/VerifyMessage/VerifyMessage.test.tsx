@@ -20,9 +20,11 @@ describe("VerifyMessage", () => {
 		signedMessageText = "Hello World";
 		signedMessageMnemonic = "top secret";
 
+		const signatory = await wallet.coin().signatory().mnemonic("top secret");
+
 		signedMessage = await wallet.message().sign({
 			message: signedMessageText,
-			mnemonic: signedMessageMnemonic,
+			signatory,
 		});
 	});
 

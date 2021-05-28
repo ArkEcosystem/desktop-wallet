@@ -8,12 +8,12 @@ import { getTrackBackground } from "react-range";
 import { InputCurrency } from "./InputCurrency";
 import { sanitizeStep } from "./utils";
 
-type CurrencyInput = {
+interface CurrencyInput {
 	display: string;
 	value?: string;
-};
+}
 
-type Props = {
+interface Props {
 	disabled?: boolean;
 	value?: CurrencyInput;
 	min: string;
@@ -22,7 +22,7 @@ type Props = {
 	name?: string;
 	magnitude?: number;
 	onChange?: any;
-};
+}
 
 export const InputRange = React.forwardRef<HTMLInputElement, Props>(
 	({ min, max, step, magnitude, onChange, value, disabled }: Props, ref) => {

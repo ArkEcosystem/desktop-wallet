@@ -2,12 +2,16 @@ import { Environment } from "@arkecosystem/platform-sdk-profiles";
 import React from "react";
 import { isE2E } from "utils/test-helpers";
 
-type Context = { env: Environment; state?: Record<string, unknown>; persist: () => Promise<void> };
+interface Context {
+	env: Environment;
+	state?: Record<string, unknown>;
+	persist: () => Promise<void>;
+}
 
-type Props = {
+interface Props {
 	children: React.ReactNode;
 	env: Environment;
-};
+}
 
 export const EnvironmentContext = React.createContext<any>(undefined);
 

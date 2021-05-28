@@ -252,6 +252,10 @@ describe("PluginManager", () => {
 	});
 
 	it("should open and accept disclaimer", async () => {
+		const mockAcceptedManualInstallation = jest
+			.spyOn(profile, "hasAcceptedManualInstallationDisclaimer")
+			.mockReturnValue(false);
+
 		renderWithRouter(
 			<Route path="/profiles/:profileId/plugins">
 				<PluginProviders>
@@ -277,9 +281,15 @@ describe("PluginManager", () => {
 				translations.MODAL_MANUAL_INSTALL_PLUGIN.TITLE,
 			),
 		);
+
+		mockAcceptedManualInstallation.mockRestore();
 	});
 
 	it("should open, accept disclaimer and remember choice", async () => {
+		const mockAcceptedManualInstallation = jest
+			.spyOn(profile, "hasAcceptedManualInstallationDisclaimer")
+			.mockReturnValue(false);
+
 		renderWithRouter(
 			<Route path="/profiles/:profileId/plugins">
 				<PluginProviders>
@@ -310,16 +320,20 @@ describe("PluginManager", () => {
 
 		fireEvent.click(screen.getByTestId("modal__close-btn"));
 
+		mockAcceptedManualInstallation.mockRestore();
+
 		fireEvent.click(screen.getByTestId("PluginManager_header--install"));
 		expect(screen.getByTestId("modal__inner")).toHaveTextContent(translations.MODAL_MANUAL_INSTALL_PLUGIN.TITLE);
-
-		profile.settings().set(Contracts.ProfileSetting.DoNotShowAdvancedModeDisclaimer, false);
 	});
 
 	it.each([
 		["close", "modal__close-btn"],
 		["decline", "ManualInstallationDisclaimer__decline-button"],
 	])("should open and %s disclaimer", async (_, buttonId) => {
+		const mockAcceptedManualInstallation = jest
+			.spyOn(profile, "hasAcceptedManualInstallationDisclaimer")
+			.mockReturnValue(false);
+
 		renderWithRouter(
 			<Route path="/profiles/:profileId/plugins">
 				<PluginProviders>
@@ -342,14 +356,14 @@ describe("PluginManager", () => {
 		fireEvent.click(screen.getByTestId(buttonId));
 
 		await waitFor(() => expect(() => screen.getByTestId("modal__inner")).toThrow(/Unable to find an element by/));
+
+		mockAcceptedManualInstallation.mockRestore();
 	});
 
 	it("should install plugin from header install button", async () => {
 		nock("https://github.com/")
 			.get("/arkecosystem/test-plugin/raw/master/package.json")
 			.reply(200, { name: "test-plugin", keywords: ["@arkecosystem", "desktop-wallet"] });
-
-		profile.settings().set(Contracts.ProfileSetting.DoNotShowAdvancedModeDisclaimer, true);
 
 		renderWithRouter(
 			<Route path="/profiles/:profileId/plugins">
@@ -387,7 +401,6 @@ describe("PluginManager", () => {
 		const redirectUrl = `/profiles/${fixtureProfileId}/plugins/details?pluginId=test-plugin&repositoryURL=https://github.com/arkecosystem/test-plugin`;
 		await waitFor(() => expect(historySpy).toHaveBeenCalledWith(redirectUrl));
 
-		profile.settings().set(Contracts.ProfileSetting.DoNotShowAdvancedModeDisclaimer, false);
 		historySpy.mockRestore();
 	});
 

@@ -1,8 +1,8 @@
 import React from "react";
 
-type Props = {
+interface Props {
 	mnemonic: string;
-};
+}
 
 export function MnemonicList({ mnemonic }: Props) {
 	let mnemonicWords: string[];
