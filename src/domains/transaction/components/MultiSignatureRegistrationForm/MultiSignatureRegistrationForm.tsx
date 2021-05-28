@@ -9,6 +9,7 @@ import {
 	SendRegistrationForm,
 	SendRegistrationSignOptions,
 } from "domains/transaction/pages/SendRegistration/SendRegistration.models";
+import { handleBroadcastError } from "domains/transaction/utils";
 import React from "react";
 
 import { FormStep, ReviewStep } from "./";
@@ -76,9 +77,7 @@ const signTransaction = async ({ env, form, profile }: SendRegistrationSignOptio
 
 	const { accepted, rejected, errors } = await senderWallet!.transaction().broadcast(uuid);
 
-	if (rejected.length > 0) {
-		throw new Error(Object.values(errors as object)[0]);
-	}
+	handleBroadcastError({ accepted, rejected, errors });
 
 	const transactionId = accepted[0];
 

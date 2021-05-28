@@ -5,6 +5,7 @@ import { Icon } from "app/components/Icon";
 import { TabPanel, Tabs } from "app/components/Tabs";
 import { TransactionDetail, TransactionFee } from "domains/transaction/components/TransactionDetail";
 import { SendRegistrationForm } from "domains/transaction/pages/SendRegistration/SendRegistration.models";
+import { handleBroadcastError } from "domains/transaction/utils";
 import React from "react";
 
 import { FormStep, ReviewStep } from "./";
@@ -80,11 +81,9 @@ export const DelegateRegistrationForm: SendRegistrationForm = {
 			},
 		});
 
-		const { rejected, errors } = await senderWallet.transaction().broadcast(transactionId);
+		const response = await senderWallet.transaction().broadcast(transactionId);
 
-		if (rejected.length > 0) {
-			throw new Error(Object.values(errors as object)[0]);
-		}
+		handleBroadcastError(response);
 
 		await env.persist();
 

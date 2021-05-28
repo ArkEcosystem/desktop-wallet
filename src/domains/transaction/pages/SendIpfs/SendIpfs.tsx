@@ -10,7 +10,7 @@ import { AuthenticationStep } from "domains/transaction/components/Authenticatio
 import { ErrorStep } from "domains/transaction/components/ErrorStep";
 import { FeeWarning } from "domains/transaction/components/FeeWarning";
 import { useFeeConfirmation, useTransactionBuilder, useWalletSignatory } from "domains/transaction/hooks";
-import { isMnemonicError } from "domains/transaction/utils";
+import { handleBroadcastError,isMnemonicError } from "domains/transaction/utils";
 import React, { useEffect, useMemo, useRef, useState } from "react";
 import { useForm } from "react-hook-form";
 import { useTranslation } from "react-i18next";
@@ -96,11 +96,9 @@ export const SendIpfs = () => {
 				abortSignal,
 			});
 
-			const { rejected, errors } = await activeWallet.transaction().broadcast(uuid);
+			const response = await activeWallet.transaction().broadcast(uuid);
 
-			if (rejected.length > 0) {
-				throw new Error(Object.values(errors as object)[0]);
-			}
+			handleBroadcastError(response);
 
 			await persist();
 
