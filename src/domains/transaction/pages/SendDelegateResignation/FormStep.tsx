@@ -1,4 +1,4 @@
-import { Coins, Contracts } from "@arkecosystem/platform-sdk";
+import { Contracts } from "@arkecosystem/platform-sdk";
 import { Contracts as ProfilesContracts } from "@arkecosystem/platform-sdk-profiles";
 import { Alert } from "app/components/Alert";
 import { FormField, FormLabel } from "app/components/Form";
@@ -84,7 +84,7 @@ export const FormStep = ({
 					max={fees.max}
 					value={fee}
 					step={0.01}
-					showFeeOptions={senderWallet.network().allows(Coins.FeatureFlag.MiscellaneousDynamicFees)}
+					showFeeOptions={senderWallet.network().feeType() === "dynamic"}
 					onChange={(value) => setValue("fee", value, { shouldValidate: true, shouldDirty: true })}
 				/>
 			</FormField>

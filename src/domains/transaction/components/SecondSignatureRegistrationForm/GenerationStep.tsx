@@ -1,4 +1,4 @@
-import { Coins, Contracts } from "@arkecosystem/platform-sdk";
+import { Contracts } from "@arkecosystem/platform-sdk";
 import { BIP39 } from "@arkecosystem/platform-sdk-crypto";
 import { Contracts as ProfileContracts } from "@arkecosystem/platform-sdk-profiles";
 import { Alert } from "app/components/Alert";
@@ -68,7 +68,7 @@ export const GenerationStep = ({
 						defaultValue={fee || 0}
 						value={fee || 0}
 						step={step}
-						showFeeOptions={wallet.network().allows(Coins.FeatureFlag.MiscellaneousDynamicFees)}
+						showFeeOptions={wallet.network().feeType() === "dynamic"}
 						onChange={(value) => {
 							setValue("fee", value, { shouldValidate: true, shouldDirty: true });
 						}}

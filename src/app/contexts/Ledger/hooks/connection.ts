@@ -62,7 +62,7 @@ export const useLedgerConnection = (transport: typeof Transport) => {
 			const instance = profile.coins().set(coin, network);
 
 			try {
-				const slip44 = instance.config().get<number>("network.crypto.slip44");
+				const slip44 = instance.config().get<number>("network.constants.slip44");
 
 				const connectFn: retry.RetryFunction<void> = async (bail, attempts) => {
 					if (abortRetryRef.current && attempts > 1) {
