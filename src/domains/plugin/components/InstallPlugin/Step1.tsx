@@ -1,9 +1,9 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
 
-type Props = {
+interface Props {
 	plugin: any;
-};
+}
 
 export const FirstStep = ({ plugin }: Props) => {
 	const { t, i18n } = useTranslation();

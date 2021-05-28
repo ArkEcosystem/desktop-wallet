@@ -4,9 +4,9 @@ import tw from "twin.macro";
 
 import { ListDividedItem } from "./ListDividedItem";
 
-type Props = {
+interface Props {
 	items: any;
-};
+}
 
 const StyledList = styled.ul({
 	li: tw`border-b border-dashed border-theme-secondary-300 dark:border-theme-secondary-800`,

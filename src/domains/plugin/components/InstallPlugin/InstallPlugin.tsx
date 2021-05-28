@@ -11,13 +11,13 @@ import { FirstStep } from "./Step1";
 import { SecondStep } from "./Step2";
 import { ThirdStep } from "./Step3";
 
-type InstallPluginProps = {
+interface InstallPluginProps {
 	isOpen: boolean;
 	onClose?: any;
 	onCancel?: any;
 	plugin?: any;
 	repositoryURL?: string;
-};
+}
 
 export const InstallPlugin = ({ isOpen, onClose, onCancel, plugin, repositoryURL }: InstallPluginProps) => {
 	const { t } = useTranslation();

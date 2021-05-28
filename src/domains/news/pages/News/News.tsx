@@ -16,15 +16,15 @@ import { useTranslation } from "react-i18next";
 
 import { AVAILABLE_CATEGORIES } from "../../data";
 
-type NewsFilters = {
+interface NewsFilters {
 	categories: string[];
 	coins: string[];
 	searchQuery?: string;
-};
+}
 
-type Props = {
+interface Props {
 	itemsPerPage?: number;
-};
+}
 
 export const News = ({ itemsPerPage }: Props) => {
 	const activeProfile = useActiveProfile();

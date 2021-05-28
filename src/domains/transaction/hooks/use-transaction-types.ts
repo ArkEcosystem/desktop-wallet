@@ -25,9 +25,9 @@ export enum CoreTransactionType {
 	HtlcRefund = 10,
 }
 
-type TransactionTypeProps = {
+interface TransactionTypeProps {
 	wallets?: Contracts.IReadWriteWallet[];
-};
+}
 
 const core: Record<string, any> = {
 	transfer: {

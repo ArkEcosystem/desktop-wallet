@@ -1,6 +1,6 @@
 import React from "react";
 
-type Props = {
+interface Props {
 	isFloatingLabel: boolean;
 	label: string;
 	labelClass: string;
@@ -12,7 +12,7 @@ type Props = {
 	content: React.ReactNode;
 	contentClass?: string;
 	wrapperClass?: string;
-};
+}
 
 export const ListDividedItem = ({
 	isFloatingLabel,

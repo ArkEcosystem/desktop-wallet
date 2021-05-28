@@ -20,7 +20,7 @@ import { useMessageSigner } from "./hooks/use-message-signer";
 import { LedgerConfirmationStep } from "./LedgerConfirmationStep";
 import { SignedStep } from "./SignedStep";
 
-type SignMessageProps = {
+interface SignMessageProps {
 	profile: ProfileContracts.IProfile;
 	walletId: string;
 	isOpen: boolean;
@@ -28,7 +28,7 @@ type SignMessageProps = {
 	onClose?: () => void;
 	onCancel?: () => void;
 	onSign?: (result: SignedMessage) => void;
-};
+}
 
 const initialState: Contracts.SignedMessage = {
 	message: "",

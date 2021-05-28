@@ -8,7 +8,7 @@ import { useTranslation } from "react-i18next";
 
 import { ImportFile } from "./models";
 
-type ProcessingImportProps = {
+interface ProcessingImportProps {
 	env: Environment;
 	file: ImportFile;
 	password?: string;
@@ -17,7 +17,7 @@ type ProcessingImportProps = {
 	onPasswordChange?: (password?: string) => void;
 	onError?: (message: string) => void;
 	shouldRequestPassword?: boolean;
-};
+}
 
 export const ProcessingImport = ({
 	file,

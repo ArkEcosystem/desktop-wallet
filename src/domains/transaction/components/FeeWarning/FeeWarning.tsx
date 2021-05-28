@@ -12,12 +12,12 @@ export enum FeeWarningVariant {
 	High = "HIGH",
 }
 
-type FeeWarningProps = {
+interface FeeWarningProps {
 	isOpen: boolean;
 	variant?: FeeWarningVariant;
 	onCancel: (suppressWarning: boolean) => Promise<void>;
 	onConfirm: (suppressWarning: boolean) => Promise<void>;
-};
+}
 
 export const FeeWarning = ({ isOpen, variant, onCancel, onConfirm }: FeeWarningProps) => {
 	const { t } = useTranslation();

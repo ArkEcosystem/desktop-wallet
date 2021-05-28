@@ -3,10 +3,10 @@ import { Avatar } from "app/components/Avatar";
 import React from "react";
 import { Size } from "types";
 
-type ProfileAvatarProps = {
+interface ProfileAvatarProps {
 	profile: Contracts.IProfile;
 	size: Size;
-};
+}
 
 export const ProfileAvatar = ({ profile, size }: ProfileAvatarProps) =>
 	profile.avatar().endsWith("</svg>") ? (

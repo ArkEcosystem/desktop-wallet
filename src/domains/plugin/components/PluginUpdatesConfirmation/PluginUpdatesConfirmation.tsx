@@ -8,12 +8,12 @@ import { useTranslation } from "react-i18next";
 
 import { PluginImage } from "../PluginImage";
 
-type Props = {
+interface Props {
 	isOpen: boolean;
 	plugins: any[];
 	onClose?: () => void;
 	onContinue?: () => void;
-};
+}
 
 export const PluginUpdatesConfirmation = ({ isOpen, plugins, onClose, onContinue }: Props) => {
 	const { t } = useTranslation();

@@ -4,12 +4,12 @@ import { upperFirst } from "@arkecosystem/utils";
 import Transport from "@ledgerhq/hw-transport";
 import { useLedgerContext } from "app/contexts";
 
-type SignInput = {
+interface SignInput {
 	encryptionPassword?: string;
 	mnemonic?: string;
 	secondMnemonic?: string;
 	wallet: ProfileContracts.IReadWriteWallet;
-};
+}
 type SignFn = (input: any, options?: Contracts.TransactionOptions) => Promise<string>;
 type ConnectFn = (profile: ProfileContracts.IProfile, coin: string, network: string) => Promise<void>;
 

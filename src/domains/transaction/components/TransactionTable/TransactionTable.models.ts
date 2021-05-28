@@ -1,4 +1,4 @@
-export type Transaction = {
+export interface Transaction {
 	id: string;
 	type: string;
 	timestamp: string;
@@ -13,6 +13,6 @@ export type Transaction = {
 	isUnvote?: boolean;
 	isSignaturePending?: boolean;
 	isMultiSignature?: boolean;
-};
+}
 
 export type TransactionStatus = "confirmed" | "pending" | "actionRequired";

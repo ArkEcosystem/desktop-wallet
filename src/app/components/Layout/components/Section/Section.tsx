@@ -2,13 +2,13 @@ import cn from "classnames";
 import React from "react";
 import tw, { css, styled } from "twin.macro";
 
-type SectionProps = {
+interface SectionProps {
 	children: React.ReactNode;
 	backgroundColor?: string;
 	border?: boolean;
 	className?: string;
 	innerClassName?: string;
-};
+}
 
 const SectionWrapper = styled.div<{ backgroundColor?: string; border?: boolean }>`
 	${tw`w-full py-4 first:pt-8 last:pb-8`};

@@ -5,10 +5,10 @@ import { useEnvironmentContext } from "app/contexts";
 import { useMemo } from "react";
 import { useTranslation } from "react-i18next";
 
-type SyncReceivedTransactionsParams = {
+interface SyncReceivedTransactionsParams {
 	lookupLimit?: number;
 	allowedTransactionTypes?: string[];
-};
+}
 
 type NotifyReceivedTransactionsParams = SyncReceivedTransactionsParams & { profile: ProfileContracts.IProfile };
 

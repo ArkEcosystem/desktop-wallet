@@ -3,7 +3,7 @@ import { NavigationBar } from "app/components/NavigationBar";
 import React from "react";
 import { NavbarVariant } from "types";
 
-type PageProps = {
+interface PageProps {
 	navbarVariant?: NavbarVariant;
 	title?: string;
 	backToUrl?: string;
@@ -11,7 +11,7 @@ type PageProps = {
 	profile?: Contracts.IProfile;
 	sidebar?: React.ReactNode;
 	children: React.ReactNode;
-};
+}
 
 export const Page = ({ navbarVariant, title, backToUrl, isBackDisabled, profile, sidebar, children }: PageProps) => (
 	<div className="flex relative flex-col min-h-screen">

@@ -1,13 +1,13 @@
 import React from "react";
 
-type TransactionFieldProps = {
+interface TransactionFieldProps {
 	border: boolean;
 	children: React.ReactNode;
 	className?: string;
 	extra?: React.ReactNode;
 	label?: string;
 	padding?: boolean;
-};
+}
 
 export const TransactionField = ({ border, children, className, extra, label, padding }: TransactionFieldProps) => (
 	<div

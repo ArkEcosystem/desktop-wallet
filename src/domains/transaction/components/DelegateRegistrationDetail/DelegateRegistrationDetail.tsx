@@ -12,11 +12,11 @@ import {
 import React, { useMemo } from "react";
 import { useTranslation } from "react-i18next";
 
-type DelegateRegistrationDetailProps = {
+interface DelegateRegistrationDetailProps {
 	isOpen: boolean;
 	transaction: any;
 	onClose?: any;
-};
+}
 
 export const DelegateRegistrationDetail = ({ isOpen, transaction, onClose }: DelegateRegistrationDetailProps) => {
 	const { t } = useTranslation();

@@ -4,12 +4,12 @@ import { useCallback, useEffect, useMemo, useRef } from "react";
 import Swiper, { Pagination } from "swiper";
 Swiper.use([Pagination]);
 
-type Props = {
+interface Props {
 	container: string;
 	options?: any;
 	data?: any;
 	paginationPosition: "bottom-center" | "top-right";
-};
+}
 
 const defaultOptions = {
 	// Custom component options

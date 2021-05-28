@@ -1,11 +1,11 @@
 import React from "react";
 
-type Props = {
+interface Props {
 	title: string;
 	titleSuffix?: string | React.ReactNode;
 	subtitle?: string | React.ReactNode;
 	extra?: React.ReactNode;
-};
+}
 
 export const Header = ({ title, titleSuffix, subtitle, extra }: Props) => (
 	<div className="flex justify-between items-end bg-theme-background">

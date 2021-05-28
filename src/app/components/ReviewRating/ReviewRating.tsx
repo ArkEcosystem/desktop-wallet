@@ -1,11 +1,11 @@
 import { SvgCollection } from "app/assets/svg";
 import React from "react";
 
-type ReviewRatingProps = {
+interface ReviewRatingProps {
 	rating: number;
 	width: number;
 	showTotal: boolean;
-};
+}
 
 export const ReviewRating = (props: ReviewRatingProps) => (
 	<div className="flex items-center" data-testid="ReviewRating">

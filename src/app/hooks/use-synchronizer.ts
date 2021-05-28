@@ -4,15 +4,15 @@ import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 
 type Callback = () => Promise<void | any>;
 
-type Job = {
+interface Job {
 	callback: Callback;
 	interval: number;
-};
+}
 
-type JobError = {
+interface JobError {
 	timestamp: number;
 	error: any;
-};
+}
 
 export const useSynchronizer = (jobs: Job[]) => {
 	const timers = useRef<number[]>([]);

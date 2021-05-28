@@ -5,7 +5,7 @@ import { ContactForm } from "domains/contact/components/ContactForm";
 import React, { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 
-type UpdateContactProps = {
+interface UpdateContactProps {
 	isOpen: boolean;
 	contact: Contracts.IContact;
 	profile: Contracts.IProfile;
@@ -13,7 +13,7 @@ type UpdateContactProps = {
 	onClose?: any;
 	onDelete?: any;
 	onSave?: any;
-};
+}
 
 export const UpdateContact = ({
 	isOpen,

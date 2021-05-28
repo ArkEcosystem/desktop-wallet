@@ -17,7 +17,7 @@ import { useForm } from "react-hook-form";
 import { useTranslation } from "react-i18next";
 import { setThemeSource } from "utils/electron-utils";
 
-type CreateProfileFormProps = {
+interface CreateProfileFormProps {
 	file?: ImportFile;
 	profile: Contracts.IProfile;
 	password?: string;
@@ -27,7 +27,7 @@ type CreateProfileFormProps = {
 	shouldValidate?: boolean;
 	onSubmit?: (profile: Contracts.IProfile) => void;
 	onBack?: () => void;
-};
+}
 
 const CreateProfileForm = ({
 	profile,

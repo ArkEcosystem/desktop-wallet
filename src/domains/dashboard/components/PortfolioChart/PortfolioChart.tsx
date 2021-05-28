@@ -7,11 +7,11 @@ import { useTranslation } from "react-i18next";
 
 import { usePortfolioData } from "./hooks";
 
-type PortfolioChartProps = {
+interface PortfolioChartProps {
 	profile: Contracts.IProfile;
 	isVisible?: boolean;
 	showChartAnimation?: boolean;
-};
+}
 
 export const PortfolioChart = memo(({ profile, isVisible = true, showChartAnimation }: PortfolioChartProps) => {
 	const { t } = useTranslation();

@@ -3,12 +3,12 @@ import { stringify } from "querystring";
 import { useCallback, useEffect, useState } from "react";
 import { shouldUseDarkColors } from "utils/electron-utils";
 
-type QRCodeProps = {
+interface QRCodeProps {
 	network?: string;
 	amount?: string;
 	smartbridge?: string;
 	address?: string;
-};
+}
 
 export const useQRCode = ({ network, amount, address, smartbridge }: QRCodeProps) => {
 	const [qrCodeData, setQrCodeData] = useState<{ uri?: string; image?: string }>({

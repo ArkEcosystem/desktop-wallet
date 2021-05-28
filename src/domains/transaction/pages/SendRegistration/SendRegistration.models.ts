@@ -8,27 +8,27 @@ export type ExtendedSignedTransactionData = Contracts.SignedTransactionData & {
 	generatedAddress?: string;
 };
 
-export type SendRegistrationDetailsOptions = {
+export interface SendRegistrationDetailsOptions {
 	transaction: ExtendedSignedTransactionData;
 	translations: TFunction;
 	wallet: ProfileContracts.IReadWriteWallet;
-};
+}
 
-export type SendRegistrationComponent = {
+export interface SendRegistrationComponent {
 	activeTab: number;
 	fees: Contracts.TransactionFee;
 	wallet: ProfileContracts.IReadWriteWallet;
 	profile: ProfileContracts.IProfile;
-};
+}
 
-export type SendRegistrationSignOptions = {
+export interface SendRegistrationSignOptions {
 	env: Environment;
 	form: ReturnType<typeof useForm>;
 	profile: ProfileContracts.IProfile;
 	signatory: Signatory;
-};
+}
 
-export type SendRegistrationForm = {
+export interface SendRegistrationForm {
 	transactionDetails: ({ transaction, translations, wallet }: SendRegistrationDetailsOptions) => JSX.Element;
 
 	signTransaction: (options: SendRegistrationSignOptions) => Promise<Contracts.SignedTransactionData>;
@@ -38,4 +38,4 @@ export type SendRegistrationForm = {
 	formFields: string[];
 
 	component: ({ activeTab, fees, wallet }: SendRegistrationComponent) => JSX.Element;
-};
+}

@@ -23,14 +23,14 @@ import { useTranslation } from "react-i18next";
 import { useHistory } from "react-router-dom";
 import { openExternal } from "utils/electron-utils";
 
-type WalletHeaderProps = {
+interface WalletHeaderProps {
 	profile: Contracts.IProfile;
 	wallet: Contracts.IReadWriteWallet;
 	currencyDelta?: number;
 	onSend?: () => void;
 	isUpdatingTransactions?: boolean;
 	onUpdate?: (status: boolean) => void;
-};
+}
 
 export const WalletHeader = ({
 	profile,

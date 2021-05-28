@@ -8,7 +8,7 @@ import { styled } from "twin.macro";
 
 import { defaultStyle } from "./styles";
 
-type PluginManagerNavigationBar = {
+interface PluginManagerNavigationBar {
 	hasUpdatesAvailable: boolean;
 	installedPluginsCount: number;
 	menu: any[];
@@ -17,7 +17,7 @@ type PluginManagerNavigationBar = {
 	onChange?: any;
 	onSelectGridView?: any;
 	onSelectListView?: any;
-};
+}
 
 const NavWrapper = styled.nav`
 	${defaultStyle}
