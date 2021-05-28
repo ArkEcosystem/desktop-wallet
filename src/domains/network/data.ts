@@ -53,13 +53,13 @@ export const coinsNetworkExtendedData: Record<string, CoinNetworkExtended> = {
 		textClass: "text-theme-primary-400",
 		iconName: "BIND",
 	},
-	// "cosmos.mainnet": {
+	// "atom.mainnet": {
 	// 	displayName: "Cosmos",
 	// 	borderClass: "border-theme-primary-500",
 	// 	textClass: "text-theme-primary-700",
 	// 	iconName: "ATOM",
 	// },
-	// "cosmos.testnet": {
+	// "atom.testnet": {
 	// 	displayName: "Cosmos Testnet",
 	// 	borderClass: "border-theme-primary-500",
 	// 	textClass: "text-theme-primary-700",
@@ -199,8 +199,8 @@ export const availableNetworksMock: Coins.Network[] = [
 	createNetwork(ARK, "ark.mainnet"),
 	createNetwork(ARK, "ark.devnet"),
 	createNetwork(ARK, "compendia.mainnet"),
-	// createNetwork(ATOM, "cosmos.mainnet"),
-	// createNetwork(ATOM, "cosmos.testnet"),
+	// createNetwork(ATOM, "atom.mainnet"),
+	// createNetwork(ATOM, "atom.testnet"),
 	// createNetwork(BTC, "btc.livenet"),
 	// createNetwork(BTC, "btc.testnet"),
 	// createNetwork(EGLD, "egld.mainnet"),

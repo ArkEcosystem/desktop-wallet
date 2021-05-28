@@ -9,6 +9,7 @@ import {
 	SendRegistrationForm,
 	SendRegistrationSignOptions,
 } from "domains/transaction/pages/SendRegistration/SendRegistration.models";
+import { handleBroadcastError } from "domains/transaction/utils";
 import React from "react";
 
 import { FormStep, ReviewStep } from "./";
@@ -53,23 +54,20 @@ const signTransaction = async ({ env, form, profile }: SendRegistrationSignOptio
 	const { clearErrors, getValues } = form;
 
 	clearErrors("mnemonic");
-	const { fee, minParticipants, participants, mnemonic, senderAddress, encryptionPassword } = getValues();
+	const { fee, minParticipants, participants, senderAddress } = getValues();
 	const senderWallet = profile.wallets().findByAddress(senderAddress);
 
 	const publicKeys = (participants as Participant[]).map((item) => item.publicKey);
-	const wif = senderWallet?.wif().exists() ? await senderWallet.wif().get(encryptionPassword) : undefined;
+
+	const signatory = await senderWallet!
+		.coin()
+		.signatory()
+		.multiSignature(+minParticipants, [...publicKeys]);
 
 	const uuid = await senderWallet!.transaction().signMultiSignature({
 		nonce: senderWallet!.nonce().plus(1).toString(),
 		fee,
-		from: senderAddress,
-		sign: {
-			wif,
-			multiSignature: {
-				publicKeys: [...publicKeys],
-				min: +minParticipants,
-			},
-		},
+		signatory,
 		data: {
 			publicKeys: [...publicKeys],
 			min: +minParticipants,
@@ -77,22 +75,22 @@ const signTransaction = async ({ env, form, profile }: SendRegistrationSignOptio
 		},
 	});
 
-	const { accepted } = await senderWallet!.transaction().broadcast(uuid);
+	const { accepted, rejected, errors } = await senderWallet!.transaction().broadcast(uuid);
+
+	handleBroadcastError({ accepted, rejected, errors });
 
 	const transactionId = accepted[0];
 
 	await senderWallet!.transaction().sync();
-	await senderWallet!.transaction().addSignature(transactionId, mnemonic);
+	await senderWallet!.transaction().addSignature(transactionId, signatory);
 
 	await env.persist();
 
 	const transaction: ExtendedSignedTransactionData = senderWallet!.transaction().transaction(transactionId);
 
-	transaction.generatedAddress = await senderWallet!
-		.coin()
-		.identity()
-		.address()
-		.fromMultiSignature(minParticipants, publicKeys);
+	transaction.generatedAddress = (
+		await senderWallet!.coin().identity().address().fromMultiSignature(minParticipants, publicKeys)
+	).address;
 	return transaction;
 };
 

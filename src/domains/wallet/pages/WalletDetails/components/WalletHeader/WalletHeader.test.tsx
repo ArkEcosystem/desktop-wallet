@@ -37,19 +37,42 @@ describe("WalletHeader", () => {
 		useQRCodeHook.useQRCode.mockRestore();
 	});
 
-	it("should render", () => {
-		const { asFragment, getByTestId, getByText } = render(<WalletHeader profile={profile} wallet={wallet} />);
+	it("should render", async () => {
+		const { asFragment, getByText } = render(<WalletHeader profile={profile} wallet={wallet} />);
 
-		waitFor(() => expect(getByText(wallet.address())).toBeTruthy());
+		await waitFor(() => expect(getByText(wallet.address())).toBeTruthy());
 
 		expect(asFragment()).toMatchSnapshot();
 	});
 
-	it("should render converted balance for mainnet wallet", () => {
+	it("should hide second signature option", async () => {
+		const mockIsSecondSignature = jest.spyOn(wallet, "isSecondSignature").mockReturnValue(true);
+		const mockAllowsSecondSignature = jest.spyOn(wallet.network(), "allows").mockReturnValue(false);
+
+		const { getByTestId, getByText } = render(<WalletHeader profile={profile} wallet={wallet} />);
+
+		await waitFor(() => expect(getByText(wallet.address())).toBeTruthy());
+
+		act(() => {
+			fireEvent.click(getByTestId("dropdown__toggle"));
+		});
+
+		await waitFor(() =>
+			expect(() =>
+				within(getByTestId("dropdown__content")).getByText(
+					walletTranslations.PAGE_WALLET_DETAILS.OPTIONS.SECOND_SIGNATURE,
+				),
+			).toThrow(),
+		);
+		mockIsSecondSignature.mockRestore();
+		mockAllowsSecondSignature.mockRestore();
+	});
+
+	it("should render converted balance for mainnet wallet", async () => {
 		const mockWalletNetwork = jest.spyOn(wallet.network(), "isTest").mockReturnValue(false);
 		const { asFragment, getByText } = render(<WalletHeader profile={profile} wallet={wallet} />);
 
-		waitFor(() => expect(getByText(wallet.address())).toBeTruthy());
+		await waitFor(() => expect(getByText(wallet.address())).toBeTruthy());
 
 		expect(asFragment()).toMatchSnapshot();
 		mockWalletNetwork.mockRestore();
@@ -93,7 +116,7 @@ describe("WalletHeader", () => {
 	it("should hide converted balance if wallet belongs to test network", () => {
 		const networkSpy = jest.spyOn(wallet.network(), "isTest").mockReturnValue(true);
 
-		const { getByTestId, asFragment } = render(<WalletHeader profile={profile} wallet={wallet} />);
+		const { getByTestId } = render(<WalletHeader profile={profile} wallet={wallet} />);
 
 		expect(() => getByTestId("WalletHeader__currency-balance")).toThrowError(/Unable to find/);
 
@@ -101,7 +124,7 @@ describe("WalletHeader", () => {
 	});
 
 	it.each([-5, 5])("should show currency delta (%s%)", (delta) => {
-		const { getByTestId, getByText, asFragment } = render(
+		const { getByText, asFragment } = render(
 			<WalletHeader profile={profile} wallet={wallet} currencyDelta={delta} />,
 		);
 
@@ -467,14 +490,14 @@ describe("WalletHeader", () => {
 	// 			onVerifyMessage={onVerifyMessage}
 	// 		/>,
 	// 	);
-
+	//
 	// 	const button = getByTestId("WalletHeader__star-button");
 	// 	expect(button).toBeTruthy();
-
+	//
 	// 	act(() => {
 	// 		fireEvent.click(button);
 	// 	});
-
+	//
 	// 	expect(onStar).toHaveBeenCalled();
 	// });
 });

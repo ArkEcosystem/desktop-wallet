@@ -104,7 +104,8 @@ const ImportInputField = ({
 				data-testid="ImportWallet__mnemonic-input"
 				findAddress={async (value) => {
 					await coin.__construct();
-					return coin.identity().address().fromMnemonic(value);
+					const { address } = await coin.identity().address().fromMnemonic(value);
+					return address;
 				}}
 			/>
 		);
@@ -124,7 +125,8 @@ const ImportInputField = ({
 				findAddress={async (value) => {
 					try {
 						await coin.__construct();
-						return coin.identity().address().fromPrivateKey(value);
+						const { address } = await coin.identity().address().fromPrivateKey(value);
+						return address;
 					} catch {
 						throw new Error(t("WALLETS.PAGE_IMPORT_WALLET.VALIDATION.INVALID_PRIVATE_KEY"));
 					}
@@ -143,7 +145,8 @@ const ImportInputField = ({
 				findAddress={async (value) => {
 					try {
 						await coin.__construct();
-						return coin.identity().address().fromWIF(value);
+						const { address } = await coin.identity().address().fromWIF(value);
+						return address;
 					} catch (e) {
 						throw new Error(t("WALLETS.PAGE_IMPORT_WALLET.VALIDATION.INVALID_WIF"));
 					}
