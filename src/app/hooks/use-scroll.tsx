@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 
 export const useScroll = () => {
-	const [scroll, setScroll] = useState<number>(0);
+	const [scroll, setScroll] = useState(0);
 
 	useEffect(() => {
 		window.addEventListener("scroll", handleScroll);
