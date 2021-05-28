@@ -2,13 +2,14 @@ import { BigNumber } from "@arkecosystem/platform-sdk-support";
 import { Button } from "app/components/Button";
 import { FormField, FormLabel, SubForm } from "app/components/Form";
 import { Icon } from "app/components/Icon";
+import { InputCurrency } from "app/components/Input";
 import { Tooltip } from "app/components/Tooltip";
 import { useValidation } from "app/hooks";
 import cn from "classnames";
 import { SelectRecipient } from "domains/profile/components/SelectRecipient";
-import { InputAmount } from "domains/transaction/components/InputAmount";
 import { RecipientList } from "domains/transaction/components/RecipientList";
 import { RecipientListItem } from "domains/transaction/components/RecipientList/RecipientList.models";
+import { humanToBigNumber } from "domains/transaction/utils";
 import React, { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { useFormContext } from "react-hook-form";
 import { useTranslation } from "react-i18next";
@@ -230,7 +231,7 @@ export const AddRecipient = ({
 		]);
 	};
 
-	const handleAddRecipient = (address: string, amount: number, displayAmount: string) => {
+	const handleAddRecipient = (address: string, amount: string, displayAmount: string) => {
 		const newRecipients = [
 			...addedRecipients,
 			{
@@ -306,17 +307,17 @@ export const AddRecipient = ({
 						<FormLabel label={t("COMMON.AMOUNT")} />
 						<div className="flex space-x-2">
 							<div className="flex-1">
-								<InputAmount
+								<InputCurrency
 									disabled={!isSenderFilled}
 									data-testid="AddRecipient__amount"
 									placeholder={t("COMMON.AMOUNT")}
 									value={getValues("displayAmount") || recipientsAmount}
 									addons={addons}
-									onChange={(amount) => {
-										setValue("isSendAllSelected", false);
+									onChange={(amountHuman: string) => {
+										const amount = humanToBigNumber(amountHuman).toString();
 
-										// @TODO - check if still needed to keep both displayAmount and amount
-										setValue("displayAmount", amount);
+										setValue("isSendAllSelected", false);
+										setValue("displayAmount", amountHuman);
 										setValue("amount", amount, { shouldValidate: true, shouldDirty: true });
 										singleRecipientOnChange(amount, recipientAddress);
 									}}
