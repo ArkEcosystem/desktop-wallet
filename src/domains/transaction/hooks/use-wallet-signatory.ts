@@ -1,11 +1,11 @@
 import { Contracts as ProfileContracts } from "@arkecosystem/platform-sdk-profiles";
 import { useCallback } from "react";
 
-type SignInput = {
+interface SignInput {
 	encryptionPassword?: string;
 	mnemonic?: string;
 	secondMnemonic?: string;
-};
+}
 export const useWalletSignatory = (wallet: ProfileContracts.IReadWriteWallet) => {
 	const sign = useCallback(
 		async ({ mnemonic, secondMnemonic, encryptionPassword }: SignInput) => {

@@ -5,11 +5,11 @@ import cn from "classnames";
 import React from "react";
 import { Size } from "types";
 
-type Props = {
+interface Props {
 	type: string;
 	recipient?: string;
 	size?: Size;
-};
+}
 
 export const TransactionRowRecipientIcon = ({ type, recipient, size }: Props) => {
 	const transactionIcon: Record<string, string> = {

@@ -8,7 +8,7 @@ import { useTranslation } from "react-i18next";
 
 import { PluginImage } from "../PluginImage";
 
-type PluginCardProps = {
+interface PluginCardProps {
 	actions?: DropdownOption[];
 	category?: string;
 	plugin: any;
@@ -17,7 +17,7 @@ type PluginCardProps = {
 	isUpdating?: boolean;
 	updatingProgress?: any;
 	showCategory?: boolean;
-};
+}
 
 export const BlankPluginCard = ({ name, category }: { name?: string; category?: string }) => {
 	const { t } = useTranslation();

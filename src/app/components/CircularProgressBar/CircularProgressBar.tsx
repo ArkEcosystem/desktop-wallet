@@ -1,6 +1,6 @@
 import React from "react";
 
-type CircularProgressBarProps = {
+interface CircularProgressBarProps {
 	size: number;
 	strokeWidth: number;
 	strokeColor?: string;
@@ -9,7 +9,7 @@ type CircularProgressBarProps = {
 	fontSize?: number;
 	showValue: boolean;
 	className?: string;
-};
+}
 
 export const CircularProgressBar = ({
 	size,

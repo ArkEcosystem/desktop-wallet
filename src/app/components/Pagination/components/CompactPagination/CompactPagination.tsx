@@ -16,13 +16,13 @@ const Wrapper = styled.div`
 	}
 `;
 
-type CompactPaginationProps = {
+interface CompactPaginationProps {
 	totalCount: number;
 	itemsPerPage: number;
 	onSelectPage: any;
 	currentPage: number;
 	className?: string;
-};
+}
 
 export const CompactPagination = ({
 	totalCount,

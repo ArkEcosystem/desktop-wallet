@@ -64,10 +64,10 @@ const WalletTable = ({
 	);
 };
 
-type WalletBottomSheetMenuProps = {
+interface WalletBottomSheetMenuProps {
 	wallets: Contracts.IReadWriteWallet[];
 	defaultIsOpen?: boolean;
-};
+}
 
 export const WalletBottomSheetMenu = ({ wallets, defaultIsOpen }: WalletBottomSheetMenuProps) => {
 	const [isOpen, setIsOpen] = React.useState(defaultIsOpen!);

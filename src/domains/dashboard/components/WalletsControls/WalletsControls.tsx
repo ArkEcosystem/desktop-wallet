@@ -8,7 +8,7 @@ import { FilterWallets, FilterWalletsHookProps } from "domains/dashboard/compone
 import React, { memo, useLayoutEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 
-type WalletsControlsProps = {
+interface WalletsControlsProps {
 	filterProperties: FilterWalletsHookProps;
 	onCreateWallet?: any;
 	onImportWallet?: any;
@@ -16,7 +16,7 @@ type WalletsControlsProps = {
 	onSelectGridView?: any;
 	onSelectListView?: any;
 	onFilterChange?: (key: string, value: any) => void;
-};
+}
 
 export const WalletsControls = memo(
 	({

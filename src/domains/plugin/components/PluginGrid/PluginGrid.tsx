@@ -8,7 +8,7 @@ import { Trans, useTranslation } from "react-i18next";
 
 import { PluginCardSkeleton } from "../PluginCard/PluginCardSkeleton";
 
-type PluginGridProps = {
+interface PluginGridProps {
 	category?: string;
 	className?: string;
 	emptyMessage?: string;
@@ -25,7 +25,7 @@ type PluginGridProps = {
 	onLaunch?: (plugin: any) => void;
 	onSelect: any;
 	onUpdate?: (plugin: any) => void;
-};
+}
 
 export const PluginGrid = ({
 	category,

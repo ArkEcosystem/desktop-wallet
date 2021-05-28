@@ -71,10 +71,10 @@ const useProfileJobs = (profile?: Contracts.IProfile): Record<string, any> => {
 	}, [env, profile, walletsCount, notifications]); // eslint-disable-line react-hooks/exhaustive-deps
 };
 
-type ProfileSyncState = {
+interface ProfileSyncState {
 	status: string | null;
 	restored: string[];
-};
+}
 
 export const useProfileSyncStatus = () => {
 	const { profileIsRestoring, restoredProfiles, setConfiguration } = useConfiguration();
@@ -160,9 +160,9 @@ export const useProfileRestore = () => {
 	};
 };
 
-type ProfileSynchronizerProps = {
+interface ProfileSynchronizerProps {
 	onProfileRestoreError?: (error: any) => void;
-};
+}
 
 export const useProfileSynchronizer = ({ onProfileRestoreError }: ProfileSynchronizerProps = {}) => {
 	const { persist } = useEnvironmentContext();

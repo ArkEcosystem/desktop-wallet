@@ -7,7 +7,7 @@ import React, { useEffect } from "react";
 import { useForm, Validate } from "react-hook-form";
 import { useTranslation } from "react-i18next";
 
-type UpdateWalletNameProps = {
+interface UpdateWalletNameProps {
 	currentAlias?: string;
 	walletId?: string;
 	profile: Contracts.IProfile;
@@ -16,7 +16,7 @@ type UpdateWalletNameProps = {
 	onCancel?: any;
 	onSave: any;
 	validation?: Validate;
-};
+}
 
 export const UpdateWalletName = ({
 	currentAlias,

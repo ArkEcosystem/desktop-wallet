@@ -11,13 +11,13 @@ export const OptionButton = styled(motion.button)`
 	will-change: transform;
 `;
 
-type Props = {
+interface Props {
 	handleChange: (value: string) => void;
 	answer: string;
 	options: string[];
 	limit: number;
 	position: number;
-};
+}
 
 export const MnemonicVerificationOptions = ({ handleChange, options, limit, answer, position }: Props) => {
 	const controls = useAnimation();

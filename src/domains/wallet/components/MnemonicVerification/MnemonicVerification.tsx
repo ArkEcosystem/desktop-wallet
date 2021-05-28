@@ -4,13 +4,13 @@ import React, { useEffect, useMemo, useState } from "react";
 import { MnemonicVerificationOptions } from "./MnemonicVerificationOptions";
 import { MnemonicVerificationProgress } from "./MnemonicVerificationProgress";
 
-type Props = {
+interface Props {
 	mnemonic: string;
 	wordPositions?: number[];
 	optionsLimit: number;
 	handleComplete: () => void;
 	isCompleted?: boolean;
-};
+}
 
 const randomWordPositions = () => {
 	const positions: number[] = [];

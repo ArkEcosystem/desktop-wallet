@@ -8,13 +8,13 @@ import { toasts } from "app/services";
 import React from "react";
 import { useTranslation } from "react-i18next";
 
-type ResetProfileProps = {
+interface ResetProfileProps {
 	isOpen: boolean;
 	profile: Contracts.IProfile;
 	onClose?: () => void;
 	onCancel?: () => void;
 	onReset?: () => void;
-};
+}
 
 export const ResetProfile = ({ isOpen, profile, onClose, onCancel, onReset }: ResetProfileProps) => {
 	const { t } = useTranslation();

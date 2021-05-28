@@ -14,12 +14,12 @@ import { AuthenticationStep } from "../AuthenticationStep";
 import { SentStep } from "./SentStep";
 import { SummaryStep } from "./SummaryStep";
 
-type MultiSignatureDetailProps = {
+interface MultiSignatureDetailProps {
 	isOpen: boolean;
 	wallet: ProfilesContracts.IReadWriteWallet;
 	transaction: Contracts.SignedTransactionData;
 	onClose?: () => void;
-};
+}
 
 const Paginator = (props: {
 	onCancel?: () => void;

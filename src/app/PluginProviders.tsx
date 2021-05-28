@@ -14,9 +14,9 @@ import {
 import { MessagePluginService } from "plugins/services/message/MessagePluginService";
 import React from "react";
 
-type Props = {
+interface Props {
 	children: React.ReactNode;
-};
+}
 
 const isTest = process.env.NODE_ENV === "test";
 export const pluginManager = new PluginManager();

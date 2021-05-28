@@ -4,17 +4,17 @@ import { Icon } from "app/components/Icon";
 import React, { useState } from "react";
 import { useTranslation } from "react-i18next";
 
-type Category = {
+interface Category {
 	label: string;
 	value: string | number;
-};
+}
 
-type FilterProps = {
+interface FilterProps {
 	categories?: Category[];
 	initialValues?: any;
 	onChange?: any;
 	onReset?: any;
-};
+}
 
 const CategoryCheckboxes = ({ categories, selected, onChange }: any) => {
 	const isSelected = (categoryValue: any, list: string[]) => list?.some((item) => item === categoryValue);

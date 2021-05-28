@@ -3,21 +3,21 @@ import { Money, Numeral } from "@arkecosystem/platform-sdk-intl";
 import { BigNumber } from "@arkecosystem/platform-sdk-support";
 import React from "react";
 
-type AmountProps = {
+interface AmountProps {
 	ticker: string;
 	value: BigNumber;
 	locale?: string;
 	showSign?: boolean;
 	normalize?: boolean;
 	isNegative?: boolean;
-};
+}
 type FormatProps = AmountProps & { decimals: number };
 type Props = AmountProps & Omit<React.HTMLProps<any>, "value">;
 
-type CurrencyConfig = {
+interface CurrencyConfig {
 	symbol: string;
 	decimals: number;
-};
+}
 
 type ExchangeCurrencyList = keyof typeof Data.CURRENCIES;
 

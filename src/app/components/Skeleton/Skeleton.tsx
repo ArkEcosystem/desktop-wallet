@@ -1,7 +1,7 @@
 import React, { CSSProperties, ReactNode } from "react";
 import SkeletonReact from "react-loading-skeleton";
 
-type SkeletonProps = {
+interface SkeletonProps {
 	count?: number;
 	duration?: number;
 	width?: string | number;
@@ -10,7 +10,7 @@ type SkeletonProps = {
 	circle?: boolean;
 	style?: CSSProperties;
 	className?: string;
-};
+}
 
 export const Skeleton = (props: SkeletonProps) => (
 	<SkeletonReact

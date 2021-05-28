@@ -7,7 +7,7 @@ import React, { ChangeEvent, useCallback, useEffect, useRef, useState } from "re
 import { useTranslation } from "react-i18next";
 import { styled } from "twin.macro";
 
-type HeaderSearchBarProps = {
+interface HeaderSearchBarProps {
 	offsetClassName?: string;
 	placeholder?: string;
 	label?: string;
@@ -18,7 +18,7 @@ type HeaderSearchBarProps = {
 	debounceTimeout?: number;
 	defaultQuery?: string;
 	resetFields?: boolean;
-};
+}
 
 const SearchBarInputWrapper = styled.div`
 	min-width: 28rem;

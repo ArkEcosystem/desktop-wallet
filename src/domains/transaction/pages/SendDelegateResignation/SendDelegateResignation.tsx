@@ -18,9 +18,9 @@ import { useHistory } from "react-router-dom";
 
 import { FormStep, ReviewStep, SummaryStep } from "./";
 
-type SendResignationProps = {
+interface SendResignationProps {
 	formDefaultData?: any;
-};
+}
 
 export const SendDelegateResignation = ({ formDefaultData }: SendResignationProps) => {
 	const { t } = useTranslation();

@@ -5,10 +5,10 @@ import path from "path";
 import React, { useRef, useState } from "react";
 import { useTranslation } from "react-i18next";
 
-type SelectFileStepProps = {
+interface SelectFileStepProps {
 	fileFormat: string;
 	onSelect?: (file: ReadableFile) => void;
-};
+}
 
 export const SelectFile = ({ onSelect, fileFormat }: SelectFileStepProps) => {
 	const { t } = useTranslation();

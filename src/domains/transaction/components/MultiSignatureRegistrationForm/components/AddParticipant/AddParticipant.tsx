@@ -7,17 +7,17 @@ import React, { useCallback, useEffect, useRef, useState } from "react";
 import { FormProvider, useForm } from "react-hook-form";
 import { useTranslation } from "react-i18next";
 
-export type Participant = {
+export interface Participant {
 	address: string;
 	publicKey: string;
-};
+}
 
-type Props = {
+interface Props {
 	profile: Contracts.IProfile;
 	wallet: Contracts.IReadWriteWallet;
 	onChange?: (wallets: Participant[]) => void;
 	defaultParticipants?: Participant[];
-};
+}
 
 export const AddParticipant = ({ profile, wallet, onChange, defaultParticipants }: Props) => {
 	const { t } = useTranslation();

@@ -14,11 +14,11 @@ import React, { useEffect, useMemo, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { useHistory } from "react-router-dom";
 
-type ContactsHeaderExtraProps = {
+interface ContactsHeaderExtraProps {
 	showSearchBar: boolean;
 	onSearch?: any;
 	onAddContact?: any;
-};
+}
 
 const ContactsHeaderExtra = ({ showSearchBar, onSearch, onAddContact }: ContactsHeaderExtraProps) => {
 	const { t } = useTranslation();

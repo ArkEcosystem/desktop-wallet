@@ -5,11 +5,11 @@ import React from "react";
 import { useTranslation } from "react-i18next";
 import tw from "twin.macro";
 
-type Props = {
+interface Props {
 	amount: BigNumber;
 	fee: any;
 	ticker: string;
-};
+}
 
 const AmountLabel = tw.span`text-sm font-semibold text-theme-secondary-700`;
 

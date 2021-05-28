@@ -5,12 +5,12 @@ import { Icon } from "../Icon";
 
 export type AlertVariant = "info" | "success" | "warning" | "danger" | "hint";
 
-type AlertProps = {
+interface AlertProps {
 	children: React.ReactNode;
 	className?: string;
 	title?: string;
 	variant: AlertVariant;
-};
+}
 
 const AlertIcon = ({ variant }: { variant: string }) => {
 	const iconVariant: Record<string, string> = {

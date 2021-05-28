@@ -7,10 +7,10 @@ import { useTranslation } from "react-i18next";
 
 import { AddressRow } from "./AddressRow";
 
-type AddressTableProps = {
+interface AddressTableProps {
 	wallets: Contracts.IReadWriteWallet[];
 	onSelect?: (address: string) => void;
-};
+}
 
 export const AddressTable = ({ wallets, onSelect }: AddressTableProps) => {
 	const { t } = useTranslation();

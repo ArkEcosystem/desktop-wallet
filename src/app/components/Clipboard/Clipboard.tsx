@@ -3,11 +3,11 @@ import React from "react";
 import { ClipboardButton, ClipboardButtonProps } from "./ClipboardButton";
 import { ClipboardIcon, ClipboardIconProps } from "./ClipboardIcon";
 
-export type ClipboardCommonProps = {
+export interface ClipboardCommonProps {
 	data: string | object;
 	options?: Record<string, any>;
 	children: React.ReactNode;
-};
+}
 
 type ClipboardProps = ClipboardIconProps | ClipboardButtonProps;
 

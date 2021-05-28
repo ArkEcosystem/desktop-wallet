@@ -11,11 +11,11 @@ import { TransferDetail } from "domains/transaction/components/TransferDetail";
 import { VoteDetail } from "domains/transaction/components/VoteDetail";
 import React from "react";
 
-type TransactionDetailModalProps = {
+interface TransactionDetailModalProps {
 	isOpen: boolean;
 	transactionItem: DTO.ExtendedTransactionData;
 	onClose?: any;
-};
+}
 
 export const TransactionDetailModal = ({ isOpen, transactionItem, onClose }: TransactionDetailModalProps) => {
 	const activeProfile = useActiveProfile();
