@@ -29,11 +29,6 @@ export const ReviewStep = ({ wallet }: { wallet: Contracts.IReadWriteWallet }) =
 		unregister("mnemonic");
 	}, [unregister]);
 
-	console.log("ReviewStep", {
-		toString: amount.toString(),
-		toHuman: amount.toHuman(),
-	});
-
 	return (
 		<section data-testid="SendTransfer__review-step">
 			<Header title={t("TRANSACTION.REVIEW_STEP.TITLE")} subtitle={t("TRANSACTION.REVIEW_STEP.DESCRIPTION")} />
