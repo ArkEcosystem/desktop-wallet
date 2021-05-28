@@ -67,7 +67,7 @@ export const useUpdater = () => {
 		}
 	}, [notifications]);
 
-	useEffect((): any => {
+	useEffect(() => {
 		const updateDownloaded = () => {
 			setDownloadStatus("completed");
 			setDownloadProgress(downloadProgressDefaults());
