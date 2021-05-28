@@ -1,4 +1,4 @@
-import { evaluateFee, isNoDeviceError, isRejectionError } from "./utils";
+import { evaluateFee, handleBroadcastError,isNoDeviceError, isRejectionError } from "./utils";
 
 describe("Transaction utils", () => {
 	describe("Evalute Fee", () => {
@@ -24,6 +24,17 @@ describe("Transaction utils", () => {
 		it("should return isRejectionError", () => {
 			const error = isRejectionError("Condition of use not satisfied");
 			expect(error).toEqual(true);
+		});
+	});
+
+	describe("handleBroadcastError", () => {
+		it("should throw if rejected", () => {
+			expect(() =>
+				handleBroadcastError({ rejected: ["id"], errors: { id: "ERROR" }, accepted: [] }),
+			).toThrowError("ERROR");
+		});
+		it("should not throw if accepted", () => {
+			expect(() => handleBroadcastError({ rejected: [], errors: {}, accepted: ["id"] })).not.toThrow();
 		});
 	});
 });
