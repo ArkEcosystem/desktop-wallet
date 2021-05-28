@@ -134,28 +134,31 @@ export const App = () => {
 	/* istanbul ignore next */
 	const storage = isE2E() || isUnit() ? new StubStorage() : "indexeddb";
 
-	const env = new Environment({
-		coins: {
-			// ADA,
-			ARK,
-			ATOM,
-			AVAX,
-			BTC,
-			DOT,
-			ETH,
-			EGLD,
-			LSK,
-			NEO,
-			NANO,
-			LUNA,
-			TRX,
-			XLM,
-			XRP,
-			ZIL,
-		},
-		httpClient,
-		storage,
-	});
+	const [env] = useState(
+		() =>
+			new Environment({
+				coins: {
+					// ADA,
+					ARK,
+					ATOM,
+					AVAX,
+					BTC,
+					DOT,
+					ETH,
+					EGLD,
+					LSK,
+					NEO,
+					NANO,
+					LUNA,
+					TRX,
+					XLM,
+					XRP,
+					ZIL,
+				},
+				httpClient,
+				storage,
+			}),
+	);
 
 	return (
 		<I18nextProvider i18n={i18n}>
