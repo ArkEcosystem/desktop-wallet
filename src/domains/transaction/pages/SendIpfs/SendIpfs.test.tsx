@@ -262,7 +262,11 @@ describe("SendIpfs", () => {
 		const signMock = jest
 			.spyOn(wallet.transaction(), "signIpfs")
 			.mockReturnValue(Promise.resolve(ipfsFixture.data.id));
-		const broadcastMock = jest.spyOn(wallet.transaction(), "broadcast").mockImplementation();
+		const broadcastMock = jest.spyOn(wallet.transaction(), "broadcast").mockResolvedValue({
+			accepted: [ipfsFixture.data.id],
+			rejected: [],
+			errors: {},
+		});
 		const transactionMock = createTransactionMock(wallet);
 
 		act(() => {
@@ -680,7 +684,11 @@ describe("SendIpfs", () => {
 		const signMock = jest
 			.spyOn(wallet.transaction(), "signIpfs")
 			.mockReturnValue(Promise.resolve(ipfsFixture.data.id));
-		const broadcastMock = jest.spyOn(wallet.transaction(), "broadcast").mockImplementation();
+		const broadcastMock = jest.spyOn(wallet.transaction(), "broadcast").mockResolvedValue({
+			accepted: [ipfsFixture.data.id],
+			rejected: [],
+			errors: {},
+		});
 		const transactionMock = createTransactionMock(wallet);
 
 		act(() => {
@@ -737,7 +745,11 @@ describe("SendIpfs", () => {
 						),
 					),
 			);
-		const broadcastMock = jest.spyOn(wallet.transaction(), "broadcast").mockImplementation();
+		const broadcastMock = jest.spyOn(wallet.transaction(), "broadcast").mockResolvedValue({
+			accepted: [ipfsFixture.data.id],
+			rejected: [],
+			errors: {},
+		});
 
 		const history = createMemoryHistory();
 		const ipfsURL = `/profiles/${fixtureProfileId}/transactions/${wallet.id()}/ipfs`;
@@ -872,7 +884,11 @@ describe("SendIpfs", () => {
 		const signMock = jest
 			.spyOn(encryptedWallet.transaction(), "signIpfs")
 			.mockReturnValue(Promise.resolve(ipfsFixture.data.id));
-		const broadcastMock = jest.spyOn(encryptedWallet.transaction(), "broadcast").mockImplementation();
+		const broadcastMock = jest.spyOn(wallet.transaction(), "broadcast").mockResolvedValue({
+			accepted: [ipfsFixture.data.id],
+			rejected: [],
+			errors: {},
+		});
 		const transactionMock = createTransactionMock(encryptedWallet);
 
 		await waitFor(() => expect(getByTestId("SendIpfs__button--submit")).not.toBeDisabled());

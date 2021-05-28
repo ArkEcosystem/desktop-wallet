@@ -166,7 +166,11 @@ describe("Registration", () => {
 			const signMock = jest
 				.spyOn(wallet.transaction(), "signDelegateRegistration")
 				.mockReturnValue(Promise.resolve(DelegateRegistrationFixture.data.id));
-			const broadcastMock = jest.spyOn(wallet.transaction(), "broadcast").mockImplementation();
+			const broadcastMock = jest.spyOn(wallet.transaction(), "broadcast").mockResolvedValue({
+				accepted: [DelegateRegistrationFixture.data.id],
+				rejected: [],
+				errors: {},
+			});
 			const transactionMock = createTransactionMock(wallet);
 
 			fireEvent.click(getByTestId("Registration__send-button"));

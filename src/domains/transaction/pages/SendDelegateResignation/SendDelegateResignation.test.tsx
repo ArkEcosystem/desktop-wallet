@@ -394,7 +394,11 @@ describe("SendDelegateResignation", () => {
 			const signMock = jest
 				.spyOn(wallet.transaction(), "signDelegateResignation")
 				.mockReturnValue(Promise.resolve(transactionFixture.data.id));
-			const broadcastMock = jest.spyOn(wallet.transaction(), "broadcast").mockImplementation();
+			const broadcastMock = jest.spyOn(wallet.transaction(), "broadcast").mockResolvedValue({
+				accepted: [transactionFixture.data.id],
+				rejected: [],
+				errors: {},
+			});
 			const transactionMock = createTransactionMock(wallet);
 
 			const { asFragment, getByTestId } = renderPage();
@@ -452,7 +456,11 @@ describe("SendDelegateResignation", () => {
 			const signMock = jest
 				.spyOn(wallet.transaction(), "signDelegateResignation")
 				.mockReturnValue(Promise.resolve(transactionFixture.data.id));
-			const broadcastMock = jest.spyOn(wallet.transaction(), "broadcast").mockImplementation();
+			const broadcastMock = jest.spyOn(wallet.transaction(), "broadcast").mockResolvedValue({
+				accepted: [transactionFixture.data.id],
+				rejected: [],
+				errors: {},
+			});
 			const transactionMock = createTransactionMock(wallet);
 
 			const { getByTestId } = renderPage();
@@ -522,7 +530,11 @@ describe("SendDelegateResignation", () => {
 			const signMock = jest
 				.spyOn(encryptedWallet.transaction(), "signDelegateResignation")
 				.mockReturnValue(Promise.resolve(transactionFixture.data.id));
-			const broadcastMock = jest.spyOn(encryptedWallet.transaction(), "broadcast").mockImplementation();
+			const broadcastMock = jest.spyOn(encryptedWallet.transaction(), "broadcast").mockResolvedValue({
+				accepted: [transactionFixture.data.id],
+				rejected: [],
+				errors: {},
+			});
 			const transactionMock = createTransactionMock(encryptedWallet);
 
 			const resignationEncryptedUrl = `/profiles/${getDefaultProfileId()}/wallets/${encryptedWallet.id()}/send-delegate-resignation`;
