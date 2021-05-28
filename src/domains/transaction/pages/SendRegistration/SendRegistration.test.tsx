@@ -166,7 +166,11 @@ describe("Registration", () => {
 			const signMock = jest
 				.spyOn(wallet.transaction(), "signDelegateRegistration")
 				.mockReturnValue(Promise.resolve(DelegateRegistrationFixture.data.id));
-			const broadcastMock = jest.spyOn(wallet.transaction(), "broadcast").mockImplementation();
+			const broadcastMock = jest.spyOn(wallet.transaction(), "broadcast").mockResolvedValue({
+				accepted: [DelegateRegistrationFixture.data.id],
+				rejected: [],
+				errors: {},
+			});
 			const transactionMock = createTransactionMock(wallet);
 
 			fireEvent.click(getByTestId("Registration__send-button"));
@@ -263,7 +267,9 @@ describe("Registration", () => {
 
 		const secondPublicKeyMock = jest
 			.spyOn(secondWallet, "secondPublicKey")
-			.mockReturnValue(await secondWallet.coin().identity().publicKey().fromMnemonic("second mnemonic"));
+			.mockReturnValue(
+				(await secondWallet.coin().identity().publicKey().fromMnemonic("second mnemonic")).publicKey,
+			);
 
 		await waitFor(() => expect(getByTestId("DelegateRegistrationForm__form-step")).toBeTruthy());
 
@@ -342,7 +348,9 @@ describe("Registration", () => {
 
 		const secondPublicKeyMock = jest
 			.spyOn(secondWallet, "secondPublicKey")
-			.mockReturnValue(await secondWallet.coin().identity().publicKey().fromMnemonic("second mnemonic"));
+			.mockReturnValue(
+				(await secondWallet.coin().identity().publicKey().fromMnemonic("second mnemonic")).publicKey,
+			);
 
 		await waitFor(() => expect(getByTestId("DelegateRegistrationForm__form-step")).toBeTruthy());
 

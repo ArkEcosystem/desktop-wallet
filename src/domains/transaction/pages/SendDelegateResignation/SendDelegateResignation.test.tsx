@@ -214,7 +214,9 @@ describe("SendDelegateResignation", () => {
 			const consoleMock = jest.spyOn(console, "log").mockImplementation();
 			const secondPublicKeyMock = jest
 				.spyOn(wallet, "secondPublicKey")
-				.mockReturnValue(await wallet.coin().identity().publicKey().fromMnemonic("second mnemonic"));
+				.mockReturnValue(
+					(await wallet.coin().identity().publicKey().fromMnemonic("second mnemonic")).publicKey,
+				);
 
 			const { asFragment, getByTestId } = renderPage();
 
@@ -271,7 +273,9 @@ describe("SendDelegateResignation", () => {
 			const consoleMock = jest.spyOn(console, "log").mockImplementation();
 			const secondPublicKeyMock = jest
 				.spyOn(wallet, "secondPublicKey")
-				.mockReturnValue(await wallet.coin().identity().publicKey().fromMnemonic("second mnemonic"));
+				.mockReturnValue(
+					(await wallet.coin().identity().publicKey().fromMnemonic("second mnemonic")).publicKey,
+				);
 
 			const { asFragment, getByTestId } = renderPage();
 
@@ -325,7 +329,9 @@ describe("SendDelegateResignation", () => {
 			const consoleMock = jest.spyOn(console, "log").mockImplementation();
 			const secondPublicKeyMock = jest
 				.spyOn(wallet, "secondPublicKey")
-				.mockReturnValue(await wallet.coin().identity().publicKey().fromMnemonic("second mnemonic"));
+				.mockReturnValue(
+					(await wallet.coin().identity().publicKey().fromMnemonic("second mnemonic")).publicKey,
+				);
 
 			const { asFragment, getByTestId } = renderPage();
 
@@ -382,11 +388,17 @@ describe("SendDelegateResignation", () => {
 		it("should successfully sign and submit resignation transaction", async () => {
 			const secondPublicKeyMock = jest
 				.spyOn(wallet, "secondPublicKey")
-				.mockReturnValue(await wallet.coin().identity().publicKey().fromMnemonic("second mnemonic"));
+				.mockReturnValue(
+					(await wallet.coin().identity().publicKey().fromMnemonic("second mnemonic")).publicKey,
+				);
 			const signMock = jest
 				.spyOn(wallet.transaction(), "signDelegateResignation")
 				.mockReturnValue(Promise.resolve(transactionFixture.data.id));
-			const broadcastMock = jest.spyOn(wallet.transaction(), "broadcast").mockImplementation();
+			const broadcastMock = jest.spyOn(wallet.transaction(), "broadcast").mockResolvedValue({
+				accepted: [transactionFixture.data.id],
+				rejected: [],
+				errors: {},
+			});
 			const transactionMock = createTransactionMock(wallet);
 
 			const { asFragment, getByTestId } = renderPage();
@@ -438,11 +450,17 @@ describe("SendDelegateResignation", () => {
 		it("should back button after successful submission", async () => {
 			const secondPublicKeyMock = jest
 				.spyOn(wallet, "secondPublicKey")
-				.mockReturnValue(await wallet.coin().identity().publicKey().fromMnemonic("second mnemonic"));
+				.mockReturnValue(
+					(await wallet.coin().identity().publicKey().fromMnemonic("second mnemonic")).publicKey,
+				);
 			const signMock = jest
 				.spyOn(wallet.transaction(), "signDelegateResignation")
 				.mockReturnValue(Promise.resolve(transactionFixture.data.id));
-			const broadcastMock = jest.spyOn(wallet.transaction(), "broadcast").mockImplementation();
+			const broadcastMock = jest.spyOn(wallet.transaction(), "broadcast").mockResolvedValue({
+				accepted: [transactionFixture.data.id],
+				rejected: [],
+				errors: {},
+			});
 			const transactionMock = createTransactionMock(wallet);
 
 			const { getByTestId } = renderPage();
@@ -512,7 +530,11 @@ describe("SendDelegateResignation", () => {
 			const signMock = jest
 				.spyOn(encryptedWallet.transaction(), "signDelegateResignation")
 				.mockReturnValue(Promise.resolve(transactionFixture.data.id));
-			const broadcastMock = jest.spyOn(encryptedWallet.transaction(), "broadcast").mockImplementation();
+			const broadcastMock = jest.spyOn(encryptedWallet.transaction(), "broadcast").mockResolvedValue({
+				accepted: [transactionFixture.data.id],
+				rejected: [],
+				errors: {},
+			});
 			const transactionMock = createTransactionMock(encryptedWallet);
 
 			const resignationEncryptedUrl = `/profiles/${getDefaultProfileId()}/wallets/${encryptedWallet.id()}/send-delegate-resignation`;

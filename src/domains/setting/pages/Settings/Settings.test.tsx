@@ -509,6 +509,10 @@ describe("Settings", () => {
 
 	describe("advanced mode", () => {
 		it("should open and accept disclaimer", async () => {
+			const mockAcceptedManualInstallation = jest
+				.spyOn(profile, "hasAcceptedManualInstallationDisclaimer")
+				.mockReturnValue(false);
+
 			const { getByTestId } = renderWithRouter(
 				<Route path="/profiles/:profileId/settings">
 					<Settings />
@@ -540,9 +544,14 @@ describe("Settings", () => {
 			});
 
 			await waitFor(() => expect(getByTestId("General-settings__toggle--isAdvancedMode").checked).toEqual(false));
+			mockAcceptedManualInstallation.mockRestore();
 		});
 
 		it("should open, accept disclaimer and remember choice", async () => {
+			const mockAcceptedManualInstallation = jest
+				.spyOn(profile, "hasAcceptedManualInstallationDisclaimer")
+				.mockReturnValue(false);
+
 			const { getByTestId } = renderWithRouter(
 				<Route path="/profiles/:profileId/settings">
 					<Settings />
@@ -569,9 +578,7 @@ describe("Settings", () => {
 				fireEvent.click(getByTestId("AdvancedMode__accept-button"));
 			});
 
-			expect(() => getByTestId("modal__inner")).toThrow(/Unable to find an element by/);
-
-			expect(getByTestId("General-settings__toggle--isAdvancedMode").checked).toEqual(true);
+			await waitFor(() => expect(getByTestId("General-settings__toggle--isAdvancedMode").checked).toEqual(true));
 
 			// uncheck toggle
 			act(() => {
@@ -579,6 +586,8 @@ describe("Settings", () => {
 			});
 
 			expect(getByTestId("General-settings__toggle--isAdvancedMode").checked).toEqual(false);
+
+			mockAcceptedManualInstallation.mockRestore();
 
 			// check toggle again
 			act(() => {
@@ -588,15 +597,15 @@ describe("Settings", () => {
 			expect(() => getByTestId("modal__inner")).toThrow(/Unable to find an element by/);
 
 			await waitFor(() => expect(getByTestId("General-settings__toggle--isAdvancedMode").checked).toEqual(true));
-
-			// reset setting
-			profile.settings().set(Contracts.ProfileSetting.DoNotShowAdvancedModeDisclaimer, false);
 		});
 
 		it.each([
 			["close", "modal__close-btn"],
 			["decline", "AdvancedMode__decline-button"],
 		])("should open and %s disclaimer", async (_, buttonId) => {
+			const mockAcceptedManualInstallation = jest
+				.spyOn(profile, "hasAcceptedManualInstallationDisclaimer")
+				.mockReturnValue(false);
 			const { getByTestId } = renderWithRouter(
 				<Route path="/profiles/:profileId/settings">
 					<Settings />
@@ -624,6 +633,8 @@ describe("Settings", () => {
 			expect(() => getByTestId("modal__inner")).toThrow(/Unable to find an element by/);
 
 			expect(getByTestId("General-settings__toggle--isAdvancedMode").checked).toEqual(false);
+
+			mockAcceptedManualInstallation.mockRestore();
 		});
 	});
 

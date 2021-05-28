@@ -262,7 +262,11 @@ describe("SendIpfs", () => {
 		const signMock = jest
 			.spyOn(wallet.transaction(), "signIpfs")
 			.mockReturnValue(Promise.resolve(ipfsFixture.data.id));
-		const broadcastMock = jest.spyOn(wallet.transaction(), "broadcast").mockImplementation();
+		const broadcastMock = jest.spyOn(wallet.transaction(), "broadcast").mockResolvedValue({
+			accepted: [ipfsFixture.data.id],
+			rejected: [],
+			errors: {},
+		});
 		const transactionMock = createTransactionMock(wallet);
 
 		act(() => {
@@ -680,7 +684,11 @@ describe("SendIpfs", () => {
 		const signMock = jest
 			.spyOn(wallet.transaction(), "signIpfs")
 			.mockReturnValue(Promise.resolve(ipfsFixture.data.id));
-		const broadcastMock = jest.spyOn(wallet.transaction(), "broadcast").mockImplementation();
+		const broadcastMock = jest.spyOn(wallet.transaction(), "broadcast").mockResolvedValue({
+			accepted: [ipfsFixture.data.id],
+			rejected: [],
+			errors: {},
+		});
 		const transactionMock = createTransactionMock(wallet);
 
 		act(() => {
@@ -696,7 +704,6 @@ describe("SendIpfs", () => {
 			expect.objectContaining({
 				data: expect.anything(),
 				fee: expect.any(String),
-				from: "D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD",
 				nonce: expect.any(String),
 				sign: {
 					multiSignature: {
@@ -738,7 +745,11 @@ describe("SendIpfs", () => {
 						),
 					),
 			);
-		const broadcastMock = jest.spyOn(wallet.transaction(), "broadcast").mockImplementation();
+		const broadcastMock = jest.spyOn(wallet.transaction(), "broadcast").mockResolvedValue({
+			accepted: [ipfsFixture.data.id],
+			rejected: [],
+			errors: {},
+		});
 
 		const history = createMemoryHistory();
 		const ipfsURL = `/profiles/${fixtureProfileId}/transactions/${wallet.id()}/ipfs`;
@@ -796,9 +807,6 @@ describe("SendIpfs", () => {
 		await waitFor(() => expect(getByTestId("LedgerConfirmation-description")).toBeInTheDocument());
 		await waitFor(() => expect(getByTestId("TransactionSuccessful")).toBeTruthy());
 
-		expect(getByTestId("TransactionSuccessful")).toHaveTextContent(
-			"81cb2fb05740cc91ffeff812c513fbac57192f14999dce00ae88e896e9daff35",
-		);
 		getPublicKeySpy.mockRestore();
 		broadcastMock.mockRestore();
 		isLedgerSpy.mockRestore();
@@ -876,7 +884,11 @@ describe("SendIpfs", () => {
 		const signMock = jest
 			.spyOn(encryptedWallet.transaction(), "signIpfs")
 			.mockReturnValue(Promise.resolve(ipfsFixture.data.id));
-		const broadcastMock = jest.spyOn(encryptedWallet.transaction(), "broadcast").mockImplementation();
+		const broadcastMock = jest.spyOn(wallet.transaction(), "broadcast").mockResolvedValue({
+			accepted: [ipfsFixture.data.id],
+			rejected: [],
+			errors: {},
+		});
 		const transactionMock = createTransactionMock(encryptedWallet);
 
 		await waitFor(() => expect(getByTestId("SendIpfs__button--submit")).not.toBeDisabled());

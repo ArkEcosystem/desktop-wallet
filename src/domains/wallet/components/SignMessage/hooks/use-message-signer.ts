@@ -51,7 +51,17 @@ export const useMessageSigner = (transport: typeof Transport) => {
 			return withAbortPromise(options?.abortSignal)(signWithLedger(message, wallet, transport));
 		}
 
-		return wallet.message().sign({ message, mnemonic, wif });
+		let signatory: any;
+
+		if (mnemonic) {
+			signatory = await wallet.signatory().mnemonic(mnemonic);
+		}
+
+		if (wif) {
+			signatory = await wallet.signatory().wif(wif);
+		}
+
+		return wallet.message().sign({ message, signatory });
 	};
 
 	return { sign };

@@ -5,6 +5,7 @@ import { Icon } from "app/components/Icon";
 import { TabPanel, Tabs } from "app/components/Tabs";
 import { TransactionDetail, TransactionFee } from "domains/transaction/components/TransactionDetail";
 import { SendRegistrationForm } from "domains/transaction/pages/SendRegistration/SendRegistration.models";
+import { handleBroadcastError } from "domains/transaction/utils";
 import React from "react";
 
 import { BackupStep, GenerationStep, ReviewStep, VerificationStep } from "./";
@@ -68,28 +69,25 @@ export const SecondSignatureRegistrationForm: SendRegistrationForm = {
 	transactionDetails,
 	formFields: ["secondMnemonic", "verification"],
 
-	signTransaction: async ({ env, form, profile }: any) => {
+	signTransaction: async ({ env, form, profile, signatory }: any) => {
 		const { clearErrors, getValues } = form;
 
 		clearErrors("mnemonic");
-		const { fee, mnemonic, senderAddress, secondMnemonic, encryptionPassword } = getValues();
+		const { fee, senderAddress, secondMnemonic } = getValues();
 		const senderWallet = profile.wallets().findByAddress(senderAddress);
-
-		const wif = senderWallet?.wif().exists() ? await senderWallet.wif().get(encryptionPassword) : undefined;
 
 		const transactionId = await senderWallet.transaction().signSecondSignature({
 			fee,
-			from: senderAddress,
-			sign: {
-				wif,
-				mnemonic,
-			},
+			signatory,
 			data: {
 				mnemonic: secondMnemonic,
 			},
 		});
 
-		await senderWallet.transaction().broadcast(transactionId);
+		const response = await senderWallet.transaction().broadcast(transactionId);
+
+		handleBroadcastError(response);
+
 		await env.persist();
 
 		return senderWallet.transaction().transaction(transactionId);
