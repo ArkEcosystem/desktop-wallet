@@ -26,7 +26,7 @@ export interface SendRegistrationSignOptions {
 	form: ReturnType<typeof useForm>;
 	profile: ProfileContracts.IProfile;
 	signatory: Signatory;
-};
+}
 
 export interface SendRegistrationForm {
 	transactionDetails: ({ transaction, translations, wallet }: SendRegistrationDetailsOptions) => JSX.Element;
