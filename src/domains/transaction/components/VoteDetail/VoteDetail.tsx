@@ -12,11 +12,11 @@ import {
 import React, { useEffect, useMemo, useState } from "react";
 import { useTranslation } from "react-i18next";
 
-type VoteDetailProps = {
+interface VoteDetailProps {
 	isOpen: boolean;
 	transaction: any;
 	onClose?: () => void;
-};
+}
 
 export const VoteDetail = ({ transaction, isOpen, onClose }: VoteDetailProps) => {
 	const { t } = useTranslation();

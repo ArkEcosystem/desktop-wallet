@@ -4,13 +4,13 @@ import { Amount } from "app/components/Amount";
 import { Label } from "app/components/Label";
 import React from "react";
 
-type Props = {
+interface Props {
 	isSent: boolean;
 	wallet: Contracts.IReadWriteWallet;
 	total: BigNumber;
 	convertedTotal?: BigNumber;
 	exchangeCurrency?: string;
-};
+}
 
 export const BaseTransactionRowAmount = ({ isSent, wallet, total, convertedTotal, exchangeCurrency }: Props) => {
 	const isNegative = !total.isZero() && isSent;

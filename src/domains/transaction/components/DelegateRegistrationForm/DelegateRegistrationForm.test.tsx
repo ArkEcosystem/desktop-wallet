@@ -218,7 +218,11 @@ describe("DelegateRegistrationForm", () => {
 		const signMock = jest
 			.spyOn(wallet.transaction(), "signDelegateRegistration")
 			.mockReturnValue(Promise.resolve(delegateRegistrationFixture.data.id));
-		const broadcastMock = jest.spyOn(wallet.transaction(), "broadcast").mockImplementation();
+		const broadcastMock = jest.spyOn(wallet.transaction(), "broadcast").mockResolvedValue({
+			accepted: [delegateRegistrationFixture.data.id],
+			rejected: [],
+			errors: {},
+		});
 		const transactionMock = createTransactionMock(wallet);
 
 		await DelegateRegistrationForm.signTransaction({
@@ -252,7 +256,11 @@ describe("DelegateRegistrationForm", () => {
 		const signMock = jest.spyOn(wallet.transaction(), "signDelegateRegistration").mockImplementation(() => {
 			throw new Error("Signing failed");
 		});
-		const broadcastMock = jest.spyOn(wallet.transaction(), "broadcast").mockImplementation();
+		const broadcastMock = jest.spyOn(wallet.transaction(), "broadcast").mockResolvedValue({
+			accepted: [delegateRegistrationFixture.data.id],
+			rejected: [],
+			errors: {},
+		});
 		const transactionMock = createTransactionMock(wallet);
 
 		try {
@@ -320,7 +328,11 @@ describe("DelegateRegistrationForm", () => {
 		const signMock = jest
 			.spyOn(wallet.transaction(), "signDelegateRegistration")
 			.mockReturnValue(Promise.resolve(delegateRegistrationFixture.data.id));
-		const broadcastMock = jest.spyOn(wallet.transaction(), "broadcast").mockImplementation();
+		const broadcastMock = jest.spyOn(wallet.transaction(), "broadcast").mockResolvedValue({
+			accepted: [delegateRegistrationFixture.data.id],
+			rejected: [],
+			errors: {},
+		});
 		const transactionMock = createTransactionMock(wallet);
 
 		await DelegateRegistrationForm.signTransaction({

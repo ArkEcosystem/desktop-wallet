@@ -2,10 +2,10 @@ import { WithPluginManager } from "plugins/types";
 import React, { useMemo } from "react";
 import { ErrorBoundary } from "react-error-boundary";
 
-type Props = {
+interface Props {
 	pluginId: string;
 	fallback?: React.ReactNode;
-};
+}
 
 export const LaunchRender = ({ pluginId, fallback, manager }: WithPluginManager<Props>) => {
 	const result = useMemo(() => {

@@ -3,12 +3,12 @@ import { useTranslation } from "react-i18next";
 
 import { ExchangeCard } from "../ExchangeCard";
 
-type ExchangeGridProps = {
+interface ExchangeGridProps {
 	exchanges: any[];
 	onClick: any;
 	onDelete: any;
 	onOpenDetails: any;
-};
+}
 
 export const ExchangeGrid = ({ exchanges, onClick, onDelete, onOpenDetails }: ExchangeGridProps) => {
 	const { t } = useTranslation();

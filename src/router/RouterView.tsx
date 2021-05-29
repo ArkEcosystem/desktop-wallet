@@ -8,11 +8,11 @@ import { Middleware } from "./interfaces";
 
 const Wrapper = styled.div``;
 
-type Props = {
+interface Props {
 	routes: RouteConfig[];
 	wrapper?: React.ElementType;
 	middlewares?: Middleware[];
-};
+}
 
 export const RouterView = ({ routes, wrapper, middlewares }: Props) => {
 	const location = useLocation();

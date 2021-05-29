@@ -3,16 +3,16 @@ import { useTextTruncate } from "app/hooks/use-text-truncate";
 import React, { useRef } from "react";
 import { Size } from "types";
 
-type Props = {
+interface Props {
 	walletName?: string;
 	addressClass?: string;
-	address?: string | undefined;
+	address?: string;
 	maxChars?: number;
 	maxNameChars?: number;
 	walletNameClass?: string;
 	size?: Size;
 	fontWeight?: "normal";
-};
+}
 
 export const Address = ({
 	address,

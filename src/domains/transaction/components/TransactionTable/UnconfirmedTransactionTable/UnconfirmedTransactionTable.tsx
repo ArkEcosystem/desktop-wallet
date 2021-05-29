@@ -5,9 +5,9 @@ import { useTranslation } from "react-i18next";
 
 import { UnconfirmedTransactionRow } from "./UnconfirmedTransactionRow";
 
-type Props = {
+interface Props {
 	transactions: DTO.ExtendedTransactionData[];
-};
+}
 
 export const UnconfirmedTransactionTable = memo(({ transactions }: Props) => {
 	const { t } = useTranslation();

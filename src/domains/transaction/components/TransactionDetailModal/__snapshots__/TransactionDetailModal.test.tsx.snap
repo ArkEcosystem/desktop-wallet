@@ -267,10 +267,14 @@ exports[`TransactionDetailModal should render a delegate registration modal 1`] 
                   <span
                     class="flex text-theme-primary-300 dark:text-theme-secondary-600"
                   >
-                    <div
-                      class="inline-block cursor-pointer"
-                      data-testid="clipboard__wrapper"
+                    <button
+                      class="relative focus:outline-none group"
+                      data-testid="clipboard-icon__wrapper"
+                      type="button"
                     >
+                      <div
+                        class="absolute inset-0 -m-1 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                      />
                       <div
                         class="sc-bdfBwQ fPrsah"
                         height="1em"
@@ -280,7 +284,7 @@ exports[`TransactionDetailModal should render a delegate registration modal 1`] 
                           copy.svg
                         </svg>
                       </div>
-                    </div>
+                    </button>
                   </span>
                 </div>
               </div>
@@ -339,10 +343,14 @@ exports[`TransactionDetailModal should render a delegate registration modal 1`] 
                   <span
                     class="flex text-theme-primary-300 dark:text-theme-secondary-600"
                   >
-                    <div
-                      class="inline-block cursor-pointer"
-                      data-testid="clipboard__wrapper"
+                    <button
+                      class="relative focus:outline-none group"
+                      data-testid="clipboard-icon__wrapper"
+                      type="button"
                     >
+                      <div
+                        class="absolute inset-0 -m-1 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                      />
                       <div
                         class="sc-bdfBwQ fPrsah"
                         height="1em"
@@ -352,7 +360,7 @@ exports[`TransactionDetailModal should render a delegate registration modal 1`] 
                           copy.svg
                         </svg>
                       </div>
-                    </div>
+                    </button>
                   </span>
                 </div>
               </div>
@@ -631,10 +639,14 @@ exports[`TransactionDetailModal should render a delegate resignation modal 1`] =
                   <span
                     class="flex text-theme-primary-300 dark:text-theme-secondary-600"
                   >
-                    <div
-                      class="inline-block cursor-pointer"
-                      data-testid="clipboard__wrapper"
+                    <button
+                      class="relative focus:outline-none group"
+                      data-testid="clipboard-icon__wrapper"
+                      type="button"
                     >
+                      <div
+                        class="absolute inset-0 -m-1 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                      />
                       <div
                         class="sc-bdfBwQ fPrsah"
                         height="1em"
@@ -644,7 +656,7 @@ exports[`TransactionDetailModal should render a delegate resignation modal 1`] =
                           copy.svg
                         </svg>
                       </div>
-                    </div>
+                    </button>
                   </span>
                 </div>
               </div>
@@ -703,10 +715,14 @@ exports[`TransactionDetailModal should render a delegate resignation modal 1`] =
                   <span
                     class="flex text-theme-primary-300 dark:text-theme-secondary-600"
                   >
-                    <div
-                      class="inline-block cursor-pointer"
-                      data-testid="clipboard__wrapper"
+                    <button
+                      class="relative focus:outline-none group"
+                      data-testid="clipboard-icon__wrapper"
+                      type="button"
                     >
+                      <div
+                        class="absolute inset-0 -m-1 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                      />
                       <div
                         class="sc-bdfBwQ fPrsah"
                         height="1em"
@@ -716,7 +732,7 @@ exports[`TransactionDetailModal should render a delegate resignation modal 1`] =
                           copy.svg
                         </svg>
                       </div>
-                    </div>
+                    </button>
                   </span>
                 </div>
               </div>
@@ -1008,10 +1024,14 @@ exports[`TransactionDetailModal should render a ipfs modal 1`] = `
                   <span
                     class="flex text-theme-primary-300 dark:text-theme-secondary-600"
                   >
-                    <div
-                      class="inline-block cursor-pointer"
-                      data-testid="clipboard__wrapper"
+                    <button
+                      class="relative focus:outline-none group"
+                      data-testid="clipboard-icon__wrapper"
+                      type="button"
                     >
+                      <div
+                        class="absolute inset-0 -m-1 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                      />
                       <div
                         class="sc-bdfBwQ fPrsah"
                         height="1em"
@@ -1021,7 +1041,7 @@ exports[`TransactionDetailModal should render a ipfs modal 1`] = `
                           copy.svg
                         </svg>
                       </div>
-                    </div>
+                    </button>
                   </span>
                 </div>
               </div>
@@ -1080,10 +1100,14 @@ exports[`TransactionDetailModal should render a ipfs modal 1`] = `
                   <span
                     class="flex text-theme-primary-300 dark:text-theme-secondary-600"
                   >
-                    <div
-                      class="inline-block cursor-pointer"
-                      data-testid="clipboard__wrapper"
+                    <button
+                      class="relative focus:outline-none group"
+                      data-testid="clipboard-icon__wrapper"
+                      type="button"
                     >
+                      <div
+                        class="absolute inset-0 -m-1 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                      />
                       <div
                         class="sc-bdfBwQ fPrsah"
                         height="1em"
@@ -1093,7 +1117,7 @@ exports[`TransactionDetailModal should render a ipfs modal 1`] = `
                           copy.svg
                         </svg>
                       </div>
-                    </div>
+                    </button>
                   </span>
                 </div>
               </div>
@@ -1353,10 +1377,14 @@ exports[`TransactionDetailModal should render a magistrate modal 1`] = `
                   <span
                     class="flex text-theme-primary-300 dark:text-theme-secondary-600"
                   >
-                    <div
-                      class="inline-block cursor-pointer"
-                      data-testid="clipboard__wrapper"
+                    <button
+                      class="relative focus:outline-none group"
+                      data-testid="clipboard-icon__wrapper"
+                      type="button"
                     >
+                      <div
+                        class="absolute inset-0 -m-1 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                      />
                       <div
                         class="sc-bdfBwQ fPrsah"
                         height="1em"
@@ -1366,7 +1394,7 @@ exports[`TransactionDetailModal should render a magistrate modal 1`] = `
                           copy.svg
                         </svg>
                       </div>
-                    </div>
+                    </button>
                   </span>
                 </div>
               </div>
@@ -1425,10 +1453,14 @@ exports[`TransactionDetailModal should render a magistrate modal 1`] = `
                   <span
                     class="flex text-theme-primary-300 dark:text-theme-secondary-600"
                   >
-                    <div
-                      class="inline-block cursor-pointer"
-                      data-testid="clipboard__wrapper"
+                    <button
+                      class="relative focus:outline-none group"
+                      data-testid="clipboard-icon__wrapper"
+                      type="button"
                     >
+                      <div
+                        class="absolute inset-0 -m-1 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                      />
                       <div
                         class="sc-bdfBwQ fPrsah"
                         height="1em"
@@ -1438,7 +1470,7 @@ exports[`TransactionDetailModal should render a magistrate modal 1`] = `
                           copy.svg
                         </svg>
                       </div>
-                    </div>
+                    </button>
                   </span>
                 </div>
               </div>
@@ -1781,10 +1813,14 @@ exports[`TransactionDetailModal should render a multi payment modal 1`] = `
                   <span
                     class="flex text-theme-primary-300 dark:text-theme-secondary-600"
                   >
-                    <div
-                      class="inline-block cursor-pointer"
-                      data-testid="clipboard__wrapper"
+                    <button
+                      class="relative focus:outline-none group"
+                      data-testid="clipboard-icon__wrapper"
+                      type="button"
                     >
+                      <div
+                        class="absolute inset-0 -m-1 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                      />
                       <div
                         class="sc-bdfBwQ fPrsah"
                         height="1em"
@@ -1794,7 +1830,7 @@ exports[`TransactionDetailModal should render a multi payment modal 1`] = `
                           copy.svg
                         </svg>
                       </div>
-                    </div>
+                    </button>
                   </span>
                 </div>
               </div>
@@ -1853,10 +1889,14 @@ exports[`TransactionDetailModal should render a multi payment modal 1`] = `
                   <span
                     class="flex text-theme-primary-300 dark:text-theme-secondary-600"
                   >
-                    <div
-                      class="inline-block cursor-pointer"
-                      data-testid="clipboard__wrapper"
+                    <button
+                      class="relative focus:outline-none group"
+                      data-testid="clipboard-icon__wrapper"
+                      type="button"
                     >
+                      <div
+                        class="absolute inset-0 -m-1 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                      />
                       <div
                         class="sc-bdfBwQ fPrsah"
                         height="1em"
@@ -1866,7 +1906,7 @@ exports[`TransactionDetailModal should render a multi payment modal 1`] = `
                           copy.svg
                         </svg>
                       </div>
-                    </div>
+                    </button>
                   </span>
                 </div>
               </div>
@@ -2193,10 +2233,14 @@ exports[`TransactionDetailModal should render a multi signature modal 1`] = `
                   <span
                     class="flex text-theme-primary-300 dark:text-theme-secondary-600"
                   >
-                    <div
-                      class="inline-block cursor-pointer"
-                      data-testid="clipboard__wrapper"
+                    <button
+                      class="relative focus:outline-none group"
+                      data-testid="clipboard-icon__wrapper"
+                      type="button"
                     >
+                      <div
+                        class="absolute inset-0 -m-1 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                      />
                       <div
                         class="sc-bdfBwQ fPrsah"
                         height="1em"
@@ -2206,7 +2250,7 @@ exports[`TransactionDetailModal should render a multi signature modal 1`] = `
                           copy.svg
                         </svg>
                       </div>
-                    </div>
+                    </button>
                   </span>
                 </div>
               </div>
@@ -2265,10 +2309,14 @@ exports[`TransactionDetailModal should render a multi signature modal 1`] = `
                   <span
                     class="flex text-theme-primary-300 dark:text-theme-secondary-600"
                   >
-                    <div
-                      class="inline-block cursor-pointer"
-                      data-testid="clipboard__wrapper"
+                    <button
+                      class="relative focus:outline-none group"
+                      data-testid="clipboard-icon__wrapper"
+                      type="button"
                     >
+                      <div
+                        class="absolute inset-0 -m-1 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                      />
                       <div
                         class="sc-bdfBwQ fPrsah"
                         height="1em"
@@ -2278,7 +2326,7 @@ exports[`TransactionDetailModal should render a multi signature modal 1`] = `
                           copy.svg
                         </svg>
                       </div>
-                    </div>
+                    </button>
                   </span>
                 </div>
               </div>
@@ -2538,10 +2586,14 @@ exports[`TransactionDetailModal should render a second signature modal 1`] = `
                   <span
                     class="flex text-theme-primary-300 dark:text-theme-secondary-600"
                   >
-                    <div
-                      class="inline-block cursor-pointer"
-                      data-testid="clipboard__wrapper"
+                    <button
+                      class="relative focus:outline-none group"
+                      data-testid="clipboard-icon__wrapper"
+                      type="button"
                     >
+                      <div
+                        class="absolute inset-0 -m-1 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                      />
                       <div
                         class="sc-bdfBwQ fPrsah"
                         height="1em"
@@ -2551,7 +2603,7 @@ exports[`TransactionDetailModal should render a second signature modal 1`] = `
                           copy.svg
                         </svg>
                       </div>
-                    </div>
+                    </button>
                   </span>
                 </div>
               </div>
@@ -2610,10 +2662,14 @@ exports[`TransactionDetailModal should render a second signature modal 1`] = `
                   <span
                     class="flex text-theme-primary-300 dark:text-theme-secondary-600"
                   >
-                    <div
-                      class="inline-block cursor-pointer"
-                      data-testid="clipboard__wrapper"
+                    <button
+                      class="relative focus:outline-none group"
+                      data-testid="clipboard-icon__wrapper"
+                      type="button"
                     >
+                      <div
+                        class="absolute inset-0 -m-1 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                      />
                       <div
                         class="sc-bdfBwQ fPrsah"
                         height="1em"
@@ -2623,7 +2679,7 @@ exports[`TransactionDetailModal should render a second signature modal 1`] = `
                           copy.svg
                         </svg>
                       </div>
-                    </div>
+                    </button>
                   </span>
                 </div>
               </div>
@@ -3008,10 +3064,14 @@ exports[`TransactionDetailModal should render a transfer modal 1`] = `
                   <span
                     class="flex text-theme-primary-300 dark:text-theme-secondary-600"
                   >
-                    <div
-                      class="inline-block cursor-pointer"
-                      data-testid="clipboard__wrapper"
+                    <button
+                      class="relative focus:outline-none group"
+                      data-testid="clipboard-icon__wrapper"
+                      type="button"
                     >
+                      <div
+                        class="absolute inset-0 -m-1 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                      />
                       <div
                         class="sc-bdfBwQ fPrsah"
                         height="1em"
@@ -3021,7 +3081,7 @@ exports[`TransactionDetailModal should render a transfer modal 1`] = `
                           copy.svg
                         </svg>
                       </div>
-                    </div>
+                    </button>
                   </span>
                 </div>
               </div>
@@ -3080,10 +3140,14 @@ exports[`TransactionDetailModal should render a transfer modal 1`] = `
                   <span
                     class="flex text-theme-primary-300 dark:text-theme-secondary-600"
                   >
-                    <div
-                      class="inline-block cursor-pointer"
-                      data-testid="clipboard__wrapper"
+                    <button
+                      class="relative focus:outline-none group"
+                      data-testid="clipboard-icon__wrapper"
+                      type="button"
                     >
+                      <div
+                        class="absolute inset-0 -m-1 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                      />
                       <div
                         class="sc-bdfBwQ fPrsah"
                         height="1em"
@@ -3093,7 +3157,7 @@ exports[`TransactionDetailModal should render a transfer modal 1`] = `
                           copy.svg
                         </svg>
                       </div>
-                    </div>
+                    </button>
                   </span>
                 </div>
               </div>
@@ -3515,10 +3579,14 @@ exports[`TransactionDetailModal should render a unvote modal 1`] = `
                   <span
                     class="flex text-theme-primary-300 dark:text-theme-secondary-600"
                   >
-                    <div
-                      class="inline-block cursor-pointer"
-                      data-testid="clipboard__wrapper"
+                    <button
+                      class="relative focus:outline-none group"
+                      data-testid="clipboard-icon__wrapper"
+                      type="button"
                     >
+                      <div
+                        class="absolute inset-0 -m-1 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                      />
                       <div
                         class="sc-bdfBwQ fPrsah"
                         height="1em"
@@ -3528,7 +3596,7 @@ exports[`TransactionDetailModal should render a unvote modal 1`] = `
                           copy.svg
                         </svg>
                       </div>
-                    </div>
+                    </button>
                   </span>
                 </div>
               </div>
@@ -3587,10 +3655,14 @@ exports[`TransactionDetailModal should render a unvote modal 1`] = `
                   <span
                     class="flex text-theme-primary-300 dark:text-theme-secondary-600"
                   >
-                    <div
-                      class="inline-block cursor-pointer"
-                      data-testid="clipboard__wrapper"
+                    <button
+                      class="relative focus:outline-none group"
+                      data-testid="clipboard-icon__wrapper"
+                      type="button"
                     >
+                      <div
+                        class="absolute inset-0 -m-1 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                      />
                       <div
                         class="sc-bdfBwQ fPrsah"
                         height="1em"
@@ -3600,7 +3672,7 @@ exports[`TransactionDetailModal should render a unvote modal 1`] = `
                           copy.svg
                         </svg>
                       </div>
-                    </div>
+                    </button>
                   </span>
                 </div>
               </div>
@@ -4022,10 +4094,14 @@ exports[`TransactionDetailModal should render a vote modal 1`] = `
                   <span
                     class="flex text-theme-primary-300 dark:text-theme-secondary-600"
                   >
-                    <div
-                      class="inline-block cursor-pointer"
-                      data-testid="clipboard__wrapper"
+                    <button
+                      class="relative focus:outline-none group"
+                      data-testid="clipboard-icon__wrapper"
+                      type="button"
                     >
+                      <div
+                        class="absolute inset-0 -m-1 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                      />
                       <div
                         class="sc-bdfBwQ fPrsah"
                         height="1em"
@@ -4035,7 +4111,7 @@ exports[`TransactionDetailModal should render a vote modal 1`] = `
                           copy.svg
                         </svg>
                       </div>
-                    </div>
+                    </button>
                   </span>
                 </div>
               </div>
@@ -4094,10 +4170,14 @@ exports[`TransactionDetailModal should render a vote modal 1`] = `
                   <span
                     class="flex text-theme-primary-300 dark:text-theme-secondary-600"
                   >
-                    <div
-                      class="inline-block cursor-pointer"
-                      data-testid="clipboard__wrapper"
+                    <button
+                      class="relative focus:outline-none group"
+                      data-testid="clipboard-icon__wrapper"
+                      type="button"
                     >
+                      <div
+                        class="absolute inset-0 -m-1 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                      />
                       <div
                         class="sc-bdfBwQ fPrsah"
                         height="1em"
@@ -4107,7 +4187,7 @@ exports[`TransactionDetailModal should render a vote modal 1`] = `
                           copy.svg
                         </svg>
                       </div>
-                    </div>
+                    </button>
                   </span>
                 </div>
               </div>

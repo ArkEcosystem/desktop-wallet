@@ -5,12 +5,12 @@ import { useTranslation } from "react-i18next";
 
 import { useFeeFormat } from "./hooks";
 
-export type InputFee = {
+export interface InputFee {
 	display: string;
 	value?: string;
-};
+}
 
-export type InputFeeProps = {
+export interface InputFeeProps {
 	defaultValue?: any;
 	value?: any;
 	min: string;
@@ -19,7 +19,7 @@ export type InputFeeProps = {
 	step: number;
 	showFeeOptions?: boolean;
 	onChange?: (value: InputFee) => void;
-};
+}
 
 export const InputFee = memo(
 	({ defaultValue, value, avg, min, max, onChange, step, showFeeOptions }: InputFeeProps) => {

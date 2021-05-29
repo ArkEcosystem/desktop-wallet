@@ -7,7 +7,7 @@ import React, { memo } from "react";
 
 type Network = Coins.Network & { extra?: CoinNetworkExtended };
 
-type Props = {
+interface Props {
 	disabled?: boolean;
 	network?: Network;
 	as?: React.ElementType;
@@ -16,7 +16,7 @@ type Props = {
 	iconSize?: number;
 	shadowColor?: string;
 	onClick?: () => void;
-};
+}
 
 export const NetworkOption = memo(({ disabled, network, iconSize = 30, iconClassName, onClick, ...props }: Props) => {
 	if (!network?.extra) {

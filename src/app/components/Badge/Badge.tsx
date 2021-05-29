@@ -5,7 +5,7 @@ import { Position, Size } from "types";
 
 import { defaultClasses, getStyles, StylesType } from "./Badge.styles";
 
-type BadgeProps = {
+interface BadgeProps {
 	className?: string;
 	children?: React.ReactNode;
 	icon?: string;
@@ -15,7 +15,7 @@ type BadgeProps = {
 	size?: Size;
 	position?: Position;
 	noShadow?: boolean;
-};
+}
 
 export const Wrapper = styled.span<StylesType>(getStyles);
 

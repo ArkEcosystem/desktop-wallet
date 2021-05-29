@@ -55,11 +55,11 @@ const getSize = (size?: Size) => {
 	}
 };
 
-export type StylesType = {
+export interface StylesType {
 	position?: Position;
 	size?: Size;
 	noShadow?: boolean;
-};
+}
 export const getStyles = ({ position, size, noShadow }: StylesType) => [
 	...baseStyle(size, noShadow),
 	getPosition(position),

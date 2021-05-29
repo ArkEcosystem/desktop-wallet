@@ -9,13 +9,13 @@ import React, { useCallback, useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import { useTranslation } from "react-i18next";
 
-type SignInProps = {
+interface SignInProps {
 	isOpen: boolean;
 	profile: Contracts.IProfile;
 	onCancel?: any;
 	onClose?: any;
 	onSuccess: (password: string) => void;
-};
+}
 
 const MAX_ATTEMPTS = 3;
 const TIMEOUT = 60;

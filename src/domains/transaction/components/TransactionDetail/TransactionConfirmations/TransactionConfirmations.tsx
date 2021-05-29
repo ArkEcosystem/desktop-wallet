@@ -6,10 +6,10 @@ import { useTranslation } from "react-i18next";
 
 import { TransactionDetail } from "../TransactionDetail";
 
-type TransactionConfirmationsProps = {
+interface TransactionConfirmationsProps {
 	isConfirmed: boolean;
 	confirmations: BigNumber;
-};
+}
 
 export const TransactionConfirmations = ({ isConfirmed, confirmations }: TransactionConfirmationsProps) => {
 	const { t } = useTranslation();

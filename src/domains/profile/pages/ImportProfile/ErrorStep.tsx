@@ -6,11 +6,11 @@ import { useTranslation } from "react-i18next";
 
 import { ImportFile } from "./models";
 
-type ImportErrorProps = {
+interface ImportErrorProps {
 	file: ImportFile;
 	onRetry?: () => void;
 	onBack?: () => void;
-};
+}
 
 export const ImportError = ({ file, onBack, onRetry }: ImportErrorProps) => {
 	const { t } = useTranslation();

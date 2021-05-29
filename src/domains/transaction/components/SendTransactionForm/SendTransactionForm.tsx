@@ -10,14 +10,14 @@ import React, { useEffect, useMemo, useState } from "react";
 import { useFormContext } from "react-hook-form";
 import { Trans, useTranslation } from "react-i18next";
 
-type SendTransactionFormProps = {
+interface SendTransactionFormProps {
 	children?: React.ReactNode;
 	networks: Coins.Network[];
 	profile: Contracts.IProfile;
 	transactionType: string;
 	hasWalletId: boolean;
 	disableNetworkField?: boolean;
-};
+}
 
 export const SendTransactionForm = ({
 	children,
@@ -56,7 +56,7 @@ export const SendTransactionForm = ({
 
 		if (network) {
 			setTransactionFees(network);
-			setDynamicFees(network.allows(Coins.FeatureFlag.MiscellaneousDynamicFees));
+			setDynamicFees(network.feeType() === "dynamic");
 
 			return setWallets(profile.wallets().findByCoinWithNetwork(network.coin(), network.id()));
 		}

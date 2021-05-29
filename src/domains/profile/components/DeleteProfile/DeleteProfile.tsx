@@ -3,13 +3,13 @@ import { useEnvironmentContext } from "app/contexts";
 import React from "react";
 import { useTranslation } from "react-i18next";
 
-type DeleteProfileProps = {
+interface DeleteProfileProps {
 	isOpen: boolean;
 	onClose?: any;
 	onCancel?: any;
 	onDelete?: any;
 	profileId: string;
-};
+}
 
 export const DeleteProfile = ({ isOpen, onClose, onCancel, onDelete, profileId }: DeleteProfileProps) => {
 	const { t } = useTranslation();

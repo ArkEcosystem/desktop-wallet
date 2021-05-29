@@ -12,11 +12,11 @@ import {
 import React, { useMemo } from "react";
 import { useTranslation } from "react-i18next";
 
-type MultiPaymentDetailProps = {
+interface MultiPaymentDetailProps {
 	isOpen: boolean;
 	transaction: any;
 	onClose?: any;
-};
+}
 
 export const MultiPaymentDetail = ({ isOpen, transaction, onClose }: MultiPaymentDetailProps) => {
 	const { t } = useTranslation();

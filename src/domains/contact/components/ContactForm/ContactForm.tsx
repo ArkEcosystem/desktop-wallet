@@ -13,12 +13,15 @@ import React, { useEffect, useMemo, useState } from "react";
 import { useForm } from "react-hook-form";
 import { useTranslation } from "react-i18next";
 
-type AddressListItemProps = {
+interface AddressListItemProps {
 	address: any;
 	onRemove: any;
-};
+}
 
-type NetworkOption = { label: string; value: string };
+interface NetworkOption {
+	label: string;
+	value: string;
+}
 
 const AddressListItem = ({ address, onRemove }: AddressListItemProps) => (
 	<div
@@ -48,10 +51,10 @@ const AddressListItem = ({ address, onRemove }: AddressListItemProps) => (
 	</div>
 );
 
-type AddressListProps = {
+interface AddressListProps {
 	addresses: any[];
 	onRemove: any;
-};
+}
 
 const AddressList = ({ addresses, onRemove }: AddressListProps) => {
 	const { t } = useTranslation();
@@ -71,7 +74,7 @@ const AddressList = ({ addresses, onRemove }: AddressListProps) => {
 	);
 };
 
-type ContactFormProps = {
+interface ContactFormProps {
 	contact?: Contracts.IContact;
 	profile: Contracts.IProfile;
 	onCancel?: any;
@@ -79,7 +82,7 @@ type ContactFormProps = {
 	onDelete?: any;
 	onSave: any;
 	errors?: any;
-};
+}
 
 export const ContactForm = ({ profile, contact, onChange, onCancel, onDelete, onSave, errors }: ContactFormProps) => {
 	const nameMaxLength = 42;
@@ -92,7 +95,7 @@ export const ContactForm = ({ profile, contact, onChange, onCancel, onDelete, on
 					.map((address: Contracts.IContactAddress) => ({
 						network: address.network(),
 						address: address.address(),
-						name: address.name(),
+						name: contact.name(),
 						coin: address.coin(),
 					}))
 			: [],

@@ -11,7 +11,7 @@ import { SelectNetworkInput } from "./SelectNetworkInput";
 
 type Network = Coins.Network & { extra?: CoinNetworkExtended };
 
-type SelectNetworkProps = {
+interface SelectNetworkProps {
 	selected?: Coins.Network;
 	networks: Coins.Network[];
 	placeholder?: string;
@@ -22,7 +22,7 @@ type SelectNetworkProps = {
 	hideOptions?: boolean;
 	onInputChange?: (value?: string, suggestion?: string) => void;
 	onSelect?: (network?: Coins.Network | null) => void;
-};
+}
 
 export const itemToString = (item: Network | null) => item?.extra?.displayName || "";
 

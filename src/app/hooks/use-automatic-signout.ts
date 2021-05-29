@@ -2,15 +2,15 @@ import { Contracts } from "@arkecosystem/platform-sdk-profiles";
 import { useRef } from "react";
 import { isIdle } from "utils/electron-utils";
 
-type ActivityState = {
+interface ActivityState {
 	intervalId?: number;
 	threshold?: number;
-};
+}
 
-type HandlerParams = {
+interface HandlerParams {
 	profile?: Contracts.IProfile;
 	onTimeout?: CallbackFunction;
-};
+}
 
 type CallbackFunction = () => void;
 

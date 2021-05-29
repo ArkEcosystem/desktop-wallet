@@ -9,8 +9,8 @@ import { useActiveProfile, useActiveWallet, useValidation } from "app/hooks";
 import { AuthenticationStep } from "domains/transaction/components/AuthenticationStep";
 import { ErrorStep } from "domains/transaction/components/ErrorStep";
 import { FeeWarning } from "domains/transaction/components/FeeWarning";
-import { useFeeConfirmation, useTransactionBuilder } from "domains/transaction/hooks";
-import { isMnemonicError } from "domains/transaction/utils";
+import { useFeeConfirmation, useTransactionBuilder, useWalletSignatory } from "domains/transaction/hooks";
+import { handleBroadcastError, isMnemonicError } from "domains/transaction/utils";
 import React, { useEffect, useMemo, useRef, useState } from "react";
 import { useForm } from "react-hook-form";
 import { useTranslation } from "react-i18next";
@@ -42,6 +42,7 @@ export const SendIpfs = () => {
 
 	const abortRef = useRef(new AbortController());
 	const transactionBuilder = useTransactionBuilder(activeProfile);
+	const { sign } = useWalletSignatory(activeWallet);
 
 	useEffect(() => {
 		register("network", sendIpfs.network());
@@ -74,25 +75,30 @@ export const SendIpfs = () => {
 	const submitForm = async () => {
 		clearErrors("mnemonic");
 
-		const { fee, mnemonic, secondMnemonic, senderAddress, hash, encryptionPassword } = getValues();
-		const wif = activeWallet?.wif().exists() ? await activeWallet.wif().get(encryptionPassword) : undefined;
+		const { fee, mnemonic, secondMnemonic, hash, encryptionPassword } = getValues();
+
+		const signatory = await sign({
+			mnemonic,
+			secondMnemonic,
+			encryptionPassword,
+		});
 
 		const transactionInput: Contracts.IpfsInput = {
 			fee,
-			from: senderAddress,
-			sign: {
-				wif,
-				mnemonic,
-				secondMnemonic,
-			},
+			signatory,
 			data: { hash },
 		};
 
 		try {
 			const abortSignal = abortRef.current?.signal;
 
-			const { uuid, transaction } = await transactionBuilder.build("ipfs", transactionInput, { abortSignal });
-			await transactionBuilder.broadcast(uuid, transactionInput);
+			const { uuid, transaction } = await transactionBuilder.build("ipfs", transactionInput, activeWallet, {
+				abortSignal,
+			});
+
+			const response = await activeWallet.transaction().broadcast(uuid);
+
+			handleBroadcastError(response);
 
 			await persist();
 

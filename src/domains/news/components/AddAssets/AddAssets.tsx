@@ -10,14 +10,14 @@ import React from "react";
 import { useForm } from "react-hook-form";
 import { useTranslation } from "react-i18next";
 
-type Props = {
+interface Props {
 	selectedAssets?: any[];
 	allAssets?: any[];
 	isOpen: boolean;
 	onClose?: any;
 	onCancel?: any;
 	onUpdate?: any;
-};
+}
 
 export const AddAssets = ({ selectedAssets, allAssets, isOpen, onClose, onCancel, onUpdate }: Props) => {
 	const form = useForm({ mode: "onChange" });

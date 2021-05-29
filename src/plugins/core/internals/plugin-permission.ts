@@ -3,11 +3,11 @@ import { Contracts } from "@arkecosystem/platform-sdk-profiles";
 import { PluginController } from "../plugin-controller";
 import { PluginServiceData } from "../plugin-service";
 
-type MiddlewareContext = {
+interface MiddlewareContext {
 	profile: Contracts.IProfile;
 	plugin: PluginController;
 	service?: PluginServiceData;
-};
+}
 
 type Rule<T = any> = (context: MiddlewareContext) => (result: T) => T | never;
 

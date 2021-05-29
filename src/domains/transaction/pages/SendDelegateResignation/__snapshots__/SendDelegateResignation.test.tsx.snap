@@ -496,13 +496,13 @@ exports[`SendDelegateResignation Delegate Resignation should change fee 1`] = `
                           </div>
                         </div>
                         <div
-                          class="inline-flex overflow-hidden items-center space-x-2"
+                          class="inline-flex items-center space-x-2"
                           data-testid="ButtonGroup"
                           role="radiogroup"
                         >
                           <button
                             aria-checked="false"
-                            class="ButtonGroup__ButtonGroupOptionStyled-sc-1u00raz-0 cQPjbG"
+                            class="ButtonGroup__ButtonGroupOptionStyled-sc-1u00raz-0 cqjOKw"
                             data-testid="ButtonGroupOption"
                             disabled=""
                             role="radio"
@@ -512,7 +512,7 @@ exports[`SendDelegateResignation Delegate Resignation should change fee 1`] = `
                           </button>
                           <button
                             aria-checked="false"
-                            class="ButtonGroup__ButtonGroupOptionStyled-sc-1u00raz-0 cQPjbG"
+                            class="ButtonGroup__ButtonGroupOptionStyled-sc-1u00raz-0 cqjOKw"
                             data-testid="ButtonGroupOption"
                             disabled=""
                             role="radio"
@@ -522,7 +522,7 @@ exports[`SendDelegateResignation Delegate Resignation should change fee 1`] = `
                           </button>
                           <button
                             aria-checked="false"
-                            class="ButtonGroup__ButtonGroupOptionStyled-sc-1u00raz-0 cQPjbG"
+                            class="ButtonGroup__ButtonGroupOptionStyled-sc-1u00raz-0 cqjOKw"
                             data-testid="ButtonGroupOption"
                             disabled=""
                             role="radio"
@@ -1067,13 +1067,13 @@ exports[`SendDelegateResignation Delegate Resignation should render 1st step 1`]
                           </div>
                         </div>
                         <div
-                          class="inline-flex overflow-hidden items-center space-x-2"
+                          class="inline-flex items-center space-x-2"
                           data-testid="ButtonGroup"
                           role="radiogroup"
                         >
                           <button
                             aria-checked="false"
-                            class="ButtonGroup__ButtonGroupOptionStyled-sc-1u00raz-0 cQPjbG"
+                            class="ButtonGroup__ButtonGroupOptionStyled-sc-1u00raz-0 cqjOKw"
                             data-testid="ButtonGroupOption"
                             disabled=""
                             role="radio"
@@ -1083,7 +1083,7 @@ exports[`SendDelegateResignation Delegate Resignation should render 1st step 1`]
                           </button>
                           <button
                             aria-checked="false"
-                            class="ButtonGroup__ButtonGroupOptionStyled-sc-1u00raz-0 cQPjbG"
+                            class="ButtonGroup__ButtonGroupOptionStyled-sc-1u00raz-0 cqjOKw"
                             data-testid="ButtonGroupOption"
                             disabled=""
                             role="radio"
@@ -1093,7 +1093,7 @@ exports[`SendDelegateResignation Delegate Resignation should render 1st step 1`]
                           </button>
                           <button
                             aria-checked="false"
-                            class="ButtonGroup__ButtonGroupOptionStyled-sc-1u00raz-0 cQPjbG"
+                            class="ButtonGroup__ButtonGroupOptionStyled-sc-1u00raz-0 cqjOKw"
                             data-testid="ButtonGroupOption"
                             disabled=""
                             role="radio"
@@ -3953,10 +3953,14 @@ exports[`SendDelegateResignation Delegate Resignation should successfully sign a
                                 <span
                                   class="flex text-theme-primary-300 dark:text-theme-secondary-600"
                                 >
-                                  <div
-                                    class="inline-block cursor-pointer"
-                                    data-testid="clipboard__wrapper"
+                                  <button
+                                    class="relative focus:outline-none group"
+                                    data-testid="clipboard-icon__wrapper"
+                                    type="button"
                                   >
+                                    <div
+                                      class="absolute inset-0 -m-1 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                                    />
                                     <div
                                       class="sc-bdfBwQ fPrsah"
                                       height="1em"
@@ -3966,7 +3970,7 @@ exports[`SendDelegateResignation Delegate Resignation should successfully sign a
                                         copy.svg
                                       </svg>
                                     </div>
-                                  </div>
+                                  </button>
                                 </span>
                               </div>
                             </div>
@@ -4574,10 +4578,14 @@ exports[`SendDelegateResignation Delegate Resignation should successfully sign a
                                 <span
                                   class="flex text-theme-primary-300 dark:text-theme-secondary-600"
                                 >
-                                  <div
-                                    class="inline-block cursor-pointer"
-                                    data-testid="clipboard__wrapper"
+                                  <button
+                                    class="relative focus:outline-none group"
+                                    data-testid="clipboard-icon__wrapper"
+                                    type="button"
                                   >
+                                    <div
+                                      class="absolute inset-0 -m-1 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                                    />
                                     <div
                                       class="sc-bdfBwQ fPrsah"
                                       height="1em"
@@ -4587,7 +4595,7 @@ exports[`SendDelegateResignation Delegate Resignation should successfully sign a
                                         copy.svg
                                       </svg>
                                     </div>
-                                  </div>
+                                  </button>
                                 </span>
                               </div>
                             </div>

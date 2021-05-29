@@ -275,10 +275,14 @@ exports[`MultiSignatureDetail should fail to broadcast transaction 1`] = `
                           <span
                             class="flex text-theme-primary-300 dark:text-theme-secondary-600"
                           >
-                            <div
-                              class="inline-block cursor-pointer"
-                              data-testid="clipboard__wrapper"
+                            <button
+                              class="relative focus:outline-none group"
+                              data-testid="clipboard-icon__wrapper"
+                              type="button"
                             >
+                              <div
+                                class="absolute inset-0 -m-1 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                              />
                               <div
                                 class="sc-bdfBwQ fPrsah"
                                 height="1em"
@@ -288,7 +292,7 @@ exports[`MultiSignatureDetail should fail to broadcast transaction 1`] = `
                                   copy.svg
                                 </svg>
                               </div>
-                            </div>
+                            </button>
                           </span>
                         </div>
                       </div>
@@ -704,10 +708,14 @@ exports[`MultiSignatureDetail should not show send button when waiting for confi
                           <span
                             class="flex text-theme-primary-300 dark:text-theme-secondary-600"
                           >
-                            <div
-                              class="inline-block cursor-pointer"
-                              data-testid="clipboard__wrapper"
+                            <button
+                              class="relative focus:outline-none group"
+                              data-testid="clipboard-icon__wrapper"
+                              type="button"
                             >
+                              <div
+                                class="absolute inset-0 -m-1 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                              />
                               <div
                                 class="sc-bdfBwQ fPrsah"
                                 height="1em"
@@ -717,7 +725,7 @@ exports[`MultiSignatureDetail should not show send button when waiting for confi
                                   copy.svg
                                 </svg>
                               </div>
-                            </div>
+                            </button>
                           </span>
                         </div>
                       </div>
@@ -1065,10 +1073,14 @@ exports[`MultiSignatureDetail should render summary step for ipfs 1`] = `
                           <span
                             class="flex text-theme-primary-300 dark:text-theme-secondary-600"
                           >
-                            <div
-                              class="inline-block cursor-pointer"
-                              data-testid="clipboard__wrapper"
+                            <button
+                              class="relative focus:outline-none group"
+                              data-testid="clipboard-icon__wrapper"
+                              type="button"
                             >
+                              <div
+                                class="absolute inset-0 -m-1 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                              />
                               <div
                                 class="sc-bdfBwQ fPrsah"
                                 height="1em"
@@ -1078,7 +1090,7 @@ exports[`MultiSignatureDetail should render summary step for ipfs 1`] = `
                                   copy.svg
                                 </svg>
                               </div>
-                            </div>
+                            </button>
                           </span>
                         </div>
                       </div>
@@ -1636,10 +1648,14 @@ exports[`MultiSignatureDetail should render summary step for multi payment 1`] =
                           <span
                             class="flex text-theme-primary-300 dark:text-theme-secondary-600"
                           >
-                            <div
-                              class="inline-block cursor-pointer"
-                              data-testid="clipboard__wrapper"
+                            <button
+                              class="relative focus:outline-none group"
+                              data-testid="clipboard-icon__wrapper"
+                              type="button"
                             >
+                              <div
+                                class="absolute inset-0 -m-1 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                              />
                               <div
                                 class="sc-bdfBwQ fPrsah"
                                 height="1em"
@@ -1649,7 +1665,7 @@ exports[`MultiSignatureDetail should render summary step for multi payment 1`] =
                                   copy.svg
                                 </svg>
                               </div>
-                            </div>
+                            </button>
                           </span>
                         </div>
                       </div>
@@ -1967,10 +1983,14 @@ exports[`MultiSignatureDetail should render summary step for multi signature 1`]
                           <span
                             class="flex text-theme-primary-300 dark:text-theme-secondary-600"
                           >
-                            <div
-                              class="inline-block cursor-pointer"
-                              data-testid="clipboard__wrapper"
+                            <button
+                              class="relative focus:outline-none group"
+                              data-testid="clipboard-icon__wrapper"
+                              type="button"
                             >
+                              <div
+                                class="absolute inset-0 -m-1 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                              />
                               <div
                                 class="sc-bdfBwQ fPrsah"
                                 height="1em"
@@ -1980,7 +2000,7 @@ exports[`MultiSignatureDetail should render summary step for multi signature 1`]
                                   copy.svg
                                 </svg>
                               </div>
-                            </div>
+                            </button>
                           </span>
                         </div>
                       </div>
@@ -2381,10 +2401,14 @@ exports[`MultiSignatureDetail should render summary step for transfer 1`] = `
                           <span
                             class="flex text-theme-primary-300 dark:text-theme-secondary-600"
                           >
-                            <div
-                              class="inline-block cursor-pointer"
-                              data-testid="clipboard__wrapper"
+                            <button
+                              class="relative focus:outline-none group"
+                              data-testid="clipboard-icon__wrapper"
+                              type="button"
                             >
+                              <div
+                                class="absolute inset-0 -m-1 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                              />
                               <div
                                 class="sc-bdfBwQ fPrsah"
                                 height="1em"
@@ -2394,7 +2418,7 @@ exports[`MultiSignatureDetail should render summary step for transfer 1`] = `
                                   copy.svg
                                 </svg>
                               </div>
-                            </div>
+                            </button>
                           </span>
                         </div>
                       </div>
@@ -2809,10 +2833,14 @@ exports[`MultiSignatureDetail should render summary step for unvote 1`] = `
                           <span
                             class="flex text-theme-primary-300 dark:text-theme-secondary-600"
                           >
-                            <div
-                              class="inline-block cursor-pointer"
-                              data-testid="clipboard__wrapper"
+                            <button
+                              class="relative focus:outline-none group"
+                              data-testid="clipboard-icon__wrapper"
+                              type="button"
                             >
+                              <div
+                                class="absolute inset-0 -m-1 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                              />
                               <div
                                 class="sc-bdfBwQ fPrsah"
                                 height="1em"
@@ -2822,7 +2850,7 @@ exports[`MultiSignatureDetail should render summary step for unvote 1`] = `
                                   copy.svg
                                 </svg>
                               </div>
-                            </div>
+                            </button>
                           </span>
                         </div>
                       </div>
@@ -3237,10 +3265,14 @@ exports[`MultiSignatureDetail should render summary step for vote 1`] = `
                           <span
                             class="flex text-theme-primary-300 dark:text-theme-secondary-600"
                           >
-                            <div
-                              class="inline-block cursor-pointer"
-                              data-testid="clipboard__wrapper"
+                            <button
+                              class="relative focus:outline-none group"
+                              data-testid="clipboard-icon__wrapper"
+                              type="button"
                             >
+                              <div
+                                class="absolute inset-0 -m-1 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                              />
                               <div
                                 class="sc-bdfBwQ fPrsah"
                                 height="1em"
@@ -3250,7 +3282,7 @@ exports[`MultiSignatureDetail should render summary step for vote 1`] = `
                                   copy.svg
                                 </svg>
                               </div>
-                            </div>
+                            </button>
                           </span>
                         </div>
                       </div>
@@ -3651,10 +3683,14 @@ exports[`MultiSignatureDetail should show paginator when able to sign 1`] = `
                           <span
                             class="flex text-theme-primary-300 dark:text-theme-secondary-600"
                           >
-                            <div
-                              class="inline-block cursor-pointer"
-                              data-testid="clipboard__wrapper"
+                            <button
+                              class="relative focus:outline-none group"
+                              data-testid="clipboard-icon__wrapper"
+                              type="button"
                             >
+                              <div
+                                class="absolute inset-0 -m-1 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                              />
                               <div
                                 class="sc-bdfBwQ fPrsah"
                                 height="1em"
@@ -3664,7 +3700,7 @@ exports[`MultiSignatureDetail should show paginator when able to sign 1`] = `
                                   copy.svg
                                 </svg>
                               </div>
-                            </div>
+                            </button>
                           </span>
                         </div>
                       </div>
@@ -4091,10 +4127,14 @@ exports[`MultiSignatureDetail should show send button when able to broadcast 1`]
                           <span
                             class="flex text-theme-primary-300 dark:text-theme-secondary-600"
                           >
-                            <div
-                              class="inline-block cursor-pointer"
-                              data-testid="clipboard__wrapper"
+                            <button
+                              class="relative focus:outline-none group"
+                              data-testid="clipboard-icon__wrapper"
+                              type="button"
                             >
+                              <div
+                                class="absolute inset-0 -m-1 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                              />
                               <div
                                 class="sc-bdfBwQ fPrsah"
                                 height="1em"
@@ -4104,7 +4144,7 @@ exports[`MultiSignatureDetail should show send button when able to broadcast 1`]
                                   copy.svg
                                 </svg>
                               </div>
-                            </div>
+                            </button>
                           </span>
                         </div>
                       </div>

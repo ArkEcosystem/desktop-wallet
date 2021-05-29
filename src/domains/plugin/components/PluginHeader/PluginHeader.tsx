@@ -9,7 +9,7 @@ import { useTranslation } from "react-i18next";
 import { PluginImage } from "../PluginImage";
 import { PluginSpecs } from "./components/PluginSpecs";
 
-type Props = {
+interface Props {
 	title?: string;
 	description?: string;
 	logo?: string;
@@ -33,7 +33,7 @@ type Props = {
 	onUpdate?: () => void;
 	updatingStats?: any;
 	isLoadingSize?: boolean;
-};
+}
 
 export const PluginHeader = ({
 	onDelete,

@@ -1,7 +1,7 @@
 import { Contracts } from "@arkecosystem/platform-sdk-profiles";
 import { RecipientListItem } from "domains/transaction/components/RecipientList/RecipientList.models";
 
-export type AddRecipientProps = {
+export interface AddRecipientProps {
 	assetSymbol: string;
 	singleLabel?: string;
 	multipleLabel?: string;
@@ -13,9 +13,9 @@ export type AddRecipientProps = {
 	disableMultiPaymentOption?: boolean;
 	withDeeplink?: boolean;
 	onChange?: (recipients: RecipientListItem[]) => void;
-};
+}
 
-export type ToggleButtonProps = {
+export interface ToggleButtonProps {
 	labelText?: string;
 	helpText?: string;
 	isSingle?: boolean;
@@ -23,4 +23,4 @@ export type ToggleButtonProps = {
 	multipleLabel?: string;
 	disableMultiple?: boolean;
 	onChange?: (isSingle: boolean) => void;
-};
+}

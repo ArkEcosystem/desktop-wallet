@@ -168,7 +168,7 @@ describe("WalletDetails", () => {
 	});
 
 	it("should not render wallet vote when the network does not support votes", async () => {
-		const networkFeatureSpy = jest.spyOn(wallet.network(), "allows");
+		const networkFeatureSpy = jest.spyOn(wallet.network(), "allowsVoting");
 
 		when(networkFeatureSpy).calledWith(Coins.FeatureFlag.TransactionVote).mockReturnValue(false);
 

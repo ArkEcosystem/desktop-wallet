@@ -14,7 +14,7 @@ import React, { useMemo, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { Size } from "types";
 
-type SearchWalletListItemProps = {
+interface SearchWalletListItemProps {
 	address: string;
 	balance: BigNumber;
 	coinId: string;
@@ -27,7 +27,7 @@ type SearchWalletListItemProps = {
 	showFiatValue?: boolean;
 	showNetwork?: boolean;
 	onAction: any;
-};
+}
 
 const SearchWalletListItem = ({
 	address,
@@ -78,7 +78,7 @@ const SearchWalletListItem = ({
 	);
 };
 
-type SearchWalletProps = {
+interface SearchWalletProps {
 	isOpen: boolean;
 	title: string;
 	description?: string;
@@ -90,7 +90,7 @@ type SearchWalletProps = {
 	onClose?: any;
 	onSelectWallet?: any;
 	profile?: Contracts.IProfile;
-};
+}
 
 export const SearchWallet = ({
 	isOpen,

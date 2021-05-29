@@ -9,10 +9,10 @@ import { useTranslation } from "react-i18next";
 
 import { SelectOptionsList } from "./styles";
 
-type Option = {
+interface Option {
 	label: string;
 	value: string | number;
-};
+}
 
 type SelectProps = {
 	addons?: any;

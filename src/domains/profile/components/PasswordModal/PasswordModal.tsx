@@ -6,14 +6,14 @@ import React, { useEffect } from "react";
 import { useForm } from "react-hook-form";
 import { useTranslation } from "react-i18next";
 
-type PasswordModalProps = {
+interface PasswordModalProps {
 	title: string;
 	description: string;
 	error?: string;
 	isOpen: boolean;
 	onClose?: any;
 	onSubmit?: (password: string) => void;
-};
+}
 
 export const PasswordModal = ({ isOpen, title, description, onClose, onSubmit, error }: PasswordModalProps) => {
 	const { t } = useTranslation();

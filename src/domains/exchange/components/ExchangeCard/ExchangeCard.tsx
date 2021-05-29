@@ -3,12 +3,12 @@ import { BlankPluginCard, PluginCard } from "domains/plugin/components/PluginCar
 import React from "react";
 import { useTranslation } from "react-i18next";
 
-type ExchangeCardProps = {
+interface ExchangeCardProps {
 	actions?: DropdownOption[];
 	exchange: any;
 	onClick: any;
 	onSelect: any;
-};
+}
 
 export const ExchangeCard = ({ exchange, ...props }: ExchangeCardProps) => {
 	const { t } = useTranslation();

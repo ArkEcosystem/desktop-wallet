@@ -1,10 +1,10 @@
 import { Contracts, Environment } from "@arkecosystem/platform-sdk-profiles";
 import { ReadableFile } from "app/hooks/use-files";
 
-type ImportFileProps = {
+interface ImportFileProps {
 	file?: ReadableFile;
 	password?: string;
-};
+}
 
 export const useProfileImport = ({ env }: { env: Environment }) => {
 	const importProfileFromDwe = async (profileData: string, password?: string) => {
