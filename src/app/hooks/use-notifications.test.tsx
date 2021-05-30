@@ -8,10 +8,17 @@ import { useNotifications } from "./use-notifications";
 const NotificationsTransactionsFixture = require("tests/fixtures/coins/ark/devnet/notification-transactions.json");
 const TransactionsFixture = require("tests/fixtures/coins/ark/devnet/transactions.json");
 
+import { Contracts } from "@arkecosystem/platform-sdk-profiles";
 import { EnvironmentProvider } from "app/contexts";
+
+let profile: Contracts.IProfile;
+
+const wrapper = ({ children }: any) => <EnvironmentProvider env={env}> {children} </EnvironmentProvider>;
 
 describe("Notifications Hook", () => {
 	beforeAll(() => {
+		profile = env.profiles().findById(getDefaultProfileId());
+
 		nock("https://dwallets.ark.io")
 			.get("/api/transactions")
 			.query(true)
@@ -23,25 +30,34 @@ describe("Notifications Hook", () => {
 	});
 
 	it("should create and save notifications from received transactions", async () => {
-		const wrapper = ({ children }: any) => <EnvironmentProvider env={env}> {children} </EnvironmentProvider>;
-
 		const { result } = renderHook(() => useNotifications(), { wrapper });
-		const profile = env.profiles().findById(getDefaultProfileId());
-
-		await env.profiles().restore(profile);
-		await profile.sync();
 
 		const { notifications } = result.current;
+
+		const initialNotifications = profile.notifications().values();
 
 		const transactionNotifications = await notifications.syncReceivedTransactions();
 		expect(transactionNotifications.length).toEqual(2);
 
-		const savedNotification = profile.notifications().get(transactionNotifications[0].id);
-		expect(savedNotification).toBeTruthy();
+		// shouldn't have new notifications previously
+		expect(
+			initialNotifications.some((transaction) => transaction.id === transactionNotifications[0].id),
+		).toBeFalsy();
+
+		// should create new notifications
+		expect(profile.notifications().has(transactionNotifications[0].id)).toBeTruthy();
+	});
+
+	it("should not create transaction notifications if already created", async () => {
+		const { result } = renderHook(() => useNotifications(), { wrapper });
+
+		const { notifications } = result.current;
+
+		const transactionNotifications = await notifications.syncReceivedTransactions();
+		expect(transactionNotifications.length).toEqual(0);
 	});
 
 	it("should sort transaction notifications in descending order", () => {
-		const wrapper = ({ children }: any) => <EnvironmentProvider env={env}> {children} </EnvironmentProvider>;
 		const { result } = renderHook(() => useNotifications(), { wrapper });
 
 		const unsortedTransactionNotifications = [
@@ -126,7 +142,6 @@ describe("Notifications Hook", () => {
 	});
 
 	it("should push wallet update notification for all profiles", () => {
-		const wrapper = ({ children }: any) => <EnvironmentProvider env={env}> {children} </EnvironmentProvider>;
 		const { result } = renderHook(() => useNotifications(), { wrapper });
 
 		const { notifications } = result.current;
@@ -146,40 +161,37 @@ describe("Notifications Hook", () => {
 	});
 
 	it("should not push wallet update notification if exists", () => {
-		const wrapper = ({ children }: any) => <EnvironmentProvider env={env}> {children} </EnvironmentProvider>;
 		const { result } = renderHook(() => useNotifications(), { wrapper });
 
 		const { notifications } = result.current;
 
-		const initialNotificationsCount = env.profiles().values()[0].notifications().count();
+		const initialNotificationsCount = profile.notifications().count();
 		notifications.notifyWalletUpdate({ version: "2.5.6" });
-		const notificationsCount = env.profiles().values()[0].notifications().count();
+		const notificationsCount = profile.notifications().count();
 		expect(notificationsCount).toEqual(initialNotificationsCount);
 	});
 
 	it("should delete existing wallet update notification", () => {
-		const wrapper = ({ children }: any) => <EnvironmentProvider env={env}> {children} </EnvironmentProvider>;
 		const { result } = renderHook(() => useNotifications(), { wrapper });
 
 		const { notifications } = result.current;
 
-		const initialNotificationsCount = env.profiles().values()[0].notifications().count();
+		const initialNotificationsCount = profile.notifications().count();
 		notifications.notifyWalletUpdate({ version: "2.5.6" });
 		notifications.deleteNotificationsByVersion({ version: "2.5.6" });
 
-		const notificationsCount = env.profiles().values()[0].notifications().count();
+		const notificationsCount = profile.notifications().count();
 		expect(notificationsCount).toBeLessThan(initialNotificationsCount);
 	});
 
 	it("should do nothing if notification to be deleted is not found", () => {
-		const wrapper = ({ children }: any) => <EnvironmentProvider env={env}> {children} </EnvironmentProvider>;
 		const { result } = renderHook(() => useNotifications(), { wrapper });
 
 		const { notifications } = result.current;
 
-		const initialNotificationsCount = env.profiles().values()[0].notifications().count();
+		const initialNotificationsCount = profile.notifications().count();
 		notifications.deleteNotificationsByVersion({ version: "2.5.8" });
-		const notificationsCount = env.profiles().values()[0].notifications().count();
+		const notificationsCount = profile.notifications().count();
 		expect(notificationsCount).toEqual(initialNotificationsCount);
 	});
 });
