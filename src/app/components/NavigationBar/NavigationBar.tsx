@@ -284,6 +284,10 @@ export const NavigationBar = ({
 											return openExternal(action.mountPath());
 										}
 
+										if (action?.value === "sign-out") {
+											profile?.status().reset();
+										}
+
 										return history.push(action.mountPath(profile?.id()));
 									}}
 								/>
