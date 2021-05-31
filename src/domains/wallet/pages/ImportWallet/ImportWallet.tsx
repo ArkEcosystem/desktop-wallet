@@ -46,7 +46,7 @@ export const ImportWallet = () => {
 	const { importWalletByType } = useWalletImport({ profile: activeProfile });
 	const { syncAll } = useWalletSync({ profile: activeProfile, env });
 
-	const form = useForm<any>({ mode: "onChange", defaultValues: { type: "mnemonic" } });
+	const form = useForm<any>({ mode: "onChange" });
 	const { getValues, formState, register, watch } = form;
 	const { isSubmitting, isValid } = formState;
 	const { value, encryptionPassword, confirmEncryptionPassword } = watch();

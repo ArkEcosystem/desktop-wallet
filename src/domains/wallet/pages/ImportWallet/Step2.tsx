@@ -194,7 +194,7 @@ export const SecondStep = ({ profile }: { profile: Contracts.IProfile }) => {
 	const [defaultNetwork] = useState(() => watch("network"));
 	const network: Coins.Network = getValues("network") || defaultNetwork;
 
-	const options = useMemo(
+	const allOptions = useMemo(
 		() => [
 			{ label: t("COMMON.MNEMONIC"), value: "mnemonic" },
 			{ label: t("COMMON.ADDRESS"), value: "address" },
@@ -205,7 +205,13 @@ export const SecondStep = ({ profile }: { profile: Contracts.IProfile }) => {
 		[t],
 	);
 
-	const type = watch("type", "mnemonic");
+	const options = useMemo(() => {
+		const coinOptions = Object.keys(network.importMethods());
+
+		return allOptions.filter((option) => coinOptions.includes(option.value));
+	}, [network, allOptions]);
+
+	const type = watch("type", options[0].value);
 
 	return (
 		<section data-testid="ImportWallet__second-step" className="space-y-8">
