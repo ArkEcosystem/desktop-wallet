@@ -270,6 +270,7 @@ export const useProfileSynchronizer = ({ onProfileRestoreError }: ProfileSynchro
 		onProfileRestoreError,
 		monitorIdleTime,
 		resetAutomatiSignout,
+		resetRestoredStatus,
 		history,
 		setScreenshotProtection,
 		stop,
