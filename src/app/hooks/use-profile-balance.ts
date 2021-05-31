@@ -1,34 +1,26 @@
 import { Contracts } from "@arkecosystem/platform-sdk-profiles";
 import { BigNumber } from "@arkecosystem/platform-sdk-support";
-import { useCallback, useEffect, useState } from "react";
+import { useMemo } from "react";
 
-interface BalanceProps {
+interface UseProfileBalanceInput {
 	profile?: Contracts.IProfile;
 	isLoading?: boolean;
 }
 
-export const useProfileBalance = ({ profile, isLoading = false }: BalanceProps) => {
-	const [convertedBalance, setConvertedBalance] = useState(BigNumber.ZERO);
+interface UseProfileBalanceOutput {
+	convertedBalance: BigNumber;
+}
 
-	const updateBalance = useCallback(() => {
-		try {
-			const balance = profile?.convertedBalance() as BigNumber;
-			if (balance) {
-				setConvertedBalance(balance);
-			}
-		} catch {
-			// Ignore error from converted balance
-		}
-	}, [profile]);
+export const useProfileBalance = ({ profile, isLoading = false }: UseProfileBalanceInput): UseProfileBalanceOutput => {
+	let convertedBalance: BigNumber = BigNumber.ZERO;
 
-	useEffect(() => {
-		if (isLoading) {
-			return;
-		}
-		updateBalance();
-	}, [profile, isLoading, updateBalance]);
+	try {
+		convertedBalance = profile?.convertedBalance() ?? BigNumber.ZERO;
+	} catch {
+		// Ignore error from converted balance
+	}
 
 	return {
-		convertedBalance,
+		convertedBalance: useMemo(() => (isLoading ? BigNumber.ZERO : convertedBalance), [convertedBalance, isLoading]),
 	};
 };

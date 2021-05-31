@@ -308,6 +308,7 @@ export const General = ({ formConfig, onSuccess }: SettingsProps) => {
 							<FormField className="mt-8" name="currency">
 								<FormLabel label={t("SETTINGS.GENERAL.PERSONAL.CURRENCY")} />
 								<Select
+									data-testid="General-settings__input-currency"
 									id="select-currency"
 									placeholder={t("COMMON.SELECT_OPTION", {
 										option: t("SETTINGS.GENERAL.PERSONAL.CURRENCY"),
