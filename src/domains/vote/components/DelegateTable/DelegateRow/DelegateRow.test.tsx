@@ -15,9 +15,10 @@ describe("DelegateRow", () => {
 		delegate = new ReadOnlyWallet({
 			address: data[0].address,
 			explorerLink: "",
+			isDelegate: true,
+			isResignedDelegate: false,
 			publicKey: data[0].publicKey,
 			username: data[0].username,
-			rank: data[0].rank,
 		});
 	});
 
@@ -73,17 +74,19 @@ describe("DelegateRow", () => {
 		const secondDelegate = new ReadOnlyWallet({
 			address: data[1].address,
 			explorerLink: "",
+			isDelegate: true,
+			isResignedDelegate: false,
 			publicKey: data[1].publicKey,
 			username: data[1].username,
-			rank: data[1].rank,
 		});
 
 		const thirdDelegate = new ReadOnlyWallet({
 			address: data[2].address,
 			explorerLink: "",
+			isDelegate: true,
+			isResignedDelegate: false,
 			publicKey: data[2].publicKey,
 			username: data[2].username,
-			rank: data[2].rank,
 		});
 
 		const { container, asFragment, getByTestId } = render(

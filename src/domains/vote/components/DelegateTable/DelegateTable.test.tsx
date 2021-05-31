@@ -23,9 +23,10 @@ describe("DelegateTable", () => {
 				new ReadOnlyWallet({
 					address: data[index].address,
 					explorerLink: "",
+					isDelegate: true,
+					isResignedDelegate: false,
 					publicKey: data[index].publicKey,
 					username: data[index].username,
-					rank: data[index].rank,
 				}),
 		);
 
@@ -33,9 +34,10 @@ describe("DelegateTable", () => {
 			new ReadOnlyWallet({
 				address: data[0].address,
 				explorerLink: "",
+				isDelegate: true,
+				isResignedDelegate: false,
 				publicKey: data[0].publicKey,
 				username: data[0].username,
-				rank: data[0].rank,
 			}),
 		];
 	});

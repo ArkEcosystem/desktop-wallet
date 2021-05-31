@@ -8,20 +8,9 @@ exports[`DelegateRow should emit action on select button 1`] = `
         class="TableRow__TableRowStyled-sc-1br46dw-0 fzBhIQ group"
         data-testid="TableRow"
       >
-        <td
-          class="w-20"
-        >
-          <div
-            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 DpDcR justify-start font-bold text-theme-secondary-text "
-          >
-            <span>
-              #
-            </span>
-          </div>
-        </td>
         <td>
           <div
-            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT space-x-4 font-bold "
+            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 DpDcR space-x-4 font-bold "
           >
             <div
               class="Avatar__AvatarWrapper-sc-1vsy2s2-0 ktCSBk flex-shrink-0"
@@ -40,6 +29,35 @@ exports[`DelegateRow should emit action on select button 1`] = `
             <span>
               arkx
             </span>
+          </div>
+        </td>
+        <td
+          class="w-24"
+        >
+          <div
+            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT justify-center "
+          >
+            <a
+              class="Link__AnchorStyled-sc-1q7sbxr-0 jXgXXh group"
+              data-testid="DelegateRow__address"
+              href="#"
+              rel="noopener noreferrer"
+              to=""
+            >
+              <span
+                class="break-all border-b border-transparent duration-200 group-hover:border-current"
+              >
+                <div
+                  class="sc-bdfBwQ fPrsah"
+                  height="1em"
+                  width="1em"
+                >
+                  <svg>
+                    id.svg
+                  </svg>
+                </div>
+              </span>
+            </a>
           </div>
         </td>
         <td
@@ -76,20 +94,9 @@ exports[`DelegateRow should render 1`] = `
         class="TableRow__TableRowStyled-sc-1br46dw-0 fzBhIQ group"
         data-testid="TableRow"
       >
-        <td
-          class="w-20"
-        >
-          <div
-            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 DpDcR justify-start font-bold text-theme-secondary-text "
-          >
-            <span>
-              #
-            </span>
-          </div>
-        </td>
         <td>
           <div
-            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT space-x-4 font-bold "
+            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 DpDcR space-x-4 font-bold "
           >
             <div
               class="Avatar__AvatarWrapper-sc-1vsy2s2-0 ktCSBk flex-shrink-0"
@@ -108,6 +115,35 @@ exports[`DelegateRow should render 1`] = `
             <span>
               arkx
             </span>
+          </div>
+        </td>
+        <td
+          class="w-24"
+        >
+          <div
+            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT justify-center "
+          >
+            <a
+              class="Link__AnchorStyled-sc-1q7sbxr-0 jXgXXh group"
+              data-testid="DelegateRow__address"
+              href="#"
+              rel="noopener noreferrer"
+              to=""
+            >
+              <span
+                class="break-all border-b border-transparent duration-200 group-hover:border-current"
+              >
+                <div
+                  class="sc-bdfBwQ fPrsah"
+                  height="1em"
+                  width="1em"
+                >
+                  <svg>
+                    id.svg
+                  </svg>
+                </div>
+              </span>
+            </a>
           </div>
         </td>
         <td
@@ -144,20 +180,9 @@ exports[`DelegateRow should render the selected delegate 1`] = `
         class="TableRow__TableRowStyled-sc-1br46dw-0 fzBhIQ group"
         data-testid="TableRow"
       >
-        <td
-          class="w-20"
-        >
-          <div
-            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 DpDcR justify-start font-bold text-theme-secondary-text bg-theme-success-50 dark:bg-theme-success-900"
-          >
-            <span>
-              #
-            </span>
-          </div>
-        </td>
         <td>
           <div
-            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT space-x-4 font-bold bg-theme-success-50 dark:bg-theme-success-900"
+            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 DpDcR space-x-4 font-bold bg-theme-success-50 dark:bg-theme-success-900"
           >
             <div
               class="Avatar__AvatarWrapper-sc-1vsy2s2-0 ktCSBk flex-shrink-0"
@@ -176,6 +201,35 @@ exports[`DelegateRow should render the selected delegate 1`] = `
             <span>
               arkx
             </span>
+          </div>
+        </td>
+        <td
+          class="w-24"
+        >
+          <div
+            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT justify-center bg-theme-success-50 dark:bg-theme-success-900"
+          >
+            <a
+              class="Link__AnchorStyled-sc-1q7sbxr-0 jXgXXh group"
+              data-testid="DelegateRow__address"
+              href="#"
+              rel="noopener noreferrer"
+              to=""
+            >
+              <span
+                class="break-all border-b border-transparent duration-200 group-hover:border-current"
+              >
+                <div
+                  class="sc-bdfBwQ fPrsah"
+                  height="1em"
+                  width="1em"
+                >
+                  <svg>
+                    id.svg
+                  </svg>
+                </div>
+              </span>
+            </a>
           </div>
         </td>
         <td
@@ -212,20 +266,9 @@ exports[`DelegateRow should render the selected vote 1`] = `
         class="TableRow__TableRowStyled-sc-1br46dw-0 fzBhIQ group"
         data-testid="TableRow"
       >
-        <td
-          class="w-20"
-        >
-          <div
-            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 DpDcR justify-start font-bold text-theme-secondary-text bg-theme-primary-50 dark:bg-theme-primary-900"
-          >
-            <span>
-              #
-            </span>
-          </div>
-        </td>
         <td>
           <div
-            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT space-x-4 font-bold bg-theme-primary-50 dark:bg-theme-primary-900"
+            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 DpDcR space-x-4 font-bold bg-theme-primary-50 dark:bg-theme-primary-900"
           >
             <div
               class="Avatar__AvatarWrapper-sc-1vsy2s2-0 ktCSBk flex-shrink-0"
@@ -244,6 +287,35 @@ exports[`DelegateRow should render the selected vote 1`] = `
             <span>
               arkx
             </span>
+          </div>
+        </td>
+        <td
+          class="w-24"
+        >
+          <div
+            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT justify-center bg-theme-primary-50 dark:bg-theme-primary-900"
+          >
+            <a
+              class="Link__AnchorStyled-sc-1q7sbxr-0 jXgXXh group"
+              data-testid="DelegateRow__address"
+              href="#"
+              rel="noopener noreferrer"
+              to=""
+            >
+              <span
+                class="break-all border-b border-transparent duration-200 group-hover:border-current"
+              >
+                <div
+                  class="sc-bdfBwQ fPrsah"
+                  height="1em"
+                  width="1em"
+                >
+                  <svg>
+                    id.svg
+                  </svg>
+                </div>
+              </span>
+            </a>
           </div>
         </td>
         <td
@@ -271,20 +343,9 @@ exports[`DelegateRow should render the selected vote 1`] = `
         class="TableRow__TableRowStyled-sc-1br46dw-0 fzBhIQ group"
         data-testid="TableRow"
       >
-        <td
-          class="w-20"
-        >
-          <div
-            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 DpDcR justify-start font-bold text-theme-secondary-text "
-          >
-            <span>
-              #2
-            </span>
-          </div>
-        </td>
         <td>
           <div
-            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT space-x-4 font-bold "
+            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 DpDcR space-x-4 font-bold "
           >
             <div
               class="Avatar__AvatarWrapper-sc-1vsy2s2-0 ktCSBk flex-shrink-0"
@@ -303,6 +364,35 @@ exports[`DelegateRow should render the selected vote 1`] = `
             <span>
               genesis_42
             </span>
+          </div>
+        </td>
+        <td
+          class="w-24"
+        >
+          <div
+            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT justify-center "
+          >
+            <a
+              class="Link__AnchorStyled-sc-1q7sbxr-0 jXgXXh group"
+              data-testid="DelegateRow__address"
+              href="#"
+              rel="noopener noreferrer"
+              to=""
+            >
+              <span
+                class="break-all border-b border-transparent duration-200 group-hover:border-current"
+              >
+                <div
+                  class="sc-bdfBwQ fPrsah"
+                  height="1em"
+                  width="1em"
+                >
+                  <svg>
+                    id.svg
+                  </svg>
+                </div>
+              </span>
+            </a>
           </div>
         </td>
         <td
@@ -330,20 +420,9 @@ exports[`DelegateRow should render the selected vote 1`] = `
         class="TableRow__TableRowStyled-sc-1br46dw-0 fzBhIQ group"
         data-testid="TableRow"
       >
-        <td
-          class="w-20"
-        >
-          <div
-            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 DpDcR justify-start font-bold text-theme-secondary-text "
-          >
-            <span>
-              #3
-            </span>
-          </div>
-        </td>
         <td>
           <div
-            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT space-x-4 font-bold "
+            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 DpDcR space-x-4 font-bold "
           >
             <div
               class="Avatar__AvatarWrapper-sc-1vsy2s2-0 ktCSBk flex-shrink-0"
@@ -362,6 +441,35 @@ exports[`DelegateRow should render the selected vote 1`] = `
             <span>
               genesis_17
             </span>
+          </div>
+        </td>
+        <td
+          class="w-24"
+        >
+          <div
+            class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT justify-center "
+          >
+            <a
+              class="Link__AnchorStyled-sc-1q7sbxr-0 jXgXXh group"
+              data-testid="DelegateRow__address"
+              href="#"
+              rel="noopener noreferrer"
+              to=""
+            >
+              <span
+                class="break-all border-b border-transparent duration-200 group-hover:border-current"
+              >
+                <div
+                  class="sc-bdfBwQ fPrsah"
+                  height="1em"
+                  width="1em"
+                >
+                  <svg>
+                    id.svg
+                  </svg>
+                </div>
+              </span>
+            </a>
           </div>
         </td>
         <td
