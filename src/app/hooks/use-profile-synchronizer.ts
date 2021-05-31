@@ -231,7 +231,8 @@ export const useProfileSynchronizer = ({ onProfileRestoreError }: ProfileSynchro
 				await profile.sync();
 				await persist();
 
-				await runAll();
+				// for better performance no need to await
+				runAll();
 
 				setStatus("synced");
 			}
