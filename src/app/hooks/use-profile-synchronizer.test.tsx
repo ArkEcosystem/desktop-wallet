@@ -410,6 +410,7 @@ describe("useProfileRestore", () => {
 		process.env.TEST_PROFILES_RESTORE_STATUS = undefined;
 		process.env.REACT_APP_IS_E2E = undefined;
 		const profile = env.profiles().findById(getDefaultProfileId());
+		profile.status().reset();
 		profile.wallets().flush();
 
 		const mockProfileFromUrl = jest.spyOn(profileUtilsHook, "useProfileUtils").mockImplementation(() => ({
