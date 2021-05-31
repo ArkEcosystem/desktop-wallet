@@ -123,10 +123,12 @@ export const Input = React.forwardRef<InputElement, InputProps>(
 			const suggestionWidth = suggestionRef?.current?.clientWidth || 0;
 			const parentWidth = suggestionRef?.current?.parentElement?.clientWidth || 0;
 
+			/* istanbul ignore next */
 			if (!suggestionWidth || suggestionWidth < parentWidth) {
 				return false;
 			}
 
+			/* istanbul ignore next */
 			return (hiddenRef?.current?.clientWidth || 0) >= suggestionWidth;
 		};
 
