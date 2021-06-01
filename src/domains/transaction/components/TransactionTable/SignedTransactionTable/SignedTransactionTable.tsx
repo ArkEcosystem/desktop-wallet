@@ -148,8 +148,7 @@ const Row = ({
 
 			<TableCell innerClassName="text-theme-secondary-text">
 				<span data-testid="TransactionRow__timestamp">
-					{/* TODO */}
-					{DateTime.fromUnix(1596213281).format("DD MMM YYYY HH:mm:ss")}
+					{transaction.timestamp().format("DD MMM YYYY HH:mm:ss")}
 				</span>
 			</TableCell>
 
