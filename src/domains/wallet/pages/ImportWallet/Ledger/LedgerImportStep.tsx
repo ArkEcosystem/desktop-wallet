@@ -93,12 +93,7 @@ const MultipleImport = ({
 								<div className="flex items-center space-x-3">
 									<Avatar size="lg" address={wallet.address} />
 									<div>
-										<Address
-											walletName={walletName}
-											address={wallet.address}
-											maxNameChars={8}
-											maxChars={walletName ? 22 : 0}
-										/>
+										<Address walletName={walletName} address={wallet.address} maxNameChars={8} />
 										<p className="mt-1 text-sm font-medium text-theme-secondary-500">
 											<Amount value={wallet.balance!} ticker={network.ticker()} />
 										</p>
@@ -145,7 +140,7 @@ const SingleImport = ({
 				borderPosition="bottom"
 				paddingPosition="bottom"
 			>
-				<Address address={wallet.address} maxChars={0} />
+				<Address address={wallet.address} />
 			</TransactionDetail>
 
 			<TransactionDetail label={t("COMMON.BALANCE")} borderPosition="bottom" paddingPosition="bottom">

@@ -67,7 +67,7 @@ export const SelectAddress = React.forwardRef<HTMLInputElement, SelectAddressPro
 					disabled={disabled}
 				>
 					<span className="absolute inset-0 flex items-center border border-transparent px-14 w-full">
-						<Address walletName={alias} maxChars={30} address={selectedAddress} />
+						<Address walletName={alias} address={selectedAddress} />
 					</span>
 
 					<Input
