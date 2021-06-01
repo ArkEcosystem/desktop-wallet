@@ -65,6 +65,11 @@ exports[`Import Profile - Profile Form Step should fail password confirmation 1`
                       />
                     </label>
                     <div
+                      class="fixed invisible w-auto whitespace-nowrap"
+                    >
+                      …
+                    </div>
+                    <div
                       class="Input__InputWrapperStyled-wu99qs-0 jYUFQr"
                     >
                       <div
@@ -74,6 +79,7 @@ exports[`Import Profile - Profile Form Step should fail password confirmation 1`
                           class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
                           data-testid="Input"
                           name="name"
+                          value=""
                         />
                       </div>
                     </div>
@@ -143,6 +149,11 @@ exports[`Import Profile - Profile Form Step should fail password confirmation 1`
                   </span>
                 </label>
                 <div
+                  class="fixed invisible w-auto whitespace-nowrap"
+                >
+                  …
+                </div>
+                <div
                   class="Input__InputWrapperStyled-wu99qs-0 jXtMoQ"
                 >
                   <div
@@ -154,6 +165,7 @@ exports[`Import Profile - Profile Form Step should fail password confirmation 1`
                       data-testid="InputPassword"
                       name="password"
                       type="password"
+                      value=""
                     />
                   </div>
                   <div
@@ -213,6 +225,11 @@ exports[`Import Profile - Profile Form Step should fail password confirmation 1`
                   />
                 </label>
                 <div
+                  class="fixed invisible w-auto whitespace-nowrap"
+                >
+                  …
+                </div>
+                <div
                   class="Input__InputWrapperStyled-wu99qs-0 jXtMoQ"
                 >
                   <div
@@ -224,6 +241,7 @@ exports[`Import Profile - Profile Form Step should fail password confirmation 1`
                       data-testid="InputPassword"
                       name="confirmPassword"
                       type="password"
+                      value=""
                     />
                   </div>
                   <div
@@ -286,6 +304,11 @@ exports[`Import Profile - Profile Form Step should fail password confirmation 1`
                   class="relative w-full"
                 >
                   <div
+                    class="fixed invisible w-auto whitespace-nowrap"
+                  >
+                    BTC…
+                  </div>
+                  <div
                     class="Input__InputWrapperStyled-wu99qs-0 jYUFQr sr-only"
                   >
                     <div
@@ -315,6 +338,11 @@ exports[`Import Profile - Profile Form Step should fail password confirmation 1`
                         id="downshift-49-label"
                       />
                       <div
+                        class="fixed invisible w-auto whitespace-nowrap"
+                      >
+                        BTC (Ƀ)…
+                      </div>
+                      <div
                         class="Input__InputWrapperStyled-wu99qs-0 jYUFQr"
                       >
                         <div
@@ -334,10 +362,14 @@ exports[`Import Profile - Profile Form Step should fail password confirmation 1`
                             value="BTC (Ƀ)"
                           />
                           <span
-                            class="absolute inset-y-0 flex items-center font-normal opacity-50 pointer-events-none cursor-default"
+                            class="absolute inset-y-0 flex items-center font-normal opacity-50 pointer-events-none w-full cursor-default"
                             data-testid="Input__suggestion"
                           >
-                            BTC (Ƀ)
+                            <span
+                              class="truncate"
+                            >
+                              BTC (Ƀ)
+                            </span>
                           </span>
                         </div>
                         <div
@@ -772,6 +804,11 @@ exports[`Import Profile - Profile Form Step should render profile form 1`] = `
                       />
                     </label>
                     <div
+                      class="fixed invisible w-auto whitespace-nowrap"
+                    >
+                      …
+                    </div>
+                    <div
                       class="Input__InputWrapperStyled-wu99qs-0 jYUFQr"
                     >
                       <div
@@ -781,6 +818,7 @@ exports[`Import Profile - Profile Form Step should render profile form 1`] = `
                           class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
                           data-testid="Input"
                           name="name"
+                          value=""
                         />
                       </div>
                     </div>
@@ -850,6 +888,11 @@ exports[`Import Profile - Profile Form Step should render profile form 1`] = `
                   </span>
                 </label>
                 <div
+                  class="fixed invisible w-auto whitespace-nowrap"
+                >
+                  …
+                </div>
+                <div
                   class="Input__InputWrapperStyled-wu99qs-0 jYUFQr"
                 >
                   <div
@@ -860,6 +903,7 @@ exports[`Import Profile - Profile Form Step should render profile form 1`] = `
                       data-testid="InputPassword"
                       name="password"
                       type="password"
+                      value=""
                     />
                   </div>
                   <div
@@ -907,6 +951,11 @@ exports[`Import Profile - Profile Form Step should render profile form 1`] = `
                   </span>
                 </label>
                 <div
+                  class="fixed invisible w-auto whitespace-nowrap"
+                >
+                  …
+                </div>
+                <div
                   class="Input__InputWrapperStyled-wu99qs-0 jYUFQr"
                 >
                   <div
@@ -917,6 +966,7 @@ exports[`Import Profile - Profile Form Step should render profile form 1`] = `
                       data-testid="InputPassword"
                       name="confirmPassword"
                       type="password"
+                      value=""
                     />
                   </div>
                   <div
@@ -965,6 +1015,12 @@ exports[`Import Profile - Profile Form Step should render profile form 1`] = `
                   class="relative w-full"
                 >
                   <div
+                    class="fixed invisible w-auto whitespace-nowrap"
+                  >
+                    BTC
+                    …
+                  </div>
+                  <div
                     class="Input__InputWrapperStyled-wu99qs-0 jYUFQr sr-only"
                   >
                     <div
@@ -994,6 +1050,12 @@ exports[`Import Profile - Profile Form Step should render profile form 1`] = `
                         id="downshift-0-label"
                       />
                       <div
+                        class="fixed invisible w-auto whitespace-nowrap"
+                      >
+                        BTC (Ƀ)
+                        …
+                      </div>
+                      <div
                         class="Input__InputWrapperStyled-wu99qs-0 jYUFQr"
                       >
                         <div
@@ -1012,10 +1074,14 @@ exports[`Import Profile - Profile Form Step should render profile form 1`] = `
                             value="BTC (Ƀ)"
                           />
                           <span
-                            class="absolute inset-y-0 flex items-center font-normal opacity-50 pointer-events-none cursor-default"
+                            class="absolute inset-y-0 flex items-center font-normal opacity-50 pointer-events-none w-full cursor-default"
                             data-testid="Input__suggestion"
                           >
-                            BTC (Ƀ)
+                            <span
+                              class="truncate"
+                            >
+                              BTC (Ƀ)
+                            </span>
                           </span>
                         </div>
                         <div
@@ -1215,6 +1281,11 @@ exports[`Import Profile - Profile Form Step should render profile form with empt
                       />
                     </label>
                     <div
+                      class="fixed invisible w-auto whitespace-nowrap"
+                    >
+                      …
+                    </div>
+                    <div
                       class="Input__InputWrapperStyled-wu99qs-0 jYUFQr"
                     >
                       <div
@@ -1224,6 +1295,7 @@ exports[`Import Profile - Profile Form Step should render profile form with empt
                           class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
                           data-testid="Input"
                           name="name"
+                          value=""
                         />
                       </div>
                     </div>
@@ -1293,6 +1365,11 @@ exports[`Import Profile - Profile Form Step should render profile form with empt
                   </span>
                 </label>
                 <div
+                  class="fixed invisible w-auto whitespace-nowrap"
+                >
+                  …
+                </div>
+                <div
                   class="Input__InputWrapperStyled-wu99qs-0 jYUFQr"
                 >
                   <div
@@ -1303,6 +1380,7 @@ exports[`Import Profile - Profile Form Step should render profile form with empt
                       data-testid="InputPassword"
                       name="password"
                       type="password"
+                      value=""
                     />
                   </div>
                   <div
@@ -1350,6 +1428,11 @@ exports[`Import Profile - Profile Form Step should render profile form with empt
                   </span>
                 </label>
                 <div
+                  class="fixed invisible w-auto whitespace-nowrap"
+                >
+                  …
+                </div>
+                <div
                   class="Input__InputWrapperStyled-wu99qs-0 jYUFQr"
                 >
                   <div
@@ -1360,6 +1443,7 @@ exports[`Import Profile - Profile Form Step should render profile form with empt
                       data-testid="InputPassword"
                       name="confirmPassword"
                       type="password"
+                      value=""
                     />
                   </div>
                   <div
@@ -1408,6 +1492,12 @@ exports[`Import Profile - Profile Form Step should render profile form with empt
                   class="relative w-full"
                 >
                   <div
+                    class="fixed invisible w-auto whitespace-nowrap"
+                  >
+                    BTC
+                    …
+                  </div>
+                  <div
                     class="Input__InputWrapperStyled-wu99qs-0 jYUFQr sr-only"
                   >
                     <div
@@ -1437,6 +1527,12 @@ exports[`Import Profile - Profile Form Step should render profile form with empt
                         id="downshift-12-label"
                       />
                       <div
+                        class="fixed invisible w-auto whitespace-nowrap"
+                      >
+                        BTC (Ƀ)
+                        …
+                      </div>
+                      <div
                         class="Input__InputWrapperStyled-wu99qs-0 jYUFQr"
                       >
                         <div
@@ -1455,10 +1551,14 @@ exports[`Import Profile - Profile Form Step should render profile form with empt
                             value="BTC (Ƀ)"
                           />
                           <span
-                            class="absolute inset-y-0 flex items-center font-normal opacity-50 pointer-events-none cursor-default"
+                            class="absolute inset-y-0 flex items-center font-normal opacity-50 pointer-events-none w-full cursor-default"
                             data-testid="Input__suggestion"
                           >
-                            BTC (Ƀ)
+                            <span
+                              class="truncate"
+                            >
+                              BTC (Ƀ)
+                            </span>
                           </span>
                         </div>
                         <div
@@ -1658,6 +1758,11 @@ exports[`Import Profile - Profile Form Step should render profile form with hidd
                       />
                     </label>
                     <div
+                      class="fixed invisible w-auto whitespace-nowrap"
+                    >
+                      …
+                    </div>
+                    <div
                       class="Input__InputWrapperStyled-wu99qs-0 jYUFQr"
                     >
                       <div
@@ -1667,6 +1772,7 @@ exports[`Import Profile - Profile Form Step should render profile form with hidd
                           class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
                           data-testid="Input"
                           name="name"
+                          value=""
                         />
                       </div>
                     </div>
@@ -1736,6 +1842,11 @@ exports[`Import Profile - Profile Form Step should render profile form with hidd
                   </span>
                 </label>
                 <div
+                  class="fixed invisible w-auto whitespace-nowrap"
+                >
+                  …
+                </div>
+                <div
                   class="Input__InputWrapperStyled-wu99qs-0 jYUFQr"
                 >
                   <div
@@ -1746,6 +1857,7 @@ exports[`Import Profile - Profile Form Step should render profile form with hidd
                       data-testid="InputPassword"
                       name="password"
                       type="password"
+                      value=""
                     />
                   </div>
                   <div
@@ -1793,6 +1905,11 @@ exports[`Import Profile - Profile Form Step should render profile form with hidd
                   </span>
                 </label>
                 <div
+                  class="fixed invisible w-auto whitespace-nowrap"
+                >
+                  …
+                </div>
+                <div
                   class="Input__InputWrapperStyled-wu99qs-0 jYUFQr"
                 >
                   <div
@@ -1803,6 +1920,7 @@ exports[`Import Profile - Profile Form Step should render profile form with hidd
                       data-testid="InputPassword"
                       name="confirmPassword"
                       type="password"
+                      value=""
                     />
                   </div>
                   <div
@@ -1851,6 +1969,12 @@ exports[`Import Profile - Profile Form Step should render profile form with hidd
                   class="relative w-full"
                 >
                   <div
+                    class="fixed invisible w-auto whitespace-nowrap"
+                  >
+                    BTC
+                    …
+                  </div>
+                  <div
                     class="Input__InputWrapperStyled-wu99qs-0 jYUFQr sr-only"
                   >
                     <div
@@ -1880,6 +2004,12 @@ exports[`Import Profile - Profile Form Step should render profile form with hidd
                         id="downshift-6-label"
                       />
                       <div
+                        class="fixed invisible w-auto whitespace-nowrap"
+                      >
+                        BTC (Ƀ)
+                        …
+                      </div>
+                      <div
                         class="Input__InputWrapperStyled-wu99qs-0 jYUFQr"
                       >
                         <div
@@ -1898,10 +2028,14 @@ exports[`Import Profile - Profile Form Step should render profile form with hidd
                             value="BTC (Ƀ)"
                           />
                           <span
-                            class="absolute inset-y-0 flex items-center font-normal opacity-50 pointer-events-none cursor-default"
+                            class="absolute inset-y-0 flex items-center font-normal opacity-50 pointer-events-none w-full cursor-default"
                             data-testid="Input__suggestion"
                           >
-                            BTC (Ƀ)
+                            <span
+                              class="truncate"
+                            >
+                              BTC (Ƀ)
+                            </span>
                           </span>
                         </div>
                         <div
@@ -2101,6 +2235,11 @@ exports[`Import Profile - Profile Form Step should store new profile with passwo
                       />
                     </label>
                     <div
+                      class="fixed invisible w-auto whitespace-nowrap"
+                    >
+                      …
+                    </div>
+                    <div
                       class="Input__InputWrapperStyled-wu99qs-0 jYUFQr"
                     >
                       <div
@@ -2110,6 +2249,7 @@ exports[`Import Profile - Profile Form Step should store new profile with passwo
                           class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
                           data-testid="Input"
                           name="name"
+                          value=""
                         />
                       </div>
                     </div>
@@ -2193,6 +2333,11 @@ exports[`Import Profile - Profile Form Step should store new profile with passwo
                   </span>
                 </label>
                 <div
+                  class="fixed invisible w-auto whitespace-nowrap"
+                >
+                  …
+                </div>
+                <div
                   class="Input__InputWrapperStyled-wu99qs-0 jYUFQr"
                 >
                   <div
@@ -2203,6 +2348,7 @@ exports[`Import Profile - Profile Form Step should store new profile with passwo
                       data-testid="InputPassword"
                       name="password"
                       type="password"
+                      value=""
                     />
                   </div>
                   <div
@@ -2248,6 +2394,11 @@ exports[`Import Profile - Profile Form Step should store new profile with passwo
                   />
                 </label>
                 <div
+                  class="fixed invisible w-auto whitespace-nowrap"
+                >
+                  …
+                </div>
+                <div
                   class="Input__InputWrapperStyled-wu99qs-0 jYUFQr"
                 >
                   <div
@@ -2258,6 +2409,7 @@ exports[`Import Profile - Profile Form Step should store new profile with passwo
                       data-testid="InputPassword"
                       name="confirmPassword"
                       type="password"
+                      value=""
                     />
                   </div>
                   <div
@@ -2306,6 +2458,11 @@ exports[`Import Profile - Profile Form Step should store new profile with passwo
                   class="relative w-full"
                 >
                   <div
+                    class="fixed invisible w-auto whitespace-nowrap"
+                  >
+                    BTC…
+                  </div>
+                  <div
                     class="Input__InputWrapperStyled-wu99qs-0 jYUFQr sr-only"
                   >
                     <div
@@ -2335,6 +2492,11 @@ exports[`Import Profile - Profile Form Step should store new profile with passwo
                         id="downshift-34-label"
                       />
                       <div
+                        class="fixed invisible w-auto whitespace-nowrap"
+                      >
+                        BTC (Ƀ)…
+                      </div>
+                      <div
                         class="Input__InputWrapperStyled-wu99qs-0 jYUFQr"
                       >
                         <div
@@ -2354,10 +2516,14 @@ exports[`Import Profile - Profile Form Step should store new profile with passwo
                             value="BTC (Ƀ)"
                           />
                           <span
-                            class="absolute inset-y-0 flex items-center font-normal opacity-50 pointer-events-none cursor-default"
+                            class="absolute inset-y-0 flex items-center font-normal opacity-50 pointer-events-none w-full cursor-default"
                             data-testid="Input__suggestion"
                           >
-                            BTC (Ƀ)
+                            <span
+                              class="truncate"
+                            >
+                              BTC (Ƀ)
+                            </span>
                           </span>
                         </div>
                         <div
@@ -2789,6 +2955,11 @@ exports[`Import Profile - Profile Form Step should store profile 1`] = `
                       />
                     </label>
                     <div
+                      class="fixed invisible w-auto whitespace-nowrap"
+                    >
+                      …
+                    </div>
+                    <div
                       class="Input__InputWrapperStyled-wu99qs-0 jYUFQr"
                     >
                       <div
@@ -2798,6 +2969,7 @@ exports[`Import Profile - Profile Form Step should store profile 1`] = `
                           class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
                           data-testid="Input"
                           name="name"
+                          value=""
                         />
                       </div>
                     </div>
@@ -2881,6 +3053,11 @@ exports[`Import Profile - Profile Form Step should store profile 1`] = `
                   </span>
                 </label>
                 <div
+                  class="fixed invisible w-auto whitespace-nowrap"
+                >
+                  …
+                </div>
+                <div
                   class="Input__InputWrapperStyled-wu99qs-0 jYUFQr"
                 >
                   <div
@@ -2891,6 +3068,7 @@ exports[`Import Profile - Profile Form Step should store profile 1`] = `
                       data-testid="InputPassword"
                       name="password"
                       type="password"
+                      value=""
                     />
                   </div>
                   <div
@@ -2938,6 +3116,11 @@ exports[`Import Profile - Profile Form Step should store profile 1`] = `
                   </span>
                 </label>
                 <div
+                  class="fixed invisible w-auto whitespace-nowrap"
+                >
+                  …
+                </div>
+                <div
                   class="Input__InputWrapperStyled-wu99qs-0 jYUFQr"
                 >
                   <div
@@ -2948,6 +3131,7 @@ exports[`Import Profile - Profile Form Step should store profile 1`] = `
                       data-testid="InputPassword"
                       name="confirmPassword"
                       type="password"
+                      value=""
                     />
                   </div>
                   <div
@@ -2996,6 +3180,11 @@ exports[`Import Profile - Profile Form Step should store profile 1`] = `
                   class="relative w-full"
                 >
                   <div
+                    class="fixed invisible w-auto whitespace-nowrap"
+                  >
+                    BTC…
+                  </div>
+                  <div
                     class="Input__InputWrapperStyled-wu99qs-0 jYUFQr sr-only"
                   >
                     <div
@@ -3025,6 +3214,11 @@ exports[`Import Profile - Profile Form Step should store profile 1`] = `
                         id="downshift-18-label"
                       />
                       <div
+                        class="fixed invisible w-auto whitespace-nowrap"
+                      >
+                        BTC (Ƀ)…
+                      </div>
+                      <div
                         class="Input__InputWrapperStyled-wu99qs-0 jYUFQr"
                       >
                         <div
@@ -3044,10 +3238,14 @@ exports[`Import Profile - Profile Form Step should store profile 1`] = `
                             value="BTC (Ƀ)"
                           />
                           <span
-                            class="absolute inset-y-0 flex items-center font-normal opacity-50 pointer-events-none cursor-default"
+                            class="absolute inset-y-0 flex items-center font-normal opacity-50 pointer-events-none w-full cursor-default"
                             data-testid="Input__suggestion"
                           >
-                            BTC (Ƀ)
+                            <span
+                              class="truncate"
+                            >
+                              BTC (Ƀ)
+                            </span>
                           </span>
                         </div>
                         <div
@@ -3479,6 +3677,11 @@ exports[`Import Profile - Profile Form Step should update the avatar when removi
                       />
                     </label>
                     <div
+                      class="fixed invisible w-auto whitespace-nowrap"
+                    >
+                      …
+                    </div>
+                    <div
                       class="Input__InputWrapperStyled-wu99qs-0 jYUFQr"
                     >
                       <div
@@ -3488,6 +3691,7 @@ exports[`Import Profile - Profile Form Step should update the avatar when removi
                           class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
                           data-testid="Input"
                           name="name"
+                          value=""
                         />
                       </div>
                     </div>
@@ -3557,6 +3761,11 @@ exports[`Import Profile - Profile Form Step should update the avatar when removi
                   </span>
                 </label>
                 <div
+                  class="fixed invisible w-auto whitespace-nowrap"
+                >
+                  …
+                </div>
+                <div
                   class="Input__InputWrapperStyled-wu99qs-0 jYUFQr"
                 >
                   <div
@@ -3567,6 +3776,7 @@ exports[`Import Profile - Profile Form Step should update the avatar when removi
                       data-testid="InputPassword"
                       name="password"
                       type="password"
+                      value=""
                     />
                   </div>
                   <div
@@ -3614,6 +3824,11 @@ exports[`Import Profile - Profile Form Step should update the avatar when removi
                   </span>
                 </label>
                 <div
+                  class="fixed invisible w-auto whitespace-nowrap"
+                >
+                  …
+                </div>
+                <div
                   class="Input__InputWrapperStyled-wu99qs-0 jYUFQr"
                 >
                   <div
@@ -3624,6 +3839,7 @@ exports[`Import Profile - Profile Form Step should update the avatar when removi
                       data-testid="InputPassword"
                       name="confirmPassword"
                       type="password"
+                      value=""
                     />
                   </div>
                   <div
@@ -3754,6 +3970,11 @@ exports[`Import Profile - Profile Form Step should update the avatar when removi
                       />
                     </label>
                     <div
+                      class="fixed invisible w-auto whitespace-nowrap"
+                    >
+                      …
+                    </div>
+                    <div
                       class="Input__InputWrapperStyled-wu99qs-0 jYUFQr"
                     >
                       <div
@@ -3763,6 +3984,7 @@ exports[`Import Profile - Profile Form Step should update the avatar when removi
                           class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
                           data-testid="Input"
                           name="name"
+                          value=""
                         />
                       </div>
                     </div>
@@ -3846,6 +4068,11 @@ exports[`Import Profile - Profile Form Step should update the avatar when removi
                   </span>
                 </label>
                 <div
+                  class="fixed invisible w-auto whitespace-nowrap"
+                >
+                  …
+                </div>
+                <div
                   class="Input__InputWrapperStyled-wu99qs-0 jYUFQr"
                 >
                   <div
@@ -3856,6 +4083,7 @@ exports[`Import Profile - Profile Form Step should update the avatar when removi
                       data-testid="InputPassword"
                       name="password"
                       type="password"
+                      value=""
                     />
                   </div>
                   <div
@@ -3903,6 +4131,11 @@ exports[`Import Profile - Profile Form Step should update the avatar when removi
                   </span>
                 </label>
                 <div
+                  class="fixed invisible w-auto whitespace-nowrap"
+                >
+                  …
+                </div>
+                <div
                   class="Input__InputWrapperStyled-wu99qs-0 jYUFQr"
                 >
                   <div
@@ -3913,6 +4146,7 @@ exports[`Import Profile - Profile Form Step should update the avatar when removi
                       data-testid="InputPassword"
                       name="confirmPassword"
                       type="password"
+                      value=""
                     />
                   </div>
                   <div

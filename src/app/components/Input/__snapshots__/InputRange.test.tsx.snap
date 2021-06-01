@@ -9,6 +9,11 @@ exports[`InputRange should render invalid 1`] = `
       class="relative"
     >
       <div
+        class="fixed invisible w-auto whitespace-nowrap"
+      >
+        2…
+      </div>
+      <div
         class="Input__InputWrapperStyled-wu99qs-0 jXtMoQ"
       >
         <div
@@ -84,6 +89,11 @@ exports[`InputRange should render when disabled 1`] = `
     class="relative"
   >
     <div
+      class="fixed invisible w-auto whitespace-nowrap"
+    >
+      5…
+    </div>
+    <div
       class="Input__InputWrapperStyled-wu99qs-0 iRRxpY"
       disabled=""
     >
@@ -108,6 +118,11 @@ exports[`InputRange should render with default value 1`] = `
   <div
     class="relative"
   >
+    <div
+      class="fixed invisible w-auto whitespace-nowrap"
+    >
+      5…
+    </div>
     <div
       class="Input__InputWrapperStyled-wu99qs-0 jYUFQr"
     >
@@ -162,6 +177,11 @@ exports[`InputRange should track background min value 1`] = `
   <div
     class="relative"
   >
+    <div
+      class="fixed invisible w-auto whitespace-nowrap"
+    >
+      2…
+    </div>
     <div
       class="Input__InputWrapperStyled-wu99qs-0 jYUFQr"
     >
