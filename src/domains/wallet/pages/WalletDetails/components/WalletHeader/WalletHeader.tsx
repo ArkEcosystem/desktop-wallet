@@ -7,10 +7,10 @@ import { Clipboard } from "app/components/Clipboard";
 import { Dropdown, DropdownOption, DropdownOptionGroup } from "app/components/Dropdown";
 import { Icon } from "app/components/Icon";
 import { Tooltip } from "app/components/Tooltip";
+import { TruncateMiddleDynamic } from "app/components/TruncateMiddleDynamic";
 import { WalletIcons } from "app/components/WalletIcons";
 import { useEnvironmentContext } from "app/contexts";
 import { usePrevious } from "app/hooks";
-import { useTextTruncate } from "app/hooks/use-text-truncate";
 import { NetworkIcon } from "domains/network/components/NetworkIcon";
 import { DeleteWallet } from "domains/wallet/components/DeleteWallet";
 import { ReceiveFunds } from "domains/wallet/components/ReceiveFunds";
@@ -18,7 +18,7 @@ import { SignMessage } from "domains/wallet/components/SignMessage";
 import { UpdateWalletName } from "domains/wallet/components/UpdateWalletName";
 import { VerifyMessage } from "domains/wallet/components/VerifyMessage";
 import { useWalletSync } from "domains/wallet/hooks/use-wallet-sync";
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { useHistory } from "react-router-dom";
 import { openExternal } from "utils/electron-utils";
@@ -40,9 +40,6 @@ export const WalletHeader = ({
 	isUpdatingTransactions,
 	onUpdate,
 }: WalletHeaderProps) => {
-	const ref = useRef(null);
-	const [TruncatedAddress] = useTextTruncate({ text: wallet.address(), parentRef: ref });
-
 	const [modal, setModal] = useState<string | undefined>();
 
 	const { env } = useEnvironmentContext();
@@ -255,7 +252,7 @@ export const WalletHeader = ({
 						<Avatar size="lg" address={wallet.address()} shadowClassName="ring-theme-secondary-900" />
 					</div>
 
-					<div className="flex flex-col w-full">
+					<div className="flex flex-col w-full overflow-hidden">
 						<div className="flex items-center space-x-5 text-theme-secondary-text">
 							{wallet.alias() && (
 								<span data-testid="WalletHeader__name" className="text-sm font-semibold">
@@ -273,12 +270,10 @@ export const WalletHeader = ({
 						</div>
 
 						<div className="flex items-center space-x-5 w-full">
-							<span
-								ref={ref}
-								className="w-36 flex-1 text-lg font-semibold text-white overflow-hidden whitespace-nowrap"
-							>
-								<TruncatedAddress />
-							</span>
+							<TruncateMiddleDynamic
+								value={wallet.address()}
+								className="flex flex-1 text-lg font-semibold text-white whitespace-nowrap"
+							/>
 
 							<div className="flex items-end mb-1 space-x-3 text-theme-secondary-text">
 								<Clipboard
