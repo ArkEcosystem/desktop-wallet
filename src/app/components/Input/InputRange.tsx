@@ -25,6 +25,7 @@ export const InputRange = React.forwardRef<HTMLInputElement, Props>(
 		const rangeValues = useMemo<number[]>(() => {
 			const sanitized = BigNumber.make(value);
 
+			/* istanbul ignore next */
 			if (isNaN(sanitized.toNumber()) || sanitized.isZero()) {
 				return [];
 			}

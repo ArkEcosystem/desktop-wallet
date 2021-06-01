@@ -23,7 +23,7 @@ let profile: ProfilesContracts.IProfile;
 let wallet: ProfilesContracts.IReadWriteWallet;
 let fees: Record<string, string>;
 
-const renderComponent = async (defaultValues = { fee: (2 * 1e8).toFixed(0) }) => {
+const renderComponent = async (defaultValues = { fee: "2" }) => {
 	let renderer: RenderResult;
 	const { result: form } = renderHook(() =>
 		useForm({
@@ -71,8 +71,8 @@ describe("DelegateRegistrationForm", () => {
 
 		fees = {
 			min: "0",
-			max: (10 * 1e8).toFixed(0),
-			avg: (1.354 * 1e8).toFixed(0),
+			max: "10",
+			avg: "1.354",
 		};
 	});
 
@@ -119,7 +119,7 @@ describe("DelegateRegistrationForm", () => {
 	});
 
 	it("should set fee", async () => {
-		const { asFragment, getByTestId } = await renderComponent({ fee: "100000000" });
+		const { asFragment, getByTestId } = await renderComponent({ fee: "1" });
 
 		await waitFor(() => expect(getByTestId("InputCurrency")).toHaveValue("1"));
 
@@ -128,7 +128,7 @@ describe("DelegateRegistrationForm", () => {
 			fireEvent.click(fees[2]);
 		});
 
-		await waitFor(() => expect(getByTestId("InputCurrency")).toHaveValue("10"));
+		await waitFor(() => expect(getByTestId("InputCurrency")).toHaveValue("1"));
 		await waitFor(() => expect(asFragment()).toMatchSnapshot());
 	});
 

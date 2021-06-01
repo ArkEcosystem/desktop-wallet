@@ -399,7 +399,7 @@ exports[`MultiSignature Registration Form should render form step 1`] = `
                   <div
                     class="fixed invisible w-auto whitespace-nowrap"
                   >
-                    …
+                    0…
                   </div>
                   <div
                     class="Input__InputWrapperStyled-wu99qs-0 jYUFQr"
@@ -417,7 +417,7 @@ exports[`MultiSignature Registration Form should render form step 1`] = `
                     </div>
                   </div>
                   <div
-                    class="absolute bottom-0 px-1 w-full"
+                    class="absolute bottom-0 px-1 w-full invisible"
                   >
                     <div
                       class="flex flex-wrap justify-center"
@@ -426,24 +426,12 @@ exports[`MultiSignature Registration Form should render form step 1`] = `
                       <div
                         class="Range__Track-sc-10itqc2-0 sgjTD"
                         data-testid="Range__track"
-                        style="transform: scale(1); cursor: pointer;"
+                        style="transform: scale(1); cursor: inherit;"
                       >
                         <div
                           class="Range__TrackFilled-sc-10itqc2-1 egFfKP"
                           data-testid="Range__track__filled"
-                        >
-                          <div
-                            aria-valuemax="10"
-                            aria-valuemin="0"
-                            aria-valuenow="0"
-                            class="Range__Thumb-sc-10itqc2-2 hXgqqU"
-                            data-testid="Range__thumb"
-                            draggable="false"
-                            role="slider"
-                            style="position: absolute; z-index: 0; cursor: grab; user-select: none; transform: translate(0px, 0px);"
-                            tabindex="0"
-                          />
-                        </div>
+                        />
                       </div>
                     </div>
                   </div>
