@@ -16,7 +16,8 @@ export const TruncateMiddleDynamic = ({ value, offset = 0, className, parentRef 
 	const [truncated, setTruncated] = useState(value);
 
 	const hasOverflow = useCallback(
-		(element: HTMLElement, parent?: any) => (parent?.offsetWidth || element.offsetWidth) - offset < element.scrollWidth,
+		(element: HTMLElement, parent?: any) =>
+			(parent?.offsetWidth || element.offsetWidth) - offset < element.scrollWidth,
 		[offset],
 	);
 
