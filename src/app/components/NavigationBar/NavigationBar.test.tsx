@@ -15,6 +15,14 @@ let profile: Contracts.IProfile;
 const dashboardURL = `/profiles/${getDefaultProfileId()}/dashboard`;
 const history = createMemoryHistory();
 
+const userActions = [
+	{
+		label: "Contacts",
+		value: "contacts",
+		mountPath: (profileId: string) => `/profiles/${profileId}/contacts`,
+	},
+];
+
 describe("NavigationBar", () => {
 	beforeAll(() => {
 		profile = env.profiles().findById(getDefaultProfileId());
@@ -128,12 +136,14 @@ describe("NavigationBar", () => {
 		profile.settings().set(Contracts.ProfileSetting.ExchangeCurrency, "BTC");
 	});
 
-	it.each(["Contacts", "Votes", "Settings", "Support"])(
+	it.each(userActions.map((action) => action.label))(
 		"should handle '%s' click on user actions dropdown",
 		async (label) => {
 			const ipcRendererMock = jest.spyOn(electron.ipcRenderer, "send").mockImplementation();
 
-			const { getByTestId, findByText, history } = renderWithRouter(<NavigationBar profile={profile} />);
+			const { getByTestId, findByText, history } = renderWithRouter(
+				<NavigationBar profile={profile} userActions={userActions} />,
+			);
 
 			const toggle = getByTestId("navbar__useractions");
 
@@ -153,20 +163,6 @@ describe("NavigationBar", () => {
 			ipcRendererMock.mockRestore();
 		},
 	);
-
-	it("should handle 'Sign Out' click on user actions dropdown", async () => {
-		const { getByTestId, findByText, history } = renderWithRouter(<NavigationBar profile={profile} />);
-
-		const toggle = getByTestId("navbar__useractions");
-
-		act(() => {
-			fireEvent.click(toggle);
-		});
-
-		expect(await findByText("Sign Out")).toBeTruthy();
-		fireEvent.click(await findByText("Sign Out"));
-		expect(history.location.pathname).toMatch(`/`);
-	});
 
 	it("should handle click to send button", () => {
 		const { getByTestId, history } = renderWithRouter(<NavigationBar profile={profile} />);
