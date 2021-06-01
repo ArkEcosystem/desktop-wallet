@@ -42,9 +42,15 @@ const walletMocks = () => {
 
 	const publicKeys = ["034151a3ec46b5670a682b0a63394f863587d1bc97483b1b6c70eb58e7f0aed192"];
 
-	return [...addresses, ...publicKeys].map((identifier: string) =>
+	const devnetMocks = [...addresses, ...publicKeys].map((identifier: string) =>
 		mockRequest(`https://dwallets.ark.io/api/wallets/${identifier}`, `coins/ark/devnet/wallets/${identifier}`),
 	);
+
+	const mainnetMocks = ["AThxYTVgpzZfW7K6UxyB8vBZVMoPAwQS3D"].map((identifier: string) =>
+		mockRequest(`https://wallets.ark.io/api/wallets/${identifier}`, `coins/ark/mainnet/wallets/${identifier}`),
+	);
+
+	return [...devnetMocks, ...mainnetMocks];
 };
 
 const publicKeys = [
@@ -55,6 +61,8 @@ const publicKeys = [
 	"03c4d1788718e39c5de7cb718ce380c66bbe2ac5a0645a6ff90f0569178ab7cd6d",
 ];
 
+const publicKeysMainnet = ["035b3d223f75bde72d0599272ae37573e254b611896241e3688151c4228e04522c"];
+
 const multisignatureMocks = () => {
 	const mocks: any = [];
 
@@ -62,6 +70,9 @@ const multisignatureMocks = () => {
 		mocks.push(
 			...publicKeys.map((identifier: string) =>
 				mockRequest(`https://dmusig1.ark.io/transactions?publicKey=${identifier}&state=${state}`, []),
+			),
+			...publicKeysMainnet.map((identifier: string) =>
+				mockRequest(`https://musig1.ark.io/transactions?publicKey=${identifier}&state=${state}`, []),
 			),
 		);
 	}
@@ -93,6 +104,11 @@ const searchAddressesMocks = () => {
 			{ page: 1, limit: 30 },
 		],
 		DJXg9Vqg2tofRNrMAvMzhZTkegu8QyyNQq: [
+			{ page: 1, limit: 10 },
+			{ page: 1, limit: 15 },
+			{ page: 1, limit: 30 },
+		],
+		AThxYTVgpzZfW7K6UxyB8vBZVMoPAwQS3D: [
 			{ page: 1, limit: 10 },
 			{ page: 1, limit: 15 },
 			{ page: 1, limit: 30 },
@@ -146,23 +162,34 @@ export const mockRequest = (url: string | object | Function, fixture: string | o
 
 export const requestMocks = {
 	configuration: [
+		// devnet
 		mockRequest("https://dwallets.ark.io/api/blockchain", "coins/ark/devnet/blockchain"),
 		mockRequest("https://dwallets.ark.io/api/node/configuration", "coins/ark/devnet/configuration"),
 		mockRequest("https://dwallets.ark.io/api/node/configuration/crypto", "coins/ark/devnet/cryptoConfiguration"),
 		mockRequest("https://dwallets.ark.io/api/node/fees", "coins/ark/devnet/node-fees"),
 		mockRequest("https://dwallets.ark.io/api/node/syncing", "coins/ark/devnet/syncing"),
 		mockRequest("https://dwallets.ark.io/api/peers", "coins/ark/devnet/peers"),
+
+		// mainnet
+		mockRequest("https://wallets.ark.io/api/node/configuration/crypto", "coins/ark/mainnet/cryptoConfiguration"),
+		mockRequest("https://wallets.ark.io/api/node/syncing", "coins/ark/mainnet/syncing"),
+		mockRequest("https://wallets.ark.io/api/node/fees", "coins/ark/mainnet/node-fees"),
 	],
 	delegates: [
+		// devnet
 		mockRequest("https://dwallets.ark.io/api/delegates", "coins/ark/devnet/delegates"),
 		mockRequest("https://dwallets.ark.io/api/delegates?page=1", "coins/ark/devnet/delegates"),
 		mockRequest("https://dwallets.ark.io/api/delegates?page=2", "coins/ark/devnet/delegates"),
 		mockRequest("https://dwallets.ark.io/api/delegates?page=3", "coins/ark/devnet/delegates"),
 		mockRequest("https://dwallets.ark.io/api/delegates?page=4", "coins/ark/devnet/delegates"),
 		mockRequest("https://dwallets.ark.io/api/delegates?page=5", "coins/ark/devnet/delegates"),
+
+		// mainnet
+		mockRequest("https://wallets.ark.io/api/delegates", "coins/ark/mainnet/delegates"),
 	],
 	multisignature: [...multisignatureMocks()],
 	transactions: [
+		// devnet
 		mockRequest("https://dwallets.ark.io/api/transactions/fees", "coins/ark/devnet/transaction-fees"),
 		mockRequest("https://dwallets.ark.io/api/transactions?limit=10", "coins/ark/devnet/transactions"),
 		mockRequest("https://dwallets.ark.io/api/transactions?limit=20", "coins/ark/devnet/transactions"),
@@ -202,6 +229,9 @@ export const requestMocks = {
 			"https://dwallets.ark.io/api/transactions?page=1&limit=10&orderBy=timestamp&address=D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD%2CD5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb",
 			{ meta: {}, data: [] },
 		),
+
+		// mainnet
+		mockRequest("https://wallets.ark.io/api/transactions/fees", "coins/ark/mainnet/transaction-fees"),
 
 		...searchAddressesMocks(),
 	],
@@ -248,6 +278,10 @@ export const requestMocks = {
 			),
 		),
 	],
+	exchange: [
+		mockRequest(/https:\/\/min-api\.cryptocompare\.com\/data\/dayAvg/, "exchange/cryptocompare"),
+		mockRequest(/https:\/\/min-api\.cryptocompare\.com\/data\/histoday/, "exchange/cryptocompare-historical"),
+	],
 	other: [
 		mockRequest(
 			"https://raw.githubusercontent.com/ArkEcosystem/common/master/devnet/known-wallets-extended.json",
@@ -268,6 +302,7 @@ export const createFixture = (name: string, preHooks: RequestMock[] = [], postHo
 			...requestMocks.wallets,
 			...requestMocks.plugins,
 			...requestMocks.other,
+			...requestMocks.exchange,
 			...postHooks,
 			mockRequest(/^https?:\/\//, (request: any) => {
 				const mock: { url: string; method: string; body?: string } = {

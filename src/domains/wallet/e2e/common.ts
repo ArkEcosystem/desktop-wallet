@@ -37,12 +37,12 @@ export const importWallet = async (t: any, passphrase = "passphrase", alias = "T
 	await t.expect(Selector("[data-testid=WalletHeader]").exists).ok();
 };
 
-export const importWalletByAddress = async (t: any, address: string, alias = "Test Wallet") => {
+export const importWalletByAddress = async (t: any, address: string, alias = "Test Wallet", isMainnet = false) => {
 	await t.click(Selector("a").withText(translations.COMMON.PORTFOLIO));
 	await t.click(Selector("button").withExactText(translations.COMMON.IMPORT));
 	await t.expect(Selector("div").withText(translations.WALLETS.PAGE_IMPORT_WALLET.NETWORK_STEP.SUBTITLE).exists).ok();
 	await t.click('[data-testid="SelectNetworkInput__input"]');
-	await t.click(Selector('[data-testid="NetworkIcon-ARK-ark.devnet"]'));
+	await t.click(Selector(`[data-testid="NetworkIcon-ARK-ark.${!isMainnet ? "devnet" : "mainnet"}"]`));
 	await t.click(Selector("button").withExactText(translations.COMMON.CONTINUE));
 
 	await t.click('[data-testid="SelectDropdownInput__input"]');
