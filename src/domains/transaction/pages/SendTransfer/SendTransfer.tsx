@@ -217,15 +217,15 @@ export const SendTransfer = () => {
 
 			if (isMultiPayment) {
 				transactionInput.data = {
-					payments: recipients.map(({ address, amount }: { address: string; amount: string }) => ({
+					payments: recipients.map(({ address, amount }: { address: string; amount: BigNumber }) => ({
 						to: address,
-						amount,
+						amount: amount.toHuman(),
 					})),
 				};
 			} else {
 				transactionInput.data = {
 					to: recipients[0].address,
-					amount: recipients[0].amount,
+					amount: recipients[0].amount.toHuman(),
 					memo: smartbridge,
 				};
 			}

@@ -8,7 +8,6 @@ import {
 	TransactionNetwork,
 	TransactionSender,
 } from "domains/transaction/components/TransactionDetail";
-import { evaluateFee } from "domains/transaction/utils";
 import React, { useEffect } from "react";
 import { useFormContext } from "react-hook-form";
 import { useTranslation } from "react-i18next";
@@ -42,7 +41,7 @@ export const ReviewStep = ({ wallet }: { wallet: Contracts.IReadWriteWallet }) =
 			</TransactionDetail>
 
 			<div className="mt-2">
-				<TotalAmountBox fee={evaluateFee(fee)} ticker={wallet.currency()} />
+				<TotalAmountBox fee={fee} ticker={wallet.currency()} />
 			</div>
 		</section>
 	);

@@ -22,6 +22,26 @@ describe("useFees", () => {
 
 		await env.fees().sync(profile, "ARK", "ark.devnet");
 		expect(current.findByType("ARK", "ark.devnet", "ipfs")).resolves.toEqual({
+			static: "5",
+			max: "5",
+			min: "5",
+			avg: "5",
+		});
+	});
+
+	it("should allow to return non-normalized fees", async () => {
+		const profile = env.profiles().findById(getDefaultProfileId());
+
+		await env.wallets().syncByProfile(profile);
+		await env.delegates().syncAll(profile);
+
+		const wrapper = ({ children }: any) => <EnvironmentProvider env={env}>{children} </EnvironmentProvider>;
+		const {
+			result: { current },
+		} = renderHook(() => useFees({ profile, normalize: false }), { wrapper });
+
+		await env.fees().sync(profile, "ARK", "ark.devnet");
+		expect(current.findByType("ARK", "ark.devnet", "ipfs")).resolves.toEqual({
 			static: "500000000",
 			max: "500000000",
 			min: "500000000",
@@ -47,10 +67,10 @@ describe("useFees", () => {
 
 		await env.fees().sync(profile, "ARK", "ark.devnet");
 		expect(current.findByType("ARK", "ark.devnet", "ipfs")).resolves.toEqual({
-			static: "500000000",
-			max: "500000000",
-			min: "500000000",
-			avg: "500000000",
+			static: "5",
+			max: "5",
+			min: "5",
+			avg: "5",
 		});
 	});
 
@@ -76,10 +96,10 @@ describe("useFees", () => {
 
 		await env.fees().sync(profile, "ARK", "ark.devnet");
 		expect(current.findByType("ARK", "ark.devnet", "ipfs")).resolves.toEqual({
-			static: "500000000",
-			max: "500000000",
-			min: "500000000",
-			avg: "500000000",
+			static: "5",
+			max: "5",
+			min: "5",
+			avg: "5",
 		});
 
 		mockFind.mockRestore();

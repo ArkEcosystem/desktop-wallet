@@ -1,13 +1,14 @@
 import { BigNumber } from "@arkecosystem/platform-sdk-support";
 import { Amount } from "app/components/Amount";
 import { Icon } from "app/components/Icon";
+import { humanToBigNumber } from "domains/transaction/utils";
 import React from "react";
 import { useTranslation } from "react-i18next";
 import tw from "twin.macro";
 
 interface Props {
 	amount: BigNumber;
-	fee: any;
+	fee: string;
 	ticker: string;
 }
 
@@ -15,6 +16,7 @@ const AmountLabel = tw.span`text-sm font-semibold text-theme-secondary-700`;
 
 export const TotalAmountBox = ({ amount, fee, ticker }: Props) => {
 	const { t } = useTranslation();
+	const feeValue = humanToBigNumber(fee);
 
 	return (
 		<div className="rounded-lg border border-theme-secondary-300 dark:border-theme-secondary-800">
@@ -34,7 +36,7 @@ export const TotalAmountBox = ({ amount, fee, ticker }: Props) => {
 						<AmountLabel>{t("TRANSACTION.TRANSACTION_FEE")}</AmountLabel>
 						<Amount
 							ticker={ticker}
-							value={fee}
+							value={feeValue}
 							className="mt-1 text-lg font-semibold"
 							data-testid="total-amount-box__transaction-fee"
 						/>
@@ -52,7 +54,7 @@ export const TotalAmountBox = ({ amount, fee, ticker }: Props) => {
 				<AmountLabel>{t("TRANSACTION.TOTAL_AMOUNT")}</AmountLabel>
 				<Amount
 					ticker={ticker}
-					value={amount.plus(fee)}
+					value={amount.plus(feeValue)}
 					className="text-2xl font-bold"
 					data-testid="total-amount-box__total"
 				/>

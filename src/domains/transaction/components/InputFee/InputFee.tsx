@@ -1,41 +1,28 @@
-import { Currency } from "@arkecosystem/platform-sdk-intl";
-import { BigNumber } from "@arkecosystem/platform-sdk-support";
 import { ButtonGroup, ButtonGroupOption } from "app/components/ButtonGroup";
 import { InputRange } from "app/components/Input";
-import React, { memo, useEffect, useState } from "react";
+import React, { memo } from "react";
 import { useTranslation } from "react-i18next";
 
 export interface InputFeeProps {
-	value?: string;
+	value: string;
 	min: string;
 	avg: string;
 	max: string;
 	step: number;
 	showFeeOptions?: boolean;
-	onChange?: (value: string) => void;
+	onChange: (value: string) => void;
 }
-
-// @TODO remove toHuman and fromHuman def and usages after sdk update: no transformation should be applied on the values
-const toHuman = (value: string): string => (+BigNumber.make(value ?? "0").toHuman()).toString();
-const fromHuman = (value: string): string => Currency.fromString(value).value ?? "";
 
 export const InputFee = memo(({ onChange, step, showFeeOptions, ...props }: InputFeeProps) => {
 	const { t } = useTranslation();
 
-	const value = toHuman(props.value ?? "0");
-	const avg = +toHuman(props.avg);
-	const min = +toHuman(props.min);
-	const max = +toHuman(props.max);
-
-	const [fee, setFee] = useState<string>(value);
-
-	useEffect(() => {
-		setFee(toHuman(props.value ?? "0"));
-	}, [props.value]);
+	const value = props.value ?? "0";
+	const avg = +props.avg;
+	const min = +props.min;
+	const max = +props.max;
 
 	const handleFeeChange = (feeValue: string): void => {
-		setFee(feeValue);
-		onChange?.(fromHuman(feeValue));
+		onChange(feeValue);
 	};
 
 	const isOptionDisabled = (value: number) => value === 0 || (min === avg && avg === max);
@@ -46,7 +33,7 @@ export const InputFee = memo(({ onChange, step, showFeeOptions, ...props }: Inpu
 				<InputRange
 					disabled={!showFeeOptions}
 					name="fee"
-					value={fee}
+					value={value}
 					min={+min}
 					max={+max}
 					step={step}
@@ -59,7 +46,7 @@ export const InputFee = memo(({ onChange, step, showFeeOptions, ...props }: Inpu
 					<ButtonGroupOption
 						disabled={isOptionDisabled(min)}
 						value={min}
-						isSelected={() => !isOptionDisabled(min) && +fee === min}
+						isSelected={() => !isOptionDisabled(min) && +value === min}
 						setSelectedValue={() => handleFeeChange(`${min}`)}
 					>
 						{t("TRANSACTION.FEES.SLOW")}
@@ -68,7 +55,7 @@ export const InputFee = memo(({ onChange, step, showFeeOptions, ...props }: Inpu
 					<ButtonGroupOption
 						disabled={isOptionDisabled(avg)}
 						value={avg}
-						isSelected={() => !isOptionDisabled(avg) && +fee === avg}
+						isSelected={() => !isOptionDisabled(avg) && +value === avg}
 						setSelectedValue={() => handleFeeChange(`${avg}`)}
 					>
 						{t("TRANSACTION.FEES.AVERAGE")}
@@ -77,7 +64,7 @@ export const InputFee = memo(({ onChange, step, showFeeOptions, ...props }: Inpu
 					<ButtonGroupOption
 						disabled={isOptionDisabled(max)}
 						value={max}
-						isSelected={() => !isOptionDisabled(max) && +fee === max}
+						isSelected={() => !isOptionDisabled(max) && +value === max}
 						setSelectedValue={() => handleFeeChange(`${max}`)}
 					>
 						{t("TRANSACTION.FEES.FAST")}

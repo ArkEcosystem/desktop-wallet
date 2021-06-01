@@ -8,7 +8,6 @@ import {
 	TransactionMemo,
 	TransactionRecipients,
 } from "domains/transaction/components/TransactionDetail";
-import { evaluateFee } from "domains/transaction/utils";
 import React from "react";
 import { useFormContext } from "react-hook-form";
 import { useTranslation } from "react-i18next";
@@ -62,7 +61,7 @@ export const TransferLedgerReview = ({
 			)}
 
 			<div className="mt-2">
-				<TotalAmountBox amount={amount} fee={evaluateFee(fee)} ticker={wallet.currency()} />
+				<TotalAmountBox amount={amount} fee={fee} ticker={wallet.currency()} />
 			</div>
 		</>
 	);

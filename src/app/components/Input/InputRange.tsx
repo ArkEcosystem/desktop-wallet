@@ -22,11 +22,14 @@ export const InputRange = React.forwardRef<HTMLInputElement, Props>(
 	({ value, onChange, step, disabled, max, ...props }: Props, ref) => {
 		const fieldContext = useFormField();
 
-		// @TODO could be simplified after SDK update
 		const rangeValues = useMemo<number[]>(() => {
 			const sanitized = BigNumber.make(value);
-			/* istanbul ignore next */
-			return isNaN(sanitized.toNumber()) ? [] : [Math.min(sanitized.toNumber(), max)];
+
+			if (isNaN(sanitized.toNumber()) || sanitized.isZero()) {
+				return [];
+			}
+
+			return [Math.min(sanitized.toNumber(), max)];
 		}, [value, max]);
 
 		const min = Math.min(props.min, +value);
