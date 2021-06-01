@@ -68,17 +68,15 @@ export const Page = ({ navbarVariant, title, backToUrl, isBackDisabled, profile,
 
 	return (
 		<div className="flex relative flex-col min-h-screen">
-			{
-				<NavigationBar
-					variant={navbarVariant}
-					menu={menu}
-					userActions={userActions}
-					title={title}
-					backToUrl={backToUrl}
-					profile={profile}
-					isBackDisabled={isBackDisabled}
-				/>
-			}
+			<NavigationBar
+				variant={navbarVariant}
+				menu={menu}
+				userActions={userActions}
+				title={title}
+				backToUrl={backToUrl}
+				profile={profile}
+				isBackDisabled={isBackDisabled}
+			/>
 
 			<div className="flex flex-col flex-1">
 				{sidebar ? (
