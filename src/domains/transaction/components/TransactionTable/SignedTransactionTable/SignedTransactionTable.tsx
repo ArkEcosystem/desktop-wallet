@@ -1,5 +1,4 @@
 import { Contracts } from "@arkecosystem/platform-sdk";
-import { DateTime } from "@arkecosystem/platform-sdk-intl";
 import { Contracts as ProfileContracts } from "@arkecosystem/platform-sdk-profiles";
 import { Button } from "app/components/Button";
 import { Icon } from "app/components/Icon";
