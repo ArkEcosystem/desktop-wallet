@@ -43,4 +43,12 @@ describe("Input", () => {
 
 		expect(asFragment()).toMatchSnapshot();
 	});
+
+	it("should render with suggestion", () => {
+		const { asFragment, getByTestId } = render(<Input suggestion="suggestion" />);
+
+		expect(getByTestId("Input__suggestion")).toBeTruthy();
+
+		expect(asFragment()).toMatchSnapshot();
+	});
 });

@@ -261,9 +261,7 @@ export const Dropdown = ({
 		return () => window.removeEventListener("resize", handleResize);
 	}, [isOpen]);
 
-	useEffect(() => {
-		clickOutsideHandler(ref, hide);
-	}, [ref]);
+	useEffect(() => clickOutsideHandler(ref, hide), [ref]);
 
 	useEffect(() => {
 		const handleKeys = (e: any) => {

@@ -3,6 +3,11 @@
 exports[`TextArea should render 1`] = `
 <DocumentFragment>
   <div
+    class="fixed invisible w-auto whitespace-nowrap"
+  >
+    …
+  </div>
+  <div
     class="Input__InputWrapperStyled-wu99qs-0 bKjoCo"
   >
     <div
@@ -20,6 +25,11 @@ exports[`TextArea should render 1`] = `
 
 exports[`TextArea should render as disabled 1`] = `
 <DocumentFragment>
+  <div
+    class="fixed invisible w-auto whitespace-nowrap"
+  >
+    …
+  </div>
   <div
     class="Input__InputWrapperStyled-wu99qs-0 glWYnv"
     disabled=""
@@ -39,6 +49,11 @@ exports[`TextArea should render as disabled 1`] = `
 
 exports[`TextArea should render as invalid 1`] = `
 <DocumentFragment>
+  <div
+    class="fixed invisible w-auto whitespace-nowrap"
+  >
+    …
+  </div>
   <div
     class="Input__InputWrapperStyled-wu99qs-0 fmGxXX"
   >

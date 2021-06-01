@@ -474,6 +474,11 @@ exports[`SendDelegateResignation Delegate Resignation should change fee 1`] = `
                             class="relative"
                           >
                             <div
+                              class="fixed invisible w-auto whitespace-nowrap"
+                            >
+                              1…
+                            </div>
+                            <div
                               class="Input__InputWrapperStyled-wu99qs-0 jYUFQr"
                             >
                               <div
@@ -1070,6 +1075,11 @@ exports[`SendDelegateResignation Delegate Resignation should render 1st step 1`]
                           <div
                             class="relative"
                           >
+                            <div
+                              class="fixed invisible w-auto whitespace-nowrap"
+                            >
+                              25…
+                            </div>
                             <div
                               class="Input__InputWrapperStyled-wu99qs-0 jYUFQr"
                             >
@@ -2094,6 +2104,11 @@ exports[`SendDelegateResignation Delegate Resignation should render 3rd step 1`]
                         />
                       </label>
                       <div
+                        class="fixed invisible w-auto whitespace-nowrap"
+                      >
+                        …
+                      </div>
+                      <div
                         class="Input__InputWrapperStyled-wu99qs-0 jYUFQr"
                       >
                         <div
@@ -2104,6 +2119,7 @@ exports[`SendDelegateResignation Delegate Resignation should render 3rd step 1`]
                             data-testid="AuthenticationStep__mnemonic"
                             name="mnemonic"
                             type="password"
+                            value=""
                           />
                         </div>
                         <div
@@ -2149,6 +2165,11 @@ exports[`SendDelegateResignation Delegate Resignation should render 3rd step 1`]
                         />
                       </label>
                       <div
+                        class="fixed invisible w-auto whitespace-nowrap"
+                      >
+                        …
+                      </div>
+                      <div
                         class="Input__InputWrapperStyled-wu99qs-0 iRRxpY"
                         disabled=""
                       >
@@ -2161,6 +2182,7 @@ exports[`SendDelegateResignation Delegate Resignation should render 3rd step 1`]
                             disabled=""
                             name="secondMnemonic"
                             type="password"
+                            value=""
                           />
                         </div>
                         <div
@@ -3381,6 +3403,11 @@ exports[`SendDelegateResignation Delegate Resignation should show mnemonic authe
                         />
                       </label>
                       <div
+                        class="fixed invisible w-auto whitespace-nowrap"
+                      >
+                        …
+                      </div>
+                      <div
                         class="Input__InputWrapperStyled-wu99qs-0 jXtMoQ"
                       >
                         <div
@@ -3392,6 +3419,7 @@ exports[`SendDelegateResignation Delegate Resignation should show mnemonic authe
                             data-testid="AuthenticationStep__mnemonic"
                             name="mnemonic"
                             type="password"
+                            value=""
                           />
                         </div>
                         <div
@@ -3451,6 +3479,11 @@ exports[`SendDelegateResignation Delegate Resignation should show mnemonic authe
                         />
                       </label>
                       <div
+                        class="fixed invisible w-auto whitespace-nowrap"
+                      >
+                        …
+                      </div>
+                      <div
                         class="Input__InputWrapperStyled-wu99qs-0 iRRxpY"
                         disabled=""
                       >
@@ -3463,6 +3496,7 @@ exports[`SendDelegateResignation Delegate Resignation should show mnemonic authe
                             disabled=""
                             name="secondMnemonic"
                             type="password"
+                            value=""
                           />
                         </div>
                         <div

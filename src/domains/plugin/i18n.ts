@@ -15,6 +15,12 @@ export const translations: { [key: string]: any } = {
 	WARNING_DISCLAIMER:
 		"Please make sure to check the documentation of the Plugin before installing it. By installing the Plugin, you assume any associated risks.",
 
+	MANUAL_INSTALLATION_DISCLAIMER: {
+		TITLE: "Disclaimer",
+		DISCLAIMER:
+			"By accepting the following terms, you hereby assume the risk associated with downloading files and installing said files from a direct URL link. The aforementioned links have neither been tested nor approved by ARK.io and ARK SCIC.\n\nWe make no warranties, expressed or implied, as to the sustainability, availability, security, of these URLs. We are not responsible for any consequences which may occur from downloading, viewing, or installing files directly from a URL. ARK.io and ARK SCIC shall bear no liability for any loss suffered by users as a result of clicking an unverified direct URL.\n\nYou acknowledge that clicking unverified URLs may result in you downloading, viewing, or installing content that may have bugs, glitches, lack of functionality, or can cause damage to your machine or result in the loss of data.",
+	},
+
 	DEVELOPER_RESPONSE: "Developer response",
 
 	ENABLE_FAILURE: `Failed to enable plugin "{{name}}". Reason: {{msg}}.`,

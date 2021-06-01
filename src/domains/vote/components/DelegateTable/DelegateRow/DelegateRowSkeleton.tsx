@@ -9,11 +9,7 @@ export const DelegateRowSkeleton = () => {
 
 	return (
 		<TableRow data-testid="DelegateRowSkeleton">
-			<TableCell variant="start">
-				<Skeleton height={16} width={22} />
-			</TableCell>
-
-			<TableCell innerClassName="space-x-4">
+			<TableCell variant="start" innerClassName="space-x-4">
 				<Circle className="border-transparent" size="lg">
 					<Skeleton className="align-top" circle height={44} width={44} />
 				</Circle>
@@ -21,7 +17,11 @@ export const DelegateRowSkeleton = () => {
 				<Skeleton height={16} width={nameWidth} />
 			</TableCell>
 
-			<TableCell variant="end" innerClassName="justify-end">
+			<TableCell className="w-24" innerClassName="justify-center">
+				<Skeleton height={16} width={22} />
+			</TableCell>
+
+			<TableCell variant="end" className="w-40" innerClassName="justify-end">
 				<Skeleton width={100} height={40} />
 			</TableCell>
 		</TableRow>
