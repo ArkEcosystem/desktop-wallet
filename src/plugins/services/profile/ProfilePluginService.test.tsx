@@ -39,6 +39,6 @@ describe("ProfilePluginService", () => {
 
 		expect(wallets).toHaveLength(2);
 		// @ts-ignore
-		expect(wallets[0].address).toBe("D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD");
+		expect(wallets[0].data.ADDRESS).toBe("D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD");
 	});
 });
