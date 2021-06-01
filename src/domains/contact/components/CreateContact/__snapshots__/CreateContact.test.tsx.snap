@@ -76,6 +76,11 @@ exports[`CreateContact should render 1`] = `
                   />
                 </label>
                 <div
+                  class="fixed invisible w-auto whitespace-nowrap"
+                >
+                  …
+                </div>
+                <div
                   class="Input__InputWrapperStyled-wu99qs-0 jYUFQr"
                 >
                   <div
@@ -111,6 +116,11 @@ exports[`CreateContact should render 1`] = `
                     class="relative w-full"
                   >
                     <div
+                      class="fixed invisible w-auto whitespace-nowrap"
+                    >
+                      …
+                    </div>
+                    <div
                       class="Input__InputWrapperStyled-wu99qs-0 jYUFQr sr-only"
                     >
                       <div
@@ -139,6 +149,11 @@ exports[`CreateContact should render 1`] = `
                           for="downshift-0-input"
                           id="downshift-0-label"
                         />
+                        <div
+                          class="fixed invisible w-auto whitespace-nowrap"
+                        >
+                          …
+                        </div>
                         <div
                           class="Input__InputWrapperStyled-wu99qs-0 jYUFQr"
                         >
@@ -207,6 +222,11 @@ exports[`CreateContact should render 1`] = `
                     />
                   </label>
                   <div
+                    class="fixed invisible w-auto whitespace-nowrap"
+                  >
+                    …
+                  </div>
+                  <div
                     class="Input__InputWrapperStyled-wu99qs-0 jYUFQr"
                   >
                     <div
@@ -217,6 +237,7 @@ exports[`CreateContact should render 1`] = `
                         data-testid="contact-form__address-input"
                         name="address"
                         type="text"
+                        value=""
                       />
                     </div>
                   </div>

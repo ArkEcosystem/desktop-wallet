@@ -442,6 +442,11 @@ exports[`Settings should not allow setting the current password as the new passw
                         />
                       </label>
                       <div
+                        class="fixed invisible w-auto whitespace-nowrap"
+                      >
+                        …
+                      </div>
+                      <div
                         class="Input__InputWrapperStyled-wu99qs-0 jYUFQr"
                       >
                         <div
@@ -452,6 +457,7 @@ exports[`Settings should not allow setting the current password as the new passw
                             data-testid="Password-settings__input--currentPassword"
                             name="currentPassword"
                             type="password"
+                            value=""
                           />
                         </div>
                         <div
@@ -497,6 +503,11 @@ exports[`Settings should not allow setting the current password as the new passw
                         />
                       </label>
                       <div
+                        class="fixed invisible w-auto whitespace-nowrap"
+                      >
+                        …
+                      </div>
+                      <div
                         class="Input__InputWrapperStyled-wu99qs-0 jXtMoQ"
                       >
                         <div
@@ -508,6 +519,7 @@ exports[`Settings should not allow setting the current password as the new passw
                             data-testid="Password-settings__input--password_1"
                             name="password"
                             type="password"
+                            value=""
                           />
                         </div>
                         <div
@@ -567,6 +579,11 @@ exports[`Settings should not allow setting the current password as the new passw
                         />
                       </label>
                       <div
+                        class="fixed invisible w-auto whitespace-nowrap"
+                      >
+                        …
+                      </div>
+                      <div
                         class="Input__InputWrapperStyled-wu99qs-0 jYUFQr"
                       >
                         <div
@@ -577,6 +594,7 @@ exports[`Settings should not allow setting the current password as the new passw
                             data-testid="Password-settings__input--password_2"
                             name="confirmPassword"
                             type="password"
+                            value=""
                           />
                         </div>
                         <div
@@ -1150,6 +1168,11 @@ exports[`Settings should not update the uploaded avatar when removing focus from
                             />
                           </label>
                           <div
+                            class="fixed invisible w-auto whitespace-nowrap"
+                          >
+                            …
+                          </div>
+                          <div
                             class="Input__InputWrapperStyled-wu99qs-0 jYUFQr"
                           >
                             <div
@@ -1182,6 +1205,11 @@ exports[`Settings should not update the uploaded avatar when removing focus from
                             class="relative w-full"
                           >
                             <div
+                              class="fixed invisible w-auto whitespace-nowrap"
+                            >
+                              english…
+                            </div>
+                            <div
                               class="Input__InputWrapperStyled-wu99qs-0 jYUFQr sr-only"
                             >
                               <div
@@ -1211,6 +1239,11 @@ exports[`Settings should not update the uploaded avatar when removing focus from
                                   id="select-passphrase-language-label"
                                 />
                                 <div
+                                  class="fixed invisible w-auto whitespace-nowrap"
+                                >
+                                  English…
+                                </div>
+                                <div
                                   class="Input__InputWrapperStyled-wu99qs-0 jYUFQr"
                                 >
                                   <div
@@ -1229,10 +1262,14 @@ exports[`Settings should not update the uploaded avatar when removing focus from
                                       value="English"
                                     />
                                     <span
-                                      class="absolute inset-y-0 flex items-center font-normal opacity-50 pointer-events-none cursor-default"
+                                      class="absolute inset-y-0 flex items-center font-normal opacity-50 pointer-events-none w-full cursor-default"
                                       data-testid="Input__suggestion"
                                     >
-                                      English
+                                      <span
+                                        class="truncate"
+                                      >
+                                        English
+                                      </span>
                                     </span>
                                   </div>
                                   <div
@@ -1286,6 +1323,11 @@ exports[`Settings should not update the uploaded avatar when removing focus from
                             class="relative w-full"
                           >
                             <div
+                              class="fixed invisible w-auto whitespace-nowrap"
+                            >
+                              BTC…
+                            </div>
+                            <div
                               class="Input__InputWrapperStyled-wu99qs-0 jYUFQr sr-only"
                             >
                               <div
@@ -1315,6 +1357,11 @@ exports[`Settings should not update the uploaded avatar when removing focus from
                                   id="select-currency-label"
                                 />
                                 <div
+                                  class="fixed invisible w-auto whitespace-nowrap"
+                                >
+                                  BTC (Ƀ)…
+                                </div>
+                                <div
                                   class="Input__InputWrapperStyled-wu99qs-0 jYUFQr"
                                 >
                                   <div
@@ -1333,10 +1380,14 @@ exports[`Settings should not update the uploaded avatar when removing focus from
                                       value="BTC (Ƀ)"
                                     />
                                     <span
-                                      class="absolute inset-y-0 flex items-center font-normal opacity-50 pointer-events-none cursor-default"
+                                      class="absolute inset-y-0 flex items-center font-normal opacity-50 pointer-events-none w-full cursor-default"
                                       data-testid="Input__suggestion"
                                     >
-                                      BTC (Ƀ)
+                                      <span
+                                        class="truncate"
+                                      >
+                                        BTC (Ƀ)
+                                      </span>
                                     </span>
                                   </div>
                                   <div
@@ -1394,6 +1445,11 @@ exports[`Settings should not update the uploaded avatar when removing focus from
                             class="relative w-full"
                           >
                             <div
+                              class="fixed invisible w-auto whitespace-nowrap"
+                            >
+                              en-US…
+                            </div>
+                            <div
                               class="Input__InputWrapperStyled-wu99qs-0 jYUFQr sr-only"
                             >
                               <div
@@ -1423,6 +1479,11 @@ exports[`Settings should not update the uploaded avatar when removing focus from
                                   id="select-language-label"
                                 />
                                 <div
+                                  class="fixed invisible w-auto whitespace-nowrap"
+                                >
+                                  English…
+                                </div>
+                                <div
                                   class="Input__InputWrapperStyled-wu99qs-0 jYUFQr"
                                 >
                                   <div
@@ -1441,10 +1502,14 @@ exports[`Settings should not update the uploaded avatar when removing focus from
                                       value="English"
                                     />
                                     <span
-                                      class="absolute inset-y-0 flex items-center font-normal opacity-50 pointer-events-none cursor-default"
+                                      class="absolute inset-y-0 flex items-center font-normal opacity-50 pointer-events-none w-full cursor-default"
                                       data-testid="Input__suggestion"
                                     >
-                                      English
+                                      <span
+                                        class="truncate"
+                                      >
+                                        English
+                                      </span>
                                     </span>
                                   </div>
                                   <div
@@ -1498,6 +1563,11 @@ exports[`Settings should not update the uploaded avatar when removing focus from
                             class="relative w-full"
                           >
                             <div
+                              class="fixed invisible w-auto whitespace-nowrap"
+                            >
+                              cryptocompare…
+                            </div>
+                            <div
                               class="Input__InputWrapperStyled-wu99qs-0 jYUFQr sr-only"
                             >
                               <div
@@ -1527,6 +1597,11 @@ exports[`Settings should not update the uploaded avatar when removing focus from
                                   id="select-market-provider-label"
                                 />
                                 <div
+                                  class="fixed invisible w-auto whitespace-nowrap"
+                                >
+                                  CryptoCompare…
+                                </div>
+                                <div
                                   class="Input__InputWrapperStyled-wu99qs-0 jYUFQr"
                                 >
                                   <div
@@ -1545,10 +1620,14 @@ exports[`Settings should not update the uploaded avatar when removing focus from
                                       value="CryptoCompare"
                                     />
                                     <span
-                                      class="absolute inset-y-0 flex items-center font-normal opacity-50 pointer-events-none cursor-default"
+                                      class="absolute inset-y-0 flex items-center font-normal opacity-50 pointer-events-none w-full cursor-default"
                                       data-testid="Input__suggestion"
                                     >
-                                      CryptoCompare
+                                      <span
+                                        class="truncate"
+                                      >
+                                        CryptoCompare
+                                      </span>
                                     </span>
                                   </div>
                                   <div
@@ -1602,6 +1681,11 @@ exports[`Settings should not update the uploaded avatar when removing focus from
                             class="relative w-full"
                           >
                             <div
+                              class="fixed invisible w-auto whitespace-nowrap"
+                            >
+                              h:mm A…
+                            </div>
+                            <div
                               class="Input__InputWrapperStyled-wu99qs-0 jYUFQr sr-only"
                             >
                               <div
@@ -1631,6 +1715,11 @@ exports[`Settings should not update the uploaded avatar when removing focus from
                                   id="select-time-format-label"
                                 />
                                 <div
+                                  class="fixed invisible w-auto whitespace-nowrap"
+                                >
+                                  12h…
+                                </div>
+                                <div
                                   class="Input__InputWrapperStyled-wu99qs-0 jYUFQr"
                                 >
                                   <div
@@ -1649,10 +1738,14 @@ exports[`Settings should not update the uploaded avatar when removing focus from
                                       value="12h"
                                     />
                                     <span
-                                      class="absolute inset-y-0 flex items-center font-normal opacity-50 pointer-events-none cursor-default"
+                                      class="absolute inset-y-0 flex items-center font-normal opacity-50 pointer-events-none w-full cursor-default"
                                       data-testid="Input__suggestion"
                                     >
-                                      12h
+                                      <span
+                                        class="truncate"
+                                      >
+                                        12h
+                                      </span>
                                     </span>
                                   </div>
                                   <div
@@ -1795,6 +1888,11 @@ exports[`Settings should not update the uploaded avatar when removing focus from
                               class="relative w-full"
                             >
                               <div
+                                class="fixed invisible w-auto whitespace-nowrap"
+                              >
+                                1…
+                              </div>
+                              <div
                                 class="Input__InputWrapperStyled-wu99qs-0 jYUFQr sr-only"
                               >
                                 <div
@@ -1824,6 +1922,11 @@ exports[`Settings should not update the uploaded avatar when removing focus from
                                     id="select-auto-signout-label"
                                   />
                                   <div
+                                    class="fixed invisible w-auto whitespace-nowrap"
+                                  >
+                                    1 minute…
+                                  </div>
+                                  <div
                                     class="Input__InputWrapperStyled-wu99qs-0 jYUFQr"
                                   >
                                     <div
@@ -1842,10 +1945,14 @@ exports[`Settings should not update the uploaded avatar when removing focus from
                                         value="1 minute"
                                       />
                                       <span
-                                        class="absolute inset-y-0 flex items-center font-normal opacity-50 pointer-events-none cursor-default"
+                                        class="absolute inset-y-0 flex items-center font-normal opacity-50 pointer-events-none w-full cursor-default"
                                         data-testid="Input__suggestion"
                                       >
-                                        1 minute
+                                        <span
+                                          class="truncate"
+                                        >
+                                          1 minute
+                                        </span>
                                       </span>
                                     </div>
                                     <div
@@ -2660,6 +2767,11 @@ exports[`Settings should render 1`] = `
                             />
                           </label>
                           <div
+                            class="fixed invisible w-auto whitespace-nowrap"
+                          >
+                            …
+                          </div>
+                          <div
                             class="Input__InputWrapperStyled-wu99qs-0 jYUFQr"
                           >
                             <div
@@ -2692,6 +2804,11 @@ exports[`Settings should render 1`] = `
                             class="relative w-full"
                           >
                             <div
+                              class="fixed invisible w-auto whitespace-nowrap"
+                            >
+                              english…
+                            </div>
+                            <div
                               class="Input__InputWrapperStyled-wu99qs-0 jYUFQr sr-only"
                             >
                               <div
@@ -2721,6 +2838,11 @@ exports[`Settings should render 1`] = `
                                   id="select-passphrase-language-label"
                                 />
                                 <div
+                                  class="fixed invisible w-auto whitespace-nowrap"
+                                >
+                                  English…
+                                </div>
+                                <div
                                   class="Input__InputWrapperStyled-wu99qs-0 jYUFQr"
                                 >
                                   <div
@@ -2739,10 +2861,14 @@ exports[`Settings should render 1`] = `
                                       value="English"
                                     />
                                     <span
-                                      class="absolute inset-y-0 flex items-center font-normal opacity-50 pointer-events-none cursor-default"
+                                      class="absolute inset-y-0 flex items-center font-normal opacity-50 pointer-events-none w-full cursor-default"
                                       data-testid="Input__suggestion"
                                     >
-                                      English
+                                      <span
+                                        class="truncate"
+                                      >
+                                        English
+                                      </span>
                                     </span>
                                   </div>
                                   <div
@@ -2796,6 +2922,11 @@ exports[`Settings should render 1`] = `
                             class="relative w-full"
                           >
                             <div
+                              class="fixed invisible w-auto whitespace-nowrap"
+                            >
+                              BTC…
+                            </div>
+                            <div
                               class="Input__InputWrapperStyled-wu99qs-0 jYUFQr sr-only"
                             >
                               <div
@@ -2825,6 +2956,11 @@ exports[`Settings should render 1`] = `
                                   id="select-currency-label"
                                 />
                                 <div
+                                  class="fixed invisible w-auto whitespace-nowrap"
+                                >
+                                  BTC (Ƀ)…
+                                </div>
+                                <div
                                   class="Input__InputWrapperStyled-wu99qs-0 jYUFQr"
                                 >
                                   <div
@@ -2843,10 +2979,14 @@ exports[`Settings should render 1`] = `
                                       value="BTC (Ƀ)"
                                     />
                                     <span
-                                      class="absolute inset-y-0 flex items-center font-normal opacity-50 pointer-events-none cursor-default"
+                                      class="absolute inset-y-0 flex items-center font-normal opacity-50 pointer-events-none w-full cursor-default"
                                       data-testid="Input__suggestion"
                                     >
-                                      BTC (Ƀ)
+                                      <span
+                                        class="truncate"
+                                      >
+                                        BTC (Ƀ)
+                                      </span>
                                     </span>
                                   </div>
                                   <div
@@ -2904,6 +3044,11 @@ exports[`Settings should render 1`] = `
                             class="relative w-full"
                           >
                             <div
+                              class="fixed invisible w-auto whitespace-nowrap"
+                            >
+                              en-US…
+                            </div>
+                            <div
                               class="Input__InputWrapperStyled-wu99qs-0 jYUFQr sr-only"
                             >
                               <div
@@ -2933,6 +3078,11 @@ exports[`Settings should render 1`] = `
                                   id="select-language-label"
                                 />
                                 <div
+                                  class="fixed invisible w-auto whitespace-nowrap"
+                                >
+                                  English…
+                                </div>
+                                <div
                                   class="Input__InputWrapperStyled-wu99qs-0 jYUFQr"
                                 >
                                   <div
@@ -2951,10 +3101,14 @@ exports[`Settings should render 1`] = `
                                       value="English"
                                     />
                                     <span
-                                      class="absolute inset-y-0 flex items-center font-normal opacity-50 pointer-events-none cursor-default"
+                                      class="absolute inset-y-0 flex items-center font-normal opacity-50 pointer-events-none w-full cursor-default"
                                       data-testid="Input__suggestion"
                                     >
-                                      English
+                                      <span
+                                        class="truncate"
+                                      >
+                                        English
+                                      </span>
                                     </span>
                                   </div>
                                   <div
@@ -3008,6 +3162,11 @@ exports[`Settings should render 1`] = `
                             class="relative w-full"
                           >
                             <div
+                              class="fixed invisible w-auto whitespace-nowrap"
+                            >
+                              cryptocompare…
+                            </div>
+                            <div
                               class="Input__InputWrapperStyled-wu99qs-0 jYUFQr sr-only"
                             >
                               <div
@@ -3037,6 +3196,11 @@ exports[`Settings should render 1`] = `
                                   id="select-market-provider-label"
                                 />
                                 <div
+                                  class="fixed invisible w-auto whitespace-nowrap"
+                                >
+                                  CryptoCompare…
+                                </div>
+                                <div
                                   class="Input__InputWrapperStyled-wu99qs-0 jYUFQr"
                                 >
                                   <div
@@ -3055,10 +3219,14 @@ exports[`Settings should render 1`] = `
                                       value="CryptoCompare"
                                     />
                                     <span
-                                      class="absolute inset-y-0 flex items-center font-normal opacity-50 pointer-events-none cursor-default"
+                                      class="absolute inset-y-0 flex items-center font-normal opacity-50 pointer-events-none w-full cursor-default"
                                       data-testid="Input__suggestion"
                                     >
-                                      CryptoCompare
+                                      <span
+                                        class="truncate"
+                                      >
+                                        CryptoCompare
+                                      </span>
                                     </span>
                                   </div>
                                   <div
@@ -3112,6 +3280,11 @@ exports[`Settings should render 1`] = `
                             class="relative w-full"
                           >
                             <div
+                              class="fixed invisible w-auto whitespace-nowrap"
+                            >
+                              h:mm A…
+                            </div>
+                            <div
                               class="Input__InputWrapperStyled-wu99qs-0 jYUFQr sr-only"
                             >
                               <div
@@ -3141,6 +3314,11 @@ exports[`Settings should render 1`] = `
                                   id="select-time-format-label"
                                 />
                                 <div
+                                  class="fixed invisible w-auto whitespace-nowrap"
+                                >
+                                  12h…
+                                </div>
+                                <div
                                   class="Input__InputWrapperStyled-wu99qs-0 jYUFQr"
                                 >
                                   <div
@@ -3159,10 +3337,14 @@ exports[`Settings should render 1`] = `
                                       value="12h"
                                     />
                                     <span
-                                      class="absolute inset-y-0 flex items-center font-normal opacity-50 pointer-events-none cursor-default"
+                                      class="absolute inset-y-0 flex items-center font-normal opacity-50 pointer-events-none w-full cursor-default"
                                       data-testid="Input__suggestion"
                                     >
-                                      12h
+                                      <span
+                                        class="truncate"
+                                      >
+                                        12h
+                                      </span>
                                     </span>
                                   </div>
                                   <div
@@ -3305,6 +3487,11 @@ exports[`Settings should render 1`] = `
                               class="relative w-full"
                             >
                               <div
+                                class="fixed invisible w-auto whitespace-nowrap"
+                              >
+                                1…
+                              </div>
+                              <div
                                 class="Input__InputWrapperStyled-wu99qs-0 jYUFQr sr-only"
                               >
                                 <div
@@ -3334,6 +3521,11 @@ exports[`Settings should render 1`] = `
                                     id="select-auto-signout-label"
                                   />
                                   <div
+                                    class="fixed invisible w-auto whitespace-nowrap"
+                                  >
+                                    1 minute…
+                                  </div>
+                                  <div
                                     class="Input__InputWrapperStyled-wu99qs-0 jYUFQr"
                                   >
                                     <div
@@ -3352,10 +3544,14 @@ exports[`Settings should render 1`] = `
                                         value="1 minute"
                                       />
                                       <span
-                                        class="absolute inset-y-0 flex items-center font-normal opacity-50 pointer-events-none cursor-default"
+                                        class="absolute inset-y-0 flex items-center font-normal opacity-50 pointer-events-none w-full cursor-default"
                                         data-testid="Input__suggestion"
                                       >
-                                        1 minute
+                                        <span
+                                          class="truncate"
+                                        >
+                                          1 minute
+                                        </span>
                                       </span>
                                     </div>
                                     <div
@@ -4669,6 +4865,11 @@ exports[`Settings should render password settings 1`] = `
                         />
                       </label>
                       <div
+                        class="fixed invisible w-auto whitespace-nowrap"
+                      >
+                        …
+                      </div>
+                      <div
                         class="Input__InputWrapperStyled-wu99qs-0 jYUFQr"
                       >
                         <div
@@ -4679,6 +4880,7 @@ exports[`Settings should render password settings 1`] = `
                             data-testid="Password-settings__input--password_1"
                             name="password"
                             type="password"
+                            value=""
                           />
                         </div>
                         <div
@@ -4724,6 +4926,11 @@ exports[`Settings should render password settings 1`] = `
                         />
                       </label>
                       <div
+                        class="fixed invisible w-auto whitespace-nowrap"
+                      >
+                        …
+                      </div>
+                      <div
                         class="Input__InputWrapperStyled-wu99qs-0 jYUFQr"
                       >
                         <div
@@ -4734,6 +4941,7 @@ exports[`Settings should render password settings 1`] = `
                             data-testid="Password-settings__input--password_2"
                             name="confirmPassword"
                             type="password"
+                            value=""
                           />
                         </div>
                         <div
@@ -5234,6 +5442,11 @@ exports[`Settings should set a password 1`] = `
                         />
                       </label>
                       <div
+                        class="fixed invisible w-auto whitespace-nowrap"
+                      >
+                        …
+                      </div>
+                      <div
                         class="Input__InputWrapperStyled-wu99qs-0 jYUFQr"
                       >
                         <div
@@ -5244,6 +5457,7 @@ exports[`Settings should set a password 1`] = `
                             data-testid="Password-settings__input--currentPassword"
                             name="currentPassword"
                             type="password"
+                            value=""
                           />
                         </div>
                         <div
@@ -5289,6 +5503,11 @@ exports[`Settings should set a password 1`] = `
                         />
                       </label>
                       <div
+                        class="fixed invisible w-auto whitespace-nowrap"
+                      >
+                        …
+                      </div>
+                      <div
                         class="Input__InputWrapperStyled-wu99qs-0 jYUFQr"
                       >
                         <div
@@ -5299,6 +5518,7 @@ exports[`Settings should set a password 1`] = `
                             data-testid="Password-settings__input--password_1"
                             name="password"
                             type="password"
+                            value=""
                           />
                         </div>
                         <div
@@ -5344,6 +5564,11 @@ exports[`Settings should set a password 1`] = `
                         />
                       </label>
                       <div
+                        class="fixed invisible w-auto whitespace-nowrap"
+                      >
+                        …
+                      </div>
+                      <div
                         class="Input__InputWrapperStyled-wu99qs-0 jYUFQr"
                       >
                         <div
@@ -5354,6 +5579,7 @@ exports[`Settings should set a password 1`] = `
                             data-testid="Password-settings__input--password_2"
                             name="confirmPassword"
                             type="password"
+                            value=""
                           />
                         </div>
                         <div
@@ -5854,6 +6080,11 @@ exports[`Settings should show an error toast if the current password does not ma
                         />
                       </label>
                       <div
+                        class="fixed invisible w-auto whitespace-nowrap"
+                      >
+                        …
+                      </div>
+                      <div
                         class="Input__InputWrapperStyled-wu99qs-0 jYUFQr"
                       >
                         <div
@@ -5864,6 +6095,7 @@ exports[`Settings should show an error toast if the current password does not ma
                             data-testid="Password-settings__input--currentPassword"
                             name="currentPassword"
                             type="password"
+                            value=""
                           />
                         </div>
                         <div
@@ -5909,6 +6141,11 @@ exports[`Settings should show an error toast if the current password does not ma
                         />
                       </label>
                       <div
+                        class="fixed invisible w-auto whitespace-nowrap"
+                      >
+                        …
+                      </div>
+                      <div
                         class="Input__InputWrapperStyled-wu99qs-0 jYUFQr"
                       >
                         <div
@@ -5919,6 +6156,7 @@ exports[`Settings should show an error toast if the current password does not ma
                             data-testid="Password-settings__input--password_1"
                             name="password"
                             type="password"
+                            value=""
                           />
                         </div>
                         <div
@@ -5964,6 +6202,11 @@ exports[`Settings should show an error toast if the current password does not ma
                         />
                       </label>
                       <div
+                        class="fixed invisible w-auto whitespace-nowrap"
+                      >
+                        …
+                      </div>
+                      <div
                         class="Input__InputWrapperStyled-wu99qs-0 jYUFQr"
                       >
                         <div
@@ -5974,6 +6217,7 @@ exports[`Settings should show an error toast if the current password does not ma
                             data-testid="Password-settings__input--password_2"
                             name="confirmPassword"
                             type="password"
+                            value=""
                           />
                         </div>
                         <div
@@ -6473,6 +6717,11 @@ exports[`Settings should trigger password confirmation mismatch error 1`] = `
                         />
                       </label>
                       <div
+                        class="fixed invisible w-auto whitespace-nowrap"
+                      >
+                        …
+                      </div>
+                      <div
                         class="Input__InputWrapperStyled-wu99qs-0 jYUFQr"
                       >
                         <div
@@ -6483,6 +6732,7 @@ exports[`Settings should trigger password confirmation mismatch error 1`] = `
                             data-testid="Password-settings__input--currentPassword"
                             name="currentPassword"
                             type="password"
+                            value=""
                           />
                         </div>
                         <div
@@ -6528,6 +6778,11 @@ exports[`Settings should trigger password confirmation mismatch error 1`] = `
                         />
                       </label>
                       <div
+                        class="fixed invisible w-auto whitespace-nowrap"
+                      >
+                        …
+                      </div>
+                      <div
                         class="Input__InputWrapperStyled-wu99qs-0 jXtMoQ"
                       >
                         <div
@@ -6539,6 +6794,7 @@ exports[`Settings should trigger password confirmation mismatch error 1`] = `
                             data-testid="Password-settings__input--password_1"
                             name="password"
                             type="password"
+                            value=""
                           />
                         </div>
                         <div
@@ -6598,6 +6854,11 @@ exports[`Settings should trigger password confirmation mismatch error 1`] = `
                         />
                       </label>
                       <div
+                        class="fixed invisible w-auto whitespace-nowrap"
+                      >
+                        …
+                      </div>
+                      <div
                         class="Input__InputWrapperStyled-wu99qs-0 jXtMoQ"
                       >
                         <div
@@ -6609,6 +6870,7 @@ exports[`Settings should trigger password confirmation mismatch error 1`] = `
                             data-testid="Password-settings__input--password_2"
                             name="confirmPassword"
                             type="password"
+                            value=""
                           />
                         </div>
                         <div
@@ -7175,6 +7437,11 @@ exports[`Settings should update profile 1`] = `
                             />
                           </label>
                           <div
+                            class="fixed invisible w-auto whitespace-nowrap"
+                          >
+                            …
+                          </div>
+                          <div
                             class="Input__InputWrapperStyled-wu99qs-0 jYUFQr"
                           >
                             <div
@@ -7184,7 +7451,7 @@ exports[`Settings should update profile 1`] = `
                                 class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
                                 data-testid="General-settings__input--name"
                                 name="name"
-                                value="test profile 2"
+                                value="John Doe"
                               />
                             </div>
                           </div>
@@ -7206,6 +7473,11 @@ exports[`Settings should update profile 1`] = `
                           <div
                             class="relative w-full"
                           >
+                            <div
+                              class="fixed invisible w-auto whitespace-nowrap"
+                            >
+                              english…
+                            </div>
                             <div
                               class="Input__InputWrapperStyled-wu99qs-0 jYUFQr sr-only"
                             >
@@ -7236,6 +7508,11 @@ exports[`Settings should update profile 1`] = `
                                   id="select-passphrase-language-label"
                                 />
                                 <div
+                                  class="fixed invisible w-auto whitespace-nowrap"
+                                >
+                                  English…
+                                </div>
+                                <div
                                   class="Input__InputWrapperStyled-wu99qs-0 jYUFQr"
                                 >
                                   <div
@@ -7254,10 +7531,14 @@ exports[`Settings should update profile 1`] = `
                                       value="English"
                                     />
                                     <span
-                                      class="absolute inset-y-0 flex items-center font-normal opacity-50 pointer-events-none cursor-default"
+                                      class="absolute inset-y-0 flex items-center font-normal opacity-50 pointer-events-none w-full cursor-default"
                                       data-testid="Input__suggestion"
                                     >
-                                      English
+                                      <span
+                                        class="truncate"
+                                      >
+                                        English
+                                      </span>
                                     </span>
                                   </div>
                                   <div
@@ -7311,6 +7592,11 @@ exports[`Settings should update profile 1`] = `
                             class="relative w-full"
                           >
                             <div
+                              class="fixed invisible w-auto whitespace-nowrap"
+                            >
+                              BTC…
+                            </div>
+                            <div
                               class="Input__InputWrapperStyled-wu99qs-0 jYUFQr sr-only"
                             >
                               <div
@@ -7340,6 +7626,11 @@ exports[`Settings should update profile 1`] = `
                                   id="select-currency-label"
                                 />
                                 <div
+                                  class="fixed invisible w-auto whitespace-nowrap"
+                                >
+                                  BTC (Ƀ)…
+                                </div>
+                                <div
                                   class="Input__InputWrapperStyled-wu99qs-0 jYUFQr"
                                 >
                                   <div
@@ -7358,10 +7649,14 @@ exports[`Settings should update profile 1`] = `
                                       value="BTC (Ƀ)"
                                     />
                                     <span
-                                      class="absolute inset-y-0 flex items-center font-normal opacity-50 pointer-events-none cursor-default"
+                                      class="absolute inset-y-0 flex items-center font-normal opacity-50 pointer-events-none w-full cursor-default"
                                       data-testid="Input__suggestion"
                                     >
-                                      BTC (Ƀ)
+                                      <span
+                                        class="truncate"
+                                      >
+                                        BTC (Ƀ)
+                                      </span>
                                     </span>
                                   </div>
                                   <div
@@ -7419,6 +7714,11 @@ exports[`Settings should update profile 1`] = `
                             class="relative w-full"
                           >
                             <div
+                              class="fixed invisible w-auto whitespace-nowrap"
+                            >
+                              en-US…
+                            </div>
+                            <div
                               class="Input__InputWrapperStyled-wu99qs-0 jYUFQr sr-only"
                             >
                               <div
@@ -7448,6 +7748,11 @@ exports[`Settings should update profile 1`] = `
                                   id="select-language-label"
                                 />
                                 <div
+                                  class="fixed invisible w-auto whitespace-nowrap"
+                                >
+                                  English…
+                                </div>
+                                <div
                                   class="Input__InputWrapperStyled-wu99qs-0 jYUFQr"
                                 >
                                   <div
@@ -7466,10 +7771,14 @@ exports[`Settings should update profile 1`] = `
                                       value="English"
                                     />
                                     <span
-                                      class="absolute inset-y-0 flex items-center font-normal opacity-50 pointer-events-none cursor-default"
+                                      class="absolute inset-y-0 flex items-center font-normal opacity-50 pointer-events-none w-full cursor-default"
                                       data-testid="Input__suggestion"
                                     >
-                                      English
+                                      <span
+                                        class="truncate"
+                                      >
+                                        English
+                                      </span>
                                     </span>
                                   </div>
                                   <div
@@ -7523,6 +7832,11 @@ exports[`Settings should update profile 1`] = `
                             class="relative w-full"
                           >
                             <div
+                              class="fixed invisible w-auto whitespace-nowrap"
+                            >
+                              cryptocompare…
+                            </div>
+                            <div
                               class="Input__InputWrapperStyled-wu99qs-0 jYUFQr sr-only"
                             >
                               <div
@@ -7552,6 +7866,11 @@ exports[`Settings should update profile 1`] = `
                                   id="select-market-provider-label"
                                 />
                                 <div
+                                  class="fixed invisible w-auto whitespace-nowrap"
+                                >
+                                  CryptoCompare…
+                                </div>
+                                <div
                                   class="Input__InputWrapperStyled-wu99qs-0 jYUFQr"
                                 >
                                   <div
@@ -7570,10 +7889,14 @@ exports[`Settings should update profile 1`] = `
                                       value="CryptoCompare"
                                     />
                                     <span
-                                      class="absolute inset-y-0 flex items-center font-normal opacity-50 pointer-events-none cursor-default"
+                                      class="absolute inset-y-0 flex items-center font-normal opacity-50 pointer-events-none w-full cursor-default"
                                       data-testid="Input__suggestion"
                                     >
-                                      CryptoCompare
+                                      <span
+                                        class="truncate"
+                                      >
+                                        CryptoCompare
+                                      </span>
                                     </span>
                                   </div>
                                   <div
@@ -7627,6 +7950,11 @@ exports[`Settings should update profile 1`] = `
                             class="relative w-full"
                           >
                             <div
+                              class="fixed invisible w-auto whitespace-nowrap"
+                            >
+                              h:mm A…
+                            </div>
+                            <div
                               class="Input__InputWrapperStyled-wu99qs-0 jYUFQr sr-only"
                             >
                               <div
@@ -7656,6 +7984,11 @@ exports[`Settings should update profile 1`] = `
                                   id="select-time-format-label"
                                 />
                                 <div
+                                  class="fixed invisible w-auto whitespace-nowrap"
+                                >
+                                  12h…
+                                </div>
+                                <div
                                   class="Input__InputWrapperStyled-wu99qs-0 jYUFQr"
                                 >
                                   <div
@@ -7674,10 +8007,14 @@ exports[`Settings should update profile 1`] = `
                                       value="12h"
                                     />
                                     <span
-                                      class="absolute inset-y-0 flex items-center font-normal opacity-50 pointer-events-none cursor-default"
+                                      class="absolute inset-y-0 flex items-center font-normal opacity-50 pointer-events-none w-full cursor-default"
                                       data-testid="Input__suggestion"
                                     >
-                                      12h
+                                      <span
+                                        class="truncate"
+                                      >
+                                        12h
+                                      </span>
                                     </span>
                                   </div>
                                   <div
@@ -7821,6 +8158,11 @@ exports[`Settings should update profile 1`] = `
                               class="relative w-full"
                             >
                               <div
+                                class="fixed invisible w-auto whitespace-nowrap"
+                              >
+                                1…
+                              </div>
+                              <div
                                 class="Input__InputWrapperStyled-wu99qs-0 jYUFQr sr-only"
                               >
                                 <div
@@ -7850,6 +8192,11 @@ exports[`Settings should update profile 1`] = `
                                     id="select-auto-signout-label"
                                   />
                                   <div
+                                    class="fixed invisible w-auto whitespace-nowrap"
+                                  >
+                                    1 minute…
+                                  </div>
+                                  <div
                                     class="Input__InputWrapperStyled-wu99qs-0 jYUFQr"
                                   >
                                     <div
@@ -7868,10 +8215,14 @@ exports[`Settings should update profile 1`] = `
                                         value="1 minute"
                                       />
                                       <span
-                                        class="absolute inset-y-0 flex items-center font-normal opacity-50 pointer-events-none cursor-default"
+                                        class="absolute inset-y-0 flex items-center font-normal opacity-50 pointer-events-none w-full cursor-default"
                                         data-testid="Input__suggestion"
                                       >
-                                        1 minute
+                                        <span
+                                          class="truncate"
+                                        >
+                                          1 minute
+                                        </span>
                                       </span>
                                     </div>
                                     <div
@@ -8686,6 +9037,11 @@ exports[`Settings should update the avatar when removing focus from name input 1
                             />
                           </label>
                           <div
+                            class="fixed invisible w-auto whitespace-nowrap"
+                          >
+                            …
+                          </div>
+                          <div
                             class="Input__InputWrapperStyled-wu99qs-0 jYUFQr"
                           >
                             <div
@@ -8718,6 +9074,11 @@ exports[`Settings should update the avatar when removing focus from name input 1
                             class="relative w-full"
                           >
                             <div
+                              class="fixed invisible w-auto whitespace-nowrap"
+                            >
+                              english…
+                            </div>
+                            <div
                               class="Input__InputWrapperStyled-wu99qs-0 jYUFQr sr-only"
                             >
                               <div
@@ -8747,6 +9108,11 @@ exports[`Settings should update the avatar when removing focus from name input 1
                                   id="select-passphrase-language-label"
                                 />
                                 <div
+                                  class="fixed invisible w-auto whitespace-nowrap"
+                                >
+                                  English…
+                                </div>
+                                <div
                                   class="Input__InputWrapperStyled-wu99qs-0 jYUFQr"
                                 >
                                   <div
@@ -8765,10 +9131,14 @@ exports[`Settings should update the avatar when removing focus from name input 1
                                       value="English"
                                     />
                                     <span
-                                      class="absolute inset-y-0 flex items-center font-normal opacity-50 pointer-events-none cursor-default"
+                                      class="absolute inset-y-0 flex items-center font-normal opacity-50 pointer-events-none w-full cursor-default"
                                       data-testid="Input__suggestion"
                                     >
-                                      English
+                                      <span
+                                        class="truncate"
+                                      >
+                                        English
+                                      </span>
                                     </span>
                                   </div>
                                   <div
@@ -8822,6 +9192,11 @@ exports[`Settings should update the avatar when removing focus from name input 1
                             class="relative w-full"
                           >
                             <div
+                              class="fixed invisible w-auto whitespace-nowrap"
+                            >
+                              BTC…
+                            </div>
+                            <div
                               class="Input__InputWrapperStyled-wu99qs-0 jYUFQr sr-only"
                             >
                               <div
@@ -8851,6 +9226,11 @@ exports[`Settings should update the avatar when removing focus from name input 1
                                   id="select-currency-label"
                                 />
                                 <div
+                                  class="fixed invisible w-auto whitespace-nowrap"
+                                >
+                                  BTC (Ƀ)…
+                                </div>
+                                <div
                                   class="Input__InputWrapperStyled-wu99qs-0 jYUFQr"
                                 >
                                   <div
@@ -8869,10 +9249,14 @@ exports[`Settings should update the avatar when removing focus from name input 1
                                       value="BTC (Ƀ)"
                                     />
                                     <span
-                                      class="absolute inset-y-0 flex items-center font-normal opacity-50 pointer-events-none cursor-default"
+                                      class="absolute inset-y-0 flex items-center font-normal opacity-50 pointer-events-none w-full cursor-default"
                                       data-testid="Input__suggestion"
                                     >
-                                      BTC (Ƀ)
+                                      <span
+                                        class="truncate"
+                                      >
+                                        BTC (Ƀ)
+                                      </span>
                                     </span>
                                   </div>
                                   <div
@@ -8930,6 +9314,11 @@ exports[`Settings should update the avatar when removing focus from name input 1
                             class="relative w-full"
                           >
                             <div
+                              class="fixed invisible w-auto whitespace-nowrap"
+                            >
+                              en-US…
+                            </div>
+                            <div
                               class="Input__InputWrapperStyled-wu99qs-0 jYUFQr sr-only"
                             >
                               <div
@@ -8959,6 +9348,11 @@ exports[`Settings should update the avatar when removing focus from name input 1
                                   id="select-language-label"
                                 />
                                 <div
+                                  class="fixed invisible w-auto whitespace-nowrap"
+                                >
+                                  English…
+                                </div>
+                                <div
                                   class="Input__InputWrapperStyled-wu99qs-0 jYUFQr"
                                 >
                                   <div
@@ -8977,10 +9371,14 @@ exports[`Settings should update the avatar when removing focus from name input 1
                                       value="English"
                                     />
                                     <span
-                                      class="absolute inset-y-0 flex items-center font-normal opacity-50 pointer-events-none cursor-default"
+                                      class="absolute inset-y-0 flex items-center font-normal opacity-50 pointer-events-none w-full cursor-default"
                                       data-testid="Input__suggestion"
                                     >
-                                      English
+                                      <span
+                                        class="truncate"
+                                      >
+                                        English
+                                      </span>
                                     </span>
                                   </div>
                                   <div
@@ -9034,6 +9432,11 @@ exports[`Settings should update the avatar when removing focus from name input 1
                             class="relative w-full"
                           >
                             <div
+                              class="fixed invisible w-auto whitespace-nowrap"
+                            >
+                              cryptocompare…
+                            </div>
+                            <div
                               class="Input__InputWrapperStyled-wu99qs-0 jYUFQr sr-only"
                             >
                               <div
@@ -9063,6 +9466,11 @@ exports[`Settings should update the avatar when removing focus from name input 1
                                   id="select-market-provider-label"
                                 />
                                 <div
+                                  class="fixed invisible w-auto whitespace-nowrap"
+                                >
+                                  CryptoCompare…
+                                </div>
+                                <div
                                   class="Input__InputWrapperStyled-wu99qs-0 jYUFQr"
                                 >
                                   <div
@@ -9081,10 +9489,14 @@ exports[`Settings should update the avatar when removing focus from name input 1
                                       value="CryptoCompare"
                                     />
                                     <span
-                                      class="absolute inset-y-0 flex items-center font-normal opacity-50 pointer-events-none cursor-default"
+                                      class="absolute inset-y-0 flex items-center font-normal opacity-50 pointer-events-none w-full cursor-default"
                                       data-testid="Input__suggestion"
                                     >
-                                      CryptoCompare
+                                      <span
+                                        class="truncate"
+                                      >
+                                        CryptoCompare
+                                      </span>
                                     </span>
                                   </div>
                                   <div
@@ -9138,6 +9550,11 @@ exports[`Settings should update the avatar when removing focus from name input 1
                             class="relative w-full"
                           >
                             <div
+                              class="fixed invisible w-auto whitespace-nowrap"
+                            >
+                              h:mm A…
+                            </div>
+                            <div
                               class="Input__InputWrapperStyled-wu99qs-0 jYUFQr sr-only"
                             >
                               <div
@@ -9167,6 +9584,11 @@ exports[`Settings should update the avatar when removing focus from name input 1
                                   id="select-time-format-label"
                                 />
                                 <div
+                                  class="fixed invisible w-auto whitespace-nowrap"
+                                >
+                                  12h…
+                                </div>
+                                <div
                                   class="Input__InputWrapperStyled-wu99qs-0 jYUFQr"
                                 >
                                   <div
@@ -9185,10 +9607,14 @@ exports[`Settings should update the avatar when removing focus from name input 1
                                       value="12h"
                                     />
                                     <span
-                                      class="absolute inset-y-0 flex items-center font-normal opacity-50 pointer-events-none cursor-default"
+                                      class="absolute inset-y-0 flex items-center font-normal opacity-50 pointer-events-none w-full cursor-default"
                                       data-testid="Input__suggestion"
                                     >
-                                      12h
+                                      <span
+                                        class="truncate"
+                                      >
+                                        12h
+                                      </span>
                                     </span>
                                   </div>
                                   <div
@@ -9331,6 +9757,11 @@ exports[`Settings should update the avatar when removing focus from name input 1
                               class="relative w-full"
                             >
                               <div
+                                class="fixed invisible w-auto whitespace-nowrap"
+                              >
+                                1…
+                              </div>
+                              <div
                                 class="Input__InputWrapperStyled-wu99qs-0 jYUFQr sr-only"
                               >
                                 <div
@@ -9360,6 +9791,11 @@ exports[`Settings should update the avatar when removing focus from name input 1
                                     id="select-auto-signout-label"
                                   />
                                   <div
+                                    class="fixed invisible w-auto whitespace-nowrap"
+                                  >
+                                    1 minute…
+                                  </div>
+                                  <div
                                     class="Input__InputWrapperStyled-wu99qs-0 jYUFQr"
                                   >
                                     <div
@@ -9378,10 +9814,14 @@ exports[`Settings should update the avatar when removing focus from name input 1
                                         value="1 minute"
                                       />
                                       <span
-                                        class="absolute inset-y-0 flex items-center font-normal opacity-50 pointer-events-none cursor-default"
+                                        class="absolute inset-y-0 flex items-center font-normal opacity-50 pointer-events-none w-full cursor-default"
                                         data-testid="Input__suggestion"
                                       >
-                                        1 minute
+                                        <span
+                                          class="truncate"
+                                        >
+                                          1 minute
+                                        </span>
                                       </span>
                                     </div>
                                     <div
@@ -10189,6 +10629,11 @@ exports[`Settings should update the avatar when removing focus from name input 2
                             />
                           </label>
                           <div
+                            class="fixed invisible w-auto whitespace-nowrap"
+                          >
+                            …
+                          </div>
+                          <div
                             class="Input__InputWrapperStyled-wu99qs-0 jXtMoQ"
                           >
                             <div
@@ -10240,6 +10685,11 @@ exports[`Settings should update the avatar when removing focus from name input 2
                             class="relative w-full"
                           >
                             <div
+                              class="fixed invisible w-auto whitespace-nowrap"
+                            >
+                              english…
+                            </div>
+                            <div
                               class="Input__InputWrapperStyled-wu99qs-0 jYUFQr sr-only"
                             >
                               <div
@@ -10269,6 +10719,11 @@ exports[`Settings should update the avatar when removing focus from name input 2
                                   id="select-passphrase-language-label"
                                 />
                                 <div
+                                  class="fixed invisible w-auto whitespace-nowrap"
+                                >
+                                  English…
+                                </div>
+                                <div
                                   class="Input__InputWrapperStyled-wu99qs-0 jYUFQr"
                                 >
                                   <div
@@ -10287,10 +10742,14 @@ exports[`Settings should update the avatar when removing focus from name input 2
                                       value="English"
                                     />
                                     <span
-                                      class="absolute inset-y-0 flex items-center font-normal opacity-50 pointer-events-none cursor-default"
+                                      class="absolute inset-y-0 flex items-center font-normal opacity-50 pointer-events-none w-full cursor-default"
                                       data-testid="Input__suggestion"
                                     >
-                                      English
+                                      <span
+                                        class="truncate"
+                                      >
+                                        English
+                                      </span>
                                     </span>
                                   </div>
                                   <div
@@ -10344,6 +10803,11 @@ exports[`Settings should update the avatar when removing focus from name input 2
                             class="relative w-full"
                           >
                             <div
+                              class="fixed invisible w-auto whitespace-nowrap"
+                            >
+                              BTC…
+                            </div>
+                            <div
                               class="Input__InputWrapperStyled-wu99qs-0 jYUFQr sr-only"
                             >
                               <div
@@ -10373,6 +10837,11 @@ exports[`Settings should update the avatar when removing focus from name input 2
                                   id="select-currency-label"
                                 />
                                 <div
+                                  class="fixed invisible w-auto whitespace-nowrap"
+                                >
+                                  BTC (Ƀ)…
+                                </div>
+                                <div
                                   class="Input__InputWrapperStyled-wu99qs-0 jYUFQr"
                                 >
                                   <div
@@ -10391,10 +10860,14 @@ exports[`Settings should update the avatar when removing focus from name input 2
                                       value="BTC (Ƀ)"
                                     />
                                     <span
-                                      class="absolute inset-y-0 flex items-center font-normal opacity-50 pointer-events-none cursor-default"
+                                      class="absolute inset-y-0 flex items-center font-normal opacity-50 pointer-events-none w-full cursor-default"
                                       data-testid="Input__suggestion"
                                     >
-                                      BTC (Ƀ)
+                                      <span
+                                        class="truncate"
+                                      >
+                                        BTC (Ƀ)
+                                      </span>
                                     </span>
                                   </div>
                                   <div
@@ -10452,6 +10925,11 @@ exports[`Settings should update the avatar when removing focus from name input 2
                             class="relative w-full"
                           >
                             <div
+                              class="fixed invisible w-auto whitespace-nowrap"
+                            >
+                              en-US…
+                            </div>
+                            <div
                               class="Input__InputWrapperStyled-wu99qs-0 jYUFQr sr-only"
                             >
                               <div
@@ -10481,6 +10959,11 @@ exports[`Settings should update the avatar when removing focus from name input 2
                                   id="select-language-label"
                                 />
                                 <div
+                                  class="fixed invisible w-auto whitespace-nowrap"
+                                >
+                                  English…
+                                </div>
+                                <div
                                   class="Input__InputWrapperStyled-wu99qs-0 jYUFQr"
                                 >
                                   <div
@@ -10499,10 +10982,14 @@ exports[`Settings should update the avatar when removing focus from name input 2
                                       value="English"
                                     />
                                     <span
-                                      class="absolute inset-y-0 flex items-center font-normal opacity-50 pointer-events-none cursor-default"
+                                      class="absolute inset-y-0 flex items-center font-normal opacity-50 pointer-events-none w-full cursor-default"
                                       data-testid="Input__suggestion"
                                     >
-                                      English
+                                      <span
+                                        class="truncate"
+                                      >
+                                        English
+                                      </span>
                                     </span>
                                   </div>
                                   <div
@@ -10556,6 +11043,11 @@ exports[`Settings should update the avatar when removing focus from name input 2
                             class="relative w-full"
                           >
                             <div
+                              class="fixed invisible w-auto whitespace-nowrap"
+                            >
+                              cryptocompare…
+                            </div>
+                            <div
                               class="Input__InputWrapperStyled-wu99qs-0 jYUFQr sr-only"
                             >
                               <div
@@ -10585,6 +11077,11 @@ exports[`Settings should update the avatar when removing focus from name input 2
                                   id="select-market-provider-label"
                                 />
                                 <div
+                                  class="fixed invisible w-auto whitespace-nowrap"
+                                >
+                                  CryptoCompare…
+                                </div>
+                                <div
                                   class="Input__InputWrapperStyled-wu99qs-0 jYUFQr"
                                 >
                                   <div
@@ -10603,10 +11100,14 @@ exports[`Settings should update the avatar when removing focus from name input 2
                                       value="CryptoCompare"
                                     />
                                     <span
-                                      class="absolute inset-y-0 flex items-center font-normal opacity-50 pointer-events-none cursor-default"
+                                      class="absolute inset-y-0 flex items-center font-normal opacity-50 pointer-events-none w-full cursor-default"
                                       data-testid="Input__suggestion"
                                     >
-                                      CryptoCompare
+                                      <span
+                                        class="truncate"
+                                      >
+                                        CryptoCompare
+                                      </span>
                                     </span>
                                   </div>
                                   <div
@@ -10660,6 +11161,11 @@ exports[`Settings should update the avatar when removing focus from name input 2
                             class="relative w-full"
                           >
                             <div
+                              class="fixed invisible w-auto whitespace-nowrap"
+                            >
+                              h:mm A…
+                            </div>
+                            <div
                               class="Input__InputWrapperStyled-wu99qs-0 jYUFQr sr-only"
                             >
                               <div
@@ -10689,6 +11195,11 @@ exports[`Settings should update the avatar when removing focus from name input 2
                                   id="select-time-format-label"
                                 />
                                 <div
+                                  class="fixed invisible w-auto whitespace-nowrap"
+                                >
+                                  12h…
+                                </div>
+                                <div
                                   class="Input__InputWrapperStyled-wu99qs-0 jYUFQr"
                                 >
                                   <div
@@ -10707,10 +11218,14 @@ exports[`Settings should update the avatar when removing focus from name input 2
                                       value="12h"
                                     />
                                     <span
-                                      class="absolute inset-y-0 flex items-center font-normal opacity-50 pointer-events-none cursor-default"
+                                      class="absolute inset-y-0 flex items-center font-normal opacity-50 pointer-events-none w-full cursor-default"
                                       data-testid="Input__suggestion"
                                     >
-                                      12h
+                                      <span
+                                        class="truncate"
+                                      >
+                                        12h
+                                      </span>
                                     </span>
                                   </div>
                                   <div
@@ -10853,6 +11368,11 @@ exports[`Settings should update the avatar when removing focus from name input 2
                               class="relative w-full"
                             >
                               <div
+                                class="fixed invisible w-auto whitespace-nowrap"
+                              >
+                                1…
+                              </div>
+                              <div
                                 class="Input__InputWrapperStyled-wu99qs-0 jYUFQr sr-only"
                               >
                                 <div
@@ -10882,6 +11402,11 @@ exports[`Settings should update the avatar when removing focus from name input 2
                                     id="select-auto-signout-label"
                                   />
                                   <div
+                                    class="fixed invisible w-auto whitespace-nowrap"
+                                  >
+                                    1 minute…
+                                  </div>
+                                  <div
                                     class="Input__InputWrapperStyled-wu99qs-0 jYUFQr"
                                   >
                                     <div
@@ -10900,10 +11425,14 @@ exports[`Settings should update the avatar when removing focus from name input 2
                                         value="1 minute"
                                       />
                                       <span
-                                        class="absolute inset-y-0 flex items-center font-normal opacity-50 pointer-events-none cursor-default"
+                                        class="absolute inset-y-0 flex items-center font-normal opacity-50 pointer-events-none w-full cursor-default"
                                         data-testid="Input__suggestion"
                                       >
-                                        1 minute
+                                        <span
+                                          class="truncate"
+                                        >
+                                          1 minute
+                                        </span>
                                       </span>
                                     </div>
                                     <div

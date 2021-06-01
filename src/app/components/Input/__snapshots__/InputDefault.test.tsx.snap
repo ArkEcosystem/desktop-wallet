@@ -3,6 +3,11 @@
 exports[`InputDefault should render a default input 1`] = `
 <DocumentFragment>
   <div
+    class="fixed invisible w-auto whitespace-nowrap"
+  >
+    …
+  </div>
+  <div
     class="Input__InputWrapperStyled-wu99qs-0 jYUFQr"
   >
     <div
@@ -11,6 +16,7 @@ exports[`InputDefault should render a default input 1`] = `
       <input
         class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
         data-testid="Input"
+        value=""
       />
     </div>
   </div>
