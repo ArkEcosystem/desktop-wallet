@@ -55,15 +55,15 @@ export const DelegateTable = ({
 
 	const columns = [
 		{
-			Header: t("COMMON.RANK"),
-			accessor: (delegate: Contracts.IReadOnlyWallet) => isLoading || delegate.rank(),
-			className: "justify-start",
-			minimumWidth: true,
-		},
-		{
 			Header: t("VOTE.DELEGATE_TABLE.NAME"),
 			accessor: (delegate: Contracts.IReadOnlyWallet) => isLoading || delegate.username(),
-			className: "no-border",
+			className: "justify-start",
+		},
+		{
+			Header: t("COMMON.EXPLORER"),
+			accessor: (delegate: Contracts.IReadOnlyWallet) => isLoading || delegate.explorerLink(),
+			className: "justify-center",
+			disableSortBy: true,
 		},
 		{
 			Header: "Actions",
