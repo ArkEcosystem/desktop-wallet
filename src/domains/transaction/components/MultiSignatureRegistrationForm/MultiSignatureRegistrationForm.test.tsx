@@ -95,7 +95,7 @@ describe("MultiSignature Registration Form", () => {
 		await waitFor(() => expect(result.current.getValues("fee")).toBe("135400000"));
 		await waitFor(() => expect(result.current.getValues("minParticipants")).toBe("3"));
 
-		fireEvent.input(screen.getByTestId("SelectDropdownInput__input"), {
+		fireEvent.input(screen.getByTestId("SelectDropdown__input"), {
 			target: {
 				value: wallet2.address(),
 			},

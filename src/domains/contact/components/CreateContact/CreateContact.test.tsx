@@ -46,7 +46,7 @@ describe("CreateContact", () => {
 
 		expect(screen.getByTestId("Input__error")).toBeVisible();
 
-		const selectNetworkInput = screen.getByTestId("SelectDropdownInput__input");
+		const selectNetworkInput = screen.getByTestId("SelectDropdown__input");
 
 		fireEvent.change(selectNetworkInput, { target: { value: "ARK D" } });
 		fireEvent.keyDown(selectNetworkInput, { key: "Enter", code: 13 });

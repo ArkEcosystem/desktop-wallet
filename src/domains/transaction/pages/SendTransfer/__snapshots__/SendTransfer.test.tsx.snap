@@ -698,7 +698,7 @@ exports[`SendTransfer should display disabled address selection input if selecte
                                                 aria-labelledby="downshift-42-label"
                                                 autocomplete="off"
                                                 class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full cursor-default text-theme-secondary-text"
-                                                data-testid="SelectDropdownInput__input"
+                                                data-testid="SelectDropdown__input"
                                                 disabled=""
                                                 id="downshift-42-input"
                                                 name="recipientAddress"
@@ -731,7 +731,7 @@ exports[`SendTransfer should display disabled address selection input if selecte
                                           </div>
                                           <ul
                                             aria-labelledby="downshift-42-label"
-                                            class="styles__SelectOptionsList-b2falt-0 ghEDCU"
+                                            class="styles__SelectOptionsList-b2falt-0 dyOwRR"
                                             id="downshift-42-menu"
                                             role="listbox"
                                           />
@@ -2701,7 +2701,7 @@ exports[`SendTransfer should render 1st step with custom deeplink values and use
                                 aria-labelledby="downshift-7-label"
                                 autocomplete="off"
                                 class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full cursor-default text-theme-secondary-text"
-                                data-testid="SelectDropdownInput__input"
+                                data-testid="SelectDropdown__input"
                                 disabled=""
                                 id="downshift-7-input"
                                 name="recipientAddress"
@@ -2734,7 +2734,7 @@ exports[`SendTransfer should render 1st step with custom deeplink values and use
                           </div>
                           <ul
                             aria-labelledby="downshift-7-label"
-                            class="styles__SelectOptionsList-b2falt-0 ghEDCU"
+                            class="styles__SelectOptionsList-b2falt-0 dyOwRR"
                             id="downshift-7-menu"
                             role="listbox"
                           />
@@ -3644,8 +3644,8 @@ exports[`SendTransfer should render form and use location state 1`] = `
                                                 aria-invalid="false"
                                                 aria-labelledby="downshift-10-label"
                                                 autocomplete="off"
-                                                class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full cursor-default"
-                                                data-testid="SelectDropdownInput__input"
+                                                class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
+                                                data-testid="SelectDropdown__input"
                                                 id="downshift-10-input"
                                                 name="recipientAddress"
                                                 placeholder="Address"
@@ -3677,7 +3677,7 @@ exports[`SendTransfer should render form and use location state 1`] = `
                                           </div>
                                           <ul
                                             aria-labelledby="downshift-10-label"
-                                            class="styles__SelectOptionsList-b2falt-0 ghEDCU"
+                                            class="styles__SelectOptionsList-b2falt-0 dyOwRR"
                                             id="downshift-10-menu"
                                             role="listbox"
                                           />
@@ -4684,7 +4684,7 @@ exports[`SendTransfer should render form and use location state without memo 1`]
                                                 aria-labelledby="downshift-27-label"
                                                 autocomplete="off"
                                                 class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full cursor-default"
-                                                data-testid="SelectDropdownInput__input"
+                                                data-testid="SelectDropdown__input"
                                                 id="downshift-27-input"
                                                 name="recipientAddress"
                                                 placeholder="Address"
@@ -4716,7 +4716,7 @@ exports[`SendTransfer should render form and use location state without memo 1`]
                                           </div>
                                           <ul
                                             aria-labelledby="downshift-27-label"
-                                            class="styles__SelectOptionsList-b2falt-0 ghEDCU"
+                                            class="styles__SelectOptionsList-b2falt-0 dyOwRR"
                                             id="downshift-27-menu"
                                             role="listbox"
                                           />
@@ -5330,7 +5330,7 @@ exports[`SendTransfer should render form step 1`] = `
                                 aria-labelledby="downshift-0-label"
                                 autocomplete="off"
                                 class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full cursor-default text-theme-secondary-text"
-                                data-testid="SelectDropdownInput__input"
+                                data-testid="SelectDropdown__input"
                                 disabled=""
                                 id="downshift-0-input"
                                 name="recipientAddress"
@@ -5363,7 +5363,7 @@ exports[`SendTransfer should render form step 1`] = `
                           </div>
                           <ul
                             aria-labelledby="downshift-0-label"
-                            class="styles__SelectOptionsList-b2falt-0 ghEDCU"
+                            class="styles__SelectOptionsList-b2falt-0 dyOwRR"
                             id="downshift-0-menu"
                             role="listbox"
                           />
@@ -5870,7 +5870,7 @@ exports[`SendTransfer should render form step with deeplink values and use them 
                                 aria-labelledby="downshift-4-label"
                                 autocomplete="off"
                                 class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full cursor-default text-theme-secondary-text"
-                                data-testid="SelectDropdownInput__input"
+                                data-testid="SelectDropdown__input"
                                 disabled=""
                                 id="downshift-4-input"
                                 name="recipientAddress"
@@ -5903,7 +5903,7 @@ exports[`SendTransfer should render form step with deeplink values and use them 
                           </div>
                           <ul
                             aria-labelledby="downshift-4-label"
-                            class="styles__SelectOptionsList-b2falt-0 ghEDCU"
+                            class="styles__SelectOptionsList-b2falt-0 dyOwRR"
                             id="downshift-4-menu"
                             role="listbox"
                           />
@@ -6410,7 +6410,7 @@ exports[`SendTransfer should render form step without test networks 1`] = `
                                 aria-labelledby="downshift-2-label"
                                 autocomplete="off"
                                 class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full cursor-default text-theme-secondary-text"
-                                data-testid="SelectDropdownInput__input"
+                                data-testid="SelectDropdown__input"
                                 disabled=""
                                 id="downshift-2-input"
                                 name="recipientAddress"
@@ -6443,7 +6443,7 @@ exports[`SendTransfer should render form step without test networks 1`] = `
                           </div>
                           <ul
                             aria-labelledby="downshift-2-label"
-                            class="styles__SelectOptionsList-b2falt-0 ghEDCU"
+                            class="styles__SelectOptionsList-b2falt-0 dyOwRR"
                             id="downshift-2-menu"
                             role="listbox"
                           />
@@ -8559,7 +8559,7 @@ exports[`SendTransfer should select a cryptoasset and select sender without wall
                                                 aria-labelledby="downshift-51-label"
                                                 autocomplete="off"
                                                 class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full cursor-default"
-                                                data-testid="SelectDropdownInput__input"
+                                                data-testid="SelectDropdown__input"
                                                 id="downshift-51-input"
                                                 name="recipientAddress"
                                                 placeholder="Address"
@@ -8591,7 +8591,7 @@ exports[`SendTransfer should select a cryptoasset and select sender without wall
                                           </div>
                                           <ul
                                             aria-labelledby="downshift-51-label"
-                                            class="styles__SelectOptionsList-b2falt-0 ghEDCU"
+                                            class="styles__SelectOptionsList-b2falt-0 dyOwRR"
                                             id="downshift-51-menu"
                                             role="listbox"
                                           />

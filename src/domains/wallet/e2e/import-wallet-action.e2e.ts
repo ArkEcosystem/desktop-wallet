@@ -69,7 +69,7 @@ test("should import a wallet by address", async (t) => {
 	await t.click(Selector("button").withExactText(translations.COMMON.CONTINUE));
 	await t.expect(Selector("h1").withExactText(translations.WALLETS.PAGE_IMPORT_WALLET.METHOD_STEP.TITLE).exists).ok();
 
-	await t.click('[data-testid="SelectDropdownInput__input"]');
+	await t.click('[data-testid="SelectDropdown__input"]');
 	await t.click(Selector("#ImportWallet__select-item-1"));
 
 	// Fill an address and advance to the third step
@@ -103,7 +103,7 @@ test("should show an error message for invalid address", async (t) => {
 	await t.click(Selector("button").withExactText(translations.COMMON.CONTINUE));
 	await t.expect(Selector("h1").withExactText("Import Wallet").exists).ok();
 
-	await t.click('[data-testid="SelectDropdownInput__input"]');
+	await t.click('[data-testid="SelectDropdown__input"]');
 	await t.click(Selector("#ImportWallet__select-item-1"));
 
 	// Input address
