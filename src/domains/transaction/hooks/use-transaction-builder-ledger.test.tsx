@@ -62,7 +62,7 @@ describe("Use Transaction Builder with Ledger", () => {
 		});
 
 		await waitFor(() =>
-			expect(transaction.id()).toBe("b08d2b2113534a4a39f363c62d27892ae8b60406c6aaeae4bd863fb87512613d"),
+			expect(transaction.id()).toBe("11b2dcd2923db56786353c915cd6df6689f2a74d4335c7d584da1936a1192e21"),
 		);
 
 		jest.clearAllMocks();
@@ -97,7 +97,7 @@ describe("Use Transaction Builder with Ledger", () => {
 			transaction = (await result.current.build("transfer", input, wallet)).transaction;
 		});
 
-		expect(transaction.id()).toBe("b08d2b2113534a4a39f363c62d27892ae8b60406c6aaeae4bd863fb87512613d");
+		expect(transaction.id()).toBe("11b2dcd2923db56786353c915cd6df6689f2a74d4335c7d584da1936a1192e21");
 
 		jest.clearAllMocks();
 	});
