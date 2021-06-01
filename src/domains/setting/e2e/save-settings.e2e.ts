@@ -23,3 +23,22 @@ test("should save settings", async (t) => {
 
 	await t.click(Selector("button").withText(translations.COMMON.SAVE));
 });
+
+test("should update converted balance in the navbar after changing the currency", async (t) => {
+	const getBalanceValue = async (): Promise<string> => {
+		const balanceText = await Selector("[data-testid=Balance__value]").textContent;
+		return balanceText.replace(/[A-Z]|\s/g, "");
+	};
+
+	await t.click(Selector("[aria-owns=select-currency-menu] [data-testid=SelectDropdown__caret]"));
+	await t.click(Selector("#select-currency-item-0"));
+	await t.click(Selector("button").withText(translations.COMMON.SAVE));
+	const balanceBefore = await getBalanceValue();
+
+	await t.click(Selector("[aria-owns=select-currency-menu] [data-testid=SelectDropdown__caret]"));
+	await t.click(Selector("#select-currency-item-1"));
+	await t.click(Selector("button").withText(translations.COMMON.SAVE));
+	const balanceAfter = await getBalanceValue();
+
+	await t.expect(balanceBefore).notEql(balanceAfter);
+});
