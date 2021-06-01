@@ -1,5 +1,4 @@
 import { Contracts } from "@arkecosystem/platform-sdk";
-import { DateTime } from "@arkecosystem/platform-sdk-intl";
 import { Contracts as ProfileContracts } from "@arkecosystem/platform-sdk-profiles";
 import { Button } from "app/components/Button";
 import { Icon } from "app/components/Icon";
@@ -148,8 +147,7 @@ const Row = ({
 
 			<TableCell innerClassName="text-theme-secondary-text">
 				<span data-testid="TransactionRow__timestamp">
-					{/* TODO */}
-					{DateTime.fromUnix(1596213281).format("DD MMM YYYY HH:mm:ss")}
+					{transaction.timestamp().format("DD MMM YYYY HH:mm:ss")}
 				</span>
 			</TableCell>
 
