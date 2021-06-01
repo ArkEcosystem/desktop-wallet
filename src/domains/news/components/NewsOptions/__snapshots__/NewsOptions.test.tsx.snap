@@ -16,6 +16,11 @@ exports[`NewsOptions should render 1`] = `
           class="flex justify-between items-center py-4 px-2 rounded-md shadow-xl"
         >
           <div
+            class="fixed invisible w-auto whitespace-nowrap"
+          >
+            …
+          </div>
+          <div
             class="Input__InputWrapperStyled-wu99qs-0 cRhsWS"
           >
             <div
@@ -26,6 +31,7 @@ exports[`NewsOptions should render 1`] = `
                 data-testid="NewsOptions__search"
                 maxlength="32"
                 placeholder="Search"
+                value=""
               />
             </div>
           </div>

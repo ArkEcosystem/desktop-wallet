@@ -21,6 +21,11 @@ exports[`ContactForm should render 1`] = `
         />
       </label>
       <div
+        class="fixed invisible w-auto whitespace-nowrap"
+      >
+        …
+      </div>
+      <div
         class="Input__InputWrapperStyled-wu99qs-0 jYUFQr"
       >
         <div
@@ -56,6 +61,11 @@ exports[`ContactForm should render 1`] = `
           class="relative w-full"
         >
           <div
+            class="fixed invisible w-auto whitespace-nowrap"
+          >
+            …
+          </div>
+          <div
             class="Input__InputWrapperStyled-wu99qs-0 jYUFQr sr-only"
           >
             <div
@@ -84,6 +94,11 @@ exports[`ContactForm should render 1`] = `
                 for="downshift-0-input"
                 id="downshift-0-label"
               />
+              <div
+                class="fixed invisible w-auto whitespace-nowrap"
+              >
+                …
+              </div>
               <div
                 class="Input__InputWrapperStyled-wu99qs-0 jYUFQr"
               >
@@ -152,6 +167,11 @@ exports[`ContactForm should render 1`] = `
           />
         </label>
         <div
+          class="fixed invisible w-auto whitespace-nowrap"
+        >
+          …
+        </div>
+        <div
           class="Input__InputWrapperStyled-wu99qs-0 jYUFQr"
         >
           <div
@@ -162,6 +182,7 @@ exports[`ContactForm should render 1`] = `
               data-testid="contact-form__address-input"
               name="address"
               type="text"
+              value=""
             />
           </div>
         </div>
@@ -239,6 +260,11 @@ exports[`ContactForm should render with errors 1`] = `
         />
       </label>
       <div
+        class="fixed invisible w-auto whitespace-nowrap"
+      >
+        …
+      </div>
+      <div
         class="Input__InputWrapperStyled-wu99qs-0 jXtMoQ"
       >
         <div
@@ -293,6 +319,11 @@ exports[`ContactForm should render with errors 1`] = `
           class="relative w-full"
         >
           <div
+            class="fixed invisible w-auto whitespace-nowrap"
+          >
+            …
+          </div>
+          <div
             class="Input__InputWrapperStyled-wu99qs-0 jYUFQr sr-only"
           >
             <div
@@ -321,6 +352,11 @@ exports[`ContactForm should render with errors 1`] = `
                 for="downshift-3-input"
                 id="downshift-3-label"
               />
+              <div
+                class="fixed invisible w-auto whitespace-nowrap"
+              >
+                …
+              </div>
               <div
                 class="Input__InputWrapperStyled-wu99qs-0 jYUFQr"
               >
@@ -389,6 +425,11 @@ exports[`ContactForm should render with errors 1`] = `
           />
         </label>
         <div
+          class="fixed invisible w-auto whitespace-nowrap"
+        >
+          …
+        </div>
+        <div
           class="Input__InputWrapperStyled-wu99qs-0 jYUFQr"
         >
           <div
@@ -399,6 +440,7 @@ exports[`ContactForm should render with errors 1`] = `
               data-testid="contact-form__address-input"
               name="address"
               type="text"
+              value=""
             />
           </div>
         </div>

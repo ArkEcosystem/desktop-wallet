@@ -96,6 +96,11 @@ exports[`CreateProfile should fail password confirmation 1`] = `
                         />
                       </label>
                       <div
+                        class="fixed invisible w-auto whitespace-nowrap"
+                      >
+                        …
+                      </div>
+                      <div
                         class="Input__InputWrapperStyled-wu99qs-0 jYUFQr"
                       >
                         <div
@@ -105,6 +110,7 @@ exports[`CreateProfile should fail password confirmation 1`] = `
                             class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
                             data-testid="Input"
                             name="name"
+                            value=""
                           />
                         </div>
                       </div>
@@ -167,6 +173,11 @@ exports[`CreateProfile should fail password confirmation 1`] = `
                     </span>
                   </label>
                   <div
+                    class="fixed invisible w-auto whitespace-nowrap"
+                  >
+                    …
+                  </div>
+                  <div
                     class="Input__InputWrapperStyled-wu99qs-0 jYUFQr"
                   >
                     <div
@@ -177,6 +188,7 @@ exports[`CreateProfile should fail password confirmation 1`] = `
                         data-testid="InputPassword"
                         name="password"
                         type="password"
+                        value=""
                       />
                     </div>
                     <div
@@ -222,6 +234,11 @@ exports[`CreateProfile should fail password confirmation 1`] = `
                     />
                   </label>
                   <div
+                    class="fixed invisible w-auto whitespace-nowrap"
+                  >
+                    …
+                  </div>
+                  <div
                     class="Input__InputWrapperStyled-wu99qs-0 jXtMoQ"
                   >
                     <div
@@ -233,6 +250,7 @@ exports[`CreateProfile should fail password confirmation 1`] = `
                         data-testid="InputPassword"
                         name="confirmPassword"
                         type="password"
+                        value=""
                       />
                     </div>
                     <div
@@ -295,6 +313,11 @@ exports[`CreateProfile should fail password confirmation 1`] = `
                     class="relative w-full"
                   >
                     <div
+                      class="fixed invisible w-auto whitespace-nowrap"
+                    >
+                      BTC…
+                    </div>
+                    <div
                       class="Input__InputWrapperStyled-wu99qs-0 jYUFQr sr-only"
                     >
                       <div
@@ -324,6 +347,11 @@ exports[`CreateProfile should fail password confirmation 1`] = `
                           id="downshift-70-label"
                         />
                         <div
+                          class="fixed invisible w-auto whitespace-nowrap"
+                        >
+                          BTC (Ƀ)…
+                        </div>
+                        <div
                           class="Input__InputWrapperStyled-wu99qs-0 jYUFQr"
                         >
                           <div
@@ -343,10 +371,14 @@ exports[`CreateProfile should fail password confirmation 1`] = `
                               value="BTC (Ƀ)"
                             />
                             <span
-                              class="absolute inset-y-0 flex items-center font-normal opacity-50 pointer-events-none cursor-default"
+                              class="absolute inset-y-0 flex items-center font-normal opacity-50 pointer-events-none w-full cursor-default"
                               data-testid="Input__suggestion"
                             >
-                              BTC (Ƀ)
+                              <span
+                                class="truncate"
+                              >
+                                BTC (Ƀ)
+                              </span>
                             </span>
                           </div>
                           <div
@@ -810,6 +842,11 @@ exports[`CreateProfile should not be able to create new profile if name already 
                         />
                       </label>
                       <div
+                        class="fixed invisible w-auto whitespace-nowrap"
+                      >
+                        …
+                      </div>
+                      <div
                         class="Input__InputWrapperStyled-wu99qs-0 jXtMoQ"
                       >
                         <div
@@ -820,6 +857,7 @@ exports[`CreateProfile should not be able to create new profile if name already 
                             class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
                             data-testid="Input"
                             name="name"
+                            value=""
                           />
                         </div>
                         <div
@@ -900,6 +938,11 @@ exports[`CreateProfile should not be able to create new profile if name already 
                     </span>
                   </label>
                   <div
+                    class="fixed invisible w-auto whitespace-nowrap"
+                  >
+                    …
+                  </div>
+                  <div
                     class="Input__InputWrapperStyled-wu99qs-0 jYUFQr"
                   >
                     <div
@@ -910,6 +953,7 @@ exports[`CreateProfile should not be able to create new profile if name already 
                         data-testid="InputPassword"
                         name="password"
                         type="password"
+                        value=""
                       />
                     </div>
                     <div
@@ -957,6 +1001,11 @@ exports[`CreateProfile should not be able to create new profile if name already 
                     </span>
                   </label>
                   <div
+                    class="fixed invisible w-auto whitespace-nowrap"
+                  >
+                    …
+                  </div>
+                  <div
                     class="Input__InputWrapperStyled-wu99qs-0 jYUFQr"
                   >
                     <div
@@ -967,6 +1016,7 @@ exports[`CreateProfile should not be able to create new profile if name already 
                         data-testid="InputPassword"
                         name="confirmPassword"
                         type="password"
+                        value=""
                       />
                     </div>
                     <div
@@ -1015,6 +1065,11 @@ exports[`CreateProfile should not be able to create new profile if name already 
                     class="relative w-full"
                   >
                     <div
+                      class="fixed invisible w-auto whitespace-nowrap"
+                    >
+                      BTC…
+                    </div>
+                    <div
                       class="Input__InputWrapperStyled-wu99qs-0 jYUFQr sr-only"
                     >
                       <div
@@ -1044,6 +1099,11 @@ exports[`CreateProfile should not be able to create new profile if name already 
                           id="downshift-23-label"
                         />
                         <div
+                          class="fixed invisible w-auto whitespace-nowrap"
+                        >
+                          BTC (Ƀ)…
+                        </div>
+                        <div
                           class="Input__InputWrapperStyled-wu99qs-0 jYUFQr"
                         >
                           <div
@@ -1063,10 +1123,14 @@ exports[`CreateProfile should not be able to create new profile if name already 
                               value="BTC (Ƀ)"
                             />
                             <span
-                              class="absolute inset-y-0 flex items-center font-normal opacity-50 pointer-events-none cursor-default"
+                              class="absolute inset-y-0 flex items-center font-normal opacity-50 pointer-events-none w-full cursor-default"
                               data-testid="Input__suggestion"
                             >
-                              BTC (Ƀ)
+                              <span
+                                class="truncate"
+                              >
+                                BTC (Ƀ)
+                              </span>
                             </span>
                           </div>
                           <div
@@ -1530,6 +1594,11 @@ exports[`CreateProfile should not be able to create new profile if name consists
                         />
                       </label>
                       <div
+                        class="fixed invisible w-auto whitespace-nowrap"
+                      >
+                        …
+                      </div>
+                      <div
                         class="Input__InputWrapperStyled-wu99qs-0 jXtMoQ"
                       >
                         <div
@@ -1540,6 +1609,7 @@ exports[`CreateProfile should not be able to create new profile if name consists
                             class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
                             data-testid="Input"
                             name="name"
+                            value=""
                           />
                         </div>
                         <div
@@ -1620,6 +1690,11 @@ exports[`CreateProfile should not be able to create new profile if name consists
                     </span>
                   </label>
                   <div
+                    class="fixed invisible w-auto whitespace-nowrap"
+                  >
+                    …
+                  </div>
+                  <div
                     class="Input__InputWrapperStyled-wu99qs-0 jYUFQr"
                   >
                     <div
@@ -1630,6 +1705,7 @@ exports[`CreateProfile should not be able to create new profile if name consists
                         data-testid="InputPassword"
                         name="password"
                         type="password"
+                        value=""
                       />
                     </div>
                     <div
@@ -1677,6 +1753,11 @@ exports[`CreateProfile should not be able to create new profile if name consists
                     </span>
                   </label>
                   <div
+                    class="fixed invisible w-auto whitespace-nowrap"
+                  >
+                    …
+                  </div>
+                  <div
                     class="Input__InputWrapperStyled-wu99qs-0 jYUFQr"
                   >
                     <div
@@ -1687,6 +1768,7 @@ exports[`CreateProfile should not be able to create new profile if name consists
                         data-testid="InputPassword"
                         name="confirmPassword"
                         type="password"
+                        value=""
                       />
                     </div>
                     <div
@@ -1735,6 +1817,11 @@ exports[`CreateProfile should not be able to create new profile if name consists
                     class="relative w-full"
                   >
                     <div
+                      class="fixed invisible w-auto whitespace-nowrap"
+                    >
+                      BTC…
+                    </div>
+                    <div
                       class="Input__InputWrapperStyled-wu99qs-0 jYUFQr sr-only"
                     >
                       <div
@@ -1764,6 +1851,11 @@ exports[`CreateProfile should not be able to create new profile if name consists
                           id="downshift-34-label"
                         />
                         <div
+                          class="fixed invisible w-auto whitespace-nowrap"
+                        >
+                          BTC (Ƀ)…
+                        </div>
+                        <div
                           class="Input__InputWrapperStyled-wu99qs-0 jYUFQr"
                         >
                           <div
@@ -1783,10 +1875,14 @@ exports[`CreateProfile should not be able to create new profile if name consists
                               value="BTC (Ƀ)"
                             />
                             <span
-                              class="absolute inset-y-0 flex items-center font-normal opacity-50 pointer-events-none cursor-default"
+                              class="absolute inset-y-0 flex items-center font-normal opacity-50 pointer-events-none w-full cursor-default"
                               data-testid="Input__suggestion"
                             >
-                              BTC (Ƀ)
+                              <span
+                                class="truncate"
+                              >
+                                BTC (Ƀ)
+                              </span>
                             </span>
                           </div>
                           <div
@@ -2250,6 +2346,11 @@ exports[`CreateProfile should not be able to create new profile if name is too l
                         />
                       </label>
                       <div
+                        class="fixed invisible w-auto whitespace-nowrap"
+                      >
+                        …
+                      </div>
+                      <div
                         class="Input__InputWrapperStyled-wu99qs-0 jXtMoQ"
                       >
                         <div
@@ -2260,6 +2361,7 @@ exports[`CreateProfile should not be able to create new profile if name is too l
                             class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
                             data-testid="Input"
                             name="name"
+                            value=""
                           />
                         </div>
                         <div
@@ -2340,6 +2442,11 @@ exports[`CreateProfile should not be able to create new profile if name is too l
                     </span>
                   </label>
                   <div
+                    class="fixed invisible w-auto whitespace-nowrap"
+                  >
+                    …
+                  </div>
+                  <div
                     class="Input__InputWrapperStyled-wu99qs-0 jYUFQr"
                   >
                     <div
@@ -2350,6 +2457,7 @@ exports[`CreateProfile should not be able to create new profile if name is too l
                         data-testid="InputPassword"
                         name="password"
                         type="password"
+                        value=""
                       />
                     </div>
                     <div
@@ -2397,6 +2505,11 @@ exports[`CreateProfile should not be able to create new profile if name is too l
                     </span>
                   </label>
                   <div
+                    class="fixed invisible w-auto whitespace-nowrap"
+                  >
+                    …
+                  </div>
+                  <div
                     class="Input__InputWrapperStyled-wu99qs-0 jYUFQr"
                   >
                     <div
@@ -2407,6 +2520,7 @@ exports[`CreateProfile should not be able to create new profile if name is too l
                         data-testid="InputPassword"
                         name="confirmPassword"
                         type="password"
+                        value=""
                       />
                     </div>
                     <div
@@ -2455,6 +2569,11 @@ exports[`CreateProfile should not be able to create new profile if name is too l
                     class="relative w-full"
                   >
                     <div
+                      class="fixed invisible w-auto whitespace-nowrap"
+                    >
+                      BTC…
+                    </div>
+                    <div
                       class="Input__InputWrapperStyled-wu99qs-0 jYUFQr sr-only"
                     >
                       <div
@@ -2484,6 +2603,11 @@ exports[`CreateProfile should not be able to create new profile if name is too l
                           id="downshift-45-label"
                         />
                         <div
+                          class="fixed invisible w-auto whitespace-nowrap"
+                        >
+                          BTC (Ƀ)…
+                        </div>
+                        <div
                           class="Input__InputWrapperStyled-wu99qs-0 jYUFQr"
                         >
                           <div
@@ -2503,10 +2627,14 @@ exports[`CreateProfile should not be able to create new profile if name is too l
                               value="BTC (Ƀ)"
                             />
                             <span
-                              class="absolute inset-y-0 flex items-center font-normal opacity-50 pointer-events-none cursor-default"
+                              class="absolute inset-y-0 flex items-center font-normal opacity-50 pointer-events-none w-full cursor-default"
                               data-testid="Input__suggestion"
                             >
-                              BTC (Ƀ)
+                              <span
+                                class="truncate"
+                              >
+                                BTC (Ƀ)
+                              </span>
                             </span>
                           </div>
                           <div
@@ -2970,6 +3098,11 @@ exports[`CreateProfile should not update the uploaded avatar when removing focus
                         />
                       </label>
                       <div
+                        class="fixed invisible w-auto whitespace-nowrap"
+                      >
+                        …
+                      </div>
+                      <div
                         class="Input__InputWrapperStyled-wu99qs-0 jXtMoQ"
                       >
                         <div
@@ -2980,6 +3113,7 @@ exports[`CreateProfile should not update the uploaded avatar when removing focus
                             class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
                             data-testid="Input"
                             name="name"
+                            value=""
                           />
                         </div>
                         <div
@@ -3081,6 +3215,11 @@ exports[`CreateProfile should not update the uploaded avatar when removing focus
                     </span>
                   </label>
                   <div
+                    class="fixed invisible w-auto whitespace-nowrap"
+                  >
+                    …
+                  </div>
+                  <div
                     class="Input__InputWrapperStyled-wu99qs-0 jYUFQr"
                   >
                     <div
@@ -3091,6 +3230,7 @@ exports[`CreateProfile should not update the uploaded avatar when removing focus
                         data-testid="InputPassword"
                         name="password"
                         type="password"
+                        value=""
                       />
                     </div>
                     <div
@@ -3138,6 +3278,11 @@ exports[`CreateProfile should not update the uploaded avatar when removing focus
                     </span>
                   </label>
                   <div
+                    class="fixed invisible w-auto whitespace-nowrap"
+                  >
+                    …
+                  </div>
+                  <div
                     class="Input__InputWrapperStyled-wu99qs-0 jYUFQr"
                   >
                     <div
@@ -3148,6 +3293,7 @@ exports[`CreateProfile should not update the uploaded avatar when removing focus
                         data-testid="InputPassword"
                         name="confirmPassword"
                         type="password"
+                        value=""
                       />
                     </div>
                     <div
@@ -3196,6 +3342,11 @@ exports[`CreateProfile should not update the uploaded avatar when removing focus
                     class="relative w-full"
                   >
                     <div
+                      class="fixed invisible w-auto whitespace-nowrap"
+                    >
+                      …
+                    </div>
+                    <div
                       class="Input__InputWrapperStyled-wu99qs-0 jYUFQr sr-only"
                     >
                       <div
@@ -3224,6 +3375,11 @@ exports[`CreateProfile should not update the uploaded avatar when removing focus
                           for="downshift-95-input"
                           id="downshift-95-label"
                         />
+                        <div
+                          class="fixed invisible w-auto whitespace-nowrap"
+                        >
+                          …
+                        </div>
                         <div
                           class="Input__InputWrapperStyled-wu99qs-0 jYUFQr"
                         >
@@ -3469,6 +3625,11 @@ exports[`CreateProfile should not upload avatar image 1`] = `
                         />
                       </label>
                       <div
+                        class="fixed invisible w-auto whitespace-nowrap"
+                      >
+                        …
+                      </div>
+                      <div
                         class="Input__InputWrapperStyled-wu99qs-0 jYUFQr"
                       >
                         <div
@@ -3478,6 +3639,7 @@ exports[`CreateProfile should not upload avatar image 1`] = `
                             class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
                             data-testid="Input"
                             name="name"
+                            value=""
                           />
                         </div>
                       </div>
@@ -3540,6 +3702,11 @@ exports[`CreateProfile should not upload avatar image 1`] = `
                     </span>
                   </label>
                   <div
+                    class="fixed invisible w-auto whitespace-nowrap"
+                  >
+                    …
+                  </div>
+                  <div
                     class="Input__InputWrapperStyled-wu99qs-0 jYUFQr"
                   >
                     <div
@@ -3550,6 +3717,7 @@ exports[`CreateProfile should not upload avatar image 1`] = `
                         data-testid="InputPassword"
                         name="password"
                         type="password"
+                        value=""
                       />
                     </div>
                     <div
@@ -3597,6 +3765,11 @@ exports[`CreateProfile should not upload avatar image 1`] = `
                     </span>
                   </label>
                   <div
+                    class="fixed invisible w-auto whitespace-nowrap"
+                  >
+                    …
+                  </div>
+                  <div
                     class="Input__InputWrapperStyled-wu99qs-0 jYUFQr"
                   >
                     <div
@@ -3607,6 +3780,7 @@ exports[`CreateProfile should not upload avatar image 1`] = `
                         data-testid="InputPassword"
                         name="confirmPassword"
                         type="password"
+                        value=""
                       />
                     </div>
                     <div
@@ -3655,6 +3829,11 @@ exports[`CreateProfile should not upload avatar image 1`] = `
                     class="relative w-full"
                   >
                     <div
+                      class="fixed invisible w-auto whitespace-nowrap"
+                    >
+                      BTC…
+                    </div>
+                    <div
                       class="Input__InputWrapperStyled-wu99qs-0 jYUFQr sr-only"
                     >
                       <div
@@ -3684,6 +3863,11 @@ exports[`CreateProfile should not upload avatar image 1`] = `
                           id="downshift-116-label"
                         />
                         <div
+                          class="fixed invisible w-auto whitespace-nowrap"
+                        >
+                          BTC (Ƀ)…
+                        </div>
+                        <div
                           class="Input__InputWrapperStyled-wu99qs-0 jYUFQr"
                         >
                           <div
@@ -3703,10 +3887,14 @@ exports[`CreateProfile should not upload avatar image 1`] = `
                               value="BTC (Ƀ)"
                             />
                             <span
-                              class="absolute inset-y-0 flex items-center font-normal opacity-50 pointer-events-none cursor-default"
+                              class="absolute inset-y-0 flex items-center font-normal opacity-50 pointer-events-none w-full cursor-default"
                               data-testid="Input__suggestion"
                             >
-                              BTC (Ƀ)
+                              <span
+                                class="truncate"
+                              >
+                                BTC (Ƀ)
+                              </span>
                             </span>
                           </div>
                           <div
@@ -4169,6 +4357,11 @@ exports[`CreateProfile should render 1`] = `
                         />
                       </label>
                       <div
+                        class="fixed invisible w-auto whitespace-nowrap"
+                      >
+                        …
+                      </div>
+                      <div
                         class="Input__InputWrapperStyled-wu99qs-0 jYUFQr"
                       >
                         <div
@@ -4178,6 +4371,7 @@ exports[`CreateProfile should render 1`] = `
                             class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
                             data-testid="Input"
                             name="name"
+                            value=""
                           />
                         </div>
                       </div>
@@ -4240,6 +4434,11 @@ exports[`CreateProfile should render 1`] = `
                     </span>
                   </label>
                   <div
+                    class="fixed invisible w-auto whitespace-nowrap"
+                  >
+                    …
+                  </div>
+                  <div
                     class="Input__InputWrapperStyled-wu99qs-0 jYUFQr"
                   >
                     <div
@@ -4250,6 +4449,7 @@ exports[`CreateProfile should render 1`] = `
                         data-testid="InputPassword"
                         name="password"
                         type="password"
+                        value=""
                       />
                     </div>
                     <div
@@ -4297,6 +4497,11 @@ exports[`CreateProfile should render 1`] = `
                     </span>
                   </label>
                   <div
+                    class="fixed invisible w-auto whitespace-nowrap"
+                  >
+                    …
+                  </div>
+                  <div
                     class="Input__InputWrapperStyled-wu99qs-0 jYUFQr"
                   >
                     <div
@@ -4307,6 +4512,7 @@ exports[`CreateProfile should render 1`] = `
                         data-testid="InputPassword"
                         name="confirmPassword"
                         type="password"
+                        value=""
                       />
                     </div>
                     <div
@@ -4355,6 +4561,11 @@ exports[`CreateProfile should render 1`] = `
                     class="relative w-full"
                   >
                     <div
+                      class="fixed invisible w-auto whitespace-nowrap"
+                    >
+                      …
+                    </div>
+                    <div
                       class="Input__InputWrapperStyled-wu99qs-0 jYUFQr sr-only"
                     >
                       <div
@@ -4383,6 +4594,11 @@ exports[`CreateProfile should render 1`] = `
                           for="downshift-0-input"
                           id="downshift-0-label"
                         />
+                        <div
+                          class="fixed invisible w-auto whitespace-nowrap"
+                        >
+                          …
+                        </div>
                         <div
                           class="Input__InputWrapperStyled-wu99qs-0 jYUFQr"
                         >
@@ -4628,6 +4844,11 @@ exports[`CreateProfile should store profile 1`] = `
                         />
                       </label>
                       <div
+                        class="fixed invisible w-auto whitespace-nowrap"
+                      >
+                        …
+                      </div>
+                      <div
                         class="Input__InputWrapperStyled-wu99qs-0 jYUFQr"
                       >
                         <div
@@ -4637,6 +4858,7 @@ exports[`CreateProfile should store profile 1`] = `
                             class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
                             data-testid="Input"
                             name="name"
+                            value=""
                           />
                         </div>
                       </div>
@@ -4720,6 +4942,11 @@ exports[`CreateProfile should store profile 1`] = `
                     </span>
                   </label>
                   <div
+                    class="fixed invisible w-auto whitespace-nowrap"
+                  >
+                    …
+                  </div>
+                  <div
                     class="Input__InputWrapperStyled-wu99qs-0 jYUFQr"
                   >
                     <div
@@ -4730,6 +4957,7 @@ exports[`CreateProfile should store profile 1`] = `
                         data-testid="InputPassword"
                         name="password"
                         type="password"
+                        value=""
                       />
                     </div>
                     <div
@@ -4777,6 +5005,11 @@ exports[`CreateProfile should store profile 1`] = `
                     </span>
                   </label>
                   <div
+                    class="fixed invisible w-auto whitespace-nowrap"
+                  >
+                    …
+                  </div>
+                  <div
                     class="Input__InputWrapperStyled-wu99qs-0 jYUFQr"
                   >
                     <div
@@ -4787,6 +5020,7 @@ exports[`CreateProfile should store profile 1`] = `
                         data-testid="InputPassword"
                         name="confirmPassword"
                         type="password"
+                        value=""
                       />
                     </div>
                     <div
@@ -4835,6 +5069,11 @@ exports[`CreateProfile should store profile 1`] = `
                     class="relative w-full"
                   >
                     <div
+                      class="fixed invisible w-auto whitespace-nowrap"
+                    >
+                      BTC…
+                    </div>
+                    <div
                       class="Input__InputWrapperStyled-wu99qs-0 jYUFQr sr-only"
                     >
                       <div
@@ -4864,6 +5103,11 @@ exports[`CreateProfile should store profile 1`] = `
                           id="downshift-4-label"
                         />
                         <div
+                          class="fixed invisible w-auto whitespace-nowrap"
+                        >
+                          BTC (Ƀ)…
+                        </div>
+                        <div
                           class="Input__InputWrapperStyled-wu99qs-0 jYUFQr"
                         >
                           <div
@@ -4883,10 +5127,14 @@ exports[`CreateProfile should store profile 1`] = `
                               value="BTC (Ƀ)"
                             />
                             <span
-                              class="absolute inset-y-0 flex items-center font-normal opacity-50 pointer-events-none cursor-default"
+                              class="absolute inset-y-0 flex items-center font-normal opacity-50 pointer-events-none w-full cursor-default"
                               data-testid="Input__suggestion"
                             >
-                              BTC (Ƀ)
+                              <span
+                                class="truncate"
+                              >
+                                BTC (Ƀ)
+                              </span>
                             </span>
                           </div>
                           <div
@@ -5349,6 +5597,11 @@ exports[`CreateProfile should store profile with password 1`] = `
                         />
                       </label>
                       <div
+                        class="fixed invisible w-auto whitespace-nowrap"
+                      >
+                        …
+                      </div>
+                      <div
                         class="Input__InputWrapperStyled-wu99qs-0 jYUFQr"
                       >
                         <div
@@ -5358,6 +5611,7 @@ exports[`CreateProfile should store profile with password 1`] = `
                             class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
                             data-testid="Input"
                             name="name"
+                            value=""
                           />
                         </div>
                       </div>
@@ -5420,6 +5674,11 @@ exports[`CreateProfile should store profile with password 1`] = `
                     </span>
                   </label>
                   <div
+                    class="fixed invisible w-auto whitespace-nowrap"
+                  >
+                    …
+                  </div>
+                  <div
                     class="Input__InputWrapperStyled-wu99qs-0 jYUFQr"
                   >
                     <div
@@ -5430,6 +5689,7 @@ exports[`CreateProfile should store profile with password 1`] = `
                         data-testid="InputPassword"
                         name="password"
                         type="password"
+                        value=""
                       />
                     </div>
                     <div
@@ -5475,6 +5735,11 @@ exports[`CreateProfile should store profile with password 1`] = `
                     />
                   </label>
                   <div
+                    class="fixed invisible w-auto whitespace-nowrap"
+                  >
+                    …
+                  </div>
+                  <div
                     class="Input__InputWrapperStyled-wu99qs-0 jYUFQr"
                   >
                     <div
@@ -5485,6 +5750,7 @@ exports[`CreateProfile should store profile with password 1`] = `
                         data-testid="InputPassword"
                         name="confirmPassword"
                         type="password"
+                        value=""
                       />
                     </div>
                     <div
@@ -5533,6 +5799,11 @@ exports[`CreateProfile should store profile with password 1`] = `
                     class="relative w-full"
                   >
                     <div
+                      class="fixed invisible w-auto whitespace-nowrap"
+                    >
+                      BTC…
+                    </div>
+                    <div
                       class="Input__InputWrapperStyled-wu99qs-0 jYUFQr sr-only"
                     >
                       <div
@@ -5562,6 +5833,11 @@ exports[`CreateProfile should store profile with password 1`] = `
                           id="downshift-56-label"
                         />
                         <div
+                          class="fixed invisible w-auto whitespace-nowrap"
+                        >
+                          BTC (Ƀ)…
+                        </div>
+                        <div
                           class="Input__InputWrapperStyled-wu99qs-0 jYUFQr"
                         >
                           <div
@@ -5581,10 +5857,14 @@ exports[`CreateProfile should store profile with password 1`] = `
                               value="BTC (Ƀ)"
                             />
                             <span
-                              class="absolute inset-y-0 flex items-center font-normal opacity-50 pointer-events-none cursor-default"
+                              class="absolute inset-y-0 flex items-center font-normal opacity-50 pointer-events-none w-full cursor-default"
                               data-testid="Input__suggestion"
                             >
-                              BTC (Ƀ)
+                              <span
+                                class="truncate"
+                              >
+                                BTC (Ƀ)
+                              </span>
                             </span>
                           </div>
                           <div
@@ -6047,6 +6327,11 @@ exports[`CreateProfile should update the avatar when removing focus from name in
                         />
                       </label>
                       <div
+                        class="fixed invisible w-auto whitespace-nowrap"
+                      >
+                        …
+                      </div>
+                      <div
                         class="Input__InputWrapperStyled-wu99qs-0 jYUFQr"
                       >
                         <div
@@ -6056,6 +6341,7 @@ exports[`CreateProfile should update the avatar when removing focus from name in
                             class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
                             data-testid="Input"
                             name="name"
+                            value=""
                           />
                         </div>
                       </div>
@@ -6125,6 +6411,11 @@ exports[`CreateProfile should update the avatar when removing focus from name in
                     </span>
                   </label>
                   <div
+                    class="fixed invisible w-auto whitespace-nowrap"
+                  >
+                    …
+                  </div>
+                  <div
                     class="Input__InputWrapperStyled-wu99qs-0 jYUFQr"
                   >
                     <div
@@ -6135,6 +6426,7 @@ exports[`CreateProfile should update the avatar when removing focus from name in
                         data-testid="InputPassword"
                         name="password"
                         type="password"
+                        value=""
                       />
                     </div>
                     <div
@@ -6182,6 +6474,11 @@ exports[`CreateProfile should update the avatar when removing focus from name in
                     </span>
                   </label>
                   <div
+                    class="fixed invisible w-auto whitespace-nowrap"
+                  >
+                    …
+                  </div>
+                  <div
                     class="Input__InputWrapperStyled-wu99qs-0 jYUFQr"
                   >
                     <div
@@ -6192,6 +6489,7 @@ exports[`CreateProfile should update the avatar when removing focus from name in
                         data-testid="InputPassword"
                         name="confirmPassword"
                         type="password"
+                        value=""
                       />
                     </div>
                     <div
@@ -6240,6 +6538,11 @@ exports[`CreateProfile should update the avatar when removing focus from name in
                     class="relative w-full"
                   >
                     <div
+                      class="fixed invisible w-auto whitespace-nowrap"
+                    >
+                      …
+                    </div>
+                    <div
                       class="Input__InputWrapperStyled-wu99qs-0 jYUFQr sr-only"
                     >
                       <div
@@ -6268,6 +6571,11 @@ exports[`CreateProfile should update the avatar when removing focus from name in
                           for="downshift-85-input"
                           id="downshift-85-label"
                         />
+                        <div
+                          class="fixed invisible w-auto whitespace-nowrap"
+                        >
+                          …
+                        </div>
                         <div
                           class="Input__InputWrapperStyled-wu99qs-0 jYUFQr"
                         >
@@ -6513,6 +6821,11 @@ exports[`CreateProfile should update the avatar when removing focus from name in
                         />
                       </label>
                       <div
+                        class="fixed invisible w-auto whitespace-nowrap"
+                      >
+                        …
+                      </div>
+                      <div
                         class="Input__InputWrapperStyled-wu99qs-0 jXtMoQ"
                       >
                         <div
@@ -6523,6 +6836,7 @@ exports[`CreateProfile should update the avatar when removing focus from name in
                             class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
                             data-testid="Input"
                             name="name"
+                            value=""
                           />
                         </div>
                         <div
@@ -6603,6 +6917,11 @@ exports[`CreateProfile should update the avatar when removing focus from name in
                     </span>
                   </label>
                   <div
+                    class="fixed invisible w-auto whitespace-nowrap"
+                  >
+                    …
+                  </div>
+                  <div
                     class="Input__InputWrapperStyled-wu99qs-0 jYUFQr"
                   >
                     <div
@@ -6613,6 +6932,7 @@ exports[`CreateProfile should update the avatar when removing focus from name in
                         data-testid="InputPassword"
                         name="password"
                         type="password"
+                        value=""
                       />
                     </div>
                     <div
@@ -6660,6 +6980,11 @@ exports[`CreateProfile should update the avatar when removing focus from name in
                     </span>
                   </label>
                   <div
+                    class="fixed invisible w-auto whitespace-nowrap"
+                  >
+                    …
+                  </div>
+                  <div
                     class="Input__InputWrapperStyled-wu99qs-0 jYUFQr"
                   >
                     <div
@@ -6670,6 +6995,7 @@ exports[`CreateProfile should update the avatar when removing focus from name in
                         data-testid="InputPassword"
                         name="confirmPassword"
                         type="password"
+                        value=""
                       />
                     </div>
                     <div
@@ -6718,6 +7044,11 @@ exports[`CreateProfile should update the avatar when removing focus from name in
                     class="relative w-full"
                   >
                     <div
+                      class="fixed invisible w-auto whitespace-nowrap"
+                    >
+                      …
+                    </div>
+                    <div
                       class="Input__InputWrapperStyled-wu99qs-0 jYUFQr sr-only"
                     >
                       <div
@@ -6746,6 +7077,11 @@ exports[`CreateProfile should update the avatar when removing focus from name in
                           for="downshift-85-input"
                           id="downshift-85-label"
                         />
+                        <div
+                          class="fixed invisible w-auto whitespace-nowrap"
+                        >
+                          …
+                        </div>
                         <div
                           class="Input__InputWrapperStyled-wu99qs-0 jYUFQr"
                         >
@@ -6991,6 +7327,11 @@ exports[`CreateProfile should upload and remove avatar image 1`] = `
                         />
                       </label>
                       <div
+                        class="fixed invisible w-auto whitespace-nowrap"
+                      >
+                        …
+                      </div>
+                      <div
                         class="Input__InputWrapperStyled-wu99qs-0 jYUFQr"
                       >
                         <div
@@ -7000,6 +7341,7 @@ exports[`CreateProfile should upload and remove avatar image 1`] = `
                             class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
                             data-testid="Input"
                             name="name"
+                            value=""
                           />
                         </div>
                       </div>
@@ -7062,6 +7404,11 @@ exports[`CreateProfile should upload and remove avatar image 1`] = `
                     </span>
                   </label>
                   <div
+                    class="fixed invisible w-auto whitespace-nowrap"
+                  >
+                    …
+                  </div>
+                  <div
                     class="Input__InputWrapperStyled-wu99qs-0 jYUFQr"
                   >
                     <div
@@ -7072,6 +7419,7 @@ exports[`CreateProfile should upload and remove avatar image 1`] = `
                         data-testid="InputPassword"
                         name="password"
                         type="password"
+                        value=""
                       />
                     </div>
                     <div
@@ -7119,6 +7467,11 @@ exports[`CreateProfile should upload and remove avatar image 1`] = `
                     </span>
                   </label>
                   <div
+                    class="fixed invisible w-auto whitespace-nowrap"
+                  >
+                    …
+                  </div>
+                  <div
                     class="Input__InputWrapperStyled-wu99qs-0 jYUFQr"
                   >
                     <div
@@ -7129,6 +7482,7 @@ exports[`CreateProfile should upload and remove avatar image 1`] = `
                         data-testid="InputPassword"
                         name="confirmPassword"
                         type="password"
+                        value=""
                       />
                     </div>
                     <div
@@ -7177,6 +7531,11 @@ exports[`CreateProfile should upload and remove avatar image 1`] = `
                     class="relative w-full"
                   >
                     <div
+                      class="fixed invisible w-auto whitespace-nowrap"
+                    >
+                      BTC…
+                    </div>
+                    <div
                       class="Input__InputWrapperStyled-wu99qs-0 jYUFQr sr-only"
                     >
                       <div
@@ -7206,6 +7565,11 @@ exports[`CreateProfile should upload and remove avatar image 1`] = `
                           id="downshift-101-label"
                         />
                         <div
+                          class="fixed invisible w-auto whitespace-nowrap"
+                        >
+                          BTC (Ƀ)…
+                        </div>
+                        <div
                           class="Input__InputWrapperStyled-wu99qs-0 jYUFQr"
                         >
                           <div
@@ -7225,10 +7589,14 @@ exports[`CreateProfile should upload and remove avatar image 1`] = `
                               value="BTC (Ƀ)"
                             />
                             <span
-                              class="absolute inset-y-0 flex items-center font-normal opacity-50 pointer-events-none cursor-default"
+                              class="absolute inset-y-0 flex items-center font-normal opacity-50 pointer-events-none w-full cursor-default"
                               data-testid="Input__suggestion"
                             >
-                              BTC (Ƀ)
+                              <span
+                                class="truncate"
+                              >
+                                BTC (Ƀ)
+                              </span>
                             </span>
                           </div>
                           <div

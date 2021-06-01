@@ -210,6 +210,99 @@ exports[`PluginCard should render 1`] = `
 </DocumentFragment>
 `;
 
+exports[`PluginCard should render alert icon 1`] = `
+<DocumentFragment>
+  <div
+    data-testid="PluginCard--ark-explorer"
+  >
+    <div>
+      <button
+        class="Cardstyles__CardButton-sc-1uddqgb-0 ixtuUQ"
+        data-testid="Card"
+        tabindex="-1"
+        type="button"
+      >
+        <div
+          class="flex items-center space-x-4"
+        >
+          <div
+            class="flex-shrink-0 w-25 h-25 overflow-hidden rounded-lg"
+          >
+            <div
+              class="PluginImage__PluginImageWrapper-iwox49-0 cNxevm"
+              data-testid="PluginImage__placeholder"
+            >
+              <svg>
+                plugin-logo-placeholder.svg
+              </svg>
+            </div>
+          </div>
+          <div
+            class="flex flex-col truncate"
+          >
+            <span
+              class="text-sm font-semibold truncate text-theme-secondary-500 dark:text-theme-secondary-700"
+            >
+              ARK.io
+            </span>
+            <div
+              class="flex items-center space-x-2 mt-1 text-lg font-bold truncate text-theme-primary-600 dark:text-theme-secondary-200"
+            >
+              <div
+                class="truncate"
+              >
+                ARK Explorer
+              </div>
+              <span />
+            </div>
+            <div
+              class="flex items-center space-x-2 mt-4 dark:text-theme-secondary-600"
+            >
+              <div
+                class="sc-bdfBwQ iyevwF"
+                height="20"
+                width="20"
+              >
+                <svg>
+                  category.svg
+                </svg>
+              </div>
+              <span
+                class="text-sm font-semibold"
+              >
+                Utility
+              </span>
+            </div>
+          </div>
+        </div>
+        <div
+          class="flex absolute -top-1 -right-1 items-center m-4 space-x-1"
+        >
+          <div
+            class="flex items-center space-x-2"
+          >
+            <span
+              class="ml-3 text-xl"
+              data-testid="PluginCard__minimum-version-warning"
+            >
+              <div
+                class="sc-bdfBwQ fPrsah text-theme-warning-500"
+                height="1em"
+                width="1em"
+              >
+                <svg>
+                  alert-warning.svg
+                </svg>
+              </div>
+            </span>
+          </div>
+        </div>
+      </button>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
 exports[`PluginCard should render grant icon 1`] = `
 <DocumentFragment>
   <div
