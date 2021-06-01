@@ -108,6 +108,11 @@ exports[`PluginManualInstallModal should render properly 1`] = `
                   />
                 </label>
                 <div
+                  class="fixed invisible w-auto whitespace-nowrap"
+                >
+                  …
+                </div>
+                <div
                   class="Input__InputWrapperStyled-wu99qs-0 jYUFQr"
                 >
                   <div
@@ -117,6 +122,7 @@ exports[`PluginManualInstallModal should render properly 1`] = `
                       class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
                       data-testid="PluginManualInstallModal__input"
                       name="url"
+                      value=""
                     />
                   </div>
                 </div>

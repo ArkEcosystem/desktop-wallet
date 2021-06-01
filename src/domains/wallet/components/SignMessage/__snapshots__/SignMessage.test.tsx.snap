@@ -88,6 +88,11 @@ exports[`SignMessage should render 1`] = `
                       />
                     </label>
                     <div
+                      class="fixed invisible w-auto whitespace-nowrap"
+                    >
+                      DLMm5AiKSXobaV6YFcUboPZVJ8mQ6MqjCv…
+                    </div>
+                    <div
                       class="Input__InputWrapperStyled-wu99qs-0 iRRxpY"
                       disabled=""
                     >
@@ -133,6 +138,11 @@ exports[`SignMessage should render 1`] = `
                       />
                     </label>
                     <div
+                      class="fixed invisible w-auto whitespace-nowrap"
+                    >
+                      …
+                    </div>
+                    <div
                       class="Input__InputWrapperStyled-wu99qs-0 jYUFQr"
                     >
                       <div
@@ -142,6 +152,7 @@ exports[`SignMessage should render 1`] = `
                           class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
                           data-testid="SignMessage__message-input"
                           name="message"
+                          value=""
                         />
                       </div>
                     </div>
@@ -161,6 +172,11 @@ exports[`SignMessage should render 1`] = `
                       />
                     </label>
                     <div
+                      class="fixed invisible w-auto whitespace-nowrap"
+                    >
+                      …
+                    </div>
+                    <div
                       class="Input__InputWrapperStyled-wu99qs-0 jYUFQr"
                     >
                       <div
@@ -171,6 +187,7 @@ exports[`SignMessage should render 1`] = `
                           data-testid="SignMessage__mnemonic-input"
                           name="mnemonic"
                           type="password"
+                          value=""
                         />
                       </div>
                       <div
@@ -327,6 +344,11 @@ exports[`SignMessage should render for ledger wallets 1`] = `
                       />
                     </label>
                     <div
+                      class="fixed invisible w-auto whitespace-nowrap"
+                    >
+                      DLMm5AiKSXobaV6YFcUboPZVJ8mQ6MqjCv…
+                    </div>
+                    <div
                       class="Input__InputWrapperStyled-wu99qs-0 iRRxpY"
                       disabled=""
                     >
@@ -372,6 +394,11 @@ exports[`SignMessage should render for ledger wallets 1`] = `
                       />
                     </label>
                     <div
+                      class="fixed invisible w-auto whitespace-nowrap"
+                    >
+                      …
+                    </div>
+                    <div
                       class="Input__InputWrapperStyled-wu99qs-0 jYUFQr"
                     >
                       <div
@@ -381,6 +408,7 @@ exports[`SignMessage should render for ledger wallets 1`] = `
                           class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
                           data-testid="SignMessage__message-input"
                           name="message"
+                          value=""
                         />
                       </div>
                     </div>
@@ -526,6 +554,11 @@ exports[`SignMessage should render signed step with wallet alias 1`] = `
           data-testid="FormLabel__required"
         />
       </label>
+      <div
+        class="fixed invisible w-auto whitespace-nowrap"
+      >
+        …
+      </div>
       <div
         class="Input__InputWrapperStyled-wu99qs-0 bKjoCo py-4"
       >
