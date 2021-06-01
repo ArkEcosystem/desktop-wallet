@@ -29,6 +29,11 @@ exports[`Add Participant should fail if cannot find the address remotely 1`] = `
               class="relative w-full"
             >
               <div
+                class="fixed invisible w-auto whitespace-nowrap"
+              >
+                DC8ghUdhS8w8d11K8cFQ37YsLBFhL3Dq20…
+              </div>
+              <div
                 class="Input__InputWrapperStyled-wu99qs-0 jYUFQr sr-only"
               >
                 <div
@@ -58,6 +63,11 @@ exports[`Add Participant should fail if cannot find the address remotely 1`] = `
                     for="downshift-25-input"
                     id="downshift-25-label"
                   />
+                  <div
+                    class="fixed invisible w-auto whitespace-nowrap"
+                  >
+                    DC8ghUdhS8w8d11K8cFQ37YsLBFhL3Dq20…
+                  </div>
                   <div
                     class="Input__InputWrapperStyled-wu99qs-0 jYUFQr"
                   >
@@ -339,6 +349,11 @@ exports[`Add Participant should fail to find 1`] = `
               class="relative w-full"
             >
               <div
+                class="fixed invisible w-auto whitespace-nowrap"
+              >
+                D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyiba…
+              </div>
+              <div
                 class="Input__InputWrapperStyled-wu99qs-0 jYUFQr sr-only"
               >
                 <div
@@ -368,6 +383,11 @@ exports[`Add Participant should fail to find 1`] = `
                     for="downshift-0-input"
                     id="downshift-0-label"
                   />
+                  <div
+                    class="fixed invisible w-auto whitespace-nowrap"
+                  >
+                    D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyiba…
+                  </div>
                   <div
                     class="Input__InputWrapperStyled-wu99qs-0 jYUFQr"
                   >
@@ -649,6 +669,11 @@ exports[`Add Participant should fail with cold wallet 1`] = `
               class="relative w-full"
             >
               <div
+                class="fixed invisible w-auto whitespace-nowrap"
+              >
+                DC8ghUdhS8w8d11K8cFQ37YsLBFhL3Dq2P…
+              </div>
+              <div
                 class="Input__InputWrapperStyled-wu99qs-0 jYUFQr sr-only"
               >
                 <div
@@ -678,6 +703,11 @@ exports[`Add Participant should fail with cold wallet 1`] = `
                     for="downshift-9-input"
                     id="downshift-9-label"
                   />
+                  <div
+                    class="fixed invisible w-auto whitespace-nowrap"
+                  >
+                    DC8ghUdhS8w8d11K8cFQ37YsLBFhL3Dq2P…
+                  </div>
                   <div
                     class="Input__InputWrapperStyled-wu99qs-0 jYUFQr"
                   >
@@ -959,6 +989,11 @@ exports[`Add Participant should render custom participants 1`] = `
               class="relative w-full"
             >
               <div
+                class="fixed invisible w-auto whitespace-nowrap"
+              >
+                …
+              </div>
+              <div
                 class="Input__InputWrapperStyled-wu99qs-0 jYUFQr sr-only"
               >
                 <div
@@ -988,6 +1023,11 @@ exports[`Add Participant should render custom participants 1`] = `
                     for="downshift-76-input"
                     id="downshift-76-label"
                   />
+                  <div
+                    class="fixed invisible w-auto whitespace-nowrap"
+                  >
+                    …
+                  </div>
                   <div
                     class="Input__InputWrapperStyled-wu99qs-0 jYUFQr"
                   >
@@ -1241,6 +1281,11 @@ exports[`Add Participant should work with a remote wallet 1`] = `
               class="relative w-full"
             >
               <div
+                class="fixed invisible w-auto whitespace-nowrap"
+              >
+                D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib…
+              </div>
+              <div
                 class="Input__InputWrapperStyled-wu99qs-0 jYUFQr sr-only"
               >
                 <div
@@ -1270,6 +1315,11 @@ exports[`Add Participant should work with a remote wallet 1`] = `
                     for="downshift-55-input"
                     id="downshift-55-label"
                   />
+                  <div
+                    class="fixed invisible w-auto whitespace-nowrap"
+                  >
+                    D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib…
+                  </div>
                   <div
                     class="Input__InputWrapperStyled-wu99qs-0 jYUFQr"
                   >
@@ -1304,10 +1354,14 @@ exports[`Add Participant should work with a remote wallet 1`] = `
                         value="D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib"
                       />
                       <span
-                        class="absolute inset-y-0 flex items-center font-normal opacity-50 pointer-events-none cursor-default"
+                        class="absolute inset-y-0 flex items-center font-normal opacity-50 pointer-events-none w-full cursor-default"
                         data-testid="Input__suggestion"
                       >
-                        D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib
+                        <span
+                          class="truncate"
+                        >
+                          D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib
+                        </span>
                       </span>
                     </div>
                     <div
@@ -1920,6 +1974,11 @@ exports[`Add Participant should work with an imported wallet 1`] = `
               class="relative w-full"
             >
               <div
+                class="fixed invisible w-auto whitespace-nowrap"
+              >
+                D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb…
+              </div>
+              <div
                 class="Input__InputWrapperStyled-wu99qs-0 jYUFQr sr-only"
               >
                 <div
@@ -1949,6 +2008,11 @@ exports[`Add Participant should work with an imported wallet 1`] = `
                     for="downshift-34-input"
                     id="downshift-34-label"
                   />
+                  <div
+                    class="fixed invisible w-auto whitespace-nowrap"
+                  >
+                    D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb…
+                  </div>
                   <div
                     class="Input__InputWrapperStyled-wu99qs-0 jYUFQr"
                   >
@@ -1983,10 +2047,14 @@ exports[`Add Participant should work with an imported wallet 1`] = `
                         value="D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb"
                       />
                       <span
-                        class="absolute inset-y-0 flex items-center font-normal opacity-50 pointer-events-none cursor-default"
+                        class="absolute inset-y-0 flex items-center font-normal opacity-50 pointer-events-none w-full cursor-default"
                         data-testid="Input__suggestion"
                       >
-                        D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb
+                        <span
+                          class="truncate"
+                        >
+                          D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb
+                        </span>
                       </span>
                     </div>
                     <div

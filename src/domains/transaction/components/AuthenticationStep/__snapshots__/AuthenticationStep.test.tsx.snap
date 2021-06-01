@@ -45,6 +45,11 @@ exports[`AuthenticationStep should request mnemonic 1`] = `
           />
         </label>
         <div
+          class="fixed invisible w-auto whitespace-nowrap"
+        >
+          …
+        </div>
+        <div
           class="Input__InputWrapperStyled-wu99qs-0 jYUFQr"
         >
           <div
@@ -55,6 +60,7 @@ exports[`AuthenticationStep should request mnemonic 1`] = `
               data-testid="AuthenticationStep__mnemonic"
               name="mnemonic"
               type="password"
+              value=""
             />
           </div>
           <div
@@ -135,6 +141,11 @@ exports[`AuthenticationStep should request mnemonic and second mnemonic 1`] = `
           />
         </label>
         <div
+          class="fixed invisible w-auto whitespace-nowrap"
+        >
+          …
+        </div>
+        <div
           class="Input__InputWrapperStyled-wu99qs-0 jYUFQr"
         >
           <div
@@ -145,6 +156,7 @@ exports[`AuthenticationStep should request mnemonic and second mnemonic 1`] = `
               data-testid="AuthenticationStep__mnemonic"
               name="mnemonic"
               type="password"
+              value=""
             />
           </div>
           <div
@@ -190,6 +202,11 @@ exports[`AuthenticationStep should request mnemonic and second mnemonic 1`] = `
           />
         </label>
         <div
+          class="fixed invisible w-auto whitespace-nowrap"
+        >
+          …
+        </div>
+        <div
           class="Input__InputWrapperStyled-wu99qs-0 iRRxpY"
           disabled=""
         >
@@ -202,6 +219,7 @@ exports[`AuthenticationStep should request mnemonic and second mnemonic 1`] = `
               disabled=""
               name="secondMnemonic"
               type="password"
+              value=""
             />
           </div>
           <div
