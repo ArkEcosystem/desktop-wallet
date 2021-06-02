@@ -8,19 +8,24 @@ type Props = {
 	parentRef?: React.RefObject<HTMLElement>;
 } & React.HTMLProps<any>;
 
-export const TruncateMiddleDynamic = ({ value, offset = 0, className, parentRef }: Props) => {
+export const TruncateMiddleDynamic = ({ value, offset = 0, className, parentRef, ...props }: Props) => {
 	const ref = useRef<HTMLElement>(null);
 
 	const [truncated, setTruncated] = useState(value);
 
 	const hasOverflow = useCallback(
-		(element: HTMLElement, referenceElement: HTMLElement) =>
-			referenceElement.offsetWidth - offset < element.offsetWidth,
+		(element: HTMLElement, referenceElement: HTMLElement) => {
+			if (!element.offsetWidth && !referenceElement.offsetWidth) {
+				return false;
+			}
+
+			return element.offsetWidth > referenceElement.offsetWidth - offset;
+		},
 		[offset],
 	);
 
 	const truncate = useCallback(() => {
-		if (!ref?.current) {
+		if (!ref?.current || !value) {
 			return;
 		}
 
@@ -39,6 +44,7 @@ export const TruncateMiddleDynamic = ({ value, offset = 0, className, parentRef 
 		let tempTruncated = value;
 
 		if (!hasOverflow(element, referenceElement)) {
+			referenceElement.removeChild(element);
 			return;
 		}
 
@@ -73,7 +79,7 @@ export const TruncateMiddleDynamic = ({ value, offset = 0, className, parentRef 
 
 	return (
 		<Tooltip content={value} disabled={truncated === value}>
-			<span ref={ref} className={cn("inline-flex overflow-hidden", className)}>
+			<span ref={ref} className={cn("inline-flex overflow-hidden", className)} {...props}>
 				{truncated}
 			</span>
 		</Tooltip>
