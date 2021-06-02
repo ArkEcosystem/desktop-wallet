@@ -114,6 +114,7 @@ export const AddParticipant = ({ profile, wallet, onChange, defaultParticipants 
 					<FormField name="address">
 						<FormLabel label={t("TRANSACTION.MULTISIGNATURE.PARTICIPANT")} />
 						<SelectRecipient
+							network={wallet.network()}
 							address={address}
 							profile={profile}
 							ref={register({
