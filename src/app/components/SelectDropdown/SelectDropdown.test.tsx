@@ -30,7 +30,7 @@ describe("SelectDropdown", () => {
 			<Select options={options} renderLabel={(option) => <span>{`Label ${option.label}`}</span>} />,
 		);
 
-		fireEvent.focus(getByTestId("SelectDropdownInput__input"), { target: { value: "Opt" } });
+		fireEvent.focus(getByTestId("SelectDropdown__input"), { target: { value: "Opt" } });
 
 		expect(container).toMatchSnapshot();
 		expect(queryByText("Label Option 1")).toBeInTheDocument();
@@ -56,11 +56,11 @@ describe("SelectDropdown", () => {
 
 		fireEvent.click(screen.getByTestId("SelectDropdown__caret"));
 
-		await waitFor(() => expect(screen.getByTestId("select-list__toggle-option-0")).toBeInTheDocument());
+		await waitFor(() => expect(screen.getByTestId("SelectDropdown__option--0")).toBeInTheDocument());
 
 		fireEvent.click(screen.getByTestId("SelectDropdown__caret"));
 
-		await waitFor(() => expect(screen.queryByTestId("select-list__toggle-option-0")).not.toBeInTheDocument());
+		await waitFor(() => expect(screen.queryByTestId("SelectDropdown__option--0")).not.toBeInTheDocument());
 	});
 
 	it("should render with initial default value", () => {
@@ -86,13 +86,13 @@ describe("SelectDropdown", () => {
 	it("should toggle select list options", () => {
 		const { getByTestId } = render(<Select options={options} />);
 
-		const selectDropdown = getByTestId("SelectDropdownInput__input");
+		const selectDropdown = getByTestId("SelectDropdown__input");
 
 		act(() => {
 			fireEvent.change(selectDropdown, { target: { value: "Opt" } });
 		});
 
-		const firstOption = getByTestId("select-list__toggle-option-0");
+		const firstOption = getByTestId("SelectDropdown__option--0");
 		expect(firstOption).toBeTruthy();
 
 		act(() => {
@@ -103,13 +103,13 @@ describe("SelectDropdown", () => {
 	it("should select option", () => {
 		const { getByTestId } = render(<Select options={options} />);
 
-		const selectDropdown = getByTestId("SelectDropdownInput__input");
+		const selectDropdown = getByTestId("SelectDropdown__input");
 
 		act(() => {
 			fireEvent.change(selectDropdown, { target: { value: "Opt" } });
 		});
 
-		const firstOption = getByTestId("select-list__toggle-option-0");
+		const firstOption = getByTestId("SelectDropdown__option--0");
 		expect(firstOption).toBeTruthy();
 
 		act(() => {
@@ -122,7 +122,7 @@ describe("SelectDropdown", () => {
 	it("should highlight option", () => {
 		const { getByTestId } = render(<Select options={options} />);
 
-		const selectDropdown = getByTestId("SelectDropdownInput__input");
+		const selectDropdown = getByTestId("SelectDropdown__input");
 
 		act(() => {
 			fireEvent.change(selectDropdown, { target: { value: "Opt" } });
@@ -132,7 +132,7 @@ describe("SelectDropdown", () => {
 			fireEvent.keyDown(selectDropdown, { key: "Tab", code: 9 });
 		});
 
-		const firstOption = getByTestId("select-list__toggle-option-0");
+		const firstOption = getByTestId("SelectDropdown__option--0");
 		expect(firstOption).toBeTruthy();
 
 		expect(firstOption).toHaveClass("is-selected");
@@ -141,7 +141,7 @@ describe("SelectDropdown", () => {
 	it("should select options with arrow keys", () => {
 		const { getByTestId } = render(<Select options={options} />);
 
-		const selectDropdown = getByTestId("SelectDropdownInput__input");
+		const selectDropdown = getByTestId("SelectDropdown__input");
 
 		act(() => {
 			fireEvent.change(selectDropdown, { target: { value: "Opt" } });
@@ -155,7 +155,7 @@ describe("SelectDropdown", () => {
 			fireEvent.keyDown(selectDropdown, { key: "Backspace", code: 8 });
 		});
 
-		const firstOption = getByTestId("select-list__toggle-option-0");
+		const firstOption = getByTestId("SelectDropdown__option--0");
 		expect(firstOption).toBeTruthy();
 
 		act(() => {
@@ -177,7 +177,7 @@ describe("SelectDropdown", () => {
 
 	it("should show suggestion when typing has found at least one match", () => {
 		const { getByTestId } = render(<Select options={options} />);
-		const selectDropdown = getByTestId("SelectDropdownInput__input");
+		const selectDropdown = getByTestId("SelectDropdown__input");
 
 		act(() => {
 			fireEvent.change(selectDropdown, { target: { value: "Opt" } });
@@ -188,7 +188,7 @@ describe("SelectDropdown", () => {
 
 	it("should select first matching option with enter", () => {
 		const { getByTestId } = render(<Select options={options} />);
-		const selectDropdown = getByTestId("SelectDropdownInput__input");
+		const selectDropdown = getByTestId("SelectDropdown__input");
 
 		act(() => {
 			fireEvent.change(selectDropdown, { target: { value: "Opt" } });
@@ -203,7 +203,7 @@ describe("SelectDropdown", () => {
 
 	it("should select first matching option with tab", () => {
 		const { getByTestId } = render(<Select options={options} />);
-		const selectDropdown = getByTestId("SelectDropdownInput__input");
+		const selectDropdown = getByTestId("SelectDropdown__input");
 
 		act(() => {
 			fireEvent.change(selectDropdown, { target: { value: "Opt" } });
@@ -218,7 +218,7 @@ describe("SelectDropdown", () => {
 
 	it("should select new option with enter", () => {
 		const { getByTestId } = render(<Select options={options} />);
-		const selectDropdown = getByTestId("SelectDropdownInput__input");
+		const selectDropdown = getByTestId("SelectDropdown__input");
 
 		act(() => {
 			fireEvent.change(selectDropdown, { target: { value: "Opt" } });
@@ -243,7 +243,7 @@ describe("SelectDropdown", () => {
 
 	it("should not select non-matching option after key input and tab", () => {
 		const { getByTestId } = render(<Select options={options} />);
-		const selectDropdown = getByTestId("SelectDropdownInput__input");
+		const selectDropdown = getByTestId("SelectDropdown__input");
 
 		act(() => {
 			fireEvent.change(selectDropdown, { target: { value: "Optt" } });
@@ -258,7 +258,7 @@ describe("SelectDropdown", () => {
 
 	it("should not select first matched option after random key enter", () => {
 		const { getByTestId } = render(<Select options={options} />);
-		const selectDropdown = getByTestId("SelectDropdownInput__input");
+		const selectDropdown = getByTestId("SelectDropdown__input");
 
 		act(() => {
 			fireEvent.change(selectDropdown, { target: { value: "Opt" } });
@@ -273,7 +273,7 @@ describe("SelectDropdown", () => {
 
 	it("should clear selection when changing input", () => {
 		const { getByTestId } = render(<Select options={options} />);
-		const selectDropdown = getByTestId("SelectDropdownInput__input");
+		const selectDropdown = getByTestId("SelectDropdown__input");
 
 		act(() => {
 			fireEvent.change(selectDropdown, { target: { value: "Opt" } });
@@ -301,7 +301,7 @@ describe("SelectDropdown", () => {
 
 	it("should select match on blur if available", async () => {
 		const { getByTestId } = render(<Select options={options} />);
-		const selectDropdown = getByTestId("SelectDropdownInput__input");
+		const selectDropdown = getByTestId("SelectDropdown__input");
 
 		act(() => {
 			fireEvent.change(selectDropdown, { target: { value: "Opt" } });
@@ -316,7 +316,7 @@ describe("SelectDropdown", () => {
 
 	it("should clear input on blur if there is no match", async () => {
 		const { getByTestId } = render(<Select options={options} />);
-		const selectDropdown = getByTestId("SelectDropdownInput__input");
+		const selectDropdown = getByTestId("SelectDropdown__input");
 
 		act(() => {
 			fireEvent.change(selectDropdown, { target: { value: "Foobar" } });
@@ -331,7 +331,7 @@ describe("SelectDropdown", () => {
 
 	it("should not clear input on blur if selected", () => {
 		const { getByTestId } = render(<Select options={options} />);
-		const selectDropdown = getByTestId("SelectDropdownInput__input");
+		const selectDropdown = getByTestId("SelectDropdown__input");
 
 		act(() => {
 			fireEvent.change(selectDropdown, { target: { value: "Opt" } });
@@ -354,13 +354,13 @@ describe("SelectDropdown", () => {
 		const { getByTestId } = render(<Select options={options} />);
 
 		act(() => {
-			fireEvent.focus(getByTestId("SelectDropdownInput__input"));
+			fireEvent.focus(getByTestId("SelectDropdown__input"));
 		});
 
-		await waitFor(() => expect(getByTestId("select-list__toggle-option-0")).toBeTruthy());
+		await waitFor(() => expect(getByTestId("SelectDropdown__option--0")).toBeTruthy());
 
 		act(() => {
-			fireEvent.mouseDown(getByTestId("select-list__toggle-option-0"));
+			fireEvent.mouseDown(getByTestId("SelectDropdown__option--0"));
 		});
 
 		expect(getByTestId("select-list__input")).toHaveValue("1");
@@ -401,7 +401,7 @@ describe("SelectDropdown", () => {
 
 	it("should allow entering free text", () => {
 		const { getByTestId } = render(<Select options={options} allowFreeInput />);
-		const selectDropdown = getByTestId("SelectDropdownInput__input");
+		const selectDropdown = getByTestId("SelectDropdown__input");
 
 		act(() => {
 			fireEvent.change(selectDropdown, { target: { value: "Test" } });
@@ -412,7 +412,7 @@ describe("SelectDropdown", () => {
 
 	it("should allow entering free text and handle blur event", () => {
 		const { getByTestId } = render(<Select options={options} allowFreeInput={true} />);
-		const selectDropdown = getByTestId("SelectDropdownInput__input");
+		const selectDropdown = getByTestId("SelectDropdown__input");
 
 		act(() => {
 			fireEvent.change(selectDropdown, { target: { value: "Test" } });
@@ -433,7 +433,7 @@ describe("SelectDropdown", () => {
 
 	it("should hide dropdown when no matches found in free text mode", () => {
 		const { getByTestId } = render(<Select options={options} defaultValue="3" allowFreeInput />);
-		const selectDropdown = getByTestId("SelectDropdownInput__input");
+		const selectDropdown = getByTestId("SelectDropdown__input");
 		act(() => {
 			fireEvent.change(selectDropdown, { target: { value: options[0].label } });
 		});
@@ -442,12 +442,12 @@ describe("SelectDropdown", () => {
 		act(() => {
 			fireEvent.change(selectDropdown, { target: { value: "Unmatched" } });
 		});
-		expect(() => getByTestId("select-list__toggle-option-0")).toThrow();
+		expect(() => getByTestId("SelectDropdown__option--0")).toThrow();
 	});
 
 	it("should show all options when empty input", () => {
 		const { getByTestId } = render(<Select options={options} defaultValue="3" allowFreeInput />);
-		const selectDropdown = getByTestId("SelectDropdownInput__input");
+		const selectDropdown = getByTestId("SelectDropdown__input");
 		act(() => {
 			fireEvent.change(selectDropdown, { target: { value: options[0].label } });
 		});
@@ -458,8 +458,8 @@ describe("SelectDropdown", () => {
 		});
 
 		expect(getByTestId("select-list__input")).toHaveValue("");
-		expect(getByTestId("select-list__toggle-option-0")).toBeTruthy();
-		expect(getByTestId("select-list__toggle-option-1")).toBeTruthy();
-		expect(getByTestId("select-list__toggle-option-2")).toBeTruthy();
+		expect(getByTestId("SelectDropdown__option--0")).toBeTruthy();
+		expect(getByTestId("SelectDropdown__option--1")).toBeTruthy();
+		expect(getByTestId("SelectDropdown__option--2")).toBeTruthy();
 	});
 });

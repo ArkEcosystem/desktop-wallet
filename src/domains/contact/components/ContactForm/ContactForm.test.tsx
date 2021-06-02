@@ -76,7 +76,7 @@ describe("ContactForm", () => {
 	it("should select cryptoasset", async () => {
 		renderWithRouter(<ContactForm profile={profile} onCancel={onCancel} onSave={onSave} />);
 
-		const selectNetworkInput = screen.getByTestId("SelectDropdownInput__input");
+		const selectNetworkInput = screen.getByTestId("SelectDropdown__input");
 
 		fireEvent.change(selectNetworkInput, { target: { value: "ARK D" } });
 		fireEvent.keyDown(selectNetworkInput, { key: "Enter", code: 13 });
@@ -99,7 +99,7 @@ describe("ContactForm", () => {
 			expect(screen.getByTestId("contact-form__name-input")).toHaveValue("name");
 		});
 
-		const selectNetworkInput = screen.getByTestId("SelectDropdownInput__input");
+		const selectNetworkInput = screen.getByTestId("SelectDropdown__input");
 
 		fireEvent.change(selectNetworkInput, { target: { value: "ARK D" } });
 		fireEvent.keyDown(selectNetworkInput, { key: "Enter", code: 13 });
@@ -140,7 +140,7 @@ describe("ContactForm", () => {
 			expect(screen.getByTestId("contact-form__name-input")).toHaveValue("name");
 		});
 
-		const selectNetworkInput = screen.getByTestId("SelectDropdownInput__input");
+		const selectNetworkInput = screen.getByTestId("SelectDropdown__input");
 
 		fireEvent.change(selectNetworkInput, { target: { value: "ARK D" } });
 		fireEvent.keyDown(selectNetworkInput, { key: "Enter", code: 13 });
@@ -183,7 +183,7 @@ describe("ContactForm", () => {
 			expect(screen.getByTestId("contact-form__name-input")).toHaveValue("name");
 		});
 
-		const selectNetworkInput = screen.getByTestId("SelectDropdownInput__input");
+		const selectNetworkInput = screen.getByTestId("SelectDropdown__input");
 
 		fireEvent.change(selectNetworkInput, { target: { value: "ARK" } });
 		fireEvent.keyDown(selectNetworkInput, { key: "Enter", code: 13 });
@@ -245,7 +245,7 @@ describe("ContactForm", () => {
 			expect(screen.getByTestId("contact-form__name-input")).toHaveValue("name");
 		});
 
-		const selectNetworkInput = screen.getByTestId("SelectDropdownInput__input");
+		const selectNetworkInput = screen.getByTestId("SelectDropdown__input");
 
 		fireEvent.change(selectNetworkInput, { target: { value: "ARK D" } });
 		fireEvent.keyDown(selectNetworkInput, { key: "Enter", code: 13 });

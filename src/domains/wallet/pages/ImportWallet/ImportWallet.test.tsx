@@ -163,13 +163,13 @@ describe("ImportWallet", () => {
 		});
 
 		act(() => {
-			fireEvent.focus(screen.getByTestId("SelectDropdownInput__input"));
+			fireEvent.focus(screen.getByTestId("SelectDropdown__input"));
 		});
 
-		await waitFor(() => expect(screen.getByTestId("select-list__toggle-option-1")).toBeInTheDocument());
+		await waitFor(() => expect(screen.getByTestId("SelectDropdown__option--1")).toBeInTheDocument());
 
 		act(() => {
-			fireEvent.mouseDown(screen.getByTestId("select-list__toggle-option-1"));
+			fireEvent.mouseDown(screen.getByTestId("SelectDropdown__option--1"));
 		});
 
 		await waitFor(() => expect(screen.getByTestId("ImportWallet__address-input")).toBeInTheDocument());
@@ -423,7 +423,7 @@ describe("ImportWallet", () => {
 
 		expect(getByTestId("ImportWallet__second-step")).toBeTruthy();
 
-		fireEvent.focus(getByTestId("SelectDropdownInput__input"));
+		fireEvent.focus(getByTestId("SelectDropdown__input"));
 
 		await waitFor(() => expect(getByText(commonTranslations.ADDRESS)).toBeInTheDocument());
 		fireEvent.mouseDown(getByText(commonTranslations.ADDRESS));
@@ -474,7 +474,7 @@ describe("ImportWallet", () => {
 
 		expect(getByTestId("ImportWallet__second-step")).toBeTruthy();
 
-		fireEvent.focus(getByTestId("SelectDropdownInput__input"));
+		fireEvent.focus(getByTestId("SelectDropdown__input"));
 
 		await waitFor(() => expect(getByText(commonTranslations.PRIVATE_KEY)).toBeTruthy());
 		fireEvent.mouseDown(getByText(commonTranslations.PRIVATE_KEY));
@@ -529,7 +529,7 @@ describe("ImportWallet", () => {
 
 		expect(getByTestId("ImportWallet__second-step")).toBeTruthy();
 
-		fireEvent.focus(getByTestId("SelectDropdownInput__input"));
+		fireEvent.focus(getByTestId("SelectDropdown__input"));
 
 		await waitFor(() => expect(getByText(commonTranslations.WIF)).toBeTruthy());
 		fireEvent.mouseDown(getByText(commonTranslations.WIF));
@@ -586,7 +586,7 @@ describe("ImportWallet", () => {
 
 		expect(getByTestId("ImportWallet__second-step")).toBeTruthy();
 
-		fireEvent.focus(getByTestId("SelectDropdownInput__input"));
+		fireEvent.focus(getByTestId("SelectDropdown__input"));
 
 		await waitFor(() => expect(getByText(commonTranslations.ENCRYPTED_WIF)).toBeTruthy());
 		fireEvent.mouseDown(getByText(commonTranslations.ENCRYPTED_WIF));
@@ -644,7 +644,7 @@ describe("ImportWallet", () => {
 
 		expect(getByTestId("ImportWallet__second-step")).toBeTruthy();
 
-		fireEvent.focus(getByTestId("SelectDropdownInput__input"));
+		fireEvent.focus(getByTestId("SelectDropdown__input"));
 
 		await waitFor(() => expect(getByText(commonTranslations.ADDRESS)).toBeTruthy());
 		fireEvent.mouseDown(getByText(commonTranslations.ADDRESS));
@@ -704,7 +704,7 @@ describe("ImportWallet", () => {
 
 		expect(getByTestId("ImportWallet__second-step")).toBeTruthy();
 
-		fireEvent.focus(getByTestId("SelectDropdownInput__input"));
+		fireEvent.focus(getByTestId("SelectDropdown__input"));
 
 		await waitFor(() => expect(getByText(commonTranslations.ENCRYPTED_WIF)).toBeTruthy());
 		fireEvent.mouseDown(getByText(commonTranslations.ENCRYPTED_WIF));
@@ -771,7 +771,7 @@ describe("ImportWallet", () => {
 
 		expect(getByTestId("ImportWallet__second-step")).toBeTruthy();
 
-		fireEvent.focus(getByTestId("SelectDropdownInput__input"));
+		fireEvent.focus(getByTestId("SelectDropdown__input"));
 
 		await waitFor(() => expect(getByText(commonTranslations.ADDRESS)).toBeTruthy());
 		fireEvent.mouseDown(getByText(commonTranslations.ADDRESS));
@@ -855,7 +855,7 @@ describe("ImportWallet", () => {
 
 		expect(getByTestId("ImportWallet__second-step")).toBeTruthy();
 
-		fireEvent.focus(getByTestId("SelectDropdownInput__input"));
+		fireEvent.focus(getByTestId("SelectDropdown__input"));
 
 		await waitFor(() => expect(getByText(commonTranslations.ADDRESS)).toBeTruthy());
 		fireEvent.mouseDown(getByText(commonTranslations.ADDRESS));
@@ -929,7 +929,7 @@ describe("ImportWallet", () => {
 
 		expect(getByTestId("ImportWallet__second-step")).toBeTruthy();
 
-		fireEvent.focus(getByTestId("SelectDropdownInput__input"));
+		fireEvent.focus(getByTestId("SelectDropdown__input"));
 
 		await waitFor(() => expect(getByText(commonTranslations.ADDRESS)).toBeTruthy());
 		fireEvent.mouseDown(getByText(commonTranslations.ADDRESS));
