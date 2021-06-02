@@ -50,7 +50,7 @@ exports[`VoteDetail should render a modal with unvotes 1`] = `
           class="flex-1"
         >
           <div
-            class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 cRGLsx no-ligatures"
+            class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 kakuTR no-ligatures"
             data-testid="TransactionDetail"
           >
             <div
@@ -69,7 +69,7 @@ exports[`VoteDetail should render a modal with unvotes 1`] = `
                 >
                   <span
                     class="max-w-24 truncate mr-2 font-semibold text-base text-theme-text"
-                    data-testid="address__wallet-name"
+                    data-testid="Address__alias"
                   >
                     <span
                       class="TruncateEnd__Wrapper-sc-1w1nvb9-0"
@@ -79,8 +79,8 @@ exports[`VoteDetail should render a modal with unvotes 1`] = `
                     </span>
                   </span>
                   <span
-                    class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-secondary-500 dark:text-theme-secondary-700 font-semibold text-base"
-                    data-testid="address__wallet-address"
+                    class="inline-flex overflow-hidden text-theme-secondary-500 dark:text-theme-secondary-700 font-semibold text-base"
+                    data-testid="Address__address"
                   >
                     D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD
                   </span>
@@ -120,7 +120,7 @@ exports[`VoteDetail should render a modal with unvotes 1`] = `
             </div>
           </div>
           <div
-            class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 izxcpX no-ligatures"
+            class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 cHOkoL no-ligatures"
             data-testid="TransactionDetail"
           >
             <div
@@ -152,7 +152,7 @@ exports[`VoteDetail should render a modal with unvotes 1`] = `
             </div>
           </div>
           <div
-            class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 izxcpX no-ligatures"
+            class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 cHOkoL no-ligatures"
             data-testid="TransactionDetail"
           >
             <div
@@ -194,7 +194,7 @@ exports[`VoteDetail should render a modal with unvotes 1`] = `
                       >
                         <span
                           class="max-w-24 truncate mr-2 font-semibold text-base text-theme-text"
-                          data-testid="address__wallet-name"
+                          data-testid="Address__alias"
                         >
                           <span
                             class="TruncateEnd__Wrapper-sc-1w1nvb9-0"
@@ -204,8 +204,8 @@ exports[`VoteDetail should render a modal with unvotes 1`] = `
                           </span>
                         </span>
                         <span
-                          class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-secondary-500 dark:text-theme-secondary-700 font-semibold text-base"
-                          data-testid="address__wallet-address"
+                          class="inline-flex overflow-hidden text-theme-secondary-500 dark:text-theme-secondary-700 font-semibold text-base"
+                          data-testid="Address__address"
                         >
                           034151a3ec46b5670a682b0a63394f863587d1bc97483b1b6c70eb58e7f0aed192
                         </span>
@@ -217,7 +217,7 @@ exports[`VoteDetail should render a modal with unvotes 1`] = `
             </div>
           </div>
           <div
-            class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 izxcpX no-ligatures"
+            class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 cHOkoL no-ligatures"
             data-testid="TransactionDetail"
           >
             <div
@@ -240,7 +240,7 @@ exports[`VoteDetail should render a modal with unvotes 1`] = `
             </div>
           </div>
           <div
-            class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 izxcpX no-ligatures"
+            class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 cHOkoL no-ligatures"
             data-testid="TransactionDetail"
           >
             <div
@@ -259,7 +259,7 @@ exports[`VoteDetail should render a modal with unvotes 1`] = `
             </div>
           </div>
           <div
-            class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 izxcpX no-ligatures"
+            class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 cHOkoL no-ligatures"
             data-testid="TransactionDetail"
           >
             <div
@@ -293,7 +293,7 @@ exports[`VoteDetail should render a modal with unvotes 1`] = `
             </div>
           </div>
           <div
-            class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 izxcpX no-ligatures"
+            class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 cHOkoL no-ligatures"
             data-testid="TransactionDetail"
           >
             <div
@@ -308,40 +308,43 @@ exports[`VoteDetail should render a modal with unvotes 1`] = `
                 class="font-semibold"
               >
                 <div
-                  class="flex items-center space-x-3"
+                  class="flex items-center space-x-3 overflow-hidden"
                 >
-                  <a
-                    class="Link__AnchorStyled-sc-1q7sbxr-0 jXgXXh group"
-                    data-testid="Link"
-                    href="#"
-                    rel="noopener noreferrer"
-                    to="https://explorer.ark.io/transaction/ee4175091d9f4dacf5fed213711c3e0e4cc371e37afa7bce0429d09bcf3ecefe"
+                  <span
+                    class="overflow-hidden"
                   >
-                    <span
-                      class="break-all border-b border-transparent duration-200 group-hover:border-current"
+                    <a
+                      class="Link__AnchorStyled-sc-1q7sbxr-0 jXgXXh group"
+                      data-testid="Link"
+                      href="#"
+                      rel="noopener noreferrer"
+                      to="https://explorer.ark.io/transaction/ee4175091d9f4dacf5fed213711c3e0e4cc371e37afa7bce0429d09bcf3ecefe"
                     >
                       <span
-                        class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap"
-                        data-testid="TruncateMiddle"
+                        class="break-all border-b border-transparent duration-200 group-hover:border-current"
                       >
-                        ee4175091d9f4dacf5fed213711c3e0e4cc371e37afa7bce0429d09bcf3ecefe
+                        <span
+                          class="inline-flex overflow-hidden"
+                        >
+                          ee4175091d9f4dacf5fed213711c3e0e4cc371e37afa7bce0429d09bcf3ecefe
+                        </span>
                       </span>
-                    </span>
-                    <span
-                      class="align-middle"
-                    >
-                      <div
-                        class="sc-bdfBwQ fPrsah flex-shrink-0 duration-200 inline-block pb-px text-sm"
-                        data-testid="Link__external"
-                        height="1em"
-                        width="1em"
+                      <span
+                        class="align-middle"
                       >
-                        <svg>
-                          redirect.svg
-                        </svg>
-                      </div>
-                    </span>
-                  </a>
+                        <div
+                          class="sc-bdfBwQ fPrsah flex-shrink-0 duration-200 inline-block pb-px text-sm"
+                          data-testid="Link__external"
+                          height="1em"
+                          width="1em"
+                        >
+                          <svg>
+                            redirect.svg
+                          </svg>
+                        </div>
+                      </span>
+                    </a>
+                  </span>
                   <span
                     class="flex text-theme-primary-300 dark:text-theme-secondary-600"
                   >
@@ -369,7 +372,7 @@ exports[`VoteDetail should render a modal with unvotes 1`] = `
             </div>
           </div>
           <div
-            class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 izxcpX no-ligatures"
+            class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 cHOkoL no-ligatures"
             data-testid="TransactionDetail"
           >
             <div
@@ -384,40 +387,43 @@ exports[`VoteDetail should render a modal with unvotes 1`] = `
                 class="font-semibold"
               >
                 <div
-                  class="flex items-center space-x-3"
+                  class="flex items-center space-x-3 overflow-hidden"
                 >
-                  <a
-                    class="Link__AnchorStyled-sc-1q7sbxr-0 jXgXXh group"
-                    data-testid="Link"
-                    href="#"
-                    rel="noopener noreferrer"
-                    to="https://explorer.ark.io/blocks/71fd1a494ded5430586f4dd1c79c3ac77bf38120e868c8f8980972b8075d67e9"
+                  <span
+                    class="overflow-hidden"
                   >
-                    <span
-                      class="break-all border-b border-transparent duration-200 group-hover:border-current"
+                    <a
+                      class="Link__AnchorStyled-sc-1q7sbxr-0 jXgXXh group"
+                      data-testid="Link"
+                      href="#"
+                      rel="noopener noreferrer"
+                      to="https://explorer.ark.io/blocks/71fd1a494ded5430586f4dd1c79c3ac77bf38120e868c8f8980972b8075d67e9"
                     >
                       <span
-                        class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap"
-                        data-testid="TruncateMiddle"
+                        class="break-all border-b border-transparent duration-200 group-hover:border-current"
                       >
-                        71fd1a494ded5430586f4dd1c79c3ac77bf38120e868c8f8980972b8075d67e9
+                        <span
+                          class="inline-flex overflow-hidden"
+                        >
+                          71fd1a494ded5430586f4dd1c79c3ac77bf38120e868c8f8980972b8075d67e9
+                        </span>
                       </span>
-                    </span>
-                    <span
-                      class="align-middle"
-                    >
-                      <div
-                        class="sc-bdfBwQ fPrsah flex-shrink-0 duration-200 inline-block pb-px text-sm"
-                        data-testid="Link__external"
-                        height="1em"
-                        width="1em"
+                      <span
+                        class="align-middle"
                       >
-                        <svg>
-                          redirect.svg
-                        </svg>
-                      </div>
-                    </span>
-                  </a>
+                        <div
+                          class="sc-bdfBwQ fPrsah flex-shrink-0 duration-200 inline-block pb-px text-sm"
+                          data-testid="Link__external"
+                          height="1em"
+                          width="1em"
+                        >
+                          <svg>
+                            redirect.svg
+                          </svg>
+                        </div>
+                      </span>
+                    </a>
+                  </span>
                   <span
                     class="flex text-theme-primary-300 dark:text-theme-secondary-600"
                   >
@@ -499,7 +505,7 @@ exports[`VoteDetail should render a modal with votes 1`] = `
           class="flex-1"
         >
           <div
-            class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 cRGLsx no-ligatures"
+            class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 kakuTR no-ligatures"
             data-testid="TransactionDetail"
           >
             <div
@@ -518,7 +524,7 @@ exports[`VoteDetail should render a modal with votes 1`] = `
                 >
                   <span
                     class="max-w-24 truncate mr-2 font-semibold text-base text-theme-text"
-                    data-testid="address__wallet-name"
+                    data-testid="Address__alias"
                   >
                     <span
                       class="TruncateEnd__Wrapper-sc-1w1nvb9-0"
@@ -528,8 +534,8 @@ exports[`VoteDetail should render a modal with votes 1`] = `
                     </span>
                   </span>
                   <span
-                    class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-secondary-500 dark:text-theme-secondary-700 font-semibold text-base"
-                    data-testid="address__wallet-address"
+                    class="inline-flex overflow-hidden text-theme-secondary-500 dark:text-theme-secondary-700 font-semibold text-base"
+                    data-testid="Address__address"
                   >
                     D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD
                   </span>
@@ -569,7 +575,7 @@ exports[`VoteDetail should render a modal with votes 1`] = `
             </div>
           </div>
           <div
-            class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 izxcpX no-ligatures"
+            class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 cHOkoL no-ligatures"
             data-testid="TransactionDetail"
           >
             <div
@@ -601,7 +607,7 @@ exports[`VoteDetail should render a modal with votes 1`] = `
             </div>
           </div>
           <div
-            class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 izxcpX no-ligatures"
+            class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 cHOkoL no-ligatures"
             data-testid="TransactionDetail"
           >
             <div
@@ -643,7 +649,7 @@ exports[`VoteDetail should render a modal with votes 1`] = `
                       >
                         <span
                           class="max-w-24 truncate mr-2 font-semibold text-base text-theme-text"
-                          data-testid="address__wallet-name"
+                          data-testid="Address__alias"
                         >
                           <span
                             class="TruncateEnd__Wrapper-sc-1w1nvb9-0"
@@ -653,8 +659,8 @@ exports[`VoteDetail should render a modal with votes 1`] = `
                           </span>
                         </span>
                         <span
-                          class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-secondary-500 dark:text-theme-secondary-700 font-semibold text-base"
-                          data-testid="address__wallet-address"
+                          class="inline-flex overflow-hidden text-theme-secondary-500 dark:text-theme-secondary-700 font-semibold text-base"
+                          data-testid="Address__address"
                         >
                           034151a3ec46b5670a682b0a63394f863587d1bc97483b1b6c70eb58e7f0aed192
                         </span>
@@ -666,7 +672,7 @@ exports[`VoteDetail should render a modal with votes 1`] = `
             </div>
           </div>
           <div
-            class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 izxcpX no-ligatures"
+            class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 cHOkoL no-ligatures"
             data-testid="TransactionDetail"
           >
             <div
@@ -689,7 +695,7 @@ exports[`VoteDetail should render a modal with votes 1`] = `
             </div>
           </div>
           <div
-            class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 izxcpX no-ligatures"
+            class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 cHOkoL no-ligatures"
             data-testid="TransactionDetail"
           >
             <div
@@ -708,7 +714,7 @@ exports[`VoteDetail should render a modal with votes 1`] = `
             </div>
           </div>
           <div
-            class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 izxcpX no-ligatures"
+            class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 cHOkoL no-ligatures"
             data-testid="TransactionDetail"
           >
             <div
@@ -742,7 +748,7 @@ exports[`VoteDetail should render a modal with votes 1`] = `
             </div>
           </div>
           <div
-            class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 izxcpX no-ligatures"
+            class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 cHOkoL no-ligatures"
             data-testid="TransactionDetail"
           >
             <div
@@ -757,40 +763,43 @@ exports[`VoteDetail should render a modal with votes 1`] = `
                 class="font-semibold"
               >
                 <div
-                  class="flex items-center space-x-3"
+                  class="flex items-center space-x-3 overflow-hidden"
                 >
-                  <a
-                    class="Link__AnchorStyled-sc-1q7sbxr-0 jXgXXh group"
-                    data-testid="Link"
-                    href="#"
-                    rel="noopener noreferrer"
-                    to="https://explorer.ark.io/transaction/ee4175091d9f4dacf5fed213711c3e0e4cc371e37afa7bce0429d09bcf3ecefe"
+                  <span
+                    class="overflow-hidden"
                   >
-                    <span
-                      class="break-all border-b border-transparent duration-200 group-hover:border-current"
+                    <a
+                      class="Link__AnchorStyled-sc-1q7sbxr-0 jXgXXh group"
+                      data-testid="Link"
+                      href="#"
+                      rel="noopener noreferrer"
+                      to="https://explorer.ark.io/transaction/ee4175091d9f4dacf5fed213711c3e0e4cc371e37afa7bce0429d09bcf3ecefe"
                     >
                       <span
-                        class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap"
-                        data-testid="TruncateMiddle"
+                        class="break-all border-b border-transparent duration-200 group-hover:border-current"
                       >
-                        ee4175091d9f4dacf5fed213711c3e0e4cc371e37afa7bce0429d09bcf3ecefe
+                        <span
+                          class="inline-flex overflow-hidden"
+                        >
+                          ee4175091d9f4dacf5fed213711c3e0e4cc371e37afa7bce0429d09bcf3ecefe
+                        </span>
                       </span>
-                    </span>
-                    <span
-                      class="align-middle"
-                    >
-                      <div
-                        class="sc-bdfBwQ fPrsah flex-shrink-0 duration-200 inline-block pb-px text-sm"
-                        data-testid="Link__external"
-                        height="1em"
-                        width="1em"
+                      <span
+                        class="align-middle"
                       >
-                        <svg>
-                          redirect.svg
-                        </svg>
-                      </div>
-                    </span>
-                  </a>
+                        <div
+                          class="sc-bdfBwQ fPrsah flex-shrink-0 duration-200 inline-block pb-px text-sm"
+                          data-testid="Link__external"
+                          height="1em"
+                          width="1em"
+                        >
+                          <svg>
+                            redirect.svg
+                          </svg>
+                        </div>
+                      </span>
+                    </a>
+                  </span>
                   <span
                     class="flex text-theme-primary-300 dark:text-theme-secondary-600"
                   >
@@ -818,7 +827,7 @@ exports[`VoteDetail should render a modal with votes 1`] = `
             </div>
           </div>
           <div
-            class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 izxcpX no-ligatures"
+            class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 cHOkoL no-ligatures"
             data-testid="TransactionDetail"
           >
             <div
@@ -833,40 +842,43 @@ exports[`VoteDetail should render a modal with votes 1`] = `
                 class="font-semibold"
               >
                 <div
-                  class="flex items-center space-x-3"
+                  class="flex items-center space-x-3 overflow-hidden"
                 >
-                  <a
-                    class="Link__AnchorStyled-sc-1q7sbxr-0 jXgXXh group"
-                    data-testid="Link"
-                    href="#"
-                    rel="noopener noreferrer"
-                    to="https://explorer.ark.io/blocks/71fd1a494ded5430586f4dd1c79c3ac77bf38120e868c8f8980972b8075d67e9"
+                  <span
+                    class="overflow-hidden"
                   >
-                    <span
-                      class="break-all border-b border-transparent duration-200 group-hover:border-current"
+                    <a
+                      class="Link__AnchorStyled-sc-1q7sbxr-0 jXgXXh group"
+                      data-testid="Link"
+                      href="#"
+                      rel="noopener noreferrer"
+                      to="https://explorer.ark.io/blocks/71fd1a494ded5430586f4dd1c79c3ac77bf38120e868c8f8980972b8075d67e9"
                     >
                       <span
-                        class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap"
-                        data-testid="TruncateMiddle"
+                        class="break-all border-b border-transparent duration-200 group-hover:border-current"
                       >
-                        71fd1a494ded5430586f4dd1c79c3ac77bf38120e868c8f8980972b8075d67e9
+                        <span
+                          class="inline-flex overflow-hidden"
+                        >
+                          71fd1a494ded5430586f4dd1c79c3ac77bf38120e868c8f8980972b8075d67e9
+                        </span>
                       </span>
-                    </span>
-                    <span
-                      class="align-middle"
-                    >
-                      <div
-                        class="sc-bdfBwQ fPrsah flex-shrink-0 duration-200 inline-block pb-px text-sm"
-                        data-testid="Link__external"
-                        height="1em"
-                        width="1em"
+                      <span
+                        class="align-middle"
                       >
-                        <svg>
-                          redirect.svg
-                        </svg>
-                      </div>
-                    </span>
-                  </a>
+                        <div
+                          class="sc-bdfBwQ fPrsah flex-shrink-0 duration-200 inline-block pb-px text-sm"
+                          data-testid="Link__external"
+                          height="1em"
+                          width="1em"
+                        >
+                          <svg>
+                            redirect.svg
+                          </svg>
+                        </div>
+                      </span>
+                    </a>
+                  </span>
                   <span
                     class="flex text-theme-primary-300 dark:text-theme-secondary-600"
                   >
@@ -948,7 +960,7 @@ exports[`VoteDetail should render a modal with votes and unvotes 1`] = `
           class="flex-1"
         >
           <div
-            class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 cRGLsx no-ligatures"
+            class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 kakuTR no-ligatures"
             data-testid="TransactionDetail"
           >
             <div
@@ -967,7 +979,7 @@ exports[`VoteDetail should render a modal with votes and unvotes 1`] = `
                 >
                   <span
                     class="max-w-24 truncate mr-2 font-semibold text-base text-theme-text"
-                    data-testid="address__wallet-name"
+                    data-testid="Address__alias"
                   >
                     <span
                       class="TruncateEnd__Wrapper-sc-1w1nvb9-0"
@@ -977,8 +989,8 @@ exports[`VoteDetail should render a modal with votes and unvotes 1`] = `
                     </span>
                   </span>
                   <span
-                    class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-secondary-500 dark:text-theme-secondary-700 font-semibold text-base"
-                    data-testid="address__wallet-address"
+                    class="inline-flex overflow-hidden text-theme-secondary-500 dark:text-theme-secondary-700 font-semibold text-base"
+                    data-testid="Address__address"
                   >
                     D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD
                   </span>
@@ -1018,7 +1030,7 @@ exports[`VoteDetail should render a modal with votes and unvotes 1`] = `
             </div>
           </div>
           <div
-            class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 izxcpX no-ligatures"
+            class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 cHOkoL no-ligatures"
             data-testid="TransactionDetail"
           >
             <div
@@ -1050,7 +1062,7 @@ exports[`VoteDetail should render a modal with votes and unvotes 1`] = `
             </div>
           </div>
           <div
-            class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 izxcpX no-ligatures"
+            class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 cHOkoL no-ligatures"
             data-testid="TransactionDetail"
           >
             <div
@@ -1092,7 +1104,7 @@ exports[`VoteDetail should render a modal with votes and unvotes 1`] = `
                       >
                         <span
                           class="max-w-24 truncate mr-2 font-semibold text-base text-theme-text"
-                          data-testid="address__wallet-name"
+                          data-testid="Address__alias"
                         >
                           <span
                             class="TruncateEnd__Wrapper-sc-1w1nvb9-0"
@@ -1102,8 +1114,8 @@ exports[`VoteDetail should render a modal with votes and unvotes 1`] = `
                           </span>
                         </span>
                         <span
-                          class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-secondary-500 dark:text-theme-secondary-700 font-semibold text-base"
-                          data-testid="address__wallet-address"
+                          class="inline-flex overflow-hidden text-theme-secondary-500 dark:text-theme-secondary-700 font-semibold text-base"
+                          data-testid="Address__address"
                         >
                           034151a3ec46b5670a682b0a63394f863587d1bc97483b1b6c70eb58e7f0aed192
                         </span>
@@ -1115,7 +1127,7 @@ exports[`VoteDetail should render a modal with votes and unvotes 1`] = `
             </div>
           </div>
           <div
-            class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 izxcpX no-ligatures"
+            class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 cHOkoL no-ligatures"
             data-testid="TransactionDetail"
           >
             <div
@@ -1157,7 +1169,7 @@ exports[`VoteDetail should render a modal with votes and unvotes 1`] = `
                       >
                         <span
                           class="max-w-24 truncate mr-2 font-semibold text-base text-theme-text"
-                          data-testid="address__wallet-name"
+                          data-testid="Address__alias"
                         >
                           <span
                             class="TruncateEnd__Wrapper-sc-1w1nvb9-0"
@@ -1167,8 +1179,8 @@ exports[`VoteDetail should render a modal with votes and unvotes 1`] = `
                           </span>
                         </span>
                         <span
-                          class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-secondary-500 dark:text-theme-secondary-700 font-semibold text-base"
-                          data-testid="address__wallet-address"
+                          class="inline-flex overflow-hidden text-theme-secondary-500 dark:text-theme-secondary-700 font-semibold text-base"
+                          data-testid="Address__address"
                         >
                           034151a3ec46b5670a682b0a63394f863587d1bc97483b1b6c70eb58e7f0aed192
                         </span>
@@ -1180,7 +1192,7 @@ exports[`VoteDetail should render a modal with votes and unvotes 1`] = `
             </div>
           </div>
           <div
-            class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 izxcpX no-ligatures"
+            class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 cHOkoL no-ligatures"
             data-testid="TransactionDetail"
           >
             <div
@@ -1203,7 +1215,7 @@ exports[`VoteDetail should render a modal with votes and unvotes 1`] = `
             </div>
           </div>
           <div
-            class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 izxcpX no-ligatures"
+            class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 cHOkoL no-ligatures"
             data-testid="TransactionDetail"
           >
             <div
@@ -1222,7 +1234,7 @@ exports[`VoteDetail should render a modal with votes and unvotes 1`] = `
             </div>
           </div>
           <div
-            class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 izxcpX no-ligatures"
+            class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 cHOkoL no-ligatures"
             data-testid="TransactionDetail"
           >
             <div
@@ -1256,7 +1268,7 @@ exports[`VoteDetail should render a modal with votes and unvotes 1`] = `
             </div>
           </div>
           <div
-            class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 izxcpX no-ligatures"
+            class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 cHOkoL no-ligatures"
             data-testid="TransactionDetail"
           >
             <div
@@ -1271,40 +1283,43 @@ exports[`VoteDetail should render a modal with votes and unvotes 1`] = `
                 class="font-semibold"
               >
                 <div
-                  class="flex items-center space-x-3"
+                  class="flex items-center space-x-3 overflow-hidden"
                 >
-                  <a
-                    class="Link__AnchorStyled-sc-1q7sbxr-0 jXgXXh group"
-                    data-testid="Link"
-                    href="#"
-                    rel="noopener noreferrer"
-                    to="https://explorer.ark.io/transaction/ee4175091d9f4dacf5fed213711c3e0e4cc371e37afa7bce0429d09bcf3ecefe"
+                  <span
+                    class="overflow-hidden"
                   >
-                    <span
-                      class="break-all border-b border-transparent duration-200 group-hover:border-current"
+                    <a
+                      class="Link__AnchorStyled-sc-1q7sbxr-0 jXgXXh group"
+                      data-testid="Link"
+                      href="#"
+                      rel="noopener noreferrer"
+                      to="https://explorer.ark.io/transaction/ee4175091d9f4dacf5fed213711c3e0e4cc371e37afa7bce0429d09bcf3ecefe"
                     >
                       <span
-                        class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap"
-                        data-testid="TruncateMiddle"
+                        class="break-all border-b border-transparent duration-200 group-hover:border-current"
                       >
-                        ee4175091d9f4dacf5fed213711c3e0e4cc371e37afa7bce0429d09bcf3ecefe
+                        <span
+                          class="inline-flex overflow-hidden"
+                        >
+                          ee4175091d9f4dacf5fed213711c3e0e4cc371e37afa7bce0429d09bcf3ecefe
+                        </span>
                       </span>
-                    </span>
-                    <span
-                      class="align-middle"
-                    >
-                      <div
-                        class="sc-bdfBwQ fPrsah flex-shrink-0 duration-200 inline-block pb-px text-sm"
-                        data-testid="Link__external"
-                        height="1em"
-                        width="1em"
+                      <span
+                        class="align-middle"
                       >
-                        <svg>
-                          redirect.svg
-                        </svg>
-                      </div>
-                    </span>
-                  </a>
+                        <div
+                          class="sc-bdfBwQ fPrsah flex-shrink-0 duration-200 inline-block pb-px text-sm"
+                          data-testid="Link__external"
+                          height="1em"
+                          width="1em"
+                        >
+                          <svg>
+                            redirect.svg
+                          </svg>
+                        </div>
+                      </span>
+                    </a>
+                  </span>
                   <span
                     class="flex text-theme-primary-300 dark:text-theme-secondary-600"
                   >
@@ -1332,7 +1347,7 @@ exports[`VoteDetail should render a modal with votes and unvotes 1`] = `
             </div>
           </div>
           <div
-            class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 izxcpX no-ligatures"
+            class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 cHOkoL no-ligatures"
             data-testid="TransactionDetail"
           >
             <div
@@ -1347,40 +1362,43 @@ exports[`VoteDetail should render a modal with votes and unvotes 1`] = `
                 class="font-semibold"
               >
                 <div
-                  class="flex items-center space-x-3"
+                  class="flex items-center space-x-3 overflow-hidden"
                 >
-                  <a
-                    class="Link__AnchorStyled-sc-1q7sbxr-0 jXgXXh group"
-                    data-testid="Link"
-                    href="#"
-                    rel="noopener noreferrer"
-                    to="https://explorer.ark.io/blocks/71fd1a494ded5430586f4dd1c79c3ac77bf38120e868c8f8980972b8075d67e9"
+                  <span
+                    class="overflow-hidden"
                   >
-                    <span
-                      class="break-all border-b border-transparent duration-200 group-hover:border-current"
+                    <a
+                      class="Link__AnchorStyled-sc-1q7sbxr-0 jXgXXh group"
+                      data-testid="Link"
+                      href="#"
+                      rel="noopener noreferrer"
+                      to="https://explorer.ark.io/blocks/71fd1a494ded5430586f4dd1c79c3ac77bf38120e868c8f8980972b8075d67e9"
                     >
                       <span
-                        class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap"
-                        data-testid="TruncateMiddle"
+                        class="break-all border-b border-transparent duration-200 group-hover:border-current"
                       >
-                        71fd1a494ded5430586f4dd1c79c3ac77bf38120e868c8f8980972b8075d67e9
+                        <span
+                          class="inline-flex overflow-hidden"
+                        >
+                          71fd1a494ded5430586f4dd1c79c3ac77bf38120e868c8f8980972b8075d67e9
+                        </span>
                       </span>
-                    </span>
-                    <span
-                      class="align-middle"
-                    >
-                      <div
-                        class="sc-bdfBwQ fPrsah flex-shrink-0 duration-200 inline-block pb-px text-sm"
-                        data-testid="Link__external"
-                        height="1em"
-                        width="1em"
+                      <span
+                        class="align-middle"
                       >
-                        <svg>
-                          redirect.svg
-                        </svg>
-                      </div>
-                    </span>
-                  </a>
+                        <div
+                          class="sc-bdfBwQ fPrsah flex-shrink-0 duration-200 inline-block pb-px text-sm"
+                          data-testid="Link__external"
+                          height="1em"
+                          width="1em"
+                        >
+                          <svg>
+                            redirect.svg
+                          </svg>
+                        </div>
+                      </span>
+                    </a>
+                  </span>
                   <span
                     class="flex text-theme-primary-300 dark:text-theme-secondary-600"
                   >

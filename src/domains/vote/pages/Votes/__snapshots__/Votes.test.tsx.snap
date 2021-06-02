@@ -660,8 +660,8 @@ exports[`Votes should filter current delegates 1`] = `
                         class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap"
                       >
                         <span
-                          class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap leading-tight font-semibold text-lg"
-                          data-testid="address__wallet-address"
+                          class="inline-flex overflow-hidden leading-tight font-semibold text-lg"
+                          data-testid="Address__address"
                         >
                           D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD
                         </span>
@@ -1547,8 +1547,8 @@ exports[`Votes should handle wallet vote error and show empty delegates 1`] = `
                         class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap"
                       >
                         <span
-                          class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap leading-tight font-semibold text-lg"
-                          data-testid="address__wallet-address"
+                          class="inline-flex overflow-hidden leading-tight font-semibold text-lg"
+                          data-testid="Address__address"
                         >
                           D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD
                         </span>
@@ -2455,8 +2455,8 @@ exports[`Votes should hide testnet wallet if disabled from profile setting 1`] =
                         class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap"
                       >
                         <span
-                          class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap leading-tight font-semibold text-lg"
-                          data-testid="address__wallet-address"
+                          class="inline-flex overflow-hidden leading-tight font-semibold text-lg"
+                          data-testid="Address__address"
                         >
                           D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD
                         </span>
@@ -3380,8 +3380,8 @@ exports[`Votes should render 1`] = `
                         class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap"
                       >
                         <span
-                          class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap leading-tight font-semibold text-lg"
-                          data-testid="address__wallet-address"
+                          class="inline-flex overflow-hidden leading-tight font-semibold text-lg"
+                          data-testid="Address__address"
                         >
                           D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD
                         </span>
@@ -4667,8 +4667,8 @@ exports[`Votes should select a delegate 1`] = `
                         class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap"
                       >
                         <span
-                          class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap leading-tight font-semibold text-lg"
-                          data-testid="address__wallet-address"
+                          class="inline-flex overflow-hidden leading-tight font-semibold text-lg"
+                          data-testid="Address__address"
                         >
                           D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD
                         </span>
@@ -5555,8 +5555,8 @@ exports[`Votes should select an address without vote 1`] = `
                         class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap"
                       >
                         <span
-                          class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap leading-tight font-semibold text-lg"
-                          data-testid="address__wallet-address"
+                          class="inline-flex overflow-hidden leading-tight font-semibold text-lg"
+                          data-testid="Address__address"
                         >
                           D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb
                         </span>
@@ -7550,8 +7550,8 @@ exports[`Votes should show network warning 1`] = `
                         class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap"
                       >
                         <span
-                          class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap leading-tight font-semibold text-lg"
-                          data-testid="address__wallet-address"
+                          class="inline-flex overflow-hidden leading-tight font-semibold text-lg"
+                          data-testid="Address__address"
                         >
                           D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD
                         </span>
@@ -8470,8 +8470,8 @@ exports[`Votes should show resigned delegate notice 1`] = `
                         class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap"
                       >
                         <span
-                          class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap leading-tight font-semibold text-lg"
-                          data-testid="address__wallet-address"
+                          class="inline-flex overflow-hidden leading-tight font-semibold text-lg"
+                          data-testid="Address__address"
                         >
                           D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD
                         </span>
@@ -9341,7 +9341,7 @@ exports[`Votes should toggle network selection from network filters 1`] = `
                         >
                           <span
                             class="max-w-24 truncate mr-2 font-semibold text-base text-theme-text"
-                            data-testid="address__wallet-name"
+                            data-testid="Address__alias"
                           >
                             <span
                               class="TruncateEnd__Wrapper-sc-1w1nvb9-0"
@@ -9351,8 +9351,8 @@ exports[`Votes should toggle network selection from network filters 1`] = `
                             </span>
                           </span>
                           <span
-                            class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-secondary-500 dark:text-theme-secondary-700 font-semibold text-base"
-                            data-testid="address__wallet-address"
+                            class="inline-flex overflow-hidden text-theme-secondary-500 dark:text-theme-secondary-700 font-semibold text-base"
+                            data-testid="Address__address"
                           >
                             D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD
                           </span>
@@ -9472,7 +9472,7 @@ exports[`Votes should toggle network selection from network filters 1`] = `
                         >
                           <span
                             class="max-w-24 truncate mr-2 font-semibold text-base text-theme-text"
-                            data-testid="address__wallet-name"
+                            data-testid="Address__alias"
                           >
                             <span
                               class="TruncateEnd__Wrapper-sc-1w1nvb9-0"
@@ -9482,8 +9482,8 @@ exports[`Votes should toggle network selection from network filters 1`] = `
                             </span>
                           </span>
                           <span
-                            class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-secondary-500 dark:text-theme-secondary-700 font-semibold text-base"
-                            data-testid="address__wallet-address"
+                            class="inline-flex overflow-hidden text-theme-secondary-500 dark:text-theme-secondary-700 font-semibold text-base"
+                            data-testid="Address__address"
                           >
                             D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb
                           </span>
@@ -9578,8 +9578,8 @@ exports[`Votes should toggle network selection from network filters 1`] = `
                           class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap"
                         >
                           <span
-                            class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-text font-semibold text-base"
-                            data-testid="address__wallet-address"
+                            class="inline-flex overflow-hidden text-theme-text font-semibold text-base"
+                            data-testid="Address__address"
                           >
                             DTLomV8hpJheFDPnBGB5EtrDCfDZJnG23z
                           </span>

@@ -214,7 +214,7 @@ exports[`AddressTable should render 1`] = `
                 >
                   <span
                     class="max-w-24 truncate mr-2 font-semibold text-base text-theme-text"
-                    data-testid="address__wallet-name"
+                    data-testid="Address__alias"
                   >
                     <span
                       class="TruncateEnd__Wrapper-sc-1w1nvb9-0"
@@ -224,8 +224,8 @@ exports[`AddressTable should render 1`] = `
                     </span>
                   </span>
                   <span
-                    class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-secondary-500 dark:text-theme-secondary-700 font-semibold text-base"
-                    data-testid="address__wallet-address"
+                    class="inline-flex overflow-hidden text-theme-secondary-500 dark:text-theme-secondary-700 font-semibold text-base"
+                    data-testid="Address__address"
                   >
                     D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD
                   </span>
@@ -525,7 +525,7 @@ exports[`AddressTable should render when the maximum votes is greater than 1 1`]
                 >
                   <span
                     class="max-w-24 truncate mr-2 font-semibold text-base text-theme-text"
-                    data-testid="address__wallet-name"
+                    data-testid="Address__alias"
                   >
                     <span
                       class="TruncateEnd__Wrapper-sc-1w1nvb9-0"
@@ -535,8 +535,8 @@ exports[`AddressTable should render when the maximum votes is greater than 1 1`]
                     </span>
                   </span>
                   <span
-                    class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-secondary-500 dark:text-theme-secondary-700 font-semibold text-base"
-                    data-testid="address__wallet-address"
+                    class="inline-flex overflow-hidden text-theme-secondary-500 dark:text-theme-secondary-700 font-semibold text-base"
+                    data-testid="Address__address"
                   >
                     D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD
                   </span>

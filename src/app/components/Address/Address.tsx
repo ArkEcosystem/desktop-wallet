@@ -48,7 +48,7 @@ export const Address = ({
 		<div className="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap">
 			{walletName && (
 				<span
-					data-testid="address__wallet-name"
+					data-testid="Address__alias"
 					className={`max-w-24 truncate mr-2 ${getFontWeight(fontWeight)} ${getFontSize(size)} ${
 						walletNameClass || "text-theme-text"
 					}`}
@@ -62,7 +62,7 @@ export const Address = ({
 			)}
 			{address && (
 				<TruncateMiddleDynamic
-					data-testid="address__wallet-address"
+					data-testid="Address__address"
 					value={address}
 					className={`${
 						addressClass ||

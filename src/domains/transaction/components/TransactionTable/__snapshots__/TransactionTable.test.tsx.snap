@@ -64,7 +64,7 @@ exports[`TransactionTable loading state should render 1`] = `
               </div>
             </th>
             <th
-              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder w-96 min-w-96"
+              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder w-20 min-w-20"
               colspan="1"
               data-testid="table__th--2"
               role="columnheader"
@@ -1101,7 +1101,7 @@ exports[`TransactionTable loading state should render with currency column 1`] =
               </div>
             </th>
             <th
-              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder w-96 min-w-96"
+              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder w-20 min-w-20"
               colspan="1"
               data-testid="table__th--2"
               role="columnheader"
@@ -2332,7 +2332,7 @@ exports[`TransactionTable loading state should render with sign column 1`] = `
               </div>
             </th>
             <th
-              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder w-96 min-w-96"
+              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder w-20 min-w-20"
               colspan="1"
               data-testid="table__th--2"
               role="columnheader"
@@ -3478,7 +3478,7 @@ exports[`TransactionTable should render 1`] = `
               </div>
             </th>
             <th
-              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder w-96 min-w-96"
+              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder w-20 min-w-20"
               colspan="1"
               data-testid="table__th--2"
               role="columnheader"
@@ -4099,8 +4099,8 @@ exports[`TransactionTable should render 1`] = `
                     class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap"
                   >
                     <span
-                      class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-text font-semibold text-base"
-                      data-testid="address__wallet-address"
+                      class="inline-flex overflow-hidden text-theme-text font-semibold text-base"
+                      data-testid="Address__address"
                     >
                       D5pVkhZbSb4UNXvfmF6j7zdau8yGxfKwSv
                     </span>
@@ -4251,8 +4251,8 @@ exports[`TransactionTable should render 1`] = `
                     class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap"
                   >
                     <span
-                      class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-text font-semibold text-base"
-                      data-testid="address__wallet-address"
+                      class="inline-flex overflow-hidden text-theme-text font-semibold text-base"
+                      data-testid="Address__address"
                     >
                       DKY5eyQUKKYyaCfPp6MUv3Y4FW6EbNF53A
                     </span>
@@ -4403,8 +4403,8 @@ exports[`TransactionTable should render 1`] = `
                     class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap"
                   >
                     <span
-                      class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-text font-semibold text-base"
-                      data-testid="address__wallet-address"
+                      class="inline-flex overflow-hidden text-theme-text font-semibold text-base"
+                      data-testid="Address__address"
                     >
                       DKY5eyQUKKYyaCfPp6MUv3Y4FW6EbNF53A
                     </span>
@@ -4555,8 +4555,8 @@ exports[`TransactionTable should render 1`] = `
                     class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap"
                   >
                     <span
-                      class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-text font-semibold text-base"
-                      data-testid="address__wallet-address"
+                      class="inline-flex overflow-hidden text-theme-text font-semibold text-base"
+                      data-testid="Address__address"
                     >
                       DHg1jYVS23D6GP7RuhckuJsYAr6crH6c3Z
                     </span>
@@ -4707,8 +4707,8 @@ exports[`TransactionTable should render 1`] = `
                     class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap"
                   >
                     <span
-                      class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-text font-semibold text-base"
-                      data-testid="address__wallet-address"
+                      class="inline-flex overflow-hidden text-theme-text font-semibold text-base"
+                      data-testid="Address__address"
                     >
                       DM7UiH4b2rW2Nv11Wu6ToiZi8MJhGCEWhP
                     </span>
@@ -4859,8 +4859,8 @@ exports[`TransactionTable should render 1`] = `
                     class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap"
                   >
                     <span
-                      class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-text font-semibold text-base"
-                      data-testid="address__wallet-address"
+                      class="inline-flex overflow-hidden text-theme-text font-semibold text-base"
+                      data-testid="Address__address"
                     >
                       DRgF3PvzeGWndQjET7dZsSmnrc6uAy23ES
                     </span>
@@ -5011,8 +5011,8 @@ exports[`TransactionTable should render 1`] = `
                     class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap"
                   >
                     <span
-                      class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-text font-semibold text-base"
-                      data-testid="address__wallet-address"
+                      class="inline-flex overflow-hidden text-theme-text font-semibold text-base"
+                      data-testid="Address__address"
                     >
                       D6Z26L69gdk9qYmTv5uzk3uGepigtHY4ax
                     </span>
@@ -5163,8 +5163,8 @@ exports[`TransactionTable should render 1`] = `
                     class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap"
                   >
                     <span
-                      class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-text font-semibold text-base"
-                      data-testid="address__wallet-address"
+                      class="inline-flex overflow-hidden text-theme-text font-semibold text-base"
+                      data-testid="Address__address"
                     >
                       DPv1wzB2xJtJQH5PaCMnw1V9mUBugzP8yQ
                     </span>
@@ -5463,8 +5463,8 @@ exports[`TransactionTable should render 1`] = `
                     class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap"
                   >
                     <span
-                      class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-text font-semibold text-base"
-                      data-testid="address__wallet-address"
+                      class="inline-flex overflow-hidden text-theme-text font-semibold text-base"
+                      data-testid="Address__address"
                     >
                       D8c6zgQ2CYWvbCzqZbhWCKXDFHyje9tUMR
                     </span>
@@ -5770,8 +5770,8 @@ exports[`TransactionTable should render 1`] = `
                     class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap"
                   >
                     <span
-                      class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-text font-semibold text-base"
-                      data-testid="address__wallet-address"
+                      class="inline-flex overflow-hidden text-theme-text font-semibold text-base"
+                      data-testid="Address__address"
                     >
                       DHawRTCWDw4e4YaPyF8QEdWUmxiwtVmQ5z
                     </span>
@@ -5955,8 +5955,8 @@ exports[`TransactionTable should render compact 1`] = `
                   class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap"
                 >
                   <span
-                    class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-text font-semibold text-base"
-                    data-testid="address__wallet-address"
+                    class="inline-flex overflow-hidden text-theme-text font-semibold text-base"
+                    data-testid="Address__address"
                   >
                     DHawRTCWDw4e4YaPyF8QEdWUmxiwtVmQ5z
                   </span>
@@ -6315,8 +6315,8 @@ exports[`TransactionTable should render compact 1`] = `
                   class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap"
                 >
                   <span
-                    class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-text font-semibold text-base"
-                    data-testid="address__wallet-address"
+                    class="inline-flex overflow-hidden text-theme-text font-semibold text-base"
+                    data-testid="Address__address"
                   >
                     D8c6zgQ2CYWvbCzqZbhWCKXDFHyje9tUMR
                   </span>
@@ -6453,8 +6453,8 @@ exports[`TransactionTable should render compact 1`] = `
                   class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap"
                 >
                   <span
-                    class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-text font-semibold text-base"
-                    data-testid="address__wallet-address"
+                    class="inline-flex overflow-hidden text-theme-text font-semibold text-base"
+                    data-testid="Address__address"
                   >
                     DPv1wzB2xJtJQH5PaCMnw1V9mUBugzP8yQ
                   </span>
@@ -6524,8 +6524,8 @@ exports[`TransactionTable should render compact 1`] = `
                   class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap"
                 >
                   <span
-                    class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-text font-semibold text-base"
-                    data-testid="address__wallet-address"
+                    class="inline-flex overflow-hidden text-theme-text font-semibold text-base"
+                    data-testid="Address__address"
                   >
                     D6Z26L69gdk9qYmTv5uzk3uGepigtHY4ax
                   </span>
@@ -6595,8 +6595,8 @@ exports[`TransactionTable should render compact 1`] = `
                   class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap"
                 >
                   <span
-                    class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-text font-semibold text-base"
-                    data-testid="address__wallet-address"
+                    class="inline-flex overflow-hidden text-theme-text font-semibold text-base"
+                    data-testid="Address__address"
                   >
                     DRgF3PvzeGWndQjET7dZsSmnrc6uAy23ES
                   </span>
@@ -6666,8 +6666,8 @@ exports[`TransactionTable should render compact 1`] = `
                   class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap"
                 >
                   <span
-                    class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-text font-semibold text-base"
-                    data-testid="address__wallet-address"
+                    class="inline-flex overflow-hidden text-theme-text font-semibold text-base"
+                    data-testid="Address__address"
                   >
                     DM7UiH4b2rW2Nv11Wu6ToiZi8MJhGCEWhP
                   </span>
@@ -6737,8 +6737,8 @@ exports[`TransactionTable should render compact 1`] = `
                   class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap"
                 >
                   <span
-                    class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-text font-semibold text-base"
-                    data-testid="address__wallet-address"
+                    class="inline-flex overflow-hidden text-theme-text font-semibold text-base"
+                    data-testid="Address__address"
                   >
                     DHg1jYVS23D6GP7RuhckuJsYAr6crH6c3Z
                   </span>
@@ -6808,8 +6808,8 @@ exports[`TransactionTable should render compact 1`] = `
                   class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap"
                 >
                   <span
-                    class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-text font-semibold text-base"
-                    data-testid="address__wallet-address"
+                    class="inline-flex overflow-hidden text-theme-text font-semibold text-base"
+                    data-testid="Address__address"
                   >
                     DKY5eyQUKKYyaCfPp6MUv3Y4FW6EbNF53A
                   </span>
@@ -6879,8 +6879,8 @@ exports[`TransactionTable should render compact 1`] = `
                   class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap"
                 >
                   <span
-                    class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-text font-semibold text-base"
-                    data-testid="address__wallet-address"
+                    class="inline-flex overflow-hidden text-theme-text font-semibold text-base"
+                    data-testid="Address__address"
                   >
                     DKY5eyQUKKYyaCfPp6MUv3Y4FW6EbNF53A
                   </span>
@@ -6950,8 +6950,8 @@ exports[`TransactionTable should render compact 1`] = `
                   class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap"
                 >
                   <span
-                    class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-text font-semibold text-base"
-                    data-testid="address__wallet-address"
+                    class="inline-flex overflow-hidden text-theme-text font-semibold text-base"
+                    data-testid="Address__address"
                   >
                     D5pVkhZbSb4UNXvfmF6j7zdau8yGxfKwSv
                   </span>
@@ -7047,7 +7047,7 @@ exports[`TransactionTable should render with sign 1`] = `
               </div>
             </th>
             <th
-              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder w-96 min-w-96"
+              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder w-20 min-w-20"
               colspan="1"
               data-testid="table__th--2"
               role="columnheader"
@@ -7751,8 +7751,8 @@ exports[`TransactionTable should render with sign 1`] = `
                     class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap"
                   >
                     <span
-                      class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-text font-semibold text-base"
-                      data-testid="address__wallet-address"
+                      class="inline-flex overflow-hidden text-theme-text font-semibold text-base"
+                      data-testid="Address__address"
                     >
                       D5pVkhZbSb4UNXvfmF6j7zdau8yGxfKwSv
                     </span>
@@ -7926,8 +7926,8 @@ exports[`TransactionTable should render with sign 1`] = `
                     class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap"
                   >
                     <span
-                      class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-text font-semibold text-base"
-                      data-testid="address__wallet-address"
+                      class="inline-flex overflow-hidden text-theme-text font-semibold text-base"
+                      data-testid="Address__address"
                     >
                       DKY5eyQUKKYyaCfPp6MUv3Y4FW6EbNF53A
                     </span>
@@ -8101,8 +8101,8 @@ exports[`TransactionTable should render with sign 1`] = `
                     class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap"
                   >
                     <span
-                      class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-text font-semibold text-base"
-                      data-testid="address__wallet-address"
+                      class="inline-flex overflow-hidden text-theme-text font-semibold text-base"
+                      data-testid="Address__address"
                     >
                       DKY5eyQUKKYyaCfPp6MUv3Y4FW6EbNF53A
                     </span>
@@ -8276,8 +8276,8 @@ exports[`TransactionTable should render with sign 1`] = `
                     class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap"
                   >
                     <span
-                      class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-text font-semibold text-base"
-                      data-testid="address__wallet-address"
+                      class="inline-flex overflow-hidden text-theme-text font-semibold text-base"
+                      data-testid="Address__address"
                     >
                       DHg1jYVS23D6GP7RuhckuJsYAr6crH6c3Z
                     </span>
@@ -8451,8 +8451,8 @@ exports[`TransactionTable should render with sign 1`] = `
                     class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap"
                   >
                     <span
-                      class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-text font-semibold text-base"
-                      data-testid="address__wallet-address"
+                      class="inline-flex overflow-hidden text-theme-text font-semibold text-base"
+                      data-testid="Address__address"
                     >
                       DM7UiH4b2rW2Nv11Wu6ToiZi8MJhGCEWhP
                     </span>
@@ -8626,8 +8626,8 @@ exports[`TransactionTable should render with sign 1`] = `
                     class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap"
                   >
                     <span
-                      class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-text font-semibold text-base"
-                      data-testid="address__wallet-address"
+                      class="inline-flex overflow-hidden text-theme-text font-semibold text-base"
+                      data-testid="Address__address"
                     >
                       DRgF3PvzeGWndQjET7dZsSmnrc6uAy23ES
                     </span>
@@ -8801,8 +8801,8 @@ exports[`TransactionTable should render with sign 1`] = `
                     class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap"
                   >
                     <span
-                      class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-text font-semibold text-base"
-                      data-testid="address__wallet-address"
+                      class="inline-flex overflow-hidden text-theme-text font-semibold text-base"
+                      data-testid="Address__address"
                     >
                       D6Z26L69gdk9qYmTv5uzk3uGepigtHY4ax
                     </span>
@@ -8976,8 +8976,8 @@ exports[`TransactionTable should render with sign 1`] = `
                     class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap"
                   >
                     <span
-                      class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-text font-semibold text-base"
-                      data-testid="address__wallet-address"
+                      class="inline-flex overflow-hidden text-theme-text font-semibold text-base"
+                      data-testid="Address__address"
                     >
                       DPv1wzB2xJtJQH5PaCMnw1V9mUBugzP8yQ
                     </span>
@@ -9322,8 +9322,8 @@ exports[`TransactionTable should render with sign 1`] = `
                     class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap"
                   >
                     <span
-                      class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-text font-semibold text-base"
-                      data-testid="address__wallet-address"
+                      class="inline-flex overflow-hidden text-theme-text font-semibold text-base"
+                      data-testid="Address__address"
                     >
                       D8c6zgQ2CYWvbCzqZbhWCKXDFHyje9tUMR
                     </span>
@@ -9675,8 +9675,8 @@ exports[`TransactionTable should render with sign 1`] = `
                     class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap"
                   >
                     <span
-                      class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-text font-semibold text-base"
-                      data-testid="address__wallet-address"
+                      class="inline-flex overflow-hidden text-theme-text font-semibold text-base"
+                      data-testid="Address__address"
                     >
                       DHawRTCWDw4e4YaPyF8QEdWUmxiwtVmQ5z
                     </span>
@@ -9820,7 +9820,7 @@ exports[`TransactionTable should render without explorer link column 1`] = `
               </div>
             </th>
             <th
-              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder w-96 min-w-96"
+              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder w-20 min-w-20"
               colspan="1"
               data-testid="table__th--1"
               role="columnheader"
@@ -10333,8 +10333,8 @@ exports[`TransactionTable should render without explorer link column 1`] = `
                     class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap"
                   >
                     <span
-                      class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-text font-semibold text-base"
-                      data-testid="address__wallet-address"
+                      class="inline-flex overflow-hidden text-theme-text font-semibold text-base"
+                      data-testid="Address__address"
                     >
                       D5pVkhZbSb4UNXvfmF6j7zdau8yGxfKwSv
                     </span>
@@ -10458,8 +10458,8 @@ exports[`TransactionTable should render without explorer link column 1`] = `
                     class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap"
                   >
                     <span
-                      class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-text font-semibold text-base"
-                      data-testid="address__wallet-address"
+                      class="inline-flex overflow-hidden text-theme-text font-semibold text-base"
+                      data-testid="Address__address"
                     >
                       DKY5eyQUKKYyaCfPp6MUv3Y4FW6EbNF53A
                     </span>
@@ -10583,8 +10583,8 @@ exports[`TransactionTable should render without explorer link column 1`] = `
                     class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap"
                   >
                     <span
-                      class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-text font-semibold text-base"
-                      data-testid="address__wallet-address"
+                      class="inline-flex overflow-hidden text-theme-text font-semibold text-base"
+                      data-testid="Address__address"
                     >
                       DKY5eyQUKKYyaCfPp6MUv3Y4FW6EbNF53A
                     </span>
@@ -10708,8 +10708,8 @@ exports[`TransactionTable should render without explorer link column 1`] = `
                     class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap"
                   >
                     <span
-                      class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-text font-semibold text-base"
-                      data-testid="address__wallet-address"
+                      class="inline-flex overflow-hidden text-theme-text font-semibold text-base"
+                      data-testid="Address__address"
                     >
                       DHg1jYVS23D6GP7RuhckuJsYAr6crH6c3Z
                     </span>
@@ -10833,8 +10833,8 @@ exports[`TransactionTable should render without explorer link column 1`] = `
                     class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap"
                   >
                     <span
-                      class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-text font-semibold text-base"
-                      data-testid="address__wallet-address"
+                      class="inline-flex overflow-hidden text-theme-text font-semibold text-base"
+                      data-testid="Address__address"
                     >
                       DM7UiH4b2rW2Nv11Wu6ToiZi8MJhGCEWhP
                     </span>
@@ -10958,8 +10958,8 @@ exports[`TransactionTable should render without explorer link column 1`] = `
                     class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap"
                   >
                     <span
-                      class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-text font-semibold text-base"
-                      data-testid="address__wallet-address"
+                      class="inline-flex overflow-hidden text-theme-text font-semibold text-base"
+                      data-testid="Address__address"
                     >
                       DRgF3PvzeGWndQjET7dZsSmnrc6uAy23ES
                     </span>
@@ -11083,8 +11083,8 @@ exports[`TransactionTable should render without explorer link column 1`] = `
                     class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap"
                   >
                     <span
-                      class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-text font-semibold text-base"
-                      data-testid="address__wallet-address"
+                      class="inline-flex overflow-hidden text-theme-text font-semibold text-base"
+                      data-testid="Address__address"
                     >
                       D6Z26L69gdk9qYmTv5uzk3uGepigtHY4ax
                     </span>
@@ -11208,8 +11208,8 @@ exports[`TransactionTable should render without explorer link column 1`] = `
                     class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap"
                   >
                     <span
-                      class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-text font-semibold text-base"
-                      data-testid="address__wallet-address"
+                      class="inline-flex overflow-hidden text-theme-text font-semibold text-base"
+                      data-testid="Address__address"
                     >
                       DPv1wzB2xJtJQH5PaCMnw1V9mUBugzP8yQ
                     </span>
@@ -11454,8 +11454,8 @@ exports[`TransactionTable should render without explorer link column 1`] = `
                     class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap"
                   >
                     <span
-                      class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-text font-semibold text-base"
-                      data-testid="address__wallet-address"
+                      class="inline-flex overflow-hidden text-theme-text font-semibold text-base"
+                      data-testid="Address__address"
                     >
                       D8c6zgQ2CYWvbCzqZbhWCKXDFHyje9tUMR
                     </span>
@@ -11707,8 +11707,8 @@ exports[`TransactionTable should render without explorer link column 1`] = `
                     class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap"
                   >
                     <span
-                      class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-text font-semibold text-base"
-                      data-testid="address__wallet-address"
+                      class="inline-flex overflow-hidden text-theme-text font-semibold text-base"
+                      data-testid="Address__address"
                     >
                       DHawRTCWDw4e4YaPyF8QEdWUmxiwtVmQ5z
                     </span>

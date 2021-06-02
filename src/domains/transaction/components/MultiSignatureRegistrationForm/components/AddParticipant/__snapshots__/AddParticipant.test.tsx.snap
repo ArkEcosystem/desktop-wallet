@@ -270,8 +270,8 @@ exports[`Add Participant should fail if cannot find the address remotely 1`] = `
                       class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap"
                     >
                       <span
-                        class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-text font-semibold text-base"
-                        data-testid="address__wallet-address"
+                        class="inline-flex overflow-hidden text-theme-text font-semibold text-base"
+                        data-testid="Address__address"
                       >
                         D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD
                       </span>
@@ -590,8 +590,8 @@ exports[`Add Participant should fail to find 1`] = `
                       class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap"
                     >
                       <span
-                        class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-text font-semibold text-base"
-                        data-testid="address__wallet-address"
+                        class="inline-flex overflow-hidden text-theme-text font-semibold text-base"
+                        data-testid="Address__address"
                       >
                         D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD
                       </span>
@@ -910,8 +910,8 @@ exports[`Add Participant should fail with cold wallet 1`] = `
                       class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap"
                     >
                       <span
-                        class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-text font-semibold text-base"
-                        data-testid="address__wallet-address"
+                        class="inline-flex overflow-hidden text-theme-text font-semibold text-base"
+                        data-testid="Address__address"
                       >
                         D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD
                       </span>
@@ -1203,8 +1203,8 @@ exports[`Add Participant should render custom participants 1`] = `
                       class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap"
                     >
                       <span
-                        class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-text font-semibold text-base"
-                        data-testid="address__wallet-address"
+                        class="inline-flex overflow-hidden text-theme-text font-semibold text-base"
+                        data-testid="Address__address"
                       >
                         D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb
                       </span>
@@ -1425,7 +1425,7 @@ exports[`Add Participant should work with a remote wallet 1`] = `
                           >
                             <span
                               class="max-w-24 truncate mr-2 font-semibold text-base text-theme-text"
-                              data-testid="address__wallet-name"
+                              data-testid="Address__alias"
                             >
                               <span
                                 class="TruncateEnd__Wrapper-sc-1w1nvb9-0"
@@ -1435,8 +1435,8 @@ exports[`Add Participant should work with a remote wallet 1`] = `
                               </span>
                             </span>
                             <span
-                              class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-secondary-500 dark:text-theme-secondary-700 font-semibold text-base"
-                              data-testid="address__wallet-address"
+                              class="inline-flex overflow-hidden text-theme-secondary-500 dark:text-theme-secondary-700 font-semibold text-base"
+                              data-testid="Address__address"
                             >
                               D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD
                             </span>
@@ -1476,7 +1476,7 @@ exports[`Add Participant should work with a remote wallet 1`] = `
                           >
                             <span
                               class="max-w-24 truncate mr-2 font-semibold text-base text-theme-text"
-                              data-testid="address__wallet-name"
+                              data-testid="Address__alias"
                             >
                               <span
                                 class="TruncateEnd__Wrapper-sc-1w1nvb9-0"
@@ -1486,8 +1486,8 @@ exports[`Add Participant should work with a remote wallet 1`] = `
                               </span>
                             </span>
                             <span
-                              class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-secondary-500 dark:text-theme-secondary-700 font-semibold text-base"
-                              data-testid="address__wallet-address"
+                              class="inline-flex overflow-hidden text-theme-secondary-500 dark:text-theme-secondary-700 font-semibold text-base"
+                              data-testid="Address__address"
                             >
                               D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb
                             </span>
@@ -1527,7 +1527,7 @@ exports[`Add Participant should work with a remote wallet 1`] = `
                           >
                             <span
                               class="max-w-24 truncate mr-2 font-semibold text-base text-theme-primary-600"
-                              data-testid="address__wallet-name"
+                              data-testid="Address__alias"
                             >
                               <span
                                 class="TruncateEnd__Wrapper-sc-1w1nvb9-0"
@@ -1537,8 +1537,8 @@ exports[`Add Participant should work with a remote wallet 1`] = `
                               </span>
                             </span>
                             <span
-                              class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-secondary-500 dark:text-theme-secondary-700 font-semibold text-base"
-                              data-testid="address__wallet-address"
+                              class="inline-flex overflow-hidden text-theme-secondary-500 dark:text-theme-secondary-700 font-semibold text-base"
+                              data-testid="Address__address"
                             >
                               D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib
                             </span>
@@ -1578,7 +1578,7 @@ exports[`Add Participant should work with a remote wallet 1`] = `
                           >
                             <span
                               class="max-w-24 truncate mr-2 font-semibold text-base text-theme-text"
-                              data-testid="address__wallet-name"
+                              data-testid="Address__alias"
                             >
                               <span
                                 class="TruncateEnd__Wrapper-sc-1w1nvb9-0"
@@ -1588,8 +1588,8 @@ exports[`Add Participant should work with a remote wallet 1`] = `
                               </span>
                             </span>
                             <span
-                              class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-secondary-500 dark:text-theme-secondary-700 font-semibold text-base"
-                              data-testid="address__wallet-address"
+                              class="inline-flex overflow-hidden text-theme-secondary-500 dark:text-theme-secondary-700 font-semibold text-base"
+                              data-testid="Address__address"
                             >
                               DFJ5Z51F1euNNdRUQJKQVdG4h495LZkc6T
                             </span>
@@ -1629,7 +1629,7 @@ exports[`Add Participant should work with a remote wallet 1`] = `
                           >
                             <span
                               class="max-w-24 truncate mr-2 font-semibold text-base text-theme-text"
-                              data-testid="address__wallet-name"
+                              data-testid="Address__alias"
                             >
                               <span
                                 class="TruncateEnd__Wrapper-sc-1w1nvb9-0"
@@ -1639,8 +1639,8 @@ exports[`Add Participant should work with a remote wallet 1`] = `
                               </span>
                             </span>
                             <span
-                              class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-secondary-500 dark:text-theme-secondary-700 font-semibold text-base"
-                              data-testid="address__wallet-address"
+                              class="inline-flex overflow-hidden text-theme-secondary-500 dark:text-theme-secondary-700 font-semibold text-base"
+                              data-testid="Address__address"
                             >
                               D9YiyRYMBS2ofzqkufjrkB9nHofWgJLM7f
                             </span>
@@ -1680,7 +1680,7 @@ exports[`Add Participant should work with a remote wallet 1`] = `
                           >
                             <span
                               class="max-w-24 truncate mr-2 font-semibold text-base text-theme-text"
-                              data-testid="address__wallet-name"
+                              data-testid="Address__alias"
                             >
                               <span
                                 class="TruncateEnd__Wrapper-sc-1w1nvb9-0"
@@ -1690,8 +1690,8 @@ exports[`Add Participant should work with a remote wallet 1`] = `
                               </span>
                             </span>
                             <span
-                              class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-secondary-500 dark:text-theme-secondary-700 font-semibold text-base"
-                              data-testid="address__wallet-address"
+                              class="inline-flex overflow-hidden text-theme-secondary-500 dark:text-theme-secondary-700 font-semibold text-base"
+                              data-testid="Address__address"
                             >
                               DKrACQw7ytoU2gjppy3qKeE2dQhZjfXYqu
                             </span>
@@ -1822,8 +1822,8 @@ exports[`Add Participant should work with a remote wallet 1`] = `
                       class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap"
                     >
                       <span
-                        class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-text font-semibold text-base"
-                        data-testid="address__wallet-address"
+                        class="inline-flex overflow-hidden text-theme-text font-semibold text-base"
+                        data-testid="Address__address"
                       >
                         D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD
                       </span>
@@ -1902,8 +1902,8 @@ exports[`Add Participant should work with a remote wallet 1`] = `
                       class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap"
                     >
                       <span
-                        class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-text font-semibold text-base"
-                        data-testid="address__wallet-address"
+                        class="inline-flex overflow-hidden text-theme-text font-semibold text-base"
+                        data-testid="Address__address"
                       >
                         D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib
                       </span>
@@ -2124,7 +2124,7 @@ exports[`Add Participant should work with an imported wallet 1`] = `
                           >
                             <span
                               class="max-w-24 truncate mr-2 font-semibold text-base text-theme-text"
-                              data-testid="address__wallet-name"
+                              data-testid="Address__alias"
                             >
                               <span
                                 class="TruncateEnd__Wrapper-sc-1w1nvb9-0"
@@ -2134,8 +2134,8 @@ exports[`Add Participant should work with an imported wallet 1`] = `
                               </span>
                             </span>
                             <span
-                              class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-secondary-500 dark:text-theme-secondary-700 font-semibold text-base"
-                              data-testid="address__wallet-address"
+                              class="inline-flex overflow-hidden text-theme-secondary-500 dark:text-theme-secondary-700 font-semibold text-base"
+                              data-testid="Address__address"
                             >
                               D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD
                             </span>
@@ -2175,7 +2175,7 @@ exports[`Add Participant should work with an imported wallet 1`] = `
                           >
                             <span
                               class="max-w-24 truncate mr-2 font-semibold text-base text-theme-primary-600"
-                              data-testid="address__wallet-name"
+                              data-testid="Address__alias"
                             >
                               <span
                                 class="TruncateEnd__Wrapper-sc-1w1nvb9-0"
@@ -2185,8 +2185,8 @@ exports[`Add Participant should work with an imported wallet 1`] = `
                               </span>
                             </span>
                             <span
-                              class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-secondary-500 dark:text-theme-secondary-700 font-semibold text-base"
-                              data-testid="address__wallet-address"
+                              class="inline-flex overflow-hidden text-theme-secondary-500 dark:text-theme-secondary-700 font-semibold text-base"
+                              data-testid="Address__address"
                             >
                               D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb
                             </span>
@@ -2226,7 +2226,7 @@ exports[`Add Participant should work with an imported wallet 1`] = `
                           >
                             <span
                               class="max-w-24 truncate mr-2 font-semibold text-base text-theme-text"
-                              data-testid="address__wallet-name"
+                              data-testid="Address__alias"
                             >
                               <span
                                 class="TruncateEnd__Wrapper-sc-1w1nvb9-0"
@@ -2236,8 +2236,8 @@ exports[`Add Participant should work with an imported wallet 1`] = `
                               </span>
                             </span>
                             <span
-                              class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-secondary-500 dark:text-theme-secondary-700 font-semibold text-base"
-                              data-testid="address__wallet-address"
+                              class="inline-flex overflow-hidden text-theme-secondary-500 dark:text-theme-secondary-700 font-semibold text-base"
+                              data-testid="Address__address"
                             >
                               D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib
                             </span>
@@ -2277,7 +2277,7 @@ exports[`Add Participant should work with an imported wallet 1`] = `
                           >
                             <span
                               class="max-w-24 truncate mr-2 font-semibold text-base text-theme-text"
-                              data-testid="address__wallet-name"
+                              data-testid="Address__alias"
                             >
                               <span
                                 class="TruncateEnd__Wrapper-sc-1w1nvb9-0"
@@ -2287,8 +2287,8 @@ exports[`Add Participant should work with an imported wallet 1`] = `
                               </span>
                             </span>
                             <span
-                              class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-secondary-500 dark:text-theme-secondary-700 font-semibold text-base"
-                              data-testid="address__wallet-address"
+                              class="inline-flex overflow-hidden text-theme-secondary-500 dark:text-theme-secondary-700 font-semibold text-base"
+                              data-testid="Address__address"
                             >
                               DFJ5Z51F1euNNdRUQJKQVdG4h495LZkc6T
                             </span>
@@ -2328,7 +2328,7 @@ exports[`Add Participant should work with an imported wallet 1`] = `
                           >
                             <span
                               class="max-w-24 truncate mr-2 font-semibold text-base text-theme-text"
-                              data-testid="address__wallet-name"
+                              data-testid="Address__alias"
                             >
                               <span
                                 class="TruncateEnd__Wrapper-sc-1w1nvb9-0"
@@ -2338,8 +2338,8 @@ exports[`Add Participant should work with an imported wallet 1`] = `
                               </span>
                             </span>
                             <span
-                              class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-secondary-500 dark:text-theme-secondary-700 font-semibold text-base"
-                              data-testid="address__wallet-address"
+                              class="inline-flex overflow-hidden text-theme-secondary-500 dark:text-theme-secondary-700 font-semibold text-base"
+                              data-testid="Address__address"
                             >
                               D9YiyRYMBS2ofzqkufjrkB9nHofWgJLM7f
                             </span>
@@ -2379,7 +2379,7 @@ exports[`Add Participant should work with an imported wallet 1`] = `
                           >
                             <span
                               class="max-w-24 truncate mr-2 font-semibold text-base text-theme-text"
-                              data-testid="address__wallet-name"
+                              data-testid="Address__alias"
                             >
                               <span
                                 class="TruncateEnd__Wrapper-sc-1w1nvb9-0"
@@ -2389,8 +2389,8 @@ exports[`Add Participant should work with an imported wallet 1`] = `
                               </span>
                             </span>
                             <span
-                              class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-secondary-500 dark:text-theme-secondary-700 font-semibold text-base"
-                              data-testid="address__wallet-address"
+                              class="inline-flex overflow-hidden text-theme-secondary-500 dark:text-theme-secondary-700 font-semibold text-base"
+                              data-testid="Address__address"
                             >
                               DKrACQw7ytoU2gjppy3qKeE2dQhZjfXYqu
                             </span>
@@ -2521,8 +2521,8 @@ exports[`Add Participant should work with an imported wallet 1`] = `
                       class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap"
                     >
                       <span
-                        class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-text font-semibold text-base"
-                        data-testid="address__wallet-address"
+                        class="inline-flex overflow-hidden text-theme-text font-semibold text-base"
+                        data-testid="Address__address"
                       >
                         D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD
                       </span>
@@ -2601,8 +2601,8 @@ exports[`Add Participant should work with an imported wallet 1`] = `
                       class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap"
                     >
                       <span
-                        class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-text font-semibold text-base"
-                        data-testid="address__wallet-address"
+                        class="inline-flex overflow-hidden text-theme-text font-semibold text-base"
+                        data-testid="Address__address"
                       >
                         D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb
                       </span>
