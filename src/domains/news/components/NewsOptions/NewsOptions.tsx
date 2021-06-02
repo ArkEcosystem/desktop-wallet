@@ -25,10 +25,10 @@ interface NewsOptionsProps {
 	onSubmit?: (data: object) => void;
 }
 
-//region for scrollable sidebar on small screen
-const HEADER_HEIGHT = 86;
-const VERTICAL_PADDING = 40;
-//endregion
+// region for scrollable sidebar on small screen
+const HEADER_HEIGHT = 84;
+const VERTICAL_PADDING = 20 + 32;
+// endregion
 
 export const NewsOptions = ({ selectedCategories, selectedCoins, onSearch, onSubmit }: NewsOptionsProps) => {
 	const { t } = useTranslation();
