@@ -36,7 +36,7 @@ const AddressListItem = ({ address, onRemove }: AddressListItemProps) => (
 		</div>
 
 		<span className="font-semibold">
-			<Address address={address.address} maxChars={24} />
+			<Address address={address.address} />
 		</span>
 
 		<Button

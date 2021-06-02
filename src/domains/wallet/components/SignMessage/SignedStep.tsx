@@ -30,7 +30,7 @@ export const SignedStep = ({
 				label={t("WALLETS.SIGNATORY")}
 				extra={<Avatar size="lg" address={wallet.address()} />}
 			>
-				<Address walletName={walletAlias} address={wallet.address()} maxChars={!walletAlias ? 0 : 24} />
+				<Address walletName={walletAlias} address={wallet.address()} />
 			</TransactionDetail>
 
 			<TransactionDetail label={t("COMMON.MESSAGE")} className="text-lg break-all">
