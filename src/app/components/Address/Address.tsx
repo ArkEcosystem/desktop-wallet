@@ -7,7 +7,6 @@ interface Props {
 	walletName?: string;
 	addressClass?: string;
 	address?: string;
-	maxChars?: number;
 	maxNameChars?: number;
 	walletNameClass?: string;
 	size?: Size;
@@ -20,7 +19,6 @@ export const Address = ({
 	walletNameClass,
 	fontWeight,
 	walletName,
-	maxChars,
 	maxNameChars,
 	size,
 }: Props) => {
@@ -74,8 +72,4 @@ export const Address = ({
 			)}
 		</div>
 	);
-};
-
-Address.defaultProps = {
-	maxChars: 16,
 };

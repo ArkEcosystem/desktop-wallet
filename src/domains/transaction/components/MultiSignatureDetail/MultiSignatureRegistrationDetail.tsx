@@ -68,7 +68,7 @@ export const MultiSignatureRegistrationDetail = ({
 			<TransactionDetail label={t("TRANSACTION.MULTISIGNATURE.PARTICIPANTS")}>
 				<div className="flex flex-col space-y-2">
 					{participants.map((address) => (
-						<Address key={address} address={address} maxChars={0} />
+						<Address key={address} address={address} />
 					))}
 				</div>
 			</TransactionDetail>

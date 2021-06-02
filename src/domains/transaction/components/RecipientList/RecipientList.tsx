@@ -47,11 +47,7 @@ const RecipientListItem = ({
 
 				<td className="py-4">
 					<div className="max-w-lg">
-						<Address
-							address={address}
-							walletName={walletName}
-							maxChars={walletName || !showAmount ? 0 : undefined}
-						/>
+						<Address address={address} walletName={walletName} />
 					</div>
 				</td>
 
@@ -82,11 +78,7 @@ const RecipientListItem = ({
 					<span>{t(label || "COMMON.RECIPIENT_#", { count: listIndex! + 1 })}</span>
 				</div>
 				<div className="max-w-sm">
-					<Address
-						address={address}
-						walletName={walletName}
-						maxChars={walletName || !showAmount ? 0 : undefined}
-					/>
+					<Address address={address} walletName={walletName} />
 				</div>
 			</td>
 

@@ -105,13 +105,13 @@ describe("Import Profile - Profile Form Step", () => {
 
 		fireEvent.input(getAllByTestId("Input")[0], { target: { value: "test profile 1" } });
 
-		const selectDropdown = getByTestId("SelectDropdownInput__input");
+		const selectDropdown = getByTestId("SelectDropdown__input");
 
 		await act(async () => {
 			fireEvent.focus(selectDropdown);
 		});
 
-		fireEvent.click(getByTestId("select-list__toggle-option-0"));
+		fireEvent.click(getByTestId("SelectDropdown__option--0"));
 
 		await act(async () => {
 			fireEvent.click(getByTestId("CreateProfile__submit-button"));
@@ -155,13 +155,13 @@ describe("Import Profile - Profile Form Step", () => {
 
 		fireEvent.input(getAllByTestId("Input")[0], { target: { value: "test profile 1" } });
 
-		const selectDropdown = getByTestId("SelectDropdownInput__input");
+		const selectDropdown = getByTestId("SelectDropdown__input");
 
 		await act(async () => {
 			fireEvent.focus(selectDropdown);
 		});
 
-		fireEvent.click(getByTestId("select-list__toggle-option-0"));
+		fireEvent.click(getByTestId("SelectDropdown__option--0"));
 
 		await act(async () => {
 			fireEvent.click(getByTestId("CreateProfile__submit-button"));
@@ -200,9 +200,9 @@ describe("Import Profile - Profile Form Step", () => {
 
 		fireEvent.input(getAllByTestId("Input")[0], { target: { value: "asdasdas" } });
 
-		const selectDropdown = getByTestId("SelectDropdownInput__input");
+		const selectDropdown = getByTestId("SelectDropdown__input");
 		fireEvent.focus(selectDropdown);
-		fireEvent.click(getByTestId("select-list__toggle-option-0"));
+		fireEvent.click(getByTestId("SelectDropdown__option--0"));
 
 		fireEvent.change(getAllByTestId("InputPassword")[0], { target: { value: "test password" } });
 		fireEvent.change(getAllByTestId("InputPassword")[1], { target: { value: "wrong" } });

@@ -84,13 +84,13 @@ describe("CreateProfile", () => {
 
 		fireEvent.input(getAllByTestId("Input")[0], { target: { value: "test profile 1" } });
 
-		const selectDropdown = getByTestId("SelectDropdownInput__input");
+		const selectDropdown = getByTestId("SelectDropdown__input");
 
 		await act(async () => {
 			fireEvent.change(selectDropdown, { target: { value: "BTC" } });
 		});
 
-		fireEvent.click(getByTestId("select-list__toggle-option-0"));
+		fireEvent.click(getByTestId("SelectDropdown__option--0"));
 
 		await waitFor(() => expect(getByTestId("CreateProfile__submit-button")).toHaveAttribute("disabled"));
 		await act(async () => {
@@ -136,9 +136,9 @@ describe("CreateProfile", () => {
 
 		const { asFragment, getAllByTestId, getByTestId, getByText } = await renderComponent();
 
-		const selectDropdown = getByTestId("SelectDropdownInput__input");
+		const selectDropdown = getByTestId("SelectDropdown__input");
 		fireEvent.change(selectDropdown, { target: { value: "BTC" } });
-		fireEvent.click(getByTestId("select-list__toggle-option-0"));
+		fireEvent.click(getByTestId("SelectDropdown__option--0"));
 
 		fireEvent.input(getAllByTestId("Input")[0], { target: { value: "t" } });
 
@@ -158,9 +158,9 @@ describe("CreateProfile", () => {
 	it("should not be able to create new profile if name consists only of whitespace", async () => {
 		const { asFragment, getAllByTestId, getByTestId } = await renderComponent();
 
-		const selectDropdown = getByTestId("SelectDropdownInput__input");
+		const selectDropdown = getByTestId("SelectDropdown__input");
 		fireEvent.change(selectDropdown, { target: { value: "BTC" } });
-		fireEvent.click(getByTestId("select-list__toggle-option-0"));
+		fireEvent.click(getByTestId("SelectDropdown__option--0"));
 
 		fireEvent.input(getAllByTestId("Input")[0], { target: { value: "t" } });
 
@@ -178,9 +178,9 @@ describe("CreateProfile", () => {
 	it("should not be able to create new profile if name is too long", async () => {
 		const { asFragment, getAllByTestId, getByTestId } = await renderComponent();
 
-		const selectDropdown = getByTestId("SelectDropdownInput__input");
+		const selectDropdown = getByTestId("SelectDropdown__input");
 		fireEvent.change(selectDropdown, { target: { value: "BTC" } });
-		fireEvent.click(getByTestId("select-list__toggle-option-0"));
+		fireEvent.click(getByTestId("SelectDropdown__option--0"));
 
 		fireEvent.input(getAllByTestId("Input")[0], { target: { value: "t" } });
 
@@ -202,13 +202,13 @@ describe("CreateProfile", () => {
 		fireEvent.input(getAllByTestId("InputPassword")[0], { target: { value: "S3cUrePa$sword.test" } });
 		fireEvent.input(getAllByTestId("InputPassword")[1], { target: { value: "S3cUrePa$sword.test" } });
 
-		const selectDropdown = getByTestId("SelectDropdownInput__input");
+		const selectDropdown = getByTestId("SelectDropdown__input");
 
 		await act(async () => {
 			fireEvent.change(selectDropdown, { target: { value: "BTC" } });
 		});
 
-		fireEvent.click(getByTestId("select-list__toggle-option-0"));
+		fireEvent.click(getByTestId("SelectDropdown__option--0"));
 
 		await waitFor(() => expect(getByTestId("CreateProfile__submit-button")).not.toHaveAttribute("disabled"));
 		await act(async () => {
@@ -225,9 +225,9 @@ describe("CreateProfile", () => {
 
 		fireEvent.input(getAllByTestId("Input")[0], { target: { value: "asdasdas" } });
 
-		const selectDropdown = getByTestId("SelectDropdownInput__input");
+		const selectDropdown = getByTestId("SelectDropdown__input");
 		fireEvent.change(selectDropdown, { target: { value: "BTC" } });
-		fireEvent.click(getByTestId("select-list__toggle-option-0"));
+		fireEvent.click(getByTestId("SelectDropdown__option--0"));
 
 		fireEvent.change(getAllByTestId("InputPassword")[0], { target: { value: "S3cUrePa$sword.test" } });
 		fireEvent.change(getAllByTestId("InputPassword")[1], { target: { value: "S3cUrePa$sword.wrong" } });
@@ -326,13 +326,13 @@ describe("CreateProfile", () => {
 
 		fireEvent.input(getAllByTestId("Input")[0], { target: { value: "test profile 4" } });
 
-		const selectDropdown = getByTestId("SelectDropdownInput__input");
+		const selectDropdown = getByTestId("SelectDropdown__input");
 
 		await act(async () => {
 			fireEvent.change(selectDropdown, { target: { value: "BTC" } });
 		});
 
-		fireEvent.click(getByTestId("select-list__toggle-option-0"));
+		fireEvent.click(getByTestId("SelectDropdown__option--0"));
 
 		await waitFor(() => expect(getByTestId("CreateProfile__submit-button")).not.toHaveAttribute("disabled"));
 
@@ -359,13 +359,13 @@ describe("CreateProfile", () => {
 
 		fireEvent.input(getAllByTestId("Input")[0], { target: { value: "test profile 5" } });
 
-		const selectDropdown = getByTestId("SelectDropdownInput__input");
+		const selectDropdown = getByTestId("SelectDropdown__input");
 
 		await act(async () => {
 			fireEvent.change(selectDropdown, { target: { value: "BTC" } });
 		});
 
-		fireEvent.click(getByTestId("select-list__toggle-option-0"));
+		fireEvent.click(getByTestId("SelectDropdown__option--0"));
 
 		await act(async () => {
 			fireEvent.click(getByTestId("CreateProfile__submit-button"));

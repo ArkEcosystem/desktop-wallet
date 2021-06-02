@@ -66,7 +66,7 @@ exports[`SelectRecipient should render disabled 1`] = `
                   aria-labelledby="downshift-2-label"
                   autocomplete="off"
                   class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full cursor-default text-theme-secondary-text"
-                  data-testid="SelectDropdownInput__input"
+                  data-testid="SelectDropdown__input"
                   disabled=""
                   id="downshift-2-input"
                   placeholder="Select option"
@@ -98,7 +98,7 @@ exports[`SelectRecipient should render disabled 1`] = `
             </div>
             <ul
               aria-labelledby="downshift-2-label"
-              class="styles__SelectOptionsList-b2falt-0 ghEDCU"
+              class="styles__SelectOptionsList-b2falt-0 dyOwRR"
               id="downshift-2-menu"
               role="listbox"
             />
@@ -175,7 +175,7 @@ exports[`SelectRecipient should render empty 1`] = `
                   aria-labelledby="downshift-0-label"
                   autocomplete="off"
                   class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full cursor-default"
-                  data-testid="SelectDropdownInput__input"
+                  data-testid="SelectDropdown__input"
                   id="downshift-0-input"
                   placeholder="Select option"
                   value=""
@@ -206,7 +206,7 @@ exports[`SelectRecipient should render empty 1`] = `
             </div>
             <ul
               aria-labelledby="downshift-0-label"
-              class="styles__SelectOptionsList-b2falt-0 ghEDCU"
+              class="styles__SelectOptionsList-b2falt-0 dyOwRR"
               id="downshift-0-menu"
               role="listbox"
             />
@@ -302,7 +302,7 @@ exports[`SelectRecipient should render invalid 1`] = `
                   aria-labelledby="downshift-4-label"
                   autocomplete="off"
                   class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full cursor-default"
-                  data-testid="SelectDropdownInput__input"
+                  data-testid="SelectDropdown__input"
                   id="downshift-4-input"
                   placeholder="Select option"
                   value=""
@@ -346,7 +346,7 @@ exports[`SelectRecipient should render invalid 1`] = `
             </div>
             <ul
               aria-labelledby="downshift-4-label"
-              class="styles__SelectOptionsList-b2falt-0 ghEDCU"
+              class="styles__SelectOptionsList-b2falt-0 dyOwRR"
               id="downshift-4-menu"
               role="listbox"
             />
@@ -423,7 +423,7 @@ exports[`SelectRecipient should render with preselected address 1`] = `
                   aria-labelledby="downshift-6-label"
                   autocomplete="off"
                   class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full cursor-default"
-                  data-testid="SelectDropdownInput__input"
+                  data-testid="SelectDropdown__input"
                   id="downshift-6-input"
                   placeholder="Select option"
                   value=""
@@ -454,7 +454,7 @@ exports[`SelectRecipient should render with preselected address 1`] = `
             </div>
             <ul
               aria-labelledby="downshift-6-label"
-              class="styles__SelectOptionsList-b2falt-0 ghEDCU"
+              class="styles__SelectOptionsList-b2falt-0 dyOwRR"
               id="downshift-6-menu"
               role="listbox"
             />
@@ -541,8 +541,8 @@ exports[`SelectRecipient should update internal state when prop changes 1`] = `
                   aria-controls="downshift-8-menu"
                   aria-labelledby="downshift-8-label"
                   autocomplete="off"
-                  class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full cursor-default"
-                  data-testid="SelectDropdownInput__input"
+                  class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
+                  data-testid="SelectDropdown__input"
                   id="downshift-8-input"
                   placeholder="Select option"
                   value="bP6T9GQ3kqP6T9GQ3kqP6T9GQ3kqTTTP6T9GQ3kqT"
@@ -573,7 +573,7 @@ exports[`SelectRecipient should update internal state when prop changes 1`] = `
             </div>
             <ul
               aria-labelledby="downshift-8-label"
-              class="styles__SelectOptionsList-b2falt-0 ghEDCU"
+              class="styles__SelectOptionsList-b2falt-0 dyOwRR"
               id="downshift-8-menu"
               role="listbox"
             />
