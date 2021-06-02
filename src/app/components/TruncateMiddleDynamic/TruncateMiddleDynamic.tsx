@@ -11,36 +11,53 @@ type Props = {
 export const TruncateMiddleDynamic = ({ value, offset = 0, className, parentRef }: Props) => {
 	const ref = useRef<HTMLElement>(null);
 
-	const lengthRef = useRef(value.length);
-
 	const [truncated, setTruncated] = useState(value);
 
 	const hasOverflow = useCallback(
-		(element: HTMLElement, parent?: any) =>
-			(parent?.offsetWidth || element.offsetWidth) - offset < element.scrollWidth,
+		(element: HTMLElement, referenceElement: HTMLElement) =>
+			referenceElement.offsetWidth - offset < element.offsetWidth,
 		[offset],
 	);
 
 	const truncate = useCallback(() => {
-		console.log("truncate");
-		if (!ref?.current || truncated.length < 16) {
+		if (!ref?.current) {
 			return;
 		}
 
-		if (!hasOverflow(ref.current, parentRef?.current)) {
-			return truncated;
+		const referenceElement = parentRef?.current || ref.current;
+
+		let length = value.length;
+
+		const element = document.createElement("div");
+		element.classList.add("fixed", "invisible", "w-auto", "whitespace-nowrap");
+
+		element.innerHTML = "";
+		element.appendChild(document.createTextNode(value));
+
+		referenceElement.appendChild(element);
+
+		let tempTruncated = value;
+
+		if (!hasOverflow(element, referenceElement)) {
+			return;
 		}
 
-		const length = lengthRef.current;
+		do {
+			const prefix = value.substr(0, Math.floor(length / 2));
+			const suffix = value.substr(-(length - Math.floor(length / 2)));
 
-		const prefix = value.substr(0, Math.floor(length / 2));
-		const suffix = value.substr(-(length - Math.floor(length / 2)));
+			tempTruncated = `${prefix}…${suffix}`;
 
-		lengthRef.current--;
+			element.innerHTML = "";
+			element.appendChild(document.createTextNode(tempTruncated));
 
-		console.log(truncated);
-		setTruncated(`${prefix}…${suffix}`);
-	}, [hasOverflow, value, truncated, parentRef]);
+			length--;
+		} while (hasOverflow(element, referenceElement));
+
+		referenceElement.removeChild(element);
+
+		setTruncated(tempTruncated);
+	}, [hasOverflow, value, truncated, parentRef]); // eslint-disable-line react-hooks/exhaustive-deps
 
 	useLayoutEffect(() => {
 		truncate();
