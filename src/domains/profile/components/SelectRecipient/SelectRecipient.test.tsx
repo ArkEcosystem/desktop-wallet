@@ -88,7 +88,7 @@ describe("SelectRecipient", () => {
 		});
 
 		await waitFor(() =>
-			expect(getByTestId("SelectDropdownInput__input")).toHaveValue(
+			expect(getByTestId("SelectDropdown__input")).toHaveValue(
 				profile.contacts().values()[0].addresses().values()[0].address(),
 			),
 		);
@@ -115,13 +115,13 @@ describe("SelectRecipient", () => {
 		const fn = jest.fn();
 		const { getByTestId } = render(<SelectRecipient profile={profile} onChange={fn} />);
 		const address = "bP6T9GQ3kqP6T9GQ3kqP6T9GQ3kqTTTP6T9GQ3kqT";
-		const recipientInputField = getByTestId("SelectDropdownInput__input");
+		const recipientInputField = getByTestId("SelectDropdown__input");
 
 		await act(async () => {
 			fireEvent.change(recipientInputField, { target: { value: address } });
 		});
 
-		expect(getByTestId("SelectDropdownInput__input")).toHaveValue(address);
+		expect(getByTestId("SelectDropdown__input")).toHaveValue(address);
 		expect(fn).toBeCalledWith(address);
 		contactsSpy.mockRestore();
 	});
@@ -153,7 +153,7 @@ describe("SelectRecipient", () => {
 
 		const selectedAddressValue = profile.contacts().values()[0].addresses().values()[0].address();
 
-		expect(getByTestId("SelectDropdownInput__input")).toHaveValue(selectedAddressValue);
+		expect(getByTestId("SelectDropdown__input")).toHaveValue(selectedAddressValue);
 		expect(fn).toBeCalledWith(selectedAddressValue);
 	});
 
@@ -184,7 +184,7 @@ describe("SelectRecipient", () => {
 
 		const selectedAddressValue = profile.contacts().values()[0].addresses().values()[0].address();
 
-		expect(getByTestId("SelectDropdownInput__input")).toHaveValue(selectedAddressValue);
+		expect(getByTestId("SelectDropdown__input")).toHaveValue(selectedAddressValue);
 		expect(fn).not.toBeCalled();
 	});
 

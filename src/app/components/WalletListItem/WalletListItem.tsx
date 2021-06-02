@@ -54,7 +54,7 @@ export const WalletListItem = ({ wallet, activeWalletId, variant, onClick }: Wal
 					/>
 					<Avatar size="lg" address={wallet.address()} shadowClassName={shadowClasses} />
 				</div>
-				<Address walletName={alias} address={wallet.address()} maxChars={22} />
+				<Address walletName={alias} address={wallet.address()} />
 			</TableCell>
 
 			<TableCell innerClassName="justify-center text-sm font-bold text-center align-middle">

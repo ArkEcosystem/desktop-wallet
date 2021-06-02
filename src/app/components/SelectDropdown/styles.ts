@@ -2,7 +2,7 @@ import tw, { styled } from "twin.macro";
 
 export const SelectOptionsList = styled.ul`
 	& {
-		${tw`absolute z-10 w-full bg-theme-background rounded-lg shadow-xl outline-none top-16`}
+		${tw`absolute z-10 w-full bg-theme-background dark:bg-theme-secondary-800 rounded-lg shadow-xl outline-none top-16`}
 	}
 
 	&.is-open {
@@ -10,7 +10,7 @@ export const SelectOptionsList = styled.ul`
 	}
 
 	.select-list-option {
-		${tw`px-10 border-0 text-theme-secondary-900 dark:text-theme-secondary-200 cursor-pointer transition-colors duration-200`};
+		${tw`relative px-10 border-0 text-theme-secondary-900 dark:text-theme-secondary-200 cursor-pointer transition-colors duration-200`};
 
 		&__label {
 			${tw`py-4`};
@@ -18,7 +18,7 @@ export const SelectOptionsList = styled.ul`
 
 		&:not(:last-child) {
 			.select-list-option__label {
-				${tw`border-b border-theme-secondary-300 dark:border-theme-secondary-800`};
+				${tw`border-b border-theme-secondary-300 dark:border-theme-secondary-700`};
 			}
 		}
 
@@ -28,7 +28,7 @@ export const SelectOptionsList = styled.ul`
 		}
 
 		&.is-highlighted {
-			${tw`bg-theme-secondary-100 dark:bg-theme-primary-600`};
+			${tw`bg-theme-secondary-100 dark:bg-theme-secondary-900`};
 
 			.select-list-option__label {
 				${tw`border-transparent`};
@@ -36,10 +36,16 @@ export const SelectOptionsList = styled.ul`
 		}
 
 		&.is-selected {
-			${tw`bg-theme-danger-100 dark:bg-theme-danger-400 text-theme-danger-400 dark:text-white`};
+			${tw`bg-theme-primary-50 dark:bg-black text-theme-primary-600`};
 
 			.select-list-option__label {
-				${tw`border-theme-danger-100 dark:border-theme-danger-400`};
+				${tw`border-theme-primary-50 dark:border-black`};
+			}
+
+			&:after {
+				${tw`block absolute h-full inset-y-0 left-0 dark:bg-theme-primary-600`}
+				content: "";
+				width: 3px;
 			}
 		}
 

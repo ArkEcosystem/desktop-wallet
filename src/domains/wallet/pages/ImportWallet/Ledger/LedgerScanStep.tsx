@@ -56,7 +56,7 @@ export const LedgerTable = ({
 		{
 			Header: t("COMMON.BALANCE"),
 			accessor: "balance",
-			className: "justify-end",
+			className: "no-border justify-end",
 		},
 		{
 			Header: (
@@ -87,7 +87,7 @@ export const LedgerTable = ({
 				if (showSkeleton) {
 					return (
 						<TableRow>
-							<TableCell variant="start" innerClassName="space-x-4">
+							<TableCell variant="start" className="w-2/5" innerClassName="space-x-4">
 								<Circle className="border-transparent" size="lg">
 									<Skeleton circle height={44} width={44} />
 								</Circle>
@@ -107,13 +107,15 @@ export const LedgerTable = ({
 
 				return (
 					<TableRow isSelected={isSelected(wallet.path)}>
-						<TableCell variant="start" innerClassName="space-x-4">
+						<TableCell variant="start" className="w-2/5" innerClassName="space-x-4">
 							<Avatar address={wallet.address} size="lg" noShadow />
-							<Address address={wallet.address} />
+							<div className="flex-1 flex w-32">
+								<Address address={wallet.address} />
+							</div>
 							<span className="hidden">{wallet.path}</span>
 						</TableCell>
 
-						<TableCell innerClassName="justify-end font-semibold" className="w-64">
+						<TableCell innerClassName="justify-end font-semibold">
 							<AmountWrapper isLoading={false}>
 								<Amount value={wallet.balance!} ticker={network.ticker()} />
 							</AmountWrapper>

@@ -113,7 +113,7 @@ test("should error for invalid address", async (t) => {
 
 	await t.click(Selector('[data-testid="contact-form__remove-address-btn"]'));
 
-	await t.typeText(Selector('[data-testid="SelectDropdownInput__input"]'), "ARK D");
+	await t.typeText(Selector('[data-testid="SelectDropdown__input"]'), "ARK D");
 	await t.pressKey("tab");
 
 	const addressInput = Selector('[data-testid="contact-form__address-input"]');
@@ -145,7 +145,7 @@ test("should error if contact name is already taken", async (t) => {
 	const nameInput = Selector('[data-testid="contact-form__name-input"]');
 	await t.typeText(nameInput, newContact);
 
-	await t.typeText(Selector('[data-testid="SelectDropdownInput__input"]'), "ARK D");
+	await t.typeText(Selector('[data-testid="SelectDropdown__input"]'), "ARK D");
 	await t.pressKey("tab");
 
 	const addressInput = Selector('[data-testid="contact-form__address-input"]');

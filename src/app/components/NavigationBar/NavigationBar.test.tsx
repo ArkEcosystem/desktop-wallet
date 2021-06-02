@@ -1,7 +1,6 @@
 /* eslint-disable @typescript-eslint/require-await */
 import { Contracts } from "@arkecosystem/platform-sdk-profiles";
 import * as useScrollHook from "app/hooks/use-scroll";
-import electron from "electron";
 import { createMemoryHistory } from "history";
 import React from "react";
 import { act } from "react-dom/test-utils";
@@ -101,7 +100,7 @@ describe("NavigationBar", () => {
 	it("should open user actions dropdown on click", () => {
 		const options = [
 			{ label: "Option 1", value: "/test", mountPath: () => "/test" },
-			{ label: "Option 2", value: "/test2", mountPath: () => "/test" },
+			{ label: "Option 2", value: "/test2", mountPath: () => "/test2" },
 		];
 
 		const { getByTestId, getByText, history } = renderWithRouter(
@@ -126,46 +125,6 @@ describe("NavigationBar", () => {
 		expect(getByText("R$")).toBeTruthy();
 
 		profile.settings().set(Contracts.ProfileSetting.ExchangeCurrency, "BTC");
-	});
-
-	it.each(["Contacts", "Votes", "Settings", "Support"])(
-		"should handle '%s' click on user actions dropdown",
-		async (label) => {
-			const ipcRendererMock = jest.spyOn(electron.ipcRenderer, "send").mockImplementation();
-
-			const { getByTestId, findByText, history } = renderWithRouter(<NavigationBar profile={profile} />);
-
-			const toggle = getByTestId("navbar__useractions");
-
-			act(() => {
-				fireEvent.click(toggle);
-			});
-
-			expect(await findByText(label)).toBeTruthy();
-			fireEvent.click(await findByText(label));
-
-			if (label === "Support") {
-				expect(ipcRendererMock).toHaveBeenCalledWith("open-external", "https://ark.io/contact");
-			} else {
-				expect(history.location.pathname).toMatch(`/profiles/${profile.id()}/${label.toLowerCase()}`);
-			}
-
-			ipcRendererMock.mockRestore();
-		},
-	);
-
-	it("should handle 'Sign Out' click on user actions dropdown", async () => {
-		const { getByTestId, findByText, history } = renderWithRouter(<NavigationBar profile={profile} />);
-
-		const toggle = getByTestId("navbar__useractions");
-
-		act(() => {
-			fireEvent.click(toggle);
-		});
-
-		expect(await findByText("Sign Out")).toBeTruthy();
-		fireEvent.click(await findByText("Sign Out"));
-		expect(history.location.pathname).toMatch(`/`);
 	});
 
 	it("should handle click to send button", () => {

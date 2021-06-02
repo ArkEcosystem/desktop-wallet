@@ -38,7 +38,7 @@ interface NavigationBarProps {
 	isBackDisabled?: boolean;
 	profile?: Contracts.IProfile;
 	variant?: NavbarVariant;
-	menu?: MenuItem[];
+	menu: MenuItem[];
 	userActions?: Action[];
 	avatarImage?: string;
 	onUserAction?: any;
@@ -163,22 +163,18 @@ export const NavigationBar = ({
 			return null;
 		}
 
-		return (
-			menu &&
-			menu.map((menuItem: any, index: number) => (
-				<li key={index} className="flex">
-					<NavLink
-						to={menuItem.mountPath(profile.id())}
-						title={menuItem.title}
-						className="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
-					>
-						{/* border on focus */}
-						<div className="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible" />
-						{menuItem.title}
-					</NavLink>
-				</li>
-			))
-		);
+		return menu.map((menuItem: any, index: number) => (
+			<li key={index} className="flex">
+				<NavLink
+					to={menuItem.mountPath(profile.id())}
+					title={menuItem.title}
+					className="relative flex items-center font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
+				>
+					<div className="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible" />
+					{menuItem.title}
+				</NavLink>
+			</li>
+		));
 	};
 
 	const getUserInitials = () => {
@@ -328,51 +324,6 @@ export const NavigationBar = ({
 
 NavigationBar.defaultProps = {
 	variant: "full",
-	menu: [
-		{
-			title: "Portfolio",
-			mountPath: (profileId: string) => `/profiles/${profileId}/dashboard`,
-		},
-		{
-			title: "Plugins",
-			mountPath: (profileId: string) => `/profiles/${profileId}/plugins`,
-		},
-		{
-			title: "Exchange",
-			mountPath: (profileId: string) => `/profiles/${profileId}/exchange`,
-		},
-		{
-			title: "News",
-			mountPath: (profileId: string) => `/profiles/${profileId}/news`,
-		},
-	],
-	userActions: [
-		{
-			label: "Contacts",
-			value: "contacts",
-			mountPath: (profileId: string) => `/profiles/${profileId}/contacts`,
-		},
-		{
-			label: "Votes",
-			value: "votes",
-			mountPath: (profileId: string) => `/profiles/${profileId}/votes`,
-		},
-		{
-			label: "Settings",
-			value: "settings",
-			mountPath: (profileId: string) => `/profiles/${profileId}/settings`,
-		},
-		{
-			icon: "Redirect",
-			isExternal: true,
-			label: "Support",
-			value: "support",
-			mountPath: () => "https://ark.io/contact",
-		},
-		{
-			label: "Sign Out",
-			value: "sign-out",
-			mountPath: () => `/`,
-		},
-	],
+	menu: [],
+	userActions: [],
 };
