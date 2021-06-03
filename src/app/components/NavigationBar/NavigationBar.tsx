@@ -156,7 +156,7 @@ export const NavigationBar = ({
 		setSelectedWallet(wallet);
 	};
 
-	const { profileIsRestoring } = useConfiguration();
+	const { profileIsSyncing } = useConfiguration();
 
 	const renderMenu = () => {
 		if (!profile?.id()) {
@@ -268,7 +268,7 @@ export const NavigationBar = ({
 							</div>
 
 							<div className="flex items-center my-auto ml-8">
-								<Balance profile={profile} isLoading={profileIsRestoring} />
+								<Balance profile={profile} isLoading={profileIsSyncing} />
 
 								<UserInfo
 									userInitials={getUserInitials()}
