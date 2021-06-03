@@ -5,7 +5,8 @@ import { Header } from "app/components/Header";
 import { Input, InputAddress, InputPassword } from "app/components/Input";
 import { Select } from "app/components/SelectDropdown";
 import { useActiveProfile } from "app/hooks";
-import React, { useMemo, useState } from "react";
+import { useImportOptions } from "domains/wallet/hooks/use-import-options";
+import React, { useState } from "react";
 import { useFormContext } from "react-hook-form";
 import { useTranslation } from "react-i18next";
 
@@ -194,24 +195,9 @@ export const SecondStep = ({ profile }: { profile: Contracts.IProfile }) => {
 	const [defaultNetwork] = useState(() => watch("network"));
 	const network: Coins.Network = getValues("network") || defaultNetwork;
 
-	const allOptions = useMemo(
-		() => [
-			{ label: t("COMMON.MNEMONIC"), value: "mnemonic" },
-			{ label: t("COMMON.ADDRESS"), value: "address" },
-			{ label: t("COMMON.PRIVATE_KEY"), value: "privateKey" },
-			{ label: t("COMMON.WIF"), value: "wif" },
-			{ label: t("COMMON.ENCRYPTED_WIF"), value: "encryptedWif" },
-		],
-		[t],
-	);
+	const { options, defaultOption } = useImportOptions(network.importMethods());
 
-	const options = useMemo(() => {
-		const coinOptions = Object.keys(network.importMethods());
-
-		return allOptions.filter((option) => coinOptions.includes(option.value));
-	}, [network, allOptions]);
-
-	const type = watch("type", options[0].value);
+	const type = watch("type", defaultOption);
 
 	return (
 		<section data-testid="ImportWallet__second-step" className="space-y-8">
