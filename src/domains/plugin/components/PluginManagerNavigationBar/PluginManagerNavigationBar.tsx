@@ -1,6 +1,7 @@
 import { Badge } from "app/components/Badge";
 import { LayoutControls } from "app/components/LayoutControls";
 import { Tooltip } from "app/components/Tooltip";
+import cn from "classnames";
 import { usePluginManagerContext } from "plugins";
 import React from "react";
 import { useTranslation } from "react-i18next";
@@ -55,10 +56,11 @@ export const PluginManagerNavigationBar = ({
 										data-testid={`PluginManagerNavigationBar__${menuItem.name}`}
 										onClick={() => onChange(menuItem.name)}
 										title={menuItem.title}
-										className={`PluginManagerNavigationBar__item px-1 focus:outline-none lex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer ${
-											selectedView === menuItem.name ? "active" : ""
-										}`}
+										className={cn("PluginManagerNavigationBar__item group", {
+											active: selectedView === menuItem.name,
+										})}
 									>
+										<div className="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible" />
 										<span>{menuItem.title}</span>
 										{!["latest", "all"].includes(menuItem.name) && (
 											<span className="ml-1 text-theme-secondary-500 dark:text-theme-secondary-700">
@@ -80,11 +82,12 @@ export const PluginManagerNavigationBar = ({
 						<button
 							data-testid="PluginManagerNavigationBar__my-plugins"
 							onClick={() => onChange("my-plugins")}
-							title="My Plugins"
-							className={`PluginManagerNavigationBar__item h-full px-1 focus:outline-none flex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer ${
-								selectedView === "my-plugins" ? "active" : ""
-							}`}
+							title={t("PLUGINS.PAGE_PLUGIN_MANAGER.VIEW.MY_PLUGINS")}
+							className={cn("PluginManagerNavigationBar__item group", {
+								active: selectedView === "my-plugins",
+							})}
 						>
+							<div className="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible" />
 							<span>{t("PLUGINS.PAGE_PLUGIN_MANAGER.VIEW.MY_PLUGINS")}</span>
 
 							{installedPluginsCount > 0 && (
