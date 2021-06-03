@@ -30,7 +30,7 @@ const useProfileWatcher = () => {
 	return useMemo(() => getProfileById(profileId), [profileId, env, allProfilesCount, getProfileById]); // eslint-disable-line react-hooks/exhaustive-deps
 };
 
-const useProfileJobs = (profile?: Contracts.IProfile): Record<string, any> => {
+export const useProfileJobs = (profile?: Contracts.IProfile): Record<string, any> => {
 	const { env } = useEnvironmentContext();
 	const { notifications } = useNotifications();
 
@@ -67,6 +67,7 @@ const useProfileJobs = (profile?: Contracts.IProfile): Record<string, any> => {
 
 		return {
 			allJobs: [syncExchangeRates, syncNotifications, syncKnownWallets, syncDelegates],
+			syncExchangeRates: syncExchangeRates.callback,
 		};
 	}, [env, profile, walletsCount, notifications]); // eslint-disable-line react-hooks/exhaustive-deps
 };

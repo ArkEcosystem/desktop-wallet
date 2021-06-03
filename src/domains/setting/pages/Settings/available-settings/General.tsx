@@ -9,7 +9,7 @@ import { Select } from "app/components/SelectDropdown";
 import { SelectProfileImage } from "app/components/SelectProfileImage";
 import { Toggle } from "app/components/Toggle";
 import { useEnvironmentContext } from "app/contexts";
-import { useActiveProfile, useReloadPath } from "app/hooks";
+import { useActiveProfile, useProfileJobs, useReloadPath } from "app/hooks";
 import { useValidation } from "app/hooks";
 import { useTheme } from "app/hooks/use-theme";
 import { PlatformSdkChoices } from "data";
@@ -28,6 +28,7 @@ export const General = ({ formConfig, onSuccess }: SettingsProps) => {
 	const { setProfileTheme } = useTheme();
 
 	const activeProfile = useActiveProfile();
+	const { syncExchangeRates } = useProfileJobs(activeProfile);
 
 	const history = useHistory();
 	const { t } = useTranslation();
@@ -214,6 +215,8 @@ export const General = ({ formConfig, onSuccess }: SettingsProps) => {
 		setScreenshotProtection(isScreenshotProtection);
 
 		setProfileTheme(activeProfile);
+		await syncExchangeRates();
+
 		await persist();
 
 		onSuccess();
