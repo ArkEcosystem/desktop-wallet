@@ -36,9 +36,7 @@ export const SendTransactionForm = ({
 
 	const form = useFormContext();
 	const { getValues, setValue, watch } = form;
-	const { network, senderAddress } = watch();
-
-	const { fee, fees } = watch();
+	const { network, senderAddress, fee, fees } = watch();
 
 	useEffect(() => {
 		const setTransactionFees = async (network: Coins.Network) => {
@@ -144,8 +142,8 @@ export const SendTransactionForm = ({
 						value={fee}
 						step={0.01}
 						showFeeOptions={dynamicFees}
-						onChange={(currency) => {
-							setValue("fee", currency.value, { shouldValidate: true, shouldDirty: true });
+						onChange={(value) => {
+							setValue("fee", value, { shouldValidate: true, shouldDirty: true });
 						}}
 					/>
 				</FormField>

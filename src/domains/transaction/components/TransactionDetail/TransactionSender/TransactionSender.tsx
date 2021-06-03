@@ -34,7 +34,7 @@ export const TransactionSender = ({ address, alias, isDelegate, ...props }: Tran
 			}
 			{...props}
 		>
-			<Address address={address} maxChars={!alias ? 0 : undefined} walletName={alias} />
+			<Address address={address} walletName={alias} />
 		</TransactionDetail>
 	);
 };

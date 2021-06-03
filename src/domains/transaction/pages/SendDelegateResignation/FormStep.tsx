@@ -1,4 +1,4 @@
-import { Contracts } from "@arkecosystem/platform-sdk";
+import { Services } from "@arkecosystem/platform-sdk";
 import { Contracts as ProfilesContracts } from "@arkecosystem/platform-sdk-profiles";
 import { Alert } from "app/components/Alert";
 import { FormField, FormLabel } from "app/components/Form";
@@ -21,7 +21,7 @@ export const FormStep = ({
 
 	const { getValues, register, setValue, watch } = useFormContext();
 
-	const [fees, setFees] = useState<Contracts.TransactionFee>({
+	const [fees, setFees] = useState<Services.TransactionFee>({
 		static: "25",
 		max: "0",
 		min: "0",
@@ -85,9 +85,7 @@ export const FormStep = ({
 					value={fee}
 					step={0.01}
 					showFeeOptions={senderWallet.network().feeType() === "dynamic"}
-					onChange={(currency) =>
-						setValue("fee", currency.value, { shouldValidate: true, shouldDirty: true })
-					}
+					onChange={(value) => setValue("fee", value, { shouldValidate: true, shouldDirty: true })}
 				/>
 			</FormField>
 		</section>

@@ -169,7 +169,7 @@ describe("Transactions", () => {
 		const emptyProfile = env.profiles().create("test2");
 
 		emptyProfile.wallets().push(
-			await emptyProfile.walletFactory().fromMnemonic({
+			await emptyProfile.walletFactory().fromMnemonicWithBIP39({
 				mnemonic: "test",
 				coin: "ARK",
 				network: "ark.devnet",
@@ -205,7 +205,7 @@ describe("Transactions", () => {
 		const emptyProfile = env.profiles().create("test");
 
 		emptyProfile.wallets().push(
-			await emptyProfile.walletFactory().fromMnemonic({
+			await emptyProfile.walletFactory().fromMnemonicWithBIP39({
 				mnemonic: "test",
 				coin: "ARK",
 				network: "ark.devnet",

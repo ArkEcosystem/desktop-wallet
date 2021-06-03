@@ -98,15 +98,15 @@ exports[`ImportWallet should render 2nd step 1`] = `
                     aria-controls="ImportWallet__select-menu"
                     aria-labelledby="ImportWallet__select-label"
                     autocomplete="off"
-                    class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full cursor-default"
-                    data-testid="SelectDropdownInput__input"
+                    class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
+                    data-testid="SelectDropdown__input"
                     id="ImportWallet__select-input"
                     name=""
                     placeholder="Select option"
                     value="Address"
                   />
                   <span
-                    class="absolute inset-y-0 flex items-center font-normal opacity-50 pointer-events-none w-full cursor-default"
+                    class="absolute inset-y-0 flex items-center font-normal opacity-50 pointer-events-none w-full"
                     data-testid="Input__suggestion"
                   >
                     <span
@@ -141,7 +141,7 @@ exports[`ImportWallet should render 2nd step 1`] = `
               </div>
               <ul
                 aria-labelledby="ImportWallet__select-label"
-                class="styles__SelectOptionsList-b2falt-0 ghEDCU"
+                class="styles__SelectOptionsList-b2falt-0 dyOwRR"
                 id="ImportWallet__select-menu"
                 role="listbox"
               />
@@ -364,7 +364,7 @@ exports[`ImportWallet should render as ledger import 1`] = `
   >
     <nav
       aria-labelledby="main menu"
-      class="NavigationBar__NavWrapper-sc-1qsoskw-0 hkUMvZ"
+      class="NavigationBar__NavWrapper-sc-1qsoskw-0 bNXdkF"
     >
       <div
         class="flex relative h-21"
@@ -405,12 +405,12 @@ exports[`ImportWallet should render as ledger import 1`] = `
               class="flex"
             >
               <a
-                class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
+                class="relative flex items-center font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
                 title="Portfolio"
               >
                 <div
-                  class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                  class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
                 />
                 Portfolio
               </a>
@@ -419,12 +419,12 @@ exports[`ImportWallet should render as ledger import 1`] = `
               class="flex"
             >
               <a
-                class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
+                class="relative flex items-center font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/plugins"
                 title="Plugins"
               >
                 <div
-                  class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                  class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
                 />
                 Plugins
               </a>
@@ -433,12 +433,12 @@ exports[`ImportWallet should render as ledger import 1`] = `
               class="flex"
             >
               <a
-                class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
+                class="relative flex items-center font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/exchange"
                 title="Exchange"
               >
                 <div
-                  class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                  class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
                 />
                 Exchange
               </a>
@@ -447,12 +447,12 @@ exports[`ImportWallet should render as ledger import 1`] = `
               class="flex"
             >
               <a
-                class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
+                class="relative flex items-center font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/news"
                 title="News"
               >
                 <div
-                  class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                  class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
                 />
                 News
               </a>

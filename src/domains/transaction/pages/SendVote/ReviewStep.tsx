@@ -6,7 +6,6 @@ import {
 	TransactionNetwork,
 	TransactionSender,
 } from "domains/transaction/components/TransactionDetail";
-import { evaluateFee } from "domains/transaction/utils";
 import { VoteList } from "domains/vote/components/VoteList";
 import React, { useEffect } from "react";
 import { useFormContext } from "react-hook-form";
@@ -57,7 +56,7 @@ export const ReviewStep = ({
 			)}
 
 			<div className="mt-2">
-				<TotalAmountBox fee={evaluateFee(fee)} ticker={wallet.currency()} />
+				<TotalAmountBox fee={fee} ticker={wallet.currency()} />
 			</div>
 		</section>
 	);

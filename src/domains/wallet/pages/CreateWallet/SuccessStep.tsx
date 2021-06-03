@@ -37,7 +37,7 @@ export const SuccessStep = ({ nameMaxLength, profile }: { nameMaxLength: number;
 					borderPosition="bottom"
 					extra={<Avatar size="lg" address={wallet.address()} />}
 				>
-					<Address address={wallet.address()} maxChars={0} />
+					<Address address={wallet.address()} />
 				</TransactionDetail>
 			</div>
 

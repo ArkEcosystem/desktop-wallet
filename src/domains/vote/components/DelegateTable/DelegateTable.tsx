@@ -213,12 +213,7 @@ export const DelegateTable = ({
 								<div className="text-sm leading-tight text-theme-secondary-500">
 									{t("COMMON.ADDRESS")}
 								</div>
-								<Address
-									address={selectedWallet}
-									addressClass="leading-tight"
-									size="lg"
-									maxChars={24}
-								/>
+								<Address address={selectedWallet} addressClass="leading-tight" size="lg" />
 							</div>
 						</div>
 

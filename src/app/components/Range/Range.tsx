@@ -21,9 +21,9 @@ const Thumb = styled.div`
 interface Props {
 	values: number[];
 	onChange: (values: number[]) => void;
-	min?: number;
-	max?: number;
-	step?: number;
+	min: number;
+	max: number;
+	step: number;
 	isInvalid?: boolean;
 }
 
@@ -34,7 +34,7 @@ export const Range = ({ values, min, max, step, onChange, isInvalid }: Props) =>
 	 * Ensure at least one value on mount to properly render the thumb
 	 * as the `react-range` package does not watch changes in `values` to recalculate offsets
 	 */
-	const [rangeValues, setRangeValues] = useState([min!]);
+	const [rangeValues, setRangeValues] = useState([min]);
 
 	useLayoutEffect(() => {
 		setRangeValues(values);
@@ -61,8 +61,8 @@ export const Range = ({ values, min, max, step, onChange, isInvalid }: Props) =>
 								background: getTrackBackground({
 									values,
 									colors: [color, "transparent"],
-									min: min!,
-									max: max!,
+									min,
+									max,
 								}),
 							}}
 							ref={track.ref}

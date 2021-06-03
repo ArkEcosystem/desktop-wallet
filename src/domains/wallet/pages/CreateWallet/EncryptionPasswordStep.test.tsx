@@ -135,7 +135,7 @@ describe("EncryptionPasswordStep", () => {
 
 		//@ts-ignore
 		const walletSpy = jest.spyOn(profile, "walletFactory").mockImplementation(() => ({
-			fromMnemonicWithEncryption: () => Promise.reject(new Error("failed")),
+			fromMnemonicWithBIP39: () => Promise.reject(new Error("failed")),
 		}));
 
 		await waitFor(() => expect(getByTestId("EncryptPassword")).toBeTruthy());
@@ -271,7 +271,7 @@ describe("EncryptionPasswordStep", () => {
 			fireEvent.click(continueButton);
 		});
 
-		const sampleWallet = profile.walletFactory().fromMnemonic({
+		const sampleWallet = profile.walletFactory().fromMnemonicWithBIP39({
 			mnemonic: "test",
 			coin: "ARK",
 			network: "ark.devnet",
@@ -279,7 +279,7 @@ describe("EncryptionPasswordStep", () => {
 
 		//@ts-ignore
 		const walletSpy = jest.spyOn(profile, "walletFactory").mockImplementation(() => ({
-			fromMnemonicWithEncryption: () => Promise.resolve(sampleWallet),
+			fromMnemonicWithBIP39: () => Promise.resolve(sampleWallet),
 		}));
 
 		await waitFor(() => expect(getByTestId("EncryptPassword")).toBeTruthy());

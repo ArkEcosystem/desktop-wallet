@@ -31,7 +31,7 @@ const RecipientListItem = ({ recipient, onAction }: RecipientListItemProps) => {
 		<TableRow key={recipient.id} border>
 			<TableCell variant="start" innerClassName="space-x-4">
 				<Avatar size="lg" address={recipient.address} />
-				<Address walletName={recipient.alias} address={recipient.address} maxChars={16} maxNameChars={16} />
+				<Address walletName={recipient.alias} address={recipient.address} maxNameChars={16} />
 			</TableCell>
 
 			<TableCell>

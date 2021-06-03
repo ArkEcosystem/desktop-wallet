@@ -18,15 +18,14 @@ describe("Authentication", () => {
 		await env.profiles().restore(profile);
 		await profile.sync();
 
-		wallet = await profile.walletFactory().fromMnemonic({
+		wallet = await profile.walletFactory().fromMnemonicWithBIP39({
 			mnemonic: "test",
 			coin: "ARK",
 			network: "ark.devnet",
 		});
 
-		walletWithPassword = await profile.walletFactory().fromMnemonicWithEncryption({
+		walletWithPassword = await profile.walletFactory().fromMnemonicWithBIP39({
 			mnemonic: "test2",
-
 			coin: "ARK",
 			network: "ark.devnet",
 			password: "password",

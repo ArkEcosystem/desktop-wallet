@@ -59,7 +59,7 @@ export const ReviewStep = ({ wallet }: { wallet: Contracts.IReadWriteWallet }) =
 			</TransactionDetail>
 
 			<div className="mt-2">
-				<TotalAmountBox amount={BigNumber.ZERO} fee={BigNumber.make(fee)} ticker={wallet.currency()} />
+				<TotalAmountBox amount={BigNumber.ZERO} fee={fee} ticker={wallet.currency()} />
 			</div>
 		</section>
 	);

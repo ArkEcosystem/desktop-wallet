@@ -27,8 +27,8 @@ test("should create a profile and navigate to welcome screen", async (t) => {
 	await t.expect(getLocation()).contains("/profiles/create");
 
 	await t.typeText(nameInput, "Anne Doe");
-	await t.click('[data-testid="SelectDropdownInput__input"]');
-	await t.click('[data-testid="select-list__toggle-option-0"]');
+	await t.click('[data-testid="SelectDropdown__input"]');
+	await t.click('[data-testid="SelectDropdown__option--0"]');
 	await t.click(Selector("input[name=isDarkMode]").parent());
 	await t.click(Selector("button").withExactText(translations.COMMON.CREATE));
 	await t.expect(getLocation()).notContains("/profiles/create");
@@ -47,8 +47,8 @@ test("should create a profile with password and navigate to welcome screen", asy
 	await t.typeText(nameInput, "Joe Bloggs");
 	await t.typeText(Selector("input[name=password]"), "S3cUrePa$sword");
 	await t.typeText(Selector("input[name=confirmPassword]"), "S3cUrePa$sword");
-	await t.click('[data-testid="SelectDropdownInput__input"]');
-	await t.click('[data-testid="select-list__toggle-option-0"]');
+	await t.click('[data-testid="SelectDropdown__input"]');
+	await t.click('[data-testid="SelectDropdown__option--0"]');
 	await t.click(Selector("input[name=isDarkMode]").parent());
 	await t.click(Selector("button").withExactText(translations.COMMON.CREATE));
 

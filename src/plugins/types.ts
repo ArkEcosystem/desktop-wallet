@@ -1,4 +1,4 @@
-import { Contracts } from "@arkecosystem/platform-sdk";
+import { Contracts, Services } from "@arkecosystem/platform-sdk";
 import { Repositories } from "@arkecosystem/platform-sdk-profiles";
 import { HttpClient } from "app/services/HttpClient";
 
@@ -47,7 +47,7 @@ export interface PluginAPI {
 			walletId: string;
 		}) => [
 			React.FunctionComponent,
-			Contracts.SignedMessage | undefined,
+			Services.SignedMessage | undefined,
 			{ isOpen: boolean; open: () => void; close: () => void },
 		];
 	};

@@ -1,4 +1,4 @@
-import { Contracts } from "@arkecosystem/platform-sdk";
+import { Services } from "@arkecosystem/platform-sdk";
 import { BIP39 } from "@arkecosystem/platform-sdk-crypto";
 import { Contracts as ProfileContracts } from "@arkecosystem/platform-sdk-profiles";
 import { Alert } from "app/components/Alert";
@@ -17,7 +17,7 @@ export const GenerationStep = ({
 	wallet,
 	step = 0.001,
 }: {
-	fees: Contracts.TransactionFee;
+	fees: Services.TransactionFee;
 	wallet: ProfileContracts.IReadWriteWallet;
 	step?: number;
 }) => {
@@ -65,12 +65,11 @@ export const GenerationStep = ({
 						min={fees.min}
 						avg={fees.avg}
 						max={fees.max}
-						defaultValue={fee || 0}
 						value={fee || 0}
 						step={step}
 						showFeeOptions={wallet.network().feeType() === "dynamic"}
-						onChange={(currency) => {
-							setValue("fee", currency.value, { shouldValidate: true, shouldDirty: true });
+						onChange={(value) => {
+							setValue("fee", value, { shouldValidate: true, shouldDirty: true });
 						}}
 					/>
 				</FormField>

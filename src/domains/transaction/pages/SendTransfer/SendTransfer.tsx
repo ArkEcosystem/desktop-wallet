@@ -1,4 +1,4 @@
-import { Coins, Contracts } from "@arkecosystem/platform-sdk";
+import { Coins, Contracts, Services } from "@arkecosystem/platform-sdk";
 import { Contracts as ProfileContracts, DTO } from "@arkecosystem/platform-sdk-profiles";
 import { BigNumber } from "@arkecosystem/platform-sdk-support";
 import { Button } from "app/components/Button";
@@ -18,7 +18,7 @@ import {
 	useTransactionBuilder,
 	useWalletSignatory,
 } from "domains/transaction/hooks";
-import { handleBroadcastError, isMnemonicError } from "domains/transaction/utils";
+import { handleBroadcastError, humanToBigNumber, isMnemonicError } from "domains/transaction/utils";
 import React, { useEffect, useMemo, useRef, useState } from "react";
 import { useForm } from "react-hook-form";
 import { useTranslation } from "react-i18next";
@@ -173,11 +173,13 @@ export const SendTransfer = () => {
 			return;
 		}
 
-		if (BigNumber.make(amount).isLessThanOrEqualTo(fee)) {
+		const feeValue = humanToBigNumber(fee);
+
+		if (BigNumber.make(amount).isLessThanOrEqualTo(feeValue)) {
 			return;
 		}
 
-		const remaining = remainingBalance.minus(fee);
+		const remaining = remainingBalance.minus(feeValue);
 
 		setValue("displayAmount", remaining.toHuman());
 		setValue("amount", remaining.toString());
@@ -209,7 +211,7 @@ export const SendTransfer = () => {
 				encryptionPassword,
 			});
 
-			const transactionInput: Contracts.TransactionInputs = {
+			const transactionInput: Services.TransactionInputs = {
 				fee,
 				signatory,
 				data: {},
@@ -217,15 +219,15 @@ export const SendTransfer = () => {
 
 			if (isMultiPayment) {
 				transactionInput.data = {
-					payments: recipients.map(({ address, amount }: { address: string; amount: string }) => ({
+					payments: recipients.map(({ address, amount }: { address: string; amount: BigNumber }) => ({
 						to: address,
-						amount,
+						amount: amount.toHuman(),
 					})),
 				};
 			} else {
 				transactionInput.data = {
 					to: recipients[0].address,
-					amount: recipients[0].amount,
+					amount: recipients[0].amount.toHuman(),
 					memo: smartbridge,
 				};
 			}
@@ -255,7 +257,6 @@ export const SendTransfer = () => {
 			setTransaction(transaction);
 			setActiveTab(4);
 		} catch (error) {
-			console.log("error", error);
 			if (isMnemonicError(error)) {
 				setValue("mnemonic", "");
 				return setError("mnemonic", { type: "manual", message: t("TRANSACTION.INVALID_MNEMONIC") });

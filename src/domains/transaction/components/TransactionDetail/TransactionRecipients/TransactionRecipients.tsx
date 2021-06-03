@@ -31,11 +31,7 @@ export const TransactionRecipients = ({ currency, recipients, ...props }: Transa
 			extra={<Avatar size="lg" address={recipients[0].address} />}
 			{...props}
 		>
-			<Address
-				address={recipients[0].address}
-				walletName={recipients[0].alias}
-				maxChars={!recipients[0].alias ? 0 : undefined}
-			/>
+			<Address address={recipients[0].address} walletName={recipients[0].alias} />
 		</TransactionDetail>
 	);
 };
