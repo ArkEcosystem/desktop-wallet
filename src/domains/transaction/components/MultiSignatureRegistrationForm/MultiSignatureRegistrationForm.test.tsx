@@ -1,4 +1,4 @@
-import { Contracts } from "@arkecosystem/platform-sdk";
+import { Contracts, Services } from "@arkecosystem/platform-sdk";
 import { Contracts as ProfilesContracts } from "@arkecosystem/platform-sdk-profiles";
 import { BigNumber } from "@arkecosystem/platform-sdk-support";
 import { renderHook } from "@testing-library/react-hooks";
@@ -16,7 +16,7 @@ describe("MultiSignature Registration Form", () => {
 	let profile: ProfilesContracts.IProfile;
 	let wallet: ProfilesContracts.IReadWriteWallet;
 	let wallet2: ProfilesContracts.IReadWriteWallet;
-	let fees: Contracts.TransactionFee;
+	let fees: Services.TransactionFee;
 
 	const createTransactionMock = (wallet: ProfilesContracts.IReadWriteWallet) =>
 		// @ts-ignore

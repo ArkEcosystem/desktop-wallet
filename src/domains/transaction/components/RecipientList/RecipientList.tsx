@@ -29,7 +29,7 @@ const RecipientListItem = ({
 	variant,
 	walletName,
 	onRemove,
-	buttonTooltip,
+	tooltipDisabled,
 	disableButton,
 	showAmount,
 }: RecipientListItemProps) => {
@@ -95,7 +95,7 @@ const RecipientListItem = ({
 
 			{isEditable && (
 				<td className="py-6 w-20 text-right">
-					<Tooltip content={buttonTooltip}>
+					<Tooltip content={tooltipDisabled} disabled={!isButtonDisabled}>
 						<span className="inline-block">
 							<Button
 								disabled={isButtonDisabled}
@@ -122,7 +122,7 @@ export const RecipientList = ({
 	variant,
 	label,
 	showAmount,
-	buttonTooltip,
+	tooltipDisabled,
 	disableButton,
 	onRemove,
 }: RecipientListProps) => {
@@ -152,7 +152,7 @@ export const RecipientList = ({
 						listIndex={index}
 						variant={variant}
 						walletName={recipient.walletName}
-						buttonTooltip={buttonTooltip}
+						tooltipDisabled={tooltipDisabled}
 						disableButton={disableButton}
 						onRemove={onRemove}
 					/>

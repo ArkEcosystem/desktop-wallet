@@ -15,7 +15,7 @@ describe("NetworkIcon", () => {
 		await env.profiles().restore(profile);
 		await profile.sync();
 
-		const wallet1 = await profile.walletFactory().fromMnemonic({
+		const wallet1 = await profile.walletFactory().fromMnemonicWithBIP39({
 			mnemonic: "test",
 			coin: "ARK",
 			network: "ark.mainnet",

@@ -1,4 +1,4 @@
-import { Contracts } from "@arkecosystem/platform-sdk";
+import { Contracts, Services } from "@arkecosystem/platform-sdk";
 import { Signatory } from "@arkecosystem/platform-sdk/dist/signatories";
 import { Contracts as ProfileContracts, Environment } from "@arkecosystem/platform-sdk-profiles";
 import { TFunction } from "i18next";
@@ -16,7 +16,7 @@ export interface SendRegistrationDetailsOptions {
 
 export interface SendRegistrationComponent {
 	activeTab: number;
-	fees: Contracts.TransactionFee;
+	fees: Services.TransactionFee;
 	wallet: ProfileContracts.IReadWriteWallet;
 	profile: ProfileContracts.IProfile;
 }

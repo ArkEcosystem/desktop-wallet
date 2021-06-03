@@ -1,12 +1,16 @@
 import { Contracts } from "@arkecosystem/platform-sdk-profiles";
+import { renderHook } from "@testing-library/react-hooks";
 import { translations as transactionTranslations } from "domains/transaction/i18n";
 import nock from "nock";
 import React from "react";
+import { useTranslation } from "react-i18next";
 import walletFixture from "tests/fixtures/coins/ark/devnet/wallets/D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib.json";
 import coldWalletFixture from "tests/fixtures/coins/ark/devnet/wallets/DC8ghUdhS8w8d11K8cFQ37YsLBFhL3Dq2P.json";
-import { act, env, fireEvent, getDefaultProfileId, render, screen, waitFor } from "utils/testing-library";
+import { env, fireEvent, getDefaultProfileId, render, screen, waitFor } from "utils/testing-library";
 
 import { AddParticipant } from "./AddParticipant";
+
+let t: any;
 
 describe("Add Participant", () => {
 	let profile: Contracts.IProfile;
@@ -14,6 +18,9 @@ describe("Add Participant", () => {
 	let wallet2: Contracts.IReadWriteWallet;
 
 	beforeEach(async () => {
+		const { result } = renderHook(() => useTranslation());
+		t = result.current.t;
+
 		profile = env.profiles().findById(getDefaultProfileId());
 		wallet = profile.wallets().first();
 		wallet2 = profile.wallets().last();
@@ -28,23 +35,26 @@ describe("Add Participant", () => {
 			.reply(404);
 		const { asFragment } = render(<AddParticipant profile={profile} wallet={wallet} />);
 
-		act(() => {
-			fireEvent.input(screen.getByTestId("SelectDropdown__input"), {
-				target: {
-					value: "D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyiba",
-				},
-			});
-		});
-
-		act(() => {
-			fireEvent.click(screen.getByText(transactionTranslations.MULTISIGNATURE.ADD_PARTICIPANT));
+		fireEvent.input(screen.getByTestId("SelectDropdown__input"), {
+			target: {
+				value: "D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyiba",
+			},
 		});
 
 		await waitFor(() => {
-			const input = screen.getByTestId("SelectDropdown__input");
-			expect(input).toHaveAttribute("aria-invalid");
+			expect(screen.getByTestId("SelectDropdown__input")).toHaveValue("D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyiba");
 		});
 
+		fireEvent.click(screen.getByText(transactionTranslations.MULTISIGNATURE.ADD_PARTICIPANT));
+
+		await waitFor(() => {
+			expect(screen.getAllByTestId("Input__error")[0]).toBeVisible();
+		});
+
+		expect(screen.getAllByTestId("Input__error")[0]).toHaveAttribute(
+			"data-errortext",
+			t("TRANSACTION.MULTISIGNATURE.ERROR.ADDRESS_NOT_FOUND"),
+		);
 		expect(asFragment()).toMatchSnapshot();
 	});
 
@@ -59,28 +69,31 @@ describe("Add Participant", () => {
 
 		const { asFragment } = render(<AddParticipant profile={profile} wallet={wallet} />);
 
-		act(() => {
-			fireEvent.input(screen.getByTestId("SelectDropdown__input"), {
-				target: {
-					value: "DC8ghUdhS8w8d11K8cFQ37YsLBFhL3Dq2P",
-				},
-			});
-		});
-
-		act(() => {
-			fireEvent.click(screen.getByText(transactionTranslations.MULTISIGNATURE.ADD_PARTICIPANT));
+		fireEvent.input(screen.getByTestId("SelectDropdown__input"), {
+			target: {
+				value: "DC8ghUdhS8w8d11K8cFQ37YsLBFhL3Dq2P",
+			},
 		});
 
 		await waitFor(() => {
-			const input = screen.getByTestId("SelectDropdown__input");
-			expect(input).toHaveAttribute("aria-invalid");
+			expect(screen.getByTestId("SelectDropdown__input")).toHaveValue("DC8ghUdhS8w8d11K8cFQ37YsLBFhL3Dq2P");
 		});
 
+		fireEvent.click(screen.getByText(transactionTranslations.MULTISIGNATURE.ADD_PARTICIPANT));
+
+		await waitFor(() => {
+			expect(screen.getAllByTestId("Input__error")[0]).toBeVisible();
+		});
+
+		expect(screen.getAllByTestId("Input__error")[0]).toHaveAttribute(
+			"data-errortext",
+			t("TRANSACTION.MULTISIGNATURE.ERROR.PUBLIC_KEY_NOT_FOUND"),
+		);
 		expect(asFragment()).toMatchSnapshot();
 	});
 
 	it("should fail with a duplicate address", async () => {
-		render(
+		const { asFragment } = render(
 			<AddParticipant
 				profile={profile}
 				wallet={wallet}
@@ -94,22 +107,27 @@ describe("Add Participant", () => {
 			/>,
 		);
 
-		act(() => {
-			fireEvent.input(screen.getByTestId("SelectDropdown__input"), {
-				target: {
-					value: wallet.address(),
-				},
-			});
-		});
-
-		act(() => {
-			fireEvent.click(screen.getByText(transactionTranslations.MULTISIGNATURE.ADD_PARTICIPANT));
+		fireEvent.input(screen.getByTestId("SelectDropdown__input"), {
+			target: {
+				value: wallet.address(),
+			},
 		});
 
 		await waitFor(() => {
-			const input = screen.getByTestId("SelectDropdown__input");
-			expect(input).toHaveAttribute("aria-invalid");
+			expect(screen.getByTestId("SelectDropdown__input")).toHaveValue(wallet.address());
 		});
+
+		fireEvent.click(screen.getByText(transactionTranslations.MULTISIGNATURE.ADD_PARTICIPANT));
+
+		await waitFor(() => {
+			expect(screen.getAllByTestId("Input__error")[0]).toBeVisible();
+		});
+
+		expect(screen.getAllByTestId("Input__error")[0]).toHaveAttribute(
+			"data-errortext",
+			t("TRANSACTION.MULTISIGNATURE.ERROR.ADDRESS_ALREADY_ADDED"),
+		);
+		expect(asFragment()).toMatchSnapshot();
 	});
 
 	it("should fail if cannot find the address remotely", async () => {
@@ -123,23 +141,26 @@ describe("Add Participant", () => {
 
 		const { asFragment } = render(<AddParticipant profile={profile} wallet={wallet} />);
 
-		act(() => {
-			fireEvent.input(screen.getByTestId("SelectDropdown__input"), {
-				target: {
-					value: "DC8ghUdhS8w8d11K8cFQ37YsLBFhL3Dq20",
-				},
-			});
-		});
-
-		act(() => {
-			fireEvent.click(screen.getByText(transactionTranslations.MULTISIGNATURE.ADD_PARTICIPANT));
+		fireEvent.input(screen.getByTestId("SelectDropdown__input"), {
+			target: {
+				value: "DC8ghUdhS8w8d11K8cFQ37YsLBFhL3Dq20",
+			},
 		});
 
 		await waitFor(() => {
-			const input = screen.getByTestId("SelectDropdown__input");
-			expect(input).toHaveAttribute("aria-invalid");
+			expect(screen.getByTestId("SelectDropdown__input")).toHaveValue("DC8ghUdhS8w8d11K8cFQ37YsLBFhL3Dq20");
 		});
 
+		fireEvent.click(screen.getByText(transactionTranslations.MULTISIGNATURE.ADD_PARTICIPANT));
+
+		await waitFor(() => {
+			expect(screen.getAllByTestId("Input__error")[0]).toBeVisible();
+		});
+
+		expect(screen.getAllByTestId("Input__error")[0]).toHaveAttribute(
+			"data-errortext",
+			t("TRANSACTION.MULTISIGNATURE.ERROR.ADDRESS_NOT_FOUND"),
+		);
 		expect(asFragment()).toMatchSnapshot();
 	});
 
@@ -147,19 +168,16 @@ describe("Add Participant", () => {
 		const onChange = jest.fn();
 		const { asFragment } = render(<AddParticipant profile={profile} wallet={wallet} onChange={onChange} />);
 
-		act(() => {
-			fireEvent.input(screen.getByTestId("SelectDropdown__input"), {
-				target: {
-					value: profile.wallets().last().address(),
-				},
-			});
+		fireEvent.input(screen.getByTestId("SelectDropdown__input"), {
+			target: {
+				value: profile.wallets().last().address(),
+			},
 		});
 
-		act(() => {
-			fireEvent.click(screen.getByText(transactionTranslations.MULTISIGNATURE.ADD_PARTICIPANT));
-		});
+		fireEvent.click(screen.getByText(transactionTranslations.MULTISIGNATURE.ADD_PARTICIPANT));
 
 		await waitFor(() => expect(screen.getAllByRole("row")).toHaveLength(2));
+
 		expect(onChange).toHaveBeenCalledWith([
 			{
 				address: "D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD",
@@ -184,17 +202,13 @@ describe("Add Participant", () => {
 
 		const { asFragment } = render(<AddParticipant profile={profile} wallet={wallet} />);
 
-		act(() => {
-			fireEvent.input(screen.getByTestId("SelectDropdown__input"), {
-				target: {
-					value: walletFixture.data.address,
-				},
-			});
+		fireEvent.input(screen.getByTestId("SelectDropdown__input"), {
+			target: {
+				value: walletFixture.data.address,
+			},
 		});
 
-		act(() => {
-			fireEvent.click(screen.getByText(transactionTranslations.MULTISIGNATURE.ADD_PARTICIPANT));
-		});
+		fireEvent.click(screen.getByText(transactionTranslations.MULTISIGNATURE.ADD_PARTICIPANT));
 
 		await waitFor(() => expect(screen.getAllByRole("row")).toHaveLength(2));
 		expect(scope.isDone()).toBe(true);
@@ -240,9 +254,8 @@ describe("Add Participant", () => {
 
 		await waitFor(() => expect(screen.getAllByRole("row")).toHaveLength(2));
 
-		act(() => {
-			fireEvent.click(screen.getAllByTestId("recipient-list__remove-recipient")[1]);
-		});
+		expect(screen.getAllByTestId("recipient-list__remove-recipient")[1]).not.toBeDisabled();
+		fireEvent.click(screen.getAllByTestId("recipient-list__remove-recipient")[1]);
 
 		expect(onChange).toHaveBeenCalledWith([
 			{
@@ -258,10 +271,7 @@ describe("Add Participant", () => {
 		await waitFor(() => expect(screen.getAllByRole("row")).toHaveLength(1));
 
 		expect(screen.getByTestId("recipient-list__remove-recipient")).toBeDisabled();
-
-		act(() => {
-			fireEvent.click(screen.getByTestId("recipient-list__remove-recipient"));
-		});
+		fireEvent.click(screen.getByTestId("recipient-list__remove-recipient"));
 
 		await waitFor(() => expect(screen.getAllByRole("row")).toHaveLength(1));
 	});

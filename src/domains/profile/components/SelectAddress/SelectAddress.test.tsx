@@ -10,7 +10,7 @@ let wallets: Contracts.IReadWriteWallet[];
 beforeAll(async () => {
 	profile = env.profiles().findById(getDefaultProfileId());
 
-	const wallet = await profile.walletFactory().fromMnemonic({
+	const wallet = await profile.walletFactory().fromMnemonicWithBIP39({
 		mnemonic: "additional wallet",
 		coin: "ARK",
 		network: "ark.devnet",

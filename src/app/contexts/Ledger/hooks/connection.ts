@@ -35,7 +35,7 @@ export const useLedgerConnection = (transport: typeof Transport) => {
 	const importLedgerWallets = useCallback(
 		async (wallets: LedgerData[], coin: Coins.Coin, profile: Contracts.IProfile) => {
 			for (const { address, path } of wallets) {
-				const wallet = await profile.walletFactory().fromAddressWithLedgerPath({
+				const wallet = await profile.walletFactory().fromAddressWithDerivationPath({
 					address,
 					coin: coin.network().coin(),
 					network: coin.network().id(),

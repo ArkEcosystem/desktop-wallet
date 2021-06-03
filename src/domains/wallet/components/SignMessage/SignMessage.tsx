@@ -1,5 +1,4 @@
-import { Contracts } from "@arkecosystem/platform-sdk";
-import { SignedMessage } from "@arkecosystem/platform-sdk/dist/contracts";
+import { Services } from "@arkecosystem/platform-sdk";
 import { Contracts as ProfileContracts } from "@arkecosystem/platform-sdk-profiles";
 import { OriginalButton as Button } from "app/components/Button/OriginalButton";
 import { Clipboard } from "app/components/Clipboard";
@@ -27,10 +26,10 @@ interface SignMessageProps {
 	messageText?: string;
 	onClose?: () => void;
 	onCancel?: () => void;
-	onSign?: (result: SignedMessage) => void;
+	onSign?: (result: Services.SignedMessage) => void;
 }
 
-const initialState: Contracts.SignedMessage = {
+const initialState: Services.SignedMessage = {
 	message: "",
 	signatory: "",
 	signature: "",
@@ -50,7 +49,7 @@ export const SignMessage = ({
 	const [message, setMessage] = useState<string>();
 	const [ledgerState, setLedgerState] = useState("awaitingDevice");
 
-	const [signedMessage, setSignedMessage] = useState<Contracts.SignedMessage>(initialState);
+	const [signedMessage, setSignedMessage] = useState<Services.SignedMessage>(initialState);
 
 	const { t } = useTranslation();
 

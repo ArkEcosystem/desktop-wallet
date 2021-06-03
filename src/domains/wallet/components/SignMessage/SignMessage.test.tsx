@@ -29,7 +29,7 @@ describe("SignMessage", () => {
 	beforeAll(async () => {
 		profile = env.profiles().findById(getDefaultProfileId());
 
-		wallet = await profile.walletFactory().fromMnemonic({
+		wallet = await profile.walletFactory().fromMnemonicWithBIP39({
 			mnemonic,
 			coin: "ARK",
 			network: "ark.devnet",
