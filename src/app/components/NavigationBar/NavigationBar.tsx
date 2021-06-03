@@ -73,8 +73,7 @@ interface UserInfoProps {
 }
 
 const UserInfo = ({ exchangeCurrency, onUserAction, avatarImage, userActions, userInitials }: UserInfoProps) => {
-	const tickerConfig: typeof CURRENCIES["BTC"] | undefined =
-		CURRENCIES[exchangeCurrency as keyof typeof CURRENCIES];
+	const tickerConfig: typeof CURRENCIES["BTC"] | undefined = CURRENCIES[exchangeCurrency as keyof typeof CURRENCIES];
 
 	return (
 		<div className="flex my-0.5 ml-4 -space-x-2">

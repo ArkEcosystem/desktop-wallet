@@ -11,7 +11,13 @@ interface Address {
 	type: string;
 }
 
-export const useProfileAddresses = ({ profile, network }: { profile: Contracts.IProfile; network?: Networks.Network }) => {
+export const useProfileAddresses = ({
+	profile,
+	network,
+}: {
+	profile: Contracts.IProfile;
+	network?: Networks.Network;
+}) => {
 	const contacts = profile.contacts().values();
 	const profileWallets = profile.wallets().values();
 

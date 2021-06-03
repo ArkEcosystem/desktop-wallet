@@ -154,7 +154,9 @@ export const SelectNetwork = ({
 						onFocus: openMenu,
 						onKeyDown: (event: any) => {
 							if (event.key === "Tab" || event.key === "Enter") {
-								const firstMatch = items.find((network: Networks.Network) => isMatch(inputValue, network));
+								const firstMatch = items.find((network: Networks.Network) =>
+									isMatch(inputValue, network),
+								);
 								if (inputValue && firstMatch) {
 									selectItem(firstMatch);
 								}
