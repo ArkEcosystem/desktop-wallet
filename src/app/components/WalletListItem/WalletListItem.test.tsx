@@ -22,7 +22,7 @@ describe("WalletListItem", () => {
 
 		wallet = profile.wallets().findById("ac38fe6d-4b67-4ef1-85be-17c5f6841129");
 		wallet.data().set(Contracts.WalletFlag.Starred, true);
-		wallet.data().set(Contracts.WalletData.LedgerPath, "0");
+		wallet.data().set(Contracts.WalletData.DerivationPath, "0");
 
 		await env.profiles().restore(profile);
 		await profile.sync();

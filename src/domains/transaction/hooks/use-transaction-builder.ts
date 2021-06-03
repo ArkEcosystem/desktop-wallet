@@ -1,4 +1,4 @@
-import { Contracts } from "@arkecosystem/platform-sdk";
+import { Contracts, Services } from "@arkecosystem/platform-sdk";
 import { Contracts as ProfileContracts } from "@arkecosystem/platform-sdk-profiles";
 import { upperFirst } from "@arkecosystem/utils";
 import Transport from "@ledgerhq/hw-transport";
@@ -10,13 +10,13 @@ interface SignInput {
 	secondMnemonic?: string;
 	wallet: ProfileContracts.IReadWriteWallet;
 }
-type SignFn = (input: any, options?: Contracts.TransactionOptions) => Promise<string>;
+type SignFn = (input: any, options?: Services.TransactionOptions) => Promise<string>;
 type ConnectFn = (profile: ProfileContracts.IProfile, coin: string, network: string) => Promise<void>;
 
 const prepareMultiSignature = (
-	input: Contracts.TransactionInputs,
+	input: Services.TransactionInputs,
 	wallet: ProfileContracts.IReadWriteWallet,
-): Contracts.TransactionInputs => ({
+): Services.TransactionInputs => ({
 	...input,
 	nonce: wallet.nonce().plus(1).toFixed(),
 	sign: {
@@ -26,7 +26,7 @@ const prepareMultiSignature = (
 
 const prepareLedger = async (
 	profile: ProfileContracts.IProfile,
-	input: Contracts.TransactionInputs,
+	input: Services.TransactionInputs,
 	wallet: ProfileContracts.IReadWriteWallet,
 	signFn: SignFn,
 	connectFn: ConnectFn,
@@ -36,7 +36,7 @@ const prepareLedger = async (
 
 	await wallet.ledger().connect(transport);
 
-	const path = wallet.data().get<string>(ProfileContracts.WalletData.LedgerPath);
+	const path = wallet.data().get<string>(ProfileContracts.WalletData.DerivationPath);
 	let senderPublicKey = wallet.publicKey();
 
 	if (!senderPublicKey) {
@@ -77,7 +77,7 @@ export const useTransactionBuilder = (profile: ProfileContracts.IProfile) => {
 
 	const build = async (
 		type: string,
-		input: Contracts.TransactionInputs,
+		input: Services.TransactionInputs,
 		wallet: ProfileContracts.IReadWriteWallet,
 		options?: {
 			abortSignal?: AbortSignal;

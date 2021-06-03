@@ -895,7 +895,7 @@ describe("ImportWallet", () => {
 		history.push(route);
 		const randomNewAddress = "D6pPxYLwwCptuhVRvLQQYXEQiQMB5x6iY3";
 
-		const wallet = await emptyProfile.walletFactory().fromMnemonic({
+		const wallet = await emptyProfile.walletFactory().fromMnemonicWithBIP39({
 			mnemonic: "random mnemonic",
 			coin: "ARK",
 			network: "ark.devnet",

@@ -138,18 +138,18 @@ describe("useWalletDisplay", () => {
 	it("should return all grid wallets", async () => {
 		const wrapper = ({ children }: any) => <EnvironmentProvider env={env}> {children} </EnvironmentProvider>;
 
-		const testWallet = await profile.walletFactory().fromMnemonic({
+		const testWallet = await profile.walletFactory().fromMnemonicWithBIP39({
 			mnemonic: "test",
 			coin: "ARK",
 			network: "ark.devnet",
 		});
-		const test2Wallet = await profile.walletFactory().fromMnemonic({
+		const test2Wallet = await profile.walletFactory().fromMnemonicWithBIP39({
 			mnemonic: "test2",
 			coin: "ARK",
 			network: "ark.devnet",
 		});
 
-		const ledger = await profile.walletFactory().fromMnemonic({
+		const ledger = await profile.walletFactory().fromMnemonicWithBIP39({
 			mnemonic: "test3",
 			coin: "ARK",
 			network: "ark.devnet",
@@ -178,7 +178,7 @@ describe("useWalletDisplay", () => {
 
 	it("should filter ledger grid wallets", async () => {
 		const wrapper = ({ children }: any) => <EnvironmentProvider env={env}> {children} </EnvironmentProvider>;
-		const ledger = await profile.walletFactory().fromMnemonic({
+		const ledger = await profile.walletFactory().fromMnemonicWithBIP39({
 			mnemonic: "test4",
 			coin: "ARK",
 			network: "ark.devnet",

@@ -87,13 +87,13 @@ describe("WalletDetails", () => {
 		await profile.sync();
 
 		wallet = profile.wallets().findById("ac38fe6d-4b67-4ef1-85be-17c5f6841129");
-		blankWallet = await profile.walletFactory().fromMnemonic({
+		blankWallet = await profile.walletFactory().fromMnemonicWithBIP39({
 			mnemonic: passphrase2,
 			coin: "ARK",
 			network: "ark.devnet",
 		});
 
-		unvotedWallet = await profile.walletFactory().fromMnemonic({
+		unvotedWallet = await profile.walletFactory().fromMnemonicWithBIP39({
 			mnemonic: "unvoted wallet",
 			coin: "ARK",
 			network: "ark.devnet",
@@ -101,7 +101,7 @@ describe("WalletDetails", () => {
 
 		emptyProfile = env.profiles().findById("cba050f1-880f-45f0-9af9-cfe48f406052");
 
-		wallet2 = await emptyProfile.walletFactory().fromMnemonic({
+		wallet2 = await emptyProfile.walletFactory().fromMnemonicWithBIP39({
 			mnemonic: "wallet 2",
 			coin: "ARK",
 			network: "ark.devnet",
@@ -433,7 +433,7 @@ describe("WalletDetails", () => {
 	});
 
 	it("should not fail if the votes have not yet been synchronized", async () => {
-		const newWallet = await profile.walletFactory().fromMnemonic({
+		const newWallet = await profile.walletFactory().fromMnemonicWithBIP39({
 			mnemonic: "test mnemonic",
 			coin: "ARK",
 			network: "ark.devnet",

@@ -1,4 +1,4 @@
-import { Contracts } from "@arkecosystem/platform-sdk";
+import { Services } from "@arkecosystem/platform-sdk";
 import { Contracts as ProfilesContracts } from "@arkecosystem/platform-sdk-profiles";
 import { FormField, FormLabel } from "app/components/Form";
 import { Header } from "app/components/Header";
@@ -33,7 +33,7 @@ export const FormStep = ({
 	const form = useFormContext();
 	const { getValues, setValue, watch, register } = form;
 
-	const [fees, setFees] = useState<Contracts.TransactionFee>({
+	const [fees, setFees] = useState<Services.TransactionFee>({
 		static: "5",
 		min: "0",
 		avg: "0",
