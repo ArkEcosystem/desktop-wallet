@@ -158,7 +158,7 @@ exports[`LedgerScanStep should render 1`] = `
               </div>
             </th>
             <th
-              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
+              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold"
               colspan="1"
               data-testid="table__th--1"
               role="columnheader"
@@ -166,7 +166,7 @@ exports[`LedgerScanStep should render 1`] = `
               title="Toggle SortBy"
             >
               <div
-                class="flex flex-inline align-top justify-end flex-row-reverse"
+                class="flex flex-inline align-top no-border justify-end flex-row-reverse"
               >
                 <div>
                   Balance
@@ -215,7 +215,9 @@ exports[`LedgerScanStep should render 1`] = `
             class="TableRow__TableRowStyled-sc-1br46dw-0 fzBhIQ group"
             data-testid="TableRow"
           >
-            <td>
+            <td
+              class="w-2/5"
+            >
               <div
                 class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 DpDcR space-x-4"
               >
@@ -234,14 +236,18 @@ exports[`LedgerScanStep should render 1`] = `
                   </div>
                 </div>
                 <div
-                  class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap"
+                  class="flex flex-1 w-32"
                 >
-                  <span
-                    class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-text font-semibold text-base"
-                    data-testid="address__wallet-address"
+                  <div
+                    class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap"
                   >
-                    DJpFwW39QnQvQRQJF2MCfAoKvsX4DJ28jq
-                  </span>
+                    <span
+                      class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-text font-semibold text-base"
+                      data-testid="address__wallet-address"
+                    >
+                      DJpFwW39QnQvQRQJF2MCfAoKvsX4DJ28jq
+                    </span>
+                  </div>
                 </div>
                 <span
                   class="hidden"
@@ -250,9 +256,7 @@ exports[`LedgerScanStep should render 1`] = `
                 </span>
               </div>
             </td>
-            <td
-              class="w-64"
-            >
+            <td>
               <div
                 class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT justify-end font-semibold"
               >
@@ -282,7 +286,9 @@ exports[`LedgerScanStep should render 1`] = `
             class="TableRow__TableRowStyled-sc-1br46dw-0 fzBhIQ group"
             data-testid="TableRow"
           >
-            <td>
+            <td
+              class="w-2/5"
+            >
               <div
                 class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 DpDcR space-x-4"
               >
@@ -301,14 +307,18 @@ exports[`LedgerScanStep should render 1`] = `
                   </div>
                 </div>
                 <div
-                  class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap"
+                  class="flex flex-1 w-32"
                 >
-                  <span
-                    class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-text font-semibold text-base"
-                    data-testid="address__wallet-address"
+                  <div
+                    class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap"
                   >
-                    DQseW3VJ1db5xN5xZi4Qhn6AFWtcwSwzpG
-                  </span>
+                    <span
+                      class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-text font-semibold text-base"
+                      data-testid="address__wallet-address"
+                    >
+                      DQseW3VJ1db5xN5xZi4Qhn6AFWtcwSwzpG
+                    </span>
+                  </div>
                 </div>
                 <span
                   class="hidden"
@@ -317,9 +327,7 @@ exports[`LedgerScanStep should render 1`] = `
                 </span>
               </div>
             </td>
-            <td
-              class="w-64"
-            >
+            <td>
               <div
                 class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT justify-end font-semibold"
               >

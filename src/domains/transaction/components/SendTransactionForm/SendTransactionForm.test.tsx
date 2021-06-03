@@ -20,7 +20,6 @@ import { SendTransactionForm } from "./";
 
 let profile: Contracts.IProfile;
 let wallet: Contracts.IReadWriteWallet;
-const defaultFee = "7320598";
 
 describe("SendTransactionForm", () => {
 	beforeAll(async () => {
@@ -136,7 +135,7 @@ describe("SendTransactionForm", () => {
 		const { getByTestId } = rendered;
 
 		await act(async () => {
-			await waitFor(() => expect(form.current.getValues("fee")).toEqual("7320598"));
+			await waitFor(() => expect(form.current.getValues("fee")).toEqual("0.07320598"));
 
 			fireEvent.click(within(getByTestId("sender-address")).getByTestId("SelectAddress__wrapper"));
 			await waitFor(() => expect(getByTestId("modal__inner")).toBeTruthy());
@@ -155,7 +154,6 @@ describe("SendTransactionForm", () => {
 			static: "10000000",
 			max: "663000000",
 			min: "357000",
-			//@ts-ignore
 			avg: "0",
 		});
 
@@ -187,7 +185,7 @@ describe("SendTransactionForm", () => {
 		const { getByTestId } = rendered;
 
 		await act(async () => {
-			await waitFor(() => expect(form.current.getValues("fee")).toEqual("10000000"));
+			await waitFor(() => expect(form.current.getValues("fee")).toEqual("0.1"));
 
 			fireEvent.click(within(getByTestId("sender-address")).getByTestId("SelectAddress__wrapper"));
 			await waitFor(() => expect(getByTestId("modal__inner")).toBeTruthy());

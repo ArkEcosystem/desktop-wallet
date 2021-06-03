@@ -1,18 +1,19 @@
-import { Coins } from "@arkecosystem/platform-sdk";
+import { Networks } from "@arkecosystem/platform-sdk";
 import { Contracts } from "@arkecosystem/platform-sdk-profiles";
+import { Address } from "app/components/Address";
 import { Avatar } from "app/components/Avatar";
 import { Circle } from "app/components/Circle";
 import { useFormField } from "app/components/Form/useFormField";
 import { Icon } from "app/components/Icon";
 import { Select } from "app/components/SelectDropdown";
-import { TruncateMiddle } from "app/components/TruncateMiddle";
 import { useWalletAlias } from "app/hooks/use-wallet-alias";
+import cn from "classnames";
 import { useProfileAddresses } from "domains/profile/hooks/use-profile-addresses";
 import { SearchRecipient } from "domains/transaction/components/SearchRecipient";
 import React, { useEffect, useState } from "react";
 
 type SelectRecipientProps = {
-	network?: Coins.Network;
+	network?: Networks.Network;
 	address?: string;
 	profile: Contracts.IProfile;
 	disabled?: boolean;
@@ -41,20 +42,14 @@ const OptionLabel = ({ option, profile }: { option: any; profile: Contracts.IPro
 	const alias = useWalletAlias({ address, profile });
 
 	return (
-		<div className="flex items-center space-x-2 overflow-hidden whitespace-nowrap">
+		<div className="flex items-center space-x-2 whitespace-nowrap">
 			<Avatar size="sm" address={address} className="flex-shrink-0" noShadow />
-			{alias ? (
-				<div className="w-full flex items-center space-x-2">
-					<div className="truncate font-medium" style={{ maxWidth: "17rem" }}>
-						{alias}
-					</div>
-					<span>
-						(<TruncateMiddle text={address} maxChars={16} className="pl-0" />)
-					</span>
-				</div>
-			) : (
-				<span>{address}</span>
-			)}
+			<Address
+				address={address}
+				walletName={alias}
+				addressClass={cn({ "text-theme-primary-600": !alias && option.isSelected })}
+				walletNameClass={cn({ "text-theme-primary-600": option.isSelected })}
+			/>
 		</div>
 	);
 };
@@ -110,7 +105,7 @@ export const SelectRecipient = React.forwardRef<HTMLInputElement, SelectRecipien
 
 		return (
 			<div>
-				<div data-testid="SelectRecipient__wrapper" className="flex relative items-center w-full text-left">
+				<div data-testid="SelectRecipient__wrapper" className="relative flex items-center w-full text-left">
 					<Select
 						showCaret={false}
 						isInvalid={isInvalidValue}

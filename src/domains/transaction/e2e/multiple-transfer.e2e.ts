@@ -41,7 +41,7 @@ test("should send multiple transfer successfully", async (t) => {
 	await t.typeText(Selector("[data-testid=AddRecipient__amount]"), "10", { replace: true });
 
 	// Add recipient #1
-	await t.typeText(Selector("[data-testid=SelectDropdownInput__input]"), "D7JJ4ZfkJDwDCwuwzhtbCFapBUCWU3HHGP", {
+	await t.typeText(Selector("[data-testid=SelectDropdown__input]"), "D7JJ4ZfkJDwDCwuwzhtbCFapBUCWU3HHGP", {
 		paste: true,
 	});
 	await t.pressKey("tab");
@@ -78,13 +78,13 @@ test("should show an error if wrong mnemonic", async (t: any) => {
 
 	// Add recipient #1
 	await t.typeText(Selector("[data-testid=AddRecipient__amount]"), "10", { replace: true });
-	await t.typeText(Selector("[data-testid=SelectDropdownInput__input]"), "DReUcXWdCz2QLKzHM9NdZQE7fAwAyPwAmd", {
+	await t.typeText(Selector("[data-testid=SelectDropdown__input]"), "DReUcXWdCz2QLKzHM9NdZQE7fAwAyPwAmd", {
 		paste: true,
 	});
 	await t.click(Selector("button").withText(translations.TRANSACTION.ADD_RECIPIENT));
 
 	// Add recipient #2
-	await t.typeText(Selector("[data-testid=SelectDropdownInput__input]"), "D7JJ4ZfkJDwDCwuwzhtbCFapBUCWU3HHGP", {
+	await t.typeText(Selector("[data-testid=SelectDropdown__input]"), "D7JJ4ZfkJDwDCwuwzhtbCFapBUCWU3HHGP", {
 		paste: true,
 		replace: true,
 	});
@@ -118,13 +118,13 @@ test("should not clear values when returning a step", async (t: any) => {
 
 	// Add recipient #1
 	await t.typeText(Selector("[data-testid=AddRecipient__amount]"), "10", { replace: true });
-	await t.typeText(Selector("[data-testid=SelectDropdownInput__input]"), "DReUcXWdCz2QLKzHM9NdZQE7fAwAyPwAmd", {
+	await t.typeText(Selector("[data-testid=SelectDropdown__input]"), "DReUcXWdCz2QLKzHM9NdZQE7fAwAyPwAmd", {
 		paste: true,
 	});
 	await t.click(Selector("button").withText(translations.TRANSACTION.ADD_RECIPIENT));
 
 	// Add recipient #2
-	await t.typeText(Selector("[data-testid=SelectDropdownInput__input]"), "D7JJ4ZfkJDwDCwuwzhtbCFapBUCWU3HHGP", {
+	await t.typeText(Selector("[data-testid=SelectDropdown__input]"), "D7JJ4ZfkJDwDCwuwzhtbCFapBUCWU3HHGP", {
 		paste: true,
 		replace: true,
 	});

@@ -1,4 +1,4 @@
-import { Coins } from "@arkecosystem/platform-sdk";
+import { Networks } from "@arkecosystem/platform-sdk";
 import { Contracts } from "@arkecosystem/platform-sdk-profiles";
 import { FormField, FormLabel } from "app/components/Form";
 import { useFees } from "app/hooks";
@@ -12,7 +12,7 @@ import { Trans, useTranslation } from "react-i18next";
 
 interface SendTransactionFormProps {
 	children?: React.ReactNode;
-	networks: Coins.Network[];
+	networks: Networks.Network[];
 	profile: Contracts.IProfile;
 	transactionType: string;
 	hasWalletId: boolean;
@@ -29,19 +29,17 @@ export const SendTransactionForm = ({
 }: SendTransactionFormProps) => {
 	const { t } = useTranslation();
 	const [wallets, setWallets] = useState<Contracts.IReadWriteWallet[]>([]);
-	const [availableNetworks, setAvailableNetworks] = useState<Coins.Network[]>([]);
+	const [availableNetworks, setAvailableNetworks] = useState<Networks.Network[]>([]);
 	const [dynamicFees, setDynamicFees] = useState(false);
 
 	const { findByType } = useFees({ profile });
 
 	const form = useFormContext();
 	const { getValues, setValue, watch } = form;
-	const { network, senderAddress } = watch();
-
-	const { fee, fees } = watch();
+	const { network, senderAddress, fee, fees } = watch();
 
 	useEffect(() => {
-		const setTransactionFees = async (network: Coins.Network) => {
+		const setTransactionFees = async (network: Networks.Network) => {
 			const transactionFees = await findByType(network.coin(), network.id(), transactionType);
 
 			setValue("fees", transactionFees);
@@ -66,7 +64,7 @@ export const SendTransactionForm = ({
 
 	const showFeeInput = useMemo(() => !network?.chargesZeroFees(), [network]);
 
-	const handleSelectNetwork = (selectedNetwork: Coins.Network | null | undefined) => {
+	const handleSelectNetwork = (selectedNetwork: Networks.Network | null | undefined) => {
 		/* istanbul ignore next */
 		if (senderAddress && network?.id() !== selectedNetwork?.id()) {
 			setValue("senderAddress", "", { shouldValidate: false, shouldDirty: true });
@@ -144,8 +142,8 @@ export const SendTransactionForm = ({
 						value={fee}
 						step={0.01}
 						showFeeOptions={dynamicFees}
-						onChange={(currency) => {
-							setValue("fee", currency.value, { shouldValidate: true, shouldDirty: true });
+						onChange={(value) => {
+							setValue("fee", value, { shouldValidate: true, shouldDirty: true });
 						}}
 					/>
 				</FormField>

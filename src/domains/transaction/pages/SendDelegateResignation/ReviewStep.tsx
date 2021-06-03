@@ -6,7 +6,6 @@ import {
 	TransactionNetwork,
 	TransactionSender,
 } from "domains/transaction/components/TransactionDetail";
-import { evaluateFee } from "domains/transaction/utils";
 import React, { useEffect } from "react";
 import { useFormContext } from "react-hook-form";
 import { useTranslation } from "react-i18next";
@@ -36,7 +35,7 @@ export const ReviewStep = ({ senderWallet }: { senderWallet: Contracts.IReadWrit
 			<TransactionDetail label={t("TRANSACTION.DELEGATE_NAME")}>{senderWallet.username()}</TransactionDetail>
 
 			<div className="mt-2">
-				<TotalAmountBox fee={evaluateFee(getValues("fee"))} ticker={senderWallet.currency()} />
+				<TotalAmountBox fee={getValues("fee")} ticker={senderWallet.currency()} />
 			</div>
 		</section>
 	);

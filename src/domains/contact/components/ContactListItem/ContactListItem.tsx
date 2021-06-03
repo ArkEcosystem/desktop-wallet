@@ -60,7 +60,7 @@ export const ContactListItem = ({ item, variant, onAction, onSend, options }: Co
 
 							<TableCell className={borderClasses()} innerClassName="space-x-4">
 								<Avatar address={address.address()} size="lg" noShadow />
-								<Address address={address.address()} maxChars={isCondensed() ? 24 : undefined} />
+								<Address address={address.address()} />
 							</TableCell>
 
 							<TableCell className={borderClasses()} innerClassName="space-x-4 justify-center">

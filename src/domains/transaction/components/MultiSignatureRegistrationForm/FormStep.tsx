@@ -1,4 +1,4 @@
-import { Contracts } from "@arkecosystem/platform-sdk";
+import { Services } from "@arkecosystem/platform-sdk";
 import { Contracts as ProfilesContracts } from "@arkecosystem/platform-sdk-profiles";
 import { FormField, FormLabel } from "app/components/Form";
 import { Header } from "app/components/Header";
@@ -19,7 +19,7 @@ export const FormStep = ({
 	step = 0.001,
 }: {
 	profile: ProfilesContracts.IProfile;
-	fees: Contracts.TransactionFee;
+	fees: Services.TransactionFee;
 	wallet: ProfilesContracts.IReadWriteWallet;
 	step?: number;
 }) => {
@@ -99,13 +99,10 @@ export const FormStep = ({
 					min={fees.min}
 					avg={fees.avg}
 					max={fees.max}
-					defaultValue={fee || 0}
 					value={fee || 0}
 					step={step}
 					showFeeOptions={wallet.network().feeType() === "dynamic"}
-					onChange={(currency) =>
-						setValue("fee", currency.value, { shouldValidate: true, shouldDirty: true })
-					}
+					onChange={(value) => setValue("fee", value, { shouldValidate: true, shouldDirty: true })}
 				/>
 			</FormField>
 		</section>

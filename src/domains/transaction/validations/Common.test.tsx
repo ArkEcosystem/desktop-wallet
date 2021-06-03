@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/require-await */
-import { Coins } from "@arkecosystem/platform-sdk";
+import { Networks } from "@arkecosystem/platform-sdk";
 import { BigNumber } from "@arkecosystem/platform-sdk-support";
 import { renderHook } from "@testing-library/react-hooks";
 import { useTranslation } from "react-i18next";
@@ -8,7 +8,7 @@ import { env } from "utils/testing-library";
 import { common } from "./Common";
 
 let t: any;
-let network: Coins.Network;
+let network: Networks.Network;
 
 describe("Common", () => {
 	beforeAll(() => {

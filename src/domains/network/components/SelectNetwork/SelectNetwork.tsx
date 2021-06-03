@@ -1,4 +1,4 @@
-import { Coins } from "@arkecosystem/platform-sdk";
+import { Networks } from "@arkecosystem/platform-sdk";
 import cn from "classnames";
 import { NetworkOption } from "domains/network/components/NetworkOption";
 import { CoinNetworkExtended } from "domains/network/data";
@@ -9,11 +9,11 @@ import { useTranslation } from "react-i18next";
 
 import { SelectNetworkInput } from "./SelectNetworkInput";
 
-type Network = Coins.Network & { extra?: CoinNetworkExtended };
+type Network = Networks.Network & { extra?: CoinNetworkExtended };
 
 interface SelectNetworkProps {
-	selected?: Coins.Network;
-	networks: Coins.Network[];
+	selected?: Networks.Network;
+	networks: Networks.Network[];
 	placeholder?: string;
 	name?: string;
 	value?: string;
@@ -21,7 +21,7 @@ interface SelectNetworkProps {
 	disabled?: boolean;
 	hideOptions?: boolean;
 	onInputChange?: (value?: string, suggestion?: string) => void;
-	onSelect?: (network?: Coins.Network | null) => void;
+	onSelect?: (network?: Networks.Network | null) => void;
 }
 
 export const itemToString = (item: Network | null) => item?.extra?.displayName || "";
@@ -91,7 +91,7 @@ export const SelectNetwork = ({
 			let newSuggestion = "";
 
 			if (inputValue !== selectedItem?.extra?.displayName) {
-				const matches = items.filter((network: Coins.Network) => isMatch(inputValue, network));
+				const matches = items.filter((network: Networks.Network) => isMatch(inputValue, network));
 
 				if (matches.length > 0) {
 					newSuggestion = [inputValue, matches[0].extra?.displayName?.slice(inputValue.length)].join("");
@@ -108,7 +108,7 @@ export const SelectNetwork = ({
 		selectItem(selected || null);
 	}, [selectItem, selected, disabled]);
 
-	const toggleSelection = (item: Coins.Network) => {
+	const toggleSelection = (item: Networks.Network) => {
 		if (item.id() === selectedItem?.id()) {
 			setSuggestion("");
 			reset();
@@ -154,7 +154,9 @@ export const SelectNetwork = ({
 						onFocus: openMenu,
 						onKeyDown: (event: any) => {
 							if (event.key === "Tab" || event.key === "Enter") {
-								const firstMatch = items.find((network: Coins.Network) => isMatch(inputValue, network));
+								const firstMatch = items.find((network: Networks.Network) =>
+									isMatch(inputValue, network),
+								);
 								if (inputValue && firstMatch) {
 									selectItem(firstMatch);
 								}
@@ -176,7 +178,7 @@ export const SelectNetwork = ({
 					)}
 
 					<ul {...getMenuProps()} className="grid grid-cols-6 gap-3">
-						{publicNetworks.map((network: Coins.Network, index: number) => (
+						{publicNetworks.map((network: Networks.Network, index: number) => (
 							<NetworkOption
 								key={index}
 								disabled={disabled}
@@ -197,7 +199,7 @@ export const SelectNetwork = ({
 						)}
 
 						<ul {...getMenuProps()} className="grid grid-cols-6 gap-3">
-							{developmentNetworks.map((network: Coins.Network, index: number) => (
+							{developmentNetworks.map((network: Networks.Network, index: number) => (
 								<NetworkOption
 									key={index}
 									disabled={disabled}

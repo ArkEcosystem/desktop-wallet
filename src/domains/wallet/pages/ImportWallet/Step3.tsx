@@ -1,4 +1,4 @@
-import { Coins } from "@arkecosystem/platform-sdk";
+import { Networks } from "@arkecosystem/platform-sdk";
 import { Contracts } from "@arkecosystem/platform-sdk-profiles";
 import { BigNumber } from "@arkecosystem/platform-sdk-support";
 import { Address } from "app/components/Address";
@@ -27,7 +27,7 @@ export const ThirdStep = ({
 
 	// getValues does not get the value of `defaultValues` on first render
 	const [defaultNetwork] = useState(() => watch("network"));
-	const network: Coins.Network = getValues("network") || defaultNetwork;
+	const network: Networks.Network = getValues("network") || defaultNetwork;
 
 	const { t } = useTranslation();
 
@@ -46,7 +46,7 @@ export const ThirdStep = ({
 					borderPosition="bottom"
 					extra={<Avatar size="lg" address={address} />}
 				>
-					<Address address={address} maxChars={0} />
+					<Address address={address} />
 				</TransactionDetail>
 			</div>
 
