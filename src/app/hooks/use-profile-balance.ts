@@ -10,7 +10,7 @@ interface BalanceProps {
 export const useProfileBalance = ({ profile, isLoading = false }: BalanceProps) => {
 	const [convertedBalance, setConvertedBalance] = useState(BigNumber.ZERO);
 
-	const balance = profile?.convertedBalance();
+	const balance = profile?.status().isRestored() ? profile?.convertedBalance() : convertedBalance;
 
 	const updateBalance = useCallback(() => {
 		try {
@@ -20,7 +20,7 @@ export const useProfileBalance = ({ profile, isLoading = false }: BalanceProps) 
 		} catch {
 			// Ignore error from converted balance
 		}
-	}, [profile, balance]);
+	}, [balance, setConvertedBalance]);
 
 	useEffect(() => {
 		if (isLoading) {
@@ -32,7 +32,7 @@ export const useProfileBalance = ({ profile, isLoading = false }: BalanceProps) 
 		}
 
 		updateBalance();
-	}, [profile, isLoading, updateBalance, balance]);
+	}, [isLoading, updateBalance, balance, convertedBalance]);
 
 	return {
 		convertedBalance,
