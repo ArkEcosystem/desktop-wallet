@@ -11,8 +11,6 @@ export const common = (t: any) => ({
 					});
 				}
 
-				const feeSatoshi = BigNumber.make(fee);
-
 				if (!network?.coin()) {
 					return true;
 				}
@@ -24,10 +22,18 @@ export const common = (t: any) => ({
 					});
 				}
 
+				const feeSatoshi = BigNumber.make(fee);
+
 				if (feeSatoshi.isGreaterThan(balance)) {
 					return t("TRANSACTION.VALIDATION.LOW_BALANCE", {
 						balance: balance?.toHuman(),
 						coinId: network.coin(),
+					});
+				}
+
+				if (feeSatoshi.isZero() && network && !network.chargesZeroFees()) {
+					return t("COMMON.VALIDATION.FIELD_REQUIRED", {
+						field: t("COMMON.FEE"),
 					});
 				}
 
