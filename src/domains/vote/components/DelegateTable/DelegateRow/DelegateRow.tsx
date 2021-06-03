@@ -80,7 +80,7 @@ export const DelegateRow = ({
 					showExternalIcon={false}
 					isExternal
 				>
-					<Icon name="OpenExplorer" />
+					<Icon name="Redirect" />
 				</Link>
 			</TableCell>
 
