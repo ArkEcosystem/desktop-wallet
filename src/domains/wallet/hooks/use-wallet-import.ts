@@ -67,7 +67,7 @@ export const useWalletImport = ({ profile }: { profile: Contracts.IProfile }) =>
 					setTimeout(() => {
 						profile
 							.walletFactory()
-							.fromWIFWith({
+							.fromWIF({
 								coin: network.coin(),
 								network: network.id(),
 								wif: encryptedWif,

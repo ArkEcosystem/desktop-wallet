@@ -21,7 +21,7 @@ describe("useWalletImport", () => {
 		const wallet = profile.wallets().first();
 		const network = wallet.network();
 
-		const mockEncryptedWif = jest.spyOn(profile.walletFactory(), "fromWIFWith").mockImplementation(() => {
+		const mockEncryptedWif = jest.spyOn(profile.walletFactory(), "fromWIF").mockImplementation(() => {
 			throw new Error("error");
 		});
 
