@@ -493,6 +493,37 @@ exports[`SendDelegateResignation Delegate Resignation should change fee 1`] = `
                                 />
                               </div>
                             </div>
+                            <div
+                              class="absolute bottom-0 px-1 w-full"
+                            >
+                              <div
+                                class="flex flex-wrap justify-center"
+                                data-testid="Range"
+                              >
+                                <div
+                                  class="Range__Track-sc-10itqc2-0 sgjTD"
+                                  data-testid="Range__track"
+                                  style="transform: scale(1); cursor: pointer;"
+                                >
+                                  <div
+                                    class="Range__TrackFilled-sc-10itqc2-1 egFfKP"
+                                    data-testid="Range__track__filled"
+                                  >
+                                    <div
+                                      aria-valuemax="25"
+                                      aria-valuemin="1"
+                                      aria-valuenow="1"
+                                      class="Range__Thumb-sc-10itqc2-2 hXgqqU"
+                                      data-testid="Range__thumb"
+                                      draggable="false"
+                                      role="slider"
+                                      style="position: absolute; z-index: 0; cursor: grab; user-select: none; transform: translate(0px, 0px);"
+                                      tabindex="0"
+                                    />
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
                           </div>
                         </div>
                         <div
