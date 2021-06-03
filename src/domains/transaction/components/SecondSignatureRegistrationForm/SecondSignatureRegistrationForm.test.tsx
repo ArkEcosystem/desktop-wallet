@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/require-await */
-import { Contracts } from "@arkecosystem/platform-sdk";
+import { Contracts, Services } from "@arkecosystem/platform-sdk";
 import { BIP39 } from "@arkecosystem/platform-sdk-crypto";
 import { Contracts as ProfilesContracts } from "@arkecosystem/platform-sdk-profiles";
 import { BigNumber } from "@arkecosystem/platform-sdk-support";
@@ -21,15 +21,15 @@ describe("SecondSignatureRegistrationForm", () => {
 	const passphrase = "power return attend drink piece found tragic fire liar page disease combine";
 	let profile: ProfilesContracts.IProfile;
 	let wallet: ProfilesContracts.IReadWriteWallet;
-	let fees: Contracts.TransactionFee;
+	let fees: Services.TransactionFee;
 
 	beforeEach(() => {
 		profile = env.profiles().findById(getDefaultProfileId());
 		wallet = profile.wallets().first();
 		fees = {
 			min: "0",
-			max: (10 * 1e8).toFixed(0),
-			avg: (1.354 * 1e8).toFixed(0),
+			max: "10",
+			avg: "1.354",
 		};
 	});
 
@@ -88,7 +88,7 @@ describe("SecondSignatureRegistrationForm", () => {
 			fireEvent.click(screen.getByText(transactionTranslations.FEES.AVERAGE));
 		});
 
-		await waitFor(() => expect(result.current.getValues("fee")).toEqual("135400000"));
+		await waitFor(() => expect(result.current.getValues("fee")).toEqual("1.354"));
 	});
 
 	describe("backup step", () => {
@@ -282,7 +282,7 @@ describe("SecondSignatureRegistrationForm", () => {
 		const form = {
 			clearErrors: jest.fn(),
 			getValues: () => ({
-				fee: { display: "1", value: "100000000" },
+				fee: "1",
 				mnemonic: "sample passphrase",
 				senderAddress: wallet.address(),
 				secondMnemonic: "second sample passphrase",
@@ -368,7 +368,7 @@ describe("SecondSignatureRegistrationForm", () => {
 		const form = {
 			clearErrors: jest.fn(),
 			getValues: () => ({
-				fee: { display: "1", value: "100000000" },
+				fee: "1",
 				senderAddress: wallet.address(),
 				encryptionPassword: "password",
 			}),

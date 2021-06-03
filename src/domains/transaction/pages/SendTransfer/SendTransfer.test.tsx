@@ -198,7 +198,7 @@ describe("SendTransfer", () => {
 		const { result: form } = renderHook(() =>
 			useForm({
 				defaultValues: {
-					fee: (0.1 * 1e8).toFixed(0),
+					fee: "0.1",
 					recipients: [
 						{
 							address: wallet.address(),
@@ -1091,7 +1091,7 @@ describe("SendTransfer", () => {
 		expect(signMock).toHaveBeenCalledWith(
 			expect.objectContaining({
 				data: expect.anything(),
-				fee: "357000",
+				fee: "0.00357",
 				nonce: expect.any(String),
 				sign: {
 					multiSignature: {

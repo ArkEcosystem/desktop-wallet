@@ -36,7 +36,7 @@ describe("useProfileAddresses", () => {
 	});
 
 	it("should filter address by selected network", async () => {
-		const wallet = await profile.walletFactory().fromMnemonic({
+		const wallet = await profile.walletFactory().fromMnemonicWithBIP39({
 			mnemonic: "test",
 			coin: "ARK",
 			network: "ark.mainnet",

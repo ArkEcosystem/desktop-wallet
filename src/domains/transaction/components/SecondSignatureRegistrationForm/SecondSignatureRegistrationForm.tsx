@@ -1,4 +1,4 @@
-import { Contracts } from "@arkecosystem/platform-sdk";
+import { Contracts, Services } from "@arkecosystem/platform-sdk";
 import { Contracts as ProfilesContracts } from "@arkecosystem/platform-sdk-profiles";
 import { Circle } from "app/components/Circle";
 import { Icon } from "app/components/Icon";
@@ -16,7 +16,7 @@ const component = ({
 	wallet,
 }: {
 	activeTab: number;
-	fees: Contracts.TransactionFee;
+	fees: Services.TransactionFee;
 	wallet: ProfilesContracts.IReadWriteWallet;
 }) => (
 	<Tabs activeId={activeTab}>

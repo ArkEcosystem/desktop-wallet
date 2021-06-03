@@ -85,7 +85,7 @@ describe("SendIpfs", () => {
 		const { result: form } = renderHook(() =>
 			useForm({
 				defaultValues: {
-					fee: (0.1 * 1e8).toFixed(0),
+					fee: "0.1",
 					hash: "QmXoypizjW3WknFiJnKLwHCnL72vedxjQkDDP1mXWo6uco",
 					senderAddress: wallet.address(),
 				},

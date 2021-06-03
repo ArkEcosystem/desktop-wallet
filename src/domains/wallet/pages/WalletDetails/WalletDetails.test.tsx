@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/require-await */
-import { Coins } from "@arkecosystem/platform-sdk";
+import { Enums } from "@arkecosystem/platform-sdk";
 import { Contracts } from "@arkecosystem/platform-sdk-profiles";
 // @README: This import is fine in tests but should be avoided in production code.
 import { ReadOnlyWallet } from "@arkecosystem/platform-sdk-profiles/dist/drivers/memory/wallets/read-only-wallet";
@@ -87,13 +87,13 @@ describe("WalletDetails", () => {
 		await profile.sync();
 
 		wallet = profile.wallets().findById("ac38fe6d-4b67-4ef1-85be-17c5f6841129");
-		blankWallet = await profile.walletFactory().fromMnemonic({
+		blankWallet = await profile.walletFactory().fromMnemonicWithBIP39({
 			mnemonic: passphrase2,
 			coin: "ARK",
 			network: "ark.devnet",
 		});
 
-		unvotedWallet = await profile.walletFactory().fromMnemonic({
+		unvotedWallet = await profile.walletFactory().fromMnemonicWithBIP39({
 			mnemonic: "unvoted wallet",
 			coin: "ARK",
 			network: "ark.devnet",
@@ -101,7 +101,7 @@ describe("WalletDetails", () => {
 
 		emptyProfile = env.profiles().findById("cba050f1-880f-45f0-9af9-cfe48f406052");
 
-		wallet2 = await emptyProfile.walletFactory().fromMnemonic({
+		wallet2 = await emptyProfile.walletFactory().fromMnemonicWithBIP39({
 			mnemonic: "wallet 2",
 			coin: "ARK",
 			network: "ark.devnet",
@@ -170,7 +170,7 @@ describe("WalletDetails", () => {
 	it("should not render wallet vote when the network does not support votes", async () => {
 		const networkFeatureSpy = jest.spyOn(wallet.network(), "allowsVoting");
 
-		when(networkFeatureSpy).calledWith(Coins.FeatureFlag.TransactionVote).mockReturnValue(false);
+		when(networkFeatureSpy).calledWith(Enums.FeatureFlag.TransactionVote).mockReturnValue(false);
 
 		const { getByTestId } = await renderPage({ waitForTopSection: false });
 
@@ -433,7 +433,7 @@ describe("WalletDetails", () => {
 	});
 
 	it("should not fail if the votes have not yet been synchronized", async () => {
-		const newWallet = await profile.walletFactory().fromMnemonic({
+		const newWallet = await profile.walletFactory().fromMnemonicWithBIP39({
 			mnemonic: "test mnemonic",
 			coin: "ARK",
 			network: "ark.devnet",

@@ -1,4 +1,4 @@
-import { Contracts } from "@arkecosystem/platform-sdk";
+import { Contracts, Services } from "@arkecosystem/platform-sdk";
 import { Button } from "app/components/Button";
 import { Form } from "app/components/Form";
 import { Page, Section } from "app/components/Layout";
@@ -83,7 +83,7 @@ export const SendIpfs = () => {
 			encryptionPassword,
 		});
 
-		const transactionInput: Contracts.IpfsInput = {
+		const transactionInput: Services.IpfsInput = {
 			fee,
 			signatory,
 			data: { hash },
@@ -152,7 +152,7 @@ export const SendIpfs = () => {
 	return (
 		<Page profile={activeProfile}>
 			<Section className="flex-1">
-				<Form className="mx-auto max-w-xl" context={form} onSubmit={submitForm}>
+				<Form className="max-w-xl mx-auto" context={form} onSubmit={submitForm}>
 					<Tabs activeId={activeTab}>
 						<StepIndicator size={4} activeIndex={activeTab} />
 

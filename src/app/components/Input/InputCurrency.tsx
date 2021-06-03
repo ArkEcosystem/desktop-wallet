@@ -1,60 +1,36 @@
 import { Currency } from "@arkecosystem/platform-sdk-intl";
-import React, { useCallback, useEffect, useLayoutEffect, useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 
 import { Input } from "./Input";
 
 type Props = {
 	addons?: any;
 	onChange?: (value: any) => void;
-	magnitude?: number;
 	as?: React.ElementType<any>;
 } & Omit<React.InputHTMLAttributes<any>, "onChange" | "defaultValue">;
 
-interface ISelectionRange {
-	start: number | null;
-	end: number | null;
-}
+const sanitize = (value?: string) => Currency.fromString(value || "").display;
 
 export const InputCurrency = React.forwardRef<HTMLInputElement, Props>(
-	({ onChange, value, as: Component, magnitude, children, ...props }: Props, ref: any) => {
-		const convertValue = useCallback((value?: string) => Currency.fromString(value || "", magnitude), [magnitude]);
+	({ onChange, value, as: Component, children, ...props }: Props, ref: any) => {
+		const [amount, setAmount] = useState<string>(sanitize(value?.toString()));
 
-		const [amount, setAmount] = useState<any>(convertValue(value?.toString()));
-		const [selectionRange, setSelectionRange] = useState<ISelectionRange>({
-			start: null,
-			end: null,
-		});
+		useEffect(() => {
+			// when value is changed outside, update amount as well
+			setAmount(sanitize(value?.toString()));
+		}, [value]);
 
 		ref = useRef<HTMLInputElement>();
 
-		useEffect(() => {
-			const evaluateValue = (value: any) => {
-				if (value?.display) {
-					return value;
-				}
-
-				return convertValue(value?.toString());
-			};
-
-			setAmount(evaluateValue(value));
-		}, [value]); // eslint-disable-line react-hooks/exhaustive-deps
-
 		const handleInput = (event: React.ChangeEvent<HTMLInputElement>) => {
-			const { value, selectionStart, selectionEnd } = event.target;
+			const sanitizedValue = sanitize(event.target.value);
 
-			setSelectionRange({ start: selectionStart, end: selectionEnd });
-
-			onChange?.(convertValue(value));
-
-			setAmount(convertValue(value));
+			setAmount(sanitizedValue);
+			onChange?.(sanitizedValue);
 		};
 
-		useLayoutEffect(() => {
-			ref.current.setSelectionRange(selectionRange.start, selectionRange.end);
-		}, [amount, ref, selectionRange.start, selectionRange.end]);
-
 		if (Component) {
-			return <Component value={amount.display} onChange={handleInput} ref={ref} {...props} />;
+			return <Component value={amount} onChange={handleInput} ref={ref} {...props} />;
 		}
 
 		return (
@@ -62,7 +38,7 @@ export const InputCurrency = React.forwardRef<HTMLInputElement, Props>(
 				<Input
 					data-testid="InputCurrency"
 					type="text"
-					value={amount.display}
+					value={amount}
 					onChange={handleInput}
 					ref={ref}
 					{...props}
@@ -74,6 +50,3 @@ export const InputCurrency = React.forwardRef<HTMLInputElement, Props>(
 );
 
 InputCurrency.displayName = "InputCurrency";
-InputCurrency.defaultProps = {
-	magnitude: 8,
-};
