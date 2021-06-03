@@ -1,4 +1,4 @@
-import { Coins } from "@arkecosystem/platform-sdk";
+import { Enums } from "@arkecosystem/platform-sdk";
 import { Contracts } from "@arkecosystem/platform-sdk-profiles";
 import { Amount } from "app/components/Amount";
 import { Avatar } from "app/components/Avatar";
@@ -102,7 +102,7 @@ export const WalletHeader = ({
 
 	if (!wallet.isLedger() && wallet.hasBeenFullyRestored()) {
 		if (wallet.hasSyncedWithNetwork()) {
-			if (wallet.network().allows(Coins.FeatureFlag.TransactionDelegateRegistration) && !wallet.isDelegate()) {
+			if (wallet.network().allows(Enums.FeatureFlag.TransactionDelegateRegistration) && !wallet.isDelegate()) {
 				registrationOptions.options.push({
 					label: t("WALLETS.PAGE_WALLET_DETAILS.OPTIONS.REGISTER_DELEGATE"),
 					value: "delegate-registration",
@@ -110,7 +110,7 @@ export const WalletHeader = ({
 			}
 
 			if (
-				wallet.network().allows(Coins.FeatureFlag.TransactionDelegateResignation) &&
+				wallet.network().allows(Enums.FeatureFlag.TransactionDelegateResignation) &&
 				wallet.isDelegate() &&
 				!wallet.isResignedDelegate()
 			) {
@@ -120,7 +120,7 @@ export const WalletHeader = ({
 				});
 			}
 
-			if (wallet.network().allows(Coins.FeatureFlag.TransactionSecondSignature) && !wallet.isSecondSignature()) {
+			if (wallet.network().allows(Enums.FeatureFlag.TransactionSecondSignature) && !wallet.isSecondSignature()) {
 				registrationOptions.options.push({
 					label: t("WALLETS.PAGE_WALLET_DETAILS.OPTIONS.SECOND_SIGNATURE"),
 					value: "second-signature",
@@ -128,7 +128,7 @@ export const WalletHeader = ({
 			}
 		}
 
-		if (wallet.network().allows(Coins.FeatureFlag.TransactionMultiSignature)) {
+		if (wallet.network().allows(Enums.FeatureFlag.TransactionMultiSignature)) {
 			registrationOptions.options.push({
 				label: t("WALLETS.PAGE_WALLET_DETAILS.OPTIONS.MULTISIGNATURE"),
 				value: "multi-signature",
@@ -142,14 +142,14 @@ export const WalletHeader = ({
 		options: [],
 	};
 
-	if (wallet.network().allows(Coins.FeatureFlag.MessageSign)) {
+	if (wallet.network().allows(Enums.FeatureFlag.MessageSign)) {
 		additionalOptions.options.push({
 			label: t("WALLETS.PAGE_WALLET_DETAILS.OPTIONS.SIGN_MESSAGE"),
 			value: "sign-message",
 		});
 	}
 
-	if (wallet.network().allows(Coins.FeatureFlag.MessageVerify)) {
+	if (wallet.network().allows(Enums.FeatureFlag.MessageVerify)) {
 		additionalOptions.options.push({
 			label: t("WALLETS.PAGE_WALLET_DETAILS.OPTIONS.VERIFY_MESSAGE"),
 			value: "verify-message",
@@ -157,7 +157,7 @@ export const WalletHeader = ({
 	}
 
 	if (
-		wallet.network().allows(Coins.FeatureFlag.TransactionIpfs) &&
+		wallet.network().allows(Enums.FeatureFlag.TransactionIpfs) &&
 		wallet.hasBeenFullyRestored() &&
 		wallet.hasSyncedWithNetwork()
 	) {
@@ -345,7 +345,7 @@ export const WalletHeader = ({
 						/>
 					</div>
 
-					<div className="my-auto flex items-center -space-x-2">
+					<div className="flex items-center my-auto -space-x-2">
 						<Tooltip
 							content={isSyncing ? t("WALLETS.UPDATING_WALLET_DATA") : t("WALLETS.UPDATE_WALLET_DATA")}
 							disabled={!wallet.hasSyncedWithNetwork()}
@@ -407,7 +407,7 @@ export const WalletHeader = ({
 								<Button
 									variant="transparent"
 									size="icon"
-									className="bg-theme-secondary-800 text-white hover:bg-theme-primary-700"
+									className="text-white bg-theme-secondary-800 hover:bg-theme-primary-700"
 								>
 									<Icon name="Settings" width={20} height={20} />
 								</Button>

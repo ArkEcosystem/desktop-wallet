@@ -1,4 +1,4 @@
-import { Contracts, Http } from "@arkecosystem/platform-sdk";
+import { AbstractRequest, HttpResponse, Response } from "@arkecosystem/platform-sdk-http";
 import crossFetch from "cross-fetch";
 import { SocksProxyAgent } from "socks-proxy-agent";
 import hash from "string-hash";
@@ -9,7 +9,7 @@ import { Cache } from "./Cache";
 /* istanbul ignore next */
 const fetch = process.env.REACT_APP_IS_E2E ? window.fetch : crossFetch;
 
-export class HttpClient extends Http.Request {
+export class HttpClient extends AbstractRequest {
 	private readonly cache: Cache;
 
 	public constructor(ttl: number) {
@@ -37,7 +37,7 @@ export class HttpClient extends Http.Request {
 			query?: object;
 			data?: any;
 		},
-	): Promise<Contracts.HttpResponse> {
+	): Promise<HttpResponse> {
 		if (data?.query && Object.keys(data?.query).length > 0) {
 			url = `${url}?${new URLSearchParams(data.query as any)}`;
 		}
@@ -64,9 +64,7 @@ export class HttpClient extends Http.Request {
 				throw new Error("Received no response. This looks like a bug.");
 			}
 
-			// console.timeEnd(url);
-
-			return new Http.Response({
+			return new Response({
 				body: await response.text(),
 				headers: (response.headers as unknown) as Record<string, Primitive>,
 				statusCode: response.status,

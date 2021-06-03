@@ -85,9 +85,7 @@ export const FormStep = ({
 					value={fee}
 					step={0.01}
 					showFeeOptions={senderWallet.network().feeType() === "dynamic"}
-					onChange={(currency) =>
-						setValue("fee", currency.value, { shouldValidate: true, shouldDirty: true })
-					}
+					onChange={(value) => setValue("fee", value, { shouldValidate: true, shouldDirty: true })}
 				/>
 			</FormField>
 		</section>

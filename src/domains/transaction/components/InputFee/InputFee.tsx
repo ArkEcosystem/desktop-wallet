@@ -3,86 +3,76 @@ import { InputRange } from "app/components/Input";
 import React, { memo } from "react";
 import { useTranslation } from "react-i18next";
 
-import { useFeeFormat } from "./hooks";
-
-export interface InputFee {
-	display: string;
-	value?: string;
-}
-
 export interface InputFeeProps {
-	defaultValue?: any;
-	value?: any;
+	value: string;
 	min: string;
 	avg: string;
 	max: string;
 	step: number;
 	showFeeOptions?: boolean;
-	onChange?: (value: InputFee) => void;
+	onChange: (value: string) => void;
 }
 
-export const InputFee = memo(
-	({ defaultValue, value, avg, min, max, onChange, step, showFeeOptions }: InputFeeProps) => {
-		const { t } = useTranslation();
+export const InputFee = memo(({ onChange, step, showFeeOptions, ...props }: InputFeeProps) => {
+	const { t } = useTranslation();
 
-		const { fee, toHuman, updateFee } = useFeeFormat({ defaultValue, value, avg });
+	const value = props.value || "";
+	const avg = +props.avg;
+	const min = +props.min;
+	const max = +props.max;
 
-		const avgHuman = toHuman(avg);
-		const minHuman = toHuman(min);
-		const maxHuman = toHuman(max);
+	const handleFeeChange = (feeValue: string): void => {
+		onChange(feeValue);
+	};
 
-		const handleFeeChange = (currency: InputFee) => {
-			updateFee(currency);
-			onChange?.(currency);
-		};
+	const isOptionDisabled = (value: number) => value === 0 || (min === avg && avg === max);
 
-		const isOptionDisabled = (value: string) => value === "0" || (min === avg && avg === max);
-
-		return (
-			<div data-testid="InputFee" className="flex space-x-2">
-				<div className="flex-1">
-					<InputRange
-						disabled={!showFeeOptions}
-						name="fee"
-						value={fee}
-						min={minHuman}
-						max={maxHuman}
-						step={step}
-						onChange={handleFeeChange}
-					/>
-				</div>
-
-				{showFeeOptions && (
-					<ButtonGroup>
-						<ButtonGroupOption
-							disabled={isOptionDisabled(min)}
-							value={minHuman}
-							isSelected={() => !isOptionDisabled(min) && fee.value === min}
-							setSelectedValue={() => handleFeeChange({ display: minHuman, value: min })}
-						>
-							{t("TRANSACTION.FEES.SLOW")}
-						</ButtonGroupOption>
-
-						<ButtonGroupOption
-							disabled={isOptionDisabled(avg)}
-							value={avgHuman}
-							isSelected={() => !isOptionDisabled(avg) && fee.value === avg}
-							setSelectedValue={() => handleFeeChange({ display: avgHuman, value: avg })}
-						>
-							{t("TRANSACTION.FEES.AVERAGE")}
-						</ButtonGroupOption>
-
-						<ButtonGroupOption
-							disabled={isOptionDisabled(max)}
-							value={maxHuman}
-							isSelected={() => !isOptionDisabled(max) && fee.value === max}
-							setSelectedValue={() => handleFeeChange({ display: maxHuman, value: max })}
-						>
-							{t("TRANSACTION.FEES.FAST")}
-						</ButtonGroupOption>
-					</ButtonGroup>
-				)}
+	return (
+		<div data-testid="InputFee" className="flex space-x-2">
+			<div className="flex-1">
+				<InputRange
+					disabled={!showFeeOptions}
+					name="fee"
+					value={value}
+					min={+min}
+					max={+max}
+					step={step}
+					onChange={handleFeeChange}
+				/>
 			</div>
-		);
-	},
-);
+
+			{showFeeOptions && (
+				<ButtonGroup>
+					<ButtonGroupOption
+						disabled={isOptionDisabled(min)}
+						value={min}
+						isSelected={() => !isOptionDisabled(min) && +value === min}
+						setSelectedValue={() => handleFeeChange(`${min}`)}
+					>
+						{t("TRANSACTION.FEES.SLOW")}
+					</ButtonGroupOption>
+
+					<ButtonGroupOption
+						disabled={isOptionDisabled(avg)}
+						value={avg}
+						isSelected={() => !isOptionDisabled(avg) && +value === avg}
+						setSelectedValue={() => handleFeeChange(`${avg}`)}
+					>
+						{t("TRANSACTION.FEES.AVERAGE")}
+					</ButtonGroupOption>
+
+					<ButtonGroupOption
+						disabled={isOptionDisabled(max)}
+						value={max}
+						isSelected={() => !isOptionDisabled(max) && +value === max}
+						setSelectedValue={() => handleFeeChange(`${max}`)}
+					>
+						{t("TRANSACTION.FEES.FAST")}
+					</ButtonGroupOption>
+				</ButtonGroup>
+			)}
+		</div>
+	);
+});
+
+InputFee.displayName = "InputFee";

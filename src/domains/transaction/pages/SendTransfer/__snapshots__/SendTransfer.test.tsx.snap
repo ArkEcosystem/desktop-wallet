@@ -7,10 +7,10 @@ exports[`SendTransfer should display disabled address selection input if selecte
   >
     <nav
       aria-labelledby="main menu"
-      class="NavigationBar__NavWrapper-sc-1qsoskw-0 bNXdkF"
+      class="NavigationBar__NavWrapper-sc-1qsoskw-0 bewuLZ"
     >
       <div
-        class="flex relative h-21"
+        class="relative flex h-21"
       >
         <button
           class="BackButton__StyledBackButton-sc-1pe22tv-0 hLgyWD flex w-12"
@@ -32,7 +32,7 @@ exports[`SendTransfer should display disabled address selection input if selecte
             class="flex items-center my-auto"
           >
             <div
-              class="NavigationBar__LogoContainer-sc-1qsoskw-2 tulfg"
+              class="NavigationBar__LogoContainer-sc-1qsoskw-2 itrWMc"
             >
               <svg
                 width="44"
@@ -42,7 +42,7 @@ exports[`SendTransfer should display disabled address selection input if selecte
             </div>
           </div>
           <ul
-            class="flex mr-auto ml-4 space-x-8 h-21"
+            class="flex ml-4 mr-auto space-x-8 h-21"
           >
             <li
               class="flex"
@@ -256,7 +256,7 @@ exports[`SendTransfer should display disabled address selection input if selecte
                   data-testid="dropdown__toggle"
                 >
                   <div
-                    class="cursor-pointer relative justify-center items-center align-middle rounded-full"
+                    class="relative items-center justify-center align-middle rounded-full cursor-pointer"
                     data-testid="navbar__useractions"
                   >
                     <div
@@ -635,7 +635,7 @@ exports[`SendTransfer should display disabled address selection input if selecte
                                 </label>
                                 <div>
                                   <div
-                                    class="flex relative items-center w-full text-left"
+                                    class="relative flex items-center w-full text-left"
                                     data-testid="SelectRecipient__wrapper"
                                   >
                                     <div
@@ -669,12 +669,12 @@ exports[`SendTransfer should display disabled address selection input if selecte
                                         <div
                                           aria-expanded="false"
                                           aria-haspopup="listbox"
-                                          aria-owns="downshift-41-menu"
+                                          aria-owns="downshift-43-menu"
                                           role="combobox"
                                         >
                                           <label
-                                            for="downshift-41-input"
-                                            id="downshift-41-label"
+                                            for="downshift-43-input"
+                                            id="downshift-43-label"
                                           />
                                           <div
                                             class="fixed invisible w-auto whitespace-nowrap"
@@ -693,14 +693,14 @@ exports[`SendTransfer should display disabled address selection input if selecte
                                             >
                                               <input
                                                 aria-autocomplete="list"
-                                                aria-controls="downshift-41-menu"
+                                                aria-controls="downshift-43-menu"
                                                 aria-invalid="false"
-                                                aria-labelledby="downshift-41-label"
+                                                aria-labelledby="downshift-43-label"
                                                 autocomplete="off"
                                                 class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full cursor-default text-theme-secondary-text"
                                                 data-testid="SelectDropdown__input"
                                                 disabled=""
-                                                id="downshift-41-input"
+                                                id="downshift-43-input"
                                                 name="recipientAddress"
                                                 placeholder="Address"
                                                 value=""
@@ -730,9 +730,9 @@ exports[`SendTransfer should display disabled address selection input if selecte
                                             </div>
                                           </div>
                                           <ul
-                                            aria-labelledby="downshift-41-label"
+                                            aria-labelledby="downshift-43-label"
                                             class="styles__SelectOptionsList-b2falt-0 dyOwRR"
-                                            id="downshift-41-menu"
+                                            id="downshift-43-menu"
                                             role="listbox"
                                           />
                                         </div>
@@ -1012,10 +1012,10 @@ exports[`SendTransfer should display unconfirmed transactions modal when submitt
   >
     <nav
       aria-labelledby="main menu"
-      class="NavigationBar__NavWrapper-sc-1qsoskw-0 bNXdkF"
+      class="NavigationBar__NavWrapper-sc-1qsoskw-0 bewuLZ"
     >
       <div
-        class="flex relative h-21"
+        class="relative flex h-21"
       >
         <button
           class="BackButton__StyledBackButton-sc-1pe22tv-0 hLgyWD flex w-12"
@@ -1037,7 +1037,7 @@ exports[`SendTransfer should display unconfirmed transactions modal when submitt
             class="flex items-center my-auto"
           >
             <div
-              class="NavigationBar__LogoContainer-sc-1qsoskw-2 tulfg"
+              class="NavigationBar__LogoContainer-sc-1qsoskw-2 itrWMc"
             >
               <svg
                 width="44"
@@ -1047,7 +1047,7 @@ exports[`SendTransfer should display unconfirmed transactions modal when submitt
             </div>
           </div>
           <ul
-            class="flex mr-auto ml-4 space-x-8 h-21"
+            class="flex ml-4 mr-auto space-x-8 h-21"
           >
             <li
               class="flex"
@@ -1261,7 +1261,7 @@ exports[`SendTransfer should display unconfirmed transactions modal when submitt
                   data-testid="dropdown__toggle"
                 >
                   <div
-                    class="cursor-pointer relative justify-center items-center align-middle rounded-full"
+                    class="relative items-center justify-center align-middle rounded-full cursor-pointer"
                     data-testid="navbar__useractions"
                   >
                     <div
@@ -1910,10 +1910,10 @@ exports[`SendTransfer should error if wrong mnemonic 1`] = `
   >
     <nav
       aria-labelledby="main menu"
-      class="NavigationBar__NavWrapper-sc-1qsoskw-0 bNXdkF"
+      class="NavigationBar__NavWrapper-sc-1qsoskw-0 bewuLZ"
     >
       <div
-        class="flex relative h-21"
+        class="relative flex h-21"
       >
         <button
           class="BackButton__StyledBackButton-sc-1pe22tv-0 hLgyWD flex w-12"
@@ -1935,7 +1935,7 @@ exports[`SendTransfer should error if wrong mnemonic 1`] = `
             class="flex items-center my-auto"
           >
             <div
-              class="NavigationBar__LogoContainer-sc-1qsoskw-2 tulfg"
+              class="NavigationBar__LogoContainer-sc-1qsoskw-2 itrWMc"
             >
               <svg
                 width="44"
@@ -1945,7 +1945,7 @@ exports[`SendTransfer should error if wrong mnemonic 1`] = `
             </div>
           </div>
           <ul
-            class="flex mr-auto ml-4 space-x-8 h-21"
+            class="flex ml-4 mr-auto space-x-8 h-21"
           >
             <li
               class="flex"
@@ -2159,7 +2159,7 @@ exports[`SendTransfer should error if wrong mnemonic 1`] = `
                   data-testid="dropdown__toggle"
                 >
                   <div
-                    class="cursor-pointer relative justify-center items-center align-middle rounded-full"
+                    class="relative items-center justify-center align-middle rounded-full cursor-pointer"
                     data-testid="navbar__useractions"
                   >
                     <div
@@ -2641,7 +2641,7 @@ exports[`SendTransfer should render 1st step with custom deeplink values and use
                 </label>
                 <div>
                   <div
-                    class="flex relative items-center w-full text-left"
+                    class="relative flex items-center w-full text-left"
                     data-testid="SelectRecipient__wrapper"
                   >
                     <div
@@ -2921,10 +2921,10 @@ exports[`SendTransfer should render form and use location state 1`] = `
   >
     <nav
       aria-labelledby="main menu"
-      class="NavigationBar__NavWrapper-sc-1qsoskw-0 bNXdkF"
+      class="NavigationBar__NavWrapper-sc-1qsoskw-0 bewuLZ"
     >
       <div
-        class="flex relative h-21"
+        class="relative flex h-21"
       >
         <button
           class="BackButton__StyledBackButton-sc-1pe22tv-0 hLgyWD flex w-12"
@@ -2946,7 +2946,7 @@ exports[`SendTransfer should render form and use location state 1`] = `
             class="flex items-center my-auto"
           >
             <div
-              class="NavigationBar__LogoContainer-sc-1qsoskw-2 tulfg"
+              class="NavigationBar__LogoContainer-sc-1qsoskw-2 itrWMc"
             >
               <svg
                 width="44"
@@ -2956,7 +2956,7 @@ exports[`SendTransfer should render form and use location state 1`] = `
             </div>
           </div>
           <ul
-            class="flex mr-auto ml-4 space-x-8 h-21"
+            class="flex ml-4 mr-auto space-x-8 h-21"
           >
             <li
               class="flex"
@@ -3170,7 +3170,7 @@ exports[`SendTransfer should render form and use location state 1`] = `
                   data-testid="dropdown__toggle"
                 >
                   <div
-                    class="cursor-pointer relative justify-center items-center align-middle rounded-full"
+                    class="relative items-center justify-center align-middle rounded-full cursor-pointer"
                     data-testid="navbar__useractions"
                   >
                     <div
@@ -3575,7 +3575,7 @@ exports[`SendTransfer should render form and use location state 1`] = `
                                 </label>
                                 <div>
                                   <div
-                                    class="flex relative items-center w-full text-left"
+                                    class="relative flex items-center w-full text-left"
                                     data-testid="SelectRecipient__wrapper"
                                   >
                                     <div
@@ -3742,7 +3742,7 @@ exports[`SendTransfer should render form and use location state 1`] = `
                                             <span
                                               class="whitespace-no-break font-semibold text-sm text-theme-secondary-500 dark:text-theme-secondary-700"
                                             >
-                                              Max 33.67769203
+                                              Max 33.75089801
                                             </span>
                                           </div>
                                         </div>
@@ -3971,10 +3971,10 @@ exports[`SendTransfer should render form and use location state without memo 1`]
   >
     <nav
       aria-labelledby="main menu"
-      class="NavigationBar__NavWrapper-sc-1qsoskw-0 bNXdkF"
+      class="NavigationBar__NavWrapper-sc-1qsoskw-0 bewuLZ"
     >
       <div
-        class="flex relative h-21"
+        class="relative flex h-21"
       >
         <button
           class="BackButton__StyledBackButton-sc-1pe22tv-0 hLgyWD flex w-12"
@@ -3996,7 +3996,7 @@ exports[`SendTransfer should render form and use location state without memo 1`]
             class="flex items-center my-auto"
           >
             <div
-              class="NavigationBar__LogoContainer-sc-1qsoskw-2 tulfg"
+              class="NavigationBar__LogoContainer-sc-1qsoskw-2 itrWMc"
             >
               <svg
                 width="44"
@@ -4006,7 +4006,7 @@ exports[`SendTransfer should render form and use location state without memo 1`]
             </div>
           </div>
           <ul
-            class="flex mr-auto ml-4 space-x-8 h-21"
+            class="flex ml-4 mr-auto space-x-8 h-21"
           >
             <li
               class="flex"
@@ -4220,7 +4220,7 @@ exports[`SendTransfer should render form and use location state without memo 1`]
                   data-testid="dropdown__toggle"
                 >
                   <div
-                    class="cursor-pointer relative justify-center items-center align-middle rounded-full"
+                    class="relative items-center justify-center align-middle rounded-full cursor-pointer"
                     data-testid="navbar__useractions"
                   >
                     <div
@@ -4625,7 +4625,7 @@ exports[`SendTransfer should render form and use location state without memo 1`]
                                 </label>
                                 <div>
                                   <div
-                                    class="flex relative items-center w-full text-left"
+                                    class="relative flex items-center w-full text-left"
                                     data-testid="SelectRecipient__wrapper"
                                   >
                                     <div
@@ -4781,7 +4781,7 @@ exports[`SendTransfer should render form and use location state without memo 1`]
                                             <span
                                               class="whitespace-no-break font-semibold text-sm text-theme-secondary-500 dark:text-theme-secondary-700"
                                             >
-                                              Max 33.67769203
+                                              Max 33.75089801
                                             </span>
                                           </div>
                                         </div>
@@ -5270,7 +5270,7 @@ exports[`SendTransfer should render form step 1`] = `
                 </label>
                 <div>
                   <div
-                    class="flex relative items-center w-full text-left"
+                    class="relative flex items-center w-full text-left"
                     data-testid="SelectRecipient__wrapper"
                   >
                     <div
@@ -5810,7 +5810,7 @@ exports[`SendTransfer should render form step with deeplink values and use them 
                 </label>
                 <div>
                   <div
-                    class="flex relative items-center w-full text-left"
+                    class="relative flex items-center w-full text-left"
                     data-testid="SelectRecipient__wrapper"
                   >
                     <div
@@ -6350,7 +6350,7 @@ exports[`SendTransfer should render form step without test networks 1`] = `
                 </label>
                 <div>
                   <div
-                    class="flex relative items-center w-full text-left"
+                    class="relative flex items-center w-full text-left"
                     data-testid="SelectRecipient__wrapper"
                   >
                     <div
@@ -6630,10 +6630,10 @@ exports[`SendTransfer should render network selection without selected wallet 1`
   >
     <nav
       aria-labelledby="main menu"
-      class="NavigationBar__NavWrapper-sc-1qsoskw-0 bNXdkF"
+      class="NavigationBar__NavWrapper-sc-1qsoskw-0 bewuLZ"
     >
       <div
-        class="flex relative h-21"
+        class="relative flex h-21"
       >
         <button
           class="BackButton__StyledBackButton-sc-1pe22tv-0 hLgyWD flex w-12"
@@ -6655,7 +6655,7 @@ exports[`SendTransfer should render network selection without selected wallet 1`
             class="flex items-center my-auto"
           >
             <div
-              class="NavigationBar__LogoContainer-sc-1qsoskw-2 tulfg"
+              class="NavigationBar__LogoContainer-sc-1qsoskw-2 itrWMc"
             >
               <svg
                 width="44"
@@ -6665,7 +6665,7 @@ exports[`SendTransfer should render network selection without selected wallet 1`
             </div>
           </div>
           <ul
-            class="flex mr-auto ml-4 space-x-8 h-21"
+            class="flex ml-4 mr-auto space-x-8 h-21"
           >
             <li
               class="flex"
@@ -6879,7 +6879,7 @@ exports[`SendTransfer should render network selection without selected wallet 1`
                   data-testid="dropdown__toggle"
                 >
                   <div
-                    class="cursor-pointer relative justify-center items-center align-middle rounded-full"
+                    class="relative items-center justify-center align-middle rounded-full cursor-pointer"
                     data-testid="navbar__useractions"
                   >
                     <div
@@ -7841,10 +7841,10 @@ exports[`SendTransfer should select a cryptoasset and select sender without wall
   >
     <nav
       aria-labelledby="main menu"
-      class="NavigationBar__NavWrapper-sc-1qsoskw-0 bNXdkF"
+      class="NavigationBar__NavWrapper-sc-1qsoskw-0 bewuLZ"
     >
       <div
-        class="flex relative h-21"
+        class="relative flex h-21"
       >
         <button
           class="BackButton__StyledBackButton-sc-1pe22tv-0 hLgyWD flex w-12"
@@ -7866,7 +7866,7 @@ exports[`SendTransfer should select a cryptoasset and select sender without wall
             class="flex items-center my-auto"
           >
             <div
-              class="NavigationBar__LogoContainer-sc-1qsoskw-2 tulfg"
+              class="NavigationBar__LogoContainer-sc-1qsoskw-2 itrWMc"
             >
               <svg
                 width="44"
@@ -7876,7 +7876,7 @@ exports[`SendTransfer should select a cryptoasset and select sender without wall
             </div>
           </div>
           <ul
-            class="flex mr-auto ml-4 space-x-8 h-21"
+            class="flex ml-4 mr-auto space-x-8 h-21"
           >
             <li
               class="flex"
@@ -8090,7 +8090,7 @@ exports[`SendTransfer should select a cryptoasset and select sender without wall
                   data-testid="dropdown__toggle"
                 >
                   <div
-                    class="cursor-pointer relative justify-center items-center align-middle rounded-full"
+                    class="relative items-center justify-center align-middle rounded-full cursor-pointer"
                     data-testid="navbar__useractions"
                   >
                     <div
@@ -8501,7 +8501,7 @@ exports[`SendTransfer should select a cryptoasset and select sender without wall
                                 </label>
                                 <div>
                                   <div
-                                    class="flex relative items-center w-full text-left"
+                                    class="relative flex items-center w-full text-left"
                                     data-testid="SelectRecipient__wrapper"
                                   >
                                     <div
@@ -8536,12 +8536,12 @@ exports[`SendTransfer should select a cryptoasset and select sender without wall
                                         <div
                                           aria-expanded="false"
                                           aria-haspopup="listbox"
-                                          aria-owns="downshift-50-menu"
+                                          aria-owns="downshift-52-menu"
                                           role="combobox"
                                         >
                                           <label
-                                            for="downshift-50-input"
-                                            id="downshift-50-label"
+                                            for="downshift-52-input"
+                                            id="downshift-52-label"
                                           />
                                           <div
                                             class="fixed invisible w-auto whitespace-nowrap"
@@ -8560,13 +8560,13 @@ exports[`SendTransfer should select a cryptoasset and select sender without wall
                                             >
                                               <input
                                                 aria-autocomplete="list"
-                                                aria-controls="downshift-50-menu"
+                                                aria-controls="downshift-52-menu"
                                                 aria-invalid="false"
-                                                aria-labelledby="downshift-50-label"
+                                                aria-labelledby="downshift-52-label"
                                                 autocomplete="off"
                                                 class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full cursor-default"
                                                 data-testid="SelectDropdown__input"
-                                                id="downshift-50-input"
+                                                id="downshift-52-input"
                                                 name="recipientAddress"
                                                 placeholder="Address"
                                                 value=""
@@ -8596,9 +8596,9 @@ exports[`SendTransfer should select a cryptoasset and select sender without wall
                                             </div>
                                           </div>
                                           <ul
-                                            aria-labelledby="downshift-50-label"
+                                            aria-labelledby="downshift-52-label"
                                             class="styles__SelectOptionsList-b2falt-0 dyOwRR"
-                                            id="downshift-50-menu"
+                                            id="downshift-52-menu"
                                             role="listbox"
                                           />
                                         </div>
@@ -8662,7 +8662,7 @@ exports[`SendTransfer should select a cryptoasset and select sender without wall
                                             >
                                               Max
                                                
-                                              57.60679402
+                                              57.68000000
                                             </span>
                                           </div>
                                         </div>
@@ -8894,10 +8894,10 @@ exports[`SendTransfer should select cryptoasset 1`] = `
   >
     <nav
       aria-labelledby="main menu"
-      class="NavigationBar__NavWrapper-sc-1qsoskw-0 bNXdkF"
+      class="NavigationBar__NavWrapper-sc-1qsoskw-0 bewuLZ"
     >
       <div
-        class="flex relative h-21"
+        class="relative flex h-21"
       >
         <button
           class="BackButton__StyledBackButton-sc-1pe22tv-0 hLgyWD flex w-12"
@@ -8919,7 +8919,7 @@ exports[`SendTransfer should select cryptoasset 1`] = `
             class="flex items-center my-auto"
           >
             <div
-              class="NavigationBar__LogoContainer-sc-1qsoskw-2 tulfg"
+              class="NavigationBar__LogoContainer-sc-1qsoskw-2 itrWMc"
             >
               <svg
                 width="44"
@@ -8929,7 +8929,7 @@ exports[`SendTransfer should select cryptoasset 1`] = `
             </div>
           </div>
           <ul
-            class="flex mr-auto ml-4 space-x-8 h-21"
+            class="flex ml-4 mr-auto space-x-8 h-21"
           >
             <li
               class="flex"
@@ -9143,7 +9143,7 @@ exports[`SendTransfer should select cryptoasset 1`] = `
                   data-testid="dropdown__toggle"
                 >
                   <div
-                    class="cursor-pointer relative justify-center items-center align-middle rounded-full"
+                    class="relative items-center justify-center align-middle rounded-full cursor-pointer"
                     data-testid="navbar__useractions"
                   >
                     <div
@@ -9396,10 +9396,10 @@ exports[`SendTransfer should send a single transfer 1`] = `
   >
     <nav
       aria-labelledby="main menu"
-      class="NavigationBar__NavWrapper-sc-1qsoskw-0 bNXdkF"
+      class="NavigationBar__NavWrapper-sc-1qsoskw-0 bewuLZ"
     >
       <div
-        class="flex relative h-21"
+        class="relative flex h-21"
       >
         <button
           class="BackButton__StyledBackButton-sc-1pe22tv-0 hLgyWD flex w-12"
@@ -9421,7 +9421,7 @@ exports[`SendTransfer should send a single transfer 1`] = `
             class="flex items-center my-auto"
           >
             <div
-              class="NavigationBar__LogoContainer-sc-1qsoskw-2 tulfg"
+              class="NavigationBar__LogoContainer-sc-1qsoskw-2 itrWMc"
             >
               <svg
                 width="44"
@@ -9431,7 +9431,7 @@ exports[`SendTransfer should send a single transfer 1`] = `
             </div>
           </div>
           <ul
-            class="flex mr-auto ml-4 space-x-8 h-21"
+            class="flex ml-4 mr-auto space-x-8 h-21"
           >
             <li
               class="flex"
@@ -9645,7 +9645,7 @@ exports[`SendTransfer should send a single transfer 1`] = `
                   data-testid="dropdown__toggle"
                 >
                   <div
-                    class="cursor-pointer relative justify-center items-center align-middle rounded-full"
+                    class="relative items-center justify-center align-middle rounded-full cursor-pointer"
                     data-testid="navbar__useractions"
                   >
                     <div
@@ -10053,10 +10053,10 @@ exports[`SendTransfer should send a single transfer and handle undefined expirat
   >
     <nav
       aria-labelledby="main menu"
-      class="NavigationBar__NavWrapper-sc-1qsoskw-0 bNXdkF"
+      class="NavigationBar__NavWrapper-sc-1qsoskw-0 bewuLZ"
     >
       <div
-        class="flex relative h-21"
+        class="relative flex h-21"
       >
         <button
           class="BackButton__StyledBackButton-sc-1pe22tv-0 hLgyWD flex w-12"
@@ -10078,7 +10078,7 @@ exports[`SendTransfer should send a single transfer and handle undefined expirat
             class="flex items-center my-auto"
           >
             <div
-              class="NavigationBar__LogoContainer-sc-1qsoskw-2 tulfg"
+              class="NavigationBar__LogoContainer-sc-1qsoskw-2 itrWMc"
             >
               <svg
                 width="44"
@@ -10088,7 +10088,7 @@ exports[`SendTransfer should send a single transfer and handle undefined expirat
             </div>
           </div>
           <ul
-            class="flex mr-auto ml-4 space-x-8 h-21"
+            class="flex ml-4 mr-auto space-x-8 h-21"
           >
             <li
               class="flex"
@@ -10302,7 +10302,7 @@ exports[`SendTransfer should send a single transfer and handle undefined expirat
                   data-testid="dropdown__toggle"
                 >
                   <div
-                    class="cursor-pointer relative justify-center items-center align-middle rounded-full"
+                    class="relative items-center justify-center align-middle rounded-full cursor-pointer"
                     data-testid="navbar__useractions"
                   >
                     <div
@@ -10710,10 +10710,10 @@ exports[`SendTransfer should send a single transfer and show unconfirmed transac
   >
     <nav
       aria-labelledby="main menu"
-      class="NavigationBar__NavWrapper-sc-1qsoskw-0 bNXdkF"
+      class="NavigationBar__NavWrapper-sc-1qsoskw-0 bewuLZ"
     >
       <div
-        class="flex relative h-21"
+        class="relative flex h-21"
       >
         <button
           class="BackButton__StyledBackButton-sc-1pe22tv-0 hLgyWD flex w-12"
@@ -10735,7 +10735,7 @@ exports[`SendTransfer should send a single transfer and show unconfirmed transac
             class="flex items-center my-auto"
           >
             <div
-              class="NavigationBar__LogoContainer-sc-1qsoskw-2 tulfg"
+              class="NavigationBar__LogoContainer-sc-1qsoskw-2 itrWMc"
             >
               <svg
                 width="44"
@@ -10745,7 +10745,7 @@ exports[`SendTransfer should send a single transfer and show unconfirmed transac
             </div>
           </div>
           <ul
-            class="flex mr-auto ml-4 space-x-8 h-21"
+            class="flex ml-4 mr-auto space-x-8 h-21"
           >
             <li
               class="flex"
@@ -10959,7 +10959,7 @@ exports[`SendTransfer should send a single transfer and show unconfirmed transac
                   data-testid="dropdown__toggle"
                 >
                   <div
-                    class="cursor-pointer relative justify-center items-center align-middle rounded-full"
+                    class="relative items-center justify-center align-middle rounded-full cursor-pointer"
                     data-testid="navbar__useractions"
                   >
                     <div
@@ -11676,10 +11676,10 @@ exports[`SendTransfer should send a single transfer using wallet with encryption
   >
     <nav
       aria-labelledby="main menu"
-      class="NavigationBar__NavWrapper-sc-1qsoskw-0 bNXdkF"
+      class="NavigationBar__NavWrapper-sc-1qsoskw-0 bewuLZ"
     >
       <div
-        class="flex relative h-21"
+        class="relative flex h-21"
       >
         <button
           class="BackButton__StyledBackButton-sc-1pe22tv-0 hLgyWD flex w-12"
@@ -11701,7 +11701,7 @@ exports[`SendTransfer should send a single transfer using wallet with encryption
             class="flex items-center my-auto"
           >
             <div
-              class="NavigationBar__LogoContainer-sc-1qsoskw-2 tulfg"
+              class="NavigationBar__LogoContainer-sc-1qsoskw-2 itrWMc"
             >
               <svg
                 width="44"
@@ -11711,7 +11711,7 @@ exports[`SendTransfer should send a single transfer using wallet with encryption
             </div>
           </div>
           <ul
-            class="flex mr-auto ml-4 space-x-8 h-21"
+            class="flex ml-4 mr-auto space-x-8 h-21"
           >
             <li
               class="flex"
@@ -11925,7 +11925,7 @@ exports[`SendTransfer should send a single transfer using wallet with encryption
                   data-testid="dropdown__toggle"
                 >
                   <div
-                    class="cursor-pointer relative justify-center items-center align-middle rounded-full"
+                    class="relative items-center justify-center align-middle rounded-full cursor-pointer"
                     data-testid="navbar__useractions"
                   >
                     <div
@@ -12333,10 +12333,10 @@ exports[`SendTransfer should send a single transfer with a high fee by confirmin
   >
     <nav
       aria-labelledby="main menu"
-      class="NavigationBar__NavWrapper-sc-1qsoskw-0 bNXdkF"
+      class="NavigationBar__NavWrapper-sc-1qsoskw-0 bewuLZ"
     >
       <div
-        class="flex relative h-21"
+        class="relative flex h-21"
       >
         <button
           class="BackButton__StyledBackButton-sc-1pe22tv-0 hLgyWD flex w-12"
@@ -12358,7 +12358,7 @@ exports[`SendTransfer should send a single transfer with a high fee by confirmin
             class="flex items-center my-auto"
           >
             <div
-              class="NavigationBar__LogoContainer-sc-1qsoskw-2 tulfg"
+              class="NavigationBar__LogoContainer-sc-1qsoskw-2 itrWMc"
             >
               <svg
                 width="44"
@@ -12368,7 +12368,7 @@ exports[`SendTransfer should send a single transfer with a high fee by confirmin
             </div>
           </div>
           <ul
-            class="flex mr-auto ml-4 space-x-8 h-21"
+            class="flex ml-4 mr-auto space-x-8 h-21"
           >
             <li
               class="flex"
@@ -12582,7 +12582,7 @@ exports[`SendTransfer should send a single transfer with a high fee by confirmin
                   data-testid="dropdown__toggle"
                 >
                   <div
-                    class="cursor-pointer relative justify-center items-center align-middle rounded-full"
+                    class="relative items-center justify-center align-middle rounded-full cursor-pointer"
                     data-testid="navbar__useractions"
                   >
                     <div
@@ -12990,10 +12990,10 @@ exports[`SendTransfer should send a single transfer with a low fee by confirming
   >
     <nav
       aria-labelledby="main menu"
-      class="NavigationBar__NavWrapper-sc-1qsoskw-0 bNXdkF"
+      class="NavigationBar__NavWrapper-sc-1qsoskw-0 bewuLZ"
     >
       <div
-        class="flex relative h-21"
+        class="relative flex h-21"
       >
         <button
           class="BackButton__StyledBackButton-sc-1pe22tv-0 hLgyWD flex w-12"
@@ -13015,7 +13015,7 @@ exports[`SendTransfer should send a single transfer with a low fee by confirming
             class="flex items-center my-auto"
           >
             <div
-              class="NavigationBar__LogoContainer-sc-1qsoskw-2 tulfg"
+              class="NavigationBar__LogoContainer-sc-1qsoskw-2 itrWMc"
             >
               <svg
                 width="44"
@@ -13025,7 +13025,7 @@ exports[`SendTransfer should send a single transfer with a low fee by confirming
             </div>
           </div>
           <ul
-            class="flex mr-auto ml-4 space-x-8 h-21"
+            class="flex ml-4 mr-auto space-x-8 h-21"
           >
             <li
               class="flex"
@@ -13239,7 +13239,7 @@ exports[`SendTransfer should send a single transfer with a low fee by confirming
                   data-testid="dropdown__toggle"
                 >
                   <div
-                    class="cursor-pointer relative justify-center items-center align-middle rounded-full"
+                    class="relative items-center justify-center align-middle rounded-full cursor-pointer"
                     data-testid="navbar__useractions"
                   >
                     <div
@@ -13647,10 +13647,10 @@ exports[`SendTransfer should show error step and go back 1`] = `
   >
     <nav
       aria-labelledby="main menu"
-      class="NavigationBar__NavWrapper-sc-1qsoskw-0 bNXdkF"
+      class="NavigationBar__NavWrapper-sc-1qsoskw-0 bewuLZ"
     >
       <div
-        class="flex relative h-21"
+        class="relative flex h-21"
       >
         <button
           class="BackButton__StyledBackButton-sc-1pe22tv-0 hLgyWD flex w-12"
@@ -13672,7 +13672,7 @@ exports[`SendTransfer should show error step and go back 1`] = `
             class="flex items-center my-auto"
           >
             <div
-              class="NavigationBar__LogoContainer-sc-1qsoskw-2 tulfg"
+              class="NavigationBar__LogoContainer-sc-1qsoskw-2 itrWMc"
             >
               <svg
                 width="44"
@@ -13682,7 +13682,7 @@ exports[`SendTransfer should show error step and go back 1`] = `
             </div>
           </div>
           <ul
-            class="flex mr-auto ml-4 space-x-8 h-21"
+            class="flex ml-4 mr-auto space-x-8 h-21"
           >
             <li
               class="flex"
@@ -13896,7 +13896,7 @@ exports[`SendTransfer should show error step and go back 1`] = `
                   data-testid="dropdown__toggle"
                 >
                   <div
-                    class="cursor-pointer relative justify-center items-center align-middle rounded-full"
+                    class="relative items-center justify-center align-middle rounded-full cursor-pointer"
                     data-testid="navbar__useractions"
                   >
                     <div

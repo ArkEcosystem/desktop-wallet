@@ -1,4 +1,4 @@
-import { Coins } from "@arkecosystem/platform-sdk";
+import { Networks } from "@arkecosystem/platform-sdk";
 import { Contracts } from "@arkecosystem/platform-sdk-profiles";
 import { Address } from "app/components/Address";
 import { Avatar } from "app/components/Avatar";
@@ -13,7 +13,7 @@ import { SearchRecipient } from "domains/transaction/components/SearchRecipient"
 import React, { useEffect, useState } from "react";
 
 type SelectRecipientProps = {
-	network?: Coins.Network;
+	network?: Networks.Network;
 	address?: string;
 	profile: Contracts.IProfile;
 	disabled?: boolean;
@@ -105,7 +105,7 @@ export const SelectRecipient = React.forwardRef<HTMLInputElement, SelectRecipien
 
 		return (
 			<div>
-				<div data-testid="SelectRecipient__wrapper" className="flex relative items-center w-full text-left">
+				<div data-testid="SelectRecipient__wrapper" className="relative flex items-center w-full text-left">
 					<Select
 						showCaret={false}
 						isInvalid={isInvalidValue}
