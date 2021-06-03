@@ -135,7 +135,7 @@ describe("EncryptionPasswordStep", () => {
 
 		//@ts-ignore
 		const walletSpy = jest.spyOn(profile, "walletFactory").mockImplementation(() => ({
-			fromMnemonicWithEncryption: () => Promise.reject(new Error("failed")),
+			fromMnemonic: () => Promise.reject(new Error("failed")),
 		}));
 
 		await waitFor(() => expect(getByTestId("EncryptPassword")).toBeTruthy());
@@ -279,7 +279,7 @@ describe("EncryptionPasswordStep", () => {
 
 		//@ts-ignore
 		const walletSpy = jest.spyOn(profile, "walletFactory").mockImplementation(() => ({
-			fromMnemonicWithEncryption: () => Promise.resolve(sampleWallet),
+			fromMnemonic: () => Promise.resolve(sampleWallet),
 		}));
 
 		await waitFor(() => expect(getByTestId("EncryptPassword")).toBeTruthy());
