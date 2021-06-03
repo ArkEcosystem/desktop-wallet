@@ -1,4 +1,4 @@
-import { Coins, Contracts, Services } from "@arkecosystem/platform-sdk";
+import { Contracts, Networks, Services } from "@arkecosystem/platform-sdk";
 import { Contracts as ProfileContracts, DTO } from "@arkecosystem/platform-sdk-profiles";
 import { BigNumber } from "@arkecosystem/platform-sdk-support";
 import { Button } from "app/components/Button";
@@ -63,7 +63,7 @@ export const SendTransfer = () => {
 	);
 
 	const networks = useMemo(() => {
-		const results: Record<string, Coins.Network> = {};
+		const results: Record<string, Networks.Network> = {};
 		for (const wallet of profile.wallets().values()) {
 			results[wallet.networkId()] = wallet.network();
 		}

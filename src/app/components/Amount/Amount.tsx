@@ -1,5 +1,4 @@
-import { Data } from "@arkecosystem/platform-sdk/";
-import { Money, Numeral } from "@arkecosystem/platform-sdk-intl";
+import { CURRENCIES, Money, Numeral } from "@arkecosystem/platform-sdk-intl";
 import { BigNumber } from "@arkecosystem/platform-sdk-support";
 import React from "react";
 
@@ -19,7 +18,7 @@ interface CurrencyConfig {
 	decimals: number;
 }
 
-type ExchangeCurrencyList = keyof typeof Data.CURRENCIES;
+type ExchangeCurrencyList = keyof typeof CURRENCIES;
 
 const formatSign = (amount: string, isNegative: boolean) => `${isNegative ? "-" : "+"} ${amount}`;
 
@@ -44,7 +43,7 @@ const formatCrypto = ({ ticker, value, decimals, locale, normalize }: FormatProp
 };
 
 export const Amount = ({ ticker, value, locale, showSign, normalize, isNegative, ...props }: Props) => {
-	const tickerConfig: CurrencyConfig | undefined = Data.CURRENCIES[ticker as ExchangeCurrencyList];
+	const tickerConfig: CurrencyConfig | undefined = CURRENCIES[ticker as ExchangeCurrencyList];
 	const decimals = tickerConfig?.decimals || 8;
 	const isFiat = decimals <= 2;
 	const amount = (isFiat ? formatFiat : formatCrypto)({ ticker, value, locale, decimals, normalize });

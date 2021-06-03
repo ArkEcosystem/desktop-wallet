@@ -1,4 +1,4 @@
-import { Coins } from "@arkecosystem/platform-sdk";
+import { Coins, Networks } from "@arkecosystem/platform-sdk";
 import { Contracts } from "@arkecosystem/platform-sdk-profiles";
 import { BigNumber } from "@arkecosystem/platform-sdk-support";
 
@@ -26,7 +26,7 @@ export const sendTransfer = (t: any) => ({
 	}),
 	recipientAddress: (
 		profile: Contracts.IProfile,
-		network: Coins.Network,
+		network: Networks.Network,
 		recipients: RecipientListItem[],
 		isSingleRecipient: boolean,
 	) => ({
@@ -57,7 +57,7 @@ export const sendTransfer = (t: any) => ({
 		},
 	}),
 	amount: (
-		network: Coins.Network,
+		network: Networks.Network,
 		balance: BigNumber,
 		recipients: RecipientListItem[],
 		isSingleRecipient: boolean,
