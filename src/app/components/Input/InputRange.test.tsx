@@ -1,5 +1,5 @@
 import { act as hookAct, renderHook } from "@testing-library/react-hooks";
-import React from "react";
+import React, { useState } from "react";
 import { FormProvider, useForm } from "react-hook-form";
 import { act, fireEvent, render, waitFor } from "testing-library";
 
@@ -7,11 +7,11 @@ import { FormField } from "../Form";
 import { InputRange } from "./InputRange";
 
 const properties = {
-	value: 5,
-	max: "10",
-	min: "0",
-	avg: "0",
+	value: "5",
+	max: 10,
+	min: 0,
 	step: 1,
+	onChange: jest.fn(),
 };
 
 describe("InputRange", () => {
@@ -24,6 +24,7 @@ describe("InputRange", () => {
 		});
 
 		expect(asFragment()).toMatchSnapshot();
+		expect(properties.onChange).not.toHaveBeenCalled();
 	});
 
 	it("should render when disabled", async () => {
@@ -35,7 +36,21 @@ describe("InputRange", () => {
 	});
 
 	it("should update the range when changing the input", () => {
-		const { getByTestId } = render(<InputRange {...properties} />);
+		const onChange = jest.fn();
+
+		// wrap InputRange as it does not keep the value state internally
+		const Wrapper = () => {
+			const [value, setValue] = useState(properties.value);
+
+			const handleChange = (val: string) => {
+				setValue(val);
+				onChange(val);
+			};
+
+			return <InputRange {...properties} value={value} onChange={handleChange} />;
+		};
+
+		const { getByTestId } = render(<Wrapper />);
 		const input = getByTestId("InputCurrency");
 
 		act(() => {
@@ -44,6 +59,7 @@ describe("InputRange", () => {
 
 		expect(getByTestId("Range__thumb")).toHaveAttribute("aria-valuenow", "9");
 		expect(input).toHaveValue("9");
+		expect(onChange).toHaveBeenCalledWith("9");
 	});
 
 	it("should update the input when changing the range", () => {
@@ -54,6 +70,7 @@ describe("InputRange", () => {
 
 		waitFor(() => expect(thumb).toHaveAttribute("aria-valuenow", "6"));
 		waitFor(() => expect(getByTestId("InputCurrency")).toHaveValue("6"));
+		expect(properties.onChange).toHaveBeenCalledWith("6");
 	});
 
 	it("should not allow a value greater than the maximum", () => {
@@ -64,10 +81,11 @@ describe("InputRange", () => {
 
 		waitFor(() => expect(input).toHaveValue("10"));
 		expect(getByTestId("Range__thumb")).not.toHaveAttribute("aria-valuenow", "11");
+		expect(properties.onChange).toHaveBeenCalledWith("11");
 	});
 
 	it("should track background min value", async () => {
-		const props = { ...properties, min: "4", value: 2, step: 3 };
+		const props = { ...properties, min: 4, value: "2", step: 3 };
 		const { getByTestId, asFragment } = render(<InputRange {...props} />);
 		await waitFor(() => {
 			expect(getByTestId("InputCurrency")).toHaveValue("2");
@@ -79,7 +97,7 @@ describe("InputRange", () => {
 
 	it("should render invalid", async () => {
 		const { result: form } = renderHook(() => useForm());
-		const props = { ...properties, min: "4", value: 2, step: 3 };
+		const props = { ...properties, min: 4, value: "2", step: 3 };
 		hookAct(() => {
 			form.current.setError("test", { type: "fail", message: "test" });
 		});

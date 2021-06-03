@@ -1,4 +1,4 @@
-import { Coins, Contracts } from "@arkecosystem/platform-sdk";
+import { Contracts, Networks } from "@arkecosystem/platform-sdk";
 import { Button } from "app/components/Button";
 import { Form } from "app/components/Form";
 import { Page, Section } from "app/components/Layout";
@@ -90,7 +90,7 @@ export const SendRegistration = () => {
 		const network = env
 			.availableNetworks()
 			.find(
-				(network: Coins.Network) =>
+				(network: Networks.Network) =>
 					network.coin() === activeWallet.coinId() && network.id() === activeWallet.networkId(),
 			);
 		setValue("network", network, { shouldValidate: true, shouldDirty: true });
@@ -162,7 +162,7 @@ export const SendRegistration = () => {
 			<Section className="flex-1">
 				<Form
 					data-testid="Registration__form"
-					className="mx-auto max-w-xl"
+					className="max-w-xl mx-auto"
 					context={form}
 					onSubmit={handleSubmit}
 				>

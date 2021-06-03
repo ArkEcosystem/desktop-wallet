@@ -23,28 +23,12 @@ describe("InputCurrency", () => {
 			});
 		});
 
-		expect(onChange).toHaveBeenCalledWith({ display: "123", value: "12300000000" });
-	});
-
-	it("should accept a custom magnitude", () => {
-		const onChange = jest.fn();
-		const { getByTestId } = render(<InputCurrency magnitude={2} onChange={onChange} />);
-		const input = getByTestId("InputCurrency");
-
-		act(() => {
-			fireEvent.input(input, {
-				target: {
-					value: "123",
-				},
-			});
-		});
-
-		expect(onChange).toHaveBeenCalledWith({ display: "123", value: "12300" });
+		expect(onChange).toHaveBeenCalledWith("123");
 	});
 
 	it("should not allow letters", () => {
 		const onChange = jest.fn();
-		const { getByTestId } = render(<InputCurrency magnitude={0} onChange={onChange} />);
+		const { getByTestId } = render(<InputCurrency onChange={onChange} />);
 		const input = getByTestId("InputCurrency");
 
 		act(() => {
@@ -55,7 +39,7 @@ describe("InputCurrency", () => {
 			});
 		});
 
-		expect(onChange).toHaveBeenCalledWith({ display: "123", value: "123" });
+		expect(onChange).toHaveBeenCalledWith("123");
 	});
 
 	it("should format with a default value", () => {

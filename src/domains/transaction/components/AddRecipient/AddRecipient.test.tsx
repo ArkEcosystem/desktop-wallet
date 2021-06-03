@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/require-await */
-import { Coins } from "@arkecosystem/platform-sdk";
+import { Networks } from "@arkecosystem/platform-sdk";
 import { Contracts } from "@arkecosystem/platform-sdk-profiles";
 import { BigNumber } from "@arkecosystem/platform-sdk-support";
 import { act, renderHook } from "@testing-library/react-hooks";
@@ -11,7 +11,7 @@ import { AddRecipient } from "./AddRecipient";
 
 let profile: Contracts.IProfile;
 let wallet: Contracts.IReadWriteWallet;
-let network: Coins.Network;
+let network: Networks.Network;
 
 const renderWithFormProvider = async (children: any, defaultValues?: any) => {
 	let rendered: any;

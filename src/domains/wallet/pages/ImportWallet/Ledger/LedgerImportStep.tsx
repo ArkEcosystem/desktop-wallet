@@ -1,4 +1,4 @@
-import { Coins } from "@arkecosystem/platform-sdk";
+import { Networks } from "@arkecosystem/platform-sdk";
 import { Contracts } from "@arkecosystem/platform-sdk-profiles";
 import { Address } from "app/components/Address";
 import { Amount } from "app/components/Amount";
@@ -23,7 +23,7 @@ const MultipleImport = ({
 }: {
 	wallets: LedgerData[];
 	profile: Contracts.IProfile;
-	network: Coins.Network;
+	network: Networks.Network;
 }) => {
 	const { t } = useTranslation();
 
@@ -125,7 +125,7 @@ const SingleImport = ({
 }: {
 	wallets: LedgerData[];
 	profile: Contracts.IProfile;
-	network: Coins.Network;
+	network: Networks.Network;
 }) => {
 	const { t } = useTranslation();
 	const { register, watch, trigger } = useFormContext();
@@ -183,7 +183,7 @@ export const LedgerImportStep = ({ wallets, profile }: { wallets: LedgerData[]; 
 
 	const { watch } = useFormContext();
 
-	const [network] = useState<Coins.Network>(() => watch("network"));
+	const [network] = useState<Networks.Network>(() => watch("network"));
 
 	return (
 		<section data-testid="LedgerImportStep" className="space-y-6">

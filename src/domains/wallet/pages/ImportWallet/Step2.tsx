@@ -1,4 +1,4 @@
-import { Coins } from "@arkecosystem/platform-sdk";
+import { Networks } from "@arkecosystem/platform-sdk";
 import { Contracts } from "@arkecosystem/platform-sdk-profiles";
 import { FormField, FormLabel } from "app/components/Form";
 import { Header } from "app/components/Header";
@@ -17,7 +17,7 @@ const MnemonicField = ({
 	...props
 }: {
 	profile: Contracts.IProfile;
-	network: Coins.Network;
+	network: Networks.Network;
 	label: string;
 	findAddress: (value: string) => Promise<string>;
 } & Omit<React.HTMLProps<any>, "ref">) => {
@@ -53,7 +53,7 @@ const MnemonicField = ({
 	);
 };
 
-const AddressField = ({ network, profile }: { profile: Contracts.IProfile; network: Coins.Network }) => {
+const AddressField = ({ network, profile }: { profile: Contracts.IProfile; network: Networks.Network }) => {
 	const { t } = useTranslation();
 	const { register } = useFormContext();
 
@@ -87,7 +87,7 @@ const ImportInputField = ({
 	profile,
 }: {
 	type: string;
-	network: Coins.Network;
+	network: Networks.Network;
 	profile: Contracts.IProfile;
 }) => {
 	const { t } = useTranslation();
@@ -192,7 +192,7 @@ export const SecondStep = ({ profile }: { profile: Contracts.IProfile }) => {
 
 	// getValues does not get the value of `defaultValues` on first render
 	const [defaultNetwork] = useState(() => watch("network"));
-	const network: Coins.Network = getValues("network") || defaultNetwork;
+	const network: Networks.Network = getValues("network") || defaultNetwork;
 
 	const options = useMemo(
 		() => [
