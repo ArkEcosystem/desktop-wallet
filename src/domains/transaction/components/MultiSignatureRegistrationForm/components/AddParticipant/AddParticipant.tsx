@@ -144,7 +144,7 @@ export const AddParticipant = ({ profile, wallet, onChange, defaultParticipants 
 				<RecipientList
 					recipients={participants}
 					assetSymbol={wallet.network().ticker()}
-					buttonTooltip={t("TRANSACTION.MULTISIGNATURE.REMOVE_NOT_ALLOWED")}
+					tooltipDisabled={t("TRANSACTION.MULTISIGNATURE.REMOVE_NOT_ALLOWED")}
 					disableButton={(address: string) => address === wallet.address()}
 					onRemove={removeParticipant}
 					label="TRANSACTION.MULTISIGNATURE.PARTICIPANT_#"
