@@ -46,7 +46,7 @@ export const ThirdStep = ({
 					borderPosition="bottom"
 					extra={<Avatar size="lg" address={address} />}
 				>
-					<Address address={address} maxChars={0} />
+					<Address address={address} />
 				</TransactionDetail>
 			</div>
 

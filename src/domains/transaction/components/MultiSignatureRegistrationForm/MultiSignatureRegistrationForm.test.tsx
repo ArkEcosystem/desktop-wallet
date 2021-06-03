@@ -1,4 +1,4 @@
-import { Contracts } from "@arkecosystem/platform-sdk";
+import { Contracts, Services } from "@arkecosystem/platform-sdk";
 import { Contracts as ProfilesContracts } from "@arkecosystem/platform-sdk-profiles";
 import { BigNumber } from "@arkecosystem/platform-sdk-support";
 import { renderHook } from "@testing-library/react-hooks";
@@ -16,7 +16,7 @@ describe("MultiSignature Registration Form", () => {
 	let profile: ProfilesContracts.IProfile;
 	let wallet: ProfilesContracts.IReadWriteWallet;
 	let wallet2: ProfilesContracts.IReadWriteWallet;
-	let fees: Contracts.TransactionFee;
+	let fees: Services.TransactionFee;
 
 	const createTransactionMock = (wallet: ProfilesContracts.IReadWriteWallet) =>
 		// @ts-ignore
@@ -95,7 +95,7 @@ describe("MultiSignature Registration Form", () => {
 		await waitFor(() => expect(result.current.getValues("fee")).toBe("1.354"));
 		await waitFor(() => expect(result.current.getValues("minParticipants")).toBe("3"));
 
-		fireEvent.input(screen.getByTestId("SelectDropdownInput__input"), {
+		fireEvent.input(screen.getByTestId("SelectDropdown__input"), {
 			target: {
 				value: wallet2.address(),
 			},

@@ -1,4 +1,4 @@
-import { Contracts } from "@arkecosystem/platform-sdk";
+import { Services } from "@arkecosystem/platform-sdk";
 import { Contracts as ProfileContracts } from "@arkecosystem/platform-sdk-profiles";
 import { Address } from "app/components/Address";
 import { Avatar } from "app/components/Avatar";
@@ -13,7 +13,7 @@ export const SignedStep = ({
 	signedMessage,
 	wallet,
 }: {
-	signedMessage: Contracts.SignedMessage;
+	signedMessage: Services.SignedMessage;
 	wallet: ProfileContracts.IReadWriteWallet;
 }) => {
 	const { t } = useTranslation();
@@ -30,7 +30,7 @@ export const SignedStep = ({
 				label={t("WALLETS.SIGNATORY")}
 				extra={<Avatar size="lg" address={wallet.address()} />}
 			>
-				<Address walletName={walletAlias} address={wallet.address()} maxChars={!walletAlias ? 0 : 24} />
+				<Address walletName={walletAlias} address={wallet.address()} />
 			</TransactionDetail>
 
 			<TransactionDetail label={t("COMMON.MESSAGE")} className="text-lg break-all">

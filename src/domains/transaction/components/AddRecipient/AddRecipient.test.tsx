@@ -44,7 +44,7 @@ describe("AddRecipient", () => {
 	it("should render", async () => {
 		const { container } = await renderWithFormProvider(<AddRecipient profile={profile} assetSymbol="ARK" />);
 
-		// await waitFor(() => expect(getByTestId("SelectDropdownInput__input")).toHaveValue(""));
+		// await waitFor(() => expect(getByTestId("SelectDropdown__input")).toHaveValue(""));
 		expect(container).toMatchSnapshot();
 	});
 
@@ -64,7 +64,7 @@ describe("AddRecipient", () => {
 
 		await waitFor(() => {
 			expect(getByTestId("AddRecipient__amount")).toHaveValue("1");
-			expect(getByTestId("SelectDropdownInput__input")).toHaveValue("D6Z26L69gdk9qYmTv5uzk3uGepigtHY4ax");
+			expect(getByTestId("SelectDropdown__input")).toHaveValue("D6Z26L69gdk9qYmTv5uzk3uGepigtHY4ax");
 		});
 
 		expect(container).toMatchSnapshot();
@@ -75,7 +75,7 @@ describe("AddRecipient", () => {
 			<AddRecipient profile={profile} assetSymbol="ARK" isSingleRecipient={false} />,
 		);
 
-		await waitFor(() => expect(getByTestId("SelectDropdownInput__input")).toHaveValue(""));
+		await waitFor(() => expect(getByTestId("SelectDropdown__input")).toHaveValue(""));
 		expect(container).toMatchSnapshot();
 	});
 
@@ -106,7 +106,7 @@ describe("AddRecipient", () => {
 				},
 			});
 
-			fireEvent.input(getByTestId("SelectDropdownInput__input"), {
+			fireEvent.input(getByTestId("SelectDropdown__input"), {
 				target: {
 					value: "bP6T9GQ3kqP6T9GQ3kqP6T9GQ3kqTTTP6T9GQ3kqT",
 				},
@@ -115,7 +115,7 @@ describe("AddRecipient", () => {
 
 		await waitFor(() => {
 			expect(form.current.getValues("amount")).toEqual("100000000");
-			expect(getByTestId("SelectDropdownInput__input")).toHaveValue("bP6T9GQ3kqP6T9GQ3kqP6T9GQ3kqTTTP6T9GQ3kqT");
+			expect(getByTestId("SelectDropdown__input")).toHaveValue("bP6T9GQ3kqP6T9GQ3kqP6T9GQ3kqTTTP6T9GQ3kqT");
 			expect(onChange).toHaveBeenCalledWith([
 				{ amount: expect.any(BigNumber), address: "bP6T9GQ3kqP6T9GQ3kqP6T9GQ3kqTTTP6T9GQ3kqT" },
 			]);
@@ -143,7 +143,7 @@ describe("AddRecipient", () => {
 		expect(() => getByTestId("modal__inner")).toThrow(/Unable to find an element by/);
 
 		const selectedAddressValue = profile.wallets().first().address();
-		expect(getByTestId("SelectDropdownInput__input")).toHaveValue(selectedAddressValue);
+		expect(getByTestId("SelectDropdown__input")).toHaveValue(selectedAddressValue);
 	});
 
 	it("should set available amount", async () => {
@@ -164,7 +164,7 @@ describe("AddRecipient", () => {
 		const emptyProfile = env.profiles().create("Empty");
 
 		emptyProfile.wallets().push(
-			await emptyProfile.walletFactory().fromMnemonic({
+			await emptyProfile.walletFactory().fromMnemonicWithBIP39({
 				mnemonic: "test test",
 				coin: "ARK",
 				network: "ark.devnet",
@@ -257,7 +257,7 @@ describe("AddRecipient", () => {
 		});
 
 		// Invalid address
-		fireEvent.input(screen.getByTestId("SelectDropdownInput__input"), {
+		fireEvent.input(screen.getByTestId("SelectDropdown__input"), {
 			target: {
 				value: values.recipientAddress,
 			},
@@ -272,7 +272,7 @@ describe("AddRecipient", () => {
 		expect(screen.getByTestId("AddRecipient__add-button")).toBeDisabled();
 
 		// Valid address
-		fireEvent.input(screen.getByTestId("SelectDropdownInput__input"), {
+		fireEvent.input(screen.getByTestId("SelectDropdown__input"), {
 			target: {
 				value: "D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD",
 			},
@@ -297,7 +297,7 @@ describe("AddRecipient", () => {
 		);
 
 		await waitFor(() => {
-			expect(getByTestId("SelectDropdownInput__input")).toBeDisabled();
+			expect(getByTestId("SelectDropdown__input")).toBeDisabled();
 			expect(getByTestId("AddRecipient__amount")).toBeDisabled();
 		});
 	});
@@ -314,7 +314,7 @@ describe("AddRecipient", () => {
 		);
 
 		await waitFor(() => {
-			expect(getByTestId("SelectDropdownInput__input")).toBeDisabled();
+			expect(getByTestId("SelectDropdown__input")).toBeDisabled();
 			expect(getByTestId("AddRecipient__amount")).toBeDisabled();
 		});
 	});
@@ -408,7 +408,7 @@ describe("AddRecipient", () => {
 		});
 
 		await act(async () => {
-			fireEvent.change(getByTestId("SelectDropdownInput__input"), {
+			fireEvent.change(getByTestId("SelectDropdown__input"), {
 				target: {
 					value: "abc",
 				},
@@ -541,7 +541,7 @@ describe("AddRecipient", () => {
 			fireEvent.click(screen.getByTestId("AddRecipient__multi"));
 		});
 
-		fireEvent.input(screen.getByTestId("SelectDropdownInput__input"), {
+		fireEvent.input(screen.getByTestId("SelectDropdown__input"), {
 			target: {
 				value: values.recipientAddress,
 			},

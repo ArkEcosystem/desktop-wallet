@@ -77,7 +77,7 @@ interface ProfileSyncState {
 }
 
 export const useProfileSyncStatus = () => {
-	const { profileIsRestoring, restoredProfiles, setConfiguration } = useConfiguration();
+	const { profileIsRestoring, setConfiguration } = useConfiguration();
 	const { current } = useRef<ProfileSyncState>({
 		status: "idle",
 		restored: [],
@@ -85,8 +85,6 @@ export const useProfileSyncStatus = () => {
 
 	const isIdle = () => current.status === "idle";
 	const isRestoring = () => profileIsRestoring || current.status === "restoring";
-	const isRestored = (profile: Contracts.IProfile) =>
-		[...current.restored, ...restoredProfiles].includes(profile.id()) || current.status === "restored";
 	const isSyncing = () => current.status === "syncing";
 	const isSynced = () => current.status === "synced";
 	const isCompleted = () => current.status === "completed";
@@ -99,7 +97,7 @@ export const useProfileSyncStatus = () => {
 			return false;
 		}
 
-		return !isSyncing() && !isRestoring() && !isSynced() && !isCompleted() && !isRestored(profile);
+		return !isSyncing() && !isRestoring() && !isSynced() && !isCompleted() && !profile.status().isRestored();
 	};
 
 	const shouldSync = () => !isSyncing() && !isRestoring() && !isSynced() && !isCompleted();
@@ -120,7 +118,12 @@ export const useProfileSyncStatus = () => {
 		markAsRestored: (profileId: string) => {
 			current.status = "restored";
 			current.restored.push(profileId);
-			setConfiguration({ profileIsRestoring: false, restoredProfiles: [...restoredProfiles, profileId] });
+			setConfiguration({ profileIsRestoring: false });
+		},
+		resetRestoredStatus: () => {
+			current.status = "idle";
+			current.restored = [];
+			setConfiguration({ profileIsRestoring: false });
 		},
 	};
 };
@@ -177,6 +180,7 @@ export const useProfileSynchronizer = ({ onProfileRestoreError }: ProfileSynchro
 		setStatus,
 		status,
 		markAsRestored,
+		resetRestoredStatus,
 	} = useProfileSyncStatus();
 
 	const { allJobs } = useProfileJobs(profile);
@@ -194,9 +198,9 @@ export const useProfileSynchronizer = ({ onProfileRestoreError }: ProfileSynchro
 
 			setStatus("idle");
 			stop({ clearTimers: true });
-			setConfiguration({ profileIsSyncing: true });
 			resetTheme();
 			resetAutomatiSignout();
+			resetRestoredStatus();
 		};
 
 		const syncProfile = async (profile?: Contracts.IProfile) => {
@@ -266,6 +270,7 @@ export const useProfileSynchronizer = ({ onProfileRestoreError }: ProfileSynchro
 		onProfileRestoreError,
 		monitorIdleTime,
 		resetAutomatiSignout,
+		resetRestoredStatus,
 		history,
 		setScreenshotProtection,
 		stop,

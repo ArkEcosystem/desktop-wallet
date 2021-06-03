@@ -1,4 +1,4 @@
-import { Contracts } from "@arkecosystem/platform-sdk";
+import { Services } from "@arkecosystem/platform-sdk";
 import { BIP39 } from "@arkecosystem/platform-sdk-crypto";
 import { Contracts as ProfileContracts } from "@arkecosystem/platform-sdk-profiles";
 import { Alert } from "app/components/Alert";
@@ -17,7 +17,7 @@ export const GenerationStep = ({
 	wallet,
 	step = 0.001,
 }: {
-	fees: Contracts.TransactionFee;
+	fees: Services.TransactionFee;
 	wallet: ProfileContracts.IReadWriteWallet;
 	step?: number;
 }) => {

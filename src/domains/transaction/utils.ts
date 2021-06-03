@@ -1,4 +1,4 @@
-import { Contracts } from "@arkecosystem/platform-sdk";
+import { Services } from "@arkecosystem/platform-sdk";
 import { BigNumber } from "@arkecosystem/platform-sdk-support";
 
 export const isMnemonicError = (error: any) => String(error).includes("Signatory should be");
@@ -7,7 +7,7 @@ export const isNoDeviceError = (error: any) => String(error).includes("no device
 
 export const isRejectionError = (error: any) => String(error).includes("Condition of use not satisfied");
 
-export const handleBroadcastError = ({ rejected, errors }: Contracts.BroadcastResponse) => {
+export const handleBroadcastError = ({ rejected, errors }: Services.BroadcastResponse) => {
 	if (rejected.length === 0) {
 		return;
 	}

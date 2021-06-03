@@ -1,4 +1,4 @@
-import { SignedMessage } from "@arkecosystem/platform-sdk/dist/contracts";
+import { Services } from "@arkecosystem/platform-sdk";
 import { useActiveProfile } from "app/hooks";
 import { SignMessage } from "domains/wallet/components/SignMessage";
 import { useCallback, useState } from "react";
@@ -6,7 +6,7 @@ import React from "react";
 
 export const useSignMessageModal = ({ message, walletId }: { message: string; walletId: string }) => {
 	const [isOpen, setIsOpen] = useState(false);
-	const [signedResult, setSignedResult] = useState<SignedMessage | undefined>(undefined);
+	const [signedResult, setSignedResult] = useState<Services.SignedMessage | undefined>(undefined);
 	const profile = useActiveProfile();
 
 	const open = () => setIsOpen(true);

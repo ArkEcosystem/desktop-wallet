@@ -669,12 +669,12 @@ exports[`SendTransfer should display disabled address selection input if selecte
                                         <div
                                           aria-expanded="false"
                                           aria-haspopup="listbox"
-                                          aria-owns="downshift-43-menu"
+                                          aria-owns="downshift-42-menu"
                                           role="combobox"
                                         >
                                           <label
-                                            for="downshift-43-input"
-                                            id="downshift-43-label"
+                                            for="downshift-42-input"
+                                            id="downshift-42-label"
                                           />
                                           <div
                                             class="fixed invisible w-auto whitespace-nowrap"
@@ -693,14 +693,14 @@ exports[`SendTransfer should display disabled address selection input if selecte
                                             >
                                               <input
                                                 aria-autocomplete="list"
-                                                aria-controls="downshift-43-menu"
+                                                aria-controls="downshift-42-menu"
                                                 aria-invalid="false"
-                                                aria-labelledby="downshift-43-label"
+                                                aria-labelledby="downshift-42-label"
                                                 autocomplete="off"
                                                 class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full cursor-default text-theme-secondary-text"
                                                 data-testid="SelectDropdownInput__input"
                                                 disabled=""
-                                                id="downshift-43-input"
+                                                id="downshift-42-input"
                                                 name="recipientAddress"
                                                 placeholder="Address"
                                                 value=""
@@ -730,9 +730,9 @@ exports[`SendTransfer should display disabled address selection input if selecte
                                             </div>
                                           </div>
                                           <ul
-                                            aria-labelledby="downshift-43-label"
+                                            aria-labelledby="downshift-42-label"
                                             class="styles__SelectOptionsList-b2falt-0 ghEDCU"
-                                            id="downshift-43-menu"
+                                            id="downshift-42-menu"
                                             role="listbox"
                                           />
                                         </div>
@@ -2883,7 +2883,7 @@ exports[`SendTransfer should render 1st step with custom deeplink values and use
               <div
                 class="fixed invisible w-auto whitespace-nowrap"
               >
-                0…
+                …
               </div>
               <div
                 class="Input__InputWrapperStyled-wu99qs-0 iRRxpY"
@@ -2898,7 +2898,7 @@ exports[`SendTransfer should render 1st step with custom deeplink values and use
                     disabled=""
                     name="fee"
                     type="text"
-                    value="0"
+                    value=""
                   />
                 </div>
               </div>
@@ -3739,7 +3739,7 @@ exports[`SendTransfer should render form and use location state 1`] = `
                                             <span
                                               class="whitespace-no-break font-semibold text-sm text-theme-secondary-500 dark:text-theme-secondary-700"
                                             >
-                                              Max 33.75089801
+                                              Max 33.67769203
                                             </span>
                                           </div>
                                         </div>
@@ -4778,7 +4778,7 @@ exports[`SendTransfer should render form and use location state without memo 1`]
                                             <span
                                               class="whitespace-no-break font-semibold text-sm text-theme-secondary-500 dark:text-theme-secondary-700"
                                             >
-                                              Max 33.75089801
+                                              Max 33.67769203
                                             </span>
                                           </div>
                                         </div>
@@ -5512,7 +5512,7 @@ exports[`SendTransfer should render form step 1`] = `
               <div
                 class="fixed invisible w-auto whitespace-nowrap"
               >
-                0…
+                …
               </div>
               <div
                 class="Input__InputWrapperStyled-wu99qs-0 iRRxpY"
@@ -5527,7 +5527,7 @@ exports[`SendTransfer should render form step 1`] = `
                     disabled=""
                     name="fee"
                     type="text"
-                    value="0"
+                    value=""
                   />
                 </div>
               </div>
@@ -6052,7 +6052,7 @@ exports[`SendTransfer should render form step with deeplink values and use them 
               <div
                 class="fixed invisible w-auto whitespace-nowrap"
               >
-                0…
+                …
               </div>
               <div
                 class="Input__InputWrapperStyled-wu99qs-0 iRRxpY"
@@ -6067,7 +6067,7 @@ exports[`SendTransfer should render form step with deeplink values and use them 
                     disabled=""
                     name="fee"
                     type="text"
-                    value="0"
+                    value=""
                   />
                 </div>
               </div>
@@ -6592,7 +6592,7 @@ exports[`SendTransfer should render form step without test networks 1`] = `
               <div
                 class="fixed invisible w-auto whitespace-nowrap"
               >
-                0…
+                …
               </div>
               <div
                 class="Input__InputWrapperStyled-wu99qs-0 iRRxpY"
@@ -6607,7 +6607,7 @@ exports[`SendTransfer should render form step without test networks 1`] = `
                     disabled=""
                     name="fee"
                     type="text"
-                    value="0"
+                    value=""
                   />
                 </div>
               </div>
@@ -7490,7 +7490,7 @@ exports[`SendTransfer should render review step 1`] = `
                 class="mt-1 text-lg font-semibold"
                 data-testid="total-amount-box__transaction-fee"
               >
-                0.01 DARK
+                0.1 DARK
               </span>
             </div>
           </div>
@@ -7524,7 +7524,7 @@ exports[`SendTransfer should render review step 1`] = `
             class="text-2xl font-bold"
             data-testid="total-amount-box__total"
           >
-            1.01 DARK
+            1.1 DARK
           </span>
         </div>
       </div>
@@ -8530,12 +8530,12 @@ exports[`SendTransfer should select a cryptoasset and select sender without wall
                                         <div
                                           aria-expanded="false"
                                           aria-haspopup="listbox"
-                                          aria-owns="downshift-52-menu"
+                                          aria-owns="downshift-51-menu"
                                           role="combobox"
                                         >
                                           <label
-                                            for="downshift-52-input"
-                                            id="downshift-52-label"
+                                            for="downshift-51-input"
+                                            id="downshift-51-label"
                                           />
                                           <div
                                             class="fixed invisible w-auto whitespace-nowrap"
@@ -8554,13 +8554,13 @@ exports[`SendTransfer should select a cryptoasset and select sender without wall
                                             >
                                               <input
                                                 aria-autocomplete="list"
-                                                aria-controls="downshift-52-menu"
+                                                aria-controls="downshift-51-menu"
                                                 aria-invalid="false"
-                                                aria-labelledby="downshift-52-label"
+                                                aria-labelledby="downshift-51-label"
                                                 autocomplete="off"
                                                 class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full cursor-default"
                                                 data-testid="SelectDropdownInput__input"
-                                                id="downshift-52-input"
+                                                id="downshift-51-input"
                                                 name="recipientAddress"
                                                 placeholder="Address"
                                                 value=""
@@ -8590,9 +8590,9 @@ exports[`SendTransfer should select a cryptoasset and select sender without wall
                                             </div>
                                           </div>
                                           <ul
-                                            aria-labelledby="downshift-52-label"
+                                            aria-labelledby="downshift-51-label"
                                             class="styles__SelectOptionsList-b2falt-0 ghEDCU"
-                                            id="downshift-52-menu"
+                                            id="downshift-51-menu"
                                             role="listbox"
                                           />
                                         </div>
@@ -8656,7 +8656,7 @@ exports[`SendTransfer should select a cryptoasset and select sender without wall
                                             >
                                               Max
                                                
-                                              57.68000000
+                                              57.60679402
                                             </span>
                                           </div>
                                         </div>

@@ -30,10 +30,10 @@ describe("Signed Transaction Table", () => {
 			.transaction()
 			.transfer({
 				nonce: "1",
-				fee: "1",
+				fee: "0.00000001",
 				data: {
 					to: wallet.address(),
-					amount: "1",
+					amount: "0.00000001",
 				},
 				signatory: await wallet
 					.coin()
@@ -46,7 +46,7 @@ describe("Signed Transaction Table", () => {
 			.transaction()
 			.multiSignature({
 				nonce: "1",
-				fee: "1",
+				fee: "0.00000001",
 				data: {
 					min: 2,
 					publicKeys: [wallet.publicKey()!, profile.wallets().last().publicKey()!],
@@ -63,15 +63,15 @@ describe("Signed Transaction Table", () => {
 			.transaction()
 			.multiPayment({
 				nonce: "1",
-				fee: "1",
+				fee: "0.00000001",
 				data: {
 					payments: [
 						{
-							amount: "1",
+							amount: "0.00000001",
 							to: wallet.address(),
 						},
 						{
-							amount: "2",
+							amount: "0.00000002",
 							to: wallet.address(),
 						},
 					],
@@ -87,7 +87,7 @@ describe("Signed Transaction Table", () => {
 			.transaction()
 			.vote({
 				nonce: "1",
-				fee: "1",
+				fee: "0.00000001",
 				data: {
 					votes: ["034151a3ec46b5670a682b0a63394f863587d1bc97483b1b6c70eb58e7f0aed192"],
 					unvotes: [],
@@ -103,7 +103,7 @@ describe("Signed Transaction Table", () => {
 			.transaction()
 			.vote({
 				nonce: "1",
-				fee: "1",
+				fee: "0.00000001",
 				data: {
 					votes: [],
 					unvotes: ["034151a3ec46b5670a682b0a63394f863587d1bc97483b1b6c70eb58e7f0aed192"],
@@ -119,7 +119,7 @@ describe("Signed Transaction Table", () => {
 			.transaction()
 			.ipfs({
 				nonce: "1",
-				fee: "1",
+				fee: "0.00000001",
 				data: {
 					hash: "QmXoypizjW3WknFiJnKLwHCnL72vedxjQkDDP1mXWo6uco",
 				},

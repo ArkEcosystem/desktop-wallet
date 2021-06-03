@@ -1,4 +1,4 @@
-import { Coins, Contracts } from "@arkecosystem/platform-sdk";
+import { Coins, Contracts, Services } from "@arkecosystem/platform-sdk";
 import { Contracts as ProfileContracts, DTO } from "@arkecosystem/platform-sdk-profiles";
 import { BigNumber } from "@arkecosystem/platform-sdk-support";
 import { Button } from "app/components/Button";
@@ -211,7 +211,7 @@ export const SendTransfer = () => {
 				encryptionPassword,
 			});
 
-			const transactionInput: Contracts.TransactionInputs = {
+			const transactionInput: Services.TransactionInputs = {
 				fee,
 				signatory,
 				data: {},
