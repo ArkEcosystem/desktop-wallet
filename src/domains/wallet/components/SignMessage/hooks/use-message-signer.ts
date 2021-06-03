@@ -1,8 +1,6 @@
-import { Contracts } from "@arkecosystem/platform-sdk";
+import { Services } from "@arkecosystem/platform-sdk";
 import { Contracts as ProfileContracts } from "@arkecosystem/platform-sdk-profiles";
 import Transport from "@ledgerhq/hw-transport";
-
-type SignFn = (input: any, options?: Contracts.TransactionOptions) => Promise<string>;
 
 const signWithLedger = async (
 	message: string,
@@ -11,7 +9,7 @@ const signWithLedger = async (
 ) => {
 	await wallet.ledger().connect(transport);
 
-	const path = wallet.data().get<string>(ProfileContracts.WalletData.LedgerPath);
+	const path = wallet.data().get<string>(ProfileContracts.WalletData.DerivationPath);
 
 	let signatory = wallet.publicKey();
 
@@ -46,7 +44,7 @@ export const useMessageSigner = (transport: typeof Transport) => {
 		options?: {
 			abortSignal?: AbortSignal;
 		},
-	): Promise<Contracts.SignedMessage> => {
+	): Promise<Services.SignedMessage> => {
 		if (wallet.isLedger()) {
 			return withAbortPromise(options?.abortSignal)(signWithLedger(message, wallet, transport));
 		}

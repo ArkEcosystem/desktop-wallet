@@ -271,7 +271,7 @@ describe("EncryptionPasswordStep", () => {
 			fireEvent.click(continueButton);
 		});
 
-		const sampleWallet = profile.walletFactory().fromMnemonic({
+		const sampleWallet = profile.walletFactory().fromMnemonicWithBIP39({
 			mnemonic: "test",
 			coin: "ARK",
 			network: "ark.devnet",

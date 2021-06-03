@@ -26,7 +26,7 @@ export const useWalletImport = ({ profile }: { profile: Contracts.IProfile }) =>
 		switch (type) {
 			case "mnemonic":
 				return profile.wallets().push(
-					await profile.walletFactory().fromMnemonic({
+					await profile.walletFactory().fromMnemonicWithBIP39({
 						coin: network.coin(),
 						network: network.id(),
 						mnemonic: value,

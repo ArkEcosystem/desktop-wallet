@@ -1,4 +1,4 @@
-import { Contracts } from "@arkecosystem/platform-sdk";
+import { Services } from "@arkecosystem/platform-sdk";
 import { Contracts as ProfileContracts } from "@arkecosystem/platform-sdk-profiles";
 import { Address } from "app/components/Address";
 import { Avatar } from "app/components/Avatar";
@@ -13,7 +13,7 @@ export const SignedStep = ({
 	signedMessage,
 	wallet,
 }: {
-	signedMessage: Contracts.SignedMessage;
+	signedMessage: Services.SignedMessage;
 	wallet: ProfileContracts.IReadWriteWallet;
 }) => {
 	const { t } = useTranslation();

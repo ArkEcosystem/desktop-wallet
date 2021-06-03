@@ -1,4 +1,4 @@
-import { Contracts } from "@arkecosystem/platform-sdk";
+import { Services } from "@arkecosystem/platform-sdk";
 import { Contracts as ProfilesContracts } from "@arkecosystem/platform-sdk-profiles";
 import { FormField, FormLabel } from "app/components/Form";
 import { Header } from "app/components/Header";
@@ -19,7 +19,7 @@ export const FormStep = ({
 	step = 0.001,
 }: {
 	profile: ProfilesContracts.IProfile;
-	fees: Contracts.TransactionFee;
+	fees: Services.TransactionFee;
 	wallet: ProfilesContracts.IReadWriteWallet;
 	step?: number;
 }) => {

@@ -164,7 +164,7 @@ describe("AddRecipient", () => {
 		const emptyProfile = env.profiles().create("Empty");
 
 		emptyProfile.wallets().push(
-			await emptyProfile.walletFactory().fromMnemonic({
+			await emptyProfile.walletFactory().fromMnemonicWithBIP39({
 				mnemonic: "test test",
 				coin: "ARK",
 				network: "ark.devnet",
