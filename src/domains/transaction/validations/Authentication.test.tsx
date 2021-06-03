@@ -24,7 +24,7 @@ describe("Authentication", () => {
 			network: "ark.devnet",
 		});
 
-		walletWithPassword = await profile.walletFactory().fromMnemonic({
+		walletWithPassword = await profile.walletFactory().fromMnemonicWithBIP39({
 			mnemonic: "test2",
 			coin: "ARK",
 			network: "ark.devnet",
