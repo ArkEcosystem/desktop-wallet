@@ -958,7 +958,7 @@ exports[`DelegateRegistrationForm should set fee 1`] = `
                   <div
                     class="fixed invisible w-auto whitespace-nowrap"
                   >
-                    1…
+                    10…
                   </div>
                   <div
                     class="Input__InputWrapperStyled-wu99qs-0 jYUFQr"
@@ -971,7 +971,7 @@ exports[`DelegateRegistrationForm should set fee 1`] = `
                         data-testid="InputCurrency"
                         name="fee"
                         type="text"
-                        value="1"
+                        value="10"
                       />
                     </div>
                   </div>
@@ -994,7 +994,7 @@ exports[`DelegateRegistrationForm should set fee 1`] = `
                           <div
                             aria-valuemax="10"
                             aria-valuemin="0"
-                            aria-valuenow="1"
+                            aria-valuenow="10"
                             class="Range__Thumb-sc-10itqc2-2 hXgqqU"
                             data-testid="Range__thumb"
                             draggable="false"
@@ -1033,7 +1033,7 @@ exports[`DelegateRegistrationForm should set fee 1`] = `
                   Average
                 </button>
                 <button
-                  aria-checked="false"
+                  aria-checked="true"
                   class="ButtonGroup__ButtonGroupOptionStyled-sc-1u00raz-0 cqjOKw"
                   data-testid="ButtonGroupOption"
                   role="radio"

@@ -119,16 +119,16 @@ describe("DelegateRegistrationForm", () => {
 	});
 
 	it("should set fee", async () => {
-		const { asFragment, getByTestId } = await renderComponent({ fee: "1" });
+		const { asFragment, getByTestId } = await renderComponent({ fee: "10" });
 
-		await waitFor(() => expect(getByTestId("InputCurrency")).toHaveValue("1"));
+		await waitFor(() => expect(getByTestId("InputCurrency")).toHaveValue("10"));
 
 		await act(async () => {
 			const fees = within(getByTestId("InputFee")).getAllByTestId("ButtonGroupOption");
 			fireEvent.click(fees[2]);
 		});
 
-		await waitFor(() => expect(getByTestId("InputCurrency")).toHaveValue("1"));
+		await waitFor(() => expect(getByTestId("InputCurrency")).toHaveValue("10"));
 		await waitFor(() => expect(asFragment()).toMatchSnapshot());
 	});
 
