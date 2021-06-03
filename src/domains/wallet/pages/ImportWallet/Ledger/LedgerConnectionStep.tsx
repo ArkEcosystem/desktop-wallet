@@ -1,4 +1,4 @@
-import { Coins } from "@arkecosystem/platform-sdk";
+import { Networks } from "@arkecosystem/platform-sdk";
 import { Alert } from "app/components/Alert";
 import { FormField, FormLabel } from "app/components/Form";
 import { Header } from "app/components/Header";
@@ -57,7 +57,7 @@ export const LedgerConnectionStep = ({
 	const { watch, register, setValue, unregister } = useFormContext();
 	const { connect, abortConnectionRetry, error, isConnected } = useLedgerContext();
 
-	const [network] = useState<Coins.Network>(() => watch("network"));
+	const [network] = useState<Networks.Network>(() => watch("network"));
 	const [isReady, setIsReady] = useState(false);
 
 	useEffect(() => {

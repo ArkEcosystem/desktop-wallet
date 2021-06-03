@@ -1,4 +1,4 @@
-import { Coins } from "@arkecosystem/platform-sdk";
+import { Networks } from "@arkecosystem/platform-sdk";
 import { Contracts } from "@arkecosystem/platform-sdk-profiles";
 import Tippy from "@tippyjs/react";
 import { Address } from "app/components/Address";
@@ -43,7 +43,7 @@ export const LedgerTable = ({
 	toggleSelectAll,
 	isScanning,
 }: {
-	network: Coins.Network;
+	network: Networks.Network;
 } & ReturnType<typeof useLedgerScanner>) => {
 	const { t } = useTranslation();
 	const isAllSelected = !isScanning && wallets.length > 0 && selectedWallets.length === wallets.length;
@@ -109,7 +109,7 @@ export const LedgerTable = ({
 					<TableRow isSelected={isSelected(wallet.path)}>
 						<TableCell variant="start" className="w-2/5" innerClassName="space-x-4">
 							<Avatar address={wallet.address} size="lg" noShadow />
-							<div className="flex-1 flex w-32">
+							<div className="flex flex-1 w-32">
 								<Address address={wallet.address} />
 							</div>
 							<span className="hidden">{wallet.path}</span>
@@ -140,7 +140,7 @@ export const LedgerScanStep = ({
 }) => {
 	const { t } = useTranslation();
 	const { watch, register, unregister, setValue } = useFormContext();
-	const [network] = useState<Coins.Network>(() => watch("network"));
+	const [network] = useState<Networks.Network>(() => watch("network"));
 
 	const ledgerScanner = useLedgerScanner(network.coin(), network.id());
 

@@ -97,12 +97,11 @@ export const FormStep = ({
 						min={fees.min}
 						avg={fees.avg}
 						max={fees.max}
-						defaultValue={fee || 0}
 						value={fee || 0}
 						step={0.01}
 						showFeeOptions={wallet.network().feeType() === "dynamic"}
-						onChange={(currency) => {
-							setValue("fee", currency.value, { shouldValidate: true, shouldDirty: true });
+						onChange={(value) => {
+							setValue("fee", value, { shouldValidate: true, shouldDirty: true });
 						}}
 					/>
 				</FormField>

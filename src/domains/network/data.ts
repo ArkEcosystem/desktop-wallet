@@ -1,4 +1,4 @@
-import { Coins } from "@arkecosystem/platform-sdk";
+import { Coins, Networks } from "@arkecosystem/platform-sdk";
 // import { ADA } from "@arkecosystem/platform-sdk-ada";
 import { ARK } from "@arkecosystem/platform-sdk-ark";
 // import { ATOM } from "@arkecosystem/platform-sdk-atom";
@@ -13,7 +13,7 @@ import { LSK } from "@arkecosystem/platform-sdk-lsk";
 // import { ZIL } from "@arkecosystem/platform-sdk-zil";
 
 const createNetwork = (coin: Coins.CoinSpec, network: string) =>
-	new Coins.Network(coin.manifest, coin.manifest.networks[network]);
+	new Networks.Network(coin.manifest, coin.manifest.networks[network]);
 
 export interface CoinNetworkExtended {
 	displayName: string;
@@ -193,7 +193,7 @@ export const coinsNetworkExtendedData: Record<string, CoinNetworkExtended> = {
 	// },
 };
 
-export const availableNetworksMock: Coins.Network[] = [
+export const availableNetworksMock: Networks.Network[] = [
 	// createNetwork(ADA, "ada.mainnet"),
 	// createNetwork(ADA, "ada.testnet"),
 	createNetwork(ARK, "ark.mainnet"),

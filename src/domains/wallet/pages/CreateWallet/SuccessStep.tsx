@@ -1,4 +1,4 @@
-import { Coins } from "@arkecosystem/platform-sdk";
+import { Networks } from "@arkecosystem/platform-sdk";
 import { Contracts } from "@arkecosystem/platform-sdk-profiles";
 import { Address } from "app/components/Address";
 import { Avatar } from "app/components/Avatar";
@@ -15,7 +15,7 @@ export const SuccessStep = ({ nameMaxLength, profile }: { nameMaxLength: number;
 
 	// getValues does not get the value of `defaultValues` on first render
 	const [defaultNetwork] = useState(() => watch("network"));
-	const network: Coins.Network = getValues("network") || defaultNetwork;
+	const network: Networks.Network = getValues("network") || defaultNetwork;
 
 	const [defaultWallet] = useState(() => watch("wallet"));
 	const wallet: Contracts.IReadWriteWallet = getValues("wallet") || defaultWallet;

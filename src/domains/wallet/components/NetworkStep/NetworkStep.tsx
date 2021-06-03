@@ -1,4 +1,4 @@
-import { Coins } from "@arkecosystem/platform-sdk";
+import { Networks } from "@arkecosystem/platform-sdk";
 import { Contracts } from "@arkecosystem/platform-sdk-profiles";
 import { Alert } from "app/components/Alert";
 import { FormField, FormLabel } from "app/components/Form";
@@ -32,11 +32,11 @@ export const NetworkStep = ({ profile, title, subtitle, disabled, error }: Netwo
 		return availableNetworks;
 	}, [env, profile]);
 
-	const selectedNetwork: Coins.Network = getValues("network");
+	const selectedNetwork: Networks.Network = getValues("network");
 
 	const { t } = useTranslation();
 
-	const handleSelect = (network?: Coins.Network | null) => {
+	const handleSelect = (network?: Networks.Network | null) => {
 		setValue("network", network, { shouldValidate: true, shouldDirty: true });
 	};
 
@@ -72,7 +72,7 @@ export const NetworkStep = ({ profile, title, subtitle, disabled, error }: Netwo
 				</div>
 			)}
 
-			<FormField name="network" className="flex flex-col space-y-2 mt-8">
+			<FormField name="network" className="flex flex-col mt-8 space-y-2">
 				<FormLabel label={t("COMMON.CRYPTOASSET")} />
 				<SelectNetwork
 					id="NetworkStep__network"

@@ -340,7 +340,7 @@ describe("SendVote", () => {
 		const { result: form } = renderHook(() =>
 			useForm({
 				defaultValues: {
-					fee: (0.1 * 1e8).toFixed(0),
+					fee: "0.1",
 				},
 			}),
 		);
@@ -942,7 +942,7 @@ describe("SendVote", () => {
 		const { result: form } = renderHook(() =>
 			useForm({
 				defaultValues: {
-					fee: (0.1 * 1e8).toFixed(0),
+					fee: "0.1",
 				},
 			}),
 		);
