@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/require-await */
-import { Coins } from "@arkecosystem/platform-sdk";
+import { Coins, Enums } from "@arkecosystem/platform-sdk";
 import { Contracts } from "@arkecosystem/platform-sdk-profiles";
 // @README: This import is fine in tests but should be avoided in production code.
 import { ReadOnlyWallet } from "@arkecosystem/platform-sdk-profiles/dist/drivers/memory/wallets/read-only-wallet";
@@ -170,7 +170,7 @@ describe("WalletDetails", () => {
 	it("should not render wallet vote when the network does not support votes", async () => {
 		const networkFeatureSpy = jest.spyOn(wallet.network(), "allowsVoting");
 
-		when(networkFeatureSpy).calledWith(Coins.FeatureFlag.TransactionVote).mockReturnValue(false);
+		when(networkFeatureSpy).calledWith(Enums.FeatureFlag.TransactionVote).mockReturnValue(false);
 
 		const { getByTestId } = await renderPage({ waitForTopSection: false });
 
