@@ -1,4 +1,4 @@
-import { Coins } from "@arkecosystem/platform-sdk";
+import { Networks } from "@arkecosystem/platform-sdk";
 import { useFormField } from "app/components/Form/useFormField";
 import { Input } from "app/components/Input";
 import cn from "classnames";
@@ -6,7 +6,7 @@ import { NetworkIcon } from "domains/network/components/NetworkIcon";
 import React from "react";
 
 type Props = {
-	network?: Coins.Network;
+	network?: Networks.Network;
 	suggestion?: string;
 } & React.InputHTMLAttributes<any>;
 
