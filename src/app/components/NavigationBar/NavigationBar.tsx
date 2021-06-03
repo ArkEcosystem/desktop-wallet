@@ -1,4 +1,4 @@
-import { Data } from "@arkecosystem/platform-sdk";
+import { CURRENCIES } from "@arkecosystem/platform-sdk-intl";
 import { Contracts } from "@arkecosystem/platform-sdk-profiles";
 import { images } from "app/assets/images";
 import { Avatar } from "app/components/Avatar";
@@ -49,7 +49,7 @@ interface NavigationBarProps {
 const NavWrapper = styled.nav<{ noBorder?: boolean; noShadow?: boolean; scroll?: number }>`
 	${defaultStyle}
 
-	${tw`sticky border-b border-theme-background inset-x-0 top-0 bg-theme-background transition-all duration-200`}
+	${tw`sticky inset-x-0 top-0 transition-all duration-200 border-b border-theme-background bg-theme-background`}
 
 	${({ noBorder, scroll }) => {
 		if (!noBorder && !scroll) {
@@ -73,8 +73,8 @@ interface UserInfoProps {
 }
 
 const UserInfo = ({ exchangeCurrency, onUserAction, avatarImage, userActions, userInitials }: UserInfoProps) => {
-	const tickerConfig: typeof Data.CURRENCIES["BTC"] | undefined =
-		Data.CURRENCIES[exchangeCurrency as keyof typeof Data.CURRENCIES];
+	const tickerConfig: typeof CURRENCIES["BTC"] | undefined =
+		CURRENCIES[exchangeCurrency as keyof typeof CURRENCIES];
 
 	return (
 		<div className="flex my-0.5 ml-4 -space-x-2">
@@ -95,7 +95,7 @@ const UserInfo = ({ exchangeCurrency, onUserAction, avatarImage, userActions, us
 				dropdownClass="mt-8"
 				toggleContent={(isOpen: boolean) => (
 					<div
-						className="cursor-pointer relative justify-center items-center align-middle rounded-full"
+						className="relative items-center justify-center align-middle rounded-full cursor-pointer"
 						data-testid="navbar__useractions"
 					>
 						<Avatar size="lg" highlight={isOpen}>
@@ -109,7 +109,7 @@ const UserInfo = ({ exchangeCurrency, onUserAction, avatarImage, userActions, us
 							) : (
 								<img
 									alt="Profile Avatar"
-									className="object-cover w-11 h-11 bg-center bg-no-repeat bg-cover rounded-full"
+									className="object-cover bg-center bg-no-repeat bg-cover rounded-full w-11 h-11"
 									src={avatarImage}
 								/>
 							)}
@@ -130,7 +130,7 @@ export const NavigationButtonWrapper = styled.div`
 `;
 
 const LogoContainer = styled.div`
-	${tw`flex items-center justify-center w-11 h-11 my-auto mr-4 text-white rounded bg-logo`};
+	${tw`flex items-center justify-center my-auto mr-4 text-white rounded w-11 h-11 bg-logo`};
 `;
 
 export const NavigationBar = ({
@@ -209,7 +209,7 @@ export const NavigationBar = ({
 			noShadow={noShadow}
 			scroll={scroll}
 		>
-			<div className="flex relative h-21">
+			<div className="relative flex h-21">
 				{variant === "full" && <BackButton className="flex w-12" disabled={isBackDisabled} />}
 
 				<div className={`flex flex-1 px-8 ${variant !== "full" ? "ml-12" : ""}`}>
@@ -223,7 +223,7 @@ export const NavigationBar = ({
 
 					{variant === "full" && (
 						<>
-							<ul className="flex mr-auto ml-4 space-x-8 h-21">{renderMenu()}</ul>
+							<ul className="flex ml-4 mr-auto space-x-8 h-21">{renderMenu()}</ul>
 
 							<div className="flex items-center my-auto space-x-4">
 								{profile && <NotificationsDropdown profile={profile} />}

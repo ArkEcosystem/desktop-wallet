@@ -1,4 +1,5 @@
-import { Contracts, Services } from "@arkecosystem/platform-sdk";
+import { Services } from "@arkecosystem/platform-sdk";
+import { HttpResponse } from "@arkecosystem/platform-sdk-http";
 import { Repositories } from "@arkecosystem/platform-sdk-profiles";
 import { HttpClient } from "app/services/HttpClient";
 
@@ -15,8 +16,8 @@ export interface PluginAPI {
 	http(): {
 		create: () => HttpClient;
 		decorate: (key: string, callback: <T = any>(arg: T) => T) => void;
-		get: (url: string, query?: object) => Promise<Contracts.HttpResponse>;
-		post: (url: string, data?: object) => Promise<Contracts.HttpResponse>;
+		get: (url: string, query?: object) => Promise<HttpResponse>;
+		post: (url: string, data?: object) => Promise<HttpResponse>;
 	};
 	filesystem(): {
 		askUserToSaveFile(content: string, suggestedFileName?: string): Promise<void>;
