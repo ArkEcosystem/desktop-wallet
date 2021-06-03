@@ -16,7 +16,7 @@ export interface InputFeeProps {
 export const InputFee = memo(({ onChange, step, showFeeOptions, ...props }: InputFeeProps) => {
 	const { t } = useTranslation();
 
-	const value = props.value ?? "0";
+	const value = props.value || "";
 	const avg = +props.avg;
 	const min = +props.min;
 	const max = +props.max;

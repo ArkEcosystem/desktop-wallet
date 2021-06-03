@@ -7,7 +7,7 @@ exports[`SendTransfer should display disabled address selection input if selecte
   >
     <nav
       aria-labelledby="main menu"
-      class="NavigationBar__NavWrapper-sc-1qsoskw-0 hkUMvZ"
+      class="NavigationBar__NavWrapper-sc-1qsoskw-0 bNXdkF"
     >
       <div
         class="flex relative h-21"
@@ -48,12 +48,12 @@ exports[`SendTransfer should display disabled address selection input if selecte
               class="flex"
             >
               <a
-                class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
+                class="relative flex items-center font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
                 title="Portfolio"
               >
                 <div
-                  class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                  class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
                 />
                 Portfolio
               </a>
@@ -62,12 +62,12 @@ exports[`SendTransfer should display disabled address selection input if selecte
               class="flex"
             >
               <a
-                class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
+                class="relative flex items-center font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/plugins"
                 title="Plugins"
               >
                 <div
-                  class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                  class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
                 />
                 Plugins
               </a>
@@ -76,12 +76,12 @@ exports[`SendTransfer should display disabled address selection input if selecte
               class="flex"
             >
               <a
-                class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
+                class="relative flex items-center font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/exchange"
                 title="Exchange"
               >
                 <div
-                  class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                  class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
                 />
                 Exchange
               </a>
@@ -90,12 +90,12 @@ exports[`SendTransfer should display disabled address selection input if selecte
               class="flex"
             >
               <a
-                class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
+                class="relative flex items-center font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/news"
                 title="News"
               >
                 <div
-                  class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                  class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
                 />
                 News
               </a>
@@ -669,12 +669,12 @@ exports[`SendTransfer should display disabled address selection input if selecte
                                         <div
                                           aria-expanded="false"
                                           aria-haspopup="listbox"
-                                          aria-owns="downshift-42-menu"
+                                          aria-owns="downshift-43-menu"
                                           role="combobox"
                                         >
                                           <label
-                                            for="downshift-42-input"
-                                            id="downshift-42-label"
+                                            for="downshift-43-input"
+                                            id="downshift-43-label"
                                           />
                                           <div
                                             class="fixed invisible w-auto whitespace-nowrap"
@@ -693,14 +693,14 @@ exports[`SendTransfer should display disabled address selection input if selecte
                                             >
                                               <input
                                                 aria-autocomplete="list"
-                                                aria-controls="downshift-42-menu"
+                                                aria-controls="downshift-43-menu"
                                                 aria-invalid="false"
-                                                aria-labelledby="downshift-42-label"
+                                                aria-labelledby="downshift-43-label"
                                                 autocomplete="off"
                                                 class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full cursor-default text-theme-secondary-text"
-                                                data-testid="SelectDropdownInput__input"
+                                                data-testid="SelectDropdown__input"
                                                 disabled=""
-                                                id="downshift-42-input"
+                                                id="downshift-43-input"
                                                 name="recipientAddress"
                                                 placeholder="Address"
                                                 value=""
@@ -730,9 +730,9 @@ exports[`SendTransfer should display disabled address selection input if selecte
                                             </div>
                                           </div>
                                           <ul
-                                            aria-labelledby="downshift-42-label"
-                                            class="styles__SelectOptionsList-b2falt-0 ghEDCU"
-                                            id="downshift-42-menu"
+                                            aria-labelledby="downshift-43-label"
+                                            class="styles__SelectOptionsList-b2falt-0 dyOwRR"
+                                            id="downshift-43-menu"
                                             role="listbox"
                                           />
                                         </div>
@@ -1012,7 +1012,7 @@ exports[`SendTransfer should display unconfirmed transactions modal when submitt
   >
     <nav
       aria-labelledby="main menu"
-      class="NavigationBar__NavWrapper-sc-1qsoskw-0 hkUMvZ"
+      class="NavigationBar__NavWrapper-sc-1qsoskw-0 bNXdkF"
     >
       <div
         class="flex relative h-21"
@@ -1053,12 +1053,12 @@ exports[`SendTransfer should display unconfirmed transactions modal when submitt
               class="flex"
             >
               <a
-                class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
+                class="relative flex items-center font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
                 title="Portfolio"
               >
                 <div
-                  class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                  class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
                 />
                 Portfolio
               </a>
@@ -1067,12 +1067,12 @@ exports[`SendTransfer should display unconfirmed transactions modal when submitt
               class="flex"
             >
               <a
-                class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
+                class="relative flex items-center font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/plugins"
                 title="Plugins"
               >
                 <div
-                  class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                  class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
                 />
                 Plugins
               </a>
@@ -1081,12 +1081,12 @@ exports[`SendTransfer should display unconfirmed transactions modal when submitt
               class="flex"
             >
               <a
-                class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
+                class="relative flex items-center font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/exchange"
                 title="Exchange"
               >
                 <div
-                  class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                  class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
                 />
                 Exchange
               </a>
@@ -1095,12 +1095,12 @@ exports[`SendTransfer should display unconfirmed transactions modal when submitt
               class="flex"
             >
               <a
-                class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
+                class="relative flex items-center font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/news"
                 title="News"
               >
                 <div
-                  class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                  class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
                 />
                 News
               </a>
@@ -1907,7 +1907,7 @@ exports[`SendTransfer should error if wrong mnemonic 1`] = `
   >
     <nav
       aria-labelledby="main menu"
-      class="NavigationBar__NavWrapper-sc-1qsoskw-0 hkUMvZ"
+      class="NavigationBar__NavWrapper-sc-1qsoskw-0 bNXdkF"
     >
       <div
         class="flex relative h-21"
@@ -1948,12 +1948,12 @@ exports[`SendTransfer should error if wrong mnemonic 1`] = `
               class="flex"
             >
               <a
-                class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
+                class="relative flex items-center font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
                 title="Portfolio"
               >
                 <div
-                  class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                  class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
                 />
                 Portfolio
               </a>
@@ -1962,12 +1962,12 @@ exports[`SendTransfer should error if wrong mnemonic 1`] = `
               class="flex"
             >
               <a
-                class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
+                class="relative flex items-center font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/plugins"
                 title="Plugins"
               >
                 <div
-                  class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                  class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
                 />
                 Plugins
               </a>
@@ -1976,12 +1976,12 @@ exports[`SendTransfer should error if wrong mnemonic 1`] = `
               class="flex"
             >
               <a
-                class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
+                class="relative flex items-center font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/exchange"
                 title="Exchange"
               >
                 <div
-                  class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                  class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
                 />
                 Exchange
               </a>
@@ -1990,12 +1990,12 @@ exports[`SendTransfer should error if wrong mnemonic 1`] = `
               class="flex"
             >
               <a
-                class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
+                class="relative flex items-center font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/news"
                 title="News"
               >
                 <div
-                  class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                  class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
                 />
                 News
               </a>
@@ -2701,7 +2701,7 @@ exports[`SendTransfer should render 1st step with custom deeplink values and use
                                 aria-labelledby="downshift-7-label"
                                 autocomplete="off"
                                 class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full cursor-default text-theme-secondary-text"
-                                data-testid="SelectDropdownInput__input"
+                                data-testid="SelectDropdown__input"
                                 disabled=""
                                 id="downshift-7-input"
                                 name="recipientAddress"
@@ -2734,7 +2734,7 @@ exports[`SendTransfer should render 1st step with custom deeplink values and use
                           </div>
                           <ul
                             aria-labelledby="downshift-7-label"
-                            class="styles__SelectOptionsList-b2falt-0 ghEDCU"
+                            class="styles__SelectOptionsList-b2falt-0 dyOwRR"
                             id="downshift-7-menu"
                             role="listbox"
                           />
@@ -2918,7 +2918,7 @@ exports[`SendTransfer should render form and use location state 1`] = `
   >
     <nav
       aria-labelledby="main menu"
-      class="NavigationBar__NavWrapper-sc-1qsoskw-0 hkUMvZ"
+      class="NavigationBar__NavWrapper-sc-1qsoskw-0 bNXdkF"
     >
       <div
         class="flex relative h-21"
@@ -2959,12 +2959,12 @@ exports[`SendTransfer should render form and use location state 1`] = `
               class="flex"
             >
               <a
-                class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
+                class="relative flex items-center font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
                 title="Portfolio"
               >
                 <div
-                  class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                  class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
                 />
                 Portfolio
               </a>
@@ -2973,12 +2973,12 @@ exports[`SendTransfer should render form and use location state 1`] = `
               class="flex"
             >
               <a
-                class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
+                class="relative flex items-center font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/plugins"
                 title="Plugins"
               >
                 <div
-                  class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                  class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
                 />
                 Plugins
               </a>
@@ -2987,12 +2987,12 @@ exports[`SendTransfer should render form and use location state 1`] = `
               class="flex"
             >
               <a
-                class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
+                class="relative flex items-center font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/exchange"
                 title="Exchange"
               >
                 <div
-                  class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                  class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
                 />
                 Exchange
               </a>
@@ -3001,12 +3001,12 @@ exports[`SendTransfer should render form and use location state 1`] = `
               class="flex"
             >
               <a
-                class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
+                class="relative flex items-center font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/news"
                 title="News"
               >
                 <div
-                  class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                  class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
                 />
                 News
               </a>
@@ -3644,8 +3644,8 @@ exports[`SendTransfer should render form and use location state 1`] = `
                                                 aria-invalid="false"
                                                 aria-labelledby="downshift-10-label"
                                                 autocomplete="off"
-                                                class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full cursor-default"
-                                                data-testid="SelectDropdownInput__input"
+                                                class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
+                                                data-testid="SelectDropdown__input"
                                                 id="downshift-10-input"
                                                 name="recipientAddress"
                                                 placeholder="Address"
@@ -3677,7 +3677,7 @@ exports[`SendTransfer should render form and use location state 1`] = `
                                           </div>
                                           <ul
                                             aria-labelledby="downshift-10-label"
-                                            class="styles__SelectOptionsList-b2falt-0 ghEDCU"
+                                            class="styles__SelectOptionsList-b2falt-0 dyOwRR"
                                             id="downshift-10-menu"
                                             role="listbox"
                                           />
@@ -3739,7 +3739,7 @@ exports[`SendTransfer should render form and use location state 1`] = `
                                             <span
                                               class="whitespace-no-break font-semibold text-sm text-theme-secondary-500 dark:text-theme-secondary-700"
                                             >
-                                              Max 33.67769203
+                                              Max 33.75089801
                                             </span>
                                           </div>
                                         </div>
@@ -3968,7 +3968,7 @@ exports[`SendTransfer should render form and use location state without memo 1`]
   >
     <nav
       aria-labelledby="main menu"
-      class="NavigationBar__NavWrapper-sc-1qsoskw-0 hkUMvZ"
+      class="NavigationBar__NavWrapper-sc-1qsoskw-0 bNXdkF"
     >
       <div
         class="flex relative h-21"
@@ -4009,12 +4009,12 @@ exports[`SendTransfer should render form and use location state without memo 1`]
               class="flex"
             >
               <a
-                class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
+                class="relative flex items-center font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
                 title="Portfolio"
               >
                 <div
-                  class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                  class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
                 />
                 Portfolio
               </a>
@@ -4023,12 +4023,12 @@ exports[`SendTransfer should render form and use location state without memo 1`]
               class="flex"
             >
               <a
-                class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
+                class="relative flex items-center font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/plugins"
                 title="Plugins"
               >
                 <div
-                  class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                  class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
                 />
                 Plugins
               </a>
@@ -4037,12 +4037,12 @@ exports[`SendTransfer should render form and use location state without memo 1`]
               class="flex"
             >
               <a
-                class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
+                class="relative flex items-center font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/exchange"
                 title="Exchange"
               >
                 <div
-                  class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                  class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
                 />
                 Exchange
               </a>
@@ -4051,12 +4051,12 @@ exports[`SendTransfer should render form and use location state without memo 1`]
               class="flex"
             >
               <a
-                class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
+                class="relative flex items-center font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/news"
                 title="News"
               >
                 <div
-                  class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                  class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
                 />
                 News
               </a>
@@ -4684,7 +4684,7 @@ exports[`SendTransfer should render form and use location state without memo 1`]
                                                 aria-labelledby="downshift-27-label"
                                                 autocomplete="off"
                                                 class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full cursor-default"
-                                                data-testid="SelectDropdownInput__input"
+                                                data-testid="SelectDropdown__input"
                                                 id="downshift-27-input"
                                                 name="recipientAddress"
                                                 placeholder="Address"
@@ -4716,7 +4716,7 @@ exports[`SendTransfer should render form and use location state without memo 1`]
                                           </div>
                                           <ul
                                             aria-labelledby="downshift-27-label"
-                                            class="styles__SelectOptionsList-b2falt-0 ghEDCU"
+                                            class="styles__SelectOptionsList-b2falt-0 dyOwRR"
                                             id="downshift-27-menu"
                                             role="listbox"
                                           />
@@ -4778,7 +4778,7 @@ exports[`SendTransfer should render form and use location state without memo 1`]
                                             <span
                                               class="whitespace-no-break font-semibold text-sm text-theme-secondary-500 dark:text-theme-secondary-700"
                                             >
-                                              Max 33.67769203
+                                              Max 33.75089801
                                             </span>
                                           </div>
                                         </div>
@@ -5330,7 +5330,7 @@ exports[`SendTransfer should render form step 1`] = `
                                 aria-labelledby="downshift-0-label"
                                 autocomplete="off"
                                 class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full cursor-default text-theme-secondary-text"
-                                data-testid="SelectDropdownInput__input"
+                                data-testid="SelectDropdown__input"
                                 disabled=""
                                 id="downshift-0-input"
                                 name="recipientAddress"
@@ -5363,7 +5363,7 @@ exports[`SendTransfer should render form step 1`] = `
                           </div>
                           <ul
                             aria-labelledby="downshift-0-label"
-                            class="styles__SelectOptionsList-b2falt-0 ghEDCU"
+                            class="styles__SelectOptionsList-b2falt-0 dyOwRR"
                             id="downshift-0-menu"
                             role="listbox"
                           />
@@ -5870,7 +5870,7 @@ exports[`SendTransfer should render form step with deeplink values and use them 
                                 aria-labelledby="downshift-4-label"
                                 autocomplete="off"
                                 class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full cursor-default text-theme-secondary-text"
-                                data-testid="SelectDropdownInput__input"
+                                data-testid="SelectDropdown__input"
                                 disabled=""
                                 id="downshift-4-input"
                                 name="recipientAddress"
@@ -5903,7 +5903,7 @@ exports[`SendTransfer should render form step with deeplink values and use them 
                           </div>
                           <ul
                             aria-labelledby="downshift-4-label"
-                            class="styles__SelectOptionsList-b2falt-0 ghEDCU"
+                            class="styles__SelectOptionsList-b2falt-0 dyOwRR"
                             id="downshift-4-menu"
                             role="listbox"
                           />
@@ -6410,7 +6410,7 @@ exports[`SendTransfer should render form step without test networks 1`] = `
                                 aria-labelledby="downshift-2-label"
                                 autocomplete="off"
                                 class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full cursor-default text-theme-secondary-text"
-                                data-testid="SelectDropdownInput__input"
+                                data-testid="SelectDropdown__input"
                                 disabled=""
                                 id="downshift-2-input"
                                 name="recipientAddress"
@@ -6443,7 +6443,7 @@ exports[`SendTransfer should render form step without test networks 1`] = `
                           </div>
                           <ul
                             aria-labelledby="downshift-2-label"
-                            class="styles__SelectOptionsList-b2falt-0 ghEDCU"
+                            class="styles__SelectOptionsList-b2falt-0 dyOwRR"
                             id="downshift-2-menu"
                             role="listbox"
                           />
@@ -6627,7 +6627,7 @@ exports[`SendTransfer should render network selection without selected wallet 1`
   >
     <nav
       aria-labelledby="main menu"
-      class="NavigationBar__NavWrapper-sc-1qsoskw-0 hkUMvZ"
+      class="NavigationBar__NavWrapper-sc-1qsoskw-0 bNXdkF"
     >
       <div
         class="flex relative h-21"
@@ -6668,12 +6668,12 @@ exports[`SendTransfer should render network selection without selected wallet 1`
               class="flex"
             >
               <a
-                class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
+                class="relative flex items-center font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
                 title="Portfolio"
               >
                 <div
-                  class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                  class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
                 />
                 Portfolio
               </a>
@@ -6682,12 +6682,12 @@ exports[`SendTransfer should render network selection without selected wallet 1`
               class="flex"
             >
               <a
-                class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
+                class="relative flex items-center font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/plugins"
                 title="Plugins"
               >
                 <div
-                  class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                  class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
                 />
                 Plugins
               </a>
@@ -6696,12 +6696,12 @@ exports[`SendTransfer should render network selection without selected wallet 1`
               class="flex"
             >
               <a
-                class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
+                class="relative flex items-center font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/exchange"
                 title="Exchange"
               >
                 <div
-                  class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                  class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
                 />
                 Exchange
               </a>
@@ -6710,12 +6710,12 @@ exports[`SendTransfer should render network selection without selected wallet 1`
               class="flex"
             >
               <a
-                class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
+                class="relative flex items-center font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/news"
                 title="News"
               >
                 <div
-                  class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                  class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
                 />
                 News
               </a>
@@ -7490,7 +7490,7 @@ exports[`SendTransfer should render review step 1`] = `
                 class="mt-1 text-lg font-semibold"
                 data-testid="total-amount-box__transaction-fee"
               >
-                0.1 DARK
+                0.01 DARK
               </span>
             </div>
           </div>
@@ -7524,7 +7524,7 @@ exports[`SendTransfer should render review step 1`] = `
             class="text-2xl font-bold"
             data-testid="total-amount-box__total"
           >
-            1.1 DARK
+            1.01 DARK
           </span>
         </div>
       </div>
@@ -7835,7 +7835,7 @@ exports[`SendTransfer should select a cryptoasset and select sender without wall
   >
     <nav
       aria-labelledby="main menu"
-      class="NavigationBar__NavWrapper-sc-1qsoskw-0 hkUMvZ"
+      class="NavigationBar__NavWrapper-sc-1qsoskw-0 bNXdkF"
     >
       <div
         class="flex relative h-21"
@@ -7876,12 +7876,12 @@ exports[`SendTransfer should select a cryptoasset and select sender without wall
               class="flex"
             >
               <a
-                class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
+                class="relative flex items-center font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
                 title="Portfolio"
               >
                 <div
-                  class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                  class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
                 />
                 Portfolio
               </a>
@@ -7890,12 +7890,12 @@ exports[`SendTransfer should select a cryptoasset and select sender without wall
               class="flex"
             >
               <a
-                class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
+                class="relative flex items-center font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/plugins"
                 title="Plugins"
               >
                 <div
-                  class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                  class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
                 />
                 Plugins
               </a>
@@ -7904,12 +7904,12 @@ exports[`SendTransfer should select a cryptoasset and select sender without wall
               class="flex"
             >
               <a
-                class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
+                class="relative flex items-center font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/exchange"
                 title="Exchange"
               >
                 <div
-                  class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                  class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
                 />
                 Exchange
               </a>
@@ -7918,12 +7918,12 @@ exports[`SendTransfer should select a cryptoasset and select sender without wall
               class="flex"
             >
               <a
-                class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
+                class="relative flex items-center font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/news"
                 title="News"
               >
                 <div
-                  class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                  class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
                 />
                 News
               </a>
@@ -8530,12 +8530,12 @@ exports[`SendTransfer should select a cryptoasset and select sender without wall
                                         <div
                                           aria-expanded="false"
                                           aria-haspopup="listbox"
-                                          aria-owns="downshift-51-menu"
+                                          aria-owns="downshift-52-menu"
                                           role="combobox"
                                         >
                                           <label
-                                            for="downshift-51-input"
-                                            id="downshift-51-label"
+                                            for="downshift-52-input"
+                                            id="downshift-52-label"
                                           />
                                           <div
                                             class="fixed invisible w-auto whitespace-nowrap"
@@ -8554,13 +8554,13 @@ exports[`SendTransfer should select a cryptoasset and select sender without wall
                                             >
                                               <input
                                                 aria-autocomplete="list"
-                                                aria-controls="downshift-51-menu"
+                                                aria-controls="downshift-52-menu"
                                                 aria-invalid="false"
-                                                aria-labelledby="downshift-51-label"
+                                                aria-labelledby="downshift-52-label"
                                                 autocomplete="off"
                                                 class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full cursor-default"
-                                                data-testid="SelectDropdownInput__input"
-                                                id="downshift-51-input"
+                                                data-testid="SelectDropdown__input"
+                                                id="downshift-52-input"
                                                 name="recipientAddress"
                                                 placeholder="Address"
                                                 value=""
@@ -8590,9 +8590,9 @@ exports[`SendTransfer should select a cryptoasset and select sender without wall
                                             </div>
                                           </div>
                                           <ul
-                                            aria-labelledby="downshift-51-label"
-                                            class="styles__SelectOptionsList-b2falt-0 ghEDCU"
-                                            id="downshift-51-menu"
+                                            aria-labelledby="downshift-52-label"
+                                            class="styles__SelectOptionsList-b2falt-0 dyOwRR"
+                                            id="downshift-52-menu"
                                             role="listbox"
                                           />
                                         </div>
@@ -8656,7 +8656,7 @@ exports[`SendTransfer should select a cryptoasset and select sender without wall
                                             >
                                               Max
                                                
-                                              57.60679402
+                                              57.68000000
                                             </span>
                                           </div>
                                         </div>
@@ -8888,7 +8888,7 @@ exports[`SendTransfer should select cryptoasset 1`] = `
   >
     <nav
       aria-labelledby="main menu"
-      class="NavigationBar__NavWrapper-sc-1qsoskw-0 hkUMvZ"
+      class="NavigationBar__NavWrapper-sc-1qsoskw-0 bNXdkF"
     >
       <div
         class="flex relative h-21"
@@ -8929,12 +8929,12 @@ exports[`SendTransfer should select cryptoasset 1`] = `
               class="flex"
             >
               <a
-                class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
+                class="relative flex items-center font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
                 title="Portfolio"
               >
                 <div
-                  class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                  class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
                 />
                 Portfolio
               </a>
@@ -8943,12 +8943,12 @@ exports[`SendTransfer should select cryptoasset 1`] = `
               class="flex"
             >
               <a
-                class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
+                class="relative flex items-center font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/plugins"
                 title="Plugins"
               >
                 <div
-                  class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                  class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
                 />
                 Plugins
               </a>
@@ -8957,12 +8957,12 @@ exports[`SendTransfer should select cryptoasset 1`] = `
               class="flex"
             >
               <a
-                class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
+                class="relative flex items-center font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/exchange"
                 title="Exchange"
               >
                 <div
-                  class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                  class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
                 />
                 Exchange
               </a>
@@ -8971,12 +8971,12 @@ exports[`SendTransfer should select cryptoasset 1`] = `
               class="flex"
             >
               <a
-                class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
+                class="relative flex items-center font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/news"
                 title="News"
               >
                 <div
-                  class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                  class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
                 />
                 News
               </a>
@@ -9390,7 +9390,7 @@ exports[`SendTransfer should send a single transfer 1`] = `
   >
     <nav
       aria-labelledby="main menu"
-      class="NavigationBar__NavWrapper-sc-1qsoskw-0 hkUMvZ"
+      class="NavigationBar__NavWrapper-sc-1qsoskw-0 bNXdkF"
     >
       <div
         class="flex relative h-21"
@@ -9431,12 +9431,12 @@ exports[`SendTransfer should send a single transfer 1`] = `
               class="flex"
             >
               <a
-                class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
+                class="relative flex items-center font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
                 title="Portfolio"
               >
                 <div
-                  class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                  class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
                 />
                 Portfolio
               </a>
@@ -9445,12 +9445,12 @@ exports[`SendTransfer should send a single transfer 1`] = `
               class="flex"
             >
               <a
-                class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
+                class="relative flex items-center font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/plugins"
                 title="Plugins"
               >
                 <div
-                  class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                  class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
                 />
                 Plugins
               </a>
@@ -9459,12 +9459,12 @@ exports[`SendTransfer should send a single transfer 1`] = `
               class="flex"
             >
               <a
-                class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
+                class="relative flex items-center font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/exchange"
                 title="Exchange"
               >
                 <div
-                  class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                  class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
                 />
                 Exchange
               </a>
@@ -9473,12 +9473,12 @@ exports[`SendTransfer should send a single transfer 1`] = `
               class="flex"
             >
               <a
-                class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
+                class="relative flex items-center font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/news"
                 title="News"
               >
                 <div
-                  class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                  class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
                 />
                 News
               </a>
@@ -10044,7 +10044,7 @@ exports[`SendTransfer should send a single transfer and handle undefined expirat
   >
     <nav
       aria-labelledby="main menu"
-      class="NavigationBar__NavWrapper-sc-1qsoskw-0 hkUMvZ"
+      class="NavigationBar__NavWrapper-sc-1qsoskw-0 bNXdkF"
     >
       <div
         class="flex relative h-21"
@@ -10085,12 +10085,12 @@ exports[`SendTransfer should send a single transfer and handle undefined expirat
               class="flex"
             >
               <a
-                class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
+                class="relative flex items-center font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
                 title="Portfolio"
               >
                 <div
-                  class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                  class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
                 />
                 Portfolio
               </a>
@@ -10099,12 +10099,12 @@ exports[`SendTransfer should send a single transfer and handle undefined expirat
               class="flex"
             >
               <a
-                class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
+                class="relative flex items-center font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/plugins"
                 title="Plugins"
               >
                 <div
-                  class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                  class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
                 />
                 Plugins
               </a>
@@ -10113,12 +10113,12 @@ exports[`SendTransfer should send a single transfer and handle undefined expirat
               class="flex"
             >
               <a
-                class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
+                class="relative flex items-center font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/exchange"
                 title="Exchange"
               >
                 <div
-                  class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                  class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
                 />
                 Exchange
               </a>
@@ -10127,12 +10127,12 @@ exports[`SendTransfer should send a single transfer and handle undefined expirat
               class="flex"
             >
               <a
-                class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
+                class="relative flex items-center font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/news"
                 title="News"
               >
                 <div
-                  class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                  class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
                 />
                 News
               </a>
@@ -10698,7 +10698,7 @@ exports[`SendTransfer should send a single transfer and show unconfirmed transac
   >
     <nav
       aria-labelledby="main menu"
-      class="NavigationBar__NavWrapper-sc-1qsoskw-0 hkUMvZ"
+      class="NavigationBar__NavWrapper-sc-1qsoskw-0 bNXdkF"
     >
       <div
         class="flex relative h-21"
@@ -10739,12 +10739,12 @@ exports[`SendTransfer should send a single transfer and show unconfirmed transac
               class="flex"
             >
               <a
-                class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
+                class="relative flex items-center font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
                 title="Portfolio"
               >
                 <div
-                  class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                  class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
                 />
                 Portfolio
               </a>
@@ -10753,12 +10753,12 @@ exports[`SendTransfer should send a single transfer and show unconfirmed transac
               class="flex"
             >
               <a
-                class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
+                class="relative flex items-center font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/plugins"
                 title="Plugins"
               >
                 <div
-                  class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                  class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
                 />
                 Plugins
               </a>
@@ -10767,12 +10767,12 @@ exports[`SendTransfer should send a single transfer and show unconfirmed transac
               class="flex"
             >
               <a
-                class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
+                class="relative flex items-center font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/exchange"
                 title="Exchange"
               >
                 <div
-                  class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                  class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
                 />
                 Exchange
               </a>
@@ -10781,12 +10781,12 @@ exports[`SendTransfer should send a single transfer and show unconfirmed transac
               class="flex"
             >
               <a
-                class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
+                class="relative flex items-center font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/news"
                 title="News"
               >
                 <div
-                  class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                  class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
                 />
                 News
               </a>
@@ -11661,7 +11661,7 @@ exports[`SendTransfer should send a single transfer using wallet with encryption
   >
     <nav
       aria-labelledby="main menu"
-      class="NavigationBar__NavWrapper-sc-1qsoskw-0 hkUMvZ"
+      class="NavigationBar__NavWrapper-sc-1qsoskw-0 bNXdkF"
     >
       <div
         class="flex relative h-21"
@@ -11702,12 +11702,12 @@ exports[`SendTransfer should send a single transfer using wallet with encryption
               class="flex"
             >
               <a
-                class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
+                class="relative flex items-center font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
                 title="Portfolio"
               >
                 <div
-                  class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                  class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
                 />
                 Portfolio
               </a>
@@ -11716,12 +11716,12 @@ exports[`SendTransfer should send a single transfer using wallet with encryption
               class="flex"
             >
               <a
-                class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
+                class="relative flex items-center font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/plugins"
                 title="Plugins"
               >
                 <div
-                  class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                  class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
                 />
                 Plugins
               </a>
@@ -11730,12 +11730,12 @@ exports[`SendTransfer should send a single transfer using wallet with encryption
               class="flex"
             >
               <a
-                class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
+                class="relative flex items-center font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/exchange"
                 title="Exchange"
               >
                 <div
-                  class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                  class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
                 />
                 Exchange
               </a>
@@ -11744,12 +11744,12 @@ exports[`SendTransfer should send a single transfer using wallet with encryption
               class="flex"
             >
               <a
-                class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
+                class="relative flex items-center font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/news"
                 title="News"
               >
                 <div
-                  class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                  class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
                 />
                 News
               </a>
@@ -12315,7 +12315,7 @@ exports[`SendTransfer should send a single transfer with a high fee by confirmin
   >
     <nav
       aria-labelledby="main menu"
-      class="NavigationBar__NavWrapper-sc-1qsoskw-0 hkUMvZ"
+      class="NavigationBar__NavWrapper-sc-1qsoskw-0 bNXdkF"
     >
       <div
         class="flex relative h-21"
@@ -12356,12 +12356,12 @@ exports[`SendTransfer should send a single transfer with a high fee by confirmin
               class="flex"
             >
               <a
-                class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
+                class="relative flex items-center font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
                 title="Portfolio"
               >
                 <div
-                  class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                  class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
                 />
                 Portfolio
               </a>
@@ -12370,12 +12370,12 @@ exports[`SendTransfer should send a single transfer with a high fee by confirmin
               class="flex"
             >
               <a
-                class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
+                class="relative flex items-center font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/plugins"
                 title="Plugins"
               >
                 <div
-                  class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                  class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
                 />
                 Plugins
               </a>
@@ -12384,12 +12384,12 @@ exports[`SendTransfer should send a single transfer with a high fee by confirmin
               class="flex"
             >
               <a
-                class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
+                class="relative flex items-center font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/exchange"
                 title="Exchange"
               >
                 <div
-                  class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                  class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
                 />
                 Exchange
               </a>
@@ -12398,12 +12398,12 @@ exports[`SendTransfer should send a single transfer with a high fee by confirmin
               class="flex"
             >
               <a
-                class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
+                class="relative flex items-center font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/news"
                 title="News"
               >
                 <div
-                  class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                  class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
                 />
                 News
               </a>
@@ -12969,7 +12969,7 @@ exports[`SendTransfer should send a single transfer with a low fee by confirming
   >
     <nav
       aria-labelledby="main menu"
-      class="NavigationBar__NavWrapper-sc-1qsoskw-0 hkUMvZ"
+      class="NavigationBar__NavWrapper-sc-1qsoskw-0 bNXdkF"
     >
       <div
         class="flex relative h-21"
@@ -13010,12 +13010,12 @@ exports[`SendTransfer should send a single transfer with a low fee by confirming
               class="flex"
             >
               <a
-                class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
+                class="relative flex items-center font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
                 title="Portfolio"
               >
                 <div
-                  class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                  class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
                 />
                 Portfolio
               </a>
@@ -13024,12 +13024,12 @@ exports[`SendTransfer should send a single transfer with a low fee by confirming
               class="flex"
             >
               <a
-                class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
+                class="relative flex items-center font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/plugins"
                 title="Plugins"
               >
                 <div
-                  class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                  class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
                 />
                 Plugins
               </a>
@@ -13038,12 +13038,12 @@ exports[`SendTransfer should send a single transfer with a low fee by confirming
               class="flex"
             >
               <a
-                class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
+                class="relative flex items-center font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/exchange"
                 title="Exchange"
               >
                 <div
-                  class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                  class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
                 />
                 Exchange
               </a>
@@ -13052,12 +13052,12 @@ exports[`SendTransfer should send a single transfer with a low fee by confirming
               class="flex"
             >
               <a
-                class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
+                class="relative flex items-center font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/news"
                 title="News"
               >
                 <div
-                  class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                  class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
                 />
                 News
               </a>
@@ -13623,7 +13623,7 @@ exports[`SendTransfer should show error step and go back 1`] = `
   >
     <nav
       aria-labelledby="main menu"
-      class="NavigationBar__NavWrapper-sc-1qsoskw-0 hkUMvZ"
+      class="NavigationBar__NavWrapper-sc-1qsoskw-0 bNXdkF"
     >
       <div
         class="flex relative h-21"
@@ -13664,12 +13664,12 @@ exports[`SendTransfer should show error step and go back 1`] = `
               class="flex"
             >
               <a
-                class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
+                class="relative flex items-center font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
                 title="Portfolio"
               >
                 <div
-                  class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                  class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
                 />
                 Portfolio
               </a>
@@ -13678,12 +13678,12 @@ exports[`SendTransfer should show error step and go back 1`] = `
               class="flex"
             >
               <a
-                class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
+                class="relative flex items-center font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/plugins"
                 title="Plugins"
               >
                 <div
-                  class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                  class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
                 />
                 Plugins
               </a>
@@ -13692,12 +13692,12 @@ exports[`SendTransfer should show error step and go back 1`] = `
               class="flex"
             >
               <a
-                class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
+                class="relative flex items-center font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/exchange"
                 title="Exchange"
               >
                 <div
-                  class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                  class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
                 />
                 Exchange
               </a>
@@ -13706,12 +13706,12 @@ exports[`SendTransfer should show error step and go back 1`] = `
               class="flex"
             >
               <a
-                class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
+                class="relative flex items-center font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/news"
                 title="News"
               >
                 <div
-                  class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                  class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
                 />
                 News
               </a>

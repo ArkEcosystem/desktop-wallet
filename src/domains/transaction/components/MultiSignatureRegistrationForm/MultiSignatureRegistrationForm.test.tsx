@@ -63,7 +63,7 @@ describe("MultiSignature Registration Form", () => {
 		</Form>
 	);
 
-	it("should render form step", async () => {
+	it.only("should render form step", async () => {
 		const { result, waitForNextUpdate } = renderHook(() => useForm());
 		const { asFragment } = render(<Component form={result.current} />);
 		await waitForNextUpdate();
