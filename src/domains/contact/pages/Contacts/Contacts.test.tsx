@@ -107,7 +107,7 @@ describe("Contacts", () => {
 			expect(screen.getByTestId("contact-form__name-input")).toHaveValue("Test Contact");
 		});
 
-		const selectNetworkInput = screen.getByTestId("SelectDropdownInput__input");
+		const selectNetworkInput = screen.getByTestId("SelectDropdown__input");
 
 		fireEvent.change(selectNetworkInput, { target: { value: "ARK D" } });
 		fireEvent.keyDown(selectNetworkInput, { key: "Enter", code: 13 });
