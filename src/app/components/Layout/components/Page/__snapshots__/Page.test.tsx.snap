@@ -7,10 +7,10 @@ exports[`Page should render 1`] = `
   >
     <nav
       aria-labelledby="main menu"
-      class="NavigationBar__NavWrapper-sc-1qsoskw-0 bNXdkF"
+      class="NavigationBar__NavWrapper-sc-1qsoskw-0 bewuLZ"
     >
       <div
-        class="flex relative h-21"
+        class="relative flex h-21"
       >
         <button
           class="BackButton__StyledBackButton-sc-1pe22tv-0 hLgyWD flex w-12"
@@ -32,7 +32,7 @@ exports[`Page should render 1`] = `
             class="flex items-center my-auto"
           >
             <div
-              class="NavigationBar__LogoContainer-sc-1qsoskw-2 tulfg"
+              class="NavigationBar__LogoContainer-sc-1qsoskw-2 itrWMc"
             >
               <svg
                 width="44"
@@ -47,7 +47,7 @@ exports[`Page should render 1`] = `
             </span>
           </div>
           <ul
-            class="flex mr-auto ml-4 space-x-8 h-21"
+            class="flex ml-4 mr-auto space-x-8 h-21"
           />
           <div
             class="flex items-center my-auto space-x-4"
@@ -157,7 +157,7 @@ exports[`Page should render 1`] = `
                   data-testid="dropdown__toggle"
                 >
                   <div
-                    class="cursor-pointer relative justify-center items-center align-middle rounded-full"
+                    class="relative items-center justify-center align-middle rounded-full cursor-pointer"
                     data-testid="navbar__useractions"
                   >
                     <div
@@ -169,7 +169,7 @@ exports[`Page should render 1`] = `
                       >
                         <img
                           alt="Profile Avatar"
-                          class="object-cover w-11 h-11 bg-center bg-no-repeat bg-cover rounded-full"
+                          class="object-cover bg-center bg-no-repeat bg-cover rounded-full w-11 h-11"
                         />
                       </div>
                     </div>
@@ -210,10 +210,10 @@ exports[`Page should render without sidebar 1`] = `
   >
     <nav
       aria-labelledby="main menu"
-      class="NavigationBar__NavWrapper-sc-1qsoskw-0 bNXdkF"
+      class="NavigationBar__NavWrapper-sc-1qsoskw-0 bewuLZ"
     >
       <div
-        class="flex relative h-21"
+        class="relative flex h-21"
       >
         <button
           class="BackButton__StyledBackButton-sc-1pe22tv-0 hLgyWD flex w-12"
@@ -235,7 +235,7 @@ exports[`Page should render without sidebar 1`] = `
             class="flex items-center my-auto"
           >
             <div
-              class="NavigationBar__LogoContainer-sc-1qsoskw-2 tulfg"
+              class="NavigationBar__LogoContainer-sc-1qsoskw-2 itrWMc"
             >
               <svg
                 width="44"
@@ -250,7 +250,7 @@ exports[`Page should render without sidebar 1`] = `
             </span>
           </div>
           <ul
-            class="flex mr-auto ml-4 space-x-8 h-21"
+            class="flex ml-4 mr-auto space-x-8 h-21"
           />
           <div
             class="flex items-center my-auto space-x-4"
@@ -360,7 +360,7 @@ exports[`Page should render without sidebar 1`] = `
                   data-testid="dropdown__toggle"
                 >
                   <div
-                    class="cursor-pointer relative justify-center items-center align-middle rounded-full"
+                    class="relative items-center justify-center align-middle rounded-full cursor-pointer"
                     data-testid="navbar__useractions"
                   >
                     <div
@@ -372,7 +372,7 @@ exports[`Page should render without sidebar 1`] = `
                       >
                         <img
                           alt="Profile Avatar"
-                          class="object-cover w-11 h-11 bg-center bg-no-repeat bg-cover rounded-full"
+                          class="object-cover bg-center bg-no-repeat bg-cover rounded-full w-11 h-11"
                         />
                       </div>
                     </div>

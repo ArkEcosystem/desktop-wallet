@@ -1,8 +1,8 @@
-import { Coins } from "@arkecosystem/platform-sdk";
+import { Networks } from "@arkecosystem/platform-sdk";
 import { BigNumber } from "@arkecosystem/platform-sdk-support";
 
 export const common = (t: any) => ({
-	fee: (balance: BigNumber = BigNumber.ZERO, network?: Coins.Network) => ({
+	fee: (balance: BigNumber = BigNumber.ZERO, network?: Networks.Network) => ({
 		validate: {
 			valid: (fee?: string | number) => {
 				if (fee === undefined || fee === "") {

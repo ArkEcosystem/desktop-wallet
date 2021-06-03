@@ -1,4 +1,4 @@
-import { Coins } from "@arkecosystem/platform-sdk";
+import { Networks } from "@arkecosystem/platform-sdk";
 import { Contracts } from "@arkecosystem/platform-sdk-profiles";
 import { FormField, FormLabel } from "app/components/Form";
 import { Header } from "app/components/Header";
@@ -7,7 +7,7 @@ import React, { useMemo } from "react";
 import { useFormContext } from "react-hook-form";
 import { useTranslation } from "react-i18next";
 
-export const NetworkStep = ({ profile, networks }: { profile: Contracts.IProfile; networks: Coins.Network[] }) => {
+export const NetworkStep = ({ profile, networks }: { profile: Contracts.IProfile; networks: Networks.Network[] }) => {
 	const { getValues, setValue, setError, clearErrors } = useFormContext();
 
 	const availableNetworks = useMemo(() => {
@@ -15,11 +15,11 @@ export const NetworkStep = ({ profile, networks }: { profile: Contracts.IProfile
 		return usesTestNetworks ? networks : networks.filter((network) => network.isLive());
 	}, [profile, networks]);
 
-	const selectedNetwork: Coins.Network = getValues("network");
+	const selectedNetwork: Networks.Network = getValues("network");
 
 	const { t } = useTranslation();
 
-	const handleSelect = (network?: Coins.Network | null) => {
+	const handleSelect = (network?: Networks.Network | null) => {
 		setValue("network", network, { shouldValidate: true, shouldDirty: true });
 	};
 

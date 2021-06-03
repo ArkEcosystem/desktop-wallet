@@ -76,11 +76,11 @@ export const DelegateRow = ({
 				<Link
 					data-testid="DelegateRow__address"
 					to={delegate.explorerLink()}
-					tooltip={delegate.address()}
+					tooltip={t("COMMON.OPEN_IN_EXPLORER")}
 					showExternalIcon={false}
 					isExternal
 				>
-					<Icon name="OpenExplorer" />
+					<Icon name="Redirect" />
 				</Link>
 			</TableCell>
 

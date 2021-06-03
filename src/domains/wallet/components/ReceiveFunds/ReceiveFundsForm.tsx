@@ -1,4 +1,4 @@
-import { Coins } from "@arkecosystem/platform-sdk";
+import { Networks } from "@arkecosystem/platform-sdk";
 import { FormField, FormHelperText, FormLabel } from "app/components/Form";
 import { InputCounter, InputCurrency } from "app/components/Input";
 import { useValidation } from "app/hooks";
@@ -6,7 +6,7 @@ import React, { useEffect, useMemo } from "react";
 import { useFormContext } from "react-hook-form";
 import { useTranslation } from "react-i18next";
 
-export const ReceiveFundsForm = ({ network }: { network?: Coins.Network }) => {
+export const ReceiveFundsForm = ({ network }: { network?: Networks.Network }) => {
 	const { t } = useTranslation();
 
 	const form = useFormContext();

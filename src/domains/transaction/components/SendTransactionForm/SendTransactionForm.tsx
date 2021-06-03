@@ -1,4 +1,4 @@
-import { Coins } from "@arkecosystem/platform-sdk";
+import { Networks } from "@arkecosystem/platform-sdk";
 import { Contracts } from "@arkecosystem/platform-sdk-profiles";
 import { FormField, FormLabel } from "app/components/Form";
 import { useFees } from "app/hooks";
@@ -12,7 +12,7 @@ import { Trans, useTranslation } from "react-i18next";
 
 interface SendTransactionFormProps {
 	children?: React.ReactNode;
-	networks: Coins.Network[];
+	networks: Networks.Network[];
 	profile: Contracts.IProfile;
 	transactionType: string;
 	hasWalletId: boolean;
@@ -29,7 +29,7 @@ export const SendTransactionForm = ({
 }: SendTransactionFormProps) => {
 	const { t } = useTranslation();
 	const [wallets, setWallets] = useState<Contracts.IReadWriteWallet[]>([]);
-	const [availableNetworks, setAvailableNetworks] = useState<Coins.Network[]>([]);
+	const [availableNetworks, setAvailableNetworks] = useState<Networks.Network[]>([]);
 	const [dynamicFees, setDynamicFees] = useState(false);
 
 	const { findByType } = useFees({ profile });
@@ -39,7 +39,7 @@ export const SendTransactionForm = ({
 	const { network, senderAddress, fee, fees } = watch();
 
 	useEffect(() => {
-		const setTransactionFees = async (network: Coins.Network) => {
+		const setTransactionFees = async (network: Networks.Network) => {
 			const transactionFees = await findByType(network.coin(), network.id(), transactionType);
 
 			setValue("fees", transactionFees);
@@ -64,7 +64,7 @@ export const SendTransactionForm = ({
 
 	const showFeeInput = useMemo(() => !network?.chargesZeroFees(), [network]);
 
-	const handleSelectNetwork = (selectedNetwork: Coins.Network | null | undefined) => {
+	const handleSelectNetwork = (selectedNetwork: Networks.Network | null | undefined) => {
 		/* istanbul ignore next */
 		if (senderAddress && network?.id() !== selectedNetwork?.id()) {
 			setValue("senderAddress", "", { shouldValidate: false, shouldDirty: true });

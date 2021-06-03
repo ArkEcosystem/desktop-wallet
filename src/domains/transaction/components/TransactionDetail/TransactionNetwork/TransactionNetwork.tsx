@@ -1,4 +1,4 @@
-import { Coins } from "@arkecosystem/platform-sdk";
+import { Networks } from "@arkecosystem/platform-sdk";
 import { NetworkIcon } from "domains/network/components/NetworkIcon";
 import { getNetworkExtendedData } from "domains/network/helpers";
 import React from "react";
@@ -7,7 +7,7 @@ import { useTranslation } from "react-i18next";
 import { TransactionDetail, TransactionDetailProps } from "../TransactionDetail";
 
 type TransactionNetworkProps = {
-	network: Coins.Network;
+	network: Networks.Network;
 } & TransactionDetailProps;
 
 export const TransactionNetwork = ({ network, ...props }: TransactionNetworkProps) => {

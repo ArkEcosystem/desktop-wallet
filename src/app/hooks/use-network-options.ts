@@ -1,11 +1,11 @@
-import { Coins } from "@arkecosystem/platform-sdk";
+import { Networks } from "@arkecosystem/platform-sdk";
 import { useEnvironmentContext } from "app/contexts";
 import { useCallback, useMemo } from "react";
 
 export const useNetworkOptions = () => {
 	const { env } = useEnvironmentContext();
 
-	const networks: Coins.Network[] = useMemo(() => env.availableNetworks(), [env]);
+	const networks: Networks.Network[] = useMemo(() => env.availableNetworks(), [env]);
 
 	const networkOptions = useMemo(
 		() =>
