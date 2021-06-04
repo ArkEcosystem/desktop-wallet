@@ -13,13 +13,7 @@ export const useProfileBalance = ({ profile, isLoading = false }: BalanceProps) 
 	const balance = profile?.status().isRestored() ? profile?.convertedBalance() : convertedBalance;
 
 	const updateBalance = useCallback(() => {
-		try {
-			if (balance) {
-				setConvertedBalance(balance);
-			}
-		} catch {
-			// Ignore error from converted balance
-		}
+		setConvertedBalance(balance);
 	}, [balance, setConvertedBalance]);
 
 	useEffect(() => {
