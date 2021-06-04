@@ -9,7 +9,6 @@ const normalizeValue = (value: string, decimals: number): string =>
 
 export const useFees = ({ profile, normalize = true }: { profile: ProfileContracts.IProfile; normalize?: boolean }) => {
 	const { env } = useEnvironmentContext();
-	const decimals = 8;
 
 	const findByType = useCallback(
 		async (coin: string, network: string, type: string) => {
@@ -25,6 +24,9 @@ export const useFees = ({ profile, normalize = true }: { profile: ProfileContrac
 			if (!normalize) {
 				return transactionFees;
 			}
+
+			const config = profile.coins().get(coin, network).config();
+			const decimals = config.get<number>("network.currency.decimals");
 
 			return {
 				static: normalizeValue(transactionFees.static, decimals),
