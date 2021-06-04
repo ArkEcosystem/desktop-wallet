@@ -4,10 +4,12 @@ import { BigNumber } from "@arkecosystem/platform-sdk-support";
 import { useEnvironmentContext } from "app/contexts";
 import { useCallback } from "react";
 
-const normalizeValue = (value: string): string => (+BigNumber.make(value).toHuman()).toString();
+const normalizeValue = (value: string, decimals: number): string =>
+	BigNumber.make(value).denominated(decimals).toHuman();
 
 export const useFees = ({ profile, normalize = true }: { profile: ProfileContracts.IProfile; normalize?: boolean }) => {
 	const { env } = useEnvironmentContext();
+	const decimals = 8;
 
 	const findByType = useCallback(
 		async (coin: string, network: string, type: string) => {
@@ -25,10 +27,10 @@ export const useFees = ({ profile, normalize = true }: { profile: ProfileContrac
 			}
 
 			return {
-				static: normalizeValue(transactionFees.static),
-				avg: normalizeValue(transactionFees.avg),
-				min: normalizeValue(transactionFees.min),
-				max: normalizeValue(transactionFees.max),
+				static: normalizeValue(transactionFees.static, decimals),
+				avg: normalizeValue(transactionFees.avg, decimals),
+				min: normalizeValue(transactionFees.min, decimals),
+				max: normalizeValue(transactionFees.max, decimals),
 			};
 		},
 		[env, normalize, profile],
