@@ -62,6 +62,7 @@ export const PluginManagerNavigationBar = ({
 									>
 										<div className="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible" />
 										<span>{menuItem.title}</span>
+
 										{!["latest", "all"].includes(menuItem.name) && (
 											<span className="ml-1 text-theme-secondary-500 dark:text-theme-secondary-700">
 												{countsByCategory[menuItem.name]}
