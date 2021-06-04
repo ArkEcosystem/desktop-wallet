@@ -3,7 +3,6 @@ import React from "react";
 import { act, fireEvent, render } from "testing-library";
 
 import { Modal } from "./Modal";
-import { modalOffsetClass } from "./utils";
 
 describe("Modal", () => {
 	it("should not render if not open", () => {
@@ -108,20 +107,6 @@ describe("Modal", () => {
 		const { container } = render(<Modal title="ark" size="5xl" isOpen={true} />);
 
 		expect(container).toMatchSnapshot();
-	});
-
-	it("should not add top offset class if padded modal content fits in window height", () => {
-		const modalHeightMock = 400;
-		const windowHeightMock = 1000;
-		const topOffsetClass = modalOffsetClass(modalHeightMock, windowHeightMock);
-		expect(topOffsetClass).toBe("");
-	});
-
-	it("should add top offset class if padded modal content is higher than window height", () => {
-		const modalHeightMock = 975;
-		const windowHeightMock = 1000;
-		const topOffsetClass = modalOffsetClass(modalHeightMock, windowHeightMock);
-		expect(topOffsetClass).toBe("top-0 my-20");
 	});
 
 	it("should render a modal with banner", () => {
