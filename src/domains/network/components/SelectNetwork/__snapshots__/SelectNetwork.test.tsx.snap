@@ -17,7 +17,7 @@ exports[`SelectNetwork should render 1`] = `
       <div
         class="fixed invisible w-auto whitespace-nowrap"
       >
-
+        
         …
       </div>
       <div
@@ -35,13 +35,13 @@ exports[`SelectNetwork should render 1`] = `
             aria-controls="downshift-0-menu"
             aria-labelledby="downshift-0-label"
             autocomplete="off"
-            class="w-full p-0 bg-transparent border-none Input__InputStyled-wu99qs-1 ioFtLo focus:ring-0 no-ligatures"
+            class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
             data-testid="SelectNetworkInput__input"
             id="downshift-0-input"
             placeholder="Enter a cryptoasset name"
             value=""
           />
-
+          
         </div>
       </div>
     </div>
@@ -81,7 +81,7 @@ exports[`SelectNetwork should render with hidden options 1`] = `
       <div
         class="fixed invisible w-auto whitespace-nowrap"
       >
-
+        
         …
       </div>
       <div
@@ -99,13 +99,13 @@ exports[`SelectNetwork should render with hidden options 1`] = `
             aria-controls="downshift-4-menu"
             aria-labelledby="downshift-4-label"
             autocomplete="off"
-            class="w-full p-0 bg-transparent border-none Input__InputStyled-wu99qs-1 ioFtLo focus:ring-0 no-ligatures"
+            class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
             data-testid="SelectNetworkInput__input"
             id="downshift-4-input"
             placeholder="Enter a cryptoasset name"
             value=""
           />
-
+          
         </div>
       </div>
     </div>
@@ -133,7 +133,7 @@ exports[`SelectNetwork should render with hidden options 1`] = `
           >
             <div
               aria-label="ARK"
-              class="flex items-center justify-center w-full h-full border-2 rounded-xl border-theme-primary-100 dark:border-theme-secondary-800 text-theme-secondary-700"
+              class="w-full h-full flex justify-center items-center border-2 rounded-xl border-theme-primary-100 dark:border-theme-secondary-800 text-theme-secondary-700"
               data-testid="NetworkIcon-ARK-ark.mainnet"
             >
               <div
@@ -154,7 +154,7 @@ exports[`SelectNetwork should render with hidden options 1`] = `
           >
             <div
               aria-label="Compendia"
-              class="flex items-center justify-center w-full h-full border-2 rounded-xl border-theme-primary-100 dark:border-theme-secondary-800 text-theme-secondary-700"
+              class="w-full h-full flex justify-center items-center border-2 rounded-xl border-theme-primary-100 dark:border-theme-secondary-800 text-theme-secondary-700"
               data-testid="NetworkIcon-ARK-bind.mainnet"
             >
               <div
@@ -175,7 +175,7 @@ exports[`SelectNetwork should render with hidden options 1`] = `
           >
             <div
               aria-label="Lisk"
-              class="flex items-center justify-center w-full h-full border-2 rounded-xl border-theme-primary-100 dark:border-theme-secondary-800 text-theme-secondary-700"
+              class="w-full h-full flex justify-center items-center border-2 rounded-xl border-theme-primary-100 dark:border-theme-secondary-800 text-theme-secondary-700"
               data-testid="NetworkIcon-LSK-lsk.mainnet"
             >
               <div
@@ -212,7 +212,7 @@ exports[`SelectNetwork should render with hidden options 1`] = `
           >
             <div
               aria-label="ARK Devnet"
-              class="flex items-center justify-center w-full h-full border-2 rounded-xl border-theme-primary-100 dark:border-theme-secondary-800 text-theme-primary-300"
+              class="w-full h-full flex justify-center items-center border-2 rounded-xl border-theme-primary-100 dark:border-theme-secondary-800 text-theme-primary-300"
               data-testid="NetworkIcon-ARK-ark.devnet"
             >
               <div
@@ -232,8 +232,29 @@ exports[`SelectNetwork should render with hidden options 1`] = `
             data-testid="SelectNetwork__NetworkIcon--container"
           >
             <div
+              aria-label="Compendia Testnet"
+              class="w-full h-full flex justify-center items-center border-2 rounded-xl border-theme-primary-100 dark:border-theme-secondary-800 text-theme-primary-300"
+              data-testid="NetworkIcon-ARK-bind.testnet"
+            >
+              <div
+                class="sc-bdfBwQ caqoGN"
+                data-testid="NetworkIcon__icon"
+                height="30"
+                width="30"
+              >
+                <svg>
+                  bind.svg
+                </svg>
+              </div>
+            </div>
+          </li>
+          <li
+            class="inline-block cursor-pointer h-21"
+            data-testid="SelectNetwork__NetworkIcon--container"
+          >
+            <div
               aria-label="Lisk Testnet"
-              class="flex items-center justify-center w-full h-full border-2 rounded-xl border-theme-primary-100 dark:border-theme-secondary-800 text-theme-primary-300"
+              class="w-full h-full flex justify-center items-center border-2 rounded-xl border-theme-primary-100 dark:border-theme-secondary-800 text-theme-primary-300"
               data-testid="NetworkIcon-LSK-lsk.testnet"
             >
               <div
@@ -272,7 +293,7 @@ exports[`SelectNetwork should render with networks 1`] = `
       <div
         class="fixed invisible w-auto whitespace-nowrap"
       >
-
+        
         …
       </div>
       <div
@@ -290,13 +311,13 @@ exports[`SelectNetwork should render with networks 1`] = `
             aria-controls="downshift-2-menu"
             aria-labelledby="downshift-2-label"
             autocomplete="off"
-            class="w-full p-0 bg-transparent border-none Input__InputStyled-wu99qs-1 ioFtLo focus:ring-0 no-ligatures"
+            class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
             data-testid="SelectNetworkInput__input"
             id="downshift-2-input"
             placeholder="Enter a cryptoasset name"
             value=""
           />
-
+          
         </div>
       </div>
     </div>
@@ -324,7 +345,7 @@ exports[`SelectNetwork should render with networks 1`] = `
           >
             <div
               aria-label="ARK"
-              class="flex items-center justify-center w-full h-full border-2 rounded-xl border-theme-primary-100 dark:border-theme-secondary-800 text-theme-secondary-700"
+              class="w-full h-full flex justify-center items-center border-2 rounded-xl border-theme-primary-100 dark:border-theme-secondary-800 text-theme-secondary-700"
               data-testid="NetworkIcon-ARK-ark.mainnet"
             >
               <div
@@ -345,7 +366,7 @@ exports[`SelectNetwork should render with networks 1`] = `
           >
             <div
               aria-label="Compendia"
-              class="flex items-center justify-center w-full h-full border-2 rounded-xl border-theme-primary-100 dark:border-theme-secondary-800 text-theme-secondary-700"
+              class="w-full h-full flex justify-center items-center border-2 rounded-xl border-theme-primary-100 dark:border-theme-secondary-800 text-theme-secondary-700"
               data-testid="NetworkIcon-ARK-bind.mainnet"
             >
               <div
@@ -366,7 +387,7 @@ exports[`SelectNetwork should render with networks 1`] = `
           >
             <div
               aria-label="Lisk"
-              class="flex items-center justify-center w-full h-full border-2 rounded-xl border-theme-primary-100 dark:border-theme-secondary-800 text-theme-secondary-700"
+              class="w-full h-full flex justify-center items-center border-2 rounded-xl border-theme-primary-100 dark:border-theme-secondary-800 text-theme-secondary-700"
               data-testid="NetworkIcon-LSK-lsk.mainnet"
             >
               <div
@@ -403,7 +424,7 @@ exports[`SelectNetwork should render with networks 1`] = `
           >
             <div
               aria-label="ARK Devnet"
-              class="flex items-center justify-center w-full h-full border-2 rounded-xl border-theme-primary-100 dark:border-theme-secondary-800 text-theme-primary-300"
+              class="w-full h-full flex justify-center items-center border-2 rounded-xl border-theme-primary-100 dark:border-theme-secondary-800 text-theme-primary-300"
               data-testid="NetworkIcon-ARK-ark.devnet"
             >
               <div
@@ -423,8 +444,29 @@ exports[`SelectNetwork should render with networks 1`] = `
             data-testid="SelectNetwork__NetworkIcon--container"
           >
             <div
+              aria-label="Compendia Testnet"
+              class="w-full h-full flex justify-center items-center border-2 rounded-xl border-theme-primary-100 dark:border-theme-secondary-800 text-theme-primary-300"
+              data-testid="NetworkIcon-ARK-bind.testnet"
+            >
+              <div
+                class="sc-bdfBwQ caqoGN"
+                data-testid="NetworkIcon__icon"
+                height="30"
+                width="30"
+              >
+                <svg>
+                  bind.svg
+                </svg>
+              </div>
+            </div>
+          </li>
+          <li
+            class="inline-block cursor-pointer h-21"
+            data-testid="SelectNetwork__NetworkIcon--container"
+          >
+            <div
               aria-label="Lisk Testnet"
-              class="flex items-center justify-center w-full h-full border-2 rounded-xl border-theme-primary-100 dark:border-theme-secondary-800 text-theme-primary-300"
+              class="w-full h-full flex justify-center items-center border-2 rounded-xl border-theme-primary-100 dark:border-theme-secondary-800 text-theme-primary-300"
               data-testid="NetworkIcon-LSK-lsk.testnet"
             >
               <div

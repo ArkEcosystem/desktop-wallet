@@ -338,7 +338,7 @@ exports[`SendTransfer should display disabled address selection input if selecte
                           class="mb-0 text-3xl"
                           data-testid="header__title"
                         >
-                          Send
+                          Send 
                         </h1>
                         <div
                           class="text-theme-secondary-text"
@@ -564,7 +564,7 @@ exports[`SendTransfer should display disabled address selection input if selecte
                               </div>
                               <div>
                                 <div
-                                  class="rounded-full cursor-pointer bg-theme-primary-100 hover:bg-theme-primary-200 dark:bg-theme-secondary-800 text-theme-primary-600 dark:text-theme-secondary-200 flex items-center justify-center w-5 h-5 questionmark"
+                                  class="flex items-center justify-center w-5 h-5 rounded-full cursor-pointer bg-theme-primary-100 hover:bg-theme-primary-200 dark:bg-theme-secondary-800 text-theme-primary-600 dark:text-theme-secondary-200 questionmark"
                                 >
                                   <div
                                     class="sc-bdfBwQ TENjd"
@@ -793,7 +793,7 @@ exports[`SendTransfer should display disabled address selection input if selecte
                                     class="inline-flex"
                                   >
                                     <button
-                                      class="AddRecipient__InputButtonStyled-sc-14iwd9r-0 ebyOIl"
+                                      class="AddRecipient__InputButtonStyled-sc-14iwd9r-0 jmJalx"
                                       data-testid="AddRecipient__send-all"
                                       disabled=""
                                       type="button"
@@ -2387,7 +2387,7 @@ exports[`SendTransfer should render 1st step with custom deeplink values and use
           class="mb-0 text-3xl"
           data-testid="header__title"
         >
-          Send
+          Send 
         </h1>
         <div
           class="text-theme-secondary-text"
@@ -2567,7 +2567,7 @@ exports[`SendTransfer should render 1st step with custom deeplink values and use
               </div>
               <div>
                 <div
-                  class="rounded-full cursor-pointer bg-theme-primary-100 hover:bg-theme-primary-200 dark:bg-theme-secondary-800 text-theme-primary-600 dark:text-theme-secondary-200 flex items-center justify-center w-5 h-5 questionmark"
+                  class="flex items-center justify-center w-5 h-5 rounded-full cursor-pointer bg-theme-primary-100 hover:bg-theme-primary-200 dark:bg-theme-secondary-800 text-theme-primary-600 dark:text-theme-secondary-200 questionmark"
                 >
                   <div
                     class="sc-bdfBwQ TENjd"
@@ -2796,7 +2796,7 @@ exports[`SendTransfer should render 1st step with custom deeplink values and use
                     class="inline-flex"
                   >
                     <button
-                      class="AddRecipient__InputButtonStyled-sc-14iwd9r-0 ebyOIl"
+                      class="AddRecipient__InputButtonStyled-sc-14iwd9r-0 jmJalx"
                       data-testid="AddRecipient__send-all"
                       disabled=""
                       type="button"
@@ -3501,7 +3501,7 @@ exports[`SendTransfer should render form and use location state 1`] = `
                               </div>
                               <div>
                                 <div
-                                  class="rounded-full cursor-pointer bg-theme-primary-100 hover:bg-theme-primary-200 dark:bg-theme-secondary-800 text-theme-primary-600 dark:text-theme-secondary-200 flex items-center justify-center w-5 h-5 questionmark"
+                                  class="flex items-center justify-center w-5 h-5 rounded-full cursor-pointer bg-theme-primary-100 hover:bg-theme-primary-200 dark:bg-theme-secondary-800 text-theme-primary-600 dark:text-theme-secondary-200 questionmark"
                                 >
                                   <div
                                     class="sc-bdfBwQ TENjd"
@@ -3737,9 +3737,9 @@ exports[`SendTransfer should render form and use location state 1`] = `
                                             class=""
                                           >
                                             <span
-                                              class="whitespace-no-break font-semibold text-sm text-theme-secondary-500 dark:text-theme-secondary-700"
+                                              class="text-sm font-semibold whitespace-no-break text-theme-secondary-500 dark:text-theme-secondary-700"
                                             >
-                                              Max 33.75089801
+                                              Max 3375089800.92679402
                                             </span>
                                           </div>
                                         </div>
@@ -3750,7 +3750,7 @@ exports[`SendTransfer should render form and use location state 1`] = `
                                     class="inline-flex"
                                   >
                                     <button
-                                      class="AddRecipient__InputButtonStyled-sc-14iwd9r-0 ebyOIl"
+                                      class="AddRecipient__InputButtonStyled-sc-14iwd9r-0 jmJalx"
                                       data-testid="AddRecipient__send-all"
                                       type="button"
                                     >
@@ -4551,7 +4551,7 @@ exports[`SendTransfer should render form and use location state without memo 1`]
                               </div>
                               <div>
                                 <div
-                                  class="rounded-full cursor-pointer bg-theme-primary-100 hover:bg-theme-primary-200 dark:bg-theme-secondary-800 text-theme-primary-600 dark:text-theme-secondary-200 flex items-center justify-center w-5 h-5 questionmark"
+                                  class="flex items-center justify-center w-5 h-5 rounded-full cursor-pointer bg-theme-primary-100 hover:bg-theme-primary-200 dark:bg-theme-secondary-800 text-theme-primary-600 dark:text-theme-secondary-200 questionmark"
                                 >
                                   <div
                                     class="sc-bdfBwQ TENjd"
@@ -4776,9 +4776,9 @@ exports[`SendTransfer should render form and use location state without memo 1`]
                                             class=""
                                           >
                                             <span
-                                              class="whitespace-no-break font-semibold text-sm text-theme-secondary-500 dark:text-theme-secondary-700"
+                                              class="text-sm font-semibold whitespace-no-break text-theme-secondary-500 dark:text-theme-secondary-700"
                                             >
-                                              Max 33.75089801
+                                              Max 3375089800.92679402
                                             </span>
                                           </div>
                                         </div>
@@ -4789,7 +4789,7 @@ exports[`SendTransfer should render form and use location state without memo 1`]
                                     class="inline-flex"
                                   >
                                     <button
-                                      class="AddRecipient__InputButtonStyled-sc-14iwd9r-0 ebyOIl"
+                                      class="AddRecipient__InputButtonStyled-sc-14iwd9r-0 jmJalx"
                                       data-testid="AddRecipient__send-all"
                                       type="button"
                                     >
@@ -5016,7 +5016,7 @@ exports[`SendTransfer should render form step 1`] = `
           class="mb-0 text-3xl"
           data-testid="header__title"
         >
-          Send
+          Send 
         </h1>
         <div
           class="text-theme-secondary-text"
@@ -5196,7 +5196,7 @@ exports[`SendTransfer should render form step 1`] = `
               </div>
               <div>
                 <div
-                  class="rounded-full cursor-pointer bg-theme-primary-100 hover:bg-theme-primary-200 dark:bg-theme-secondary-800 text-theme-primary-600 dark:text-theme-secondary-200 flex items-center justify-center w-5 h-5 questionmark"
+                  class="flex items-center justify-center w-5 h-5 rounded-full cursor-pointer bg-theme-primary-100 hover:bg-theme-primary-200 dark:bg-theme-secondary-800 text-theme-primary-600 dark:text-theme-secondary-200 questionmark"
                 >
                   <div
                     class="sc-bdfBwQ TENjd"
@@ -5425,7 +5425,7 @@ exports[`SendTransfer should render form step 1`] = `
                     class="inline-flex"
                   >
                     <button
-                      class="AddRecipient__InputButtonStyled-sc-14iwd9r-0 ebyOIl"
+                      class="AddRecipient__InputButtonStyled-sc-14iwd9r-0 jmJalx"
                       data-testid="AddRecipient__send-all"
                       disabled=""
                       type="button"
@@ -5556,7 +5556,7 @@ exports[`SendTransfer should render form step with deeplink values and use them 
           class="mb-0 text-3xl"
           data-testid="header__title"
         >
-          Send
+          Send 
         </h1>
         <div
           class="text-theme-secondary-text"
@@ -5736,7 +5736,7 @@ exports[`SendTransfer should render form step with deeplink values and use them 
               </div>
               <div>
                 <div
-                  class="rounded-full cursor-pointer bg-theme-primary-100 hover:bg-theme-primary-200 dark:bg-theme-secondary-800 text-theme-primary-600 dark:text-theme-secondary-200 flex items-center justify-center w-5 h-5 questionmark"
+                  class="flex items-center justify-center w-5 h-5 rounded-full cursor-pointer bg-theme-primary-100 hover:bg-theme-primary-200 dark:bg-theme-secondary-800 text-theme-primary-600 dark:text-theme-secondary-200 questionmark"
                 >
                   <div
                     class="sc-bdfBwQ TENjd"
@@ -5965,7 +5965,7 @@ exports[`SendTransfer should render form step with deeplink values and use them 
                     class="inline-flex"
                   >
                     <button
-                      class="AddRecipient__InputButtonStyled-sc-14iwd9r-0 ebyOIl"
+                      class="AddRecipient__InputButtonStyled-sc-14iwd9r-0 jmJalx"
                       data-testid="AddRecipient__send-all"
                       disabled=""
                       type="button"
@@ -6096,7 +6096,7 @@ exports[`SendTransfer should render form step without test networks 1`] = `
           class="mb-0 text-3xl"
           data-testid="header__title"
         >
-          Send
+          Send 
         </h1>
         <div
           class="text-theme-secondary-text"
@@ -6276,7 +6276,7 @@ exports[`SendTransfer should render form step without test networks 1`] = `
               </div>
               <div>
                 <div
-                  class="rounded-full cursor-pointer bg-theme-primary-100 hover:bg-theme-primary-200 dark:bg-theme-secondary-800 text-theme-primary-600 dark:text-theme-secondary-200 flex items-center justify-center w-5 h-5 questionmark"
+                  class="flex items-center justify-center w-5 h-5 rounded-full cursor-pointer bg-theme-primary-100 hover:bg-theme-primary-200 dark:bg-theme-secondary-800 text-theme-primary-600 dark:text-theme-secondary-200 questionmark"
                 >
                   <div
                     class="sc-bdfBwQ TENjd"
@@ -6505,7 +6505,7 @@ exports[`SendTransfer should render form step without test networks 1`] = `
                     class="inline-flex"
                   >
                     <button
-                      class="AddRecipient__InputButtonStyled-sc-14iwd9r-0 ebyOIl"
+                      class="AddRecipient__InputButtonStyled-sc-14iwd9r-0 jmJalx"
                       data-testid="AddRecipient__send-all"
                       disabled=""
                       type="button"
@@ -7455,7 +7455,7 @@ exports[`SendTransfer should render review step 1`] = `
       class="mt-2"
     >
       <div
-        class="rounded-lg border border-theme-secondary-300 dark:border-theme-secondary-800"
+        class="border rounded-lg border-theme-secondary-300 dark:border-theme-secondary-800"
       >
         <div
           class="relative p-4"
@@ -7464,7 +7464,7 @@ exports[`SendTransfer should render review step 1`] = `
             class="flex divide-x divide-theme-secondary-300 dark:divide-theme-secondary-800"
           >
             <div
-              class="flex flex-col w-1/2 justify-center px-4 py-2"
+              class="flex flex-col justify-center w-1/2 px-4 py-2"
             >
               <span
                 class="TotalAmountBox__AmountLabel-sc-178fnso-0 gGuMGd"
@@ -7479,7 +7479,7 @@ exports[`SendTransfer should render review step 1`] = `
               </span>
             </div>
             <div
-              class="flex flex-col w-1/2 justify-center px-4 py-2 text-right"
+              class="flex flex-col justify-center w-1/2 px-4 py-2 text-right"
             >
               <span
                 class="TotalAmountBox__AmountLabel-sc-178fnso-0 gGuMGd"
@@ -7490,12 +7490,12 @@ exports[`SendTransfer should render review step 1`] = `
                 class="mt-1 text-lg font-semibold"
                 data-testid="total-amount-box__transaction-fee"
               >
-                0.1 DARK
+                0 DARK
               </span>
             </div>
           </div>
           <div
-            class="absolute transform top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2"
+            class="absolute transform -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
           >
             <div
               class="py-2 ml-px bg-theme-background text-theme-secondary-900 dark:text-theme-secondary-600"
@@ -7513,7 +7513,7 @@ exports[`SendTransfer should render review step 1`] = `
           </div>
         </div>
         <div
-          class="flex flex-col items-center py-6 rounded-b-lg border-t border-theme-secondary-300 dark:border-theme-secondary-800 justfiy-center bg-theme-secondary-100 dark:bg-theme-secondary-800"
+          class="flex flex-col items-center py-6 border-t rounded-b-lg border-theme-secondary-300 dark:border-theme-secondary-800 justfiy-center bg-theme-secondary-100 dark:bg-theme-secondary-800"
         >
           <span
             class="TotalAmountBox__AmountLabel-sc-178fnso-0 gGuMGd"
@@ -7524,7 +7524,7 @@ exports[`SendTransfer should render review step 1`] = `
             class="text-2xl font-bold"
             data-testid="total-amount-box__total"
           >
-            1.1 DARK
+            1 DARK
           </span>
         </div>
       </div>
@@ -8246,7 +8246,7 @@ exports[`SendTransfer should select a cryptoasset and select sender without wall
                                   placeholder="Enter a cryptoasset name"
                                   value="ARK Devnet"
                                 />
-
+                                
                               </div>
                             </div>
                           </div>
@@ -8424,7 +8424,7 @@ exports[`SendTransfer should select a cryptoasset and select sender without wall
                               </div>
                               <div>
                                 <div
-                                  class="rounded-full cursor-pointer bg-theme-primary-100 hover:bg-theme-primary-200 dark:bg-theme-secondary-800 text-theme-primary-600 dark:text-theme-secondary-200 flex items-center justify-center w-5 h-5 questionmark"
+                                  class="flex items-center justify-center w-5 h-5 rounded-full cursor-pointer bg-theme-primary-100 hover:bg-theme-primary-200 dark:bg-theme-secondary-800 text-theme-primary-600 dark:text-theme-secondary-200 questionmark"
                                 >
                                   <div
                                     class="sc-bdfBwQ TENjd"
@@ -8504,7 +8504,7 @@ exports[`SendTransfer should select a cryptoasset and select sender without wall
                                       <div
                                         class="fixed invisible w-auto whitespace-nowrap"
                                       >
-
+                                        
                                         …
                                       </div>
                                       <div
@@ -8540,7 +8540,7 @@ exports[`SendTransfer should select a cryptoasset and select sender without wall
                                           <div
                                             class="fixed invisible w-auto whitespace-nowrap"
                                           >
-
+                                            
                                             …
                                           </div>
                                           <div
@@ -8627,7 +8627,7 @@ exports[`SendTransfer should select a cryptoasset and select sender without wall
                                       <div
                                         class="fixed invisible w-auto whitespace-nowrap"
                                       >
-
+                                        
                                         …
                                       </div>
                                       <div
@@ -8652,11 +8652,11 @@ exports[`SendTransfer should select a cryptoasset and select sender without wall
                                             class=""
                                           >
                                             <span
-                                              class="whitespace-no-break font-semibold text-sm text-theme-secondary-500 dark:text-theme-secondary-700"
+                                              class="text-sm font-semibold whitespace-no-break text-theme-secondary-500 dark:text-theme-secondary-700"
                                             >
                                               Max
-
-                                              57.68000000
+                                               
+                                              5767999999.92679402
                                             </span>
                                           </div>
                                         </div>
@@ -8667,7 +8667,7 @@ exports[`SendTransfer should select a cryptoasset and select sender without wall
                                     class="inline-flex"
                                   >
                                     <button
-                                      class="AddRecipient__InputButtonStyled-sc-14iwd9r-0 ebyOIl"
+                                      class="AddRecipient__InputButtonStyled-sc-14iwd9r-0 jmJalx"
                                       data-testid="AddRecipient__send-all"
                                       type="button"
                                     >
