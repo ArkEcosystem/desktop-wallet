@@ -1,4 +1,4 @@
-import { Services } from "@arkecosystem/platform-sdk";
+import { Coins,Services } from "@arkecosystem/platform-sdk";
 import { Contracts as ProfileContracts } from "@arkecosystem/platform-sdk-profiles";
 import { BigNumber } from "@arkecosystem/platform-sdk-support";
 import { useEnvironmentContext } from "app/contexts";
@@ -26,7 +26,7 @@ export const useFees = ({ profile, normalize = true }: { profile: ProfileContrac
 			}
 
 			const config = profile.coins().get(coin, network).config();
-			const decimals = config.get<number>("network.currency.decimals");
+			const decimals = config.get<number>(Coins.ConfigKey.CurrencyDecimals);
 
 			return {
 				static: normalizeValue(transactionFees.static, decimals),
