@@ -9,7 +9,6 @@ import cn from "classnames";
 import { SelectRecipient } from "domains/profile/components/SelectRecipient";
 import { RecipientList } from "domains/transaction/components/RecipientList";
 import { RecipientListItem } from "domains/transaction/components/RecipientList/RecipientList.models";
-import { humanToBigNumber } from "domains/transaction/utils";
 import React, { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { useFormContext } from "react-hook-form";
 import { useTranslation } from "react-i18next";
@@ -314,8 +313,6 @@ export const AddRecipient = ({
 									value={getValues("displayAmount") || recipientsAmount}
 									addons={addons}
 									onChange={(amountHuman: string) => {
-										const amount = humanToBigNumber(amountHuman).toString();
-
 										setValue("isSendAllSelected", false);
 										setValue("displayAmount", amountHuman);
 										setValue("amount", amount, { shouldValidate: true, shouldDirty: true });
