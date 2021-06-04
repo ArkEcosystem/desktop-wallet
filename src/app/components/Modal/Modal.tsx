@@ -31,7 +31,7 @@ interface ModalContentProps {
 }
 
 const ModalContainer = styled.div<{ size?: Size }>`
-	${tw`flex-1 my-20`}
+	${tw`flex-1 m-auto`}
 	${({ size }) => {
 		switch (size) {
 			case "sm":
@@ -56,7 +56,7 @@ const ModalContainer = styled.div<{ size?: Size }>`
 
 const ModalContent = (props: ModalContentProps) => (
 	<div
-		className="relative flex flex-col p-10 mx-auto overflow-hidden rounded-2.5xl bg-theme-background shadow-2xl"
+		className="relative flex flex-col p-10 overflow-hidden rounded-2.5xl bg-theme-background shadow-2xl"
 		data-testid="modal__inner"
 	>
 		<div className="absolute top-0 right-0 z-10 mt-5 mr-5 rounded transition-all duration-100 ease-linear bg-theme-primary-100 hover:bg-theme-primary-300 dark:bg-theme-secondary-800 dark:text-theme-secondary-600 dark:hover:bg-theme-secondary-700 dark:hover:text-theme-secondary-400">
@@ -142,7 +142,7 @@ export const Modal = ({
 
 	return (
 		<div
-			className="flex fixed inset-0 z-50 justify-center items-center w-full h-full bg-theme-secondary-900-rgba bg-opacity-60 dark:bg-black-rgba dark:bg-opacity-80 overflow-overlay"
+			className="flex fixed inset-0 z-50 py-20 w-full h-full bg-theme-secondary-900-rgba bg-opacity-60 dark:bg-black-rgba dark:bg-opacity-80 overflow-overlay"
 			onClick={handleClickOverlay}
 			data-testid="modal__overlay"
 		>
