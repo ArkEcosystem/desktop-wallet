@@ -66,7 +66,7 @@ export const FormStep = ({
 				<FormField name="mnemonic">
 					<FormLabel label={t("COMMON.MNEMONIC")} />
 					<InputPassword
-						ref={register(authentication.mnemonic(wallet.coin(), wallet.address()))}
+						ref={register(authentication.mnemonic(wallet))}
 						data-testid="SignMessage__mnemonic-input"
 					/>
 				</FormField>

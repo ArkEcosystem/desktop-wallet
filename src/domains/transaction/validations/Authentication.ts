@@ -17,20 +17,50 @@ export const authentication = (t: any) => {
 	const addressFromPassword = debounceAsync(addressFromEncryptedPassword, 700);
 
 	return {
-		mnemonic: (coin: Coins.Coin, senderAddress: string) => ({
+		mnemonic: (wallet: Contracts.IReadWriteWallet) => ({
 			required: t("COMMON.VALIDATION.FIELD_REQUIRED", {
 				field: t("COMMON.MNEMONIC"),
 			}),
 			validate: {
 				matchSenderAddress: async (mnemonic: string) => {
-					const { address } = await coin.identity().address().fromMnemonic(mnemonic);
+					const { address } = await wallet.coin().identity().address().fromMnemonic(mnemonic);
 
-					if (address === senderAddress) {
+					if (address === wallet.address()) {
 						return true;
 					}
 
 					return t("COMMON.INPUT_PASSPHRASE.VALIDATION.MNEMONIC_NOT_MATCH_WALLET");
 				},
+			},
+		}),
+		wif: (wallet: Contracts.IReadWriteWallet) => ({
+			required: t("COMMON.VALIDATION.FIELD_REQUIRED", {
+				field: t("COMMON.WIF"),
+			}),
+			validate: {
+				matchSenderAddress: async (wif: string) => {
+					const { address } = await wallet.coin().identity().address().fromWIF(wif);
+
+					if (address === wallet.address()) {
+						return true;
+					}
+
+					return t("COMMON.INPUT_PASSPHRASE.VALIDATION.WIF_NOT_MATCH_WALLET");
+				},
+			},
+		}),
+		privateKey: (wallet: Contracts.IReadWriteWallet) => ({
+			required: t("COMMON.VALIDATION.FIELD_REQUIRED", {
+				field: t("COMMON.PRIVATE_KEY"),
+			}),
+			validate: async (privateKey: string) => {
+				const { address } = await wallet.coin().identity().address().fromPrivateKey(privateKey);
+
+				if (address === wallet.address()) {
+					return true;
+				}
+
+				return t("COMMON.INPUT_PASSPHRASE.VALIDATION.PRIVATE_KEY_NOT_MATCH_WALLET");
 			},
 		}),
 		secondMnemonic: (coin: Coins.Coin, secondPublicKey: string) => ({

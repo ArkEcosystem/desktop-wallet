@@ -41,7 +41,7 @@ export const SendRegistration = () => {
 
 	const form = useForm({ mode: "onChange" });
 
-	const { formState, register, setError, setValue, trigger, watch } = form;
+	const { formState, register, setError, setValue, trigger, watch, getValues } = form;
 	const { isSubmitting, isValid } = formState;
 
 	const { fee, fees } = watch();
@@ -114,10 +114,14 @@ export const SendRegistration = () => {
 
 	const handleSubmit = async () => {
 		try {
+			const { mnemonic, secondMnemonic, encryptionPassword, wif, privateKey } = getValues();
+
 			const signatory = await sign({
-				mnemonic: form.getValues("mnemonic"),
-				secondMnemonic: form.getValues("secondMnemonic"),
-				encryptionPassword: form.getValues("encryptionPassword"),
+				mnemonic,
+				secondMnemonic,
+				encryptionPassword,
+				wif,
+				privateKey,
 			});
 
 			const transaction = await registrationForm!.signTransaction({
