@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`AuthenticationStep should request mnemonic 1`] = `
+exports[`AuthenticationStep should request WIF if wallet was imported using WIF 1`] = `
 <DocumentFragment>
   <form
     class="space-y-8"
@@ -26,7 +26,7 @@ exports[`AuthenticationStep should request mnemonic 1`] = `
             class="text-theme-secondary-text"
             data-testid="header__subtitle"
           >
-            Enter your mnemonic passphrase to authenticate the transaction.
+            Enter your WIF to authenticate the transaction.
           </div>
         </div>
       </div>
@@ -36,9 +36,9 @@ exports[`AuthenticationStep should request mnemonic 1`] = `
         <label
           class="flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
           data-testid="FormLabel"
-          for="mnemonic"
+          for="wif"
         >
-          Mnemonic
+          WIF
           <div
             class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
             data-testid="FormLabel__required"
@@ -57,8 +57,8 @@ exports[`AuthenticationStep should request mnemonic 1`] = `
           >
             <input
               class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
-              data-testid="AuthenticationStep__mnemonic"
-              name="mnemonic"
+              data-testid="AuthenticationStep__wif"
+              name="wif"
               type="password"
               value=""
             />
@@ -218,6 +218,294 @@ exports[`AuthenticationStep should request mnemonic and second mnemonic 1`] = `
               data-testid="AuthenticationStep__second-mnemonic"
               disabled=""
               name="secondMnemonic"
+              type="password"
+              value=""
+            />
+          </div>
+          <div
+            class="flex items-center space-x-3 divide-x divide-theme-secondary-300 dark:divide-theme-secondary-800 text-theme-primary-300 dark:text-theme-secondary-600"
+          >
+            <div
+              class=""
+            >
+              <button
+                class="relative flex items-center justify-center w-full h-full text-2xl focus:outline-none group"
+                data-testid="InputPassword__toggle"
+                type="button"
+              >
+                <div
+                  class="absolute inset-0 -m-1 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                />
+                <div
+                  class="sc-bdfBwQ fPrsah"
+                  height="1em"
+                  width="1em"
+                >
+                  <svg>
+                    eye.svg
+                  </svg>
+                </div>
+              </button>
+            </div>
+          </div>
+        </div>
+      </fieldset>
+    </div>
+  </form>
+</DocumentFragment>
+`;
+
+exports[`AuthenticationStep should request mnemonic if wallet was imported using address 1`] = `
+<DocumentFragment>
+  <form
+    class="space-y-8"
+    data-testid="Form"
+  >
+    <div
+      class="space-y-8"
+      data-testid="AuthenticationStep"
+    >
+      <div
+        class="flex justify-between items-end bg-theme-background"
+      >
+        <div
+          class="space-y-4"
+        >
+          <h1
+            class="mb-0 text-3xl"
+            data-testid="header__title"
+          >
+            Authenticate
+          </h1>
+          <div
+            class="text-theme-secondary-text"
+            data-testid="header__subtitle"
+          >
+            Enter your mnemonic passphrase to authenticate the transaction.
+          </div>
+        </div>
+      </div>
+      <fieldset
+        class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
+      >
+        <label
+          class="flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
+          data-testid="FormLabel"
+          for="mnemonic"
+        >
+          Mnemonic
+          <div
+            class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
+            data-testid="FormLabel__required"
+          />
+        </label>
+        <div
+          class="fixed invisible w-auto whitespace-nowrap"
+        >
+          …
+        </div>
+        <div
+          class="Input__InputWrapperStyled-wu99qs-0 jYUFQr"
+        >
+          <div
+            class="relative flex flex-1 h-full"
+          >
+            <input
+              class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
+              data-testid="AuthenticationStep__mnemonic"
+              name="mnemonic"
+              type="password"
+              value=""
+            />
+          </div>
+          <div
+            class="flex items-center space-x-3 divide-x divide-theme-secondary-300 dark:divide-theme-secondary-800 text-theme-primary-300 dark:text-theme-secondary-600"
+          >
+            <div
+              class=""
+            >
+              <button
+                class="relative flex items-center justify-center w-full h-full text-2xl focus:outline-none group"
+                data-testid="InputPassword__toggle"
+                type="button"
+              >
+                <div
+                  class="absolute inset-0 -m-1 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                />
+                <div
+                  class="sc-bdfBwQ fPrsah"
+                  height="1em"
+                  width="1em"
+                >
+                  <svg>
+                    eye.svg
+                  </svg>
+                </div>
+              </button>
+            </div>
+          </div>
+        </div>
+      </fieldset>
+    </div>
+  </form>
+</DocumentFragment>
+`;
+
+exports[`AuthenticationStep should request mnemonic if wallet was imported using mnemonic 1`] = `
+<DocumentFragment>
+  <form
+    class="space-y-8"
+    data-testid="Form"
+  >
+    <div
+      class="space-y-8"
+      data-testid="AuthenticationStep"
+    >
+      <div
+        class="flex justify-between items-end bg-theme-background"
+      >
+        <div
+          class="space-y-4"
+        >
+          <h1
+            class="mb-0 text-3xl"
+            data-testid="header__title"
+          >
+            Authenticate
+          </h1>
+          <div
+            class="text-theme-secondary-text"
+            data-testid="header__subtitle"
+          >
+            Enter your mnemonic passphrase to authenticate the transaction.
+          </div>
+        </div>
+      </div>
+      <fieldset
+        class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
+      >
+        <label
+          class="flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
+          data-testid="FormLabel"
+          for="mnemonic"
+        >
+          Mnemonic
+          <div
+            class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
+            data-testid="FormLabel__required"
+          />
+        </label>
+        <div
+          class="fixed invisible w-auto whitespace-nowrap"
+        >
+          …
+        </div>
+        <div
+          class="Input__InputWrapperStyled-wu99qs-0 jYUFQr"
+        >
+          <div
+            class="relative flex flex-1 h-full"
+          >
+            <input
+              class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
+              data-testid="AuthenticationStep__mnemonic"
+              name="mnemonic"
+              type="password"
+              value=""
+            />
+          </div>
+          <div
+            class="flex items-center space-x-3 divide-x divide-theme-secondary-300 dark:divide-theme-secondary-800 text-theme-primary-300 dark:text-theme-secondary-600"
+          >
+            <div
+              class=""
+            >
+              <button
+                class="relative flex items-center justify-center w-full h-full text-2xl focus:outline-none group"
+                data-testid="InputPassword__toggle"
+                type="button"
+              >
+                <div
+                  class="absolute inset-0 -m-1 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                />
+                <div
+                  class="sc-bdfBwQ fPrsah"
+                  height="1em"
+                  width="1em"
+                >
+                  <svg>
+                    eye.svg
+                  </svg>
+                </div>
+              </button>
+            </div>
+          </div>
+        </div>
+      </fieldset>
+    </div>
+  </form>
+</DocumentFragment>
+`;
+
+exports[`AuthenticationStep should request private key if wallet was imported using private key 1`] = `
+<DocumentFragment>
+  <form
+    class="space-y-8"
+    data-testid="Form"
+  >
+    <div
+      class="space-y-8"
+      data-testid="AuthenticationStep"
+    >
+      <div
+        class="flex justify-between items-end bg-theme-background"
+      >
+        <div
+          class="space-y-4"
+        >
+          <h1
+            class="mb-0 text-3xl"
+            data-testid="header__title"
+          >
+            Authenticate
+          </h1>
+          <div
+            class="text-theme-secondary-text"
+            data-testid="header__subtitle"
+          >
+            Enter your private key to authenticate the transaction.
+          </div>
+        </div>
+      </div>
+      <fieldset
+        class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
+      >
+        <label
+          class="flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
+          data-testid="FormLabel"
+          for="privateKey"
+        >
+          Private Key
+          <div
+            class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
+            data-testid="FormLabel__required"
+          />
+        </label>
+        <div
+          class="fixed invisible w-auto whitespace-nowrap"
+        >
+          …
+        </div>
+        <div
+          class="Input__InputWrapperStyled-wu99qs-0 jYUFQr"
+        >
+          <div
+            class="relative flex flex-1 h-full"
+          >
+            <input
+              class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
+              data-testid="AuthenticationStep__private-key"
+              name="privateKey"
               type="password"
               value=""
             />
