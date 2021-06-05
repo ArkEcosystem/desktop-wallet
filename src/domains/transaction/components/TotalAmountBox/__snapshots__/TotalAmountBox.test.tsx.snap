@@ -23,7 +23,7 @@ exports[`TotalAmountBox should render 1`] = `
             class="mt-1 text-lg font-semibold"
             data-testid="total-amount-box__transaction-amount"
           >
-            1 ARK
+            0.1 ARK
           </span>
         </div>
         <div
@@ -38,7 +38,7 @@ exports[`TotalAmountBox should render 1`] = `
             class="mt-1 text-lg font-semibold"
             data-testid="total-amount-box__transaction-fee"
           >
-            0 ARK
+            0.01 ARK
           </span>
         </div>
       </div>
@@ -72,7 +72,7 @@ exports[`TotalAmountBox should render 1`] = `
         class="text-2xl font-bold"
         data-testid="total-amount-box__total"
       >
-        1 ARK
+        0.11 ARK
       </span>
     </div>
   </div>
