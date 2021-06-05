@@ -1,6 +1,8 @@
 import { Tooltip } from "app/components/Tooltip";
 import cn from "classnames";
-import React, { useCallback, useEffect, useLayoutEffect, useRef, useState } from "react";
+import React, { useLayoutEffect, useRef, useState } from "react";
+
+import { useTextTruncate } from "./hooks";
 
 type Props = {
 	value: string;
@@ -9,73 +11,15 @@ type Props = {
 } & React.HTMLProps<any>;
 
 export const TruncateMiddleDynamic = ({ value, offset = 0, className, parentRef, ...props }: Props) => {
+	const [truncated, setTruncated] = useState<string | undefined>(value);
+
 	const ref = useRef<HTMLElement>(null);
 
-	const [truncated, setTruncated] = useState(value);
-
-	const hasOverflow = useCallback(
-		(element: HTMLElement, referenceElement: HTMLElement) => {
-			if (!element.offsetWidth && !referenceElement.offsetWidth) {
-				return false;
-			}
-
-			return element.offsetWidth > referenceElement.offsetWidth - offset;
-		},
-		[offset],
-	);
-
-	const truncate = useCallback(() => {
-		if (!ref?.current || !value) {
-			return;
-		}
-
-		const referenceElement = parentRef?.current || ref.current;
-
-		let length = value.length;
-
-		const element = document.createElement("div");
-		element.classList.add("fixed", "invisible", "w-auto", "whitespace-nowrap");
-
-		element.innerHTML = "";
-		element.appendChild(document.createTextNode(value));
-
-		referenceElement.appendChild(element);
-
-		let tempTruncated = value;
-
-		if (!hasOverflow(element, referenceElement)) {
-			referenceElement.removeChild(element);
-			return;
-		}
-
-		do {
-			const prefix = value.substr(0, Math.floor(length / 2));
-			const suffix = value.substr(-(length - Math.floor(length / 2)));
-
-			tempTruncated = `${prefix}…${suffix}`;
-
-			element.innerHTML = "";
-			element.appendChild(document.createTextNode(tempTruncated));
-
-			length--;
-		} while (hasOverflow(element, referenceElement));
-
-		referenceElement.removeChild(element);
-
-		setTruncated(tempTruncated);
-	}, [hasOverflow, value, truncated, parentRef]); // eslint-disable-line react-hooks/exhaustive-deps
+	const truncate = useTextTruncate();
 
 	useLayoutEffect(() => {
-		truncate();
-	}, [truncate]);
-
-	useEffect(() => {
-		window.addEventListener("resize", truncate);
-
-		return () => {
-			window.removeEventListener("resize", truncate);
-		};
-	}, []); // eslint-disable-line react-hooks/exhaustive-deps
+		setTruncated(truncate(value, offset, parentRef?.current || ref.current));
+	}, [offset, parentRef, truncate, value]);
 
 	return (
 		<Tooltip content={value} disabled={truncated === value}>
