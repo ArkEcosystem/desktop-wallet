@@ -91,7 +91,7 @@ describe("AddRecipient", () => {
 
 		expect(container).toMatchSnapshot();
 	});
-
+	//
 	it("should set amount", async () => {
 		const onChange = jest.fn();
 
@@ -156,7 +156,9 @@ describe("AddRecipient", () => {
 			fireEvent.click(sendAll);
 		});
 
-		await waitFor(() => expect(form.current.getValues("amount")).toEqual(wallet.balance().toString()));
+		await waitFor(() =>
+			expect(form.current.getValues("amount")).toEqual(wallet.balance().denominated().toString()),
+		);
 		expect(container).toMatchSnapshot();
 	});
 
