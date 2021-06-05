@@ -117,7 +117,7 @@ export const AddRecipient = ({
 	const senderWallet = useMemo(() => profile.wallets().findByAddress(senderAddress), [profile, senderAddress]);
 
 	const remainingBalance = useMemo(() => {
-		const senderBalance = senderWallet?.balance() || BigNumber.ZERO;
+		const senderBalance = senderWallet?.balance().denominated() || BigNumber.ZERO;
 
 		if (isSingle) {
 			return senderBalance;
@@ -127,7 +127,7 @@ export const AddRecipient = ({
 	}, [addedRecipients, senderWallet, isSingle]);
 
 	const maximumAmount = useMemo(() => {
-		const maximum = senderWallet?.balance().minus(fee);
+		const maximum = senderWallet?.balance().denominated().minus(fee);
 
 		return maximum?.isPositive() ? maximum : undefined;
 	}, [fee, senderWallet]);
