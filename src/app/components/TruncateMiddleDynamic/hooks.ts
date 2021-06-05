@@ -1,8 +1,8 @@
 import { useCallback } from "react";
 
-export const useTextTruncate = () => {
-	const truncate = useCallback((value: string, offset: number, referenceElement: any) => {
-		const hasOverflow = (element: HTMLElement, referenceElement: HTMLElement, offset: number) => {
+export const useTextTruncate = (value: string, offset: number, referenceElement: any) => {
+	const truncate = useCallback(() => {
+		const hasOverflow = (element: HTMLElement, referenceElement: HTMLElement) => {
 			if (!element.offsetWidth && !referenceElement.offsetWidth) {
 				return false;
 			}
@@ -25,7 +25,7 @@ export const useTextTruncate = () => {
 
 		let truncated = value;
 
-		if (!hasOverflow(element, referenceElement, offset)) {
+		if (!hasOverflow(element, referenceElement)) {
 			referenceElement.removeChild(element);
 			return value;
 		}
@@ -41,12 +41,12 @@ export const useTextTruncate = () => {
 			element.innerHTML = truncated;
 
 			length--;
-		} while (hasOverflow(element, referenceElement, offset));
+		} while (hasOverflow(element, referenceElement));
 
 		referenceElement.removeChild(element);
 
 		return truncated;
-	}, []); // eslint-disable-line react-hooks/exhaustive-deps
+	}, [value, offset, referenceElement]);
 
 	return truncate;
 };

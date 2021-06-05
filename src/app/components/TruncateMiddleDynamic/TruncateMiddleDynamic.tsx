@@ -15,11 +15,11 @@ export const TruncateMiddleDynamic = ({ value, offset = 0, className, parentRef,
 
 	const ref = useRef<HTMLElement>(null);
 
-	const truncate = useTextTruncate();
+	const truncate = useTextTruncate(value, offset, parentRef?.current || ref.current);
 
 	useLayoutEffect(() => {
-		setTruncated(truncate(value, offset, parentRef?.current || ref.current));
-	}, [offset, parentRef, truncate, value]);
+		setTruncated(truncate());
+	}, [truncate]);
 
 	return (
 		<Tooltip content={value} disabled={truncated === value}>
