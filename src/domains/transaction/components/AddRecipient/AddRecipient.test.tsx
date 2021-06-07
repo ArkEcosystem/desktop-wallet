@@ -56,7 +56,7 @@ describe("AddRecipient", () => {
 	it("should render with single recipient data", async () => {
 		const values = {
 			displayAmount: "1",
-			amount: "100000000",
+			amount: "1",
 			recipientAddress: "D6Z26L69gdk9qYmTv5uzk3uGepigtHY4ax",
 		};
 
@@ -91,7 +91,7 @@ describe("AddRecipient", () => {
 
 		expect(container).toMatchSnapshot();
 	});
-
+	//
 	it("should set amount", async () => {
 		const onChange = jest.fn();
 
@@ -114,7 +114,7 @@ describe("AddRecipient", () => {
 		});
 
 		await waitFor(() => {
-			expect(form.current.getValues("amount")).toEqual("100000000");
+			expect(form.current.getValues("amount")).toEqual("1");
 			expect(getByTestId("SelectDropdown__input")).toHaveValue("bP6T9GQ3kqP6T9GQ3kqP6T9GQ3kqTTTP6T9GQ3kqT");
 			expect(onChange).toHaveBeenCalledWith([
 				{ amount: expect.any(BigNumber), address: "bP6T9GQ3kqP6T9GQ3kqP6T9GQ3kqTTTP6T9GQ3kqT" },
@@ -156,7 +156,9 @@ describe("AddRecipient", () => {
 			fireEvent.click(sendAll);
 		});
 
-		await waitFor(() => expect(form.current.getValues("amount")).toEqual(wallet.balance().toString()));
+		await waitFor(() =>
+			expect(form.current.getValues("amount")).toEqual(wallet.balance().denominated().toString()),
+		);
 		expect(container).toMatchSnapshot();
 	});
 
@@ -212,7 +214,7 @@ describe("AddRecipient", () => {
 	it("should prevent adding invalid recipient address in multiple tab", async () => {
 		const values = {
 			displayAmount: "1",
-			amount: "100000000",
+			amount: "1",
 			recipientAddress: "bP6T9GQ3kqP6T9GQ3kqP6T9GQ3kqTTTP6T9GQ3kqT",
 		};
 
@@ -421,7 +423,7 @@ describe("AddRecipient", () => {
 	it("should remove recipient in multiple tab", async () => {
 		const values = {
 			displayAmount: "1",
-			amount: "100000000",
+			amount: "1",
 			recipientAddress: "DFJ5Z51F1euNNdRUQJKQVdG4h495LZkc6T",
 		};
 
@@ -480,7 +482,7 @@ describe("AddRecipient", () => {
 	it("should not override default values in single tab", async () => {
 		const values = {
 			displayAmount: "1",
-			amount: "100000000",
+			amount: "1",
 			recipientAddress: "DFJ5Z51F1euNNdRUQJKQVdG4h495LZkc6T",
 		};
 

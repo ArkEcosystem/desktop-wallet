@@ -61,7 +61,7 @@ export const SelectAddress = React.forwardRef<HTMLInputElement, SelectAddressPro
 			<>
 				<button
 					data-testid="SelectAddress__wrapper"
-					className="relative w-full"
+					className="relative w-full rounded focus:outline-none focus:ring-2 focus:ring-theme-primary-400"
 					type="button"
 					onClick={() => setSearchWalletIsOpen(true)}
 					disabled={disabled}

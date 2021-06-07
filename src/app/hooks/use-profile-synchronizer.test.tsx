@@ -332,7 +332,7 @@ describe("useProfileRestore", () => {
 			result: { current },
 		} = renderHook(() => useProfileRestore(), { wrapper });
 
-		expect(current.restoreProfile(profile)).resolves.toEqual(false);
+		await expect(current.restoreProfile(profile)).resolves.toEqual(false);
 
 		process.env.TEST_PROFILES_RESTORE_STATUS = undefined;
 	});
@@ -496,7 +496,6 @@ describe("useProfileRestore", () => {
 
 		const historyMock = jest.spyOn(history, "push").mockReturnValue();
 
-		jest.runAllTimers();
 		await waitFor(() => expect(getByTestId("ProfileRestored")).toBeInTheDocument(), { timeout: 4000 });
 
 		await waitFor(() => expect(historyMock).toHaveBeenCalled(), { timeout: 4000 });

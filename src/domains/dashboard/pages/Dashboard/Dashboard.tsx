@@ -15,11 +15,11 @@ export const Dashboard = () => {
 	const history = useHistory();
 	const { t } = useTranslation();
 	const activeProfile = useActiveProfile();
-	const { showTutorial, startTutorial, skipTutorial } = useTutorial(activeProfile);
 
 	const { profileIsSyncing } = useConfiguration();
 	const { env } = useEnvironmentContext();
 	const { getErroredNetworks } = useProfileUtils(env);
+	const { showTutorial, startTutorial, skipTutorial } = useTutorial(env, activeProfile);
 
 	const { selectedWallets } = useWalletConfig({ profile: activeProfile });
 

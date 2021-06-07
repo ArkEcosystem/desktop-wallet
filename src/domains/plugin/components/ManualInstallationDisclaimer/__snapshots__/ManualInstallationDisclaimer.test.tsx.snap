@@ -5,109 +5,111 @@ exports[`ManualInstallationDisclaimer should not render if not open 1`] = `<Docu
 exports[`ManualInstallationDisclaimer should render a modal 1`] = `
 <DocumentFragment>
   <div
-    class="flex fixed inset-0 z-50 justify-center items-center w-full h-full overflow-overlay"
+    class="flex fixed inset-0 z-50 py-20 w-full h-full bg-theme-secondary-900-rgba bg-opacity-60 dark:bg-black-rgba dark:bg-opacity-80 overflow-overlay"
+    data-testid="modal__overlay"
   >
     <div
-      class="fixed z-50 w-full h-full bg-theme-secondary-900 opacity-60 dark:bg-black dark:opacity-80"
-      data-testid="modal__overlay"
-    />
-    <div
-      class="Modal__ModalContainer-sc-1pv7yg7-0 gDeenD absolute left-0 right-0 z-50 flex flex-col p-10 mx-auto overflow-hidden rounded-2.5xl bg-theme-background shadow-2xl "
-      data-testid="modal__inner"
+      class="Modal__ModalContainer-sc-1pv7yg7-0 fmTBfU"
+      tabindex="-1"
     >
       <div
-        class="absolute top-0 right-0 z-50 mt-5 mr-5 rounded transition-all duration-100 ease-linear bg-theme-primary-100 hover:bg-theme-primary-300 dark:bg-theme-secondary-800 dark:text-theme-secondary-600 dark:hover:bg-theme-secondary-700 dark:hover:text-theme-secondary-400"
+        class="relative flex flex-col p-10 overflow-hidden rounded-2.5xl bg-theme-background shadow-2xl"
+        data-testid="modal__inner"
       >
-        <button
-          class="OriginalButton__StyledButton-sc-1y2wptt-0 fNHPRi w-11 h-11"
-          data-testid="modal__close-btn"
-          type="button"
+        <div
+          class="absolute top-0 right-0 z-10 mt-5 mr-5 rounded transition-all duration-100 ease-linear bg-theme-primary-100 hover:bg-theme-primary-300 dark:bg-theme-secondary-800 dark:text-theme-secondary-600 dark:hover:bg-theme-secondary-700 dark:hover:text-theme-secondary-400"
         >
-          <div
-            class="flex relative items-center space-x-2"
+          <button
+            class="OriginalButton__StyledButton-sc-1y2wptt-0 fNHPRi w-11 h-11"
+            data-testid="modal__close-btn"
+            type="button"
           >
             <div
-              class="sc-bdfBwQ bfBhNR"
-              height="14"
-              width="14"
+              class="flex relative items-center space-x-2"
             >
-              <svg>
-                cross-slim.svg
-              </svg>
+              <div
+                class="sc-bdfBwQ bfBhNR"
+                height="14"
+                width="14"
+              >
+                <svg>
+                  cross-slim.svg
+                </svg>
+              </div>
             </div>
-          </div>
-        </button>
-      </div>
-      <div
-        class="relative space-y-4"
-      >
-        <h2
-          class="mb-0 text-3xl font-bold"
-        >
-          Disclaimer
-        </h2>
+          </button>
+        </div>
         <div
-          class="flex-1"
+          class="relative space-y-4"
         >
-          <svg
-            class="w-3/5 m-auto my-8"
+          <h2
+            class="mb-0 text-3xl font-bold"
           >
-            generic-warning.svg
-          </svg>
+            Disclaimer
+          </h2>
           <div
-            class="text-theme-secondary-text whitespace-pre-line"
+            class="flex-1"
           >
-            By accepting the following terms, you hereby assume the risk associated with downloading files and installing said files from a direct URL link. The aforementioned links have neither been tested nor approved by ARK.io and ARK SCIC.
+            <svg
+              class="w-3/5 m-auto my-8"
+            >
+              generic-warning.svg
+            </svg>
+            <div
+              class="text-theme-secondary-text whitespace-pre-line"
+            >
+              By accepting the following terms, you hereby assume the risk associated with downloading files and installing said files from a direct URL link. The aforementioned links have neither been tested nor approved by ARK.io and ARK SCIC.
 
 We make no warranties, expressed or implied, as to the sustainability, availability, security, of these URLs. We are not responsible for any consequences which may occur from downloading, viewing, or installing files directly from a URL. ARK.io and ARK SCIC shall bear no liability for any loss suffered by users as a result of clicking an unverified direct URL.
 
 You acknowledge that clicking unverified URLs may result in you downloading, viewing, or installing content that may have bugs, glitches, lack of functionality, or can cause damage to your machine or result in the loss of data.
-          </div>
-          <fieldset
-            class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex mt-6"
-          >
-            <label
-              class="flex items-center space-x-3 w-max cursor-pointer"
+            </div>
+            <fieldset
+              class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex mt-6"
             >
-              <input
-                class="Checkbox-sc-17gwqiq-0 gDXYgb"
-                color="success"
-                data-testid="ManualInstallationDisclaimer__rememberChoice-toggle"
-                name="rememberChoice"
-                type="checkbox"
-              />
-              <span
-                class="text-sm text-theme-secondary-500 dark:text-theme-secondary-700"
+              <label
+                class="flex items-center space-x-3 w-max cursor-pointer"
               >
-                Do not show this message again
-              </span>
-            </label>
-          </fieldset>
-          <div
-            class="flex justify-end mt-8 space-x-3"
-          >
-            <button
-              class="OriginalButton__StyledButton-sc-1y2wptt-0 izJbbP"
-              data-testid="ManualInstallationDisclaimer__decline-button"
-              type="button"
+                <input
+                  class="Checkbox-sc-17gwqiq-0 gDXYgb"
+                  color="success"
+                  data-testid="ManualInstallationDisclaimer__rememberChoice-toggle"
+                  name="rememberChoice"
+                  type="checkbox"
+                />
+                <span
+                  class="text-sm text-theme-secondary-500 dark:text-theme-secondary-700"
+                >
+                  Do not show this message again
+                </span>
+              </label>
+            </fieldset>
+            <div
+              class="flex justify-end mt-8 space-x-3"
             >
-              <div
-                class="flex relative items-center space-x-2"
+              <button
+                class="OriginalButton__StyledButton-sc-1y2wptt-0 izJbbP"
+                data-testid="ManualInstallationDisclaimer__decline-button"
+                type="button"
               >
-                I Decline
-              </div>
-            </button>
-            <button
-              class="OriginalButton__StyledButton-sc-1y2wptt-0 dYkFxS"
-              data-testid="ManualInstallationDisclaimer__accept-button"
-              type="button"
-            >
-              <div
-                class="flex relative items-center space-x-2"
+                <div
+                  class="flex relative items-center space-x-2"
+                >
+                  I Decline
+                </div>
+              </button>
+              <button
+                class="OriginalButton__StyledButton-sc-1y2wptt-0 dYkFxS"
+                data-testid="ManualInstallationDisclaimer__accept-button"
+                type="button"
               >
-                I Accept
-              </div>
-            </button>
+                <div
+                  class="flex relative items-center space-x-2"
+                >
+                  I Accept
+                </div>
+              </button>
+            </div>
           </div>
         </div>
       </div>
