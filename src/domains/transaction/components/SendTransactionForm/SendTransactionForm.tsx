@@ -136,9 +136,9 @@ export const SendTransactionForm = ({
 				<FormField name="fee">
 					<FormLabel label={t("TRANSACTION.TRANSACTION_FEE")} />
 					<InputFee
-						min={fees?.min.toHuman()}
-						avg={fees?.avg.toHuman()}
-						max={fees?.max.toHuman()}
+						min={fees?.min}
+						avg={fees?.avg}
+						max={fees?.max}
 						value={fee}
 						step={0.01}
 						showFeeOptions={dynamicFees}

@@ -1,3 +1,4 @@
+import { BigNumber } from "@arkecosystem/platform-sdk-support";
 import { ButtonGroup, ButtonGroupOption } from "app/components/ButtonGroup";
 import { InputRange } from "app/components/Input";
 import React, { memo } from "react";
@@ -5,9 +6,9 @@ import { useTranslation } from "react-i18next";
 
 export interface InputFeeProps {
 	value: string;
-	min: string;
-	avg: string;
-	max: string;
+	min: BigNumber;
+	avg: BigNumber;
+	max: BigNumber;
 	step: number;
 	showFeeOptions?: boolean;
 	onChange: (value: string) => void;
