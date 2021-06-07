@@ -9,7 +9,6 @@ import cn from "classnames";
 import { SelectRecipient } from "domains/profile/components/SelectRecipient";
 import { RecipientList } from "domains/transaction/components/RecipientList";
 import { RecipientListItem } from "domains/transaction/components/RecipientList/RecipientList.models";
-import { humanToBigNumber } from "domains/transaction/utils";
 import React, { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { useFormContext } from "react-hook-form";
 import { useTranslation } from "react-i18next";
@@ -29,7 +28,7 @@ const ToggleButtons = ({ isSingle, disableMultiple, onChange }: ToggleButtonProp
 				</div>
 				<div>
 					<Tooltip content={t("TRANSACTION.RECIPIENTS_HELPTEXT", { count: 64 })}>
-						<div className="rounded-full cursor-pointer bg-theme-primary-100 hover:bg-theme-primary-200 dark:bg-theme-secondary-800 text-theme-primary-600 dark:text-theme-secondary-200 flex items-center justify-center w-5 h-5 questionmark">
+						<div className="flex items-center justify-center w-5 h-5 rounded-full cursor-pointer bg-theme-primary-100 hover:bg-theme-primary-200 dark:bg-theme-secondary-800 text-theme-primary-600 dark:text-theme-secondary-200 questionmark">
 							<Icon width={10} height={10} name="QuestionMark" />
 						</div>
 					</Tooltip>
@@ -72,8 +71,8 @@ const ToggleButtons = ({ isSingle, disableMultiple, onChange }: ToggleButtonProp
 };
 
 const InputButtonStyled = styled.button(() => [
-	tw`flex items-center px-5 h-full font-semibold text-theme-secondary-700`,
-	tw`rounded border-2 border-theme-primary-100`,
+	tw`flex items-center h-full px-5 font-semibold text-theme-secondary-700`,
+	tw`border-2 rounded border-theme-primary-100`,
 	tw`transition-colors duration-300`,
 	tw`dark:(border-theme-secondary-800 text-theme-secondary-200)`,
 	tw`focus:(outline-none ring-2 ring-theme-primary-400)`,
@@ -118,7 +117,7 @@ export const AddRecipient = ({
 	const senderWallet = useMemo(() => profile.wallets().findByAddress(senderAddress), [profile, senderAddress]);
 
 	const remainingBalance = useMemo(() => {
-		const senderBalance = senderWallet?.balance() || BigNumber.ZERO;
+		const senderBalance = senderWallet?.balance().denominated() || BigNumber.ZERO;
 
 		if (isSingle) {
 			return senderBalance;
@@ -128,7 +127,7 @@ export const AddRecipient = ({
 	}, [addedRecipients, senderWallet, isSingle]);
 
 	const maximumAmount = useMemo(() => {
-		const maximum = senderWallet?.balance().minus(fee);
+		const maximum = senderWallet?.balance().denominated().minus(fee);
 
 		return maximum?.isPositive() ? maximum : undefined;
 	}, [fee, senderWallet]);
@@ -258,7 +257,7 @@ export const AddRecipient = ({
 		!errors.amount && !errors.fee && isSingle && isSenderFilled
 			? {
 					end: (
-						<span className="whitespace-no-break font-semibold text-sm text-theme-secondary-500 dark:text-theme-secondary-700">
+						<span className="text-sm font-semibold whitespace-no-break text-theme-secondary-500 dark:text-theme-secondary-700">
 							{t("COMMON.MAX")} {maximumAmount?.toHuman()}
 						</span>
 					),
@@ -313,11 +312,9 @@ export const AddRecipient = ({
 									placeholder={t("COMMON.AMOUNT")}
 									value={getValues("displayAmount") || recipientsAmount}
 									addons={addons}
-									onChange={(amountHuman: string) => {
-										const amount = humanToBigNumber(amountHuman).toString();
-
+									onChange={(amount: string) => {
 										setValue("isSendAllSelected", false);
-										setValue("displayAmount", amountHuman);
+										setValue("displayAmount", amount);
 										setValue("amount", amount, { shouldValidate: true, shouldDirty: true });
 										singleRecipientOnChange(amount, recipientAddress);
 									}}
@@ -368,7 +365,7 @@ export const AddRecipient = ({
 						}
 						data-testid="AddRecipient__add-button"
 						variant="secondary"
-						className="mt-4 w-full"
+						className="w-full mt-4"
 						onClick={() =>
 							handleAddRecipient(
 								recipientAddress as string,
