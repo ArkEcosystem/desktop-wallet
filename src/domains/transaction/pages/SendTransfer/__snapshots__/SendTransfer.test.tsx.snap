@@ -487,7 +487,7 @@ exports[`SendTransfer should display disabled address selection input if selecte
                           data-testid="sender-address"
                         >
                           <button
-                            class="relative w-full"
+                            class="relative w-full rounded focus:outline-none focus:ring-2 focus:ring-theme-primary-400"
                             data-testid="SelectAddress__wrapper"
                             type="button"
                           >
@@ -2490,7 +2490,7 @@ exports[`SendTransfer should render 1st step with custom deeplink values and use
           data-testid="sender-address"
         >
           <button
-            class="relative w-full"
+            class="relative w-full rounded focus:outline-none focus:ring-2 focus:ring-theme-primary-400"
             data-testid="SelectAddress__wrapper"
             type="button"
           >
@@ -3395,7 +3395,7 @@ exports[`SendTransfer should render form and use location state 1`] = `
                           data-testid="sender-address"
                         >
                           <button
-                            class="relative w-full"
+                            class="relative w-full rounded focus:outline-none focus:ring-2 focus:ring-theme-primary-400"
                             data-testid="SelectAddress__wrapper"
                             type="button"
                           >
@@ -4445,7 +4445,7 @@ exports[`SendTransfer should render form and use location state without memo 1`]
                           data-testid="sender-address"
                         >
                           <button
-                            class="relative w-full"
+                            class="relative w-full rounded focus:outline-none focus:ring-2 focus:ring-theme-primary-400"
                             data-testid="SelectAddress__wrapper"
                             type="button"
                           >
@@ -5119,7 +5119,7 @@ exports[`SendTransfer should render form step 1`] = `
           data-testid="sender-address"
         >
           <button
-            class="relative w-full"
+            class="relative w-full rounded focus:outline-none focus:ring-2 focus:ring-theme-primary-400"
             data-testid="SelectAddress__wrapper"
             type="button"
           >
@@ -5659,7 +5659,7 @@ exports[`SendTransfer should render form step with deeplink values and use them 
           data-testid="sender-address"
         >
           <button
-            class="relative w-full"
+            class="relative w-full rounded focus:outline-none focus:ring-2 focus:ring-theme-primary-400"
             data-testid="SelectAddress__wrapper"
             type="button"
           >
@@ -6199,7 +6199,7 @@ exports[`SendTransfer should render form step without test networks 1`] = `
           data-testid="sender-address"
         >
           <button
-            class="relative w-full"
+            class="relative w-full rounded focus:outline-none focus:ring-2 focus:ring-theme-primary-400"
             data-testid="SelectAddress__wrapper"
             type="button"
           >
@@ -8317,7 +8317,7 @@ exports[`SendTransfer should select a cryptoasset and select sender without wall
                           data-testid="sender-address"
                         >
                           <button
-                            class="relative w-full"
+                            class="relative w-full rounded focus:outline-none focus:ring-2 focus:ring-theme-primary-400"
                             data-testid="SelectAddress__wrapper"
                             type="button"
                           >
