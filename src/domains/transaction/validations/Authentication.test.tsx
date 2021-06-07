@@ -42,8 +42,8 @@ describe("Authentication", () => {
 
 	it("should validate mnemonic", async () => {
 		const fromWifMock = jest
-			.spyOn(wallet.coin().identity().address(), "fromWIF")
-			.mockResolvedValue({ address: wallet.address() } as any);
+			.spyOn(wallet.coin().address(), "fromWIF")
+			.mockResolvedValue({ type: "bip39", address: wallet.address() });
 
 		const mnemonic = authentication(translationMock).mnemonic(wallet);
 		await expect(mnemonic.validate.matchSenderAddress("test")).resolves.toBe(true);
@@ -62,7 +62,7 @@ describe("Authentication", () => {
 		const wif = "SCoAuLqLrD6rfSBVhgcLqbdLKz2Gum2j4JR7pvLyiKaK9oiUfobg";
 
 		const fromWifMock = jest
-			.spyOn(walletWithPassword.coin().identity().address(), "fromWIF")
+			.spyOn(walletWithPassword.coin().address(), "fromWIF")
 			.mockResolvedValue({ address: walletWithPassword.address() } as any);
 		const walletWifMock = jest.spyOn(walletWithPassword.wif(), "get").mockResolvedValue(wif);
 
@@ -75,7 +75,7 @@ describe("Authentication", () => {
 
 	it("should validate WIF", async () => {
 		const fromWifMock = jest
-			.spyOn(wallet.coin().identity().address(), "fromWIF")
+			.spyOn(wallet.coin().address(), "fromWIF")
 			.mockResolvedValue({ address: wallet.address() } as any);
 
 		const authWif = authentication(translationMock).wif(wallet);
@@ -96,7 +96,7 @@ describe("Authentication", () => {
 
 	it("should validate private key", async () => {
 		const fromPrivateKeyMock = jest
-			.spyOn(wallet.coin().identity().address(), "fromPrivateKey")
+			.spyOn(wallet.coin().address(), "fromPrivateKey")
 			.mockResolvedValue({ address: wallet.address() } as any);
 
 		const authPrivateKey = authentication(translationMock).privateKey(wallet);
@@ -130,8 +130,8 @@ describe("Authentication", () => {
 			.mockImplementation(() => Promise.reject(new Error("failed")));
 
 		const fromWifMock = jest
-			.spyOn(walletWithPassword.coin().identity().address(), "fromWIF")
-			.mockResolvedValue(walletWithPassword.address() as any);
+			.spyOn(walletWithPassword.coin().address(), "fromWIF")
+			.mockResolvedValue({ type: "bip39", address: walletWithPassword.address() });
 
 		const encryptionPassword = authentication(translationMock).encryptionPassword(walletWithPassword);
 		await expect(encryptionPassword.validate(walletWithPassword.address())).resolves.toBe(

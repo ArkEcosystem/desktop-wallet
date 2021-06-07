@@ -6,7 +6,7 @@ export const authentication = (t: any) => {
 	const addressFromEncryptedPassword = async (wallet: Contracts.IReadWriteWallet, password: string) => {
 		try {
 			const wif = await wallet.wif().get(password);
-			const { address } = await wallet.coin().identity().address().fromWIF(wif);
+			const { address } = await wallet.coin().address().fromWIF(wif);
 
 			return address;
 		} catch {
@@ -23,7 +23,7 @@ export const authentication = (t: any) => {
 			}),
 			validate: {
 				matchSenderAddress: async (mnemonic: string) => {
-					const { address } = await wallet.coin().identity().address().fromMnemonic(mnemonic);
+					const { address } = await wallet.coin().address().fromMnemonic(mnemonic);
 
 					if (address === wallet.address()) {
 						return true;
@@ -39,7 +39,7 @@ export const authentication = (t: any) => {
 			}),
 			validate: {
 				matchSenderAddress: async (wif: string) => {
-					const { address } = await wallet.coin().identity().address().fromWIF(wif);
+					const { address } = await wallet.coin().address().fromWIF(wif);
 
 					if (address === wallet.address()) {
 						return true;
@@ -54,7 +54,7 @@ export const authentication = (t: any) => {
 				field: t("COMMON.PRIVATE_KEY"),
 			}),
 			validate: async (privateKey: string) => {
-				const { address } = await wallet.coin().identity().address().fromPrivateKey(privateKey);
+				const { address } = await wallet.coin().address().fromPrivateKey(privateKey);
 
 				if (address === wallet.address()) {
 					return true;
@@ -69,7 +69,7 @@ export const authentication = (t: any) => {
 			}),
 			validate: {
 				matchSenderPublicKey: async (mnemonic: string) => {
-					const { publicKey } = await coin.identity().publicKey().fromMnemonic(mnemonic);
+					const { publicKey } = await coin.publicKey().fromMnemonic(mnemonic);
 
 					if (publicKey === secondPublicKey) {
 						return true;
