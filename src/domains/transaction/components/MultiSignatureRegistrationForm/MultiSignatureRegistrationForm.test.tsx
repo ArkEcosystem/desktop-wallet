@@ -1,4 +1,4 @@
-import { Contracts, Services } from "@arkecosystem/platform-sdk";
+import { Contracts } from "@arkecosystem/platform-sdk";
 import { Contracts as ProfilesContracts } from "@arkecosystem/platform-sdk-profiles";
 import { BigNumber } from "@arkecosystem/platform-sdk-support";
 import { renderHook } from "@testing-library/react-hooks";
@@ -7,6 +7,7 @@ import React from "react";
 import { useForm } from "react-hook-form";
 import { useTranslation } from "react-i18next";
 import multiSignatureFixture from "tests/fixtures/coins/ark/devnet/transactions/multisignature-registration.json";
+import { TransactionFees } from "types";
 import { act, env, fireEvent, getDefaultProfileId, render, screen, syncFees, waitFor } from "utils/testing-library";
 
 import { translations as transactionTranslations } from "../../i18n";
@@ -16,7 +17,7 @@ describe("MultiSignature Registration Form", () => {
 	let profile: ProfilesContracts.IProfile;
 	let wallet: ProfilesContracts.IReadWriteWallet;
 	let wallet2: ProfilesContracts.IReadWriteWallet;
-	let fees: Services.TransactionFee;
+	let fees: TransactionFees;
 
 	const createTransactionMock = (wallet: ProfilesContracts.IReadWriteWallet) =>
 		// @ts-ignore

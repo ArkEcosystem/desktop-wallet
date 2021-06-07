@@ -26,7 +26,7 @@ describe("useWalletImport", () => {
 		});
 
 		await act(async () => {
-			expect(
+			await expect(
 				current.importWalletByType({ network, type: "encryptedWif", value: "password", encryptedWif: "wif" }),
 			).rejects.toBeTruthy();
 		});
@@ -34,7 +34,7 @@ describe("useWalletImport", () => {
 		mockEncryptedWif.mockRestore();
 
 		await act(async () => {
-			expect(
+			await expect(
 				current.importWalletByType({ network, type: "uknown", value: "password", encryptedWif: "wif" }),
 			).resolves.toBeUndefined();
 		});

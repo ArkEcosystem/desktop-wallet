@@ -1,12 +1,11 @@
 import { OriginalButton } from "app/components/Button/OriginalButton";
 import { Icon } from "app/components/Icon";
 import cs from "classnames";
-import React, { useEffect, useRef, useState } from "react";
+import React, { useRef } from "react";
 import tw, { styled } from "twin.macro";
 import { Size } from "types";
 
-import { usePrevious } from "../../hooks";
-import { modalOffsetClass, useModal } from "./";
+import { useModal } from "./";
 
 interface ModalProps {
 	children: React.ReactNode;
@@ -28,11 +27,11 @@ interface ModalContentProps {
 	description?: string;
 	banner?: React.ReactNode;
 	image?: React.ReactNode;
-	size?: Size;
 	onClose?: any;
 }
 
 const ModalContainer = styled.div<{ size?: Size }>`
+	${tw`flex-1 m-auto`}
 	${({ size }) => {
 		switch (size) {
 			case "sm":
@@ -55,74 +54,56 @@ const ModalContainer = styled.div<{ size?: Size }>`
 	}}
 `;
 
-const ModalContent = (props: ModalContentProps) => {
-	const [offsetClass, setOffsetClass] = useState<string>();
-	const modalRef = useRef<any>();
+const ModalContent = (props: ModalContentProps) => (
+	<div
+		className="relative flex flex-col p-10 overflow-hidden rounded-2.5xl bg-theme-background shadow-2xl"
+		data-testid="modal__inner"
+	>
+		<div className="absolute top-0 right-0 z-10 mt-5 mr-5 rounded transition-all duration-100 ease-linear bg-theme-primary-100 hover:bg-theme-primary-300 dark:bg-theme-secondary-800 dark:text-theme-secondary-600 dark:hover:bg-theme-secondary-700 dark:hover:text-theme-secondary-400">
+			<OriginalButton
+				data-testid="modal__close-btn"
+				variant="transparent"
+				size="icon"
+				onClick={props.onClose}
+				className="w-11 h-11"
+			>
+				<Icon name="CrossSlim" width={14} height={14} />
+			</OriginalButton>
+		</div>
 
-	const previousHeight = usePrevious(modalRef?.current?.clientHeight);
+		<div className="relative space-y-4">
+			{props.banner && (
+				<div className="relative -mx-10 mb-10 -mt-10 h-56">
+					{props.banner}
 
-	// eslint-disable-next-line react-hooks/exhaustive-deps
-	useEffect(() => {
-		const currentHeight = modalRef?.current?.clientHeight;
-
-		if (previousHeight !== currentHeight) {
-			setOffsetClass(modalOffsetClass(currentHeight, window.innerHeight));
-		}
-	});
-
-	return (
-		<ModalContainer
-			ref={modalRef}
-			size={props.size}
-			className={`absolute left-0 right-0 z-50 flex flex-col p-10 mx-auto overflow-hidden rounded-2.5xl bg-theme-background shadow-2xl ${offsetClass}`}
-			data-testid="modal__inner"
-		>
-			<div className="absolute top-0 right-0 z-50 mt-5 mr-5 rounded transition-all duration-100 ease-linear bg-theme-primary-100 hover:bg-theme-primary-300 dark:bg-theme-secondary-800 dark:text-theme-secondary-600 dark:hover:bg-theme-secondary-700 dark:hover:text-theme-secondary-400">
-				<OriginalButton
-					data-testid="modal__close-btn"
-					variant="transparent"
-					size="icon"
-					onClick={props.onClose}
-					className="w-11 h-11"
-				>
-					<Icon name="CrossSlim" width={14} height={14} />
-				</OriginalButton>
-			</div>
-
-			<div className="relative space-y-4">
-				{props.banner && (
-					<div className="relative -mx-10 mb-10 -mt-10 h-56">
-						{props.banner}
-
-						<div className="absolute bottom-0 left-0 mb-10 ml-10">
-							<h2
-								className={`text-4xl font-extrabold leading-tight m-0 ${
-									props.titleClass || "text-theme-text"
-								}`}
-							>
-								{props.title}
-							</h2>
-						</div>
+					<div className="absolute bottom-0 left-0 mb-10 ml-10">
+						<h2
+							className={`text-4xl font-extrabold leading-tight m-0 ${
+								props.titleClass || "text-theme-text"
+							}`}
+						>
+							{props.title}
+						</h2>
 					</div>
-				)}
-
-				{!props.banner && props.title && (
-					<h2 className={cs("mb-0 text-3xl font-bold", props.titleClass)}>{props.title}</h2>
-				)}
-
-				<div className="flex-1">
-					{props.image}
-
-					{props.description && (
-						<div className="text-theme-secondary-text whitespace-pre-line">{props.description}</div>
-					)}
-
-					{props.children}
 				</div>
+			)}
+
+			{!props.banner && props.title && (
+				<h2 className={cs("mb-0 text-3xl font-bold", props.titleClass)}>{props.title}</h2>
+			)}
+
+			<div className="flex-1">
+				{props.image}
+
+				{props.description && (
+					<div className="text-theme-secondary-text whitespace-pre-line">{props.description}</div>
+				)}
+
+				{props.children}
 			</div>
-		</ModalContainer>
-	);
-};
+		</div>
+	</div>
+);
 
 export const Modal = ({
 	isOpen,
@@ -135,32 +116,55 @@ export const Modal = ({
 	children,
 	onClose,
 }: ModalProps) => {
+	const refShouldClose = useRef<boolean | null>(null);
 	useModal({ isOpen, onClose });
 
 	if (!isOpen) {
 		return <></>;
 	}
 
-	return (
-		<div className="flex fixed inset-0 z-50 justify-center items-center w-full h-full overflow-overlay">
-			<div
-				className="fixed z-50 w-full h-full bg-theme-secondary-900 opacity-60 dark:bg-black dark:opacity-80"
-				data-testid="modal__overlay"
-				onClick={onClose}
-			/>
+	const handleClickOverlay = () => {
+		if (refShouldClose.current === null) {
+			refShouldClose.current = true;
+		}
 
-			<ModalContent
-				aria-selected={isOpen}
-				title={title}
-				titleClass={titleClass}
-				description={description}
-				banner={banner}
-				image={image}
+		if (!refShouldClose.current) {
+			refShouldClose.current = null;
+			return;
+		}
+
+		onClose();
+	};
+
+	const handleClickContent = () => {
+		refShouldClose.current = false;
+	};
+
+	return (
+		<div
+			className="flex fixed inset-0 z-50 py-20 w-full h-full bg-theme-secondary-900-rgba bg-opacity-60 dark:bg-black-rgba dark:bg-opacity-80 overflow-overlay"
+			onClick={handleClickOverlay}
+			data-testid="modal__overlay"
+		>
+			<ModalContainer
 				size={size}
-				onClose={onClose}
+				onMouseDown={handleClickContent}
+				onMouseUp={handleClickContent}
+				onClick={handleClickContent}
+				tabIndex={-1}
 			>
-				{children}
-			</ModalContent>
+				<ModalContent
+					aria-selected={isOpen}
+					title={title}
+					titleClass={titleClass}
+					description={description}
+					banner={banner}
+					image={image}
+					onClose={onClose}
+				>
+					{children}
+				</ModalContent>
+			</ModalContainer>
 		</div>
 	);
 };

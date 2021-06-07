@@ -3,239 +3,241 @@
 exports[`VerifyMessage should render 1`] = `
 <DocumentFragment>
   <div
-    class="flex fixed inset-0 z-50 justify-center items-center w-full h-full overflow-overlay"
+    class="flex fixed inset-0 z-50 py-20 w-full h-full bg-theme-secondary-900-rgba bg-opacity-60 dark:bg-black-rgba dark:bg-opacity-80 overflow-overlay"
+    data-testid="modal__overlay"
   >
     <div
-      class="fixed z-50 w-full h-full bg-theme-secondary-900 opacity-60 dark:bg-black dark:opacity-80"
-      data-testid="modal__overlay"
-    />
-    <div
-      class="Modal__ModalContainer-sc-1pv7yg7-0 bGiJfU absolute left-0 right-0 z-50 flex flex-col p-10 mx-auto overflow-hidden rounded-2.5xl bg-theme-background shadow-2xl "
-      data-testid="modal__inner"
+      class="Modal__ModalContainer-sc-1pv7yg7-0 eKUKXn"
+      tabindex="-1"
     >
       <div
-        class="absolute top-0 right-0 z-50 mt-5 mr-5 rounded transition-all duration-100 ease-linear bg-theme-primary-100 hover:bg-theme-primary-300 dark:bg-theme-secondary-800 dark:text-theme-secondary-600 dark:hover:bg-theme-secondary-700 dark:hover:text-theme-secondary-400"
+        class="relative flex flex-col p-10 overflow-hidden rounded-2.5xl bg-theme-background shadow-2xl"
+        data-testid="modal__inner"
       >
-        <button
-          class="OriginalButton__StyledButton-sc-1y2wptt-0 fNHPRi w-11 h-11"
-          data-testid="modal__close-btn"
-          type="button"
-        >
-          <div
-            class="flex relative items-center space-x-2"
-          >
-            <div
-              class="sc-bdfBwQ bfBhNR"
-              height="14"
-              width="14"
-            >
-              <svg>
-                cross-slim.svg
-              </svg>
-            </div>
-          </div>
-        </button>
-      </div>
-      <div
-        class="relative space-y-4"
-      >
-        <h2
-          class="mb-0 text-3xl font-bold"
-        >
-          Verify
-        </h2>
         <div
-          class="flex-1"
+          class="absolute top-0 right-0 z-10 mt-5 mr-5 rounded transition-all duration-100 ease-linear bg-theme-primary-100 hover:bg-theme-primary-300 dark:bg-theme-secondary-800 dark:text-theme-secondary-600 dark:hover:bg-theme-secondary-700 dark:hover:text-theme-secondary-400"
         >
-          <div
-            class="text-theme-secondary-text whitespace-pre-line"
+          <button
+            class="OriginalButton__StyledButton-sc-1y2wptt-0 fNHPRi w-11 h-11"
+            data-testid="modal__close-btn"
+            type="button"
           >
-            Authenticate a message from an address below.
-          </div>
-          <div
-            class="flex flex-col mt-8"
-          >
-            <span
-              class="block mb-1 text-lg font-semibold"
-            >
-              Verification Method
-            </span>
-            <span
-              class="text-sm font-medium text-theme-secondary-500 dark:text-theme-secondary-700"
-            >
-              Input fields manually or provide a JSON string.
-            </span>
             <div
-              class="flex items-center mt-6 space-x-4 text-theme-secondary-500 dark:text-theme-secondary-700"
+              class="flex relative items-center space-x-2"
             >
               <div
-                class="text-lg font-semibold"
+                class="sc-bdfBwQ bfBhNR"
+                height="14"
+                width="14"
               >
-                JSON
-              </div>
-              <label
-                class="flex"
-              >
-                <input
-                  checked=""
-                  class="Toggle__Input-qyyifx-0 WGuGL"
-                  data-testid="VerifyMessage__toggle"
-                  type="checkbox"
-                />
-                <div
-                  class="Toggle__Handle-qyyifx-1 geejDn"
-                >
-                  <span
-                    class="Toggle__HandleInner-qyyifx-2 eSIhju"
-                  />
-                </div>
-              </label>
-              <div
-                class="text-lg font-semibold text-theme-secondary-700 dark:text-theme-secondary-200"
-              >
-                Manual
+                <svg>
+                  cross-slim.svg
+                </svg>
               </div>
             </div>
-            <form
-              class="space-y-8"
-              data-testid="Form"
-              id="VerifyMessage__form"
+          </button>
+        </div>
+        <div
+          class="relative space-y-4"
+        >
+          <h2
+            class="mb-0 text-3xl font-bold"
+          >
+            Verify
+          </h2>
+          <div
+            class="flex-1"
+          >
+            <div
+              class="text-theme-secondary-text whitespace-pre-line"
             >
-              <div
-                class="mt-4 space-y-8"
-                data-testid="VerifyMessage__manual"
+              Authenticate a message from an address below.
+            </div>
+            <div
+              class="flex flex-col mt-8"
+            >
+              <span
+                class="block mb-1 text-lg font-semibold"
               >
-                <fieldset
-                  class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
-                >
-                  <label
-                    class="flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
-                    data-testid="FormLabel"
-                    for="signatory"
-                  >
-                    Public Key
-                    <div
-                      class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
-                      data-testid="FormLabel__required"
-                    />
-                  </label>
-                  <div
-                    class="fixed invisible w-auto whitespace-nowrap"
-                  >
-                    …
-                  </div>
-                  <div
-                    class="Input__InputWrapperStyled-wu99qs-0 jYUFQr"
-                  >
-                    <div
-                      class="relative flex flex-1 h-full"
-                    >
-                      <input
-                        class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
-                        data-testid="VerifyMessage__manual-signatory"
-                        name="signatory"
-                        value=""
-                      />
-                    </div>
-                  </div>
-                </fieldset>
-                <fieldset
-                  class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
-                >
-                  <label
-                    class="flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
-                    data-testid="FormLabel"
-                    for="message"
-                  >
-                    Message
-                    <div
-                      class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
-                      data-testid="FormLabel__required"
-                    />
-                  </label>
-                  <div
-                    class="fixed invisible w-auto whitespace-nowrap"
-                  >
-                    …
-                  </div>
-                  <div
-                    class="Input__InputWrapperStyled-wu99qs-0 jYUFQr"
-                  >
-                    <div
-                      class="relative flex flex-1 h-full"
-                    >
-                      <input
-                        class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
-                        data-testid="VerifyMessage__manual-message"
-                        name="message"
-                        value=""
-                      />
-                    </div>
-                  </div>
-                </fieldset>
-                <fieldset
-                  class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
-                >
-                  <label
-                    class="flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
-                    data-testid="FormLabel"
-                    for="signature"
-                  >
-                    Signature
-                    <div
-                      class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
-                      data-testid="FormLabel__required"
-                    />
-                  </label>
-                  <div
-                    class="fixed invisible w-auto whitespace-nowrap"
-                  >
-                    …
-                  </div>
-                  <div
-                    class="Input__InputWrapperStyled-wu99qs-0 jYUFQr"
-                  >
-                    <div
-                      class="relative flex flex-1 h-full"
-                    >
-                      <input
-                        class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
-                        data-testid="VerifyMessage__manual-signature"
-                        name="signature"
-                        value=""
-                      />
-                    </div>
-                  </div>
-                </fieldset>
-              </div>
-              <div
-                class="flex justify-end space-x-3"
+                Verification Method
+              </span>
+              <span
+                class="text-sm font-medium text-theme-secondary-500 dark:text-theme-secondary-700"
               >
-                <button
-                  class="OriginalButton__StyledButton-sc-1y2wptt-0 izJbbP"
-                  data-testid="VerifyMessage__cancel"
-                  type="button"
+                Input fields manually or provide a JSON string.
+              </span>
+              <div
+                class="flex items-center mt-6 space-x-4 text-theme-secondary-500 dark:text-theme-secondary-700"
+              >
+                <div
+                  class="text-lg font-semibold"
                 >
-                  <div
-                    class="flex relative items-center space-x-2"
-                  >
-                    Cancel
-                  </div>
-                </button>
-                <button
-                  class="OriginalButton__StyledButton-sc-1y2wptt-0 fqRthJ"
-                  data-testid="VerifyMessage__submit"
-                  disabled=""
-                  type="submit"
+                  JSON
+                </div>
+                <label
+                  class="flex"
                 >
+                  <input
+                    checked=""
+                    class="Toggle__Input-qyyifx-0 WGuGL"
+                    data-testid="VerifyMessage__toggle"
+                    type="checkbox"
+                  />
                   <div
-                    class="flex relative items-center space-x-2"
+                    class="Toggle__Handle-qyyifx-1 geejDn"
                   >
-                    Verify
+                    <span
+                      class="Toggle__HandleInner-qyyifx-2 eSIhju"
+                    />
                   </div>
-                </button>
+                </label>
+                <div
+                  class="text-lg font-semibold text-theme-secondary-700 dark:text-theme-secondary-200"
+                >
+                  Manual
+                </div>
               </div>
-            </form>
+              <form
+                class="space-y-8"
+                data-testid="Form"
+                id="VerifyMessage__form"
+              >
+                <div
+                  class="mt-4 space-y-8"
+                  data-testid="VerifyMessage__manual"
+                >
+                  <fieldset
+                    class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
+                  >
+                    <label
+                      class="flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
+                      data-testid="FormLabel"
+                      for="signatory"
+                    >
+                      Public Key
+                      <div
+                        class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
+                        data-testid="FormLabel__required"
+                      />
+                    </label>
+                    <div
+                      class="fixed invisible w-auto whitespace-nowrap"
+                    >
+                      …
+                    </div>
+                    <div
+                      class="Input__InputWrapperStyled-wu99qs-0 jYUFQr"
+                    >
+                      <div
+                        class="relative flex flex-1 h-full"
+                      >
+                        <input
+                          class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
+                          data-testid="VerifyMessage__manual-signatory"
+                          name="signatory"
+                          value=""
+                        />
+                      </div>
+                    </div>
+                  </fieldset>
+                  <fieldset
+                    class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
+                  >
+                    <label
+                      class="flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
+                      data-testid="FormLabel"
+                      for="message"
+                    >
+                      Message
+                      <div
+                        class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
+                        data-testid="FormLabel__required"
+                      />
+                    </label>
+                    <div
+                      class="fixed invisible w-auto whitespace-nowrap"
+                    >
+                      …
+                    </div>
+                    <div
+                      class="Input__InputWrapperStyled-wu99qs-0 jYUFQr"
+                    >
+                      <div
+                        class="relative flex flex-1 h-full"
+                      >
+                        <input
+                          class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
+                          data-testid="VerifyMessage__manual-message"
+                          name="message"
+                          value=""
+                        />
+                      </div>
+                    </div>
+                  </fieldset>
+                  <fieldset
+                    class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
+                  >
+                    <label
+                      class="flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
+                      data-testid="FormLabel"
+                      for="signature"
+                    >
+                      Signature
+                      <div
+                        class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
+                        data-testid="FormLabel__required"
+                      />
+                    </label>
+                    <div
+                      class="fixed invisible w-auto whitespace-nowrap"
+                    >
+                      …
+                    </div>
+                    <div
+                      class="Input__InputWrapperStyled-wu99qs-0 jYUFQr"
+                    >
+                      <div
+                        class="relative flex flex-1 h-full"
+                      >
+                        <input
+                          class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
+                          data-testid="VerifyMessage__manual-signature"
+                          name="signature"
+                          value=""
+                        />
+                      </div>
+                    </div>
+                  </fieldset>
+                </div>
+                <div
+                  class="flex justify-end space-x-3"
+                >
+                  <button
+                    class="OriginalButton__StyledButton-sc-1y2wptt-0 izJbbP"
+                    data-testid="VerifyMessage__cancel"
+                    type="button"
+                  >
+                    <div
+                      class="flex relative items-center space-x-2"
+                    >
+                      Cancel
+                    </div>
+                  </button>
+                  <button
+                    class="OriginalButton__StyledButton-sc-1y2wptt-0 fqRthJ"
+                    data-testid="VerifyMessage__submit"
+                    disabled=""
+                    type="submit"
+                  >
+                    <div
+                      class="flex relative items-center space-x-2"
+                    >
+                      Verify
+                    </div>
+                  </button>
+                </div>
+              </form>
+            </div>
           </div>
         </div>
       </div>

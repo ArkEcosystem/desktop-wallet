@@ -1,4 +1,3 @@
-import { Services } from "@arkecosystem/platform-sdk";
 import { Contracts as ProfilesContracts } from "@arkecosystem/platform-sdk-profiles";
 import { FormField, FormLabel } from "app/components/Form";
 import { Header } from "app/components/Header";
@@ -8,6 +7,7 @@ import cn from "classnames";
 import React, { ChangeEvent, useCallback, useEffect } from "react";
 import { useFormContext } from "react-hook-form";
 import { useTranslation } from "react-i18next";
+import { TransactionFees } from "types";
 
 import { InputFee } from "../InputFee";
 import { AddParticipant, Participant } from "./components/AddParticipant/AddParticipant";
@@ -19,7 +19,7 @@ export const FormStep = ({
 	step = 0.001,
 }: {
 	profile: ProfilesContracts.IProfile;
-	fees: Services.TransactionFee;
+	fees: TransactionFees;
 	wallet: ProfilesContracts.IReadWriteWallet;
 	step?: number;
 }) => {

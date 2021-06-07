@@ -25,7 +25,7 @@ describe("useWalletSync", () => {
 		const mockAllowVoting = jest.spyOn(network, "allowsVoting").mockReturnValue(false);
 
 		await act(async () => {
-			expect(current.syncAll(wallet)).resolves.toBeTruthy();
+			await expect(current.syncAll(wallet)).resolves.toBeTruthy();
 		});
 
 		mockAllowVoting.mockRestore();

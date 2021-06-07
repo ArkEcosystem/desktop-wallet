@@ -23,14 +23,14 @@ describe("useTutorial", () => {
 
 	it("should show tutorial for the new profile", () => {
 		const mockHasCompletedTutorial = jest.spyOn(profile, "hasCompletedIntroductoryTutorial").mockReturnValue(false);
-		const { result } = renderHook(() => useTutorial(profile), { wrapper });
+		const { result } = renderHook(() => useTutorial(env, profile), { wrapper });
 
 		expect(result.current.showTutorial).toBeTruthy();
 		mockHasCompletedTutorial.mockRestore();
 	});
 
 	it("should able to skip tutorial", () => {
-		const { result } = renderHook(() => useTutorial(profile), { wrapper });
+		const { result } = renderHook(() => useTutorial(env, profile), { wrapper });
 
 		expect(result.current.showTutorial).toBeTruthy();
 
@@ -46,7 +46,7 @@ describe("useTutorial", () => {
 			<ConfigurationProvider defaultConfiguration={{ profileIsSyncing: true }}>{children}</ConfigurationProvider>
 		);
 
-		const { result } = renderHook(() => useTutorial(profile), { wrapper });
+		const { result } = renderHook(() => useTutorial(env, profile), { wrapper });
 
 		await waitFor(() => expect(result.current.showTutorial).toBeFalsy(), { timeout: 4000 });
 	});
