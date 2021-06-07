@@ -198,11 +198,11 @@ describe("SendTransfer", () => {
 		const { result: form } = renderHook(() =>
 			useForm({
 				defaultValues: {
-					fee: "0.1",
+					fee: "1",
 					recipients: [
 						{
 							address: wallet.address(),
-							amount: BigNumber.make(1 * 1e8),
+							amount: BigNumber.make(1),
 						},
 					],
 					senderAddress: wallet.address(),
@@ -1828,7 +1828,7 @@ describe("SendTransfer", () => {
 
 		// Step 5 (skip step 4 for now - ledger confirmation)
 		const coin = profile.coins().set("ARK", "ark.devnet");
-		const coinMock = jest.spyOn(coin.identity().address(), "validate").mockReturnValue(true);
+		const coinMock = jest.spyOn(coin.address(), "validate").mockReturnValue(true);
 
 		const signMock = jest
 			.spyOn(wallet.transaction(), "signMultiPayment")

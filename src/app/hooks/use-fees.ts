@@ -1,10 +1,11 @@
-import { Services } from "@arkecosystem/platform-sdk";
+import { Coins, Services } from "@arkecosystem/platform-sdk";
 import { Contracts as ProfileContracts } from "@arkecosystem/platform-sdk-profiles";
 import { BigNumber } from "@arkecosystem/platform-sdk-support";
 import { useEnvironmentContext } from "app/contexts";
 import { useCallback } from "react";
 
-const normalizeValue = (value: string): string => (+BigNumber.make(value).toHuman()).toString();
+const normalizeValue = (value: BigNumber, decimals: number): string =>
+	BigNumber.make(value).denominated(decimals).toHuman();
 
 export const useFees = ({ profile, normalize = true }: { profile: ProfileContracts.IProfile; normalize?: boolean }) => {
 	const { env } = useEnvironmentContext();
@@ -17,18 +18,27 @@ export const useFees = ({ profile, normalize = true }: { profile: ProfileContrac
 				transactionFees = env.fees().findByType(coin, network, type);
 			} catch (error) {
 				await env.fees().syncAll(profile);
+
 				transactionFees = env.fees().findByType(coin, network, type);
 			}
 
 			if (!normalize) {
-				return transactionFees;
+				return {
+					static: transactionFees.static.toHuman(),
+					avg: transactionFees.avg.toHuman(),
+					min: transactionFees.min.toHuman(),
+					max: transactionFees.max.toHuman(),
+				};
 			}
 
+			const config = profile.coins().get(coin, network).config();
+			const decimals = config.get<number>(Coins.ConfigKey.CurrencyDecimals);
+
 			return {
-				static: normalizeValue(transactionFees.static),
-				avg: normalizeValue(transactionFees.avg),
-				min: normalizeValue(transactionFees.min),
-				max: normalizeValue(transactionFees.max),
+				static: normalizeValue(transactionFees.static, decimals),
+				avg: normalizeValue(transactionFees.avg, decimals),
+				min: normalizeValue(transactionFees.min, decimals),
+				max: normalizeValue(transactionFees.max, decimals),
 			};
 		},
 		[env, normalize, profile],

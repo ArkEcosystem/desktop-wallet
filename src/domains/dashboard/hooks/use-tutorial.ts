@@ -1,8 +1,8 @@
-import { Contracts } from "@arkecosystem/platform-sdk-profiles";
+import { Contracts, Environment } from "@arkecosystem/platform-sdk-profiles";
 import { useConfiguration } from "app/contexts";
 import { useCallback, useEffect, useState } from "react";
 
-export const useTutorial = (profile: Contracts.IProfile) => {
+export const useTutorial = (env: Environment, profile: Contracts.IProfile) => {
 	const [showTutorial, setShowTutorial] = useState(false);
 	const { profileIsSyncing } = useConfiguration();
 
@@ -17,10 +17,12 @@ export const useTutorial = (profile: Contracts.IProfile) => {
 	/* istanbul ignore next */
 	const startTutorial = () => undefined;
 
-	const skipTutorial = useCallback(() => {
+	const skipTutorial = useCallback(async () => {
 		profile.markIntroductoryTutorialAsComplete();
 		setShowTutorial(false);
-	}, [profile]);
+
+		await env.persist();
+	}, [env, profile]);
 
 	return {
 		showTutorial,
