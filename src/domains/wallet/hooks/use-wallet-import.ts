@@ -23,12 +23,40 @@ export const useWalletImport = ({ profile }: { profile: Contracts.IProfile }) =>
 		value: WalletGenerationInput;
 		encryptedWif: string;
 	}): Promise<Contracts.IReadWriteWallet | undefined> => {
+		const defaultOptions = {
+			coin: network.coin(),
+			network: network.id(),
+		};
+
 		switch (type) {
-			case "mnemonic":
+			case "mnemonic.bip39":
 				return profile.wallets().push(
 					await profile.walletFactory().fromMnemonicWithBIP39({
-						coin: network.coin(),
-						network: network.id(),
+						...defaultOptions,
+						mnemonic: value,
+					}),
+				);
+
+			case "mnemonic.bip44":
+				return profile.wallets().push(
+					await profile.walletFactory().fromMnemonicWithBIP44({
+						...defaultOptions,
+						mnemonic: value,
+					}),
+				);
+
+			case "mnemonic.bip49":
+				return profile.wallets().push(
+					await profile.walletFactory().fromMnemonicWithBIP49({
+						...defaultOptions,
+						mnemonic: value,
+					}),
+				);
+
+			case "mnemonic.bip84":
+				return profile.wallets().push(
+					await profile.walletFactory().fromMnemonicWithBIP84({
+						...defaultOptions,
 						mnemonic: value,
 					}),
 				);
@@ -36,8 +64,7 @@ export const useWalletImport = ({ profile }: { profile: Contracts.IProfile }) =>
 			case "address":
 				return profile.wallets().push(
 					await profile.walletFactory().fromAddress({
-						coin: network.coin(),
-						network: network.id(),
+						...defaultOptions,
 						address: value,
 					}),
 				);
@@ -45,8 +72,7 @@ export const useWalletImport = ({ profile }: { profile: Contracts.IProfile }) =>
 			case "privateKey":
 				return profile.wallets().push(
 					await profile.walletFactory().fromPrivateKey({
-						coin: network.coin(),
-						network: network.id(),
+						...defaultOptions,
 						privateKey: value,
 					}),
 				);
@@ -54,8 +80,7 @@ export const useWalletImport = ({ profile }: { profile: Contracts.IProfile }) =>
 			case "wif":
 				return profile.wallets().push(
 					await profile.walletFactory().fromWIF({
-						coin: network.coin(),
-						network: network.id(),
+						...defaultOptions,
 						wif: value,
 					}),
 				);
@@ -68,8 +93,7 @@ export const useWalletImport = ({ profile }: { profile: Contracts.IProfile }) =>
 						profile
 							.walletFactory()
 							.fromWIF({
-								coin: network.coin(),
-								network: network.id(),
+								...defaultOptions,
 								wif: encryptedWif,
 								password: value,
 							})

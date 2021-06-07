@@ -70,7 +70,7 @@ export const ImportWallet = () => {
 
 			try {
 				await importWallet();
-				setActiveTab(activeTab + (getValues("type") === "mnemonic" ? 1 : 2));
+				setActiveTab(activeTab + (getValues("type").startsWith("mnemonic") ? 1 : 2));
 			} catch (e) {
 				toasts.error(e.message);
 			} finally {
