@@ -95,9 +95,9 @@ export const FormStep = ({
 				<FormField name="fee">
 					<FormLabel label={t("TRANSACTION.TRANSACTION_FEE")} />
 					<InputFee
-						min={fees.min}
-						avg={fees.avg}
-						max={fees.max}
+						min={fees.min.toHuman()}
+						avg={fees.avg.toHuman()}
+						max={fees.max.toHuman()}
 						value={fee || 0}
 						step={0.01}
 						showFeeOptions={wallet.network().feeType() === "dynamic"}

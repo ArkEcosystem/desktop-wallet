@@ -22,10 +22,10 @@ export const useFees = ({ profile, normalize = true }: { profile: ProfileContrac
 			}
 
 			return {
-				static: transactionFees.static,
-				avg: transactionFees.avg,
-				min: transactionFees.min,
-				max: transactionFees.max,
+				static: transactionFees.static.toHuman(),
+				avg: transactionFees.avg.toHuman(),
+				min: transactionFees.min.toHuman(),
+				max: transactionFees.max.toHuman(),
 			};
 		},
 		[env, normalize, profile],
