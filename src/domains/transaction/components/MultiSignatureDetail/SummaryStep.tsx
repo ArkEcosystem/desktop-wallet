@@ -105,7 +105,6 @@ export const SummaryStep = ({
 		const setAddress = async () => {
 			const { address } = await wallet
 				.coin()
-				.identity()
 				.address()
 				.fromPublicKey(transaction.get("senderPublicKey"));
 			setSenderAddress(address);
