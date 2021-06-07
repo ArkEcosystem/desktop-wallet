@@ -5,179 +5,181 @@ exports[`ConfirmSendTransaction should not render if not open 1`] = `<DocumentFr
 exports[`ConfirmSendTransaction should render modal 1`] = `
 <DocumentFragment>
   <div
-    class="flex fixed inset-0 z-50 justify-center items-center w-full h-full overflow-overlay"
+    class="flex fixed inset-0 z-50 py-20 w-full h-full bg-theme-secondary-900-rgba bg-opacity-60 dark:bg-black-rgba dark:bg-opacity-80 overflow-overlay"
+    data-testid="modal__overlay"
   >
     <div
-      class="fixed z-50 w-full h-full bg-theme-secondary-900 opacity-60 dark:bg-black dark:opacity-80"
-      data-testid="modal__overlay"
-    />
-    <div
-      class="Modal__ModalContainer-sc-1pv7yg7-0 bGiJfU absolute left-0 right-0 z-50 flex flex-col p-10 mx-auto overflow-hidden rounded-2.5xl bg-theme-background shadow-2xl "
-      data-testid="modal__inner"
+      class="Modal__ModalContainer-sc-1pv7yg7-0 eKUKXn"
+      tabindex="-1"
     >
       <div
-        class="absolute top-0 right-0 z-50 mt-5 mr-5 rounded transition-all duration-100 ease-linear bg-theme-primary-100 hover:bg-theme-primary-300 dark:bg-theme-secondary-800 dark:text-theme-secondary-600 dark:hover:bg-theme-secondary-700 dark:hover:text-theme-secondary-400"
+        class="relative flex flex-col p-10 overflow-hidden rounded-2.5xl bg-theme-background shadow-2xl"
+        data-testid="modal__inner"
       >
-        <button
-          class="OriginalButton__StyledButton-sc-1y2wptt-0 fNHPRi w-11 h-11"
-          data-testid="modal__close-btn"
-          type="button"
-        >
-          <div
-            class="flex relative items-center space-x-2"
-          >
-            <div
-              class="sc-bdfBwQ bfBhNR"
-              height="14"
-              width="14"
-            >
-              <svg>
-                cross-slim.svg
-              </svg>
-            </div>
-          </div>
-        </button>
-      </div>
-      <div
-        class="relative space-y-4"
-      >
-        <h2
-          class="mb-0 text-3xl font-bold"
-        >
-          Confirm Transaction
-        </h2>
         <div
-          class="flex-1"
+          class="absolute top-0 right-0 z-10 mt-5 mr-5 rounded transition-all duration-100 ease-linear bg-theme-primary-100 hover:bg-theme-primary-300 dark:bg-theme-secondary-800 dark:text-theme-secondary-600 dark:hover:bg-theme-secondary-700 dark:hover:text-theme-secondary-400"
         >
-          <div
-            class="my-8 text-theme-secondary-text"
-          >
-            You have unconfirmed transactions which will affect your balance when confirmed. Are you sure you wish to continue?
-          </div>
-          <div
-            class="relative"
-            data-testid="TransactionTable"
+          <button
+            class="OriginalButton__StyledButton-sc-1y2wptt-0 fNHPRi w-11 h-11"
+            data-testid="modal__close-btn"
+            type="button"
           >
             <div
-              class="Table__TableWrapper-sc-84pst5-0 ccYCKK -mt-3"
-              role="table"
+              class="flex relative items-center space-x-2"
             >
-              <table
-                cellpadding="0"
-                class="table-auto"
+              <div
+                class="sc-bdfBwQ bfBhNR"
+                height="14"
+                width="14"
               >
-                <thead>
-                  <tr
-                    class="border-b border-theme-secondary-300 dark:border-theme-secondary-800"
-                    role="row"
-                  >
-                    <th
-                      class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
-                      colspan="1"
-                      data-testid="table__th--0"
-                      role="columnheader"
-                      style="cursor: pointer;"
-                      title="Toggle SortBy"
-                    >
-                      <div
-                        class="flex flex-inline align-top"
-                      >
-                        <div>
-                          Date
-                        </div>
-                        <div
-                          class="flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity opacity-0 group-hover:opacity-100 ml-2"
-                        >
-                          <div
-                            class="sc-bdfBwQ kJrqvM transition-transform"
-                            height="5"
-                            role="img"
-                            width="8"
-                          >
-                            <svg>
-                              chevron-down.svg
-                            </svg>
-                          </div>
-                        </div>
-                      </div>
-                    </th>
-                    <th
-                      class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
-                      colspan="1"
-                      data-testid="table__th--1"
-                      role="columnheader"
-                    >
-                      <div
-                        class="flex flex-inline align-top"
-                      >
-                        <div>
-                          Recipient
-                        </div>
-                      </div>
-                    </th>
-                    <th
-                      class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
-                      colspan="1"
-                      data-testid="table__th--2"
-                      role="columnheader"
-                      style="cursor: pointer;"
-                      title="Toggle SortBy"
-                    >
-                      <div
-                        class="flex flex-inline align-top justify-end flex-row-reverse"
-                      >
-                        <div>
-                          Amount
-                        </div>
-                        <div
-                          class="flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity opacity-0 group-hover:opacity-100 ml-auto mr-2"
-                        >
-                          <div
-                            class="sc-bdfBwQ kJrqvM transition-transform transform rotate-180"
-                            height="5"
-                            role="img"
-                            width="8"
-                          >
-                            <svg>
-                              chevron-down.svg
-                            </svg>
-                          </div>
-                        </div>
-                      </div>
-                    </th>
-                  </tr>
-                </thead>
-                <tbody
-                  role="rowgroup"
-                />
-              </table>
+                <svg>
+                  cross-slim.svg
+                </svg>
+              </div>
             </div>
-          </div>
-          <div
-            class="flex justify-end mt-8 space-x-3"
+          </button>
+        </div>
+        <div
+          class="relative space-y-4"
+        >
+          <h2
+            class="mb-0 text-3xl font-bold"
           >
-            <button
-              class="OriginalButton__StyledButton-sc-1y2wptt-0 izJbbP"
-              data-testid="ConfirmSendTransaction__cancel"
-              type="button"
+            Confirm Transaction
+          </h2>
+          <div
+            class="flex-1"
+          >
+            <div
+              class="my-8 text-theme-secondary-text"
+            >
+              You have unconfirmed transactions which will affect your balance when confirmed. Are you sure you wish to continue?
+            </div>
+            <div
+              class="relative"
+              data-testid="TransactionTable"
             >
               <div
-                class="flex relative items-center space-x-2"
+                class="Table__TableWrapper-sc-84pst5-0 ccYCKK -mt-3"
+                role="table"
               >
-                Back
+                <table
+                  cellpadding="0"
+                  class="table-auto"
+                >
+                  <thead>
+                    <tr
+                      class="border-b border-theme-secondary-300 dark:border-theme-secondary-800"
+                      role="row"
+                    >
+                      <th
+                        class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
+                        colspan="1"
+                        data-testid="table__th--0"
+                        role="columnheader"
+                        style="cursor: pointer;"
+                        title="Toggle SortBy"
+                      >
+                        <div
+                          class="flex flex-inline align-top"
+                        >
+                          <div>
+                            Date
+                          </div>
+                          <div
+                            class="flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity opacity-0 group-hover:opacity-100 ml-2"
+                          >
+                            <div
+                              class="sc-bdfBwQ kJrqvM transition-transform"
+                              height="5"
+                              role="img"
+                              width="8"
+                            >
+                              <svg>
+                                chevron-down.svg
+                              </svg>
+                            </div>
+                          </div>
+                        </div>
+                      </th>
+                      <th
+                        class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
+                        colspan="1"
+                        data-testid="table__th--1"
+                        role="columnheader"
+                      >
+                        <div
+                          class="flex flex-inline align-top"
+                        >
+                          <div>
+                            Recipient
+                          </div>
+                        </div>
+                      </th>
+                      <th
+                        class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
+                        colspan="1"
+                        data-testid="table__th--2"
+                        role="columnheader"
+                        style="cursor: pointer;"
+                        title="Toggle SortBy"
+                      >
+                        <div
+                          class="flex flex-inline align-top justify-end flex-row-reverse"
+                        >
+                          <div>
+                            Amount
+                          </div>
+                          <div
+                            class="flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity opacity-0 group-hover:opacity-100 ml-auto mr-2"
+                          >
+                            <div
+                              class="sc-bdfBwQ kJrqvM transition-transform transform rotate-180"
+                              height="5"
+                              role="img"
+                              width="8"
+                            >
+                              <svg>
+                                chevron-down.svg
+                              </svg>
+                            </div>
+                          </div>
+                        </div>
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody
+                    role="rowgroup"
+                  />
+                </table>
               </div>
-            </button>
-            <button
-              class="OriginalButton__StyledButton-sc-1y2wptt-0 dYkFxS"
-              data-testid="ConfirmSendTransaction__confirm"
-              type="submit"
+            </div>
+            <div
+              class="flex justify-end mt-8 space-x-3"
             >
-              <div
-                class="flex relative items-center space-x-2"
+              <button
+                class="OriginalButton__StyledButton-sc-1y2wptt-0 izJbbP"
+                data-testid="ConfirmSendTransaction__cancel"
+                type="button"
               >
-                Continue
-              </div>
-            </button>
+                <div
+                  class="flex relative items-center space-x-2"
+                >
+                  Back
+                </div>
+              </button>
+              <button
+                class="OriginalButton__StyledButton-sc-1y2wptt-0 dYkFxS"
+                data-testid="ConfirmSendTransaction__confirm"
+                type="submit"
+              >
+                <div
+                  class="flex relative items-center space-x-2"
+                >
+                  Continue
+                </div>
+              </button>
+            </div>
           </div>
         </div>
       </div>
