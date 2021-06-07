@@ -30,8 +30,23 @@ describe("useProfileBalance", () => {
 		expect(current.convertedBalance).toEqual(BigNumber.ZERO);
 	});
 
+	it("should update balance", async () => {
+		const profile = env.profiles().findById(getDefaultProfileId());
+		const profileConvertedBalanceMock = jest.spyOn(profile, "convertedBalance").mockImplementation(() => BigNumber.make(10000));
+
+		const wrapper = ({ children }: any) => <ConfigurationProvider>{children}</ConfigurationProvider>;
+
+		const {
+			result: { current },
+		} = renderHook(() => useProfileBalance({ profile }), { wrapper });
+
+		expect(current.convertedBalance).toEqual(BigNumber.ZERO);
+		profileConvertedBalanceMock.mockRestore();
+	});
+
 	it("should default to zero when exception is thrown", async () => {
 		const profile = env.profiles().findById(getDefaultProfileId());
+		const mockProfileStatus = jest.spyOn(profile.status(), "isRestored").mockReturnValue(false);
 		const profileConvertedBalanceMock = jest.spyOn(profile, "convertedBalance").mockImplementation(() => {
 			throw new Error("profile is not restored");
 		});
@@ -44,6 +59,7 @@ describe("useProfileBalance", () => {
 
 		expect(current.convertedBalance).toEqual(BigNumber.ZERO);
 		profileConvertedBalanceMock.mockRestore();
+		mockProfileStatus.mockRestore();
 	});
 
 	it("should default to zero if converted balance is undefined", async () => {
