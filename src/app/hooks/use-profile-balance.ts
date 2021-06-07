@@ -1,6 +1,6 @@
 import { Contracts } from "@arkecosystem/platform-sdk-profiles";
 import { BigNumber } from "@arkecosystem/platform-sdk-support";
-import { useCallback, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 
 interface BalanceProps {
 	profile?: Contracts.IProfile;
@@ -12,12 +12,12 @@ export const useProfileBalance = ({ profile, isLoading = false }: BalanceProps) 
 
 	const balance = profile?.status().isRestored() ? profile?.convertedBalance() : convertedBalance;
 
-	const updateBalance = useCallback(() => {
-		setConvertedBalance(balance);
-	}, [balance, setConvertedBalance]);
-
 	useEffect(() => {
 		if (isLoading) {
+			return;
+		}
+
+		if (!balance) {
 			return;
 		}
 
@@ -25,8 +25,8 @@ export const useProfileBalance = ({ profile, isLoading = false }: BalanceProps) 
 			return;
 		}
 
-		updateBalance();
-	}, [isLoading, updateBalance, balance, convertedBalance]);
+		setConvertedBalance(balance);
+	}, [isLoading, balance, convertedBalance]);
 
 	return {
 		convertedBalance,
