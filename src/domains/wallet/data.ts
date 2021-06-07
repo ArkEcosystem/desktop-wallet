@@ -236,7 +236,7 @@ export const networks = [
 		icon: "BIND",
 		name: "Compendia",
 		coin: "BIND",
-		network: "compendia.devnet",
+		network: "bind.devnet",
 		className: "text-theme-danger-400 border-theme-danger-200",
 	},
 	{
