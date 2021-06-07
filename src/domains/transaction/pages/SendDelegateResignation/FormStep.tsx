@@ -8,6 +8,7 @@ import { TransactionDetail, TransactionSender } from "domains/transaction/compon
 import React, { useEffect, useState } from "react";
 import { useFormContext } from "react-hook-form";
 import { useTranslation } from "react-i18next";
+import { TransactionFees } from "types";
 
 export const FormStep = ({
 	senderWallet,
@@ -20,7 +21,7 @@ export const FormStep = ({
 
 	const { getValues, register, setValue, watch } = useFormContext();
 
-	const [fees, setFees] = useState<any>({
+	const [fees, setFees] = useState<TransactionFees>({
 		static: "25",
 		max: "0",
 		min: "0",
@@ -49,7 +50,7 @@ export const FormStep = ({
 
 	useEffect(() => {
 		if (fee === undefined) {
-			setValue("fee", fees.avg.isZero() ? fees.static : fees.avg, { shouldValidate: true, shouldDirty: true });
+			setValue("fee", fees.avg !== "0" ? fees.avg : fees.static, { shouldValidate: true, shouldDirty: true });
 		}
 	}, [fee, fees, setValue]);
 
