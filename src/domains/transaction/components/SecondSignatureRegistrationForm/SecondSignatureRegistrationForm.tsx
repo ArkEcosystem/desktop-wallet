@@ -1,4 +1,4 @@
-import { Contracts, Services } from "@arkecosystem/platform-sdk";
+import { Contracts } from "@arkecosystem/platform-sdk";
 import { Contracts as ProfilesContracts } from "@arkecosystem/platform-sdk-profiles";
 import { Circle } from "app/components/Circle";
 import { Icon } from "app/components/Icon";
@@ -7,6 +7,7 @@ import { TransactionDetail, TransactionFee } from "domains/transaction/component
 import { SendRegistrationForm } from "domains/transaction/pages/SendRegistration/SendRegistration.models";
 import { handleBroadcastError } from "domains/transaction/utils";
 import React from "react";
+import { TransactionFees } from "types";
 
 import { BackupStep, GenerationStep, ReviewStep, VerificationStep } from "./";
 
@@ -16,7 +17,7 @@ const component = ({
 	wallet,
 }: {
 	activeTab: number;
-	fees: Services.TransactionFee;
+	fees: TransactionFees;
 	wallet: ProfilesContracts.IReadWriteWallet;
 }) => (
 	<Tabs activeId={activeTab}>

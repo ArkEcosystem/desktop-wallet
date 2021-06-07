@@ -54,7 +54,7 @@ const ParticipantStatus = ({
 
 	useEffect(() => {
 		const fetchData = async () => {
-			const { address } = await wallet.coin().identity().address().fromPublicKey(publicKey);
+			const { address } = await wallet.coin().address().fromPublicKey(publicKey);
 			setAddress(address);
 		};
 		fetchData();
