@@ -311,98 +311,100 @@ exports[`Notifications should open and cancel wallet update notification modal 1
       </div>
     </div>
     <div
-      class="flex fixed inset-0 z-50 justify-center items-center w-full h-full overflow-overlay"
+      class="flex fixed inset-0 z-50 py-20 w-full h-full bg-theme-secondary-900-rgba bg-opacity-60 dark:bg-black-rgba dark:bg-opacity-80 overflow-overlay"
+      data-testid="modal__overlay"
     >
       <div
-        class="fixed z-50 w-full h-full bg-theme-secondary-900 opacity-60 dark:bg-black dark:opacity-80"
-        data-testid="modal__overlay"
-      />
-      <div
-        class="Modal__ModalContainer-sc-1pv7yg7-0 bGiJfU absolute left-0 right-0 z-50 flex flex-col p-10 mx-auto overflow-hidden rounded-2.5xl bg-theme-background shadow-2xl "
-        data-testid="modal__inner"
+        class="Modal__ModalContainer-sc-1pv7yg7-0 eKUKXn"
+        tabindex="-1"
       >
         <div
-          class="absolute top-0 right-0 z-50 mt-5 mr-5 rounded transition-all duration-100 ease-linear bg-theme-primary-100 hover:bg-theme-primary-300 dark:bg-theme-secondary-800 dark:text-theme-secondary-600 dark:hover:bg-theme-secondary-700 dark:hover:text-theme-secondary-400"
+          class="relative flex flex-col p-10 overflow-hidden rounded-2.5xl bg-theme-background shadow-2xl"
+          data-testid="modal__inner"
         >
-          <button
-            class="OriginalButton__StyledButton-sc-1y2wptt-0 fNHPRi w-11 h-11"
-            data-testid="modal__close-btn"
-            type="button"
-          >
-            <div
-              class="flex relative items-center space-x-2"
-            >
-              <div
-                class="sc-bdfBwQ bfBhNR"
-                height="14"
-                width="14"
-              >
-                <svg>
-                  cross-slim.svg
-                </svg>
-              </div>
-            </div>
-          </button>
-        </div>
-        <div
-          class="relative space-y-4"
-        >
-          <h2
-            class="mb-0 text-3xl font-bold"
-          >
-            Wallet Update 2.5.6
-          </h2>
           <div
-            class="flex-1"
+            class="absolute top-0 right-0 z-10 mt-5 mr-5 rounded transition-all duration-100 ease-linear bg-theme-primary-100 hover:bg-theme-primary-300 dark:bg-theme-secondary-800 dark:text-theme-secondary-600 dark:hover:bg-theme-secondary-700 dark:hover:text-theme-secondary-400"
           >
-            <svg
-              class="my-8"
+            <button
+              class="OriginalButton__StyledButton-sc-1y2wptt-0 fNHPRi w-11 h-11"
+              data-testid="modal__close-btn"
+              type="button"
             >
-              wallet-update.svg
-            </svg>
-            <div>
               <div
-                data-testid="tab-pabel__active-panel"
+                class="flex relative items-center space-x-2"
               >
-                <section
-                  data-testid="WalletUpdate__first-step"
+                <div
+                  class="sc-bdfBwQ bfBhNR"
+                  height="14"
+                  width="14"
                 >
-                  <div
-                    class="mb-8 text-center"
-                  >
-                    <p
-                      class="text-sm text-theme-secondary-text md:text-base"
-                    >
-                      A new update has been released for your wallet. You can download or postpone the update.
-                    </p>
-                  </div>
-                </section>
+                  <svg>
+                    cross-slim.svg
+                  </svg>
+                </div>
               </div>
-              <div
-                class="flex flex-col justify-center space-x-0 sm:flex-row sm:space-x-3"
+            </button>
+          </div>
+          <div
+            class="relative space-y-4"
+          >
+            <h2
+              class="mb-0 text-3xl font-bold"
+            >
+              Wallet Update 2.5.6
+            </h2>
+            <div
+              class="flex-1"
+            >
+              <svg
+                class="my-8"
               >
-                <button
-                  class="OriginalButton__StyledButton-sc-1y2wptt-0 izJbbP mt-2 sm:mt-0"
-                  data-testid="WalletUpdate__cancel-button"
-                  type="button"
+                wallet-update.svg
+              </svg>
+              <div>
+                <div
+                  data-testid="tab-pabel__active-panel"
                 >
-                  <div
-                    class="flex relative items-center space-x-2"
+                  <section
+                    data-testid="WalletUpdate__first-step"
                   >
-                    Update Later
-                  </div>
-                </button>
-                <button
-                  class="OriginalButton__StyledButton-sc-1y2wptt-0 dYkFxS"
-                  data-testid="WalletUpdate__update-button"
-                  type="button"
+                    <div
+                      class="mb-8 text-center"
+                    >
+                      <p
+                        class="text-sm text-theme-secondary-text md:text-base"
+                      >
+                        A new update has been released for your wallet. You can download or postpone the update.
+                      </p>
+                    </div>
+                  </section>
+                </div>
+                <div
+                  class="flex flex-col justify-center space-x-0 sm:flex-row sm:space-x-3"
                 >
-                  <div
-                    class="flex relative items-center space-x-2"
+                  <button
+                    class="OriginalButton__StyledButton-sc-1y2wptt-0 izJbbP mt-2 sm:mt-0"
+                    data-testid="WalletUpdate__cancel-button"
+                    type="button"
                   >
-                    Update Now
-                  </div>
-                </button>
+                    <div
+                      class="flex relative items-center space-x-2"
+                    >
+                      Update Later
+                    </div>
+                  </button>
+                  <button
+                    class="OriginalButton__StyledButton-sc-1y2wptt-0 dYkFxS"
+                    data-testid="WalletUpdate__update-button"
+                    type="button"
+                  >
+                    <div
+                      class="flex relative items-center space-x-2"
+                    >
+                      Update Now
+                    </div>
+                  </button>
+                </div>
               </div>
             </div>
           </div>
@@ -1038,91 +1040,135 @@ exports[`Notifications should open and close transaction details modal 1`] = `
       </div>
     </div>
     <div
-      class="flex fixed inset-0 z-50 justify-center items-center w-full h-full overflow-overlay"
+      class="flex fixed inset-0 z-50 py-20 w-full h-full bg-theme-secondary-900-rgba bg-opacity-60 dark:bg-black-rgba dark:bg-opacity-80 overflow-overlay"
+      data-testid="modal__overlay"
     >
       <div
-        class="fixed z-50 w-full h-full bg-theme-secondary-900 opacity-60 dark:bg-black dark:opacity-80"
-        data-testid="modal__overlay"
-      />
-      <div
-        class="Modal__ModalContainer-sc-1pv7yg7-0 bGiJfU absolute left-0 right-0 z-50 flex flex-col p-10 mx-auto overflow-hidden rounded-2.5xl bg-theme-background shadow-2xl "
-        data-testid="modal__inner"
+        class="Modal__ModalContainer-sc-1pv7yg7-0 eKUKXn"
+        tabindex="-1"
       >
         <div
-          class="absolute top-0 right-0 z-50 mt-5 mr-5 rounded transition-all duration-100 ease-linear bg-theme-primary-100 hover:bg-theme-primary-300 dark:bg-theme-secondary-800 dark:text-theme-secondary-600 dark:hover:bg-theme-secondary-700 dark:hover:text-theme-secondary-400"
+          class="relative flex flex-col p-10 overflow-hidden rounded-2.5xl bg-theme-background shadow-2xl"
+          data-testid="modal__inner"
         >
-          <button
-            class="OriginalButton__StyledButton-sc-1y2wptt-0 fNHPRi w-11 h-11"
-            data-testid="modal__close-btn"
-            type="button"
-          >
-            <div
-              class="flex relative items-center space-x-2"
-            >
-              <div
-                class="sc-bdfBwQ bfBhNR"
-                height="14"
-                width="14"
-              >
-                <svg>
-                  cross-slim.svg
-                </svg>
-              </div>
-            </div>
-          </button>
-        </div>
-        <div
-          class="relative space-y-4"
-        >
-          <h2
-            class="mb-0 text-3xl font-bold"
-          >
-            Transfer
-          </h2>
           <div
-            class="flex-1"
+            class="absolute top-0 right-0 z-10 mt-5 mr-5 rounded transition-all duration-100 ease-linear bg-theme-primary-100 hover:bg-theme-primary-300 dark:bg-theme-secondary-800 dark:text-theme-secondary-600 dark:hover:bg-theme-secondary-700 dark:hover:text-theme-secondary-400"
           >
-            <div
-              class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 kakuTR no-ligatures"
-              data-testid="TransactionDetail"
+            <button
+              class="OriginalButton__StyledButton-sc-1y2wptt-0 fNHPRi w-11 h-11"
+              data-testid="modal__close-btn"
+              type="button"
             >
               <div
-                class="w-40 flex-1 space-y-2 whitespace-nowrap"
+                class="flex relative items-center space-x-2"
               >
                 <div
-                  class="text-sm font-semibold text-theme-secondary-700 no-ligatures"
+                  class="sc-bdfBwQ bfBhNR"
+                  height="14"
+                  width="14"
                 >
-                  Sender
+                  <svg>
+                    cross-slim.svg
+                  </svg>
                 </div>
+              </div>
+            </button>
+          </div>
+          <div
+            class="relative space-y-4"
+          >
+            <h2
+              class="mb-0 text-3xl font-bold"
+            >
+              Transfer
+            </h2>
+            <div
+              class="flex-1"
+            >
+              <div
+                class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 kakuTR no-ligatures"
+                data-testid="TransactionDetail"
+              >
                 <div
-                  class="font-semibold"
+                  class="w-40 flex-1 space-y-2 whitespace-nowrap"
                 >
                   <div
-                    class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap"
+                    class="text-sm font-semibold text-theme-secondary-700 no-ligatures"
                   >
-                    <span
-                      class="max-w-24 truncate mr-2 font-semibold text-base text-theme-text"
-                      data-testid="Address__alias"
+                    Sender
+                  </div>
+                  <div
+                    class="font-semibold"
+                  >
+                    <div
+                      class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap"
                     >
                       <span
-                        class="TruncateEnd__Wrapper-sc-1w1nvb9-0"
-                        data-testid="TruncateEnd"
+                        class="max-w-24 truncate mr-2 font-semibold text-base text-theme-text"
+                        data-testid="Address__alias"
                       >
-                        ARK Wallet 1
+                        <span
+                          class="TruncateEnd__Wrapper-sc-1w1nvb9-0"
+                          data-testid="TruncateEnd"
+                        >
+                          ARK Wallet 1
+                        </span>
                       </span>
-                    </span>
-                    <span
-                      class="inline-flex overflow-hidden text-theme-secondary-500 dark:text-theme-secondary-700 font-semibold text-base"
-                      data-testid="Address__address"
+                      <span
+                        class="inline-flex overflow-hidden text-theme-secondary-500 dark:text-theme-secondary-700 font-semibold text-base"
+                        data-testid="Address__address"
+                      >
+                        DK1f5frUPTNqhFxoyDUHwN7VC2B4Uzhpmy
+                      </span>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="flex items-center -space-x-2"
+                >
+                  <div
+                    class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB flex-shrink-0"
+                    data-testid="Avatar"
+                  >
+                    <div
+                      class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
                     >
-                      DK1f5frUPTNqhFxoyDUHwN7VC2B4Uzhpmy
-                    </span>
+                      <img
+                        alt="DK1f5frUPTNqhFxoyDUHwN7VC2B4Uzhpmy"
+                        src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(255, 193, 7)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"40\\" cx=\\"40\\" cy=\\"60\\" fill=\\"rgb(205, 220, 57)\\"/><circle r=\\"45\\" cx=\\"70\\" cy=\\"50\\" fill=\\"rgb(33, 150, 243)\\"/><circle r=\\"35\\" cx=\\"0\\" cy=\\"40\\" fill=\\"rgb(156, 39, 176)\\"/></svg>"
+                        title="DK1f5frUPTNqhFxoyDUHwN7VC2B4Uzhpmy"
+                      />
+                    </div>
                   </div>
                 </div>
               </div>
               <div
-                class="flex items-center -space-x-2"
+                class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 cHOkoL no-ligatures"
+                data-testid="TransactionDetail"
               >
+                <div
+                  class="w-40 flex-1 space-y-2 whitespace-nowrap"
+                >
+                  <div
+                    class="text-sm font-semibold text-theme-secondary-700 no-ligatures"
+                  >
+                    Recipient
+                  </div>
+                  <div
+                    class="font-semibold"
+                  >
+                    <div
+                      class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap"
+                    >
+                      <span
+                        class="inline-flex overflow-hidden text-theme-text font-semibold text-base"
+                        data-testid="Address__address"
+                      >
+                        D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD
+                      </span>
+                    </div>
+                  </div>
+                </div>
                 <div
                   class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB flex-shrink-0"
                   data-testid="Avatar"
@@ -1131,335 +1177,293 @@ exports[`Notifications should open and close transaction details modal 1`] = `
                     class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
                   >
                     <img
-                      alt="DK1f5frUPTNqhFxoyDUHwN7VC2B4Uzhpmy"
-                      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(255, 193, 7)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"40\\" cx=\\"40\\" cy=\\"60\\" fill=\\"rgb(205, 220, 57)\\"/><circle r=\\"45\\" cx=\\"70\\" cy=\\"50\\" fill=\\"rgb(33, 150, 243)\\"/><circle r=\\"35\\" cx=\\"0\\" cy=\\"40\\" fill=\\"rgb(156, 39, 176)\\"/></svg>"
-                      title="DK1f5frUPTNqhFxoyDUHwN7VC2B4Uzhpmy"
+                      alt="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
+                      src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(0, 150, 136)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"80\\" cy=\\"50\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"35\\" cx=\\"100\\" cy=\\"40\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"70\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
+                      title="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
                     />
                   </div>
                 </div>
               </div>
-            </div>
-            <div
-              class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 cHOkoL no-ligatures"
-              data-testid="TransactionDetail"
-            >
               <div
-                class="w-40 flex-1 space-y-2 whitespace-nowrap"
+                class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 cHOkoL no-ligatures"
+                data-testid="TransactionDetail"
               >
                 <div
-                  class="text-sm font-semibold text-theme-secondary-700 no-ligatures"
-                >
-                  Recipient
-                </div>
-                <div
-                  class="font-semibold"
+                  class="w-40 flex-1 space-y-2 whitespace-nowrap"
                 >
                   <div
-                    class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap"
+                    class="text-sm font-semibold text-theme-secondary-700 no-ligatures"
                   >
-                    <span
-                      class="inline-flex overflow-hidden text-theme-text font-semibold text-base"
-                      data-testid="Address__address"
+                    Amount
+                  </div>
+                  <div
+                    class="font-semibold"
+                  >
+                    <div
+                      class="Label-sc-1tj9hzr-0 fMWESr"
+                      color="success"
                     >
-                      D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD
+                      <span
+                        data-testid="Amount"
+                      >
+                        + 20 DARK
+                      </span>
+                    </div>
+                    <span
+                      class="ml-2 text-theme-secondary-400"
+                      data-testid="Amount"
+                    >
+                      0 BTC
                     </span>
+                  </div>
+                </div>
+                <div
+                  class="Circle__CircleWrapper-uw7h4j-0 bNDQMV border-theme-success-300 text-theme-success-600 dark:border-theme-success-600 ring-theme-background"
+                >
+                  <div
+                    class="sc-bdfBwQ fPrsah"
+                    height="1em"
+                    width="1em"
+                  >
+                    <svg>
+                      received.svg
+                    </svg>
                   </div>
                 </div>
               </div>
               <div
-                class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB flex-shrink-0"
-                data-testid="Avatar"
+                class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 cHOkoL no-ligatures"
+                data-testid="TransactionDetail"
               >
                 <div
-                  class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
-                >
-                  <img
-                    alt="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
-                    src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(0, 150, 136)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"50\\" cx=\\"80\\" cy=\\"50\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"35\\" cx=\\"100\\" cy=\\"40\\" fill=\\"rgb(156, 39, 176)\\"/><circle r=\\"40\\" cx=\\"90\\" cy=\\"70\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
-                    title="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
-                  />
-                </div>
-              </div>
-            </div>
-            <div
-              class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 cHOkoL no-ligatures"
-              data-testid="TransactionDetail"
-            >
-              <div
-                class="w-40 flex-1 space-y-2 whitespace-nowrap"
-              >
-                <div
-                  class="text-sm font-semibold text-theme-secondary-700 no-ligatures"
-                >
-                  Amount
-                </div>
-                <div
-                  class="font-semibold"
+                  class="w-40 flex-1 space-y-2 whitespace-nowrap"
                 >
                   <div
-                    class="Label-sc-1tj9hzr-0 fMWESr"
-                    color="success"
+                    class="text-sm font-semibold text-theme-secondary-700 no-ligatures"
+                  >
+                    Transaction Fee
+                  </div>
+                  <div
+                    class="font-semibold"
                   >
                     <span
                       data-testid="Amount"
                     >
-                      + 20 DARK
-                    </span>
-                  </div>
-                  <span
-                    class="ml-2 text-theme-secondary-400"
-                    data-testid="Amount"
-                  >
-                    0 BTC
-                  </span>
-                </div>
-              </div>
-              <div
-                class="Circle__CircleWrapper-uw7h4j-0 bNDQMV border-theme-success-300 text-theme-success-600 dark:border-theme-success-600 ring-theme-background"
-              >
-                <div
-                  class="sc-bdfBwQ fPrsah"
-                  height="1em"
-                  width="1em"
-                >
-                  <svg>
-                    received.svg
-                  </svg>
-                </div>
-              </div>
-            </div>
-            <div
-              class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 cHOkoL no-ligatures"
-              data-testid="TransactionDetail"
-            >
-              <div
-                class="w-40 flex-1 space-y-2 whitespace-nowrap"
-              >
-                <div
-                  class="text-sm font-semibold text-theme-secondary-700 no-ligatures"
-                >
-                  Transaction Fee
-                </div>
-                <div
-                  class="font-semibold"
-                >
-                  <span
-                    data-testid="Amount"
-                  >
-                    0.03499657 DARK
-                  </span>
-                </div>
-              </div>
-            </div>
-            <div
-              class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 cHOkoL no-ligatures"
-              data-testid="TransactionDetail"
-            >
-              <div
-                class="w-40 flex-1 space-y-2 whitespace-nowrap"
-              >
-                <div
-                  class="text-sm font-semibold text-theme-secondary-700 no-ligatures"
-                >
-                  Timestamp
-                </div>
-                <div
-                  class="font-semibold"
-                >
-                  26.04.2020 3:56 PM
-                </div>
-              </div>
-            </div>
-            <div
-              class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 cHOkoL no-ligatures"
-              data-testid="TransactionDetail"
-            >
-              <div
-                class="w-40 flex-1 space-y-2 whitespace-nowrap"
-              >
-                <div
-                  class="text-sm font-semibold text-theme-secondary-700 no-ligatures"
-                >
-                  Confirmations
-                </div>
-                <div
-                  class="font-semibold"
-                >
-                  <div
-                    class="flex space-x-3"
-                  >
-                    <span>
-                      Well confirmed
-                    </span>
-                    <span>
-                      <div
-                        class="sc-bdfBwQ iSzUah text-theme-success-600"
-                        height="22"
-                        width="22"
-                      >
-                        <svg>
-                          status-ok.svg
-                        </svg>
-                      </div>
+                      0.03499657 DARK
                     </span>
                   </div>
                 </div>
               </div>
-            </div>
-            <div
-              class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 cHOkoL no-ligatures"
-              data-testid="TransactionDetail"
-            >
               <div
-                class="w-40 flex-1 space-y-2 whitespace-nowrap"
+                class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 cHOkoL no-ligatures"
+                data-testid="TransactionDetail"
               >
                 <div
-                  class="text-sm font-semibold text-theme-secondary-700 no-ligatures"
-                >
-                  ID
-                </div>
-                <div
-                  class="font-semibold"
+                  class="w-40 flex-1 space-y-2 whitespace-nowrap"
                 >
                   <div
-                    class="flex items-center space-x-3 overflow-hidden"
+                    class="text-sm font-semibold text-theme-secondary-700 no-ligatures"
                   >
-                    <span
-                      class="overflow-hidden"
+                    Timestamp
+                  </div>
+                  <div
+                    class="font-semibold"
+                  >
+                    26.04.2020 3:56 PM
+                  </div>
+                </div>
+              </div>
+              <div
+                class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 cHOkoL no-ligatures"
+                data-testid="TransactionDetail"
+              >
+                <div
+                  class="w-40 flex-1 space-y-2 whitespace-nowrap"
+                >
+                  <div
+                    class="text-sm font-semibold text-theme-secondary-700 no-ligatures"
+                  >
+                    Confirmations
+                  </div>
+                  <div
+                    class="font-semibold"
+                  >
+                    <div
+                      class="flex space-x-3"
                     >
-                      <a
-                        class="Link__AnchorStyled-sc-1q7sbxr-0 jXgXXh group"
-                        data-testid="Link"
-                        href="#"
-                        rel="noopener noreferrer"
-                        to="https://dexplorer.ark.io/transaction/ea63bf9a4b3eaf75a1dfff721967c45dce64eb7facf1aef29461868681b5c79b"
+                      <span>
+                        Well confirmed
+                      </span>
+                      <span>
+                        <div
+                          class="sc-bdfBwQ iSzUah text-theme-success-600"
+                          height="22"
+                          width="22"
+                        >
+                          <svg>
+                            status-ok.svg
+                          </svg>
+                        </div>
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 cHOkoL no-ligatures"
+                data-testid="TransactionDetail"
+              >
+                <div
+                  class="w-40 flex-1 space-y-2 whitespace-nowrap"
+                >
+                  <div
+                    class="text-sm font-semibold text-theme-secondary-700 no-ligatures"
+                  >
+                    ID
+                  </div>
+                  <div
+                    class="font-semibold"
+                  >
+                    <div
+                      class="flex items-center space-x-3 overflow-hidden"
+                    >
+                      <span
+                        class="overflow-hidden"
                       >
-                        <span
-                          class="break-all border-b border-transparent duration-200 group-hover:border-current"
+                        <a
+                          class="Link__AnchorStyled-sc-1q7sbxr-0 jXgXXh group"
+                          data-testid="Link"
+                          href="#"
+                          rel="noopener noreferrer"
+                          to="https://dexplorer.ark.io/transaction/ea63bf9a4b3eaf75a1dfff721967c45dce64eb7facf1aef29461868681b5c79b"
                         >
                           <span
-                            class="inline-flex overflow-hidden"
+                            class="break-all border-b border-transparent duration-200 group-hover:border-current"
                           >
-                            ea63bf9a4b3eaf75a1dfff721967c45dce64eb7facf1aef29461868681b5c79b
+                            <span
+                              class="inline-flex overflow-hidden"
+                            >
+                              ea63bf9a4b3eaf75a1dfff721967c45dce64eb7facf1aef29461868681b5c79b
+                            </span>
                           </span>
-                        </span>
-                        <span
-                          class="align-middle"
+                          <span
+                            class="align-middle"
+                          >
+                            <div
+                              class="sc-bdfBwQ fPrsah flex-shrink-0 duration-200 inline-block pb-px text-sm"
+                              data-testid="Link__external"
+                              height="1em"
+                              width="1em"
+                            >
+                              <svg>
+                                redirect.svg
+                              </svg>
+                            </div>
+                          </span>
+                        </a>
+                      </span>
+                      <span
+                        class="flex text-theme-primary-300 dark:text-theme-secondary-600"
+                      >
+                        <button
+                          class="relative focus:outline-none group"
+                          data-testid="clipboard-icon__wrapper"
+                          type="button"
                         >
                           <div
-                            class="sc-bdfBwQ fPrsah flex-shrink-0 duration-200 inline-block pb-px text-sm"
-                            data-testid="Link__external"
+                            class="absolute inset-0 -m-1 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                          />
+                          <div
+                            class="sc-bdfBwQ fPrsah"
                             height="1em"
                             width="1em"
                           >
                             <svg>
-                              redirect.svg
+                              copy.svg
                             </svg>
                           </div>
-                        </span>
-                      </a>
-                    </span>
-                    <span
-                      class="flex text-theme-primary-300 dark:text-theme-secondary-600"
-                    >
-                      <button
-                        class="relative focus:outline-none group"
-                        data-testid="clipboard-icon__wrapper"
-                        type="button"
-                      >
-                        <div
-                          class="absolute inset-0 -m-1 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
-                        />
-                        <div
-                          class="sc-bdfBwQ fPrsah"
-                          height="1em"
-                          width="1em"
-                        >
-                          <svg>
-                            copy.svg
-                          </svg>
-                        </div>
-                      </button>
-                    </span>
+                        </button>
+                      </span>
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
-            <div
-              class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 cHOkoL no-ligatures"
-              data-testid="TransactionDetail"
-            >
               <div
-                class="w-40 flex-1 space-y-2 whitespace-nowrap"
+                class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 cHOkoL no-ligatures"
+                data-testid="TransactionDetail"
               >
                 <div
-                  class="text-sm font-semibold text-theme-secondary-700 no-ligatures"
-                >
-                  Block ID
-                </div>
-                <div
-                  class="font-semibold"
+                  class="w-40 flex-1 space-y-2 whitespace-nowrap"
                 >
                   <div
-                    class="flex items-center space-x-3 overflow-hidden"
+                    class="text-sm font-semibold text-theme-secondary-700 no-ligatures"
                   >
-                    <span
-                      class="overflow-hidden"
+                    Block ID
+                  </div>
+                  <div
+                    class="font-semibold"
+                  >
+                    <div
+                      class="flex items-center space-x-3 overflow-hidden"
                     >
-                      <a
-                        class="Link__AnchorStyled-sc-1q7sbxr-0 jXgXXh group"
-                        data-testid="Link"
-                        href="#"
-                        rel="noopener noreferrer"
-                        to="https://dexplorer.ark.io/block/4fbdbedc9d1474dc7b96e503a0aa848146d9f2b941014cd79decdd16290920a4"
+                      <span
+                        class="overflow-hidden"
                       >
-                        <span
-                          class="break-all border-b border-transparent duration-200 group-hover:border-current"
+                        <a
+                          class="Link__AnchorStyled-sc-1q7sbxr-0 jXgXXh group"
+                          data-testid="Link"
+                          href="#"
+                          rel="noopener noreferrer"
+                          to="https://dexplorer.ark.io/block/4fbdbedc9d1474dc7b96e503a0aa848146d9f2b941014cd79decdd16290920a4"
                         >
                           <span
-                            class="inline-flex overflow-hidden"
+                            class="break-all border-b border-transparent duration-200 group-hover:border-current"
                           >
-                            4fbdbedc9d1474dc7b96e503a0aa848146d9f2b941014cd79decdd16290920a4
+                            <span
+                              class="inline-flex overflow-hidden"
+                            >
+                              4fbdbedc9d1474dc7b96e503a0aa848146d9f2b941014cd79decdd16290920a4
+                            </span>
                           </span>
-                        </span>
-                        <span
-                          class="align-middle"
+                          <span
+                            class="align-middle"
+                          >
+                            <div
+                              class="sc-bdfBwQ fPrsah flex-shrink-0 duration-200 inline-block pb-px text-sm"
+                              data-testid="Link__external"
+                              height="1em"
+                              width="1em"
+                            >
+                              <svg>
+                                redirect.svg
+                              </svg>
+                            </div>
+                          </span>
+                        </a>
+                      </span>
+                      <span
+                        class="flex text-theme-primary-300 dark:text-theme-secondary-600"
+                      >
+                        <button
+                          class="relative focus:outline-none group"
+                          data-testid="clipboard-icon__wrapper"
+                          type="button"
                         >
                           <div
-                            class="sc-bdfBwQ fPrsah flex-shrink-0 duration-200 inline-block pb-px text-sm"
-                            data-testid="Link__external"
+                            class="absolute inset-0 -m-1 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                          />
+                          <div
+                            class="sc-bdfBwQ fPrsah"
                             height="1em"
                             width="1em"
                           >
                             <svg>
-                              redirect.svg
+                              copy.svg
                             </svg>
                           </div>
-                        </span>
-                      </a>
-                    </span>
-                    <span
-                      class="flex text-theme-primary-300 dark:text-theme-secondary-600"
-                    >
-                      <button
-                        class="relative focus:outline-none group"
-                        data-testid="clipboard-icon__wrapper"
-                        type="button"
-                      >
-                        <div
-                          class="absolute inset-0 -m-1 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
-                        />
-                        <div
-                          class="sc-bdfBwQ fPrsah"
-                          height="1em"
-                          width="1em"
-                        >
-                          <svg>
-                            copy.svg
-                          </svg>
-                        </div>
-                      </button>
-                    </span>
+                        </button>
+                      </span>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -2097,98 +2101,100 @@ exports[`Notifications should open and close wallet update notification modal 1`
       </div>
     </div>
     <div
-      class="flex fixed inset-0 z-50 justify-center items-center w-full h-full overflow-overlay"
+      class="flex fixed inset-0 z-50 py-20 w-full h-full bg-theme-secondary-900-rgba bg-opacity-60 dark:bg-black-rgba dark:bg-opacity-80 overflow-overlay"
+      data-testid="modal__overlay"
     >
       <div
-        class="fixed z-50 w-full h-full bg-theme-secondary-900 opacity-60 dark:bg-black dark:opacity-80"
-        data-testid="modal__overlay"
-      />
-      <div
-        class="Modal__ModalContainer-sc-1pv7yg7-0 bGiJfU absolute left-0 right-0 z-50 flex flex-col p-10 mx-auto overflow-hidden rounded-2.5xl bg-theme-background shadow-2xl "
-        data-testid="modal__inner"
+        class="Modal__ModalContainer-sc-1pv7yg7-0 eKUKXn"
+        tabindex="-1"
       >
         <div
-          class="absolute top-0 right-0 z-50 mt-5 mr-5 rounded transition-all duration-100 ease-linear bg-theme-primary-100 hover:bg-theme-primary-300 dark:bg-theme-secondary-800 dark:text-theme-secondary-600 dark:hover:bg-theme-secondary-700 dark:hover:text-theme-secondary-400"
+          class="relative flex flex-col p-10 overflow-hidden rounded-2.5xl bg-theme-background shadow-2xl"
+          data-testid="modal__inner"
         >
-          <button
-            class="OriginalButton__StyledButton-sc-1y2wptt-0 fNHPRi w-11 h-11"
-            data-testid="modal__close-btn"
-            type="button"
-          >
-            <div
-              class="flex relative items-center space-x-2"
-            >
-              <div
-                class="sc-bdfBwQ bfBhNR"
-                height="14"
-                width="14"
-              >
-                <svg>
-                  cross-slim.svg
-                </svg>
-              </div>
-            </div>
-          </button>
-        </div>
-        <div
-          class="relative space-y-4"
-        >
-          <h2
-            class="mb-0 text-3xl font-bold"
-          >
-            Wallet Update 2.5.6
-          </h2>
           <div
-            class="flex-1"
+            class="absolute top-0 right-0 z-10 mt-5 mr-5 rounded transition-all duration-100 ease-linear bg-theme-primary-100 hover:bg-theme-primary-300 dark:bg-theme-secondary-800 dark:text-theme-secondary-600 dark:hover:bg-theme-secondary-700 dark:hover:text-theme-secondary-400"
           >
-            <svg
-              class="my-8"
+            <button
+              class="OriginalButton__StyledButton-sc-1y2wptt-0 fNHPRi w-11 h-11"
+              data-testid="modal__close-btn"
+              type="button"
             >
-              wallet-update.svg
-            </svg>
-            <div>
               <div
-                data-testid="tab-pabel__active-panel"
+                class="flex relative items-center space-x-2"
               >
-                <section
-                  data-testid="WalletUpdate__first-step"
+                <div
+                  class="sc-bdfBwQ bfBhNR"
+                  height="14"
+                  width="14"
                 >
-                  <div
-                    class="mb-8 text-center"
-                  >
-                    <p
-                      class="text-sm text-theme-secondary-text md:text-base"
-                    >
-                      A new update has been released for your wallet. You can download or postpone the update.
-                    </p>
-                  </div>
-                </section>
+                  <svg>
+                    cross-slim.svg
+                  </svg>
+                </div>
               </div>
-              <div
-                class="flex flex-col justify-center space-x-0 sm:flex-row sm:space-x-3"
+            </button>
+          </div>
+          <div
+            class="relative space-y-4"
+          >
+            <h2
+              class="mb-0 text-3xl font-bold"
+            >
+              Wallet Update 2.5.6
+            </h2>
+            <div
+              class="flex-1"
+            >
+              <svg
+                class="my-8"
               >
-                <button
-                  class="OriginalButton__StyledButton-sc-1y2wptt-0 izJbbP mt-2 sm:mt-0"
-                  data-testid="WalletUpdate__cancel-button"
-                  type="button"
+                wallet-update.svg
+              </svg>
+              <div>
+                <div
+                  data-testid="tab-pabel__active-panel"
                 >
-                  <div
-                    class="flex relative items-center space-x-2"
+                  <section
+                    data-testid="WalletUpdate__first-step"
                   >
-                    Update Later
-                  </div>
-                </button>
-                <button
-                  class="OriginalButton__StyledButton-sc-1y2wptt-0 dYkFxS"
-                  data-testid="WalletUpdate__update-button"
-                  type="button"
+                    <div
+                      class="mb-8 text-center"
+                    >
+                      <p
+                        class="text-sm text-theme-secondary-text md:text-base"
+                      >
+                        A new update has been released for your wallet. You can download or postpone the update.
+                      </p>
+                    </div>
+                  </section>
+                </div>
+                <div
+                  class="flex flex-col justify-center space-x-0 sm:flex-row sm:space-x-3"
                 >
-                  <div
-                    class="flex relative items-center space-x-2"
+                  <button
+                    class="OriginalButton__StyledButton-sc-1y2wptt-0 izJbbP mt-2 sm:mt-0"
+                    data-testid="WalletUpdate__cancel-button"
+                    type="button"
                   >
-                    Update Now
-                  </div>
-                </button>
+                    <div
+                      class="flex relative items-center space-x-2"
+                    >
+                      Update Later
+                    </div>
+                  </button>
+                  <button
+                    class="OriginalButton__StyledButton-sc-1y2wptt-0 dYkFxS"
+                    data-testid="WalletUpdate__update-button"
+                    type="button"
+                  >
+                    <div
+                      class="flex relative items-center space-x-2"
+                    >
+                      Update Now
+                    </div>
+                  </button>
+                </div>
               </div>
             </div>
           </div>

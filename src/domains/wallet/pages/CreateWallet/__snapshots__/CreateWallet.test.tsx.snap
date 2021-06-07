@@ -450,7 +450,7 @@ exports[`CreateWallet should create a wallet with alias 1`] = `
                                 <div
                                   aria-label="Compendia"
                                   class="w-full h-full flex justify-center items-center border-2 rounded-xl border-theme-primary-100 dark:border-theme-secondary-800 text-theme-secondary-700"
-                                  data-testid="NetworkIcon-ARK-compendia.mainnet"
+                                  data-testid="NetworkIcon-ARK-bind.mainnet"
                                 >
                                   <div
                                     class="sc-bdfBwQ caqoGN"
@@ -497,6 +497,27 @@ exports[`CreateWallet should create a wallet with alias 1`] = `
                                   >
                                     <svg>
                                       ark.svg
+                                    </svg>
+                                  </div>
+                                </div>
+                              </li>
+                              <li
+                                class="inline-block cursor-pointer h-21"
+                                data-testid="SelectNetwork__NetworkIcon--container"
+                              >
+                                <div
+                                  aria-label="Compendia Testnet"
+                                  class="w-full h-full flex justify-center items-center border-2 rounded-xl border-theme-primary-100 dark:border-theme-secondary-800 text-theme-primary-300"
+                                  data-testid="NetworkIcon-ARK-bind.testnet"
+                                >
+                                  <div
+                                    class="sc-bdfBwQ caqoGN"
+                                    data-testid="NetworkIcon__icon"
+                                    height="30"
+                                    width="30"
+                                  >
+                                    <svg>
+                                      bind.svg
                                     </svg>
                                   </div>
                                 </div>
@@ -1506,7 +1527,7 @@ exports[`CreateWallet should create a wallet without alias 1`] = `
                                 <div
                                   aria-label="Compendia"
                                   class="w-full h-full flex justify-center items-center border-2 rounded-xl border-theme-primary-100 dark:border-theme-secondary-800 text-theme-secondary-700"
-                                  data-testid="NetworkIcon-ARK-compendia.mainnet"
+                                  data-testid="NetworkIcon-ARK-bind.mainnet"
                                 >
                                   <div
                                     class="sc-bdfBwQ caqoGN"
@@ -1553,6 +1574,27 @@ exports[`CreateWallet should create a wallet without alias 1`] = `
                                   >
                                     <svg>
                                       ark.svg
+                                    </svg>
+                                  </div>
+                                </div>
+                              </li>
+                              <li
+                                class="inline-block cursor-pointer h-21"
+                                data-testid="SelectNetwork__NetworkIcon--container"
+                              >
+                                <div
+                                  aria-label="Compendia Testnet"
+                                  class="w-full h-full flex justify-center items-center border-2 rounded-xl border-theme-primary-100 dark:border-theme-secondary-800 text-theme-primary-300"
+                                  data-testid="NetworkIcon-ARK-bind.testnet"
+                                >
+                                  <div
+                                    class="sc-bdfBwQ caqoGN"
+                                    data-testid="NetworkIcon__icon"
+                                    height="30"
+                                    width="30"
+                                  >
+                                    <svg>
+                                      bind.svg
                                     </svg>
                                   </div>
                                 </div>
@@ -2564,7 +2606,7 @@ exports[`CreateWallet should remove pending wallet if not submitted 1`] = `
                                 <div
                                   aria-label="Compendia"
                                   class="w-full h-full flex justify-center items-center border-2 rounded-xl border-theme-primary-100 dark:border-theme-secondary-800 text-theme-secondary-700"
-                                  data-testid="NetworkIcon-ARK-compendia.mainnet"
+                                  data-testid="NetworkIcon-ARK-bind.mainnet"
                                 >
                                   <div
                                     class="sc-bdfBwQ caqoGN"
@@ -2611,6 +2653,27 @@ exports[`CreateWallet should remove pending wallet if not submitted 1`] = `
                                   >
                                     <svg>
                                       ark.svg
+                                    </svg>
+                                  </div>
+                                </div>
+                              </li>
+                              <li
+                                class="inline-block cursor-pointer h-21"
+                                data-testid="SelectNetwork__NetworkIcon--container"
+                              >
+                                <div
+                                  aria-label="Compendia Testnet"
+                                  class="w-full h-full flex justify-center items-center border-2 rounded-xl border-theme-primary-100 dark:border-theme-secondary-800 text-theme-primary-300"
+                                  data-testid="NetworkIcon-ARK-bind.testnet"
+                                >
+                                  <div
+                                    class="sc-bdfBwQ caqoGN"
+                                    data-testid="NetworkIcon__icon"
+                                    height="30"
+                                    width="30"
+                                  >
+                                    <svg>
+                                      bind.svg
                                     </svg>
                                   </div>
                                 </div>
@@ -3114,7 +3177,7 @@ exports[`CreateWallet should show an error message for duplicate name 1`] = `
                                 <div
                                   aria-label="Compendia"
                                   class="w-full h-full flex justify-center items-center border-2 rounded-xl border-theme-primary-100 dark:border-theme-secondary-800 text-theme-secondary-700"
-                                  data-testid="NetworkIcon-ARK-compendia.mainnet"
+                                  data-testid="NetworkIcon-ARK-bind.mainnet"
                                 >
                                   <div
                                     class="sc-bdfBwQ caqoGN"
@@ -3161,6 +3224,27 @@ exports[`CreateWallet should show an error message for duplicate name 1`] = `
                                   >
                                     <svg>
                                       ark.svg
+                                    </svg>
+                                  </div>
+                                </div>
+                              </li>
+                              <li
+                                class="inline-block cursor-pointer h-21"
+                                data-testid="SelectNetwork__NetworkIcon--container"
+                              >
+                                <div
+                                  aria-label="Compendia Testnet"
+                                  class="w-full h-full flex justify-center items-center border-2 rounded-xl border-theme-primary-100 dark:border-theme-secondary-800 text-theme-primary-300"
+                                  data-testid="NetworkIcon-ARK-bind.testnet"
+                                >
+                                  <div
+                                    class="sc-bdfBwQ caqoGN"
+                                    data-testid="NetworkIcon__icon"
+                                    height="30"
+                                    width="30"
+                                  >
+                                    <svg>
+                                      bind.svg
                                     </svg>
                                   </div>
                                 </div>
@@ -3706,7 +3790,7 @@ exports[`CreateWallet should show an error message if wallet generation failed 1
                                 <div
                                   aria-label="Compendia"
                                   class="w-full h-full flex justify-center items-center border-2 rounded-xl border-theme-primary-100 dark:border-theme-secondary-800 text-theme-secondary-700"
-                                  data-testid="NetworkIcon-ARK-compendia.mainnet"
+                                  data-testid="NetworkIcon-ARK-bind.mainnet"
                                 >
                                   <div
                                     class="sc-bdfBwQ caqoGN"
@@ -3753,6 +3837,27 @@ exports[`CreateWallet should show an error message if wallet generation failed 1
                                   >
                                     <svg>
                                       ark.svg
+                                    </svg>
+                                  </div>
+                                </div>
+                              </li>
+                              <li
+                                class="inline-block cursor-pointer h-21"
+                                data-testid="SelectNetwork__NetworkIcon--container"
+                              >
+                                <div
+                                  aria-label="Compendia Testnet"
+                                  class="w-full h-full flex justify-center items-center border-2 rounded-xl border-theme-primary-100 dark:border-theme-secondary-800 text-theme-primary-300"
+                                  data-testid="NetworkIcon-ARK-bind.testnet"
+                                >
+                                  <div
+                                    class="sc-bdfBwQ caqoGN"
+                                    data-testid="NetworkIcon__icon"
+                                    height="30"
+                                    width="30"
+                                  >
+                                    <svg>
+                                      bind.svg
                                     </svg>
                                   </div>
                                 </div>
