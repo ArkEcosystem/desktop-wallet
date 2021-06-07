@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/require-await */
 import React from "react";
-import { act, fireEvent, render } from "testing-library";
+import { act, fireEvent, render, screen } from "testing-library";
 
 import { Modal } from "./Modal";
 
@@ -21,6 +21,42 @@ describe("Modal", () => {
 
 		expect(getByTestId("modal__overlay")).toBeTruthy();
 		expect(asFragment()).toMatchSnapshot();
+	});
+
+	it("should closed by click on overlay", () => {
+		const onClose = jest.fn();
+		render(
+			<Modal title="ark" isOpen={true} onClose={onClose}>
+				This is the Modal content
+			</Modal>,
+		);
+
+		expect(screen.getByTestId("modal__overlay")).toBeInTheDocument();
+		expect(screen.getByTestId("modal__inner")).toBeInTheDocument();
+
+		act(() => {
+			fireEvent.click(screen.getByTestId("modal__overlay"));
+		});
+
+		expect(onClose).toBeCalled();
+	});
+
+	it("should no close by click on modal content", () => {
+		const onClose = jest.fn();
+		render(
+			<Modal title="ark" isOpen={true} onClose={onClose}>
+				This is the Modal content
+			</Modal>,
+		);
+
+		expect(screen.getByTestId("modal__overlay")).toBeInTheDocument();
+		expect(screen.getByTestId("modal__inner")).toBeInTheDocument();
+
+		act(() => {
+			fireEvent.click(screen.getByTestId("modal__inner"));
+		});
+
+		expect(onClose).not.toBeCalled();
 	});
 
 	it("should closed by the Esc key", async () => {
