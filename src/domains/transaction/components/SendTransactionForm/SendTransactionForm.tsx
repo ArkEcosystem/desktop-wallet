@@ -45,7 +45,7 @@ export const SendTransactionForm = ({
 			setValue("fees", transactionFees);
 
 			if (!getValues("fee")) {
-				setValue("fee", transactionFees.avg !== "0" ? transactionFees.avg : transactionFees.static, {
+				setValue("fee", transactionFees.avg.isZero() ? transactionFees.static : transactionFees.avg, {
 					shouldValidate: true,
 					shouldDirty: true,
 				});
@@ -136,9 +136,9 @@ export const SendTransactionForm = ({
 				<FormField name="fee">
 					<FormLabel label={t("TRANSACTION.TRANSACTION_FEE")} />
 					<InputFee
-						min={fees?.min}
-						avg={fees?.avg}
-						max={fees?.max}
+						min={fees?.min.toHuman()}
+						avg={fees?.avg.toHuman()}
+						max={fees?.max.toHuman()}
 						value={fee}
 						step={0.01}
 						showFeeOptions={dynamicFees}

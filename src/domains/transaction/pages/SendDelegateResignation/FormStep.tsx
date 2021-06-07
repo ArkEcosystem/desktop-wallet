@@ -1,5 +1,6 @@
 import { Services } from "@arkecosystem/platform-sdk";
 import { Contracts as ProfilesContracts } from "@arkecosystem/platform-sdk-profiles";
+import { BigNumber } from "@arkecosystem/platform-sdk-support";
 import { Alert } from "app/components/Alert";
 import { FormField, FormLabel } from "app/components/Form";
 import { Header } from "app/components/Header";
@@ -22,10 +23,10 @@ export const FormStep = ({
 	const { getValues, register, setValue, watch } = useFormContext();
 
 	const [fees, setFees] = useState<Services.TransactionFee>({
-		static: "25",
-		max: "0",
-		min: "0",
-		avg: "0",
+		static: BigNumber.make("25"),
+		max: BigNumber.make("0"),
+		min: BigNumber.make("0"),
+		avg: BigNumber.make("0"),
 	});
 
 	useEffect(() => {
@@ -50,7 +51,7 @@ export const FormStep = ({
 
 	useEffect(() => {
 		if (fee === undefined) {
-			setValue("fee", fees.avg !== "0" ? fees.avg : fees.static, { shouldValidate: true, shouldDirty: true });
+			setValue("fee", fees.avg.isZero() ? fees.static : fees.avg, { shouldValidate: true, shouldDirty: true });
 		}
 	}, [fee, fees, setValue]);
 
@@ -79,9 +80,9 @@ export const FormStep = ({
 			<FormField name="fee">
 				<FormLabel>{t("TRANSACTION.TRANSACTION_FEE")}</FormLabel>
 				<InputFee
-					min={fees.min}
-					avg={fees.avg}
-					max={fees.max}
+					min={fees.min.toHuman()}
+					avg={fees.avg.toHuman()}
+					max={fees.max.toHuman()}
 					value={fee}
 					step={0.01}
 					showFeeOptions={senderWallet.network().feeType() === "dynamic"}
