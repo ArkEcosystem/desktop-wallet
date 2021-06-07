@@ -13,6 +13,7 @@ import { VoteList } from "domains/vote/components/VoteList";
 import React, { useEffect, useState } from "react";
 import { useFormContext } from "react-hook-form";
 import { useTranslation } from "react-i18next";
+import { TransactionFees } from "types";
 
 export const FormStep = ({
 	unvotes,
@@ -32,7 +33,7 @@ export const FormStep = ({
 	const form = useFormContext();
 	const { getValues, setValue, watch, register } = form;
 
-	const [fees, setFees] = useState<any>({
+	const [fees, setFees] = useState<TransactionFees>({
 		static: "5",
 		min: "0",
 		avg: "0",
