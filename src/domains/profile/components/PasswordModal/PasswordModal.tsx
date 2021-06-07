@@ -43,7 +43,7 @@ export const PasswordModal = ({ isOpen, title, description, onClose, onSubmit, e
 		>
 			<Form context={form} onSubmit={() => onSubmit?.(password)} className="mt-8">
 				<FormField name="password">
-					<FormLabel label={t("SETTINGS.GENERAL.PERSONAL.PASSWORD")} required />
+					<FormLabel label={t("SETTINGS.GENERAL.PERSONAL.PASSWORD")} />
 					<InputPassword
 						ref={form.register({
 							required: t("COMMON.VALIDATION.FIELD_REQUIRED", {

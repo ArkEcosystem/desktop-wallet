@@ -25,7 +25,7 @@ export const ReceiveFundsForm = ({ network }: { network?: Networks.Network }) =>
 		<div data-testid="ReceiveFundsForm">
 			<div className="mt-8 space-y-8">
 				<FormField name="amount">
-					<FormLabel label={t("COMMON.AMOUNT")} required={false} />
+					<FormLabel label={t("COMMON.AMOUNT")} optional />
 					<InputCurrency
 						data-testid="ReceiveFundsForm__amount"
 						placeholder={t("COMMON.AMOUNT")}
@@ -38,7 +38,7 @@ export const ReceiveFundsForm = ({ network }: { network?: Networks.Network }) =>
 
 				{isSmartbridgeUsedInNetwork && (
 					<FormField name="smartbridge">
-						<FormLabel label={t("COMMON.SMARTBRIDGE")} required={false} optional={true} />
+						<FormLabel label={t("COMMON.SMARTBRIDGE")} optional />
 						<InputCounter
 							ref={register(receiveFunds.smartbridge())}
 							data-testid="ReceiveFundsForm__smartbridge"
