@@ -33,6 +33,7 @@ const useProfileWatcher = () => {
 export const useProfileJobs = (profile?: Contracts.IProfile): Record<string, any> => {
 	const { env } = useEnvironmentContext();
 	const { notifications } = useNotifications();
+	const { setConfiguration } = useConfiguration();
 
 	const walletsCount = profile?.wallets().count();
 	return useMemo(() => {
@@ -48,9 +49,17 @@ export const useProfileJobs = (profile?: Contracts.IProfile): Record<string, any
 		};
 
 		const syncExchangeRates = {
-			callback: () => {
+			callback: async () => {
+				setConfiguration({ profileIsSyncingExchangeRates: true });
+
 				const currencies = Object.keys(profile.coins().all());
-				return Promise.all(currencies.map((currency) => env.exchangeRates().syncAll(profile, currency)));
+				const allRates = await Promise.all(
+					currencies.map((currency) => env.exchangeRates().syncAll(profile, currency)),
+				);
+
+				setConfiguration({ profileIsSyncingExchangeRates: false });
+
+				return allRates;
 			},
 			interval: Intervals.Long,
 		};
@@ -69,7 +78,7 @@ export const useProfileJobs = (profile?: Contracts.IProfile): Record<string, any
 			allJobs: [syncExchangeRates, syncNotifications, syncKnownWallets, syncDelegates],
 			syncExchangeRates: syncExchangeRates.callback,
 		};
-	}, [env, profile, walletsCount, notifications]); // eslint-disable-line react-hooks/exhaustive-deps
+	}, [env, profile, walletsCount, notifications, setConfiguration]); // eslint-disable-line react-hooks/exhaustive-deps
 };
 
 interface ProfileSyncState {

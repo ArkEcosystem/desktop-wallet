@@ -19,6 +19,8 @@ export const ConfigurationProvider = ({ children, defaultConfiguration }: Props)
 		// Initial sync state of profile. Handled in profile synchronizer.
 		profileIsSyncing: true,
 		profileIsRestoring: false,
+		// Separate flag for exchange rate sync status. Updated by profile sync exchange job.
+		profileIsSyncingExchangeRates: true,
 		restoredProfiles: [],
 		...defaultConfiguration,
 	});
