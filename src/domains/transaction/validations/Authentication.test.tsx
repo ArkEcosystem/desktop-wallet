@@ -78,7 +78,9 @@ describe("Authentication", () => {
 
 		const fromWifMock = jest
 			.spyOn(walletWithPassword.coin().address(), "fromWIF")
-			.mockImplementation((wif: string) => Promise.resolve({ type: "bip39", address: walletWithPassword.address() }));
+			.mockImplementation((wif: string) =>
+				Promise.resolve({ type: "bip39", address: walletWithPassword.address() }),
+			);
 
 		const encryptionPassword = authentication(translationMock).encryptionPassword(walletWithPassword);
 		expect(encryptionPassword.validate(walletWithPassword.address())).resolves.toBe(
