@@ -138,10 +138,11 @@ export const useProfileSyncStatus = () => {
 			current.restored.push(profileId);
 			setConfiguration({ profileIsRestoring: false });
 		},
-		resetRestoredStatus: () => {
+		resetStatuses: (profiles: Contracts.IProfile[]) => {
 			current.status = "idle";
 			current.restored = [];
-			setConfiguration({ profileIsRestoring: false });
+			setConfiguration({ profileIsRestoring: false, profileIsSyncing: true });
+			profiles.forEach((profile) => profile.status().reset());
 		},
 	};
 };
@@ -186,7 +187,7 @@ interface ProfileSynchronizerProps {
 }
 
 export const useProfileSynchronizer = ({ onProfileRestoreError }: ProfileSynchronizerProps = {}) => {
-	const { persist } = useEnvironmentContext();
+	const { env, persist } = useEnvironmentContext();
 	const { setConfiguration, profileIsSyncing } = useConfiguration();
 	const { restoreProfile } = useProfileRestore();
 	const profile = useProfileWatcher();
@@ -198,7 +199,7 @@ export const useProfileSynchronizer = ({ onProfileRestoreError }: ProfileSynchro
 		setStatus,
 		status,
 		markAsRestored,
-		resetRestoredStatus,
+		resetStatuses,
 	} = useProfileSyncStatus();
 
 	const { allJobs } = useProfileJobs(profile);
@@ -210,15 +211,15 @@ export const useProfileSynchronizer = ({ onProfileRestoreError }: ProfileSynchro
 
 	useEffect(() => {
 		const clearProfileSyncStatus = () => {
-			if (status() !== "completed") {
+			if (status() === "idle") {
 				return;
 			}
 
-			setStatus("idle");
-			stop({ clearTimers: true });
 			resetTheme();
 			resetAutomatiSignout();
-			resetRestoredStatus();
+			resetStatuses(env.profiles().values());
+
+			stop({ clearTimers: true });
 		};
 
 		const syncProfile = async (profile?: Contracts.IProfile) => {
@@ -269,6 +270,7 @@ export const useProfileSynchronizer = ({ onProfileRestoreError }: ProfileSynchro
 
 		setTimeout(() => syncProfile(profile), 0);
 	}, [
+		env,
 		resetTheme,
 		setProfileTheme,
 		allJobs,
@@ -288,7 +290,7 @@ export const useProfileSynchronizer = ({ onProfileRestoreError }: ProfileSynchro
 		onProfileRestoreError,
 		monitorIdleTime,
 		resetAutomatiSignout,
-		resetRestoredStatus,
+		resetStatuses,
 		history,
 		setScreenshotProtection,
 		stop,

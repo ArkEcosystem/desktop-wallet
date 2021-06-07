@@ -1,4 +1,3 @@
-import { Services } from "@arkecosystem/platform-sdk";
 import { Contracts as ProfilesContracts } from "@arkecosystem/platform-sdk-profiles";
 import { Alert } from "app/components/Alert";
 import { FormField, FormLabel } from "app/components/Form";
@@ -9,6 +8,7 @@ import { TransactionDetail, TransactionSender } from "domains/transaction/compon
 import React, { useEffect, useState } from "react";
 import { useFormContext } from "react-hook-form";
 import { useTranslation } from "react-i18next";
+import { TransactionFees } from "types";
 
 export const FormStep = ({
 	senderWallet,
@@ -21,7 +21,7 @@ export const FormStep = ({
 
 	const { getValues, register, setValue, watch } = useFormContext();
 
-	const [fees, setFees] = useState<Services.TransactionFee>({
+	const [fees, setFees] = useState<TransactionFees>({
 		static: "25",
 		max: "0",
 		min: "0",
