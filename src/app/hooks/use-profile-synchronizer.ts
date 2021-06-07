@@ -122,7 +122,15 @@ export const useProfileSyncStatus = () => {
 		setStatus: (status: string) => {
 			current.status = status;
 			if (status === "restoring") {
-				setConfiguration({ profileIsRestoring: true });
+				setConfiguration({ profileIsRestoring: true, profileIsSyncingExchangeRates: true });
+			}
+
+			if (status === "syncing") {
+				setConfiguration({ profileIsSyncingExchangeRates: true });
+			}
+
+			if (status === "idle") {
+				setConfiguration({ profileIsSyncingExchangeRates: true });
 			}
 		},
 		markAsRestored: (profileId: string) => {
