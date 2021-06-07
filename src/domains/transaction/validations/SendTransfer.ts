@@ -51,7 +51,7 @@ export const sendTransfer = (t: any) => ({
 				}
 
 				const coin: Coins.Coin = profile.coins().set(network?.coin(), network?.id());
-				const isValidAddress: boolean = await coin.identity().address().validate(address);
+				const isValidAddress: boolean = await coin.address().validate(address);
 				return isValidAddress || t("COMMON.VALIDATION.RECIPIENT_INVALID");
 			},
 		},

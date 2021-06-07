@@ -31,7 +31,7 @@ export const InputAddress = ({
 	const validateAddress = async (address: string) => {
 		const instance = profile.coins().set(coin!, network!);
 		await instance.__construct();
-		const isValidAddress: boolean = await instance.identity().address().validate(address);
+		const isValidAddress: boolean = await instance.address().validate(address);
 
 		if (isValidAddress) {
 			onValidAddress?.(address);
