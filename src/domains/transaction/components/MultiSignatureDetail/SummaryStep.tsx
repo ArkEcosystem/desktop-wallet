@@ -103,10 +103,7 @@ export const SummaryStep = ({
 
 	useEffect(() => {
 		const setAddress = async () => {
-			const { address } = await wallet
-				.coin()
-				.address()
-				.fromPublicKey(transaction.get("senderPublicKey"));
+			const { address } = await wallet.coin().address().fromPublicKey(transaction.get("senderPublicKey"));
 			setSenderAddress(address);
 		};
 
