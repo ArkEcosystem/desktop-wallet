@@ -1,4 +1,3 @@
-import { Services } from "@arkecosystem/platform-sdk";
 import { Contracts as ProfilesContracts } from "@arkecosystem/platform-sdk-profiles";
 import { FormField, FormLabel } from "app/components/Form";
 import { Header } from "app/components/Header";
@@ -14,6 +13,7 @@ import { VoteList } from "domains/vote/components/VoteList";
 import React, { useEffect, useState } from "react";
 import { useFormContext } from "react-hook-form";
 import { useTranslation } from "react-i18next";
+import { TransactionFees } from "types";
 
 export const FormStep = ({
 	unvotes,
@@ -33,7 +33,7 @@ export const FormStep = ({
 	const form = useFormContext();
 	const { getValues, setValue, watch, register } = form;
 
-	const [fees, setFees] = useState<Services.TransactionFee>({
+	const [fees, setFees] = useState<TransactionFees>({
 		static: "5",
 		min: "0",
 		avg: "0",

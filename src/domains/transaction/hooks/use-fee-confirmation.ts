@@ -1,14 +1,14 @@
-import { Services } from "@arkecosystem/platform-sdk";
 import { Contracts as ProfileContracts } from "@arkecosystem/platform-sdk-profiles";
 import { BigNumber } from "@arkecosystem/platform-sdk-support";
 import { useEnvironmentContext } from "app/contexts";
 import { useActiveProfile } from "app/hooks";
 import { FeeWarningVariant } from "domains/transaction/components/FeeWarning";
 import { useCallback, useEffect, useMemo, useState } from "react";
+import { TransactionFees } from "types";
 
 type CallbackFunction = () => void;
 
-export const useFeeConfirmation = (fee: number | string, fees: Services.TransactionFee) => {
+export const useFeeConfirmation = (fee: number | string, fees: TransactionFees) => {
 	const [showFeeWarning, setShowFeeWarning] = useState(false);
 	const [feeWarningVariant, setFeeWarningVariant] = useState<FeeWarningVariant | undefined>();
 
