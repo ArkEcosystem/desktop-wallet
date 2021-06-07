@@ -922,11 +922,12 @@ describe("SendVote", () => {
 	});
 
 	it("should send a vote transaction using encryption password", async () => {
-		const walletUsesWIFMock = jest.spyOn(wallet.wif(), "exists").mockReturnValue(true);
-		const walletWifMock = jest.spyOn(wallet.wif(), "get").mockImplementation(() => {
-			const wif = "S9rDfiJ2ar4DpWAQuaXECPTJHfTZ3XjCPv15gjxu4cHJZKzABPyV";
-			return Promise.resolve(wif);
-		});
+		const actsWithMnemonicMock = jest.spyOn(wallet, "actsWithMnemonic").mockReturnValue(false);
+		const actsWithWifWithEncryptionMock = jest.spyOn(wallet, "actsWithWifWithEncryption").mockReturnValue(true);
+		const wifGetMock = jest
+			.spyOn(wallet.wif(), "get")
+			.mockResolvedValue("S9rDfiJ2ar4DpWAQuaXECPTJHfTZ3XjCPv15gjxu4cHJZKzABPyV");
+
 		const history = createMemoryHistory();
 		const voteURL = `/profiles/${fixtureProfileId}/wallets/${wallet.id()}/send-vote`;
 
@@ -1006,7 +1007,8 @@ describe("SendVote", () => {
 		signMock.mockRestore();
 		broadcastMock.mockRestore();
 		transactionMock.mockRestore();
-		walletUsesWIFMock.mockRestore();
-		walletWifMock.mockRestore();
+		actsWithMnemonicMock.mockRestore();
+		actsWithWifWithEncryptionMock.mockRestore();
+		wifGetMock.mockRestore();
 	});
 });

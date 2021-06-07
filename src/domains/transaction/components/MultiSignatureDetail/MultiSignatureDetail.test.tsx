@@ -341,6 +341,7 @@ describe("MultiSignatureDetail", () => {
 	});
 
 	it("should sign transaction after authentication page", async () => {
+		jest.spyOn(wallet, "actsWithMnemonic").mockImplementation(() => true);
 		jest.spyOn(wallet.transaction(), "canBeBroadcasted").mockImplementation(() => false);
 		jest.spyOn(wallet.transaction(), "canBeSigned").mockImplementation(() => true);
 		jest.spyOn(wallet.transaction(), "sync").mockResolvedValue(void 0);
@@ -380,6 +381,7 @@ describe("MultiSignatureDetail", () => {
 	});
 
 	it("should fail to sign transaction after authentication page", async () => {
+		jest.spyOn(wallet, "actsWithMnemonic").mockImplementation(() => true);
 		jest.spyOn(wallet.transaction(), "canBeBroadcasted").mockImplementation(() => false);
 		jest.spyOn(wallet.transaction(), "canBeSigned").mockImplementation(() => true);
 		jest.spyOn(wallet.transaction(), "sync").mockResolvedValue(void 0);

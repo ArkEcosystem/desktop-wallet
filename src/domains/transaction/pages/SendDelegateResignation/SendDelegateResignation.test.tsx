@@ -518,11 +518,13 @@ describe("SendDelegateResignation", () => {
 			const encryptedWallet = profile.wallets().first();
 			await encryptedWallet.synchroniser().identity();
 
-			const walletUsesWIFMock = jest.spyOn(encryptedWallet.wif(), "exists").mockReturnValue(true);
-			const walletWifMock = jest.spyOn(encryptedWallet.wif(), "get").mockImplementation(() => {
-				const wif = "S9rDfiJ2ar4DpWAQuaXECPTJHfTZ3XjCPv15gjxu4cHJZKzABPyV";
-				return Promise.resolve(wif);
-			});
+			const actsWithMnemonicMock = jest.spyOn(encryptedWallet, "actsWithMnemonic").mockReturnValue(false);
+			const actsWithWifWithEncryptionMock = jest
+				.spyOn(encryptedWallet, "actsWithWifWithEncryption")
+				.mockReturnValue(true);
+			const wifGetMock = jest
+				.spyOn(encryptedWallet.wif(), "get")
+				.mockResolvedValue("S9rDfiJ2ar4DpWAQuaXECPTJHfTZ3XjCPv15gjxu4cHJZKzABPyV");
 
 			const secondPublicKeyMock = jest
 				.spyOn(encryptedWallet, "secondPublicKey")
@@ -583,9 +585,9 @@ describe("SendDelegateResignation", () => {
 			signMock.mockRestore();
 			broadcastMock.mockRestore();
 			transactionMock.mockRestore();
-
-			walletUsesWIFMock.mockRestore();
-			walletWifMock.mockRestore();
+			actsWithMnemonicMock.mockRestore();
+			actsWithWifWithEncryptionMock.mockRestore();
+			wifGetMock.mockRestore();
 		});
 	});
 });

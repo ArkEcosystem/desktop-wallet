@@ -7,9 +7,6 @@ import { env, fireEvent, getDefaultProfileId, renderWithRouter, screen, waitFor 
 
 import { AuthenticationStep } from "./AuthenticationStep";
 
-// increase timeout to allow for encryption operations
-jest.setTimeout(30000);
-
 describe("AuthenticationStep", () => {
 	let wallet: Contracts.IReadWriteWallet;
 	let profile: Contracts.IProfile;
@@ -322,12 +319,9 @@ describe("AuthenticationStep", () => {
 	});
 
 	it("should render with encryption password input", async () => {
-		wallet = await profile.walletFactory().fromWIF({
-			wif: "6PYR8Zq7e84mKXq3kxZyrZ8Zyt6iE89fCngdMgibQ5HjCd7Bt3k7wKc4ZL",
-			coin: "ARK",
-			network: "ark.devnet",
-			password: "password",
-		});
+		jest.spyOn(wallet, "actsWithMnemonic").mockReturnValue(false);
+		jest.spyOn(wallet, "actsWithWifWithEncryption").mockReturnValue(true);
+		jest.spyOn(wallet.wif(), "get").mockResolvedValue("6PYR8Zq7e84mKXq3kxZyrZ8Zyt6iE89fCngdMgibQ5HjCd7Bt3k7wKc4ZL");
 
 		const { result } = renderHook(() => useForm({ mode: "onChange" }));
 		const { getByTestId } = renderWithRouter(
@@ -342,13 +336,9 @@ describe("AuthenticationStep", () => {
 	});
 
 	it("should render with encryption password input and second mnemonic", async () => {
-		wallet = await profile.walletFactory().fromWIF({
-			wif: "6PYR8Zq7e84mKXq3kxZyrZ8Zyt6iE89fCngdMgibQ5HjCd7Bt3k7wKc4ZL",
-			coin: "ARK",
-			network: "ark.devnet",
-			password: "password",
-		});
-
+		jest.spyOn(wallet, "actsWithMnemonic").mockReturnValue(false);
+		jest.spyOn(wallet, "actsWithWifWithEncryption").mockReturnValue(true);
+		jest.spyOn(wallet.wif(), "get").mockResolvedValue("6PYR8Zq7e84mKXq3kxZyrZ8Zyt6iE89fCngdMgibQ5HjCd7Bt3k7wKc4ZL");
 		jest.spyOn(wallet, "isSecondSignature").mockReturnValue(true);
 
 		const { result } = renderHook(() => useForm({ mode: "onChange" }));
