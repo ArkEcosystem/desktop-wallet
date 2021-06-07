@@ -96,12 +96,13 @@ const ImportInputField = ({
 	const [coin] = useState(() => activeProfile.coins().set(network.coin(), network.id()));
 	const { register } = useFormContext();
 
-	if (type === "mnemonic") {
+	if (type.startsWith("mnemonic")) {
+		const MNEMONIC_TYPE = type.split(".")[1].toUpperCase();
 		return (
 			<MnemonicField
 				network={network}
 				profile={profile}
-				label={t("COMMON.MNEMONIC")}
+				label={t(`COMMON.MNEMONIC_TYPE.${MNEMONIC_TYPE}`)}
 				data-testid="ImportWallet__mnemonic-input"
 				findAddress={async (value) => {
 					await coin.__construct();

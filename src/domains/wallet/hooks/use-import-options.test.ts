@@ -49,11 +49,11 @@ describe("useImportOptions", () => {
 			result: { current },
 		} = renderHook(() =>
 			useImportOptions({
-				bip38: {
+				bip84: {
 					default: true,
 					permissions: [],
 				},
-				bip39: {
+				bip38: {
 					default: false,
 					permissions: [],
 				},
@@ -61,7 +61,7 @@ describe("useImportOptions", () => {
 		);
 
 		expect(current.options).toHaveLength(2);
-		expect(current.options[0].value).toBe("mnemonic");
+		expect(current.options[0].value).toBe("mnemonic.bip84");
 		expect(current.options[1].value).toBe("encryptedWif");
 	});
 
@@ -100,6 +100,6 @@ describe("useImportOptions", () => {
 			}),
 		);
 
-		expect(current.defaultOption).toBe("mnemonic");
+		expect(current.defaultOption).toBe("mnemonic.bip39");
 	});
 });

@@ -112,6 +112,12 @@ export const translations: { [key: string]: any } = {
 	SMARTBRIDGE: "Smartbridge",
 	FEE: "Fee",
 	MNEMONIC: "Mnemonic",
+	MNEMONIC_TYPE: {
+		BIP39: "Mnemonic",
+		BIP44: "Mnemonic",
+		BIP49: "Mnemonic (SegWit)",
+		BIP84: "Mnemonic (Native SegWit)",
+	},
 	SECOND_MNEMONIC: "2nd Mnemonic",
 	DESCRIPTION: "Description",
 	WEBSITE: "Website",
