@@ -1,9 +1,8 @@
 /* eslint-disable @typescript-eslint/require-await */
 import React from "react";
-import { act, fireEvent, render } from "testing-library";
+import { act, fireEvent, render, screen } from "testing-library";
 
 import { Modal } from "./Modal";
-import { modalOffsetClass } from "./utils";
 
 describe("Modal", () => {
 	it("should not render if not open", () => {
@@ -22,6 +21,42 @@ describe("Modal", () => {
 
 		expect(getByTestId("modal__overlay")).toBeTruthy();
 		expect(asFragment()).toMatchSnapshot();
+	});
+
+	it("should closed by click on overlay", () => {
+		const onClose = jest.fn();
+		render(
+			<Modal title="ark" isOpen={true} onClose={onClose}>
+				This is the Modal content
+			</Modal>,
+		);
+
+		expect(screen.getByTestId("modal__overlay")).toBeInTheDocument();
+		expect(screen.getByTestId("modal__inner")).toBeInTheDocument();
+
+		act(() => {
+			fireEvent.click(screen.getByTestId("modal__overlay"));
+		});
+
+		expect(onClose).toBeCalled();
+	});
+
+	it("should no close by click on modal content", () => {
+		const onClose = jest.fn();
+		render(
+			<Modal title="ark" isOpen={true} onClose={onClose}>
+				This is the Modal content
+			</Modal>,
+		);
+
+		expect(screen.getByTestId("modal__overlay")).toBeInTheDocument();
+		expect(screen.getByTestId("modal__inner")).toBeInTheDocument();
+
+		act(() => {
+			fireEvent.click(screen.getByTestId("modal__inner"));
+		});
+
+		expect(onClose).not.toBeCalled();
 	});
 
 	it("should closed by the Esc key", async () => {
@@ -108,20 +143,6 @@ describe("Modal", () => {
 		const { container } = render(<Modal title="ark" size="5xl" isOpen={true} />);
 
 		expect(container).toMatchSnapshot();
-	});
-
-	it("should not add top offset class if padded modal content fits in window height", () => {
-		const modalHeightMock = 400;
-		const windowHeightMock = 1000;
-		const topOffsetClass = modalOffsetClass(modalHeightMock, windowHeightMock);
-		expect(topOffsetClass).toBe("");
-	});
-
-	it("should add top offset class if padded modal content is higher than window height", () => {
-		const modalHeightMock = 975;
-		const windowHeightMock = 1000;
-		const topOffsetClass = modalOffsetClass(modalHeightMock, windowHeightMock);
-		expect(topOffsetClass).toBe("top-0 my-20");
 	});
 
 	it("should render a modal with banner", () => {

@@ -18,7 +18,7 @@ import {
 	useTransactionBuilder,
 	useWalletSignatory,
 } from "domains/transaction/hooks";
-import { handleBroadcastError, humanToBigNumber, isMnemonicError } from "domains/transaction/utils";
+import { handleBroadcastError, isMnemonicError } from "domains/transaction/utils";
 import React, { useEffect, useMemo, useRef, useState } from "react";
 import { useForm } from "react-hook-form";
 import { useTranslation } from "react-i18next";
@@ -173,13 +173,11 @@ export const SendTransfer = () => {
 			return;
 		}
 
-		const feeValue = humanToBigNumber(fee);
-
-		if (BigNumber.make(amount).isLessThanOrEqualTo(feeValue)) {
+		if (BigNumber.make(amount).isLessThanOrEqualTo(fee)) {
 			return;
 		}
 
-		const remaining = remainingBalance.minus(feeValue);
+		const remaining = remainingBalance.minus(fee);
 
 		setValue("displayAmount", remaining.toHuman());
 		setValue("amount", remaining.toString());

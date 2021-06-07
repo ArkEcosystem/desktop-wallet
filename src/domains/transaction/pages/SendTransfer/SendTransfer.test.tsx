@@ -198,11 +198,11 @@ describe("SendTransfer", () => {
 		const { result: form } = renderHook(() =>
 			useForm({
 				defaultValues: {
-					fee: "0.1",
+					fee: "1",
 					recipients: [
 						{
 							address: wallet.address(),
-							amount: BigNumber.make(1 * 1e8),
+							amount: BigNumber.make(1),
 						},
 					],
 					senderAddress: wallet.address(),

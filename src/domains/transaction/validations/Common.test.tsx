@@ -22,7 +22,7 @@ describe("Common", () => {
 		const commonValidation = common(t).fee(BigNumber.make(1), network);
 		expect(commonValidation.validate.valid("1234")).toBe(
 			t("TRANSACTION.VALIDATION.LOW_BALANCE", {
-				balance: "0.00000001",
+				balance: "1",
 				coinId: network.coin(),
 			}),
 		);

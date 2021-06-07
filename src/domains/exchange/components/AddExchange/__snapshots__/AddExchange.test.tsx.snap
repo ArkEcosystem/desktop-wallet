@@ -5,397 +5,399 @@ exports[`AddExchange should not render if not open 1`] = `<DocumentFragment />`;
 exports[`AddExchange should render a modal 1`] = `
 <DocumentFragment>
   <div
-    class="flex fixed inset-0 z-50 justify-center items-center w-full h-full overflow-overlay"
+    class="flex fixed inset-0 z-50 py-20 w-full h-full bg-theme-secondary-900-rgba bg-opacity-60 dark:bg-black-rgba dark:bg-opacity-80 overflow-overlay"
+    data-testid="modal__overlay"
   >
     <div
-      class="fixed z-50 w-full h-full bg-theme-secondary-900 opacity-60 dark:bg-black dark:opacity-80"
-      data-testid="modal__overlay"
-    />
-    <div
-      class="Modal__ModalContainer-sc-1pv7yg7-0 dWPpQp absolute left-0 right-0 z-50 flex flex-col p-10 mx-auto overflow-hidden rounded-2.5xl bg-theme-background shadow-2xl "
-      data-testid="modal__inner"
+      class="Modal__ModalContainer-sc-1pv7yg7-0 gJFEnG"
+      tabindex="-1"
     >
       <div
-        class="absolute top-0 right-0 z-50 mt-5 mr-5 rounded transition-all duration-100 ease-linear bg-theme-primary-100 hover:bg-theme-primary-300 dark:bg-theme-secondary-800 dark:text-theme-secondary-600 dark:hover:bg-theme-secondary-700 dark:hover:text-theme-secondary-400"
+        class="relative flex flex-col p-10 overflow-hidden rounded-2.5xl bg-theme-background shadow-2xl"
+        data-testid="modal__inner"
       >
-        <button
-          class="OriginalButton__StyledButton-sc-1y2wptt-0 fNHPRi w-11 h-11"
-          data-testid="modal__close-btn"
-          type="button"
-        >
-          <div
-            class="flex relative items-center space-x-2"
-          >
-            <div
-              class="sc-bdfBwQ bfBhNR"
-              height="14"
-              width="14"
-            >
-              <svg>
-                cross-slim.svg
-              </svg>
-            </div>
-          </div>
-        </button>
-      </div>
-      <div
-        class="relative space-y-4"
-      >
-        <h2
-          class="mb-0 text-3xl font-bold"
-        >
-          Exchange
-        </h2>
         <div
-          class="flex-1"
+          class="absolute top-0 right-0 z-10 mt-5 mr-5 rounded transition-all duration-100 ease-linear bg-theme-primary-100 hover:bg-theme-primary-300 dark:bg-theme-secondary-800 dark:text-theme-secondary-600 dark:hover:bg-theme-secondary-700 dark:hover:text-theme-secondary-400"
         >
-          <div
-            class="mt-8 -mb-6"
+          <button
+            class="OriginalButton__StyledButton-sc-1y2wptt-0 fNHPRi w-11 h-11"
+            data-testid="modal__close-btn"
+            type="button"
           >
             <div
-              class="Table__TableWrapper-sc-84pst5-0 ccYCKK -mt-3"
-              role="table"
+              class="flex relative items-center space-x-2"
             >
-              <table
-                cellpadding="0"
-                class="table-auto"
+              <div
+                class="sc-bdfBwQ bfBhNR"
+                height="14"
+                width="14"
               >
-                <thead>
-                  <tr
-                    class="border-b border-theme-secondary-300 dark:border-theme-secondary-800"
-                    role="row"
-                  >
-                    <th
-                      class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
-                      colspan="1"
-                      data-testid="table__th--0"
-                      role="columnheader"
-                      style="cursor: pointer;"
-                      title="Toggle SortBy"
-                    >
-                      <div
-                        class="flex flex-inline align-top"
-                      >
-                        <div>
-                          Name
-                        </div>
-                        <div
-                          class="flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity ml-2"
-                        >
-                          <div
-                            class="sc-bdfBwQ kJrqvM transition-transform transform rotate-180"
-                            height="5"
-                            role="img"
-                            width="8"
-                          >
-                            <svg>
-                              chevron-down.svg
-                            </svg>
-                          </div>
-                        </div>
-                      </div>
-                    </th>
-                    <th
-                      class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
-                      colspan="1"
-                      data-testid="table__th--1"
-                      role="columnheader"
-                      style="cursor: pointer;"
-                      title="Toggle SortBy"
-                    >
-                      <div
-                        class="flex flex-inline align-top"
-                      >
-                        <div>
-                          Author
-                        </div>
-                        <div
-                          class="flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity opacity-0 group-hover:opacity-100 ml-2"
-                        >
-                          <div
-                            class="sc-bdfBwQ kJrqvM transition-transform transform rotate-180"
-                            height="5"
-                            role="img"
-                            width="8"
-                          >
-                            <svg>
-                              chevron-down.svg
-                            </svg>
-                          </div>
-                        </div>
-                      </div>
-                    </th>
-                    <th
-                      class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold"
-                      colspan="1"
-                      data-testid="table__th--2"
-                      role="columnheader"
-                    >
-                      <div
-                        class="flex flex-inline align-top no-border"
-                      >
-                        <div>
-                          Version
-                        </div>
-                      </div>
-                    </th>
-                    <th
-                      class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
-                      colspan="1"
-                      data-testid="table__th--3"
-                      role="columnheader"
-                    >
-                      <div
-                        class="flex flex-inline align-top hidden"
-                      >
-                        <div>
-                          Actions
-                        </div>
-                      </div>
-                    </th>
-                  </tr>
-                </thead>
-                <tbody
-                  role="rowgroup"
+                <svg>
+                  cross-slim.svg
+                </svg>
+              </div>
+            </div>
+          </button>
+        </div>
+        <div
+          class="relative space-y-4"
+        >
+          <h2
+            class="mb-0 text-3xl font-bold"
+          >
+            Exchange
+          </h2>
+          <div
+            class="flex-1"
+          >
+            <div
+              class="mt-8 -mb-6"
+            >
+              <div
+                class="Table__TableWrapper-sc-84pst5-0 ccYCKK -mt-3"
+                role="table"
+              >
+                <table
+                  cellpadding="0"
+                  class="table-auto"
                 >
-                  <tr
-                    class="TableRow__TableRowStyled-sc-1br46dw-0 fzBhIQ group"
-                    data-testid="TableRow"
-                  >
-                    <td>
-                      <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 DpDcR space-x-5"
+                  <thead>
+                    <tr
+                      class="border-b border-theme-secondary-300 dark:border-theme-secondary-800"
+                      role="row"
+                    >
+                      <th
+                        class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
+                        colspan="1"
+                        data-testid="table__th--0"
+                        role="columnheader"
+                        style="cursor: pointer;"
+                        title="Toggle SortBy"
                       >
                         <div
-                          class="w-11 h-11"
+                          class="flex flex-inline align-top"
                         >
-                          <svg>
-                            changenow-logo.svg
-                          </svg>
-                        </div>
-                        <span
-                          class="cursor-pointer font-semibold link"
-                        >
-                          Atomars
-                        </span>
-                      </div>
-                    </td>
-                    <td>
-                      <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT"
-                      >
-                        <span>
-                          Atomars
-                        </span>
-                      </div>
-                    </td>
-                    <td>
-                      <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT"
-                      >
-                        <span>
-                          v 1.3.8
-                        </span>
-                      </div>
-                    </td>
-                    <td
-                      class="w-16"
-                    >
-                      <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 kjTmcB justify-end"
-                      >
-                        <button
-                          class="OriginalButton__StyledButton-sc-1y2wptt-0 izJbbP"
-                          type="button"
-                        >
-                          <div
-                            class="flex relative items-center space-x-2"
-                          >
-                            Install
+                          <div>
+                            Name
                           </div>
-                        </button>
-                      </div>
-                    </td>
-                  </tr>
-                  <tr
-                    class="TableRow__TableRowStyled-sc-1br46dw-0 fzBhIQ group"
-                    data-testid="TableRow"
-                  >
-                    <td>
-                      <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 DpDcR space-x-5"
+                          <div
+                            class="flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity ml-2"
+                          >
+                            <div
+                              class="sc-bdfBwQ kJrqvM transition-transform transform rotate-180"
+                              height="5"
+                              role="img"
+                              width="8"
+                            >
+                              <svg>
+                                chevron-down.svg
+                              </svg>
+                            </div>
+                          </div>
+                        </div>
+                      </th>
+                      <th
+                        class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
+                        colspan="1"
+                        data-testid="table__th--1"
+                        role="columnheader"
+                        style="cursor: pointer;"
+                        title="Toggle SortBy"
                       >
                         <div
-                          class="w-11 h-11"
+                          class="flex flex-inline align-top"
                         >
-                          <svg>
-                            changenow-logo.svg
-                          </svg>
-                        </div>
-                        <span
-                          class="cursor-pointer font-semibold link"
-                        >
-                          Binance
-                        </span>
-                      </div>
-                    </td>
-                    <td>
-                      <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT"
-                      >
-                        <span>
-                          Binance
-                        </span>
-                      </div>
-                    </td>
-                    <td>
-                      <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT"
-                      >
-                        <span>
-                          v 1.3.8
-                        </span>
-                      </div>
-                    </td>
-                    <td
-                      class="w-16"
-                    >
-                      <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 kjTmcB justify-end"
-                      >
-                        <button
-                          class="OriginalButton__StyledButton-sc-1y2wptt-0 izJbbP"
-                          type="button"
-                        >
-                          <div
-                            class="flex relative items-center space-x-2"
-                          >
-                            Install
+                          <div>
+                            Author
                           </div>
-                        </button>
-                      </div>
-                    </td>
-                  </tr>
-                  <tr
-                    class="TableRow__TableRowStyled-sc-1br46dw-0 fzBhIQ group"
-                    data-testid="TableRow"
-                  >
-                    <td>
-                      <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 DpDcR space-x-5"
+                          <div
+                            class="flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity opacity-0 group-hover:opacity-100 ml-2"
+                          >
+                            <div
+                              class="sc-bdfBwQ kJrqvM transition-transform transform rotate-180"
+                              height="5"
+                              role="img"
+                              width="8"
+                            >
+                              <svg>
+                                chevron-down.svg
+                              </svg>
+                            </div>
+                          </div>
+                        </div>
+                      </th>
+                      <th
+                        class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold"
+                        colspan="1"
+                        data-testid="table__th--2"
+                        role="columnheader"
                       >
                         <div
-                          class="w-11 h-11"
+                          class="flex flex-inline align-top no-border"
                         >
-                          <svg>
-                            changenow-logo.svg
-                          </svg>
-                        </div>
-                        <span
-                          class="cursor-pointer font-semibold link"
-                        >
-                          ChangeNOW Plugin
-                        </span>
-                      </div>
-                    </td>
-                    <td>
-                      <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT"
-                      >
-                        <span>
-                          ChangeNOW
-                        </span>
-                      </div>
-                    </td>
-                    <td>
-                      <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT"
-                      >
-                        <span>
-                          v 1.3.8
-                        </span>
-                      </div>
-                    </td>
-                    <td
-                      class="w-16"
-                    >
-                      <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 kjTmcB justify-end"
-                      >
-                        <button
-                          class="OriginalButton__StyledButton-sc-1y2wptt-0 izJbbP"
-                          type="button"
-                        >
-                          <div
-                            class="flex relative items-center space-x-2"
-                          >
-                            Install
+                          <div>
+                            Version
                           </div>
-                        </button>
-                      </div>
-                    </td>
-                  </tr>
-                  <tr
-                    class="TableRow__TableRowStyled-sc-1br46dw-0 fzBhIQ group"
-                    data-testid="TableRow"
-                  >
-                    <td>
-                      <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 DpDcR space-x-5"
+                        </div>
+                      </th>
+                      <th
+                        class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
+                        colspan="1"
+                        data-testid="table__th--3"
+                        role="columnheader"
                       >
                         <div
-                          class="w-11 h-11"
+                          class="flex flex-inline align-top hidden"
                         >
-                          <svg>
-                            changenow-logo.svg
-                          </svg>
+                          <div>
+                            Actions
+                          </div>
                         </div>
-                        <span
-                          class="cursor-pointer font-semibold link"
-                        >
-                          OKEx
-                        </span>
-                      </div>
-                    </td>
-                    <td>
-                      <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT"
-                      >
-                        <span>
-                          ARK Ecosystem
-                        </span>
-                      </div>
-                    </td>
-                    <td>
-                      <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT"
-                      >
-                        <span>
-                          v 1.3.8
-                        </span>
-                      </div>
-                    </td>
-                    <td
-                      class="w-16"
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody
+                    role="rowgroup"
+                  >
+                    <tr
+                      class="TableRow__TableRowStyled-sc-1br46dw-0 fzBhIQ group"
+                      data-testid="TableRow"
                     >
-                      <div
-                        class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 kjTmcB justify-end"
-                      >
-                        <button
-                          class="OriginalButton__StyledButton-sc-1y2wptt-0 izJbbP"
-                          type="button"
+                      <td>
+                        <div
+                          class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 DpDcR space-x-5"
                         >
                           <div
-                            class="flex relative items-center space-x-2"
+                            class="w-11 h-11"
                           >
-                            Install
+                            <svg>
+                              changenow-logo.svg
+                            </svg>
                           </div>
-                        </button>
-                      </div>
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
+                          <span
+                            class="cursor-pointer font-semibold link"
+                          >
+                            Atomars
+                          </span>
+                        </div>
+                      </td>
+                      <td>
+                        <div
+                          class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT"
+                        >
+                          <span>
+                            Atomars
+                          </span>
+                        </div>
+                      </td>
+                      <td>
+                        <div
+                          class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT"
+                        >
+                          <span>
+                            v 1.3.8
+                          </span>
+                        </div>
+                      </td>
+                      <td
+                        class="w-16"
+                      >
+                        <div
+                          class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 kjTmcB justify-end"
+                        >
+                          <button
+                            class="OriginalButton__StyledButton-sc-1y2wptt-0 izJbbP"
+                            type="button"
+                          >
+                            <div
+                              class="flex relative items-center space-x-2"
+                            >
+                              Install
+                            </div>
+                          </button>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr
+                      class="TableRow__TableRowStyled-sc-1br46dw-0 fzBhIQ group"
+                      data-testid="TableRow"
+                    >
+                      <td>
+                        <div
+                          class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 DpDcR space-x-5"
+                        >
+                          <div
+                            class="w-11 h-11"
+                          >
+                            <svg>
+                              changenow-logo.svg
+                            </svg>
+                          </div>
+                          <span
+                            class="cursor-pointer font-semibold link"
+                          >
+                            Binance
+                          </span>
+                        </div>
+                      </td>
+                      <td>
+                        <div
+                          class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT"
+                        >
+                          <span>
+                            Binance
+                          </span>
+                        </div>
+                      </td>
+                      <td>
+                        <div
+                          class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT"
+                        >
+                          <span>
+                            v 1.3.8
+                          </span>
+                        </div>
+                      </td>
+                      <td
+                        class="w-16"
+                      >
+                        <div
+                          class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 kjTmcB justify-end"
+                        >
+                          <button
+                            class="OriginalButton__StyledButton-sc-1y2wptt-0 izJbbP"
+                            type="button"
+                          >
+                            <div
+                              class="flex relative items-center space-x-2"
+                            >
+                              Install
+                            </div>
+                          </button>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr
+                      class="TableRow__TableRowStyled-sc-1br46dw-0 fzBhIQ group"
+                      data-testid="TableRow"
+                    >
+                      <td>
+                        <div
+                          class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 DpDcR space-x-5"
+                        >
+                          <div
+                            class="w-11 h-11"
+                          >
+                            <svg>
+                              changenow-logo.svg
+                            </svg>
+                          </div>
+                          <span
+                            class="cursor-pointer font-semibold link"
+                          >
+                            ChangeNOW Plugin
+                          </span>
+                        </div>
+                      </td>
+                      <td>
+                        <div
+                          class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT"
+                        >
+                          <span>
+                            ChangeNOW
+                          </span>
+                        </div>
+                      </td>
+                      <td>
+                        <div
+                          class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT"
+                        >
+                          <span>
+                            v 1.3.8
+                          </span>
+                        </div>
+                      </td>
+                      <td
+                        class="w-16"
+                      >
+                        <div
+                          class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 kjTmcB justify-end"
+                        >
+                          <button
+                            class="OriginalButton__StyledButton-sc-1y2wptt-0 izJbbP"
+                            type="button"
+                          >
+                            <div
+                              class="flex relative items-center space-x-2"
+                            >
+                              Install
+                            </div>
+                          </button>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr
+                      class="TableRow__TableRowStyled-sc-1br46dw-0 fzBhIQ group"
+                      data-testid="TableRow"
+                    >
+                      <td>
+                        <div
+                          class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 DpDcR space-x-5"
+                        >
+                          <div
+                            class="w-11 h-11"
+                          >
+                            <svg>
+                              changenow-logo.svg
+                            </svg>
+                          </div>
+                          <span
+                            class="cursor-pointer font-semibold link"
+                          >
+                            OKEx
+                          </span>
+                        </div>
+                      </td>
+                      <td>
+                        <div
+                          class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT"
+                        >
+                          <span>
+                            ARK Ecosystem
+                          </span>
+                        </div>
+                      </td>
+                      <td>
+                        <div
+                          class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT"
+                        >
+                          <span>
+                            v 1.3.8
+                          </span>
+                        </div>
+                      </td>
+                      <td
+                        class="w-16"
+                      >
+                        <div
+                          class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 kjTmcB justify-end"
+                        >
+                          <button
+                            class="OriginalButton__StyledButton-sc-1y2wptt-0 izJbbP"
+                            type="button"
+                          >
+                            <div
+                              class="flex relative items-center space-x-2"
+                            >
+                              Install
+                            </div>
+                          </button>
+                        </div>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
             </div>
           </div>
         </div>

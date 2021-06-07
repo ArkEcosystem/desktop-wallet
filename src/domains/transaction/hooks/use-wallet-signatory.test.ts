@@ -17,10 +17,10 @@ describe("useWalletSignatory", () => {
 		await profile.sync();
 	});
 
-	it("should sign with mnemonic", () => {
+	it("should sign with mnemonic", async () => {
 		const mockMnemonic = jest.spyOn(wallet.signatory(), "mnemonic");
 		const { result } = renderHook(() => useWalletSignatory(wallet));
-		expect(result.current.sign({ mnemonic: "mnemonic" })).resolves.toBeTruthy();
+		await expect(result.current.sign({ mnemonic: "mnemonic" })).resolves.toBeTruthy();
 		expect(mockMnemonic).toHaveBeenCalled();
 		mockMnemonic.mockRestore();
 	});
@@ -45,24 +45,26 @@ describe("useWalletSignatory", () => {
 		mockPrivateKey.mockRestore();
 	});
 
-	it("should sign with secondMnemonic", () => {
+	it("should sign with secondMnemonic", async () => {
 		const mockSecondaryMnemonic = jest.spyOn(wallet.signatory(), "secondaryMnemonic");
 		const { result } = renderHook(() => useWalletSignatory(wallet));
-		expect(result.current.sign({ mnemonic: "mnemonic", secondMnemonic: "second mnemonic" })).resolves.toBeTruthy();
+		await expect(
+			result.current.sign({ mnemonic: "mnemonic", secondMnemonic: "second mnemonic" }),
+		).resolves.toBeTruthy();
 		mockSecondaryMnemonic.mockRestore();
 	});
 
-	it("should sign multisignature wallet", () => {
+	it("should sign multisignature wallet", async () => {
 		const mockIsMultiSignature = jest.spyOn(wallet, "isMultiSignature").mockReturnValue(true);
 		const mockSecondaryMnemonic = jest.spyOn(wallet.signatory(), "senderPublicKey");
 		const { result } = renderHook(() => useWalletSignatory(wallet));
-		expect(result.current.sign({})).resolves.toBeTruthy();
+		await expect(result.current.sign({})).resolves.toBeTruthy();
 		mockSecondaryMnemonic.mockRestore();
 		mockIsMultiSignature.mockRestore();
 	});
 
-	it("should throw error if no input is provided", () => {
+	it("should throw error if no input is provided", async () => {
 		const { result } = renderHook(() => useWalletSignatory(wallet));
-		expect(result.current.sign({})).rejects.toBeTruthy();
+		await expect(result.current.sign({})).rejects.toBeTruthy();
 	});
 });
