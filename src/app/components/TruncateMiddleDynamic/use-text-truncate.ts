@@ -1,7 +1,7 @@
-import { useCallback } from "react";
+import { useMemo } from "react";
 
-export const useTextTruncate = (value: string, offset: number, referenceElement: any) => {
-	const truncate = useCallback(() => {
+export const useTextTruncate = (referenceElement: any, value: string, offset = 0) => {
+	const truncated = useMemo(() => {
 		const hasOverflow = (element: HTMLElement, referenceElement: HTMLElement) => {
 			if (!element.offsetWidth && !referenceElement.offsetWidth) {
 				return false;
@@ -14,39 +14,37 @@ export const useTextTruncate = (value: string, offset: number, referenceElement:
 			return value;
 		}
 
-		let length = value.length;
-
 		const element = document.createElement("span");
-		element.classList.add("fixed", "invisible", "w-auto", "whitespace-nowrap");
 
 		element.innerHTML = value;
+		element.classList.add("fixed", "invisible", "w-auto", "whitespace-nowrap");
 
 		referenceElement.appendChild(element);
 
-		let truncated = value;
+		let temp = value;
 
 		if (!hasOverflow(element, referenceElement)) {
 			referenceElement.removeChild(element);
 			return value;
 		}
 
+		let mid = Math.floor(value.length / 2) - 1;
+
 		do {
-			const mid = Math.floor(length / 2) - 1;
-
 			const prefix = value.substr(0, mid);
-			const suffix = value.substr(-length + mid);
+			const suffix = value.substr(-mid);
 
-			truncated = `${prefix}…${suffix}`;
+			temp = `${prefix}…${suffix}`;
 
-			element.innerHTML = truncated;
+			element.innerHTML = temp;
 
-			length--;
+			mid--;
 		} while (hasOverflow(element, referenceElement));
 
 		referenceElement.removeChild(element);
 
-		return truncated;
+		return temp;
 	}, [value, offset, referenceElement]);
 
-	return truncate;
+	return truncated;
 };

@@ -1,8 +1,8 @@
 import { Tooltip } from "app/components/Tooltip";
 import cn from "classnames";
-import React, { useLayoutEffect, useRef, useState } from "react";
+import React, { useRef } from "react";
 
-import { useTextTruncate } from "./hooks";
+import { useTextTruncate } from "./use-text-truncate";
 
 type Props = {
 	value: string;
@@ -11,15 +11,9 @@ type Props = {
 } & React.HTMLProps<any>;
 
 export const TruncateMiddleDynamic = ({ value, offset = 0, className, parentRef, ...props }: Props) => {
-	const [truncated, setTruncated] = useState<string | undefined>(value);
-
 	const ref = useRef<HTMLElement>(null);
 
-	const truncate = useTextTruncate(value, offset, parentRef?.current || ref.current);
-
-	useLayoutEffect(() => {
-		setTruncated(truncate());
-	}, [truncate]);
+	const truncated = useTextTruncate(parentRef?.current || ref.current, value, offset);
 
 	return (
 		<Tooltip content={value} disabled={truncated === value}>
