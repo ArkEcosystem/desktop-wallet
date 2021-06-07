@@ -1,4 +1,3 @@
-import { Services } from "@arkecosystem/platform-sdk";
 import { BIP39 } from "@arkecosystem/platform-sdk-crypto";
 import { Contracts as ProfileContracts } from "@arkecosystem/platform-sdk-profiles";
 import { Alert } from "app/components/Alert";
@@ -9,6 +8,7 @@ import { TransactionSender } from "domains/transaction/components/TransactionDet
 import React, { useEffect, useState } from "react";
 import { useFormContext } from "react-hook-form";
 import { useTranslation } from "react-i18next";
+import { TransactionFees } from "types";
 
 import { InputFee } from "../InputFee";
 
@@ -17,7 +17,7 @@ export const GenerationStep = ({
 	wallet,
 	step = 0.001,
 }: {
-	fees: Services.TransactionFee;
+	fees: TransactionFees;
 	wallet: ProfileContracts.IReadWriteWallet;
 	step?: number;
 }) => {
@@ -62,9 +62,9 @@ export const GenerationStep = ({
 				<FormField name="fee">
 					<FormLabel label={t("TRANSACTION.TRANSACTION_FEE")} />
 					<InputFee
-						min={fees.min.toHuman()}
-						avg={fees.avg.toHuman()}
-						max={fees.max.toHuman()}
+						min={fees.min}
+						avg={fees.avg}
+						max={fees.max}
 						value={fee || 0}
 						step={step}
 						showFeeOptions={wallet.network().feeType() === "dynamic"}

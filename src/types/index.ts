@@ -9,3 +9,10 @@ export type ButtonVariant = "primary" | "secondary" | "danger" | "transparent";
 export type NavbarVariant = "full" | "logo-only";
 
 export type Theme = "system" | "dark" | "light";
+
+export interface TransactionFees {
+    static: string;
+    max: string;
+    min: string;
+    avg: string;
+}
