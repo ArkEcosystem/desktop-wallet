@@ -26,7 +26,7 @@ export const ConfigurationProvider = ({ children, defaultConfiguration }: Props)
 	});
 
 	const setConfiguration = (config: any) => {
-		setConfig({ ...configuration, ...config });
+		setConfig((latestConfig: any) => ({ ...latestConfig, ...config }));
 	};
 
 	return (
