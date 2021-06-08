@@ -83,10 +83,6 @@ exports[`SignMessage should render 1`] = `
                         for="signatory-address"
                       >
                         Signatory
-                        <div
-                          class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
-                          data-testid="FormLabel__required"
-                        />
                       </label>
                       <div
                         class="fixed invisible w-auto whitespace-nowrap"
@@ -133,10 +129,6 @@ exports[`SignMessage should render 1`] = `
                         for="message"
                       >
                         Message
-                        <div
-                          class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
-                          data-testid="FormLabel__required"
-                        />
                       </label>
                       <div
                         class="fixed invisible w-auto whitespace-nowrap"
@@ -167,10 +159,6 @@ exports[`SignMessage should render 1`] = `
                         for="mnemonic"
                       >
                         Mnemonic
-                        <div
-                          class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
-                          data-testid="FormLabel__required"
-                        />
                       </label>
                       <div
                         class="fixed invisible w-auto whitespace-nowrap"
@@ -341,10 +329,6 @@ exports[`SignMessage should render for ledger wallets 1`] = `
                         for="signatory-address"
                       >
                         Signatory
-                        <div
-                          class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
-                          data-testid="FormLabel__required"
-                        />
                       </label>
                       <div
                         class="fixed invisible w-auto whitespace-nowrap"
@@ -391,10 +375,6 @@ exports[`SignMessage should render for ledger wallets 1`] = `
                         for="message"
                       >
                         Message
-                        <div
-                          class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
-                          data-testid="FormLabel__required"
-                        />
                       </label>
                       <div
                         class="fixed invisible w-auto whitespace-nowrap"
@@ -553,10 +533,6 @@ exports[`SignMessage should render signed step with wallet alias 1`] = `
         for="json-signature"
       >
         Signature
-        <div
-          class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
-          data-testid="FormLabel__required"
-        />
       </label>
       <div
         class="fixed invisible w-auto whitespace-nowrap"
