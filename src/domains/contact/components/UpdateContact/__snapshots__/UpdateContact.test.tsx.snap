@@ -71,10 +71,6 @@ exports[`UpdateContact should render 1`] = `
                     for="name"
                   >
                     Name
-                    <div
-                      class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
-                      data-testid="FormLabel__required"
-                    />
                   </label>
                   <div
                     class="fixed invisible w-auto whitespace-nowrap"
@@ -108,10 +104,6 @@ exports[`UpdateContact should render 1`] = `
                       for="network"
                     >
                       Cryptoasset
-                      <div
-                        class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
-                        data-testid="FormLabel__required"
-                      />
                     </label>
                     <div
                       class="relative w-full"
@@ -217,10 +209,6 @@ exports[`UpdateContact should render 1`] = `
                       for="address"
                     >
                       Address
-                      <div
-                        class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
-                        data-testid="FormLabel__required"
-                      />
                     </label>
                     <div
                       class="fixed invisible w-auto whitespace-nowrap"
@@ -317,11 +305,11 @@ exports[`UpdateContact should render 1`] = `
                         class="font-semibold"
                       >
                         <div
-                          class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap"
+                          class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap space-x-2"
                         >
                           <span
-                            class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-text font-semibold text-base"
-                            data-testid="address__wallet-address"
+                            class="inline-flex overflow-hidden text-theme-text font-semibold text-base"
+                            data-testid="Address__address"
                           >
                             D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib
                           </span>

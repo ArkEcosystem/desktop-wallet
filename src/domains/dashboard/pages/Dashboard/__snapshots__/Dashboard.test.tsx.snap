@@ -329,10 +329,13 @@ exports[`Dashboard should render 1`] = `
                       <div
                         class="group"
                       >
-                        <div
-                          class="ControlButton__ControlButtonStyled-sc-1xp1l1a-0 kMCise"
+                        <button
+                          class="ControlButton__ControlButtonStyled-sc-1xp1l1a-0 gPBHgx group"
                           data-testid="LayoutControls__list--icon"
                         >
+                          <div
+                            class="absolute inset-0 -mx-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                          />
                           <div
                             class="sc-bdfBwQ iyevwF"
                             height="20"
@@ -342,7 +345,7 @@ exports[`Dashboard should render 1`] = `
                               list-view.svg
                             </svg>
                           </div>
-                        </div>
+                        </button>
                       </div>
                     </div>
                     <div
@@ -351,10 +354,13 @@ exports[`Dashboard should render 1`] = `
                       <div
                         class="group"
                       >
-                        <div
-                          class="ControlButton__ControlButtonStyled-sc-1xp1l1a-0 gCTrBm"
+                        <button
+                          class="ControlButton__ControlButtonStyled-sc-1xp1l1a-0 gPBHgx group active"
                           data-testid="LayoutControls__grid--icon"
                         >
+                          <div
+                            class="absolute inset-0 -mx-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                          />
                           <div
                             class="sc-bdfBwQ iyevwF"
                             height="20"
@@ -364,7 +370,7 @@ exports[`Dashboard should render 1`] = `
                               grid-view.svg
                             </svg>
                           </div>
-                        </div>
+                        </button>
                       </div>
                     </div>
                   </div>
@@ -382,9 +388,12 @@ exports[`Dashboard should render 1`] = `
                         <div
                           class="group"
                         >
-                          <div
-                            class="ControlButton__ControlButtonStyled-sc-1xp1l1a-0 kMCise"
+                          <button
+                            class="ControlButton__ControlButtonStyled-sc-1xp1l1a-0 gPBHgx group"
                           >
+                            <div
+                              class="absolute inset-0 -mx-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                            />
                             <div
                               class="flex items-center justify-center w-5 h-5"
                             >
@@ -398,7 +407,7 @@ exports[`Dashboard should render 1`] = `
                                 </svg>
                               </div>
                             </div>
-                          </div>
+                          </button>
                         </div>
                       </span>
                     </span>
@@ -573,14 +582,9 @@ exports[`Dashboard should render 1`] = `
                               33.75089801 DARK
                             </span>
                             <span
-                              class="mt-1 text-xs font-semibold text-theme-secondary-text no-ligatures overflow-hidden whitespace-nowrap"
+                              class="inline-flex overflow-hidden mt-1 text-xs font-semibold text-theme-secondary-text no-ligatures whitespace-nowrap"
                             >
-                              <span
-                                class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap"
-                                data-testid="TruncateMiddle"
-                              >
-                                D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD
-                              </span>
+                              D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD
                             </span>
                           </div>
                           <div
@@ -659,14 +663,9 @@ exports[`Dashboard should render 1`] = `
                               57.68 DARK
                             </span>
                             <span
-                              class="mt-1 text-xs font-semibold text-theme-secondary-text no-ligatures overflow-hidden whitespace-nowrap"
+                              class="inline-flex overflow-hidden mt-1 text-xs font-semibold text-theme-secondary-text no-ligatures whitespace-nowrap"
                             >
-                              <span
-                                class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap"
-                                data-testid="TruncateMiddle"
-                              >
-                                D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb
-                              </span>
+                              D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb
                             </span>
                           </div>
                           <div
@@ -760,14 +759,9 @@ exports[`Dashboard should render 1`] = `
                               50,114.21127898 ARK
                             </span>
                             <span
-                              class="mt-1 text-xs font-semibold text-theme-secondary-text no-ligatures overflow-hidden whitespace-nowrap"
+                              class="inline-flex overflow-hidden mt-1 text-xs font-semibold text-theme-secondary-text no-ligatures whitespace-nowrap"
                             >
-                              <span
-                                class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap"
-                                data-testid="TruncateMiddle"
-                              >
-                                AdVSe37niA3uFUPgCgMUH2tMsHF4LpLoiX
-                              </span>
+                              AdVSe37niA3uFUPgCgMUH2tMsHF4LpLoiX
                             </span>
                           </div>
                           <div
@@ -947,7 +941,7 @@ exports[`Dashboard should render 1`] = `
                       </div>
                     </th>
                     <th
-                      class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder w-96 min-w-96"
+                      class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder w-20 min-w-20"
                       colspan="1"
                       data-testid="table__th--2"
                       role="columnheader"
@@ -1121,11 +1115,11 @@ exports[`Dashboard should render 1`] = `
                           class="w-40 xl:w-full"
                         >
                           <div
-                            class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap"
+                            class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap space-x-2"
                           >
                             <span
-                              class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-text font-semibold text-base"
-                              data-testid="address__wallet-address"
+                              class="inline-flex overflow-hidden text-theme-text font-semibold text-base"
+                              data-testid="Address__address"
                             >
                               D5pVkhZbSb4UNXvfmF6j7zdau8yGxfKwSv
                             </span>
@@ -1285,11 +1279,11 @@ exports[`Dashboard should render 1`] = `
                           class="w-40 xl:w-full"
                         >
                           <div
-                            class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap"
+                            class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap space-x-2"
                           >
                             <span
-                              class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-text font-semibold text-base"
-                              data-testid="address__wallet-address"
+                              class="inline-flex overflow-hidden text-theme-text font-semibold text-base"
+                              data-testid="Address__address"
                             >
                               D5pVkhZbSb4UNXvfmF6j7zdau8yGxfKwSv
                             </span>
@@ -1449,11 +1443,11 @@ exports[`Dashboard should render 1`] = `
                           class="w-40 xl:w-full"
                         >
                           <div
-                            class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap"
+                            class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap space-x-2"
                           >
                             <span
-                              class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-text font-semibold text-base"
-                              data-testid="address__wallet-address"
+                              class="inline-flex overflow-hidden text-theme-text font-semibold text-base"
+                              data-testid="Address__address"
                             >
                               DKY5eyQUKKYyaCfPp6MUv3Y4FW6EbNF53A
                             </span>
@@ -1613,11 +1607,11 @@ exports[`Dashboard should render 1`] = `
                           class="w-40 xl:w-full"
                         >
                           <div
-                            class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap"
+                            class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap space-x-2"
                           >
                             <span
-                              class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-text font-semibold text-base"
-                              data-testid="address__wallet-address"
+                              class="inline-flex overflow-hidden text-theme-text font-semibold text-base"
+                              data-testid="Address__address"
                             >
                               DKY5eyQUKKYyaCfPp6MUv3Y4FW6EbNF53A
                             </span>
@@ -2038,10 +2032,13 @@ exports[`Dashboard should render loading state when profile is syncing 1`] = `
                       <div
                         class="group"
                       >
-                        <div
-                          class="ControlButton__ControlButtonStyled-sc-1xp1l1a-0 kMCise"
+                        <button
+                          class="ControlButton__ControlButtonStyled-sc-1xp1l1a-0 gPBHgx group"
                           data-testid="LayoutControls__list--icon"
                         >
+                          <div
+                            class="absolute inset-0 -mx-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                          />
                           <div
                             class="sc-bdfBwQ iyevwF"
                             height="20"
@@ -2051,7 +2048,7 @@ exports[`Dashboard should render loading state when profile is syncing 1`] = `
                               list-view.svg
                             </svg>
                           </div>
-                        </div>
+                        </button>
                       </div>
                     </div>
                     <div
@@ -2060,10 +2057,13 @@ exports[`Dashboard should render loading state when profile is syncing 1`] = `
                       <div
                         class="group"
                       >
-                        <div
-                          class="ControlButton__ControlButtonStyled-sc-1xp1l1a-0 gCTrBm"
+                        <button
+                          class="ControlButton__ControlButtonStyled-sc-1xp1l1a-0 gPBHgx group active"
                           data-testid="LayoutControls__grid--icon"
                         >
+                          <div
+                            class="absolute inset-0 -mx-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                          />
                           <div
                             class="sc-bdfBwQ iyevwF"
                             height="20"
@@ -2073,7 +2073,7 @@ exports[`Dashboard should render loading state when profile is syncing 1`] = `
                               grid-view.svg
                             </svg>
                           </div>
-                        </div>
+                        </button>
                       </div>
                     </div>
                   </div>
@@ -2091,9 +2091,12 @@ exports[`Dashboard should render loading state when profile is syncing 1`] = `
                         <div
                           class="group"
                         >
-                          <div
-                            class="ControlButton__ControlButtonStyled-sc-1xp1l1a-0 kMCise"
+                          <button
+                            class="ControlButton__ControlButtonStyled-sc-1xp1l1a-0 gPBHgx group"
                           >
+                            <div
+                              class="absolute inset-0 -mx-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                            />
                             <div
                               class="flex items-center justify-center w-5 h-5"
                             >
@@ -2107,7 +2110,7 @@ exports[`Dashboard should render loading state when profile is syncing 1`] = `
                                 </svg>
                               </div>
                             </div>
-                          </div>
+                          </button>
                         </div>
                       </span>
                     </span>
@@ -2282,14 +2285,9 @@ exports[`Dashboard should render loading state when profile is syncing 1`] = `
                               33.75089801 DARK
                             </span>
                             <span
-                              class="mt-1 text-xs font-semibold text-theme-secondary-text no-ligatures overflow-hidden whitespace-nowrap"
+                              class="inline-flex overflow-hidden mt-1 text-xs font-semibold text-theme-secondary-text no-ligatures whitespace-nowrap"
                             >
-                              <span
-                                class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap"
-                                data-testid="TruncateMiddle"
-                              >
-                                D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD
-                              </span>
+                              D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD
                             </span>
                           </div>
                           <div
@@ -2368,14 +2366,9 @@ exports[`Dashboard should render loading state when profile is syncing 1`] = `
                               57.68 DARK
                             </span>
                             <span
-                              class="mt-1 text-xs font-semibold text-theme-secondary-text no-ligatures overflow-hidden whitespace-nowrap"
+                              class="inline-flex overflow-hidden mt-1 text-xs font-semibold text-theme-secondary-text no-ligatures whitespace-nowrap"
                             >
-                              <span
-                                class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap"
-                                data-testid="TruncateMiddle"
-                              >
-                                D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb
-                              </span>
+                              D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb
                             </span>
                           </div>
                           <div
@@ -2469,14 +2462,9 @@ exports[`Dashboard should render loading state when profile is syncing 1`] = `
                               50,114.21127898 ARK
                             </span>
                             <span
-                              class="mt-1 text-xs font-semibold text-theme-secondary-text no-ligatures overflow-hidden whitespace-nowrap"
+                              class="inline-flex overflow-hidden mt-1 text-xs font-semibold text-theme-secondary-text no-ligatures whitespace-nowrap"
                             >
-                              <span
-                                class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap"
-                                data-testid="TruncateMiddle"
-                              >
-                                AdVSe37niA3uFUPgCgMUH2tMsHF4LpLoiX
-                              </span>
+                              AdVSe37niA3uFUPgCgMUH2tMsHF4LpLoiX
                             </span>
                           </div>
                           <div
@@ -2656,7 +2644,7 @@ exports[`Dashboard should render loading state when profile is syncing 1`] = `
                       </div>
                     </th>
                     <th
-                      class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder w-96 min-w-96"
+                      class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder w-20 min-w-20"
                       colspan="1"
                       data-testid="table__th--2"
                       role="columnheader"
@@ -4792,10 +4780,13 @@ exports[`Dashboard should show warning for errored networks 1`] = `
                       <div
                         class="group"
                       >
-                        <div
-                          class="ControlButton__ControlButtonStyled-sc-1xp1l1a-0 kMCise"
+                        <button
+                          class="ControlButton__ControlButtonStyled-sc-1xp1l1a-0 gPBHgx group"
                           data-testid="LayoutControls__list--icon"
                         >
+                          <div
+                            class="absolute inset-0 -mx-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                          />
                           <div
                             class="sc-bdfBwQ iyevwF"
                             height="20"
@@ -4805,7 +4796,7 @@ exports[`Dashboard should show warning for errored networks 1`] = `
                               list-view.svg
                             </svg>
                           </div>
-                        </div>
+                        </button>
                       </div>
                     </div>
                     <div
@@ -4814,10 +4805,13 @@ exports[`Dashboard should show warning for errored networks 1`] = `
                       <div
                         class="group"
                       >
-                        <div
-                          class="ControlButton__ControlButtonStyled-sc-1xp1l1a-0 gCTrBm"
+                        <button
+                          class="ControlButton__ControlButtonStyled-sc-1xp1l1a-0 gPBHgx group active"
                           data-testid="LayoutControls__grid--icon"
                         >
+                          <div
+                            class="absolute inset-0 -mx-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                          />
                           <div
                             class="sc-bdfBwQ iyevwF"
                             height="20"
@@ -4827,7 +4821,7 @@ exports[`Dashboard should show warning for errored networks 1`] = `
                               grid-view.svg
                             </svg>
                           </div>
-                        </div>
+                        </button>
                       </div>
                     </div>
                   </div>
@@ -4845,9 +4839,12 @@ exports[`Dashboard should show warning for errored networks 1`] = `
                         <div
                           class="group"
                         >
-                          <div
-                            class="ControlButton__ControlButtonStyled-sc-1xp1l1a-0 kMCise"
+                          <button
+                            class="ControlButton__ControlButtonStyled-sc-1xp1l1a-0 gPBHgx group"
                           >
+                            <div
+                              class="absolute inset-0 -mx-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                            />
                             <div
                               class="flex items-center justify-center w-5 h-5"
                             >
@@ -4861,7 +4858,7 @@ exports[`Dashboard should show warning for errored networks 1`] = `
                                 </svg>
                               </div>
                             </div>
-                          </div>
+                          </button>
                         </div>
                       </span>
                     </span>
@@ -5036,14 +5033,9 @@ exports[`Dashboard should show warning for errored networks 1`] = `
                               33.75089801 DARK
                             </span>
                             <span
-                              class="mt-1 text-xs font-semibold text-theme-secondary-text no-ligatures overflow-hidden whitespace-nowrap"
+                              class="inline-flex overflow-hidden mt-1 text-xs font-semibold text-theme-secondary-text no-ligatures whitespace-nowrap"
                             >
-                              <span
-                                class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap"
-                                data-testid="TruncateMiddle"
-                              >
-                                D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD
-                              </span>
+                              D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD
                             </span>
                           </div>
                           <div
@@ -5122,14 +5114,9 @@ exports[`Dashboard should show warning for errored networks 1`] = `
                               57.68 DARK
                             </span>
                             <span
-                              class="mt-1 text-xs font-semibold text-theme-secondary-text no-ligatures overflow-hidden whitespace-nowrap"
+                              class="inline-flex overflow-hidden mt-1 text-xs font-semibold text-theme-secondary-text no-ligatures whitespace-nowrap"
                             >
-                              <span
-                                class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap"
-                                data-testid="TruncateMiddle"
-                              >
-                                D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb
-                              </span>
+                              D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb
                             </span>
                           </div>
                           <div
@@ -5223,14 +5210,9 @@ exports[`Dashboard should show warning for errored networks 1`] = `
                               50,114.21127898 ARK
                             </span>
                             <span
-                              class="mt-1 text-xs font-semibold text-theme-secondary-text no-ligatures overflow-hidden whitespace-nowrap"
+                              class="inline-flex overflow-hidden mt-1 text-xs font-semibold text-theme-secondary-text no-ligatures whitespace-nowrap"
                             >
-                              <span
-                                class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap"
-                                data-testid="TruncateMiddle"
-                              >
-                                AdVSe37niA3uFUPgCgMUH2tMsHF4LpLoiX
-                              </span>
+                              AdVSe37niA3uFUPgCgMUH2tMsHF4LpLoiX
                             </span>
                           </div>
                           <div
@@ -5410,7 +5392,7 @@ exports[`Dashboard should show warning for errored networks 1`] = `
                       </div>
                     </th>
                     <th
-                      class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder w-96 min-w-96"
+                      class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder w-20 min-w-20"
                       colspan="1"
                       data-testid="table__th--2"
                       role="columnheader"
@@ -5584,11 +5566,11 @@ exports[`Dashboard should show warning for errored networks 1`] = `
                           class="w-40 xl:w-full"
                         >
                           <div
-                            class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap"
+                            class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap space-x-2"
                           >
                             <span
-                              class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-text font-semibold text-base"
-                              data-testid="address__wallet-address"
+                              class="inline-flex overflow-hidden text-theme-text font-semibold text-base"
+                              data-testid="Address__address"
                             >
                               D5pVkhZbSb4UNXvfmF6j7zdau8yGxfKwSv
                             </span>
@@ -5748,11 +5730,11 @@ exports[`Dashboard should show warning for errored networks 1`] = `
                           class="w-40 xl:w-full"
                         >
                           <div
-                            class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap"
+                            class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap space-x-2"
                           >
                             <span
-                              class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-text font-semibold text-base"
-                              data-testid="address__wallet-address"
+                              class="inline-flex overflow-hidden text-theme-text font-semibold text-base"
+                              data-testid="Address__address"
                             >
                               D5pVkhZbSb4UNXvfmF6j7zdau8yGxfKwSv
                             </span>
@@ -5912,11 +5894,11 @@ exports[`Dashboard should show warning for errored networks 1`] = `
                           class="w-40 xl:w-full"
                         >
                           <div
-                            class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap"
+                            class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap space-x-2"
                           >
                             <span
-                              class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-text font-semibold text-base"
-                              data-testid="address__wallet-address"
+                              class="inline-flex overflow-hidden text-theme-text font-semibold text-base"
+                              data-testid="Address__address"
                             >
                               DKY5eyQUKKYyaCfPp6MUv3Y4FW6EbNF53A
                             </span>
@@ -6076,11 +6058,11 @@ exports[`Dashboard should show warning for errored networks 1`] = `
                           class="w-40 xl:w-full"
                         >
                           <div
-                            class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap"
+                            class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap space-x-2"
                           >
                             <span
-                              class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-text font-semibold text-base"
-                              data-testid="address__wallet-address"
+                              class="inline-flex overflow-hidden text-theme-text font-semibold text-base"
+                              data-testid="Address__address"
                             >
                               DKY5eyQUKKYyaCfPp6MUv3Y4FW6EbNF53A
                             </span>

@@ -155,7 +155,7 @@ const CreateProfileForm = ({
 						</div>
 
 						<FormField name="password">
-							<FormLabel label={t("SETTINGS.GENERAL.PERSONAL.PASSWORD")} required={false} optional />
+							<FormLabel label={t("SETTINGS.GENERAL.PERSONAL.PASSWORD")} optional />
 							<InputPassword
 								ref={register(passwordValidation.password())}
 								onChange={() => {
@@ -169,7 +169,6 @@ const CreateProfileForm = ({
 						<FormField name="confirmPassword">
 							<FormLabel
 								label={t("SETTINGS.GENERAL.PERSONAL.CONFIRM_PASSWORD")}
-								required={!!watch("password")}
 								optional={!watch("password")}
 							/>
 							<InputPassword

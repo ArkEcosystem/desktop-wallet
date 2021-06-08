@@ -27,11 +27,7 @@ export const EncryptPasswordStep = () => {
 			<Alert variant="warning">{t("WALLETS.PAGE_IMPORT_WALLET.ENCRYPT_PASSWORD_STEP.WARNING")}</Alert>
 
 			<FormField name="encryptionPassword">
-				<FormLabel
-					label={t("WALLETS.PAGE_IMPORT_WALLET.ENCRYPT_PASSWORD_STEP.PASSWORD_LABEL")}
-					required={false}
-					optional
-				/>
+				<FormLabel label={t("WALLETS.PAGE_IMPORT_WALLET.ENCRYPT_PASSWORD_STEP.PASSWORD_LABEL")} optional />
 				<InputPassword
 					ref={register(password.password())}
 					onChange={() => {
@@ -45,7 +41,6 @@ export const EncryptPasswordStep = () => {
 			<FormField name="confirmEncryptionPassword">
 				<FormLabel
 					label={t("WALLETS.PAGE_IMPORT_WALLET.ENCRYPT_PASSWORD_STEP.CONFIRM_PASSWORD_LABEL")}
-					required={!!encryptionPassword}
 					optional={!encryptionPassword}
 				/>
 				<InputPassword ref={register(password.confirmPassword(watch("encryptionPassword")))} />

@@ -4,12 +4,12 @@ import { Card } from "app/components/Card";
 import { Circle } from "app/components/Circle";
 import { DropdownOption } from "app/components/Dropdown";
 import { Icon } from "app/components/Icon";
+import { TruncateMiddleDynamic } from "app/components/TruncateMiddleDynamic";
 import { WalletIcons } from "app/components/WalletIcons";
 import { useWalletAlias } from "app/hooks";
 import { useActiveProfile } from "app/hooks";
-import { useTextTruncate } from "app/hooks/use-text-truncate";
 import { NetworkIcon } from "domains/network/components/NetworkIcon";
-import React, { useRef } from "react";
+import React from "react";
 import { useTranslation } from "react-i18next";
 import { useHistory } from "react-router-dom";
 
@@ -34,9 +34,6 @@ export const WalletCard = ({
 	onSelect,
 }: WalletCardProps) => {
 	const activeProfile = useActiveProfile();
-	const ref = useRef(null);
-
-	const [TruncatedAddress] = useTextTruncate({ text: wallet?.address(), parentRef: ref });
 
 	const history = useHistory();
 	const { t } = useTranslation();
@@ -120,12 +117,10 @@ export const WalletCard = ({
 						className="mt-auto text-lg font-bold text-theme-text"
 					/>
 
-					<span
-						ref={ref}
-						className="mt-1 text-xs font-semibold text-theme-secondary-text no-ligatures overflow-hidden whitespace-nowrap"
-					>
-						<TruncatedAddress />
-					</span>
+					<TruncateMiddleDynamic
+						value={wallet?.address()}
+						className="mt-1 text-xs font-semibold text-theme-secondary-text no-ligatures whitespace-nowrap"
+					/>
 				</div>
 			</Card>
 		</div>

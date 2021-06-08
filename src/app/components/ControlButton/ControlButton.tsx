@@ -2,55 +2,44 @@ import cn from "classnames";
 import React from "react";
 import tw, { css, styled } from "twin.macro";
 
-const ControlButtonStyled = styled.div<{ isActive?: boolean; noBorder?: boolean; disabled?: boolean }>`
-	${tw`flex items-center justify-center transition-colors duration-200 relative cursor-pointer py-2`}
+const ControlButtonStyled = styled.button<{ noBorder?: boolean; disabled?: boolean }>`
+	${tw`flex items-center justify-center font-semibold transition-colors duration-200 relative cursor-pointer py-2 text-theme-primary-300 dark:text-theme-secondary-600 border-t-2 border-b-2 border-transparent focus:outline-none`}
+	${tw`disabled:(cursor-not-allowed text-theme-secondary-400 dark:text-theme-secondary-700)`}
 
 	${({ noBorder }) => {
 		if (!noBorder) {
-			return tw`px-3`;
+			return tw`px-2.5 mx-0.5`;
 		}
 	}}
 
-	${({ isActive, noBorder, disabled }) => {
-		if (disabled) {
-			return tw`px-3 cursor-not-allowed text-theme-secondary-400 dark:text-theme-secondary-700`;
+	${({ disabled }) => {
+		if (!disabled) {
+			return css`
+				&:hover {
+					color: var(--theme-color-primary-400);
+				}
+			`;
 		}
+	}}
 
-		const styles: any[] = [];
-
-		if (!noBorder) {
-			styles.push(
-				css`
-					&:after {
-						${tw`transition-opacity duration-200 absolute inset-x-0 bg-theme-primary-400 rounded opacity-0 group-hover:opacity-100`}
-						content: "";
-						height: 3px;
-						bottom: -3px;
-					}
-				`,
-			);
+	${({ noBorder, disabled }) => {
+		if (!noBorder && !disabled) {
+			return css`
+				&:hover {
+					border-bottom-color: var(--theme-color-primary-400);
+					color: var(--theme-color-primary-400);
+				}
+				&.active {
+					border-bottom-color: var(--theme-color-primary-600);
+					color: var(--theme-color-primary-600);
+				}
+			`;
 		}
-
-		if (isActive) {
-			styles.push(
-				tw`text-theme-primary-600`,
-				css`
-					&:after {
-						opacity: 1;
-						${tw`bg-theme-primary-600`}
-					}
-				`,
-			);
-		} else {
-			styles.push(tw`text-theme-primary-300 dark:text-theme-secondary-600 hover:text-theme-primary-400`);
-		}
-
-		return styles;
 	}}
 `;
 
 interface ControlButtonProps {
-	isActive?: boolean;
+	className?: string;
 	isChanged?: boolean;
 	noBorder?: boolean;
 	disabled?: boolean;
@@ -58,9 +47,9 @@ interface ControlButtonProps {
 	onClick?: any;
 }
 
-export const ControlButton = ({ isChanged, children, ...props }: ControlButtonProps) => (
+export const ControlButton = ({ isChanged, children, className, ...props }: ControlButtonProps) => (
 	<div className="group">
-		<ControlButtonStyled {...props}>
+		<ControlButtonStyled className={cn("group", className)} {...props}>
 			{isChanged && (
 				<div
 					className={cn(
@@ -71,6 +60,7 @@ export const ControlButton = ({ isChanged, children, ...props }: ControlButtonPr
 					<div className="w-2 h-2 rounded-full bg-theme-primary-500" />
 				</div>
 			)}
+			<div className="absolute inset-0 -mx-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible" />
 			{children}
 		</ControlButtonStyled>
 	</div>
