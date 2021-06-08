@@ -90,10 +90,6 @@ exports[`CreateProfile should fail password confirmation 1`] = `
                         for="name"
                       >
                         Profile Name
-                        <div
-                          class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
-                          data-testid="FormLabel__required"
-                        />
                       </label>
                       <div
                         class="fixed invisible w-auto whitespace-nowrap"
@@ -228,10 +224,6 @@ exports[`CreateProfile should fail password confirmation 1`] = `
                     for="confirmPassword"
                   >
                     Confirm Password
-                    <div
-                      class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
-                      data-testid="FormLabel__required"
-                    />
                   </label>
                   <div
                     class="fixed invisible w-auto whitespace-nowrap"
@@ -304,10 +296,6 @@ exports[`CreateProfile should fail password confirmation 1`] = `
                     for="currency"
                   >
                     Currency
-                    <div
-                      class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
-                      data-testid="FormLabel__required"
-                    />
                   </label>
                   <div
                     class="relative w-full"
@@ -836,10 +824,6 @@ exports[`CreateProfile should not be able to create new profile if name already 
                         for="name"
                       >
                         Profile Name
-                        <div
-                          class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
-                          data-testid="FormLabel__required"
-                        />
                       </label>
                       <div
                         class="fixed invisible w-auto whitespace-nowrap"
@@ -1056,10 +1040,6 @@ exports[`CreateProfile should not be able to create new profile if name already 
                     for="currency"
                   >
                     Currency
-                    <div
-                      class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
-                      data-testid="FormLabel__required"
-                    />
                   </label>
                   <div
                     class="relative w-full"
@@ -1588,10 +1568,6 @@ exports[`CreateProfile should not be able to create new profile if name consists
                         for="name"
                       >
                         Profile Name
-                        <div
-                          class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
-                          data-testid="FormLabel__required"
-                        />
                       </label>
                       <div
                         class="fixed invisible w-auto whitespace-nowrap"
@@ -1808,10 +1784,6 @@ exports[`CreateProfile should not be able to create new profile if name consists
                     for="currency"
                   >
                     Currency
-                    <div
-                      class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
-                      data-testid="FormLabel__required"
-                    />
                   </label>
                   <div
                     class="relative w-full"
@@ -2340,10 +2312,6 @@ exports[`CreateProfile should not be able to create new profile if name is too l
                         for="name"
                       >
                         Profile Name
-                        <div
-                          class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
-                          data-testid="FormLabel__required"
-                        />
                       </label>
                       <div
                         class="fixed invisible w-auto whitespace-nowrap"
@@ -2560,10 +2528,6 @@ exports[`CreateProfile should not be able to create new profile if name is too l
                     for="currency"
                   >
                     Currency
-                    <div
-                      class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
-                      data-testid="FormLabel__required"
-                    />
                   </label>
                   <div
                     class="relative w-full"
@@ -3092,10 +3056,6 @@ exports[`CreateProfile should not update the uploaded avatar when removing focus
                         for="name"
                       >
                         Profile Name
-                        <div
-                          class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
-                          data-testid="FormLabel__required"
-                        />
                       </label>
                       <div
                         class="fixed invisible w-auto whitespace-nowrap"
@@ -3333,10 +3293,6 @@ exports[`CreateProfile should not update the uploaded avatar when removing focus
                     for="currency"
                   >
                     Currency
-                    <div
-                      class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
-                      data-testid="FormLabel__required"
-                    />
                   </label>
                   <div
                     class="relative w-full"
@@ -3619,10 +3575,6 @@ exports[`CreateProfile should not upload avatar image 1`] = `
                         for="name"
                       >
                         Profile Name
-                        <div
-                          class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
-                          data-testid="FormLabel__required"
-                        />
                       </label>
                       <div
                         class="fixed invisible w-auto whitespace-nowrap"
@@ -3820,10 +3772,6 @@ exports[`CreateProfile should not upload avatar image 1`] = `
                     for="currency"
                   >
                     Currency
-                    <div
-                      class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
-                      data-testid="FormLabel__required"
-                    />
                   </label>
                   <div
                     class="relative w-full"
@@ -4351,10 +4299,6 @@ exports[`CreateProfile should render 1`] = `
                         for="name"
                       >
                         Profile Name
-                        <div
-                          class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
-                          data-testid="FormLabel__required"
-                        />
                       </label>
                       <div
                         class="fixed invisible w-auto whitespace-nowrap"
@@ -4552,10 +4496,6 @@ exports[`CreateProfile should render 1`] = `
                     for="currency"
                   >
                     Currency
-                    <div
-                      class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
-                      data-testid="FormLabel__required"
-                    />
                   </label>
                   <div
                     class="relative w-full"
@@ -4838,10 +4778,6 @@ exports[`CreateProfile should store profile 1`] = `
                         for="name"
                       >
                         Profile Name
-                        <div
-                          class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
-                          data-testid="FormLabel__required"
-                        />
                       </label>
                       <div
                         class="fixed invisible w-auto whitespace-nowrap"
@@ -5060,10 +4996,6 @@ exports[`CreateProfile should store profile 1`] = `
                     for="currency"
                   >
                     Currency
-                    <div
-                      class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
-                      data-testid="FormLabel__required"
-                    />
                   </label>
                   <div
                     class="relative w-full"
@@ -5591,10 +5523,6 @@ exports[`CreateProfile should store profile with password 1`] = `
                         for="name"
                       >
                         Profile Name
-                        <div
-                          class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
-                          data-testid="FormLabel__required"
-                        />
                       </label>
                       <div
                         class="fixed invisible w-auto whitespace-nowrap"
@@ -5729,10 +5657,6 @@ exports[`CreateProfile should store profile with password 1`] = `
                     for="confirmPassword"
                   >
                     Confirm Password
-                    <div
-                      class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
-                      data-testid="FormLabel__required"
-                    />
                   </label>
                   <div
                     class="fixed invisible w-auto whitespace-nowrap"
@@ -5790,10 +5714,6 @@ exports[`CreateProfile should store profile with password 1`] = `
                     for="currency"
                   >
                     Currency
-                    <div
-                      class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
-                      data-testid="FormLabel__required"
-                    />
                   </label>
                   <div
                     class="relative w-full"
@@ -6321,10 +6241,6 @@ exports[`CreateProfile should update the avatar when removing focus from name in
                         for="name"
                       >
                         Profile Name
-                        <div
-                          class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
-                          data-testid="FormLabel__required"
-                        />
                       </label>
                       <div
                         class="fixed invisible w-auto whitespace-nowrap"
@@ -6529,10 +6445,6 @@ exports[`CreateProfile should update the avatar when removing focus from name in
                     for="currency"
                   >
                     Currency
-                    <div
-                      class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
-                      data-testid="FormLabel__required"
-                    />
                   </label>
                   <div
                     class="relative w-full"
@@ -6815,10 +6727,6 @@ exports[`CreateProfile should update the avatar when removing focus from name in
                         for="name"
                       >
                         Profile Name
-                        <div
-                          class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
-                          data-testid="FormLabel__required"
-                        />
                       </label>
                       <div
                         class="fixed invisible w-auto whitespace-nowrap"
@@ -7035,10 +6943,6 @@ exports[`CreateProfile should update the avatar when removing focus from name in
                     for="currency"
                   >
                     Currency
-                    <div
-                      class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
-                      data-testid="FormLabel__required"
-                    />
                   </label>
                   <div
                     class="relative w-full"
@@ -7321,10 +7225,6 @@ exports[`CreateProfile should upload and remove avatar image 1`] = `
                         for="name"
                       >
                         Profile Name
-                        <div
-                          class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
-                          data-testid="FormLabel__required"
-                        />
                       </label>
                       <div
                         class="fixed invisible w-auto whitespace-nowrap"
@@ -7522,10 +7422,6 @@ exports[`CreateProfile should upload and remove avatar image 1`] = `
                     for="currency"
                   >
                     Currency
-                    <div
-                      class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
-                      data-testid="FormLabel__required"
-                    />
                   </label>
                   <div
                     class="relative w-full"

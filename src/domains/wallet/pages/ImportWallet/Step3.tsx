@@ -55,7 +55,7 @@ export const ThirdStep = ({
 			</TransactionDetail>
 
 			<FormField name="name">
-				<FormLabel label={t("WALLETS.WALLET_NAME")} required={false} optional />
+				<FormLabel label={t("WALLETS.WALLET_NAME")} optional />
 				<InputDefault
 					ref={register({
 						maxLength: {

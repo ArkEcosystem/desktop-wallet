@@ -360,10 +360,6 @@ exports[`SendTransfer should display disabled address selection input if selecte
                           for="network"
                         >
                           Cryptoasset
-                          <div
-                            class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
-                            data-testid="FormLabel__required"
-                          />
                         </label>
                         <div>
                           <div
@@ -478,10 +474,6 @@ exports[`SendTransfer should display disabled address selection input if selecte
                           for="senderAddress"
                         >
                           Sender
-                          <div
-                            class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
-                            data-testid="FormLabel__required"
-                          />
                         </label>
                         <div
                           data-testid="sender-address"
@@ -628,10 +620,6 @@ exports[`SendTransfer should display disabled address selection input if selecte
                                   for="recipientAddress"
                                 >
                                   Recipient
-                                  <div
-                                    class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
-                                    data-testid="FormLabel__required"
-                                  />
                                 </label>
                                 <div>
                                   <div
@@ -750,10 +738,6 @@ exports[`SendTransfer should display disabled address selection input if selecte
                                   for="amount"
                                 >
                                   Amount
-                                  <div
-                                    class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
-                                    data-testid="FormLabel__required"
-                                  />
                                 </label>
                                 <div
                                   class="flex space-x-2"
@@ -816,6 +800,12 @@ exports[`SendTransfer should display disabled address selection input if selecte
                           for="smartbridge"
                         >
                           Smartbridge
+                          <span
+                            class="ml-1 text-theme-secondary-500 dark:text-theme-secondary-700"
+                            data-testid="FormLabel__optional"
+                          >
+                            optional
+                          </span>
                         </label>
                         <div
                           class="fixed invisible w-auto whitespace-nowrap"
@@ -862,10 +852,6 @@ exports[`SendTransfer should display disabled address selection input if selecte
                           for="fee"
                         >
                           Transaction Fee
-                          <div
-                            class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
-                            data-testid="FormLabel__required"
-                          />
                         </label>
                         <div
                           class="flex space-x-2"
@@ -2256,10 +2242,6 @@ exports[`SendTransfer should error if wrong mnemonic 1`] = `
                         for="mnemonic"
                       >
                         Mnemonic
-                        <div
-                          class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
-                          data-testid="FormLabel__required"
-                        />
                       </label>
                       <div
                         class="fixed invisible w-auto whitespace-nowrap"
@@ -2411,10 +2393,6 @@ exports[`SendTransfer should render 1st step with custom deeplink values and use
           for="network"
         >
           Cryptoasset
-          <div
-            class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
-            data-testid="FormLabel__required"
-          />
         </label>
         <div>
           <div
@@ -2483,10 +2461,6 @@ exports[`SendTransfer should render 1st step with custom deeplink values and use
           for="senderAddress"
         >
           Sender
-          <div
-            class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
-            data-testid="FormLabel__required"
-          />
         </label>
         <div
           data-testid="sender-address"
@@ -2633,10 +2607,6 @@ exports[`SendTransfer should render 1st step with custom deeplink values and use
                   for="recipientAddress"
                 >
                   Recipient
-                  <div
-                    class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
-                    data-testid="FormLabel__required"
-                  />
                 </label>
                 <div>
                   <div
@@ -2755,10 +2725,6 @@ exports[`SendTransfer should render 1st step with custom deeplink values and use
                   for="amount"
                 >
                   Amount
-                  <div
-                    class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
-                    data-testid="FormLabel__required"
-                  />
                 </label>
                 <div
                   class="flex space-x-2"
@@ -2821,6 +2787,12 @@ exports[`SendTransfer should render 1st step with custom deeplink values and use
           for="smartbridge"
         >
           Smartbridge
+          <span
+            class="ml-1 text-theme-secondary-500 dark:text-theme-secondary-700"
+            data-testid="FormLabel__optional"
+          >
+            optional
+          </span>
         </label>
         <div
           class="fixed invisible w-auto whitespace-nowrap"
@@ -2867,10 +2839,6 @@ exports[`SendTransfer should render 1st step with custom deeplink values and use
           for="fee"
         >
           Transaction Fee
-          <div
-            class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
-            data-testid="FormLabel__required"
-          />
         </label>
         <div
           class="flex space-x-2"
@@ -3270,10 +3238,6 @@ exports[`SendTransfer should render form and use location state 1`] = `
                           for="network"
                         >
                           Cryptoasset
-                          <div
-                            class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
-                            data-testid="FormLabel__required"
-                          />
                         </label>
                         <div>
                           <div
@@ -3388,10 +3352,6 @@ exports[`SendTransfer should render form and use location state 1`] = `
                           for="senderAddress"
                         >
                           Sender
-                          <div
-                            class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
-                            data-testid="FormLabel__required"
-                          />
                         </label>
                         <div
                           data-testid="sender-address"
@@ -3567,10 +3527,6 @@ exports[`SendTransfer should render form and use location state 1`] = `
                                   for="recipientAddress"
                                 >
                                   Recipient
-                                  <div
-                                    class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
-                                    data-testid="FormLabel__required"
-                                  />
                                 </label>
                                 <div>
                                   <div
@@ -3698,10 +3654,6 @@ exports[`SendTransfer should render form and use location state 1`] = `
                                   for="amount"
                                 >
                                   Amount
-                                  <div
-                                    class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
-                                    data-testid="FormLabel__required"
-                                  />
                                 </label>
                                 <div
                                   class="flex space-x-2"
@@ -3774,6 +3726,12 @@ exports[`SendTransfer should render form and use location state 1`] = `
                           for="smartbridge"
                         >
                           Smartbridge
+                          <span
+                            class="ml-1 text-theme-secondary-500 dark:text-theme-secondary-700"
+                            data-testid="FormLabel__optional"
+                          >
+                            optional
+                          </span>
                         </label>
                         <div
                           class="fixed invisible w-auto whitespace-nowrap"
@@ -3820,10 +3778,6 @@ exports[`SendTransfer should render form and use location state 1`] = `
                           for="fee"
                         >
                           Transaction Fee
-                          <div
-                            class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
-                            data-testid="FormLabel__required"
-                          />
                         </label>
                         <div
                           class="flex space-x-2"
@@ -4320,10 +4274,6 @@ exports[`SendTransfer should render form and use location state without memo 1`]
                           for="network"
                         >
                           Cryptoasset
-                          <div
-                            class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
-                            data-testid="FormLabel__required"
-                          />
                         </label>
                         <div>
                           <div
@@ -4438,10 +4388,6 @@ exports[`SendTransfer should render form and use location state without memo 1`]
                           for="senderAddress"
                         >
                           Sender
-                          <div
-                            class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
-                            data-testid="FormLabel__required"
-                          />
                         </label>
                         <div
                           data-testid="sender-address"
@@ -4617,10 +4563,6 @@ exports[`SendTransfer should render form and use location state without memo 1`]
                                   for="recipientAddress"
                                 >
                                   Recipient
-                                  <div
-                                    class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
-                                    data-testid="FormLabel__required"
-                                  />
                                 </label>
                                 <div>
                                   <div
@@ -4737,10 +4679,6 @@ exports[`SendTransfer should render form and use location state without memo 1`]
                                   for="amount"
                                 >
                                   Amount
-                                  <div
-                                    class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
-                                    data-testid="FormLabel__required"
-                                  />
                                 </label>
                                 <div
                                   class="flex space-x-2"
@@ -4813,6 +4751,12 @@ exports[`SendTransfer should render form and use location state without memo 1`]
                           for="smartbridge"
                         >
                           Smartbridge
+                          <span
+                            class="ml-1 text-theme-secondary-500 dark:text-theme-secondary-700"
+                            data-testid="FormLabel__optional"
+                          >
+                            optional
+                          </span>
                         </label>
                         <div
                           class="fixed invisible w-auto whitespace-nowrap"
@@ -4859,10 +4803,6 @@ exports[`SendTransfer should render form and use location state without memo 1`]
                           for="fee"
                         >
                           Transaction Fee
-                          <div
-                            class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
-                            data-testid="FormLabel__required"
-                          />
                         </label>
                         <div
                           class="flex space-x-2"
@@ -5040,10 +4980,6 @@ exports[`SendTransfer should render form step 1`] = `
           for="network"
         >
           Cryptoasset
-          <div
-            class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
-            data-testid="FormLabel__required"
-          />
         </label>
         <div>
           <div
@@ -5112,10 +5048,6 @@ exports[`SendTransfer should render form step 1`] = `
           for="senderAddress"
         >
           Sender
-          <div
-            class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
-            data-testid="FormLabel__required"
-          />
         </label>
         <div
           data-testid="sender-address"
@@ -5262,10 +5194,6 @@ exports[`SendTransfer should render form step 1`] = `
                   for="recipientAddress"
                 >
                   Recipient
-                  <div
-                    class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
-                    data-testid="FormLabel__required"
-                  />
                 </label>
                 <div>
                   <div
@@ -5384,10 +5312,6 @@ exports[`SendTransfer should render form step 1`] = `
                   for="amount"
                 >
                   Amount
-                  <div
-                    class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
-                    data-testid="FormLabel__required"
-                  />
                 </label>
                 <div
                   class="flex space-x-2"
@@ -5450,6 +5374,12 @@ exports[`SendTransfer should render form step 1`] = `
           for="smartbridge"
         >
           Smartbridge
+          <span
+            class="ml-1 text-theme-secondary-500 dark:text-theme-secondary-700"
+            data-testid="FormLabel__optional"
+          >
+            optional
+          </span>
         </label>
         <div
           class="fixed invisible w-auto whitespace-nowrap"
@@ -5496,10 +5426,6 @@ exports[`SendTransfer should render form step 1`] = `
           for="fee"
         >
           Transaction Fee
-          <div
-            class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
-            data-testid="FormLabel__required"
-          />
         </label>
         <div
           class="flex space-x-2"
@@ -5580,10 +5506,6 @@ exports[`SendTransfer should render form step with deeplink values and use them 
           for="network"
         >
           Cryptoasset
-          <div
-            class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
-            data-testid="FormLabel__required"
-          />
         </label>
         <div>
           <div
@@ -5652,10 +5574,6 @@ exports[`SendTransfer should render form step with deeplink values and use them 
           for="senderAddress"
         >
           Sender
-          <div
-            class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
-            data-testid="FormLabel__required"
-          />
         </label>
         <div
           data-testid="sender-address"
@@ -5802,10 +5720,6 @@ exports[`SendTransfer should render form step with deeplink values and use them 
                   for="recipientAddress"
                 >
                   Recipient
-                  <div
-                    class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
-                    data-testid="FormLabel__required"
-                  />
                 </label>
                 <div>
                   <div
@@ -5924,10 +5838,6 @@ exports[`SendTransfer should render form step with deeplink values and use them 
                   for="amount"
                 >
                   Amount
-                  <div
-                    class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
-                    data-testid="FormLabel__required"
-                  />
                 </label>
                 <div
                   class="flex space-x-2"
@@ -5990,6 +5900,12 @@ exports[`SendTransfer should render form step with deeplink values and use them 
           for="smartbridge"
         >
           Smartbridge
+          <span
+            class="ml-1 text-theme-secondary-500 dark:text-theme-secondary-700"
+            data-testid="FormLabel__optional"
+          >
+            optional
+          </span>
         </label>
         <div
           class="fixed invisible w-auto whitespace-nowrap"
@@ -6036,10 +5952,6 @@ exports[`SendTransfer should render form step with deeplink values and use them 
           for="fee"
         >
           Transaction Fee
-          <div
-            class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
-            data-testid="FormLabel__required"
-          />
         </label>
         <div
           class="flex space-x-2"
@@ -6120,10 +6032,6 @@ exports[`SendTransfer should render form step without test networks 1`] = `
           for="network"
         >
           Cryptoasset
-          <div
-            class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
-            data-testid="FormLabel__required"
-          />
         </label>
         <div>
           <div
@@ -6192,10 +6100,6 @@ exports[`SendTransfer should render form step without test networks 1`] = `
           for="senderAddress"
         >
           Sender
-          <div
-            class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
-            data-testid="FormLabel__required"
-          />
         </label>
         <div
           data-testid="sender-address"
@@ -6342,10 +6246,6 @@ exports[`SendTransfer should render form step without test networks 1`] = `
                   for="recipientAddress"
                 >
                   Recipient
-                  <div
-                    class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
-                    data-testid="FormLabel__required"
-                  />
                 </label>
                 <div>
                   <div
@@ -6464,10 +6364,6 @@ exports[`SendTransfer should render form step without test networks 1`] = `
                   for="amount"
                 >
                   Amount
-                  <div
-                    class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
-                    data-testid="FormLabel__required"
-                  />
                 </label>
                 <div
                   class="flex space-x-2"
@@ -6530,6 +6426,12 @@ exports[`SendTransfer should render form step without test networks 1`] = `
           for="smartbridge"
         >
           Smartbridge
+          <span
+            class="ml-1 text-theme-secondary-500 dark:text-theme-secondary-700"
+            data-testid="FormLabel__optional"
+          >
+            optional
+          </span>
         </label>
         <div
           class="fixed invisible w-auto whitespace-nowrap"
@@ -6576,10 +6478,6 @@ exports[`SendTransfer should render form step without test networks 1`] = `
           for="fee"
         >
           Transaction Fee
-          <div
-            class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
-            data-testid="FormLabel__required"
-          />
         </label>
         <div
           class="flex space-x-2"
@@ -6979,10 +6877,6 @@ exports[`SendTransfer should render network selection without selected wallet 1`
                         for="network"
                       >
                         Cryptoasset
-                        <div
-                          class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
-                          data-testid="FormLabel__required"
-                        />
                       </label>
                       <div>
                         <div
@@ -7148,10 +7042,6 @@ exports[`SendTransfer should render network step without test networks 1`] = `
         for="network"
       >
         Cryptoasset
-        <div
-          class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
-          data-testid="FormLabel__required"
-        />
       </label>
       <div>
         <div
@@ -8190,10 +8080,6 @@ exports[`SendTransfer should select a cryptoasset and select sender without wall
                           for="network"
                         >
                           Cryptoasset
-                          <div
-                            class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
-                            data-testid="FormLabel__required"
-                          />
                         </label>
                         <div>
                           <div
@@ -8310,10 +8196,6 @@ exports[`SendTransfer should select a cryptoasset and select sender without wall
                           for="senderAddress"
                         >
                           Sender
-                          <div
-                            class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
-                            data-testid="FormLabel__required"
-                          />
                         </label>
                         <div
                           data-testid="sender-address"
@@ -8490,10 +8372,6 @@ exports[`SendTransfer should select a cryptoasset and select sender without wall
                                   for="recipientAddress"
                                 >
                                   Recipient
-                                  <div
-                                    class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
-                                    data-testid="FormLabel__required"
-                                  />
                                 </label>
                                 <div>
                                   <div
@@ -8612,10 +8490,6 @@ exports[`SendTransfer should select a cryptoasset and select sender without wall
                                   for="amount"
                                 >
                                   Amount
-                                  <div
-                                    class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
-                                    data-testid="FormLabel__required"
-                                  />
                                 </label>
                                 <div
                                   class="flex space-x-2"
@@ -8691,6 +8565,12 @@ exports[`SendTransfer should select a cryptoasset and select sender without wall
                           for="smartbridge"
                         >
                           Smartbridge
+                          <span
+                            class="ml-1 text-theme-secondary-500 dark:text-theme-secondary-700"
+                            data-testid="FormLabel__optional"
+                          >
+                            optional
+                          </span>
                         </label>
                         <div
                           class="fixed invisible w-auto whitespace-nowrap"
@@ -8739,10 +8619,6 @@ exports[`SendTransfer should select a cryptoasset and select sender without wall
                           for="fee"
                         >
                           Transaction Fee
-                          <div
-                            class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
-                            data-testid="FormLabel__required"
-                          />
                         </label>
                         <div
                           class="flex space-x-2"
@@ -9240,10 +9116,6 @@ exports[`SendTransfer should select cryptoasset 1`] = `
                         for="network"
                       >
                         Cryptoasset
-                        <div
-                          class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
-                          data-testid="FormLabel__required"
-                        />
                       </label>
                       <div>
                         <div

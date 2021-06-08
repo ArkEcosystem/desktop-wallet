@@ -148,7 +148,7 @@ const SingleImport = ({
 			</TransactionDetail>
 
 			<FormField name={`names.${wallet.address}`}>
-				<FormLabel label={t("WALLETS.WALLET_NAME")} required={false} optional />
+				<FormLabel label={t("WALLETS.WALLET_NAME")} optional />
 				<InputDefault
 					onChange={() => {
 						for (const address of Object.keys(watch("names"))) {

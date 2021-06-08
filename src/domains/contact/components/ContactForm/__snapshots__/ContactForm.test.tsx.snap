@@ -15,10 +15,6 @@ exports[`ContactForm should render 1`] = `
         for="name"
       >
         Name
-        <div
-          class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
-          data-testid="FormLabel__required"
-        />
       </label>
       <div
         class="fixed invisible w-auto whitespace-nowrap"
@@ -52,10 +48,6 @@ exports[`ContactForm should render 1`] = `
           for="network"
         >
           Cryptoasset
-          <div
-            class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
-            data-testid="FormLabel__required"
-          />
         </label>
         <div
           class="relative w-full"
@@ -161,10 +153,6 @@ exports[`ContactForm should render 1`] = `
           for="address"
         >
           Address
-          <div
-            class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
-            data-testid="FormLabel__required"
-          />
         </label>
         <div
           class="fixed invisible w-auto whitespace-nowrap"
@@ -254,10 +242,6 @@ exports[`ContactForm should render with errors 1`] = `
         for="name"
       >
         Name
-        <div
-          class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
-          data-testid="FormLabel__required"
-        />
       </label>
       <div
         class="fixed invisible w-auto whitespace-nowrap"
@@ -310,10 +294,6 @@ exports[`ContactForm should render with errors 1`] = `
           for="network"
         >
           Cryptoasset
-          <div
-            class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
-            data-testid="FormLabel__required"
-          />
         </label>
         <div
           class="relative w-full"
@@ -419,10 +399,6 @@ exports[`ContactForm should render with errors 1`] = `
           for="address"
         >
           Address
-          <div
-            class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
-            data-testid="FormLabel__required"
-          />
         </label>
         <div
           class="fixed invisible w-auto whitespace-nowrap"

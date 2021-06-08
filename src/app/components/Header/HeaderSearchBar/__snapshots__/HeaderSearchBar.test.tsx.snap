@@ -4,37 +4,35 @@ exports[`HeaderSearchBar should render 1`] = `
 <DocumentFragment>
   <div
     class="relative"
+    data-testid="HeaderSearchBar"
   >
-    <button
-      class="my-auto h-full font-semibold cursor-pointer focus:outline-none"
-      data-testid="header-search-bar__button"
-      type="button"
+    <div
+      class="group"
     >
-      <div
-        class="group"
+      <button
+        class="ControlButton__ControlButtonStyled-sc-1xp1l1a-0 gPBHgx group"
       >
         <div
-          class="ControlButton__ControlButtonStyled-sc-1xp1l1a-0 kMCise"
+          class="absolute inset-0 -mx-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+        />
+        <div
+          class="flex items-center h-5 space-x-3"
         >
+          <span>
+            Search
+          </span>
           <div
-            class="flex items-center h-5 space-x-3"
+            class="sc-bdfBwQ iNulIV"
+            height="18"
+            width="18"
           >
-            <span>
-              Search
-            </span>
-            <div
-              class="sc-bdfBwQ iNulIV"
-              height="18"
-              width="18"
-            >
-              <svg>
-                search.svg
-              </svg>
-            </div>
+            <svg>
+              search.svg
+            </svg>
           </div>
         </div>
-      </div>
-    </button>
+      </button>
+    </div>
   </div>
 </DocumentFragment>
 `;

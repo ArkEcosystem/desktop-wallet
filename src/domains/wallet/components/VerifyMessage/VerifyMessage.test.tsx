@@ -54,7 +54,7 @@ describe("VerifyMessage", () => {
 	it("should switch between manual and json input", async () => {
 		await renderComponent({});
 
-		const toggle = screen.getByTestId("VerifyMessage__toggle");
+		const toggle = screen.getByRole("checkbox");
 
 		expect(screen.getByTestId("VerifyMessage__manual")).toBeTruthy();
 
@@ -144,7 +144,7 @@ describe("VerifyMessage", () => {
 
 		await renderComponent({ onSubmit });
 
-		const toggle = screen.getByTestId("VerifyMessage__toggle");
+		const toggle = screen.getByRole("checkbox");
 
 		act(() => {
 			fireEvent.click(toggle);
