@@ -11,7 +11,7 @@ import { TransactionRowRecipientLabel } from "./TransactionRowRecipientLabel";
 describe("TransactionRowRecipientLabel", () => {
 	it("should show address", () => {
 		const { getByTestId } = render(<TransactionRowRecipientLabel transaction={TransactionFixture} />);
-		expect(getByTestId("address__wallet-address")).toHaveTextContent("D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD");
+		expect(getByTestId("Address__address")).toHaveTextContent("D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD");
 	});
 
 	it("should show label", () => {

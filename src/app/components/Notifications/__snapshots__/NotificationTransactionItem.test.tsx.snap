@@ -46,11 +46,11 @@ exports[`Notifications should render notification item 1`] = `
               </div>
             </div>
             <div
-              class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap"
+              class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap space-x-2"
             >
               <span
-                class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-text font-semibold text-base"
-                data-testid="address__wallet-address"
+                class="inline-flex overflow-hidden text-theme-text font-semibold text-base"
+                data-testid="Address__address"
               >
                 D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD
               </span>
