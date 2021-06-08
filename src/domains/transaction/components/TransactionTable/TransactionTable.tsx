@@ -52,7 +52,7 @@ export const TransactionTable = memo(
 				},
 				{
 					Header: t("COMMON.RECIPIENT"),
-					cellWidth: "w-96",
+					cellWidth: "w-20",
 				},
 				{
 					Header: t("COMMON.INFO"),

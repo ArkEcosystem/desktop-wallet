@@ -7,7 +7,7 @@ exports[`WalletHeader should render 1`] = `
     data-testid="WalletHeader"
   >
     <div
-      class="flex items-center w-1/2 pr-12 space-x-4 border-r h-13 border-theme-secondary-800"
+      class="flex items-center w-1/2 pr-12 border-r h-13 border-theme-secondary-800"
     >
       <div
         class="flex -space-x-1"
@@ -44,7 +44,7 @@ exports[`WalletHeader should render 1`] = `
         </div>
       </div>
       <div
-        class="flex flex-col w-full"
+        class="flex flex-col w-full py-2 -my-2 pr-2 ml-4 -mr-2 overflow-hidden"
       >
         <div
           class="flex items-center space-x-5 text-theme-secondary-text"
@@ -63,14 +63,9 @@ exports[`WalletHeader should render 1`] = `
           class="flex items-center w-full space-x-5"
         >
           <span
-            class="flex-1 overflow-hidden text-lg font-semibold text-white w-36 whitespace-nowrap"
+            class="inline-flex overflow-hidden flex-1 text-lg font-semibold text-white whitespace-nowrap"
           >
-            <span
-              class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap"
-              data-testid="TruncateMiddle"
-            >
-              D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD
-            </span>
+            D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD
           </span>
           <div
             class="flex items-end mb-1 space-x-3 text-theme-secondary-text"
@@ -237,7 +232,7 @@ exports[`WalletHeader should show currency delta (-5%) 1`] = `
     data-testid="WalletHeader"
   >
     <div
-      class="flex items-center w-1/2 pr-12 space-x-4 border-r h-13 border-theme-secondary-800"
+      class="flex items-center w-1/2 pr-12 border-r h-13 border-theme-secondary-800"
     >
       <div
         class="flex -space-x-1"
@@ -274,7 +269,7 @@ exports[`WalletHeader should show currency delta (-5%) 1`] = `
         </div>
       </div>
       <div
-        class="flex flex-col w-full"
+        class="flex flex-col w-full py-2 -my-2 pr-2 ml-4 -mr-2 overflow-hidden"
       >
         <div
           class="flex items-center space-x-5 text-theme-secondary-text"
@@ -293,14 +288,9 @@ exports[`WalletHeader should show currency delta (-5%) 1`] = `
           class="flex items-center w-full space-x-5"
         >
           <span
-            class="flex-1 overflow-hidden text-lg font-semibold text-white w-36 whitespace-nowrap"
+            class="inline-flex overflow-hidden flex-1 text-lg font-semibold text-white whitespace-nowrap"
           >
-            <span
-              class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap"
-              data-testid="TruncateMiddle"
-            >
-              D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD
-            </span>
+            D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD
           </span>
           <div
             class="flex items-end mb-1 space-x-3 text-theme-secondary-text"
@@ -485,7 +475,7 @@ exports[`WalletHeader should show currency delta (5%) 1`] = `
     data-testid="WalletHeader"
   >
     <div
-      class="flex items-center w-1/2 pr-12 space-x-4 border-r h-13 border-theme-secondary-800"
+      class="flex items-center w-1/2 pr-12 border-r h-13 border-theme-secondary-800"
     >
       <div
         class="flex -space-x-1"
@@ -522,7 +512,7 @@ exports[`WalletHeader should show currency delta (5%) 1`] = `
         </div>
       </div>
       <div
-        class="flex flex-col w-full"
+        class="flex flex-col w-full py-2 -my-2 pr-2 ml-4 -mr-2 overflow-hidden"
       >
         <div
           class="flex items-center space-x-5 text-theme-secondary-text"
@@ -541,14 +531,9 @@ exports[`WalletHeader should show currency delta (5%) 1`] = `
           class="flex items-center w-full space-x-5"
         >
           <span
-            class="flex-1 overflow-hidden text-lg font-semibold text-white w-36 whitespace-nowrap"
+            class="inline-flex overflow-hidden flex-1 text-lg font-semibold text-white whitespace-nowrap"
           >
-            <span
-              class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap"
-              data-testid="TruncateMiddle"
-            >
-              D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD
-            </span>
+            D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD
           </span>
           <div
             class="flex items-end mb-1 space-x-3 text-theme-secondary-text"
@@ -733,7 +718,7 @@ exports[`WalletHeader should show modifiers 1`] = `
     data-testid="WalletHeader"
   >
     <div
-      class="flex items-center w-1/2 pr-12 space-x-4 border-r h-13 border-theme-secondary-800"
+      class="flex items-center w-1/2 pr-12 border-r h-13 border-theme-secondary-800"
     >
       <div
         class="flex -space-x-1"
@@ -770,7 +755,7 @@ exports[`WalletHeader should show modifiers 1`] = `
         </div>
       </div>
       <div
-        class="flex flex-col w-full"
+        class="flex flex-col w-full py-2 -my-2 pr-2 ml-4 -mr-2 overflow-hidden"
       >
         <div
           class="flex items-center space-x-5 text-theme-secondary-text"
@@ -818,14 +803,9 @@ exports[`WalletHeader should show modifiers 1`] = `
           class="flex items-center w-full space-x-5"
         >
           <span
-            class="flex-1 overflow-hidden text-lg font-semibold text-white w-36 whitespace-nowrap"
+            class="inline-flex overflow-hidden flex-1 text-lg font-semibold text-white whitespace-nowrap"
           >
-            <span
-              class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap"
-              data-testid="TruncateMiddle"
-            >
-              D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD
-            </span>
+            D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD
           </span>
           <div
             class="flex items-end mb-1 space-x-3 text-theme-secondary-text"

@@ -201,11 +201,11 @@ exports[`Notifications should open and cancel wallet update notification modal 1
                               </div>
                             </div>
                             <div
-                              class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap"
+                              class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap space-x-2"
                             >
                               <span
-                                class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-text font-semibold text-base"
-                                data-testid="address__wallet-address"
+                                class="inline-flex overflow-hidden text-theme-text font-semibold text-base"
+                                data-testid="Address__address"
                               >
                                 D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD
                               </span>
@@ -272,11 +272,11 @@ exports[`Notifications should open and cancel wallet update notification modal 1
                               </div>
                             </div>
                             <div
-                              class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap"
+                              class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap space-x-2"
                             >
                               <span
-                                class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-text font-semibold text-base"
-                                data-testid="address__wallet-address"
+                                class="inline-flex overflow-hidden text-theme-text font-semibold text-base"
+                                data-testid="Address__address"
                               >
                                 D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD
                               </span>
@@ -616,11 +616,11 @@ exports[`Notifications should open and cancel wallet update notification modal 2
                               </div>
                             </div>
                             <div
-                              class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap"
+                              class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap space-x-2"
                             >
                               <span
-                                class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-text font-semibold text-base"
-                                data-testid="address__wallet-address"
+                                class="inline-flex overflow-hidden text-theme-text font-semibold text-base"
+                                data-testid="Address__address"
                               >
                                 D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD
                               </span>
@@ -687,11 +687,11 @@ exports[`Notifications should open and cancel wallet update notification modal 2
                               </div>
                             </div>
                             <div
-                              class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap"
+                              class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap space-x-2"
                             >
                               <span
-                                class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-text font-semibold text-base"
-                                data-testid="address__wallet-address"
+                                class="inline-flex overflow-hidden text-theme-text font-semibold text-base"
+                                data-testid="Address__address"
                               >
                                 D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD
                               </span>
@@ -930,11 +930,11 @@ exports[`Notifications should open and close transaction details modal 1`] = `
                               </div>
                             </div>
                             <div
-                              class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap"
+                              class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap space-x-2"
                             >
                               <span
-                                class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-text font-semibold text-base"
-                                data-testid="address__wallet-address"
+                                class="inline-flex overflow-hidden text-theme-text font-semibold text-base"
+                                data-testid="Address__address"
                               >
                                 D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD
                               </span>
@@ -1001,11 +1001,11 @@ exports[`Notifications should open and close transaction details modal 1`] = `
                               </div>
                             </div>
                             <div
-                              class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap"
+                              class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap space-x-2"
                             >
                               <span
-                                class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-text font-semibold text-base"
-                                data-testid="address__wallet-address"
+                                class="inline-flex overflow-hidden text-theme-text font-semibold text-base"
+                                data-testid="Address__address"
                               >
                                 D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD
                               </span>
@@ -1086,7 +1086,7 @@ exports[`Notifications should open and close transaction details modal 1`] = `
               class="flex-1"
             >
               <div
-                class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 cRGLsx no-ligatures"
+                class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 kakuTR no-ligatures"
                 data-testid="TransactionDetail"
               >
                 <div
@@ -1101,11 +1101,11 @@ exports[`Notifications should open and close transaction details modal 1`] = `
                     class="font-semibold"
                   >
                     <div
-                      class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap"
+                      class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap space-x-2"
                     >
                       <span
-                        class="max-w-24 truncate mr-2 font-semibold text-base text-theme-text"
-                        data-testid="address__wallet-name"
+                        class="font-semibold text-base text-theme-text"
+                        data-testid="Address__alias"
                       >
                         <span
                           class="TruncateEnd__Wrapper-sc-1w1nvb9-0"
@@ -1115,8 +1115,8 @@ exports[`Notifications should open and close transaction details modal 1`] = `
                         </span>
                       </span>
                       <span
-                        class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-secondary-500 dark:text-theme-secondary-700 font-semibold text-base"
-                        data-testid="address__wallet-address"
+                        class="inline-flex overflow-hidden text-theme-secondary-500 dark:text-theme-secondary-700 font-semibold text-base"
+                        data-testid="Address__address"
                       >
                         DK1f5frUPTNqhFxoyDUHwN7VC2B4Uzhpmy
                       </span>
@@ -1143,7 +1143,7 @@ exports[`Notifications should open and close transaction details modal 1`] = `
                 </div>
               </div>
               <div
-                class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 izxcpX no-ligatures"
+                class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 cHOkoL no-ligatures"
                 data-testid="TransactionDetail"
               >
                 <div
@@ -1158,11 +1158,11 @@ exports[`Notifications should open and close transaction details modal 1`] = `
                     class="font-semibold"
                   >
                     <div
-                      class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap"
+                      class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap space-x-2"
                     >
                       <span
-                        class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-text font-semibold text-base"
-                        data-testid="address__wallet-address"
+                        class="inline-flex overflow-hidden text-theme-text font-semibold text-base"
+                        data-testid="Address__address"
                       >
                         D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD
                       </span>
@@ -1185,7 +1185,7 @@ exports[`Notifications should open and close transaction details modal 1`] = `
                 </div>
               </div>
               <div
-                class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 izxcpX no-ligatures"
+                class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 cHOkoL no-ligatures"
                 data-testid="TransactionDetail"
               >
                 <div
@@ -1232,7 +1232,7 @@ exports[`Notifications should open and close transaction details modal 1`] = `
                 </div>
               </div>
               <div
-                class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 izxcpX no-ligatures"
+                class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 cHOkoL no-ligatures"
                 data-testid="TransactionDetail"
               >
                 <div
@@ -1255,7 +1255,7 @@ exports[`Notifications should open and close transaction details modal 1`] = `
                 </div>
               </div>
               <div
-                class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 izxcpX no-ligatures"
+                class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 cHOkoL no-ligatures"
                 data-testid="TransactionDetail"
               >
                 <div
@@ -1274,7 +1274,7 @@ exports[`Notifications should open and close transaction details modal 1`] = `
                 </div>
               </div>
               <div
-                class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 izxcpX no-ligatures"
+                class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 cHOkoL no-ligatures"
                 data-testid="TransactionDetail"
               >
                 <div
@@ -1310,7 +1310,7 @@ exports[`Notifications should open and close transaction details modal 1`] = `
                 </div>
               </div>
               <div
-                class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 izxcpX no-ligatures"
+                class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 cHOkoL no-ligatures"
                 data-testid="TransactionDetail"
               >
                 <div
@@ -1325,40 +1325,43 @@ exports[`Notifications should open and close transaction details modal 1`] = `
                     class="font-semibold"
                   >
                     <div
-                      class="flex items-center space-x-3"
+                      class="flex items-center space-x-3 overflow-hidden"
                     >
-                      <a
-                        class="Link__AnchorStyled-sc-1q7sbxr-0 jXgXXh group"
-                        data-testid="Link"
-                        href="#"
-                        rel="noopener noreferrer"
-                        to="https://dexplorer.ark.io/transaction/ea63bf9a4b3eaf75a1dfff721967c45dce64eb7facf1aef29461868681b5c79b"
+                      <span
+                        class="overflow-hidden"
                       >
-                        <span
-                          class="break-all border-b border-transparent duration-200 group-hover:border-current"
+                        <a
+                          class="Link__AnchorStyled-sc-1q7sbxr-0 jXgXXh group"
+                          data-testid="Link"
+                          href="#"
+                          rel="noopener noreferrer"
+                          to="https://dexplorer.ark.io/transaction/ea63bf9a4b3eaf75a1dfff721967c45dce64eb7facf1aef29461868681b5c79b"
                         >
                           <span
-                            class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap"
-                            data-testid="TruncateMiddle"
+                            class="break-all border-b border-transparent duration-200 group-hover:border-current"
                           >
-                            ea63bf9a4b3eaf75a1dfff721967c45dce64eb7facf1aef29461868681b5c79b
+                            <span
+                              class="inline-flex overflow-hidden"
+                            >
+                              ea63bf9a4b3eaf75a1dfff721967c45dce64eb7facf1aef29461868681b5c79b
+                            </span>
                           </span>
-                        </span>
-                        <span
-                          class="align-middle"
-                        >
-                          <div
-                            class="sc-bdfBwQ fPrsah flex-shrink-0 duration-200 inline-block pb-px text-sm"
-                            data-testid="Link__external"
-                            height="1em"
-                            width="1em"
+                          <span
+                            class="align-middle"
                           >
-                            <svg>
-                              redirect.svg
-                            </svg>
-                          </div>
-                        </span>
-                      </a>
+                            <div
+                              class="sc-bdfBwQ fPrsah flex-shrink-0 duration-200 inline-block pb-px text-sm"
+                              data-testid="Link__external"
+                              height="1em"
+                              width="1em"
+                            >
+                              <svg>
+                                redirect.svg
+                              </svg>
+                            </div>
+                          </span>
+                        </a>
+                      </span>
                       <span
                         class="flex text-theme-primary-300 dark:text-theme-secondary-600"
                       >
@@ -1386,7 +1389,7 @@ exports[`Notifications should open and close transaction details modal 1`] = `
                 </div>
               </div>
               <div
-                class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 izxcpX no-ligatures"
+                class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 cHOkoL no-ligatures"
                 data-testid="TransactionDetail"
               >
                 <div
@@ -1401,40 +1404,43 @@ exports[`Notifications should open and close transaction details modal 1`] = `
                     class="font-semibold"
                   >
                     <div
-                      class="flex items-center space-x-3"
+                      class="flex items-center space-x-3 overflow-hidden"
                     >
-                      <a
-                        class="Link__AnchorStyled-sc-1q7sbxr-0 jXgXXh group"
-                        data-testid="Link"
-                        href="#"
-                        rel="noopener noreferrer"
-                        to="https://dexplorer.ark.io/block/4fbdbedc9d1474dc7b96e503a0aa848146d9f2b941014cd79decdd16290920a4"
+                      <span
+                        class="overflow-hidden"
                       >
-                        <span
-                          class="break-all border-b border-transparent duration-200 group-hover:border-current"
+                        <a
+                          class="Link__AnchorStyled-sc-1q7sbxr-0 jXgXXh group"
+                          data-testid="Link"
+                          href="#"
+                          rel="noopener noreferrer"
+                          to="https://dexplorer.ark.io/block/4fbdbedc9d1474dc7b96e503a0aa848146d9f2b941014cd79decdd16290920a4"
                         >
                           <span
-                            class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap"
-                            data-testid="TruncateMiddle"
+                            class="break-all border-b border-transparent duration-200 group-hover:border-current"
                           >
-                            4fbdbedc9d1474dc7b96e503a0aa848146d9f2b941014cd79decdd16290920a4
+                            <span
+                              class="inline-flex overflow-hidden"
+                            >
+                              4fbdbedc9d1474dc7b96e503a0aa848146d9f2b941014cd79decdd16290920a4
+                            </span>
                           </span>
-                        </span>
-                        <span
-                          class="align-middle"
-                        >
-                          <div
-                            class="sc-bdfBwQ fPrsah flex-shrink-0 duration-200 inline-block pb-px text-sm"
-                            data-testid="Link__external"
-                            height="1em"
-                            width="1em"
+                          <span
+                            class="align-middle"
                           >
-                            <svg>
-                              redirect.svg
-                            </svg>
-                          </div>
-                        </span>
-                      </a>
+                            <div
+                              class="sc-bdfBwQ fPrsah flex-shrink-0 duration-200 inline-block pb-px text-sm"
+                              data-testid="Link__external"
+                              height="1em"
+                              width="1em"
+                            >
+                              <svg>
+                                redirect.svg
+                              </svg>
+                            </div>
+                          </span>
+                        </a>
+                      </span>
                       <span
                         class="flex text-theme-primary-300 dark:text-theme-secondary-600"
                       >
@@ -1671,11 +1677,11 @@ exports[`Notifications should open and close transaction details modal 2`] = `
                               </div>
                             </div>
                             <div
-                              class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap"
+                              class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap space-x-2"
                             >
                               <span
-                                class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-text font-semibold text-base"
-                                data-testid="address__wallet-address"
+                                class="inline-flex overflow-hidden text-theme-text font-semibold text-base"
+                                data-testid="Address__address"
                               >
                                 D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD
                               </span>
@@ -1742,11 +1748,11 @@ exports[`Notifications should open and close transaction details modal 2`] = `
                               </div>
                             </div>
                             <div
-                              class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap"
+                              class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap space-x-2"
                             >
                               <span
-                                class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-text font-semibold text-base"
-                                data-testid="address__wallet-address"
+                                class="inline-flex overflow-hidden text-theme-text font-semibold text-base"
+                                data-testid="Address__address"
                               >
                                 D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD
                               </span>
@@ -1985,11 +1991,11 @@ exports[`Notifications should open and close wallet update notification modal 1`
                               </div>
                             </div>
                             <div
-                              class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap"
+                              class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap space-x-2"
                             >
                               <span
-                                class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-text font-semibold text-base"
-                                data-testid="address__wallet-address"
+                                class="inline-flex overflow-hidden text-theme-text font-semibold text-base"
+                                data-testid="Address__address"
                               >
                                 D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD
                               </span>
@@ -2056,11 +2062,11 @@ exports[`Notifications should open and close wallet update notification modal 1`
                               </div>
                             </div>
                             <div
-                              class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap"
+                              class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap space-x-2"
                             >
                               <span
-                                class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-text font-semibold text-base"
-                                data-testid="address__wallet-address"
+                                class="inline-flex overflow-hidden text-theme-text font-semibold text-base"
+                                data-testid="Address__address"
                               >
                                 D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD
                               </span>
@@ -2400,11 +2406,11 @@ exports[`Notifications should open and close wallet update notification modal 2`
                               </div>
                             </div>
                             <div
-                              class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap"
+                              class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap space-x-2"
                             >
                               <span
-                                class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-text font-semibold text-base"
-                                data-testid="address__wallet-address"
+                                class="inline-flex overflow-hidden text-theme-text font-semibold text-base"
+                                data-testid="Address__address"
                               >
                                 D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD
                               </span>
@@ -2471,11 +2477,11 @@ exports[`Notifications should open and close wallet update notification modal 2`
                               </div>
                             </div>
                             <div
-                              class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap"
+                              class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap space-x-2"
                             >
                               <span
-                                class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-text font-semibold text-base"
-                                data-testid="address__wallet-address"
+                                class="inline-flex overflow-hidden text-theme-text font-semibold text-base"
+                                data-testid="Address__address"
                               >
                                 D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD
                               </span>
@@ -2714,11 +2720,11 @@ exports[`Notifications should render with transactions and plugins 1`] = `
                               </div>
                             </div>
                             <div
-                              class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap"
+                              class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap space-x-2"
                             >
                               <span
-                                class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-text font-semibold text-base"
-                                data-testid="address__wallet-address"
+                                class="inline-flex overflow-hidden text-theme-text font-semibold text-base"
+                                data-testid="Address__address"
                               >
                                 D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD
                               </span>
@@ -2785,11 +2791,11 @@ exports[`Notifications should render with transactions and plugins 1`] = `
                               </div>
                             </div>
                             <div
-                              class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap"
+                              class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap space-x-2"
                             >
                               <span
-                                class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-text font-semibold text-base"
-                                data-testid="address__wallet-address"
+                                class="inline-flex overflow-hidden text-theme-text font-semibold text-base"
+                                data-testid="Address__address"
                               >
                                 D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD
                               </span>
