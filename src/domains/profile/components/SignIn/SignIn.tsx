@@ -114,7 +114,7 @@ export const SignIn = ({ isOpen, profile, onCancel, onClose, onSuccess }: SignIn
 
 			<Form context={methods} onSubmit={handleSubmit} className="mt-8">
 				<FormField name="password">
-					<FormLabel label={t("SETTINGS.GENERAL.PERSONAL.PASSWORD")} required />
+					<FormLabel label={t("SETTINGS.GENERAL.PERSONAL.PASSWORD")} />
 					<InputPassword
 						ref={register({
 							required: t("COMMON.VALIDATION.FIELD_REQUIRED", {

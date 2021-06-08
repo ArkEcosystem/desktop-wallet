@@ -249,7 +249,6 @@ export const translations: { [key: string]: any } = {
 	},
 
 	VALIDATION: {
-		REQUIRED: "This field is required",
 		OPTIONAL: "This field is optional",
 		FIELD_REQUIRED: "{{field}} required",
 		FIELD_INVALID: "{{field}} invalid",

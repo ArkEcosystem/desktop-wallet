@@ -38,10 +38,6 @@ exports[`ImportWallet should render 2nd step 1`] = `
           for=""
         >
           Import Type
-          <div
-            class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
-            data-testid="FormLabel__required"
-          />
         </label>
         <div
           class="relative w-full"
@@ -158,10 +154,6 @@ exports[`ImportWallet should render 2nd step 1`] = `
           for="value"
         >
           Mnemonic
-          <div
-            class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
-            data-testid="FormLabel__required"
-          />
         </label>
         <div
           class="fixed invisible w-auto whitespace-nowrap"
@@ -737,10 +729,6 @@ exports[`ImportWallet should render as ledger import 1`] = `
                         for="network"
                       >
                         Cryptoasset
-                        <div
-                          class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
-                          data-testid="FormLabel__required"
-                        />
                       </label>
                       <div>
                         <div
@@ -757,7 +745,7 @@ exports[`ImportWallet should render as ledger import 1`] = `
                           <div
                             class="fixed invisible w-auto whitespace-nowrap"
                           >
-                            
+
                             …
                           </div>
                           <div
@@ -781,7 +769,7 @@ exports[`ImportWallet should render as ledger import 1`] = `
                                 placeholder="Enter a cryptoasset name"
                                 value=""
                               />
-                              
+
                             </div>
                           </div>
                         </div>
@@ -985,10 +973,6 @@ exports[`ImportWallet should render network step 1`] = `
         for="network"
       >
         Cryptoasset
-        <div
-          class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
-          data-testid="FormLabel__required"
-        />
       </label>
       <div>
         <div
@@ -1192,10 +1176,6 @@ exports[`ImportWallet should render network step without test networks 1`] = `
         for="network"
       >
         Cryptoasset
-        <div
-          class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
-          data-testid="FormLabel__required"
-        />
       </label>
       <div>
         <div

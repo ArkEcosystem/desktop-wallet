@@ -129,11 +129,11 @@ describe.each([true, false])("SearchWallet uses fiat value = %s", (showFiatValue
 		await waitFor(() => expect(queryAllByTestId("TableRow")).toHaveLength(2));
 
 		act(() => {
-			fireEvent.click(getByTestId("header-search-bar__button"));
+			fireEvent.click(within(getByTestId("HeaderSearchBar")).getByRole("button"));
 		});
 
-		await waitFor(() => expect(getByTestId("header-search-bar__input")).toBeInTheDocument());
-		const searchInput = within(getByTestId("header-search-bar__input")).getByTestId("Input");
+		await waitFor(() => expect(getByTestId("HeaderSearchBar__input")).toBeInTheDocument());
+		const searchInput = within(getByTestId("HeaderSearchBar__input")).getByTestId("Input");
 		await waitFor(() => expect(searchInput).toBeInTheDocument());
 
 		act(() => {
@@ -178,11 +178,11 @@ describe.each([true, false])("SearchWallet uses fiat value = %s", (showFiatValue
 		await waitFor(() => expect(queryAllByTestId("TableRow")).toHaveLength(2));
 
 		act(() => {
-			fireEvent.click(getByTestId("header-search-bar__button"));
+			fireEvent.click(within(getByTestId("HeaderSearchBar")).getByRole("button"));
 		});
 
-		await waitFor(() => expect(getByTestId("header-search-bar__input")).toBeInTheDocument());
-		const searchInput = within(getByTestId("header-search-bar__input")).getByTestId("Input");
+		await waitFor(() => expect(getByTestId("HeaderSearchBar__input")).toBeInTheDocument());
+		const searchInput = within(getByTestId("HeaderSearchBar__input")).getByTestId("Input");
 		await waitFor(() => expect(searchInput).toBeInTheDocument());
 
 		act(() => {
@@ -228,11 +228,11 @@ describe.each([true, false])("SearchWallet uses fiat value = %s", (showFiatValue
 		await waitFor(() => expect(queryAllByTestId("TableRow")).toHaveLength(2));
 
 		act(() => {
-			fireEvent.click(getByTestId("header-search-bar__button"));
+			fireEvent.click(within(getByTestId("HeaderSearchBar")).getByRole("button"));
 		});
 
-		await waitFor(() => expect(getByTestId("header-search-bar__input")).toBeInTheDocument());
-		const searchInput = within(getByTestId("header-search-bar__input")).getByTestId("Input");
+		await waitFor(() => expect(getByTestId("HeaderSearchBar__input")).toBeInTheDocument());
+		const searchInput = within(getByTestId("HeaderSearchBar__input")).getByTestId("Input");
 		await waitFor(() => expect(searchInput).toBeInTheDocument());
 
 		// Search by wallet alias
@@ -287,11 +287,11 @@ describe.each([true, false])("SearchWallet uses fiat value = %s", (showFiatValue
 		await waitFor(() => expect(queryAllByTestId("TableRow")).toHaveLength(2));
 
 		act(() => {
-			fireEvent.click(getByTestId("header-search-bar__button"));
+			fireEvent.click(within(getByTestId("HeaderSearchBar")).getByRole("button"));
 		});
 
-		await waitFor(() => expect(getByTestId("header-search-bar__input")).toBeInTheDocument());
-		const searchInput = within(getByTestId("header-search-bar__input")).getByTestId("Input");
+		await waitFor(() => expect(getByTestId("HeaderSearchBar__input")).toBeInTheDocument());
+		const searchInput = within(getByTestId("HeaderSearchBar__input")).getByTestId("Input");
 		await waitFor(() => expect(searchInput).toBeInTheDocument());
 
 		await act(async () => {

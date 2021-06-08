@@ -18,10 +18,13 @@ exports[`WalletsControls should render 1`] = `
           <div
             class="group"
           >
-            <div
-              class="ControlButton__ControlButtonStyled-sc-1xp1l1a-0 gCTrBm"
+            <button
+              class="ControlButton__ControlButtonStyled-sc-1xp1l1a-0 gPBHgx group active"
               data-testid="LayoutControls__list--icon"
             >
+              <div
+                class="absolute inset-0 -mx-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+              />
               <div
                 class="sc-bdfBwQ iyevwF"
                 height="20"
@@ -31,7 +34,7 @@ exports[`WalletsControls should render 1`] = `
                   list-view.svg
                 </svg>
               </div>
-            </div>
+            </button>
           </div>
         </div>
         <div
@@ -40,10 +43,13 @@ exports[`WalletsControls should render 1`] = `
           <div
             class="group"
           >
-            <div
-              class="ControlButton__ControlButtonStyled-sc-1xp1l1a-0 kMCise"
+            <button
+              class="ControlButton__ControlButtonStyled-sc-1xp1l1a-0 gPBHgx group"
               data-testid="LayoutControls__grid--icon"
             >
+              <div
+                class="absolute inset-0 -mx-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+              />
               <div
                 class="sc-bdfBwQ iyevwF"
                 height="20"
@@ -53,7 +59,7 @@ exports[`WalletsControls should render 1`] = `
                   grid-view.svg
                 </svg>
               </div>
-            </div>
+            </button>
           </div>
         </div>
       </div>
@@ -71,9 +77,12 @@ exports[`WalletsControls should render 1`] = `
             <div
               class="group"
             >
-              <div
-                class="ControlButton__ControlButtonStyled-sc-1xp1l1a-0 kMCise"
+              <button
+                class="ControlButton__ControlButtonStyled-sc-1xp1l1a-0 gPBHgx group"
               >
+                <div
+                  class="absolute inset-0 -mx-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                />
                 <div
                   class="flex items-center justify-center w-5 h-5"
                 >
@@ -87,7 +96,7 @@ exports[`WalletsControls should render 1`] = `
                     </svg>
                   </div>
                 </div>
-              </div>
+              </button>
             </div>
           </span>
         </span>
@@ -197,10 +206,13 @@ exports[`WalletsControls should render with networks selection 1`] = `
           <div
             class="group"
           >
-            <div
-              class="ControlButton__ControlButtonStyled-sc-1xp1l1a-0 gCTrBm"
+            <button
+              class="ControlButton__ControlButtonStyled-sc-1xp1l1a-0 gPBHgx group active"
               data-testid="LayoutControls__list--icon"
             >
+              <div
+                class="absolute inset-0 -mx-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+              />
               <div
                 class="sc-bdfBwQ iyevwF"
                 height="20"
@@ -210,7 +222,7 @@ exports[`WalletsControls should render with networks selection 1`] = `
                   list-view.svg
                 </svg>
               </div>
-            </div>
+            </button>
           </div>
         </div>
         <div
@@ -219,10 +231,13 @@ exports[`WalletsControls should render with networks selection 1`] = `
           <div
             class="group"
           >
-            <div
-              class="ControlButton__ControlButtonStyled-sc-1xp1l1a-0 kMCise"
+            <button
+              class="ControlButton__ControlButtonStyled-sc-1xp1l1a-0 gPBHgx group"
               data-testid="LayoutControls__grid--icon"
             >
+              <div
+                class="absolute inset-0 -mx-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+              />
               <div
                 class="sc-bdfBwQ iyevwF"
                 height="20"
@@ -232,7 +247,7 @@ exports[`WalletsControls should render with networks selection 1`] = `
                   grid-view.svg
                 </svg>
               </div>
-            </div>
+            </button>
           </div>
         </div>
       </div>
@@ -250,9 +265,12 @@ exports[`WalletsControls should render with networks selection 1`] = `
             <div
               class="group"
             >
-              <div
-                class="ControlButton__ControlButtonStyled-sc-1xp1l1a-0 kMCise"
+              <button
+                class="ControlButton__ControlButtonStyled-sc-1xp1l1a-0 gPBHgx group"
               >
+                <div
+                  class="absolute inset-0 -mx-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                />
                 <div
                   class="flex items-center justify-center w-5 h-5"
                 >
@@ -266,7 +284,7 @@ exports[`WalletsControls should render with networks selection 1`] = `
                     </svg>
                   </div>
                 </div>
-              </div>
+              </button>
             </div>
           </span>
         </span>
