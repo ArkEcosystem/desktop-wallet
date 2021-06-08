@@ -83,10 +83,6 @@ exports[`SignMessage should render 1`] = `
                         for="signatory-address"
                       >
                         Signatory
-                        <div
-                          class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
-                          data-testid="FormLabel__required"
-                        />
                       </label>
                       <div
                         class="fixed invisible w-auto whitespace-nowrap"
@@ -133,10 +129,6 @@ exports[`SignMessage should render 1`] = `
                         for="message"
                       >
                         Message
-                        <div
-                          class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
-                          data-testid="FormLabel__required"
-                        />
                       </label>
                       <div
                         class="fixed invisible w-auto whitespace-nowrap"
@@ -167,10 +159,6 @@ exports[`SignMessage should render 1`] = `
                         for="mnemonic"
                       >
                         Mnemonic
-                        <div
-                          class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
-                          data-testid="FormLabel__required"
-                        />
                       </label>
                       <div
                         class="fixed invisible w-auto whitespace-nowrap"
@@ -341,10 +329,6 @@ exports[`SignMessage should render for ledger wallets 1`] = `
                         for="signatory-address"
                       >
                         Signatory
-                        <div
-                          class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
-                          data-testid="FormLabel__required"
-                        />
                       </label>
                       <div
                         class="fixed invisible w-auto whitespace-nowrap"
@@ -391,10 +375,6 @@ exports[`SignMessage should render for ledger wallets 1`] = `
                         for="message"
                       >
                         Message
-                        <div
-                          class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
-                          data-testid="FormLabel__required"
-                        />
                       </label>
                       <div
                         class="fixed invisible w-auto whitespace-nowrap"
@@ -473,7 +453,7 @@ exports[`SignMessage should render signed step with wallet alias 1`] = `
       </div>
     </div>
     <div
-      class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 cRGLsx no-ligatures"
+      class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 kakuTR no-ligatures"
       data-testid="TransactionDetail"
     >
       <div
@@ -488,11 +468,11 @@ exports[`SignMessage should render signed step with wallet alias 1`] = `
           class="font-semibold"
         >
           <div
-            class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap"
+            class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap space-x-2"
           >
             <span
-              class="max-w-24 truncate mr-2 font-semibold text-base text-theme-text"
-              data-testid="address__wallet-name"
+              class="font-semibold text-base text-theme-text"
+              data-testid="Address__alias"
             >
               <span
                 class="TruncateEnd__Wrapper-sc-1w1nvb9-0"
@@ -502,8 +482,8 @@ exports[`SignMessage should render signed step with wallet alias 1`] = `
               </span>
             </span>
             <span
-              class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-secondary-500 dark:text-theme-secondary-700 font-semibold text-base"
-              data-testid="address__wallet-address"
+              class="inline-flex overflow-hidden text-theme-secondary-500 dark:text-theme-secondary-700 font-semibold text-base"
+              data-testid="Address__address"
             >
               DLMm5AiKSXobaV6YFcUboPZVJ8mQ6MqjCv
             </span>
@@ -526,7 +506,7 @@ exports[`SignMessage should render signed step with wallet alias 1`] = `
       </div>
     </div>
     <div
-      class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 izxcpX no-ligatures text-lg break-all"
+      class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 cHOkoL no-ligatures text-lg break-all"
       data-testid="TransactionDetail"
     >
       <div
@@ -553,10 +533,6 @@ exports[`SignMessage should render signed step with wallet alias 1`] = `
         for="json-signature"
       >
         Signature
-        <div
-          class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
-          data-testid="FormLabel__required"
-        />
       </label>
       <div
         class="fixed invisible w-auto whitespace-nowrap"

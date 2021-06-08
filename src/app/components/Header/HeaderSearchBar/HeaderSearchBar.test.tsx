@@ -6,25 +6,25 @@ import { HeaderSearchBar } from "./HeaderSearchBar";
 
 describe("HeaderSearchBar", () => {
 	it("should render", () => {
-		const { asFragment, getByTestId } = render(<HeaderSearchBar />);
+		const { asFragment, getByRole, getByTestId } = render(<HeaderSearchBar />);
 
-		expect(getByTestId("header-search-bar__button")).toHaveTextContent("Search");
+		expect(getByRole("button")).toHaveTextContent("Search");
 		expect(asFragment()).toMatchSnapshot();
 	});
 
 	it("should show the searchbar", () => {
-		const { getByTestId } = render(<HeaderSearchBar />);
+		const { getByRole, getByTestId } = render(<HeaderSearchBar />);
 
-		fireEvent.click(getByTestId("header-search-bar__button"));
+		fireEvent.click(getByRole("button"));
 
-		expect(getByTestId("header-search-bar__input")).toBeTruthy();
+		expect(getByTestId("HeaderSearchBar__input")).toBeTruthy();
 	});
 
 	it("should reset fields by prop", async () => {
 		const onReset = jest.fn();
-		const { getByTestId, rerender } = render(<HeaderSearchBar onReset={onReset} />);
+		const { getByRole, getByTestId, rerender } = render(<HeaderSearchBar onReset={onReset} />);
 
-		fireEvent.click(getByTestId("header-search-bar__button"));
+		fireEvent.click(getByRole("button"));
 
 		const input = getByTestId("Input") as HTMLInputElement;
 
@@ -45,9 +45,9 @@ describe("HeaderSearchBar", () => {
 	});
 
 	it("should show extra slot", () => {
-		const { getByTestId } = render(<HeaderSearchBar extra={<div data-testid="extra-slot" />} />);
+		const { getByRole, getByTestId } = render(<HeaderSearchBar extra={<div data-testid="extra-slot" />} />);
 
-		fireEvent.click(getByTestId("header-search-bar__button"));
+		fireEvent.click(getByRole("button"));
 
 		expect(getByTestId("extra-slot")).toBeTruthy();
 	});
@@ -55,7 +55,7 @@ describe("HeaderSearchBar", () => {
 	it("should hide the searchbar when clicked outside", () => {
 		const onSearch = jest.fn();
 
-		const { getByTestId } = render(
+		const { getByRole, getByTestId } = render(
 			<div>
 				<div data-testid="header-search-bar__outside" className="mt-16">
 					outside elememt to be clicked
@@ -65,7 +65,7 @@ describe("HeaderSearchBar", () => {
 			</div>,
 		);
 
-		fireEvent.click(getByTestId("header-search-bar__button"));
+		fireEvent.click(getByRole("button"));
 
 		const outsideElement = getByTestId("header-search-bar__outside");
 		expect(outsideElement).toBeTruthy();
@@ -81,9 +81,9 @@ describe("HeaderSearchBar", () => {
 
 	it("should reset the query", () => {
 		const onReset = jest.fn();
-		const { getByTestId } = render(<HeaderSearchBar onReset={onReset} />);
+		const { getByRole, getByTestId } = render(<HeaderSearchBar onReset={onReset} />);
 
-		fireEvent.click(getByTestId("header-search-bar__button"));
+		fireEvent.click(getByRole("button"));
 
 		const input = getByTestId("Input") as HTMLInputElement;
 
@@ -110,9 +110,9 @@ describe("HeaderSearchBar", () => {
 
 		const onSearch = jest.fn();
 
-		const { getByTestId } = render(<HeaderSearchBar onSearch={onSearch} />);
+		const { getByRole, getByTestId } = render(<HeaderSearchBar onSearch={onSearch} />);
 
-		fireEvent.click(getByTestId("header-search-bar__button"));
+		fireEvent.click(getByRole("button"));
 
 		act(() => {
 			fireEvent.change(getByTestId("Input"), {
@@ -134,9 +134,9 @@ describe("HeaderSearchBar", () => {
 
 		const onSearch = jest.fn();
 
-		const { getByTestId } = render(<HeaderSearchBar onSearch={onSearch} debounceTimeout={100} />);
+		const { getByRole, getByTestId } = render(<HeaderSearchBar onSearch={onSearch} debounceTimeout={100} />);
 
-		fireEvent.click(getByTestId("header-search-bar__button"));
+		fireEvent.click(getByRole("button"));
 
 		act(() => {
 			fireEvent.change(getByTestId("Input"), {
