@@ -495,7 +495,7 @@ exports[`SendTransfer should display disabled address selection input if selecte
                               class="absolute inset-0 flex items-center border border-transparent px-14 w-full"
                             >
                               <div
-                                class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap"
+                                class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap space-x-2"
                               />
                             </span>
                             <div
@@ -669,12 +669,12 @@ exports[`SendTransfer should display disabled address selection input if selecte
                                         <div
                                           aria-expanded="false"
                                           aria-haspopup="listbox"
-                                          aria-owns="downshift-43-menu"
+                                          aria-owns="downshift-53-menu"
                                           role="combobox"
                                         >
                                           <label
-                                            for="downshift-43-input"
-                                            id="downshift-43-label"
+                                            for="downshift-53-input"
+                                            id="downshift-53-label"
                                           />
                                           <div
                                             class="fixed invisible w-auto whitespace-nowrap"
@@ -693,14 +693,14 @@ exports[`SendTransfer should display disabled address selection input if selecte
                                             >
                                               <input
                                                 aria-autocomplete="list"
-                                                aria-controls="downshift-43-menu"
+                                                aria-controls="downshift-53-menu"
                                                 aria-invalid="false"
-                                                aria-labelledby="downshift-43-label"
+                                                aria-labelledby="downshift-53-label"
                                                 autocomplete="off"
                                                 class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full cursor-default text-theme-secondary-text"
                                                 data-testid="SelectDropdown__input"
                                                 disabled=""
-                                                id="downshift-43-input"
+                                                id="downshift-53-input"
                                                 name="recipientAddress"
                                                 placeholder="Address"
                                                 value=""
@@ -730,9 +730,9 @@ exports[`SendTransfer should display disabled address selection input if selecte
                                             </div>
                                           </div>
                                           <ul
-                                            aria-labelledby="downshift-43-label"
+                                            aria-labelledby="downshift-53-label"
                                             class="styles__SelectOptionsList-b2falt-0 dyOwRR"
-                                            id="downshift-43-menu"
+                                            id="downshift-53-menu"
                                             role="listbox"
                                           />
                                         </div>
@@ -1485,10 +1485,10 @@ exports[`SendTransfer should display unconfirmed transactions modal when submitt
                             class="font-semibold"
                           >
                             <div
-                              class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap"
+                              class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap space-x-2"
                             >
                               <span
-                                class="max-w-24 truncate mr-2 font-semibold text-base text-theme-text"
+                                class="font-semibold text-base text-theme-text"
                                 data-testid="Address__alias"
                               >
                                 <span
@@ -1542,7 +1542,7 @@ exports[`SendTransfer should display unconfirmed transactions modal when submitt
                             class="font-semibold"
                           >
                             <div
-                              class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap"
+                              class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap space-x-2"
                             >
                               <span
                                 class="inline-flex overflow-hidden text-theme-text font-semibold text-base"
@@ -1833,7 +1833,7 @@ exports[`SendTransfer should display unconfirmed transactions modal when submitt
                                       </div>
                                     </div>
                                     <div
-                                      class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap"
+                                      class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap space-x-2"
                                     >
                                       <span
                                         class="inline-flex overflow-hidden text-theme-text font-semibold text-base"
@@ -2503,7 +2503,7 @@ exports[`SendTransfer should render 1st step with custom deeplink values and use
               class="absolute inset-0 flex items-center border border-transparent px-14 w-full"
             >
               <div
-                class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap"
+                class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap space-x-2"
               />
             </span>
             <div
@@ -3408,10 +3408,10 @@ exports[`SendTransfer should render form and use location state 1`] = `
                               class="absolute inset-0 flex items-center border border-transparent px-14 w-full"
                             >
                               <div
-                                class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap"
+                                class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap space-x-2"
                               >
                                 <span
-                                  class="max-w-24 truncate mr-2 font-semibold text-base text-theme-text"
+                                  class="font-semibold text-base text-theme-text"
                                   data-testid="Address__alias"
                                 >
                                   <span
@@ -4458,10 +4458,10 @@ exports[`SendTransfer should render form and use location state without memo 1`]
                               class="absolute inset-0 flex items-center border border-transparent px-14 w-full"
                             >
                               <div
-                                class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap"
+                                class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap space-x-2"
                               >
                                 <span
-                                  class="max-w-24 truncate mr-2 font-semibold text-base text-theme-text"
+                                  class="font-semibold text-base text-theme-text"
                                   data-testid="Address__alias"
                                 >
                                   <span
@@ -4661,12 +4661,12 @@ exports[`SendTransfer should render form and use location state without memo 1`]
                                         <div
                                           aria-expanded="false"
                                           aria-haspopup="listbox"
-                                          aria-owns="downshift-26-menu"
+                                          aria-owns="downshift-33-menu"
                                           role="combobox"
                                         >
                                           <label
-                                            for="downshift-26-input"
-                                            id="downshift-26-label"
+                                            for="downshift-33-input"
+                                            id="downshift-33-label"
                                           />
                                           <div
                                             class="fixed invisible w-auto whitespace-nowrap"
@@ -4684,13 +4684,13 @@ exports[`SendTransfer should render form and use location state without memo 1`]
                                             >
                                               <input
                                                 aria-autocomplete="list"
-                                                aria-controls="downshift-26-menu"
+                                                aria-controls="downshift-33-menu"
                                                 aria-invalid="false"
-                                                aria-labelledby="downshift-26-label"
+                                                aria-labelledby="downshift-33-label"
                                                 autocomplete="off"
                                                 class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full cursor-default"
                                                 data-testid="SelectDropdown__input"
-                                                id="downshift-26-input"
+                                                id="downshift-33-input"
                                                 name="recipientAddress"
                                                 placeholder="Address"
                                                 value=""
@@ -4720,9 +4720,9 @@ exports[`SendTransfer should render form and use location state without memo 1`]
                                             </div>
                                           </div>
                                           <ul
-                                            aria-labelledby="downshift-26-label"
+                                            aria-labelledby="downshift-33-label"
                                             class="styles__SelectOptionsList-b2falt-0 dyOwRR"
-                                            id="downshift-26-menu"
+                                            id="downshift-33-menu"
                                             role="listbox"
                                           />
                                         </div>
@@ -5132,7 +5132,7 @@ exports[`SendTransfer should render form step 1`] = `
               class="absolute inset-0 flex items-center border border-transparent px-14 w-full"
             >
               <div
-                class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap"
+                class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap space-x-2"
               />
             </span>
             <div
@@ -5672,7 +5672,7 @@ exports[`SendTransfer should render form step with deeplink values and use them 
               class="absolute inset-0 flex items-center border border-transparent px-14 w-full"
             >
               <div
-                class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap"
+                class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap space-x-2"
               />
             </span>
             <div
@@ -6212,7 +6212,7 @@ exports[`SendTransfer should render form step without test networks 1`] = `
               class="absolute inset-0 flex items-center border border-transparent px-14 w-full"
             >
               <div
-                class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap"
+                class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap space-x-2"
               />
             </span>
             <div
@@ -7337,10 +7337,10 @@ exports[`SendTransfer should render review step 1`] = `
           class="font-semibold"
         >
           <div
-            class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap"
+            class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap space-x-2"
           >
             <span
-              class="max-w-24 truncate mr-2 font-semibold text-base text-theme-text"
+              class="font-semibold text-base text-theme-text"
               data-testid="Address__alias"
             >
               <span
@@ -7394,7 +7394,7 @@ exports[`SendTransfer should render review step 1`] = `
           class="font-semibold"
         >
           <div
-            class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap"
+            class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap space-x-2"
           >
             <span
               class="inline-flex overflow-hidden text-theme-text font-semibold text-base"
@@ -7697,10 +7697,10 @@ exports[`SendTransfer should render summary step 1`] = `
             class="font-semibold"
           >
             <div
-              class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap"
+              class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap space-x-2"
             >
               <span
-                class="max-w-24 truncate mr-2 font-semibold text-base text-theme-text"
+                class="font-semibold text-base text-theme-text"
                 data-testid="Address__alias"
               >
                 <span
@@ -7754,7 +7754,7 @@ exports[`SendTransfer should render summary step 1`] = `
             class="font-semibold"
           >
             <div
-              class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap"
+              class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap space-x-2"
             />
           </div>
         </div>
@@ -8333,10 +8333,10 @@ exports[`SendTransfer should select a cryptoasset and select sender without wall
                               class="absolute inset-0 flex items-center border border-transparent px-14 w-full"
                             >
                               <div
-                                class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap"
+                                class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap space-x-2"
                               >
                                 <span
-                                  class="max-w-24 truncate mr-2 font-semibold text-base text-theme-text"
+                                  class="font-semibold text-base text-theme-text"
                                   data-testid="Address__alias"
                                 >
                                   <span
@@ -8538,12 +8538,12 @@ exports[`SendTransfer should select a cryptoasset and select sender without wall
                                         <div
                                           aria-expanded="false"
                                           aria-haspopup="listbox"
-                                          aria-owns="downshift-52-menu"
+                                          aria-owns="downshift-62-menu"
                                           role="combobox"
                                         >
                                           <label
-                                            for="downshift-52-input"
-                                            id="downshift-52-label"
+                                            for="downshift-62-input"
+                                            id="downshift-62-label"
                                           />
                                           <div
                                             class="fixed invisible w-auto whitespace-nowrap"
@@ -8562,13 +8562,13 @@ exports[`SendTransfer should select a cryptoasset and select sender without wall
                                             >
                                               <input
                                                 aria-autocomplete="list"
-                                                aria-controls="downshift-52-menu"
+                                                aria-controls="downshift-62-menu"
                                                 aria-invalid="false"
-                                                aria-labelledby="downshift-52-label"
+                                                aria-labelledby="downshift-62-label"
                                                 autocomplete="off"
                                                 class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full cursor-default"
                                                 data-testid="SelectDropdown__input"
-                                                id="downshift-52-input"
+                                                id="downshift-62-input"
                                                 name="recipientAddress"
                                                 placeholder="Address"
                                                 value=""
@@ -8598,9 +8598,9 @@ exports[`SendTransfer should select a cryptoasset and select sender without wall
                                             </div>
                                           </div>
                                           <ul
-                                            aria-labelledby="downshift-52-label"
+                                            aria-labelledby="downshift-62-label"
                                             class="styles__SelectOptionsList-b2falt-0 dyOwRR"
-                                            id="downshift-52-menu"
+                                            id="downshift-62-menu"
                                             role="listbox"
                                           />
                                         </div>
@@ -9871,10 +9871,10 @@ exports[`SendTransfer should send a single transfer 1`] = `
                             class="font-semibold"
                           >
                             <div
-                              class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap"
+                              class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap space-x-2"
                             >
                               <span
-                                class="max-w-24 truncate mr-2 font-semibold text-base text-theme-text"
+                                class="font-semibold text-base text-theme-text"
                                 data-testid="Address__alias"
                               >
                                 <span
@@ -9928,7 +9928,7 @@ exports[`SendTransfer should send a single transfer 1`] = `
                             class="font-semibold"
                           >
                             <div
-                              class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap"
+                              class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap space-x-2"
                             >
                               <span
                                 class="inline-flex overflow-hidden text-theme-text font-semibold text-base"
@@ -10528,10 +10528,10 @@ exports[`SendTransfer should send a single transfer and handle undefined expirat
                             class="font-semibold"
                           >
                             <div
-                              class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap"
+                              class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap space-x-2"
                             >
                               <span
-                                class="max-w-24 truncate mr-2 font-semibold text-base text-theme-text"
+                                class="font-semibold text-base text-theme-text"
                                 data-testid="Address__alias"
                               >
                                 <span
@@ -10585,7 +10585,7 @@ exports[`SendTransfer should send a single transfer and handle undefined expirat
                             class="font-semibold"
                           >
                             <div
-                              class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap"
+                              class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap space-x-2"
                             >
                               <span
                                 class="inline-flex overflow-hidden text-theme-text font-semibold text-base"
@@ -11185,10 +11185,10 @@ exports[`SendTransfer should send a single transfer and show unconfirmed transac
                             class="font-semibold"
                           >
                             <div
-                              class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap"
+                              class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap space-x-2"
                             >
                               <span
-                                class="max-w-24 truncate mr-2 font-semibold text-base text-theme-text"
+                                class="font-semibold text-base text-theme-text"
                                 data-testid="Address__alias"
                               >
                                 <span
@@ -11242,7 +11242,7 @@ exports[`SendTransfer should send a single transfer and show unconfirmed transac
                             class="font-semibold"
                           >
                             <div
-                              class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap"
+                              class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap space-x-2"
                             >
                               <span
                                 class="inline-flex overflow-hidden text-theme-text font-semibold text-base"
@@ -11533,7 +11533,7 @@ exports[`SendTransfer should send a single transfer and show unconfirmed transac
                                       </div>
                                     </div>
                                     <div
-                                      class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap"
+                                      class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap space-x-2"
                                     >
                                       <span
                                         class="inline-flex overflow-hidden text-theme-text font-semibold text-base"
@@ -12153,10 +12153,10 @@ exports[`SendTransfer should send a single transfer using wallet with encryption
                             class="font-semibold"
                           >
                             <div
-                              class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap"
+                              class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap space-x-2"
                             >
                               <span
-                                class="max-w-24 truncate mr-2 font-semibold text-base text-theme-text"
+                                class="font-semibold text-base text-theme-text"
                                 data-testid="Address__alias"
                               >
                                 <span
@@ -12210,7 +12210,7 @@ exports[`SendTransfer should send a single transfer using wallet with encryption
                             class="font-semibold"
                           >
                             <div
-                              class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap"
+                              class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap space-x-2"
                             >
                               <span
                                 class="inline-flex overflow-hidden text-theme-text font-semibold text-base"
@@ -12810,10 +12810,10 @@ exports[`SendTransfer should send a single transfer with a high fee by confirmin
                             class="font-semibold"
                           >
                             <div
-                              class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap"
+                              class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap space-x-2"
                             >
                               <span
-                                class="max-w-24 truncate mr-2 font-semibold text-base text-theme-text"
+                                class="font-semibold text-base text-theme-text"
                                 data-testid="Address__alias"
                               >
                                 <span
@@ -12867,7 +12867,7 @@ exports[`SendTransfer should send a single transfer with a high fee by confirmin
                             class="font-semibold"
                           >
                             <div
-                              class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap"
+                              class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap space-x-2"
                             >
                               <span
                                 class="inline-flex overflow-hidden text-theme-text font-semibold text-base"
@@ -13467,10 +13467,10 @@ exports[`SendTransfer should send a single transfer with a low fee by confirming
                             class="font-semibold"
                           >
                             <div
-                              class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap"
+                              class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap space-x-2"
                             >
                               <span
-                                class="max-w-24 truncate mr-2 font-semibold text-base text-theme-text"
+                                class="font-semibold text-base text-theme-text"
                                 data-testid="Address__alias"
                               >
                                 <span
@@ -13524,7 +13524,7 @@ exports[`SendTransfer should send a single transfer with a low fee by confirming
                             class="font-semibold"
                           >
                             <div
-                              class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap"
+                              class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap space-x-2"
                             >
                               <span
                                 class="inline-flex overflow-hidden text-theme-text font-semibold text-base"

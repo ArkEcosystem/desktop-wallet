@@ -45,11 +45,11 @@ export const Address = ({
 	};
 
 	return (
-		<div className="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap">
+		<div className="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap space-x-2">
 			{walletName && (
 				<span
 					data-testid="Address__alias"
-					className={`max-w-24 truncate mr-2 ${getFontWeight(fontWeight)} ${getFontSize(size)} ${
+					className={`${getFontWeight(fontWeight)} ${getFontSize(size)} ${
 						walletNameClass || "text-theme-text"
 					}`}
 				>

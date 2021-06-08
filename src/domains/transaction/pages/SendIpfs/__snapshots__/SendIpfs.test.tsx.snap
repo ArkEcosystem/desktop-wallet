@@ -598,7 +598,7 @@ exports[`SendIpfs should render form step 1`] = `
               class="absolute inset-0 flex items-center border border-transparent px-14 w-full"
             >
               <div
-                class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap"
+                class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap space-x-2"
               />
             </span>
             <div
@@ -815,10 +815,10 @@ exports[`SendIpfs should render review step 1`] = `
           class="font-semibold"
         >
           <div
-            class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap"
+            class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap space-x-2"
           >
             <span
-              class="max-w-24 truncate mr-2 font-semibold text-base text-theme-text"
+              class="font-semibold text-base text-theme-text"
               data-testid="Address__alias"
             >
               <span
@@ -1533,10 +1533,10 @@ exports[`SendIpfs should send an IPFS transaction and go back to wallet page 1`]
                             class="font-semibold"
                           >
                             <div
-                              class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap"
+                              class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap space-x-2"
                             >
                               <span
-                                class="max-w-24 truncate mr-2 font-semibold text-base text-theme-text"
+                                class="font-semibold text-base text-theme-text"
                                 data-testid="Address__alias"
                               >
                                 <span
@@ -2129,10 +2129,10 @@ exports[`SendIpfs should send an IPFS transaction using encryption password 1`] 
                             class="font-semibold"
                           >
                             <div
-                              class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap"
+                              class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap space-x-2"
                             >
                               <span
-                                class="max-w-24 truncate mr-2 font-semibold text-base text-theme-text"
+                                class="font-semibold text-base text-theme-text"
                                 data-testid="Address__alias"
                               >
                                 <span
@@ -2737,10 +2737,10 @@ exports[`SendIpfs should show an error if an invalid IPFS hash is entered 1`] = 
                               class="absolute inset-0 flex items-center border border-transparent px-14 w-full"
                             >
                               <div
-                                class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap"
+                                class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap space-x-2"
                               >
                                 <span
-                                  class="max-w-24 truncate mr-2 font-semibold text-base text-theme-text"
+                                  class="font-semibold text-base text-theme-text"
                                   data-testid="Address__alias"
                                 >
                                   <span

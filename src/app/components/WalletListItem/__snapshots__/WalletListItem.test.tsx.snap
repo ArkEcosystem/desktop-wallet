@@ -47,10 +47,10 @@ exports[`WalletListItem should render 1`] = `
               </div>
             </div>
             <div
-              class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap"
+              class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap space-x-2"
             >
               <span
-                class="max-w-24 truncate mr-2 font-semibold text-base text-theme-text"
+                class="font-semibold text-base text-theme-text"
                 data-testid="Address__alias"
               >
                 <span
@@ -182,10 +182,10 @@ exports[`WalletListItem should render for selected wallet 1`] = `
               </div>
             </div>
             <div
-              class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap"
+              class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap space-x-2"
             >
               <span
-                class="max-w-24 truncate mr-2 font-semibold text-base text-theme-text"
+                class="font-semibold text-base text-theme-text"
                 data-testid="Address__alias"
               >
                 <span
@@ -317,10 +317,10 @@ exports[`WalletListItem should render with default BTC as default exchangeCurren
               </div>
             </div>
             <div
-              class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap"
+              class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap space-x-2"
             >
               <span
-                class="max-w-24 truncate mr-2 font-semibold text-base text-theme-text"
+                class="font-semibold text-base text-theme-text"
                 data-testid="Address__alias"
               >
                 <span

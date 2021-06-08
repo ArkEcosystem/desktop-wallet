@@ -1,6 +1,6 @@
 import { Tooltip } from "app/components/Tooltip";
 import cn from "classnames";
-import React, { useRef } from "react";
+import React, { useCallback, useState } from "react";
 
 import { useTextTruncate } from "./use-text-truncate";
 
@@ -11,13 +11,17 @@ type Props = {
 } & React.HTMLProps<any>;
 
 export const TruncateMiddleDynamic = ({ value, offset = 0, className, parentRef, ...props }: Props) => {
-	const ref = useRef<HTMLElement>(null);
+	const [ref, setRef] = useState<HTMLElement | undefined>();
 
-	const truncated = useTextTruncate(parentRef?.current || ref.current, value, offset);
+	const truncated = useTextTruncate(parentRef?.current || ref, value, offset);
+
+	const callbackRef = useCallback((node) => {
+		setRef(node);
+	}, []);
 
 	return (
 		<Tooltip content={value} disabled={truncated === value}>
-			<span ref={ref} className={cn("inline-flex overflow-hidden", className)} {...props}>
+			<span ref={callbackRef} className={cn("inline-flex overflow-hidden", className)} {...props}>
 				{truncated}
 			</span>
 		</Tooltip>

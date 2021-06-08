@@ -137,7 +137,7 @@ exports[`SendTransactionForm should render 1`] = `
             class="absolute inset-0 flex items-center border border-transparent px-14 w-full"
           >
             <div
-              class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap"
+              class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap space-x-2"
             />
           </span>
           <div
@@ -392,10 +392,10 @@ exports[`SendTransactionForm should select a network & update fees 1`] = `
             class="absolute inset-0 flex items-center border border-transparent px-14 w-full"
           >
             <div
-              class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap"
+              class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap space-x-2"
             >
               <span
-                class="max-w-24 truncate mr-2 font-semibold text-base text-theme-text"
+                class="font-semibold text-base text-theme-text"
                 data-testid="Address__alias"
               >
                 <span
@@ -707,10 +707,10 @@ exports[`SendTransactionForm should use static fees if avg is not available 1`] 
             class="absolute inset-0 flex items-center border border-transparent px-14 w-full"
           >
             <div
-              class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap"
+              class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap space-x-2"
             >
               <span
-                class="max-w-24 truncate mr-2 font-semibold text-base text-theme-text"
+                class="font-semibold text-base text-theme-text"
                 data-testid="Address__alias"
               >
                 <span
@@ -724,7 +724,7 @@ exports[`SendTransactionForm should use static fees if avg is not available 1`] 
                 class="inline-flex overflow-hidden text-theme-secondary-500 dark:text-theme-secondary-700 font-semibold text-base"
                 data-testid="Address__address"
               >
-                D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD
+                D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb
               </span>
             </div>
           </span>

@@ -18,7 +18,7 @@ exports[`TransactionSender should not render delegate icon 1`] = `
         class="font-semibold"
       >
         <div
-          class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap"
+          class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap space-x-2"
         >
           <span
             class="inline-flex overflow-hidden text-theme-text font-semibold text-base"
@@ -82,10 +82,10 @@ exports[`TransactionSender should not render with alias 1`] = `
         class="font-semibold"
       >
         <div
-          class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap"
+          class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap space-x-2"
         >
           <span
-            class="max-w-24 truncate mr-2 font-semibold text-base text-theme-text"
+            class="font-semibold text-base text-theme-text"
             data-testid="Address__alias"
           >
             <span
@@ -144,7 +144,7 @@ exports[`TransactionSender should render 1`] = `
         class="font-semibold"
       >
         <div
-          class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap"
+          class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap space-x-2"
         >
           <span
             class="inline-flex overflow-hidden text-theme-text font-semibold text-base"

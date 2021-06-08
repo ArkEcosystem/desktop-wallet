@@ -3,7 +3,7 @@
 exports[`Formatted Address should not render without address 1`] = `
 <div>
   <div
-    class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap"
+    class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap space-x-2"
   />
 </div>
 `;
@@ -11,7 +11,7 @@ exports[`Formatted Address should not render without address 1`] = `
 exports[`Formatted Address should render address only 1`] = `
 <div>
   <div
-    class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap"
+    class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap space-x-2"
   >
     <span
       class="inline-flex overflow-hidden text-theme-text font-semibold text-base"
@@ -26,10 +26,10 @@ exports[`Formatted Address should render address only 1`] = `
 exports[`Formatted Address should render with normal font 1`] = `
 <div>
   <div
-    class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap"
+    class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap space-x-2"
   >
     <span
-      class="max-w-24 truncate mr-2 font-normal text-base text-theme-text"
+      class="font-normal text-base text-theme-text"
       data-testid="Address__alias"
     >
       <span
@@ -52,10 +52,10 @@ exports[`Formatted Address should render with normal font 1`] = `
 exports[`Formatted Address should render with wallet name 1`] = `
 <div>
   <div
-    class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap"
+    class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap space-x-2"
   >
     <span
-      class="max-w-24 truncate mr-2 font-semibold text-base text-theme-text"
+      class="font-semibold text-base text-theme-text"
       data-testid="Address__alias"
     >
       <span

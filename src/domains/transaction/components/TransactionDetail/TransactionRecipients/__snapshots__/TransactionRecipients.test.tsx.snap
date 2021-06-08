@@ -112,7 +112,7 @@ exports[`TransactionRecipients should render a recipients array 1`] = `
                         class="max-w-lg"
                       >
                         <div
-                          class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap"
+                          class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap space-x-2"
                         >
                           <span
                             class="inline-flex overflow-hidden text-theme-text font-semibold text-base"
@@ -167,7 +167,7 @@ exports[`TransactionRecipients should render a recipients array 1`] = `
                         class="max-w-lg"
                       >
                         <div
-                          class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap"
+                          class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap space-x-2"
                         >
                           <span
                             class="inline-flex overflow-hidden text-theme-text font-semibold text-base"
@@ -222,7 +222,7 @@ exports[`TransactionRecipients should render a single recipient 1`] = `
         class="font-semibold"
       >
         <div
-          class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap"
+          class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap space-x-2"
         >
           <span
             class="inline-flex overflow-hidden text-theme-text font-semibold text-base"
@@ -269,10 +269,10 @@ exports[`TransactionRecipients should render a single recipient with alias 1`] =
         class="font-semibold"
       >
         <div
-          class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap"
+          class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap space-x-2"
         >
           <span
-            class="max-w-24 truncate mr-2 font-semibold text-base text-theme-text"
+            class="font-semibold text-base text-theme-text"
             data-testid="Address__alias"
           >
             <span
