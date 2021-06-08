@@ -115,10 +115,6 @@ exports[`VerifyMessage should render 1`] = `
                       for="signatory"
                     >
                       Public Key
-                      <div
-                        class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
-                        data-testid="FormLabel__required"
-                      />
                     </label>
                     <div
                       class="fixed invisible w-auto whitespace-nowrap"
@@ -149,10 +145,6 @@ exports[`VerifyMessage should render 1`] = `
                       for="message"
                     >
                       Message
-                      <div
-                        class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
-                        data-testid="FormLabel__required"
-                      />
                     </label>
                     <div
                       class="fixed invisible w-auto whitespace-nowrap"
@@ -183,10 +175,6 @@ exports[`VerifyMessage should render 1`] = `
                       for="signature"
                     >
                       Signature
-                      <div
-                        class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
-                        data-testid="FormLabel__required"
-                      />
                     </label>
                     <div
                       class="fixed invisible w-auto whitespace-nowrap"

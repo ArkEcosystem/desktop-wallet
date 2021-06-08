@@ -14,10 +14,6 @@ exports[`SendTransactionForm should render 1`] = `
         for="network"
       >
         Cryptoasset
-        <div
-          class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
-          data-testid="FormLabel__required"
-        />
       </label>
       <div>
         <div
@@ -120,10 +116,6 @@ exports[`SendTransactionForm should render 1`] = `
         for="senderAddress"
       >
         Sender
-        <div
-          class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
-          data-testid="FormLabel__required"
-        />
       </label>
       <div
         data-testid="sender-address"
@@ -197,10 +189,6 @@ exports[`SendTransactionForm should render 1`] = `
         for="fee"
       >
         Transaction Fee
-        <div
-          class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
-          data-testid="FormLabel__required"
-        />
       </label>
       <div
         class="flex space-x-2"
@@ -257,10 +245,6 @@ exports[`SendTransactionForm should select a network & update fees 1`] = `
         for="network"
       >
         Cryptoasset
-        <div
-          class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
-          data-testid="FormLabel__required"
-        />
       </label>
       <div>
         <div
@@ -375,10 +359,6 @@ exports[`SendTransactionForm should select a network & update fees 1`] = `
         for="senderAddress"
       >
         Sender
-        <div
-          class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
-          data-testid="FormLabel__required"
-        />
       </label>
       <div
         data-testid="sender-address"
@@ -481,10 +461,6 @@ exports[`SendTransactionForm should select a network & update fees 1`] = `
         for="fee"
       >
         Transaction Fee
-        <div
-          class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
-          data-testid="FormLabel__required"
-        />
       </label>
       <div
         class="flex space-x-2"
@@ -572,10 +548,6 @@ exports[`SendTransactionForm should use static fees if avg is not available 1`] 
         for="network"
       >
         Cryptoasset
-        <div
-          class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
-          data-testid="FormLabel__required"
-        />
       </label>
       <div>
         <div
@@ -690,10 +662,6 @@ exports[`SendTransactionForm should use static fees if avg is not available 1`] 
         for="senderAddress"
       >
         Sender
-        <div
-          class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
-          data-testid="FormLabel__required"
-        />
       </label>
       <div
         data-testid="sender-address"
@@ -796,10 +764,6 @@ exports[`SendTransactionForm should use static fees if avg is not available 1`] 
         for="fee"
       >
         Transaction Fee
-        <div
-          class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
-          data-testid="FormLabel__required"
-        />
       </label>
       <div
         class="flex space-x-2"

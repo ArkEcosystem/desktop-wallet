@@ -55,7 +55,7 @@ export const UpdateWalletName = ({
 		>
 			<div className="mt-8">
 				<FormField name="name">
-					<FormLabel required={false}>{t("WALLETS.WALLET_NAME")}</FormLabel>
+					<FormLabel optional>{t("WALLETS.WALLET_NAME")}</FormLabel>
 					<div className="relative">
 						<Input
 							errorMessage={errors["name"]?.message}
