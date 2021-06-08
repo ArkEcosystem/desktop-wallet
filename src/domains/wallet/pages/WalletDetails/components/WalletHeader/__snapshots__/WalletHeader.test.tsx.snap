@@ -7,7 +7,7 @@ exports[`WalletHeader should render 1`] = `
     data-testid="WalletHeader"
   >
     <div
-      class="flex items-center w-1/2 pr-12 space-x-4 border-r h-13 border-theme-secondary-800"
+      class="flex items-center w-1/2 pr-12 border-r h-13 border-theme-secondary-800"
     >
       <div
         class="flex -space-x-1"
@@ -44,7 +44,7 @@ exports[`WalletHeader should render 1`] = `
         </div>
       </div>
       <div
-        class="flex flex-col w-full py-2 -my-2 pr-2 -mr-2 overflow-hidden"
+        class="flex flex-col w-full py-2 -my-2 pr-2 ml-4 -mr-2 overflow-hidden"
       >
         <div
           class="flex items-center space-x-5 text-theme-secondary-text"
@@ -63,7 +63,7 @@ exports[`WalletHeader should render 1`] = `
           class="flex items-center w-full space-x-5"
         >
           <span
-            class="inline-flex overflow-hidden flex flex-1 text-lg font-semibold text-white whitespace-nowrap"
+            class="inline-flex overflow-hidden flex-1 text-lg font-semibold text-white whitespace-nowrap"
           >
             D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD
           </span>
@@ -232,7 +232,7 @@ exports[`WalletHeader should show currency delta (-5%) 1`] = `
     data-testid="WalletHeader"
   >
     <div
-      class="flex items-center w-1/2 pr-12 space-x-4 border-r h-13 border-theme-secondary-800"
+      class="flex items-center w-1/2 pr-12 border-r h-13 border-theme-secondary-800"
     >
       <div
         class="flex -space-x-1"
@@ -269,7 +269,7 @@ exports[`WalletHeader should show currency delta (-5%) 1`] = `
         </div>
       </div>
       <div
-        class="flex flex-col w-full py-2 -my-2 pr-2 -mr-2 overflow-hidden"
+        class="flex flex-col w-full py-2 -my-2 pr-2 ml-4 -mr-2 overflow-hidden"
       >
         <div
           class="flex items-center space-x-5 text-theme-secondary-text"
@@ -288,7 +288,7 @@ exports[`WalletHeader should show currency delta (-5%) 1`] = `
           class="flex items-center w-full space-x-5"
         >
           <span
-            class="inline-flex overflow-hidden flex flex-1 text-lg font-semibold text-white whitespace-nowrap"
+            class="inline-flex overflow-hidden flex-1 text-lg font-semibold text-white whitespace-nowrap"
           >
             D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD
           </span>
@@ -475,7 +475,7 @@ exports[`WalletHeader should show currency delta (5%) 1`] = `
     data-testid="WalletHeader"
   >
     <div
-      class="flex items-center w-1/2 pr-12 space-x-4 border-r h-13 border-theme-secondary-800"
+      class="flex items-center w-1/2 pr-12 border-r h-13 border-theme-secondary-800"
     >
       <div
         class="flex -space-x-1"
@@ -512,7 +512,7 @@ exports[`WalletHeader should show currency delta (5%) 1`] = `
         </div>
       </div>
       <div
-        class="flex flex-col w-full py-2 -my-2 pr-2 -mr-2 overflow-hidden"
+        class="flex flex-col w-full py-2 -my-2 pr-2 ml-4 -mr-2 overflow-hidden"
       >
         <div
           class="flex items-center space-x-5 text-theme-secondary-text"
@@ -531,7 +531,7 @@ exports[`WalletHeader should show currency delta (5%) 1`] = `
           class="flex items-center w-full space-x-5"
         >
           <span
-            class="inline-flex overflow-hidden flex flex-1 text-lg font-semibold text-white whitespace-nowrap"
+            class="inline-flex overflow-hidden flex-1 text-lg font-semibold text-white whitespace-nowrap"
           >
             D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD
           </span>
@@ -718,7 +718,7 @@ exports[`WalletHeader should show modifiers 1`] = `
     data-testid="WalletHeader"
   >
     <div
-      class="flex items-center w-1/2 pr-12 space-x-4 border-r h-13 border-theme-secondary-800"
+      class="flex items-center w-1/2 pr-12 border-r h-13 border-theme-secondary-800"
     >
       <div
         class="flex -space-x-1"
@@ -755,7 +755,7 @@ exports[`WalletHeader should show modifiers 1`] = `
         </div>
       </div>
       <div
-        class="flex flex-col w-full py-2 -my-2 pr-2 -mr-2 overflow-hidden"
+        class="flex flex-col w-full py-2 -my-2 pr-2 ml-4 -mr-2 overflow-hidden"
       >
         <div
           class="flex items-center space-x-5 text-theme-secondary-text"
@@ -803,7 +803,7 @@ exports[`WalletHeader should show modifiers 1`] = `
           class="flex items-center w-full space-x-5"
         >
           <span
-            class="inline-flex overflow-hidden flex flex-1 text-lg font-semibold text-white whitespace-nowrap"
+            class="inline-flex overflow-hidden flex-1 text-lg font-semibold text-white whitespace-nowrap"
           >
             D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD
           </span>
