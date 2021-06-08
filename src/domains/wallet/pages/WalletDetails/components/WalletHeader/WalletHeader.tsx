@@ -252,7 +252,7 @@ export const WalletHeader = ({
 						<Avatar size="lg" address={wallet.address()} shadowClassName="ring-theme-secondary-900" />
 					</div>
 
-					<div className="flex flex-col w-full overflow-hidden">
+					<div className="flex flex-col w-full py-2 -my-2 pr-2 -mr-2 overflow-hidden">
 						<div className="flex items-center space-x-5 text-theme-secondary-text">
 							{wallet.alias() && (
 								<span data-testid="WalletHeader__name" className="text-sm font-semibold">
@@ -269,13 +269,13 @@ export const WalletHeader = ({
 							</div>
 						</div>
 
-						<div className="flex items-center w-full">
+						<div className="flex items-center w-full space-x-5">
 							<TruncateMiddleDynamic
 								value={wallet.address()}
 								className="flex flex-1 text-lg font-semibold text-white whitespace-nowrap"
 							/>
 
-							<div className="flex items-end -mt-1 mr-2 mb-2 ml-5 space-x-3 text-theme-secondary-text">
+							<div className="flex items-end mb-1 space-x-3 text-theme-secondary-text">
 								<Clipboard
 									variant="icon"
 									data={wallet.address()}

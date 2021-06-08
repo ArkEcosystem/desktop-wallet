@@ -44,7 +44,7 @@ exports[`WalletHeader should render 1`] = `
         </div>
       </div>
       <div
-        class="flex flex-col w-full overflow-hidden"
+        class="flex flex-col w-full py-2 -my-2 pr-2 -mr-2 overflow-hidden"
       >
         <div
           class="flex items-center space-x-5 text-theme-secondary-text"
@@ -60,7 +60,7 @@ exports[`WalletHeader should render 1`] = `
           />
         </div>
         <div
-          class="flex items-center w-full"
+          class="flex items-center w-full space-x-5"
         >
           <span
             class="inline-flex overflow-hidden flex flex-1 text-lg font-semibold text-white whitespace-nowrap"
@@ -68,7 +68,7 @@ exports[`WalletHeader should render 1`] = `
             D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD
           </span>
           <div
-            class="flex items-end -mt-1 mr-2 mb-2 ml-5 space-x-3 text-theme-secondary-text"
+            class="flex items-end mb-1 space-x-3 text-theme-secondary-text"
           >
             <button
               class="relative focus:outline-none group"
@@ -269,7 +269,7 @@ exports[`WalletHeader should show currency delta (-5%) 1`] = `
         </div>
       </div>
       <div
-        class="flex flex-col w-full overflow-hidden"
+        class="flex flex-col w-full py-2 -my-2 pr-2 -mr-2 overflow-hidden"
       >
         <div
           class="flex items-center space-x-5 text-theme-secondary-text"
@@ -285,7 +285,7 @@ exports[`WalletHeader should show currency delta (-5%) 1`] = `
           />
         </div>
         <div
-          class="flex items-center w-full"
+          class="flex items-center w-full space-x-5"
         >
           <span
             class="inline-flex overflow-hidden flex flex-1 text-lg font-semibold text-white whitespace-nowrap"
@@ -293,7 +293,7 @@ exports[`WalletHeader should show currency delta (-5%) 1`] = `
             D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD
           </span>
           <div
-            class="flex items-end -mt-1 mr-2 mb-2 ml-5 space-x-3 text-theme-secondary-text"
+            class="flex items-end mb-1 space-x-3 text-theme-secondary-text"
           >
             <button
               class="relative focus:outline-none group"
@@ -512,7 +512,7 @@ exports[`WalletHeader should show currency delta (5%) 1`] = `
         </div>
       </div>
       <div
-        class="flex flex-col w-full overflow-hidden"
+        class="flex flex-col w-full py-2 -my-2 pr-2 -mr-2 overflow-hidden"
       >
         <div
           class="flex items-center space-x-5 text-theme-secondary-text"
@@ -528,7 +528,7 @@ exports[`WalletHeader should show currency delta (5%) 1`] = `
           />
         </div>
         <div
-          class="flex items-center w-full"
+          class="flex items-center w-full space-x-5"
         >
           <span
             class="inline-flex overflow-hidden flex flex-1 text-lg font-semibold text-white whitespace-nowrap"
@@ -536,7 +536,7 @@ exports[`WalletHeader should show currency delta (5%) 1`] = `
             D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD
           </span>
           <div
-            class="flex items-end -mt-1 mr-2 mb-2 ml-5 space-x-3 text-theme-secondary-text"
+            class="flex items-end mb-1 space-x-3 text-theme-secondary-text"
           >
             <button
               class="relative focus:outline-none group"
@@ -755,7 +755,7 @@ exports[`WalletHeader should show modifiers 1`] = `
         </div>
       </div>
       <div
-        class="flex flex-col w-full overflow-hidden"
+        class="flex flex-col w-full py-2 -my-2 pr-2 -mr-2 overflow-hidden"
       >
         <div
           class="flex items-center space-x-5 text-theme-secondary-text"
@@ -800,7 +800,7 @@ exports[`WalletHeader should show modifiers 1`] = `
           </div>
         </div>
         <div
-          class="flex items-center w-full"
+          class="flex items-center w-full space-x-5"
         >
           <span
             class="inline-flex overflow-hidden flex flex-1 text-lg font-semibold text-white whitespace-nowrap"
@@ -808,7 +808,7 @@ exports[`WalletHeader should show modifiers 1`] = `
             D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD
           </span>
           <div
-            class="flex items-end -mt-1 mr-2 mb-2 ml-5 space-x-3 text-theme-secondary-text"
+            class="flex items-end mb-1 space-x-3 text-theme-secondary-text"
           >
             <button
               class="relative focus:outline-none group"
