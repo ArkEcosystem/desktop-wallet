@@ -8,7 +8,6 @@ import { act, renderHook } from "@testing-library/react-hooks";
 import { LedgerProvider } from "app/contexts";
 import { EnvironmentProvider } from "app/contexts";
 import { translations as commonTranslations } from "app/i18n/common/i18n";
-import { toasts } from "app/services";
 import { NetworkStep } from "domains/wallet/components/NetworkStep";
 import { translations as walletTranslations } from "domains/wallet/i18n";
 import { createMemoryHistory } from "history";
@@ -446,11 +445,11 @@ describe("ImportWallet", () => {
 		});
 	});
 
-	it("should import by private key", async () => {
+	it("should get options depend on the network", async () => {
 		const history = createMemoryHistory();
 		history.push(route);
 
-		const { getByTestId, getByText } = renderWithRouter(
+		const { getByTestId, getByText, queryByText, queryAllByText } = renderWithRouter(
 			<Route path="/profiles/:profileId/wallets/import">
 				<ImportWallet />
 			</Route>,
@@ -476,144 +475,12 @@ describe("ImportWallet", () => {
 
 		fireEvent.focus(getByTestId("SelectDropdown__input"));
 
-		await waitFor(() => expect(getByText(commonTranslations.PRIVATE_KEY)).toBeTruthy());
-		fireEvent.mouseDown(getByText(commonTranslations.PRIVATE_KEY));
-
-		await waitFor(() => expect(getByTestId("ImportWallet__privatekey-input")).toBeTruthy());
-		fireEvent.input(getByTestId("ImportWallet__privatekey-input"), { target: { value: "invalid" } });
-
-		fireEvent.input(getByTestId("ImportWallet__privatekey-input"), {
-			target: { value: "1e089e3c5323ad80a90767bdd5907297b4138163f027097fd3bdbeab528d2d68" },
-		});
-
-		await waitFor(() => expect(getByTestId("ImportWallet__continue-button")).not.toBeDisabled());
-		fireEvent.click(getByTestId("ImportWallet__continue-button"));
-
-		await waitFor(() => {
-			expect(getByTestId("ImportWallet__third-step")).toBeTruthy();
-		});
-
-		await waitFor(() => expect(getByTestId("ImportWallet__save-button")).not.toBeDisabled());
-		fireEvent.click(getByTestId("ImportWallet__save-button"));
-
-		await waitFor(() => {
-			expect(profile.wallets().findByAddress("DDA5nM7KEqLeTtQKv5qGgcnc6dpNBKJNTS")).toBeTruthy();
-		});
-	});
-
-	it("should import by WIF", async () => {
-		const history = createMemoryHistory();
-		history.push(route);
-
-		const { getByTestId, getByText } = renderWithRouter(
-			<Route path="/profiles/:profileId/wallets/import">
-				<ImportWallet />
-			</Route>,
-			{
-				routes: [route],
-				history,
-			},
-		);
-
-		await waitFor(() => expect(getByTestId("NetworkStep")).toBeTruthy());
-
-		const selectNetworkInput = getByTestId("SelectNetworkInput__input");
-
-		fireEvent.change(selectNetworkInput, { target: { value: "ARK D" } });
-		fireEvent.keyDown(selectNetworkInput, { key: "Enter", code: 13 });
-
-		expect(selectNetworkInput).toHaveValue("ARK Devnet");
-
-		await waitFor(() => expect(getByTestId("ImportWallet__continue-button")).not.toBeDisabled());
-		fireEvent.click(getByTestId("ImportWallet__continue-button"));
-
-		expect(getByTestId("ImportWallet__second-step")).toBeTruthy();
-
-		fireEvent.focus(getByTestId("SelectDropdown__input"));
-
-		await waitFor(() => expect(getByText(commonTranslations.WIF)).toBeTruthy());
-		fireEvent.mouseDown(getByText(commonTranslations.WIF));
-
-		await waitFor(() => expect(getByTestId("ImportWallet__wif-input")).toBeTruthy());
-		fireEvent.input(getByTestId("ImportWallet__wif-input"), { target: { value: "invalid" } });
-
-		fireEvent.input(getByTestId("ImportWallet__wif-input"), {
-			target: { value: "SHjn7G4NygZH5LHvuhbMSdgrn42vqu3LdYzjxUoh2E9b7PdVsBPs" },
-		});
-
-		await waitFor(() => expect(getByTestId("ImportWallet__continue-button")).not.toBeDisabled());
-		fireEvent.click(getByTestId("ImportWallet__continue-button"));
-
-		await waitFor(() => {
-			expect(getByTestId("ImportWallet__third-step")).toBeTruthy();
-		});
-
-		await waitFor(() => expect(getByTestId("ImportWallet__save-button")).not.toBeDisabled());
-		fireEvent.click(getByTestId("ImportWallet__save-button"));
-
-		await waitFor(() => {
-			expect(profile.wallets().findByAddress("DLE2wgQoL4to7ZQayjdrv2tn9QnWzwXcKP")).toBeTruthy();
-		});
-	});
-
-	it("should fail to import by encrypted WIF", async () => {
-		const toastSpy = jest.spyOn(toasts, "error").mockImplementation();
-
-		const history = createMemoryHistory();
-		history.push(route);
-
-		const { getByTestId, getByText } = renderWithRouter(
-			<Route path="/profiles/:profileId/wallets/import">
-				<ImportWallet />
-			</Route>,
-			{
-				routes: [route],
-				history,
-			},
-		);
-
-		await waitFor(() => expect(getByTestId("NetworkStep")).toBeTruthy());
-
-		const selectNetworkInput = getByTestId("SelectNetworkInput__input");
-
-		fireEvent.change(selectNetworkInput, { target: { value: "ARK D" } });
-		fireEvent.keyDown(selectNetworkInput, { key: "Enter", code: 13 });
-
-		expect(selectNetworkInput).toHaveValue("ARK Devnet");
-
-		await waitFor(() => expect(getByTestId("ImportWallet__continue-button")).not.toBeDisabled());
-		fireEvent.click(getByTestId("ImportWallet__continue-button"));
-
-		expect(getByTestId("ImportWallet__second-step")).toBeTruthy();
-
-		fireEvent.focus(getByTestId("SelectDropdown__input"));
-
-		await waitFor(() => expect(getByText(commonTranslations.ENCRYPTED_WIF)).toBeTruthy());
-		fireEvent.mouseDown(getByText(commonTranslations.ENCRYPTED_WIF));
-
-		await waitFor(() => expect(getByTestId("ImportWallet__encryptedWif-input")).toBeTruthy());
-		fireEvent.input(getByTestId("ImportWallet__encryptedWif-input"), { target: { value: "invalid" } });
-
-		fireEvent.input(getByTestId("ImportWallet__encryptedWif-input"), {
-			target: { value: "6PYR8Zq7e84mKXq3kxZyrZ8Zyt6iE89fCngdMgibQ5HjCd7Bt3k7wKc4ZL" },
-		});
-		fireEvent.input(getByTestId("ImportWallet__encryptedWif__password-input"), {
-			target: { value: "wrong-password" },
-		});
-
-		await waitFor(() => expect(getByTestId("ImportWallet__continue-button")).not.toBeDisabled());
-		fireEvent.click(getByTestId("ImportWallet__continue-button"));
-
-		await waitFor(
-			() => {
-				expect(toastSpy).toHaveBeenCalledWith(
-					walletTranslations.PAGE_IMPORT_WALLET.VALIDATION.DECRYPT_WIF_ASSERTION,
-				);
-			},
-			{ timeout: 15000 },
-		);
-
-		toastSpy.mockRestore();
+		await waitFor(() => expect(queryAllByText(commonTranslations.MNEMONIC_TYPE.BIP39)).toBeTruthy());
+		await waitFor(() => expect(getByText(commonTranslations.ADDRESS)).toBeTruthy());
+		await waitFor(() => expect(queryByText(commonTranslations.MNEMONIC_TYPE.BIP49)).toBeFalsy());
+		await waitFor(() => expect(queryByText(commonTranslations.PRIVATE_KEY)).toBeFalsy());
+		await waitFor(() => expect(queryByText(commonTranslations.WIF)).toBeFalsy());
+		await waitFor(() => expect(queryByText(commonTranslations.ENCRYPTED_WIF)).toBeFalsy());
 	});
 
 	it("should show an error message for duplicate address", async () => {
@@ -665,82 +532,6 @@ describe("ImportWallet", () => {
 		});
 
 		expect(getByTestId("ImportWallet__continue-button")).toBeDisabled();
-	});
-
-	it("should import by encrypted WIF", async () => {
-		const emptyProfile = env.profiles().create("encryptedWIFProfile");
-		const emptyProfileRoute = `/profiles/${emptyProfile.id()}/wallets/import`;
-
-		await env.profiles().restore(emptyProfile);
-		await emptyProfile.sync();
-
-		const history = createMemoryHistory();
-		history.push(emptyProfileRoute);
-
-		const historySpy = jest.spyOn(history, "push").mockImplementation();
-
-		const { getByTestId, getByText } = renderWithRouter(
-			<Route path="/profiles/:profileId/wallets/import">
-				<ImportWallet />
-			</Route>,
-			{
-				routes: [emptyProfileRoute],
-				history,
-			},
-		);
-
-		await waitFor(() => expect(getByTestId("NetworkStep")).toBeTruthy());
-
-		const selectNetworkInput = getByTestId("SelectNetworkInput__input");
-
-		act(() => {
-			fireEvent.click(getByTestId("NetworkIcon-ARK-ark.mainnet"));
-		});
-
-		await waitFor(() => expect(selectNetworkInput).toHaveValue("ARK"));
-
-		await waitFor(() => expect(getByTestId("ImportWallet__continue-button")).not.toBeDisabled());
-		fireEvent.click(getByTestId("ImportWallet__continue-button"));
-
-		expect(getByTestId("ImportWallet__second-step")).toBeTruthy();
-
-		fireEvent.focus(getByTestId("SelectDropdown__input"));
-
-		await waitFor(() => expect(getByText(commonTranslations.ENCRYPTED_WIF)).toBeTruthy());
-		fireEvent.mouseDown(getByText(commonTranslations.ENCRYPTED_WIF));
-
-		await waitFor(() => expect(getByTestId("ImportWallet__encryptedWif-input")).toBeTruthy());
-
-		const withWifEncryptionMock = jest.spyOn(emptyProfile, "walletFactory").mockImplementation(() => ({
-			fromWIF: () => Promise.resolve(profile.wallets().first()),
-		}));
-
-		fireEvent.input(getByTestId("ImportWallet__encryptedWif-input"), {
-			target: { value: "6PYR8Zq7e84mKXq3kxZyrZ8Zyt6iE89fCngdMgibQ5HjCd7Bt3k7wKc4ZL" },
-		});
-		fireEvent.input(getByTestId("ImportWallet__encryptedWif__password-input"), {
-			target: { value: "password" },
-		});
-
-		await waitFor(() => expect(getByTestId("ImportWallet__continue-button")).not.toBeDisabled());
-		act(() => {
-			fireEvent.click(getByTestId("ImportWallet__continue-button"));
-		});
-		await waitFor(
-			() => {
-				expect(getByTestId("ImportWallet__third-step")).toBeTruthy();
-			},
-			{ timeout: 15000 },
-		);
-
-		await waitFor(() => expect(getByTestId("ImportWallet__save-button")).not.toBeDisabled());
-		fireEvent.click(getByTestId("ImportWallet__save-button"));
-
-		await waitFor(() => {
-			expect(historySpy).toHaveBeenCalled();
-		});
-
-		withWifEncryptionMock.mockRestore();
 	});
 
 	it("should show an error message for invalid address", async () => {
