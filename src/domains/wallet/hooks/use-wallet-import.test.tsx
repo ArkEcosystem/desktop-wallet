@@ -3,6 +3,7 @@ import { Contracts } from "@arkecosystem/platform-sdk-profiles";
 import { act, renderHook } from "@testing-library/react-hooks";
 import { env } from "utils/testing-library";
 
+import { OptionsValue } from "./use-import-options";
 import { useWalletImport } from "./use-wallet-import";
 
 let profile: Contracts.IProfile;
@@ -27,7 +28,12 @@ describe("useWalletImport", () => {
 
 		await act(async () => {
 			await expect(
-				current.importWalletByType({ network, type: "encryptedWif", value: "password", encryptedWif: "wif" }),
+				current.importWalletByType({
+					network,
+					type: OptionsValue.ENCRYPTED_WIF,
+					value: "password",
+					encryptedWif: "wif",
+				}),
 			).rejects.toBeTruthy();
 		});
 
