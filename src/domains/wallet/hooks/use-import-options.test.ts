@@ -1,6 +1,6 @@
 import { renderHook } from "@testing-library/react-hooks";
 
-import { useImportOptions } from "./use-import-options";
+import { OptionsValue, useImportOptions } from "./use-import-options";
 
 describe("useImportOptions", () => {
 	it("should return options and default option", () => {
@@ -20,8 +20,8 @@ describe("useImportOptions", () => {
 		);
 
 		expect(current.options).toHaveLength(2);
-		expect(current.options[0].value).toBe("address");
-		expect(current.defaultOption).toBe("address");
+		expect(current.options[0].value).toBe(OptionsValue.ADDRESS);
+		expect(current.defaultOption).toBe(OptionsValue.ADDRESS);
 	});
 
 	it("should return options from the available options", () => {
@@ -41,7 +41,7 @@ describe("useImportOptions", () => {
 		);
 
 		expect(current.options).toHaveLength(1);
-		expect(current.options[0].value).toBe("address");
+		expect(current.options[0].value).toBe(OptionsValue.ADDRESS);
 	});
 
 	it("should convert method name", () => {
@@ -61,8 +61,8 @@ describe("useImportOptions", () => {
 		);
 
 		expect(current.options).toHaveLength(2);
-		expect(current.options[0].value).toBe("mnemonic.bip84");
-		expect(current.options[1].value).toBe("encryptedWif");
+		expect(current.options[0].value).toBe(OptionsValue.BIP84);
+		expect(current.options[1].value).toBe(OptionsValue.ENCRYPTED_WIF);
 	});
 
 	it("should return default option if exist in the available options", () => {
@@ -100,6 +100,6 @@ describe("useImportOptions", () => {
 			}),
 		);
 
-		expect(current.defaultOption).toBe("mnemonic.bip39");
+		expect(current.defaultOption).toBe(OptionsValue.BIP39);
 	});
 });

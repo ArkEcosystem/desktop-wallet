@@ -45,7 +45,7 @@ exports[`ImportWallet should render 2nd step 1`] = `
           <div
             class="fixed invisible w-auto whitespace-nowrap"
           >
-            mnemonic.bip39
+            bip39
             …
           </div>
           <div
@@ -60,7 +60,7 @@ exports[`ImportWallet should render 2nd step 1`] = `
                 name=""
                 readonly=""
                 tabindex="-1"
-                value="mnemonic.bip39"
+                value="bip39"
               />
             </div>
           </div>
@@ -745,7 +745,7 @@ exports[`ImportWallet should render as ledger import 1`] = `
                           <div
                             class="fixed invisible w-auto whitespace-nowrap"
                           >
-
+                            
                             …
                           </div>
                           <div
@@ -769,7 +769,7 @@ exports[`ImportWallet should render as ledger import 1`] = `
                                 placeholder="Enter a cryptoasset name"
                                 value=""
                               />
-
+                              
                             </div>
                           </div>
                         </div>

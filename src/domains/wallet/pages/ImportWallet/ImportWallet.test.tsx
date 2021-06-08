@@ -9,6 +9,7 @@ import { LedgerProvider } from "app/contexts";
 import { EnvironmentProvider } from "app/contexts";
 import { translations as commonTranslations } from "app/i18n/common/i18n";
 import { NetworkStep } from "domains/wallet/components/NetworkStep";
+import { OptionsValue } from "domains/wallet/hooks/use-import-options";
 import { translations as walletTranslations } from "domains/wallet/i18n";
 import { createMemoryHistory } from "history";
 import nock from "nock";
@@ -163,7 +164,7 @@ describe("ImportWallet", () => {
 		fireEvent.change(passphraseInput, { target: { value: mnemonic } });
 
 		await waitFor(() => {
-			expect(form.getValues()).toMatchObject({ type: "mnemonic.bip39", value: mnemonic });
+			expect(form.getValues()).toMatchObject({ type: OptionsValue.BIP39, value: mnemonic });
 		});
 
 		expect(container).toMatchSnapshot();
@@ -179,7 +180,6 @@ describe("ImportWallet", () => {
 						coin: () => "ARK",
 						ticker: () => "DARK",
 					},
-					type: "mnemonic",
 				},
 			});
 
