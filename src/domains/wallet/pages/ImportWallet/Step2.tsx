@@ -5,7 +5,7 @@ import { Header } from "app/components/Header";
 import { Input, InputAddress, InputPassword } from "app/components/Input";
 import { Select } from "app/components/SelectDropdown";
 import { useActiveProfile } from "app/hooks";
-import { useImportOptions } from "domains/wallet/hooks/use-import-options";
+import { OptionsValue, useImportOptions } from "domains/wallet/hooks/use-import-options";
 import React, { useState } from "react";
 import { useFormContext } from "react-hook-form";
 import { useTranslation } from "react-i18next";
@@ -96,13 +96,12 @@ const ImportInputField = ({
 	const [coin] = useState(() => activeProfile.coins().set(network.coin(), network.id()));
 	const { register } = useFormContext();
 
-	if (type.startsWith("mnemonic")) {
-		const MNEMONIC_TYPE = type.split(".")[1].toUpperCase();
+	if (type.startsWith("bip")) {
 		return (
 			<MnemonicField
 				network={network}
 				profile={profile}
-				label={t(`COMMON.MNEMONIC_TYPE.${MNEMONIC_TYPE}`)}
+				label={t(`COMMON.MNEMONIC_TYPE.${type.toUpperCase()}`)}
 				data-testid="ImportWallet__mnemonic-input"
 				findAddress={async (value) => {
 					await coin.__construct();
@@ -113,11 +112,11 @@ const ImportInputField = ({
 		);
 	}
 
-	if (type === "address") {
+	if (type === OptionsValue.ADDRESS) {
 		return <AddressField network={network} profile={profile} />;
 	}
 
-	if (type === "privateKey") {
+	if (type === OptionsValue.PRIVATE_KEY) {
 		return (
 			<MnemonicField
 				network={network}
@@ -137,7 +136,7 @@ const ImportInputField = ({
 		);
 	}
 
-	if (type === "wif") {
+	if (type === OptionsValue.WIF) {
 		return (
 			<MnemonicField
 				network={network}
@@ -157,7 +156,7 @@ const ImportInputField = ({
 		);
 	}
 
-	if (type === "encryptedWif") {
+	if (type === OptionsValue.ENCRYPTED_WIF) {
 		return (
 			<>
 				<FormField name="encryptedWif">

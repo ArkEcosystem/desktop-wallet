@@ -7,12 +7,19 @@ const convertMethodName = (methodName: string) => {
 		return "encryptedWif";
 	}
 
-	if (methodName.startsWith("bip")) {
-		return `mnemonic.${methodName}`;
-	}
-
 	return methodName;
 };
+
+export enum OptionsValue {
+	BIP39 = "bip39",
+	BIP44 = "bip44",
+	BIP49 = "bip49",
+	BIP84 = "bip84",
+	ADDRESS = "address",
+	PRIVATE_KEY = "privateKey",
+	WIF = "wif",
+	ENCRYPTED_WIF = "encryptedWif",
+}
 
 interface Network {
 	options: string[];
@@ -24,14 +31,14 @@ export const useImportOptions = (methods: NetworkManifestImportMethods) => {
 
 	const allOptions = useMemo(
 		() => [
-			{ label: t("COMMON.MNEMONIC_TYPE.BIP39"), value: "mnemonic.bip39" },
-			{ label: t("COMMON.MNEMONIC_TYPE.BIP44"), value: "mnemonic.bip44" },
-			{ label: t("COMMON.MNEMONIC_TYPE.BIP49"), value: "mnemonic.bip49" },
-			{ label: t("COMMON.MNEMONIC_TYPE.BIP84"), value: "mnemonic.bip84" },
-			{ label: t("COMMON.ADDRESS"), value: "address" },
-			{ label: t("COMMON.PRIVATE_KEY"), value: "privateKey" },
-			{ label: t("COMMON.WIF"), value: "wif" },
-			{ label: t("COMMON.ENCRYPTED_WIF"), value: "encryptedWif" },
+			{ label: t("COMMON.MNEMONIC_TYPE.BIP39"), value: OptionsValue.BIP39 },
+			{ label: t("COMMON.MNEMONIC_TYPE.BIP44"), value: OptionsValue.BIP44 },
+			{ label: t("COMMON.MNEMONIC_TYPE.BIP49"), value: OptionsValue.BIP49 },
+			{ label: t("COMMON.MNEMONIC_TYPE.BIP84"), value: OptionsValue.BIP84 },
+			{ label: t("COMMON.ADDRESS"), value: OptionsValue.ADDRESS },
+			{ label: t("COMMON.PRIVATE_KEY"), value: OptionsValue.PRIVATE_KEY },
+			{ label: t("COMMON.WIF"), value: OptionsValue.WIF },
+			{ label: t("COMMON.ENCRYPTED_WIF"), value: OptionsValue.ENCRYPTED_WIF },
 		],
 		[t],
 	);

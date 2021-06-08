@@ -2,6 +2,8 @@ import { Networks } from "@arkecosystem/platform-sdk";
 import { Contracts } from "@arkecosystem/platform-sdk-profiles";
 import { useTranslation } from "react-i18next";
 
+import { OptionsValue } from "./use-import-options";
+
 type PrivateKey = string;
 type Mnemonic = string;
 type WIF = string;
@@ -29,7 +31,7 @@ export const useWalletImport = ({ profile }: { profile: Contracts.IProfile }) =>
 		};
 
 		switch (type) {
-			case "mnemonic.bip39":
+			case OptionsValue.BIP39:
 				return profile.wallets().push(
 					await profile.walletFactory().fromMnemonicWithBIP39({
 						...defaultOptions,
@@ -37,7 +39,7 @@ export const useWalletImport = ({ profile }: { profile: Contracts.IProfile }) =>
 					}),
 				);
 
-			case "mnemonic.bip44":
+			case OptionsValue.BIP44:
 				return profile.wallets().push(
 					await profile.walletFactory().fromMnemonicWithBIP44({
 						...defaultOptions,
@@ -45,7 +47,7 @@ export const useWalletImport = ({ profile }: { profile: Contracts.IProfile }) =>
 					}),
 				);
 
-			case "mnemonic.bip49":
+			case OptionsValue.BIP49:
 				return profile.wallets().push(
 					await profile.walletFactory().fromMnemonicWithBIP49({
 						...defaultOptions,
@@ -53,7 +55,7 @@ export const useWalletImport = ({ profile }: { profile: Contracts.IProfile }) =>
 					}),
 				);
 
-			case "mnemonic.bip84":
+			case OptionsValue.BIP84:
 				return profile.wallets().push(
 					await profile.walletFactory().fromMnemonicWithBIP84({
 						...defaultOptions,
@@ -61,7 +63,7 @@ export const useWalletImport = ({ profile }: { profile: Contracts.IProfile }) =>
 					}),
 				);
 
-			case "address":
+			case OptionsValue.ADDRESS:
 				return profile.wallets().push(
 					await profile.walletFactory().fromAddress({
 						...defaultOptions,
@@ -69,7 +71,7 @@ export const useWalletImport = ({ profile }: { profile: Contracts.IProfile }) =>
 					}),
 				);
 
-			case "privateKey":
+			case OptionsValue.PRIVATE_KEY:
 				return profile.wallets().push(
 					await profile.walletFactory().fromPrivateKey({
 						...defaultOptions,
@@ -77,7 +79,7 @@ export const useWalletImport = ({ profile }: { profile: Contracts.IProfile }) =>
 					}),
 				);
 
-			case "wif":
+			case OptionsValue.WIF:
 				return profile.wallets().push(
 					await profile.walletFactory().fromWIF({
 						...defaultOptions,
@@ -85,7 +87,7 @@ export const useWalletImport = ({ profile }: { profile: Contracts.IProfile }) =>
 					}),
 				);
 
-			case "encryptedWif":
+			case OptionsValue.ENCRYPTED_WIF:
 				return new Promise((resolve, reject) => {
 					// `setTimeout` being used here to avoid blocking the thread
 					// as the decryption is a expensive calculation
