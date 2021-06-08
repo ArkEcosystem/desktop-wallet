@@ -41,7 +41,6 @@ export const EncryptPasswordStep = () => {
 			<FormField name="confirmEncryptionPassword">
 				<FormLabel
 					label={t("WALLETS.PAGE_IMPORT_WALLET.ENCRYPT_PASSWORD_STEP.CONFIRM_PASSWORD_LABEL")}
-					required={!!encryptionPassword}
 					optional={!encryptionPassword}
 				/>
 				<InputPassword ref={register(password.confirmPassword(watch("encryptionPassword")))} />
