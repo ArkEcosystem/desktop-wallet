@@ -125,8 +125,13 @@ describe("ImportWallet", () => {
 					network: {
 						id: () => "ark.devnet",
 						coin: () => "ARK",
+						importMethods: () => ({
+							bip39: {
+								default: false,
+								permissions: [],
+							},
+						}),
 					},
-					type: "mnemonic",
 				},
 			});
 			form.register("type");
@@ -158,20 +163,8 @@ describe("ImportWallet", () => {
 		fireEvent.change(passphraseInput, { target: { value: mnemonic } });
 
 		await waitFor(() => {
-			expect(form.getValues()).toMatchObject({ type: "mnemonic", value: mnemonic });
+			expect(form.getValues()).toMatchObject({ type: "mnemonic.bip39", value: mnemonic });
 		});
-
-		act(() => {
-			fireEvent.focus(screen.getByTestId("SelectDropdown__input"));
-		});
-
-		await waitFor(() => expect(screen.getByTestId("SelectDropdown__option--1")).toBeInTheDocument());
-
-		act(() => {
-			fireEvent.mouseDown(screen.getByTestId("SelectDropdown__option--1"));
-		});
-
-		await waitFor(() => expect(screen.getByTestId("ImportWallet__address-input")).toBeInTheDocument());
 
 		expect(container).toMatchSnapshot();
 	});
