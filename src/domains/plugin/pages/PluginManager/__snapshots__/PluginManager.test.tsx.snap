@@ -322,37 +322,35 @@ exports[`PluginManager should cancel install plugin 1`] = `
                 >
                   <div
                     class="relative"
+                    data-testid="HeaderSearchBar"
                   >
-                    <button
-                      class="my-auto h-full font-semibold cursor-pointer focus:outline-none"
-                      data-testid="header-search-bar__button"
-                      type="button"
+                    <div
+                      class="group"
                     >
-                      <div
-                        class="group"
+                      <button
+                        class="ControlButton__ControlButtonStyled-sc-1xp1l1a-0 gPBHgx group"
                       >
                         <div
-                          class="ControlButton__ControlButtonStyled-sc-1xp1l1a-0 kMCise"
+                          class="absolute inset-0 -mx-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                        />
+                        <div
+                          class="flex items-center h-5 space-x-3"
                         >
+                          <span>
+                            Search
+                          </span>
                           <div
-                            class="flex items-center h-5 space-x-3"
+                            class="sc-bdfBwQ iNulIV"
+                            height="18"
+                            width="18"
                           >
-                            <span>
-                              Search
-                            </span>
-                            <div
-                              class="sc-bdfBwQ iNulIV"
-                              height="18"
-                              width="18"
-                            >
-                              <svg>
-                                search.svg
-                              </svg>
-                            </div>
+                            <svg>
+                              search.svg
+                            </svg>
                           </div>
                         </div>
-                      </div>
-                    </button>
+                      </button>
+                    </div>
                   </div>
                   <div
                     class="pl-8 my-auto ml-5 h-10 border-l border-theme-secondary-300 dark:border-theme-secondary-800"
@@ -542,10 +540,13 @@ exports[`PluginManager should cancel install plugin 1`] = `
                   <div
                     class="group"
                   >
-                    <div
-                      class="ControlButton__ControlButtonStyled-sc-1xp1l1a-0 gCTrBm"
+                    <button
+                      class="ControlButton__ControlButtonStyled-sc-1xp1l1a-0 gPBHgx group active"
                       data-testid="LayoutControls__list--icon"
                     >
+                      <div
+                        class="absolute inset-0 -mx-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                      />
                       <div
                         class="sc-bdfBwQ iyevwF"
                         height="20"
@@ -555,7 +556,7 @@ exports[`PluginManager should cancel install plugin 1`] = `
                           list-view.svg
                         </svg>
                       </div>
-                    </div>
+                    </button>
                   </div>
                 </div>
                 <div
@@ -564,10 +565,13 @@ exports[`PluginManager should cancel install plugin 1`] = `
                   <div
                     class="group"
                   >
-                    <div
-                      class="ControlButton__ControlButtonStyled-sc-1xp1l1a-0 kMCise"
+                    <button
+                      class="ControlButton__ControlButtonStyled-sc-1xp1l1a-0 gPBHgx group"
                       data-testid="LayoutControls__grid--icon"
                     >
+                      <div
+                        class="absolute inset-0 -mx-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                      />
                       <div
                         class="sc-bdfBwQ iyevwF"
                         height="20"
@@ -577,7 +581,7 @@ exports[`PluginManager should cancel install plugin 1`] = `
                           grid-view.svg
                         </svg>
                       </div>
-                    </div>
+                    </button>
                   </div>
                 </div>
               </div>
@@ -1517,37 +1521,35 @@ exports[`PluginManager should disable plugin on my-plugins 1`] = `
                 >
                   <div
                     class="relative"
+                    data-testid="HeaderSearchBar"
                   >
-                    <button
-                      class="my-auto h-full font-semibold cursor-pointer focus:outline-none"
-                      data-testid="header-search-bar__button"
-                      type="button"
+                    <div
+                      class="group"
                     >
-                      <div
-                        class="group"
+                      <button
+                        class="ControlButton__ControlButtonStyled-sc-1xp1l1a-0 gPBHgx group"
                       >
                         <div
-                          class="ControlButton__ControlButtonStyled-sc-1xp1l1a-0 kMCise"
+                          class="absolute inset-0 -mx-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                        />
+                        <div
+                          class="flex items-center h-5 space-x-3"
                         >
+                          <span>
+                            Search
+                          </span>
                           <div
-                            class="flex items-center h-5 space-x-3"
+                            class="sc-bdfBwQ iNulIV"
+                            height="18"
+                            width="18"
                           >
-                            <span>
-                              Search
-                            </span>
-                            <div
-                              class="sc-bdfBwQ iNulIV"
-                              height="18"
-                              width="18"
-                            >
-                              <svg>
-                                search.svg
-                              </svg>
-                            </div>
+                            <svg>
+                              search.svg
+                            </svg>
                           </div>
                         </div>
-                      </div>
-                    </button>
+                      </button>
+                    </div>
                   </div>
                   <div
                     class="pl-8 my-auto ml-5 h-10 border-l border-theme-secondary-300 dark:border-theme-secondary-800"
@@ -1743,10 +1745,13 @@ exports[`PluginManager should disable plugin on my-plugins 1`] = `
                   <div
                     class="group"
                   >
-                    <div
-                      class="ControlButton__ControlButtonStyled-sc-1xp1l1a-0 gCTrBm"
+                    <button
+                      class="ControlButton__ControlButtonStyled-sc-1xp1l1a-0 gPBHgx group active"
                       data-testid="LayoutControls__list--icon"
                     >
+                      <div
+                        class="absolute inset-0 -mx-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                      />
                       <div
                         class="sc-bdfBwQ iyevwF"
                         height="20"
@@ -1756,7 +1761,7 @@ exports[`PluginManager should disable plugin on my-plugins 1`] = `
                           list-view.svg
                         </svg>
                       </div>
-                    </div>
+                    </button>
                   </div>
                 </div>
                 <div
@@ -1765,10 +1770,13 @@ exports[`PluginManager should disable plugin on my-plugins 1`] = `
                   <div
                     class="group"
                   >
-                    <div
-                      class="ControlButton__ControlButtonStyled-sc-1xp1l1a-0 kMCise"
+                    <button
+                      class="ControlButton__ControlButtonStyled-sc-1xp1l1a-0 gPBHgx group"
                       data-testid="LayoutControls__grid--icon"
                     >
+                      <div
+                        class="absolute inset-0 -mx-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                      />
                       <div
                         class="sc-bdfBwQ iyevwF"
                         height="20"
@@ -1778,7 +1786,7 @@ exports[`PluginManager should disable plugin on my-plugins 1`] = `
                           grid-view.svg
                         </svg>
                       </div>
-                    </div>
+                    </button>
                   </div>
                 </div>
               </div>
@@ -2463,37 +2471,35 @@ exports[`PluginManager should enable plugin on my-plugins 1`] = `
                 >
                   <div
                     class="relative"
+                    data-testid="HeaderSearchBar"
                   >
-                    <button
-                      class="my-auto h-full font-semibold cursor-pointer focus:outline-none"
-                      data-testid="header-search-bar__button"
-                      type="button"
+                    <div
+                      class="group"
                     >
-                      <div
-                        class="group"
+                      <button
+                        class="ControlButton__ControlButtonStyled-sc-1xp1l1a-0 gPBHgx group"
                       >
                         <div
-                          class="ControlButton__ControlButtonStyled-sc-1xp1l1a-0 kMCise"
+                          class="absolute inset-0 -mx-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                        />
+                        <div
+                          class="flex items-center h-5 space-x-3"
                         >
+                          <span>
+                            Search
+                          </span>
                           <div
-                            class="flex items-center h-5 space-x-3"
+                            class="sc-bdfBwQ iNulIV"
+                            height="18"
+                            width="18"
                           >
-                            <span>
-                              Search
-                            </span>
-                            <div
-                              class="sc-bdfBwQ iNulIV"
-                              height="18"
-                              width="18"
-                            >
-                              <svg>
-                                search.svg
-                              </svg>
-                            </div>
+                            <svg>
+                              search.svg
+                            </svg>
                           </div>
                         </div>
-                      </div>
-                    </button>
+                      </button>
+                    </div>
                   </div>
                   <div
                     class="pl-8 my-auto ml-5 h-10 border-l border-theme-secondary-300 dark:border-theme-secondary-800"
@@ -2689,10 +2695,13 @@ exports[`PluginManager should enable plugin on my-plugins 1`] = `
                   <div
                     class="group"
                   >
-                    <div
-                      class="ControlButton__ControlButtonStyled-sc-1xp1l1a-0 gCTrBm"
+                    <button
+                      class="ControlButton__ControlButtonStyled-sc-1xp1l1a-0 gPBHgx group active"
                       data-testid="LayoutControls__list--icon"
                     >
+                      <div
+                        class="absolute inset-0 -mx-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                      />
                       <div
                         class="sc-bdfBwQ iyevwF"
                         height="20"
@@ -2702,7 +2711,7 @@ exports[`PluginManager should enable plugin on my-plugins 1`] = `
                           list-view.svg
                         </svg>
                       </div>
-                    </div>
+                    </button>
                   </div>
                 </div>
                 <div
@@ -2711,10 +2720,13 @@ exports[`PluginManager should enable plugin on my-plugins 1`] = `
                   <div
                     class="group"
                   >
-                    <div
-                      class="ControlButton__ControlButtonStyled-sc-1xp1l1a-0 kMCise"
+                    <button
+                      class="ControlButton__ControlButtonStyled-sc-1xp1l1a-0 gPBHgx group"
                       data-testid="LayoutControls__grid--icon"
                     >
+                      <div
+                        class="absolute inset-0 -mx-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                      />
                       <div
                         class="sc-bdfBwQ iyevwF"
                         height="20"
@@ -2724,7 +2736,7 @@ exports[`PluginManager should enable plugin on my-plugins 1`] = `
                           grid-view.svg
                         </svg>
                       </div>
-                    </div>
+                    </button>
                   </div>
                 </div>
               </div>
@@ -3409,37 +3421,35 @@ exports[`PluginManager should render 1`] = `
                 >
                   <div
                     class="relative"
+                    data-testid="HeaderSearchBar"
                   >
-                    <button
-                      class="my-auto h-full font-semibold cursor-pointer focus:outline-none"
-                      data-testid="header-search-bar__button"
-                      type="button"
+                    <div
+                      class="group"
                     >
-                      <div
-                        class="group"
+                      <button
+                        class="ControlButton__ControlButtonStyled-sc-1xp1l1a-0 gPBHgx group"
                       >
                         <div
-                          class="ControlButton__ControlButtonStyled-sc-1xp1l1a-0 kMCise"
+                          class="absolute inset-0 -mx-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                        />
+                        <div
+                          class="flex items-center h-5 space-x-3"
                         >
+                          <span>
+                            Search
+                          </span>
                           <div
-                            class="flex items-center h-5 space-x-3"
+                            class="sc-bdfBwQ iNulIV"
+                            height="18"
+                            width="18"
                           >
-                            <span>
-                              Search
-                            </span>
-                            <div
-                              class="sc-bdfBwQ iNulIV"
-                              height="18"
-                              width="18"
-                            >
-                              <svg>
-                                search.svg
-                              </svg>
-                            </div>
+                            <svg>
+                              search.svg
+                            </svg>
                           </div>
                         </div>
-                      </div>
-                    </button>
+                      </button>
+                    </div>
                   </div>
                   <div
                     class="pl-8 my-auto ml-5 h-10 border-l border-theme-secondary-300 dark:border-theme-secondary-800"
@@ -3629,10 +3639,13 @@ exports[`PluginManager should render 1`] = `
                   <div
                     class="group"
                   >
-                    <div
-                      class="ControlButton__ControlButtonStyled-sc-1xp1l1a-0 kMCise"
+                    <button
+                      class="ControlButton__ControlButtonStyled-sc-1xp1l1a-0 gPBHgx group"
                       data-testid="LayoutControls__list--icon"
                     >
+                      <div
+                        class="absolute inset-0 -mx-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                      />
                       <div
                         class="sc-bdfBwQ iyevwF"
                         height="20"
@@ -3642,7 +3655,7 @@ exports[`PluginManager should render 1`] = `
                           list-view.svg
                         </svg>
                       </div>
-                    </div>
+                    </button>
                   </div>
                 </div>
                 <div
@@ -3651,10 +3664,13 @@ exports[`PluginManager should render 1`] = `
                   <div
                     class="group"
                   >
-                    <div
-                      class="ControlButton__ControlButtonStyled-sc-1xp1l1a-0 gCTrBm"
+                    <button
+                      class="ControlButton__ControlButtonStyled-sc-1xp1l1a-0 gPBHgx group active"
                       data-testid="LayoutControls__grid--icon"
                     >
+                      <div
+                        class="absolute inset-0 -mx-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                      />
                       <div
                         class="sc-bdfBwQ iyevwF"
                         height="20"
@@ -3664,7 +3680,7 @@ exports[`PluginManager should render 1`] = `
                           grid-view.svg
                         </svg>
                       </div>
-                    </div>
+                    </button>
                   </div>
                 </div>
               </div>
@@ -4893,47 +4909,45 @@ exports[`PluginManager should search for plugin 1`] = `
                 >
                   <div
                     class="relative"
+                    data-testid="HeaderSearchBar"
                   >
-                    <button
-                      class="my-auto h-full font-semibold cursor-pointer focus:outline-none"
-                      data-testid="header-search-bar__button"
-                      type="button"
+                    <div
+                      class="group"
                     >
-                      <div
-                        class="group"
+                      <button
+                        class="ControlButton__ControlButtonStyled-sc-1xp1l1a-0 gPBHgx group"
                       >
                         <div
-                          class="ControlButton__ControlButtonStyled-sc-1xp1l1a-0 kMCise"
+                          class="flex absolute right-0 justify-center items-center -mt-3 w-3 h-3 rounded-full transition-all duration-100 ease-linear bg-theme-background mr-2"
                         >
                           <div
-                            class="flex absolute right-0 justify-center items-center -mt-3 w-3 h-3 rounded-full transition-all duration-100 ease-linear bg-theme-background mr-2"
-                          >
-                            <div
-                              class="w-2 h-2 rounded-full bg-theme-primary-500"
-                            />
-                          </div>
+                            class="w-2 h-2 rounded-full bg-theme-primary-500"
+                          />
+                        </div>
+                        <div
+                          class="absolute inset-0 -mx-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                        />
+                        <div
+                          class="flex items-center h-5 space-x-3"
+                        >
+                          <span>
+                            Search
+                          </span>
                           <div
-                            class="flex items-center h-5 space-x-3"
+                            class="sc-bdfBwQ iNulIV"
+                            height="18"
+                            width="18"
                           >
-                            <span>
-                              Search
-                            </span>
-                            <div
-                              class="sc-bdfBwQ iNulIV"
-                              height="18"
-                              width="18"
-                            >
-                              <svg>
-                                search.svg
-                              </svg>
-                            </div>
+                            <svg>
+                              search.svg
+                            </svg>
                           </div>
                         </div>
-                      </div>
-                    </button>
+                      </button>
+                    </div>
                     <div
                       class="HeaderSearchBar__SearchBarInputWrapper-sc-124mt80-0 foBMUQ absolute z-20 flex items-center text-base px-10 -mx-10 py-4 rounded-md shadow-xl bg-theme-background transform top-1/2 -translate-y-1/2 right-3"
-                      data-testid="header-search-bar__input"
+                      data-testid="HeaderSearchBar__input"
                     >
                       <button
                         class="focus:outline-none"
@@ -5172,10 +5186,13 @@ exports[`PluginManager should search for plugin 1`] = `
                   <div
                     class="group"
                   >
-                    <div
-                      class="ControlButton__ControlButtonStyled-sc-1xp1l1a-0 gCTrBm"
+                    <button
+                      class="ControlButton__ControlButtonStyled-sc-1xp1l1a-0 gPBHgx group active"
                       data-testid="LayoutControls__list--icon"
                     >
+                      <div
+                        class="absolute inset-0 -mx-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                      />
                       <div
                         class="sc-bdfBwQ iyevwF"
                         height="20"
@@ -5185,7 +5202,7 @@ exports[`PluginManager should search for plugin 1`] = `
                           list-view.svg
                         </svg>
                       </div>
-                    </div>
+                    </button>
                   </div>
                 </div>
                 <div
@@ -5194,10 +5211,13 @@ exports[`PluginManager should search for plugin 1`] = `
                   <div
                     class="group"
                   >
-                    <div
-                      class="ControlButton__ControlButtonStyled-sc-1xp1l1a-0 kMCise"
+                    <button
+                      class="ControlButton__ControlButtonStyled-sc-1xp1l1a-0 gPBHgx group"
                       data-testid="LayoutControls__grid--icon"
                     >
+                      <div
+                        class="absolute inset-0 -mx-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                      />
                       <div
                         class="sc-bdfBwQ iyevwF"
                         height="20"
@@ -5207,7 +5227,7 @@ exports[`PluginManager should search for plugin 1`] = `
                           grid-view.svg
                         </svg>
                       </div>
-                    </div>
+                    </button>
                   </div>
                 </div>
               </div>
@@ -5571,37 +5591,35 @@ exports[`PluginManager should switch to category by clicking on view all link 1`
                 >
                   <div
                     class="relative"
+                    data-testid="HeaderSearchBar"
                   >
-                    <button
-                      class="my-auto h-full font-semibold cursor-pointer focus:outline-none"
-                      data-testid="header-search-bar__button"
-                      type="button"
+                    <div
+                      class="group"
                     >
-                      <div
-                        class="group"
+                      <button
+                        class="ControlButton__ControlButtonStyled-sc-1xp1l1a-0 gPBHgx group"
                       >
                         <div
-                          class="ControlButton__ControlButtonStyled-sc-1xp1l1a-0 kMCise"
+                          class="absolute inset-0 -mx-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                        />
+                        <div
+                          class="flex items-center h-5 space-x-3"
                         >
+                          <span>
+                            Search
+                          </span>
                           <div
-                            class="flex items-center h-5 space-x-3"
+                            class="sc-bdfBwQ iNulIV"
+                            height="18"
+                            width="18"
                           >
-                            <span>
-                              Search
-                            </span>
-                            <div
-                              class="sc-bdfBwQ iNulIV"
-                              height="18"
-                              width="18"
-                            >
-                              <svg>
-                                search.svg
-                              </svg>
-                            </div>
+                            <svg>
+                              search.svg
+                            </svg>
                           </div>
                         </div>
-                      </div>
-                    </button>
+                      </button>
+                    </div>
                   </div>
                   <div
                     class="pl-8 my-auto ml-5 h-10 border-l border-theme-secondary-300 dark:border-theme-secondary-800"
@@ -5791,10 +5809,13 @@ exports[`PluginManager should switch to category by clicking on view all link 1`
                   <div
                     class="group"
                   >
-                    <div
-                      class="ControlButton__ControlButtonStyled-sc-1xp1l1a-0 kMCise"
+                    <button
+                      class="ControlButton__ControlButtonStyled-sc-1xp1l1a-0 gPBHgx group"
                       data-testid="LayoutControls__list--icon"
                     >
+                      <div
+                        class="absolute inset-0 -mx-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                      />
                       <div
                         class="sc-bdfBwQ iyevwF"
                         height="20"
@@ -5804,7 +5825,7 @@ exports[`PluginManager should switch to category by clicking on view all link 1`
                           list-view.svg
                         </svg>
                       </div>
-                    </div>
+                    </button>
                   </div>
                 </div>
                 <div
@@ -5813,10 +5834,13 @@ exports[`PluginManager should switch to category by clicking on view all link 1`
                   <div
                     class="group"
                   >
-                    <div
-                      class="ControlButton__ControlButtonStyled-sc-1xp1l1a-0 gCTrBm"
+                    <button
+                      class="ControlButton__ControlButtonStyled-sc-1xp1l1a-0 gPBHgx group active"
                       data-testid="LayoutControls__grid--icon"
                     >
+                      <div
+                        class="absolute inset-0 -mx-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                      />
                       <div
                         class="sc-bdfBwQ iyevwF"
                         height="20"
@@ -5826,7 +5850,7 @@ exports[`PluginManager should switch to category by clicking on view all link 1`
                           grid-view.svg
                         </svg>
                       </div>
-                    </div>
+                    </button>
                   </div>
                 </div>
               </div>
@@ -6589,37 +6613,35 @@ exports[`PluginManager should toggle between list and grid on all 1`] = `
                 >
                   <div
                     class="relative"
+                    data-testid="HeaderSearchBar"
                   >
-                    <button
-                      class="my-auto h-full font-semibold cursor-pointer focus:outline-none"
-                      data-testid="header-search-bar__button"
-                      type="button"
+                    <div
+                      class="group"
                     >
-                      <div
-                        class="group"
+                      <button
+                        class="ControlButton__ControlButtonStyled-sc-1xp1l1a-0 gPBHgx group"
                       >
                         <div
-                          class="ControlButton__ControlButtonStyled-sc-1xp1l1a-0 kMCise"
+                          class="absolute inset-0 -mx-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                        />
+                        <div
+                          class="flex items-center h-5 space-x-3"
                         >
+                          <span>
+                            Search
+                          </span>
                           <div
-                            class="flex items-center h-5 space-x-3"
+                            class="sc-bdfBwQ iNulIV"
+                            height="18"
+                            width="18"
                           >
-                            <span>
-                              Search
-                            </span>
-                            <div
-                              class="sc-bdfBwQ iNulIV"
-                              height="18"
-                              width="18"
-                            >
-                              <svg>
-                                search.svg
-                              </svg>
-                            </div>
+                            <svg>
+                              search.svg
+                            </svg>
                           </div>
                         </div>
-                      </div>
-                    </button>
+                      </button>
+                    </div>
                   </div>
                   <div
                     class="pl-8 my-auto ml-5 h-10 border-l border-theme-secondary-300 dark:border-theme-secondary-800"
@@ -6809,10 +6831,13 @@ exports[`PluginManager should toggle between list and grid on all 1`] = `
                   <div
                     class="group"
                   >
-                    <div
-                      class="ControlButton__ControlButtonStyled-sc-1xp1l1a-0 kMCise"
+                    <button
+                      class="ControlButton__ControlButtonStyled-sc-1xp1l1a-0 gPBHgx group"
                       data-testid="LayoutControls__list--icon"
                     >
+                      <div
+                        class="absolute inset-0 -mx-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                      />
                       <div
                         class="sc-bdfBwQ iyevwF"
                         height="20"
@@ -6822,7 +6847,7 @@ exports[`PluginManager should toggle between list and grid on all 1`] = `
                           list-view.svg
                         </svg>
                       </div>
-                    </div>
+                    </button>
                   </div>
                 </div>
                 <div
@@ -6831,10 +6856,13 @@ exports[`PluginManager should toggle between list and grid on all 1`] = `
                   <div
                     class="group"
                   >
-                    <div
-                      class="ControlButton__ControlButtonStyled-sc-1xp1l1a-0 gCTrBm"
+                    <button
+                      class="ControlButton__ControlButtonStyled-sc-1xp1l1a-0 gPBHgx group active"
                       data-testid="LayoutControls__grid--icon"
                     >
+                      <div
+                        class="absolute inset-0 -mx-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                      />
                       <div
                         class="sc-bdfBwQ iyevwF"
                         height="20"
@@ -6844,7 +6872,7 @@ exports[`PluginManager should toggle between list and grid on all 1`] = `
                           grid-view.svg
                         </svg>
                       </div>
-                    </div>
+                    </button>
                   </div>
                 </div>
               </div>
@@ -7607,37 +7635,35 @@ exports[`PluginManager should toggle between list and grid on latest 1`] = `
                 >
                   <div
                     class="relative"
+                    data-testid="HeaderSearchBar"
                   >
-                    <button
-                      class="my-auto h-full font-semibold cursor-pointer focus:outline-none"
-                      data-testid="header-search-bar__button"
-                      type="button"
+                    <div
+                      class="group"
                     >
-                      <div
-                        class="group"
+                      <button
+                        class="ControlButton__ControlButtonStyled-sc-1xp1l1a-0 gPBHgx group"
                       >
                         <div
-                          class="ControlButton__ControlButtonStyled-sc-1xp1l1a-0 kMCise"
+                          class="absolute inset-0 -mx-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                        />
+                        <div
+                          class="flex items-center h-5 space-x-3"
                         >
+                          <span>
+                            Search
+                          </span>
                           <div
-                            class="flex items-center h-5 space-x-3"
+                            class="sc-bdfBwQ iNulIV"
+                            height="18"
+                            width="18"
                           >
-                            <span>
-                              Search
-                            </span>
-                            <div
-                              class="sc-bdfBwQ iNulIV"
-                              height="18"
-                              width="18"
-                            >
-                              <svg>
-                                search.svg
-                              </svg>
-                            </div>
+                            <svg>
+                              search.svg
+                            </svg>
                           </div>
                         </div>
-                      </div>
-                    </button>
+                      </button>
+                    </div>
                   </div>
                   <div
                     class="pl-8 my-auto ml-5 h-10 border-l border-theme-secondary-300 dark:border-theme-secondary-800"
@@ -7827,10 +7853,13 @@ exports[`PluginManager should toggle between list and grid on latest 1`] = `
                   <div
                     class="group"
                   >
-                    <div
-                      class="ControlButton__ControlButtonStyled-sc-1xp1l1a-0 kMCise"
+                    <button
+                      class="ControlButton__ControlButtonStyled-sc-1xp1l1a-0 gPBHgx group"
                       data-testid="LayoutControls__list--icon"
                     >
+                      <div
+                        class="absolute inset-0 -mx-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                      />
                       <div
                         class="sc-bdfBwQ iyevwF"
                         height="20"
@@ -7840,7 +7869,7 @@ exports[`PluginManager should toggle between list and grid on latest 1`] = `
                           list-view.svg
                         </svg>
                       </div>
-                    </div>
+                    </button>
                   </div>
                 </div>
                 <div
@@ -7849,10 +7878,13 @@ exports[`PluginManager should toggle between list and grid on latest 1`] = `
                   <div
                     class="group"
                   >
-                    <div
-                      class="ControlButton__ControlButtonStyled-sc-1xp1l1a-0 gCTrBm"
+                    <button
+                      class="ControlButton__ControlButtonStyled-sc-1xp1l1a-0 gPBHgx group active"
                       data-testid="LayoutControls__grid--icon"
                     >
+                      <div
+                        class="absolute inset-0 -mx-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                      />
                       <div
                         class="sc-bdfBwQ iyevwF"
                         height="20"
@@ -7862,7 +7894,7 @@ exports[`PluginManager should toggle between list and grid on latest 1`] = `
                           grid-view.svg
                         </svg>
                       </div>
-                    </div>
+                    </button>
                   </div>
                 </div>
               </div>
@@ -9091,37 +9123,35 @@ exports[`PluginManager should toggle between list and grid on utility tab 1`] = 
                 >
                   <div
                     class="relative"
+                    data-testid="HeaderSearchBar"
                   >
-                    <button
-                      class="my-auto h-full font-semibold cursor-pointer focus:outline-none"
-                      data-testid="header-search-bar__button"
-                      type="button"
+                    <div
+                      class="group"
                     >
-                      <div
-                        class="group"
+                      <button
+                        class="ControlButton__ControlButtonStyled-sc-1xp1l1a-0 gPBHgx group"
                       >
                         <div
-                          class="ControlButton__ControlButtonStyled-sc-1xp1l1a-0 kMCise"
+                          class="absolute inset-0 -mx-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                        />
+                        <div
+                          class="flex items-center h-5 space-x-3"
                         >
+                          <span>
+                            Search
+                          </span>
                           <div
-                            class="flex items-center h-5 space-x-3"
+                            class="sc-bdfBwQ iNulIV"
+                            height="18"
+                            width="18"
                           >
-                            <span>
-                              Search
-                            </span>
-                            <div
-                              class="sc-bdfBwQ iNulIV"
-                              height="18"
-                              width="18"
-                            >
-                              <svg>
-                                search.svg
-                              </svg>
-                            </div>
+                            <svg>
+                              search.svg
+                            </svg>
                           </div>
                         </div>
-                      </div>
-                    </button>
+                      </button>
+                    </div>
                   </div>
                   <div
                     class="pl-8 my-auto ml-5 h-10 border-l border-theme-secondary-300 dark:border-theme-secondary-800"
@@ -9311,10 +9341,13 @@ exports[`PluginManager should toggle between list and grid on utility tab 1`] = 
                   <div
                     class="group"
                   >
-                    <div
-                      class="ControlButton__ControlButtonStyled-sc-1xp1l1a-0 kMCise"
+                    <button
+                      class="ControlButton__ControlButtonStyled-sc-1xp1l1a-0 gPBHgx group"
                       data-testid="LayoutControls__list--icon"
                     >
+                      <div
+                        class="absolute inset-0 -mx-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                      />
                       <div
                         class="sc-bdfBwQ iyevwF"
                         height="20"
@@ -9324,7 +9357,7 @@ exports[`PluginManager should toggle between list and grid on utility tab 1`] = 
                           list-view.svg
                         </svg>
                       </div>
-                    </div>
+                    </button>
                   </div>
                 </div>
                 <div
@@ -9333,10 +9366,13 @@ exports[`PluginManager should toggle between list and grid on utility tab 1`] = 
                   <div
                     class="group"
                   >
-                    <div
-                      class="ControlButton__ControlButtonStyled-sc-1xp1l1a-0 gCTrBm"
+                    <button
+                      class="ControlButton__ControlButtonStyled-sc-1xp1l1a-0 gPBHgx group active"
                       data-testid="LayoutControls__grid--icon"
                     >
+                      <div
+                        class="absolute inset-0 -mx-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                      />
                       <div
                         class="sc-bdfBwQ iyevwF"
                         height="20"
@@ -9346,7 +9382,7 @@ exports[`PluginManager should toggle between list and grid on utility tab 1`] = 
                           grid-view.svg
                         </svg>
                       </div>
-                    </div>
+                    </button>
                   </div>
                 </div>
               </div>
@@ -10109,37 +10145,35 @@ exports[`PluginManager should update plugin on my-plugins 1`] = `
                 >
                   <div
                     class="relative"
+                    data-testid="HeaderSearchBar"
                   >
-                    <button
-                      class="my-auto h-full font-semibold cursor-pointer focus:outline-none"
-                      data-testid="header-search-bar__button"
-                      type="button"
+                    <div
+                      class="group"
                     >
-                      <div
-                        class="group"
+                      <button
+                        class="ControlButton__ControlButtonStyled-sc-1xp1l1a-0 gPBHgx group"
                       >
                         <div
-                          class="ControlButton__ControlButtonStyled-sc-1xp1l1a-0 kMCise"
+                          class="absolute inset-0 -mx-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                        />
+                        <div
+                          class="flex items-center h-5 space-x-3"
                         >
+                          <span>
+                            Search
+                          </span>
                           <div
-                            class="flex items-center h-5 space-x-3"
+                            class="sc-bdfBwQ iNulIV"
+                            height="18"
+                            width="18"
                           >
-                            <span>
-                              Search
-                            </span>
-                            <div
-                              class="sc-bdfBwQ iNulIV"
-                              height="18"
-                              width="18"
-                            >
-                              <svg>
-                                search.svg
-                              </svg>
-                            </div>
+                            <svg>
+                              search.svg
+                            </svg>
                           </div>
                         </div>
-                      </div>
-                    </button>
+                      </button>
+                    </div>
                   </div>
                   <div
                     class="pl-8 my-auto ml-5 h-10 border-l border-theme-secondary-300 dark:border-theme-secondary-800"
@@ -10341,10 +10375,13 @@ exports[`PluginManager should update plugin on my-plugins 1`] = `
                   <div
                     class="group"
                   >
-                    <div
-                      class="ControlButton__ControlButtonStyled-sc-1xp1l1a-0 gCTrBm"
+                    <button
+                      class="ControlButton__ControlButtonStyled-sc-1xp1l1a-0 gPBHgx group active"
                       data-testid="LayoutControls__list--icon"
                     >
+                      <div
+                        class="absolute inset-0 -mx-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                      />
                       <div
                         class="sc-bdfBwQ iyevwF"
                         height="20"
@@ -10354,7 +10391,7 @@ exports[`PluginManager should update plugin on my-plugins 1`] = `
                           list-view.svg
                         </svg>
                       </div>
-                    </div>
+                    </button>
                   </div>
                 </div>
                 <div
@@ -10363,10 +10400,13 @@ exports[`PluginManager should update plugin on my-plugins 1`] = `
                   <div
                     class="group"
                   >
-                    <div
-                      class="ControlButton__ControlButtonStyled-sc-1xp1l1a-0 kMCise"
+                    <button
+                      class="ControlButton__ControlButtonStyled-sc-1xp1l1a-0 gPBHgx group"
                       data-testid="LayoutControls__grid--icon"
                     >
+                      <div
+                        class="absolute inset-0 -mx-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                      />
                       <div
                         class="sc-bdfBwQ iyevwF"
                         height="20"
@@ -10376,7 +10416,7 @@ exports[`PluginManager should update plugin on my-plugins 1`] = `
                           grid-view.svg
                         </svg>
                       </div>
-                    </div>
+                    </button>
                   </div>
                 </div>
               </div>
