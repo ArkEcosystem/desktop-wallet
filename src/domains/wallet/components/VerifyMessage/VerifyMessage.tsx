@@ -1,17 +1,20 @@
-// UI Elements
 import { Button } from "app/components/Button";
 import { Form, FormField, FormLabel } from "app/components/Form";
 import { InputDefault } from "app/components/Input";
 import { Modal } from "app/components/Modal";
+import { Switch, SwitchOptions } from "app/components/Switch";
 import { TextArea } from "app/components/TextArea";
-import { Toggle } from "app/components/Toggle";
 import { useEnvironmentContext } from "app/contexts";
 import { useValidation } from "app/hooks";
-import cn from "classnames";
 import { VerifyMessageStatus } from "domains/wallet/components/VerifyMessageStatus";
 import React, { ChangeEvent, useEffect, useState } from "react";
 import { useForm, useFormContext } from "react-hook-form";
 import { useTranslation } from "react-i18next";
+
+enum VerificationMethod {
+	Manual,
+	Json,
+}
 
 interface Props {
 	isOpen: boolean;
@@ -116,11 +119,22 @@ export const VerifyMessage = ({ profileId, walletId, onSubmit, onCancel, isOpen,
 	const { getValues, formState } = form;
 	const { isValid } = formState;
 
-	const [verificationMethod, setVerificationMethod] = useState("manual");
+	const [verificationMethod, setVerificationMethod] = useState<VerificationMethod>(VerificationMethod.Manual);
 	const [isMessageVerified, setIsMessageVerified] = useState(false);
 	const [isSubmitted, setIsSubmitted] = useState(false);
 
-	const isJson = verificationMethod === "json";
+	const isJson = verificationMethod === VerificationMethod.Json;
+
+	const verificationMethods: SwitchOptions<VerificationMethod> = [
+		{
+			label: t("WALLETS.MODAL_VERIFY_MESSAGE.VERIFICATION_METHOD.JSON"),
+			value: VerificationMethod.Json,
+		},
+		{
+			label: t("WALLETS.MODAL_VERIFY_MESSAGE.VERIFICATION_METHOD.MANUAL"),
+			value: VerificationMethod.Manual,
+		},
+	];
 
 	const handleSubmit = async () => {
 		const profile = env?.profiles().findById(profileId);
@@ -175,30 +189,12 @@ export const VerifyMessage = ({ profileId, walletId, onSubmit, onCancel, isOpen,
 					{t("WALLETS.MODAL_VERIFY_MESSAGE.VERIFICATION_METHOD.DESCRIPTION")}
 				</span>
 
-				<div className="flex items-center mt-6 space-x-4 text-theme-secondary-500 dark:text-theme-secondary-700">
-					<div
-						className={cn("text-lg font-semibold", {
-							"text-theme-secondary-700 dark:text-theme-secondary-200": isJson,
-						})}
-					>
-						{t("WALLETS.MODAL_VERIFY_MESSAGE.VERIFICATION_METHOD.JSON")}
-					</div>
-
-					<Toggle
-						data-testid="VerifyMessage__toggle"
-						checked={!isJson}
-						onChange={(event) => setVerificationMethod(event.target.checked ? "manual" : "json")}
-						alwaysOn
-					/>
-
-					<div
-						className={cn("text-lg font-semibold", {
-							"text-theme-secondary-700 dark:text-theme-secondary-200": !isJson,
-						})}
-					>
-						{t("WALLETS.MODAL_VERIFY_MESSAGE.VERIFICATION_METHOD.MANUAL")}
-					</div>
-				</div>
+				<Switch
+					className="mt-6 space-x-4"
+					value={verificationMethod}
+					onChange={setVerificationMethod}
+					options={verificationMethods}
+				/>
 
 				<Form id="VerifyMessage__form" context={form} onSubmit={handleSubmit}>
 					{isJson ? <JsonForm /> : <ManualForm />}
