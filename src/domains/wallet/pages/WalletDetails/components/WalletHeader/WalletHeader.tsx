@@ -269,13 +269,13 @@ export const WalletHeader = ({
 							</div>
 						</div>
 
-						<div className="flex items-center space-x-5 w-full">
+						<div className="flex items-center w-full">
 							<TruncateMiddleDynamic
 								value={wallet.address()}
 								className="flex flex-1 text-lg font-semibold text-white whitespace-nowrap"
 							/>
 
-							<div className="flex items-end mb-1 space-x-3 text-theme-secondary-text">
+							<div className="flex items-end -mt-1 mr-2 mb-2 ml-5 space-x-3 text-theme-secondary-text">
 								<Clipboard
 									variant="icon"
 									data={wallet.address()}
