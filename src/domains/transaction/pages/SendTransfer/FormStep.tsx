@@ -78,7 +78,7 @@ export const FormStep = ({
 					</div>
 
 					<FormField name="smartbridge" className="relative">
-						<FormLabel label="Smartbridge" required={false} />
+						<FormLabel label="Smartbridge" optional />
 						<InputCounter
 							data-testid="Input__smartbridge"
 							type="text"

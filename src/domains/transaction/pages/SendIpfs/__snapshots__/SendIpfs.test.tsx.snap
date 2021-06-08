@@ -354,10 +354,6 @@ exports[`SendIpfs should error if wrong mnemonic 1`] = `
                         for="mnemonic"
                       >
                         Mnemonic
-                        <div
-                          class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
-                          data-testid="FormLabel__required"
-                        />
                       </label>
                       <div
                         class="fixed invisible w-auto whitespace-nowrap"
@@ -509,10 +505,6 @@ exports[`SendIpfs should render form step 1`] = `
           for="network"
         >
           Cryptoasset
-          <div
-            class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
-            data-testid="FormLabel__required"
-          />
         </label>
         <div>
           <div
@@ -581,10 +573,6 @@ exports[`SendIpfs should render form step 1`] = `
           for="senderAddress"
         >
           Sender
-          <div
-            class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
-            data-testid="FormLabel__required"
-          />
         </label>
         <div
           data-testid="sender-address"
@@ -657,10 +645,6 @@ exports[`SendIpfs should render form step 1`] = `
           for="hash"
         >
           IPFS Hash
-          <div
-            class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
-            data-testid="FormLabel__required"
-          />
         </label>
         <div
           class="fixed invisible w-auto whitespace-nowrap"
@@ -693,10 +677,6 @@ exports[`SendIpfs should render form step 1`] = `
           for="fee"
         >
           Transaction Fee
-          <div
-            class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
-            data-testid="FormLabel__required"
-          />
         </label>
         <div
           class="flex space-x-2"
@@ -2600,10 +2580,6 @@ exports[`SendIpfs should show an error if an invalid IPFS hash is entered 1`] = 
                           for="network"
                         >
                           Cryptoasset
-                          <div
-                            class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
-                            data-testid="FormLabel__required"
-                          />
                         </label>
                         <div>
                           <div
@@ -2720,10 +2696,6 @@ exports[`SendIpfs should show an error if an invalid IPFS hash is entered 1`] = 
                           for="senderAddress"
                         >
                           Sender
-                          <div
-                            class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
-                            data-testid="FormLabel__required"
-                          />
                         </label>
                         <div
                           data-testid="sender-address"
@@ -2826,10 +2798,6 @@ exports[`SendIpfs should show an error if an invalid IPFS hash is entered 1`] = 
                           for="hash"
                         >
                           IPFS Hash
-                          <div
-                            class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
-                            data-testid="FormLabel__required"
-                          />
                         </label>
                         <div
                           class="fixed invisible w-auto whitespace-nowrap"
@@ -2881,10 +2849,6 @@ exports[`SendIpfs should show an error if an invalid IPFS hash is entered 1`] = 
                           for="fee"
                         >
                           Transaction Fee
-                          <div
-                            class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
-                            data-testid="FormLabel__required"
-                          />
                         </label>
                         <div
                           class="flex space-x-2"

@@ -21,6 +21,12 @@ exports[`ReceiveFundsForm should emit amount onChange event 1`] = `
             for="amount"
           >
             Amount
+            <span
+              class="ml-1 text-theme-secondary-500 dark:text-theme-secondary-700"
+              data-testid="FormLabel__optional"
+            >
+              optional
+            </span>
           </label>
           <div
             class="relative"
@@ -125,6 +131,12 @@ exports[`ReceiveFundsForm should emit smartbridge onChange event 1`] = `
             for="amount"
           >
             Amount
+            <span
+              class="ml-1 text-theme-secondary-500 dark:text-theme-secondary-700"
+              data-testid="FormLabel__optional"
+            >
+              optional
+            </span>
           </label>
           <div
             class="relative"
@@ -229,6 +241,12 @@ exports[`ReceiveFundsForm should not show smartbridge if is not supported by net
             for="amount"
           >
             Amount
+            <span
+              class="ml-1 text-theme-secondary-500 dark:text-theme-secondary-700"
+              data-testid="FormLabel__optional"
+            >
+              optional
+            </span>
           </label>
           <div
             class="relative"
@@ -283,6 +301,12 @@ exports[`ReceiveFundsForm should render 1`] = `
             for="amount"
           >
             Amount
+            <span
+              class="ml-1 text-theme-secondary-500 dark:text-theme-secondary-700"
+              data-testid="FormLabel__optional"
+            >
+              optional
+            </span>
           </label>
           <div
             class="relative"

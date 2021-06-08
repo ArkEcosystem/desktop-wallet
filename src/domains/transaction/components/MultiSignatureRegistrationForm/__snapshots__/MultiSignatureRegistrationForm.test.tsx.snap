@@ -47,10 +47,6 @@ exports[`MultiSignature Registration Form should render form step 1`] = `
                   for="address"
                 >
                   Multisignature Participant
-                  <div
-                    class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
-                    data-testid="FormLabel__required"
-                  />
                 </label>
                 <div>
                   <div
@@ -331,10 +327,6 @@ exports[`MultiSignature Registration Form should render form step 1`] = `
               for="minParticipants"
             >
               Minimum Required Signatures
-              <div
-                class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
-                data-testid="FormLabel__required"
-              />
             </label>
             <div
               class="fixed invisible w-auto whitespace-nowrap"
@@ -381,10 +373,6 @@ exports[`MultiSignature Registration Form should render form step 1`] = `
               for="fee"
             >
               Transaction Fee
-              <div
-                class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
-                data-testid="FormLabel__required"
-              />
             </label>
             <div
               class="flex space-x-2"

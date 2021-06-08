@@ -1,5 +1,6 @@
 import { ControlButton } from "app/components/ControlButton";
 import { Icon } from "app/components/Icon";
+import cn from "classnames";
 import React from "react";
 
 interface LayoutControlsProps {
@@ -13,7 +14,7 @@ export const LayoutControls = ({ onSelectGridView, onSelectListView, selectedVie
 		<div data-testid="LayoutControls__list">
 			<ControlButton
 				data-testid="LayoutControls__list--icon"
-				isActive={selectedViewType === "list"}
+				className={cn({ active: selectedViewType === "list" })}
 				onClick={onSelectListView}
 			>
 				<Icon name="ListView" width={20} height={20} />
@@ -23,7 +24,7 @@ export const LayoutControls = ({ onSelectGridView, onSelectListView, selectedVie
 		<div data-testid="LayoutControls__grid">
 			<ControlButton
 				data-testid="LayoutControls__grid--icon"
-				isActive={selectedViewType === "grid"}
+				className={cn({ active: selectedViewType === "grid" })}
 				onClick={onSelectGridView}
 			>
 				<Icon name="GridView" width={20} height={20} />

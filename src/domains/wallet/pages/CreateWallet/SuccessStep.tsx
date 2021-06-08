@@ -42,7 +42,7 @@ export const SuccessStep = ({ nameMaxLength, profile }: { nameMaxLength: number;
 			</div>
 
 			<FormField name="name">
-				<FormLabel label={t("WALLETS.WALLET_NAME")} required={false} optional />
+				<FormLabel label={t("WALLETS.WALLET_NAME")} optional />
 				<InputDefault
 					data-testid="CreateWallet__wallet-name"
 					ref={register({

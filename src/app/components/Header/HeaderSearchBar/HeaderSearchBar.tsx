@@ -59,24 +59,17 @@ export const HeaderSearchBar = ({
 	}, [resetFields, handleQueryReset]);
 
 	return (
-		<div className="relative">
-			<button
-				data-testid="header-search-bar__button"
-				className="my-auto h-full font-semibold cursor-pointer focus:outline-none"
-				type="button"
-				onClick={() => setSearchbarVisible(true)}
-			>
-				<ControlButton isChanged={!!query} noBorder={noToggleBorder}>
-					<div className="flex items-center h-5 space-x-3">
-						<span>{label}</span>
-						<Icon name="Search" width={18} height={18} />
-					</div>
-				</ControlButton>
-			</button>
+		<div data-testid="HeaderSearchBar" className="relative">
+			<ControlButton isChanged={!!query} noBorder={noToggleBorder} onClick={() => setSearchbarVisible(true)}>
+				<div className="flex items-center h-5 space-x-3">
+					<span>{label}</span>
+					<Icon name="Search" width={18} height={18} />
+				</div>
+			</ControlButton>
 
 			{searchbarVisible && (
 				<SearchBarInputWrapper
-					data-testid="header-search-bar__input"
+					data-testid="HeaderSearchBar__input"
 					ref={ref}
 					className={cn(
 						"absolute z-20 flex items-center text-base px-10 -mx-10 py-4 rounded-md shadow-xl bg-theme-background transform",
