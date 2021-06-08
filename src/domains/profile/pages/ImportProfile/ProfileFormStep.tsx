@@ -169,7 +169,6 @@ const CreateProfileForm = ({
 						<FormField name="confirmPassword">
 							<FormLabel
 								label={t("SETTINGS.GENERAL.PERSONAL.CONFIRM_PASSWORD")}
-								required={!!watch("password")}
 								optional={!watch("password")}
 							/>
 							<InputPassword
