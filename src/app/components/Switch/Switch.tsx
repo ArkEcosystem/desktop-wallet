@@ -4,23 +4,26 @@ import React from "react";
 import { Toggle } from "../Toggle";
 import { SwitchText } from "./SwitchText";
 
-interface SwitchOption<TValue> {
+export interface SwitchOption<TValue = string> {
 	label: string;
 	value: TValue;
 }
 
-export type SwitchOptions<TValue = string> = [SwitchOption<TValue>, SwitchOption<TValue>];
-
 interface Props<TOptionValue = string> {
 	value: TOptionValue;
 	onChange: (value: TOptionValue) => void;
-	options: SwitchOptions<TOptionValue>;
+	leftOption: SwitchOption<TOptionValue>;
+	rightOption: SwitchOption<TOptionValue>;
 	className?: string;
 }
 
-export function Switch<TOptionValue = string>({ value, onChange, options, className }: Props<TOptionValue>) {
-	const [left, right] = options;
-
+export function Switch<TOptionValue = string>({
+	value,
+	onChange,
+	leftOption,
+	rightOption,
+	className,
+}: Props<TOptionValue>) {
 	const renderOption = (option: SwitchOption<TOptionValue>) => (
 		<SwitchText role="button" selected={option.value === value} onClick={() => onChange(option.value)}>
 			{option.label}
@@ -29,17 +32,17 @@ export function Switch<TOptionValue = string>({ value, onChange, options, classN
 
 	return (
 		<div className={cn("flex items-center", className)}>
-			{renderOption(left)}
+			{renderOption(leftOption)}
 
 			<div className="mx-4">
 				<Toggle
 					alwaysOn
-					checked={right.value === value}
-					onChange={() => onChange(right.value === value ? left.value : right.value)}
+					checked={rightOption.value === value}
+					onChange={() => onChange(rightOption.value === value ? leftOption.value : rightOption.value)}
 				/>
 			</div>
 
-			{renderOption(right)}
+			{renderOption(rightOption)}
 		</div>
 	);
 }

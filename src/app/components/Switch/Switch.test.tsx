@@ -1,15 +1,13 @@
 import { act, fireEvent, render } from "@testing-library/react";
 import React, { useState } from "react";
 
-import { Switch, SwitchOptions } from "./Switch";
+import { Switch, SwitchOption } from "./Switch";
 
 describe("Switch", () => {
 	const onChange = jest.fn();
 
-	const options: SwitchOptions = [
-		{ value: "a", label: "Option A" },
-		{ value: "b", label: "Option B" },
-	];
+	const leftOption: SwitchOption = { value: "a", label: "Option A" };
+	const rightOption: SwitchOption = { value: "b", label: "Option B" };
 
 	const Wrapper = () => {
 		const [value, setValue] = useState("a");
@@ -19,7 +17,7 @@ describe("Switch", () => {
 			setValue(val);
 		};
 
-		return <Switch value={value} onChange={change} options={options} />;
+		return <Switch value={value} onChange={change} leftOption={leftOption} rightOption={rightOption} />;
 	};
 
 	it("should render", () => {

@@ -2,7 +2,7 @@ import { Button } from "app/components/Button";
 import { Form, FormField, FormLabel } from "app/components/Form";
 import { InputDefault } from "app/components/Input";
 import { Modal } from "app/components/Modal";
-import { Switch, SwitchOptions } from "app/components/Switch";
+import { Switch } from "app/components/Switch";
 import { TextArea } from "app/components/TextArea";
 import { useEnvironmentContext } from "app/contexts";
 import { useValidation } from "app/hooks";
@@ -125,17 +125,6 @@ export const VerifyMessage = ({ profileId, walletId, onSubmit, onCancel, isOpen,
 
 	const isJson = verificationMethod === VerificationMethod.Json;
 
-	const verificationMethods: SwitchOptions<VerificationMethod> = [
-		{
-			label: t("WALLETS.MODAL_VERIFY_MESSAGE.VERIFICATION_METHOD.JSON"),
-			value: VerificationMethod.Json,
-		},
-		{
-			label: t("WALLETS.MODAL_VERIFY_MESSAGE.VERIFICATION_METHOD.MANUAL"),
-			value: VerificationMethod.Manual,
-		},
-	];
-
 	const handleSubmit = async () => {
 		const profile = env?.profiles().findById(profileId);
 		const wallet = profile?.wallets().findById(walletId);
@@ -193,7 +182,14 @@ export const VerifyMessage = ({ profileId, walletId, onSubmit, onCancel, isOpen,
 					className="mt-6 space-x-4"
 					value={verificationMethod}
 					onChange={setVerificationMethod}
-					options={verificationMethods}
+					leftOption={{
+						label: t("WALLETS.MODAL_VERIFY_MESSAGE.VERIFICATION_METHOD.JSON"),
+						value: VerificationMethod.Json,
+					}}
+					rightOption={{
+						label: t("WALLETS.MODAL_VERIFY_MESSAGE.VERIFICATION_METHOD.MANUAL"),
+						value: VerificationMethod.Manual,
+					}}
 				/>
 
 				<Form id="VerifyMessage__form" context={form} onSubmit={handleSubmit}>
