@@ -1,29 +1,23 @@
 import { Button } from "app/components/Button";
 import { Icon } from "app/components/Icon";
-import React, { useMemo } from "react";
+import React, { useMemo, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { styled } from "twin.macro";
 
 import { PaginationProps, PaginationSearch } from "./";
-import { CompactPagination } from "./components/CompactPagination";
 import { PaginationButton, PaginationWrapper } from "./Pagination.styles";
 
 const Wrapper = styled.div`
 	${PaginationWrapper}
 `;
 
-const PaginationButtonStyled = styled.div`
+const PaginationButtonStyled = styled.button`
 	${PaginationButton}
 `;
 
-export const Pagination = ({
-	totalCount,
-	itemsPerPage,
-	onSelectPage,
-	currentPage,
-	className,
-	variant,
-}: PaginationProps) => {
+export const Pagination = ({ totalCount, itemsPerPage, onSelectPage, currentPage, className }: PaginationProps) => {
+	const [buttonsEnabled, setButtonsEnabled] = useState(true);
+
 	const { t } = useTranslation();
 
 	const totalPages = Math.ceil(totalCount / itemsPerPage);
@@ -60,16 +54,13 @@ export const Pagination = ({
 		return null;
 	}
 
-	if (variant === "condensed") {
-		return (
-			<CompactPagination
-				totalCount={totalCount}
-				itemsPerPage={itemsPerPage}
-				onSelectPage={onSelectPage}
-				currentPage={currentPage}
-			/>
-		);
-	}
+	const handleSelectPage = (page?: number) => {
+		setButtonsEnabled(true);
+
+		if (page) {
+			onSelectPage(page);
+		}
+	};
 
 	return (
 		<Wrapper data-testid="Pagination" className={className}>
@@ -96,14 +87,21 @@ export const Pagination = ({
 
 			<div className="flex relative px-2 rounded bg-theme-primary-100 dark:bg-theme-secondary-800">
 				{paginationButtons[0] !== 1 && (
-					<PaginationSearch onSelectPage={onSelectPage} totalPages={totalPages}>
-						<span>...</span>
+					<PaginationSearch
+						onClick={() => setButtonsEnabled(false)}
+						onSelectPage={handleSelectPage}
+						totalPages={totalPages}
+						isEnabled={buttonsEnabled}
+					>
+						<span>…</span>
 					</PaginationSearch>
 				)}
 
 				{paginationButtons.map((page) => (
 					<PaginationButtonStyled
 						key={page}
+						type="button"
+						tabIndex={buttonsEnabled ? 0 : -1}
 						className={currentPage === page ? "current-page" : ""}
 						onClick={() => onSelectPage(page)}
 					>
@@ -112,8 +110,13 @@ export const Pagination = ({
 				))}
 
 				{paginationButtons[paginationButtons.length - 1] !== totalPages && (
-					<PaginationSearch onSelectPage={onSelectPage} totalPages={totalPages}>
-						<span>...</span>
+					<PaginationSearch
+						onClick={() => setButtonsEnabled(false)}
+						onSelectPage={handleSelectPage}
+						totalPages={totalPages}
+						isEnabled={buttonsEnabled}
+					>
+						<span>…</span>
 					</PaginationSearch>
 				)}
 			</div>

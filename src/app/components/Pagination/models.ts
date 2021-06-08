@@ -4,17 +4,18 @@ export interface PaginationProps {
 	onSelectPage: any;
 	currentPage: number;
 	className?: string;
-	variant?: "condensed";
 }
 
 export interface PaginationSearchProps {
 	children?: React.ReactNode;
-	onSelectPage: (page: number) => void;
+	onClick: () => void;
+	onSelectPage: (page?: number) => void;
 	totalPages?: number;
+	isEnabled?: boolean;
 }
 
 export interface PaginationSearchFormProps {
 	onClose: () => void;
 	totalPages?: number;
-	onSelectPage: (page: number) => void;
+	onSelectPage: (page?: number) => void;
 }

@@ -1075,22 +1075,26 @@ exports[`PluginList should render pagination 1`] = `
       class="flex justify-center w-full mt-10"
     >
       <div
-        class="Pagination__Wrapper-x7juhx-0 klvluR"
+        class="Pagination__Wrapper-x7juhx-0 hbWMHF"
         data-testid="Pagination"
       >
         <div
           class="flex relative px-2 rounded bg-theme-primary-100 dark:bg-theme-secondary-800"
         >
-          <div
-            class="Pagination__PaginationButtonStyled-x7juhx-1 jqbPMy current-page"
+          <button
+            class="Pagination__PaginationButtonStyled-x7juhx-1 dPDByT current-page"
+            tabindex="0"
+            type="button"
           >
             1
-          </div>
-          <div
-            class="Pagination__PaginationButtonStyled-x7juhx-1 jqbPMy"
+          </button>
+          <button
+            class="Pagination__PaginationButtonStyled-x7juhx-1 dPDByT"
+            tabindex="0"
+            type="button"
           >
             2
-          </div>
+          </button>
         </div>
         <button
           class="OriginalButton__StyledButton-sc-1y2wptt-0 izJbbP"
@@ -1832,7 +1836,7 @@ exports[`PluginList should split by page 1`] = `
       class="flex justify-center w-full mt-10"
     >
       <div
-        class="Pagination__Wrapper-x7juhx-0 klvluR"
+        class="Pagination__Wrapper-x7juhx-0 hbWMHF"
         data-testid="Pagination"
       >
         <button
@@ -1858,16 +1862,20 @@ exports[`PluginList should split by page 1`] = `
         <div
           class="flex relative px-2 rounded bg-theme-primary-100 dark:bg-theme-secondary-800"
         >
-          <div
-            class="Pagination__PaginationButtonStyled-x7juhx-1 jqbPMy"
+          <button
+            class="Pagination__PaginationButtonStyled-x7juhx-1 dPDByT"
+            tabindex="0"
+            type="button"
           >
             1
-          </div>
-          <div
-            class="Pagination__PaginationButtonStyled-x7juhx-1 jqbPMy current-page"
+          </button>
+          <button
+            class="Pagination__PaginationButtonStyled-x7juhx-1 dPDByT current-page"
+            tabindex="0"
+            type="button"
           >
             2
-          </div>
+          </button>
         </div>
       </div>
     </div>
