@@ -67,35 +67,40 @@ exports[`VerifyMessage should render 1`] = `
                 Input fields manually or provide a JSON string.
               </span>
               <div
-                class="flex items-center mt-6 space-x-4 text-theme-secondary-500 dark:text-theme-secondary-700"
+                class="flex items-center mt-6 space-x-4"
               >
-                <div
-                  class="text-lg font-semibold"
+                <span
+                  class="SwitchText-sc-1l99vi2-0 hkRGPv"
+                  role="button"
                 >
                   JSON
-                </div>
-                <label
-                  class="flex"
-                >
-                  <input
-                    checked=""
-                    class="Toggle__Input-qyyifx-0 WGuGL"
-                    data-testid="VerifyMessage__toggle"
-                    type="checkbox"
-                  />
-                  <div
-                    class="Toggle__Handle-qyyifx-1 geejDn"
-                  >
-                    <span
-                      class="Toggle__HandleInner-qyyifx-2 eSIhju"
-                    />
-                  </div>
-                </label>
+                </span>
                 <div
-                  class="text-lg font-semibold text-theme-secondary-700 dark:text-theme-secondary-200"
+                  class="mx-4"
+                >
+                  <label
+                    class="flex"
+                  >
+                    <input
+                      checked=""
+                      class="Toggle__Input-qyyifx-0 WGuGL"
+                      type="checkbox"
+                    />
+                    <div
+                      class="Toggle__Handle-qyyifx-1 geejDn"
+                    >
+                      <span
+                        class="Toggle__HandleInner-qyyifx-2 eSIhju"
+                      />
+                    </div>
+                  </label>
+                </div>
+                <span
+                  class="SwitchText-sc-1l99vi2-0 jdBPCe"
+                  role="button"
                 >
                   Manual
-                </div>
+                </span>
               </div>
               <form
                 class="space-y-8"
