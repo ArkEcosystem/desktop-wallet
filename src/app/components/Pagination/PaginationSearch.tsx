@@ -97,7 +97,13 @@ export const PaginationSearchForm = ({ onClose, totalPages = Infinity, onSelectP
 	);
 };
 
-export const PaginationSearch = ({ children, onClick, onSelectPage, totalPages, isEnabled }: PaginationSearchProps) => {
+export const PaginationSearch = ({
+	children,
+	onClick,
+	onSelectPage,
+	totalPages,
+	isDisabled,
+}: PaginationSearchProps) => {
 	const [isFormVisible, setIsFormVisible] = useState(false);
 
 	return (
@@ -106,7 +112,7 @@ export const PaginationSearch = ({ children, onClick, onSelectPage, totalPages, 
 				data-testid="PaginationSearchButton"
 				className="group"
 				type="button"
-				tabIndex={isEnabled ? 0 : -1}
+				disabled={isDisabled}
 				onClick={(event) => {
 					onClick();
 					setIsFormVisible(true);

@@ -1366,7 +1366,7 @@ exports[`News should filter results based on category query and asset 2`] = `
               <div
                 class="mt-10 flex justify-center w-full"
               >
-                <div
+                <nav
                   class="Pagination__Wrapper-x7juhx-0 hbWMHF"
                   data-testid="Pagination"
                 >
@@ -1374,50 +1374,51 @@ exports[`News should filter results based on category query and asset 2`] = `
                     class="flex relative px-2 rounded bg-theme-primary-100 dark:bg-theme-secondary-800"
                   >
                     <button
+                      aria-current="true"
+                      aria-label="Page 1"
                       class="Pagination__PaginationButtonStyled-x7juhx-1 dPDByT current-page"
-                      tabindex="0"
                       type="button"
                     >
                       1
                     </button>
                     <button
+                      aria-label="Page 2"
                       class="Pagination__PaginationButtonStyled-x7juhx-1 dPDByT"
-                      tabindex="0"
                       type="button"
                     >
                       2
                     </button>
                     <button
+                      aria-label="Page 3"
                       class="Pagination__PaginationButtonStyled-x7juhx-1 dPDByT"
-                      tabindex="0"
                       type="button"
                     >
                       3
                     </button>
                     <button
+                      aria-label="Page 4"
                       class="Pagination__PaginationButtonStyled-x7juhx-1 dPDByT"
-                      tabindex="0"
                       type="button"
                     >
                       4
                     </button>
                     <button
+                      aria-label="Page 5"
                       class="Pagination__PaginationButtonStyled-x7juhx-1 dPDByT"
-                      tabindex="0"
                       type="button"
                     >
                       5
                     </button>
                     <button
+                      aria-label="Page 6"
                       class="Pagination__PaginationButtonStyled-x7juhx-1 dPDByT"
-                      tabindex="0"
                       type="button"
                     >
                       6
                     </button>
                     <button
+                      aria-label="Page 7"
                       class="Pagination__PaginationButtonStyled-x7juhx-1 dPDByT"
-                      tabindex="0"
                       type="button"
                     >
                       7
@@ -1425,7 +1426,6 @@ exports[`News should filter results based on category query and asset 2`] = `
                     <button
                       class="PaginationSearch__PaginationSearchButtonStyled-rcir65-1 hwqpt group"
                       data-testid="PaginationSearchButton"
-                      tabindex="0"
                       type="button"
                     >
                       <span
@@ -1490,7 +1490,7 @@ exports[`News should filter results based on category query and asset 2`] = `
                       </div>
                     </div>
                   </button>
-                </div>
+                </nav>
               </div>
             </div>
             <div

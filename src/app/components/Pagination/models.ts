@@ -11,7 +11,7 @@ export interface PaginationSearchProps {
 	onClick: () => void;
 	onSelectPage: (page?: number) => void;
 	totalPages?: number;
-	isEnabled?: boolean;
+	isDisabled?: boolean;
 }
 
 export interface PaginationSearchFormProps {

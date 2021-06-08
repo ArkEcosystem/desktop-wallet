@@ -7,7 +7,7 @@ import { styled } from "twin.macro";
 import { PaginationProps, PaginationSearch } from "./";
 import { PaginationButton, PaginationWrapper } from "./Pagination.styles";
 
-const Wrapper = styled.div`
+const Wrapper = styled.nav`
 	${PaginationWrapper}
 `;
 
@@ -16,7 +16,7 @@ const PaginationButtonStyled = styled.button`
 `;
 
 export const Pagination = ({ totalCount, itemsPerPage, onSelectPage, currentPage, className }: PaginationProps) => {
-	const [buttonsEnabled, setButtonsEnabled] = useState(true);
+	const [buttonsDisabled, setButtonsDisabled] = useState(false);
 
 	const { t } = useTranslation();
 
@@ -55,7 +55,7 @@ export const Pagination = ({ totalCount, itemsPerPage, onSelectPage, currentPage
 	}
 
 	const handleSelectPage = (page?: number) => {
-		setButtonsEnabled(true);
+		setButtonsDisabled(false);
 
 		if (page) {
 			onSelectPage(page);
@@ -88,10 +88,10 @@ export const Pagination = ({ totalCount, itemsPerPage, onSelectPage, currentPage
 			<div className="flex relative px-2 rounded bg-theme-primary-100 dark:bg-theme-secondary-800">
 				{paginationButtons[0] !== 1 && (
 					<PaginationSearch
-						onClick={() => setButtonsEnabled(false)}
+						onClick={() => setButtonsDisabled(true)}
 						onSelectPage={handleSelectPage}
 						totalPages={totalPages}
-						isEnabled={buttonsEnabled}
+						isDisabled={buttonsDisabled}
 					>
 						<span>…</span>
 					</PaginationSearch>
@@ -101,7 +101,9 @@ export const Pagination = ({ totalCount, itemsPerPage, onSelectPage, currentPage
 					<PaginationButtonStyled
 						key={page}
 						type="button"
-						tabIndex={buttonsEnabled ? 0 : -1}
+						aria-current={currentPage === page || undefined}
+						aria-label={t("COMMON.PAGE_#", { page })}
+						disabled={buttonsDisabled}
 						className={currentPage === page ? "current-page" : ""}
 						onClick={() => onSelectPage(page)}
 					>
@@ -111,10 +113,10 @@ export const Pagination = ({ totalCount, itemsPerPage, onSelectPage, currentPage
 
 				{paginationButtons[paginationButtons.length - 1] !== totalPages && (
 					<PaginationSearch
-						onClick={() => setButtonsEnabled(false)}
+						onClick={() => setButtonsDisabled(true)}
 						onSelectPage={handleSelectPage}
 						totalPages={totalPages}
-						isEnabled={buttonsEnabled}
+						isDisabled={buttonsDisabled}
 					>
 						<span>…</span>
 					</PaginationSearch>

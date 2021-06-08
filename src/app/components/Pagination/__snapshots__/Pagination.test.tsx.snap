@@ -2,7 +2,7 @@
 
 exports[`Pagination should handle first page click properly 1`] = `
 <DocumentFragment>
-  <div
+  <nav
     class="Pagination__Wrapper-x7juhx-0 hbWMHF"
     data-testid="Pagination"
   >
@@ -51,7 +51,6 @@ exports[`Pagination should handle first page click properly 1`] = `
       <button
         class="PaginationSearch__PaginationSearchButtonStyled-rcir65-1 hwqpt group"
         data-testid="PaginationSearchButton"
-        tabindex="0"
         type="button"
       >
         <span
@@ -77,36 +76,37 @@ exports[`Pagination should handle first page click properly 1`] = `
         </span>
       </button>
       <button
+        aria-label="Page 99"
         class="Pagination__PaginationButtonStyled-x7juhx-1 dPDByT"
-        tabindex="0"
         type="button"
       >
         99
       </button>
       <button
+        aria-label="Page 100"
         class="Pagination__PaginationButtonStyled-x7juhx-1 dPDByT"
-        tabindex="0"
         type="button"
       >
         100
       </button>
       <button
+        aria-current="true"
+        aria-label="Page 101"
         class="Pagination__PaginationButtonStyled-x7juhx-1 dPDByT current-page"
-        tabindex="0"
         type="button"
       >
         101
       </button>
       <button
+        aria-label="Page 102"
         class="Pagination__PaginationButtonStyled-x7juhx-1 dPDByT"
-        tabindex="0"
         type="button"
       >
         102
       </button>
       <button
+        aria-label="Page 103"
         class="Pagination__PaginationButtonStyled-x7juhx-1 dPDByT"
-        tabindex="0"
         type="button"
       >
         103
@@ -114,7 +114,6 @@ exports[`Pagination should handle first page click properly 1`] = `
       <button
         class="PaginationSearch__PaginationSearchButtonStyled-rcir65-1 hwqpt group"
         data-testid="PaginationSearchButton"
-        tabindex="0"
         type="button"
       >
         <span
@@ -179,13 +178,13 @@ exports[`Pagination should handle first page click properly 1`] = `
         </div>
       </div>
     </button>
-  </div>
+  </nav>
 </DocumentFragment>
 `;
 
 exports[`Pagination should handle last page click properly 1`] = `
 <DocumentFragment>
-  <div
+  <nav
     class="Pagination__Wrapper-x7juhx-0 hbWMHF"
     data-testid="Pagination"
   >
@@ -193,50 +192,51 @@ exports[`Pagination should handle last page click properly 1`] = `
       class="flex relative px-2 rounded bg-theme-primary-100 dark:bg-theme-secondary-800"
     >
       <button
+        aria-current="true"
+        aria-label="Page 1"
         class="Pagination__PaginationButtonStyled-x7juhx-1 dPDByT current-page"
-        tabindex="0"
         type="button"
       >
         1
       </button>
       <button
+        aria-label="Page 2"
         class="Pagination__PaginationButtonStyled-x7juhx-1 dPDByT"
-        tabindex="0"
         type="button"
       >
         2
       </button>
       <button
+        aria-label="Page 3"
         class="Pagination__PaginationButtonStyled-x7juhx-1 dPDByT"
-        tabindex="0"
         type="button"
       >
         3
       </button>
       <button
+        aria-label="Page 4"
         class="Pagination__PaginationButtonStyled-x7juhx-1 dPDByT"
-        tabindex="0"
         type="button"
       >
         4
       </button>
       <button
+        aria-label="Page 5"
         class="Pagination__PaginationButtonStyled-x7juhx-1 dPDByT"
-        tabindex="0"
         type="button"
       >
         5
       </button>
       <button
+        aria-label="Page 6"
         class="Pagination__PaginationButtonStyled-x7juhx-1 dPDByT"
-        tabindex="0"
         type="button"
       >
         6
       </button>
       <button
+        aria-label="Page 7"
         class="Pagination__PaginationButtonStyled-x7juhx-1 dPDByT"
-        tabindex="0"
         type="button"
       >
         7
@@ -244,7 +244,6 @@ exports[`Pagination should handle last page click properly 1`] = `
       <button
         class="PaginationSearch__PaginationSearchButtonStyled-rcir65-1 hwqpt group"
         data-testid="PaginationSearchButton"
-        tabindex="0"
         type="button"
       >
         <span
@@ -309,13 +308,13 @@ exports[`Pagination should handle last page click properly 1`] = `
         </div>
       </div>
     </button>
-  </div>
+  </nav>
 </DocumentFragment>
 `;
 
 exports[`Pagination should handle next page click properly 1`] = `
 <DocumentFragment>
-  <div
+  <nav
     class="Pagination__Wrapper-x7juhx-0 hbWMHF"
     data-testid="Pagination"
   >
@@ -343,22 +342,23 @@ exports[`Pagination should handle next page click properly 1`] = `
       class="flex relative px-2 rounded bg-theme-primary-100 dark:bg-theme-secondary-800"
     >
       <button
+        aria-label="Page 1"
         class="Pagination__PaginationButtonStyled-x7juhx-1 dPDByT"
-        tabindex="0"
         type="button"
       >
         1
       </button>
       <button
+        aria-current="true"
+        aria-label="Page 2"
         class="Pagination__PaginationButtonStyled-x7juhx-1 dPDByT current-page"
-        tabindex="0"
         type="button"
       >
         2
       </button>
       <button
+        aria-label="Page 3"
         class="Pagination__PaginationButtonStyled-x7juhx-1 dPDByT"
-        tabindex="0"
         type="button"
       >
         3
@@ -384,13 +384,13 @@ exports[`Pagination should handle next page click properly 1`] = `
         </div>
       </div>
     </button>
-  </div>
+  </nav>
 </DocumentFragment>
 `;
 
 exports[`Pagination should handle page selection properly 1`] = `
 <DocumentFragment>
-  <div
+  <nav
     class="Pagination__Wrapper-x7juhx-0 hbWMHF"
     data-testid="Pagination"
   >
@@ -398,22 +398,23 @@ exports[`Pagination should handle page selection properly 1`] = `
       class="flex relative px-2 rounded bg-theme-primary-100 dark:bg-theme-secondary-800"
     >
       <button
+        aria-current="true"
+        aria-label="Page 1"
         class="Pagination__PaginationButtonStyled-x7juhx-1 dPDByT current-page"
-        tabindex="0"
         type="button"
       >
         1
       </button>
       <button
+        aria-label="Page 2"
         class="Pagination__PaginationButtonStyled-x7juhx-1 dPDByT"
-        tabindex="0"
         type="button"
       >
         2
       </button>
       <button
+        aria-label="Page 3"
         class="Pagination__PaginationButtonStyled-x7juhx-1 dPDByT"
-        tabindex="0"
         type="button"
       >
         3
@@ -439,13 +440,13 @@ exports[`Pagination should handle page selection properly 1`] = `
         </div>
       </div>
     </button>
-  </div>
+  </nav>
 </DocumentFragment>
 `;
 
 exports[`Pagination should handle previous page click properly 1`] = `
 <DocumentFragment>
-  <div
+  <nav
     class="Pagination__Wrapper-x7juhx-0 hbWMHF"
     data-testid="Pagination"
   >
@@ -494,7 +495,6 @@ exports[`Pagination should handle previous page click properly 1`] = `
       <button
         class="PaginationSearch__PaginationSearchButtonStyled-rcir65-1 hwqpt group"
         data-testid="PaginationSearchButton"
-        tabindex="0"
         type="button"
       >
         <span
@@ -520,50 +520,51 @@ exports[`Pagination should handle previous page click properly 1`] = `
         </span>
       </button>
       <button
+        aria-label="Page 4"
         class="Pagination__PaginationButtonStyled-x7juhx-1 dPDByT"
-        tabindex="0"
         type="button"
       >
         4
       </button>
       <button
+        aria-label="Page 5"
         class="Pagination__PaginationButtonStyled-x7juhx-1 dPDByT"
-        tabindex="0"
         type="button"
       >
         5
       </button>
       <button
+        aria-label="Page 6"
         class="Pagination__PaginationButtonStyled-x7juhx-1 dPDByT"
-        tabindex="0"
         type="button"
       >
         6
       </button>
       <button
+        aria-label="Page 7"
         class="Pagination__PaginationButtonStyled-x7juhx-1 dPDByT"
-        tabindex="0"
         type="button"
       >
         7
       </button>
       <button
+        aria-label="Page 8"
         class="Pagination__PaginationButtonStyled-x7juhx-1 dPDByT"
-        tabindex="0"
         type="button"
       >
         8
       </button>
       <button
+        aria-current="true"
+        aria-label="Page 9"
         class="Pagination__PaginationButtonStyled-x7juhx-1 dPDByT current-page"
-        tabindex="0"
         type="button"
       >
         9
       </button>
       <button
+        aria-label="Page 10"
         class="Pagination__PaginationButtonStyled-x7juhx-1 dPDByT"
-        tabindex="0"
         type="button"
       >
         10
@@ -589,7 +590,7 @@ exports[`Pagination should handle previous page click properly 1`] = `
         </div>
       </div>
     </button>
-  </div>
+  </nav>
 </DocumentFragment>
 `;
 
@@ -597,7 +598,7 @@ exports[`Pagination should not render 1`] = `<DocumentFragment />`;
 
 exports[`Pagination should not render first button if pagination buttons include 1 (first page) 1`] = `
 <DocumentFragment>
-  <div
+  <nav
     class="Pagination__Wrapper-x7juhx-0 hbWMHF"
     data-testid="Pagination"
   >
@@ -605,50 +606,51 @@ exports[`Pagination should not render first button if pagination buttons include
       class="flex relative px-2 rounded bg-theme-primary-100 dark:bg-theme-secondary-800"
     >
       <button
+        aria-current="true"
+        aria-label="Page 1"
         class="Pagination__PaginationButtonStyled-x7juhx-1 dPDByT current-page"
-        tabindex="0"
         type="button"
       >
         1
       </button>
       <button
+        aria-label="Page 2"
         class="Pagination__PaginationButtonStyled-x7juhx-1 dPDByT"
-        tabindex="0"
         type="button"
       >
         2
       </button>
       <button
+        aria-label="Page 3"
         class="Pagination__PaginationButtonStyled-x7juhx-1 dPDByT"
-        tabindex="0"
         type="button"
       >
         3
       </button>
       <button
+        aria-label="Page 4"
         class="Pagination__PaginationButtonStyled-x7juhx-1 dPDByT"
-        tabindex="0"
         type="button"
       >
         4
       </button>
       <button
+        aria-label="Page 5"
         class="Pagination__PaginationButtonStyled-x7juhx-1 dPDByT"
-        tabindex="0"
         type="button"
       >
         5
       </button>
       <button
+        aria-label="Page 6"
         class="Pagination__PaginationButtonStyled-x7juhx-1 dPDByT"
-        tabindex="0"
         type="button"
       >
         6
       </button>
       <button
+        aria-label="Page 7"
         class="Pagination__PaginationButtonStyled-x7juhx-1 dPDByT"
-        tabindex="0"
         type="button"
       >
         7
@@ -656,7 +658,6 @@ exports[`Pagination should not render first button if pagination buttons include
       <button
         class="PaginationSearch__PaginationSearchButtonStyled-rcir65-1 hwqpt group"
         data-testid="PaginationSearchButton"
-        tabindex="0"
         type="button"
       >
         <span
@@ -721,13 +722,13 @@ exports[`Pagination should not render first button if pagination buttons include
         </div>
       </div>
     </button>
-  </div>
+  </nav>
 </DocumentFragment>
 `;
 
 exports[`Pagination should not render first button if pagination buttons include 1 (second page) 1`] = `
 <DocumentFragment>
-  <div
+  <nav
     class="Pagination__Wrapper-x7juhx-0 hbWMHF"
     data-testid="Pagination"
   >
@@ -755,50 +756,51 @@ exports[`Pagination should not render first button if pagination buttons include
       class="flex relative px-2 rounded bg-theme-primary-100 dark:bg-theme-secondary-800"
     >
       <button
+        aria-label="Page 1"
         class="Pagination__PaginationButtonStyled-x7juhx-1 dPDByT"
-        tabindex="0"
         type="button"
       >
         1
       </button>
       <button
+        aria-current="true"
+        aria-label="Page 2"
         class="Pagination__PaginationButtonStyled-x7juhx-1 dPDByT current-page"
-        tabindex="0"
         type="button"
       >
         2
       </button>
       <button
+        aria-label="Page 3"
         class="Pagination__PaginationButtonStyled-x7juhx-1 dPDByT"
-        tabindex="0"
         type="button"
       >
         3
       </button>
       <button
+        aria-label="Page 4"
         class="Pagination__PaginationButtonStyled-x7juhx-1 dPDByT"
-        tabindex="0"
         type="button"
       >
         4
       </button>
       <button
+        aria-label="Page 5"
         class="Pagination__PaginationButtonStyled-x7juhx-1 dPDByT"
-        tabindex="0"
         type="button"
       >
         5
       </button>
       <button
+        aria-label="Page 6"
         class="Pagination__PaginationButtonStyled-x7juhx-1 dPDByT"
-        tabindex="0"
         type="button"
       >
         6
       </button>
       <button
+        aria-label="Page 7"
         class="Pagination__PaginationButtonStyled-x7juhx-1 dPDByT"
-        tabindex="0"
         type="button"
       >
         7
@@ -806,7 +808,6 @@ exports[`Pagination should not render first button if pagination buttons include
       <button
         class="PaginationSearch__PaginationSearchButtonStyled-rcir65-1 hwqpt group"
         data-testid="PaginationSearchButton"
-        tabindex="0"
         type="button"
       >
         <span
@@ -871,13 +872,13 @@ exports[`Pagination should not render first button if pagination buttons include
         </div>
       </div>
     </button>
-  </div>
+  </nav>
 </DocumentFragment>
 `;
 
 exports[`Pagination should not render first button if pagination buttons include 1 (third page) 1`] = `
 <DocumentFragment>
-  <div
+  <nav
     class="Pagination__Wrapper-x7juhx-0 hbWMHF"
     data-testid="Pagination"
   >
@@ -905,50 +906,51 @@ exports[`Pagination should not render first button if pagination buttons include
       class="flex relative px-2 rounded bg-theme-primary-100 dark:bg-theme-secondary-800"
     >
       <button
+        aria-label="Page 1"
         class="Pagination__PaginationButtonStyled-x7juhx-1 dPDByT"
-        tabindex="0"
         type="button"
       >
         1
       </button>
       <button
+        aria-label="Page 2"
         class="Pagination__PaginationButtonStyled-x7juhx-1 dPDByT"
-        tabindex="0"
         type="button"
       >
         2
       </button>
       <button
+        aria-current="true"
+        aria-label="Page 3"
         class="Pagination__PaginationButtonStyled-x7juhx-1 dPDByT current-page"
-        tabindex="0"
         type="button"
       >
         3
       </button>
       <button
+        aria-label="Page 4"
         class="Pagination__PaginationButtonStyled-x7juhx-1 dPDByT"
-        tabindex="0"
         type="button"
       >
         4
       </button>
       <button
+        aria-label="Page 5"
         class="Pagination__PaginationButtonStyled-x7juhx-1 dPDByT"
-        tabindex="0"
         type="button"
       >
         5
       </button>
       <button
+        aria-label="Page 6"
         class="Pagination__PaginationButtonStyled-x7juhx-1 dPDByT"
-        tabindex="0"
         type="button"
       >
         6
       </button>
       <button
+        aria-label="Page 7"
         class="Pagination__PaginationButtonStyled-x7juhx-1 dPDByT"
-        tabindex="0"
         type="button"
       >
         7
@@ -956,7 +958,6 @@ exports[`Pagination should not render first button if pagination buttons include
       <button
         class="PaginationSearch__PaginationSearchButtonStyled-rcir65-1 hwqpt group"
         data-testid="PaginationSearchButton"
-        tabindex="0"
         type="button"
       >
         <span
@@ -1021,13 +1022,13 @@ exports[`Pagination should not render first button if pagination buttons include
         </div>
       </div>
     </button>
-  </div>
+  </nav>
 </DocumentFragment>
 `;
 
 exports[`Pagination should not render first button if pagination buttons include the last page (last page) 1`] = `
 <DocumentFragment>
-  <div
+  <nav
     class="Pagination__Wrapper-x7juhx-0 hbWMHF"
     data-testid="Pagination"
   >
@@ -1076,7 +1077,6 @@ exports[`Pagination should not render first button if pagination buttons include
       <button
         class="PaginationSearch__PaginationSearchButtonStyled-rcir65-1 hwqpt group"
         data-testid="PaginationSearchButton"
-        tabindex="0"
         type="button"
       >
         <span
@@ -1102,62 +1102,63 @@ exports[`Pagination should not render first button if pagination buttons include
         </span>
       </button>
       <button
+        aria-label="Page 4"
         class="Pagination__PaginationButtonStyled-x7juhx-1 dPDByT"
-        tabindex="0"
         type="button"
       >
         4
       </button>
       <button
+        aria-label="Page 5"
         class="Pagination__PaginationButtonStyled-x7juhx-1 dPDByT"
-        tabindex="0"
         type="button"
       >
         5
       </button>
       <button
+        aria-label="Page 6"
         class="Pagination__PaginationButtonStyled-x7juhx-1 dPDByT"
-        tabindex="0"
         type="button"
       >
         6
       </button>
       <button
+        aria-label="Page 7"
         class="Pagination__PaginationButtonStyled-x7juhx-1 dPDByT"
-        tabindex="0"
         type="button"
       >
         7
       </button>
       <button
+        aria-label="Page 8"
         class="Pagination__PaginationButtonStyled-x7juhx-1 dPDByT"
-        tabindex="0"
         type="button"
       >
         8
       </button>
       <button
+        aria-label="Page 9"
         class="Pagination__PaginationButtonStyled-x7juhx-1 dPDByT"
-        tabindex="0"
         type="button"
       >
         9
       </button>
       <button
+        aria-current="true"
+        aria-label="Page 10"
         class="Pagination__PaginationButtonStyled-x7juhx-1 dPDByT current-page"
-        tabindex="0"
         type="button"
       >
         10
       </button>
     </div>
-  </div>
+  </nav>
 </DocumentFragment>
 `;
 
 exports[`Pagination should not render first button if pagination buttons include the last page (second-to-last page) 1`] = `
 <DocumentFragment>
-  <div
+  <nav
     class="Pagination__Wrapper-x7juhx-0 hbWMHF"
     data-testid="Pagination"
   >
@@ -1206,7 +1207,6 @@ exports[`Pagination should not render first button if pagination buttons include
       <button
         class="PaginationSearch__PaginationSearchButtonStyled-rcir65-1 hwqpt group"
         data-testid="PaginationSearchButton"
-        tabindex="0"
         type="button"
       >
         <span
@@ -1232,50 +1232,51 @@ exports[`Pagination should not render first button if pagination buttons include
         </span>
       </button>
       <button
+        aria-label="Page 4"
         class="Pagination__PaginationButtonStyled-x7juhx-1 dPDByT"
-        tabindex="0"
         type="button"
       >
         4
       </button>
       <button
+        aria-label="Page 5"
         class="Pagination__PaginationButtonStyled-x7juhx-1 dPDByT"
-        tabindex="0"
         type="button"
       >
         5
       </button>
       <button
+        aria-label="Page 6"
         class="Pagination__PaginationButtonStyled-x7juhx-1 dPDByT"
-        tabindex="0"
         type="button"
       >
         6
       </button>
       <button
+        aria-label="Page 7"
         class="Pagination__PaginationButtonStyled-x7juhx-1 dPDByT"
-        tabindex="0"
         type="button"
       >
         7
       </button>
       <button
+        aria-label="Page 8"
         class="Pagination__PaginationButtonStyled-x7juhx-1 dPDByT"
-        tabindex="0"
         type="button"
       >
         8
       </button>
       <button
+        aria-current="true"
+        aria-label="Page 9"
         class="Pagination__PaginationButtonStyled-x7juhx-1 dPDByT current-page"
-        tabindex="0"
         type="button"
       >
         9
       </button>
       <button
+        aria-label="Page 10"
         class="Pagination__PaginationButtonStyled-x7juhx-1 dPDByT"
-        tabindex="0"
         type="button"
       >
         10
@@ -1301,13 +1302,13 @@ exports[`Pagination should not render first button if pagination buttons include
         </div>
       </div>
     </button>
-  </div>
+  </nav>
 </DocumentFragment>
 `;
 
 exports[`Pagination should not render first button if pagination buttons include the last page (third-to-last page) 1`] = `
 <DocumentFragment>
-  <div
+  <nav
     class="Pagination__Wrapper-x7juhx-0 hbWMHF"
     data-testid="Pagination"
   >
@@ -1356,7 +1357,6 @@ exports[`Pagination should not render first button if pagination buttons include
       <button
         class="PaginationSearch__PaginationSearchButtonStyled-rcir65-1 hwqpt group"
         data-testid="PaginationSearchButton"
-        tabindex="0"
         type="button"
       >
         <span
@@ -1382,50 +1382,51 @@ exports[`Pagination should not render first button if pagination buttons include
         </span>
       </button>
       <button
+        aria-label="Page 4"
         class="Pagination__PaginationButtonStyled-x7juhx-1 dPDByT"
-        tabindex="0"
         type="button"
       >
         4
       </button>
       <button
+        aria-label="Page 5"
         class="Pagination__PaginationButtonStyled-x7juhx-1 dPDByT"
-        tabindex="0"
         type="button"
       >
         5
       </button>
       <button
+        aria-label="Page 6"
         class="Pagination__PaginationButtonStyled-x7juhx-1 dPDByT"
-        tabindex="0"
         type="button"
       >
         6
       </button>
       <button
+        aria-label="Page 7"
         class="Pagination__PaginationButtonStyled-x7juhx-1 dPDByT"
-        tabindex="0"
         type="button"
       >
         7
       </button>
       <button
+        aria-current="true"
+        aria-label="Page 8"
         class="Pagination__PaginationButtonStyled-x7juhx-1 dPDByT current-page"
-        tabindex="0"
         type="button"
       >
         8
       </button>
       <button
+        aria-label="Page 9"
         class="Pagination__PaginationButtonStyled-x7juhx-1 dPDByT"
-        tabindex="0"
         type="button"
       >
         9
       </button>
       <button
+        aria-label="Page 10"
         class="Pagination__PaginationButtonStyled-x7juhx-1 dPDByT"
-        tabindex="0"
         type="button"
       >
         10
@@ -1451,13 +1452,13 @@ exports[`Pagination should not render first button if pagination buttons include
         </div>
       </div>
     </button>
-  </div>
+  </nav>
 </DocumentFragment>
 `;
 
 exports[`Pagination should not render next button on last page 1`] = `
 <DocumentFragment>
-  <div
+  <nav
     class="Pagination__Wrapper-x7juhx-0 hbWMHF"
     data-testid="Pagination"
   >
@@ -1506,7 +1507,6 @@ exports[`Pagination should not render next button on last page 1`] = `
       <button
         class="PaginationSearch__PaginationSearchButtonStyled-rcir65-1 hwqpt group"
         data-testid="PaginationSearchButton"
-        tabindex="0"
         type="button"
       >
         <span
@@ -1532,62 +1532,63 @@ exports[`Pagination should not render next button on last page 1`] = `
         </span>
       </button>
       <button
+        aria-label="Page 4"
         class="Pagination__PaginationButtonStyled-x7juhx-1 dPDByT"
-        tabindex="0"
         type="button"
       >
         4
       </button>
       <button
+        aria-label="Page 5"
         class="Pagination__PaginationButtonStyled-x7juhx-1 dPDByT"
-        tabindex="0"
         type="button"
       >
         5
       </button>
       <button
+        aria-label="Page 6"
         class="Pagination__PaginationButtonStyled-x7juhx-1 dPDByT"
-        tabindex="0"
         type="button"
       >
         6
       </button>
       <button
+        aria-label="Page 7"
         class="Pagination__PaginationButtonStyled-x7juhx-1 dPDByT"
-        tabindex="0"
         type="button"
       >
         7
       </button>
       <button
+        aria-label="Page 8"
         class="Pagination__PaginationButtonStyled-x7juhx-1 dPDByT"
-        tabindex="0"
         type="button"
       >
         8
       </button>
       <button
+        aria-label="Page 9"
         class="Pagination__PaginationButtonStyled-x7juhx-1 dPDByT"
-        tabindex="0"
         type="button"
       >
         9
       </button>
       <button
+        aria-current="true"
+        aria-label="Page 10"
         class="Pagination__PaginationButtonStyled-x7juhx-1 dPDByT current-page"
-        tabindex="0"
         type="button"
       >
         10
       </button>
     </div>
-  </div>
+  </nav>
 </DocumentFragment>
 `;
 
 exports[`Pagination should not render previous buttons on first page 1`] = `
 <DocumentFragment>
-  <div
+  <nav
     class="Pagination__Wrapper-x7juhx-0 hbWMHF"
     data-testid="Pagination"
   >
@@ -1595,50 +1596,51 @@ exports[`Pagination should not render previous buttons on first page 1`] = `
       class="flex relative px-2 rounded bg-theme-primary-100 dark:bg-theme-secondary-800"
     >
       <button
+        aria-current="true"
+        aria-label="Page 1"
         class="Pagination__PaginationButtonStyled-x7juhx-1 dPDByT current-page"
-        tabindex="0"
         type="button"
       >
         1
       </button>
       <button
+        aria-label="Page 2"
         class="Pagination__PaginationButtonStyled-x7juhx-1 dPDByT"
-        tabindex="0"
         type="button"
       >
         2
       </button>
       <button
+        aria-label="Page 3"
         class="Pagination__PaginationButtonStyled-x7juhx-1 dPDByT"
-        tabindex="0"
         type="button"
       >
         3
       </button>
       <button
+        aria-label="Page 4"
         class="Pagination__PaginationButtonStyled-x7juhx-1 dPDByT"
-        tabindex="0"
         type="button"
       >
         4
       </button>
       <button
+        aria-label="Page 5"
         class="Pagination__PaginationButtonStyled-x7juhx-1 dPDByT"
-        tabindex="0"
         type="button"
       >
         5
       </button>
       <button
+        aria-label="Page 6"
         class="Pagination__PaginationButtonStyled-x7juhx-1 dPDByT"
-        tabindex="0"
         type="button"
       >
         6
       </button>
       <button
+        aria-label="Page 7"
         class="Pagination__PaginationButtonStyled-x7juhx-1 dPDByT"
-        tabindex="0"
         type="button"
       >
         7
@@ -1646,7 +1648,6 @@ exports[`Pagination should not render previous buttons on first page 1`] = `
       <button
         class="PaginationSearch__PaginationSearchButtonStyled-rcir65-1 hwqpt group"
         data-testid="PaginationSearchButton"
-        tabindex="0"
         type="button"
       >
         <span
@@ -1711,13 +1712,13 @@ exports[`Pagination should not render previous buttons on first page 1`] = `
         </div>
       </div>
     </button>
-  </div>
+  </nav>
 </DocumentFragment>
 `;
 
 exports[`Pagination should render 1`] = `
 <DocumentFragment>
-  <div
+  <nav
     class="Pagination__Wrapper-x7juhx-0 hbWMHF"
     data-testid="Pagination"
   >
@@ -1725,22 +1726,23 @@ exports[`Pagination should render 1`] = `
       class="flex relative px-2 rounded bg-theme-primary-100 dark:bg-theme-secondary-800"
     >
       <button
+        aria-current="true"
+        aria-label="Page 1"
         class="Pagination__PaginationButtonStyled-x7juhx-1 dPDByT current-page"
-        tabindex="0"
         type="button"
       >
         1
       </button>
       <button
+        aria-label="Page 2"
         class="Pagination__PaginationButtonStyled-x7juhx-1 dPDByT"
-        tabindex="0"
         type="button"
       >
         2
       </button>
       <button
+        aria-label="Page 3"
         class="Pagination__PaginationButtonStyled-x7juhx-1 dPDByT"
-        tabindex="0"
         type="button"
       >
         3
@@ -1766,13 +1768,13 @@ exports[`Pagination should render 1`] = `
         </div>
       </div>
     </button>
-  </div>
+  </nav>
 </DocumentFragment>
 `;
 
 exports[`Pagination should render condensed 1`] = `
 <DocumentFragment>
-  <div
+  <nav
     class="Pagination__Wrapper-x7juhx-0 hbWMHF"
     data-testid="Pagination"
   >
@@ -1780,22 +1782,23 @@ exports[`Pagination should render condensed 1`] = `
       class="flex relative px-2 rounded bg-theme-primary-100 dark:bg-theme-secondary-800"
     >
       <button
+        aria-current="true"
+        aria-label="Page 1"
         class="Pagination__PaginationButtonStyled-x7juhx-1 dPDByT current-page"
-        tabindex="0"
         type="button"
       >
         1
       </button>
       <button
+        aria-label="Page 2"
         class="Pagination__PaginationButtonStyled-x7juhx-1 dPDByT"
-        tabindex="0"
         type="button"
       >
         2
       </button>
       <button
+        aria-label="Page 3"
         class="Pagination__PaginationButtonStyled-x7juhx-1 dPDByT"
-        tabindex="0"
         type="button"
       >
         3
@@ -1821,6 +1824,6 @@ exports[`Pagination should render condensed 1`] = `
         </div>
       </div>
     </button>
-  </div>
+  </nav>
 </DocumentFragment>
 `;
