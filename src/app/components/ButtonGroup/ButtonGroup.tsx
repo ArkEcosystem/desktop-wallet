@@ -26,6 +26,7 @@ const ButtonGroupOptionStyled = styled.button(() => [
 	css`
 		&[aria-checked="true"] {
 			${tw`border-theme-success-600 bg-theme-success-100 dark:bg-theme-success-900`}
+			${tw`text-theme-secondary-900`}
 		}
 	`,
 ]);

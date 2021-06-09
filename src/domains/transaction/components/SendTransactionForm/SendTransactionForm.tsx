@@ -144,6 +144,7 @@ export const SendTransactionForm = ({
 						step={0.01}
 						showFeeOptions={dynamicFees}
 						network={network}
+						profile={profile}
 						onChange={(value) => {
 							setValue("fee", value, { shouldValidate: true, shouldDirty: true });
 						}}

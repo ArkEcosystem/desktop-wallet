@@ -14,14 +14,16 @@ const component = ({
 	activeTab,
 	fees,
 	wallet,
+	profile,
 }: {
 	activeTab: number;
 	fees: any;
 	wallet: ProfilesContracts.IReadWriteWallet;
+	profile: ProfilesContracts.IProfile;
 }) => (
 	<Tabs activeId={activeTab}>
 		<TabPanel tabId={1}>
-			<FormStep fees={fees} wallet={wallet} />
+			<FormStep fees={fees} wallet={wallet} profile={profile} />
 		</TabPanel>
 		<TabPanel tabId={2}>
 			<ReviewStep wallet={wallet} />

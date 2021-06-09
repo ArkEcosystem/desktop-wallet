@@ -11,7 +11,7 @@ import React, { useEffect, useState } from "react";
 import { useFormContext } from "react-hook-form";
 import { useTranslation } from "react-i18next";
 
-export const FormStep = ({ fees, wallet, step = 0.001 }: any) => {
+export const FormStep = ({ fees, wallet, step = 0.001, profile }: any) => {
 	const { t } = useTranslation();
 	const { env } = useEnvironmentContext();
 
@@ -83,6 +83,7 @@ export const FormStep = ({ fees, wallet, step = 0.001 }: any) => {
 						step={step}
 						showFeeOptions={wallet.network().feeType() === "dynamic"}
 						network={wallet.network()}
+						profile={profile}
 						onChange={(value) => {
 							setValue("fee", value, { shouldValidate: true, shouldDirty: true });
 						}}

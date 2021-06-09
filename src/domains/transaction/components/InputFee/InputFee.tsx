@@ -1,7 +1,6 @@
 import { Networks } from "@arkecosystem/platform-sdk";
 import { Contracts } from "@arkecosystem/platform-sdk-profiles";
 import { Switch } from "app/components/Switch";
-import { useActiveProfile } from "app/hooks";
 import { useExchangeRate } from "app/hooks/use-exchange-rate";
 import React, { memo, useState } from "react";
 import { useTranslation } from "react-i18next";
@@ -23,61 +22,64 @@ interface Props {
 	showFeeOptions?: boolean;
 	onChange: (value: string) => void;
 	network?: Networks.Network;
+	profile?: Contracts.IProfile;
 	loading?: boolean;
 }
 
-export const InputFee = memo(({ onChange, step, showFeeOptions, network, loading, avg, min, max, value }: Props) => {
-	const { t } = useTranslation();
-	const profile = useActiveProfile();
+export const InputFee = memo(
+	({ onChange, step, showFeeOptions, network, loading, avg, min, max, value, profile }: Props) => {
+		const { t } = useTranslation();
 
-	const [viewType, setViewType] = useState<ViewType>(ViewType.Simple);
+		const [viewType, setViewType] = useState<ViewType>(ViewType.Simple);
 
-	const ticker = network?.ticker();
-	const exchangeTicker = profile.settings().get(Contracts.ProfileSetting.ExchangeCurrency) as string;
-	const { convert } = useExchangeRate({ ticker, exchangeTicker });
+		const ticker = network?.ticker();
+		const exchangeTicker = profile?.settings().get<string>(Contracts.ProfileSetting.ExchangeCurrency);
+		const { convert } = useExchangeRate({ ticker, exchangeTicker });
 
-	return (
-		<div data-testid="InputFee" className="relative">
-			<div className="absolute right-0 -mt-7">
-				<Switch
-					value={viewType}
-					onChange={setViewType}
-					leftOption={{
-						label: t("TRANSACTION.INPUT_FEE_VIEW_TYPE.SIMPLE"),
-						value: ViewType.Simple,
-					}}
-					rightOption={{
-						label: t("TRANSACTION.INPUT_FEE_VIEW_TYPE.ADVANCED"),
-						value: ViewType.Advanced,
-					}}
-				/>
+		return (
+			<div data-testid="InputFee" className="relative">
+				<div className="absolute right-0 -mt-7">
+					<Switch
+						size="sm"
+						value={viewType}
+						onChange={setViewType}
+						leftOption={{
+							label: t("TRANSACTION.INPUT_FEE_VIEW_TYPE.SIMPLE"),
+							value: ViewType.Simple,
+						}}
+						rightOption={{
+							label: t("TRANSACTION.INPUT_FEE_VIEW_TYPE.ADVANCED"),
+							value: ViewType.Advanced,
+						}}
+					/>
+				</div>
+
+				{viewType === ViewType.Simple ? (
+					<InputFeeSimple
+						min={min}
+						max={max}
+						avg={avg}
+						minConverted={convert(min)}
+						maxConverted={convert(max)}
+						avgConverted={convert(avg)}
+						value={value}
+						loading={loading || !ticker || !exchangeTicker}
+						ticker={ticker!}
+						exchangeTicker={exchangeTicker!}
+						onChange={onChange}
+						showConvertedValues={!!network?.isLive()}
+					/>
+				) : (
+					<InputFeeAdvanced
+						min={min}
+						max={max}
+						step={step}
+						value={value}
+						onChange={onChange}
+						disabled={!showFeeOptions}
+					/>
+				)}
 			</div>
-
-			{viewType === ViewType.Simple ? (
-				<InputFeeSimple
-					min={min}
-					max={max}
-					avg={avg}
-					minConverted={convert(min)}
-					maxConverted={convert(max)}
-					avgConverted={convert(avg)}
-					value={value}
-					loading={loading || !ticker}
-					ticker={ticker!}
-					exchangeTicker={exchangeTicker}
-					onChange={onChange}
-					showConvertedValues={!!network?.isLive()}
-				/>
-			) : (
-				<InputFeeAdvanced
-					min={min}
-					max={max}
-					step={step}
-					value={value}
-					onChange={onChange}
-					disabled={!showFeeOptions}
-				/>
-			)}
-		</div>
-	);
-});
+		);
+	},
+);

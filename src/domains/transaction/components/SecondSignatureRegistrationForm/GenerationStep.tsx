@@ -16,10 +16,12 @@ export const GenerationStep = ({
 	fees,
 	wallet,
 	step = 0.001,
+	profile,
 }: {
 	fees: TransactionFees;
 	wallet: ProfileContracts.IReadWriteWallet;
 	step?: number;
+	profile: ProfileContracts.IProfile;
 }) => {
 	const { t } = useTranslation();
 
@@ -70,6 +72,7 @@ export const GenerationStep = ({
 						step={step}
 						showFeeOptions={wallet.network().feeType() === "dynamic"}
 						network={wallet.network()}
+						profile={profile}
 						onChange={(value) => {
 							setValue("fee", value, { shouldValidate: true, shouldDirty: true });
 						}}

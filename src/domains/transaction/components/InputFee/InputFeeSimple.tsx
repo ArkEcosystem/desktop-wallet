@@ -37,6 +37,7 @@ export const InputFeeSimple = ({
 	const { t } = useTranslation();
 
 	const isDisabled = (val: string) => !+val || (min === avg && avg === max);
+	const isSelected = (val: string) => !isDisabled(val) && val === value;
 
 	const options: { label: string; value: string; valueConverted: BigNumber }[] = [
 		{
@@ -60,24 +61,24 @@ export const InputFeeSimple = ({
 		<ButtonGroup className="w-full">
 			{options.map(({ label, value: optionValue, valueConverted }, index) => (
 				<ButtonGroupOption
-					className="w-full justify-center py-2"
+					className="w-full justify-center py-4"
 					key={index}
 					disabled={isDisabled(optionValue)}
-					value={min}
-					isSelected={() => !isDisabled(optionValue) && value === optionValue}
+					value={optionValue}
+					isSelected={() => isSelected(optionValue)}
 					setSelectedValue={() => onChange(`${optionValue}`)}
 				>
 					<div>
-						<div className="text-lg mb-1">{label}</div>
+						<div className="mb-3">{label}</div>
 						{loading ? (
-							<Skeleton width={100} className="h-4 mt-1 mb-2" />
+							<Skeleton width={100} className="h-3 my-1" />
 						) : (
 							<>
-								<div>
+								<div className="font-normal text-sm">
 									{optionValue} {ticker}
 								</div>
 								{showConvertedValues && (
-									<div className="text-sm font-normal mt-1">
+									<div className="font-normal text-sm text-theme-secondary-500 mt-3">
 										<Amount normalize ticker={exchangeTicker} value={valueConverted} />
 									</div>
 								)}

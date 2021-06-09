@@ -5,6 +5,7 @@ import { ReadOnlyWallet } from "@arkecosystem/platform-sdk-profiles/dist/drivers
 import { BigNumber } from "@arkecosystem/platform-sdk-support";
 import { renderHook } from "@testing-library/react-hooks";
 import { LedgerProvider } from "app/contexts";
+import { translations as transactionTranslations } from "domains/transaction/i18n";
 import { createMemoryHistory } from "history";
 import nock from "nock";
 import React from "react";
@@ -211,7 +212,7 @@ describe("SendVote", () => {
 		expect(container).toMatchSnapshot();
 	});
 
-	it("should send a unvote & vote transaction", async () => {
+	it.only("should send a unvote & vote transaction", async () => {
 		const votesMock = jest.spyOn(wallet.voting(), "current").mockImplementation(() => [
 			new ReadOnlyWallet({
 				address: delegateData[1].address,
@@ -236,7 +237,7 @@ describe("SendVote", () => {
 			search: `?${params}`,
 		});
 
-		const { container, getByTestId } = renderWithRouter(
+		const { container, getByTestId, getByText } = renderWithRouter(
 			<Route path="/profiles/:profileId/wallets/:walletId/send-vote">
 				<LedgerProvider transport={transport}>
 					<SendVote />
@@ -250,6 +251,10 @@ describe("SendVote", () => {
 
 		expect(getByTestId("SendVote__form-step")).toBeTruthy();
 		await waitFor(() => expect(getByTestId("SendVote__form-step")).toHaveTextContent(delegateData[0].username));
+
+		act(() => {
+			fireEvent.click(getByText(transactionTranslations.INPUT_FEE_VIEW_TYPE.ADVANCED));
+		});
 
 		await waitFor(() => expect(getByTestId("InputCurrency")).not.toHaveValue("0"));
 
@@ -345,7 +350,7 @@ describe("SendVote", () => {
 			}),
 		);
 
-		const { container, getByTestId } = renderWithRouter(
+		const { container, getByTestId, getByText } = renderWithRouter(
 			<Route path="/profiles/:profileId/wallets/:walletId/send-vote">
 				<FormProvider {...form.current}>
 					<LedgerProvider transport={transport}>
@@ -361,6 +366,10 @@ describe("SendVote", () => {
 
 		expect(getByTestId("SendVote__form-step")).toBeTruthy();
 		await waitFor(() => expect(getByTestId("SendVote__form-step")).toHaveTextContent(delegateData[0].username));
+
+		act(() => {
+			fireEvent.click(getByText(transactionTranslations.INPUT_FEE_VIEW_TYPE.ADVANCED));
+		});
 
 		await waitFor(() => expect(getByTestId("InputCurrency")).not.toHaveValue("0"));
 
@@ -404,7 +413,7 @@ describe("SendVote", () => {
 		transactionMock.mockRestore();
 	});
 
-	it("should move back and forth between steps", async () => {
+	it.only("should move back and forth between steps", async () => {
 		const history = createMemoryHistory();
 		const voteURL = `/profiles/${fixtureProfileId}/wallets/${wallet.id()}/send-vote`;
 
@@ -417,7 +426,7 @@ describe("SendVote", () => {
 			search: `?${params}`,
 		});
 
-		const { getByTestId } = renderWithRouter(
+		const { getByTestId, getByText } = renderWithRouter(
 			<Route path="/profiles/:profileId/wallets/:walletId/send-vote">
 				<LedgerProvider transport={transport}>
 					<SendVote />
@@ -431,6 +440,10 @@ describe("SendVote", () => {
 
 		expect(getByTestId("SendVote__form-step")).toBeTruthy();
 		await waitFor(() => expect(getByTestId("SendVote__form-step")).toHaveTextContent(delegateData[1].username));
+
+		act(() => {
+			fireEvent.click(getByText(transactionTranslations.INPUT_FEE_VIEW_TYPE.ADVANCED));
+		});
 
 		fireEvent.input(getByTestId("InputCurrency"), { target: { value: "0.02" } });
 

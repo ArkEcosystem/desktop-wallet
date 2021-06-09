@@ -102,6 +102,7 @@ export const FormStep = ({
 						step={0.01}
 						showFeeOptions={wallet.network().feeType() === "dynamic"}
 						network={wallet.network()}
+						profile={profile}
 						onChange={(value) => {
 							setValue("fee", value, { shouldValidate: true, shouldDirty: true });
 						}}
