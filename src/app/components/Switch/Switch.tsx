@@ -1,8 +1,12 @@
 import cn from "classnames";
-import React from "react";
+import React, { PropsWithChildren } from "react";
+import { styled } from "twin.macro";
+import { Size } from "types";
 
 import { Toggle } from "../Toggle";
-import { SwitchText } from "./SwitchText";
+import { getSwitchTextStyles, SwitchTextType } from "./SwitchText.style";
+
+const SwitchText = styled.span<PropsWithChildren<SwitchTextType>>(getSwitchTextStyles);
 
 export interface SwitchOption<TValue = string> {
 	label: string;
@@ -14,6 +18,7 @@ interface Props<TOptionValue = string> {
 	onChange: (value: TOptionValue) => void;
 	leftOption: SwitchOption<TOptionValue>;
 	rightOption: SwitchOption<TOptionValue>;
+	size?: Size;
 	disabled?: boolean;
 	className?: string;
 }
@@ -23,6 +28,7 @@ export function Switch<TOptionValue = string>({
 	onChange,
 	leftOption,
 	rightOption,
+	size,
 	disabled,
 	className,
 }: Props<TOptionValue>) {
@@ -30,6 +36,7 @@ export function Switch<TOptionValue = string>({
 		<SwitchText
 			role="button"
 			disabled={disabled}
+			size={size}
 			selected={option.value === value}
 			onClick={() => !disabled && onChange(option.value)}
 		>
