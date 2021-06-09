@@ -3,6 +3,7 @@ import { Button } from "app/components/Button";
 import { FormField, FormLabel, SubForm } from "app/components/Form";
 import { Icon } from "app/components/Icon";
 import { InputCurrency } from "app/components/Input";
+import { Switch } from "app/components/Switch";
 import { Tooltip } from "app/components/Tooltip";
 import { useValidation } from "app/hooks";
 import cn from "classnames";
@@ -17,52 +18,39 @@ import tw, { css, styled } from "twin.macro";
 import { AddRecipientProps, ToggleButtonProps } from "./AddRecipient.models";
 import { AddRecipientWrapper } from "./AddRecipient.styles";
 
-const ToggleButtons = ({ isSingle, disableMultiple, onChange }: ToggleButtonProps) => {
+const TransferType = ({ isSingle, disableMultiple, onChange }: ToggleButtonProps) => {
 	const { t } = useTranslation();
 
 	return (
-		<div className="text-theme-secondary-text hover:text-theme-primary-600">
-			<div className="flex items-center mb-2 space-x-2">
-				<div className="font-normal transition-colors duration-100 text-md">
-					{t("TRANSACTION.SINGLE_OR_MULTI")}
-				</div>
-				<div>
-					<Tooltip content={t("TRANSACTION.RECIPIENTS_HELPTEXT", { count: 64 })}>
-						<div className="flex items-center justify-center w-5 h-5 rounded-full cursor-pointer bg-theme-primary-100 hover:bg-theme-primary-200 dark:bg-theme-secondary-800 text-theme-primary-600 dark:text-theme-secondary-200 questionmark">
-							<Icon width={10} height={10} name="QuestionMark" />
-						</div>
-					</Tooltip>
-				</div>
-			</div>
+		<div className="flex justify-between items-center mb-2 text-theme-secondary-text hover:text-theme-primary-600">
+			<div className="text-sm font-semibold transition-colors duration-100">{t("TRANSACTION.RECIPIENT")}</div>
 
-			<div className="flex items-stretch select-buttons">
-				<div className="flex-1">
-					<Button
-						data-testid="AddRecipient__single"
-						className="w-full"
-						size="lg"
-						variant={isSingle ? "primary" : "secondary"}
-						onClick={() => onChange?.(true)}
-					>
-						{t("TRANSACTION.SINGLE")}
-					</Button>
-				</div>
-
+			<div className="flex items-center space-x-2">
 				<Tooltip
 					content={t("TRANSACTION.PAGE_TRANSACTION_SEND.FORM_STEP.MULTIPLE_UNAVAILBLE")}
 					disabled={!disableMultiple}
 				>
-					<div className="flex-1">
-						<Button
-							data-testid="AddRecipient__multi"
+					<span>
+						<Switch
+							size="sm"
 							disabled={disableMultiple}
-							className="w-full border-l-0"
-							size="lg"
-							variant={!isSingle ? "primary" : "secondary"}
-							onClick={() => onChange?.(false)}
-						>
-							{t("TRANSACTION.MULTIPLE")}
-						</Button>
+							value={isSingle}
+							onChange={onChange}
+							leftOption={{
+								label: t("TRANSACTION.SINGLE"),
+								value: true,
+							}}
+							rightOption={{
+								label: t("TRANSACTION.MULTIPLE"),
+								value: false,
+							}}
+						/>
+					</span>
+				</Tooltip>
+
+				<Tooltip content={t("TRANSACTION.RECIPIENTS_HELPTEXT", { count: 64 })}>
+					<div className="flex items-center justify-center w-5 h-5 rounded-full cursor-pointer bg-theme-primary-100 hover:bg-theme-primary-200 dark:bg-theme-secondary-800 text-theme-primary-600 dark:text-theme-secondary-200 questionmark">
+						<Icon width={10} height={10} name="QuestionMark" />
 					</div>
 				</Tooltip>
 			</div>
@@ -267,7 +255,7 @@ export const AddRecipient = ({
 	return (
 		<AddRecipientWrapper>
 			{showMultiPaymentOption && (
-				<ToggleButtons
+				<TransferType
 					isSingle={isSingle}
 					disableMultiple={disableMultiPaymentOption}
 					onChange={(isSingle) => setIsSingle(isSingle)}
