@@ -12,6 +12,7 @@ exports[`Balance should render 1`] = `
     </div>
     <div
       class="text-sm font-bold text-theme-secondary-text dark:text-theme-text"
+      data-testid="Balance__value"
     >
       <span
         data-testid="Amount"
@@ -35,6 +36,7 @@ exports[`Balance should render if ticker is unavailable 1`] = `
     </div>
     <div
       class="text-sm font-bold text-theme-secondary-text dark:text-theme-text"
+      data-testid="Balance__value"
     >
       <span
         data-testid="Amount"
