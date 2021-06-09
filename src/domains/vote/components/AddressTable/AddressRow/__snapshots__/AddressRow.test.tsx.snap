@@ -27,11 +27,11 @@ exports[`AddressRow should emit action on select button 1`] = `
               </div>
             </div>
             <div
-              class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap"
+              class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap space-x-2"
             >
               <span
-                class="max-w-24 truncate mr-2 font-semibold text-base text-theme-text"
-                data-testid="address__wallet-name"
+                class="font-semibold text-base text-theme-text"
+                data-testid="Address__alias"
               >
                 <span
                   class="TruncateEnd__Wrapper-sc-1w1nvb9-0"
@@ -41,8 +41,8 @@ exports[`AddressRow should emit action on select button 1`] = `
                 </span>
               </span>
               <span
-                class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-secondary-500 dark:text-theme-secondary-700 font-semibold text-base"
-                data-testid="address__wallet-address"
+                class="inline-flex overflow-hidden text-theme-secondary-500 dark:text-theme-secondary-700 font-semibold text-base"
+                data-testid="Address__address"
               >
                 D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD
               </span>
@@ -194,11 +194,11 @@ exports[`AddressRow should render 1`] = `
               </div>
             </div>
             <div
-              class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap"
+              class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap space-x-2"
             >
               <span
-                class="max-w-24 truncate mr-2 font-semibold text-base text-theme-text"
-                data-testid="address__wallet-name"
+                class="font-semibold text-base text-theme-text"
+                data-testid="Address__alias"
               >
                 <span
                   class="TruncateEnd__Wrapper-sc-1w1nvb9-0"
@@ -208,8 +208,8 @@ exports[`AddressRow should render 1`] = `
                 </span>
               </span>
               <span
-                class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-secondary-500 dark:text-theme-secondary-700 font-semibold text-base"
-                data-testid="address__wallet-address"
+                class="inline-flex overflow-hidden text-theme-secondary-500 dark:text-theme-secondary-700 font-semibold text-base"
+                data-testid="Address__address"
               >
                 D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD
               </span>
@@ -361,11 +361,11 @@ exports[`AddressRow should render for a multisignature wallet 1`] = `
               </div>
             </div>
             <div
-              class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap"
+              class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap space-x-2"
             >
               <span
-                class="max-w-24 truncate mr-2 font-semibold text-base text-theme-text"
-                data-testid="address__wallet-name"
+                class="font-semibold text-base text-theme-text"
+                data-testid="Address__alias"
               >
                 <span
                   class="TruncateEnd__Wrapper-sc-1w1nvb9-0"
@@ -375,8 +375,8 @@ exports[`AddressRow should render for a multisignature wallet 1`] = `
                 </span>
               </span>
               <span
-                class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-secondary-500 dark:text-theme-secondary-700 font-semibold text-base"
-                data-testid="address__wallet-address"
+                class="inline-flex overflow-hidden text-theme-secondary-500 dark:text-theme-secondary-700 font-semibold text-base"
+                data-testid="Address__address"
               >
                 D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD
               </span>
@@ -541,11 +541,11 @@ exports[`AddressRow should render when the maximum votes is greater than 1 1`] =
               </div>
             </div>
             <div
-              class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap"
+              class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap space-x-2"
             >
               <span
-                class="max-w-24 truncate mr-2 font-semibold text-base text-theme-text"
-                data-testid="address__wallet-name"
+                class="font-semibold text-base text-theme-text"
+                data-testid="Address__alias"
               >
                 <span
                   class="TruncateEnd__Wrapper-sc-1w1nvb9-0"
@@ -555,8 +555,8 @@ exports[`AddressRow should render when the maximum votes is greater than 1 1`] =
                 </span>
               </span>
               <span
-                class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-secondary-500 dark:text-theme-secondary-700 font-semibold text-base"
-                data-testid="address__wallet-address"
+                class="inline-flex overflow-hidden text-theme-secondary-500 dark:text-theme-secondary-700 font-semibold text-base"
+                data-testid="Address__address"
               >
                 D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD
               </span>
@@ -764,11 +764,11 @@ exports[`AddressRow should render when the wallet has many votes 1`] = `
               </div>
             </div>
             <div
-              class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap"
+              class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap space-x-2"
             >
               <span
-                class="max-w-24 truncate mr-2 font-semibold text-base text-theme-text"
-                data-testid="address__wallet-name"
+                class="font-semibold text-base text-theme-text"
+                data-testid="Address__alias"
               >
                 <span
                   class="TruncateEnd__Wrapper-sc-1w1nvb9-0"
@@ -778,8 +778,8 @@ exports[`AddressRow should render when the wallet has many votes 1`] = `
                 </span>
               </span>
               <span
-                class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-secondary-500 dark:text-theme-secondary-700 font-semibold text-base"
-                data-testid="address__wallet-address"
+                class="inline-flex overflow-hidden text-theme-secondary-500 dark:text-theme-secondary-700 font-semibold text-base"
+                data-testid="Address__address"
               >
                 D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD
               </span>
@@ -978,11 +978,11 @@ exports[`AddressRow should render when wallet hasn't voted 1`] = `
               </div>
             </div>
             <div
-              class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap"
+              class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap space-x-2"
             >
               <span
-                class="max-w-24 truncate mr-2 font-semibold text-base text-theme-text"
-                data-testid="address__wallet-name"
+                class="font-semibold text-base text-theme-text"
+                data-testid="Address__alias"
               >
                 <span
                   class="TruncateEnd__Wrapper-sc-1w1nvb9-0"
@@ -992,8 +992,8 @@ exports[`AddressRow should render when wallet hasn't voted 1`] = `
                 </span>
               </span>
               <span
-                class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-secondary-500 dark:text-theme-secondary-700 font-semibold text-base"
-                data-testid="address__wallet-address"
+                class="inline-flex overflow-hidden text-theme-secondary-500 dark:text-theme-secondary-700 font-semibold text-base"
+                data-testid="Address__address"
               >
                 D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD
               </span>
@@ -1136,11 +1136,11 @@ exports[`AddressRow should render when wallet hasn't voted 1`] = `
               </div>
             </div>
             <div
-              class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap"
+              class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap space-x-2"
             >
               <span
-                class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-text font-semibold text-base"
-                data-testid="address__wallet-address"
+                class="inline-flex overflow-hidden text-theme-text font-semibold text-base"
+                data-testid="Address__address"
               >
                 DHijNjwnQWmTgQMGJoHub7CutwomG1J7vs
               </span>
@@ -1242,11 +1242,11 @@ exports[`AddressRow should render when wallet not found for votes 1`] = `
               </div>
             </div>
             <div
-              class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap"
+              class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap space-x-2"
             >
               <span
-                class="max-w-24 truncate mr-2 font-semibold text-base text-theme-text"
-                data-testid="address__wallet-name"
+                class="font-semibold text-base text-theme-text"
+                data-testid="Address__alias"
               >
                 <span
                   class="TruncateEnd__Wrapper-sc-1w1nvb9-0"
@@ -1256,8 +1256,8 @@ exports[`AddressRow should render when wallet not found for votes 1`] = `
                 </span>
               </span>
               <span
-                class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-secondary-500 dark:text-theme-secondary-700 font-semibold text-base"
-                data-testid="address__wallet-address"
+                class="inline-flex overflow-hidden text-theme-secondary-500 dark:text-theme-secondary-700 font-semibold text-base"
+                data-testid="Address__address"
               >
                 D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD
               </span>
@@ -1400,11 +1400,11 @@ exports[`AddressRow should render when wallet not found for votes 1`] = `
               </div>
             </div>
             <div
-              class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap"
+              class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap space-x-2"
             >
               <span
-                class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-text font-semibold text-base"
-                data-testid="address__wallet-address"
+                class="inline-flex overflow-hidden text-theme-text font-semibold text-base"
+                data-testid="Address__address"
               >
                 DTLomV8hpJheFDPnBGB5EtrDCfDZJnG23z
               </span>

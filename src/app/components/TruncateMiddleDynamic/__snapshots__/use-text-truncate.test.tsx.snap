@@ -1,0 +1,37 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`useTextTruncate should return the value if it fits the given container 1`] = `
+<DocumentFragment>
+  <div
+    class="inline-flex overflow-hidden"
+  >
+    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+  </div>
+</DocumentFragment>
+`;
+
+exports[`useTextTruncate should return the value if it fits the given container 2`] = `undefined`;
+
+exports[`useTextTruncate should return the value if the elements have no width 1`] = `
+<DocumentFragment>
+  <div
+    class="inline-flex overflow-hidden"
+  >
+    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+  </div>
+</DocumentFragment>
+`;
+
+exports[`useTextTruncate should return the value if the elements have no width 2`] = `undefined`;
+
+exports[`useTextTruncate should truncate the value if it does not fit the given container 1`] = `
+<DocumentFragment>
+  <div
+    class="inline-flex overflow-hidden"
+  >
+    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+  </div>
+</DocumentFragment>
+`;
+
+exports[`useTextTruncate should truncate the value if it does not fit the given container 2`] = `undefined`;

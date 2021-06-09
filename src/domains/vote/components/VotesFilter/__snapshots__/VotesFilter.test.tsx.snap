@@ -14,9 +14,12 @@ exports[`VotesFilter should render 1`] = `
         <div
           class="group"
         >
-          <div
-            class="ControlButton__ControlButtonStyled-sc-1xp1l1a-0 kMCise"
+          <button
+            class="ControlButton__ControlButtonStyled-sc-1xp1l1a-0 gPBHgx group"
           >
+            <div
+              class="absolute inset-0 -mx-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+            />
             <div
               class="flex items-center justify-center w-5 h-5"
             >
@@ -30,7 +33,7 @@ exports[`VotesFilter should render 1`] = `
                 </svg>
               </div>
             </div>
-          </div>
+          </button>
         </div>
       </span>
     </div>
@@ -52,9 +55,12 @@ exports[`VotesFilter should render default 1`] = `
         <div
           class="group"
         >
-          <div
-            class="ControlButton__ControlButtonStyled-sc-1xp1l1a-0 kMCise"
+          <button
+            class="ControlButton__ControlButtonStyled-sc-1xp1l1a-0 gPBHgx group"
           >
+            <div
+              class="absolute inset-0 -mx-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+            />
             <div
               class="flex items-center justify-center w-5 h-5"
             >
@@ -68,7 +74,7 @@ exports[`VotesFilter should render default 1`] = `
                 </svg>
               </div>
             </div>
-          </div>
+          </button>
         </div>
       </span>
       <div
@@ -135,8 +141,8 @@ exports[`VotesFilter should render with current option selected 1`] = `
         <div
           class="group"
         >
-          <div
-            class="ControlButton__ControlButtonStyled-sc-1xp1l1a-0 kMCise"
+          <button
+            class="ControlButton__ControlButtonStyled-sc-1xp1l1a-0 gPBHgx group"
           >
             <div
               class="flex absolute right-0 justify-center items-center -mt-3 w-3 h-3 rounded-full transition-all duration-100 ease-linear bg-theme-background mr-2"
@@ -145,6 +151,9 @@ exports[`VotesFilter should render with current option selected 1`] = `
                 class="w-2 h-2 rounded-full bg-theme-primary-500"
               />
             </div>
+            <div
+              class="absolute inset-0 -mx-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+            />
             <div
               class="flex items-center justify-center w-5 h-5"
             >
@@ -158,7 +167,7 @@ exports[`VotesFilter should render with current option selected 1`] = `
                 </svg>
               </div>
             </div>
-          </div>
+          </button>
         </div>
       </span>
       <div
@@ -225,9 +234,12 @@ exports[`VotesFilter should render with disabled current option 1`] = `
         <div
           class="group"
         >
-          <div
-            class="ControlButton__ControlButtonStyled-sc-1xp1l1a-0 kMCise"
+          <button
+            class="ControlButton__ControlButtonStyled-sc-1xp1l1a-0 gPBHgx group"
           >
+            <div
+              class="absolute inset-0 -mx-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+            />
             <div
               class="flex items-center justify-center w-5 h-5"
             >
@@ -241,7 +253,7 @@ exports[`VotesFilter should render with disabled current option 1`] = `
                 </svg>
               </div>
             </div>
-          </div>
+          </button>
         </div>
       </span>
       <div

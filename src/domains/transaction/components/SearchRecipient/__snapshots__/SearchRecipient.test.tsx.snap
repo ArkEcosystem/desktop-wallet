@@ -143,37 +143,35 @@ exports[`SearchRecipient should not render recipient if not in same network 1`] 
                           <div>
                             <div
                               class="relative"
+                              data-testid="HeaderSearchBar"
                             >
-                              <button
-                                class="my-auto h-full font-semibold cursor-pointer focus:outline-none"
-                                data-testid="header-search-bar__button"
-                                type="button"
+                              <div
+                                class="group"
                               >
-                                <div
-                                  class="group"
+                                <button
+                                  class="ControlButton__ControlButtonStyled-sc-1xp1l1a-0 jDlLhf group"
                                 >
                                   <div
-                                    class="ControlButton__ControlButtonStyled-sc-1xp1l1a-0 bKrqtB"
+                                    class="absolute inset-0 -mx-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                                  />
+                                  <div
+                                    class="flex items-center h-5 space-x-3"
                                   >
+                                    <span>
+                                      Search
+                                    </span>
                                     <div
-                                      class="flex items-center h-5 space-x-3"
+                                      class="sc-bdfBwQ iNulIV"
+                                      height="18"
+                                      width="18"
                                     >
-                                      <span>
-                                        Search
-                                      </span>
-                                      <div
-                                        class="sc-bdfBwQ iNulIV"
-                                        height="18"
-                                        width="18"
-                                      >
-                                        <svg>
-                                          search.svg
-                                        </svg>
-                                      </div>
+                                      <svg>
+                                        search.svg
+                                      </svg>
                                     </div>
                                   </div>
-                                </div>
-                              </button>
+                                </button>
+                              </div>
                             </div>
                           </div>
                         </div>
@@ -335,37 +333,35 @@ exports[`SearchRecipient should not render recipient if not in same network 2`] 
                           <div>
                             <div
                               class="relative"
+                              data-testid="HeaderSearchBar"
                             >
-                              <button
-                                class="my-auto h-full font-semibold cursor-pointer focus:outline-none"
-                                data-testid="header-search-bar__button"
-                                type="button"
+                              <div
+                                class="group"
                               >
-                                <div
-                                  class="group"
+                                <button
+                                  class="ControlButton__ControlButtonStyled-sc-1xp1l1a-0 jDlLhf group"
                                 >
                                   <div
-                                    class="ControlButton__ControlButtonStyled-sc-1xp1l1a-0 bKrqtB"
+                                    class="absolute inset-0 -mx-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                                  />
+                                  <div
+                                    class="flex items-center h-5 space-x-3"
                                   >
+                                    <span>
+                                      Search
+                                    </span>
                                     <div
-                                      class="flex items-center h-5 space-x-3"
+                                      class="sc-bdfBwQ iNulIV"
+                                      height="18"
+                                      width="18"
                                     >
-                                      <span>
-                                        Search
-                                      </span>
-                                      <div
-                                        class="sc-bdfBwQ iNulIV"
-                                        height="18"
-                                        width="18"
-                                      >
-                                        <svg>
-                                          search.svg
-                                        </svg>
-                                      </div>
+                                      <svg>
+                                        search.svg
+                                      </svg>
                                     </div>
                                   </div>
-                                </div>
-                              </button>
+                                </button>
+                              </div>
                             </div>
                           </div>
                         </div>
@@ -398,11 +394,11 @@ exports[`SearchRecipient should not render recipient if not in same network 2`] 
                             </div>
                           </div>
                           <div
-                            class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap"
+                            class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap space-x-2"
                           >
                             <span
-                              class="max-w-24 truncate mr-2 font-semibold text-base text-theme-text"
-                              data-testid="address__wallet-name"
+                              class="font-semibold text-base text-theme-text"
+                              data-testid="Address__alias"
                             >
                               <span
                                 class="TruncateEnd__Wrapper-sc-1w1nvb9-0"
@@ -412,8 +408,8 @@ exports[`SearchRecipient should not render recipient if not in same network 2`] 
                               </span>
                             </span>
                             <span
-                              class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-secondary-500 dark:text-theme-secondary-700 font-semibold text-base"
-                              data-testid="address__wallet-address"
+                              class="inline-flex overflow-hidden text-theme-secondary-500 dark:text-theme-secondary-700 font-semibold text-base"
+                              data-testid="Address__address"
                             >
                               D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD
                             </span>
@@ -472,11 +468,11 @@ exports[`SearchRecipient should not render recipient if not in same network 2`] 
                             </div>
                           </div>
                           <div
-                            class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap"
+                            class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap space-x-2"
                           >
                             <span
-                              class="max-w-24 truncate mr-2 font-semibold text-base text-theme-text"
-                              data-testid="address__wallet-name"
+                              class="font-semibold text-base text-theme-text"
+                              data-testid="Address__alias"
                             >
                               <span
                                 class="TruncateEnd__Wrapper-sc-1w1nvb9-0"
@@ -486,8 +482,8 @@ exports[`SearchRecipient should not render recipient if not in same network 2`] 
                               </span>
                             </span>
                             <span
-                              class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-secondary-500 dark:text-theme-secondary-700 font-semibold text-base"
-                              data-testid="address__wallet-address"
+                              class="inline-flex overflow-hidden text-theme-secondary-500 dark:text-theme-secondary-700 font-semibold text-base"
+                              data-testid="Address__address"
                             >
                               D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb
                             </span>
@@ -546,11 +542,11 @@ exports[`SearchRecipient should not render recipient if not in same network 2`] 
                             </div>
                           </div>
                           <div
-                            class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap"
+                            class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap space-x-2"
                           >
                             <span
-                              class="max-w-24 truncate mr-2 font-semibold text-base text-theme-text"
-                              data-testid="address__wallet-name"
+                              class="font-semibold text-base text-theme-text"
+                              data-testid="Address__alias"
                             >
                               <span
                                 class="TruncateEnd__Wrapper-sc-1w1nvb9-0"
@@ -560,8 +556,8 @@ exports[`SearchRecipient should not render recipient if not in same network 2`] 
                               </span>
                             </span>
                             <span
-                              class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-secondary-500 dark:text-theme-secondary-700 font-semibold text-base"
-                              data-testid="address__wallet-address"
+                              class="inline-flex overflow-hidden text-theme-secondary-500 dark:text-theme-secondary-700 font-semibold text-base"
+                              data-testid="Address__address"
                             >
                               DFJ5Z51F1euNNdRUQJKQVdG4h495LZkc6T
                             </span>
@@ -620,11 +616,11 @@ exports[`SearchRecipient should not render recipient if not in same network 2`] 
                             </div>
                           </div>
                           <div
-                            class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap"
+                            class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap space-x-2"
                           >
                             <span
-                              class="max-w-24 truncate mr-2 font-semibold text-base text-theme-text"
-                              data-testid="address__wallet-name"
+                              class="font-semibold text-base text-theme-text"
+                              data-testid="Address__alias"
                             >
                               <span
                                 class="TruncateEnd__Wrapper-sc-1w1nvb9-0"
@@ -634,8 +630,8 @@ exports[`SearchRecipient should not render recipient if not in same network 2`] 
                               </span>
                             </span>
                             <span
-                              class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-secondary-500 dark:text-theme-secondary-700 font-semibold text-base"
-                              data-testid="address__wallet-address"
+                              class="inline-flex overflow-hidden text-theme-secondary-500 dark:text-theme-secondary-700 font-semibold text-base"
+                              data-testid="Address__address"
                             >
                               D9YiyRYMBS2ofzqkufjrkB9nHofWgJLM7f
                             </span>
@@ -824,37 +820,35 @@ exports[`SearchRecipient should render a modal 1`] = `
                           <div>
                             <div
                               class="relative"
+                              data-testid="HeaderSearchBar"
                             >
-                              <button
-                                class="my-auto h-full font-semibold cursor-pointer focus:outline-none"
-                                data-testid="header-search-bar__button"
-                                type="button"
+                              <div
+                                class="group"
                               >
-                                <div
-                                  class="group"
+                                <button
+                                  class="ControlButton__ControlButtonStyled-sc-1xp1l1a-0 jDlLhf group"
                                 >
                                   <div
-                                    class="ControlButton__ControlButtonStyled-sc-1xp1l1a-0 bKrqtB"
+                                    class="absolute inset-0 -mx-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                                  />
+                                  <div
+                                    class="flex items-center h-5 space-x-3"
                                   >
+                                    <span>
+                                      Search
+                                    </span>
                                     <div
-                                      class="flex items-center h-5 space-x-3"
+                                      class="sc-bdfBwQ iNulIV"
+                                      height="18"
+                                      width="18"
                                     >
-                                      <span>
-                                        Search
-                                      </span>
-                                      <div
-                                        class="sc-bdfBwQ iNulIV"
-                                        height="18"
-                                        width="18"
-                                      >
-                                        <svg>
-                                          search.svg
-                                        </svg>
-                                      </div>
+                                      <svg>
+                                        search.svg
+                                      </svg>
                                     </div>
                                   </div>
-                                </div>
-                              </button>
+                                </button>
+                              </div>
                             </div>
                           </div>
                         </div>
@@ -887,11 +881,11 @@ exports[`SearchRecipient should render a modal 1`] = `
                             </div>
                           </div>
                           <div
-                            class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap"
+                            class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap space-x-2"
                           >
                             <span
-                              class="max-w-24 truncate mr-2 font-semibold text-base text-theme-text"
-                              data-testid="address__wallet-name"
+                              class="font-semibold text-base text-theme-text"
+                              data-testid="Address__alias"
                             >
                               <span
                                 class="TruncateEnd__Wrapper-sc-1w1nvb9-0"
@@ -901,8 +895,8 @@ exports[`SearchRecipient should render a modal 1`] = `
                               </span>
                             </span>
                             <span
-                              class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-secondary-500 dark:text-theme-secondary-700 font-semibold text-base"
-                              data-testid="address__wallet-address"
+                              class="inline-flex overflow-hidden text-theme-secondary-500 dark:text-theme-secondary-700 font-semibold text-base"
+                              data-testid="Address__address"
                             >
                               D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD
                             </span>
@@ -961,11 +955,11 @@ exports[`SearchRecipient should render a modal 1`] = `
                             </div>
                           </div>
                           <div
-                            class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap"
+                            class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap space-x-2"
                           >
                             <span
-                              class="max-w-24 truncate mr-2 font-semibold text-base text-theme-text"
-                              data-testid="address__wallet-name"
+                              class="font-semibold text-base text-theme-text"
+                              data-testid="Address__alias"
                             >
                               <span
                                 class="TruncateEnd__Wrapper-sc-1w1nvb9-0"
@@ -975,8 +969,8 @@ exports[`SearchRecipient should render a modal 1`] = `
                               </span>
                             </span>
                             <span
-                              class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-secondary-500 dark:text-theme-secondary-700 font-semibold text-base"
-                              data-testid="address__wallet-address"
+                              class="inline-flex overflow-hidden text-theme-secondary-500 dark:text-theme-secondary-700 font-semibold text-base"
+                              data-testid="Address__address"
                             >
                               D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb
                             </span>
@@ -1035,11 +1029,11 @@ exports[`SearchRecipient should render a modal 1`] = `
                             </div>
                           </div>
                           <div
-                            class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap"
+                            class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap space-x-2"
                           >
                             <span
-                              class="max-w-24 truncate mr-2 font-semibold text-base text-theme-text"
-                              data-testid="address__wallet-name"
+                              class="font-semibold text-base text-theme-text"
+                              data-testid="Address__alias"
                             >
                               <span
                                 class="TruncateEnd__Wrapper-sc-1w1nvb9-0"
@@ -1049,8 +1043,8 @@ exports[`SearchRecipient should render a modal 1`] = `
                               </span>
                             </span>
                             <span
-                              class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-secondary-500 dark:text-theme-secondary-700 font-semibold text-base"
-                              data-testid="address__wallet-address"
+                              class="inline-flex overflow-hidden text-theme-secondary-500 dark:text-theme-secondary-700 font-semibold text-base"
+                              data-testid="Address__address"
                             >
                               DFJ5Z51F1euNNdRUQJKQVdG4h495LZkc6T
                             </span>
@@ -1109,11 +1103,11 @@ exports[`SearchRecipient should render a modal 1`] = `
                             </div>
                           </div>
                           <div
-                            class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap"
+                            class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap space-x-2"
                           >
                             <span
-                              class="max-w-24 truncate mr-2 font-semibold text-base text-theme-text"
-                              data-testid="address__wallet-name"
+                              class="font-semibold text-base text-theme-text"
+                              data-testid="Address__alias"
                             >
                               <span
                                 class="TruncateEnd__Wrapper-sc-1w1nvb9-0"
@@ -1123,8 +1117,8 @@ exports[`SearchRecipient should render a modal 1`] = `
                               </span>
                             </span>
                             <span
-                              class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-secondary-500 dark:text-theme-secondary-700 font-semibold text-base"
-                              data-testid="address__wallet-address"
+                              class="inline-flex overflow-hidden text-theme-secondary-500 dark:text-theme-secondary-700 font-semibold text-base"
+                              data-testid="Address__address"
                             >
                               D9YiyRYMBS2ofzqkufjrkB9nHofWgJLM7f
                             </span>
@@ -1183,11 +1177,11 @@ exports[`SearchRecipient should render a modal 1`] = `
                             </div>
                           </div>
                           <div
-                            class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap"
+                            class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap space-x-2"
                           >
                             <span
-                              class="max-w-24 truncate mr-2 font-semibold text-base text-theme-text"
-                              data-testid="address__wallet-name"
+                              class="font-semibold text-base text-theme-text"
+                              data-testid="Address__alias"
                             >
                               <span
                                 class="TruncateEnd__Wrapper-sc-1w1nvb9-0"
@@ -1197,8 +1191,8 @@ exports[`SearchRecipient should render a modal 1`] = `
                               </span>
                             </span>
                             <span
-                              class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-secondary-500 dark:text-theme-secondary-700 font-semibold text-base"
-                              data-testid="address__wallet-address"
+                              class="inline-flex overflow-hidden text-theme-secondary-500 dark:text-theme-secondary-700 font-semibold text-base"
+                              data-testid="Address__address"
                             >
                               DKrACQw7ytoU2gjppy3qKeE2dQhZjfXYqu
                             </span>
@@ -1387,37 +1381,35 @@ exports[`SearchRecipient should render a modal with custom title and description
                           <div>
                             <div
                               class="relative"
+                              data-testid="HeaderSearchBar"
                             >
-                              <button
-                                class="my-auto h-full font-semibold cursor-pointer focus:outline-none"
-                                data-testid="header-search-bar__button"
-                                type="button"
+                              <div
+                                class="group"
                               >
-                                <div
-                                  class="group"
+                                <button
+                                  class="ControlButton__ControlButtonStyled-sc-1xp1l1a-0 jDlLhf group"
                                 >
                                   <div
-                                    class="ControlButton__ControlButtonStyled-sc-1xp1l1a-0 bKrqtB"
+                                    class="absolute inset-0 -mx-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                                  />
+                                  <div
+                                    class="flex items-center h-5 space-x-3"
                                   >
+                                    <span>
+                                      Search
+                                    </span>
                                     <div
-                                      class="flex items-center h-5 space-x-3"
+                                      class="sc-bdfBwQ iNulIV"
+                                      height="18"
+                                      width="18"
                                     >
-                                      <span>
-                                        Search
-                                      </span>
-                                      <div
-                                        class="sc-bdfBwQ iNulIV"
-                                        height="18"
-                                        width="18"
-                                      >
-                                        <svg>
-                                          search.svg
-                                        </svg>
-                                      </div>
+                                      <svg>
+                                        search.svg
+                                      </svg>
                                     </div>
                                   </div>
-                                </div>
-                              </button>
+                                </button>
+                              </div>
                             </div>
                           </div>
                         </div>
@@ -1450,11 +1442,11 @@ exports[`SearchRecipient should render a modal with custom title and description
                             </div>
                           </div>
                           <div
-                            class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap"
+                            class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap space-x-2"
                           >
                             <span
-                              class="max-w-24 truncate mr-2 font-semibold text-base text-theme-text"
-                              data-testid="address__wallet-name"
+                              class="font-semibold text-base text-theme-text"
+                              data-testid="Address__alias"
                             >
                               <span
                                 class="TruncateEnd__Wrapper-sc-1w1nvb9-0"
@@ -1464,8 +1456,8 @@ exports[`SearchRecipient should render a modal with custom title and description
                               </span>
                             </span>
                             <span
-                              class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-secondary-500 dark:text-theme-secondary-700 font-semibold text-base"
-                              data-testid="address__wallet-address"
+                              class="inline-flex overflow-hidden text-theme-secondary-500 dark:text-theme-secondary-700 font-semibold text-base"
+                              data-testid="Address__address"
                             >
                               D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD
                             </span>
@@ -1524,11 +1516,11 @@ exports[`SearchRecipient should render a modal with custom title and description
                             </div>
                           </div>
                           <div
-                            class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap"
+                            class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap space-x-2"
                           >
                             <span
-                              class="max-w-24 truncate mr-2 font-semibold text-base text-theme-text"
-                              data-testid="address__wallet-name"
+                              class="font-semibold text-base text-theme-text"
+                              data-testid="Address__alias"
                             >
                               <span
                                 class="TruncateEnd__Wrapper-sc-1w1nvb9-0"
@@ -1538,8 +1530,8 @@ exports[`SearchRecipient should render a modal with custom title and description
                               </span>
                             </span>
                             <span
-                              class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-secondary-500 dark:text-theme-secondary-700 font-semibold text-base"
-                              data-testid="address__wallet-address"
+                              class="inline-flex overflow-hidden text-theme-secondary-500 dark:text-theme-secondary-700 font-semibold text-base"
+                              data-testid="Address__address"
                             >
                               D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb
                             </span>
@@ -1598,11 +1590,11 @@ exports[`SearchRecipient should render a modal with custom title and description
                             </div>
                           </div>
                           <div
-                            class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap"
+                            class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap space-x-2"
                           >
                             <span
-                              class="max-w-24 truncate mr-2 font-semibold text-base text-theme-text"
-                              data-testid="address__wallet-name"
+                              class="font-semibold text-base text-theme-text"
+                              data-testid="Address__alias"
                             >
                               <span
                                 class="TruncateEnd__Wrapper-sc-1w1nvb9-0"
@@ -1612,8 +1604,8 @@ exports[`SearchRecipient should render a modal with custom title and description
                               </span>
                             </span>
                             <span
-                              class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-secondary-500 dark:text-theme-secondary-700 font-semibold text-base"
-                              data-testid="address__wallet-address"
+                              class="inline-flex overflow-hidden text-theme-secondary-500 dark:text-theme-secondary-700 font-semibold text-base"
+                              data-testid="Address__address"
                             >
                               DFJ5Z51F1euNNdRUQJKQVdG4h495LZkc6T
                             </span>
@@ -1672,11 +1664,11 @@ exports[`SearchRecipient should render a modal with custom title and description
                             </div>
                           </div>
                           <div
-                            class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap"
+                            class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap space-x-2"
                           >
                             <span
-                              class="max-w-24 truncate mr-2 font-semibold text-base text-theme-text"
-                              data-testid="address__wallet-name"
+                              class="font-semibold text-base text-theme-text"
+                              data-testid="Address__alias"
                             >
                               <span
                                 class="TruncateEnd__Wrapper-sc-1w1nvb9-0"
@@ -1686,8 +1678,8 @@ exports[`SearchRecipient should render a modal with custom title and description
                               </span>
                             </span>
                             <span
-                              class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-secondary-500 dark:text-theme-secondary-700 font-semibold text-base"
-                              data-testid="address__wallet-address"
+                              class="inline-flex overflow-hidden text-theme-secondary-500 dark:text-theme-secondary-700 font-semibold text-base"
+                              data-testid="Address__address"
                             >
                               D9YiyRYMBS2ofzqkufjrkB9nHofWgJLM7f
                             </span>
@@ -1746,11 +1738,11 @@ exports[`SearchRecipient should render a modal with custom title and description
                             </div>
                           </div>
                           <div
-                            class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap"
+                            class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap space-x-2"
                           >
                             <span
-                              class="max-w-24 truncate mr-2 font-semibold text-base text-theme-text"
-                              data-testid="address__wallet-name"
+                              class="font-semibold text-base text-theme-text"
+                              data-testid="Address__alias"
                             >
                               <span
                                 class="TruncateEnd__Wrapper-sc-1w1nvb9-0"
@@ -1760,8 +1752,8 @@ exports[`SearchRecipient should render a modal with custom title and description
                               </span>
                             </span>
                             <span
-                              class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-secondary-500 dark:text-theme-secondary-700 font-semibold text-base"
-                              data-testid="address__wallet-address"
+                              class="inline-flex overflow-hidden text-theme-secondary-500 dark:text-theme-secondary-700 font-semibold text-base"
+                              data-testid="Address__address"
                             >
                               DKrACQw7ytoU2gjppy3qKeE2dQhZjfXYqu
                             </span>
