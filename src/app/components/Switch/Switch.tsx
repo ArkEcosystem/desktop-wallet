@@ -15,7 +15,6 @@ interface Props<TOptionValue = string> {
 	leftOption: SwitchOption<TOptionValue>;
 	rightOption: SwitchOption<TOptionValue>;
 	className?: string;
-	small?: boolean;
 }
 
 export function Switch<TOptionValue = string>({
@@ -24,15 +23,9 @@ export function Switch<TOptionValue = string>({
 	leftOption,
 	rightOption,
 	className,
-	small,
 }: Props<TOptionValue>) {
 	const renderOption = (option: SwitchOption<TOptionValue>) => (
-		<SwitchText
-			role="button"
-			onClick={() => onChange(option.value)}
-			selected={option.value === value}
-			small={small}
-		>
+		<SwitchText role="button" selected={option.value === value} onClick={() => onChange(option.value)}>
 			{option.label}
 		</SwitchText>
 	);
@@ -41,7 +34,7 @@ export function Switch<TOptionValue = string>({
 		<div className={cn("flex items-center", className)}>
 			{renderOption(leftOption)}
 
-			<div className={small ? "mx-2" : "mx-4"}>
+			<div className="mx-4">
 				<Toggle
 					alwaysOn
 					checked={rightOption.value === value}

@@ -40,7 +40,6 @@ export const InputFee = ({ onChange, step, showFeeOptions, network, loading, avg
 		<div data-testid="InputFee" className="relative">
 			<div className="absolute right-0 -mt-7">
 				<Switch
-					small
 					value={viewType}
 					onChange={setViewType}
 					leftOption={{
