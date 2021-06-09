@@ -3,7 +3,7 @@ import { Contracts } from "@arkecosystem/platform-sdk-profiles";
 import { Switch } from "app/components/Switch";
 import { useActiveProfile } from "app/hooks";
 import { useExchangeRate } from "app/hooks/use-exchange-rate";
-import React, { useState } from "react";
+import React, { memo, useState } from "react";
 import { useTranslation } from "react-i18next";
 
 import { InputFeeAdvanced } from "./InputFeeAdvanced";
@@ -26,7 +26,7 @@ interface Props {
 	loading?: boolean;
 }
 
-export const InputFee = ({ onChange, step, showFeeOptions, network, loading, avg, min, max, value }: Props) => {
+export const InputFee = memo(({ onChange, step, showFeeOptions, network, loading, avg, min, max, value }: Props) => {
 	const { t } = useTranslation();
 	const profile = useActiveProfile();
 
@@ -69,8 +69,15 @@ export const InputFee = ({ onChange, step, showFeeOptions, network, loading, avg
 					showConvertedValues={!!network?.isLive()}
 				/>
 			) : (
-				<InputFeeAdvanced value={value} onChange={onChange} />
+				<InputFeeAdvanced
+					min={min}
+					max={max}
+					step={step}
+					value={value}
+					onChange={onChange}
+					disabled={!showFeeOptions}
+				/>
 			)}
 		</div>
 	);
-};
+});
