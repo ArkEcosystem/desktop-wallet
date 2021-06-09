@@ -6,32 +6,28 @@ exports[`Switch should render 1`] = `
     class="flex items-center"
   >
     <span
-      class="Switch__SwitchText-sc-1fue7gg-0 fLDmts"
+      class="Switch__SwitchText-sc-1fue7gg-0 bfBlbH"
       role="button"
     >
       Option A
     </span>
-    <div
-      class="mx-4"
+    <label
+      class="flex"
     >
-      <label
-        class="flex"
+      <input
+        class="Toggle__Input-qyyifx-0 WGuGL"
+        type="checkbox"
+      />
+      <div
+        class="Toggle__Handle-qyyifx-1 geejDn"
       >
-        <input
-          class="Toggle__Input-qyyifx-0 WGuGL"
-          type="checkbox"
+        <span
+          class="Toggle__HandleInner-qyyifx-2 eSIhju"
         />
-        <div
-          class="Toggle__Handle-qyyifx-1 geejDn"
-        >
-          <span
-            class="Toggle__HandleInner-qyyifx-2 eSIhju"
-          />
-        </div>
-      </label>
-    </div>
+      </div>
+    </label>
     <span
-      class="Switch__SwitchText-sc-1fue7gg-0 lmUqQB"
+      class="Switch__SwitchText-sc-1fue7gg-0 kDRhze"
       role="button"
     >
       Option B
@@ -46,35 +42,31 @@ exports[`Switch should render disabled 1`] = `
     class="flex items-center"
   >
     <span
-      class="Switch__SwitchText-sc-1fue7gg-0 dGYVxY"
+      class="Switch__SwitchText-sc-1fue7gg-0 cLxmuv"
       disabled=""
       role="button"
     >
       Option A
     </span>
-    <div
-      class="mx-4"
+    <label
+      class="flex"
     >
-      <label
-        class="flex"
+      <input
+        class="Toggle__Input-qyyifx-0 WGuGL"
+        type="checkbox"
+      />
+      <div
+        class="Toggle__Handle-qyyifx-1 jztkAY"
+        disabled=""
       >
-        <input
-          class="Toggle__Input-qyyifx-0 WGuGL"
-          type="checkbox"
-        />
-        <div
-          class="Toggle__Handle-qyyifx-1 jztkAY"
+        <span
+          class="Toggle__HandleInner-qyyifx-2 iIyzPS"
           disabled=""
-        >
-          <span
-            class="Toggle__HandleInner-qyyifx-2 iIyzPS"
-            disabled=""
-          />
-        </div>
-      </label>
-    </div>
+        />
+      </div>
+    </label>
     <span
-      class="Switch__SwitchText-sc-1fue7gg-0 hLnEXV"
+      class="Switch__SwitchText-sc-1fue7gg-0 cEXXwG"
       disabled=""
       role="button"
     >
@@ -90,32 +82,28 @@ exports[`Switch should render large labels 1`] = `
     class="flex items-center"
   >
     <span
-      class="Switch__SwitchText-sc-1fue7gg-0 bXQdub"
+      class="Switch__SwitchText-sc-1fue7gg-0 jDsDxo"
       role="button"
     >
       Option A
     </span>
-    <div
-      class="mx-4"
+    <label
+      class="flex"
     >
-      <label
-        class="flex"
+      <input
+        class="Toggle__Input-qyyifx-0 WGuGL"
+        type="checkbox"
+      />
+      <div
+        class="Toggle__Handle-qyyifx-1 geejDn"
       >
-        <input
-          class="Toggle__Input-qyyifx-0 WGuGL"
-          type="checkbox"
+        <span
+          class="Toggle__HandleInner-qyyifx-2 eSIhju"
         />
-        <div
-          class="Toggle__Handle-qyyifx-1 geejDn"
-        >
-          <span
-            class="Toggle__HandleInner-qyyifx-2 eSIhju"
-          />
-        </div>
-      </label>
-    </div>
+      </div>
+    </label>
     <span
-      class="Switch__SwitchText-sc-1fue7gg-0 hyGGzy"
+      class="Switch__SwitchText-sc-1fue7gg-0 fdIjxR"
       role="button"
     >
       Option B
@@ -130,32 +118,28 @@ exports[`Switch should render small labels 1`] = `
     class="flex items-center"
   >
     <span
-      class="Switch__SwitchText-sc-1fue7gg-0 gVMMRn"
+      class="Switch__SwitchText-sc-1fue7gg-0 jrkMzU"
       role="button"
     >
       Option A
     </span>
-    <div
-      class="mx-4"
+    <label
+      class="flex"
     >
-      <label
-        class="flex"
+      <input
+        class="Toggle__Input-qyyifx-0 WGuGL"
+        type="checkbox"
+      />
+      <div
+        class="Toggle__Handle-qyyifx-1 geejDn"
       >
-        <input
-          class="Toggle__Input-qyyifx-0 WGuGL"
-          type="checkbox"
+        <span
+          class="Toggle__HandleInner-qyyifx-2 eSIhju"
         />
-        <div
-          class="Toggle__Handle-qyyifx-1 geejDn"
-        >
-          <span
-            class="Toggle__HandleInner-qyyifx-2 eSIhju"
-          />
-        </div>
-      </label>
-    </div>
+      </div>
+    </label>
     <span
-      class="Switch__SwitchText-sc-1fue7gg-0 iUHdxO"
+      class="Switch__SwitchText-sc-1fue7gg-0 khGGFd"
       role="button"
     >
       Option B
