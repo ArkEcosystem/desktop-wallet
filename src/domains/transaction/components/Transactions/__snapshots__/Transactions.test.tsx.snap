@@ -58,28 +58,49 @@ exports[`Transactions should fetch more transactions 1`] = `
     class="mb-8"
   >
     <div
-      class="Tabs__TabList-sc-1lxyvu-1 jCqqnd w-full"
+      class="Tabs__TabList-sc-1lxyvu-1 edtiGn w-full"
     >
       <button
         aria-selected="true"
-        class="Tabs__TabButton-sc-1lxyvu-0"
+        class="Tabs__TabButton-sc-1lxyvu-0 group"
         data-testid="tabs__tab-button-all"
+        role="tab"
+        tabindex="0"
       >
-        All
+        <div
+          class="absolute inset-0 -mx-1 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+        />
+        <span>
+          All
+        </span>
       </button>
       <button
         aria-selected="false"
-        class="Tabs__TabButton-sc-1lxyvu-0"
+        class="Tabs__TabButton-sc-1lxyvu-0 group"
         data-testid="tabs__tab-button-received"
+        role="tab"
+        tabindex="-1"
       >
-        Incoming
+        <div
+          class="absolute inset-0 -mx-1 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+        />
+        <span>
+          Incoming
+        </span>
       </button>
       <button
         aria-selected="false"
-        class="Tabs__TabButton-sc-1lxyvu-0"
+        class="Tabs__TabButton-sc-1lxyvu-0 group"
         data-testid="tabs__tab-button-sent"
+        role="tab"
+        tabindex="-1"
       >
-        Outgoing
+        <div
+          class="absolute inset-0 -mx-1 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+        />
+        <span>
+          Outgoing
+        </span>
       </button>
     </div>
   </div>
@@ -956,28 +977,49 @@ exports[`Transactions should open detail modal on transaction row click 1`] = `
     class="mb-8"
   >
     <div
-      class="Tabs__TabList-sc-1lxyvu-1 jCqqnd w-full"
+      class="Tabs__TabList-sc-1lxyvu-1 edtiGn w-full"
     >
       <button
         aria-selected="true"
-        class="Tabs__TabButton-sc-1lxyvu-0"
+        class="Tabs__TabButton-sc-1lxyvu-0 group"
         data-testid="tabs__tab-button-all"
+        role="tab"
+        tabindex="0"
       >
-        All
+        <div
+          class="absolute inset-0 -mx-1 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+        />
+        <span>
+          All
+        </span>
       </button>
       <button
         aria-selected="false"
-        class="Tabs__TabButton-sc-1lxyvu-0"
+        class="Tabs__TabButton-sc-1lxyvu-0 group"
         data-testid="tabs__tab-button-received"
+        role="tab"
+        tabindex="-1"
       >
-        Incoming
+        <div
+          class="absolute inset-0 -mx-1 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+        />
+        <span>
+          Incoming
+        </span>
       </button>
       <button
         aria-selected="false"
-        class="Tabs__TabButton-sc-1lxyvu-0"
+        class="Tabs__TabButton-sc-1lxyvu-0 group"
         data-testid="tabs__tab-button-sent"
+        role="tab"
+        tabindex="-1"
       >
-        Outgoing
+        <div
+          class="absolute inset-0 -mx-1 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+        />
+        <span>
+          Outgoing
+        </span>
       </button>
     </div>
   </div>
@@ -1865,28 +1907,49 @@ exports[`Transactions should render 1`] = `
     class="mb-8"
   >
     <div
-      class="Tabs__TabList-sc-1lxyvu-1 jCqqnd w-full"
+      class="Tabs__TabList-sc-1lxyvu-1 edtiGn w-full"
     >
       <button
         aria-selected="true"
-        class="Tabs__TabButton-sc-1lxyvu-0"
+        class="Tabs__TabButton-sc-1lxyvu-0 group"
         data-testid="tabs__tab-button-all"
+        role="tab"
+        tabindex="0"
       >
-        All
+        <div
+          class="absolute inset-0 -mx-1 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+        />
+        <span>
+          All
+        </span>
       </button>
       <button
         aria-selected="false"
-        class="Tabs__TabButton-sc-1lxyvu-0"
+        class="Tabs__TabButton-sc-1lxyvu-0 group"
         data-testid="tabs__tab-button-received"
+        role="tab"
+        tabindex="-1"
       >
-        Incoming
+        <div
+          class="absolute inset-0 -mx-1 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+        />
+        <span>
+          Incoming
+        </span>
       </button>
       <button
         aria-selected="false"
-        class="Tabs__TabButton-sc-1lxyvu-0"
+        class="Tabs__TabButton-sc-1lxyvu-0 group"
         data-testid="tabs__tab-button-sent"
+        role="tab"
+        tabindex="-1"
       >
-        Outgoing
+        <div
+          class="absolute inset-0 -mx-1 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+        />
+        <span>
+          Outgoing
+        </span>
       </button>
     </div>
   </div>
@@ -2774,28 +2837,49 @@ exports[`Transactions should render with custom title 1`] = `
     class="mb-8"
   >
     <div
-      class="Tabs__TabList-sc-1lxyvu-1 jCqqnd w-full"
+      class="Tabs__TabList-sc-1lxyvu-1 edtiGn w-full"
     >
       <button
         aria-selected="true"
-        class="Tabs__TabButton-sc-1lxyvu-0"
+        class="Tabs__TabButton-sc-1lxyvu-0 group"
         data-testid="tabs__tab-button-all"
+        role="tab"
+        tabindex="0"
       >
-        All
+        <div
+          class="absolute inset-0 -mx-1 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+        />
+        <span>
+          All
+        </span>
       </button>
       <button
         aria-selected="false"
-        class="Tabs__TabButton-sc-1lxyvu-0"
+        class="Tabs__TabButton-sc-1lxyvu-0 group"
         data-testid="tabs__tab-button-received"
+        role="tab"
+        tabindex="-1"
       >
-        Incoming
+        <div
+          class="absolute inset-0 -mx-1 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+        />
+        <span>
+          Incoming
+        </span>
       </button>
       <button
         aria-selected="false"
-        class="Tabs__TabButton-sc-1lxyvu-0"
+        class="Tabs__TabButton-sc-1lxyvu-0 group"
         data-testid="tabs__tab-button-sent"
+        role="tab"
+        tabindex="-1"
       >
-        Outgoing
+        <div
+          class="absolute inset-0 -mx-1 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+        />
+        <span>
+          Outgoing
+        </span>
       </button>
     </div>
   </div>
@@ -3684,28 +3768,49 @@ exports[`Transactions should update wallet filters 1`] = `
     class="mb-8"
   >
     <div
-      class="Tabs__TabList-sc-1lxyvu-1 jCqqnd w-full"
+      class="Tabs__TabList-sc-1lxyvu-1 edtiGn w-full"
     >
       <button
         aria-selected="false"
-        class="Tabs__TabButton-sc-1lxyvu-0"
+        class="Tabs__TabButton-sc-1lxyvu-0 group"
         data-testid="tabs__tab-button-all"
+        role="tab"
+        tabindex="-1"
       >
-        All
+        <div
+          class="absolute inset-0 -mx-1 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+        />
+        <span>
+          All
+        </span>
       </button>
       <button
         aria-selected="false"
-        class="Tabs__TabButton-sc-1lxyvu-0"
+        class="Tabs__TabButton-sc-1lxyvu-0 group"
         data-testid="tabs__tab-button-received"
+        role="tab"
+        tabindex="-1"
       >
-        Incoming
+        <div
+          class="absolute inset-0 -mx-1 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+        />
+        <span>
+          Incoming
+        </span>
       </button>
       <button
         aria-selected="false"
-        class="Tabs__TabButton-sc-1lxyvu-0"
+        class="Tabs__TabButton-sc-1lxyvu-0 group"
         data-testid="tabs__tab-button-sent"
+        role="tab"
+        tabindex="-1"
       >
-        Outgoing
+        <div
+          class="absolute inset-0 -mx-1 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+        />
+        <span>
+          Outgoing
+        </span>
       </button>
     </div>
   </div>
