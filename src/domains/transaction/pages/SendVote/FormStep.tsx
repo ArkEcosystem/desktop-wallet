@@ -94,12 +94,14 @@ export const FormStep = ({
 				<FormField name="fee">
 					<FormLabel label={t("TRANSACTION.TRANSACTION_FEE")} />
 					<InputFee
-						min={fees.min}
-						avg={fees.avg}
-						max={fees.max}
+						min={fees?.min}
+						avg={fees?.avg}
+						max={fees?.max}
+						loading={!fees}
 						value={fee || 0}
 						step={0.01}
 						showFeeOptions={wallet.network().feeType() === "dynamic"}
+						network={wallet.network()}
 						onChange={(value) => {
 							setValue("fee", value, { shouldValidate: true, shouldDirty: true });
 						}}

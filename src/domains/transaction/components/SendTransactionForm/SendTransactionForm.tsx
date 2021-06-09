@@ -139,9 +139,11 @@ export const SendTransactionForm = ({
 						min={fees?.min}
 						avg={fees?.avg}
 						max={fees?.max}
+						loading={!fees}
 						value={fee}
 						step={0.01}
 						showFeeOptions={dynamicFees}
+						network={network}
 						onChange={(value) => {
 							setValue("fee", value, { shouldValidate: true, shouldDirty: true });
 						}}

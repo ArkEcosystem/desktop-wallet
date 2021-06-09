@@ -1,9 +1,20 @@
-import { ButtonGroup, ButtonGroupOption } from "app/components/ButtonGroup";
-import { InputRange } from "app/components/Input";
-import React, { memo } from "react";
+import { Networks } from "@arkecosystem/platform-sdk";
+import { Contracts } from "@arkecosystem/platform-sdk-profiles";
+import { Switch } from "app/components/Switch";
+import { useActiveProfile } from "app/hooks";
+import { useExchangeRate } from "app/hooks/use-exchange-rate";
+import React, { useState } from "react";
 import { useTranslation } from "react-i18next";
 
-export interface InputFeeProps {
+import { InputFeeAdvanced } from "./InputFeeAdvanced";
+import { InputFeeSimple } from "./InputFeeSimple";
+
+enum ViewType {
+	Simple,
+	Advanced,
+}
+
+interface Props {
 	value: string;
 	min: string;
 	avg: string;
@@ -11,68 +22,56 @@ export interface InputFeeProps {
 	step: number;
 	showFeeOptions?: boolean;
 	onChange: (value: string) => void;
+	network?: Networks.Network;
+	loading?: boolean;
 }
 
-export const InputFee = memo(({ onChange, step, showFeeOptions, ...props }: InputFeeProps) => {
+export const InputFee = ({ onChange, step, showFeeOptions, network, loading, avg, min, max, value }: Props) => {
 	const { t } = useTranslation();
+	const profile = useActiveProfile();
 
-	const value = props.value || "";
-	const avg = +props.avg;
-	const min = +props.min;
-	const max = +props.max;
+	const [viewType, setViewType] = useState<ViewType>(ViewType.Simple);
 
-	const handleFeeChange = (feeValue: string): void => {
-		onChange(feeValue);
-	};
-
-	const isOptionDisabled = (value: number) => value === 0 || (min === avg && avg === max);
+	const ticker = network?.ticker();
+	const exchangeTicker = profile.settings().get(Contracts.ProfileSetting.ExchangeCurrency) as string;
+	const { convert } = useExchangeRate({ ticker, exchangeTicker });
 
 	return (
-		<div data-testid="InputFee" className="flex space-x-2">
-			<div className="flex-1">
-				<InputRange
-					disabled={!showFeeOptions}
-					name="fee"
-					value={value}
-					min={+min}
-					max={+max}
-					step={step}
-					onChange={handleFeeChange}
+		<div data-testid="InputFee" className="relative">
+			<div className="absolute right-0 -mt-7">
+				<Switch
+					small
+					value={viewType}
+					onChange={setViewType}
+					leftOption={{
+						label: t("TRANSACTION.INPUT_FEE_VIEW_TYPE.SIMPLE"),
+						value: ViewType.Simple,
+					}}
+					rightOption={{
+						label: t("TRANSACTION.INPUT_FEE_VIEW_TYPE.ADVANCED"),
+						value: ViewType.Advanced,
+					}}
 				/>
 			</div>
 
-			{showFeeOptions && (
-				<ButtonGroup>
-					<ButtonGroupOption
-						disabled={isOptionDisabled(min)}
-						value={min}
-						isSelected={() => !isOptionDisabled(min) && +value === min}
-						setSelectedValue={() => handleFeeChange(`${min}`)}
-					>
-						{t("TRANSACTION.FEES.SLOW")}
-					</ButtonGroupOption>
-
-					<ButtonGroupOption
-						disabled={isOptionDisabled(avg)}
-						value={avg}
-						isSelected={() => !isOptionDisabled(avg) && +value === avg}
-						setSelectedValue={() => handleFeeChange(`${avg}`)}
-					>
-						{t("TRANSACTION.FEES.AVERAGE")}
-					</ButtonGroupOption>
-
-					<ButtonGroupOption
-						disabled={isOptionDisabled(max)}
-						value={max}
-						isSelected={() => !isOptionDisabled(max) && +value === max}
-						setSelectedValue={() => handleFeeChange(`${max}`)}
-					>
-						{t("TRANSACTION.FEES.FAST")}
-					</ButtonGroupOption>
-				</ButtonGroup>
+			{viewType === ViewType.Simple ? (
+				<InputFeeSimple
+					min={min}
+					max={max}
+					avg={avg}
+					minConverted={convert(min)}
+					maxConverted={convert(max)}
+					avgConverted={convert(avg)}
+					value={value}
+					loading={loading || !ticker}
+					ticker={ticker!}
+					exchangeTicker={exchangeTicker}
+					onChange={onChange}
+					showConvertedValues={!!network?.isLive()}
+				/>
+			) : (
+				<InputFeeAdvanced value={value} onChange={onChange} />
 			)}
 		</div>
 	);
-});
-
-InputFee.displayName = "InputFee";
+};

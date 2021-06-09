@@ -1,12 +1,14 @@
+import cn from "classnames";
 import React from "react";
 import tw, { css, styled } from "twin.macro";
 
 interface ButtonGroupProps {
 	children?: React.ReactNode;
+	className?: string;
 }
 
-export const ButtonGroup = ({ children }: ButtonGroupProps) => (
-	<div data-testid="ButtonGroup" role="radiogroup" className="inline-flex items-center space-x-2">
+export const ButtonGroup = ({ children, className }: ButtonGroupProps) => (
+	<div data-testid="ButtonGroup" role="radiogroup" className={cn("inline-flex items-center space-x-2", className)}>
 		{children}
 	</div>
 );
@@ -34,6 +36,7 @@ interface ButtonGroupOptionProps {
 	disabled?: boolean;
 	isSelected: (value: string | number) => boolean;
 	setSelectedValue: (value: string | number) => void;
+	className?: string;
 }
 
 export const ButtonGroupOption = ({
@@ -42,8 +45,10 @@ export const ButtonGroupOption = ({
 	isSelected,
 	setSelectedValue,
 	children,
+	className,
 }: ButtonGroupOptionProps) => (
 	<ButtonGroupOptionStyled
+		className={className}
 		disabled={disabled}
 		type="button"
 		data-testid="ButtonGroupOption"
