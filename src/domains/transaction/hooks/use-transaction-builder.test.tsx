@@ -1,8 +1,10 @@
 import { Contracts } from "@arkecosystem/platform-sdk";
 import { Contracts as ProfileContracts } from "@arkecosystem/platform-sdk-profiles";
+import { BigNumber } from "@arkecosystem/platform-sdk-support";
 import { act as actHook, renderHook } from "@testing-library/react-hooks";
 import { LedgerProvider } from "app/contexts";
 import React from "react";
+import transactionFixture from "tests/fixtures/coins/ark/devnet/transactions/transfer.json";
 import {
 	defaultNetMocks,
 	env,
@@ -14,6 +16,17 @@ import {
 } from "utils/testing-library";
 
 import { useTransactionBuilder } from "./use-transaction-builder";
+
+const createTransactionMock = (wallet: Contracts.IReadWriteWallet) =>
+	// @ts-ignore
+	jest.spyOn(wallet.transaction(), "transaction").mockReturnValue({
+		id: () => transactionFixture.data.id,
+		sender: () => transactionFixture.data.sender,
+		recipient: () => transactionFixture.data.recipient,
+		amount: () => BigNumber.make(transactionFixture.data.amount),
+		fee: () => BigNumber.make(transactionFixture.data.fee),
+		data: () => transactionFixture.data,
+	});
 
 describe("Use Transaction Builder Hook", () => {
 	let profile: ProfileContracts.IProfile;
@@ -35,7 +48,7 @@ describe("Use Transaction Builder Hook", () => {
 	});
 
 	it("should sign transfer", async () => {
-		const { result } = renderHook(() => useTransactionBuilder(), { wrapper });
+		const { result } = renderHook(() => useTransactionBuilder(profile), { wrapper });
 
 		const signatory = await wallet.signatory().mnemonic(getDefaultWalletMnemonic());
 		const input: Contracts.TransferInput = {
@@ -58,7 +71,7 @@ describe("Use Transaction Builder Hook", () => {
 	});
 
 	it("should sign transfer with multisignature wallet", async () => {
-		const { result } = renderHook(() => useTransactionBuilder(), { wrapper });
+		const { result } = renderHook(() => useTransactionBuilder(profile), { wrapper });
 
 		jest.spyOn(wallet, "isMultiSignature").mockImplementation(() => true);
 		jest.spyOn(wallet.multiSignature(), "all").mockReturnValue({
@@ -83,76 +96,7 @@ describe("Use Transaction Builder Hook", () => {
 			transaction = (await result.current.build("transfer", input, wallet)).transaction;
 		});
 
-		expect(transaction.id()).toBe("11b2dcd2923db56786353c915cd6df6689f2a74d4335c7d584da1936a1192e21");
-
-		jest.clearAllMocks();
-	});
-
-	it("should sign transfer with ledger", async () => {
-		const { result } = renderHook(() => useTransactionBuilder(), { wrapper });
-		jest.spyOn(wallet.coin(), "__construct").mockImplementation();
-		jest.spyOn(wallet.coin().ledger(), "getPublicKey").mockResolvedValue(
-			"027716e659220085e41389efc7cf6a05f7f7c659cf3db9126caabce6cda9156582",
-		);
-		jest.spyOn(wallet, "isLedger").mockImplementation(() => true);
-		jest.spyOn(wallet.coin().ledger(), "signTransaction").mockResolvedValue(
-			"dd3f96466bc50077b01e441cd35eb3c5aabd83670d371c2be8cc772ed189a7315dd66e88bde275d89a3beb7ef85ef84a52ec4213f540481cd09ecf6d21e452bf",
-		);
-
-		const signatory = await wallet.signatory().mnemonic(getDefaultWalletMnemonic());
-		const input: Contracts.TransferInput = {
-			fee: "1",
-			nonce: "1",
-			data: {
-				amount: "1",
-				to: wallet.address(),
-			},
-			signatory,
-		};
-
-		let transaction: any;
-
-		await actHook(async () => {
-			transaction = (await result.current.build("transfer", input, wallet)).transaction;
-		});
-
-		await waitFor(() =>
-			expect(transaction.id()).toBe("11b2dcd2923db56786353c915cd6df6689f2a74d4335c7d584da1936a1192e21"),
-		);
-
-		jest.clearAllMocks();
-	});
-
-	it("should sign transfer with cold ledger wallet", async () => {
-		const { result } = renderHook(() => useTransactionBuilder(), { wrapper });
-		jest.spyOn(wallet.coin(), "__construct").mockImplementation();
-		jest.spyOn(wallet, "publicKey").mockImplementation(() => undefined);
-		jest.spyOn(wallet, "isLedger").mockImplementation(() => true);
-		jest.spyOn(wallet.coin().ledger(), "getPublicKey").mockResolvedValue(
-			"0335a27397927bfa1704116814474d39c2b933aabb990e7226389f022886e48deb",
-		);
-		jest.spyOn(wallet.coin().ledger(), "signTransaction").mockResolvedValue(
-			"dd3f96466bc50077b01e441cd35eb3c5aabd83670d371c2be8cc772ed189a7315dd66e88bde275d89a3beb7ef85ef84a52ec4213f540481cd09ecf6d21e452bf",
-		);
-
-		const signatory = await wallet.signatory().mnemonic(getDefaultWalletMnemonic());
-		const input: Contracts.TransferInput = {
-			fee: "1",
-			nonce: "1",
-			data: {
-				amount: "1",
-				to: wallet.address(),
-			},
-			signatory,
-		};
-
-		let transaction: any;
-
-		await actHook(async () => {
-			transaction = (await result.current.build("transfer", input, wallet)).transaction;
-		});
-
-		expect(transaction.id()).toBe("11b2dcd2923db56786353c915cd6df6689f2a74d4335c7d584da1936a1192e21");
+		expect(transaction.id()).toBe("119633912d66d40d4c7ac33675255638c9255a17acec8054986d35237bd14662");
 
 		jest.clearAllMocks();
 	});
@@ -161,23 +105,22 @@ describe("Use Transaction Builder Hook", () => {
 		const abortCtrl = new AbortController();
 		const abortSignal = abortCtrl.signal;
 
-		const { result } = renderHook(() => useTransactionBuilder(), { wrapper });
+		const { result } = renderHook(() => useTransactionBuilder(profile), { wrapper });
 
 		jest.spyOn(wallet, "isLedger").mockImplementation(() => true);
-		jest.spyOn(wallet.coin().ledger(), "signTransaction").mockImplementation(
+
+		jest.spyOn(wallet.transaction(), "signTransfer").mockImplementation(
 			() =>
 				new Promise((resolve) =>
-					setTimeout(
-						() =>
-							resolve(
-								"dd3f96466bc50077b01e441cd35eb3c5aabd83670d371c2be8cc772ed189a7315dd66e88bde275d89a3beb7ef85ef84a52ec4213f540481cd09ecf6d21e452bf",
-							),
-						20000,
-					),
+					setTimeout(() => {
+						resolve(transactionFixture.data.id);
+					}, 20000),
 				),
 		);
 
+		createTransactionMock(wallet);
 		const signatory = await wallet.signatory().mnemonic(getDefaultWalletMnemonic());
+
 		const input: Contracts.TransferInput = {
 			fee: "1",
 			nonce: "1",
@@ -200,6 +143,74 @@ describe("Use Transaction Builder Hook", () => {
 		});
 
 		await waitFor(() => expect(error).toEqual("ERR_ABORT"));
+
+		jest.clearAllMocks();
+	});
+
+	it("should sign transfer with ledger", async () => {
+		const { result } = renderHook(() => useTransactionBuilder(profile), { wrapper });
+		jest.spyOn(wallet.coin(), "__construct").mockImplementation();
+		jest.spyOn(wallet.coin().ledger(), "getPublicKey").mockResolvedValue(
+			"027716e659220085e41389efc7cf6a05f7f7c659cf3db9126caabce6cda9156582",
+		);
+		jest.spyOn(wallet, "isLedger").mockImplementation(() => true);
+		jest.spyOn(wallet.transaction(), "signTransfer").mockResolvedValue(transactionFixture.data.id);
+
+		createTransactionMock(wallet);
+
+		const signatory = await wallet.signatory().mnemonic(getDefaultWalletMnemonic());
+
+		const input: Contracts.TransferInput = {
+			fee: "1",
+			nonce: "1",
+			data: {
+				amount: "1",
+				to: wallet.address(),
+			},
+			signatory,
+		};
+
+		let transaction: any;
+
+		await actHook(async () => {
+			transaction = (await result.current.build("transfer", input, wallet)).transaction;
+		});
+
+		await waitFor(() => expect(transaction.id()).toBe(transactionFixture.data.id));
+
+		jest.clearAllMocks();
+	});
+
+	it("should sign transfer with cold ledger wallet", async () => {
+		const { result } = renderHook(() => useTransactionBuilder(profile), { wrapper });
+		jest.spyOn(wallet.coin(), "__construct").mockImplementation();
+		jest.spyOn(wallet, "publicKey").mockImplementation(() => undefined);
+		jest.spyOn(wallet, "isLedger").mockImplementation(() => true);
+		jest.spyOn(wallet.coin().ledger(), "getPublicKey").mockResolvedValue(
+			"0335a27397927bfa1704116814474d39c2b933aabb990e7226389f022886e48deb",
+		);
+		jest.spyOn(wallet.transaction(), "signTransfer").mockResolvedValue(transactionFixture.data.id);
+
+		createTransactionMock(wallet);
+
+		const signatory = await wallet.signatory().mnemonic(getDefaultWalletMnemonic());
+		const input: Contracts.TransferInput = {
+			fee: "1",
+			nonce: "1",
+			data: {
+				amount: "1",
+				to: wallet.address(),
+			},
+			signatory,
+		};
+
+		let transaction: any;
+
+		await actHook(async () => {
+			transaction = (await result.current.build("transfer", input, wallet)).transaction;
+		});
+
+		expect(transaction.id()).toBe(transactionFixture.data.id);
 
 		jest.clearAllMocks();
 	});
