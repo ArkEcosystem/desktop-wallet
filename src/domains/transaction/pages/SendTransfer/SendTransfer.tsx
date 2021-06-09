@@ -90,7 +90,7 @@ export const SendTransfer = () => {
 
 	const [lastEstimatedExpiration, setLastEstimatedExpiration] = useState<number | undefined>();
 	const abortRef = useRef(new AbortController());
-	const transactionBuilder = useTransactionBuilder();
+	const transactionBuilder = useTransactionBuilder(activeProfile);
 	const { sign } = useWalletSignatory(wallet!);
 	const { fetchWalletUnconfirmedTransactions } = useTransaction();
 
