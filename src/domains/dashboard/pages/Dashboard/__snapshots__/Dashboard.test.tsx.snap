@@ -228,12 +228,20 @@ exports[`Dashboard should render 1`] = `
                 Your balance
               </div>
               <div
-                class="text-sm font-bold text-theme-secondary-text dark:text-theme-text"
+                class="text-sm font-bold text-theme-secondary-text dark:text-theme-text flex justify-end mt-1"
               >
-                <span
-                  data-testid="Amount"
-                >
-                  0 BTC
+                <span>
+                  <span
+                    class="flex items-center leading-none"
+                  >
+                    <span
+                      class="react-loading-skeleton css-1eg0sfo-skeletonStyles-Skeleton"
+                      style="width: 60px; height: 16px;"
+                    >
+                      ‌
+                    </span>
+                    ‌
+                  </span>
                 </span>
               </div>
             </div>
@@ -1932,11 +1940,12 @@ exports[`Dashboard should render loading state when profile is syncing 1`] = `
               </div>
               <div
                 class="text-sm font-bold text-theme-secondary-text dark:text-theme-text"
+                data-testid="Balance__value"
               >
                 <span
                   data-testid="Amount"
                 >
-                  0 BTC
+                  50.11421128 BTC
                 </span>
               </div>
             </div>
@@ -4680,11 +4689,12 @@ exports[`Dashboard should show warning for errored networks 1`] = `
               </div>
               <div
                 class="text-sm font-bold text-theme-secondary-text dark:text-theme-text"
+                data-testid="Balance__value"
               >
                 <span
                   data-testid="Amount"
                 >
-                  0 BTC
+                  50.11421128 BTC
                 </span>
               </div>
             </div>

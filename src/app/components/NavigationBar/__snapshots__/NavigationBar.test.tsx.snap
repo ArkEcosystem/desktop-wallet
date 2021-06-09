@@ -190,6 +190,7 @@ exports[`NavigationBar should not render if no active profile 1`] = `
             </div>
             <div
               class="text-sm font-bold text-theme-secondary-text dark:text-theme-text"
+              data-testid="Balance__value"
             >
               <span
                 data-testid="Amount"
@@ -418,6 +419,7 @@ exports[`NavigationBar should render 1`] = `
             </div>
             <div
               class="text-sm font-bold text-theme-secondary-text dark:text-theme-text"
+              data-testid="Balance__value"
             >
               <span
                 data-testid="Amount"
@@ -737,6 +739,7 @@ exports[`NavigationBar should render with custom menu 1`] = `
             </div>
             <div
               class="text-sm font-bold text-theme-secondary-text dark:text-theme-text"
+              data-testid="Balance__value"
             >
               <span
                 data-testid="Amount"
@@ -927,6 +930,7 @@ exports[`NavigationBar should render with shadow if there is a scroll 1`] = `
             </div>
             <div
               class="text-sm font-bold text-theme-secondary-text dark:text-theme-text"
+              data-testid="Balance__value"
             >
               <span
                 data-testid="Amount"
@@ -1145,6 +1149,7 @@ exports[`NavigationBar should render with title 1`] = `
             </div>
             <div
               class="text-sm font-bold text-theme-secondary-text dark:text-theme-text"
+              data-testid="Balance__value"
             >
               <span
                 data-testid="Amount"

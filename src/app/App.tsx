@@ -163,7 +163,7 @@ export const App = () => {
 	return (
 		<I18nextProvider i18n={i18n}>
 			<EnvironmentProvider env={env}>
-				<ConfigurationProvider>
+				<ConfigurationProvider defaultConfiguration={{ profileIsSyncingExchangeRates: true }}>
 					<SentryProvider>
 						<LedgerProvider transport={LedgerTransportNodeHID}>
 							<PluginProviders>
