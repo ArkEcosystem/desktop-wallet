@@ -11,16 +11,12 @@ const prepareMultiSignature = async (
 ): Promise<Services.TransactionInputs> => ({
 	...input,
 	nonce: wallet.nonce().plus(1).toFixed(),
-	signatory: await wallet.signatory().multiSignature(
-		wallet.multiSignature().all().min,
-		wallet.multiSignature().all().publicKeys,
-	),
+	signatory: await wallet
+		.signatory()
+		.multiSignature(wallet.multiSignature().all().min, wallet.multiSignature().all().publicKeys),
 });
 
-const prepareLedger = async (
-	input: Services.TransactionInputs,
-	wallet: ProfileContracts.IReadWriteWallet,
-) => ({
+const prepareLedger = async (input: Services.TransactionInputs, wallet: ProfileContracts.IReadWriteWallet) => ({
 	...input,
 	nonce: wallet.nonce().plus(1).toFixed(),
 	signatory: await wallet.signatory().ledger(wallet.data().get<string>(ProfileContracts.WalletData.DerivationPath)!),
@@ -60,10 +56,7 @@ export const useTransactionBuilder = () => {
 		}
 
 		if (wallet.isLedger()) {
-			data = await withAbortPromise(
-				options?.abortSignal,
-				abortConnectionRetry,
-			)(prepareLedger(data, wallet));
+			data = await withAbortPromise(options?.abortSignal, abortConnectionRetry)(prepareLedger(data, wallet));
 		}
 
 		const uuid = await signFn(data);
