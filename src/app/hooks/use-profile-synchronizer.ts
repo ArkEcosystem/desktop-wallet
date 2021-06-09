@@ -30,9 +30,10 @@ const useProfileWatcher = () => {
 	return useMemo(() => getProfileById(profileId), [profileId, env, allProfilesCount, getProfileById]); // eslint-disable-line react-hooks/exhaustive-deps
 };
 
-const useProfileJobs = (profile?: Contracts.IProfile): Record<string, any> => {
+export const useProfileJobs = (profile?: Contracts.IProfile): Record<string, any> => {
 	const { env } = useEnvironmentContext();
 	const { notifications } = useNotifications();
+	const { setConfiguration } = useConfiguration();
 
 	const walletsCount = profile?.wallets().count();
 	return useMemo(() => {
@@ -48,9 +49,17 @@ const useProfileJobs = (profile?: Contracts.IProfile): Record<string, any> => {
 		};
 
 		const syncExchangeRates = {
-			callback: () => {
+			callback: async () => {
+				setConfiguration({ profileIsSyncingExchangeRates: true });
+
 				const currencies = Object.keys(profile.coins().all());
-				return Promise.all(currencies.map((currency) => env.exchangeRates().syncAll(profile, currency)));
+				const allRates = await Promise.all(
+					currencies.map((currency) => env.exchangeRates().syncAll(profile, currency)),
+				);
+
+				setConfiguration({ profileIsSyncingExchangeRates: false });
+
+				return allRates;
 			},
 			interval: Intervals.Long,
 		};
@@ -67,8 +76,9 @@ const useProfileJobs = (profile?: Contracts.IProfile): Record<string, any> => {
 
 		return {
 			allJobs: [syncExchangeRates, syncNotifications, syncKnownWallets, syncDelegates],
+			syncExchangeRates: syncExchangeRates.callback,
 		};
-	}, [env, profile, walletsCount, notifications]); // eslint-disable-line react-hooks/exhaustive-deps
+	}, [env, profile, walletsCount, notifications, setConfiguration]); // eslint-disable-line react-hooks/exhaustive-deps
 };
 
 interface ProfileSyncState {
@@ -112,7 +122,15 @@ export const useProfileSyncStatus = () => {
 		setStatus: (status: string) => {
 			current.status = status;
 			if (status === "restoring") {
-				setConfiguration({ profileIsRestoring: true });
+				setConfiguration({ profileIsRestoring: true, profileIsSyncingExchangeRates: true });
+			}
+
+			if (status === "syncing") {
+				setConfiguration({ profileIsSyncingExchangeRates: true });
+			}
+
+			if (status === "idle") {
+				setConfiguration({ profileIsSyncingExchangeRates: true });
 			}
 		},
 		markAsRestored: (profileId: string) => {
