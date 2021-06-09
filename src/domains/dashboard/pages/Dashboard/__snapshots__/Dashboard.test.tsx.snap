@@ -870,6 +870,7 @@ exports[`Dashboard should render 1`] = `
                 data-testid="tabs__tab-button-all"
                 role="tab"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="absolute inset-0 -mx-1 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
@@ -884,6 +885,7 @@ exports[`Dashboard should render 1`] = `
                 data-testid="tabs__tab-button-received"
                 role="tab"
                 tabindex="-1"
+                type="button"
               >
                 <div
                   class="absolute inset-0 -mx-1 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
@@ -898,6 +900,7 @@ exports[`Dashboard should render 1`] = `
                 data-testid="tabs__tab-button-sent"
                 role="tab"
                 tabindex="-1"
+                type="button"
               >
                 <div
                   class="absolute inset-0 -mx-1 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
@@ -2595,6 +2598,7 @@ exports[`Dashboard should render loading state when profile is syncing 1`] = `
                 data-testid="tabs__tab-button-all"
                 role="tab"
                 tabindex="-1"
+                type="button"
               >
                 <div
                   class="absolute inset-0 -mx-1 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
@@ -2609,6 +2613,7 @@ exports[`Dashboard should render loading state when profile is syncing 1`] = `
                 data-testid="tabs__tab-button-received"
                 role="tab"
                 tabindex="-1"
+                type="button"
               >
                 <div
                   class="absolute inset-0 -mx-1 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
@@ -2623,6 +2628,7 @@ exports[`Dashboard should render loading state when profile is syncing 1`] = `
                 data-testid="tabs__tab-button-sent"
                 role="tab"
                 tabindex="-1"
+                type="button"
               >
                 <div
                   class="absolute inset-0 -mx-1 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
@@ -5365,6 +5371,7 @@ exports[`Dashboard should show warning for errored networks 1`] = `
                 data-testid="tabs__tab-button-all"
                 role="tab"
                 tabindex="0"
+                type="button"
               >
                 <div
                   class="absolute inset-0 -mx-1 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
@@ -5379,6 +5386,7 @@ exports[`Dashboard should show warning for errored networks 1`] = `
                 data-testid="tabs__tab-button-received"
                 role="tab"
                 tabindex="-1"
+                type="button"
               >
                 <div
                   class="absolute inset-0 -mx-1 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
@@ -5393,6 +5401,7 @@ exports[`Dashboard should show warning for errored networks 1`] = `
                 data-testid="tabs__tab-button-sent"
                 role="tab"
                 tabindex="-1"
+                type="button"
               >
                 <div
                   class="absolute inset-0 -mx-1 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"

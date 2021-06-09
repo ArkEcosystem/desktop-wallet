@@ -46,6 +46,7 @@ export const Tab = React.forwardRef<HTMLButtonElement, TabProps>((props: TabProp
 		<TabButton
 			data-testid={`tabs__tab-button-${props.tabId}`}
 			role="tab"
+			type="button"
 			className="group"
 			ref={ref}
 			aria-selected={isActive}
@@ -67,6 +68,8 @@ export const Tab = React.forwardRef<HTMLButtonElement, TabProps>((props: TabProp
 					}
 
 					nextTab.focus();
+				} else if (event.key === "Enter" || event.key === " ") {
+					context?.setCurrentId(props.tabId);
 				}
 			}}
 			onClick={() => context?.setCurrentId(props.tabId)}

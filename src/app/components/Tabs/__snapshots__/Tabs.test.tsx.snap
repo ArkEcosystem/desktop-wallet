@@ -12,6 +12,7 @@ exports[`Tabs should react to use effect call 1`] = `
         data-testid="tabs__tab-button-1"
         role="tab"
         tabindex="0"
+        type="button"
       >
         <div
           class="absolute inset-0 -mx-1 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
@@ -26,6 +27,7 @@ exports[`Tabs should react to use effect call 1`] = `
         data-testid="tabs__tab-button-2"
         role="tab"
         tabindex="-1"
+        type="button"
       >
         <div
           class="absolute inset-0 -mx-1 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
@@ -56,6 +58,7 @@ exports[`Tabs should render 1`] = `
         data-testid="tabs__tab-button-1"
         role="tab"
         tabindex="-1"
+        type="button"
       >
         <div
           class="absolute inset-0 -mx-1 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
@@ -70,6 +73,7 @@ exports[`Tabs should render 1`] = `
         data-testid="tabs__tab-button-2"
         role="tab"
         tabindex="-1"
+        type="button"
       >
         <div
           class="absolute inset-0 -mx-1 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
@@ -84,6 +88,7 @@ exports[`Tabs should render 1`] = `
         data-testid="tabs__tab-button-3"
         role="tab"
         tabindex="-1"
+        type="button"
       >
         <div
           class="absolute inset-0 -mx-1 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
