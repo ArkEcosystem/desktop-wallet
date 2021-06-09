@@ -46,7 +46,7 @@ type ToggleProps = { alwaysOn?: boolean; disabled?: boolean } & React.InputHTMLA
 export const Toggle = React.forwardRef<HTMLInputElement, ToggleProps>(
 	({ alwaysOn, disabled, ...props }: ToggleProps, ref) => (
 		<label className="flex">
-			<Input type="checkbox" ref={ref} {...props} />
+			<Input type="checkbox" disabled={disabled} ref={ref} {...props} />
 			<Handle disabled={disabled}>
 				<HandleInner alwaysOn={alwaysOn} disabled={disabled} />
 			</Handle>
