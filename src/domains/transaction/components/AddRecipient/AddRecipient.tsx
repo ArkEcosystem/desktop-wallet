@@ -22,38 +22,34 @@ const TransferType = ({ isSingle, disableMultiple, onChange }: ToggleButtonProps
 	const { t } = useTranslation();
 
 	return (
-		<div className="flex justify-between items-center mb-2 text-theme-secondary-text hover:text-theme-primary-600">
-			<div className="text-sm font-semibold transition-colors duration-100">{t("TRANSACTION.RECIPIENT")}</div>
+		<div className="flex items-center space-x-2">
+			<Tooltip
+				content={t("TRANSACTION.PAGE_TRANSACTION_SEND.FORM_STEP.MULTIPLE_UNAVAILBLE")}
+				disabled={!disableMultiple}
+			>
+				<span>
+					<Switch
+						size="sm"
+						disabled={disableMultiple}
+						value={isSingle}
+						onChange={onChange}
+						leftOption={{
+							label: t("TRANSACTION.SINGLE"),
+							value: true,
+						}}
+						rightOption={{
+							label: t("TRANSACTION.MULTIPLE"),
+							value: false,
+						}}
+					/>
+				</span>
+			</Tooltip>
 
-			<div className="flex items-center space-x-2">
-				<Tooltip
-					content={t("TRANSACTION.PAGE_TRANSACTION_SEND.FORM_STEP.MULTIPLE_UNAVAILBLE")}
-					disabled={!disableMultiple}
-				>
-					<span>
-						<Switch
-							size="sm"
-							disabled={disableMultiple}
-							value={isSingle}
-							onChange={onChange}
-							leftOption={{
-								label: t("TRANSACTION.SINGLE"),
-								value: true,
-							}}
-							rightOption={{
-								label: t("TRANSACTION.MULTIPLE"),
-								value: false,
-							}}
-						/>
-					</span>
-				</Tooltip>
-
-				<Tooltip content={t("TRANSACTION.RECIPIENTS_HELPTEXT", { count: 64 })}>
-					<div className="flex items-center justify-center w-5 h-5 rounded-full cursor-pointer bg-theme-primary-100 hover:bg-theme-primary-200 dark:bg-theme-secondary-800 text-theme-primary-600 dark:text-theme-secondary-200 questionmark">
-						<Icon width={10} height={10} name="QuestionMark" />
-					</div>
-				</Tooltip>
-			</div>
+			<Tooltip content={t("TRANSACTION.RECIPIENTS_HELPTEXT", { count: 64 })}>
+				<div className="flex items-center justify-center w-5 h-5 rounded-full cursor-pointer bg-theme-primary-100 hover:bg-theme-primary-200 dark:bg-theme-secondary-800 text-theme-primary-600 dark:text-theme-secondary-200 questionmark">
+					<Icon width={10} height={10} name="QuestionMark" />
+				</div>
+			</Tooltip>
 		</div>
 	);
 };
@@ -254,29 +250,25 @@ export const AddRecipient = ({
 
 	return (
 		<AddRecipientWrapper>
-			{showMultiPaymentOption && (
-				<TransferType
-					isSingle={isSingle}
-					disableMultiple={disableMultiPaymentOption}
-					onChange={(isSingle) => setIsSingle(isSingle)}
-				/>
-			)}
+			<div className="flex justify-between items-center mb-2 text-theme-secondary-text hover:text-theme-primary-600">
+				<div className="text-sm font-semibold transition-colors duration-100">{t("TRANSACTION.RECIPIENT")}</div>
 
-			<SubForm
-				data-testid="AddRecipient__form-wrapper"
-				className={cn({ "mt-6": showMultiPaymentOption })}
-				noBackground={isSingle}
-				noPadding={isSingle}
-			>
+				{showMultiPaymentOption && (
+					<TransferType
+						isSingle={isSingle}
+						disableMultiple={disableMultiPaymentOption}
+						onChange={(isSingle) => setIsSingle(isSingle)}
+					/>
+				)}
+			</div>
+
+			<SubForm data-testid="AddRecipient__form-wrapper" noBackground={isSingle} noPadding={isSingle}>
 				<div className="space-y-8">
 					<FormField name="recipientAddress">
-						<FormLabel
-							label={
-								isSingle
-									? t("COMMON.RECIPIENT")
-									: t("COMMON.RECIPIENT_#", { count: addedRecipients.length + 1 })
-							}
-						/>
+						{!isSingle && (
+							<FormLabel label={t("COMMON.RECIPIENT_#", { count: addedRecipients.length + 1 })} />
+						)}
+
 						<SelectRecipient
 							network={network}
 							disabled={!isSenderFilled}
