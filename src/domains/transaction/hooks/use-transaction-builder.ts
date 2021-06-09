@@ -1,7 +1,6 @@
 import { Contracts, Services } from "@arkecosystem/platform-sdk";
 import { Contracts as ProfileContracts } from "@arkecosystem/platform-sdk-profiles";
 import { upperFirst } from "@arkecosystem/utils";
-import Transport from "@ledgerhq/hw-transport";
 import { useLedgerContext } from "app/contexts";
 
 type SignFn = (input: any) => Promise<string>;
@@ -18,26 +17,10 @@ const prepareMultiSignature = async (
 		.multiSignature(wallet.multiSignature().all().min, wallet.multiSignature().all().publicKeys),
 });
 
-const prepareLedger = async (
-	profile: ProfileContracts.IProfile,
-	input: Services.TransactionInputs,
-	wallet: ProfileContracts.IReadWriteWallet,
-	connectFn: ConnectFn,
-	transport: typeof Transport,
-) => {
-	await connectFn(profile, wallet.coinId(), wallet.networkId());
-
-	await wallet.ledger().connect(transport);
-
-	const signatory = await wallet
-		.signatory()
-		.ledger(wallet.data().get<string>(ProfileContracts.WalletData.DerivationPath)!);
-
-	return {
-		...input,
-		signatory,
-	};
-};
+const prepareLedger = async (input: Services.TransactionInputs, wallet: ProfileContracts.IReadWriteWallet) => ({
+	...input,
+	signatory: await wallet.signatory().ledger(wallet.data().get<string>(ProfileContracts.WalletData.DerivationPath)!),
+});
 
 const withAbortPromise = (signal?: AbortSignal, callback?: () => void) => <T>(promise: Promise<T>) =>
 	new Promise<T>((resolve, reject) => {
@@ -51,8 +34,8 @@ const withAbortPromise = (signal?: AbortSignal, callback?: () => void) => <T>(pr
 		return promise.then(resolve).catch(reject);
 	});
 
-export const useTransactionBuilder = (profile: ProfileContracts.IProfile) => {
-	const { abortConnectionRetry, transport, connect } = useLedgerContext();
+export const useTransactionBuilder = () => {
+	const { abortConnectionRetry } = useLedgerContext();
 
 	const build = async (
 		type: string,
@@ -73,10 +56,7 @@ export const useTransactionBuilder = (profile: ProfileContracts.IProfile) => {
 		}
 
 		if (wallet.isLedger()) {
-			data = await withAbortPromise(
-				options?.abortSignal,
-				abortConnectionRetry,
-			)(prepareLedger(profile, data, wallet, connect, transport));
+			data = await withAbortPromise(options?.abortSignal, abortConnectionRetry)(prepareLedger(data, wallet));
 		}
 
 		const uuid = await signFn(data);
