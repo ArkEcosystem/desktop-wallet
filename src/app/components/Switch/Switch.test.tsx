@@ -33,6 +33,22 @@ describe("Switch", () => {
 		expect(asFragment()).toMatchSnapshot();
 	});
 
+	it("should render small labels", () => {
+		const { asFragment } = render(
+			<Switch size="sm" value="a" onChange={onChange} leftOption={leftOption} rightOption={rightOption} />,
+		);
+
+		expect(asFragment()).toMatchSnapshot();
+	});
+
+	it("should render large labels", () => {
+		const { asFragment } = render(
+			<Switch size="lg" value="a" onChange={onChange} leftOption={leftOption} rightOption={rightOption} />,
+		);
+
+		expect(asFragment()).toMatchSnapshot();
+	});
+
 	it("should render disabled", () => {
 		const { asFragment, getByRole } = render(
 			<Switch disabled value="a" onChange={onChange} leftOption={leftOption} rightOption={rightOption} />,
