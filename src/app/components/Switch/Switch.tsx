@@ -1,8 +1,12 @@
 import cn from "classnames";
-import React from "react";
+import React, { PropsWithChildren } from "react";
+import { styled } from "twin.macro";
+import { Size } from "types";
 
 import { Toggle } from "../Toggle";
-import { SwitchText } from "./SwitchText";
+import { getSwitchTextStyles, SwitchTextType } from "./SwitchText.style";
+
+const SwitchText = styled.span<PropsWithChildren<SwitchTextType>>(getSwitchTextStyles);
 
 export interface SwitchOption<TValue = string> {
 	label: string;
@@ -14,6 +18,8 @@ interface Props<TOptionValue = string> {
 	onChange: (value: TOptionValue) => void;
 	leftOption: SwitchOption<TOptionValue>;
 	rightOption: SwitchOption<TOptionValue>;
+	size?: Size;
+	disabled?: boolean;
 	className?: string;
 }
 
@@ -22,10 +28,18 @@ export function Switch<TOptionValue = string>({
 	onChange,
 	leftOption,
 	rightOption,
+	size,
+	disabled,
 	className,
 }: Props<TOptionValue>) {
 	const renderOption = (option: SwitchOption<TOptionValue>) => (
-		<SwitchText role="button" selected={option.value === value} onClick={() => onChange(option.value)}>
+		<SwitchText
+			role="button"
+			disabled={disabled}
+			size={size}
+			selected={option.value === value}
+			onClick={() => !disabled && onChange(option.value)}
+		>
 			{option.label}
 		</SwitchText>
 	);
@@ -34,13 +48,12 @@ export function Switch<TOptionValue = string>({
 		<div className={cn("flex items-center", className)}>
 			{renderOption(leftOption)}
 
-			<div className="mx-4">
-				<Toggle
-					alwaysOn
-					checked={rightOption.value === value}
-					onChange={() => onChange(rightOption.value === value ? leftOption.value : rightOption.value)}
-				/>
-			</div>
+			<Toggle
+				alwaysOn
+				disabled={disabled}
+				checked={rightOption.value === value}
+				onChange={() => onChange(rightOption.value === value ? leftOption.value : rightOption.value)}
+			/>
 
 			{renderOption(rightOption)}
 		</div>

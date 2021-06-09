@@ -58,6 +58,24 @@ describe("WalletHeader", () => {
 		expect(asFragment()).toMatchSnapshot();
 	});
 
+	it("should use empty string in clipboard copy if publickey is undefined", async () => {
+		const mockpublicKey = jest.spyOn(wallet, "publicKey").mockReturnValue(undefined);
+		const { asFragment, getByText } = render(<WalletHeader profile={profile} wallet={wallet} />);
+		await waitFor(() => expect(getByText(wallet.address())).toBeTruthy());
+
+		expect(asFragment()).toMatchSnapshot();
+		mockpublicKey.mockRestore();
+	});
+
+	it("should render amount for wallet in live network", async () => {
+		const mockTestNetwork = jest.spyOn(wallet.network(), "isTest").mockReturnValue(false);
+		const { asFragment, getByText } = render(<WalletHeader profile={profile} wallet={wallet} />);
+		await waitFor(() => expect(getByText(wallet.address())).toBeTruthy());
+
+		expect(asFragment()).toMatchSnapshot();
+		mockTestNetwork.mockRestore();
+	});
+
 	it("should hide second signature option", async () => {
 		const mockIsSecondSignature = jest.spyOn(wallet, "isSecondSignature").mockReturnValue(true);
 		const mockAllowsSecondSignature = jest.spyOn(wallet.network(), "allows").mockReturnValue(false);

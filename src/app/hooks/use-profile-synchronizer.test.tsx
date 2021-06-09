@@ -103,6 +103,7 @@ describe("useProfileSyncStatus", () => {
 			result: { current },
 		} = renderHook(() => useProfileSyncStatus(), { wrapper });
 
+		current.setStatus("idle");
 		current.setStatus("syncing");
 
 		expect(current.isIdle()).toEqual(false);

@@ -221,6 +221,7 @@ exports[`SendIpfs should error if wrong mnemonic 1`] = `
               </div>
               <div
                 class="text-sm font-bold text-theme-secondary-text dark:text-theme-text"
+                data-testid="Balance__value"
               >
                 <span
                   data-testid="Amount"
@@ -1254,6 +1255,7 @@ exports[`SendIpfs should send an IPFS transaction and go back to wallet page 1`]
               </div>
               <div
                 class="text-sm font-bold text-theme-secondary-text dark:text-theme-text"
+                data-testid="Balance__value"
               >
                 <span
                   data-testid="Amount"
@@ -1850,6 +1852,7 @@ exports[`SendIpfs should send an IPFS transaction using encryption password 1`] 
               </div>
               <div
                 class="text-sm font-bold text-theme-secondary-text dark:text-theme-text"
+                data-testid="Balance__value"
               >
                 <span
                   data-testid="Amount"
@@ -2444,6 +2447,7 @@ exports[`SendIpfs should show an error if an invalid IPFS hash is entered 1`] = 
               </div>
               <div
                 class="text-sm font-bold text-theme-secondary-text dark:text-theme-text"
+                data-testid="Balance__value"
               >
                 <span
                   data-testid="Amount"
@@ -3182,6 +3186,7 @@ exports[`SendIpfs should show error step and go back 1`] = `
               </div>
               <div
                 class="text-sm font-bold text-theme-secondary-text dark:text-theme-text"
+                data-testid="Balance__value"
               >
                 <span
                   data-testid="Amount"
