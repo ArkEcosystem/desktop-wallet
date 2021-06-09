@@ -8,10 +8,17 @@ import { env, getDefaultProfileId, WithProviders } from "utils/testing-library";
 
 import { useTimeFormat } from "./use-time-format";
 
+let profile: Contracts.IProfile;
+
 const history = createMemoryHistory();
 const dashboardURL = `/profiles/${getDefaultProfileId()}/dashboard`;
 
 describe("useTimeFormat", () => {
+	beforeAll(() => {
+		history.push(dashboardURL);
+		profile = env.profiles().findById(getDefaultProfileId());
+	});
+
 	it("should return format without profile route", () => {
 		const wrapper = ({ children }: any) => <WithProviders>{children}</WithProviders>;
 		const { result } = renderHook(() => useTimeFormat(), { wrapper });
@@ -20,10 +27,6 @@ describe("useTimeFormat", () => {
 	});
 
 	it("should return format from profile", () => {
-		history.push(dashboardURL);
-
-		const profile = env.profiles().findById(getDefaultProfileId());
-
 		const settingsSpy = jest.spyOn(profile.settings(), "get");
 		when(settingsSpy).calledWith(Contracts.ProfileSetting.TimeFormat).mockReturnValueOnce("format");
 
@@ -38,10 +41,6 @@ describe("useTimeFormat", () => {
 	});
 
 	it("should return default format if profile has not setting", () => {
-		history.push(dashboardURL);
-
-		const profile = env.profiles().findById(getDefaultProfileId());
-
 		const settingsSpy = jest.spyOn(profile.settings(), "get");
 		when(settingsSpy).calledWith(Contracts.ProfileSetting.TimeFormat).mockReturnValueOnce();
 
