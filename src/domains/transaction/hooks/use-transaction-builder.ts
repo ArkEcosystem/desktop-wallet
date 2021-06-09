@@ -10,7 +10,7 @@ const prepareMultiSignature = async (
 	wallet: ProfileContracts.IReadWriteWallet,
 ): Promise<Services.TransactionInputs> => ({
 	...input,
-	nonce: wallet.nonce().plus(1).toFixed(),
+	nonce: wallet.nonce().plus(1).toFixed(), // @TODO: let the PSDK handle this - needs some reworks for musig derivation
 	signatory: await wallet
 		.signatory()
 		.multiSignature(wallet.multiSignature().all().min, wallet.multiSignature().all().publicKeys),
@@ -18,7 +18,6 @@ const prepareMultiSignature = async (
 
 const prepareLedger = async (input: Services.TransactionInputs, wallet: ProfileContracts.IReadWriteWallet) => ({
 	...input,
-	nonce: wallet.nonce().plus(1).toFixed(),
 	signatory: await wallet.signatory().ledger(wallet.data().get<string>(ProfileContracts.WalletData.DerivationPath)!),
 });
 
