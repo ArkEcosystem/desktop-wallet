@@ -1,4 +1,6 @@
+import { Contracts } from "@arkecosystem/platform-sdk-profiles";
 import { BigNumber } from "@arkecosystem/platform-sdk-support";
+import { Amount } from "app/components/Amount";
 import { Button } from "app/components/Button";
 import { FormField, FormLabel, SubForm } from "app/components/Form";
 import { Icon } from "app/components/Icon";
@@ -6,6 +8,7 @@ import { InputCurrency } from "app/components/Input";
 import { Switch } from "app/components/Switch";
 import { Tooltip } from "app/components/Tooltip";
 import { useValidation } from "app/hooks";
+import { useExchangeRate } from "app/hooks/use-exchange-rate";
 import cn from "classnames";
 import { SelectRecipient } from "domains/profile/components/SelectRecipient";
 import { RecipientList } from "domains/transaction/components/RecipientList";
@@ -99,6 +102,10 @@ export const AddRecipient = ({
 	const { sendTransfer } = useValidation();
 
 	const senderWallet = useMemo(() => profile.wallets().findByAddress(senderAddress), [profile, senderAddress]);
+
+	const ticker = network?.ticker();
+	const exchangeTicker = profile.settings().get<string>(Contracts.ProfileSetting.ExchangeCurrency);
+	const { convert } = useExchangeRate({ ticker, exchangeTicker });
 
 	const remainingBalance = useMemo(() => {
 		const senderBalance = senderWallet?.balance().denominated() || BigNumber.ZERO;
@@ -238,12 +245,16 @@ export const AddRecipient = ({
 	};
 
 	const addons =
-		!errors.amount && !errors.fee && isSingle && isSenderFilled
+		!errors.amount && !errors.fee && isSenderFilled && !senderWallet!.network().isTest()
 			? {
 					end: (
-						<span className="text-sm font-semibold whitespace-no-break text-theme-secondary-500 dark:text-theme-secondary-700">
-							{t("COMMON.MAX")} {maximumAmount?.toHuman()}
-						</span>
+						<Amount
+							value={convert(amount || 0)}
+							ticker={exchangeTicker!}
+							data-testid="AddRecipient__currency-balance"
+							className="text-sm font-semibold whitespace-no-break text-theme-secondary-500 dark:text-theme-secondary-700"
+							normalize={false}
+						/>
 					),
 			  }
 			: undefined;
