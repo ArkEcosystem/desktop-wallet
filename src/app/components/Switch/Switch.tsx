@@ -48,14 +48,12 @@ export function Switch<TOptionValue = string>({
 		<div className={cn("flex items-center", className)}>
 			{renderOption(leftOption)}
 
-			<div className="mx-4">
-				<Toggle
-					alwaysOn
-					disabled={disabled}
-					checked={rightOption.value === value}
-					onChange={() => onChange(rightOption.value === value ? leftOption.value : rightOption.value)}
-				/>
-			</div>
+			<Toggle
+				alwaysOn
+				disabled={disabled}
+				checked={rightOption.value === value}
+				onChange={() => onChange(rightOption.value === value ? leftOption.value : rightOption.value)}
+			/>
 
 			{renderOption(rightOption)}
 		</div>

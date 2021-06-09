@@ -18,11 +18,11 @@ const getVariant = (disabled: boolean) => {
 const getSize = (size?: Size) => {
 	switch (size) {
 		case "sm":
-			return tw`text-sm`;
+			return tw`text-sm first:mr-2 last:ml-2`;
 		case "lg":
-			return tw`text-lg`;
+			return tw`text-lg first:mr-4 last:ml-4`;
 		default:
-			return tw`text-base`;
+			return tw`text-base first:mr-3 last:ml-3`;
 	}
 };
 
