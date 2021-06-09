@@ -221,6 +221,7 @@ exports[`SendTransfer should display disabled address selection input if selecte
               </div>
               <div
                 class="text-sm font-bold text-theme-secondary-text dark:text-theme-text"
+                data-testid="Balance__value"
               >
                 <span
                   data-testid="Amount"
@@ -1212,6 +1213,7 @@ exports[`SendTransfer should display unconfirmed transactions modal when submitt
               </div>
               <div
                 class="text-sm font-bold text-theme-secondary-text dark:text-theme-text"
+                data-testid="Balance__value"
               >
                 <span
                   data-testid="Amount"
@@ -2112,6 +2114,7 @@ exports[`SendTransfer should error if wrong mnemonic 1`] = `
               </div>
               <div
                 class="text-sm font-bold text-theme-secondary-text dark:text-theme-text"
+                data-testid="Balance__value"
               >
                 <span
                   data-testid="Amount"
@@ -3105,6 +3108,7 @@ exports[`SendTransfer should render form and use location state 1`] = `
               </div>
               <div
                 class="text-sm font-bold text-theme-secondary-text dark:text-theme-text"
+                data-testid="Balance__value"
               >
                 <span
                   data-testid="Amount"
@@ -4141,6 +4145,7 @@ exports[`SendTransfer should render form and use location state without memo 1`]
               </div>
               <div
                 class="text-sm font-bold text-theme-secondary-text dark:text-theme-text"
+                data-testid="Balance__value"
               >
                 <span
                   data-testid="Amount"
@@ -6744,6 +6749,7 @@ exports[`SendTransfer should render network selection without selected wallet 1`
               </div>
               <div
                 class="text-sm font-bold text-theme-secondary-text dark:text-theme-text"
+                data-testid="Balance__value"
               >
                 <span
                   data-testid="Amount"
@@ -7947,6 +7953,7 @@ exports[`SendTransfer should select a cryptoasset and select sender without wall
               </div>
               <div
                 class="text-sm font-bold text-theme-secondary-text dark:text-theme-text"
+                data-testid="Balance__value"
               >
                 <span
                   data-testid="Amount"
@@ -8986,6 +8993,7 @@ exports[`SendTransfer should select cryptoasset 1`] = `
               </div>
               <div
                 class="text-sm font-bold text-theme-secondary-text dark:text-theme-text"
+                data-testid="Balance__value"
               >
                 <span
                   data-testid="Amount"
@@ -9484,6 +9492,7 @@ exports[`SendTransfer should send a single transfer 1`] = `
               </div>
               <div
                 class="text-sm font-bold text-theme-secondary-text dark:text-theme-text"
+                data-testid="Balance__value"
               >
                 <span
                   data-testid="Amount"
@@ -10141,6 +10150,7 @@ exports[`SendTransfer should send a single transfer and handle undefined expirat
               </div>
               <div
                 class="text-sm font-bold text-theme-secondary-text dark:text-theme-text"
+                data-testid="Balance__value"
               >
                 <span
                   data-testid="Amount"
@@ -10798,6 +10808,7 @@ exports[`SendTransfer should send a single transfer and show unconfirmed transac
               </div>
               <div
                 class="text-sm font-bold text-theme-secondary-text dark:text-theme-text"
+                data-testid="Balance__value"
               >
                 <span
                   data-testid="Amount"
@@ -11766,6 +11777,7 @@ exports[`SendTransfer should send a single transfer using wallet with encryption
               </div>
               <div
                 class="text-sm font-bold text-theme-secondary-text dark:text-theme-text"
+                data-testid="Balance__value"
               >
                 <span
                   data-testid="Amount"
@@ -12423,6 +12435,7 @@ exports[`SendTransfer should send a single transfer with a high fee by confirmin
               </div>
               <div
                 class="text-sm font-bold text-theme-secondary-text dark:text-theme-text"
+                data-testid="Balance__value"
               >
                 <span
                   data-testid="Amount"
@@ -13080,6 +13093,7 @@ exports[`SendTransfer should send a single transfer with a low fee by confirming
               </div>
               <div
                 class="text-sm font-bold text-theme-secondary-text dark:text-theme-text"
+                data-testid="Balance__value"
               >
                 <span
                   data-testid="Amount"
@@ -13737,6 +13751,7 @@ exports[`SendTransfer should show error step and go back 1`] = `
               </div>
               <div
                 class="text-sm font-bold text-theme-secondary-text dark:text-theme-text"
+                data-testid="Balance__value"
               >
                 <span
                   data-testid="Amount"
