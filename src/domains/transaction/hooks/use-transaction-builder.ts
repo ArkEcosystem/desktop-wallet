@@ -1,64 +1,30 @@
 import { Contracts, Services } from "@arkecosystem/platform-sdk";
 import { Contracts as ProfileContracts } from "@arkecosystem/platform-sdk-profiles";
 import { upperFirst } from "@arkecosystem/utils";
-import Transport from "@ledgerhq/hw-transport";
 import { useLedgerContext } from "app/contexts";
 
-interface SignInput {
-	encryptionPassword?: string;
-	mnemonic?: string;
-	secondMnemonic?: string;
-	wallet: ProfileContracts.IReadWriteWallet;
-}
-type SignFn = (input: any, options?: Services.TransactionOptions) => Promise<string>;
-type ConnectFn = (profile: ProfileContracts.IProfile, coin: string, network: string) => Promise<void>;
+type SignFn = (input: any) => Promise<string>;
 
-const prepareMultiSignature = (
+const prepareMultiSignature = async (
 	input: Services.TransactionInputs,
 	wallet: ProfileContracts.IReadWriteWallet,
-): Services.TransactionInputs => ({
+): Promise<Services.TransactionInputs> => ({
 	...input,
 	nonce: wallet.nonce().plus(1).toFixed(),
-	sign: {
-		multiSignature: wallet.multiSignature().all(),
-	},
+	signatory: await wallet.signatory().multiSignature(
+		wallet.multiSignature().all().min,
+		wallet.multiSignature().all().publicKeys,
+	),
 });
 
 const prepareLedger = async (
-	profile: ProfileContracts.IProfile,
 	input: Services.TransactionInputs,
 	wallet: ProfileContracts.IReadWriteWallet,
-	signFn: SignFn,
-	connectFn: ConnectFn,
-	transport: typeof Transport,
-) => {
-	await connectFn(profile, wallet.coinId(), wallet.networkId());
-
-	await wallet.ledger().connect(transport);
-
-	const path = wallet.data().get<string>(ProfileContracts.WalletData.DerivationPath);
-	let senderPublicKey = wallet.publicKey();
-
-	if (!senderPublicKey) {
-		senderPublicKey = await wallet.coin().ledger().getPublicKey(path!);
-	}
-
-	const data = { ...input, sign: { senderPublicKey } };
-
-	const id = await signFn(data, { unsignedBytes: true, unsignedJson: false });
-	const unsignedTransaction = wallet.transaction().transaction(id);
-	const bytes = Buffer.from(unsignedTransaction.toString(), "hex");
-	const signature = await wallet.coin().ledger().signTransaction(path!, bytes);
-
-	return {
-		...data,
-		nonce: wallet.nonce().plus(1).toFixed(),
-		sign: {
-			senderPublicKey,
-			signature,
-		},
-	};
-};
+) => ({
+	...input,
+	nonce: wallet.nonce().plus(1).toFixed(),
+	signatory: await wallet.signatory().ledger(wallet.data().get<string>(ProfileContracts.WalletData.DerivationPath)!),
+});
 
 const withAbortPromise = (signal?: AbortSignal, callback?: () => void) => <T>(promise: Promise<T>) =>
 	new Promise<T>((resolve, reject) => {
@@ -72,8 +38,8 @@ const withAbortPromise = (signal?: AbortSignal, callback?: () => void) => <T>(pr
 		return promise.then(resolve).catch(reject);
 	});
 
-export const useTransactionBuilder = (profile: ProfileContracts.IProfile) => {
-	const { connect, abortConnectionRetry, transport } = useLedgerContext();
+export const useTransactionBuilder = () => {
+	const { abortConnectionRetry } = useLedgerContext();
 
 	const build = async (
 		type: string,
@@ -90,14 +56,14 @@ export const useTransactionBuilder = (profile: ProfileContracts.IProfile) => {
 		let data = { ...input };
 
 		if (wallet.isMultiSignature()) {
-			data = prepareMultiSignature(data, wallet);
+			data = await prepareMultiSignature(data, wallet);
 		}
 
 		if (wallet.isLedger()) {
 			data = await withAbortPromise(
 				options?.abortSignal,
 				abortConnectionRetry,
-			)(prepareLedger(profile, data, wallet, signFn, connect, transport));
+			)(prepareLedger(data, wallet));
 		}
 
 		const uuid = await signFn(data);

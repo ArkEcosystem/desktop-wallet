@@ -34,7 +34,7 @@ describe("Use Transaction Builder with Ledger", () => {
 
 	it("should sign transfer with ledger", async () => {
 		await wallet.synchroniser().identity();
-		const { result } = renderHook(() => useTransactionBuilder(profile), { wrapper });
+		const { result } = renderHook(() => useTransactionBuilder(), { wrapper });
 		jest.spyOn(wallet.coin(), "__construct").mockImplementation();
 		jest.spyOn(wallet.coin().ledger(), "getPublicKey").mockResolvedValue(
 			"027716e659220085e41389efc7cf6a05f7f7c659cf3db9126caabce6cda9156582",
@@ -69,7 +69,7 @@ describe("Use Transaction Builder with Ledger", () => {
 	});
 
 	it("should sign transfer with cold ledger wallet", async () => {
-		const { result } = renderHook(() => useTransactionBuilder(profile), { wrapper });
+		const { result } = renderHook(() => useTransactionBuilder(), { wrapper });
 		jest.spyOn(wallet.coin(), "__construct").mockImplementation();
 		jest.spyOn(wallet, "publicKey").mockImplementation(() => undefined);
 		jest.spyOn(wallet, "isLedger").mockImplementation(() => true);
@@ -106,7 +106,7 @@ describe("Use Transaction Builder with Ledger", () => {
 		const abortCtrl = new AbortController();
 		const abortSignal = abortCtrl.signal;
 
-		const { result } = renderHook(() => useTransactionBuilder(profile), { wrapper });
+		const { result } = renderHook(() => useTransactionBuilder(), { wrapper });
 		jest.spyOn(wallet.coin(), "__construct").mockImplementation();
 		jest.spyOn(wallet, "isLedger").mockImplementation(() => true);
 		jest.spyOn(wallet.coin().ledger(), "signTransaction").mockImplementation(

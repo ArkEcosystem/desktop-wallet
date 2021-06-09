@@ -41,7 +41,7 @@ export const SendIpfs = () => {
 	const { fee, fees } = watch();
 
 	const abortRef = useRef(new AbortController());
-	const transactionBuilder = useTransactionBuilder(activeProfile);
+	const transactionBuilder = useTransactionBuilder();
 	const { sign } = useWalletSignatory(activeWallet);
 
 	useEffect(() => {
