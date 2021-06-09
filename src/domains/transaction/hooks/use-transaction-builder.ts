@@ -36,7 +36,6 @@ const prepareLedger = async (
 	return {
 		...input,
 		signatory,
-		nonce: wallet.nonce().plus(1).toFixed(),
 	};
 };
 
