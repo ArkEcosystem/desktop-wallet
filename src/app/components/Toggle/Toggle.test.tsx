@@ -17,6 +17,7 @@ describe("Toggle", () => {
 		const { container, asFragment, getByRole } = render(<Toggle disabled />);
 
 		expect(container).toBeTruthy();
+		expect(getByRole("checkbox")).toBeDisabled();
 		expect(getByRole("checkbox")).not.toHaveAttribute("checked", "");
 		expect(asFragment()).toMatchSnapshot();
 	});
