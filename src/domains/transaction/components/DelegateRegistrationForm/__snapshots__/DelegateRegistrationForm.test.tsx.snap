@@ -186,7 +186,7 @@ exports[`DelegateRegistrationForm should error if username is too long 1`] = `
                   class="flex items-center"
                 >
                   <span
-                    class="Switch__SwitchText-sc-1fue7gg-0 jrkMzU"
+                    class="Switch__SwitchText-sc-1fue7gg-0 khGGFd"
                     role="button"
                   >
                     Simple
@@ -195,6 +195,7 @@ exports[`DelegateRegistrationForm should error if username is too long 1`] = `
                     class="flex"
                   >
                     <input
+                      checked=""
                       class="Toggle__Input-qyyifx-0 WGuGL"
                       type="checkbox"
                     />
@@ -207,7 +208,7 @@ exports[`DelegateRegistrationForm should error if username is too long 1`] = `
                     </div>
                   </label>
                   <span
-                    class="Switch__SwitchText-sc-1fue7gg-0 khGGFd"
+                    class="Switch__SwitchText-sc-1fue7gg-0 jrkMzU"
                     role="button"
                   >
                     Advanced
@@ -215,95 +216,59 @@ exports[`DelegateRegistrationForm should error if username is too long 1`] = `
                 </div>
               </div>
               <div
-                class="w-full inline-flex items-center space-x-2"
-                data-testid="ButtonGroup"
-                role="radiogroup"
+                class="relative"
               >
-                <button
-                  aria-checked="false"
-                  class="ButtonGroup__ButtonGroupOptionStyled-sc-1u00raz-0 gXhvLe"
-                  data-testid="ButtonGroupOption"
-                  disabled=""
-                  role="radio"
-                  type="button"
+                <div
+                  class="fixed invisible w-auto whitespace-nowrap"
                 >
-                  <div>
-                    <div
-                      class="mb-3"
-                    >
-                      Slow
-                    </div>
-                    <span>
-                      <span
-                        class="flex items-center leading-none"
-                      >
-                        <span
-                          class="react-loading-skeleton h-3 my-1 css-1eg0sfo-skeletonStyles-Skeleton"
-                          style="width: 100px;"
-                        >
-                          ‌
-                        </span>
-                        ‌
-                      </span>
-                    </span>
-                  </div>
-                </button>
-                <button
-                  aria-checked="false"
-                  class="ButtonGroup__ButtonGroupOptionStyled-sc-1u00raz-0 gXhvLe"
-                  data-testid="ButtonGroupOption"
-                  role="radio"
-                  type="button"
+                  2…
+                </div>
+                <div
+                  class="Input__InputWrapperStyled-wu99qs-0 jYUFQr"
                 >
-                  <div>
-                    <div
-                      class="mb-3"
-                    >
-                      Average
-                    </div>
-                    <span>
-                      <span
-                        class="flex items-center leading-none"
-                      >
-                        <span
-                          class="react-loading-skeleton h-3 my-1 css-1eg0sfo-skeletonStyles-Skeleton"
-                          style="width: 100px;"
-                        >
-                          ‌
-                        </span>
-                        ‌
-                      </span>
-                    </span>
+                  <div
+                    class="relative flex flex-1 h-full"
+                  >
+                    <input
+                      class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
+                      data-testid="InputCurrency"
+                      name="fee"
+                      type="text"
+                      value="2"
+                    />
                   </div>
-                </button>
-                <button
-                  aria-checked="false"
-                  class="ButtonGroup__ButtonGroupOptionStyled-sc-1u00raz-0 gXhvLe"
-                  data-testid="ButtonGroupOption"
-                  role="radio"
-                  type="button"
+                </div>
+                <div
+                  class="absolute bottom-0 px-1 w-full"
                 >
-                  <div>
+                  <div
+                    class="flex flex-wrap justify-center"
+                    data-testid="Range"
+                  >
                     <div
-                      class="mb-3"
+                      class="Range__Track-sc-10itqc2-0 sgjTD"
+                      data-testid="Range__track"
+                      style="transform: scale(1); cursor: pointer;"
                     >
-                      Fast
-                    </div>
-                    <span>
-                      <span
-                        class="flex items-center leading-none"
+                      <div
+                        class="Range__TrackFilled-sc-10itqc2-1 egFfKP"
+                        data-testid="Range__track__filled"
                       >
-                        <span
-                          class="react-loading-skeleton h-3 my-1 css-1eg0sfo-skeletonStyles-Skeleton"
-                          style="width: 100px;"
-                        >
-                          ‌
-                        </span>
-                        ‌
-                      </span>
-                    </span>
+                        <div
+                          aria-valuemax="10"
+                          aria-valuemin="0"
+                          aria-valuenow="2"
+                          class="Range__Thumb-sc-10itqc2-2 hXgqqU"
+                          data-testid="Range__thumb"
+                          draggable="false"
+                          role="slider"
+                          style="position: absolute; z-index: 0; cursor: grab; user-select: none; transform: translate(0px, 0px);"
+                          tabindex="0"
+                        />
+                      </div>
+                    </div>
                   </div>
-                </button>
+                </div>
               </div>
             </div>
           </fieldset>
@@ -481,7 +446,7 @@ exports[`DelegateRegistrationForm should render form step 1`] = `
                   class="flex items-center"
                 >
                   <span
-                    class="Switch__SwitchText-sc-1fue7gg-0 jrkMzU"
+                    class="Switch__SwitchText-sc-1fue7gg-0 khGGFd"
                     role="button"
                   >
                     Simple
@@ -490,6 +455,7 @@ exports[`DelegateRegistrationForm should render form step 1`] = `
                     class="flex"
                   >
                     <input
+                      checked=""
                       class="Toggle__Input-qyyifx-0 WGuGL"
                       type="checkbox"
                     />
@@ -502,7 +468,7 @@ exports[`DelegateRegistrationForm should render form step 1`] = `
                     </div>
                   </label>
                   <span
-                    class="Switch__SwitchText-sc-1fue7gg-0 khGGFd"
+                    class="Switch__SwitchText-sc-1fue7gg-0 jrkMzU"
                     role="button"
                   >
                     Advanced
@@ -510,95 +476,59 @@ exports[`DelegateRegistrationForm should render form step 1`] = `
                 </div>
               </div>
               <div
-                class="w-full inline-flex items-center space-x-2"
-                data-testid="ButtonGroup"
-                role="radiogroup"
+                class="relative"
               >
-                <button
-                  aria-checked="false"
-                  class="ButtonGroup__ButtonGroupOptionStyled-sc-1u00raz-0 gXhvLe"
-                  data-testid="ButtonGroupOption"
-                  disabled=""
-                  role="radio"
-                  type="button"
+                <div
+                  class="fixed invisible w-auto whitespace-nowrap"
                 >
-                  <div>
-                    <div
-                      class="mb-3"
-                    >
-                      Slow
-                    </div>
-                    <span>
-                      <span
-                        class="flex items-center leading-none"
-                      >
-                        <span
-                          class="react-loading-skeleton h-3 my-1 css-1eg0sfo-skeletonStyles-Skeleton"
-                          style="width: 100px;"
-                        >
-                          ‌
-                        </span>
-                        ‌
-                      </span>
-                    </span>
-                  </div>
-                </button>
-                <button
-                  aria-checked="false"
-                  class="ButtonGroup__ButtonGroupOptionStyled-sc-1u00raz-0 gXhvLe"
-                  data-testid="ButtonGroupOption"
-                  role="radio"
-                  type="button"
+                  2…
+                </div>
+                <div
+                  class="Input__InputWrapperStyled-wu99qs-0 jYUFQr"
                 >
-                  <div>
-                    <div
-                      class="mb-3"
-                    >
-                      Average
-                    </div>
-                    <span>
-                      <span
-                        class="flex items-center leading-none"
-                      >
-                        <span
-                          class="react-loading-skeleton h-3 my-1 css-1eg0sfo-skeletonStyles-Skeleton"
-                          style="width: 100px;"
-                        >
-                          ‌
-                        </span>
-                        ‌
-                      </span>
-                    </span>
+                  <div
+                    class="relative flex flex-1 h-full"
+                  >
+                    <input
+                      class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
+                      data-testid="InputCurrency"
+                      name="fee"
+                      type="text"
+                      value="2"
+                    />
                   </div>
-                </button>
-                <button
-                  aria-checked="false"
-                  class="ButtonGroup__ButtonGroupOptionStyled-sc-1u00raz-0 gXhvLe"
-                  data-testid="ButtonGroupOption"
-                  role="radio"
-                  type="button"
+                </div>
+                <div
+                  class="absolute bottom-0 px-1 w-full"
                 >
-                  <div>
+                  <div
+                    class="flex flex-wrap justify-center"
+                    data-testid="Range"
+                  >
                     <div
-                      class="mb-3"
+                      class="Range__Track-sc-10itqc2-0 sgjTD"
+                      data-testid="Range__track"
+                      style="transform: scale(1); cursor: pointer;"
                     >
-                      Fast
-                    </div>
-                    <span>
-                      <span
-                        class="flex items-center leading-none"
+                      <div
+                        class="Range__TrackFilled-sc-10itqc2-1 egFfKP"
+                        data-testid="Range__track__filled"
                       >
-                        <span
-                          class="react-loading-skeleton h-3 my-1 css-1eg0sfo-skeletonStyles-Skeleton"
-                          style="width: 100px;"
-                        >
-                          ‌
-                        </span>
-                        ‌
-                      </span>
-                    </span>
+                        <div
+                          aria-valuemax="10"
+                          aria-valuemin="0"
+                          aria-valuenow="2"
+                          class="Range__Thumb-sc-10itqc2-2 hXgqqU"
+                          data-testid="Range__thumb"
+                          draggable="false"
+                          role="slider"
+                          style="position: absolute; z-index: 0; cursor: grab; user-select: none; transform: translate(0px, 0px);"
+                          tabindex="0"
+                        />
+                      </div>
+                    </div>
                   </div>
-                </button>
+                </div>
               </div>
             </div>
           </fieldset>
@@ -988,101 +918,99 @@ exports[`DelegateRegistrationForm should set fee 1`] = `
               Transaction Fee
             </label>
             <div
-              class="flex space-x-2"
+              class="relative"
               data-testid="InputFee"
             >
               <div
-                class="flex-1"
+                class="absolute right-0 -mt-7"
               >
                 <div
-                  class="relative"
+                  class="flex items-center"
                 >
-                  <div
-                    class="fixed invisible w-auto whitespace-nowrap"
+                  <span
+                    class="Switch__SwitchText-sc-1fue7gg-0 khGGFd"
+                    role="button"
                   >
-                    10…
-                  </div>
-                  <div
-                    class="Input__InputWrapperStyled-wu99qs-0 jYUFQr"
+                    Simple
+                  </span>
+                  <label
+                    class="flex"
                   >
+                    <input
+                      checked=""
+                      class="Toggle__Input-qyyifx-0 WGuGL"
+                      type="checkbox"
+                    />
                     <div
-                      class="relative flex flex-1 h-full"
+                      class="Toggle__Handle-qyyifx-1 geejDn"
                     >
-                      <input
-                        class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
-                        data-testid="InputCurrency"
-                        name="fee"
-                        type="text"
-                        value="10"
+                      <span
+                        class="Toggle__HandleInner-qyyifx-2 eSIhju"
                       />
                     </div>
-                  </div>
+                  </label>
+                  <span
+                    class="Switch__SwitchText-sc-1fue7gg-0 jrkMzU"
+                    role="button"
+                  >
+                    Advanced
+                  </span>
+                </div>
+              </div>
+              <div
+                class="relative"
+              >
+                <div
+                  class="fixed invisible w-auto whitespace-nowrap"
+                >
+                  9…
+                </div>
+                <div
+                  class="Input__InputWrapperStyled-wu99qs-0 jYUFQr"
+                >
                   <div
-                    class="absolute bottom-0 px-1 w-full"
+                    class="relative flex flex-1 h-full"
+                  >
+                    <input
+                      class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
+                      data-testid="InputCurrency"
+                      name="fee"
+                      type="text"
+                      value="9"
+                    />
+                  </div>
+                </div>
+                <div
+                  class="absolute bottom-0 px-1 w-full"
+                >
+                  <div
+                    class="flex flex-wrap justify-center"
+                    data-testid="Range"
                   >
                     <div
-                      class="flex flex-wrap justify-center"
-                      data-testid="Range"
+                      class="Range__Track-sc-10itqc2-0 sgjTD"
+                      data-testid="Range__track"
+                      style="transform: scale(1); cursor: pointer;"
                     >
                       <div
-                        class="Range__Track-sc-10itqc2-0 sgjTD"
-                        data-testid="Range__track"
-                        style="transform: scale(1); cursor: pointer;"
+                        class="Range__TrackFilled-sc-10itqc2-1 egFfKP"
+                        data-testid="Range__track__filled"
                       >
                         <div
-                          class="Range__TrackFilled-sc-10itqc2-1 egFfKP"
-                          data-testid="Range__track__filled"
-                        >
-                          <div
-                            aria-valuemax="10"
-                            aria-valuemin="0"
-                            aria-valuenow="10"
-                            class="Range__Thumb-sc-10itqc2-2 hXgqqU"
-                            data-testid="Range__thumb"
-                            draggable="false"
-                            role="slider"
-                            style="position: absolute; z-index: 0; cursor: grab; user-select: none; transform: translate(0px, 0px);"
-                            tabindex="0"
-                          />
-                        </div>
+                          aria-valuemax="10"
+                          aria-valuemin="0"
+                          aria-valuenow="10"
+                          class="Range__Thumb-sc-10itqc2-2 hXgqqU"
+                          data-testid="Range__thumb"
+                          draggable="false"
+                          role="slider"
+                          style="position: absolute; z-index: 0; cursor: grab; user-select: none; transform: translate(0px, 0px);"
+                          tabindex="0"
+                        />
                       </div>
                     </div>
                   </div>
                 </div>
-              </div>
-              <div
-                class="inline-flex items-center space-x-2"
-                data-testid="ButtonGroup"
-                role="radiogroup"
-              >
-                <button
-                  aria-checked="false"
-                  class="ButtonGroup__ButtonGroupOptionStyled-sc-1u00raz-0 cqjOKw"
-                  data-testid="ButtonGroupOption"
-                  disabled=""
-                  role="radio"
-                  type="button"
-                >
-                  Slow
-                </button>
-                <button
-                  aria-checked="false"
-                  class="ButtonGroup__ButtonGroupOptionStyled-sc-1u00raz-0 cqjOKw"
-                  data-testid="ButtonGroupOption"
-                  role="radio"
-                  type="button"
-                >
-                  Average
-                </button>
-                <button
-                  aria-checked="true"
-                  class="ButtonGroup__ButtonGroupOptionStyled-sc-1u00raz-0 cqjOKw"
-                  data-testid="ButtonGroupOption"
-                  role="radio"
-                  type="button"
-                >
-                  Fast
-                </button>
               </div>
             </div>
           </fieldset>
@@ -1260,7 +1188,7 @@ exports[`DelegateRegistrationForm should set username 1`] = `
                   class="flex items-center"
                 >
                   <span
-                    class="Switch__SwitchText-sc-1fue7gg-0 jrkMzU"
+                    class="Switch__SwitchText-sc-1fue7gg-0 khGGFd"
                     role="button"
                   >
                     Simple
@@ -1269,6 +1197,7 @@ exports[`DelegateRegistrationForm should set username 1`] = `
                     class="flex"
                   >
                     <input
+                      checked=""
                       class="Toggle__Input-qyyifx-0 WGuGL"
                       type="checkbox"
                     />
@@ -1281,7 +1210,7 @@ exports[`DelegateRegistrationForm should set username 1`] = `
                     </div>
                   </label>
                   <span
-                    class="Switch__SwitchText-sc-1fue7gg-0 khGGFd"
+                    class="Switch__SwitchText-sc-1fue7gg-0 jrkMzU"
                     role="button"
                   >
                     Advanced
@@ -1289,95 +1218,59 @@ exports[`DelegateRegistrationForm should set username 1`] = `
                 </div>
               </div>
               <div
-                class="w-full inline-flex items-center space-x-2"
-                data-testid="ButtonGroup"
-                role="radiogroup"
+                class="relative"
               >
-                <button
-                  aria-checked="false"
-                  class="ButtonGroup__ButtonGroupOptionStyled-sc-1u00raz-0 gXhvLe"
-                  data-testid="ButtonGroupOption"
-                  disabled=""
-                  role="radio"
-                  type="button"
+                <div
+                  class="fixed invisible w-auto whitespace-nowrap"
                 >
-                  <div>
-                    <div
-                      class="mb-3"
-                    >
-                      Slow
-                    </div>
-                    <span>
-                      <span
-                        class="flex items-center leading-none"
-                      >
-                        <span
-                          class="react-loading-skeleton h-3 my-1 css-1eg0sfo-skeletonStyles-Skeleton"
-                          style="width: 100px;"
-                        >
-                          ‌
-                        </span>
-                        ‌
-                      </span>
-                    </span>
-                  </div>
-                </button>
-                <button
-                  aria-checked="false"
-                  class="ButtonGroup__ButtonGroupOptionStyled-sc-1u00raz-0 gXhvLe"
-                  data-testid="ButtonGroupOption"
-                  role="radio"
-                  type="button"
+                  2…
+                </div>
+                <div
+                  class="Input__InputWrapperStyled-wu99qs-0 jYUFQr"
                 >
-                  <div>
-                    <div
-                      class="mb-3"
-                    >
-                      Average
-                    </div>
-                    <span>
-                      <span
-                        class="flex items-center leading-none"
-                      >
-                        <span
-                          class="react-loading-skeleton h-3 my-1 css-1eg0sfo-skeletonStyles-Skeleton"
-                          style="width: 100px;"
-                        >
-                          ‌
-                        </span>
-                        ‌
-                      </span>
-                    </span>
+                  <div
+                    class="relative flex flex-1 h-full"
+                  >
+                    <input
+                      class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
+                      data-testid="InputCurrency"
+                      name="fee"
+                      type="text"
+                      value="2"
+                    />
                   </div>
-                </button>
-                <button
-                  aria-checked="false"
-                  class="ButtonGroup__ButtonGroupOptionStyled-sc-1u00raz-0 gXhvLe"
-                  data-testid="ButtonGroupOption"
-                  role="radio"
-                  type="button"
+                </div>
+                <div
+                  class="absolute bottom-0 px-1 w-full"
                 >
-                  <div>
+                  <div
+                    class="flex flex-wrap justify-center"
+                    data-testid="Range"
+                  >
                     <div
-                      class="mb-3"
+                      class="Range__Track-sc-10itqc2-0 sgjTD"
+                      data-testid="Range__track"
+                      style="transform: scale(1); cursor: pointer;"
                     >
-                      Fast
-                    </div>
-                    <span>
-                      <span
-                        class="flex items-center leading-none"
+                      <div
+                        class="Range__TrackFilled-sc-10itqc2-1 egFfKP"
+                        data-testid="Range__track__filled"
                       >
-                        <span
-                          class="react-loading-skeleton h-3 my-1 css-1eg0sfo-skeletonStyles-Skeleton"
-                          style="width: 100px;"
-                        >
-                          ‌
-                        </span>
-                        ‌
-                      </span>
-                    </span>
+                        <div
+                          aria-valuemax="10"
+                          aria-valuemin="0"
+                          aria-valuenow="2"
+                          class="Range__Thumb-sc-10itqc2-2 hXgqqU"
+                          data-testid="Range__thumb"
+                          draggable="false"
+                          role="slider"
+                          style="position: absolute; z-index: 0; cursor: grab; user-select: none; transform: translate(0px, 0px);"
+                          tabindex="0"
+                        />
+                      </div>
+                    </div>
                   </div>
-                </button>
+                </div>
               </div>
             </div>
           </fieldset>
@@ -1574,7 +1467,7 @@ exports[`DelegateRegistrationForm should show error if username already exists 1
                   class="flex items-center"
                 >
                   <span
-                    class="Switch__SwitchText-sc-1fue7gg-0 jrkMzU"
+                    class="Switch__SwitchText-sc-1fue7gg-0 khGGFd"
                     role="button"
                   >
                     Simple
@@ -1583,6 +1476,7 @@ exports[`DelegateRegistrationForm should show error if username already exists 1
                     class="flex"
                   >
                     <input
+                      checked=""
                       class="Toggle__Input-qyyifx-0 WGuGL"
                       type="checkbox"
                     />
@@ -1595,7 +1489,7 @@ exports[`DelegateRegistrationForm should show error if username already exists 1
                     </div>
                   </label>
                   <span
-                    class="Switch__SwitchText-sc-1fue7gg-0 khGGFd"
+                    class="Switch__SwitchText-sc-1fue7gg-0 jrkMzU"
                     role="button"
                   >
                     Advanced
@@ -1603,95 +1497,59 @@ exports[`DelegateRegistrationForm should show error if username already exists 1
                 </div>
               </div>
               <div
-                class="w-full inline-flex items-center space-x-2"
-                data-testid="ButtonGroup"
-                role="radiogroup"
+                class="relative"
               >
-                <button
-                  aria-checked="false"
-                  class="ButtonGroup__ButtonGroupOptionStyled-sc-1u00raz-0 gXhvLe"
-                  data-testid="ButtonGroupOption"
-                  disabled=""
-                  role="radio"
-                  type="button"
+                <div
+                  class="fixed invisible w-auto whitespace-nowrap"
                 >
-                  <div>
-                    <div
-                      class="mb-3"
-                    >
-                      Slow
-                    </div>
-                    <span>
-                      <span
-                        class="flex items-center leading-none"
-                      >
-                        <span
-                          class="react-loading-skeleton h-3 my-1 css-1eg0sfo-skeletonStyles-Skeleton"
-                          style="width: 100px;"
-                        >
-                          ‌
-                        </span>
-                        ‌
-                      </span>
-                    </span>
-                  </div>
-                </button>
-                <button
-                  aria-checked="false"
-                  class="ButtonGroup__ButtonGroupOptionStyled-sc-1u00raz-0 gXhvLe"
-                  data-testid="ButtonGroupOption"
-                  role="radio"
-                  type="button"
+                  2…
+                </div>
+                <div
+                  class="Input__InputWrapperStyled-wu99qs-0 jYUFQr"
                 >
-                  <div>
-                    <div
-                      class="mb-3"
-                    >
-                      Average
-                    </div>
-                    <span>
-                      <span
-                        class="flex items-center leading-none"
-                      >
-                        <span
-                          class="react-loading-skeleton h-3 my-1 css-1eg0sfo-skeletonStyles-Skeleton"
-                          style="width: 100px;"
-                        >
-                          ‌
-                        </span>
-                        ‌
-                      </span>
-                    </span>
+                  <div
+                    class="relative flex flex-1 h-full"
+                  >
+                    <input
+                      class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
+                      data-testid="InputCurrency"
+                      name="fee"
+                      type="text"
+                      value="2"
+                    />
                   </div>
-                </button>
-                <button
-                  aria-checked="false"
-                  class="ButtonGroup__ButtonGroupOptionStyled-sc-1u00raz-0 gXhvLe"
-                  data-testid="ButtonGroupOption"
-                  role="radio"
-                  type="button"
+                </div>
+                <div
+                  class="absolute bottom-0 px-1 w-full"
                 >
-                  <div>
+                  <div
+                    class="flex flex-wrap justify-center"
+                    data-testid="Range"
+                  >
                     <div
-                      class="mb-3"
+                      class="Range__Track-sc-10itqc2-0 sgjTD"
+                      data-testid="Range__track"
+                      style="transform: scale(1); cursor: pointer;"
                     >
-                      Fast
-                    </div>
-                    <span>
-                      <span
-                        class="flex items-center leading-none"
+                      <div
+                        class="Range__TrackFilled-sc-10itqc2-1 egFfKP"
+                        data-testid="Range__track__filled"
                       >
-                        <span
-                          class="react-loading-skeleton h-3 my-1 css-1eg0sfo-skeletonStyles-Skeleton"
-                          style="width: 100px;"
-                        >
-                          ‌
-                        </span>
-                        ‌
-                      </span>
-                    </span>
+                        <div
+                          aria-valuemax="10"
+                          aria-valuemin="0"
+                          aria-valuenow="2"
+                          class="Range__Thumb-sc-10itqc2-2 hXgqqU"
+                          data-testid="Range__thumb"
+                          draggable="false"
+                          role="slider"
+                          style="position: absolute; z-index: 0; cursor: grab; user-select: none; transform: translate(0px, 0px);"
+                          tabindex="0"
+                        />
+                      </div>
+                    </div>
                   </div>
-                </button>
+                </div>
               </div>
             </div>
           </fieldset>
@@ -1888,7 +1746,7 @@ exports[`DelegateRegistrationForm should show error if username contains illegal
                   class="flex items-center"
                 >
                   <span
-                    class="Switch__SwitchText-sc-1fue7gg-0 jrkMzU"
+                    class="Switch__SwitchText-sc-1fue7gg-0 khGGFd"
                     role="button"
                   >
                     Simple
@@ -1897,6 +1755,7 @@ exports[`DelegateRegistrationForm should show error if username contains illegal
                     class="flex"
                   >
                     <input
+                      checked=""
                       class="Toggle__Input-qyyifx-0 WGuGL"
                       type="checkbox"
                     />
@@ -1909,7 +1768,7 @@ exports[`DelegateRegistrationForm should show error if username contains illegal
                     </div>
                   </label>
                   <span
-                    class="Switch__SwitchText-sc-1fue7gg-0 khGGFd"
+                    class="Switch__SwitchText-sc-1fue7gg-0 jrkMzU"
                     role="button"
                   >
                     Advanced
@@ -1917,95 +1776,59 @@ exports[`DelegateRegistrationForm should show error if username contains illegal
                 </div>
               </div>
               <div
-                class="w-full inline-flex items-center space-x-2"
-                data-testid="ButtonGroup"
-                role="radiogroup"
+                class="relative"
               >
-                <button
-                  aria-checked="false"
-                  class="ButtonGroup__ButtonGroupOptionStyled-sc-1u00raz-0 gXhvLe"
-                  data-testid="ButtonGroupOption"
-                  disabled=""
-                  role="radio"
-                  type="button"
+                <div
+                  class="fixed invisible w-auto whitespace-nowrap"
                 >
-                  <div>
-                    <div
-                      class="mb-3"
-                    >
-                      Slow
-                    </div>
-                    <span>
-                      <span
-                        class="flex items-center leading-none"
-                      >
-                        <span
-                          class="react-loading-skeleton h-3 my-1 css-1eg0sfo-skeletonStyles-Skeleton"
-                          style="width: 100px;"
-                        >
-                          ‌
-                        </span>
-                        ‌
-                      </span>
-                    </span>
-                  </div>
-                </button>
-                <button
-                  aria-checked="false"
-                  class="ButtonGroup__ButtonGroupOptionStyled-sc-1u00raz-0 gXhvLe"
-                  data-testid="ButtonGroupOption"
-                  role="radio"
-                  type="button"
+                  2…
+                </div>
+                <div
+                  class="Input__InputWrapperStyled-wu99qs-0 jYUFQr"
                 >
-                  <div>
-                    <div
-                      class="mb-3"
-                    >
-                      Average
-                    </div>
-                    <span>
-                      <span
-                        class="flex items-center leading-none"
-                      >
-                        <span
-                          class="react-loading-skeleton h-3 my-1 css-1eg0sfo-skeletonStyles-Skeleton"
-                          style="width: 100px;"
-                        >
-                          ‌
-                        </span>
-                        ‌
-                      </span>
-                    </span>
+                  <div
+                    class="relative flex flex-1 h-full"
+                  >
+                    <input
+                      class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
+                      data-testid="InputCurrency"
+                      name="fee"
+                      type="text"
+                      value="2"
+                    />
                   </div>
-                </button>
-                <button
-                  aria-checked="false"
-                  class="ButtonGroup__ButtonGroupOptionStyled-sc-1u00raz-0 gXhvLe"
-                  data-testid="ButtonGroupOption"
-                  role="radio"
-                  type="button"
+                </div>
+                <div
+                  class="absolute bottom-0 px-1 w-full"
                 >
-                  <div>
+                  <div
+                    class="flex flex-wrap justify-center"
+                    data-testid="Range"
+                  >
                     <div
-                      class="mb-3"
+                      class="Range__Track-sc-10itqc2-0 sgjTD"
+                      data-testid="Range__track"
+                      style="transform: scale(1); cursor: pointer;"
                     >
-                      Fast
-                    </div>
-                    <span>
-                      <span
-                        class="flex items-center leading-none"
+                      <div
+                        class="Range__TrackFilled-sc-10itqc2-1 egFfKP"
+                        data-testid="Range__track__filled"
                       >
-                        <span
-                          class="react-loading-skeleton h-3 my-1 css-1eg0sfo-skeletonStyles-Skeleton"
-                          style="width: 100px;"
-                        >
-                          ‌
-                        </span>
-                        ‌
-                      </span>
-                    </span>
+                        <div
+                          aria-valuemax="10"
+                          aria-valuemin="0"
+                          aria-valuenow="2"
+                          class="Range__Thumb-sc-10itqc2-2 hXgqqU"
+                          data-testid="Range__thumb"
+                          draggable="false"
+                          role="slider"
+                          style="position: absolute; z-index: 0; cursor: grab; user-select: none; transform: translate(0px, 0px);"
+                          tabindex="0"
+                        />
+                      </div>
+                    </div>
                   </div>
-                </button>
+                </div>
               </div>
             </div>
           </fieldset>

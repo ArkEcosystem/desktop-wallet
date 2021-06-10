@@ -47,16 +47,6 @@ export const InputFee = memo(
 	}: Props) => {
 		const { t } = useTranslation();
 
-		console.log({
-			disabled,
-			loading,
-			avg,
-			min,
-			max,
-			value,
-			viewType: props.viewType,
-		});
-
 		const viewType = props.viewType ?? DEFAULT_VIEW_TYPE;
 
 		const ticker = network?.ticker();

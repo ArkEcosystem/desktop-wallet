@@ -1,13 +1,8 @@
 import React from "react";
 import tw, { css, styled } from "twin.macro";
 
-interface ButtonGroupProps {
-	children?: React.ReactNode;
-	className?: string;
-}
-
-export const ButtonGroup = ({ children, className }: ButtonGroupProps) => (
-	<div data-testid="ButtonGroup" role="radiogroup" className={"w-full inline-flex items-center space-x-2"}>
+export const ButtonGroup = ({ children }: React.PropsWithChildren<{}>) => (
+	<div data-testid="ButtonGroup" role="radiogroup" className="w-full inline-flex items-center space-x-2">
 		{children}
 	</div>
 );
@@ -36,7 +31,6 @@ interface ButtonGroupOptionProps {
 	disabled?: boolean;
 	isSelected: (value: string | number) => boolean;
 	setSelectedValue: (value: string | number) => void;
-	className?: string;
 }
 
 export const ButtonGroupOption = ({

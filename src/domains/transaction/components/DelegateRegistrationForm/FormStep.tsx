@@ -25,6 +25,9 @@ export const FormStep = ({ fees, wallet, step = 0.001, profile }: any) => {
 	const [defaultFee] = useState(() => watch("fee"));
 	const fee = getValues("fee") || defaultFee;
 
+	const [defaultInputFeeViewType] = useState(() => watch("inputFeeViewType"));
+	const inputFeeViewType = getValues("inputFeeViewType") || defaultInputFeeViewType;
+
 	useEffect(() => {
 		register("fee", common.fee(wallet.balance(), wallet.network()));
 	}, [register, unregister, common, fees, wallet]);
@@ -87,9 +90,8 @@ export const FormStep = ({ fees, wallet, step = 0.001, profile }: any) => {
 						onChange={(value) => {
 							setValue("fee", value, { shouldValidate: true, shouldDirty: true });
 						}}
-						viewType={watch("inputFeeViewType")}
+						viewType={inputFeeViewType}
 						onChangeViewType={(value) => {
-							console.log("onChangeViewType", value);
 							setValue("inputFeeViewType", value, { shouldDirty: true });
 						}}
 					/>

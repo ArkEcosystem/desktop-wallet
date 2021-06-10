@@ -141,13 +141,13 @@ exports[`should allow switching between simple and advanced view types 2`] = `
       </div>
     </div>
     <div
-      class="inline-flex items-center space-x-2 w-full"
+      class="w-full inline-flex items-center space-x-2"
       data-testid="ButtonGroup"
       role="radiogroup"
     >
       <button
         aria-checked="false"
-        class="ButtonGroup__ButtonGroupOptionStyled-sc-1u00raz-0 cJSYwe w-full justify-center py-4"
+        class="ButtonGroup__ButtonGroupOptionStyled-sc-1u00raz-0 gXhvLe"
         data-testid="ButtonGroupOption"
         role="radio"
         type="button"
@@ -167,7 +167,7 @@ exports[`should allow switching between simple and advanced view types 2`] = `
       </button>
       <button
         aria-checked="false"
-        class="ButtonGroup__ButtonGroupOptionStyled-sc-1u00raz-0 cJSYwe w-full justify-center py-4"
+        class="ButtonGroup__ButtonGroupOptionStyled-sc-1u00raz-0 gXhvLe"
         data-testid="ButtonGroupOption"
         role="radio"
         type="button"
@@ -187,7 +187,7 @@ exports[`should allow switching between simple and advanced view types 2`] = `
       </button>
       <button
         aria-checked="false"
-        class="ButtonGroup__ButtonGroupOptionStyled-sc-1u00raz-0 cJSYwe w-full justify-center py-4"
+        class="ButtonGroup__ButtonGroupOptionStyled-sc-1u00raz-0 gXhvLe"
         data-testid="ButtonGroupOption"
         role="radio"
         type="button"
@@ -352,13 +352,13 @@ exports[`should render 1`] = `
       </div>
     </div>
     <div
-      class="inline-flex items-center space-x-2 w-full"
+      class="w-full inline-flex items-center space-x-2"
       data-testid="ButtonGroup"
       role="radiogroup"
     >
       <button
         aria-checked="false"
-        class="ButtonGroup__ButtonGroupOptionStyled-sc-1u00raz-0 cJSYwe w-full justify-center py-4"
+        class="ButtonGroup__ButtonGroupOptionStyled-sc-1u00raz-0 gXhvLe"
         data-testid="ButtonGroupOption"
         role="radio"
         type="button"
@@ -378,7 +378,7 @@ exports[`should render 1`] = `
       </button>
       <button
         aria-checked="false"
-        class="ButtonGroup__ButtonGroupOptionStyled-sc-1u00raz-0 cJSYwe w-full justify-center py-4"
+        class="ButtonGroup__ButtonGroupOptionStyled-sc-1u00raz-0 gXhvLe"
         data-testid="ButtonGroupOption"
         role="radio"
         type="button"
@@ -398,7 +398,7 @@ exports[`should render 1`] = `
       </button>
       <button
         aria-checked="false"
-        class="ButtonGroup__ButtonGroupOptionStyled-sc-1u00raz-0 cJSYwe w-full justify-center py-4"
+        class="ButtonGroup__ButtonGroupOptionStyled-sc-1u00raz-0 gXhvLe"
         data-testid="ButtonGroupOption"
         role="radio"
         type="button"
@@ -421,7 +421,7 @@ exports[`should render 1`] = `
 </DocumentFragment>
 `;
 
-exports[`should update when clicking a simple option 1`] = `
+exports[`should update when clicking Average 1`] = `
 <DocumentFragment>
   <div
     class="relative"
@@ -463,13 +463,13 @@ exports[`should update when clicking a simple option 1`] = `
       </div>
     </div>
     <div
-      class="inline-flex items-center space-x-2 w-full"
+      class="w-full inline-flex items-center space-x-2"
       data-testid="ButtonGroup"
       role="radiogroup"
     >
       <button
-        aria-checked="true"
-        class="ButtonGroup__ButtonGroupOptionStyled-sc-1u00raz-0 cJSYwe w-full justify-center py-4"
+        aria-checked="false"
+        class="ButtonGroup__ButtonGroupOptionStyled-sc-1u00raz-0 gXhvLe"
         data-testid="ButtonGroupOption"
         role="radio"
         type="button"
@@ -488,8 +488,8 @@ exports[`should update when clicking a simple option 1`] = `
         </div>
       </button>
       <button
-        aria-checked="false"
-        class="ButtonGroup__ButtonGroupOptionStyled-sc-1u00raz-0 cJSYwe w-full justify-center py-4"
+        aria-checked="true"
+        class="ButtonGroup__ButtonGroupOptionStyled-sc-1u00raz-0 gXhvLe"
         data-testid="ButtonGroupOption"
         role="radio"
         type="button"
@@ -509,7 +509,7 @@ exports[`should update when clicking a simple option 1`] = `
       </button>
       <button
         aria-checked="false"
-        class="ButtonGroup__ButtonGroupOptionStyled-sc-1u00raz-0 cJSYwe w-full justify-center py-4"
+        class="ButtonGroup__ButtonGroupOptionStyled-sc-1u00raz-0 gXhvLe"
         data-testid="ButtonGroupOption"
         role="radio"
         type="button"
@@ -532,7 +532,7 @@ exports[`should update when clicking a simple option 1`] = `
 </DocumentFragment>
 `;
 
-exports[`should update when clicking a simple option 2`] = `
+exports[`should update when clicking Fast 1`] = `
 <DocumentFragment>
   <div
     class="relative"
@@ -574,13 +574,13 @@ exports[`should update when clicking a simple option 2`] = `
       </div>
     </div>
     <div
-      class="inline-flex items-center space-x-2 w-full"
+      class="w-full inline-flex items-center space-x-2"
       data-testid="ButtonGroup"
       role="radiogroup"
     >
       <button
         aria-checked="false"
-        class="ButtonGroup__ButtonGroupOptionStyled-sc-1u00raz-0 cJSYwe w-full justify-center py-4"
+        class="ButtonGroup__ButtonGroupOptionStyled-sc-1u00raz-0 gXhvLe"
         data-testid="ButtonGroupOption"
         role="radio"
         type="button"
@@ -599,8 +599,8 @@ exports[`should update when clicking a simple option 2`] = `
         </div>
       </button>
       <button
-        aria-checked="true"
-        class="ButtonGroup__ButtonGroupOptionStyled-sc-1u00raz-0 cJSYwe w-full justify-center py-4"
+        aria-checked="false"
+        class="ButtonGroup__ButtonGroupOptionStyled-sc-1u00raz-0 gXhvLe"
         data-testid="ButtonGroupOption"
         role="radio"
         type="button"
@@ -619,8 +619,8 @@ exports[`should update when clicking a simple option 2`] = `
         </div>
       </button>
       <button
-        aria-checked="false"
-        class="ButtonGroup__ButtonGroupOptionStyled-sc-1u00raz-0 cJSYwe w-full justify-center py-4"
+        aria-checked="true"
+        class="ButtonGroup__ButtonGroupOptionStyled-sc-1u00raz-0 gXhvLe"
         data-testid="ButtonGroupOption"
         role="radio"
         type="button"
@@ -643,7 +643,7 @@ exports[`should update when clicking a simple option 2`] = `
 </DocumentFragment>
 `;
 
-exports[`should update when clicking a simple option 3`] = `
+exports[`should update when clicking Slow 1`] = `
 <DocumentFragment>
   <div
     class="relative"
@@ -685,13 +685,13 @@ exports[`should update when clicking a simple option 3`] = `
       </div>
     </div>
     <div
-      class="inline-flex items-center space-x-2 w-full"
+      class="w-full inline-flex items-center space-x-2"
       data-testid="ButtonGroup"
       role="radiogroup"
     >
       <button
-        aria-checked="false"
-        class="ButtonGroup__ButtonGroupOptionStyled-sc-1u00raz-0 cJSYwe w-full justify-center py-4"
+        aria-checked="true"
+        class="ButtonGroup__ButtonGroupOptionStyled-sc-1u00raz-0 gXhvLe"
         data-testid="ButtonGroupOption"
         role="radio"
         type="button"
@@ -711,7 +711,7 @@ exports[`should update when clicking a simple option 3`] = `
       </button>
       <button
         aria-checked="false"
-        class="ButtonGroup__ButtonGroupOptionStyled-sc-1u00raz-0 cJSYwe w-full justify-center py-4"
+        class="ButtonGroup__ButtonGroupOptionStyled-sc-1u00raz-0 gXhvLe"
         data-testid="ButtonGroupOption"
         role="radio"
         type="button"
@@ -730,8 +730,8 @@ exports[`should update when clicking a simple option 3`] = `
         </div>
       </button>
       <button
-        aria-checked="true"
-        class="ButtonGroup__ButtonGroupOptionStyled-sc-1u00raz-0 cJSYwe w-full justify-center py-4"
+        aria-checked="false"
+        class="ButtonGroup__ButtonGroupOptionStyled-sc-1u00raz-0 gXhvLe"
         data-testid="ButtonGroupOption"
         role="radio"
         type="button"
