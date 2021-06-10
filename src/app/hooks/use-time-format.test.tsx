@@ -23,7 +23,7 @@ describe("useTimeFormat", () => {
 		const wrapper = ({ children }: any) => <WithProviders>{children}</WithProviders>;
 		const { result } = renderHook(() => useTimeFormat(), { wrapper });
 
-		expect(result.current).toBe("DD.MM.YYYY HH:mm");
+		expect(result.current).toBe("DD.MM.YYYY h:mm A");
 	});
 
 	it("should return format from profile", () => {
@@ -51,6 +51,6 @@ describe("useTimeFormat", () => {
 		);
 		const { result } = renderHook(() => useTimeFormat(), { wrapper });
 
-		expect(result.current).toBe("DD.MM.YYYY HH:mm");
+		expect(result.current).toBe("DD.MM.YYYY h:mm A");
 	});
 });
