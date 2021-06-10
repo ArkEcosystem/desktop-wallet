@@ -53,7 +53,10 @@ export const TransactionVotes = ({ isLoading, votes, unvotes }: TransactionVotes
 			<TransactionDetail
 				label={t("TRANSACTION.TRANSACTION_TYPE")}
 				extra={
-					<Circle className="border-theme-text" size="lg">
+					<Circle
+						className="text-theme-secondary-900 border-theme-secondary-900 dark:text-theme-secondary-600 dark:border-theme-secondary-600"
+						size="lg"
+					>
 						<Icon name={getTransactionIcon()} width={21} height={21} />
 					</Circle>
 				}
