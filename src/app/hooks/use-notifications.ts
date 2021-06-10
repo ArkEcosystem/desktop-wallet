@@ -92,6 +92,7 @@ const notifyReceivedTransactions: any = async ({
 	allowedTransactionTypes = ["transfer", "multiPayment"],
 }: NotifyReceivedTransactionsParams) => {
 	const allRecentTransactions = await fetchRecentProfileTransactions(profile, lookupLimit);
+    // @ts-ignore
 	const newUnseenTransactions = filterUnseenTransactions(profile, allRecentTransactions, allowedTransactionTypes);
 
 	return newUnseenTransactions.map((transaction: Contracts.TransactionDataType) =>
