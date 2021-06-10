@@ -10,7 +10,7 @@ describe("TransactionTimestamp", () => {
 	it("should render", () => {
 		const { container } = render(<TransactionTimestamp timestamp={datetime} />);
 
-		expect(container).toHaveTextContent("31.07.2020 16:34");
+		expect(container).toHaveTextContent("31.07.2020 4:34 PM");
 		expect(container).toMatchSnapshot();
 	});
 });

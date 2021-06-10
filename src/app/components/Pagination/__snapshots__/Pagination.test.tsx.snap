@@ -2,8 +2,8 @@
 
 exports[`Pagination should handle first page click properly 1`] = `
 <DocumentFragment>
-  <div
-    class="Pagination__Wrapper-x7juhx-0 klvluR"
+  <nav
+    class="Pagination__Wrapper-x7juhx-0 hbWMHF"
     data-testid="Pagination"
   >
     <button
@@ -48,59 +48,96 @@ exports[`Pagination should handle first page click properly 1`] = `
     <div
       class="flex relative px-2 rounded bg-theme-primary-100 dark:bg-theme-secondary-800"
     >
-      <div
-        class="PaginationSearch__PaginationSearchButtonStyled-rcir65-1 ftyWKb"
+      <button
+        class="PaginationSearch__PaginationSearchButtonStyled-rcir65-1 hwqpt group"
         data-testid="PaginationSearchButton"
+        type="button"
       >
         <span
-          data-testid="PaginationSearch__toggle"
+          class="group-hover:invisible"
         >
-           
           <span>
-            ...
+            …
           </span>
-           
         </span>
-      </div>
-      <div
-        class="Pagination__PaginationButtonStyled-x7juhx-1 jqbPMy"
+        <span
+          class="absolute top-0 right-0 bottom-0 left-0 invisible group-hover:visible flex items-center justify-center"
+          data-testid="PaginationSearchButton__search"
+        >
+          <div
+            class="sc-bdfBwQ eRnpCh"
+            height="13"
+            width="13"
+          >
+            <svg>
+              search.svg
+            </svg>
+          </div>
+        </span>
+      </button>
+      <button
+        aria-label="Page 99"
+        class="Pagination__PaginationButtonStyled-x7juhx-1 dPDByT"
+        type="button"
       >
         99
-      </div>
-      <div
-        class="Pagination__PaginationButtonStyled-x7juhx-1 jqbPMy"
+      </button>
+      <button
+        aria-label="Page 100"
+        class="Pagination__PaginationButtonStyled-x7juhx-1 dPDByT"
+        type="button"
       >
         100
-      </div>
-      <div
-        class="Pagination__PaginationButtonStyled-x7juhx-1 jqbPMy current-page"
+      </button>
+      <button
+        aria-current="true"
+        aria-label="Page 101"
+        class="Pagination__PaginationButtonStyled-x7juhx-1 dPDByT current-page"
+        type="button"
       >
         101
-      </div>
-      <div
-        class="Pagination__PaginationButtonStyled-x7juhx-1 jqbPMy"
+      </button>
+      <button
+        aria-label="Page 102"
+        class="Pagination__PaginationButtonStyled-x7juhx-1 dPDByT"
+        type="button"
       >
         102
-      </div>
-      <div
-        class="Pagination__PaginationButtonStyled-x7juhx-1 jqbPMy"
+      </button>
+      <button
+        aria-label="Page 103"
+        class="Pagination__PaginationButtonStyled-x7juhx-1 dPDByT"
+        type="button"
       >
         103
-      </div>
-      <div
-        class="PaginationSearch__PaginationSearchButtonStyled-rcir65-1 ftyWKb"
+      </button>
+      <button
+        class="PaginationSearch__PaginationSearchButtonStyled-rcir65-1 hwqpt group"
         data-testid="PaginationSearchButton"
+        type="button"
       >
         <span
-          data-testid="PaginationSearch__toggle"
+          class="group-hover:invisible"
         >
-           
           <span>
-            ...
+            …
           </span>
-           
         </span>
-      </div>
+        <span
+          class="absolute top-0 right-0 bottom-0 left-0 invisible group-hover:visible flex items-center justify-center"
+          data-testid="PaginationSearchButton__search"
+        >
+          <div
+            class="sc-bdfBwQ eRnpCh"
+            height="13"
+            width="13"
+          >
+            <svg>
+              search.svg
+            </svg>
+          </div>
+        </span>
+      </button>
     </div>
     <button
       class="OriginalButton__StyledButton-sc-1y2wptt-0 izJbbP"
@@ -141,68 +178,96 @@ exports[`Pagination should handle first page click properly 1`] = `
         </div>
       </div>
     </button>
-  </div>
+  </nav>
 </DocumentFragment>
 `;
 
 exports[`Pagination should handle last page click properly 1`] = `
 <DocumentFragment>
-  <div
-    class="Pagination__Wrapper-x7juhx-0 klvluR"
+  <nav
+    class="Pagination__Wrapper-x7juhx-0 hbWMHF"
     data-testid="Pagination"
   >
     <div
       class="flex relative px-2 rounded bg-theme-primary-100 dark:bg-theme-secondary-800"
     >
-      <div
-        class="Pagination__PaginationButtonStyled-x7juhx-1 jqbPMy current-page"
+      <button
+        aria-current="true"
+        aria-label="Page 1"
+        class="Pagination__PaginationButtonStyled-x7juhx-1 dPDByT current-page"
+        type="button"
       >
         1
-      </div>
-      <div
-        class="Pagination__PaginationButtonStyled-x7juhx-1 jqbPMy"
+      </button>
+      <button
+        aria-label="Page 2"
+        class="Pagination__PaginationButtonStyled-x7juhx-1 dPDByT"
+        type="button"
       >
         2
-      </div>
-      <div
-        class="Pagination__PaginationButtonStyled-x7juhx-1 jqbPMy"
+      </button>
+      <button
+        aria-label="Page 3"
+        class="Pagination__PaginationButtonStyled-x7juhx-1 dPDByT"
+        type="button"
       >
         3
-      </div>
-      <div
-        class="Pagination__PaginationButtonStyled-x7juhx-1 jqbPMy"
+      </button>
+      <button
+        aria-label="Page 4"
+        class="Pagination__PaginationButtonStyled-x7juhx-1 dPDByT"
+        type="button"
       >
         4
-      </div>
-      <div
-        class="Pagination__PaginationButtonStyled-x7juhx-1 jqbPMy"
+      </button>
+      <button
+        aria-label="Page 5"
+        class="Pagination__PaginationButtonStyled-x7juhx-1 dPDByT"
+        type="button"
       >
         5
-      </div>
-      <div
-        class="Pagination__PaginationButtonStyled-x7juhx-1 jqbPMy"
+      </button>
+      <button
+        aria-label="Page 6"
+        class="Pagination__PaginationButtonStyled-x7juhx-1 dPDByT"
+        type="button"
       >
         6
-      </div>
-      <div
-        class="Pagination__PaginationButtonStyled-x7juhx-1 jqbPMy"
+      </button>
+      <button
+        aria-label="Page 7"
+        class="Pagination__PaginationButtonStyled-x7juhx-1 dPDByT"
+        type="button"
       >
         7
-      </div>
-      <div
-        class="PaginationSearch__PaginationSearchButtonStyled-rcir65-1 ftyWKb"
+      </button>
+      <button
+        class="PaginationSearch__PaginationSearchButtonStyled-rcir65-1 hwqpt group"
         data-testid="PaginationSearchButton"
+        type="button"
       >
         <span
-          data-testid="PaginationSearch__toggle"
+          class="group-hover:invisible"
         >
-           
           <span>
-            ...
+            …
           </span>
-           
         </span>
-      </div>
+        <span
+          class="absolute top-0 right-0 bottom-0 left-0 invisible group-hover:visible flex items-center justify-center"
+          data-testid="PaginationSearchButton__search"
+        >
+          <div
+            class="sc-bdfBwQ eRnpCh"
+            height="13"
+            width="13"
+          >
+            <svg>
+              search.svg
+            </svg>
+          </div>
+        </span>
+      </button>
     </div>
     <button
       class="OriginalButton__StyledButton-sc-1y2wptt-0 izJbbP"
@@ -243,132 +308,14 @@ exports[`Pagination should handle last page click properly 1`] = `
         </div>
       </div>
     </button>
-  </div>
+  </nav>
 </DocumentFragment>
 `;
 
-exports[`Pagination should handle next page click properly 1`] = `
+exports[`Pagination should handle left pagination search icon click properly 1`] = `
 <DocumentFragment>
-  <div
-    class="Pagination__Wrapper-x7juhx-0 klvluR"
-    data-testid="Pagination"
-  >
-    <button
-      class="OriginalButton__StyledButton-sc-1y2wptt-0 izJbbP"
-      data-testid="Pagination__previous"
-      type="button"
-    >
-      <div
-        class="flex relative items-center space-x-2"
-      >
-        <div
-          class="sc-bdfBwQ TENjd mr-2"
-          height="10"
-          width="10"
-        >
-          <svg>
-            back.svg
-          </svg>
-        </div>
-        Previous
-      </div>
-    </button>
-    <div
-      class="flex relative px-2 rounded bg-theme-primary-100 dark:bg-theme-secondary-800"
-    >
-      <div
-        class="Pagination__PaginationButtonStyled-x7juhx-1 jqbPMy"
-      >
-        1
-      </div>
-      <div
-        class="Pagination__PaginationButtonStyled-x7juhx-1 jqbPMy current-page"
-      >
-        2
-      </div>
-      <div
-        class="Pagination__PaginationButtonStyled-x7juhx-1 jqbPMy"
-      >
-        3
-      </div>
-    </div>
-    <button
-      class="OriginalButton__StyledButton-sc-1y2wptt-0 izJbbP"
-      data-testid="Pagination__next"
-      type="button"
-    >
-      <div
-        class="flex relative items-center space-x-2"
-      >
-        Next
-        <div
-          class="sc-bdfBwQ fdfkzt ml-2"
-          height="12"
-          width="12"
-        >
-          <svg>
-            forward.svg
-          </svg>
-        </div>
-      </div>
-    </button>
-  </div>
-</DocumentFragment>
-`;
-
-exports[`Pagination should handle page selection properly 1`] = `
-<DocumentFragment>
-  <div
-    class="Pagination__Wrapper-x7juhx-0 klvluR"
-    data-testid="Pagination"
-  >
-    <div
-      class="flex relative px-2 rounded bg-theme-primary-100 dark:bg-theme-secondary-800"
-    >
-      <div
-        class="Pagination__PaginationButtonStyled-x7juhx-1 jqbPMy current-page"
-      >
-        1
-      </div>
-      <div
-        class="Pagination__PaginationButtonStyled-x7juhx-1 jqbPMy"
-      >
-        2
-      </div>
-      <div
-        class="Pagination__PaginationButtonStyled-x7juhx-1 jqbPMy"
-      >
-        3
-      </div>
-    </div>
-    <button
-      class="OriginalButton__StyledButton-sc-1y2wptt-0 izJbbP"
-      data-testid="Pagination__next"
-      type="button"
-    >
-      <div
-        class="flex relative items-center space-x-2"
-      >
-        Next
-        <div
-          class="sc-bdfBwQ fdfkzt ml-2"
-          height="12"
-          width="12"
-        >
-          <svg>
-            forward.svg
-          </svg>
-        </div>
-      </div>
-    </button>
-  </div>
-</DocumentFragment>
-`;
-
-exports[`Pagination should handle previous page click properly 1`] = `
-<DocumentFragment>
-  <div
-    class="Pagination__Wrapper-x7juhx-0 klvluR"
+  <nav
+    class="Pagination__Wrapper-x7juhx-0 hbWMHF"
     data-testid="Pagination"
   >
     <button
@@ -413,55 +360,176 @@ exports[`Pagination should handle previous page click properly 1`] = `
     <div
       class="flex relative px-2 rounded bg-theme-primary-100 dark:bg-theme-secondary-800"
     >
-      <div
-        class="PaginationSearch__PaginationSearchButtonStyled-rcir65-1 ftyWKb"
+      <button
+        class="PaginationSearch__PaginationSearchButtonStyled-rcir65-1 hwqpt group"
         data-testid="PaginationSearchButton"
+        disabled=""
+        type="button"
       >
         <span
-          data-testid="PaginationSearch__toggle"
+          class="group-hover:invisible"
         >
-           
           <span>
-            ...
+            …
           </span>
-           
         </span>
-      </div>
-      <div
-        class="Pagination__PaginationButtonStyled-x7juhx-1 jqbPMy"
+        <span
+          class="absolute top-0 right-0 bottom-0 left-0 invisible group-hover:visible flex items-center justify-center"
+          data-testid="PaginationSearchButton__search"
+        >
+          <div
+            class="sc-bdfBwQ eRnpCh"
+            height="13"
+            width="13"
+          >
+            <svg>
+              search.svg
+            </svg>
+          </div>
+        </span>
+      </button>
+      <span
+        class="PaginationSearch__PaginationSearchWrapperStyled-rcir65-0 jeiWbF"
       >
-        4
-      </div>
-      <div
-        class="Pagination__PaginationButtonStyled-x7juhx-1 jqbPMy"
+        <form
+          class="search-form"
+          data-testid="PaginationSearchForm"
+          name="searchForm"
+        >
+          <input
+            class="PaginationSearch__SearchInputStyled-rcir65-2 jFHLba"
+            data-testid="PaginationSearch__input"
+            max="30"
+            min="1"
+            name="page"
+            placeholder="Enter the page number"
+            type="number"
+          />
+          <button
+            class="OriginalButton__StyledButton-sc-1y2wptt-0 bLKcwq search-control"
+            data-testid="PaginationSearch__submit"
+            type="submit"
+          >
+            <div
+              class="flex relative items-center space-x-2"
+            >
+              <div
+                class="sc-bdfBwQ fPrsah"
+                height="1em"
+                width="1em"
+              >
+                <svg>
+                  search.svg
+                </svg>
+              </div>
+            </div>
+          </button>
+          <button
+            class="OriginalButton__StyledButton-sc-1y2wptt-0 bLKcwq search-control"
+            data-testid="PaginationSearch__cancel"
+            type="button"
+          >
+            <div
+              class="flex relative items-center space-x-2"
+            >
+              <div
+                class="sc-bdfBwQ fPrsah"
+                height="1em"
+                width="1em"
+              >
+                <svg>
+                  close.svg
+                </svg>
+              </div>
+            </div>
+          </button>
+        </form>
+      </span>
+      <button
+        aria-label="Page 12"
+        class="Pagination__PaginationButtonStyled-x7juhx-1 dPDByT"
+        disabled=""
+        type="button"
       >
-        5
-      </div>
-      <div
-        class="Pagination__PaginationButtonStyled-x7juhx-1 jqbPMy"
+        12
+      </button>
+      <button
+        aria-label="Page 13"
+        class="Pagination__PaginationButtonStyled-x7juhx-1 dPDByT"
+        disabled=""
+        type="button"
       >
-        6
-      </div>
-      <div
-        class="Pagination__PaginationButtonStyled-x7juhx-1 jqbPMy"
+        13
+      </button>
+      <button
+        aria-label="Page 14"
+        class="Pagination__PaginationButtonStyled-x7juhx-1 dPDByT"
+        disabled=""
+        type="button"
       >
-        7
-      </div>
-      <div
-        class="Pagination__PaginationButtonStyled-x7juhx-1 jqbPMy"
+        14
+      </button>
+      <button
+        aria-current="true"
+        aria-label="Page 15"
+        class="Pagination__PaginationButtonStyled-x7juhx-1 dPDByT current-page"
+        disabled=""
+        type="button"
       >
-        8
-      </div>
-      <div
-        class="Pagination__PaginationButtonStyled-x7juhx-1 jqbPMy current-page"
+        15
+      </button>
+      <button
+        aria-label="Page 16"
+        class="Pagination__PaginationButtonStyled-x7juhx-1 dPDByT"
+        disabled=""
+        type="button"
       >
-        9
-      </div>
-      <div
-        class="Pagination__PaginationButtonStyled-x7juhx-1 jqbPMy"
+        16
+      </button>
+      <button
+        aria-label="Page 17"
+        class="Pagination__PaginationButtonStyled-x7juhx-1 dPDByT"
+        disabled=""
+        type="button"
       >
-        10
-      </div>
+        17
+      </button>
+      <button
+        aria-label="Page 18"
+        class="Pagination__PaginationButtonStyled-x7juhx-1 dPDByT"
+        disabled=""
+        type="button"
+      >
+        18
+      </button>
+      <button
+        class="PaginationSearch__PaginationSearchButtonStyled-rcir65-1 hwqpt group"
+        data-testid="PaginationSearchButton"
+        disabled=""
+        type="button"
+      >
+        <span
+          class="group-hover:invisible"
+        >
+          <span>
+            …
+          </span>
+        </span>
+        <span
+          class="absolute top-0 right-0 bottom-0 left-0 invisible group-hover:visible flex items-center justify-center"
+          data-testid="PaginationSearchButton__search"
+        >
+          <div
+            class="sc-bdfBwQ eRnpCh"
+            height="13"
+            width="13"
+          >
+            <svg>
+              search.svg
+            </svg>
+          </div>
+        </span>
+      </button>
     </div>
     <button
       class="OriginalButton__StyledButton-sc-1y2wptt-0 izJbbP"
@@ -483,7 +551,570 @@ exports[`Pagination should handle previous page click properly 1`] = `
         </div>
       </div>
     </button>
-  </div>
+    <button
+      class="OriginalButton__StyledButton-sc-1y2wptt-0 izJbbP"
+      data-testid="Pagination__last"
+      type="button"
+    >
+      <div
+        class="flex relative items-center space-x-2"
+      >
+        <div
+          class="sc-bdfBwQ fdfkzt"
+          height="12"
+          width="12"
+        >
+          <svg>
+            pagination-last.svg
+          </svg>
+        </div>
+      </div>
+    </button>
+  </nav>
+</DocumentFragment>
+`;
+
+exports[`Pagination should handle next page click properly 1`] = `
+<DocumentFragment>
+  <nav
+    class="Pagination__Wrapper-x7juhx-0 hbWMHF"
+    data-testid="Pagination"
+  >
+    <button
+      class="OriginalButton__StyledButton-sc-1y2wptt-0 izJbbP"
+      data-testid="Pagination__previous"
+      type="button"
+    >
+      <div
+        class="flex relative items-center space-x-2"
+      >
+        <div
+          class="sc-bdfBwQ TENjd mr-2"
+          height="10"
+          width="10"
+        >
+          <svg>
+            back.svg
+          </svg>
+        </div>
+        Previous
+      </div>
+    </button>
+    <div
+      class="flex relative px-2 rounded bg-theme-primary-100 dark:bg-theme-secondary-800"
+    >
+      <button
+        aria-label="Page 1"
+        class="Pagination__PaginationButtonStyled-x7juhx-1 dPDByT"
+        type="button"
+      >
+        1
+      </button>
+      <button
+        aria-current="true"
+        aria-label="Page 2"
+        class="Pagination__PaginationButtonStyled-x7juhx-1 dPDByT current-page"
+        type="button"
+      >
+        2
+      </button>
+      <button
+        aria-label="Page 3"
+        class="Pagination__PaginationButtonStyled-x7juhx-1 dPDByT"
+        type="button"
+      >
+        3
+      </button>
+    </div>
+    <button
+      class="OriginalButton__StyledButton-sc-1y2wptt-0 izJbbP"
+      data-testid="Pagination__next"
+      type="button"
+    >
+      <div
+        class="flex relative items-center space-x-2"
+      >
+        Next
+        <div
+          class="sc-bdfBwQ fdfkzt ml-2"
+          height="12"
+          width="12"
+        >
+          <svg>
+            forward.svg
+          </svg>
+        </div>
+      </div>
+    </button>
+  </nav>
+</DocumentFragment>
+`;
+
+exports[`Pagination should handle page selection properly 1`] = `
+<DocumentFragment>
+  <nav
+    class="Pagination__Wrapper-x7juhx-0 hbWMHF"
+    data-testid="Pagination"
+  >
+    <div
+      class="flex relative px-2 rounded bg-theme-primary-100 dark:bg-theme-secondary-800"
+    >
+      <button
+        aria-current="true"
+        aria-label="Page 1"
+        class="Pagination__PaginationButtonStyled-x7juhx-1 dPDByT current-page"
+        type="button"
+      >
+        1
+      </button>
+      <button
+        aria-label="Page 2"
+        class="Pagination__PaginationButtonStyled-x7juhx-1 dPDByT"
+        type="button"
+      >
+        2
+      </button>
+      <button
+        aria-label="Page 3"
+        class="Pagination__PaginationButtonStyled-x7juhx-1 dPDByT"
+        type="button"
+      >
+        3
+      </button>
+    </div>
+    <button
+      class="OriginalButton__StyledButton-sc-1y2wptt-0 izJbbP"
+      data-testid="Pagination__next"
+      type="button"
+    >
+      <div
+        class="flex relative items-center space-x-2"
+      >
+        Next
+        <div
+          class="sc-bdfBwQ fdfkzt ml-2"
+          height="12"
+          width="12"
+        >
+          <svg>
+            forward.svg
+          </svg>
+        </div>
+      </div>
+    </button>
+  </nav>
+</DocumentFragment>
+`;
+
+exports[`Pagination should handle previous page click properly 1`] = `
+<DocumentFragment>
+  <nav
+    class="Pagination__Wrapper-x7juhx-0 hbWMHF"
+    data-testid="Pagination"
+  >
+    <button
+      class="OriginalButton__StyledButton-sc-1y2wptt-0 izJbbP"
+      data-testid="Pagination__first"
+      type="button"
+    >
+      <div
+        class="flex relative items-center space-x-2"
+      >
+        <div
+          class="sc-bdfBwQ fdfkzt"
+          height="12"
+          width="12"
+        >
+          <svg>
+            pagination-first.svg
+          </svg>
+        </div>
+      </div>
+    </button>
+    <button
+      class="OriginalButton__StyledButton-sc-1y2wptt-0 izJbbP"
+      data-testid="Pagination__previous"
+      type="button"
+    >
+      <div
+        class="flex relative items-center space-x-2"
+      >
+        <div
+          class="sc-bdfBwQ TENjd mr-2"
+          height="10"
+          width="10"
+        >
+          <svg>
+            back.svg
+          </svg>
+        </div>
+        Previous
+      </div>
+    </button>
+    <div
+      class="flex relative px-2 rounded bg-theme-primary-100 dark:bg-theme-secondary-800"
+    >
+      <button
+        class="PaginationSearch__PaginationSearchButtonStyled-rcir65-1 hwqpt group"
+        data-testid="PaginationSearchButton"
+        type="button"
+      >
+        <span
+          class="group-hover:invisible"
+        >
+          <span>
+            …
+          </span>
+        </span>
+        <span
+          class="absolute top-0 right-0 bottom-0 left-0 invisible group-hover:visible flex items-center justify-center"
+          data-testid="PaginationSearchButton__search"
+        >
+          <div
+            class="sc-bdfBwQ eRnpCh"
+            height="13"
+            width="13"
+          >
+            <svg>
+              search.svg
+            </svg>
+          </div>
+        </span>
+      </button>
+      <button
+        aria-label="Page 4"
+        class="Pagination__PaginationButtonStyled-x7juhx-1 dPDByT"
+        type="button"
+      >
+        4
+      </button>
+      <button
+        aria-label="Page 5"
+        class="Pagination__PaginationButtonStyled-x7juhx-1 dPDByT"
+        type="button"
+      >
+        5
+      </button>
+      <button
+        aria-label="Page 6"
+        class="Pagination__PaginationButtonStyled-x7juhx-1 dPDByT"
+        type="button"
+      >
+        6
+      </button>
+      <button
+        aria-label="Page 7"
+        class="Pagination__PaginationButtonStyled-x7juhx-1 dPDByT"
+        type="button"
+      >
+        7
+      </button>
+      <button
+        aria-label="Page 8"
+        class="Pagination__PaginationButtonStyled-x7juhx-1 dPDByT"
+        type="button"
+      >
+        8
+      </button>
+      <button
+        aria-current="true"
+        aria-label="Page 9"
+        class="Pagination__PaginationButtonStyled-x7juhx-1 dPDByT current-page"
+        type="button"
+      >
+        9
+      </button>
+      <button
+        aria-label="Page 10"
+        class="Pagination__PaginationButtonStyled-x7juhx-1 dPDByT"
+        type="button"
+      >
+        10
+      </button>
+    </div>
+    <button
+      class="OriginalButton__StyledButton-sc-1y2wptt-0 izJbbP"
+      data-testid="Pagination__next"
+      type="button"
+    >
+      <div
+        class="flex relative items-center space-x-2"
+      >
+        Next
+        <div
+          class="sc-bdfBwQ fdfkzt ml-2"
+          height="12"
+          width="12"
+        >
+          <svg>
+            forward.svg
+          </svg>
+        </div>
+      </div>
+    </button>
+  </nav>
+</DocumentFragment>
+`;
+
+exports[`Pagination should handle right pagination search icon click properly 1`] = `
+<DocumentFragment>
+  <nav
+    class="Pagination__Wrapper-x7juhx-0 hbWMHF"
+    data-testid="Pagination"
+  >
+    <button
+      class="OriginalButton__StyledButton-sc-1y2wptt-0 izJbbP"
+      data-testid="Pagination__first"
+      type="button"
+    >
+      <div
+        class="flex relative items-center space-x-2"
+      >
+        <div
+          class="sc-bdfBwQ fdfkzt"
+          height="12"
+          width="12"
+        >
+          <svg>
+            pagination-first.svg
+          </svg>
+        </div>
+      </div>
+    </button>
+    <button
+      class="OriginalButton__StyledButton-sc-1y2wptt-0 izJbbP"
+      data-testid="Pagination__previous"
+      type="button"
+    >
+      <div
+        class="flex relative items-center space-x-2"
+      >
+        <div
+          class="sc-bdfBwQ TENjd mr-2"
+          height="10"
+          width="10"
+        >
+          <svg>
+            back.svg
+          </svg>
+        </div>
+        Previous
+      </div>
+    </button>
+    <div
+      class="flex relative px-2 rounded bg-theme-primary-100 dark:bg-theme-secondary-800"
+    >
+      <button
+        class="PaginationSearch__PaginationSearchButtonStyled-rcir65-1 hwqpt group"
+        data-testid="PaginationSearchButton"
+        disabled=""
+        type="button"
+      >
+        <span
+          class="group-hover:invisible"
+        >
+          <span>
+            …
+          </span>
+        </span>
+        <span
+          class="absolute top-0 right-0 bottom-0 left-0 invisible group-hover:visible flex items-center justify-center"
+          data-testid="PaginationSearchButton__search"
+        >
+          <div
+            class="sc-bdfBwQ eRnpCh"
+            height="13"
+            width="13"
+          >
+            <svg>
+              search.svg
+            </svg>
+          </div>
+        </span>
+      </button>
+      <button
+        aria-label="Page 12"
+        class="Pagination__PaginationButtonStyled-x7juhx-1 dPDByT"
+        disabled=""
+        type="button"
+      >
+        12
+      </button>
+      <button
+        aria-label="Page 13"
+        class="Pagination__PaginationButtonStyled-x7juhx-1 dPDByT"
+        disabled=""
+        type="button"
+      >
+        13
+      </button>
+      <button
+        aria-label="Page 14"
+        class="Pagination__PaginationButtonStyled-x7juhx-1 dPDByT"
+        disabled=""
+        type="button"
+      >
+        14
+      </button>
+      <button
+        aria-current="true"
+        aria-label="Page 15"
+        class="Pagination__PaginationButtonStyled-x7juhx-1 dPDByT current-page"
+        disabled=""
+        type="button"
+      >
+        15
+      </button>
+      <button
+        aria-label="Page 16"
+        class="Pagination__PaginationButtonStyled-x7juhx-1 dPDByT"
+        disabled=""
+        type="button"
+      >
+        16
+      </button>
+      <button
+        aria-label="Page 17"
+        class="Pagination__PaginationButtonStyled-x7juhx-1 dPDByT"
+        disabled=""
+        type="button"
+      >
+        17
+      </button>
+      <button
+        aria-label="Page 18"
+        class="Pagination__PaginationButtonStyled-x7juhx-1 dPDByT"
+        disabled=""
+        type="button"
+      >
+        18
+      </button>
+      <button
+        class="PaginationSearch__PaginationSearchButtonStyled-rcir65-1 hwqpt group"
+        data-testid="PaginationSearchButton"
+        disabled=""
+        type="button"
+      >
+        <span
+          class="group-hover:invisible"
+        >
+          <span>
+            …
+          </span>
+        </span>
+        <span
+          class="absolute top-0 right-0 bottom-0 left-0 invisible group-hover:visible flex items-center justify-center"
+          data-testid="PaginationSearchButton__search"
+        >
+          <div
+            class="sc-bdfBwQ eRnpCh"
+            height="13"
+            width="13"
+          >
+            <svg>
+              search.svg
+            </svg>
+          </div>
+        </span>
+      </button>
+      <span
+        class="PaginationSearch__PaginationSearchWrapperStyled-rcir65-0 jeiWbF"
+      >
+        <form
+          class="search-form"
+          data-testid="PaginationSearchForm"
+          name="searchForm"
+        >
+          <input
+            class="PaginationSearch__SearchInputStyled-rcir65-2 jFHLba"
+            data-testid="PaginationSearch__input"
+            max="30"
+            min="1"
+            name="page"
+            placeholder="Enter the page number"
+            type="number"
+          />
+          <button
+            class="OriginalButton__StyledButton-sc-1y2wptt-0 bLKcwq search-control"
+            data-testid="PaginationSearch__submit"
+            type="submit"
+          >
+            <div
+              class="flex relative items-center space-x-2"
+            >
+              <div
+                class="sc-bdfBwQ fPrsah"
+                height="1em"
+                width="1em"
+              >
+                <svg>
+                  search.svg
+                </svg>
+              </div>
+            </div>
+          </button>
+          <button
+            class="OriginalButton__StyledButton-sc-1y2wptt-0 bLKcwq search-control"
+            data-testid="PaginationSearch__cancel"
+            type="button"
+          >
+            <div
+              class="flex relative items-center space-x-2"
+            >
+              <div
+                class="sc-bdfBwQ fPrsah"
+                height="1em"
+                width="1em"
+              >
+                <svg>
+                  close.svg
+                </svg>
+              </div>
+            </div>
+          </button>
+        </form>
+      </span>
+    </div>
+    <button
+      class="OriginalButton__StyledButton-sc-1y2wptt-0 izJbbP"
+      data-testid="Pagination__next"
+      type="button"
+    >
+      <div
+        class="flex relative items-center space-x-2"
+      >
+        Next
+        <div
+          class="sc-bdfBwQ fdfkzt ml-2"
+          height="12"
+          width="12"
+        >
+          <svg>
+            forward.svg
+          </svg>
+        </div>
+      </div>
+    </button>
+    <button
+      class="OriginalButton__StyledButton-sc-1y2wptt-0 izJbbP"
+      data-testid="Pagination__last"
+      type="button"
+    >
+      <div
+        class="flex relative items-center space-x-2"
+      >
+        <div
+          class="sc-bdfBwQ fdfkzt"
+          height="12"
+          width="12"
+        >
+          <svg>
+            pagination-last.svg
+          </svg>
+        </div>
+      </div>
+    </button>
+  </nav>
 </DocumentFragment>
 `;
 
@@ -491,62 +1122,90 @@ exports[`Pagination should not render 1`] = `<DocumentFragment />`;
 
 exports[`Pagination should not render first button if pagination buttons include 1 (first page) 1`] = `
 <DocumentFragment>
-  <div
-    class="Pagination__Wrapper-x7juhx-0 klvluR"
+  <nav
+    class="Pagination__Wrapper-x7juhx-0 hbWMHF"
     data-testid="Pagination"
   >
     <div
       class="flex relative px-2 rounded bg-theme-primary-100 dark:bg-theme-secondary-800"
     >
-      <div
-        class="Pagination__PaginationButtonStyled-x7juhx-1 jqbPMy current-page"
+      <button
+        aria-current="true"
+        aria-label="Page 1"
+        class="Pagination__PaginationButtonStyled-x7juhx-1 dPDByT current-page"
+        type="button"
       >
         1
-      </div>
-      <div
-        class="Pagination__PaginationButtonStyled-x7juhx-1 jqbPMy"
+      </button>
+      <button
+        aria-label="Page 2"
+        class="Pagination__PaginationButtonStyled-x7juhx-1 dPDByT"
+        type="button"
       >
         2
-      </div>
-      <div
-        class="Pagination__PaginationButtonStyled-x7juhx-1 jqbPMy"
+      </button>
+      <button
+        aria-label="Page 3"
+        class="Pagination__PaginationButtonStyled-x7juhx-1 dPDByT"
+        type="button"
       >
         3
-      </div>
-      <div
-        class="Pagination__PaginationButtonStyled-x7juhx-1 jqbPMy"
+      </button>
+      <button
+        aria-label="Page 4"
+        class="Pagination__PaginationButtonStyled-x7juhx-1 dPDByT"
+        type="button"
       >
         4
-      </div>
-      <div
-        class="Pagination__PaginationButtonStyled-x7juhx-1 jqbPMy"
+      </button>
+      <button
+        aria-label="Page 5"
+        class="Pagination__PaginationButtonStyled-x7juhx-1 dPDByT"
+        type="button"
       >
         5
-      </div>
-      <div
-        class="Pagination__PaginationButtonStyled-x7juhx-1 jqbPMy"
+      </button>
+      <button
+        aria-label="Page 6"
+        class="Pagination__PaginationButtonStyled-x7juhx-1 dPDByT"
+        type="button"
       >
         6
-      </div>
-      <div
-        class="Pagination__PaginationButtonStyled-x7juhx-1 jqbPMy"
+      </button>
+      <button
+        aria-label="Page 7"
+        class="Pagination__PaginationButtonStyled-x7juhx-1 dPDByT"
+        type="button"
       >
         7
-      </div>
-      <div
-        class="PaginationSearch__PaginationSearchButtonStyled-rcir65-1 ftyWKb"
+      </button>
+      <button
+        class="PaginationSearch__PaginationSearchButtonStyled-rcir65-1 hwqpt group"
         data-testid="PaginationSearchButton"
+        type="button"
       >
         <span
-          data-testid="PaginationSearch__toggle"
+          class="group-hover:invisible"
         >
-           
           <span>
-            ...
+            …
           </span>
-           
         </span>
-      </div>
+        <span
+          class="absolute top-0 right-0 bottom-0 left-0 invisible group-hover:visible flex items-center justify-center"
+          data-testid="PaginationSearchButton__search"
+        >
+          <div
+            class="sc-bdfBwQ eRnpCh"
+            height="13"
+            width="13"
+          >
+            <svg>
+              search.svg
+            </svg>
+          </div>
+        </span>
+      </button>
     </div>
     <button
       class="OriginalButton__StyledButton-sc-1y2wptt-0 izJbbP"
@@ -587,14 +1246,14 @@ exports[`Pagination should not render first button if pagination buttons include
         </div>
       </div>
     </button>
-  </div>
+  </nav>
 </DocumentFragment>
 `;
 
 exports[`Pagination should not render first button if pagination buttons include 1 (second page) 1`] = `
 <DocumentFragment>
-  <div
-    class="Pagination__Wrapper-x7juhx-0 klvluR"
+  <nav
+    class="Pagination__Wrapper-x7juhx-0 hbWMHF"
     data-testid="Pagination"
   >
     <button
@@ -620,55 +1279,83 @@ exports[`Pagination should not render first button if pagination buttons include
     <div
       class="flex relative px-2 rounded bg-theme-primary-100 dark:bg-theme-secondary-800"
     >
-      <div
-        class="Pagination__PaginationButtonStyled-x7juhx-1 jqbPMy"
+      <button
+        aria-label="Page 1"
+        class="Pagination__PaginationButtonStyled-x7juhx-1 dPDByT"
+        type="button"
       >
         1
-      </div>
-      <div
-        class="Pagination__PaginationButtonStyled-x7juhx-1 jqbPMy current-page"
+      </button>
+      <button
+        aria-current="true"
+        aria-label="Page 2"
+        class="Pagination__PaginationButtonStyled-x7juhx-1 dPDByT current-page"
+        type="button"
       >
         2
-      </div>
-      <div
-        class="Pagination__PaginationButtonStyled-x7juhx-1 jqbPMy"
+      </button>
+      <button
+        aria-label="Page 3"
+        class="Pagination__PaginationButtonStyled-x7juhx-1 dPDByT"
+        type="button"
       >
         3
-      </div>
-      <div
-        class="Pagination__PaginationButtonStyled-x7juhx-1 jqbPMy"
+      </button>
+      <button
+        aria-label="Page 4"
+        class="Pagination__PaginationButtonStyled-x7juhx-1 dPDByT"
+        type="button"
       >
         4
-      </div>
-      <div
-        class="Pagination__PaginationButtonStyled-x7juhx-1 jqbPMy"
+      </button>
+      <button
+        aria-label="Page 5"
+        class="Pagination__PaginationButtonStyled-x7juhx-1 dPDByT"
+        type="button"
       >
         5
-      </div>
-      <div
-        class="Pagination__PaginationButtonStyled-x7juhx-1 jqbPMy"
+      </button>
+      <button
+        aria-label="Page 6"
+        class="Pagination__PaginationButtonStyled-x7juhx-1 dPDByT"
+        type="button"
       >
         6
-      </div>
-      <div
-        class="Pagination__PaginationButtonStyled-x7juhx-1 jqbPMy"
+      </button>
+      <button
+        aria-label="Page 7"
+        class="Pagination__PaginationButtonStyled-x7juhx-1 dPDByT"
+        type="button"
       >
         7
-      </div>
-      <div
-        class="PaginationSearch__PaginationSearchButtonStyled-rcir65-1 ftyWKb"
+      </button>
+      <button
+        class="PaginationSearch__PaginationSearchButtonStyled-rcir65-1 hwqpt group"
         data-testid="PaginationSearchButton"
+        type="button"
       >
         <span
-          data-testid="PaginationSearch__toggle"
+          class="group-hover:invisible"
         >
-           
           <span>
-            ...
+            …
           </span>
-           
         </span>
-      </div>
+        <span
+          class="absolute top-0 right-0 bottom-0 left-0 invisible group-hover:visible flex items-center justify-center"
+          data-testid="PaginationSearchButton__search"
+        >
+          <div
+            class="sc-bdfBwQ eRnpCh"
+            height="13"
+            width="13"
+          >
+            <svg>
+              search.svg
+            </svg>
+          </div>
+        </span>
+      </button>
     </div>
     <button
       class="OriginalButton__StyledButton-sc-1y2wptt-0 izJbbP"
@@ -709,14 +1396,14 @@ exports[`Pagination should not render first button if pagination buttons include
         </div>
       </div>
     </button>
-  </div>
+  </nav>
 </DocumentFragment>
 `;
 
 exports[`Pagination should not render first button if pagination buttons include 1 (third page) 1`] = `
 <DocumentFragment>
-  <div
-    class="Pagination__Wrapper-x7juhx-0 klvluR"
+  <nav
+    class="Pagination__Wrapper-x7juhx-0 hbWMHF"
     data-testid="Pagination"
   >
     <button
@@ -742,55 +1429,83 @@ exports[`Pagination should not render first button if pagination buttons include
     <div
       class="flex relative px-2 rounded bg-theme-primary-100 dark:bg-theme-secondary-800"
     >
-      <div
-        class="Pagination__PaginationButtonStyled-x7juhx-1 jqbPMy"
+      <button
+        aria-label="Page 1"
+        class="Pagination__PaginationButtonStyled-x7juhx-1 dPDByT"
+        type="button"
       >
         1
-      </div>
-      <div
-        class="Pagination__PaginationButtonStyled-x7juhx-1 jqbPMy"
+      </button>
+      <button
+        aria-label="Page 2"
+        class="Pagination__PaginationButtonStyled-x7juhx-1 dPDByT"
+        type="button"
       >
         2
-      </div>
-      <div
-        class="Pagination__PaginationButtonStyled-x7juhx-1 jqbPMy current-page"
+      </button>
+      <button
+        aria-current="true"
+        aria-label="Page 3"
+        class="Pagination__PaginationButtonStyled-x7juhx-1 dPDByT current-page"
+        type="button"
       >
         3
-      </div>
-      <div
-        class="Pagination__PaginationButtonStyled-x7juhx-1 jqbPMy"
+      </button>
+      <button
+        aria-label="Page 4"
+        class="Pagination__PaginationButtonStyled-x7juhx-1 dPDByT"
+        type="button"
       >
         4
-      </div>
-      <div
-        class="Pagination__PaginationButtonStyled-x7juhx-1 jqbPMy"
+      </button>
+      <button
+        aria-label="Page 5"
+        class="Pagination__PaginationButtonStyled-x7juhx-1 dPDByT"
+        type="button"
       >
         5
-      </div>
-      <div
-        class="Pagination__PaginationButtonStyled-x7juhx-1 jqbPMy"
+      </button>
+      <button
+        aria-label="Page 6"
+        class="Pagination__PaginationButtonStyled-x7juhx-1 dPDByT"
+        type="button"
       >
         6
-      </div>
-      <div
-        class="Pagination__PaginationButtonStyled-x7juhx-1 jqbPMy"
+      </button>
+      <button
+        aria-label="Page 7"
+        class="Pagination__PaginationButtonStyled-x7juhx-1 dPDByT"
+        type="button"
       >
         7
-      </div>
-      <div
-        class="PaginationSearch__PaginationSearchButtonStyled-rcir65-1 ftyWKb"
+      </button>
+      <button
+        class="PaginationSearch__PaginationSearchButtonStyled-rcir65-1 hwqpt group"
         data-testid="PaginationSearchButton"
+        type="button"
       >
         <span
-          data-testid="PaginationSearch__toggle"
+          class="group-hover:invisible"
         >
-           
           <span>
-            ...
+            …
           </span>
-           
         </span>
-      </div>
+        <span
+          class="absolute top-0 right-0 bottom-0 left-0 invisible group-hover:visible flex items-center justify-center"
+          data-testid="PaginationSearchButton__search"
+        >
+          <div
+            class="sc-bdfBwQ eRnpCh"
+            height="13"
+            width="13"
+          >
+            <svg>
+              search.svg
+            </svg>
+          </div>
+        </span>
+      </button>
     </div>
     <button
       class="OriginalButton__StyledButton-sc-1y2wptt-0 izJbbP"
@@ -831,14 +1546,14 @@ exports[`Pagination should not render first button if pagination buttons include
         </div>
       </div>
     </button>
-  </div>
+  </nav>
 </DocumentFragment>
 `;
 
 exports[`Pagination should not render first button if pagination buttons include the last page (last page) 1`] = `
 <DocumentFragment>
-  <div
-    class="Pagination__Wrapper-x7juhx-0 klvluR"
+  <nav
+    class="Pagination__Wrapper-x7juhx-0 hbWMHF"
     data-testid="Pagination"
   >
     <button
@@ -883,64 +1598,92 @@ exports[`Pagination should not render first button if pagination buttons include
     <div
       class="flex relative px-2 rounded bg-theme-primary-100 dark:bg-theme-secondary-800"
     >
-      <div
-        class="PaginationSearch__PaginationSearchButtonStyled-rcir65-1 ftyWKb"
+      <button
+        class="PaginationSearch__PaginationSearchButtonStyled-rcir65-1 hwqpt group"
         data-testid="PaginationSearchButton"
+        type="button"
       >
         <span
-          data-testid="PaginationSearch__toggle"
+          class="group-hover:invisible"
         >
-           
           <span>
-            ...
+            …
           </span>
-           
         </span>
-      </div>
-      <div
-        class="Pagination__PaginationButtonStyled-x7juhx-1 jqbPMy"
+        <span
+          class="absolute top-0 right-0 bottom-0 left-0 invisible group-hover:visible flex items-center justify-center"
+          data-testid="PaginationSearchButton__search"
+        >
+          <div
+            class="sc-bdfBwQ eRnpCh"
+            height="13"
+            width="13"
+          >
+            <svg>
+              search.svg
+            </svg>
+          </div>
+        </span>
+      </button>
+      <button
+        aria-label="Page 4"
+        class="Pagination__PaginationButtonStyled-x7juhx-1 dPDByT"
+        type="button"
       >
         4
-      </div>
-      <div
-        class="Pagination__PaginationButtonStyled-x7juhx-1 jqbPMy"
+      </button>
+      <button
+        aria-label="Page 5"
+        class="Pagination__PaginationButtonStyled-x7juhx-1 dPDByT"
+        type="button"
       >
         5
-      </div>
-      <div
-        class="Pagination__PaginationButtonStyled-x7juhx-1 jqbPMy"
+      </button>
+      <button
+        aria-label="Page 6"
+        class="Pagination__PaginationButtonStyled-x7juhx-1 dPDByT"
+        type="button"
       >
         6
-      </div>
-      <div
-        class="Pagination__PaginationButtonStyled-x7juhx-1 jqbPMy"
+      </button>
+      <button
+        aria-label="Page 7"
+        class="Pagination__PaginationButtonStyled-x7juhx-1 dPDByT"
+        type="button"
       >
         7
-      </div>
-      <div
-        class="Pagination__PaginationButtonStyled-x7juhx-1 jqbPMy"
+      </button>
+      <button
+        aria-label="Page 8"
+        class="Pagination__PaginationButtonStyled-x7juhx-1 dPDByT"
+        type="button"
       >
         8
-      </div>
-      <div
-        class="Pagination__PaginationButtonStyled-x7juhx-1 jqbPMy"
+      </button>
+      <button
+        aria-label="Page 9"
+        class="Pagination__PaginationButtonStyled-x7juhx-1 dPDByT"
+        type="button"
       >
         9
-      </div>
-      <div
-        class="Pagination__PaginationButtonStyled-x7juhx-1 jqbPMy current-page"
+      </button>
+      <button
+        aria-current="true"
+        aria-label="Page 10"
+        class="Pagination__PaginationButtonStyled-x7juhx-1 dPDByT current-page"
+        type="button"
       >
         10
-      </div>
+      </button>
     </div>
-  </div>
+  </nav>
 </DocumentFragment>
 `;
 
 exports[`Pagination should not render first button if pagination buttons include the last page (second-to-last page) 1`] = `
 <DocumentFragment>
-  <div
-    class="Pagination__Wrapper-x7juhx-0 klvluR"
+  <nav
+    class="Pagination__Wrapper-x7juhx-0 hbWMHF"
     data-testid="Pagination"
   >
     <button
@@ -985,55 +1728,83 @@ exports[`Pagination should not render first button if pagination buttons include
     <div
       class="flex relative px-2 rounded bg-theme-primary-100 dark:bg-theme-secondary-800"
     >
-      <div
-        class="PaginationSearch__PaginationSearchButtonStyled-rcir65-1 ftyWKb"
+      <button
+        class="PaginationSearch__PaginationSearchButtonStyled-rcir65-1 hwqpt group"
         data-testid="PaginationSearchButton"
+        type="button"
       >
         <span
-          data-testid="PaginationSearch__toggle"
+          class="group-hover:invisible"
         >
-           
           <span>
-            ...
+            …
           </span>
-           
         </span>
-      </div>
-      <div
-        class="Pagination__PaginationButtonStyled-x7juhx-1 jqbPMy"
+        <span
+          class="absolute top-0 right-0 bottom-0 left-0 invisible group-hover:visible flex items-center justify-center"
+          data-testid="PaginationSearchButton__search"
+        >
+          <div
+            class="sc-bdfBwQ eRnpCh"
+            height="13"
+            width="13"
+          >
+            <svg>
+              search.svg
+            </svg>
+          </div>
+        </span>
+      </button>
+      <button
+        aria-label="Page 4"
+        class="Pagination__PaginationButtonStyled-x7juhx-1 dPDByT"
+        type="button"
       >
         4
-      </div>
-      <div
-        class="Pagination__PaginationButtonStyled-x7juhx-1 jqbPMy"
+      </button>
+      <button
+        aria-label="Page 5"
+        class="Pagination__PaginationButtonStyled-x7juhx-1 dPDByT"
+        type="button"
       >
         5
-      </div>
-      <div
-        class="Pagination__PaginationButtonStyled-x7juhx-1 jqbPMy"
+      </button>
+      <button
+        aria-label="Page 6"
+        class="Pagination__PaginationButtonStyled-x7juhx-1 dPDByT"
+        type="button"
       >
         6
-      </div>
-      <div
-        class="Pagination__PaginationButtonStyled-x7juhx-1 jqbPMy"
+      </button>
+      <button
+        aria-label="Page 7"
+        class="Pagination__PaginationButtonStyled-x7juhx-1 dPDByT"
+        type="button"
       >
         7
-      </div>
-      <div
-        class="Pagination__PaginationButtonStyled-x7juhx-1 jqbPMy"
+      </button>
+      <button
+        aria-label="Page 8"
+        class="Pagination__PaginationButtonStyled-x7juhx-1 dPDByT"
+        type="button"
       >
         8
-      </div>
-      <div
-        class="Pagination__PaginationButtonStyled-x7juhx-1 jqbPMy current-page"
+      </button>
+      <button
+        aria-current="true"
+        aria-label="Page 9"
+        class="Pagination__PaginationButtonStyled-x7juhx-1 dPDByT current-page"
+        type="button"
       >
         9
-      </div>
-      <div
-        class="Pagination__PaginationButtonStyled-x7juhx-1 jqbPMy"
+      </button>
+      <button
+        aria-label="Page 10"
+        class="Pagination__PaginationButtonStyled-x7juhx-1 dPDByT"
+        type="button"
       >
         10
-      </div>
+      </button>
     </div>
     <button
       class="OriginalButton__StyledButton-sc-1y2wptt-0 izJbbP"
@@ -1055,14 +1826,14 @@ exports[`Pagination should not render first button if pagination buttons include
         </div>
       </div>
     </button>
-  </div>
+  </nav>
 </DocumentFragment>
 `;
 
 exports[`Pagination should not render first button if pagination buttons include the last page (third-to-last page) 1`] = `
 <DocumentFragment>
-  <div
-    class="Pagination__Wrapper-x7juhx-0 klvluR"
+  <nav
+    class="Pagination__Wrapper-x7juhx-0 hbWMHF"
     data-testid="Pagination"
   >
     <button
@@ -1107,55 +1878,83 @@ exports[`Pagination should not render first button if pagination buttons include
     <div
       class="flex relative px-2 rounded bg-theme-primary-100 dark:bg-theme-secondary-800"
     >
-      <div
-        class="PaginationSearch__PaginationSearchButtonStyled-rcir65-1 ftyWKb"
+      <button
+        class="PaginationSearch__PaginationSearchButtonStyled-rcir65-1 hwqpt group"
         data-testid="PaginationSearchButton"
+        type="button"
       >
         <span
-          data-testid="PaginationSearch__toggle"
+          class="group-hover:invisible"
         >
-           
           <span>
-            ...
+            …
           </span>
-           
         </span>
-      </div>
-      <div
-        class="Pagination__PaginationButtonStyled-x7juhx-1 jqbPMy"
+        <span
+          class="absolute top-0 right-0 bottom-0 left-0 invisible group-hover:visible flex items-center justify-center"
+          data-testid="PaginationSearchButton__search"
+        >
+          <div
+            class="sc-bdfBwQ eRnpCh"
+            height="13"
+            width="13"
+          >
+            <svg>
+              search.svg
+            </svg>
+          </div>
+        </span>
+      </button>
+      <button
+        aria-label="Page 4"
+        class="Pagination__PaginationButtonStyled-x7juhx-1 dPDByT"
+        type="button"
       >
         4
-      </div>
-      <div
-        class="Pagination__PaginationButtonStyled-x7juhx-1 jqbPMy"
+      </button>
+      <button
+        aria-label="Page 5"
+        class="Pagination__PaginationButtonStyled-x7juhx-1 dPDByT"
+        type="button"
       >
         5
-      </div>
-      <div
-        class="Pagination__PaginationButtonStyled-x7juhx-1 jqbPMy"
+      </button>
+      <button
+        aria-label="Page 6"
+        class="Pagination__PaginationButtonStyled-x7juhx-1 dPDByT"
+        type="button"
       >
         6
-      </div>
-      <div
-        class="Pagination__PaginationButtonStyled-x7juhx-1 jqbPMy"
+      </button>
+      <button
+        aria-label="Page 7"
+        class="Pagination__PaginationButtonStyled-x7juhx-1 dPDByT"
+        type="button"
       >
         7
-      </div>
-      <div
-        class="Pagination__PaginationButtonStyled-x7juhx-1 jqbPMy current-page"
+      </button>
+      <button
+        aria-current="true"
+        aria-label="Page 8"
+        class="Pagination__PaginationButtonStyled-x7juhx-1 dPDByT current-page"
+        type="button"
       >
         8
-      </div>
-      <div
-        class="Pagination__PaginationButtonStyled-x7juhx-1 jqbPMy"
+      </button>
+      <button
+        aria-label="Page 9"
+        class="Pagination__PaginationButtonStyled-x7juhx-1 dPDByT"
+        type="button"
       >
         9
-      </div>
-      <div
-        class="Pagination__PaginationButtonStyled-x7juhx-1 jqbPMy"
+      </button>
+      <button
+        aria-label="Page 10"
+        class="Pagination__PaginationButtonStyled-x7juhx-1 dPDByT"
+        type="button"
       >
         10
-      </div>
+      </button>
     </div>
     <button
       class="OriginalButton__StyledButton-sc-1y2wptt-0 izJbbP"
@@ -1177,14 +1976,14 @@ exports[`Pagination should not render first button if pagination buttons include
         </div>
       </div>
     </button>
-  </div>
+  </nav>
 </DocumentFragment>
 `;
 
 exports[`Pagination should not render next button on last page 1`] = `
 <DocumentFragment>
-  <div
-    class="Pagination__Wrapper-x7juhx-0 klvluR"
+  <nav
+    class="Pagination__Wrapper-x7juhx-0 hbWMHF"
     data-testid="Pagination"
   >
     <button
@@ -1229,118 +2028,174 @@ exports[`Pagination should not render next button on last page 1`] = `
     <div
       class="flex relative px-2 rounded bg-theme-primary-100 dark:bg-theme-secondary-800"
     >
-      <div
-        class="PaginationSearch__PaginationSearchButtonStyled-rcir65-1 ftyWKb"
+      <button
+        class="PaginationSearch__PaginationSearchButtonStyled-rcir65-1 hwqpt group"
         data-testid="PaginationSearchButton"
+        type="button"
       >
         <span
-          data-testid="PaginationSearch__toggle"
+          class="group-hover:invisible"
         >
-           
           <span>
-            ...
+            …
           </span>
-           
         </span>
-      </div>
-      <div
-        class="Pagination__PaginationButtonStyled-x7juhx-1 jqbPMy"
+        <span
+          class="absolute top-0 right-0 bottom-0 left-0 invisible group-hover:visible flex items-center justify-center"
+          data-testid="PaginationSearchButton__search"
+        >
+          <div
+            class="sc-bdfBwQ eRnpCh"
+            height="13"
+            width="13"
+          >
+            <svg>
+              search.svg
+            </svg>
+          </div>
+        </span>
+      </button>
+      <button
+        aria-label="Page 4"
+        class="Pagination__PaginationButtonStyled-x7juhx-1 dPDByT"
+        type="button"
       >
         4
-      </div>
-      <div
-        class="Pagination__PaginationButtonStyled-x7juhx-1 jqbPMy"
+      </button>
+      <button
+        aria-label="Page 5"
+        class="Pagination__PaginationButtonStyled-x7juhx-1 dPDByT"
+        type="button"
       >
         5
-      </div>
-      <div
-        class="Pagination__PaginationButtonStyled-x7juhx-1 jqbPMy"
+      </button>
+      <button
+        aria-label="Page 6"
+        class="Pagination__PaginationButtonStyled-x7juhx-1 dPDByT"
+        type="button"
       >
         6
-      </div>
-      <div
-        class="Pagination__PaginationButtonStyled-x7juhx-1 jqbPMy"
+      </button>
+      <button
+        aria-label="Page 7"
+        class="Pagination__PaginationButtonStyled-x7juhx-1 dPDByT"
+        type="button"
       >
         7
-      </div>
-      <div
-        class="Pagination__PaginationButtonStyled-x7juhx-1 jqbPMy"
+      </button>
+      <button
+        aria-label="Page 8"
+        class="Pagination__PaginationButtonStyled-x7juhx-1 dPDByT"
+        type="button"
       >
         8
-      </div>
-      <div
-        class="Pagination__PaginationButtonStyled-x7juhx-1 jqbPMy"
+      </button>
+      <button
+        aria-label="Page 9"
+        class="Pagination__PaginationButtonStyled-x7juhx-1 dPDByT"
+        type="button"
       >
         9
-      </div>
-      <div
-        class="Pagination__PaginationButtonStyled-x7juhx-1 jqbPMy current-page"
+      </button>
+      <button
+        aria-current="true"
+        aria-label="Page 10"
+        class="Pagination__PaginationButtonStyled-x7juhx-1 dPDByT current-page"
+        type="button"
       >
         10
-      </div>
+      </button>
     </div>
-  </div>
+  </nav>
 </DocumentFragment>
 `;
 
 exports[`Pagination should not render previous buttons on first page 1`] = `
 <DocumentFragment>
-  <div
-    class="Pagination__Wrapper-x7juhx-0 klvluR"
+  <nav
+    class="Pagination__Wrapper-x7juhx-0 hbWMHF"
     data-testid="Pagination"
   >
     <div
       class="flex relative px-2 rounded bg-theme-primary-100 dark:bg-theme-secondary-800"
     >
-      <div
-        class="Pagination__PaginationButtonStyled-x7juhx-1 jqbPMy current-page"
+      <button
+        aria-current="true"
+        aria-label="Page 1"
+        class="Pagination__PaginationButtonStyled-x7juhx-1 dPDByT current-page"
+        type="button"
       >
         1
-      </div>
-      <div
-        class="Pagination__PaginationButtonStyled-x7juhx-1 jqbPMy"
+      </button>
+      <button
+        aria-label="Page 2"
+        class="Pagination__PaginationButtonStyled-x7juhx-1 dPDByT"
+        type="button"
       >
         2
-      </div>
-      <div
-        class="Pagination__PaginationButtonStyled-x7juhx-1 jqbPMy"
+      </button>
+      <button
+        aria-label="Page 3"
+        class="Pagination__PaginationButtonStyled-x7juhx-1 dPDByT"
+        type="button"
       >
         3
-      </div>
-      <div
-        class="Pagination__PaginationButtonStyled-x7juhx-1 jqbPMy"
+      </button>
+      <button
+        aria-label="Page 4"
+        class="Pagination__PaginationButtonStyled-x7juhx-1 dPDByT"
+        type="button"
       >
         4
-      </div>
-      <div
-        class="Pagination__PaginationButtonStyled-x7juhx-1 jqbPMy"
+      </button>
+      <button
+        aria-label="Page 5"
+        class="Pagination__PaginationButtonStyled-x7juhx-1 dPDByT"
+        type="button"
       >
         5
-      </div>
-      <div
-        class="Pagination__PaginationButtonStyled-x7juhx-1 jqbPMy"
+      </button>
+      <button
+        aria-label="Page 6"
+        class="Pagination__PaginationButtonStyled-x7juhx-1 dPDByT"
+        type="button"
       >
         6
-      </div>
-      <div
-        class="Pagination__PaginationButtonStyled-x7juhx-1 jqbPMy"
+      </button>
+      <button
+        aria-label="Page 7"
+        class="Pagination__PaginationButtonStyled-x7juhx-1 dPDByT"
+        type="button"
       >
         7
-      </div>
-      <div
-        class="PaginationSearch__PaginationSearchButtonStyled-rcir65-1 ftyWKb"
+      </button>
+      <button
+        class="PaginationSearch__PaginationSearchButtonStyled-rcir65-1 hwqpt group"
         data-testid="PaginationSearchButton"
+        type="button"
       >
         <span
-          data-testid="PaginationSearch__toggle"
+          class="group-hover:invisible"
         >
-           
           <span>
-            ...
+            …
           </span>
-           
         </span>
-      </div>
+        <span
+          class="absolute top-0 right-0 bottom-0 left-0 invisible group-hover:visible flex items-center justify-center"
+          data-testid="PaginationSearchButton__search"
+        >
+          <div
+            class="sc-bdfBwQ eRnpCh"
+            height="13"
+            width="13"
+          >
+            <svg>
+              search.svg
+            </svg>
+          </div>
+        </span>
+      </button>
     </div>
     <button
       class="OriginalButton__StyledButton-sc-1y2wptt-0 izJbbP"
@@ -1381,34 +2236,41 @@ exports[`Pagination should not render previous buttons on first page 1`] = `
         </div>
       </div>
     </button>
-  </div>
+  </nav>
 </DocumentFragment>
 `;
 
 exports[`Pagination should render 1`] = `
 <DocumentFragment>
-  <div
-    class="Pagination__Wrapper-x7juhx-0 klvluR"
+  <nav
+    class="Pagination__Wrapper-x7juhx-0 hbWMHF"
     data-testid="Pagination"
   >
     <div
       class="flex relative px-2 rounded bg-theme-primary-100 dark:bg-theme-secondary-800"
     >
-      <div
-        class="Pagination__PaginationButtonStyled-x7juhx-1 jqbPMy current-page"
+      <button
+        aria-current="true"
+        aria-label="Page 1"
+        class="Pagination__PaginationButtonStyled-x7juhx-1 dPDByT current-page"
+        type="button"
       >
         1
-      </div>
-      <div
-        class="Pagination__PaginationButtonStyled-x7juhx-1 jqbPMy"
+      </button>
+      <button
+        aria-label="Page 2"
+        class="Pagination__PaginationButtonStyled-x7juhx-1 dPDByT"
+        type="button"
       >
         2
-      </div>
-      <div
-        class="Pagination__PaginationButtonStyled-x7juhx-1 jqbPMy"
+      </button>
+      <button
+        aria-label="Page 3"
+        class="Pagination__PaginationButtonStyled-x7juhx-1 dPDByT"
+        type="button"
       >
         3
-      </div>
+      </button>
     </div>
     <button
       class="OriginalButton__StyledButton-sc-1y2wptt-0 izJbbP"
@@ -1430,24 +2292,19 @@ exports[`Pagination should render 1`] = `
         </div>
       </div>
     </button>
-  </div>
+  </nav>
 </DocumentFragment>
 `;
 
-exports[`Pagination should render condensed 1`] = `
+exports[`Pagination should render pagination search buttons 1`] = `
 <DocumentFragment>
-  <div
-    class="CompactPagination__Wrapper-sc-19zmly1-0 dfaxFN"
+  <nav
+    class="Pagination__Wrapper-x7juhx-0 hbWMHF"
     data-testid="Pagination"
   >
-    <div
-      class="flex items-center py-3 px-5 rounded bg-theme-primary-100 text-theme-primary-600"
-    >
-      Page 1 of 3
-    </div>
     <button
-      class="OriginalButton__StyledButton-sc-1y2wptt-0 izJbbP w-8"
-      data-testid="CompactPagination__next"
+      class="OriginalButton__StyledButton-sc-1y2wptt-0 izJbbP"
+      data-testid="Pagination__first"
       type="button"
     >
       <div
@@ -1459,14 +2316,162 @@ exports[`Pagination should render condensed 1`] = `
           width="12"
         >
           <svg>
+            pagination-first.svg
+          </svg>
+        </div>
+      </div>
+    </button>
+    <button
+      class="OriginalButton__StyledButton-sc-1y2wptt-0 izJbbP"
+      data-testid="Pagination__previous"
+      type="button"
+    >
+      <div
+        class="flex relative items-center space-x-2"
+      >
+        <div
+          class="sc-bdfBwQ TENjd mr-2"
+          height="10"
+          width="10"
+        >
+          <svg>
+            back.svg
+          </svg>
+        </div>
+        Previous
+      </div>
+    </button>
+    <div
+      class="flex relative px-2 rounded bg-theme-primary-100 dark:bg-theme-secondary-800"
+    >
+      <button
+        class="PaginationSearch__PaginationSearchButtonStyled-rcir65-1 hwqpt group"
+        data-testid="PaginationSearchButton"
+        type="button"
+      >
+        <span
+          class="group-hover:invisible"
+        >
+          <span>
+            …
+          </span>
+        </span>
+        <span
+          class="absolute top-0 right-0 bottom-0 left-0 invisible group-hover:visible flex items-center justify-center"
+          data-testid="PaginationSearchButton__search"
+        >
+          <div
+            class="sc-bdfBwQ eRnpCh"
+            height="13"
+            width="13"
+          >
+            <svg>
+              search.svg
+            </svg>
+          </div>
+        </span>
+      </button>
+      <button
+        aria-label="Page 2"
+        class="Pagination__PaginationButtonStyled-x7juhx-1 dPDByT"
+        type="button"
+      >
+        2
+      </button>
+      <button
+        aria-label="Page 3"
+        class="Pagination__PaginationButtonStyled-x7juhx-1 dPDByT"
+        type="button"
+      >
+        3
+      </button>
+      <button
+        aria-label="Page 4"
+        class="Pagination__PaginationButtonStyled-x7juhx-1 dPDByT"
+        type="button"
+      >
+        4
+      </button>
+      <button
+        aria-current="true"
+        aria-label="Page 5"
+        class="Pagination__PaginationButtonStyled-x7juhx-1 dPDByT current-page"
+        type="button"
+      >
+        5
+      </button>
+      <button
+        aria-label="Page 6"
+        class="Pagination__PaginationButtonStyled-x7juhx-1 dPDByT"
+        type="button"
+      >
+        6
+      </button>
+      <button
+        aria-label="Page 7"
+        class="Pagination__PaginationButtonStyled-x7juhx-1 dPDByT"
+        type="button"
+      >
+        7
+      </button>
+      <button
+        aria-label="Page 8"
+        class="Pagination__PaginationButtonStyled-x7juhx-1 dPDByT"
+        type="button"
+      >
+        8
+      </button>
+      <button
+        class="PaginationSearch__PaginationSearchButtonStyled-rcir65-1 hwqpt group"
+        data-testid="PaginationSearchButton"
+        type="button"
+      >
+        <span
+          class="group-hover:invisible"
+        >
+          <span>
+            …
+          </span>
+        </span>
+        <span
+          class="absolute top-0 right-0 bottom-0 left-0 invisible group-hover:visible flex items-center justify-center"
+          data-testid="PaginationSearchButton__search"
+        >
+          <div
+            class="sc-bdfBwQ eRnpCh"
+            height="13"
+            width="13"
+          >
+            <svg>
+              search.svg
+            </svg>
+          </div>
+        </span>
+      </button>
+    </div>
+    <button
+      class="OriginalButton__StyledButton-sc-1y2wptt-0 izJbbP"
+      data-testid="Pagination__next"
+      type="button"
+    >
+      <div
+        class="flex relative items-center space-x-2"
+      >
+        Next
+        <div
+          class="sc-bdfBwQ fdfkzt ml-2"
+          height="12"
+          width="12"
+        >
+          <svg>
             forward.svg
           </svg>
         </div>
       </div>
     </button>
     <button
-      class="OriginalButton__StyledButton-sc-1y2wptt-0 izJbbP w-8"
-      data-testid="CompactPagination__last"
+      class="OriginalButton__StyledButton-sc-1y2wptt-0 izJbbP"
+      data-testid="Pagination__last"
       type="button"
     >
       <div
@@ -1483,6 +2488,6 @@ exports[`Pagination should render condensed 1`] = `
         </div>
       </div>
     </button>
-  </div>
+  </nav>
 </DocumentFragment>
 `;
