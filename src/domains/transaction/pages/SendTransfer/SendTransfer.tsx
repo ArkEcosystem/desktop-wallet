@@ -86,7 +86,7 @@ export const SendTransfer = () => {
 	const { senderAddress, fees, fee, remainingBalance, amount, isSendAllSelected, network } = watch();
 	const { sendTransfer, common } = useValidation();
 
-	const { hasDeviceAvailable, isConnected } = useLedgerContext();
+	const { hasDeviceAvailable, isConnected, transport, connect } = useLedgerContext();
 
 	const [lastEstimatedExpiration, setLastEstimatedExpiration] = useState<number | undefined>();
 	const abortRef = useRef(new AbortController());
@@ -234,6 +234,11 @@ export const SendTransfer = () => {
 			if (expiration) {
 				transactionInput.data.expiration = parseInt(expiration);
 				setLastEstimatedExpiration(transactionInput.data.expiration);
+			}
+
+			if (activeWallet.isLedger()) {
+				await connect(profile, activeWallet.coinId(), activeWallet.networkId());
+				await activeWallet.ledger().connect(transport);
 			}
 
 			const abortSignal = abortRef.current?.signal;
