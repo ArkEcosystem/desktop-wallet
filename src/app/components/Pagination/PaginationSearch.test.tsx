@@ -6,43 +6,18 @@ import { PaginationSearch } from "./PaginationSearch";
 describe("PaginationSearch", () => {
 	it("should render", async () => {
 		const { asFragment, getByTestId } = render(
-			<PaginationSearch onSelectPage={jest.fn()} totalPages={5}>
+			<PaginationSearch onClick={jest.fn()} onSelectPage={jest.fn()} totalPages={5}>
 				<span data-testid="PaginationSearchToggle">...</span>
 			</PaginationSearch>,
 		);
 
 		await waitFor(() => expect(getByTestId("PaginationSearchToggle")).toBeInTheDocument());
 		expect(asFragment()).toMatchSnapshot();
-	});
-
-	it("should show search icon on hover", async () => {
-		const onSelect = jest.fn();
-
-		const { asFragment, getByTestId } = render(
-			<PaginationSearch onSelectPage={onSelect} totalPages={5}>
-				<span data-testid="PaginationSearchToggle">...</span>
-			</PaginationSearch>,
-		);
-
-		await waitFor(() => expect(getByTestId("PaginationSearchToggle")).toBeInTheDocument());
-		expect(asFragment()).toMatchSnapshot();
-
-		act(() => {
-			fireEvent.mouseEnter(getByTestId("PaginationSearchButton"));
-		});
-
-		await waitFor(() => expect(getByTestId("PaginationSearch__toggle-open")).toBeInTheDocument());
-
-		act(() => {
-			fireEvent.mouseLeave(getByTestId("PaginationSearchButton"));
-		});
-
-		await waitFor(() => expect(() => getByTestId("PaginationSearch__toggle-open")).toThrow());
 	});
 
 	it("should show pagination search input", async () => {
 		const { asFragment, getByTestId } = render(
-			<PaginationSearch onSelectPage={jest.fn()} totalPages={5}>
+			<PaginationSearch onClick={jest.fn()} onSelectPage={jest.fn()} totalPages={5}>
 				<span data-testid="PaginationSearchToggle">...</span>
 			</PaginationSearch>,
 		);
@@ -59,7 +34,7 @@ describe("PaginationSearch", () => {
 
 	it("should show search input and close", async () => {
 		const { asFragment, getByTestId } = render(
-			<PaginationSearch onSelectPage={jest.fn()} totalPages={5}>
+			<PaginationSearch onClick={jest.fn()} onSelectPage={jest.fn()} totalPages={5}>
 				<span data-testid="PaginationSearchToggle">...</span>
 			</PaginationSearch>,
 		);
@@ -84,7 +59,7 @@ describe("PaginationSearch", () => {
 		const onSelect = jest.fn();
 
 		const { asFragment, getByTestId } = render(
-			<PaginationSearch onSelectPage={onSelect} totalPages={5}>
+			<PaginationSearch onClick={jest.fn()} onSelectPage={onSelect} totalPages={5}>
 				<span data-testid="PaginationSearchToggle">...</span>
 			</PaginationSearch>,
 		);
@@ -121,7 +96,7 @@ describe("PaginationSearch", () => {
 		const onSelect = jest.fn();
 
 		const { asFragment, getByTestId } = render(
-			<PaginationSearch onSelectPage={onSelect} totalPages={5}>
+			<PaginationSearch onClick={jest.fn()} onSelectPage={onSelect} totalPages={5}>
 				<span data-testid="PaginationSearchToggle">...</span>
 			</PaginationSearch>,
 		);
@@ -158,7 +133,7 @@ describe("PaginationSearch", () => {
 		const onSelect = jest.fn();
 
 		const { asFragment, getByTestId } = render(
-			<PaginationSearch onSelectPage={onSelect} totalPages={5}>
+			<PaginationSearch onClick={jest.fn()} onSelectPage={onSelect} totalPages={5}>
 				<span data-testid="PaginationSearchToggle">...</span>
 			</PaginationSearch>,
 		);
@@ -183,7 +158,7 @@ describe("PaginationSearch", () => {
 		const onSelect = jest.fn();
 
 		const { asFragment, getByTestId } = render(
-			<PaginationSearch onSelectPage={onSelect} totalPages={5}>
+			<PaginationSearch onClick={jest.fn()} onSelectPage={onSelect} totalPages={5}>
 				<span data-testid="PaginationSearchToggle">...</span>
 			</PaginationSearch>,
 		);
@@ -220,7 +195,7 @@ describe("PaginationSearch", () => {
 		const onSelect = jest.fn();
 
 		const { asFragment, getByTestId } = render(
-			<PaginationSearch onSelectPage={onSelect}>
+			<PaginationSearch onClick={jest.fn()} onSelectPage={onSelect}>
 				<span data-testid="PaginationSearchToggle">...</span>
 			</PaginationSearch>,
 		);
@@ -253,7 +228,7 @@ describe("PaginationSearch", () => {
 		await waitFor(() => expect(onSelect).toHaveBeenCalledWith(100000000));
 	});
 
-	it("shoucd close search input if clicked outside", async () => {
+	it("should close search input if clicked outside", async () => {
 		const onSelect = jest.fn();
 
 		const { asFragment, getByTestId } = render(
@@ -261,7 +236,7 @@ describe("PaginationSearch", () => {
 				<div data-testid="somewhere-outside" className="p-4">
 					sample text
 				</div>
-				<PaginationSearch onSelectPage={onSelect}>
+				<PaginationSearch onClick={jest.fn()} onSelectPage={onSelect}>
 					<span data-testid="PaginationSearchToggle">...</span>
 				</PaginationSearch>
 				,
