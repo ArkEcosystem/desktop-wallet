@@ -53,7 +53,7 @@ export const PasswordSettings = ({ formConfig, onSuccess, onError }: SettingsPro
 				id="password-settings__form"
 				context={formConfig.context}
 				onSubmit={handleSubmit}
-				className="space-y-8"
+				className="space-y-5"
 			>
 				{usesPassword && (
 					<FormField name="currentPassword">

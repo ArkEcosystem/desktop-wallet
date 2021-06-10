@@ -68,43 +68,45 @@ export const FormStep = ({
 				defaultParticipants={participants}
 			/>
 
-			<FormField name="minParticipants">
-				<FormLabel>{t("TRANSACTION.MULTISIGNATURE.MIN_SIGNATURES")}</FormLabel>
-				<Input
-					data-testid="MultiSignatureRegistrationForm__min-participants"
-					type="number"
-					min={2}
-					max={minParticipantsLimit}
-					value={minParticipants ?? 0}
-					onChange={handleInput}
-					addons={{
-						end: (
-							<span
-								className={cn("pointer-events-none font-semibold text-sm", {
-									"text-theme-secondary-500 dark:text-theme-secondary-700": !errors?.minParticipants,
-								})}
-							>
-								{t("TRANSACTION.MULTISIGNATURE.OUT_OF_LENGTH", {
-									length: minParticipantsLimit,
-								})}
-							</span>
-						),
-					}}
-				/>
-			</FormField>
+			<div className="space-y-5">
+				<FormField name="minParticipants">
+					<FormLabel>{t("TRANSACTION.MULTISIGNATURE.MIN_SIGNATURES")}</FormLabel>
+					<Input
+						data-testid="MultiSignatureRegistrationForm__min-participants"
+						type="number"
+						min={2}
+						max={minParticipantsLimit}
+						value={minParticipants ?? 0}
+						onChange={handleInput}
+						addons={{
+							end: (
+								<span
+									className={cn("pointer-events-none font-semibold text-sm", {
+										"text-theme-secondary-500 dark:text-theme-secondary-700": !errors?.minParticipants,
+									})}
+								>
+									{t("TRANSACTION.MULTISIGNATURE.OUT_OF_LENGTH", {
+										length: minParticipantsLimit,
+									})}
+								</span>
+							),
+						}}
+					/>
+				</FormField>
 
-			<FormField name="fee">
-				<FormLabel label={t("TRANSACTION.TRANSACTION_FEE")} />
-				<InputFee
-					min={fees.min}
-					avg={fees.avg}
-					max={fees.max}
-					value={fee || 0}
-					step={step}
-					showFeeOptions={wallet.network().feeType() === "dynamic"}
-					onChange={(value) => setValue("fee", value, { shouldValidate: true, shouldDirty: true })}
-				/>
-			</FormField>
+				<FormField name="fee">
+					<FormLabel label={t("TRANSACTION.TRANSACTION_FEE")} />
+					<InputFee
+						min={fees.min}
+						avg={fees.avg}
+						max={fees.max}
+						value={fee || 0}
+						step={step}
+						showFeeOptions={wallet.network().feeType() === "dynamic"}
+						onChange={(value) => setValue("fee", value, { shouldValidate: true, shouldDirty: true })}
+					/>
+				</FormField>
+			</div>
 		</section>
 	);
 };
