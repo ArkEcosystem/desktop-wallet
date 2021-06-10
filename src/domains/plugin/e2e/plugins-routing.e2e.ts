@@ -6,27 +6,27 @@ import { goToPlugins } from "./common";
 
 const translations = buildTranslations();
 
-createFixture(`Plugins routing`).beforeEach(async (t) => await goToPlugins(t));
+createFixture("Plugins routing").beforeEach(async (t) => await goToPlugins(t));
 
 test("should navigate and apply filters", async (t) => {
 	// Filtering by game
-	await t.click(Selector("span").withExactText(translations.PLUGINS.PAGE_PLUGIN_MANAGER.VIEW.GAMING));
+	await t.click(Selector("button").withText(translations.PLUGINS.PAGE_PLUGIN_MANAGER.VIEW.GAMING));
 	await t.expect(Selector("h2").withExactText(translations.PLUGINS.PAGE_PLUGIN_MANAGER.VIEW.GAMING).exists).ok();
 
 	// Filtering by utility
-	await t.click(Selector("span").withExactText(translations.PLUGINS.PAGE_PLUGIN_MANAGER.VIEW.UTILITY));
+	await t.click(Selector("button").withText(translations.PLUGINS.PAGE_PLUGIN_MANAGER.VIEW.UTILITY));
 	await t.expect(Selector("h2").withExactText(translations.PLUGINS.PAGE_PLUGIN_MANAGER.VIEW.UTILITY).exists).ok();
 
 	// Filtering by exchanges
-	await t.click(Selector("span").withExactText(translations.PLUGINS.PAGE_PLUGIN_MANAGER.VIEW.EXCHANGE));
+	await t.click(Selector("button").withText(translations.PLUGINS.PAGE_PLUGIN_MANAGER.VIEW.EXCHANGE));
 	await t.expect(Selector("h2").withExactText(translations.PLUGINS.PAGE_PLUGIN_MANAGER.VIEW.EXCHANGE).exists).ok();
 
 	// Filtering by other
-	await t.click(Selector("span").withExactText(translations.PLUGINS.PAGE_PLUGIN_MANAGER.VIEW.OTHER));
+	await t.click(Selector("button").withText(translations.PLUGINS.PAGE_PLUGIN_MANAGER.VIEW.OTHER));
 	await t.expect(Selector("h2").withExactText(translations.PLUGINS.PAGE_PLUGIN_MANAGER.VIEW.OTHER).exists).ok();
 
 	// Filtering by user plugins
-	await t.click(Selector("span").withExactText(translations.PLUGINS.PAGE_PLUGIN_MANAGER.VIEW.MY_PLUGINS));
+	await t.click(Selector("button").withText(translations.PLUGINS.PAGE_PLUGIN_MANAGER.VIEW.MY_PLUGINS));
 	await t.expect(Selector("h2").withExactText(translations.PLUGINS.PAGE_PLUGIN_MANAGER.VIEW.MY_PLUGINS).exists).ok();
 });
 
