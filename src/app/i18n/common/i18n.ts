@@ -123,6 +123,7 @@ export const translations: { [key: string]: any } = {
 	NEXT: "Next",
 	NO: "No",
 	NOT: "not",
+	AVAILABLE: "Available",
 	NOT_AVAILABLE: "N/A",
 	OF: "of",
 	OFFICIAL: "Official",

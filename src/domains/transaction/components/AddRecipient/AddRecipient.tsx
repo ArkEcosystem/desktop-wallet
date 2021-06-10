@@ -283,7 +283,15 @@ export const AddRecipient = ({
 					</FormField>
 
 					<FormField name="amount">
-						<FormLabel label={t("COMMON.AMOUNT")} />
+						<FormLabel>
+							<span>{t("COMMON.AMOUNT")}</span>
+							{isSenderFilled && (
+								<span className="ml-1 text-theme-secondary-500 dark:text-theme-secondary-700">
+									{`(${t("COMMON.AVAILABLE")} ${maximumAmount?.toHuman()})`}
+								</span>
+							)}
+						</FormLabel>
+
 						<div className="flex space-x-2">
 							<div className="flex-1">
 								<InputCurrency
