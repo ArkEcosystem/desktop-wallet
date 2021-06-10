@@ -2,7 +2,7 @@ import tw, { css } from "twin.macro";
 
 export const PaginationSearchWrapper = css`
 	.search-form {
-		${tw`px-2 flex overflow-hidden absolute left-0 z-10 w-full h-full rounded bg-theme-primary-100 dark:bg-theme-secondary-800`}
+		${tw`px-2 flex absolute inset-0 z-10 rounded bg-theme-primary-100 dark:bg-theme-secondary-800`}
 	}
 
 	.search-control {
@@ -27,12 +27,16 @@ export const SearchInput = css`
 `;
 
 export const PaginationSearchToggleButton = css`
-	${tw`relative text-theme-primary-500 p-3 cursor-pointer flex flex-nowrap items-center dark:text-theme-secondary-200`}
+	${tw`relative text-theme-primary-500 p-2 cursor-pointer flex flex-nowrap items-center dark:text-theme-secondary-200`}
 
 	&:hover {
 		${tw`bg-theme-primary-600 text-white rounded`}
 		box-shadow: 2px 3px 10px 2px rgba(var(--theme-color-primary-rgb), 0.2);
 		transform: scale(1.1);
+	}
+
+	&:focus {
+		${tw`rounded outline-none ring-2 ring-theme-primary-400`}
 	}
 `;
 
@@ -48,6 +52,10 @@ export const PaginationButton = css`
 	&.current-page {
 		${tw`bg-theme-primary-200 dark:bg-theme-secondary-600 text-theme-primary-500 dark:text-theme-secondary-200`}
 	}
+
+	&:focus {
+		${tw`rounded outline-none ring-2 ring-theme-primary-400`}
+	}
 `;
 
 export const PaginationWrapper = css`
@@ -57,7 +65,7 @@ export const PaginationWrapper = css`
 		${tw``}
 	}
 
-	button {
+	& > button {
 		${tw`py-2 px-4`}
 	}
 `;
