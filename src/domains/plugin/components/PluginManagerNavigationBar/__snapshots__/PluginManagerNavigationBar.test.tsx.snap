@@ -4,7 +4,7 @@ exports[`PluginManagerNavigationBar should render 1`] = `
 <DocumentFragment>
   <div>
     <nav
-      class="PluginManagerNavigationBar__NavWrapper-sc-1x1q7te-0 ggmsTH sticky top-21 bg-theme-secondary-100 dark:bg-black my-4"
+      class="PluginManagerNavigationBar__NavWrapper-sc-1x1q7te-0 jJNecf sticky top-21 bg-theme-secondary-100 dark:bg-black my-4"
       data-testid="PluginManagerNavigationBar"
     >
       <div
@@ -18,10 +18,13 @@ exports[`PluginManagerNavigationBar should render 1`] = `
               class="flex"
             >
               <button
-                class="PluginManagerNavigationBar__item px-1 focus:outline-none lex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer active"
+                class="PluginManagerNavigationBar__item group active"
                 data-testid="PluginManagerNavigationBar__latest"
                 title="Latest"
               >
+                <div
+                  class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                />
                 <span>
                   Latest
                 </span>
@@ -34,10 +37,13 @@ exports[`PluginManagerNavigationBar should render 1`] = `
               class="flex"
             >
               <button
-                class="PluginManagerNavigationBar__item px-1 focus:outline-none lex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer "
+                class="PluginManagerNavigationBar__item group"
                 data-testid="PluginManagerNavigationBar__gaming"
                 title="Gaming"
               >
+                <div
+                  class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                />
                 <span>
                   Gaming
                 </span>
@@ -55,10 +61,13 @@ exports[`PluginManagerNavigationBar should render 1`] = `
               class="flex"
             >
               <button
-                class="PluginManagerNavigationBar__item px-1 focus:outline-none lex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer "
+                class="PluginManagerNavigationBar__item group"
                 data-testid="PluginManagerNavigationBar__utility"
                 title="Utility"
               >
+                <div
+                  class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                />
                 <span>
                   Utility
                 </span>
@@ -76,10 +85,13 @@ exports[`PluginManagerNavigationBar should render 1`] = `
               class="flex"
             >
               <button
-                class="PluginManagerNavigationBar__item px-1 focus:outline-none lex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer "
+                class="PluginManagerNavigationBar__item group"
                 data-testid="PluginManagerNavigationBar__exchange"
                 title="Exchange"
               >
+                <div
+                  class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                />
                 <span>
                   Exchange
                 </span>
@@ -97,10 +109,13 @@ exports[`PluginManagerNavigationBar should render 1`] = `
               class="flex"
             >
               <button
-                class="PluginManagerNavigationBar__item px-1 focus:outline-none lex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer "
+                class="PluginManagerNavigationBar__item group"
                 data-testid="PluginManagerNavigationBar__other"
                 title="Other"
               >
+                <div
+                  class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                />
                 <span>
                   Other
                 </span>
@@ -120,10 +135,13 @@ exports[`PluginManagerNavigationBar should render 1`] = `
             class="relative"
           >
             <button
-              class="PluginManagerNavigationBar__item h-full px-1 focus:outline-none flex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer "
+              class="PluginManagerNavigationBar__item group"
               data-testid="PluginManagerNavigationBar__my-plugins"
               title="My Plugins"
             >
+              <div
+                class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+              />
               <span>
                 My Plugins
               </span>
@@ -197,7 +215,7 @@ exports[`PluginManagerNavigationBar should update selected 1`] = `
 <DocumentFragment>
   <div>
     <nav
-      class="PluginManagerNavigationBar__NavWrapper-sc-1x1q7te-0 ggmsTH sticky top-21 bg-theme-secondary-100 dark:bg-black my-4"
+      class="PluginManagerNavigationBar__NavWrapper-sc-1x1q7te-0 jJNecf sticky top-21 bg-theme-secondary-100 dark:bg-black my-4"
       data-testid="PluginManagerNavigationBar"
     >
       <div
@@ -211,10 +229,13 @@ exports[`PluginManagerNavigationBar should update selected 1`] = `
               class="flex"
             >
               <button
-                class="PluginManagerNavigationBar__item px-1 focus:outline-none lex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer active"
+                class="PluginManagerNavigationBar__item group active"
                 data-testid="PluginManagerNavigationBar__latest"
                 title="Latest"
               >
+                <div
+                  class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                />
                 <span>
                   Latest
                 </span>
@@ -227,10 +248,13 @@ exports[`PluginManagerNavigationBar should update selected 1`] = `
               class="flex"
             >
               <button
-                class="PluginManagerNavigationBar__item px-1 focus:outline-none lex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer "
+                class="PluginManagerNavigationBar__item group"
                 data-testid="PluginManagerNavigationBar__gaming"
                 title="Gaming"
               >
+                <div
+                  class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                />
                 <span>
                   Gaming
                 </span>
@@ -248,10 +272,13 @@ exports[`PluginManagerNavigationBar should update selected 1`] = `
               class="flex"
             >
               <button
-                class="PluginManagerNavigationBar__item px-1 focus:outline-none lex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer "
+                class="PluginManagerNavigationBar__item group"
                 data-testid="PluginManagerNavigationBar__utility"
                 title="Utility"
               >
+                <div
+                  class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                />
                 <span>
                   Utility
                 </span>
@@ -269,10 +296,13 @@ exports[`PluginManagerNavigationBar should update selected 1`] = `
               class="flex"
             >
               <button
-                class="PluginManagerNavigationBar__item px-1 focus:outline-none lex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer "
+                class="PluginManagerNavigationBar__item group"
                 data-testid="PluginManagerNavigationBar__exchange"
                 title="Exchange"
               >
+                <div
+                  class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                />
                 <span>
                   Exchange
                 </span>
@@ -290,10 +320,13 @@ exports[`PluginManagerNavigationBar should update selected 1`] = `
               class="flex"
             >
               <button
-                class="PluginManagerNavigationBar__item px-1 focus:outline-none lex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer "
+                class="PluginManagerNavigationBar__item group"
                 data-testid="PluginManagerNavigationBar__other"
                 title="Other"
               >
+                <div
+                  class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                />
                 <span>
                   Other
                 </span>
@@ -313,10 +346,13 @@ exports[`PluginManagerNavigationBar should update selected 1`] = `
             class="relative"
           >
             <button
-              class="PluginManagerNavigationBar__item h-full px-1 focus:outline-none flex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer "
+              class="PluginManagerNavigationBar__item group"
               data-testid="PluginManagerNavigationBar__my-plugins"
               title="My Plugins"
             >
+              <div
+                class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+              />
               <span>
                 My Plugins
               </span>

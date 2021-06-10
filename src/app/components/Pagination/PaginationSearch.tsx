@@ -15,7 +15,7 @@ const PaginationSearchWrapperStyled = styled.span`
 	${PaginationSearchWrapper}
 `;
 
-export const PaginationSearchButtonStyled = styled.div`
+export const PaginationSearchButtonStyled = styled.button`
 	${PaginationSearchToggleButton}
 `;
 
@@ -25,9 +25,11 @@ export const SearchInputStyled = styled.input`
 
 export const PaginationSearchForm = ({ onClose, totalPages = Infinity, onSelectPage }: PaginationSearchFormProps) => {
 	const { t } = useTranslation();
-	const form = useForm({ mode: "onChange" });
 
-	const { page } = form.watch();
+	const form = useForm({ mode: "onChange" });
+	const { register, watch } = form;
+
+	const { page } = watch();
 
 	useEffect(() => {
 		if (BigNumber.make(page).isGreaterThan(totalPages)) {
@@ -61,7 +63,7 @@ export const PaginationSearchForm = ({ onClose, totalPages = Infinity, onSelectP
 				ref={ref}
 			>
 				<SearchInputStyled
-					ref={form.register}
+					ref={register}
 					type="number"
 					min="1"
 					max={totalPages}
@@ -95,31 +97,45 @@ export const PaginationSearchForm = ({ onClose, totalPages = Infinity, onSelectP
 	);
 };
 
-export const PaginationSearch = ({ children, onSelectPage, totalPages }: PaginationSearchProps) => {
-	const [isHovered, setIsHovered] = useState(false);
+export const PaginationSearch = ({
+	children,
+	onClick,
+	onSelectPage,
+	totalPages,
+	isDisabled,
+}: PaginationSearchProps) => {
 	const [isFormVisible, setIsFormVisible] = useState(false);
 
 	return (
 		<>
 			<PaginationSearchButtonStyled
 				data-testid="PaginationSearchButton"
-				onMouseLeave={() => setIsHovered(false)}
-				onMouseEnter={() => setIsHovered(true)}
-				onClick={() => setIsFormVisible(true)}
+				className="group"
+				type="button"
+				disabled={isDisabled}
+				onClick={(event) => {
+					onClick();
+					setIsFormVisible(true);
+					(event.currentTarget as HTMLButtonElement).blur();
+				}}
 			>
-				{!isHovered && <span data-testid="PaginationSearch__toggle"> {children} </span>}
+				<span className="group-hover:invisible">{children}</span>
 
-				{isHovered && (
-					<span data-testid="PaginationSearch__toggle-open">
-						<Icon width={13} height={13} name="Search" />
-					</span>
-				)}
+				<span
+					data-testid="PaginationSearchButton__search"
+					className="absolute top-0 right-0 bottom-0 left-0 invisible group-hover:visible flex items-center justify-center"
+				>
+					<Icon width={13} height={13} name="Search" />
+				</span>
 			</PaginationSearchButtonStyled>
 
 			{isFormVisible && (
 				<PaginationSearchForm
 					totalPages={totalPages}
-					onClose={() => setIsFormVisible(false)}
+					onClose={() => {
+						onSelectPage(undefined);
+						setIsFormVisible(false);
+					}}
 					onSelectPage={onSelectPage}
 				/>
 			)}
