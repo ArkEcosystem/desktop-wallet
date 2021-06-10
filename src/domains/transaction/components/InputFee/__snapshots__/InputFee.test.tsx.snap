@@ -232,6 +232,7 @@ exports[`should allow to input a value 1`] = `
           class="flex"
         >
           <input
+            checked=""
             class="Toggle__Input-qyyifx-0 WGuGL"
             type="checkbox"
           />
@@ -309,7 +310,7 @@ exports[`should allow to input a value 1`] = `
 </DocumentFragment>
 `;
 
-exports[`should render in simple view type by default 1`] = `
+exports[`should render 1`] = `
 <DocumentFragment>
   <div
     class="relative"

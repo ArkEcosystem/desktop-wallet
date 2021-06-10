@@ -212,7 +212,7 @@ describe("SendVote", () => {
 		expect(container).toMatchSnapshot();
 	});
 
-	it.only("should send a unvote & vote transaction", async () => {
+	it("should send a unvote & vote transaction", async () => {
 		const votesMock = jest.spyOn(wallet.voting(), "current").mockImplementation(() => [
 			new ReadOnlyWallet({
 				address: delegateData[1].address,
@@ -413,7 +413,7 @@ describe("SendVote", () => {
 		transactionMock.mockRestore();
 	});
 
-	it.only("should move back and forth between steps", async () => {
+	it("should move back and forth between steps", async () => {
 		const history = createMemoryHistory();
 		const voteURL = `/profiles/${fixtureProfileId}/wallets/${wallet.id()}/send-vote`;
 
@@ -506,8 +506,6 @@ describe("SendVote", () => {
 		expect(getByTestId("SendVote__form-step")).toBeTruthy();
 		await waitFor(() => expect(getByTestId("SendVote__form-step")).toHaveTextContent(delegateData[1].username));
 
-		await waitFor(() => expect(getByTestId("InputCurrency")).not.toHaveValue("0"));
-
 		await waitFor(() => expect(getByTestId("SendVote__button--continue")).not.toBeDisabled());
 		fireEvent.click(getByTestId("SendVote__button--continue"));
 
@@ -561,7 +559,7 @@ describe("SendVote", () => {
 			search: `?${params}`,
 		});
 
-		const { getByTestId } = renderWithRouter(
+		const { getByTestId, getByText } = renderWithRouter(
 			<Route path="/profiles/:profileId/wallets/:walletId/send-vote">
 				<LedgerProvider transport={transport}>
 					<SendVote />
@@ -577,6 +575,9 @@ describe("SendVote", () => {
 		await waitFor(() => expect(getByTestId("SendVote__form-step")).toHaveTextContent(delegateData[0].username));
 
 		// Fee
+		act(() => {
+			fireEvent.click(getByText(transactionTranslations.INPUT_FEE_VIEW_TYPE.ADVANCED));
+		});
 		fireEvent.change(getByTestId("InputCurrency"), { target: { value: "10" } });
 		expect(getByTestId("InputCurrency")).toHaveValue("10");
 
@@ -607,7 +608,7 @@ describe("SendVote", () => {
 			search: `?${params}`,
 		});
 
-		const { getByTestId } = renderWithRouter(
+		const { getByTestId, getByText } = renderWithRouter(
 			<Route path="/profiles/:profileId/wallets/:walletId/send-vote">
 				<LedgerProvider transport={transport}>
 					<SendVote />
@@ -623,6 +624,9 @@ describe("SendVote", () => {
 		await waitFor(() => expect(getByTestId("SendVote__form-step")).toHaveTextContent(delegateData[0].username));
 
 		// Fee
+		act(() => {
+			fireEvent.click(getByText(transactionTranslations.INPUT_FEE_VIEW_TYPE.ADVANCED));
+		});
 		fireEvent.change(getByTestId("InputCurrency"), { target: { value: "10" } });
 		expect(getByTestId("InputCurrency")).toHaveValue("10");
 
@@ -670,8 +674,6 @@ describe("SendVote", () => {
 
 		expect(getByTestId("SendVote__form-step")).toBeTruthy();
 		await waitFor(() => expect(getByTestId("SendVote__form-step")).toHaveTextContent(delegateData[0].username));
-
-		await waitFor(() => expect(getByTestId("InputCurrency")).not.toHaveValue("0"));
 
 		await waitFor(() => expect(getByTestId("SendVote__button--continue")).not.toBeDisabled());
 		fireEvent.click(getByTestId("SendVote__button--continue"));
@@ -724,8 +726,6 @@ describe("SendVote", () => {
 
 		expect(getByTestId("SendVote__form-step")).toBeTruthy();
 		await waitFor(() => expect(getByTestId("SendVote__form-step")).toHaveTextContent(delegateData[0].username));
-
-		await waitFor(() => expect(getByTestId("InputCurrency")).not.toHaveValue("0"));
 
 		await waitFor(() => expect(getByTestId("SendVote__button--continue")).not.toBeDisabled());
 		fireEvent.click(getByTestId("SendVote__button--continue"));
@@ -802,8 +802,6 @@ describe("SendVote", () => {
 
 		expect(getByTestId("SendVote__form-step")).toBeTruthy();
 		await waitFor(() => expect(getByTestId("SendVote__form-step")).toHaveTextContent(delegateData[1].username));
-
-		await waitFor(() => expect(getByTestId("InputCurrency")).not.toHaveValue("0"));
 
 		await waitFor(() => expect(getByTestId("SendVote__button--continue")).not.toBeDisabled());
 		fireEvent.click(getByTestId("SendVote__button--continue"));
@@ -909,8 +907,6 @@ describe("SendVote", () => {
 		expect(getByTestId("SendVote__form-step")).toBeTruthy();
 		await waitFor(() => expect(getByTestId("SendVote__form-step")).toHaveTextContent(delegateData[1].username));
 
-		await waitFor(() => expect(getByTestId("InputCurrency")).not.toHaveValue("0"));
-
 		await waitFor(() => expect(getByTestId("SendVote__button--continue")).not.toBeDisabled());
 		fireEvent.click(getByTestId("SendVote__button--continue"));
 
@@ -976,8 +972,6 @@ describe("SendVote", () => {
 
 		expect(getByTestId("SendVote__form-step")).toBeTruthy();
 		await waitFor(() => expect(getByTestId("SendVote__form-step")).toHaveTextContent(delegateData[0].username));
-
-		await waitFor(() => expect(getByTestId("InputCurrency")).not.toHaveValue("0"));
 
 		await waitFor(() => expect(getByTestId("SendVote__button--continue")).not.toBeDisabled());
 		fireEvent.click(getByTestId("SendVote__button--continue"));

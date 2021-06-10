@@ -31,6 +31,7 @@ export const GenerationStep = ({
 	// getValues does not get the value of `defaultValues` on first render
 	const [defaultFee] = useState(() => watch("fee"));
 	const fee = getValues("fee") || defaultFee;
+	const { inputFeeViewType } = watch();
 
 	useEffect(() => {
 		register("fee", common.fee(wallet.balance(), wallet.network()));
@@ -70,11 +71,15 @@ export const GenerationStep = ({
 						loading={!fees}
 						value={fee || 0}
 						step={step}
-						showFeeOptions={wallet.network().feeType() === "dynamic"}
+						disabled={wallet.network().feeType() !== "dynamic"}
 						network={wallet.network()}
 						profile={profile}
 						onChange={(value) => {
 							setValue("fee", value, { shouldValidate: true, shouldDirty: true });
+						}}
+						viewType={inputFeeViewType}
+						onChangeViewType={(value) => {
+							setValue("inputFeeViewType", value, { shouldDirty: true });
 						}}
 					/>
 				</FormField>

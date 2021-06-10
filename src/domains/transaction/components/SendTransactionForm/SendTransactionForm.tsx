@@ -36,7 +36,7 @@ export const SendTransactionForm = ({
 
 	const form = useFormContext();
 	const { getValues, setValue, watch } = form;
-	const { network, senderAddress, fee, fees } = watch();
+	const { network, senderAddress, fee, fees, inputFeeViewType } = watch();
 
 	useEffect(() => {
 		const setTransactionFees = async (network: Networks.Network) => {
@@ -142,11 +142,15 @@ export const SendTransactionForm = ({
 						loading={!fees}
 						value={fee}
 						step={0.01}
-						showFeeOptions={dynamicFees}
+						disabled={!dynamicFees}
 						network={network}
 						profile={profile}
 						onChange={(value) => {
 							setValue("fee", value, { shouldValidate: true, shouldDirty: true });
+						}}
+						viewType={inputFeeViewType}
+						onChangeViewType={(value) => {
+							setValue("inputFeeViewType", value, { shouldDirty: true });
 						}}
 					/>
 				</FormField>

@@ -1,4 +1,3 @@
-import cn from "classnames";
 import React from "react";
 import tw, { css, styled } from "twin.macro";
 
@@ -8,13 +7,14 @@ interface ButtonGroupProps {
 }
 
 export const ButtonGroup = ({ children, className }: ButtonGroupProps) => (
-	<div data-testid="ButtonGroup" role="radiogroup" className={cn("inline-flex items-center space-x-2", className)}>
+	<div data-testid="ButtonGroup" role="radiogroup" className={"w-full inline-flex items-center space-x-2"}>
 		{children}
 	</div>
 );
 
 const ButtonGroupOptionStyled = styled.button(() => [
-	tw`flex items-center px-5 h-full focus:outline-none font-semibold text-theme-secondary-700 `,
+	tw`flex items-center justify-center w-full h-full`,
+	tw`px-5 py-4 focus:outline-none font-semibold text-theme-secondary-700 `,
 	tw`rounded border-2 border-theme-primary-100`,
 	tw`transition-colors duration-300`,
 	tw`dark:(border-theme-secondary-800 text-theme-secondary-200)`,
@@ -25,8 +25,7 @@ const ButtonGroupOptionStyled = styled.button(() => [
 	)`,
 	css`
 		&[aria-checked="true"] {
-			${tw`border-theme-success-600 bg-theme-success-100 dark:bg-theme-success-900`}
-			${tw`text-theme-secondary-900`}
+			${tw`text-theme-text border-theme-success-600 bg-theme-success-100 dark:bg-theme-success-900`}
 		}
 	`,
 ]);
@@ -46,10 +45,8 @@ export const ButtonGroupOption = ({
 	isSelected,
 	setSelectedValue,
 	children,
-	className,
 }: ButtonGroupOptionProps) => (
 	<ButtonGroupOptionStyled
-		className={className}
 		disabled={disabled}
 		type="button"
 		data-testid="ButtonGroupOption"

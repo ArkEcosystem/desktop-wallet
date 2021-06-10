@@ -58,10 +58,9 @@ export const InputFeeSimple = ({
 	];
 
 	return (
-		<ButtonGroup className="w-full">
+		<ButtonGroup>
 			{options.map(({ label, value: optionValue, valueConverted }, index) => (
 				<ButtonGroupOption
-					className="w-full justify-center py-4"
 					key={index}
 					disabled={isDisabled(optionValue)}
 					value={optionValue}

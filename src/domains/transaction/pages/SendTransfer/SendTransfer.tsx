@@ -105,6 +105,7 @@ export const SendTransfer = () => {
 
 		register("remainingBalance");
 		register("isSendAllSelected");
+		register("inputFeeViewType");
 
 		register("suppressWarning");
 	}, [register, sendTransfer, common, fees, wallet, remainingBalance, amount, senderAddress]);

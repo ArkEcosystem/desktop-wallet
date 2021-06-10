@@ -34,6 +34,7 @@ export const FormStep = ({
 
 	const [defaultFee] = useState(() => watch("fee"));
 	const fee = getValues("fee") || defaultFee;
+	const { inputFeeViewType } = watch();
 
 	const { findByType } = useFees({ profile });
 
@@ -85,10 +86,12 @@ export const FormStep = ({
 					loading={!fees}
 					value={fee}
 					step={0.01}
-					showFeeOptions={senderWallet.network().feeType() === "dynamic"}
+					disabled={senderWallet.network().feeType() !== "dynamic"}
 					onChange={(value) => setValue("fee", value, { shouldValidate: true, shouldDirty: true })}
 					network={senderWallet.network()}
 					profile={profile}
+					viewType={inputFeeViewType}
+					onChangeViewType={(value) => setValue("inputFeeViewType", value, { shouldDirty: true })}
 				/>
 			</FormField>
 		</section>

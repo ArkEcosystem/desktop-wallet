@@ -1,6 +1,7 @@
 /* eslint-disable @typescript-eslint/require-await */
 import { Contracts } from "@arkecosystem/platform-sdk-profiles";
 import { BigNumber } from "@arkecosystem/platform-sdk-support";
+import { translations as transactionTranslations } from "domains/transaction/i18n";
 import { createMemoryHistory } from "history";
 import nock from "nock";
 import React from "react";
@@ -138,9 +139,14 @@ describe("Registration", () => {
 				fireEvent.change(input, { target: { value: "test_delegate" } });
 			});
 
-			await waitFor(() => expect(getByTestId("InputCurrency")).not.toHaveValue("0"));
 			const fees = within(getByTestId("InputFee")).getAllByTestId("ButtonGroupOption");
 			fireEvent.click(fees[1]);
+
+			act(() => {
+				fireEvent.click(
+					within(getByTestId("InputFee")).getByText(transactionTranslations.INPUT_FEE_VIEW_TYPE.ADVANCED),
+				);
+			});
 
 			expect(getByTestId("InputCurrency")).not.toHaveValue("0");
 			await waitFor(() => expect(getByTestId("Registration__continue-button")).not.toHaveAttribute("disabled"));
@@ -200,8 +206,19 @@ describe("Registration", () => {
 
 		await waitFor(() => expect(getByTestId("DelegateRegistrationForm__form-step")).toBeTruthy());
 
+		act(() => {
+			fireEvent.click(
+				within(getByTestId("InputFee")).getByText(transactionTranslations.INPUT_FEE_VIEW_TYPE.ADVANCED),
+			);
+		});
 		const feeInput = getByTestId("InputCurrency");
 		await waitFor(() => expect(feeInput).toHaveValue("25"));
+
+		act(() => {
+			fireEvent.click(
+				within(getByTestId("InputFee")).getByText(transactionTranslations.INPUT_FEE_VIEW_TYPE.SIMPLE),
+			);
+		});
 
 		act(() => {
 			fireEvent.click(getAllByTestId("ButtonGroupOption")[1]);
@@ -219,6 +236,11 @@ describe("Registration", () => {
 		expect(getByTestId("Input__username")).toHaveValue("test_delegate");
 
 		// Fee
+		act(() => {
+			fireEvent.click(
+				within(getByTestId("InputFee")).getByText(transactionTranslations.INPUT_FEE_VIEW_TYPE.ADVANCED),
+			);
+		});
 		fireEvent.change(getByTestId("InputCurrency"), { target: { value: "10" } });
 		expect(getByTestId("InputCurrency")).toHaveValue("10");
 
@@ -245,6 +267,11 @@ describe("Registration", () => {
 		expect(getByTestId("Input__username")).toHaveValue("test_delegate");
 
 		// Fee
+		act(() => {
+			fireEvent.click(
+				within(getByTestId("InputFee")).getByText(transactionTranslations.INPUT_FEE_VIEW_TYPE.ADVANCED),
+			);
+		});
 		fireEvent.change(getByTestId("InputCurrency"), { target: { value: "10" } });
 		expect(getByTestId("InputCurrency")).toHaveValue("10");
 

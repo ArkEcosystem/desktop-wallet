@@ -50,6 +50,7 @@ export const SendIpfs = () => {
 		register("hash", sendIpfs.hash());
 		register("fees");
 		register("fee", common.fee(activeWallet?.balance?.(), activeWallet?.network?.()));
+		register("inputFeeViewType");
 
 		setValue("senderAddress", activeWallet.address(), { shouldValidate: true, shouldDirty: true });
 

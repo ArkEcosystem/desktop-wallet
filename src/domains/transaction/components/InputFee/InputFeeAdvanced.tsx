@@ -7,7 +7,7 @@ interface Props {
 	min: string;
 	max: string;
 	step: number;
-	disabled: boolean;
+	disabled?: boolean;
 }
 
 export const InputFeeAdvanced = ({ onChange, value, min, max, step, disabled }: Props) => (

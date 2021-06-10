@@ -81,11 +81,16 @@ export const FormStep = ({ fees, wallet, step = 0.001, profile }: any) => {
 						loading={!fees}
 						value={fee}
 						step={step}
-						showFeeOptions={wallet.network().feeType() === "dynamic"}
+						disabled={wallet.network().feeType() !== "dynamic"}
 						network={wallet.network()}
 						profile={profile}
 						onChange={(value) => {
 							setValue("fee", value, { shouldValidate: true, shouldDirty: true });
+						}}
+						viewType={watch("inputFeeViewType")}
+						onChangeViewType={(value) => {
+							console.log("onChangeViewType", value);
+							setValue("inputFeeViewType", value, { shouldDirty: true });
 						}}
 					/>
 				</FormField>

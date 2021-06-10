@@ -2,7 +2,9 @@
 import { Contracts } from "@arkecosystem/platform-sdk";
 import { Contracts as ProfilesContracts } from "@arkecosystem/platform-sdk-profiles";
 import { BigNumber } from "@arkecosystem/platform-sdk-support";
+import { within } from "@testing-library/react";
 import { act, renderHook } from "@testing-library/react-hooks";
+import { translations } from "domains/transaction/i18n";
 import React from "react";
 import { FormProvider, useForm } from "react-hook-form";
 import delegateRegistrationFixture from "tests/fixtures/coins/ark/devnet/transactions/delegate-registration.json";
@@ -14,7 +16,6 @@ import {
 	RenderResult,
 	syncDelegates,
 	waitFor,
-	within,
 } from "utils/testing-library";
 
 import { DelegateRegistrationForm } from "./DelegateRegistrationForm";
@@ -118,14 +119,16 @@ describe("DelegateRegistrationForm", () => {
 		await waitFor(() => expect(asFragment()).toMatchSnapshot());
 	});
 
-	it("should set fee", async () => {
-		const { asFragment, getByTestId } = await renderComponent({ fee: "10" });
-
-		await waitFor(() => expect(getByTestId("InputCurrency")).toHaveValue("10"));
+	it.only("should set fee", async () => {
+		const { asFragment, getByTestId, getByText } = await renderComponent({ fee: "10" });
 
 		await act(async () => {
 			const fees = within(getByTestId("InputFee")).getAllByTestId("ButtonGroupOption");
 			fireEvent.click(fees[2]);
+		});
+
+		await act(async () => {
+			fireEvent.click(getByText(translations.INPUT_FEE_VIEW_TYPE.ADVANCED));
 		});
 
 		await waitFor(() => expect(getByTestId("InputCurrency")).toHaveValue("10"));

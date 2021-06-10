@@ -1,6 +1,7 @@
 /* eslint-disable @typescript-eslint/require-await */
 import { Contracts } from "@arkecosystem/platform-sdk-profiles";
 import { BigNumber } from "@arkecosystem/platform-sdk-support";
+import { translations as transactionTranslations } from "domains/transaction/i18n";
 import { createMemoryHistory } from "history";
 import React from "react";
 import { Route } from "react-router-dom";
@@ -85,11 +86,14 @@ describe("SendDelegateResignation", () => {
 		});
 
 		it("should change fee", async () => {
-			const { asFragment, getByTestId } = renderPage();
+			const { asFragment, getByTestId, getByText } = renderPage();
 
 			await waitFor(() => expect(getByTestId("SendDelegateResignation__form-step")).toBeTruthy());
 
 			// Fee
+			act(() => {
+				fireEvent.click(getByText(transactionTranslations.INPUT_FEE_VIEW_TYPE.ADVANCED));
+			});
 			act(() => {
 				fireEvent.input(getByTestId("InputCurrency"), { target: { value: "1" } });
 			});
@@ -162,11 +166,14 @@ describe("SendDelegateResignation", () => {
 		});
 
 		it("should return to form step by cancelling fee warning", async () => {
-			const { asFragment, getByTestId } = renderPage();
+			const { getByText, getByTestId } = renderPage();
 
 			await waitFor(() => expect(getByTestId("SendDelegateResignation__form-step")).toBeTruthy());
 
 			// Fee
+			act(() => {
+				fireEvent.click(getByText(transactionTranslations.INPUT_FEE_VIEW_TYPE.ADVANCED));
+			});
 			fireEvent.change(getByTestId("InputCurrency"), { target: { value: "30" } });
 			expect(getByTestId("InputCurrency")).toHaveValue("30");
 
@@ -185,11 +192,14 @@ describe("SendDelegateResignation", () => {
 		});
 
 		it("should proceed to authentication step by confirming fee warning", async () => {
-			const { asFragment, getByTestId } = renderPage();
+			const { getByText, getByTestId } = renderPage();
 
 			await waitFor(() => expect(getByTestId("SendDelegateResignation__form-step")).toBeTruthy());
 
 			// Fee
+			act(() => {
+				fireEvent.click(getByText(transactionTranslations.INPUT_FEE_VIEW_TYPE.ADVANCED));
+			});
 			fireEvent.change(getByTestId("InputCurrency"), { target: { value: "30" } });
 			expect(getByTestId("InputCurrency")).toHaveValue("30");
 

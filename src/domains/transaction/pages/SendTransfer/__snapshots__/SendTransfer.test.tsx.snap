@@ -894,13 +894,13 @@ exports[`SendTransfer should display disabled address selection input if selecte
                             </div>
                           </div>
                           <div
-                            class="inline-flex items-center space-x-2 w-full"
+                            class="w-full inline-flex items-center space-x-2"
                             data-testid="ButtonGroup"
                             role="radiogroup"
                           >
                             <button
                               aria-checked="false"
-                              class="ButtonGroup__ButtonGroupOptionStyled-sc-1u00raz-0 cJSYwe w-full justify-center py-4"
+                              class="ButtonGroup__ButtonGroupOptionStyled-sc-1u00raz-0 gXhvLe"
                               data-testid="ButtonGroupOption"
                               role="radio"
                               type="button"
@@ -920,7 +920,7 @@ exports[`SendTransfer should display disabled address selection input if selecte
                             </button>
                             <button
                               aria-checked="true"
-                              class="ButtonGroup__ButtonGroupOptionStyled-sc-1u00raz-0 cJSYwe w-full justify-center py-4"
+                              class="ButtonGroup__ButtonGroupOptionStyled-sc-1u00raz-0 gXhvLe"
                               data-testid="ButtonGroupOption"
                               role="radio"
                               type="button"
@@ -940,7 +940,7 @@ exports[`SendTransfer should display disabled address selection input if selecte
                             </button>
                             <button
                               aria-checked="false"
-                              class="ButtonGroup__ButtonGroupOptionStyled-sc-1u00raz-0 cJSYwe w-full justify-center py-4"
+                              class="ButtonGroup__ButtonGroupOptionStyled-sc-1u00raz-0 gXhvLe"
                               data-testid="ButtonGroupOption"
                               role="radio"
                               type="button"
@@ -2866,7 +2866,8 @@ exports[`SendTransfer should render 1st step with custom deeplink values and use
               class="flex items-center"
             >
               <span
-                class="Switch__SwitchText-sc-1fue7gg-0 jrkMzU"
+                class="Switch__SwitchText-sc-1fue7gg-0 ijSero"
+                disabled=""
                 role="button"
               >
                 Simple
@@ -2876,18 +2877,22 @@ exports[`SendTransfer should render 1st step with custom deeplink values and use
               >
                 <input
                   class="Toggle__Input-qyyifx-0 WGuGL"
+                  disabled=""
                   type="checkbox"
                 />
                 <div
-                  class="Toggle__Handle-qyyifx-1 geejDn"
+                  class="Toggle__Handle-qyyifx-1 jztkAY"
+                  disabled=""
                 >
                   <span
-                    class="Toggle__HandleInner-qyyifx-2 eSIhju"
+                    class="Toggle__HandleInner-qyyifx-2 iIyzPS"
+                    disabled=""
                   />
                 </div>
               </label>
               <span
-                class="Switch__SwitchText-sc-1fue7gg-0 khGGFd"
+                class="Switch__SwitchText-sc-1fue7gg-0 gQmLAx"
+                disabled=""
                 role="button"
               >
                 Advanced
@@ -2895,13 +2900,13 @@ exports[`SendTransfer should render 1st step with custom deeplink values and use
             </div>
           </div>
           <div
-            class="inline-flex items-center space-x-2 w-full"
+            class="w-full inline-flex items-center space-x-2"
             data-testid="ButtonGroup"
             role="radiogroup"
           >
             <button
               aria-checked="false"
-              class="ButtonGroup__ButtonGroupOptionStyled-sc-1u00raz-0 cJSYwe w-full justify-center py-4"
+              class="ButtonGroup__ButtonGroupOptionStyled-sc-1u00raz-0 gXhvLe"
               data-testid="ButtonGroupOption"
               disabled=""
               role="radio"
@@ -2930,7 +2935,7 @@ exports[`SendTransfer should render 1st step with custom deeplink values and use
             </button>
             <button
               aria-checked="false"
-              class="ButtonGroup__ButtonGroupOptionStyled-sc-1u00raz-0 cJSYwe w-full justify-center py-4"
+              class="ButtonGroup__ButtonGroupOptionStyled-sc-1u00raz-0 gXhvLe"
               data-testid="ButtonGroupOption"
               disabled=""
               role="radio"
@@ -2959,7 +2964,7 @@ exports[`SendTransfer should render 1st step with custom deeplink values and use
             </button>
             <button
               aria-checked="false"
-              class="ButtonGroup__ButtonGroupOptionStyled-sc-1u00raz-0 cJSYwe w-full justify-center py-4"
+              class="ButtonGroup__ButtonGroupOptionStyled-sc-1u00raz-0 gXhvLe"
               data-testid="ButtonGroupOption"
               disabled=""
               role="radio"
@@ -3933,13 +3938,13 @@ exports[`SendTransfer should render form and use location state 1`] = `
                             </div>
                           </div>
                           <div
-                            class="inline-flex items-center space-x-2 w-full"
+                            class="w-full inline-flex items-center space-x-2"
                             data-testid="ButtonGroup"
                             role="radiogroup"
                           >
                             <button
                               aria-checked="false"
-                              class="ButtonGroup__ButtonGroupOptionStyled-sc-1u00raz-0 cJSYwe w-full justify-center py-4"
+                              class="ButtonGroup__ButtonGroupOptionStyled-sc-1u00raz-0 gXhvLe"
                               data-testid="ButtonGroupOption"
                               role="radio"
                               type="button"
@@ -3959,7 +3964,7 @@ exports[`SendTransfer should render form and use location state 1`] = `
                             </button>
                             <button
                               aria-checked="true"
-                              class="ButtonGroup__ButtonGroupOptionStyled-sc-1u00raz-0 cJSYwe w-full justify-center py-4"
+                              class="ButtonGroup__ButtonGroupOptionStyled-sc-1u00raz-0 gXhvLe"
                               data-testid="ButtonGroupOption"
                               role="radio"
                               type="button"
@@ -3979,7 +3984,7 @@ exports[`SendTransfer should render form and use location state 1`] = `
                             </button>
                             <button
                               aria-checked="false"
-                              class="ButtonGroup__ButtonGroupOptionStyled-sc-1u00raz-0 cJSYwe w-full justify-center py-4"
+                              class="ButtonGroup__ButtonGroupOptionStyled-sc-1u00raz-0 gXhvLe"
                               data-testid="ButtonGroupOption"
                               role="radio"
                               type="button"
@@ -4968,13 +4973,13 @@ exports[`SendTransfer should render form and use location state without memo 1`]
                             </div>
                           </div>
                           <div
-                            class="inline-flex items-center space-x-2 w-full"
+                            class="w-full inline-flex items-center space-x-2"
                             data-testid="ButtonGroup"
                             role="radiogroup"
                           >
                             <button
                               aria-checked="false"
-                              class="ButtonGroup__ButtonGroupOptionStyled-sc-1u00raz-0 cJSYwe w-full justify-center py-4"
+                              class="ButtonGroup__ButtonGroupOptionStyled-sc-1u00raz-0 gXhvLe"
                               data-testid="ButtonGroupOption"
                               role="radio"
                               type="button"
@@ -4994,7 +4999,7 @@ exports[`SendTransfer should render form and use location state without memo 1`]
                             </button>
                             <button
                               aria-checked="true"
-                              class="ButtonGroup__ButtonGroupOptionStyled-sc-1u00raz-0 cJSYwe w-full justify-center py-4"
+                              class="ButtonGroup__ButtonGroupOptionStyled-sc-1u00raz-0 gXhvLe"
                               data-testid="ButtonGroupOption"
                               role="radio"
                               type="button"
@@ -5014,7 +5019,7 @@ exports[`SendTransfer should render form and use location state without memo 1`]
                             </button>
                             <button
                               aria-checked="false"
-                              class="ButtonGroup__ButtonGroupOptionStyled-sc-1u00raz-0 cJSYwe w-full justify-center py-4"
+                              class="ButtonGroup__ButtonGroupOptionStyled-sc-1u00raz-0 gXhvLe"
                               data-testid="ButtonGroupOption"
                               role="radio"
                               type="button"
@@ -5571,7 +5576,8 @@ exports[`SendTransfer should render form step 1`] = `
               class="flex items-center"
             >
               <span
-                class="Switch__SwitchText-sc-1fue7gg-0 jrkMzU"
+                class="Switch__SwitchText-sc-1fue7gg-0 ijSero"
+                disabled=""
                 role="button"
               >
                 Simple
@@ -5581,18 +5587,22 @@ exports[`SendTransfer should render form step 1`] = `
               >
                 <input
                   class="Toggle__Input-qyyifx-0 WGuGL"
+                  disabled=""
                   type="checkbox"
                 />
                 <div
-                  class="Toggle__Handle-qyyifx-1 geejDn"
+                  class="Toggle__Handle-qyyifx-1 jztkAY"
+                  disabled=""
                 >
                   <span
-                    class="Toggle__HandleInner-qyyifx-2 eSIhju"
+                    class="Toggle__HandleInner-qyyifx-2 iIyzPS"
+                    disabled=""
                   />
                 </div>
               </label>
               <span
-                class="Switch__SwitchText-sc-1fue7gg-0 khGGFd"
+                class="Switch__SwitchText-sc-1fue7gg-0 gQmLAx"
+                disabled=""
                 role="button"
               >
                 Advanced
@@ -5600,13 +5610,13 @@ exports[`SendTransfer should render form step 1`] = `
             </div>
           </div>
           <div
-            class="inline-flex items-center space-x-2 w-full"
+            class="w-full inline-flex items-center space-x-2"
             data-testid="ButtonGroup"
             role="radiogroup"
           >
             <button
               aria-checked="false"
-              class="ButtonGroup__ButtonGroupOptionStyled-sc-1u00raz-0 cJSYwe w-full justify-center py-4"
+              class="ButtonGroup__ButtonGroupOptionStyled-sc-1u00raz-0 gXhvLe"
               data-testid="ButtonGroupOption"
               disabled=""
               role="radio"
@@ -5635,7 +5645,7 @@ exports[`SendTransfer should render form step 1`] = `
             </button>
             <button
               aria-checked="false"
-              class="ButtonGroup__ButtonGroupOptionStyled-sc-1u00raz-0 cJSYwe w-full justify-center py-4"
+              class="ButtonGroup__ButtonGroupOptionStyled-sc-1u00raz-0 gXhvLe"
               data-testid="ButtonGroupOption"
               disabled=""
               role="radio"
@@ -5664,7 +5674,7 @@ exports[`SendTransfer should render form step 1`] = `
             </button>
             <button
               aria-checked="false"
-              class="ButtonGroup__ButtonGroupOptionStyled-sc-1u00raz-0 cJSYwe w-full justify-center py-4"
+              class="ButtonGroup__ButtonGroupOptionStyled-sc-1u00raz-0 gXhvLe"
               data-testid="ButtonGroupOption"
               disabled=""
               role="radio"
@@ -6195,7 +6205,8 @@ exports[`SendTransfer should render form step with deeplink values and use them 
               class="flex items-center"
             >
               <span
-                class="Switch__SwitchText-sc-1fue7gg-0 jrkMzU"
+                class="Switch__SwitchText-sc-1fue7gg-0 ijSero"
+                disabled=""
                 role="button"
               >
                 Simple
@@ -6205,18 +6216,22 @@ exports[`SendTransfer should render form step with deeplink values and use them 
               >
                 <input
                   class="Toggle__Input-qyyifx-0 WGuGL"
+                  disabled=""
                   type="checkbox"
                 />
                 <div
-                  class="Toggle__Handle-qyyifx-1 geejDn"
+                  class="Toggle__Handle-qyyifx-1 jztkAY"
+                  disabled=""
                 >
                   <span
-                    class="Toggle__HandleInner-qyyifx-2 eSIhju"
+                    class="Toggle__HandleInner-qyyifx-2 iIyzPS"
+                    disabled=""
                   />
                 </div>
               </label>
               <span
-                class="Switch__SwitchText-sc-1fue7gg-0 khGGFd"
+                class="Switch__SwitchText-sc-1fue7gg-0 gQmLAx"
+                disabled=""
                 role="button"
               >
                 Advanced
@@ -6224,13 +6239,13 @@ exports[`SendTransfer should render form step with deeplink values and use them 
             </div>
           </div>
           <div
-            class="inline-flex items-center space-x-2 w-full"
+            class="w-full inline-flex items-center space-x-2"
             data-testid="ButtonGroup"
             role="radiogroup"
           >
             <button
               aria-checked="false"
-              class="ButtonGroup__ButtonGroupOptionStyled-sc-1u00raz-0 cJSYwe w-full justify-center py-4"
+              class="ButtonGroup__ButtonGroupOptionStyled-sc-1u00raz-0 gXhvLe"
               data-testid="ButtonGroupOption"
               disabled=""
               role="radio"
@@ -6259,7 +6274,7 @@ exports[`SendTransfer should render form step with deeplink values and use them 
             </button>
             <button
               aria-checked="false"
-              class="ButtonGroup__ButtonGroupOptionStyled-sc-1u00raz-0 cJSYwe w-full justify-center py-4"
+              class="ButtonGroup__ButtonGroupOptionStyled-sc-1u00raz-0 gXhvLe"
               data-testid="ButtonGroupOption"
               disabled=""
               role="radio"
@@ -6288,7 +6303,7 @@ exports[`SendTransfer should render form step with deeplink values and use them 
             </button>
             <button
               aria-checked="false"
-              class="ButtonGroup__ButtonGroupOptionStyled-sc-1u00raz-0 cJSYwe w-full justify-center py-4"
+              class="ButtonGroup__ButtonGroupOptionStyled-sc-1u00raz-0 gXhvLe"
               data-testid="ButtonGroupOption"
               disabled=""
               role="radio"
@@ -6819,7 +6834,8 @@ exports[`SendTransfer should render form step without test networks 1`] = `
               class="flex items-center"
             >
               <span
-                class="Switch__SwitchText-sc-1fue7gg-0 jrkMzU"
+                class="Switch__SwitchText-sc-1fue7gg-0 ijSero"
+                disabled=""
                 role="button"
               >
                 Simple
@@ -6829,18 +6845,22 @@ exports[`SendTransfer should render form step without test networks 1`] = `
               >
                 <input
                   class="Toggle__Input-qyyifx-0 WGuGL"
+                  disabled=""
                   type="checkbox"
                 />
                 <div
-                  class="Toggle__Handle-qyyifx-1 geejDn"
+                  class="Toggle__Handle-qyyifx-1 jztkAY"
+                  disabled=""
                 >
                   <span
-                    class="Toggle__HandleInner-qyyifx-2 eSIhju"
+                    class="Toggle__HandleInner-qyyifx-2 iIyzPS"
+                    disabled=""
                   />
                 </div>
               </label>
               <span
-                class="Switch__SwitchText-sc-1fue7gg-0 khGGFd"
+                class="Switch__SwitchText-sc-1fue7gg-0 gQmLAx"
+                disabled=""
                 role="button"
               >
                 Advanced
@@ -6848,13 +6868,13 @@ exports[`SendTransfer should render form step without test networks 1`] = `
             </div>
           </div>
           <div
-            class="inline-flex items-center space-x-2 w-full"
+            class="w-full inline-flex items-center space-x-2"
             data-testid="ButtonGroup"
             role="radiogroup"
           >
             <button
               aria-checked="false"
-              class="ButtonGroup__ButtonGroupOptionStyled-sc-1u00raz-0 cJSYwe w-full justify-center py-4"
+              class="ButtonGroup__ButtonGroupOptionStyled-sc-1u00raz-0 gXhvLe"
               data-testid="ButtonGroupOption"
               disabled=""
               role="radio"
@@ -6883,7 +6903,7 @@ exports[`SendTransfer should render form step without test networks 1`] = `
             </button>
             <button
               aria-checked="false"
-              class="ButtonGroup__ButtonGroupOptionStyled-sc-1u00raz-0 cJSYwe w-full justify-center py-4"
+              class="ButtonGroup__ButtonGroupOptionStyled-sc-1u00raz-0 gXhvLe"
               data-testid="ButtonGroupOption"
               disabled=""
               role="radio"
@@ -6912,7 +6932,7 @@ exports[`SendTransfer should render form step without test networks 1`] = `
             </button>
             <button
               aria-checked="false"
-              class="ButtonGroup__ButtonGroupOptionStyled-sc-1u00raz-0 cJSYwe w-full justify-center py-4"
+              class="ButtonGroup__ButtonGroupOptionStyled-sc-1u00raz-0 gXhvLe"
               data-testid="ButtonGroupOption"
               disabled=""
               role="radio"
@@ -9092,13 +9112,13 @@ exports[`SendTransfer should select a cryptoasset and select sender without wall
                             </div>
                           </div>
                           <div
-                            class="inline-flex items-center space-x-2 w-full"
+                            class="w-full inline-flex items-center space-x-2"
                             data-testid="ButtonGroup"
                             role="radiogroup"
                           >
                             <button
                               aria-checked="false"
-                              class="ButtonGroup__ButtonGroupOptionStyled-sc-1u00raz-0 cJSYwe w-full justify-center py-4"
+                              class="ButtonGroup__ButtonGroupOptionStyled-sc-1u00raz-0 gXhvLe"
                               data-testid="ButtonGroupOption"
                               role="radio"
                               type="button"
@@ -9120,7 +9140,7 @@ exports[`SendTransfer should select a cryptoasset and select sender without wall
                             </button>
                             <button
                               aria-checked="true"
-                              class="ButtonGroup__ButtonGroupOptionStyled-sc-1u00raz-0 cJSYwe w-full justify-center py-4"
+                              class="ButtonGroup__ButtonGroupOptionStyled-sc-1u00raz-0 gXhvLe"
                               data-testid="ButtonGroupOption"
                               role="radio"
                               type="button"
@@ -9142,7 +9162,7 @@ exports[`SendTransfer should select a cryptoasset and select sender without wall
                             </button>
                             <button
                               aria-checked="false"
-                              class="ButtonGroup__ButtonGroupOptionStyled-sc-1u00raz-0 cJSYwe w-full justify-center py-4"
+                              class="ButtonGroup__ButtonGroupOptionStyled-sc-1u00raz-0 gXhvLe"
                               data-testid="ButtonGroupOption"
                               role="radio"
                               type="button"

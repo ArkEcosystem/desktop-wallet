@@ -522,21 +522,39 @@ describe("SendTransfer", () => {
 			fireEvent.click(sendAll);
 		});
 
-		// Fee
-		await waitFor(() => expect(getByTestId("InputCurrency")).not.toHaveValue("0"));
-
 		await act(async () => {
 			fireEvent.click(within(getByTestId("InputFee")).getByText(transactionTranslations.FEES.SLOW));
+			fireEvent.click(
+				within(getByTestId("InputFee")).getByText(transactionTranslations.INPUT_FEE_VIEW_TYPE.ADVANCED),
+			);
 		});
 		expect(getByTestId("InputCurrency")).toHaveValue("0.00357");
 
+		act(() => {
+			fireEvent.click(
+				within(getByTestId("InputFee")).getByText(transactionTranslations.INPUT_FEE_VIEW_TYPE.SIMPLE),
+			);
+		});
+
 		await act(async () => {
 			fireEvent.click(within(getByTestId("InputFee")).getByText(transactionTranslations.FEES.AVERAGE));
+			fireEvent.click(
+				within(getByTestId("InputFee")).getByText(transactionTranslations.INPUT_FEE_VIEW_TYPE.ADVANCED),
+			);
 		});
 		await waitFor(() => expect(getByTestId("InputCurrency")).toHaveValue("0.07320598"));
 
+		act(() => {
+			fireEvent.click(
+				within(getByTestId("InputFee")).getByText(transactionTranslations.INPUT_FEE_VIEW_TYPE.SIMPLE),
+			);
+		});
+
 		await act(async () => {
 			fireEvent.click(within(getByTestId("InputFee")).getByText(transactionTranslations.FEES.FAST));
+			fireEvent.click(
+				within(getByTestId("InputFee")).getByText(transactionTranslations.INPUT_FEE_VIEW_TYPE.ADVANCED),
+			);
 		});
 		expect(getByTestId("InputCurrency")).toHaveValue("0.1");
 	});
@@ -575,22 +593,41 @@ describe("SendTransfer", () => {
 		await waitFor(() => expect(getByTestId("AddRecipient__amount")).not.toHaveValue("0"));
 
 		// Fee
-		await waitFor(() => expect(getByTestId("InputCurrency")).not.toHaveValue("0"));
-
 		await act(async () => {
 			fireEvent.click(within(getByTestId("InputFee")).getByText(transactionTranslations.FEES.SLOW));
+			fireEvent.click(
+				within(getByTestId("InputFee")).getByText(transactionTranslations.INPUT_FEE_VIEW_TYPE.ADVANCED),
+			);
 		});
 		expect(getByTestId("InputCurrency")).toHaveValue("0.00357");
 
+		act(() => {
+			fireEvent.click(
+				within(getByTestId("InputFee")).getByText(transactionTranslations.INPUT_FEE_VIEW_TYPE.SIMPLE),
+			);
+		});
+
 		await act(async () => {
 			fireEvent.click(within(getByTestId("InputFee")).getByText(transactionTranslations.FEES.AVERAGE));
+			fireEvent.click(
+				within(getByTestId("InputFee")).getByText(transactionTranslations.INPUT_FEE_VIEW_TYPE.ADVANCED),
+			);
 		});
 		await waitFor(() => expect(getByTestId("InputCurrency")).toHaveValue("0.07320598"));
 
+		act(() => {
+			fireEvent.click(
+				within(getByTestId("InputFee")).getByText(transactionTranslations.INPUT_FEE_VIEW_TYPE.SIMPLE),
+			);
+		});
+
 		await act(async () => {
 			fireEvent.click(within(getByTestId("InputFee")).getByText(transactionTranslations.FEES.FAST));
+			fireEvent.click(
+				within(getByTestId("InputFee")).getByText(transactionTranslations.INPUT_FEE_VIEW_TYPE.ADVANCED),
+			);
 		});
-		// Fee
+
 		await act(async () => {
 			fireEvent.change(getByTestId("InputCurrency"), { target: { value: "1000000000" } });
 		});
@@ -657,9 +694,11 @@ describe("SendTransfer", () => {
 		await waitFor(() => expect(getByTestId("Input__smartbridge")).toHaveValue("test smartbridge"));
 
 		// Fee
-		await waitFor(() => expect(getByTestId("InputCurrency")).not.toHaveValue("0"));
 		await act(async () => {
 			fireEvent.click(within(getByTestId("InputFee")).getByText(transactionTranslations.FEES.SLOW));
+			fireEvent.click(
+				within(getByTestId("InputFee")).getByText(transactionTranslations.INPUT_FEE_VIEW_TYPE.ADVANCED),
+			);
 		});
 		expect(getByTestId("InputCurrency")).toHaveValue("0.00357");
 
@@ -798,9 +837,11 @@ describe("SendTransfer", () => {
 		await waitFor(() => expect(getByTestId("Input__smartbridge")).toHaveValue("test smartbridge"));
 
 		// Fee
-		await waitFor(() => expect(getByTestId("InputCurrency")).not.toHaveValue("0"));
 		await act(async () => {
 			fireEvent.click(within(getByTestId("InputFee")).getByText(transactionTranslations.FEES.SLOW));
+			fireEvent.click(
+				within(getByTestId("InputFee")).getByText(transactionTranslations.INPUT_FEE_VIEW_TYPE.ADVANCED),
+			);
 		});
 		expect(getByTestId("InputCurrency")).toHaveValue("0.00357");
 
@@ -921,9 +962,11 @@ describe("SendTransfer", () => {
 		await waitFor(() => expect(getByTestId("Input__smartbridge")).toHaveValue("test smartbridge"));
 
 		// Fee
-		await waitFor(() => expect(getByTestId("InputCurrency")).not.toHaveValue("0"));
 		await act(async () => {
 			fireEvent.click(within(getByTestId("InputFee")).getByText(transactionTranslations.FEES.SLOW));
+			fireEvent.click(
+				within(getByTestId("InputFee")).getByText(transactionTranslations.INPUT_FEE_VIEW_TYPE.ADVANCED),
+			);
 		});
 		expect(getByTestId("InputCurrency")).toHaveValue("0.00357");
 
@@ -1056,9 +1099,11 @@ describe("SendTransfer", () => {
 		await waitFor(() => expect(getByTestId("AddRecipient__amount")).not.toHaveValue("0"), { timeout: 4000 });
 
 		// Fee
-		await waitFor(() => expect(getByTestId("InputCurrency")).not.toHaveValue("0"));
 		await act(async () => {
 			fireEvent.click(within(getByTestId("InputFee")).getByText(transactionTranslations.FEES.SLOW));
+			fireEvent.click(
+				within(getByTestId("InputFee")).getByText(transactionTranslations.INPUT_FEE_VIEW_TYPE.ADVANCED),
+			);
 		});
 		expect(getByTestId("InputCurrency")).toHaveValue("0.00357");
 
@@ -1187,9 +1232,11 @@ describe("SendTransfer", () => {
 		expect(getByTestId("Input__smartbridge")).toHaveValue("test smartbridge");
 
 		// Fee
-		await waitFor(() => expect(getByTestId("InputCurrency")).not.toHaveValue("0"));
 		await act(async () => {
 			fireEvent.click(within(getByTestId("InputFee")).getByText(transactionTranslations.FEES.SLOW));
+			fireEvent.click(
+				within(getByTestId("InputFee")).getByText(transactionTranslations.INPUT_FEE_VIEW_TYPE.ADVANCED),
+			);
 		});
 		expect(getByTestId("InputCurrency")).toHaveValue("0.00357");
 
@@ -1265,6 +1312,11 @@ describe("SendTransfer", () => {
 		await waitFor(() => expect(getByTestId("Input__smartbridge")).toHaveValue("test smartbridge"));
 
 		// Fee
+		act(() => {
+			fireEvent.click(
+				within(getByTestId("InputFee")).getByText(transactionTranslations.INPUT_FEE_VIEW_TYPE.ADVANCED),
+			);
+		});
 		act(() => {
 			fireEvent.change(getByTestId("InputCurrency"), { target: { value: "" } });
 		});
@@ -1355,6 +1407,11 @@ describe("SendTransfer", () => {
 			await waitFor(() => expect(getByTestId("Input__smartbridge")).toHaveValue("test smartbridge"));
 
 			// Fee
+			act(() => {
+				fireEvent.click(
+					within(getByTestId("InputFee")).getByText(transactionTranslations.INPUT_FEE_VIEW_TYPE.ADVANCED),
+				);
+			});
 			act(() => {
 				fireEvent.change(getByTestId("InputCurrency"), { target: { value: "1" } });
 			});
@@ -1447,6 +1504,11 @@ describe("SendTransfer", () => {
 		await waitFor(() => expect(getByTestId("Input__smartbridge")).toHaveValue("test smartbridge"));
 
 		// Fee
+		act(() => {
+			fireEvent.click(
+				within(getByTestId("InputFee")).getByText(transactionTranslations.INPUT_FEE_VIEW_TYPE.ADVANCED),
+			);
+		});
 		act(() => {
 			fireEvent.change(getByTestId("InputCurrency"), { target: { value: fee } });
 		});
@@ -1567,9 +1629,11 @@ describe("SendTransfer", () => {
 		expect(getByTestId("Input__smartbridge")).toHaveValue("test smartbridge");
 
 		// Fee
-		await waitFor(() => expect(getByTestId("InputCurrency")).not.toHaveValue("0"));
 		await act(async () => {
 			fireEvent.click(within(getByTestId("InputFee")).getByText(transactionTranslations.FEES.SLOW));
+			fireEvent.click(
+				within(getByTestId("InputFee")).getByText(transactionTranslations.INPUT_FEE_VIEW_TYPE.ADVANCED),
+			);
 		});
 		expect(getByTestId("InputCurrency")).toHaveValue("0.00357");
 
@@ -1663,9 +1727,11 @@ describe("SendTransfer", () => {
 		expect(getByTestId("Input__smartbridge")).toHaveValue("test smartbridge");
 
 		// Fee
-		await waitFor(() => expect(getByTestId("InputCurrency")).not.toHaveValue("0"));
 		await act(async () => {
 			fireEvent.click(within(getByTestId("InputFee")).getByText(transactionTranslations.FEES.SLOW));
+			fireEvent.click(
+				within(getByTestId("InputFee")).getByText(transactionTranslations.INPUT_FEE_VIEW_TYPE.ADVANCED),
+			);
 		});
 		expect(getByTestId("InputCurrency")).toHaveValue("0.00357");
 
@@ -1801,9 +1867,11 @@ describe("SendTransfer", () => {
 		expect(getByTestId("Input__smartbridge")).toHaveValue("test smartbridge");
 
 		// Fee
-		await waitFor(() => expect(getByTestId("InputCurrency")).not.toHaveValue("0"));
 		await act(async () => {
 			fireEvent.click(within(getByTestId("InputFee")).getByText(transactionTranslations.FEES.SLOW));
+			fireEvent.click(
+				within(getByTestId("InputFee")).getByText(transactionTranslations.INPUT_FEE_VIEW_TYPE.ADVANCED),
+			);
 		});
 		expect(getByTestId("InputCurrency")).toHaveValue("0.00357");
 
@@ -2000,9 +2068,11 @@ describe("SendTransfer", () => {
 		await waitFor(() => expect(getByTestId("Input__smartbridge")).toHaveValue("test smartbridge"));
 
 		// Fee
-		await waitFor(() => expect(getByTestId("InputCurrency")).not.toHaveValue("0"));
 		await act(async () => {
 			fireEvent.click(within(getByTestId("InputFee")).getByText(transactionTranslations.FEES.SLOW));
+			fireEvent.click(
+				within(getByTestId("InputFee")).getByText(transactionTranslations.INPUT_FEE_VIEW_TYPE.ADVANCED),
+			);
 		});
 		expect(getByTestId("InputCurrency")).toHaveValue("0.00357");
 
@@ -2172,9 +2242,11 @@ describe("SendTransfer", () => {
 		await waitFor(() => expect(getByTestId("AddRecipient__amount")).toHaveValue("1"));
 
 		// enter fee
-		await waitFor(() => expect(getByTestId("InputCurrency")).not.toHaveValue("0"));
 		await act(async () => {
 			fireEvent.click(within(getByTestId("InputFee")).getByText(transactionTranslations.FEES.SLOW));
+			fireEvent.click(
+				within(getByTestId("InputFee")).getByText(transactionTranslations.INPUT_FEE_VIEW_TYPE.ADVANCED),
+			);
 		});
 		expect(getByTestId("InputCurrency")).toHaveValue("0.00357");
 		await waitFor(() => expect(getByTestId("SendTransfer__button--continue")).not.toBeDisabled());
@@ -2292,9 +2364,11 @@ describe("SendTransfer", () => {
 		await waitFor(() => expect(getByTestId("Input__smartbridge")).toHaveValue("test smartbridge"));
 
 		// Fee
-		await waitFor(() => expect(getByTestId("InputCurrency")).not.toHaveValue("0"));
 		await act(async () => {
 			fireEvent.click(within(getByTestId("InputFee")).getByText(transactionTranslations.FEES.SLOW));
+			fireEvent.click(
+				within(getByTestId("InputFee")).getByText(transactionTranslations.INPUT_FEE_VIEW_TYPE.ADVANCED),
+			);
 		});
 		expect(getByTestId("InputCurrency")).toHaveValue("0.00357");
 

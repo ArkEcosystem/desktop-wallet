@@ -47,6 +47,7 @@ export const FormStep = ({
 	// getValues does not get the value of `defaultValues` on first render
 	const [defaultFee] = useState(() => watch("fee"));
 	const fee = getValues("fee") || defaultFee;
+	const { inputFeeViewType } = watch();
 
 	useEffect(() => {
 		const setVoteFees = async (senderWallet: ProfilesContracts.IReadWriteWallet) => {
@@ -100,11 +101,15 @@ export const FormStep = ({
 						loading={!fees}
 						value={fee || 0}
 						step={0.01}
-						showFeeOptions={wallet.network().feeType() === "dynamic"}
+						disabled={wallet.network().feeType() !== "dynamic"}
 						network={wallet.network()}
 						profile={profile}
 						onChange={(value) => {
 							setValue("fee", value, { shouldValidate: true, shouldDirty: true });
+						}}
+						viewType={inputFeeViewType}
+						onChangeViewType={(value) => {
+							setValue("inputFeeViewType", value, { shouldDirty: true });
 						}}
 					/>
 				</FormField>

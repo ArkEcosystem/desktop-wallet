@@ -1,6 +1,6 @@
 import { Networks } from "@arkecosystem/platform-sdk";
 import { Contracts } from "@arkecosystem/platform-sdk-profiles";
-import { InputFee } from "domains/transaction/components/InputFee";
+import { InputFee, InputFeeViewType } from "domains/transaction/components/InputFee";
 import { describe } from "jest-circus";
 import React, { useState } from "react";
 import { act, env, fireEvent, render } from "utils/testing-library";
@@ -13,7 +13,8 @@ let defaultProps: any = {
 	avg: "0.456",
 	value: "0.3",
 	step: 0.001,
-	showFeeOptions: true,
+	disabled: false,
+	viewType: InputFeeViewType.Simple,
 };
 
 let network: Networks.Network;
@@ -28,6 +29,7 @@ describe("InputFee", () => {
 		defaultProps = {
 			...defaultProps,
 			onChange: jest.fn(),
+			onChangeViewType: jest.fn(),
 			network,
 			profile,
 		};
@@ -35,17 +37,31 @@ describe("InputFee", () => {
 		// eslint-disable-next-line react/display-name
 		Wrapper = () => {
 			const [value, setValue] = useState(defaultProps.value);
+			const [viewType, setViewType] = useState(defaultProps.viewType);
 
-			const handleChange = (val: string) => {
+			const handleChangeValue = (val: string) => {
 				setValue(val);
 				defaultProps.onChange(val);
 			};
 
-			return <InputFee {...defaultProps} value={value} onChange={handleChange} />;
+			const handleChangeViewType = (val: string) => {
+				setViewType(val);
+				defaultProps.onChangeViewType(val);
+			};
+
+			return (
+				<InputFee
+					{...defaultProps}
+					value={value}
+					onChange={handleChangeValue}
+					viewType={viewType}
+					onChangeViewType={handleChangeViewType}
+				/>
+			);
 		};
 	});
 
-	it("should render in simple view type by default", () => {
+	it("should render", () => {
 		const { asFragment, queryByTestId } = render(<InputFee {...defaultProps} />);
 
 		expect(queryByTestId("InputCurrency")).not.toBeInTheDocument();
@@ -54,12 +70,13 @@ describe("InputFee", () => {
 	});
 
 	it("should allow switching between simple and advanced view types", () => {
-		const { asFragment, queryByTestId, getByText } = render(<InputFee {...defaultProps} />);
+		const { asFragment, queryByTestId, getByText } = render(<Wrapper />);
 
 		act(() => {
 			fireEvent.click(getByText(transactionTranslations.INPUT_FEE_VIEW_TYPE.ADVANCED));
 		});
 
+		expect(defaultProps.onChangeViewType).toBeCalledWith(InputFeeViewType.Advanced);
 		expect(queryByTestId("InputCurrency")).toBeInTheDocument();
 		expect(queryByTestId("ButtonGroup")).not.toBeInTheDocument();
 		expect(asFragment()).toMatchSnapshot();
@@ -68,39 +85,33 @@ describe("InputFee", () => {
 			fireEvent.click(getByText(transactionTranslations.INPUT_FEE_VIEW_TYPE.SIMPLE));
 		});
 
+		expect(defaultProps.onChangeViewType).toBeCalledWith(InputFeeViewType.Simple);
 		expect(queryByTestId("InputCurrency")).not.toBeInTheDocument();
 		expect(queryByTestId("ButtonGroup")).toBeInTheDocument();
 		expect(asFragment()).toMatchSnapshot();
 	});
 
 	describe("simple view type", () => {
-		const options = [
-			{ text: transactionTranslations.FEES.SLOW, value: defaultProps.min },
-			{ text: transactionTranslations.FEES.AVERAGE, value: defaultProps.avg },
-			{ text: transactionTranslations.FEES.FAST, value: defaultProps.max },
-		];
-
-		it.each(options)("should update when clicking a simple option", (option) => {
+		it.each([
+			[transactionTranslations.FEES.SLOW, defaultProps.min],
+			[transactionTranslations.FEES.AVERAGE, defaultProps.avg],
+			[transactionTranslations.FEES.FAST, defaultProps.max],
+		])("should update when clicking %s", (optionText, optionValue) => {
 			const { asFragment, getByText } = render(<Wrapper />);
 
 			act(() => {
-				fireEvent.click(getByText(option.text));
+				fireEvent.click(getByText(optionText));
 			});
 
-			expect(defaultProps.onChange).toHaveBeenCalledWith(option.value);
+			expect(defaultProps.onChange).toHaveBeenCalledWith(optionValue);
 			expect(asFragment()).toMatchSnapshot();
 		});
 	});
 
 	describe("advanced view type", () => {
 		it("should allow to input a value", () => {
-			const { asFragment, getByText, getByTestId, queryByTestId } = render(<Wrapper />);
-
-			act(() => {
-				fireEvent.click(getByText(transactionTranslations.INPUT_FEE_VIEW_TYPE.ADVANCED));
-			});
-
-			expect(queryByTestId("InputCurrency")).toBeInTheDocument();
+			defaultProps.viewType = InputFeeViewType.Advanced;
+			const { asFragment, getByTestId } = render(<Wrapper />);
 
 			const inputEl = getByTestId("InputCurrency");
 
