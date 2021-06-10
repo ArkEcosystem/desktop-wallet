@@ -107,6 +107,7 @@ export const Transactions = memo(
 						className="mt-6"
 					/>
 				</div>
+
 				<Tabs
 					className="mb-8"
 					activeId={activeMode}

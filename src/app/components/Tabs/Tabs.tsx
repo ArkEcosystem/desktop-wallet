@@ -74,18 +74,19 @@ export const Tab = React.forwardRef<HTMLButtonElement, TabProps>((props: TabProp
 			}}
 			onClick={() => context?.setCurrentId(props.tabId)}
 		>
-			<div className="absolute inset-0 -mx-1 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible" />
+			<div className="absolute inset-0 -mx-3 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible" />
 			<span>{props.children}</span>
 		</TabButton>
 	);
 });
+
 Tab.displayName = "Tab";
 
 export const TabList = styled.div`
-	${tw`inline-flex justify-start items-stretch rounded-xl bg-theme-secondary-100 dark:bg-theme-secondary-background px-3`}
+	${tw`inline-flex justify-start items-stretch rounded-xl bg-theme-secondary-100 dark:bg-theme-secondary-background px-2`}
 
 	& > ${TabButton} {
-		${tw`px-4 mx-4 py-5 border-t-2 border-b-2 border-transparent font-semibold text-theme-secondary-text relative transition-colors ease-in-out duration-300 focus:(outline-none text-theme-text) hover:text-theme-text`}
+		${tw`mx-6 py-4 border-t-2 border-b-2 border-transparent font-semibold text-theme-secondary-text relative transition-colors ease-in-out duration-300 focus:(outline-none text-theme-text) hover:text-theme-text`}
 
 		&[aria-selected="true"] {
 			border-bottom-color: var(--theme-color-primary-600);
@@ -95,7 +96,7 @@ export const TabList = styled.div`
 		& + ${TabButton}:after {
 			content: "";
 			width: 1px;
-			${tw`h-4 bg-theme-secondary-400 dark:bg-theme-secondary-700 absolute -left-4 top-1/2 transform -translate-y-1/2 block`};
+			${tw`h-4 bg-theme-secondary-300 dark:bg-theme-secondary-800 absolute -left-6 top-1/2 transform -translate-y-1/2 block`};
 		}
 	}
 `;
