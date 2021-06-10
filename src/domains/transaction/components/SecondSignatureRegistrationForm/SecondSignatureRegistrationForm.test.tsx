@@ -69,12 +69,14 @@ describe("SecondSignatureRegistrationForm", () => {
 		const passphrase = "mock bip39 passphrase";
 		const bip39GenerateMock = jest.spyOn(BIP39, "generate").mockReturnValue(passphrase);
 
-		const { asFragment } = render(<Component form={result.current} onSubmit={() => void 0} activeTab={1} />);
+		act(() => {
+			const { asFragment } = render(<Component form={result.current} onSubmit={() => void 0} activeTab={1} />);
+			expect(asFragment()).toMatchSnapshot();
+		});
 
 		await waitFor(() => expect(result.current.getValues("secondMnemonic")).toEqual(passphrase));
 		await waitFor(() => expect(screen.getByTestId("SecondSignatureRegistrationForm__generation-step")));
 
-		expect(asFragment()).toMatchSnapshot();
 		bip39GenerateMock.mockRestore();
 	});
 
@@ -82,8 +84,11 @@ describe("SecondSignatureRegistrationForm", () => {
 		const { result } = renderHook(() => useForm());
 
 		result.current.register("fee");
+		result.current.register("inputFeeViewType");
 
-		render(<Component form={result.current} onSubmit={() => void 0} />);
+		act(() => {
+			render(<Component form={result.current} onSubmit={() => void 0} />);
+		});
 
 		act(() => {
 			fireEvent.click(screen.getByText(transactionTranslations.FEES.AVERAGE));

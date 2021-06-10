@@ -96,7 +96,7 @@ describe("InputFee", () => {
 			[transactionTranslations.FEES.SLOW, defaultProps.min],
 			[transactionTranslations.FEES.AVERAGE, defaultProps.avg],
 			[transactionTranslations.FEES.FAST, defaultProps.max],
-		])("should update when clicking %s", (optionText, optionValue) => {
+		])("should update value when clicking button %s", (optionText, optionValue) => {
 			const { asFragment, getByText } = render(<Wrapper />);
 
 			act(() => {
@@ -104,6 +104,15 @@ describe("InputFee", () => {
 			});
 
 			expect(defaultProps.onChange).toHaveBeenCalledWith(optionValue);
+			expect(asFragment()).toMatchSnapshot();
+		});
+
+		it("should display converted values when on live net", () => {
+			jest.spyOn(network, "isLive").mockReturnValueOnce(true);
+
+			const { asFragment, queryAllByTestId } = render(<Wrapper />);
+
+			expect(queryAllByTestId("Amount")).toHaveLength(3);
 			expect(asFragment()).toMatchSnapshot();
 		});
 	});
