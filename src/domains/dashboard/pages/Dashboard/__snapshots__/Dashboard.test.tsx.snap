@@ -862,28 +862,52 @@ exports[`Dashboard should render 1`] = `
             class="mb-8"
           >
             <div
-              class="Tabs__TabList-sc-1lxyvu-1 jCqqnd w-full"
+              class="Tabs__TabList-sc-1lxyvu-1 edtiGn w-full"
             >
               <button
                 aria-selected="true"
-                class="Tabs__TabButton-sc-1lxyvu-0"
+                class="Tabs__TabButton-sc-1lxyvu-0 group"
                 data-testid="tabs__tab-button-all"
+                role="tab"
+                tabindex="0"
+                type="button"
               >
-                All
+                <div
+                  class="absolute inset-0 -mx-1 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                />
+                <span>
+                  All
+                </span>
               </button>
               <button
                 aria-selected="false"
-                class="Tabs__TabButton-sc-1lxyvu-0"
+                class="Tabs__TabButton-sc-1lxyvu-0 group"
                 data-testid="tabs__tab-button-received"
+                role="tab"
+                tabindex="-1"
+                type="button"
               >
-                Incoming
+                <div
+                  class="absolute inset-0 -mx-1 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                />
+                <span>
+                  Incoming
+                </span>
               </button>
               <button
                 aria-selected="false"
-                class="Tabs__TabButton-sc-1lxyvu-0"
+                class="Tabs__TabButton-sc-1lxyvu-0 group"
                 data-testid="tabs__tab-button-sent"
+                role="tab"
+                tabindex="-1"
+                type="button"
               >
-                Outgoing
+                <div
+                  class="absolute inset-0 -mx-1 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                />
+                <span>
+                  Outgoing
+                </span>
               </button>
             </div>
           </div>
@@ -2566,28 +2590,52 @@ exports[`Dashboard should render loading state when profile is syncing 1`] = `
             class="mb-8"
           >
             <div
-              class="Tabs__TabList-sc-1lxyvu-1 jCqqnd w-full"
+              class="Tabs__TabList-sc-1lxyvu-1 edtiGn w-full"
             >
               <button
                 aria-selected="false"
-                class="Tabs__TabButton-sc-1lxyvu-0"
+                class="Tabs__TabButton-sc-1lxyvu-0 group"
                 data-testid="tabs__tab-button-all"
+                role="tab"
+                tabindex="-1"
+                type="button"
               >
-                All
+                <div
+                  class="absolute inset-0 -mx-1 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                />
+                <span>
+                  All
+                </span>
               </button>
               <button
                 aria-selected="false"
-                class="Tabs__TabButton-sc-1lxyvu-0"
+                class="Tabs__TabButton-sc-1lxyvu-0 group"
                 data-testid="tabs__tab-button-received"
+                role="tab"
+                tabindex="-1"
+                type="button"
               >
-                Incoming
+                <div
+                  class="absolute inset-0 -mx-1 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                />
+                <span>
+                  Incoming
+                </span>
               </button>
               <button
                 aria-selected="false"
-                class="Tabs__TabButton-sc-1lxyvu-0"
+                class="Tabs__TabButton-sc-1lxyvu-0 group"
                 data-testid="tabs__tab-button-sent"
+                role="tab"
+                tabindex="-1"
+                type="button"
               >
-                Outgoing
+                <div
+                  class="absolute inset-0 -mx-1 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                />
+                <span>
+                  Outgoing
+                </span>
               </button>
             </div>
           </div>
@@ -5315,28 +5363,52 @@ exports[`Dashboard should show warning for errored networks 1`] = `
             class="mb-8"
           >
             <div
-              class="Tabs__TabList-sc-1lxyvu-1 jCqqnd w-full"
+              class="Tabs__TabList-sc-1lxyvu-1 edtiGn w-full"
             >
               <button
                 aria-selected="true"
-                class="Tabs__TabButton-sc-1lxyvu-0"
+                class="Tabs__TabButton-sc-1lxyvu-0 group"
                 data-testid="tabs__tab-button-all"
+                role="tab"
+                tabindex="0"
+                type="button"
               >
-                All
+                <div
+                  class="absolute inset-0 -mx-1 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                />
+                <span>
+                  All
+                </span>
               </button>
               <button
                 aria-selected="false"
-                class="Tabs__TabButton-sc-1lxyvu-0"
+                class="Tabs__TabButton-sc-1lxyvu-0 group"
                 data-testid="tabs__tab-button-received"
+                role="tab"
+                tabindex="-1"
+                type="button"
               >
-                Incoming
+                <div
+                  class="absolute inset-0 -mx-1 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                />
+                <span>
+                  Incoming
+                </span>
               </button>
               <button
                 aria-selected="false"
-                class="Tabs__TabButton-sc-1lxyvu-0"
+                class="Tabs__TabButton-sc-1lxyvu-0 group"
                 data-testid="tabs__tab-button-sent"
+                role="tab"
+                tabindex="-1"
+                type="button"
               >
-                Outgoing
+                <div
+                  class="absolute inset-0 -mx-1 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                />
+                <span>
+                  Outgoing
+                </span>
               </button>
             </div>
           </div>
