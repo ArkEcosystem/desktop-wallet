@@ -10,7 +10,7 @@ export const useTimeFormat = () => {
 	const { getProfileFromUrl } = useProfileUtils(env);
 	const history = useHistory();
 
-	const defaultFormat = "DD.MM.YYYY HH:mm";
+	const defaultFormat = "DD.MM.YYYY h:mm A";
 
 	const profile = getProfileFromUrl(history?.location.pathname);
 
@@ -19,9 +19,13 @@ export const useTimeFormat = () => {
 			return defaultFormat;
 		}
 
-		const timeFormat = profile.settings().get<string>(Contracts.ProfileSetting.TimeFormat);
+		const timeFormat = profile.settings().get<string | undefined>(Contracts.ProfileSetting.TimeFormat);
 
-		return defaultFormat.replace("HH:mm", timeFormat!);
+		if (timeFormat) {
+			return defaultFormat.replace("h:mm A", timeFormat);
+		}
+
+		return defaultFormat;
 	}, [profile]);
 
 	return result;
