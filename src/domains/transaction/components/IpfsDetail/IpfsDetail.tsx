@@ -37,8 +37,16 @@ export const IpfsDetail = ({ isOpen, transaction, onClose }: IpfsDetailProps) =>
 			<TransactionDetail
 				label={t("TRANSACTION.IPFS_HASH")}
 				extra={
-					<Circle className="border-theme-text" size="lg">
-						<Icon name="Ipfs" width={21} height={23} />
+					<Circle
+						className="text-theme-secondary-900 border-theme-secondary-900 dark:text-theme-secondary-600 dark:border-theme-secondary-600"
+						size="lg"
+					>
+						<Icon
+							name="Ipfs"
+							className="text-theme-secondary-900 dark:text-theme-secondary-600"
+							width={21}
+							height={23}
+						/>
 					</Circle>
 				}
 			>

@@ -131,6 +131,7 @@ export const translations: { [key: string]: any } = {
 	OPTIONAL: "optional",
 	OTHER: "Other",
 	PAGE: "Page",
+	"PAGE_#": "Page {{page}}",
 	PARTICIPANT: "Participant",
 	PASSWORD: "Password",
 	PASSWORDS: "Passwords",

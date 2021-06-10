@@ -54,6 +54,7 @@ describe("Switch", () => {
 			<Switch disabled value="a" onChange={onChange} leftOption={leftOption} rightOption={rightOption} />,
 		);
 
+		expect(getByRole("checkbox")).toBeDisabled();
 		expect(getByRole("checkbox")).not.toHaveAttribute("checked", "");
 		expect(asFragment()).toMatchSnapshot();
 	});

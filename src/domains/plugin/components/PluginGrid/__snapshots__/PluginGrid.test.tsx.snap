@@ -1077,23 +1077,28 @@ exports[`PluginGrid should render pagination 1`] = `
     <div
       class="flex justify-center w-full mt-10"
     >
-      <div
-        class="Pagination__Wrapper-x7juhx-0 klvluR"
+      <nav
+        class="Pagination__Wrapper-x7juhx-0 hbWMHF"
         data-testid="Pagination"
       >
         <div
           class="flex relative px-2 rounded bg-theme-primary-100 dark:bg-theme-secondary-800"
         >
-          <div
-            class="Pagination__PaginationButtonStyled-x7juhx-1 jqbPMy current-page"
+          <button
+            aria-current="true"
+            aria-label="Page 1"
+            class="Pagination__PaginationButtonStyled-x7juhx-1 dPDByT current-page"
+            type="button"
           >
             1
-          </div>
-          <div
-            class="Pagination__PaginationButtonStyled-x7juhx-1 jqbPMy"
+          </button>
+          <button
+            aria-label="Page 2"
+            class="Pagination__PaginationButtonStyled-x7juhx-1 dPDByT"
+            type="button"
           >
             2
-          </div>
+          </button>
         </div>
         <button
           class="OriginalButton__StyledButton-sc-1y2wptt-0 izJbbP"
@@ -1115,7 +1120,7 @@ exports[`PluginGrid should render pagination 1`] = `
             </div>
           </div>
         </button>
-      </div>
+      </nav>
     </div>
   </div>
 </DocumentFragment>
@@ -1899,8 +1904,8 @@ exports[`PluginGrid should split by page 1`] = `
     <div
       class="flex justify-center w-full mt-10"
     >
-      <div
-        class="Pagination__Wrapper-x7juhx-0 klvluR"
+      <nav
+        class="Pagination__Wrapper-x7juhx-0 hbWMHF"
         data-testid="Pagination"
       >
         <button
@@ -1926,21 +1931,28 @@ exports[`PluginGrid should split by page 1`] = `
         <div
           class="flex relative px-2 rounded bg-theme-primary-100 dark:bg-theme-secondary-800"
         >
-          <div
-            class="Pagination__PaginationButtonStyled-x7juhx-1 jqbPMy"
+          <button
+            aria-label="Page 1"
+            class="Pagination__PaginationButtonStyled-x7juhx-1 dPDByT"
+            type="button"
           >
             1
-          </div>
-          <div
-            class="Pagination__PaginationButtonStyled-x7juhx-1 jqbPMy current-page"
+          </button>
+          <button
+            aria-current="true"
+            aria-label="Page 2"
+            class="Pagination__PaginationButtonStyled-x7juhx-1 dPDByT current-page"
+            type="button"
           >
             2
-          </div>
-          <div
-            class="Pagination__PaginationButtonStyled-x7juhx-1 jqbPMy"
+          </button>
+          <button
+            aria-label="Page 3"
+            class="Pagination__PaginationButtonStyled-x7juhx-1 dPDByT"
+            type="button"
           >
             3
-          </div>
+          </button>
         </div>
         <button
           class="OriginalButton__StyledButton-sc-1y2wptt-0 izJbbP"
@@ -1962,7 +1974,7 @@ exports[`PluginGrid should split by page 1`] = `
             </div>
           </div>
         </button>
-      </div>
+      </nav>
     </div>
   </div>
 </DocumentFragment>

@@ -179,6 +179,7 @@ export const VerifyMessage = ({ profileId, walletId, onSubmit, onCancel, isOpen,
 				</span>
 
 				<Switch
+					size="lg"
 					className="mt-6"
 					value={verificationMethod}
 					onChange={setVerificationMethod}
