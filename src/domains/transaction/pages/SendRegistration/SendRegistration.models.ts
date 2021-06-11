@@ -1,5 +1,4 @@
-import { Contracts } from "@arkecosystem/platform-sdk";
-import { Signatory } from "@arkecosystem/platform-sdk/dist/signatories";
+import { Contracts, Signatories } from "@arkecosystem/platform-sdk";
 import { Contracts as ProfileContracts, Environment } from "@arkecosystem/platform-sdk-profiles";
 import { TFunction } from "i18next";
 import { useForm } from "react-hook-form";
@@ -26,7 +25,7 @@ export interface SendRegistrationSignOptions {
 	env: Environment;
 	form: ReturnType<typeof useForm>;
 	profile: ProfileContracts.IProfile;
-	signatory: Signatory;
+	signatory: Signatories.Signatory;
 }
 
 export interface SendRegistrationForm {
