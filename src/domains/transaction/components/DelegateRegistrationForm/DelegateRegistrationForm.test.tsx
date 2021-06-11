@@ -115,7 +115,7 @@ describe("DelegateRegistrationForm", () => {
 	});
 
 	it("should set fee", async () => {
-		const { form, getByTestId, getByText, rerender } = await renderComponent({ fee: "10" });
+		const { asFragment, form, getByTestId, getByText, rerender } = await renderComponent({ fee: "10" });
 		// @ts-ignore
 		form.register("inputFeeViewType");
 
@@ -133,7 +133,7 @@ describe("DelegateRegistrationForm", () => {
 			await waitFor(() => expect(getByTestId("DelegateRegistrationForm__form-step")));
 		});
 
-		await waitFor(() => expect(getByTestId("InputCurrency")).toBeVisible());
+		await waitFor(() => expect(getByTestId("InputCurrency")).toHaveValue("10"));
 
 		await act(async () => {
 			fireEvent.change(getByTestId("InputCurrency"), {
@@ -144,6 +144,7 @@ describe("DelegateRegistrationForm", () => {
 		});
 
 		await waitFor(() => expect(getByTestId("InputCurrency")).toHaveValue("11"));
+		await waitFor(() => expect(asFragment()).toMatchSnapshot());
 	});
 
 	it("should show error if username contains illegal characters", async () => {
