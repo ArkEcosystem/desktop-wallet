@@ -13,10 +13,10 @@ exports[`Dashboard should render 1`] = `
   >
     <nav
       aria-labelledby="main menu"
-      class="NavigationBar__NavWrapper-sc-1qsoskw-0 hkUMvZ"
+      class="NavigationBar__NavWrapper-sc-1qsoskw-0 bewuLZ"
     >
       <div
-        class="flex relative h-21"
+        class="relative flex h-21"
       >
         <button
           class="BackButton__StyledBackButton-sc-1pe22tv-0 eUphun flex w-12"
@@ -39,7 +39,7 @@ exports[`Dashboard should render 1`] = `
             class="flex items-center my-auto"
           >
             <div
-              class="NavigationBar__LogoContainer-sc-1qsoskw-2 tulfg"
+              class="NavigationBar__LogoContainer-sc-1qsoskw-2 itrWMc"
             >
               <svg
                 width="44"
@@ -49,19 +49,19 @@ exports[`Dashboard should render 1`] = `
             </div>
           </div>
           <ul
-            class="flex mr-auto ml-4 space-x-8 h-21"
+            class="flex ml-4 mr-auto space-x-8 h-21"
           >
             <li
               class="flex"
             >
               <a
                 aria-current="page"
-                class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group active"
+                class="relative flex items-center font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group active"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
                 title="Portfolio"
               >
                 <div
-                  class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                  class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
                 />
                 Portfolio
               </a>
@@ -70,12 +70,12 @@ exports[`Dashboard should render 1`] = `
               class="flex"
             >
               <a
-                class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
+                class="relative flex items-center font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/plugins"
                 title="Plugins"
               >
                 <div
-                  class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                  class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
                 />
                 Plugins
               </a>
@@ -84,12 +84,12 @@ exports[`Dashboard should render 1`] = `
               class="flex"
             >
               <a
-                class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
+                class="relative flex items-center font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/exchange"
                 title="Exchange"
               >
                 <div
-                  class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                  class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
                 />
                 Exchange
               </a>
@@ -98,12 +98,12 @@ exports[`Dashboard should render 1`] = `
               class="flex"
             >
               <a
-                class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
+                class="relative flex items-center font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/news"
                 title="News"
               >
                 <div
-                  class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                  class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
                 />
                 News
               </a>
@@ -228,12 +228,20 @@ exports[`Dashboard should render 1`] = `
                 Your balance
               </div>
               <div
-                class="text-sm font-bold text-theme-secondary-text dark:text-theme-text"
+                class="flex justify-end mt-1"
               >
-                <span
-                  data-testid="Amount"
-                >
-                  0 BTC
+                <span>
+                  <span
+                    class="flex items-center leading-none"
+                  >
+                    <span
+                      class="react-loading-skeleton css-1eg0sfo-skeletonStyles-Skeleton"
+                      style="width: 60px; height: 16px;"
+                    >
+                      ‌
+                    </span>
+                    ‌
+                  </span>
                 </span>
               </div>
             </div>
@@ -264,7 +272,7 @@ exports[`Dashboard should render 1`] = `
                   data-testid="dropdown__toggle"
                 >
                   <div
-                    class="cursor-pointer relative justify-center items-center align-middle rounded-full"
+                    class="relative items-center justify-center align-middle rounded-full cursor-pointer"
                     data-testid="navbar__useractions"
                   >
                     <div
@@ -329,10 +337,13 @@ exports[`Dashboard should render 1`] = `
                       <div
                         class="group"
                       >
-                        <div
-                          class="ControlButton__ControlButtonStyled-sc-1xp1l1a-0 kMCise"
+                        <button
+                          class="ControlButton__ControlButtonStyled-sc-1xp1l1a-0 gPBHgx group"
                           data-testid="LayoutControls__list--icon"
                         >
+                          <div
+                            class="absolute inset-0 -mx-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                          />
                           <div
                             class="sc-bdfBwQ iyevwF"
                             height="20"
@@ -342,7 +353,7 @@ exports[`Dashboard should render 1`] = `
                               list-view.svg
                             </svg>
                           </div>
-                        </div>
+                        </button>
                       </div>
                     </div>
                     <div
@@ -351,10 +362,13 @@ exports[`Dashboard should render 1`] = `
                       <div
                         class="group"
                       >
-                        <div
-                          class="ControlButton__ControlButtonStyled-sc-1xp1l1a-0 gCTrBm"
+                        <button
+                          class="ControlButton__ControlButtonStyled-sc-1xp1l1a-0 gPBHgx group active"
                           data-testid="LayoutControls__grid--icon"
                         >
+                          <div
+                            class="absolute inset-0 -mx-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                          />
                           <div
                             class="sc-bdfBwQ iyevwF"
                             height="20"
@@ -364,7 +378,7 @@ exports[`Dashboard should render 1`] = `
                               grid-view.svg
                             </svg>
                           </div>
-                        </div>
+                        </button>
                       </div>
                     </div>
                   </div>
@@ -382,9 +396,12 @@ exports[`Dashboard should render 1`] = `
                         <div
                           class="group"
                         >
-                          <div
-                            class="ControlButton__ControlButtonStyled-sc-1xp1l1a-0 kMCise"
+                          <button
+                            class="ControlButton__ControlButtonStyled-sc-1xp1l1a-0 gPBHgx group"
                           >
+                            <div
+                              class="absolute inset-0 -mx-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                            />
                             <div
                               class="flex items-center justify-center w-5 h-5"
                             >
@@ -398,7 +415,7 @@ exports[`Dashboard should render 1`] = `
                                 </svg>
                               </div>
                             </div>
-                          </div>
+                          </button>
                         </div>
                       </span>
                     </span>
@@ -573,14 +590,9 @@ exports[`Dashboard should render 1`] = `
                               33.75089801 DARK
                             </span>
                             <span
-                              class="mt-1 text-xs font-semibold text-theme-secondary-text no-ligatures overflow-hidden whitespace-nowrap"
+                              class="inline-flex overflow-hidden mt-1 text-xs font-semibold text-theme-secondary-text no-ligatures whitespace-nowrap"
                             >
-                              <span
-                                class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap"
-                                data-testid="TruncateMiddle"
-                              >
-                                D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD
-                              </span>
+                              D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD
                             </span>
                           </div>
                           <div
@@ -659,14 +671,9 @@ exports[`Dashboard should render 1`] = `
                               57.68 DARK
                             </span>
                             <span
-                              class="mt-1 text-xs font-semibold text-theme-secondary-text no-ligatures overflow-hidden whitespace-nowrap"
+                              class="inline-flex overflow-hidden mt-1 text-xs font-semibold text-theme-secondary-text no-ligatures whitespace-nowrap"
                             >
-                              <span
-                                class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap"
-                                data-testid="TruncateMiddle"
-                              >
-                                D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb
-                              </span>
+                              D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb
                             </span>
                           </div>
                           <div
@@ -760,14 +767,9 @@ exports[`Dashboard should render 1`] = `
                               50,114.21127898 ARK
                             </span>
                             <span
-                              class="mt-1 text-xs font-semibold text-theme-secondary-text no-ligatures overflow-hidden whitespace-nowrap"
+                              class="inline-flex overflow-hidden mt-1 text-xs font-semibold text-theme-secondary-text no-ligatures whitespace-nowrap"
                             >
-                              <span
-                                class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap"
-                                data-testid="TruncateMiddle"
-                              >
-                                AdVSe37niA3uFUPgCgMUH2tMsHF4LpLoiX
-                              </span>
+                              AdVSe37niA3uFUPgCgMUH2tMsHF4LpLoiX
                             </span>
                           </div>
                           <div
@@ -860,28 +862,52 @@ exports[`Dashboard should render 1`] = `
             class="mb-8"
           >
             <div
-              class="Tabs__TabList-sc-1lxyvu-1 jCqqnd w-full"
+              class="Tabs__TabList-sc-1lxyvu-1 edtiGn w-full"
             >
               <button
                 aria-selected="true"
-                class="Tabs__TabButton-sc-1lxyvu-0"
+                class="Tabs__TabButton-sc-1lxyvu-0 group"
                 data-testid="tabs__tab-button-all"
+                role="tab"
+                tabindex="0"
+                type="button"
               >
-                All
+                <div
+                  class="absolute inset-0 -mx-1 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                />
+                <span>
+                  All
+                </span>
               </button>
               <button
                 aria-selected="false"
-                class="Tabs__TabButton-sc-1lxyvu-0"
+                class="Tabs__TabButton-sc-1lxyvu-0 group"
                 data-testid="tabs__tab-button-received"
+                role="tab"
+                tabindex="-1"
+                type="button"
               >
-                Incoming
+                <div
+                  class="absolute inset-0 -mx-1 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                />
+                <span>
+                  Incoming
+                </span>
               </button>
               <button
                 aria-selected="false"
-                class="Tabs__TabButton-sc-1lxyvu-0"
+                class="Tabs__TabButton-sc-1lxyvu-0 group"
                 data-testid="tabs__tab-button-sent"
+                role="tab"
+                tabindex="-1"
+                type="button"
               >
-                Outgoing
+                <div
+                  class="absolute inset-0 -mx-1 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                />
+                <span>
+                  Outgoing
+                </span>
               </button>
             </div>
           </div>
@@ -947,7 +973,7 @@ exports[`Dashboard should render 1`] = `
                       </div>
                     </th>
                     <th
-                      class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder w-96 min-w-96"
+                      class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder w-20 min-w-20"
                       colspan="1"
                       data-testid="table__th--2"
                       role="columnheader"
@@ -1121,11 +1147,11 @@ exports[`Dashboard should render 1`] = `
                           class="w-40 xl:w-full"
                         >
                           <div
-                            class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap"
+                            class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap space-x-2"
                           >
                             <span
-                              class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-text font-semibold text-base"
-                              data-testid="address__wallet-address"
+                              class="inline-flex overflow-hidden text-theme-text font-semibold text-base"
+                              data-testid="Address__address"
                             >
                               D5pVkhZbSb4UNXvfmF6j7zdau8yGxfKwSv
                             </span>
@@ -1285,11 +1311,11 @@ exports[`Dashboard should render 1`] = `
                           class="w-40 xl:w-full"
                         >
                           <div
-                            class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap"
+                            class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap space-x-2"
                           >
                             <span
-                              class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-text font-semibold text-base"
-                              data-testid="address__wallet-address"
+                              class="inline-flex overflow-hidden text-theme-text font-semibold text-base"
+                              data-testid="Address__address"
                             >
                               D5pVkhZbSb4UNXvfmF6j7zdau8yGxfKwSv
                             </span>
@@ -1449,11 +1475,11 @@ exports[`Dashboard should render 1`] = `
                           class="w-40 xl:w-full"
                         >
                           <div
-                            class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap"
+                            class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap space-x-2"
                           >
                             <span
-                              class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-text font-semibold text-base"
-                              data-testid="address__wallet-address"
+                              class="inline-flex overflow-hidden text-theme-text font-semibold text-base"
+                              data-testid="Address__address"
                             >
                               DKY5eyQUKKYyaCfPp6MUv3Y4FW6EbNF53A
                             </span>
@@ -1613,11 +1639,11 @@ exports[`Dashboard should render 1`] = `
                           class="w-40 xl:w-full"
                         >
                           <div
-                            class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap"
+                            class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap space-x-2"
                           >
                             <span
-                              class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-text font-semibold text-base"
-                              data-testid="address__wallet-address"
+                              class="inline-flex overflow-hidden text-theme-text font-semibold text-base"
+                              data-testid="Address__address"
                             >
                               DKY5eyQUKKYyaCfPp6MUv3Y4FW6EbNF53A
                             </span>
@@ -1722,10 +1748,10 @@ exports[`Dashboard should render loading state when profile is syncing 1`] = `
   >
     <nav
       aria-labelledby="main menu"
-      class="NavigationBar__NavWrapper-sc-1qsoskw-0 hkUMvZ"
+      class="NavigationBar__NavWrapper-sc-1qsoskw-0 bewuLZ"
     >
       <div
-        class="flex relative h-21"
+        class="relative flex h-21"
       >
         <button
           class="BackButton__StyledBackButton-sc-1pe22tv-0 eUphun flex w-12"
@@ -1748,7 +1774,7 @@ exports[`Dashboard should render loading state when profile is syncing 1`] = `
             class="flex items-center my-auto"
           >
             <div
-              class="NavigationBar__LogoContainer-sc-1qsoskw-2 tulfg"
+              class="NavigationBar__LogoContainer-sc-1qsoskw-2 itrWMc"
             >
               <svg
                 width="44"
@@ -1758,19 +1784,19 @@ exports[`Dashboard should render loading state when profile is syncing 1`] = `
             </div>
           </div>
           <ul
-            class="flex mr-auto ml-4 space-x-8 h-21"
+            class="flex ml-4 mr-auto space-x-8 h-21"
           >
             <li
               class="flex"
             >
               <a
                 aria-current="page"
-                class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group active"
+                class="relative flex items-center font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group active"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
                 title="Portfolio"
               >
                 <div
-                  class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                  class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
                 />
                 Portfolio
               </a>
@@ -1779,12 +1805,12 @@ exports[`Dashboard should render loading state when profile is syncing 1`] = `
               class="flex"
             >
               <a
-                class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
+                class="relative flex items-center font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/plugins"
                 title="Plugins"
               >
                 <div
-                  class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                  class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
                 />
                 Plugins
               </a>
@@ -1793,12 +1819,12 @@ exports[`Dashboard should render loading state when profile is syncing 1`] = `
               class="flex"
             >
               <a
-                class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
+                class="relative flex items-center font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/exchange"
                 title="Exchange"
               >
                 <div
-                  class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                  class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
                 />
                 Exchange
               </a>
@@ -1807,12 +1833,12 @@ exports[`Dashboard should render loading state when profile is syncing 1`] = `
               class="flex"
             >
               <a
-                class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
+                class="relative flex items-center font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/news"
                 title="News"
               >
                 <div
-                  class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                  class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
                 />
                 News
               </a>
@@ -1938,11 +1964,12 @@ exports[`Dashboard should render loading state when profile is syncing 1`] = `
               </div>
               <div
                 class="text-sm font-bold text-theme-secondary-text dark:text-theme-text"
+                data-testid="Balance__value"
               >
                 <span
                   data-testid="Amount"
                 >
-                  0 BTC
+                  50.11421128 BTC
                 </span>
               </div>
             </div>
@@ -1973,7 +2000,7 @@ exports[`Dashboard should render loading state when profile is syncing 1`] = `
                   data-testid="dropdown__toggle"
                 >
                   <div
-                    class="cursor-pointer relative justify-center items-center align-middle rounded-full"
+                    class="relative items-center justify-center align-middle rounded-full cursor-pointer"
                     data-testid="navbar__useractions"
                   >
                     <div
@@ -2038,10 +2065,13 @@ exports[`Dashboard should render loading state when profile is syncing 1`] = `
                       <div
                         class="group"
                       >
-                        <div
-                          class="ControlButton__ControlButtonStyled-sc-1xp1l1a-0 kMCise"
+                        <button
+                          class="ControlButton__ControlButtonStyled-sc-1xp1l1a-0 gPBHgx group"
                           data-testid="LayoutControls__list--icon"
                         >
+                          <div
+                            class="absolute inset-0 -mx-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                          />
                           <div
                             class="sc-bdfBwQ iyevwF"
                             height="20"
@@ -2051,7 +2081,7 @@ exports[`Dashboard should render loading state when profile is syncing 1`] = `
                               list-view.svg
                             </svg>
                           </div>
-                        </div>
+                        </button>
                       </div>
                     </div>
                     <div
@@ -2060,10 +2090,13 @@ exports[`Dashboard should render loading state when profile is syncing 1`] = `
                       <div
                         class="group"
                       >
-                        <div
-                          class="ControlButton__ControlButtonStyled-sc-1xp1l1a-0 gCTrBm"
+                        <button
+                          class="ControlButton__ControlButtonStyled-sc-1xp1l1a-0 gPBHgx group active"
                           data-testid="LayoutControls__grid--icon"
                         >
+                          <div
+                            class="absolute inset-0 -mx-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                          />
                           <div
                             class="sc-bdfBwQ iyevwF"
                             height="20"
@@ -2073,7 +2106,7 @@ exports[`Dashboard should render loading state when profile is syncing 1`] = `
                               grid-view.svg
                             </svg>
                           </div>
-                        </div>
+                        </button>
                       </div>
                     </div>
                   </div>
@@ -2091,9 +2124,12 @@ exports[`Dashboard should render loading state when profile is syncing 1`] = `
                         <div
                           class="group"
                         >
-                          <div
-                            class="ControlButton__ControlButtonStyled-sc-1xp1l1a-0 kMCise"
+                          <button
+                            class="ControlButton__ControlButtonStyled-sc-1xp1l1a-0 gPBHgx group"
                           >
+                            <div
+                              class="absolute inset-0 -mx-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                            />
                             <div
                               class="flex items-center justify-center w-5 h-5"
                             >
@@ -2107,7 +2143,7 @@ exports[`Dashboard should render loading state when profile is syncing 1`] = `
                                 </svg>
                               </div>
                             </div>
-                          </div>
+                          </button>
                         </div>
                       </span>
                     </span>
@@ -2282,14 +2318,9 @@ exports[`Dashboard should render loading state when profile is syncing 1`] = `
                               33.75089801 DARK
                             </span>
                             <span
-                              class="mt-1 text-xs font-semibold text-theme-secondary-text no-ligatures overflow-hidden whitespace-nowrap"
+                              class="inline-flex overflow-hidden mt-1 text-xs font-semibold text-theme-secondary-text no-ligatures whitespace-nowrap"
                             >
-                              <span
-                                class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap"
-                                data-testid="TruncateMiddle"
-                              >
-                                D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD
-                              </span>
+                              D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD
                             </span>
                           </div>
                           <div
@@ -2368,14 +2399,9 @@ exports[`Dashboard should render loading state when profile is syncing 1`] = `
                               57.68 DARK
                             </span>
                             <span
-                              class="mt-1 text-xs font-semibold text-theme-secondary-text no-ligatures overflow-hidden whitespace-nowrap"
+                              class="inline-flex overflow-hidden mt-1 text-xs font-semibold text-theme-secondary-text no-ligatures whitespace-nowrap"
                             >
-                              <span
-                                class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap"
-                                data-testid="TruncateMiddle"
-                              >
-                                D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb
-                              </span>
+                              D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb
                             </span>
                           </div>
                           <div
@@ -2469,14 +2495,9 @@ exports[`Dashboard should render loading state when profile is syncing 1`] = `
                               50,114.21127898 ARK
                             </span>
                             <span
-                              class="mt-1 text-xs font-semibold text-theme-secondary-text no-ligatures overflow-hidden whitespace-nowrap"
+                              class="inline-flex overflow-hidden mt-1 text-xs font-semibold text-theme-secondary-text no-ligatures whitespace-nowrap"
                             >
-                              <span
-                                class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap"
-                                data-testid="TruncateMiddle"
-                              >
-                                AdVSe37niA3uFUPgCgMUH2tMsHF4LpLoiX
-                              </span>
+                              AdVSe37niA3uFUPgCgMUH2tMsHF4LpLoiX
                             </span>
                           </div>
                           <div
@@ -2569,28 +2590,52 @@ exports[`Dashboard should render loading state when profile is syncing 1`] = `
             class="mb-8"
           >
             <div
-              class="Tabs__TabList-sc-1lxyvu-1 jCqqnd w-full"
+              class="Tabs__TabList-sc-1lxyvu-1 edtiGn w-full"
             >
               <button
                 aria-selected="false"
-                class="Tabs__TabButton-sc-1lxyvu-0"
+                class="Tabs__TabButton-sc-1lxyvu-0 group"
                 data-testid="tabs__tab-button-all"
+                role="tab"
+                tabindex="-1"
+                type="button"
               >
-                All
+                <div
+                  class="absolute inset-0 -mx-1 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                />
+                <span>
+                  All
+                </span>
               </button>
               <button
                 aria-selected="false"
-                class="Tabs__TabButton-sc-1lxyvu-0"
+                class="Tabs__TabButton-sc-1lxyvu-0 group"
                 data-testid="tabs__tab-button-received"
+                role="tab"
+                tabindex="-1"
+                type="button"
               >
-                Incoming
+                <div
+                  class="absolute inset-0 -mx-1 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                />
+                <span>
+                  Incoming
+                </span>
               </button>
               <button
                 aria-selected="false"
-                class="Tabs__TabButton-sc-1lxyvu-0"
+                class="Tabs__TabButton-sc-1lxyvu-0 group"
                 data-testid="tabs__tab-button-sent"
+                role="tab"
+                tabindex="-1"
+                type="button"
               >
-                Outgoing
+                <div
+                  class="absolute inset-0 -mx-1 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                />
+                <span>
+                  Outgoing
+                </span>
               </button>
             </div>
           </div>
@@ -2656,7 +2701,7 @@ exports[`Dashboard should render loading state when profile is syncing 1`] = `
                       </div>
                     </th>
                     <th
-                      class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder w-96 min-w-96"
+                      class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder w-20 min-w-20"
                       colspan="1"
                       data-testid="table__th--2"
                       role="columnheader"
@@ -4476,10 +4521,10 @@ exports[`Dashboard should show warning for errored networks 1`] = `
   >
     <nav
       aria-labelledby="main menu"
-      class="NavigationBar__NavWrapper-sc-1qsoskw-0 hkUMvZ"
+      class="NavigationBar__NavWrapper-sc-1qsoskw-0 bewuLZ"
     >
       <div
-        class="flex relative h-21"
+        class="relative flex h-21"
       >
         <button
           class="BackButton__StyledBackButton-sc-1pe22tv-0 eUphun flex w-12"
@@ -4502,7 +4547,7 @@ exports[`Dashboard should show warning for errored networks 1`] = `
             class="flex items-center my-auto"
           >
             <div
-              class="NavigationBar__LogoContainer-sc-1qsoskw-2 tulfg"
+              class="NavigationBar__LogoContainer-sc-1qsoskw-2 itrWMc"
             >
               <svg
                 width="44"
@@ -4512,19 +4557,19 @@ exports[`Dashboard should show warning for errored networks 1`] = `
             </div>
           </div>
           <ul
-            class="flex mr-auto ml-4 space-x-8 h-21"
+            class="flex ml-4 mr-auto space-x-8 h-21"
           >
             <li
               class="flex"
             >
               <a
                 aria-current="page"
-                class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group active"
+                class="relative flex items-center font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group active"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
                 title="Portfolio"
               >
                 <div
-                  class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                  class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
                 />
                 Portfolio
               </a>
@@ -4533,12 +4578,12 @@ exports[`Dashboard should show warning for errored networks 1`] = `
               class="flex"
             >
               <a
-                class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
+                class="relative flex items-center font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/plugins"
                 title="Plugins"
               >
                 <div
-                  class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                  class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
                 />
                 Plugins
               </a>
@@ -4547,12 +4592,12 @@ exports[`Dashboard should show warning for errored networks 1`] = `
               class="flex"
             >
               <a
-                class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
+                class="relative flex items-center font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/exchange"
                 title="Exchange"
               >
                 <div
-                  class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                  class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
                 />
                 Exchange
               </a>
@@ -4561,12 +4606,12 @@ exports[`Dashboard should show warning for errored networks 1`] = `
               class="flex"
             >
               <a
-                class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
+                class="relative flex items-center font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/news"
                 title="News"
               >
                 <div
-                  class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                  class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
                 />
                 News
               </a>
@@ -4692,11 +4737,12 @@ exports[`Dashboard should show warning for errored networks 1`] = `
               </div>
               <div
                 class="text-sm font-bold text-theme-secondary-text dark:text-theme-text"
+                data-testid="Balance__value"
               >
                 <span
                   data-testid="Amount"
                 >
-                  0 BTC
+                  50.11421128 BTC
                 </span>
               </div>
             </div>
@@ -4727,7 +4773,7 @@ exports[`Dashboard should show warning for errored networks 1`] = `
                   data-testid="dropdown__toggle"
                 >
                   <div
-                    class="cursor-pointer relative justify-center items-center align-middle rounded-full"
+                    class="relative items-center justify-center align-middle rounded-full cursor-pointer"
                     data-testid="navbar__useractions"
                   >
                     <div
@@ -4792,10 +4838,13 @@ exports[`Dashboard should show warning for errored networks 1`] = `
                       <div
                         class="group"
                       >
-                        <div
-                          class="ControlButton__ControlButtonStyled-sc-1xp1l1a-0 kMCise"
+                        <button
+                          class="ControlButton__ControlButtonStyled-sc-1xp1l1a-0 gPBHgx group"
                           data-testid="LayoutControls__list--icon"
                         >
+                          <div
+                            class="absolute inset-0 -mx-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                          />
                           <div
                             class="sc-bdfBwQ iyevwF"
                             height="20"
@@ -4805,7 +4854,7 @@ exports[`Dashboard should show warning for errored networks 1`] = `
                               list-view.svg
                             </svg>
                           </div>
-                        </div>
+                        </button>
                       </div>
                     </div>
                     <div
@@ -4814,10 +4863,13 @@ exports[`Dashboard should show warning for errored networks 1`] = `
                       <div
                         class="group"
                       >
-                        <div
-                          class="ControlButton__ControlButtonStyled-sc-1xp1l1a-0 gCTrBm"
+                        <button
+                          class="ControlButton__ControlButtonStyled-sc-1xp1l1a-0 gPBHgx group active"
                           data-testid="LayoutControls__grid--icon"
                         >
+                          <div
+                            class="absolute inset-0 -mx-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                          />
                           <div
                             class="sc-bdfBwQ iyevwF"
                             height="20"
@@ -4827,7 +4879,7 @@ exports[`Dashboard should show warning for errored networks 1`] = `
                               grid-view.svg
                             </svg>
                           </div>
-                        </div>
+                        </button>
                       </div>
                     </div>
                   </div>
@@ -4845,9 +4897,12 @@ exports[`Dashboard should show warning for errored networks 1`] = `
                         <div
                           class="group"
                         >
-                          <div
-                            class="ControlButton__ControlButtonStyled-sc-1xp1l1a-0 kMCise"
+                          <button
+                            class="ControlButton__ControlButtonStyled-sc-1xp1l1a-0 gPBHgx group"
                           >
+                            <div
+                              class="absolute inset-0 -mx-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                            />
                             <div
                               class="flex items-center justify-center w-5 h-5"
                             >
@@ -4861,7 +4916,7 @@ exports[`Dashboard should show warning for errored networks 1`] = `
                                 </svg>
                               </div>
                             </div>
-                          </div>
+                          </button>
                         </div>
                       </span>
                     </span>
@@ -5036,14 +5091,9 @@ exports[`Dashboard should show warning for errored networks 1`] = `
                               33.75089801 DARK
                             </span>
                             <span
-                              class="mt-1 text-xs font-semibold text-theme-secondary-text no-ligatures overflow-hidden whitespace-nowrap"
+                              class="inline-flex overflow-hidden mt-1 text-xs font-semibold text-theme-secondary-text no-ligatures whitespace-nowrap"
                             >
-                              <span
-                                class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap"
-                                data-testid="TruncateMiddle"
-                              >
-                                D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD
-                              </span>
+                              D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD
                             </span>
                           </div>
                           <div
@@ -5122,14 +5172,9 @@ exports[`Dashboard should show warning for errored networks 1`] = `
                               57.68 DARK
                             </span>
                             <span
-                              class="mt-1 text-xs font-semibold text-theme-secondary-text no-ligatures overflow-hidden whitespace-nowrap"
+                              class="inline-flex overflow-hidden mt-1 text-xs font-semibold text-theme-secondary-text no-ligatures whitespace-nowrap"
                             >
-                              <span
-                                class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap"
-                                data-testid="TruncateMiddle"
-                              >
-                                D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb
-                              </span>
+                              D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb
                             </span>
                           </div>
                           <div
@@ -5223,14 +5268,9 @@ exports[`Dashboard should show warning for errored networks 1`] = `
                               50,114.21127898 ARK
                             </span>
                             <span
-                              class="mt-1 text-xs font-semibold text-theme-secondary-text no-ligatures overflow-hidden whitespace-nowrap"
+                              class="inline-flex overflow-hidden mt-1 text-xs font-semibold text-theme-secondary-text no-ligatures whitespace-nowrap"
                             >
-                              <span
-                                class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap"
-                                data-testid="TruncateMiddle"
-                              >
-                                AdVSe37niA3uFUPgCgMUH2tMsHF4LpLoiX
-                              </span>
+                              AdVSe37niA3uFUPgCgMUH2tMsHF4LpLoiX
                             </span>
                           </div>
                           <div
@@ -5323,28 +5363,52 @@ exports[`Dashboard should show warning for errored networks 1`] = `
             class="mb-8"
           >
             <div
-              class="Tabs__TabList-sc-1lxyvu-1 jCqqnd w-full"
+              class="Tabs__TabList-sc-1lxyvu-1 edtiGn w-full"
             >
               <button
                 aria-selected="true"
-                class="Tabs__TabButton-sc-1lxyvu-0"
+                class="Tabs__TabButton-sc-1lxyvu-0 group"
                 data-testid="tabs__tab-button-all"
+                role="tab"
+                tabindex="0"
+                type="button"
               >
-                All
+                <div
+                  class="absolute inset-0 -mx-1 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                />
+                <span>
+                  All
+                </span>
               </button>
               <button
                 aria-selected="false"
-                class="Tabs__TabButton-sc-1lxyvu-0"
+                class="Tabs__TabButton-sc-1lxyvu-0 group"
                 data-testid="tabs__tab-button-received"
+                role="tab"
+                tabindex="-1"
+                type="button"
               >
-                Incoming
+                <div
+                  class="absolute inset-0 -mx-1 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                />
+                <span>
+                  Incoming
+                </span>
               </button>
               <button
                 aria-selected="false"
-                class="Tabs__TabButton-sc-1lxyvu-0"
+                class="Tabs__TabButton-sc-1lxyvu-0 group"
                 data-testid="tabs__tab-button-sent"
+                role="tab"
+                tabindex="-1"
+                type="button"
               >
-                Outgoing
+                <div
+                  class="absolute inset-0 -mx-1 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                />
+                <span>
+                  Outgoing
+                </span>
               </button>
             </div>
           </div>
@@ -5410,7 +5474,7 @@ exports[`Dashboard should show warning for errored networks 1`] = `
                       </div>
                     </th>
                     <th
-                      class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder w-96 min-w-96"
+                      class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder w-20 min-w-20"
                       colspan="1"
                       data-testid="table__th--2"
                       role="columnheader"
@@ -5584,11 +5648,11 @@ exports[`Dashboard should show warning for errored networks 1`] = `
                           class="w-40 xl:w-full"
                         >
                           <div
-                            class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap"
+                            class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap space-x-2"
                           >
                             <span
-                              class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-text font-semibold text-base"
-                              data-testid="address__wallet-address"
+                              class="inline-flex overflow-hidden text-theme-text font-semibold text-base"
+                              data-testid="Address__address"
                             >
                               D5pVkhZbSb4UNXvfmF6j7zdau8yGxfKwSv
                             </span>
@@ -5748,11 +5812,11 @@ exports[`Dashboard should show warning for errored networks 1`] = `
                           class="w-40 xl:w-full"
                         >
                           <div
-                            class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap"
+                            class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap space-x-2"
                           >
                             <span
-                              class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-text font-semibold text-base"
-                              data-testid="address__wallet-address"
+                              class="inline-flex overflow-hidden text-theme-text font-semibold text-base"
+                              data-testid="Address__address"
                             >
                               D5pVkhZbSb4UNXvfmF6j7zdau8yGxfKwSv
                             </span>
@@ -5912,11 +5976,11 @@ exports[`Dashboard should show warning for errored networks 1`] = `
                           class="w-40 xl:w-full"
                         >
                           <div
-                            class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap"
+                            class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap space-x-2"
                           >
                             <span
-                              class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-text font-semibold text-base"
-                              data-testid="address__wallet-address"
+                              class="inline-flex overflow-hidden text-theme-text font-semibold text-base"
+                              data-testid="Address__address"
                             >
                               DKY5eyQUKKYyaCfPp6MUv3Y4FW6EbNF53A
                             </span>
@@ -6076,11 +6140,11 @@ exports[`Dashboard should show warning for errored networks 1`] = `
                           class="w-40 xl:w-full"
                         >
                           <div
-                            class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap"
+                            class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap space-x-2"
                           >
                             <span
-                              class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-text font-semibold text-base"
-                              data-testid="address__wallet-address"
+                              class="inline-flex overflow-hidden text-theme-text font-semibold text-base"
+                              data-testid="Address__address"
                             >
                               DKY5eyQUKKYyaCfPp6MUv3Y4FW6EbNF53A
                             </span>

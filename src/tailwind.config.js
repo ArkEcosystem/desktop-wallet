@@ -12,6 +12,7 @@ module.exports = {
 		},
 		colors: {
 			black: "#121213",
+			"black-rgba": "rgba(18,18,19, var(--tw-bg-opacity))",
 			white: "#fff",
 			logo: "#c9292c",
 			transparent: "transparent",
@@ -44,6 +45,7 @@ module.exports = {
 			"theme-secondary-700": "var(--theme-color-secondary-700)",
 			"theme-secondary-800": "var(--theme-color-secondary-800)",
 			"theme-secondary-900": "var(--theme-color-secondary-900)",
+			"theme-secondary-900-rgba": "rgba(var(--theme-color-secondary-900-rgb), var(--tw-bg-opacity))",
 
 			"theme-success-50": "var(--theme-color-success-50)",
 			"theme-success-100": "var(--theme-color-success-100)",
@@ -225,12 +227,14 @@ module.exports = {
 		extend: {
 			borderRadius: ["first", "last"],
 			borderWidth: ["hover", "group-hover", "first", "last", "even"],
+			backgroundOpacity: ["dark"],
 			borderStyle: ["focus-within"],
 			margin: ["first"],
-			opacity: ["dark", "group-hover"],
+			opacity: ["group-hover"],
 			padding: ["first", "last"],
 			ringColor: ["dark", "group-hover"],
 			ringWidth: ["group-focus"],
+			visibility: ["group-hover"],
 		},
 	},
 	plugins: [require("@tailwindcss/forms")],

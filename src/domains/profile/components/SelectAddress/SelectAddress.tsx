@@ -61,13 +61,13 @@ export const SelectAddress = React.forwardRef<HTMLInputElement, SelectAddressPro
 			<>
 				<button
 					data-testid="SelectAddress__wrapper"
-					className="relative w-full"
+					className="relative w-full rounded focus:outline-none focus:ring-2 focus:ring-theme-primary-400"
 					type="button"
 					onClick={() => setSearchWalletIsOpen(true)}
 					disabled={disabled}
 				>
 					<span className="absolute inset-0 flex items-center border border-transparent px-14 w-full">
-						<Address walletName={alias} maxChars={30} address={selectedAddress} />
+						<Address walletName={alias} address={selectedAddress} />
 					</span>
 
 					<Input

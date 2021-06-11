@@ -107,7 +107,7 @@ describe("Contacts", () => {
 			expect(screen.getByTestId("contact-form__name-input")).toHaveValue("Test Contact");
 		});
 
-		const selectNetworkInput = screen.getByTestId("SelectDropdownInput__input");
+		const selectNetworkInput = screen.getByTestId("SelectDropdown__input");
 
 		fireEvent.change(selectNetworkInput, { target: { value: "ARK D" } });
 		fireEvent.keyDown(selectNetworkInput, { key: "Enter", code: 13 });
@@ -317,13 +317,13 @@ describe("Contacts", () => {
 		expect(screen.getByText(contact1.name())).toBeInTheDocument();
 		expect(screen.getByText(contact2.name())).toBeInTheDocument();
 
-		fireEvent.click(screen.getByTestId("header-search-bar__button"));
+		fireEvent.click(within(screen.getByTestId("HeaderSearchBar")).getByRole("button"));
 
 		await waitFor(() =>
-			expect(within(screen.getByTestId("header-search-bar__input")).getByTestId("Input")).toBeTruthy(),
+			expect(within(screen.getByTestId("HeaderSearchBar__input")).getByTestId("Input")).toBeTruthy(),
 		);
 
-		fireEvent.input(within(screen.getByTestId("header-search-bar__input")).getByTestId("Input"), {
+		fireEvent.input(within(screen.getByTestId("HeaderSearchBar__input")).getByTestId("Input"), {
 			target: { value: contact1.name() },
 		});
 
@@ -331,7 +331,7 @@ describe("Contacts", () => {
 
 		expect(screen.queryByText(contact2.name())).not.toBeInTheDocument();
 
-		fireEvent.input(within(screen.getByTestId("header-search-bar__input")).getByTestId("Input"), {
+		fireEvent.input(within(screen.getByTestId("HeaderSearchBar__input")).getByTestId("Input"), {
 			target: { value: "Unknown Name" },
 		});
 

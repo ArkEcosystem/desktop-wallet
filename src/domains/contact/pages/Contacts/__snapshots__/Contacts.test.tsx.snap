@@ -7,10 +7,10 @@ exports[`Contacts should render with contacts 1`] = `
   >
     <nav
       aria-labelledby="main menu"
-      class="NavigationBar__NavWrapper-sc-1qsoskw-0 hkUMvZ"
+      class="NavigationBar__NavWrapper-sc-1qsoskw-0 bewuLZ"
     >
       <div
-        class="flex relative h-21"
+        class="relative flex h-21"
       >
         <button
           class="BackButton__StyledBackButton-sc-1pe22tv-0 hLgyWD flex w-12"
@@ -32,7 +32,7 @@ exports[`Contacts should render with contacts 1`] = `
             class="flex items-center my-auto"
           >
             <div
-              class="NavigationBar__LogoContainer-sc-1qsoskw-2 tulfg"
+              class="NavigationBar__LogoContainer-sc-1qsoskw-2 itrWMc"
             >
               <svg
                 width="44"
@@ -42,18 +42,18 @@ exports[`Contacts should render with contacts 1`] = `
             </div>
           </div>
           <ul
-            class="flex mr-auto ml-4 space-x-8 h-21"
+            class="flex ml-4 mr-auto space-x-8 h-21"
           >
             <li
               class="flex"
             >
               <a
-                class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
+                class="relative flex items-center font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
                 title="Portfolio"
               >
                 <div
-                  class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                  class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
                 />
                 Portfolio
               </a>
@@ -62,12 +62,12 @@ exports[`Contacts should render with contacts 1`] = `
               class="flex"
             >
               <a
-                class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
+                class="relative flex items-center font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/plugins"
                 title="Plugins"
               >
                 <div
-                  class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                  class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
                 />
                 Plugins
               </a>
@@ -76,12 +76,12 @@ exports[`Contacts should render with contacts 1`] = `
               class="flex"
             >
               <a
-                class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
+                class="relative flex items-center font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/exchange"
                 title="Exchange"
               >
                 <div
-                  class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                  class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
                 />
                 Exchange
               </a>
@@ -90,12 +90,12 @@ exports[`Contacts should render with contacts 1`] = `
               class="flex"
             >
               <a
-                class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
+                class="relative flex items-center font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/news"
                 title="News"
               >
                 <div
-                  class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                  class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
                 />
                 News
               </a>
@@ -221,6 +221,7 @@ exports[`Contacts should render with contacts 1`] = `
               </div>
               <div
                 class="text-sm font-bold text-theme-secondary-text dark:text-theme-text"
+                data-testid="Balance__value"
               >
                 <span
                   data-testid="Amount"
@@ -256,7 +257,7 @@ exports[`Contacts should render with contacts 1`] = `
                   data-testid="dropdown__toggle"
                 >
                   <div
-                    class="cursor-pointer relative justify-center items-center align-middle rounded-full"
+                    class="relative items-center justify-center align-middle rounded-full cursor-pointer"
                     data-testid="navbar__useractions"
                   >
                     <div
@@ -322,37 +323,35 @@ exports[`Contacts should render with contacts 1`] = `
                 >
                   <div
                     class="relative"
+                    data-testid="HeaderSearchBar"
                   >
-                    <button
-                      class="my-auto h-full font-semibold cursor-pointer focus:outline-none"
-                      data-testid="header-search-bar__button"
-                      type="button"
+                    <div
+                      class="group"
                     >
-                      <div
-                        class="group"
+                      <button
+                        class="ControlButton__ControlButtonStyled-sc-1xp1l1a-0 gPBHgx group"
                       >
                         <div
-                          class="ControlButton__ControlButtonStyled-sc-1xp1l1a-0 kMCise"
+                          class="absolute inset-0 -mx-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                        />
+                        <div
+                          class="flex items-center h-5 space-x-3"
                         >
+                          <span>
+                            Search
+                          </span>
                           <div
-                            class="flex items-center h-5 space-x-3"
+                            class="sc-bdfBwQ iNulIV"
+                            height="18"
+                            width="18"
                           >
-                            <span>
-                              Search
-                            </span>
-                            <div
-                              class="sc-bdfBwQ iNulIV"
-                              height="18"
-                              width="18"
-                            >
-                              <svg>
-                                search.svg
-                              </svg>
-                            </div>
+                            <svg>
+                              search.svg
+                            </svg>
                           </div>
                         </div>
-                      </div>
-                    </button>
+                      </button>
+                    </div>
                   </div>
                   <div
                     class="pl-8 my-auto ml-8 h-10 border-l border-theme-secondary-300 dark:border-theme-secondary-800"
@@ -580,11 +579,11 @@ exports[`Contacts should render with contacts 1`] = `
                           </div>
                         </div>
                         <div
-                          class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap"
+                          class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap space-x-2"
                         >
                           <span
-                            class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-text font-semibold text-base"
-                            data-testid="address__wallet-address"
+                            class="inline-flex overflow-hidden text-theme-text font-semibold text-base"
+                            data-testid="Address__address"
                           >
                             D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib
                           </span>
@@ -760,11 +759,11 @@ exports[`Contacts should render with contacts 1`] = `
                           </div>
                         </div>
                         <div
-                          class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap"
+                          class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap space-x-2"
                         >
                           <span
-                            class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-text font-semibold text-base"
-                            data-testid="address__wallet-address"
+                            class="inline-flex overflow-hidden text-theme-text font-semibold text-base"
+                            data-testid="Address__address"
                           >
                             DFJ5Z51F1euNNdRUQJKQVdG4h495LZkc6T
                           </span>
@@ -928,11 +927,11 @@ exports[`Contacts should render with contacts 1`] = `
                           </div>
                         </div>
                         <div
-                          class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap"
+                          class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap space-x-2"
                         >
                           <span
-                            class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-text font-semibold text-base"
-                            data-testid="address__wallet-address"
+                            class="inline-flex overflow-hidden text-theme-text font-semibold text-base"
+                            data-testid="Address__address"
                           >
                             D9YiyRYMBS2ofzqkufjrkB9nHofWgJLM7f
                           </span>
@@ -1096,11 +1095,11 @@ exports[`Contacts should render with contacts 1`] = `
                           </div>
                         </div>
                         <div
-                          class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap"
+                          class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap space-x-2"
                         >
                           <span
-                            class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-text font-semibold text-base"
-                            data-testid="address__wallet-address"
+                            class="inline-flex overflow-hidden text-theme-text font-semibold text-base"
+                            data-testid="Address__address"
                           >
                             DKrACQw7ytoU2gjppy3qKeE2dQhZjfXYqu
                           </span>
@@ -1230,10 +1229,10 @@ exports[`Contacts should render without contacts 1`] = `
   >
     <nav
       aria-labelledby="main menu"
-      class="NavigationBar__NavWrapper-sc-1qsoskw-0 hkUMvZ"
+      class="NavigationBar__NavWrapper-sc-1qsoskw-0 bewuLZ"
     >
       <div
-        class="flex relative h-21"
+        class="relative flex h-21"
       >
         <button
           class="BackButton__StyledBackButton-sc-1pe22tv-0 hLgyWD flex w-12"
@@ -1255,7 +1254,7 @@ exports[`Contacts should render without contacts 1`] = `
             class="flex items-center my-auto"
           >
             <div
-              class="NavigationBar__LogoContainer-sc-1qsoskw-2 tulfg"
+              class="NavigationBar__LogoContainer-sc-1qsoskw-2 itrWMc"
             >
               <svg
                 width="44"
@@ -1265,18 +1264,18 @@ exports[`Contacts should render without contacts 1`] = `
             </div>
           </div>
           <ul
-            class="flex mr-auto ml-4 space-x-8 h-21"
+            class="flex ml-4 mr-auto space-x-8 h-21"
           >
             <li
               class="flex"
             >
               <a
-                class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
+                class="relative flex items-center font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
                 title="Portfolio"
               >
                 <div
-                  class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                  class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
                 />
                 Portfolio
               </a>
@@ -1285,12 +1284,12 @@ exports[`Contacts should render without contacts 1`] = `
               class="flex"
             >
               <a
-                class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
+                class="relative flex items-center font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/plugins"
                 title="Plugins"
               >
                 <div
-                  class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                  class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
                 />
                 Plugins
               </a>
@@ -1299,12 +1298,12 @@ exports[`Contacts should render without contacts 1`] = `
               class="flex"
             >
               <a
-                class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
+                class="relative flex items-center font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/exchange"
                 title="Exchange"
               >
                 <div
-                  class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                  class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
                 />
                 Exchange
               </a>
@@ -1313,12 +1312,12 @@ exports[`Contacts should render without contacts 1`] = `
               class="flex"
             >
               <a
-                class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
+                class="relative flex items-center font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/news"
                 title="News"
               >
                 <div
-                  class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                  class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
                 />
                 News
               </a>
@@ -1444,6 +1443,7 @@ exports[`Contacts should render without contacts 1`] = `
               </div>
               <div
                 class="text-sm font-bold text-theme-secondary-text dark:text-theme-text"
+                data-testid="Balance__value"
               >
                 <span
                   data-testid="Amount"
@@ -1479,7 +1479,7 @@ exports[`Contacts should render without contacts 1`] = `
                   data-testid="dropdown__toggle"
                 >
                   <div
-                    class="cursor-pointer relative justify-center items-center align-middle rounded-full"
+                    class="relative items-center justify-center align-middle rounded-full cursor-pointer"
                     data-testid="navbar__useractions"
                   >
                     <div

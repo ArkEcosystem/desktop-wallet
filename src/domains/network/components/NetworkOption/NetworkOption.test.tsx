@@ -1,4 +1,4 @@
-import { Coins } from "@arkecosystem/platform-sdk";
+import { Networks } from "@arkecosystem/platform-sdk";
 import { CoinNetworkExtended } from "domains/network/data";
 import { getNetworkExtendedData } from "domains/network/helpers";
 import React from "react";
@@ -6,8 +6,8 @@ import { env, fireEvent, getDefaultProfileId, render } from "utils/testing-libra
 
 import { NetworkOption } from "./NetworkOption";
 
-let network: Coins.Network & { extra?: CoinNetworkExtended };
-let networkTestnet: Coins.Network & { extra?: CoinNetworkExtended };
+let network: Networks.Network & { extra?: CoinNetworkExtended };
+let networkTestnet: Networks.Network & { extra?: CoinNetworkExtended };
 
 describe("NetworkIcon", () => {
 	beforeAll(async () => {
@@ -15,7 +15,7 @@ describe("NetworkIcon", () => {
 		await env.profiles().restore(profile);
 		await profile.sync();
 
-		const wallet1 = await profile.walletFactory().fromMnemonic({
+		const wallet1 = await profile.walletFactory().fromMnemonicWithBIP39({
 			mnemonic: "test",
 			coin: "ARK",
 			network: "ark.mainnet",

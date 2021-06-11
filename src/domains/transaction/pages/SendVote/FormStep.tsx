@@ -1,4 +1,3 @@
-import { Contracts } from "@arkecosystem/platform-sdk";
 import { Contracts as ProfilesContracts } from "@arkecosystem/platform-sdk-profiles";
 import { FormField, FormLabel } from "app/components/Form";
 import { Header } from "app/components/Header";
@@ -14,6 +13,7 @@ import { VoteList } from "domains/vote/components/VoteList";
 import React, { useEffect, useState } from "react";
 import { useFormContext } from "react-hook-form";
 import { useTranslation } from "react-i18next";
+import { TransactionFees } from "types";
 
 export const FormStep = ({
 	unvotes,
@@ -33,7 +33,7 @@ export const FormStep = ({
 	const form = useFormContext();
 	const { getValues, setValue, watch, register } = form;
 
-	const [fees, setFees] = useState<Contracts.TransactionFee>({
+	const [fees, setFees] = useState<TransactionFees>({
 		static: "5",
 		min: "0",
 		avg: "0",
@@ -97,12 +97,11 @@ export const FormStep = ({
 						min={fees.min}
 						avg={fees.avg}
 						max={fees.max}
-						defaultValue={fee || 0}
 						value={fee || 0}
 						step={0.01}
 						showFeeOptions={wallet.network().feeType() === "dynamic"}
-						onChange={(currency) => {
-							setValue("fee", currency.value, { shouldValidate: true, shouldDirty: true });
+						onChange={(value) => {
+							setValue("fee", value, { shouldValidate: true, shouldDirty: true });
 						}}
 					/>
 				</FormField>

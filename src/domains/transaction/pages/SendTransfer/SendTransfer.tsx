@@ -1,4 +1,4 @@
-import { Coins, Contracts } from "@arkecosystem/platform-sdk";
+import { Contracts, Networks, Services } from "@arkecosystem/platform-sdk";
 import { Contracts as ProfileContracts, DTO } from "@arkecosystem/platform-sdk-profiles";
 import { BigNumber } from "@arkecosystem/platform-sdk-support";
 import { Button } from "app/components/Button";
@@ -63,7 +63,7 @@ export const SendTransfer = () => {
 	);
 
 	const networks = useMemo(() => {
-		const results: Record<string, Coins.Network> = {};
+		const results: Record<string, Networks.Network> = {};
 		for (const wallet of profile.wallets().values()) {
 			results[wallet.networkId()] = wallet.network();
 		}
@@ -86,11 +86,11 @@ export const SendTransfer = () => {
 	const { senderAddress, fees, fee, remainingBalance, amount, isSendAllSelected, network } = watch();
 	const { sendTransfer, common } = useValidation();
 
-	const { hasDeviceAvailable, isConnected } = useLedgerContext();
+	const { hasDeviceAvailable, isConnected, transport, connect } = useLedgerContext();
 
 	const [lastEstimatedExpiration, setLastEstimatedExpiration] = useState<number | undefined>();
 	const abortRef = useRef(new AbortController());
-	const transactionBuilder = useTransactionBuilder(activeProfile);
+	const transactionBuilder = useTransactionBuilder();
 	const { sign } = useWalletSignatory(wallet!);
 	const { fetchWalletUnconfirmedTransactions } = useTransaction();
 
@@ -209,7 +209,7 @@ export const SendTransfer = () => {
 				encryptionPassword,
 			});
 
-			const transactionInput: Contracts.TransactionInputs = {
+			const transactionInput: Services.TransactionInputs = {
 				fee,
 				signatory,
 				data: {},
@@ -217,15 +217,15 @@ export const SendTransfer = () => {
 
 			if (isMultiPayment) {
 				transactionInput.data = {
-					payments: recipients.map(({ address, amount }: { address: string; amount: string }) => ({
+					payments: recipients.map(({ address, amount }: { address: string; amount: BigNumber }) => ({
 						to: address,
-						amount,
+						amount: amount.toHuman(),
 					})),
 				};
 			} else {
 				transactionInput.data = {
 					to: recipients[0].address,
-					amount: recipients[0].amount,
+					amount: recipients[0].amount.toHuman(),
 					memo: smartbridge,
 				};
 			}
@@ -234,6 +234,11 @@ export const SendTransfer = () => {
 			if (expiration) {
 				transactionInput.data.expiration = parseInt(expiration);
 				setLastEstimatedExpiration(transactionInput.data.expiration);
+			}
+
+			if (activeWallet.isLedger()) {
+				await connect(profile, activeWallet.coinId(), activeWallet.networkId());
+				await activeWallet.ledger().connect(transport);
 			}
 
 			const abortSignal = abortRef.current?.signal;
@@ -255,7 +260,6 @@ export const SendTransfer = () => {
 			setTransaction(transaction);
 			setActiveTab(4);
 		} catch (error) {
-			console.log("error", error);
 			if (isMnemonicError(error)) {
 				setValue("mnemonic", "");
 				return setError("mnemonic", { type: "manual", message: t("TRANSACTION.INVALID_MNEMONIC") });

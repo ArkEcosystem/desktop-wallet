@@ -226,11 +226,11 @@ exports[`Signed Transaction Table should render 1`] = `
                   </div>
                 </div>
                 <div
-                  class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap"
+                  class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap space-x-2"
                 >
                   <span
-                    class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-text font-semibold text-base"
-                    data-testid="address__wallet-address"
+                    class="inline-flex overflow-hidden text-theme-text font-semibold text-base"
+                    data-testid="Address__address"
                   >
                     D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD
                   </span>
@@ -295,7 +295,7 @@ exports[`Signed Transaction Table should render 1`] = `
                   <span
                     data-testid="Amount"
                   >
-                    - 2 DARK
+                    - 0.00000002 DARK
                   </span>
                 </div>
               </div>
@@ -591,7 +591,7 @@ exports[`Signed Transaction Table should render 1`] = `
                   <span
                     data-testid="Amount"
                   >
-                    - 1 DARK
+                    - 0.00000001 DARK
                   </span>
                 </div>
               </div>
@@ -739,7 +739,7 @@ exports[`Signed Transaction Table should render 1`] = `
                   <span
                     data-testid="Amount"
                   >
-                    - 1 DARK
+                    - 0.00000001 DARK
                   </span>
                 </div>
               </div>
@@ -887,7 +887,7 @@ exports[`Signed Transaction Table should render 1`] = `
                   <span
                     data-testid="Amount"
                   >
-                    - 1 DARK
+                    - 0.00000001 DARK
                   </span>
                 </div>
               </div>
@@ -1035,7 +1035,7 @@ exports[`Signed Transaction Table should render 1`] = `
                   <span
                     data-testid="Amount"
                   >
-                    - 1 DARK
+                    - 0.00000001 DARK
                   </span>
                 </div>
               </div>
@@ -1279,11 +1279,11 @@ exports[`Signed Transaction Table should show as awaiting confirmations 1`] = `
                   </div>
                 </div>
                 <div
-                  class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap"
+                  class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap space-x-2"
                 >
                   <span
-                    class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-text font-semibold text-base"
-                    data-testid="address__wallet-address"
+                    class="inline-flex overflow-hidden text-theme-text font-semibold text-base"
+                    data-testid="Address__address"
                   >
                     D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD
                   </span>
@@ -1348,7 +1348,7 @@ exports[`Signed Transaction Table should show as awaiting confirmations 1`] = `
                   <span
                     data-testid="Amount"
                   >
-                    - 2 DARK
+                    - 0.00000002 DARK
                   </span>
                 </div>
               </div>
@@ -1592,11 +1592,11 @@ exports[`Signed Transaction Table should show as awaiting other wallets signatur
                   </div>
                 </div>
                 <div
-                  class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap"
+                  class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap space-x-2"
                 >
                   <span
-                    class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-text font-semibold text-base"
-                    data-testid="address__wallet-address"
+                    class="inline-flex overflow-hidden text-theme-text font-semibold text-base"
+                    data-testid="Address__address"
                   >
                     D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD
                   </span>
@@ -1661,7 +1661,7 @@ exports[`Signed Transaction Table should show as awaiting other wallets signatur
                   <span
                     data-testid="Amount"
                   >
-                    - 2 DARK
+                    - 0.00000002 DARK
                   </span>
                 </div>
               </div>
@@ -1905,11 +1905,11 @@ exports[`Signed Transaction Table should show as awaiting the wallet signature 1
                   </div>
                 </div>
                 <div
-                  class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap"
+                  class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap space-x-2"
                 >
                   <span
-                    class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-text font-semibold text-base"
-                    data-testid="address__wallet-address"
+                    class="inline-flex overflow-hidden text-theme-text font-semibold text-base"
+                    data-testid="Address__address"
                   >
                     D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD
                   </span>
@@ -1974,7 +1974,7 @@ exports[`Signed Transaction Table should show as awaiting the wallet signature 1
                   <span
                     data-testid="Amount"
                   >
-                    - 2 DARK
+                    - 0.00000002 DARK
                   </span>
                 </div>
               </div>
@@ -2218,11 +2218,11 @@ exports[`Signed Transaction Table should show as final signature 1`] = `
                   </div>
                 </div>
                 <div
-                  class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap"
+                  class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap space-x-2"
                 >
                   <span
-                    class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-text font-semibold text-base"
-                    data-testid="address__wallet-address"
+                    class="inline-flex overflow-hidden text-theme-text font-semibold text-base"
+                    data-testid="Address__address"
                   >
                     D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD
                   </span>
@@ -2287,7 +2287,7 @@ exports[`Signed Transaction Table should show as final signature 1`] = `
                   <span
                     data-testid="Amount"
                   >
-                    - 2 DARK
+                    - 0.00000002 DARK
                   </span>
                 </div>
               </div>

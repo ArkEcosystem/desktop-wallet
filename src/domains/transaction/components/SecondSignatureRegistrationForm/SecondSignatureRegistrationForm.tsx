@@ -7,6 +7,7 @@ import { TransactionDetail, TransactionFee } from "domains/transaction/component
 import { SendRegistrationForm } from "domains/transaction/pages/SendRegistration/SendRegistration.models";
 import { handleBroadcastError } from "domains/transaction/utils";
 import React from "react";
+import { TransactionFees } from "types";
 
 import { BackupStep, GenerationStep, ReviewStep, VerificationStep } from "./";
 
@@ -16,7 +17,7 @@ const component = ({
 	wallet,
 }: {
 	activeTab: number;
-	fees: Contracts.TransactionFee;
+	fees: TransactionFees;
 	wallet: ProfilesContracts.IReadWriteWallet;
 }) => (
 	<Tabs activeId={activeTab}>

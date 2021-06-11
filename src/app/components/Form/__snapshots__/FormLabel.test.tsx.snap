@@ -7,31 +7,12 @@ exports[`FormLabel should render & hover if optional 1`] = `
     data-testid="FormLabel"
   >
     Test
-    <div
-      class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
-      data-testid="FormLabel__required"
-    />
     <span
       class="ml-1 text-theme-secondary-500 dark:text-theme-secondary-700"
       data-testid="FormLabel__optional"
     >
       optional
     </span>
-  </label>
-</DocumentFragment>
-`;
-
-exports[`FormLabel should render & hover if required 1`] = `
-<DocumentFragment>
-  <label
-    class="flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
-    data-testid="FormLabel"
-  >
-    Test
-    <div
-      class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
-      data-testid="FormLabel__required"
-    />
   </label>
 </DocumentFragment>
 `;
@@ -44,10 +25,6 @@ exports[`FormLabel should render with name from context 1`] = `
     for="test"
   >
     Test Label
-    <div
-      class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
-      data-testid="FormLabel__required"
-    />
   </label>
 </DocumentFragment>
 `;

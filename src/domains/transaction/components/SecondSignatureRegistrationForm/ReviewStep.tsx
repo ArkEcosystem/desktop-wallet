@@ -1,4 +1,6 @@
+import { Coins } from "@arkecosystem/platform-sdk";
 import { Contracts } from "@arkecosystem/platform-sdk-profiles";
+import { BigNumber } from "@arkecosystem/platform-sdk-support";
 import { Circle } from "app/components/Circle";
 import { Header } from "app/components/Header";
 import { Icon } from "app/components/Icon";
@@ -8,7 +10,6 @@ import {
 	TransactionNetwork,
 	TransactionSender,
 } from "domains/transaction/components/TransactionDetail";
-import { evaluateFee } from "domains/transaction/utils";
 import React, { useEffect } from "react";
 import { useFormContext } from "react-hook-form";
 import { useTranslation } from "react-i18next";
@@ -42,7 +43,12 @@ export const ReviewStep = ({ wallet }: { wallet: Contracts.IReadWriteWallet }) =
 			</TransactionDetail>
 
 			<div className="mt-2">
-				<TotalAmountBox fee={evaluateFee(fee)} ticker={wallet.currency()} />
+				<TotalAmountBox
+					fee={BigNumber.make(fee)
+						.toSatoshi(wallet.config().get(Coins.ConfigKey.CurrencyDecimals))
+						.toString()}
+					ticker={wallet.currency()}
+				/>
 			</div>
 		</section>
 	);

@@ -1,4 +1,4 @@
-import { Coins } from "@arkecosystem/platform-sdk";
+import { Enums, Networks } from "@arkecosystem/platform-sdk";
 import { Contracts } from "@arkecosystem/platform-sdk-profiles";
 import { BigNumber } from "@arkecosystem/platform-sdk-support";
 import { FormField, FormLabel } from "app/components/Form";
@@ -18,7 +18,7 @@ export const FormStep = ({
 	hasWalletId,
 	disableNetworkField,
 }: {
-	networks: Coins.Network[];
+	networks: Networks.Network[];
 	profile: Contracts.IProfile;
 	deeplinkProps: any;
 	hasWalletId: boolean;
@@ -68,7 +68,7 @@ export const FormStep = ({
 							assetSymbol={senderWallet?.currency()}
 							profile={profile}
 							recipients={getRecipients()}
-							showMultiPaymentOption={network?.allows(Coins.FeatureFlag.TransactionMultiPayment)}
+							showMultiPaymentOption={network?.allows(Enums.FeatureFlag.TransactionMultiPayment)}
 							disableMultiPaymentOption={senderWallet?.isLedger()}
 							withDeeplink={!!deeplinkProps?.recipient}
 							onChange={(value: RecipientListItem[]) =>
@@ -78,7 +78,7 @@ export const FormStep = ({
 					</div>
 
 					<FormField name="smartbridge" className="relative">
-						<FormLabel label="Smartbridge" required={false} />
+						<FormLabel label="Smartbridge" optional />
 						<InputCounter
 							data-testid="Input__smartbridge"
 							type="text"

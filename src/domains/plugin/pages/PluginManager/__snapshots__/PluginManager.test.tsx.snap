@@ -8,10 +8,10 @@ exports[`PluginManager should cancel install plugin 1`] = `
     >
       <nav
         aria-labelledby="main menu"
-        class="NavigationBar__NavWrapper-sc-1qsoskw-0 hkUMvZ"
+        class="NavigationBar__NavWrapper-sc-1qsoskw-0 bewuLZ"
       >
         <div
-          class="flex relative h-21"
+          class="relative flex h-21"
         >
           <button
             class="BackButton__StyledBackButton-sc-1pe22tv-0 eUphun flex w-12"
@@ -34,7 +34,7 @@ exports[`PluginManager should cancel install plugin 1`] = `
               class="flex items-center my-auto"
             >
               <div
-                class="NavigationBar__LogoContainer-sc-1qsoskw-2 tulfg"
+                class="NavigationBar__LogoContainer-sc-1qsoskw-2 itrWMc"
               >
                 <svg
                   width="44"
@@ -44,18 +44,18 @@ exports[`PluginManager should cancel install plugin 1`] = `
               </div>
             </div>
             <ul
-              class="flex mr-auto ml-4 space-x-8 h-21"
+              class="flex ml-4 mr-auto space-x-8 h-21"
             >
               <li
                 class="flex"
               >
                 <a
-                  class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
+                  class="relative flex items-center font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
                   href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
                   title="Portfolio"
                 >
                   <div
-                    class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                    class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
                   />
                   Portfolio
                 </a>
@@ -65,12 +65,12 @@ exports[`PluginManager should cancel install plugin 1`] = `
               >
                 <a
                   aria-current="page"
-                  class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group active"
+                  class="relative flex items-center font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group active"
                   href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/plugins"
                   title="Plugins"
                 >
                   <div
-                    class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                    class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
                   />
                   Plugins
                 </a>
@@ -79,12 +79,12 @@ exports[`PluginManager should cancel install plugin 1`] = `
                 class="flex"
               >
                 <a
-                  class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
+                  class="relative flex items-center font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
                   href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/exchange"
                   title="Exchange"
                 >
                   <div
-                    class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                    class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
                   />
                   Exchange
                 </a>
@@ -93,12 +93,12 @@ exports[`PluginManager should cancel install plugin 1`] = `
                 class="flex"
               >
                 <a
-                  class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
+                  class="relative flex items-center font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
                   href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/news"
                   title="News"
                 >
                   <div
-                    class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                    class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
                   />
                   News
                 </a>
@@ -224,6 +224,7 @@ exports[`PluginManager should cancel install plugin 1`] = `
                 </div>
                 <div
                   class="text-sm font-bold text-theme-secondary-text dark:text-theme-text"
+                  data-testid="Balance__value"
                 >
                   <span
                     data-testid="Amount"
@@ -259,7 +260,7 @@ exports[`PluginManager should cancel install plugin 1`] = `
                     data-testid="dropdown__toggle"
                   >
                     <div
-                      class="cursor-pointer relative justify-center items-center align-middle rounded-full"
+                      class="relative items-center justify-center align-middle rounded-full cursor-pointer"
                       data-testid="navbar__useractions"
                     >
                       <div
@@ -322,37 +323,35 @@ exports[`PluginManager should cancel install plugin 1`] = `
                 >
                   <div
                     class="relative"
+                    data-testid="HeaderSearchBar"
                   >
-                    <button
-                      class="my-auto h-full font-semibold cursor-pointer focus:outline-none"
-                      data-testid="header-search-bar__button"
-                      type="button"
+                    <div
+                      class="group"
                     >
-                      <div
-                        class="group"
+                      <button
+                        class="ControlButton__ControlButtonStyled-sc-1xp1l1a-0 gPBHgx group"
                       >
                         <div
-                          class="ControlButton__ControlButtonStyled-sc-1xp1l1a-0 kMCise"
+                          class="absolute inset-0 -mx-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                        />
+                        <div
+                          class="flex items-center h-5 space-x-3"
                         >
+                          <span>
+                            Search
+                          </span>
                           <div
-                            class="flex items-center h-5 space-x-3"
+                            class="sc-bdfBwQ iNulIV"
+                            height="18"
+                            width="18"
                           >
-                            <span>
-                              Search
-                            </span>
-                            <div
-                              class="sc-bdfBwQ iNulIV"
-                              height="18"
-                              width="18"
-                            >
-                              <svg>
-                                search.svg
-                              </svg>
-                            </div>
+                            <svg>
+                              search.svg
+                            </svg>
                           </div>
                         </div>
-                      </div>
-                    </button>
+                      </button>
+                    </div>
                   </div>
                   <div
                     class="pl-8 my-auto ml-5 h-10 border-l border-theme-secondary-300 dark:border-theme-secondary-800"
@@ -389,7 +388,7 @@ exports[`PluginManager should cancel install plugin 1`] = `
           </div>
         </div>
         <nav
-          class="PluginManagerNavigationBar__NavWrapper-sc-1x1q7te-0 ggmsTH sticky top-21 bg-theme-secondary-100 dark:bg-black my-4"
+          class="PluginManagerNavigationBar__NavWrapper-sc-1x1q7te-0 jJNecf sticky top-21 bg-theme-secondary-100 dark:bg-black my-4"
           data-testid="PluginManagerNavigationBar"
         >
           <div
@@ -403,10 +402,13 @@ exports[`PluginManager should cancel install plugin 1`] = `
                   class="flex"
                 >
                   <button
-                    class="PluginManagerNavigationBar__item px-1 focus:outline-none lex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer active"
+                    class="PluginManagerNavigationBar__item group active"
                     data-testid="PluginManagerNavigationBar__latest"
                     title="Latest"
                   >
+                    <div
+                      class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                    />
                     <span>
                       Latest
                     </span>
@@ -419,10 +421,13 @@ exports[`PluginManager should cancel install plugin 1`] = `
                   class="flex"
                 >
                   <button
-                    class="PluginManagerNavigationBar__item px-1 focus:outline-none lex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer "
+                    class="PluginManagerNavigationBar__item group"
                     data-testid="PluginManagerNavigationBar__all"
                     title="All"
                   >
+                    <div
+                      class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                    />
                     <span>
                       All
                     </span>
@@ -435,10 +440,13 @@ exports[`PluginManager should cancel install plugin 1`] = `
                   class="flex"
                 >
                   <button
-                    class="PluginManagerNavigationBar__item px-1 focus:outline-none lex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer "
+                    class="PluginManagerNavigationBar__item group"
                     data-testid="PluginManagerNavigationBar__gaming"
                     title="Gaming"
                   >
+                    <div
+                      class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                    />
                     <span>
                       Gaming
                     </span>
@@ -456,10 +464,13 @@ exports[`PluginManager should cancel install plugin 1`] = `
                   class="flex"
                 >
                   <button
-                    class="PluginManagerNavigationBar__item px-1 focus:outline-none lex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer "
+                    class="PluginManagerNavigationBar__item group"
                     data-testid="PluginManagerNavigationBar__utility"
                     title="Utility"
                   >
+                    <div
+                      class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                    />
                     <span>
                       Utility
                     </span>
@@ -477,10 +488,13 @@ exports[`PluginManager should cancel install plugin 1`] = `
                   class="flex"
                 >
                   <button
-                    class="PluginManagerNavigationBar__item px-1 focus:outline-none lex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer "
+                    class="PluginManagerNavigationBar__item group"
                     data-testid="PluginManagerNavigationBar__exchange"
                     title="Exchange"
                   >
+                    <div
+                      class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                    />
                     <span>
                       Exchange
                     </span>
@@ -498,10 +512,13 @@ exports[`PluginManager should cancel install plugin 1`] = `
                   class="flex"
                 >
                   <button
-                    class="PluginManagerNavigationBar__item px-1 focus:outline-none lex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer "
+                    class="PluginManagerNavigationBar__item group"
                     data-testid="PluginManagerNavigationBar__other"
                     title="Other"
                   >
+                    <div
+                      class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                    />
                     <span>
                       Other
                     </span>
@@ -521,10 +538,13 @@ exports[`PluginManager should cancel install plugin 1`] = `
                 class="relative"
               >
                 <button
-                  class="PluginManagerNavigationBar__item h-full px-1 focus:outline-none flex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer "
+                  class="PluginManagerNavigationBar__item group"
                   data-testid="PluginManagerNavigationBar__my-plugins"
                   title="My Plugins"
                 >
+                  <div
+                    class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                  />
                   <span>
                     My Plugins
                   </span>
@@ -542,10 +562,13 @@ exports[`PluginManager should cancel install plugin 1`] = `
                   <div
                     class="group"
                   >
-                    <div
-                      class="ControlButton__ControlButtonStyled-sc-1xp1l1a-0 gCTrBm"
+                    <button
+                      class="ControlButton__ControlButtonStyled-sc-1xp1l1a-0 gPBHgx group active"
                       data-testid="LayoutControls__list--icon"
                     >
+                      <div
+                        class="absolute inset-0 -mx-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                      />
                       <div
                         class="sc-bdfBwQ iyevwF"
                         height="20"
@@ -555,7 +578,7 @@ exports[`PluginManager should cancel install plugin 1`] = `
                           list-view.svg
                         </svg>
                       </div>
-                    </div>
+                    </button>
                   </div>
                 </div>
                 <div
@@ -564,10 +587,13 @@ exports[`PluginManager should cancel install plugin 1`] = `
                   <div
                     class="group"
                   >
-                    <div
-                      class="ControlButton__ControlButtonStyled-sc-1xp1l1a-0 kMCise"
+                    <button
+                      class="ControlButton__ControlButtonStyled-sc-1xp1l1a-0 gPBHgx group"
                       data-testid="LayoutControls__grid--icon"
                     >
+                      <div
+                        class="absolute inset-0 -mx-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                      />
                       <div
                         class="sc-bdfBwQ iyevwF"
                         height="20"
@@ -577,7 +603,7 @@ exports[`PluginManager should cancel install plugin 1`] = `
                           grid-view.svg
                         </svg>
                       </div>
-                    </div>
+                    </button>
                   </div>
                 </div>
               </div>
@@ -1203,10 +1229,10 @@ exports[`PluginManager should disable plugin on my-plugins 1`] = `
     >
       <nav
         aria-labelledby="main menu"
-        class="NavigationBar__NavWrapper-sc-1qsoskw-0 hkUMvZ"
+        class="NavigationBar__NavWrapper-sc-1qsoskw-0 bewuLZ"
       >
         <div
-          class="flex relative h-21"
+          class="relative flex h-21"
         >
           <button
             class="BackButton__StyledBackButton-sc-1pe22tv-0 eUphun flex w-12"
@@ -1229,7 +1255,7 @@ exports[`PluginManager should disable plugin on my-plugins 1`] = `
               class="flex items-center my-auto"
             >
               <div
-                class="NavigationBar__LogoContainer-sc-1qsoskw-2 tulfg"
+                class="NavigationBar__LogoContainer-sc-1qsoskw-2 itrWMc"
               >
                 <svg
                   width="44"
@@ -1239,18 +1265,18 @@ exports[`PluginManager should disable plugin on my-plugins 1`] = `
               </div>
             </div>
             <ul
-              class="flex mr-auto ml-4 space-x-8 h-21"
+              class="flex ml-4 mr-auto space-x-8 h-21"
             >
               <li
                 class="flex"
               >
                 <a
-                  class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
+                  class="relative flex items-center font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
                   href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
                   title="Portfolio"
                 >
                   <div
-                    class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                    class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
                   />
                   Portfolio
                 </a>
@@ -1260,12 +1286,12 @@ exports[`PluginManager should disable plugin on my-plugins 1`] = `
               >
                 <a
                   aria-current="page"
-                  class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group active"
+                  class="relative flex items-center font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group active"
                   href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/plugins"
                   title="Plugins"
                 >
                   <div
-                    class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                    class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
                   />
                   Plugins
                 </a>
@@ -1274,12 +1300,12 @@ exports[`PluginManager should disable plugin on my-plugins 1`] = `
                 class="flex"
               >
                 <a
-                  class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
+                  class="relative flex items-center font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
                   href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/exchange"
                   title="Exchange"
                 >
                   <div
-                    class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                    class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
                   />
                   Exchange
                 </a>
@@ -1288,12 +1314,12 @@ exports[`PluginManager should disable plugin on my-plugins 1`] = `
                 class="flex"
               >
                 <a
-                  class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
+                  class="relative flex items-center font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
                   href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/news"
                   title="News"
                 >
                   <div
-                    class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                    class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
                   />
                   News
                 </a>
@@ -1419,6 +1445,7 @@ exports[`PluginManager should disable plugin on my-plugins 1`] = `
                 </div>
                 <div
                   class="text-sm font-bold text-theme-secondary-text dark:text-theme-text"
+                  data-testid="Balance__value"
                 >
                   <span
                     data-testid="Amount"
@@ -1454,7 +1481,7 @@ exports[`PluginManager should disable plugin on my-plugins 1`] = `
                     data-testid="dropdown__toggle"
                   >
                     <div
-                      class="cursor-pointer relative justify-center items-center align-middle rounded-full"
+                      class="relative items-center justify-center align-middle rounded-full cursor-pointer"
                       data-testid="navbar__useractions"
                     >
                       <div
@@ -1517,37 +1544,35 @@ exports[`PluginManager should disable plugin on my-plugins 1`] = `
                 >
                   <div
                     class="relative"
+                    data-testid="HeaderSearchBar"
                   >
-                    <button
-                      class="my-auto h-full font-semibold cursor-pointer focus:outline-none"
-                      data-testid="header-search-bar__button"
-                      type="button"
+                    <div
+                      class="group"
                     >
-                      <div
-                        class="group"
+                      <button
+                        class="ControlButton__ControlButtonStyled-sc-1xp1l1a-0 gPBHgx group"
                       >
                         <div
-                          class="ControlButton__ControlButtonStyled-sc-1xp1l1a-0 kMCise"
+                          class="absolute inset-0 -mx-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                        />
+                        <div
+                          class="flex items-center h-5 space-x-3"
                         >
+                          <span>
+                            Search
+                          </span>
                           <div
-                            class="flex items-center h-5 space-x-3"
+                            class="sc-bdfBwQ iNulIV"
+                            height="18"
+                            width="18"
                           >
-                            <span>
-                              Search
-                            </span>
-                            <div
-                              class="sc-bdfBwQ iNulIV"
-                              height="18"
-                              width="18"
-                            >
-                              <svg>
-                                search.svg
-                              </svg>
-                            </div>
+                            <svg>
+                              search.svg
+                            </svg>
                           </div>
                         </div>
-                      </div>
-                    </button>
+                      </button>
+                    </div>
                   </div>
                   <div
                     class="pl-8 my-auto ml-5 h-10 border-l border-theme-secondary-300 dark:border-theme-secondary-800"
@@ -1584,7 +1609,7 @@ exports[`PluginManager should disable plugin on my-plugins 1`] = `
           </div>
         </div>
         <nav
-          class="PluginManagerNavigationBar__NavWrapper-sc-1x1q7te-0 ggmsTH sticky top-21 bg-theme-secondary-100 dark:bg-black my-4"
+          class="PluginManagerNavigationBar__NavWrapper-sc-1x1q7te-0 jJNecf sticky top-21 bg-theme-secondary-100 dark:bg-black my-4"
           data-testid="PluginManagerNavigationBar"
         >
           <div
@@ -1598,10 +1623,13 @@ exports[`PluginManager should disable plugin on my-plugins 1`] = `
                   class="flex"
                 >
                   <button
-                    class="PluginManagerNavigationBar__item px-1 focus:outline-none lex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer "
+                    class="PluginManagerNavigationBar__item group"
                     data-testid="PluginManagerNavigationBar__latest"
                     title="Latest"
                   >
+                    <div
+                      class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                    />
                     <span>
                       Latest
                     </span>
@@ -1614,10 +1642,13 @@ exports[`PluginManager should disable plugin on my-plugins 1`] = `
                   class="flex"
                 >
                   <button
-                    class="PluginManagerNavigationBar__item px-1 focus:outline-none lex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer "
+                    class="PluginManagerNavigationBar__item group"
                     data-testid="PluginManagerNavigationBar__all"
                     title="All"
                   >
+                    <div
+                      class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                    />
                     <span>
                       All
                     </span>
@@ -1630,10 +1661,13 @@ exports[`PluginManager should disable plugin on my-plugins 1`] = `
                   class="flex"
                 >
                   <button
-                    class="PluginManagerNavigationBar__item px-1 focus:outline-none lex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer "
+                    class="PluginManagerNavigationBar__item group"
                     data-testid="PluginManagerNavigationBar__gaming"
                     title="Gaming"
                   >
+                    <div
+                      class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                    />
                     <span>
                       Gaming
                     </span>
@@ -1651,10 +1685,13 @@ exports[`PluginManager should disable plugin on my-plugins 1`] = `
                   class="flex"
                 >
                   <button
-                    class="PluginManagerNavigationBar__item px-1 focus:outline-none lex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer "
+                    class="PluginManagerNavigationBar__item group"
                     data-testid="PluginManagerNavigationBar__utility"
                     title="Utility"
                   >
+                    <div
+                      class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                    />
                     <span>
                       Utility
                     </span>
@@ -1672,10 +1709,13 @@ exports[`PluginManager should disable plugin on my-plugins 1`] = `
                   class="flex"
                 >
                   <button
-                    class="PluginManagerNavigationBar__item px-1 focus:outline-none lex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer "
+                    class="PluginManagerNavigationBar__item group"
                     data-testid="PluginManagerNavigationBar__exchange"
                     title="Exchange"
                   >
+                    <div
+                      class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                    />
                     <span>
                       Exchange
                     </span>
@@ -1693,10 +1733,13 @@ exports[`PluginManager should disable plugin on my-plugins 1`] = `
                   class="flex"
                 >
                   <button
-                    class="PluginManagerNavigationBar__item px-1 focus:outline-none lex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer "
+                    class="PluginManagerNavigationBar__item group"
                     data-testid="PluginManagerNavigationBar__other"
                     title="Other"
                   >
+                    <div
+                      class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                    />
                     <span>
                       Other
                     </span>
@@ -1716,10 +1759,13 @@ exports[`PluginManager should disable plugin on my-plugins 1`] = `
                 class="relative"
               >
                 <button
-                  class="PluginManagerNavigationBar__item h-full px-1 focus:outline-none flex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer active"
+                  class="PluginManagerNavigationBar__item group active"
                   data-testid="PluginManagerNavigationBar__my-plugins"
                   title="My Plugins"
                 >
+                  <div
+                    class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                  />
                   <span>
                     My Plugins
                   </span>
@@ -1743,10 +1789,13 @@ exports[`PluginManager should disable plugin on my-plugins 1`] = `
                   <div
                     class="group"
                   >
-                    <div
-                      class="ControlButton__ControlButtonStyled-sc-1xp1l1a-0 gCTrBm"
+                    <button
+                      class="ControlButton__ControlButtonStyled-sc-1xp1l1a-0 gPBHgx group active"
                       data-testid="LayoutControls__list--icon"
                     >
+                      <div
+                        class="absolute inset-0 -mx-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                      />
                       <div
                         class="sc-bdfBwQ iyevwF"
                         height="20"
@@ -1756,7 +1805,7 @@ exports[`PluginManager should disable plugin on my-plugins 1`] = `
                           list-view.svg
                         </svg>
                       </div>
-                    </div>
+                    </button>
                   </div>
                 </div>
                 <div
@@ -1765,10 +1814,13 @@ exports[`PluginManager should disable plugin on my-plugins 1`] = `
                   <div
                     class="group"
                   >
-                    <div
-                      class="ControlButton__ControlButtonStyled-sc-1xp1l1a-0 kMCise"
+                    <button
+                      class="ControlButton__ControlButtonStyled-sc-1xp1l1a-0 gPBHgx group"
                       data-testid="LayoutControls__grid--icon"
                     >
+                      <div
+                        class="absolute inset-0 -mx-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                      />
                       <div
                         class="sc-bdfBwQ iyevwF"
                         height="20"
@@ -1778,7 +1830,7 @@ exports[`PluginManager should disable plugin on my-plugins 1`] = `
                           grid-view.svg
                         </svg>
                       </div>
-                    </div>
+                    </button>
                   </div>
                 </div>
               </div>
@@ -2149,10 +2201,10 @@ exports[`PluginManager should enable plugin on my-plugins 1`] = `
     >
       <nav
         aria-labelledby="main menu"
-        class="NavigationBar__NavWrapper-sc-1qsoskw-0 hkUMvZ"
+        class="NavigationBar__NavWrapper-sc-1qsoskw-0 bewuLZ"
       >
         <div
-          class="flex relative h-21"
+          class="relative flex h-21"
         >
           <button
             class="BackButton__StyledBackButton-sc-1pe22tv-0 eUphun flex w-12"
@@ -2175,7 +2227,7 @@ exports[`PluginManager should enable plugin on my-plugins 1`] = `
               class="flex items-center my-auto"
             >
               <div
-                class="NavigationBar__LogoContainer-sc-1qsoskw-2 tulfg"
+                class="NavigationBar__LogoContainer-sc-1qsoskw-2 itrWMc"
               >
                 <svg
                   width="44"
@@ -2185,18 +2237,18 @@ exports[`PluginManager should enable plugin on my-plugins 1`] = `
               </div>
             </div>
             <ul
-              class="flex mr-auto ml-4 space-x-8 h-21"
+              class="flex ml-4 mr-auto space-x-8 h-21"
             >
               <li
                 class="flex"
               >
                 <a
-                  class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
+                  class="relative flex items-center font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
                   href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
                   title="Portfolio"
                 >
                   <div
-                    class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                    class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
                   />
                   Portfolio
                 </a>
@@ -2206,12 +2258,12 @@ exports[`PluginManager should enable plugin on my-plugins 1`] = `
               >
                 <a
                   aria-current="page"
-                  class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group active"
+                  class="relative flex items-center font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group active"
                   href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/plugins"
                   title="Plugins"
                 >
                   <div
-                    class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                    class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
                   />
                   Plugins
                 </a>
@@ -2220,12 +2272,12 @@ exports[`PluginManager should enable plugin on my-plugins 1`] = `
                 class="flex"
               >
                 <a
-                  class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
+                  class="relative flex items-center font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
                   href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/exchange"
                   title="Exchange"
                 >
                   <div
-                    class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                    class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
                   />
                   Exchange
                 </a>
@@ -2234,12 +2286,12 @@ exports[`PluginManager should enable plugin on my-plugins 1`] = `
                 class="flex"
               >
                 <a
-                  class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
+                  class="relative flex items-center font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
                   href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/news"
                   title="News"
                 >
                   <div
-                    class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                    class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
                   />
                   News
                 </a>
@@ -2365,6 +2417,7 @@ exports[`PluginManager should enable plugin on my-plugins 1`] = `
                 </div>
                 <div
                   class="text-sm font-bold text-theme-secondary-text dark:text-theme-text"
+                  data-testid="Balance__value"
                 >
                   <span
                     data-testid="Amount"
@@ -2400,7 +2453,7 @@ exports[`PluginManager should enable plugin on my-plugins 1`] = `
                     data-testid="dropdown__toggle"
                   >
                     <div
-                      class="cursor-pointer relative justify-center items-center align-middle rounded-full"
+                      class="relative items-center justify-center align-middle rounded-full cursor-pointer"
                       data-testid="navbar__useractions"
                     >
                       <div
@@ -2463,37 +2516,35 @@ exports[`PluginManager should enable plugin on my-plugins 1`] = `
                 >
                   <div
                     class="relative"
+                    data-testid="HeaderSearchBar"
                   >
-                    <button
-                      class="my-auto h-full font-semibold cursor-pointer focus:outline-none"
-                      data-testid="header-search-bar__button"
-                      type="button"
+                    <div
+                      class="group"
                     >
-                      <div
-                        class="group"
+                      <button
+                        class="ControlButton__ControlButtonStyled-sc-1xp1l1a-0 gPBHgx group"
                       >
                         <div
-                          class="ControlButton__ControlButtonStyled-sc-1xp1l1a-0 kMCise"
+                          class="absolute inset-0 -mx-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                        />
+                        <div
+                          class="flex items-center h-5 space-x-3"
                         >
+                          <span>
+                            Search
+                          </span>
                           <div
-                            class="flex items-center h-5 space-x-3"
+                            class="sc-bdfBwQ iNulIV"
+                            height="18"
+                            width="18"
                           >
-                            <span>
-                              Search
-                            </span>
-                            <div
-                              class="sc-bdfBwQ iNulIV"
-                              height="18"
-                              width="18"
-                            >
-                              <svg>
-                                search.svg
-                              </svg>
-                            </div>
+                            <svg>
+                              search.svg
+                            </svg>
                           </div>
                         </div>
-                      </div>
-                    </button>
+                      </button>
+                    </div>
                   </div>
                   <div
                     class="pl-8 my-auto ml-5 h-10 border-l border-theme-secondary-300 dark:border-theme-secondary-800"
@@ -2530,7 +2581,7 @@ exports[`PluginManager should enable plugin on my-plugins 1`] = `
           </div>
         </div>
         <nav
-          class="PluginManagerNavigationBar__NavWrapper-sc-1x1q7te-0 ggmsTH sticky top-21 bg-theme-secondary-100 dark:bg-black my-4"
+          class="PluginManagerNavigationBar__NavWrapper-sc-1x1q7te-0 jJNecf sticky top-21 bg-theme-secondary-100 dark:bg-black my-4"
           data-testid="PluginManagerNavigationBar"
         >
           <div
@@ -2544,10 +2595,13 @@ exports[`PluginManager should enable plugin on my-plugins 1`] = `
                   class="flex"
                 >
                   <button
-                    class="PluginManagerNavigationBar__item px-1 focus:outline-none lex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer "
+                    class="PluginManagerNavigationBar__item group"
                     data-testid="PluginManagerNavigationBar__latest"
                     title="Latest"
                   >
+                    <div
+                      class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                    />
                     <span>
                       Latest
                     </span>
@@ -2560,10 +2614,13 @@ exports[`PluginManager should enable plugin on my-plugins 1`] = `
                   class="flex"
                 >
                   <button
-                    class="PluginManagerNavigationBar__item px-1 focus:outline-none lex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer "
+                    class="PluginManagerNavigationBar__item group"
                     data-testid="PluginManagerNavigationBar__all"
                     title="All"
                   >
+                    <div
+                      class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                    />
                     <span>
                       All
                     </span>
@@ -2576,10 +2633,13 @@ exports[`PluginManager should enable plugin on my-plugins 1`] = `
                   class="flex"
                 >
                   <button
-                    class="PluginManagerNavigationBar__item px-1 focus:outline-none lex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer "
+                    class="PluginManagerNavigationBar__item group"
                     data-testid="PluginManagerNavigationBar__gaming"
                     title="Gaming"
                   >
+                    <div
+                      class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                    />
                     <span>
                       Gaming
                     </span>
@@ -2597,10 +2657,13 @@ exports[`PluginManager should enable plugin on my-plugins 1`] = `
                   class="flex"
                 >
                   <button
-                    class="PluginManagerNavigationBar__item px-1 focus:outline-none lex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer "
+                    class="PluginManagerNavigationBar__item group"
                     data-testid="PluginManagerNavigationBar__utility"
                     title="Utility"
                   >
+                    <div
+                      class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                    />
                     <span>
                       Utility
                     </span>
@@ -2618,10 +2681,13 @@ exports[`PluginManager should enable plugin on my-plugins 1`] = `
                   class="flex"
                 >
                   <button
-                    class="PluginManagerNavigationBar__item px-1 focus:outline-none lex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer "
+                    class="PluginManagerNavigationBar__item group"
                     data-testid="PluginManagerNavigationBar__exchange"
                     title="Exchange"
                   >
+                    <div
+                      class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                    />
                     <span>
                       Exchange
                     </span>
@@ -2639,10 +2705,13 @@ exports[`PluginManager should enable plugin on my-plugins 1`] = `
                   class="flex"
                 >
                   <button
-                    class="PluginManagerNavigationBar__item px-1 focus:outline-none lex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer "
+                    class="PluginManagerNavigationBar__item group"
                     data-testid="PluginManagerNavigationBar__other"
                     title="Other"
                   >
+                    <div
+                      class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                    />
                     <span>
                       Other
                     </span>
@@ -2662,10 +2731,13 @@ exports[`PluginManager should enable plugin on my-plugins 1`] = `
                 class="relative"
               >
                 <button
-                  class="PluginManagerNavigationBar__item h-full px-1 focus:outline-none flex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer active"
+                  class="PluginManagerNavigationBar__item group active"
                   data-testid="PluginManagerNavigationBar__my-plugins"
                   title="My Plugins"
                 >
+                  <div
+                    class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                  />
                   <span>
                     My Plugins
                   </span>
@@ -2689,10 +2761,13 @@ exports[`PluginManager should enable plugin on my-plugins 1`] = `
                   <div
                     class="group"
                   >
-                    <div
-                      class="ControlButton__ControlButtonStyled-sc-1xp1l1a-0 gCTrBm"
+                    <button
+                      class="ControlButton__ControlButtonStyled-sc-1xp1l1a-0 gPBHgx group active"
                       data-testid="LayoutControls__list--icon"
                     >
+                      <div
+                        class="absolute inset-0 -mx-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                      />
                       <div
                         class="sc-bdfBwQ iyevwF"
                         height="20"
@@ -2702,7 +2777,7 @@ exports[`PluginManager should enable plugin on my-plugins 1`] = `
                           list-view.svg
                         </svg>
                       </div>
-                    </div>
+                    </button>
                   </div>
                 </div>
                 <div
@@ -2711,10 +2786,13 @@ exports[`PluginManager should enable plugin on my-plugins 1`] = `
                   <div
                     class="group"
                   >
-                    <div
-                      class="ControlButton__ControlButtonStyled-sc-1xp1l1a-0 kMCise"
+                    <button
+                      class="ControlButton__ControlButtonStyled-sc-1xp1l1a-0 gPBHgx group"
                       data-testid="LayoutControls__grid--icon"
                     >
+                      <div
+                        class="absolute inset-0 -mx-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                      />
                       <div
                         class="sc-bdfBwQ iyevwF"
                         height="20"
@@ -2724,7 +2802,7 @@ exports[`PluginManager should enable plugin on my-plugins 1`] = `
                           grid-view.svg
                         </svg>
                       </div>
-                    </div>
+                    </button>
                   </div>
                 </div>
               </div>
@@ -3095,10 +3173,10 @@ exports[`PluginManager should render 1`] = `
     >
       <nav
         aria-labelledby="main menu"
-        class="NavigationBar__NavWrapper-sc-1qsoskw-0 hkUMvZ"
+        class="NavigationBar__NavWrapper-sc-1qsoskw-0 bewuLZ"
       >
         <div
-          class="flex relative h-21"
+          class="relative flex h-21"
         >
           <button
             class="BackButton__StyledBackButton-sc-1pe22tv-0 eUphun flex w-12"
@@ -3121,7 +3199,7 @@ exports[`PluginManager should render 1`] = `
               class="flex items-center my-auto"
             >
               <div
-                class="NavigationBar__LogoContainer-sc-1qsoskw-2 tulfg"
+                class="NavigationBar__LogoContainer-sc-1qsoskw-2 itrWMc"
               >
                 <svg
                   width="44"
@@ -3131,18 +3209,18 @@ exports[`PluginManager should render 1`] = `
               </div>
             </div>
             <ul
-              class="flex mr-auto ml-4 space-x-8 h-21"
+              class="flex ml-4 mr-auto space-x-8 h-21"
             >
               <li
                 class="flex"
               >
                 <a
-                  class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
+                  class="relative flex items-center font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
                   href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
                   title="Portfolio"
                 >
                   <div
-                    class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                    class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
                   />
                   Portfolio
                 </a>
@@ -3152,12 +3230,12 @@ exports[`PluginManager should render 1`] = `
               >
                 <a
                   aria-current="page"
-                  class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group active"
+                  class="relative flex items-center font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group active"
                   href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/plugins"
                   title="Plugins"
                 >
                   <div
-                    class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                    class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
                   />
                   Plugins
                 </a>
@@ -3166,12 +3244,12 @@ exports[`PluginManager should render 1`] = `
                 class="flex"
               >
                 <a
-                  class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
+                  class="relative flex items-center font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
                   href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/exchange"
                   title="Exchange"
                 >
                   <div
-                    class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                    class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
                   />
                   Exchange
                 </a>
@@ -3180,12 +3258,12 @@ exports[`PluginManager should render 1`] = `
                 class="flex"
               >
                 <a
-                  class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
+                  class="relative flex items-center font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
                   href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/news"
                   title="News"
                 >
                   <div
-                    class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                    class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
                   />
                   News
                 </a>
@@ -3311,6 +3389,7 @@ exports[`PluginManager should render 1`] = `
                 </div>
                 <div
                   class="text-sm font-bold text-theme-secondary-text dark:text-theme-text"
+                  data-testid="Balance__value"
                 >
                   <span
                     data-testid="Amount"
@@ -3346,7 +3425,7 @@ exports[`PluginManager should render 1`] = `
                     data-testid="dropdown__toggle"
                   >
                     <div
-                      class="cursor-pointer relative justify-center items-center align-middle rounded-full"
+                      class="relative items-center justify-center align-middle rounded-full cursor-pointer"
                       data-testid="navbar__useractions"
                     >
                       <div
@@ -3409,37 +3488,35 @@ exports[`PluginManager should render 1`] = `
                 >
                   <div
                     class="relative"
+                    data-testid="HeaderSearchBar"
                   >
-                    <button
-                      class="my-auto h-full font-semibold cursor-pointer focus:outline-none"
-                      data-testid="header-search-bar__button"
-                      type="button"
+                    <div
+                      class="group"
                     >
-                      <div
-                        class="group"
+                      <button
+                        class="ControlButton__ControlButtonStyled-sc-1xp1l1a-0 gPBHgx group"
                       >
                         <div
-                          class="ControlButton__ControlButtonStyled-sc-1xp1l1a-0 kMCise"
+                          class="absolute inset-0 -mx-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                        />
+                        <div
+                          class="flex items-center h-5 space-x-3"
                         >
+                          <span>
+                            Search
+                          </span>
                           <div
-                            class="flex items-center h-5 space-x-3"
+                            class="sc-bdfBwQ iNulIV"
+                            height="18"
+                            width="18"
                           >
-                            <span>
-                              Search
-                            </span>
-                            <div
-                              class="sc-bdfBwQ iNulIV"
-                              height="18"
-                              width="18"
-                            >
-                              <svg>
-                                search.svg
-                              </svg>
-                            </div>
+                            <svg>
+                              search.svg
+                            </svg>
                           </div>
                         </div>
-                      </div>
-                    </button>
+                      </button>
+                    </div>
                   </div>
                   <div
                     class="pl-8 my-auto ml-5 h-10 border-l border-theme-secondary-300 dark:border-theme-secondary-800"
@@ -3476,7 +3553,7 @@ exports[`PluginManager should render 1`] = `
           </div>
         </div>
         <nav
-          class="PluginManagerNavigationBar__NavWrapper-sc-1x1q7te-0 ggmsTH sticky top-21 bg-theme-secondary-100 dark:bg-black my-4"
+          class="PluginManagerNavigationBar__NavWrapper-sc-1x1q7te-0 jJNecf sticky top-21 bg-theme-secondary-100 dark:bg-black my-4"
           data-testid="PluginManagerNavigationBar"
         >
           <div
@@ -3490,10 +3567,13 @@ exports[`PluginManager should render 1`] = `
                   class="flex"
                 >
                   <button
-                    class="PluginManagerNavigationBar__item px-1 focus:outline-none lex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer active"
+                    class="PluginManagerNavigationBar__item group active"
                     data-testid="PluginManagerNavigationBar__latest"
                     title="Latest"
                   >
+                    <div
+                      class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                    />
                     <span>
                       Latest
                     </span>
@@ -3506,10 +3586,13 @@ exports[`PluginManager should render 1`] = `
                   class="flex"
                 >
                   <button
-                    class="PluginManagerNavigationBar__item px-1 focus:outline-none lex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer "
+                    class="PluginManagerNavigationBar__item group"
                     data-testid="PluginManagerNavigationBar__all"
                     title="All"
                   >
+                    <div
+                      class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                    />
                     <span>
                       All
                     </span>
@@ -3522,10 +3605,13 @@ exports[`PluginManager should render 1`] = `
                   class="flex"
                 >
                   <button
-                    class="PluginManagerNavigationBar__item px-1 focus:outline-none lex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer "
+                    class="PluginManagerNavigationBar__item group"
                     data-testid="PluginManagerNavigationBar__gaming"
                     title="Gaming"
                   >
+                    <div
+                      class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                    />
                     <span>
                       Gaming
                     </span>
@@ -3543,10 +3629,13 @@ exports[`PluginManager should render 1`] = `
                   class="flex"
                 >
                   <button
-                    class="PluginManagerNavigationBar__item px-1 focus:outline-none lex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer "
+                    class="PluginManagerNavigationBar__item group"
                     data-testid="PluginManagerNavigationBar__utility"
                     title="Utility"
                   >
+                    <div
+                      class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                    />
                     <span>
                       Utility
                     </span>
@@ -3564,10 +3653,13 @@ exports[`PluginManager should render 1`] = `
                   class="flex"
                 >
                   <button
-                    class="PluginManagerNavigationBar__item px-1 focus:outline-none lex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer "
+                    class="PluginManagerNavigationBar__item group"
                     data-testid="PluginManagerNavigationBar__exchange"
                     title="Exchange"
                   >
+                    <div
+                      class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                    />
                     <span>
                       Exchange
                     </span>
@@ -3585,10 +3677,13 @@ exports[`PluginManager should render 1`] = `
                   class="flex"
                 >
                   <button
-                    class="PluginManagerNavigationBar__item px-1 focus:outline-none lex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer "
+                    class="PluginManagerNavigationBar__item group"
                     data-testid="PluginManagerNavigationBar__other"
                     title="Other"
                   >
+                    <div
+                      class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                    />
                     <span>
                       Other
                     </span>
@@ -3608,10 +3703,13 @@ exports[`PluginManager should render 1`] = `
                 class="relative"
               >
                 <button
-                  class="PluginManagerNavigationBar__item h-full px-1 focus:outline-none flex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer "
+                  class="PluginManagerNavigationBar__item group"
                   data-testid="PluginManagerNavigationBar__my-plugins"
                   title="My Plugins"
                 >
+                  <div
+                    class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                  />
                   <span>
                     My Plugins
                   </span>
@@ -3629,10 +3727,13 @@ exports[`PluginManager should render 1`] = `
                   <div
                     class="group"
                   >
-                    <div
-                      class="ControlButton__ControlButtonStyled-sc-1xp1l1a-0 kMCise"
+                    <button
+                      class="ControlButton__ControlButtonStyled-sc-1xp1l1a-0 gPBHgx group"
                       data-testid="LayoutControls__list--icon"
                     >
+                      <div
+                        class="absolute inset-0 -mx-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                      />
                       <div
                         class="sc-bdfBwQ iyevwF"
                         height="20"
@@ -3642,7 +3743,7 @@ exports[`PluginManager should render 1`] = `
                           list-view.svg
                         </svg>
                       </div>
-                    </div>
+                    </button>
                   </div>
                 </div>
                 <div
@@ -3651,10 +3752,13 @@ exports[`PluginManager should render 1`] = `
                   <div
                     class="group"
                   >
-                    <div
-                      class="ControlButton__ControlButtonStyled-sc-1xp1l1a-0 gCTrBm"
+                    <button
+                      class="ControlButton__ControlButtonStyled-sc-1xp1l1a-0 gPBHgx group active"
                       data-testid="LayoutControls__grid--icon"
                     >
+                      <div
+                        class="absolute inset-0 -mx-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                      />
                       <div
                         class="sc-bdfBwQ iyevwF"
                         height="20"
@@ -3664,7 +3768,7 @@ exports[`PluginManager should render 1`] = `
                           grid-view.svg
                         </svg>
                       </div>
-                    </div>
+                    </button>
                   </div>
                 </div>
               </div>
@@ -4579,10 +4683,10 @@ exports[`PluginManager should search for plugin 1`] = `
     >
       <nav
         aria-labelledby="main menu"
-        class="NavigationBar__NavWrapper-sc-1qsoskw-0 hkUMvZ"
+        class="NavigationBar__NavWrapper-sc-1qsoskw-0 bewuLZ"
       >
         <div
-          class="flex relative h-21"
+          class="relative flex h-21"
         >
           <button
             class="BackButton__StyledBackButton-sc-1pe22tv-0 eUphun flex w-12"
@@ -4605,7 +4709,7 @@ exports[`PluginManager should search for plugin 1`] = `
               class="flex items-center my-auto"
             >
               <div
-                class="NavigationBar__LogoContainer-sc-1qsoskw-2 tulfg"
+                class="NavigationBar__LogoContainer-sc-1qsoskw-2 itrWMc"
               >
                 <svg
                   width="44"
@@ -4615,18 +4719,18 @@ exports[`PluginManager should search for plugin 1`] = `
               </div>
             </div>
             <ul
-              class="flex mr-auto ml-4 space-x-8 h-21"
+              class="flex ml-4 mr-auto space-x-8 h-21"
             >
               <li
                 class="flex"
               >
                 <a
-                  class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
+                  class="relative flex items-center font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
                   href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
                   title="Portfolio"
                 >
                   <div
-                    class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                    class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
                   />
                   Portfolio
                 </a>
@@ -4636,12 +4740,12 @@ exports[`PluginManager should search for plugin 1`] = `
               >
                 <a
                   aria-current="page"
-                  class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group active"
+                  class="relative flex items-center font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group active"
                   href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/plugins"
                   title="Plugins"
                 >
                   <div
-                    class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                    class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
                   />
                   Plugins
                 </a>
@@ -4650,12 +4754,12 @@ exports[`PluginManager should search for plugin 1`] = `
                 class="flex"
               >
                 <a
-                  class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
+                  class="relative flex items-center font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
                   href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/exchange"
                   title="Exchange"
                 >
                   <div
-                    class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                    class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
                   />
                   Exchange
                 </a>
@@ -4664,12 +4768,12 @@ exports[`PluginManager should search for plugin 1`] = `
                 class="flex"
               >
                 <a
-                  class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
+                  class="relative flex items-center font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
                   href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/news"
                   title="News"
                 >
                   <div
-                    class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                    class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
                   />
                   News
                 </a>
@@ -4795,6 +4899,7 @@ exports[`PluginManager should search for plugin 1`] = `
                 </div>
                 <div
                   class="text-sm font-bold text-theme-secondary-text dark:text-theme-text"
+                  data-testid="Balance__value"
                 >
                   <span
                     data-testid="Amount"
@@ -4830,7 +4935,7 @@ exports[`PluginManager should search for plugin 1`] = `
                     data-testid="dropdown__toggle"
                   >
                     <div
-                      class="cursor-pointer relative justify-center items-center align-middle rounded-full"
+                      class="relative items-center justify-center align-middle rounded-full cursor-pointer"
                       data-testid="navbar__useractions"
                     >
                       <div
@@ -4893,47 +4998,45 @@ exports[`PluginManager should search for plugin 1`] = `
                 >
                   <div
                     class="relative"
+                    data-testid="HeaderSearchBar"
                   >
-                    <button
-                      class="my-auto h-full font-semibold cursor-pointer focus:outline-none"
-                      data-testid="header-search-bar__button"
-                      type="button"
+                    <div
+                      class="group"
                     >
-                      <div
-                        class="group"
+                      <button
+                        class="ControlButton__ControlButtonStyled-sc-1xp1l1a-0 gPBHgx group"
                       >
                         <div
-                          class="ControlButton__ControlButtonStyled-sc-1xp1l1a-0 kMCise"
+                          class="flex absolute right-0 justify-center items-center -mt-3 w-3 h-3 rounded-full transition-all duration-100 ease-linear bg-theme-background mr-2"
                         >
                           <div
-                            class="flex absolute right-0 justify-center items-center -mt-3 w-3 h-3 rounded-full transition-all duration-100 ease-linear bg-theme-background mr-2"
-                          >
-                            <div
-                              class="w-2 h-2 rounded-full bg-theme-primary-500"
-                            />
-                          </div>
+                            class="w-2 h-2 rounded-full bg-theme-primary-500"
+                          />
+                        </div>
+                        <div
+                          class="absolute inset-0 -mx-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                        />
+                        <div
+                          class="flex items-center h-5 space-x-3"
+                        >
+                          <span>
+                            Search
+                          </span>
                           <div
-                            class="flex items-center h-5 space-x-3"
+                            class="sc-bdfBwQ iNulIV"
+                            height="18"
+                            width="18"
                           >
-                            <span>
-                              Search
-                            </span>
-                            <div
-                              class="sc-bdfBwQ iNulIV"
-                              height="18"
-                              width="18"
-                            >
-                              <svg>
-                                search.svg
-                              </svg>
-                            </div>
+                            <svg>
+                              search.svg
+                            </svg>
                           </div>
                         </div>
-                      </div>
-                    </button>
+                      </button>
+                    </div>
                     <div
                       class="HeaderSearchBar__SearchBarInputWrapper-sc-124mt80-0 foBMUQ absolute z-20 flex items-center text-base px-10 -mx-10 py-4 rounded-md shadow-xl bg-theme-background transform top-1/2 -translate-y-1/2 right-3"
-                      data-testid="header-search-bar__input"
+                      data-testid="HeaderSearchBar__input"
                     >
                       <button
                         class="focus:outline-none"
@@ -5019,7 +5122,7 @@ exports[`PluginManager should search for plugin 1`] = `
           </div>
         </div>
         <nav
-          class="PluginManagerNavigationBar__NavWrapper-sc-1x1q7te-0 ggmsTH sticky top-21 bg-theme-secondary-100 dark:bg-black my-4"
+          class="PluginManagerNavigationBar__NavWrapper-sc-1x1q7te-0 jJNecf sticky top-21 bg-theme-secondary-100 dark:bg-black my-4"
           data-testid="PluginManagerNavigationBar"
         >
           <div
@@ -5033,10 +5136,13 @@ exports[`PluginManager should search for plugin 1`] = `
                   class="flex"
                 >
                   <button
-                    class="PluginManagerNavigationBar__item px-1 focus:outline-none lex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer "
+                    class="PluginManagerNavigationBar__item group"
                     data-testid="PluginManagerNavigationBar__latest"
                     title="Latest"
                   >
+                    <div
+                      class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                    />
                     <span>
                       Latest
                     </span>
@@ -5049,10 +5155,13 @@ exports[`PluginManager should search for plugin 1`] = `
                   class="flex"
                 >
                   <button
-                    class="PluginManagerNavigationBar__item px-1 focus:outline-none lex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer "
+                    class="PluginManagerNavigationBar__item group"
                     data-testid="PluginManagerNavigationBar__all"
                     title="All"
                   >
+                    <div
+                      class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                    />
                     <span>
                       All
                     </span>
@@ -5065,10 +5174,13 @@ exports[`PluginManager should search for plugin 1`] = `
                   class="flex"
                 >
                   <button
-                    class="PluginManagerNavigationBar__item px-1 focus:outline-none lex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer "
+                    class="PluginManagerNavigationBar__item group"
                     data-testid="PluginManagerNavigationBar__gaming"
                     title="Gaming"
                   >
+                    <div
+                      class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                    />
                     <span>
                       Gaming
                     </span>
@@ -5086,10 +5198,13 @@ exports[`PluginManager should search for plugin 1`] = `
                   class="flex"
                 >
                   <button
-                    class="PluginManagerNavigationBar__item px-1 focus:outline-none lex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer "
+                    class="PluginManagerNavigationBar__item group"
                     data-testid="PluginManagerNavigationBar__utility"
                     title="Utility"
                   >
+                    <div
+                      class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                    />
                     <span>
                       Utility
                     </span>
@@ -5107,10 +5222,13 @@ exports[`PluginManager should search for plugin 1`] = `
                   class="flex"
                 >
                   <button
-                    class="PluginManagerNavigationBar__item px-1 focus:outline-none lex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer "
+                    class="PluginManagerNavigationBar__item group"
                     data-testid="PluginManagerNavigationBar__exchange"
                     title="Exchange"
                   >
+                    <div
+                      class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                    />
                     <span>
                       Exchange
                     </span>
@@ -5128,10 +5246,13 @@ exports[`PluginManager should search for plugin 1`] = `
                   class="flex"
                 >
                   <button
-                    class="PluginManagerNavigationBar__item px-1 focus:outline-none lex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer "
+                    class="PluginManagerNavigationBar__item group"
                     data-testid="PluginManagerNavigationBar__other"
                     title="Other"
                   >
+                    <div
+                      class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                    />
                     <span>
                       Other
                     </span>
@@ -5151,10 +5272,13 @@ exports[`PluginManager should search for plugin 1`] = `
                 class="relative"
               >
                 <button
-                  class="PluginManagerNavigationBar__item h-full px-1 focus:outline-none flex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer "
+                  class="PluginManagerNavigationBar__item group"
                   data-testid="PluginManagerNavigationBar__my-plugins"
                   title="My Plugins"
                 >
+                  <div
+                    class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                  />
                   <span>
                     My Plugins
                   </span>
@@ -5172,10 +5296,13 @@ exports[`PluginManager should search for plugin 1`] = `
                   <div
                     class="group"
                   >
-                    <div
-                      class="ControlButton__ControlButtonStyled-sc-1xp1l1a-0 gCTrBm"
+                    <button
+                      class="ControlButton__ControlButtonStyled-sc-1xp1l1a-0 gPBHgx group active"
                       data-testid="LayoutControls__list--icon"
                     >
+                      <div
+                        class="absolute inset-0 -mx-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                      />
                       <div
                         class="sc-bdfBwQ iyevwF"
                         height="20"
@@ -5185,7 +5312,7 @@ exports[`PluginManager should search for plugin 1`] = `
                           list-view.svg
                         </svg>
                       </div>
-                    </div>
+                    </button>
                   </div>
                 </div>
                 <div
@@ -5194,10 +5321,13 @@ exports[`PluginManager should search for plugin 1`] = `
                   <div
                     class="group"
                   >
-                    <div
-                      class="ControlButton__ControlButtonStyled-sc-1xp1l1a-0 kMCise"
+                    <button
+                      class="ControlButton__ControlButtonStyled-sc-1xp1l1a-0 gPBHgx group"
                       data-testid="LayoutControls__grid--icon"
                     >
+                      <div
+                        class="absolute inset-0 -mx-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                      />
                       <div
                         class="sc-bdfBwQ iyevwF"
                         height="20"
@@ -5207,7 +5337,7 @@ exports[`PluginManager should search for plugin 1`] = `
                           grid-view.svg
                         </svg>
                       </div>
-                    </div>
+                    </button>
                   </div>
                 </div>
               </div>
@@ -5257,10 +5387,10 @@ exports[`PluginManager should switch to category by clicking on view all link 1`
     >
       <nav
         aria-labelledby="main menu"
-        class="NavigationBar__NavWrapper-sc-1qsoskw-0 hkUMvZ"
+        class="NavigationBar__NavWrapper-sc-1qsoskw-0 bewuLZ"
       >
         <div
-          class="flex relative h-21"
+          class="relative flex h-21"
         >
           <button
             class="BackButton__StyledBackButton-sc-1pe22tv-0 eUphun flex w-12"
@@ -5283,7 +5413,7 @@ exports[`PluginManager should switch to category by clicking on view all link 1`
               class="flex items-center my-auto"
             >
               <div
-                class="NavigationBar__LogoContainer-sc-1qsoskw-2 tulfg"
+                class="NavigationBar__LogoContainer-sc-1qsoskw-2 itrWMc"
               >
                 <svg
                   width="44"
@@ -5293,18 +5423,18 @@ exports[`PluginManager should switch to category by clicking on view all link 1`
               </div>
             </div>
             <ul
-              class="flex mr-auto ml-4 space-x-8 h-21"
+              class="flex ml-4 mr-auto space-x-8 h-21"
             >
               <li
                 class="flex"
               >
                 <a
-                  class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
+                  class="relative flex items-center font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
                   href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
                   title="Portfolio"
                 >
                   <div
-                    class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                    class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
                   />
                   Portfolio
                 </a>
@@ -5314,12 +5444,12 @@ exports[`PluginManager should switch to category by clicking on view all link 1`
               >
                 <a
                   aria-current="page"
-                  class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group active"
+                  class="relative flex items-center font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group active"
                   href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/plugins"
                   title="Plugins"
                 >
                   <div
-                    class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                    class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
                   />
                   Plugins
                 </a>
@@ -5328,12 +5458,12 @@ exports[`PluginManager should switch to category by clicking on view all link 1`
                 class="flex"
               >
                 <a
-                  class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
+                  class="relative flex items-center font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
                   href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/exchange"
                   title="Exchange"
                 >
                   <div
-                    class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                    class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
                   />
                   Exchange
                 </a>
@@ -5342,12 +5472,12 @@ exports[`PluginManager should switch to category by clicking on view all link 1`
                 class="flex"
               >
                 <a
-                  class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
+                  class="relative flex items-center font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
                   href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/news"
                   title="News"
                 >
                   <div
-                    class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                    class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
                   />
                   News
                 </a>
@@ -5473,6 +5603,7 @@ exports[`PluginManager should switch to category by clicking on view all link 1`
                 </div>
                 <div
                   class="text-sm font-bold text-theme-secondary-text dark:text-theme-text"
+                  data-testid="Balance__value"
                 >
                   <span
                     data-testid="Amount"
@@ -5508,7 +5639,7 @@ exports[`PluginManager should switch to category by clicking on view all link 1`
                     data-testid="dropdown__toggle"
                   >
                     <div
-                      class="cursor-pointer relative justify-center items-center align-middle rounded-full"
+                      class="relative items-center justify-center align-middle rounded-full cursor-pointer"
                       data-testid="navbar__useractions"
                     >
                       <div
@@ -5571,37 +5702,35 @@ exports[`PluginManager should switch to category by clicking on view all link 1`
                 >
                   <div
                     class="relative"
+                    data-testid="HeaderSearchBar"
                   >
-                    <button
-                      class="my-auto h-full font-semibold cursor-pointer focus:outline-none"
-                      data-testid="header-search-bar__button"
-                      type="button"
+                    <div
+                      class="group"
                     >
-                      <div
-                        class="group"
+                      <button
+                        class="ControlButton__ControlButtonStyled-sc-1xp1l1a-0 gPBHgx group"
                       >
                         <div
-                          class="ControlButton__ControlButtonStyled-sc-1xp1l1a-0 kMCise"
+                          class="absolute inset-0 -mx-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                        />
+                        <div
+                          class="flex items-center h-5 space-x-3"
                         >
+                          <span>
+                            Search
+                          </span>
                           <div
-                            class="flex items-center h-5 space-x-3"
+                            class="sc-bdfBwQ iNulIV"
+                            height="18"
+                            width="18"
                           >
-                            <span>
-                              Search
-                            </span>
-                            <div
-                              class="sc-bdfBwQ iNulIV"
-                              height="18"
-                              width="18"
-                            >
-                              <svg>
-                                search.svg
-                              </svg>
-                            </div>
+                            <svg>
+                              search.svg
+                            </svg>
                           </div>
                         </div>
-                      </div>
-                    </button>
+                      </button>
+                    </div>
                   </div>
                   <div
                     class="pl-8 my-auto ml-5 h-10 border-l border-theme-secondary-300 dark:border-theme-secondary-800"
@@ -5638,7 +5767,7 @@ exports[`PluginManager should switch to category by clicking on view all link 1`
           </div>
         </div>
         <nav
-          class="PluginManagerNavigationBar__NavWrapper-sc-1x1q7te-0 ggmsTH sticky top-21 bg-theme-secondary-100 dark:bg-black my-4"
+          class="PluginManagerNavigationBar__NavWrapper-sc-1x1q7te-0 jJNecf sticky top-21 bg-theme-secondary-100 dark:bg-black my-4"
           data-testid="PluginManagerNavigationBar"
         >
           <div
@@ -5652,10 +5781,13 @@ exports[`PluginManager should switch to category by clicking on view all link 1`
                   class="flex"
                 >
                   <button
-                    class="PluginManagerNavigationBar__item px-1 focus:outline-none lex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer "
+                    class="PluginManagerNavigationBar__item group"
                     data-testid="PluginManagerNavigationBar__latest"
                     title="Latest"
                   >
+                    <div
+                      class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                    />
                     <span>
                       Latest
                     </span>
@@ -5668,10 +5800,13 @@ exports[`PluginManager should switch to category by clicking on view all link 1`
                   class="flex"
                 >
                   <button
-                    class="PluginManagerNavigationBar__item px-1 focus:outline-none lex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer "
+                    class="PluginManagerNavigationBar__item group"
                     data-testid="PluginManagerNavigationBar__all"
                     title="All"
                   >
+                    <div
+                      class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                    />
                     <span>
                       All
                     </span>
@@ -5684,10 +5819,13 @@ exports[`PluginManager should switch to category by clicking on view all link 1`
                   class="flex"
                 >
                   <button
-                    class="PluginManagerNavigationBar__item px-1 focus:outline-none lex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer "
+                    class="PluginManagerNavigationBar__item group"
                     data-testid="PluginManagerNavigationBar__gaming"
                     title="Gaming"
                   >
+                    <div
+                      class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                    />
                     <span>
                       Gaming
                     </span>
@@ -5705,10 +5843,13 @@ exports[`PluginManager should switch to category by clicking on view all link 1`
                   class="flex"
                 >
                   <button
-                    class="PluginManagerNavigationBar__item px-1 focus:outline-none lex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer active"
+                    class="PluginManagerNavigationBar__item group active"
                     data-testid="PluginManagerNavigationBar__utility"
                     title="Utility"
                   >
+                    <div
+                      class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                    />
                     <span>
                       Utility
                     </span>
@@ -5726,10 +5867,13 @@ exports[`PluginManager should switch to category by clicking on view all link 1`
                   class="flex"
                 >
                   <button
-                    class="PluginManagerNavigationBar__item px-1 focus:outline-none lex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer "
+                    class="PluginManagerNavigationBar__item group"
                     data-testid="PluginManagerNavigationBar__exchange"
                     title="Exchange"
                   >
+                    <div
+                      class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                    />
                     <span>
                       Exchange
                     </span>
@@ -5747,10 +5891,13 @@ exports[`PluginManager should switch to category by clicking on view all link 1`
                   class="flex"
                 >
                   <button
-                    class="PluginManagerNavigationBar__item px-1 focus:outline-none lex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer "
+                    class="PluginManagerNavigationBar__item group"
                     data-testid="PluginManagerNavigationBar__other"
                     title="Other"
                   >
+                    <div
+                      class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                    />
                     <span>
                       Other
                     </span>
@@ -5770,10 +5917,13 @@ exports[`PluginManager should switch to category by clicking on view all link 1`
                 class="relative"
               >
                 <button
-                  class="PluginManagerNavigationBar__item h-full px-1 focus:outline-none flex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer "
+                  class="PluginManagerNavigationBar__item group"
                   data-testid="PluginManagerNavigationBar__my-plugins"
                   title="My Plugins"
                 >
+                  <div
+                    class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                  />
                   <span>
                     My Plugins
                   </span>
@@ -5791,10 +5941,13 @@ exports[`PluginManager should switch to category by clicking on view all link 1`
                   <div
                     class="group"
                   >
-                    <div
-                      class="ControlButton__ControlButtonStyled-sc-1xp1l1a-0 kMCise"
+                    <button
+                      class="ControlButton__ControlButtonStyled-sc-1xp1l1a-0 gPBHgx group"
                       data-testid="LayoutControls__list--icon"
                     >
+                      <div
+                        class="absolute inset-0 -mx-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                      />
                       <div
                         class="sc-bdfBwQ iyevwF"
                         height="20"
@@ -5804,7 +5957,7 @@ exports[`PluginManager should switch to category by clicking on view all link 1`
                           list-view.svg
                         </svg>
                       </div>
-                    </div>
+                    </button>
                   </div>
                 </div>
                 <div
@@ -5813,10 +5966,13 @@ exports[`PluginManager should switch to category by clicking on view all link 1`
                   <div
                     class="group"
                   >
-                    <div
-                      class="ControlButton__ControlButtonStyled-sc-1xp1l1a-0 gCTrBm"
+                    <button
+                      class="ControlButton__ControlButtonStyled-sc-1xp1l1a-0 gPBHgx group active"
                       data-testid="LayoutControls__grid--icon"
                     >
+                      <div
+                        class="absolute inset-0 -mx-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                      />
                       <div
                         class="sc-bdfBwQ iyevwF"
                         height="20"
@@ -5826,7 +5982,7 @@ exports[`PluginManager should switch to category by clicking on view all link 1`
                           grid-view.svg
                         </svg>
                       </div>
-                    </div>
+                    </button>
                   </div>
                 </div>
               </div>
@@ -6275,10 +6431,10 @@ exports[`PluginManager should toggle between list and grid on all 1`] = `
     >
       <nav
         aria-labelledby="main menu"
-        class="NavigationBar__NavWrapper-sc-1qsoskw-0 hkUMvZ"
+        class="NavigationBar__NavWrapper-sc-1qsoskw-0 bewuLZ"
       >
         <div
-          class="flex relative h-21"
+          class="relative flex h-21"
         >
           <button
             class="BackButton__StyledBackButton-sc-1pe22tv-0 eUphun flex w-12"
@@ -6301,7 +6457,7 @@ exports[`PluginManager should toggle between list and grid on all 1`] = `
               class="flex items-center my-auto"
             >
               <div
-                class="NavigationBar__LogoContainer-sc-1qsoskw-2 tulfg"
+                class="NavigationBar__LogoContainer-sc-1qsoskw-2 itrWMc"
               >
                 <svg
                   width="44"
@@ -6311,18 +6467,18 @@ exports[`PluginManager should toggle between list and grid on all 1`] = `
               </div>
             </div>
             <ul
-              class="flex mr-auto ml-4 space-x-8 h-21"
+              class="flex ml-4 mr-auto space-x-8 h-21"
             >
               <li
                 class="flex"
               >
                 <a
-                  class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
+                  class="relative flex items-center font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
                   href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
                   title="Portfolio"
                 >
                   <div
-                    class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                    class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
                   />
                   Portfolio
                 </a>
@@ -6332,12 +6488,12 @@ exports[`PluginManager should toggle between list and grid on all 1`] = `
               >
                 <a
                   aria-current="page"
-                  class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group active"
+                  class="relative flex items-center font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group active"
                   href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/plugins"
                   title="Plugins"
                 >
                   <div
-                    class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                    class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
                   />
                   Plugins
                 </a>
@@ -6346,12 +6502,12 @@ exports[`PluginManager should toggle between list and grid on all 1`] = `
                 class="flex"
               >
                 <a
-                  class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
+                  class="relative flex items-center font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
                   href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/exchange"
                   title="Exchange"
                 >
                   <div
-                    class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                    class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
                   />
                   Exchange
                 </a>
@@ -6360,12 +6516,12 @@ exports[`PluginManager should toggle between list and grid on all 1`] = `
                 class="flex"
               >
                 <a
-                  class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
+                  class="relative flex items-center font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
                   href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/news"
                   title="News"
                 >
                   <div
-                    class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                    class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
                   />
                   News
                 </a>
@@ -6491,6 +6647,7 @@ exports[`PluginManager should toggle between list and grid on all 1`] = `
                 </div>
                 <div
                   class="text-sm font-bold text-theme-secondary-text dark:text-theme-text"
+                  data-testid="Balance__value"
                 >
                   <span
                     data-testid="Amount"
@@ -6526,7 +6683,7 @@ exports[`PluginManager should toggle between list and grid on all 1`] = `
                     data-testid="dropdown__toggle"
                   >
                     <div
-                      class="cursor-pointer relative justify-center items-center align-middle rounded-full"
+                      class="relative items-center justify-center align-middle rounded-full cursor-pointer"
                       data-testid="navbar__useractions"
                     >
                       <div
@@ -6589,37 +6746,35 @@ exports[`PluginManager should toggle between list and grid on all 1`] = `
                 >
                   <div
                     class="relative"
+                    data-testid="HeaderSearchBar"
                   >
-                    <button
-                      class="my-auto h-full font-semibold cursor-pointer focus:outline-none"
-                      data-testid="header-search-bar__button"
-                      type="button"
+                    <div
+                      class="group"
                     >
-                      <div
-                        class="group"
+                      <button
+                        class="ControlButton__ControlButtonStyled-sc-1xp1l1a-0 gPBHgx group"
                       >
                         <div
-                          class="ControlButton__ControlButtonStyled-sc-1xp1l1a-0 kMCise"
+                          class="absolute inset-0 -mx-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                        />
+                        <div
+                          class="flex items-center h-5 space-x-3"
                         >
+                          <span>
+                            Search
+                          </span>
                           <div
-                            class="flex items-center h-5 space-x-3"
+                            class="sc-bdfBwQ iNulIV"
+                            height="18"
+                            width="18"
                           >
-                            <span>
-                              Search
-                            </span>
-                            <div
-                              class="sc-bdfBwQ iNulIV"
-                              height="18"
-                              width="18"
-                            >
-                              <svg>
-                                search.svg
-                              </svg>
-                            </div>
+                            <svg>
+                              search.svg
+                            </svg>
                           </div>
                         </div>
-                      </div>
-                    </button>
+                      </button>
+                    </div>
                   </div>
                   <div
                     class="pl-8 my-auto ml-5 h-10 border-l border-theme-secondary-300 dark:border-theme-secondary-800"
@@ -6656,7 +6811,7 @@ exports[`PluginManager should toggle between list and grid on all 1`] = `
           </div>
         </div>
         <nav
-          class="PluginManagerNavigationBar__NavWrapper-sc-1x1q7te-0 ggmsTH sticky top-21 bg-theme-secondary-100 dark:bg-black my-4"
+          class="PluginManagerNavigationBar__NavWrapper-sc-1x1q7te-0 jJNecf sticky top-21 bg-theme-secondary-100 dark:bg-black my-4"
           data-testid="PluginManagerNavigationBar"
         >
           <div
@@ -6670,10 +6825,13 @@ exports[`PluginManager should toggle between list and grid on all 1`] = `
                   class="flex"
                 >
                   <button
-                    class="PluginManagerNavigationBar__item px-1 focus:outline-none lex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer "
+                    class="PluginManagerNavigationBar__item group"
                     data-testid="PluginManagerNavigationBar__latest"
                     title="Latest"
                   >
+                    <div
+                      class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                    />
                     <span>
                       Latest
                     </span>
@@ -6686,10 +6844,13 @@ exports[`PluginManager should toggle between list and grid on all 1`] = `
                   class="flex"
                 >
                   <button
-                    class="PluginManagerNavigationBar__item px-1 focus:outline-none lex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer active"
+                    class="PluginManagerNavigationBar__item group active"
                     data-testid="PluginManagerNavigationBar__all"
                     title="All"
                   >
+                    <div
+                      class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                    />
                     <span>
                       All
                     </span>
@@ -6702,10 +6863,13 @@ exports[`PluginManager should toggle between list and grid on all 1`] = `
                   class="flex"
                 >
                   <button
-                    class="PluginManagerNavigationBar__item px-1 focus:outline-none lex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer "
+                    class="PluginManagerNavigationBar__item group"
                     data-testid="PluginManagerNavigationBar__gaming"
                     title="Gaming"
                   >
+                    <div
+                      class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                    />
                     <span>
                       Gaming
                     </span>
@@ -6723,10 +6887,13 @@ exports[`PluginManager should toggle between list and grid on all 1`] = `
                   class="flex"
                 >
                   <button
-                    class="PluginManagerNavigationBar__item px-1 focus:outline-none lex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer "
+                    class="PluginManagerNavigationBar__item group"
                     data-testid="PluginManagerNavigationBar__utility"
                     title="Utility"
                   >
+                    <div
+                      class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                    />
                     <span>
                       Utility
                     </span>
@@ -6744,10 +6911,13 @@ exports[`PluginManager should toggle between list and grid on all 1`] = `
                   class="flex"
                 >
                   <button
-                    class="PluginManagerNavigationBar__item px-1 focus:outline-none lex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer "
+                    class="PluginManagerNavigationBar__item group"
                     data-testid="PluginManagerNavigationBar__exchange"
                     title="Exchange"
                   >
+                    <div
+                      class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                    />
                     <span>
                       Exchange
                     </span>
@@ -6765,10 +6935,13 @@ exports[`PluginManager should toggle between list and grid on all 1`] = `
                   class="flex"
                 >
                   <button
-                    class="PluginManagerNavigationBar__item px-1 focus:outline-none lex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer "
+                    class="PluginManagerNavigationBar__item group"
                     data-testid="PluginManagerNavigationBar__other"
                     title="Other"
                   >
+                    <div
+                      class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                    />
                     <span>
                       Other
                     </span>
@@ -6788,10 +6961,13 @@ exports[`PluginManager should toggle between list and grid on all 1`] = `
                 class="relative"
               >
                 <button
-                  class="PluginManagerNavigationBar__item h-full px-1 focus:outline-none flex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer "
+                  class="PluginManagerNavigationBar__item group"
                   data-testid="PluginManagerNavigationBar__my-plugins"
                   title="My Plugins"
                 >
+                  <div
+                    class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                  />
                   <span>
                     My Plugins
                   </span>
@@ -6809,10 +6985,13 @@ exports[`PluginManager should toggle between list and grid on all 1`] = `
                   <div
                     class="group"
                   >
-                    <div
-                      class="ControlButton__ControlButtonStyled-sc-1xp1l1a-0 kMCise"
+                    <button
+                      class="ControlButton__ControlButtonStyled-sc-1xp1l1a-0 gPBHgx group"
                       data-testid="LayoutControls__list--icon"
                     >
+                      <div
+                        class="absolute inset-0 -mx-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                      />
                       <div
                         class="sc-bdfBwQ iyevwF"
                         height="20"
@@ -6822,7 +7001,7 @@ exports[`PluginManager should toggle between list and grid on all 1`] = `
                           list-view.svg
                         </svg>
                       </div>
-                    </div>
+                    </button>
                   </div>
                 </div>
                 <div
@@ -6831,10 +7010,13 @@ exports[`PluginManager should toggle between list and grid on all 1`] = `
                   <div
                     class="group"
                   >
-                    <div
-                      class="ControlButton__ControlButtonStyled-sc-1xp1l1a-0 gCTrBm"
+                    <button
+                      class="ControlButton__ControlButtonStyled-sc-1xp1l1a-0 gPBHgx group active"
                       data-testid="LayoutControls__grid--icon"
                     >
+                      <div
+                        class="absolute inset-0 -mx-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                      />
                       <div
                         class="sc-bdfBwQ iyevwF"
                         height="20"
@@ -6844,7 +7026,7 @@ exports[`PluginManager should toggle between list and grid on all 1`] = `
                           grid-view.svg
                         </svg>
                       </div>
-                    </div>
+                    </button>
                   </div>
                 </div>
               </div>
@@ -7293,10 +7475,10 @@ exports[`PluginManager should toggle between list and grid on latest 1`] = `
     >
       <nav
         aria-labelledby="main menu"
-        class="NavigationBar__NavWrapper-sc-1qsoskw-0 hkUMvZ"
+        class="NavigationBar__NavWrapper-sc-1qsoskw-0 bewuLZ"
       >
         <div
-          class="flex relative h-21"
+          class="relative flex h-21"
         >
           <button
             class="BackButton__StyledBackButton-sc-1pe22tv-0 eUphun flex w-12"
@@ -7319,7 +7501,7 @@ exports[`PluginManager should toggle between list and grid on latest 1`] = `
               class="flex items-center my-auto"
             >
               <div
-                class="NavigationBar__LogoContainer-sc-1qsoskw-2 tulfg"
+                class="NavigationBar__LogoContainer-sc-1qsoskw-2 itrWMc"
               >
                 <svg
                   width="44"
@@ -7329,18 +7511,18 @@ exports[`PluginManager should toggle between list and grid on latest 1`] = `
               </div>
             </div>
             <ul
-              class="flex mr-auto ml-4 space-x-8 h-21"
+              class="flex ml-4 mr-auto space-x-8 h-21"
             >
               <li
                 class="flex"
               >
                 <a
-                  class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
+                  class="relative flex items-center font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
                   href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
                   title="Portfolio"
                 >
                   <div
-                    class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                    class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
                   />
                   Portfolio
                 </a>
@@ -7350,12 +7532,12 @@ exports[`PluginManager should toggle between list and grid on latest 1`] = `
               >
                 <a
                   aria-current="page"
-                  class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group active"
+                  class="relative flex items-center font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group active"
                   href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/plugins"
                   title="Plugins"
                 >
                   <div
-                    class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                    class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
                   />
                   Plugins
                 </a>
@@ -7364,12 +7546,12 @@ exports[`PluginManager should toggle between list and grid on latest 1`] = `
                 class="flex"
               >
                 <a
-                  class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
+                  class="relative flex items-center font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
                   href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/exchange"
                   title="Exchange"
                 >
                   <div
-                    class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                    class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
                   />
                   Exchange
                 </a>
@@ -7378,12 +7560,12 @@ exports[`PluginManager should toggle between list and grid on latest 1`] = `
                 class="flex"
               >
                 <a
-                  class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
+                  class="relative flex items-center font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
                   href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/news"
                   title="News"
                 >
                   <div
-                    class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                    class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
                   />
                   News
                 </a>
@@ -7509,6 +7691,7 @@ exports[`PluginManager should toggle between list and grid on latest 1`] = `
                 </div>
                 <div
                   class="text-sm font-bold text-theme-secondary-text dark:text-theme-text"
+                  data-testid="Balance__value"
                 >
                   <span
                     data-testid="Amount"
@@ -7544,7 +7727,7 @@ exports[`PluginManager should toggle between list and grid on latest 1`] = `
                     data-testid="dropdown__toggle"
                   >
                     <div
-                      class="cursor-pointer relative justify-center items-center align-middle rounded-full"
+                      class="relative items-center justify-center align-middle rounded-full cursor-pointer"
                       data-testid="navbar__useractions"
                     >
                       <div
@@ -7607,37 +7790,35 @@ exports[`PluginManager should toggle between list and grid on latest 1`] = `
                 >
                   <div
                     class="relative"
+                    data-testid="HeaderSearchBar"
                   >
-                    <button
-                      class="my-auto h-full font-semibold cursor-pointer focus:outline-none"
-                      data-testid="header-search-bar__button"
-                      type="button"
+                    <div
+                      class="group"
                     >
-                      <div
-                        class="group"
+                      <button
+                        class="ControlButton__ControlButtonStyled-sc-1xp1l1a-0 gPBHgx group"
                       >
                         <div
-                          class="ControlButton__ControlButtonStyled-sc-1xp1l1a-0 kMCise"
+                          class="absolute inset-0 -mx-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                        />
+                        <div
+                          class="flex items-center h-5 space-x-3"
                         >
+                          <span>
+                            Search
+                          </span>
                           <div
-                            class="flex items-center h-5 space-x-3"
+                            class="sc-bdfBwQ iNulIV"
+                            height="18"
+                            width="18"
                           >
-                            <span>
-                              Search
-                            </span>
-                            <div
-                              class="sc-bdfBwQ iNulIV"
-                              height="18"
-                              width="18"
-                            >
-                              <svg>
-                                search.svg
-                              </svg>
-                            </div>
+                            <svg>
+                              search.svg
+                            </svg>
                           </div>
                         </div>
-                      </div>
-                    </button>
+                      </button>
+                    </div>
                   </div>
                   <div
                     class="pl-8 my-auto ml-5 h-10 border-l border-theme-secondary-300 dark:border-theme-secondary-800"
@@ -7674,7 +7855,7 @@ exports[`PluginManager should toggle between list and grid on latest 1`] = `
           </div>
         </div>
         <nav
-          class="PluginManagerNavigationBar__NavWrapper-sc-1x1q7te-0 ggmsTH sticky top-21 bg-theme-secondary-100 dark:bg-black my-4"
+          class="PluginManagerNavigationBar__NavWrapper-sc-1x1q7te-0 jJNecf sticky top-21 bg-theme-secondary-100 dark:bg-black my-4"
           data-testid="PluginManagerNavigationBar"
         >
           <div
@@ -7688,10 +7869,13 @@ exports[`PluginManager should toggle between list and grid on latest 1`] = `
                   class="flex"
                 >
                   <button
-                    class="PluginManagerNavigationBar__item px-1 focus:outline-none lex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer active"
+                    class="PluginManagerNavigationBar__item group active"
                     data-testid="PluginManagerNavigationBar__latest"
                     title="Latest"
                   >
+                    <div
+                      class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                    />
                     <span>
                       Latest
                     </span>
@@ -7704,10 +7888,13 @@ exports[`PluginManager should toggle between list and grid on latest 1`] = `
                   class="flex"
                 >
                   <button
-                    class="PluginManagerNavigationBar__item px-1 focus:outline-none lex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer "
+                    class="PluginManagerNavigationBar__item group"
                     data-testid="PluginManagerNavigationBar__all"
                     title="All"
                   >
+                    <div
+                      class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                    />
                     <span>
                       All
                     </span>
@@ -7720,10 +7907,13 @@ exports[`PluginManager should toggle between list and grid on latest 1`] = `
                   class="flex"
                 >
                   <button
-                    class="PluginManagerNavigationBar__item px-1 focus:outline-none lex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer "
+                    class="PluginManagerNavigationBar__item group"
                     data-testid="PluginManagerNavigationBar__gaming"
                     title="Gaming"
                   >
+                    <div
+                      class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                    />
                     <span>
                       Gaming
                     </span>
@@ -7741,10 +7931,13 @@ exports[`PluginManager should toggle between list and grid on latest 1`] = `
                   class="flex"
                 >
                   <button
-                    class="PluginManagerNavigationBar__item px-1 focus:outline-none lex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer "
+                    class="PluginManagerNavigationBar__item group"
                     data-testid="PluginManagerNavigationBar__utility"
                     title="Utility"
                   >
+                    <div
+                      class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                    />
                     <span>
                       Utility
                     </span>
@@ -7762,10 +7955,13 @@ exports[`PluginManager should toggle between list and grid on latest 1`] = `
                   class="flex"
                 >
                   <button
-                    class="PluginManagerNavigationBar__item px-1 focus:outline-none lex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer "
+                    class="PluginManagerNavigationBar__item group"
                     data-testid="PluginManagerNavigationBar__exchange"
                     title="Exchange"
                   >
+                    <div
+                      class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                    />
                     <span>
                       Exchange
                     </span>
@@ -7783,10 +7979,13 @@ exports[`PluginManager should toggle between list and grid on latest 1`] = `
                   class="flex"
                 >
                   <button
-                    class="PluginManagerNavigationBar__item px-1 focus:outline-none lex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer "
+                    class="PluginManagerNavigationBar__item group"
                     data-testid="PluginManagerNavigationBar__other"
                     title="Other"
                   >
+                    <div
+                      class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                    />
                     <span>
                       Other
                     </span>
@@ -7806,10 +8005,13 @@ exports[`PluginManager should toggle between list and grid on latest 1`] = `
                 class="relative"
               >
                 <button
-                  class="PluginManagerNavigationBar__item h-full px-1 focus:outline-none flex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer "
+                  class="PluginManagerNavigationBar__item group"
                   data-testid="PluginManagerNavigationBar__my-plugins"
                   title="My Plugins"
                 >
+                  <div
+                    class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                  />
                   <span>
                     My Plugins
                   </span>
@@ -7827,10 +8029,13 @@ exports[`PluginManager should toggle between list and grid on latest 1`] = `
                   <div
                     class="group"
                   >
-                    <div
-                      class="ControlButton__ControlButtonStyled-sc-1xp1l1a-0 kMCise"
+                    <button
+                      class="ControlButton__ControlButtonStyled-sc-1xp1l1a-0 gPBHgx group"
                       data-testid="LayoutControls__list--icon"
                     >
+                      <div
+                        class="absolute inset-0 -mx-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                      />
                       <div
                         class="sc-bdfBwQ iyevwF"
                         height="20"
@@ -7840,7 +8045,7 @@ exports[`PluginManager should toggle between list and grid on latest 1`] = `
                           list-view.svg
                         </svg>
                       </div>
-                    </div>
+                    </button>
                   </div>
                 </div>
                 <div
@@ -7849,10 +8054,13 @@ exports[`PluginManager should toggle between list and grid on latest 1`] = `
                   <div
                     class="group"
                   >
-                    <div
-                      class="ControlButton__ControlButtonStyled-sc-1xp1l1a-0 gCTrBm"
+                    <button
+                      class="ControlButton__ControlButtonStyled-sc-1xp1l1a-0 gPBHgx group active"
                       data-testid="LayoutControls__grid--icon"
                     >
+                      <div
+                        class="absolute inset-0 -mx-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                      />
                       <div
                         class="sc-bdfBwQ iyevwF"
                         height="20"
@@ -7862,7 +8070,7 @@ exports[`PluginManager should toggle between list and grid on latest 1`] = `
                           grid-view.svg
                         </svg>
                       </div>
-                    </div>
+                    </button>
                   </div>
                 </div>
               </div>
@@ -8777,10 +8985,10 @@ exports[`PluginManager should toggle between list and grid on utility tab 1`] = 
     >
       <nav
         aria-labelledby="main menu"
-        class="NavigationBar__NavWrapper-sc-1qsoskw-0 hkUMvZ"
+        class="NavigationBar__NavWrapper-sc-1qsoskw-0 bewuLZ"
       >
         <div
-          class="flex relative h-21"
+          class="relative flex h-21"
         >
           <button
             class="BackButton__StyledBackButton-sc-1pe22tv-0 eUphun flex w-12"
@@ -8803,7 +9011,7 @@ exports[`PluginManager should toggle between list and grid on utility tab 1`] = 
               class="flex items-center my-auto"
             >
               <div
-                class="NavigationBar__LogoContainer-sc-1qsoskw-2 tulfg"
+                class="NavigationBar__LogoContainer-sc-1qsoskw-2 itrWMc"
               >
                 <svg
                   width="44"
@@ -8813,18 +9021,18 @@ exports[`PluginManager should toggle between list and grid on utility tab 1`] = 
               </div>
             </div>
             <ul
-              class="flex mr-auto ml-4 space-x-8 h-21"
+              class="flex ml-4 mr-auto space-x-8 h-21"
             >
               <li
                 class="flex"
               >
                 <a
-                  class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
+                  class="relative flex items-center font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
                   href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
                   title="Portfolio"
                 >
                   <div
-                    class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                    class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
                   />
                   Portfolio
                 </a>
@@ -8834,12 +9042,12 @@ exports[`PluginManager should toggle between list and grid on utility tab 1`] = 
               >
                 <a
                   aria-current="page"
-                  class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group active"
+                  class="relative flex items-center font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group active"
                   href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/plugins"
                   title="Plugins"
                 >
                   <div
-                    class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                    class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
                   />
                   Plugins
                 </a>
@@ -8848,12 +9056,12 @@ exports[`PluginManager should toggle between list and grid on utility tab 1`] = 
                 class="flex"
               >
                 <a
-                  class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
+                  class="relative flex items-center font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
                   href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/exchange"
                   title="Exchange"
                 >
                   <div
-                    class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                    class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
                   />
                   Exchange
                 </a>
@@ -8862,12 +9070,12 @@ exports[`PluginManager should toggle between list and grid on utility tab 1`] = 
                 class="flex"
               >
                 <a
-                  class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
+                  class="relative flex items-center font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
                   href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/news"
                   title="News"
                 >
                   <div
-                    class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                    class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
                   />
                   News
                 </a>
@@ -8993,6 +9201,7 @@ exports[`PluginManager should toggle between list and grid on utility tab 1`] = 
                 </div>
                 <div
                   class="text-sm font-bold text-theme-secondary-text dark:text-theme-text"
+                  data-testid="Balance__value"
                 >
                   <span
                     data-testid="Amount"
@@ -9028,7 +9237,7 @@ exports[`PluginManager should toggle between list and grid on utility tab 1`] = 
                     data-testid="dropdown__toggle"
                   >
                     <div
-                      class="cursor-pointer relative justify-center items-center align-middle rounded-full"
+                      class="relative items-center justify-center align-middle rounded-full cursor-pointer"
                       data-testid="navbar__useractions"
                     >
                       <div
@@ -9091,37 +9300,35 @@ exports[`PluginManager should toggle between list and grid on utility tab 1`] = 
                 >
                   <div
                     class="relative"
+                    data-testid="HeaderSearchBar"
                   >
-                    <button
-                      class="my-auto h-full font-semibold cursor-pointer focus:outline-none"
-                      data-testid="header-search-bar__button"
-                      type="button"
+                    <div
+                      class="group"
                     >
-                      <div
-                        class="group"
+                      <button
+                        class="ControlButton__ControlButtonStyled-sc-1xp1l1a-0 gPBHgx group"
                       >
                         <div
-                          class="ControlButton__ControlButtonStyled-sc-1xp1l1a-0 kMCise"
+                          class="absolute inset-0 -mx-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                        />
+                        <div
+                          class="flex items-center h-5 space-x-3"
                         >
+                          <span>
+                            Search
+                          </span>
                           <div
-                            class="flex items-center h-5 space-x-3"
+                            class="sc-bdfBwQ iNulIV"
+                            height="18"
+                            width="18"
                           >
-                            <span>
-                              Search
-                            </span>
-                            <div
-                              class="sc-bdfBwQ iNulIV"
-                              height="18"
-                              width="18"
-                            >
-                              <svg>
-                                search.svg
-                              </svg>
-                            </div>
+                            <svg>
+                              search.svg
+                            </svg>
                           </div>
                         </div>
-                      </div>
-                    </button>
+                      </button>
+                    </div>
                   </div>
                   <div
                     class="pl-8 my-auto ml-5 h-10 border-l border-theme-secondary-300 dark:border-theme-secondary-800"
@@ -9158,7 +9365,7 @@ exports[`PluginManager should toggle between list and grid on utility tab 1`] = 
           </div>
         </div>
         <nav
-          class="PluginManagerNavigationBar__NavWrapper-sc-1x1q7te-0 ggmsTH sticky top-21 bg-theme-secondary-100 dark:bg-black my-4"
+          class="PluginManagerNavigationBar__NavWrapper-sc-1x1q7te-0 jJNecf sticky top-21 bg-theme-secondary-100 dark:bg-black my-4"
           data-testid="PluginManagerNavigationBar"
         >
           <div
@@ -9172,10 +9379,13 @@ exports[`PluginManager should toggle between list and grid on utility tab 1`] = 
                   class="flex"
                 >
                   <button
-                    class="PluginManagerNavigationBar__item px-1 focus:outline-none lex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer "
+                    class="PluginManagerNavigationBar__item group"
                     data-testid="PluginManagerNavigationBar__latest"
                     title="Latest"
                   >
+                    <div
+                      class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                    />
                     <span>
                       Latest
                     </span>
@@ -9188,10 +9398,13 @@ exports[`PluginManager should toggle between list and grid on utility tab 1`] = 
                   class="flex"
                 >
                   <button
-                    class="PluginManagerNavigationBar__item px-1 focus:outline-none lex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer "
+                    class="PluginManagerNavigationBar__item group"
                     data-testid="PluginManagerNavigationBar__all"
                     title="All"
                   >
+                    <div
+                      class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                    />
                     <span>
                       All
                     </span>
@@ -9204,10 +9417,13 @@ exports[`PluginManager should toggle between list and grid on utility tab 1`] = 
                   class="flex"
                 >
                   <button
-                    class="PluginManagerNavigationBar__item px-1 focus:outline-none lex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer "
+                    class="PluginManagerNavigationBar__item group"
                     data-testid="PluginManagerNavigationBar__gaming"
                     title="Gaming"
                   >
+                    <div
+                      class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                    />
                     <span>
                       Gaming
                     </span>
@@ -9225,10 +9441,13 @@ exports[`PluginManager should toggle between list and grid on utility tab 1`] = 
                   class="flex"
                 >
                   <button
-                    class="PluginManagerNavigationBar__item px-1 focus:outline-none lex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer active"
+                    class="PluginManagerNavigationBar__item group active"
                     data-testid="PluginManagerNavigationBar__utility"
                     title="Utility"
                   >
+                    <div
+                      class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                    />
                     <span>
                       Utility
                     </span>
@@ -9246,10 +9465,13 @@ exports[`PluginManager should toggle between list and grid on utility tab 1`] = 
                   class="flex"
                 >
                   <button
-                    class="PluginManagerNavigationBar__item px-1 focus:outline-none lex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer "
+                    class="PluginManagerNavigationBar__item group"
                     data-testid="PluginManagerNavigationBar__exchange"
                     title="Exchange"
                   >
+                    <div
+                      class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                    />
                     <span>
                       Exchange
                     </span>
@@ -9267,10 +9489,13 @@ exports[`PluginManager should toggle between list and grid on utility tab 1`] = 
                   class="flex"
                 >
                   <button
-                    class="PluginManagerNavigationBar__item px-1 focus:outline-none lex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer "
+                    class="PluginManagerNavigationBar__item group"
                     data-testid="PluginManagerNavigationBar__other"
                     title="Other"
                   >
+                    <div
+                      class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                    />
                     <span>
                       Other
                     </span>
@@ -9290,10 +9515,13 @@ exports[`PluginManager should toggle between list and grid on utility tab 1`] = 
                 class="relative"
               >
                 <button
-                  class="PluginManagerNavigationBar__item h-full px-1 focus:outline-none flex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer "
+                  class="PluginManagerNavigationBar__item group"
                   data-testid="PluginManagerNavigationBar__my-plugins"
                   title="My Plugins"
                 >
+                  <div
+                    class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                  />
                   <span>
                     My Plugins
                   </span>
@@ -9311,10 +9539,13 @@ exports[`PluginManager should toggle between list and grid on utility tab 1`] = 
                   <div
                     class="group"
                   >
-                    <div
-                      class="ControlButton__ControlButtonStyled-sc-1xp1l1a-0 kMCise"
+                    <button
+                      class="ControlButton__ControlButtonStyled-sc-1xp1l1a-0 gPBHgx group"
                       data-testid="LayoutControls__list--icon"
                     >
+                      <div
+                        class="absolute inset-0 -mx-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                      />
                       <div
                         class="sc-bdfBwQ iyevwF"
                         height="20"
@@ -9324,7 +9555,7 @@ exports[`PluginManager should toggle between list and grid on utility tab 1`] = 
                           list-view.svg
                         </svg>
                       </div>
-                    </div>
+                    </button>
                   </div>
                 </div>
                 <div
@@ -9333,10 +9564,13 @@ exports[`PluginManager should toggle between list and grid on utility tab 1`] = 
                   <div
                     class="group"
                   >
-                    <div
-                      class="ControlButton__ControlButtonStyled-sc-1xp1l1a-0 gCTrBm"
+                    <button
+                      class="ControlButton__ControlButtonStyled-sc-1xp1l1a-0 gPBHgx group active"
                       data-testid="LayoutControls__grid--icon"
                     >
+                      <div
+                        class="absolute inset-0 -mx-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                      />
                       <div
                         class="sc-bdfBwQ iyevwF"
                         height="20"
@@ -9346,7 +9580,7 @@ exports[`PluginManager should toggle between list and grid on utility tab 1`] = 
                           grid-view.svg
                         </svg>
                       </div>
-                    </div>
+                    </button>
                   </div>
                 </div>
               </div>
@@ -9795,10 +10029,10 @@ exports[`PluginManager should update plugin on my-plugins 1`] = `
     >
       <nav
         aria-labelledby="main menu"
-        class="NavigationBar__NavWrapper-sc-1qsoskw-0 hkUMvZ"
+        class="NavigationBar__NavWrapper-sc-1qsoskw-0 bewuLZ"
       >
         <div
-          class="flex relative h-21"
+          class="relative flex h-21"
         >
           <button
             class="BackButton__StyledBackButton-sc-1pe22tv-0 eUphun flex w-12"
@@ -9821,7 +10055,7 @@ exports[`PluginManager should update plugin on my-plugins 1`] = `
               class="flex items-center my-auto"
             >
               <div
-                class="NavigationBar__LogoContainer-sc-1qsoskw-2 tulfg"
+                class="NavigationBar__LogoContainer-sc-1qsoskw-2 itrWMc"
               >
                 <svg
                   width="44"
@@ -9831,18 +10065,18 @@ exports[`PluginManager should update plugin on my-plugins 1`] = `
               </div>
             </div>
             <ul
-              class="flex mr-auto ml-4 space-x-8 h-21"
+              class="flex ml-4 mr-auto space-x-8 h-21"
             >
               <li
                 class="flex"
               >
                 <a
-                  class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
+                  class="relative flex items-center font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
                   href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
                   title="Portfolio"
                 >
                   <div
-                    class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                    class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
                   />
                   Portfolio
                 </a>
@@ -9852,12 +10086,12 @@ exports[`PluginManager should update plugin on my-plugins 1`] = `
               >
                 <a
                   aria-current="page"
-                  class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group active"
+                  class="relative flex items-center font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group active"
                   href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/plugins"
                   title="Plugins"
                 >
                   <div
-                    class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                    class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
                   />
                   Plugins
                 </a>
@@ -9866,12 +10100,12 @@ exports[`PluginManager should update plugin on my-plugins 1`] = `
                 class="flex"
               >
                 <a
-                  class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
+                  class="relative flex items-center font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
                   href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/exchange"
                   title="Exchange"
                 >
                   <div
-                    class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                    class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
                   />
                   Exchange
                 </a>
@@ -9880,12 +10114,12 @@ exports[`PluginManager should update plugin on my-plugins 1`] = `
                 class="flex"
               >
                 <a
-                  class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
+                  class="relative flex items-center font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
                   href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/news"
                   title="News"
                 >
                   <div
-                    class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                    class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
                   />
                   News
                 </a>
@@ -10011,6 +10245,7 @@ exports[`PluginManager should update plugin on my-plugins 1`] = `
                 </div>
                 <div
                   class="text-sm font-bold text-theme-secondary-text dark:text-theme-text"
+                  data-testid="Balance__value"
                 >
                   <span
                     data-testid="Amount"
@@ -10046,7 +10281,7 @@ exports[`PluginManager should update plugin on my-plugins 1`] = `
                     data-testid="dropdown__toggle"
                   >
                     <div
-                      class="cursor-pointer relative justify-center items-center align-middle rounded-full"
+                      class="relative items-center justify-center align-middle rounded-full cursor-pointer"
                       data-testid="navbar__useractions"
                     >
                       <div
@@ -10109,37 +10344,35 @@ exports[`PluginManager should update plugin on my-plugins 1`] = `
                 >
                   <div
                     class="relative"
+                    data-testid="HeaderSearchBar"
                   >
-                    <button
-                      class="my-auto h-full font-semibold cursor-pointer focus:outline-none"
-                      data-testid="header-search-bar__button"
-                      type="button"
+                    <div
+                      class="group"
                     >
-                      <div
-                        class="group"
+                      <button
+                        class="ControlButton__ControlButtonStyled-sc-1xp1l1a-0 gPBHgx group"
                       >
                         <div
-                          class="ControlButton__ControlButtonStyled-sc-1xp1l1a-0 kMCise"
+                          class="absolute inset-0 -mx-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                        />
+                        <div
+                          class="flex items-center h-5 space-x-3"
                         >
+                          <span>
+                            Search
+                          </span>
                           <div
-                            class="flex items-center h-5 space-x-3"
+                            class="sc-bdfBwQ iNulIV"
+                            height="18"
+                            width="18"
                           >
-                            <span>
-                              Search
-                            </span>
-                            <div
-                              class="sc-bdfBwQ iNulIV"
-                              height="18"
-                              width="18"
-                            >
-                              <svg>
-                                search.svg
-                              </svg>
-                            </div>
+                            <svg>
+                              search.svg
+                            </svg>
                           </div>
                         </div>
-                      </div>
-                    </button>
+                      </button>
+                    </div>
                   </div>
                   <div
                     class="pl-8 my-auto ml-5 h-10 border-l border-theme-secondary-300 dark:border-theme-secondary-800"
@@ -10176,7 +10409,7 @@ exports[`PluginManager should update plugin on my-plugins 1`] = `
           </div>
         </div>
         <nav
-          class="PluginManagerNavigationBar__NavWrapper-sc-1x1q7te-0 ggmsTH sticky top-21 bg-theme-secondary-100 dark:bg-black my-4"
+          class="PluginManagerNavigationBar__NavWrapper-sc-1x1q7te-0 jJNecf sticky top-21 bg-theme-secondary-100 dark:bg-black my-4"
           data-testid="PluginManagerNavigationBar"
         >
           <div
@@ -10190,10 +10423,13 @@ exports[`PluginManager should update plugin on my-plugins 1`] = `
                   class="flex"
                 >
                   <button
-                    class="PluginManagerNavigationBar__item px-1 focus:outline-none lex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer "
+                    class="PluginManagerNavigationBar__item group"
                     data-testid="PluginManagerNavigationBar__latest"
                     title="Latest"
                   >
+                    <div
+                      class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                    />
                     <span>
                       Latest
                     </span>
@@ -10206,10 +10442,13 @@ exports[`PluginManager should update plugin on my-plugins 1`] = `
                   class="flex"
                 >
                   <button
-                    class="PluginManagerNavigationBar__item px-1 focus:outline-none lex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer "
+                    class="PluginManagerNavigationBar__item group"
                     data-testid="PluginManagerNavigationBar__all"
                     title="All"
                   >
+                    <div
+                      class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                    />
                     <span>
                       All
                     </span>
@@ -10222,10 +10461,13 @@ exports[`PluginManager should update plugin on my-plugins 1`] = `
                   class="flex"
                 >
                   <button
-                    class="PluginManagerNavigationBar__item px-1 focus:outline-none lex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer "
+                    class="PluginManagerNavigationBar__item group"
                     data-testid="PluginManagerNavigationBar__gaming"
                     title="Gaming"
                   >
+                    <div
+                      class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                    />
                     <span>
                       Gaming
                     </span>
@@ -10243,10 +10485,13 @@ exports[`PluginManager should update plugin on my-plugins 1`] = `
                   class="flex"
                 >
                   <button
-                    class="PluginManagerNavigationBar__item px-1 focus:outline-none lex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer "
+                    class="PluginManagerNavigationBar__item group"
                     data-testid="PluginManagerNavigationBar__utility"
                     title="Utility"
                   >
+                    <div
+                      class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                    />
                     <span>
                       Utility
                     </span>
@@ -10264,10 +10509,13 @@ exports[`PluginManager should update plugin on my-plugins 1`] = `
                   class="flex"
                 >
                   <button
-                    class="PluginManagerNavigationBar__item px-1 focus:outline-none lex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer "
+                    class="PluginManagerNavigationBar__item group"
                     data-testid="PluginManagerNavigationBar__exchange"
                     title="Exchange"
                   >
+                    <div
+                      class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                    />
                     <span>
                       Exchange
                     </span>
@@ -10285,10 +10533,13 @@ exports[`PluginManager should update plugin on my-plugins 1`] = `
                   class="flex"
                 >
                   <button
-                    class="PluginManagerNavigationBar__item px-1 focus:outline-none lex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer "
+                    class="PluginManagerNavigationBar__item group"
                     data-testid="PluginManagerNavigationBar__other"
                     title="Other"
                   >
+                    <div
+                      class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                    />
                     <span>
                       Other
                     </span>
@@ -10308,10 +10559,13 @@ exports[`PluginManager should update plugin on my-plugins 1`] = `
                 class="relative"
               >
                 <button
-                  class="PluginManagerNavigationBar__item h-full px-1 focus:outline-none flex items-center font-semibold text-md text-theme-secondary-text hover:text-theme-text transition-colors duration-200 cursor-pointer active"
+                  class="PluginManagerNavigationBar__item group active"
                   data-testid="PluginManagerNavigationBar__my-plugins"
                   title="My Plugins"
                 >
+                  <div
+                    class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                  />
                   <span>
                     My Plugins
                   </span>
@@ -10341,10 +10595,13 @@ exports[`PluginManager should update plugin on my-plugins 1`] = `
                   <div
                     class="group"
                   >
-                    <div
-                      class="ControlButton__ControlButtonStyled-sc-1xp1l1a-0 gCTrBm"
+                    <button
+                      class="ControlButton__ControlButtonStyled-sc-1xp1l1a-0 gPBHgx group active"
                       data-testid="LayoutControls__list--icon"
                     >
+                      <div
+                        class="absolute inset-0 -mx-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                      />
                       <div
                         class="sc-bdfBwQ iyevwF"
                         height="20"
@@ -10354,7 +10611,7 @@ exports[`PluginManager should update plugin on my-plugins 1`] = `
                           list-view.svg
                         </svg>
                       </div>
-                    </div>
+                    </button>
                   </div>
                 </div>
                 <div
@@ -10363,10 +10620,13 @@ exports[`PluginManager should update plugin on my-plugins 1`] = `
                   <div
                     class="group"
                   >
-                    <div
-                      class="ControlButton__ControlButtonStyled-sc-1xp1l1a-0 kMCise"
+                    <button
+                      class="ControlButton__ControlButtonStyled-sc-1xp1l1a-0 gPBHgx group"
                       data-testid="LayoutControls__grid--icon"
                     >
+                      <div
+                        class="absolute inset-0 -mx-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                      />
                       <div
                         class="sc-bdfBwQ iyevwF"
                         height="20"
@@ -10376,7 +10636,7 @@ exports[`PluginManager should update plugin on my-plugins 1`] = `
                           grid-view.svg
                         </svg>
                       </div>
-                    </div>
+                    </button>
                   </div>
                 </div>
               </div>

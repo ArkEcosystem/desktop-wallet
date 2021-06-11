@@ -1,4 +1,4 @@
-import { Coins } from "@arkecosystem/platform-sdk";
+import { Coins, Networks } from "@arkecosystem/platform-sdk";
 // import { ADA } from "@arkecosystem/platform-sdk-ada";
 import { ARK } from "@arkecosystem/platform-sdk-ark";
 // import { ATOM } from "@arkecosystem/platform-sdk-atom";
@@ -13,7 +13,7 @@ import { LSK } from "@arkecosystem/platform-sdk-lsk";
 // import { ZIL } from "@arkecosystem/platform-sdk-zil";
 
 const createNetwork = (coin: Coins.CoinSpec, network: string) =>
-	new Coins.Network(coin.manifest, coin.manifest.networks[network]);
+	new Networks.Network(coin.manifest, coin.manifest.networks[network]);
 
 export interface CoinNetworkExtended {
 	displayName: string;
@@ -47,8 +47,14 @@ export const coinsNetworkExtendedData: Record<string, CoinNetworkExtended> = {
 		textClass: "text-theme-primary-400",
 		iconName: "ARK",
 	},
-	"compendia.mainnet": {
+	"bind.mainnet": {
 		displayName: "Compendia",
+		borderClass: "border-theme-primary-100",
+		textClass: "text-theme-primary-400",
+		iconName: "BIND",
+	},
+	"bind.testnet": {
+		displayName: "Compendia Testnet",
 		borderClass: "border-theme-primary-100",
 		textClass: "text-theme-primary-400",
 		iconName: "BIND",
@@ -193,12 +199,13 @@ export const coinsNetworkExtendedData: Record<string, CoinNetworkExtended> = {
 	// },
 };
 
-export const availableNetworksMock: Coins.Network[] = [
+export const availableNetworksMock: Networks.Network[] = [
 	// createNetwork(ADA, "ada.mainnet"),
 	// createNetwork(ADA, "ada.testnet"),
 	createNetwork(ARK, "ark.mainnet"),
 	createNetwork(ARK, "ark.devnet"),
-	createNetwork(ARK, "compendia.mainnet"),
+	createNetwork(ARK, "bind.mainnet"),
+	createNetwork(ARK, "bind.testnet"),
 	// createNetwork(ATOM, "atom.mainnet"),
 	// createNetwork(ATOM, "atom.testnet"),
 	// createNetwork(BTC, "btc.livenet"),

@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/require-await */
-import { Coins } from "@arkecosystem/platform-sdk";
+import { Networks } from "@arkecosystem/platform-sdk";
 import { BigNumber } from "@arkecosystem/platform-sdk-support";
 import { renderHook } from "@testing-library/react-hooks";
 import { useTranslation } from "react-i18next";
@@ -8,7 +8,7 @@ import { env } from "utils/testing-library";
 import { common } from "./Common";
 
 let t: any;
-let network: Coins.Network;
+let network: Networks.Network;
 
 describe("Common", () => {
 	beforeAll(() => {
@@ -22,7 +22,7 @@ describe("Common", () => {
 		const commonValidation = common(t).fee(BigNumber.make(1), network);
 		expect(commonValidation.validate.valid("1234")).toBe(
 			t("TRANSACTION.VALIDATION.LOW_BALANCE", {
-				balance: "0.00000001",
+				balance: "1",
 				coinId: network.coin(),
 			}),
 		);

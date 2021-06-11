@@ -1,13 +1,12 @@
 import { TruncateEnd } from "app/components/TruncateEnd";
-import { useTextTruncate } from "app/hooks/use-text-truncate";
-import React, { useRef } from "react";
+import { TruncateMiddleDynamic } from "app/components/TruncateMiddleDynamic";
+import React from "react";
 import { Size } from "types";
 
 interface Props {
 	walletName?: string;
 	addressClass?: string;
 	address?: string;
-	maxChars?: number;
 	maxNameChars?: number;
 	walletNameClass?: string;
 	size?: Size;
@@ -20,13 +19,9 @@ export const Address = ({
 	walletNameClass,
 	fontWeight,
 	walletName,
-	maxChars,
 	maxNameChars,
 	size,
 }: Props) => {
-	const ref = useRef(null);
-	const [TruncatedAddress] = useTextTruncate({ text: address, parentRef: ref });
-
 	const getFontSize = (size?: Size) => {
 		switch (size) {
 			case "sm":
@@ -50,11 +45,11 @@ export const Address = ({
 	};
 
 	return (
-		<div ref={ref} className="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap">
+		<div className="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap space-x-2">
 			{walletName && (
 				<span
-					data-testid="address__wallet-name"
-					className={`max-w-24 truncate mr-2 ${getFontWeight(fontWeight)} ${getFontSize(size)} ${
+					data-testid="Address__alias"
+					className={`${getFontWeight(fontWeight)} ${getFontSize(size)} ${
 						walletNameClass || "text-theme-text"
 					}`}
 				>
@@ -66,8 +61,9 @@ export const Address = ({
 				</span>
 			)}
 			{address && (
-				<TruncatedAddress
-					data-testid="address__wallet-address"
+				<TruncateMiddleDynamic
+					data-testid="Address__address"
+					value={address}
 					className={`${
 						addressClass ||
 						(walletName ? "text-theme-secondary-500 dark:text-theme-secondary-700" : "text-theme-text")
@@ -76,8 +72,4 @@ export const Address = ({
 			)}
 		</div>
 	);
-};
-
-Address.defaultProps = {
-	maxChars: 16,
 };

@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/require-await */
-import { Coins } from "@arkecosystem/platform-sdk";
+import { Networks } from "@arkecosystem/platform-sdk";
 import { Contracts } from "@arkecosystem/platform-sdk-profiles";
 import { BigNumber } from "@arkecosystem/platform-sdk-support";
 import { act, renderHook } from "@testing-library/react-hooks";
@@ -11,7 +11,7 @@ import { AddRecipient } from "./AddRecipient";
 
 let profile: Contracts.IProfile;
 let wallet: Contracts.IReadWriteWallet;
-let network: Coins.Network;
+let network: Networks.Network;
 
 const renderWithFormProvider = async (children: any, defaultValues?: any) => {
 	let rendered: any;
@@ -44,7 +44,7 @@ describe("AddRecipient", () => {
 	it("should render", async () => {
 		const { container } = await renderWithFormProvider(<AddRecipient profile={profile} assetSymbol="ARK" />);
 
-		// await waitFor(() => expect(getByTestId("SelectDropdownInput__input")).toHaveValue(""));
+		// await waitFor(() => expect(getByTestId("SelectDropdown__input")).toHaveValue(""));
 		expect(container).toMatchSnapshot();
 	});
 
@@ -56,7 +56,7 @@ describe("AddRecipient", () => {
 	it("should render with single recipient data", async () => {
 		const values = {
 			displayAmount: "1",
-			amount: "100000000",
+			amount: "1",
 			recipientAddress: "D6Z26L69gdk9qYmTv5uzk3uGepigtHY4ax",
 		};
 
@@ -64,7 +64,7 @@ describe("AddRecipient", () => {
 
 		await waitFor(() => {
 			expect(getByTestId("AddRecipient__amount")).toHaveValue("1");
-			expect(getByTestId("SelectDropdownInput__input")).toHaveValue("D6Z26L69gdk9qYmTv5uzk3uGepigtHY4ax");
+			expect(getByTestId("SelectDropdown__input")).toHaveValue("D6Z26L69gdk9qYmTv5uzk3uGepigtHY4ax");
 		});
 
 		expect(container).toMatchSnapshot();
@@ -75,7 +75,7 @@ describe("AddRecipient", () => {
 			<AddRecipient profile={profile} assetSymbol="ARK" isSingleRecipient={false} />,
 		);
 
-		await waitFor(() => expect(getByTestId("SelectDropdownInput__input")).toHaveValue(""));
+		await waitFor(() => expect(getByTestId("SelectDropdown__input")).toHaveValue(""));
 		expect(container).toMatchSnapshot();
 	});
 
@@ -91,7 +91,7 @@ describe("AddRecipient", () => {
 
 		expect(container).toMatchSnapshot();
 	});
-
+	//
 	it("should set amount", async () => {
 		const onChange = jest.fn();
 
@@ -106,7 +106,7 @@ describe("AddRecipient", () => {
 				},
 			});
 
-			fireEvent.input(getByTestId("SelectDropdownInput__input"), {
+			fireEvent.input(getByTestId("SelectDropdown__input"), {
 				target: {
 					value: "bP6T9GQ3kqP6T9GQ3kqP6T9GQ3kqTTTP6T9GQ3kqT",
 				},
@@ -114,8 +114,8 @@ describe("AddRecipient", () => {
 		});
 
 		await waitFor(() => {
-			expect(form.current.getValues("amount")).toEqual("100000000");
-			expect(getByTestId("SelectDropdownInput__input")).toHaveValue("bP6T9GQ3kqP6T9GQ3kqP6T9GQ3kqTTTP6T9GQ3kqT");
+			expect(form.current.getValues("amount")).toEqual("1");
+			expect(getByTestId("SelectDropdown__input")).toHaveValue("bP6T9GQ3kqP6T9GQ3kqP6T9GQ3kqTTTP6T9GQ3kqT");
 			expect(onChange).toHaveBeenCalledWith([
 				{ amount: expect.any(BigNumber), address: "bP6T9GQ3kqP6T9GQ3kqP6T9GQ3kqTTTP6T9GQ3kqT" },
 			]);
@@ -143,7 +143,7 @@ describe("AddRecipient", () => {
 		expect(() => getByTestId("modal__inner")).toThrow(/Unable to find an element by/);
 
 		const selectedAddressValue = profile.wallets().first().address();
-		expect(getByTestId("SelectDropdownInput__input")).toHaveValue(selectedAddressValue);
+		expect(getByTestId("SelectDropdown__input")).toHaveValue(selectedAddressValue);
 	});
 
 	it("should set available amount", async () => {
@@ -156,7 +156,9 @@ describe("AddRecipient", () => {
 			fireEvent.click(sendAll);
 		});
 
-		await waitFor(() => expect(form.current.getValues("amount")).toEqual(wallet.balance().toString()));
+		await waitFor(() =>
+			expect(form.current.getValues("amount")).toEqual(wallet.balance().denominated().toString()),
+		);
 		expect(container).toMatchSnapshot();
 	});
 
@@ -164,7 +166,7 @@ describe("AddRecipient", () => {
 		const emptyProfile = env.profiles().create("Empty");
 
 		emptyProfile.wallets().push(
-			await emptyProfile.walletFactory().fromMnemonic({
+			await emptyProfile.walletFactory().fromMnemonicWithBIP39({
 				mnemonic: "test test",
 				coin: "ARK",
 				network: "ark.devnet",
@@ -212,7 +214,7 @@ describe("AddRecipient", () => {
 	it("should prevent adding invalid recipient address in multiple tab", async () => {
 		const values = {
 			displayAmount: "1",
-			amount: "100000000",
+			amount: "1",
 			recipientAddress: "bP6T9GQ3kqP6T9GQ3kqP6T9GQ3kqTTTP6T9GQ3kqT",
 		};
 
@@ -257,7 +259,7 @@ describe("AddRecipient", () => {
 		});
 
 		// Invalid address
-		fireEvent.input(screen.getByTestId("SelectDropdownInput__input"), {
+		fireEvent.input(screen.getByTestId("SelectDropdown__input"), {
 			target: {
 				value: values.recipientAddress,
 			},
@@ -272,7 +274,7 @@ describe("AddRecipient", () => {
 		expect(screen.getByTestId("AddRecipient__add-button")).toBeDisabled();
 
 		// Valid address
-		fireEvent.input(screen.getByTestId("SelectDropdownInput__input"), {
+		fireEvent.input(screen.getByTestId("SelectDropdown__input"), {
 			target: {
 				value: "D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD",
 			},
@@ -297,7 +299,7 @@ describe("AddRecipient", () => {
 		);
 
 		await waitFor(() => {
-			expect(getByTestId("SelectDropdownInput__input")).toBeDisabled();
+			expect(getByTestId("SelectDropdown__input")).toBeDisabled();
 			expect(getByTestId("AddRecipient__amount")).toBeDisabled();
 		});
 	});
@@ -314,7 +316,7 @@ describe("AddRecipient", () => {
 		);
 
 		await waitFor(() => {
-			expect(getByTestId("SelectDropdownInput__input")).toBeDisabled();
+			expect(getByTestId("SelectDropdown__input")).toBeDisabled();
 			expect(getByTestId("AddRecipient__amount")).toBeDisabled();
 		});
 	});
@@ -408,7 +410,7 @@ describe("AddRecipient", () => {
 		});
 
 		await act(async () => {
-			fireEvent.change(getByTestId("SelectDropdownInput__input"), {
+			fireEvent.change(getByTestId("SelectDropdown__input"), {
 				target: {
 					value: "abc",
 				},
@@ -421,7 +423,7 @@ describe("AddRecipient", () => {
 	it("should remove recipient in multiple tab", async () => {
 		const values = {
 			displayAmount: "1",
-			amount: "100000000",
+			amount: "1",
 			recipientAddress: "DFJ5Z51F1euNNdRUQJKQVdG4h495LZkc6T",
 		};
 
@@ -480,7 +482,7 @@ describe("AddRecipient", () => {
 	it("should not override default values in single tab", async () => {
 		const values = {
 			displayAmount: "1",
-			amount: "100000000",
+			amount: "1",
 			recipientAddress: "DFJ5Z51F1euNNdRUQJKQVdG4h495LZkc6T",
 		};
 
@@ -541,7 +543,7 @@ describe("AddRecipient", () => {
 			fireEvent.click(screen.getByTestId("AddRecipient__multi"));
 		});
 
-		fireEvent.input(screen.getByTestId("SelectDropdownInput__input"), {
+		fireEvent.input(screen.getByTestId("SelectDropdown__input"), {
 			target: {
 				value: values.recipientAddress,
 			},

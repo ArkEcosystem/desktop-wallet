@@ -30,9 +30,10 @@ const useProfileWatcher = () => {
 	return useMemo(() => getProfileById(profileId), [profileId, env, allProfilesCount, getProfileById]); // eslint-disable-line react-hooks/exhaustive-deps
 };
 
-const useProfileJobs = (profile?: Contracts.IProfile): Record<string, any> => {
+export const useProfileJobs = (profile?: Contracts.IProfile): Record<string, any> => {
 	const { env } = useEnvironmentContext();
 	const { notifications } = useNotifications();
+	const { setConfiguration } = useConfiguration();
 
 	const walletsCount = profile?.wallets().count();
 	return useMemo(() => {
@@ -48,9 +49,17 @@ const useProfileJobs = (profile?: Contracts.IProfile): Record<string, any> => {
 		};
 
 		const syncExchangeRates = {
-			callback: () => {
+			callback: async () => {
+				setConfiguration({ profileIsSyncingExchangeRates: true });
+
 				const currencies = Object.keys(profile.coins().all());
-				return Promise.all(currencies.map((currency) => env.exchangeRates().syncAll(profile, currency)));
+				const allRates = await Promise.all(
+					currencies.map((currency) => env.exchangeRates().syncAll(profile, currency)),
+				);
+
+				setConfiguration({ profileIsSyncingExchangeRates: false });
+
+				return allRates;
 			},
 			interval: Intervals.Long,
 		};
@@ -67,8 +76,9 @@ const useProfileJobs = (profile?: Contracts.IProfile): Record<string, any> => {
 
 		return {
 			allJobs: [syncExchangeRates, syncNotifications, syncKnownWallets, syncDelegates],
+			syncExchangeRates: syncExchangeRates.callback,
 		};
-	}, [env, profile, walletsCount, notifications]); // eslint-disable-line react-hooks/exhaustive-deps
+	}, [env, profile, walletsCount, notifications, setConfiguration]); // eslint-disable-line react-hooks/exhaustive-deps
 };
 
 interface ProfileSyncState {
@@ -77,7 +87,7 @@ interface ProfileSyncState {
 }
 
 export const useProfileSyncStatus = () => {
-	const { profileIsRestoring, restoredProfiles, setConfiguration } = useConfiguration();
+	const { profileIsRestoring, setConfiguration } = useConfiguration();
 	const { current } = useRef<ProfileSyncState>({
 		status: "idle",
 		restored: [],
@@ -85,8 +95,6 @@ export const useProfileSyncStatus = () => {
 
 	const isIdle = () => current.status === "idle";
 	const isRestoring = () => profileIsRestoring || current.status === "restoring";
-	const isRestored = (profile: Contracts.IProfile) =>
-		[...current.restored, ...restoredProfiles].includes(profile.id()) || current.status === "restored";
 	const isSyncing = () => current.status === "syncing";
 	const isSynced = () => current.status === "synced";
 	const isCompleted = () => current.status === "completed";
@@ -99,7 +107,7 @@ export const useProfileSyncStatus = () => {
 			return false;
 		}
 
-		return !isSyncing() && !isRestoring() && !isSynced() && !isCompleted() && !isRestored(profile);
+		return !isSyncing() && !isRestoring() && !isSynced() && !isCompleted() && !profile.status().isRestored();
 	};
 
 	const shouldSync = () => !isSyncing() && !isRestoring() && !isSynced() && !isCompleted();
@@ -114,13 +122,27 @@ export const useProfileSyncStatus = () => {
 		setStatus: (status: string) => {
 			current.status = status;
 			if (status === "restoring") {
-				setConfiguration({ profileIsRestoring: true });
+				setConfiguration({ profileIsRestoring: true, profileIsSyncingExchangeRates: true });
+			}
+
+			if (status === "syncing") {
+				setConfiguration({ profileIsSyncingExchangeRates: true });
+			}
+
+			if (status === "idle") {
+				setConfiguration({ profileIsSyncingExchangeRates: true });
 			}
 		},
 		markAsRestored: (profileId: string) => {
 			current.status = "restored";
 			current.restored.push(profileId);
-			setConfiguration({ profileIsRestoring: false, restoredProfiles: [...restoredProfiles, profileId] });
+			setConfiguration({ profileIsRestoring: false });
+		},
+		resetStatuses: (profiles: Contracts.IProfile[]) => {
+			current.status = "idle";
+			current.restored = [];
+			setConfiguration({ profileIsRestoring: false, profileIsSyncing: true });
+			profiles.forEach((profile) => profile.status().reset());
 		},
 	};
 };
@@ -165,7 +187,7 @@ interface ProfileSynchronizerProps {
 }
 
 export const useProfileSynchronizer = ({ onProfileRestoreError }: ProfileSynchronizerProps = {}) => {
-	const { persist } = useEnvironmentContext();
+	const { env, persist } = useEnvironmentContext();
 	const { setConfiguration, profileIsSyncing } = useConfiguration();
 	const { restoreProfile } = useProfileRestore();
 	const profile = useProfileWatcher();
@@ -177,6 +199,7 @@ export const useProfileSynchronizer = ({ onProfileRestoreError }: ProfileSynchro
 		setStatus,
 		status,
 		markAsRestored,
+		resetStatuses,
 	} = useProfileSyncStatus();
 
 	const { allJobs } = useProfileJobs(profile);
@@ -188,15 +211,15 @@ export const useProfileSynchronizer = ({ onProfileRestoreError }: ProfileSynchro
 
 	useEffect(() => {
 		const clearProfileSyncStatus = () => {
-			if (status() !== "completed") {
+			if (status() === "idle") {
 				return;
 			}
 
-			setStatus("idle");
-			stop({ clearTimers: true });
-			setConfiguration({ profileIsSyncing: true });
 			resetTheme();
 			resetAutomatiSignout();
+			resetStatuses(env.profiles().values());
+
+			stop({ clearTimers: true });
 		};
 
 		const syncProfile = async (profile?: Contracts.IProfile) => {
@@ -247,6 +270,7 @@ export const useProfileSynchronizer = ({ onProfileRestoreError }: ProfileSynchro
 
 		setTimeout(() => syncProfile(profile), 0);
 	}, [
+		env,
 		resetTheme,
 		setProfileTheme,
 		allJobs,
@@ -266,6 +290,7 @@ export const useProfileSynchronizer = ({ onProfileRestoreError }: ProfileSynchro
 		onProfileRestoreError,
 		monitorIdleTime,
 		resetAutomatiSignout,
+		resetStatuses,
 		history,
 		setScreenshotProtection,
 		stop,

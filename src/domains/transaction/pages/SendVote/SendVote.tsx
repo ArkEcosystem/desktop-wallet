@@ -1,4 +1,4 @@
-import { Contracts } from "@arkecosystem/platform-sdk";
+import { Contracts, Services } from "@arkecosystem/platform-sdk";
 import { Contracts as ProfileContracts } from "@arkecosystem/platform-sdk-profiles";
 import { Button } from "app/components/Button";
 import { Form } from "app/components/Form";
@@ -48,7 +48,7 @@ export const SendVote = () => {
 	const { sendVote, common } = useValidation();
 
 	const abortRef = useRef(new AbortController());
-	const transactionBuilder = useTransactionBuilder(activeProfile);
+	const transactionBuilder = useTransactionBuilder();
 	const { sign } = useWalletSignatory(activeWallet);
 
 	useEffect(() => {
@@ -191,7 +191,7 @@ export const SendVote = () => {
 				encryptionPassword,
 			});
 
-			const voteTransactionInput: Contracts.TransactionInput = {
+			const voteTransactionInput: Services.TransactionInput = {
 				fee,
 				signatory,
 			};

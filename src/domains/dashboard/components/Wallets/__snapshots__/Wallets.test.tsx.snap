@@ -33,10 +33,13 @@ exports[`Wallets should load more wallets 1`] = `
                   <div
                     class="group"
                   >
-                    <div
-                      class="ControlButton__ControlButtonStyled-sc-1xp1l1a-0 gCTrBm"
+                    <button
+                      class="ControlButton__ControlButtonStyled-sc-1xp1l1a-0 gPBHgx group active"
                       data-testid="LayoutControls__list--icon"
                     >
+                      <div
+                        class="absolute inset-0 -mx-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                      />
                       <div
                         class="sc-bdfBwQ iyevwF"
                         height="20"
@@ -46,7 +49,7 @@ exports[`Wallets should load more wallets 1`] = `
                           list-view.svg
                         </svg>
                       </div>
-                    </div>
+                    </button>
                   </div>
                 </div>
                 <div
@@ -55,10 +58,13 @@ exports[`Wallets should load more wallets 1`] = `
                   <div
                     class="group"
                   >
-                    <div
-                      class="ControlButton__ControlButtonStyled-sc-1xp1l1a-0 kMCise"
+                    <button
+                      class="ControlButton__ControlButtonStyled-sc-1xp1l1a-0 gPBHgx group"
                       data-testid="LayoutControls__grid--icon"
                     >
+                      <div
+                        class="absolute inset-0 -mx-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                      />
                       <div
                         class="sc-bdfBwQ iyevwF"
                         height="20"
@@ -68,7 +74,7 @@ exports[`Wallets should load more wallets 1`] = `
                           grid-view.svg
                         </svg>
                       </div>
-                    </div>
+                    </button>
                   </div>
                 </div>
               </div>
@@ -86,9 +92,12 @@ exports[`Wallets should load more wallets 1`] = `
                     <div
                       class="group"
                     >
-                      <div
-                        class="ControlButton__ControlButtonStyled-sc-1xp1l1a-0 kMCise"
+                      <button
+                        class="ControlButton__ControlButtonStyled-sc-1xp1l1a-0 gPBHgx group"
                       >
+                        <div
+                          class="absolute inset-0 -mx-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                        />
                         <div
                           class="flex items-center justify-center w-5 h-5"
                         >
@@ -102,7 +111,7 @@ exports[`Wallets should load more wallets 1`] = `
                             </svg>
                           </div>
                         </div>
-                      </div>
+                      </button>
                     </div>
                   </span>
                 </span>
@@ -364,11 +373,11 @@ exports[`Wallets should load more wallets 1`] = `
                         </div>
                       </div>
                       <div
-                        class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap"
+                        class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap space-x-2"
                       >
                         <span
-                          class="max-w-24 truncate mr-2 font-semibold text-base text-theme-text"
-                          data-testid="address__wallet-name"
+                          class="font-semibold text-base text-theme-text"
+                          data-testid="Address__alias"
                         >
                           <span
                             class="TruncateEnd__Wrapper-sc-1w1nvb9-0"
@@ -378,8 +387,8 @@ exports[`Wallets should load more wallets 1`] = `
                           </span>
                         </span>
                         <span
-                          class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-secondary-500 dark:text-theme-secondary-700 font-semibold text-base"
-                          data-testid="address__wallet-address"
+                          class="inline-flex overflow-hidden text-theme-secondary-500 dark:text-theme-secondary-700 font-semibold text-base"
+                          data-testid="Address__address"
                         >
                           D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD
                         </span>
@@ -461,11 +470,11 @@ exports[`Wallets should load more wallets 1`] = `
                         </div>
                       </div>
                       <div
-                        class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap"
+                        class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap space-x-2"
                       >
                         <span
-                          class="max-w-24 truncate mr-2 font-semibold text-base text-theme-text"
-                          data-testid="address__wallet-name"
+                          class="font-semibold text-base text-theme-text"
+                          data-testid="Address__alias"
                         >
                           <span
                             class="TruncateEnd__Wrapper-sc-1w1nvb9-0"
@@ -475,8 +484,8 @@ exports[`Wallets should load more wallets 1`] = `
                           </span>
                         </span>
                         <span
-                          class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-secondary-500 dark:text-theme-secondary-700 font-semibold text-base"
-                          data-testid="address__wallet-address"
+                          class="inline-flex overflow-hidden text-theme-secondary-500 dark:text-theme-secondary-700 font-semibold text-base"
+                          data-testid="Address__address"
                         >
                           D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb
                         </span>
@@ -573,11 +582,11 @@ exports[`Wallets should load more wallets 1`] = `
                         </div>
                       </div>
                       <div
-                        class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap"
+                        class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap space-x-2"
                       >
                         <span
-                          class="max-w-24 truncate mr-2 font-semibold text-base text-theme-text"
-                          data-testid="address__wallet-name"
+                          class="font-semibold text-base text-theme-text"
+                          data-testid="Address__alias"
                         >
                           <span
                             class="TruncateEnd__Wrapper-sc-1w1nvb9-0"
@@ -587,8 +596,8 @@ exports[`Wallets should load more wallets 1`] = `
                           </span>
                         </span>
                         <span
-                          class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-secondary-500 dark:text-theme-secondary-700 font-semibold text-base"
-                          data-testid="address__wallet-address"
+                          class="inline-flex overflow-hidden text-theme-secondary-500 dark:text-theme-secondary-700 font-semibold text-base"
+                          data-testid="Address__address"
                         >
                           AdVSe37niA3uFUPgCgMUH2tMsHF4LpLoiX
                         </span>
@@ -685,10 +694,13 @@ exports[`Wallets should open and close ledger import modal 1`] = `
                   <div
                     class="group"
                   >
-                    <div
-                      class="ControlButton__ControlButtonStyled-sc-1xp1l1a-0 gCTrBm"
+                    <button
+                      class="ControlButton__ControlButtonStyled-sc-1xp1l1a-0 gPBHgx group active"
                       data-testid="LayoutControls__list--icon"
                     >
+                      <div
+                        class="absolute inset-0 -mx-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                      />
                       <div
                         class="sc-bdfBwQ iyevwF"
                         height="20"
@@ -698,7 +710,7 @@ exports[`Wallets should open and close ledger import modal 1`] = `
                           list-view.svg
                         </svg>
                       </div>
-                    </div>
+                    </button>
                   </div>
                 </div>
                 <div
@@ -707,10 +719,13 @@ exports[`Wallets should open and close ledger import modal 1`] = `
                   <div
                     class="group"
                   >
-                    <div
-                      class="ControlButton__ControlButtonStyled-sc-1xp1l1a-0 kMCise"
+                    <button
+                      class="ControlButton__ControlButtonStyled-sc-1xp1l1a-0 gPBHgx group"
                       data-testid="LayoutControls__grid--icon"
                     >
+                      <div
+                        class="absolute inset-0 -mx-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                      />
                       <div
                         class="sc-bdfBwQ iyevwF"
                         height="20"
@@ -720,7 +735,7 @@ exports[`Wallets should open and close ledger import modal 1`] = `
                           grid-view.svg
                         </svg>
                       </div>
-                    </div>
+                    </button>
                   </div>
                 </div>
               </div>
@@ -738,9 +753,12 @@ exports[`Wallets should open and close ledger import modal 1`] = `
                     <div
                       class="group"
                     >
-                      <div
-                        class="ControlButton__ControlButtonStyled-sc-1xp1l1a-0 kMCise"
+                      <button
+                        class="ControlButton__ControlButtonStyled-sc-1xp1l1a-0 gPBHgx group"
                       >
+                        <div
+                          class="absolute inset-0 -mx-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                        />
                         <div
                           class="flex items-center justify-center w-5 h-5"
                         >
@@ -754,7 +772,7 @@ exports[`Wallets should open and close ledger import modal 1`] = `
                             </svg>
                           </div>
                         </div>
-                      </div>
+                      </button>
                     </div>
                   </span>
                 </span>
@@ -1016,11 +1034,11 @@ exports[`Wallets should open and close ledger import modal 1`] = `
                         </div>
                       </div>
                       <div
-                        class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap"
+                        class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap space-x-2"
                       >
                         <span
-                          class="max-w-24 truncate mr-2 font-semibold text-base text-theme-text"
-                          data-testid="address__wallet-name"
+                          class="font-semibold text-base text-theme-text"
+                          data-testid="Address__alias"
                         >
                           <span
                             class="TruncateEnd__Wrapper-sc-1w1nvb9-0"
@@ -1030,8 +1048,8 @@ exports[`Wallets should open and close ledger import modal 1`] = `
                           </span>
                         </span>
                         <span
-                          class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-secondary-500 dark:text-theme-secondary-700 font-semibold text-base"
-                          data-testid="address__wallet-address"
+                          class="inline-flex overflow-hidden text-theme-secondary-500 dark:text-theme-secondary-700 font-semibold text-base"
+                          data-testid="Address__address"
                         >
                           D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD
                         </span>
@@ -1113,11 +1131,11 @@ exports[`Wallets should open and close ledger import modal 1`] = `
                         </div>
                       </div>
                       <div
-                        class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap"
+                        class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap space-x-2"
                       >
                         <span
-                          class="max-w-24 truncate mr-2 font-semibold text-base text-theme-text"
-                          data-testid="address__wallet-name"
+                          class="font-semibold text-base text-theme-text"
+                          data-testid="Address__alias"
                         >
                           <span
                             class="TruncateEnd__Wrapper-sc-1w1nvb9-0"
@@ -1127,8 +1145,8 @@ exports[`Wallets should open and close ledger import modal 1`] = `
                           </span>
                         </span>
                         <span
-                          class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-secondary-500 dark:text-theme-secondary-700 font-semibold text-base"
-                          data-testid="address__wallet-address"
+                          class="inline-flex overflow-hidden text-theme-secondary-500 dark:text-theme-secondary-700 font-semibold text-base"
+                          data-testid="Address__address"
                         >
                           D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb
                         </span>
@@ -1225,11 +1243,11 @@ exports[`Wallets should open and close ledger import modal 1`] = `
                         </div>
                       </div>
                       <div
-                        class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap"
+                        class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap space-x-2"
                       >
                         <span
-                          class="max-w-24 truncate mr-2 font-semibold text-base text-theme-text"
-                          data-testid="address__wallet-name"
+                          class="font-semibold text-base text-theme-text"
+                          data-testid="Address__alias"
                         >
                           <span
                             class="TruncateEnd__Wrapper-sc-1w1nvb9-0"
@@ -1239,8 +1257,8 @@ exports[`Wallets should open and close ledger import modal 1`] = `
                           </span>
                         </span>
                         <span
-                          class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-secondary-500 dark:text-theme-secondary-700 font-semibold text-base"
-                          data-testid="address__wallet-address"
+                          class="inline-flex overflow-hidden text-theme-secondary-500 dark:text-theme-secondary-700 font-semibold text-base"
+                          data-testid="Address__address"
                         >
                           AdVSe37niA3uFUPgCgMUH2tMsHF4LpLoiX
                         </span>
@@ -1300,86 +1318,88 @@ exports[`Wallets should open and close ledger import modal 1`] = `
         </div>
       </div>
       <div
-        class="flex fixed inset-0 z-50 justify-center items-center w-full h-full overflow-overlay"
+        class="flex fixed inset-0 z-50 py-20 w-full h-full bg-theme-secondary-900-rgba bg-opacity-60 dark:bg-black-rgba dark:bg-opacity-80 overflow-overlay"
+        data-testid="modal__overlay"
       >
         <div
-          class="fixed z-50 w-full h-full bg-theme-secondary-900 opacity-60 dark:bg-black dark:opacity-80"
-          data-testid="modal__overlay"
-        />
-        <div
-          class="Modal__ModalContainer-sc-1pv7yg7-0 bGiJfU absolute left-0 right-0 z-50 flex flex-col p-10 mx-auto overflow-hidden rounded-2.5xl bg-theme-background shadow-2xl "
-          data-testid="modal__inner"
+          class="Modal__ModalContainer-sc-1pv7yg7-0 eKUKXn"
+          tabindex="-1"
         >
           <div
-            class="absolute top-0 right-0 z-50 mt-5 mr-5 rounded transition-all duration-100 ease-linear bg-theme-primary-100 hover:bg-theme-primary-300 dark:bg-theme-secondary-800 dark:text-theme-secondary-600 dark:hover:bg-theme-secondary-700 dark:hover:text-theme-secondary-400"
-          >
-            <button
-              class="OriginalButton__StyledButton-sc-1y2wptt-0 fNHPRi w-11 h-11"
-              data-testid="modal__close-btn"
-              type="button"
-            >
-              <div
-                class="flex relative items-center space-x-2"
-              >
-                <div
-                  class="sc-bdfBwQ bfBhNR"
-                  height="14"
-                  width="14"
-                >
-                  <svg>
-                    cross-slim.svg
-                  </svg>
-                </div>
-              </div>
-            </button>
-          </div>
-          <div
-            class="relative space-y-4"
+            class="relative flex flex-col p-10 overflow-hidden rounded-2.5xl bg-theme-background shadow-2xl"
+            data-testid="modal__inner"
           >
             <div
-              class="flex-1"
+              class="absolute top-0 right-0 z-10 mt-5 mr-5 rounded transition-all duration-100 ease-linear bg-theme-primary-100 hover:bg-theme-primary-300 dark:bg-theme-secondary-800 dark:text-theme-secondary-600 dark:hover:bg-theme-secondary-700 dark:hover:text-theme-secondary-400"
             >
-              <div
-                class="space-y-8"
+              <button
+                class="OriginalButton__StyledButton-sc-1y2wptt-0 fNHPRi w-11 h-11"
+                data-testid="modal__close-btn"
+                type="button"
               >
                 <div
-                  class="flex justify-between items-end bg-theme-background"
+                  class="flex relative items-center space-x-2"
                 >
                   <div
-                    class="space-y-4"
+                    class="sc-bdfBwQ bfBhNR"
+                    height="14"
+                    width="14"
                   >
-                    <h1
-                      class="mb-0 text-3xl"
-                      data-testid="header__title"
-                    >
-                      Ledger Wallet
-                    </h1>
-                    <div
-                      class="text-theme-secondary-text"
-                      data-testid="header__subtitle"
-                    >
-                      Connect your Ledger and confirm input.
-                    </div>
+                    <svg>
+                      cross-slim.svg
+                    </svg>
                   </div>
                 </div>
-                <svg
-                  class="mx-auto"
-                >
-                  waiting-ledger-device.svg
-                </svg>
+              </button>
+            </div>
+            <div
+              class="relative space-y-4"
+            >
+              <div
+                class="flex-1"
+              >
                 <div
-                  class="inline-flex items-center justify-center space-x-3 w-full"
+                  class="space-y-8"
                 >
                   <div
-                    class="Spinner-sc-1tybciv-0 gzGczR"
-                    color="info"
-                  />
-                  <span
-                    class="font-semibold animate-pulse text-theme-secondary-text"
-                    data-testid="LedgerWaitingDevice-loading_message"
+                    class="flex justify-between items-end bg-theme-background"
                   >
-                    Waiting for Ledger ...
-                  </span>
+                    <div
+                      class="space-y-4"
+                    >
+                      <h1
+                        class="mb-0 text-3xl"
+                        data-testid="header__title"
+                      >
+                        Ledger Wallet
+                      </h1>
+                      <div
+                        class="text-theme-secondary-text"
+                        data-testid="header__subtitle"
+                      >
+                        Connect your Ledger and confirm input.
+                      </div>
+                    </div>
+                  </div>
+                  <svg
+                    class="mx-auto"
+                  >
+                    waiting-ledger-device.svg
+                  </svg>
+                  <div
+                    class="inline-flex items-center justify-center space-x-3 w-full"
+                  >
+                    <div
+                      class="Spinner-sc-1tybciv-0 gzGczR"
+                      color="info"
+                    />
+                    <span
+                      class="font-semibold animate-pulse text-theme-secondary-text"
+                      data-testid="LedgerWaitingDevice-loading_message"
+                    >
+                      Waiting for Ledger ...
+                    </span>
+                  </div>
                 </div>
               </div>
             </div>
@@ -1424,10 +1444,13 @@ exports[`Wallets should render empty profile wallets 1`] = `
                   <div
                     class="group"
                   >
-                    <div
-                      class="ControlButton__ControlButtonStyled-sc-1xp1l1a-0 gCTrBm"
+                    <button
+                      class="ControlButton__ControlButtonStyled-sc-1xp1l1a-0 gPBHgx group active"
                       data-testid="LayoutControls__list--icon"
                     >
+                      <div
+                        class="absolute inset-0 -mx-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                      />
                       <div
                         class="sc-bdfBwQ iyevwF"
                         height="20"
@@ -1437,7 +1460,7 @@ exports[`Wallets should render empty profile wallets 1`] = `
                           list-view.svg
                         </svg>
                       </div>
-                    </div>
+                    </button>
                   </div>
                 </div>
                 <div
@@ -1446,10 +1469,13 @@ exports[`Wallets should render empty profile wallets 1`] = `
                   <div
                     class="group"
                   >
-                    <div
-                      class="ControlButton__ControlButtonStyled-sc-1xp1l1a-0 kMCise"
+                    <button
+                      class="ControlButton__ControlButtonStyled-sc-1xp1l1a-0 gPBHgx group"
                       data-testid="LayoutControls__grid--icon"
                     >
+                      <div
+                        class="absolute inset-0 -mx-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                      />
                       <div
                         class="sc-bdfBwQ iyevwF"
                         height="20"
@@ -1459,7 +1485,7 @@ exports[`Wallets should render empty profile wallets 1`] = `
                           grid-view.svg
                         </svg>
                       </div>
-                    </div>
+                    </button>
                   </div>
                 </div>
               </div>
@@ -1477,10 +1503,13 @@ exports[`Wallets should render empty profile wallets 1`] = `
                     <div
                       class="group"
                     >
-                      <div
-                        class="ControlButton__ControlButtonStyled-sc-1xp1l1a-0 gWfCmN"
+                      <button
+                        class="ControlButton__ControlButtonStyled-sc-1xp1l1a-0 gZgPQe group"
                         disabled=""
                       >
+                        <div
+                          class="absolute inset-0 -mx-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                        />
                         <div
                           class="flex items-center justify-center w-5 h-5"
                         >
@@ -1494,7 +1523,7 @@ exports[`Wallets should render empty profile wallets 1`] = `
                             </svg>
                           </div>
                         </div>
-                      </div>
+                      </button>
                     </div>
                   </span>
                 </span>
@@ -1635,10 +1664,13 @@ exports[`Wallets should render grid 1`] = `
                   <div
                     class="group"
                   >
-                    <div
-                      class="ControlButton__ControlButtonStyled-sc-1xp1l1a-0 kMCise"
+                    <button
+                      class="ControlButton__ControlButtonStyled-sc-1xp1l1a-0 gPBHgx group"
                       data-testid="LayoutControls__list--icon"
                     >
+                      <div
+                        class="absolute inset-0 -mx-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                      />
                       <div
                         class="sc-bdfBwQ iyevwF"
                         height="20"
@@ -1648,7 +1680,7 @@ exports[`Wallets should render grid 1`] = `
                           list-view.svg
                         </svg>
                       </div>
-                    </div>
+                    </button>
                   </div>
                 </div>
                 <div
@@ -1657,10 +1689,13 @@ exports[`Wallets should render grid 1`] = `
                   <div
                     class="group"
                   >
-                    <div
-                      class="ControlButton__ControlButtonStyled-sc-1xp1l1a-0 gCTrBm"
+                    <button
+                      class="ControlButton__ControlButtonStyled-sc-1xp1l1a-0 gPBHgx group active"
                       data-testid="LayoutControls__grid--icon"
                     >
+                      <div
+                        class="absolute inset-0 -mx-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                      />
                       <div
                         class="sc-bdfBwQ iyevwF"
                         height="20"
@@ -1670,7 +1705,7 @@ exports[`Wallets should render grid 1`] = `
                           grid-view.svg
                         </svg>
                       </div>
-                    </div>
+                    </button>
                   </div>
                 </div>
               </div>
@@ -1688,9 +1723,12 @@ exports[`Wallets should render grid 1`] = `
                     <div
                       class="group"
                     >
-                      <div
-                        class="ControlButton__ControlButtonStyled-sc-1xp1l1a-0 kMCise"
+                      <button
+                        class="ControlButton__ControlButtonStyled-sc-1xp1l1a-0 gPBHgx group"
                       >
+                        <div
+                          class="absolute inset-0 -mx-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                        />
                         <div
                           class="flex items-center justify-center w-5 h-5"
                         >
@@ -1704,7 +1742,7 @@ exports[`Wallets should render grid 1`] = `
                             </svg>
                           </div>
                         </div>
-                      </div>
+                      </button>
                     </div>
                   </span>
                 </span>
@@ -1879,14 +1917,9 @@ exports[`Wallets should render grid 1`] = `
                           33.75089801 DARK
                         </span>
                         <span
-                          class="mt-1 text-xs font-semibold text-theme-secondary-text no-ligatures overflow-hidden whitespace-nowrap"
+                          class="inline-flex overflow-hidden mt-1 text-xs font-semibold text-theme-secondary-text no-ligatures whitespace-nowrap"
                         >
-                          <span
-                            class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap"
-                            data-testid="TruncateMiddle"
-                          >
-                            D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD
-                          </span>
+                          D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD
                         </span>
                       </div>
                       <div
@@ -1965,14 +1998,9 @@ exports[`Wallets should render grid 1`] = `
                           57.68 DARK
                         </span>
                         <span
-                          class="mt-1 text-xs font-semibold text-theme-secondary-text no-ligatures overflow-hidden whitespace-nowrap"
+                          class="inline-flex overflow-hidden mt-1 text-xs font-semibold text-theme-secondary-text no-ligatures whitespace-nowrap"
                         >
-                          <span
-                            class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap"
-                            data-testid="TruncateMiddle"
-                          >
-                            D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb
-                          </span>
+                          D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb
                         </span>
                       </div>
                       <div
@@ -2066,14 +2094,9 @@ exports[`Wallets should render grid 1`] = `
                           50,114.21127898 ARK
                         </span>
                         <span
-                          class="mt-1 text-xs font-semibold text-theme-secondary-text no-ligatures overflow-hidden whitespace-nowrap"
+                          class="inline-flex overflow-hidden mt-1 text-xs font-semibold text-theme-secondary-text no-ligatures whitespace-nowrap"
                         >
-                          <span
-                            class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap"
-                            data-testid="TruncateMiddle"
-                          >
-                            AdVSe37niA3uFUPgCgMUH2tMsHF4LpLoiX
-                          </span>
+                          AdVSe37niA3uFUPgCgMUH2tMsHF4LpLoiX
                         </span>
                       </div>
                       <div
@@ -2140,10 +2163,13 @@ exports[`Wallets should render grid in loading state 1`] = `
                   <div
                     class="group"
                   >
-                    <div
-                      class="ControlButton__ControlButtonStyled-sc-1xp1l1a-0 kMCise"
+                    <button
+                      class="ControlButton__ControlButtonStyled-sc-1xp1l1a-0 gPBHgx group"
                       data-testid="LayoutControls__list--icon"
                     >
+                      <div
+                        class="absolute inset-0 -mx-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                      />
                       <div
                         class="sc-bdfBwQ iyevwF"
                         height="20"
@@ -2153,7 +2179,7 @@ exports[`Wallets should render grid in loading state 1`] = `
                           list-view.svg
                         </svg>
                       </div>
-                    </div>
+                    </button>
                   </div>
                 </div>
                 <div
@@ -2162,10 +2188,13 @@ exports[`Wallets should render grid in loading state 1`] = `
                   <div
                     class="group"
                   >
-                    <div
-                      class="ControlButton__ControlButtonStyled-sc-1xp1l1a-0 gCTrBm"
+                    <button
+                      class="ControlButton__ControlButtonStyled-sc-1xp1l1a-0 gPBHgx group active"
                       data-testid="LayoutControls__grid--icon"
                     >
+                      <div
+                        class="absolute inset-0 -mx-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                      />
                       <div
                         class="sc-bdfBwQ iyevwF"
                         height="20"
@@ -2175,7 +2204,7 @@ exports[`Wallets should render grid in loading state 1`] = `
                           grid-view.svg
                         </svg>
                       </div>
-                    </div>
+                    </button>
                   </div>
                 </div>
               </div>
@@ -2193,9 +2222,12 @@ exports[`Wallets should render grid in loading state 1`] = `
                     <div
                       class="group"
                     >
-                      <div
-                        class="ControlButton__ControlButtonStyled-sc-1xp1l1a-0 kMCise"
+                      <button
+                        class="ControlButton__ControlButtonStyled-sc-1xp1l1a-0 gPBHgx group"
                       >
+                        <div
+                          class="absolute inset-0 -mx-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                        />
                         <div
                           class="flex items-center justify-center w-5 h-5"
                         >
@@ -2209,7 +2241,7 @@ exports[`Wallets should render grid in loading state 1`] = `
                             </svg>
                           </div>
                         </div>
-                      </div>
+                      </button>
                     </div>
                   </span>
                 </span>
@@ -2384,14 +2416,9 @@ exports[`Wallets should render grid in loading state 1`] = `
                           33.75089801 DARK
                         </span>
                         <span
-                          class="mt-1 text-xs font-semibold text-theme-secondary-text no-ligatures overflow-hidden whitespace-nowrap"
+                          class="inline-flex overflow-hidden mt-1 text-xs font-semibold text-theme-secondary-text no-ligatures whitespace-nowrap"
                         >
-                          <span
-                            class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap"
-                            data-testid="TruncateMiddle"
-                          >
-                            D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD
-                          </span>
+                          D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD
                         </span>
                       </div>
                       <div
@@ -2470,14 +2497,9 @@ exports[`Wallets should render grid in loading state 1`] = `
                           57.68 DARK
                         </span>
                         <span
-                          class="mt-1 text-xs font-semibold text-theme-secondary-text no-ligatures overflow-hidden whitespace-nowrap"
+                          class="inline-flex overflow-hidden mt-1 text-xs font-semibold text-theme-secondary-text no-ligatures whitespace-nowrap"
                         >
-                          <span
-                            class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap"
-                            data-testid="TruncateMiddle"
-                          >
-                            D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb
-                          </span>
+                          D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb
                         </span>
                       </div>
                       <div
@@ -2571,14 +2593,9 @@ exports[`Wallets should render grid in loading state 1`] = `
                           50,114.21127898 ARK
                         </span>
                         <span
-                          class="mt-1 text-xs font-semibold text-theme-secondary-text no-ligatures overflow-hidden whitespace-nowrap"
+                          class="inline-flex overflow-hidden mt-1 text-xs font-semibold text-theme-secondary-text no-ligatures whitespace-nowrap"
                         >
-                          <span
-                            class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap"
-                            data-testid="TruncateMiddle"
-                          >
-                            AdVSe37niA3uFUPgCgMUH2tMsHF4LpLoiX
-                          </span>
+                          AdVSe37niA3uFUPgCgMUH2tMsHF4LpLoiX
                         </span>
                       </div>
                       <div
@@ -2645,10 +2662,13 @@ exports[`Wallets should render list 1`] = `
                   <div
                     class="group"
                   >
-                    <div
-                      class="ControlButton__ControlButtonStyled-sc-1xp1l1a-0 gCTrBm"
+                    <button
+                      class="ControlButton__ControlButtonStyled-sc-1xp1l1a-0 gPBHgx group active"
                       data-testid="LayoutControls__list--icon"
                     >
+                      <div
+                        class="absolute inset-0 -mx-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                      />
                       <div
                         class="sc-bdfBwQ iyevwF"
                         height="20"
@@ -2658,7 +2678,7 @@ exports[`Wallets should render list 1`] = `
                           list-view.svg
                         </svg>
                       </div>
-                    </div>
+                    </button>
                   </div>
                 </div>
                 <div
@@ -2667,10 +2687,13 @@ exports[`Wallets should render list 1`] = `
                   <div
                     class="group"
                   >
-                    <div
-                      class="ControlButton__ControlButtonStyled-sc-1xp1l1a-0 kMCise"
+                    <button
+                      class="ControlButton__ControlButtonStyled-sc-1xp1l1a-0 gPBHgx group"
                       data-testid="LayoutControls__grid--icon"
                     >
+                      <div
+                        class="absolute inset-0 -mx-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                      />
                       <div
                         class="sc-bdfBwQ iyevwF"
                         height="20"
@@ -2680,7 +2703,7 @@ exports[`Wallets should render list 1`] = `
                           grid-view.svg
                         </svg>
                       </div>
-                    </div>
+                    </button>
                   </div>
                 </div>
               </div>
@@ -2698,9 +2721,12 @@ exports[`Wallets should render list 1`] = `
                     <div
                       class="group"
                     >
-                      <div
-                        class="ControlButton__ControlButtonStyled-sc-1xp1l1a-0 kMCise"
+                      <button
+                        class="ControlButton__ControlButtonStyled-sc-1xp1l1a-0 gPBHgx group"
                       >
+                        <div
+                          class="absolute inset-0 -mx-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                        />
                         <div
                           class="flex items-center justify-center w-5 h-5"
                         >
@@ -2714,7 +2740,7 @@ exports[`Wallets should render list 1`] = `
                             </svg>
                           </div>
                         </div>
-                      </div>
+                      </button>
                     </div>
                   </span>
                 </span>
@@ -2976,11 +3002,11 @@ exports[`Wallets should render list 1`] = `
                         </div>
                       </div>
                       <div
-                        class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap"
+                        class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap space-x-2"
                       >
                         <span
-                          class="max-w-24 truncate mr-2 font-semibold text-base text-theme-text"
-                          data-testid="address__wallet-name"
+                          class="font-semibold text-base text-theme-text"
+                          data-testid="Address__alias"
                         >
                           <span
                             class="TruncateEnd__Wrapper-sc-1w1nvb9-0"
@@ -2990,8 +3016,8 @@ exports[`Wallets should render list 1`] = `
                           </span>
                         </span>
                         <span
-                          class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-secondary-500 dark:text-theme-secondary-700 font-semibold text-base"
-                          data-testid="address__wallet-address"
+                          class="inline-flex overflow-hidden text-theme-secondary-500 dark:text-theme-secondary-700 font-semibold text-base"
+                          data-testid="Address__address"
                         >
                           D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD
                         </span>
@@ -3073,11 +3099,11 @@ exports[`Wallets should render list 1`] = `
                         </div>
                       </div>
                       <div
-                        class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap"
+                        class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap space-x-2"
                       >
                         <span
-                          class="max-w-24 truncate mr-2 font-semibold text-base text-theme-text"
-                          data-testid="address__wallet-name"
+                          class="font-semibold text-base text-theme-text"
+                          data-testid="Address__alias"
                         >
                           <span
                             class="TruncateEnd__Wrapper-sc-1w1nvb9-0"
@@ -3087,8 +3113,8 @@ exports[`Wallets should render list 1`] = `
                           </span>
                         </span>
                         <span
-                          class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-secondary-500 dark:text-theme-secondary-700 font-semibold text-base"
-                          data-testid="address__wallet-address"
+                          class="inline-flex overflow-hidden text-theme-secondary-500 dark:text-theme-secondary-700 font-semibold text-base"
+                          data-testid="Address__address"
                         >
                           D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb
                         </span>
@@ -3185,11 +3211,11 @@ exports[`Wallets should render list 1`] = `
                         </div>
                       </div>
                       <div
-                        class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap"
+                        class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap space-x-2"
                       >
                         <span
-                          class="max-w-24 truncate mr-2 font-semibold text-base text-theme-text"
-                          data-testid="address__wallet-name"
+                          class="font-semibold text-base text-theme-text"
+                          data-testid="Address__alias"
                         >
                           <span
                             class="TruncateEnd__Wrapper-sc-1w1nvb9-0"
@@ -3199,8 +3225,8 @@ exports[`Wallets should render list 1`] = `
                           </span>
                         </span>
                         <span
-                          class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-secondary-500 dark:text-theme-secondary-700 font-semibold text-base"
-                          data-testid="address__wallet-address"
+                          class="inline-flex overflow-hidden text-theme-secondary-500 dark:text-theme-secondary-700 font-semibold text-base"
+                          data-testid="Address__address"
                         >
                           AdVSe37niA3uFUPgCgMUH2tMsHF4LpLoiX
                         </span>
@@ -3297,10 +3323,13 @@ exports[`Wallets should render without testnet wallets 1`] = `
                   <div
                     class="group"
                   >
-                    <div
-                      class="ControlButton__ControlButtonStyled-sc-1xp1l1a-0 kMCise"
+                    <button
+                      class="ControlButton__ControlButtonStyled-sc-1xp1l1a-0 gPBHgx group"
                       data-testid="LayoutControls__list--icon"
                     >
+                      <div
+                        class="absolute inset-0 -mx-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                      />
                       <div
                         class="sc-bdfBwQ iyevwF"
                         height="20"
@@ -3310,7 +3339,7 @@ exports[`Wallets should render without testnet wallets 1`] = `
                           list-view.svg
                         </svg>
                       </div>
-                    </div>
+                    </button>
                   </div>
                 </div>
                 <div
@@ -3319,10 +3348,13 @@ exports[`Wallets should render without testnet wallets 1`] = `
                   <div
                     class="group"
                   >
-                    <div
-                      class="ControlButton__ControlButtonStyled-sc-1xp1l1a-0 gCTrBm"
+                    <button
+                      class="ControlButton__ControlButtonStyled-sc-1xp1l1a-0 gPBHgx group active"
                       data-testid="LayoutControls__grid--icon"
                     >
+                      <div
+                        class="absolute inset-0 -mx-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                      />
                       <div
                         class="sc-bdfBwQ iyevwF"
                         height="20"
@@ -3332,7 +3364,7 @@ exports[`Wallets should render without testnet wallets 1`] = `
                           grid-view.svg
                         </svg>
                       </div>
-                    </div>
+                    </button>
                   </div>
                 </div>
               </div>
@@ -3350,9 +3382,12 @@ exports[`Wallets should render without testnet wallets 1`] = `
                     <div
                       class="group"
                     >
-                      <div
-                        class="ControlButton__ControlButtonStyled-sc-1xp1l1a-0 kMCise"
+                      <button
+                        class="ControlButton__ControlButtonStyled-sc-1xp1l1a-0 gPBHgx group"
                       >
+                        <div
+                          class="absolute inset-0 -mx-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                        />
                         <div
                           class="flex items-center justify-center w-5 h-5"
                         >
@@ -3366,7 +3401,7 @@ exports[`Wallets should render without testnet wallets 1`] = `
                             </svg>
                           </div>
                         </div>
-                      </div>
+                      </button>
                     </div>
                   </span>
                 </span>
@@ -3541,14 +3576,9 @@ exports[`Wallets should render without testnet wallets 1`] = `
                           50,114.21127898 ARK
                         </span>
                         <span
-                          class="mt-1 text-xs font-semibold text-theme-secondary-text no-ligatures overflow-hidden whitespace-nowrap"
+                          class="inline-flex overflow-hidden mt-1 text-xs font-semibold text-theme-secondary-text no-ligatures whitespace-nowrap"
                         >
-                          <span
-                            class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap"
-                            data-testid="TruncateMiddle"
-                          >
-                            AdVSe37niA3uFUPgCgMUH2tMsHF4LpLoiX
-                          </span>
+                          AdVSe37niA3uFUPgCgMUH2tMsHF4LpLoiX
                         </span>
                       </div>
                       <div
@@ -3711,10 +3741,13 @@ exports[`Wallets should toggle between grid and list view 1`] = `
                   <div
                     class="group"
                   >
-                    <div
-                      class="ControlButton__ControlButtonStyled-sc-1xp1l1a-0 kMCise"
+                    <button
+                      class="ControlButton__ControlButtonStyled-sc-1xp1l1a-0 gPBHgx group"
                       data-testid="LayoutControls__list--icon"
                     >
+                      <div
+                        class="absolute inset-0 -mx-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                      />
                       <div
                         class="sc-bdfBwQ iyevwF"
                         height="20"
@@ -3724,7 +3757,7 @@ exports[`Wallets should toggle between grid and list view 1`] = `
                           list-view.svg
                         </svg>
                       </div>
-                    </div>
+                    </button>
                   </div>
                 </div>
                 <div
@@ -3733,10 +3766,13 @@ exports[`Wallets should toggle between grid and list view 1`] = `
                   <div
                     class="group"
                   >
-                    <div
-                      class="ControlButton__ControlButtonStyled-sc-1xp1l1a-0 gCTrBm"
+                    <button
+                      class="ControlButton__ControlButtonStyled-sc-1xp1l1a-0 gPBHgx group active"
                       data-testid="LayoutControls__grid--icon"
                     >
+                      <div
+                        class="absolute inset-0 -mx-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                      />
                       <div
                         class="sc-bdfBwQ iyevwF"
                         height="20"
@@ -3746,7 +3782,7 @@ exports[`Wallets should toggle between grid and list view 1`] = `
                           grid-view.svg
                         </svg>
                       </div>
-                    </div>
+                    </button>
                   </div>
                 </div>
               </div>
@@ -3764,9 +3800,12 @@ exports[`Wallets should toggle between grid and list view 1`] = `
                     <div
                       class="group"
                     >
-                      <div
-                        class="ControlButton__ControlButtonStyled-sc-1xp1l1a-0 kMCise"
+                      <button
+                        class="ControlButton__ControlButtonStyled-sc-1xp1l1a-0 gPBHgx group"
                       >
+                        <div
+                          class="absolute inset-0 -mx-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                        />
                         <div
                           class="flex items-center justify-center w-5 h-5"
                         >
@@ -3780,7 +3819,7 @@ exports[`Wallets should toggle between grid and list view 1`] = `
                             </svg>
                           </div>
                         </div>
-                      </div>
+                      </button>
                     </div>
                   </span>
                 </span>
@@ -3955,14 +3994,9 @@ exports[`Wallets should toggle between grid and list view 1`] = `
                           33.75089801 DARK
                         </span>
                         <span
-                          class="mt-1 text-xs font-semibold text-theme-secondary-text no-ligatures overflow-hidden whitespace-nowrap"
+                          class="inline-flex overflow-hidden mt-1 text-xs font-semibold text-theme-secondary-text no-ligatures whitespace-nowrap"
                         >
-                          <span
-                            class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap"
-                            data-testid="TruncateMiddle"
-                          >
-                            D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD
-                          </span>
+                          D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD
                         </span>
                       </div>
                       <div
@@ -4041,14 +4075,9 @@ exports[`Wallets should toggle between grid and list view 1`] = `
                           57.68 DARK
                         </span>
                         <span
-                          class="mt-1 text-xs font-semibold text-theme-secondary-text no-ligatures overflow-hidden whitespace-nowrap"
+                          class="inline-flex overflow-hidden mt-1 text-xs font-semibold text-theme-secondary-text no-ligatures whitespace-nowrap"
                         >
-                          <span
-                            class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap"
-                            data-testid="TruncateMiddle"
-                          >
-                            D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb
-                          </span>
+                          D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb
                         </span>
                       </div>
                       <div
@@ -4142,14 +4171,9 @@ exports[`Wallets should toggle between grid and list view 1`] = `
                           50,114.21127898 ARK
                         </span>
                         <span
-                          class="mt-1 text-xs font-semibold text-theme-secondary-text no-ligatures overflow-hidden whitespace-nowrap"
+                          class="inline-flex overflow-hidden mt-1 text-xs font-semibold text-theme-secondary-text no-ligatures whitespace-nowrap"
                         >
-                          <span
-                            class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap"
-                            data-testid="TruncateMiddle"
-                          >
-                            AdVSe37niA3uFUPgCgMUH2tMsHF4LpLoiX
-                          </span>
+                          AdVSe37niA3uFUPgCgMUH2tMsHF4LpLoiX
                         </span>
                       </div>
                       <div

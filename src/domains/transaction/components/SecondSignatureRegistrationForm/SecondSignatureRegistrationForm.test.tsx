@@ -11,6 +11,7 @@ import { useForm } from "react-hook-form";
 import { useTranslation } from "react-i18next";
 import { act } from "react-test-renderer";
 import secondSignatureFixture from "tests/fixtures/coins/ark/devnet/transactions/second-signature-registration.json";
+import { TransactionFees } from "types";
 import * as utils from "utils/electron-utils";
 import { env, fireEvent, getDefaultProfileId, render, screen, waitFor } from "utils/testing-library";
 
@@ -21,15 +22,15 @@ describe("SecondSignatureRegistrationForm", () => {
 	const passphrase = "power return attend drink piece found tragic fire liar page disease combine";
 	let profile: ProfilesContracts.IProfile;
 	let wallet: ProfilesContracts.IReadWriteWallet;
-	let fees: Contracts.TransactionFee;
+	let fees: TransactionFees;
 
 	beforeEach(() => {
 		profile = env.profiles().findById(getDefaultProfileId());
 		wallet = profile.wallets().first();
 		fees = {
 			min: "0",
-			max: (10 * 1e8).toFixed(0),
-			avg: (1.354 * 1e8).toFixed(0),
+			max: "10",
+			avg: "1.354",
 		};
 	});
 
@@ -88,7 +89,7 @@ describe("SecondSignatureRegistrationForm", () => {
 			fireEvent.click(screen.getByText(transactionTranslations.FEES.AVERAGE));
 		});
 
-		await waitFor(() => expect(result.current.getValues("fee")).toEqual("135400000"));
+		await waitFor(() => expect(result.current.getValues("fee")).toEqual("1.354"));
 	});
 
 	describe("backup step", () => {
@@ -282,7 +283,7 @@ describe("SecondSignatureRegistrationForm", () => {
 		const form = {
 			clearErrors: jest.fn(),
 			getValues: () => ({
-				fee: { display: "1", value: "100000000" },
+				fee: "1",
 				mnemonic: "sample passphrase",
 				senderAddress: wallet.address(),
 				secondMnemonic: "second sample passphrase",
@@ -368,7 +369,7 @@ describe("SecondSignatureRegistrationForm", () => {
 		const form = {
 			clearErrors: jest.fn(),
 			getValues: () => ({
-				fee: { display: "1", value: "100000000" },
+				fee: "1",
 				senderAddress: wallet.address(),
 				encryptionPassword: "password",
 			}),

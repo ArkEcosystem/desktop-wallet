@@ -14,7 +14,7 @@ describe("TransactionCompactRow", () => {
 			</table>,
 		);
 		expect(getByTestId("TransactionRowMode")).toBeTruthy();
-		expect(getByTestId("address__wallet-address")).toBeTruthy();
+		expect(getByTestId("Address__address")).toBeTruthy();
 		expect(getByTestId("TransactionRowAmount")).toBeTruthy();
 	});
 
@@ -27,7 +27,7 @@ describe("TransactionCompactRow", () => {
 			</table>,
 		);
 		expect(getByTestId("TransactionRowMode")).toBeTruthy();
-		expect(getByTestId("address__wallet-address")).toBeTruthy();
+		expect(getByTestId("Address__address")).toBeTruthy();
 		expect(getByTestId("TransactionRowAmount")).toBeTruthy();
 	});
 });

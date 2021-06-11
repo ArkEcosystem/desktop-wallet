@@ -7,10 +7,10 @@ exports[`News should filter results based on category query and asset 1`] = `
   >
     <nav
       aria-labelledby="main menu"
-      class="NavigationBar__NavWrapper-sc-1qsoskw-0 hkUMvZ"
+      class="NavigationBar__NavWrapper-sc-1qsoskw-0 bewuLZ"
     >
       <div
-        class="flex relative h-21"
+        class="relative flex h-21"
       >
         <button
           class="BackButton__StyledBackButton-sc-1pe22tv-0 eUphun flex w-12"
@@ -33,7 +33,7 @@ exports[`News should filter results based on category query and asset 1`] = `
             class="flex items-center my-auto"
           >
             <div
-              class="NavigationBar__LogoContainer-sc-1qsoskw-2 tulfg"
+              class="NavigationBar__LogoContainer-sc-1qsoskw-2 itrWMc"
             >
               <svg
                 width="44"
@@ -43,18 +43,18 @@ exports[`News should filter results based on category query and asset 1`] = `
             </div>
           </div>
           <ul
-            class="flex mr-auto ml-4 space-x-8 h-21"
+            class="flex ml-4 mr-auto space-x-8 h-21"
           >
             <li
               class="flex"
             >
               <a
-                class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
+                class="relative flex items-center font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
                 title="Portfolio"
               >
                 <div
-                  class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                  class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
                 />
                 Portfolio
               </a>
@@ -63,12 +63,12 @@ exports[`News should filter results based on category query and asset 1`] = `
               class="flex"
             >
               <a
-                class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
+                class="relative flex items-center font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/plugins"
                 title="Plugins"
               >
                 <div
-                  class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                  class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
                 />
                 Plugins
               </a>
@@ -77,12 +77,12 @@ exports[`News should filter results based on category query and asset 1`] = `
               class="flex"
             >
               <a
-                class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
+                class="relative flex items-center font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/exchange"
                 title="Exchange"
               >
                 <div
-                  class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                  class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
                 />
                 Exchange
               </a>
@@ -92,12 +92,12 @@ exports[`News should filter results based on category query and asset 1`] = `
             >
               <a
                 aria-current="page"
-                class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group active"
+                class="relative flex items-center font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group active"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/news"
                 title="News"
               >
                 <div
-                  class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                  class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
                 />
                 News
               </a>
@@ -223,6 +223,7 @@ exports[`News should filter results based on category query and asset 1`] = `
               </div>
               <div
                 class="text-sm font-bold text-theme-secondary-text dark:text-theme-text"
+                data-testid="Balance__value"
               >
                 <span
                   data-testid="Amount"
@@ -258,7 +259,7 @@ exports[`News should filter results based on category query and asset 1`] = `
                   data-testid="dropdown__toggle"
                 >
                   <div
-                    class="cursor-pointer relative justify-center items-center align-middle rounded-full"
+                    class="relative items-center justify-center align-middle rounded-full cursor-pointer"
                     data-testid="navbar__useractions"
                   >
                     <div
@@ -804,10 +805,10 @@ exports[`News should filter results based on category query and asset 2`] = `
   >
     <nav
       aria-labelledby="main menu"
-      class="NavigationBar__NavWrapper-sc-1qsoskw-0 hkUMvZ"
+      class="NavigationBar__NavWrapper-sc-1qsoskw-0 bewuLZ"
     >
       <div
-        class="flex relative h-21"
+        class="relative flex h-21"
       >
         <button
           class="BackButton__StyledBackButton-sc-1pe22tv-0 eUphun flex w-12"
@@ -830,7 +831,7 @@ exports[`News should filter results based on category query and asset 2`] = `
             class="flex items-center my-auto"
           >
             <div
-              class="NavigationBar__LogoContainer-sc-1qsoskw-2 tulfg"
+              class="NavigationBar__LogoContainer-sc-1qsoskw-2 itrWMc"
             >
               <svg
                 width="44"
@@ -840,18 +841,18 @@ exports[`News should filter results based on category query and asset 2`] = `
             </div>
           </div>
           <ul
-            class="flex mr-auto ml-4 space-x-8 h-21"
+            class="flex ml-4 mr-auto space-x-8 h-21"
           >
             <li
               class="flex"
             >
               <a
-                class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
+                class="relative flex items-center font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
                 title="Portfolio"
               >
                 <div
-                  class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                  class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
                 />
                 Portfolio
               </a>
@@ -860,12 +861,12 @@ exports[`News should filter results based on category query and asset 2`] = `
               class="flex"
             >
               <a
-                class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
+                class="relative flex items-center font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/plugins"
                 title="Plugins"
               >
                 <div
-                  class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                  class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
                 />
                 Plugins
               </a>
@@ -874,12 +875,12 @@ exports[`News should filter results based on category query and asset 2`] = `
               class="flex"
             >
               <a
-                class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
+                class="relative flex items-center font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/exchange"
                 title="Exchange"
               >
                 <div
-                  class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                  class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
                 />
                 Exchange
               </a>
@@ -889,12 +890,12 @@ exports[`News should filter results based on category query and asset 2`] = `
             >
               <a
                 aria-current="page"
-                class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group active"
+                class="relative flex items-center font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group active"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/news"
                 title="News"
               >
                 <div
-                  class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                  class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
                 />
                 News
               </a>
@@ -1020,6 +1021,7 @@ exports[`News should filter results based on category query and asset 2`] = `
               </div>
               <div
                 class="text-sm font-bold text-theme-secondary-text dark:text-theme-text"
+                data-testid="Balance__value"
               >
                 <span
                   data-testid="Amount"
@@ -1055,7 +1057,7 @@ exports[`News should filter results based on category query and asset 2`] = `
                   data-testid="dropdown__toggle"
                 >
                   <div
-                    class="cursor-pointer relative justify-center items-center align-middle rounded-full"
+                    class="relative items-center justify-center align-middle rounded-full cursor-pointer"
                     data-testid="navbar__useractions"
                   >
                     <div
@@ -1366,62 +1368,90 @@ exports[`News should filter results based on category query and asset 2`] = `
               <div
                 class="mt-10 flex justify-center w-full"
               >
-                <div
-                  class="Pagination__Wrapper-x7juhx-0 klvluR"
+                <nav
+                  class="Pagination__Wrapper-x7juhx-0 hbWMHF"
                   data-testid="Pagination"
                 >
                   <div
                     class="flex relative px-2 rounded bg-theme-primary-100 dark:bg-theme-secondary-800"
                   >
-                    <div
-                      class="Pagination__PaginationButtonStyled-x7juhx-1 jqbPMy current-page"
+                    <button
+                      aria-current="true"
+                      aria-label="Page 1"
+                      class="Pagination__PaginationButtonStyled-x7juhx-1 dPDByT current-page"
+                      type="button"
                     >
                       1
-                    </div>
-                    <div
-                      class="Pagination__PaginationButtonStyled-x7juhx-1 jqbPMy"
+                    </button>
+                    <button
+                      aria-label="Page 2"
+                      class="Pagination__PaginationButtonStyled-x7juhx-1 dPDByT"
+                      type="button"
                     >
                       2
-                    </div>
-                    <div
-                      class="Pagination__PaginationButtonStyled-x7juhx-1 jqbPMy"
+                    </button>
+                    <button
+                      aria-label="Page 3"
+                      class="Pagination__PaginationButtonStyled-x7juhx-1 dPDByT"
+                      type="button"
                     >
                       3
-                    </div>
-                    <div
-                      class="Pagination__PaginationButtonStyled-x7juhx-1 jqbPMy"
+                    </button>
+                    <button
+                      aria-label="Page 4"
+                      class="Pagination__PaginationButtonStyled-x7juhx-1 dPDByT"
+                      type="button"
                     >
                       4
-                    </div>
-                    <div
-                      class="Pagination__PaginationButtonStyled-x7juhx-1 jqbPMy"
+                    </button>
+                    <button
+                      aria-label="Page 5"
+                      class="Pagination__PaginationButtonStyled-x7juhx-1 dPDByT"
+                      type="button"
                     >
                       5
-                    </div>
-                    <div
-                      class="Pagination__PaginationButtonStyled-x7juhx-1 jqbPMy"
+                    </button>
+                    <button
+                      aria-label="Page 6"
+                      class="Pagination__PaginationButtonStyled-x7juhx-1 dPDByT"
+                      type="button"
                     >
                       6
-                    </div>
-                    <div
-                      class="Pagination__PaginationButtonStyled-x7juhx-1 jqbPMy"
+                    </button>
+                    <button
+                      aria-label="Page 7"
+                      class="Pagination__PaginationButtonStyled-x7juhx-1 dPDByT"
+                      type="button"
                     >
                       7
-                    </div>
-                    <div
-                      class="PaginationSearch__PaginationSearchButtonStyled-rcir65-1 ftyWKb"
+                    </button>
+                    <button
+                      class="PaginationSearch__PaginationSearchButtonStyled-rcir65-1 hwqpt group"
                       data-testid="PaginationSearchButton"
+                      type="button"
                     >
                       <span
-                        data-testid="PaginationSearch__toggle"
+                        class="group-hover:invisible"
                       >
-                         
                         <span>
-                          ...
+                          …
                         </span>
-                         
                       </span>
-                    </div>
+                      <span
+                        class="absolute top-0 right-0 bottom-0 left-0 invisible group-hover:visible flex items-center justify-center"
+                        data-testid="PaginationSearchButton__search"
+                      >
+                        <div
+                          class="sc-bdfBwQ eRnpCh"
+                          height="13"
+                          width="13"
+                        >
+                          <svg>
+                            search.svg
+                          </svg>
+                        </div>
+                      </span>
+                    </button>
                   </div>
                   <button
                     class="OriginalButton__StyledButton-sc-1y2wptt-0 izJbbP"
@@ -1462,7 +1492,7 @@ exports[`News should filter results based on category query and asset 2`] = `
                       </div>
                     </div>
                   </button>
-                </div>
+                </nav>
               </div>
             </div>
             <div

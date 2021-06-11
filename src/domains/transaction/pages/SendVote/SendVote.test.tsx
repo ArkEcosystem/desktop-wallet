@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/require-await */
 import { Contracts } from "@arkecosystem/platform-sdk-profiles";
 // @README: This import is fine in tests but should be avoided in production code.
-import { ReadOnlyWallet } from "@arkecosystem/platform-sdk-profiles/dist/drivers/memory/wallets/read-only-wallet";
+import { ReadOnlyWallet } from "@arkecosystem/platform-sdk-profiles/distribution/drivers/memory/wallets/read-only-wallet";
 import { BigNumber } from "@arkecosystem/platform-sdk-support";
 import { renderHook } from "@testing-library/react-hooks";
 import { LedgerProvider } from "app/contexts";
@@ -340,7 +340,7 @@ describe("SendVote", () => {
 		const { result: form } = renderHook(() =>
 			useForm({
 				defaultValues: {
-					fee: (0.1 * 1e8).toFixed(0),
+					fee: "0.1",
 				},
 			}),
 		);
@@ -823,15 +823,7 @@ describe("SendVote", () => {
 				data: expect.anything(),
 				fee: expect.any(String),
 				nonce: expect.any(String),
-				sign: {
-					multiSignature: {
-						min: 2,
-						publicKeys: [
-							"03df6cd794a7d404db4f1b25816d8976d0e72c5177d17ac9b19a92703b62cdbbbc",
-							"03af2feb4fc97301e16d6a877d5b135417e8f284d40fac0f84c09ca37f82886c51",
-						],
-					},
-				},
+				signatory: expect.any(Object),
 			}),
 		);
 
@@ -844,30 +836,25 @@ describe("SendVote", () => {
 	});
 
 	it("should send a vote transaction with a ledger wallet", async () => {
-		jest.spyOn(wallet.coin(), "__construct").mockImplementation();
+		jest.useFakeTimers();
+
+		const isLedgerSpy = jest.spyOn(wallet, "isLedger").mockImplementation(() => true);
+
+		const getPublicKeySpy = jest
+			.spyOn(wallet.coin().ledger(), "getPublicKey")
+			.mockResolvedValue("0335a27397927bfa1704116814474d39c2b933aabb990e7226389f022886e48deb");
+
+		const signTransactionSpy = jest
+			.spyOn(wallet.transaction(), "signVote")
+			.mockReturnValue(Promise.resolve(voteFixture.data.id));
+
+		const voteTransactionMock = createVoteTransactionMock(wallet);
+
 		const broadcastMock = jest.spyOn(wallet.transaction(), "broadcast").mockResolvedValue({
 			accepted: [voteFixture.data.id],
 			rejected: [],
 			errors: {},
 		});
-		const getPublicKeySpy = jest
-			.spyOn(wallet.coin().ledger(), "getPublicKey")
-			.mockResolvedValue("0335a27397927bfa1704116814474d39c2b933aabb990e7226389f022886e48deb");
-		const isLedgerSpy = jest.spyOn(wallet, "isLedger").mockImplementation(() => true);
-		const signTransactionSpy = jest
-			.spyOn(wallet.coin().ledger(), "signTransaction")
-			.mockImplementation(
-				() =>
-					new Promise((resolve) =>
-						setTimeout(
-							() =>
-								resolve(
-									"dd3f96466bc50077b01e441cd35eb3c5aabd83670d371c2be8cc772ed189a7315dd66e88bde275d89a3beb7ef85ef84a52ec4213f540481cd09ecf6d21e452bf",
-								),
-							300,
-						),
-					),
-			);
 
 		const history = createMemoryHistory();
 		const voteURL = `/profiles/${fixtureProfileId}/wallets/${wallet.id()}/send-vote`;
@@ -912,13 +899,13 @@ describe("SendVote", () => {
 
 		act(() => jest.advanceTimersByTime(1000));
 
-		await waitFor(() => expect(getByTestId("LedgerConfirmation-description")).toBeInTheDocument());
 		await waitFor(() => expect(getByTestId("TransactionSuccessful")).toBeTruthy(), { timeout: 3000 });
 
 		getPublicKeySpy.mockRestore();
 		signTransactionSpy.mockRestore();
 		isLedgerSpy.mockRestore();
 		broadcastMock.mockRestore();
+		voteTransactionMock.mockRestore();
 	});
 
 	it("should send a vote transaction using encryption password", async () => {
@@ -942,7 +929,7 @@ describe("SendVote", () => {
 		const { result: form } = renderHook(() =>
 			useForm({
 				defaultValues: {
-					fee: (0.1 * 1e8).toFixed(0),
+					fee: "0.1",
 				},
 			}),
 		);

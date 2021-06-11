@@ -3,159 +3,157 @@
 exports[`PluginManualInstallModal should render properly 1`] = `
 <div>
   <div
-    class="flex fixed inset-0 z-50 justify-center items-center w-full h-full overflow-overlay"
+    class="flex fixed inset-0 z-50 py-20 w-full h-full bg-theme-secondary-900-rgba bg-opacity-60 dark:bg-black-rgba dark:bg-opacity-80 overflow-overlay"
+    data-testid="modal__overlay"
   >
     <div
-      class="fixed z-50 w-full h-full bg-theme-secondary-900 opacity-60 dark:bg-black dark:opacity-80"
-      data-testid="modal__overlay"
-    />
-    <div
-      class="Modal__ModalContainer-sc-1pv7yg7-0 gDeenD absolute left-0 right-0 z-50 flex flex-col p-10 mx-auto overflow-hidden rounded-2.5xl bg-theme-background shadow-2xl "
-      data-testid="modal__inner"
+      class="Modal__ModalContainer-sc-1pv7yg7-0 fmTBfU"
+      tabindex="-1"
     >
       <div
-        class="absolute top-0 right-0 z-50 mt-5 mr-5 rounded transition-all duration-100 ease-linear bg-theme-primary-100 hover:bg-theme-primary-300 dark:bg-theme-secondary-800 dark:text-theme-secondary-600 dark:hover:bg-theme-secondary-700 dark:hover:text-theme-secondary-400"
+        class="relative flex flex-col p-10 overflow-hidden rounded-2.5xl bg-theme-background shadow-2xl"
+        data-testid="modal__inner"
       >
-        <button
-          class="OriginalButton__StyledButton-sc-1y2wptt-0 fNHPRi w-11 h-11"
-          data-testid="modal__close-btn"
-          type="button"
-        >
-          <div
-            class="flex relative items-center space-x-2"
-          >
-            <div
-              class="sc-bdfBwQ bfBhNR"
-              height="14"
-              width="14"
-            >
-              <svg>
-                cross-slim.svg
-              </svg>
-            </div>
-          </div>
-        </button>
-      </div>
-      <div
-        class="relative space-y-4"
-      >
-        <h2
-          class="mb-0 text-3xl font-bold"
-        >
-          Install from URL
-        </h2>
         <div
-          class="flex-1"
+          class="absolute top-0 right-0 z-10 mt-5 mr-5 rounded transition-all duration-100 ease-linear bg-theme-primary-100 hover:bg-theme-primary-300 dark:bg-theme-secondary-800 dark:text-theme-secondary-600 dark:hover:bg-theme-secondary-700 dark:hover:text-theme-secondary-400"
         >
-          <div
-            class="text-theme-secondary-text whitespace-pre-line"
-          >
-            Fetch the Plugin directly from GitHub by providing the repository URL below.
-          </div>
-          <div
-            data-testid="PluginManualInstallModal"
+          <button
+            class="OriginalButton__StyledButton-sc-1y2wptt-0 fNHPRi w-11 h-11"
+            data-testid="modal__close-btn"
+            type="button"
           >
             <div
-              class="flex mt-8"
+              class="flex relative items-center space-x-2"
             >
               <div
-                class="flex overflow-hidden flex-col space-y-4 rounded-lg p-4 bg-theme-warning-50 dark:bg-theme-secondary-800 sm:space-y-0 sm:space-x-4 sm:flex-row sm:items-center"
+                class="sc-bdfBwQ bfBhNR"
+                height="14"
+                width="14"
               >
-                <div
-                  class="h-11 w-11 flex flex-shrink-0 items-center justify-center rounded-lg text-white bg-theme-warning-600"
-                >
-                  <div
-                    class="sc-bdfBwQ hteSKx"
-                    height="1.25em"
-                    width="1.25em"
-                  >
-                    <svg>
-                      alert-warning.svg
-                    </svg>
-                  </div>
-                </div>
-                <div
-                  class="flex flex-col w-full"
-                >
-                  <div
-                    class="text-sm leading-relaxed break-words dark:text-theme-secondary-500"
-                  >
-                    <span
-                      class="text-sm"
-                    >
-                      Please make sure to check the documentation of the Plugin before installing it. By installing the Plugin, you assume any associated risks.
-                    </span>
-                  </div>
-                </div>
+                <svg>
+                  cross-slim.svg
+                </svg>
               </div>
             </div>
-            <form
-              class="space-y-8"
-              data-testid="Form"
+          </button>
+        </div>
+        <div
+          class="relative space-y-4"
+        >
+          <h2
+            class="mb-0 text-3xl font-bold"
+          >
+            Install from URL
+          </h2>
+          <div
+            class="flex-1"
+          >
+            <div
+              class="text-theme-secondary-text whitespace-pre-line"
             >
-              <fieldset
-                class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2 mt-6"
-              >
-                <label
-                  class="flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
-                  data-testid="FormLabel"
-                  for="url"
-                >
-                  GitHub Repository URL
-                  <div
-                    class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
-                    data-testid="FormLabel__required"
-                  />
-                </label>
-                <div
-                  class="fixed invisible w-auto whitespace-nowrap"
-                >
-                  …
-                </div>
-                <div
-                  class="Input__InputWrapperStyled-wu99qs-0 jYUFQr"
-                >
-                  <div
-                    class="relative flex flex-1 h-full"
-                  >
-                    <input
-                      class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
-                      data-testid="PluginManualInstallModal__input"
-                      name="url"
-                      value=""
-                    />
-                  </div>
-                </div>
-              </fieldset>
+              Fetch the Plugin directly from GitHub by providing the repository URL below.
+            </div>
+            <div
+              data-testid="PluginManualInstallModal"
+            >
               <div
-                class="flex space-x-3 justify-end mt-8"
+                class="flex mt-8"
               >
-                <button
-                  class="OriginalButton__StyledButton-sc-1y2wptt-0 izJbbP"
-                  data-testid="PluginManualInstallModal__cancel-button"
-                  type="button"
+                <div
+                  class="flex overflow-hidden flex-col space-y-4 rounded-lg p-4 bg-theme-warning-50 dark:bg-theme-secondary-800 sm:space-y-0 sm:space-x-4 sm:flex-row sm:items-center"
                 >
                   <div
-                    class="flex relative items-center space-x-2"
+                    class="h-11 w-11 flex flex-shrink-0 items-center justify-center rounded-lg text-white bg-theme-warning-600"
                   >
-                    Cancel
+                    <div
+                      class="sc-bdfBwQ hteSKx"
+                      height="1.25em"
+                      width="1.25em"
+                    >
+                      <svg>
+                        alert-warning.svg
+                      </svg>
+                    </div>
                   </div>
-                </button>
-                <button
-                  class="OriginalButton__StyledButton-sc-1y2wptt-0 dYkFxS"
-                  data-testid="PluginManualInstallModal__submit-button"
-                  type="submit"
-                >
                   <div
-                    class="flex relative items-center space-x-2"
+                    class="flex flex-col w-full"
                   >
-                    <span>
-                      Confirm
-                    </span>
+                    <div
+                      class="text-sm leading-relaxed break-words dark:text-theme-secondary-500"
+                    >
+                      <span
+                        class="text-sm"
+                      >
+                        Please make sure to check the documentation of the Plugin before installing it. By installing the Plugin, you assume any associated risks.
+                      </span>
+                    </div>
                   </div>
-                </button>
+                </div>
               </div>
-            </form>
+              <form
+                class="space-y-8"
+                data-testid="Form"
+              >
+                <fieldset
+                  class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2 mt-6"
+                >
+                  <label
+                    class="flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
+                    data-testid="FormLabel"
+                    for="url"
+                  >
+                    GitHub Repository URL
+                  </label>
+                  <div
+                    class="fixed invisible w-auto whitespace-nowrap"
+                  >
+                    …
+                  </div>
+                  <div
+                    class="Input__InputWrapperStyled-wu99qs-0 jYUFQr"
+                  >
+                    <div
+                      class="relative flex flex-1 h-full"
+                    >
+                      <input
+                        class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
+                        data-testid="PluginManualInstallModal__input"
+                        name="url"
+                        value=""
+                      />
+                    </div>
+                  </div>
+                </fieldset>
+                <div
+                  class="flex space-x-3 justify-end mt-8"
+                >
+                  <button
+                    class="OriginalButton__StyledButton-sc-1y2wptt-0 izJbbP"
+                    data-testid="PluginManualInstallModal__cancel-button"
+                    type="button"
+                  >
+                    <div
+                      class="flex relative items-center space-x-2"
+                    >
+                      Cancel
+                    </div>
+                  </button>
+                  <button
+                    class="OriginalButton__StyledButton-sc-1y2wptt-0 dYkFxS"
+                    data-testid="PluginManualInstallModal__submit-button"
+                    type="submit"
+                  >
+                    <div
+                      class="flex relative items-center space-x-2"
+                    >
+                      <span>
+                        Confirm
+                      </span>
+                    </div>
+                  </button>
+                </div>
+              </form>
+            </div>
           </div>
         </div>
       </div>

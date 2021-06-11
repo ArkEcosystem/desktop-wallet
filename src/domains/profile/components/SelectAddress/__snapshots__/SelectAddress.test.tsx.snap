@@ -3,7 +3,7 @@
 exports[`SelectAddress should render disabled 1`] = `
 <div>
   <button
-    class="relative w-full"
+    class="relative w-full rounded focus:outline-none focus:ring-2 focus:ring-theme-primary-400"
     data-testid="SelectAddress__wrapper"
     disabled=""
     type="button"
@@ -12,7 +12,7 @@ exports[`SelectAddress should render disabled 1`] = `
       class="absolute inset-0 flex items-center border border-transparent px-14 w-full"
     >
       <div
-        class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap"
+        class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap space-x-2"
       />
     </span>
     <div
@@ -66,7 +66,7 @@ exports[`SelectAddress should render disabled 1`] = `
 exports[`SelectAddress should render empty 1`] = `
 <div>
   <button
-    class="relative w-full"
+    class="relative w-full rounded focus:outline-none focus:ring-2 focus:ring-theme-primary-400"
     data-testid="SelectAddress__wrapper"
     type="button"
   >
@@ -74,7 +74,7 @@ exports[`SelectAddress should render empty 1`] = `
       class="absolute inset-0 flex items-center border border-transparent px-14 w-full"
     >
       <div
-        class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap"
+        class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap space-x-2"
       />
     </span>
     <div
@@ -128,7 +128,7 @@ exports[`SelectAddress should render empty 1`] = `
 exports[`SelectAddress should render invalid 1`] = `
 <div>
   <button
-    class="relative w-full"
+    class="relative w-full rounded focus:outline-none focus:ring-2 focus:ring-theme-primary-400"
     data-testid="SelectAddress__wrapper"
     type="button"
   >
@@ -136,7 +136,7 @@ exports[`SelectAddress should render invalid 1`] = `
       class="absolute inset-0 flex items-center border border-transparent px-14 w-full"
     >
       <div
-        class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap"
+        class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap space-x-2"
       />
     </span>
     <div
@@ -204,7 +204,7 @@ exports[`SelectAddress should render invalid 1`] = `
 exports[`SelectAddress should render with preselected address 1`] = `
 <div>
   <button
-    class="relative w-full"
+    class="relative w-full rounded focus:outline-none focus:ring-2 focus:ring-theme-primary-400"
     data-testid="SelectAddress__wrapper"
     type="button"
   >
@@ -212,11 +212,11 @@ exports[`SelectAddress should render with preselected address 1`] = `
       class="absolute inset-0 flex items-center border border-transparent px-14 w-full"
     >
       <div
-        class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap"
+        class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap space-x-2"
       >
         <span
-          class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-text font-semibold text-base"
-          data-testid="address__wallet-address"
+          class="inline-flex overflow-hidden text-theme-text font-semibold text-base"
+          data-testid="Address__address"
         >
           bP6T9GQ3kqP6T9GQ3kqP6T9GQ3kqTTTP6T9GQ3kqT
         </span>
@@ -284,7 +284,7 @@ exports[`SelectAddress should render with preselected address 1`] = `
 exports[`SelectAddress should render with preselected verified address 1`] = `
 <div>
   <button
-    class="relative w-full"
+    class="relative w-full rounded focus:outline-none focus:ring-2 focus:ring-theme-primary-400"
     data-testid="SelectAddress__wrapper"
     type="button"
   >
@@ -292,7 +292,7 @@ exports[`SelectAddress should render with preselected verified address 1`] = `
       class="absolute inset-0 flex items-center border border-transparent px-14 w-full"
     >
       <div
-        class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap"
+        class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap space-x-2"
       />
     </span>
     <div

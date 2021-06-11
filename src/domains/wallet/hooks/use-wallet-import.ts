@@ -1,4 +1,4 @@
-import { Coins } from "@arkecosystem/platform-sdk";
+import { Networks } from "@arkecosystem/platform-sdk";
 import { Contracts } from "@arkecosystem/platform-sdk-profiles";
 import { useTranslation } from "react-i18next";
 
@@ -18,7 +18,7 @@ export const useWalletImport = ({ profile }: { profile: Contracts.IProfile }) =>
 		value,
 		encryptedWif,
 	}: {
-		network: Coins.Network;
+		network: Networks.Network;
 		type: string;
 		value: WalletGenerationInput;
 		encryptedWif: string;
@@ -26,7 +26,7 @@ export const useWalletImport = ({ profile }: { profile: Contracts.IProfile }) =>
 		switch (type) {
 			case "mnemonic":
 				return profile.wallets().push(
-					await profile.walletFactory().fromMnemonic({
+					await profile.walletFactory().fromMnemonicWithBIP39({
 						coin: network.coin(),
 						network: network.id(),
 						mnemonic: value,
@@ -67,7 +67,7 @@ export const useWalletImport = ({ profile }: { profile: Contracts.IProfile }) =>
 					setTimeout(() => {
 						profile
 							.walletFactory()
-							.fromWIFWithEncryption({
+							.fromWIF({
 								coin: network.coin(),
 								network: network.id(),
 								wif: encryptedWif,

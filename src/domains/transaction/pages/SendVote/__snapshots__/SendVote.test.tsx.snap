@@ -13,10 +13,10 @@ exports[`SendVote should send a unvote transaction 1`] = `
   >
     <nav
       aria-labelledby="main menu"
-      class="NavigationBar__NavWrapper-sc-1qsoskw-0 hkUMvZ"
+      class="NavigationBar__NavWrapper-sc-1qsoskw-0 bewuLZ"
     >
       <div
-        class="flex relative h-21"
+        class="relative flex h-21"
       >
         <button
           class="BackButton__StyledBackButton-sc-1pe22tv-0 hLgyWD flex w-12"
@@ -38,7 +38,7 @@ exports[`SendVote should send a unvote transaction 1`] = `
             class="flex items-center my-auto"
           >
             <div
-              class="NavigationBar__LogoContainer-sc-1qsoskw-2 tulfg"
+              class="NavigationBar__LogoContainer-sc-1qsoskw-2 itrWMc"
             >
               <svg
                 width="44"
@@ -48,18 +48,18 @@ exports[`SendVote should send a unvote transaction 1`] = `
             </div>
           </div>
           <ul
-            class="flex mr-auto ml-4 space-x-8 h-21"
+            class="flex ml-4 mr-auto space-x-8 h-21"
           >
             <li
               class="flex"
             >
               <a
-                class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
+                class="relative flex items-center font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
                 title="Portfolio"
               >
                 <div
-                  class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                  class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
                 />
                 Portfolio
               </a>
@@ -68,12 +68,12 @@ exports[`SendVote should send a unvote transaction 1`] = `
               class="flex"
             >
               <a
-                class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
+                class="relative flex items-center font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/plugins"
                 title="Plugins"
               >
                 <div
-                  class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                  class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
                 />
                 Plugins
               </a>
@@ -82,12 +82,12 @@ exports[`SendVote should send a unvote transaction 1`] = `
               class="flex"
             >
               <a
-                class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
+                class="relative flex items-center font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/exchange"
                 title="Exchange"
               >
                 <div
-                  class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                  class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
                 />
                 Exchange
               </a>
@@ -96,12 +96,12 @@ exports[`SendVote should send a unvote transaction 1`] = `
               class="flex"
             >
               <a
-                class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
+                class="relative flex items-center font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/news"
                 title="News"
               >
                 <div
-                  class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                  class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
                 />
                 News
               </a>
@@ -227,6 +227,7 @@ exports[`SendVote should send a unvote transaction 1`] = `
               </div>
               <div
                 class="text-sm font-bold text-theme-secondary-text dark:text-theme-text"
+                data-testid="Balance__value"
               >
                 <span
                   data-testid="Amount"
@@ -262,7 +263,7 @@ exports[`SendVote should send a unvote transaction 1`] = `
                   data-testid="dropdown__toggle"
                 >
                   <div
-                    class="cursor-pointer relative justify-center items-center align-middle rounded-full"
+                    class="relative items-center justify-center align-middle rounded-full cursor-pointer"
                     data-testid="navbar__useractions"
                   >
                     <div
@@ -357,7 +358,7 @@ exports[`SendVote should send a unvote transaction 1`] = `
                     </p>
                     <div>
                       <div
-                        class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 gtigln no-ligatures"
+                        class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 UsFpT no-ligatures"
                         data-testid="TransactionDetail"
                       >
                         <div
@@ -372,40 +373,43 @@ exports[`SendVote should send a unvote transaction 1`] = `
                             class="font-semibold"
                           >
                             <div
-                              class="flex items-center space-x-3"
+                              class="flex items-center space-x-3 overflow-hidden"
                             >
-                              <a
-                                class="Link__AnchorStyled-sc-1q7sbxr-0 jXgXXh group"
-                                data-testid="Link"
-                                href="#"
-                                rel="noopener noreferrer"
-                                to="https://dexplorer.ark.io/transaction/32e5278cb72f24f2c04c4797dbfbffa7072f6a30e016093fdd3f7660a2ee2faf"
+                              <span
+                                class="overflow-hidden"
                               >
-                                <span
-                                  class="break-all border-b border-transparent duration-200 group-hover:border-current"
+                                <a
+                                  class="Link__AnchorStyled-sc-1q7sbxr-0 jXgXXh group"
+                                  data-testid="Link"
+                                  href="#"
+                                  rel="noopener noreferrer"
+                                  to="https://dexplorer.ark.io/transaction/32e5278cb72f24f2c04c4797dbfbffa7072f6a30e016093fdd3f7660a2ee2faf"
                                 >
                                   <span
-                                    class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap"
-                                    data-testid="TruncateMiddle"
+                                    class="break-all border-b border-transparent duration-200 group-hover:border-current"
                                   >
-                                    32e5278cb72f24f2c04c4797dbfbffa7072f6a30e016093fdd3f7660a2ee2faf
+                                    <span
+                                      class="inline-flex overflow-hidden"
+                                    >
+                                      32e5278cb72f24f2c04c4797dbfbffa7072f6a30e016093fdd3f7660a2ee2faf
+                                    </span>
                                   </span>
-                                </span>
-                                <span
-                                  class="align-middle"
-                                >
-                                  <div
-                                    class="sc-bdfBwQ fPrsah flex-shrink-0 duration-200 inline-block pb-px text-sm"
-                                    data-testid="Link__external"
-                                    height="1em"
-                                    width="1em"
+                                  <span
+                                    class="align-middle"
                                   >
-                                    <svg>
-                                      redirect.svg
-                                    </svg>
-                                  </div>
-                                </span>
-                              </a>
+                                    <div
+                                      class="sc-bdfBwQ fPrsah flex-shrink-0 duration-200 inline-block pb-px text-sm"
+                                      data-testid="Link__external"
+                                      height="1em"
+                                      width="1em"
+                                    >
+                                      <svg>
+                                        redirect.svg
+                                      </svg>
+                                    </div>
+                                  </span>
+                                </a>
+                              </span>
                               <span
                                 class="flex text-theme-primary-300 dark:text-theme-secondary-600"
                               >
@@ -433,7 +437,7 @@ exports[`SendVote should send a unvote transaction 1`] = `
                         </div>
                       </div>
                       <div
-                        class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 izxcpX no-ligatures"
+                        class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 cHOkoL no-ligatures"
                         data-testid="TransactionDetail"
                       >
                         <div
@@ -468,7 +472,7 @@ exports[`SendVote should send a unvote transaction 1`] = `
                         </div>
                       </div>
                       <div
-                        class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 izxcpX no-ligatures"
+                        class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 cHOkoL no-ligatures"
                         data-testid="TransactionDetail"
                       >
                         <div
@@ -483,11 +487,11 @@ exports[`SendVote should send a unvote transaction 1`] = `
                             class="font-semibold"
                           >
                             <div
-                              class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap"
+                              class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap space-x-2"
                             >
                               <span
-                                class="max-w-24 truncate mr-2 font-semibold text-base text-theme-text"
-                                data-testid="address__wallet-name"
+                                class="font-semibold text-base text-theme-text"
+                                data-testid="Address__alias"
                               >
                                 <span
                                   class="TruncateEnd__Wrapper-sc-1w1nvb9-0"
@@ -497,8 +501,8 @@ exports[`SendVote should send a unvote transaction 1`] = `
                                 </span>
                               </span>
                               <span
-                                class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-secondary-500 dark:text-theme-secondary-700 font-semibold text-base"
-                                data-testid="address__wallet-address"
+                                class="inline-flex overflow-hidden text-theme-secondary-500 dark:text-theme-secondary-700 font-semibold text-base"
+                                data-testid="Address__address"
                               >
                                 D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD
                               </span>
@@ -538,7 +542,7 @@ exports[`SendVote should send a unvote transaction 1`] = `
                         </div>
                       </div>
                       <div
-                        class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 izxcpX no-ligatures"
+                        class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 cHOkoL no-ligatures"
                         data-testid="TransactionDetail"
                       >
                         <div
@@ -556,7 +560,7 @@ exports[`SendVote should send a unvote transaction 1`] = `
                           </div>
                         </div>
                         <div
-                          class="Circle__CircleWrapper-uw7h4j-0 bNDQMV border-theme-text ring-theme-background"
+                          class="Circle__CircleWrapper-uw7h4j-0 bNDQMV text-theme-secondary-900 border-theme-secondary-900 dark:text-theme-secondary-600 dark:border-theme-secondary-600 ring-theme-background"
                         >
                           <div
                             class="sc-bdfBwQ bOxyah"
@@ -570,7 +574,7 @@ exports[`SendVote should send a unvote transaction 1`] = `
                         </div>
                       </div>
                       <div
-                        class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 izxcpX no-ligatures"
+                        class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 cHOkoL no-ligatures"
                         data-testid="TransactionDetail"
                       >
                         <div
@@ -608,11 +612,11 @@ exports[`SendVote should send a unvote transaction 1`] = `
                                     </div>
                                   </div>
                                   <div
-                                    class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap"
+                                    class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap space-x-2"
                                   >
                                     <span
-                                      class="max-w-24 truncate mr-2 font-semibold text-base text-theme-text"
-                                      data-testid="address__wallet-name"
+                                      class="font-semibold text-base text-theme-text"
+                                      data-testid="Address__alias"
                                     >
                                       <span
                                         class="TruncateEnd__Wrapper-sc-1w1nvb9-0"
@@ -622,8 +626,8 @@ exports[`SendVote should send a unvote transaction 1`] = `
                                       </span>
                                     </span>
                                     <span
-                                      class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-secondary-500 dark:text-theme-secondary-700 font-semibold text-base"
-                                      data-testid="address__wallet-address"
+                                      class="inline-flex overflow-hidden text-theme-secondary-500 dark:text-theme-secondary-700 font-semibold text-base"
+                                      data-testid="Address__address"
                                     >
                                       D5L5zXgvqtg7qoGimt5vYhFuf5Ued6iWVr
                                     </span>
@@ -635,7 +639,7 @@ exports[`SendVote should send a unvote transaction 1`] = `
                         </div>
                       </div>
                       <div
-                        class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 caQbYh no-ligatures"
+                        class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 jxdofB no-ligatures"
                         data-testid="TransactionDetail"
                       >
                         <div
@@ -692,10 +696,10 @@ exports[`SendVote should send a vote transaction 1`] = `
   >
     <nav
       aria-labelledby="main menu"
-      class="NavigationBar__NavWrapper-sc-1qsoskw-0 hkUMvZ"
+      class="NavigationBar__NavWrapper-sc-1qsoskw-0 bewuLZ"
     >
       <div
-        class="flex relative h-21"
+        class="relative flex h-21"
       >
         <button
           class="BackButton__StyledBackButton-sc-1pe22tv-0 hLgyWD flex w-12"
@@ -717,7 +721,7 @@ exports[`SendVote should send a vote transaction 1`] = `
             class="flex items-center my-auto"
           >
             <div
-              class="NavigationBar__LogoContainer-sc-1qsoskw-2 tulfg"
+              class="NavigationBar__LogoContainer-sc-1qsoskw-2 itrWMc"
             >
               <svg
                 width="44"
@@ -727,18 +731,18 @@ exports[`SendVote should send a vote transaction 1`] = `
             </div>
           </div>
           <ul
-            class="flex mr-auto ml-4 space-x-8 h-21"
+            class="flex ml-4 mr-auto space-x-8 h-21"
           >
             <li
               class="flex"
             >
               <a
-                class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
+                class="relative flex items-center font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
                 title="Portfolio"
               >
                 <div
-                  class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                  class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
                 />
                 Portfolio
               </a>
@@ -747,12 +751,12 @@ exports[`SendVote should send a vote transaction 1`] = `
               class="flex"
             >
               <a
-                class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
+                class="relative flex items-center font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/plugins"
                 title="Plugins"
               >
                 <div
-                  class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                  class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
                 />
                 Plugins
               </a>
@@ -761,12 +765,12 @@ exports[`SendVote should send a vote transaction 1`] = `
               class="flex"
             >
               <a
-                class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
+                class="relative flex items-center font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/exchange"
                 title="Exchange"
               >
                 <div
-                  class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                  class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
                 />
                 Exchange
               </a>
@@ -775,12 +779,12 @@ exports[`SendVote should send a vote transaction 1`] = `
               class="flex"
             >
               <a
-                class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
+                class="relative flex items-center font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/news"
                 title="News"
               >
                 <div
-                  class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                  class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
                 />
                 News
               </a>
@@ -906,6 +910,7 @@ exports[`SendVote should send a vote transaction 1`] = `
               </div>
               <div
                 class="text-sm font-bold text-theme-secondary-text dark:text-theme-text"
+                data-testid="Balance__value"
               >
                 <span
                   data-testid="Amount"
@@ -941,7 +946,7 @@ exports[`SendVote should send a vote transaction 1`] = `
                   data-testid="dropdown__toggle"
                 >
                   <div
-                    class="cursor-pointer relative justify-center items-center align-middle rounded-full"
+                    class="relative items-center justify-center align-middle rounded-full cursor-pointer"
                     data-testid="navbar__useractions"
                   >
                     <div
@@ -1036,7 +1041,7 @@ exports[`SendVote should send a vote transaction 1`] = `
                     </p>
                     <div>
                       <div
-                        class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 gtigln no-ligatures"
+                        class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 UsFpT no-ligatures"
                         data-testid="TransactionDetail"
                       >
                         <div
@@ -1051,40 +1056,43 @@ exports[`SendVote should send a vote transaction 1`] = `
                             class="font-semibold"
                           >
                             <div
-                              class="flex items-center space-x-3"
+                              class="flex items-center space-x-3 overflow-hidden"
                             >
-                              <a
-                                class="Link__AnchorStyled-sc-1q7sbxr-0 jXgXXh group"
-                                data-testid="Link"
-                                href="#"
-                                rel="noopener noreferrer"
-                                to="https://dexplorer.ark.io/transaction/d819c5199e323a62a4349948ff075edde91e509028329f66ec76b8518ad1e493"
+                              <span
+                                class="overflow-hidden"
                               >
-                                <span
-                                  class="break-all border-b border-transparent duration-200 group-hover:border-current"
+                                <a
+                                  class="Link__AnchorStyled-sc-1q7sbxr-0 jXgXXh group"
+                                  data-testid="Link"
+                                  href="#"
+                                  rel="noopener noreferrer"
+                                  to="https://dexplorer.ark.io/transaction/d819c5199e323a62a4349948ff075edde91e509028329f66ec76b8518ad1e493"
                                 >
                                   <span
-                                    class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap"
-                                    data-testid="TruncateMiddle"
+                                    class="break-all border-b border-transparent duration-200 group-hover:border-current"
                                   >
-                                    d819c5199e323a62a4349948ff075edde91e509028329f66ec76b8518ad1e493
+                                    <span
+                                      class="inline-flex overflow-hidden"
+                                    >
+                                      d819c5199e323a62a4349948ff075edde91e509028329f66ec76b8518ad1e493
+                                    </span>
                                   </span>
-                                </span>
-                                <span
-                                  class="align-middle"
-                                >
-                                  <div
-                                    class="sc-bdfBwQ fPrsah flex-shrink-0 duration-200 inline-block pb-px text-sm"
-                                    data-testid="Link__external"
-                                    height="1em"
-                                    width="1em"
+                                  <span
+                                    class="align-middle"
                                   >
-                                    <svg>
-                                      redirect.svg
-                                    </svg>
-                                  </div>
-                                </span>
-                              </a>
+                                    <div
+                                      class="sc-bdfBwQ fPrsah flex-shrink-0 duration-200 inline-block pb-px text-sm"
+                                      data-testid="Link__external"
+                                      height="1em"
+                                      width="1em"
+                                    >
+                                      <svg>
+                                        redirect.svg
+                                      </svg>
+                                    </div>
+                                  </span>
+                                </a>
+                              </span>
                               <span
                                 class="flex text-theme-primary-300 dark:text-theme-secondary-600"
                               >
@@ -1112,7 +1120,7 @@ exports[`SendVote should send a vote transaction 1`] = `
                         </div>
                       </div>
                       <div
-                        class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 izxcpX no-ligatures"
+                        class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 cHOkoL no-ligatures"
                         data-testid="TransactionDetail"
                       >
                         <div
@@ -1147,7 +1155,7 @@ exports[`SendVote should send a vote transaction 1`] = `
                         </div>
                       </div>
                       <div
-                        class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 izxcpX no-ligatures"
+                        class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 cHOkoL no-ligatures"
                         data-testid="TransactionDetail"
                       >
                         <div
@@ -1162,11 +1170,11 @@ exports[`SendVote should send a vote transaction 1`] = `
                             class="font-semibold"
                           >
                             <div
-                              class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap"
+                              class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap space-x-2"
                             >
                               <span
-                                class="max-w-24 truncate mr-2 font-semibold text-base text-theme-text"
-                                data-testid="address__wallet-name"
+                                class="font-semibold text-base text-theme-text"
+                                data-testid="Address__alias"
                               >
                                 <span
                                   class="TruncateEnd__Wrapper-sc-1w1nvb9-0"
@@ -1176,8 +1184,8 @@ exports[`SendVote should send a vote transaction 1`] = `
                                 </span>
                               </span>
                               <span
-                                class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-secondary-500 dark:text-theme-secondary-700 font-semibold text-base"
-                                data-testid="address__wallet-address"
+                                class="inline-flex overflow-hidden text-theme-secondary-500 dark:text-theme-secondary-700 font-semibold text-base"
+                                data-testid="Address__address"
                               >
                                 D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD
                               </span>
@@ -1217,7 +1225,7 @@ exports[`SendVote should send a vote transaction 1`] = `
                         </div>
                       </div>
                       <div
-                        class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 izxcpX no-ligatures"
+                        class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 cHOkoL no-ligatures"
                         data-testid="TransactionDetail"
                       >
                         <div
@@ -1235,7 +1243,7 @@ exports[`SendVote should send a vote transaction 1`] = `
                           </div>
                         </div>
                         <div
-                          class="Circle__CircleWrapper-uw7h4j-0 bNDQMV border-theme-text ring-theme-background"
+                          class="Circle__CircleWrapper-uw7h4j-0 bNDQMV text-theme-secondary-900 border-theme-secondary-900 dark:text-theme-secondary-600 dark:border-theme-secondary-600 ring-theme-background"
                         >
                           <div
                             class="sc-bdfBwQ bOxyah"
@@ -1249,7 +1257,7 @@ exports[`SendVote should send a vote transaction 1`] = `
                         </div>
                       </div>
                       <div
-                        class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 izxcpX no-ligatures"
+                        class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 cHOkoL no-ligatures"
                         data-testid="TransactionDetail"
                       >
                         <div
@@ -1287,11 +1295,11 @@ exports[`SendVote should send a vote transaction 1`] = `
                                     </div>
                                   </div>
                                   <div
-                                    class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap"
+                                    class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap space-x-2"
                                   >
                                     <span
-                                      class="max-w-24 truncate mr-2 font-semibold text-base text-theme-text"
-                                      data-testid="address__wallet-name"
+                                      class="font-semibold text-base text-theme-text"
+                                      data-testid="Address__alias"
                                     >
                                       <span
                                         class="TruncateEnd__Wrapper-sc-1w1nvb9-0"
@@ -1301,8 +1309,8 @@ exports[`SendVote should send a vote transaction 1`] = `
                                       </span>
                                     </span>
                                     <span
-                                      class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-secondary-500 dark:text-theme-secondary-700 font-semibold text-base"
-                                      data-testid="address__wallet-address"
+                                      class="inline-flex overflow-hidden text-theme-secondary-500 dark:text-theme-secondary-700 font-semibold text-base"
+                                      data-testid="Address__address"
                                     >
                                       D61mfSggzbvQgTUe6JhYKH2doHaqJ3Dyib
                                     </span>
@@ -1314,7 +1322,7 @@ exports[`SendVote should send a vote transaction 1`] = `
                         </div>
                       </div>
                       <div
-                        class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 caQbYh no-ligatures"
+                        class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 jxdofB no-ligatures"
                         data-testid="TransactionDetail"
                       >
                         <div
@@ -1371,10 +1379,10 @@ exports[`SendVote should show error if wrong mnemonic 1`] = `
   >
     <nav
       aria-labelledby="main menu"
-      class="NavigationBar__NavWrapper-sc-1qsoskw-0 hkUMvZ"
+      class="NavigationBar__NavWrapper-sc-1qsoskw-0 bewuLZ"
     >
       <div
-        class="flex relative h-21"
+        class="relative flex h-21"
       >
         <button
           class="BackButton__StyledBackButton-sc-1pe22tv-0 hLgyWD flex w-12"
@@ -1396,7 +1404,7 @@ exports[`SendVote should show error if wrong mnemonic 1`] = `
             class="flex items-center my-auto"
           >
             <div
-              class="NavigationBar__LogoContainer-sc-1qsoskw-2 tulfg"
+              class="NavigationBar__LogoContainer-sc-1qsoskw-2 itrWMc"
             >
               <svg
                 width="44"
@@ -1406,18 +1414,18 @@ exports[`SendVote should show error if wrong mnemonic 1`] = `
             </div>
           </div>
           <ul
-            class="flex mr-auto ml-4 space-x-8 h-21"
+            class="flex ml-4 mr-auto space-x-8 h-21"
           >
             <li
               class="flex"
             >
               <a
-                class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
+                class="relative flex items-center font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
                 title="Portfolio"
               >
                 <div
-                  class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                  class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
                 />
                 Portfolio
               </a>
@@ -1426,12 +1434,12 @@ exports[`SendVote should show error if wrong mnemonic 1`] = `
               class="flex"
             >
               <a
-                class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
+                class="relative flex items-center font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/plugins"
                 title="Plugins"
               >
                 <div
-                  class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                  class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
                 />
                 Plugins
               </a>
@@ -1440,12 +1448,12 @@ exports[`SendVote should show error if wrong mnemonic 1`] = `
               class="flex"
             >
               <a
-                class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
+                class="relative flex items-center font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/exchange"
                 title="Exchange"
               >
                 <div
-                  class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                  class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
                 />
                 Exchange
               </a>
@@ -1454,12 +1462,12 @@ exports[`SendVote should show error if wrong mnemonic 1`] = `
               class="flex"
             >
               <a
-                class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
+                class="relative flex items-center font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/news"
                 title="News"
               >
                 <div
-                  class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                  class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
                 />
                 News
               </a>
@@ -1585,6 +1593,7 @@ exports[`SendVote should show error if wrong mnemonic 1`] = `
               </div>
               <div
                 class="text-sm font-bold text-theme-secondary-text dark:text-theme-text"
+                data-testid="Balance__value"
               >
                 <span
                   data-testid="Amount"
@@ -1620,7 +1629,7 @@ exports[`SendVote should show error if wrong mnemonic 1`] = `
                   data-testid="dropdown__toggle"
                 >
                   <div
-                    class="cursor-pointer relative justify-center items-center align-middle rounded-full"
+                    class="relative items-center justify-center align-middle rounded-full cursor-pointer"
                     data-testid="navbar__useractions"
                   >
                     <div
@@ -1718,10 +1727,6 @@ exports[`SendVote should show error if wrong mnemonic 1`] = `
                         for="mnemonic"
                       >
                         Mnemonic
-                        <div
-                          class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
-                          data-testid="FormLabel__required"
-                        />
                       </label>
                       <div
                         class="fixed invisible w-auto whitespace-nowrap"
@@ -1842,10 +1847,10 @@ exports[`SendVote should show error step and go back 1`] = `
   >
     <nav
       aria-labelledby="main menu"
-      class="NavigationBar__NavWrapper-sc-1qsoskw-0 hkUMvZ"
+      class="NavigationBar__NavWrapper-sc-1qsoskw-0 bewuLZ"
     >
       <div
-        class="flex relative h-21"
+        class="relative flex h-21"
       >
         <button
           class="BackButton__StyledBackButton-sc-1pe22tv-0 hLgyWD flex w-12"
@@ -1867,7 +1872,7 @@ exports[`SendVote should show error step and go back 1`] = `
             class="flex items-center my-auto"
           >
             <div
-              class="NavigationBar__LogoContainer-sc-1qsoskw-2 tulfg"
+              class="NavigationBar__LogoContainer-sc-1qsoskw-2 itrWMc"
             >
               <svg
                 width="44"
@@ -1877,18 +1882,18 @@ exports[`SendVote should show error step and go back 1`] = `
             </div>
           </div>
           <ul
-            class="flex mr-auto ml-4 space-x-8 h-21"
+            class="flex ml-4 mr-auto space-x-8 h-21"
           >
             <li
               class="flex"
             >
               <a
-                class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
+                class="relative flex items-center font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
                 title="Portfolio"
               >
                 <div
-                  class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                  class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
                 />
                 Portfolio
               </a>
@@ -1897,12 +1902,12 @@ exports[`SendVote should show error step and go back 1`] = `
               class="flex"
             >
               <a
-                class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
+                class="relative flex items-center font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/plugins"
                 title="Plugins"
               >
                 <div
-                  class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                  class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
                 />
                 Plugins
               </a>
@@ -1911,12 +1916,12 @@ exports[`SendVote should show error step and go back 1`] = `
               class="flex"
             >
               <a
-                class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
+                class="relative flex items-center font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/exchange"
                 title="Exchange"
               >
                 <div
-                  class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                  class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
                 />
                 Exchange
               </a>
@@ -1925,12 +1930,12 @@ exports[`SendVote should show error step and go back 1`] = `
               class="flex"
             >
               <a
-                class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
+                class="relative flex items-center font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/news"
                 title="News"
               >
                 <div
-                  class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                  class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
                 />
                 News
               </a>
@@ -2056,6 +2061,7 @@ exports[`SendVote should show error step and go back 1`] = `
               </div>
               <div
                 class="text-sm font-bold text-theme-secondary-text dark:text-theme-text"
+                data-testid="Balance__value"
               >
                 <span
                   data-testid="Amount"
@@ -2091,7 +2097,7 @@ exports[`SendVote should show error step and go back 1`] = `
                   data-testid="dropdown__toggle"
                 >
                   <div
-                    class="cursor-pointer relative justify-center items-center align-middle rounded-full"
+                    class="relative items-center justify-center align-middle rounded-full cursor-pointer"
                     data-testid="navbar__useractions"
                   >
                     <div

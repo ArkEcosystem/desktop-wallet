@@ -114,6 +114,7 @@ export const AddParticipant = ({ profile, wallet, onChange, defaultParticipants 
 					<FormField name="address">
 						<FormLabel label={t("TRANSACTION.MULTISIGNATURE.PARTICIPANT")} />
 						<SelectRecipient
+							network={wallet.network()}
 							address={address}
 							profile={profile}
 							ref={register({
@@ -144,7 +145,7 @@ export const AddParticipant = ({ profile, wallet, onChange, defaultParticipants 
 				<RecipientList
 					recipients={participants}
 					assetSymbol={wallet.network().ticker()}
-					buttonTooltip={t("TRANSACTION.MULTISIGNATURE.REMOVE_NOT_ALLOWED")}
+					tooltipDisabled={t("TRANSACTION.MULTISIGNATURE.REMOVE_NOT_ALLOWED")}
 					disableButton={(address: string) => address === wallet.address()}
 					onRemove={removeParticipant}
 					label="TRANSACTION.MULTISIGNATURE.PARTICIPANT_#"

@@ -1,4 +1,4 @@
-import { Data } from "@arkecosystem/platform-sdk";
+import { CURRENCIES } from "@arkecosystem/platform-sdk-intl";
 import { Contracts } from "@arkecosystem/platform-sdk-profiles";
 import { images } from "app/assets/images";
 import { Avatar } from "app/components/Avatar";
@@ -38,7 +38,7 @@ interface NavigationBarProps {
 	isBackDisabled?: boolean;
 	profile?: Contracts.IProfile;
 	variant?: NavbarVariant;
-	menu?: MenuItem[];
+	menu: MenuItem[];
 	userActions?: Action[];
 	avatarImage?: string;
 	onUserAction?: any;
@@ -49,7 +49,7 @@ interface NavigationBarProps {
 const NavWrapper = styled.nav<{ noBorder?: boolean; noShadow?: boolean; scroll?: number }>`
 	${defaultStyle}
 
-	${tw`sticky border-b border-theme-background inset-x-0 top-0 bg-theme-background transition-all duration-200`}
+	${tw`sticky inset-x-0 top-0 transition-all duration-200 border-b border-theme-background bg-theme-background`}
 
 	${({ noBorder, scroll }) => {
 		if (!noBorder && !scroll) {
@@ -73,8 +73,7 @@ interface UserInfoProps {
 }
 
 const UserInfo = ({ exchangeCurrency, onUserAction, avatarImage, userActions, userInitials }: UserInfoProps) => {
-	const tickerConfig: typeof Data.CURRENCIES["BTC"] | undefined =
-		Data.CURRENCIES[exchangeCurrency as keyof typeof Data.CURRENCIES];
+	const tickerConfig: typeof CURRENCIES["BTC"] | undefined = CURRENCIES[exchangeCurrency as keyof typeof CURRENCIES];
 
 	return (
 		<div className="flex my-0.5 ml-4 -space-x-2">
@@ -95,7 +94,7 @@ const UserInfo = ({ exchangeCurrency, onUserAction, avatarImage, userActions, us
 				dropdownClass="mt-8"
 				toggleContent={(isOpen: boolean) => (
 					<div
-						className="cursor-pointer relative justify-center items-center align-middle rounded-full"
+						className="relative items-center justify-center align-middle rounded-full cursor-pointer"
 						data-testid="navbar__useractions"
 					>
 						<Avatar size="lg" highlight={isOpen}>
@@ -109,7 +108,7 @@ const UserInfo = ({ exchangeCurrency, onUserAction, avatarImage, userActions, us
 							) : (
 								<img
 									alt="Profile Avatar"
-									className="object-cover w-11 h-11 bg-center bg-no-repeat bg-cover rounded-full"
+									className="object-cover bg-center bg-no-repeat bg-cover rounded-full w-11 h-11"
 									src={avatarImage}
 								/>
 							)}
@@ -130,7 +129,7 @@ export const NavigationButtonWrapper = styled.div`
 `;
 
 const LogoContainer = styled.div`
-	${tw`flex items-center justify-center w-11 h-11 my-auto mr-4 text-white rounded bg-logo`};
+	${tw`flex items-center justify-center my-auto mr-4 text-white rounded w-11 h-11 bg-logo`};
 `;
 
 export const NavigationBar = ({
@@ -156,29 +155,25 @@ export const NavigationBar = ({
 		setSelectedWallet(wallet);
 	};
 
-	const { profileIsRestoring } = useConfiguration();
+	const { profileIsSyncingExchangeRates } = useConfiguration();
 
 	const renderMenu = () => {
 		if (!profile?.id()) {
 			return null;
 		}
 
-		return (
-			menu &&
-			menu.map((menuItem: any, index: number) => (
-				<li key={index} className="flex">
-					<NavLink
-						to={menuItem.mountPath(profile.id())}
-						title={menuItem.title}
-						className="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
-					>
-						{/* border on focus */}
-						<div className="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible" />
-						{menuItem.title}
-					</NavLink>
-				</li>
-			))
-		);
+		return menu.map((menuItem: any, index: number) => (
+			<li key={index} className="flex">
+				<NavLink
+					to={menuItem.mountPath(profile.id())}
+					title={menuItem.title}
+					className="relative flex items-center font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
+				>
+					<div className="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible" />
+					{menuItem.title}
+				</NavLink>
+			</li>
+		));
 	};
 
 	const getUserInitials = () => {
@@ -213,7 +208,7 @@ export const NavigationBar = ({
 			noShadow={noShadow}
 			scroll={scroll}
 		>
-			<div className="flex relative h-21">
+			<div className="relative flex h-21">
 				{variant === "full" && <BackButton className="flex w-12" disabled={isBackDisabled} />}
 
 				<div className={`flex flex-1 px-8 ${variant !== "full" ? "ml-12" : ""}`}>
@@ -227,7 +222,7 @@ export const NavigationBar = ({
 
 					{variant === "full" && (
 						<>
-							<ul className="flex mr-auto ml-4 space-x-8 h-21">{renderMenu()}</ul>
+							<ul className="flex ml-4 mr-auto space-x-8 h-21">{renderMenu()}</ul>
 
 							<div className="flex items-center my-auto space-x-4">
 								{profile && <NotificationsDropdown profile={profile} />}
@@ -272,7 +267,7 @@ export const NavigationBar = ({
 							</div>
 
 							<div className="flex items-center my-auto ml-8">
-								<Balance profile={profile} isLoading={profileIsRestoring} />
+								<Balance profile={profile} isLoading={profileIsSyncingExchangeRates} />
 
 								<UserInfo
 									userInitials={getUserInitials()}
@@ -282,6 +277,10 @@ export const NavigationBar = ({
 									onUserAction={(action: any) => {
 										if (action?.isExternal) {
 											return openExternal(action.mountPath());
+										}
+
+										if (action?.value === "sign-out") {
+											profile?.status().reset();
 										}
 
 										return history.push(action.mountPath(profile?.id()));
@@ -324,51 +323,6 @@ export const NavigationBar = ({
 
 NavigationBar.defaultProps = {
 	variant: "full",
-	menu: [
-		{
-			title: "Portfolio",
-			mountPath: (profileId: string) => `/profiles/${profileId}/dashboard`,
-		},
-		{
-			title: "Plugins",
-			mountPath: (profileId: string) => `/profiles/${profileId}/plugins`,
-		},
-		{
-			title: "Exchange",
-			mountPath: (profileId: string) => `/profiles/${profileId}/exchange`,
-		},
-		{
-			title: "News",
-			mountPath: (profileId: string) => `/profiles/${profileId}/news`,
-		},
-	],
-	userActions: [
-		{
-			label: "Contacts",
-			value: "contacts",
-			mountPath: (profileId: string) => `/profiles/${profileId}/contacts`,
-		},
-		{
-			label: "Votes",
-			value: "votes",
-			mountPath: (profileId: string) => `/profiles/${profileId}/votes`,
-		},
-		{
-			label: "Settings",
-			value: "settings",
-			mountPath: (profileId: string) => `/profiles/${profileId}/settings`,
-		},
-		{
-			icon: "Redirect",
-			isExternal: true,
-			label: "Support",
-			value: "support",
-			mountPath: () => "https://ark.io/contact",
-		},
-		{
-			label: "Sign Out",
-			value: "sign-out",
-			mountPath: () => `/`,
-		},
-	],
+	menu: [],
+	userActions: [],
 };

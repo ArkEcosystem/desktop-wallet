@@ -1,4 +1,4 @@
-import { Coins } from "@arkecosystem/platform-sdk";
+import { Coins, Networks } from "@arkecosystem/platform-sdk";
 import { Contracts } from "@arkecosystem/platform-sdk-profiles";
 import { BigNumber } from "@arkecosystem/platform-sdk-support";
 
@@ -26,7 +26,7 @@ export const sendTransfer = (t: any) => ({
 	}),
 	recipientAddress: (
 		profile: Contracts.IProfile,
-		network: Coins.Network,
+		network: Networks.Network,
 		recipients: RecipientListItem[],
 		isSingleRecipient: boolean,
 	) => ({
@@ -51,13 +51,13 @@ export const sendTransfer = (t: any) => ({
 				}
 
 				const coin: Coins.Coin = profile.coins().set(network?.coin(), network?.id());
-				const isValidAddress: boolean = await coin.identity().address().validate(address);
+				const isValidAddress: boolean = await coin.address().validate(address);
 				return isValidAddress || t("COMMON.VALIDATION.RECIPIENT_INVALID");
 			},
 		},
 	}),
 	amount: (
-		network: Coins.Network,
+		network: Networks.Network,
 		balance: BigNumber,
 		recipients: RecipientListItem[],
 		isSingleRecipient: boolean,

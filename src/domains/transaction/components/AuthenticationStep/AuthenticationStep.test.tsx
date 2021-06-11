@@ -31,7 +31,7 @@ describe("AuthenticationStep", () => {
 	);
 
 	it("should validate if mnemonic match the wallet address", async () => {
-		wallet = await profile.walletFactory().fromMnemonic({
+		wallet = await profile.walletFactory().fromMnemonicWithBIP39({
 			mnemonic: "passphrase",
 			coin: "ARK",
 			network: "ark.devnet",
@@ -81,7 +81,7 @@ describe("AuthenticationStep", () => {
 	});
 
 	it("should validate if second mnemonic match the wallet second public key", async () => {
-		wallet = await profile.walletFactory().fromMnemonic({
+		wallet = await profile.walletFactory().fromMnemonicWithBIP39({
 			mnemonic: "passphrase",
 			coin: "ARK",
 			network: "ark.devnet",
@@ -92,7 +92,7 @@ describe("AuthenticationStep", () => {
 
 		jest.spyOn(wallet, "isSecondSignature").mockReturnValue(true);
 		jest.spyOn(wallet, "secondPublicKey").mockReturnValue(
-			(await wallet.coin().identity().publicKey().fromMnemonic(secondMnemonic)).publicKey,
+			(await wallet.coin().publicKey().fromMnemonic(secondMnemonic)).publicKey,
 		);
 
 		const TestValidation = () => {

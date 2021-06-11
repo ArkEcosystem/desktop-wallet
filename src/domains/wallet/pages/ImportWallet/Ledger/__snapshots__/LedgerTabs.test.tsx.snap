@@ -50,7 +50,7 @@ exports[`LedgerTabs should render connection step 1`] = `
             </div>
           </div>
           <fieldset
-            class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2 mt-8"
+            class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col mt-8 space-y-2"
           >
             <label
               class="flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
@@ -58,10 +58,6 @@ exports[`LedgerTabs should render connection step 1`] = `
               for="network"
             >
               Cryptoasset
-              <div
-                class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
-                data-testid="FormLabel__required"
-              />
             </label>
             <div>
               <div
@@ -152,7 +148,7 @@ exports[`LedgerTabs should render connection step 1`] = `
                       <div
                         aria-label="Compendia"
                         class="w-full h-full flex justify-center items-center border-2 rounded-xl border-theme-primary-100 dark:border-theme-secondary-800 text-theme-secondary-700"
-                        data-testid="NetworkIcon-ARK-compendia.mainnet"
+                        data-testid="NetworkIcon-ARK-bind.mainnet"
                       >
                         <div
                           class="sc-bdfBwQ caqoGN"
@@ -199,6 +195,27 @@ exports[`LedgerTabs should render connection step 1`] = `
                         >
                           <svg>
                             ark.svg
+                          </svg>
+                        </div>
+                      </div>
+                    </li>
+                    <li
+                      class="inline-block cursor-pointer h-21"
+                      data-testid="SelectNetwork__NetworkIcon--container"
+                    >
+                      <div
+                        aria-label="Compendia Testnet"
+                        class="w-full h-full flex justify-center items-center border-2 rounded-xl border-theme-primary-100 dark:border-theme-secondary-800 text-theme-primary-300"
+                        data-testid="NetworkIcon-ARK-bind.testnet"
+                      >
+                        <div
+                          class="sc-bdfBwQ caqoGN"
+                          data-testid="NetworkIcon__icon"
+                          height="30"
+                          width="30"
+                        >
+                          <svg>
+                            bind.svg
                           </svg>
                         </div>
                       </div>
@@ -306,10 +323,6 @@ exports[`LedgerTabs should render scan step with failing fetch 1`] = `
               for="network"
             >
               Cryptoasset
-              <div
-                class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
-                data-testid="FormLabel__required"
-              />
             </label>
             <div>
               <div

@@ -1,4 +1,4 @@
-import { Coins } from "@arkecosystem/platform-sdk";
+import { Networks } from "@arkecosystem/platform-sdk";
 import { Address } from "app/components/Address";
 import { Avatar } from "app/components/Avatar";
 import { Button } from "app/components/Button";
@@ -18,7 +18,7 @@ interface ReceiveFundsProps {
 	address: string;
 	icon: string;
 	name?: string;
-	network?: Coins.Network;
+	network?: Networks.Network;
 	isOpen: boolean;
 	onClose?: () => void;
 }
@@ -70,8 +70,8 @@ export const ReceiveFunds = ({ address, icon, name, network, isOpen, onClose }: 
 					}
 				>
 					<div className="flex items-center space-x-2">
-						<Address address={address} maxChars={25} />
-						<span className="flex-grow flex text-theme-primary-300 dark:text-theme-secondary-600">
+						<Address address={address} />
+						<span className="flex flex-grow text-theme-primary-300 dark:text-theme-secondary-600">
 							<Clipboard variant="icon" data={address}>
 								<Icon name="Copy" />
 							</Clipboard>

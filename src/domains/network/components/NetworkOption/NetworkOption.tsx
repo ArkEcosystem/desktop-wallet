@@ -1,11 +1,11 @@
-import { Coins } from "@arkecosystem/platform-sdk";
+import { Networks } from "@arkecosystem/platform-sdk";
 import { Icon } from "app/components/Icon";
 import { Tooltip } from "app/components/Tooltip";
 import cn from "classnames";
 import { CoinNetworkExtended } from "domains/network/data";
 import React, { memo } from "react";
 
-type Network = Coins.Network & { extra?: CoinNetworkExtended };
+type Network = Networks.Network & { extra?: CoinNetworkExtended };
 
 interface Props {
 	disabled?: boolean;

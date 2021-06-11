@@ -1,7 +1,6 @@
 import { useFormField } from "app/components/Form/useFormField";
 import { Icon } from "app/components/Icon";
 import { Input } from "app/components/Input";
-import { SelectDropdownInput } from "app/components/SelectDropdown/SelectDropdownInput";
 import cn from "classnames";
 import { useCombobox } from "downshift";
 import React, { useEffect, useMemo, useState } from "react";
@@ -12,6 +11,7 @@ import { SelectOptionsList } from "./styles";
 interface Option {
 	label: string;
 	value: string | number;
+	isSelected?: boolean;
 }
 
 type SelectProps = {
@@ -169,58 +169,63 @@ const SelectDropdown = ({
 		};
 	}
 
+	const handleBlur = (event: React.FocusEvent<HTMLInputElement>) => {
+		if (allowFreeInput) {
+			const selectedItem = { label: event.target.value, value: event.target.value };
+			handleInputChange({ selectedItem });
+			return;
+		}
+
+		const firstMatch = options.find((option) => isMatch(inputValue, option));
+
+		if (inputValue && firstMatch) {
+			selectItem(firstMatch);
+			handleInputChange({ selectedItem: firstMatch });
+
+			closeMenu();
+		} else {
+			reset();
+		}
+	};
+
+	const handleKeyDown = (event: React.KeyboardEvent<HTMLInputElement>) => {
+		if (event.key === "Tab" || event.key === "Enter") {
+			// check if item already was selected
+			if (selectedItem?.label === inputValue) {
+				return;
+			}
+
+			// Select first suggestion
+			const firstMatch = options.find((option) => isMatch(inputValue, option));
+
+			if (inputValue && firstMatch) {
+				selectItem(firstMatch);
+				handleInputChange({ selectedItem: firstMatch });
+
+				if (event.key === "Enter") {
+					closeMenu();
+				}
+			}
+		}
+	};
+
 	return (
 		<div className="relative w-full">
 			<div {...getComboboxProps()}>
 				<label {...getLabelProps()} />
-				<SelectDropdownInput
+				<Input
+					data-testid="SelectDropdown__input"
 					suggestion={suggestion}
 					disabled={disabled}
 					isInvalid={isInvalid}
 					addons={addons}
-					innerClassName={cn("cursor-default", innerClassName)}
+					innerClassName={cn({ "cursor-default": !inputValue }, innerClassName)}
 					{...getInputProps({
 						placeholder,
 						className,
 						onFocus: openMenu,
-						onBlur: (event) => {
-							if (allowFreeInput) {
-								const selectedItem = { label: event.target.value, value: event.target.value };
-								handleInputChange({ selectedItem });
-								return;
-							}
-
-							const firstMatch = options.find((option) => isMatch(inputValue, option));
-
-							if (inputValue && firstMatch) {
-								selectItem(firstMatch);
-								handleInputChange({ selectedItem: firstMatch });
-
-								closeMenu();
-							} else {
-								reset();
-							}
-						},
-						onKeyDown: (event) => {
-							if (event.key === "Tab" || event.key === "Enter") {
-								// check if item already was selected
-								if (selectedItem?.label === inputValue) {
-									return;
-								}
-
-								// Select first suggestion
-								const firstMatch = options.find((option) => isMatch(inputValue, option));
-
-								if (inputValue && firstMatch) {
-									selectItem(firstMatch);
-									handleInputChange({ selectedItem: firstMatch });
-
-									if (event.key === "Enter") {
-										closeMenu();
-									}
-								}
-							}
-						},
+						onBlur: handleBlur,
+						onKeyDown: handleKeyDown,
 					})}
 				/>
 				<SelectOptionsList {...getMenuProps({ className: isOpen ? "is-open" : "" })}>
@@ -229,7 +234,7 @@ const SelectDropdown = ({
 							data.map((item: Option, index: number) => (
 								<li
 									key={`${item.value}${index}`}
-									data-testid={`select-list__toggle-option-${index}`}
+									data-testid={`SelectDropdown__option--${index}`}
 									{...getItemProps({
 										index,
 										item,
@@ -246,14 +251,14 @@ const SelectDropdown = ({
 									})}
 								>
 									<div className="select-list-option__label">
-										{renderLabel ? renderLabel({ ...item }) : item.label}
+										{renderLabel
+											? renderLabel({ ...item, isSelected: item.label === inputValue })
+											: item.label}
 									</div>
 								</li>
 							))
 						) : (
-							<li className="select-list-option is-empty" data-testid="select-list__empty-option">
-								{t("COMMON.NO_OPTIONS")}
-							</li>
+							<li className="select-list-option is-empty">{t("COMMON.NO_OPTIONS")}</li>
 						))}
 				</SelectOptionsList>
 			</div>

@@ -450,17 +450,17 @@ describe("PluginManager", () => {
 			expect(within(screen.getByTestId("PluginManager__latest__gaming")).getByTestId("PluginGrid")).toBeTruthy(),
 		);
 
-		fireEvent.click(screen.getByTestId("header-search-bar__button"));
-		expect(within(screen.getByTestId("header-search-bar__input")).getByTestId("Input")).toBeTruthy();
+		fireEvent.click(within(screen.getByTestId("HeaderSearchBar")).getByRole("button"));
+		expect(within(screen.getByTestId("HeaderSearchBar__input")).getByTestId("Input")).toBeTruthy();
 
-		fireEvent.input(within(screen.getByTestId("header-search-bar__input")).getByTestId("Input"), {
+		fireEvent.input(within(screen.getByTestId("HeaderSearchBar__input")).getByTestId("Input"), {
 			target: { value: "Transaction Export" },
 		});
 
 		await waitFor(() => expect(screen.getByText(translations.PAGE_PLUGIN_MANAGER.VIEW.SEARCH)).toBeInTheDocument());
 		await waitFor(() => expect(screen.getAllByTestId("PluginImage__logo")).toHaveLength(1));
 
-		fireEvent.input(within(screen.getByTestId("header-search-bar__input")).getByTestId("Input"), {
+		fireEvent.input(within(screen.getByTestId("HeaderSearchBar__input")).getByTestId("Input"), {
 			target: { value: "unknown search query" },
 		});
 

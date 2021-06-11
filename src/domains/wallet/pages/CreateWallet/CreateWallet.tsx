@@ -56,7 +56,7 @@ export const CreateWallet = () => {
 
 				forgetTemporaryWallet();
 
-				wallet = await activeProfile.walletFactory().fromMnemonicWithEncryption({
+				wallet = await activeProfile.walletFactory().fromMnemonicWithBIP39({
 					coin,
 					network,
 					password: encryptionPassword,

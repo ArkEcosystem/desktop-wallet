@@ -3,7 +3,7 @@
 exports[`LedgerReview should render for unvote and vote transaction 1`] = `
 <div>
   <div
-    class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 cRGLsx no-ligatures"
+    class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 kakuTR no-ligatures"
     data-testid="TransactionDetail"
   >
     <div
@@ -41,11 +41,11 @@ exports[`LedgerReview should render for unvote and vote transaction 1`] = `
                 </div>
               </div>
               <div
-                class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap"
+                class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap space-x-2"
               >
                 <span
-                  class="max-w-24 truncate mr-2 font-semibold text-base text-theme-text"
-                  data-testid="address__wallet-name"
+                  class="font-semibold text-base text-theme-text"
+                  data-testid="Address__alias"
                 >
                   <span
                     class="TruncateEnd__Wrapper-sc-1w1nvb9-0"
@@ -55,8 +55,8 @@ exports[`LedgerReview should render for unvote and vote transaction 1`] = `
                   </span>
                 </span>
                 <span
-                  class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-secondary-500 dark:text-theme-secondary-700 font-semibold text-base"
-                  data-testid="address__wallet-address"
+                  class="inline-flex overflow-hidden text-theme-secondary-500 dark:text-theme-secondary-700 font-semibold text-base"
+                  data-testid="Address__address"
                 >
                   D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD
                 </span>
@@ -68,7 +68,7 @@ exports[`LedgerReview should render for unvote and vote transaction 1`] = `
     </div>
   </div>
   <div
-    class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 izxcpX no-ligatures"
+    class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 cHOkoL no-ligatures"
     data-testid="TransactionDetail"
   >
     <div
@@ -106,11 +106,11 @@ exports[`LedgerReview should render for unvote and vote transaction 1`] = `
                 </div>
               </div>
               <div
-                class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap"
+                class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap space-x-2"
               >
                 <span
-                  class="max-w-24 truncate mr-2 font-semibold text-base text-theme-text"
-                  data-testid="address__wallet-name"
+                  class="font-semibold text-base text-theme-text"
+                  data-testid="Address__alias"
                 >
                   <span
                     class="TruncateEnd__Wrapper-sc-1w1nvb9-0"
@@ -120,8 +120,8 @@ exports[`LedgerReview should render for unvote and vote transaction 1`] = `
                   </span>
                 </span>
                 <span
-                  class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-secondary-500 dark:text-theme-secondary-700 font-semibold text-base"
-                  data-testid="address__wallet-address"
+                  class="inline-flex overflow-hidden text-theme-secondary-500 dark:text-theme-secondary-700 font-semibold text-base"
+                  data-testid="Address__address"
                 >
                   D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD
                 </span>
@@ -136,7 +136,7 @@ exports[`LedgerReview should render for unvote and vote transaction 1`] = `
     class="mt-2"
   >
     <div
-      class="rounded-lg border border-theme-secondary-300 dark:border-theme-secondary-800"
+      class="border rounded-lg border-theme-secondary-300 dark:border-theme-secondary-800"
     >
       <div
         class="relative p-4"
@@ -145,7 +145,7 @@ exports[`LedgerReview should render for unvote and vote transaction 1`] = `
           class="flex divide-x divide-theme-secondary-300 dark:divide-theme-secondary-800"
         >
           <div
-            class="flex flex-col w-1/2 justify-center px-4 py-2"
+            class="flex flex-col justify-center w-1/2 px-4 py-2"
           >
             <span
               class="TotalAmountBox__AmountLabel-sc-178fnso-0 gGuMGd"
@@ -160,7 +160,7 @@ exports[`LedgerReview should render for unvote and vote transaction 1`] = `
             </span>
           </div>
           <div
-            class="flex flex-col w-1/2 justify-center px-4 py-2 text-right"
+            class="flex flex-col justify-center w-1/2 px-4 py-2 text-right"
           >
             <span
               class="TotalAmountBox__AmountLabel-sc-178fnso-0 gGuMGd"
@@ -176,7 +176,7 @@ exports[`LedgerReview should render for unvote and vote transaction 1`] = `
           </div>
         </div>
         <div
-          class="absolute transform top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2"
+          class="absolute transform -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
         >
           <div
             class="py-2 ml-px bg-theme-background text-theme-secondary-900 dark:text-theme-secondary-600"
@@ -194,7 +194,7 @@ exports[`LedgerReview should render for unvote and vote transaction 1`] = `
         </div>
       </div>
       <div
-        class="flex flex-col items-center py-6 rounded-b-lg border-t border-theme-secondary-300 dark:border-theme-secondary-800 justfiy-center bg-theme-secondary-100 dark:bg-theme-secondary-800"
+        class="flex flex-col items-center py-6 border-t rounded-b-lg border-theme-secondary-300 dark:border-theme-secondary-800 justfiy-center bg-theme-secondary-100 dark:bg-theme-secondary-800"
       >
         <span
           class="TotalAmountBox__AmountLabel-sc-178fnso-0 gGuMGd"
@@ -216,7 +216,7 @@ exports[`LedgerReview should render for unvote and vote transaction 1`] = `
 exports[`LedgerReview should render for unvote transaction 1`] = `
 <div>
   <div
-    class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 cRGLsx no-ligatures"
+    class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 kakuTR no-ligatures"
     data-testid="TransactionDetail"
   >
     <div
@@ -254,11 +254,11 @@ exports[`LedgerReview should render for unvote transaction 1`] = `
                 </div>
               </div>
               <div
-                class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap"
+                class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap space-x-2"
               >
                 <span
-                  class="max-w-24 truncate mr-2 font-semibold text-base text-theme-text"
-                  data-testid="address__wallet-name"
+                  class="font-semibold text-base text-theme-text"
+                  data-testid="Address__alias"
                 >
                   <span
                     class="TruncateEnd__Wrapper-sc-1w1nvb9-0"
@@ -268,8 +268,8 @@ exports[`LedgerReview should render for unvote transaction 1`] = `
                   </span>
                 </span>
                 <span
-                  class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-secondary-500 dark:text-theme-secondary-700 font-semibold text-base"
-                  data-testid="address__wallet-address"
+                  class="inline-flex overflow-hidden text-theme-secondary-500 dark:text-theme-secondary-700 font-semibold text-base"
+                  data-testid="Address__address"
                 >
                   D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD
                 </span>
@@ -284,7 +284,7 @@ exports[`LedgerReview should render for unvote transaction 1`] = `
     class="mt-2"
   >
     <div
-      class="rounded-lg border border-theme-secondary-300 dark:border-theme-secondary-800"
+      class="border rounded-lg border-theme-secondary-300 dark:border-theme-secondary-800"
     >
       <div
         class="relative p-4"
@@ -293,7 +293,7 @@ exports[`LedgerReview should render for unvote transaction 1`] = `
           class="flex divide-x divide-theme-secondary-300 dark:divide-theme-secondary-800"
         >
           <div
-            class="flex flex-col w-1/2 justify-center px-4 py-2"
+            class="flex flex-col justify-center w-1/2 px-4 py-2"
           >
             <span
               class="TotalAmountBox__AmountLabel-sc-178fnso-0 gGuMGd"
@@ -308,7 +308,7 @@ exports[`LedgerReview should render for unvote transaction 1`] = `
             </span>
           </div>
           <div
-            class="flex flex-col w-1/2 justify-center px-4 py-2 text-right"
+            class="flex flex-col justify-center w-1/2 px-4 py-2 text-right"
           >
             <span
               class="TotalAmountBox__AmountLabel-sc-178fnso-0 gGuMGd"
@@ -324,7 +324,7 @@ exports[`LedgerReview should render for unvote transaction 1`] = `
           </div>
         </div>
         <div
-          class="absolute transform top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2"
+          class="absolute transform -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
         >
           <div
             class="py-2 ml-px bg-theme-background text-theme-secondary-900 dark:text-theme-secondary-600"
@@ -342,7 +342,7 @@ exports[`LedgerReview should render for unvote transaction 1`] = `
         </div>
       </div>
       <div
-        class="flex flex-col items-center py-6 rounded-b-lg border-t border-theme-secondary-300 dark:border-theme-secondary-800 justfiy-center bg-theme-secondary-100 dark:bg-theme-secondary-800"
+        class="flex flex-col items-center py-6 border-t rounded-b-lg border-theme-secondary-300 dark:border-theme-secondary-800 justfiy-center bg-theme-secondary-100 dark:bg-theme-secondary-800"
       >
         <span
           class="TotalAmountBox__AmountLabel-sc-178fnso-0 gGuMGd"
@@ -364,7 +364,7 @@ exports[`LedgerReview should render for unvote transaction 1`] = `
 exports[`LedgerReview should render for vote transaction 1`] = `
 <div>
   <div
-    class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 cRGLsx no-ligatures"
+    class="TransactionDetail__TransactionDetailStyled-sc-15h16fu-0 kakuTR no-ligatures"
     data-testid="TransactionDetail"
   >
     <div
@@ -402,11 +402,11 @@ exports[`LedgerReview should render for vote transaction 1`] = `
                 </div>
               </div>
               <div
-                class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap"
+                class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap space-x-2"
               >
                 <span
-                  class="max-w-24 truncate mr-2 font-semibold text-base text-theme-text"
-                  data-testid="address__wallet-name"
+                  class="font-semibold text-base text-theme-text"
+                  data-testid="Address__alias"
                 >
                   <span
                     class="TruncateEnd__Wrapper-sc-1w1nvb9-0"
@@ -416,8 +416,8 @@ exports[`LedgerReview should render for vote transaction 1`] = `
                   </span>
                 </span>
                 <span
-                  class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-secondary-500 dark:text-theme-secondary-700 font-semibold text-base"
-                  data-testid="address__wallet-address"
+                  class="inline-flex overflow-hidden text-theme-secondary-500 dark:text-theme-secondary-700 font-semibold text-base"
+                  data-testid="Address__address"
                 >
                   D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD
                 </span>
@@ -432,7 +432,7 @@ exports[`LedgerReview should render for vote transaction 1`] = `
     class="mt-2"
   >
     <div
-      class="rounded-lg border border-theme-secondary-300 dark:border-theme-secondary-800"
+      class="border rounded-lg border-theme-secondary-300 dark:border-theme-secondary-800"
     >
       <div
         class="relative p-4"
@@ -441,7 +441,7 @@ exports[`LedgerReview should render for vote transaction 1`] = `
           class="flex divide-x divide-theme-secondary-300 dark:divide-theme-secondary-800"
         >
           <div
-            class="flex flex-col w-1/2 justify-center px-4 py-2"
+            class="flex flex-col justify-center w-1/2 px-4 py-2"
           >
             <span
               class="TotalAmountBox__AmountLabel-sc-178fnso-0 gGuMGd"
@@ -456,7 +456,7 @@ exports[`LedgerReview should render for vote transaction 1`] = `
             </span>
           </div>
           <div
-            class="flex flex-col w-1/2 justify-center px-4 py-2 text-right"
+            class="flex flex-col justify-center w-1/2 px-4 py-2 text-right"
           >
             <span
               class="TotalAmountBox__AmountLabel-sc-178fnso-0 gGuMGd"
@@ -472,7 +472,7 @@ exports[`LedgerReview should render for vote transaction 1`] = `
           </div>
         </div>
         <div
-          class="absolute transform top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2"
+          class="absolute transform -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
         >
           <div
             class="py-2 ml-px bg-theme-background text-theme-secondary-900 dark:text-theme-secondary-600"
@@ -490,7 +490,7 @@ exports[`LedgerReview should render for vote transaction 1`] = `
         </div>
       </div>
       <div
-        class="flex flex-col items-center py-6 rounded-b-lg border-t border-theme-secondary-300 dark:border-theme-secondary-800 justfiy-center bg-theme-secondary-100 dark:bg-theme-secondary-800"
+        class="flex flex-col items-center py-6 border-t rounded-b-lg border-theme-secondary-300 dark:border-theme-secondary-800 justfiy-center bg-theme-secondary-100 dark:bg-theme-secondary-800"
       >
         <span
           class="TotalAmountBox__AmountLabel-sc-178fnso-0 gGuMGd"

@@ -26,7 +26,7 @@ interface NetworkOption {
 const AddressListItem = ({ address, onRemove }: AddressListItemProps) => (
 	<div
 		data-testid="contact-form__address-list-item"
-		className="flex items-center py-4 last:pb-0 border-b border-dashed last:border-b-0 border-theme-secondary-300 dark:border-theme-secondary-800"
+		className="flex items-center py-4 border-b border-dashed last:pb-0 last:border-b-0 border-theme-secondary-300 dark:border-theme-secondary-800"
 	>
 		<div className="mr-4">
 			<div className="flex items-center -space-x-1">
@@ -36,7 +36,7 @@ const AddressListItem = ({ address, onRemove }: AddressListItemProps) => (
 		</div>
 
 		<span className="font-semibold">
-			<Address address={address.address} maxChars={24} />
+			<Address address={address.address} />
 		</span>
 
 		<Button
@@ -129,7 +129,7 @@ export const ContactForm = ({ profile, contact, onChange, onCancel, onDelete, on
 	const handleAddAddress = async () => {
 		const instance: Coins.Coin = profile.coins().set(network.coin(), network.id());
 		await instance.__construct();
-		const isValidAddress: boolean = await instance.identity().address().validate(address);
+		const isValidAddress: boolean = await instance.address().validate(address);
 
 		if (!isValidAddress) {
 			return setError("address", { type: "manual", message: t("CONTACTS.VALIDATION.ADDRESS_IS_INVALID") });

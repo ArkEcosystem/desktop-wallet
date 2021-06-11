@@ -1,8 +1,8 @@
-import { Contracts } from "@arkecosystem/platform-sdk";
-import { Signatory } from "@arkecosystem/platform-sdk/dist/signatories";
+import { Contracts, Signatories } from "@arkecosystem/platform-sdk";
 import { Contracts as ProfileContracts, Environment } from "@arkecosystem/platform-sdk-profiles";
 import { TFunction } from "i18next";
 import { useForm } from "react-hook-form";
+import { TransactionFees } from "types";
 
 export type ExtendedSignedTransactionData = Contracts.SignedTransactionData & {
 	generatedAddress?: string;
@@ -16,7 +16,7 @@ export interface SendRegistrationDetailsOptions {
 
 export interface SendRegistrationComponent {
 	activeTab: number;
-	fees: Contracts.TransactionFee;
+	fees: TransactionFees;
 	wallet: ProfileContracts.IReadWriteWallet;
 	profile: ProfileContracts.IProfile;
 }
@@ -25,7 +25,7 @@ export interface SendRegistrationSignOptions {
 	env: Environment;
 	form: ReturnType<typeof useForm>;
 	profile: ProfileContracts.IProfile;
-	signatory: Signatory;
+	signatory: Signatories.Signatory;
 }
 
 export interface SendRegistrationForm {

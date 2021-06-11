@@ -1,4 +1,4 @@
-import { Coins } from "@arkecosystem/platform-sdk";
+import { Enums } from "@arkecosystem/platform-sdk";
 import { Contracts } from "@arkecosystem/platform-sdk-profiles";
 import { Amount } from "app/components/Amount";
 import { Avatar } from "app/components/Avatar";
@@ -7,10 +7,10 @@ import { Clipboard } from "app/components/Clipboard";
 import { Dropdown, DropdownOption, DropdownOptionGroup } from "app/components/Dropdown";
 import { Icon } from "app/components/Icon";
 import { Tooltip } from "app/components/Tooltip";
+import { TruncateMiddleDynamic } from "app/components/TruncateMiddleDynamic";
 import { WalletIcons } from "app/components/WalletIcons";
 import { useEnvironmentContext } from "app/contexts";
 import { usePrevious } from "app/hooks";
-import { useTextTruncate } from "app/hooks/use-text-truncate";
 import { NetworkIcon } from "domains/network/components/NetworkIcon";
 import { DeleteWallet } from "domains/wallet/components/DeleteWallet";
 import { ReceiveFunds } from "domains/wallet/components/ReceiveFunds";
@@ -18,7 +18,7 @@ import { SignMessage } from "domains/wallet/components/SignMessage";
 import { UpdateWalletName } from "domains/wallet/components/UpdateWalletName";
 import { VerifyMessage } from "domains/wallet/components/VerifyMessage";
 import { useWalletSync } from "domains/wallet/hooks/use-wallet-sync";
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { useHistory } from "react-router-dom";
 import { openExternal } from "utils/electron-utils";
@@ -40,9 +40,6 @@ export const WalletHeader = ({
 	isUpdatingTransactions,
 	onUpdate,
 }: WalletHeaderProps) => {
-	const ref = useRef(null);
-	const [TruncatedAddress] = useTextTruncate({ text: wallet.address(), parentRef: ref });
-
 	const [modal, setModal] = useState<string | undefined>();
 
 	const { env } = useEnvironmentContext();
@@ -105,7 +102,7 @@ export const WalletHeader = ({
 
 	if (!wallet.isLedger() && wallet.hasBeenFullyRestored()) {
 		if (wallet.hasSyncedWithNetwork()) {
-			if (wallet.network().allows(Coins.FeatureFlag.TransactionDelegateRegistration) && !wallet.isDelegate()) {
+			if (wallet.network().allows(Enums.FeatureFlag.TransactionDelegateRegistration) && !wallet.isDelegate()) {
 				registrationOptions.options.push({
 					label: t("WALLETS.PAGE_WALLET_DETAILS.OPTIONS.REGISTER_DELEGATE"),
 					value: "delegate-registration",
@@ -113,7 +110,7 @@ export const WalletHeader = ({
 			}
 
 			if (
-				wallet.network().allows(Coins.FeatureFlag.TransactionDelegateResignation) &&
+				wallet.network().allows(Enums.FeatureFlag.TransactionDelegateResignation) &&
 				wallet.isDelegate() &&
 				!wallet.isResignedDelegate()
 			) {
@@ -123,7 +120,7 @@ export const WalletHeader = ({
 				});
 			}
 
-			if (wallet.network().allows(Coins.FeatureFlag.TransactionSecondSignature) && !wallet.isSecondSignature()) {
+			if (wallet.network().allows(Enums.FeatureFlag.TransactionSecondSignature) && !wallet.isSecondSignature()) {
 				registrationOptions.options.push({
 					label: t("WALLETS.PAGE_WALLET_DETAILS.OPTIONS.SECOND_SIGNATURE"),
 					value: "second-signature",
@@ -131,7 +128,7 @@ export const WalletHeader = ({
 			}
 		}
 
-		if (wallet.network().allows(Coins.FeatureFlag.TransactionMultiSignature)) {
+		if (wallet.network().allows(Enums.FeatureFlag.TransactionMultiSignature)) {
 			registrationOptions.options.push({
 				label: t("WALLETS.PAGE_WALLET_DETAILS.OPTIONS.MULTISIGNATURE"),
 				value: "multi-signature",
@@ -145,14 +142,14 @@ export const WalletHeader = ({
 		options: [],
 	};
 
-	if (wallet.network().allows(Coins.FeatureFlag.MessageSign)) {
+	if (wallet.network().allows(Enums.FeatureFlag.MessageSign)) {
 		additionalOptions.options.push({
 			label: t("WALLETS.PAGE_WALLET_DETAILS.OPTIONS.SIGN_MESSAGE"),
 			value: "sign-message",
 		});
 	}
 
-	if (wallet.network().allows(Coins.FeatureFlag.MessageVerify)) {
+	if (wallet.network().allows(Enums.FeatureFlag.MessageVerify)) {
 		additionalOptions.options.push({
 			label: t("WALLETS.PAGE_WALLET_DETAILS.OPTIONS.VERIFY_MESSAGE"),
 			value: "verify-message",
@@ -160,7 +157,7 @@ export const WalletHeader = ({
 	}
 
 	if (
-		wallet.network().allows(Coins.FeatureFlag.TransactionIpfs) &&
+		wallet.network().allows(Enums.FeatureFlag.TransactionIpfs) &&
 		wallet.hasBeenFullyRestored() &&
 		wallet.hasSyncedWithNetwork()
 	) {
@@ -243,7 +240,7 @@ export const WalletHeader = ({
 	return (
 		<>
 			<header className="flex items-center" data-testid="WalletHeader">
-				<div className="flex items-center w-1/2 pr-12 space-x-4 border-r h-13 border-theme-secondary-800">
+				<div className="flex items-center w-1/2 pr-12 border-r h-13 border-theme-secondary-800">
 					<div className="flex -space-x-1">
 						<NetworkIcon
 							coin={wallet.coinId()}
@@ -255,7 +252,7 @@ export const WalletHeader = ({
 						<Avatar size="lg" address={wallet.address()} shadowClassName="ring-theme-secondary-900" />
 					</div>
 
-					<div className="flex flex-col w-full">
+					<div className="flex flex-col w-full py-2 -my-2 pr-2 ml-4 -mr-2 overflow-hidden">
 						<div className="flex items-center space-x-5 text-theme-secondary-text">
 							{wallet.alias() && (
 								<span data-testid="WalletHeader__name" className="text-sm font-semibold">
@@ -272,13 +269,11 @@ export const WalletHeader = ({
 							</div>
 						</div>
 
-						<div className="flex items-center space-x-5 w-full">
-							<span
-								ref={ref}
-								className="w-36 flex-1 text-lg font-semibold text-white overflow-hidden whitespace-nowrap"
-							>
-								<TruncatedAddress />
-							</span>
+						<div className="flex items-center w-full space-x-5">
+							<TruncateMiddleDynamic
+								value={wallet.address()}
+								className="flex-1 text-lg font-semibold text-white whitespace-nowrap"
+							/>
 
 							<div className="flex items-end mb-1 space-x-3 text-theme-secondary-text">
 								<Clipboard
@@ -350,7 +345,7 @@ export const WalletHeader = ({
 						/>
 					</div>
 
-					<div className="my-auto flex items-center -space-x-2">
+					<div className="flex items-center my-auto -space-x-2">
 						<Tooltip
 							content={isSyncing ? t("WALLETS.UPDATING_WALLET_DATA") : t("WALLETS.UPDATE_WALLET_DATA")}
 							disabled={!wallet.hasSyncedWithNetwork()}
@@ -412,7 +407,7 @@ export const WalletHeader = ({
 								<Button
 									variant="transparent"
 									size="icon"
-									className="bg-theme-secondary-800 text-white hover:bg-theme-primary-700"
+									className="text-white bg-theme-secondary-800 hover:bg-theme-primary-700"
 								>
 									<Icon name="Settings" width={20} height={20} />
 								</Button>

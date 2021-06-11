@@ -21,12 +21,12 @@ describe("useWalletImport", () => {
 		const wallet = profile.wallets().first();
 		const network = wallet.network();
 
-		const mockEncryptedWif = jest.spyOn(profile.walletFactory(), "fromWIFWithEncryption").mockImplementation(() => {
+		const mockEncryptedWif = jest.spyOn(profile.walletFactory(), "fromWIF").mockImplementation(() => {
 			throw new Error("error");
 		});
 
 		await act(async () => {
-			expect(
+			await expect(
 				current.importWalletByType({ network, type: "encryptedWif", value: "password", encryptedWif: "wif" }),
 			).rejects.toBeTruthy();
 		});
@@ -34,7 +34,7 @@ describe("useWalletImport", () => {
 		mockEncryptedWif.mockRestore();
 
 		await act(async () => {
-			expect(
+			await expect(
 				current.importWalletByType({ network, type: "uknown", value: "password", encryptedWif: "wif" }),
 			).resolves.toBeUndefined();
 		});

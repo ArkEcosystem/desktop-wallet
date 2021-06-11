@@ -1,4 +1,4 @@
-import { Coins } from "@arkecosystem/platform-sdk";
+import { Networks } from "@arkecosystem/platform-sdk";
 import { Contracts } from "@arkecosystem/platform-sdk-profiles";
 import Tippy from "@tippyjs/react";
 import { Address } from "app/components/Address";
@@ -43,7 +43,7 @@ export const LedgerTable = ({
 	toggleSelectAll,
 	isScanning,
 }: {
-	network: Coins.Network;
+	network: Networks.Network;
 } & ReturnType<typeof useLedgerScanner>) => {
 	const { t } = useTranslation();
 	const isAllSelected = !isScanning && wallets.length > 0 && selectedWallets.length === wallets.length;
@@ -56,7 +56,7 @@ export const LedgerTable = ({
 		{
 			Header: t("COMMON.BALANCE"),
 			accessor: "balance",
-			className: "justify-end",
+			className: "no-border justify-end",
 		},
 		{
 			Header: (
@@ -87,7 +87,7 @@ export const LedgerTable = ({
 				if (showSkeleton) {
 					return (
 						<TableRow>
-							<TableCell variant="start" innerClassName="space-x-4">
+							<TableCell variant="start" className="w-2/5" innerClassName="space-x-4">
 								<Circle className="border-transparent" size="lg">
 									<Skeleton circle height={44} width={44} />
 								</Circle>
@@ -107,13 +107,15 @@ export const LedgerTable = ({
 
 				return (
 					<TableRow isSelected={isSelected(wallet.path)}>
-						<TableCell variant="start" innerClassName="space-x-4">
+						<TableCell variant="start" className="w-2/5" innerClassName="space-x-4">
 							<Avatar address={wallet.address} size="lg" noShadow />
-							<Address address={wallet.address} />
+							<div className="flex flex-1 w-32">
+								<Address address={wallet.address} />
+							</div>
 							<span className="hidden">{wallet.path}</span>
 						</TableCell>
 
-						<TableCell innerClassName="justify-end font-semibold" className="w-64">
+						<TableCell innerClassName="justify-end font-semibold">
 							<AmountWrapper isLoading={false}>
 								<Amount value={wallet.balance!} ticker={network.ticker()} />
 							</AmountWrapper>
@@ -138,7 +140,7 @@ export const LedgerScanStep = ({
 }) => {
 	const { t } = useTranslation();
 	const { watch, register, unregister, setValue } = useFormContext();
-	const [network] = useState<Coins.Network>(() => watch("network"));
+	const [network] = useState<Networks.Network>(() => watch("network"));
 
 	const ledgerScanner = useLedgerScanner(network.coin(), network.id());
 

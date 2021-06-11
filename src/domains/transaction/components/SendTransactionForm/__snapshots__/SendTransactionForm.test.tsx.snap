@@ -14,10 +14,6 @@ exports[`SendTransactionForm should render 1`] = `
         for="network"
       >
         Cryptoasset
-        <div
-          class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
-          data-testid="FormLabel__required"
-        />
       </label>
       <div>
         <div
@@ -120,16 +116,12 @@ exports[`SendTransactionForm should render 1`] = `
         for="senderAddress"
       >
         Sender
-        <div
-          class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
-          data-testid="FormLabel__required"
-        />
       </label>
       <div
         data-testid="sender-address"
       >
         <button
-          class="relative w-full"
+          class="relative w-full rounded focus:outline-none focus:ring-2 focus:ring-theme-primary-400"
           data-testid="SelectAddress__wrapper"
           type="button"
         >
@@ -137,7 +129,7 @@ exports[`SendTransactionForm should render 1`] = `
             class="absolute inset-0 flex items-center border border-transparent px-14 w-full"
           >
             <div
-              class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap"
+              class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap space-x-2"
             />
           </span>
           <div
@@ -197,10 +189,6 @@ exports[`SendTransactionForm should render 1`] = `
         for="fee"
       >
         Transaction Fee
-        <div
-          class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
-          data-testid="FormLabel__required"
-        />
       </label>
       <div
         class="flex space-x-2"
@@ -257,10 +245,6 @@ exports[`SendTransactionForm should select a network & update fees 1`] = `
         for="network"
       >
         Cryptoasset
-        <div
-          class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
-          data-testid="FormLabel__required"
-        />
       </label>
       <div>
         <div
@@ -375,16 +359,12 @@ exports[`SendTransactionForm should select a network & update fees 1`] = `
         for="senderAddress"
       >
         Sender
-        <div
-          class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
-          data-testid="FormLabel__required"
-        />
       </label>
       <div
         data-testid="sender-address"
       >
         <button
-          class="relative w-full"
+          class="relative w-full rounded focus:outline-none focus:ring-2 focus:ring-theme-primary-400"
           data-testid="SelectAddress__wrapper"
           type="button"
         >
@@ -392,11 +372,11 @@ exports[`SendTransactionForm should select a network & update fees 1`] = `
             class="absolute inset-0 flex items-center border border-transparent px-14 w-full"
           >
             <div
-              class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap"
+              class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap space-x-2"
             >
               <span
-                class="max-w-24 truncate mr-2 font-semibold text-base text-theme-text"
-                data-testid="address__wallet-name"
+                class="font-semibold text-base text-theme-text"
+                data-testid="Address__alias"
               >
                 <span
                   class="TruncateEnd__Wrapper-sc-1w1nvb9-0"
@@ -406,8 +386,8 @@ exports[`SendTransactionForm should select a network & update fees 1`] = `
                 </span>
               </span>
               <span
-                class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-secondary-500 dark:text-theme-secondary-700 font-semibold text-base"
-                data-testid="address__wallet-address"
+                class="inline-flex overflow-hidden text-theme-secondary-500 dark:text-theme-secondary-700 font-semibold text-base"
+                data-testid="Address__address"
               >
                 D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb
               </span>
@@ -481,10 +461,6 @@ exports[`SendTransactionForm should select a network & update fees 1`] = `
         for="fee"
       >
         Transaction Fee
-        <div
-          class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
-          data-testid="FormLabel__required"
-        />
       </label>
       <div
         class="flex space-x-2"
@@ -528,7 +504,6 @@ exports[`SendTransactionForm should select a network & update fees 1`] = `
             aria-checked="false"
             class="ButtonGroup__ButtonGroupOptionStyled-sc-1u00raz-0 cqjOKw"
             data-testid="ButtonGroupOption"
-            disabled=""
             role="radio"
             type="button"
           >
@@ -538,7 +513,6 @@ exports[`SendTransactionForm should select a network & update fees 1`] = `
             aria-checked="false"
             class="ButtonGroup__ButtonGroupOptionStyled-sc-1u00raz-0 cqjOKw"
             data-testid="ButtonGroupOption"
-            disabled=""
             role="radio"
             type="button"
           >
@@ -548,7 +522,6 @@ exports[`SendTransactionForm should select a network & update fees 1`] = `
             aria-checked="false"
             class="ButtonGroup__ButtonGroupOptionStyled-sc-1u00raz-0 cqjOKw"
             data-testid="ButtonGroupOption"
-            disabled=""
             role="radio"
             type="button"
           >
@@ -575,10 +548,6 @@ exports[`SendTransactionForm should use static fees if avg is not available 1`] 
         for="network"
       >
         Cryptoasset
-        <div
-          class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
-          data-testid="FormLabel__required"
-        />
       </label>
       <div>
         <div
@@ -693,16 +662,12 @@ exports[`SendTransactionForm should use static fees if avg is not available 1`] 
         for="senderAddress"
       >
         Sender
-        <div
-          class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
-          data-testid="FormLabel__required"
-        />
       </label>
       <div
         data-testid="sender-address"
       >
         <button
-          class="relative w-full"
+          class="relative w-full rounded focus:outline-none focus:ring-2 focus:ring-theme-primary-400"
           data-testid="SelectAddress__wrapper"
           type="button"
         >
@@ -710,11 +675,11 @@ exports[`SendTransactionForm should use static fees if avg is not available 1`] 
             class="absolute inset-0 flex items-center border border-transparent px-14 w-full"
           >
             <div
-              class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap"
+              class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap space-x-2"
             >
               <span
-                class="max-w-24 truncate mr-2 font-semibold text-base text-theme-text"
-                data-testid="address__wallet-name"
+                class="font-semibold text-base text-theme-text"
+                data-testid="Address__alias"
               >
                 <span
                   class="TruncateEnd__Wrapper-sc-1w1nvb9-0"
@@ -724,8 +689,8 @@ exports[`SendTransactionForm should use static fees if avg is not available 1`] 
                 </span>
               </span>
               <span
-                class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-secondary-500 dark:text-theme-secondary-700 font-semibold text-base"
-                data-testid="address__wallet-address"
+                class="inline-flex overflow-hidden text-theme-secondary-500 dark:text-theme-secondary-700 font-semibold text-base"
+                data-testid="Address__address"
               >
                 D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb
               </span>
@@ -799,10 +764,6 @@ exports[`SendTransactionForm should use static fees if avg is not available 1`] 
         for="fee"
       >
         Transaction Fee
-        <div
-          class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
-          data-testid="FormLabel__required"
-        />
       </label>
       <div
         class="flex space-x-2"
@@ -846,7 +807,6 @@ exports[`SendTransactionForm should use static fees if avg is not available 1`] 
             aria-checked="false"
             class="ButtonGroup__ButtonGroupOptionStyled-sc-1u00raz-0 cqjOKw"
             data-testid="ButtonGroupOption"
-            disabled=""
             role="radio"
             type="button"
           >
@@ -856,7 +816,6 @@ exports[`SendTransactionForm should use static fees if avg is not available 1`] 
             aria-checked="false"
             class="ButtonGroup__ButtonGroupOptionStyled-sc-1u00raz-0 cqjOKw"
             data-testid="ButtonGroupOption"
-            disabled=""
             role="radio"
             type="button"
           >
@@ -866,7 +825,6 @@ exports[`SendTransactionForm should use static fees if avg is not available 1`] 
             aria-checked="false"
             class="ButtonGroup__ButtonGroupOptionStyled-sc-1u00raz-0 cqjOKw"
             data-testid="ButtonGroupOption"
-            disabled=""
             role="radio"
             type="button"
           >

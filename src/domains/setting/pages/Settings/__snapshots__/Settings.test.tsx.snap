@@ -7,10 +7,10 @@ exports[`Settings should not allow setting the current password as the new passw
   >
     <nav
       aria-labelledby="main menu"
-      class="NavigationBar__NavWrapper-sc-1qsoskw-0 hkUMvZ"
+      class="NavigationBar__NavWrapper-sc-1qsoskw-0 bewuLZ"
     >
       <div
-        class="flex relative h-21"
+        class="relative flex h-21"
       >
         <button
           class="BackButton__StyledBackButton-sc-1pe22tv-0 hLgyWD flex w-12"
@@ -32,7 +32,7 @@ exports[`Settings should not allow setting the current password as the new passw
             class="flex items-center my-auto"
           >
             <div
-              class="NavigationBar__LogoContainer-sc-1qsoskw-2 tulfg"
+              class="NavigationBar__LogoContainer-sc-1qsoskw-2 itrWMc"
             >
               <svg
                 width="44"
@@ -42,18 +42,18 @@ exports[`Settings should not allow setting the current password as the new passw
             </div>
           </div>
           <ul
-            class="flex mr-auto ml-4 space-x-8 h-21"
+            class="flex ml-4 mr-auto space-x-8 h-21"
           >
             <li
               class="flex"
             >
               <a
-                class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
+                class="relative flex items-center font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
                 title="Portfolio"
               >
                 <div
-                  class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                  class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
                 />
                 Portfolio
               </a>
@@ -62,12 +62,12 @@ exports[`Settings should not allow setting the current password as the new passw
               class="flex"
             >
               <a
-                class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
+                class="relative flex items-center font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/plugins"
                 title="Plugins"
               >
                 <div
-                  class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                  class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
                 />
                 Plugins
               </a>
@@ -76,12 +76,12 @@ exports[`Settings should not allow setting the current password as the new passw
               class="flex"
             >
               <a
-                class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
+                class="relative flex items-center font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/exchange"
                 title="Exchange"
               >
                 <div
-                  class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                  class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
                 />
                 Exchange
               </a>
@@ -90,12 +90,12 @@ exports[`Settings should not allow setting the current password as the new passw
               class="flex"
             >
               <a
-                class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
+                class="relative flex items-center font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/news"
                 title="News"
               >
                 <div
-                  class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                  class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
                 />
                 News
               </a>
@@ -223,6 +223,7 @@ exports[`Settings should not allow setting the current password as the new passw
               </div>
               <div
                 class="text-sm font-bold text-theme-secondary-text dark:text-theme-text"
+                data-testid="Balance__value"
               >
                 <span
                   data-testid="Amount"
@@ -258,7 +259,7 @@ exports[`Settings should not allow setting the current password as the new passw
                   data-testid="dropdown__toggle"
                 >
                   <div
-                    class="cursor-pointer relative justify-center items-center align-middle rounded-full"
+                    class="relative items-center justify-center align-middle rounded-full cursor-pointer"
                     data-testid="navbar__useractions"
                   >
                     <div
@@ -436,10 +437,6 @@ exports[`Settings should not allow setting the current password as the new passw
                         for="currentPassword"
                       >
                         Current Password
-                        <div
-                          class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
-                          data-testid="FormLabel__required"
-                        />
                       </label>
                       <div
                         class="fixed invisible w-auto whitespace-nowrap"
@@ -497,10 +494,6 @@ exports[`Settings should not allow setting the current password as the new passw
                         for="password"
                       >
                         New Password
-                        <div
-                          class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
-                          data-testid="FormLabel__required"
-                        />
                       </label>
                       <div
                         class="fixed invisible w-auto whitespace-nowrap"
@@ -573,10 +566,6 @@ exports[`Settings should not allow setting the current password as the new passw
                         for="confirmPassword"
                       >
                         Confirm New Password
-                        <div
-                          class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
-                          data-testid="FormLabel__required"
-                        />
                       </label>
                       <div
                         class="fixed invisible w-auto whitespace-nowrap"
@@ -660,10 +649,10 @@ exports[`Settings should not update the uploaded avatar when removing focus from
   >
     <nav
       aria-labelledby="main menu"
-      class="NavigationBar__NavWrapper-sc-1qsoskw-0 hkUMvZ"
+      class="NavigationBar__NavWrapper-sc-1qsoskw-0 bewuLZ"
     >
       <div
-        class="flex relative h-21"
+        class="relative flex h-21"
       >
         <button
           class="BackButton__StyledBackButton-sc-1pe22tv-0 hLgyWD flex w-12"
@@ -685,7 +674,7 @@ exports[`Settings should not update the uploaded avatar when removing focus from
             class="flex items-center my-auto"
           >
             <div
-              class="NavigationBar__LogoContainer-sc-1qsoskw-2 tulfg"
+              class="NavigationBar__LogoContainer-sc-1qsoskw-2 itrWMc"
             >
               <svg
                 width="44"
@@ -695,18 +684,18 @@ exports[`Settings should not update the uploaded avatar when removing focus from
             </div>
           </div>
           <ul
-            class="flex mr-auto ml-4 space-x-8 h-21"
+            class="flex ml-4 mr-auto space-x-8 h-21"
           >
             <li
               class="flex"
             >
               <a
-                class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
+                class="relative flex items-center font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
                 title="Portfolio"
               >
                 <div
-                  class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                  class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
                 />
                 Portfolio
               </a>
@@ -715,12 +704,12 @@ exports[`Settings should not update the uploaded avatar when removing focus from
               class="flex"
             >
               <a
-                class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
+                class="relative flex items-center font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/plugins"
                 title="Plugins"
               >
                 <div
-                  class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                  class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
                 />
                 Plugins
               </a>
@@ -729,12 +718,12 @@ exports[`Settings should not update the uploaded avatar when removing focus from
               class="flex"
             >
               <a
-                class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
+                class="relative flex items-center font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/exchange"
                 title="Exchange"
               >
                 <div
-                  class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                  class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
                 />
                 Exchange
               </a>
@@ -743,12 +732,12 @@ exports[`Settings should not update the uploaded avatar when removing focus from
               class="flex"
             >
               <a
-                class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
+                class="relative flex items-center font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/news"
                 title="News"
               >
                 <div
-                  class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                  class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
                 />
                 News
               </a>
@@ -874,6 +863,7 @@ exports[`Settings should not update the uploaded avatar when removing focus from
               </div>
               <div
                 class="text-sm font-bold text-theme-secondary-text dark:text-theme-text"
+                data-testid="Balance__value"
               >
                 <span
                   data-testid="Amount"
@@ -909,7 +899,7 @@ exports[`Settings should not update the uploaded avatar when removing focus from
                   data-testid="dropdown__toggle"
                 >
                   <div
-                    class="cursor-pointer relative justify-center items-center align-middle rounded-full"
+                    class="relative items-center justify-center align-middle rounded-full cursor-pointer"
                     data-testid="navbar__useractions"
                   >
                     <div
@@ -1162,10 +1152,6 @@ exports[`Settings should not update the uploaded avatar when removing focus from
                             for="name"
                           >
                             Profile Name
-                            <div
-                              class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
-                              data-testid="FormLabel__required"
-                            />
                           </label>
                           <div
                             class="fixed invisible w-auto whitespace-nowrap"
@@ -1196,10 +1182,6 @@ exports[`Settings should not update the uploaded avatar when removing focus from
                             for="passphraseLanguage"
                           >
                             Passphrase Language
-                            <div
-                              class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
-                              data-testid="FormLabel__required"
-                            />
                           </label>
                           <div
                             class="relative w-full"
@@ -1254,15 +1236,15 @@ exports[`Settings should not update the uploaded avatar when removing focus from
                                       aria-controls="select-passphrase-language-menu"
                                       aria-labelledby="select-passphrase-language-label"
                                       autocomplete="off"
-                                      class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full cursor-default"
-                                      data-testid="SelectDropdownInput__input"
+                                      class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
+                                      data-testid="SelectDropdown__input"
                                       id="select-passphrase-language-input"
                                       name="passphraseLanguage"
                                       placeholder="Select Passphrase Language"
                                       value="English"
                                     />
                                     <span
-                                      class="absolute inset-y-0 flex items-center font-normal opacity-50 pointer-events-none w-full cursor-default"
+                                      class="absolute inset-y-0 flex items-center font-normal opacity-50 pointer-events-none w-full"
                                       data-testid="Input__suggestion"
                                     >
                                       <span
@@ -1297,7 +1279,7 @@ exports[`Settings should not update the uploaded avatar when removing focus from
                                 </div>
                                 <ul
                                   aria-labelledby="select-passphrase-language-label"
-                                  class="styles__SelectOptionsList-b2falt-0 ghEDCU"
+                                  class="styles__SelectOptionsList-b2falt-0 dyOwRR"
                                   id="select-passphrase-language-menu"
                                   role="listbox"
                                 />
@@ -1314,10 +1296,6 @@ exports[`Settings should not update the uploaded avatar when removing focus from
                             for="currency"
                           >
                             Currency
-                            <div
-                              class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
-                              data-testid="FormLabel__required"
-                            />
                           </label>
                           <div
                             class="relative w-full"
@@ -1372,15 +1350,15 @@ exports[`Settings should not update the uploaded avatar when removing focus from
                                       aria-controls="select-currency-menu"
                                       aria-labelledby="select-currency-label"
                                       autocomplete="off"
-                                      class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full cursor-default"
-                                      data-testid="SelectDropdownInput__input"
+                                      class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
+                                      data-testid="SelectDropdown__input"
                                       id="select-currency-input"
                                       name="currency"
                                       placeholder="Select Currency"
                                       value="BTC (Ƀ)"
                                     />
                                     <span
-                                      class="absolute inset-y-0 flex items-center font-normal opacity-50 pointer-events-none w-full cursor-default"
+                                      class="absolute inset-y-0 flex items-center font-normal opacity-50 pointer-events-none w-full"
                                       data-testid="Input__suggestion"
                                     >
                                       <span
@@ -1415,7 +1393,7 @@ exports[`Settings should not update the uploaded avatar when removing focus from
                                 </div>
                                 <ul
                                   aria-labelledby="select-currency-label"
-                                  class="styles__SelectOptionsList-b2falt-0 ghEDCU"
+                                  class="styles__SelectOptionsList-b2falt-0 dyOwRR"
                                   id="select-currency-menu"
                                   role="listbox"
                                 />
@@ -1436,10 +1414,6 @@ exports[`Settings should not update the uploaded avatar when removing focus from
                             for="language"
                           >
                             Language
-                            <div
-                              class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
-                              data-testid="FormLabel__required"
-                            />
                           </label>
                           <div
                             class="relative w-full"
@@ -1494,15 +1468,15 @@ exports[`Settings should not update the uploaded avatar when removing focus from
                                       aria-controls="select-language-menu"
                                       aria-labelledby="select-language-label"
                                       autocomplete="off"
-                                      class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full cursor-default"
-                                      data-testid="SelectDropdownInput__input"
+                                      class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
+                                      data-testid="SelectDropdown__input"
                                       id="select-language-input"
                                       name="language"
                                       placeholder="Select Language"
                                       value="English"
                                     />
                                     <span
-                                      class="absolute inset-y-0 flex items-center font-normal opacity-50 pointer-events-none w-full cursor-default"
+                                      class="absolute inset-y-0 flex items-center font-normal opacity-50 pointer-events-none w-full"
                                       data-testid="Input__suggestion"
                                     >
                                       <span
@@ -1537,7 +1511,7 @@ exports[`Settings should not update the uploaded avatar when removing focus from
                                 </div>
                                 <ul
                                   aria-labelledby="select-language-label"
-                                  class="styles__SelectOptionsList-b2falt-0 ghEDCU"
+                                  class="styles__SelectOptionsList-b2falt-0 dyOwRR"
                                   id="select-language-menu"
                                   role="listbox"
                                 />
@@ -1554,10 +1528,6 @@ exports[`Settings should not update the uploaded avatar when removing focus from
                             for="marketProvider"
                           >
                             Price Oracle
-                            <div
-                              class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
-                              data-testid="FormLabel__required"
-                            />
                           </label>
                           <div
                             class="relative w-full"
@@ -1612,15 +1582,15 @@ exports[`Settings should not update the uploaded avatar when removing focus from
                                       aria-controls="select-market-provider-menu"
                                       aria-labelledby="select-market-provider-label"
                                       autocomplete="off"
-                                      class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full cursor-default"
-                                      data-testid="SelectDropdownInput__input"
+                                      class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
+                                      data-testid="SelectDropdown__input"
                                       id="select-market-provider-input"
                                       name="marketProvider"
                                       placeholder="Select Price Oracle"
                                       value="CryptoCompare"
                                     />
                                     <span
-                                      class="absolute inset-y-0 flex items-center font-normal opacity-50 pointer-events-none w-full cursor-default"
+                                      class="absolute inset-y-0 flex items-center font-normal opacity-50 pointer-events-none w-full"
                                       data-testid="Input__suggestion"
                                     >
                                       <span
@@ -1655,7 +1625,7 @@ exports[`Settings should not update the uploaded avatar when removing focus from
                                 </div>
                                 <ul
                                   aria-labelledby="select-market-provider-label"
-                                  class="styles__SelectOptionsList-b2falt-0 ghEDCU"
+                                  class="styles__SelectOptionsList-b2falt-0 dyOwRR"
                                   id="select-market-provider-menu"
                                   role="listbox"
                                 />
@@ -1672,10 +1642,6 @@ exports[`Settings should not update the uploaded avatar when removing focus from
                             for="timeFormat"
                           >
                             Time Format
-                            <div
-                              class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
-                              data-testid="FormLabel__required"
-                            />
                           </label>
                           <div
                             class="relative w-full"
@@ -1730,15 +1696,15 @@ exports[`Settings should not update the uploaded avatar when removing focus from
                                       aria-controls="select-time-format-menu"
                                       aria-labelledby="select-time-format-label"
                                       autocomplete="off"
-                                      class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full cursor-default"
-                                      data-testid="SelectDropdownInput__input"
+                                      class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
+                                      data-testid="SelectDropdown__input"
                                       id="select-time-format-input"
                                       name="timeFormat"
                                       placeholder="Select Time Format"
                                       value="12h"
                                     />
                                     <span
-                                      class="absolute inset-y-0 flex items-center font-normal opacity-50 pointer-events-none w-full cursor-default"
+                                      class="absolute inset-y-0 flex items-center font-normal opacity-50 pointer-events-none w-full"
                                       data-testid="Input__suggestion"
                                     >
                                       <span
@@ -1773,7 +1739,7 @@ exports[`Settings should not update the uploaded avatar when removing focus from
                                 </div>
                                 <ul
                                   aria-labelledby="select-time-format-label"
-                                  class="styles__SelectOptionsList-b2falt-0 ghEDCU"
+                                  class="styles__SelectOptionsList-b2falt-0 dyOwRR"
                                   id="select-time-format-menu"
                                   role="listbox"
                                 />
@@ -1879,10 +1845,6 @@ exports[`Settings should not update the uploaded avatar when removing focus from
                               for="automaticSignOutPeriod"
                             >
                               Auto Log-Off
-                              <div
-                                class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
-                                data-testid="FormLabel__required"
-                              />
                             </label>
                             <div
                               class="relative w-full"
@@ -1937,15 +1899,15 @@ exports[`Settings should not update the uploaded avatar when removing focus from
                                         aria-controls="select-auto-signout-menu"
                                         aria-labelledby="select-auto-signout-label"
                                         autocomplete="off"
-                                        class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full cursor-default"
-                                        data-testid="SelectDropdownInput__input"
+                                        class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
+                                        data-testid="SelectDropdown__input"
                                         id="select-auto-signout-input"
                                         name="automaticSignOutPeriod"
                                         placeholder="Select Auto Log-Off"
                                         value="1 minute"
                                       />
                                       <span
-                                        class="absolute inset-y-0 flex items-center font-normal opacity-50 pointer-events-none w-full cursor-default"
+                                        class="absolute inset-y-0 flex items-center font-normal opacity-50 pointer-events-none w-full"
                                         data-testid="Input__suggestion"
                                       >
                                         <span
@@ -1980,7 +1942,7 @@ exports[`Settings should not update the uploaded avatar when removing focus from
                                   </div>
                                   <ul
                                     aria-labelledby="select-auto-signout-label"
-                                    class="styles__SelectOptionsList-b2falt-0 ghEDCU"
+                                    class="styles__SelectOptionsList-b2falt-0 dyOwRR"
                                     id="select-auto-signout-menu"
                                     role="listbox"
                                   />
@@ -2273,10 +2235,10 @@ exports[`Settings should render 1`] = `
   >
     <nav
       aria-labelledby="main menu"
-      class="NavigationBar__NavWrapper-sc-1qsoskw-0 hkUMvZ"
+      class="NavigationBar__NavWrapper-sc-1qsoskw-0 bewuLZ"
     >
       <div
-        class="flex relative h-21"
+        class="relative flex h-21"
       >
         <button
           class="BackButton__StyledBackButton-sc-1pe22tv-0 hLgyWD flex w-12"
@@ -2298,7 +2260,7 @@ exports[`Settings should render 1`] = `
             class="flex items-center my-auto"
           >
             <div
-              class="NavigationBar__LogoContainer-sc-1qsoskw-2 tulfg"
+              class="NavigationBar__LogoContainer-sc-1qsoskw-2 itrWMc"
             >
               <svg
                 width="44"
@@ -2308,18 +2270,18 @@ exports[`Settings should render 1`] = `
             </div>
           </div>
           <ul
-            class="flex mr-auto ml-4 space-x-8 h-21"
+            class="flex ml-4 mr-auto space-x-8 h-21"
           >
             <li
               class="flex"
             >
               <a
-                class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
+                class="relative flex items-center font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
                 title="Portfolio"
               >
                 <div
-                  class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                  class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
                 />
                 Portfolio
               </a>
@@ -2328,12 +2290,12 @@ exports[`Settings should render 1`] = `
               class="flex"
             >
               <a
-                class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
+                class="relative flex items-center font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/plugins"
                 title="Plugins"
               >
                 <div
-                  class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                  class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
                 />
                 Plugins
               </a>
@@ -2342,12 +2304,12 @@ exports[`Settings should render 1`] = `
               class="flex"
             >
               <a
-                class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
+                class="relative flex items-center font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/exchange"
                 title="Exchange"
               >
                 <div
-                  class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                  class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
                 />
                 Exchange
               </a>
@@ -2356,12 +2318,12 @@ exports[`Settings should render 1`] = `
               class="flex"
             >
               <a
-                class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
+                class="relative flex items-center font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/news"
                 title="News"
               >
                 <div
-                  class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                  class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
                 />
                 News
               </a>
@@ -2487,6 +2449,7 @@ exports[`Settings should render 1`] = `
               </div>
               <div
                 class="text-sm font-bold text-theme-secondary-text dark:text-theme-text"
+                data-testid="Balance__value"
               >
                 <span
                   data-testid="Amount"
@@ -2522,7 +2485,7 @@ exports[`Settings should render 1`] = `
                   data-testid="dropdown__toggle"
                 >
                   <div
-                    class="cursor-pointer relative justify-center items-center align-middle rounded-full"
+                    class="relative items-center justify-center align-middle rounded-full cursor-pointer"
                     data-testid="navbar__useractions"
                   >
                     <div
@@ -2761,10 +2724,6 @@ exports[`Settings should render 1`] = `
                             for="name"
                           >
                             Profile Name
-                            <div
-                              class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
-                              data-testid="FormLabel__required"
-                            />
                           </label>
                           <div
                             class="fixed invisible w-auto whitespace-nowrap"
@@ -2795,10 +2754,6 @@ exports[`Settings should render 1`] = `
                             for="passphraseLanguage"
                           >
                             Passphrase Language
-                            <div
-                              class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
-                              data-testid="FormLabel__required"
-                            />
                           </label>
                           <div
                             class="relative w-full"
@@ -2853,15 +2808,15 @@ exports[`Settings should render 1`] = `
                                       aria-controls="select-passphrase-language-menu"
                                       aria-labelledby="select-passphrase-language-label"
                                       autocomplete="off"
-                                      class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full cursor-default"
-                                      data-testid="SelectDropdownInput__input"
+                                      class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
+                                      data-testid="SelectDropdown__input"
                                       id="select-passphrase-language-input"
                                       name="passphraseLanguage"
                                       placeholder="Select Passphrase Language"
                                       value="English"
                                     />
                                     <span
-                                      class="absolute inset-y-0 flex items-center font-normal opacity-50 pointer-events-none w-full cursor-default"
+                                      class="absolute inset-y-0 flex items-center font-normal opacity-50 pointer-events-none w-full"
                                       data-testid="Input__suggestion"
                                     >
                                       <span
@@ -2896,7 +2851,7 @@ exports[`Settings should render 1`] = `
                                 </div>
                                 <ul
                                   aria-labelledby="select-passphrase-language-label"
-                                  class="styles__SelectOptionsList-b2falt-0 ghEDCU"
+                                  class="styles__SelectOptionsList-b2falt-0 dyOwRR"
                                   id="select-passphrase-language-menu"
                                   role="listbox"
                                 />
@@ -2913,10 +2868,6 @@ exports[`Settings should render 1`] = `
                             for="currency"
                           >
                             Currency
-                            <div
-                              class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
-                              data-testid="FormLabel__required"
-                            />
                           </label>
                           <div
                             class="relative w-full"
@@ -2971,15 +2922,15 @@ exports[`Settings should render 1`] = `
                                       aria-controls="select-currency-menu"
                                       aria-labelledby="select-currency-label"
                                       autocomplete="off"
-                                      class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full cursor-default"
-                                      data-testid="SelectDropdownInput__input"
+                                      class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
+                                      data-testid="SelectDropdown__input"
                                       id="select-currency-input"
                                       name="currency"
                                       placeholder="Select Currency"
                                       value="BTC (Ƀ)"
                                     />
                                     <span
-                                      class="absolute inset-y-0 flex items-center font-normal opacity-50 pointer-events-none w-full cursor-default"
+                                      class="absolute inset-y-0 flex items-center font-normal opacity-50 pointer-events-none w-full"
                                       data-testid="Input__suggestion"
                                     >
                                       <span
@@ -3014,7 +2965,7 @@ exports[`Settings should render 1`] = `
                                 </div>
                                 <ul
                                   aria-labelledby="select-currency-label"
-                                  class="styles__SelectOptionsList-b2falt-0 ghEDCU"
+                                  class="styles__SelectOptionsList-b2falt-0 dyOwRR"
                                   id="select-currency-menu"
                                   role="listbox"
                                 />
@@ -3035,10 +2986,6 @@ exports[`Settings should render 1`] = `
                             for="language"
                           >
                             Language
-                            <div
-                              class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
-                              data-testid="FormLabel__required"
-                            />
                           </label>
                           <div
                             class="relative w-full"
@@ -3093,15 +3040,15 @@ exports[`Settings should render 1`] = `
                                       aria-controls="select-language-menu"
                                       aria-labelledby="select-language-label"
                                       autocomplete="off"
-                                      class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full cursor-default"
-                                      data-testid="SelectDropdownInput__input"
+                                      class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
+                                      data-testid="SelectDropdown__input"
                                       id="select-language-input"
                                       name="language"
                                       placeholder="Select Language"
                                       value="English"
                                     />
                                     <span
-                                      class="absolute inset-y-0 flex items-center font-normal opacity-50 pointer-events-none w-full cursor-default"
+                                      class="absolute inset-y-0 flex items-center font-normal opacity-50 pointer-events-none w-full"
                                       data-testid="Input__suggestion"
                                     >
                                       <span
@@ -3136,7 +3083,7 @@ exports[`Settings should render 1`] = `
                                 </div>
                                 <ul
                                   aria-labelledby="select-language-label"
-                                  class="styles__SelectOptionsList-b2falt-0 ghEDCU"
+                                  class="styles__SelectOptionsList-b2falt-0 dyOwRR"
                                   id="select-language-menu"
                                   role="listbox"
                                 />
@@ -3153,10 +3100,6 @@ exports[`Settings should render 1`] = `
                             for="marketProvider"
                           >
                             Price Oracle
-                            <div
-                              class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
-                              data-testid="FormLabel__required"
-                            />
                           </label>
                           <div
                             class="relative w-full"
@@ -3211,15 +3154,15 @@ exports[`Settings should render 1`] = `
                                       aria-controls="select-market-provider-menu"
                                       aria-labelledby="select-market-provider-label"
                                       autocomplete="off"
-                                      class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full cursor-default"
-                                      data-testid="SelectDropdownInput__input"
+                                      class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
+                                      data-testid="SelectDropdown__input"
                                       id="select-market-provider-input"
                                       name="marketProvider"
                                       placeholder="Select Price Oracle"
                                       value="CryptoCompare"
                                     />
                                     <span
-                                      class="absolute inset-y-0 flex items-center font-normal opacity-50 pointer-events-none w-full cursor-default"
+                                      class="absolute inset-y-0 flex items-center font-normal opacity-50 pointer-events-none w-full"
                                       data-testid="Input__suggestion"
                                     >
                                       <span
@@ -3254,7 +3197,7 @@ exports[`Settings should render 1`] = `
                                 </div>
                                 <ul
                                   aria-labelledby="select-market-provider-label"
-                                  class="styles__SelectOptionsList-b2falt-0 ghEDCU"
+                                  class="styles__SelectOptionsList-b2falt-0 dyOwRR"
                                   id="select-market-provider-menu"
                                   role="listbox"
                                 />
@@ -3271,10 +3214,6 @@ exports[`Settings should render 1`] = `
                             for="timeFormat"
                           >
                             Time Format
-                            <div
-                              class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
-                              data-testid="FormLabel__required"
-                            />
                           </label>
                           <div
                             class="relative w-full"
@@ -3329,15 +3268,15 @@ exports[`Settings should render 1`] = `
                                       aria-controls="select-time-format-menu"
                                       aria-labelledby="select-time-format-label"
                                       autocomplete="off"
-                                      class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full cursor-default"
-                                      data-testid="SelectDropdownInput__input"
+                                      class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
+                                      data-testid="SelectDropdown__input"
                                       id="select-time-format-input"
                                       name="timeFormat"
                                       placeholder="Select Time Format"
                                       value="12h"
                                     />
                                     <span
-                                      class="absolute inset-y-0 flex items-center font-normal opacity-50 pointer-events-none w-full cursor-default"
+                                      class="absolute inset-y-0 flex items-center font-normal opacity-50 pointer-events-none w-full"
                                       data-testid="Input__suggestion"
                                     >
                                       <span
@@ -3372,7 +3311,7 @@ exports[`Settings should render 1`] = `
                                 </div>
                                 <ul
                                   aria-labelledby="select-time-format-label"
-                                  class="styles__SelectOptionsList-b2falt-0 ghEDCU"
+                                  class="styles__SelectOptionsList-b2falt-0 dyOwRR"
                                   id="select-time-format-menu"
                                   role="listbox"
                                 />
@@ -3478,10 +3417,6 @@ exports[`Settings should render 1`] = `
                               for="automaticSignOutPeriod"
                             >
                               Auto Log-Off
-                              <div
-                                class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
-                                data-testid="FormLabel__required"
-                              />
                             </label>
                             <div
                               class="relative w-full"
@@ -3536,15 +3471,15 @@ exports[`Settings should render 1`] = `
                                         aria-controls="select-auto-signout-menu"
                                         aria-labelledby="select-auto-signout-label"
                                         autocomplete="off"
-                                        class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full cursor-default"
-                                        data-testid="SelectDropdownInput__input"
+                                        class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
+                                        data-testid="SelectDropdown__input"
                                         id="select-auto-signout-input"
                                         name="automaticSignOutPeriod"
                                         placeholder="Select Auto Log-Off"
                                         value="1 minute"
                                       />
                                       <span
-                                        class="absolute inset-y-0 flex items-center font-normal opacity-50 pointer-events-none w-full cursor-default"
+                                        class="absolute inset-y-0 flex items-center font-normal opacity-50 pointer-events-none w-full"
                                         data-testid="Input__suggestion"
                                       >
                                         <span
@@ -3579,7 +3514,7 @@ exports[`Settings should render 1`] = `
                                   </div>
                                   <ul
                                     aria-labelledby="select-auto-signout-label"
-                                    class="styles__SelectOptionsList-b2falt-0 ghEDCU"
+                                    class="styles__SelectOptionsList-b2falt-0 dyOwRR"
                                     id="select-auto-signout-menu"
                                     role="listbox"
                                   />
@@ -3872,10 +3807,10 @@ exports[`Settings should render export settings 1`] = `
   >
     <nav
       aria-labelledby="main menu"
-      class="NavigationBar__NavWrapper-sc-1qsoskw-0 hkUMvZ"
+      class="NavigationBar__NavWrapper-sc-1qsoskw-0 bewuLZ"
     >
       <div
-        class="flex relative h-21"
+        class="relative flex h-21"
       >
         <button
           class="BackButton__StyledBackButton-sc-1pe22tv-0 hLgyWD flex w-12"
@@ -3897,7 +3832,7 @@ exports[`Settings should render export settings 1`] = `
             class="flex items-center my-auto"
           >
             <div
-              class="NavigationBar__LogoContainer-sc-1qsoskw-2 tulfg"
+              class="NavigationBar__LogoContainer-sc-1qsoskw-2 itrWMc"
             >
               <svg
                 width="44"
@@ -3907,18 +3842,18 @@ exports[`Settings should render export settings 1`] = `
             </div>
           </div>
           <ul
-            class="flex mr-auto ml-4 space-x-8 h-21"
+            class="flex ml-4 mr-auto space-x-8 h-21"
           >
             <li
               class="flex"
             >
               <a
-                class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
+                class="relative flex items-center font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
                 title="Portfolio"
               >
                 <div
-                  class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                  class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
                 />
                 Portfolio
               </a>
@@ -3927,12 +3862,12 @@ exports[`Settings should render export settings 1`] = `
               class="flex"
             >
               <a
-                class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
+                class="relative flex items-center font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/plugins"
                 title="Plugins"
               >
                 <div
-                  class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                  class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
                 />
                 Plugins
               </a>
@@ -3941,12 +3876,12 @@ exports[`Settings should render export settings 1`] = `
               class="flex"
             >
               <a
-                class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
+                class="relative flex items-center font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/exchange"
                 title="Exchange"
               >
                 <div
-                  class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                  class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
                 />
                 Exchange
               </a>
@@ -3955,12 +3890,12 @@ exports[`Settings should render export settings 1`] = `
               class="flex"
             >
               <a
-                class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
+                class="relative flex items-center font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/news"
                 title="News"
               >
                 <div
-                  class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                  class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
                 />
                 News
               </a>
@@ -4088,6 +4023,7 @@ exports[`Settings should render export settings 1`] = `
               </div>
               <div
                 class="text-sm font-bold text-theme-secondary-text dark:text-theme-text"
+                data-testid="Balance__value"
               >
                 <span
                   data-testid="Amount"
@@ -4123,7 +4059,7 @@ exports[`Settings should render export settings 1`] = `
                   data-testid="dropdown__toggle"
                 >
                   <div
-                    class="cursor-pointer relative justify-center items-center align-middle rounded-full"
+                    class="relative items-center justify-center align-middle rounded-full cursor-pointer"
                     data-testid="navbar__useractions"
                   >
                     <div
@@ -4430,10 +4366,10 @@ exports[`Settings should render password settings 1`] = `
   >
     <nav
       aria-labelledby="main menu"
-      class="NavigationBar__NavWrapper-sc-1qsoskw-0 hkUMvZ"
+      class="NavigationBar__NavWrapper-sc-1qsoskw-0 bewuLZ"
     >
       <div
-        class="flex relative h-21"
+        class="relative flex h-21"
       >
         <button
           class="BackButton__StyledBackButton-sc-1pe22tv-0 hLgyWD flex w-12"
@@ -4455,7 +4391,7 @@ exports[`Settings should render password settings 1`] = `
             class="flex items-center my-auto"
           >
             <div
-              class="NavigationBar__LogoContainer-sc-1qsoskw-2 tulfg"
+              class="NavigationBar__LogoContainer-sc-1qsoskw-2 itrWMc"
             >
               <svg
                 width="44"
@@ -4465,18 +4401,18 @@ exports[`Settings should render password settings 1`] = `
             </div>
           </div>
           <ul
-            class="flex mr-auto ml-4 space-x-8 h-21"
+            class="flex ml-4 mr-auto space-x-8 h-21"
           >
             <li
               class="flex"
             >
               <a
-                class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
+                class="relative flex items-center font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
                 title="Portfolio"
               >
                 <div
-                  class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                  class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
                 />
                 Portfolio
               </a>
@@ -4485,12 +4421,12 @@ exports[`Settings should render password settings 1`] = `
               class="flex"
             >
               <a
-                class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
+                class="relative flex items-center font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/plugins"
                 title="Plugins"
               >
                 <div
-                  class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                  class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
                 />
                 Plugins
               </a>
@@ -4499,12 +4435,12 @@ exports[`Settings should render password settings 1`] = `
               class="flex"
             >
               <a
-                class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
+                class="relative flex items-center font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/exchange"
                 title="Exchange"
               >
                 <div
-                  class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                  class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
                 />
                 Exchange
               </a>
@@ -4513,12 +4449,12 @@ exports[`Settings should render password settings 1`] = `
               class="flex"
             >
               <a
-                class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
+                class="relative flex items-center font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/news"
                 title="News"
               >
                 <div
-                  class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                  class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
                 />
                 News
               </a>
@@ -4646,6 +4582,7 @@ exports[`Settings should render password settings 1`] = `
               </div>
               <div
                 class="text-sm font-bold text-theme-secondary-text dark:text-theme-text"
+                data-testid="Balance__value"
               >
                 <span
                   data-testid="Amount"
@@ -4681,7 +4618,7 @@ exports[`Settings should render password settings 1`] = `
                   data-testid="dropdown__toggle"
                 >
                   <div
-                    class="cursor-pointer relative justify-center items-center align-middle rounded-full"
+                    class="relative items-center justify-center align-middle rounded-full cursor-pointer"
                     data-testid="navbar__useractions"
                   >
                     <div
@@ -4859,10 +4796,6 @@ exports[`Settings should render password settings 1`] = `
                         for="password"
                       >
                         New Password
-                        <div
-                          class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
-                          data-testid="FormLabel__required"
-                        />
                       </label>
                       <div
                         class="fixed invisible w-auto whitespace-nowrap"
@@ -4920,10 +4853,6 @@ exports[`Settings should render password settings 1`] = `
                         for="confirmPassword"
                       >
                         Confirm New Password
-                        <div
-                          class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
-                          data-testid="FormLabel__required"
-                        />
                       </label>
                       <div
                         class="fixed invisible w-auto whitespace-nowrap"
@@ -5007,10 +4936,10 @@ exports[`Settings should set a password 1`] = `
   >
     <nav
       aria-labelledby="main menu"
-      class="NavigationBar__NavWrapper-sc-1qsoskw-0 hkUMvZ"
+      class="NavigationBar__NavWrapper-sc-1qsoskw-0 bewuLZ"
     >
       <div
-        class="flex relative h-21"
+        class="relative flex h-21"
       >
         <button
           class="BackButton__StyledBackButton-sc-1pe22tv-0 hLgyWD flex w-12"
@@ -5032,7 +4961,7 @@ exports[`Settings should set a password 1`] = `
             class="flex items-center my-auto"
           >
             <div
-              class="NavigationBar__LogoContainer-sc-1qsoskw-2 tulfg"
+              class="NavigationBar__LogoContainer-sc-1qsoskw-2 itrWMc"
             >
               <svg
                 width="44"
@@ -5042,18 +4971,18 @@ exports[`Settings should set a password 1`] = `
             </div>
           </div>
           <ul
-            class="flex mr-auto ml-4 space-x-8 h-21"
+            class="flex ml-4 mr-auto space-x-8 h-21"
           >
             <li
               class="flex"
             >
               <a
-                class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
+                class="relative flex items-center font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
                 title="Portfolio"
               >
                 <div
-                  class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                  class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
                 />
                 Portfolio
               </a>
@@ -5062,12 +4991,12 @@ exports[`Settings should set a password 1`] = `
               class="flex"
             >
               <a
-                class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
+                class="relative flex items-center font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/plugins"
                 title="Plugins"
               >
                 <div
-                  class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                  class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
                 />
                 Plugins
               </a>
@@ -5076,12 +5005,12 @@ exports[`Settings should set a password 1`] = `
               class="flex"
             >
               <a
-                class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
+                class="relative flex items-center font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/exchange"
                 title="Exchange"
               >
                 <div
-                  class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                  class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
                 />
                 Exchange
               </a>
@@ -5090,12 +5019,12 @@ exports[`Settings should set a password 1`] = `
               class="flex"
             >
               <a
-                class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
+                class="relative flex items-center font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/news"
                 title="News"
               >
                 <div
-                  class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                  class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
                 />
                 News
               </a>
@@ -5223,6 +5152,7 @@ exports[`Settings should set a password 1`] = `
               </div>
               <div
                 class="text-sm font-bold text-theme-secondary-text dark:text-theme-text"
+                data-testid="Balance__value"
               >
                 <span
                   data-testid="Amount"
@@ -5258,7 +5188,7 @@ exports[`Settings should set a password 1`] = `
                   data-testid="dropdown__toggle"
                 >
                   <div
-                    class="cursor-pointer relative justify-center items-center align-middle rounded-full"
+                    class="relative items-center justify-center align-middle rounded-full cursor-pointer"
                     data-testid="navbar__useractions"
                   >
                     <div
@@ -5436,10 +5366,6 @@ exports[`Settings should set a password 1`] = `
                         for="currentPassword"
                       >
                         Current Password
-                        <div
-                          class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
-                          data-testid="FormLabel__required"
-                        />
                       </label>
                       <div
                         class="fixed invisible w-auto whitespace-nowrap"
@@ -5497,10 +5423,6 @@ exports[`Settings should set a password 1`] = `
                         for="password"
                       >
                         New Password
-                        <div
-                          class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
-                          data-testid="FormLabel__required"
-                        />
                       </label>
                       <div
                         class="fixed invisible w-auto whitespace-nowrap"
@@ -5558,10 +5480,6 @@ exports[`Settings should set a password 1`] = `
                         for="confirmPassword"
                       >
                         Confirm New Password
-                        <div
-                          class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
-                          data-testid="FormLabel__required"
-                        />
                       </label>
                       <div
                         class="fixed invisible w-auto whitespace-nowrap"
@@ -5645,10 +5563,10 @@ exports[`Settings should show an error toast if the current password does not ma
   >
     <nav
       aria-labelledby="main menu"
-      class="NavigationBar__NavWrapper-sc-1qsoskw-0 hkUMvZ"
+      class="NavigationBar__NavWrapper-sc-1qsoskw-0 bewuLZ"
     >
       <div
-        class="flex relative h-21"
+        class="relative flex h-21"
       >
         <button
           class="BackButton__StyledBackButton-sc-1pe22tv-0 hLgyWD flex w-12"
@@ -5670,7 +5588,7 @@ exports[`Settings should show an error toast if the current password does not ma
             class="flex items-center my-auto"
           >
             <div
-              class="NavigationBar__LogoContainer-sc-1qsoskw-2 tulfg"
+              class="NavigationBar__LogoContainer-sc-1qsoskw-2 itrWMc"
             >
               <svg
                 width="44"
@@ -5680,18 +5598,18 @@ exports[`Settings should show an error toast if the current password does not ma
             </div>
           </div>
           <ul
-            class="flex mr-auto ml-4 space-x-8 h-21"
+            class="flex ml-4 mr-auto space-x-8 h-21"
           >
             <li
               class="flex"
             >
               <a
-                class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
+                class="relative flex items-center font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
                 title="Portfolio"
               >
                 <div
-                  class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                  class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
                 />
                 Portfolio
               </a>
@@ -5700,12 +5618,12 @@ exports[`Settings should show an error toast if the current password does not ma
               class="flex"
             >
               <a
-                class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
+                class="relative flex items-center font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/plugins"
                 title="Plugins"
               >
                 <div
-                  class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                  class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
                 />
                 Plugins
               </a>
@@ -5714,12 +5632,12 @@ exports[`Settings should show an error toast if the current password does not ma
               class="flex"
             >
               <a
-                class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
+                class="relative flex items-center font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/exchange"
                 title="Exchange"
               >
                 <div
-                  class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                  class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
                 />
                 Exchange
               </a>
@@ -5728,12 +5646,12 @@ exports[`Settings should show an error toast if the current password does not ma
               class="flex"
             >
               <a
-                class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
+                class="relative flex items-center font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/news"
                 title="News"
               >
                 <div
-                  class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                  class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
                 />
                 News
               </a>
@@ -5861,6 +5779,7 @@ exports[`Settings should show an error toast if the current password does not ma
               </div>
               <div
                 class="text-sm font-bold text-theme-secondary-text dark:text-theme-text"
+                data-testid="Balance__value"
               >
                 <span
                   data-testid="Amount"
@@ -5896,7 +5815,7 @@ exports[`Settings should show an error toast if the current password does not ma
                   data-testid="dropdown__toggle"
                 >
                   <div
-                    class="cursor-pointer relative justify-center items-center align-middle rounded-full"
+                    class="relative items-center justify-center align-middle rounded-full cursor-pointer"
                     data-testid="navbar__useractions"
                   >
                     <div
@@ -6074,10 +5993,6 @@ exports[`Settings should show an error toast if the current password does not ma
                         for="currentPassword"
                       >
                         Current Password
-                        <div
-                          class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
-                          data-testid="FormLabel__required"
-                        />
                       </label>
                       <div
                         class="fixed invisible w-auto whitespace-nowrap"
@@ -6135,10 +6050,6 @@ exports[`Settings should show an error toast if the current password does not ma
                         for="password"
                       >
                         New Password
-                        <div
-                          class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
-                          data-testid="FormLabel__required"
-                        />
                       </label>
                       <div
                         class="fixed invisible w-auto whitespace-nowrap"
@@ -6196,10 +6107,6 @@ exports[`Settings should show an error toast if the current password does not ma
                         for="confirmPassword"
                       >
                         Confirm New Password
-                        <div
-                          class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
-                          data-testid="FormLabel__required"
-                        />
                       </label>
                       <div
                         class="fixed invisible w-auto whitespace-nowrap"
@@ -6282,10 +6189,10 @@ exports[`Settings should trigger password confirmation mismatch error 1`] = `
   >
     <nav
       aria-labelledby="main menu"
-      class="NavigationBar__NavWrapper-sc-1qsoskw-0 hkUMvZ"
+      class="NavigationBar__NavWrapper-sc-1qsoskw-0 bewuLZ"
     >
       <div
-        class="flex relative h-21"
+        class="relative flex h-21"
       >
         <button
           class="BackButton__StyledBackButton-sc-1pe22tv-0 hLgyWD flex w-12"
@@ -6307,7 +6214,7 @@ exports[`Settings should trigger password confirmation mismatch error 1`] = `
             class="flex items-center my-auto"
           >
             <div
-              class="NavigationBar__LogoContainer-sc-1qsoskw-2 tulfg"
+              class="NavigationBar__LogoContainer-sc-1qsoskw-2 itrWMc"
             >
               <svg
                 width="44"
@@ -6317,18 +6224,18 @@ exports[`Settings should trigger password confirmation mismatch error 1`] = `
             </div>
           </div>
           <ul
-            class="flex mr-auto ml-4 space-x-8 h-21"
+            class="flex ml-4 mr-auto space-x-8 h-21"
           >
             <li
               class="flex"
             >
               <a
-                class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
+                class="relative flex items-center font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
                 title="Portfolio"
               >
                 <div
-                  class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                  class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
                 />
                 Portfolio
               </a>
@@ -6337,12 +6244,12 @@ exports[`Settings should trigger password confirmation mismatch error 1`] = `
               class="flex"
             >
               <a
-                class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
+                class="relative flex items-center font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/plugins"
                 title="Plugins"
               >
                 <div
-                  class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                  class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
                 />
                 Plugins
               </a>
@@ -6351,12 +6258,12 @@ exports[`Settings should trigger password confirmation mismatch error 1`] = `
               class="flex"
             >
               <a
-                class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
+                class="relative flex items-center font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/exchange"
                 title="Exchange"
               >
                 <div
-                  class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                  class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
                 />
                 Exchange
               </a>
@@ -6365,12 +6272,12 @@ exports[`Settings should trigger password confirmation mismatch error 1`] = `
               class="flex"
             >
               <a
-                class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
+                class="relative flex items-center font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/news"
                 title="News"
               >
                 <div
-                  class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                  class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
                 />
                 News
               </a>
@@ -6498,6 +6405,7 @@ exports[`Settings should trigger password confirmation mismatch error 1`] = `
               </div>
               <div
                 class="text-sm font-bold text-theme-secondary-text dark:text-theme-text"
+                data-testid="Balance__value"
               >
                 <span
                   data-testid="Amount"
@@ -6533,7 +6441,7 @@ exports[`Settings should trigger password confirmation mismatch error 1`] = `
                   data-testid="dropdown__toggle"
                 >
                   <div
-                    class="cursor-pointer relative justify-center items-center align-middle rounded-full"
+                    class="relative items-center justify-center align-middle rounded-full cursor-pointer"
                     data-testid="navbar__useractions"
                   >
                     <div
@@ -6711,10 +6619,6 @@ exports[`Settings should trigger password confirmation mismatch error 1`] = `
                         for="currentPassword"
                       >
                         Current Password
-                        <div
-                          class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
-                          data-testid="FormLabel__required"
-                        />
                       </label>
                       <div
                         class="fixed invisible w-auto whitespace-nowrap"
@@ -6772,10 +6676,6 @@ exports[`Settings should trigger password confirmation mismatch error 1`] = `
                         for="password"
                       >
                         New Password
-                        <div
-                          class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
-                          data-testid="FormLabel__required"
-                        />
                       </label>
                       <div
                         class="fixed invisible w-auto whitespace-nowrap"
@@ -6848,10 +6748,6 @@ exports[`Settings should trigger password confirmation mismatch error 1`] = `
                         for="confirmPassword"
                       >
                         Confirm New Password
-                        <div
-                          class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
-                          data-testid="FormLabel__required"
-                        />
                       </label>
                       <div
                         class="fixed invisible w-auto whitespace-nowrap"
@@ -6950,10 +6846,10 @@ exports[`Settings should update profile 1`] = `
   >
     <nav
       aria-labelledby="main menu"
-      class="NavigationBar__NavWrapper-sc-1qsoskw-0 hkUMvZ"
+      class="NavigationBar__NavWrapper-sc-1qsoskw-0 bewuLZ"
     >
       <div
-        class="flex relative h-21"
+        class="relative flex h-21"
       >
         <button
           class="BackButton__StyledBackButton-sc-1pe22tv-0 hLgyWD flex w-12"
@@ -6975,7 +6871,7 @@ exports[`Settings should update profile 1`] = `
             class="flex items-center my-auto"
           >
             <div
-              class="NavigationBar__LogoContainer-sc-1qsoskw-2 tulfg"
+              class="NavigationBar__LogoContainer-sc-1qsoskw-2 itrWMc"
             >
               <svg
                 width="44"
@@ -6985,18 +6881,18 @@ exports[`Settings should update profile 1`] = `
             </div>
           </div>
           <ul
-            class="flex mr-auto ml-4 space-x-8 h-21"
+            class="flex ml-4 mr-auto space-x-8 h-21"
           >
             <li
               class="flex"
             >
               <a
-                class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
+                class="relative flex items-center font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
                 title="Portfolio"
               >
                 <div
-                  class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                  class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
                 />
                 Portfolio
               </a>
@@ -7005,12 +6901,12 @@ exports[`Settings should update profile 1`] = `
               class="flex"
             >
               <a
-                class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
+                class="relative flex items-center font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/plugins"
                 title="Plugins"
               >
                 <div
-                  class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                  class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
                 />
                 Plugins
               </a>
@@ -7019,12 +6915,12 @@ exports[`Settings should update profile 1`] = `
               class="flex"
             >
               <a
-                class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
+                class="relative flex items-center font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/exchange"
                 title="Exchange"
               >
                 <div
-                  class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                  class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
                 />
                 Exchange
               </a>
@@ -7033,12 +6929,12 @@ exports[`Settings should update profile 1`] = `
               class="flex"
             >
               <a
-                class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
+                class="relative flex items-center font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/news"
                 title="News"
               >
                 <div
-                  class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                  class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
                 />
                 News
               </a>
@@ -7164,6 +7060,7 @@ exports[`Settings should update profile 1`] = `
               </div>
               <div
                 class="text-sm font-bold text-theme-secondary-text dark:text-theme-text"
+                data-testid="Balance__value"
               >
                 <span
                   data-testid="Amount"
@@ -7199,7 +7096,7 @@ exports[`Settings should update profile 1`] = `
                   data-testid="dropdown__toggle"
                 >
                   <div
-                    class="cursor-pointer relative justify-center items-center align-middle rounded-full"
+                    class="relative items-center justify-center align-middle rounded-full cursor-pointer"
                     data-testid="navbar__useractions"
                   >
                     <div
@@ -7431,10 +7328,6 @@ exports[`Settings should update profile 1`] = `
                             for="name"
                           >
                             Profile Name
-                            <div
-                              class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
-                              data-testid="FormLabel__required"
-                            />
                           </label>
                           <div
                             class="fixed invisible w-auto whitespace-nowrap"
@@ -7465,10 +7358,6 @@ exports[`Settings should update profile 1`] = `
                             for="passphraseLanguage"
                           >
                             Passphrase Language
-                            <div
-                              class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
-                              data-testid="FormLabel__required"
-                            />
                           </label>
                           <div
                             class="relative w-full"
@@ -7523,15 +7412,15 @@ exports[`Settings should update profile 1`] = `
                                       aria-controls="select-passphrase-language-menu"
                                       aria-labelledby="select-passphrase-language-label"
                                       autocomplete="off"
-                                      class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full cursor-default"
-                                      data-testid="SelectDropdownInput__input"
+                                      class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
+                                      data-testid="SelectDropdown__input"
                                       id="select-passphrase-language-input"
                                       name="passphraseLanguage"
                                       placeholder="Select Passphrase Language"
                                       value="English"
                                     />
                                     <span
-                                      class="absolute inset-y-0 flex items-center font-normal opacity-50 pointer-events-none w-full cursor-default"
+                                      class="absolute inset-y-0 flex items-center font-normal opacity-50 pointer-events-none w-full"
                                       data-testid="Input__suggestion"
                                     >
                                       <span
@@ -7566,7 +7455,7 @@ exports[`Settings should update profile 1`] = `
                                 </div>
                                 <ul
                                   aria-labelledby="select-passphrase-language-label"
-                                  class="styles__SelectOptionsList-b2falt-0 ghEDCU"
+                                  class="styles__SelectOptionsList-b2falt-0 dyOwRR"
                                   id="select-passphrase-language-menu"
                                   role="listbox"
                                 />
@@ -7583,10 +7472,6 @@ exports[`Settings should update profile 1`] = `
                             for="currency"
                           >
                             Currency
-                            <div
-                              class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
-                              data-testid="FormLabel__required"
-                            />
                           </label>
                           <div
                             class="relative w-full"
@@ -7641,15 +7526,15 @@ exports[`Settings should update profile 1`] = `
                                       aria-controls="select-currency-menu"
                                       aria-labelledby="select-currency-label"
                                       autocomplete="off"
-                                      class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full cursor-default"
-                                      data-testid="SelectDropdownInput__input"
+                                      class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
+                                      data-testid="SelectDropdown__input"
                                       id="select-currency-input"
                                       name="currency"
                                       placeholder="Select Currency"
                                       value="BTC (Ƀ)"
                                     />
                                     <span
-                                      class="absolute inset-y-0 flex items-center font-normal opacity-50 pointer-events-none w-full cursor-default"
+                                      class="absolute inset-y-0 flex items-center font-normal opacity-50 pointer-events-none w-full"
                                       data-testid="Input__suggestion"
                                     >
                                       <span
@@ -7684,7 +7569,7 @@ exports[`Settings should update profile 1`] = `
                                 </div>
                                 <ul
                                   aria-labelledby="select-currency-label"
-                                  class="styles__SelectOptionsList-b2falt-0 ghEDCU"
+                                  class="styles__SelectOptionsList-b2falt-0 dyOwRR"
                                   id="select-currency-menu"
                                   role="listbox"
                                 />
@@ -7705,10 +7590,6 @@ exports[`Settings should update profile 1`] = `
                             for="language"
                           >
                             Language
-                            <div
-                              class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
-                              data-testid="FormLabel__required"
-                            />
                           </label>
                           <div
                             class="relative w-full"
@@ -7763,15 +7644,15 @@ exports[`Settings should update profile 1`] = `
                                       aria-controls="select-language-menu"
                                       aria-labelledby="select-language-label"
                                       autocomplete="off"
-                                      class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full cursor-default"
-                                      data-testid="SelectDropdownInput__input"
+                                      class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
+                                      data-testid="SelectDropdown__input"
                                       id="select-language-input"
                                       name="language"
                                       placeholder="Select Language"
                                       value="English"
                                     />
                                     <span
-                                      class="absolute inset-y-0 flex items-center font-normal opacity-50 pointer-events-none w-full cursor-default"
+                                      class="absolute inset-y-0 flex items-center font-normal opacity-50 pointer-events-none w-full"
                                       data-testid="Input__suggestion"
                                     >
                                       <span
@@ -7806,7 +7687,7 @@ exports[`Settings should update profile 1`] = `
                                 </div>
                                 <ul
                                   aria-labelledby="select-language-label"
-                                  class="styles__SelectOptionsList-b2falt-0 ghEDCU"
+                                  class="styles__SelectOptionsList-b2falt-0 dyOwRR"
                                   id="select-language-menu"
                                   role="listbox"
                                 />
@@ -7823,10 +7704,6 @@ exports[`Settings should update profile 1`] = `
                             for="marketProvider"
                           >
                             Price Oracle
-                            <div
-                              class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
-                              data-testid="FormLabel__required"
-                            />
                           </label>
                           <div
                             class="relative w-full"
@@ -7881,15 +7758,15 @@ exports[`Settings should update profile 1`] = `
                                       aria-controls="select-market-provider-menu"
                                       aria-labelledby="select-market-provider-label"
                                       autocomplete="off"
-                                      class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full cursor-default"
-                                      data-testid="SelectDropdownInput__input"
+                                      class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
+                                      data-testid="SelectDropdown__input"
                                       id="select-market-provider-input"
                                       name="marketProvider"
                                       placeholder="Select Price Oracle"
                                       value="CryptoCompare"
                                     />
                                     <span
-                                      class="absolute inset-y-0 flex items-center font-normal opacity-50 pointer-events-none w-full cursor-default"
+                                      class="absolute inset-y-0 flex items-center font-normal opacity-50 pointer-events-none w-full"
                                       data-testid="Input__suggestion"
                                     >
                                       <span
@@ -7924,7 +7801,7 @@ exports[`Settings should update profile 1`] = `
                                 </div>
                                 <ul
                                   aria-labelledby="select-market-provider-label"
-                                  class="styles__SelectOptionsList-b2falt-0 ghEDCU"
+                                  class="styles__SelectOptionsList-b2falt-0 dyOwRR"
                                   id="select-market-provider-menu"
                                   role="listbox"
                                 />
@@ -7941,10 +7818,6 @@ exports[`Settings should update profile 1`] = `
                             for="timeFormat"
                           >
                             Time Format
-                            <div
-                              class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
-                              data-testid="FormLabel__required"
-                            />
                           </label>
                           <div
                             class="relative w-full"
@@ -7999,15 +7872,15 @@ exports[`Settings should update profile 1`] = `
                                       aria-controls="select-time-format-menu"
                                       aria-labelledby="select-time-format-label"
                                       autocomplete="off"
-                                      class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full cursor-default"
-                                      data-testid="SelectDropdownInput__input"
+                                      class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
+                                      data-testid="SelectDropdown__input"
                                       id="select-time-format-input"
                                       name="timeFormat"
                                       placeholder="Select Time Format"
                                       value="12h"
                                     />
                                     <span
-                                      class="absolute inset-y-0 flex items-center font-normal opacity-50 pointer-events-none w-full cursor-default"
+                                      class="absolute inset-y-0 flex items-center font-normal opacity-50 pointer-events-none w-full"
                                       data-testid="Input__suggestion"
                                     >
                                       <span
@@ -8042,7 +7915,7 @@ exports[`Settings should update profile 1`] = `
                                 </div>
                                 <ul
                                   aria-labelledby="select-time-format-label"
-                                  class="styles__SelectOptionsList-b2falt-0 ghEDCU"
+                                  class="styles__SelectOptionsList-b2falt-0 dyOwRR"
                                   id="select-time-format-menu"
                                   role="listbox"
                                 />
@@ -8149,10 +8022,6 @@ exports[`Settings should update profile 1`] = `
                               for="automaticSignOutPeriod"
                             >
                               Auto Log-Off
-                              <div
-                                class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
-                                data-testid="FormLabel__required"
-                              />
                             </label>
                             <div
                               class="relative w-full"
@@ -8207,15 +8076,15 @@ exports[`Settings should update profile 1`] = `
                                         aria-controls="select-auto-signout-menu"
                                         aria-labelledby="select-auto-signout-label"
                                         autocomplete="off"
-                                        class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full cursor-default"
-                                        data-testid="SelectDropdownInput__input"
+                                        class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
+                                        data-testid="SelectDropdown__input"
                                         id="select-auto-signout-input"
                                         name="automaticSignOutPeriod"
                                         placeholder="Select Auto Log-Off"
                                         value="1 minute"
                                       />
                                       <span
-                                        class="absolute inset-y-0 flex items-center font-normal opacity-50 pointer-events-none w-full cursor-default"
+                                        class="absolute inset-y-0 flex items-center font-normal opacity-50 pointer-events-none w-full"
                                         data-testid="Input__suggestion"
                                       >
                                         <span
@@ -8250,7 +8119,7 @@ exports[`Settings should update profile 1`] = `
                                   </div>
                                   <ul
                                     aria-labelledby="select-auto-signout-label"
-                                    class="styles__SelectOptionsList-b2falt-0 ghEDCU"
+                                    class="styles__SelectOptionsList-b2falt-0 dyOwRR"
                                     id="select-auto-signout-menu"
                                     role="listbox"
                                   />
@@ -8543,10 +8412,10 @@ exports[`Settings should update the avatar when removing focus from name input 1
   >
     <nav
       aria-labelledby="main menu"
-      class="NavigationBar__NavWrapper-sc-1qsoskw-0 hkUMvZ"
+      class="NavigationBar__NavWrapper-sc-1qsoskw-0 bewuLZ"
     >
       <div
-        class="flex relative h-21"
+        class="relative flex h-21"
       >
         <button
           class="BackButton__StyledBackButton-sc-1pe22tv-0 hLgyWD flex w-12"
@@ -8568,7 +8437,7 @@ exports[`Settings should update the avatar when removing focus from name input 1
             class="flex items-center my-auto"
           >
             <div
-              class="NavigationBar__LogoContainer-sc-1qsoskw-2 tulfg"
+              class="NavigationBar__LogoContainer-sc-1qsoskw-2 itrWMc"
             >
               <svg
                 width="44"
@@ -8578,18 +8447,18 @@ exports[`Settings should update the avatar when removing focus from name input 1
             </div>
           </div>
           <ul
-            class="flex mr-auto ml-4 space-x-8 h-21"
+            class="flex ml-4 mr-auto space-x-8 h-21"
           >
             <li
               class="flex"
             >
               <a
-                class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
+                class="relative flex items-center font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
                 title="Portfolio"
               >
                 <div
-                  class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                  class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
                 />
                 Portfolio
               </a>
@@ -8598,12 +8467,12 @@ exports[`Settings should update the avatar when removing focus from name input 1
               class="flex"
             >
               <a
-                class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
+                class="relative flex items-center font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/plugins"
                 title="Plugins"
               >
                 <div
-                  class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                  class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
                 />
                 Plugins
               </a>
@@ -8612,12 +8481,12 @@ exports[`Settings should update the avatar when removing focus from name input 1
               class="flex"
             >
               <a
-                class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
+                class="relative flex items-center font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/exchange"
                 title="Exchange"
               >
                 <div
-                  class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                  class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
                 />
                 Exchange
               </a>
@@ -8626,12 +8495,12 @@ exports[`Settings should update the avatar when removing focus from name input 1
               class="flex"
             >
               <a
-                class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
+                class="relative flex items-center font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/news"
                 title="News"
               >
                 <div
-                  class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                  class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
                 />
                 News
               </a>
@@ -8757,6 +8626,7 @@ exports[`Settings should update the avatar when removing focus from name input 1
               </div>
               <div
                 class="text-sm font-bold text-theme-secondary-text dark:text-theme-text"
+                data-testid="Balance__value"
               >
                 <span
                   data-testid="Amount"
@@ -8792,7 +8662,7 @@ exports[`Settings should update the avatar when removing focus from name input 1
                   data-testid="dropdown__toggle"
                 >
                   <div
-                    class="cursor-pointer relative justify-center items-center align-middle rounded-full"
+                    class="relative items-center justify-center align-middle rounded-full cursor-pointer"
                     data-testid="navbar__useractions"
                   >
                     <div
@@ -9031,10 +8901,6 @@ exports[`Settings should update the avatar when removing focus from name input 1
                             for="name"
                           >
                             Profile Name
-                            <div
-                              class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
-                              data-testid="FormLabel__required"
-                            />
                           </label>
                           <div
                             class="fixed invisible w-auto whitespace-nowrap"
@@ -9065,10 +8931,6 @@ exports[`Settings should update the avatar when removing focus from name input 1
                             for="passphraseLanguage"
                           >
                             Passphrase Language
-                            <div
-                              class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
-                              data-testid="FormLabel__required"
-                            />
                           </label>
                           <div
                             class="relative w-full"
@@ -9123,15 +8985,15 @@ exports[`Settings should update the avatar when removing focus from name input 1
                                       aria-controls="select-passphrase-language-menu"
                                       aria-labelledby="select-passphrase-language-label"
                                       autocomplete="off"
-                                      class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full cursor-default"
-                                      data-testid="SelectDropdownInput__input"
+                                      class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
+                                      data-testid="SelectDropdown__input"
                                       id="select-passphrase-language-input"
                                       name="passphraseLanguage"
                                       placeholder="Select Passphrase Language"
                                       value="English"
                                     />
                                     <span
-                                      class="absolute inset-y-0 flex items-center font-normal opacity-50 pointer-events-none w-full cursor-default"
+                                      class="absolute inset-y-0 flex items-center font-normal opacity-50 pointer-events-none w-full"
                                       data-testid="Input__suggestion"
                                     >
                                       <span
@@ -9166,7 +9028,7 @@ exports[`Settings should update the avatar when removing focus from name input 1
                                 </div>
                                 <ul
                                   aria-labelledby="select-passphrase-language-label"
-                                  class="styles__SelectOptionsList-b2falt-0 ghEDCU"
+                                  class="styles__SelectOptionsList-b2falt-0 dyOwRR"
                                   id="select-passphrase-language-menu"
                                   role="listbox"
                                 />
@@ -9183,10 +9045,6 @@ exports[`Settings should update the avatar when removing focus from name input 1
                             for="currency"
                           >
                             Currency
-                            <div
-                              class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
-                              data-testid="FormLabel__required"
-                            />
                           </label>
                           <div
                             class="relative w-full"
@@ -9241,15 +9099,15 @@ exports[`Settings should update the avatar when removing focus from name input 1
                                       aria-controls="select-currency-menu"
                                       aria-labelledby="select-currency-label"
                                       autocomplete="off"
-                                      class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full cursor-default"
-                                      data-testid="SelectDropdownInput__input"
+                                      class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
+                                      data-testid="SelectDropdown__input"
                                       id="select-currency-input"
                                       name="currency"
                                       placeholder="Select Currency"
                                       value="BTC (Ƀ)"
                                     />
                                     <span
-                                      class="absolute inset-y-0 flex items-center font-normal opacity-50 pointer-events-none w-full cursor-default"
+                                      class="absolute inset-y-0 flex items-center font-normal opacity-50 pointer-events-none w-full"
                                       data-testid="Input__suggestion"
                                     >
                                       <span
@@ -9284,7 +9142,7 @@ exports[`Settings should update the avatar when removing focus from name input 1
                                 </div>
                                 <ul
                                   aria-labelledby="select-currency-label"
-                                  class="styles__SelectOptionsList-b2falt-0 ghEDCU"
+                                  class="styles__SelectOptionsList-b2falt-0 dyOwRR"
                                   id="select-currency-menu"
                                   role="listbox"
                                 />
@@ -9305,10 +9163,6 @@ exports[`Settings should update the avatar when removing focus from name input 1
                             for="language"
                           >
                             Language
-                            <div
-                              class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
-                              data-testid="FormLabel__required"
-                            />
                           </label>
                           <div
                             class="relative w-full"
@@ -9363,15 +9217,15 @@ exports[`Settings should update the avatar when removing focus from name input 1
                                       aria-controls="select-language-menu"
                                       aria-labelledby="select-language-label"
                                       autocomplete="off"
-                                      class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full cursor-default"
-                                      data-testid="SelectDropdownInput__input"
+                                      class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
+                                      data-testid="SelectDropdown__input"
                                       id="select-language-input"
                                       name="language"
                                       placeholder="Select Language"
                                       value="English"
                                     />
                                     <span
-                                      class="absolute inset-y-0 flex items-center font-normal opacity-50 pointer-events-none w-full cursor-default"
+                                      class="absolute inset-y-0 flex items-center font-normal opacity-50 pointer-events-none w-full"
                                       data-testid="Input__suggestion"
                                     >
                                       <span
@@ -9406,7 +9260,7 @@ exports[`Settings should update the avatar when removing focus from name input 1
                                 </div>
                                 <ul
                                   aria-labelledby="select-language-label"
-                                  class="styles__SelectOptionsList-b2falt-0 ghEDCU"
+                                  class="styles__SelectOptionsList-b2falt-0 dyOwRR"
                                   id="select-language-menu"
                                   role="listbox"
                                 />
@@ -9423,10 +9277,6 @@ exports[`Settings should update the avatar when removing focus from name input 1
                             for="marketProvider"
                           >
                             Price Oracle
-                            <div
-                              class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
-                              data-testid="FormLabel__required"
-                            />
                           </label>
                           <div
                             class="relative w-full"
@@ -9481,15 +9331,15 @@ exports[`Settings should update the avatar when removing focus from name input 1
                                       aria-controls="select-market-provider-menu"
                                       aria-labelledby="select-market-provider-label"
                                       autocomplete="off"
-                                      class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full cursor-default"
-                                      data-testid="SelectDropdownInput__input"
+                                      class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
+                                      data-testid="SelectDropdown__input"
                                       id="select-market-provider-input"
                                       name="marketProvider"
                                       placeholder="Select Price Oracle"
                                       value="CryptoCompare"
                                     />
                                     <span
-                                      class="absolute inset-y-0 flex items-center font-normal opacity-50 pointer-events-none w-full cursor-default"
+                                      class="absolute inset-y-0 flex items-center font-normal opacity-50 pointer-events-none w-full"
                                       data-testid="Input__suggestion"
                                     >
                                       <span
@@ -9524,7 +9374,7 @@ exports[`Settings should update the avatar when removing focus from name input 1
                                 </div>
                                 <ul
                                   aria-labelledby="select-market-provider-label"
-                                  class="styles__SelectOptionsList-b2falt-0 ghEDCU"
+                                  class="styles__SelectOptionsList-b2falt-0 dyOwRR"
                                   id="select-market-provider-menu"
                                   role="listbox"
                                 />
@@ -9541,10 +9391,6 @@ exports[`Settings should update the avatar when removing focus from name input 1
                             for="timeFormat"
                           >
                             Time Format
-                            <div
-                              class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
-                              data-testid="FormLabel__required"
-                            />
                           </label>
                           <div
                             class="relative w-full"
@@ -9599,15 +9445,15 @@ exports[`Settings should update the avatar when removing focus from name input 1
                                       aria-controls="select-time-format-menu"
                                       aria-labelledby="select-time-format-label"
                                       autocomplete="off"
-                                      class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full cursor-default"
-                                      data-testid="SelectDropdownInput__input"
+                                      class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
+                                      data-testid="SelectDropdown__input"
                                       id="select-time-format-input"
                                       name="timeFormat"
                                       placeholder="Select Time Format"
                                       value="12h"
                                     />
                                     <span
-                                      class="absolute inset-y-0 flex items-center font-normal opacity-50 pointer-events-none w-full cursor-default"
+                                      class="absolute inset-y-0 flex items-center font-normal opacity-50 pointer-events-none w-full"
                                       data-testid="Input__suggestion"
                                     >
                                       <span
@@ -9642,7 +9488,7 @@ exports[`Settings should update the avatar when removing focus from name input 1
                                 </div>
                                 <ul
                                   aria-labelledby="select-time-format-label"
-                                  class="styles__SelectOptionsList-b2falt-0 ghEDCU"
+                                  class="styles__SelectOptionsList-b2falt-0 dyOwRR"
                                   id="select-time-format-menu"
                                   role="listbox"
                                 />
@@ -9748,10 +9594,6 @@ exports[`Settings should update the avatar when removing focus from name input 1
                               for="automaticSignOutPeriod"
                             >
                               Auto Log-Off
-                              <div
-                                class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
-                                data-testid="FormLabel__required"
-                              />
                             </label>
                             <div
                               class="relative w-full"
@@ -9806,15 +9648,15 @@ exports[`Settings should update the avatar when removing focus from name input 1
                                         aria-controls="select-auto-signout-menu"
                                         aria-labelledby="select-auto-signout-label"
                                         autocomplete="off"
-                                        class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full cursor-default"
-                                        data-testid="SelectDropdownInput__input"
+                                        class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
+                                        data-testid="SelectDropdown__input"
                                         id="select-auto-signout-input"
                                         name="automaticSignOutPeriod"
                                         placeholder="Select Auto Log-Off"
                                         value="1 minute"
                                       />
                                       <span
-                                        class="absolute inset-y-0 flex items-center font-normal opacity-50 pointer-events-none w-full cursor-default"
+                                        class="absolute inset-y-0 flex items-center font-normal opacity-50 pointer-events-none w-full"
                                         data-testid="Input__suggestion"
                                       >
                                         <span
@@ -9849,7 +9691,7 @@ exports[`Settings should update the avatar when removing focus from name input 1
                                   </div>
                                   <ul
                                     aria-labelledby="select-auto-signout-label"
-                                    class="styles__SelectOptionsList-b2falt-0 ghEDCU"
+                                    class="styles__SelectOptionsList-b2falt-0 dyOwRR"
                                     id="select-auto-signout-menu"
                                     role="listbox"
                                   />
@@ -10142,10 +9984,10 @@ exports[`Settings should update the avatar when removing focus from name input 2
   >
     <nav
       aria-labelledby="main menu"
-      class="NavigationBar__NavWrapper-sc-1qsoskw-0 hkUMvZ"
+      class="NavigationBar__NavWrapper-sc-1qsoskw-0 bewuLZ"
     >
       <div
-        class="flex relative h-21"
+        class="relative flex h-21"
       >
         <button
           class="BackButton__StyledBackButton-sc-1pe22tv-0 hLgyWD flex w-12"
@@ -10167,7 +10009,7 @@ exports[`Settings should update the avatar when removing focus from name input 2
             class="flex items-center my-auto"
           >
             <div
-              class="NavigationBar__LogoContainer-sc-1qsoskw-2 tulfg"
+              class="NavigationBar__LogoContainer-sc-1qsoskw-2 itrWMc"
             >
               <svg
                 width="44"
@@ -10177,18 +10019,18 @@ exports[`Settings should update the avatar when removing focus from name input 2
             </div>
           </div>
           <ul
-            class="flex mr-auto ml-4 space-x-8 h-21"
+            class="flex ml-4 mr-auto space-x-8 h-21"
           >
             <li
               class="flex"
             >
               <a
-                class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
+                class="relative flex items-center font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
                 title="Portfolio"
               >
                 <div
-                  class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                  class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
                 />
                 Portfolio
               </a>
@@ -10197,12 +10039,12 @@ exports[`Settings should update the avatar when removing focus from name input 2
               class="flex"
             >
               <a
-                class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
+                class="relative flex items-center font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/plugins"
                 title="Plugins"
               >
                 <div
-                  class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                  class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
                 />
                 Plugins
               </a>
@@ -10211,12 +10053,12 @@ exports[`Settings should update the avatar when removing focus from name input 2
               class="flex"
             >
               <a
-                class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
+                class="relative flex items-center font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/exchange"
                 title="Exchange"
               >
                 <div
-                  class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                  class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
                 />
                 Exchange
               </a>
@@ -10225,12 +10067,12 @@ exports[`Settings should update the avatar when removing focus from name input 2
               class="flex"
             >
               <a
-                class="relative flex items-center px-1 font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
+                class="relative flex items-center font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/news"
                 title="News"
               >
                 <div
-                  class="absolute inset-0 m-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                  class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
                 />
                 News
               </a>
@@ -10356,6 +10198,7 @@ exports[`Settings should update the avatar when removing focus from name input 2
               </div>
               <div
                 class="text-sm font-bold text-theme-secondary-text dark:text-theme-text"
+                data-testid="Balance__value"
               >
                 <span
                   data-testid="Amount"
@@ -10391,7 +10234,7 @@ exports[`Settings should update the avatar when removing focus from name input 2
                   data-testid="dropdown__toggle"
                 >
                   <div
-                    class="cursor-pointer relative justify-center items-center align-middle rounded-full"
+                    class="relative items-center justify-center align-middle rounded-full cursor-pointer"
                     data-testid="navbar__useractions"
                   >
                     <div
@@ -10623,10 +10466,6 @@ exports[`Settings should update the avatar when removing focus from name input 2
                             for="name"
                           >
                             Profile Name
-                            <div
-                              class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
-                              data-testid="FormLabel__required"
-                            />
                           </label>
                           <div
                             class="fixed invisible w-auto whitespace-nowrap"
@@ -10676,10 +10515,6 @@ exports[`Settings should update the avatar when removing focus from name input 2
                             for="passphraseLanguage"
                           >
                             Passphrase Language
-                            <div
-                              class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
-                              data-testid="FormLabel__required"
-                            />
                           </label>
                           <div
                             class="relative w-full"
@@ -10734,15 +10569,15 @@ exports[`Settings should update the avatar when removing focus from name input 2
                                       aria-controls="select-passphrase-language-menu"
                                       aria-labelledby="select-passphrase-language-label"
                                       autocomplete="off"
-                                      class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full cursor-default"
-                                      data-testid="SelectDropdownInput__input"
+                                      class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
+                                      data-testid="SelectDropdown__input"
                                       id="select-passphrase-language-input"
                                       name="passphraseLanguage"
                                       placeholder="Select Passphrase Language"
                                       value="English"
                                     />
                                     <span
-                                      class="absolute inset-y-0 flex items-center font-normal opacity-50 pointer-events-none w-full cursor-default"
+                                      class="absolute inset-y-0 flex items-center font-normal opacity-50 pointer-events-none w-full"
                                       data-testid="Input__suggestion"
                                     >
                                       <span
@@ -10777,7 +10612,7 @@ exports[`Settings should update the avatar when removing focus from name input 2
                                 </div>
                                 <ul
                                   aria-labelledby="select-passphrase-language-label"
-                                  class="styles__SelectOptionsList-b2falt-0 ghEDCU"
+                                  class="styles__SelectOptionsList-b2falt-0 dyOwRR"
                                   id="select-passphrase-language-menu"
                                   role="listbox"
                                 />
@@ -10794,10 +10629,6 @@ exports[`Settings should update the avatar when removing focus from name input 2
                             for="currency"
                           >
                             Currency
-                            <div
-                              class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
-                              data-testid="FormLabel__required"
-                            />
                           </label>
                           <div
                             class="relative w-full"
@@ -10852,15 +10683,15 @@ exports[`Settings should update the avatar when removing focus from name input 2
                                       aria-controls="select-currency-menu"
                                       aria-labelledby="select-currency-label"
                                       autocomplete="off"
-                                      class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full cursor-default"
-                                      data-testid="SelectDropdownInput__input"
+                                      class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
+                                      data-testid="SelectDropdown__input"
                                       id="select-currency-input"
                                       name="currency"
                                       placeholder="Select Currency"
                                       value="BTC (Ƀ)"
                                     />
                                     <span
-                                      class="absolute inset-y-0 flex items-center font-normal opacity-50 pointer-events-none w-full cursor-default"
+                                      class="absolute inset-y-0 flex items-center font-normal opacity-50 pointer-events-none w-full"
                                       data-testid="Input__suggestion"
                                     >
                                       <span
@@ -10895,7 +10726,7 @@ exports[`Settings should update the avatar when removing focus from name input 2
                                 </div>
                                 <ul
                                   aria-labelledby="select-currency-label"
-                                  class="styles__SelectOptionsList-b2falt-0 ghEDCU"
+                                  class="styles__SelectOptionsList-b2falt-0 dyOwRR"
                                   id="select-currency-menu"
                                   role="listbox"
                                 />
@@ -10916,10 +10747,6 @@ exports[`Settings should update the avatar when removing focus from name input 2
                             for="language"
                           >
                             Language
-                            <div
-                              class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
-                              data-testid="FormLabel__required"
-                            />
                           </label>
                           <div
                             class="relative w-full"
@@ -10974,15 +10801,15 @@ exports[`Settings should update the avatar when removing focus from name input 2
                                       aria-controls="select-language-menu"
                                       aria-labelledby="select-language-label"
                                       autocomplete="off"
-                                      class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full cursor-default"
-                                      data-testid="SelectDropdownInput__input"
+                                      class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
+                                      data-testid="SelectDropdown__input"
                                       id="select-language-input"
                                       name="language"
                                       placeholder="Select Language"
                                       value="English"
                                     />
                                     <span
-                                      class="absolute inset-y-0 flex items-center font-normal opacity-50 pointer-events-none w-full cursor-default"
+                                      class="absolute inset-y-0 flex items-center font-normal opacity-50 pointer-events-none w-full"
                                       data-testid="Input__suggestion"
                                     >
                                       <span
@@ -11017,7 +10844,7 @@ exports[`Settings should update the avatar when removing focus from name input 2
                                 </div>
                                 <ul
                                   aria-labelledby="select-language-label"
-                                  class="styles__SelectOptionsList-b2falt-0 ghEDCU"
+                                  class="styles__SelectOptionsList-b2falt-0 dyOwRR"
                                   id="select-language-menu"
                                   role="listbox"
                                 />
@@ -11034,10 +10861,6 @@ exports[`Settings should update the avatar when removing focus from name input 2
                             for="marketProvider"
                           >
                             Price Oracle
-                            <div
-                              class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
-                              data-testid="FormLabel__required"
-                            />
                           </label>
                           <div
                             class="relative w-full"
@@ -11092,15 +10915,15 @@ exports[`Settings should update the avatar when removing focus from name input 2
                                       aria-controls="select-market-provider-menu"
                                       aria-labelledby="select-market-provider-label"
                                       autocomplete="off"
-                                      class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full cursor-default"
-                                      data-testid="SelectDropdownInput__input"
+                                      class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
+                                      data-testid="SelectDropdown__input"
                                       id="select-market-provider-input"
                                       name="marketProvider"
                                       placeholder="Select Price Oracle"
                                       value="CryptoCompare"
                                     />
                                     <span
-                                      class="absolute inset-y-0 flex items-center font-normal opacity-50 pointer-events-none w-full cursor-default"
+                                      class="absolute inset-y-0 flex items-center font-normal opacity-50 pointer-events-none w-full"
                                       data-testid="Input__suggestion"
                                     >
                                       <span
@@ -11135,7 +10958,7 @@ exports[`Settings should update the avatar when removing focus from name input 2
                                 </div>
                                 <ul
                                   aria-labelledby="select-market-provider-label"
-                                  class="styles__SelectOptionsList-b2falt-0 ghEDCU"
+                                  class="styles__SelectOptionsList-b2falt-0 dyOwRR"
                                   id="select-market-provider-menu"
                                   role="listbox"
                                 />
@@ -11152,10 +10975,6 @@ exports[`Settings should update the avatar when removing focus from name input 2
                             for="timeFormat"
                           >
                             Time Format
-                            <div
-                              class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
-                              data-testid="FormLabel__required"
-                            />
                           </label>
                           <div
                             class="relative w-full"
@@ -11210,15 +11029,15 @@ exports[`Settings should update the avatar when removing focus from name input 2
                                       aria-controls="select-time-format-menu"
                                       aria-labelledby="select-time-format-label"
                                       autocomplete="off"
-                                      class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full cursor-default"
-                                      data-testid="SelectDropdownInput__input"
+                                      class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
+                                      data-testid="SelectDropdown__input"
                                       id="select-time-format-input"
                                       name="timeFormat"
                                       placeholder="Select Time Format"
                                       value="12h"
                                     />
                                     <span
-                                      class="absolute inset-y-0 flex items-center font-normal opacity-50 pointer-events-none w-full cursor-default"
+                                      class="absolute inset-y-0 flex items-center font-normal opacity-50 pointer-events-none w-full"
                                       data-testid="Input__suggestion"
                                     >
                                       <span
@@ -11253,7 +11072,7 @@ exports[`Settings should update the avatar when removing focus from name input 2
                                 </div>
                                 <ul
                                   aria-labelledby="select-time-format-label"
-                                  class="styles__SelectOptionsList-b2falt-0 ghEDCU"
+                                  class="styles__SelectOptionsList-b2falt-0 dyOwRR"
                                   id="select-time-format-menu"
                                   role="listbox"
                                 />
@@ -11359,10 +11178,6 @@ exports[`Settings should update the avatar when removing focus from name input 2
                               for="automaticSignOutPeriod"
                             >
                               Auto Log-Off
-                              <div
-                                class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
-                                data-testid="FormLabel__required"
-                              />
                             </label>
                             <div
                               class="relative w-full"
@@ -11417,15 +11232,15 @@ exports[`Settings should update the avatar when removing focus from name input 2
                                         aria-controls="select-auto-signout-menu"
                                         aria-labelledby="select-auto-signout-label"
                                         autocomplete="off"
-                                        class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full cursor-default"
-                                        data-testid="SelectDropdownInput__input"
+                                        class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
+                                        data-testid="SelectDropdown__input"
                                         id="select-auto-signout-input"
                                         name="automaticSignOutPeriod"
                                         placeholder="Select Auto Log-Off"
                                         value="1 minute"
                                       />
                                       <span
-                                        class="absolute inset-y-0 flex items-center font-normal opacity-50 pointer-events-none w-full cursor-default"
+                                        class="absolute inset-y-0 flex items-center font-normal opacity-50 pointer-events-none w-full"
                                         data-testid="Input__suggestion"
                                       >
                                         <span
@@ -11460,7 +11275,7 @@ exports[`Settings should update the avatar when removing focus from name input 2
                                   </div>
                                   <ul
                                     aria-labelledby="select-auto-signout-label"
-                                    class="styles__SelectOptionsList-b2falt-0 ghEDCU"
+                                    class="styles__SelectOptionsList-b2falt-0 dyOwRR"
                                     id="select-auto-signout-menu"
                                     role="listbox"
                                   />

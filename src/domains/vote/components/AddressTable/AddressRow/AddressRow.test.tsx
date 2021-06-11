@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/require-await */
 import { Contracts } from "@arkecosystem/platform-sdk-profiles";
 // @README: This import is fine in tests but should be avoided in production code.
-import { ReadOnlyWallet } from "@arkecosystem/platform-sdk-profiles/dist/drivers/memory/wallets/read-only-wallet";
+import { ReadOnlyWallet } from "@arkecosystem/platform-sdk-profiles/distribution/drivers/memory/wallets/read-only-wallet";
 import nock from "nock";
 import React from "react";
 import { act, env, fireEvent, getDefaultProfileId, render, syncDelegates, waitFor } from "testing-library";
@@ -25,16 +25,16 @@ describe("AddressRow", () => {
 		profile = env.profiles().findById(getDefaultProfileId());
 		wallet = profile.wallets().findById("ac38fe6d-4b67-4ef1-85be-17c5f6841129");
 		wallet.data().set(Contracts.WalletFlag.Starred, true);
-		wallet.data().set(Contracts.WalletData.LedgerPath, "0");
+		wallet.data().set(Contracts.WalletData.DerivationPath, "0");
 
-		blankWallet = await profile.walletFactory().fromMnemonic({
+		blankWallet = await profile.walletFactory().fromMnemonicWithBIP39({
 			mnemonic: blankWalletPassphrase,
 			coin: "ARK",
 			network: "ark.devnet",
 		});
 		profile.wallets().push(blankWallet);
 
-		unvotedWallet = await profile.walletFactory().fromMnemonic({
+		unvotedWallet = await profile.walletFactory().fromMnemonicWithBIP39({
 			mnemonic: "unvoted wallet",
 			coin: "ARK",
 			network: "ark.devnet",
@@ -43,7 +43,7 @@ describe("AddressRow", () => {
 
 		emptyProfile = env.profiles().findById("cba050f1-880f-45f0-9af9-cfe48f406052");
 
-		wallet2 = await emptyProfile.walletFactory().fromMnemonic({
+		wallet2 = await emptyProfile.walletFactory().fromMnemonicWithBIP39({
 			mnemonic: "wallet 2",
 			coin: "ARK",
 			network: "ark.devnet",
