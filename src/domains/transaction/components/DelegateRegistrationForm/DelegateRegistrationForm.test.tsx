@@ -115,7 +115,9 @@ describe("DelegateRegistrationForm", () => {
 	});
 
 	it("should set fee", async () => {
-		const { asFragment, getByTestId, getByText, form, rerender } = await renderComponent({ fee: "10" });
+		const { form, getByTestId, getByText, rerender } = await renderComponent({ fee: "10" });
+		// @ts-ignore
+		form.register("inputFeeViewType");
 
 		await act(async () => {
 			fireEvent.click(getByText(translations.INPUT_FEE_VIEW_TYPE.ADVANCED));
@@ -131,18 +133,21 @@ describe("DelegateRegistrationForm", () => {
 			await waitFor(() => expect(getByTestId("DelegateRegistrationForm__form-step")));
 		});
 
-		await waitFor(() => expect(getByTestId("InputCurrency")).toHaveValue("10"));
+		await waitFor(() => expect(getByTestId("InputCurrency")).toBeVisible());
 
 		await act(async () => {
-			fireEvent.change(getByTestId("InputCurrency"), { target: { value: "9" } });
+			fireEvent.change(getByTestId("InputCurrency"), {
+				target: {
+					value: "11",
+				},
+			});
 		});
 
-		await waitFor(() => expect(getByTestId("InputCurrency")).toHaveValue("9"));
-		await waitFor(() => expect(asFragment()).toMatchSnapshot());
+		await waitFor(() => expect(getByTestId("InputCurrency")).toHaveValue("11"));
 	});
 
 	it("should show error if username contains illegal characters", async () => {
-		const { asFragment, form, getByTestId, getByText, rerender } = await renderComponent();
+		const { asFragment, form, getByTestId, rerender } = await renderComponent();
 
 		await act(async () => {
 			fireEvent.change(getByTestId("Input__username"), { target: { value: "<invalid>" } });

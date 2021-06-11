@@ -24,17 +24,15 @@ export const FormStep = ({
 	step?: number;
 }) => {
 	const { t } = useTranslation();
-	const { errors, setValue, getValues, register, watch } = useFormContext();
-	const { participants, fee, minParticipants } = getValues();
+	const { errors, setValue, getValues, register } = useFormContext();
+	const { participants, fee, minParticipants, inputFeeViewType } = getValues();
 
 	const { common, multiSignatureRegistration } = useValidation();
-	const { inputFeeViewType } = watch();
 
 	useEffect(() => {
 		register("fee", common.fee(wallet.balance(), wallet.network()));
 		register("participants", multiSignatureRegistration.participants());
 		register("minParticipants", multiSignatureRegistration.minParticipants(participants));
-		register("inputFeeViewType");
 	}, [register, participants, common, fees, multiSignatureRegistration, wallet]);
 
 	useEffect(() => {

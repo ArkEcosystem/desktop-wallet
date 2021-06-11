@@ -88,11 +88,23 @@ describe("SecondSignatureRegistrationForm", () => {
 
 		const { rerender } = render(<Component form={result.current} onSubmit={() => void 0} />);
 
-		fireEvent.click(screen.getByText(transactionTranslations.INPUT_FEE_VIEW_TYPE.ADVANCED));
+		act(() => {
+			fireEvent.click(screen.getByText(transactionTranslations.INPUT_FEE_VIEW_TYPE.ADVANCED));
+		});
 
 		rerender(<Component form={result.current} onSubmit={() => void 0} />);
 
-		fireEvent.change(screen.getByTestId("InputCurrency"), { target: { value: "9" } });
+		expect(screen.getByTestId("InputCurrency")).toBeVisible();
+
+		act(() => {
+			fireEvent.change(screen.getByTestId("InputCurrency"), {
+				target: {
+					value: "9",
+				},
+			});
+		});
+
+		expect(screen.getByTestId("InputCurrency")).toHaveValue("9");
 	});
 
 	describe("backup step", () => {

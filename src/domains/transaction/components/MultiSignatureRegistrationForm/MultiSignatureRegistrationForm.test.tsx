@@ -74,21 +74,25 @@ describe("MultiSignature Registration Form", () => {
 
 	it("should set fee", async () => {
 		const { result, waitForNextUpdate } = renderHook(() => useForm());
-
 		result.current.register("fee");
 		result.current.register("inputFeeViewType");
 
 		const { rerender } = render(<Component form={result.current} />);
-
 		await waitForNextUpdate();
 
 		fireEvent.click(screen.getByText(transactionTranslations.INPUT_FEE_VIEW_TYPE.ADVANCED));
 
 		rerender(<Component form={result.current} />);
 
-		fireEvent.change(screen.getByTestId("InputCurrency"), { target: { value: "9" } });
+		await waitFor(() => expect(screen.getByTestId("InputCurrency")).toBeVisible());
 
-		expect(screen.getByTestId("InputCurrency")).toHaveValue("9");
+		fireEvent.change(screen.getByTestId("InputCurrency"), {
+			target: {
+				value: "9",
+			},
+		});
+
+		await waitFor(() => expect(screen.getByTestId("InputCurrency")).toHaveValue("9"));
 	});
 
 	it("should fill form", async () => {

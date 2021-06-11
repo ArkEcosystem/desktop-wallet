@@ -31,13 +31,13 @@ export const GenerationStep = ({
 	// getValues does not get the value of `defaultValues` on first render
 	const [defaultFee] = useState(() => watch("fee"));
 	const fee = getValues("fee") || defaultFee;
-	const { inputFeeViewType } = watch();
+
+	const inputFeeViewType = getValues("inputFeeViewType");
 
 	useEffect(() => {
 		register("fee", common.fee(wallet.balance(), wallet.network()));
 		register("secondMnemonic");
 		register("wallet");
-		register("inputFeeViewType");
 	}, [register, common, fees, wallet]);
 
 	useEffect(() => {
