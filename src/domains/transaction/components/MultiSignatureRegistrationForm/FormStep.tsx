@@ -34,6 +34,7 @@ export const FormStep = ({
 		register("fee", common.fee(wallet.balance(), wallet.network()));
 		register("participants", multiSignatureRegistration.participants());
 		register("minParticipants", multiSignatureRegistration.minParticipants(participants));
+		register("inputFeeViewType");
 	}, [register, participants, common, fees, multiSignatureRegistration, wallet]);
 
 	useEffect(() => {

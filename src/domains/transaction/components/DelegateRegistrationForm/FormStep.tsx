@@ -25,8 +25,7 @@ export const FormStep = ({ fees, wallet, step = 0.001, profile }: any) => {
 	const [defaultFee] = useState(() => watch("fee"));
 	const fee = getValues("fee") || defaultFee;
 
-	const [defaultInputFeeViewType] = useState(() => watch("inputFeeViewType"));
-	const inputFeeViewType = getValues("inputFeeViewType") || defaultInputFeeViewType;
+	const inputFeeViewType = watch("inputFeeViewType");
 
 	useEffect(() => {
 		register("fee", common.fee(wallet.balance(), wallet.network()));
@@ -46,6 +45,12 @@ export const FormStep = ({ fees, wallet, step = 0.001, profile }: any) => {
 			register("username", delegateRegistration.username(usernames));
 		}
 	}, [delegateRegistration, usernames, register, username, t]);
+
+	useEffect(() => {
+		if (!inputFeeViewType) {
+			register("inputFeeViewType");
+		}
+	}, [inputFeeViewType, register]);
 
 	return (
 		<section data-testid="DelegateRegistrationForm__form-step" className="space-y-8">

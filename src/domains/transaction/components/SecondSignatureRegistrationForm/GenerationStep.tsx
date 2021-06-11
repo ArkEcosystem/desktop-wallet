@@ -37,6 +37,7 @@ export const GenerationStep = ({
 		register("fee", common.fee(wallet.balance(), wallet.network()));
 		register("secondMnemonic");
 		register("wallet");
+		register("inputFeeViewType");
 	}, [register, common, fees, wallet]);
 
 	useEffect(() => {

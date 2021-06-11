@@ -86,15 +86,13 @@ describe("SecondSignatureRegistrationForm", () => {
 		result.current.register("fee");
 		result.current.register("inputFeeViewType");
 
-		act(() => {
-			render(<Component form={result.current} onSubmit={() => void 0} />);
-		});
+		const { rerender } = render(<Component form={result.current} onSubmit={() => void 0} />);
 
-		act(() => {
-			fireEvent.click(screen.getByText(transactionTranslations.FEES.AVERAGE));
-		});
+		fireEvent.click(screen.getByText(transactionTranslations.INPUT_FEE_VIEW_TYPE.ADVANCED));
 
-		await waitFor(() => expect(result.current.getValues("fee")).toEqual("1.354"));
+		rerender(<Component form={result.current} onSubmit={() => void 0} />);
+
+		fireEvent.change(screen.getByTestId("InputCurrency"), { target: { value: "9" } });
 	});
 
 	describe("backup step", () => {

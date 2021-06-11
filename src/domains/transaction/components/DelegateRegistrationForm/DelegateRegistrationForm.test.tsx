@@ -115,17 +115,30 @@ describe("DelegateRegistrationForm", () => {
 	});
 
 	it("should set fee", async () => {
-		const { getAllByTestId } = await renderComponent({ fee: "10" });
-		const buttonOptions = getAllByTestId("ButtonGroupOption");
-
-		await waitFor(() => expect(buttonOptions[1]).toHaveTextContent(translations.FEES.AVERAGE));
-		await waitFor(() => expect(buttonOptions[1]).toHaveAttribute("aria-checked"));
+		const { asFragment, getByTestId, getByText, form, rerender } = await renderComponent({ fee: "10" });
 
 		await act(async () => {
-			fireEvent.click(buttonOptions[0]);
+			fireEvent.click(getByText(translations.INPUT_FEE_VIEW_TYPE.ADVANCED));
 		});
 
-		await waitFor(() => expect(buttonOptions[0]).toHaveAttribute("aria-checked"));
+		await act(async () => {
+			rerender(
+				<FormProvider {...form}>
+					<DelegateRegistrationForm.component activeTab={1} fees={fees} wallet={wallet} />
+				</FormProvider>,
+			);
+
+			await waitFor(() => expect(getByTestId("DelegateRegistrationForm__form-step")));
+		});
+
+		await waitFor(() => expect(getByTestId("InputCurrency")).toHaveValue("10"));
+
+		await act(async () => {
+			fireEvent.change(getByTestId("InputCurrency"), { target: { value: "9" } });
+		});
+
+		await waitFor(() => expect(getByTestId("InputCurrency")).toHaveValue("9"));
+		await waitFor(() => expect(asFragment()).toMatchSnapshot());
 	});
 
 	it("should show error if username contains illegal characters", async () => {
