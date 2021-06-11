@@ -1,4 +1,4 @@
-import { NetworkManifestImportMethods } from "@arkecosystem/platform-sdk/dist/networks";
+import { Networks } from "@arkecosystem/platform-sdk";
 import { useMemo } from "react";
 import { useTranslation } from "react-i18next";
 
@@ -26,7 +26,7 @@ interface Network {
 	defaultOption?: string;
 }
 
-export const useImportOptions = (methods: NetworkManifestImportMethods) => {
+export const useImportOptions = (methods: Networks.NetworkManifestImportMethods) => {
 	const { t } = useTranslation();
 
 	const allOptions = useMemo(
