@@ -126,7 +126,7 @@ export const Transactions = memo(
 						});
 					}}
 				>
-					<TabList className="w-full">
+					<TabList className="h-15 w-full">
 						<Tab tabId="all">{t("TRANSACTION.ALL")}</Tab>
 						<Tab tabId="received">{t("TRANSACTION.INCOMING")}</Tab>
 						<Tab tabId="sent">{t("TRANSACTION.OUTGOING")}</Tab>
