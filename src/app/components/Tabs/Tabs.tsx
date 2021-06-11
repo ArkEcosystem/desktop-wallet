@@ -84,6 +84,7 @@ export const Tab = React.forwardRef<HTMLButtonElement, TabProps>((props: TabProp
 			onClick={() => context?.setCurrentId(props.tabId)}
 		>
 			<div className="absolute inset-0 -mx-3 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible" />
+
 			<span>{props.children}</span>
 
 			{props.count !== undefined && (
@@ -107,7 +108,7 @@ export const TabList = styled.div<{ noBackground?: boolean }>`
 	}}
 
 	& > ${TabButton} {
-		${tw`relative mx-6 border-t-2 border-b-2 border-transparent font-semibold text-theme-secondary-text relative transition-colors ease-in-out duration-300 focus:(outline-none text-theme-text) hover:text-theme-text`}
+		${tw`relative mx-6 font-semibold border-t-2 border-b-2 border-transparent text-theme-secondary-text transition-colors ease-in-out duration-300 focus:(outline-none text-theme-text) hover:text-theme-text`}
 
 		&[aria-selected="true"] {
 			border-bottom-color: var(--theme-color-primary-600);
