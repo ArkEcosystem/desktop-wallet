@@ -192,6 +192,7 @@ describe("MultiSignatureDetail", () => {
 		jest.spyOn(wallet.transaction(), "canBeBroadcasted").mockImplementation(() => false);
 		jest.spyOn(wallet.transaction(), "canBeSigned").mockImplementation(() => false);
 		jest.spyOn(wallet.transaction(), "isAwaitingSignatureByPublicKey").mockImplementation(() => false);
+		jest.spyOn(fixtures.vote, "type").mockReturnValue("vote");
 
 		const { container } = render(<MultiSignatureDetail transaction={fixtures.vote} wallet={wallet} isOpen />);
 
@@ -206,6 +207,7 @@ describe("MultiSignatureDetail", () => {
 		jest.spyOn(wallet.transaction(), "canBeBroadcasted").mockImplementation(() => false);
 		jest.spyOn(wallet.transaction(), "canBeSigned").mockImplementation(() => false);
 		jest.spyOn(wallet.transaction(), "isAwaitingSignatureByPublicKey").mockImplementation(() => false);
+		jest.spyOn(fixtures.unvote, "type").mockReturnValue("unvote");
 
 		const { container } = render(<MultiSignatureDetail transaction={fixtures.unvote} wallet={wallet} isOpen />);
 

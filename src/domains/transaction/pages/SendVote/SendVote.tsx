@@ -48,7 +48,7 @@ export const SendVote = () => {
 	const { sendVote, common } = useValidation();
 
 	const abortRef = useRef(new AbortController());
-	const transactionBuilder = useTransactionBuilder(activeProfile);
+	const transactionBuilder = useTransactionBuilder();
 	const { sign } = useWalletSignatory(activeWallet);
 
 	useEffect(() => {
