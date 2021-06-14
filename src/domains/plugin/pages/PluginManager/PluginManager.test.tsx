@@ -189,30 +189,30 @@ describe("PluginManager", () => {
 		expect(asFragment()).toMatchSnapshot();
 	});
 
-	// it("should switch to category by clicking on view all link", async () => {
-	// 	const { asFragment } = renderWithRouter(
-	// 		<Route path="/profiles/:profileId/plugins">
-	// 			<PluginProviders>
-	// 				<Component />
-	// 			</PluginProviders>
-	// 		</Route>,
-	// 		{
-	// 			routes: [pluginsURL],
-	// 			history,
-	// 		},
-	// 	);
+	it("should switch to category by clicking on view all link", async () => {
+		const { asFragment } = renderWithRouter(
+			<Route path="/profiles/:profileId/plugins">
+				<PluginProviders>
+					<Component />
+				</PluginProviders>
+			</Route>,
+			{
+				routes: [pluginsURL],
+				history,
+			},
+		);
 
-	// 	await waitFor(() =>
-	// 		expect(
-	// 			within(screen.getByTestId("PluginManager__latest__utility")).getAllByText("Transaction Export"),
-	// 		).toHaveLength(1),
-	// 	);
+		await waitFor(() =>
+			expect(
+				within(screen.getByTestId("PluginManager__latest__utility")).getAllByText("Transaction Export"),
+			).toHaveLength(1),
+		);
 
-	// 	fireEvent.click(screen.getByTestId("PluginManager__latest__utility__view-all"));
-	// 	expect(screen.getByTestId("PluginManager__container--utility")).toBeTruthy();
+		fireEvent.click(screen.getByTestId("PluginManager__latest__utility__view-all"));
+		expect(screen.getByTestId("PluginManager__container--utility")).toBeTruthy();
 
-	// 	expect(asFragment()).toMatchSnapshot();
-	// });
+		expect(asFragment()).toMatchSnapshot();
+	});
 
 	it.skip("should download & install plugin on latest", async () => {
 		const { asFragment } = renderWithRouter(
@@ -433,46 +433,46 @@ describe("PluginManager", () => {
 		expect(asFragment()).toMatchSnapshot();
 	});
 
-	// it("should search for plugin", async () => {
-	// 	const { asFragment } = renderWithRouter(
-	// 		<Route path="/profiles/:profileId/plugins">
-	// 			<PluginProviders>
-	// 				<Component />
-	// 			</PluginProviders>
-	// 		</Route>,
-	// 		{
-	// 			routes: [pluginsURL],
-	// 			history,
-	// 		},
-	// 	);
+	it("should search for plugin", async () => {
+		const { asFragment } = renderWithRouter(
+			<Route path="/profiles/:profileId/plugins">
+				<PluginProviders>
+					<Component />
+				</PluginProviders>
+			</Route>,
+			{
+				routes: [pluginsURL],
+				history,
+			},
+		);
 
-	// 	await waitFor(() =>
-	// 		expect(within(screen.getByTestId("PluginManager__latest__gaming")).getByTestId("PluginGrid")).toBeTruthy(),
-	// 	);
+		await waitFor(() =>
+			expect(within(screen.getByTestId("PluginManager__latest__gaming")).getByTestId("PluginGrid")).toBeTruthy(),
+		);
 
-	// 	fireEvent.click(within(screen.getByTestId("HeaderSearchBar")).getByRole("button"));
-	// 	expect(within(screen.getByTestId("HeaderSearchBar__input")).getByTestId("Input")).toBeTruthy();
+		fireEvent.click(within(screen.getByTestId("HeaderSearchBar")).getByRole("button"));
+		expect(within(screen.getByTestId("HeaderSearchBar__input")).getByTestId("Input")).toBeTruthy();
 
-	// 	fireEvent.input(within(screen.getByTestId("HeaderSearchBar__input")).getByTestId("Input"), {
-	// 		target: { value: "Transaction Export" },
-	// 	});
+		fireEvent.input(within(screen.getByTestId("HeaderSearchBar__input")).getByTestId("Input"), {
+			target: { value: "Transaction Export" },
+		});
 
-	// 	await waitFor(() => expect(screen.getByText(translations.PAGE_PLUGIN_MANAGER.VIEW.SEARCH)).toBeInTheDocument());
-	// 	await waitFor(() => expect(screen.getAllByTestId("PluginImage__logo")).toHaveLength(1));
+		await waitFor(() => expect(screen.getByText(translations.PAGE_PLUGIN_MANAGER.VIEW.SEARCH)).toBeInTheDocument());
+		await waitFor(() => expect(screen.getAllByTestId("PluginImage__logo")).toHaveLength(1));
 
-	// 	fireEvent.input(within(screen.getByTestId("HeaderSearchBar__input")).getByTestId("Input"), {
-	// 		target: { value: "unknown search query" },
-	// 	});
+		fireEvent.input(within(screen.getByTestId("HeaderSearchBar__input")).getByTestId("Input"), {
+			target: { value: "unknown search query" },
+		});
 
-	// 	await waitFor(() => expect(screen.getByTestId("PluginGrid__empty-message")).toBeInTheDocument());
+		await waitFor(() => expect(screen.getByTestId("PluginGrid__empty-message")).toBeInTheDocument());
 
-	// 	// Switch to list view
-	// 	fireEvent.click(screen.getByTestId("LayoutControls__list--icon"));
+		// Switch to list view
+		fireEvent.click(screen.getByTestId("LayoutControls__list--icon"));
 
-	// 	await waitFor(() => expect(screen.getByTestId("PluginList__empty-message")).toBeInTheDocument());
+		await waitFor(() => expect(screen.getByTestId("PluginList__empty-message")).toBeInTheDocument());
 
-	// 	expect(asFragment()).toMatchSnapshot();
-	// });
+		expect(asFragment()).toMatchSnapshot();
+	});
 
 	it("should install plugin", async () => {
 		const ipcRendererSpy = jest.spyOn(ipcRenderer, "invoke").mockImplementation((channel) => {

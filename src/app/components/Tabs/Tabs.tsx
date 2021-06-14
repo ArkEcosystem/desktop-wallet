@@ -18,7 +18,7 @@ export function Tabs({ children, activeId, className, onChange }: TabsProps) {
 		if (currentId) {
 			onChange?.(currentId);
 		}
-	}, [currentId, onChange]);
+	}, [currentId]); // eslint-disable-line react-hooks/exhaustive-deps
 
 	React.useEffect(() => {
 		setCurrentId(activeId);
