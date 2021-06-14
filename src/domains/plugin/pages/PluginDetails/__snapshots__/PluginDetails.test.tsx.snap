@@ -213,7 +213,7 @@ exports[`PluginDetails should render properly 1`] = `
             />
           </div>
           <div
-            class="flex items-center my-auto ml-8"
+            class="flex items-center my-auto ml-8 space-x-4"
           >
             <div
               class="text-right"
@@ -221,7 +221,7 @@ exports[`PluginDetails should render properly 1`] = `
               <div
                 class="text-xs font-semibold text-theme-secondary-700"
               >
-                Your balance
+                Your Balance
               </div>
               <div
                 class="text-sm font-bold text-theme-secondary-text dark:text-theme-text"
@@ -235,56 +235,35 @@ exports[`PluginDetails should render properly 1`] = `
               </div>
             </div>
             <div
-              class="flex my-0.5 ml-4 -space-x-2"
+              class="relative"
             >
-              <div
-                class="Circle__CircleWrapper-uw7h4j-0 bNDQMV border-theme-primary-100 dark:border-theme-secondary-800 ring-theme-background"
+              <span
+                data-testid="dropdown__toggle"
               >
-                <span
-                  class="text-theme-secondary-text dark:text-theme-secondary-800"
+                <div
+                  class="relative items-center justify-center align-middle rounded-full cursor-pointer"
+                  data-testid="navbar__useractions"
                 >
                   <div
-                    class="sc-bdfBwQ fPrsah"
-                    height="1em"
-                    width="1em"
-                  >
-                    <svg>
-                      btc.svg
-                    </svg>
-                  </div>
-                </span>
-              </div>
-              <div
-                class="relative"
-              >
-                <span
-                  data-testid="dropdown__toggle"
-                >
-                  <div
-                    class="relative items-center justify-center align-middle rounded-full cursor-pointer"
-                    data-testid="navbar__useractions"
+                    class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB flex-shrink-0"
+                    data-testid="Avatar"
                   >
                     <div
-                      class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB flex-shrink-0"
-                      data-testid="Avatar"
+                      class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
                     >
-                      <div
-                        class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
+                      <img
+                        alt="Profile Avatar"
+                        src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"30\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"55\\" cx=\\"0\\" cy=\\"60\\" fill=\\"rgb(255, 152, 0)\\"/><circle r=\\"40\\" cx=\\"50\\" cy=\\"50\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
+                      />
+                      <span
+                        class="absolute text-sm font-semibold text-theme-background dark:text-theme-text"
                       >
-                        <img
-                          alt="Profile Avatar"
-                          src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"30\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"55\\" cx=\\"0\\" cy=\\"60\\" fill=\\"rgb(255, 152, 0)\\"/><circle r=\\"40\\" cx=\\"50\\" cy=\\"50\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
-                        />
-                        <span
-                          class="absolute text-sm font-semibold text-theme-background dark:text-theme-text"
-                        >
-                          JO
-                        </span>
-                      </div>
+                        JO
+                      </span>
                     </div>
                   </div>
-                </span>
-              </div>
+                </div>
+              </span>
             </div>
           </div>
         </div>
@@ -772,7 +751,7 @@ exports[`PluginDetails should render properly for remote package 1`] = `
             />
           </div>
           <div
-            class="flex items-center my-auto ml-8"
+            class="flex items-center my-auto ml-8 space-x-4"
           >
             <div
               class="text-right"
@@ -780,7 +759,7 @@ exports[`PluginDetails should render properly for remote package 1`] = `
               <div
                 class="text-xs font-semibold text-theme-secondary-700"
               >
-                Your balance
+                Your Balance
               </div>
               <div
                 class="text-sm font-bold text-theme-secondary-text dark:text-theme-text"
@@ -794,56 +773,35 @@ exports[`PluginDetails should render properly for remote package 1`] = `
               </div>
             </div>
             <div
-              class="flex my-0.5 ml-4 -space-x-2"
+              class="relative"
             >
-              <div
-                class="Circle__CircleWrapper-uw7h4j-0 bNDQMV border-theme-primary-100 dark:border-theme-secondary-800 ring-theme-background"
+              <span
+                data-testid="dropdown__toggle"
               >
-                <span
-                  class="text-theme-secondary-text dark:text-theme-secondary-800"
+                <div
+                  class="relative items-center justify-center align-middle rounded-full cursor-pointer"
+                  data-testid="navbar__useractions"
                 >
                   <div
-                    class="sc-bdfBwQ fPrsah"
-                    height="1em"
-                    width="1em"
-                  >
-                    <svg>
-                      btc.svg
-                    </svg>
-                  </div>
-                </span>
-              </div>
-              <div
-                class="relative"
-              >
-                <span
-                  data-testid="dropdown__toggle"
-                >
-                  <div
-                    class="relative items-center justify-center align-middle rounded-full cursor-pointer"
-                    data-testid="navbar__useractions"
+                    class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB flex-shrink-0"
+                    data-testid="Avatar"
                   >
                     <div
-                      class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB flex-shrink-0"
-                      data-testid="Avatar"
+                      class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
                     >
-                      <div
-                        class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
+                      <img
+                        alt="Profile Avatar"
+                        src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"30\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"55\\" cx=\\"0\\" cy=\\"60\\" fill=\\"rgb(255, 152, 0)\\"/><circle r=\\"40\\" cx=\\"50\\" cy=\\"50\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
+                      />
+                      <span
+                        class="absolute text-sm font-semibold text-theme-background dark:text-theme-text"
                       >
-                        <img
-                          alt="Profile Avatar"
-                          src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"30\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"55\\" cx=\\"0\\" cy=\\"60\\" fill=\\"rgb(255, 152, 0)\\"/><circle r=\\"40\\" cx=\\"50\\" cy=\\"50\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
-                        />
-                        <span
-                          class="absolute text-sm font-semibold text-theme-background dark:text-theme-text"
-                        >
-                          JO
-                        </span>
-                      </div>
+                        JO
+                      </span>
                     </div>
                   </div>
-                </span>
-              </div>
+                </div>
+              </span>
             </div>
           </div>
         </div>
@@ -1311,7 +1269,7 @@ exports[`PluginDetails should report plugin 1`] = `
             />
           </div>
           <div
-            class="flex items-center my-auto ml-8"
+            class="flex items-center my-auto ml-8 space-x-4"
           >
             <div
               class="text-right"
@@ -1319,7 +1277,7 @@ exports[`PluginDetails should report plugin 1`] = `
               <div
                 class="text-xs font-semibold text-theme-secondary-700"
               >
-                Your balance
+                Your Balance
               </div>
               <div
                 class="text-sm font-bold text-theme-secondary-text dark:text-theme-text"
@@ -1333,56 +1291,35 @@ exports[`PluginDetails should report plugin 1`] = `
               </div>
             </div>
             <div
-              class="flex my-0.5 ml-4 -space-x-2"
+              class="relative"
             >
-              <div
-                class="Circle__CircleWrapper-uw7h4j-0 bNDQMV border-theme-primary-100 dark:border-theme-secondary-800 ring-theme-background"
+              <span
+                data-testid="dropdown__toggle"
               >
-                <span
-                  class="text-theme-secondary-text dark:text-theme-secondary-800"
+                <div
+                  class="relative items-center justify-center align-middle rounded-full cursor-pointer"
+                  data-testid="navbar__useractions"
                 >
                   <div
-                    class="sc-bdfBwQ fPrsah"
-                    height="1em"
-                    width="1em"
-                  >
-                    <svg>
-                      btc.svg
-                    </svg>
-                  </div>
-                </span>
-              </div>
-              <div
-                class="relative"
-              >
-                <span
-                  data-testid="dropdown__toggle"
-                >
-                  <div
-                    class="relative items-center justify-center align-middle rounded-full cursor-pointer"
-                    data-testid="navbar__useractions"
+                    class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB flex-shrink-0"
+                    data-testid="Avatar"
                   >
                     <div
-                      class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB flex-shrink-0"
-                      data-testid="Avatar"
+                      class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
                     >
-                      <div
-                        class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
+                      <img
+                        alt="Profile Avatar"
+                        src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"30\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"55\\" cx=\\"0\\" cy=\\"60\\" fill=\\"rgb(255, 152, 0)\\"/><circle r=\\"40\\" cx=\\"50\\" cy=\\"50\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
+                      />
+                      <span
+                        class="absolute text-sm font-semibold text-theme-background dark:text-theme-text"
                       >
-                        <img
-                          alt="Profile Avatar"
-                          src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"30\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"55\\" cx=\\"0\\" cy=\\"60\\" fill=\\"rgb(255, 152, 0)\\"/><circle r=\\"40\\" cx=\\"50\\" cy=\\"50\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
-                        />
-                        <span
-                          class="absolute text-sm font-semibold text-theme-background dark:text-theme-text"
-                        >
-                          JO
-                        </span>
-                      </div>
+                        JO
+                      </span>
                     </div>
                   </div>
-                </span>
-              </div>
+                </div>
+              </span>
             </div>
           </div>
         </div>
@@ -1870,7 +1807,7 @@ exports[`PluginDetails should show configuration for plugins from npm 1`] = `
             />
           </div>
           <div
-            class="flex items-center my-auto ml-8"
+            class="flex items-center my-auto ml-8 space-x-4"
           >
             <div
               class="text-right"
@@ -1878,7 +1815,7 @@ exports[`PluginDetails should show configuration for plugins from npm 1`] = `
               <div
                 class="text-xs font-semibold text-theme-secondary-700"
               >
-                Your balance
+                Your Balance
               </div>
               <div
                 class="text-sm font-bold text-theme-secondary-text dark:text-theme-text"
@@ -1892,56 +1829,35 @@ exports[`PluginDetails should show configuration for plugins from npm 1`] = `
               </div>
             </div>
             <div
-              class="flex my-0.5 ml-4 -space-x-2"
+              class="relative"
             >
-              <div
-                class="Circle__CircleWrapper-uw7h4j-0 bNDQMV border-theme-primary-100 dark:border-theme-secondary-800 ring-theme-background"
+              <span
+                data-testid="dropdown__toggle"
               >
-                <span
-                  class="text-theme-secondary-text dark:text-theme-secondary-800"
+                <div
+                  class="relative items-center justify-center align-middle rounded-full cursor-pointer"
+                  data-testid="navbar__useractions"
                 >
                   <div
-                    class="sc-bdfBwQ fPrsah"
-                    height="1em"
-                    width="1em"
-                  >
-                    <svg>
-                      btc.svg
-                    </svg>
-                  </div>
-                </span>
-              </div>
-              <div
-                class="relative"
-              >
-                <span
-                  data-testid="dropdown__toggle"
-                >
-                  <div
-                    class="relative items-center justify-center align-middle rounded-full cursor-pointer"
-                    data-testid="navbar__useractions"
+                    class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB flex-shrink-0"
+                    data-testid="Avatar"
                   >
                     <div
-                      class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB flex-shrink-0"
-                      data-testid="Avatar"
+                      class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
                     >
-                      <div
-                        class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
+                      <img
+                        alt="Profile Avatar"
+                        src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"30\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"55\\" cx=\\"0\\" cy=\\"60\\" fill=\\"rgb(255, 152, 0)\\"/><circle r=\\"40\\" cx=\\"50\\" cy=\\"50\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
+                      />
+                      <span
+                        class="absolute text-sm font-semibold text-theme-background dark:text-theme-text"
                       >
-                        <img
-                          alt="Profile Avatar"
-                          src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"30\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"55\\" cx=\\"0\\" cy=\\"60\\" fill=\\"rgb(255, 152, 0)\\"/><circle r=\\"40\\" cx=\\"50\\" cy=\\"50\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
-                        />
-                        <span
-                          class="absolute text-sm font-semibold text-theme-background dark:text-theme-text"
-                        >
-                          JO
-                        </span>
-                      </div>
+                        JO
+                      </span>
                     </div>
                   </div>
-                </span>
-              </div>
+                </div>
+              </span>
             </div>
           </div>
         </div>
@@ -2450,7 +2366,7 @@ exports[`PluginDetails should update package 1`] = `
             />
           </div>
           <div
-            class="flex items-center my-auto ml-8"
+            class="flex items-center my-auto ml-8 space-x-4"
           >
             <div
               class="text-right"
@@ -2458,7 +2374,7 @@ exports[`PluginDetails should update package 1`] = `
               <div
                 class="text-xs font-semibold text-theme-secondary-700"
               >
-                Your balance
+                Your Balance
               </div>
               <div
                 class="text-sm font-bold text-theme-secondary-text dark:text-theme-text"
@@ -2472,56 +2388,35 @@ exports[`PluginDetails should update package 1`] = `
               </div>
             </div>
             <div
-              class="flex my-0.5 ml-4 -space-x-2"
+              class="relative"
             >
-              <div
-                class="Circle__CircleWrapper-uw7h4j-0 bNDQMV border-theme-primary-100 dark:border-theme-secondary-800 ring-theme-background"
+              <span
+                data-testid="dropdown__toggle"
               >
-                <span
-                  class="text-theme-secondary-text dark:text-theme-secondary-800"
+                <div
+                  class="relative items-center justify-center align-middle rounded-full cursor-pointer"
+                  data-testid="navbar__useractions"
                 >
                   <div
-                    class="sc-bdfBwQ fPrsah"
-                    height="1em"
-                    width="1em"
-                  >
-                    <svg>
-                      btc.svg
-                    </svg>
-                  </div>
-                </span>
-              </div>
-              <div
-                class="relative"
-              >
-                <span
-                  data-testid="dropdown__toggle"
-                >
-                  <div
-                    class="relative items-center justify-center align-middle rounded-full cursor-pointer"
-                    data-testid="navbar__useractions"
+                    class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB flex-shrink-0"
+                    data-testid="Avatar"
                   >
                     <div
-                      class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB flex-shrink-0"
-                      data-testid="Avatar"
+                      class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
                     >
-                      <div
-                        class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
+                      <img
+                        alt="Profile Avatar"
+                        src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"30\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"55\\" cx=\\"0\\" cy=\\"60\\" fill=\\"rgb(255, 152, 0)\\"/><circle r=\\"40\\" cx=\\"50\\" cy=\\"50\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
+                      />
+                      <span
+                        class="absolute text-sm font-semibold text-theme-background dark:text-theme-text"
                       >
-                        <img
-                          alt="Profile Avatar"
-                          src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"30\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"55\\" cx=\\"0\\" cy=\\"60\\" fill=\\"rgb(255, 152, 0)\\"/><circle r=\\"40\\" cx=\\"50\\" cy=\\"50\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
-                        />
-                        <span
-                          class="absolute text-sm font-semibold text-theme-background dark:text-theme-text"
-                        >
-                          JO
-                        </span>
-                      </div>
+                        JO
+                      </span>
                     </div>
                   </div>
-                </span>
-              </div>
+                </div>
+              </span>
             </div>
           </div>
         </div>

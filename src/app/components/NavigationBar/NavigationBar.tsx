@@ -3,7 +3,6 @@ import { Contracts } from "@arkecosystem/platform-sdk-profiles";
 import { images } from "app/assets/images";
 import { Avatar } from "app/components/Avatar";
 import { Button } from "app/components/Button";
-import { Circle } from "app/components/Circle";
 import { Dropdown } from "app/components/Dropdown";
 import { Icon } from "app/components/Icon";
 import { NotificationsDropdown } from "app/components/Notifications";
@@ -76,47 +75,34 @@ const UserInfo = ({ exchangeCurrency, onUserAction, avatarImage, userActions, us
 	const tickerConfig: typeof CURRENCIES["BTC"] | undefined = CURRENCIES[exchangeCurrency as keyof typeof CURRENCIES];
 
 	return (
-		<div className="flex my-0.5 ml-4 -space-x-2">
-			<Circle className="border-theme-primary-100 dark:border-theme-secondary-800" size="lg">
-				<span className="text-theme-secondary-text dark:text-theme-secondary-800">
-					{exchangeCurrency && (
-						<Icon
-							name={exchangeCurrency}
-							fallback={<span className="font-semibold">{tickerConfig?.symbol}</span>}
-						/>
-					)}
-				</span>
-			</Circle>
-
-			<Dropdown
-				onSelect={onUserAction}
-				options={userActions}
-				dropdownClass="mt-8"
-				toggleContent={(isOpen: boolean) => (
-					<div
-						className="relative items-center justify-center align-middle rounded-full cursor-pointer"
-						data-testid="navbar__useractions"
-					>
-						<Avatar size="lg" highlight={isOpen}>
-							{avatarImage?.endsWith("</svg>") ? (
-								<>
-									<img alt="Profile Avatar" src={`data:image/svg+xml;utf8,${avatarImage}`} />
-									<span className="absolute text-sm font-semibold text-theme-background dark:text-theme-text">
-										{userInitials}
-									</span>
-								</>
-							) : (
-								<img
-									alt="Profile Avatar"
-									className="object-cover bg-center bg-no-repeat bg-cover rounded-full w-11 h-11"
-									src={avatarImage}
-								/>
-							)}
-						</Avatar>
-					</div>
-				)}
-			/>
-		</div>
+		<Dropdown
+			onSelect={onUserAction}
+			options={userActions}
+			dropdownClass="mt-8"
+			toggleContent={(isOpen: boolean) => (
+				<div
+					className="relative items-center justify-center align-middle rounded-full cursor-pointer"
+					data-testid="navbar__useractions"
+				>
+					<Avatar size="lg" highlight={isOpen}>
+						{avatarImage?.endsWith("</svg>") ? (
+							<>
+								<img alt="Profile Avatar" src={`data:image/svg+xml;utf8,${avatarImage}`} />
+								<span className="absolute text-sm font-semibold text-theme-background dark:text-theme-text">
+									{userInitials}
+								</span>
+							</>
+						) : (
+							<img
+								alt="Profile Avatar"
+								className="object-cover bg-center bg-no-repeat bg-cover rounded-full w-11 h-11"
+								src={avatarImage}
+							/>
+						)}
+					</Avatar>
+				</div>
+			)}
+		/>
 	);
 };
 
@@ -266,7 +252,7 @@ export const NavigationBar = ({
 								<div className="h-8 border-r border-theme-secondary-300 dark:border-theme-secondary-800" />
 							</div>
 
-							<div className="flex items-center my-auto ml-8">
+							<div className="flex items-center my-auto ml-8 space-x-4">
 								<Balance profile={profile} isLoading={profileIsSyncingExchangeRates} />
 
 								<UserInfo
