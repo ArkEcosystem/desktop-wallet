@@ -74,8 +74,13 @@ describe("MultiPaymentDetail", () => {
 		expect(getByTestId("modal__inner")).toHaveTextContent(translations.MODAL_TRANSFER_DETAIL.TITLE);
 		await waitFor(() => expect(getByText(translations.WELL_CONFIRMED)).toBeTruthy());
 
+		expect(getAllByTestId("Amount")[0]).not.toHaveTextContent(`0.000002 ARK`);
 		expect(getAllByTestId("Amount")[0]).toHaveTextContent(`200 ARK`);
+
+		expect(getAllByTestId("Amount")[0]).not.toHaveTextContent(`0.000002 ARK`);
 		expect(getAllByTestId("Amount")[1]).toHaveTextContent(`1,990 ARK`);
+
+		expect(getAllByTestId("Amount")[0]).not.toHaveTextContent(`0.0000199 ARK`);
 		expect(getAllByTestId("Amount")[2]).toHaveTextContent(`1,990 ARK`);
 
 		expect(asFragment()).toMatchSnapshot();

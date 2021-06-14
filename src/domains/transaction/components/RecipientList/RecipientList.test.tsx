@@ -36,6 +36,10 @@ const recipients = [
 describe("RecipientList", () => {
 	it("should render editable", () => {
 		const { container } = render(<RecipientList recipients={recipients} isEditable={true} assetSymbol="ARK" />);
+
+		expect(screen.getAllByTestId("Amount")[0]).toHaveTextContent("100 ARK");
+		expect(screen.getAllByTestId("Amount")[0]).not.toHaveTextContent("0.000001 ARK");
+
 		expect(container).toMatchSnapshot();
 	});
 
@@ -43,11 +47,19 @@ describe("RecipientList", () => {
 		const { container } = render(
 			<RecipientList recipients={recipients} isEditable={true} assetSymbol="ARK" variant="condensed" />,
 		);
+
+		expect(screen.getAllByTestId("Amount")[0]).toHaveTextContent("100 ARK");
+		expect(screen.getAllByTestId("Amount")[0]).not.toHaveTextContent("0.000001 ARK");
+
 		expect(container).toMatchSnapshot();
 	});
 
 	it("should render non-editable", () => {
 		const { container } = render(<RecipientList recipients={recipients} isEditable={false} assetSymbol="ARK" />);
+
+		expect(screen.getAllByTestId("Amount")[0]).toHaveTextContent("100 ARK");
+		expect(screen.getAllByTestId("Amount")[0]).not.toHaveTextContent("0.000001 ARK");
+
 		expect(container).toMatchSnapshot();
 	});
 
