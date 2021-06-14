@@ -131,6 +131,7 @@ export const translations: { [key: string]: any } = {
 	OPTIONAL: "optional",
 	OTHER: "Other",
 	PAGE: "Page",
+	"PAGE_#": "Page {{page}}",
 	PARTICIPANT: "Participant",
 	PASSWORD: "Password",
 	PASSWORDS: "Passwords",
@@ -243,7 +244,6 @@ export const translations: { [key: string]: any } = {
 	},
 
 	VALIDATION: {
-		REQUIRED: "This field is required",
 		OPTIONAL: "This field is optional",
 		FIELD_REQUIRED: "{{field}} required",
 		FIELD_INVALID: "{{field}} invalid",

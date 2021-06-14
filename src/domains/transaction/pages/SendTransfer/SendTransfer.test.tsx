@@ -1093,15 +1093,7 @@ describe("SendTransfer", () => {
 				data: expect.anything(),
 				fee: "0.00357",
 				nonce: expect.any(String),
-				sign: {
-					multiSignature: {
-						min: 2,
-						publicKeys: [
-							"03df6cd794a7d404db4f1b25816d8976d0e72c5177d17ac9b19a92703b62cdbbbc",
-							"03af2feb4fc97301e16d6a877d5b135417e8f284d40fac0f84c09ca37f82886c51",
-						],
-					},
-				},
+				signatory: expect.any(Object),
 			}),
 		);
 
@@ -1113,25 +1105,20 @@ describe("SendTransfer", () => {
 	});
 
 	it("should send a single transfer with a ledger wallet", async () => {
+		jest.useFakeTimers();
 		const isLedgerSpy = jest.spyOn(wallet, "isLedger").mockImplementation(() => true);
 		jest.spyOn(wallet.coin(), "__construct").mockImplementation();
+
 		const getPublicKeySpy = jest
 			.spyOn(wallet.coin().ledger(), "getPublicKey")
 			.mockResolvedValue("0335a27397927bfa1704116814474d39c2b933aabb990e7226389f022886e48deb");
+
 		const signTransactionSpy = jest
-			.spyOn(wallet.coin().ledger(), "signTransaction")
-			.mockImplementation(
-				() =>
-					new Promise((resolve) =>
-						setTimeout(
-							() =>
-								resolve(
-									"dd3f96466bc50077b01e441cd35eb3c5aabd83670d371c2be8cc772ed189a7315dd66e88bde275d89a3beb7ef85ef84a52ec4213f540481cd09ecf6d21e452bf",
-								),
-							300,
-						),
-					),
-			);
+			.spyOn(wallet.transaction(), "signTransfer")
+			.mockReturnValue(Promise.resolve(transactionFixture.data.id));
+
+		const transactionMock = createTransactionMock(wallet);
+
 		const broadcastMock = jest.spyOn(wallet.transaction(), "broadcast").mockResolvedValue({
 			accepted: [transactionFixture.data.id],
 			rejected: [],
@@ -1206,13 +1193,13 @@ describe("SendTransfer", () => {
 		});
 
 		// Auto broadcast
-		await waitFor(() => expect(getByTestId("LedgerConfirmation-description")).toBeInTheDocument());
 		await waitFor(() => expect(getByTestId("TransactionSuccessful")).toBeTruthy());
 
 		getPublicKeySpy.mockRestore();
 		broadcastMock.mockRestore();
 		isLedgerSpy.mockRestore();
 		signTransactionSpy.mockRestore();
+		transactionMock.mockRestore();
 	});
 
 	it("should return to form step by cancelling fee warning", async () => {
@@ -1394,6 +1381,7 @@ describe("SendTransfer", () => {
 			profileSpy.mockRestore();
 		},
 	);
+
 	it.each([
 		["high", "1"],
 		["low", "0.000001"],

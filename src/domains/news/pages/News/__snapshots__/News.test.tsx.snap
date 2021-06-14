@@ -223,6 +223,7 @@ exports[`News should filter results based on category query and asset 1`] = `
               </div>
               <div
                 class="text-sm font-bold text-theme-secondary-text dark:text-theme-text"
+                data-testid="Balance__value"
               >
                 <span
                   data-testid="Amount"
@@ -1020,6 +1021,7 @@ exports[`News should filter results based on category query and asset 2`] = `
               </div>
               <div
                 class="text-sm font-bold text-theme-secondary-text dark:text-theme-text"
+                data-testid="Balance__value"
               >
                 <span
                   data-testid="Amount"
@@ -1366,62 +1368,90 @@ exports[`News should filter results based on category query and asset 2`] = `
               <div
                 class="mt-10 flex justify-center w-full"
               >
-                <div
-                  class="Pagination__Wrapper-x7juhx-0 klvluR"
+                <nav
+                  class="Pagination__Wrapper-x7juhx-0 hbWMHF"
                   data-testid="Pagination"
                 >
                   <div
                     class="flex relative px-2 rounded bg-theme-primary-100 dark:bg-theme-secondary-800"
                   >
-                    <div
-                      class="Pagination__PaginationButtonStyled-x7juhx-1 jqbPMy current-page"
+                    <button
+                      aria-current="true"
+                      aria-label="Page 1"
+                      class="Pagination__PaginationButtonStyled-x7juhx-1 dPDByT current-page"
+                      type="button"
                     >
                       1
-                    </div>
-                    <div
-                      class="Pagination__PaginationButtonStyled-x7juhx-1 jqbPMy"
+                    </button>
+                    <button
+                      aria-label="Page 2"
+                      class="Pagination__PaginationButtonStyled-x7juhx-1 dPDByT"
+                      type="button"
                     >
                       2
-                    </div>
-                    <div
-                      class="Pagination__PaginationButtonStyled-x7juhx-1 jqbPMy"
+                    </button>
+                    <button
+                      aria-label="Page 3"
+                      class="Pagination__PaginationButtonStyled-x7juhx-1 dPDByT"
+                      type="button"
                     >
                       3
-                    </div>
-                    <div
-                      class="Pagination__PaginationButtonStyled-x7juhx-1 jqbPMy"
+                    </button>
+                    <button
+                      aria-label="Page 4"
+                      class="Pagination__PaginationButtonStyled-x7juhx-1 dPDByT"
+                      type="button"
                     >
                       4
-                    </div>
-                    <div
-                      class="Pagination__PaginationButtonStyled-x7juhx-1 jqbPMy"
+                    </button>
+                    <button
+                      aria-label="Page 5"
+                      class="Pagination__PaginationButtonStyled-x7juhx-1 dPDByT"
+                      type="button"
                     >
                       5
-                    </div>
-                    <div
-                      class="Pagination__PaginationButtonStyled-x7juhx-1 jqbPMy"
+                    </button>
+                    <button
+                      aria-label="Page 6"
+                      class="Pagination__PaginationButtonStyled-x7juhx-1 dPDByT"
+                      type="button"
                     >
                       6
-                    </div>
-                    <div
-                      class="Pagination__PaginationButtonStyled-x7juhx-1 jqbPMy"
+                    </button>
+                    <button
+                      aria-label="Page 7"
+                      class="Pagination__PaginationButtonStyled-x7juhx-1 dPDByT"
+                      type="button"
                     >
                       7
-                    </div>
-                    <div
-                      class="PaginationSearch__PaginationSearchButtonStyled-rcir65-1 ftyWKb"
+                    </button>
+                    <button
+                      class="PaginationSearch__PaginationSearchButtonStyled-rcir65-1 hwqpt group"
                       data-testid="PaginationSearchButton"
+                      type="button"
                     >
                       <span
-                        data-testid="PaginationSearch__toggle"
+                        class="group-hover:invisible"
                       >
-                         
                         <span>
-                          ...
+                          …
                         </span>
-                         
                       </span>
-                    </div>
+                      <span
+                        class="absolute top-0 right-0 bottom-0 left-0 invisible group-hover:visible flex items-center justify-center"
+                        data-testid="PaginationSearchButton__search"
+                      >
+                        <div
+                          class="sc-bdfBwQ eRnpCh"
+                          height="13"
+                          width="13"
+                        >
+                          <svg>
+                            search.svg
+                          </svg>
+                        </div>
+                      </span>
+                    </button>
                   </div>
                   <button
                     class="OriginalButton__StyledButton-sc-1y2wptt-0 izJbbP"
@@ -1462,7 +1492,7 @@ exports[`News should filter results based on category query and asset 2`] = `
                       </div>
                     </div>
                   </button>
-                </div>
+                </nav>
               </div>
             </div>
             <div

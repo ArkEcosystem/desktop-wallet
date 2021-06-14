@@ -16,6 +16,9 @@ jobs:
             matrix:
                 node-version:
                     - 12.x
+        concurrency:
+            group: ${{ github.head_ref }}-test-app
+            cancel-in-progress: true
         steps:
             - uses: actions/checkout@v2
               with:
@@ -55,6 +58,9 @@ jobs:
             matrix:
                 node-version:
                     - 12.x
+        concurrency:
+            group: ${{ github.head_ref }}-test-domains-contact
+            cancel-in-progress: true
         steps:
             - uses: actions/checkout@v2
               with:
@@ -94,6 +100,9 @@ jobs:
             matrix:
                 node-version:
                     - 12.x
+        concurrency:
+            group: ${{ github.head_ref }}-test-domains-dashboard
+            cancel-in-progress: true
         steps:
             - uses: actions/checkout@v2
               with:
@@ -133,6 +142,9 @@ jobs:
             matrix:
                 node-version:
                     - 12.x
+        concurrency:
+            group: ${{ github.head_ref }}-test-domains-error
+            cancel-in-progress: true
         steps:
             - uses: actions/checkout@v2
               with:
@@ -172,6 +184,9 @@ jobs:
             matrix:
                 node-version:
                     - 12.x
+        concurrency:
+            group: ${{ github.head_ref }}-test-domains-exchange
+            cancel-in-progress: true
         steps:
             - uses: actions/checkout@v2
               with:
@@ -211,6 +226,9 @@ jobs:
             matrix:
                 node-version:
                     - 12.x
+        concurrency:
+            group: ${{ github.head_ref }}-test-domains-network
+            cancel-in-progress: true
         steps:
             - uses: actions/checkout@v2
               with:
@@ -250,6 +268,9 @@ jobs:
             matrix:
                 node-version:
                     - 12.x
+        concurrency:
+            group: ${{ github.head_ref }}-test-domains-news
+            cancel-in-progress: true
         steps:
             - uses: actions/checkout@v2
               with:
@@ -289,6 +310,9 @@ jobs:
             matrix:
                 node-version:
                     - 12.x
+        concurrency:
+            group: ${{ github.head_ref }}-test-domains-plugin
+            cancel-in-progress: true
         steps:
             - uses: actions/checkout@v2
               with:
@@ -328,6 +352,9 @@ jobs:
             matrix:
                 node-version:
                     - 12.x
+        concurrency:
+            group: ${{ github.head_ref }}-test-domains-profile
+            cancel-in-progress: true
         steps:
             - uses: actions/checkout@v2
               with:
@@ -367,6 +394,9 @@ jobs:
             matrix:
                 node-version:
                     - 12.x
+        concurrency:
+            group: ${{ github.head_ref }}-test-domains-setting
+            cancel-in-progress: true
         steps:
             - uses: actions/checkout@v2
               with:
@@ -406,6 +436,9 @@ jobs:
             matrix:
                 node-version:
                     - 12.x
+        concurrency:
+            group: ${{ github.head_ref }}-test-domains-splash
+            cancel-in-progress: true
         steps:
             - uses: actions/checkout@v2
               with:
@@ -445,6 +478,9 @@ jobs:
             matrix:
                 node-version:
                     - 12.x
+        concurrency:
+            group: ${{ github.head_ref }}-test-domains-transaction
+            cancel-in-progress: true
         steps:
             - uses: actions/checkout@v2
               with:
@@ -484,6 +520,9 @@ jobs:
             matrix:
                 node-version:
                     - 12.x
+        concurrency:
+            group: ${{ github.head_ref }}-test-domains-vote
+            cancel-in-progress: true
         steps:
             - uses: actions/checkout@v2
               with:
@@ -523,6 +562,9 @@ jobs:
             matrix:
                 node-version:
                     - 12.x
+        concurrency:
+            group: ${{ github.head_ref }}-test-domains-wallet
+            cancel-in-progress: true
         steps:
             - uses: actions/checkout@v2
               with:
@@ -563,6 +605,9 @@ jobs:
             matrix:
                 node-version:
                     - 12.x
+        concurrency:
+            group: ${{ github.head_ref }}-test-plugins
+            cancel-in-progress: true
         steps:
             - uses: actions/checkout@v2
               with:
@@ -602,6 +647,9 @@ jobs:
             matrix:
                 node-version:
                     - 12.x
+        concurrency:
+            group: ${{ github.head_ref }}-test-router
+            cancel-in-progress: true
         steps:
             - uses: actions/checkout@v2
               with:
@@ -640,6 +688,9 @@ jobs:
             matrix:
                 node-version:
                     - 12.x
+        concurrency:
+            group: ${{ github.head_ref }}-test-utils
+            cancel-in-progress: true
         steps:
             - uses: actions/checkout@v2
               with:

@@ -225,6 +225,7 @@ exports[`Votes should filter current delegates 1`] = `
               </div>
               <div
                 class="text-sm font-bold text-theme-secondary-text dark:text-theme-text"
+                data-testid="Balance__value"
               >
                 <span
                   data-testid="Amount"
@@ -323,37 +324,35 @@ exports[`Votes should filter current delegates 1`] = `
               >
                 <div
                   class="relative"
+                  data-testid="HeaderSearchBar"
                 >
-                  <button
-                    class="my-auto h-full font-semibold cursor-pointer focus:outline-none"
-                    data-testid="header-search-bar__button"
-                    type="button"
+                  <div
+                    class="group"
                   >
-                    <div
-                      class="group"
+                    <button
+                      class="ControlButton__ControlButtonStyled-sc-1xp1l1a-0 gPBHgx group"
                     >
                       <div
-                        class="ControlButton__ControlButtonStyled-sc-1xp1l1a-0 kMCise"
+                        class="absolute inset-0 -mx-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                      />
+                      <div
+                        class="flex items-center h-5 space-x-3"
                       >
+                        <span>
+                          Search
+                        </span>
                         <div
-                          class="flex items-center h-5 space-x-3"
+                          class="sc-bdfBwQ iNulIV"
+                          height="18"
+                          width="18"
                         >
-                          <span>
-                            Search
-                          </span>
-                          <div
-                            class="sc-bdfBwQ iNulIV"
-                            height="18"
-                            width="18"
-                          >
-                            <svg>
-                              search.svg
-                            </svg>
-                          </div>
+                          <svg>
+                            search.svg
+                          </svg>
                         </div>
                       </div>
-                    </div>
-                  </button>
+                    </button>
+                  </div>
                 </div>
                 <div
                   class="h-10 border-l border-theme-secondary-300 dark:border-theme-secondary-800"
@@ -370,8 +369,8 @@ exports[`Votes should filter current delegates 1`] = `
                       <div
                         class="group"
                       >
-                        <div
-                          class="ControlButton__ControlButtonStyled-sc-1xp1l1a-0 kMCise"
+                        <button
+                          class="ControlButton__ControlButtonStyled-sc-1xp1l1a-0 gPBHgx group"
                         >
                           <div
                             class="flex absolute right-0 justify-center items-center -mt-3 w-3 h-3 rounded-full transition-all duration-100 ease-linear bg-theme-background mr-2"
@@ -380,6 +379,9 @@ exports[`Votes should filter current delegates 1`] = `
                               class="w-2 h-2 rounded-full bg-theme-primary-500"
                             />
                           </div>
+                          <div
+                            class="absolute inset-0 -mx-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                          />
                           <div
                             class="flex items-center justify-center w-5 h-5"
                           >
@@ -393,7 +395,7 @@ exports[`Votes should filter current delegates 1`] = `
                               </svg>
                             </div>
                           </div>
-                        </div>
+                        </button>
                       </div>
                     </span>
                     <div
@@ -657,11 +659,11 @@ exports[`Votes should filter current delegates 1`] = `
                         Address
                       </div>
                       <div
-                        class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap"
+                        class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap space-x-2"
                       >
                         <span
-                          class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap leading-tight font-semibold text-lg"
-                          data-testid="address__wallet-address"
+                          class="inline-flex overflow-hidden leading-tight font-semibold text-lg"
+                          data-testid="Address__address"
                         >
                           D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD
                         </span>
@@ -1010,6 +1012,7 @@ exports[`Votes should handle wallet vote error and show empty delegates 1`] = `
               </div>
               <div
                 class="text-sm font-bold text-theme-secondary-text dark:text-theme-text"
+                data-testid="Balance__value"
               >
                 <span
                   data-testid="Amount"
@@ -1108,37 +1111,35 @@ exports[`Votes should handle wallet vote error and show empty delegates 1`] = `
               >
                 <div
                   class="relative"
+                  data-testid="HeaderSearchBar"
                 >
-                  <button
-                    class="my-auto h-full font-semibold cursor-pointer focus:outline-none"
-                    data-testid="header-search-bar__button"
-                    type="button"
+                  <div
+                    class="group"
                   >
-                    <div
-                      class="group"
+                    <button
+                      class="ControlButton__ControlButtonStyled-sc-1xp1l1a-0 gPBHgx group"
                     >
                       <div
-                        class="ControlButton__ControlButtonStyled-sc-1xp1l1a-0 kMCise"
+                        class="absolute inset-0 -mx-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                      />
+                      <div
+                        class="flex items-center h-5 space-x-3"
                       >
+                        <span>
+                          Search
+                        </span>
                         <div
-                          class="flex items-center h-5 space-x-3"
+                          class="sc-bdfBwQ iNulIV"
+                          height="18"
+                          width="18"
                         >
-                          <span>
-                            Search
-                          </span>
-                          <div
-                            class="sc-bdfBwQ iNulIV"
-                            height="18"
-                            width="18"
-                          >
-                            <svg>
-                              search.svg
-                            </svg>
-                          </div>
+                          <svg>
+                            search.svg
+                          </svg>
                         </div>
                       </div>
-                    </div>
-                  </button>
+                    </button>
+                  </div>
                 </div>
                 <div
                   class="h-10 border-l border-theme-secondary-300 dark:border-theme-secondary-800"
@@ -1155,9 +1156,12 @@ exports[`Votes should handle wallet vote error and show empty delegates 1`] = `
                       <div
                         class="group"
                       >
-                        <div
-                          class="ControlButton__ControlButtonStyled-sc-1xp1l1a-0 kMCise"
+                        <button
+                          class="ControlButton__ControlButtonStyled-sc-1xp1l1a-0 gPBHgx group"
                         >
+                          <div
+                            class="absolute inset-0 -mx-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                          />
                           <div
                             class="flex items-center justify-center w-5 h-5"
                           >
@@ -1171,7 +1175,7 @@ exports[`Votes should handle wallet vote error and show empty delegates 1`] = `
                               </svg>
                             </div>
                           </div>
-                        </div>
+                        </button>
                       </div>
                     </span>
                   </div>
@@ -1544,11 +1548,11 @@ exports[`Votes should handle wallet vote error and show empty delegates 1`] = `
                         Address
                       </div>
                       <div
-                        class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap"
+                        class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap space-x-2"
                       >
                         <span
-                          class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap leading-tight font-semibold text-lg"
-                          data-testid="address__wallet-address"
+                          class="inline-flex overflow-hidden leading-tight font-semibold text-lg"
+                          data-testid="Address__address"
                         >
                           D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD
                         </span>
@@ -1896,6 +1900,7 @@ exports[`Votes should hide testnet wallet if disabled from profile setting 1`] =
               </div>
               <div
                 class="text-sm font-bold text-theme-secondary-text dark:text-theme-text"
+                data-testid="Balance__value"
               >
                 <span
                   data-testid="Amount"
@@ -1982,37 +1987,35 @@ exports[`Votes should hide testnet wallet if disabled from profile setting 1`] =
               >
                 <div
                   class="relative"
+                  data-testid="HeaderSearchBar"
                 >
-                  <button
-                    class="my-auto h-full font-semibold cursor-pointer focus:outline-none"
-                    data-testid="header-search-bar__button"
-                    type="button"
+                  <div
+                    class="group"
                   >
-                    <div
-                      class="group"
+                    <button
+                      class="ControlButton__ControlButtonStyled-sc-1xp1l1a-0 gPBHgx group"
                     >
                       <div
-                        class="ControlButton__ControlButtonStyled-sc-1xp1l1a-0 kMCise"
+                        class="absolute inset-0 -mx-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                      />
+                      <div
+                        class="flex items-center h-5 space-x-3"
                       >
+                        <span>
+                          Search
+                        </span>
                         <div
-                          class="flex items-center h-5 space-x-3"
+                          class="sc-bdfBwQ iNulIV"
+                          height="18"
+                          width="18"
                         >
-                          <span>
-                            Search
-                          </span>
-                          <div
-                            class="sc-bdfBwQ iNulIV"
-                            height="18"
-                            width="18"
-                          >
-                            <svg>
-                              search.svg
-                            </svg>
-                          </div>
+                          <svg>
+                            search.svg
+                          </svg>
                         </div>
                       </div>
-                    </div>
-                  </button>
+                    </button>
+                  </div>
                 </div>
                 <div
                   class="h-10 border-l border-theme-secondary-300 dark:border-theme-secondary-800"
@@ -2029,9 +2032,12 @@ exports[`Votes should hide testnet wallet if disabled from profile setting 1`] =
                       <div
                         class="group"
                       >
-                        <div
-                          class="ControlButton__ControlButtonStyled-sc-1xp1l1a-0 kMCise"
+                        <button
+                          class="ControlButton__ControlButtonStyled-sc-1xp1l1a-0 gPBHgx group"
                         >
+                          <div
+                            class="absolute inset-0 -mx-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                          />
                           <div
                             class="flex items-center justify-center w-5 h-5"
                           >
@@ -2045,7 +2051,7 @@ exports[`Votes should hide testnet wallet if disabled from profile setting 1`] =
                               </svg>
                             </div>
                           </div>
-                        </div>
+                        </button>
                       </div>
                     </span>
                   </div>
@@ -2452,11 +2458,11 @@ exports[`Votes should hide testnet wallet if disabled from profile setting 1`] =
                         Address
                       </div>
                       <div
-                        class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap"
+                        class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap space-x-2"
                       >
                         <span
-                          class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap leading-tight font-semibold text-lg"
-                          data-testid="address__wallet-address"
+                          class="inline-flex overflow-hidden leading-tight font-semibold text-lg"
+                          data-testid="Address__address"
                         >
                           D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD
                         </span>
@@ -2809,6 +2815,7 @@ exports[`Votes should render 1`] = `
               </div>
               <div
                 class="text-sm font-bold text-theme-secondary-text dark:text-theme-text"
+                data-testid="Balance__value"
               >
                 <span
                   data-testid="Amount"
@@ -2907,37 +2914,35 @@ exports[`Votes should render 1`] = `
               >
                 <div
                   class="relative"
+                  data-testid="HeaderSearchBar"
                 >
-                  <button
-                    class="my-auto h-full font-semibold cursor-pointer focus:outline-none"
-                    data-testid="header-search-bar__button"
-                    type="button"
+                  <div
+                    class="group"
                   >
-                    <div
-                      class="group"
+                    <button
+                      class="ControlButton__ControlButtonStyled-sc-1xp1l1a-0 gPBHgx group"
                     >
                       <div
-                        class="ControlButton__ControlButtonStyled-sc-1xp1l1a-0 kMCise"
+                        class="absolute inset-0 -mx-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                      />
+                      <div
+                        class="flex items-center h-5 space-x-3"
                       >
+                        <span>
+                          Search
+                        </span>
                         <div
-                          class="flex items-center h-5 space-x-3"
+                          class="sc-bdfBwQ iNulIV"
+                          height="18"
+                          width="18"
                         >
-                          <span>
-                            Search
-                          </span>
-                          <div
-                            class="sc-bdfBwQ iNulIV"
-                            height="18"
-                            width="18"
-                          >
-                            <svg>
-                              search.svg
-                            </svg>
-                          </div>
+                          <svg>
+                            search.svg
+                          </svg>
                         </div>
                       </div>
-                    </div>
-                  </button>
+                    </button>
+                  </div>
                 </div>
                 <div
                   class="h-10 border-l border-theme-secondary-300 dark:border-theme-secondary-800"
@@ -2954,9 +2959,12 @@ exports[`Votes should render 1`] = `
                       <div
                         class="group"
                       >
-                        <div
-                          class="ControlButton__ControlButtonStyled-sc-1xp1l1a-0 kMCise"
+                        <button
+                          class="ControlButton__ControlButtonStyled-sc-1xp1l1a-0 gPBHgx group"
                         >
+                          <div
+                            class="absolute inset-0 -mx-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                          />
                           <div
                             class="flex items-center justify-center w-5 h-5"
                           >
@@ -2970,7 +2978,7 @@ exports[`Votes should render 1`] = `
                               </svg>
                             </div>
                           </div>
-                        </div>
+                        </button>
                       </div>
                     </span>
                   </div>
@@ -3377,11 +3385,11 @@ exports[`Votes should render 1`] = `
                         Address
                       </div>
                       <div
-                        class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap"
+                        class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap space-x-2"
                       >
                         <span
-                          class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap leading-tight font-semibold text-lg"
-                          data-testid="address__wallet-address"
+                          class="inline-flex overflow-hidden leading-tight font-semibold text-lg"
+                          data-testid="Address__address"
                         >
                           D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD
                         </span>
@@ -3725,6 +3733,7 @@ exports[`Votes should render with no wallets 1`] = `
               </div>
               <div
                 class="text-sm font-bold text-theme-secondary-text dark:text-theme-text"
+                data-testid="Balance__value"
               >
                 <span
                   data-testid="Amount"
@@ -4130,6 +4139,7 @@ exports[`Votes should select a delegate 1`] = `
               </div>
               <div
                 class="text-sm font-bold text-theme-secondary-text dark:text-theme-text"
+                data-testid="Balance__value"
               >
                 <span
                   data-testid="Amount"
@@ -4228,37 +4238,35 @@ exports[`Votes should select a delegate 1`] = `
               >
                 <div
                   class="relative"
+                  data-testid="HeaderSearchBar"
                 >
-                  <button
-                    class="my-auto h-full font-semibold cursor-pointer focus:outline-none"
-                    data-testid="header-search-bar__button"
-                    type="button"
+                  <div
+                    class="group"
                   >
-                    <div
-                      class="group"
+                    <button
+                      class="ControlButton__ControlButtonStyled-sc-1xp1l1a-0 gPBHgx group"
                     >
                       <div
-                        class="ControlButton__ControlButtonStyled-sc-1xp1l1a-0 kMCise"
+                        class="absolute inset-0 -mx-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                      />
+                      <div
+                        class="flex items-center h-5 space-x-3"
                       >
+                        <span>
+                          Search
+                        </span>
                         <div
-                          class="flex items-center h-5 space-x-3"
+                          class="sc-bdfBwQ iNulIV"
+                          height="18"
+                          width="18"
                         >
-                          <span>
-                            Search
-                          </span>
-                          <div
-                            class="sc-bdfBwQ iNulIV"
-                            height="18"
-                            width="18"
-                          >
-                            <svg>
-                              search.svg
-                            </svg>
-                          </div>
+                          <svg>
+                            search.svg
+                          </svg>
                         </div>
                       </div>
-                    </div>
-                  </button>
+                    </button>
+                  </div>
                 </div>
                 <div
                   class="h-10 border-l border-theme-secondary-300 dark:border-theme-secondary-800"
@@ -4275,9 +4283,12 @@ exports[`Votes should select a delegate 1`] = `
                       <div
                         class="group"
                       >
-                        <div
-                          class="ControlButton__ControlButtonStyled-sc-1xp1l1a-0 kMCise"
+                        <button
+                          class="ControlButton__ControlButtonStyled-sc-1xp1l1a-0 gPBHgx group"
                         >
+                          <div
+                            class="absolute inset-0 -mx-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                          />
                           <div
                             class="flex items-center justify-center w-5 h-5"
                           >
@@ -4291,7 +4302,7 @@ exports[`Votes should select a delegate 1`] = `
                               </svg>
                             </div>
                           </div>
-                        </div>
+                        </button>
                       </div>
                     </span>
                   </div>
@@ -4664,11 +4675,11 @@ exports[`Votes should select a delegate 1`] = `
                         Address
                       </div>
                       <div
-                        class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap"
+                        class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap space-x-2"
                       >
                         <span
-                          class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap leading-tight font-semibold text-lg"
-                          data-testid="address__wallet-address"
+                          class="inline-flex overflow-hidden leading-tight font-semibold text-lg"
+                          data-testid="Address__address"
                         >
                           D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD
                         </span>
@@ -5018,6 +5029,7 @@ exports[`Votes should select an address without vote 1`] = `
               </div>
               <div
                 class="text-sm font-bold text-theme-secondary-text dark:text-theme-text"
+                data-testid="Balance__value"
               >
                 <span
                   data-testid="Amount"
@@ -5116,37 +5128,35 @@ exports[`Votes should select an address without vote 1`] = `
               >
                 <div
                   class="relative"
+                  data-testid="HeaderSearchBar"
                 >
-                  <button
-                    class="my-auto h-full font-semibold cursor-pointer focus:outline-none"
-                    data-testid="header-search-bar__button"
-                    type="button"
+                  <div
+                    class="group"
                   >
-                    <div
-                      class="group"
+                    <button
+                      class="ControlButton__ControlButtonStyled-sc-1xp1l1a-0 gPBHgx group"
                     >
                       <div
-                        class="ControlButton__ControlButtonStyled-sc-1xp1l1a-0 kMCise"
+                        class="absolute inset-0 -mx-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                      />
+                      <div
+                        class="flex items-center h-5 space-x-3"
                       >
+                        <span>
+                          Search
+                        </span>
                         <div
-                          class="flex items-center h-5 space-x-3"
+                          class="sc-bdfBwQ iNulIV"
+                          height="18"
+                          width="18"
                         >
-                          <span>
-                            Search
-                          </span>
-                          <div
-                            class="sc-bdfBwQ iNulIV"
-                            height="18"
-                            width="18"
-                          >
-                            <svg>
-                              search.svg
-                            </svg>
-                          </div>
+                          <svg>
+                            search.svg
+                          </svg>
                         </div>
                       </div>
-                    </div>
-                  </button>
+                    </button>
+                  </div>
                 </div>
                 <div
                   class="h-10 border-l border-theme-secondary-300 dark:border-theme-secondary-800"
@@ -5163,9 +5173,12 @@ exports[`Votes should select an address without vote 1`] = `
                       <div
                         class="group"
                       >
-                        <div
-                          class="ControlButton__ControlButtonStyled-sc-1xp1l1a-0 kMCise"
+                        <button
+                          class="ControlButton__ControlButtonStyled-sc-1xp1l1a-0 gPBHgx group"
                         >
+                          <div
+                            class="absolute inset-0 -mx-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                          />
                           <div
                             class="flex items-center justify-center w-5 h-5"
                           >
@@ -5179,7 +5192,7 @@ exports[`Votes should select an address without vote 1`] = `
                               </svg>
                             </div>
                           </div>
-                        </div>
+                        </button>
                       </div>
                     </span>
                   </div>
@@ -5552,11 +5565,11 @@ exports[`Votes should select an address without vote 1`] = `
                         Address
                       </div>
                       <div
-                        class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap"
+                        class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap space-x-2"
                       >
                         <span
-                          class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap leading-tight font-semibold text-lg"
-                          data-testid="address__wallet-address"
+                          class="inline-flex overflow-hidden leading-tight font-semibold text-lg"
+                          data-testid="Address__address"
                         >
                           D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb
                         </span>
@@ -5905,6 +5918,7 @@ exports[`Votes should select ledger option in the wallets display type 1`] = `
               </div>
               <div
                 class="text-sm font-bold text-theme-secondary-text dark:text-theme-text"
+                data-testid="Balance__value"
               >
                 <span
                   data-testid="Amount"
@@ -6003,37 +6017,35 @@ exports[`Votes should select ledger option in the wallets display type 1`] = `
               >
                 <div
                   class="relative"
+                  data-testid="HeaderSearchBar"
                 >
-                  <button
-                    class="my-auto h-full font-semibold cursor-pointer focus:outline-none"
-                    data-testid="header-search-bar__button"
-                    type="button"
+                  <div
+                    class="group"
                   >
-                    <div
-                      class="group"
+                    <button
+                      class="ControlButton__ControlButtonStyled-sc-1xp1l1a-0 gPBHgx group"
                     >
                       <div
-                        class="ControlButton__ControlButtonStyled-sc-1xp1l1a-0 kMCise"
+                        class="absolute inset-0 -mx-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                      />
+                      <div
+                        class="flex items-center h-5 space-x-3"
                       >
+                        <span>
+                          Search
+                        </span>
                         <div
-                          class="flex items-center h-5 space-x-3"
+                          class="sc-bdfBwQ iNulIV"
+                          height="18"
+                          width="18"
                         >
-                          <span>
-                            Search
-                          </span>
-                          <div
-                            class="sc-bdfBwQ iNulIV"
-                            height="18"
-                            width="18"
-                          >
-                            <svg>
-                              search.svg
-                            </svg>
-                          </div>
+                          <svg>
+                            search.svg
+                          </svg>
                         </div>
                       </div>
-                    </div>
-                  </button>
+                    </button>
+                  </div>
                 </div>
                 <div
                   class="h-10 border-l border-theme-secondary-300 dark:border-theme-secondary-800"
@@ -6050,8 +6062,8 @@ exports[`Votes should select ledger option in the wallets display type 1`] = `
                       <div
                         class="group"
                       >
-                        <div
-                          class="ControlButton__ControlButtonStyled-sc-1xp1l1a-0 kMCise"
+                        <button
+                          class="ControlButton__ControlButtonStyled-sc-1xp1l1a-0 gPBHgx group"
                         >
                           <div
                             class="flex absolute right-0 justify-center items-center -mt-3 w-3 h-3 rounded-full transition-all duration-100 ease-linear bg-theme-background mr-2"
@@ -6060,6 +6072,9 @@ exports[`Votes should select ledger option in the wallets display type 1`] = `
                               class="w-2 h-2 rounded-full bg-theme-primary-500"
                             />
                           </div>
+                          <div
+                            class="absolute inset-0 -mx-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                          />
                           <div
                             class="flex items-center justify-center w-5 h-5"
                           >
@@ -6073,7 +6088,7 @@ exports[`Votes should select ledger option in the wallets display type 1`] = `
                               </svg>
                             </div>
                           </div>
-                        </div>
+                        </button>
                       </div>
                     </span>
                     <div
@@ -6439,6 +6454,7 @@ exports[`Votes should select starred option in the wallets display type 1`] = `
               </div>
               <div
                 class="text-sm font-bold text-theme-secondary-text dark:text-theme-text"
+                data-testid="Balance__value"
               >
                 <span
                   data-testid="Amount"
@@ -6537,37 +6553,35 @@ exports[`Votes should select starred option in the wallets display type 1`] = `
               >
                 <div
                   class="relative"
+                  data-testid="HeaderSearchBar"
                 >
-                  <button
-                    class="my-auto h-full font-semibold cursor-pointer focus:outline-none"
-                    data-testid="header-search-bar__button"
-                    type="button"
+                  <div
+                    class="group"
                   >
-                    <div
-                      class="group"
+                    <button
+                      class="ControlButton__ControlButtonStyled-sc-1xp1l1a-0 gPBHgx group"
                     >
                       <div
-                        class="ControlButton__ControlButtonStyled-sc-1xp1l1a-0 kMCise"
+                        class="absolute inset-0 -mx-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                      />
+                      <div
+                        class="flex items-center h-5 space-x-3"
                       >
+                        <span>
+                          Search
+                        </span>
                         <div
-                          class="flex items-center h-5 space-x-3"
+                          class="sc-bdfBwQ iNulIV"
+                          height="18"
+                          width="18"
                         >
-                          <span>
-                            Search
-                          </span>
-                          <div
-                            class="sc-bdfBwQ iNulIV"
-                            height="18"
-                            width="18"
-                          >
-                            <svg>
-                              search.svg
-                            </svg>
-                          </div>
+                          <svg>
+                            search.svg
+                          </svg>
                         </div>
                       </div>
-                    </div>
-                  </button>
+                    </button>
+                  </div>
                 </div>
                 <div
                   class="h-10 border-l border-theme-secondary-300 dark:border-theme-secondary-800"
@@ -6584,8 +6598,8 @@ exports[`Votes should select starred option in the wallets display type 1`] = `
                       <div
                         class="group"
                       >
-                        <div
-                          class="ControlButton__ControlButtonStyled-sc-1xp1l1a-0 kMCise"
+                        <button
+                          class="ControlButton__ControlButtonStyled-sc-1xp1l1a-0 gPBHgx group"
                         >
                           <div
                             class="flex absolute right-0 justify-center items-center -mt-3 w-3 h-3 rounded-full transition-all duration-100 ease-linear bg-theme-background mr-2"
@@ -6594,6 +6608,9 @@ exports[`Votes should select starred option in the wallets display type 1`] = `
                               class="w-2 h-2 rounded-full bg-theme-primary-500"
                             />
                           </div>
+                          <div
+                            class="absolute inset-0 -mx-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                          />
                           <div
                             class="flex items-center justify-center w-5 h-5"
                           >
@@ -6607,7 +6624,7 @@ exports[`Votes should select starred option in the wallets display type 1`] = `
                               </svg>
                             </div>
                           </div>
-                        </div>
+                        </button>
                       </div>
                     </span>
                     <div
@@ -6973,6 +6990,7 @@ exports[`Votes should show network warning 1`] = `
               </div>
               <div
                 class="text-sm font-bold text-theme-secondary-text dark:text-theme-text"
+                data-testid="Balance__value"
               >
                 <span
                   data-testid="Amount"
@@ -7071,37 +7089,35 @@ exports[`Votes should show network warning 1`] = `
               >
                 <div
                   class="relative"
+                  data-testid="HeaderSearchBar"
                 >
-                  <button
-                    class="my-auto h-full font-semibold cursor-pointer focus:outline-none"
-                    data-testid="header-search-bar__button"
-                    type="button"
+                  <div
+                    class="group"
                   >
-                    <div
-                      class="group"
+                    <button
+                      class="ControlButton__ControlButtonStyled-sc-1xp1l1a-0 gPBHgx group"
                     >
                       <div
-                        class="ControlButton__ControlButtonStyled-sc-1xp1l1a-0 kMCise"
+                        class="absolute inset-0 -mx-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                      />
+                      <div
+                        class="flex items-center h-5 space-x-3"
                       >
+                        <span>
+                          Search
+                        </span>
                         <div
-                          class="flex items-center h-5 space-x-3"
+                          class="sc-bdfBwQ iNulIV"
+                          height="18"
+                          width="18"
                         >
-                          <span>
-                            Search
-                          </span>
-                          <div
-                            class="sc-bdfBwQ iNulIV"
-                            height="18"
-                            width="18"
-                          >
-                            <svg>
-                              search.svg
-                            </svg>
-                          </div>
+                          <svg>
+                            search.svg
+                          </svg>
                         </div>
                       </div>
-                    </div>
-                  </button>
+                    </button>
+                  </div>
                 </div>
                 <div
                   class="h-10 border-l border-theme-secondary-300 dark:border-theme-secondary-800"
@@ -7118,9 +7134,12 @@ exports[`Votes should show network warning 1`] = `
                       <div
                         class="group"
                       >
-                        <div
-                          class="ControlButton__ControlButtonStyled-sc-1xp1l1a-0 kMCise"
+                        <button
+                          class="ControlButton__ControlButtonStyled-sc-1xp1l1a-0 gPBHgx group"
                         >
+                          <div
+                            class="absolute inset-0 -mx-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                          />
                           <div
                             class="flex items-center justify-center w-5 h-5"
                           >
@@ -7134,7 +7153,7 @@ exports[`Votes should show network warning 1`] = `
                               </svg>
                             </div>
                           </div>
-                        </div>
+                        </button>
                       </div>
                     </span>
                   </div>
@@ -7547,11 +7566,11 @@ exports[`Votes should show network warning 1`] = `
                         Address
                       </div>
                       <div
-                        class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap"
+                        class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap space-x-2"
                       >
                         <span
-                          class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap leading-tight font-semibold text-lg"
-                          data-testid="address__wallet-address"
+                          class="inline-flex overflow-hidden leading-tight font-semibold text-lg"
+                          data-testid="Address__address"
                         >
                           D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD
                         </span>
@@ -7899,6 +7918,7 @@ exports[`Votes should show resigned delegate notice 1`] = `
               </div>
               <div
                 class="text-sm font-bold text-theme-secondary-text dark:text-theme-text"
+                data-testid="Balance__value"
               >
                 <span
                   data-testid="Amount"
@@ -7997,37 +8017,35 @@ exports[`Votes should show resigned delegate notice 1`] = `
               >
                 <div
                   class="relative"
+                  data-testid="HeaderSearchBar"
                 >
-                  <button
-                    class="my-auto h-full font-semibold cursor-pointer focus:outline-none"
-                    data-testid="header-search-bar__button"
-                    type="button"
+                  <div
+                    class="group"
                   >
-                    <div
-                      class="group"
+                    <button
+                      class="ControlButton__ControlButtonStyled-sc-1xp1l1a-0 gPBHgx group"
                     >
                       <div
-                        class="ControlButton__ControlButtonStyled-sc-1xp1l1a-0 kMCise"
+                        class="absolute inset-0 -mx-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                      />
+                      <div
+                        class="flex items-center h-5 space-x-3"
                       >
+                        <span>
+                          Search
+                        </span>
                         <div
-                          class="flex items-center h-5 space-x-3"
+                          class="sc-bdfBwQ iNulIV"
+                          height="18"
+                          width="18"
                         >
-                          <span>
-                            Search
-                          </span>
-                          <div
-                            class="sc-bdfBwQ iNulIV"
-                            height="18"
-                            width="18"
-                          >
-                            <svg>
-                              search.svg
-                            </svg>
-                          </div>
+                          <svg>
+                            search.svg
+                          </svg>
                         </div>
                       </div>
-                    </div>
-                  </button>
+                    </button>
+                  </div>
                 </div>
                 <div
                   class="h-10 border-l border-theme-secondary-300 dark:border-theme-secondary-800"
@@ -8044,9 +8062,12 @@ exports[`Votes should show resigned delegate notice 1`] = `
                       <div
                         class="group"
                       >
-                        <div
-                          class="ControlButton__ControlButtonStyled-sc-1xp1l1a-0 kMCise"
+                        <button
+                          class="ControlButton__ControlButtonStyled-sc-1xp1l1a-0 gPBHgx group"
                         >
+                          <div
+                            class="absolute inset-0 -mx-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                          />
                           <div
                             class="flex items-center justify-center w-5 h-5"
                           >
@@ -8060,7 +8081,7 @@ exports[`Votes should show resigned delegate notice 1`] = `
                               </svg>
                             </div>
                           </div>
-                        </div>
+                        </button>
                       </div>
                     </span>
                   </div>
@@ -8467,11 +8488,11 @@ exports[`Votes should show resigned delegate notice 1`] = `
                         Address
                       </div>
                       <div
-                        class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap"
+                        class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap space-x-2"
                       >
                         <span
-                          class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap leading-tight font-semibold text-lg"
-                          data-testid="address__wallet-address"
+                          class="inline-flex overflow-hidden leading-tight font-semibold text-lg"
+                          data-testid="Address__address"
                         >
                           D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD
                         </span>
@@ -8822,6 +8843,7 @@ exports[`Votes should toggle network selection from network filters 1`] = `
               </div>
               <div
                 class="text-sm font-bold text-theme-secondary-text dark:text-theme-text"
+                data-testid="Balance__value"
               >
                 <span
                   data-testid="Amount"
@@ -8920,37 +8942,35 @@ exports[`Votes should toggle network selection from network filters 1`] = `
               >
                 <div
                   class="relative"
+                  data-testid="HeaderSearchBar"
                 >
-                  <button
-                    class="my-auto h-full font-semibold cursor-pointer focus:outline-none"
-                    data-testid="header-search-bar__button"
-                    type="button"
+                  <div
+                    class="group"
                   >
-                    <div
-                      class="group"
+                    <button
+                      class="ControlButton__ControlButtonStyled-sc-1xp1l1a-0 gPBHgx group"
                     >
                       <div
-                        class="ControlButton__ControlButtonStyled-sc-1xp1l1a-0 kMCise"
+                        class="absolute inset-0 -mx-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                      />
+                      <div
+                        class="flex items-center h-5 space-x-3"
                       >
+                        <span>
+                          Search
+                        </span>
                         <div
-                          class="flex items-center h-5 space-x-3"
+                          class="sc-bdfBwQ iNulIV"
+                          height="18"
+                          width="18"
                         >
-                          <span>
-                            Search
-                          </span>
-                          <div
-                            class="sc-bdfBwQ iNulIV"
-                            height="18"
-                            width="18"
-                          >
-                            <svg>
-                              search.svg
-                            </svg>
-                          </div>
+                          <svg>
+                            search.svg
+                          </svg>
                         </div>
                       </div>
-                    </div>
-                  </button>
+                    </button>
+                  </div>
                 </div>
                 <div
                   class="h-10 border-l border-theme-secondary-300 dark:border-theme-secondary-800"
@@ -8967,9 +8987,12 @@ exports[`Votes should toggle network selection from network filters 1`] = `
                       <div
                         class="group"
                       >
-                        <div
-                          class="ControlButton__ControlButtonStyled-sc-1xp1l1a-0 kMCise"
+                        <button
+                          class="ControlButton__ControlButtonStyled-sc-1xp1l1a-0 gPBHgx group"
                         >
+                          <div
+                            class="absolute inset-0 -mx-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                          />
                           <div
                             class="flex items-center justify-center w-5 h-5"
                           >
@@ -8983,7 +9006,7 @@ exports[`Votes should toggle network selection from network filters 1`] = `
                               </svg>
                             </div>
                           </div>
-                        </div>
+                        </button>
                       </div>
                     </span>
                     <div
@@ -9337,11 +9360,11 @@ exports[`Votes should toggle network selection from network filters 1`] = `
                           </div>
                         </div>
                         <div
-                          class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap"
+                          class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap space-x-2"
                         >
                           <span
-                            class="max-w-24 truncate mr-2 font-semibold text-base text-theme-text"
-                            data-testid="address__wallet-name"
+                            class="font-semibold text-base text-theme-text"
+                            data-testid="Address__alias"
                           >
                             <span
                               class="TruncateEnd__Wrapper-sc-1w1nvb9-0"
@@ -9351,8 +9374,8 @@ exports[`Votes should toggle network selection from network filters 1`] = `
                             </span>
                           </span>
                           <span
-                            class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-secondary-500 dark:text-theme-secondary-700 font-semibold text-base"
-                            data-testid="address__wallet-address"
+                            class="inline-flex overflow-hidden text-theme-secondary-500 dark:text-theme-secondary-700 font-semibold text-base"
+                            data-testid="Address__address"
                           >
                             D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD
                           </span>
@@ -9468,11 +9491,11 @@ exports[`Votes should toggle network selection from network filters 1`] = `
                           </div>
                         </div>
                         <div
-                          class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap"
+                          class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap space-x-2"
                         >
                           <span
-                            class="max-w-24 truncate mr-2 font-semibold text-base text-theme-text"
-                            data-testid="address__wallet-name"
+                            class="font-semibold text-base text-theme-text"
+                            data-testid="Address__alias"
                           >
                             <span
                               class="TruncateEnd__Wrapper-sc-1w1nvb9-0"
@@ -9482,8 +9505,8 @@ exports[`Votes should toggle network selection from network filters 1`] = `
                             </span>
                           </span>
                           <span
-                            class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-secondary-500 dark:text-theme-secondary-700 font-semibold text-base"
-                            data-testid="address__wallet-address"
+                            class="inline-flex overflow-hidden text-theme-secondary-500 dark:text-theme-secondary-700 font-semibold text-base"
+                            data-testid="Address__address"
                           >
                             D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb
                           </span>
@@ -9575,11 +9598,11 @@ exports[`Votes should toggle network selection from network filters 1`] = `
                           </div>
                         </div>
                         <div
-                          class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap"
+                          class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap space-x-2"
                         >
                           <span
-                            class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-text font-semibold text-base"
-                            data-testid="address__wallet-address"
+                            class="inline-flex overflow-hidden text-theme-text font-semibold text-base"
+                            data-testid="Address__address"
                           >
                             DTLomV8hpJheFDPnBGB5EtrDCfDZJnG23z
                           </span>

@@ -6,7 +6,6 @@ import { useFormField } from "./useFormField";
 
 type FormLabelProps = {
 	label?: string;
-	required?: boolean;
 	optional?: boolean;
 } & React.LabelHTMLAttributes<any>;
 
@@ -15,7 +14,7 @@ export function FormLabel(props: FormLabelProps) {
 
 	const labelProps = { ...props };
 
-	for (const prop of ["label", "required", "optional"]) {
+	for (const prop of ["label", "optional"]) {
 		// @ts-ignore
 		delete labelProps[prop];
 	}
@@ -31,15 +30,6 @@ export function FormLabel(props: FormLabelProps) {
 		>
 			{props.label || props.children}
 
-			{props.required && (
-				<Tooltip content={t("COMMON.VALIDATION.REQUIRED")}>
-					<div
-						data-testid="FormLabel__required"
-						className="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
-					/>
-				</Tooltip>
-			)}
-
 			{props.optional && (
 				<Tooltip content={t("COMMON.VALIDATION.OPTIONAL")}>
 					<span
@@ -53,7 +43,3 @@ export function FormLabel(props: FormLabelProps) {
 		</label>
 	);
 }
-
-FormLabel.defaultProps = {
-	required: true,
-};

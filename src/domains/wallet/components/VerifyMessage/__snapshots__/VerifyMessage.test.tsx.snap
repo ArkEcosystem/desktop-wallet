@@ -67,20 +67,20 @@ exports[`VerifyMessage should render 1`] = `
                 Input fields manually or provide a JSON string.
               </span>
               <div
-                class="flex items-center mt-6 space-x-4 text-theme-secondary-500 dark:text-theme-secondary-700"
+                class="flex items-center mt-6"
               >
-                <div
-                  class="text-lg font-semibold"
+                <span
+                  class="Switch__SwitchText-sc-1fue7gg-0 fdIjxR"
+                  role="button"
                 >
                   JSON
-                </div>
+                </span>
                 <label
                   class="flex"
                 >
                   <input
                     checked=""
                     class="Toggle__Input-qyyifx-0 WGuGL"
-                    data-testid="VerifyMessage__toggle"
                     type="checkbox"
                   />
                   <div
@@ -91,11 +91,12 @@ exports[`VerifyMessage should render 1`] = `
                     />
                   </div>
                 </label>
-                <div
-                  class="text-lg font-semibold text-theme-secondary-700 dark:text-theme-secondary-200"
+                <span
+                  class="Switch__SwitchText-sc-1fue7gg-0 jDsDxo"
+                  role="button"
                 >
                   Manual
-                </div>
+                </span>
               </div>
               <form
                 class="space-y-8"
@@ -115,10 +116,6 @@ exports[`VerifyMessage should render 1`] = `
                       for="signatory"
                     >
                       Public Key
-                      <div
-                        class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
-                        data-testid="FormLabel__required"
-                      />
                     </label>
                     <div
                       class="fixed invisible w-auto whitespace-nowrap"
@@ -149,10 +146,6 @@ exports[`VerifyMessage should render 1`] = `
                       for="message"
                     >
                       Message
-                      <div
-                        class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
-                        data-testid="FormLabel__required"
-                      />
                     </label>
                     <div
                       class="fixed invisible w-auto whitespace-nowrap"
@@ -183,10 +176,6 @@ exports[`VerifyMessage should render 1`] = `
                       for="signature"
                     >
                       Signature
-                      <div
-                        class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
-                        data-testid="FormLabel__required"
-                      />
                     </label>
                     <div
                       class="fixed invisible w-auto whitespace-nowrap"

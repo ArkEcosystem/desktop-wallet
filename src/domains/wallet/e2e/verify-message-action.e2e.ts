@@ -64,7 +64,7 @@ test("Should fail verification", async (t) => {
 		message: "Wrong message",
 	};
 
-	await t.click(Selector("[data-testid=VerifyMessage__toggle]").sibling(-1));
+	await t.click(Selector("input[type=checkbox]").parent());
 
 	await t.typeText(Selector("[data-testid=VerifyMessage__json-jsonString]"), JSON.stringify(mockFailingMessage));
 
@@ -95,7 +95,7 @@ test("Should successfully verify message", async (t) => {
 		message: "Hello World",
 	};
 
-	await t.click(Selector("[data-testid=VerifyMessage__toggle]").sibling(-1));
+	await t.click(Selector("input[type=checkbox]").parent());
 
 	await t.typeText(Selector("[data-testid=VerifyMessage__json-jsonString]"), JSON.stringify(mockSuccessMessage));
 

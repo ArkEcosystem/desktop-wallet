@@ -359,11 +359,11 @@ exports[`DelegateTable should emit action on continue button to unvote 1`] = `
                 Address
               </div>
               <div
-                class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap"
+                class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap space-x-2"
               >
                 <span
-                  class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap leading-tight font-semibold text-lg"
-                  data-testid="address__wallet-address"
+                  class="inline-flex overflow-hidden leading-tight font-semibold text-lg"
+                  data-testid="Address__address"
                 >
                   DC8ghUdhS8w8d11K8cFQ37YsLBFhL3Dq2P
                 </span>
@@ -845,11 +845,11 @@ exports[`DelegateTable should emit action on continue button to vote 1`] = `
                 Address
               </div>
               <div
-                class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap"
+                class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap space-x-2"
               >
                 <span
-                  class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap leading-tight font-semibold text-lg"
-                  data-testid="address__wallet-address"
+                  class="inline-flex overflow-hidden leading-tight font-semibold text-lg"
+                  data-testid="Address__address"
                 >
                   DC8ghUdhS8w8d11K8cFQ37YsLBFhL3Dq2P
                 </span>
@@ -1331,11 +1331,11 @@ exports[`DelegateTable should render 1`] = `
                 Address
               </div>
               <div
-                class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap"
+                class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap space-x-2"
               >
                 <span
-                  class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap leading-tight font-semibold text-lg"
-                  data-testid="address__wallet-address"
+                  class="inline-flex overflow-hidden leading-tight font-semibold text-lg"
+                  data-testid="Address__address"
                 >
                   DC8ghUdhS8w8d11K8cFQ37YsLBFhL3Dq2P
                 </span>
@@ -2091,11 +2091,11 @@ exports[`DelegateTable should render loading state 1`] = `
                 Address
               </div>
               <div
-                class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap"
+                class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap space-x-2"
               >
                 <span
-                  class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap leading-tight font-semibold text-lg"
-                  data-testid="address__wallet-address"
+                  class="inline-flex overflow-hidden leading-tight font-semibold text-lg"
+                  data-testid="Address__address"
                 >
                   DC8ghUdhS8w8d11K8cFQ37YsLBFhL3Dq2P
                 </span>
@@ -2388,28 +2388,35 @@ exports[`DelegateTable should render pagination 1`] = `
     <div
       class="flex justify-center w-full mt-8"
     >
-      <div
-        class="Pagination__Wrapper-x7juhx-0 klvluR"
+      <nav
+        class="Pagination__Wrapper-x7juhx-0 hbWMHF"
         data-testid="Pagination"
       >
         <div
           class="flex relative px-2 rounded bg-theme-primary-100 dark:bg-theme-secondary-800"
         >
-          <div
-            class="Pagination__PaginationButtonStyled-x7juhx-1 jqbPMy current-page"
+          <button
+            aria-current="true"
+            aria-label="Page 1"
+            class="Pagination__PaginationButtonStyled-x7juhx-1 dPDByT current-page"
+            type="button"
           >
             1
-          </div>
-          <div
-            class="Pagination__PaginationButtonStyled-x7juhx-1 jqbPMy"
+          </button>
+          <button
+            aria-label="Page 2"
+            class="Pagination__PaginationButtonStyled-x7juhx-1 dPDByT"
+            type="button"
           >
             2
-          </div>
-          <div
-            class="Pagination__PaginationButtonStyled-x7juhx-1 jqbPMy"
+          </button>
+          <button
+            aria-label="Page 3"
+            class="Pagination__PaginationButtonStyled-x7juhx-1 dPDByT"
+            type="button"
           >
             3
-          </div>
+          </button>
         </div>
         <button
           class="OriginalButton__StyledButton-sc-1y2wptt-0 izJbbP"
@@ -2431,7 +2438,7 @@ exports[`DelegateTable should render pagination 1`] = `
             </div>
           </div>
         </button>
-      </div>
+      </nav>
     </div>
     <div
       class="DelegateTable__Footer-sc-104vr2x-0 iwePhl"
@@ -2469,11 +2476,11 @@ exports[`DelegateTable should render pagination 1`] = `
                 Address
               </div>
               <div
-                class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap"
+                class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap space-x-2"
               >
                 <span
-                  class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap leading-tight font-semibold text-lg"
-                  data-testid="address__wallet-address"
+                  class="inline-flex overflow-hidden leading-tight font-semibold text-lg"
+                  data-testid="Address__address"
                 >
                   DC8ghUdhS8w8d11K8cFQ37YsLBFhL3Dq2P
                 </span>
@@ -2956,11 +2963,11 @@ exports[`DelegateTable should render with a delegate to unvote 1`] = `
                 Address
               </div>
               <div
-                class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap"
+                class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap space-x-2"
               >
                 <span
-                  class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap leading-tight font-semibold text-lg"
-                  data-testid="address__wallet-address"
+                  class="inline-flex overflow-hidden leading-tight font-semibold text-lg"
+                  data-testid="Address__address"
                 >
                   DC8ghUdhS8w8d11K8cFQ37YsLBFhL3Dq2P
                 </span>
@@ -3445,11 +3452,11 @@ exports[`DelegateTable should render with a delegate to unvote/vote 1`] = `
                 Address
               </div>
               <div
-                class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap"
+                class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap space-x-2"
               >
                 <span
-                  class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap leading-tight font-semibold text-lg"
-                  data-testid="address__wallet-address"
+                  class="inline-flex overflow-hidden leading-tight font-semibold text-lg"
+                  data-testid="Address__address"
                 >
                   DC8ghUdhS8w8d11K8cFQ37YsLBFhL3Dq2P
                 </span>
@@ -3931,11 +3938,11 @@ exports[`DelegateTable should render with a delegate to vote 1`] = `
                 Address
               </div>
               <div
-                class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap"
+                class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap space-x-2"
               >
                 <span
-                  class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap leading-tight font-semibold text-lg"
-                  data-testid="address__wallet-address"
+                  class="inline-flex overflow-hidden leading-tight font-semibold text-lg"
+                  data-testid="Address__address"
                 >
                   DC8ghUdhS8w8d11K8cFQ37YsLBFhL3Dq2P
                 </span>
@@ -4446,11 +4453,11 @@ exports[`DelegateTable should select a delegate to unvote 1`] = `
                 Address
               </div>
               <div
-                class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap"
+                class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap space-x-2"
               >
                 <span
-                  class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap leading-tight font-semibold text-lg"
-                  data-testid="address__wallet-address"
+                  class="inline-flex overflow-hidden leading-tight font-semibold text-lg"
+                  data-testid="Address__address"
                 >
                   DC8ghUdhS8w8d11K8cFQ37YsLBFhL3Dq2P
                 </span>
@@ -4936,11 +4943,11 @@ exports[`DelegateTable should select a delegate to unvote/vote 1`] = `
                 Address
               </div>
               <div
-                class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap"
+                class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap space-x-2"
               >
                 <span
-                  class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap leading-tight font-semibold text-lg"
-                  data-testid="address__wallet-address"
+                  class="inline-flex overflow-hidden leading-tight font-semibold text-lg"
+                  data-testid="Address__address"
                 >
                   DC8ghUdhS8w8d11K8cFQ37YsLBFhL3Dq2P
                 </span>
@@ -5422,11 +5429,11 @@ exports[`DelegateTable should select a delegate to vote 1`] = `
                 Address
               </div>
               <div
-                class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap"
+                class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap space-x-2"
               >
                 <span
-                  class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap leading-tight font-semibold text-lg"
-                  data-testid="address__wallet-address"
+                  class="inline-flex overflow-hidden leading-tight font-semibold text-lg"
+                  data-testid="Address__address"
                 >
                   DC8ghUdhS8w8d11K8cFQ37YsLBFhL3Dq2P
                 </span>
@@ -5909,11 +5916,11 @@ exports[`DelegateTable should select multiple delegates to unvote/vote 1`] = `
                 Address
               </div>
               <div
-                class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap"
+                class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap space-x-2"
               >
                 <span
-                  class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap leading-tight font-semibold text-lg"
-                  data-testid="address__wallet-address"
+                  class="inline-flex overflow-hidden leading-tight font-semibold text-lg"
+                  data-testid="Address__address"
                 >
                   DC8ghUdhS8w8d11K8cFQ37YsLBFhL3Dq2P
                 </span>
@@ -6395,11 +6402,11 @@ exports[`DelegateTable should unselect a delegate to unvote 1`] = `
                 Address
               </div>
               <div
-                class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap"
+                class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap space-x-2"
               >
                 <span
-                  class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap leading-tight font-semibold text-lg"
-                  data-testid="address__wallet-address"
+                  class="inline-flex overflow-hidden leading-tight font-semibold text-lg"
+                  data-testid="Address__address"
                 >
                   DC8ghUdhS8w8d11K8cFQ37YsLBFhL3Dq2P
                 </span>
@@ -6882,11 +6889,11 @@ exports[`DelegateTable should unselect a delegate to vote 1`] = `
                 Address
               </div>
               <div
-                class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap"
+                class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap space-x-2"
               >
                 <span
-                  class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap leading-tight font-semibold text-lg"
-                  data-testid="address__wallet-address"
+                  class="inline-flex overflow-hidden leading-tight font-semibold text-lg"
+                  data-testid="Address__address"
                 >
                   DC8ghUdhS8w8d11K8cFQ37YsLBFhL3Dq2P
                 </span>

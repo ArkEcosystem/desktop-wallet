@@ -23,7 +23,7 @@ describe("Formatted Address", () => {
 
 	it.each(["sm", "lg", "xl"])("should render with size %s", (size) => {
 		const { getByTestId } = render(<Address address={sampleAddress} walletName="Sample Wallet" size={size} />);
-		expect(getByTestId("address__wallet-name")).toHaveClass(`text-${size}`);
+		expect(getByTestId("Address__alias")).toHaveClass(`text-${size}`);
 	});
 
 	it("should render with normal font", () => {
@@ -42,6 +42,6 @@ describe("Formatted Address", () => {
 				size="lg"
 			/>,
 		);
-		expect(getByTestId("address__wallet-address")).toHaveClass("text-theme-primary-600");
+		expect(getByTestId("Address__address")).toHaveClass("text-theme-primary-600");
 	});
 });

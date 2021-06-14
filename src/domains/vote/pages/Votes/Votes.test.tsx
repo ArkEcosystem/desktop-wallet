@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/require-await */
 import { Contracts } from "@arkecosystem/platform-sdk-profiles";
-import { ReadOnlyWallet } from "@arkecosystem/platform-sdk-profiles/dist/drivers/memory/wallets/read-only-wallet";
+import { ReadOnlyWallet } from "@arkecosystem/platform-sdk-profiles/distribution/drivers/memory/wallets/read-only-wallet";
 import { toasts } from "app/services";
 import { createMemoryHistory } from "history";
 import nock from "nock";
@@ -104,7 +104,7 @@ describe("Votes", () => {
 
 		expect(container).toBeTruthy();
 		expect(getByTestId("EmptyBlock")).toBeTruthy();
-		expect(() => getByTestId("header-search-bar__button")).toThrow(/Unable to find an element by/);
+		expect(() => getByTestId("HeaderSearchBar__button")).toThrow(/Unable to find an element by/);
 
 		expect(asFragment()).toMatchSnapshot();
 	});
@@ -492,11 +492,11 @@ describe("Votes", () => {
 		await waitFor(() => expect(queryAllByTestId("TableRow")).toHaveLength(4));
 
 		act(() => {
-			fireEvent.click(getByTestId("header-search-bar__button"));
+			fireEvent.click(within(getByTestId("HeaderSearchBar")).getByRole("button"));
 		});
 
-		await waitFor(() => expect(getByTestId("header-search-bar__input")).toBeInTheDocument());
-		const searchInput = within(getByTestId("header-search-bar__input")).getByTestId("Input");
+		await waitFor(() => expect(getByTestId("HeaderSearchBar__input")).toBeInTheDocument());
+		const searchInput = within(getByTestId("HeaderSearchBar__input")).getByTestId("Input");
 		await waitFor(() => expect(searchInput).toBeInTheDocument());
 
 		act(() => {
@@ -518,11 +518,11 @@ describe("Votes", () => {
 		await waitFor(() => expect(queryAllByTestId("TableRow")).toHaveLength(4));
 
 		act(() => {
-			fireEvent.click(getByTestId("header-search-bar__button"));
+			fireEvent.click(within(getByTestId("HeaderSearchBar")).getByRole("button"));
 		});
 
-		await waitFor(() => expect(getByTestId("header-search-bar__input")).toBeInTheDocument());
-		const searchInput = within(getByTestId("header-search-bar__input")).getByTestId("Input");
+		await waitFor(() => expect(getByTestId("HeaderSearchBar__input")).toBeInTheDocument());
+		const searchInput = within(getByTestId("HeaderSearchBar__input")).getByTestId("Input");
 		await waitFor(() => expect(searchInput).toBeInTheDocument());
 
 		act(() => {
@@ -544,11 +544,11 @@ describe("Votes", () => {
 		await waitFor(() => expect(queryAllByTestId("TableRow")).toHaveLength(4));
 
 		act(() => {
-			fireEvent.click(getByTestId("header-search-bar__button"));
+			fireEvent.click(within(getByTestId("HeaderSearchBar")).getByRole("button"));
 		});
 
-		await waitFor(() => expect(getByTestId("header-search-bar__input")).toBeInTheDocument());
-		const searchInput = within(getByTestId("header-search-bar__input")).getByTestId("Input");
+		await waitFor(() => expect(getByTestId("HeaderSearchBar__input")).toBeInTheDocument());
+		const searchInput = within(getByTestId("HeaderSearchBar__input")).getByTestId("Input");
 		await waitFor(() => expect(searchInput).toBeInTheDocument());
 
 		// Search by wallet alias

@@ -28,7 +28,6 @@ const baseSettings = {
 	AUTOMATIC_SIGN_OUT_PERIOD: 15,
 	BIP39_LOCALE: "english",
 	EXCHANGE_CURRENCY: "BTC",
-	LEDGER_UPDATE_METHOD: false,
 	LOCALE: "en-US",
 	MARKET_PROVIDER: "cryptocompare",
 	NAME: "test profile",
@@ -36,6 +35,9 @@ const baseSettings = {
 	THEME: "dark",
 	TIME_FORMAT: "h:mm A",
 	USE_TEST_NETWORKS: false,
+	DASHBOARD_TRANSACTION_HISTORY: true,
+	DO_NOT_SHOW_FEE_WARNING: false,
+	ERROR_REPORTING: false,
 };
 
 const renderComponent = async () => {

@@ -39,10 +39,6 @@ exports[`AuthenticationStep should request WIF if wallet was imported using WIF 
           for="wif"
         >
           WIF
-          <div
-            class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
-            data-testid="FormLabel__required"
-          />
         </label>
         <div
           class="fixed invisible w-auto whitespace-nowrap"
@@ -135,10 +131,6 @@ exports[`AuthenticationStep should request mnemonic and second mnemonic 1`] = `
           for="mnemonic"
         >
           Mnemonic
-          <div
-            class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
-            data-testid="FormLabel__required"
-          />
         </label>
         <div
           class="fixed invisible w-auto whitespace-nowrap"
@@ -196,10 +188,6 @@ exports[`AuthenticationStep should request mnemonic and second mnemonic 1`] = `
           for="secondMnemonic"
         >
           2nd Mnemonic
-          <div
-            class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
-            data-testid="FormLabel__required"
-          />
         </label>
         <div
           class="fixed invisible w-auto whitespace-nowrap"
@@ -294,10 +282,6 @@ exports[`AuthenticationStep should request mnemonic if wallet was imported using
           for="mnemonic"
         >
           Mnemonic
-          <div
-            class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
-            data-testid="FormLabel__required"
-          />
         </label>
         <div
           class="fixed invisible w-auto whitespace-nowrap"
@@ -390,10 +374,6 @@ exports[`AuthenticationStep should request mnemonic if wallet was imported using
           for="mnemonic"
         >
           Mnemonic
-          <div
-            class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
-            data-testid="FormLabel__required"
-          />
         </label>
         <div
           class="fixed invisible w-auto whitespace-nowrap"
@@ -486,10 +466,6 @@ exports[`AuthenticationStep should request private key if wallet was imported us
           for="privateKey"
         >
           Private Key
-          <div
-            class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
-            data-testid="FormLabel__required"
-          />
         </label>
         <div
           class="fixed invisible w-auto whitespace-nowrap"

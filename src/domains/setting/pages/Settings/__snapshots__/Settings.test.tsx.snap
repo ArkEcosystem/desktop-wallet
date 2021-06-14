@@ -223,6 +223,7 @@ exports[`Settings should not allow setting the current password as the new passw
               </div>
               <div
                 class="text-sm font-bold text-theme-secondary-text dark:text-theme-text"
+                data-testid="Balance__value"
               >
                 <span
                   data-testid="Amount"
@@ -436,10 +437,6 @@ exports[`Settings should not allow setting the current password as the new passw
                         for="currentPassword"
                       >
                         Current Password
-                        <div
-                          class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
-                          data-testid="FormLabel__required"
-                        />
                       </label>
                       <div
                         class="fixed invisible w-auto whitespace-nowrap"
@@ -497,10 +494,6 @@ exports[`Settings should not allow setting the current password as the new passw
                         for="password"
                       >
                         New Password
-                        <div
-                          class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
-                          data-testid="FormLabel__required"
-                        />
                       </label>
                       <div
                         class="fixed invisible w-auto whitespace-nowrap"
@@ -573,10 +566,6 @@ exports[`Settings should not allow setting the current password as the new passw
                         for="confirmPassword"
                       >
                         Confirm New Password
-                        <div
-                          class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
-                          data-testid="FormLabel__required"
-                        />
                       </label>
                       <div
                         class="fixed invisible w-auto whitespace-nowrap"
@@ -874,6 +863,7 @@ exports[`Settings should not update the uploaded avatar when removing focus from
               </div>
               <div
                 class="text-sm font-bold text-theme-secondary-text dark:text-theme-text"
+                data-testid="Balance__value"
               >
                 <span
                   data-testid="Amount"
@@ -1162,10 +1152,6 @@ exports[`Settings should not update the uploaded avatar when removing focus from
                             for="name"
                           >
                             Profile Name
-                            <div
-                              class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
-                              data-testid="FormLabel__required"
-                            />
                           </label>
                           <div
                             class="fixed invisible w-auto whitespace-nowrap"
@@ -1196,10 +1182,6 @@ exports[`Settings should not update the uploaded avatar when removing focus from
                             for="passphraseLanguage"
                           >
                             Passphrase Language
-                            <div
-                              class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
-                              data-testid="FormLabel__required"
-                            />
                           </label>
                           <div
                             class="relative w-full"
@@ -1314,10 +1296,6 @@ exports[`Settings should not update the uploaded avatar when removing focus from
                             for="currency"
                           >
                             Currency
-                            <div
-                              class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
-                              data-testid="FormLabel__required"
-                            />
                           </label>
                           <div
                             class="relative w-full"
@@ -1436,10 +1414,6 @@ exports[`Settings should not update the uploaded avatar when removing focus from
                             for="language"
                           >
                             Language
-                            <div
-                              class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
-                              data-testid="FormLabel__required"
-                            />
                           </label>
                           <div
                             class="relative w-full"
@@ -1554,10 +1528,6 @@ exports[`Settings should not update the uploaded avatar when removing focus from
                             for="marketProvider"
                           >
                             Price Oracle
-                            <div
-                              class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
-                              data-testid="FormLabel__required"
-                            />
                           </label>
                           <div
                             class="relative w-full"
@@ -1672,10 +1642,6 @@ exports[`Settings should not update the uploaded avatar when removing focus from
                             for="timeFormat"
                           >
                             Time Format
-                            <div
-                              class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
-                              data-testid="FormLabel__required"
-                            />
                           </label>
                           <div
                             class="relative w-full"
@@ -1879,10 +1845,6 @@ exports[`Settings should not update the uploaded avatar when removing focus from
                               for="automaticSignOutPeriod"
                             >
                               Auto Log-Off
-                              <div
-                                class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
-                                data-testid="FormLabel__required"
-                              />
                             </label>
                             <div
                               class="relative w-full"
@@ -2487,6 +2449,7 @@ exports[`Settings should render 1`] = `
               </div>
               <div
                 class="text-sm font-bold text-theme-secondary-text dark:text-theme-text"
+                data-testid="Balance__value"
               >
                 <span
                   data-testid="Amount"
@@ -2761,10 +2724,6 @@ exports[`Settings should render 1`] = `
                             for="name"
                           >
                             Profile Name
-                            <div
-                              class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
-                              data-testid="FormLabel__required"
-                            />
                           </label>
                           <div
                             class="fixed invisible w-auto whitespace-nowrap"
@@ -2795,10 +2754,6 @@ exports[`Settings should render 1`] = `
                             for="passphraseLanguage"
                           >
                             Passphrase Language
-                            <div
-                              class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
-                              data-testid="FormLabel__required"
-                            />
                           </label>
                           <div
                             class="relative w-full"
@@ -2913,10 +2868,6 @@ exports[`Settings should render 1`] = `
                             for="currency"
                           >
                             Currency
-                            <div
-                              class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
-                              data-testid="FormLabel__required"
-                            />
                           </label>
                           <div
                             class="relative w-full"
@@ -3035,10 +2986,6 @@ exports[`Settings should render 1`] = `
                             for="language"
                           >
                             Language
-                            <div
-                              class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
-                              data-testid="FormLabel__required"
-                            />
                           </label>
                           <div
                             class="relative w-full"
@@ -3153,10 +3100,6 @@ exports[`Settings should render 1`] = `
                             for="marketProvider"
                           >
                             Price Oracle
-                            <div
-                              class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
-                              data-testid="FormLabel__required"
-                            />
                           </label>
                           <div
                             class="relative w-full"
@@ -3271,10 +3214,6 @@ exports[`Settings should render 1`] = `
                             for="timeFormat"
                           >
                             Time Format
-                            <div
-                              class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
-                              data-testid="FormLabel__required"
-                            />
                           </label>
                           <div
                             class="relative w-full"
@@ -3478,10 +3417,6 @@ exports[`Settings should render 1`] = `
                               for="automaticSignOutPeriod"
                             >
                               Auto Log-Off
-                              <div
-                                class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
-                                data-testid="FormLabel__required"
-                              />
                             </label>
                             <div
                               class="relative w-full"
@@ -4088,6 +4023,7 @@ exports[`Settings should render export settings 1`] = `
               </div>
               <div
                 class="text-sm font-bold text-theme-secondary-text dark:text-theme-text"
+                data-testid="Balance__value"
               >
                 <span
                   data-testid="Amount"
@@ -4646,6 +4582,7 @@ exports[`Settings should render password settings 1`] = `
               </div>
               <div
                 class="text-sm font-bold text-theme-secondary-text dark:text-theme-text"
+                data-testid="Balance__value"
               >
                 <span
                   data-testid="Amount"
@@ -4859,10 +4796,6 @@ exports[`Settings should render password settings 1`] = `
                         for="password"
                       >
                         New Password
-                        <div
-                          class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
-                          data-testid="FormLabel__required"
-                        />
                       </label>
                       <div
                         class="fixed invisible w-auto whitespace-nowrap"
@@ -4920,10 +4853,6 @@ exports[`Settings should render password settings 1`] = `
                         for="confirmPassword"
                       >
                         Confirm New Password
-                        <div
-                          class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
-                          data-testid="FormLabel__required"
-                        />
                       </label>
                       <div
                         class="fixed invisible w-auto whitespace-nowrap"
@@ -5223,6 +5152,7 @@ exports[`Settings should set a password 1`] = `
               </div>
               <div
                 class="text-sm font-bold text-theme-secondary-text dark:text-theme-text"
+                data-testid="Balance__value"
               >
                 <span
                   data-testid="Amount"
@@ -5436,10 +5366,6 @@ exports[`Settings should set a password 1`] = `
                         for="currentPassword"
                       >
                         Current Password
-                        <div
-                          class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
-                          data-testid="FormLabel__required"
-                        />
                       </label>
                       <div
                         class="fixed invisible w-auto whitespace-nowrap"
@@ -5497,10 +5423,6 @@ exports[`Settings should set a password 1`] = `
                         for="password"
                       >
                         New Password
-                        <div
-                          class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
-                          data-testid="FormLabel__required"
-                        />
                       </label>
                       <div
                         class="fixed invisible w-auto whitespace-nowrap"
@@ -5558,10 +5480,6 @@ exports[`Settings should set a password 1`] = `
                         for="confirmPassword"
                       >
                         Confirm New Password
-                        <div
-                          class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
-                          data-testid="FormLabel__required"
-                        />
                       </label>
                       <div
                         class="fixed invisible w-auto whitespace-nowrap"
@@ -5861,6 +5779,7 @@ exports[`Settings should show an error toast if the current password does not ma
               </div>
               <div
                 class="text-sm font-bold text-theme-secondary-text dark:text-theme-text"
+                data-testid="Balance__value"
               >
                 <span
                   data-testid="Amount"
@@ -6074,10 +5993,6 @@ exports[`Settings should show an error toast if the current password does not ma
                         for="currentPassword"
                       >
                         Current Password
-                        <div
-                          class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
-                          data-testid="FormLabel__required"
-                        />
                       </label>
                       <div
                         class="fixed invisible w-auto whitespace-nowrap"
@@ -6135,10 +6050,6 @@ exports[`Settings should show an error toast if the current password does not ma
                         for="password"
                       >
                         New Password
-                        <div
-                          class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
-                          data-testid="FormLabel__required"
-                        />
                       </label>
                       <div
                         class="fixed invisible w-auto whitespace-nowrap"
@@ -6196,10 +6107,6 @@ exports[`Settings should show an error toast if the current password does not ma
                         for="confirmPassword"
                       >
                         Confirm New Password
-                        <div
-                          class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
-                          data-testid="FormLabel__required"
-                        />
                       </label>
                       <div
                         class="fixed invisible w-auto whitespace-nowrap"
@@ -6498,6 +6405,7 @@ exports[`Settings should trigger password confirmation mismatch error 1`] = `
               </div>
               <div
                 class="text-sm font-bold text-theme-secondary-text dark:text-theme-text"
+                data-testid="Balance__value"
               >
                 <span
                   data-testid="Amount"
@@ -6711,10 +6619,6 @@ exports[`Settings should trigger password confirmation mismatch error 1`] = `
                         for="currentPassword"
                       >
                         Current Password
-                        <div
-                          class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
-                          data-testid="FormLabel__required"
-                        />
                       </label>
                       <div
                         class="fixed invisible w-auto whitespace-nowrap"
@@ -6772,10 +6676,6 @@ exports[`Settings should trigger password confirmation mismatch error 1`] = `
                         for="password"
                       >
                         New Password
-                        <div
-                          class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
-                          data-testid="FormLabel__required"
-                        />
                       </label>
                       <div
                         class="fixed invisible w-auto whitespace-nowrap"
@@ -6848,10 +6748,6 @@ exports[`Settings should trigger password confirmation mismatch error 1`] = `
                         for="confirmPassword"
                       >
                         Confirm New Password
-                        <div
-                          class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
-                          data-testid="FormLabel__required"
-                        />
                       </label>
                       <div
                         class="fixed invisible w-auto whitespace-nowrap"
@@ -7164,6 +7060,7 @@ exports[`Settings should update profile 1`] = `
               </div>
               <div
                 class="text-sm font-bold text-theme-secondary-text dark:text-theme-text"
+                data-testid="Balance__value"
               >
                 <span
                   data-testid="Amount"
@@ -7431,10 +7328,6 @@ exports[`Settings should update profile 1`] = `
                             for="name"
                           >
                             Profile Name
-                            <div
-                              class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
-                              data-testid="FormLabel__required"
-                            />
                           </label>
                           <div
                             class="fixed invisible w-auto whitespace-nowrap"
@@ -7465,10 +7358,6 @@ exports[`Settings should update profile 1`] = `
                             for="passphraseLanguage"
                           >
                             Passphrase Language
-                            <div
-                              class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
-                              data-testid="FormLabel__required"
-                            />
                           </label>
                           <div
                             class="relative w-full"
@@ -7583,10 +7472,6 @@ exports[`Settings should update profile 1`] = `
                             for="currency"
                           >
                             Currency
-                            <div
-                              class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
-                              data-testid="FormLabel__required"
-                            />
                           </label>
                           <div
                             class="relative w-full"
@@ -7705,10 +7590,6 @@ exports[`Settings should update profile 1`] = `
                             for="language"
                           >
                             Language
-                            <div
-                              class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
-                              data-testid="FormLabel__required"
-                            />
                           </label>
                           <div
                             class="relative w-full"
@@ -7823,10 +7704,6 @@ exports[`Settings should update profile 1`] = `
                             for="marketProvider"
                           >
                             Price Oracle
-                            <div
-                              class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
-                              data-testid="FormLabel__required"
-                            />
                           </label>
                           <div
                             class="relative w-full"
@@ -7941,10 +7818,6 @@ exports[`Settings should update profile 1`] = `
                             for="timeFormat"
                           >
                             Time Format
-                            <div
-                              class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
-                              data-testid="FormLabel__required"
-                            />
                           </label>
                           <div
                             class="relative w-full"
@@ -8149,10 +8022,6 @@ exports[`Settings should update profile 1`] = `
                               for="automaticSignOutPeriod"
                             >
                               Auto Log-Off
-                              <div
-                                class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
-                                data-testid="FormLabel__required"
-                              />
                             </label>
                             <div
                               class="relative w-full"
@@ -8757,6 +8626,7 @@ exports[`Settings should update the avatar when removing focus from name input 1
               </div>
               <div
                 class="text-sm font-bold text-theme-secondary-text dark:text-theme-text"
+                data-testid="Balance__value"
               >
                 <span
                   data-testid="Amount"
@@ -9031,10 +8901,6 @@ exports[`Settings should update the avatar when removing focus from name input 1
                             for="name"
                           >
                             Profile Name
-                            <div
-                              class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
-                              data-testid="FormLabel__required"
-                            />
                           </label>
                           <div
                             class="fixed invisible w-auto whitespace-nowrap"
@@ -9065,10 +8931,6 @@ exports[`Settings should update the avatar when removing focus from name input 1
                             for="passphraseLanguage"
                           >
                             Passphrase Language
-                            <div
-                              class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
-                              data-testid="FormLabel__required"
-                            />
                           </label>
                           <div
                             class="relative w-full"
@@ -9183,10 +9045,6 @@ exports[`Settings should update the avatar when removing focus from name input 1
                             for="currency"
                           >
                             Currency
-                            <div
-                              class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
-                              data-testid="FormLabel__required"
-                            />
                           </label>
                           <div
                             class="relative w-full"
@@ -9305,10 +9163,6 @@ exports[`Settings should update the avatar when removing focus from name input 1
                             for="language"
                           >
                             Language
-                            <div
-                              class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
-                              data-testid="FormLabel__required"
-                            />
                           </label>
                           <div
                             class="relative w-full"
@@ -9423,10 +9277,6 @@ exports[`Settings should update the avatar when removing focus from name input 1
                             for="marketProvider"
                           >
                             Price Oracle
-                            <div
-                              class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
-                              data-testid="FormLabel__required"
-                            />
                           </label>
                           <div
                             class="relative w-full"
@@ -9541,10 +9391,6 @@ exports[`Settings should update the avatar when removing focus from name input 1
                             for="timeFormat"
                           >
                             Time Format
-                            <div
-                              class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
-                              data-testid="FormLabel__required"
-                            />
                           </label>
                           <div
                             class="relative w-full"
@@ -9748,10 +9594,6 @@ exports[`Settings should update the avatar when removing focus from name input 1
                               for="automaticSignOutPeriod"
                             >
                               Auto Log-Off
-                              <div
-                                class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
-                                data-testid="FormLabel__required"
-                              />
                             </label>
                             <div
                               class="relative w-full"
@@ -10356,6 +10198,7 @@ exports[`Settings should update the avatar when removing focus from name input 2
               </div>
               <div
                 class="text-sm font-bold text-theme-secondary-text dark:text-theme-text"
+                data-testid="Balance__value"
               >
                 <span
                   data-testid="Amount"
@@ -10623,10 +10466,6 @@ exports[`Settings should update the avatar when removing focus from name input 2
                             for="name"
                           >
                             Profile Name
-                            <div
-                              class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
-                              data-testid="FormLabel__required"
-                            />
                           </label>
                           <div
                             class="fixed invisible w-auto whitespace-nowrap"
@@ -10676,10 +10515,6 @@ exports[`Settings should update the avatar when removing focus from name input 2
                             for="passphraseLanguage"
                           >
                             Passphrase Language
-                            <div
-                              class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
-                              data-testid="FormLabel__required"
-                            />
                           </label>
                           <div
                             class="relative w-full"
@@ -10794,10 +10629,6 @@ exports[`Settings should update the avatar when removing focus from name input 2
                             for="currency"
                           >
                             Currency
-                            <div
-                              class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
-                              data-testid="FormLabel__required"
-                            />
                           </label>
                           <div
                             class="relative w-full"
@@ -10916,10 +10747,6 @@ exports[`Settings should update the avatar when removing focus from name input 2
                             for="language"
                           >
                             Language
-                            <div
-                              class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
-                              data-testid="FormLabel__required"
-                            />
                           </label>
                           <div
                             class="relative w-full"
@@ -11034,10 +10861,6 @@ exports[`Settings should update the avatar when removing focus from name input 2
                             for="marketProvider"
                           >
                             Price Oracle
-                            <div
-                              class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
-                              data-testid="FormLabel__required"
-                            />
                           </label>
                           <div
                             class="relative w-full"
@@ -11152,10 +10975,6 @@ exports[`Settings should update the avatar when removing focus from name input 2
                             for="timeFormat"
                           >
                             Time Format
-                            <div
-                              class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
-                              data-testid="FormLabel__required"
-                            />
                           </label>
                           <div
                             class="relative w-full"
@@ -11359,10 +11178,6 @@ exports[`Settings should update the avatar when removing focus from name input 2
                               for="automaticSignOutPeriod"
                             >
                               Auto Log-Off
-                              <div
-                                class="mt-1 ml-1 w-1 h-1 rounded-full bg-theme-danger-400"
-                                data-testid="FormLabel__required"
-                              />
                             </label>
                             <div
                               class="relative w-full"

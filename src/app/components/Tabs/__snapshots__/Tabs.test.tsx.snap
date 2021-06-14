@@ -4,21 +4,37 @@ exports[`Tabs should react to use effect call 1`] = `
 <DocumentFragment>
   <div>
     <div
-      class="Tabs__TabList-sc-1lxyvu-1 jCqqnd"
+      class="Tabs__TabList-sc-1lxyvu-1 edtiGn"
     >
       <button
         aria-selected="true"
-        class="Tabs__TabButton-sc-1lxyvu-0"
+        class="Tabs__TabButton-sc-1lxyvu-0 group"
         data-testid="tabs__tab-button-1"
+        role="tab"
+        tabindex="0"
+        type="button"
       >
-        First
+        <div
+          class="absolute inset-0 -mx-1 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+        />
+        <span>
+          First
+        </span>
       </button>
       <button
         aria-selected="false"
-        class="Tabs__TabButton-sc-1lxyvu-0"
+        class="Tabs__TabButton-sc-1lxyvu-0 group"
         data-testid="tabs__tab-button-2"
+        role="tab"
+        tabindex="-1"
+        type="button"
       >
-        Second
+        <div
+          class="absolute inset-0 -mx-1 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+        />
+        <span>
+          Second
+        </span>
       </button>
     </div>
     <div
@@ -34,28 +50,52 @@ exports[`Tabs should render 1`] = `
 <DocumentFragment>
   <div>
     <div
-      class="Tabs__TabList-sc-1lxyvu-1 jCqqnd"
+      class="Tabs__TabList-sc-1lxyvu-1 edtiGn"
     >
       <button
         aria-selected="false"
-        class="Tabs__TabButton-sc-1lxyvu-0"
+        class="Tabs__TabButton-sc-1lxyvu-0 group"
         data-testid="tabs__tab-button-1"
+        role="tab"
+        tabindex="-1"
+        type="button"
       >
-        First
+        <div
+          class="absolute inset-0 -mx-1 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+        />
+        <span>
+          First
+        </span>
       </button>
       <button
         aria-selected="false"
-        class="Tabs__TabButton-sc-1lxyvu-0"
+        class="Tabs__TabButton-sc-1lxyvu-0 group"
         data-testid="tabs__tab-button-2"
+        role="tab"
+        tabindex="-1"
+        type="button"
       >
-        Second
+        <div
+          class="absolute inset-0 -mx-1 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+        />
+        <span>
+          Second
+        </span>
       </button>
       <button
         aria-selected="false"
-        class="Tabs__TabButton-sc-1lxyvu-0"
+        class="Tabs__TabButton-sc-1lxyvu-0 group"
         data-testid="tabs__tab-button-3"
+        role="tab"
+        tabindex="-1"
+        type="button"
       >
-        Third
+        <div
+          class="absolute inset-0 -mx-1 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+        />
+        <span>
+          Third
+        </span>
       </button>
     </div>
     <div

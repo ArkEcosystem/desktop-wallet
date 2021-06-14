@@ -58,28 +58,52 @@ exports[`Transactions should fetch more transactions 1`] = `
     class="mb-8"
   >
     <div
-      class="Tabs__TabList-sc-1lxyvu-1 jCqqnd w-full"
+      class="Tabs__TabList-sc-1lxyvu-1 edtiGn w-full"
     >
       <button
         aria-selected="true"
-        class="Tabs__TabButton-sc-1lxyvu-0"
+        class="Tabs__TabButton-sc-1lxyvu-0 group"
         data-testid="tabs__tab-button-all"
+        role="tab"
+        tabindex="0"
+        type="button"
       >
-        All
+        <div
+          class="absolute inset-0 -mx-1 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+        />
+        <span>
+          All
+        </span>
       </button>
       <button
         aria-selected="false"
-        class="Tabs__TabButton-sc-1lxyvu-0"
+        class="Tabs__TabButton-sc-1lxyvu-0 group"
         data-testid="tabs__tab-button-received"
+        role="tab"
+        tabindex="-1"
+        type="button"
       >
-        Incoming
+        <div
+          class="absolute inset-0 -mx-1 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+        />
+        <span>
+          Incoming
+        </span>
       </button>
       <button
         aria-selected="false"
-        class="Tabs__TabButton-sc-1lxyvu-0"
+        class="Tabs__TabButton-sc-1lxyvu-0 group"
         data-testid="tabs__tab-button-sent"
+        role="tab"
+        tabindex="-1"
+        type="button"
       >
-        Outgoing
+        <div
+          class="absolute inset-0 -mx-1 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+        />
+        <span>
+          Outgoing
+        </span>
       </button>
     </div>
   </div>
@@ -145,7 +169,7 @@ exports[`Transactions should fetch more transactions 1`] = `
               </div>
             </th>
             <th
-              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder w-96 min-w-96"
+              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder w-20 min-w-20"
               colspan="1"
               data-testid="table__th--2"
               role="columnheader"
@@ -319,11 +343,11 @@ exports[`Transactions should fetch more transactions 1`] = `
                   class="w-40 xl:w-full"
                 >
                   <div
-                    class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap"
+                    class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap space-x-2"
                   >
                     <span
-                      class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-text font-semibold text-base"
-                      data-testid="address__wallet-address"
+                      class="inline-flex overflow-hidden text-theme-text font-semibold text-base"
+                      data-testid="Address__address"
                     >
                       D5pVkhZbSb4UNXvfmF6j7zdau8yGxfKwSv
                     </span>
@@ -483,11 +507,11 @@ exports[`Transactions should fetch more transactions 1`] = `
                   class="w-40 xl:w-full"
                 >
                   <div
-                    class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap"
+                    class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap space-x-2"
                   >
                     <span
-                      class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-text font-semibold text-base"
-                      data-testid="address__wallet-address"
+                      class="inline-flex overflow-hidden text-theme-text font-semibold text-base"
+                      data-testid="Address__address"
                     >
                       D5pVkhZbSb4UNXvfmF6j7zdau8yGxfKwSv
                     </span>
@@ -647,11 +671,11 @@ exports[`Transactions should fetch more transactions 1`] = `
                   class="w-40 xl:w-full"
                 >
                   <div
-                    class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap"
+                    class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap space-x-2"
                   >
                     <span
-                      class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-text font-semibold text-base"
-                      data-testid="address__wallet-address"
+                      class="inline-flex overflow-hidden text-theme-text font-semibold text-base"
+                      data-testid="Address__address"
                     >
                       DKY5eyQUKKYyaCfPp6MUv3Y4FW6EbNF53A
                     </span>
@@ -811,11 +835,11 @@ exports[`Transactions should fetch more transactions 1`] = `
                   class="w-40 xl:w-full"
                 >
                   <div
-                    class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap"
+                    class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap space-x-2"
                   >
                     <span
-                      class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-text font-semibold text-base"
-                      data-testid="address__wallet-address"
+                      class="inline-flex overflow-hidden text-theme-text font-semibold text-base"
+                      data-testid="Address__address"
                     >
                       DKY5eyQUKKYyaCfPp6MUv3Y4FW6EbNF53A
                     </span>
@@ -956,28 +980,52 @@ exports[`Transactions should open detail modal on transaction row click 1`] = `
     class="mb-8"
   >
     <div
-      class="Tabs__TabList-sc-1lxyvu-1 jCqqnd w-full"
+      class="Tabs__TabList-sc-1lxyvu-1 edtiGn w-full"
     >
       <button
         aria-selected="true"
-        class="Tabs__TabButton-sc-1lxyvu-0"
+        class="Tabs__TabButton-sc-1lxyvu-0 group"
         data-testid="tabs__tab-button-all"
+        role="tab"
+        tabindex="0"
+        type="button"
       >
-        All
+        <div
+          class="absolute inset-0 -mx-1 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+        />
+        <span>
+          All
+        </span>
       </button>
       <button
         aria-selected="false"
-        class="Tabs__TabButton-sc-1lxyvu-0"
+        class="Tabs__TabButton-sc-1lxyvu-0 group"
         data-testid="tabs__tab-button-received"
+        role="tab"
+        tabindex="-1"
+        type="button"
       >
-        Incoming
+        <div
+          class="absolute inset-0 -mx-1 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+        />
+        <span>
+          Incoming
+        </span>
       </button>
       <button
         aria-selected="false"
-        class="Tabs__TabButton-sc-1lxyvu-0"
+        class="Tabs__TabButton-sc-1lxyvu-0 group"
         data-testid="tabs__tab-button-sent"
+        role="tab"
+        tabindex="-1"
+        type="button"
       >
-        Outgoing
+        <div
+          class="absolute inset-0 -mx-1 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+        />
+        <span>
+          Outgoing
+        </span>
       </button>
     </div>
   </div>
@@ -1043,7 +1091,7 @@ exports[`Transactions should open detail modal on transaction row click 1`] = `
               </div>
             </th>
             <th
-              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder w-96 min-w-96"
+              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder w-20 min-w-20"
               colspan="1"
               data-testid="table__th--2"
               role="columnheader"
@@ -1217,11 +1265,11 @@ exports[`Transactions should open detail modal on transaction row click 1`] = `
                   class="w-40 xl:w-full"
                 >
                   <div
-                    class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap"
+                    class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap space-x-2"
                   >
                     <span
-                      class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-text font-semibold text-base"
-                      data-testid="address__wallet-address"
+                      class="inline-flex overflow-hidden text-theme-text font-semibold text-base"
+                      data-testid="Address__address"
                     >
                       D5pVkhZbSb4UNXvfmF6j7zdau8yGxfKwSv
                     </span>
@@ -1381,11 +1429,11 @@ exports[`Transactions should open detail modal on transaction row click 1`] = `
                   class="w-40 xl:w-full"
                 >
                   <div
-                    class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap"
+                    class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap space-x-2"
                   >
                     <span
-                      class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-text font-semibold text-base"
-                      data-testid="address__wallet-address"
+                      class="inline-flex overflow-hidden text-theme-text font-semibold text-base"
+                      data-testid="Address__address"
                     >
                       D5pVkhZbSb4UNXvfmF6j7zdau8yGxfKwSv
                     </span>
@@ -1545,11 +1593,11 @@ exports[`Transactions should open detail modal on transaction row click 1`] = `
                   class="w-40 xl:w-full"
                 >
                   <div
-                    class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap"
+                    class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap space-x-2"
                   >
                     <span
-                      class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-text font-semibold text-base"
-                      data-testid="address__wallet-address"
+                      class="inline-flex overflow-hidden text-theme-text font-semibold text-base"
+                      data-testid="Address__address"
                     >
                       DKY5eyQUKKYyaCfPp6MUv3Y4FW6EbNF53A
                     </span>
@@ -1709,11 +1757,11 @@ exports[`Transactions should open detail modal on transaction row click 1`] = `
                   class="w-40 xl:w-full"
                 >
                   <div
-                    class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap"
+                    class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap space-x-2"
                   >
                     <span
-                      class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-text font-semibold text-base"
-                      data-testid="address__wallet-address"
+                      class="inline-flex overflow-hidden text-theme-text font-semibold text-base"
+                      data-testid="Address__address"
                     >
                       DKY5eyQUKKYyaCfPp6MUv3Y4FW6EbNF53A
                     </span>
@@ -1865,28 +1913,52 @@ exports[`Transactions should render 1`] = `
     class="mb-8"
   >
     <div
-      class="Tabs__TabList-sc-1lxyvu-1 jCqqnd w-full"
+      class="Tabs__TabList-sc-1lxyvu-1 edtiGn w-full"
     >
       <button
         aria-selected="true"
-        class="Tabs__TabButton-sc-1lxyvu-0"
+        class="Tabs__TabButton-sc-1lxyvu-0 group"
         data-testid="tabs__tab-button-all"
+        role="tab"
+        tabindex="0"
+        type="button"
       >
-        All
+        <div
+          class="absolute inset-0 -mx-1 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+        />
+        <span>
+          All
+        </span>
       </button>
       <button
         aria-selected="false"
-        class="Tabs__TabButton-sc-1lxyvu-0"
+        class="Tabs__TabButton-sc-1lxyvu-0 group"
         data-testid="tabs__tab-button-received"
+        role="tab"
+        tabindex="-1"
+        type="button"
       >
-        Incoming
+        <div
+          class="absolute inset-0 -mx-1 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+        />
+        <span>
+          Incoming
+        </span>
       </button>
       <button
         aria-selected="false"
-        class="Tabs__TabButton-sc-1lxyvu-0"
+        class="Tabs__TabButton-sc-1lxyvu-0 group"
         data-testid="tabs__tab-button-sent"
+        role="tab"
+        tabindex="-1"
+        type="button"
       >
-        Outgoing
+        <div
+          class="absolute inset-0 -mx-1 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+        />
+        <span>
+          Outgoing
+        </span>
       </button>
     </div>
   </div>
@@ -1952,7 +2024,7 @@ exports[`Transactions should render 1`] = `
               </div>
             </th>
             <th
-              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder w-96 min-w-96"
+              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder w-20 min-w-20"
               colspan="1"
               data-testid="table__th--2"
               role="columnheader"
@@ -2126,11 +2198,11 @@ exports[`Transactions should render 1`] = `
                   class="w-40 xl:w-full"
                 >
                   <div
-                    class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap"
+                    class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap space-x-2"
                   >
                     <span
-                      class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-text font-semibold text-base"
-                      data-testid="address__wallet-address"
+                      class="inline-flex overflow-hidden text-theme-text font-semibold text-base"
+                      data-testid="Address__address"
                     >
                       D5pVkhZbSb4UNXvfmF6j7zdau8yGxfKwSv
                     </span>
@@ -2290,11 +2362,11 @@ exports[`Transactions should render 1`] = `
                   class="w-40 xl:w-full"
                 >
                   <div
-                    class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap"
+                    class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap space-x-2"
                   >
                     <span
-                      class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-text font-semibold text-base"
-                      data-testid="address__wallet-address"
+                      class="inline-flex overflow-hidden text-theme-text font-semibold text-base"
+                      data-testid="Address__address"
                     >
                       D5pVkhZbSb4UNXvfmF6j7zdau8yGxfKwSv
                     </span>
@@ -2454,11 +2526,11 @@ exports[`Transactions should render 1`] = `
                   class="w-40 xl:w-full"
                 >
                   <div
-                    class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap"
+                    class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap space-x-2"
                   >
                     <span
-                      class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-text font-semibold text-base"
-                      data-testid="address__wallet-address"
+                      class="inline-flex overflow-hidden text-theme-text font-semibold text-base"
+                      data-testid="Address__address"
                     >
                       DKY5eyQUKKYyaCfPp6MUv3Y4FW6EbNF53A
                     </span>
@@ -2618,11 +2690,11 @@ exports[`Transactions should render 1`] = `
                   class="w-40 xl:w-full"
                 >
                   <div
-                    class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap"
+                    class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap space-x-2"
                   >
                     <span
-                      class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-text font-semibold text-base"
-                      data-testid="address__wallet-address"
+                      class="inline-flex overflow-hidden text-theme-text font-semibold text-base"
+                      data-testid="Address__address"
                     >
                       DKY5eyQUKKYyaCfPp6MUv3Y4FW6EbNF53A
                     </span>
@@ -2774,28 +2846,52 @@ exports[`Transactions should render with custom title 1`] = `
     class="mb-8"
   >
     <div
-      class="Tabs__TabList-sc-1lxyvu-1 jCqqnd w-full"
+      class="Tabs__TabList-sc-1lxyvu-1 edtiGn w-full"
     >
       <button
         aria-selected="true"
-        class="Tabs__TabButton-sc-1lxyvu-0"
+        class="Tabs__TabButton-sc-1lxyvu-0 group"
         data-testid="tabs__tab-button-all"
+        role="tab"
+        tabindex="0"
+        type="button"
       >
-        All
+        <div
+          class="absolute inset-0 -mx-1 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+        />
+        <span>
+          All
+        </span>
       </button>
       <button
         aria-selected="false"
-        class="Tabs__TabButton-sc-1lxyvu-0"
+        class="Tabs__TabButton-sc-1lxyvu-0 group"
         data-testid="tabs__tab-button-received"
+        role="tab"
+        tabindex="-1"
+        type="button"
       >
-        Incoming
+        <div
+          class="absolute inset-0 -mx-1 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+        />
+        <span>
+          Incoming
+        </span>
       </button>
       <button
         aria-selected="false"
-        class="Tabs__TabButton-sc-1lxyvu-0"
+        class="Tabs__TabButton-sc-1lxyvu-0 group"
         data-testid="tabs__tab-button-sent"
+        role="tab"
+        tabindex="-1"
+        type="button"
       >
-        Outgoing
+        <div
+          class="absolute inset-0 -mx-1 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+        />
+        <span>
+          Outgoing
+        </span>
       </button>
     </div>
   </div>
@@ -2861,7 +2957,7 @@ exports[`Transactions should render with custom title 1`] = `
               </div>
             </th>
             <th
-              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder w-96 min-w-96"
+              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder w-20 min-w-20"
               colspan="1"
               data-testid="table__th--2"
               role="columnheader"
@@ -3035,11 +3131,11 @@ exports[`Transactions should render with custom title 1`] = `
                   class="w-40 xl:w-full"
                 >
                   <div
-                    class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap"
+                    class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap space-x-2"
                   >
                     <span
-                      class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-text font-semibold text-base"
-                      data-testid="address__wallet-address"
+                      class="inline-flex overflow-hidden text-theme-text font-semibold text-base"
+                      data-testid="Address__address"
                     >
                       D5pVkhZbSb4UNXvfmF6j7zdau8yGxfKwSv
                     </span>
@@ -3199,11 +3295,11 @@ exports[`Transactions should render with custom title 1`] = `
                   class="w-40 xl:w-full"
                 >
                   <div
-                    class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap"
+                    class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap space-x-2"
                   >
                     <span
-                      class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-text font-semibold text-base"
-                      data-testid="address__wallet-address"
+                      class="inline-flex overflow-hidden text-theme-text font-semibold text-base"
+                      data-testid="Address__address"
                     >
                       D5pVkhZbSb4UNXvfmF6j7zdau8yGxfKwSv
                     </span>
@@ -3363,11 +3459,11 @@ exports[`Transactions should render with custom title 1`] = `
                   class="w-40 xl:w-full"
                 >
                   <div
-                    class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap"
+                    class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap space-x-2"
                   >
                     <span
-                      class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-text font-semibold text-base"
-                      data-testid="address__wallet-address"
+                      class="inline-flex overflow-hidden text-theme-text font-semibold text-base"
+                      data-testid="Address__address"
                     >
                       DKY5eyQUKKYyaCfPp6MUv3Y4FW6EbNF53A
                     </span>
@@ -3527,11 +3623,11 @@ exports[`Transactions should render with custom title 1`] = `
                   class="w-40 xl:w-full"
                 >
                   <div
-                    class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap"
+                    class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap space-x-2"
                   >
                     <span
-                      class="TruncateMiddle__Wrapper-sc-3j3e79-0 whitespace-nowrap text-theme-text font-semibold text-base"
-                      data-testid="address__wallet-address"
+                      class="inline-flex overflow-hidden text-theme-text font-semibold text-base"
+                      data-testid="Address__address"
                     >
                       DKY5eyQUKKYyaCfPp6MUv3Y4FW6EbNF53A
                     </span>
@@ -3684,28 +3780,52 @@ exports[`Transactions should update wallet filters 1`] = `
     class="mb-8"
   >
     <div
-      class="Tabs__TabList-sc-1lxyvu-1 jCqqnd w-full"
+      class="Tabs__TabList-sc-1lxyvu-1 edtiGn w-full"
     >
       <button
         aria-selected="false"
-        class="Tabs__TabButton-sc-1lxyvu-0"
+        class="Tabs__TabButton-sc-1lxyvu-0 group"
         data-testid="tabs__tab-button-all"
+        role="tab"
+        tabindex="-1"
+        type="button"
       >
-        All
+        <div
+          class="absolute inset-0 -mx-1 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+        />
+        <span>
+          All
+        </span>
       </button>
       <button
         aria-selected="false"
-        class="Tabs__TabButton-sc-1lxyvu-0"
+        class="Tabs__TabButton-sc-1lxyvu-0 group"
         data-testid="tabs__tab-button-received"
+        role="tab"
+        tabindex="-1"
+        type="button"
       >
-        Incoming
+        <div
+          class="absolute inset-0 -mx-1 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+        />
+        <span>
+          Incoming
+        </span>
       </button>
       <button
         aria-selected="false"
-        class="Tabs__TabButton-sc-1lxyvu-0"
+        class="Tabs__TabButton-sc-1lxyvu-0 group"
         data-testid="tabs__tab-button-sent"
+        role="tab"
+        tabindex="-1"
+        type="button"
       >
-        Outgoing
+        <div
+          class="absolute inset-0 -mx-1 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+        />
+        <span>
+          Outgoing
+        </span>
       </button>
     </div>
   </div>

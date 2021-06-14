@@ -1,5 +1,5 @@
 // @README: This import is fine in tests but should be avoided in production code.
-import { ReadOnlyWallet } from "@arkecosystem/platform-sdk-profiles/dist/drivers/memory/wallets/read-only-wallet";
+import { ReadOnlyWallet } from "@arkecosystem/platform-sdk-profiles/distribution/drivers/memory/wallets/read-only-wallet";
 import React from "react";
 import { render } from "testing-library";
 import { TransactionFixture } from "tests/fixtures/transactions";
@@ -11,7 +11,7 @@ import { TransactionRowRecipientLabel } from "./TransactionRowRecipientLabel";
 describe("TransactionRowRecipientLabel", () => {
 	it("should show address", () => {
 		const { getByTestId } = render(<TransactionRowRecipientLabel transaction={TransactionFixture} />);
-		expect(getByTestId("address__wallet-address")).toHaveTextContent("D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD");
+		expect(getByTestId("Address__address")).toHaveTextContent("D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD");
 	});
 
 	it("should show label", () => {
