@@ -1,4 +1,4 @@
-import { Contracts, Networks, Services } from "@arkecosystem/platform-sdk";
+import { Coins,Contracts, Networks, Services } from "@arkecosystem/platform-sdk";
 import { Contracts as ProfileContracts, DTO } from "@arkecosystem/platform-sdk-profiles";
 import { BigNumber } from "@arkecosystem/platform-sdk-support";
 import { Button } from "app/components/Button";
@@ -61,6 +61,8 @@ export const SendTransfer = () => {
 	const [wallet, setWallet] = useState<ProfileContracts.IReadWriteWallet | undefined>(
 		hasWalletId ? activeWallet : undefined,
 	);
+
+	const decimals = useMemo(() => wallet?.config().get<number>(Coins.ConfigKey.CurrencyDecimals), [wallet]);
 
 	const networks = useMemo(() => {
 		const results: Record<string, Networks.Network> = {};
@@ -179,7 +181,7 @@ export const SendTransfer = () => {
 
 		const remaining = remainingBalance.minus(fee);
 
-		setValue("displayAmount", remaining.toHuman());
+		setValue("displayAmount", remaining.toHuman(decimals));
 		setValue("amount", remaining.toString());
 
 		form.trigger(["fee", "amount"]);
@@ -260,6 +262,7 @@ export const SendTransfer = () => {
 			setTransaction(transaction);
 			setActiveTab(4);
 		} catch (error) {
+			console.log(error);
 			if (isMnemonicError(error)) {
 				setValue("mnemonic", "");
 				return setError("mnemonic", { type: "manual", message: t("TRANSACTION.INVALID_MNEMONIC") });
