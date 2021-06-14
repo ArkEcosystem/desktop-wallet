@@ -128,7 +128,9 @@ export const TransactionTable = memo(
 								exchangeCurrency={exchangeCurrency}
 								showExplorerLink={showExplorerLinkColumn}
 								showSignColumn={showSignColumn}
-								isSignaturePending={row.isMultiSignatureRegistration() && showSignColumn}
+								isSignaturePending={
+									!showSkeleton ? row.isMultiSignatureRegistration() && showSignColumn : false
+								}
 							/>
 						)
 					}
