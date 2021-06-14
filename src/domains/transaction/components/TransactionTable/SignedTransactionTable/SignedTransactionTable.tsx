@@ -158,7 +158,7 @@ const Row = ({
 			</TableCell>
 
 			<TableCell innerClassName="justify-center">
-				<BaseTransactionRowInfo isMultiSignature={transaction.isMultiSignature()} />
+				<BaseTransactionRowInfo isMultiSignature={transaction.usesMultiSignature()} />
 			</TableCell>
 
 			<TableCell className="w-16" innerClassName="justify-center truncate">
