@@ -3,7 +3,7 @@ import { Contracts as ProfileContracts } from "@arkecosystem/platform-sdk-profil
 import { useEnvironmentContext } from "app/contexts";
 import { useCallback } from "react";
 
-export const useFees = ({ profile, normalize = true }: { profile: ProfileContracts.IProfile; normalize?: boolean }) => {
+export const useFees = (profile: ProfileContracts.IProfile) => {
 	const { env } = useEnvironmentContext();
 
 	const findByType = useCallback(
@@ -18,15 +18,6 @@ export const useFees = ({ profile, normalize = true }: { profile: ProfileContrac
 				transactionFees = env.fees().findByType(coin, network, type);
 			}
 
-			if (!normalize) {
-				return {
-					static: transactionFees.static.toString(),
-					avg: transactionFees.avg.toString(),
-					min: transactionFees.min.toString(),
-					max: transactionFees.max.toString(),
-				};
-			}
-
 			const bigNumber = profile.coins().get(coin, network).bigNumber();
 
 			return {
@@ -36,7 +27,7 @@ export const useFees = ({ profile, normalize = true }: { profile: ProfileContrac
 				max: bigNumber.make(transactionFees.max).toHuman(),
 			};
 		},
-		[env, normalize, profile],
+		[env, profile],
 	);
 
 	return { findByType };
