@@ -258,7 +258,7 @@ export const AddRecipient = ({
 			? {
 					end: (
 						<span className="text-sm font-semibold whitespace-no-break text-theme-secondary-500 dark:text-theme-secondary-700">
-							{t("COMMON.MAX")} {maximumAmount?.toHuman()}
+							{t("COMMON.MAX")} {maximumAmount?.toString()}
 						</span>
 					),
 			  }
@@ -335,7 +335,7 @@ export const AddRecipient = ({
 													? remainingBalance.minus(fee)
 													: remainingBalance;
 
-												setValue("displayAmount", remaining.toHuman());
+												setValue("displayAmount", remaining.toString());
 
 												setValue("amount", remaining.toString(), {
 													shouldValidate: true,
