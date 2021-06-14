@@ -167,6 +167,12 @@ export const AddRecipient = ({
 	}, [register, network, sendTransfer, addedRecipients, isSingle, profile, remainingNetBalance]);
 
 	useEffect(() => {
+		if (getValues("displayAmount")) {
+			trigger("amount");
+		}
+	}, [fee, getValues, trigger]);
+
+	useEffect(() => {
 		clearErrors();
 
 		if (isSingle && addedRecipients.length === 1) {
