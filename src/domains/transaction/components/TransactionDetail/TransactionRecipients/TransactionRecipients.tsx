@@ -10,9 +10,15 @@ import { TransactionDetail, TransactionDetailProps } from "../TransactionDetail"
 type TransactionRecipientsProps = {
 	currency: string;
 	recipients: { address: string; alias?: string; amount?: BigNumber }[];
+	normalizeAmount?: boolean;
 } & TransactionDetailProps;
 
-export const TransactionRecipients = ({ currency, recipients, ...props }: TransactionRecipientsProps) => {
+export const TransactionRecipients = ({
+	currency,
+	recipients,
+	normalizeAmount,
+	...props
+}: TransactionRecipientsProps) => {
 	const { t } = useTranslation();
 
 	if (!recipients.length) {
@@ -26,7 +32,7 @@ export const TransactionRecipients = ({ currency, recipients, ...props }: Transa
 					recipients={recipients}
 					assetSymbol={currency}
 					variant="condensed"
-					normalizeAmount={false}
+					normalizeAmount={normalizeAmount}
 				/>
 			</div>
 		</TransactionDetail>
