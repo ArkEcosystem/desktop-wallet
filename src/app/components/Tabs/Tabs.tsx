@@ -88,7 +88,10 @@ export const Tab = React.forwardRef<HTMLButtonElement, TabProps>((props: TabProp
 			<span>{props.children}</span>
 
 			{props.count !== undefined && (
-				<span className="rounded py-0.5 px-1.5 ml-2 text-sm font-semibold bg-theme-primary-100 dark:bg-theme-secondary-900">
+				<span
+					data-testid={`tabs__tab-button-${props.tabId}-count`}
+					className="rounded py-0.5 px-1.5 ml-2 text-sm font-semibold bg-theme-primary-100 dark:bg-theme-secondary-900"
+				>
 					{props.count}
 				</span>
 			)}
