@@ -77,8 +77,8 @@ const UserInfo = ({ exchangeCurrency, onUserAction, avatarImage, userActions, us
 
 	return (
 		<div className="flex my-0.5 ml-4 -space-x-2">
-			<Circle className="border-theme-primary-100 dark:border-theme-secondary-800" size="lg">
-				<span className="text-theme-secondary-text dark:text-theme-secondary-800">
+			<Circle className="border-theme-secondary-300 dark:border-theme-secondary-800" size="lg">
+				<span className="text-theme-secondary-700">
 					{exchangeCurrency && (
 						<Icon
 							name={exchangeCurrency}
