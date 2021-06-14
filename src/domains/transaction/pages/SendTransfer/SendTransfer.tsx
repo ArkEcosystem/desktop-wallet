@@ -97,7 +97,7 @@ export const SendTransfer = () => {
 	useEffect(() => {
 		register("remainingBalance");
 		register("network", sendTransfer.network());
-		register("recipients");
+		register("recipients", sendTransfer.recipients());
 		register("senderAddress", sendTransfer.senderAddress());
 		register("fees");
 		register("fee", common.fee(remainingBalance, wallet?.network?.()));

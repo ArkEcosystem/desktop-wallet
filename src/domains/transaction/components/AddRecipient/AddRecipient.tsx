@@ -179,14 +179,27 @@ export const AddRecipient = ({
 			setValue("amount", addedRecipients[0].amount);
 			setValue("displayAmount", addedRecipients[0].amount?.toHuman());
 			setValue("recipientAddress", addedRecipients[0].address);
+			return;
 		}
 
-		// Clear the recipient inputs when moving back to multiple tab with
-		// added recipients.
-		if (!isSingle && addedRecipients.length > 0) {
+		//region Clear the fields and update the recipient item(s) when switch between transfer type, to prevent enable/disable continue button
+		if (isSingle && recipients?.length !== 1) {
 			clearFields();
+			onChange?.([]);
+			return;
 		}
-	}, [isSingle, clearErrors, clearFields, addedRecipients, setValue]);
+
+		if (!isSingle) {
+			if (addedRecipients.length > 0) {
+				clearFields();
+				onChange?.(addedRecipients);
+				return;
+			}
+
+			onChange?.([]);
+		}
+		//endregion
+	}, [isSingle, clearErrors, clearFields, addedRecipients, setValue]); // eslint-disable-line react-hooks/exhaustive-deps
 
 	useEffect(() => {
 		if (!isSingle) {
@@ -194,6 +207,7 @@ export const AddRecipient = ({
 		}
 	}, [isSingle, setValue]);
 
+	//region Update AddedRecipients state when comes back to the current page
 	useEffect(() => {
 		if (isMountedRef.current) {
 			return;
@@ -209,6 +223,7 @@ export const AddRecipient = ({
 	useEffect(() => {
 		isMountedRef.current = true;
 	}, []);
+	//endregion
 
 	const singleRecipientOnChange = (amountValue: string, recipientAddressValue: string) => {
 		if (!isSingle) {

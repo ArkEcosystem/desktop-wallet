@@ -24,6 +24,11 @@ export const sendTransfer = (t: any) => ({
 			field: t("COMMON.CRYPTOASSET"),
 		}),
 	}),
+	recipients: () => ({
+		validate: {
+			valid: (recipients: RecipientListItem[]) => recipients.length > 0,
+		},
+	}),
 	recipientAddress: (
 		profile: Contracts.IProfile,
 		network: Networks.Network,
