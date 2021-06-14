@@ -12,44 +12,18 @@ import { BaseTransactionRowInfo } from "../TransactionRow/TransactionRowInfo";
 import { BaseTransactionRowMode } from "../TransactionRow/TransactionRowMode";
 import { BaseTransactionRowRecipientLabel } from "../TransactionRow/TransactionRowRecipientLabel";
 
-type SignedTransactionData = Contracts.SignedTransactionData;
-
 interface Props {
-	transactions: SignedTransactionData[];
+	transactions: Contracts.SignedTransactionData[];
 	wallet: ProfileContracts.IReadWriteWallet;
-	onClick?: (transaction: SignedTransactionData) => void;
+	onClick?: (transaction: Contracts.SignedTransactionData) => void;
 }
-
-const getType = (transaction: SignedTransactionData): string => {
-	if (transaction.isMultiSignatureRegistration()) {
-		return "multiSignature";
-	}
-
-	if (transaction.isMultiPayment()) {
-		return "multiPayment";
-	}
-
-	if (transaction.isUnvote()) {
-		return "unvote";
-	}
-
-	if (transaction.isVote()) {
-		return "vote";
-	}
-
-	if (transaction.isIpfs()) {
-		return "ipfs";
-	}
-
-	return "transfer";
-};
 
 const StatusLabel = ({
 	wallet,
 	transaction,
 }: {
 	wallet: ProfileContracts.IReadWriteWallet;
-	transaction: SignedTransactionData;
+	transaction: Contracts.SignedTransactionData;
 }) => {
 	const { t } = useTranslation();
 
@@ -120,16 +94,15 @@ const Row = ({
 	onRowClick,
 	wallet,
 }: {
-	transaction: SignedTransactionData;
-	onSign?: (transaction: SignedTransactionData) => void;
-	onRowClick?: (transaction: SignedTransactionData) => void;
+	transaction: Contracts.SignedTransactionData;
+	onSign?: (transaction: Contracts.SignedTransactionData) => void;
+	onRowClick?: (transaction: Contracts.SignedTransactionData) => void;
 	wallet: ProfileContracts.IReadWriteWallet;
 }) => {
 	const { t } = useTranslation();
 
 	const recipient = transaction.get<string>("recipientId");
 	const canBeSigned = wallet.transaction().canBeSigned(transaction.id());
-	const type = getType(transaction);
 
 	return (
 		<TableRow onClick={() => onRowClick?.(transaction)}>
@@ -148,9 +121,9 @@ const Row = ({
 			</TableCell>
 
 			<TableCell innerClassName="space-x-4">
-				<BaseTransactionRowMode isSent={true} type={type} recipient={recipient} />
+				<BaseTransactionRowMode isSent={true} type={transaction.type()} recipient={recipient} />
 
-				<BaseTransactionRowRecipientLabel type={type} recipient={recipient} />
+				<BaseTransactionRowRecipientLabel type={transaction.type()} recipient={recipient} />
 			</TableCell>
 
 			<TableCell innerClassName="justify-center">
@@ -227,7 +200,7 @@ export const SignedTransactionTable = ({ transactions, wallet, onClick }: Props)
 	return (
 		<div data-testid="SignedTransactionTable" className="relative">
 			<Table columns={columns} data={transactions}>
-				{(transaction: SignedTransactionData) => (
+				{(transaction: Contracts.SignedTransactionData) => (
 					<Row transaction={transaction} wallet={wallet} onSign={onClick} onRowClick={onClick} />
 				)}
 			</Table>

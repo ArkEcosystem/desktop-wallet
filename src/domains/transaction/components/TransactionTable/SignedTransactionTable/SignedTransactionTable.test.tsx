@@ -233,7 +233,7 @@ describe("Signed Transaction Table", () => {
 	});
 
 	it("should show as vote", () => {
-		const isVoteMock = jest.spyOn(fixtures.transfer, "isVote").mockReturnValue(true);
+		const isVoteMock = jest.spyOn(fixtures.transfer, "type").mockReturnValue("vote");
 
 		const { asFragment } = render(<SignedTransactionTable transactions={[fixtures.transfer]} wallet={wallet} />);
 
@@ -242,11 +242,11 @@ describe("Signed Transaction Table", () => {
 	});
 
 	it("should show as unvote", () => {
-		const isVoteMock = jest.spyOn(fixtures.transfer, "isUnvote").mockReturnValue(true);
+		const isUnvoteMock = jest.spyOn(fixtures.transfer, "type").mockReturnValue("unvote");
 
 		const { asFragment } = render(<SignedTransactionTable transactions={[fixtures.transfer]} wallet={wallet} />);
 
 		expect(asFragment()).toMatchSnapshot();
-		isVoteMock.mockRestore();
+		isUnvoteMock.mockRestore();
 	});
 });
