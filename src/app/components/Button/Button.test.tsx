@@ -46,8 +46,14 @@ describe("Button", () => {
 		expect(container).toMatchSnapshot();
 	});
 
-	it("should render an icon", () => {
-		const { container } = render(<Button size="icon" />);
+	it("should render an icon on the left side", () => {
+		const { container } = render(<Button size="icon" iconPosition="left" />);
+
+		expect(container).toMatchSnapshot();
+	});
+
+	it("should render an icon on the right side", () => {
+		const { container } = render(<Button size="icon" iconPosition="right" />);
 
 		expect(container).toMatchSnapshot();
 	});

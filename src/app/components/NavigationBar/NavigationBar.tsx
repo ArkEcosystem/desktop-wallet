@@ -239,7 +239,7 @@ export const NavigationBar = ({
 												variant="transparent"
 												onClick={() => history.push(`/profiles/${profile?.id()}/send-transfer`)}
 											>
-												<Icon name="Sent" width={18} height={18} className="p-1" />
+												<Icon name="Send" width={20} height={20} className="p-1" />
 											</Button>
 										</NavigationButtonWrapper>
 									</Tooltip>

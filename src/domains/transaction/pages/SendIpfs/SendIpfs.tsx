@@ -229,6 +229,9 @@ export const SendIpfs = () => {
 													disabled={!isValid || isSubmitting}
 													isLoading={isSubmitting}
 													icon="Send"
+													iconWidth={16}
+													iconHeight={16}
+													iconPosition="right"
 												>
 													<span>{t("COMMON.SEND")}</span>
 												</Button>

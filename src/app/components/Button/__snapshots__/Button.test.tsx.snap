@@ -39,7 +39,20 @@ exports[`Button should render a small one 1`] = `
 </div>
 `;
 
-exports[`Button should render an icon 1`] = `
+exports[`Button should render an icon on the left side 1`] = `
+<div>
+  <button
+    class="OriginalButton__StyledButton-sc-1y2wptt-0 fWAByJ"
+    type="button"
+  >
+    <div
+      class="flex relative items-center space-x-2"
+    />
+  </button>
+</div>
+`;
+
+exports[`Button should render an icon on the right side 1`] = `
 <div>
   <button
     class="OriginalButton__StyledButton-sc-1y2wptt-0 fWAByJ"
