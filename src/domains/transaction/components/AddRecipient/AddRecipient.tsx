@@ -308,7 +308,7 @@ export const AddRecipient = ({
 								<InputCurrency
 									disabled={!isSenderFilled}
 									data-testid="AddRecipient__amount"
-									placeholder={t("COMMON.AMOUNT")}
+									placeholder={t("COMMON.AMOUNT_PLACEHOLDER")}
 									value={getValues("displayAmount") || recipientsAmount}
 									addons={addons}
 									onChange={(amount: string) => {

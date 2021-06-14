@@ -7,6 +7,7 @@ export const translations: { [key: string]: any } = {
 	ADVANCED_MODE: "Advanced Mode",
 	ALL: "All",
 	AMOUNT: "Amount",
+	AMOUNT_PLACEHOLDER: "Enter an amount",
 	APP_NAME: "ARK Desktop Wallet",
 	APP_NAME_SHORT: "ARK Desktop",
 	APPEARANCE: "Appearance",
