@@ -54,7 +54,7 @@ const RecipientListItem = ({
 				{showAmount && (
 					<td className="py-4 text-right">
 						<Label color="danger">
-							<Amount ticker={assetSymbol!} value={amount!} showSign />
+							<Amount ticker={assetSymbol!} value={amount!} showSign normalize={false} />
 						</Label>
 					</td>
 				)}
@@ -88,7 +88,7 @@ const RecipientListItem = ({
 						<span>{t("COMMON.AMOUNT")}</span>
 					</div>
 					<div className="font-semibold text-right">
-						<Amount ticker={assetSymbol!} value={amount!} />
+						<Amount ticker={assetSymbol!} value={amount!} normalize={false} />
 					</div>
 				</td>
 			)}
