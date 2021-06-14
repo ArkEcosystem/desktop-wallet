@@ -48,6 +48,10 @@ describe("TransactionRow", () => {
 
 	it("should show transaction with signature pending", () => {
 		const onSign = jest.fn();
+
+		const isMultiSignatureRegistrationMock = jest
+			.spyOn(fixture, "isMultiSignatureRegistration")
+			.mockReturnValue(true);
 		const { getByTestId } = renderWithRouter(
 			<table>
 				<tbody>
@@ -56,12 +60,13 @@ describe("TransactionRow", () => {
 						transaction={fixture}
 						exchangeCurrency="BTC"
 						onSign={onSign}
-						isSignaturePending
+						showSignColumn
 					/>
 				</tbody>
 			</table>,
 		);
 		fireEvent.click(getByTestId("TransactionRow__sign"));
 		expect(onSign).toHaveBeenCalled();
+		isMultiSignatureRegistrationMock.mockRestore();
 	});
 });

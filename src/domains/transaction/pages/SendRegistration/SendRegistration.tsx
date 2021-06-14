@@ -37,7 +37,7 @@ export const SendRegistration = () => {
 	const activeWallet = useActiveWallet();
 	const { sign } = useWalletSignatory(activeWallet);
 
-	const { findByType } = useFees({ profile: activeProfile });
+	const { findByType } = useFees(activeProfile);
 
 	const form = useForm({ mode: "onChange" });
 

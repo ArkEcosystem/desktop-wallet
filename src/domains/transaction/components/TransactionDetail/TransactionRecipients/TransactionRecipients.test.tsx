@@ -35,6 +35,7 @@ describe("TransactionRecipients", () => {
 
 		const { container } = render(
 			<TransactionRecipients
+				normalizeAmount={false}
 				currency="DARK"
 				recipients={[
 					{ address, amount: BigNumber.ONE },
