@@ -17,9 +17,8 @@ jobs:
                 node-version: [12.x]
 
         concurrency:
-            group: ${{ github.head_ref }}-app
-            cancel-in-progress: -e2e-
-jobs
+            group: ${{ github.head_ref }}-build-and-upload
+            cancel-in-progress: true
 
         steps:
             - uses: actions/checkout@v2
