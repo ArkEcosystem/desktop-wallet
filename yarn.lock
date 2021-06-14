@@ -4740,17 +4740,6 @@
     "@ledgerhq/hw-transport" "^5.46.0"
     "@ledgerhq/logs" "^5.46.0"
 
-"@ledgerhq/hw-transport-node-hid-noevents@^5.46.0":
-  version "5.46.0"
-  resolved "https://registry.yarnpkg.com/@ledgerhq/hw-transport-node-hid-noevents/-/hw-transport-node-hid-noevents-5.46.0.tgz#432a220de614efa5af026bcc7715545fe217e7aa"
-  integrity sha512-v9OkEQ6kUtDGESeM5DLWvjCQlkJwarH6Z1fWyWofoR9LLuas25/56R5uMMpOqXwmyk0kJVwg6PJ2Cg8rJBSG0w==
-  dependencies:
-    "@ledgerhq/devices" "^5.46.0"
-    "@ledgerhq/errors" "^5.46.0"
-    "@ledgerhq/hw-transport" "^5.46.0"
-    "@ledgerhq/logs" "^5.46.0"
-    node-hid "2.1.1"
-
 "@ledgerhq/hw-transport-node-hid-noevents@^5.48.0":
   version "5.48.0"
   resolved "https://registry.yarnpkg.com/@ledgerhq/hw-transport-node-hid-noevents/-/hw-transport-node-hid-noevents-5.48.0.tgz#7a2b49c4c9828417e0493a007bbb34441e316292"
@@ -4772,20 +4761,6 @@
     "@ledgerhq/hw-transport" "^5.51.1"
     "@ledgerhq/logs" "^5.50.0"
     node-hid "2.1.1"
-
-"@ledgerhq/hw-transport-node-hid-singleton@^5.46.0":
-  version "5.46.0"
-  resolved "https://registry.yarnpkg.com/@ledgerhq/hw-transport-node-hid-singleton/-/hw-transport-node-hid-singleton-5.46.0.tgz#e33f2b772e8d6f7b9c4514ef3e1689de889d723c"
-  integrity sha512-df2ri+zCiBOaWxwNpU5tjG2c6MB+rjvLjl1+r/duyUg4g2w3vGtMEI7dzrdsLFJ0jmdriFG7FbaGrbKI5gOUHg==
-  dependencies:
-    "@ledgerhq/devices" "^5.46.0"
-    "@ledgerhq/errors" "^5.46.0"
-    "@ledgerhq/hw-transport" "^5.46.0"
-    "@ledgerhq/hw-transport-node-hid-noevents" "^5.46.0"
-    "@ledgerhq/logs" "^5.46.0"
-    lodash "^4.17.21"
-    node-hid "2.1.1"
-    usb-detection "^4.10.0"
 
 "@ledgerhq/hw-transport-node-hid-singleton@~5.50.0":
   version "5.50.0"
