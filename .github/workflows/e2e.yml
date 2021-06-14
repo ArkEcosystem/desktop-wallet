@@ -16,6 +16,11 @@ jobs:
             matrix:
                 node-version: [12.x]
 
+        concurrency:
+            group: ${{ github.head_ref }}-app
+            cancel-in-progress: -e2e-
+jobs
+
         steps:
             - uses: actions/checkout@v2
               with:
@@ -64,6 +69,10 @@ jobs:
         strategy:
             matrix:
                 node-version: [12.x]
+
+        concurrency:
+            group: ${{ github.head_ref }}-e2e-votes
+            cancel-in-progress: true
 
         steps:
             - uses: actions/checkout@v2
@@ -121,6 +130,10 @@ jobs:
             matrix:
                 node-version: [12.x]
 
+        concurrency:
+            group: ${{ github.head_ref }}-e2e-ipfs-transaction
+            cancel-in-progress: true
+
         steps:
             - uses: actions/checkout@v2
               with:
@@ -176,6 +189,10 @@ jobs:
         strategy:
             matrix:
                 node-version: [12.x]
+
+        concurrency:
+            group: ${{ github.head_ref }}-e2e-ipfs-transaction-multisig
+            cancel-in-progress: true
 
         steps:
             - uses: actions/checkout@v2
@@ -233,6 +250,10 @@ jobs:
             matrix:
                 node-version: [12.x]
 
+        concurrency:
+            group: ${{ github.head_ref }}-e2e-single-transfer
+            cancel-in-progress: true
+
         steps:
             - uses: actions/checkout@v2
               with:
@@ -288,6 +309,10 @@ jobs:
         strategy:
             matrix:
                 node-version: [12.x]
+
+        concurrency:
+            group: ${{ github.head_ref }}-e2e-single-transfer-multisig
+            cancel-in-progress: true
 
         steps:
             - uses: actions/checkout@v2
@@ -345,6 +370,10 @@ jobs:
             matrix:
                 node-version: [12.x]
 
+        concurrency:
+            group: ${{ github.head_ref }}-e2e-multiple-transfer
+            cancel-in-progress: true
+
         steps:
             - uses: actions/checkout@v2
               with:
@@ -400,6 +429,10 @@ jobs:
         strategy:
             matrix:
                 node-version: [12.x]
+
+        concurrency:
+            group: ${{ github.head_ref }}-e2e-transactions-routing
+            cancel-in-progress: true
 
         steps:
             - uses: actions/checkout@v2
@@ -457,6 +490,10 @@ jobs:
             matrix:
                 node-version: [12.x]
 
+        concurrency:
+            group: ${{ github.head_ref }}-e2e-delegate-resignation
+            cancel-in-progress: true
+
         steps:
             - uses: actions/checkout@v2
               with:
@@ -512,6 +549,10 @@ jobs:
         strategy:
             matrix:
                 node-version: [12.x]
+
+        concurrency:
+            group: ${{ github.head_ref }}-e2e-vote-transaction
+            cancel-in-progress: true
 
         steps:
             - uses: actions/checkout@v2
@@ -569,6 +610,10 @@ jobs:
             matrix:
                 node-version: [12.x]
 
+        concurrency:
+            group: ${{ github.head_ref }}-e2e-vote-transaction-multisig
+            cancel-in-progress: true
+
         steps:
             - uses: actions/checkout@v2
               with:
@@ -624,6 +669,10 @@ jobs:
         strategy:
             matrix:
                 node-version: [12.x]
+
+        concurrency:
+            group: ${{ github.head_ref }}-e2e-delegate-registration
+            cancel-in-progress: true
 
         steps:
             - uses: actions/checkout@v2
@@ -681,6 +730,10 @@ jobs:
             matrix:
                 node-version: [12.x]
 
+        concurrency:
+            group: ${{ github.head_ref }}-e2e-splash-screen
+            cancel-in-progress: true
+
         steps:
             - uses: actions/checkout@v2
               with:
@@ -736,6 +789,10 @@ jobs:
         strategy:
             matrix:
                 node-version: [12.x]
+
+        concurrency:
+            group: ${{ github.head_ref }}-e2e-contacts-routing
+            cancel-in-progress: true
 
         steps:
             - uses: actions/checkout@v2
@@ -793,6 +850,10 @@ jobs:
             matrix:
                 node-version: [12.x]
 
+        concurrency:
+            group: ${{ github.head_ref }}-e2e-update-contact
+            cancel-in-progress: true
+
         steps:
             - uses: actions/checkout@v2
               with:
@@ -848,6 +909,10 @@ jobs:
         strategy:
             matrix:
                 node-version: [12.x]
+
+        concurrency:
+            group: ${{ github.head_ref }}-e2e-delete-contact
+            cancel-in-progress: true
 
         steps:
             - uses: actions/checkout@v2
@@ -905,6 +970,10 @@ jobs:
             matrix:
                 node-version: [12.x]
 
+        concurrency:
+            group: ${{ github.head_ref }}-e2e-create-contact
+            cancel-in-progress: true
+
         steps:
             - uses: actions/checkout@v2
               with:
@@ -960,6 +1029,10 @@ jobs:
         strategy:
             matrix:
                 node-version: [12.x]
+
+        concurrency:
+            group: ${{ github.head_ref }}-e2e-plugins-routing
+            cancel-in-progress: true
 
         steps:
             - uses: actions/checkout@v2
@@ -1017,6 +1090,10 @@ jobs:
             matrix:
                 node-version: [12.x]
 
+        concurrency:
+            group: ${{ github.head_ref }}-e2e-dashboard-routing
+            cancel-in-progress: true
+
         steps:
             - uses: actions/checkout@v2
               with:
@@ -1072,6 +1149,10 @@ jobs:
         strategy:
             matrix:
                 node-version: [12.x]
+
+        concurrency:
+            group: ${{ github.head_ref }}-e2e-navbar-routing
+            cancel-in-progress: true
 
         steps:
             - uses: actions/checkout@v2
@@ -1129,6 +1210,10 @@ jobs:
             matrix:
                 node-version: [12.x]
 
+        concurrency:
+            group: ${{ github.head_ref }}-e2e-welcome-screen
+            cancel-in-progress: true
+
         steps:
             - uses: actions/checkout@v2
               with:
@@ -1184,6 +1269,10 @@ jobs:
         strategy:
             matrix:
                 node-version: [12.x]
+
+        concurrency:
+            group: ${{ github.head_ref }}-e2e-create-profile-action
+            cancel-in-progress: true
 
         steps:
             - uses: actions/checkout@v2
@@ -1241,6 +1330,10 @@ jobs:
             matrix:
                 node-version: [12.x]
 
+        concurrency:
+            group: ${{ github.head_ref }}-e2e-navigate-profile-settings
+            cancel-in-progress: true
+
         steps:
             - uses: actions/checkout@v2
               with:
@@ -1296,6 +1389,10 @@ jobs:
         strategy:
             matrix:
                 node-version: [12.x]
+
+        concurrency:
+            group: ${{ github.head_ref }}-e2e-create-profile-routing
+            cancel-in-progress: true
 
         steps:
             - uses: actions/checkout@v2
@@ -1353,6 +1450,10 @@ jobs:
             matrix:
                 node-version: [12.x]
 
+        concurrency:
+            group: ${{ github.head_ref }}-e2e-notifications
+            cancel-in-progress: true
+
         steps:
             - uses: actions/checkout@v2
               with:
@@ -1408,6 +1509,10 @@ jobs:
         strategy:
             matrix:
                 node-version: [12.x]
+
+        concurrency:
+            group: ${{ github.head_ref }}-e2e-delete-profile-action
+            cancel-in-progress: true
 
         steps:
             - uses: actions/checkout@v2
@@ -1465,6 +1570,10 @@ jobs:
             matrix:
                 node-version: [12.x]
 
+        concurrency:
+            group: ${{ github.head_ref }}-e2e-news-routing
+            cancel-in-progress: true
+
         steps:
             - uses: actions/checkout@v2
               with:
@@ -1520,6 +1629,10 @@ jobs:
         strategy:
             matrix:
                 node-version: [12.x]
+
+        concurrency:
+            group: ${{ github.head_ref }}-e2e-filtering
+            cancel-in-progress: true
 
         steps:
             - uses: actions/checkout@v2
@@ -1577,6 +1690,10 @@ jobs:
             matrix:
                 node-version: [12.x]
 
+        concurrency:
+            group: ${{ github.head_ref }}-e2e-create-wallet-action
+            cancel-in-progress: true
+
         steps:
             - uses: actions/checkout@v2
               with:
@@ -1632,6 +1749,10 @@ jobs:
         strategy:
             matrix:
                 node-version: [12.x]
+
+        concurrency:
+            group: ${{ github.head_ref }}-e2e-delete-wallet-action
+            cancel-in-progress: true
 
         steps:
             - uses: actions/checkout@v2
@@ -1689,6 +1810,10 @@ jobs:
             matrix:
                 node-version: [12.x]
 
+        concurrency:
+            group: ${{ github.head_ref }}-e2e-wallet-details
+            cancel-in-progress: true
+
         steps:
             - uses: actions/checkout@v2
               with:
@@ -1744,6 +1869,10 @@ jobs:
         strategy:
             matrix:
                 node-version: [12.x]
+
+        concurrency:
+            group: ${{ github.head_ref }}-e2e-sign-message-action
+            cancel-in-progress: true
 
         steps:
             - uses: actions/checkout@v2
@@ -1801,6 +1930,10 @@ jobs:
             matrix:
                 node-version: [12.x]
 
+        concurrency:
+            group: ${{ github.head_ref }}-e2e-import-wallet-action
+            cancel-in-progress: true
+
         steps:
             - uses: actions/checkout@v2
               with:
@@ -1856,6 +1989,10 @@ jobs:
         strategy:
             matrix:
                 node-version: [12.x]
+
+        concurrency:
+            group: ${{ github.head_ref }}-e2e-verify-message-action
+            cancel-in-progress: true
 
         steps:
             - uses: actions/checkout@v2
@@ -1913,6 +2050,10 @@ jobs:
             matrix:
                 node-version: [12.x]
 
+        concurrency:
+            group: ${{ github.head_ref }}-e2e-wallets-routing
+            cancel-in-progress: true
+
         steps:
             - uses: actions/checkout@v2
               with:
@@ -1968,6 +2109,10 @@ jobs:
         strategy:
             matrix:
                 node-version: [12.x]
+
+        concurrency:
+            group: ${{ github.head_ref }}-e2e-update-wallet-name-action
+            cancel-in-progress: true
 
         steps:
             - uses: actions/checkout@v2
@@ -2025,6 +2170,10 @@ jobs:
             matrix:
                 node-version: [12.x]
 
+        concurrency:
+            group: ${{ github.head_ref }}-e2e-save-settings
+            cancel-in-progress: true
+
         steps:
             - uses: actions/checkout@v2
               with:
@@ -2081,6 +2230,10 @@ jobs:
             matrix:
                 node-version: [12.x]
 
+        concurrency:
+            group: ${{ github.head_ref }}-e2e-reset-profile
+            cancel-in-progress: true
+
         steps:
             - uses: actions/checkout@v2
               with:
@@ -2136,6 +2289,10 @@ jobs:
         strategy:
             matrix:
                 node-version: [12.x]
+
+        concurrency:
+            group: ${{ github.head_ref }}-e2e-settings-routing
+            cancel-in-progress: true
 
         steps:
             - uses: actions/checkout@v2
