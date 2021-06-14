@@ -1,4 +1,3 @@
-import { CURRENCIES } from "@arkecosystem/platform-sdk-intl";
 import { Contracts } from "@arkecosystem/platform-sdk-profiles";
 import { images } from "app/assets/images";
 import { Avatar } from "app/components/Avatar";
@@ -65,46 +64,41 @@ const NavWrapper = styled.nav<{ noBorder?: boolean; noShadow?: boolean; scroll?:
 
 interface UserInfoProps {
 	avatarImage?: string;
-	exchangeCurrency?: string;
 	onUserAction?: any;
 	userActions?: Action[];
 	userInitials?: string;
 }
 
-const UserInfo = ({ exchangeCurrency, onUserAction, avatarImage, userActions, userInitials }: UserInfoProps) => {
-	const tickerConfig: typeof CURRENCIES["BTC"] | undefined = CURRENCIES[exchangeCurrency as keyof typeof CURRENCIES];
-
-	return (
-		<Dropdown
-			onSelect={onUserAction}
-			options={userActions}
-			dropdownClass="mt-8"
-			toggleContent={(isOpen: boolean) => (
-				<div
-					className="relative items-center justify-center align-middle rounded-full cursor-pointer"
-					data-testid="navbar__useractions"
-				>
-					<Avatar size="lg" highlight={isOpen}>
-						{avatarImage?.endsWith("</svg>") ? (
-							<>
-								<img alt="Profile Avatar" src={`data:image/svg+xml;utf8,${avatarImage}`} />
-								<span className="absolute text-sm font-semibold text-theme-background dark:text-theme-text">
-									{userInitials}
-								</span>
-							</>
-						) : (
-							<img
-								alt="Profile Avatar"
-								className="object-cover bg-center bg-no-repeat bg-cover rounded-full w-11 h-11"
-								src={avatarImage}
-							/>
-						)}
-					</Avatar>
-				</div>
-			)}
-		/>
-	);
-};
+const UserInfo = ({ onUserAction, avatarImage, userActions, userInitials }: UserInfoProps) => (
+	<Dropdown
+		onSelect={onUserAction}
+		options={userActions}
+		dropdownClass="mt-8"
+		toggleContent={(isOpen: boolean) => (
+			<div
+				className="relative items-center justify-center align-middle rounded-full cursor-pointer"
+				data-testid="navbar__useractions"
+			>
+				<Avatar size="lg" highlight={isOpen}>
+					{avatarImage?.endsWith("</svg>") ? (
+						<>
+							<img alt="Profile Avatar" src={`data:image/svg+xml;utf8,${avatarImage}`} />
+							<span className="absolute text-sm font-semibold text-theme-background dark:text-theme-text">
+								{userInitials}
+							</span>
+						</>
+					) : (
+						<img
+							alt="Profile Avatar"
+							className="object-cover bg-center bg-no-repeat bg-cover rounded-full w-11 h-11"
+							src={avatarImage}
+						/>
+					)}
+				</Avatar>
+			</div>
+		)}
+	/>
+);
 
 export const NavigationButtonWrapper = styled.div`
 	${css`
@@ -166,8 +160,6 @@ export const NavigationBar = ({
 		const name = profile?.settings().get(Contracts.ProfileSetting.Name);
 		return name ? (name as string).slice(0, 2).toUpperCase() : undefined;
 	};
-
-	const getExchangeCurrency = () => profile?.settings().get<string>(Contracts.ProfileSetting.ExchangeCurrency);
 
 	const profileWalletsCount = profile?.wallets().count();
 	const wallets = useMemo(() => {
@@ -257,7 +249,6 @@ export const NavigationBar = ({
 
 								<UserInfo
 									userInitials={getUserInitials()}
-									exchangeCurrency={getExchangeCurrency()}
 									avatarImage={profile?.avatar()}
 									userActions={userActions}
 									onUserAction={(action: any) => {
