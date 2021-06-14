@@ -1,4 +1,3 @@
-import { Coins } from "@arkecosystem/platform-sdk";
 import { BigNumber } from "@arkecosystem/platform-sdk-support";
 import { Button } from "app/components/Button";
 import { FormField, FormLabel, SubForm } from "app/components/Form";
@@ -116,10 +115,6 @@ export const AddRecipient = ({
 	const { sendTransfer } = useValidation();
 
 	const senderWallet = useMemo(() => profile.wallets().findByAddress(senderAddress), [profile, senderAddress]);
-
-	const decimals = useMemo(() => senderWallet?.config().get<number>(Coins.ConfigKey.CurrencyDecimals), [
-		senderWallet,
-	]);
 
 	const remainingBalance = useMemo(() => {
 		const senderBalance = senderWallet?.balance().denominated() || BigNumber.ZERO;
