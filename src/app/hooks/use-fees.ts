@@ -4,9 +4,6 @@ import { BigNumber } from "@arkecosystem/platform-sdk-support";
 import { useEnvironmentContext } from "app/contexts";
 import { useCallback } from "react";
 
-const normalizeValue = (value: BigNumber, decimals: number): string =>
-	BigNumber.make(value, decimals).toHuman();
-
 export const useFees = ({ profile, normalize = true }: { profile: ProfileContracts.IProfile; normalize?: boolean }) => {
 	const { env } = useEnvironmentContext();
 
@@ -31,14 +28,13 @@ export const useFees = ({ profile, normalize = true }: { profile: ProfileContrac
 				};
 			}
 
-			const config = profile.coins().get(coin, network).config();
-			const decimals = config.get<number>(Coins.ConfigKey.CurrencyDecimals);
+			const bigNumber = profile.coins().get(coin, network).bigNumber();
 
 			return {
-				static: normalizeValue(transactionFees.static, decimals),
-				avg: normalizeValue(transactionFees.avg, decimals),
-				min: normalizeValue(transactionFees.min, decimals),
-				max: normalizeValue(transactionFees.max, decimals),
+				static: bigNumber.make(transactionFees.static).toHuman(),
+				avg: bigNumber.make(transactionFees.avg).toHuman(),
+				min: bigNumber.make(transactionFees.min).toHuman(),
+				max: bigNumber.make(transactionFees.max).toHuman(),
 			};
 		},
 		[env, normalize, profile],
