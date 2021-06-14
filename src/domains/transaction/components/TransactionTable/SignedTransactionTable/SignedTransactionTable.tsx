@@ -21,27 +21,23 @@ interface Props {
 }
 
 const getType = (transaction: SignedTransactionData): string => {
-	const type = transaction.get<number>("type");
-	const typeGroup = transaction.get<number>("typeGroup");
-	const asset = transaction.get<Record<string, any>>("asset");
-
-	if (type === 4 && typeGroup === 1) {
+	if (transaction.isMultiSignatureRegistration()) {
 		return "multiSignature";
 	}
 
-	if (type === 6) {
+	if (transaction.isMultiPayment()) {
 		return "multiPayment";
 	}
 
-	if (type === 3 && asset?.votes?.[0].startsWith("-")) {
+	if (transaction.isUnvote()) {
 		return "unvote";
 	}
 
-	if (type === 3) {
+	if (transaction.isVote()) {
 		return "vote";
 	}
 
-	if (type === 5) {
+	if (transaction.isIpfs()) {
 		return "ipfs";
 	}
 
@@ -158,7 +154,7 @@ const Row = ({
 			</TableCell>
 
 			<TableCell innerClassName="justify-center">
-				<BaseTransactionRowInfo isMultiSignature={transaction.usesMultiSignature()} />
+				<BaseTransactionRowInfo isMultiSignatureRegistration={transaction.usesMultiSignature()} />
 			</TableCell>
 
 			<TableCell className="w-16" innerClassName="justify-center truncate">
