@@ -105,11 +105,88 @@ exports[`Tabs should render 1`] = `
 </DocumentFragment>
 `;
 
+exports[`Tabs should render wit counts 1`] = `
+<DocumentFragment>
+  <div>
+    <div
+      class="Tabs__TabList-sc-1lxyvu-1 eWhkiE"
+    >
+      <button
+        aria-selected="false"
+        class="Tabs__TabButton-sc-1lxyvu-0 group"
+        data-testid="tabs__tab-button-1"
+        role="tab"
+        tabindex="-1"
+        type="button"
+      >
+        <div
+          class="absolute inset-0 -mx-3 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+        />
+        <span>
+          First
+        </span>
+        <span
+          class="rounded py-0.5 px-1.5 ml-2 text-sm font-semibold bg-theme-primary-100 dark:bg-theme-secondary-900"
+          data-testid="tabs__tab-button-1-count"
+        >
+          1
+        </span>
+      </button>
+      <button
+        aria-selected="false"
+        class="Tabs__TabButton-sc-1lxyvu-0 group"
+        data-testid="tabs__tab-button-2"
+        role="tab"
+        tabindex="-1"
+        type="button"
+      >
+        <div
+          class="absolute inset-0 -mx-3 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+        />
+        <span>
+          Second
+        </span>
+        <span
+          class="rounded py-0.5 px-1.5 ml-2 text-sm font-semibold bg-theme-primary-100 dark:bg-theme-secondary-900"
+          data-testid="tabs__tab-button-2-count"
+        >
+          2
+        </span>
+      </button>
+      <button
+        aria-selected="false"
+        class="Tabs__TabButton-sc-1lxyvu-0 group"
+        data-testid="tabs__tab-button-3"
+        role="tab"
+        tabindex="-1"
+        type="button"
+      >
+        <div
+          class="absolute inset-0 -mx-3 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+        />
+        <span>
+          Third
+        </span>
+        <span
+          class="rounded py-0.5 px-1.5 ml-2 text-sm font-semibold bg-theme-primary-100 dark:bg-theme-secondary-900"
+          data-testid="tabs__tab-button-3-count"
+        >
+          3
+        </span>
+      </button>
+    </div>
+    <div
+      class="mt-5"
+    />
+  </div>
+</DocumentFragment>
+`;
+
 exports[`Tabs should render without background 1`] = `
 <DocumentFragment>
   <div>
     <div
-      class="Tabs__TabList-sc-1lxyvu-1 jTHOGm"
+      class="Tabs__TabList-sc-1lxyvu-1 eWhkiE"
     >
       <button
         aria-selected="false"
