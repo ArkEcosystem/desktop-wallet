@@ -194,7 +194,7 @@ export const AddRecipient = ({
 		if (!isSingle && addedRecipients.length > 0) {
 			clearFields();
 		}
-	}, [isSingle, clearErrors, clearFields, addedRecipients, setValue, decimals]);
+	}, [isSingle, clearErrors, clearFields, addedRecipients, setValue]);
 
 	useEffect(() => {
 		if (!isSingle) {

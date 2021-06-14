@@ -1,4 +1,4 @@
-import { Coins,Contracts, Networks, Services } from "@arkecosystem/platform-sdk";
+import { Coins, Contracts, Networks, Services } from "@arkecosystem/platform-sdk";
 import { Contracts as ProfileContracts, DTO } from "@arkecosystem/platform-sdk-profiles";
 import { BigNumber } from "@arkecosystem/platform-sdk-support";
 import { Button } from "app/components/Button";
@@ -262,7 +262,6 @@ export const SendTransfer = () => {
 			setTransaction(transaction);
 			setActiveTab(4);
 		} catch (error) {
-			console.log(error);
 			if (isMnemonicError(error)) {
 				setValue("mnemonic", "");
 				return setError("mnemonic", { type: "manual", message: t("TRANSACTION.INVALID_MNEMONIC") });

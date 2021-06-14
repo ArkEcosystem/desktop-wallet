@@ -43,6 +43,7 @@ describe("TransactionRecipients", () => {
 			/>,
 		);
 
+		expect(container).not.toHaveTextContent("0.00000001 DARK");
 		expect(container).toHaveTextContent("1 DARK");
 		expect(container).toHaveTextContent(address);
 
