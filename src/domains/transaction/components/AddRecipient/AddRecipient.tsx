@@ -173,7 +173,9 @@ export const AddRecipient = ({
 	}, [fee, getValues, trigger]);
 
 	useEffect(() => {
-		clearErrors();
+		//region added Timeout to prevent show error for recipientAddress when switch between transfer type
+		setTimeout(() => clearErrors(), 0);
+		//endregion
 
 		if (isSingle && addedRecipients.length === 1) {
 			setValue("amount", addedRecipients[0].amount);
