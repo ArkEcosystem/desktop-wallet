@@ -258,7 +258,7 @@ export const AddRecipient = ({
 			? {
 					end: (
 						<span className="text-sm font-semibold whitespace-no-break text-theme-secondary-500 dark:text-theme-secondary-700">
-							{t("COMMON.MAX")} {maximumAmount?.toHuman()}
+							{t("COMMON.MAX")} {maximumAmount?.toString()}
 						</span>
 					),
 			  }
@@ -335,7 +335,7 @@ export const AddRecipient = ({
 													? remainingBalance.minus(fee)
 													: remainingBalance;
 
-												setValue("displayAmount", remaining.toHuman());
+												setValue("displayAmount", remaining.toString());
 
 												setValue("amount", remaining.toString(), {
 													shouldValidate: true,
@@ -382,6 +382,7 @@ export const AddRecipient = ({
 			{!isSingle && addedRecipients.length > 0 && (
 				<div className="mt-3 border-b border-dashed border-theme-secondary-300 dark:border-theme-secondary-800">
 					<RecipientList
+						normalizeAmount={false}
 						network={network}
 						recipients={addedRecipients}
 						onRemove={handleRemoveRecipient}

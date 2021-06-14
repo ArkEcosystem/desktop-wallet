@@ -231,4 +231,22 @@ describe("Signed Transaction Table", () => {
 
 		await waitFor(() => expect(screen.getAllByRole("row")[1]).toBeInTheDocument());
 	});
+
+	it("should show as vote", () => {
+		const isVoteMock = jest.spyOn(fixtures.transfer, "type").mockReturnValue("vote");
+
+		const { asFragment } = render(<SignedTransactionTable transactions={[fixtures.transfer]} wallet={wallet} />);
+
+		expect(asFragment()).toMatchSnapshot();
+		isVoteMock.mockRestore();
+	});
+
+	it("should show as unvote", () => {
+		const isUnvoteMock = jest.spyOn(fixtures.transfer, "type").mockReturnValue("unvote");
+
+		const { asFragment } = render(<SignedTransactionTable transactions={[fixtures.transfer]} wallet={wallet} />);
+
+		expect(asFragment()).toMatchSnapshot();
+		isUnvoteMock.mockRestore();
+	});
 });

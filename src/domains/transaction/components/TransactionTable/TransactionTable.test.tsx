@@ -49,11 +49,16 @@ describe("TransactionTable", () => {
 	});
 
 	it("should render with sign", () => {
+		const mockIsMultiSignatureRegistration = jest
+			.spyOn(transactions[0], "isMultiSignatureRegistration")
+			.mockReturnValue(true);
+
 		const { getAllByTestId, asFragment } = renderWithRouter(
 			<TransactionTable transactions={transactions} showSignColumn />,
 		);
-		expect(getAllByTestId("TransactionRow__sign")).toHaveLength(15);
+		expect(getAllByTestId("TransactionRow__sign")).toHaveLength(1);
 		expect(asFragment()).toMatchSnapshot();
+		mockIsMultiSignatureRegistration.mockRestore();
 	});
 
 	it("should render without explorer link column", () => {

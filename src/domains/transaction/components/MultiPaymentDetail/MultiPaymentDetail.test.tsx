@@ -55,15 +55,15 @@ describe("MultiPaymentDetail", () => {
 					recipients: () => [
 						{
 							address: "adsad12312xsd1w312e1s13203e12",
-							amount: BigNumber.make(200),
+							amount: BigNumber.make(20000000000),
 						},
 						{
 							address: "adsad12312xsd1w312e1s13203e13",
-							amount: BigNumber.make(1990),
+							amount: BigNumber.make(199000000000),
 						},
 						{
 							address: "adsad12312xsd1w312e1s13203e14",
-							amount: BigNumber.make(1990),
+							amount: BigNumber.make(199000000000),
 						},
 					],
 					blockId: () => "adsad12312xsd1w312e1s13203e12",
