@@ -117,11 +117,11 @@ export const AddRecipient = ({
 		return addedRecipients.reduce((sum, item) => sum.minus(item.amount!), senderBalance);
 	}, [addedRecipients, senderWallet, isSingle]);
 
-	const maximumAmount = useMemo(() => {
-		const maximum = senderWallet?.balance().denominated().minus(fee);
+	const remainingNetBalance = useMemo(() => {
+		const netBalance = remainingBalance.minus(fee);
 
-		return maximum?.isPositive() ? maximum : undefined;
-	}, [fee, senderWallet]);
+		return netBalance?.isPositive() ? netBalance : BigNumber.ZERO;
+	}, [fee, remainingBalance]);
 
 	const isSenderFilled = useMemo(() => !!network?.id() && !!senderAddress, [network, senderAddress]);
 
@@ -161,10 +161,10 @@ export const AddRecipient = ({
 	}, [network, recipientAddress, trigger]);
 
 	useEffect(() => {
-		register("amount", sendTransfer.amount(network, remainingBalance, addedRecipients, isSingle));
+		register("amount", sendTransfer.amount(network, remainingNetBalance, addedRecipients, isSingle));
 		register("displayAmount");
 		register("recipientAddress", sendTransfer.recipientAddress(profile, network, addedRecipients, isSingle));
-	}, [register, remainingBalance, network, sendTransfer, addedRecipients, isSingle, profile]);
+	}, [register, network, sendTransfer, addedRecipients, isSingle, profile, remainingNetBalance]);
 
 	useEffect(() => {
 		clearErrors();
@@ -298,7 +298,7 @@ export const AddRecipient = ({
 							<span>{t("COMMON.AMOUNT")}</span>
 							{isSenderFilled && (
 								<span className="ml-1 text-theme-secondary-500 dark:text-theme-secondary-700">
-									{`(${t("COMMON.AVAILABLE")} ${maximumAmount?.toHuman()})`}
+									{`(${t("COMMON.AVAILABLE")} ${remainingNetBalance})`}
 								</span>
 							)}
 						</FormLabel>
@@ -331,7 +331,7 @@ export const AddRecipient = ({
 
 											if (getValues("isSendAllSelected")) {
 												const remaining = remainingBalance.isGreaterThan(fee)
-													? remainingBalance.minus(fee)
+													? remainingNetBalance
 													: remainingBalance;
 
 												setValue("displayAmount", remaining.toHuman());
