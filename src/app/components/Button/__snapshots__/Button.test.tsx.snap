@@ -39,20 +39,7 @@ exports[`Button should render a small one 1`] = `
 </div>
 `;
 
-exports[`Button should render an icon on the left side 1`] = `
-<div>
-  <button
-    class="OriginalButton__StyledButton-sc-1y2wptt-0 fWAByJ"
-    type="button"
-  >
-    <div
-      class="flex relative items-center space-x-2"
-    />
-  </button>
-</div>
-`;
-
-exports[`Button should render an icon on the right side 1`] = `
+exports[`Button should render an icon 1`] = `
 <div>
   <button
     class="OriginalButton__StyledButton-sc-1y2wptt-0 fWAByJ"
@@ -169,7 +156,31 @@ exports[`Button should render loading with icon 1`] = `
 </div>
 `;
 
-exports[`Button should render with icon 1`] = `
+exports[`Button should render with icon and custom icon width and height 1`] = `
+<div>
+  <button
+    class="OriginalButton__StyledButton-sc-1y2wptt-0 dYkFxS"
+    type="button"
+  >
+    <div
+      class="flex relative items-center space-x-2"
+    >
+      <div
+        class="sc-bdfBwQ iyevwF"
+        height="20"
+        width="20"
+      >
+        <svg>
+          plus.svg
+        </svg>
+      </div>
+      Click Me
+    </div>
+  </button>
+</div>
+`;
+
+exports[`Button should render with icon on the left side 1`] = `
 <div>
   <button
     class="OriginalButton__StyledButton-sc-1y2wptt-0 dYkFxS"
@@ -193,7 +204,7 @@ exports[`Button should render with icon 1`] = `
 </div>
 `;
 
-exports[`Button should render with icon and custom icon width and height 1`] = `
+exports[`Button should render with icon on the right side 1`] = `
 <div>
   <button
     class="OriginalButton__StyledButton-sc-1y2wptt-0 dYkFxS"
@@ -202,16 +213,16 @@ exports[`Button should render with icon and custom icon width and height 1`] = `
     <div
       class="flex relative items-center space-x-2"
     >
+      Click Me
       <div
-        class="sc-bdfBwQ iyevwF"
-        height="20"
-        width="20"
+        class="sc-bdfBwQ bfBhNR"
+        height="14"
+        width="14"
       >
         <svg>
           plus.svg
         </svg>
       </div>
-      Click Me
     </div>
   </button>
 </div>
