@@ -80,8 +80,9 @@ describe("FeeWarning", () => {
 
 	it.each([true, false])(
 		"should pass %s to onConfirm callback when clicking on continue button",
-		(suppressWarning) => {
+		async (suppressWarning) => {
 			const { result: form } = renderHook(() => useForm());
+			form.current.register("suppressWarning");
 
 			const onConfirm = jest.fn();
 
@@ -101,9 +102,7 @@ describe("FeeWarning", () => {
 				fireEvent.click(getByTestId("FeeWarning__continue-button"));
 			});
 
-			waitFor(() => {
-				expect(onConfirm).toHaveBeenCalledWith(suppressWarning);
-			});
+			await waitFor(() => expect(onConfirm).toHaveBeenCalledWith(suppressWarning));
 		},
 	);
 });

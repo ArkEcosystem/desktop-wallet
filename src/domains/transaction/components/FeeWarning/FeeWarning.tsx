@@ -22,8 +22,7 @@ interface FeeWarningProps {
 export const FeeWarning = ({ isOpen, variant, onCancel, onConfirm }: FeeWarningProps) => {
 	const { t } = useTranslation();
 
-	const { setValue, watch } = useFormContext();
-
+	const { setValue, getValues, watch } = useFormContext();
 	const { suppressWarning } = watch();
 
 	return (
@@ -54,13 +53,16 @@ export const FeeWarning = ({ isOpen, variant, onCancel, onConfirm }: FeeWarningP
 			<div className="flex justify-end mt-8 space-x-3">
 				<Button
 					variant="secondary"
-					onClick={() => onCancel(suppressWarning)}
+					onClick={() => onCancel(!!getValues("suppressWarning"))}
 					data-testid="FeeWarning__cancel-button"
 				>
 					{t("COMMON.CANCEL")}
 				</Button>
 
-				<Button data-testid="FeeWarning__continue-button" onClick={() => onConfirm(suppressWarning)}>
+				<Button
+					data-testid="FeeWarning__continue-button"
+					onClick={() => onConfirm(!!getValues("suppressWarning"))}
+				>
 					{t("COMMON.CONTINUE")}
 				</Button>
 			</div>
