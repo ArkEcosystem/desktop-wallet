@@ -4,8 +4,7 @@ import { BigNumber } from "@arkecosystem/platform-sdk-support";
 import { useEnvironmentContext } from "app/contexts";
 import { useCallback } from "react";
 
-const normalizeValue = (value: BigNumber, decimals: number): string =>
-	BigNumber.make(value, decimals).toHuman();
+const normalizeValue = (value: BigNumber, decimals: number): string => BigNumber.make(value, decimals).toHuman();
 
 export const useFees = ({ profile, normalize = true }: { profile: ProfileContracts.IProfile; normalize?: boolean }) => {
 	const { env } = useEnvironmentContext();
