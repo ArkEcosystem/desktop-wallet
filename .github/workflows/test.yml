@@ -59,7 +59,7 @@ jobs:
                 node-version:
                     - 12.x
         concurrency:
-            group: ${{ github.head_ref }}-unit-domainstesttact
+            group: ${{ github.head_ref }}-test-domains-contact
             cancel-in-progress: true
         steps:
             - uses: actions/checkout@v2
@@ -101,7 +101,7 @@ jobs:
                 node-version:
                     - 12.x
         concurrency:
-            group: ${{ github.head_ref }}-unit-domains-dtestoard
+            group: ${{ github.head_ref }}-test-domains-dashboard
             cancel-in-progress: true
         steps:
             - uses: actions/checkout@v2
@@ -143,7 +143,7 @@ jobs:
                 node-version:
                     - 12.x
         concurrency:
-            group: ${{ github.head_ref }}-unit-domaitestrror
+            group: ${{ github.head_ref }}-test-domains-error
             cancel-in-progress: true
         steps:
             - uses: actions/checkout@v2
@@ -185,7 +185,7 @@ jobs:
                 node-version:
                     - 12.x
         concurrency:
-            group: ${{ github.head_ref }}-unit-domains-testange
+            group: ${{ github.head_ref }}-test-domains-exchange
             cancel-in-progress: true
         steps:
             - uses: actions/checkout@v2
@@ -227,7 +227,7 @@ jobs:
                 node-version:
                     - 12.x
         concurrency:
-            group: ${{ github.head_ref }}-unit-domainstestwork
+            group: ${{ github.head_ref }}-test-domains-network
             cancel-in-progress: true
         steps:
             - uses: actions/checkout@v2
@@ -269,7 +269,7 @@ jobs:
                 node-version:
                     - 12.x
         concurrency:
-            group: ${{ github.head_ref }}-unit-domatestnews
+            group: ${{ github.head_ref }}-test-domains-news
             cancel-in-progress: true
         steps:
             - uses: actions/checkout@v2
@@ -311,7 +311,7 @@ jobs:
                 node-version:
                     - 12.x
         concurrency:
-            group: ${{ github.head_ref }}-unit-domaintestugin
+            group: ${{ github.head_ref }}-test-domains-plugin
             cancel-in-progress: true
         steps:
             - uses: actions/checkout@v2
@@ -353,7 +353,7 @@ jobs:
                 node-version:
                     - 12.x
         concurrency:
-            group: ${{ github.head_ref }}-unit-domainstestfile
+            group: ${{ github.head_ref }}-test-domains-profile
             cancel-in-progress: true
         steps:
             - uses: actions/checkout@v2
@@ -395,7 +395,7 @@ jobs:
                 node-version:
                     - 12.x
         concurrency:
-            group: ${{ github.head_ref }}-unit-domainstestting
+            group: ${{ github.head_ref }}-test-domains-setting
             cancel-in-progress: true
         steps:
             - uses: actions/checkout@v2
@@ -437,7 +437,7 @@ jobs:
                 node-version:
                     - 12.x
         concurrency:
-            group: ${{ github.head_ref }}-unit-domaintestlash
+            group: ${{ github.head_ref }}-test-domains-splash
             cancel-in-progress: true
         steps:
             - uses: actions/checkout@v2
@@ -479,7 +479,7 @@ jobs:
                 node-version:
                     - 12.x
         concurrency:
-            group: ${{ github.head_ref }}-unit-domains-tratesttion
+            group: ${{ github.head_ref }}-test-domains-transaction
             cancel-in-progress: true
         steps:
             - uses: actions/checkout@v2
@@ -521,7 +521,7 @@ jobs:
                 node-version:
                     - 12.x
         concurrency:
-            group: ${{ github.head_ref }}-unit-domatestvote
+            group: ${{ github.head_ref }}-test-domains-vote
             cancel-in-progress: true
         steps:
             - uses: actions/checkout@v2
@@ -563,7 +563,7 @@ jobs:
                 node-version:
                     - 12.x
         concurrency:
-            group: ${{ github.head_ref }}-unit-domaintestllet
+            group: ${{ github.head_ref }}-test-domains-wallet
             cancel-in-progress: true
         steps:
             - uses: actions/checkout@v2
@@ -606,7 +606,7 @@ jobs:
                 node-version:
                     - 12.x
         concurrency:
-            group: ${{ github.head_ref }}-unittestgins
+            group: ${{ github.head_ref }}-test-plugins
             cancel-in-progress: true
         steps:
             - uses: actions/checkout@v2
@@ -648,7 +648,7 @@ jobs:
                 node-version:
                     - 12.x
         concurrency:
-            group: ${{ github.head_ref }}-unitestuter
+            group: ${{ github.head_ref }}-test-router
             cancel-in-progress: true
         steps:
             - uses: actions/checkout@v2
@@ -689,7 +689,7 @@ jobs:
                 node-version:
                     - 12.x
         concurrency:
-            group: ${{ github.head_ref }}-untesttils
+            group: ${{ github.head_ref }}-test-utils
             cancel-in-progress: true
         steps:
             - uses: actions/checkout@v2
