@@ -78,7 +78,7 @@ export const InputFeeSimple = ({
 								</div>
 								{showConvertedValues && (
 									<div className="font-normal text-sm text-theme-secondary-500 mt-3">
-										<Amount ticker={exchangeTicker} value={valueConverted} />
+										<Amount normalize={false} ticker={exchangeTicker} value={valueConverted} />
 									</div>
 								)}
 							</>
