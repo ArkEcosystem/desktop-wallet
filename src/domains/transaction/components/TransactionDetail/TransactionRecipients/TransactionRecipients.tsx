@@ -22,7 +22,12 @@ export const TransactionRecipients = ({ currency, recipients, ...props }: Transa
 	return recipients.length > 1 ? (
 		<TransactionDetail label={t("TRANSACTION.RECIPIENTS_COUNT", { count: recipients.length })} {...props}>
 			<div className="-my-2">
-				<RecipientList recipients={recipients} assetSymbol={currency} variant="condensed" />
+				<RecipientList
+					recipients={recipients}
+					assetSymbol={currency}
+					variant="condensed"
+					normalizeAmount={false}
+				/>
 			</div>
 		</TransactionDetail>
 	) : (
