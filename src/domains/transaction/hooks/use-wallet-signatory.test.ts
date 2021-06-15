@@ -35,7 +35,7 @@ describe("useWalletSignatory", () => {
 		mockWif.mockRestore();
 	});
 
-	it("should sign with private key", () => {
+	it("should sign with private key", async () => {
 		const mockPrivateKey = jest.spyOn(wallet.signatory(), "privateKey");
 		const { result } = renderHook(() => useWalletSignatory(wallet));
 		await expect(
