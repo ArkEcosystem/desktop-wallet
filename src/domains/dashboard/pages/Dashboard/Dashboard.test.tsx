@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/require-await */
 import { Contracts } from "@arkecosystem/platform-sdk-profiles";
-import Transport from "@ledgerhq/hw-transport";
+import Transport, { Observer } from "@ledgerhq/hw-transport";
 import { createTransportReplayer, RecordStore } from "@ledgerhq/hw-transport-mocker";
 import { LedgerProvider } from "app/contexts/Ledger/Ledger";
 import * as useRandomNumberHook from "app/hooks/use-random-number";
@@ -153,7 +153,11 @@ describe("Dashboard", () => {
 
 	it("should navigate to import ledger page", async () => {
 		const unsubscribe = jest.fn();
-		const listenSpy = jest.spyOn(transport, "listen").mockImplementationOnce(() => ({ unsubscribe }));
+		let observer: Observer<any>;
+		const listenSpy = jest.spyOn(transport, "listen").mockImplementationOnce((obv) => {
+			observer = obv;
+			return { unsubscribe };
+		});
 		profile.markIntroductoryTutorialAsComplete();
 
 		const { asFragment, getByTestId, getByText, queryByText, getAllByRole } = renderWithRouter(
