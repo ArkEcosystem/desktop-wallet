@@ -99,7 +99,11 @@ const UserInfo = ({ onUserAction, avatarImage, userActions, userInitials }: User
 	/>
 );
 
-export const NavigationButtonWrapper = styled.div`
+const LogoContainer = styled.div`
+	${tw`flex items-center justify-center my-auto mr-4 text-white rounded w-11 h-11 bg-logo`};
+`;
+
+const NavigationButtonWrapper = styled.div`
 	${css`
 		button {
 			${tw`w-11 h-11 overflow-hidden rounded text-theme-primary-300 dark:text-theme-secondary-600 not-disabled:(hover:text-theme-primary-700 hover:bg-theme-primary-50 dark:hover:bg-theme-secondary-800 dark:hover:text-theme-secondary-200)`};
@@ -107,11 +111,7 @@ export const NavigationButtonWrapper = styled.div`
 	`};
 `;
 
-const LogoContainer = styled.div`
-	${tw`flex items-center justify-center my-auto mr-4 text-white rounded w-11 h-11 bg-logo`};
-`;
-
-export const NavigationBar = ({
+const NavigationBar = ({
 	title,
 	isBackDisabled,
 	profile,
@@ -176,6 +176,14 @@ export const NavigationBar = ({
 	}, [profile, profileWalletsCount]); // eslint-disable-line react-hooks/exhaustive-deps
 
 	const scroll = useScroll();
+
+	const selectedNetwork = useMemo(() => {
+		if (!selectedWallet) {
+			return;
+		}
+
+		return profile?.wallets().findByAddress(selectedWallet.address)?.network();
+	}, [selectedWallet, profile]);
 
 	return (
 		<NavWrapper
@@ -280,13 +288,13 @@ export const NavigationBar = ({
 						onClose={() => setSearchWalletIsOpen(false)}
 					/>
 
-					{selectedWallet && (
+					{selectedWallet && selectedNetwork && (
 						<ReceiveFunds
 							isOpen={true}
 							address={selectedWallet.address}
 							icon={selectedWallet.coinName}
 							name={selectedWallet.name}
-							network={profile.wallets().findByAddress(selectedWallet.address)?.network()}
+							network={selectedNetwork}
 							onClose={() => setSelectedWallet(undefined)}
 						/>
 					)}
@@ -301,3 +309,5 @@ NavigationBar.defaultProps = {
 	menu: [],
 	userActions: [],
 };
+
+export { NavigationBar, NavigationButtonWrapper };
