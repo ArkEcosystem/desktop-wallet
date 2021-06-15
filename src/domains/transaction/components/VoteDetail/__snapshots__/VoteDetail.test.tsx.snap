@@ -20,7 +20,7 @@ exports[`VoteDetail should render a modal with unvotes 1`] = `
           class="absolute top-0 right-0 z-10 mt-5 mr-5 rounded transition-all duration-100 ease-linear bg-theme-primary-100 dark:bg-theme-secondary-800 dark:text-theme-secondary-600 dark:hover:bg-theme-secondary-700 dark:hover:text-theme-secondary-400 hover:bg-theme-primary-300"
         >
           <button
-            class="w-11 h-11 OriginalButton__StyledButton-sc-1y2wptt-0 fNHPRi"
+            class="OriginalButton__StyledButton-sc-1y2wptt-0 fNHPRi w-11 h-11"
             data-testid="modal__close-btn"
             type="button"
           >
@@ -69,7 +69,7 @@ exports[`VoteDetail should render a modal with unvotes 1`] = `
                     class="flex overflow-hidden flex-grow items-center space-x-2 whitespace-nowrap no-ligatures"
                   >
                     <span
-                      class="text-base font-semibold text-theme-text"
+                      class="font-semibold text-base text-theme-text"
                       data-testid="Address__alias"
                     >
                       <span
@@ -80,7 +80,7 @@ exports[`VoteDetail should render a modal with unvotes 1`] = `
                       </span>
                     </span>
                     <span
-                      class="inline-flex overflow-hidden text-base font-semibold text-theme-secondary-500 dark:text-theme-secondary-700"
+                      class="inline-flex overflow-hidden text-theme-secondary-500 dark:text-theme-secondary-700 font-semibold text-base"
                       data-testid="Address__address"
                     >
                       D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD
@@ -92,7 +92,7 @@ exports[`VoteDetail should render a modal with unvotes 1`] = `
                 class="flex items-center -space-x-2"
               >
                 <div
-                  class="Circle__CircleWrapper-uw7h4j-0 bNDQMV border-theme-text text-theme-text ring-theme-background dark:border-theme-secondary-600 dark:text-theme-secondary-600"
+                  class="Circle__CircleWrapper-uw7h4j-0 bNDQMV border-theme-text text-theme-text dark:border-theme-secondary-600 dark:text-theme-secondary-600 ring-theme-background"
                 >
                   <div
                     class="sc-bdfBwQ catSEV"
@@ -105,11 +105,11 @@ exports[`VoteDetail should render a modal with unvotes 1`] = `
                   </div>
                 </div>
                 <div
-                  class="flex-shrink-0 Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB"
+                  class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB flex-shrink-0"
                   data-testid="Avatar"
                 >
                   <div
-                    class="inline-flex overflow-hidden justify-center items-center w-full h-full align-middle rounded-full"
+                    class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
                   >
                     <img
                       alt="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
@@ -139,7 +139,7 @@ exports[`VoteDetail should render a modal with unvotes 1`] = `
                 </div>
               </div>
               <div
-                class="Circle__CircleWrapper-uw7h4j-0 bNDQMV text-theme-secondary-900 border-theme-secondary-900 ring-theme-background dark:text-theme-secondary-600 dark:border-theme-secondary-600"
+                class="Circle__CircleWrapper-uw7h4j-0 bNDQMV text-theme-secondary-900 border-theme-secondary-900 dark:text-theme-secondary-600 dark:border-theme-secondary-600 ring-theme-background"
               >
                 <div
                   class="sc-bdfBwQ bOxyah"
@@ -177,11 +177,11 @@ exports[`VoteDetail should render a modal with unvotes 1`] = `
                         class="flex items-center py-4 space-x-4"
                       >
                         <div
-                          class="flex-shrink-0 Avatar__AvatarWrapper-sc-1vsy2s2-0 ibTSCJ"
+                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 ibTSCJ flex-shrink-0"
                           data-testid="Avatar"
                         >
                           <div
-                            class="inline-flex overflow-hidden justify-center items-center w-full h-full align-middle rounded-full"
+                            class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
                           >
                             <img
                               alt="034151a3ec46b5670a682b0a63394f863587d1bc97483b1b6c70eb58e7f0aed192"
@@ -194,7 +194,7 @@ exports[`VoteDetail should render a modal with unvotes 1`] = `
                           class="flex overflow-hidden flex-grow items-center space-x-2 whitespace-nowrap no-ligatures"
                         >
                           <span
-                            class="text-base font-semibold text-theme-text"
+                            class="font-semibold text-base text-theme-text"
                             data-testid="Address__alias"
                           >
                             <span
@@ -205,7 +205,7 @@ exports[`VoteDetail should render a modal with unvotes 1`] = `
                             </span>
                           </span>
                           <span
-                            class="inline-flex overflow-hidden text-base font-semibold text-theme-secondary-500 dark:text-theme-secondary-700"
+                            class="inline-flex overflow-hidden text-theme-secondary-500 dark:text-theme-secondary-700 font-semibold text-base"
                             data-testid="Address__address"
                           >
                             034151a3ec46b5670a682b0a63394f863587d1bc97483b1b6c70eb58e7f0aed192
@@ -334,7 +334,7 @@ exports[`VoteDetail should render a modal with unvotes 1`] = `
                           class="align-middle"
                         >
                           <div
-                            class="inline-block flex-shrink-0 pb-px text-sm duration-200 sc-bdfBwQ fPrsah"
+                            class="sc-bdfBwQ fPrsah flex-shrink-0 duration-200 inline-block pb-px text-sm"
                             data-testid="Link__external"
                             height="1em"
                             width="1em"
@@ -413,7 +413,7 @@ exports[`VoteDetail should render a modal with unvotes 1`] = `
                           class="align-middle"
                         >
                           <div
-                            class="inline-block flex-shrink-0 pb-px text-sm duration-200 sc-bdfBwQ fPrsah"
+                            class="sc-bdfBwQ fPrsah flex-shrink-0 duration-200 inline-block pb-px text-sm"
                             data-testid="Link__external"
                             height="1em"
                             width="1em"
@@ -477,7 +477,7 @@ exports[`VoteDetail should render a modal with votes 1`] = `
           class="absolute top-0 right-0 z-10 mt-5 mr-5 rounded transition-all duration-100 ease-linear bg-theme-primary-100 dark:bg-theme-secondary-800 dark:text-theme-secondary-600 dark:hover:bg-theme-secondary-700 dark:hover:text-theme-secondary-400 hover:bg-theme-primary-300"
         >
           <button
-            class="w-11 h-11 OriginalButton__StyledButton-sc-1y2wptt-0 fNHPRi"
+            class="OriginalButton__StyledButton-sc-1y2wptt-0 fNHPRi w-11 h-11"
             data-testid="modal__close-btn"
             type="button"
           >
@@ -526,7 +526,7 @@ exports[`VoteDetail should render a modal with votes 1`] = `
                     class="flex overflow-hidden flex-grow items-center space-x-2 whitespace-nowrap no-ligatures"
                   >
                     <span
-                      class="text-base font-semibold text-theme-text"
+                      class="font-semibold text-base text-theme-text"
                       data-testid="Address__alias"
                     >
                       <span
@@ -537,7 +537,7 @@ exports[`VoteDetail should render a modal with votes 1`] = `
                       </span>
                     </span>
                     <span
-                      class="inline-flex overflow-hidden text-base font-semibold text-theme-secondary-500 dark:text-theme-secondary-700"
+                      class="inline-flex overflow-hidden text-theme-secondary-500 dark:text-theme-secondary-700 font-semibold text-base"
                       data-testid="Address__address"
                     >
                       D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD
@@ -549,7 +549,7 @@ exports[`VoteDetail should render a modal with votes 1`] = `
                 class="flex items-center -space-x-2"
               >
                 <div
-                  class="Circle__CircleWrapper-uw7h4j-0 bNDQMV border-theme-text text-theme-text ring-theme-background dark:border-theme-secondary-600 dark:text-theme-secondary-600"
+                  class="Circle__CircleWrapper-uw7h4j-0 bNDQMV border-theme-text text-theme-text dark:border-theme-secondary-600 dark:text-theme-secondary-600 ring-theme-background"
                 >
                   <div
                     class="sc-bdfBwQ catSEV"
@@ -562,11 +562,11 @@ exports[`VoteDetail should render a modal with votes 1`] = `
                   </div>
                 </div>
                 <div
-                  class="flex-shrink-0 Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB"
+                  class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB flex-shrink-0"
                   data-testid="Avatar"
                 >
                   <div
-                    class="inline-flex overflow-hidden justify-center items-center w-full h-full align-middle rounded-full"
+                    class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
                   >
                     <img
                       alt="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
@@ -596,7 +596,7 @@ exports[`VoteDetail should render a modal with votes 1`] = `
                 </div>
               </div>
               <div
-                class="Circle__CircleWrapper-uw7h4j-0 bNDQMV text-theme-secondary-900 border-theme-secondary-900 ring-theme-background dark:text-theme-secondary-600 dark:border-theme-secondary-600"
+                class="Circle__CircleWrapper-uw7h4j-0 bNDQMV text-theme-secondary-900 border-theme-secondary-900 dark:text-theme-secondary-600 dark:border-theme-secondary-600 ring-theme-background"
               >
                 <div
                   class="sc-bdfBwQ bOxyah"
@@ -634,11 +634,11 @@ exports[`VoteDetail should render a modal with votes 1`] = `
                         class="flex items-center py-4 space-x-4"
                       >
                         <div
-                          class="flex-shrink-0 Avatar__AvatarWrapper-sc-1vsy2s2-0 ibTSCJ"
+                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 ibTSCJ flex-shrink-0"
                           data-testid="Avatar"
                         >
                           <div
-                            class="inline-flex overflow-hidden justify-center items-center w-full h-full align-middle rounded-full"
+                            class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
                           >
                             <img
                               alt="034151a3ec46b5670a682b0a63394f863587d1bc97483b1b6c70eb58e7f0aed192"
@@ -651,7 +651,7 @@ exports[`VoteDetail should render a modal with votes 1`] = `
                           class="flex overflow-hidden flex-grow items-center space-x-2 whitespace-nowrap no-ligatures"
                         >
                           <span
-                            class="text-base font-semibold text-theme-text"
+                            class="font-semibold text-base text-theme-text"
                             data-testid="Address__alias"
                           >
                             <span
@@ -662,7 +662,7 @@ exports[`VoteDetail should render a modal with votes 1`] = `
                             </span>
                           </span>
                           <span
-                            class="inline-flex overflow-hidden text-base font-semibold text-theme-secondary-500 dark:text-theme-secondary-700"
+                            class="inline-flex overflow-hidden text-theme-secondary-500 dark:text-theme-secondary-700 font-semibold text-base"
                             data-testid="Address__address"
                           >
                             034151a3ec46b5670a682b0a63394f863587d1bc97483b1b6c70eb58e7f0aed192
@@ -791,7 +791,7 @@ exports[`VoteDetail should render a modal with votes 1`] = `
                           class="align-middle"
                         >
                           <div
-                            class="inline-block flex-shrink-0 pb-px text-sm duration-200 sc-bdfBwQ fPrsah"
+                            class="sc-bdfBwQ fPrsah flex-shrink-0 duration-200 inline-block pb-px text-sm"
                             data-testid="Link__external"
                             height="1em"
                             width="1em"
@@ -870,7 +870,7 @@ exports[`VoteDetail should render a modal with votes 1`] = `
                           class="align-middle"
                         >
                           <div
-                            class="inline-block flex-shrink-0 pb-px text-sm duration-200 sc-bdfBwQ fPrsah"
+                            class="sc-bdfBwQ fPrsah flex-shrink-0 duration-200 inline-block pb-px text-sm"
                             data-testid="Link__external"
                             height="1em"
                             width="1em"
@@ -934,7 +934,7 @@ exports[`VoteDetail should render a modal with votes and unvotes 1`] = `
           class="absolute top-0 right-0 z-10 mt-5 mr-5 rounded transition-all duration-100 ease-linear bg-theme-primary-100 dark:bg-theme-secondary-800 dark:text-theme-secondary-600 dark:hover:bg-theme-secondary-700 dark:hover:text-theme-secondary-400 hover:bg-theme-primary-300"
         >
           <button
-            class="w-11 h-11 OriginalButton__StyledButton-sc-1y2wptt-0 fNHPRi"
+            class="OriginalButton__StyledButton-sc-1y2wptt-0 fNHPRi w-11 h-11"
             data-testid="modal__close-btn"
             type="button"
           >
@@ -983,7 +983,7 @@ exports[`VoteDetail should render a modal with votes and unvotes 1`] = `
                     class="flex overflow-hidden flex-grow items-center space-x-2 whitespace-nowrap no-ligatures"
                   >
                     <span
-                      class="text-base font-semibold text-theme-text"
+                      class="font-semibold text-base text-theme-text"
                       data-testid="Address__alias"
                     >
                       <span
@@ -994,7 +994,7 @@ exports[`VoteDetail should render a modal with votes and unvotes 1`] = `
                       </span>
                     </span>
                     <span
-                      class="inline-flex overflow-hidden text-base font-semibold text-theme-secondary-500 dark:text-theme-secondary-700"
+                      class="inline-flex overflow-hidden text-theme-secondary-500 dark:text-theme-secondary-700 font-semibold text-base"
                       data-testid="Address__address"
                     >
                       D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD
@@ -1006,7 +1006,7 @@ exports[`VoteDetail should render a modal with votes and unvotes 1`] = `
                 class="flex items-center -space-x-2"
               >
                 <div
-                  class="Circle__CircleWrapper-uw7h4j-0 bNDQMV border-theme-text text-theme-text ring-theme-background dark:border-theme-secondary-600 dark:text-theme-secondary-600"
+                  class="Circle__CircleWrapper-uw7h4j-0 bNDQMV border-theme-text text-theme-text dark:border-theme-secondary-600 dark:text-theme-secondary-600 ring-theme-background"
                 >
                   <div
                     class="sc-bdfBwQ catSEV"
@@ -1019,11 +1019,11 @@ exports[`VoteDetail should render a modal with votes and unvotes 1`] = `
                   </div>
                 </div>
                 <div
-                  class="flex-shrink-0 Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB"
+                  class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB flex-shrink-0"
                   data-testid="Avatar"
                 >
                   <div
-                    class="inline-flex overflow-hidden justify-center items-center w-full h-full align-middle rounded-full"
+                    class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
                   >
                     <img
                       alt="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
@@ -1053,7 +1053,7 @@ exports[`VoteDetail should render a modal with votes and unvotes 1`] = `
                 </div>
               </div>
               <div
-                class="Circle__CircleWrapper-uw7h4j-0 bNDQMV text-theme-secondary-900 border-theme-secondary-900 ring-theme-background dark:text-theme-secondary-600 dark:border-theme-secondary-600"
+                class="Circle__CircleWrapper-uw7h4j-0 bNDQMV text-theme-secondary-900 border-theme-secondary-900 dark:text-theme-secondary-600 dark:border-theme-secondary-600 ring-theme-background"
               >
                 <div
                   class="sc-bdfBwQ bOxyah"
@@ -1091,11 +1091,11 @@ exports[`VoteDetail should render a modal with votes and unvotes 1`] = `
                         class="flex items-center py-4 space-x-4"
                       >
                         <div
-                          class="flex-shrink-0 Avatar__AvatarWrapper-sc-1vsy2s2-0 ibTSCJ"
+                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 ibTSCJ flex-shrink-0"
                           data-testid="Avatar"
                         >
                           <div
-                            class="inline-flex overflow-hidden justify-center items-center w-full h-full align-middle rounded-full"
+                            class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
                           >
                             <img
                               alt="034151a3ec46b5670a682b0a63394f863587d1bc97483b1b6c70eb58e7f0aed192"
@@ -1108,7 +1108,7 @@ exports[`VoteDetail should render a modal with votes and unvotes 1`] = `
                           class="flex overflow-hidden flex-grow items-center space-x-2 whitespace-nowrap no-ligatures"
                         >
                           <span
-                            class="text-base font-semibold text-theme-text"
+                            class="font-semibold text-base text-theme-text"
                             data-testid="Address__alias"
                           >
                             <span
@@ -1119,7 +1119,7 @@ exports[`VoteDetail should render a modal with votes and unvotes 1`] = `
                             </span>
                           </span>
                           <span
-                            class="inline-flex overflow-hidden text-base font-semibold text-theme-secondary-500 dark:text-theme-secondary-700"
+                            class="inline-flex overflow-hidden text-theme-secondary-500 dark:text-theme-secondary-700 font-semibold text-base"
                             data-testid="Address__address"
                           >
                             034151a3ec46b5670a682b0a63394f863587d1bc97483b1b6c70eb58e7f0aed192
@@ -1156,11 +1156,11 @@ exports[`VoteDetail should render a modal with votes and unvotes 1`] = `
                         class="flex items-center py-4 space-x-4"
                       >
                         <div
-                          class="flex-shrink-0 Avatar__AvatarWrapper-sc-1vsy2s2-0 ibTSCJ"
+                          class="Avatar__AvatarWrapper-sc-1vsy2s2-0 ibTSCJ flex-shrink-0"
                           data-testid="Avatar"
                         >
                           <div
-                            class="inline-flex overflow-hidden justify-center items-center w-full h-full align-middle rounded-full"
+                            class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
                           >
                             <img
                               alt="034151a3ec46b5670a682b0a63394f863587d1bc97483b1b6c70eb58e7f0aed192"
@@ -1173,7 +1173,7 @@ exports[`VoteDetail should render a modal with votes and unvotes 1`] = `
                           class="flex overflow-hidden flex-grow items-center space-x-2 whitespace-nowrap no-ligatures"
                         >
                           <span
-                            class="text-base font-semibold text-theme-text"
+                            class="font-semibold text-base text-theme-text"
                             data-testid="Address__alias"
                           >
                             <span
@@ -1184,7 +1184,7 @@ exports[`VoteDetail should render a modal with votes and unvotes 1`] = `
                             </span>
                           </span>
                           <span
-                            class="inline-flex overflow-hidden text-base font-semibold text-theme-secondary-500 dark:text-theme-secondary-700"
+                            class="inline-flex overflow-hidden text-theme-secondary-500 dark:text-theme-secondary-700 font-semibold text-base"
                             data-testid="Address__address"
                           >
                             034151a3ec46b5670a682b0a63394f863587d1bc97483b1b6c70eb58e7f0aed192
@@ -1313,7 +1313,7 @@ exports[`VoteDetail should render a modal with votes and unvotes 1`] = `
                           class="align-middle"
                         >
                           <div
-                            class="inline-block flex-shrink-0 pb-px text-sm duration-200 sc-bdfBwQ fPrsah"
+                            class="sc-bdfBwQ fPrsah flex-shrink-0 duration-200 inline-block pb-px text-sm"
                             data-testid="Link__external"
                             height="1em"
                             width="1em"
@@ -1392,7 +1392,7 @@ exports[`VoteDetail should render a modal with votes and unvotes 1`] = `
                           class="align-middle"
                         >
                           <div
-                            class="inline-block flex-shrink-0 pb-px text-sm duration-200 sc-bdfBwQ fPrsah"
+                            class="sc-bdfBwQ fPrsah flex-shrink-0 duration-200 inline-block pb-px text-sm"
                             data-testid="Link__external"
                             height="1em"
                             width="1em"

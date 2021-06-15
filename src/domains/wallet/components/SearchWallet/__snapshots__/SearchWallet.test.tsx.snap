@@ -18,7 +18,7 @@ exports[`SearchWallet uses fiat value = false should render 1`] = `
           class="absolute top-0 right-0 z-10 mt-5 mr-5 rounded transition-all duration-100 ease-linear bg-theme-primary-100 dark:bg-theme-secondary-800 dark:text-theme-secondary-600 dark:hover:bg-theme-secondary-700 dark:hover:text-theme-secondary-400 hover:bg-theme-primary-300"
         >
           <button
-            class="w-11 h-11 OriginalButton__StyledButton-sc-1y2wptt-0 fNHPRi"
+            class="OriginalButton__StyledButton-sc-1y2wptt-0 fNHPRi w-11 h-11"
             data-testid="modal__close-btn"
             type="button"
           >
@@ -57,7 +57,7 @@ exports[`SearchWallet uses fiat value = false should render 1`] = `
               class="mt-8"
             >
               <div
-                class="-mt-3 Table__TableWrapper-sc-84pst5-0 ccYCKK"
+                class="Table__TableWrapper-sc-84pst5-0 ccYCKK -mt-3"
                 role="table"
               >
                 <table
@@ -70,7 +70,7 @@ exports[`SearchWallet uses fiat value = false should render 1`] = `
                       role="row"
                     >
                       <th
-                        class="relative p-3 m-0 text-sm font-semibold text-left select-none first:pl-0 last:pr-0 group text-theme-secondary-500 border-theme-secondary-300 hasBorder dark:text-theme-secondary-700 dark:border-theme-secondary-800"
+                        class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                         colspan="1"
                         data-testid="table__th--0"
                         role="columnheader"
@@ -78,16 +78,16 @@ exports[`SearchWallet uses fiat value = false should render 1`] = `
                         title="Toggle SortBy"
                       >
                         <div
-                          class="flex align-top flex-inline"
+                          class="flex flex-inline align-top"
                         >
                           <div>
                             Wallet Address
                           </div>
                           <div
-                            class="flex items-center ml-2 opacity-0 transition-opacity group-hover:opacity-100 text-theme-secondary-500 dark:text-theme-secondary-700"
+                            class="flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity opacity-0 group-hover:opacity-100 ml-2"
                           >
                             <div
-                              class="transition-transform transform rotate-180 sc-bdfBwQ kJrqvM"
+                              class="sc-bdfBwQ kJrqvM transition-transform transform rotate-180"
                               height="5"
                               role="img"
                               width="8"
@@ -100,7 +100,7 @@ exports[`SearchWallet uses fiat value = false should render 1`] = `
                         </div>
                       </th>
                       <th
-                        class="relative p-3 m-0 text-sm font-semibold text-left select-none first:pl-0 last:pr-0 group text-theme-secondary-500 border-theme-secondary-300 hasBorder dark:text-theme-secondary-700 dark:border-theme-secondary-800"
+                        class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                         colspan="1"
                         data-testid="table__th--1"
                         role="columnheader"
@@ -108,16 +108,16 @@ exports[`SearchWallet uses fiat value = false should render 1`] = `
                         title="Toggle SortBy"
                       >
                         <div
-                          class="flex flex-row-reverse justify-end align-top flex-inline"
+                          class="flex flex-inline align-top justify-end flex-row-reverse"
                         >
                           <div>
                             Balance
                           </div>
                           <div
-                            class="flex items-center mr-2 ml-auto opacity-0 transition-opacity group-hover:opacity-100 text-theme-secondary-500 dark:text-theme-secondary-700"
+                            class="flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity opacity-0 group-hover:opacity-100 ml-auto mr-2"
                           >
                             <div
-                              class="transition-transform transform rotate-180 sc-bdfBwQ kJrqvM"
+                              class="sc-bdfBwQ kJrqvM transition-transform transform rotate-180"
                               height="5"
                               role="img"
                               width="8"
@@ -130,13 +130,13 @@ exports[`SearchWallet uses fiat value = false should render 1`] = `
                         </div>
                       </th>
                       <th
-                        class="relative p-3 m-0 text-sm font-semibold text-left select-none first:pl-0 last:pr-0 group text-theme-secondary-500 border-theme-secondary-300 hasBorder dark:text-theme-secondary-700 dark:border-theme-secondary-800"
+                        class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                         colspan="1"
                         data-testid="table__th--2"
                         role="columnheader"
                       >
                         <div
-                          class="flex justify-end align-top flex-inline"
+                          class="flex flex-inline align-top justify-end"
                         >
                           <div>
                             <div
@@ -185,7 +185,7 @@ exports[`SearchWallet uses fiat value = false should render 1`] = `
                     >
                       <td>
                         <div
-                          class="space-x-4 TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 DpDcR"
+                          class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 DpDcR space-x-4"
                         >
                           <div
                             class="flex-shrink-0 -space-x-2"
@@ -207,11 +207,11 @@ exports[`SearchWallet uses fiat value = false should render 1`] = `
                               </div>
                             </div>
                             <div
-                              class="flex-shrink-0 Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB"
+                              class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB flex-shrink-0"
                               data-testid="Avatar"
                             >
                               <div
-                                class="inline-flex overflow-hidden justify-center items-center w-full h-full align-middle rounded-full"
+                                class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
                               >
                                 <img
                                   alt="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
@@ -225,7 +225,7 @@ exports[`SearchWallet uses fiat value = false should render 1`] = `
                             class="flex overflow-hidden flex-grow items-center space-x-2 whitespace-nowrap no-ligatures"
                           >
                             <span
-                              class="text-base font-semibold text-theme-text"
+                              class="font-semibold text-base text-theme-text"
                               data-testid="Address__alias"
                             >
                               <span
@@ -236,7 +236,7 @@ exports[`SearchWallet uses fiat value = false should render 1`] = `
                               </span>
                             </span>
                             <span
-                              class="inline-flex overflow-hidden text-base font-semibold text-theme-secondary-500 dark:text-theme-secondary-700"
+                              class="inline-flex overflow-hidden text-theme-secondary-500 dark:text-theme-secondary-700 font-semibold text-base"
                               data-testid="Address__address"
                             >
                               D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD
@@ -246,7 +246,7 @@ exports[`SearchWallet uses fiat value = false should render 1`] = `
                       </td>
                       <td>
                         <div
-                          class="justify-end font-semibold TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT"
+                          class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT font-semibold justify-end"
                         >
                           <span
                             data-testid="Amount"
@@ -257,7 +257,7 @@ exports[`SearchWallet uses fiat value = false should render 1`] = `
                       </td>
                       <td>
                         <div
-                          class="justify-end TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 kjTmcB"
+                          class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 kjTmcB justify-end"
                         >
                           <button
                             class="OriginalButton__StyledButton-sc-1y2wptt-0 izJbbP"
@@ -279,7 +279,7 @@ exports[`SearchWallet uses fiat value = false should render 1`] = `
                     >
                       <td>
                         <div
-                          class="space-x-4 TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 DpDcR"
+                          class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 DpDcR space-x-4"
                         >
                           <div
                             class="flex-shrink-0 -space-x-2"
@@ -301,11 +301,11 @@ exports[`SearchWallet uses fiat value = false should render 1`] = `
                               </div>
                             </div>
                             <div
-                              class="flex-shrink-0 Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB"
+                              class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB flex-shrink-0"
                               data-testid="Avatar"
                             >
                               <div
-                                class="inline-flex overflow-hidden justify-center items-center w-full h-full align-middle rounded-full"
+                                class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
                               >
                                 <img
                                   alt="D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb"
@@ -319,7 +319,7 @@ exports[`SearchWallet uses fiat value = false should render 1`] = `
                             class="flex overflow-hidden flex-grow items-center space-x-2 whitespace-nowrap no-ligatures"
                           >
                             <span
-                              class="text-base font-semibold text-theme-text"
+                              class="font-semibold text-base text-theme-text"
                               data-testid="Address__alias"
                             >
                               <span
@@ -330,7 +330,7 @@ exports[`SearchWallet uses fiat value = false should render 1`] = `
                               </span>
                             </span>
                             <span
-                              class="inline-flex overflow-hidden text-base font-semibold text-theme-secondary-500 dark:text-theme-secondary-700"
+                              class="inline-flex overflow-hidden text-theme-secondary-500 dark:text-theme-secondary-700 font-semibold text-base"
                               data-testid="Address__address"
                             >
                               D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb
@@ -340,7 +340,7 @@ exports[`SearchWallet uses fiat value = false should render 1`] = `
                       </td>
                       <td>
                         <div
-                          class="justify-end font-semibold TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT"
+                          class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT font-semibold justify-end"
                         >
                           <span
                             data-testid="Amount"
@@ -351,7 +351,7 @@ exports[`SearchWallet uses fiat value = false should render 1`] = `
                       </td>
                       <td>
                         <div
-                          class="justify-end TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 kjTmcB"
+                          class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 kjTmcB justify-end"
                         >
                           <button
                             class="OriginalButton__StyledButton-sc-1y2wptt-0 izJbbP"
@@ -397,7 +397,7 @@ exports[`SearchWallet uses fiat value = false should render with the default exc
           class="absolute top-0 right-0 z-10 mt-5 mr-5 rounded transition-all duration-100 ease-linear bg-theme-primary-100 dark:bg-theme-secondary-800 dark:text-theme-secondary-600 dark:hover:bg-theme-secondary-700 dark:hover:text-theme-secondary-400 hover:bg-theme-primary-300"
         >
           <button
-            class="w-11 h-11 OriginalButton__StyledButton-sc-1y2wptt-0 fNHPRi"
+            class="OriginalButton__StyledButton-sc-1y2wptt-0 fNHPRi w-11 h-11"
             data-testid="modal__close-btn"
             type="button"
           >
@@ -436,7 +436,7 @@ exports[`SearchWallet uses fiat value = false should render with the default exc
               class="mt-8"
             >
               <div
-                class="-mt-3 Table__TableWrapper-sc-84pst5-0 ccYCKK"
+                class="Table__TableWrapper-sc-84pst5-0 ccYCKK -mt-3"
                 role="table"
               >
                 <table
@@ -449,7 +449,7 @@ exports[`SearchWallet uses fiat value = false should render with the default exc
                       role="row"
                     >
                       <th
-                        class="relative p-3 m-0 text-sm font-semibold text-left select-none first:pl-0 last:pr-0 group text-theme-secondary-500 border-theme-secondary-300 hasBorder dark:text-theme-secondary-700 dark:border-theme-secondary-800"
+                        class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                         colspan="1"
                         data-testid="table__th--0"
                         role="columnheader"
@@ -457,16 +457,16 @@ exports[`SearchWallet uses fiat value = false should render with the default exc
                         title="Toggle SortBy"
                       >
                         <div
-                          class="flex align-top flex-inline"
+                          class="flex flex-inline align-top"
                         >
                           <div>
                             Wallet Address
                           </div>
                           <div
-                            class="flex items-center ml-2 opacity-0 transition-opacity group-hover:opacity-100 text-theme-secondary-500 dark:text-theme-secondary-700"
+                            class="flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity opacity-0 group-hover:opacity-100 ml-2"
                           >
                             <div
-                              class="transition-transform transform rotate-180 sc-bdfBwQ kJrqvM"
+                              class="sc-bdfBwQ kJrqvM transition-transform transform rotate-180"
                               height="5"
                               role="img"
                               width="8"
@@ -479,7 +479,7 @@ exports[`SearchWallet uses fiat value = false should render with the default exc
                         </div>
                       </th>
                       <th
-                        class="relative p-3 m-0 text-sm font-semibold text-left select-none first:pl-0 last:pr-0 group text-theme-secondary-500 border-theme-secondary-300 hasBorder dark:text-theme-secondary-700 dark:border-theme-secondary-800"
+                        class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                         colspan="1"
                         data-testid="table__th--1"
                         role="columnheader"
@@ -487,16 +487,16 @@ exports[`SearchWallet uses fiat value = false should render with the default exc
                         title="Toggle SortBy"
                       >
                         <div
-                          class="flex flex-row-reverse justify-end align-top flex-inline"
+                          class="flex flex-inline align-top justify-end flex-row-reverse"
                         >
                           <div>
                             Balance
                           </div>
                           <div
-                            class="flex items-center mr-2 ml-auto opacity-0 transition-opacity group-hover:opacity-100 text-theme-secondary-500 dark:text-theme-secondary-700"
+                            class="flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity opacity-0 group-hover:opacity-100 ml-auto mr-2"
                           >
                             <div
-                              class="transition-transform transform rotate-180 sc-bdfBwQ kJrqvM"
+                              class="sc-bdfBwQ kJrqvM transition-transform transform rotate-180"
                               height="5"
                               role="img"
                               width="8"
@@ -509,13 +509,13 @@ exports[`SearchWallet uses fiat value = false should render with the default exc
                         </div>
                       </th>
                       <th
-                        class="relative p-3 m-0 text-sm font-semibold text-left select-none first:pl-0 last:pr-0 group text-theme-secondary-500 border-theme-secondary-300 hasBorder dark:text-theme-secondary-700 dark:border-theme-secondary-800"
+                        class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                         colspan="1"
                         data-testid="table__th--2"
                         role="columnheader"
                       >
                         <div
-                          class="flex justify-end align-top flex-inline"
+                          class="flex flex-inline align-top justify-end"
                         >
                           <div>
                             <div
@@ -564,7 +564,7 @@ exports[`SearchWallet uses fiat value = false should render with the default exc
                     >
                       <td>
                         <div
-                          class="space-x-4 TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 DpDcR"
+                          class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 DpDcR space-x-4"
                         >
                           <div
                             class="flex-shrink-0 -space-x-2"
@@ -586,11 +586,11 @@ exports[`SearchWallet uses fiat value = false should render with the default exc
                               </div>
                             </div>
                             <div
-                              class="flex-shrink-0 Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB"
+                              class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB flex-shrink-0"
                               data-testid="Avatar"
                             >
                               <div
-                                class="inline-flex overflow-hidden justify-center items-center w-full h-full align-middle rounded-full"
+                                class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
                               >
                                 <img
                                   alt="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
@@ -604,7 +604,7 @@ exports[`SearchWallet uses fiat value = false should render with the default exc
                             class="flex overflow-hidden flex-grow items-center space-x-2 whitespace-nowrap no-ligatures"
                           >
                             <span
-                              class="text-base font-semibold text-theme-text"
+                              class="font-semibold text-base text-theme-text"
                               data-testid="Address__alias"
                             >
                               <span
@@ -615,7 +615,7 @@ exports[`SearchWallet uses fiat value = false should render with the default exc
                               </span>
                             </span>
                             <span
-                              class="inline-flex overflow-hidden text-base font-semibold text-theme-secondary-500 dark:text-theme-secondary-700"
+                              class="inline-flex overflow-hidden text-theme-secondary-500 dark:text-theme-secondary-700 font-semibold text-base"
                               data-testid="Address__address"
                             >
                               D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD
@@ -625,7 +625,7 @@ exports[`SearchWallet uses fiat value = false should render with the default exc
                       </td>
                       <td>
                         <div
-                          class="justify-end font-semibold TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT"
+                          class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT font-semibold justify-end"
                         >
                           <span
                             data-testid="Amount"
@@ -636,7 +636,7 @@ exports[`SearchWallet uses fiat value = false should render with the default exc
                       </td>
                       <td>
                         <div
-                          class="justify-end TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 kjTmcB"
+                          class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 kjTmcB justify-end"
                         >
                           <button
                             class="OriginalButton__StyledButton-sc-1y2wptt-0 izJbbP"
@@ -658,7 +658,7 @@ exports[`SearchWallet uses fiat value = false should render with the default exc
                     >
                       <td>
                         <div
-                          class="space-x-4 TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 DpDcR"
+                          class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 DpDcR space-x-4"
                         >
                           <div
                             class="flex-shrink-0 -space-x-2"
@@ -680,11 +680,11 @@ exports[`SearchWallet uses fiat value = false should render with the default exc
                               </div>
                             </div>
                             <div
-                              class="flex-shrink-0 Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB"
+                              class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB flex-shrink-0"
                               data-testid="Avatar"
                             >
                               <div
-                                class="inline-flex overflow-hidden justify-center items-center w-full h-full align-middle rounded-full"
+                                class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
                               >
                                 <img
                                   alt="D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb"
@@ -698,7 +698,7 @@ exports[`SearchWallet uses fiat value = false should render with the default exc
                             class="flex overflow-hidden flex-grow items-center space-x-2 whitespace-nowrap no-ligatures"
                           >
                             <span
-                              class="text-base font-semibold text-theme-text"
+                              class="font-semibold text-base text-theme-text"
                               data-testid="Address__alias"
                             >
                               <span
@@ -709,7 +709,7 @@ exports[`SearchWallet uses fiat value = false should render with the default exc
                               </span>
                             </span>
                             <span
-                              class="inline-flex overflow-hidden text-base font-semibold text-theme-secondary-500 dark:text-theme-secondary-700"
+                              class="inline-flex overflow-hidden text-theme-secondary-500 dark:text-theme-secondary-700 font-semibold text-base"
                               data-testid="Address__address"
                             >
                               D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb
@@ -719,7 +719,7 @@ exports[`SearchWallet uses fiat value = false should render with the default exc
                       </td>
                       <td>
                         <div
-                          class="justify-end font-semibold TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT"
+                          class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT font-semibold justify-end"
                         >
                           <span
                             data-testid="Amount"
@@ -730,7 +730,7 @@ exports[`SearchWallet uses fiat value = false should render with the default exc
                       </td>
                       <td>
                         <div
-                          class="justify-end TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 kjTmcB"
+                          class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 kjTmcB justify-end"
                         >
                           <button
                             class="OriginalButton__StyledButton-sc-1y2wptt-0 izJbbP"
@@ -776,7 +776,7 @@ exports[`SearchWallet uses fiat value = true should render 1`] = `
           class="absolute top-0 right-0 z-10 mt-5 mr-5 rounded transition-all duration-100 ease-linear bg-theme-primary-100 dark:bg-theme-secondary-800 dark:text-theme-secondary-600 dark:hover:bg-theme-secondary-700 dark:hover:text-theme-secondary-400 hover:bg-theme-primary-300"
         >
           <button
-            class="w-11 h-11 OriginalButton__StyledButton-sc-1y2wptt-0 fNHPRi"
+            class="OriginalButton__StyledButton-sc-1y2wptt-0 fNHPRi w-11 h-11"
             data-testid="modal__close-btn"
             type="button"
           >
@@ -815,7 +815,7 @@ exports[`SearchWallet uses fiat value = true should render 1`] = `
               class="mt-8"
             >
               <div
-                class="-mt-3 Table__TableWrapper-sc-84pst5-0 ccYCKK"
+                class="Table__TableWrapper-sc-84pst5-0 ccYCKK -mt-3"
                 role="table"
               >
                 <table
@@ -828,7 +828,7 @@ exports[`SearchWallet uses fiat value = true should render 1`] = `
                       role="row"
                     >
                       <th
-                        class="relative p-3 m-0 text-sm font-semibold text-left select-none first:pl-0 last:pr-0 group text-theme-secondary-500 border-theme-secondary-300 hasBorder dark:text-theme-secondary-700 dark:border-theme-secondary-800"
+                        class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                         colspan="1"
                         data-testid="table__th--0"
                         role="columnheader"
@@ -836,16 +836,16 @@ exports[`SearchWallet uses fiat value = true should render 1`] = `
                         title="Toggle SortBy"
                       >
                         <div
-                          class="flex align-top flex-inline"
+                          class="flex flex-inline align-top"
                         >
                           <div>
                             Wallet Address
                           </div>
                           <div
-                            class="flex items-center ml-2 opacity-0 transition-opacity group-hover:opacity-100 text-theme-secondary-500 dark:text-theme-secondary-700"
+                            class="flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity opacity-0 group-hover:opacity-100 ml-2"
                           >
                             <div
-                              class="transition-transform transform rotate-180 sc-bdfBwQ kJrqvM"
+                              class="sc-bdfBwQ kJrqvM transition-transform transform rotate-180"
                               height="5"
                               role="img"
                               width="8"
@@ -858,7 +858,7 @@ exports[`SearchWallet uses fiat value = true should render 1`] = `
                         </div>
                       </th>
                       <th
-                        class="relative p-3 m-0 text-sm font-semibold text-left select-none first:pl-0 last:pr-0 group text-theme-secondary-500 border-theme-secondary-300 hasBorder dark:text-theme-secondary-700 dark:border-theme-secondary-800"
+                        class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                         colspan="1"
                         data-testid="table__th--1"
                         role="columnheader"
@@ -866,16 +866,16 @@ exports[`SearchWallet uses fiat value = true should render 1`] = `
                         title="Toggle SortBy"
                       >
                         <div
-                          class="flex flex-row-reverse justify-end align-top flex-inline"
+                          class="flex flex-inline align-top justify-end flex-row-reverse"
                         >
                           <div>
                             Balance
                           </div>
                           <div
-                            class="flex items-center mr-2 ml-auto opacity-0 transition-opacity group-hover:opacity-100 text-theme-secondary-500 dark:text-theme-secondary-700"
+                            class="flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity opacity-0 group-hover:opacity-100 ml-auto mr-2"
                           >
                             <div
-                              class="transition-transform transform rotate-180 sc-bdfBwQ kJrqvM"
+                              class="sc-bdfBwQ kJrqvM transition-transform transform rotate-180"
                               height="5"
                               role="img"
                               width="8"
@@ -888,7 +888,7 @@ exports[`SearchWallet uses fiat value = true should render 1`] = `
                         </div>
                       </th>
                       <th
-                        class="relative p-3 m-0 text-sm font-semibold text-left select-none first:pl-0 last:pr-0 group text-theme-secondary-500 border-theme-secondary-300 hasBorder dark:text-theme-secondary-700 dark:border-theme-secondary-800"
+                        class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                         colspan="1"
                         data-testid="table__th--2"
                         role="columnheader"
@@ -896,16 +896,16 @@ exports[`SearchWallet uses fiat value = true should render 1`] = `
                         title="Toggle SortBy"
                       >
                         <div
-                          class="flex flex-row-reverse justify-end align-top flex-inline"
+                          class="flex flex-inline align-top justify-end flex-row-reverse"
                         >
                           <div>
                             Value
                           </div>
                           <div
-                            class="flex items-center mr-2 ml-auto opacity-0 transition-opacity group-hover:opacity-100 text-theme-secondary-500 dark:text-theme-secondary-700"
+                            class="flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity opacity-0 group-hover:opacity-100 ml-auto mr-2"
                           >
                             <div
-                              class="transition-transform transform rotate-180 sc-bdfBwQ kJrqvM"
+                              class="sc-bdfBwQ kJrqvM transition-transform transform rotate-180"
                               height="5"
                               role="img"
                               width="8"
@@ -918,13 +918,13 @@ exports[`SearchWallet uses fiat value = true should render 1`] = `
                         </div>
                       </th>
                       <th
-                        class="relative p-3 m-0 text-sm font-semibold text-left select-none first:pl-0 last:pr-0 group text-theme-secondary-500 border-theme-secondary-300 hasBorder dark:text-theme-secondary-700 dark:border-theme-secondary-800"
+                        class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                         colspan="1"
                         data-testid="table__th--3"
                         role="columnheader"
                       >
                         <div
-                          class="flex justify-end align-top flex-inline"
+                          class="flex flex-inline align-top justify-end"
                         >
                           <div>
                             <div
@@ -973,7 +973,7 @@ exports[`SearchWallet uses fiat value = true should render 1`] = `
                     >
                       <td>
                         <div
-                          class="space-x-4 TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 DpDcR"
+                          class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 DpDcR space-x-4"
                         >
                           <div
                             class="flex-shrink-0 -space-x-2"
@@ -995,11 +995,11 @@ exports[`SearchWallet uses fiat value = true should render 1`] = `
                               </div>
                             </div>
                             <div
-                              class="flex-shrink-0 Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB"
+                              class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB flex-shrink-0"
                               data-testid="Avatar"
                             >
                               <div
-                                class="inline-flex overflow-hidden justify-center items-center w-full h-full align-middle rounded-full"
+                                class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
                               >
                                 <img
                                   alt="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
@@ -1013,7 +1013,7 @@ exports[`SearchWallet uses fiat value = true should render 1`] = `
                             class="flex overflow-hidden flex-grow items-center space-x-2 whitespace-nowrap no-ligatures"
                           >
                             <span
-                              class="text-base font-semibold text-theme-text"
+                              class="font-semibold text-base text-theme-text"
                               data-testid="Address__alias"
                             >
                               <span
@@ -1024,7 +1024,7 @@ exports[`SearchWallet uses fiat value = true should render 1`] = `
                               </span>
                             </span>
                             <span
-                              class="inline-flex overflow-hidden text-base font-semibold text-theme-secondary-500 dark:text-theme-secondary-700"
+                              class="inline-flex overflow-hidden text-theme-secondary-500 dark:text-theme-secondary-700 font-semibold text-base"
                               data-testid="Address__address"
                             >
                               D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD
@@ -1034,7 +1034,7 @@ exports[`SearchWallet uses fiat value = true should render 1`] = `
                       </td>
                       <td>
                         <div
-                          class="justify-end font-semibold TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT"
+                          class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT font-semibold justify-end"
                         >
                           <span
                             data-testid="Amount"
@@ -1045,7 +1045,7 @@ exports[`SearchWallet uses fiat value = true should render 1`] = `
                       </td>
                       <td>
                         <div
-                          class="justify-end TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT text-theme-secondary-400"
+                          class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT text-theme-secondary-400 justify-end"
                         >
                           <span
                             data-testid="Amount"
@@ -1056,7 +1056,7 @@ exports[`SearchWallet uses fiat value = true should render 1`] = `
                       </td>
                       <td>
                         <div
-                          class="justify-end TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 kjTmcB"
+                          class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 kjTmcB justify-end"
                         >
                           <button
                             class="OriginalButton__StyledButton-sc-1y2wptt-0 izJbbP"
@@ -1078,7 +1078,7 @@ exports[`SearchWallet uses fiat value = true should render 1`] = `
                     >
                       <td>
                         <div
-                          class="space-x-4 TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 DpDcR"
+                          class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 DpDcR space-x-4"
                         >
                           <div
                             class="flex-shrink-0 -space-x-2"
@@ -1100,11 +1100,11 @@ exports[`SearchWallet uses fiat value = true should render 1`] = `
                               </div>
                             </div>
                             <div
-                              class="flex-shrink-0 Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB"
+                              class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB flex-shrink-0"
                               data-testid="Avatar"
                             >
                               <div
-                                class="inline-flex overflow-hidden justify-center items-center w-full h-full align-middle rounded-full"
+                                class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
                               >
                                 <img
                                   alt="D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb"
@@ -1118,7 +1118,7 @@ exports[`SearchWallet uses fiat value = true should render 1`] = `
                             class="flex overflow-hidden flex-grow items-center space-x-2 whitespace-nowrap no-ligatures"
                           >
                             <span
-                              class="text-base font-semibold text-theme-text"
+                              class="font-semibold text-base text-theme-text"
                               data-testid="Address__alias"
                             >
                               <span
@@ -1129,7 +1129,7 @@ exports[`SearchWallet uses fiat value = true should render 1`] = `
                               </span>
                             </span>
                             <span
-                              class="inline-flex overflow-hidden text-base font-semibold text-theme-secondary-500 dark:text-theme-secondary-700"
+                              class="inline-flex overflow-hidden text-theme-secondary-500 dark:text-theme-secondary-700 font-semibold text-base"
                               data-testid="Address__address"
                             >
                               D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb
@@ -1139,7 +1139,7 @@ exports[`SearchWallet uses fiat value = true should render 1`] = `
                       </td>
                       <td>
                         <div
-                          class="justify-end font-semibold TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT"
+                          class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT font-semibold justify-end"
                         >
                           <span
                             data-testid="Amount"
@@ -1150,7 +1150,7 @@ exports[`SearchWallet uses fiat value = true should render 1`] = `
                       </td>
                       <td>
                         <div
-                          class="justify-end TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT text-theme-secondary-400"
+                          class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT text-theme-secondary-400 justify-end"
                         >
                           <span
                             data-testid="Amount"
@@ -1161,7 +1161,7 @@ exports[`SearchWallet uses fiat value = true should render 1`] = `
                       </td>
                       <td>
                         <div
-                          class="justify-end TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 kjTmcB"
+                          class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 kjTmcB justify-end"
                         >
                           <button
                             class="OriginalButton__StyledButton-sc-1y2wptt-0 izJbbP"
@@ -1207,7 +1207,7 @@ exports[`SearchWallet uses fiat value = true should render with the default exch
           class="absolute top-0 right-0 z-10 mt-5 mr-5 rounded transition-all duration-100 ease-linear bg-theme-primary-100 dark:bg-theme-secondary-800 dark:text-theme-secondary-600 dark:hover:bg-theme-secondary-700 dark:hover:text-theme-secondary-400 hover:bg-theme-primary-300"
         >
           <button
-            class="w-11 h-11 OriginalButton__StyledButton-sc-1y2wptt-0 fNHPRi"
+            class="OriginalButton__StyledButton-sc-1y2wptt-0 fNHPRi w-11 h-11"
             data-testid="modal__close-btn"
             type="button"
           >
@@ -1246,7 +1246,7 @@ exports[`SearchWallet uses fiat value = true should render with the default exch
               class="mt-8"
             >
               <div
-                class="-mt-3 Table__TableWrapper-sc-84pst5-0 ccYCKK"
+                class="Table__TableWrapper-sc-84pst5-0 ccYCKK -mt-3"
                 role="table"
               >
                 <table
@@ -1259,7 +1259,7 @@ exports[`SearchWallet uses fiat value = true should render with the default exch
                       role="row"
                     >
                       <th
-                        class="relative p-3 m-0 text-sm font-semibold text-left select-none first:pl-0 last:pr-0 group text-theme-secondary-500 border-theme-secondary-300 hasBorder dark:text-theme-secondary-700 dark:border-theme-secondary-800"
+                        class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                         colspan="1"
                         data-testid="table__th--0"
                         role="columnheader"
@@ -1267,16 +1267,16 @@ exports[`SearchWallet uses fiat value = true should render with the default exch
                         title="Toggle SortBy"
                       >
                         <div
-                          class="flex align-top flex-inline"
+                          class="flex flex-inline align-top"
                         >
                           <div>
                             Wallet Address
                           </div>
                           <div
-                            class="flex items-center ml-2 opacity-0 transition-opacity group-hover:opacity-100 text-theme-secondary-500 dark:text-theme-secondary-700"
+                            class="flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity opacity-0 group-hover:opacity-100 ml-2"
                           >
                             <div
-                              class="transition-transform transform rotate-180 sc-bdfBwQ kJrqvM"
+                              class="sc-bdfBwQ kJrqvM transition-transform transform rotate-180"
                               height="5"
                               role="img"
                               width="8"
@@ -1289,7 +1289,7 @@ exports[`SearchWallet uses fiat value = true should render with the default exch
                         </div>
                       </th>
                       <th
-                        class="relative p-3 m-0 text-sm font-semibold text-left select-none first:pl-0 last:pr-0 group text-theme-secondary-500 border-theme-secondary-300 hasBorder dark:text-theme-secondary-700 dark:border-theme-secondary-800"
+                        class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                         colspan="1"
                         data-testid="table__th--1"
                         role="columnheader"
@@ -1297,16 +1297,16 @@ exports[`SearchWallet uses fiat value = true should render with the default exch
                         title="Toggle SortBy"
                       >
                         <div
-                          class="flex flex-row-reverse justify-end align-top flex-inline"
+                          class="flex flex-inline align-top justify-end flex-row-reverse"
                         >
                           <div>
                             Balance
                           </div>
                           <div
-                            class="flex items-center mr-2 ml-auto opacity-0 transition-opacity group-hover:opacity-100 text-theme-secondary-500 dark:text-theme-secondary-700"
+                            class="flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity opacity-0 group-hover:opacity-100 ml-auto mr-2"
                           >
                             <div
-                              class="transition-transform transform rotate-180 sc-bdfBwQ kJrqvM"
+                              class="sc-bdfBwQ kJrqvM transition-transform transform rotate-180"
                               height="5"
                               role="img"
                               width="8"
@@ -1319,7 +1319,7 @@ exports[`SearchWallet uses fiat value = true should render with the default exch
                         </div>
                       </th>
                       <th
-                        class="relative p-3 m-0 text-sm font-semibold text-left select-none first:pl-0 last:pr-0 group text-theme-secondary-500 border-theme-secondary-300 hasBorder dark:text-theme-secondary-700 dark:border-theme-secondary-800"
+                        class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                         colspan="1"
                         data-testid="table__th--2"
                         role="columnheader"
@@ -1327,16 +1327,16 @@ exports[`SearchWallet uses fiat value = true should render with the default exch
                         title="Toggle SortBy"
                       >
                         <div
-                          class="flex flex-row-reverse justify-end align-top flex-inline"
+                          class="flex flex-inline align-top justify-end flex-row-reverse"
                         >
                           <div>
                             Value
                           </div>
                           <div
-                            class="flex items-center mr-2 ml-auto opacity-0 transition-opacity group-hover:opacity-100 text-theme-secondary-500 dark:text-theme-secondary-700"
+                            class="flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity opacity-0 group-hover:opacity-100 ml-auto mr-2"
                           >
                             <div
-                              class="transition-transform transform rotate-180 sc-bdfBwQ kJrqvM"
+                              class="sc-bdfBwQ kJrqvM transition-transform transform rotate-180"
                               height="5"
                               role="img"
                               width="8"
@@ -1349,13 +1349,13 @@ exports[`SearchWallet uses fiat value = true should render with the default exch
                         </div>
                       </th>
                       <th
-                        class="relative p-3 m-0 text-sm font-semibold text-left select-none first:pl-0 last:pr-0 group text-theme-secondary-500 border-theme-secondary-300 hasBorder dark:text-theme-secondary-700 dark:border-theme-secondary-800"
+                        class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
                         colspan="1"
                         data-testid="table__th--3"
                         role="columnheader"
                       >
                         <div
-                          class="flex justify-end align-top flex-inline"
+                          class="flex flex-inline align-top justify-end"
                         >
                           <div>
                             <div
@@ -1404,7 +1404,7 @@ exports[`SearchWallet uses fiat value = true should render with the default exch
                     >
                       <td>
                         <div
-                          class="space-x-4 TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 DpDcR"
+                          class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 DpDcR space-x-4"
                         >
                           <div
                             class="flex-shrink-0 -space-x-2"
@@ -1426,11 +1426,11 @@ exports[`SearchWallet uses fiat value = true should render with the default exch
                               </div>
                             </div>
                             <div
-                              class="flex-shrink-0 Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB"
+                              class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB flex-shrink-0"
                               data-testid="Avatar"
                             >
                               <div
-                                class="inline-flex overflow-hidden justify-center items-center w-full h-full align-middle rounded-full"
+                                class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
                               >
                                 <img
                                   alt="D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD"
@@ -1444,7 +1444,7 @@ exports[`SearchWallet uses fiat value = true should render with the default exch
                             class="flex overflow-hidden flex-grow items-center space-x-2 whitespace-nowrap no-ligatures"
                           >
                             <span
-                              class="text-base font-semibold text-theme-text"
+                              class="font-semibold text-base text-theme-text"
                               data-testid="Address__alias"
                             >
                               <span
@@ -1455,7 +1455,7 @@ exports[`SearchWallet uses fiat value = true should render with the default exch
                               </span>
                             </span>
                             <span
-                              class="inline-flex overflow-hidden text-base font-semibold text-theme-secondary-500 dark:text-theme-secondary-700"
+                              class="inline-flex overflow-hidden text-theme-secondary-500 dark:text-theme-secondary-700 font-semibold text-base"
                               data-testid="Address__address"
                             >
                               D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD
@@ -1465,7 +1465,7 @@ exports[`SearchWallet uses fiat value = true should render with the default exch
                       </td>
                       <td>
                         <div
-                          class="justify-end font-semibold TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT"
+                          class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT font-semibold justify-end"
                         >
                           <span
                             data-testid="Amount"
@@ -1476,7 +1476,7 @@ exports[`SearchWallet uses fiat value = true should render with the default exch
                       </td>
                       <td>
                         <div
-                          class="justify-end TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT text-theme-secondary-400"
+                          class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT text-theme-secondary-400 justify-end"
                         >
                           <span
                             data-testid="Amount"
@@ -1487,7 +1487,7 @@ exports[`SearchWallet uses fiat value = true should render with the default exch
                       </td>
                       <td>
                         <div
-                          class="justify-end TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 kjTmcB"
+                          class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 kjTmcB justify-end"
                         >
                           <button
                             class="OriginalButton__StyledButton-sc-1y2wptt-0 izJbbP"
@@ -1509,7 +1509,7 @@ exports[`SearchWallet uses fiat value = true should render with the default exch
                     >
                       <td>
                         <div
-                          class="space-x-4 TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 DpDcR"
+                          class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 DpDcR space-x-4"
                         >
                           <div
                             class="flex-shrink-0 -space-x-2"
@@ -1531,11 +1531,11 @@ exports[`SearchWallet uses fiat value = true should render with the default exch
                               </div>
                             </div>
                             <div
-                              class="flex-shrink-0 Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB"
+                              class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB flex-shrink-0"
                               data-testid="Avatar"
                             >
                               <div
-                                class="inline-flex overflow-hidden justify-center items-center w-full h-full align-middle rounded-full"
+                                class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
                               >
                                 <img
                                   alt="D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb"
@@ -1549,7 +1549,7 @@ exports[`SearchWallet uses fiat value = true should render with the default exch
                             class="flex overflow-hidden flex-grow items-center space-x-2 whitespace-nowrap no-ligatures"
                           >
                             <span
-                              class="text-base font-semibold text-theme-text"
+                              class="font-semibold text-base text-theme-text"
                               data-testid="Address__alias"
                             >
                               <span
@@ -1560,7 +1560,7 @@ exports[`SearchWallet uses fiat value = true should render with the default exch
                               </span>
                             </span>
                             <span
-                              class="inline-flex overflow-hidden text-base font-semibold text-theme-secondary-500 dark:text-theme-secondary-700"
+                              class="inline-flex overflow-hidden text-theme-secondary-500 dark:text-theme-secondary-700 font-semibold text-base"
                               data-testid="Address__address"
                             >
                               D5sRKWckH4rE1hQ9eeMeHAepgyC3cvJtwb
@@ -1570,7 +1570,7 @@ exports[`SearchWallet uses fiat value = true should render with the default exch
                       </td>
                       <td>
                         <div
-                          class="justify-end font-semibold TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT"
+                          class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT font-semibold justify-end"
                         >
                           <span
                             data-testid="Amount"
@@ -1581,7 +1581,7 @@ exports[`SearchWallet uses fiat value = true should render with the default exch
                       </td>
                       <td>
                         <div
-                          class="justify-end TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT text-theme-secondary-400"
+                          class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT text-theme-secondary-400 justify-end"
                         >
                           <span
                             data-testid="Amount"
@@ -1592,7 +1592,7 @@ exports[`SearchWallet uses fiat value = true should render with the default exch
                       </td>
                       <td>
                         <div
-                          class="justify-end TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 kjTmcB"
+                          class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 kjTmcB justify-end"
                         >
                           <button
                             class="OriginalButton__StyledButton-sc-1y2wptt-0 izJbbP"
