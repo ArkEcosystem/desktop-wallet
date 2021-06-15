@@ -2,7 +2,7 @@ import { Contracts } from "@arkecosystem/platform-sdk-profiles";
 import React, { useMemo } from "react";
 import { NavLink } from "react-router-dom";
 
-export const renderMenu = (profile, menu) => {
+export const renderMenuLinks = (profile, menu) => {
 	if (!profile?.id()) {
 		return null;
 	}
