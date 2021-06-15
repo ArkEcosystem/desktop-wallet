@@ -7,7 +7,7 @@ import { RouteComponentProps } from "react-router";
 import { ItemProps } from "../SideBar";
 
 export const SideBarItem = withRouter(
-	({ label, icon, itemKey, route, isActive, history, handleActiveItem }: ItemProps & RouteComponentProps) => {
+	({ label, icon, itemKey, isActive, handleActiveItem }: ItemProps & RouteComponentProps) => {
 		const handleClick = () => {
 			handleActiveItem(itemKey);
 		};

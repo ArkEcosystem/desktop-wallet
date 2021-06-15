@@ -3,7 +3,7 @@ import { urlEncodeRootColor } from "./url-encode-root-color";
 describe("urlEncodeRootColor", () => {
 	Object.defineProperty(window, "getComputedStyle", {
 		value: () => ({
-			getPropertyValue: (prop: string) => "#123456",
+			getPropertyValue: () => "#123456",
 		}),
 	});
 

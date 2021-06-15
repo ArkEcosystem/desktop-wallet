@@ -10,7 +10,7 @@ exports[`ImportProfile should render first step 1`] = `
       class="NavigationBar__NavWrapper-sc-1qsoskw-0 jBDhtO"
     >
       <div
-        class="relative flex h-21"
+        class="flex relative h-21"
       >
         <div
           class="flex flex-1 px-8 ml-12"
@@ -91,7 +91,7 @@ exports[`ImportProfile should render first step 1`] = `
                     </div>
                   </div>
                   <div
-                    class="h-52 border-2 border-dashed rounded-lg mt-8 border-theme-secondary-300 dark:border-theme-secondary-800 p-2"
+                    class="p-2 mt-8 h-52 rounded-lg border-2 border-dashed border-theme-secondary-300 dark:border-theme-secondary-800"
                     data-testid="SelectFile"
                   >
                     <div
@@ -117,39 +117,39 @@ exports[`ImportProfile should render first step 1`] = `
                            
                         </span>
                         <button
-                          class="relative font-semibold cursor-pointer link focus:outline-none group"
+                          class="relative font-semibold cursor-pointer focus:outline-none link group"
                           data-testid="SelectFile__browse-files"
                           title="Click here to upload"
                           type="button"
                         >
                           <div
-                            class="absolute inset-0 -m-1 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                            class="absolute inset-0 -m-1 rounded group-focus-visible group-focus:ring-2 ring-theme-primary-400"
                           />
                           Browse Files
                         </button>
                       </div>
                       <div
-                        class="font-semibold text-theme-secondary-500 text-sm mt-2"
+                        class="mt-2 text-sm font-semibold text-theme-secondary-500"
                       >
                         Supported format is .dwe
                       </div>
                     </div>
                   </div>
                   <p
-                    class="mt-6 text-base text-theme-secondary-text text-center"
+                    class="mt-6 text-base text-center text-theme-secondary-text"
                   >
                     <span>
                       Importing from Desktop Wallet v2?
                        
                     </span>
                     <button
-                      class="relative font-semibold cursor-pointer link focus:outline-none group"
+                      class="relative font-semibold cursor-pointer focus:outline-none link group"
                       data-testid="SelectFileStep__change-file"
                       title="Click here."
                       type="button"
                     >
                       <div
-                        class="absolute inset-0 -m-1 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                        class="absolute inset-0 -m-1 rounded group-focus-visible group-focus:ring-2 ring-theme-primary-400"
                       />
                       Click here.
                     </button>

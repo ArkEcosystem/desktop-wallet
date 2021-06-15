@@ -53,7 +53,7 @@ export const FilterNetwork = ({
 			<NetworkOptions networks={networkList} onClick={handleClick} />
 
 			{showAll && networkList.length > 1 && (
-				<label className="mt-4 inline-flex items-center space-x-3 text-theme-secondary-text cursor-pointer">
+				<label className="inline-flex items-center mt-4 space-x-3 cursor-pointer text-theme-secondary-text">
 					<Checkbox
 						data-testid="FilterNetwork__select-all-checkbox"
 						checked={networkList.every((n) => n.isSelected)}

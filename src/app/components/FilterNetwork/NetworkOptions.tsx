@@ -26,7 +26,7 @@ export const NetworkOption = ({ coin, id, name, isSelected, onClick }: Network) 
 				) : (
 					<Circle
 						size="lg"
-						className="relative border-theme-secondary-300 dark:border-theme-secondary-800 text-theme-secondary-300"
+						className="relative border-theme-secondary-300 text-theme-secondary-300 dark:border-theme-secondary-800"
 					>
 						<Icon name={iconName} width={20} height={20} />
 						<Badge className="border-theme-secondary-300 dark:border-theme-secondary-800" />

@@ -238,7 +238,7 @@ export const ImportProfileForm = ({
 		<div className="mx-auto max-w-xl">
 			<Header title={t("PROFILE.IMPORT.TITLE")} subtitle={t("PROFILE.IMPORT.FORM_STEP.DESCRIPTION")} />
 
-			<div className="px-10 pt-8 pb-10 mt-10 rounded-lg border bg-theme-background border-theme-secondary-300 dark:border-theme-secondary-800 flex flex-col">
+			<div className="flex flex-col px-10 pt-8 pb-10 mt-10 rounded-lg border bg-theme-background border-theme-secondary-300 dark:border-theme-secondary-800">
 				<div>
 					<FilePreview file={file} variant="success" useBorders={false} />
 				</div>

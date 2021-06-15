@@ -72,7 +72,7 @@ export const WalletsControls = memo(
 										isChanged={filterProperties.isFilterChanged}
 										disabled={filterProperties.disabled}
 									>
-										<div className="flex items-center justify-center w-5 h-5">
+										<div className="flex justify-center items-center w-5 h-5">
 											<Icon name="Filters" width={17} height={19} />
 										</div>
 									</ControlButton>

@@ -46,7 +46,7 @@ const JsonForm = () => {
 				<FormLabel label={t("WALLETS.MODAL_VERIFY_MESSAGE.JSON_STRING")} />
 				<TextArea
 					data-testid="VerifyMessage__json-jsonString"
-					className="h-32 py-4"
+					className="py-4 h-32"
 					placeholder={'{"signatory": "...", "signature": "...", "message": "..."}'}
 					onChange={(event: ChangeEvent<HTMLInputElement>) =>
 						setValue("jsonString", event.target.value, {

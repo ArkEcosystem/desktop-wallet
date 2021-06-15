@@ -25,18 +25,18 @@ export const BlankPluginCard = ({ name, category }: { name?: string; category?: 
 	return (
 		<Card>
 			<div className="flex items-center space-x-4">
-				<div className="h-25 w-25 rounded-xl border-2 border-theme-primary-100 dark:border-theme-secondary-800" />
+				<div className="rounded-xl border-2 h-25 w-25 border-theme-primary-100 dark:border-theme-secondary-800" />
 				<div className="flex flex-col truncate">
-					<span className="text-sm font-semibold text-theme-primary-100 dark:text-theme-secondary-800 truncate">
+					<span className="text-sm font-semibold text-theme-primary-100 truncate dark:text-theme-secondary-800">
 						{t("COMMON.AUTHOR")}
 					</span>
 
-					<div className="mt-1 text-lg font-bold text-theme-primary-100 dark:text-theme-secondary-800 truncate">
+					<div className="mt-1 text-lg font-bold text-theme-primary-100 truncate dark:text-theme-secondary-800">
 						{name || t("COMMON.NAME")}
 					</div>
 
 					{category && (
-						<div className="flex items-center space-x-2 mt-4 text-theme-primary-100 dark:text-theme-secondary-800">
+						<div className="flex items-center mt-4 space-x-2 text-theme-primary-100 dark:text-theme-secondary-800">
 							<Icon name="Category" width={20} height={20} />
 
 							<span className="text-sm font-semibold">
@@ -130,7 +130,7 @@ export const PluginCard = ({
 				}
 			>
 				<div className="flex items-center space-x-4">
-					<div className="flex-shrink-0 w-25 h-25 overflow-hidden rounded-lg">
+					<div className="overflow-hidden flex-shrink-0 rounded-lg w-25 h-25">
 						<PluginImage
 							logoURL={plugin.logo}
 							isUpdating={isUpdating}
@@ -143,7 +143,7 @@ export const PluginCard = ({
 							{plugin.author}
 						</span>
 
-						<div className="flex items-center space-x-2 mt-1 text-lg font-bold truncate text-theme-primary-600 dark:text-theme-secondary-200">
+						<div className="flex items-center mt-1 space-x-2 text-lg font-bold truncate text-theme-primary-600 dark:text-theme-secondary-200">
 							<div className="truncate">{plugin.title}</div>
 
 							<span>
@@ -153,7 +153,7 @@ export const PluginCard = ({
 						</div>
 
 						{showCategory && (
-							<div className="flex items-center space-x-2 mt-4 dark:text-theme-secondary-600">
+							<div className="flex items-center mt-4 space-x-2 dark:text-theme-secondary-600">
 								<Icon name="Category" width={20} height={20} />
 
 								<span className="text-sm font-semibold">

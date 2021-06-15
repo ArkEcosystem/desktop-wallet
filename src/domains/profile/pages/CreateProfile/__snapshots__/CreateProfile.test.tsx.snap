@@ -10,7 +10,7 @@ exports[`CreateProfile should fail password confirmation 1`] = `
       class="NavigationBar__NavWrapper-sc-1qsoskw-0 jBDhtO"
     >
       <div
-        class="relative flex h-21"
+        class="flex relative h-21"
       >
         <div
           class="flex flex-1 px-8 ml-12"
@@ -40,13 +40,13 @@ exports[`CreateProfile should fail password confirmation 1`] = `
       class="flex flex-col flex-1"
     >
       <div
-        class="Section__SectionWrapper-sc-8cjvre-0 kJTPww flex flex-col justify-center flex-1"
+        class="Section__SectionWrapper-sc-8cjvre-0 kJTPww flex flex-col flex-1 justify-center"
       >
         <div
           class="container px-10 mx-auto"
         >
           <div
-            class="max-w-lg mx-auto"
+            class="mx-auto max-w-lg"
           >
             <div
               class="flex justify-between items-end bg-theme-background"
@@ -69,17 +69,17 @@ exports[`CreateProfile should fail password confirmation 1`] = `
               </div>
             </div>
             <form
-              class="p-10 mt-10 border rounded-lg bg-theme-background border-theme-secondary-300 dark:border-theme-secondary-800"
+              class="p-10 mt-10 rounded-lg border bg-theme-background border-theme-secondary-300 dark:border-theme-secondary-800"
               data-testid="CreateProfile__form"
             >
               <div
                 class="relative space-y-5"
               >
                 <div
-                  class="flex items-end justify-between"
+                  class="flex justify-between items-end"
                 >
                   <div
-                    class="w-full mr-6"
+                    class="mr-6 w-full"
                   >
                     <fieldset
                       class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
@@ -119,7 +119,7 @@ exports[`CreateProfile should fail password confirmation 1`] = `
                       class="flex flex-row"
                     >
                       <div
-                        class="p-1 w-20 h-20 rounded-md border-2 border-dashed border-theme-secondary-400 dark:border-theme-secondary-700 focus-within:border-solid focus-within:border-theme-primary-400"
+                        class="p-1 w-20 h-20 rounded-md border-2 border-dashed focus-within:border-solid border-theme-secondary-400 dark:border-theme-secondary-700 focus-within:border-theme-primary-400"
                       >
                         <div
                           class="overflow-hidden h-full rounded-full"
@@ -194,12 +194,12 @@ exports[`CreateProfile should fail password confirmation 1`] = `
                         class=""
                       >
                         <button
-                          class="relative flex items-center justify-center w-full h-full text-2xl focus:outline-none group"
+                          class="flex relative justify-center items-center w-full h-full text-2xl focus:outline-none group"
                           data-testid="InputPassword__toggle"
                           type="button"
                         >
                           <div
-                            class="absolute inset-0 -m-1 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                            class="absolute inset-0 -m-1 rounded group-focus-visible group-focus:ring-2 ring-theme-primary-400"
                           />
                           <div
                             class="sc-bdfBwQ fPrsah"
@@ -266,12 +266,12 @@ exports[`CreateProfile should fail password confirmation 1`] = `
                         class="pl-3"
                       >
                         <button
-                          class="relative flex items-center justify-center w-full h-full text-2xl focus:outline-none group"
+                          class="flex relative justify-center items-center w-full h-full text-2xl focus:outline-none group"
                           data-testid="InputPassword__toggle"
                           type="button"
                         >
                           <div
-                            class="absolute inset-0 -m-1 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                            class="absolute inset-0 -m-1 rounded group-focus-visible group-focus:ring-2 ring-theme-primary-400"
                           />
                           <div
                             class="sc-bdfBwQ fPrsah"
@@ -376,7 +376,7 @@ exports[`CreateProfile should fail password confirmation 1`] = `
                               class=""
                             >
                               <div
-                                class="py-2 px-1 flex items-center justify-center"
+                                class="flex justify-center items-center py-2 px-1"
                                 data-testid="SelectDropdown__caret"
                               >
                                 <div
@@ -744,7 +744,7 @@ exports[`CreateProfile should not be able to create new profile if name already 
       class="NavigationBar__NavWrapper-sc-1qsoskw-0 jBDhtO"
     >
       <div
-        class="relative flex h-21"
+        class="flex relative h-21"
       >
         <div
           class="flex flex-1 px-8 ml-12"
@@ -774,13 +774,13 @@ exports[`CreateProfile should not be able to create new profile if name already 
       class="flex flex-col flex-1"
     >
       <div
-        class="Section__SectionWrapper-sc-8cjvre-0 kJTPww flex flex-col justify-center flex-1"
+        class="Section__SectionWrapper-sc-8cjvre-0 kJTPww flex flex-col flex-1 justify-center"
       >
         <div
           class="container px-10 mx-auto"
         >
           <div
-            class="max-w-lg mx-auto"
+            class="mx-auto max-w-lg"
           >
             <div
               class="flex justify-between items-end bg-theme-background"
@@ -803,17 +803,17 @@ exports[`CreateProfile should not be able to create new profile if name already 
               </div>
             </div>
             <form
-              class="p-10 mt-10 border rounded-lg bg-theme-background border-theme-secondary-300 dark:border-theme-secondary-800"
+              class="p-10 mt-10 rounded-lg border bg-theme-background border-theme-secondary-300 dark:border-theme-secondary-800"
               data-testid="CreateProfile__form"
             >
               <div
                 class="relative space-y-5"
               >
                 <div
-                  class="flex items-end justify-between"
+                  class="flex justify-between items-end"
                 >
                   <div
-                    class="w-full mr-6"
+                    class="mr-6 w-full"
                   >
                     <fieldset
                       class="FormField__FormFieldStyled-yeauwd-0 qzrKg flex flex-col space-y-2"
@@ -872,7 +872,7 @@ exports[`CreateProfile should not be able to create new profile if name already 
                       class="flex flex-row"
                     >
                       <div
-                        class="p-1 w-20 h-20 rounded-md border-2 border-dashed border-theme-secondary-400 dark:border-theme-secondary-700 focus-within:border-solid focus-within:border-theme-primary-400"
+                        class="p-1 w-20 h-20 rounded-md border-2 border-dashed focus-within:border-solid border-theme-secondary-400 dark:border-theme-secondary-700 focus-within:border-theme-primary-400"
                       >
                         <div
                           class="overflow-hidden h-full rounded-full"
@@ -947,12 +947,12 @@ exports[`CreateProfile should not be able to create new profile if name already 
                         class=""
                       >
                         <button
-                          class="relative flex items-center justify-center w-full h-full text-2xl focus:outline-none group"
+                          class="flex relative justify-center items-center w-full h-full text-2xl focus:outline-none group"
                           data-testid="InputPassword__toggle"
                           type="button"
                         >
                           <div
-                            class="absolute inset-0 -m-1 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                            class="absolute inset-0 -m-1 rounded group-focus-visible group-focus:ring-2 ring-theme-primary-400"
                           />
                           <div
                             class="sc-bdfBwQ fPrsah"
@@ -1010,12 +1010,12 @@ exports[`CreateProfile should not be able to create new profile if name already 
                         class=""
                       >
                         <button
-                          class="relative flex items-center justify-center w-full h-full text-2xl focus:outline-none group"
+                          class="flex relative justify-center items-center w-full h-full text-2xl focus:outline-none group"
                           data-testid="InputPassword__toggle"
                           type="button"
                         >
                           <div
-                            class="absolute inset-0 -m-1 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                            class="absolute inset-0 -m-1 rounded group-focus-visible group-focus:ring-2 ring-theme-primary-400"
                           />
                           <div
                             class="sc-bdfBwQ fPrsah"
@@ -1120,7 +1120,7 @@ exports[`CreateProfile should not be able to create new profile if name already 
                               class=""
                             >
                               <div
-                                class="py-2 px-1 flex items-center justify-center"
+                                class="flex justify-center items-center py-2 px-1"
                                 data-testid="SelectDropdown__caret"
                               >
                                 <div
@@ -1488,7 +1488,7 @@ exports[`CreateProfile should not be able to create new profile if name consists
       class="NavigationBar__NavWrapper-sc-1qsoskw-0 jBDhtO"
     >
       <div
-        class="relative flex h-21"
+        class="flex relative h-21"
       >
         <div
           class="flex flex-1 px-8 ml-12"
@@ -1518,13 +1518,13 @@ exports[`CreateProfile should not be able to create new profile if name consists
       class="flex flex-col flex-1"
     >
       <div
-        class="Section__SectionWrapper-sc-8cjvre-0 kJTPww flex flex-col justify-center flex-1"
+        class="Section__SectionWrapper-sc-8cjvre-0 kJTPww flex flex-col flex-1 justify-center"
       >
         <div
           class="container px-10 mx-auto"
         >
           <div
-            class="max-w-lg mx-auto"
+            class="mx-auto max-w-lg"
           >
             <div
               class="flex justify-between items-end bg-theme-background"
@@ -1547,17 +1547,17 @@ exports[`CreateProfile should not be able to create new profile if name consists
               </div>
             </div>
             <form
-              class="p-10 mt-10 border rounded-lg bg-theme-background border-theme-secondary-300 dark:border-theme-secondary-800"
+              class="p-10 mt-10 rounded-lg border bg-theme-background border-theme-secondary-300 dark:border-theme-secondary-800"
               data-testid="CreateProfile__form"
             >
               <div
                 class="relative space-y-5"
               >
                 <div
-                  class="flex items-end justify-between"
+                  class="flex justify-between items-end"
                 >
                   <div
-                    class="w-full mr-6"
+                    class="mr-6 w-full"
                   >
                     <fieldset
                       class="FormField__FormFieldStyled-yeauwd-0 qzrKg flex flex-col space-y-2"
@@ -1616,7 +1616,7 @@ exports[`CreateProfile should not be able to create new profile if name consists
                       class="flex flex-row"
                     >
                       <div
-                        class="p-1 w-20 h-20 rounded-md border-2 border-dashed border-theme-secondary-400 dark:border-theme-secondary-700 focus-within:border-solid focus-within:border-theme-primary-400"
+                        class="p-1 w-20 h-20 rounded-md border-2 border-dashed focus-within:border-solid border-theme-secondary-400 dark:border-theme-secondary-700 focus-within:border-theme-primary-400"
                       >
                         <div
                           class="overflow-hidden h-full rounded-full"
@@ -1691,12 +1691,12 @@ exports[`CreateProfile should not be able to create new profile if name consists
                         class=""
                       >
                         <button
-                          class="relative flex items-center justify-center w-full h-full text-2xl focus:outline-none group"
+                          class="flex relative justify-center items-center w-full h-full text-2xl focus:outline-none group"
                           data-testid="InputPassword__toggle"
                           type="button"
                         >
                           <div
-                            class="absolute inset-0 -m-1 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                            class="absolute inset-0 -m-1 rounded group-focus-visible group-focus:ring-2 ring-theme-primary-400"
                           />
                           <div
                             class="sc-bdfBwQ fPrsah"
@@ -1754,12 +1754,12 @@ exports[`CreateProfile should not be able to create new profile if name consists
                         class=""
                       >
                         <button
-                          class="relative flex items-center justify-center w-full h-full text-2xl focus:outline-none group"
+                          class="flex relative justify-center items-center w-full h-full text-2xl focus:outline-none group"
                           data-testid="InputPassword__toggle"
                           type="button"
                         >
                           <div
-                            class="absolute inset-0 -m-1 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                            class="absolute inset-0 -m-1 rounded group-focus-visible group-focus:ring-2 ring-theme-primary-400"
                           />
                           <div
                             class="sc-bdfBwQ fPrsah"
@@ -1864,7 +1864,7 @@ exports[`CreateProfile should not be able to create new profile if name consists
                               class=""
                             >
                               <div
-                                class="py-2 px-1 flex items-center justify-center"
+                                class="flex justify-center items-center py-2 px-1"
                                 data-testid="SelectDropdown__caret"
                               >
                                 <div
@@ -2232,7 +2232,7 @@ exports[`CreateProfile should not be able to create new profile if name is too l
       class="NavigationBar__NavWrapper-sc-1qsoskw-0 jBDhtO"
     >
       <div
-        class="relative flex h-21"
+        class="flex relative h-21"
       >
         <div
           class="flex flex-1 px-8 ml-12"
@@ -2262,13 +2262,13 @@ exports[`CreateProfile should not be able to create new profile if name is too l
       class="flex flex-col flex-1"
     >
       <div
-        class="Section__SectionWrapper-sc-8cjvre-0 kJTPww flex flex-col justify-center flex-1"
+        class="Section__SectionWrapper-sc-8cjvre-0 kJTPww flex flex-col flex-1 justify-center"
       >
         <div
           class="container px-10 mx-auto"
         >
           <div
-            class="max-w-lg mx-auto"
+            class="mx-auto max-w-lg"
           >
             <div
               class="flex justify-between items-end bg-theme-background"
@@ -2291,17 +2291,17 @@ exports[`CreateProfile should not be able to create new profile if name is too l
               </div>
             </div>
             <form
-              class="p-10 mt-10 border rounded-lg bg-theme-background border-theme-secondary-300 dark:border-theme-secondary-800"
+              class="p-10 mt-10 rounded-lg border bg-theme-background border-theme-secondary-300 dark:border-theme-secondary-800"
               data-testid="CreateProfile__form"
             >
               <div
                 class="relative space-y-5"
               >
                 <div
-                  class="flex items-end justify-between"
+                  class="flex justify-between items-end"
                 >
                   <div
-                    class="w-full mr-6"
+                    class="mr-6 w-full"
                   >
                     <fieldset
                       class="FormField__FormFieldStyled-yeauwd-0 qzrKg flex flex-col space-y-2"
@@ -2360,7 +2360,7 @@ exports[`CreateProfile should not be able to create new profile if name is too l
                       class="flex flex-row"
                     >
                       <div
-                        class="p-1 w-20 h-20 rounded-md border-2 border-dashed border-theme-secondary-400 dark:border-theme-secondary-700 focus-within:border-solid focus-within:border-theme-primary-400"
+                        class="p-1 w-20 h-20 rounded-md border-2 border-dashed focus-within:border-solid border-theme-secondary-400 dark:border-theme-secondary-700 focus-within:border-theme-primary-400"
                       >
                         <div
                           class="overflow-hidden h-full rounded-full"
@@ -2435,12 +2435,12 @@ exports[`CreateProfile should not be able to create new profile if name is too l
                         class=""
                       >
                         <button
-                          class="relative flex items-center justify-center w-full h-full text-2xl focus:outline-none group"
+                          class="flex relative justify-center items-center w-full h-full text-2xl focus:outline-none group"
                           data-testid="InputPassword__toggle"
                           type="button"
                         >
                           <div
-                            class="absolute inset-0 -m-1 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                            class="absolute inset-0 -m-1 rounded group-focus-visible group-focus:ring-2 ring-theme-primary-400"
                           />
                           <div
                             class="sc-bdfBwQ fPrsah"
@@ -2498,12 +2498,12 @@ exports[`CreateProfile should not be able to create new profile if name is too l
                         class=""
                       >
                         <button
-                          class="relative flex items-center justify-center w-full h-full text-2xl focus:outline-none group"
+                          class="flex relative justify-center items-center w-full h-full text-2xl focus:outline-none group"
                           data-testid="InputPassword__toggle"
                           type="button"
                         >
                           <div
-                            class="absolute inset-0 -m-1 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                            class="absolute inset-0 -m-1 rounded group-focus-visible group-focus:ring-2 ring-theme-primary-400"
                           />
                           <div
                             class="sc-bdfBwQ fPrsah"
@@ -2608,7 +2608,7 @@ exports[`CreateProfile should not be able to create new profile if name is too l
                               class=""
                             >
                               <div
-                                class="py-2 px-1 flex items-center justify-center"
+                                class="flex justify-center items-center py-2 px-1"
                                 data-testid="SelectDropdown__caret"
                               >
                                 <div
@@ -2976,7 +2976,7 @@ exports[`CreateProfile should not update the uploaded avatar when removing focus
       class="NavigationBar__NavWrapper-sc-1qsoskw-0 jBDhtO"
     >
       <div
-        class="relative flex h-21"
+        class="flex relative h-21"
       >
         <div
           class="flex flex-1 px-8 ml-12"
@@ -3006,13 +3006,13 @@ exports[`CreateProfile should not update the uploaded avatar when removing focus
       class="flex flex-col flex-1"
     >
       <div
-        class="Section__SectionWrapper-sc-8cjvre-0 kJTPww flex flex-col justify-center flex-1"
+        class="Section__SectionWrapper-sc-8cjvre-0 kJTPww flex flex-col flex-1 justify-center"
       >
         <div
           class="container px-10 mx-auto"
         >
           <div
-            class="max-w-lg mx-auto"
+            class="mx-auto max-w-lg"
           >
             <div
               class="flex justify-between items-end bg-theme-background"
@@ -3035,17 +3035,17 @@ exports[`CreateProfile should not update the uploaded avatar when removing focus
               </div>
             </div>
             <form
-              class="p-10 mt-10 border rounded-lg bg-theme-background border-theme-secondary-300 dark:border-theme-secondary-800"
+              class="p-10 mt-10 rounded-lg border bg-theme-background border-theme-secondary-300 dark:border-theme-secondary-800"
               data-testid="CreateProfile__form"
             >
               <div
                 class="relative space-y-5"
               >
                 <div
-                  class="flex items-end justify-between"
+                  class="flex justify-between items-end"
                 >
                   <div
-                    class="w-full mr-6"
+                    class="mr-6 w-full"
                   >
                     <fieldset
                       class="FormField__FormFieldStyled-yeauwd-0 qzrKg flex flex-col space-y-2"
@@ -3116,12 +3116,12 @@ exports[`CreateProfile should not update the uploaded avatar when removing focus
                             src="data:image/png;base64,dGVzdCBtbmVtb25pYw=="
                           />
                           <button
-                            class="opacity-0 absolute w-full h-full p-1 z-50 transition-opacity	duration-200 overflow-hidden upload-button-overlay focus:outline-none"
+                            class="overflow-hidden absolute z-50 p-1 w-full h-full opacity-0 transition-opacity duration-200 focus:outline-none upload-button-overlay"
                             data-testid="SelectProfileImage__upload-button"
                             type="button"
                           >
                             <div
-                              class="flex justify-center items-center h-full rounded-full bg-theme-secondary-900 dark:bg-black opacity-85"
+                              class="flex justify-center items-center h-full rounded-full dark:bg-black bg-theme-secondary-900 opacity-85"
                             >
                               <div
                                 class="sc-bdfBwQ cdgnVS text-white dark:text-theme-secondary-200"
@@ -3200,12 +3200,12 @@ exports[`CreateProfile should not update the uploaded avatar when removing focus
                         class=""
                       >
                         <button
-                          class="relative flex items-center justify-center w-full h-full text-2xl focus:outline-none group"
+                          class="flex relative justify-center items-center w-full h-full text-2xl focus:outline-none group"
                           data-testid="InputPassword__toggle"
                           type="button"
                         >
                           <div
-                            class="absolute inset-0 -m-1 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                            class="absolute inset-0 -m-1 rounded group-focus-visible group-focus:ring-2 ring-theme-primary-400"
                           />
                           <div
                             class="sc-bdfBwQ fPrsah"
@@ -3263,12 +3263,12 @@ exports[`CreateProfile should not update the uploaded avatar when removing focus
                         class=""
                       >
                         <button
-                          class="relative flex items-center justify-center w-full h-full text-2xl focus:outline-none group"
+                          class="flex relative justify-center items-center w-full h-full text-2xl focus:outline-none group"
                           data-testid="InputPassword__toggle"
                           type="button"
                         >
                           <div
-                            class="absolute inset-0 -m-1 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                            class="absolute inset-0 -m-1 rounded group-focus-visible group-focus:ring-2 ring-theme-primary-400"
                           />
                           <div
                             class="sc-bdfBwQ fPrsah"
@@ -3362,7 +3362,7 @@ exports[`CreateProfile should not update the uploaded avatar when removing focus
                               class=""
                             >
                               <div
-                                class="py-2 px-1 flex items-center justify-center"
+                                class="flex justify-center items-center py-2 px-1"
                                 data-testid="SelectDropdown__caret"
                               >
                                 <div
@@ -3495,7 +3495,7 @@ exports[`CreateProfile should not upload avatar image 1`] = `
       class="NavigationBar__NavWrapper-sc-1qsoskw-0 jBDhtO"
     >
       <div
-        class="relative flex h-21"
+        class="flex relative h-21"
       >
         <div
           class="flex flex-1 px-8 ml-12"
@@ -3525,13 +3525,13 @@ exports[`CreateProfile should not upload avatar image 1`] = `
       class="flex flex-col flex-1"
     >
       <div
-        class="Section__SectionWrapper-sc-8cjvre-0 kJTPww flex flex-col justify-center flex-1"
+        class="Section__SectionWrapper-sc-8cjvre-0 kJTPww flex flex-col flex-1 justify-center"
       >
         <div
           class="container px-10 mx-auto"
         >
           <div
-            class="max-w-lg mx-auto"
+            class="mx-auto max-w-lg"
           >
             <div
               class="flex justify-between items-end bg-theme-background"
@@ -3554,17 +3554,17 @@ exports[`CreateProfile should not upload avatar image 1`] = `
               </div>
             </div>
             <form
-              class="p-10 mt-10 border rounded-lg bg-theme-background border-theme-secondary-300 dark:border-theme-secondary-800"
+              class="p-10 mt-10 rounded-lg border bg-theme-background border-theme-secondary-300 dark:border-theme-secondary-800"
               data-testid="CreateProfile__form"
             >
               <div
                 class="relative space-y-5"
               >
                 <div
-                  class="flex items-end justify-between"
+                  class="flex justify-between items-end"
                 >
                   <div
-                    class="w-full mr-6"
+                    class="mr-6 w-full"
                   >
                     <fieldset
                       class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
@@ -3604,7 +3604,7 @@ exports[`CreateProfile should not upload avatar image 1`] = `
                       class="flex flex-row"
                     >
                       <div
-                        class="p-1 w-20 h-20 rounded-md border-2 border-dashed border-theme-secondary-400 dark:border-theme-secondary-700 focus-within:border-solid focus-within:border-theme-primary-400"
+                        class="p-1 w-20 h-20 rounded-md border-2 border-dashed focus-within:border-solid border-theme-secondary-400 dark:border-theme-secondary-700 focus-within:border-theme-primary-400"
                       >
                         <div
                           class="overflow-hidden h-full rounded-full"
@@ -3679,12 +3679,12 @@ exports[`CreateProfile should not upload avatar image 1`] = `
                         class=""
                       >
                         <button
-                          class="relative flex items-center justify-center w-full h-full text-2xl focus:outline-none group"
+                          class="flex relative justify-center items-center w-full h-full text-2xl focus:outline-none group"
                           data-testid="InputPassword__toggle"
                           type="button"
                         >
                           <div
-                            class="absolute inset-0 -m-1 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                            class="absolute inset-0 -m-1 rounded group-focus-visible group-focus:ring-2 ring-theme-primary-400"
                           />
                           <div
                             class="sc-bdfBwQ fPrsah"
@@ -3742,12 +3742,12 @@ exports[`CreateProfile should not upload avatar image 1`] = `
                         class=""
                       >
                         <button
-                          class="relative flex items-center justify-center w-full h-full text-2xl focus:outline-none group"
+                          class="flex relative justify-center items-center w-full h-full text-2xl focus:outline-none group"
                           data-testid="InputPassword__toggle"
                           type="button"
                         >
                           <div
-                            class="absolute inset-0 -m-1 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                            class="absolute inset-0 -m-1 rounded group-focus-visible group-focus:ring-2 ring-theme-primary-400"
                           />
                           <div
                             class="sc-bdfBwQ fPrsah"
@@ -3852,7 +3852,7 @@ exports[`CreateProfile should not upload avatar image 1`] = `
                               class=""
                             >
                               <div
-                                class="py-2 px-1 flex items-center justify-center"
+                                class="flex justify-center items-center py-2 px-1"
                                 data-testid="SelectDropdown__caret"
                               >
                                 <div
@@ -4219,7 +4219,7 @@ exports[`CreateProfile should render 1`] = `
       class="NavigationBar__NavWrapper-sc-1qsoskw-0 jBDhtO"
     >
       <div
-        class="relative flex h-21"
+        class="flex relative h-21"
       >
         <div
           class="flex flex-1 px-8 ml-12"
@@ -4249,13 +4249,13 @@ exports[`CreateProfile should render 1`] = `
       class="flex flex-col flex-1"
     >
       <div
-        class="Section__SectionWrapper-sc-8cjvre-0 kJTPww flex flex-col justify-center flex-1"
+        class="Section__SectionWrapper-sc-8cjvre-0 kJTPww flex flex-col flex-1 justify-center"
       >
         <div
           class="container px-10 mx-auto"
         >
           <div
-            class="max-w-lg mx-auto"
+            class="mx-auto max-w-lg"
           >
             <div
               class="flex justify-between items-end bg-theme-background"
@@ -4278,17 +4278,17 @@ exports[`CreateProfile should render 1`] = `
               </div>
             </div>
             <form
-              class="p-10 mt-10 border rounded-lg bg-theme-background border-theme-secondary-300 dark:border-theme-secondary-800"
+              class="p-10 mt-10 rounded-lg border bg-theme-background border-theme-secondary-300 dark:border-theme-secondary-800"
               data-testid="CreateProfile__form"
             >
               <div
                 class="relative space-y-5"
               >
                 <div
-                  class="flex items-end justify-between"
+                  class="flex justify-between items-end"
                 >
                   <div
-                    class="w-full mr-6"
+                    class="mr-6 w-full"
                   >
                     <fieldset
                       class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
@@ -4328,7 +4328,7 @@ exports[`CreateProfile should render 1`] = `
                       class="flex flex-row"
                     >
                       <div
-                        class="p-1 w-20 h-20 rounded-md border-2 border-dashed border-theme-secondary-400 dark:border-theme-secondary-700 focus-within:border-solid focus-within:border-theme-primary-400"
+                        class="p-1 w-20 h-20 rounded-md border-2 border-dashed focus-within:border-solid border-theme-secondary-400 dark:border-theme-secondary-700 focus-within:border-theme-primary-400"
                       >
                         <div
                           class="overflow-hidden h-full rounded-full"
@@ -4403,12 +4403,12 @@ exports[`CreateProfile should render 1`] = `
                         class=""
                       >
                         <button
-                          class="relative flex items-center justify-center w-full h-full text-2xl focus:outline-none group"
+                          class="flex relative justify-center items-center w-full h-full text-2xl focus:outline-none group"
                           data-testid="InputPassword__toggle"
                           type="button"
                         >
                           <div
-                            class="absolute inset-0 -m-1 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                            class="absolute inset-0 -m-1 rounded group-focus-visible group-focus:ring-2 ring-theme-primary-400"
                           />
                           <div
                             class="sc-bdfBwQ fPrsah"
@@ -4466,12 +4466,12 @@ exports[`CreateProfile should render 1`] = `
                         class=""
                       >
                         <button
-                          class="relative flex items-center justify-center w-full h-full text-2xl focus:outline-none group"
+                          class="flex relative justify-center items-center w-full h-full text-2xl focus:outline-none group"
                           data-testid="InputPassword__toggle"
                           type="button"
                         >
                           <div
-                            class="absolute inset-0 -m-1 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                            class="absolute inset-0 -m-1 rounded group-focus-visible group-focus:ring-2 ring-theme-primary-400"
                           />
                           <div
                             class="sc-bdfBwQ fPrsah"
@@ -4565,7 +4565,7 @@ exports[`CreateProfile should render 1`] = `
                               class=""
                             >
                               <div
-                                class="py-2 px-1 flex items-center justify-center"
+                                class="flex justify-center items-center py-2 px-1"
                                 data-testid="SelectDropdown__caret"
                               >
                                 <div
@@ -4698,7 +4698,7 @@ exports[`CreateProfile should store profile 1`] = `
       class="NavigationBar__NavWrapper-sc-1qsoskw-0 jBDhtO"
     >
       <div
-        class="relative flex h-21"
+        class="flex relative h-21"
       >
         <div
           class="flex flex-1 px-8 ml-12"
@@ -4728,13 +4728,13 @@ exports[`CreateProfile should store profile 1`] = `
       class="flex flex-col flex-1"
     >
       <div
-        class="Section__SectionWrapper-sc-8cjvre-0 kJTPww flex flex-col justify-center flex-1"
+        class="Section__SectionWrapper-sc-8cjvre-0 kJTPww flex flex-col flex-1 justify-center"
       >
         <div
           class="container px-10 mx-auto"
         >
           <div
-            class="max-w-lg mx-auto"
+            class="mx-auto max-w-lg"
           >
             <div
               class="flex justify-between items-end bg-theme-background"
@@ -4757,17 +4757,17 @@ exports[`CreateProfile should store profile 1`] = `
               </div>
             </div>
             <form
-              class="p-10 mt-10 border rounded-lg bg-theme-background border-theme-secondary-300 dark:border-theme-secondary-800"
+              class="p-10 mt-10 rounded-lg border bg-theme-background border-theme-secondary-300 dark:border-theme-secondary-800"
               data-testid="CreateProfile__form"
             >
               <div
                 class="relative space-y-5"
               >
                 <div
-                  class="flex items-end justify-between"
+                  class="flex justify-between items-end"
                 >
                   <div
-                    class="w-full mr-6"
+                    class="mr-6 w-full"
                   >
                     <fieldset
                       class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
@@ -4819,12 +4819,12 @@ exports[`CreateProfile should store profile 1`] = `
                             src="data:image/png;base64,dGVzdCBtbmVtb25pYw=="
                           />
                           <button
-                            class="opacity-0 absolute w-full h-full p-1 z-50 transition-opacity	duration-200 overflow-hidden upload-button-overlay focus:outline-none"
+                            class="overflow-hidden absolute z-50 p-1 w-full h-full opacity-0 transition-opacity duration-200 focus:outline-none upload-button-overlay"
                             data-testid="SelectProfileImage__upload-button"
                             type="button"
                           >
                             <div
-                              class="flex justify-center items-center h-full rounded-full bg-theme-secondary-900 dark:bg-black opacity-85"
+                              class="flex justify-center items-center h-full rounded-full dark:bg-black bg-theme-secondary-900 opacity-85"
                             >
                               <div
                                 class="sc-bdfBwQ cdgnVS text-white dark:text-theme-secondary-200"
@@ -4903,12 +4903,12 @@ exports[`CreateProfile should store profile 1`] = `
                         class=""
                       >
                         <button
-                          class="relative flex items-center justify-center w-full h-full text-2xl focus:outline-none group"
+                          class="flex relative justify-center items-center w-full h-full text-2xl focus:outline-none group"
                           data-testid="InputPassword__toggle"
                           type="button"
                         >
                           <div
-                            class="absolute inset-0 -m-1 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                            class="absolute inset-0 -m-1 rounded group-focus-visible group-focus:ring-2 ring-theme-primary-400"
                           />
                           <div
                             class="sc-bdfBwQ fPrsah"
@@ -4966,12 +4966,12 @@ exports[`CreateProfile should store profile 1`] = `
                         class=""
                       >
                         <button
-                          class="relative flex items-center justify-center w-full h-full text-2xl focus:outline-none group"
+                          class="flex relative justify-center items-center w-full h-full text-2xl focus:outline-none group"
                           data-testid="InputPassword__toggle"
                           type="button"
                         >
                           <div
-                            class="absolute inset-0 -m-1 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                            class="absolute inset-0 -m-1 rounded group-focus-visible group-focus:ring-2 ring-theme-primary-400"
                           />
                           <div
                             class="sc-bdfBwQ fPrsah"
@@ -5076,7 +5076,7 @@ exports[`CreateProfile should store profile 1`] = `
                               class=""
                             >
                               <div
-                                class="py-2 px-1 flex items-center justify-center"
+                                class="flex justify-center items-center py-2 px-1"
                                 data-testid="SelectDropdown__caret"
                               >
                                 <div
@@ -5443,7 +5443,7 @@ exports[`CreateProfile should store profile with password 1`] = `
       class="NavigationBar__NavWrapper-sc-1qsoskw-0 jBDhtO"
     >
       <div
-        class="relative flex h-21"
+        class="flex relative h-21"
       >
         <div
           class="flex flex-1 px-8 ml-12"
@@ -5473,13 +5473,13 @@ exports[`CreateProfile should store profile with password 1`] = `
       class="flex flex-col flex-1"
     >
       <div
-        class="Section__SectionWrapper-sc-8cjvre-0 kJTPww flex flex-col justify-center flex-1"
+        class="Section__SectionWrapper-sc-8cjvre-0 kJTPww flex flex-col flex-1 justify-center"
       >
         <div
           class="container px-10 mx-auto"
         >
           <div
-            class="max-w-lg mx-auto"
+            class="mx-auto max-w-lg"
           >
             <div
               class="flex justify-between items-end bg-theme-background"
@@ -5502,17 +5502,17 @@ exports[`CreateProfile should store profile with password 1`] = `
               </div>
             </div>
             <form
-              class="p-10 mt-10 border rounded-lg bg-theme-background border-theme-secondary-300 dark:border-theme-secondary-800"
+              class="p-10 mt-10 rounded-lg border bg-theme-background border-theme-secondary-300 dark:border-theme-secondary-800"
               data-testid="CreateProfile__form"
             >
               <div
                 class="relative space-y-5"
               >
                 <div
-                  class="flex items-end justify-between"
+                  class="flex justify-between items-end"
                 >
                   <div
-                    class="w-full mr-6"
+                    class="mr-6 w-full"
                   >
                     <fieldset
                       class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
@@ -5552,7 +5552,7 @@ exports[`CreateProfile should store profile with password 1`] = `
                       class="flex flex-row"
                     >
                       <div
-                        class="p-1 w-20 h-20 rounded-md border-2 border-dashed border-theme-secondary-400 dark:border-theme-secondary-700 focus-within:border-solid focus-within:border-theme-primary-400"
+                        class="p-1 w-20 h-20 rounded-md border-2 border-dashed focus-within:border-solid border-theme-secondary-400 dark:border-theme-secondary-700 focus-within:border-theme-primary-400"
                       >
                         <div
                           class="overflow-hidden h-full rounded-full"
@@ -5627,12 +5627,12 @@ exports[`CreateProfile should store profile with password 1`] = `
                         class=""
                       >
                         <button
-                          class="relative flex items-center justify-center w-full h-full text-2xl focus:outline-none group"
+                          class="flex relative justify-center items-center w-full h-full text-2xl focus:outline-none group"
                           data-testid="InputPassword__toggle"
                           type="button"
                         >
                           <div
-                            class="absolute inset-0 -m-1 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                            class="absolute inset-0 -m-1 rounded group-focus-visible group-focus:ring-2 ring-theme-primary-400"
                           />
                           <div
                             class="sc-bdfBwQ fPrsah"
@@ -5684,12 +5684,12 @@ exports[`CreateProfile should store profile with password 1`] = `
                         class=""
                       >
                         <button
-                          class="relative flex items-center justify-center w-full h-full text-2xl focus:outline-none group"
+                          class="flex relative justify-center items-center w-full h-full text-2xl focus:outline-none group"
                           data-testid="InputPassword__toggle"
                           type="button"
                         >
                           <div
-                            class="absolute inset-0 -m-1 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                            class="absolute inset-0 -m-1 rounded group-focus-visible group-focus:ring-2 ring-theme-primary-400"
                           />
                           <div
                             class="sc-bdfBwQ fPrsah"
@@ -5794,7 +5794,7 @@ exports[`CreateProfile should store profile with password 1`] = `
                               class=""
                             >
                               <div
-                                class="py-2 px-1 flex items-center justify-center"
+                                class="flex justify-center items-center py-2 px-1"
                                 data-testid="SelectDropdown__caret"
                               >
                                 <div
@@ -6161,7 +6161,7 @@ exports[`CreateProfile should update the avatar when removing focus from name in
       class="NavigationBar__NavWrapper-sc-1qsoskw-0 jBDhtO"
     >
       <div
-        class="relative flex h-21"
+        class="flex relative h-21"
       >
         <div
           class="flex flex-1 px-8 ml-12"
@@ -6191,13 +6191,13 @@ exports[`CreateProfile should update the avatar when removing focus from name in
       class="flex flex-col flex-1"
     >
       <div
-        class="Section__SectionWrapper-sc-8cjvre-0 kJTPww flex flex-col justify-center flex-1"
+        class="Section__SectionWrapper-sc-8cjvre-0 kJTPww flex flex-col flex-1 justify-center"
       >
         <div
           class="container px-10 mx-auto"
         >
           <div
-            class="max-w-lg mx-auto"
+            class="mx-auto max-w-lg"
           >
             <div
               class="flex justify-between items-end bg-theme-background"
@@ -6220,17 +6220,17 @@ exports[`CreateProfile should update the avatar when removing focus from name in
               </div>
             </div>
             <form
-              class="p-10 mt-10 border rounded-lg bg-theme-background border-theme-secondary-300 dark:border-theme-secondary-800"
+              class="p-10 mt-10 rounded-lg border bg-theme-background border-theme-secondary-300 dark:border-theme-secondary-800"
               data-testid="CreateProfile__form"
             >
               <div
                 class="relative space-y-5"
               >
                 <div
-                  class="flex items-end justify-between"
+                  class="flex justify-between items-end"
                 >
                   <div
-                    class="w-full mr-6"
+                    class="mr-6 w-full"
                   >
                     <fieldset
                       class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
@@ -6287,12 +6287,12 @@ exports[`CreateProfile should update the avatar when removing focus from name in
                             TE
                           </span>
                           <button
-                            class="opacity-0 absolute w-full h-full p-1 z-50 transition-opacity	duration-200 overflow-hidden upload-button-overlay focus:outline-none"
+                            class="overflow-hidden absolute z-50 p-1 w-full h-full opacity-0 transition-opacity duration-200 focus:outline-none upload-button-overlay"
                             data-testid="SelectProfileImage__upload-button"
                             type="button"
                           >
                             <div
-                              class="flex justify-center items-center h-full rounded-full bg-theme-secondary-900 dark:bg-black opacity-85"
+                              class="flex justify-center items-center h-full rounded-full dark:bg-black bg-theme-secondary-900 opacity-85"
                             >
                               <div
                                 class="sc-bdfBwQ cdgnVS text-white dark:text-theme-secondary-200"
@@ -6352,12 +6352,12 @@ exports[`CreateProfile should update the avatar when removing focus from name in
                         class=""
                       >
                         <button
-                          class="relative flex items-center justify-center w-full h-full text-2xl focus:outline-none group"
+                          class="flex relative justify-center items-center w-full h-full text-2xl focus:outline-none group"
                           data-testid="InputPassword__toggle"
                           type="button"
                         >
                           <div
-                            class="absolute inset-0 -m-1 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                            class="absolute inset-0 -m-1 rounded group-focus-visible group-focus:ring-2 ring-theme-primary-400"
                           />
                           <div
                             class="sc-bdfBwQ fPrsah"
@@ -6415,12 +6415,12 @@ exports[`CreateProfile should update the avatar when removing focus from name in
                         class=""
                       >
                         <button
-                          class="relative flex items-center justify-center w-full h-full text-2xl focus:outline-none group"
+                          class="flex relative justify-center items-center w-full h-full text-2xl focus:outline-none group"
                           data-testid="InputPassword__toggle"
                           type="button"
                         >
                           <div
-                            class="absolute inset-0 -m-1 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                            class="absolute inset-0 -m-1 rounded group-focus-visible group-focus:ring-2 ring-theme-primary-400"
                           />
                           <div
                             class="sc-bdfBwQ fPrsah"
@@ -6514,7 +6514,7 @@ exports[`CreateProfile should update the avatar when removing focus from name in
                               class=""
                             >
                               <div
-                                class="py-2 px-1 flex items-center justify-center"
+                                class="flex justify-center items-center py-2 px-1"
                                 data-testid="SelectDropdown__caret"
                               >
                                 <div
@@ -6647,7 +6647,7 @@ exports[`CreateProfile should update the avatar when removing focus from name in
       class="NavigationBar__NavWrapper-sc-1qsoskw-0 jBDhtO"
     >
       <div
-        class="relative flex h-21"
+        class="flex relative h-21"
       >
         <div
           class="flex flex-1 px-8 ml-12"
@@ -6677,13 +6677,13 @@ exports[`CreateProfile should update the avatar when removing focus from name in
       class="flex flex-col flex-1"
     >
       <div
-        class="Section__SectionWrapper-sc-8cjvre-0 kJTPww flex flex-col justify-center flex-1"
+        class="Section__SectionWrapper-sc-8cjvre-0 kJTPww flex flex-col flex-1 justify-center"
       >
         <div
           class="container px-10 mx-auto"
         >
           <div
-            class="max-w-lg mx-auto"
+            class="mx-auto max-w-lg"
           >
             <div
               class="flex justify-between items-end bg-theme-background"
@@ -6706,17 +6706,17 @@ exports[`CreateProfile should update the avatar when removing focus from name in
               </div>
             </div>
             <form
-              class="p-10 mt-10 border rounded-lg bg-theme-background border-theme-secondary-300 dark:border-theme-secondary-800"
+              class="p-10 mt-10 rounded-lg border bg-theme-background border-theme-secondary-300 dark:border-theme-secondary-800"
               data-testid="CreateProfile__form"
             >
               <div
                 class="relative space-y-5"
               >
                 <div
-                  class="flex items-end justify-between"
+                  class="flex justify-between items-end"
                 >
                   <div
-                    class="w-full mr-6"
+                    class="mr-6 w-full"
                   >
                     <fieldset
                       class="FormField__FormFieldStyled-yeauwd-0 qzrKg flex flex-col space-y-2"
@@ -6775,7 +6775,7 @@ exports[`CreateProfile should update the avatar when removing focus from name in
                       class="flex flex-row"
                     >
                       <div
-                        class="p-1 w-20 h-20 rounded-md border-2 border-dashed border-theme-secondary-400 dark:border-theme-secondary-700 focus-within:border-solid focus-within:border-theme-primary-400"
+                        class="p-1 w-20 h-20 rounded-md border-2 border-dashed focus-within:border-solid border-theme-secondary-400 dark:border-theme-secondary-700 focus-within:border-theme-primary-400"
                       >
                         <div
                           class="overflow-hidden h-full rounded-full"
@@ -6850,12 +6850,12 @@ exports[`CreateProfile should update the avatar when removing focus from name in
                         class=""
                       >
                         <button
-                          class="relative flex items-center justify-center w-full h-full text-2xl focus:outline-none group"
+                          class="flex relative justify-center items-center w-full h-full text-2xl focus:outline-none group"
                           data-testid="InputPassword__toggle"
                           type="button"
                         >
                           <div
-                            class="absolute inset-0 -m-1 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                            class="absolute inset-0 -m-1 rounded group-focus-visible group-focus:ring-2 ring-theme-primary-400"
                           />
                           <div
                             class="sc-bdfBwQ fPrsah"
@@ -6913,12 +6913,12 @@ exports[`CreateProfile should update the avatar when removing focus from name in
                         class=""
                       >
                         <button
-                          class="relative flex items-center justify-center w-full h-full text-2xl focus:outline-none group"
+                          class="flex relative justify-center items-center w-full h-full text-2xl focus:outline-none group"
                           data-testid="InputPassword__toggle"
                           type="button"
                         >
                           <div
-                            class="absolute inset-0 -m-1 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                            class="absolute inset-0 -m-1 rounded group-focus-visible group-focus:ring-2 ring-theme-primary-400"
                           />
                           <div
                             class="sc-bdfBwQ fPrsah"
@@ -7012,7 +7012,7 @@ exports[`CreateProfile should update the avatar when removing focus from name in
                               class=""
                             >
                               <div
-                                class="py-2 px-1 flex items-center justify-center"
+                                class="flex justify-center items-center py-2 px-1"
                                 data-testid="SelectDropdown__caret"
                               >
                                 <div
@@ -7145,7 +7145,7 @@ exports[`CreateProfile should upload and remove avatar image 1`] = `
       class="NavigationBar__NavWrapper-sc-1qsoskw-0 jBDhtO"
     >
       <div
-        class="relative flex h-21"
+        class="flex relative h-21"
       >
         <div
           class="flex flex-1 px-8 ml-12"
@@ -7175,13 +7175,13 @@ exports[`CreateProfile should upload and remove avatar image 1`] = `
       class="flex flex-col flex-1"
     >
       <div
-        class="Section__SectionWrapper-sc-8cjvre-0 kJTPww flex flex-col justify-center flex-1"
+        class="Section__SectionWrapper-sc-8cjvre-0 kJTPww flex flex-col flex-1 justify-center"
       >
         <div
           class="container px-10 mx-auto"
         >
           <div
-            class="max-w-lg mx-auto"
+            class="mx-auto max-w-lg"
           >
             <div
               class="flex justify-between items-end bg-theme-background"
@@ -7204,17 +7204,17 @@ exports[`CreateProfile should upload and remove avatar image 1`] = `
               </div>
             </div>
             <form
-              class="p-10 mt-10 border rounded-lg bg-theme-background border-theme-secondary-300 dark:border-theme-secondary-800"
+              class="p-10 mt-10 rounded-lg border bg-theme-background border-theme-secondary-300 dark:border-theme-secondary-800"
               data-testid="CreateProfile__form"
             >
               <div
                 class="relative space-y-5"
               >
                 <div
-                  class="flex items-end justify-between"
+                  class="flex justify-between items-end"
                 >
                   <div
-                    class="w-full mr-6"
+                    class="mr-6 w-full"
                   >
                     <fieldset
                       class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
@@ -7254,7 +7254,7 @@ exports[`CreateProfile should upload and remove avatar image 1`] = `
                       class="flex flex-row"
                     >
                       <div
-                        class="p-1 w-20 h-20 rounded-md border-2 border-dashed border-theme-secondary-400 dark:border-theme-secondary-700 focus-within:border-solid focus-within:border-theme-primary-400"
+                        class="p-1 w-20 h-20 rounded-md border-2 border-dashed focus-within:border-solid border-theme-secondary-400 dark:border-theme-secondary-700 focus-within:border-theme-primary-400"
                       >
                         <div
                           class="overflow-hidden h-full rounded-full"
@@ -7329,12 +7329,12 @@ exports[`CreateProfile should upload and remove avatar image 1`] = `
                         class=""
                       >
                         <button
-                          class="relative flex items-center justify-center w-full h-full text-2xl focus:outline-none group"
+                          class="flex relative justify-center items-center w-full h-full text-2xl focus:outline-none group"
                           data-testid="InputPassword__toggle"
                           type="button"
                         >
                           <div
-                            class="absolute inset-0 -m-1 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                            class="absolute inset-0 -m-1 rounded group-focus-visible group-focus:ring-2 ring-theme-primary-400"
                           />
                           <div
                             class="sc-bdfBwQ fPrsah"
@@ -7392,12 +7392,12 @@ exports[`CreateProfile should upload and remove avatar image 1`] = `
                         class=""
                       >
                         <button
-                          class="relative flex items-center justify-center w-full h-full text-2xl focus:outline-none group"
+                          class="flex relative justify-center items-center w-full h-full text-2xl focus:outline-none group"
                           data-testid="InputPassword__toggle"
                           type="button"
                         >
                           <div
-                            class="absolute inset-0 -m-1 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                            class="absolute inset-0 -m-1 rounded group-focus-visible group-focus:ring-2 ring-theme-primary-400"
                           />
                           <div
                             class="sc-bdfBwQ fPrsah"
@@ -7502,7 +7502,7 @@ exports[`CreateProfile should upload and remove avatar image 1`] = `
                               class=""
                             >
                               <div
-                                class="py-2 px-1 flex items-center justify-center"
+                                class="flex justify-center items-center py-2 px-1"
                                 data-testid="SelectDropdown__caret"
                               >
                                 <div

@@ -409,12 +409,8 @@ describe("SignMessage", () => {
 		const isLedgerMock = jest.spyOn(wallet, "isLedger").mockReturnValue(true);
 
 		const unsubscribe = jest.fn();
-		let observer: Observer<any>;
 
-		const listenSpy = jest.spyOn(transport, "listen").mockImplementationOnce((obv) => {
-			observer = obv;
-			return { unsubscribe };
-		});
+		const listenSpy = jest.spyOn(transport, "listen").mockImplementationOnce(() => ({ unsubscribe }));
 
 		const { getByTestId, getByText } = renderWithRouter(
 			<Route path="/profiles/:profileId/wallets/:walletId">

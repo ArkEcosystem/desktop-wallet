@@ -117,8 +117,6 @@ describe("Import Profile - Profile Form Step", () => {
 			fireEvent.click(getByTestId("CreateProfile__submit-button"));
 		});
 
-		const profiles = env.profiles().values();
-
 		expect(emptyProfile.usesPassword()).toBe(false);
 
 		fireEvent.input(getAllByTestId("Input")[0], { target: { value: "test profile 2" } });
@@ -166,8 +164,6 @@ describe("Import Profile - Profile Form Step", () => {
 		await act(async () => {
 			fireEvent.click(getByTestId("CreateProfile__submit-button"));
 		});
-
-		const profiles = env.profiles().values();
 
 		fireEvent.input(getAllByTestId("Input")[0], { target: { value: "profile2" } });
 		fireEvent.click(container.querySelector("input[name=isDarkMode]"));

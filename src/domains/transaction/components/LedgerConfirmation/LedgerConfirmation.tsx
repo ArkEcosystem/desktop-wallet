@@ -20,7 +20,7 @@ export const LedgerConfirmation = ({ children, detailsHeading }: LedgerConfirmat
 				{t("TRANSACTION.LEDGER_CONFIRMATION.DESCRIPTION")}
 			</div>
 
-			<div className="inline-flex items-center justify-center mt-8 space-x-3 w-full">
+			<div className="inline-flex justify-center items-center mt-8 space-x-3 w-full">
 				<Spinner />
 				<span
 					className="font-semibold text-theme-secondary-900 dark:text-theme-secondary-600"
@@ -36,7 +36,7 @@ export const LedgerConfirmation = ({ children, detailsHeading }: LedgerConfirmat
 
 					<section data-testid="LedgerReview__details">
 						{detailsHeading !== null && (
-							<h2 className="text-2xl font-bold mb-0">
+							<h2 className="mb-0 text-2xl font-bold">
 								{detailsHeading || t("TRANSACTION.TRANSACTION_DETAILS")}
 							</h2>
 						)}

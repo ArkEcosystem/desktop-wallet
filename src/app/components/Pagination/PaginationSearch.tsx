@@ -123,7 +123,7 @@ export const PaginationSearch = ({
 
 				<span
 					data-testid="PaginationSearchButton__search"
-					className="absolute top-0 right-0 bottom-0 left-0 invisible group-hover:visible flex items-center justify-center"
+					className="flex absolute top-0 right-0 bottom-0 left-0 invisible justify-center items-center group-hover:visible"
 				>
 					<Icon width={13} height={13} name="Search" />
 				</span>

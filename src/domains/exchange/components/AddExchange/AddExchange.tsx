@@ -82,7 +82,7 @@ export const AddExchange = ({ isOpen, onClose }: AddExchangeProps) => {
 									<Image name="ChangeNowLogo" />
 								</div>
 
-								<span className="cursor-pointer font-semibold link">{rowData.title}</span>
+								<span className="font-semibold cursor-pointer link">{rowData.title}</span>
 							</TableCell>
 
 							<TableCell>

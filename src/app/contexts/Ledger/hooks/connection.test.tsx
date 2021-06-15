@@ -111,12 +111,8 @@ describe("Use Ledger Connection", () => {
 		};
 
 		const unsubscribe = jest.fn();
-		let observer: Observer<any>;
 
-		const listenSpy = jest.spyOn(transport, "listen").mockImplementationOnce((obv) => {
-			observer = obv;
-			return { unsubscribe };
-		});
+		const listenSpy = jest.spyOn(transport, "listen").mockImplementationOnce(() => ({ unsubscribe }));
 
 		const { getAllByTestId } = render(<Component />);
 

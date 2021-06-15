@@ -3,7 +3,7 @@
 exports[`TransactionVotes should render loading state 1`] = `
 <div>
   <div
-    class="flex items-center justify-between py-6 border-t border-dashed border-theme-secondary-300 dark:border-theme-secondary-800"
+    class="flex justify-between items-center py-6 border-t border-dashed border-theme-secondary-300 dark:border-theme-secondary-800"
     data-testid="TransactionVotes__skeleton"
   >
     <div
@@ -45,7 +45,7 @@ exports[`TransactionVotes should render with unvotes 1`] = `
     data-testid="TransactionDetail"
   >
     <div
-      class="w-40 flex-1 space-y-2 whitespace-nowrap"
+      class="flex-1 space-y-2 w-40 whitespace-nowrap"
     >
       <div
         class="text-sm font-semibold text-theme-secondary-700 no-ligatures"
@@ -77,7 +77,7 @@ exports[`TransactionVotes should render with unvotes 1`] = `
     data-testid="TransactionDetail"
   >
     <div
-      class="w-40 flex-1 space-y-2 whitespace-nowrap"
+      class="flex-1 space-y-2 w-40 whitespace-nowrap"
     >
       <div
         class="text-sm font-semibold text-theme-secondary-700 no-ligatures"
@@ -111,7 +111,7 @@ exports[`TransactionVotes should render with unvotes 1`] = `
                 </div>
               </div>
               <div
-                class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap space-x-2"
+                class="flex overflow-hidden flex-grow items-center space-x-2 whitespace-nowrap no-ligatures"
               >
                 <span
                   class="font-semibold text-base text-theme-text"
@@ -147,7 +147,7 @@ exports[`TransactionVotes should render with votes 1`] = `
     data-testid="TransactionDetail"
   >
     <div
-      class="w-40 flex-1 space-y-2 whitespace-nowrap"
+      class="flex-1 space-y-2 w-40 whitespace-nowrap"
     >
       <div
         class="text-sm font-semibold text-theme-secondary-700 no-ligatures"
@@ -179,7 +179,7 @@ exports[`TransactionVotes should render with votes 1`] = `
     data-testid="TransactionDetail"
   >
     <div
-      class="w-40 flex-1 space-y-2 whitespace-nowrap"
+      class="flex-1 space-y-2 w-40 whitespace-nowrap"
     >
       <div
         class="text-sm font-semibold text-theme-secondary-700 no-ligatures"
@@ -213,7 +213,7 @@ exports[`TransactionVotes should render with votes 1`] = `
                 </div>
               </div>
               <div
-                class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap space-x-2"
+                class="flex overflow-hidden flex-grow items-center space-x-2 whitespace-nowrap no-ligatures"
               >
                 <span
                   class="font-semibold text-base text-theme-text"
@@ -249,7 +249,7 @@ exports[`TransactionVotes should render with votes and unvotes 1`] = `
     data-testid="TransactionDetail"
   >
     <div
-      class="w-40 flex-1 space-y-2 whitespace-nowrap"
+      class="flex-1 space-y-2 w-40 whitespace-nowrap"
     >
       <div
         class="text-sm font-semibold text-theme-secondary-700 no-ligatures"
@@ -281,7 +281,7 @@ exports[`TransactionVotes should render with votes and unvotes 1`] = `
     data-testid="TransactionDetail"
   >
     <div
-      class="w-40 flex-1 space-y-2 whitespace-nowrap"
+      class="flex-1 space-y-2 w-40 whitespace-nowrap"
     >
       <div
         class="text-sm font-semibold text-theme-secondary-700 no-ligatures"
@@ -315,7 +315,7 @@ exports[`TransactionVotes should render with votes and unvotes 1`] = `
                 </div>
               </div>
               <div
-                class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap space-x-2"
+                class="flex overflow-hidden flex-grow items-center space-x-2 whitespace-nowrap no-ligatures"
               >
                 <span
                   class="font-semibold text-base text-theme-text"
@@ -346,7 +346,7 @@ exports[`TransactionVotes should render with votes and unvotes 1`] = `
     data-testid="TransactionDetail"
   >
     <div
-      class="w-40 flex-1 space-y-2 whitespace-nowrap"
+      class="flex-1 space-y-2 w-40 whitespace-nowrap"
     >
       <div
         class="text-sm font-semibold text-theme-secondary-700 no-ligatures"
@@ -380,7 +380,7 @@ exports[`TransactionVotes should render with votes and unvotes 1`] = `
                 </div>
               </div>
               <div
-                class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap space-x-2"
+                class="flex overflow-hidden flex-grow items-center space-x-2 whitespace-nowrap no-ligatures"
               >
                 <span
                   class="font-semibold text-base text-theme-text"

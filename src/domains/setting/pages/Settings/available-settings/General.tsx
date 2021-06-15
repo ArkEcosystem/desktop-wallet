@@ -286,7 +286,7 @@ export const General = ({ formConfig, onSuccess }: SettingsProps) => {
 							</FormField>
 						</div>
 
-						<div className="flex flex-col w-2/4 ml-5">
+						<div className="flex flex-col ml-5 w-2/4">
 							<FormField name="language">
 								<FormLabel label={t("SETTINGS.GENERAL.PERSONAL.LANGUAGE")} />
 								<Select

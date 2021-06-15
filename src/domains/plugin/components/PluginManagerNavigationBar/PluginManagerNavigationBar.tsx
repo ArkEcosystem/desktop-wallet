@@ -44,7 +44,7 @@ export const PluginManagerNavigationBar = ({
 	return (
 		<NavWrapper
 			data-testid="PluginManagerNavigationBar"
-			className="sticky top-21 bg-theme-secondary-100 dark:bg-black my-4"
+			className="sticky my-4 dark:bg-black top-21 bg-theme-secondary-100"
 		>
 			<div className="container flex justify-between items-center px-10 mx-auto">
 				<Tabs

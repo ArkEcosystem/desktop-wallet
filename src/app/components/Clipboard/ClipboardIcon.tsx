@@ -30,7 +30,7 @@ export const ClipboardIcon = ({ data, tooltip, options, children }: ClipboardIco
 				onClick={() => copy(data)}
 			>
 				{/* border on focus */}
-				<div className="absolute inset-0 -m-1 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible" />
+				<div className="absolute inset-0 -m-1 rounded group-focus-visible group-focus:ring-2 ring-theme-primary-400" />
 
 				{children}
 			</button>

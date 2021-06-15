@@ -926,7 +926,7 @@ describe("PluginManager", () => {
 		let downloadsCount = 0;
 		let installCount = 0;
 
-		const ipcRendererSpy = jest.spyOn(ipcRenderer, "invoke").mockImplementation((channel) => {
+		jest.spyOn(ipcRenderer, "invoke").mockImplementation((channel) => {
 			if (channel === "plugin:download") {
 				downloadsCount++;
 				return "/plugins/new-plugin";

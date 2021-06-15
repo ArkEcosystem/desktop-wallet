@@ -63,7 +63,7 @@ export const SelectProfileImage = ({ className, value, name, showLabel, onSelect
 	return (
 		<div className={`group space-y-2 ${className}`}>
 			{showLabel && (
-				<span className="text-sm font-semibold transition-colors duration-100 cursor-default group-hover:text-theme-primary-600 text-theme-secondary-text">
+				<span className="text-sm font-semibold transition-colors duration-100 cursor-default text-theme-secondary-text group-hover:text-theme-primary-600">
 					{t("SETTINGS.GENERAL.PERSONAL.PROFILE_IMAGE")}
 				</span>
 			)}
@@ -87,11 +87,11 @@ export const SelectProfileImage = ({ className, value, name, showLabel, onSelect
 
 								<button
 									type="button"
-									className="opacity-0 absolute w-full h-full p-1 z-50 transition-opacity	duration-200 overflow-hidden upload-button-overlay focus:outline-none"
+									className="overflow-hidden absolute z-50 p-1 w-full h-full opacity-0 transition-opacity duration-200 focus:outline-none upload-button-overlay"
 									onClick={handleUploadImage}
 									data-testid="SelectProfileImage__upload-button"
 								>
-									<div className="flex justify-center items-center h-full rounded-full bg-theme-secondary-900 dark:bg-black opacity-85">
+									<div className="flex justify-center items-center h-full rounded-full dark:bg-black bg-theme-secondary-900 opacity-85">
 										<Icon
 											name="Upload"
 											className="text-white dark:text-theme-secondary-200"
@@ -118,7 +118,7 @@ export const SelectProfileImage = ({ className, value, name, showLabel, onSelect
 					</div>
 				) : (
 					<Tooltip content={t("SETTINGS.GENERAL.PERSONAL.UPLOAD_AVATAR")}>
-						<div className="p-1 w-20 h-20 rounded-md border-2 border-dashed border-theme-secondary-400 dark:border-theme-secondary-700 focus-within:border-solid focus-within:border-theme-primary-400">
+						<div className="p-1 w-20 h-20 rounded-md border-2 border-dashed focus-within:border-solid border-theme-secondary-400 dark:border-theme-secondary-700 focus-within:border-theme-primary-400">
 							<div className="overflow-hidden h-full rounded-full">
 								<UploadButtonWrapper>
 									<Button

@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/require-await */
 import { Contracts } from "@arkecosystem/platform-sdk-profiles";
 import { BigNumber } from "@arkecosystem/platform-sdk-support";
-import Transport, { Observer } from "@ledgerhq/hw-transport";
+import Transport from "@ledgerhq/hw-transport";
 import { createTransportReplayer, RecordStore } from "@ledgerhq/hw-transport-mocker";
 import { LedgerData } from "app/contexts";
 import { LedgerProvider } from "app/contexts/Ledger/Ledger";
@@ -12,7 +12,6 @@ import { act, env, fireEvent, getDefaultProfileId, render, screen, waitFor } fro
 import { LedgerImportStep } from "./LedgerImportStep";
 
 let transport: typeof Transport;
-let observer: Observer<any>;
 
 describe("LedgerImportStep", () => {
 	let profile: Contracts.IProfile;
@@ -53,10 +52,7 @@ describe("LedgerImportStep", () => {
 		wallet = profile.wallets().first();
 		transport = createTransportReplayer(RecordStore.fromString(""));
 
-		jest.spyOn(transport, "listen").mockImplementationOnce((obv) => {
-			observer = obv;
-			return { unsubscribe: jest.fn() };
-		});
+		jest.spyOn(transport, "listen").mockImplementationOnce(() => ({ unsubscribe: jest.fn() }));
 
 		jest.useFakeTimers();
 	});
@@ -113,7 +109,7 @@ describe("LedgerImportStep", () => {
 	});
 
 	it("should show an error message for duplicate name", async () => {
-		const { container, getByTestId } = renderComponent(walletsData.slice(1));
+		const { container } = renderComponent(walletsData.slice(1));
 
 		expect(container).toMatchSnapshot();
 

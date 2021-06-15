@@ -176,7 +176,7 @@ describe("ImportProfile", () => {
 	it("should succesfully import profile and return to home screen", async () => {
 		history.push(`/profiles/import`);
 		const historyMock = jest.spyOn(history, "push").mockReturnValue();
-		const fsReadFileMock = jest.spyOn(fs, "readFileSync").mockReturnValue(passwordProtectedDwe);
+		jest.spyOn(fs, "readFileSync").mockReturnValue(passwordProtectedDwe);
 
 		const { getByTestId } = renderWithRouter(
 			<EnvironmentProvider env={env}>

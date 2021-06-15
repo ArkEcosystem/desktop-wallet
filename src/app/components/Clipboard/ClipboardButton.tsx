@@ -18,6 +18,7 @@ type ButtonProps = {
 } & React.ButtonHTMLAttributes<any>;
 const StyledButton = styled.button<ButtonProps>(getStyles);
 
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 export const ClipboardButton = ({ data, variant, options, children, ...props }: ClipboardButtonProps) => {
 	const [hasCopied, copy] = useClipboard({
 		resetAfter: 1000,
@@ -42,7 +43,7 @@ export const ClipboardButton = ({ data, variant, options, children, ...props }: 
 						initial={{ opacity: 0 }}
 						animate={{ opacity: 1, transition: { duration: 0.3 } }}
 						exit={{ opacity: 0, transition: { duration: 0.3 } }}
-						className="absolute inset-0 flex justify-center items-center bg-theme-primary-100 dark:bg-theme-secondary-800 rounded"
+						className="flex absolute inset-0 justify-center items-center rounded bg-theme-primary-100 dark:bg-theme-secondary-800"
 						data-testid="clipboard-button__checkmark"
 					>
 						<Icon

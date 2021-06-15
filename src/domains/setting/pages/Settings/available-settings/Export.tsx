@@ -83,7 +83,7 @@ export const Export = ({ formConfig, onSuccess }: SettingsProps) => {
 
 				<ListDivided items={walletExportOptions} />
 
-				<div className="flex justify-end w-full space-x-3 mt-8">
+				<div className="flex justify-end mt-8 space-x-3 w-full">
 					<Button data-testid="Export-settings__submit-button" type="submit">
 						{t("COMMON.EXPORT")}
 					</Button>

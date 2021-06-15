@@ -57,7 +57,7 @@ describe("CreateWallet", () => {
 		const createURL = `/profiles/${fixtureProfileId}/wallets/create`;
 		history.push(createURL);
 
-		const { queryAllByText, getByTestId, getByText, asFragment, getAllByTestId } = renderWithRouter(
+		const { queryAllByText, getByTestId, getByText, asFragment } = renderWithRouter(
 			<Route path="/profiles/:profileId/wallets/create">
 				<CreateWallet />
 			</Route>,

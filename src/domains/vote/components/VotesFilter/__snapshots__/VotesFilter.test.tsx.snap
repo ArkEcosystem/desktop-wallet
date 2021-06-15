@@ -18,10 +18,10 @@ exports[`VotesFilter should render 1`] = `
             class="ControlButton__ControlButtonStyled-sc-1xp1l1a-0 gPBHgx group"
           >
             <div
-              class="absolute inset-0 -mx-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+              class="absolute inset-0 -mx-0.5 rounded group-focus-visible group-focus:ring-2 ring-theme-primary-400"
             />
             <div
-              class="flex items-center justify-center w-5 h-5"
+              class="flex justify-center items-center w-5 h-5"
             >
               <div
                 class="sc-bdfBwQ eBdiJn"
@@ -59,10 +59,10 @@ exports[`VotesFilter should render default 1`] = `
             class="ControlButton__ControlButtonStyled-sc-1xp1l1a-0 gPBHgx group"
           >
             <div
-              class="absolute inset-0 -mx-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+              class="absolute inset-0 -mx-0.5 rounded group-focus-visible group-focus:ring-2 ring-theme-primary-400"
             />
             <div
-              class="flex items-center justify-center w-5 h-5"
+              class="flex justify-center items-center w-5 h-5"
             >
               <div
                 class="sc-bdfBwQ eBdiJn"
@@ -84,10 +84,10 @@ exports[`VotesFilter should render default 1`] = `
       >
         <div>
           <div
-            class="w-56 flex flex-col items-start space-y-5 px-10 py-7 text-theme-secondary-700 dark:text-theme-secondary-200"
+            class="flex flex-col items-start py-7 px-10 space-y-5 w-56 text-theme-secondary-700 dark:text-theme-secondary-200"
           >
             <label
-              class="h-5 flex items-center space-x-3 rounded-md cursor-pointer"
+              class="flex items-center space-x-3 h-5 rounded-md cursor-pointer"
               data-testid="VotesFilter__option--all"
             >
               <input
@@ -152,10 +152,10 @@ exports[`VotesFilter should render with current option selected 1`] = `
               />
             </div>
             <div
-              class="absolute inset-0 -mx-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+              class="absolute inset-0 -mx-0.5 rounded group-focus-visible group-focus:ring-2 ring-theme-primary-400"
             />
             <div
-              class="flex items-center justify-center w-5 h-5"
+              class="flex justify-center items-center w-5 h-5"
             >
               <div
                 class="sc-bdfBwQ eBdiJn"
@@ -177,10 +177,10 @@ exports[`VotesFilter should render with current option selected 1`] = `
       >
         <div>
           <div
-            class="w-56 flex flex-col items-start space-y-5 px-10 py-7 text-theme-secondary-700 dark:text-theme-secondary-200"
+            class="flex flex-col items-start py-7 px-10 space-y-5 w-56 text-theme-secondary-700 dark:text-theme-secondary-200"
           >
             <label
-              class="h-5 flex items-center space-x-3 rounded-md cursor-pointer"
+              class="flex items-center space-x-3 h-5 rounded-md cursor-pointer"
               data-testid="VotesFilter__option--all"
             >
               <input
@@ -238,10 +238,10 @@ exports[`VotesFilter should render with disabled current option 1`] = `
             class="ControlButton__ControlButtonStyled-sc-1xp1l1a-0 gPBHgx group"
           >
             <div
-              class="absolute inset-0 -mx-0.5 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+              class="absolute inset-0 -mx-0.5 rounded group-focus-visible group-focus:ring-2 ring-theme-primary-400"
             />
             <div
-              class="flex items-center justify-center w-5 h-5"
+              class="flex justify-center items-center w-5 h-5"
             >
               <div
                 class="sc-bdfBwQ eBdiJn"
@@ -263,10 +263,10 @@ exports[`VotesFilter should render with disabled current option 1`] = `
       >
         <div>
           <div
-            class="w-56 flex flex-col items-start space-y-5 px-10 py-7 text-theme-secondary-700 dark:text-theme-secondary-200"
+            class="flex flex-col items-start py-7 px-10 space-y-5 w-56 text-theme-secondary-700 dark:text-theme-secondary-200"
           >
             <label
-              class="h-5 flex items-center space-x-3 rounded-md cursor-pointer"
+              class="flex items-center space-x-3 h-5 rounded-md cursor-pointer"
               data-testid="VotesFilter__option--all"
             >
               <input

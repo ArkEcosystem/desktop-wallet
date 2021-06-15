@@ -5,7 +5,7 @@ exports[`AddAssets should not render if not open 1`] = `<DocumentFragment />`;
 exports[`AddAssets should render a modal 1`] = `
 <DocumentFragment>
   <div
-    class="flex fixed inset-0 z-50 py-20 w-full h-full bg-theme-secondary-900-rgba bg-opacity-60 dark:bg-black-rgba dark:bg-opacity-80 overflow-overlay"
+    class="flex fixed inset-0 z-50 py-20 w-full h-full bg-opacity-60 dark:bg-opacity-80 bg-theme-secondary-900-rgba overflow-overlay dark:bg-black-rgba"
     data-testid="modal__overlay"
   >
     <div
@@ -13,11 +13,11 @@ exports[`AddAssets should render a modal 1`] = `
       tabindex="-1"
     >
       <div
-        class="relative flex flex-col p-10 overflow-hidden rounded-2.5xl bg-theme-background shadow-2xl"
+        class="flex overflow-hidden relative flex-col p-10 shadow-2xl rounded-2.5xl bg-theme-background"
         data-testid="modal__inner"
       >
         <div
-          class="absolute top-0 right-0 z-10 mt-5 mr-5 rounded transition-all duration-100 ease-linear bg-theme-primary-100 hover:bg-theme-primary-300 dark:bg-theme-secondary-800 dark:text-theme-secondary-600 dark:hover:bg-theme-secondary-700 dark:hover:text-theme-secondary-400"
+          class="absolute top-0 right-0 z-10 mt-5 mr-5 rounded transition-all duration-100 ease-linear bg-theme-primary-100 dark:bg-theme-secondary-800 dark:text-theme-secondary-600 dark:hover:bg-theme-secondary-700 dark:hover:text-theme-secondary-400 hover:bg-theme-primary-300"
         >
           <button
             class="OriginalButton__StyledButton-sc-1y2wptt-0 fNHPRi w-11 h-11"
@@ -51,7 +51,7 @@ exports[`AddAssets should render a modal 1`] = `
             class="flex-1"
           >
             <div
-              class="text-theme-secondary-text whitespace-pre-line"
+              class="whitespace-pre-line text-theme-secondary-text"
             >
               Select which assets you would like to follow
             </div>
@@ -183,7 +183,7 @@ exports[`AddAssets should render a modal 1`] = `
                           data-testid="NetworkOption__LSK"
                         >
                           <div
-                            class="Circle__CircleWrapper-uw7h4j-0 bNDQMV relative border-theme-secondary-300 dark:border-theme-secondary-800 text-theme-secondary-300 ring-theme-background"
+                            class="Circle__CircleWrapper-uw7h4j-0 bNDQMV relative border-theme-secondary-300 text-theme-secondary-300 dark:border-theme-secondary-800 ring-theme-background"
                           >
                             <div
                               class="sc-bdfBwQ iyevwF"
@@ -215,7 +215,7 @@ exports[`AddAssets should render a modal 1`] = `
                     class="flex flex-wrap -mx-3 mt-3"
                   >
                     <div
-                      class="Circle__CircleWrapper-uw7h4j-0 bNDQMV relative m-3 border-theme-secondary-300 dark:border-theme-secondary-800 text-theme-secondary-300 ring-theme-background"
+                      class="Circle__CircleWrapper-uw7h4j-0 bNDQMV relative m-3 border-theme-secondary-300 text-theme-secondary-300 dark:border-theme-secondary-800 ring-theme-background"
                     >
                       <div
                         class="sc-bdfBwQ iyevwF"
@@ -233,7 +233,7 @@ exports[`AddAssets should render a modal 1`] = `
                       </span>
                     </div>
                     <div
-                      class="Circle__CircleWrapper-uw7h4j-0 bNDQMV relative m-3 border-theme-secondary-300 dark:border-theme-secondary-800 text-theme-secondary-300 ring-theme-background"
+                      class="Circle__CircleWrapper-uw7h4j-0 bNDQMV relative m-3 border-theme-secondary-300 text-theme-secondary-300 dark:border-theme-secondary-800 ring-theme-background"
                     >
                       <div
                         class="sc-bdfBwQ iyevwF"
@@ -251,7 +251,7 @@ exports[`AddAssets should render a modal 1`] = `
                       </span>
                     </div>
                     <div
-                      class="Circle__CircleWrapper-uw7h4j-0 bNDQMV relative m-3 border-theme-secondary-300 dark:border-theme-secondary-800 text-theme-secondary-300 ring-theme-background"
+                      class="Circle__CircleWrapper-uw7h4j-0 bNDQMV relative m-3 border-theme-secondary-300 text-theme-secondary-300 dark:border-theme-secondary-800 ring-theme-background"
                     >
                       <div
                         class="sc-bdfBwQ iyevwF"
@@ -269,7 +269,7 @@ exports[`AddAssets should render a modal 1`] = `
                       </span>
                     </div>
                     <div
-                      class="Circle__CircleWrapper-uw7h4j-0 bNDQMV relative m-3 border-theme-secondary-300 dark:border-theme-secondary-800 text-theme-secondary-300 ring-theme-background"
+                      class="Circle__CircleWrapper-uw7h4j-0 bNDQMV relative m-3 border-theme-secondary-300 text-theme-secondary-300 dark:border-theme-secondary-800 ring-theme-background"
                     >
                       <div
                         class="sc-bdfBwQ iyevwF"
@@ -287,7 +287,7 @@ exports[`AddAssets should render a modal 1`] = `
                       </span>
                     </div>
                     <div
-                      class="Circle__CircleWrapper-uw7h4j-0 bNDQMV relative m-3 border-theme-secondary-300 dark:border-theme-secondary-800 text-theme-secondary-300 ring-theme-background"
+                      class="Circle__CircleWrapper-uw7h4j-0 bNDQMV relative m-3 border-theme-secondary-300 text-theme-secondary-300 dark:border-theme-secondary-800 ring-theme-background"
                     >
                       <div
                         class="sc-bdfBwQ iyevwF"
@@ -305,7 +305,7 @@ exports[`AddAssets should render a modal 1`] = `
                       </span>
                     </div>
                     <div
-                      class="Circle__CircleWrapper-uw7h4j-0 bNDQMV relative m-3 border-theme-secondary-300 dark:border-theme-secondary-800 text-theme-secondary-300 ring-theme-background"
+                      class="Circle__CircleWrapper-uw7h4j-0 bNDQMV relative m-3 border-theme-secondary-300 text-theme-secondary-300 dark:border-theme-secondary-800 ring-theme-background"
                     >
                       <div
                         class="sc-bdfBwQ iyevwF"
@@ -323,7 +323,7 @@ exports[`AddAssets should render a modal 1`] = `
                       </span>
                     </div>
                     <div
-                      class="Circle__CircleWrapper-uw7h4j-0 bNDQMV relative m-3 border-theme-secondary-300 dark:border-theme-secondary-800 text-theme-secondary-300 ring-theme-background"
+                      class="Circle__CircleWrapper-uw7h4j-0 bNDQMV relative m-3 border-theme-secondary-300 text-theme-secondary-300 dark:border-theme-secondary-800 ring-theme-background"
                     >
                       <div
                         class="sc-bdfBwQ iyevwF"
@@ -341,7 +341,7 @@ exports[`AddAssets should render a modal 1`] = `
                       </span>
                     </div>
                     <div
-                      class="Circle__CircleWrapper-uw7h4j-0 bNDQMV relative m-3 border-theme-secondary-300 dark:border-theme-secondary-800 text-theme-secondary-300 ring-theme-background"
+                      class="Circle__CircleWrapper-uw7h4j-0 bNDQMV relative m-3 border-theme-secondary-300 text-theme-secondary-300 dark:border-theme-secondary-800 ring-theme-background"
                     >
                       <div
                         class="sc-bdfBwQ iyevwF"
@@ -359,7 +359,7 @@ exports[`AddAssets should render a modal 1`] = `
                       </span>
                     </div>
                     <div
-                      class="Circle__CircleWrapper-uw7h4j-0 bNDQMV relative m-3 border-theme-secondary-300 dark:border-theme-secondary-800 text-theme-secondary-300 ring-theme-background"
+                      class="Circle__CircleWrapper-uw7h4j-0 bNDQMV relative m-3 border-theme-secondary-300 text-theme-secondary-300 dark:border-theme-secondary-800 ring-theme-background"
                     >
                       <div
                         class="sc-bdfBwQ iyevwF"
@@ -377,7 +377,7 @@ exports[`AddAssets should render a modal 1`] = `
                       </span>
                     </div>
                     <div
-                      class="Circle__CircleWrapper-uw7h4j-0 bNDQMV relative m-3 border-theme-secondary-300 dark:border-theme-secondary-800 text-theme-secondary-300 ring-theme-background"
+                      class="Circle__CircleWrapper-uw7h4j-0 bNDQMV relative m-3 border-theme-secondary-300 text-theme-secondary-300 dark:border-theme-secondary-800 ring-theme-background"
                     >
                       <div
                         class="sc-bdfBwQ iyevwF"
@@ -395,7 +395,7 @@ exports[`AddAssets should render a modal 1`] = `
                       </span>
                     </div>
                     <div
-                      class="Circle__CircleWrapper-uw7h4j-0 bNDQMV relative m-3 border-theme-secondary-300 dark:border-theme-secondary-800 text-theme-secondary-300 ring-theme-background"
+                      class="Circle__CircleWrapper-uw7h4j-0 bNDQMV relative m-3 border-theme-secondary-300 text-theme-secondary-300 dark:border-theme-secondary-800 ring-theme-background"
                     >
                       <div
                         class="sc-bdfBwQ iyevwF"
@@ -413,7 +413,7 @@ exports[`AddAssets should render a modal 1`] = `
                       </span>
                     </div>
                     <div
-                      class="Circle__CircleWrapper-uw7h4j-0 bNDQMV relative m-3 border-theme-secondary-300 dark:border-theme-secondary-800 text-theme-secondary-300 ring-theme-background"
+                      class="Circle__CircleWrapper-uw7h4j-0 bNDQMV relative m-3 border-theme-secondary-300 text-theme-secondary-300 dark:border-theme-secondary-800 ring-theme-background"
                     >
                       <div
                         class="sc-bdfBwQ iyevwF"
@@ -431,7 +431,7 @@ exports[`AddAssets should render a modal 1`] = `
                       </span>
                     </div>
                     <div
-                      class="Circle__CircleWrapper-uw7h4j-0 bNDQMV relative m-3 border-theme-secondary-300 dark:border-theme-secondary-800 text-theme-secondary-300 ring-theme-background"
+                      class="Circle__CircleWrapper-uw7h4j-0 bNDQMV relative m-3 border-theme-secondary-300 text-theme-secondary-300 dark:border-theme-secondary-800 ring-theme-background"
                     >
                       <div
                         class="sc-bdfBwQ iyevwF"
@@ -449,7 +449,7 @@ exports[`AddAssets should render a modal 1`] = `
                       </span>
                     </div>
                     <div
-                      class="Circle__CircleWrapper-uw7h4j-0 bNDQMV relative m-3 border-theme-secondary-300 dark:border-theme-secondary-800 text-theme-secondary-300 ring-theme-background"
+                      class="Circle__CircleWrapper-uw7h4j-0 bNDQMV relative m-3 border-theme-secondary-300 text-theme-secondary-300 dark:border-theme-secondary-800 ring-theme-background"
                     >
                       <div
                         class="sc-bdfBwQ iyevwF"
@@ -467,7 +467,7 @@ exports[`AddAssets should render a modal 1`] = `
                       </span>
                     </div>
                     <div
-                      class="Circle__CircleWrapper-uw7h4j-0 bNDQMV relative m-3 border-theme-secondary-300 dark:border-theme-secondary-800 text-theme-secondary-300 ring-theme-background"
+                      class="Circle__CircleWrapper-uw7h4j-0 bNDQMV relative m-3 border-theme-secondary-300 text-theme-secondary-300 dark:border-theme-secondary-800 ring-theme-background"
                     >
                       <div
                         class="sc-bdfBwQ iyevwF"
@@ -485,7 +485,7 @@ exports[`AddAssets should render a modal 1`] = `
                       </span>
                     </div>
                     <div
-                      class="Circle__CircleWrapper-uw7h4j-0 bNDQMV relative m-3 border-theme-secondary-300 dark:border-theme-secondary-800 text-theme-secondary-300 ring-theme-background"
+                      class="Circle__CircleWrapper-uw7h4j-0 bNDQMV relative m-3 border-theme-secondary-300 text-theme-secondary-300 dark:border-theme-secondary-800 ring-theme-background"
                     >
                       <div
                         class="sc-bdfBwQ iyevwF"
@@ -503,7 +503,7 @@ exports[`AddAssets should render a modal 1`] = `
                       </span>
                     </div>
                     <div
-                      class="Circle__CircleWrapper-uw7h4j-0 bNDQMV relative m-3 border-theme-secondary-300 dark:border-theme-secondary-800 text-theme-secondary-300 ring-theme-background"
+                      class="Circle__CircleWrapper-uw7h4j-0 bNDQMV relative m-3 border-theme-secondary-300 text-theme-secondary-300 dark:border-theme-secondary-800 ring-theme-background"
                     >
                       <div
                         class="sc-bdfBwQ iyevwF"
@@ -521,7 +521,7 @@ exports[`AddAssets should render a modal 1`] = `
                       </span>
                     </div>
                     <div
-                      class="Circle__CircleWrapper-uw7h4j-0 bNDQMV relative m-3 border-theme-secondary-300 dark:border-theme-secondary-800 text-theme-secondary-300 ring-theme-background"
+                      class="Circle__CircleWrapper-uw7h4j-0 bNDQMV relative m-3 border-theme-secondary-300 text-theme-secondary-300 dark:border-theme-secondary-800 ring-theme-background"
                     >
                       <div
                         class="sc-bdfBwQ iyevwF"
@@ -539,7 +539,7 @@ exports[`AddAssets should render a modal 1`] = `
                       </span>
                     </div>
                     <div
-                      class="Circle__CircleWrapper-uw7h4j-0 bNDQMV relative m-3 border-theme-secondary-300 dark:border-theme-secondary-800 text-theme-secondary-300 ring-theme-background"
+                      class="Circle__CircleWrapper-uw7h4j-0 bNDQMV relative m-3 border-theme-secondary-300 text-theme-secondary-300 dark:border-theme-secondary-800 ring-theme-background"
                     >
                       <div
                         class="sc-bdfBwQ iyevwF"
@@ -557,7 +557,7 @@ exports[`AddAssets should render a modal 1`] = `
                       </span>
                     </div>
                     <div
-                      class="Circle__CircleWrapper-uw7h4j-0 bNDQMV relative m-3 border-theme-secondary-300 dark:border-theme-secondary-800 text-theme-secondary-300 ring-theme-background"
+                      class="Circle__CircleWrapper-uw7h4j-0 bNDQMV relative m-3 border-theme-secondary-300 text-theme-secondary-300 dark:border-theme-secondary-800 ring-theme-background"
                     >
                       <div
                         class="sc-bdfBwQ iyevwF"
@@ -575,7 +575,7 @@ exports[`AddAssets should render a modal 1`] = `
                       </span>
                     </div>
                     <div
-                      class="Circle__CircleWrapper-uw7h4j-0 bNDQMV relative m-3 border-theme-secondary-300 dark:border-theme-secondary-800 text-theme-secondary-300 ring-theme-background"
+                      class="Circle__CircleWrapper-uw7h4j-0 bNDQMV relative m-3 border-theme-secondary-300 text-theme-secondary-300 dark:border-theme-secondary-800 ring-theme-background"
                     >
                       <div
                         class="sc-bdfBwQ iyevwF"
@@ -593,7 +593,7 @@ exports[`AddAssets should render a modal 1`] = `
                       </span>
                     </div>
                     <div
-                      class="Circle__CircleWrapper-uw7h4j-0 bNDQMV relative m-3 border-theme-secondary-300 dark:border-theme-secondary-800 text-theme-secondary-300 ring-theme-background"
+                      class="Circle__CircleWrapper-uw7h4j-0 bNDQMV relative m-3 border-theme-secondary-300 text-theme-secondary-300 dark:border-theme-secondary-800 ring-theme-background"
                     >
                       <div
                         class="sc-bdfBwQ iyevwF"
@@ -611,7 +611,7 @@ exports[`AddAssets should render a modal 1`] = `
                       </span>
                     </div>
                     <div
-                      class="Circle__CircleWrapper-uw7h4j-0 bNDQMV relative m-3 border-theme-secondary-300 dark:border-theme-secondary-800 text-theme-secondary-300 ring-theme-background"
+                      class="Circle__CircleWrapper-uw7h4j-0 bNDQMV relative m-3 border-theme-secondary-300 text-theme-secondary-300 dark:border-theme-secondary-800 ring-theme-background"
                     >
                       <div
                         class="sc-bdfBwQ iyevwF"
@@ -629,7 +629,7 @@ exports[`AddAssets should render a modal 1`] = `
                       </span>
                     </div>
                     <div
-                      class="Circle__CircleWrapper-uw7h4j-0 bNDQMV relative m-3 border-theme-secondary-300 dark:border-theme-secondary-800 text-theme-secondary-300 ring-theme-background"
+                      class="Circle__CircleWrapper-uw7h4j-0 bNDQMV relative m-3 border-theme-secondary-300 text-theme-secondary-300 dark:border-theme-secondary-800 ring-theme-background"
                     >
                       <div
                         class="sc-bdfBwQ iyevwF"
@@ -647,7 +647,7 @@ exports[`AddAssets should render a modal 1`] = `
                       </span>
                     </div>
                     <div
-                      class="Circle__CircleWrapper-uw7h4j-0 bNDQMV relative m-3 border-theme-secondary-300 dark:border-theme-secondary-800 text-theme-secondary-300 ring-theme-background"
+                      class="Circle__CircleWrapper-uw7h4j-0 bNDQMV relative m-3 border-theme-secondary-300 text-theme-secondary-300 dark:border-theme-secondary-800 ring-theme-background"
                     >
                       <div
                         class="sc-bdfBwQ iyevwF"
@@ -665,7 +665,7 @@ exports[`AddAssets should render a modal 1`] = `
                       </span>
                     </div>
                     <div
-                      class="Circle__CircleWrapper-uw7h4j-0 bNDQMV relative m-3 border-theme-secondary-300 dark:border-theme-secondary-800 text-theme-secondary-300 ring-theme-background"
+                      class="Circle__CircleWrapper-uw7h4j-0 bNDQMV relative m-3 border-theme-secondary-300 text-theme-secondary-300 dark:border-theme-secondary-800 ring-theme-background"
                     >
                       <div
                         class="sc-bdfBwQ iyevwF"
@@ -683,7 +683,7 @@ exports[`AddAssets should render a modal 1`] = `
                       </span>
                     </div>
                     <div
-                      class="Circle__CircleWrapper-uw7h4j-0 bNDQMV relative m-3 border-theme-secondary-300 dark:border-theme-secondary-800 text-theme-secondary-300 ring-theme-background"
+                      class="Circle__CircleWrapper-uw7h4j-0 bNDQMV relative m-3 border-theme-secondary-300 text-theme-secondary-300 dark:border-theme-secondary-800 ring-theme-background"
                     >
                       <div
                         class="sc-bdfBwQ iyevwF"
@@ -701,7 +701,7 @@ exports[`AddAssets should render a modal 1`] = `
                       </span>
                     </div>
                     <div
-                      class="Circle__CircleWrapper-uw7h4j-0 bNDQMV relative m-3 border-theme-secondary-300 dark:border-theme-secondary-800 text-theme-secondary-300 ring-theme-background"
+                      class="Circle__CircleWrapper-uw7h4j-0 bNDQMV relative m-3 border-theme-secondary-300 text-theme-secondary-300 dark:border-theme-secondary-800 ring-theme-background"
                     >
                       <div
                         class="text-xs text-theme-primary-500"

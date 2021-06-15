@@ -18,7 +18,7 @@ exports[`AddRecipient should render 1`] = `
         </div>
         <div>
           <div
-            class="flex items-center justify-center w-5 h-5 rounded-full cursor-pointer bg-theme-primary-100 hover:bg-theme-primary-200 dark:bg-theme-secondary-800 text-theme-primary-600 dark:text-theme-secondary-200 questionmark"
+            class="flex justify-center items-center w-5 h-5 rounded-full cursor-pointer bg-theme-primary-100 text-theme-primary-600 questionmark dark:bg-theme-secondary-800 dark:text-theme-secondary-200 hover:bg-theme-primary-200"
           >
             <div
               class="sc-bdfBwQ TENjd"
@@ -85,7 +85,7 @@ exports[`AddRecipient should render 1`] = `
           </label>
           <div>
             <div
-              class="relative flex items-center w-full text-left"
+              class="flex relative items-center w-full text-left"
               data-testid="SelectRecipient__wrapper"
             >
               <div
@@ -137,7 +137,7 @@ exports[`AddRecipient should render 1`] = `
                       class="Input__InputWrapperStyled-wu99qs-0 jYUFQr"
                     >
                       <div
-                        class="Circle__CircleWrapper-uw7h4j-0 grnDUY bg-theme-secondary-200 dark:bg-theme-secondary-700 border-theme-secondary-200 dark:border-theme-secondary-700 ring-theme-background"
+                        class="Circle__CircleWrapper-uw7h4j-0 grnDUY bg-theme-secondary-200 border-theme-secondary-200 dark:bg-theme-secondary-700 dark:border-theme-secondary-700 ring-theme-background"
                       />
                       <div
                         class="relative flex flex-1 h-full"
@@ -286,7 +286,7 @@ exports[`AddRecipient should render with multiple recipients tab 1`] = `
         </div>
         <div>
           <div
-            class="flex items-center justify-center w-5 h-5 rounded-full cursor-pointer bg-theme-primary-100 hover:bg-theme-primary-200 dark:bg-theme-secondary-800 text-theme-primary-600 dark:text-theme-secondary-200 questionmark"
+            class="flex justify-center items-center w-5 h-5 rounded-full cursor-pointer bg-theme-primary-100 text-theme-primary-600 questionmark dark:bg-theme-secondary-800 dark:text-theme-secondary-200 hover:bg-theme-primary-200"
           >
             <div
               class="sc-bdfBwQ TENjd"
@@ -353,7 +353,7 @@ exports[`AddRecipient should render with multiple recipients tab 1`] = `
           </label>
           <div>
             <div
-              class="relative flex items-center w-full text-left"
+              class="flex relative items-center w-full text-left"
               data-testid="SelectRecipient__wrapper"
             >
               <div
@@ -405,7 +405,7 @@ exports[`AddRecipient should render with multiple recipients tab 1`] = `
                       class="Input__InputWrapperStyled-wu99qs-0 jYUFQr"
                     >
                       <div
-                        class="Circle__CircleWrapper-uw7h4j-0 grnDUY bg-theme-secondary-200 dark:bg-theme-secondary-700 border-theme-secondary-200 dark:border-theme-secondary-700 ring-theme-background"
+                        class="Circle__CircleWrapper-uw7h4j-0 grnDUY bg-theme-secondary-200 border-theme-secondary-200 dark:bg-theme-secondary-700 dark:border-theme-secondary-700 ring-theme-background"
                       />
                       <div
                         class="relative flex flex-1 h-full"
@@ -554,7 +554,7 @@ exports[`AddRecipient should render with single recipient data 1`] = `
         </div>
         <div>
           <div
-            class="flex items-center justify-center w-5 h-5 rounded-full cursor-pointer bg-theme-primary-100 hover:bg-theme-primary-200 dark:bg-theme-secondary-800 text-theme-primary-600 dark:text-theme-secondary-200 questionmark"
+            class="flex justify-center items-center w-5 h-5 rounded-full cursor-pointer bg-theme-primary-100 text-theme-primary-600 questionmark dark:bg-theme-secondary-800 dark:text-theme-secondary-200 hover:bg-theme-primary-200"
           >
             <div
               class="sc-bdfBwQ TENjd"
@@ -621,7 +621,7 @@ exports[`AddRecipient should render with single recipient data 1`] = `
           </label>
           <div>
             <div
-              class="relative flex items-center w-full text-left"
+              class="flex relative items-center w-full text-left"
               data-testid="SelectRecipient__wrapper"
             >
               <div
@@ -833,7 +833,7 @@ exports[`AddRecipient should render without recipients 1`] = `
         </div>
         <div>
           <div
-            class="flex items-center justify-center w-5 h-5 rounded-full cursor-pointer bg-theme-primary-100 hover:bg-theme-primary-200 dark:bg-theme-secondary-800 text-theme-primary-600 dark:text-theme-secondary-200 questionmark"
+            class="flex justify-center items-center w-5 h-5 rounded-full cursor-pointer bg-theme-primary-100 text-theme-primary-600 questionmark dark:bg-theme-secondary-800 dark:text-theme-secondary-200 hover:bg-theme-primary-200"
           >
             <div
               class="sc-bdfBwQ TENjd"
@@ -900,7 +900,7 @@ exports[`AddRecipient should render without recipients 1`] = `
           </label>
           <div>
             <div
-              class="relative flex items-center w-full text-left"
+              class="flex relative items-center w-full text-left"
               data-testid="SelectRecipient__wrapper"
             >
               <div
@@ -952,7 +952,7 @@ exports[`AddRecipient should render without recipients 1`] = `
                       class="Input__InputWrapperStyled-wu99qs-0 jYUFQr"
                     >
                       <div
-                        class="Circle__CircleWrapper-uw7h4j-0 grnDUY bg-theme-secondary-200 dark:bg-theme-secondary-700 border-theme-secondary-200 dark:border-theme-secondary-700 ring-theme-background"
+                        class="Circle__CircleWrapper-uw7h4j-0 grnDUY bg-theme-secondary-200 border-theme-secondary-200 dark:bg-theme-secondary-700 dark:border-theme-secondary-700 ring-theme-background"
                       />
                       <div
                         class="relative flex flex-1 h-full"
@@ -1106,7 +1106,7 @@ exports[`AddRecipient should render without the single & multiple tabs 1`] = `
           </label>
           <div>
             <div
-              class="relative flex items-center w-full text-left"
+              class="flex relative items-center w-full text-left"
               data-testid="SelectRecipient__wrapper"
             >
               <div
@@ -1158,7 +1158,7 @@ exports[`AddRecipient should render without the single & multiple tabs 1`] = `
                       class="Input__InputWrapperStyled-wu99qs-0 jYUFQr"
                     >
                       <div
-                        class="Circle__CircleWrapper-uw7h4j-0 grnDUY bg-theme-secondary-200 dark:bg-theme-secondary-700 border-theme-secondary-200 dark:border-theme-secondary-700 ring-theme-background"
+                        class="Circle__CircleWrapper-uw7h4j-0 grnDUY bg-theme-secondary-200 border-theme-secondary-200 dark:bg-theme-secondary-700 dark:border-theme-secondary-700 ring-theme-background"
                       />
                       <div
                         class="relative flex flex-1 h-full"
@@ -1307,7 +1307,7 @@ exports[`AddRecipient should set available amount 1`] = `
         </div>
         <div>
           <div
-            class="flex items-center justify-center w-5 h-5 rounded-full cursor-pointer bg-theme-primary-100 hover:bg-theme-primary-200 dark:bg-theme-secondary-800 text-theme-primary-600 dark:text-theme-secondary-200 questionmark"
+            class="flex justify-center items-center w-5 h-5 rounded-full cursor-pointer bg-theme-primary-100 text-theme-primary-600 questionmark dark:bg-theme-secondary-800 dark:text-theme-secondary-200 hover:bg-theme-primary-200"
           >
             <div
               class="sc-bdfBwQ TENjd"
@@ -1374,7 +1374,7 @@ exports[`AddRecipient should set available amount 1`] = `
           </label>
           <div>
             <div
-              class="relative flex items-center w-full text-left"
+              class="flex relative items-center w-full text-left"
               data-testid="SelectRecipient__wrapper"
             >
               <div
@@ -1426,7 +1426,7 @@ exports[`AddRecipient should set available amount 1`] = `
                       class="Input__InputWrapperStyled-wu99qs-0 jYUFQr"
                     >
                       <div
-                        class="Circle__CircleWrapper-uw7h4j-0 grnDUY bg-theme-secondary-200 dark:bg-theme-secondary-700 border-theme-secondary-200 dark:border-theme-secondary-700 ring-theme-background"
+                        class="Circle__CircleWrapper-uw7h4j-0 grnDUY bg-theme-secondary-200 border-theme-secondary-200 dark:bg-theme-secondary-700 dark:border-theme-secondary-700 ring-theme-background"
                       />
                       <div
                         class="relative flex flex-1 h-full"
@@ -1575,7 +1575,7 @@ exports[`AddRecipient should show zero amount if wallet has zero or insufficient
         </div>
         <div>
           <div
-            class="flex items-center justify-center w-5 h-5 rounded-full cursor-pointer bg-theme-primary-100 hover:bg-theme-primary-200 dark:bg-theme-secondary-800 text-theme-primary-600 dark:text-theme-secondary-200 questionmark"
+            class="flex justify-center items-center w-5 h-5 rounded-full cursor-pointer bg-theme-primary-100 text-theme-primary-600 questionmark dark:bg-theme-secondary-800 dark:text-theme-secondary-200 hover:bg-theme-primary-200"
           >
             <div
               class="sc-bdfBwQ TENjd"
@@ -1642,7 +1642,7 @@ exports[`AddRecipient should show zero amount if wallet has zero or insufficient
           </label>
           <div>
             <div
-              class="relative flex items-center w-full text-left"
+              class="flex relative items-center w-full text-left"
               data-testid="SelectRecipient__wrapper"
             >
               <div
@@ -1694,7 +1694,7 @@ exports[`AddRecipient should show zero amount if wallet has zero or insufficient
                       class="Input__InputWrapperStyled-wu99qs-0 jYUFQr"
                     >
                       <div
-                        class="Circle__CircleWrapper-uw7h4j-0 grnDUY bg-theme-secondary-200 dark:bg-theme-secondary-700 border-theme-secondary-200 dark:border-theme-secondary-700 ring-theme-background"
+                        class="Circle__CircleWrapper-uw7h4j-0 grnDUY bg-theme-secondary-200 border-theme-secondary-200 dark:bg-theme-secondary-700 dark:border-theme-secondary-700 ring-theme-background"
                       />
                       <div
                         class="relative flex flex-1 h-full"

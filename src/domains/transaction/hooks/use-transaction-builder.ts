@@ -4,7 +4,6 @@ import { upperFirst } from "@arkecosystem/utils";
 import { useLedgerContext } from "app/contexts";
 
 type SignFn = (input: any) => Promise<string>;
-type ConnectFn = (profile: ProfileContracts.IProfile, coin: string, network: string) => Promise<void>;
 
 const prepareMultiSignature = async (
 	input: Services.TransactionInputs,

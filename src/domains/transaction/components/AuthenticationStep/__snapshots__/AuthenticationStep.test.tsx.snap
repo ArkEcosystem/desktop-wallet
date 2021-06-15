@@ -66,12 +66,12 @@ exports[`AuthenticationStep should request WIF if wallet was imported using WIF 
               class=""
             >
               <button
-                class="relative flex items-center justify-center w-full h-full text-2xl focus:outline-none group"
+                class="flex relative justify-center items-center w-full h-full text-2xl focus:outline-none group"
                 data-testid="InputPassword__toggle"
                 type="button"
               >
                 <div
-                  class="absolute inset-0 -m-1 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                  class="absolute inset-0 -m-1 rounded group-focus-visible group-focus:ring-2 ring-theme-primary-400"
                 />
                 <div
                   class="sc-bdfBwQ fPrsah"
@@ -158,12 +158,12 @@ exports[`AuthenticationStep should request mnemonic and second mnemonic 1`] = `
               class=""
             >
               <button
-                class="relative flex items-center justify-center w-full h-full text-2xl focus:outline-none group"
+                class="flex relative justify-center items-center w-full h-full text-2xl focus:outline-none group"
                 data-testid="InputPassword__toggle"
                 type="button"
               >
                 <div
-                  class="absolute inset-0 -m-1 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                  class="absolute inset-0 -m-1 rounded group-focus-visible group-focus:ring-2 ring-theme-primary-400"
                 />
                 <div
                   class="sc-bdfBwQ fPrsah"
@@ -217,12 +217,12 @@ exports[`AuthenticationStep should request mnemonic and second mnemonic 1`] = `
               class=""
             >
               <button
-                class="relative flex items-center justify-center w-full h-full text-2xl focus:outline-none group"
+                class="flex relative justify-center items-center w-full h-full text-2xl focus:outline-none group"
                 data-testid="InputPassword__toggle"
                 type="button"
               >
                 <div
-                  class="absolute inset-0 -m-1 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                  class="absolute inset-0 -m-1 rounded group-focus-visible group-focus:ring-2 ring-theme-primary-400"
                 />
                 <div
                   class="sc-bdfBwQ fPrsah"
@@ -246,7 +246,7 @@ exports[`AuthenticationStep should request mnemonic and second mnemonic 1`] = `
 exports[`AuthenticationStep should request mnemonic if wallet was imported using address 1`] = `
 <DocumentFragment>
   <form
-    class="space-y-8"
+    class="space-y-5"
     data-testid="Form"
   >
     <div
@@ -309,12 +309,12 @@ exports[`AuthenticationStep should request mnemonic if wallet was imported using
               class=""
             >
               <button
-                class="relative flex items-center justify-center w-full h-full text-2xl focus:outline-none group"
+                class="flex relative justify-center items-center w-full h-full text-2xl focus:outline-none group"
                 data-testid="InputPassword__toggle"
                 type="button"
               >
                 <div
-                  class="absolute inset-0 -m-1 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                  class="absolute inset-0 -m-1 rounded group-focus-visible group-focus:ring-2 ring-theme-primary-400"
                 />
                 <div
                   class="sc-bdfBwQ fPrsah"
@@ -338,7 +338,7 @@ exports[`AuthenticationStep should request mnemonic if wallet was imported using
 exports[`AuthenticationStep should request mnemonic if wallet was imported using mnemonic 1`] = `
 <DocumentFragment>
   <form
-    class="space-y-8"
+    class="space-y-5"
     data-testid="Form"
   >
     <div
@@ -401,12 +401,12 @@ exports[`AuthenticationStep should request mnemonic if wallet was imported using
               class=""
             >
               <button
-                class="relative flex items-center justify-center w-full h-full text-2xl focus:outline-none group"
+                class="flex relative justify-center items-center w-full h-full text-2xl focus:outline-none group"
                 data-testid="InputPassword__toggle"
                 type="button"
               >
                 <div
-                  class="absolute inset-0 -m-1 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                  class="absolute inset-0 -m-1 rounded group-focus-visible group-focus:ring-2 ring-theme-primary-400"
                 />
                 <div
                   class="sc-bdfBwQ fPrsah"
@@ -430,7 +430,7 @@ exports[`AuthenticationStep should request mnemonic if wallet was imported using
 exports[`AuthenticationStep should request private key if wallet was imported using private key 1`] = `
 <DocumentFragment>
   <form
-    class="space-y-8"
+    class="space-y-5"
     data-testid="Form"
   >
     <div
@@ -493,12 +493,12 @@ exports[`AuthenticationStep should request private key if wallet was imported us
               class=""
             >
               <button
-                class="relative flex items-center justify-center w-full h-full text-2xl focus:outline-none group"
+                class="flex relative justify-center items-center w-full h-full text-2xl focus:outline-none group"
                 data-testid="InputPassword__toggle"
                 type="button"
               >
                 <div
-                  class="absolute inset-0 -m-1 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                  class="absolute inset-0 -m-1 rounded group-focus-visible group-focus:ring-2 ring-theme-primary-400"
                 />
                 <div
                   class="sc-bdfBwQ fPrsah"
@@ -558,7 +558,7 @@ exports[`AuthenticationStep should show ledger waiting app screen 1`] = `
           waiting-ledger-device.svg
         </svg>
         <div
-          class="inline-flex items-center justify-center space-x-3 w-full"
+          class="inline-flex justify-center items-center space-x-3 w-full"
         >
           <div
             class="Spinner-sc-1tybciv-0 gzGczR"
@@ -616,7 +616,7 @@ exports[`AuthenticationStep should show ledger waiting device screen 1`] = `
           waiting-ledger-device.svg
         </svg>
         <div
-          class="inline-flex items-center justify-center space-x-3 w-full"
+          class="inline-flex justify-center items-center space-x-3 w-full"
         >
           <div
             class="Spinner-sc-1tybciv-0 gzGczR"
@@ -671,7 +671,7 @@ exports[`AuthenticationStep should show only ledger confirmation 1`] = `
         Please review and verify the information on your Ledger device. Choose Accept to complete your transaction.
       </div>
       <div
-        class="inline-flex items-center justify-center mt-8 space-x-3 w-full"
+        class="inline-flex justify-center items-center mt-8 space-x-3 w-full"
       >
         <div
           class="Spinner-sc-1tybciv-0 gzGczR"

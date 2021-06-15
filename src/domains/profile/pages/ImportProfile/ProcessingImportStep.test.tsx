@@ -113,7 +113,7 @@ describe("Import Profile - Processing import", () => {
 
 	it("should enter password again", async () => {
 		const onPasswordChange = jest.fn();
-		const { container, getByTestId, findByTestId, rerender } = render(
+		const { container, getByTestId, findByTestId } = render(
 			<ProcessingImport
 				env={env}
 				file={passwordProtectedDwe}

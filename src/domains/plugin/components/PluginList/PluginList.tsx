@@ -119,7 +119,7 @@ export const PluginList = ({
 			</Table>
 
 			{showPagination && (
-				<div className="flex justify-center w-full mt-10">
+				<div className="flex justify-center mt-10 w-full">
 					<Pagination
 						currentPage={currentPage}
 						itemsPerPage={itemsPerPage}

@@ -15,7 +15,6 @@ import {
 	fireEvent,
 	getDefaultProfileId,
 	render,
-	RenderResult,
 	renderWithRouter,
 	syncFees,
 	waitFor,
@@ -301,7 +300,7 @@ describe("SendIpfs", () => {
 
 		history.push(ipfsURL);
 
-		const { getByTestId, container } = renderWithRouter(
+		const { getByTestId } = renderWithRouter(
 			<Route path="/profiles/:profileId/wallets/:walletId/send-ipfs">
 				<LedgerProvider transport={transport}>
 					<SendIpfs />
@@ -349,7 +348,7 @@ describe("SendIpfs", () => {
 
 		history.push(ipfsURL);
 
-		const { getByTestId, container } = renderWithRouter(
+		const { getByTestId } = renderWithRouter(
 			<Route path="/profiles/:profileId/wallets/:walletId/send-ipfs">
 				<LedgerProvider transport={transport}>
 					<SendIpfs />
@@ -481,7 +480,7 @@ describe("SendIpfs", () => {
 
 		history.push(ipfsURL);
 
-		const { getByTestId, container } = renderWithRouter(
+		const { getByTestId } = renderWithRouter(
 			<Route path="/profiles/:profileId/wallets/:walletId/send-ipfs">
 				<LedgerProvider transport={transport}>
 					<SendIpfs />
@@ -742,8 +741,6 @@ describe("SendIpfs", () => {
 		const ipfsURL = `/profiles/${fixtureProfileId}/transactions/${wallet.id()}/ipfs`;
 
 		history.push(ipfsURL);
-
-		let rendered: RenderResult;
 
 		const { getByTestId } = renderWithRouter(
 			<Route path="/profiles/:profileId/transactions/:walletId/ipfs">
