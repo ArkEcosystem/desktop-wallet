@@ -3,7 +3,7 @@
 exports[`SecondSignatureRegistrationForm backup step should render 1`] = `
 <DocumentFragment>
   <form
-    class="space-y-8"
+    class="space-y-5"
     data-testid="Form"
   >
     <div>
@@ -120,7 +120,7 @@ exports[`SecondSignatureRegistrationForm backup step should render 1`] = `
             </div>
           </div>
           <div
-            class="flex justify-end w-full space-x-3"
+            class="flex justify-end space-x-3 w-full"
           >
             <div
               class="relative"
@@ -148,7 +148,7 @@ exports[`SecondSignatureRegistrationForm backup step should render 1`] = `
                 </div>
               </button>
               <div
-                class="absolute inset-0 flex justify-center items-center bg-theme-primary-100 dark:bg-theme-secondary-800 rounded"
+                class="flex absolute inset-0 justify-center items-center rounded bg-theme-primary-100 dark:bg-theme-secondary-800"
                 data-testid="clipboard-button__checkmark"
                 style="opacity: 0;"
               >
@@ -200,7 +200,7 @@ exports[`SecondSignatureRegistrationForm backup step should render 1`] = `
 exports[`SecondSignatureRegistrationForm should render generation step 1`] = `
 <DocumentFragment>
   <form
-    class="space-y-8"
+    class="space-y-5"
     data-testid="Form"
   >
     <div>
@@ -262,7 +262,7 @@ exports[`SecondSignatureRegistrationForm should render generation step 1`] = `
             data-testid="TransactionDetail"
           >
             <div
-              class="w-40 flex-1 space-y-2 whitespace-nowrap"
+              class="flex-1 space-y-2 w-40 whitespace-nowrap"
             >
               <div
                 class="text-sm font-semibold text-theme-secondary-700 no-ligatures"
@@ -273,7 +273,7 @@ exports[`SecondSignatureRegistrationForm should render generation step 1`] = `
                 class="font-semibold"
               >
                 <div
-                  class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap space-x-2"
+                  class="flex overflow-hidden flex-grow items-center space-x-2 whitespace-nowrap no-ligatures"
                 >
                   <span
                     class="font-semibold text-base text-theme-text"
@@ -314,128 +314,123 @@ exports[`SecondSignatureRegistrationForm should render generation step 1`] = `
               </div>
             </div>
           </div>
-          <div
-            class="space-y-8"
+          <fieldset
+            class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
           >
-            <fieldset
-              class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
+            <label
+              class="flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
+              data-testid="FormLabel"
+              for="fee"
             >
-              <label
-                class="flex mb-2 text-sm font-semibold transition-colors duration-100 FormLabel text-theme-secondary-text"
-                data-testid="FormLabel"
-                for="fee"
-              >
-                Transaction Fee
-              </label>
+              Transaction Fee
+            </label>
+            <div
+              class="relative"
+              data-testid="InputFee"
+            >
               <div
-                class="relative"
-                data-testid="InputFee"
+                class="absolute right-0 -mt-7"
               >
                 <div
-                  class="absolute right-0 -mt-7"
+                  class="flex items-center"
                 >
-                  <div
-                    class="flex items-center"
+                  <span
+                    class="Switch__SwitchText-sc-1fue7gg-0 jrkMzU"
+                    role="button"
                   >
-                    <span
-                      class="Switch__SwitchText-sc-1fue7gg-0 jrkMzU"
-                      role="button"
+                    Simple
+                  </span>
+                  <label
+                    class="flex"
+                  >
+                    <input
+                      class="Toggle__Input-qyyifx-0 WGuGL"
+                      type="checkbox"
+                    />
+                    <div
+                      class="Toggle__Handle-qyyifx-1 geejDn"
                     >
-                      Simple
-                    </span>
-                    <label
-                      class="flex"
-                    >
-                      <input
-                        class="Toggle__Input-qyyifx-0 WGuGL"
-                        type="checkbox"
+                      <span
+                        class="Toggle__HandleInner-qyyifx-2 eSIhju"
                       />
-                      <div
-                        class="Toggle__Handle-qyyifx-1 geejDn"
-                      >
-                        <span
-                          class="Toggle__HandleInner-qyyifx-2 eSIhju"
-                        />
-                      </div>
-                    </label>
-                    <span
-                      class="Switch__SwitchText-sc-1fue7gg-0 khGGFd"
-                      role="button"
-                    >
-                      Advanced
-                    </span>
-                  </div>
-                </div>
-                <div
-                  class="w-full inline-flex items-center space-x-2"
-                  data-testid="ButtonGroup"
-                  role="radiogroup"
-                >
-                  <button
-                    aria-checked="false"
-                    class="ButtonGroup__ButtonGroupOptionStyled-sc-1u00raz-0 gXhvLe"
-                    data-testid="ButtonGroupOption"
-                    disabled=""
-                    role="radio"
-                    type="button"
-                  >
-                    <div>
-                      <div
-                        class="mb-3"
-                      >
-                        Slow
-                      </div>
-                      <div
-                        class="font-normal text-sm"
-                      >
-                        0 DARK
-                      </div>
                     </div>
-                  </button>
-                  <button
-                    aria-checked="false"
-                    class="ButtonGroup__ButtonGroupOptionStyled-sc-1u00raz-0 gXhvLe"
-                    data-testid="ButtonGroupOption"
-                    role="radio"
-                    type="button"
+                  </label>
+                  <span
+                    class="Switch__SwitchText-sc-1fue7gg-0 khGGFd"
+                    role="button"
                   >
-                    <div>
-                      <div
-                        class="mb-3"
-                      >
-                        Average
-                      </div>
-                      <div
-                        class="font-normal text-sm"
-                      >
-                        1.354 DARK
-                      </div>
-                    </div>
-                  </button>
-                  <button
-                    aria-checked="false"
-                    class="ButtonGroup__ButtonGroupOptionStyled-sc-1u00raz-0 gXhvLe"
-                    data-testid="ButtonGroupOption"
-                    role="radio"
-                    type="button"
-                  >
-                    <div>
-                      <div
-                        class="mb-3"
-                      >
-                        Fast
-                      </div>
-                      <div
-                        class="font-normal text-sm"
-                      >
-                        10 DARK
-                      </div>
-                    </div>
-                  </button>
+                    Advanced
+                  </span>
                 </div>
               </div>
-            </fieldset>
-          </div>
+              <div
+                class="w-full inline-flex items-center space-x-2"
+                data-testid="ButtonGroup"
+                role="radiogroup"
+              >
+                <button
+                  aria-checked="false"
+                  class="ButtonGroup__ButtonGroupOptionStyled-sc-1u00raz-0 gXhvLe"
+                  data-testid="ButtonGroupOption"
+                  role="radio"
+                  type="button"
+                >
+                  <div>
+                    <div
+                      class="mb-3"
+                    >
+                      Slow
+                    </div>
+                    <div
+                      class="font-normal text-sm"
+                    >
+                      0 DARK
+                    </div>
+                  </div>
+                </button>
+                <button
+                  aria-checked="true"
+                  class="ButtonGroup__ButtonGroupOptionStyled-sc-1u00raz-0 gXhvLe"
+                  data-testid="ButtonGroupOption"
+                  role="radio"
+                  type="button"
+                >
+                  <div>
+                    <div
+                      class="mb-3"
+                    >
+                      Average
+                    </div>
+                    <div
+                      class="font-normal text-sm"
+                    >
+                      1.354 DARK
+                    </div>
+                  </div>
+                </button>
+                <button
+                  aria-checked="false"
+                  class="ButtonGroup__ButtonGroupOptionStyled-sc-1u00raz-0 gXhvLe"
+                  data-testid="ButtonGroupOption"
+                  role="radio"
+                  type="button"
+                >
+                  <div>
+                    <div
+                      class="mb-3"
+                    >
+                      Fast
+                    </div>
+                    <div
+                      class="font-normal text-sm"
+                    >
+                      10 DARK
+                    </div>
+                  </div>
+                </button>
+              </div>
+            </div>
+          </fieldset>
         </section>
       </div>
     </div>
@@ -450,7 +445,7 @@ exports[`SecondSignatureRegistrationForm should render transaction details 1`] =
     data-testid="TransactionDetail"
   >
     <div
-      class="w-40 flex-1 space-y-2 whitespace-nowrap"
+      class="flex-1 space-y-2 w-40 whitespace-nowrap"
     >
       <div
         class="text-sm font-semibold text-theme-secondary-700 no-ligatures"
@@ -482,7 +477,7 @@ exports[`SecondSignatureRegistrationForm should render transaction details 1`] =
     data-testid="TransactionDetail"
   >
     <div
-      class="w-40 flex-1 space-y-2 whitespace-nowrap"
+      class="flex-1 space-y-2 w-40 whitespace-nowrap"
     >
       <div
         class="text-sm font-semibold text-theme-secondary-700 no-ligatures"

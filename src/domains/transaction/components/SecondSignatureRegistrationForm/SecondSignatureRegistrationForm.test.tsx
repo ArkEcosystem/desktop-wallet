@@ -84,7 +84,7 @@ describe("SecondSignatureRegistrationForm", () => {
 		const { result } = renderHook(() => useForm());
 
 		result.current.register("fee");
-		result.current.register("inputFeeViewType");
+		result.current.register("inputFeeSettings");
 
 		const { rerender } = render(<Component form={result.current} onSubmit={() => void 0} />);
 

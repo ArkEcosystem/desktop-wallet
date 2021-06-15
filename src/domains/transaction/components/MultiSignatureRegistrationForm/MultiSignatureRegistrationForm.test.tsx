@@ -75,7 +75,7 @@ describe("MultiSignature Registration Form", () => {
 	it("should set fee", async () => {
 		const { result, waitForNextUpdate } = renderHook(() => useForm());
 		result.current.register("fee");
-		result.current.register("inputFeeViewType");
+		result.current.register("inputFeeSettings");
 
 		const { rerender } = render(<Component form={result.current} />);
 		await waitForNextUpdate();

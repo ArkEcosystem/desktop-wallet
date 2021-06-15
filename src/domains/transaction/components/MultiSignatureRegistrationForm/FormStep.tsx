@@ -25,7 +25,9 @@ export const FormStep = ({
 }) => {
 	const { t } = useTranslation();
 	const { errors, setValue, getValues, register } = useFormContext();
-	const { participants, fee, minParticipants, inputFeeSettings } = getValues();
+	const { participants, fee, minParticipants } = getValues();
+
+	const inputFeeSettings = getValues("inputFeeSettings") ?? {};
 
 	const { common, multiSignatureRegistration } = useValidation();
 
@@ -101,19 +103,27 @@ export const FormStep = ({
 						avg={fees.avg}
 						max={fees.max}
 						loading={!fees}
-						value={fee || 0}
+						value={fee}
 						step={step}
 						disabled={wallet.network().feeType() !== "dynamic"}
 						onChange={(value) => setValue("fee", value, { shouldValidate: true, shouldDirty: true })}
 						network={wallet.network()}
 						profile={profile}
 						viewType={inputFeeSettings.viewType}
-						onChangeViewType={(value) => {
-							setValue("inputFeeSettings.viewType", value, { shouldDirty: true });
+						onChangeViewType={(viewType) => {
+							setValue(
+								"inputFeeSettings",
+								{ ...inputFeeSettings, viewType },
+								{ shouldValidate: true, shouldDirty: true },
+							);
 						}}
 						simpleValue={inputFeeSettings.simpleValue}
-						onChangeSimpleValue={(value) => {
-							setValue("inputFeeSettings.simpleValue", value, { shouldDirty: true });
+						onChangeSimpleValue={(simpleValue) => {
+							setValue(
+								"inputFeeSettings",
+								{ ...inputFeeSettings, simpleValue },
+								{ shouldValidate: true, shouldDirty: true },
+							);
 						}}
 					/>
 				</FormField>

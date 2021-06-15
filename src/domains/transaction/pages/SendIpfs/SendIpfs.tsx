@@ -32,12 +32,7 @@ export const SendIpfs = () => {
 	const networks = useMemo(() => env.availableNetworks(), [env]);
 	const { sendIpfs, common } = useValidation();
 
-	const form = useForm<any>({
-		mode: "onChange",
-		defaultValues: {
-			inputFeeSettings: {},
-		},
-	});
+	const form = useForm({ mode: "onChange" });
 
 	const { hasDeviceAvailable, isConnected, connect, transport } = useLedgerContext();
 	const { clearErrors, formState, getValues, handleSubmit, register, setError, setValue, watch } = form;

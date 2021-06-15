@@ -22,8 +22,8 @@ interface InputFeeProps {
 	simpleValue?: InputFeeSimpleValue;
 	value: string;
 	onChange: (value: string) => void;
-	onChangeViewType?: (value: InputFeeViewType) => void;
-	onChangeSimpleValue?: (value: InputFeeSimpleValue) => void;
+	onChangeViewType: (value: InputFeeViewType) => void;
+	onChangeSimpleValue: (value: InputFeeSimpleValue) => void;
 }
 
 const DEFAULT_VIEW_TYPE = InputFeeViewType.Simple;
@@ -60,10 +60,11 @@ export const InputFee = memo(
 		};
 
 		const onChangeViewType = (val: InputFeeViewType) => {
-			props.onChangeViewType?.(val);
+			props.onChangeViewType(val);
 
 			if (val === InputFeeViewType.Simple) {
-				onChange(simpleValue);
+				const feeValue = options[simpleValue].displayValue;
+				onChange(feeValue);
 			}
 
 			if (val === InputFeeViewType.Advanced) {
@@ -72,7 +73,7 @@ export const InputFee = memo(
 		};
 
 		const onChangeSimpleValue = (val: InputFeeSimpleValue) => {
-			props.onChangeSimpleValue?.(val);
+			props.onChangeSimpleValue(val);
 
 			const feeValue = options[val].displayValue;
 			onChange(feeValue);

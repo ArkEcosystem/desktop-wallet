@@ -1,215 +1,5 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`should allow switching between simple and advanced view types 1`] = `
-<DocumentFragment>
-  <div
-    class="relative"
-    data-testid="InputFee"
-  >
-    <div
-      class="absolute right-0 -mt-7"
-    >
-      <div
-        class="flex items-center"
-      >
-        <span
-          class="Switch__SwitchText-sc-1fue7gg-0 khGGFd"
-          role="button"
-        >
-          Simple
-        </span>
-        <label
-          class="flex"
-        >
-          <input
-            class="Toggle__Input-qyyifx-0 WGuGL"
-            type="checkbox"
-          />
-          <div
-            class="Toggle__Handle-qyyifx-1 geejDn"
-          >
-            <span
-              class="Toggle__HandleInner-qyyifx-2 eSIhju"
-            />
-          </div>
-        </label>
-        <span
-          class="Switch__SwitchText-sc-1fue7gg-0 jrkMzU"
-          role="button"
-        >
-          Advanced
-        </span>
-      </div>
-    </div>
-    <div
-      class="relative"
-    >
-      <div
-        class="fixed invisible w-auto whitespace-nowrap"
-      >
-        0.3…
-      </div>
-      <div
-        class="Input__InputWrapperStyled-wu99qs-0 jYUFQr"
-      >
-        <div
-          class="relative flex flex-1 h-full"
-        >
-          <input
-            class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
-            data-testid="InputCurrency"
-            type="text"
-            value="0.3"
-          />
-        </div>
-      </div>
-      <div
-        class="absolute bottom-0 px-1 w-full"
-      >
-        <div
-          class="flex flex-wrap justify-center"
-          data-testid="Range"
-        >
-          <div
-            class="Range__Track-sc-10itqc2-0 sgjTD"
-            data-testid="Range__track"
-            style="transform: scale(1); cursor: pointer;"
-          >
-            <div
-              class="Range__TrackFilled-sc-10itqc2-1 egFfKP"
-              data-testid="Range__track__filled"
-            >
-              <div
-                aria-valuemax="0.5"
-                aria-valuemin="0.006"
-                aria-valuenow="0.3"
-                class="Range__Thumb-sc-10itqc2-2 hXgqqU"
-                data-testid="Range__thumb"
-                draggable="false"
-                role="slider"
-                style="position: absolute; z-index: 0; cursor: grab; user-select: none; transform: translate(0px, 0px);"
-                tabindex="0"
-              />
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</DocumentFragment>
-`;
-
-exports[`should allow switching between simple and advanced view types 2`] = `
-<DocumentFragment>
-  <div
-    class="relative"
-    data-testid="InputFee"
-  >
-    <div
-      class="absolute right-0 -mt-7"
-    >
-      <div
-        class="flex items-center"
-      >
-        <span
-          class="Switch__SwitchText-sc-1fue7gg-0 jrkMzU"
-          role="button"
-        >
-          Simple
-        </span>
-        <label
-          class="flex"
-        >
-          <input
-            class="Toggle__Input-qyyifx-0 WGuGL"
-            type="checkbox"
-          />
-          <div
-            class="Toggle__Handle-qyyifx-1 geejDn"
-          >
-            <span
-              class="Toggle__HandleInner-qyyifx-2 eSIhju"
-            />
-          </div>
-        </label>
-        <span
-          class="Switch__SwitchText-sc-1fue7gg-0 khGGFd"
-          role="button"
-        >
-          Advanced
-        </span>
-      </div>
-    </div>
-    <div
-      class="w-full inline-flex items-center space-x-2"
-      data-testid="ButtonGroup"
-      role="radiogroup"
-    >
-      <button
-        aria-checked="false"
-        class="ButtonGroup__ButtonGroupOptionStyled-sc-1u00raz-0 gXhvLe"
-        data-testid="ButtonGroupOption"
-        role="radio"
-        type="button"
-      >
-        <div>
-          <div
-            class="mb-3"
-          >
-            Slow
-          </div>
-          <div
-            class="font-normal text-sm"
-          >
-            0.006 DARK
-          </div>
-        </div>
-      </button>
-      <button
-        aria-checked="true"
-        class="ButtonGroup__ButtonGroupOptionStyled-sc-1u00raz-0 gXhvLe"
-        data-testid="ButtonGroupOption"
-        role="radio"
-        type="button"
-      >
-        <div>
-          <div
-            class="mb-3"
-          >
-            Average
-          </div>
-          <div
-            class="font-normal text-sm"
-          >
-            0.456 DARK
-          </div>
-        </div>
-      </button>
-      <button
-        aria-checked="false"
-        class="ButtonGroup__ButtonGroupOptionStyled-sc-1u00raz-0 gXhvLe"
-        data-testid="ButtonGroupOption"
-        role="radio"
-        type="button"
-      >
-        <div>
-          <div
-            class="mb-3"
-          >
-            Fast
-          </div>
-          <div
-            class="font-normal text-sm"
-          >
-            0.5 DARK
-          </div>
-        </div>
-      </button>
-    </div>
-  </div>
-</DocumentFragment>
-`;
-
 exports[`should allow to input a value 1`] = `
 <DocumentFragment>
   <div
@@ -440,6 +230,216 @@ exports[`should display converted values when on live net 1`] = `
             >
               0 BTC
             </span>
+          </div>
+        </div>
+      </button>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`should keep different values for simple and advanced view types 1`] = `
+<DocumentFragment>
+  <div
+    class="relative"
+    data-testid="InputFee"
+  >
+    <div
+      class="absolute right-0 -mt-7"
+    >
+      <div
+        class="flex items-center"
+      >
+        <span
+          class="Switch__SwitchText-sc-1fue7gg-0 khGGFd"
+          role="button"
+        >
+          Simple
+        </span>
+        <label
+          class="flex"
+        >
+          <input
+            class="Toggle__Input-qyyifx-0 WGuGL"
+            type="checkbox"
+          />
+          <div
+            class="Toggle__Handle-qyyifx-1 geejDn"
+          >
+            <span
+              class="Toggle__HandleInner-qyyifx-2 eSIhju"
+            />
+          </div>
+        </label>
+        <span
+          class="Switch__SwitchText-sc-1fue7gg-0 jrkMzU"
+          role="button"
+        >
+          Advanced
+        </span>
+      </div>
+    </div>
+    <div
+      class="relative"
+    >
+      <div
+        class="fixed invisible w-auto whitespace-nowrap"
+      >
+        0.3…
+      </div>
+      <div
+        class="Input__InputWrapperStyled-wu99qs-0 jYUFQr"
+      >
+        <div
+          class="relative flex flex-1 h-full"
+        >
+          <input
+            class="Input__InputStyled-wu99qs-1 ioFtLo p-0 border-none bg-transparent focus:ring-0 no-ligatures w-full"
+            data-testid="InputCurrency"
+            type="text"
+            value="0.3"
+          />
+        </div>
+      </div>
+      <div
+        class="absolute bottom-0 px-1 w-full"
+      >
+        <div
+          class="flex flex-wrap justify-center"
+          data-testid="Range"
+        >
+          <div
+            class="Range__Track-sc-10itqc2-0 sgjTD"
+            data-testid="Range__track"
+            style="transform: scale(1); cursor: pointer;"
+          >
+            <div
+              class="Range__TrackFilled-sc-10itqc2-1 egFfKP"
+              data-testid="Range__track__filled"
+            >
+              <div
+                aria-valuemax="0.5"
+                aria-valuemin="0.006"
+                aria-valuenow="0.3"
+                class="Range__Thumb-sc-10itqc2-2 hXgqqU"
+                data-testid="Range__thumb"
+                draggable="false"
+                role="slider"
+                style="position: absolute; z-index: 0; cursor: grab; user-select: none; transform: translate(0px, 0px);"
+                tabindex="0"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`should keep different values for simple and advanced view types 2`] = `
+<DocumentFragment>
+  <div
+    class="relative"
+    data-testid="InputFee"
+  >
+    <div
+      class="absolute right-0 -mt-7"
+    >
+      <div
+        class="flex items-center"
+      >
+        <span
+          class="Switch__SwitchText-sc-1fue7gg-0 jrkMzU"
+          role="button"
+        >
+          Simple
+        </span>
+        <label
+          class="flex"
+        >
+          <input
+            class="Toggle__Input-qyyifx-0 WGuGL"
+            type="checkbox"
+          />
+          <div
+            class="Toggle__Handle-qyyifx-1 geejDn"
+          >
+            <span
+              class="Toggle__HandleInner-qyyifx-2 eSIhju"
+            />
+          </div>
+        </label>
+        <span
+          class="Switch__SwitchText-sc-1fue7gg-0 khGGFd"
+          role="button"
+        >
+          Advanced
+        </span>
+      </div>
+    </div>
+    <div
+      class="w-full inline-flex items-center space-x-2"
+      data-testid="ButtonGroup"
+      role="radiogroup"
+    >
+      <button
+        aria-checked="false"
+        class="ButtonGroup__ButtonGroupOptionStyled-sc-1u00raz-0 gXhvLe"
+        data-testid="ButtonGroupOption"
+        role="radio"
+        type="button"
+      >
+        <div>
+          <div
+            class="mb-3"
+          >
+            Slow
+          </div>
+          <div
+            class="font-normal text-sm"
+          >
+            0.006 DARK
+          </div>
+        </div>
+      </button>
+      <button
+        aria-checked="true"
+        class="ButtonGroup__ButtonGroupOptionStyled-sc-1u00raz-0 gXhvLe"
+        data-testid="ButtonGroupOption"
+        role="radio"
+        type="button"
+      >
+        <div>
+          <div
+            class="mb-3"
+          >
+            Average
+          </div>
+          <div
+            class="font-normal text-sm"
+          >
+            0.456 DARK
+          </div>
+        </div>
+      </button>
+      <button
+        aria-checked="false"
+        class="ButtonGroup__ButtonGroupOptionStyled-sc-1u00raz-0 gXhvLe"
+        data-testid="ButtonGroupOption"
+        role="radio"
+        type="button"
+      >
+        <div>
+          <div
+            class="mb-3"
+          >
+            Fast
+          </div>
+          <div
+            class="font-normal text-sm"
+          >
+            0.5 DARK
           </div>
         </div>
       </button>

@@ -38,12 +38,7 @@ export const SendVote = () => {
 	const [votes, setVotes] = useState<ProfileContracts.IReadOnlyWallet[]>([]);
 	const [transaction, setTransaction] = useState((null as unknown) as Contracts.SignedTransactionData);
 
-	const form = useForm<any>({
-		mode: "onChange",
-		defaultValues: {
-			inputFeeSettings: {},
-		},
-	});
+	const form = useForm({ mode: "onChange" });
 
 	const { hasDeviceAvailable, isConnected } = useLedgerContext();
 	const { clearErrors, formState, getValues, handleSubmit, register, setValue, watch } = form;

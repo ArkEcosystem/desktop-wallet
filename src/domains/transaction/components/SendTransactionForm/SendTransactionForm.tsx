@@ -36,7 +36,9 @@ export const SendTransactionForm = ({
 
 	const form = useFormContext();
 	const { getValues, setValue, watch } = form;
-	const { network, senderAddress, fee, fees, inputFeeSettings } = watch();
+	const { network, senderAddress, fee, fees } = watch();
+
+	const inputFeeSettings = watch("inputFeeSettings") ?? {};
 
 	useEffect(() => {
 		const setTransactionFees = async (network: Networks.Network) => {
@@ -149,12 +151,20 @@ export const SendTransactionForm = ({
 							setValue("fee", value, { shouldValidate: true, shouldDirty: true });
 						}}
 						viewType={inputFeeSettings.viewType}
-						onChangeViewType={(value) => {
-							setValue("inputFeeSettings.viewType", value, { shouldDirty: true });
+						onChangeViewType={(viewType) => {
+							setValue(
+								"inputFeeSettings",
+								{ ...inputFeeSettings, viewType },
+								{ shouldValidate: true, shouldDirty: true },
+							);
 						}}
 						simpleValue={inputFeeSettings.simpleValue}
-						onChangeSimpleValue={(value) => {
-							setValue("inputFeeSettings.simpleValue", value, { shouldDirty: true });
+						onChangeSimpleValue={(simpleValue) => {
+							setValue(
+								"inputFeeSettings",
+								{ ...inputFeeSettings, simpleValue },
+								{ shouldValidate: true, shouldDirty: true },
+							);
 						}}
 					/>
 				</FormField>

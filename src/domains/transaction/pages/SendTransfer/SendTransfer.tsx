@@ -24,9 +24,11 @@ import { useForm } from "react-hook-form";
 import { useTranslation } from "react-i18next";
 import { useHistory, useParams } from "react-router-dom";
 
-import { FormStep, ReviewStep, SummaryStep } from ".";
+import { FormStep } from "./FormStep";
 import { TransferLedgerReview } from "./LedgerReview";
 import { NetworkStep } from "./NetworkStep";
+import { ReviewStep } from "./ReviewStep";
+import { SummaryStep } from "./SummaryStep";
 
 export const SendTransfer = () => {
 	const { t } = useTranslation();
@@ -77,7 +79,6 @@ export const SendTransfer = () => {
 			amount: 0,
 			remainingBalance: wallet?.balance?.(),
 			recipients: [],
-			inputFeeSettings: {},
 		},
 	});
 

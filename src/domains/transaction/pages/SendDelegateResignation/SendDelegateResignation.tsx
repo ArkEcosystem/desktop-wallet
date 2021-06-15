@@ -22,12 +22,7 @@ export const SendDelegateResignation = () => {
 	const { t } = useTranslation();
 	const history = useHistory();
 
-	const form = useForm<any>({
-		mode: "onChange",
-		defaultValues: {
-			inputFeeSettings: {},
-		},
-	});
+	const form = useForm({ mode: "onChange" });
 
 	const { formState, getValues, register, setError, setValue, watch } = form;
 	const { isValid, isSubmitting } = formState;

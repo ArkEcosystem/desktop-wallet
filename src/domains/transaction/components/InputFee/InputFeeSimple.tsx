@@ -28,8 +28,9 @@ export const InputFeeSimple = ({
 		{Object.entries(options).map(([optionValue, { label, displayValue, displayValueConverted }]) => (
 			<ButtonGroupOption
 				key={optionValue}
-				isSelected={optionValue === value}
-				onClick={() => onChange(optionValue as InputFeeSimpleValue)}
+				value={displayValue}
+				isSelected={() => optionValue === value}
+				setSelectedValue={() => onChange(optionValue as InputFeeSimpleValue)}
 			>
 				<div>
 					<div className="mb-3">{label}</div>

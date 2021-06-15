@@ -116,8 +116,7 @@ describe("DelegateRegistrationForm", () => {
 
 	it("should set fee", async () => {
 		const { asFragment, form, getByTestId, getByText, rerender } = await renderComponent({ fee: "10" });
-		// @ts-ignore
-		form.register("inputFeeViewType");
+		form.register("inputFeeSettings" as any);
 
 		await act(async () => {
 			fireEvent.click(getByText(translations.INPUT_FEE_VIEW_TYPE.ADVANCED));

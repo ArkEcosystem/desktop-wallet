@@ -39,12 +39,7 @@ export const SendRegistration = () => {
 
 	const { findByType } = useFees(activeProfile);
 
-	const form = useForm<any>({
-		mode: "onChange",
-		defaultValues: {
-			inputFeeSettings: {},
-		},
-	});
+	const form = useForm({ mode: "onChange" });
 
 	const { formState, register, setError, setValue, trigger, watch, getValues } = form;
 	const { isSubmitting, isValid } = formState;

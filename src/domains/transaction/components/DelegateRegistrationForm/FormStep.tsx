@@ -18,8 +18,10 @@ export const FormStep = ({ fees, wallet, step = 0.001, profile }: any) => {
 	const { delegateRegistration, common } = useValidation();
 
 	const { getValues, register, unregister, setValue, watch } = useFormContext();
-	const { username, inputFeeSettings } = getValues();
+	const username = getValues("username");
 	const [usernames, setUsernames] = useState<string[]>([]);
+
+	const inputFeeSettings = getValues("inputFeeSettings") ?? {};
 
 	// getValues does not get the value of `defaultValues` on first render
 	const [defaultFee] = useState(() => watch("fee"));
@@ -88,12 +90,20 @@ export const FormStep = ({ fees, wallet, step = 0.001, profile }: any) => {
 							setValue("fee", value, { shouldValidate: true, shouldDirty: true });
 						}}
 						viewType={inputFeeSettings.viewType}
-						onChangeViewType={(value) => {
-							setValue("inputFeeSettings.viewType", value, { shouldDirty: true });
+						onChangeViewType={(viewType) => {
+							setValue(
+								"inputFeeSettings",
+								{ ...inputFeeSettings, viewType },
+								{ shouldValidate: true, shouldDirty: true },
+							);
 						}}
 						simpleValue={inputFeeSettings.simpleValue}
-						onChangeSimpleValue={(value) => {
-							setValue("inputFeeSettings.simpleValue", value, { shouldDirty: true });
+						onChangeSimpleValue={(simpleValue) => {
+							setValue(
+								"inputFeeSettings",
+								{ ...inputFeeSettings, simpleValue },
+								{ shouldValidate: true, shouldDirty: true },
+							);
 						}}
 					/>
 				</FormField>

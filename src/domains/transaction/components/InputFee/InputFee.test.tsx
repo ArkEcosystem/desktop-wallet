@@ -1,5 +1,6 @@
 import { Networks } from "@arkecosystem/platform-sdk";
 import { Contracts } from "@arkecosystem/platform-sdk-profiles";
+import { screen } from "@testing-library/react";
 import { describe } from "jest-circus";
 import React, { useState } from "react";
 import { act, env, fireEvent, render } from "utils/testing-library";
@@ -16,7 +17,10 @@ let defaultProps: any = {
 	step: 0.001,
 	disabled: false,
 	viewType: InputFeeViewType.Simple,
-	selectedButton: InputFeeSimpleValue.Average,
+	simpleValue: InputFeeSimpleValue.Average,
+	onChange: jest.fn(),
+	onChangeViewType: jest.fn(),
+	onChangeSimpleValue: jest.fn(),
 };
 
 let network: Networks.Network;
@@ -24,15 +28,12 @@ let profile: Contracts.IProfile;
 let Wrapper: React.FC;
 
 describe("InputFee", () => {
-	beforeAll(() => {
+	beforeEach(() => {
 		profile = env.profiles().first();
 		network = profile.wallets().first().network();
 
 		defaultProps = {
 			...defaultProps,
-			onChange: jest.fn(),
-			onChangeViewType: jest.fn(),
-			onChangeSelectedButton: jest.fn(),
 			network,
 			profile,
 		};
@@ -41,7 +42,7 @@ describe("InputFee", () => {
 		Wrapper = () => {
 			const [value, setValue] = useState(defaultProps.value);
 			const [viewType, setViewType] = useState(defaultProps.viewType);
-			const [selectedButton, setSelectedButton] = useState(defaultProps.selectedButton);
+			const [simpleValue, setSimpleValue] = useState(defaultProps.simpleValue);
 
 			const handleChangeValue = (val: string) => {
 				setValue(val);
@@ -53,9 +54,9 @@ describe("InputFee", () => {
 				defaultProps.onChangeViewType(val);
 			};
 
-			const handleChangeSelectedButton = (val: InputFeeSimpleValue) => {
-				setSelectedButton(val);
-				defaultProps.onChangeSelectedButton(val);
+			const handleChangeSimpleValue = (val: InputFeeSimpleValue) => {
+				setSimpleValue(val);
+				defaultProps.onChangeSimpleValue(val);
 			};
 
 			return (
@@ -65,45 +66,55 @@ describe("InputFee", () => {
 					onChange={handleChangeValue}
 					viewType={viewType}
 					onChangeViewType={handleChangeViewType}
-					selectedButton={selectedButton}
-					onChangeSelectedButton={handleChangeSelectedButton}
+					simpleValue={simpleValue}
+					onChangeSimpleValue={handleChangeSimpleValue}
 				/>
 			);
 		};
 	});
 
 	it("should render", () => {
-		const { asFragment, queryByTestId } = render(<InputFee {...defaultProps} />);
+		const { asFragment } = render(<InputFee {...defaultProps} />);
 
-		expect(queryByTestId("InputCurrency")).not.toBeInTheDocument();
-		expect(queryByTestId("ButtonGroup")).toBeInTheDocument();
+		expect(screen.queryByTestId("InputCurrency")).not.toBeInTheDocument();
+		expect(screen.queryByTestId("ButtonGroup")).toBeInTheDocument();
 		expect(asFragment()).toMatchSnapshot();
 	});
 
-	it("should allow switching between simple and advanced view types", () => {
-		const { asFragment, queryByTestId, getByText } = render(<Wrapper />);
+	it("should keep different values for simple and advanced view types", () => {
+		const { asFragment } = render(<Wrapper />);
 
+		// go to advanced mode and check value changes
 		act(() => {
-			fireEvent.click(getByText(transactionTranslations.INPUT_FEE_VIEW_TYPE.ADVANCED));
+			fireEvent.click(screen.getByText(transactionTranslations.INPUT_FEE_VIEW_TYPE.ADVANCED));
 		});
 
 		expect(defaultProps.onChangeViewType).toBeCalledWith(InputFeeViewType.Advanced);
 		expect(defaultProps.onChange).toBeCalledWith(defaultProps.value);
 
-		expect(queryByTestId("InputCurrency")).toBeInTheDocument();
-		expect(queryByTestId("ButtonGroup")).not.toBeInTheDocument();
+		expect(screen.queryByTestId("InputCurrency")).toBeInTheDocument();
+		expect(screen.queryByTestId("ButtonGroup")).not.toBeInTheDocument();
 		expect(asFragment()).toMatchSnapshot();
 
+		// go to simple mode
 		act(() => {
-			fireEvent.click(getByText(transactionTranslations.INPUT_FEE_VIEW_TYPE.SIMPLE));
+			fireEvent.click(screen.getByText(transactionTranslations.INPUT_FEE_VIEW_TYPE.SIMPLE));
 		});
 
 		expect(defaultProps.onChangeViewType).toBeCalledWith(InputFeeViewType.Simple);
 		expect(defaultProps.onChange).toBeCalledWith(defaultProps.avg);
 
-		expect(queryByTestId("InputCurrency")).not.toBeInTheDocument();
-		expect(queryByTestId("ButtonGroup")).toBeInTheDocument();
+		expect(screen.queryByTestId("InputCurrency")).not.toBeInTheDocument();
+		expect(screen.queryByTestId("ButtonGroup")).toBeInTheDocument();
 		expect(asFragment()).toMatchSnapshot();
+
+		// go back to advanced mode and repeat checks
+		act(() => {
+			fireEvent.click(screen.getByText(transactionTranslations.INPUT_FEE_VIEW_TYPE.ADVANCED));
+		});
+
+		expect(defaultProps.onChangeViewType).toBeCalledWith(InputFeeViewType.Advanced);
+		expect(defaultProps.onChange).toBeCalledWith(defaultProps.value);
 	});
 
 	describe("simple view type", () => {

@@ -3,6 +3,7 @@ import { Contracts } from "@arkecosystem/platform-sdk-profiles";
 // @README: This import is fine in tests but should be avoided in production code.
 import { ReadOnlyWallet } from "@arkecosystem/platform-sdk-profiles/distribution/drivers/memory/wallets/read-only-wallet";
 import { BigNumber } from "@arkecosystem/platform-sdk-support";
+import { screen } from "@testing-library/react";
 import { renderHook } from "@testing-library/react-hooks";
 import { LedgerProvider } from "app/contexts";
 import { translations as transactionTranslations } from "domains/transaction/i18n";
@@ -236,7 +237,7 @@ describe("SendVote", () => {
 			search: `?${params}`,
 		});
 
-		const { getByTestId, container, getByText } = renderWithRouter(
+		const { getByTestId } = renderWithRouter(
 			<Route path="/profiles/:profileId/wallets/:walletId/send-vote">
 				<LedgerProvider transport={transport}>
 					<SendVote />
@@ -251,11 +252,7 @@ describe("SendVote", () => {
 		expect(getByTestId("SendVote__form-step")).toBeTruthy();
 		await waitFor(() => expect(getByTestId("SendVote__form-step")).toHaveTextContent(delegateData[0].username));
 
-		act(() => {
-			fireEvent.click(getByText(transactionTranslations.INPUT_FEE_VIEW_TYPE.ADVANCED));
-		});
-
-		await waitFor(() => expect(getByTestId("InputCurrency")).not.toHaveValue("0"));
+		expect(screen.getAllByRole("radio")[1]).toBeChecked();
 
 		await waitFor(() => expect(getByTestId("SendVote__button--continue")).not.toBeDisabled());
 		fireEvent.click(getByTestId("SendVote__button--continue"));
@@ -349,7 +346,7 @@ describe("SendVote", () => {
 			}),
 		);
 
-		const { container, getByTestId, getByText } = renderWithRouter(
+		const { container, getByTestId } = renderWithRouter(
 			<Route path="/profiles/:profileId/wallets/:walletId/send-vote">
 				<FormProvider {...form.current}>
 					<LedgerProvider transport={transport}>
@@ -366,11 +363,7 @@ describe("SendVote", () => {
 		expect(getByTestId("SendVote__form-step")).toBeTruthy();
 		await waitFor(() => expect(getByTestId("SendVote__form-step")).toHaveTextContent(delegateData[0].username));
 
-		act(() => {
-			fireEvent.click(getByText(transactionTranslations.INPUT_FEE_VIEW_TYPE.ADVANCED));
-		});
-
-		await waitFor(() => expect(getByTestId("InputCurrency")).not.toHaveValue("0"));
+		expect(screen.getAllByRole("radio")[1]).toBeChecked();
 
 		await waitFor(() => expect(getByTestId("SendVote__button--continue")).not.toBeDisabled());
 		fireEvent.click(getByTestId("SendVote__button--continue"));
