@@ -133,7 +133,7 @@ exports[`FilterNetwork should render public networks 1`] = `
 exports[`FilterNetworks should render empty 1`] = `
 <div>
   <div
-    class="space-y-6"
+    class="space-y-4"
   />
 </div>
 `;
@@ -141,13 +141,13 @@ exports[`FilterNetworks should render empty 1`] = `
 exports[`FilterNetworks should render public and testnet networks 1`] = `
 <div>
   <div
-    class="space-y-6"
+    class="space-y-4"
   >
     <div
       data-testid="FilterNetwork"
     >
       <div
-        class="mb-2 text-sm font-bold text-theme-secondary-400"
+        class="mb-3 text-sm font-bold text-theme-secondary-400"
       >
         Public Networks
       </div>
@@ -181,11 +181,10 @@ exports[`FilterNetworks should render public and testnet networks 1`] = `
       </ul>
     </div>
     <div
-      class="mt-6"
       data-testid="FilterNetwork"
     >
       <div
-        class="mb-2 text-sm font-bold text-theme-secondary-400"
+        class="mb-3 text-sm font-bold text-theme-secondary-400"
       >
         Development Networks
       </div>
@@ -234,13 +233,13 @@ exports[`FilterNetworks should render public and testnet networks 1`] = `
 exports[`FilterNetworks should render public networks 1`] = `
 <div>
   <div
-    class="space-y-6"
+    class="space-y-4"
   >
     <div
       data-testid="FilterNetwork"
     >
       <div
-        class="mb-2 text-sm font-bold text-theme-secondary-400"
+        class="mb-3 text-sm font-bold text-theme-secondary-400"
       >
         Public Networks
       </div>
@@ -280,13 +279,13 @@ exports[`FilterNetworks should render public networks 1`] = `
 exports[`FilterNetworks should toggle a testnet network option 1`] = `
 <div>
   <div
-    class="space-y-6"
+    class="space-y-4"
   >
     <div
       data-testid="FilterNetwork"
     >
       <div
-        class="mb-2 text-sm font-bold text-theme-secondary-400"
+        class="mb-3 text-sm font-bold text-theme-secondary-400"
       >
         Public Networks
       </div>
@@ -320,11 +319,10 @@ exports[`FilterNetworks should toggle a testnet network option 1`] = `
       </ul>
     </div>
     <div
-      class="mt-6"
       data-testid="FilterNetwork"
     >
       <div
-        class="mb-2 text-sm font-bold text-theme-secondary-400"
+        class="mb-3 text-sm font-bold text-theme-secondary-400"
       >
         Development Networks
       </div>
@@ -373,13 +371,13 @@ exports[`FilterNetworks should toggle a testnet network option 1`] = `
 exports[`FilterNetworks should toggle view all 1`] = `
 <div>
   <div
-    class="space-y-6"
+    class="space-y-4"
   >
     <div
       data-testid="FilterNetwork"
     >
       <div
-        class="mb-2 text-sm font-bold text-theme-secondary-400"
+        class="mb-3 text-sm font-bold text-theme-secondary-400"
       >
         Public Networks
       </div>
@@ -450,11 +448,10 @@ exports[`FilterNetworks should toggle view all 1`] = `
       </label>
     </div>
     <div
-      class="mt-6"
       data-testid="FilterNetwork"
     >
       <div
-        class="mb-2 text-sm font-bold text-theme-secondary-400"
+        class="mb-3 text-sm font-bold text-theme-secondary-400"
       >
         Development Networks
       </div>
@@ -527,13 +524,13 @@ exports[`FilterNetworks should toggle view all 1`] = `
 exports[`FilterNetworks should toggle view all 2`] = `
 <div>
   <div
-    class="space-y-6"
+    class="space-y-4"
   >
     <div
       data-testid="FilterNetwork"
     >
       <div
-        class="mb-2 text-sm font-bold text-theme-secondary-400"
+        class="mb-3 text-sm font-bold text-theme-secondary-400"
       >
         Public Networks
       </div>
@@ -591,11 +588,10 @@ exports[`FilterNetworks should toggle view all 2`] = `
       </ul>
     </div>
     <div
-      class="mt-6"
       data-testid="FilterNetwork"
     >
       <div
-        class="mb-2 text-sm font-bold text-theme-secondary-400"
+        class="mb-3 text-sm font-bold text-theme-secondary-400"
       >
         Development Networks
       </div>

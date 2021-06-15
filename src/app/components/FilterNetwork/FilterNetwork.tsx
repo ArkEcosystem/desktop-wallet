@@ -46,7 +46,7 @@ export const FilterNetwork = ({
 
 	return (
 		<div className={className} data-testid="FilterNetwork">
-			{title && <div className="mb-2 text-sm font-bold text-theme-secondary-400">{title}</div>}
+			{title && <div className="mb-3 text-sm font-bold text-theme-secondary-400">{title}</div>}
 
 			<ToggleAllOption isSelected={showAll} isHidden={hideViewAll} onClick={handleToggleAll} />
 
@@ -78,7 +78,7 @@ export const FilterNetworks = ({ networks = [], ...props }: FilterNetworkProps) 
 	);
 
 	return (
-		<div className="space-y-6">
+		<div className="space-y-4">
 			{liveNetworks.length > 0 && (
 				<FilterNetwork
 					{...props}
@@ -91,7 +91,6 @@ export const FilterNetworks = ({ networks = [], ...props }: FilterNetworkProps) 
 				<FilterNetwork
 					{...props}
 					title={t("COMMON.DEVELOPMENT_NETWORKS")}
-					className="mt-6"
 					networks={testNetworks}
 					onChange={(_, updated) => props.onChange?.(_, [...updated, ...liveNetworks])}
 				/>
