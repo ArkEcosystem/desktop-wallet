@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/require-await */
 import { Contracts } from "@arkecosystem/platform-sdk-profiles";
 import { act, renderHook } from "@testing-library/react-hooks";
-import { httpClient , toasts } from "app/services";
+import { httpClient, toasts } from "app/services";
 import React from "react";
 import { FormProvider, useForm } from "react-hook-form";
 import {

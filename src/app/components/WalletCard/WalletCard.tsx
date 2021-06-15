@@ -6,7 +6,7 @@ import { DropdownOption } from "app/components/Dropdown";
 import { Icon } from "app/components/Icon";
 import { TruncateMiddleDynamic } from "app/components/TruncateMiddleDynamic";
 import { WalletIcons } from "app/components/WalletIcons";
-import { useActiveProfile,useWalletAlias  } from "app/hooks";
+import { useActiveProfile, useWalletAlias } from "app/hooks";
 import { NetworkIcon } from "domains/network/components/NetworkIcon";
 import React from "react";
 import { useTranslation } from "react-i18next";

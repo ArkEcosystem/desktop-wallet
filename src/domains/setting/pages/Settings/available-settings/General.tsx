@@ -9,7 +9,7 @@ import { Select } from "app/components/SelectDropdown";
 import { SelectProfileImage } from "app/components/SelectProfileImage";
 import { Toggle } from "app/components/Toggle";
 import { useEnvironmentContext } from "app/contexts";
-import { useActiveProfile, useProfileJobs, useReloadPath , useValidation } from "app/hooks";
+import { useActiveProfile, useProfileJobs, useReloadPath, useValidation } from "app/hooks";
 import { useTheme } from "app/hooks/use-theme";
 import { PlatformSdkChoices } from "data";
 import { ResetProfile } from "domains/profile/components/ResetProfile";

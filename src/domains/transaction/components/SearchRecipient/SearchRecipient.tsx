@@ -5,7 +5,7 @@ import { Avatar } from "app/components/Avatar";
 import { Button } from "app/components/Button";
 import { HeaderSearchBar } from "app/components/Header/HeaderSearchBar";
 import { Modal } from "app/components/Modal";
-import { Table , TableCell, TableRow } from "app/components/Table";
+import { Table, TableCell, TableRow } from "app/components/Table";
 import React, { useMemo } from "react";
 import { useTranslation } from "react-i18next";
 

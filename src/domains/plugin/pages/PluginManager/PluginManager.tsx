@@ -1,4 +1,4 @@
-import { snakeCase,sortByDesc  } from "@arkecosystem/utils";
+import { snakeCase, sortByDesc } from "@arkecosystem/utils";
 import { Button } from "app/components/Button";
 import { EmptyBlock } from "app/components/EmptyBlock";
 import { Header } from "app/components/Header";

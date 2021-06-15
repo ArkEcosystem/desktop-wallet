@@ -13,12 +13,16 @@ import {
 	act,
 	env,
 	fireEvent,
- getDefaultLedgerTransport, 	getDefaultProfileId,
-getDefaultWalletId, getDefaultWalletMnemonic,	render,
+	getDefaultLedgerTransport,
+	getDefaultProfileId,
+	getDefaultWalletId,
+	getDefaultWalletMnemonic,
+	render,
 	renderWithRouter,
 	syncFees,
 	waitFor,
-	within } from "utils/testing-library";
+	within,
+} from "utils/testing-library";
 
 import { FormStep, ReviewStep, SendIpfs, SummaryStep } from ".";
 

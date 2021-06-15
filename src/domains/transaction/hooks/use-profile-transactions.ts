@@ -1,4 +1,4 @@
-import { Contracts, Contracts as ProfileContracts,DTO  } from "@arkecosystem/platform-sdk-profiles";
+import { Contracts, Contracts as ProfileContracts, DTO } from "@arkecosystem/platform-sdk-profiles";
 import { useSynchronizer } from "app/hooks";
 import { useCallback, useEffect, useRef, useState } from "react";
 
