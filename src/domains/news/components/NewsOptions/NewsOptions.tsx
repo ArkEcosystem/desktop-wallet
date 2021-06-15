@@ -22,7 +22,7 @@ interface NewsOptionsProps {
 	selectedCategories: string[];
 	selectedCoins: string[];
 	onSearch?: (search: string) => void;
-	onSubmit?: (data: Record<string, unknown) => void;
+	onSubmit?: (data: Record<string, unknown>) => void;
 }
 
 // region for scrollable sidebar on small screen
