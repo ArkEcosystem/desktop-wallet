@@ -272,9 +272,9 @@ exports[`Signed Transaction Table should render 1`] = `
                   class="p-1 text-theme-success-500"
                 >
                   <div
-                    class="sc-bdfBwQ iyevwF"
-                    height="20"
-                    width="20"
+                    class="sc-bdfBwQ fpbFeh"
+                    height="16"
+                    width="16"
                   >
                     <svg>
                       send.svg
@@ -420,9 +420,9 @@ exports[`Signed Transaction Table should render 1`] = `
                   class="p-1 text-theme-success-500"
                 >
                   <div
-                    class="sc-bdfBwQ iyevwF"
-                    height="20"
-                    width="20"
+                    class="sc-bdfBwQ fpbFeh"
+                    height="16"
+                    width="16"
                   >
                     <svg>
                       send.svg
@@ -568,9 +568,9 @@ exports[`Signed Transaction Table should render 1`] = `
                   class="p-1 text-theme-success-500"
                 >
                   <div
-                    class="sc-bdfBwQ iyevwF"
-                    height="20"
-                    width="20"
+                    class="sc-bdfBwQ fpbFeh"
+                    height="16"
+                    width="16"
                   >
                     <svg>
                       send.svg
@@ -659,26 +659,17 @@ exports[`Signed Transaction Table should render 1`] = `
                     </div>
                   </div>
                   <div
-                    class="Circle__CircleWrapper-uw7h4j-0 bNDQMV border-theme-text text-theme-text dark:border-theme-secondary-600 dark:text-theme-secondary-600 ring-theme-background bg-theme-background group-hover:ring-theme-secondary-100 group-hover:bg-secondary-100 dark:group-hover:ring-black dark:group-hover:bg-black ring-theme-background"
-                    data-testid="TransactionRowRecipientIcon"
+                    class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB ring-theme-background bg-theme-background group-hover:ring-theme-secondary-100 group-hover:bg-secondary-100 dark:group-hover:ring-black dark:group-hover:bg-black flex-shrink-0"
+                    data-testid="Avatar"
                   >
                     <div
-                      class="sc-bdfBwQ iSzUah"
-                      height="22"
-                      width="22"
-                    >
-                      <svg>
-                        vote.svg
-                      </svg>
-                    </div>
+                      class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
+                    />
                   </div>
                 </div>
-                <span
-                  class="font-semibold text-theme-text"
-                  data-testid="TransactionRowRecipientLabel"
-                >
-                  Vote
-                </span>
+                <div
+                  class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap space-x-2"
+                />
               </div>
             </td>
             <td>
@@ -716,9 +707,9 @@ exports[`Signed Transaction Table should render 1`] = `
                   class="p-1 text-theme-success-500"
                 >
                   <div
-                    class="sc-bdfBwQ iyevwF"
-                    height="20"
-                    width="20"
+                    class="sc-bdfBwQ fpbFeh"
+                    height="16"
+                    width="16"
                   >
                     <svg>
                       send.svg
@@ -807,26 +798,17 @@ exports[`Signed Transaction Table should render 1`] = `
                     </div>
                   </div>
                   <div
-                    class="Circle__CircleWrapper-uw7h4j-0 bNDQMV border-theme-text text-theme-text dark:border-theme-secondary-600 dark:text-theme-secondary-600 ring-theme-background bg-theme-background group-hover:ring-theme-secondary-100 group-hover:bg-secondary-100 dark:group-hover:ring-black dark:group-hover:bg-black ring-theme-background"
-                    data-testid="TransactionRowRecipientIcon"
+                    class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB ring-theme-background bg-theme-background group-hover:ring-theme-secondary-100 group-hover:bg-secondary-100 dark:group-hover:ring-black dark:group-hover:bg-black flex-shrink-0"
+                    data-testid="Avatar"
                   >
                     <div
-                      class="sc-bdfBwQ iSzUah"
-                      height="22"
-                      width="22"
-                    >
-                      <svg>
-                        unvote.svg
-                      </svg>
-                    </div>
+                      class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
+                    />
                   </div>
                 </div>
-                <span
-                  class="font-semibold text-theme-text"
-                  data-testid="TransactionRowRecipientLabel"
-                >
-                  Unvote
-                </span>
+                <div
+                  class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap space-x-2"
+                />
               </div>
             </td>
             <td>
@@ -864,9 +846,9 @@ exports[`Signed Transaction Table should render 1`] = `
                   class="p-1 text-theme-success-500"
                 >
                   <div
-                    class="sc-bdfBwQ iyevwF"
-                    height="20"
-                    width="20"
+                    class="sc-bdfBwQ fpbFeh"
+                    height="16"
+                    width="16"
                   >
                     <svg>
                       send.svg
@@ -1012,9 +994,9 @@ exports[`Signed Transaction Table should render 1`] = `
                   class="p-1 text-theme-success-500"
                 >
                   <div
-                    class="sc-bdfBwQ iyevwF"
-                    height="20"
-                    width="20"
+                    class="sc-bdfBwQ fpbFeh"
+                    height="16"
+                    width="16"
                   >
                     <svg>
                       send.svg
@@ -2227,6 +2209,624 @@ exports[`Signed Transaction Table should show as final signature 1`] = `
                     D8rr7B1d6TL6pf14LgMz4sKp1VBMs6YUYD
                   </span>
                 </div>
+              </div>
+            </td>
+            <td>
+              <div
+                class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT justify-center"
+              >
+                <div
+                  class="inline-flex space-x-1 align-middle"
+                  data-testid="TransactionRowInfo"
+                >
+                  <span
+                    class="p-1"
+                  >
+                    <div
+                      class="sc-bdfBwQ gzOUUk"
+                      data-testid="TransactionRowInfo__multiSignature"
+                      height="14"
+                      width="22"
+                    >
+                      <svg>
+                        multisig.svg
+                      </svg>
+                    </div>
+                  </span>
+                </div>
+              </div>
+            </td>
+            <td
+              class="w-16"
+            >
+              <div
+                class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT justify-center truncate"
+              >
+                <span
+                  class="p-1 text-theme-success-500"
+                >
+                  <div
+                    class="sc-bdfBwQ dFYtra"
+                    height="22"
+                    width="30"
+                  >
+                    <svg>
+                      awaiting-final-signature.svg
+                    </svg>
+                  </div>
+                </span>
+              </div>
+            </td>
+            <td>
+              <div
+                class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT justify-end"
+              >
+                <div
+                  class="Label-sc-1tj9hzr-0 ganlOQ whitespace-nowrap"
+                  color="danger"
+                  data-testid="TransactionRowAmount"
+                >
+                  <span
+                    data-testid="Amount"
+                  >
+                    - 0.00000002 DARK
+                  </span>
+                </div>
+              </div>
+            </td>
+            <td>
+              <div
+                class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 kjTmcB justify-end"
+              />
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`Signed Transaction Table should show as unvote 1`] = `
+<DocumentFragment>
+  <div
+    class="relative"
+    data-testid="SignedTransactionTable"
+  >
+    <div
+      class="Table__TableWrapper-sc-84pst5-0 ccYCKK -mt-3"
+      role="table"
+    >
+      <table
+        cellpadding="0"
+        class="table-auto"
+      >
+        <thead>
+          <tr
+            class="border-b border-theme-secondary-300 dark:border-theme-secondary-800"
+            role="row"
+          >
+            <th
+              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder w-1"
+              colspan="1"
+              data-testid="table__th--0"
+              role="columnheader"
+            >
+              <div
+                class="flex flex-inline align-top"
+              >
+                <div>
+                  ID
+                </div>
+              </div>
+            </th>
+            <th
+              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder w-50 min-w-50"
+              colspan="1"
+              data-testid="table__th--1"
+              role="columnheader"
+              style="cursor: pointer;"
+              title="Toggle SortBy"
+            >
+              <div
+                class="flex flex-inline align-top"
+              >
+                <div>
+                  Date
+                </div>
+                <div
+                  class="flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity opacity-0 group-hover:opacity-100 ml-2"
+                >
+                  <div
+                    class="sc-bdfBwQ kJrqvM transition-transform"
+                    height="5"
+                    role="img"
+                    width="8"
+                  >
+                    <svg>
+                      chevron-down.svg
+                    </svg>
+                  </div>
+                </div>
+              </div>
+            </th>
+            <th
+              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder w-96 min-w-96"
+              colspan="1"
+              data-testid="table__th--2"
+              role="columnheader"
+            >
+              <div
+                class="flex flex-inline align-top"
+              >
+                <div>
+                  Recipient
+                </div>
+              </div>
+            </th>
+            <th
+              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
+              colspan="1"
+              data-testid="table__th--3"
+              role="columnheader"
+            >
+              <div
+                class="flex flex-inline align-top justify-center"
+              >
+                <div>
+                  Info
+                </div>
+              </div>
+            </th>
+            <th
+              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder w-1"
+              colspan="1"
+              data-testid="table__th--4"
+              role="columnheader"
+            >
+              <div
+                class="flex flex-inline align-top justify-center"
+              >
+                <div>
+                  Status
+                </div>
+              </div>
+            </th>
+            <th
+              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold"
+              colspan="1"
+              data-testid="table__th--5"
+              role="columnheader"
+              style="cursor: pointer;"
+              title="Toggle SortBy"
+            >
+              <div
+                class="flex flex-inline align-top justify-end no-border flex-row-reverse"
+              >
+                <div>
+                  Amount
+                </div>
+                <div
+                  class="flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity opacity-0 group-hover:opacity-100 ml-auto mr-2"
+                >
+                  <div
+                    class="sc-bdfBwQ kJrqvM transition-transform transform rotate-180"
+                    height="5"
+                    role="img"
+                    width="8"
+                  >
+                    <svg>
+                      chevron-down.svg
+                    </svg>
+                  </div>
+                </div>
+              </div>
+            </th>
+            <th
+              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder w-24 min-w-24"
+              colspan="1"
+              data-testid="table__th--6"
+              role="columnheader"
+            >
+              <div
+                class="flex flex-inline align-top hidden"
+              >
+                <div>
+                  Sign
+                </div>
+              </div>
+            </th>
+          </tr>
+        </thead>
+        <tbody
+          role="rowgroup"
+        >
+          <tr
+            class="TableRow__TableRowStyled-sc-1br46dw-0 fTgXGQ group"
+            data-testid="TableRow"
+          >
+            <td>
+              <div
+                class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 DpDcR"
+              >
+                <span
+                  class="text-theme-secondary-300 dark:text-theme-secondary-800"
+                >
+                  <div
+                    class="sc-bdfBwQ fPrsah"
+                    height="1em"
+                    width="1em"
+                  >
+                    <svg>
+                      id.svg
+                    </svg>
+                  </div>
+                </span>
+              </div>
+            </td>
+            <td>
+              <div
+                class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT text-theme-secondary-text"
+              >
+                <span
+                  data-testid="TransactionRow__timestamp"
+                >
+                  01 Jul 2020 00:00:00
+                </span>
+              </div>
+            </td>
+            <td>
+              <div
+                class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT space-x-4"
+              >
+                <div
+                  class="flex items-center -space-x-1"
+                  data-testid="TransactionRowMode"
+                >
+                  <div
+                    class="Circle__CircleWrapper-uw7h4j-0 bNDQMV ring-theme-background group-hover:ring-theme-secondary-100 group-hover:bg-secondary-100 dark:group-hover:ring-black dark:group-hover:bg-black border-theme-danger-100 text-theme-danger-400 dark:border-theme-danger-400 ring-theme-background"
+                  >
+                    <div
+                      class="sc-bdfBwQ fPrsah"
+                      data-testid="TransactionRowMode__Sent"
+                      height="1em"
+                      width="1em"
+                    >
+                      <svg>
+                        sent.svg
+                      </svg>
+                    </div>
+                  </div>
+                  <div
+                    class="Circle__CircleWrapper-uw7h4j-0 bNDQMV border-theme-text text-theme-text dark:border-theme-secondary-600 dark:text-theme-secondary-600 ring-theme-background bg-theme-background group-hover:ring-theme-secondary-100 group-hover:bg-secondary-100 dark:group-hover:ring-black dark:group-hover:bg-black ring-theme-background"
+                    data-testid="TransactionRowRecipientIcon"
+                  >
+                    <div
+                      class="sc-bdfBwQ iSzUah"
+                      height="22"
+                      width="22"
+                    >
+                      <svg>
+                        unvote.svg
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+                <span
+                  class="font-semibold text-theme-text"
+                  data-testid="TransactionRowRecipientLabel"
+                >
+                  Unvote
+                </span>
+              </div>
+            </td>
+            <td>
+              <div
+                class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT justify-center"
+              >
+                <div
+                  class="inline-flex space-x-1 align-middle"
+                  data-testid="TransactionRowInfo"
+                >
+                  <span
+                    class="p-1"
+                  >
+                    <div
+                      class="sc-bdfBwQ gzOUUk"
+                      data-testid="TransactionRowInfo__multiSignature"
+                      height="14"
+                      width="22"
+                    >
+                      <svg>
+                        multisig.svg
+                      </svg>
+                    </div>
+                  </span>
+                </div>
+              </div>
+            </td>
+            <td
+              class="w-16"
+            >
+              <div
+                class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT justify-center truncate"
+              >
+                <span
+                  class="p-1 text-theme-success-500"
+                >
+                  <div
+                    class="sc-bdfBwQ dFYtra"
+                    height="22"
+                    width="30"
+                  >
+                    <svg>
+                      awaiting-final-signature.svg
+                    </svg>
+                  </div>
+                </span>
+              </div>
+            </td>
+            <td>
+              <div
+                class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT justify-end"
+              >
+                <div
+                  class="Label-sc-1tj9hzr-0 ganlOQ whitespace-nowrap"
+                  color="danger"
+                  data-testid="TransactionRowAmount"
+                >
+                  <span
+                    data-testid="Amount"
+                  >
+                    - 0.00000002 DARK
+                  </span>
+                </div>
+              </div>
+            </td>
+            <td>
+              <div
+                class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 kjTmcB justify-end"
+              />
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`Signed Transaction Table should show as vote 1`] = `
+<DocumentFragment>
+  <div
+    class="relative"
+    data-testid="SignedTransactionTable"
+  >
+    <div
+      class="Table__TableWrapper-sc-84pst5-0 ccYCKK -mt-3"
+      role="table"
+    >
+      <table
+        cellpadding="0"
+        class="table-auto"
+      >
+        <thead>
+          <tr
+            class="border-b border-theme-secondary-300 dark:border-theme-secondary-800"
+            role="row"
+          >
+            <th
+              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder w-1"
+              colspan="1"
+              data-testid="table__th--0"
+              role="columnheader"
+            >
+              <div
+                class="flex flex-inline align-top"
+              >
+                <div>
+                  ID
+                </div>
+              </div>
+            </th>
+            <th
+              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder w-50 min-w-50"
+              colspan="1"
+              data-testid="table__th--1"
+              role="columnheader"
+              style="cursor: pointer;"
+              title="Toggle SortBy"
+            >
+              <div
+                class="flex flex-inline align-top"
+              >
+                <div>
+                  Date
+                </div>
+                <div
+                  class="flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity opacity-0 group-hover:opacity-100 ml-2"
+                >
+                  <div
+                    class="sc-bdfBwQ kJrqvM transition-transform"
+                    height="5"
+                    role="img"
+                    width="8"
+                  >
+                    <svg>
+                      chevron-down.svg
+                    </svg>
+                  </div>
+                </div>
+              </div>
+            </th>
+            <th
+              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder w-96 min-w-96"
+              colspan="1"
+              data-testid="table__th--2"
+              role="columnheader"
+            >
+              <div
+                class="flex flex-inline align-top"
+              >
+                <div>
+                  Recipient
+                </div>
+              </div>
+            </th>
+            <th
+              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
+              colspan="1"
+              data-testid="table__th--3"
+              role="columnheader"
+            >
+              <div
+                class="flex flex-inline align-top justify-center"
+              >
+                <div>
+                  Info
+                </div>
+              </div>
+            </th>
+            <th
+              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder w-1"
+              colspan="1"
+              data-testid="table__th--4"
+              role="columnheader"
+            >
+              <div
+                class="flex flex-inline align-top justify-center"
+              >
+                <div>
+                  Status
+                </div>
+              </div>
+            </th>
+            <th
+              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold"
+              colspan="1"
+              data-testid="table__th--5"
+              role="columnheader"
+              style="cursor: pointer;"
+              title="Toggle SortBy"
+            >
+              <div
+                class="flex flex-inline align-top justify-end no-border flex-row-reverse"
+              >
+                <div>
+                  Amount
+                </div>
+                <div
+                  class="flex items-center text-theme-secondary-500 dark:text-theme-secondary-700 transition-opacity opacity-0 group-hover:opacity-100 ml-auto mr-2"
+                >
+                  <div
+                    class="sc-bdfBwQ kJrqvM transition-transform transform rotate-180"
+                    height="5"
+                    role="img"
+                    width="8"
+                  >
+                    <svg>
+                      chevron-down.svg
+                    </svg>
+                  </div>
+                </div>
+              </div>
+            </th>
+            <th
+              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder w-24 min-w-24"
+              colspan="1"
+              data-testid="table__th--6"
+              role="columnheader"
+            >
+              <div
+                class="flex flex-inline align-top hidden"
+              >
+                <div>
+                  Sign
+                </div>
+              </div>
+            </th>
+          </tr>
+        </thead>
+        <tbody
+          role="rowgroup"
+        >
+          <tr
+            class="TableRow__TableRowStyled-sc-1br46dw-0 fTgXGQ group"
+            data-testid="TableRow"
+          >
+            <td>
+              <div
+                class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 DpDcR"
+              >
+                <span
+                  class="text-theme-secondary-300 dark:text-theme-secondary-800"
+                >
+                  <div
+                    class="sc-bdfBwQ fPrsah"
+                    height="1em"
+                    width="1em"
+                  >
+                    <svg>
+                      id.svg
+                    </svg>
+                  </div>
+                </span>
+              </div>
+            </td>
+            <td>
+              <div
+                class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT text-theme-secondary-text"
+              >
+                <span
+                  data-testid="TransactionRow__timestamp"
+                >
+                  01 Jul 2020 00:00:00
+                </span>
+              </div>
+            </td>
+            <td>
+              <div
+                class="TableCell__TableCellInnerWrapper-sc-1mn4l8o-0 clvEgT space-x-4"
+              >
+                <div
+                  class="flex items-center -space-x-1"
+                  data-testid="TransactionRowMode"
+                >
+                  <div
+                    class="Circle__CircleWrapper-uw7h4j-0 bNDQMV ring-theme-background group-hover:ring-theme-secondary-100 group-hover:bg-secondary-100 dark:group-hover:ring-black dark:group-hover:bg-black border-theme-danger-100 text-theme-danger-400 dark:border-theme-danger-400 ring-theme-background"
+                  >
+                    <div
+                      class="sc-bdfBwQ fPrsah"
+                      data-testid="TransactionRowMode__Sent"
+                      height="1em"
+                      width="1em"
+                    >
+                      <svg>
+                        sent.svg
+                      </svg>
+                    </div>
+                  </div>
+                  <div
+                    class="Circle__CircleWrapper-uw7h4j-0 bNDQMV border-theme-text text-theme-text dark:border-theme-secondary-600 dark:text-theme-secondary-600 ring-theme-background bg-theme-background group-hover:ring-theme-secondary-100 group-hover:bg-secondary-100 dark:group-hover:ring-black dark:group-hover:bg-black ring-theme-background"
+                    data-testid="TransactionRowRecipientIcon"
+                  >
+                    <div
+                      class="sc-bdfBwQ iSzUah"
+                      height="22"
+                      width="22"
+                    >
+                      <svg>
+                        vote.svg
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+                <span
+                  class="font-semibold text-theme-text"
+                  data-testid="TransactionRowRecipientLabel"
+                >
+                  Vote
+                </span>
               </div>
             </td>
             <td>

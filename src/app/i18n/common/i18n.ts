@@ -234,7 +234,7 @@ export const translations: { [key: string]: any } = {
 	X_OF_Y: "{{0}} of {{1}}",
 	YES: "Yes",
 	YOU: "You",
-	YOUR_BALANCE: "Your balance",
+	YOUR_BALANCE: "Your Balance",
 	YOUR_PASSPHRASE: "Your Passphrase",
 
 	NOTICE_NO_WALLETS: "Create or import a wallet first",
@@ -298,6 +298,8 @@ export const translations: { [key: string]: any } = {
 			ADDRESS_ALREADY_EXISTS: "Address {{address}} already exists",
 			MNEMONIC_NOT_MATCH_WALLET: "This mnemonic does not correspond to your wallet",
 			PASSWORD_NOT_MATCH_WALLET: "This password does not correspond to your wallet",
+			WIF_NOT_MATCH_WALLET: "This WIF does not correspond to your wallet",
+			PRIVATE_KEY_NOT_MATCH_WALLET: "This private key does not correspond to your wallet",
 		},
 	},
 

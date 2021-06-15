@@ -8,10 +8,12 @@ let translationMock: any;
 let wallet: Contracts.IReadWriteWallet;
 let walletWithPassword: Contracts.IReadWriteWallet;
 
+jest.mock("utils/debounce", () => ({
+	debounceAsync: (promise: Promise<any>) => promise,
+}));
+
 describe("Authentication", () => {
 	beforeAll(async () => {
-		jest.useFakeTimers();
-
 		translationMock = jest.fn((i18nString: string) => i18nString);
 
 		const profile = env.profiles().first();
@@ -38,78 +40,124 @@ describe("Authentication", () => {
 		await walletWithPassword.synchroniser().identity();
 	});
 
-	afterAll(() => {
-		jest.clearAllTimers();
-	});
-
-	it("should validate mnemonic", () => {
+	it("should validate mnemonic", async () => {
 		const fromWifMock = jest
 			.spyOn(wallet.coin().address(), "fromWIF")
 			.mockResolvedValue({ type: "bip39", address: wallet.address() });
 
-		const mnemonic = authentication(translationMock).mnemonic(wallet.coin(), wallet.address());
-		expect(mnemonic.validate.matchSenderAddress("test")).resolves.toBe(true);
+		const mnemonic = authentication(translationMock).mnemonic(wallet);
+		await expect(mnemonic.validate.matchSenderAddress("test")).resolves.toBe(true);
 
 		fromWifMock.mockRestore();
 	});
 
-	it("should fail mnemonic validation", () => {
-		const mnemonic = authentication(translationMock).mnemonic(wallet.coin(), wallet.address());
-		expect(mnemonic.validate.matchSenderAddress("test2")).resolves.toBe(
+	it("should fail mnemonic validation", async () => {
+		const mnemonic = authentication(translationMock).mnemonic(wallet);
+		await expect(mnemonic.validate.matchSenderAddress("test2")).resolves.toBe(
 			"COMMON.INPUT_PASSPHRASE.VALIDATION.MNEMONIC_NOT_MATCH_WALLET",
 		);
 	});
 
-	it("should validate encryption password", () => {
+	it("should validate encryption password", async () => {
 		const wif = "SCoAuLqLrD6rfSBVhgcLqbdLKz2Gum2j4JR7pvLyiKaK9oiUfobg";
+
+		const fromWifMock = jest
+			.spyOn(walletWithPassword.coin().address(), "fromWIF")
+			.mockResolvedValue({ address: walletWithPassword.address() } as any);
 		const walletWifMock = jest.spyOn(walletWithPassword.wif(), "get").mockResolvedValue(wif);
 
 		const encryptionPassword = authentication(translationMock).encryptionPassword(walletWithPassword);
-		expect(encryptionPassword.validate("password")).resolves.toBe(true);
-		jest.runAllTimers();
+		await expect(encryptionPassword.validate("password")).resolves.toBe(true);
 
+		fromWifMock.mockRestore();
 		walletWifMock.mockRestore();
 	});
 
-	it("should fail validation for encryption password", () => {
+	it("should validate WIF", async () => {
+		const fromWifMock = jest
+			.spyOn(wallet.coin().address(), "fromWIF")
+			.mockResolvedValue({ address: wallet.address() } as any);
+
+		const authWif = authentication(translationMock).wif(wallet);
+		const wif = "S9q9B5EUjVSFxKxGeJ7SG69YgCiGFfS29r5ZhfoSKZ2ALbPMyFoL";
+
+		await expect(authWif.validate.matchSenderAddress(wif)).resolves.toBe(true);
+		fromWifMock.mockRestore();
+	});
+
+	it("should fail WIF validation", async () => {
+		const authWif = authentication(translationMock).wif(wallet);
+
+		const wif = "S9q9B5EUjVSFxKxGeJ7SG69YgCiGFfS29r5ZhfoSKZ2ALbPMyFoL";
+		await expect(authWif.validate.matchSenderAddress(wif)).resolves.toBe(
+			"COMMON.INPUT_PASSPHRASE.VALIDATION.WIF_NOT_MATCH_WALLET",
+		);
+	});
+
+	it("should validate private key", async () => {
+		const fromPrivateKeyMock = jest
+			.spyOn(wallet.coin().address(), "fromPrivateKey")
+			.mockResolvedValue({ address: wallet.address() } as any);
+
+		const authPrivateKey = authentication(translationMock).privateKey(wallet);
+
+		const privateKey = "d8839c2432bfd0a67ef10a804ba991eabba19f154a3d707917681d45822a5712";
+		await expect(authPrivateKey.validate(privateKey)).resolves.toBe(true);
+		fromPrivateKeyMock.mockRestore();
+	});
+
+	it("should fail private key validation", async () => {
+		const authPrivateKey = authentication(translationMock).privateKey(wallet);
+
+		const privateKey = "d8839c2432bfd0a67ef10a804ba991eabba19f154a3d707917681d45822a5712";
+		await expect(authPrivateKey.validate(privateKey)).resolves.toBe(
+			"COMMON.INPUT_PASSPHRASE.VALIDATION.PRIVATE_KEY_NOT_MATCH_WALLET",
+		);
+	});
+
+	it("should fail WIF validation", async () => {
+		const authWif = authentication(translationMock).wif(wallet);
+
+		const wif = "S9q9B5EUjVSFxKxGeJ7SG69YgCiGFfS29r5ZhfoSKZ2ALbPMyFoL";
+		await expect(authWif.validate.matchSenderAddress(wif)).resolves.toBe(
+			"COMMON.INPUT_PASSPHRASE.VALIDATION.WIF_NOT_MATCH_WALLET",
+		);
+	});
+
+	it("should fail validation for encryption password", async () => {
 		const walletWifMock = jest
 			.spyOn(walletWithPassword.wif(), "get")
 			.mockImplementation(() => Promise.reject(new Error("failed")));
 
 		const fromWifMock = jest
 			.spyOn(walletWithPassword.coin().address(), "fromWIF")
-			.mockImplementation((wif: string) =>
-				Promise.resolve({ type: "bip39", address: walletWithPassword.address() }),
-			);
+			.mockResolvedValue({ type: "bip39", address: walletWithPassword.address() });
 
 		const encryptionPassword = authentication(translationMock).encryptionPassword(walletWithPassword);
-		expect(encryptionPassword.validate(walletWithPassword.address())).resolves.toBe(
-			"COMMON.INPUT_PASSPHRASE.VALIDATION.PASSWORD_NOT_MATCH_WALLET",
-		);
-		jest.runAllTimers();
-
-		expect(encryptionPassword.validate("wrong password")).resolves.toBe(
+		await expect(encryptionPassword.validate(walletWithPassword.address())).resolves.toBe(
 			"COMMON.INPUT_PASSPHRASE.VALIDATION.PASSWORD_NOT_MATCH_WALLET",
 		);
 
-		jest.runAllTimers();
+		await expect(encryptionPassword.validate("wrong password")).resolves.toBe(
+			"COMMON.INPUT_PASSPHRASE.VALIDATION.PASSWORD_NOT_MATCH_WALLET",
+		);
 
 		fromWifMock.mockRestore();
 		walletWifMock.mockRestore();
 	});
 
-	it("should validate second mnemonic", () => {
+	it("should validate second mnemonic", async () => {
 		const secondMnemonic = authentication(translationMock).secondMnemonic(
 			wallet.coin(),
-			//@ts-ignore
+			// @ts-ignore
 			wallet.publicKey()?.toString(),
 		);
-		expect(secondMnemonic.validate.matchSenderPublicKey("test")).resolves.toBe(true);
+		await expect(secondMnemonic.validate.matchSenderPublicKey("test")).resolves.toBe(true);
 	});
 
-	it("should fail validation for second mnemonic", () => {
+	it("should fail validation for second mnemonic", async () => {
 		const secondMnemonic = authentication(translationMock).secondMnemonic(wallet.coin(), wallet.address());
-		expect(secondMnemonic.validate.matchSenderPublicKey("test")).resolves.toBe(
+		await expect(secondMnemonic.validate.matchSenderPublicKey("test")).resolves.toBe(
 			"COMMON.INPUT_PASSPHRASE.VALIDATION.MNEMONIC_NOT_MATCH_WALLET",
 		);
 	});

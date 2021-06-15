@@ -162,12 +162,12 @@ exports[`SendTransfer should display disabled address selection input if selecte
                     class="flex relative items-center space-x-2"
                   >
                     <div
-                      class="sc-bdfBwQ iNulIV p-1"
-                      height="18"
-                      width="18"
+                      class="sc-bdfBwQ iyevwF p-1"
+                      height="20"
+                      width="20"
                     >
                       <svg>
-                        sent.svg
+                        send.svg
                       </svg>
                     </div>
                   </div>
@@ -209,7 +209,7 @@ exports[`SendTransfer should display disabled address selection input if selecte
             />
           </div>
           <div
-            class="flex items-center my-auto ml-8"
+            class="flex items-center my-auto ml-8 space-x-4"
           >
             <div
               class="text-right"
@@ -217,7 +217,7 @@ exports[`SendTransfer should display disabled address selection input if selecte
               <div
                 class="text-xs font-semibold text-theme-secondary-700"
               >
-                Your balance
+                Your Balance
               </div>
               <div
                 class="text-sm font-bold text-theme-secondary-text dark:text-theme-text"
@@ -231,56 +231,35 @@ exports[`SendTransfer should display disabled address selection input if selecte
               </div>
             </div>
             <div
-              class="flex my-0.5 ml-4 -space-x-2"
+              class="relative"
             >
-              <div
-                class="Circle__CircleWrapper-uw7h4j-0 bNDQMV border-theme-primary-100 dark:border-theme-secondary-800 ring-theme-background"
+              <span
+                data-testid="dropdown__toggle"
               >
-                <span
-                  class="text-theme-secondary-text dark:text-theme-secondary-800"
+                <div
+                  class="relative items-center justify-center align-middle rounded-full cursor-pointer"
+                  data-testid="navbar__useractions"
                 >
                   <div
-                    class="sc-bdfBwQ fPrsah"
-                    height="1em"
-                    width="1em"
-                  >
-                    <svg>
-                      btc.svg
-                    </svg>
-                  </div>
-                </span>
-              </div>
-              <div
-                class="relative"
-              >
-                <span
-                  data-testid="dropdown__toggle"
-                >
-                  <div
-                    class="relative items-center justify-center align-middle rounded-full cursor-pointer"
-                    data-testid="navbar__useractions"
+                    class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB flex-shrink-0"
+                    data-testid="Avatar"
                   >
                     <div
-                      class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB flex-shrink-0"
-                      data-testid="Avatar"
+                      class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
                     >
-                      <div
-                        class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
+                      <img
+                        alt="Profile Avatar"
+                        src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"30\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"55\\" cx=\\"0\\" cy=\\"60\\" fill=\\"rgb(255, 152, 0)\\"/><circle r=\\"40\\" cx=\\"50\\" cy=\\"50\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
+                      />
+                      <span
+                        class="absolute text-sm font-semibold text-theme-background dark:text-theme-text"
                       >
-                        <img
-                          alt="Profile Avatar"
-                          src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"30\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"55\\" cx=\\"0\\" cy=\\"60\\" fill=\\"rgb(255, 152, 0)\\"/><circle r=\\"40\\" cx=\\"50\\" cy=\\"50\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
-                        />
-                        <span
-                          class="absolute text-sm font-semibold text-theme-background dark:text-theme-text"
-                        >
-                          JO
-                        </span>
-                      </div>
+                        JO
+                      </span>
                     </div>
                   </div>
-                </span>
-              </div>
+                </div>
+              </span>
             </div>
           </div>
         </div>
@@ -350,7 +329,7 @@ exports[`SendTransfer should display disabled address selection input if selecte
                       </div>
                     </div>
                     <div
-                      class="space-y-8 SendTransactionForm"
+                      class="space-y-5 SendTransactionForm"
                     >
                       <fieldset
                         class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
@@ -607,10 +586,10 @@ exports[`SendTransfer should display disabled address selection input if selecte
                             </div>
                           </div>
                           <div
-                            class="SubForm__SubFormWrapper-c4tqfs-0 bbQsCL mt-6"
+                            class="SubForm__SubFormWrapper-c4tqfs-0 jJZhtj mt-6"
                           >
                             <div
-                              class="space-y-8"
+                              class="space-y-5"
                             >
                               <fieldset
                                 class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
@@ -1154,12 +1133,12 @@ exports[`SendTransfer should display unconfirmed transactions modal when submitt
                     class="flex relative items-center space-x-2"
                   >
                     <div
-                      class="sc-bdfBwQ iNulIV p-1"
-                      height="18"
-                      width="18"
+                      class="sc-bdfBwQ iyevwF p-1"
+                      height="20"
+                      width="20"
                     >
                       <svg>
-                        sent.svg
+                        send.svg
                       </svg>
                     </div>
                   </div>
@@ -1201,7 +1180,7 @@ exports[`SendTransfer should display unconfirmed transactions modal when submitt
             />
           </div>
           <div
-            class="flex items-center my-auto ml-8"
+            class="flex items-center my-auto ml-8 space-x-4"
           >
             <div
               class="text-right"
@@ -1209,7 +1188,7 @@ exports[`SendTransfer should display unconfirmed transactions modal when submitt
               <div
                 class="text-xs font-semibold text-theme-secondary-700"
               >
-                Your balance
+                Your Balance
               </div>
               <div
                 class="text-sm font-bold text-theme-secondary-text dark:text-theme-text"
@@ -1223,56 +1202,35 @@ exports[`SendTransfer should display unconfirmed transactions modal when submitt
               </div>
             </div>
             <div
-              class="flex my-0.5 ml-4 -space-x-2"
+              class="relative"
             >
-              <div
-                class="Circle__CircleWrapper-uw7h4j-0 bNDQMV border-theme-primary-100 dark:border-theme-secondary-800 ring-theme-background"
+              <span
+                data-testid="dropdown__toggle"
               >
-                <span
-                  class="text-theme-secondary-text dark:text-theme-secondary-800"
+                <div
+                  class="relative items-center justify-center align-middle rounded-full cursor-pointer"
+                  data-testid="navbar__useractions"
                 >
                   <div
-                    class="sc-bdfBwQ fPrsah"
-                    height="1em"
-                    width="1em"
-                  >
-                    <svg>
-                      btc.svg
-                    </svg>
-                  </div>
-                </span>
-              </div>
-              <div
-                class="relative"
-              >
-                <span
-                  data-testid="dropdown__toggle"
-                >
-                  <div
-                    class="relative items-center justify-center align-middle rounded-full cursor-pointer"
-                    data-testid="navbar__useractions"
+                    class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB flex-shrink-0"
+                    data-testid="Avatar"
                   >
                     <div
-                      class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB flex-shrink-0"
-                      data-testid="Avatar"
+                      class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
                     >
-                      <div
-                        class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
+                      <img
+                        alt="Profile Avatar"
+                        src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"30\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"55\\" cx=\\"0\\" cy=\\"60\\" fill=\\"rgb(255, 152, 0)\\"/><circle r=\\"40\\" cx=\\"50\\" cy=\\"50\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
+                      />
+                      <span
+                        class="absolute text-sm font-semibold text-theme-background dark:text-theme-text"
                       >
-                        <img
-                          alt="Profile Avatar"
-                          src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"30\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"55\\" cx=\\"0\\" cy=\\"60\\" fill=\\"rgb(255, 152, 0)\\"/><circle r=\\"40\\" cx=\\"50\\" cy=\\"50\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
-                        />
-                        <span
-                          class="absolute text-sm font-semibold text-theme-background dark:text-theme-text"
-                        >
-                          JO
-                        </span>
-                      </div>
+                        JO
+                      </span>
                     </div>
                   </div>
-                </span>
-              </div>
+                </div>
+              </span>
             </div>
           </div>
         </div>
@@ -2055,12 +2013,12 @@ exports[`SendTransfer should error if wrong mnemonic 1`] = `
                     class="flex relative items-center space-x-2"
                   >
                     <div
-                      class="sc-bdfBwQ iNulIV p-1"
-                      height="18"
-                      width="18"
+                      class="sc-bdfBwQ iyevwF p-1"
+                      height="20"
+                      width="20"
                     >
                       <svg>
-                        sent.svg
+                        send.svg
                       </svg>
                     </div>
                   </div>
@@ -2102,7 +2060,7 @@ exports[`SendTransfer should error if wrong mnemonic 1`] = `
             />
           </div>
           <div
-            class="flex items-center my-auto ml-8"
+            class="flex items-center my-auto ml-8 space-x-4"
           >
             <div
               class="text-right"
@@ -2110,7 +2068,7 @@ exports[`SendTransfer should error if wrong mnemonic 1`] = `
               <div
                 class="text-xs font-semibold text-theme-secondary-700"
               >
-                Your balance
+                Your Balance
               </div>
               <div
                 class="text-sm font-bold text-theme-secondary-text dark:text-theme-text"
@@ -2124,56 +2082,35 @@ exports[`SendTransfer should error if wrong mnemonic 1`] = `
               </div>
             </div>
             <div
-              class="flex my-0.5 ml-4 -space-x-2"
+              class="relative"
             >
-              <div
-                class="Circle__CircleWrapper-uw7h4j-0 bNDQMV border-theme-primary-100 dark:border-theme-secondary-800 ring-theme-background"
+              <span
+                data-testid="dropdown__toggle"
               >
-                <span
-                  class="text-theme-secondary-text dark:text-theme-secondary-800"
+                <div
+                  class="relative items-center justify-center align-middle rounded-full cursor-pointer"
+                  data-testid="navbar__useractions"
                 >
                   <div
-                    class="sc-bdfBwQ fPrsah"
-                    height="1em"
-                    width="1em"
-                  >
-                    <svg>
-                      btc.svg
-                    </svg>
-                  </div>
-                </span>
-              </div>
-              <div
-                class="relative"
-              >
-                <span
-                  data-testid="dropdown__toggle"
-                >
-                  <div
-                    class="relative items-center justify-center align-middle rounded-full cursor-pointer"
-                    data-testid="navbar__useractions"
+                    class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB flex-shrink-0"
+                    data-testid="Avatar"
                   >
                     <div
-                      class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB flex-shrink-0"
-                      data-testid="Avatar"
+                      class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
                     >
-                      <div
-                        class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
+                      <img
+                        alt="Profile Avatar"
+                        src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"30\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"55\\" cx=\\"0\\" cy=\\"60\\" fill=\\"rgb(255, 152, 0)\\"/><circle r=\\"40\\" cx=\\"50\\" cy=\\"50\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
+                      />
+                      <span
+                        class="absolute text-sm font-semibold text-theme-background dark:text-theme-text"
                       >
-                        <img
-                          alt="Profile Avatar"
-                          src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"30\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"55\\" cx=\\"0\\" cy=\\"60\\" fill=\\"rgb(255, 152, 0)\\"/><circle r=\\"40\\" cx=\\"50\\" cy=\\"50\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
-                        />
-                        <span
-                          class="absolute text-sm font-semibold text-theme-background dark:text-theme-text"
-                        >
-                          JO
-                        </span>
-                      </div>
+                        JO
+                      </span>
                     </div>
                   </div>
-                </span>
-              </div>
+                </div>
+              </span>
             </div>
           </div>
         </div>
@@ -2336,18 +2273,18 @@ exports[`SendTransfer should error if wrong mnemonic 1`] = `
                     <div
                       class="flex relative items-center space-x-2"
                     >
+                      <span>
+                        Send
+                      </span>
                       <div
-                        class="sc-bdfBwQ bfBhNR"
-                        height="14"
-                        width="14"
+                        class="sc-bdfBwQ fpbFeh"
+                        height="16"
+                        width="16"
                       >
                         <svg>
                           send.svg
                         </svg>
                       </div>
-                      <span>
-                        Send
-                      </span>
                     </div>
                   </button>
                 </div>
@@ -2388,7 +2325,7 @@ exports[`SendTransfer should render 1st step with custom deeplink values and use
       </div>
     </div>
     <div
-      class="space-y-8 SendTransactionForm"
+      class="space-y-5 SendTransactionForm"
     >
       <fieldset
         class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
@@ -2599,10 +2536,10 @@ exports[`SendTransfer should render 1st step with custom deeplink values and use
             </div>
           </div>
           <div
-            class="SubForm__SubFormWrapper-c4tqfs-0 bbQsCL mt-6"
+            class="SubForm__SubFormWrapper-c4tqfs-0 jJZhtj mt-6"
           >
             <div
-              class="space-y-8"
+              class="space-y-5"
             >
               <fieldset
                 class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
@@ -3049,12 +2986,12 @@ exports[`SendTransfer should render form and use location state 1`] = `
                     class="flex relative items-center space-x-2"
                   >
                     <div
-                      class="sc-bdfBwQ iNulIV p-1"
-                      height="18"
-                      width="18"
+                      class="sc-bdfBwQ iyevwF p-1"
+                      height="20"
+                      width="20"
                     >
                       <svg>
-                        sent.svg
+                        send.svg
                       </svg>
                     </div>
                   </div>
@@ -3096,7 +3033,7 @@ exports[`SendTransfer should render form and use location state 1`] = `
             />
           </div>
           <div
-            class="flex items-center my-auto ml-8"
+            class="flex items-center my-auto ml-8 space-x-4"
           >
             <div
               class="text-right"
@@ -3104,7 +3041,7 @@ exports[`SendTransfer should render form and use location state 1`] = `
               <div
                 class="text-xs font-semibold text-theme-secondary-700"
               >
-                Your balance
+                Your Balance
               </div>
               <div
                 class="text-sm font-bold text-theme-secondary-text dark:text-theme-text"
@@ -3118,56 +3055,35 @@ exports[`SendTransfer should render form and use location state 1`] = `
               </div>
             </div>
             <div
-              class="flex my-0.5 ml-4 -space-x-2"
+              class="relative"
             >
-              <div
-                class="Circle__CircleWrapper-uw7h4j-0 bNDQMV border-theme-primary-100 dark:border-theme-secondary-800 ring-theme-background"
+              <span
+                data-testid="dropdown__toggle"
               >
-                <span
-                  class="text-theme-secondary-text dark:text-theme-secondary-800"
+                <div
+                  class="relative items-center justify-center align-middle rounded-full cursor-pointer"
+                  data-testid="navbar__useractions"
                 >
                   <div
-                    class="sc-bdfBwQ fPrsah"
-                    height="1em"
-                    width="1em"
-                  >
-                    <svg>
-                      btc.svg
-                    </svg>
-                  </div>
-                </span>
-              </div>
-              <div
-                class="relative"
-              >
-                <span
-                  data-testid="dropdown__toggle"
-                >
-                  <div
-                    class="relative items-center justify-center align-middle rounded-full cursor-pointer"
-                    data-testid="navbar__useractions"
+                    class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB flex-shrink-0"
+                    data-testid="Avatar"
                   >
                     <div
-                      class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB flex-shrink-0"
-                      data-testid="Avatar"
+                      class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
                     >
-                      <div
-                        class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
+                      <img
+                        alt="Profile Avatar"
+                        src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"30\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"55\\" cx=\\"0\\" cy=\\"60\\" fill=\\"rgb(255, 152, 0)\\"/><circle r=\\"40\\" cx=\\"50\\" cy=\\"50\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
+                      />
+                      <span
+                        class="absolute text-sm font-semibold text-theme-background dark:text-theme-text"
                       >
-                        <img
-                          alt="Profile Avatar"
-                          src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"30\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"55\\" cx=\\"0\\" cy=\\"60\\" fill=\\"rgb(255, 152, 0)\\"/><circle r=\\"40\\" cx=\\"50\\" cy=\\"50\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
-                        />
-                        <span
-                          class="absolute text-sm font-semibold text-theme-background dark:text-theme-text"
-                        >
-                          JO
-                        </span>
-                      </div>
+                        JO
+                      </span>
                     </div>
                   </div>
-                </span>
-              </div>
+                </div>
+              </span>
             </div>
           </div>
         </div>
@@ -3234,7 +3150,7 @@ exports[`SendTransfer should render form and use location state 1`] = `
                       </div>
                     </div>
                     <div
-                      class="space-y-8 SendTransactionForm"
+                      class="space-y-5 SendTransactionForm"
                     >
                       <fieldset
                         class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
@@ -3520,10 +3436,10 @@ exports[`SendTransfer should render form and use location state 1`] = `
                             </div>
                           </div>
                           <div
-                            class="SubForm__SubFormWrapper-c4tqfs-0 bbQsCL mt-6"
+                            class="SubForm__SubFormWrapper-c4tqfs-0 jJZhtj mt-6"
                           >
                             <div
-                              class="space-y-8"
+                              class="space-y-5"
                             >
                               <fieldset
                                 class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
@@ -4086,12 +4002,12 @@ exports[`SendTransfer should render form and use location state without memo 1`]
                     class="flex relative items-center space-x-2"
                   >
                     <div
-                      class="sc-bdfBwQ iNulIV p-1"
-                      height="18"
-                      width="18"
+                      class="sc-bdfBwQ iyevwF p-1"
+                      height="20"
+                      width="20"
                     >
                       <svg>
-                        sent.svg
+                        send.svg
                       </svg>
                     </div>
                   </div>
@@ -4133,7 +4049,7 @@ exports[`SendTransfer should render form and use location state without memo 1`]
             />
           </div>
           <div
-            class="flex items-center my-auto ml-8"
+            class="flex items-center my-auto ml-8 space-x-4"
           >
             <div
               class="text-right"
@@ -4141,7 +4057,7 @@ exports[`SendTransfer should render form and use location state without memo 1`]
               <div
                 class="text-xs font-semibold text-theme-secondary-700"
               >
-                Your balance
+                Your Balance
               </div>
               <div
                 class="text-sm font-bold text-theme-secondary-text dark:text-theme-text"
@@ -4155,56 +4071,35 @@ exports[`SendTransfer should render form and use location state without memo 1`]
               </div>
             </div>
             <div
-              class="flex my-0.5 ml-4 -space-x-2"
+              class="relative"
             >
-              <div
-                class="Circle__CircleWrapper-uw7h4j-0 bNDQMV border-theme-primary-100 dark:border-theme-secondary-800 ring-theme-background"
+              <span
+                data-testid="dropdown__toggle"
               >
-                <span
-                  class="text-theme-secondary-text dark:text-theme-secondary-800"
+                <div
+                  class="relative items-center justify-center align-middle rounded-full cursor-pointer"
+                  data-testid="navbar__useractions"
                 >
                   <div
-                    class="sc-bdfBwQ fPrsah"
-                    height="1em"
-                    width="1em"
-                  >
-                    <svg>
-                      btc.svg
-                    </svg>
-                  </div>
-                </span>
-              </div>
-              <div
-                class="relative"
-              >
-                <span
-                  data-testid="dropdown__toggle"
-                >
-                  <div
-                    class="relative items-center justify-center align-middle rounded-full cursor-pointer"
-                    data-testid="navbar__useractions"
+                    class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB flex-shrink-0"
+                    data-testid="Avatar"
                   >
                     <div
-                      class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB flex-shrink-0"
-                      data-testid="Avatar"
+                      class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
                     >
-                      <div
-                        class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
+                      <img
+                        alt="Profile Avatar"
+                        src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"30\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"55\\" cx=\\"0\\" cy=\\"60\\" fill=\\"rgb(255, 152, 0)\\"/><circle r=\\"40\\" cx=\\"50\\" cy=\\"50\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
+                      />
+                      <span
+                        class="absolute text-sm font-semibold text-theme-background dark:text-theme-text"
                       >
-                        <img
-                          alt="Profile Avatar"
-                          src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"30\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"55\\" cx=\\"0\\" cy=\\"60\\" fill=\\"rgb(255, 152, 0)\\"/><circle r=\\"40\\" cx=\\"50\\" cy=\\"50\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
-                        />
-                        <span
-                          class="absolute text-sm font-semibold text-theme-background dark:text-theme-text"
-                        >
-                          JO
-                        </span>
-                      </div>
+                        JO
+                      </span>
                     </div>
                   </div>
-                </span>
-              </div>
+                </div>
+              </span>
             </div>
           </div>
         </div>
@@ -4271,7 +4166,7 @@ exports[`SendTransfer should render form and use location state without memo 1`]
                       </div>
                     </div>
                     <div
-                      class="space-y-8 SendTransactionForm"
+                      class="space-y-5 SendTransactionForm"
                     >
                       <fieldset
                         class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
@@ -4557,10 +4452,10 @@ exports[`SendTransfer should render form and use location state without memo 1`]
                             </div>
                           </div>
                           <div
-                            class="SubForm__SubFormWrapper-c4tqfs-0 bbQsCL mt-6"
+                            class="SubForm__SubFormWrapper-c4tqfs-0 jJZhtj mt-6"
                           >
                             <div
-                              class="space-y-8"
+                              class="space-y-5"
                             >
                               <fieldset
                                 class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
@@ -4977,7 +4872,7 @@ exports[`SendTransfer should render form step 1`] = `
       </div>
     </div>
     <div
-      class="space-y-8 SendTransactionForm"
+      class="space-y-5 SendTransactionForm"
     >
       <fieldset
         class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
@@ -5188,10 +5083,10 @@ exports[`SendTransfer should render form step 1`] = `
             </div>
           </div>
           <div
-            class="SubForm__SubFormWrapper-c4tqfs-0 bbQsCL mt-6"
+            class="SubForm__SubFormWrapper-c4tqfs-0 jJZhtj mt-6"
           >
             <div
-              class="space-y-8"
+              class="space-y-5"
             >
               <fieldset
                 class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
@@ -5503,7 +5398,7 @@ exports[`SendTransfer should render form step with deeplink values and use them 
       </div>
     </div>
     <div
-      class="space-y-8 SendTransactionForm"
+      class="space-y-5 SendTransactionForm"
     >
       <fieldset
         class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
@@ -5714,10 +5609,10 @@ exports[`SendTransfer should render form step with deeplink values and use them 
             </div>
           </div>
           <div
-            class="SubForm__SubFormWrapper-c4tqfs-0 bbQsCL mt-6"
+            class="SubForm__SubFormWrapper-c4tqfs-0 jJZhtj mt-6"
           >
             <div
-              class="space-y-8"
+              class="space-y-5"
             >
               <fieldset
                 class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
@@ -6029,7 +5924,7 @@ exports[`SendTransfer should render form step without test networks 1`] = `
       </div>
     </div>
     <div
-      class="space-y-8 SendTransactionForm"
+      class="space-y-5 SendTransactionForm"
     >
       <fieldset
         class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
@@ -6240,10 +6135,10 @@ exports[`SendTransfer should render form step without test networks 1`] = `
             </div>
           </div>
           <div
-            class="SubForm__SubFormWrapper-c4tqfs-0 bbQsCL mt-6"
+            class="SubForm__SubFormWrapper-c4tqfs-0 jJZhtj mt-6"
           >
             <div
-              class="space-y-8"
+              class="space-y-5"
             >
               <fieldset
                 class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
@@ -6690,12 +6585,12 @@ exports[`SendTransfer should render network selection without selected wallet 1`
                     class="flex relative items-center space-x-2"
                   >
                     <div
-                      class="sc-bdfBwQ iNulIV p-1"
-                      height="18"
-                      width="18"
+                      class="sc-bdfBwQ iyevwF p-1"
+                      height="20"
+                      width="20"
                     >
                       <svg>
-                        sent.svg
+                        send.svg
                       </svg>
                     </div>
                   </div>
@@ -6737,7 +6632,7 @@ exports[`SendTransfer should render network selection without selected wallet 1`
             />
           </div>
           <div
-            class="flex items-center my-auto ml-8"
+            class="flex items-center my-auto ml-8 space-x-4"
           >
             <div
               class="text-right"
@@ -6745,7 +6640,7 @@ exports[`SendTransfer should render network selection without selected wallet 1`
               <div
                 class="text-xs font-semibold text-theme-secondary-700"
               >
-                Your balance
+                Your Balance
               </div>
               <div
                 class="text-sm font-bold text-theme-secondary-text dark:text-theme-text"
@@ -6759,56 +6654,35 @@ exports[`SendTransfer should render network selection without selected wallet 1`
               </div>
             </div>
             <div
-              class="flex my-0.5 ml-4 -space-x-2"
+              class="relative"
             >
-              <div
-                class="Circle__CircleWrapper-uw7h4j-0 bNDQMV border-theme-primary-100 dark:border-theme-secondary-800 ring-theme-background"
+              <span
+                data-testid="dropdown__toggle"
               >
-                <span
-                  class="text-theme-secondary-text dark:text-theme-secondary-800"
+                <div
+                  class="relative items-center justify-center align-middle rounded-full cursor-pointer"
+                  data-testid="navbar__useractions"
                 >
                   <div
-                    class="sc-bdfBwQ fPrsah"
-                    height="1em"
-                    width="1em"
-                  >
-                    <svg>
-                      btc.svg
-                    </svg>
-                  </div>
-                </span>
-              </div>
-              <div
-                class="relative"
-              >
-                <span
-                  data-testid="dropdown__toggle"
-                >
-                  <div
-                    class="relative items-center justify-center align-middle rounded-full cursor-pointer"
-                    data-testid="navbar__useractions"
+                    class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB flex-shrink-0"
+                    data-testid="Avatar"
                   >
                     <div
-                      class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB flex-shrink-0"
-                      data-testid="Avatar"
+                      class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
                     >
-                      <div
-                        class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
+                      <img
+                        alt="Profile Avatar"
+                        src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"30\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"55\\" cx=\\"0\\" cy=\\"60\\" fill=\\"rgb(255, 152, 0)\\"/><circle r=\\"40\\" cx=\\"50\\" cy=\\"50\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
+                      />
+                      <span
+                        class="absolute text-sm font-semibold text-theme-background dark:text-theme-text"
                       >
-                        <img
-                          alt="Profile Avatar"
-                          src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"30\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"55\\" cx=\\"0\\" cy=\\"60\\" fill=\\"rgb(255, 152, 0)\\"/><circle r=\\"40\\" cx=\\"50\\" cy=\\"50\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
-                        />
-                        <span
-                          class="absolute text-sm font-semibold text-theme-background dark:text-theme-text"
-                        >
-                          JO
-                        </span>
-                      </div>
+                        JO
+                      </span>
                     </div>
                   </div>
-                </span>
-              </div>
+                </div>
+              </span>
             </div>
           </div>
         </div>
@@ -7894,12 +7768,12 @@ exports[`SendTransfer should select a cryptoasset and select sender without wall
                     class="flex relative items-center space-x-2"
                   >
                     <div
-                      class="sc-bdfBwQ iNulIV p-1"
-                      height="18"
-                      width="18"
+                      class="sc-bdfBwQ iyevwF p-1"
+                      height="20"
+                      width="20"
                     >
                       <svg>
-                        sent.svg
+                        send.svg
                       </svg>
                     </div>
                   </div>
@@ -7941,7 +7815,7 @@ exports[`SendTransfer should select a cryptoasset and select sender without wall
             />
           </div>
           <div
-            class="flex items-center my-auto ml-8"
+            class="flex items-center my-auto ml-8 space-x-4"
           >
             <div
               class="text-right"
@@ -7949,7 +7823,7 @@ exports[`SendTransfer should select a cryptoasset and select sender without wall
               <div
                 class="text-xs font-semibold text-theme-secondary-700"
               >
-                Your balance
+                Your Balance
               </div>
               <div
                 class="text-sm font-bold text-theme-secondary-text dark:text-theme-text"
@@ -7963,56 +7837,35 @@ exports[`SendTransfer should select a cryptoasset and select sender without wall
               </div>
             </div>
             <div
-              class="flex my-0.5 ml-4 -space-x-2"
+              class="relative"
             >
-              <div
-                class="Circle__CircleWrapper-uw7h4j-0 bNDQMV border-theme-primary-100 dark:border-theme-secondary-800 ring-theme-background"
+              <span
+                data-testid="dropdown__toggle"
               >
-                <span
-                  class="text-theme-secondary-text dark:text-theme-secondary-800"
+                <div
+                  class="relative items-center justify-center align-middle rounded-full cursor-pointer"
+                  data-testid="navbar__useractions"
                 >
                   <div
-                    class="sc-bdfBwQ fPrsah"
-                    height="1em"
-                    width="1em"
-                  >
-                    <svg>
-                      btc.svg
-                    </svg>
-                  </div>
-                </span>
-              </div>
-              <div
-                class="relative"
-              >
-                <span
-                  data-testid="dropdown__toggle"
-                >
-                  <div
-                    class="relative items-center justify-center align-middle rounded-full cursor-pointer"
-                    data-testid="navbar__useractions"
+                    class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB flex-shrink-0"
+                    data-testid="Avatar"
                   >
                     <div
-                      class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB flex-shrink-0"
-                      data-testid="Avatar"
+                      class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
                     >
-                      <div
-                        class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
+                      <img
+                        alt="Profile Avatar"
+                        src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"30\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"55\\" cx=\\"0\\" cy=\\"60\\" fill=\\"rgb(255, 152, 0)\\"/><circle r=\\"40\\" cx=\\"50\\" cy=\\"50\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
+                      />
+                      <span
+                        class="absolute text-sm font-semibold text-theme-background dark:text-theme-text"
                       >
-                        <img
-                          alt="Profile Avatar"
-                          src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"30\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"55\\" cx=\\"0\\" cy=\\"60\\" fill=\\"rgb(255, 152, 0)\\"/><circle r=\\"40\\" cx=\\"50\\" cy=\\"50\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
-                        />
-                        <span
-                          class="absolute text-sm font-semibold text-theme-background dark:text-theme-text"
-                        >
-                          JO
-                        </span>
-                      </div>
+                        JO
+                      </span>
                     </div>
                   </div>
-                </span>
-              </div>
+                </div>
+              </span>
             </div>
           </div>
         </div>
@@ -8082,7 +7935,7 @@ exports[`SendTransfer should select a cryptoasset and select sender without wall
                       </div>
                     </div>
                     <div
-                      class="space-y-8 SendTransactionForm"
+                      class="space-y-5 SendTransactionForm"
                     >
                       <fieldset
                         class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
@@ -8371,10 +8224,10 @@ exports[`SendTransfer should select a cryptoasset and select sender without wall
                             </div>
                           </div>
                           <div
-                            class="SubForm__SubFormWrapper-c4tqfs-0 bbQsCL mt-6"
+                            class="SubForm__SubFormWrapper-c4tqfs-0 jJZhtj mt-6"
                           >
                             <div
-                              class="space-y-8"
+                              class="space-y-5"
                             >
                               <fieldset
                                 class="FormField__FormFieldStyled-yeauwd-0 cnlnjc flex flex-col space-y-2"
@@ -8934,12 +8787,12 @@ exports[`SendTransfer should select cryptoasset 1`] = `
                     class="flex relative items-center space-x-2"
                   >
                     <div
-                      class="sc-bdfBwQ iNulIV p-1"
-                      height="18"
-                      width="18"
+                      class="sc-bdfBwQ iyevwF p-1"
+                      height="20"
+                      width="20"
                     >
                       <svg>
-                        sent.svg
+                        send.svg
                       </svg>
                     </div>
                   </div>
@@ -8981,7 +8834,7 @@ exports[`SendTransfer should select cryptoasset 1`] = `
             />
           </div>
           <div
-            class="flex items-center my-auto ml-8"
+            class="flex items-center my-auto ml-8 space-x-4"
           >
             <div
               class="text-right"
@@ -8989,7 +8842,7 @@ exports[`SendTransfer should select cryptoasset 1`] = `
               <div
                 class="text-xs font-semibold text-theme-secondary-700"
               >
-                Your balance
+                Your Balance
               </div>
               <div
                 class="text-sm font-bold text-theme-secondary-text dark:text-theme-text"
@@ -9003,56 +8856,35 @@ exports[`SendTransfer should select cryptoasset 1`] = `
               </div>
             </div>
             <div
-              class="flex my-0.5 ml-4 -space-x-2"
+              class="relative"
             >
-              <div
-                class="Circle__CircleWrapper-uw7h4j-0 bNDQMV border-theme-primary-100 dark:border-theme-secondary-800 ring-theme-background"
+              <span
+                data-testid="dropdown__toggle"
               >
-                <span
-                  class="text-theme-secondary-text dark:text-theme-secondary-800"
+                <div
+                  class="relative items-center justify-center align-middle rounded-full cursor-pointer"
+                  data-testid="navbar__useractions"
                 >
                   <div
-                    class="sc-bdfBwQ fPrsah"
-                    height="1em"
-                    width="1em"
-                  >
-                    <svg>
-                      btc.svg
-                    </svg>
-                  </div>
-                </span>
-              </div>
-              <div
-                class="relative"
-              >
-                <span
-                  data-testid="dropdown__toggle"
-                >
-                  <div
-                    class="relative items-center justify-center align-middle rounded-full cursor-pointer"
-                    data-testid="navbar__useractions"
+                    class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB flex-shrink-0"
+                    data-testid="Avatar"
                   >
                     <div
-                      class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB flex-shrink-0"
-                      data-testid="Avatar"
+                      class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
                     >
-                      <div
-                        class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
+                      <img
+                        alt="Profile Avatar"
+                        src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"30\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"55\\" cx=\\"0\\" cy=\\"60\\" fill=\\"rgb(255, 152, 0)\\"/><circle r=\\"40\\" cx=\\"50\\" cy=\\"50\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
+                      />
+                      <span
+                        class="absolute text-sm font-semibold text-theme-background dark:text-theme-text"
                       >
-                        <img
-                          alt="Profile Avatar"
-                          src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"30\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"55\\" cx=\\"0\\" cy=\\"60\\" fill=\\"rgb(255, 152, 0)\\"/><circle r=\\"40\\" cx=\\"50\\" cy=\\"50\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
-                        />
-                        <span
-                          class="absolute text-sm font-semibold text-theme-background dark:text-theme-text"
-                        >
-                          JO
-                        </span>
-                      </div>
+                        JO
+                      </span>
                     </div>
                   </div>
-                </span>
-              </div>
+                </div>
+              </span>
             </div>
           </div>
         </div>
@@ -9433,12 +9265,12 @@ exports[`SendTransfer should send a single transfer 1`] = `
                     class="flex relative items-center space-x-2"
                   >
                     <div
-                      class="sc-bdfBwQ iNulIV p-1"
-                      height="18"
-                      width="18"
+                      class="sc-bdfBwQ iyevwF p-1"
+                      height="20"
+                      width="20"
                     >
                       <svg>
-                        sent.svg
+                        send.svg
                       </svg>
                     </div>
                   </div>
@@ -9480,7 +9312,7 @@ exports[`SendTransfer should send a single transfer 1`] = `
             />
           </div>
           <div
-            class="flex items-center my-auto ml-8"
+            class="flex items-center my-auto ml-8 space-x-4"
           >
             <div
               class="text-right"
@@ -9488,7 +9320,7 @@ exports[`SendTransfer should send a single transfer 1`] = `
               <div
                 class="text-xs font-semibold text-theme-secondary-700"
               >
-                Your balance
+                Your Balance
               </div>
               <div
                 class="text-sm font-bold text-theme-secondary-text dark:text-theme-text"
@@ -9502,56 +9334,35 @@ exports[`SendTransfer should send a single transfer 1`] = `
               </div>
             </div>
             <div
-              class="flex my-0.5 ml-4 -space-x-2"
+              class="relative"
             >
-              <div
-                class="Circle__CircleWrapper-uw7h4j-0 bNDQMV border-theme-primary-100 dark:border-theme-secondary-800 ring-theme-background"
+              <span
+                data-testid="dropdown__toggle"
               >
-                <span
-                  class="text-theme-secondary-text dark:text-theme-secondary-800"
+                <div
+                  class="relative items-center justify-center align-middle rounded-full cursor-pointer"
+                  data-testid="navbar__useractions"
                 >
                   <div
-                    class="sc-bdfBwQ fPrsah"
-                    height="1em"
-                    width="1em"
-                  >
-                    <svg>
-                      btc.svg
-                    </svg>
-                  </div>
-                </span>
-              </div>
-              <div
-                class="relative"
-              >
-                <span
-                  data-testid="dropdown__toggle"
-                >
-                  <div
-                    class="relative items-center justify-center align-middle rounded-full cursor-pointer"
-                    data-testid="navbar__useractions"
+                    class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB flex-shrink-0"
+                    data-testid="Avatar"
                   >
                     <div
-                      class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB flex-shrink-0"
-                      data-testid="Avatar"
+                      class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
                     >
-                      <div
-                        class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
+                      <img
+                        alt="Profile Avatar"
+                        src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"30\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"55\\" cx=\\"0\\" cy=\\"60\\" fill=\\"rgb(255, 152, 0)\\"/><circle r=\\"40\\" cx=\\"50\\" cy=\\"50\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
+                      />
+                      <span
+                        class="absolute text-sm font-semibold text-theme-background dark:text-theme-text"
                       >
-                        <img
-                          alt="Profile Avatar"
-                          src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"30\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"55\\" cx=\\"0\\" cy=\\"60\\" fill=\\"rgb(255, 152, 0)\\"/><circle r=\\"40\\" cx=\\"50\\" cy=\\"50\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
-                        />
-                        <span
-                          class="absolute text-sm font-semibold text-theme-background dark:text-theme-text"
-                        >
-                          JO
-                        </span>
-                      </div>
+                        JO
+                      </span>
                     </div>
                   </div>
-                </span>
-              </div>
+                </div>
+              </span>
             </div>
           </div>
         </div>
@@ -10091,12 +9902,12 @@ exports[`SendTransfer should send a single transfer and handle undefined expirat
                     class="flex relative items-center space-x-2"
                   >
                     <div
-                      class="sc-bdfBwQ iNulIV p-1"
-                      height="18"
-                      width="18"
+                      class="sc-bdfBwQ iyevwF p-1"
+                      height="20"
+                      width="20"
                     >
                       <svg>
-                        sent.svg
+                        send.svg
                       </svg>
                     </div>
                   </div>
@@ -10138,7 +9949,7 @@ exports[`SendTransfer should send a single transfer and handle undefined expirat
             />
           </div>
           <div
-            class="flex items-center my-auto ml-8"
+            class="flex items-center my-auto ml-8 space-x-4"
           >
             <div
               class="text-right"
@@ -10146,7 +9957,7 @@ exports[`SendTransfer should send a single transfer and handle undefined expirat
               <div
                 class="text-xs font-semibold text-theme-secondary-700"
               >
-                Your balance
+                Your Balance
               </div>
               <div
                 class="text-sm font-bold text-theme-secondary-text dark:text-theme-text"
@@ -10160,56 +9971,35 @@ exports[`SendTransfer should send a single transfer and handle undefined expirat
               </div>
             </div>
             <div
-              class="flex my-0.5 ml-4 -space-x-2"
+              class="relative"
             >
-              <div
-                class="Circle__CircleWrapper-uw7h4j-0 bNDQMV border-theme-primary-100 dark:border-theme-secondary-800 ring-theme-background"
+              <span
+                data-testid="dropdown__toggle"
               >
-                <span
-                  class="text-theme-secondary-text dark:text-theme-secondary-800"
+                <div
+                  class="relative items-center justify-center align-middle rounded-full cursor-pointer"
+                  data-testid="navbar__useractions"
                 >
                   <div
-                    class="sc-bdfBwQ fPrsah"
-                    height="1em"
-                    width="1em"
-                  >
-                    <svg>
-                      btc.svg
-                    </svg>
-                  </div>
-                </span>
-              </div>
-              <div
-                class="relative"
-              >
-                <span
-                  data-testid="dropdown__toggle"
-                >
-                  <div
-                    class="relative items-center justify-center align-middle rounded-full cursor-pointer"
-                    data-testid="navbar__useractions"
+                    class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB flex-shrink-0"
+                    data-testid="Avatar"
                   >
                     <div
-                      class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB flex-shrink-0"
-                      data-testid="Avatar"
+                      class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
                     >
-                      <div
-                        class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
+                      <img
+                        alt="Profile Avatar"
+                        src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"30\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"55\\" cx=\\"0\\" cy=\\"60\\" fill=\\"rgb(255, 152, 0)\\"/><circle r=\\"40\\" cx=\\"50\\" cy=\\"50\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
+                      />
+                      <span
+                        class="absolute text-sm font-semibold text-theme-background dark:text-theme-text"
                       >
-                        <img
-                          alt="Profile Avatar"
-                          src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"30\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"55\\" cx=\\"0\\" cy=\\"60\\" fill=\\"rgb(255, 152, 0)\\"/><circle r=\\"40\\" cx=\\"50\\" cy=\\"50\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
-                        />
-                        <span
-                          class="absolute text-sm font-semibold text-theme-background dark:text-theme-text"
-                        >
-                          JO
-                        </span>
-                      </div>
+                        JO
+                      </span>
                     </div>
                   </div>
-                </span>
-              </div>
+                </div>
+              </span>
             </div>
           </div>
         </div>
@@ -10749,12 +10539,12 @@ exports[`SendTransfer should send a single transfer and show unconfirmed transac
                     class="flex relative items-center space-x-2"
                   >
                     <div
-                      class="sc-bdfBwQ iNulIV p-1"
-                      height="18"
-                      width="18"
+                      class="sc-bdfBwQ iyevwF p-1"
+                      height="20"
+                      width="20"
                     >
                       <svg>
-                        sent.svg
+                        send.svg
                       </svg>
                     </div>
                   </div>
@@ -10796,7 +10586,7 @@ exports[`SendTransfer should send a single transfer and show unconfirmed transac
             />
           </div>
           <div
-            class="flex items-center my-auto ml-8"
+            class="flex items-center my-auto ml-8 space-x-4"
           >
             <div
               class="text-right"
@@ -10804,7 +10594,7 @@ exports[`SendTransfer should send a single transfer and show unconfirmed transac
               <div
                 class="text-xs font-semibold text-theme-secondary-700"
               >
-                Your balance
+                Your Balance
               </div>
               <div
                 class="text-sm font-bold text-theme-secondary-text dark:text-theme-text"
@@ -10818,56 +10608,35 @@ exports[`SendTransfer should send a single transfer and show unconfirmed transac
               </div>
             </div>
             <div
-              class="flex my-0.5 ml-4 -space-x-2"
+              class="relative"
             >
-              <div
-                class="Circle__CircleWrapper-uw7h4j-0 bNDQMV border-theme-primary-100 dark:border-theme-secondary-800 ring-theme-background"
+              <span
+                data-testid="dropdown__toggle"
               >
-                <span
-                  class="text-theme-secondary-text dark:text-theme-secondary-800"
+                <div
+                  class="relative items-center justify-center align-middle rounded-full cursor-pointer"
+                  data-testid="navbar__useractions"
                 >
                   <div
-                    class="sc-bdfBwQ fPrsah"
-                    height="1em"
-                    width="1em"
-                  >
-                    <svg>
-                      btc.svg
-                    </svg>
-                  </div>
-                </span>
-              </div>
-              <div
-                class="relative"
-              >
-                <span
-                  data-testid="dropdown__toggle"
-                >
-                  <div
-                    class="relative items-center justify-center align-middle rounded-full cursor-pointer"
-                    data-testid="navbar__useractions"
+                    class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB flex-shrink-0"
+                    data-testid="Avatar"
                   >
                     <div
-                      class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB flex-shrink-0"
-                      data-testid="Avatar"
+                      class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
                     >
-                      <div
-                        class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
+                      <img
+                        alt="Profile Avatar"
+                        src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"30\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"55\\" cx=\\"0\\" cy=\\"60\\" fill=\\"rgb(255, 152, 0)\\"/><circle r=\\"40\\" cx=\\"50\\" cy=\\"50\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
+                      />
+                      <span
+                        class="absolute text-sm font-semibold text-theme-background dark:text-theme-text"
                       >
-                        <img
-                          alt="Profile Avatar"
-                          src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"30\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"55\\" cx=\\"0\\" cy=\\"60\\" fill=\\"rgb(255, 152, 0)\\"/><circle r=\\"40\\" cx=\\"50\\" cy=\\"50\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
-                        />
-                        <span
-                          class="absolute text-sm font-semibold text-theme-background dark:text-theme-text"
-                        >
-                          JO
-                        </span>
-                      </div>
+                        JO
+                      </span>
                     </div>
                   </div>
-                </span>
-              </div>
+                </div>
+              </span>
             </div>
           </div>
         </div>
@@ -11718,12 +11487,12 @@ exports[`SendTransfer should send a single transfer using wallet with encryption
                     class="flex relative items-center space-x-2"
                   >
                     <div
-                      class="sc-bdfBwQ iNulIV p-1"
-                      height="18"
-                      width="18"
+                      class="sc-bdfBwQ iyevwF p-1"
+                      height="20"
+                      width="20"
                     >
                       <svg>
-                        sent.svg
+                        send.svg
                       </svg>
                     </div>
                   </div>
@@ -11765,7 +11534,7 @@ exports[`SendTransfer should send a single transfer using wallet with encryption
             />
           </div>
           <div
-            class="flex items-center my-auto ml-8"
+            class="flex items-center my-auto ml-8 space-x-4"
           >
             <div
               class="text-right"
@@ -11773,7 +11542,7 @@ exports[`SendTransfer should send a single transfer using wallet with encryption
               <div
                 class="text-xs font-semibold text-theme-secondary-700"
               >
-                Your balance
+                Your Balance
               </div>
               <div
                 class="text-sm font-bold text-theme-secondary-text dark:text-theme-text"
@@ -11787,56 +11556,35 @@ exports[`SendTransfer should send a single transfer using wallet with encryption
               </div>
             </div>
             <div
-              class="flex my-0.5 ml-4 -space-x-2"
+              class="relative"
             >
-              <div
-                class="Circle__CircleWrapper-uw7h4j-0 bNDQMV border-theme-primary-100 dark:border-theme-secondary-800 ring-theme-background"
+              <span
+                data-testid="dropdown__toggle"
               >
-                <span
-                  class="text-theme-secondary-text dark:text-theme-secondary-800"
+                <div
+                  class="relative items-center justify-center align-middle rounded-full cursor-pointer"
+                  data-testid="navbar__useractions"
                 >
                   <div
-                    class="sc-bdfBwQ fPrsah"
-                    height="1em"
-                    width="1em"
-                  >
-                    <svg>
-                      btc.svg
-                    </svg>
-                  </div>
-                </span>
-              </div>
-              <div
-                class="relative"
-              >
-                <span
-                  data-testid="dropdown__toggle"
-                >
-                  <div
-                    class="relative items-center justify-center align-middle rounded-full cursor-pointer"
-                    data-testid="navbar__useractions"
+                    class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB flex-shrink-0"
+                    data-testid="Avatar"
                   >
                     <div
-                      class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB flex-shrink-0"
-                      data-testid="Avatar"
+                      class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
                     >
-                      <div
-                        class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
+                      <img
+                        alt="Profile Avatar"
+                        src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"30\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"55\\" cx=\\"0\\" cy=\\"60\\" fill=\\"rgb(255, 152, 0)\\"/><circle r=\\"40\\" cx=\\"50\\" cy=\\"50\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
+                      />
+                      <span
+                        class="absolute text-sm font-semibold text-theme-background dark:text-theme-text"
                       >
-                        <img
-                          alt="Profile Avatar"
-                          src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"30\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"55\\" cx=\\"0\\" cy=\\"60\\" fill=\\"rgb(255, 152, 0)\\"/><circle r=\\"40\\" cx=\\"50\\" cy=\\"50\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
-                        />
-                        <span
-                          class="absolute text-sm font-semibold text-theme-background dark:text-theme-text"
-                        >
-                          JO
-                        </span>
-                      </div>
+                        JO
+                      </span>
                     </div>
                   </div>
-                </span>
-              </div>
+                </div>
+              </span>
             </div>
           </div>
         </div>
@@ -12376,12 +12124,12 @@ exports[`SendTransfer should send a single transfer with a high fee by confirmin
                     class="flex relative items-center space-x-2"
                   >
                     <div
-                      class="sc-bdfBwQ iNulIV p-1"
-                      height="18"
-                      width="18"
+                      class="sc-bdfBwQ iyevwF p-1"
+                      height="20"
+                      width="20"
                     >
                       <svg>
-                        sent.svg
+                        send.svg
                       </svg>
                     </div>
                   </div>
@@ -12423,7 +12171,7 @@ exports[`SendTransfer should send a single transfer with a high fee by confirmin
             />
           </div>
           <div
-            class="flex items-center my-auto ml-8"
+            class="flex items-center my-auto ml-8 space-x-4"
           >
             <div
               class="text-right"
@@ -12431,7 +12179,7 @@ exports[`SendTransfer should send a single transfer with a high fee by confirmin
               <div
                 class="text-xs font-semibold text-theme-secondary-700"
               >
-                Your balance
+                Your Balance
               </div>
               <div
                 class="text-sm font-bold text-theme-secondary-text dark:text-theme-text"
@@ -12445,56 +12193,35 @@ exports[`SendTransfer should send a single transfer with a high fee by confirmin
               </div>
             </div>
             <div
-              class="flex my-0.5 ml-4 -space-x-2"
+              class="relative"
             >
-              <div
-                class="Circle__CircleWrapper-uw7h4j-0 bNDQMV border-theme-primary-100 dark:border-theme-secondary-800 ring-theme-background"
+              <span
+                data-testid="dropdown__toggle"
               >
-                <span
-                  class="text-theme-secondary-text dark:text-theme-secondary-800"
+                <div
+                  class="relative items-center justify-center align-middle rounded-full cursor-pointer"
+                  data-testid="navbar__useractions"
                 >
                   <div
-                    class="sc-bdfBwQ fPrsah"
-                    height="1em"
-                    width="1em"
-                  >
-                    <svg>
-                      btc.svg
-                    </svg>
-                  </div>
-                </span>
-              </div>
-              <div
-                class="relative"
-              >
-                <span
-                  data-testid="dropdown__toggle"
-                >
-                  <div
-                    class="relative items-center justify-center align-middle rounded-full cursor-pointer"
-                    data-testid="navbar__useractions"
+                    class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB flex-shrink-0"
+                    data-testid="Avatar"
                   >
                     <div
-                      class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB flex-shrink-0"
-                      data-testid="Avatar"
+                      class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
                     >
-                      <div
-                        class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
+                      <img
+                        alt="Profile Avatar"
+                        src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"30\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"55\\" cx=\\"0\\" cy=\\"60\\" fill=\\"rgb(255, 152, 0)\\"/><circle r=\\"40\\" cx=\\"50\\" cy=\\"50\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
+                      />
+                      <span
+                        class="absolute text-sm font-semibold text-theme-background dark:text-theme-text"
                       >
-                        <img
-                          alt="Profile Avatar"
-                          src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"30\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"55\\" cx=\\"0\\" cy=\\"60\\" fill=\\"rgb(255, 152, 0)\\"/><circle r=\\"40\\" cx=\\"50\\" cy=\\"50\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
-                        />
-                        <span
-                          class="absolute text-sm font-semibold text-theme-background dark:text-theme-text"
-                        >
-                          JO
-                        </span>
-                      </div>
+                        JO
+                      </span>
                     </div>
                   </div>
-                </span>
-              </div>
+                </div>
+              </span>
             </div>
           </div>
         </div>
@@ -13034,12 +12761,12 @@ exports[`SendTransfer should send a single transfer with a low fee by confirming
                     class="flex relative items-center space-x-2"
                   >
                     <div
-                      class="sc-bdfBwQ iNulIV p-1"
-                      height="18"
-                      width="18"
+                      class="sc-bdfBwQ iyevwF p-1"
+                      height="20"
+                      width="20"
                     >
                       <svg>
-                        sent.svg
+                        send.svg
                       </svg>
                     </div>
                   </div>
@@ -13081,7 +12808,7 @@ exports[`SendTransfer should send a single transfer with a low fee by confirming
             />
           </div>
           <div
-            class="flex items-center my-auto ml-8"
+            class="flex items-center my-auto ml-8 space-x-4"
           >
             <div
               class="text-right"
@@ -13089,7 +12816,7 @@ exports[`SendTransfer should send a single transfer with a low fee by confirming
               <div
                 class="text-xs font-semibold text-theme-secondary-700"
               >
-                Your balance
+                Your Balance
               </div>
               <div
                 class="text-sm font-bold text-theme-secondary-text dark:text-theme-text"
@@ -13103,56 +12830,35 @@ exports[`SendTransfer should send a single transfer with a low fee by confirming
               </div>
             </div>
             <div
-              class="flex my-0.5 ml-4 -space-x-2"
+              class="relative"
             >
-              <div
-                class="Circle__CircleWrapper-uw7h4j-0 bNDQMV border-theme-primary-100 dark:border-theme-secondary-800 ring-theme-background"
+              <span
+                data-testid="dropdown__toggle"
               >
-                <span
-                  class="text-theme-secondary-text dark:text-theme-secondary-800"
+                <div
+                  class="relative items-center justify-center align-middle rounded-full cursor-pointer"
+                  data-testid="navbar__useractions"
                 >
                   <div
-                    class="sc-bdfBwQ fPrsah"
-                    height="1em"
-                    width="1em"
-                  >
-                    <svg>
-                      btc.svg
-                    </svg>
-                  </div>
-                </span>
-              </div>
-              <div
-                class="relative"
-              >
-                <span
-                  data-testid="dropdown__toggle"
-                >
-                  <div
-                    class="relative items-center justify-center align-middle rounded-full cursor-pointer"
-                    data-testid="navbar__useractions"
+                    class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB flex-shrink-0"
+                    data-testid="Avatar"
                   >
                     <div
-                      class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB flex-shrink-0"
-                      data-testid="Avatar"
+                      class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
                     >
-                      <div
-                        class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
+                      <img
+                        alt="Profile Avatar"
+                        src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"30\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"55\\" cx=\\"0\\" cy=\\"60\\" fill=\\"rgb(255, 152, 0)\\"/><circle r=\\"40\\" cx=\\"50\\" cy=\\"50\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
+                      />
+                      <span
+                        class="absolute text-sm font-semibold text-theme-background dark:text-theme-text"
                       >
-                        <img
-                          alt="Profile Avatar"
-                          src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"30\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"55\\" cx=\\"0\\" cy=\\"60\\" fill=\\"rgb(255, 152, 0)\\"/><circle r=\\"40\\" cx=\\"50\\" cy=\\"50\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
-                        />
-                        <span
-                          class="absolute text-sm font-semibold text-theme-background dark:text-theme-text"
-                        >
-                          JO
-                        </span>
-                      </div>
+                        JO
+                      </span>
                     </div>
                   </div>
-                </span>
-              </div>
+                </div>
+              </span>
             </div>
           </div>
         </div>
@@ -13692,12 +13398,12 @@ exports[`SendTransfer should show error step and go back 1`] = `
                     class="flex relative items-center space-x-2"
                   >
                     <div
-                      class="sc-bdfBwQ iNulIV p-1"
-                      height="18"
-                      width="18"
+                      class="sc-bdfBwQ iyevwF p-1"
+                      height="20"
+                      width="20"
                     >
                       <svg>
-                        sent.svg
+                        send.svg
                       </svg>
                     </div>
                   </div>
@@ -13739,7 +13445,7 @@ exports[`SendTransfer should show error step and go back 1`] = `
             />
           </div>
           <div
-            class="flex items-center my-auto ml-8"
+            class="flex items-center my-auto ml-8 space-x-4"
           >
             <div
               class="text-right"
@@ -13747,7 +13453,7 @@ exports[`SendTransfer should show error step and go back 1`] = `
               <div
                 class="text-xs font-semibold text-theme-secondary-700"
               >
-                Your balance
+                Your Balance
               </div>
               <div
                 class="text-sm font-bold text-theme-secondary-text dark:text-theme-text"
@@ -13761,56 +13467,35 @@ exports[`SendTransfer should show error step and go back 1`] = `
               </div>
             </div>
             <div
-              class="flex my-0.5 ml-4 -space-x-2"
+              class="relative"
             >
-              <div
-                class="Circle__CircleWrapper-uw7h4j-0 bNDQMV border-theme-primary-100 dark:border-theme-secondary-800 ring-theme-background"
+              <span
+                data-testid="dropdown__toggle"
               >
-                <span
-                  class="text-theme-secondary-text dark:text-theme-secondary-800"
+                <div
+                  class="relative items-center justify-center align-middle rounded-full cursor-pointer"
+                  data-testid="navbar__useractions"
                 >
                   <div
-                    class="sc-bdfBwQ fPrsah"
-                    height="1em"
-                    width="1em"
-                  >
-                    <svg>
-                      btc.svg
-                    </svg>
-                  </div>
-                </span>
-              </div>
-              <div
-                class="relative"
-              >
-                <span
-                  data-testid="dropdown__toggle"
-                >
-                  <div
-                    class="relative items-center justify-center align-middle rounded-full cursor-pointer"
-                    data-testid="navbar__useractions"
+                    class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB flex-shrink-0"
+                    data-testid="Avatar"
                   >
                     <div
-                      class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB flex-shrink-0"
-                      data-testid="Avatar"
+                      class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
                     >
-                      <div
-                        class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
+                      <img
+                        alt="Profile Avatar"
+                        src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"30\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"55\\" cx=\\"0\\" cy=\\"60\\" fill=\\"rgb(255, 152, 0)\\"/><circle r=\\"40\\" cx=\\"50\\" cy=\\"50\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
+                      />
+                      <span
+                        class="absolute text-sm font-semibold text-theme-background dark:text-theme-text"
                       >
-                        <img
-                          alt="Profile Avatar"
-                          src="data:image/svg+xml;utf8,<svg version=\\"1.1\\" xmlns=\\"http://www.w3.org/2000/svg\\" class=\\"picasso\\" width=\\"100\\" height=\\"100\\" viewBox=\\"0 0 100 100\\"><style>.picasso circle{mix-blend-mode:soft-light;}</style><rect fill=\\"rgb(233, 30, 99)\\" width=\\"100\\" height=\\"100\\"/><circle r=\\"45\\" cx=\\"80\\" cy=\\"30\\" fill=\\"rgb(76, 175, 80)\\"/><circle r=\\"55\\" cx=\\"0\\" cy=\\"60\\" fill=\\"rgb(255, 152, 0)\\"/><circle r=\\"40\\" cx=\\"50\\" cy=\\"50\\" fill=\\"rgb(3, 169, 244)\\"/></svg>"
-                        />
-                        <span
-                          class="absolute text-sm font-semibold text-theme-background dark:text-theme-text"
-                        >
-                          JO
-                        </span>
-                      </div>
+                        JO
+                      </span>
                     </div>
                   </div>
-                </span>
-              </div>
+                </div>
+              </span>
             </div>
           </div>
         </div>

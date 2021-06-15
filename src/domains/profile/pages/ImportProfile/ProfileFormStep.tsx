@@ -130,7 +130,7 @@ const CreateProfileForm = ({
 		<div>
 			<Form context={form} onSubmit={handleSubmit} data-testid="CreateProfile__form">
 				<div className="mt-2">
-					<div className="relative mt-8 space-y-8">
+					<div className="relative mt-8 space-y-5">
 						<div className="flex justify-between items-end -mt-4">
 							<div className="mr-6 w-full">
 								<FormField name="name">

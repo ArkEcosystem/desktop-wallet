@@ -41,7 +41,13 @@ describe("RecipientList", () => {
 
 	it("should render condensed variant", () => {
 		const { container } = render(
-			<RecipientList recipients={recipients} isEditable={true} assetSymbol="ARK" variant="condensed" />,
+			<RecipientList
+				recipients={recipients}
+				isEditable={true}
+				assetSymbol="ARK"
+				variant="condensed"
+				normalizeAmount={false}
+			/>,
 		);
 		expect(container).toMatchSnapshot();
 	});

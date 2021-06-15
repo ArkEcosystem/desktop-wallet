@@ -75,12 +75,14 @@ export const SendIpfs = () => {
 	const submitForm = async () => {
 		clearErrors("mnemonic");
 
-		const { fee, mnemonic, secondMnemonic, hash, encryptionPassword } = getValues();
+		const { fee, mnemonic, secondMnemonic, hash, encryptionPassword, wif, privateKey } = getValues();
 
 		const signatory = await sign({
 			mnemonic,
 			secondMnemonic,
 			encryptionPassword,
+			wif,
+			privateKey,
 		});
 
 		const transactionInput: Services.IpfsInput = {
@@ -229,6 +231,9 @@ export const SendIpfs = () => {
 													disabled={!isValid || isSubmitting}
 													isLoading={isSubmitting}
 													icon="Send"
+													iconWidth={16}
+													iconHeight={16}
+													iconPosition="right"
 												>
 													<span>{t("COMMON.SEND")}</span>
 												</Button>

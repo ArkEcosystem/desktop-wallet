@@ -2216,12 +2216,11 @@ describe("SendTransfer", () => {
 
 	it("should send a single transfer using wallet with encryption password", async () => {
 		const transferURL = `/profiles/${fixtureProfileId}/wallets/${wallet.id()}/send-transfer`;
-		const walletUsesWIFMock = jest.spyOn(wallet.wif(), "exists").mockReturnValue(true);
-
-		const walletWifMock = jest.spyOn(wallet.wif(), "get").mockImplementation(() => {
-			const wif = "S9rDfiJ2ar4DpWAQuaXECPTJHfTZ3XjCPv15gjxu4cHJZKzABPyV";
-			return Promise.resolve(wif);
-		});
+		const actsWithMnemonicMock = jest.spyOn(wallet, "actsWithMnemonic").mockReturnValue(false);
+		const actsWithWifWithEncryptionMock = jest.spyOn(wallet, "actsWithWifWithEncryption").mockReturnValue(true);
+		const wifGetMock = jest
+			.spyOn(wallet.wif(), "get")
+			.mockResolvedValue("S9rDfiJ2ar4DpWAQuaXECPTJHfTZ3XjCPv15gjxu4cHJZKzABPyV");
 
 		const history = createMemoryHistory();
 		history.push(transferURL);
@@ -2331,6 +2330,9 @@ describe("SendTransfer", () => {
 		signMock.mockRestore();
 		broadcastMock.mockRestore();
 		transactionMock.mockRestore();
+		actsWithMnemonicMock.mockRestore();
+		actsWithWifWithEncryptionMock.mockRestore();
+		wifGetMock.mockRestore();
 
 		await waitFor(() => expect(container).toMatchSnapshot());
 
@@ -2343,8 +2345,6 @@ describe("SendTransfer", () => {
 
 		goSpy.mockRestore();
 		pushSpy.mockRestore();
-		walletUsesWIFMock.mockRestore();
-		walletWifMock.mockRestore();
 
 		await waitFor(() => expect(container).toMatchSnapshot());
 	});

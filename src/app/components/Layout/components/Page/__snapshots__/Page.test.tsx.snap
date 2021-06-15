@@ -71,12 +71,12 @@ exports[`Page should render 1`] = `
                     class="flex relative items-center space-x-2"
                   >
                     <div
-                      class="sc-bdfBwQ iNulIV p-1"
-                      height="18"
-                      width="18"
+                      class="sc-bdfBwQ iyevwF p-1"
+                      height="20"
+                      width="20"
                     >
                       <svg>
-                        sent.svg
+                        send.svg
                       </svg>
                     </div>
                   </div>
@@ -119,7 +119,7 @@ exports[`Page should render 1`] = `
             />
           </div>
           <div
-            class="flex items-center my-auto ml-8"
+            class="flex items-center my-auto ml-8 space-x-4"
           >
             <div
               class="text-right"
@@ -127,7 +127,7 @@ exports[`Page should render 1`] = `
               <div
                 class="text-xs font-semibold text-theme-secondary-700"
               >
-                Your balance
+                Your Balance
               </div>
               <div
                 class="text-sm font-bold text-theme-secondary-text dark:text-theme-text"
@@ -141,41 +141,30 @@ exports[`Page should render 1`] = `
               </div>
             </div>
             <div
-              class="flex my-0.5 ml-4 -space-x-2"
+              class="relative"
             >
-              <div
-                class="Circle__CircleWrapper-uw7h4j-0 bNDQMV border-theme-primary-100 dark:border-theme-secondary-800 ring-theme-background"
+              <span
+                data-testid="dropdown__toggle"
               >
-                <span
-                  class="text-theme-secondary-text dark:text-theme-secondary-800"
-                />
-              </div>
-              <div
-                class="relative"
-              >
-                <span
-                  data-testid="dropdown__toggle"
+                <div
+                  class="relative items-center justify-center align-middle rounded-full cursor-pointer"
+                  data-testid="navbar__useractions"
                 >
                   <div
-                    class="relative items-center justify-center align-middle rounded-full cursor-pointer"
-                    data-testid="navbar__useractions"
+                    class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB flex-shrink-0"
+                    data-testid="Avatar"
                   >
                     <div
-                      class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB flex-shrink-0"
-                      data-testid="Avatar"
+                      class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
                     >
-                      <div
-                        class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
-                      >
-                        <img
-                          alt="Profile Avatar"
-                          class="object-cover bg-center bg-no-repeat bg-cover rounded-full w-11 h-11"
-                        />
-                      </div>
+                      <img
+                        alt="Profile Avatar"
+                        class="object-cover bg-center bg-no-repeat bg-cover rounded-full w-11 h-11"
+                      />
                     </div>
                   </div>
-                </span>
-              </div>
+                </div>
+              </span>
             </div>
           </div>
         </div>
@@ -274,12 +263,12 @@ exports[`Page should render without sidebar 1`] = `
                     class="flex relative items-center space-x-2"
                   >
                     <div
-                      class="sc-bdfBwQ iNulIV p-1"
-                      height="18"
-                      width="18"
+                      class="sc-bdfBwQ iyevwF p-1"
+                      height="20"
+                      width="20"
                     >
                       <svg>
-                        sent.svg
+                        send.svg
                       </svg>
                     </div>
                   </div>
@@ -322,7 +311,7 @@ exports[`Page should render without sidebar 1`] = `
             />
           </div>
           <div
-            class="flex items-center my-auto ml-8"
+            class="flex items-center my-auto ml-8 space-x-4"
           >
             <div
               class="text-right"
@@ -330,7 +319,7 @@ exports[`Page should render without sidebar 1`] = `
               <div
                 class="text-xs font-semibold text-theme-secondary-700"
               >
-                Your balance
+                Your Balance
               </div>
               <div
                 class="text-sm font-bold text-theme-secondary-text dark:text-theme-text"
@@ -344,41 +333,30 @@ exports[`Page should render without sidebar 1`] = `
               </div>
             </div>
             <div
-              class="flex my-0.5 ml-4 -space-x-2"
+              class="relative"
             >
-              <div
-                class="Circle__CircleWrapper-uw7h4j-0 bNDQMV border-theme-primary-100 dark:border-theme-secondary-800 ring-theme-background"
+              <span
+                data-testid="dropdown__toggle"
               >
-                <span
-                  class="text-theme-secondary-text dark:text-theme-secondary-800"
-                />
-              </div>
-              <div
-                class="relative"
-              >
-                <span
-                  data-testid="dropdown__toggle"
+                <div
+                  class="relative items-center justify-center align-middle rounded-full cursor-pointer"
+                  data-testid="navbar__useractions"
                 >
                   <div
-                    class="relative items-center justify-center align-middle rounded-full cursor-pointer"
-                    data-testid="navbar__useractions"
+                    class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB flex-shrink-0"
+                    data-testid="Avatar"
                   >
                     <div
-                      class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB flex-shrink-0"
-                      data-testid="Avatar"
+                      class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
                     >
-                      <div
-                        class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
-                      >
-                        <img
-                          alt="Profile Avatar"
-                          class="object-cover bg-center bg-no-repeat bg-cover rounded-full w-11 h-11"
-                        />
-                      </div>
+                      <img
+                        alt="Profile Avatar"
+                        class="object-cover bg-center bg-no-repeat bg-cover rounded-full w-11 h-11"
+                      />
                     </div>
                   </div>
-                </span>
-              </div>
+                </div>
+              </span>
             </div>
           </div>
         </div>

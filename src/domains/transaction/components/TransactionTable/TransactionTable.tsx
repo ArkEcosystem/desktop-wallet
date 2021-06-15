@@ -6,6 +6,8 @@ import { useTranslation } from "react-i18next";
 import { TransactionCompactRow } from "./TransactionRow/TransactionCompactRow";
 import { TransactionRow } from "./TransactionRow/TransactionRow";
 
+type Skeleton = object;
+
 interface Props {
 	transactions: DTO.ExtendedTransactionData[];
 	exchangeCurrency?: string;
@@ -117,18 +119,20 @@ export const TransactionTable = memo(
 		return (
 			<div data-testid="TransactionTable" className="relative">
 				<Table hideHeader={hideHeader} columns={columns} data={data} initialState={initialState}>
-					{(row: DTO.ExtendedTransactionData) =>
+					{(row: DTO.ExtendedTransactionData | Skeleton) =>
 						isCompact ? (
-							<TransactionCompactRow onClick={() => onRowClick?.(row)} transaction={row} />
+							<TransactionCompactRow
+								onClick={() => onRowClick?.(row as DTO.ExtendedTransactionData)}
+								transaction={row as DTO.ExtendedTransactionData}
+							/>
 						) : (
 							<TransactionRow
 								isLoading={showSkeleton}
-								onClick={() => onRowClick?.(row)}
-								transaction={row}
+								onClick={() => onRowClick?.(row as DTO.ExtendedTransactionData)}
+								transaction={row as DTO.ExtendedTransactionData}
 								exchangeCurrency={exchangeCurrency}
 								showExplorerLink={showExplorerLinkColumn}
 								showSignColumn={showSignColumn}
-								isSignaturePending={row.isMultiSignature && showSignColumn}
 							/>
 						)
 					}

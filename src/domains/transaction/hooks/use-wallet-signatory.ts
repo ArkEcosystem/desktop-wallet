@@ -5,10 +5,20 @@ interface SignInput {
 	encryptionPassword?: string;
 	mnemonic?: string;
 	secondMnemonic?: string;
+	wif?: string;
+	privateKey?: string;
 }
 export const useWalletSignatory = (wallet: ProfileContracts.IReadWriteWallet) => {
 	const sign = useCallback(
-		async ({ mnemonic, secondMnemonic, encryptionPassword }: SignInput) => {
+		async ({ mnemonic, secondMnemonic, encryptionPassword, wif, privateKey }: SignInput) => {
+			if (wif) {
+				return wallet.signatory().wif(wif);
+			}
+
+			if (privateKey) {
+				return wallet.signatory().privateKey(privateKey);
+			}
+
 			if (encryptionPassword) {
 				return wallet.signatory().wif(await wallet.wif().get(encryptionPassword));
 			}

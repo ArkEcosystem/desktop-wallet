@@ -8,6 +8,7 @@ import nock from "nock";
 import React from "react";
 import { FormProvider, useForm } from "react-hook-form";
 import { Route } from "react-router-dom";
+import ipfsFixture from "tests/fixtures/coins/ark/devnet/transactions/ipfs.json";
 import {
 	act,
 	env,
@@ -19,8 +20,7 @@ import {
 	syncFees,
 	waitFor,
 	within,
-} from "testing-library";
-import ipfsFixture from "tests/fixtures/coins/ark/devnet/transactions/ipfs.json";
+} from "utils/testing-library";
 import { getDefaultLedgerTransport, getDefaultWalletId, getDefaultWalletMnemonic } from "utils/testing-library";
 
 import { FormStep, ReviewStep, SendIpfs, SummaryStep } from "./";
@@ -802,11 +802,13 @@ describe("SendIpfs", () => {
 
 	it("should send an IPFS transaction using encryption password", async () => {
 		const encryptedWallet = profile.wallets().first();
-		const walletUsesWIFMock = jest.spyOn(encryptedWallet.wif(), "exists").mockReturnValue(true);
-		const walletWifMock = jest.spyOn(encryptedWallet.wif(), "get").mockImplementation(() => {
-			const wif = "S9rDfiJ2ar4DpWAQuaXECPTJHfTZ3XjCPv15gjxu4cHJZKzABPyV";
-			return Promise.resolve(wif);
-		});
+		const actsWithMnemonicMock = jest.spyOn(encryptedWallet, "actsWithMnemonic").mockReturnValue(false);
+		const actsWithWifWithEncryptionMock = jest
+			.spyOn(encryptedWallet, "actsWithWifWithEncryption")
+			.mockReturnValue(true);
+		const wifGetMock = jest
+			.spyOn(encryptedWallet.wif(), "get")
+			.mockResolvedValue("S9rDfiJ2ar4DpWAQuaXECPTJHfTZ3XjCPv15gjxu4cHJZKzABPyV");
 
 		const history = createMemoryHistory();
 		const ipfsURL = `/profiles/${fixtureProfileId}/wallets/${encryptedWallet.id()}/send-ipfs`;
@@ -888,9 +890,9 @@ describe("SendIpfs", () => {
 		signMock.mockRestore();
 		broadcastMock.mockRestore();
 		transactionMock.mockRestore();
-
-		walletUsesWIFMock.mockRestore();
-		walletWifMock.mockRestore();
+		actsWithMnemonicMock.mockRestore();
+		actsWithWifWithEncryptionMock.mockRestore();
+		wifGetMock.mockRestore();
 
 		await waitFor(() => expect(container).toMatchSnapshot());
 	});

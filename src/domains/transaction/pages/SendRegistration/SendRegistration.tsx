@@ -37,11 +37,11 @@ export const SendRegistration = () => {
 	const activeWallet = useActiveWallet();
 	const { sign } = useWalletSignatory(activeWallet);
 
-	const { findByType } = useFees({ profile: activeProfile });
+	const { findByType } = useFees(activeProfile);
 
 	const form = useForm({ mode: "onChange" });
 
-	const { formState, register, setError, setValue, trigger, watch } = form;
+	const { formState, register, setError, setValue, trigger, watch, getValues } = form;
 	const { isSubmitting, isValid } = formState;
 
 	const { fee, fees } = watch();
@@ -114,10 +114,14 @@ export const SendRegistration = () => {
 
 	const handleSubmit = async () => {
 		try {
+			const { mnemonic, secondMnemonic, encryptionPassword, wif, privateKey } = getValues();
+
 			const signatory = await sign({
-				mnemonic: form.getValues("mnemonic"),
-				secondMnemonic: form.getValues("secondMnemonic"),
-				encryptionPassword: form.getValues("encryptionPassword"),
+				mnemonic,
+				secondMnemonic,
+				encryptionPassword,
+				wif,
+				privateKey,
 			});
 
 			const transaction = await registrationForm!.signTransaction({
@@ -231,8 +235,11 @@ export const SendRegistration = () => {
 										data-testid="Registration__send-button"
 										disabled={!isValid}
 										className="space-x-2"
-										icon="Send"
 										isLoading={isSubmitting}
+										icon="Send"
+										iconWidth={16}
+										iconHeight={16}
+										iconPosition="right"
 									>
 										<span>{t("COMMON.SEND")}</span>
 									</Button>

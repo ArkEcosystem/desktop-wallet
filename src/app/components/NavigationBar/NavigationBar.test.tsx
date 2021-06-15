@@ -117,16 +117,6 @@ describe("NavigationBar", () => {
 		expect(history.location.pathname).toMatch("/test");
 	});
 
-	it("should render the navbar with exchange currency", () => {
-		profile.settings().set(Contracts.ProfileSetting.ExchangeCurrency, "BRL");
-
-		const { getByText } = renderWithRouter(<NavigationBar profile={profile} />);
-
-		expect(getByText("R$")).toBeTruthy();
-
-		profile.settings().set(Contracts.ProfileSetting.ExchangeCurrency, "BTC");
-	});
-
 	it("should handle click to send button", () => {
 		const { getByTestId, history } = renderWithRouter(<NavigationBar profile={profile} />);
 
