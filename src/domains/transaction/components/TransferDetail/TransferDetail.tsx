@@ -18,11 +18,7 @@ interface TransferDetailProps {
 	onClose?: any;
 }
 
-export const TransferDetail = ({
-	isOpen,
-	transaction,
-	onClose,
-}: TransferDetailProps) => {
+export const TransferDetail = ({ isOpen, transaction, onClose }: TransferDetailProps) => {
 	const { t } = useTranslation();
 
 	const wallet = useMemo(() => transaction.wallet(), [transaction]);

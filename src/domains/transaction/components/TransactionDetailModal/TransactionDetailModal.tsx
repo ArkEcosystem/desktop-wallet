@@ -59,13 +59,7 @@ export const TransactionDetailModal = ({ isOpen, transactionItem, onClose }: Tra
 		throw new Error(`Transaction type [${transactionType}] is not supported.`);
 	}
 
-	return (
-		<TransactionModal
-			isOpen={isOpen}
-			transaction={transactionItem}
-			onClose={onClose}
-		/>
-	);
+	return <TransactionModal isOpen={isOpen} transaction={transactionItem} onClose={onClose} />;
 };
 
 TransactionDetailModal.defaultProps = {

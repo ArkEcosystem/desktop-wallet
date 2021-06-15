@@ -37,9 +37,7 @@ describe("PluginHeader", () => {
 	it("should trigger update", () => {
 		const onUpdate = jest.fn();
 
-		render(
-			<PluginHeader {...pluginDataFixture} isInstalled hasUpdateAvailable onUpdate={onUpdate} />,
-		);
+		render(<PluginHeader {...pluginDataFixture} isInstalled hasUpdateAvailable onUpdate={onUpdate} />);
 
 		fireEvent.click(screen.getByTestId("PluginHeader__dropdown-toggle"));
 		fireEvent.click(screen.getByText(commonTranslations.UPDATE));
@@ -72,9 +70,7 @@ describe("PluginHeader", () => {
 	it("should trigger disable", () => {
 		const onDisable = jest.fn();
 
-		render(
-			<PluginHeader {...pluginDataFixture} isInstalled isEnabled onDisable={onDisable} />,
-		);
+		render(<PluginHeader {...pluginDataFixture} isInstalled isEnabled onDisable={onDisable} />);
 
 		fireEvent.click(screen.getByTestId("PluginHeader__dropdown-toggle"));
 		fireEvent.click(screen.getByText(commonTranslations.DISABLE));
