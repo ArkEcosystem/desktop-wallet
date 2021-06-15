@@ -280,7 +280,7 @@ export const AddRecipient = ({
 				noBackground={isSingle}
 				noPadding={isSingle}
 			>
-				<div className="space-y-8">
+				<div className="space-y-5">
 					<FormField name="recipientAddress">
 						<FormLabel
 							label={

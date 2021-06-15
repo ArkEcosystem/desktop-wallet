@@ -100,7 +100,7 @@ export const CreateProfile = () => {
 						onSubmit={handleSubmit}
 						data-testid="CreateProfile__form"
 					>
-						<div className="relative space-y-8">
+						<div className="relative space-y-5">
 							<div className="flex items-end justify-between">
 								<div className="w-full mr-6">
 									<FormField name="name">

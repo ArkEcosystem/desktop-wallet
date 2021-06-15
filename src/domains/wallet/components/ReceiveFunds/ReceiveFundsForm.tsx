@@ -23,7 +23,7 @@ export const ReceiveFundsForm = ({ network }: { network?: Networks.Network }) =>
 
 	return (
 		<div data-testid="ReceiveFundsForm">
-			<div className="mt-8 space-y-8">
+			<div className="mt-8 space-y-5">
 				<FormField name="amount">
 					<FormLabel label={t("COMMON.AMOUNT")} optional />
 					<InputCurrency
