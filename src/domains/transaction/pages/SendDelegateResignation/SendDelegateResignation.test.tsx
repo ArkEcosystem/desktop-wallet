@@ -1,6 +1,7 @@
 /* eslint-disable @typescript-eslint/require-await */
 import { Contracts } from "@arkecosystem/platform-sdk-profiles";
 import { BigNumber } from "@arkecosystem/platform-sdk-support";
+import { screen, within } from "@testing-library/react";
 import { translations as transactionTranslations } from "domains/transaction/i18n";
 import { createMemoryHistory } from "history";
 import React from "react";
@@ -89,7 +90,14 @@ describe("SendDelegateResignation", () => {
 
 			await waitFor(() => expect(getByTestId("SendDelegateResignation__form-step")).toBeTruthy());
 
-			// Fee
+			// Fee (simple)
+			expect(screen.getAllByRole("radio")[1]).toBeChecked();
+			act(() => {
+				fireEvent.click(within(screen.getByTestId("InputFee")).getAllByRole("radio")[2]);
+			});
+			expect(screen.getAllByRole("radio")[2]).toBeChecked();
+
+			// Fee (advanced)
 			act(() => {
 				fireEvent.click(getByText(transactionTranslations.INPUT_FEE_VIEW_TYPE.ADVANCED));
 			});

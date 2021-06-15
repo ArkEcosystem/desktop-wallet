@@ -176,7 +176,9 @@ export const SendTransfer = () => {
 			return;
 		}
 
+		/* istanbul ignore next */
 		if (BigNumber.make(amount).isLessThanOrEqualTo(fee)) {
+			// @TODO remove ignore coverage after BigNumber refactor
 			return;
 		}
 

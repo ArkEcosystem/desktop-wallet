@@ -517,14 +517,11 @@ describe("SendTransfer", () => {
 		);
 
 		// Amount
-		const sendAll = getByTestId("AddRecipient__send-all");
 		act(() => {
-			fireEvent.click(sendAll);
+			fireEvent.click(getByTestId("AddRecipient__send-all"));
 		});
 		await waitFor(() => expect(getByTestId("AddRecipient__amount")).not.toHaveValue("0"));
-		act(() => {
-			fireEvent.click(sendAll);
-		});
+		expect(screen.getByTestId("AddRecipient__send-all")).toHaveClass("active");
 
 		// Fee
 		await act(async () => {

@@ -3,6 +3,7 @@ import { Contracts } from "@arkecosystem/platform-sdk";
 import { BIP39 } from "@arkecosystem/platform-sdk-crypto";
 import { Contracts as ProfilesContracts } from "@arkecosystem/platform-sdk-profiles";
 import { BigNumber } from "@arkecosystem/platform-sdk-support";
+import { within } from "@testing-library/react";
 import { renderHook } from "@testing-library/react-hooks";
 import { Form } from "app/components/Form";
 import { toasts } from "app/services";
@@ -87,6 +88,20 @@ describe("SecondSignatureRegistrationForm", () => {
 		result.current.register("inputFeeSettings");
 
 		const { rerender } = render(<Component form={result.current} onSubmit={() => void 0} />);
+
+		// simple
+
+		expect(screen.getAllByRole("radio")[1]).toBeChecked();
+
+		act(() => {
+			fireEvent.click(within(screen.getByTestId("InputFee")).getAllByRole("radio")[2]);
+		});
+
+		rerender(<Component form={result.current} onSubmit={() => void 0} />);
+
+		expect(screen.getAllByRole("radio")[2]).toBeChecked();
+
+		// advanced
 
 		act(() => {
 			fireEvent.click(screen.getByText(transactionTranslations.INPUT_FEE_VIEW_TYPE.ADVANCED));
