@@ -16,12 +16,6 @@ describe("TransactionAmount", () => {
 		const { container } = render(<TransactionAmount amount={BigNumber.ONE} currency="DARK" />);
 
 		expect(container).toHaveTextContent("1 DARK");
-	});
-
-	it("should render currency amount", () => {
-		const { container } = render(<TransactionAmount amount={BigNumber.ONE} currency="DARK" />);
-
-		expect(container).toHaveTextContent("1 DARK");
 		expect(container).toMatchSnapshot();
 	});
 

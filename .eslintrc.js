@@ -84,6 +84,7 @@ module.exports = {
 		"import/no-webpack-loader-syntax": "error",
 		"import/order": "warn",
 		"jest/no-conditional-expect": "off",
+		"jest/no-done-callback": "off",
 		"no-unused-expressions": "off",
 		"no-unused-vars": "off",
 		"prefer-const": [

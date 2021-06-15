@@ -25,10 +25,10 @@ describe("useWalletSignatory", () => {
 		mockMnemonic.mockRestore();
 	});
 
-	it("should sign with WIF", () => {
+	it("should sign with WIF", async () => {
 		const mockWif = jest.spyOn(wallet.signatory(), "wif");
 		const { result } = renderHook(() => useWalletSignatory(wallet));
-		expect(
+		await expect(
 			result.current.sign({ wif: "SGq4xLgZKCGxs7bjmwnBrWcT4C1ADFEermj846KC97FSv1WFD1dA" }),
 		).resolves.toBeTruthy();
 		expect(mockWif).toHaveBeenCalled();
