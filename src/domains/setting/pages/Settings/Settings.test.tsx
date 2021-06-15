@@ -566,7 +566,7 @@ describe("Settings", () => {
 	});
 
 	it("should change a password", async () => {
-		const { container, asFragment, findByTestId, getByTestId } = renderWithRouter(
+		const { container, findByTestId, getByTestId } = renderWithRouter(
 			<Route path="/profiles/:profileId/settings">
 				<Settings />
 			</Route>,

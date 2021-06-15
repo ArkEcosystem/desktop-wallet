@@ -219,7 +219,7 @@ describe("Wallets", () => {
 	});
 
 	it("should handle filter change", async () => {
-		const { getByTestId, findByTestId } = renderWithRouter(
+		const { getByTestId } = renderWithRouter(
 			<Route path="/profiles/:profileId/dashboard">
 				<Wallets />
 			</Route>,

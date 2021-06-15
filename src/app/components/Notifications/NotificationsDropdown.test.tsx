@@ -29,7 +29,7 @@ describe("Notifications", () => {
 	});
 
 	it("should render with transactions and plugins", async () => {
-		const { container, getAllByRole, getAllByTestId, queryAllByTestId, getByTestId } = render(
+		const { container, getAllByRole, getAllByTestId, queryAllByTestId } = render(
 			<NotificationsDropdown profile={profile} />,
 		);
 

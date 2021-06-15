@@ -64,7 +64,7 @@ describe("TransferDetail", () => {
 	});
 
 	it("should render as not is sent", () => {
-		const { asFragment, getByText, getByTestId } = render(
+		const { asFragment, getByTestId } = render(
 			<TransferDetail
 				isOpen={true}
 				transaction={{
@@ -81,7 +81,7 @@ describe("TransferDetail", () => {
 	});
 
 	it("should render with wallet alias", () => {
-		const { asFragment, getByText, getByTestId } = render(
+		const { asFragment, getByTestId } = render(
 			<TransferDetail
 				isOpen={true}
 				transaction={{

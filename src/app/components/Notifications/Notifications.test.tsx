@@ -56,8 +56,6 @@ describe("Notifications", () => {
 	it("should emit transactionClick event", async () => {
 		const onTransactionClick = jest.fn();
 
-		const all = profile.notifications().count();
-
 		const { container, getAllByTestId, queryAllByTestId } = render(
 			<Notifications profile={profile} onTransactionClick={onTransactionClick} />,
 		);

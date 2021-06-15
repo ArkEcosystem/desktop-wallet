@@ -69,7 +69,7 @@ describe("InstallPlugin", () => {
 	});
 
 	it("should download and install plugin", async () => {
-		const onSpy = jest.spyOn(ipcRenderer, "on").mockImplementation((channel, listener) => {
+		jest.spyOn(ipcRenderer, "on").mockImplementation((channel, listener) => {
 			if (channel === "plugin:download-progress") {
 				return listener(undefined, { totalBytes: 200 });
 			}
@@ -95,7 +95,7 @@ describe("InstallPlugin", () => {
 		});
 		const onClose = jest.fn();
 
-		const { container, getByTestId } = render(
+		const { getByTestId } = render(
 			<PluginManagerProvider manager={new PluginManager()} services={[]}>
 				<InstallPlugin
 					repositoryURL="https://github.com/my-plugin"

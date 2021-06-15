@@ -318,7 +318,7 @@ describe("TransactionDetailModal", () => {
 	});
 
 	it("should render a magistrate modal", () => {
-		const { asFragment, getByTestId } = renderWithRouter(
+		const { asFragment } = renderWithRouter(
 			<Route path="/profiles/:profileId/dashboard">
 				<TransactionDetailModal
 					isOpen={true}
