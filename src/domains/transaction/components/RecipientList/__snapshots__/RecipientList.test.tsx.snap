@@ -6,7 +6,7 @@ exports[`RecipientList should conditionally disable remove button 1`] = `
     class="RecipientList__RecipientListWrapper-sc-1fe0e3s-0 iBAzTp"
   >
     <div
-      class="-mt-3 Table__TableWrapper-sc-84pst5-0 ccYCKK"
+      class="Table__TableWrapper-sc-84pst5-0 ccYCKK -mt-3"
       role="table"
     >
       <table
@@ -19,13 +19,13 @@ exports[`RecipientList should conditionally disable remove button 1`] = `
             role="row"
           >
             <th
-              class="relative p-3 m-0 text-sm font-semibold text-left select-none first:pl-0 last:pr-0 group text-theme-secondary-500 border-theme-secondary-300 hasBorder dark:text-theme-secondary-700 dark:border-theme-secondary-800"
+              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
               colspan="1"
               data-testid="table__th--0"
               role="columnheader"
             >
               <div
-                class="flex hidden align-top flex-inline"
+                class="flex flex-inline align-top hidden"
               >
                 <div>
                   Avatar
@@ -33,13 +33,13 @@ exports[`RecipientList should conditionally disable remove button 1`] = `
               </div>
             </th>
             <th
-              class="relative p-3 m-0 text-sm font-semibold text-left select-none first:pl-0 last:pr-0 group text-theme-secondary-500 border-theme-secondary-300 hasBorder dark:text-theme-secondary-700 dark:border-theme-secondary-800"
+              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
               colspan="1"
               data-testid="table__th--1"
               role="columnheader"
             >
               <div
-                class="flex hidden align-top flex-inline"
+                class="flex flex-inline align-top hidden"
               >
                 <div>
                   Address
@@ -47,13 +47,13 @@ exports[`RecipientList should conditionally disable remove button 1`] = `
               </div>
             </th>
             <th
-              class="relative p-3 m-0 text-sm font-semibold text-left select-none first:pl-0 last:pr-0 group text-theme-secondary-500 border-theme-secondary-300 hasBorder dark:text-theme-secondary-700 dark:border-theme-secondary-800"
+              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
               colspan="1"
               data-testid="table__th--2"
               role="columnheader"
             >
               <div
-                class="flex hidden align-top flex-inline"
+                class="flex flex-inline align-top hidden"
               >
                 <div>
                   Amount
@@ -61,13 +61,13 @@ exports[`RecipientList should conditionally disable remove button 1`] = `
               </div>
             </th>
             <th
-              class="relative p-3 m-0 text-sm font-semibold text-left select-none first:pl-0 last:pr-0 group text-theme-secondary-500 border-theme-secondary-300 hasBorder dark:text-theme-secondary-700 dark:border-theme-secondary-800"
+              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
               colspan="1"
               data-testid="table__th--3"
               role="columnheader"
             >
               <div
-                class="flex hidden align-top flex-inline"
+                class="flex flex-inline align-top hidden"
               >
                 <div>
                   Action
@@ -87,11 +87,11 @@ exports[`RecipientList should conditionally disable remove button 1`] = `
               class="py-6 w-14"
             >
               <div
-                class="flex-shrink-0 Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB"
+                class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB flex-shrink-0"
                 data-testid="Avatar"
               >
                 <div
-                  class="inline-flex overflow-hidden justify-center items-center w-full h-full align-middle rounded-full"
+                  class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
                 >
                   <img
                     alt="FJKDSALJFKASLJFKSDAJD333FKFKDSAJFKSAJFKLASJKDFJ"
@@ -118,7 +118,7 @@ exports[`RecipientList should conditionally disable remove button 1`] = `
                   class="flex overflow-hidden flex-grow items-center space-x-2 whitespace-nowrap no-ligatures"
                 >
                   <span
-                    class="text-base font-semibold text-theme-text"
+                    class="font-semibold text-base text-theme-text"
                     data-testid="Address__alias"
                   >
                     <span
@@ -129,7 +129,7 @@ exports[`RecipientList should conditionally disable remove button 1`] = `
                     </span>
                   </span>
                   <span
-                    class="inline-flex overflow-hidden text-base font-semibold text-theme-secondary-500 dark:text-theme-secondary-700"
+                    class="inline-flex overflow-hidden text-theme-secondary-500 dark:text-theme-secondary-700 font-semibold text-base"
                     data-testid="Address__address"
                   >
                     FJKDSALJFKASLJFKSDAJD333FKFKDSAJFKSAJFKLASJKDFJ
@@ -198,11 +198,11 @@ exports[`RecipientList should conditionally disable remove button 1`] = `
               class="py-6 w-14"
             >
               <div
-                class="flex-shrink-0 Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB"
+                class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB flex-shrink-0"
                 data-testid="Avatar"
               >
                 <div
-                  class="inline-flex overflow-hidden justify-center items-center w-full h-full align-middle rounded-full"
+                  class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
                 >
                   <img
                     alt="AhFJKDSALJFKASLJFKSDEAJ333FKFKDSAJFKSAJFKLASJKDFJ"
@@ -229,7 +229,7 @@ exports[`RecipientList should conditionally disable remove button 1`] = `
                   class="flex overflow-hidden flex-grow items-center space-x-2 whitespace-nowrap no-ligatures"
                 >
                   <span
-                    class="text-base font-semibold text-theme-text"
+                    class="font-semibold text-base text-theme-text"
                     data-testid="Address__alias"
                   >
                     <span
@@ -240,7 +240,7 @@ exports[`RecipientList should conditionally disable remove button 1`] = `
                     </span>
                   </span>
                   <span
-                    class="inline-flex overflow-hidden text-base font-semibold text-theme-secondary-500 dark:text-theme-secondary-700"
+                    class="inline-flex overflow-hidden text-theme-secondary-500 dark:text-theme-secondary-700 font-semibold text-base"
                     data-testid="Address__address"
                   >
                     AhFJKDSALJFKASLJFKSDEAJ333FKFKDSAJFKSAJFKLASJKDFJ
@@ -308,11 +308,11 @@ exports[`RecipientList should conditionally disable remove button 1`] = `
               class="py-6 w-14"
             >
               <div
-                class="flex-shrink-0 Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB"
+                class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB flex-shrink-0"
                 data-testid="Avatar"
               >
                 <div
-                  class="inline-flex overflow-hidden justify-center items-center w-full h-full align-middle rounded-full"
+                  class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
                 >
                   <img
                     alt="FAhFJKDSALJFKASLJFKSFDAJ333FKFKDSAJFKSAJFKLASJKDFJ"
@@ -339,7 +339,7 @@ exports[`RecipientList should conditionally disable remove button 1`] = `
                   class="flex overflow-hidden flex-grow items-center space-x-2 whitespace-nowrap no-ligatures"
                 >
                   <span
-                    class="text-base font-semibold text-theme-text"
+                    class="font-semibold text-base text-theme-text"
                     data-testid="Address__alias"
                   >
                     <span
@@ -350,7 +350,7 @@ exports[`RecipientList should conditionally disable remove button 1`] = `
                     </span>
                   </span>
                   <span
-                    class="inline-flex overflow-hidden text-base font-semibold text-theme-secondary-500 dark:text-theme-secondary-700"
+                    class="inline-flex overflow-hidden text-theme-secondary-500 dark:text-theme-secondary-700 font-semibold text-base"
                     data-testid="Address__address"
                   >
                     FAhFJKDSALJFKASLJFKSFDAJ333FKFKDSAJFKSAJFKLASJKDFJ
@@ -418,11 +418,11 @@ exports[`RecipientList should conditionally disable remove button 1`] = `
               class="py-6 w-14"
             >
               <div
-                class="flex-shrink-0 Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB"
+                class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB flex-shrink-0"
                 data-testid="Avatar"
               >
                 <div
-                  class="inline-flex overflow-hidden justify-center items-center w-full h-full align-middle rounded-full"
+                  class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
                 >
                   <img
                     alt="FAhFJKDSALJFKASLJFKSFDAJ333FKFKDSAJFKSAJFKLASJKDFJ"
@@ -449,7 +449,7 @@ exports[`RecipientList should conditionally disable remove button 1`] = `
                   class="flex overflow-hidden flex-grow items-center space-x-2 whitespace-nowrap no-ligatures"
                 >
                   <span
-                    class="inline-flex overflow-hidden text-base font-semibold text-theme-text"
+                    class="inline-flex overflow-hidden text-theme-text font-semibold text-base"
                     data-testid="Address__address"
                   >
                     FAhFJKDSALJFKASLJFKSFDAJ333FKFKDSAJFKSAJFKLASJKDFJ
@@ -522,7 +522,7 @@ exports[`RecipientList should render condensed variant 1`] = `
     class="RecipientList__RecipientListWrapper-sc-1fe0e3s-0 iBAzTp"
   >
     <div
-      class="-mt-3 Table__TableWrapper-sc-84pst5-0 ccYCKK"
+      class="Table__TableWrapper-sc-84pst5-0 ccYCKK -mt-3"
       role="table"
     >
       <table
@@ -535,13 +535,13 @@ exports[`RecipientList should render condensed variant 1`] = `
             role="row"
           >
             <th
-              class="relative p-3 m-0 text-sm font-semibold text-left select-none first:pl-0 last:pr-0 group text-theme-secondary-500 border-theme-secondary-300 hasBorder dark:text-theme-secondary-700 dark:border-theme-secondary-800"
+              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
               colspan="1"
               data-testid="table__th--0"
               role="columnheader"
             >
               <div
-                class="flex hidden align-top flex-inline"
+                class="flex flex-inline align-top hidden"
               >
                 <div>
                   Avatar
@@ -549,13 +549,13 @@ exports[`RecipientList should render condensed variant 1`] = `
               </div>
             </th>
             <th
-              class="relative p-3 m-0 text-sm font-semibold text-left select-none first:pl-0 last:pr-0 group text-theme-secondary-500 border-theme-secondary-300 hasBorder dark:text-theme-secondary-700 dark:border-theme-secondary-800"
+              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
               colspan="1"
               data-testid="table__th--1"
               role="columnheader"
             >
               <div
-                class="flex hidden align-top flex-inline"
+                class="flex flex-inline align-top hidden"
               >
                 <div>
                   Address
@@ -563,13 +563,13 @@ exports[`RecipientList should render condensed variant 1`] = `
               </div>
             </th>
             <th
-              class="relative p-3 m-0 text-sm font-semibold text-left select-none first:pl-0 last:pr-0 group text-theme-secondary-500 border-theme-secondary-300 hasBorder dark:text-theme-secondary-700 dark:border-theme-secondary-800"
+              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
               colspan="1"
               data-testid="table__th--2"
               role="columnheader"
             >
               <div
-                class="flex hidden align-top flex-inline"
+                class="flex flex-inline align-top hidden"
               >
                 <div>
                   Amount
@@ -577,13 +577,13 @@ exports[`RecipientList should render condensed variant 1`] = `
               </div>
             </th>
             <th
-              class="relative p-3 m-0 text-sm font-semibold text-left select-none first:pl-0 last:pr-0 group text-theme-secondary-500 border-theme-secondary-300 hasBorder dark:text-theme-secondary-700 dark:border-theme-secondary-800"
+              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
               colspan="1"
               data-testid="table__th--3"
               role="columnheader"
             >
               <div
-                class="flex hidden align-top flex-inline"
+                class="flex flex-inline align-top hidden"
               >
                 <div>
                   Action
@@ -603,11 +603,11 @@ exports[`RecipientList should render condensed variant 1`] = `
               class="py-4 w-12"
             >
               <div
-                class="flex-shrink-0 Avatar__AvatarWrapper-sc-1vsy2s2-0 ibTSCJ"
+                class="Avatar__AvatarWrapper-sc-1vsy2s2-0 ibTSCJ flex-shrink-0"
                 data-testid="Avatar"
               >
                 <div
-                  class="inline-flex overflow-hidden justify-center items-center w-full h-full align-middle rounded-full"
+                  class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
                 >
                   <img
                     alt="FJKDSALJFKASLJFKSDAJD333FKFKDSAJFKSAJFKLASJKDFJ"
@@ -627,7 +627,7 @@ exports[`RecipientList should render condensed variant 1`] = `
                   class="flex overflow-hidden flex-grow items-center space-x-2 whitespace-nowrap no-ligatures"
                 >
                   <span
-                    class="text-base font-semibold text-theme-text"
+                    class="font-semibold text-base text-theme-text"
                     data-testid="Address__alias"
                   >
                     <span
@@ -638,7 +638,7 @@ exports[`RecipientList should render condensed variant 1`] = `
                     </span>
                   </span>
                   <span
-                    class="inline-flex overflow-hidden text-base font-semibold text-theme-secondary-500 dark:text-theme-secondary-700"
+                    class="inline-flex overflow-hidden text-theme-secondary-500 dark:text-theme-secondary-700 font-semibold text-base"
                     data-testid="Address__address"
                   >
                     FJKDSALJFKASLJFKSDAJD333FKFKDSAJFKSAJFKLASJKDFJ
@@ -669,11 +669,11 @@ exports[`RecipientList should render condensed variant 1`] = `
               class="py-4 w-12"
             >
               <div
-                class="flex-shrink-0 Avatar__AvatarWrapper-sc-1vsy2s2-0 ibTSCJ"
+                class="Avatar__AvatarWrapper-sc-1vsy2s2-0 ibTSCJ flex-shrink-0"
                 data-testid="Avatar"
               >
                 <div
-                  class="inline-flex overflow-hidden justify-center items-center w-full h-full align-middle rounded-full"
+                  class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
                 >
                   <img
                     alt="AhFJKDSALJFKASLJFKSDEAJ333FKFKDSAJFKSAJFKLASJKDFJ"
@@ -693,7 +693,7 @@ exports[`RecipientList should render condensed variant 1`] = `
                   class="flex overflow-hidden flex-grow items-center space-x-2 whitespace-nowrap no-ligatures"
                 >
                   <span
-                    class="text-base font-semibold text-theme-text"
+                    class="font-semibold text-base text-theme-text"
                     data-testid="Address__alias"
                   >
                     <span
@@ -704,7 +704,7 @@ exports[`RecipientList should render condensed variant 1`] = `
                     </span>
                   </span>
                   <span
-                    class="inline-flex overflow-hidden text-base font-semibold text-theme-secondary-500 dark:text-theme-secondary-700"
+                    class="inline-flex overflow-hidden text-theme-secondary-500 dark:text-theme-secondary-700 font-semibold text-base"
                     data-testid="Address__address"
                   >
                     AhFJKDSALJFKASLJFKSDEAJ333FKFKDSAJFKSAJFKLASJKDFJ
@@ -735,11 +735,11 @@ exports[`RecipientList should render condensed variant 1`] = `
               class="py-4 w-12"
             >
               <div
-                class="flex-shrink-0 Avatar__AvatarWrapper-sc-1vsy2s2-0 ibTSCJ"
+                class="Avatar__AvatarWrapper-sc-1vsy2s2-0 ibTSCJ flex-shrink-0"
                 data-testid="Avatar"
               >
                 <div
-                  class="inline-flex overflow-hidden justify-center items-center w-full h-full align-middle rounded-full"
+                  class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
                 >
                   <img
                     alt="FAhFJKDSALJFKASLJFKSFDAJ333FKFKDSAJFKSAJFKLASJKDFJ"
@@ -759,7 +759,7 @@ exports[`RecipientList should render condensed variant 1`] = `
                   class="flex overflow-hidden flex-grow items-center space-x-2 whitespace-nowrap no-ligatures"
                 >
                   <span
-                    class="text-base font-semibold text-theme-text"
+                    class="font-semibold text-base text-theme-text"
                     data-testid="Address__alias"
                   >
                     <span
@@ -770,7 +770,7 @@ exports[`RecipientList should render condensed variant 1`] = `
                     </span>
                   </span>
                   <span
-                    class="inline-flex overflow-hidden text-base font-semibold text-theme-secondary-500 dark:text-theme-secondary-700"
+                    class="inline-flex overflow-hidden text-theme-secondary-500 dark:text-theme-secondary-700 font-semibold text-base"
                     data-testid="Address__address"
                   >
                     FAhFJKDSALJFKASLJFKSFDAJ333FKFKDSAJFKSAJFKLASJKDFJ
@@ -801,11 +801,11 @@ exports[`RecipientList should render condensed variant 1`] = `
               class="py-4 w-12"
             >
               <div
-                class="flex-shrink-0 Avatar__AvatarWrapper-sc-1vsy2s2-0 ibTSCJ"
+                class="Avatar__AvatarWrapper-sc-1vsy2s2-0 ibTSCJ flex-shrink-0"
                 data-testid="Avatar"
               >
                 <div
-                  class="inline-flex overflow-hidden justify-center items-center w-full h-full align-middle rounded-full"
+                  class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
                 >
                   <img
                     alt="FAhFJKDSALJFKASLJFKSFDAJ333FKFKDSAJFKSAJFKLASJKDFJ"
@@ -825,7 +825,7 @@ exports[`RecipientList should render condensed variant 1`] = `
                   class="flex overflow-hidden flex-grow items-center space-x-2 whitespace-nowrap no-ligatures"
                 >
                   <span
-                    class="inline-flex overflow-hidden text-base font-semibold text-theme-text"
+                    class="inline-flex overflow-hidden text-theme-text font-semibold text-base"
                     data-testid="Address__address"
                   >
                     FAhFJKDSALJFKASLJFKSFDAJ333FKFKDSAJFKSAJFKLASJKDFJ
@@ -861,7 +861,7 @@ exports[`RecipientList should render editable 1`] = `
     class="RecipientList__RecipientListWrapper-sc-1fe0e3s-0 iBAzTp"
   >
     <div
-      class="-mt-3 Table__TableWrapper-sc-84pst5-0 ccYCKK"
+      class="Table__TableWrapper-sc-84pst5-0 ccYCKK -mt-3"
       role="table"
     >
       <table
@@ -874,13 +874,13 @@ exports[`RecipientList should render editable 1`] = `
             role="row"
           >
             <th
-              class="relative p-3 m-0 text-sm font-semibold text-left select-none first:pl-0 last:pr-0 group text-theme-secondary-500 border-theme-secondary-300 hasBorder dark:text-theme-secondary-700 dark:border-theme-secondary-800"
+              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
               colspan="1"
               data-testid="table__th--0"
               role="columnheader"
             >
               <div
-                class="flex hidden align-top flex-inline"
+                class="flex flex-inline align-top hidden"
               >
                 <div>
                   Avatar
@@ -888,13 +888,13 @@ exports[`RecipientList should render editable 1`] = `
               </div>
             </th>
             <th
-              class="relative p-3 m-0 text-sm font-semibold text-left select-none first:pl-0 last:pr-0 group text-theme-secondary-500 border-theme-secondary-300 hasBorder dark:text-theme-secondary-700 dark:border-theme-secondary-800"
+              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
               colspan="1"
               data-testid="table__th--1"
               role="columnheader"
             >
               <div
-                class="flex hidden align-top flex-inline"
+                class="flex flex-inline align-top hidden"
               >
                 <div>
                   Address
@@ -902,13 +902,13 @@ exports[`RecipientList should render editable 1`] = `
               </div>
             </th>
             <th
-              class="relative p-3 m-0 text-sm font-semibold text-left select-none first:pl-0 last:pr-0 group text-theme-secondary-500 border-theme-secondary-300 hasBorder dark:text-theme-secondary-700 dark:border-theme-secondary-800"
+              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
               colspan="1"
               data-testid="table__th--2"
               role="columnheader"
             >
               <div
-                class="flex hidden align-top flex-inline"
+                class="flex flex-inline align-top hidden"
               >
                 <div>
                   Amount
@@ -916,13 +916,13 @@ exports[`RecipientList should render editable 1`] = `
               </div>
             </th>
             <th
-              class="relative p-3 m-0 text-sm font-semibold text-left select-none first:pl-0 last:pr-0 group text-theme-secondary-500 border-theme-secondary-300 hasBorder dark:text-theme-secondary-700 dark:border-theme-secondary-800"
+              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
               colspan="1"
               data-testid="table__th--3"
               role="columnheader"
             >
               <div
-                class="flex hidden align-top flex-inline"
+                class="flex flex-inline align-top hidden"
               >
                 <div>
                   Action
@@ -942,11 +942,11 @@ exports[`RecipientList should render editable 1`] = `
               class="py-6 w-14"
             >
               <div
-                class="flex-shrink-0 Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB"
+                class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB flex-shrink-0"
                 data-testid="Avatar"
               >
                 <div
-                  class="inline-flex overflow-hidden justify-center items-center w-full h-full align-middle rounded-full"
+                  class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
                 >
                   <img
                     alt="FJKDSALJFKASLJFKSDAJD333FKFKDSAJFKSAJFKLASJKDFJ"
@@ -973,7 +973,7 @@ exports[`RecipientList should render editable 1`] = `
                   class="flex overflow-hidden flex-grow items-center space-x-2 whitespace-nowrap no-ligatures"
                 >
                   <span
-                    class="text-base font-semibold text-theme-text"
+                    class="font-semibold text-base text-theme-text"
                     data-testid="Address__alias"
                   >
                     <span
@@ -984,7 +984,7 @@ exports[`RecipientList should render editable 1`] = `
                     </span>
                   </span>
                   <span
-                    class="inline-flex overflow-hidden text-base font-semibold text-theme-secondary-500 dark:text-theme-secondary-700"
+                    class="inline-flex overflow-hidden text-theme-secondary-500 dark:text-theme-secondary-700 font-semibold text-base"
                     data-testid="Address__address"
                   >
                     FJKDSALJFKASLJFKSDAJD333FKFKDSAJFKSAJFKLASJKDFJ
@@ -1052,11 +1052,11 @@ exports[`RecipientList should render editable 1`] = `
               class="py-6 w-14"
             >
               <div
-                class="flex-shrink-0 Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB"
+                class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB flex-shrink-0"
                 data-testid="Avatar"
               >
                 <div
-                  class="inline-flex overflow-hidden justify-center items-center w-full h-full align-middle rounded-full"
+                  class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
                 >
                   <img
                     alt="AhFJKDSALJFKASLJFKSDEAJ333FKFKDSAJFKSAJFKLASJKDFJ"
@@ -1083,7 +1083,7 @@ exports[`RecipientList should render editable 1`] = `
                   class="flex overflow-hidden flex-grow items-center space-x-2 whitespace-nowrap no-ligatures"
                 >
                   <span
-                    class="text-base font-semibold text-theme-text"
+                    class="font-semibold text-base text-theme-text"
                     data-testid="Address__alias"
                   >
                     <span
@@ -1094,7 +1094,7 @@ exports[`RecipientList should render editable 1`] = `
                     </span>
                   </span>
                   <span
-                    class="inline-flex overflow-hidden text-base font-semibold text-theme-secondary-500 dark:text-theme-secondary-700"
+                    class="inline-flex overflow-hidden text-theme-secondary-500 dark:text-theme-secondary-700 font-semibold text-base"
                     data-testid="Address__address"
                   >
                     AhFJKDSALJFKASLJFKSDEAJ333FKFKDSAJFKSAJFKLASJKDFJ
@@ -1162,11 +1162,11 @@ exports[`RecipientList should render editable 1`] = `
               class="py-6 w-14"
             >
               <div
-                class="flex-shrink-0 Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB"
+                class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB flex-shrink-0"
                 data-testid="Avatar"
               >
                 <div
-                  class="inline-flex overflow-hidden justify-center items-center w-full h-full align-middle rounded-full"
+                  class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
                 >
                   <img
                     alt="FAhFJKDSALJFKASLJFKSFDAJ333FKFKDSAJFKSAJFKLASJKDFJ"
@@ -1193,7 +1193,7 @@ exports[`RecipientList should render editable 1`] = `
                   class="flex overflow-hidden flex-grow items-center space-x-2 whitespace-nowrap no-ligatures"
                 >
                   <span
-                    class="text-base font-semibold text-theme-text"
+                    class="font-semibold text-base text-theme-text"
                     data-testid="Address__alias"
                   >
                     <span
@@ -1204,7 +1204,7 @@ exports[`RecipientList should render editable 1`] = `
                     </span>
                   </span>
                   <span
-                    class="inline-flex overflow-hidden text-base font-semibold text-theme-secondary-500 dark:text-theme-secondary-700"
+                    class="inline-flex overflow-hidden text-theme-secondary-500 dark:text-theme-secondary-700 font-semibold text-base"
                     data-testid="Address__address"
                   >
                     FAhFJKDSALJFKASLJFKSFDAJ333FKFKDSAJFKSAJFKLASJKDFJ
@@ -1272,11 +1272,11 @@ exports[`RecipientList should render editable 1`] = `
               class="py-6 w-14"
             >
               <div
-                class="flex-shrink-0 Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB"
+                class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB flex-shrink-0"
                 data-testid="Avatar"
               >
                 <div
-                  class="inline-flex overflow-hidden justify-center items-center w-full h-full align-middle rounded-full"
+                  class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
                 >
                   <img
                     alt="FAhFJKDSALJFKASLJFKSFDAJ333FKFKDSAJFKSAJFKLASJKDFJ"
@@ -1303,7 +1303,7 @@ exports[`RecipientList should render editable 1`] = `
                   class="flex overflow-hidden flex-grow items-center space-x-2 whitespace-nowrap no-ligatures"
                 >
                   <span
-                    class="inline-flex overflow-hidden text-base font-semibold text-theme-text"
+                    class="inline-flex overflow-hidden text-theme-text font-semibold text-base"
                     data-testid="Address__address"
                   >
                     FAhFJKDSALJFKASLJFKSFDAJ333FKFKDSAJFKSAJFKLASJKDFJ
@@ -1376,7 +1376,7 @@ exports[`RecipientList should render non-editable 1`] = `
     class="RecipientList__RecipientListWrapper-sc-1fe0e3s-0 iBAzTp"
   >
     <div
-      class="-mt-3 Table__TableWrapper-sc-84pst5-0 ccYCKK"
+      class="Table__TableWrapper-sc-84pst5-0 ccYCKK -mt-3"
       role="table"
     >
       <table
@@ -1389,13 +1389,13 @@ exports[`RecipientList should render non-editable 1`] = `
             role="row"
           >
             <th
-              class="relative p-3 m-0 text-sm font-semibold text-left select-none first:pl-0 last:pr-0 group text-theme-secondary-500 border-theme-secondary-300 hasBorder dark:text-theme-secondary-700 dark:border-theme-secondary-800"
+              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
               colspan="1"
               data-testid="table__th--0"
               role="columnheader"
             >
               <div
-                class="flex hidden align-top flex-inline"
+                class="flex flex-inline align-top hidden"
               >
                 <div>
                   Avatar
@@ -1403,13 +1403,13 @@ exports[`RecipientList should render non-editable 1`] = `
               </div>
             </th>
             <th
-              class="relative p-3 m-0 text-sm font-semibold text-left select-none first:pl-0 last:pr-0 group text-theme-secondary-500 border-theme-secondary-300 hasBorder dark:text-theme-secondary-700 dark:border-theme-secondary-800"
+              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
               colspan="1"
               data-testid="table__th--1"
               role="columnheader"
             >
               <div
-                class="flex hidden align-top flex-inline"
+                class="flex flex-inline align-top hidden"
               >
                 <div>
                   Address
@@ -1417,13 +1417,13 @@ exports[`RecipientList should render non-editable 1`] = `
               </div>
             </th>
             <th
-              class="relative p-3 m-0 text-sm font-semibold text-left select-none first:pl-0 last:pr-0 group text-theme-secondary-500 border-theme-secondary-300 hasBorder dark:text-theme-secondary-700 dark:border-theme-secondary-800"
+              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
               colspan="1"
               data-testid="table__th--2"
               role="columnheader"
             >
               <div
-                class="flex hidden align-top flex-inline"
+                class="flex flex-inline align-top hidden"
               >
                 <div>
                   Amount
@@ -1443,11 +1443,11 @@ exports[`RecipientList should render non-editable 1`] = `
               class="py-6 w-14"
             >
               <div
-                class="flex-shrink-0 Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB"
+                class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB flex-shrink-0"
                 data-testid="Avatar"
               >
                 <div
-                  class="inline-flex overflow-hidden justify-center items-center w-full h-full align-middle rounded-full"
+                  class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
                 >
                   <img
                     alt="FJKDSALJFKASLJFKSDAJD333FKFKDSAJFKSAJFKLASJKDFJ"
@@ -1474,7 +1474,7 @@ exports[`RecipientList should render non-editable 1`] = `
                   class="flex overflow-hidden flex-grow items-center space-x-2 whitespace-nowrap no-ligatures"
                 >
                   <span
-                    class="text-base font-semibold text-theme-text"
+                    class="font-semibold text-base text-theme-text"
                     data-testid="Address__alias"
                   >
                     <span
@@ -1485,7 +1485,7 @@ exports[`RecipientList should render non-editable 1`] = `
                     </span>
                   </span>
                   <span
-                    class="inline-flex overflow-hidden text-base font-semibold text-theme-secondary-500 dark:text-theme-secondary-700"
+                    class="inline-flex overflow-hidden text-theme-secondary-500 dark:text-theme-secondary-700 font-semibold text-base"
                     data-testid="Address__address"
                   >
                     FJKDSALJFKASLJFKSDAJD333FKFKDSAJFKSAJFKLASJKDFJ
@@ -1522,11 +1522,11 @@ exports[`RecipientList should render non-editable 1`] = `
               class="py-6 w-14"
             >
               <div
-                class="flex-shrink-0 Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB"
+                class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB flex-shrink-0"
                 data-testid="Avatar"
               >
                 <div
-                  class="inline-flex overflow-hidden justify-center items-center w-full h-full align-middle rounded-full"
+                  class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
                 >
                   <img
                     alt="AhFJKDSALJFKASLJFKSDEAJ333FKFKDSAJFKSAJFKLASJKDFJ"
@@ -1553,7 +1553,7 @@ exports[`RecipientList should render non-editable 1`] = `
                   class="flex overflow-hidden flex-grow items-center space-x-2 whitespace-nowrap no-ligatures"
                 >
                   <span
-                    class="text-base font-semibold text-theme-text"
+                    class="font-semibold text-base text-theme-text"
                     data-testid="Address__alias"
                   >
                     <span
@@ -1564,7 +1564,7 @@ exports[`RecipientList should render non-editable 1`] = `
                     </span>
                   </span>
                   <span
-                    class="inline-flex overflow-hidden text-base font-semibold text-theme-secondary-500 dark:text-theme-secondary-700"
+                    class="inline-flex overflow-hidden text-theme-secondary-500 dark:text-theme-secondary-700 font-semibold text-base"
                     data-testid="Address__address"
                   >
                     AhFJKDSALJFKASLJFKSDEAJ333FKFKDSAJFKSAJFKLASJKDFJ
@@ -1601,11 +1601,11 @@ exports[`RecipientList should render non-editable 1`] = `
               class="py-6 w-14"
             >
               <div
-                class="flex-shrink-0 Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB"
+                class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB flex-shrink-0"
                 data-testid="Avatar"
               >
                 <div
-                  class="inline-flex overflow-hidden justify-center items-center w-full h-full align-middle rounded-full"
+                  class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
                 >
                   <img
                     alt="FAhFJKDSALJFKASLJFKSFDAJ333FKFKDSAJFKSAJFKLASJKDFJ"
@@ -1632,7 +1632,7 @@ exports[`RecipientList should render non-editable 1`] = `
                   class="flex overflow-hidden flex-grow items-center space-x-2 whitespace-nowrap no-ligatures"
                 >
                   <span
-                    class="text-base font-semibold text-theme-text"
+                    class="font-semibold text-base text-theme-text"
                     data-testid="Address__alias"
                   >
                     <span
@@ -1643,7 +1643,7 @@ exports[`RecipientList should render non-editable 1`] = `
                     </span>
                   </span>
                   <span
-                    class="inline-flex overflow-hidden text-base font-semibold text-theme-secondary-500 dark:text-theme-secondary-700"
+                    class="inline-flex overflow-hidden text-theme-secondary-500 dark:text-theme-secondary-700 font-semibold text-base"
                     data-testid="Address__address"
                   >
                     FAhFJKDSALJFKASLJFKSFDAJ333FKFKDSAJFKSAJFKLASJKDFJ
@@ -1680,11 +1680,11 @@ exports[`RecipientList should render non-editable 1`] = `
               class="py-6 w-14"
             >
               <div
-                class="flex-shrink-0 Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB"
+                class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB flex-shrink-0"
                 data-testid="Avatar"
               >
                 <div
-                  class="inline-flex overflow-hidden justify-center items-center w-full h-full align-middle rounded-full"
+                  class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
                 >
                   <img
                     alt="FAhFJKDSALJFKASLJFKSFDAJ333FKFKDSAJFKSAJFKLASJKDFJ"
@@ -1711,7 +1711,7 @@ exports[`RecipientList should render non-editable 1`] = `
                   class="flex overflow-hidden flex-grow items-center space-x-2 whitespace-nowrap no-ligatures"
                 >
                   <span
-                    class="inline-flex overflow-hidden text-base font-semibold text-theme-text"
+                    class="inline-flex overflow-hidden text-theme-text font-semibold text-base"
                     data-testid="Address__address"
                   >
                     FAhFJKDSALJFKASLJFKSFDAJ333FKFKDSAJFKSAJFKLASJKDFJ
@@ -1753,7 +1753,7 @@ exports[`RecipientList should render without amount column 1`] = `
     class="RecipientList__RecipientListWrapper-sc-1fe0e3s-0 iBAzTp"
   >
     <div
-      class="-mt-3 Table__TableWrapper-sc-84pst5-0 ccYCKK"
+      class="Table__TableWrapper-sc-84pst5-0 ccYCKK -mt-3"
       role="table"
     >
       <table
@@ -1766,13 +1766,13 @@ exports[`RecipientList should render without amount column 1`] = `
             role="row"
           >
             <th
-              class="relative p-3 m-0 text-sm font-semibold text-left select-none first:pl-0 last:pr-0 group text-theme-secondary-500 border-theme-secondary-300 hasBorder dark:text-theme-secondary-700 dark:border-theme-secondary-800"
+              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
               colspan="1"
               data-testid="table__th--0"
               role="columnheader"
             >
               <div
-                class="flex hidden align-top flex-inline"
+                class="flex flex-inline align-top hidden"
               >
                 <div>
                   Avatar
@@ -1780,13 +1780,13 @@ exports[`RecipientList should render without amount column 1`] = `
               </div>
             </th>
             <th
-              class="relative p-3 m-0 text-sm font-semibold text-left select-none first:pl-0 last:pr-0 group text-theme-secondary-500 border-theme-secondary-300 hasBorder dark:text-theme-secondary-700 dark:border-theme-secondary-800"
+              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
               colspan="1"
               data-testid="table__th--1"
               role="columnheader"
             >
               <div
-                class="flex hidden align-top flex-inline"
+                class="flex flex-inline align-top hidden"
               >
                 <div>
                   Address
@@ -1794,13 +1794,13 @@ exports[`RecipientList should render without amount column 1`] = `
               </div>
             </th>
             <th
-              class="relative p-3 m-0 text-sm font-semibold text-left select-none first:pl-0 last:pr-0 group text-theme-secondary-500 border-theme-secondary-300 hasBorder dark:text-theme-secondary-700 dark:border-theme-secondary-800"
+              class="group relative text-sm text-left select-none text-theme-secondary-500 border-theme-secondary-300 dark:text-theme-secondary-700 dark:border-theme-secondary-800 m-0 p-3 first:pl-0 last:pr-0 font-semibold hasBorder"
               colspan="1"
               data-testid="table__th--2"
               role="columnheader"
             >
               <div
-                class="flex hidden align-top flex-inline"
+                class="flex flex-inline align-top hidden"
               >
                 <div>
                   Action
@@ -1820,11 +1820,11 @@ exports[`RecipientList should render without amount column 1`] = `
               class="py-6 w-14"
             >
               <div
-                class="flex-shrink-0 Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB"
+                class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB flex-shrink-0"
                 data-testid="Avatar"
               >
                 <div
-                  class="inline-flex overflow-hidden justify-center items-center w-full h-full align-middle rounded-full"
+                  class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
                 >
                   <img
                     alt="FJKDSALJFKASLJFKSDAJD333FKFKDSAJFKSAJFKLASJKDFJ"
@@ -1851,7 +1851,7 @@ exports[`RecipientList should render without amount column 1`] = `
                   class="flex overflow-hidden flex-grow items-center space-x-2 whitespace-nowrap no-ligatures"
                 >
                   <span
-                    class="text-base font-semibold text-theme-text"
+                    class="font-semibold text-base text-theme-text"
                     data-testid="Address__alias"
                   >
                     <span
@@ -1862,7 +1862,7 @@ exports[`RecipientList should render without amount column 1`] = `
                     </span>
                   </span>
                   <span
-                    class="inline-flex overflow-hidden text-base font-semibold text-theme-secondary-500 dark:text-theme-secondary-700"
+                    class="inline-flex overflow-hidden text-theme-secondary-500 dark:text-theme-secondary-700 font-semibold text-base"
                     data-testid="Address__address"
                   >
                     FJKDSALJFKASLJFKSDAJD333FKFKDSAJFKSAJFKLASJKDFJ
@@ -1910,11 +1910,11 @@ exports[`RecipientList should render without amount column 1`] = `
               class="py-6 w-14"
             >
               <div
-                class="flex-shrink-0 Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB"
+                class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB flex-shrink-0"
                 data-testid="Avatar"
               >
                 <div
-                  class="inline-flex overflow-hidden justify-center items-center w-full h-full align-middle rounded-full"
+                  class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
                 >
                   <img
                     alt="AhFJKDSALJFKASLJFKSDEAJ333FKFKDSAJFKSAJFKLASJKDFJ"
@@ -1941,7 +1941,7 @@ exports[`RecipientList should render without amount column 1`] = `
                   class="flex overflow-hidden flex-grow items-center space-x-2 whitespace-nowrap no-ligatures"
                 >
                   <span
-                    class="text-base font-semibold text-theme-text"
+                    class="font-semibold text-base text-theme-text"
                     data-testid="Address__alias"
                   >
                     <span
@@ -1952,7 +1952,7 @@ exports[`RecipientList should render without amount column 1`] = `
                     </span>
                   </span>
                   <span
-                    class="inline-flex overflow-hidden text-base font-semibold text-theme-secondary-500 dark:text-theme-secondary-700"
+                    class="inline-flex overflow-hidden text-theme-secondary-500 dark:text-theme-secondary-700 font-semibold text-base"
                     data-testid="Address__address"
                   >
                     AhFJKDSALJFKASLJFKSDEAJ333FKFKDSAJFKSAJFKLASJKDFJ
@@ -2000,11 +2000,11 @@ exports[`RecipientList should render without amount column 1`] = `
               class="py-6 w-14"
             >
               <div
-                class="flex-shrink-0 Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB"
+                class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB flex-shrink-0"
                 data-testid="Avatar"
               >
                 <div
-                  class="inline-flex overflow-hidden justify-center items-center w-full h-full align-middle rounded-full"
+                  class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
                 >
                   <img
                     alt="FAhFJKDSALJFKASLJFKSFDAJ333FKFKDSAJFKSAJFKLASJKDFJ"
@@ -2031,7 +2031,7 @@ exports[`RecipientList should render without amount column 1`] = `
                   class="flex overflow-hidden flex-grow items-center space-x-2 whitespace-nowrap no-ligatures"
                 >
                   <span
-                    class="text-base font-semibold text-theme-text"
+                    class="font-semibold text-base text-theme-text"
                     data-testid="Address__alias"
                   >
                     <span
@@ -2042,7 +2042,7 @@ exports[`RecipientList should render without amount column 1`] = `
                     </span>
                   </span>
                   <span
-                    class="inline-flex overflow-hidden text-base font-semibold text-theme-secondary-500 dark:text-theme-secondary-700"
+                    class="inline-flex overflow-hidden text-theme-secondary-500 dark:text-theme-secondary-700 font-semibold text-base"
                     data-testid="Address__address"
                   >
                     FAhFJKDSALJFKASLJFKSFDAJ333FKFKDSAJFKSAJFKLASJKDFJ
@@ -2090,11 +2090,11 @@ exports[`RecipientList should render without amount column 1`] = `
               class="py-6 w-14"
             >
               <div
-                class="flex-shrink-0 Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB"
+                class="Avatar__AvatarWrapper-sc-1vsy2s2-0 jrNmMB flex-shrink-0"
                 data-testid="Avatar"
               >
                 <div
-                  class="inline-flex overflow-hidden justify-center items-center w-full h-full align-middle rounded-full"
+                  class="w-full h-full inline-flex items-center justify-center overflow-hidden align-middle rounded-full"
                 >
                   <img
                     alt="FAhFJKDSALJFKASLJFKSFDAJ333FKFKDSAJFKSAJFKLASJKDFJ"
@@ -2121,7 +2121,7 @@ exports[`RecipientList should render without amount column 1`] = `
                   class="flex overflow-hidden flex-grow items-center space-x-2 whitespace-nowrap no-ligatures"
                 >
                   <span
-                    class="inline-flex overflow-hidden text-base font-semibold text-theme-text"
+                    class="inline-flex overflow-hidden text-theme-text font-semibold text-base"
                     data-testid="Address__address"
                   >
                     FAhFJKDSALJFKASLJFKSFDAJ333FKFKDSAJFKSAJFKLASJKDFJ
