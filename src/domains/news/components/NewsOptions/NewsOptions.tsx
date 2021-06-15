@@ -22,7 +22,7 @@ interface NewsOptionsProps {
 	selectedCategories: string[];
 	selectedCoins: string[];
 	onSearch?: (search: string) => void;
-	onSubmit?: (data: Record<string, unknown>) => void;
+	onSubmit?: (data: Record<string, unknown) => void;
 }
 
 // region for scrollable sidebar on small screen
@@ -117,9 +117,9 @@ export const NewsOptions = ({ selectedCategories, selectedCoins, onSearch, onSub
 			className="sticky top-26"
 			style={{ height: `calc(100vh - (${HEADER_HEIGHT}px + ${VERTICAL_PADDING}px))` }}
 		>
-			<div className="max-h-full p-10 pb-4 overflow-y-auto border-2 rounded-lg bg-theme-background border-theme-primary-100 dark:border-theme-secondary-800">
+			<div className="overflow-y-auto p-10 pb-4 max-h-full rounded-lg border-2 bg-theme-background border-theme-primary-100 dark:border-theme-secondary-800">
 				<div className="flex flex-col space-y-8">
-					<div className="flex items-center justify-between px-2 py-4 rounded-md shadow-xl">
+					<div className="flex justify-between items-center py-4 px-2 rounded-md shadow-xl">
 						<Input
 							data-testid="NewsOptions__search"
 							maxLength={32}
@@ -139,7 +139,7 @@ export const NewsOptions = ({ selectedCategories, selectedCoins, onSearch, onSub
 					<Divider dashed />
 
 					<div className="flex flex-col space-y-3">
-						<div className="flex items-center justify-between">
+						<div className="flex justify-between items-center">
 							<h5 className="font-semibold">{t("COMMON.CATEGORY")}</h5>
 							{showSelectAllCategories && (
 								<button
