@@ -9,9 +9,9 @@ import { FormProvider, useForm } from "react-hook-form";
 import { Route } from "react-router-dom";
 import { env, getDefaultProfileId, renderWithRouter, screen, waitFor } from "utils/testing-library";
 
-const history = createMemoryHistory();
-
 import { LedgerConnectionStep } from "./LedgerConnectionStep";
+
+const history = createMemoryHistory();
 
 let transport: typeof Transport;
 

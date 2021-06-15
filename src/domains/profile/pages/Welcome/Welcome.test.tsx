@@ -10,7 +10,7 @@ import { StubStorage } from "tests/mocks";
 import { getDefaultPassword, getPasswordProtectedProfileId } from "utils/testing-library";
 
 import { translations } from "../../i18n";
-import { Welcome } from "../Welcome";
+import { Welcome } from ".";
 
 const fixtureProfileId = getDefaultProfileId();
 const profileDashboardUrl = `/profiles/${fixtureProfileId}/dashboard`;

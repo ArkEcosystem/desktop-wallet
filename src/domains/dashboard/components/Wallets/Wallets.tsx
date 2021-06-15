@@ -7,7 +7,7 @@ import { LedgerWaitingDevice } from "domains/wallet/components/Ledger/LedgerWait
 import React, { useMemo, useState } from "react";
 import { useHistory } from "react-router-dom";
 
-import { useWalletDisplay, WalletsGrid, WalletsList } from "./";
+import { useWalletDisplay, WalletsGrid, WalletsList } from ".";
 
 interface WalletsProps {
 	title?: string;

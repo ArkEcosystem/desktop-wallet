@@ -28,7 +28,7 @@ import {
 	within,
 } from "utils/testing-library";
 
-import { FormStep, ReviewStep, SendTransfer, SummaryStep } from "./";
+import { FormStep, ReviewStep, SendTransfer, SummaryStep } from ".";
 import { NetworkStep } from "./NetworkStep";
 
 const passphrase = getDefaultWalletMnemonic();

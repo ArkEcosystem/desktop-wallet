@@ -17,7 +17,7 @@ import {
 	waitFor,
 } from "utils/testing-library";
 
-import { SendDelegateResignation } from "../SendDelegateResignation";
+import { SendDelegateResignation } from ".";
 
 let wallet: Contracts.IReadWriteWallet;
 let profile: Contracts.IProfile;

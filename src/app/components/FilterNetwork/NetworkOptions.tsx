@@ -5,7 +5,7 @@ import { Tooltip } from "app/components/Tooltip";
 import { getNetworkExtendedData } from "domains/network/helpers";
 import React from "react";
 
-import { Network } from "./";
+import { Network } from ".";
 
 export const NetworkOption = ({ coin, id, name, isSelected, onClick }: Network) => {
 	const networkExtendedData = coin && id ? getNetworkExtendedData(id) : undefined;

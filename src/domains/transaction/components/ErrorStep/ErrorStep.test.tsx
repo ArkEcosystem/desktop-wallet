@@ -1,7 +1,7 @@
 import React from "react";
 import { act, fireEvent, render, waitFor } from "utils/testing-library";
 
-import { ErrorStep } from "./";
+import { ErrorStep } from ".";
 
 describe("ErrorStep", () => {
 	it("should render with default texts", () => {

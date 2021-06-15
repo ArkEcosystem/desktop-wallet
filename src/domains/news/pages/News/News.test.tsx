@@ -7,13 +7,13 @@ import nock from "nock";
 import React from "react";
 import { Route } from "react-router-dom";
 import { act, fireEvent, getDefaultProfileId, renderWithRouter, waitFor } from "testing-library";
+import page1Fixture from "tests/fixtures/news/page-1.json";
 
 import { assets } from "../../data";
 import { News } from "./News";
 
 const history = createMemoryHistory();
 const newsURL = `/profiles/${getDefaultProfileId()}/news`;
-import page1Fixture from "tests/fixtures/news/page-1.json";
 
 let subject: Blockfolio;
 

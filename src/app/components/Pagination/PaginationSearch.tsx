@@ -8,7 +8,7 @@ import { useForm } from "react-hook-form";
 import { useTranslation } from "react-i18next";
 import { styled } from "twin.macro";
 
-import { PaginationSearchFormProps, PaginationSearchProps } from "./";
+import { PaginationSearchFormProps, PaginationSearchProps } from ".";
 import { PaginationSearchToggleButton, PaginationSearchWrapper, SearchInput } from "./Pagination.styles";
 
 const PaginationSearchWrapperStyled = styled.span`

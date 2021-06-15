@@ -27,7 +27,7 @@ import {
 	waitFor,
 } from "utils/testing-library";
 
-import { SendVote } from "../SendVote";
+import { SendVote } from ".";
 
 const fixtureProfileId = getDefaultProfileId();
 
