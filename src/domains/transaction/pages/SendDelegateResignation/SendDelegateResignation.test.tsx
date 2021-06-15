@@ -161,7 +161,7 @@ describe("SendDelegateResignation", () => {
 		});
 
 		it("should return to form step by cancelling fee warning", async () => {
-			const { asFragment, getByTestId } = renderPage();
+			const { getByTestId } = renderPage();
 
 			await waitFor(() => expect(getByTestId("SendDelegateResignation__form-step")).toBeTruthy());
 
@@ -184,7 +184,7 @@ describe("SendDelegateResignation", () => {
 		});
 
 		it("should proceed to authentication step by confirming fee warning", async () => {
-			const { asFragment, getByTestId } = renderPage();
+			const { getByTestId } = renderPage();
 
 			await waitFor(() => expect(getByTestId("SendDelegateResignation__form-step")).toBeTruthy());
 

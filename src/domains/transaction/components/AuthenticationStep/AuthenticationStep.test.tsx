@@ -276,7 +276,7 @@ describe("AuthenticationStep", () => {
 		jest.spyOn(wallet, "isSecondSignature").mockReturnValueOnce(true);
 
 		const { result } = renderHook(() => useForm({ mode: "onChange", shouldUnregister: false }));
-		const { asFragment } = renderWithRouter(
+		renderWithRouter(
 			<Form context={result.current} onSubmit={() => void 0}>
 				<AuthenticationStep wallet={wallet} skipSecondSignature />
 			</Form>,

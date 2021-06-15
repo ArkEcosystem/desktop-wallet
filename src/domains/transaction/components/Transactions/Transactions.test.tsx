@@ -212,7 +212,7 @@ describe("Transactions", () => {
 			}),
 		);
 
-		const { getByRole, getByTestId, container } = renderWithRouter(
+		const { getByRole, getByTestId } = renderWithRouter(
 			<Route path="/profiles/:profileId/dashboard">
 				<Transactions profile={emptyProfile} wallets={emptyProfile.wallets().values()} />
 			</Route>,
@@ -327,7 +327,7 @@ describe("Transactions", () => {
 		nock.cleanAll();
 		const { meta, data } = require("tests/fixtures/coins/ark/devnet/transactions.json");
 
-		const scope = nock("https://dwallets.ark.io")
+		nock("https://dwallets.ark.io")
 			.get("/api/transactions")
 			.query(true)
 			.reply(200, () => ({

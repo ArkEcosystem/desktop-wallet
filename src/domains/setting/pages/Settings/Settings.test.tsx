@@ -273,11 +273,6 @@ describe("Settings", () => {
 			},
 		);
 
-		const otherProfile = env
-			.profiles()
-			.values()
-			.filter((el: Profile) => el.id() !== profile.id())[0];
-
 		fireEvent.input(getByTestId("General-settings__input--name"), {
 			target: { value: "     " },
 		});

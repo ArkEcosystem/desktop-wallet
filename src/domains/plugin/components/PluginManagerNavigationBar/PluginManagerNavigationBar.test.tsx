@@ -76,7 +76,7 @@ describe("PluginManagerNavigationBar", () => {
 	});
 
 	it("should show installed plugins count", () => {
-		const { asFragment, getByTestId } = render(
+		const { getByTestId } = render(
 			<PluginProviders>
 				<PluginManagerNavigationBar menu={menu} selectedView="" installedPluginsCount={8} />,
 			</PluginProviders>,

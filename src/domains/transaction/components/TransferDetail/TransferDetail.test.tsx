@@ -1,20 +1,18 @@
 import { BigNumber } from "@arkecosystem/platform-sdk-support";
 import { createMemoryHistory } from "history";
 import React from "react";
-import { env, getDefaultProfileId, render } from "testing-library";
+import { getDefaultProfileId, render } from "testing-library";
 import { TransactionFixture } from "tests/fixtures/transactions";
 
 import { translations } from "../../i18n";
 import { TransferDetail } from "./TransferDetail";
 
 const history = createMemoryHistory();
-let emptyProfile: Profile;
 
 const fixtureProfileId = getDefaultProfileId();
 let dashboardURL: string;
 
 beforeEach(() => {
-	emptyProfile = env.profiles().findById("cba050f1-880f-45f0-9af9-cfe48f406052");
 	dashboardURL = `/profiles/${fixtureProfileId}/dashboard`;
 	history.push(dashboardURL);
 });

@@ -56,7 +56,6 @@ const createUnvoteTransactionMock = (wallet: Contracts.IReadWriteWallet) =>
 const passphrase = getDefaultWalletMnemonic();
 let profile: Contracts.IProfile;
 let wallet: Contracts.IReadWriteWallet;
-let votes: ReadOnlyWallet[];
 const transport = getDefaultLedgerTransport();
 
 describe("SendVote", () => {
