@@ -1,4 +1,5 @@
 import { renderHook } from "@testing-library/react-hooks";
+import { EnvironmentProvider } from "app/contexts";
 import nock from "nock";
 import React from "react";
 import { env, getDefaultProfileId } from "utils/testing-library";
@@ -7,8 +8,6 @@ import { useNotifications } from "./use-notifications";
 
 const NotificationsTransactionsFixture = require("tests/fixtures/coins/ark/devnet/notification-transactions.json");
 const TransactionsFixture = require("tests/fixtures/coins/ark/devnet/transactions.json");
-
-import { EnvironmentProvider } from "app/contexts";
 
 describe("Notifications Hook", () => {
 	beforeAll(() => {

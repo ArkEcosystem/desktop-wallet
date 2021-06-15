@@ -5,7 +5,7 @@ import React, { useRef } from "react";
 import tw, { styled } from "twin.macro";
 import { Size } from "types";
 
-import { useModal } from "./";
+import { useModal } from ".";
 
 interface ModalProps {
 	children: React.ReactNode;

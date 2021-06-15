@@ -19,7 +19,7 @@ import { useForm } from "react-hook-form";
 import { useTranslation } from "react-i18next";
 import { useHistory, useParams } from "react-router-dom";
 
-import { SummaryStep } from "./";
+import { SummaryStep } from ".";
 import { SendRegistrationForm } from "./SendRegistration.models";
 
 export const SendRegistration = () => {

@@ -21,7 +21,7 @@ import {
 	within,
 } from "utils/testing-library";
 
-import { SendRegistration } from "./";
+import { SendRegistration } from ".";
 
 let profile: Contracts.IProfile;
 let wallet: Contracts.IReadWriteWallet;

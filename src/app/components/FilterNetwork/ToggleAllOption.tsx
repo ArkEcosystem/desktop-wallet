@@ -3,7 +3,7 @@ import { Circle } from "app/components/Circle";
 import React from "react";
 import { useTranslation } from "react-i18next";
 
-import { ToggleAllOptionProps } from "./";
+import { ToggleAllOptionProps } from ".";
 
 export const ToggleAllOption = ({ onClick, isHidden = false, isSelected = false }: ToggleAllOptionProps) => {
 	const { t } = useTranslation();

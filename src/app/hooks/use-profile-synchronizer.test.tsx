@@ -14,10 +14,11 @@ import {
 	waitFor,
 } from "utils/testing-library";
 
-const history = createMemoryHistory();
-const dashboardURL = `/profiles/${getDefaultProfileId()}/dashboard`;
 import { useProfileRestore, useProfileSyncStatus } from "./use-profile-synchronizer";
 import * as profileUtilsHook from "./use-profile-utils";
+
+const history = createMemoryHistory();
+const dashboardURL = `/profiles/${getDefaultProfileId()}/dashboard`;
 
 describe("useProfileSyncStatus", () => {
 	it("should restore", async () => {
