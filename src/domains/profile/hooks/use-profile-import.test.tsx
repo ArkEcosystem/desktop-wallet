@@ -67,9 +67,9 @@ describe("useProfileImport", () => {
 		const { result } = renderHook(() => useProfileImport({ env }));
 
 		await act(async () => {
-			await expect(result.current.importProfile({ file: passwordProtectedDwe, password: "test" })).rejects.toEqual(
-				new Error("InvalidPassword"),
-			);
+			await expect(
+				result.current.importProfile({ file: passwordProtectedDwe, password: "test" }),
+			).rejects.toEqual(new Error("InvalidPassword"));
 		});
 	});
 
@@ -80,9 +80,9 @@ describe("useProfileImport", () => {
 		const { result } = renderHook(() => useProfileImport({ env }));
 
 		await act(async () => {
-			await expect(result.current.importProfile({ file: passwordProtectedDwe, password: "test" })).rejects.toEqual(
-				new Error("some error"),
-			);
+			await expect(
+				result.current.importProfile({ file: passwordProtectedDwe, password: "test" }),
+			).rejects.toEqual(new Error("some error"));
 		});
 		mockProfileImport.mockRestore();
 	});
@@ -110,7 +110,9 @@ describe("useProfileImport", () => {
 		const { result } = renderHook(() => useProfileImport({ env }));
 
 		await act(async () => {
-			await expect(result.current.importProfile({ file: jsonEmpty })).rejects.toEqual(new Error("MissingWallets"));
+			await expect(result.current.importProfile({ file: jsonEmpty })).rejects.toEqual(
+				new Error("MissingWallets"),
+			);
 		});
 	});
 
@@ -118,7 +120,9 @@ describe("useProfileImport", () => {
 		const { result } = renderHook(() => useProfileImport({ env }));
 
 		await act(async () => {
-			await expect(result.current.importProfile({ file: jsonCorrupted })).rejects.toEqual(new Error("CorruptedData"));
+			await expect(result.current.importProfile({ file: jsonCorrupted })).rejects.toEqual(
+				new Error("CorruptedData"),
+			);
 		});
 	});
 
