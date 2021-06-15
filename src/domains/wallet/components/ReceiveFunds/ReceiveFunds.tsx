@@ -8,33 +8,32 @@ import { Icon } from "app/components/Icon";
 import { Modal } from "app/components/Modal";
 import { NetworkIcon } from "domains/network/components/NetworkIcon";
 import { TransactionDetail } from "domains/transaction/components/TransactionDetail";
+import { ReceiveFundsForm, useQRCode } from "domains/wallet/components/ReceiveFunds";
 import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import { useTranslation } from "react-i18next";
-
-import { ReceiveFundsForm, useQRCode } from ".";
 
 interface ReceiveFundsProps {
 	address: string;
 	icon: string;
 	name?: string;
-	network?: Networks.Network;
+	network: Networks.Network;
 	isOpen: boolean;
 	onClose?: () => void;
 }
 
-export const ReceiveFunds = ({ address, icon, name, network, isOpen, onClose }: ReceiveFundsProps) => {
+const ReceiveFunds = ({ address, icon, name, network, isOpen, onClose }: ReceiveFundsProps) => {
 	const [isFormOpen, setIsFormOpen] = useState<boolean>(false);
 
 	const { t } = useTranslation();
 	const form = useForm({ mode: "onChange" });
 	const { amount, smartbridge } = form.watch();
-	const networkId = network?.id?.();
 
 	const { uri, image } = useQRCode({
 		amount,
 		smartbridge,
-		network: networkId,
+		network: network.id(),
+		coin: network.coin(),
 		address,
 	});
 
@@ -51,7 +50,7 @@ export const ReceiveFunds = ({ address, icon, name, network, isOpen, onClose }: 
 					<TransactionDetail
 						borderPosition="bottom"
 						label={t("COMMON.NAME")}
-						extra={<NetworkIcon size="lg" coin={icon} network={networkId} />}
+						extra={<NetworkIcon size="lg" coin={icon} network={network.id()} />}
 					>
 						{name}
 					</TransactionDetail>
@@ -64,7 +63,7 @@ export const ReceiveFunds = ({ address, icon, name, network, isOpen, onClose }: 
 					borderPosition="bottom"
 					extra={
 						<div className="-space-x-2 whitespace-nowrap">
-							{!name && <NetworkIcon size="lg" coin={icon} network={networkId} />}
+							{!name && <NetworkIcon size="lg" coin={icon} network={network.id()} />}
 							<Avatar address={address} size="lg" />
 						</div>
 					}
@@ -147,3 +146,5 @@ export const ReceiveFunds = ({ address, icon, name, network, isOpen, onClose }: 
 ReceiveFunds.defaultProps = {
 	isOpen: false,
 };
+
+export { ReceiveFunds };
