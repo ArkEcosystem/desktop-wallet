@@ -1,4 +1,3 @@
-import { Contracts } from "@arkecosystem/platform-sdk-profiles";
 import { images } from "app/assets/images";
 import { Button } from "app/components/Button";
 import { Icon } from "app/components/Icon";
@@ -9,15 +8,16 @@ import { useScroll } from "app/hooks";
 import { ReceiveFunds } from "domains/wallet/components/ReceiveFunds";
 import { SearchWallet } from "domains/wallet/components/SearchWallet";
 import { SelectedWallet } from "domains/wallet/components/SearchWallet/SearchWallet.models";
-import React, { useMemo, useState } from "react";
+import React, { useState } from "react";
 import { useTranslation } from "react-i18next";
-import { NavLink, useHistory } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 import { openExternal } from "utils/electron-utils";
 
 import { BackButton } from "./components/BackButton";
 import { Balance } from "./components/Balance";
 import { UserInfo } from "./components/UserInfo";
 import { NavigationBarProps } from "./NavigationBar.contract";
+import { getUserInitials, getWallets, renderMenu } from "./NavigationBar.helpers";
 import { LogoContainer, NavigationButtonWrapper, NavWrapper } from "./NavigationBar.styles";
 
 const { ARKLogo } = images.common;
@@ -36,7 +36,6 @@ const NavigationBar = ({
 	const { t } = useTranslation();
 
 	const [searchWalletIsOpen, setSearchWalletIsOpen] = useState(false);
-
 	const [selectedWallet, setSelectedWallet] = useState<SelectedWallet | undefined>();
 
 	const handleSelectWallet = (wallet: SelectedWallet) => {
@@ -46,46 +45,7 @@ const NavigationBar = ({
 
 	const { profileIsSyncingExchangeRates } = useConfiguration();
 
-	const renderMenu = () => {
-		if (!profile?.id()) {
-			return null;
-		}
-
-		return menu.map((menuItem: any, index: number) => (
-			<li key={index} className="flex">
-				<NavLink
-					to={menuItem.mountPath(profile.id())}
-					title={menuItem.title}
-					className="relative flex items-center font-semibold transition-colors duration-200 focus:outline-none text-md text-theme-secondary-text group"
-				>
-					<div className="absolute inset-0 -mx-2 rounded group-focus-visible group-focus:ring-2 ring-theme-primary-400" />
-					{menuItem.title}
-				</NavLink>
-			</li>
-		));
-	};
-
-	const getUserInitials = () => {
-		const name = profile?.settings().get(Contracts.ProfileSetting.Name);
-		return name ? (name as string).slice(0, 2).toUpperCase() : undefined;
-	};
-
-	const profileWalletsCount = profile?.wallets().count();
-	const wallets = useMemo(() => {
-		if (!profile) {
-			return [];
-		}
-
-		if (profile?.settings().get(Contracts.ProfileSetting.UseTestNetworks)) {
-			return profile?.wallets().values();
-		}
-
-		return profile
-			?.wallets()
-			.values()
-			.filter((wallet) => wallet.network().isLive());
-	}, [profile, profileWalletsCount]); // eslint-disable-line react-hooks/exhaustive-deps
-
+	const wallets = getWallets(profile);
 	const scroll = useScroll();
 
 	return (
@@ -109,7 +69,7 @@ const NavigationBar = ({
 
 					{variant === "full" && (
 						<>
-							<ul className="flex ml-4 mr-auto space-x-8 h-21">{renderMenu()}</ul>
+							<ul className="flex ml-4 mr-auto space-x-8 h-21">{renderMenu(profile, menu)}</ul>
 
 							<div className="flex items-center my-auto space-x-4">
 								{profile && <NotificationsDropdown profile={profile} />}
@@ -157,7 +117,7 @@ const NavigationBar = ({
 								<Balance profile={profile} isLoading={profileIsSyncingExchangeRates} />
 
 								<UserInfo
-									userInitials={getUserInitials()}
+									userInitials={getUserInitials(profile)}
 									avatarImage={profile?.avatar()}
 									userActions={userActions}
 									onUserAction={(action: any) => {
