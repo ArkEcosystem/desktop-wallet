@@ -1,8 +1,7 @@
 /* eslint-disable @typescript-eslint/require-await */
 import { Contracts } from "@arkecosystem/platform-sdk-profiles";
 import { act, renderHook } from "@testing-library/react-hooks";
-import { httpClient } from "app/services";
-import { toasts } from "app/services";
+import { httpClient , toasts } from "app/services";
 import React from "react";
 import { FormProvider, useForm } from "react-hook-form";
 import {
@@ -16,7 +15,7 @@ import {
 	within,
 } from "utils/testing-library";
 
-import { SendTransactionForm } from "./";
+import { SendTransactionForm } from ".";
 
 let profile: Contracts.IProfile;
 let wallet: Contracts.IReadWriteWallet;

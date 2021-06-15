@@ -2,7 +2,7 @@ import { TransactionCompactRow } from "domains/transaction/components/Transactio
 import React, { useEffect, useState } from "react";
 import VisibilitySensor from "react-visibility-sensor";
 
-import { NotificationTransactionItemProps, NotificationTransactionItemSkeleton } from "./";
+import { NotificationTransactionItemProps, NotificationTransactionItemSkeleton } from ".";
 
 export const NotificationTransactionItem = ({
 	notification,

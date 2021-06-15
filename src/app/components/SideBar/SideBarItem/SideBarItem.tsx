@@ -1,8 +1,7 @@
 import { Icon } from "app/components/Icon";
 import cn from "classnames";
 import React from "react";
-import { withRouter } from "react-router";
-import { RouteComponentProps } from "react-router";
+import { RouteComponentProps,withRouter  } from "react-router";
 
 import { ItemProps } from "../SideBar";
 

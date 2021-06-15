@@ -12,7 +12,7 @@ import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import { useTranslation } from "react-i18next";
 
-import { ReceiveFundsForm, useQRCode } from "./";
+import { ReceiveFundsForm, useQRCode } from ".";
 
 interface ReceiveFundsProps {
 	address: string;

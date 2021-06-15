@@ -13,16 +13,14 @@ import {
 	act,
 	env,
 	fireEvent,
-	getDefaultProfileId,
-	render,
+ getDefaultLedgerTransport, 	getDefaultProfileId,
+getDefaultWalletId, getDefaultWalletMnemonic,	render,
 	renderWithRouter,
 	syncFees,
 	waitFor,
-	within,
-} from "utils/testing-library";
-import { getDefaultLedgerTransport, getDefaultWalletId, getDefaultWalletMnemonic } from "utils/testing-library";
+	within } from "utils/testing-library";
 
-import { FormStep, ReviewStep, SendIpfs, SummaryStep } from "./";
+import { FormStep, ReviewStep, SendIpfs, SummaryStep } from ".";
 
 const passphrase = getDefaultWalletMnemonic();
 const fixtureProfileId = getDefaultProfileId();

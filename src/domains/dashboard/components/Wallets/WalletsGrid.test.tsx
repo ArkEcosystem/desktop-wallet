@@ -4,7 +4,7 @@ import React from "react";
 import { Route } from "react-router-dom";
 import { env, getDefaultProfileId, render, renderWithRouter, waitFor } from "utils/testing-library";
 
-import { GridWallet, WalletsGrid } from "./";
+import { GridWallet, WalletsGrid } from ".";
 
 let profile: Contracts.IProfile;
 let wallets: GridWallet[];

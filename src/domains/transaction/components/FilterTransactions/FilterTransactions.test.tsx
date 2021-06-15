@@ -2,7 +2,7 @@ import { Contracts } from "@arkecosystem/platform-sdk-profiles";
 import React from "react";
 import { act, env, fireEvent, getDefaultProfileId, render, waitFor } from "utils/testing-library";
 
-import { FilterTransactions } from "./";
+import { FilterTransactions } from ".";
 
 let profile: Contracts.IProfile;
 

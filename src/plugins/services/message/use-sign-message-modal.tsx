@@ -1,8 +1,8 @@
 import { Services } from "@arkecosystem/platform-sdk";
 import { useActiveProfile } from "app/hooks";
 import { SignMessage } from "domains/wallet/components/SignMessage";
-import { useCallback, useState } from "react";
-import React from "react";
+import React, { useCallback, useState } from "react";
+
 
 export const useSignMessageModal = ({ message, walletId }: { message: string; walletId: string }) => {
 	const [isOpen, setIsOpen] = useState(false);

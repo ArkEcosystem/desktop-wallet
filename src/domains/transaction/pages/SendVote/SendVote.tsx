@@ -17,7 +17,7 @@ import { useForm } from "react-hook-form";
 import { useTranslation } from "react-i18next";
 import { useHistory } from "react-router-dom";
 
-import { FormStep, ReviewStep, SummaryStep } from "./";
+import { FormStep, ReviewStep, SummaryStep } from ".";
 import { VoteLedgerReview } from "./LedgerReview";
 
 export const SendVote = () => {

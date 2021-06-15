@@ -13,7 +13,7 @@ import {
 	NotificationsProps,
 	NotificationsWrapper,
 	NotificationTransactionItem,
-} from "./";
+} from ".";
 
 export const Notifications = ({ profile, onNotificationAction, onTransactionClick }: NotificationsProps) => {
 	const { t } = useTranslation();

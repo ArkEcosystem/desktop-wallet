@@ -3,7 +3,7 @@ import { uniqBy } from "@arkecosystem/utils";
 import { useWalletConfig } from "domains/dashboard/hooks";
 import { useMemo } from "react";
 
-import { FilterWalletsHookProps } from "./";
+import { FilterWalletsHookProps } from ".";
 
 export const useWalletFilters = ({ profile }: { profile: Contracts.IProfile }) => {
 	const { defaultConfiguration, setValue, walletsDisplayType, selectedNetworkIds, viewType } = useWalletConfig({
