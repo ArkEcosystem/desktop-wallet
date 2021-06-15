@@ -22,6 +22,8 @@ const RecipientListWrapper = styled.div`
 const RecipientListItem = ({
 	address,
 	amount,
+	exchangeAmount,
+	exchangeTicker,
 	assetSymbol,
 	isEditable,
 	label,
@@ -85,7 +87,9 @@ const RecipientListItem = ({
 			{showAmount && (
 				<td className="py-6">
 					<div className="mb-1 text-sm font-semibold text-right text-theme-secondary-500 dark:text-theme-secondary-700">
-						<span>{t("COMMON.AMOUNT")}</span>
+						{exchangeAmount && <Amount ticker={exchangeTicker!} value={exchangeAmount} normalize={false} />}
+
+						{!exchangeAmount && <span>{t("COMMON.AMOUNT")}</span>}
 					</div>
 					<div className="font-semibold text-right">
 						<Amount ticker={assetSymbol!} value={amount!} />
@@ -146,6 +150,8 @@ export const RecipientList = ({
 						showAmount={showAmount}
 						address={recipient.address}
 						amount={recipient.amount}
+						exchangeAmount={recipient.exchangeAmount}
+						exchangeTicker={recipient.exchangeTicker}
 						assetSymbol={assetSymbol}
 						isEditable={isEditable}
 						label={label}

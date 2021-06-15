@@ -245,14 +245,21 @@ export const AddRecipient = ({
 	};
 
 	const handleAddRecipient = (address: string, amount: string, displayAmount: string) => {
-		const newRecipients = [
-			...addedRecipients,
-			{
-				amount: BigNumber.make(amount),
-				displayAmount,
-				address,
-			},
-		];
+		let newRecipient: RecipientListItem = {
+			amount: BigNumber.make(amount),
+			displayAmount,
+			address,
+		};
+
+		if (!senderWallet!.network().isTest()) {
+			newRecipient = {
+				...newRecipient,
+				exchangeAmount: convert(amount),
+				exchangeTicker: exchangeTicker,
+			};
+		}
+
+		const newRecipients = [...addedRecipients, newRecipient];
 
 		setAddedRecipients(newRecipients);
 		onChange?.(newRecipients);

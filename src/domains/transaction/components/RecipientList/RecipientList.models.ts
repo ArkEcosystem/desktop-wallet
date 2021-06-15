@@ -4,6 +4,8 @@ export interface RecipientListItem {
 	address: string;
 	displayAmount?: string;
 	amount?: BigNumber;
+	exchangeAmount?: BigNumber;
+	exchangeTicker?: string;
 	assetSymbol?: string;
 	isEditable?: boolean;
 	label?: string;
