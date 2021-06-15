@@ -1,6 +1,6 @@
 import { Contracts } from "@arkecosystem/platform-sdk-profiles";
 import { uniq } from "@arkecosystem/utils";
-import { useConfiguration } from "app/contexts";
+import { useConfiguration, useEnvironmentContext } from "app/contexts";
 import { DashboardConfiguration } from "domains/dashboard/pages/Dashboard";
 import { useMemo } from "react";
 
@@ -11,6 +11,8 @@ export const useWalletConfig = ({
 	profile: Contracts.IProfile;
 	defaults?: DashboardConfiguration;
 }) => {
+	const env = useEnvironmentContext();
+
 	const defaultConfiguration: DashboardConfiguration = {
 		walletsDisplayType: "all",
 		viewType: "grid",
@@ -34,11 +36,12 @@ export const useWalletConfig = ({
 
 	const dashboardConfiguration = dashboard || profileDefaults;
 
-	const setValue = (key: string, value: any) => {
+	const setValue = async (key: string, value: any) => {
 		dashboardConfiguration[key] = value;
 
 		setConfiguration({ dashboard: dashboardConfiguration });
 		profile.settings().set(Contracts.ProfileSetting.DashboardConfiguration, dashboardConfiguration);
+		await env.persist();
 	};
 
 	const { selectedNetworkIds, walletsDisplayType } = dashboardConfiguration;

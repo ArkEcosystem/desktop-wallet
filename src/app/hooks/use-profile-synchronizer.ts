@@ -1,5 +1,7 @@
 import { Contracts } from "@arkecosystem/platform-sdk-profiles";
+import { uniq } from "@arkecosystem/utils";
 import { useConfiguration, useEnvironmentContext } from "app/contexts";
+import { DashboardConfiguration } from "domains/dashboard/pages/Dashboard";
 import { useEffect, useMemo, useRef } from "react";
 import { matchPath, useHistory, useLocation } from "react-router-dom";
 
@@ -156,7 +158,27 @@ export const useProfileRestore = () => {
 	const { shouldRestore, markAsRestored, setStatus } = useProfileSyncStatus();
 	const { persist, env } = useEnvironmentContext();
 	const { getProfileFromUrl, getProfileStoredPassword } = useProfileUtils(env);
+	const { setConfiguration } = useConfiguration();
 	const history = useHistory();
+
+	const restoreProfileConfig = (profile: Contracts.IProfile) => {
+		const defaultConfiguration: DashboardConfiguration = {
+			walletsDisplayType: "all",
+			viewType: "grid",
+			selectedNetworkIds: uniq(
+				profile
+					.wallets()
+					.values()
+					.map((wallet) => wallet.network().id()),
+			),
+		};
+
+		const config = profile
+			.settings()
+			.get(Contracts.ProfileSetting.DashboardConfiguration, defaultConfiguration) as DashboardConfiguration;
+
+		setConfiguration({ dashboard: config });
+	};
 
 	const restoreProfile = async (profile: Contracts.IProfile, passwordInput?: string) => {
 		if (!shouldRestore(profile)) {
@@ -170,6 +192,9 @@ export const useProfileRestore = () => {
 		// Reset profile normally (passwordless or not)
 		await env.profiles().restore(profile, password);
 		markAsRestored(profile.id());
+
+		// Restore profile's config
+		restoreProfileConfig(profile);
 
 		// Profile restore finished but url changed in the meanwhile.
 		// Prevent from unecessary save of old profile.
