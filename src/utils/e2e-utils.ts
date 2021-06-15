@@ -132,7 +132,8 @@ const searchAddressesMocks = () => {
 	return mocks;
 };
 
-export const mockRequest = (url: string | object | Function, fixture: string | object | Function, statusCode = 200) =>
+// eslint-disable-next-line @typescript-eslint/ban-types
+export const mockRequest = (url: string | Record<string, unknown> | Function, fixture: string | Record<string, unknown> | Function, statusCode = 200) =>
 	RequestMock()
 		.onRequestTo(url)
 		.respond(

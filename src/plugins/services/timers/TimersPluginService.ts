@@ -25,10 +25,12 @@ export class TimersPluginService implements PluginService {
 		return clearTimeout(handle);
 	}
 
+	// eslint-disable-next-line @typescript-eslint/ban-types
 	private setInterval(handler: Function, timeout: number) {
 		return setInterval(() => handler(), timeout);
 	}
 
+	// eslint-disable-next-line @typescript-eslint/ban-types
 	private setTimeout(handler: Function, timeout: number) {
 		return setTimeout(() => handler(), timeout);
 	}

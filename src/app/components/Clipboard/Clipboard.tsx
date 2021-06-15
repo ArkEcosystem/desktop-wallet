@@ -4,7 +4,7 @@ import { ClipboardButton, ClipboardButtonProps } from "./ClipboardButton";
 import { ClipboardIcon, ClipboardIconProps } from "./ClipboardIcon";
 
 export interface ClipboardCommonProps {
-	data: string | object;
+	data: string | Record<string, unknown>;
 	options?: Record<string, any>;
 	children: React.ReactNode;
 }

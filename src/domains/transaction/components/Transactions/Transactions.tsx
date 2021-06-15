@@ -10,6 +10,7 @@ import React, { memo, useEffect, useMemo, useState } from "react";
 import { Trans, useTranslation } from "react-i18next";
 
 interface TransactionsProps {
+	// eslint-disable-next-line @typescript-eslint/ban-types
 	fetchMoreAction?: Function;
 	onRowClick?: (row: DTO.ExtendedTransactionData) => void;
 	emptyText?: string;
@@ -87,7 +88,7 @@ export const Transactions = memo(
 
 		return (
 			<>
-				<div className="flex relative justify-between">
+				<div className="relative flex justify-between">
 					{title && title}
 
 					{!title && (
@@ -147,7 +148,7 @@ export const Transactions = memo(
 					<Button
 						data-testid="transactions__fetch-more-button"
 						variant="secondary"
-						className="mt-10 mb-5 w-full"
+						className="w-full mt-10 mb-5"
 						disabled={isLoadingMore}
 						onClick={() => fetchMore()}
 					>

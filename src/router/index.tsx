@@ -14,7 +14,7 @@ import { Middleware } from "./interfaces";
 
 export * from "./RouterView";
 
-export const routes: Array<Object> = [
+export const routes: Record<string, unknown>[] = [
 	...ContactRoutes,
 	...DashboardRoutes,
 	...ExchangeRoutes,

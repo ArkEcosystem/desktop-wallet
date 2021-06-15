@@ -11,5 +11,5 @@ export const handleBroadcastError = ({ rejected, errors }: Services.BroadcastRes
 		return;
 	}
 
-	throw new Error(Object.values(errors as object)[0]);
+	throw new Error(Object.values(errors)[0] as unknown as string);
 };

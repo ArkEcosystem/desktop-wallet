@@ -16,8 +16,8 @@ export interface PluginAPI {
 	http(): {
 		create: () => HttpClient;
 		decorate: (key: string, callback: <T = any>(arg: T) => T) => void;
-		get: (url: string, query?: object) => Promise<HttpResponse>;
-		post: (url: string, data?: object) => Promise<HttpResponse>;
+		get: (url: string, query?: Record<string, unknown>) => Promise<HttpResponse>;
+		post: (url: string, data?: Record<string, unknown>) => Promise<HttpResponse>;
 	};
 	filesystem(): {
 		askUserToSaveFile(content: string, suggestedFileName?: string): Promise<void>;
@@ -39,7 +39,9 @@ export interface PluginAPI {
 	timers(): {
 		clearInterval: (handle: number) => void;
 		clearTimeout: (handle: number) => void;
+		// eslint-disable-next-line @typescript-eslint/ban-types
 		setInterval: (handler: Function, timeout: number) => number;
+		// eslint-disable-next-line @typescript-eslint/ban-types
 		setTimeout: (handler: Function, timeout: number) => number;
 	};
 	message(): {
@@ -80,6 +82,7 @@ export interface PluginServiceConfig {
 
 export interface PluginService {
 	config: () => PluginServiceConfig;
+	// eslint-disable-next-line @typescript-eslint/ban-types
 	api: (plugin: PluginController) => Record<string, Function>;
 	boot?: (context: { hooks: PluginHooks }) => void;
 }

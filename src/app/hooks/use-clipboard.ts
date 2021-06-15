@@ -6,7 +6,7 @@ interface ClipboardOptions {
 	onError?: any;
 }
 
-export const useClipboard = (options?: ClipboardOptions): [boolean, (data: string | object) => void] => {
+export const useClipboard = (options?: ClipboardOptions): [boolean, (data: string | Record<string, unknown>) => void] => {
 	const [hasCopied, setHasCopied] = useState(false);
 
 	const resetAfter = options && options.resetAfter;

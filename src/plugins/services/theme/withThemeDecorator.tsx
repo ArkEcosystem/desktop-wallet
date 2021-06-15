@@ -2,7 +2,7 @@ import { PluginManager } from "plugins/core";
 import React from "react";
 import { ErrorBoundary } from "react-error-boundary";
 
-export const withThemeDecorator = <T extends {}>(
+export const withThemeDecorator = <T extends Record<string, unknown>>(
 	hookName: string,
 	Component: React.ComponentType<T>,
 	manager: PluginManager,

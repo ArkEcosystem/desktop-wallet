@@ -6,7 +6,7 @@ import { useTranslation } from "react-i18next";
 import { TransactionCompactRow } from "./TransactionRow/TransactionCompactRow";
 import { TransactionRow } from "./TransactionRow/TransactionRow";
 
-type Skeleton = object;
+type Skeleton = Record<string, unknown>;
 
 interface Props {
 	transactions: DTO.ExtendedTransactionData[];

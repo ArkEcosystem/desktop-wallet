@@ -34,7 +34,7 @@ export class HttpClient extends AbstractRequest {
 		method: string,
 		url: string,
 		data?: {
-			query?: object;
+			query?: Record<string, unknown>;
 			data?: any;
 		},
 	): Promise<HttpResponse> {

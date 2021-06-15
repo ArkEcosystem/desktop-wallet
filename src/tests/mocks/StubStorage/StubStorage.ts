@@ -16,7 +16,7 @@ export class StubStorage implements Storage {
 		return this.storage[key] as T;
 	}
 
-	public async set(key: string, value: string | object): Promise<void> {
+	public async set(key: string, value: string | Record<string, unknown>): Promise<void> {
 		this.storage[key] = value;
 	}
 

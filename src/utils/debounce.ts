@@ -1,3 +1,4 @@
+// eslint-disable-next-line @typescript-eslint/ban-types
 export const debounceAsync = (callback: Function, delay: number) => {
 	let timeout: any;
 
