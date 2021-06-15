@@ -15,12 +15,13 @@ module.exports = {
 	},
 	plugins: [
 		"@typescript-eslint",
+		"jest",
 		"prettier",
-		"testing-library",
-		"testcafe",
-		"simple-import-sort",
-		"unused-imports",
 		"react-hooks",
+		"simple-import-sort",
+		"testcafe",
+		"testing-library",
+		"unused-imports",
 	],
 	extends: [
 		"eslint:recommended",
@@ -30,11 +31,13 @@ module.exports = {
 		"plugin:import/errors",
 		"plugin:import/typescript",
 		"plugin:import/warnings",
+		"plugin:jest/recommended",
 		"plugin:prettier/recommended",
 		"plugin:react-hooks/recommended",
 		"plugin:react/recommended",
 		"plugin:testcafe/recommended",
 		"plugin:testing-library/react",
+		"prettier",
 	],
 	rules: {
 		"@typescript-eslint/ban-ts-comment": "off",
@@ -80,6 +83,7 @@ module.exports = {
 		"import/no-useless-path-segments": "error",
 		"import/no-webpack-loader-syntax": "error",
 		"import/order": "warn",
+		"jest/no-conditional-expect": "off",
 		"no-unused-expressions": "off",
 		"no-unused-vars": "off",
 		"prefer-const": [
@@ -100,7 +104,6 @@ module.exports = {
 		"simple-import-sort/imports": "error",
 		"simple-import-sort/exports": "error",
 		"unused-imports/no-unused-imports-ts": "error",
-		"unused-imports/no-unused-imports-ts": "warn",
 	},
 	settings: {
 		react: {
