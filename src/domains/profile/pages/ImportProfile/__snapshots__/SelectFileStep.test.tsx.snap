@@ -30,7 +30,7 @@ exports[`Import Profile Select File Step should change back from json to dwe 1`]
       data-testid="SelectFile"
     >
       <div
-        class="flex flex-col justify-center items-center h-full rounded-lg transition-colors duration-200 bg-theme-primary-50 dark:bg-theme-secondary-800"
+        class="h-full flex flex-col items-center justify-center rounded-lg transition-colors duration-200 bg-theme-primary-50 dark:bg-theme-secondary-800"
         data-testid="SelectFile__drop-zone"
       >
         <div
@@ -74,10 +74,10 @@ exports[`Import Profile Select File Step should change back from json to dwe 1`]
       class="mt-6"
     >
       <div
-        class="flex overflow-hidden flex-col p-4 space-y-4 rounded-lg sm:flex-row sm:items-center sm:space-y-0 sm:space-x-4 bg-theme-warning-50 dark:bg-theme-secondary-800"
+        class="flex overflow-hidden flex-col space-y-4 rounded-lg p-4 bg-theme-warning-50 dark:bg-theme-secondary-800 sm:space-y-0 sm:space-x-4 sm:flex-row sm:items-center"
       >
         <div
-          class="flex flex-shrink-0 justify-center items-center w-11 h-11 text-white rounded-lg bg-theme-warning-600"
+          class="h-11 w-11 flex flex-shrink-0 items-center justify-center rounded-lg text-white bg-theme-warning-600"
         >
           <div
             class="sc-bdfBwQ hteSKx"
@@ -149,7 +149,7 @@ exports[`Import Profile Select File Step should handle back event 1`] = `
       data-testid="SelectFile"
     >
       <div
-        class="flex flex-col justify-center items-center h-full rounded-lg transition-colors duration-200 bg-theme-primary-50 dark:bg-theme-secondary-800"
+        class="h-full flex flex-col items-center justify-center rounded-lg transition-colors duration-200 bg-theme-primary-50 dark:bg-theme-secondary-800"
         data-testid="SelectFile__drop-zone"
       >
         <div
@@ -257,7 +257,7 @@ exports[`Import Profile Select File Step should render file selection for dwe an
       data-testid="SelectFile"
     >
       <div
-        class="flex flex-col justify-center items-center h-full rounded-lg transition-colors duration-200 bg-theme-primary-50 dark:bg-theme-secondary-800"
+        class="h-full flex flex-col items-center justify-center rounded-lg transition-colors duration-200 bg-theme-primary-50 dark:bg-theme-secondary-800"
         data-testid="SelectFile__drop-zone"
       >
         <div
@@ -365,7 +365,7 @@ exports[`Import Profile Select File Step should render with dwe fileFormat selec
       data-testid="SelectFile"
     >
       <div
-        class="flex flex-col justify-center items-center h-full rounded-lg transition-colors duration-200 bg-theme-primary-50 dark:bg-theme-secondary-800"
+        class="h-full flex flex-col items-center justify-center rounded-lg transition-colors duration-200 bg-theme-primary-50 dark:bg-theme-secondary-800"
         data-testid="SelectFile__drop-zone"
       >
         <div
@@ -473,7 +473,7 @@ exports[`Import Profile Select File Step should render with json fileFormat sele
       data-testid="SelectFile"
     >
       <div
-        class="flex flex-col justify-center items-center h-full rounded-lg transition-colors duration-200 bg-theme-primary-50 dark:bg-theme-secondary-800"
+        class="h-full flex flex-col items-center justify-center rounded-lg transition-colors duration-200 bg-theme-primary-50 dark:bg-theme-secondary-800"
         data-testid="SelectFile__drop-zone"
       >
         <div
@@ -517,10 +517,10 @@ exports[`Import Profile Select File Step should render with json fileFormat sele
       class="mt-6"
     >
       <div
-        class="flex overflow-hidden flex-col p-4 space-y-4 rounded-lg sm:flex-row sm:items-center sm:space-y-0 sm:space-x-4 bg-theme-warning-50 dark:bg-theme-secondary-800"
+        class="flex overflow-hidden flex-col space-y-4 rounded-lg p-4 bg-theme-warning-50 dark:bg-theme-secondary-800 sm:space-y-0 sm:space-x-4 sm:flex-row sm:items-center"
       >
         <div
-          class="flex flex-shrink-0 justify-center items-center w-11 h-11 text-white rounded-lg bg-theme-warning-600"
+          class="h-11 w-11 flex flex-shrink-0 items-center justify-center rounded-lg text-white bg-theme-warning-600"
         >
           <div
             class="sc-bdfBwQ hteSKx"

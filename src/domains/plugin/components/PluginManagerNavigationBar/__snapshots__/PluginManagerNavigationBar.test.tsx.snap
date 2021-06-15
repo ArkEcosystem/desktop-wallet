@@ -4,7 +4,7 @@ exports[`PluginManagerNavigationBar should render 1`] = `
 <DocumentFragment>
   <div>
     <nav
-      class="sticky my-4 dark:bg-black PluginManagerNavigationBar__NavWrapper-sc-1x1q7te-0 iYjfAY top-21 bg-theme-secondary-100"
+      class="PluginManagerNavigationBar__NavWrapper-sc-1x1q7te-0 iYjfAY sticky my-4 dark:bg-black top-21 bg-theme-secondary-100"
       data-testid="PluginManagerNavigationBar"
     >
       <div
@@ -14,7 +14,7 @@ exports[`PluginManagerNavigationBar should render 1`] = `
           class="-mx-6 w-full"
         >
           <div
-            class="w-full Tabs__TabList-sc-1lxyvu-1 eWhkiE h-18"
+            class="Tabs__TabList-sc-1lxyvu-1 eWhkiE w-full h-18"
           >
             <button
               aria-selected="true"
@@ -184,7 +184,7 @@ exports[`PluginManagerNavigationBar should update selected 1`] = `
 <DocumentFragment>
   <div>
     <nav
-      class="sticky my-4 dark:bg-black PluginManagerNavigationBar__NavWrapper-sc-1x1q7te-0 iYjfAY top-21 bg-theme-secondary-100"
+      class="PluginManagerNavigationBar__NavWrapper-sc-1x1q7te-0 iYjfAY sticky my-4 dark:bg-black top-21 bg-theme-secondary-100"
       data-testid="PluginManagerNavigationBar"
     >
       <div
@@ -194,7 +194,7 @@ exports[`PluginManagerNavigationBar should update selected 1`] = `
           class="-mx-6 w-full"
         >
           <div
-            class="w-full Tabs__TabList-sc-1lxyvu-1 eWhkiE h-18"
+            class="Tabs__TabList-sc-1lxyvu-1 eWhkiE w-full h-18"
           >
             <button
               aria-selected="true"
