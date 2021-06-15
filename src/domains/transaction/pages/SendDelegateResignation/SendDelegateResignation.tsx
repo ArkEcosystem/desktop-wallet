@@ -78,13 +78,15 @@ export const SendDelegateResignation = ({ formDefaultData }: SendResignationProp
 	};
 
 	const handleSubmit = async () => {
-		const { fee, mnemonic, secondMnemonic, encryptionPassword } = getValues();
+		const { fee, mnemonic, secondMnemonic, encryptionPassword, wif, privateKey } = getValues();
 
 		try {
 			const signatory = await sign({
 				mnemonic,
 				secondMnemonic,
 				encryptionPassword,
+				wif,
+				privateKey,
 			});
 
 			const signedTransactionId = await activeWallet.transaction().signDelegateResignation({
@@ -175,6 +177,9 @@ export const SendDelegateResignation = ({ formDefaultData }: SendResignationProp
 										className="space-x-2"
 										isLoading={isSubmitting}
 										icon="Send"
+										iconWidth={16}
+										iconHeight={16}
+										iconPosition="right"
 									>
 										<span>{t("COMMON.SEND")}</span>
 									</Button>

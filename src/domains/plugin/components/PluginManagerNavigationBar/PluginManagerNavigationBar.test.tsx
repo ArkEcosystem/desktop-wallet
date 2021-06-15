@@ -51,7 +51,7 @@ describe("PluginManagerNavigationBar", () => {
 		const navIds = ["gaming", "utility", "exchange", "other", "my-plugins", "latest"];
 
 		for (const navId of navIds) {
-			const navItem = getByTestId(`PluginManagerNavigationBar__${navId}`);
+			const navItem = getByTestId(`tabs__tab-button-${navId}`);
 
 			act(() => {
 				fireEvent.click(navItem);
@@ -69,7 +69,7 @@ describe("PluginManagerNavigationBar", () => {
 			);
 
 			expect(result.current.currentView).toBe(navId);
-			expect(getByTestId(`PluginManagerNavigationBar__${navId}`)).toHaveClass("active");
+			expect(getByTestId(`tabs__tab-button-${navId}`)).toHaveAttribute("aria-selected", "true");
 		}
 
 		expect(asFragment()).toMatchSnapshot();
@@ -82,6 +82,6 @@ describe("PluginManagerNavigationBar", () => {
 			</PluginProviders>,
 		);
 
-		expect(getByTestId("PluginManagerNavigationBar__my-plugins__count")).toHaveTextContent("8");
+		expect(getByTestId("tabs__tab-button-my-plugins-count")).toHaveTextContent("8");
 	});
 });

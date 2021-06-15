@@ -7,7 +7,7 @@ exports[`FilterWallets should render 1`] = `
     data-testid="FilterWallets"
   >
     <div
-      class="mb-8"
+      class="mb-5"
     >
       <div
         class="font-semibold text-theme-secondary-text"
@@ -21,10 +21,10 @@ exports[`FilterWallets should render 1`] = `
       </div>
     </div>
     <div
-      class="space-y-6"
+      class="space-y-4"
     />
     <div
-      class="my-8 border-t border-dotted border-theme-secondary-300 dark:border-theme-secondary-800"
+      class="mt-6 mb-8 border-t border-dotted border-theme-secondary-300 dark:border-theme-secondary-800"
     />
     <div
       class="flex flex-col"
@@ -80,7 +80,7 @@ exports[`FilterWallets should render with networks selection 1`] = `
     data-testid="FilterWallets"
   >
     <div
-      class="mb-8"
+      class="mb-5"
     >
       <div
         class="font-semibold text-theme-secondary-text"
@@ -94,13 +94,13 @@ exports[`FilterWallets should render with networks selection 1`] = `
       </div>
     </div>
     <div
-      class="space-y-6"
+      class="space-y-4"
     >
       <div
         data-testid="FilterNetwork"
       >
         <div
-          class="mb-2 text-sm font-bold text-theme-secondary-400"
+          class="mb-3 text-sm font-bold text-theme-secondary-400"
         >
           Public Networks
         </div>
@@ -135,7 +135,7 @@ exports[`FilterWallets should render with networks selection 1`] = `
       </div>
     </div>
     <div
-      class="my-8 border-t border-dotted border-theme-secondary-300 dark:border-theme-secondary-800"
+      class="mt-6 mb-8 border-t border-dotted border-theme-secondary-300 dark:border-theme-secondary-800"
     />
     <div
       class="flex flex-col"

@@ -18,7 +18,7 @@ export function Tabs({ children, activeId, className, onChange }: TabsProps) {
 		if (currentId) {
 			onChange?.(currentId);
 		}
-	}, [currentId, onChange]);
+	}, [currentId]); // eslint-disable-line react-hooks/exhaustive-deps
 
 	React.useEffect(() => {
 		setCurrentId(activeId);
@@ -34,6 +34,7 @@ export function Tabs({ children, activeId, className, onChange }: TabsProps) {
 interface TabProps {
 	children: React.ReactNode;
 	tabId: string | number;
+	count?: number;
 }
 
 const TabButton = styled.button``;
@@ -55,6 +56,10 @@ export const Tab = React.forwardRef<HTMLButtonElement, TabProps>((props: TabProp
 				if (event.key === "ArrowLeft") {
 					let previousTab = event.target.previousElementSibling;
 
+					while (previousTab && previousTab.getAttribute("role") !== "tab") {
+						previousTab = previousTab.previousElementSibling;
+					}
+
 					if (!previousTab) {
 						previousTab = event.target.parentElement.querySelector("[role=tab]:last-child");
 					}
@@ -62,6 +67,10 @@ export const Tab = React.forwardRef<HTMLButtonElement, TabProps>((props: TabProp
 					previousTab.focus();
 				} else if (event.key === "ArrowRight") {
 					let nextTab = event.target.nextElementSibling;
+
+					while (nextTab && nextTab.getAttribute("role") !== "tab") {
+						nextTab = nextTab.nextElementSibling;
+					}
 
 					if (!nextTab) {
 						nextTab = event.target.parentElement.querySelector("[role=tab]");
@@ -74,18 +83,35 @@ export const Tab = React.forwardRef<HTMLButtonElement, TabProps>((props: TabProp
 			}}
 			onClick={() => context?.setCurrentId(props.tabId)}
 		>
-			<div className="absolute inset-0 -mx-1 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible" />
+			<div className="absolute inset-0 -mx-3 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible" />
+
 			<span>{props.children}</span>
+
+			{props.count !== undefined && (
+				<span
+					data-testid={`tabs__tab-button-${props.tabId}-count`}
+					className="rounded py-0.5 px-1.5 ml-2 text-sm font-semibold bg-theme-primary-100 dark:bg-theme-secondary-900"
+				>
+					{props.count}
+				</span>
+			)}
 		</TabButton>
 	);
 });
+
 Tab.displayName = "Tab";
 
-export const TabList = styled.div`
-	${tw`inline-flex justify-start items-stretch rounded-xl bg-theme-secondary-100 dark:bg-theme-secondary-background px-3`}
+export const TabList = styled.div<{ noBackground?: boolean }>`
+	${tw`inline-flex justify-start items-stretch`}
+
+	${({ noBackground }) => {
+		if (!noBackground) {
+			return tw`rounded-xl bg-theme-secondary-100 dark:bg-theme-secondary-background px-2`;
+		}
+	}}
 
 	& > ${TabButton} {
-		${tw`px-4 mx-4 py-5 border-t-2 border-b-2 border-transparent font-semibold text-theme-secondary-text relative transition-colors ease-in-out duration-300 focus:(outline-none text-theme-text) hover:text-theme-text`}
+		${tw`relative mx-6 font-semibold border-t-2 border-b-2 border-transparent text-theme-secondary-text transition-colors ease-in-out duration-300 focus:(outline-none text-theme-text) hover:text-theme-text`}
 
 		&[aria-selected="true"] {
 			border-bottom-color: var(--theme-color-primary-600);
@@ -95,7 +121,7 @@ export const TabList = styled.div`
 		& + ${TabButton}:after {
 			content: "";
 			width: 1px;
-			${tw`h-4 bg-theme-secondary-400 dark:bg-theme-secondary-700 absolute -left-4 top-1/2 transform -translate-y-1/2 block`};
+			${tw`h-4 bg-theme-secondary-300 dark:bg-theme-secondary-800 absolute -left-6 top-1/2 transform -translate-y-1/2 block`};
 		}
 	}
 `;

@@ -200,7 +200,16 @@ export const SendTransfer = () => {
 
 		clearErrors("mnemonic");
 
-		const { fee, mnemonic, secondMnemonic, recipients, smartbridge, encryptionPassword } = getValues();
+		const {
+			fee,
+			mnemonic,
+			secondMnemonic,
+			recipients,
+			smartbridge,
+			encryptionPassword,
+			wif,
+			privateKey,
+		} = getValues();
 		const isMultiPayment = recipients.length > 1;
 		const transactionType = isMultiPayment ? "multiPayment" : "transfer";
 
@@ -209,6 +218,8 @@ export const SendTransfer = () => {
 				mnemonic,
 				secondMnemonic,
 				encryptionPassword,
+				wif,
+				privateKey,
 			});
 
 			const transactionInput: Services.TransactionInputs = {
@@ -403,8 +414,11 @@ export const SendTransfer = () => {
 													type="submit"
 													data-testid="SendTransfer__button--submit"
 													disabled={!isValid || isSubmitting}
-													icon="Send"
 													isLoading={isSubmitting}
+													icon="Send"
+													iconWidth={16}
+													iconHeight={16}
+													iconPosition="right"
 												>
 													<span>{t("COMMON.SEND")}</span>
 												</Button>

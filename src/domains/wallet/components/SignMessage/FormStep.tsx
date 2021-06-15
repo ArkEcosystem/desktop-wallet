@@ -28,7 +28,7 @@ export const FormStep = ({
 		: t("WALLETS.MODAL_SIGN_MESSAGE.FORM_STEP.DESCRIPTION_MNEMONIC");
 
 	return (
-		<section className="space-y-8">
+		<section className="space-y-5">
 			<Header title={t("WALLETS.MODAL_SIGN_MESSAGE.FORM_STEP.TITLE")} subtitle={subtitle} />
 
 			<FormField name="signatory-address">
@@ -66,7 +66,7 @@ export const FormStep = ({
 				<FormField name="mnemonic">
 					<FormLabel label={t("COMMON.MNEMONIC")} />
 					<InputPassword
-						ref={register(authentication.mnemonic(wallet.coin(), wallet.address()))}
+						ref={register(authentication.mnemonic(wallet))}
 						data-testid="SignMessage__mnemonic-input"
 					/>
 				</FormField>
