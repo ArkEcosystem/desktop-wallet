@@ -68,24 +68,22 @@ const RecipientListItem = ({
 
 	return (
 		<tr
-			className="border-b border-dashed last:border-b-0 border-theme-secondary-300 dark:border-theme-secondary-800"
+			className="flex border-b border-dashed last:border-b-0 border-theme-secondary-300 dark:border-theme-secondary-800"
 			data-testid="recipient-list__recipient-list-item"
 		>
-			<td className="py-6 w-14">
+			<td className="flex-none py-6">
 				<Avatar address={address} size="lg" />
 			</td>
 
-			<td className="py-6">
+			<td className="ml-5 w-28 flex-1 py-6">
 				<div className="mb-1 text-sm font-semibold text-theme-secondary-500 dark:text-theme-secondary-700">
 					<span>{t(label || "COMMON.RECIPIENT_#", { count: listIndex! + 1 })}</span>
 				</div>
-				<div className="max-w-sm">
-					<Address address={address} walletName={walletName} />
-				</div>
+				<Address address={address} walletName={walletName} />
 			</td>
 
 			{showAmount && (
-				<td className="py-6">
+				<td className="flex-1 flex-shrink-0 py-6 pl-3">
 					<div className="mb-1 text-sm font-semibold text-right text-theme-secondary-500 dark:text-theme-secondary-700">
 						{exchangeAmount && <Amount ticker={exchangeTicker!} value={exchangeAmount} normalize={false} />}
 
@@ -98,7 +96,7 @@ const RecipientListItem = ({
 			)}
 
 			{isEditable && (
-				<td className="py-6 w-20 text-right">
+				<td className="ml-3 flex-none py-6">
 					<Tooltip content={tooltipDisabled} disabled={!isButtonDisabled}>
 						<span className="inline-block">
 							<Button
