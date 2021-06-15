@@ -367,168 +367,157 @@ exports[`PluginManager should cancel install plugin 1`] = `
           </div>
         </div>
         <nav
-          class="PluginManagerNavigationBar__NavWrapper-sc-1x1q7te-0 jJNecf sticky top-21 bg-theme-secondary-100 dark:bg-black my-4"
+          class="PluginManagerNavigationBar__NavWrapper-sc-1x1q7te-0 iYjfAY sticky top-21 bg-theme-secondary-100 dark:bg-black my-4"
           data-testid="PluginManagerNavigationBar"
         >
           <div
             class="container flex justify-between items-center px-10 mx-auto"
           >
-            <div>
-              <ul
-                class="flex h-18"
+            <div
+              class="-mx-6 w-full"
+            >
+              <div
+                class="Tabs__TabList-sc-1lxyvu-1 eWhkiE w-full h-18"
               >
-                <li
-                  class="flex"
+                <button
+                  aria-selected="true"
+                  class="Tabs__TabButton-sc-1lxyvu-0 group"
+                  data-testid="tabs__tab-button-latest"
+                  role="tab"
+                  tabindex="0"
+                  type="button"
                 >
-                  <button
-                    class="PluginManagerNavigationBar__item group active"
-                    data-testid="PluginManagerNavigationBar__latest"
-                    title="Latest"
-                  >
-                    <div
-                      class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
-                    />
-                    <span>
-                      Latest
-                    </span>
-                  </button>
                   <div
-                    class="my-auto mx-6 w-px h-4 border-r PluginManagerNavigationBar__menu-divider border-theme-secondary-300 dark:border-theme-secondary-800"
+                    class="absolute inset-0 -mx-3 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
                   />
-                </li>
-                <li
-                  class="flex"
+                  <span>
+                    Latest
+                  </span>
+                </button>
+                <button
+                  aria-selected="false"
+                  class="Tabs__TabButton-sc-1lxyvu-0 group"
+                  data-testid="tabs__tab-button-all"
+                  role="tab"
+                  tabindex="-1"
+                  type="button"
                 >
-                  <button
-                    class="PluginManagerNavigationBar__item group"
-                    data-testid="PluginManagerNavigationBar__all"
-                    title="All"
-                  >
-                    <div
-                      class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
-                    />
-                    <span>
-                      All
-                    </span>
-                  </button>
                   <div
-                    class="my-auto mx-6 w-px h-4 border-r PluginManagerNavigationBar__menu-divider border-theme-secondary-300 dark:border-theme-secondary-800"
+                    class="absolute inset-0 -mx-3 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
                   />
-                </li>
-                <li
-                  class="flex"
+                  <span>
+                    All
+                  </span>
+                </button>
+                <button
+                  aria-selected="false"
+                  class="Tabs__TabButton-sc-1lxyvu-0 group"
+                  data-testid="tabs__tab-button-gaming"
+                  role="tab"
+                  tabindex="-1"
+                  type="button"
                 >
-                  <button
-                    class="PluginManagerNavigationBar__item group"
-                    data-testid="PluginManagerNavigationBar__gaming"
-                    title="Gaming"
-                  >
-                    <div
-                      class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
-                    />
-                    <span>
-                      Gaming
-                    </span>
-                    <span
-                      class="ml-1 text-theme-secondary-500 dark:text-theme-secondary-700"
-                    >
-                      0
-                    </span>
-                  </button>
                   <div
-                    class="my-auto mx-6 w-px h-4 border-r PluginManagerNavigationBar__menu-divider border-theme-secondary-300 dark:border-theme-secondary-800"
+                    class="absolute inset-0 -mx-3 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
                   />
-                </li>
-                <li
-                  class="flex"
-                >
-                  <button
-                    class="PluginManagerNavigationBar__item group"
-                    data-testid="PluginManagerNavigationBar__utility"
-                    title="Utility"
+                  <span>
+                    Gaming
+                  </span>
+                  <span
+                    class="rounded py-0.5 px-1.5 ml-2 text-sm font-semibold bg-theme-primary-100 dark:bg-theme-secondary-900"
+                    data-testid="tabs__tab-button-gaming-count"
                   >
-                    <div
-                      class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
-                    />
-                    <span>
-                      Utility
-                    </span>
-                    <span
-                      class="ml-1 text-theme-secondary-500 dark:text-theme-secondary-700"
-                    >
-                      4
-                    </span>
-                  </button>
+                    0
+                  </span>
+                </button>
+                <button
+                  aria-selected="false"
+                  class="Tabs__TabButton-sc-1lxyvu-0 group"
+                  data-testid="tabs__tab-button-utility"
+                  role="tab"
+                  tabindex="-1"
+                  type="button"
+                >
                   <div
-                    class="my-auto mx-6 w-px h-4 border-r PluginManagerNavigationBar__menu-divider border-theme-secondary-300 dark:border-theme-secondary-800"
+                    class="absolute inset-0 -mx-3 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
                   />
-                </li>
-                <li
-                  class="flex"
-                >
-                  <button
-                    class="PluginManagerNavigationBar__item group"
-                    data-testid="PluginManagerNavigationBar__exchange"
-                    title="Exchange"
+                  <span>
+                    Utility
+                  </span>
+                  <span
+                    class="rounded py-0.5 px-1.5 ml-2 text-sm font-semibold bg-theme-primary-100 dark:bg-theme-secondary-900"
+                    data-testid="tabs__tab-button-utility-count"
                   >
-                    <div
-                      class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
-                    />
-                    <span>
-                      Exchange
-                    </span>
-                    <span
-                      class="ml-1 text-theme-secondary-500 dark:text-theme-secondary-700"
-                    >
-                      0
-                    </span>
-                  </button>
+                    4
+                  </span>
+                </button>
+                <button
+                  aria-selected="false"
+                  class="Tabs__TabButton-sc-1lxyvu-0 group"
+                  data-testid="tabs__tab-button-exchange"
+                  role="tab"
+                  tabindex="-1"
+                  type="button"
+                >
                   <div
-                    class="my-auto mx-6 w-px h-4 border-r PluginManagerNavigationBar__menu-divider border-theme-secondary-300 dark:border-theme-secondary-800"
+                    class="absolute inset-0 -mx-3 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
                   />
-                </li>
-                <li
-                  class="flex"
-                >
-                  <button
-                    class="PluginManagerNavigationBar__item group"
-                    data-testid="PluginManagerNavigationBar__other"
-                    title="Other"
+                  <span>
+                    Exchange
+                  </span>
+                  <span
+                    class="rounded py-0.5 px-1.5 ml-2 text-sm font-semibold bg-theme-primary-100 dark:bg-theme-secondary-900"
+                    data-testid="tabs__tab-button-exchange-count"
                   >
-                    <div
-                      class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
-                    />
+                    0
+                  </span>
+                </button>
+                <button
+                  aria-selected="false"
+                  class="Tabs__TabButton-sc-1lxyvu-0 group"
+                  data-testid="tabs__tab-button-other"
+                  role="tab"
+                  tabindex="-1"
+                  type="button"
+                >
+                  <div
+                    class="absolute inset-0 -mx-3 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                  />
+                  <span>
+                    Other
+                  </span>
+                  <span
+                    class="rounded py-0.5 px-1.5 ml-2 text-sm font-semibold bg-theme-primary-100 dark:bg-theme-secondary-900"
+                    data-testid="tabs__tab-button-other-count"
+                  >
+                    0
+                  </span>
+                </button>
+                <div
+                  class="flex flex-1"
+                />
+                <button
+                  aria-selected="false"
+                  class="Tabs__TabButton-sc-1lxyvu-0 group"
+                  data-testid="tabs__tab-button-my-plugins"
+                  role="tab"
+                  tabindex="-1"
+                  type="button"
+                >
+                  <div
+                    class="absolute inset-0 -mx-3 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                  />
+                  <span>
                     <span>
-                      Other
+                      My Plugins
                     </span>
-                    <span
-                      class="ml-1 text-theme-secondary-500 dark:text-theme-secondary-700"
-                    >
-                      0
-                    </span>
-                  </button>
-                </li>
-              </ul>
+                  </span>
+                </button>
+              </div>
             </div>
             <div
               class="flex h-18"
             >
-              <div
-                class="relative"
-              >
-                <button
-                  class="PluginManagerNavigationBar__item group"
-                  data-testid="PluginManagerNavigationBar__my-plugins"
-                  title="My Plugins"
-                >
-                  <div
-                    class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
-                  />
-                  <span>
-                    My Plugins
-                  </span>
-                </button>
-              </div>
               <div
                 class="my-auto mx-8 w-px h-10 border-r border-theme-secondary-300 dark:border-theme-secondary-800"
               />
@@ -1567,174 +1556,163 @@ exports[`PluginManager should disable plugin on my-plugins 1`] = `
           </div>
         </div>
         <nav
-          class="PluginManagerNavigationBar__NavWrapper-sc-1x1q7te-0 jJNecf sticky top-21 bg-theme-secondary-100 dark:bg-black my-4"
+          class="PluginManagerNavigationBar__NavWrapper-sc-1x1q7te-0 iYjfAY sticky top-21 bg-theme-secondary-100 dark:bg-black my-4"
           data-testid="PluginManagerNavigationBar"
         >
           <div
             class="container flex justify-between items-center px-10 mx-auto"
           >
-            <div>
-              <ul
-                class="flex h-18"
-              >
-                <li
-                  class="flex"
-                >
-                  <button
-                    class="PluginManagerNavigationBar__item group"
-                    data-testid="PluginManagerNavigationBar__latest"
-                    title="Latest"
-                  >
-                    <div
-                      class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
-                    />
-                    <span>
-                      Latest
-                    </span>
-                  </button>
-                  <div
-                    class="my-auto mx-6 w-px h-4 border-r PluginManagerNavigationBar__menu-divider border-theme-secondary-300 dark:border-theme-secondary-800"
-                  />
-                </li>
-                <li
-                  class="flex"
-                >
-                  <button
-                    class="PluginManagerNavigationBar__item group"
-                    data-testid="PluginManagerNavigationBar__all"
-                    title="All"
-                  >
-                    <div
-                      class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
-                    />
-                    <span>
-                      All
-                    </span>
-                  </button>
-                  <div
-                    class="my-auto mx-6 w-px h-4 border-r PluginManagerNavigationBar__menu-divider border-theme-secondary-300 dark:border-theme-secondary-800"
-                  />
-                </li>
-                <li
-                  class="flex"
-                >
-                  <button
-                    class="PluginManagerNavigationBar__item group"
-                    data-testid="PluginManagerNavigationBar__gaming"
-                    title="Gaming"
-                  >
-                    <div
-                      class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
-                    />
-                    <span>
-                      Gaming
-                    </span>
-                    <span
-                      class="ml-1 text-theme-secondary-500 dark:text-theme-secondary-700"
-                    >
-                      0
-                    </span>
-                  </button>
-                  <div
-                    class="my-auto mx-6 w-px h-4 border-r PluginManagerNavigationBar__menu-divider border-theme-secondary-300 dark:border-theme-secondary-800"
-                  />
-                </li>
-                <li
-                  class="flex"
-                >
-                  <button
-                    class="PluginManagerNavigationBar__item group"
-                    data-testid="PluginManagerNavigationBar__utility"
-                    title="Utility"
-                  >
-                    <div
-                      class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
-                    />
-                    <span>
-                      Utility
-                    </span>
-                    <span
-                      class="ml-1 text-theme-secondary-500 dark:text-theme-secondary-700"
-                    >
-                      4
-                    </span>
-                  </button>
-                  <div
-                    class="my-auto mx-6 w-px h-4 border-r PluginManagerNavigationBar__menu-divider border-theme-secondary-300 dark:border-theme-secondary-800"
-                  />
-                </li>
-                <li
-                  class="flex"
-                >
-                  <button
-                    class="PluginManagerNavigationBar__item group"
-                    data-testid="PluginManagerNavigationBar__exchange"
-                    title="Exchange"
-                  >
-                    <div
-                      class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
-                    />
-                    <span>
-                      Exchange
-                    </span>
-                    <span
-                      class="ml-1 text-theme-secondary-500 dark:text-theme-secondary-700"
-                    >
-                      0
-                    </span>
-                  </button>
-                  <div
-                    class="my-auto mx-6 w-px h-4 border-r PluginManagerNavigationBar__menu-divider border-theme-secondary-300 dark:border-theme-secondary-800"
-                  />
-                </li>
-                <li
-                  class="flex"
-                >
-                  <button
-                    class="PluginManagerNavigationBar__item group"
-                    data-testid="PluginManagerNavigationBar__other"
-                    title="Other"
-                  >
-                    <div
-                      class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
-                    />
-                    <span>
-                      Other
-                    </span>
-                    <span
-                      class="ml-1 text-theme-secondary-500 dark:text-theme-secondary-700"
-                    >
-                      1
-                    </span>
-                  </button>
-                </li>
-              </ul>
-            </div>
             <div
-              class="flex h-18"
+              class="-mx-6 w-full"
             >
               <div
-                class="relative"
+                class="Tabs__TabList-sc-1lxyvu-1 eWhkiE w-full h-18"
               >
                 <button
-                  class="PluginManagerNavigationBar__item group active"
-                  data-testid="PluginManagerNavigationBar__my-plugins"
-                  title="My Plugins"
+                  aria-selected="false"
+                  class="Tabs__TabButton-sc-1lxyvu-0 group"
+                  data-testid="tabs__tab-button-latest"
+                  role="tab"
+                  tabindex="-1"
+                  type="button"
                 >
                   <div
-                    class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                    class="absolute inset-0 -mx-3 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
                   />
                   <span>
-                    My Plugins
+                    Latest
+                  </span>
+                </button>
+                <button
+                  aria-selected="false"
+                  class="Tabs__TabButton-sc-1lxyvu-0 group"
+                  data-testid="tabs__tab-button-all"
+                  role="tab"
+                  tabindex="-1"
+                  type="button"
+                >
+                  <div
+                    class="absolute inset-0 -mx-3 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                  />
+                  <span>
+                    All
+                  </span>
+                </button>
+                <button
+                  aria-selected="false"
+                  class="Tabs__TabButton-sc-1lxyvu-0 group"
+                  data-testid="tabs__tab-button-gaming"
+                  role="tab"
+                  tabindex="-1"
+                  type="button"
+                >
+                  <div
+                    class="absolute inset-0 -mx-3 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                  />
+                  <span>
+                    Gaming
                   </span>
                   <span
-                    class="ml-1 text-theme-secondary-500 dark:text-theme-secondary-700"
-                    data-testid="PluginManagerNavigationBar__my-plugins__count"
+                    class="rounded py-0.5 px-1.5 ml-2 text-sm font-semibold bg-theme-primary-100 dark:bg-theme-secondary-900"
+                    data-testid="tabs__tab-button-gaming-count"
+                  >
+                    0
+                  </span>
+                </button>
+                <button
+                  aria-selected="false"
+                  class="Tabs__TabButton-sc-1lxyvu-0 group"
+                  data-testid="tabs__tab-button-utility"
+                  role="tab"
+                  tabindex="-1"
+                  type="button"
+                >
+                  <div
+                    class="absolute inset-0 -mx-3 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                  />
+                  <span>
+                    Utility
+                  </span>
+                  <span
+                    class="rounded py-0.5 px-1.5 ml-2 text-sm font-semibold bg-theme-primary-100 dark:bg-theme-secondary-900"
+                    data-testid="tabs__tab-button-utility-count"
+                  >
+                    4
+                  </span>
+                </button>
+                <button
+                  aria-selected="false"
+                  class="Tabs__TabButton-sc-1lxyvu-0 group"
+                  data-testid="tabs__tab-button-exchange"
+                  role="tab"
+                  tabindex="-1"
+                  type="button"
+                >
+                  <div
+                    class="absolute inset-0 -mx-3 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                  />
+                  <span>
+                    Exchange
+                  </span>
+                  <span
+                    class="rounded py-0.5 px-1.5 ml-2 text-sm font-semibold bg-theme-primary-100 dark:bg-theme-secondary-900"
+                    data-testid="tabs__tab-button-exchange-count"
+                  >
+                    0
+                  </span>
+                </button>
+                <button
+                  aria-selected="false"
+                  class="Tabs__TabButton-sc-1lxyvu-0 group"
+                  data-testid="tabs__tab-button-other"
+                  role="tab"
+                  tabindex="-1"
+                  type="button"
+                >
+                  <div
+                    class="absolute inset-0 -mx-3 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                  />
+                  <span>
+                    Other
+                  </span>
+                  <span
+                    class="rounded py-0.5 px-1.5 ml-2 text-sm font-semibold bg-theme-primary-100 dark:bg-theme-secondary-900"
+                    data-testid="tabs__tab-button-other-count"
+                  >
+                    1
+                  </span>
+                </button>
+                <div
+                  class="flex flex-1"
+                />
+                <button
+                  aria-selected="true"
+                  class="Tabs__TabButton-sc-1lxyvu-0 group"
+                  data-testid="tabs__tab-button-my-plugins"
+                  role="tab"
+                  tabindex="0"
+                  type="button"
+                >
+                  <div
+                    class="absolute inset-0 -mx-3 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                  />
+                  <span>
+                    <span>
+                      My Plugins
+                    </span>
+                  </span>
+                  <span
+                    class="rounded py-0.5 px-1.5 ml-2 text-sm font-semibold bg-theme-primary-100 dark:bg-theme-secondary-900"
+                    data-testid="tabs__tab-button-my-plugins-count"
                   >
                     1
                   </span>
                 </button>
               </div>
+            </div>
+            <div
+              class="flex h-18"
+            >
               <div
                 class="my-auto mx-8 w-px h-10 border-r border-theme-secondary-300 dark:border-theme-secondary-800"
               />
@@ -2518,174 +2496,163 @@ exports[`PluginManager should enable plugin on my-plugins 1`] = `
           </div>
         </div>
         <nav
-          class="PluginManagerNavigationBar__NavWrapper-sc-1x1q7te-0 jJNecf sticky top-21 bg-theme-secondary-100 dark:bg-black my-4"
+          class="PluginManagerNavigationBar__NavWrapper-sc-1x1q7te-0 iYjfAY sticky top-21 bg-theme-secondary-100 dark:bg-black my-4"
           data-testid="PluginManagerNavigationBar"
         >
           <div
             class="container flex justify-between items-center px-10 mx-auto"
           >
-            <div>
-              <ul
-                class="flex h-18"
-              >
-                <li
-                  class="flex"
-                >
-                  <button
-                    class="PluginManagerNavigationBar__item group"
-                    data-testid="PluginManagerNavigationBar__latest"
-                    title="Latest"
-                  >
-                    <div
-                      class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
-                    />
-                    <span>
-                      Latest
-                    </span>
-                  </button>
-                  <div
-                    class="my-auto mx-6 w-px h-4 border-r PluginManagerNavigationBar__menu-divider border-theme-secondary-300 dark:border-theme-secondary-800"
-                  />
-                </li>
-                <li
-                  class="flex"
-                >
-                  <button
-                    class="PluginManagerNavigationBar__item group"
-                    data-testid="PluginManagerNavigationBar__all"
-                    title="All"
-                  >
-                    <div
-                      class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
-                    />
-                    <span>
-                      All
-                    </span>
-                  </button>
-                  <div
-                    class="my-auto mx-6 w-px h-4 border-r PluginManagerNavigationBar__menu-divider border-theme-secondary-300 dark:border-theme-secondary-800"
-                  />
-                </li>
-                <li
-                  class="flex"
-                >
-                  <button
-                    class="PluginManagerNavigationBar__item group"
-                    data-testid="PluginManagerNavigationBar__gaming"
-                    title="Gaming"
-                  >
-                    <div
-                      class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
-                    />
-                    <span>
-                      Gaming
-                    </span>
-                    <span
-                      class="ml-1 text-theme-secondary-500 dark:text-theme-secondary-700"
-                    >
-                      0
-                    </span>
-                  </button>
-                  <div
-                    class="my-auto mx-6 w-px h-4 border-r PluginManagerNavigationBar__menu-divider border-theme-secondary-300 dark:border-theme-secondary-800"
-                  />
-                </li>
-                <li
-                  class="flex"
-                >
-                  <button
-                    class="PluginManagerNavigationBar__item group"
-                    data-testid="PluginManagerNavigationBar__utility"
-                    title="Utility"
-                  >
-                    <div
-                      class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
-                    />
-                    <span>
-                      Utility
-                    </span>
-                    <span
-                      class="ml-1 text-theme-secondary-500 dark:text-theme-secondary-700"
-                    >
-                      4
-                    </span>
-                  </button>
-                  <div
-                    class="my-auto mx-6 w-px h-4 border-r PluginManagerNavigationBar__menu-divider border-theme-secondary-300 dark:border-theme-secondary-800"
-                  />
-                </li>
-                <li
-                  class="flex"
-                >
-                  <button
-                    class="PluginManagerNavigationBar__item group"
-                    data-testid="PluginManagerNavigationBar__exchange"
-                    title="Exchange"
-                  >
-                    <div
-                      class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
-                    />
-                    <span>
-                      Exchange
-                    </span>
-                    <span
-                      class="ml-1 text-theme-secondary-500 dark:text-theme-secondary-700"
-                    >
-                      0
-                    </span>
-                  </button>
-                  <div
-                    class="my-auto mx-6 w-px h-4 border-r PluginManagerNavigationBar__menu-divider border-theme-secondary-300 dark:border-theme-secondary-800"
-                  />
-                </li>
-                <li
-                  class="flex"
-                >
-                  <button
-                    class="PluginManagerNavigationBar__item group"
-                    data-testid="PluginManagerNavigationBar__other"
-                    title="Other"
-                  >
-                    <div
-                      class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
-                    />
-                    <span>
-                      Other
-                    </span>
-                    <span
-                      class="ml-1 text-theme-secondary-500 dark:text-theme-secondary-700"
-                    >
-                      1
-                    </span>
-                  </button>
-                </li>
-              </ul>
-            </div>
             <div
-              class="flex h-18"
+              class="-mx-6 w-full"
             >
               <div
-                class="relative"
+                class="Tabs__TabList-sc-1lxyvu-1 eWhkiE w-full h-18"
               >
                 <button
-                  class="PluginManagerNavigationBar__item group active"
-                  data-testid="PluginManagerNavigationBar__my-plugins"
-                  title="My Plugins"
+                  aria-selected="false"
+                  class="Tabs__TabButton-sc-1lxyvu-0 group"
+                  data-testid="tabs__tab-button-latest"
+                  role="tab"
+                  tabindex="-1"
+                  type="button"
                 >
                   <div
-                    class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                    class="absolute inset-0 -mx-3 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
                   />
                   <span>
-                    My Plugins
+                    Latest
+                  </span>
+                </button>
+                <button
+                  aria-selected="false"
+                  class="Tabs__TabButton-sc-1lxyvu-0 group"
+                  data-testid="tabs__tab-button-all"
+                  role="tab"
+                  tabindex="-1"
+                  type="button"
+                >
+                  <div
+                    class="absolute inset-0 -mx-3 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                  />
+                  <span>
+                    All
+                  </span>
+                </button>
+                <button
+                  aria-selected="false"
+                  class="Tabs__TabButton-sc-1lxyvu-0 group"
+                  data-testid="tabs__tab-button-gaming"
+                  role="tab"
+                  tabindex="-1"
+                  type="button"
+                >
+                  <div
+                    class="absolute inset-0 -mx-3 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                  />
+                  <span>
+                    Gaming
                   </span>
                   <span
-                    class="ml-1 text-theme-secondary-500 dark:text-theme-secondary-700"
-                    data-testid="PluginManagerNavigationBar__my-plugins__count"
+                    class="rounded py-0.5 px-1.5 ml-2 text-sm font-semibold bg-theme-primary-100 dark:bg-theme-secondary-900"
+                    data-testid="tabs__tab-button-gaming-count"
+                  >
+                    0
+                  </span>
+                </button>
+                <button
+                  aria-selected="false"
+                  class="Tabs__TabButton-sc-1lxyvu-0 group"
+                  data-testid="tabs__tab-button-utility"
+                  role="tab"
+                  tabindex="-1"
+                  type="button"
+                >
+                  <div
+                    class="absolute inset-0 -mx-3 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                  />
+                  <span>
+                    Utility
+                  </span>
+                  <span
+                    class="rounded py-0.5 px-1.5 ml-2 text-sm font-semibold bg-theme-primary-100 dark:bg-theme-secondary-900"
+                    data-testid="tabs__tab-button-utility-count"
+                  >
+                    4
+                  </span>
+                </button>
+                <button
+                  aria-selected="false"
+                  class="Tabs__TabButton-sc-1lxyvu-0 group"
+                  data-testid="tabs__tab-button-exchange"
+                  role="tab"
+                  tabindex="-1"
+                  type="button"
+                >
+                  <div
+                    class="absolute inset-0 -mx-3 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                  />
+                  <span>
+                    Exchange
+                  </span>
+                  <span
+                    class="rounded py-0.5 px-1.5 ml-2 text-sm font-semibold bg-theme-primary-100 dark:bg-theme-secondary-900"
+                    data-testid="tabs__tab-button-exchange-count"
+                  >
+                    0
+                  </span>
+                </button>
+                <button
+                  aria-selected="false"
+                  class="Tabs__TabButton-sc-1lxyvu-0 group"
+                  data-testid="tabs__tab-button-other"
+                  role="tab"
+                  tabindex="-1"
+                  type="button"
+                >
+                  <div
+                    class="absolute inset-0 -mx-3 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                  />
+                  <span>
+                    Other
+                  </span>
+                  <span
+                    class="rounded py-0.5 px-1.5 ml-2 text-sm font-semibold bg-theme-primary-100 dark:bg-theme-secondary-900"
+                    data-testid="tabs__tab-button-other-count"
+                  >
+                    1
+                  </span>
+                </button>
+                <div
+                  class="flex flex-1"
+                />
+                <button
+                  aria-selected="true"
+                  class="Tabs__TabButton-sc-1lxyvu-0 group"
+                  data-testid="tabs__tab-button-my-plugins"
+                  role="tab"
+                  tabindex="0"
+                  type="button"
+                >
+                  <div
+                    class="absolute inset-0 -mx-3 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                  />
+                  <span>
+                    <span>
+                      My Plugins
+                    </span>
+                  </span>
+                  <span
+                    class="rounded py-0.5 px-1.5 ml-2 text-sm font-semibold bg-theme-primary-100 dark:bg-theme-secondary-900"
+                    data-testid="tabs__tab-button-my-plugins-count"
                   >
                     1
                   </span>
                 </button>
               </div>
+            </div>
+            <div
+              class="flex h-18"
+            >
               <div
                 class="my-auto mx-8 w-px h-10 border-r border-theme-secondary-300 dark:border-theme-secondary-800"
               />
@@ -3469,168 +3436,157 @@ exports[`PluginManager should render 1`] = `
           </div>
         </div>
         <nav
-          class="PluginManagerNavigationBar__NavWrapper-sc-1x1q7te-0 jJNecf sticky top-21 bg-theme-secondary-100 dark:bg-black my-4"
+          class="PluginManagerNavigationBar__NavWrapper-sc-1x1q7te-0 iYjfAY sticky top-21 bg-theme-secondary-100 dark:bg-black my-4"
           data-testid="PluginManagerNavigationBar"
         >
           <div
             class="container flex justify-between items-center px-10 mx-auto"
           >
-            <div>
-              <ul
-                class="flex h-18"
+            <div
+              class="-mx-6 w-full"
+            >
+              <div
+                class="Tabs__TabList-sc-1lxyvu-1 eWhkiE w-full h-18"
               >
-                <li
-                  class="flex"
+                <button
+                  aria-selected="true"
+                  class="Tabs__TabButton-sc-1lxyvu-0 group"
+                  data-testid="tabs__tab-button-latest"
+                  role="tab"
+                  tabindex="0"
+                  type="button"
                 >
-                  <button
-                    class="PluginManagerNavigationBar__item group active"
-                    data-testid="PluginManagerNavigationBar__latest"
-                    title="Latest"
-                  >
-                    <div
-                      class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
-                    />
-                    <span>
-                      Latest
-                    </span>
-                  </button>
                   <div
-                    class="my-auto mx-6 w-px h-4 border-r PluginManagerNavigationBar__menu-divider border-theme-secondary-300 dark:border-theme-secondary-800"
+                    class="absolute inset-0 -mx-3 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
                   />
-                </li>
-                <li
-                  class="flex"
+                  <span>
+                    Latest
+                  </span>
+                </button>
+                <button
+                  aria-selected="false"
+                  class="Tabs__TabButton-sc-1lxyvu-0 group"
+                  data-testid="tabs__tab-button-all"
+                  role="tab"
+                  tabindex="-1"
+                  type="button"
                 >
-                  <button
-                    class="PluginManagerNavigationBar__item group"
-                    data-testid="PluginManagerNavigationBar__all"
-                    title="All"
-                  >
-                    <div
-                      class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
-                    />
-                    <span>
-                      All
-                    </span>
-                  </button>
                   <div
-                    class="my-auto mx-6 w-px h-4 border-r PluginManagerNavigationBar__menu-divider border-theme-secondary-300 dark:border-theme-secondary-800"
+                    class="absolute inset-0 -mx-3 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
                   />
-                </li>
-                <li
-                  class="flex"
+                  <span>
+                    All
+                  </span>
+                </button>
+                <button
+                  aria-selected="false"
+                  class="Tabs__TabButton-sc-1lxyvu-0 group"
+                  data-testid="tabs__tab-button-gaming"
+                  role="tab"
+                  tabindex="-1"
+                  type="button"
                 >
-                  <button
-                    class="PluginManagerNavigationBar__item group"
-                    data-testid="PluginManagerNavigationBar__gaming"
-                    title="Gaming"
-                  >
-                    <div
-                      class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
-                    />
-                    <span>
-                      Gaming
-                    </span>
-                    <span
-                      class="ml-1 text-theme-secondary-500 dark:text-theme-secondary-700"
-                    >
-                      0
-                    </span>
-                  </button>
                   <div
-                    class="my-auto mx-6 w-px h-4 border-r PluginManagerNavigationBar__menu-divider border-theme-secondary-300 dark:border-theme-secondary-800"
+                    class="absolute inset-0 -mx-3 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
                   />
-                </li>
-                <li
-                  class="flex"
-                >
-                  <button
-                    class="PluginManagerNavigationBar__item group"
-                    data-testid="PluginManagerNavigationBar__utility"
-                    title="Utility"
+                  <span>
+                    Gaming
+                  </span>
+                  <span
+                    class="rounded py-0.5 px-1.5 ml-2 text-sm font-semibold bg-theme-primary-100 dark:bg-theme-secondary-900"
+                    data-testid="tabs__tab-button-gaming-count"
                   >
-                    <div
-                      class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
-                    />
-                    <span>
-                      Utility
-                    </span>
-                    <span
-                      class="ml-1 text-theme-secondary-500 dark:text-theme-secondary-700"
-                    >
-                      4
-                    </span>
-                  </button>
+                    0
+                  </span>
+                </button>
+                <button
+                  aria-selected="false"
+                  class="Tabs__TabButton-sc-1lxyvu-0 group"
+                  data-testid="tabs__tab-button-utility"
+                  role="tab"
+                  tabindex="-1"
+                  type="button"
+                >
                   <div
-                    class="my-auto mx-6 w-px h-4 border-r PluginManagerNavigationBar__menu-divider border-theme-secondary-300 dark:border-theme-secondary-800"
+                    class="absolute inset-0 -mx-3 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
                   />
-                </li>
-                <li
-                  class="flex"
-                >
-                  <button
-                    class="PluginManagerNavigationBar__item group"
-                    data-testid="PluginManagerNavigationBar__exchange"
-                    title="Exchange"
+                  <span>
+                    Utility
+                  </span>
+                  <span
+                    class="rounded py-0.5 px-1.5 ml-2 text-sm font-semibold bg-theme-primary-100 dark:bg-theme-secondary-900"
+                    data-testid="tabs__tab-button-utility-count"
                   >
-                    <div
-                      class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
-                    />
-                    <span>
-                      Exchange
-                    </span>
-                    <span
-                      class="ml-1 text-theme-secondary-500 dark:text-theme-secondary-700"
-                    >
-                      0
-                    </span>
-                  </button>
+                    4
+                  </span>
+                </button>
+                <button
+                  aria-selected="false"
+                  class="Tabs__TabButton-sc-1lxyvu-0 group"
+                  data-testid="tabs__tab-button-exchange"
+                  role="tab"
+                  tabindex="-1"
+                  type="button"
+                >
                   <div
-                    class="my-auto mx-6 w-px h-4 border-r PluginManagerNavigationBar__menu-divider border-theme-secondary-300 dark:border-theme-secondary-800"
+                    class="absolute inset-0 -mx-3 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
                   />
-                </li>
-                <li
-                  class="flex"
-                >
-                  <button
-                    class="PluginManagerNavigationBar__item group"
-                    data-testid="PluginManagerNavigationBar__other"
-                    title="Other"
+                  <span>
+                    Exchange
+                  </span>
+                  <span
+                    class="rounded py-0.5 px-1.5 ml-2 text-sm font-semibold bg-theme-primary-100 dark:bg-theme-secondary-900"
+                    data-testid="tabs__tab-button-exchange-count"
                   >
-                    <div
-                      class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
-                    />
+                    0
+                  </span>
+                </button>
+                <button
+                  aria-selected="false"
+                  class="Tabs__TabButton-sc-1lxyvu-0 group"
+                  data-testid="tabs__tab-button-other"
+                  role="tab"
+                  tabindex="-1"
+                  type="button"
+                >
+                  <div
+                    class="absolute inset-0 -mx-3 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                  />
+                  <span>
+                    Other
+                  </span>
+                  <span
+                    class="rounded py-0.5 px-1.5 ml-2 text-sm font-semibold bg-theme-primary-100 dark:bg-theme-secondary-900"
+                    data-testid="tabs__tab-button-other-count"
+                  >
+                    0
+                  </span>
+                </button>
+                <div
+                  class="flex flex-1"
+                />
+                <button
+                  aria-selected="false"
+                  class="Tabs__TabButton-sc-1lxyvu-0 group"
+                  data-testid="tabs__tab-button-my-plugins"
+                  role="tab"
+                  tabindex="-1"
+                  type="button"
+                >
+                  <div
+                    class="absolute inset-0 -mx-3 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                  />
+                  <span>
                     <span>
-                      Other
+                      My Plugins
                     </span>
-                    <span
-                      class="ml-1 text-theme-secondary-500 dark:text-theme-secondary-700"
-                    >
-                      0
-                    </span>
-                  </button>
-                </li>
-              </ul>
+                  </span>
+                </button>
+              </div>
             </div>
             <div
               class="flex h-18"
             >
-              <div
-                class="relative"
-              >
-                <button
-                  class="PluginManagerNavigationBar__item group"
-                  data-testid="PluginManagerNavigationBar__my-plugins"
-                  title="My Plugins"
-                >
-                  <div
-                    class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
-                  />
-                  <span>
-                    My Plugins
-                  </span>
-                </button>
-              </div>
               <div
                 class="my-auto mx-8 w-px h-10 border-r border-theme-secondary-300 dark:border-theme-secondary-800"
               />
@@ -5017,168 +4973,157 @@ exports[`PluginManager should search for plugin 1`] = `
           </div>
         </div>
         <nav
-          class="PluginManagerNavigationBar__NavWrapper-sc-1x1q7te-0 jJNecf sticky top-21 bg-theme-secondary-100 dark:bg-black my-4"
+          class="PluginManagerNavigationBar__NavWrapper-sc-1x1q7te-0 iYjfAY sticky top-21 bg-theme-secondary-100 dark:bg-black my-4"
           data-testid="PluginManagerNavigationBar"
         >
           <div
             class="container flex justify-between items-center px-10 mx-auto"
           >
-            <div>
-              <ul
-                class="flex h-18"
+            <div
+              class="-mx-6 w-full"
+            >
+              <div
+                class="Tabs__TabList-sc-1lxyvu-1 eWhkiE w-full h-18"
               >
-                <li
-                  class="flex"
+                <button
+                  aria-selected="false"
+                  class="Tabs__TabButton-sc-1lxyvu-0 group"
+                  data-testid="tabs__tab-button-latest"
+                  role="tab"
+                  tabindex="-1"
+                  type="button"
                 >
-                  <button
-                    class="PluginManagerNavigationBar__item group"
-                    data-testid="PluginManagerNavigationBar__latest"
-                    title="Latest"
-                  >
-                    <div
-                      class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
-                    />
-                    <span>
-                      Latest
-                    </span>
-                  </button>
                   <div
-                    class="my-auto mx-6 w-px h-4 border-r PluginManagerNavigationBar__menu-divider border-theme-secondary-300 dark:border-theme-secondary-800"
+                    class="absolute inset-0 -mx-3 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
                   />
-                </li>
-                <li
-                  class="flex"
+                  <span>
+                    Latest
+                  </span>
+                </button>
+                <button
+                  aria-selected="false"
+                  class="Tabs__TabButton-sc-1lxyvu-0 group"
+                  data-testid="tabs__tab-button-all"
+                  role="tab"
+                  tabindex="-1"
+                  type="button"
                 >
-                  <button
-                    class="PluginManagerNavigationBar__item group"
-                    data-testid="PluginManagerNavigationBar__all"
-                    title="All"
-                  >
-                    <div
-                      class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
-                    />
-                    <span>
-                      All
-                    </span>
-                  </button>
                   <div
-                    class="my-auto mx-6 w-px h-4 border-r PluginManagerNavigationBar__menu-divider border-theme-secondary-300 dark:border-theme-secondary-800"
+                    class="absolute inset-0 -mx-3 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
                   />
-                </li>
-                <li
-                  class="flex"
+                  <span>
+                    All
+                  </span>
+                </button>
+                <button
+                  aria-selected="false"
+                  class="Tabs__TabButton-sc-1lxyvu-0 group"
+                  data-testid="tabs__tab-button-gaming"
+                  role="tab"
+                  tabindex="-1"
+                  type="button"
                 >
-                  <button
-                    class="PluginManagerNavigationBar__item group"
-                    data-testid="PluginManagerNavigationBar__gaming"
-                    title="Gaming"
-                  >
-                    <div
-                      class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
-                    />
-                    <span>
-                      Gaming
-                    </span>
-                    <span
-                      class="ml-1 text-theme-secondary-500 dark:text-theme-secondary-700"
-                    >
-                      0
-                    </span>
-                  </button>
                   <div
-                    class="my-auto mx-6 w-px h-4 border-r PluginManagerNavigationBar__menu-divider border-theme-secondary-300 dark:border-theme-secondary-800"
+                    class="absolute inset-0 -mx-3 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
                   />
-                </li>
-                <li
-                  class="flex"
-                >
-                  <button
-                    class="PluginManagerNavigationBar__item group"
-                    data-testid="PluginManagerNavigationBar__utility"
-                    title="Utility"
+                  <span>
+                    Gaming
+                  </span>
+                  <span
+                    class="rounded py-0.5 px-1.5 ml-2 text-sm font-semibold bg-theme-primary-100 dark:bg-theme-secondary-900"
+                    data-testid="tabs__tab-button-gaming-count"
                   >
-                    <div
-                      class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
-                    />
-                    <span>
-                      Utility
-                    </span>
-                    <span
-                      class="ml-1 text-theme-secondary-500 dark:text-theme-secondary-700"
-                    >
-                      4
-                    </span>
-                  </button>
+                    0
+                  </span>
+                </button>
+                <button
+                  aria-selected="false"
+                  class="Tabs__TabButton-sc-1lxyvu-0 group"
+                  data-testid="tabs__tab-button-utility"
+                  role="tab"
+                  tabindex="-1"
+                  type="button"
+                >
                   <div
-                    class="my-auto mx-6 w-px h-4 border-r PluginManagerNavigationBar__menu-divider border-theme-secondary-300 dark:border-theme-secondary-800"
+                    class="absolute inset-0 -mx-3 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
                   />
-                </li>
-                <li
-                  class="flex"
-                >
-                  <button
-                    class="PluginManagerNavigationBar__item group"
-                    data-testid="PluginManagerNavigationBar__exchange"
-                    title="Exchange"
+                  <span>
+                    Utility
+                  </span>
+                  <span
+                    class="rounded py-0.5 px-1.5 ml-2 text-sm font-semibold bg-theme-primary-100 dark:bg-theme-secondary-900"
+                    data-testid="tabs__tab-button-utility-count"
                   >
-                    <div
-                      class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
-                    />
-                    <span>
-                      Exchange
-                    </span>
-                    <span
-                      class="ml-1 text-theme-secondary-500 dark:text-theme-secondary-700"
-                    >
-                      0
-                    </span>
-                  </button>
+                    4
+                  </span>
+                </button>
+                <button
+                  aria-selected="false"
+                  class="Tabs__TabButton-sc-1lxyvu-0 group"
+                  data-testid="tabs__tab-button-exchange"
+                  role="tab"
+                  tabindex="-1"
+                  type="button"
+                >
                   <div
-                    class="my-auto mx-6 w-px h-4 border-r PluginManagerNavigationBar__menu-divider border-theme-secondary-300 dark:border-theme-secondary-800"
+                    class="absolute inset-0 -mx-3 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
                   />
-                </li>
-                <li
-                  class="flex"
-                >
-                  <button
-                    class="PluginManagerNavigationBar__item group"
-                    data-testid="PluginManagerNavigationBar__other"
-                    title="Other"
+                  <span>
+                    Exchange
+                  </span>
+                  <span
+                    class="rounded py-0.5 px-1.5 ml-2 text-sm font-semibold bg-theme-primary-100 dark:bg-theme-secondary-900"
+                    data-testid="tabs__tab-button-exchange-count"
                   >
-                    <div
-                      class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
-                    />
+                    0
+                  </span>
+                </button>
+                <button
+                  aria-selected="false"
+                  class="Tabs__TabButton-sc-1lxyvu-0 group"
+                  data-testid="tabs__tab-button-other"
+                  role="tab"
+                  tabindex="-1"
+                  type="button"
+                >
+                  <div
+                    class="absolute inset-0 -mx-3 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                  />
+                  <span>
+                    Other
+                  </span>
+                  <span
+                    class="rounded py-0.5 px-1.5 ml-2 text-sm font-semibold bg-theme-primary-100 dark:bg-theme-secondary-900"
+                    data-testid="tabs__tab-button-other-count"
+                  >
+                    0
+                  </span>
+                </button>
+                <div
+                  class="flex flex-1"
+                />
+                <button
+                  aria-selected="false"
+                  class="Tabs__TabButton-sc-1lxyvu-0 group"
+                  data-testid="tabs__tab-button-my-plugins"
+                  role="tab"
+                  tabindex="-1"
+                  type="button"
+                >
+                  <div
+                    class="absolute inset-0 -mx-3 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                  />
+                  <span>
                     <span>
-                      Other
+                      My Plugins
                     </span>
-                    <span
-                      class="ml-1 text-theme-secondary-500 dark:text-theme-secondary-700"
-                    >
-                      0
-                    </span>
-                  </button>
-                </li>
-              </ul>
+                  </span>
+                </button>
+              </div>
             </div>
             <div
               class="flex h-18"
             >
-              <div
-                class="relative"
-              >
-                <button
-                  class="PluginManagerNavigationBar__item group"
-                  data-testid="PluginManagerNavigationBar__my-plugins"
-                  title="My Plugins"
-                >
-                  <div
-                    class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
-                  />
-                  <span>
-                    My Plugins
-                  </span>
-                </button>
-              </div>
               <div
                 class="my-auto mx-8 w-px h-10 border-r border-theme-secondary-300 dark:border-theme-secondary-800"
               />
@@ -5641,168 +5586,157 @@ exports[`PluginManager should switch to category by clicking on view all link 1`
           </div>
         </div>
         <nav
-          class="PluginManagerNavigationBar__NavWrapper-sc-1x1q7te-0 jJNecf sticky top-21 bg-theme-secondary-100 dark:bg-black my-4"
+          class="PluginManagerNavigationBar__NavWrapper-sc-1x1q7te-0 iYjfAY sticky top-21 bg-theme-secondary-100 dark:bg-black my-4"
           data-testid="PluginManagerNavigationBar"
         >
           <div
             class="container flex justify-between items-center px-10 mx-auto"
           >
-            <div>
-              <ul
-                class="flex h-18"
+            <div
+              class="-mx-6 w-full"
+            >
+              <div
+                class="Tabs__TabList-sc-1lxyvu-1 eWhkiE w-full h-18"
               >
-                <li
-                  class="flex"
+                <button
+                  aria-selected="false"
+                  class="Tabs__TabButton-sc-1lxyvu-0 group"
+                  data-testid="tabs__tab-button-latest"
+                  role="tab"
+                  tabindex="-1"
+                  type="button"
                 >
-                  <button
-                    class="PluginManagerNavigationBar__item group"
-                    data-testid="PluginManagerNavigationBar__latest"
-                    title="Latest"
-                  >
-                    <div
-                      class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
-                    />
-                    <span>
-                      Latest
-                    </span>
-                  </button>
                   <div
-                    class="my-auto mx-6 w-px h-4 border-r PluginManagerNavigationBar__menu-divider border-theme-secondary-300 dark:border-theme-secondary-800"
+                    class="absolute inset-0 -mx-3 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
                   />
-                </li>
-                <li
-                  class="flex"
+                  <span>
+                    Latest
+                  </span>
+                </button>
+                <button
+                  aria-selected="false"
+                  class="Tabs__TabButton-sc-1lxyvu-0 group"
+                  data-testid="tabs__tab-button-all"
+                  role="tab"
+                  tabindex="-1"
+                  type="button"
                 >
-                  <button
-                    class="PluginManagerNavigationBar__item group"
-                    data-testid="PluginManagerNavigationBar__all"
-                    title="All"
-                  >
-                    <div
-                      class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
-                    />
-                    <span>
-                      All
-                    </span>
-                  </button>
                   <div
-                    class="my-auto mx-6 w-px h-4 border-r PluginManagerNavigationBar__menu-divider border-theme-secondary-300 dark:border-theme-secondary-800"
+                    class="absolute inset-0 -mx-3 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
                   />
-                </li>
-                <li
-                  class="flex"
+                  <span>
+                    All
+                  </span>
+                </button>
+                <button
+                  aria-selected="false"
+                  class="Tabs__TabButton-sc-1lxyvu-0 group"
+                  data-testid="tabs__tab-button-gaming"
+                  role="tab"
+                  tabindex="-1"
+                  type="button"
                 >
-                  <button
-                    class="PluginManagerNavigationBar__item group"
-                    data-testid="PluginManagerNavigationBar__gaming"
-                    title="Gaming"
-                  >
-                    <div
-                      class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
-                    />
-                    <span>
-                      Gaming
-                    </span>
-                    <span
-                      class="ml-1 text-theme-secondary-500 dark:text-theme-secondary-700"
-                    >
-                      0
-                    </span>
-                  </button>
                   <div
-                    class="my-auto mx-6 w-px h-4 border-r PluginManagerNavigationBar__menu-divider border-theme-secondary-300 dark:border-theme-secondary-800"
+                    class="absolute inset-0 -mx-3 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
                   />
-                </li>
-                <li
-                  class="flex"
-                >
-                  <button
-                    class="PluginManagerNavigationBar__item group active"
-                    data-testid="PluginManagerNavigationBar__utility"
-                    title="Utility"
+                  <span>
+                    Gaming
+                  </span>
+                  <span
+                    class="rounded py-0.5 px-1.5 ml-2 text-sm font-semibold bg-theme-primary-100 dark:bg-theme-secondary-900"
+                    data-testid="tabs__tab-button-gaming-count"
                   >
-                    <div
-                      class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
-                    />
-                    <span>
-                      Utility
-                    </span>
-                    <span
-                      class="ml-1 text-theme-secondary-500 dark:text-theme-secondary-700"
-                    >
-                      4
-                    </span>
-                  </button>
+                    0
+                  </span>
+                </button>
+                <button
+                  aria-selected="true"
+                  class="Tabs__TabButton-sc-1lxyvu-0 group"
+                  data-testid="tabs__tab-button-utility"
+                  role="tab"
+                  tabindex="0"
+                  type="button"
+                >
                   <div
-                    class="my-auto mx-6 w-px h-4 border-r PluginManagerNavigationBar__menu-divider border-theme-secondary-300 dark:border-theme-secondary-800"
+                    class="absolute inset-0 -mx-3 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
                   />
-                </li>
-                <li
-                  class="flex"
-                >
-                  <button
-                    class="PluginManagerNavigationBar__item group"
-                    data-testid="PluginManagerNavigationBar__exchange"
-                    title="Exchange"
+                  <span>
+                    Utility
+                  </span>
+                  <span
+                    class="rounded py-0.5 px-1.5 ml-2 text-sm font-semibold bg-theme-primary-100 dark:bg-theme-secondary-900"
+                    data-testid="tabs__tab-button-utility-count"
                   >
-                    <div
-                      class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
-                    />
-                    <span>
-                      Exchange
-                    </span>
-                    <span
-                      class="ml-1 text-theme-secondary-500 dark:text-theme-secondary-700"
-                    >
-                      0
-                    </span>
-                  </button>
+                    4
+                  </span>
+                </button>
+                <button
+                  aria-selected="false"
+                  class="Tabs__TabButton-sc-1lxyvu-0 group"
+                  data-testid="tabs__tab-button-exchange"
+                  role="tab"
+                  tabindex="-1"
+                  type="button"
+                >
                   <div
-                    class="my-auto mx-6 w-px h-4 border-r PluginManagerNavigationBar__menu-divider border-theme-secondary-300 dark:border-theme-secondary-800"
+                    class="absolute inset-0 -mx-3 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
                   />
-                </li>
-                <li
-                  class="flex"
-                >
-                  <button
-                    class="PluginManagerNavigationBar__item group"
-                    data-testid="PluginManagerNavigationBar__other"
-                    title="Other"
+                  <span>
+                    Exchange
+                  </span>
+                  <span
+                    class="rounded py-0.5 px-1.5 ml-2 text-sm font-semibold bg-theme-primary-100 dark:bg-theme-secondary-900"
+                    data-testid="tabs__tab-button-exchange-count"
                   >
-                    <div
-                      class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
-                    />
+                    0
+                  </span>
+                </button>
+                <button
+                  aria-selected="false"
+                  class="Tabs__TabButton-sc-1lxyvu-0 group"
+                  data-testid="tabs__tab-button-other"
+                  role="tab"
+                  tabindex="-1"
+                  type="button"
+                >
+                  <div
+                    class="absolute inset-0 -mx-3 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                  />
+                  <span>
+                    Other
+                  </span>
+                  <span
+                    class="rounded py-0.5 px-1.5 ml-2 text-sm font-semibold bg-theme-primary-100 dark:bg-theme-secondary-900"
+                    data-testid="tabs__tab-button-other-count"
+                  >
+                    0
+                  </span>
+                </button>
+                <div
+                  class="flex flex-1"
+                />
+                <button
+                  aria-selected="false"
+                  class="Tabs__TabButton-sc-1lxyvu-0 group"
+                  data-testid="tabs__tab-button-my-plugins"
+                  role="tab"
+                  tabindex="-1"
+                  type="button"
+                >
+                  <div
+                    class="absolute inset-0 -mx-3 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                  />
+                  <span>
                     <span>
-                      Other
+                      My Plugins
                     </span>
-                    <span
-                      class="ml-1 text-theme-secondary-500 dark:text-theme-secondary-700"
-                    >
-                      0
-                    </span>
-                  </button>
-                </li>
-              </ul>
+                  </span>
+                </button>
+              </div>
             </div>
             <div
               class="flex h-18"
             >
-              <div
-                class="relative"
-              >
-                <button
-                  class="PluginManagerNavigationBar__item group"
-                  data-testid="PluginManagerNavigationBar__my-plugins"
-                  title="My Plugins"
-                >
-                  <div
-                    class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
-                  />
-                  <span>
-                    My Plugins
-                  </span>
-                </button>
-              </div>
               <div
                 class="my-auto mx-8 w-px h-10 border-r border-theme-secondary-300 dark:border-theme-secondary-800"
               />
@@ -6664,168 +6598,157 @@ exports[`PluginManager should toggle between list and grid on all 1`] = `
           </div>
         </div>
         <nav
-          class="PluginManagerNavigationBar__NavWrapper-sc-1x1q7te-0 jJNecf sticky top-21 bg-theme-secondary-100 dark:bg-black my-4"
+          class="PluginManagerNavigationBar__NavWrapper-sc-1x1q7te-0 iYjfAY sticky top-21 bg-theme-secondary-100 dark:bg-black my-4"
           data-testid="PluginManagerNavigationBar"
         >
           <div
             class="container flex justify-between items-center px-10 mx-auto"
           >
-            <div>
-              <ul
-                class="flex h-18"
+            <div
+              class="-mx-6 w-full"
+            >
+              <div
+                class="Tabs__TabList-sc-1lxyvu-1 eWhkiE w-full h-18"
               >
-                <li
-                  class="flex"
+                <button
+                  aria-selected="false"
+                  class="Tabs__TabButton-sc-1lxyvu-0 group"
+                  data-testid="tabs__tab-button-latest"
+                  role="tab"
+                  tabindex="-1"
+                  type="button"
                 >
-                  <button
-                    class="PluginManagerNavigationBar__item group"
-                    data-testid="PluginManagerNavigationBar__latest"
-                    title="Latest"
-                  >
-                    <div
-                      class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
-                    />
-                    <span>
-                      Latest
-                    </span>
-                  </button>
                   <div
-                    class="my-auto mx-6 w-px h-4 border-r PluginManagerNavigationBar__menu-divider border-theme-secondary-300 dark:border-theme-secondary-800"
+                    class="absolute inset-0 -mx-3 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
                   />
-                </li>
-                <li
-                  class="flex"
+                  <span>
+                    Latest
+                  </span>
+                </button>
+                <button
+                  aria-selected="true"
+                  class="Tabs__TabButton-sc-1lxyvu-0 group"
+                  data-testid="tabs__tab-button-all"
+                  role="tab"
+                  tabindex="0"
+                  type="button"
                 >
-                  <button
-                    class="PluginManagerNavigationBar__item group active"
-                    data-testid="PluginManagerNavigationBar__all"
-                    title="All"
-                  >
-                    <div
-                      class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
-                    />
-                    <span>
-                      All
-                    </span>
-                  </button>
                   <div
-                    class="my-auto mx-6 w-px h-4 border-r PluginManagerNavigationBar__menu-divider border-theme-secondary-300 dark:border-theme-secondary-800"
+                    class="absolute inset-0 -mx-3 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
                   />
-                </li>
-                <li
-                  class="flex"
+                  <span>
+                    All
+                  </span>
+                </button>
+                <button
+                  aria-selected="false"
+                  class="Tabs__TabButton-sc-1lxyvu-0 group"
+                  data-testid="tabs__tab-button-gaming"
+                  role="tab"
+                  tabindex="-1"
+                  type="button"
                 >
-                  <button
-                    class="PluginManagerNavigationBar__item group"
-                    data-testid="PluginManagerNavigationBar__gaming"
-                    title="Gaming"
-                  >
-                    <div
-                      class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
-                    />
-                    <span>
-                      Gaming
-                    </span>
-                    <span
-                      class="ml-1 text-theme-secondary-500 dark:text-theme-secondary-700"
-                    >
-                      0
-                    </span>
-                  </button>
                   <div
-                    class="my-auto mx-6 w-px h-4 border-r PluginManagerNavigationBar__menu-divider border-theme-secondary-300 dark:border-theme-secondary-800"
+                    class="absolute inset-0 -mx-3 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
                   />
-                </li>
-                <li
-                  class="flex"
-                >
-                  <button
-                    class="PluginManagerNavigationBar__item group"
-                    data-testid="PluginManagerNavigationBar__utility"
-                    title="Utility"
+                  <span>
+                    Gaming
+                  </span>
+                  <span
+                    class="rounded py-0.5 px-1.5 ml-2 text-sm font-semibold bg-theme-primary-100 dark:bg-theme-secondary-900"
+                    data-testid="tabs__tab-button-gaming-count"
                   >
-                    <div
-                      class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
-                    />
-                    <span>
-                      Utility
-                    </span>
-                    <span
-                      class="ml-1 text-theme-secondary-500 dark:text-theme-secondary-700"
-                    >
-                      4
-                    </span>
-                  </button>
+                    0
+                  </span>
+                </button>
+                <button
+                  aria-selected="false"
+                  class="Tabs__TabButton-sc-1lxyvu-0 group"
+                  data-testid="tabs__tab-button-utility"
+                  role="tab"
+                  tabindex="-1"
+                  type="button"
+                >
                   <div
-                    class="my-auto mx-6 w-px h-4 border-r PluginManagerNavigationBar__menu-divider border-theme-secondary-300 dark:border-theme-secondary-800"
+                    class="absolute inset-0 -mx-3 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
                   />
-                </li>
-                <li
-                  class="flex"
-                >
-                  <button
-                    class="PluginManagerNavigationBar__item group"
-                    data-testid="PluginManagerNavigationBar__exchange"
-                    title="Exchange"
+                  <span>
+                    Utility
+                  </span>
+                  <span
+                    class="rounded py-0.5 px-1.5 ml-2 text-sm font-semibold bg-theme-primary-100 dark:bg-theme-secondary-900"
+                    data-testid="tabs__tab-button-utility-count"
                   >
-                    <div
-                      class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
-                    />
-                    <span>
-                      Exchange
-                    </span>
-                    <span
-                      class="ml-1 text-theme-secondary-500 dark:text-theme-secondary-700"
-                    >
-                      0
-                    </span>
-                  </button>
+                    4
+                  </span>
+                </button>
+                <button
+                  aria-selected="false"
+                  class="Tabs__TabButton-sc-1lxyvu-0 group"
+                  data-testid="tabs__tab-button-exchange"
+                  role="tab"
+                  tabindex="-1"
+                  type="button"
+                >
                   <div
-                    class="my-auto mx-6 w-px h-4 border-r PluginManagerNavigationBar__menu-divider border-theme-secondary-300 dark:border-theme-secondary-800"
+                    class="absolute inset-0 -mx-3 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
                   />
-                </li>
-                <li
-                  class="flex"
-                >
-                  <button
-                    class="PluginManagerNavigationBar__item group"
-                    data-testid="PluginManagerNavigationBar__other"
-                    title="Other"
+                  <span>
+                    Exchange
+                  </span>
+                  <span
+                    class="rounded py-0.5 px-1.5 ml-2 text-sm font-semibold bg-theme-primary-100 dark:bg-theme-secondary-900"
+                    data-testid="tabs__tab-button-exchange-count"
                   >
-                    <div
-                      class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
-                    />
+                    0
+                  </span>
+                </button>
+                <button
+                  aria-selected="false"
+                  class="Tabs__TabButton-sc-1lxyvu-0 group"
+                  data-testid="tabs__tab-button-other"
+                  role="tab"
+                  tabindex="-1"
+                  type="button"
+                >
+                  <div
+                    class="absolute inset-0 -mx-3 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                  />
+                  <span>
+                    Other
+                  </span>
+                  <span
+                    class="rounded py-0.5 px-1.5 ml-2 text-sm font-semibold bg-theme-primary-100 dark:bg-theme-secondary-900"
+                    data-testid="tabs__tab-button-other-count"
+                  >
+                    0
+                  </span>
+                </button>
+                <div
+                  class="flex flex-1"
+                />
+                <button
+                  aria-selected="false"
+                  class="Tabs__TabButton-sc-1lxyvu-0 group"
+                  data-testid="tabs__tab-button-my-plugins"
+                  role="tab"
+                  tabindex="-1"
+                  type="button"
+                >
+                  <div
+                    class="absolute inset-0 -mx-3 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                  />
+                  <span>
                     <span>
-                      Other
+                      My Plugins
                     </span>
-                    <span
-                      class="ml-1 text-theme-secondary-500 dark:text-theme-secondary-700"
-                    >
-                      0
-                    </span>
-                  </button>
-                </li>
-              </ul>
+                  </span>
+                </button>
+              </div>
             </div>
             <div
               class="flex h-18"
             >
-              <div
-                class="relative"
-              >
-                <button
-                  class="PluginManagerNavigationBar__item group"
-                  data-testid="PluginManagerNavigationBar__my-plugins"
-                  title="My Plugins"
-                >
-                  <div
-                    class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
-                  />
-                  <span>
-                    My Plugins
-                  </span>
-                </button>
-              </div>
               <div
                 class="my-auto mx-8 w-px h-10 border-r border-theme-secondary-300 dark:border-theme-secondary-800"
               />
@@ -7687,168 +7610,157 @@ exports[`PluginManager should toggle between list and grid on latest 1`] = `
           </div>
         </div>
         <nav
-          class="PluginManagerNavigationBar__NavWrapper-sc-1x1q7te-0 jJNecf sticky top-21 bg-theme-secondary-100 dark:bg-black my-4"
+          class="PluginManagerNavigationBar__NavWrapper-sc-1x1q7te-0 iYjfAY sticky top-21 bg-theme-secondary-100 dark:bg-black my-4"
           data-testid="PluginManagerNavigationBar"
         >
           <div
             class="container flex justify-between items-center px-10 mx-auto"
           >
-            <div>
-              <ul
-                class="flex h-18"
+            <div
+              class="-mx-6 w-full"
+            >
+              <div
+                class="Tabs__TabList-sc-1lxyvu-1 eWhkiE w-full h-18"
               >
-                <li
-                  class="flex"
+                <button
+                  aria-selected="true"
+                  class="Tabs__TabButton-sc-1lxyvu-0 group"
+                  data-testid="tabs__tab-button-latest"
+                  role="tab"
+                  tabindex="0"
+                  type="button"
                 >
-                  <button
-                    class="PluginManagerNavigationBar__item group active"
-                    data-testid="PluginManagerNavigationBar__latest"
-                    title="Latest"
-                  >
-                    <div
-                      class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
-                    />
-                    <span>
-                      Latest
-                    </span>
-                  </button>
                   <div
-                    class="my-auto mx-6 w-px h-4 border-r PluginManagerNavigationBar__menu-divider border-theme-secondary-300 dark:border-theme-secondary-800"
+                    class="absolute inset-0 -mx-3 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
                   />
-                </li>
-                <li
-                  class="flex"
+                  <span>
+                    Latest
+                  </span>
+                </button>
+                <button
+                  aria-selected="false"
+                  class="Tabs__TabButton-sc-1lxyvu-0 group"
+                  data-testid="tabs__tab-button-all"
+                  role="tab"
+                  tabindex="-1"
+                  type="button"
                 >
-                  <button
-                    class="PluginManagerNavigationBar__item group"
-                    data-testid="PluginManagerNavigationBar__all"
-                    title="All"
-                  >
-                    <div
-                      class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
-                    />
-                    <span>
-                      All
-                    </span>
-                  </button>
                   <div
-                    class="my-auto mx-6 w-px h-4 border-r PluginManagerNavigationBar__menu-divider border-theme-secondary-300 dark:border-theme-secondary-800"
+                    class="absolute inset-0 -mx-3 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
                   />
-                </li>
-                <li
-                  class="flex"
+                  <span>
+                    All
+                  </span>
+                </button>
+                <button
+                  aria-selected="false"
+                  class="Tabs__TabButton-sc-1lxyvu-0 group"
+                  data-testid="tabs__tab-button-gaming"
+                  role="tab"
+                  tabindex="-1"
+                  type="button"
                 >
-                  <button
-                    class="PluginManagerNavigationBar__item group"
-                    data-testid="PluginManagerNavigationBar__gaming"
-                    title="Gaming"
-                  >
-                    <div
-                      class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
-                    />
-                    <span>
-                      Gaming
-                    </span>
-                    <span
-                      class="ml-1 text-theme-secondary-500 dark:text-theme-secondary-700"
-                    >
-                      0
-                    </span>
-                  </button>
                   <div
-                    class="my-auto mx-6 w-px h-4 border-r PluginManagerNavigationBar__menu-divider border-theme-secondary-300 dark:border-theme-secondary-800"
+                    class="absolute inset-0 -mx-3 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
                   />
-                </li>
-                <li
-                  class="flex"
-                >
-                  <button
-                    class="PluginManagerNavigationBar__item group"
-                    data-testid="PluginManagerNavigationBar__utility"
-                    title="Utility"
+                  <span>
+                    Gaming
+                  </span>
+                  <span
+                    class="rounded py-0.5 px-1.5 ml-2 text-sm font-semibold bg-theme-primary-100 dark:bg-theme-secondary-900"
+                    data-testid="tabs__tab-button-gaming-count"
                   >
-                    <div
-                      class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
-                    />
-                    <span>
-                      Utility
-                    </span>
-                    <span
-                      class="ml-1 text-theme-secondary-500 dark:text-theme-secondary-700"
-                    >
-                      4
-                    </span>
-                  </button>
+                    0
+                  </span>
+                </button>
+                <button
+                  aria-selected="false"
+                  class="Tabs__TabButton-sc-1lxyvu-0 group"
+                  data-testid="tabs__tab-button-utility"
+                  role="tab"
+                  tabindex="-1"
+                  type="button"
+                >
                   <div
-                    class="my-auto mx-6 w-px h-4 border-r PluginManagerNavigationBar__menu-divider border-theme-secondary-300 dark:border-theme-secondary-800"
+                    class="absolute inset-0 -mx-3 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
                   />
-                </li>
-                <li
-                  class="flex"
-                >
-                  <button
-                    class="PluginManagerNavigationBar__item group"
-                    data-testid="PluginManagerNavigationBar__exchange"
-                    title="Exchange"
+                  <span>
+                    Utility
+                  </span>
+                  <span
+                    class="rounded py-0.5 px-1.5 ml-2 text-sm font-semibold bg-theme-primary-100 dark:bg-theme-secondary-900"
+                    data-testid="tabs__tab-button-utility-count"
                   >
-                    <div
-                      class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
-                    />
-                    <span>
-                      Exchange
-                    </span>
-                    <span
-                      class="ml-1 text-theme-secondary-500 dark:text-theme-secondary-700"
-                    >
-                      0
-                    </span>
-                  </button>
+                    4
+                  </span>
+                </button>
+                <button
+                  aria-selected="false"
+                  class="Tabs__TabButton-sc-1lxyvu-0 group"
+                  data-testid="tabs__tab-button-exchange"
+                  role="tab"
+                  tabindex="-1"
+                  type="button"
+                >
                   <div
-                    class="my-auto mx-6 w-px h-4 border-r PluginManagerNavigationBar__menu-divider border-theme-secondary-300 dark:border-theme-secondary-800"
+                    class="absolute inset-0 -mx-3 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
                   />
-                </li>
-                <li
-                  class="flex"
-                >
-                  <button
-                    class="PluginManagerNavigationBar__item group"
-                    data-testid="PluginManagerNavigationBar__other"
-                    title="Other"
+                  <span>
+                    Exchange
+                  </span>
+                  <span
+                    class="rounded py-0.5 px-1.5 ml-2 text-sm font-semibold bg-theme-primary-100 dark:bg-theme-secondary-900"
+                    data-testid="tabs__tab-button-exchange-count"
                   >
-                    <div
-                      class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
-                    />
+                    0
+                  </span>
+                </button>
+                <button
+                  aria-selected="false"
+                  class="Tabs__TabButton-sc-1lxyvu-0 group"
+                  data-testid="tabs__tab-button-other"
+                  role="tab"
+                  tabindex="-1"
+                  type="button"
+                >
+                  <div
+                    class="absolute inset-0 -mx-3 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                  />
+                  <span>
+                    Other
+                  </span>
+                  <span
+                    class="rounded py-0.5 px-1.5 ml-2 text-sm font-semibold bg-theme-primary-100 dark:bg-theme-secondary-900"
+                    data-testid="tabs__tab-button-other-count"
+                  >
+                    0
+                  </span>
+                </button>
+                <div
+                  class="flex flex-1"
+                />
+                <button
+                  aria-selected="false"
+                  class="Tabs__TabButton-sc-1lxyvu-0 group"
+                  data-testid="tabs__tab-button-my-plugins"
+                  role="tab"
+                  tabindex="-1"
+                  type="button"
+                >
+                  <div
+                    class="absolute inset-0 -mx-3 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                  />
+                  <span>
                     <span>
-                      Other
+                      My Plugins
                     </span>
-                    <span
-                      class="ml-1 text-theme-secondary-500 dark:text-theme-secondary-700"
-                    >
-                      0
-                    </span>
-                  </button>
-                </li>
-              </ul>
+                  </span>
+                </button>
+              </div>
             </div>
             <div
               class="flex h-18"
             >
-              <div
-                class="relative"
-              >
-                <button
-                  class="PluginManagerNavigationBar__item group"
-                  data-testid="PluginManagerNavigationBar__my-plugins"
-                  title="My Plugins"
-                >
-                  <div
-                    class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
-                  />
-                  <span>
-                    My Plugins
-                  </span>
-                </button>
-              </div>
               <div
                 class="my-auto mx-8 w-px h-10 border-r border-theme-secondary-300 dark:border-theme-secondary-800"
               />
@@ -9176,168 +9088,157 @@ exports[`PluginManager should toggle between list and grid on utility tab 1`] = 
           </div>
         </div>
         <nav
-          class="PluginManagerNavigationBar__NavWrapper-sc-1x1q7te-0 jJNecf sticky top-21 bg-theme-secondary-100 dark:bg-black my-4"
+          class="PluginManagerNavigationBar__NavWrapper-sc-1x1q7te-0 iYjfAY sticky top-21 bg-theme-secondary-100 dark:bg-black my-4"
           data-testid="PluginManagerNavigationBar"
         >
           <div
             class="container flex justify-between items-center px-10 mx-auto"
           >
-            <div>
-              <ul
-                class="flex h-18"
+            <div
+              class="-mx-6 w-full"
+            >
+              <div
+                class="Tabs__TabList-sc-1lxyvu-1 eWhkiE w-full h-18"
               >
-                <li
-                  class="flex"
+                <button
+                  aria-selected="false"
+                  class="Tabs__TabButton-sc-1lxyvu-0 group"
+                  data-testid="tabs__tab-button-latest"
+                  role="tab"
+                  tabindex="-1"
+                  type="button"
                 >
-                  <button
-                    class="PluginManagerNavigationBar__item group"
-                    data-testid="PluginManagerNavigationBar__latest"
-                    title="Latest"
-                  >
-                    <div
-                      class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
-                    />
-                    <span>
-                      Latest
-                    </span>
-                  </button>
                   <div
-                    class="my-auto mx-6 w-px h-4 border-r PluginManagerNavigationBar__menu-divider border-theme-secondary-300 dark:border-theme-secondary-800"
+                    class="absolute inset-0 -mx-3 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
                   />
-                </li>
-                <li
-                  class="flex"
+                  <span>
+                    Latest
+                  </span>
+                </button>
+                <button
+                  aria-selected="false"
+                  class="Tabs__TabButton-sc-1lxyvu-0 group"
+                  data-testid="tabs__tab-button-all"
+                  role="tab"
+                  tabindex="-1"
+                  type="button"
                 >
-                  <button
-                    class="PluginManagerNavigationBar__item group"
-                    data-testid="PluginManagerNavigationBar__all"
-                    title="All"
-                  >
-                    <div
-                      class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
-                    />
-                    <span>
-                      All
-                    </span>
-                  </button>
                   <div
-                    class="my-auto mx-6 w-px h-4 border-r PluginManagerNavigationBar__menu-divider border-theme-secondary-300 dark:border-theme-secondary-800"
+                    class="absolute inset-0 -mx-3 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
                   />
-                </li>
-                <li
-                  class="flex"
+                  <span>
+                    All
+                  </span>
+                </button>
+                <button
+                  aria-selected="false"
+                  class="Tabs__TabButton-sc-1lxyvu-0 group"
+                  data-testid="tabs__tab-button-gaming"
+                  role="tab"
+                  tabindex="-1"
+                  type="button"
                 >
-                  <button
-                    class="PluginManagerNavigationBar__item group"
-                    data-testid="PluginManagerNavigationBar__gaming"
-                    title="Gaming"
-                  >
-                    <div
-                      class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
-                    />
-                    <span>
-                      Gaming
-                    </span>
-                    <span
-                      class="ml-1 text-theme-secondary-500 dark:text-theme-secondary-700"
-                    >
-                      0
-                    </span>
-                  </button>
                   <div
-                    class="my-auto mx-6 w-px h-4 border-r PluginManagerNavigationBar__menu-divider border-theme-secondary-300 dark:border-theme-secondary-800"
+                    class="absolute inset-0 -mx-3 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
                   />
-                </li>
-                <li
-                  class="flex"
-                >
-                  <button
-                    class="PluginManagerNavigationBar__item group active"
-                    data-testid="PluginManagerNavigationBar__utility"
-                    title="Utility"
+                  <span>
+                    Gaming
+                  </span>
+                  <span
+                    class="rounded py-0.5 px-1.5 ml-2 text-sm font-semibold bg-theme-primary-100 dark:bg-theme-secondary-900"
+                    data-testid="tabs__tab-button-gaming-count"
                   >
-                    <div
-                      class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
-                    />
-                    <span>
-                      Utility
-                    </span>
-                    <span
-                      class="ml-1 text-theme-secondary-500 dark:text-theme-secondary-700"
-                    >
-                      4
-                    </span>
-                  </button>
+                    0
+                  </span>
+                </button>
+                <button
+                  aria-selected="true"
+                  class="Tabs__TabButton-sc-1lxyvu-0 group"
+                  data-testid="tabs__tab-button-utility"
+                  role="tab"
+                  tabindex="0"
+                  type="button"
+                >
                   <div
-                    class="my-auto mx-6 w-px h-4 border-r PluginManagerNavigationBar__menu-divider border-theme-secondary-300 dark:border-theme-secondary-800"
+                    class="absolute inset-0 -mx-3 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
                   />
-                </li>
-                <li
-                  class="flex"
-                >
-                  <button
-                    class="PluginManagerNavigationBar__item group"
-                    data-testid="PluginManagerNavigationBar__exchange"
-                    title="Exchange"
+                  <span>
+                    Utility
+                  </span>
+                  <span
+                    class="rounded py-0.5 px-1.5 ml-2 text-sm font-semibold bg-theme-primary-100 dark:bg-theme-secondary-900"
+                    data-testid="tabs__tab-button-utility-count"
                   >
-                    <div
-                      class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
-                    />
-                    <span>
-                      Exchange
-                    </span>
-                    <span
-                      class="ml-1 text-theme-secondary-500 dark:text-theme-secondary-700"
-                    >
-                      0
-                    </span>
-                  </button>
+                    4
+                  </span>
+                </button>
+                <button
+                  aria-selected="false"
+                  class="Tabs__TabButton-sc-1lxyvu-0 group"
+                  data-testid="tabs__tab-button-exchange"
+                  role="tab"
+                  tabindex="-1"
+                  type="button"
+                >
                   <div
-                    class="my-auto mx-6 w-px h-4 border-r PluginManagerNavigationBar__menu-divider border-theme-secondary-300 dark:border-theme-secondary-800"
+                    class="absolute inset-0 -mx-3 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
                   />
-                </li>
-                <li
-                  class="flex"
-                >
-                  <button
-                    class="PluginManagerNavigationBar__item group"
-                    data-testid="PluginManagerNavigationBar__other"
-                    title="Other"
+                  <span>
+                    Exchange
+                  </span>
+                  <span
+                    class="rounded py-0.5 px-1.5 ml-2 text-sm font-semibold bg-theme-primary-100 dark:bg-theme-secondary-900"
+                    data-testid="tabs__tab-button-exchange-count"
                   >
-                    <div
-                      class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
-                    />
+                    0
+                  </span>
+                </button>
+                <button
+                  aria-selected="false"
+                  class="Tabs__TabButton-sc-1lxyvu-0 group"
+                  data-testid="tabs__tab-button-other"
+                  role="tab"
+                  tabindex="-1"
+                  type="button"
+                >
+                  <div
+                    class="absolute inset-0 -mx-3 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                  />
+                  <span>
+                    Other
+                  </span>
+                  <span
+                    class="rounded py-0.5 px-1.5 ml-2 text-sm font-semibold bg-theme-primary-100 dark:bg-theme-secondary-900"
+                    data-testid="tabs__tab-button-other-count"
+                  >
+                    0
+                  </span>
+                </button>
+                <div
+                  class="flex flex-1"
+                />
+                <button
+                  aria-selected="false"
+                  class="Tabs__TabButton-sc-1lxyvu-0 group"
+                  data-testid="tabs__tab-button-my-plugins"
+                  role="tab"
+                  tabindex="-1"
+                  type="button"
+                >
+                  <div
+                    class="absolute inset-0 -mx-3 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                  />
+                  <span>
                     <span>
-                      Other
+                      My Plugins
                     </span>
-                    <span
-                      class="ml-1 text-theme-secondary-500 dark:text-theme-secondary-700"
-                    >
-                      0
-                    </span>
-                  </button>
-                </li>
-              </ul>
+                  </span>
+                </button>
+              </div>
             </div>
             <div
               class="flex h-18"
             >
-              <div
-                class="relative"
-              >
-                <button
-                  class="PluginManagerNavigationBar__item group"
-                  data-testid="PluginManagerNavigationBar__my-plugins"
-                  title="My Plugins"
-                >
-                  <div
-                    class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
-                  />
-                  <span>
-                    My Plugins
-                  </span>
-                </button>
-              </div>
               <div
                 class="my-auto mx-8 w-px h-10 border-r border-theme-secondary-300 dark:border-theme-secondary-800"
               />
@@ -10199,180 +10100,169 @@ exports[`PluginManager should update plugin on my-plugins 1`] = `
           </div>
         </div>
         <nav
-          class="PluginManagerNavigationBar__NavWrapper-sc-1x1q7te-0 jJNecf sticky top-21 bg-theme-secondary-100 dark:bg-black my-4"
+          class="PluginManagerNavigationBar__NavWrapper-sc-1x1q7te-0 iYjfAY sticky top-21 bg-theme-secondary-100 dark:bg-black my-4"
           data-testid="PluginManagerNavigationBar"
         >
           <div
             class="container flex justify-between items-center px-10 mx-auto"
           >
-            <div>
-              <ul
-                class="flex h-18"
+            <div
+              class="-mx-6 w-full"
+            >
+              <div
+                class="Tabs__TabList-sc-1lxyvu-1 eWhkiE w-full h-18"
               >
-                <li
-                  class="flex"
+                <button
+                  aria-selected="false"
+                  class="Tabs__TabButton-sc-1lxyvu-0 group"
+                  data-testid="tabs__tab-button-latest"
+                  role="tab"
+                  tabindex="-1"
+                  type="button"
                 >
-                  <button
-                    class="PluginManagerNavigationBar__item group"
-                    data-testid="PluginManagerNavigationBar__latest"
-                    title="Latest"
-                  >
-                    <div
-                      class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
-                    />
-                    <span>
-                      Latest
-                    </span>
-                  </button>
                   <div
-                    class="my-auto mx-6 w-px h-4 border-r PluginManagerNavigationBar__menu-divider border-theme-secondary-300 dark:border-theme-secondary-800"
+                    class="absolute inset-0 -mx-3 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
                   />
-                </li>
-                <li
-                  class="flex"
+                  <span>
+                    Latest
+                  </span>
+                </button>
+                <button
+                  aria-selected="false"
+                  class="Tabs__TabButton-sc-1lxyvu-0 group"
+                  data-testid="tabs__tab-button-all"
+                  role="tab"
+                  tabindex="-1"
+                  type="button"
                 >
-                  <button
-                    class="PluginManagerNavigationBar__item group"
-                    data-testid="PluginManagerNavigationBar__all"
-                    title="All"
-                  >
-                    <div
-                      class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
-                    />
-                    <span>
-                      All
-                    </span>
-                  </button>
                   <div
-                    class="my-auto mx-6 w-px h-4 border-r PluginManagerNavigationBar__menu-divider border-theme-secondary-300 dark:border-theme-secondary-800"
+                    class="absolute inset-0 -mx-3 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
                   />
-                </li>
-                <li
-                  class="flex"
+                  <span>
+                    All
+                  </span>
+                </button>
+                <button
+                  aria-selected="false"
+                  class="Tabs__TabButton-sc-1lxyvu-0 group"
+                  data-testid="tabs__tab-button-gaming"
+                  role="tab"
+                  tabindex="-1"
+                  type="button"
                 >
-                  <button
-                    class="PluginManagerNavigationBar__item group"
-                    data-testid="PluginManagerNavigationBar__gaming"
-                    title="Gaming"
+                  <div
+                    class="absolute inset-0 -mx-3 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                  />
+                  <span>
+                    Gaming
+                  </span>
+                  <span
+                    class="rounded py-0.5 px-1.5 ml-2 text-sm font-semibold bg-theme-primary-100 dark:bg-theme-secondary-900"
+                    data-testid="tabs__tab-button-gaming-count"
                   >
-                    <div
-                      class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
-                    />
+                    0
+                  </span>
+                </button>
+                <button
+                  aria-selected="false"
+                  class="Tabs__TabButton-sc-1lxyvu-0 group"
+                  data-testid="tabs__tab-button-utility"
+                  role="tab"
+                  tabindex="-1"
+                  type="button"
+                >
+                  <div
+                    class="absolute inset-0 -mx-3 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                  />
+                  <span>
+                    Utility
+                  </span>
+                  <span
+                    class="rounded py-0.5 px-1.5 ml-2 text-sm font-semibold bg-theme-primary-100 dark:bg-theme-secondary-900"
+                    data-testid="tabs__tab-button-utility-count"
+                  >
+                    3
+                  </span>
+                </button>
+                <button
+                  aria-selected="false"
+                  class="Tabs__TabButton-sc-1lxyvu-0 group"
+                  data-testid="tabs__tab-button-exchange"
+                  role="tab"
+                  tabindex="-1"
+                  type="button"
+                >
+                  <div
+                    class="absolute inset-0 -mx-3 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                  />
+                  <span>
+                    Exchange
+                  </span>
+                  <span
+                    class="rounded py-0.5 px-1.5 ml-2 text-sm font-semibold bg-theme-primary-100 dark:bg-theme-secondary-900"
+                    data-testid="tabs__tab-button-exchange-count"
+                  >
+                    0
+                  </span>
+                </button>
+                <button
+                  aria-selected="false"
+                  class="Tabs__TabButton-sc-1lxyvu-0 group"
+                  data-testid="tabs__tab-button-other"
+                  role="tab"
+                  tabindex="-1"
+                  type="button"
+                >
+                  <div
+                    class="absolute inset-0 -mx-3 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                  />
+                  <span>
+                    Other
+                  </span>
+                  <span
+                    class="rounded py-0.5 px-1.5 ml-2 text-sm font-semibold bg-theme-primary-100 dark:bg-theme-secondary-900"
+                    data-testid="tabs__tab-button-other-count"
+                  >
+                    1
+                  </span>
+                </button>
+                <div
+                  class="flex flex-1"
+                />
+                <button
+                  aria-selected="true"
+                  class="Tabs__TabButton-sc-1lxyvu-0 group"
+                  data-testid="tabs__tab-button-my-plugins"
+                  role="tab"
+                  tabindex="0"
+                  type="button"
+                >
+                  <div
+                    class="absolute inset-0 -mx-3 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                  />
+                  <span>
                     <span>
-                      Gaming
+                      My Plugins
                     </span>
                     <span
-                      class="ml-1 text-theme-secondary-500 dark:text-theme-secondary-700"
+                      class="Badge__Wrapper-sc-1d7juq8-0 eOOHKX flex border-2 rounded-full justify-center items-center align-middle bg-theme-background border-transparent -mt-6.5 bg-theme-danger-400"
+                      data-testid="PluginManagerNavigationBar_update-badge"
                     >
-                      0
+                      <span />
                     </span>
-                  </button>
-                  <div
-                    class="my-auto mx-6 w-px h-4 border-r PluginManagerNavigationBar__menu-divider border-theme-secondary-300 dark:border-theme-secondary-800"
-                  />
-                </li>
-                <li
-                  class="flex"
-                >
-                  <button
-                    class="PluginManagerNavigationBar__item group"
-                    data-testid="PluginManagerNavigationBar__utility"
-                    title="Utility"
+                  </span>
+                  <span
+                    class="rounded py-0.5 px-1.5 ml-2 text-sm font-semibold bg-theme-primary-100 dark:bg-theme-secondary-900"
+                    data-testid="tabs__tab-button-my-plugins-count"
                   >
-                    <div
-                      class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
-                    />
-                    <span>
-                      Utility
-                    </span>
-                    <span
-                      class="ml-1 text-theme-secondary-500 dark:text-theme-secondary-700"
-                    >
-                      3
-                    </span>
-                  </button>
-                  <div
-                    class="my-auto mx-6 w-px h-4 border-r PluginManagerNavigationBar__menu-divider border-theme-secondary-300 dark:border-theme-secondary-800"
-                  />
-                </li>
-                <li
-                  class="flex"
-                >
-                  <button
-                    class="PluginManagerNavigationBar__item group"
-                    data-testid="PluginManagerNavigationBar__exchange"
-                    title="Exchange"
-                  >
-                    <div
-                      class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
-                    />
-                    <span>
-                      Exchange
-                    </span>
-                    <span
-                      class="ml-1 text-theme-secondary-500 dark:text-theme-secondary-700"
-                    >
-                      0
-                    </span>
-                  </button>
-                  <div
-                    class="my-auto mx-6 w-px h-4 border-r PluginManagerNavigationBar__menu-divider border-theme-secondary-300 dark:border-theme-secondary-800"
-                  />
-                </li>
-                <li
-                  class="flex"
-                >
-                  <button
-                    class="PluginManagerNavigationBar__item group"
-                    data-testid="PluginManagerNavigationBar__other"
-                    title="Other"
-                  >
-                    <div
-                      class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
-                    />
-                    <span>
-                      Other
-                    </span>
-                    <span
-                      class="ml-1 text-theme-secondary-500 dark:text-theme-secondary-700"
-                    >
-                      1
-                    </span>
-                  </button>
-                </li>
-              </ul>
+                    1
+                  </span>
+                </button>
+              </div>
             </div>
             <div
               class="flex h-18"
             >
-              <div
-                class="relative"
-              >
-                <button
-                  class="PluginManagerNavigationBar__item group active"
-                  data-testid="PluginManagerNavigationBar__my-plugins"
-                  title="My Plugins"
-                >
-                  <div
-                    class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
-                  />
-                  <span>
-                    My Plugins
-                  </span>
-                  <span
-                    class="ml-1 text-theme-secondary-500 dark:text-theme-secondary-700"
-                    data-testid="PluginManagerNavigationBar__my-plugins__count"
-                  >
-                    1
-                  </span>
-                  <span
-                    class="Badge__Wrapper-sc-1d7juq8-0 eOOHKX flex border-2 rounded-full justify-center items-center align-middle bg-theme-background border-transparent -mt-3 bg-theme-danger-400"
-                    data-testid="PluginManagerNavigationBar_update-badge"
-                  >
-                    <span />
-                  </span>
-                </button>
-              </div>
               <div
                 class="my-auto mx-8 w-px h-10 border-r border-theme-secondary-300 dark:border-theme-secondary-800"
               />

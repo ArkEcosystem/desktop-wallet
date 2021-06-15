@@ -13,7 +13,10 @@ import { InstallPlugin } from "domains/plugin/components/InstallPlugin";
 import { ManualInstallationDisclaimer } from "domains/plugin/components/ManualInstallationDisclaimer";
 import { PluginGrid } from "domains/plugin/components/PluginGrid";
 import { PluginList } from "domains/plugin/components/PluginList";
-import { PluginManagerNavigationBar } from "domains/plugin/components/PluginManagerNavigationBar";
+import {
+	PluginManagerNavigationBar,
+	PluginManagerNavigationBarItem,
+} from "domains/plugin/components/PluginManagerNavigationBar";
 import { PluginManualInstallModal } from "domains/plugin/components/PluginManualInstallModal/PluginManualInstallModal";
 import { PluginUninstallConfirmation } from "domains/plugin/components/PluginUninstallConfirmation/PluginUninstallConfirmation";
 import { PluginUpdatesConfirmation } from "domains/plugin/components/PluginUpdatesConfirmation";
@@ -332,10 +335,18 @@ export const PluginManager = () => {
 		startUpdate(availablePackages.map((item) => item.id));
 	};
 
-	const menu = ["latest", "all", ...categories].map((name: string) => ({
-		title: t(`PLUGINS.PAGE_PLUGIN_MANAGER.VIEW.${name.toUpperCase()}`),
-		name,
-	}));
+	const menu = ["latest", "all", ...categories].map((name: string) => {
+		const menuItem: PluginManagerNavigationBarItem = {
+			title: t(`PLUGINS.PAGE_PLUGIN_MANAGER.VIEW.${name.toUpperCase()}`),
+			name,
+		};
+
+		if (name !== "latest" && name !== "all") {
+			menuItem.count = allPlugins.filter((pkg) => pkg.hasCategory(name)).length;
+		}
+
+		return menuItem;
+	});
 
 	return (
 		<>
