@@ -6,7 +6,7 @@ exports[`FilterNetwork should render empty 1`] = `
     data-testid="FilterNetwork"
   >
     <div
-      class="relative mr-5 cursor-pointer Circle__CircleWrapper-uw7h4j-0 bNDQMV border-theme-primary-100 ring-theme-background dark:border-theme-secondary-800"
+      class="Circle__CircleWrapper-uw7h4j-0 bNDQMV relative mr-5 cursor-pointer border-theme-primary-100 dark:border-theme-secondary-800 ring-theme-background"
       data-testid="network__viewall"
     >
       <div
@@ -15,10 +15,10 @@ exports[`FilterNetwork should render empty 1`] = `
         All
       </div>
       <span
-        class="flex justify-center items-center align-middle rounded-full border-2 border-transparent Badge__Wrapper-sc-1d7juq8-0 fMCGPT bg-theme-background border-theme-primary-100 text-theme-primary-700 dark:border-theme-secondary-800"
+        class="Badge__Wrapper-sc-1d7juq8-0 fMCGPT flex border-2 rounded-full justify-center items-center align-middle bg-theme-background border-transparent border-theme-primary-100 dark:border-theme-secondary-800 text-theme-primary-700"
       >
         <div
-          class="transition-transform sc-bdfBwQ kJrqvM"
+          class="sc-bdfBwQ kJrqvM transition-transform "
           height="5"
           width="8"
         >
@@ -43,7 +43,7 @@ exports[`FilterNetwork should render public networks 1`] = `
     data-testid="FilterNetwork"
   >
     <div
-      class="relative mr-5 cursor-pointer Circle__CircleWrapper-uw7h4j-0 bNDQMV border-theme-primary-100 ring-theme-background dark:border-theme-secondary-800"
+      class="Circle__CircleWrapper-uw7h4j-0 bNDQMV relative mr-5 cursor-pointer border-theme-primary-100 dark:border-theme-secondary-800 ring-theme-background"
       data-testid="network__viewall"
     >
       <div
@@ -52,10 +52,10 @@ exports[`FilterNetwork should render public networks 1`] = `
         All
       </div>
       <span
-        class="flex justify-center items-center align-middle rounded-full border-2 border-transparent Badge__Wrapper-sc-1d7juq8-0 fMCGPT bg-theme-background border-theme-primary-100 text-theme-primary-700 dark:border-theme-secondary-800"
+        class="Badge__Wrapper-sc-1d7juq8-0 fMCGPT flex border-2 rounded-full justify-center items-center align-middle bg-theme-background border-transparent border-theme-primary-100 dark:border-theme-secondary-800 text-theme-primary-700"
       >
         <div
-          class="transition-transform sc-bdfBwQ kJrqvM"
+          class="sc-bdfBwQ kJrqvM transition-transform "
           height="5"
           width="8"
         >
@@ -75,7 +75,7 @@ exports[`FilterNetwork should render public networks 1`] = `
         data-testid="NetworkOption__ARK"
       >
         <div
-          class="relative Circle__CircleWrapper-uw7h4j-0 bNDQMV border-theme-secondary-300 text-theme-secondary-300 ring-theme-background dark:border-theme-secondary-800"
+          class="Circle__CircleWrapper-uw7h4j-0 bNDQMV relative border-theme-secondary-300 text-theme-secondary-300 dark:border-theme-secondary-800 ring-theme-background"
         >
           <div
             class="sc-bdfBwQ iyevwF"
@@ -87,7 +87,7 @@ exports[`FilterNetwork should render public networks 1`] = `
             </svg>
           </div>
           <span
-            class="flex justify-center items-center align-middle rounded-full border-2 border-transparent Badge__Wrapper-sc-1d7juq8-0 fMCGPT bg-theme-background border-theme-secondary-300 dark:border-theme-secondary-800"
+            class="Badge__Wrapper-sc-1d7juq8-0 fMCGPT flex border-2 rounded-full justify-center items-center align-middle bg-theme-background border-transparent border-theme-secondary-300 dark:border-theme-secondary-800"
           >
             <span />
           </span>
@@ -98,7 +98,7 @@ exports[`FilterNetwork should render public networks 1`] = `
         data-testid="NetworkOption__LSK"
       >
         <div
-          class="relative Circle__CircleWrapper-uw7h4j-0 bNDQMV border-theme-success-500 text-theme-success-500 ring-theme-background"
+          class="Circle__CircleWrapper-uw7h4j-0 bNDQMV relative border-theme-success-500 text-theme-success-500 ring-theme-background"
         >
           <div
             class="sc-bdfBwQ iyevwF"
@@ -110,7 +110,7 @@ exports[`FilterNetwork should render public networks 1`] = `
             </svg>
           </div>
           <span
-            class="flex justify-center items-center align-middle rounded-full border-2 border-transparent Badge__Wrapper-sc-1d7juq8-0 fMCGPT bg-theme-background bg-theme-success-500 text-theme-success-100"
+            class="Badge__Wrapper-sc-1d7juq8-0 fMCGPT flex border-2 rounded-full justify-center items-center align-middle bg-theme-background border-transparent bg-theme-success-500 text-theme-success-100"
           >
             <div
               class="sc-bdfBwQ fdfkzt"
@@ -160,7 +160,7 @@ exports[`FilterNetworks should render public and testnet networks 1`] = `
           data-testid="NetworkOption__ARK"
         >
           <div
-            class="relative Circle__CircleWrapper-uw7h4j-0 bNDQMV border-theme-secondary-300 text-theme-secondary-300 ring-theme-background dark:border-theme-secondary-800"
+            class="Circle__CircleWrapper-uw7h4j-0 bNDQMV relative border-theme-secondary-300 text-theme-secondary-300 dark:border-theme-secondary-800 ring-theme-background"
           >
             <div
               class="sc-bdfBwQ iyevwF"
@@ -172,7 +172,7 @@ exports[`FilterNetworks should render public and testnet networks 1`] = `
               </svg>
             </div>
             <span
-              class="flex justify-center items-center align-middle rounded-full border-2 border-transparent Badge__Wrapper-sc-1d7juq8-0 fMCGPT bg-theme-background border-theme-secondary-300 dark:border-theme-secondary-800"
+              class="Badge__Wrapper-sc-1d7juq8-0 fMCGPT flex border-2 rounded-full justify-center items-center align-middle bg-theme-background border-transparent border-theme-secondary-300 dark:border-theme-secondary-800"
             >
               <span />
             </span>
@@ -197,7 +197,7 @@ exports[`FilterNetworks should render public and testnet networks 1`] = `
           data-testid="NetworkOption__LSK"
         >
           <div
-            class="relative Circle__CircleWrapper-uw7h4j-0 bNDQMV border-theme-success-500 text-theme-success-500 ring-theme-background"
+            class="Circle__CircleWrapper-uw7h4j-0 bNDQMV relative border-theme-success-500 text-theme-success-500 ring-theme-background"
           >
             <div
               class="sc-bdfBwQ iyevwF"
@@ -209,7 +209,7 @@ exports[`FilterNetworks should render public and testnet networks 1`] = `
               </svg>
             </div>
             <span
-              class="flex justify-center items-center align-middle rounded-full border-2 border-transparent Badge__Wrapper-sc-1d7juq8-0 fMCGPT bg-theme-background bg-theme-success-500 text-theme-success-100"
+              class="Badge__Wrapper-sc-1d7juq8-0 fMCGPT flex border-2 rounded-full justify-center items-center align-middle bg-theme-background border-transparent bg-theme-success-500 text-theme-success-100"
             >
               <div
                 class="sc-bdfBwQ fdfkzt"
@@ -252,7 +252,7 @@ exports[`FilterNetworks should render public networks 1`] = `
           data-testid="NetworkOption__ARK"
         >
           <div
-            class="relative Circle__CircleWrapper-uw7h4j-0 bNDQMV border-theme-secondary-300 text-theme-secondary-300 ring-theme-background dark:border-theme-secondary-800"
+            class="Circle__CircleWrapper-uw7h4j-0 bNDQMV relative border-theme-secondary-300 text-theme-secondary-300 dark:border-theme-secondary-800 ring-theme-background"
           >
             <div
               class="sc-bdfBwQ iyevwF"
@@ -264,7 +264,7 @@ exports[`FilterNetworks should render public networks 1`] = `
               </svg>
             </div>
             <span
-              class="flex justify-center items-center align-middle rounded-full border-2 border-transparent Badge__Wrapper-sc-1d7juq8-0 fMCGPT bg-theme-background border-theme-secondary-300 dark:border-theme-secondary-800"
+              class="Badge__Wrapper-sc-1d7juq8-0 fMCGPT flex border-2 rounded-full justify-center items-center align-middle bg-theme-background border-transparent border-theme-secondary-300 dark:border-theme-secondary-800"
             >
               <span />
             </span>
@@ -298,7 +298,7 @@ exports[`FilterNetworks should toggle a testnet network option 1`] = `
           data-testid="NetworkOption__ARK"
         >
           <div
-            class="relative Circle__CircleWrapper-uw7h4j-0 bNDQMV border-theme-secondary-300 text-theme-secondary-300 ring-theme-background dark:border-theme-secondary-800"
+            class="Circle__CircleWrapper-uw7h4j-0 bNDQMV relative border-theme-secondary-300 text-theme-secondary-300 dark:border-theme-secondary-800 ring-theme-background"
           >
             <div
               class="sc-bdfBwQ iyevwF"
@@ -310,7 +310,7 @@ exports[`FilterNetworks should toggle a testnet network option 1`] = `
               </svg>
             </div>
             <span
-              class="flex justify-center items-center align-middle rounded-full border-2 border-transparent Badge__Wrapper-sc-1d7juq8-0 fMCGPT bg-theme-background border-theme-secondary-300 dark:border-theme-secondary-800"
+              class="Badge__Wrapper-sc-1d7juq8-0 fMCGPT flex border-2 rounded-full justify-center items-center align-middle bg-theme-background border-transparent border-theme-secondary-300 dark:border-theme-secondary-800"
             >
               <span />
             </span>
@@ -335,7 +335,7 @@ exports[`FilterNetworks should toggle a testnet network option 1`] = `
           data-testid="NetworkOption__LSK"
         >
           <div
-            class="relative Circle__CircleWrapper-uw7h4j-0 bNDQMV border-theme-success-500 text-theme-success-500 ring-theme-background"
+            class="Circle__CircleWrapper-uw7h4j-0 bNDQMV relative border-theme-success-500 text-theme-success-500 ring-theme-background"
           >
             <div
               class="sc-bdfBwQ iyevwF"
@@ -347,7 +347,7 @@ exports[`FilterNetworks should toggle a testnet network option 1`] = `
               </svg>
             </div>
             <span
-              class="flex justify-center items-center align-middle rounded-full border-2 border-transparent Badge__Wrapper-sc-1d7juq8-0 fMCGPT bg-theme-background bg-theme-success-500 text-theme-success-100"
+              class="Badge__Wrapper-sc-1d7juq8-0 fMCGPT flex border-2 rounded-full justify-center items-center align-middle bg-theme-background border-transparent bg-theme-success-500 text-theme-success-100"
             >
               <div
                 class="sc-bdfBwQ fdfkzt"
@@ -382,7 +382,7 @@ exports[`FilterNetworks should toggle view all 1`] = `
         Public Networks
       </div>
       <div
-        class="relative mr-5 cursor-pointer Circle__CircleWrapper-uw7h4j-0 bNDQMV border-theme-primary-100 ring-theme-background dark:border-theme-secondary-800"
+        class="Circle__CircleWrapper-uw7h4j-0 bNDQMV relative mr-5 cursor-pointer border-theme-primary-100 dark:border-theme-secondary-800 ring-theme-background"
         data-testid="network__viewall"
       >
         <div
@@ -391,10 +391,10 @@ exports[`FilterNetworks should toggle view all 1`] = `
           All
         </div>
         <span
-          class="flex justify-center items-center text-white align-middle rounded-full border-2 border-transparent Badge__Wrapper-sc-1d7juq8-0 fMCGPT bg-theme-background bg-theme-primary-700 border-theme-primary-700"
+          class="Badge__Wrapper-sc-1d7juq8-0 fMCGPT flex border-2 rounded-full justify-center items-center align-middle bg-theme-background border-transparent bg-theme-primary-700 border-theme-primary-700 text-white"
         >
           <div
-            class="transition-transform transform rotate-180 sc-bdfBwQ kJrqvM"
+            class="sc-bdfBwQ kJrqvM transition-transform transform rotate-180"
             height="5"
             width="8"
           >
@@ -414,7 +414,7 @@ exports[`FilterNetworks should toggle view all 1`] = `
           data-testid="NetworkOption__ARK"
         >
           <div
-            class="relative Circle__CircleWrapper-uw7h4j-0 bNDQMV border-theme-secondary-300 text-theme-secondary-300 ring-theme-background dark:border-theme-secondary-800"
+            class="Circle__CircleWrapper-uw7h4j-0 bNDQMV relative border-theme-secondary-300 text-theme-secondary-300 dark:border-theme-secondary-800 ring-theme-background"
           >
             <div
               class="sc-bdfBwQ iyevwF"
@@ -426,7 +426,7 @@ exports[`FilterNetworks should toggle view all 1`] = `
               </svg>
             </div>
             <span
-              class="flex justify-center items-center align-middle rounded-full border-2 border-transparent Badge__Wrapper-sc-1d7juq8-0 fMCGPT bg-theme-background border-theme-secondary-300 dark:border-theme-secondary-800"
+              class="Badge__Wrapper-sc-1d7juq8-0 fMCGPT flex border-2 rounded-full justify-center items-center align-middle bg-theme-background border-transparent border-theme-secondary-300 dark:border-theme-secondary-800"
             >
               <span />
             </span>
@@ -456,7 +456,7 @@ exports[`FilterNetworks should toggle view all 1`] = `
         Development Networks
       </div>
       <div
-        class="relative mr-5 cursor-pointer Circle__CircleWrapper-uw7h4j-0 bNDQMV border-theme-primary-100 ring-theme-background dark:border-theme-secondary-800"
+        class="Circle__CircleWrapper-uw7h4j-0 bNDQMV relative mr-5 cursor-pointer border-theme-primary-100 dark:border-theme-secondary-800 ring-theme-background"
         data-testid="network__viewall"
       >
         <div
@@ -465,10 +465,10 @@ exports[`FilterNetworks should toggle view all 1`] = `
           All
         </div>
         <span
-          class="flex justify-center items-center align-middle rounded-full border-2 border-transparent Badge__Wrapper-sc-1d7juq8-0 fMCGPT bg-theme-background border-theme-primary-100 text-theme-primary-700 dark:border-theme-secondary-800"
+          class="Badge__Wrapper-sc-1d7juq8-0 fMCGPT flex border-2 rounded-full justify-center items-center align-middle bg-theme-background border-transparent border-theme-primary-100 dark:border-theme-secondary-800 text-theme-primary-700"
         >
           <div
-            class="transition-transform sc-bdfBwQ kJrqvM"
+            class="sc-bdfBwQ kJrqvM transition-transform "
             height="5"
             width="8"
           >
@@ -488,7 +488,7 @@ exports[`FilterNetworks should toggle view all 1`] = `
           data-testid="NetworkOption__LSK"
         >
           <div
-            class="relative Circle__CircleWrapper-uw7h4j-0 bNDQMV border-theme-success-500 text-theme-success-500 ring-theme-background"
+            class="Circle__CircleWrapper-uw7h4j-0 bNDQMV relative border-theme-success-500 text-theme-success-500 ring-theme-background"
           >
             <div
               class="sc-bdfBwQ iyevwF"
@@ -500,7 +500,7 @@ exports[`FilterNetworks should toggle view all 1`] = `
               </svg>
             </div>
             <span
-              class="flex justify-center items-center align-middle rounded-full border-2 border-transparent Badge__Wrapper-sc-1d7juq8-0 fMCGPT bg-theme-background bg-theme-success-500 text-theme-success-100"
+              class="Badge__Wrapper-sc-1d7juq8-0 fMCGPT flex border-2 rounded-full justify-center items-center align-middle bg-theme-background border-transparent bg-theme-success-500 text-theme-success-100"
             >
               <div
                 class="sc-bdfBwQ fdfkzt"
@@ -535,7 +535,7 @@ exports[`FilterNetworks should toggle view all 2`] = `
         Public Networks
       </div>
       <div
-        class="relative mr-5 cursor-pointer Circle__CircleWrapper-uw7h4j-0 bNDQMV border-theme-primary-100 ring-theme-background dark:border-theme-secondary-800"
+        class="Circle__CircleWrapper-uw7h4j-0 bNDQMV relative mr-5 cursor-pointer border-theme-primary-100 dark:border-theme-secondary-800 ring-theme-background"
         data-testid="network__viewall"
       >
         <div
@@ -544,10 +544,10 @@ exports[`FilterNetworks should toggle view all 2`] = `
           All
         </div>
         <span
-          class="flex justify-center items-center align-middle rounded-full border-2 border-transparent Badge__Wrapper-sc-1d7juq8-0 fMCGPT bg-theme-background border-theme-primary-100 text-theme-primary-700 dark:border-theme-secondary-800"
+          class="Badge__Wrapper-sc-1d7juq8-0 fMCGPT flex border-2 rounded-full justify-center items-center align-middle bg-theme-background border-transparent border-theme-primary-100 dark:border-theme-secondary-800 text-theme-primary-700"
         >
           <div
-            class="transition-transform sc-bdfBwQ kJrqvM"
+            class="sc-bdfBwQ kJrqvM transition-transform "
             height="5"
             width="8"
           >
@@ -567,7 +567,7 @@ exports[`FilterNetworks should toggle view all 2`] = `
           data-testid="NetworkOption__ARK"
         >
           <div
-            class="relative Circle__CircleWrapper-uw7h4j-0 bNDQMV border-theme-secondary-300 text-theme-secondary-300 ring-theme-background dark:border-theme-secondary-800"
+            class="Circle__CircleWrapper-uw7h4j-0 bNDQMV relative border-theme-secondary-300 text-theme-secondary-300 dark:border-theme-secondary-800 ring-theme-background"
           >
             <div
               class="sc-bdfBwQ iyevwF"
@@ -579,7 +579,7 @@ exports[`FilterNetworks should toggle view all 2`] = `
               </svg>
             </div>
             <span
-              class="flex justify-center items-center align-middle rounded-full border-2 border-transparent Badge__Wrapper-sc-1d7juq8-0 fMCGPT bg-theme-background border-theme-secondary-300 dark:border-theme-secondary-800"
+              class="Badge__Wrapper-sc-1d7juq8-0 fMCGPT flex border-2 rounded-full justify-center items-center align-middle bg-theme-background border-transparent border-theme-secondary-300 dark:border-theme-secondary-800"
             >
               <span />
             </span>
@@ -596,7 +596,7 @@ exports[`FilterNetworks should toggle view all 2`] = `
         Development Networks
       </div>
       <div
-        class="relative mr-5 cursor-pointer Circle__CircleWrapper-uw7h4j-0 bNDQMV border-theme-primary-100 ring-theme-background dark:border-theme-secondary-800"
+        class="Circle__CircleWrapper-uw7h4j-0 bNDQMV relative mr-5 cursor-pointer border-theme-primary-100 dark:border-theme-secondary-800 ring-theme-background"
         data-testid="network__viewall"
       >
         <div
@@ -605,10 +605,10 @@ exports[`FilterNetworks should toggle view all 2`] = `
           All
         </div>
         <span
-          class="flex justify-center items-center align-middle rounded-full border-2 border-transparent Badge__Wrapper-sc-1d7juq8-0 fMCGPT bg-theme-background border-theme-primary-100 text-theme-primary-700 dark:border-theme-secondary-800"
+          class="Badge__Wrapper-sc-1d7juq8-0 fMCGPT flex border-2 rounded-full justify-center items-center align-middle bg-theme-background border-transparent border-theme-primary-100 dark:border-theme-secondary-800 text-theme-primary-700"
         >
           <div
-            class="transition-transform sc-bdfBwQ kJrqvM"
+            class="sc-bdfBwQ kJrqvM transition-transform "
             height="5"
             width="8"
           >
@@ -628,7 +628,7 @@ exports[`FilterNetworks should toggle view all 2`] = `
           data-testid="NetworkOption__LSK"
         >
           <div
-            class="relative Circle__CircleWrapper-uw7h4j-0 bNDQMV border-theme-success-500 text-theme-success-500 ring-theme-background"
+            class="Circle__CircleWrapper-uw7h4j-0 bNDQMV relative border-theme-success-500 text-theme-success-500 ring-theme-background"
           >
             <div
               class="sc-bdfBwQ iyevwF"
@@ -640,7 +640,7 @@ exports[`FilterNetworks should toggle view all 2`] = `
               </svg>
             </div>
             <span
-              class="flex justify-center items-center align-middle rounded-full border-2 border-transparent Badge__Wrapper-sc-1d7juq8-0 fMCGPT bg-theme-background bg-theme-success-500 text-theme-success-100"
+              class="Badge__Wrapper-sc-1d7juq8-0 fMCGPT flex border-2 rounded-full justify-center items-center align-middle bg-theme-background border-transparent bg-theme-success-500 text-theme-success-100"
             >
               <div
                 class="sc-bdfBwQ fdfkzt"
@@ -672,7 +672,7 @@ exports[`NetworkOptions should not render unknown networks 1`] = `
       data-testid="NetworkOption__ARK"
     >
       <div
-        class="relative Circle__CircleWrapper-uw7h4j-0 bNDQMV border-theme-secondary-300 text-theme-secondary-300 ring-theme-background dark:border-theme-secondary-800"
+        class="Circle__CircleWrapper-uw7h4j-0 bNDQMV relative border-theme-secondary-300 text-theme-secondary-300 dark:border-theme-secondary-800 ring-theme-background"
       >
         <div
           class="sc-bdfBwQ iyevwF"
@@ -684,7 +684,7 @@ exports[`NetworkOptions should not render unknown networks 1`] = `
           </svg>
         </div>
         <span
-          class="flex justify-center items-center align-middle rounded-full border-2 border-transparent Badge__Wrapper-sc-1d7juq8-0 fMCGPT bg-theme-background border-theme-secondary-300 dark:border-theme-secondary-800"
+          class="Badge__Wrapper-sc-1d7juq8-0 fMCGPT flex border-2 rounded-full justify-center items-center align-middle bg-theme-background border-transparent border-theme-secondary-300 dark:border-theme-secondary-800"
         >
           <span />
         </span>
@@ -695,7 +695,7 @@ exports[`NetworkOptions should not render unknown networks 1`] = `
       data-testid="NetworkOption__LSK"
     >
       <div
-        class="relative Circle__CircleWrapper-uw7h4j-0 bNDQMV border-theme-success-500 text-theme-success-500 ring-theme-background"
+        class="Circle__CircleWrapper-uw7h4j-0 bNDQMV relative border-theme-success-500 text-theme-success-500 ring-theme-background"
       >
         <div
           class="sc-bdfBwQ iyevwF"
@@ -707,7 +707,7 @@ exports[`NetworkOptions should not render unknown networks 1`] = `
           </svg>
         </div>
         <span
-          class="flex justify-center items-center align-middle rounded-full border-2 border-transparent Badge__Wrapper-sc-1d7juq8-0 fMCGPT bg-theme-background bg-theme-success-500 text-theme-success-100"
+          class="Badge__Wrapper-sc-1d7juq8-0 fMCGPT flex border-2 rounded-full justify-center items-center align-middle bg-theme-background border-transparent bg-theme-success-500 text-theme-success-100"
         >
           <div
             class="sc-bdfBwQ fdfkzt"
@@ -737,7 +737,7 @@ exports[`NetworkOptions should render available networks options 1`] = `
       data-testid="NetworkOption__ARK"
     >
       <div
-        class="relative Circle__CircleWrapper-uw7h4j-0 bNDQMV border-theme-secondary-300 text-theme-secondary-300 ring-theme-background dark:border-theme-secondary-800"
+        class="Circle__CircleWrapper-uw7h4j-0 bNDQMV relative border-theme-secondary-300 text-theme-secondary-300 dark:border-theme-secondary-800 ring-theme-background"
       >
         <div
           class="sc-bdfBwQ iyevwF"
@@ -749,7 +749,7 @@ exports[`NetworkOptions should render available networks options 1`] = `
           </svg>
         </div>
         <span
-          class="flex justify-center items-center align-middle rounded-full border-2 border-transparent Badge__Wrapper-sc-1d7juq8-0 fMCGPT bg-theme-background border-theme-secondary-300 dark:border-theme-secondary-800"
+          class="Badge__Wrapper-sc-1d7juq8-0 fMCGPT flex border-2 rounded-full justify-center items-center align-middle bg-theme-background border-transparent border-theme-secondary-300 dark:border-theme-secondary-800"
         >
           <span />
         </span>
@@ -760,7 +760,7 @@ exports[`NetworkOptions should render available networks options 1`] = `
       data-testid="NetworkOption__LSK"
     >
       <div
-        class="relative Circle__CircleWrapper-uw7h4j-0 bNDQMV border-theme-success-500 text-theme-success-500 ring-theme-background"
+        class="Circle__CircleWrapper-uw7h4j-0 bNDQMV relative border-theme-success-500 text-theme-success-500 ring-theme-background"
       >
         <div
           class="sc-bdfBwQ iyevwF"
@@ -772,7 +772,7 @@ exports[`NetworkOptions should render available networks options 1`] = `
           </svg>
         </div>
         <span
-          class="flex justify-center items-center align-middle rounded-full border-2 border-transparent Badge__Wrapper-sc-1d7juq8-0 fMCGPT bg-theme-background bg-theme-success-500 text-theme-success-100"
+          class="Badge__Wrapper-sc-1d7juq8-0 fMCGPT flex border-2 rounded-full justify-center items-center align-middle bg-theme-background border-transparent bg-theme-success-500 text-theme-success-100"
         >
           <div
             class="sc-bdfBwQ fdfkzt"
@@ -811,7 +811,7 @@ exports[`NetworkOptions should render networks that have coin and id defined 1`]
       data-testid="NetworkOption__ARK"
     >
       <div
-        class="relative Circle__CircleWrapper-uw7h4j-0 bNDQMV border-theme-secondary-300 text-theme-secondary-300 ring-theme-background dark:border-theme-secondary-800"
+        class="Circle__CircleWrapper-uw7h4j-0 bNDQMV relative border-theme-secondary-300 text-theme-secondary-300 dark:border-theme-secondary-800 ring-theme-background"
       >
         <div
           class="sc-bdfBwQ iyevwF"
@@ -823,7 +823,7 @@ exports[`NetworkOptions should render networks that have coin and id defined 1`]
           </svg>
         </div>
         <span
-          class="flex justify-center items-center align-middle rounded-full border-2 border-transparent Badge__Wrapper-sc-1d7juq8-0 fMCGPT bg-theme-background border-theme-secondary-300 dark:border-theme-secondary-800"
+          class="Badge__Wrapper-sc-1d7juq8-0 fMCGPT flex border-2 rounded-full justify-center items-center align-middle bg-theme-background border-transparent border-theme-secondary-300 dark:border-theme-secondary-800"
         >
           <span />
         </span>
@@ -834,7 +834,7 @@ exports[`NetworkOptions should render networks that have coin and id defined 1`]
       data-testid="NetworkOption__LSK"
     >
       <div
-        class="relative Circle__CircleWrapper-uw7h4j-0 bNDQMV border-theme-success-500 text-theme-success-500 ring-theme-background"
+        class="Circle__CircleWrapper-uw7h4j-0 bNDQMV relative border-theme-success-500 text-theme-success-500 ring-theme-background"
       >
         <div
           class="sc-bdfBwQ iyevwF"
@@ -846,7 +846,7 @@ exports[`NetworkOptions should render networks that have coin and id defined 1`]
           </svg>
         </div>
         <span
-          class="flex justify-center items-center align-middle rounded-full border-2 border-transparent Badge__Wrapper-sc-1d7juq8-0 fMCGPT bg-theme-background bg-theme-success-500 text-theme-success-100"
+          class="Badge__Wrapper-sc-1d7juq8-0 fMCGPT flex border-2 rounded-full justify-center items-center align-middle bg-theme-background border-transparent bg-theme-success-500 text-theme-success-100"
         >
           <div
             class="sc-bdfBwQ fdfkzt"
@@ -868,7 +868,7 @@ exports[`NetworkOptions should render networks that have coin and id defined 1`]
 exports[`ToggleAllOption should render 1`] = `
 <div>
   <div
-    class="relative mr-5 cursor-pointer Circle__CircleWrapper-uw7h4j-0 bNDQMV border-theme-primary-100 ring-theme-background dark:border-theme-secondary-800"
+    class="Circle__CircleWrapper-uw7h4j-0 bNDQMV relative mr-5 cursor-pointer border-theme-primary-100 dark:border-theme-secondary-800 ring-theme-background"
     data-testid="network__viewall"
   >
     <div
@@ -877,10 +877,10 @@ exports[`ToggleAllOption should render 1`] = `
       All
     </div>
     <span
-      class="flex justify-center items-center align-middle rounded-full border-2 border-transparent Badge__Wrapper-sc-1d7juq8-0 fMCGPT bg-theme-background border-theme-primary-100 text-theme-primary-700 dark:border-theme-secondary-800"
+      class="Badge__Wrapper-sc-1d7juq8-0 fMCGPT flex border-2 rounded-full justify-center items-center align-middle bg-theme-background border-transparent border-theme-primary-100 dark:border-theme-secondary-800 text-theme-primary-700"
     >
       <div
-        class="transition-transform sc-bdfBwQ kJrqvM"
+        class="sc-bdfBwQ kJrqvM transition-transform "
         height="5"
         width="8"
       >
@@ -899,7 +899,7 @@ exports[`ToggleAllOption should render hidden 1`] = `<div />`;
 exports[`ToggleAllOption should render selected 1`] = `
 <div>
   <div
-    class="relative mr-5 cursor-pointer Circle__CircleWrapper-uw7h4j-0 bNDQMV border-theme-primary-100 ring-theme-background dark:border-theme-secondary-800"
+    class="Circle__CircleWrapper-uw7h4j-0 bNDQMV relative mr-5 cursor-pointer border-theme-primary-100 dark:border-theme-secondary-800 ring-theme-background"
     data-testid="network__viewall"
   >
     <div
@@ -908,10 +908,10 @@ exports[`ToggleAllOption should render selected 1`] = `
       All
     </div>
     <span
-      class="flex justify-center items-center text-white align-middle rounded-full border-2 border-transparent Badge__Wrapper-sc-1d7juq8-0 fMCGPT bg-theme-background bg-theme-primary-700 border-theme-primary-700"
+      class="Badge__Wrapper-sc-1d7juq8-0 fMCGPT flex border-2 rounded-full justify-center items-center align-middle bg-theme-background border-transparent bg-theme-primary-700 border-theme-primary-700 text-white"
     >
       <div
-        class="transition-transform transform rotate-180 sc-bdfBwQ kJrqvM"
+        class="sc-bdfBwQ kJrqvM transition-transform transform rotate-180"
         height="5"
         width="8"
       >
