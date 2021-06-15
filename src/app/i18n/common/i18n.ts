@@ -228,7 +228,7 @@ export const translations: { [key: string]: any } = {
 	X_OF_Y: "{{0}} of {{1}}",
 	YES: "Yes",
 	YOU: "You",
-	YOUR_BALANCE: "Your balance",
+	YOUR_BALANCE: "Your Balance",
 	YOUR_PASSPHRASE: "Your Passphrase",
 
 	NOTICE_NO_WALLETS: "Create or import a wallet first",
