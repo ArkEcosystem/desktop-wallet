@@ -58,7 +58,7 @@ describe("App", () => {
 			.reply(200, require("tests/fixtures/plugins/registry/@dated/delegate-calculator-plugin.json"))
 			.persist();
 
-		jest.spyOn(electron.ipcRenderer, "invoke").mockImplementation((event: string, data) => {
+		jest.spyOn(electron.ipcRenderer, "invoke").mockImplementation((event: string) => {
 			let isUpdateCalled = false;
 			if (event === "updater:check-for-updates") {
 				const response = {
@@ -112,7 +112,7 @@ describe("App", () => {
 
 		jest.spyOn(utils, "shouldUseDarkColors").mockReturnValue(shouldUseDarkColors);
 
-		const { getByTestId, getByText } = renderWithRouter(<App />, { withProviders: false });
+		const { getByText } = renderWithRouter(<App />, { withProviders: false });
 
 		await waitFor(() => {
 			expect(getByText(profileTranslations.PAGE_WELCOME.WITH_PROFILES.TITLE)).toBeInTheDocument();
@@ -307,7 +307,7 @@ describe("App", () => {
 	it("should not migrate profiles", async () => {
 		process.env.REACT_APP_IS_E2E = undefined;
 
-		const { container, asFragment, getByText, getByTestId } = renderWithRouter(<App />, { withProviders: false });
+		const { asFragment, getByText, getByTestId } = renderWithRouter(<App />, { withProviders: false });
 		expect(getByTestId("Splash__text")).toBeInTheDocument();
 
 		await act(async () => {

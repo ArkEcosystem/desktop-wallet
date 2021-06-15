@@ -1,5 +1,5 @@
 import { Contracts } from "@arkecosystem/platform-sdk-profiles";
-import Transport, { Observer } from "@ledgerhq/hw-transport";
+import Transport from "@ledgerhq/hw-transport";
 import { createTransportReplayer, RecordStore } from "@ledgerhq/hw-transport-mocker";
 import { EnvironmentProvider } from "app/contexts";
 import { LedgerProvider } from "app/contexts/Ledger/Ledger";
@@ -9,12 +9,11 @@ import { FormProvider, useForm } from "react-hook-form";
 import { Route } from "react-router-dom";
 import { env, getDefaultProfileId, renderWithRouter, screen, waitFor } from "utils/testing-library";
 
-const history = createMemoryHistory();
-
 import { LedgerConnectionStep } from "./LedgerConnectionStep";
 
+const history = createMemoryHistory();
+
 let transport: typeof Transport;
-let observer: Observer<any>;
 
 describe("LedgerConnectionStep", () => {
 	let profile: Contracts.IProfile;
@@ -28,10 +27,7 @@ describe("LedgerConnectionStep", () => {
 		wallet = profile.wallets().first();
 		transport = createTransportReplayer(RecordStore.fromString(""));
 
-		jest.spyOn(transport, "listen").mockImplementationOnce((obv) => {
-			observer = obv;
-			return { unsubscribe: jest.fn() };
-		});
+		jest.spyOn(transport, "listen").mockImplementationOnce(() => ({ unsubscribe: jest.fn() }));
 
 		jest.useFakeTimers();
 		jest.spyOn(wallet.coin(), "__construct").mockImplementation();

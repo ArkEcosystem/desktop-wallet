@@ -17,21 +17,6 @@ const history = createMemoryHistory();
 
 const exchangeURL = `/profiles/${getDefaultProfileId()}/exchange`;
 
-const exchanges = [
-	{
-		id: "changenow-plugin",
-		name: "ChangeNOW Plugin",
-	},
-	{
-		id: "binance",
-		name: "Binance",
-	},
-	{
-		id: "atomars",
-		name: "Atomars",
-	},
-];
-
 describe("Exchange", () => {
 	beforeAll(() => {
 		profile = env.profiles().findById(getDefaultProfileId());
@@ -101,7 +86,7 @@ describe("Exchange", () => {
 
 		plugin.enable(profile, { autoRun: true });
 
-		const { container, getAllByTestId, getByTestId, getByText } = renderWithRouter(
+		const { getAllByTestId, getByTestId } = renderWithRouter(
 			<Route path="/profiles/:profileId/exchange">
 				<PluginProviders>
 					<Exchange />
@@ -142,7 +127,7 @@ describe("Exchange", () => {
 
 		plugin.enable(profile, { autoRun: true });
 
-		const { container, getAllByTestId, getByTestId, getByText } = renderWithRouter(
+		const { getAllByTestId, getByTestId, getByText } = renderWithRouter(
 			<Route path="/profiles/:profileId/exchange">
 				<PluginProviders>
 					<Exchange />
@@ -258,7 +243,7 @@ describe("Exchange", () => {
 
 		const title = plugin.config().title();
 
-		const { container, getAllByTestId, getByTestId, getByText } = renderWithRouter(
+		const { getAllByTestId, getByTestId, getByText } = renderWithRouter(
 			<Route path="/profiles/:profileId/exchange">
 				<PluginProviders>
 					<Exchange />
@@ -303,7 +288,7 @@ describe("Exchange", () => {
 
 		plugin.enable(profile, { autoRun: true });
 
-		const { container, getAllByTestId, getByTestId, getByText } = renderWithRouter(
+		const { getAllByTestId, getByTestId, getByText } = renderWithRouter(
 			<Route path="/profiles/:profileId/exchange">
 				<PluginProviders>
 					<Exchange />

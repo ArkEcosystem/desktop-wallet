@@ -28,7 +28,7 @@ import {
 	within,
 } from "utils/testing-library";
 
-import { FormStep, ReviewStep, SendTransfer, SummaryStep } from "./";
+import { FormStep, ReviewStep, SendTransfer, SummaryStep } from ".";
 import { NetworkStep } from "./NetworkStep";
 
 const passphrase = getDefaultWalletMnemonic();
@@ -1208,7 +1208,7 @@ describe("SendTransfer", () => {
 		const history = createMemoryHistory();
 		history.push(transferURL);
 
-		const { getAllByTestId, getByTestId, container } = renderWithRouter(
+		const { getAllByTestId, getByTestId } = renderWithRouter(
 			<Route path="/profiles/:profileId/wallets/:walletId/send-transfer">
 				<LedgerProvider transport={getDefaultLedgerTransport()}>
 					<SendTransfer />
@@ -1296,7 +1296,7 @@ describe("SendTransfer", () => {
 			const history = createMemoryHistory();
 			history.push(transferURL);
 
-			const { getAllByTestId, getByTestId, container } = renderWithRouter(
+			const { getAllByTestId, getByTestId } = renderWithRouter(
 				<Route path="/profiles/:profileId/wallets/:walletId/send-transfer">
 					<LedgerProvider transport={getDefaultLedgerTransport()}>
 						<SendTransfer />

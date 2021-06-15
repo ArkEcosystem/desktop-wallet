@@ -19,7 +19,7 @@ import { useForm } from "react-hook-form";
 import { useTranslation } from "react-i18next";
 import { useHistory, useParams } from "react-router-dom";
 
-import { SummaryStep } from "./";
+import { SummaryStep } from ".";
 import { SendRegistrationForm } from "./SendRegistration.models";
 
 export const SendRegistration = () => {
@@ -166,7 +166,7 @@ export const SendRegistration = () => {
 			<Section className="flex-1">
 				<Form
 					data-testid="Registration__form"
-					className="max-w-xl mx-auto"
+					className="mx-auto max-w-xl"
 					context={form}
 					onSubmit={handleSubmit}
 				>

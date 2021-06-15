@@ -5,7 +5,7 @@ exports[`UpdateContact should not render if not open 1`] = `<DocumentFragment />
 exports[`UpdateContact should render 1`] = `
 <DocumentFragment>
   <div
-    class="flex fixed inset-0 z-50 py-20 w-full h-full bg-theme-secondary-900-rgba bg-opacity-60 dark:bg-black-rgba dark:bg-opacity-80 overflow-overlay"
+    class="flex fixed inset-0 z-50 py-20 w-full h-full bg-opacity-60 dark:bg-opacity-80 bg-theme-secondary-900-rgba overflow-overlay dark:bg-black-rgba"
     data-testid="modal__overlay"
   >
     <div
@@ -13,11 +13,11 @@ exports[`UpdateContact should render 1`] = `
       tabindex="-1"
     >
       <div
-        class="relative flex flex-col p-10 overflow-hidden rounded-2.5xl bg-theme-background shadow-2xl"
+        class="flex overflow-hidden relative flex-col p-10 shadow-2xl rounded-2.5xl bg-theme-background"
         data-testid="modal__inner"
       >
         <div
-          class="absolute top-0 right-0 z-10 mt-5 mr-5 rounded transition-all duration-100 ease-linear bg-theme-primary-100 hover:bg-theme-primary-300 dark:bg-theme-secondary-800 dark:text-theme-secondary-600 dark:hover:bg-theme-secondary-700 dark:hover:text-theme-secondary-400"
+          class="absolute top-0 right-0 z-10 mt-5 mr-5 rounded transition-all duration-100 ease-linear bg-theme-primary-100 dark:bg-theme-secondary-800 dark:text-theme-secondary-600 dark:hover:bg-theme-secondary-700 dark:hover:text-theme-secondary-400 hover:bg-theme-primary-300"
         >
           <button
             class="OriginalButton__StyledButton-sc-1y2wptt-0 fNHPRi w-11 h-11"
@@ -51,7 +51,7 @@ exports[`UpdateContact should render 1`] = `
             class="flex-1"
           >
             <div
-              class="text-theme-secondary-text whitespace-pre-line"
+              class="whitespace-pre-line text-theme-secondary-text"
             >
               Enter the information below to update or delete the Contact.
             </div>
@@ -173,7 +173,7 @@ exports[`UpdateContact should render 1`] = `
                                 class=""
                               >
                                 <div
-                                  class="py-2 px-1 flex items-center justify-center"
+                                  class="flex justify-center items-center py-2 px-1"
                                   data-testid="SelectDropdown__caret"
                                 >
                                   <div
@@ -252,7 +252,7 @@ exports[`UpdateContact should render 1`] = `
                   class="group"
                 >
                   <span
-                    class="inline-block text-sm font-semibold transition-colors duration-100 group-hover:text-theme-primary-600 text-theme-secondary-text"
+                    class="inline-block text-sm font-semibold transition-colors duration-100 text-theme-secondary-text group-hover:text-theme-primary-600"
                   >
                     Addresses
                   </span>
@@ -305,7 +305,7 @@ exports[`UpdateContact should render 1`] = `
                         class="font-semibold"
                       >
                         <div
-                          class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap space-x-2"
+                          class="flex overflow-hidden flex-grow items-center space-x-2 whitespace-nowrap no-ligatures"
                         >
                           <span
                             class="inline-flex overflow-hidden text-theme-text font-semibold text-base"

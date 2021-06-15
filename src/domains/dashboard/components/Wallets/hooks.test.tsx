@@ -6,7 +6,7 @@ import nock from "nock";
 import React from "react";
 import { env, getDefaultProfileId, syncDelegates } from "utils/testing-library";
 
-import { useWalletDisplay } from "./";
+import { useWalletDisplay } from ".";
 
 let profile: Contracts.IProfile;
 let wallets: Contracts.IReadWriteWallet[];

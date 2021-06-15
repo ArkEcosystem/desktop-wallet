@@ -4,7 +4,7 @@ import { act, renderHook } from "@testing-library/react-hooks";
 import * as utils from "utils/electron-utils";
 import { waitFor } from "utils/testing-library";
 
-import { useQRCode } from "./";
+import { useQRCode } from ".";
 
 describe("useQRCode hook", () => {
 	let darkModeSpy = jest.spyInstance;

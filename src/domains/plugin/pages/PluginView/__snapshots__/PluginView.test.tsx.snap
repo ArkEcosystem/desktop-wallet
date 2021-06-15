@@ -10,7 +10,7 @@ exports[`Plugin View should render plugin content 1`] = `
       class="NavigationBar__NavWrapper-sc-1qsoskw-0 bewuLZ"
     >
       <div
-        class="relative flex h-21"
+        class="flex relative h-21"
       >
         <button
           class="BackButton__StyledBackButton-sc-1pe22tv-0 hLgyWD flex w-12"
@@ -42,18 +42,18 @@ exports[`Plugin View should render plugin content 1`] = `
             </div>
           </div>
           <ul
-            class="flex ml-4 mr-auto space-x-8 h-21"
+            class="flex mr-auto ml-4 space-x-8 h-21"
           >
             <li
               class="flex"
             >
               <a
-                class="relative flex items-center font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
+                class="flex relative items-center font-semibold transition-colors duration-200 focus:outline-none text-md text-theme-secondary-text group"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/dashboard"
                 title="Portfolio"
               >
                 <div
-                  class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                  class="absolute inset-0 -mx-2 rounded group-focus-visible group-focus:ring-2 ring-theme-primary-400"
                 />
                 Portfolio
               </a>
@@ -63,12 +63,12 @@ exports[`Plugin View should render plugin content 1`] = `
             >
               <a
                 aria-current="page"
-                class="relative flex items-center font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group active"
+                class="flex relative items-center font-semibold transition-colors duration-200 focus:outline-none text-md text-theme-secondary-text group active"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/plugins"
                 title="Plugins"
               >
                 <div
-                  class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                  class="absolute inset-0 -mx-2 rounded group-focus-visible group-focus:ring-2 ring-theme-primary-400"
                 />
                 Plugins
               </a>
@@ -77,12 +77,12 @@ exports[`Plugin View should render plugin content 1`] = `
               class="flex"
             >
               <a
-                class="relative flex items-center font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
+                class="flex relative items-center font-semibold transition-colors duration-200 focus:outline-none text-md text-theme-secondary-text group"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/exchange"
                 title="Exchange"
               >
                 <div
-                  class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                  class="absolute inset-0 -mx-2 rounded group-focus-visible group-focus:ring-2 ring-theme-primary-400"
                 />
                 Exchange
               </a>
@@ -91,12 +91,12 @@ exports[`Plugin View should render plugin content 1`] = `
               class="flex"
             >
               <a
-                class="relative flex items-center font-semibold transition-colors duration-200 text-md text-theme-secondary-text focus:outline-none group"
+                class="flex relative items-center font-semibold transition-colors duration-200 focus:outline-none text-md text-theme-secondary-text group"
                 href="/profiles/b999d134-7a24-481e-a95d-bc47c543bfc9/news"
                 title="News"
               >
                 <div
-                  class="absolute inset-0 -mx-2 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                  class="absolute inset-0 -mx-2 rounded group-focus-visible group-focus:ring-2 ring-theme-primary-400"
                 />
                 News
               </a>
@@ -133,7 +133,7 @@ exports[`Plugin View should render plugin content 1`] = `
                           </svg>
                         </div>
                         <div
-                          class="flex absolute right-0 justify-center items-center mr-3 -mt-3 w-3 h-3 rounded-full transition-all duration-100 ease-linear bg-theme-background group-hover:bg-theme-primary-50 dark:group-hover:bg-theme-secondary-800"
+                          class="flex absolute right-0 justify-center items-center mr-3 -mt-3 w-3 h-3 rounded-full transition-all duration-100 ease-linear bg-theme-background dark:group-hover:bg-theme-secondary-800 group-hover:bg-theme-primary-50"
                         >
                           <div
                             class="w-2 h-2 rounded-full bg-theme-danger-500"
@@ -238,7 +238,7 @@ exports[`Plugin View should render plugin content 1`] = `
                 data-testid="dropdown__toggle"
               >
                 <div
-                  class="relative items-center justify-center align-middle rounded-full cursor-pointer"
+                  class="relative justify-center items-center align-middle rounded-full cursor-pointer"
                   data-testid="navbar__useractions"
                 >
                   <div
@@ -270,7 +270,7 @@ exports[`Plugin View should render plugin content 1`] = `
       class="flex flex-col flex-1"
     >
       <div
-        class="px-4 sm:px-6 lg:px-10 py-4"
+        class="py-4 px-4 sm:px-6 lg:px-10"
       >
         <div
           class="flex justify-between items-center"

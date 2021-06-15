@@ -27,7 +27,7 @@ import {
 	waitFor,
 } from "utils/testing-library";
 
-import { SendVote } from "../SendVote";
+import { SendVote } from ".";
 
 const fixtureProfileId = getDefaultProfileId();
 
@@ -56,7 +56,6 @@ const createUnvoteTransactionMock = (wallet: Contracts.IReadWriteWallet) =>
 const passphrase = getDefaultWalletMnemonic();
 let profile: Contracts.IProfile;
 let wallet: Contracts.IReadWriteWallet;
-let votes: ReadOnlyWallet[];
 const transport = getDefaultLedgerTransport();
 
 describe("SendVote", () => {
@@ -74,7 +73,7 @@ describe("SendVote", () => {
 		await syncDelegates(profile);
 		await syncFees(profile);
 
-		votes = [0, 1].map((index) =>
+		[0, 1].map((index) =>
 			env.delegates().findByAddress(wallet.coinId(), wallet.networkId(), delegateData[index].address),
 		);
 
@@ -236,7 +235,7 @@ describe("SendVote", () => {
 			search: `?${params}`,
 		});
 
-		const { container, getByTestId } = renderWithRouter(
+		const { getByTestId } = renderWithRouter(
 			<Route path="/profiles/:profileId/wallets/:walletId/send-vote">
 				<LedgerProvider transport={transport}>
 					<SendVote />

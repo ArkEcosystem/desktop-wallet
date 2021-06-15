@@ -2,7 +2,7 @@ import { Contracts } from "@arkecosystem/platform-sdk-profiles";
 import { chunk } from "@arkecosystem/utils";
 import { useMemo } from "react";
 
-import { GridWallet, UseWalletDisplayProps } from "./";
+import { GridWallet, UseWalletDisplayProps } from ".";
 
 export const useWalletDisplay = ({
 	wallets = [],

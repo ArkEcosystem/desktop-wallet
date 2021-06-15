@@ -3,7 +3,7 @@
 exports[`SignMessage should render 1`] = `
 <DocumentFragment>
   <div
-    class="flex fixed inset-0 z-50 py-20 w-full h-full bg-theme-secondary-900-rgba bg-opacity-60 dark:bg-black-rgba dark:bg-opacity-80 overflow-overlay"
+    class="flex fixed inset-0 z-50 py-20 w-full h-full bg-opacity-60 dark:bg-opacity-80 bg-theme-secondary-900-rgba overflow-overlay dark:bg-black-rgba"
     data-testid="modal__overlay"
   >
     <div
@@ -11,11 +11,11 @@ exports[`SignMessage should render 1`] = `
       tabindex="-1"
     >
       <div
-        class="relative flex flex-col p-10 overflow-hidden rounded-2.5xl bg-theme-background shadow-2xl"
+        class="flex overflow-hidden relative flex-col p-10 shadow-2xl rounded-2.5xl bg-theme-background"
         data-testid="modal__inner"
       >
         <div
-          class="absolute top-0 right-0 z-10 mt-5 mr-5 rounded transition-all duration-100 ease-linear bg-theme-primary-100 hover:bg-theme-primary-300 dark:bg-theme-secondary-800 dark:text-theme-secondary-600 dark:hover:bg-theme-secondary-700 dark:hover:text-theme-secondary-400"
+          class="absolute top-0 right-0 z-10 mt-5 mr-5 rounded transition-all duration-100 ease-linear bg-theme-primary-100 dark:bg-theme-secondary-800 dark:text-theme-secondary-600 dark:hover:bg-theme-secondary-700 dark:hover:text-theme-secondary-400 hover:bg-theme-primary-300"
         >
           <button
             class="OriginalButton__StyledButton-sc-1y2wptt-0 fNHPRi w-11 h-11"
@@ -186,12 +186,12 @@ exports[`SignMessage should render 1`] = `
                             class=""
                           >
                             <button
-                              class="relative flex items-center justify-center w-full h-full text-2xl focus:outline-none group"
+                              class="flex relative justify-center items-center w-full h-full text-2xl focus:outline-none group"
                               data-testid="InputPassword__toggle"
                               type="button"
                             >
                               <div
-                                class="absolute inset-0 -m-1 rounded ring-theme-primary-400 group-focus:ring-2 group-focus-visible"
+                                class="absolute inset-0 -m-1 rounded group-focus-visible group-focus:ring-2 ring-theme-primary-400"
                               />
                               <div
                                 class="sc-bdfBwQ fPrsah"
@@ -249,7 +249,7 @@ exports[`SignMessage should render 1`] = `
 exports[`SignMessage should render for ledger wallets 1`] = `
 <DocumentFragment>
   <div
-    class="flex fixed inset-0 z-50 py-20 w-full h-full bg-theme-secondary-900-rgba bg-opacity-60 dark:bg-black-rgba dark:bg-opacity-80 overflow-overlay"
+    class="flex fixed inset-0 z-50 py-20 w-full h-full bg-opacity-60 dark:bg-opacity-80 bg-theme-secondary-900-rgba overflow-overlay dark:bg-black-rgba"
     data-testid="modal__overlay"
   >
     <div
@@ -257,11 +257,11 @@ exports[`SignMessage should render for ledger wallets 1`] = `
       tabindex="-1"
     >
       <div
-        class="relative flex flex-col p-10 overflow-hidden rounded-2.5xl bg-theme-background shadow-2xl"
+        class="flex overflow-hidden relative flex-col p-10 shadow-2xl rounded-2.5xl bg-theme-background"
         data-testid="modal__inner"
       >
         <div
-          class="absolute top-0 right-0 z-10 mt-5 mr-5 rounded transition-all duration-100 ease-linear bg-theme-primary-100 hover:bg-theme-primary-300 dark:bg-theme-secondary-800 dark:text-theme-secondary-600 dark:hover:bg-theme-secondary-700 dark:hover:text-theme-secondary-400"
+          class="absolute top-0 right-0 z-10 mt-5 mr-5 rounded transition-all duration-100 ease-linear bg-theme-primary-100 dark:bg-theme-secondary-800 dark:text-theme-secondary-600 dark:hover:bg-theme-secondary-700 dark:hover:text-theme-secondary-400 hover:bg-theme-primary-300"
         >
           <button
             class="OriginalButton__StyledButton-sc-1y2wptt-0 fNHPRi w-11 h-11"
@@ -457,7 +457,7 @@ exports[`SignMessage should render signed step with wallet alias 1`] = `
       data-testid="TransactionDetail"
     >
       <div
-        class="w-40 flex-1 space-y-2 whitespace-nowrap"
+        class="flex-1 space-y-2 w-40 whitespace-nowrap"
       >
         <div
           class="text-sm font-semibold text-theme-secondary-700 no-ligatures"
@@ -468,7 +468,7 @@ exports[`SignMessage should render signed step with wallet alias 1`] = `
           class="font-semibold"
         >
           <div
-            class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap space-x-2"
+            class="flex overflow-hidden flex-grow items-center space-x-2 whitespace-nowrap no-ligatures"
           >
             <span
               class="font-semibold text-base text-theme-text"
@@ -510,7 +510,7 @@ exports[`SignMessage should render signed step with wallet alias 1`] = `
       data-testid="TransactionDetail"
     >
       <div
-        class="w-40 flex-1 space-y-2 whitespace-nowrap"
+        class="flex-1 space-y-2 w-40 whitespace-nowrap"
       >
         <div
           class="text-sm font-semibold text-theme-secondary-700 no-ligatures"

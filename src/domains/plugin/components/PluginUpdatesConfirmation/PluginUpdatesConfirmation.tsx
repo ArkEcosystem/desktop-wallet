@@ -33,7 +33,7 @@ export const PluginUpdatesConfirmation = ({ isOpen, plugins, onClose, onContinue
 	return (
 		<Modal
 			title={t("PLUGINS.MODAL_UPDATES_CONFIRMATION.TITLE")}
-			image={<Image name="GenericWarning" className="w-3/5 m-auto my-8" />}
+			image={<Image name="GenericWarning" className="m-auto my-8 w-3/5" />}
 			description={t("PLUGINS.MODAL_UPDATES_CONFIRMATION.DESCRIPTION")}
 			size="xl"
 			isOpen={isOpen}
@@ -49,7 +49,7 @@ export const PluginUpdatesConfirmation = ({ isOpen, plugins, onClose, onContinue
 								<div className="flex items-center space-x-2">
 									<span
 										data-testid="PluginUpdates__title"
-										className="font-semibold link important:px-0 flex items-center"
+										className="flex items-center font-semibold link important:px-0"
 									>
 										{pluginData.title}
 									</span>

@@ -12,7 +12,7 @@ const WaitingBadge = () => {
 		<Tooltip content={t("COMMON.AWAITING_SIGNATURE")}>
 			<Badge
 				data-testid="Signatures__waiting-badge"
-				className="bg-theme-danger-100 dark:bg-theme-danger-400 text-theme-danger-400 dark:text-white"
+				className="dark:text-white bg-theme-danger-100 text-theme-danger-400 dark:bg-theme-danger-400"
 				icon="SignatureStatusPending"
 			/>
 		</Tooltip>
@@ -26,7 +26,7 @@ const SignedBadge = () => {
 		<Tooltip content={t("COMMON.SIGNED")}>
 			<Badge
 				data-testid="Signatures__signed-badge"
-				className="bg-theme-success-200 dark:bg-theme-success-600 text-theme-success-500 dark:text-white"
+				className="dark:text-white bg-theme-success-200 text-theme-success-500 dark:bg-theme-success-600"
 				icon="SignatureStatusOk"
 			/>
 		</Tooltip>

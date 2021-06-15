@@ -16,7 +16,7 @@ import { useForm } from "react-hook-form";
 import { useTranslation } from "react-i18next";
 import { useHistory } from "react-router-dom";
 
-import { FormStep, ReviewStep, SummaryStep } from "./";
+import { FormStep, ReviewStep, SummaryStep } from ".";
 import { IpfsLedgerReview } from "./LedgerReview";
 
 export const SendIpfs = () => {
@@ -158,7 +158,7 @@ export const SendIpfs = () => {
 	return (
 		<Page profile={activeProfile}>
 			<Section className="flex-1">
-				<Form className="max-w-xl mx-auto" context={form} onSubmit={submitForm}>
+				<Form className="mx-auto max-w-xl" context={form} onSubmit={submitForm}>
 					<Tabs activeId={activeTab}>
 						<StepIndicator size={4} activeIndex={activeTab} />
 

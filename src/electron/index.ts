@@ -61,7 +61,7 @@ ipcMain.on("disable-iframe-protection", function (_event, urls) {
 	});
 });
 
-ipcMain.on("exit-app", function (_event, args) {
+ipcMain.on("exit-app", function () {
 	app.quit();
 });
 

@@ -11,7 +11,7 @@ exports[`PluginInfo should not show the view permissions button with text less t
       Permissions
     </p>
     <div
-      class="mt-3 inline-flex items-baseline space-x-2"
+      class="inline-flex items-baseline mt-3 space-x-2"
     >
       <p
         class="mt-3 text-theme-secondary-600"
@@ -76,7 +76,7 @@ exports[`PluginInfo should open and close the plugin permissions modal 1`] = `
       Permissions
     </p>
     <div
-      class="mt-3 inline-flex items-baseline space-x-2"
+      class="inline-flex items-baseline mt-3 space-x-2"
     >
       <p
         class="mt-3 text-theme-secondary-600"
@@ -160,7 +160,7 @@ exports[`PluginInfo should render properly 1`] = `
       Permissions
     </p>
     <div
-      class="mt-3 inline-flex items-baseline space-x-2"
+      class="inline-flex items-baseline mt-3 space-x-2"
     >
       <p
         class="mt-3 text-theme-secondary-600"
@@ -200,7 +200,7 @@ exports[`PluginInfo should render properly 1`] = `
         class="relative"
       >
         <div
-          class="overflow-hidden px-4.5 -mx-4.5 -mb-8 list-none slide-container swiper-container-initialized swiper-container-horizontal"
+          class="overflow-hidden -mb-8 list-none px-4.5 -mx-4.5 slide-container swiper-container-initialized swiper-container-horizontal"
           style="height: 232px;"
         >
           <div

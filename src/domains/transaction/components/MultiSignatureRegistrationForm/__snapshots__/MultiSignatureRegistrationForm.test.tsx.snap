@@ -50,7 +50,7 @@ exports[`MultiSignature Registration Form should render form step 1`] = `
                 </label>
                 <div>
                   <div
-                    class="relative flex items-center w-full text-left"
+                    class="flex relative items-center w-full text-left"
                     data-testid="SelectRecipient__wrapper"
                   >
                     <div
@@ -100,7 +100,7 @@ exports[`MultiSignature Registration Form should render form step 1`] = `
                             class="Input__InputWrapperStyled-wu99qs-0 jYUFQr"
                           >
                             <div
-                              class="Circle__CircleWrapper-uw7h4j-0 grnDUY bg-theme-secondary-200 dark:bg-theme-secondary-700 border-theme-secondary-200 dark:border-theme-secondary-700 ring-theme-background"
+                              class="Circle__CircleWrapper-uw7h4j-0 grnDUY bg-theme-secondary-200 border-theme-secondary-200 dark:bg-theme-secondary-700 dark:border-theme-secondary-700 ring-theme-background"
                             />
                             <div
                               class="relative flex flex-1 h-full"
@@ -268,7 +268,7 @@ exports[`MultiSignature Registration Form should render form step 1`] = `
                             class="max-w-sm"
                           >
                             <div
-                              class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap space-x-2"
+                              class="flex overflow-hidden flex-grow items-center space-x-2 whitespace-nowrap no-ligatures"
                             >
                               <span
                                 class="inline-flex overflow-hidden text-theme-text font-semibold text-base"
@@ -510,7 +510,7 @@ exports[`MultiSignature Registration Form should render review step 1`] = `
             data-testid="TransactionDetail"
           >
             <div
-              class="w-40 flex-1 space-y-2 whitespace-nowrap"
+              class="flex-1 space-y-2 w-40 whitespace-nowrap"
             >
               <div
                 class="text-sm font-semibold text-theme-secondary-700 no-ligatures"
@@ -545,7 +545,7 @@ exports[`MultiSignature Registration Form should render review step 1`] = `
             data-testid="TransactionDetail"
           >
             <div
-              class="w-40 flex-1 space-y-2 whitespace-nowrap"
+              class="flex-1 space-y-2 w-40 whitespace-nowrap"
             >
               <div
                 class="text-sm font-semibold text-theme-secondary-700 no-ligatures"
@@ -556,7 +556,7 @@ exports[`MultiSignature Registration Form should render review step 1`] = `
                 class="font-semibold"
               >
                 <div
-                  class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap space-x-2"
+                  class="flex overflow-hidden flex-grow items-center space-x-2 whitespace-nowrap no-ligatures"
                 >
                   <span
                     class="font-semibold text-base text-theme-text"
@@ -602,7 +602,7 @@ exports[`MultiSignature Registration Form should render review step 1`] = `
             data-testid="TransactionDetail"
           >
             <div
-              class="w-40 flex-1 space-y-2 whitespace-nowrap"
+              class="flex-1 space-y-2 w-40 whitespace-nowrap"
             >
               <div
                 class="text-sm font-semibold text-theme-secondary-700 no-ligatures"
@@ -690,7 +690,7 @@ exports[`MultiSignature Registration Form should render review step 1`] = `
                               class="max-w-lg"
                             >
                               <div
-                                class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap space-x-2"
+                                class="flex overflow-hidden flex-grow items-center space-x-2 whitespace-nowrap no-ligatures"
                               >
                                 <span
                                   class="inline-flex overflow-hidden text-theme-text font-semibold text-base"
@@ -731,7 +731,7 @@ exports[`MultiSignature Registration Form should render review step 1`] = `
                               class="max-w-lg"
                             >
                               <div
-                                class="flex-grow flex items-center no-ligatures overflow-hidden whitespace-nowrap space-x-2"
+                                class="flex overflow-hidden flex-grow items-center space-x-2 whitespace-nowrap no-ligatures"
                               >
                                 <span
                                   class="inline-flex overflow-hidden text-theme-text font-semibold text-base"
@@ -755,7 +755,7 @@ exports[`MultiSignature Registration Form should render review step 1`] = `
             data-testid="TransactionDetail"
           >
             <div
-              class="w-40 flex-1 space-y-2 whitespace-nowrap"
+              class="flex-1 space-y-2 w-40 whitespace-nowrap"
             >
               <div
                 class="text-sm font-semibold text-theme-secondary-700 no-ligatures"
@@ -785,7 +785,7 @@ exports[`MultiSignature Registration Form should render review step 1`] = `
             data-testid="TransactionDetail"
           >
             <div
-              class="w-40 flex-1 space-y-2 whitespace-nowrap"
+              class="flex-1 space-y-2 w-40 whitespace-nowrap"
             >
               <div
                 class="text-sm font-semibold text-theme-secondary-700 no-ligatures"
@@ -818,7 +818,7 @@ exports[`MultiSignature Registration Form should render review step 1`] = `
             class="mt-2"
           >
             <div
-              class="border rounded-lg border-theme-secondary-300 dark:border-theme-secondary-800"
+              class="rounded-lg border border-theme-secondary-300 dark:border-theme-secondary-800"
             >
               <div
                 class="relative p-4"
@@ -827,7 +827,7 @@ exports[`MultiSignature Registration Form should render review step 1`] = `
                   class="flex divide-x divide-theme-secondary-300 dark:divide-theme-secondary-800"
                 >
                   <div
-                    class="flex flex-col justify-center w-1/2 px-4 py-2"
+                    class="flex flex-col justify-center py-2 px-4 w-1/2"
                   >
                     <span
                       class="TotalAmountBox__AmountLabel-sc-178fnso-0 gGuMGd"
@@ -842,7 +842,7 @@ exports[`MultiSignature Registration Form should render review step 1`] = `
                     </span>
                   </div>
                   <div
-                    class="flex flex-col justify-center w-1/2 px-4 py-2 text-right"
+                    class="flex flex-col justify-center py-2 px-4 w-1/2 text-right"
                   >
                     <span
                       class="TotalAmountBox__AmountLabel-sc-178fnso-0 gGuMGd"
@@ -858,7 +858,7 @@ exports[`MultiSignature Registration Form should render review step 1`] = `
                   </div>
                 </div>
                 <div
-                  class="absolute transform -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
+                  class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"
                 >
                   <div
                     class="py-2 ml-px bg-theme-background text-theme-secondary-900 dark:text-theme-secondary-600"
@@ -876,7 +876,7 @@ exports[`MultiSignature Registration Form should render review step 1`] = `
                 </div>
               </div>
               <div
-                class="flex flex-col items-center py-6 border-t rounded-b-lg border-theme-secondary-300 dark:border-theme-secondary-800 justfiy-center bg-theme-secondary-100 dark:bg-theme-secondary-800"
+                class="flex flex-col items-center py-6 rounded-b-lg border-t border-theme-secondary-300 justfiy-center bg-theme-secondary-100 dark:border-theme-secondary-800 dark:bg-theme-secondary-800"
               >
                 <span
                   class="TotalAmountBox__AmountLabel-sc-178fnso-0 gGuMGd"
@@ -906,7 +906,7 @@ exports[`MultiSignature Registration Form should render transaction details 1`] 
     data-testid="TransactionDetail"
   >
     <div
-      class="w-40 flex-1 space-y-2 whitespace-nowrap"
+      class="flex-1 space-y-2 w-40 whitespace-nowrap"
     >
       <div
         class="text-sm font-semibold text-theme-secondary-700 no-ligatures"
@@ -938,7 +938,7 @@ exports[`MultiSignature Registration Form should render transaction details 1`] 
     data-testid="TransactionDetail"
   >
     <div
-      class="w-40 flex-1 space-y-2 whitespace-nowrap"
+      class="flex-1 space-y-2 w-40 whitespace-nowrap"
     >
       <div
         class="text-sm font-semibold text-theme-secondary-700 no-ligatures"
@@ -955,7 +955,7 @@ exports[`MultiSignature Registration Form should render transaction details 1`] 
     data-testid="TransactionDetail"
   >
     <div
-      class="w-40 flex-1 space-y-2 whitespace-nowrap"
+      class="flex-1 space-y-2 w-40 whitespace-nowrap"
     >
       <div
         class="text-sm font-semibold text-theme-secondary-700 no-ligatures"

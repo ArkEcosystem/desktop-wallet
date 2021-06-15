@@ -6,13 +6,12 @@ import { useTranslation } from "react-i18next";
 
 interface Props {
 	title?: string;
-	description?: string;
 	isRepeatDisabled?: boolean;
 	onBack?: () => void;
 	onRepeat?: () => void;
 }
 
-export const ErrorStep = ({ title, description, onBack, onRepeat, isRepeatDisabled = false }: Props) => {
+export const ErrorStep = ({ title, onBack, onRepeat, isRepeatDisabled = false }: Props) => {
 	const { t } = useTranslation();
 
 	return (

@@ -6,12 +6,6 @@ import { env } from "utils/testing-library";
 
 import { useValidation } from "./use-validation";
 
-const defaultFees = {
-	min: "1",
-	max: "5",
-	avg: "2",
-	static: "2",
-};
 const mockNetwork = {
 	coin: jest.fn,
 };

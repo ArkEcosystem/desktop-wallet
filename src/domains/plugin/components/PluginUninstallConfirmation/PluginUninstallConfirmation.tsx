@@ -31,7 +31,7 @@ export const PluginUninstallConfirmation = ({ isOpen, profile, plugin, onClose, 
 	return (
 		<Modal
 			title={t("PLUGINS.MODAL_UNINSTALL.TITLE")}
-			image={<Image name="DeleteBanner" className="w-3/5 m-auto my-8" />}
+			image={<Image name="DeleteBanner" className="m-auto my-8 w-3/5" />}
 			description={t("PLUGINS.MODAL_UNINSTALL.DESCRIPTION", { name: plugin.config().title() })}
 			size="lg"
 			isOpen={isOpen}

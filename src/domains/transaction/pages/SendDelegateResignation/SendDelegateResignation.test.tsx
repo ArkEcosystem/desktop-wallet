@@ -17,13 +17,12 @@ import {
 	waitFor,
 } from "utils/testing-library";
 
-import { SendDelegateResignation } from "../SendDelegateResignation";
+import { SendDelegateResignation } from ".";
 
 let wallet: Contracts.IReadWriteWallet;
 let profile: Contracts.IProfile;
 
 let resignationUrl: string;
-const dashboardUrl = `/profiles/${getDefaultProfileId()}/dashboard`;
 
 const passphrase = "v3wallet2";
 const history = createMemoryHistory();
@@ -162,7 +161,7 @@ describe("SendDelegateResignation", () => {
 		});
 
 		it("should return to form step by cancelling fee warning", async () => {
-			const { asFragment, getByTestId } = renderPage();
+			const { getByTestId } = renderPage();
 
 			await waitFor(() => expect(getByTestId("SendDelegateResignation__form-step")).toBeTruthy());
 
@@ -185,7 +184,7 @@ describe("SendDelegateResignation", () => {
 		});
 
 		it("should proceed to authentication step by confirming fee warning", async () => {
-			const { asFragment, getByTestId } = renderPage();
+			const { getByTestId } = renderPage();
 
 			await waitFor(() => expect(getByTestId("SendDelegateResignation__form-step")).toBeTruthy());
 

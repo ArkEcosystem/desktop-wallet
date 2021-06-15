@@ -24,7 +24,7 @@ exports[`PaginationSearch should close search input if clicked outside 1`] = `
         </span>
       </span>
       <span
-        class="absolute top-0 right-0 bottom-0 left-0 invisible group-hover:visible flex items-center justify-center"
+        class="flex absolute top-0 right-0 bottom-0 left-0 invisible justify-center items-center group-hover:visible"
         data-testid="PaginationSearchButton__search"
       >
         <div
@@ -60,7 +60,7 @@ exports[`PaginationSearch should not allow typing number greater than total page
       </span>
     </span>
     <span
-      class="absolute top-0 right-0 bottom-0 left-0 invisible group-hover:visible flex items-center justify-center"
+      class="flex absolute top-0 right-0 bottom-0 left-0 invisible justify-center items-center group-hover:visible"
       data-testid="PaginationSearchButton__search"
     >
       <div
@@ -94,7 +94,7 @@ exports[`PaginationSearch should not emit onSelect if nothing is typed 1`] = `
       </span>
     </span>
     <span
-      class="absolute top-0 right-0 bottom-0 left-0 invisible group-hover:visible flex items-center justify-center"
+      class="flex absolute top-0 right-0 bottom-0 left-0 invisible justify-center items-center group-hover:visible"
       data-testid="PaginationSearchButton__search"
     >
       <div
@@ -128,7 +128,7 @@ exports[`PaginationSearch should not emit onSelect if zero is typed 1`] = `
       </span>
     </span>
     <span
-      class="absolute top-0 right-0 bottom-0 left-0 invisible group-hover:visible flex items-center justify-center"
+      class="flex absolute top-0 right-0 bottom-0 left-0 invisible justify-center items-center group-hover:visible"
       data-testid="PaginationSearchButton__search"
     >
       <div
@@ -162,7 +162,7 @@ exports[`PaginationSearch should not limit total page if not provided 1`] = `
       </span>
     </span>
     <span
-      class="absolute top-0 right-0 bottom-0 left-0 invisible group-hover:visible flex items-center justify-center"
+      class="flex absolute top-0 right-0 bottom-0 left-0 invisible justify-center items-center group-hover:visible"
       data-testid="PaginationSearchButton__search"
     >
       <div
@@ -196,7 +196,7 @@ exports[`PaginationSearch should render 1`] = `
       </span>
     </span>
     <span
-      class="absolute top-0 right-0 bottom-0 left-0 invisible group-hover:visible flex items-center justify-center"
+      class="flex absolute top-0 right-0 bottom-0 left-0 invisible justify-center items-center group-hover:visible"
       data-testid="PaginationSearchButton__search"
     >
       <div
@@ -230,7 +230,7 @@ exports[`PaginationSearch should show pagination search input 1`] = `
       </span>
     </span>
     <span
-      class="absolute top-0 right-0 bottom-0 left-0 invisible group-hover:visible flex items-center justify-center"
+      class="flex absolute top-0 right-0 bottom-0 left-0 invisible justify-center items-center group-hover:visible"
       data-testid="PaginationSearchButton__search"
     >
       <div
@@ -264,7 +264,7 @@ exports[`PaginationSearch should show search input and close 1`] = `
       </span>
     </span>
     <span
-      class="absolute top-0 right-0 bottom-0 left-0 invisible group-hover:visible flex items-center justify-center"
+      class="flex absolute top-0 right-0 bottom-0 left-0 invisible justify-center items-center group-hover:visible"
       data-testid="PaginationSearchButton__search"
     >
       <div
@@ -298,7 +298,7 @@ exports[`PaginationSearch should type page and emit onSelectPage event 1`] = `
       </span>
     </span>
     <span
-      class="absolute top-0 right-0 bottom-0 left-0 invisible group-hover:visible flex items-center justify-center"
+      class="flex absolute top-0 right-0 bottom-0 left-0 invisible justify-center items-center group-hover:visible"
       data-testid="PaginationSearchButton__search"
     >
       <div

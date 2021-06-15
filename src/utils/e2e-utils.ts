@@ -21,8 +21,6 @@ const pluginNames: string[] = [
 	"@arkecosystem/desktop-wallet-explorer",
 ];
 
-const repositoryNames: string[] = [""];
-
 const knownWallets: any[] = [];
 
 const walletMocks = () => {

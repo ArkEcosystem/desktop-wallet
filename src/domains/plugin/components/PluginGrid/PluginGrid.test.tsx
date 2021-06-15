@@ -118,7 +118,7 @@ describe("PluginGrid", () => {
 	});
 
 	it("should render skeletons", () => {
-		const { asFragment, findByText, getAllByTestId } = render(<PluginGrid isLoading plugins={[]} />);
+		const { asFragment, getAllByTestId } = render(<PluginGrid isLoading plugins={[]} />);
 
 		expect(getAllByTestId("PluginCardSkeleton")).toHaveLength(3);
 		expect(asFragment()).toMatchSnapshot();

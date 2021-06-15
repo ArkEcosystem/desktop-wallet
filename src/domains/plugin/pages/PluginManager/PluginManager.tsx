@@ -1,5 +1,4 @@
-import { sortByDesc } from "@arkecosystem/utils";
-import { snakeCase } from "@arkecosystem/utils";
+import { snakeCase, sortByDesc } from "@arkecosystem/utils";
 import { Button } from "app/components/Button";
 import { EmptyBlock } from "app/components/EmptyBlock";
 import { Header } from "app/components/Header";
@@ -103,11 +102,11 @@ const LatestPlugins = ({
 					<Section key={category}>
 						<div data-testid={`PluginManager__latest__${category}`}>
 							<div className="flex justify-between items-center mb-6">
-								<h2 className="font-bold mb-0">{t(`PLUGINS.CATEGORIES.${category.toUpperCase()}`)}</h2>
+								<h2 className="mb-0 font-bold">{t(`PLUGINS.CATEGORIES.${category.toUpperCase()}`)}</h2>
 
 								{categoryCount > plugins.length && !plugins.some((plugin) => !plugin) && (
 									<span
-										className="flex items-center font-semibold link space-x-2"
+										className="flex items-center space-x-2 font-semibold link"
 										data-testid={`PluginManager__latest__${category}__view-all`}
 										onClick={() => onCurrentViewChange(category)}
 									>
@@ -143,7 +142,7 @@ const UpdateAllBanner = ({
 
 	return (
 		<EmptyBlock size="sm" className="mb-6">
-			<div className="flex items-center w-full justify-between">
+			<div className="flex justify-between items-center w-full">
 				<span>{t("PLUGINS.UPDATE_ALL_NOTICE", { count: hasUpdateAvailableCount })}</span>
 				<Button
 					disabled={isUpdatingAll}
@@ -411,7 +410,7 @@ export const PluginManager = () => {
 				<Section>
 					{currentView !== "latest" && (
 						<>
-							<h2 className="font-bold mb-6">
+							<h2 className="mb-6 font-bold">
 								{t(`PLUGINS.PAGE_PLUGIN_MANAGER.VIEW.${snakeCase(currentView)?.toUpperCase()}`)}
 							</h2>
 

@@ -22,7 +22,7 @@ export const ProfileCreated = ({ isOpen, onClose, onSkip, onStart }: ProfileCrea
 			onClose={onClose}
 		>
 			<div className="container space-y-8">
-				<div className="text-base text-theme-secondary-text leading-7">
+				<div className="text-base leading-7 text-theme-secondary-text">
 					<p>{t("PROFILE.MODAL_PROFILE_CREATED.DESCRIPTION_1")}</p>
 					<p>{t("PROFILE.MODAL_PROFILE_CREATED.DESCRIPTION_2")}</p>
 				</div>

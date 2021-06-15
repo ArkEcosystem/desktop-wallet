@@ -24,7 +24,7 @@ import { useForm } from "react-hook-form";
 import { useTranslation } from "react-i18next";
 import { useHistory, useParams } from "react-router-dom";
 
-import { FormStep, ReviewStep, SummaryStep } from "./";
+import { FormStep, ReviewStep, SummaryStep } from ".";
 import { TransferLedgerReview } from "./LedgerReview";
 import { NetworkStep } from "./NetworkStep";
 
@@ -318,7 +318,7 @@ export const SendTransfer = () => {
 	return (
 		<Page profile={activeProfile}>
 			<Section className="flex-1">
-				<Form className="max-w-xl mx-auto" context={form} onSubmit={() => submitForm()}>
+				<Form className="mx-auto max-w-xl" context={form} onSubmit={() => submitForm()}>
 					<Tabs activeId={activeTab}>
 						<StepIndicator
 							size={showNetworkStep ? 5 : 4}

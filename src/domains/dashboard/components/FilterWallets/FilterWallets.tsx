@@ -4,7 +4,7 @@ import { Icon } from "app/components/Icon";
 import React from "react";
 import { useTranslation } from "react-i18next";
 
-import { FilterWalletsProps } from "./";
+import { FilterWalletsProps } from ".";
 
 export const FilterWallets = ({ networks, walletsDisplayType, useTestNetworks, onChange }: FilterWalletsProps) => {
 	const { t } = useTranslation();

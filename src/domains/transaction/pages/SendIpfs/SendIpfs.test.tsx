@@ -13,17 +13,18 @@ import {
 	act,
 	env,
 	fireEvent,
+	getDefaultLedgerTransport,
 	getDefaultProfileId,
+	getDefaultWalletId,
+	getDefaultWalletMnemonic,
 	render,
-	RenderResult,
 	renderWithRouter,
 	syncFees,
 	waitFor,
 	within,
 } from "utils/testing-library";
-import { getDefaultLedgerTransport, getDefaultWalletId, getDefaultWalletMnemonic } from "utils/testing-library";
 
-import { FormStep, ReviewStep, SendIpfs, SummaryStep } from "./";
+import { FormStep, ReviewStep, SendIpfs, SummaryStep } from ".";
 
 const passphrase = getDefaultWalletMnemonic();
 const fixtureProfileId = getDefaultProfileId();
@@ -301,7 +302,7 @@ describe("SendIpfs", () => {
 
 		history.push(ipfsURL);
 
-		const { getByTestId, container } = renderWithRouter(
+		const { getByTestId } = renderWithRouter(
 			<Route path="/profiles/:profileId/wallets/:walletId/send-ipfs">
 				<LedgerProvider transport={transport}>
 					<SendIpfs />
@@ -349,7 +350,7 @@ describe("SendIpfs", () => {
 
 		history.push(ipfsURL);
 
-		const { getByTestId, container } = renderWithRouter(
+		const { getByTestId } = renderWithRouter(
 			<Route path="/profiles/:profileId/wallets/:walletId/send-ipfs">
 				<LedgerProvider transport={transport}>
 					<SendIpfs />
@@ -481,7 +482,7 @@ describe("SendIpfs", () => {
 
 		history.push(ipfsURL);
 
-		const { getByTestId, container } = renderWithRouter(
+		const { getByTestId } = renderWithRouter(
 			<Route path="/profiles/:profileId/wallets/:walletId/send-ipfs">
 				<LedgerProvider transport={transport}>
 					<SendIpfs />
@@ -742,8 +743,6 @@ describe("SendIpfs", () => {
 		const ipfsURL = `/profiles/${fixtureProfileId}/transactions/${wallet.id()}/ipfs`;
 
 		history.push(ipfsURL);
-
-		let rendered: RenderResult;
 
 		const { getByTestId } = renderWithRouter(
 			<Route path="/profiles/:profileId/transactions/:walletId/ipfs">

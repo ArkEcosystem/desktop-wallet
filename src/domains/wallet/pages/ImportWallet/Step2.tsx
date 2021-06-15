@@ -11,14 +11,12 @@ import { useFormContext } from "react-hook-form";
 import { useTranslation } from "react-i18next";
 
 const MnemonicField = ({
-	network,
 	profile,
 	label,
 	findAddress,
 	...props
 }: {
 	profile: Contracts.IProfile;
-	network: Networks.Network;
 	label: string;
 	findAddress: (value: string) => Promise<string>;
 } & Omit<React.HTMLProps<any>, "ref">) => {
@@ -99,7 +97,6 @@ const ImportInputField = ({
 	if (type.startsWith("bip")) {
 		return (
 			<MnemonicField
-				network={network}
 				profile={profile}
 				label={t(`COMMON.MNEMONIC_TYPE.${type.toUpperCase()}`)}
 				data-testid="ImportWallet__mnemonic-input"
@@ -119,7 +116,6 @@ const ImportInputField = ({
 	if (type === OptionsValue.PRIVATE_KEY) {
 		return (
 			<MnemonicField
-				network={network}
 				profile={profile}
 				label={t("COMMON.PRIVATE_KEY")}
 				data-testid="ImportWallet__privatekey-input"
@@ -139,7 +135,6 @@ const ImportInputField = ({
 	if (type === OptionsValue.WIF) {
 		return (
 			<MnemonicField
-				network={network}
 				profile={profile}
 				label={t("COMMON.WIF")}
 				data-testid="ImportWallet__wif-input"
@@ -174,7 +169,6 @@ const ImportInputField = ({
 				</FormField>
 
 				<MnemonicField
-					network={network}
 					profile={profile}
 					label={t("COMMON.PASSWORD")}
 					data-testid="ImportWallet__encryptedWif__password-input"

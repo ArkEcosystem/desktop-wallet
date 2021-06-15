@@ -20,7 +20,7 @@ export const TransactionVotes = ({ isLoading, votes, unvotes }: TransactionVotes
 		return (
 			<div
 				data-testid="TransactionVotes__skeleton"
-				className="flex items-center justify-between py-6 border-t border-dashed border-theme-secondary-300 dark:border-theme-secondary-800"
+				className="flex justify-between items-center py-6 border-t border-dashed border-theme-secondary-300 dark:border-theme-secondary-800"
 			>
 				<div className="flex flex-col space-y-2">
 					<Skeleton height={14} width="25%" />

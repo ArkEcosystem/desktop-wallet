@@ -7,7 +7,7 @@ import cn from "classnames";
 import React from "react";
 import { useTranslation } from "react-i18next";
 
-import { FilterProps } from "./";
+import { FilterProps } from ".";
 
 export const VotesFilter = ({ onChange, selectedOption = "all", totalCurrentVotes }: FilterProps) => {
 	const { t } = useTranslation();
@@ -20,15 +20,15 @@ export const VotesFilter = ({ onChange, selectedOption = "all", totalCurrentVote
 				position="right"
 				toggleContent={
 					<ControlButton isChanged={selectedOption !== "all"}>
-						<div className="flex items-center justify-center w-5 h-5">
+						<div className="flex justify-center items-center w-5 h-5">
 							<Icon name="Filters" width={17} height={19} />
 						</div>
 					</ControlButton>
 				}
 			>
-				<div className="w-56 flex flex-col items-start space-y-5 px-10 py-7 text-theme-secondary-700 dark:text-theme-secondary-200">
+				<div className="flex flex-col items-start py-7 px-10 space-y-5 w-56 text-theme-secondary-700 dark:text-theme-secondary-200">
 					<label
-						className="h-5 flex items-center space-x-3 rounded-md cursor-pointer"
+						className="flex items-center space-x-3 h-5 rounded-md cursor-pointer"
 						data-testid="VotesFilter__option--all"
 					>
 						<Checkbox name="all" checked={selectedOption === "all"} onChange={() => onChange?.("all")} />

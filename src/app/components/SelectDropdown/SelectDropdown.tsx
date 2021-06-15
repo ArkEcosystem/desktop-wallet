@@ -149,7 +149,7 @@ const SelectDropdown = ({
 			end: (
 				<div
 					data-testid="SelectDropdown__caret"
-					className="py-2 px-1 flex items-center justify-center"
+					className="flex justify-center items-center py-2 px-1"
 					onClick={toggleMenu}
 				>
 					<Icon

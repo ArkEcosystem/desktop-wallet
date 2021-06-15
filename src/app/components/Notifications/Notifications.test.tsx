@@ -4,9 +4,9 @@ import nock from "nock";
 import React from "react";
 import { act } from "react-dom/test-utils";
 import { env, fireEvent, getDefaultProfileId, render } from "testing-library";
-const NotificationTransactionsFixtures = require("tests/fixtures/coins/ark/devnet/notification-transactions.json");
 
-import { markAsRead, Notifications } from "./";
+import { markAsRead, Notifications } from ".";
+const NotificationTransactionsFixtures = require("tests/fixtures/coins/ark/devnet/notification-transactions.json");
 
 let profile: Contracts.IProfile;
 
@@ -55,8 +55,6 @@ describe("Notifications", () => {
 
 	it("should emit transactionClick event", async () => {
 		const onTransactionClick = jest.fn();
-
-		const all = profile.notifications().count();
 
 		const { container, getAllByTestId, queryAllByTestId } = render(
 			<Notifications profile={profile} onTransactionClick={onTransactionClick} />,
