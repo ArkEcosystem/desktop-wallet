@@ -292,6 +292,8 @@ export const translations: { [key: string]: any } = {
 			ADDRESS_ALREADY_EXISTS: "Address {{address}} already exists",
 			MNEMONIC_NOT_MATCH_WALLET: "This mnemonic does not correspond to your wallet",
 			PASSWORD_NOT_MATCH_WALLET: "This password does not correspond to your wallet",
+			WIF_NOT_MATCH_WALLET: "This WIF does not correspond to your wallet",
+			PRIVATE_KEY_NOT_MATCH_WALLET: "This private key does not correspond to your wallet",
 		},
 	},
 

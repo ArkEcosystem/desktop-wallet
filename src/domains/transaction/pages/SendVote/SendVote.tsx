@@ -181,7 +181,7 @@ export const SendVote = () => {
 
 	const submitForm = async () => {
 		clearErrors("mnemonic");
-		const { fee, mnemonic, secondMnemonic, encryptionPassword } = getValues();
+		const { fee, mnemonic, secondMnemonic, encryptionPassword, wif, privateKey } = getValues();
 		const abortSignal = abortRef.current?.signal;
 
 		try {
@@ -189,6 +189,8 @@ export const SendVote = () => {
 				mnemonic,
 				secondMnemonic,
 				encryptionPassword,
+				wif,
+				privateKey,
 			});
 
 			const voteTransactionInput: Services.TransactionInput = {

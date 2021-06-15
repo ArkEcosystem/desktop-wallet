@@ -75,12 +75,14 @@ export const SendIpfs = () => {
 	const submitForm = async () => {
 		clearErrors("mnemonic");
 
-		const { fee, mnemonic, secondMnemonic, hash, encryptionPassword } = getValues();
+		const { fee, mnemonic, secondMnemonic, hash, encryptionPassword, wif, privateKey } = getValues();
 
 		const signatory = await sign({
 			mnemonic,
 			secondMnemonic,
 			encryptionPassword,
+			wif,
+			privateKey,
 		});
 
 		const transactionInput: Services.IpfsInput = {

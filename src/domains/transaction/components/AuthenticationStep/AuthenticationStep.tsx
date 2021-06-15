@@ -44,12 +44,9 @@ export const AuthenticationStep = ({
 } & LedgerStates) => {
 	const { t } = useTranslation();
 	const { errors, getValues, register } = useFormContext();
-
-	const isLedger = wallet.isLedger();
-	const usesWIF = wallet.wif().exists();
 	const { authentication } = useValidation();
 
-	if (isLedger) {
+	if (wallet.isLedger()) {
 		return (
 			<div data-testid="AuthenticationStep" className="space-y-8">
 				<LedgerStateWrapper
@@ -67,47 +64,93 @@ export const AuthenticationStep = ({
 		);
 	}
 
-	const mnemonicFieldName = usesWIF ? "encryptionPassword" : "mnemonic";
-	const mnemonicIsValid = !!getValues(mnemonicFieldName) && !errors[mnemonicFieldName];
+	const title = t("TRANSACTION.AUTHENTICATION_STEP.TITLE");
 
-	const subtitle = usesWIF
-		? t("TRANSACTION.AUTHENTICATION_STEP.DESCRIPTION_ENCRYPTION_PASSWORD")
-		: t("TRANSACTION.AUTHENTICATION_STEP.DESCRIPTION");
+	const requireWif = wallet.actsWithWif();
+	const requirePrivateKey = wallet.actsWithPrivateKey();
+	const requireMnemonic = wallet.actsWithMnemonic() || wallet.actsWithAddress() || wallet.actsWithPublicKey();
+	const requireEncryptionPassword = wallet.actsWithMnemonicWithEncryption() || wallet.actsWithWifWithEncryption();
+
+	const shouldRenderSecondMnemonicField = !skipSecondSignature && wallet.isSecondSignature();
+
+	const renderSecondMnemonicField = () => {
+		const mnemonicFieldName = requireEncryptionPassword ? "encryptionPassword" : "mnemonic";
+		const mnemonicIsValid = !!getValues(mnemonicFieldName) && !errors[mnemonicFieldName];
+
+		return (
+			<FormField name="secondMnemonic">
+				<FormLabel>{t("TRANSACTION.SECOND_MNEMONIC")}</FormLabel>
+				<InputPassword
+					data-testid="AuthenticationStep__second-mnemonic"
+					disabled={!mnemonicIsValid}
+					ref={register(authentication.secondMnemonic(wallet.coin(), wallet.secondPublicKey()!))}
+				/>
+			</FormField>
+		);
+	};
 
 	return (
 		<div data-testid="AuthenticationStep" className="space-y-8">
-			<Header title={t("TRANSACTION.AUTHENTICATION_STEP.TITLE")} subtitle={subtitle} />
+			{requireWif && (
+				<>
+					<Header title={title} subtitle={t("TRANSACTION.AUTHENTICATION_STEP.DESCRIPTION_WIF")} />
 
-			{!usesWIF && (
-				<FormField name="mnemonic">
-					<FormLabel>{t("TRANSACTION.MNEMONIC")}</FormLabel>
-					<InputPassword
-						data-testid="AuthenticationStep__mnemonic"
-						ref={register(authentication.mnemonic(wallet.coin(), wallet.address()))}
-					/>
-				</FormField>
+					<FormField name="wif">
+						<FormLabel>{t("COMMON.WIF")}</FormLabel>
+						<InputPassword
+							data-testid="AuthenticationStep__wif"
+							ref={register(authentication.wif(wallet))}
+						/>
+					</FormField>
+				</>
 			)}
 
-			{usesWIF && (
-				<FormField name="encryptionPassword">
-					<FormLabel>{t("TRANSACTION.ENCRYPTION_PASSWORD")}</FormLabel>
-					<InputPassword
-						data-testid="AuthenticationStep__encryption-password"
-						ref={register(authentication.encryptionPassword(wallet))}
-					/>
-				</FormField>
+			{requirePrivateKey && (
+				<>
+					<Header title={title} subtitle={t("TRANSACTION.AUTHENTICATION_STEP.DESCRIPTION_PRIVATE_KEY")} />
+
+					<FormField name="privateKey">
+						<FormLabel>{t("COMMON.PRIVATE_KEY")}</FormLabel>
+						<InputPassword
+							data-testid="AuthenticationStep__private-key"
+							ref={register(authentication.privateKey(wallet))}
+						/>
+					</FormField>
+				</>
 			)}
 
-			{wallet.isSecondSignature() && !skipSecondSignature && (
-				<FormField name="secondMnemonic">
-					<FormLabel>{t("TRANSACTION.SECOND_MNEMONIC")}</FormLabel>
-					<InputPassword
-						data-testid="AuthenticationStep__second-mnemonic"
-						disabled={!mnemonicIsValid}
-						ref={register(authentication.secondMnemonic(wallet.coin(), wallet.secondPublicKey()!))}
+			{requireEncryptionPassword && (
+				<>
+					<Header
+						title={title}
+						subtitle={t("TRANSACTION.AUTHENTICATION_STEP.DESCRIPTION_ENCRYPTION_PASSWORD")}
 					/>
-				</FormField>
+
+					<FormField name="encryptionPassword">
+						<FormLabel>{t("TRANSACTION.ENCRYPTION_PASSWORD")}</FormLabel>
+						<InputPassword
+							data-testid="AuthenticationStep__encryption-password"
+							ref={register(authentication.encryptionPassword(wallet))}
+						/>
+					</FormField>
+				</>
 			)}
+
+			{requireMnemonic && (
+				<>
+					<Header title={title} subtitle={t("TRANSACTION.AUTHENTICATION_STEP.DESCRIPTION_MNEMONIC")} />
+
+					<FormField name="mnemonic">
+						<FormLabel>{t("TRANSACTION.MNEMONIC")}</FormLabel>
+						<InputPassword
+							data-testid="AuthenticationStep__mnemonic"
+							ref={register(authentication.mnemonic(wallet))}
+						/>
+					</FormField>
+				</>
+			)}
+
+			{shouldRenderSecondMnemonicField && renderSecondMnemonicField()}
 		</div>
 	);
 };
