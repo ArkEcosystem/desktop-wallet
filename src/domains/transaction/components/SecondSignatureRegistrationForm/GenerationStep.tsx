@@ -32,7 +32,7 @@ export const GenerationStep = ({
 	const [defaultFee] = useState(() => watch("fee"));
 	const fee = getValues("fee") || defaultFee;
 
-	const inputFeeViewType = getValues("inputFeeViewType");
+	const inputFeeSettings = getValues("inputFeeSettings");
 
 	useEffect(() => {
 		register("fee", common.fee(wallet.balance(), wallet.network()));
@@ -78,9 +78,13 @@ export const GenerationStep = ({
 						onChange={(value) => {
 							setValue("fee", value, { shouldValidate: true, shouldDirty: true });
 						}}
-						viewType={inputFeeViewType}
+						viewType={inputFeeSettings.viewType}
 						onChangeViewType={(value) => {
-							setValue("inputFeeViewType", value, { shouldDirty: true });
+							setValue("inputFeeSettings.viewType", value, { shouldDirty: true });
+						}}
+						simpleValue={inputFeeSettings.simpleValue}
+						onChangeSimpleValue={(value) => {
+							setValue("inputFeeSettings.simpleValue", value, { shouldDirty: true });
 						}}
 					/>
 				</FormField>

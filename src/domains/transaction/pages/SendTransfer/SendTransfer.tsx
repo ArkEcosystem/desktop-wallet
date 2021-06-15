@@ -77,6 +77,7 @@ export const SendTransfer = () => {
 			amount: 0,
 			remainingBalance: wallet?.balance?.(),
 			recipients: [],
+			inputFeeSettings: {},
 		},
 	});
 
@@ -105,7 +106,7 @@ export const SendTransfer = () => {
 
 		register("remainingBalance");
 		register("isSendAllSelected");
-		register("inputFeeViewType");
+		register("inputFeeSettings");
 
 		register("suppressWarning");
 	}, [register, sendTransfer, common, fees, wallet, remainingBalance, amount, senderAddress]);

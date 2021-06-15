@@ -27,26 +27,19 @@ const ButtonGroupOptionStyled = styled.button(() => [
 
 interface ButtonGroupOptionProps {
 	children: React.ReactNode;
-	value: string | number;
 	disabled?: boolean;
-	isSelected: (value: string | number) => boolean;
-	setSelectedValue: (value: string | number) => void;
+	isSelected: boolean;
+	onClick: () => void;
 }
 
-export const ButtonGroupOption = ({
-	value,
-	disabled,
-	isSelected,
-	setSelectedValue,
-	children,
-}: ButtonGroupOptionProps) => (
+export const ButtonGroupOption = ({ children, disabled, isSelected, onClick }: ButtonGroupOptionProps) => (
 	<ButtonGroupOptionStyled
 		disabled={disabled}
 		type="button"
 		data-testid="ButtonGroupOption"
 		role="radio"
-		aria-checked={isSelected(value)}
-		onClick={() => setSelectedValue(value)}
+		aria-checked={isSelected}
+		onClick={onClick}
 	>
 		{children}
 	</ButtonGroupOptionStyled>

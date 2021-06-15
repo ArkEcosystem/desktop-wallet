@@ -25,7 +25,7 @@ export const FormStep = ({
 }) => {
 	const { t } = useTranslation();
 	const { errors, setValue, getValues, register } = useFormContext();
-	const { participants, fee, minParticipants, inputFeeViewType } = getValues();
+	const { participants, fee, minParticipants, inputFeeSettings } = getValues();
 
 	const { common, multiSignatureRegistration } = useValidation();
 
@@ -106,8 +106,14 @@ export const FormStep = ({
 					onChange={(value) => setValue("fee", value, { shouldValidate: true, shouldDirty: true })}
 					network={wallet.network()}
 					profile={profile}
-					viewType={inputFeeViewType}
-					onChangeViewType={(value) => setValue("inputFeeViewType", value, { shouldDirty: true })}
+					viewType={inputFeeSettings.viewType}
+					onChangeViewType={(value) => {
+						setValue("inputFeeSettings.viewType", value, { shouldDirty: true });
+					}}
+					simpleValue={inputFeeSettings.simpleValue}
+					onChangeSimpleValue={(value) => {
+						setValue("inputFeeSettings.simpleValue", value, { shouldDirty: true });
+					}}
 				/>
 			</FormField>
 		</section>

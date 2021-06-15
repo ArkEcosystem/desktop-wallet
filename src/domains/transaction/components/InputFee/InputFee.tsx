@@ -2,60 +2,99 @@ import { Networks } from "@arkecosystem/platform-sdk";
 import { Contracts } from "@arkecosystem/platform-sdk-profiles";
 import { Switch } from "app/components/Switch";
 import { useExchangeRate } from "app/hooks/use-exchange-rate";
-import React, { memo } from "react";
+import React, { memo, useState } from "react";
 import { useTranslation } from "react-i18next";
 
+import { InputFeeSimpleOptions, InputFeeSimpleValue, InputFeeViewType } from "./InputFee.utils";
 import { InputFeeAdvanced } from "./InputFeeAdvanced";
 import { InputFeeSimple } from "./InputFeeSimple";
 
-export enum InputFeeViewType {
-	Simple = "simple",
-	Advanced = "advanced",
-}
-
-const DEFAULT_VIEW_TYPE = InputFeeViewType.Simple;
-
-interface Props {
-	value: string;
+interface InputFeeProps {
 	min: string;
 	avg: string;
 	max: string;
 	step: number;
 	disabled?: boolean;
-	onChange: (value: string) => void;
 	network?: Networks.Network;
 	profile?: Contracts.IProfile;
 	loading?: boolean;
 	viewType?: InputFeeViewType;
-	onChangeViewType: (viewType: InputFeeViewType) => void;
+	simpleValue?: InputFeeSimpleValue;
+	value: string;
+	onChange: (value: string) => void;
+	onChangeViewType?: (value: InputFeeViewType) => void;
+	onChangeSimpleValue?: (value: InputFeeSimpleValue) => void;
 }
 
+const DEFAULT_VIEW_TYPE = InputFeeViewType.Simple;
+const DEFAULT_SIMPLE_VALUE = InputFeeSimpleValue.Average;
+
 export const InputFee = memo(
-	({
-		onChange,
-		step,
-		disabled,
-		network,
-		loading,
-		avg,
-		min,
-		max,
-		value,
-		profile,
-		onChangeViewType,
-		...props
-	}: Props) => {
+	({ min, avg, max, step, disabled, network, profile, loading, onChange, value, ...props }: InputFeeProps) => {
 		const { t } = useTranslation();
 
 		const viewType = props.viewType ?? DEFAULT_VIEW_TYPE;
+		const simpleValue = props.simpleValue ?? DEFAULT_SIMPLE_VALUE;
+		const [advancedValue, setAdvancedValue] = useState<string>(value || avg);
 
 		const ticker = network?.ticker();
 		const exchangeTicker = profile?.settings().get<string>(Contracts.ProfileSetting.ExchangeCurrency);
 		const { convert } = useExchangeRate({ ticker, exchangeTicker });
 
+		const options: InputFeeSimpleOptions = {
+			[InputFeeSimpleValue.Slow]: {
+				label: t("TRANSACTION.FEES.SLOW"),
+				displayValue: min,
+				displayValueConverted: convert(min),
+			},
+			[InputFeeSimpleValue.Average]: {
+				label: t("TRANSACTION.FEES.AVERAGE"),
+				displayValue: avg,
+				displayValueConverted: convert(avg),
+			},
+			[InputFeeSimpleValue.Fast]: {
+				label: t("TRANSACTION.FEES.FAST"),
+				displayValue: max,
+				displayValueConverted: convert(max),
+			},
+		};
+
+		const onChangeViewType = (val: InputFeeViewType) => {
+			props.onChangeViewType?.(val);
+
+			if (val === InputFeeViewType.Simple) {
+				onChange(simpleValue);
+			}
+
+			if (val === InputFeeViewType.Advanced) {
+				onChange(advancedValue);
+			}
+		};
+
+		const onChangeSimpleValue = (val: InputFeeSimpleValue) => {
+			props.onChangeSimpleValue?.(val);
+
+			const feeValue = options[val].displayValue;
+			onChange(feeValue);
+		};
+
+		const onChangeAdvancedValue = (val: string) => {
+			setAdvancedValue(val);
+			onChange(val);
+		};
+
 		if (disabled) {
 			// @TODO update when implementing InputFeeAdvanced
-			return <InputFeeAdvanced disabled min={min} max={max} step={step} value={value} onChange={onChange} />;
+			return (
+				<InputFeeAdvanced
+					disabled
+					min={min}
+					max={max}
+					step={step}
+					value={advancedValue}
+					onChange={onChangeAdvancedValue}
+				/>
+			);
 		}
 
 		return (
@@ -77,23 +116,26 @@ export const InputFee = memo(
 					/>
 				</div>
 
-				{viewType === InputFeeViewType.Simple ? (
+				{viewType === InputFeeViewType.Simple && (
 					<InputFeeSimple
-						min={min}
-						max={max}
-						avg={avg}
-						minConverted={convert(min)}
-						maxConverted={convert(max)}
-						avgConverted={convert(avg)}
-						value={value}
+						options={options}
 						loading={loading || !ticker || !exchangeTicker}
 						ticker={ticker!}
 						exchangeTicker={exchangeTicker!}
-						onChange={onChange}
 						showConvertedValues={!!network?.isLive()}
+						value={simpleValue}
+						onChange={onChangeSimpleValue}
 					/>
-				) : (
-					<InputFeeAdvanced min={min} max={max} step={step} value={value} onChange={onChange} />
+				)}
+
+				{viewType === InputFeeViewType.Advanced && (
+					<InputFeeAdvanced
+						min={min}
+						max={max}
+						step={step}
+						value={advancedValue}
+						onChange={onChangeAdvancedValue}
+					/>
 				)}
 			</div>
 		);

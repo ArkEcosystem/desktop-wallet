@@ -39,7 +39,12 @@ export const SendRegistration = () => {
 
 	const { findByType } = useFees({ profile: activeProfile });
 
-	const form = useForm({ mode: "onChange" });
+	const form = useForm<any>({
+		mode: "onChange",
+		defaultValues: {
+			inputFeeSettings: {},
+		},
+	});
 
 	const { formState, register, setError, setValue, trigger, watch } = form;
 	const { isSubmitting, isValid } = formState;
@@ -69,7 +74,7 @@ export const SendRegistration = () => {
 	useEffect(() => {
 		register("fee");
 		register("fees");
-		register("inputFeeViewType");
+		register("inputFeeSettings");
 
 		register("network", { required: true });
 		register("senderAddress", { required: true });

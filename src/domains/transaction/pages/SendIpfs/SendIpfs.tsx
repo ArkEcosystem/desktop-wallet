@@ -32,7 +32,12 @@ export const SendIpfs = () => {
 	const networks = useMemo(() => env.availableNetworks(), [env]);
 	const { sendIpfs, common } = useValidation();
 
-	const form = useForm({ mode: "onChange" });
+	const form = useForm<any>({
+		mode: "onChange",
+		defaultValues: {
+			inputFeeSettings: {},
+		},
+	});
 
 	const { hasDeviceAvailable, isConnected, connect, transport } = useLedgerContext();
 	const { clearErrors, formState, getValues, handleSubmit, register, setError, setValue, watch } = form;
@@ -50,7 +55,7 @@ export const SendIpfs = () => {
 		register("hash", sendIpfs.hash());
 		register("fees");
 		register("fee", common.fee(activeWallet?.balance?.(), activeWallet?.network?.()));
-		register("inputFeeViewType");
+		register("inputFeeSettings");
 
 		setValue("senderAddress", activeWallet.address(), { shouldValidate: true, shouldDirty: true });
 

@@ -34,7 +34,7 @@ export const FormStep = ({
 
 	const [defaultFee] = useState(() => watch("fee"));
 	const fee = getValues("fee") || defaultFee;
-	const { inputFeeViewType } = watch();
+	const inputFeeSettings = watch("inputFeeSettings");
 
 	const { findByType } = useFees({ profile });
 
@@ -90,8 +90,14 @@ export const FormStep = ({
 					onChange={(value) => setValue("fee", value, { shouldValidate: true, shouldDirty: true })}
 					network={senderWallet.network()}
 					profile={profile}
-					viewType={inputFeeViewType}
-					onChangeViewType={(value) => setValue("inputFeeViewType", value, { shouldDirty: true })}
+					viewType={inputFeeSettings.viewType}
+					onChangeViewType={(value) => {
+						setValue("inputFeeSettings.viewType", value, { shouldDirty: true });
+					}}
+					simpleValue={inputFeeSettings.simpleValue}
+					onChangeSimpleValue={(value) => {
+						setValue("inputFeeSettings.simpleValue", value, { shouldDirty: true });
+					}}
 				/>
 			</FormField>
 		</section>

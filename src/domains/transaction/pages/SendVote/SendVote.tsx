@@ -38,7 +38,12 @@ export const SendVote = () => {
 	const [votes, setVotes] = useState<ProfileContracts.IReadOnlyWallet[]>([]);
 	const [transaction, setTransaction] = useState((null as unknown) as Contracts.SignedTransactionData);
 
-	const form = useForm({ mode: "onChange" });
+	const form = useForm<any>({
+		mode: "onChange",
+		defaultValues: {
+			inputFeeSettings: {},
+		},
+	});
 
 	const { hasDeviceAvailable, isConnected } = useLedgerContext();
 	const { clearErrors, formState, getValues, handleSubmit, register, setValue, watch } = form;
@@ -56,7 +61,7 @@ export const SendVote = () => {
 		register("senderAddress", sendVote.senderAddress());
 		register("fees");
 		register("fee", common.fee(activeWallet?.balance?.(), activeWallet?.network?.()));
-		register("inputFeeViewType");
+		register("inputFeeSettings");
 
 		setValue("senderAddress", activeWallet.address(), { shouldValidate: true, shouldDirty: true });
 

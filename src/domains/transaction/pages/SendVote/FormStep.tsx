@@ -47,7 +47,8 @@ export const FormStep = ({
 	// getValues does not get the value of `defaultValues` on first render
 	const [defaultFee] = useState(() => watch("fee"));
 	const fee = getValues("fee") || defaultFee;
-	const { inputFeeViewType } = watch();
+
+	const inputFeeSettings = watch("inputFeeSettings");
 
 	useEffect(() => {
 		const setVoteFees = async (senderWallet: ProfilesContracts.IReadWriteWallet) => {
@@ -107,9 +108,13 @@ export const FormStep = ({
 						onChange={(value) => {
 							setValue("fee", value, { shouldValidate: true, shouldDirty: true });
 						}}
-						viewType={inputFeeViewType}
+						viewType={inputFeeSettings.viewType}
 						onChangeViewType={(value) => {
-							setValue("inputFeeViewType", value, { shouldDirty: true });
+							setValue("inputFeeSettings.viewType", value, { shouldDirty: true });
+						}}
+						simpleValue={inputFeeSettings.simpleValue}
+						onChangeSimpleValue={(value) => {
+							setValue("inputFeeSettings.simpleValue", value, { shouldDirty: true });
 						}}
 					/>
 				</FormField>

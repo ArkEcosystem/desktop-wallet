@@ -1,11 +1,12 @@
 import { Networks } from "@arkecosystem/platform-sdk";
 import { Contracts } from "@arkecosystem/platform-sdk-profiles";
-import { InputFee, InputFeeViewType } from "domains/transaction/components/InputFee";
 import { describe } from "jest-circus";
 import React, { useState } from "react";
 import { act, env, fireEvent, render } from "utils/testing-library";
 
 import { translations as transactionTranslations } from "../../i18n";
+import { InputFee } from "./InputFee";
+import { InputFeeSimpleValue, InputFeeViewType } from "./InputFee.utils";
 
 let defaultProps: any = {
 	min: "0.006",
@@ -15,6 +16,7 @@ let defaultProps: any = {
 	step: 0.001,
 	disabled: false,
 	viewType: InputFeeViewType.Simple,
+	selectedButton: InputFeeSimpleValue.Average,
 };
 
 let network: Networks.Network;
@@ -30,6 +32,7 @@ describe("InputFee", () => {
 			...defaultProps,
 			onChange: jest.fn(),
 			onChangeViewType: jest.fn(),
+			onChangeSelectedButton: jest.fn(),
 			network,
 			profile,
 		};
@@ -38,15 +41,21 @@ describe("InputFee", () => {
 		Wrapper = () => {
 			const [value, setValue] = useState(defaultProps.value);
 			const [viewType, setViewType] = useState(defaultProps.viewType);
+			const [selectedButton, setSelectedButton] = useState(defaultProps.selectedButton);
 
 			const handleChangeValue = (val: string) => {
 				setValue(val);
 				defaultProps.onChange(val);
 			};
 
-			const handleChangeViewType = (val: string) => {
+			const handleChangeViewType = (val: InputFeeViewType) => {
 				setViewType(val);
 				defaultProps.onChangeViewType(val);
+			};
+
+			const handleChangeSelectedButton = (val: InputFeeSimpleValue) => {
+				setSelectedButton(val);
+				defaultProps.onChangeSelectedButton(val);
 			};
 
 			return (
@@ -56,6 +65,8 @@ describe("InputFee", () => {
 					onChange={handleChangeValue}
 					viewType={viewType}
 					onChangeViewType={handleChangeViewType}
+					selectedButton={selectedButton}
+					onChangeSelectedButton={handleChangeSelectedButton}
 				/>
 			);
 		};
@@ -77,6 +88,8 @@ describe("InputFee", () => {
 		});
 
 		expect(defaultProps.onChangeViewType).toBeCalledWith(InputFeeViewType.Advanced);
+		expect(defaultProps.onChange).toBeCalledWith(defaultProps.value);
+
 		expect(queryByTestId("InputCurrency")).toBeInTheDocument();
 		expect(queryByTestId("ButtonGroup")).not.toBeInTheDocument();
 		expect(asFragment()).toMatchSnapshot();
@@ -86,6 +99,8 @@ describe("InputFee", () => {
 		});
 
 		expect(defaultProps.onChangeViewType).toBeCalledWith(InputFeeViewType.Simple);
+		expect(defaultProps.onChange).toBeCalledWith(defaultProps.avg);
+
 		expect(queryByTestId("InputCurrency")).not.toBeInTheDocument();
 		expect(queryByTestId("ButtonGroup")).toBeInTheDocument();
 		expect(asFragment()).toMatchSnapshot();
