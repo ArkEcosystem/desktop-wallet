@@ -332,7 +332,6 @@ export const SendVote = () => {
 							</TabPanel>
 							<TabPanel tabId={2}>
 								<ReviewStep
-									profile={activeProfile}
 									unvotes={unvotes}
 									votes={votes}
 									wallet={activeWallet}

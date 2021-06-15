@@ -4,7 +4,7 @@ import { useClipboard } from "app/hooks";
 import { AnimatePresence, motion } from "framer-motion";
 import React from "react";
 import { styled } from "twin.macro";
-import { Size } from "types";
+import { ButtonVariant, Size } from "types";
 
 import { ClipboardCommonProps } from "./Clipboard";
 
@@ -13,11 +13,13 @@ export type ClipboardButtonProps = ClipboardCommonProps & {
 } & React.ButtonHTMLAttributes<any>;
 
 type ButtonProps = {
+	variant?: ButtonVariant;
 	size?: Size;
 } & React.ButtonHTMLAttributes<any>;
 const StyledButton = styled.button<ButtonProps>(getStyles);
 
-export const ClipboardButton = ({ data, options, children, ...props }: ClipboardButtonProps) => {
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+export const ClipboardButton = ({ data, variant, options, children, ...props }: ClipboardButtonProps) => {
 	const [hasCopied, copy] = useClipboard({
 		resetAfter: 1000,
 		...options,
